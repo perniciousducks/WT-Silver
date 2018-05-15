@@ -27,6 +27,7 @@ $ chitchated_with_snape = False #Prevents you from chitchating more then once a 
 $ chitchated_with_her = False #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
 $ gifted = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
 
+
 stop bg_sounds #Stops playing the fire SFX.
 stop weather #Stops playing the rain SFX.
 
@@ -148,6 +149,17 @@ if days_without_an_event == 1 and event12_happened and not event13_happened:
     jump event_13 #No return.
 if day >= 15 and day <=20 and not event15_happened:
     call event_15 #Returns
+    
+if whoring == 11 and not touched_by_boy:
+    call nar("!!! Attention !!!","start")
+    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
+    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
+    call nar(">You should also save your game here.","end")
+    menu:
+        "-Understood-":
+            pass
+        "-Don't tell me what to do!-":
+            pass
 
 if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
     jump good_bye_snape
@@ -168,6 +180,7 @@ if milking == -3:
 #Random Number for Tip/Fact of the Day
 $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
 call update_quests
+call update_hints
 
 
 

@@ -657,8 +657,8 @@ label her_progress_init:
     #Clothing Rewards
     $ reward_her_wool_clothing = False   
     $ reward_her_lace_clothing = False  
-    $ reward_her_latex_clothing = False
-    $ autograph = False #Professor Lockhart's tattoo.  
+    $ reward_her_latex_clothing = False 
+    $ autograph = False #Professor Lockhart's tattoo.
 
     return
 

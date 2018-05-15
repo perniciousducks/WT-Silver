@@ -98,6 +98,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
+            $ ccg2 = "blank"
             $ ccg3 = "blank"
             call her_head("","normal","worriedCl")
             show screen ccg
@@ -393,8 +394,8 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
+            $ ccg2 = "blank"
             $ ccg3 = "blank"
-            ##$ ccg2 = 2
             call her_head("","open","worriedCl")
             show screen ccg
         

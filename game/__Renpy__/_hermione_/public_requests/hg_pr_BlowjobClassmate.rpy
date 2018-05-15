@@ -10,15 +10,16 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
-    m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
-
     if hg_pr_BlowjobClassmate_OBJ.points < 1:
+        m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
-                call nar("!!! Attention !!!\nContinuing this path will lock your game to a specific ending.\nYou should save you game here.")
+                call nar("!!! Attention !!!","start")
+                ">Continuing on this path will lock your game to a specific ending."
+                call nar(">You might want to save you game here.","end")
 
                 menu:
-                    "Do you want to continue?"
+                    "Do you wish to continue?"
                     "\"(Yes, continue!)\"":
                         pass
                     "\"(No, return.)\"":
@@ -159,8 +160,8 @@ label hg_pr_BlowjobClassmate_complete:
             with d3 
 
             $ display_h_tears = False
+            
             $ hg_pr_BlowjobClassmate_OBJ.inProgress = False
-
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
         #Event C
@@ -310,8 +311,10 @@ label hg_pr_BlowjobClassmate_complete:
     $ public_whore_ending = True #Activates "Public Whore" ending.
     
     $ hg_pr_BlowjobClassmate_OBJ.points += 1
-    $ hg_pr_BlowjobClassmate_OBJ.complete = True
     $ hg_pr_BlowjobClassmate_OBJ.inProgress = False
+    
+    if hg_pr_BlowjobClassmate_OBJ.points >= 2:
+        $ hg_pr_BlowjobClassmate_OBJ.complete = True
     
     jump hg_pr_transition_block
 

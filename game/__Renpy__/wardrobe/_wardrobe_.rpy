@@ -389,7 +389,7 @@ screen wardrobe():
                 text "{color=#858585}Piercings{/color}" xpos 688 ypos 124+100 size 10          #grayed out
 
             ## Tattoos Toggle ##
-            if whoring >= 12:
+            if whoring >= 6:
                 hotspot (667,120+125,18,18) clicked [SetVariable("toggle_obj","tattoos"), Jump("her_tattoos_toggle")]
                 if hermione_wear_tattoos:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+125 #ypos-5 of hotspot ypos

@@ -47,6 +47,16 @@ label map_attic: #Label controlling what happens when you access the attic
 
 
 label map_forest: #Label controlling what happens when you go to the forest
+    if daytime:
+        m "I really shouldn't be leaving the castle during the day. It's too risky..."
+        jump day_main_menu
+    else:
+        pass
+        
+    call outskirts_of_hogwarts
+    
+    m "Lets see what I can find out here..."
+        
     menu:
         "-Search the area-":
             if day_random >= 7:
@@ -76,6 +86,15 @@ label map_forest: #Label controlling what happens when you go to the forest
                 jump return_office
    
 label map_lake: #Label controlling what happens when you go to the lake
+    if daytime:
+        m "I really shouldn't be leaving the castle during the day. It's too risky..."
+        jump day_main_menu
+    else:
+        pass
+    call outskirts_of_hogwarts
+    
+    m "Lets see what I can find out here..." 
+    
     menu:
         "-Search the area-":
             if day_random >= 7:
@@ -166,8 +185,51 @@ label map_pitch: #Label controlling what happens when you go to the quidditch pi
         m "Mustn't be a practice day."
         jump return_office
             
+label outskirts_of_hogwarts:
+    call blkfade
+    hide screen genie
+    show screen chair_02
+    show screen desk
+    call gen_chibi("stand","desk","base")
+    call hide_blkfade
+        
+    call gen_walk("desk","leave",3)
+    call blkfade
+        
+    stop music fadeout 1.0
+    
+    centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
+
+    play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
+    
+    show screen blkback # Hide room
+
+    $ end_u_1_pic =  "images/yule_ball/171.png"
+    show screen end_u_1
+    pause.3
+    call hide_blkfade
+    pause.8
+    $ renpy.play('sounds/steps_grass.mp3') # SOUNDS OF STEPS IN THE GRASS.
+    $ end_u_3_pic =  "images/yule_ball/172.png"
+    show screen end_u_3
+    with d7 
+    
+    return
+    
 label return_office:
-    ">You return to your office."
+    call blkfade
+    #">You return to your office."
+    
+    hide screen end_u_1
+    hide screen end_u_3
+    hide screen chair_02
+    hide screen desk
+    call gen_chibi("hide")
+    show screen genie
+    hide screen blkback
+    pause.5
+    call hide_blkfade
+    
     if daytime:
         jump day_main_menu
     else:

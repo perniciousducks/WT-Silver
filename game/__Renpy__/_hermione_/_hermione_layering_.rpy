@@ -777,7 +777,7 @@ label h_update:
         $ hermione_cheeks = im.Flip("characters/hermione/face/cheeks/"+str(h_cheeks)+".png", horizontal=True)
         $ hermione_tears = im.Flip("characters/hermione/face/tears/"+str(h_tears)+".png", horizontal=True)
         $ hermione_emote = im.Flip("characters/emotes/"+str(h_emote)+".png", horizontal=True)
-        $ hermione_hair_b = im.Flip("characters/hermione/body/head/A_"+str(h_hair_color)+"_2.png", horizontal=True)
+        $ hermione_hair_b = im.Flip("characters/hermione/body/head/A_1_2.png", horizontal=True) #ADD hair-color as soon as there are different hair-colors for the CGs. For now leave it brown!
     else:
         $ hermione_mouth = "characters/hermione/face/mouth/"+str(h_lipstick)+"/"+str(h_mouth)+".png"
         $ hermione_eyes  = "characters/hermione/face/eyes/"+str(h_eye_color)+"/"+str(h_eyes)+".png"
@@ -834,12 +834,18 @@ screen hermione_head_body_accs:
 #Piercings
 screen hermione_piercings:
     for i in range(0,len(hermione_piercings_list)):
-        add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos
+        if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
+            add "characters/hermione/accessories/piercings/large_breasts/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos
+        else:    
+            add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos
     zorder hermione_zorder
 
 screen hermione_head_piercings:
     for i in range(0,len(hermione_piercings_list)):
-        add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_head_xpos ypos hermione_head_ypos
+        if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
+            add "characters/hermione/accessories/piercings/large_breasts/"+str(hermione_piercings_list[i])+".png" xpos hermione_head_xpos ypos hermione_head_ypos
+        else:    
+            add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_head_xpos ypos hermione_head_ypos
     zorder hermione_zorder
 
 

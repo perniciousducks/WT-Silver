@@ -11,10 +11,9 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
 
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
-
-    m "{size=-4}(Tell her to give a handjob to one of her classmates?){/size}"
     
     if hg_pr_HandjobClassmate_OBJ.points < 1:
+        m "{size=-4}(Tell her to give a handjob to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -163,6 +162,7 @@ label hg_pr_HandjobClassmate_complete:
                     m "You are free to go, [hermione_name]."
                     call her_main(".........","annoyed","angryL")
                     $ mad +=9
+                    
                     $ hg_pr_HandjobClassmate_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
@@ -288,6 +288,7 @@ label hg_pr_HandjobClassmate_complete:
                     call her_main("......","angry","base")
                     call her_main("This is just not fair!","scream","worriedCl")
                     $ mad +=20
+                    
                     $ hg_pr_HandjobClassmate_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
@@ -568,8 +569,10 @@ label hg_pr_HandjobClassmate_complete:
     $ aftersperm = False #Shows stains on Hermione's uniform.
     
     $ hg_pr_HandjobClassmate_OBJ.points += 1
-    $ hg_pr_HandjobClassmate_OBJ.complete = True
     $ hg_pr_HandjobClassmate_OBJ.inProgress = False
+    
+    if hg_pr_HandjobClassmate_OBJ.points >= 2:
+        $ hg_pr_HandjobClassmate_OBJ.complete = True
     
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
     

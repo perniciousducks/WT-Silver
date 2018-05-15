@@ -43,15 +43,14 @@ label reset_wardrobe_vars:
 
 label return_to_wardrobe:
     if not wardrobe_active:
-        $ her_main_smooth_transition = True
-        call her_main("",xpos="wardrobe")
+        call her_main(xpos="wardrobe",ypos="base",trans="fade")
         $ wardrobe_active = 1
         call screen wardrobe
     else:
         $ wardrobe_active = 1
 
         if active_girl == "hermione":
-            call her_main("",xpos="wardrobe")
+            call her_main(xpos="wardrobe",ypos="base")
         #if active_girl == "luna":
         #    call lun_main("",xpos="wardrobe")
         #if active_girl == "astoria":
@@ -837,7 +836,19 @@ label equip_tattoo:
 
 ## Potions ##
 label use_potion:
-
+    if potion_choice == "universal_potion": #Potion that can be used day AND night!
+        hide screen wardrobe
+        call her_main(xpos="right",ypos="base",trans="fade")
+        menu:
+            "-Universal potion-"
+            "-Change Clothing Transparency-" if "transparency" in cs_existing_stock:
+                $ misc_item_choice = "transparency"
+                jump equip_misc_item
+            "-Never mind-":
+                jump return_to_wardrobe
+    else:
+        pass
+        
     if daytime:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")

@@ -10,9 +10,8 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
-    m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
-
     if hg_pr_SexWithClassmate_OBJ.points < 1:
+        m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass

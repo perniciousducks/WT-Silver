@@ -10,9 +10,8 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
-    m "{size=-4}(Tell her to flash her tits to one of her classmates?){/size}"
-
     if hg_pr_FlashClassmate_OBJ.points < 1:
+        m "{size=-4}(Tell her to flash her tits to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -149,6 +148,7 @@ label hg_pr_FlashClassmate_complete:
                 call her_main("Thank you, [genie_name]...","annoyed","worriedL")
                 her "..."
                 her "I'd better go now."
+                
                 $ hg_pr_FlashClassmate_OBJ.inProgress = False
                 jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
@@ -190,16 +190,16 @@ label hg_pr_FlashClassmate_complete:
             show screen blktone
             with d3
             $ sc34CG(3, 5)
-            call her_main("Yes I did, [genie_name].","annoyed","worriedL",xpos="right",ypos="base")
+            call her_main("Yes I did, [genie_name].","annoyed","worriedL",xpos="base",ypos="base")
             m "Good. Tell me more."
             $ sc34CG(3, 4)
             call her_main("Ehm... There is not much to tell, really...","open","base")
-            her "I spent the first half of the day with studying in the library..."
-            her "It is usually quite deserted during that time..."
-            her "Apart from me there was only one student..."
+            call her_main("I spent the first half of the day with studying in the library...")
+            call her_main("It is usually quite deserted during that time...")
+            call her_main("Apart from me there was only one student...")
             $ sc34CG(3, 6)
             call her_main("Some boy from \"Ravenclaw\"...","upset","closed")
-            her "So I waved to him and when he looked up at me..."
+            call her_main("So I waved to him and when he looked up at me...")
             $ sc34CG(3, 7)
             call her_main("I quickly pulled my shirt up...","angry","base")
             m "Good job."
@@ -214,8 +214,9 @@ label hg_pr_FlashClassmate_complete:
             call her_main("So I just gathered all my books and left...","angry","base")
             $ sc34CG(3, 6)
             m "I see..."
-            hide screen sccg
-            with d3
+            hide screen sccg 
+            show screen blktone
+            call her_main(xpos="right",ypos="base",trans="fade")
     
     #Second level event.
     elif whoring >= 12 and whoring < 15:
@@ -335,15 +336,17 @@ label hg_pr_FlashClassmate_complete:
             show screen blktone
             call her_main("I did [genie_name]...","base","base",xpos="right",ypos="base")
             m "I'm listening..."
+            hide screen hermione_main
+            with d3
             $ sc34CG(3, 5)
-            call her_main("Well... I had to spend a big portion of the day in the school library...","upset","wink")
-            her "So I didn't really have the time to perform your task properly, [genie_name]..."
+            call her_main("Well... I had to spend a big portion of the day in the school library...","upset","wink",xpos="base",ypos="base")
+            call her_main("So I didn't really have the time to perform your task properly, [genie_name]...")
             m "Hm...?"
             $ sc34CG(3, 6)
             call her_main("Instead I just made sure there were no teachers around...","angry","base")
             call play_music("playful_tension")# SEX THEME.
             $ sc34CG(3, 7)
-            her "Pulled my shirt up..."
+            call her_main("Pulled my shirt up...")
             call her_main("And then I just sat there like that for a while...","open","base")
             $ sc34CG(3, 12)
             call her_main("trying to get some studying done...","open","down")
@@ -359,14 +362,15 @@ label hg_pr_FlashClassmate_complete:
             m "How many people would you say saw your tits today, [hermione_name]?"
             $ sc34CG(3, 9)
             call her_main("Hard to say, [genie_name]...","open","base")
-            her "Two dozen boys or so I suppose..."
+            call her_main("Two dozen boys or so I suppose...")
             $ sc34CG(3, 12)
             call her_main("A few girls as well...","annoyed","worriedL")
             $ sc34CG(3, 11)
-            her "I think the school librarian may have seen me too..."
+            call her_main("I think the school librarian may have seen me too...")
             m "Hm... Well, I'd say that's a job well done."
             hide screen sccg 
-            with d3
+            show screen blktone
+            call her_main(xpos="right",ypos="base",trans="fade")
         
         #Event B
         elif one_out_of_three == 2:
@@ -454,7 +458,6 @@ label hg_pr_FlashClassmate_complete:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone
-    call her_chibi("hide")
     with d3
     
     call her_walk("mid","door",2)
@@ -480,8 +483,10 @@ label hg_pr_FlashClassmate_complete:
     call hide_blktone
 
     $ hg_pr_FlashClassmate_OBJ.points += 1
-    $ hg_pr_FlashClassmate_OBJ.complete = True
     $ hg_pr_FlashClassmate_OBJ.inProgress = False
+    
+    if hg_pr_FlashClassmate_OBJ.points >= 2:
+        $ hg_pr_FlashClassmate_OBJ.complete = True
     
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
     

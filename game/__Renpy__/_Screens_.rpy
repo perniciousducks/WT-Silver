@@ -283,8 +283,6 @@ screen r_p_u: # RAVENCLAW
 
 
     
-
-
 ### DUEL ###
 
 screen snape_defends:
@@ -292,28 +290,40 @@ screen snape_defends:
     zorder 7
 
 ### DAMAGE ###
+    
+screen minus_0:
+    add "minus_0" at Position(xpos=640+140, ypos=120)
+screen minus_50:
+    add "minus_50" at Position(xpos=640+140, ypos=120)
 screen minus_100:
     add "minus_100" at Position(xpos=640+140, ypos=120)
 
 screen minus_300:
     add "minus_300" at Position(xpos=640+140, ypos=120)
-    
-    
+screen minus_400:
+    add "minus_400" at Position(xpos=640+140, ypos=120)
 screen minus_500:
     add "minus_500" at Position(xpos=640+140, ypos=120)
     
-screen minus_0:
-    add "minus_0" at Position(xpos=640+140, ypos=120)
-
+    
+#GENIE HEALTH LOSS
 screen minus_0_genie:
-    add "minus_0" at Position(xpos=310+140, ypos=120)
-screen minus_400_genie:
-    add "minus_400" at Position(xpos=310+140, ypos=120)
+    add "minus_0" at Position(xpos=450, ypos=120)
 screen minus_50_genie:
-    add "minus_50" at Position(xpos=310+140, ypos=120)
-
+    add "minus_50" at Position(xpos=450, ypos=120)
+screen minus_100_genie:
+    add "minus_100" at Position(xpos=450, ypos=120)
+    
+screen minus_300_genie:
+    add "minus_300" at Position(xpos=450, ypos=120)
+screen minus_400_genie:
+    add "minus_400" at Position(xpos=450, ypos=120)
+screen minus_500_genie:
+    add "minus_500" at Position(xpos=450, ypos=120)
+    
+#GENIE HEALTH GAIN
 screen plus_300:
-    add "plus_300" at Position(xpos=310+140, ypos=120)
+    add "plus_300" at Position(xpos=450, ypos=120)
 
 
 

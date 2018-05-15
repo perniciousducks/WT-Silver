@@ -164,7 +164,7 @@ screen main_room_menu:
 
 ###MO SCREENS
 label stat_hermione:
-    $ hermione_xpos=400
+    $ hermione_xpos=540
     hide screen luna
     call updateHermioneWords
     call update_her_uniform
@@ -178,9 +178,10 @@ label stat_luna:
     jump day_main_menu
     
 screen select_stat_character(charName):
+    zorder 4
     $ indexSize = 0 # just update this after each button and copy the code bellow and the button will automaticlig find the correct position in the index. The icon image need to be 200*210 pixel
-    add "interface/stat_select/CharacterStats.png" xpos 0 ypos 0
-    text "-Character Select-" xpos 40 ypos 115 size 14 
+    add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
+    text "-Character Select-" xpos 40 ypos 100 size 14 
     
     imagebutton:
         xpos 40 + ( 85 * (indexSize%2))
@@ -201,7 +202,7 @@ screen select_stat_character(charName):
 
     
     if charName == "HERMIONE":
-        text charName xalign 0.8 ypos 75 size 24
+        text charName xalign 0.5 xpos 820 ypos 57 size 20
         
         text "-Whoring-" xalign 0.375 ypos 50+68 size 30 bold 0.2
         text "-Mood-" xalign 0.39 ypos 225+68 size 30 bold 0.2
@@ -211,16 +212,16 @@ screen select_stat_character(charName):
         text "-"+moodWord+"-" xalign 0.39 ypos 225+130 size 20
         text "-"+reputationWord+"-" xalign 0.375 ypos 400+130 size 20 
         
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+        add "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png" xpos 250 ypos 150
+        add "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png" xpos 250 ypos 325
+        add "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png" xpos 250 ypos 500
         
-        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 150
-        add LiveCrop((0, 0, (madValue*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 325
-        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 500
+        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/"+str(interface_color)+"/StatBar_Full.png") xpos 250 ypos 150
+        add LiveCrop((0, 0, (madValue*36), 600), "interface/stat_select/"+str(interface_color)+"/StatBar_Full.png") xpos 250 ypos 325
+        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/"+str(interface_color)+"/StatBar_Full.png") xpos 250 ypos 500
         
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+        #add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+        #add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
 
         imagebutton: # X
             xpos 1013
@@ -230,7 +231,7 @@ screen select_stat_character(charName):
             action [Hide("select_stat_character"), Hide("hermione_main"), Jump("day_main_menu")]
     
     elif charName == "LUNA":
-        text charName xalign 0.775 ypos 75 size 24
+        text charName xalign 0.5 xpos 820 ypos 57 size 20
         
         text "-Corruption-" xalign 0.375 ypos 50+ 68 size 30 bold 0.2
         text "-Dom points-" xalign 0.375 ypos 225+ 68 size 30 bold 0.2
@@ -241,12 +242,12 @@ screen select_stat_character(charName):
         text "-"+str(luna_sub)+"-" xalign 0.39 ypos 400+130 size 20 
         
         #When the max amount of the diffrent stats add the full bare with crop
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+        add "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png" xpos 250 ypos 150
+        add "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png" xpos 250 ypos 325
+        add "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png" xpos 250 ypos 500
         
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+        #add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+        #add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
         
         imagebutton: # X
             xpos 1013

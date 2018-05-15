@@ -1,0 +1,125 @@
+label cheats:
+    menu:
+        "-Hermione Cheats-":
+            label cheats_hermione:
+            menu:
+                "-Reset Hermione's mood-":
+                    $ mad = 0
+                    ">Hermione is no longer mad at you."
+                    jump cheats_hermione
+                "-Max Whoring-":
+                    $ whoring = 24
+                    ">Hermione is now a giant slut."
+                    jump cheats_hermione
+                    
+                "-Increase Whoring-":
+                    if whoring >= 24:
+                        ">Hermione's whoring is at the max level and can't be increased any further!"
+                    else:
+                        $ whoring += 1
+                        ">Hermione became more depraved..."
+                    jump cheats_hermione
+                "-Decrease Whoring-":
+                    if whoring <= 0:
+                        "Hermione's whoring can't be decreased any further!"
+                    else:
+                        $ whoring -= 1
+                        "Hermione recovered some of her dignity"
+                    jump cheats_hermione
+
+                "-Unlock public favours-":
+                    $ force_unlock_pub_favors = True
+                    $ touched_by_boy = True
+                    $ lock_public_favors = False
+                    ">Public favours unlocked!"
+                    jump cheats_hermione
+
+                "-Add all costumes-":
+                    python:
+                        for i in hermione_outfits_list:
+                            i.purchased = True
+                    ">All of Hermione's costumes have been unlocked"
+                    jump cheats
+
+                "-Toggle Breast Expansion-":
+                    if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts:
+                        $ hermione_perm_expand_breasts = False
+                        $ hermione_expand_breasts = False
+                        $ hermione_perm_expand = False
+                        "Hermione's breasts shrink..."
+                    else:
+                        $ hermione_perm_expand_breasts = True
+                        "Hermione's breasts grow..."
+                    jump cheats
+
+                "-Toggle Futa Hermione-":
+                    if hermione_futa:
+                        $ hermione_futa = False
+                        "Hermione's cock shrinks away..."
+                    else:
+                        $ hermione_futa = True
+                        "Hermione's grows a... dick!"
+                    jump cheats
+                "-never mind-":
+                    jump cheats
+
+        "-Luna Cheats-":
+            label cheats_luna:
+            menu:
+                "-Reset ALL Luna content-":
+                    $ hat_known = False
+                    call luna_init
+                    ">Luna content reset!"
+                    jump cheats
+                "-never mind-":
+                    jump cheats
+
+        "-Book Cheats-":
+            label cheats_books:
+            menu:
+                "-Max Imagination":
+                    $ imagination = 5
+                    "Your imagination grows!"
+                    jump cheats_books
+                "-Cheat Reading (off)-" if not cheat_reading:
+                    $ cheat_reading = True
+                    jump cheats_books
+                "-Cheat Reading (on)-"if cheat_reading:
+                    $ cheat_reading = False
+                    jump cheats_books
+                "-All Books-" if day >= 16:
+                    python:
+                        for i in book_list:
+                            i.purchased = True
+                    "Obtained All Books."
+                    jump cheats_books
+                "-never mind-":
+                    jump cheats
+
+        "-Potion Cheats-":
+            label cheats_potions:
+            menu:
+                "-Add all normal potions-":
+                    $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion", "Hypno Potion"] #all potions
+                    ">All potions added (Does not include Snape's potions)"
+                    jump cheats_potions
+                "-never mind-":
+                    jump cheats
+
+        "-Add Gold-":
+            $ gold += 500
+            "You've obtained 500g."
+            jump cheats
+
+        "-Add Slytherin Points-":
+            $ slytherin +=100
+            "100 points to Slytherin!"
+            jump cheats
+
+        "-Map-":
+            "Map added to inventory!"
+            $ cataloug_found = True
+            jump cheats
+
+        "-Never mind-":
+            jump day_main_menu

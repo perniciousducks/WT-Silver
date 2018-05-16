@@ -21,6 +21,7 @@ label your_whore:
     call update_her_hair
 
     #Hermione Clothes
+    $ transparency             = 1 #Disabled
     $ h_neckwear               = "00_blank"
     $ hermione_body_accs_list  = []
     $ h_gloves                 = "00_blank"

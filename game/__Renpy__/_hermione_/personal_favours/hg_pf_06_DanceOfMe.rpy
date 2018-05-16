@@ -1525,6 +1525,7 @@ label hg_pf_DanceForMe:
                             hide screen no_shirt_no_skirt_dance
                             show screen chair_02
                             call gen_chibi("jerking_off","behind_desk","base")
+                            hide screen desk
                             show screen desk
                             call her_chibi("dance","on_desk","on_desk")
                             hide screen blktone

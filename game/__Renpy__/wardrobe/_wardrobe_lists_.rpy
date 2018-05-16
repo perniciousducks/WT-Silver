@@ -548,8 +548,8 @@ label update_wr_miscellaneous_list:
 
         #Piercings
         if whoring >= 5:
-            $ wr_piercings_list.append("ears_gold")
-            $ wr_piercings_list.append("ears_heart")
+            $ wr_piercings_list.append("ears_hearts_large")
+            $ wr_piercings_list.append("ears_hearts")
             $ wr_piercings_list.append("ears_pearls")
 
         if whoring >= 23:

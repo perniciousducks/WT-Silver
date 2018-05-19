@@ -87,7 +87,9 @@ label snape_chitchat:
             call sna_main("I was never full of hope...","snape_29")
 
         elif one_of_ten == 6:
-            call sna_main("Duelling is one of my fortes, you know...","snape_09")
+            call sna_main("Someone broke into my personal storage...","snape_16")
+            call sna_main("Only took some gillyweed... lucky they didn't take any of my amorentia.","snape_29")
+            call sna_main("Not that I need or use such things.","snape_09")
 
         elif one_of_ten == 7:
             call sna_main("A \"Men's rights movement\"...?","snape_05")

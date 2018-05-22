@@ -3,38 +3,39 @@
 label astoria_init:
 
     #Body
-    $ cc_base                = "characters/astoria/base/base_01.png" 
-    $ cc_arms                = "characters/astoria/base/side_arms.png" 
-    $ cc_l_hand              = "characters/astoria/base/left_hand.png" 
-    $ cc_hair                = "characters/astoria/base/hair_01.png" 
-    $ cc_hair_shadow         = "characters/astoria/base/hair_shadow.png" 
-    $ cc_xpos                = 300
-    $ cc_ypos                = 0
-    $ cc_zorder              = 5
+    $ astoria_base                = "characters/astoria/body/base/base_01.png" 
+    $ astoria_l_arm               = "characters/astoria/body/arms/hip_l.png" 
+    $ astoria_r_arm               = "characters/astoria/body/arms/hip_r.png" 
+    $ astoria_l_hand              = "characters/astoria/body/arms/hip_l_top.png" 
+    $ astoria_r_hand              = "characters/astoria/body/arms/hip_r_top.png" 
+    $ astoria_hair                = "characters/astoria/body/hair/hair_1_base.png" 
+    $ astoria_hair_shadow         = "characters/astoria/body/hair/hair_1_top.png" 
+    $ astoria_xpos                = 300
+    $ astoria_ypos                = 0
+    $ astoria_zorder              = 5
 
     #Face
-    $ cc_mouth               = "characters/astoria/mouth/mouth_01.png" 
-    $ cc_eye                 = "characters/astoria/eye/eye_01.png" 
-    $ cc_eyebrow             = "characters/astoria/eye/eyebrow_01.png" 
-    $ cc_pupil               = "characters/astoria/eye/pupil_01.png" 
-    $ cc_tears               = "characters/astoria/tears/tears_0.png" 
+    $ astoria_mouth               = "characters/astoria/face/mouth/c_smile.png" 
+    $ astoria_eye                 = "characters/astoria/face/eyes/eye_averted.png" 
+    $ astoria_eyebrow             = "characters/astoria/face/eyes/brow_averted.png" 
+    $ astoria_pupil               = "characters/astoria/face/eyes/pupil_averted.png" 
+    $ astoria_tears               = "characters/astoria/extras/blank.png" 
+    $ astoria_blush               = "characters/astoria/extras/blank.png"
 
     #Clothes
-    $ cc_vest                = "characters/astoria/clothes/uniform/vest.png" 
-    $ cc_top                 = "characters/astoria/clothes/uniform/top.png" 
-    $ cc_acc                 = "characters/astoria/clothes/uniform/tie.png" 
-    $ cc_skirt               = "characters/astoria/clothes/uniform/skirt.png" 
-    $ cc_stock               = "characters/astoria/clothes/uniform/stockings.png" 
-    $ cc_bra                 = "characters/astoria/clothes/workout/bra.png" 
-    $ cc_panties             = "characters/astoria/clothes/workout/panties.png" 
+    $ astoria_top                 = "characters/astoria/clothes/uniform/shirt_1.png" 
+    $ astoria_acc                 = "characters/astoria/clothes/blank.png" 
+    $ astoria_skirt               = "characters/astoria/clothes/uniform/skirt_1.png" 
+    $ astoria_stock               = "characters/astoria/clothes/blank.png" 
+    $ astoria_bra                 = "characters/astoria/clothes/underwear/lace_bra.png" 
+    $ astoria_panties             = "characters/astoria/clothes/underwear/lace_panties.png" 
 
-    $ cc_wear_top            = True
-    $ cc_wear_bra            = True
-    $ cc_wear_skirt          = True
-    $ cc_wear_panties        = True
-    $ cc_wear_stockings      = True 
-    $ cc_wear_vest           = True
-    $ cc_wear_acc            = True
+    $ astoria_wear_top            = True
+    $ astoria_wear_bra            = True
+    $ astoria_wear_skirt          = True
+    $ astoria_wear_panties        = True
+    $ astoria_wear_stockings      = True 
+    $ astoria_wear_acc            = True
 
     return
 
@@ -46,7 +47,7 @@ label astoria_progress_init:
 
     ##Stats
     $ astoria_spell_progress = 0
-    $ astoria_spell = "imperio"
+    $ astoria_spell = 1 #Imperio
     $ astoria_points = 0
 
     ##Flags

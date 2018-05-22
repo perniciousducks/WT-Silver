@@ -120,6 +120,7 @@ label update_wr_head_list:
         $ wr_hair.append("E")
 
         #Makeup
+        $ wr_makeup.append("lipstick")
         if "freckles" in cs_existing_stock:
             $ wr_makeup.append("freckles")
         if "fake_cum" in cs_existing_stock:
@@ -561,8 +562,7 @@ label update_wr_miscellaneous_list:
         if "Transparency Potion" in p_inv:
             $ wr_potions_list.append("clothes_potion")
 
-        #Items #Lipstick, Butt-plugs, Gags,...
-        $ wr_items_list.append("lipstick")
+        #Items #Butt-plugs, Gags, Brooms,...
         
         #Piercings
         if whoring >= 5:

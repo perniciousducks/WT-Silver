@@ -938,14 +938,14 @@ label use_potion:
 
         
 ## Items and Toys ##
-label use_item:
+label use_item: #Not in use.
     hide screen wardrobe
     call her_main(xpos="right",ypos="base",trans="fade")
-    if item_choice == "lipstick":
+    if item_choice == "buttplug":
         menu:
-            "-Change Lipstick Colour-"
-            "-Red Lipstick-" if reward_her_red_lipstick: #Hypno potion event.
-                $ misc_item_choice = "red_lipstick"
+            "-Buttplug Menu-"
+            "-Small Buttplug-": #Hypno potion event.
+                $ misc_item_choice = "small_buttplug"
                 jump equip_misc_item
             "-Never mind-":
                 jump return_to_wardrobe

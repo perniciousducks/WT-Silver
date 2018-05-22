@@ -18,12 +18,11 @@ label equip_her_misc_item:
 
     if mad >= 1:
         jump equipping_failed
-
-    elif whoring <= 11:
-        jump too_much
         
     else:
         if misc_item_choice == "transparency":
+            if whoring <= 11:
+                jump too_much
     
             $ wardrobe_active = 0 #activates dissolve in her_main 
 
@@ -65,4 +64,33 @@ label equip_her_misc_item:
                 call update_her_uniform #Updates clothing and body.
                 
             jump return_to_wardrobe
+            
+        if misc_item_choice == "red_lipstick":
            
+            $ wardrobe_active = 0 #activates dissolve in her_main 
+
+            if h_lipstick == "nude":
+                call her_main("You want me to put on lipstick?","normal","worriedCl")
+                call her_main("Really, [genie_name]!","scream","angryCl")
+                m "Just a little bit."
+            
+                call her_main("Alright then...","base","glance")
+                hide screen hermione_main
+                with d5
+                
+                $ h_lipstick = "red"
+            
+                call update_her_uniform #Updates clothing and body.
+            
+            else:
+                call her_main("You want me to take the lipstick off?","annoyed","ahegao")
+                call her_main("Alright then...","annoyed","down")
+                hide screen hermione_main
+                with d5
+                
+                $ h_lipstick = "nude"
+            
+                call update_her_uniform #Updates clothing and body.
+                
+            jump return_to_wardrobe
+            

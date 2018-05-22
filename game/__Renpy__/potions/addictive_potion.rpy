@@ -539,6 +539,7 @@ label potion_scene_8: #Hypno potion
     
     #Setting up Bimbo clothes.
     $ h_hair_color = 2 #Blonde
+    $ h_lipstick = "red"
     
     $ h_request_wear_top = True
     $ h_top = "uni_top_5"
@@ -788,6 +789,9 @@ label potion_scene_8: #Hypno potion
     call her_walk("desk","leave",2.5)
     
     m "(Maybe I should have told her to get dressed first...)"
+    
+    $ reward_her_red_lipstick = True #Unlocks red lipstick
+    call give_reward(">Hermione can now use red lipstick!","images/store/lipstick.png") #Need lipstick shop image!
     
     call reset_hermione_main
     

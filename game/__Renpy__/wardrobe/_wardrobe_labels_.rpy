@@ -936,6 +936,23 @@ label use_potion:
 
         jump return_to_wardrobe
 
+        
+## Items and Toys ##
+label use_item:
+    hide screen wardrobe
+    call her_main(xpos="right",ypos="base",trans="fade")
+    if item_choice == "lipstick":
+        menu:
+            "-Change Lipstick Colour-"
+            "-Red Lipstick-" if reward_her_red_lipstick: #Hypno potion event.
+                $ misc_item_choice = "red_lipstick"
+                jump equip_misc_item
+            "-Never mind-":
+                jump return_to_wardrobe
+
+        jump return_to_wardrobe
+    
+    
     
 ### UNDERWEAR SECTION ###
 

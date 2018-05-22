@@ -1015,10 +1015,10 @@ screen wardrobe():
             hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
             add "images/store/32.png" xpos 0 ypos 90 zoom 0.3
             text "Potions" xpos 76 ypos 140+75 size 10
-            #
-            #hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",1),Show("wardrobe")]
-            #add "" xpos 0+90 ypos 90 zoom 0.3
-            #text "" xpos 76+90 ypos 140+75 size 10
+            #Items and Toys
+            hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",1),Show("wardrobe")]
+            add "images/store/gifts/15.png" xpos 0+90 ypos 90 zoom 0.3
+            text "Items" xpos 76+90 ypos 140+75 size 10
             #
             #hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",2),Show("wardrobe")]
             #add "" xpos 0+180 ypos 90 zoom 0.3
@@ -1057,9 +1057,17 @@ screen wardrobe():
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("potion_choice",(wr_potions_list[i])), Jump("use_potion")]
                     add "interface/wardrobe/icons/potions/"+wr_potions_list[i]+".png" xpos 65+(90*col) ypos (138+92+(92*row)) zoom 0.8
 
-            ## 
-            #if wardrobe_accessories_category == 1:
-            #    hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
+            ## Items Category ##
+            if wardrobe_accessories_category == 1:
+                hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
+                add "images/store/gifts/15.png" xpos 0+90 ypos 90 zoom 0.3
+                text "Items" xpos 76+90 ypos 140+75 size 10
+                for i in range(0,len(wr_items_list)):
+                    $ row = i // 5
+                    $ col = i % 5
+
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("item_choice",(wr_items_list[i])), Jump("use_item")]
+                    add "interface/wardrobe/icons/items/"+wr_items_list[i]+".png" xpos 0+(90*col) ypos (90+92+(92*row)) zoom 0.3
 
             ## 
             #if wardrobe_accessories_category == 2:

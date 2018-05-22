@@ -539,13 +539,31 @@ label update_wr_outfits_list:
 ### Miscellaneous List ###
 label update_wr_miscellaneous_list:
 
+    $ wr_potions_list = []
+    $ wr_items_list = []
     $ wr_piercings_list = []
     $ wr_tattoos_list = []
-    $ wr_potions_list = []
 
 
     if active_girl == "hermione":
+  
+        #Potions
+        $ wr_potions_list.append("universal_potion") #Potion that can be used day AND night!
+        
+        if "Polyjuice Potion" in p_inv or "Cat Transformation Potion" in p_inv or "Luna Transformation Potion" or "Clone Potion" in p_inv:
+            $ wr_potions_list.append("polyjuice_potion")
+        if "Expanding Elixir" in p_inv or "Breast Expansion Potion" in p_inv or "Ass Expansion Potion" in p_inv:
+            $ wr_potions_list.append("expanding_elixir")
+        if "Milk Potion" in p_inv:
+            $ wr_potions_list.append("milk_potion")
+        if "Cum Addiction Potion" in p_inv or "Hypno Potion" in p_inv:
+            $ wr_potions_list.append("love_potion")
+        if "Transparency Potion" in p_inv:
+            $ wr_potions_list.append("clothes_potion")
 
+        #Items #Lipstick, Butt-plugs, Gags,...
+        $ wr_items_list.append("lipstick")
+        
         #Piercings
         if whoring >= 5:
             $ wr_piercings_list.append("ears_hearts_large")
@@ -584,21 +602,7 @@ label update_wr_miscellaneous_list:
             $ wr_tattoos_list.append("pubic/cunt")
             $ wr_tattoos_list.append("pubic/mudblood")
             $ wr_tattoos_list.append("pubic/punk_mudblood")
-            
-        #Potions
-        $ wr_potions_list.append("universal_potion") #Potion that can be used day AND night!
-        
-        if "Polyjuice Potion" in p_inv or "Cat Transformation Potion" in p_inv or "Luna Transformation Potion" or "Clone Potion" in p_inv:
-            $ wr_potions_list.append("polyjuice_potion")
-        if "Expanding Elixir" in p_inv or "Breast Expansion Potion" in p_inv or "Ass Expansion Potion" in p_inv:
-            $ wr_potions_list.append("expanding_elixir")
-        if "Milk Potion" in p_inv:
-            $ wr_potions_list.append("milk_potion")
-        if "Cum Addiction Potion" in p_inv or "Hypno Potion" in p_inv:
-            $ wr_potions_list.append("love_potion")
-        if "Transparency Potion" in p_inv:
-            $ wr_potions_list.append("clothes_potion")
-
+          
     #if active_girl == "luna":
 
     #if active_girl == "astoria":

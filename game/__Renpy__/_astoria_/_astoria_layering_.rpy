@@ -65,11 +65,11 @@ init python:
         if eye is not None:
             astoria_eye         = "characters/astoria/face/eyes/eye_"+eye+".png" 
         if eyebrow is not None:
-            astoria_eyebrow     = "characters/astoria/face/eyes/eyebrow_"+eyebrow+".png" 
+            astoria_eyebrow     = "characters/astoria/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:
             astoria_pupil       = "characters/astoria/face/eyes/pupil_"+pupil+".png" 
         if mouth is not None:
-            astoria_mouth       = "characters/astoria/face/mouth/mouth_"+mouth+".png" 
+            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
         ###POSITION CONTROL
         if x_pos is not None:
             astoria_xpos        = x_pos

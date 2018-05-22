@@ -4,6 +4,7 @@ label susan_init:
 
     #Body
     $ susan_base                = "characters/susan/body/base/base_01.png" 
+    $ susan_boobs               = "characters/susan/body/base/boobs_0.png" 
     $ susan_l_arm               = "characters/susan/body/arms/l_arm_back.png" 
     $ susan_r_arm               = "characters/susan/body/arms/r_arm_thigh.png" 
     $ susan_hair                = "characters/susan/body/hair/hair_1_base.png" 

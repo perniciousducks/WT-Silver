@@ -4,6 +4,7 @@ screen susan_bones:
     add susan_r_arm xpos susan_xpos ypos susan_ypos #Add the arms
     add susan_hair xpos susan_xpos ypos susan_ypos #Add the hair base
     add susan_base xpos susan_xpos ypos susan_ypos #Add the base body
+    add susan_boobs xpos susan_xpos ypos susan_ypos #Add the base body
     ### EMOTIONS
     add susan_eye xpos susan_xpos ypos susan_ypos #Add the eye outline
     add susan_pupil xpos susan_xpos ypos susan_ypos #Add the pupil

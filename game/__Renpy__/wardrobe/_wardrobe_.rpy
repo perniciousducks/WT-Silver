@@ -389,7 +389,7 @@ screen wardrobe():
                 text "{color=#858585}Piercings{/color}" xpos 688 ypos 124+100 size 10          #grayed out
 
             ## Tattoos Toggle ##
-            if whoring >= 12:
+            if whoring >= 6:
                 hotspot (667,120+125,18,18) clicked [SetVariable("toggle_obj","tattoos"), Jump("her_tattoos_toggle")]
                 if hermione_wear_tattoos:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+125 #ypos-5 of hotspot ypos
@@ -1019,18 +1019,18 @@ screen wardrobe():
             #hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",1),Show("wardrobe")]
             #add "" xpos 0+90 ypos 90 zoom 0.3
             #text "" xpos 76+90 ypos 140+75 size 10
+            #
+            #hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",2),Show("wardrobe")]
+            #add "" xpos 0+180 ypos 90 zoom 0.3
+            #text "" xpos 76+180 ypos 140+75 size 10
             #Piercings
-            hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",2),Show("wardrobe")]
-            add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+180 ypos -120
-            text "Piercings" xpos 76+180 ypos 140+75 size 10
-            #Tattoos
             hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",3),Show("wardrobe")]
             add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+270 ypos -120
-            text "Tattoos" xpos 76+270 ypos 140+75 size 10
-            #
-            #hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",4),Show("wardrobe")]
-            #add "" xpos 0+360 ypos 90 zoom 0.3
-            #text "" xpos 76+360 ypos 140+75 size 10
+            text "Piercings" xpos 76+270 ypos 140+75 size 10
+            #Tattoos
+            hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",4),Show("wardrobe")]
+            add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+360 ypos -120
+            text "Tattoos" xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
             #if wardrobe_accessories_category == 3:
@@ -1059,25 +1059,29 @@ screen wardrobe():
 
             ## 
             #if wardrobe_accessories_category == 1:
-                hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
+            #    hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
+
+            ## 
+            #if wardrobe_accessories_category == 2:
+            #    hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
 
             ##  Piercings ##
-            if wardrobe_accessories_category == 2:
-                hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+180 ypos -120
-                text "Piercings" xpos 76+180 ypos 140+75 size 10
+            if wardrobe_accessories_category == 3:
+                hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+270 ypos -120
+                text "Piercings" xpos 76+270 ypos 140+75 size 10
                 for i in range(0,len(wr_piercings_list)):
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("piercing_choice",(wr_piercings_list[i])), Jump("equip_piercing")]
-                    add "characters/"+str(active_girl)+"/accessories/piercings/"+wr_piercings_list[i]+".png" xpos 15+(90*col) ypos (70+92+(92*row)) zoom 0.35
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("piercing_color_choice","base"),SetVariable("piercing_choice",(wr_piercings_list[i])), Jump("equip_piercing")] #ADD Piercing Color (replase "base")
+                    add "characters/"+str(active_girl)+"/accessories/piercings/base/"+wr_piercings_list[i]+".png" xpos 15+(90*col) ypos (70+92+(92*row)) zoom 0.35                                      #ADD Piercing Color (replase /base/)
 
             ##  Tattoos ##
-            if wardrobe_accessories_category == 3:
-                hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+270 ypos -120
-                text "Tattoos" xpos 76+270 ypos 140+75 size 10
+            if wardrobe_accessories_category == 4:
+                hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+360 ypos -120
+                text "Tattoos" xpos 76+360 ypos 140+75 size 10
                 for i in range(0,len(wr_tattoos_list)):
                     $ row = i // 5
                     $ col = i % 5
@@ -1085,20 +1089,6 @@ screen wardrobe():
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("tattoo_choice",(wr_tattoos_list[i])), Jump("equip_tattoo")]
                     add "characters/"+str(active_girl)+"/body/tattoos/"+wr_tattoos_list[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35
 
-            ##
-            #if wardrobe_accessories_category == 4:
-                hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
-
-
-                #if "transparency" in cs_existing_stock:
-                #    hotspot (75, 140+92, 83, 85) clicked [SetVariable("wardrobe_acc_item",8),Jump("wardrobe_give_acc")]
-                #    add "images/store/32.png" xpos 0 ypos 90+92 zoom 0.3
-                #    text "Transparency" xpos 76 ypos 140+75+92 size 10
-
-                #if "pubic_hair_potion" in cs_existing_stock: #not added
-                #    hotspot (75+90, 140+92, 83, 85) clicked Jump("change_pubic_hair")
-                #    add "images/store/32.png" xpos 0+90 ypos 90+92 zoom 0.3
-                #    text "Pubic Hair" xpos 76+90 ypos 140+75+92 size 10
 
 
 ## Wardrobe Underwear ##
@@ -1314,19 +1304,19 @@ screen wardrobe():
 
             hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
             add "images/store/gifts/2.png" xpos 0 ypos 90 zoom 0.3      #Gifts
-            text "Sweets" xpos 76 ypos 140+75 size 10
+            text "Gifts" xpos 76 ypos 140+75 size 10
 
-            hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",1),Show("wardrobe")]
-            add "images/store/gifts/7.png" xpos 0+90 ypos 90 zoom 0.3  #Magazines
-            text "Magazines" xpos 76+90 ypos 140+75 size 10
+            #hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",1),Show("wardrobe")]
+            #add "images/store/gifts/7.png" xpos 0+90 ypos 90 zoom 0.3  #Magazines
+            #text "Magazines" xpos 76+90 ypos 140+75 size 10
 
-            hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",2),Show("wardrobe")]
-            add "images/store/gifts/4.png" xpos 0+180 ypos 90 zoom 0.3  #Beverage
-            text "Beverages" xpos 76+180 ypos 140+75 size 10
+            #hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",2),Show("wardrobe")]
+            #add "images/store/gifts/4.png" xpos 0+180 ypos 90 zoom 0.3  #Beverage
+            #text "Beverages" xpos 76+180 ypos 140+75 size 10
 
-            hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",3),Show("wardrobe")]
-            add "images/store/gifts/3.png" xpos 0+270 ypos 90 zoom 0.3 #Sex Toys
-            text "Toys" xpos 76+270 ypos 140+75 size 10
+            #hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",3),Show("wardrobe")]
+            #add "images/store/gifts/3.png" xpos 0+270 ypos 90 zoom 0.3 #Sex Toys
+            #text "Toys" xpos 76+270 ypos 140+75 size 10
 
             hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",4),Show("wardrobe")]
             add "images/store/01.png" xpos 0+360 ypos 90 zoom 0.3
@@ -1336,7 +1326,7 @@ screen wardrobe():
             if wardrobe_gifts_category == 0:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
                 add "images/store/gifts/2.png" xpos 0 ypos 90 zoom 0.3      #Gifts
-                text "Sweets" xpos 76 ypos 140+75 size 10
+                text "Gifts" xpos 76 ypos 140+75 size 10
 
                 for i in range(0,18): #0,18
                     $ row = i // 5    #6
@@ -1347,22 +1337,22 @@ screen wardrobe():
                     text str(gift_item_inv[i]) xpos 75+(90*col) ypos (210+92+(92*row))
 
             #Magazines
-            if wardrobe_gifts_category == 1: 
-                hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]   
-                add "images/store/gifts/7.png" xpos 0+90 ypos 90 zoom 0.3  #Magazines
-                text "Magazines" xpos 76+90 ypos 140+75 size 10
+            #if wardrobe_gifts_category == 1: 
+            #    hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]   
+            #    add "images/store/gifts/7.png" xpos 0+90 ypos 90 zoom 0.3  #Magazines
+            #    text "Magazines" xpos 76+90 ypos 140+75 size 10
 
             #Beverages
-            if wardrobe_gifts_category == 2:
-                hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
-                add "images/store/gifts/4.png" xpos 0+180 ypos 90 zoom 0.3  #Beverage
-                text "Beverages" xpos 76+180 ypos 140+75 size 10
+            #if wardrobe_gifts_category == 2:
+            #    hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
+            #    add "images/store/gifts/4.png" xpos 0+180 ypos 90 zoom 0.3  #Beverage
+            #    text "Beverages" xpos 76+180 ypos 140+75 size 10
 
             #Toys
-            if wardrobe_gifts_category == 3:
-                hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
-                add "images/store/gifts/3.png" xpos 0+270 ypos 90 zoom 0.3 #Sex Toys
-                text "Toys" xpos 76+270 ypos 140+75 size 10
+            #if wardrobe_gifts_category == 3:
+            #    hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
+            #    add "images/store/gifts/3.png" xpos 0+270 ypos 90 zoom 0.3 #Sex Toys
+            #    text "Toys" xpos 76+270 ypos 140+75 size 10
 
             #Quest Items
             if wardrobe_gifts_category == 4:

@@ -10,9 +10,8 @@ label hg_pr_FlirtClassmate:
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
-    m "{size=-4}(Ask her to go flirt with some boys from \"Slytherin\"?){/size}"
-
     if hg_pr_FlirtClassmate_OBJ.points < 1:
+        m "{size=-4}(Ask her to go flirt with some boys from \"Slytherin\"?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -138,6 +137,8 @@ label hg_pr_FlirtClassmate_complete:
                             call her_main("I understand...","normal","frown")
                             m "Get out of my sight..."
                             call her_main("Yes, [genie_name]...Sorry, [genie_name]...","annoyed","frown")
+                            
+                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
                 
                 #Event B
@@ -175,6 +176,8 @@ label hg_pr_FlirtClassmate_complete:
                             $ mad +=15
                             call her_main("But, you promised!","angry","base",tears="soft")
                             call her_main("................","mad","worriedCl",tears="soft_blink")
+                            
+                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
                 
                 #Event C
@@ -199,6 +202,8 @@ label hg_pr_FlirtClassmate_complete:
                         "\"Favour failed! No points for you!\"":
                             stop music fadeout 1.0
                             call her_main("I don't feel like I deserved any this time anyway...","annoyed","angryL")
+                            
+                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
             
             #Second Level.
@@ -384,6 +389,8 @@ label hg_pr_FlirtClassmate_complete:
                             m "No one is forcing you, [hermione_name]."
                             m "You are free to leave."
                             call her_main("{size=-4}(Stubborn old man!){/size}","angry","angry")
+                            
+                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
             
     $ gryffindor +=5
@@ -395,7 +402,7 @@ label hg_pr_FlirtClassmate_complete:
     
     if whoring <= 2:
         $ whoring +=1
-    if whoring >= 2:
+    if whoring >= 2 and hg_pr_FlirtClassmate_OBJ.points >= 2:
         $ hg_pr_FlirtClassmate_OBJ.complete = True
        
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.

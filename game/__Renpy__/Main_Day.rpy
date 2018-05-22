@@ -25,7 +25,6 @@ $ save_name = temp_name
 
 call luna_day_flags
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
-$ autograph     = False #Displays professor Lockhart's autograph on Hermione's leg.
 $ no_blinking   = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ aftersperm    = False #Shows cum stains on Hermione's uniform.
@@ -52,41 +51,11 @@ hide screen bld1
 hide screen blktone
 hide screen blkfade
 
-if whoring >=  0 and whoring <  3:
-    $ level = "01"
-if whoring >=  3 and whoring <  6:
-    $ level = "02"
-if whoring >=  6 and whoring <  9:
-    $ level = "03"
-if whoring >=  9 and whoring < 12:
-    $ level = "04"
-if whoring >= 12 and whoring < 15:
-    $ level = "05"
-
-if whoring >= 15 and whoring < 18:
-    $ level = "06"
-
-if whoring >= 18 and whoring < 21:
-    $ level = "07"
-
-if whoring >= 21 and whoring < 24:
-    $ level = "08"
-
-if whoring >= 24 and whoring < 27:
-    $ level = "09"
-
-if whoring >= 27 and whoring < 30:
-    $ level = "10"
 
 if whoring >= 12 and not touched_by_boy and not force_unlock_pub_favors: #Turns true if sent Hermione to get touched by a boy at least once.
     $ lock_public_favors = True #Turns True if reached whoring level 05 while public event "Touched by boy" never attempted. Locks public events.
 else:
     $ lock_public_favors = False
-
-if imagination == 5 and whoring >= 24 and not lock_public_favors: #Unlocks blowjob/sex with teacher personal favours.
-    $ imagination = 6
-
-call update_hints
 
 $ generating_snape_bonus = renpy.random.randint(1, 2) #Determines whether ot not Snape bonus will be added to the Slytherin house.
 $ generating_points = renpy.random.randint(1, 2) #Determines whether or not point will be awarded to Slytherin on this day. # MAKE NO CHANGES HERE. BEING USED AS "ONE_OUT_OF_TWO".
@@ -244,7 +213,7 @@ show screen fireplace
 show screen phoenix
 show screen candle_01
 show screen candle_02
-
+show screen genie
 
 
 ### DAY MAIL ###
@@ -262,8 +231,6 @@ if outfit_order_placed and not outfit_ready:
 if package_is_here:
     play sound "sounds/owl.mp3"  #Quiet...
     show screen package
-
-show screen genie
 
 if got_mail or mail_from_her or letters >= 1:
     play sound "sounds/owl.mp3"  #Quiet...
@@ -295,6 +262,17 @@ if (day >= 8 or day >= 12) and hermione_is_waiting_01 and not event09:
                   #Takes place after first special event with Snape, where he just complains about Hermione.
 if event13_happened and not event14_happened:
     call event_14 #Returns
+
+if whoring == 11 and not touched_by_boy:
+    call nar("!!! Attention !!!","start")
+    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
+    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
+    call nar(">You should also save your game here.","end")
+    menu:
+        "-Understood-":
+            pass
+        "-Don't tell me what to do!-":
+            pass
 
 if whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
     call want_to_rule #Returns
@@ -346,6 +324,7 @@ if collar == 5:
 #Random Number for Tip/Fact of the Day
 $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
 call update_quests
+call update_hints
 
 
 call Day_Request_Block

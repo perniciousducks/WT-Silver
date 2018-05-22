@@ -10,9 +10,8 @@ label hg_pr_ClassmateTouchYou:
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
-    m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
-
     if hg_pr_ClassmateTouchYou_OBJ.points < 1:
+        m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -318,30 +317,37 @@ label hg_pr_ClassmateTouchYou_complete:
                     call her_main("I really hate professor Snape, [genie_name]...","angry","angry")
                     m "What happened then?"
                     call her_main("Nothing...","open","down")
+                    
                     call play_music("playful_tension")# SEX THEME.
+                    hide screen hermione_main
+                    with d3
                     $ sc34CG(2, 19, 6, 5)
-                    her "But when the class was over..."
-                    her "These two nasty-looking boys from \"Slytherin\" cornered me..."
-                    her "Actually they weren't mean to me or anything..."
-                    her "So we just waited for everyone to leave the classroom..."
+                    
+                    call her_main("But when the class was over...",xpos="base",ypos="base")
+                    call her_main("These two nasty-looking boys from \"Slytherin\" cornered me...")
+                    call her_main("Actually they weren't mean to me or anything...")
+                    call her_main("So we just waited for everyone to leave the classroom...")
                     $ sc34CG(2, 16, 6, 9)
+                    call ctc
+                    
                     call her_main("And then I let them touch me...","angry","base")
                     $ sc34CG(2, 17, 6, 9)
-                    her "They touched me everywhere, [genie_name]..."
+                    call her_main("They touched me everywhere, [genie_name]...")
                     m "\"Everywhere\", huh?"
-                    her "Yes... Everywhere, [genie_name]..."
+                    call her_main("Yes... Everywhere, [genie_name]...","soft","ahegao")
                     call her_main("There were hands under my skirt, under my shirt...","base","glance")
                     $ sc34CG(2, 16, 6, 9)
-                    her "And then I started to breathe heavily..."
+                    call her_main("And then I started to breathe heavily...")
                     call her_main("So one of them just put his hand over my mouth...","soft","ahegao")
                     her "And their hands were so... thorough..." 
                     $ sc34CG(2, 17, 6, 9)
-                    her "My head started to spin..."
+                    call her_main("My head started to spin...")
                     $ sc34CG(2, 16, 6, 9)
                     call her_main("It was most exhilarating, [genie_name].","base","glance")
                     m "Very good, [hermione_name]. Very good indeed."
+                    
                     hide screen sccg
-                    with d3
+                    call her_main(xpos="right",ypos="base",trans="fade")
                     
                 #Event B
                 if one_out_of_three == 2:
@@ -400,8 +406,10 @@ label hg_pr_ClassmateTouchYou_complete:
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
     
     $ hg_pr_ClassmateTouchYou_OBJ.points += 1
-    $ hg_pr_ClassmateTouchYou_OBJ.complete = True
     $ hg_pr_ClassmateTouchYou_OBJ.inProgress = False
+    
+    if hg_pr_ClassmateTouchYou_OBJ.points >= 2:
+        $ hg_pr_ClassmateTouchYou_OBJ.complete = True
     
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
     

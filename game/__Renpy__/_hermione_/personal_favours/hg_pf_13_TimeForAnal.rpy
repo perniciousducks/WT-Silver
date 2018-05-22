@@ -130,6 +130,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
+                    $ ccg2 = "blank"
                     $ ccg3 = "blank"
                     call her_head("","shock","baseL",cheeks="blush",tears="soft")
                     show screen ccg
@@ -147,7 +148,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 call her_head("*sob!* How?","shock","baseL",cheeks="blush",tears="soft")
                 g4 "You know..."
                 call her_head("Oh...","shock","baseL",cheeks="blush",tears="soft")
-                $ ccg2 = 6
+                #$ ccg2 = 6
                 call her_head("I am a whore??","clench","worried",cheeks="blush",tears="soft")
                 g9 "Yes you are!"
                 call her_head("*Sob!* I am a whore...","angry","suspicious",cheeks="blush")
@@ -215,6 +216,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
+                    $ ccg2 = "blank"
                     $ ccg3 = "blank"
                     call her_head("","shock","baseL",cheeks="blush",tears="soft")
                     show screen ccg
@@ -282,6 +284,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
+                    $ ccg2 = "blank"
                     $ ccg3 = "blank"
                     call her_head("","shock","baseL",cheeks="blush",tears="soft")
                     show screen ccg
@@ -500,6 +503,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
+            $ ccg2 = "blank"
             $ ccg3 = "blank"
             call her_head("","open","closed")
             show screen ccg

@@ -43,15 +43,14 @@ label reset_wardrobe_vars:
 
 label return_to_wardrobe:
     if not wardrobe_active:
-        $ her_main_smooth_transition = True
-        call her_main("",xpos="wardrobe")
+        call her_main(xpos="wardrobe",ypos="base",trans="fade")
         $ wardrobe_active = 1
         call screen wardrobe
     else:
         $ wardrobe_active = 1
 
         if active_girl == "hermione":
-            call her_main("",xpos="wardrobe")
+            call her_main(xpos="wardrobe",ypos="base")
         #if active_girl == "luna":
         #    call lun_main("",xpos="wardrobe")
         #if active_girl == "astoria":
@@ -507,7 +506,7 @@ label her_makeup_toggle:
 
 # Piercings Toggle #
 label her_piercings_toggle:
-    if hermione_piercings_list == []: #Empty list
+    if h_ear_piercing == "00_blank" and h_nipple_piercing == "00_blank" and h_belly_piercing == "00_blank" and h_intimate_piercing == "00_blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -783,39 +782,50 @@ label set_h_robe(robe=""):
     show screen hermione_main
     return
 
-### ACCESSORIES SECTION ###
-
-## Accessories ##
-label wardrobe_give_acc:
-    call give_her_acc(wardrobe_acc_item) #
-    hide screen wardrobe
-    call screen wardrobe
+    
+### MISCELLANEOUS SECTION ###
 
 ## Piercings ##
 label equip_piercing:
-    hide screen hermione_main
-    if piercing_choice in hermione_piercings_list:
-        $ hermione_piercings_list.remove(piercing_choice)
-    else:
-        if piercing_choice in ear_piercings_list:
-            if hermione_ear_piercing in hermione_piercings_list: #Can only equip one ear piercing!
-                ">You can only equip one such item."
-            else:
-                $ hermione_piercings_list.append(piercing_choice)
-                $ hermione_ear_piercing = piercing_choice
-        else:
-            $ hermione_piercings_list.append(piercing_choice)
+    call set_h_piercing(piercing_choice, piercing_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
     
-    if hermione_piercings_list == []:
+label set_h_piercing(piercing="", color=""):
+    hide screen hermione_main
+    if piercing in ear_piercings_list:
+        if h_ear_piercing == piercing and h_ear_piercing_color == color:
+            $ h_ear_piercing = "00_blank"
+        else:
+            $ h_ear_piercing = piercing_choice
+    if piercing in nipple_piercings_list:
+        if h_nipple_piercing == piercing and h_nipple_piercing_color == color:
+            $ h_nipple_piercing = "00_blank"
+        else:
+            $ h_nipple_piercing = piercing
+    if piercing in belly_piercings_list:
+        if h_belly_piercing == piercing and h_belly_piercing_color == color:
+            $ h_belly_piercing = "00_blank"
+        else:
+            $ h_belly_piercing = piercing
+    if piercing in intimate_piercings_list:
+        if h_belly_piercing == piercing and h_intimate_piercing_color == color:
+            $ h_belly_piercing = "00_blank"
+        else:
+            $ h_belly_piercing = piercing
+    
+    if h_ear_piercing == "00_blank" and h_nipple_piercing == "00_blank" and h_belly_piercing == "00_blank" and h_intimate_piercing == "00_blank": #No piercings equipped.
         $ h_request_wear_piercings = False
         $ hermione_wear_piercings = False
     else:
         $ h_request_wear_piercings = True
         $ hermione_wear_piercings = True
     
+    call update_her_uniform
     show screen hermione_main
-    hide screen wardrobe
-    call screen wardrobe
+    return
+    
 
 ## Tattoos ##
 label equip_tattoo:
@@ -837,7 +847,20 @@ label equip_tattoo:
 
 ## Potions ##
 label use_potion:
-
+    if potion_choice == "universal_potion": #Potion that can be used day AND night!
+        hide screen wardrobe
+        call her_main(xpos="right",ypos="base",trans="fade")
+        menu:
+            "-Universal potion-"
+            "-Change Clothing Transparency-" if "transparency" in cs_existing_stock:
+                $ misc_item_choice = "transparency"
+                jump equip_misc_item
+            #"-Hair-Growth Potion-" #Hermione Pubic Hair. Not yet added.
+            "-Never mind-":
+                jump return_to_wardrobe
+    else:
+        pass
+        
     if daytime:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")

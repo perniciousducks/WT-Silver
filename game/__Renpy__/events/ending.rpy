@@ -21,6 +21,7 @@ label your_whore:
     call update_her_hair
 
     #Hermione Clothes
+    $ transparency             = 1 #Disabled
     $ h_neckwear               = "00_blank"
     $ hermione_body_accs_list  = []
     $ h_gloves                 = "00_blank"
@@ -3360,6 +3361,8 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         dum_[1]"*ahem*... here it is."
         call her_main("Thank you, sir.","base","base")
         call her_main("Let's see....","annoyed","down")
+        hide screen hermione_main
+        with d3
         stop music fadeout 7.0
         pause.1
         

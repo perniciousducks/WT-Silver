@@ -933,7 +933,7 @@ label hg_pf_ButtMolester:
                         pass
 
             "\"No. Just stand still, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","crstart")
+                call her_head("As you say, [genie_name]...","soft","base",cheeks="blush")
                 show screen no_groping_01
                 with d1
 

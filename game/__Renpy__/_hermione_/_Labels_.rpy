@@ -376,13 +376,14 @@ label hg_pr_transition_block:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone
-    call her_chibi("hide")
     with d3
     
     if hermione_xpos_name == "desk":
         call her_walk("desk","leave",2.7)
-    else:
+    elif hermione_xpos_name == "mid":
         call her_walk("mid","leave",2)
+    else:
+        call her_chibi("leave")
     
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
@@ -409,7 +410,10 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen groping_naked_tits
     hide screen genie_and_tits_01
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
-    call her_chibi("stand","desk","base")
+    if hermione_xpos_name == "desk":
+        call her_chibi("stand","desk","base")
+    else:
+        call her_chibi("stand","mid","base")
     show screen genie
 
     hide screen bld1

@@ -121,7 +121,10 @@ screen hermione_uniform:
 
     #Piercings
     if hermione_wear_piercings:
-        use hermione_piercings
+        add hermione_ear_piercing xpos hermione_xpos ypos hermione_ypos
+        add hermione_nipple_piercing xpos hermione_xpos ypos hermione_ypos
+        add hermione_belly_piercing xpos hermione_xpos ypos hermione_ypos
+        add hermione_intimate_piercing xpos hermione_xpos ypos hermione_ypos
 
     #Panties
     if hermione_wear_panties:
@@ -274,7 +277,10 @@ screen hermione_head:
 
         #Piercings
         if hermione_wear_piercings:
-            use hermione_head_piercings
+            add hermione_ear_piercing xpos hermione_head_xpos ypos hermione_head_ypos
+            add hermione_nipple_piercing xpos hermione_head_xpos ypos hermione_head_ypos
+            add hermione_belly_piercing xpos hermione_head_xpos ypos hermione_head_ypos
+            add hermione_intimate_piercing xpos hermione_head_xpos ypos hermione_head_ypos
 
         #Bra
         if hermione_wear_bra and not (h_top in h_top_remove_bra_list and hermione_wear_top):
@@ -371,6 +377,7 @@ label update_her_uniform:
         call update_her_action
 
     ### Uniform ###
+    
 
     #Top
     if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
@@ -428,6 +435,17 @@ label update_her_uniform:
         $ hermione_ears = "characters/hermione/accessories/ears/"+str(h_ears)+".png"
 
     $ hermione_hat = "characters/hermione/accessories/hats/"+str(h_hat)+".png"
+        
+        
+    #Piercings
+    $ hermione_ear_piercing        = "characters/hermione/accessories/piercings/"+str(h_ear_piercing_color)+"/"+str(h_ear_piercing)+".png"
+    if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
+        $ hermione_nipple_piercing = "characters/hermione/accessories/piercings/"+str(h_nipple_piercing_color)+"/large_breasts/"+str(h_nipple_piercing)+".png"
+    else:
+        $ hermione_nipple_piercing = "characters/hermione/accessories/piercings/"+str(h_nipple_piercing_color)+"/"+str(h_nipple_piercing)+".png"
+    $ hermione_belly_piercing      = "characters/hermione/accessories/piercings/"+str(h_belly_piercing_color)+"/"+str(h_belly_piercing)+".png"
+    $ hermione_intimate_piercing   = "characters/hermione/accessories/piercings/"+str(h_intimate_piercing_color)+"/"+str(h_intimate_piercing)+".png"
+        
         
     #Costume Action/Pose
     $ hermione_costume_action_a = "characters/hermione/clothes/custom/"+str(h_action_a)+""
@@ -777,7 +795,7 @@ label h_update:
         $ hermione_cheeks = im.Flip("characters/hermione/face/cheeks/"+str(h_cheeks)+".png", horizontal=True)
         $ hermione_tears = im.Flip("characters/hermione/face/tears/"+str(h_tears)+".png", horizontal=True)
         $ hermione_emote = im.Flip("characters/emotes/"+str(h_emote)+".png", horizontal=True)
-        $ hermione_hair_b = im.Flip("characters/hermione/body/head/A_"+str(h_hair_color)+"_2.png", horizontal=True)
+        $ hermione_hair_b = im.Flip("characters/hermione/body/head/A_1_2.png", horizontal=True) #ADD hair-color as soon as there are different hair-colors for the CGs. For now leave it brown!
     else:
         $ hermione_mouth = "characters/hermione/face/mouth/"+str(h_lipstick)+"/"+str(h_mouth)+".png"
         $ hermione_eyes  = "characters/hermione/face/eyes/"+str(h_eye_color)+"/"+str(h_eyes)+".png"
@@ -834,12 +852,18 @@ screen hermione_head_body_accs:
 #Piercings
 screen hermione_piercings:
     for i in range(0,len(hermione_piercings_list)):
-        add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos
+        if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
+            add "characters/hermione/accessories/piercings/large_breasts/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos
+        else:    
+            add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos
     zorder hermione_zorder
 
 screen hermione_head_piercings:
     for i in range(0,len(hermione_piercings_list)):
-        add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_head_xpos ypos hermione_head_ypos
+        if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
+            add "characters/hermione/accessories/piercings/large_breasts/"+str(hermione_piercings_list[i])+".png" xpos hermione_head_xpos ypos hermione_head_ypos
+        else:    
+            add "characters/hermione/accessories/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_head_xpos ypos hermione_head_ypos
     zorder hermione_zorder
 
 

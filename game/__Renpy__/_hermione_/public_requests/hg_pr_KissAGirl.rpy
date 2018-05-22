@@ -126,6 +126,8 @@ label hg_pr_KissAGirl_complete:
             m "You are not getting paid, you know that, right?"
             call her_main("I don't care...","scream","angryCl")
             $ mad +=25
+                
+            $ hg_pr_KissAGirl_OBJ.inProgress = False
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
         #Event A
@@ -172,7 +174,9 @@ label hg_pr_KissAGirl_complete:
             call her_main("Now, I would like to get paid if you would be so kind.","normal","base")
             m "......................"
 
-            menu:
+            menu:   
+                "\"Fine. Here is your payment, girl.\"":
+                    pass
                 "\"I don't appreciate your attitude, [hermione_name].\"":
                     call her_main("Well, that is unfortunate, [genie_name].","open","angryCl")
                     m "Sure is..."
@@ -187,12 +191,11 @@ label hg_pr_KissAGirl_complete:
                     m "Too late for that, [hermione_name]."
                     m "You are dismissed."
                     call her_main("......","angry","base",tears="soft")
-
                     $ mad +=25
+                
+                    $ hg_pr_KissAGirl_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
-                            
-                "\"Fine. Here is your payment, girl.\"":
-                    pass
+                         
     
     elif whoring >= 15 and whoring <= 17: # LEVEL 06. Event level 02. 
         
@@ -495,8 +498,10 @@ label hg_pr_KissAGirl_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_KissAGirl_OBJ.points += 1
-    $ hg_pr_KissAGirl_OBJ.complete = True
     $ hg_pr_KissAGirl_OBJ.inProgress = False
+    
+    if hg_pr_KissAGirl_OBJ.points >= 2:
+        $ hg_pr_KissAGirl_OBJ.complete = True
     
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
     

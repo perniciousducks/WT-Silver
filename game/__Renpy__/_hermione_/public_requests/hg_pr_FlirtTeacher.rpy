@@ -9,10 +9,9 @@ label hg_pr_FlirtTeacher:
 
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
-
-    m "{size=-4}(Tell her to be flirtatious with her teachers today?){/size}"
     
     if hg_pr_FlirtTeacher_OBJ.points < 1:
+        m "{size=-4}(Tell her to be flirtatious with her teachers today?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -98,6 +97,9 @@ label hg_pr_FlirtTeacher_complete:
                     call her_main("................................","annoyed","angryL")
 
                     menu:
+                        "\"Here are your point's though.\"":
+                            call her_main("Really?","angry","worried")
+                            call her_main("Thank you so much [genie_name]!","smile","happyCl")
                         "\"No points for you!\"":
 
                             call her_main("But [genie_name], I did my best!","angry","worried")
@@ -109,10 +111,9 @@ label hg_pr_FlirtTeacher_complete:
                             call her_main("Tsk!","angry","angry",emote="01")
                             $ mad += 18
                             call music_block
+                            
+                            $ hg_pr_FlirtTeacher_OBJ.inProgress = False
                             jump could_not_flirt
-                        "\"Here are your point's though.\"":
-                            call her_main("Really?","angry","worried")
-                            call her_main("Thank you so much [genie_name]!","smile","happyCl")
                           
                 #Event B 
                 elif one_out_of_three == 2: ### Snape
@@ -152,14 +153,16 @@ label hg_pr_FlirtTeacher_complete:
                     call her_main("...................","annoyed","annoyed")
 
                     menu:
+                        "\"Here are your points, [hermione_name].\"":
+                            pass
                         "\"...But you get no points this time\"":
                             call her_main("But I did my best...","annoyed","angryL")
                             call her_main("And I feel so humiliated now...","angry","worriedCl",emote="05")
                             call her_main("But I understand and won't argue with your decision...","normal","worriedCl")
                             call music_block
+                            
+                            $ hg_pr_FlirtTeacher_OBJ.inProgress = False
                             jump could_not_flirt
-                        "\"Here are your points, [hermione_name].\"":
-                            pass
                 
                 #Event C
                 elif one_out_of_three == 3: ### Filch
@@ -203,6 +206,11 @@ label hg_pr_FlirtTeacher_complete:
                 
                 #Event B
                 elif one_out_of_three == 2: ### Lockhart
+                    $ autograph = True #This unlocks the Lockheart tattoo in the wardrobe now.
+                    $ h_request_wear_tattoos = True
+                    $ hermione_wear_tattoos = True
+                    $ hermione_tattoos_list.append("thigh/signature") #LOCKHEART TATTOO
+                    
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
                     call her_main("I had an amazing day, [genie_name]!","smile","happyCl",emote="06",xpos="right",ypos="base")
                     m "Do tell, [hermione_name]..."
@@ -239,21 +247,17 @@ label hg_pr_FlirtTeacher_complete:
                                     call her_main("...............","annoyed","down")
                                     call her_main("..................","annoyed","worriedL")
                                     call her_main("Well, alright, but only to clear my idol's name...","angry","angry")
-                                    hide screen hermione_main
-                                    with d3
-                                    show screen blktone8
-                                    with d5
-                                    call her_head("Here....","disgust","down_raised",cheeks="blush")
+                                    pause.5
+             
+                                    call her_head("Here....","disgust","down_raised",cheeks="blush",xpos="mid",ypos="base",trans="fade")
+                                    
+                                    call set_hermione_action("lift_skirt")
+                                    pause.5
+                                    
                                     m "Hm..."
-                                    hide screen blktone8 
-                                    with d5
-                                    call h_action("lift_skirt")
-                                    #$ only_upper = True #Skirt lifted.
-                                    #$ autograph = True #Autograph shown.
                                     call her_main("","angry","annoyed",emote="01",xpos="right",ypos="base")
-                                    show screen ctc
-                                    with d3
-                                    pause
+                                    call ctc
+                                    
                                     call her_main("As you can see Professor Lockhart is nothing but an embodiment of everything pure and courageous!","annoyed","annoyed")
                                     pause
                                     m "Do I? From this?"
@@ -261,14 +265,11 @@ label hg_pr_FlirtTeacher_complete:
                                     her "He is not \"dirty\"."
                                     m "Ah, what do I care..."
                                     call her_main("............?","angry","annoyed",emote="01")
-                                    hide screen hermione_main 
-                                    with d3
-                                    call reset_hermione_main
-                                    #$ only_upper = False #Skirt lifted.#no legs bug
-                                    #$ autograph = False #Autograph shown.
+                                    
+                                    call set_hermione_action("none")
+                                    
                                     call her_main("","angry","angry")
-                                    pause
-                                    hide screen ctc
+                                    call ctc
                                     $ mad += 18
 
                         "\"Fine... Here are your points.\"":
@@ -303,6 +304,8 @@ label hg_pr_FlirtTeacher_complete:
                             call her_main("But [genie_name]?","normal","frown")
                             m "You are dismissed, [hermione_name]."
                             call her_main(".........................................","angry","angry")
+                            
+                            $ hg_pr_FlirtTeacher_OBJ.inProgress = False
                             jump could_not_flirt
             
             #Third level.
@@ -359,54 +362,44 @@ label hg_pr_FlirtTeacher_complete:
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
                     call her_main("Professor Snape!","angry","angry",emote="01",xpos="right",ypos="base")
                     m "Ehm... Yeah, I'm pretty sure it's Dumbledore or something..."
-                    hide screen hermione_main
-                    with d3
-                    
-                    g4 "{size=-5}(Wait, did {size=+7}he{/size} just put me under another disguise?){/size}"
-                    g4 "{size=-5}(So do I look like that Professor Snape guy now?){/size}"
-                    g4 "{size=-5}(By the great desert sands! Akabur, you need to learn restrain yourself!){/size}"
-                    a5 "{size=-5}(Would you hear the girl out first! Geez...){/size}"
-                    call her_main("[genie_name]? Who are you talking to?","open","base")
-                    m "Em... I'm communicating with a spirit from another dimension..."
-                    call her_main(".....??!","annoyed","suspicious")
-                    hide screen hermione_main
-                    with d3
-                    a6 "{size=-5}(Stick to the script, you bastard!){/size}"
-                    g4 "Yes, a particularly annoying spirit... Annoying and dumb!"
-                    a6 "{size=-5}(You......!){/size}"
                     call her_main("[genie_name], please, you need to listen to me!","open","base")
                     m "Yes, yes, [hermione_name], I'm listening."
                     call her_main("I just confirmed that professor Snape is corrupted and \"dirty\", [genie_name]!","open","angryCl")
                     m "Tell me what happened."
                     
+                    hide screen hermione_main
                     hide screen blktone
-                    with d3
-                    show screen snape_groping
-                    with d5
+                    call blkfade
                     
-                    call her_main("Well, during the classes today...","open","base")
-                    her "I have been doing my best to attract professor Snape's attention..."
-                    her "I have been giving him \"dreamy looks\"..."
-                    her "And I've been eyeing his crotch..."
+                    call her_head("Well, during classes today...","open","base",xpos="base",ypos="base")
+                    call her_head("I have been doing my best to attract professor Snape's attention...","open","baseL")
+                    call her_head("I have been giving him \"dreamy looks\"...","open","down")
+                    call her_head("And I've been eyeing his crotch...","soft","baseL")
                     m "You..."
                     m "Eyed his crotch?"
-                    call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...","open","angryCl")
+                    call her_head("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...","open","angryCl")
                     m "Where do you get this stuff?"
-                    call her_main("Women's magazines...","open","worriedL")
-                    call her_main("Well, anyway, it worked, [genie_name].","normal","frown")
-                    call her_main("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!","angry","angry")
+                    call her_head("Women's magazines...","open","worriedL")
+                    call her_head("Well, anyway, it worked, [genie_name].","normal","frown")
+                    
+                    hide screen blkfade
+                    show screen snape_groping
+                    with fade
+                    call ctc
+                    
+                    call her_head("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!","angry","angry")
                     m "The fiend!"
                     m "Did you enjoy it, though?"
-                    call her_main("[genie_name], I am only doing this--","scream","angryCl")
+                    call her_head("[genie_name], I am only doing this--","scream","angryCl")
+                    m "Go \"Gryffindors\"! honour and all that. Yes, I remember."
+                    call ctc
                     
                     hide screen snape_groping
-                    with d5
-                    show screen blktone
-                    with d3
+                    with fade
                     
-                    m "Go \"Gryffindors\"! honour and all that. Yes, I remember."
                     m "Here are your points."
-                    call her_main("","disgust","glance")
+                    show screen blktone
+                    call her_main("","disgust","glance",xpos="right",ypos="base")
   
                 #Event C
                 elif one_out_of_three == 3: ### Lockhart
@@ -473,7 +466,7 @@ label hg_pr_FlirtTeacher_complete:
     
     if whoring <= 5:  # (if whoring >= 3 and whoring <= 5) - LEVEL 02
         $ whoring +=1
-    if whoring >= 5:
+    if whoring >= 5 and hg_pr_FlirtTeacher_OBJ.points >= 2:
         $ hg_pr_FlirtTeacher_OBJ.complete = True
     
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.

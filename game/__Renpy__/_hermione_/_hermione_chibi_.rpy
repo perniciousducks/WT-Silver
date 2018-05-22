@@ -527,15 +527,20 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
         $ walk_xpos = pos1
 
     if pos2 == "mid":
+        $ hermione_xpos_name = "mid"
         $ walk_xpos2 = 540
     elif pos2 == "desk":
+        $ hermione_xpos_name = "desk"
         $ walk_xpos2 = 440
     elif pos2 == "door":
+        $ hermione_xpos_name = "door"
         $ walk_xpos2 = 750
     elif pos2 == "leave":
+        $ hermione_xpos_name = "door"
         $ walk_xpos2 = 750
         $ loiter = False
     else:
+        $ hermione_xpos_name = "mid"
         $ walk_xpos2 = pos2
 
     $ hermione_SC.chibi.ypos = 250

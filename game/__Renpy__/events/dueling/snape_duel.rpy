@@ -5,7 +5,7 @@ label duel:
     $ d_flag_02 = False #Turns True after conversation triggered when Snape's HP runs low.
     
     $ genie_hp = 1000
-    $ snape_hp = 2000 #Must be 2000
+    $ snape_hp = 2000 #2000 #Must be 2000
     
 
 
@@ -59,10 +59,10 @@ label duel:
     show image "images/main_room/07_candle.png" at Position(xpos=693+140, ypos=225, xanchor="center", yanchor="center")
     show image "images/main_room/08_candle.png" at Position(xpos=210+140, ypos=160, xanchor="center", yanchor="center")
     #show image "images/main_room/11_genie_00.png" at Position(xpos=230+140, ypos=336, xanchor="center", yanchor="center")
+    show image "images/main_room/04_chair_02.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
     show image "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     show screen candlefire_01 #CANDLE FIRE.
     show screen candlefire_02 #CANDLE FIRE.
-    #show screen 
     
     hide screen snape_defends
     hide screen blkfade
@@ -130,6 +130,7 @@ label duel_main:
     
 ### SNAPE'S TURN ###
 label snapes_turn:
+
     if pentogram:
         $ pentogram = False
         hide ch_sna
@@ -140,15 +141,26 @@ label snapes_turn:
         hide hand
         hide ch_gen
         $ renpy.play('sounds/attack_snape4.ogg')
+        
         if blocking: # GENIE BLOCKS AGAINST THE HAND.(Genie -50 HP)
             $ blocking = False
             show hand_guard at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
             pause 1.8
             hide hand_guard
-            show ch_sna duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center") 
-            hide screen minus_50_genie
-            show screen minus_50_genie
-            $ genie_hp -= 50
+            show ch_sna duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
+            
+            if game_difficulty <= 2: #Easy         
+                hide screen minus_0_genie
+                show screen minus_0_genie
+            elif game_difficulty == 2: #Normal        
+                hide screen minus_50_genie
+                show screen minus_50_genie
+                $ genie_hp -= 50
+            else: #Hardcore #Shouldn't increase the penalty if you blocked correctly...          
+                hide screen minus_50_genie
+                show screen minus_50_genie
+                $ genie_hp -= 50
+            
             if genie_hp < 50: #Check for gameover
                 jump genie_lost
             
@@ -161,10 +173,21 @@ label snapes_turn:
             show hand_genie at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
             pause 1.3
             hide hand_genie
-            show ch_sna duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center") 
-            hide screen minus_400_genie
-            show screen minus_400_genie
-            $ genie_hp -= 400
+            show ch_sna duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
+            
+            if game_difficulty <= 2: #Easy         
+                hide screen minus_300_genie
+                show screen minus_300_genie
+                $ genie_hp -= 300
+            elif game_difficulty == 2: #Normal  
+                hide screen minus_400_genie
+                show screen minus_400_genie
+                $ genie_hp -= 400
+            else: #Hardcore
+                hide screen minus_500_genie
+                show screen minus_500_genie
+                $ genie_hp -= 500
+             
             if genie_hp < 50: #Check for gameover
                 jump genie_lost
             show ch_gen duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
@@ -213,7 +236,20 @@ label snape_attack:
     pause 0.45
     hide snape_attack at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
     show ch_sna duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center") 
-    $ genie_hp -= 100
+    
+    if game_difficulty <= 2: #Easy
+        hide screen minus_300_genie
+        show screen minus_300_genie
+        $ genie_hp -= 300
+    elif game_difficulty == 2: #Normal
+        hide screen minus_400_genie
+        show screen minus_400_genie
+        $ genie_hp -= 400
+    else: #Hardcore
+        hide screen minus_500_genie
+        show screen minus_500_genie
+        $ genie_hp -= 500
+        
     if genie_hp < 50: #Check for gameover
         jump genie_lost
     show ch_gen duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center") 
@@ -280,18 +316,37 @@ label genie_attack:
     pause 1.8
     
     
-    
     if pentogram:
-        hide screen minus_300
-        show screen minus_300
-        $ snape_hp -= 300
+        if game_difficulty <= 2: #Easy
+            hide screen minus_500
+            show screen minus_500
+            $ snape_hp -= 500
+        elif game_difficulty == 2: #Normal
+            hide screen minus_500
+            show screen minus_500
+            $ snape_hp -= 500
+        else: #Hardcore
+            hide screen minus_500
+            show screen minus_500
+            $ snape_hp -= 500
     else:
-        hide screen minus_100
-        show screen minus_100
-        $ snape_hp -= 100
+        if game_difficulty <= 2: #Easy
+            hide screen minus_300
+            show screen minus_300
+            $ snape_hp -= 300
+        elif game_difficulty == 2: #Normal
+            hide screen minus_100
+            show screen minus_100
+            $ snape_hp -= 100
+        else: #Hardcore
+            hide screen minus_100
+            show screen minus_100
+            $ snape_hp -= 100
+            
     pause 1
     if snape_hp < 50: #Check for gameover
         jump snape_lost
+        
     show smoke at Position(xpos=690, ypos=250, xanchor="center", yanchor="center") 
     hide genie_attack at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
     show ch_sna duel_01 at Position(xpos=690, ypos=250, xanchor="center", yanchor="center") 
@@ -317,7 +372,7 @@ label potion:
     pause 1
     $ potions -=1
     $ genie_hp += 300
-    if genie_hp >= 1000:
+    if genie_hp >= 1000: #1000
         $ genie_hp = 1000
     pause.5
 
@@ -513,15 +568,17 @@ label genie_lost:
             $ renpy.play('sounds/glass_break.mp3')
             play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
             hide screen end_u_1
+            
             if rum_times == 2:
-                $ potions = 1
+                $ potions += 1
             elif rum_times == 3:
-                $ potions = 2
+                $ potions += 2
             else:
                 pass
+                
             jump duel
             
-        "-Skip Duel-":
+        "-Skip Duel-" if cheats_active:
             stop music 
             hide ch_sna
             hide ch_gen

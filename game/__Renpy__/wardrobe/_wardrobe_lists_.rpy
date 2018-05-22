@@ -548,8 +548,8 @@ label update_wr_miscellaneous_list:
 
         #Piercings
         if whoring >= 5:
-            $ wr_piercings_list.append("ears_gold")
-            $ wr_piercings_list.append("ears_heart")
+            $ wr_piercings_list.append("ears_hearts_large")
+            $ wr_piercings_list.append("ears_hearts")
             $ wr_piercings_list.append("ears_pearls")
 
         if whoring >= 23:
@@ -557,7 +557,8 @@ label update_wr_miscellaneous_list:
             $ wr_piercings_list.append("belly_pearls")
 
         #Tattoos
-        $ wr_tattoos_list.append("thigh/signature")
+        if autograph: #Unlocked after flirting with Professor Lockheart.
+            $ wr_tattoos_list.append("thigh/signature")
 
         if whoring >= 11:
             $ wr_tattoos_list.append("torso/twist")
@@ -585,6 +586,8 @@ label update_wr_miscellaneous_list:
             $ wr_tattoos_list.append("pubic/punk_mudblood")
             
         #Potions
+        $ wr_potions_list.append("universal_potion") #Potion that can be used day AND night!
+        
         if "Polyjuice Potion" in p_inv or "Cat Transformation Potion" in p_inv or "Luna Transformation Potion" or "Clone Potion" in p_inv:
             $ wr_potions_list.append("polyjuice_potion")
         if "Expanding Elixir" in p_inv or "Breast Expansion Potion" in p_inv or "Ass Expansion Potion" in p_inv:

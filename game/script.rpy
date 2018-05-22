@@ -11,8 +11,7 @@ define e = Character('Eileen', color="#c8ffc8")
 label start:
     $ init_variables()
     scene black
-    call select_start
-    return
+    jump select_start
  
 label after_load:
     $ init_variables()

@@ -393,16 +393,31 @@ label her_clothing_init:
     $ buttplug_2_question    = False
     $ buttplug_3_question    = False
 
-    $ hermione_pubic_hair       = "characters/hermione/body/pubic_hair/00_blank.png"
-    $ h_pubic_hair              = "00_blank"
+    $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/00_blank.png"
+    $ h_pubic_hair               = "00_blank"
 
-    $ hermione_piercings_list   = []
-    $ hermione_ear_piercing     = ""
+    #Piercings
+    $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/00_blank.png"
+    $ h_ear_piercing             = "00_blank"
+    $ h_ear_piercing_color       = "base"
+    
+    $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/00_blank.png"
+    $ h_nipple_piercing          = "00_blank"
+    $ h_nipple_piercing_color    = "base"
+    
+    $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/00_blank.png"
+    $ h_belly_piercing           = "00_blank"
+    $ h_belly_piercing_color     = "base"
+    
+    $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/00_blank.png"
+    $ h_intimate_piercing        = "00_blank"
+    $ h_intimate_piercing_color  = "base"
 
-    $ hermione_tattoos_list     = []
-    $ h_tattoos_color           = "base"
+    #Tattoos
+    $ hermione_tattoos_list      = []
+    $ h_tattoos_color            = "base"
 
-    $ transparency              = 1
+    $ transparency               = 1
 
     #Toggle
     $ hermione_wear_top               = True
@@ -544,9 +559,15 @@ label her_clothing_lists_init:
                                       ]
 
     #Piercings
-    $ ear_piercings_list            = ["ears_gold", 
-                                       "ears_heart", 
+    $ ear_piercings_list            = ["ears_hearts_large", 
+                                       "ears_hearts", 
                                        "ears_pearls",
+                                      ]
+    $ nipple_piercings_list         = ["nipples_pearls",
+                                      ]
+    $ belly_piercings_list          = ["belly_pearls",
+                                      ]
+    $ intimate_piercings_list       = [
                                       ]
 
     return
@@ -657,7 +678,8 @@ label her_progress_init:
     #Clothing Rewards
     $ reward_her_wool_clothing = False   
     $ reward_her_lace_clothing = False  
-    $ reward_her_latex_clothing = False  
+    $ reward_her_latex_clothing = False
+    $ autograph = False #Professor Lockhart's tattoo.  
 
     return
 

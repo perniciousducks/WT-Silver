@@ -243,7 +243,7 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
     elif action == "jerking" or action == "jerking_off" or action == "cumming" or action == "hold_dick":
 
         if xpos == "behind_desk":
-            $ genie_chibi_xpos = 270
+            $ genie_chibi_xpos = 230
         if xpos == "on_girl":
             $ genie_chibi_xpos = 470
 

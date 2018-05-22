@@ -377,8 +377,11 @@ label reset_hermione_main:
 
     #Hermione clothing save state
     call load_hermione_clothing_saves
-
+    
+    $ hermione_dribble = False
+    $ hermione_squirt = False
     $ aftersperm = False #Show cum stains on Hermione's uniform.
+    
     hide screen hermione_main
     call h_outfit_OBJ(None)
     if hermione_action != "none":

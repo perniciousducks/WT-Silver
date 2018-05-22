@@ -235,7 +235,7 @@ label cupboard:
                 "-Back-":
                     jump cupboard
 
-        "-Cheats-": ##### if cheats_active:
+        "-Cheats-" if cheats_active:
             jump cheats
 
 

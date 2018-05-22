@@ -1840,7 +1840,7 @@ label l_tutoring:
         $ u_tears_pic = "characters/hermione/face/e_her_tears_01.png"
         $ b_her_tears = True
         with hpunch
-        call nar("Aaaaah {image=textheart}.","open","ahegao",cheeks="blush")
+        call her_main("Aaaaah {image=textheart}.","open","ahegao",cheeks="blush")
         call her_main("I love being sodomized savagely by my headmaster.","silly","ahegao_raised",cheeks="blush")
         call nar(">And again.")
         with hpunch

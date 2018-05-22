@@ -10,7 +10,6 @@ label start_ht:
     
     ### HERMIONE_MAIN SCREN FLAGS ###
     $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
-    $ autograph = False #Displays professor Lockhart's autograph on Hermione's leg.
     $ no_blinking = False #When True - blinking animation is not displayed.
     $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
     $ aftersperm = False #Shows cum stains on Hermione's uniform.
@@ -279,7 +278,7 @@ label start_ht:
     show image "interface/blackfade.png"
     if persistent.game_complete: # Offer for game+
         menu:
-            "NEW GAME +" ">Would you like to carry over your gold, possessions, books, scrolls, and outfits from your previous playthrough into this one?"
+            "NEW GAME +" ">Would you like to carry over your gold and possessions from your previous playthrough?"
             "\"Yes, please.\"":
                 # Code needed here for adding persistant items across games
                 $ gold = gold + persistent.gold
@@ -372,49 +371,54 @@ label start_ht:
 
     label choose_your_difficulty:
     menu:
+        "Choose a difficutly."
         "-Play with easy difficulty-":
             ">Increased gold and Slythering-points gain.\n>You will always find items or gold in your cupboard."
             ">Hermione's bad-mood will decrease faster.\n>Books can be read in one go."
             menu:
+                ">Easy difficulty."
                 "-Choose this difficulty-":
                     ">Game set to easy!"
                     $ game_difficulty = 1
+                    $ hardcore_difficulty_active = False
                     $ cheat_reading = True
                 "-Choose something else-":
                     jump choose_your_difficulty
         "-Play with normal difficulty-":
-            ">Normal difficulty."
             menu:
+                ">Normal difficulty."
                 "-Choose this difficulty-":
                     ">Game set to normal!"
                     $ game_difficulty = 2
+                    $ hardcore_difficulty_active = False
                     $ cheat_reading = False
                 "-Choose something else-":
                     jump choose_your_difficulty
         #"-Play with hardcore difficulty-": #Not implemented yet.
-            ">Hardcore difficulty. You gold and Slythering-points gain has been lowered.\n>All hints and guides have been disabled."
-            ">Additional rewards and dialogue choices have been added.\n>Those will be removed when changing difficulty!"
-            menu:
-                "-Choose this difficulty-":
-                    ">Game set to hardcore!"
-                    $ game_difficulty = 3
-                    $ hardcore_difficulty_active = True #hardcore rewards #gets reset on difficulty change
-                    $ cheat_reading = False
-                "-Choose something else-":
-                    jump choose_your_difficulty
+        #    ">Hardcore difficulty. You gold and Slythering-points gain has been lowered.\n>All hints and guides have been disabled."
+        #    ">Additional rewards and dialogue choices have been added.\n>Those will be removed when changing difficulty!"
+        #    menu:
+        #        ">Hardcore difficulty."
+        #        "-Choose this difficulty-":
+        #            ">Game set to hardcore!"
+        #            $ game_difficulty = 3
+        #            $ hardcore_difficulty_active = True #hardcore rewards #gets reset on difficulty change
+        #            $ cheat_reading = False
+        #        "-Choose something else-":
+        #            jump choose_your_difficulty
 
     if not hardcore_difficulty_active:
         menu:
-            ">You can only access cheats when activating them here.\n>Cheats can be found in the cupboard menu."
+            "ACTIVATE CHEATS" ">Cheats can be found in the cupboard menu."
             "-Activate Cheats-":
                 $ cheats_active = True
                 $ avogadro_law = True
-            "-No, Fuck Cheats-":
+            "-Disable Cheats-":
                 $ cheats_active = False
                 $ avogadro_law = False
     
     menu:
-        ">Do you prefer chibi animations or image sprites? Only affects two scenes.\n>This can be changed in the cupboard menu."
+        "Use chibi animations or image sprites." ">This will only affect two scenes.\n>This can be changed in the cupboard menu."
         "-Use chibis-":
             $ use_cgs = False
         "-Use sprites-":
@@ -426,7 +430,7 @@ label start_ht:
             jump intro
         "-Skip the intro-":
             jump hp
-        "-Skip to after the duel-":
+        "-Skip to after the duel-" if cheats_active:
             $ skip_duel = True
             jump hp
             

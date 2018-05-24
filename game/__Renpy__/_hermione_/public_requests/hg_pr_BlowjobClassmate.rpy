@@ -62,11 +62,11 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
         her "I'll do it..."
         m "Go do it, then!"
         m "Report back to me after your classes."
-        call her_main("......................................................................","angry","angry",cheeks="blush")
-        her "......................................................................"
-        her "......................................................................"
+        call her_main("...","angry","angry",cheeks="blush")
+        her "....."
+        her "......."
         m "You may leave, [hermione_name]."
-        her "........."
+        her "..."
     
     #First and second time event.
     else:
@@ -284,7 +284,7 @@ label hg_pr_BlowjobClassmate_complete:
             call her_main("Today I did something I wanted to do for such a long time now...","base","ahegao_raised")
             her "But never could muster up enough courage for..."
             m "Hm..?"
-            call her_main("Today I sucked off my two best friend in the entire world!","soft","ahegao")
+            call her_main("Today I sucked off my two best friends in the entire world!","soft","ahegao")
             call her_main("And it was every bit as exciting as I thought it would be.","base","down")
             call her_main("I made their cocks all sloppy with saliva...","grin","dead")
             her "I sucked on their balls too..."

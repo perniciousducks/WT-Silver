@@ -464,6 +464,160 @@ label hg_ps_WearMyCum_Scene_2:
 
 
 label hg_ps_WearMyCum_Scene_3:
+    $ hg_ps_WearMyCum_OBJ.inProgress = True
+    call her_main("Are you serious?","body_104")
+    call her_main("Can I?","body_106")
+    m "well-"
+    call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].","body_80")
+    call her_main("I'll even do it for free if that would make you happier!","body_78")
+    m "really?"
+    m "Well let's get started then!"
+    #Start jerk off chibis
+    hide screen hermione_main            
+    hide screen bld1
+    with d3
+    $ walk_xpos=500 #Animation of walking chibi. (From)
+    $ walk_xpos2=280 #Coordinates of it's movement. (To)
+    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+    show screen hermione_walk_01 
+    pause.1
+    show screen blkfade
+    with Dissolve(1)
+    pause.3
+
+    hide screen genie
+    $ genie_chibi_xpos = 60 #-185 behind the desk.
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "handjob_ani"
+    show screen chair_02
+    show screen g_c_u
+    show screen desk_02
+    hide screen blktone
+    hide screen hermione_walk_01 
+    hide screen blkfade
+    $ hermione_head_ypos = 235
+    m "Gods, you're good at this, [hermione_name]!"
+    call her_head("Thank you... I've been thinking about what you asked me last time...","body_121")
+    m "Last time?"
+    call her_head("about why I do this... sell you these sort of favours.","body_120")
+    call her_head("At the start it was just to get points, so that \'gryffindor\' could win the house cup...","body_122")
+    call her_head("but lately...","body_124")
+    call her_head("...it’s been more than that... now I do it to make you happy, [genie_name].","body_128")
+    call her_head("Because making you happy, makes me happy...","body_129")
+    m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
+    call her_head("Oh! Of course, [genie_name]...","body_131")
+    call her_head("Do you need some extra encouragement?","body_127")
+    m "it would help..."
+    call her_head("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","body_124")
+    call her_head("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","body_106")
+    call her_head("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.”","body_123")
+    call her_head("not just A slut... a cumslut...","body_121")
+    call her_head("Your {image=textheart}cum{image=textheart}slut...","body_134")
+    g9 "That did it slut!"
+    g4 "HERE IT COMES!!!"
+    call her_head("Shoot it wherever you want [genie_name]...","body_135")
+    menu:
+        "\"take it on your tits!\"": # Cum on shirt front 
+            $ cum_location = 7
+            call her_head("Please cover my tits with your sticky cum! I need it, [genie_name]!","body_136")
+            ">Hermionely keeps jerking your cock, her eyes focused intently on it."
+            g4 "Get ready whore, here i come!"
+            call her_head("...","body_133")
+            ">Hermione leans forward, lining up her tits directly with your cock."
+            g9 "{size=+5}ARGH! YES!!! RIGHT in between your TITS!{/size}"
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+            $ uni_sperm = True
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","body_124") 
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            m "That's it, all over you slut."
+            call her_main("......","body_121") 
+            pause
+            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            call her_main("It's so warm...{image=textheart}","body_123") 
+            m "That it is."
+            call her_main("If it's alright with you, I think I better head to class now...","body_124") 
+
+        "\"Take it on your face, slut!\"":
+            $ cum_location = 8
+            ">Hermione bends down and place your cock in front of her face."
+            m "Get ready slut, here it comes!"
+            call her_head("Please give it to me! I need it, [genie_name]!","body_136")
+            g9 "{size=+5}ARGH! YES!!!{/size}"
+            call her_head("...","body_135")
+            ">You erupt onto her face, dousing her in your thick spunk."
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+            $ uni_sperm = True
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_135") 
+            m "Yes... I Feel so much better now..."
+            call her_main("me too...","body_33") 
+    show screen hermione_stand 
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    hide screen g_c_u
+    $ her_head_ypos = her_head_tits
+    hide screen blkfade
+    with d5
+    ">You tuck your cock back into your robe."
+    m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
+    call her_main("of course [genie_name]...","body_121")
+    call her_main("(I can't wait to see the look on peoples faces...)","body_123") 
+
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen ctc
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    show screen bld1
+    $ hermione_chibi_xpos = 500 #Near the desk.
+    $ hermione_chibi_ypos = 250 #Default: 250
+    show screen hermione_blink #Hermione stands still.
+    pause.1
+    hide screen blkfade
+    with d3
+
+    jump end_hg_pf
 
 
 
@@ -667,5 +821,55 @@ label hg_ps_WearMyCum_complete_2:
 
 
 label hg_ps_WearMyCum_complete_3:
+    if cum_location == 7: #Cleavage
+        $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office, her shirt still covered in cum."
+        call her_main("...I did it [genie_name].","body_08")
+        call her_main("I kept your cum on me all day.","body_24")
+        menu:
+            "\"Good Work!\"":
+                call her_main("Thank you [genie_name], will that be all?","body_45")
+                m "Yes [hermione_name], you may leave now. "
+            "\"Tell me about your day.\"":
+                $ sc34CG(1, 17, 7)
+                call her_main("It was actually quite frustrating [genie_name]...","body_103")
+                m "frustrating?"
+                call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!","body_107")
+                call her_main("It was like looking at a glass of water in the desert...","body_121")
+                m "did anyone else notice?"
+                call her_main("I couldn't say [genie_name]... I was too distracted by the smell...","body_122")
+                m "Very well, goodnight [hermione_name]."
+                call her_main("Good night [genie_name].","body_123")
+    else: #Cum on face
+        $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office."
+        call her_main("I did it, [genie_name].","body_08")
+        call her_main("I kept your cum on me all day.","body_45")
+        menu:
+            "\"Good Work!\"":
+                call her_main("Thank you, [genie_name]. Is that everything?","body_105")
+                m "yes [hermione_name], you can go clean up now."
+                call her_main("clean up?","body_107")
+                m "Only if you want to..."
+                call her_main("thank you [genie_name]!","body_106")
+            "\"Tell me about your day.\"":
+                $ sc34CG(1, 17, 6)
+                call her_main("My day...","body_105")
+                call her_main("It was a normal day [genie_name]. Well what is normal for me now.","body_121")
+                call her_main("I got called names again, and some of the boys groped me.","body_123")
+                call her_main("Susan Bones even said she liked how I looked in my shirt.","body_124")
+                m "And how did that make you feel?"
+                call her_main("Excited, I almost came when Moaning Myrtle started yelling to everyone about your cum on my shirt.","body_133")
+                m "Truly?"
+                call her_main("Of course, it made me even happier knowing that it makes you happy.","body_124")
+                m "that you did..."
+                call her_main("...{image=textheart}","body_136")
+                call her_main("thank you [genie_name]. well, goodnight.","body_107")
+                m "goodnight [hermione_name]."
+    hide screen sccg 
+    with fade
+    jump end_hg_pf
 
     return

@@ -523,7 +523,7 @@ label hg_pr_HandjobClassmate_complete:
             with d5
 
             show screen blktone
-            call her_main("I definately want them both at the same time.","silly","dead")
+            call her_main("I definitely want them both at the same time.","silly","dead")
             m "..."
             call her_main("Yeah, two huge cocks exploding massive loads of cum everywhere.","silly","ahegao")
             m "........"
@@ -558,7 +558,7 @@ label hg_pr_HandjobClassmate_complete:
             call her_main("One thing lead to another...","base","glance")
             m "And you ended up jerking off five cocks..."
             call her_main("...yes.","soft","ahegao")
-            m "Well done, miss Garnger."
+            m "Well done, miss Granger."
             call her_main("","base","glance")
     
     $ gryffindor += current_payout #55

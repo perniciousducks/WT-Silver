@@ -26,7 +26,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                     call her_main("What?","scream","wide")
                     her "You got me a new ball dress?"
                     m "Indeed I did, but you'll have to earn it."
-                    call her_main("Of course","angry","wide")
+                    call her_main("Of course!","angry","wide")
                     call her_main("Let me go try it on!","base","baseL",cheeks="blush")
                     call play_sound("door") #Sound of a door opening.
                     call set_hermione_outfit(hg_ballDress_OBJ)

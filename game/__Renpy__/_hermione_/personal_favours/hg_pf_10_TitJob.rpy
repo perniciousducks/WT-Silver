@@ -292,11 +292,11 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                 call her_head("Not in my mou-","scream","wide")       
                 ">You grab the back of Hermione's head and force your cock into her open mouth..."
                 call her_head("!!!!!!!","shock","worriedCl") 
-                ">The sensation of her warm mouth any squirming tongue overwhelm you and you start cumming like crazy"
+                ">The sensation of her warm mouth and squirming tongue overwhelm you and you start cumming like crazy"
 
                 call cum_block
 
-                g4 "{size=+5}ARGH! YES!!! Take it slut{/size}"
+                g4 "{size=+5}ARGH! YES!!! Take it, slut!{/size}"
                 call her_head("!!!!!!!!!!!","shock","wide") 
                 
                 call gen_chibi("titjob_cum_in_mouth","mid","base")
@@ -342,7 +342,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
 
                 show screen bld1
                 call her_main("Ughhh... you came so much! I had to swallow most of it!","angry","worriedCl",emote="05",xpos="right",ypos="base")
-                m "That's you fault for doing such a great job..."
+                m "That's your fault for doing such a great job..."
                 call her_main("I don't want to hear it...","angry","worriedCl",emote="05")
                 if daytime:
                     call her_main("My classes are about to start and now I'm covered in your sperm...","angry","worriedCl",emote="05") 

@@ -327,7 +327,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             call her_main("please... ah... more...{image=textheart}","grin","angry",cheeks="blush")
             g4 "You need to be punished for being such a slut!"
             call her_main("yes, [genie_name]... punish me...","open","ahegao_raised",cheeks="blush")
-            call her_main("make me you're little slut....","open","ahegao_raised",cheeks="blush")
+            call her_main("make me your little slut....","open","ahegao_raised",cheeks="blush")
             call her_main("I will... ah... {image=textheart}do anything... ah...{image=textheart}","silly","dead")
             m "Anything [hermione_name]?"
             call her_main("Ah-a...{image=textheart} yessss...","silly","ahegao_raised",cheeks="blush")
@@ -344,7 +344,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             call her_main("*heavy panting*","open_wide_tongue","ahegao")
             call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}", "body_135")
             call her_main(".............","soft","ahegao")
-            call nar(">Hermione takes a minute to collect herself")
+            call nar(">Hermione takes a minute to collect herself.")
             m "You feeling alright?"
             call her_main("Yes, [genie_name]... I just need a little longer...","shock","baseL",cheeks="blush",tears="soft")
             m "take your time."
@@ -443,7 +443,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
                 call her_main("[genie_name], please, it's too embarrassing...","disgust","down_raised",cheeks="blush")         
                 g4 "Well now I have to hear it."
                 call her_main("OK... but you have to promise not to tell anyone!","open","baseL",cheeks="blush")         
-                m "Wicher's honor."
+                m "Witcher's honor."
                 call her_main("......","annoyed","annoyed")         
                 m "[hermione_name]..."
                 call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","open","down")      

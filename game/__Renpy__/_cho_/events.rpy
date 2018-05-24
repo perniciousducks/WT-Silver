@@ -117,13 +117,13 @@ label cho_intro:
                         "-Listen to the Girl-":
                             pass
                         "-Play with Her Asshole-":
-                            "You ignore Hermione and gendlty slide your hands under her panties."
+                            "You ignore Hermione and gently slide your hands under her panties."
                             "Your left hand gently pulls her cheek back, exposing the smooth, muscular ring of her asshole."
                             "You extend your middle finger, and gingerly touch the soft, smooth skin."
                             call her_main("!","scream","wide",cheeks="blush")
                             call her_main("Prof-","scream","wideL",cheeks="blush")
                             m "Shhh. Not too loud, girl. Wouldn't want to alarm anyone out in the hall."
-                            "Your finger presses against the firm muscle and you begin to trace a slow cirle around the ring."
+                            "Your finger presses against the firm muscle and you begin to trace a slow circle around the ring."
                             call her_main("......","mad","wide",cheeks="blush")
                             call her_main("...","disgust","wink",cheeks="blush",tears="soft_blink")
                             "You can feel Hermione's ass start to twitch."
@@ -155,7 +155,7 @@ label cho_intro:
     show screen no_groping_02
 
     call her_main("...","angry","wide",cheeks="blush")
-    call her_main("........................","soft","ahegao",cheeks="blush")
+    call her_main(".............","soft","ahegao",cheeks="blush")
     call cho_main("Uhm...", 4, 2, 4, 2)
 
     call her_main("It's not what it looks like!","shock","worriedCl",cheeks="blush")
@@ -164,7 +164,7 @@ label cho_intro:
     call her_main("...","shock","worriedCl",cheeks="blush",emote="01")
     call her_main("{size=-7}(I want to die!){/size}","disgust","down_raised",cheeks="blush")
     call her_main("He was merely massaging a pulled muscle in my...in my...leg!","open","worriedCl",cheeks="blush")
-    call cho_main("Liar", 1, 2, 1, 2)
+    call cho_main("Liar!", 1, 2, 1, 2)
     call her_main("You... you...","annoyed","frown",cheeks="blush")
     call her_main("You flat-chested skank!","scream","angryL",cheeks="blush")
     call cho_main("Two-faced cow!", 5, 2, 1, 3)
@@ -173,8 +173,8 @@ label cho_intro:
     menu:
         "-Tell them to shut up-":
             m "Students! By the sands! Calm yourselves! There is a perfectly reasonable explanation!"
-            call her_main("..","annoyed","frown",cheeks="blush")
-            call cho_main("..", 2, 2, 1, 2)
+            call her_main("...","annoyed","frown",cheeks="blush")
+            call cho_main("...", 2, 2, 1, 2)
             call cho_main("....well?", 2, 2, 1, 3)
             m "Miss Granger was simply helping me clean my office when she pulled a muscle in her leg. It's quite painful. That's why she's so flustered."
             call cho_main("...", 5, 2, 2, 2)

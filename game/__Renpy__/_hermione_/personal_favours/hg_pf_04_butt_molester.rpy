@@ -994,7 +994,7 @@ label hg_pf_ButtMolester:
                 hide screen blktone8
                 with d3
 
-                m "as my hands explore you"
+                m "as my hands explore you..."
                 m "your thighs..."
 
                 show screen blktone8
@@ -1003,7 +1003,7 @@ label hg_pf_ButtMolester:
                 hide screen blktone8
                 with d3
 
-                m "your big, firm ass"
+                m "your big, firm ass..."
 
                 show screen blktone8
                 with d3
@@ -1047,7 +1047,7 @@ label hg_pf_ButtMolester:
 
                 show screen blktone8
                 with d3
-                ">you start to pump your fingers inside her before she can do more than gasp"
+                ">you start to pump your fingers inside her before she can do more than gasp."
                 hide screen blktone8
                 with d3
 
@@ -1058,7 +1058,7 @@ label hg_pf_ButtMolester:
 
                 show screen blktone8
                 with d3
-                ">her hips roll in rythm as you fuck her with your fingers"
+                ">her hips roll in rhythm as you fuck her with your fingers"
                 hide screen blktone8
                 with d3
 
@@ -1087,7 +1087,7 @@ label hg_pf_ButtMolester:
 
                 show screen blktone8
                 with d3
-                ">you force another finger up her ass"
+                ">you force another finger up her ass."
                 hide screen blktone8
                 with d3
 
@@ -1097,7 +1097,7 @@ label hg_pf_ButtMolester:
 
                 show screen blktone8
                 with d3
-                ">her movements have become more frantic"
+                ">her movements have become more frantic."
                 hide screen blktone8
                 with d3
 
@@ -1135,13 +1135,13 @@ label hg_pf_ButtMolester:
         $ gryffindor +=15
         m "The \"Gryffindors\" get 15 points!"
     else:
-        m "good night, [hermione_name]."
+        m "well done, [hermione_name]."
 
     call her_main("..................","grin","glance",cheeks="blush",tears="mascara",xpos="base",ypos="base")
     her "Thank you [genie_name]..."
 
     if daytime:
-        her "Now if you don't mind I'd better go. The classes are about to start."
+        her "Now if you don't mind I'd better go. My classes are about to start."
     else:
         her "I'd better go now then. It's getting pretty late..."
 

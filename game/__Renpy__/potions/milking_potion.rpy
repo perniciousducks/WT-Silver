@@ -348,8 +348,8 @@ label potion_scene_11_3: #Milking potion part 3
 
     #option 2 (Permanent expansion)
     m "[hermione_name], feel like a milkshake?"
-    call her_main("Really? Strawberry please!","smile","happyCl",emote="06")
-    m "I've only got vanilla sorry..."
+    call her_main("Really? Strawberry, please!","smile","happyCl",emote="06")
+    m "I've only got vanilla, sorry..."
     call nar(">You hand her the cloudy potion.","start")
     call nar(">Hermione cautiously smells the mixture.","end")
     call her_main("This is that damn milk again!","angry","wide")
@@ -433,7 +433,7 @@ label potion_scene_11_3: #Milking potion part 3
         call nar(">You notice hermione's breasts swell for the final time.")
         call her_main("[genie_name], this is ridiculous!","annoyed","annoyed")
         call her_main("did you make the potion stronger this time?","annoyed","angryL")
-        m "What are you talking about girl, they're the same size as always."
+        m "What are you talking about, they're the same size as always."
         call her_main("are you sure...","annoyed","frown")
         call nar(">Hermione jiggles her boobs side to side.")
         call her_main("They just feel so much ...heavier... than before.","annoyed","down")
@@ -443,7 +443,7 @@ label potion_scene_11_3: #Milking potion part 3
         m "Is that the only reason you want it?"
         call her_main("What? Why else would I want it?","open","baseL")
         m "I seem to remember you enjoying yourself with it last time."
-        call her_main("You really are disgusting sometimes [genie_name]...","annoyed","angryL")
+        call her_main("You really are disgusting sometimes, [genie_name]...","annoyed","angryL")
         m "Whatever you say..."
         call nar(">You hand hermione the harness.","start")
         call nar(">hermione takes it from your hands and slowly slips it on, taking care to make sure the cups fit.","end")
@@ -456,7 +456,7 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("...","soft","squintL")
         call her_main("{size=-5}moo...{/size}","open","baseL")
         m "what was that?"
-        call her_main("I'm not saying it again [genie_name]... {size=-5}once is enough...{/size}","annoyed","angryL")
+        call her_main("I'm not saying it again, [genie_name]... {size=-5}once is enough...{/size}","annoyed","angryL")
         call her_main("...","annoyed","down")
         call her_main("on!","open","worriedCl")
         call nar(">You hear a faint noise as the harness on hermione's chest springs to life.")
@@ -489,10 +489,10 @@ label potion_scene_11_3: #Milking potion part 3
         m "Alright, well, look like you're good to head off to class."
         call her_main("What? but sir...","open","worriedCl")
         call her_main("they're still so full...","shock","worriedCl")
-        m "it looks like the machines full I'm afraid."
+        m "it looks like the machine is full, I'm afraid."
         call her_main("(But I was so close...)","open","worriedCl")
         call her_main("ah... and if I go to class like this I'll leak everywhere!","shock","worriedCl")
-        m "well if you empty the cannister It'll probably turn back on."
+        m "well, if you empty the cannister It'll probably turn back on."
         call her_main("empty it...","angry","wink")
         call nar(">Hermione takes a look at the full milk cannister.")
         call her_main("Can I just pour it out on the floor then?","annoyed","down")
@@ -503,14 +503,14 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("Do you want to drink it then, [genie_name]?","angry","wink")
                 m "Um, I'm afraid not... I just had a big bowl of cereal."
                 call her_main("...","annoyed","down")
-                call her_main("Well then do you have a bottle for me to store it in...","angry","wink")
+                call her_main("Then do you have a bottle for me to store it in...","angry","wink")
                 m "fresh out..."
                 call her_main("...","annoyed","angryL")
                 m "I'm afraid you'll have to drink it yourself."
                 call her_main("...","soft","squintL")
                 call her_main("{size=-5}alright...{/size}","open","baseL")
                 m "Really?"
-                call her_main("Well it's not like I can go to class leaking milk again...","annoyed","angryL")
+                call her_main("It's not like I can go to class leaking milk again...","annoyed","angryL")
                 call her_main("and besides, it's not the worst feeling in the world...","angry","down_raised")
                 call her_main("I wouldn't mind giving the machine another go...","soft","ahegao")
                 m "Well, bottoms up!"
@@ -539,7 +539,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call nar(">The milker once again comes to life as it starts to milk Hermione for a second time.")
                 
             "-drink it yourself-":
-                call her_main("Do you want to drink it then [genie_name]?","angry","wink")
+                call her_main("Do you want to drink it then, [genie_name]?","angry","wink")
                 m "Waste not, want not!"
                 call her_main("...","angry","wide")
                 call her_main("well, here you are then...","angry","base")
@@ -580,12 +580,12 @@ label potion_scene_11_3: #Milking potion part 3
         
         call her_main("ah... it's like the straps are massaging me while it sucks...","silly","dead")
         call her_main("mmmm... it's amazing...","silly","ahegao")
-        call nar(">Hermione lets the machine continue it's work.")
+        call nar(">Hermione lets the machine continue its work.")
         
         $ milking = 3
         call set_hermione_action("milk_breasts")
         
-        call her_main("ah... I think that's all of it [genie_name]...","annoyed","down")
+        call her_main("ah... I think that's all of it, [genie_name]...","annoyed","down")
         call nar(">You notice the amount of milk coming from hermione's breasts has almost stopped.")
         m "How was it?"
         call her_main("it felt amazing...","grin","ahegao")
@@ -649,14 +649,14 @@ label potion_scene_11_3: #Milking potion part 3
         m "Oh um... 20 points to \"gryffindor\"!"
         $ gryffindor += 20
         call her_main("...","open_wide_tongue","ahegao")
-        call nar(">And I'll be needing this back.")
+        m "And I'll be needing this back."
         call her_main("...","open_wide_tongue","ahegao")
         call blkfade
         
-        call nar(">You slowly remove the milk filled harness. There are red marks, surrounding her tender looking nipples, where the cups were.")
+        call nar(">You slowly remove the milk filled harness. There are red marks, surrounding her tender-looking nipples, where the cups were.")
         call h_action("none","skip_update")
         $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png" 
-        m "Hmmm, maybe we overdid it a little today."
+        m "Hmmm... maybe we overdid it a little today."
         call hide_blkfade
         
         call her_main("...","silly","worried",cheeks="blush",tears="soft")
@@ -673,7 +673,7 @@ label potion_scene_11_3: #Milking potion part 3
         call h_action("none") #Resets clothing.
         call hide_blkfade
         
-        call her_main("good bye sir...","silly","dead")
+        call her_main("good bye, sir...","silly","dead")
         if potion_version == 2:
             call nar(">Hermione's breasts will now be permanently large thanks to Snape's added ingredient.","start")
             call nar(">however, Making her take the potion again may reset the effect...","end")

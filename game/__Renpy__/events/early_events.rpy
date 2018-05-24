@@ -446,7 +446,7 @@ label event_05:
         
     g4 "!!!"
     sna_[1] "Easy now... Just answer my question."
-    m "Alright, alright, just calm down, would you...?"
+    m "Alright, alright. Just calm down, would you?"
     sna_[1] "........"
 
     $ d_points = 0
@@ -952,7 +952,7 @@ label event_08:
     her "Do you think it's fair that the people who deserve to be in the lead are being pushed back instead?"
     her "Do you think that's fair, professor? Do you?"
     call her_main("","normal","base")
-    m "{size=-4}(Would you look at that pretty, little thing?){/size}"
+    m "{size=-4}(Would you look at that pretty little thing?){/size}"
     m "{size=-4}(Look at her going on and on about something... She's adorable.){/size}"
     m "{size=-4}(Damn, I haven't seen a woman in weeks.){/size}"
 
@@ -1013,20 +1013,20 @@ label event_08:
 
     her "As you can see, the situation is dire..."
     call her_main("But we can still set everything right...","open","base")
-    her "As the representative of our school's Student Representative Body..."
+    her "As the president of our school's Student Representative Body..."
     her "I have a few suggestions on how to do that more efficiently."
 
     if not d_flag_01:
         m ".............."
 
-    her "First of all, the house point system needs to be reinforced!"
+    her "First of all, the house point system needs to be maintained!"
     call her_main("You need to control the point distribution better, sir.","normal","base")
 
     if d_flag_01:
         g4 "{size=-4}(Yes, you are a whore... A nasty little whore... I bet you love to suck cocks... Don't you? Yes, I bet you do...){/size}"
         hide screen hermione_main
         with d3
-        call nar(">You stroke your diamond-hard cock ferociously!")
+        call nar(">You stroke your rock-hard cock ferociously!")
         show screen hermione_main
         with d3
 
@@ -1054,7 +1054,7 @@ label event_08:
         m "{size=-4}(Do I? I honestly don't give a damn...){/size}"
         m "Uhm... I suppose I do..."
         her "{size=-4}(\"Suppose\"?){/size}"
-        her "{size=-4}(When did Professor Dumbledore become so... apathetic.){/size}"
+        her "{size=-4}(When did Professor Dumbledore become so... apathetic?){/size}"
 
     call her_main("Another measure you could take into consideration is tightening your control over the staff...","open","angryCl")
     her "Especially the teachers..."
@@ -1203,7 +1203,7 @@ label event_09:
             pass
     
     her "I see that no matter what I do I simply cannot get through to you, sir."
-    call her_main("So in light of your negligence towards your duties I decided to take the initiative myself!","open","angryCl")
+    call her_main("So in light of your negligence, I decided to take the initiative myself!","open","angryCl")
     m "Did you now...?"
     her "Yes! We, the proud students of Hogwarts, detest sexism..."
     her "No individual shall be treated differently based on his or her gender."
@@ -1218,7 +1218,7 @@ label event_09:
     call her_main("You have no idea how hard it is to be a boy in our school these days...","open","worried")
     menu:
         "\"Didn't see this one coming...\"":
-            call her_main("No, you did not, because you, as an authority figure, refuse to listen to us, sir!","open","angryCl")
+            call her_main("No, you did not, because you, refuse to listen to us, sir!","open","angryCl")
             her "But we will make you hear us..."
         "{size=-3}\"That's literally the dumbest idea I've ever heard.\"{/size}":
             call her_main("I knew you would say something like that...","normal","frown")
@@ -1544,7 +1544,7 @@ label event_14:
         her "..............."
         call her_main("do You think you could tutor me a little, sir?","annoyed","frown")
         menu:
-            "\"I suppose that is possible\"":
+            "\"I suppose that is possible.\"":
                 pass
             "\"Hm... I'm quite busy actually.\"":
                 call her_main("Sir, please, you are the smartest wizard I know!","open","worried")

@@ -89,7 +89,7 @@ screen done_reading: #DONE READING THE BOOK.
     add im.Flip("images/animation/reading_07.png", horizontal=True) xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
     
-screen done_reading_02: #DONE READING THE BOOK BY THE FIRE.
+screen done_reading_near_fire: #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
     add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 

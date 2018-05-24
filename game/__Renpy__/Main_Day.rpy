@@ -39,7 +39,7 @@ stop weather #Stops playing the rain SFX.
 hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen phoenix_food
 hide screen done_reading
-hide screen done_reading_02
+hide screen done_reading_near_fire
 hide screen candlefire_01 #CANDLE FIRE.
 hide screen candlefire_02 #CANDLE FIRE.
 hide screen lightening #Hide lighting so it won't get stuck during clear sky weather and such.

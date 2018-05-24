@@ -354,13 +354,14 @@ label reading_book:
                 ">Implementing speed reading techniques allows you to save time and keep on reading."
             if s_reading_lvl == 3:
                 ">Implementing speed reading techniques allows you to save time and keep on reading."
+            if s_reading_lvl > 3:
+                ">Implementing advanced speed reading techniques lets you blaze through the book."
             call read_book
 
         if _return == "DONE":
             jump book_complete
         
         if speed_check == 2:
-            ">Implementing advanced speed reading techniques lets you blaze through the book."
             call read_book
 
         if _return == "DONE":

@@ -449,18 +449,18 @@ $ day = 0
 
 
 ### CHARACTER INIT RESET ###
+$ reset_persistants            = True
 
 #Snape
 call snape_init
 call snape_progress_init
 
 #Hermione
-call her_init
-call her_clothing_init
-call her_clothing_lists_init
-call her_chibi_init
-call her_clothing_save_state
-call her_progress_init
+call her_init                 #Everything resets here!
+call her_clothing_init        #Everything resets here!
+call her_clothing_lists_init  #Everything resets here!
+call her_chibi_init           #Everything resets here!
+call her_progress_init        #Everything resets here!
 
 #Luna
 call luna_init
@@ -568,6 +568,7 @@ $ custom_outfit_3_bought = False
 $ custom_outfit_4_bought = False
 $ addicted = False
 
+$ reset_persistants            = False
 
 
 ### START ANIMATION ###

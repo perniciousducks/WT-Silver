@@ -226,8 +226,8 @@ label __init_variables:
     
 
     #Reset Persistants
-    if not hasattr(renpy.store,'reset_persistants'): #important!
-        $ reset_persistants            = True
+    if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
+        $ reset_persistants            = False
 
     #Genie Init
     if not hasattr(renpy.store,'genie_sprite_base'): #important!
@@ -240,13 +240,11 @@ label __init_variables:
     #    call snape_progress_init
 
     #Hermione Init
-    if not hasattr(renpy.store,'hermione_base') or reset_persistants: #important!
-        call her_init
-        call her_clothing_init
-        call her_clothing_lists_init
-        call her_chibi_init
-    if not hasattr(renpy.store,'h_request_wear_top') or reset_persistants: #important!
-        call her_clothing_save_state
+    call her_init                #Defines newly added variables. Resets variables after creating a new game.
+    call her_clothing_init       #Defines newly added variables. Resets variables after creating a new game.
+    call her_chibi_init          #Defines newly added variables. Resets variables after creating a new game.
+    call her_clothing_lists_init #Lists update every time!
+    call her_progress_init       #Defines newly added variables. Resets variables after creating a new game.
     
     #Luna Init
     if not hasattr(renpy.store,'luna_base') or reset_persistants: #important!
@@ -275,7 +273,11 @@ label __init_variables:
     if not hasattr(renpy.store,'wardrobe_page_choice') or reset_persistants: #important!
         call wardrobe_init
 
-   
+    
+    if not hasattr(renpy.store,'reward_her_red_lipstick'):
+        $ reward_her_red_lipstick = False
+        $ reward_her_pink_lipstick = False
+        $ reward_her_black_lipstick = False
     
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
     if not hasattr(renpy.store,'mentioned_ginnys_hair'):

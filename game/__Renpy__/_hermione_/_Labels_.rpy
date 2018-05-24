@@ -327,6 +327,9 @@ label silver_requests:
                 jump day_time_requests
             
     else:
+        show screen hermione_main
+        with d3
+        
         her "The Gryffindors are in the lead. I don't need to do this."
         jump day_time_requests
     
@@ -573,10 +576,10 @@ label Night_Request_Block:
     python:
         for i in hg_pr_list: #Call any public request event if it's in progress
             if i.inProgress:
-                renpy.call(i.complete_label)
+                renpy.jump(i.complete_label)
         for i in hg_ps_list: #Call any public shaming event if it's in progress
             if i.inProgress:
-                renpy.call(i.complete_label)
+                renpy.jump(i.complete_label)
                 
     jump night_resume
     

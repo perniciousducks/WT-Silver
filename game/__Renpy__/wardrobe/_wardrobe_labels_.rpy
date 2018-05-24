@@ -941,11 +941,19 @@ label use_potion:
 label use_item: #Not in use.
     hide screen wardrobe
     call her_main(xpos="right",ypos="base",trans="fade")
-    if item_choice == "buttplug":
+    if item_choice == "buttplugs":
         menu:
             "-Buttplug Menu-"
-            "-Small Buttplug-": #Hypno potion event.
+            "-Buttplug Event-" if daytime:
+                jump hg_ps_Buttplug
+            "-Equip Small Buttplug-" if buttplug_1_worn:
                 $ misc_item_choice = "small_buttplug"
+                jump equip_misc_item
+            "-Equip Medium Buttplug-" if buttplug_2_worn:
+                $ misc_item_choice = "medium_buttplug"
+                jump equip_misc_item
+            "-Equip Large Buttplug-" if buttplug_3_worn:
+                $ misc_item_choice = "large_buttplug"
                 jump equip_misc_item
             "-Never mind-":
                 jump return_to_wardrobe
@@ -1039,6 +1047,20 @@ label set_h_garterbelt(garterbelt="", color=""):
     return
 
 
+label set_h_buttplug(buttplug=""):
+    hide screen hermione_main
+    if buttplug == "None" or buttplug == "" or buttplug == "remove":
+        $ h_request_wear_buttplug = False
+        $ hermione_wear_buttplug = False
+        $ h_buttplug = "00_blank"
+    else:
+        $ h_request_wear_buttplug = True
+        $ hermione_wear_buttplug = True
+        $ h_buttplug = buttplug
+    call update_her_uniform
+    show screen hermione_main
+    return
+    
 ### OUTFITS SECTION ###
 
 ## Outfit equip ##

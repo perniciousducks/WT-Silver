@@ -26,6 +26,7 @@ label your_whore:
     $ hermione_body_accs_list  = []
     $ h_gloves                 = "00_blank"
     $ h_stockings              = "00_blank"
+    $ h_buttplug               = "00_blank"
     $ hermione_wear_robe       = False
     $ h_request_wear_robe      = False
 

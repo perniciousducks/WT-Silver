@@ -437,6 +437,9 @@ label update_her_uniform:
     $ hermione_hat = "characters/hermione/accessories/hats/"+str(h_hat)+".png"
         
         
+    #Miscellaneous
+    $ hermione_buttplug            = "characters/hermione/accessories/plugs/"+str(h_buttplug)+".png"
+    
     #Piercings
     $ hermione_ear_piercing        = "characters/hermione/accessories/piercings/"+str(h_ear_piercing_color)+"/"+str(h_ear_piercing)+".png"
     if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts

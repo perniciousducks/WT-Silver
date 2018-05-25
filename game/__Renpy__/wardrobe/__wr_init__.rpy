@@ -1,6 +1,9 @@
 
 
 label wardrobe_init:
+    pass
+
+if not hasattr(renpy.store,'wardrobe_page') or reset_persistants:
 
     $ wardrobe_active = 0
     $ active_girl = "hermione"
@@ -43,4 +46,6 @@ label wardrobe_init:
     $ wardrobe_underwear_color       = "base"
     $ wardrobe_outfits_color         = "base"
 
-    return
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
+
+return

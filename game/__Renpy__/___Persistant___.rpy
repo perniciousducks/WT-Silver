@@ -173,7 +173,14 @@ label __init_variables:
     if not hasattr(renpy.store,'potion_scene_11_progress'): #important!
         $ potion_scene_11_progress = 0
 
-
+        
+    ###CGs
+    if not hasattr(renpy.store,'cgg_folder'): #important!
+        $ ccg_folder = "luna_bj"
+        $ ccg1 = "herm"
+        $ ccg2 = 1
+        $ ccg3 = "gene"
+        
     #SC34 update 2 stuff, thanks akabur.
     if not hasattr(renpy.store,'sc_cg_base'): #important!
         $ sc_cg_base = "images/28_cg/sc34/1/base_1.png"
@@ -234,10 +241,8 @@ label __init_variables:
         call init_genie_layering
 
     #Snape Init
-    if not hasattr(renpy.store,'snape_xpos'): #important!
-        call snape_init
-    #if not hasattr(renpy.store,'snape_busy'): #important!
-    #    call snape_progress_init
+    call snape_init
+    call snape_progress_init
 
     #Hermione Init
     call her_init                #Defines newly added variables. Resets variables after creating a new game.
@@ -247,37 +252,27 @@ label __init_variables:
     call her_progress_init       #Defines newly added variables. Resets variables after creating a new game.
     
     #Luna Init
-    if not hasattr(renpy.store,'luna_base') or reset_persistants: #important!
-        call luna_init
-    #if not hasattr(renpy.store,'luna_known'): #important!
-    #    call luna_progress_init
+    call luna_init
+    call luna_progress_init
 
     #Cho Init
-    if not hasattr(renpy.store,'cc_base') or reset_persistants: #important!
-        call cho_init
-    #if not hasattr(renpy.store,'chof2_first'): #important!
-    #    call cho_progress_init
+    call cho_init
+    call cho_progress_init
 
     #Susan Init
-    if not hasattr(renpy.store,'sus_base') or reset_persistants: #important!
-        call sus_init
-    #if not hasattr(renpy.store,'sus_known'): #important!
-    #    call sus_progress_init
+    call susan_init
+    call susan_progress_init
 
     #Astoria Init
-    #if not hasattr(renpy.store,'ast_base') or reset_persistants: #important!
-    #    call ast_init
-    #if not hasattr(renpy.store,'ast_base'): #important!
-    #    call ast_progress_init
-
-    if not hasattr(renpy.store,'wardrobe_page_choice') or reset_persistants: #important!
-        call wardrobe_init
-
+    call astoria_init
+    call astoria_progress_init
     
-    if not hasattr(renpy.store,'reward_her_red_lipstick'):
-        $ reward_her_red_lipstick = False
-        $ reward_her_pink_lipstick = False
-        $ reward_her_black_lipstick = False
+    #Tonks Init
+    call tonks_init
+    call tonks_progress_init
+
+    call wardrobe_init
+
     
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
     if not hasattr(renpy.store,'mentioned_ginnys_hair'):
@@ -295,7 +290,5 @@ label __init_variables:
     
     $ row_index_selected = 0
     $ column_index_selected = 0
-    
-    $ reset_persistants = False
     
     return

@@ -471,13 +471,16 @@ call cho_init
 call cho_progress_init
 
 #Susan
-call sus_init
-call sus_progress_init
+call susan_init
+call susan_progress_init
 
 #Astoria
-#call ast_init
-#call ast_progress_init
+call astoria_init
+call astoria_progress_init
 
+#Astoria
+call tonks_init
+call tonks_progress_init
 
 
 #Wardrobe Reset

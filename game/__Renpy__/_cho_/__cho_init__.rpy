@@ -1,6 +1,9 @@
 
 
 label cho_init:
+    pass
+
+if not hasattr(renpy.store,'cc_base') or reset_persistants:
 
     #Body
     $ cc_base                = "characters/cho/base/base_01.png" 
@@ -36,11 +39,15 @@ label cho_init:
     $ cc_wear_vest           = True
     $ cc_wear_acc            = True
 
-    return
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
+
+return
 
 
 label cho_progress_init:
+    pass
 
+if not hasattr(renpy.store,'cho_whoring') or reset_persistants:
     ##Favour stuff
     $ chof2_first = True
 
@@ -54,5 +61,7 @@ label cho_progress_init:
     $ days_since_cho = 0
     $ cho_known = False
     $ cho_met = False
+
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
 
 return

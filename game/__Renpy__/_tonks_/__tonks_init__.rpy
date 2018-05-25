@@ -1,6 +1,9 @@
 
 
 label tonks_init:
+    pass
+
+if not hasattr(renpy.store,'tonks_base') or reset_persistants:
 
     #Body
     $ tonks_base                = "characters/tonks/body/base/base_01.png" 
@@ -39,10 +42,14 @@ label tonks_init:
     $ tonks_wear_stockings      = True 
     $ tonks_wear_acc            = True
 
-    return
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
+
+return
 
 
 label tonks_progress_init:
+
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
 
     ##Favour stuff
     

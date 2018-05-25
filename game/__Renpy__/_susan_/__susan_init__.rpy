@@ -1,6 +1,9 @@
 
 
 label susan_init:
+    pass
+
+if not hasattr(renpy.store,'susan_base') or reset_persistants:
 
     #Body
     $ susan_base                = "characters/susan/body/base/base_01.png" 
@@ -36,10 +39,14 @@ label susan_init:
     $ susan_wear_stockings      = True 
     $ susan_wear_acc            = True
 
-    return
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
+
+return
 
 
 label susan_progress_init:
+
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
 
     ##Favour stuff
     

@@ -1,6 +1,9 @@
 
 
 label astoria_init:
+    pass
+
+if not hasattr(renpy.store,'astoria_base') or reset_persistants:
 
     #Body
     $ astoria_base                = "characters/astoria/body/base/base_01.png" 
@@ -36,14 +39,18 @@ label astoria_init:
     $ astoria_wear_panties        = True
     $ astoria_wear_stockings      = True 
     $ astoria_wear_acc            = True
+    
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
 
-    return
+return
 
 
 label astoria_progress_init:
+    pass
+
+if not hasattr(renpy.store,'astoria_spell_progress') or reset_persistants:
 
     ##Favour stuff
-    
 
     ##Stats
     $ astoria_spell_progress = 0
@@ -56,5 +63,6 @@ label astoria_progress_init:
     $ astoria_arrival_day = 30
     $ astoria_arrvial_whoring = 9
 
+#if not hasattr(renpy.store,'ADD') or reset_persistants:
 
 return

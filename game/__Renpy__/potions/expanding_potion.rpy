@@ -2,7 +2,7 @@
 
 ### BREAST AND ASS EXPANSION ###
 
-label potion_scene_2_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
+label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
     m "Guess what I have for you today."
     call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?","open","angryCl")
     m "Well I mean this one smells nice."
@@ -188,8 +188,8 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     jump day_main_menu
 
 
-
 label potion_scene_2_1_2: #Hermione comes back after having her breasts expand in class
+
 
 
 label potion_scene_2_2: #ass expansion

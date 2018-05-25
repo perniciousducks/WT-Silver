@@ -81,16 +81,13 @@ label cheats:
                     $ imagination = 5
                     "Your imagination grows!"
                     jump cheats_books
-                "-Cheat Reading (off)-" if not cheat_reading:
-                    $ cheat_reading = True
-                    jump cheats_books
-                "-Cheat Reading (on)-"if cheat_reading:
-                    $ cheat_reading = False
+                "-Cheat Reading ([cheat_reading])-":
+                    $ cheat_reading = not cheat_reading
                     jump cheats_books
                 "-All Books-" if day >= 16:
                     python:
-                        for i in book_list:
-                            i.purchased = True
+                        for book in Books_OBJ.get_all():
+                            book.purchased = True
                     "Obtained All Books."
                     jump cheats_books
                 "-never mind-":

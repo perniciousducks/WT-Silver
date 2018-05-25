@@ -112,9 +112,9 @@ label petting:
                     show screen bld1
                     with d3
                     show screen hermione_01
-                    call her_main("Something... feels different...","body_10",xpos=390,ypos=0)
+                    call her_main("Something... feels different...","open","worriedL",xpos=390,ypos=0)
                     ">She looks up at the bird you're petting and her eyes grow wide."
-                    call her_main("Professor. Something's wrong.","body_18")
+                    call her_main("Professor. Something's wrong.","angry","wide")
                     m "Why don't you tell me why you're here in the first place?"
                     her "Professor! Fawkes is-!"
                     $ renpy.play('sounds/pistol2.mp3')
@@ -338,7 +338,7 @@ label talkingfawkes:
             show screen hermione_02_b
             $ tmp_robe = hermione_wear_robe
             $ hermione_wear_robe = True
-            call her_main("Professor.  There was something... calling me here.","body_10",xpos=390,ypos=0)
+            call her_main("Professor.  There was something... calling me here.","open","worriedL",xpos=390,ypos=0)
             g9 "And what was it calling you here for?"
             her "I'm not sure... Maybe I shouldn'tve come sir."
             m "No no, stay."

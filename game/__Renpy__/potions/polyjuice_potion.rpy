@@ -380,7 +380,7 @@ label potion_scene_1_2: #Luna potion
 #Lamia transformation.
     
 label potion_scene_1_3: #Lamia potion
-    call her_main("That's dumb.","body_32")
+    call her_main("That's dumb.","scream","worriedCl")
     m "I literally don't know."
     jump day_main_menu
 

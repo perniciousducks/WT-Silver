@@ -803,13 +803,13 @@ label potion_scene_3_3_1: #Hypno potion
 
 label potion_scene_3_4_1: 
     m "How long until your next class [hermione_name]?"
-    call her_main("about fifteen minutes sir.","body_02")
+    call her_main("about fifteen minutes sir.","open","base")
     m "in that case I think you might have to be a little late."
-    call her_main("what? why?","body_11")
+    call her_main("what? why?","open","worried")
     g4 "Well, it might be a bit hard for you to attend class with my cock buried in your tight little pussy."
-    call her_main("Oh...","body_105")
+    call her_main("Oh...","soft","squintL")
     m "That's not going to be a problem is it [hermione_name]?"
-    call her_main("of course not [genie_name]! Let me just take my clothes off...","body_106")
+    call her_main("of course not [genie_name]! Let me just take my clothes off...","grin","ahegao")
 
     show screen blkfade
     with d3
@@ -819,7 +819,7 @@ label potion_scene_3_4_1:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("ahhhhhhhhh....{image=textheart}","body_130")
+    call her_main("ahhhhhhhhh....{image=textheart}","scream","wide")
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     hide screen genie
     $ ccg_folder = "herm_sex"

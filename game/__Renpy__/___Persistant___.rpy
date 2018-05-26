@@ -213,7 +213,8 @@ label __init_variables:
     $ hg_pr_BlowjobTeacher_ID = 7 #07 (Blow a teacher)
     $ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
     
-    
+    #Update max tutoring if there is add more events 
+    $ max_tutoring = 14 
     
     #Character Paths
     $ gen_path = "characters/genie/"

@@ -134,11 +134,11 @@ screen hermione_stat_menu:
                
                 use stat_bar(int((v_tutoring/max_tutoring)*10), "-Tutoring-" ,"-"+tutoringWord+"-")
                 
-                use text_stat("Hermione have given ", " Handjobs", hg_pf_TouchMe_OBJ.points)
+                use text_stat("Hermione has given ", " Handjobs", hg_pf_TouchMe_OBJ.points)
                 
-                use text_stat("Hermione have given ", " Blojobs", hg_pf_SuckIt_OBJ.points)
+                use text_stat("Hermione has given ", " Blowjobs", hg_pf_SuckIt_OBJ.points)
                 
-                use text_stat("Hermione have given ", " Tit jobs", hg_pf_TitJob_OBJ.points)
+                use text_stat("Hermione has given ", " Tit jobs", hg_pf_TitJob_OBJ.points)
                 
                 use text_stat("Hermione and you have had sex ", " times", hg_pf_LetsHaveSex_OBJ.points)
                 

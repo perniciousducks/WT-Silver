@@ -227,7 +227,7 @@ label hg_pf_DanceForMe:
         call her_main("I thought I could, but...","angry","suspicious",cheeks="blush",trans="fade")
         call her_main("Stripping for points, [genie_name]?","angry","suspicious",cheeks="blush")
         call her_main("People look up to me in this school!","angry","suspicious",cheeks="blush")
-        call her_main("I have reputation...*sob*","angry","suspicious",cheeks="blush")
+        call her_main("I have a reputation...*sob*","angry","suspicious",cheeks="blush")
         call her_main("And If I do this...","scream","angry",cheeks="blush",tears="messy")
         call blkfade  
         
@@ -758,17 +758,17 @@ label hg_pf_DanceForMe:
                     call her_main("...................","open","down")
                     call sna_main("Hm... You are being suspiciously quiet, Miss Granger.","snape_05")
                     call her_main("{size=-4}(Oh no! Is he onto us?){/size}","shock","wide")
-                    call her_main("I am just doing what the headmaster told me, [genie_name]...","grin","worriedCl",emote="05")
+                    call her_main("I'm just doing what the headmaster told me to, Professor Snape...","grin","worriedCl",emote="05")
                     call sna_main("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day?","snape_03")
                     m "Severus..."
                     call sna_main("No, Albus I want to hear little miss perfect's answer.","snape_03")
-                    call her_main("I just want you to have a good time, [genie_name]...","grin","worriedCl",emote="05")
-                    call sna_main("Oh! It's \"[genie_name]\" now, is it?","snape_03")
+                    call her_main("I just want you to have a good time, Professor Snape...","grin","worriedCl",emote="05")
+                    call sna_main("Oh! It's \"Professor Snape\" now, is it?","snape_03")
                     call sna_main("What happened to \"snape'o'doodle\" and \"Professor Snivellus\"??!","snape_10")
                     g9 "{size=-5}( \"snape'o'doodle\, heh... that's funny.){/size}"
                     call her_main(".............","grin","worriedCl",emote="05")
                     call sna_main("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
-                    call her_main("Well, maybe that's because you deserve it... [genie_name].","scream","angry",emote="01")
+                    call her_main("Well, maybe that's because you deserve it... Snivellus.","scream","angry",emote="01")
                     call sna_main("What?!","snape_10")
                     call sna_main("How dare you....?")
                     call sna_main("Who do you think you are? You filthy mu--","snape_15")
@@ -891,7 +891,7 @@ label hg_pf_DanceForMe:
                 
                             call her_main("{size=-5}(Ginny...){/size}","open","down")
                         "\"How would you grade Hermione's butt?\"":
-                            call sna_main("miss Hermione's buttocks?","snape_05") 
+                            call sna_main("miss Granger's buttocks?","snape_05") 
                             call her_main("!!!............","annoyed","angryL")
                             m "Sure! As you would grade a paper."
                             call sna_main("Hm...","snape_13")

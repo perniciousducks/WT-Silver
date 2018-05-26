@@ -276,7 +276,7 @@ label __init_variables:
     if not hasattr(renpy.store,'wardrobe_page_choice') or reset_persistants: #important!
         call wardrobe_init
 
-    
+   
     
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
     if not hasattr(renpy.store,'mentioned_ginnys_hair'):

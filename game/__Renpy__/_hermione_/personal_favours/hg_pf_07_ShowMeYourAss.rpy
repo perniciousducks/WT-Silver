@@ -283,7 +283,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 call her_head("...............","disgust","down_raised",cheeks="blush")
                 m "Admit it, you like it a little bit..."
                 m "Maybe even a lot..."
-                call her_head("{size=-5}(It feels so weird to let him grope me){/size}","disgust","down_raised",cheeks="blush")
+                call her_head("{size=-5}(It feels so weird to let him grope me...){/size}","disgust","down_raised",cheeks="blush")
                 call her_head("[genie_name], I am letting you do this to me to help my house!","shock","worriedCl")
                 call her_head("It doesn't matter how good it feels...","shock","worriedCl")
                 m "So you admit that it does feel good."

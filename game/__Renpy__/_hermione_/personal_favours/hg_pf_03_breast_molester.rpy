@@ -203,10 +203,10 @@ label hg_pf_BreastMolester:
                     call nar(">You keep on massaging her tits through her uniform...")
                     call her_head("A small price to pay for the honour of my house, really......{image=textheart}","soft","baseL",cheeks="blush")
                 else:
-                    m "Really? It seems to me as if you love it"
-                    call her_head("I wouldn't say that I love it","base","ahegao_raised",cheeks="blush")
+                    m "Really? It seems to me as if you love it."
+                    call her_head("I wouldn't say that I love it...","base","ahegao_raised",cheeks="blush")
                     call nar(">You keep on massaging her tits through her uniform...")
-                    m "What would you say then [hermione_name]?"
+                    m "What would you say then, [hermione_name]?"
                     call her_head("I just like it, {size=-4}a lot{image=textheart}{/size}","base","ahegao_raised",cheeks="blush")
 
             "-Pull on them abruptly with force-":
@@ -255,7 +255,7 @@ label hg_pf_BreastMolester:
         $ gryffindor +=15
         m "The \"Gryffindor\" house gets 15 points!"
     else:
-        m "you may leave now [hermione_name]"
+        m "you may leave now, [hermione_name]."
    
     call bld
     call her_main("..................","annoyed","worriedL",xpos="base",ypos="base")
@@ -278,7 +278,7 @@ label hg_pf_BreastMolester:
         if whoring >= 20:
             call her_head("(Eh, who cares)","base","ahegao_raised",cheeks="blush")
         else:
-            call her_head("(I'll just ask him about it next time)","annoyed","angryL")
+            call her_head("(I'll just ask him about it next time...)","annoyed","angryL")
 
         pause.5
         call her_chibi("leave","door","base")

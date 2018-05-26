@@ -18,12 +18,11 @@ label equip_her_misc_item:
 
     if mad >= 1:
         jump equipping_failed
-
-    elif whoring <= 11:
-        jump too_much
         
     else:
         if misc_item_choice == "transparency":
+            if whoring <= 11:
+                jump too_much
     
             $ wardrobe_active = 0 #activates dissolve in her_main 
 
@@ -65,4 +64,5 @@ label equip_her_misc_item:
                 call update_her_uniform #Updates clothing and body.
                 
             jump return_to_wardrobe
-           
+            
+            

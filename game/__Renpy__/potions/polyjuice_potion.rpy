@@ -4,7 +4,7 @@
 
 #Cat ears.
 
-label potion_scene_1: #catears (keep in mind Genie is trying to transform her into another girl)
+label potion_scene_1_1_1: #catears (keep in mind Genie is trying to transform her into another girl)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
     m "Today I have a new type of favour for you to perform."
@@ -68,7 +68,7 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     $ hermione_takes_classes = True
     jump day_main_menu
 
-label potion_scene_1_2: #Scene where Hermione comes back after classes angry and confused at being given cat ears and a tail.
+label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry and confused at being given cat ears and a tail.
     call play_sound("door") #Sound of a door opening.
     call her_chibi("stand","mid","base")
     
@@ -236,10 +236,9 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
     jump night_main_menu
     
     
-    
 #Luna transformation.
 
-label potion_scene_6: #Luna potion
+label potion_scene_1_2: #Luna potion
     m "Might I offer you a drink?"
     call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base")
     m "Nothing of the sort, just a harmless little potion."
@@ -377,8 +376,63 @@ label potion_scene_6: #Luna potion
     with d3
     jump day_main_menu
 
-
-
+    
+#Lamia transformation.
+    
+label potion_scene_1_3: #Lamia potion
+    call her_main("That's dumb.","scream","worriedCl")
+    m "I literally don't know."
+    jump day_main_menu
 
     
+#Clone transformation.
     
+label potion_scene_1_4: #Clone potion
+    m "Do you ever feel conflicted about what we do in here [hermione_name]?"
+    her "Conflicted? I suppose I do... why do you ask?"
+    m "because I have a new potion that can help you come to terms with this internal conflict."
+    her "What? How?"
+    m "It splits your mind into two parts, allowing you to confront yourself and address the problem."
+    her "Splits my mind?! That doesn't sound very safe!"
+    m "It only splits your mind metaphorically. I ensure you it's as safe as can be."
+    her "Well if you made it yourself then I trust it. I mean it's not like the weasley twins made it."
+    m "Of course not... Now if you'd kindly drink it we can get to the bottom of your conflicted nature."
+    her "..."
+    her "Well here goes..."
+    call nar(">Hermione drinks the potion.")
+    her "Mmmmmm it's so sweet..."
+    herA "Ughhhh, it's so sour..."
+
+    #Hermione split into two versions of herself, one slutty, one prudish
+    #Slutty one wants to have sex with Genie 
+    #Genie obliges
+    #Slutty Hermione enjoying it immensely 
+    #Genie trying to convince pruddy Hermione to join in
+    #Prude Hermione wants no part in it, although she is slightly aroused
+    #Slut Hermione 
+    #Genie cums in Hermione
+    #Slut Hermione wants to go again 
+    #Slut Hermione offers to suck Genie to get him hard 
+    #Genie says why don't we get prude Hermione to do it
+    #Slut Hermione says that's a great idea
+    #Prude Hermione refuses
+    #Slut Hermione and Genie force her to her knees
+    #Genie talks dirty to Prude Hermione while Slutty Hermione encourages her
+    #Genie ends up covering her in cum
+    #Prude Hermione partially speechless
+    #Slutty Hermione wants to go again but Genie is spent
+    #Hermione reforms into one person
+    #Genie ridicules her, saying that even the most prudish and reseverved version of herself ended up sucking him off
+    #Hermione feels both shame and pride
+    #THE END
+
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    call her_walk("mid","leave",2)
+    
+    $ hermione_takes_classes = True
+    jump day_main_menu

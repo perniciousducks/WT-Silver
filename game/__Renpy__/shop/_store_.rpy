@@ -209,49 +209,35 @@ label shop_books:
     menu:
         "-Educational Books-":
             label education_menu:
-                python:
-                    edu_menu = []
-                    edu_list = []
-                    edu_list.extend(speed_read_books)
-                    edu_list.extend(speed_write_books)
-                    for i in edu_list:
-                        if i.purchased:
-                            edu_menu.append((i.getMenuTextPurchased(),i))
-                        else:
-                            edu_menu.append((i.getStoreMenuText(),i))
-                    edu_menu.append(("-Never mind-", "nvm"))
-                    result = renpy.display_menu(edu_menu)
-                if result == "nvm":
-                    jump shop_book_menu
-                elif result.purchased:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump education_menu
-                else:
-                    call purchase_book(result)
+            $ books_menu_list = Books_OBJ.get_edu()
         "-Fiction books-":
             twi "These books are mostly light erotica..." 
             ger "Some of the girls insisted that I order them in."
             label fiction_menu:
-                python:
-                    fic_menu = []
-                    for i in fiction_book_list:
-                        if i.purchased:
-                            fic_menu.append((i.getMenuTextPurchased(),i))
-                        else:
-                            fic_menu.append((i.getStoreMenuText(),i))
-                    fic_menu.append(("-Never mind-", "nvm"))
-                    result = renpy.display_menu(fic_menu)
-                if result == "nvm":
-                    jump shop_book_menu
-                elif result.purchased:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                else:
-                    call purchase_book(result)
+            $ books_menu_list = Books_OBJ.get_fic()
         "-Never mind-":
-            call screen shop_screen
+            call screen shop_screen 
+    python:
+        books_menu = []
+        for book in books_menu_list:
+            if book.purchased:
+                books_menu.append((book.getMenuTextPurchased(),book))
+            else:
+                books_menu.append((book.getStoreMenuText(),book))
+        books_menu.append(("-Never mind-", "nvm"))
+        BookOBJ = renpy.display_menu(books_menu)
+    if BookOBJ == "nvm":
+        jump shop_book_menu
+    elif BookOBJ.purchased:
+        call do_have_book #Message that says that you already bought this book.
+    else:
+        call purchase_book
+    if BookOBJ in Books_OBJ.get_edu():
+        jump education_menu
+    if BookOBJ in Books_OBJ.get_fic():
+        jump fiction_menu
     
-label purchase_book(BookOBJ):
+label purchase_book:
     $ the_gift = BookOBJ.picture
     show screen gift
     with d3
@@ -264,123 +250,59 @@ label purchase_book(BookOBJ):
                 "Book [BookOBJ.name] has been added to your collection."
                 hide screen gift
                 with d3
-                if BookOBJ in fiction_book_list:
-                    jump fiction_menu
-                else:
-                    jump education_menu
             else:
                 call no_gold #Massage: m "I don't have enough gold".
-                if BookOBJ in fiction_book_list:
-                    jump fiction_menu
-                else:
-                    jump education_menu
         "-Never mind-":
             hide screen gift
-            if BookOBJ in fiction_book_list:
-                jump fiction_menu
-            else:
-                jump education_menu
+    return
     
     
 label shop_potion_menu:
     show screen shop_screen
-    menu:
-        "-Questions acquiring items-":
-            menu:
-                "-Knotgrass-":
-                    m "Do you know where I can find \"Knotgrass\"?"
-                    fre "You can sometimes find Knotgrass by the forbidden forest."
-                    jump shop_potion_menu
-                "-Root of Aconite-":
-                    m "Do you know where I can find \"Root of Aconite\"?"
-                    ger "Root of Aconite can be found down by the lake."
-                    jump shop_potion_menu
-                "-Wormwood-":
-                    m "Do you know where I can find \"Wormwood\"?"
-                    ger "Wormwood is sometimes found in the forbidden forest."
-                    jump shop_potion_menu
-                "-Niffler's Fancy-":
-                    m "Do you know where I can find \"Niffler's Fancy\"?"
-                    fre "Hmm... I think I heard that it's found by the lake."
-                    jump shop_potion_menu
-                
-        "{color=#858585}-Polyjuice Potion-{/color}" if whoring < 5:
-            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
-            call screen shop_screen
-        "-Polyjuice Potion-" if whoring >= 5:
-            menu:
-                "-Buy the potion for 40 Gold-":
-                    if gold >= 40:
-                        $ gold -= 40
-                        $ p_inv.append("Polyjuice Potion")
-                        m "Polyjuice potion aquired, although it's missing a key ingredient..."
-                    else:
-                        m "I don't have enough gold."
-                    call screen shop_screen
-                "-Nevermind-":
-                    call screen shop_screen
-        "{color=#858585}-Transparent Tincture-{/color}" if whoring < 3:
-            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
-            call screen shop_screen
-        "-Transparent Tincture-" if whoring >= 3:
-            menu:
-                "-Buy the potion for 20 Gold-":
-                    if gold >= 20:
-                        $ gold -= 20
-                        $ p_inv.append("Transparent Tincture")
-                        m "Transparent Tincture aquired, although it's missing a key ingredient..."
-                    else:
-                        m "I don't have enough gold."
-                    call screen shop_screen
-                "-Nevermind-":
-                    call screen shop_screen
-        "{color=#858585}-Expanding Elixir-{/color}" if whoring < 8:
-            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
-            call screen shop_screen
-        "-Expanding Elixir-" if whoring >= 8:
-            menu:
-                "-Buy the potion for 30 Gold-":
-                    if gold >= 30:
-                        $ gold -= 30
-                        $ p_inv.append("Expanding Elixir")
-                        m "Expanding Elixir aquired, although it's missing a key ingredient..."
-                    else:
-                        m "I don't have enough gold."
-                    call screen shop_screen
-                "-Nevermind-":
-                    call screen shop_screen
-        "{color=#858585}-Moreish Mead-{/color}" if whoring < 14:
-            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
-            call screen shop_screen
-        "-Moreish Mead-" if whoring >= 14:
-            menu:
-                "-Buy the potion for 60 Gold-":
-                    if gold >= 60:
-                        $ gold -= 60
-                        $ p_inv.append("Moreish Mead")
-                        m "Moreish Mead aquired, although it's missing a key ingredient..."
-                    else:
-                        m "I don't have enough gold."
-                    call screen shop_screen
-                "-Nevermind-":
-                    call screen shop_screen
-        "{color=#858585}-Imperius Potation-{/color}" if whoring < 14:
-            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
-            call screen shop_screen
-        "-Imperius Potation-" if whoring >= 14:
-            menu:
-                "-Buy the potion for 45 Gold-":
-                    if gold >= 45:
-                        $ gold -= 45
-                        $ p_inv.append("Imperius Potation")
-                        m "Imperius Potation aquired, although it's missing a key ingredient..."
-                    else:
-                        m "I don't have enough gold."
-                    call screen shop_screen
-                "-Nevermind-":
-                    call screen shop_screen
-        "-Never mind-":
-            call screen shop_screen
+    python:
+        potion_menu = []
+        potion_menu.append(("-Questions acquiring items-", "questions"))
+        for potion in potion_lib.getBuyable():
+            if whoring < potion.whoring_rec:
+                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","whoring"))
+            else:
+                potion_menu.append(("-"+potion.name+"-",potion))
+        potion_menu.append(("-Never mind-", "nvm"))
+        PotionOBJ = renpy.display_menu(potion_menu)
+    if isinstance(PotionOBJ, silver_potion):
+        python:
+            potion_menu = []
+            potion_menu.append(("-Buy the potion for "+PotionOBJ.cost+" Gold-", PotionOBJ))
+            potion_menu.append(("-Never mind-", "nvm"))
+            choice = renpy.display_menu(potion_menu)
+        if isinstance(choice, silver_potion):
+            if gold > PotionOBJ.cost:
+                $ gold -= PotionOBJ.cost
+                $ potion_inv.add(PotionOBJ.id)
+                $ renpy.say(m, PotionOBJ.name+" aquired, although it's missing a key ingredient...")
+            else:
+                $ renpy.say(m, "I don't have enough gold.")
+        call screen shop_screen
+    if PotionOBJ == "questions":
+        menu:
+            "-Knotgrass-":
+                m "Do you know where I can find \"Knotgrass\"?"
+                fre "You can sometimes find Knotgrass by the forbidden forest."
+            "-Root of Aconite-":
+                m "Do you know where I can find \"Root of Aconite\"?"
+                ger "Root of Aconite can be found down by the lake."
+            "-Wormwood-":
+                m "Do you know where I can find \"Wormwood\"?"
+                ger "Wormwood is sometimes found in the forbidden forest."
+            "-Niffler's Fancy-":
+                m "Do you know where I can find \"Niffler's Fancy\"?"
+                fre "Hmm... I think I heard that it's found by the lake."
+        jump shop_potion_menu
+    if PotionOBJ == "whoring":
+        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+    if PotionOBJ == "nvm":
+        pass    
+    call screen shop_screen
     
     
 label gifts_menu:

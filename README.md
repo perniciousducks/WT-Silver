@@ -10,7 +10,7 @@ You have two options for installing silver:
 
 ## Credits (In no particular order):
 - **Mo**:		Writing, coding and mod compilation
-- **Mad Merlin**:		Coding, complete overhaul of UI and chibi
+- **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, bugfixing, some writing.
 - **Asease1**:		Coding
 - **UE Crew**:		Tutoring and additional assets.
 - **CatBug**:		Writing, coding and selecting some faces.

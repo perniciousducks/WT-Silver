@@ -302,7 +302,7 @@ label silver_requests:
                         jump not_now_pr
                     else:
                         $ renpy.jump(result)
-                        
+
             "{color=#858585}-Public Shaming-{/color}" if not daytime:
                 show screen blktone
                 with d3
@@ -322,7 +322,7 @@ label silver_requests:
                     jump silver_requests_root
                 else:
                     $ renpy.jump(result)
-                        
+            
             "-Never mind-":
                 jump day_time_requests
             
@@ -558,13 +558,13 @@ label Night_Request_Block:
         jump slytherin_cheer_responses
 
     if hermione_wear_ears == True:
-        jump potion_scene_1_2
+        jump potion_scene_1_1_2
 
     if transparency < 1 and transparent_quest:
         jump potion_scene_4_2
 
     if addicted == True:
-        jump potion_scene_3_2
+        jump potion_scene_3_1_2
     
     
     if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:

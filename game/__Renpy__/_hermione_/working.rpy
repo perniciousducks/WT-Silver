@@ -153,9 +153,9 @@ label gryffindor_cheer_responses:
                 m "And does he look at you a lot?"
                 call her_main("Of course he does, we're good friends.","open","base")
                 m "I'm sure that must be the reason."
-                call her_main("Well here's the money [genie_name]","base","base")
+                call her_main("Well here's the money, [genie_name].","base","base")
                 ">You receive [payment] gold coins."
-                m "Well done [hermione_name], 20 points to Gryffindor."
+                m "Well done, [hermione_name], 20 points to Gryffindor."
                 call her_main("Thank you [genie_name].","base","happyCl")
                 $ gryffindor+= 20
                 $ gold += payment

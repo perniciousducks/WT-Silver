@@ -229,7 +229,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 with hpunch
 
                 call her_main("Ah... [genie_name], please...","scream","wide")
-                call nar(">Hermione clutches the edge of your desk to keep herself form taking a step towards you...")
+                call nar(">Hermione clutches the edge of your desk to keep herself from taking a step towards you...")
                 m "Good girl..."
                 call her_main("*Panting heavily*","grin","dead")
                 m "Do you enjoy this?"
@@ -269,9 +269,9 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                     call her_main("But if you insist [genie_name]...","silly","worried",cheeks="blush",tears="soft")
                     m "Well, I do insist... apparently."
                 else:
-                    call her_main("Yes please [genie_name]","shock","baseL",cheeks="blush",tears="soft")
+                    call her_main("Yes please, [genie_name]!","shock","baseL",cheeks="blush",tears="soft")
                     call her_main("I'll even let you do it for free...","shock","baseL",cheeks="blush",tears="soft")
-                    m "Well, in that case"
+                    m "Well, in that case..."
 
                 call her_main("Ah...","silly","worried",cheeks="blush",tears="soft")
                 call ctc

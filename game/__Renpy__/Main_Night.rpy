@@ -35,7 +35,7 @@ scene black
 
 hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen done_reading #Hiding genie sitting with closed book in his hands.
-hide screen done_reading_02 #Done reading by the fire
+hide screen done_reading_near_fire #Done reading by the fire
 hide screen new_window #Hiding clear sky bg.
 hide screen cloud #THE CLOUD.
 

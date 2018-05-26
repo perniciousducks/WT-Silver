@@ -81,16 +81,13 @@ label cheats:
                     $ imagination = 5
                     "Your imagination grows!"
                     jump cheats_books
-                "-Cheat Reading (off)-" if not cheat_reading:
-                    $ cheat_reading = True
-                    jump cheats_books
-                "-Cheat Reading (on)-"if cheat_reading:
-                    $ cheat_reading = False
+                "-Cheat Reading ([cheat_reading])-":
+                    $ cheat_reading = not cheat_reading
                     jump cheats_books
                 "-All Books-" if day >= 16:
                     python:
-                        for i in book_list:
-                            i.purchased = True
+                        for book in Books_OBJ.get_all():
+                            book.purchased = True
                     "Obtained All Books."
                     jump cheats_books
                 "-never mind-":
@@ -100,7 +97,7 @@ label cheats:
             label cheats_potions:
             menu:
                 "-Add all normal potions-":
-                    $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion", "Hypno Potion"] #all potions
+                    $ potion_inv.extend(["p_cum_addiction","p_ass_expansion","p_breast_expansion","p_cat_transformation","p_luna_transformation","p_transparency","p_hypno"])
                     ">All potions added (Does not include Snape's potions)"
                     jump cheats_potions
                 "-never mind-":

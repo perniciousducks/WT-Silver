@@ -1,17 +1,19 @@
 screen astoria_greengrass:
     ### BASE IMAGE
-    add astoria_arms xpos astoria_xpos ypos astoria_ypos #Add the arms
+    add astoria_l_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
+    add astoria_r_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
+    add astoria_hair xpos astoria_xpos ypos astoria_ypos #Add the hair base
     add astoria_base xpos astoria_xpos ypos astoria_ypos #Add the base body
-    add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
     ### EMOTIONS
     add astoria_eye xpos astoria_xpos ypos astoria_ypos #Add the eye outline
     add astoria_pupil xpos astoria_xpos ypos astoria_ypos #Add the pupil
     add astoria_eyebrow xpos astoria_xpos ypos astoria_ypos #Add the eyebrow
-    add astoria_hair xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
+    add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
     ###MOUTH
     add astoria_mouth xpos astoria_xpos ypos astoria_ypos #Add the mouth
-    ###TEARS for fears
+    ### FACE
     add astoria_tears xpos astoria_xpos ypos astoria_ypos #Add the tears
+    add astoria_blush xpos astoria_xpos ypos astoria_ypos #Add the tears
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:
         add astoria_bra xpos astoria_xpos ypos astoria_ypos # Add the bra
@@ -23,12 +25,11 @@ screen astoria_greengrass:
         add astoria_top xpos astoria_xpos ypos astoria_ypos # Add the top
     if astoria_wear_acc:
         add astoria_acc xpos astoria_xpos ypos astoria_ypos # Add the accessory
-    if astoria_wear_vest:
-        add astoria_vest xpos astoria_xpos ypos astoria_ypos # Add the vest
     if astoria_wear_stockings:
         add astoria_stock xpos astoria_xpos ypos astoria_ypos # Add the stockings
     ### OTHER
     add astoria_l_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
+    add astoria_r_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
     ### ZORDER
     zorder astoria_zorder
 
@@ -64,11 +65,11 @@ init python:
         if eye is not None:
             astoria_eye         = "characters/astoria/face/eyes/eye_"+eye+".png" 
         if eyebrow is not None:
-            astoria_eyebrow     = "characters/astoria/face/eyes/eyebrow_"+eyebrow+".png" 
+            astoria_eyebrow     = "characters/astoria/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:
             astoria_pupil       = "characters/astoria/face/eyes/pupil_"+pupil+".png" 
         if mouth is not None:
-            astoria_mouth       = "characters/astoria/face/mouth/mouth_"+mouth+".png" 
+            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
         ###POSITION CONTROL
         if x_pos is not None:
             astoria_xpos        = x_pos

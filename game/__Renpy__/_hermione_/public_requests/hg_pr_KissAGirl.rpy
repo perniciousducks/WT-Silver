@@ -447,7 +447,7 @@ label hg_pr_KissAGirl_complete:
             call her_main("Of course.","smile","glance")
             her "I decided to go for a different approach today..."                                                                                                                                                                                                              
             stop music
-            call her_main("I figured that iffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","body_63",xpos=500)
+            call her_main("I figured that iffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","open","base",xpos=500)
             m "Huh?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             her "If I coulddddddddddddddddddd"

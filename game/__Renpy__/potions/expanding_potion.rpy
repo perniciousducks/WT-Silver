@@ -2,7 +2,7 @@
 
 ### BREAST AND ASS EXPANSION ###
 
-label potion_scene_2_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
+label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
     m "Guess what I have for you today."
     call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?","open","angryCl")
     m "Well I mean this one smells nice."
@@ -151,8 +151,8 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     call nar(">You feel her push her crotch against your thigh.")
     m "Feeling a little aroused are we?"
     call nar(">You start to pinch and pull her nipples.")
-    call her_main("Ohhh","soft","ahegao")
-    call nar(">She starts grinding herself against your thigh")
+    call her_main("Ohhh...","soft","ahegao")
+    call nar(">She starts grinding herself against your thigh.")
     m "Well, well, well, you are sensitive now aren't you? Trying to grind out an orgasm on your headmasters leg, how shameless."
     call her_main("...","grin","dead")
     m "Well let's see if we can do something about that."
@@ -188,8 +188,8 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     jump day_main_menu
 
 
-
 label potion_scene_2_1_2: #Hermione comes back after having her breasts expand in class
+
 
 
 label potion_scene_2_2: #ass expansion
@@ -377,23 +377,23 @@ label potion_scene_2_2: #ass expansion
             call nar(">You squeeze her ass-cheeks back together around your cock and start pumping in between them.")
             call her_main("!!!","grin","ahegao")
             hide screen hermione_main
-            m "Fuck, you're ass is so soft. It's like fucking a pillow."
-            call her_main("Ahhh","silly","worried",cheeks="blush",tears="soft")
-            call her_main("Please [genie_name]","silly","ahegao")
+            m "Fuck, your ass is so soft. It's like fucking a pillow."
+            call her_main("Ahhh...","silly","worried",cheeks="blush",tears="soft")
+            call her_main("Please, [genie_name]...","silly","ahegao")
             hide screen hermione_main
             m "Ughh, this feels so good, we might have to make this permanent."
             call her_main("Permanent?","shock","baseL",cheeks="blush",tears="soft")
             hide screen hermione_main
-            m "You wouldn't mind would you?"
+            m "You wouldn't mind, would you?"
             m "Having me use your ass a sex-toy everyday."
             call her_main("...","angry","suspicious",cheeks="blush")
             hide screen hermione_main
-            m "I asked you a question [hermione_name]."
+            m "I asked you a question, [hermione_name]."
             call her_main("... no [genie_name]...","silly","dead")
             hide screen hermione_main
             call nar(">You feel her asshole start quiver as you glide over it.")
             m "Of course you wouldn't, you're enjoying this more than I am, aren't you?"
-            call her_main("...yes... I'm loving... you using my ass as your toy","silly","ahegao")
+            call her_main("...yes... I'm loving... you using my ass as your toy...","silly","ahegao")
             hide screen hermione_main
             m "That's it girl, here I come!"
             call nar(">With one final thrust you cum, covering her fat ass with your seed.")

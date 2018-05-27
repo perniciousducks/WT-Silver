@@ -166,7 +166,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call blkfade
     pause 1
     hide screen hermione_main
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     hide screen groping_naked_tits
     hide screen blktone 
@@ -258,7 +258,7 @@ label potion_scene_2_2: #ass expansion
     
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
     pause 1
-    show screen chair_02
+    show screen chair_left
     hide screen genie
     show screen no_groping_02
     call hide_blkfade
@@ -336,7 +336,7 @@ label potion_scene_2_2: #ass expansion
             pause 1
             
             hide screen bld1
-            hide screen chair_02
+            hide screen chair_left
             hide screen groping_01
             hide screen groping_02
             call her_chibi("stand","desk","base")
@@ -399,7 +399,7 @@ label potion_scene_2_2: #ass expansion
             call nar(">With one final thrust you cum, covering her fat ass with your seed.")
             hide screen ch_hotdog
             $ g_c_u_pic = "sex_cum_out_ani"
-            show screen chair_02
+            show screen chair_left
             $ genie_chibi_xpos = -70
             $ genie_chibi_ypos = 10
             show screen g_c_u
@@ -418,7 +418,7 @@ label potion_scene_2_2: #ass expansion
             pause 1
             
             $ hermione_main_zorder = 5
-            hide screen chair_02
+            hide screen chair_left
             hide screen groping_01
             hide screen groping_02
             hide screen g_c_u
@@ -446,7 +446,7 @@ label potion_scene_2_2: #ass expansion
     $ uni_sperm = False
     hide screen no_groping_02
     hide screen groping_02
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call gen_chibi("hide")
     call her_chibi("stand","desk","base")

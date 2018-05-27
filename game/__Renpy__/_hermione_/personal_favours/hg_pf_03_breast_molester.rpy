@@ -94,7 +94,7 @@ label hg_pf_BreastMolester:
 
         hide screen genie
         call her_chibi("hide")
-        show screen chair_02 #Genie's chair.
+        show screen chair_left #Genie's chair.
         show screen groping_03
         with d1
         hide screen bld1
@@ -176,7 +176,7 @@ label hg_pf_BreastMolester:
 
         hide screen genie
         call her_chibi("hide")
-        show screen chair_02 #Genie's chair.
+        show screen chair_left #Genie's chair.
         show screen groping_03
         with d1
         
@@ -236,7 +236,7 @@ label hg_pf_BreastMolester:
     hide screen hermione_blink
     hide screen hermione_main
     hide screen groping_03
-    hide screen chair_02 #Genie's chair.
+    hide screen chair_left #Genie's chair.
     show screen genie
     call her_chibi("stand","desk","base")
 

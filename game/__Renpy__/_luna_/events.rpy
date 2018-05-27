@@ -126,7 +126,7 @@ label luna_reversion_event:
 label luna_revert_1: #Reversion event
     hide screen bld1
     hide screen genie
-    show screen chair_02
+    show screen chair_left
     show screen desk
     $ genie_chibi_xpos = -20
     $ genie_chibi_ypos = 10
@@ -480,7 +480,7 @@ label luna_revert_1: #Reversion event
     hide screen hermione_main
     with d3
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     $ genie_chibi_xpos = -20
     $ genie_chibi_ypos = 10
@@ -498,7 +498,7 @@ label luna_revert_2: #Non-Reversion event
     ">You open your cloak and pull out your cock."
     hide screen bld1
     hide screen genie
-    show screen chair_02
+    show screen chair_left
     show screen desk
     $ genie_chibi_xpos = -20
     $ genie_chibi_ypos = 10
@@ -1068,7 +1068,7 @@ label luna_revert_2: #Non-Reversion event
     $ luna_wear_cum_under = False 
     $ luna_wear_top = True
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     $ genie_chibi_xpos = -20
     $ genie_chibi_ypos = 10
@@ -1632,7 +1632,7 @@ label luna_cum_addict_event:
 
     hide screen g_c_u
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
 
     jump luna_away

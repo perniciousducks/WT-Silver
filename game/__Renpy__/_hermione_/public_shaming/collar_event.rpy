@@ -72,7 +72,7 @@ label slut_scene: #Locked to her being your slut
     $ hermione_SC.chibi.ypos = 10
     $ g_c_u_pic = "blowjob_ani"
     $ h_c_u_pic = "hand_ani"
-    show screen chair_02
+    show screen chair_left
     show screen h_c_u
     
     hide screen hermione_blink #Hermione stands still.
@@ -226,9 +226,9 @@ label slut_scene: #Locked to her being your slut
     m "Good night. {w}Slut."
     call her_main("...","base","down")
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen hermione_main
-    hide screen chair_02
+    hide screen chair_left
     hide screen g_c_u
     hide screen h_c_u
     hide screen ctc
@@ -270,7 +270,7 @@ label whore_scene: #(locked behind the public whoring flag)
     $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
     $ g_c_u_pic = "pause_sex"
-    show screen chair_02
+    show screen chair_left
     show screen g_c_u
     call hide_blkfade
     
@@ -340,7 +340,7 @@ label whore_scene: #(locked behind the public whoring flag)
     call blkfade
 
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen g_c_u
     call her_chibi("stand","desk","base")
     hide screen blkfade
@@ -409,7 +409,7 @@ label slave_scene:
     $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
     $ g_c_u_pic = "pause_sex"
-    show screen chair_02
+    show screen chair_left
     show screen g_c_u
     hide screen hermione_blink #Hermione stands still.
     call hide_blkfade
@@ -554,7 +554,7 @@ label slave_scene:
     show screen blkfade
     with d3                                                                                                                                                                                 #HERMIONE
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen g_c_u
     hide screen h_c_u
     show screen hermione_blink #Hermione stands still.

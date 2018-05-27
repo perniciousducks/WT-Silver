@@ -90,6 +90,13 @@ $ width_offset = 140
 screen desk: #Genie's desk.
     add "images/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
 
+screen chair_left: #aka chair_02
+    add "images/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
+    zorder 1
+screen chair_right:
+    add "images/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
+    zorder 1
+
 screen owl: #DEFAULT OWL WITH ENVELOPE IN IT'S MOUTH.   
     add "images/main_room/owl_01.png" at Position(xpos=315+140, ypos=270, xanchor="center", yanchor="center")
 screen owl_02: #OWL. No Envelope.   
@@ -260,7 +267,7 @@ screen r_p_u: # RAVENCLAW
 
 screen snape_defends:
     add "ch_sna defend" at Position(xpos=-90+140, ypos=-5)
-    zorder 7
+    zorder 2
 
 ### DAMAGE ###
     

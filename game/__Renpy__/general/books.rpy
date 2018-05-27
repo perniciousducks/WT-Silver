@@ -315,12 +315,12 @@ label reading_book:
         play bg_sounds "sounds/night.mp3" fadeout 1.0 fadein 1.0 #Quiet...
         
     if fire_in_fireplace:   #Shows Genie reading a book near the fireplace.
-        hide screen chair
+        hide screen chair_right
         hide screen genie
         show screen reading_near_fire
         with Dissolve(0.3)
     else:                   #Shows Genie reading a book near the window.
-        hide screen chair
+        hide screen chair_right
         hide screen genie
         show screen reading
         with Dissolve(0.3)

@@ -185,7 +185,7 @@ label hg_pf_TheGamble_complete:
             m "Hello?"
             
             hide screen genie
-            show screen chair_02
+            show screen chair_left
             hide screen desk       
             show screen desk
             show screen genie_stand
@@ -214,7 +214,7 @@ label hg_pf_TheGamble_complete:
         hide screen bld1
         hide screen hermione_main
         # hide screen desk
-        # hide screen chair_02
+        # hide screen chair_left
         # show screen blkfade
         # with d3
         
@@ -236,7 +236,7 @@ label hg_pf_TheGamble_complete:
         play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
         show screen fireplace_fire
         hide screen genie
-        hide screen chair
+        hide screen chair_right
         hide screen desk
         show screen desk
         
@@ -296,7 +296,7 @@ label hg_pf_TheGamble_complete:
         $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
         $ genie_chibi_ypos = 10
         $ g_c_u_pic = "blowjob_ani"
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
         
         hide screen hermione_blink #Hermione stands still.
@@ -376,7 +376,7 @@ label hg_pf_TheGamble_complete:
         $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
         $ genie_chibi_ypos = 10
         $ g_c_u_pic = "sex_ani"
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
             
         hide screen blkfade

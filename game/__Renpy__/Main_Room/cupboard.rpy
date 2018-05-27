@@ -4,7 +4,7 @@ label cupboard:
     menu:
         "-Examine the cupboard-" if not cupboard_examined:
             $ cupboard_examined = True
-            show screen chair_02 #Empty chair near the desk.
+            show screen chair_left #Empty chair near the desk.
             hide screen genie
             call gen_chibi("stand","behind_desk","base",flip=True)
             show screen desk
@@ -15,7 +15,7 @@ label cupboard:
             m "Maybe I should rummage through this one later..."
             show screen genie
             hide screen genie_stands_f
-            hide screen chair_02 #Empty chair near the desk.
+            hide screen chair_left #Empty chair near the desk.
             hide screen desk
             with Dissolve(0.5)
             jump day_main_menu

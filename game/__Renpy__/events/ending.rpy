@@ -3256,7 +3256,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
 
     hide screen door   
     hide screen cupboard
-    hide screen chair
+    hide screen chair_right
     hide screen fireplace
     hide screen phoenix
     hide screen candle_01    
@@ -3270,7 +3270,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         
     show screen door   
     show screen cupboard
-    show screen chair
+    show screen chair_right
     show screen fireplace
     show screen phoenix
     show screen candle_01    

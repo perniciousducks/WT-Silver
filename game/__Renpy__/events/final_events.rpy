@@ -436,7 +436,7 @@ label against_the_rule:
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     show screen fireplace_fire
     hide screen genie
-    hide screen chair
+    hide screen chair_right
     hide screen desk
     show screen desk
     
@@ -458,7 +458,7 @@ label against_the_rule:
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     hide screen fireplace_fire
     show screen genie
-    show screen chair
+    show screen chair_right
     show screen desk
     hide screen desk
     
@@ -725,7 +725,7 @@ label good_bye_snape:
     hide screen genie
     hide screen bld1
     call sna_chibi("hide")
-    show screen chair_02
+    show screen chair_left
     show screen g_c_u
     $ genie_chibi_xpos = 220
     $ genie_chibi_ypos = 205
@@ -763,7 +763,7 @@ label good_bye_snape:
     hide screen s_head2
     call blkfade
 
-    hide screen chair_02
+    hide screen chair_left
     hide screen g_c_u
     show screen genie
     pause.5
@@ -962,7 +962,7 @@ label good_bye_snape:
     call blkfade
 
     hide screen genie
-    show screen chair_02
+    show screen chair_left
     hide screen desk
     show screen desk
     call gen_chibi("stand","desk","base")

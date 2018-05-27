@@ -73,7 +73,7 @@ label luna_away:
     call luna_reset
     $ luna_busy = True
     $ renpy.play('sounds/door2.mp3')
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call gen_chibi("hide")
     show screen genie

@@ -215,7 +215,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
             hide screen genie
             hide screen desk
-            show screen chair_02
+            show screen chair_left
             show screen desk
             call gen_chibi("groping","mid","base")
             hide screen blktone
@@ -246,7 +246,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 call h_action("none")
 
                 call her_head("I think I'd better go...","angry","worriedCl",cheeks="blush")
-                hide screen chair_02 #Genie's chair.
+                hide screen chair_left #Genie's chair.
                 hide screen desk
                 call gen_chibi("hide")
                 call her_chibi("stand","mid","base")
@@ -304,7 +304,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                     m "sorry, It was hard to resist..."
                     call her_head("..........","base","closed")
 
-                hide screen chair_02 #Genie's chair.
+                hide screen chair_left #Genie's chair.
                 hide screen desk
                 call gen_chibi("hide")
                 call her_chibi("stand","mid","base")
@@ -468,8 +468,8 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
             
             ">You take your cock out and start stroking it..."
 
-            hide screen chair_02 #Genie's chair.
-            show screen chair_02 #Genie's chair.
+            hide screen chair_left #Genie's chair.
+            show screen chair_left #Genie's chair.
             hide screen desk
             show screen desk
             call gen_chibi("jerking_off","mid","base")
@@ -824,7 +824,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
     call her_chibi("stand","desk","base")
 
-    hide screen chair_02
+    hide screen chair_left
     show screen genie 
     show screen hermione_main
     hide screen blktone

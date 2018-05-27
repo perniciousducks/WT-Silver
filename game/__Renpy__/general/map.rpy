@@ -191,7 +191,7 @@ label map_pitch: #Label controlling what happens when you go to the quidditch pi
 label outskirts_of_hogwarts:
     call blkfade
     hide screen genie
-    show screen chair_02
+    show screen chair_left
     show screen desk
     call gen_chibi("stand","desk","base")
     call hide_blkfade
@@ -225,7 +225,7 @@ label return_office:
     
     hide screen end_u_1
     hide screen end_u_3
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call gen_chibi("hide")
     show screen genie

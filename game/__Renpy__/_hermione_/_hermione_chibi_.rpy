@@ -624,10 +624,10 @@ label play_h_animation:
     hide screen u_h_ani_scr_pause
     if u_h_animation == "sex_ani":
         hide screen genie
-        show screen chair_02
+        show screen chair_left
     if ani == "blowjob_ani":
         hide screen genie
-        show screen chair_02
+        show screen chair_left
     #if:
     
     show screen u_h_animation
@@ -642,7 +642,7 @@ label pause_u_animation:
 label end_h_animation:
     if u_h_animation == "sex_ani":
         show screen genie
-        hide screen chair_02
+        hide screen chair_left
         hide screen u_h_animation
     #if:
     return

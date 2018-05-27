@@ -8,7 +8,7 @@ label door:
             $ door_examined = True
             hide screen genie
             call gen_chibi("stand","door","base")
-            show screen chair_02 #Empty chair near the desk.
+            show screen chair_left #Empty chair near the desk.
             show screen desk
             with Dissolve(0.5)
             m "A sturdy looking door..."
@@ -52,7 +52,7 @@ label door:
                     pass
 
             call gen_chibi("hide")
-            hide screen chair_02 #Empty chair near the desk.
+            hide screen chair_left #Empty chair near the desk.
             hide screen desk
             show screen genie
             with d3

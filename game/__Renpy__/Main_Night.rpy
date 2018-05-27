@@ -55,11 +55,14 @@ if package_is_here:
 
 hide screen main_room
 
+hide screen chair_left
+hide screen chair_right
 hide screen genie
 hide screen owl
 hide screen owl_02
 
 
+show screen chair_right
 show screen main_room
 show screen candlefire
 

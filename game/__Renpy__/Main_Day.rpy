@@ -149,6 +149,8 @@ $ show_weather()
 hide screen candlefire
 hide screen main_room
 
+hide screen chair_left
+hide screen chair_right
 hide screen genie
 hide screen owl
 hide screen owl_02
@@ -157,7 +159,7 @@ hide screen with_snape_animated #Genie hangs out with Snape in front of the fire
 if package_is_here:
     hide screen package
 
-
+show screen chair_right
 show screen main_room
 
 show screen genie

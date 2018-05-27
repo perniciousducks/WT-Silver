@@ -645,7 +645,7 @@ label shaming_night:
         $ snape_chibi_xpos = -20
         $ snape_chibi_ypos = 10
         $ s_c_u_pic = "jerking_off_03_ani" #Snape.
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
         show screen s_c_u
         show screen desk_02
@@ -717,7 +717,7 @@ label shaming_night:
         $ s_sprite = "images/13_characters/snape/main/23.png"
         show screen snape_main   
 
-        hide screen chair_02
+        hide screen chair_left
         hide screen g_c_u
         hide screen s_c_u
         hide screen desk_02

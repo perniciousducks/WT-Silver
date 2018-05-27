@@ -273,7 +273,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 #Start Groping
                 hide screen blktone
-                show screen chair_02 #Genie's chair.
+                show screen chair_left #Genie's chair.
                 hide screen bld1
                 show screen groping_naked_tits
                 call hide_blkfade
@@ -295,7 +295,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call her_head("I think I'd better go...","angry","worriedCl",cheeks="blush",xpos="base",ypos="base")
 
                 #End Groping
-                hide screen chair_02 #Genie's chair.
+                hide screen chair_left #Genie's chair.
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
@@ -326,7 +326,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 #Start Groping
                 hide screen blktone8
                 hide screen blktone
-                show screen chair_02 #Genie's chair.
+                show screen chair_left #Genie's chair.
                 hide screen bld1
                 call hide_blkfade
                 show screen groping_naked_tits
@@ -354,7 +354,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 m "It was hard to resist..."
 
                 #End Groping
-                hide screen chair_02 #Genie's chair.
+                hide screen chair_left #Genie's chair.
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
@@ -379,7 +379,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 #Start Groping
                 hide screen blktone8
                 hide screen blktone
-                show screen chair_02 #Genie's chair.
+                show screen chair_left #Genie's chair.
                 hide screen bld1
                 call hide_blkfade
                 show screen groping_naked_tits
@@ -455,7 +455,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 m "Right..."
 
                 #End Groping
-                hide screen chair_02 #Genie's chair.
+                hide screen chair_left #Genie's chair.
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
@@ -536,7 +536,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
             #End Admiring
             hide screen hermione_main
-            hide screen chair_02
+            hide screen chair_left
             hide screen genie_and_tits_01
             hide screen blktone
             hide screen bld1
@@ -559,7 +559,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen genie
                 hide screen bld1
                 hide screen blktone
-                show screen chair_02 #Genie's chair.
+                show screen chair_left #Genie's chair.
                 show screen jerking_off_01
                 with d1
                 call hide_blkfade
@@ -635,7 +635,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen genie
                 hide screen bld1
                 hide screen blktone
-                show screen chair_02 #Genie's chair.
+                show screen chair_left #Genie's chair.
                 show screen jerking_off_01
                 with d1
                 call hide_blkfade
@@ -719,7 +719,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         $ sperm_on_tits = False
 
                         hide screen jerking_off_01
-                        hide screen chair_02
+                        hide screen chair_left
                         call her_chibi("stand","desk","base")
                         show screen genie
                         
@@ -747,7 +747,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen genie
                 hide screen bld1
                 hide screen blktone
-                show screen chair_02 #Genie's chair.
+                show screen chair_left #Genie's chair.
                 show screen jerking_off_01
                 with d1
                 call hide_blkfade
@@ -857,7 +857,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call h_action("none")
 
                         hide screen jerking_off_01
-                        hide screen chair_02
+                        hide screen chair_left
                         call her_chibi("stand","desk","base")
                         show screen genie
                         call hide_blkfade
@@ -912,7 +912,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         show screen genie
                         hide screen jerking_off_01
-                        hide screen chair_02
+                        hide screen chair_left
                         call her_chibi("stand","desk","base")
                         call hide_blkfade
 
@@ -929,7 +929,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     call h_action("none") #This reloads all her clothing!
 
     hide screen jerking_off_01
-    hide screen chair_02
+    hide screen chair_left
     hide screen blktone8
     hide screen blktone
     hide screen bld1

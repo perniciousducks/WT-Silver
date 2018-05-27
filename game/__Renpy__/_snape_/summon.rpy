@@ -193,7 +193,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     show screen blkfade
     $ fire_in_fireplace = True
     hide screen genie
-    hide screen chair
+    hide screen chair_right
     hide screen desk
     show screen desk
     show screen with_snape_animated

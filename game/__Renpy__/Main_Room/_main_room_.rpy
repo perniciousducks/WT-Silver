@@ -6,7 +6,6 @@ screen main_room:
         add "images/main_room/main_room_night.png"
     add "images/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
     add "images/main_room/cupboard_w_shadow.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
-    add "images/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
     add "images/main_room/phoenix.png" at Position(xpos=540, ypos=225, xanchor="center", yanchor="center")
     add "images/main_room/candle.png" at Position(xpos=350, ypos=160, xanchor="center", yanchor="center")

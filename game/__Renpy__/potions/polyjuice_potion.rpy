@@ -128,7 +128,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
     $ g_c_u_pic = "blowjob_ani"
-    show screen chair_02
+    show screen chair_left
     show screen g_c_u
     
     call her_chibi("hide")
@@ -220,7 +220,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
 
     $ hermione_main_zorder = 5
     hide screen hermione_main
-    hide screen chair_02
+    hide screen chair_left
     call her_chibi("hide")
     call gen_chibi("hide")
     show screen genie

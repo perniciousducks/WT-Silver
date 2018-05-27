@@ -117,7 +117,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 
                 call her_chibi("hide")                                                                                                                                                                                 #HERMIONE
                 hide screen genie
-                show screen chair_02
+                show screen chair_left
                 
                 $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
                 $ genie_chibi_ypos = 10
@@ -165,7 +165,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 #SUCKING
                 call her_chibi("hide")
                 hide screen genie
-                show screen chair_02
+                show screen chair_left
                 
                 $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
                 $ genie_chibi_ypos = 10
@@ -202,7 +202,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 # SEX 
                 call her_chibi("hide")                                                                                                                                                                                 #HERMIONE
                 hide screen genie
-                show screen chair_02
+                show screen chair_left
                 
                 $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
                 $ genie_chibi_ypos = 10
@@ -246,7 +246,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 call h_update_hair
                 call her_chibi("hide")
                 hide screen genie
-                show screen chair_02
+                show screen chair_left
                 
                 $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
                 $ genie_chibi_ypos = 10
@@ -269,7 +269,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 # SEX 
                 call her_chibi("hide")                                                                                                                                                                                 #HERMIONE
                 hide screen genie
-                show screen chair_02
+                show screen chair_left
                 
                 $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
                 $ genie_chibi_ypos = 10
@@ -487,7 +487,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         
         call her_chibi("hide")
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         
         $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
         $ genie_chibi_ypos = 10
@@ -668,7 +668,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     hide screen ccg
     if not daytime:

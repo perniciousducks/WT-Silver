@@ -336,7 +336,7 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     show screen blkfade
     with d3
     
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
     hide screen bld1
@@ -404,7 +404,7 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen hermione_main
     hide screen hermione_main_ass
 
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     hide screen hermione_04 #Stands with tits out.
     hide screen groping_naked_tits

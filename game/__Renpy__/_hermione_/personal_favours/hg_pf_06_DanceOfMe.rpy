@@ -942,7 +942,7 @@ label hg_pf_DanceForMe:
                             call her_head("!!!")
 
                             hide screen genie
-                            show screen chair_02
+                            show screen chair_left
                             call gen_chibi("jerking_off","behind_desk","base")
                             hide screen desk
                             show screen desk
@@ -970,7 +970,7 @@ label hg_pf_DanceForMe:
                                     call sna_head("I see Miss Granger manages to remain exceptionally stubborn in any situation...","snape_03")
                                     call blkfade
 
-                                    hide screen chair_02
+                                    hide screen chair_left
                                     hide screen desk
                                     show screen genie
                                     call her_chibi("stand","on_desk","on_desk")
@@ -1135,7 +1135,7 @@ label hg_pf_DanceForMe:
                                         ">Hermione furiously jumps off your desk."
                                         pause 2
                                         hide screen hermione_main
-                                        hide screen chair_02
+                                        hide screen chair_left
                                         hide screen desk
                                         show screen genie
                                         call sna_chibi("hold_dick","mid","base")
@@ -1523,7 +1523,7 @@ label hg_pf_DanceForMe:
                             
                             hide screen genie
                             hide screen no_shirt_no_skirt_dance
-                            show screen chair_02
+                            show screen chair_left
                             call gen_chibi("jerking_off","behind_desk","base")
                             hide screen desk
                             show screen desk
@@ -1804,7 +1804,7 @@ label hg_pf_DanceForMe:
                                                             call blkfade
                                                             call gen_chibi("hide")
                                                             hide screen g_c_c_u # Genie's sperm. Universal.
-                                                            hide screen chair_02
+                                                            hide screen chair_left
                                                             hide screen desk
                                                             show screen genie
                                                             show screen bld1
@@ -1837,7 +1837,7 @@ label hg_pf_DanceForMe:
                                     call her_head("......................","annoyed","angryL")
                                     pause.1
                                     
-                                    hide screen chair_02
+                                    hide screen chair_left
                                     hide screen g_c_u
                                     hide screen desk
                                     call gen_chibi("hide")
@@ -1943,7 +1943,7 @@ label hg_pf_DanceForMe:
     $ gryffindor += current_payout #35
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen s_c_c_u # Snape's sperm. Universal.
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call gen_chibi("hide")
     call sna_chibi("hide")

@@ -42,10 +42,6 @@ hide screen done_reading
 hide screen done_reading_near_fire
 hide screen candlefire_01 #CANDLE FIRE.
 hide screen candlefire_02 #CANDLE FIRE.
-hide screen lightening #Hide lighting so it won't get stuck during clear sky weather and such.
-hide screen cloud_night_01 #NIGHT CLOUDS.
-hide screen cloud_night_02 #NIGHT CLOUDS.
-hide screen cloud_night_03 #NIGHT CLOUDS.
 
 hide screen bld1
 hide screen blktone
@@ -147,45 +143,10 @@ scene black
 
 $ raining = False #No rain before the weather has been chosen at the beginning of every day.
 hide screen new_window #Hiding clear sky bg.
-hide screen cloud #THE CLOUD.
 
-
-$ wather_generator = renpy.random.randint(1, 100)
-
-#Sunny Weather
-if wather_generator >=  1 and wather_generator < 41:
-    show screen new_window #<<<------------------------------------------!!!!!!!!!!!
-    #show image "images/main_room/weather/sunny.png"
-
-#Floating Cloud
-elif wather_generator >= 41 and wather_generator < 61:
-    show screen new_window #<<<------------------------------------------!!!!!!!!!!!
-    show screen cloud
-    #show image "images/main_room/weather/sunny.png"
-    #show cloud_01 at Position(xpos=280, ypos=215, xanchor="center", yanchor="center")
-
-#Cloudy Weather
-elif wather_generator >= 61 and wather_generator < 81:
-    show image "images/main_room/weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    $ lighting_generator = renpy.random.randint(1, 2)
-    if lighting_generator == 1:
-        show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
-#Raining
-elif wather_generator >= 81 and wather_generator < 91:
-    #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    $ raining = True
-    show image "images/main_room/weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
-#Thunder and Lightning!
-elif wather_generator >= 91 and wather_generator < 101:
-    #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    $ raining = True
-    show image "images/main_room/weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
+### WEATHER
+$ weather_gen = renpy.random.randint(1, 6)
+$ show_weather()
 
 hide screen room_night
 show screen room

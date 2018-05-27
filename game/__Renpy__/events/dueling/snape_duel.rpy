@@ -27,10 +27,6 @@ label duel:
     hide screen done_reading_near_fire
     hide screen candlefire_01 #CANDLE FIRE.
     hide screen candlefire_02 #CANDLE FIRE.
-    hide screen lightening #Hide lighting so it woudn't get stuck during clear sky weather and such.
-    hide screen cloud_night_01 #NIGHT CLOUDS.
-    hide screen cloud_night_02 #NIGHT CLOUDS.
-    hide screen cloud_night_03 #NIGHT CLOUDS.
   
     hide screen room_night #Hiding NIGHT BG from last night.
     #show screen room #Showing main room BG. 

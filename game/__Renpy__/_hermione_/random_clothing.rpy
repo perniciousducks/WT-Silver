@@ -5,13 +5,13 @@
 label hermione_door_event:
 
     ### BAD WEATHER EVENT ###
-    if wather_generator >= 81 and wather_generator <= 100: #Rainy and Thundery Weather
+    if weather_gen > 4: #Rainy and Thundery Weather
 
         #Activates the event.
         $ hermione_door_event_happened = True #Resets on new day.
 
         #Hermione wears gloves, stockings, and a scarf.
-        if wather_generator >= 81 and wather_generator <= 90: #Thundery Weather
+        if weather_gen > 5: #Thundery Weather
 
             $ hermione_wear_neckwear    = True
             $ hermione_wear_gloves      = True

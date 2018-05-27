@@ -67,13 +67,8 @@ label paperwork:
     
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
         
-    if daytime: # Makes sure that check happens only at nighttime. 
-        pass
-    else:
-        if wather_generator >= 31 and wather_generator <= 40: # FULL MOON
-            call f_moon_bonus
-        if wather_generator >= 51 and wather_generator <= 60: # FULL MOON
-            call f_moon_bonus
+    if not daytime and (1 < weather_gen < 4): # FULL MOON
+        call f_moon_bonus
            
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
     

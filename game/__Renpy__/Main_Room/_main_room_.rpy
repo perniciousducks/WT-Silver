@@ -152,28 +152,3 @@ screen main_room_menu:
         idle "interface/check_07.png"
         hover "interface/check_08.png"
         action [Hide("main_room_menu"), Hide("animation_feather"), Jump("open_guide")]
-
-### Weather Screens ###
-screen new_window: #WEATHER BG. CLEAR SKY. #тут тоже просто — делаем zorder -2, чтобы заглушка была ниже остальных скринов — ведь облако должно плыть между ней и комнатой 
-    zorder -2
-    add "images/main_room/weather/sunny.png"
-    
-screen cloud: # zorder -1, т.к. должно быть выше заглушки, но ниже комнаты
-    zorder -1
-    add "images/main_room/weather/cloud_small.png" at cloud_move # это значит, что изображение подчиняется методу движения cloud_move, который прописан дальше
-
-screen cloud_night_01: 
-    #zorder -1
-    add "images/main_room/weather/night_cloud_02.png" at cloud_night_move_01
-    
-screen cloud_night_02: 
-    #zorder -1
-    add "images/main_room/weather/night_cloud_01.png" at cloud_night_move_02
-    
-screen cloud_night_03: 
-    #zorder -1
-    add "images/main_room/weather/night_cloud_03.png" at cloud_night_move_03
-
-
-
-    

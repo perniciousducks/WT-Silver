@@ -30,9 +30,9 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
 
     #Positioning
     if xpos != hermione_xpos:
-        if xpos == "base" or xpos == "default": #All the way to the right.
+        if xpos in ["base","default"]: #All the way to the right.
             $ hermione_xpos = 640
-            $ menu_x = 0.1 #Don't add ypos!
+            $ menu_x = 0.35 #Don't add ypos!
         elif xpos == "mid":                     #Centered.
             $ hermione_xpos = 300
             $ menu_x = 0.5 #Don't add ypos!

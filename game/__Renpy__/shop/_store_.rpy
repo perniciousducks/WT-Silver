@@ -8,38 +8,40 @@ label __init_variables:
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
     
-    $ scroll_name = []
-    $ scroll_name.append("null")
-    $ scroll_name.append("The room")
-    $ scroll_name.append("The calendar")
-    $ scroll_name.append("The girl")
-    $ scroll_name.append("Deeptroating")
-    $ scroll_name.append("Poster 01")
-    $ scroll_name.append("Poster 02")
-    $ scroll_name.append("Chibi-dancing")
-    $ scroll_name.append("Game items")
-    $ scroll_name.append("Panties no panties")
-    $ scroll_name.append("A lot of pegs")
-    $ scroll_name.append("House-elf brothel")
-    $ scroll_name.append("Me and Lola")
-    $ scroll_name.append("Hard training")
-    $ scroll_name.append("Wizard's Chess")
-    $ scroll_name.append("Tutoring books")
-    $ scroll_name.append("Extra gifts 01")
-    $ scroll_name.append("Extra gifts 02")
-    $ scroll_name.append("Fiction books")
-    $ scroll_name.append("Singer whore")
-    $ scroll_name.append("Casting")
-    $ scroll_name.append("Witch robe 01")
-    $ scroll_name.append("Witch robe 02")
-    $ scroll_name.append("Witch robe 03")
-    $ scroll_name.append("Witch robe 04")
-    $ scroll_name.append("The walk")
-    $ scroll_name.append("Durmstrang")
-    $ scroll_name.append("Gag ball")
-    $ scroll_name.append("New clothes 01")
-    $ scroll_name.append("New clothes 02")
-    $ scroll_name.append("The gang")
+    $ sacred_scrolls = [
+        silver_scroll(id=0 , name="None",               cost=0,     comments=[]),
+        silver_scroll(id=1 , name="The room",           cost=10,    comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."]),
+        silver_scroll(id=2 , name="The calendar",       cost=30,    comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realized how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."]),
+        silver_scroll(id=3 , name="The girl",           cost=40,    comments=["A couple of very early drawings of Hermione..."]),
+        silver_scroll(id=4 , name="Deeptroating",       cost=70,    comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."]),
+        silver_scroll(id=5 , name="Poster 01",          cost=80,    comments=["The game poster...","Hermione is Dahr's work. The rest is me..."]),
+        silver_scroll(id=6 , name="Poster 02",          cost=80,    comments=["Alternative game poster.","This one has never been released."]),
+        silver_scroll(id=7 , name="Chibi-dancing",      cost=90,    comments=["Some chibi closeups.","The one on the left never made it into the final game..."]),
+        silver_scroll(id=8 , name="Game items",         cost=50,    comments=["A banch of items that I ended up not using...","I blame dahr and his awesome artwork."]),
+        silver_scroll(id=9 , name="Panties no panties", cost=90,    comments=["The drawing of Hermione from the poster. (by Dahr)","I like one on the right with her panties still on."]),
+        silver_scroll(id=10, name="A lot of pegs",      cost=50,    comments=["Another ithing that never made it into the final game...","The idea here was that the more you level up Hermione the more pegs she would let you to put on her...","And the nipple chain was supposed to be worn to class under the uniform."]),
+        silver_scroll(id=11, name="House-elf brothel",  cost=110,   comments=["The house-elf brothel... Just another thing that never happened."]),
+        silver_scroll(id=12, name="Me and Lola",        cost=110,   comments=["A drawing featuring yours truly as a Durmstrung mage and Lola as a student...","The drawing itself is by Dahr of course."]),
+        silver_scroll(id=13, name="Hard training",      cost=100,   comments=["Another one of those side-quests that never happened...","This one was about--","No, I better not. Who knows, maybe we will get to adding those quests eventually."]),
+        silver_scroll(id=14, name="Wizard's Chess",     cost=80,    comments=["Another sub-quest...","This one involving the school's wizard chess club."]),
+        silver_scroll(id=15, name="Tutoring books",     cost=40,    comments=["There is more then one way for a pretty girl to carry her books around.","I thought it would be cool to change the way Hermione carries the books as she progresses with her training.","Since the whole tutoring arc got canceled I am showing it here..."]),
+        silver_scroll(id=16, name="Extra gifts 01",     cost=30,    comments=["A couple of items that didn't make it into the final game...","The one on the left is an actual live house-elf to give as a present.","The one on the right is a portrait of a pervy but wise wizard. Supposed to be helping with studying..."]),
+        silver_scroll(id=17, name="Extra gifts 02",     cost=30,    comments=["Few more items...","A newspaper, a bottle of perfume and a magical hat that says things you want to hear..."]),
+        silver_scroll(id=18, name="Fiction books",      cost=90,    comments=["The fiction books...","The top row are my sketches, the bottom row are finalized drawings by dahr."]),
+        silver_scroll(id=19, name="Singer whore",       cost=50,    comments=["A drawing of a famous singer.","Has no connection to this game and is here for no reason whatsoever."]),
+        silver_scroll(id=20, name="Casting",            cost=70,    comments=["It took me a while to come up with a proper look for Hermione...","Version \"A\" was my first attempt. And I liked it up until the moment when I started to hate it...","Version \"B\" was my second attempt. And it's good. But her confident and semi-aggressive facial features didn't fit the character well...","Version \"C\" is the one that got the role. The Hermione that we all grew to care for by now, I'm sure."]),
+        silver_scroll(id=21, name="Witch robe 01",      cost=90,    comments=["Sub-quests that never happened.","You are allowed to feel bad for rushing me.","If you did not rush me you are allowed to feel angry at people who did."]),
+        silver_scroll(id=22, name="Witch robe 02",      cost=90,    comments=["Hermione presenting her body to Genie...","This would have been a quite memorable scene..."]),
+        silver_scroll(id=23, name="Witch robe 03",      cost=150,   comments=["Didn't expect this one, did you?","In case you're wondering this is still Hermione."]),
+        silver_scroll(id=24, name="Witch robe 04",      cost=150,   comments=[".................................","Sub-quests of course..."]),
+        silver_scroll(id=25, name="The walk",           cost=100,   comments=["Another sub-quest...","We had a rather lengthy discussion with Dahr about this one...","I was sort of against it, but then Dahr sent me this picture and it made me shut up."]),
+        silver_scroll(id=26, name="Durmstrang",         cost=80,    comments=["One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs...","At first many of the sub-quests involved deciding on how to spend the Hogwarts budget...","Spend your money to finance the school quiddich team, or to hire new teachers and such..."]),
+        silver_scroll(id=27, name="Gag ball",           cost=200,   comments=["Isn't she adorable?"]),
+        silver_scroll(id=28, name="New clothes 01",     cost=150,   comments=["Another (rather lengthy) sub-quest..."]),
+        silver_scroll(id=29, name="New clothes 02",     cost=200,   comments=[".........."]),
+        silver_scroll(id=30, name="The gang",           cost=70,    comments=["One of the very early sketches related to the quiddich sub-quests..."])
+    ]
+
     return
     
 label shop_intro:
@@ -74,132 +76,50 @@ label shop_menu:
     call screen shop_screen
     
     
-    
 label sscrolls:
     show screen shop_screen
-    menu:
-        "-S.01: [scroll_name[1]]-" if not sscroll_[1]:
-            call scroll_block(1,10)
-            jump sscrolls
-        "-S.02: [scroll_name[2]]-" if not sscroll_[2]:
-            call scroll_block(2,30)
-            jump sscrolls
-        "-S.03: [scroll_name[3]]-" if not sscroll_[3]:
-            call scroll_block(3,40)
-            jump sscrolls
-        "-S.04: [scroll_name[4]]-" if not sscroll_[4]:
-            call scroll_block(4,70)
-            jump sscrolls
-        "-S.05: [scroll_name[5]]-" if not sscroll_[5]:
-            call scroll_block(5,80)
-            jump sscrolls
-        "-S.06: [scroll_name[6]]-" if not sscroll_[6]:
-            call scroll_block(6,80)
-            jump sscrolls
-        "-S.07: [scroll_name[7]]-" if not sscroll_[7]:
-            call scroll_block(7,90)
-            jump sscrolls
-        "-S.08: [scroll_name[8]]-" if not sscroll_[8]:
-            call scroll_block(8,50)
-            jump sscrolls
-        "-S.09: [scroll_name[9]]-" if not sscroll_[9]:
-            call scroll_block(9,90)
-            jump sscrolls
-        "-S.10: [scroll_name[10]]-" if not sscroll_[10]:
-            call scroll_block(10,50)
-            jump sscrolls
-        "-S.11: [scroll_name[11]]-" if not sscroll_[11]:
-            call scroll_block(11,110)
-            jump sscrolls
-        "-S.12: [scroll_name[12]]-" if not sscroll_[12]:
-            call scroll_block(12,110)
-            jump sscrolls
-        "-S.13: [scroll_name[13]]-" if not sscroll_[13]:
-            call scroll_block(13,100)
-            jump sscrolls
-        "-S.14: [scroll_name[14]]-" if not sscroll_[14]:
-            call scroll_block(14,80)
-            jump sscrolls
-        "-S.15: [scroll_name[15]]-" if not sscroll_[15]:
-            call scroll_block(15,40)
-            jump sscrolls
-        "-Never mind-":
-            jump shop_menu
-    
+    $ scrolls_range = range(1,16)
+    jump store_scrolls
 label sscrolls2:
     show screen shop_screen
-    menu:
-        "-S.16: [scroll_name[16]]-" if not sscroll_[16]:
-            call scroll_block(16,30)
-            jump sscrolls
-        "-S.17: [scroll_name[17]]-" if not sscroll_[17]:
-            call scroll_block(17,30)
-            jump sscrolls
-        "-S.18: [scroll_name[18]]-" if not sscroll_[18]:
-            call scroll_block(18,90)
-            jump sscrolls
-        "-S.19: [scroll_name[19]]-" if not sscroll_[19]:
-            call scroll_block(19,50)
-            jump sscrolls
-        "-S.20: [scroll_name[20]]-" if not sscroll_[20]:
-            call scroll_block(20,70)
-            jump sscrolls
-        "-S.21: [scroll_name[21]]-" if not sscroll_[21]:
-            call scroll_block(21,90)
-            jump sscrolls
-        "-S.22: [scroll_name[22]]-" if not sscroll_[22]:
-            call scroll_block(22,90)
-            jump sscrolls
-        "-S.23: [scroll_name[23]]-" if not sscroll_[23]:
-            call scroll_block(23,150)
-            jump sscrolls
-        "-S.24: [scroll_name[24]]-" if not sscroll_[24]:
-            call scroll_block(24,150)
-            jump sscrolls
-        "-S.25: [scroll_name[25]]-" if not sscroll_[25]:
-            call scroll_block(25,100)
-            jump sscrolls
-        "-S.26: [scroll_name[26]]-" if not sscroll_[26]:
-            call scroll_block(26,80)
-            jump sscrolls
-        "-S.27: [scroll_name[27]]-" if not sscroll_[27]:
-            call scroll_block(27,200)
-            jump sscrolls2
-        "-S.28: [scroll_name[28]]-" if not sscroll_[28]:
-            call scroll_block(28,150)
-            jump sscrolls2
-        "-S.29: [scroll_name[29]]-" if not sscroll_[29]:
-            call scroll_block(29,200)
-            jump sscrolls2
-        "-S.30: [scroll_name[30]]-" if not sscroll_[30]:
-            call scroll_block(30,70)
-            jump sscrolls2
-        "-Never mind-":
-            jump shop_menu
-    
-label scroll_block(scroll_id, scroll_cost):
-    $ the_gift = "images/store/31.png" # SACRED SCROLL.
-    show screen gift
-    with d3
-    dahr "A scroll containing sacred knowledge.\n(May also contain spoilers)."
-    menu:
-        "-Buy the scroll ([scroll_cost] gold)-":
-            if gold >= scroll_cost:
-                $ gold -= scroll_cost
-                $ sscroll_[scroll_id] = True # Turns TRUE if the scroll had been bought.
-                $ renpy.play('sounds/win_04.mp3')   #Not loud.
-                ">A New scroll has been added to your sacred scrolls collection."
+    $ scrolls_range = range(16,31)
+    jump store_scrolls
+
+label store_scrolls:
+    python:
+        scrolls_menu = []
+        for scroll in scrolls_range:
+            sc = sacred_scrolls[scroll]
+            if not sscroll_[sc.id]:
+                scrolls_menu.append( ("-S."+str(sc.id)+": "+sc.name+"-", sc) )
+        scrolls_menu.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(scrolls_menu)
+
+    if result == "nvm":
+        jump shop_menu
+    else:
+        $ the_gift = "images/store/31.png" # SACRED SCROLL.
+        show screen gift
+        with d3
+        dahr "A scroll containing sacred knowledge.\n(May also contain spoilers)."
+        menu:
+            "-Buy the scroll ([result.cost] gold)-":
+                if gold >= result.cost:
+                    $ gold -= result.cost
+                    $ sscroll_[result.id] = True # Turns TRUE if the scroll had been bought.
+                    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+                    ">A New scroll has been added to your sacred scrolls collection."
+                    hide screen gift
+                    with d3
+                    call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
+                    call screen shop_screen
+                else:
+                    call no_gold #Massage: m "I don't have enough gold".
+                    hide screen gift
+                    return
+            "-Never mind-":
                 hide screen gift
-                with d3
-                call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
-                call screen shop_screen
-            else:
-                call no_gold #Massage: m "I don't have enough gold".
-                hide screen gift
-                return
-        "-Never mind-":
-            hide screen gift
-            return
+        jump store_scrolls
     
     
 label shop_books:

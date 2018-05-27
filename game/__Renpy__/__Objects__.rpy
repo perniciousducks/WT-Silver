@@ -20,6 +20,13 @@ init python:
         renpy.pause(speed)
         renpy.hide_screen("universal_walk")
     
+    class silver_scroll(object):
+        id = 0
+        name = ""
+        cost = 0
+        comments = []
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
     
 ##### Base Classes
     class silver_character_chibi(object):

@@ -3254,27 +3254,15 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     hide screen room_night #Hiding NIGHT BG from last night.
     show screen room #Showing main room BG. 
 
-    hide screen door   
-    hide screen cupboard
     hide screen chair_right
-    hide screen fireplace
-    hide screen phoenix
-    hide screen candle_01    
-    hide screen candle_02
     hide screen genie
     hide screen owl
     hide screen owl_02
     hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
     hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
 
-        
-    show screen door   
-    show screen cupboard
+    
     show screen chair_right
-    show screen fireplace
-    show screen phoenix
-    show screen candle_01    
-    show screen candle_02
     show screen dumbledore
 
     hide screen blkback

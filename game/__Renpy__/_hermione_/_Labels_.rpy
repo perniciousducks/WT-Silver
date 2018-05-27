@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 label __init_variables:
     if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ'): #important!
         $ hg_pf_TalkToMe_OBJ = personal_favor(
@@ -1225,104 +1224,6 @@ label Night_Request_Block:
 
     if hermione_wear_ears == True:
         jump potion_scene_1_2
-
-    if transparency < 1 and transparent_quest:
-        jump potion_scene_4_2
-
-    if addicted == True:
-        jump potion_scene_3_2
-    
-    
-    if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
-        jump hg_pf_TheGamble_complete
-    
-    python:
-        for i in hg_pr_list: #Call any public request event if it's in progress
-            if i.inProgress:
-                renpy.jump(i.complete_label)
-        for i in hg_ps_list: #Call any public shaming event if it's in progress
-            if i.inProgress:
-                renpy.jump(i.complete_label)
-                
-    jump night_resume
-    
-label her_walk_desk_blkfade:
-    
-    hide screen bld1
-    hide screen blktone
-    hide screen hermione_main
-    with d3
-    pause.2
-
-    call her_walk("mid","desk",2,loiter=False, redux_pause = 2)
-    call blkfade
-    
-    return
-
-#############This massage shows when you make a request, and Hermione refuses because she is not slutty enough yet.
-label too_much:
-    stop music fadeout 2.0
-    call her_main("[genie_name]??!","shock","wide",xpos="mid",trans="fade")
-    her "How could you ask for such a thing!?"
-    call her_main("I think I better leave.","angry","worriedCl",emote="05")
-    
-    $ mad += 7
-    
-    jump end_hg_pf
-
-label very_no:
-    stop music fadeout 2.0
-    call her_main("Absolutely not!","annoyed","angryL",xpos="mid",trans="fade")
-    her "I'll show you that my integrity and honour as a Gryffindor cannot be bought!"
-    call her_main("I'm leaving this instant.","scream","angryCl")
-    
-    $ mad += 7
-
-    jump end_hg_pf
-    
-    
-init python:
-    class silver_request(object):
-        menu_text = ""
-        start_label = ""
-        complete_label = ""
-        points = 0
         
         
-    class personal_favor(silver_request):
-        hearts_level = 0
-        imagination_level = 0
-        costume_event = False
-        progress_hint = False
         
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-        
-        def getMenuText(self):
-            menu_image = "interface/heart_0"+str(self.hearts_level)+".png"
-            ret_str = "Favor: \""+self.menu_text+"\" {image="+menu_image+"}"
-            if self.progress_hint:
-               ret_str += "  {image=interface/check_True.png}"
-            if self.costume_event:
-               ret_str += "  {image=interface/clothes.png}"
-            return ret_str
-        
-    class public_request(silver_request):
-        imagination_level = 0
-        complete = False
-        inProgress = False
-        
-        def getMenuText(self):
-            menu_image = "interface/check_"+str(self.complete)+".png"
-            return "Favour: \""+self.menu_text+"\" {image="+menu_image+"}"
-        
-    class public_shaming(silver_request):
-        complete = False
-        inProgress = False
-        
-        def getMenuText(self):
-            menu_image = "interface/check_"+str(self.complete)+".png"
-            return "Event: "+self.menu_text+" {image="+menu_image+"}"
-    
-
->>>>>>> Persistants-and-buttplug-change

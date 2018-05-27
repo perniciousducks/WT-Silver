@@ -51,31 +51,21 @@ $ show_weather()
 
 if package_is_here:
     hide screen package
-hide screen room #Hiding main room BG.
-show screen room_night #Showing main room NIGHT BG.
-hide screen door
-hide screen cupboard
-hide screen chair
-hide screen fireplace
-hide screen phoenix
-hide screen candle_01
-hide screen candle_02
+
+
+hide screen main_room
+
 hide screen genie
 hide screen owl
 hide screen owl_02
 
-show screen door
-show screen cupboard
-show screen chair
-show screen fireplace
-show screen phoenix
-show screen candle_01
-show screen candlefire_01 #CANDLE FIRE.
-show screen candle_02
-show screen candlefire_02 #CANDLE FIRE.
+
+show screen main_room
+show screen candlefire
+
+show screen genie
 if package_is_here:
     show screen package
-show screen genie
 
 #hide screen statistics
 #show screen statistics

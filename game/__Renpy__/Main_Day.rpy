@@ -40,8 +40,6 @@ hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen phoenix_food
 hide screen done_reading
 hide screen done_reading_near_fire
-hide screen candlefire_01 #CANDLE FIRE.
-hide screen candlefire_02 #CANDLE FIRE.
 
 hide screen bld1
 hide screen blktone
@@ -148,16 +146,9 @@ hide screen new_window #Hiding clear sky bg.
 $ weather_gen = renpy.random.randint(1, 6)
 $ show_weather()
 
-hide screen room_night
-show screen room
+hide screen candlefire
+hide screen main_room
 
-hide screen door
-hide screen cupboard
-hide screen chair
-hide screen fireplace
-hide screen phoenix
-hide screen candle_01
-hide screen candle_02
 hide screen genie
 hide screen owl
 hide screen owl_02
@@ -167,13 +158,8 @@ if package_is_here:
     hide screen package
 
 
-show screen door
-show screen cupboard
-show screen chair
-show screen fireplace
-show screen phoenix
-show screen candle_01
-show screen candle_02
+show screen main_room
+
 show screen genie
 
 

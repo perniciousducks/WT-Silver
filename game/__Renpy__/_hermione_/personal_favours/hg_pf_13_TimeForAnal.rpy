@@ -125,8 +125,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 show screen g_c_u
                 
                 if use_cgs:
-                    hide screen candlefire_01
-                    hide screen candlefire_02
+                    hide screen candlefire
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
@@ -211,8 +210,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 show screen g_c_u
                 
                 if use_cgs:
-                    hide screen candlefire_01
-                    hide screen candlefire_02
+                    hide screen candlefire
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
@@ -279,8 +277,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 show screen g_c_u
                 
                 if use_cgs:
-                    hide screen candlefire_01
-                    hide screen candlefire_02
+                    hide screen candlefire
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
@@ -498,8 +495,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         show screen g_c_u
         
         if use_cgs:
-            hide screen candlefire_01
-            hide screen candlefire_02
+            hide screen candlefire
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
@@ -676,8 +672,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     hide screen desk
     hide screen ccg
     if not daytime:
-        show screen candlefire_01
-        show screen candlefire_02
+        show screen candlefire
         
     call her_chibi("stand","desk","base")
     show screen genie

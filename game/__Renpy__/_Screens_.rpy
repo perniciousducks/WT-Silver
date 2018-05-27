@@ -39,6 +39,7 @@ screen ccg:
 
 screen gui_tooltip:
     add my_picture xpos my_tt_xpos ypos my_tt_ypos
+    zorder 3
     
 screen animation_feather: #Falling feather animation
     add "feather" xpos 360+140 ypos 140
@@ -69,13 +70,9 @@ screen G_Flowers_out:  #  Genie flowers vanish
 
 
 
-    
-screen candlefire_01:
-    add "candle_fire" xpos 240 ypos 43
-    zorder 1
-
-screen candlefire_02:
-    add "candle_fire_02" xpos 583+140 ypos 108
+screen candlefire:
+    add "candle_fire_01" xpos 240 ypos 43
+    add "candle_fire_02" xpos 723 ypos 108
     zorder 1
    
     
@@ -85,38 +82,13 @@ screen phoenix_food: #Phoenix's food.
     
 screen fireplace_fire: #FIREPLACE FIRE.
     add "fireplace_fire" xpos 436+140 ypos 141
-    zorder 2
-    
-    
-    
-screen room: #MAIN ROOM BG. #ну, тут все просто. Кстати, здесь zorder по умолчанию равен 0
-    #zorder -2
-    add "images/main_room/01_main_room.png"
-screen room_night: #MAIN ROOM NIGHT BG. 
-    add "images/main_room/01_main_room_02.png"
+    zorder 3
     
     
 $ width_offset = 140
     
 screen desk: #Genie's desk.
     add "images/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
-
-screen door:    
-    add "images/main_room/01_door.png" at Position(xpos=758+140, ypos=315, xanchor="center", yanchor="center")
-screen cupboard:
-    add "images/main_room/02_cupboard_00.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
-screen chair:
-    add "images/main_room/04_chair.png" at Position(xpos=653+140, ypos=300, xanchor="center", yanchor="center")
-screen chair_02:
-    add "images/main_room/04_chair_02.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
-screen fireplace:
-    add "images/main_room/03_fireplace.png" at Position(xpos=553+140, ypos=277, xanchor="center", yanchor="center")
-screen phoenix:
-    add "images/main_room/06_phoenix.png" at Position(xpos=400+140, ypos=225, xanchor="center", yanchor="center")
-screen candle_01:
-    add "images/main_room/07_candle.png" at Position(xpos=693+140, ypos=225, xanchor="center", yanchor="center")
-screen candle_02:
-    add "images/main_room/08_candle.png" at Position(xpos=210+140, ypos=160, xanchor="center", yanchor="center")
 
 screen owl: #DEFAULT OWL WITH ENVELOPE IN IT'S MOUTH.   
     add "images/main_room/owl_01.png" at Position(xpos=315+140, ypos=270, xanchor="center", yanchor="center")
@@ -174,7 +146,8 @@ screen points: #House points screen.
         text "{size=-3}[day]{/size}"     
     hbox: ### DGOLD COUNTER ###
         spacing 10 xpos 590+140 ypos 10
-        text "{size=-4}[gold]{/size}" 
+        text "{size=-4}[gold]{/size}"
+    zorder 2
 
 
 screen gift:

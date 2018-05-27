@@ -1,3 +1,20 @@
+
+screen main_room:
+    if daytime:
+        add "images/main_room/main_room_day.png"
+    else:
+        add "images/main_room/main_room_night.png"
+    add "images/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/main_room/cupboard_w_shadow.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
+    add "images/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+    add "images/main_room/phoenix.png" at Position(xpos=540, ypos=225, xanchor="center", yanchor="center")
+    add "images/main_room/candle.png" at Position(xpos=350, ypos=160, xanchor="center", yanchor="center")
+    add "images/main_room/candle.png" at Position(xpos=833, ypos=225, xanchor="center", yanchor="center")
+    if phoenix_is_feed:
+        use phoenix_food
+    zorder 0
+
 ### Main Room Menu Screen ###
 screen main_room_menu:
     tag room_screen
@@ -7,10 +24,10 @@ screen main_room_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/main_room/01_door.png"
-        hover "images/main_room/01_door_02.png"
+        idle "images/main_room/door.png"
+        hover "images/main_room/door_hover.png"
         action [Hide("main_room_menu"), Hide("animation_feather"), Jump("door")]
-        
+
     
 #    imagebutton: # CUPBOARD HAT
 #        xpos 120+140
@@ -105,11 +122,11 @@ screen main_room_menu:
         xanchor "center"
         yanchor "center"
         idle "pho_01" 
-        hover "images/main_room/06_phoenix_02.png"
+        hover "images/main_room/phoenix_hover.png"
         #hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195, my_tt_ypos=210) ] 
         #hovered [Show("config_afterchoices_skip_idle.png", xpos=46, ypos=518) ]
         #unhovered [Show("gui_tooltip", my_picture="feather", my_tt_xpos=360, my_tt_ypos=140, xanchor="center", yanchor="center") ]
-        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("phoenix")]
+        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("phoenix_lbl")]
         
     imagebutton: # FIREPLACE
         xpos 553+140
@@ -117,8 +134,8 @@ screen main_room_menu:
         #focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/main_room/03_fireplace_02.png" 
-        hover "images/main_room/03_fireplace_03.png"
+        idle "images/main_room/fireplace.png" 
+        hover "images/main_room/fireplace_hover.png"
         action [Hide("main_room_menu"), Jump("fireplace")]
 
     imagebutton: # STAT MENU

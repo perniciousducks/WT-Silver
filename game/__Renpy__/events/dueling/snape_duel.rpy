@@ -25,8 +25,7 @@ label duel:
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen candlefire_01 #CANDLE FIRE.
-    hide screen candlefire_02 #CANDLE FIRE.
+    hide screen candlefire
   
     hide screen room_night #Hiding NIGHT BG from last night.
     #show screen room #Showing main room BG. 
@@ -46,19 +45,18 @@ label duel:
     
 
     show image "images/main_room/01_main_room_02.png"
-    show image "images/main_room/01_door.png" at Position(xpos=758+140, ypos=315, xanchor="center", yanchor="center")
-    show image "images/main_room/02_cupboard_00.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
-    show image "images/main_room/04_chair.png" at Position(xpos=653+140, ypos=300, xanchor="center", yanchor="center")
-    show image "images/main_room/03_fireplace.png" at Position(xpos=553+140, ypos=277, xanchor="center", yanchor="center")
+    show image "images/main_room/door.png" at Position(xpos=758+140, ypos=315, xanchor="center", yanchor="center")
+    show image "images/main_room/cupboard_w_shadow.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
+    show image "images/main_room/chair_right.png" at Position(xpos=653+140, ypos=300, xanchor="center", yanchor="center")
+    show image "images/main_room/fireplace_w_shadow.png" at Position(xpos=553+140, ypos=277, xanchor="center", yanchor="center")
     #show image "images/main_room/05_window.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")
-    show image "images/main_room/06_phoenix.png" at Position(xpos=400+140, ypos=225, xanchor="center", yanchor="center")
-    show image "images/main_room/07_candle.png" at Position(xpos=693+140, ypos=225, xanchor="center", yanchor="center")
-    show image "images/main_room/08_candle.png" at Position(xpos=210+140, ypos=160, xanchor="center", yanchor="center")
+    show image "images/main_room/phoenix.png" at Position(xpos=400+140, ypos=225, xanchor="center", yanchor="center")
+    show image "images/main_room/candle.png" at Position(xpos=693+140, ypos=225, xanchor="center", yanchor="center")
+    show image "images/main_room/candle.png" at Position(xpos=210+140, ypos=160, xanchor="center", yanchor="center")
     #show image "images/main_room/11_genie_00.png" at Position(xpos=230+140, ypos=336, xanchor="center", yanchor="center")
-    show image "images/main_room/04_chair_02.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
+    show image "images/main_room/chair_left.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
     show image "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
-    show screen candlefire_01 #CANDLE FIRE.
-    show screen candlefire_02 #CANDLE FIRE.
+    show screen candlefire
     
     hide screen snape_defends
     hide screen blkfade

@@ -1,16 +1,12 @@
 label fireplace:
-
-    if fireplace_examined and not day == 1 and not fire_in_fireplace:
-        #$ renpy.play('sounds/fire01.ogg')  
-        #play bg_sounds "sounds/fire01.ogg" fadeout 1.0 fadein 1.0 #LOUD!
-        #play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-        $ fire_in_fireplace = True
-        show screen fireplace_fire
-        jump day_main_menu
-    if fireplace_examined and fire_in_fireplace and not day == 1:
-        $ fire_in_fireplace = False
-        stop bg_sounds #Stops playing the fire SFX.
-        hide screen fireplace_fire
+    if fireplace_examined:
+        if not day == 1:
+            $ fire_in_fireplace = not fire_in_fireplace 
+        if fire_in_fireplace:
+            show screen fireplace_fire
+        else:
+            hide screen fireplace_fire
+            stop bg_sounds #Stops playing the fire SFX.
         jump day_main_menu
     else:
         menu:

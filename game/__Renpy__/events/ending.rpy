@@ -45,8 +45,7 @@ label your_whore:
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen candlefire_01 #CANDLE FIRE.
-    hide screen candlefire_02 #CANDLE FIRE.
+    hide screen candlefire
     hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
      
     hide screen main_room_menu  
@@ -3247,8 +3246,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen candlefire_01 #CANDLE FIRE.
-    hide screen candlefire_02 #CANDLE FIRE.
+    hide screen candlefire
     hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
      
     show screen new_window # CLEAR WEATHER.

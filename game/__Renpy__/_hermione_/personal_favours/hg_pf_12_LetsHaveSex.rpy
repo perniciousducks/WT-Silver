@@ -93,8 +93,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         show screen g_c_u
         
         if use_cgs:
-            hide screen candlefire_01
-            hide screen candlefire_02
+            hide screen candlefire
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
@@ -389,8 +388,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         show screen g_c_u
         
         if use_cgs:
-            hide screen candlefire_01
-            hide screen candlefire_02
+            hide screen candlefire
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
@@ -813,8 +811,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     hide screen chair_02
     hide screen desk
     if not daytime:
-        show screen candlefire_01
-        show screen candlefire_02
+        show screen candlefire
         
     call her_chibi("stand","desk","base")
     call gen_chibi("hide")

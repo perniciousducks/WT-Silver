@@ -26,7 +26,7 @@ image fireplace_fire: #Fireplace fire.
 
 
 ### Candle Fire ###
-image candle_fire: #Candle fire.
+image candle_fire_01: #Candle fire.
     "images/main_room/fire_01.png"
     pause.1
     "images/main_room/fire_02.png"

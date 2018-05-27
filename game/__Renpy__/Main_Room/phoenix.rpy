@@ -1,4 +1,4 @@
-label phoenix:
+label phoenix_lbl:
     if bird_interact == 2: # Counts how many times you have interacted with the bird.
         stop music fadeout 3.0
         $ bird_interact += 1 # Counts how many times you have interacted with the bird.

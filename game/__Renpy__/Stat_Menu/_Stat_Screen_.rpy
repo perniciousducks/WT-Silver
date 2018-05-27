@@ -27,11 +27,21 @@ label open_stat_menu(charName="hermione"):
         $renpy.hide_screen(stat_char)
         hide screen select_character
         jump day_main_menu
+    elif _return == "color":
+        call open_stat_menu(charName)
     else:
         call open_stat_menu(_return)
      
 screen select_character:
     zorder 4
+    #Wardrobe Color
+    $ wr_background_color = []
+
+    $ wr_background_color.append("base")
+    $ wr_background_color.append("red")
+    $ wr_background_color.append("green")
+    $ wr_background_color.append("blue")
+    
     $ indexSize = 0 # just update this after each button and copy the code bellow and the button will automaticlig find the correct position in the index. The icon image need to be 200*210 pixel
     add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
     text "-Character Select-" xpos 40 ypos 100 size 14 
@@ -59,7 +69,15 @@ screen select_character:
             hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
             action Return("lune")
         $ indexSize += 1 
-            
+        
+    #Wardrobe background color
+    for i in range(0,len(wr_background_color)):
+        imagebutton:
+            xpos 667+(20*i)
+            ypos 559
+            idle "interface/wardrobe/icons/colors/"+wr_background_color[i]+".png"
+            action [SetVariable("wardrobe_color",wr_background_color[i]), Return("color")]
+  
 screen not_implemented:
     side "c r":
         area (247, 137, 385, 400)

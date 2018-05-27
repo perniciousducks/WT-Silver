@@ -37,7 +37,7 @@ screen genie: #Sitting behind desk.
 
 screen rum_screen: #Rummaging through the cumpboard.
     tag genie_chibi
-    add "images/main_room/02_cupboard_03.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
+    add "images/main_room/cupboard_open.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
     add "images/main_room/chair_left.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+141, ypos=331, xanchor="center", yanchor="center") 
     add "rum" xpos 20+140 ypos 110

@@ -3,26 +3,32 @@
 ### Wear A Buttplug ###
 
 label hg_ps_Buttplug: 
-    
-    $ current_payout = 55 #Used when haggling about price of the favour.
-    
     hide screen hermione_main 
     with d3
-    m "{size=-4}(Tell her to wear a buttplug around the school?){/size}"
-    $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
+
+    $ menu_x = 0.5 #Menu is moved to the middle.
+    $ menu_y = 0.5 #Menu is moved to the middle.
+
+    $ current_payout = 55 #Used when haggling about price of the favour.
+    
+    if hg_ps_Buttplug_OBJ.points < 1:
+        m "{size=-4}(Tell her to wear a buttplug around the school?){/size}"
+        menu:
+            "\"(Yes, let's do it!)\"":
+                pass
+            "\"(Not right now.)\"":
+                jump silver_requests
+    else:
+        m "{size=-4}(I feel like making her walk around with a buttplug again!){/size}"
+                
+    m "{size=-4}(But what Type?){/size}"
     menu:
-        "\"(Yes, let's do it!)\"":
-            m "What Type?"
-            menu:
-                "-Small, regular-":
-                    $ buttplug_size = 1
-                "-Medium, magical-" if hg_ps_Buttplug_OBJ.points >= 1:
-                    $ buttplug_size = 2
-                #"-Large, magical-" if buttplug_2_worn == True and whoring > 23:
-                #    $ buttplug_size = 3
-            pass
-        "\"(Not right now.)\"":
-            jump silver_requests
+        "-Small, regular-":
+            $ buttplug_size = 1
+        "-Medium, magical-" if hg_ps_Buttplug_OBJ.points >= 1:
+            $ buttplug_size = 2
+        "-Large, magical-" if buttplug_2_worn == True and whoring > 23:
+            $ buttplug_size = 3
     
     #First event.
     if hg_ps_Buttplug_OBJ.points == 0 and buttplug_size == 1:
@@ -33,6 +39,8 @@ label hg_ps_Buttplug:
             m "I want you to wear a buttplug around the school."
             jump too_much
             
+        $ buttplug_1_worn = True
+        
         call her_main("and what is that supposed to be? Some sort of animals tail?","open","suspicious")
         m "Not exactly, it's a buttplug. I want you to put it in while you attend class today."
         stop music
@@ -112,8 +120,9 @@ label hg_ps_Buttplug:
                 ">She spits on the end of it and then retries."
                 call her_main("it didn't work, It's just too bi-","angry","base")
                 stop music
-                $ hermione_wear_buttplug = True
-                $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_b_on.png"
+                
+                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                
                 with hpunch
                 call her_main("{size=+5}!!!!{/size}","shock","wide")
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -135,6 +144,8 @@ label hg_ps_Buttplug:
     
     else: # <================================================================================ NOT FIRST TIME
         if whoring <= 15 and buttplug_size == 1: # LEVEL 06 FIRST EVENT.
+            $ buttplug_1_worn = True
+            
             m "Today's favour shall be..."
             call her_main(".........","angry","base",xpos="right",ypos="base")
             m "Wearing your favorite little buttplug to class!"
@@ -148,6 +159,8 @@ label hg_ps_Buttplug:
             m "Fantastic! See you after class."
         
         elif whoring <= 20 and buttplug_size == 1: # LEVEL 07
+            $ buttplug_1_worn = True
+            
             ">You pull out the large buttplug."
             m "Ready to try out the dragon yet?"
             stop music fadeout 1.0
@@ -169,14 +182,17 @@ label hg_ps_Buttplug:
             $ current_payout += 5
             call her_main("well... here goes.","smile","baseL")
             ">Hermione lifts her skirt and sticks it in rather slowly."
-            #$ hermione_wear_buttplug = True
-            #$ hermione_buttplug = "characters/hermione/accessories/plugs/plug_a_on.png"
+            
+            call set_h_buttplug("plug_a_on") #Updates clothing and body.
+            
             call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
             call her_main("i better head to class...","soft","squintL")
             m "See you tonight [hermione_name]."
             call her_main("{size=-5}({image=textheart}it feels so good{image=textheart}){/size}","grin","ahegao")
         
         elif whoring >= 21 and buttplug_size == 1: # LEVEL 08+
+            $ buttplug_1_worn = True
+            
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name]..."
             m "What do you think about wearing a buttpl-?"
@@ -186,12 +202,15 @@ label hg_ps_Buttplug:
             m "Great. Go have fun then!"
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
-            #$ hermione_wear_buttplug = True
-            #$ hermione_buttplug = "characters/hermione/accessories/plugs/plug_a_on.png"
+            
+            call set_h_buttplug("plug_a_on") #Updates clothing and body.
+            
             call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
             call her_main("I will, [genie_name]. Thank you.","base","happyCl")
 
         elif whoring <= 19 and buttplug_size == 2: # LEVEL 06 FIRST EVENT.
+            $ buttplug_2_worn = True
+            
             m "Today my gracious request will be..."
             call her_main(".........","angry","base",xpos="right",ypos="base")
             m "That you wear everyone's favorite magical buttplug to class!"
@@ -222,8 +241,9 @@ label hg_ps_Buttplug:
                 ">You hand her the buttplug."
                 call her_main("Oh... right...","base","down")
                 ">Hermione lifts her skirt and pushes it in gently, taking her time."
-                $ hermione_wear_buttplug = True
-                $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_b_on.png"
+                
+                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                
                 call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","grin","ahegao")
                 call her_main("i better... head to class... now...","open","baseL")
                 m "See you tonight [hermione_name]."
@@ -246,8 +266,9 @@ label hg_ps_Buttplug:
                 ">You hand her the buttplug."
                 call her_main("well... here goes...","base","down")
                 ">Hermione turns around, lifts her skirt and pushes it in gently, taking her time."
-                $ hermione_wear_buttplug = True
-                $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_b_on.png"
+                
+                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                
                 call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","grin","ahegao")
                 call her_main("i better... head to class... now...","soft","squintL")
                 m "See you tonight [hermione_name]."
@@ -264,8 +285,9 @@ label hg_ps_Buttplug:
             m "well seeing as how you asked so nicely..."
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
-            $ hermione_wear_buttplug = True
-            $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_b_on.png"
+            
+            call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                
             call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
             call her_main("Thank you [genie_name]!","open","baseL")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","grin","ahegao")
@@ -298,14 +320,14 @@ label hg_ps_Buttplug:
             call her_main("This is too much sir! even your cock wasn't this {p}{b}thick{/b}...","grin","ahegao")
             m "Nothing a little spit won't solve!"
             call her_main("I think this is beyond spit, [genie_name]. Unless you have some sort of actual {i}lubricant{/i} in your possession I don't think I'll be letting this thing anywhere near me.","grin","ahegao")
-            if gift_item_inv[6] >= 1:# anal lubricant
+            if gift_item_inv[12] >= 1:# anal lubricant
                 $ buttplug_3_worn = True
                 call play_music("playful_tension")# SEX THEME.
                 m "well it just so happens that I recently came across the solution to your problem."
                 call her_main("Which is?","grin","ahegao")
                 m "Here."
                 ">You hand hermione the jar of anal lubricant."
-                $ gift_item_inv[6] -= 1
+                $ gift_item_inv[12] -= 1
                 call her_main("!!!","grin","ahegao")
                 call her_main("I wasn't serious [genie_name]!","grin","ahegao")
                 m "Now, now. No one likes a liar."
@@ -322,19 +344,20 @@ label hg_ps_Buttplug:
                 call her_main("(There's no way this thing will fit.)","grin","ahegao")
                 ">Hermione slowly places the lubed up buttplug to her anus."
                 call her_main("I'm telling you [genie_name], this isn't going to-","grin","ahegao")
-                call her_main("{size+=10}!!!{/size}","grin","ahegao")
-                call her_main("{size+=10}It's moving!{/size}","grin","ahegao")
+                call her_main("{size=+10}!!!{/size}","grin","ahegao")
+                call her_main("{size=+10}It's moving!{/size}","grin","ahegao")
                 m "Really?"
-                call her_main("{size+=5}ugh...{/size}","grin","ahegao")
-                call her_main("{size+=5}it's forcing it's way inside me....{/size}","grin","ahegao")
-                call her_main("{size+=5}it's stretching me out from the inside... [genie_name].{/size}","grin","ahegao")
+                call her_main("{size=+5}ugh...{/size}","grin","ahegao")
+                call her_main("{size=+5}it's forcing it's way inside me....{/size}","grin","ahegao")
+                call her_main("{size=+5}it's stretching me out from the inside... [genie_name].{/size}","grin","ahegao")
                 call her_main("ah...","grin","ahegao")
                 call her_main("it's...{p}it's...","grin","ahegao")
                 $ hermione_dribble = True
-                call her_main("{size+=5}incredible!{/size}","grin","ahegao")
+                call her_main("{size=+5}incredible!{/size}","grin","ahegao")
                 ">You hear an audible pop as the buttplug forces it's way inside hermione."
-                $ hermione_wear_buttplug = True
-                $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_c_on.png"
+                
+                call set_h_buttplug("plug_c_on") #Updates clothing and body.
+                
                 call her_main(".............","grin","ahegao")
                 m "Are you alright [hermione_name]?"
                 call her_main("..........................","grin","ahegao")
@@ -350,8 +373,9 @@ label hg_ps_Buttplug:
                 m "It just so happens that I do."
                 ">You hand her the buttplug."
                 ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
-                $ hermione_wear_buttplug = True
-                $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_b_on.png"
+                
+                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                
                 call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
                 call her_main("Thank you [genie_name]!","open","baseL")
                 call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","grin","ahegao")
@@ -368,12 +392,13 @@ label hg_ps_Buttplug:
             call her_main("do i have to?","soft","squintL")
             m "you didn't seem to hate wearing it last time..."
             call her_main("...","open","down")
-            call her_main("{size=-5}alright then...{/size","open","down")
+            call her_main("{size=-5}alright then...{/size}","open","down")
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
             ">You see it magically worm it's way inside her eager hole."
-            $ hermione_wear_buttplug = True
-            $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_c_on.png"
+            
+            call set_h_buttplug("plug_c_on") #Updates clothing and body.
+            
             call her_main("{image=textheart}ah{image=textheart}ah...","grin","ahegao")
             call her_main("Thank you [genie_name]!","open","baseL")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","grin","ahegao")
@@ -382,11 +407,13 @@ label hg_ps_Buttplug:
     
     jump hg_pr_transition_block
     if buttplug_size == 2:
-        $ hermione_wear_buttplug = True
-        $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_b_on.png"
+        
+        call set_h_buttplug("plug_b_on") #Updates clothing and body.
+        
     if buttplug_size == 3:
-        $ hermione_wear_buttplug = True
-        $ hermione_buttplug = "characters/hermione/accessories/plugs/plug_c_on.png"
+        
+        call set_h_buttplug("plug_c_on") #Updates clothing and body.
+        
     jump day_main_menu
     
 label hg_ps_Buttplug_complete:
@@ -598,7 +625,7 @@ label hg_ps_Buttplug_complete:
             $ sc34CG(1, 17, 2)
             call her_main("..........","soft","ahegao")
             hide screen sccg
-            call her_main(xpod="right",ypos="base",trans="fade")
+            call her_main(xpos="right",ypos="base",trans="fade")
             m "Nice work, [hermione_name]."
         
         elif one_out_of_three == 2: ### EVENT (B)
@@ -992,8 +1019,10 @@ label hg_ps_Buttplug_complete:
     $ hg_ps_Buttplug_OBJ.points += 1
     $ hg_ps_Buttplug_OBJ.complete = True
     $ hg_ps_Buttplug_OBJ.inProgress = False
-    $ hermione_wear_buttplug = False
+    
+    call set_h_buttplug("remove")
     
     jump hg_pr_transition_block
-
-    return
+    
+    
+    

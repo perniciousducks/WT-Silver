@@ -1,4 +1,5 @@
 
+
 label update_wr_lists:
     call update_wr_color_list
     call update_wr_head_list
@@ -563,6 +564,8 @@ label update_wr_miscellaneous_list:
             $ wr_potions_list.append("clothes_potion")
 
         #Items #Butt-plugs, Gags, Brooms,...
+        if gift_item_inv[AnalPlugs.id] > 0:
+            $ wr_items_list.append("buttplugs")
         
         #Piercings
         if whoring >= 5:
@@ -608,3 +611,6 @@ label update_wr_miscellaneous_list:
     #if active_girl == "astoria":
 
     return
+    
+    
+    

@@ -405,7 +405,6 @@ label rummaging:
     
     $ rum_times += 1 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
     
-    hide screen cupboard
     hide screen genie
     show screen rum_screen
     with d3
@@ -423,7 +422,6 @@ label rummaging:
             ">You found some sort of potion..." 
             hide screen gift
             with d3
-            show screen cupboard
             show screen genie
             hide screen rum_screen
             
@@ -444,7 +442,6 @@ label rummaging:
         ">You found a map of the school grounds...\n>You can now leave the office."
         hide screen gift
         with d3
-        show screen cupboard
         show screen genie
         hide screen rum_screen
         
@@ -461,7 +458,6 @@ label rummaging:
             jump rum_rewards
         else:                                  #Easy difficulty
             ">...You find nothing of value."
-            show screen cupboard
             show screen genie
             hide screen rum_screen
     
@@ -541,9 +537,7 @@ label rum_rewards:
                 call rum_block(ViktorKrumPoster)
             elif one_of_tw == 19:
                 call rum_block(ThestralStrapon)
-            
-                   
-        show screen cupboard
+        
         show screen genie
         hide screen rum_screen
     

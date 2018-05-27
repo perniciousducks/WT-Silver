@@ -173,7 +173,14 @@ label __init_variables:
     if not hasattr(renpy.store,'potion_scene_11_progress'): #important!
         $ potion_scene_11_progress = 0
 
-
+        
+    ###CGs
+    if not hasattr(renpy.store,'cgg_folder'): #important!
+        $ ccg_folder = "luna_bj"
+        $ ccg1 = "herm"
+        $ ccg2 = 1
+        $ ccg3 = "gene"
+        
     #SC34 update 2 stuff, thanks akabur.
     if not hasattr(renpy.store,'sc_cg_base'): #important!
         $ sc_cg_base = "images/28_cg/sc34/1/base_1.png"
@@ -213,8 +220,7 @@ label __init_variables:
     $ hg_pr_BlowjobTeacher_ID = 7 #07 (Blow a teacher)
     $ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
     
-    #Update max tutoring if there is add more events 
-    $ max_tutoring = 14 
+    
     
     #Character Paths
     $ gen_path = "characters/genie/"
@@ -227,56 +233,46 @@ label __init_variables:
     
 
     #Reset Persistants
-    if not hasattr(renpy.store,'reset_persistants'): #important!
-        $ reset_persistants            = True
+    if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
+        $ reset_persistants            = False
 
     #Genie Init
     if not hasattr(renpy.store,'genie_sprite_base'): #important!
         call init_genie_layering
 
     #Snape Init
-    if not hasattr(renpy.store,'snape_xpos'): #important!
-        call snape_init
-    #if not hasattr(renpy.store,'snape_busy'): #important!
-    #    call snape_progress_init
+    call snape_init
+    call snape_progress_init
 
     #Hermione Init
-    if not hasattr(renpy.store,'hermione_base') or reset_persistants: #important!
-        call her_init
-        call her_clothing_init
-        call her_clothing_lists_init
-        call her_chibi_init
-    if not hasattr(renpy.store,'h_request_wear_top') or reset_persistants: #important!
-        call her_clothing_save_state
+    call her_init                #Defines newly added variables. Resets variables after creating a new game.
+    call her_clothing_init       #Defines newly added variables. Resets variables after creating a new game.
+    call her_chibi_init          #Defines newly added variables. Resets variables after creating a new game.
+    call her_clothing_lists_init #Lists update every time!
+    call her_progress_init       #Defines newly added variables. Resets variables after creating a new game.
     
     #Luna Init
-    if not hasattr(renpy.store,'luna_base') or reset_persistants: #important!
-        call luna_init
-    #if not hasattr(renpy.store,'luna_known'): #important!
-    #    call luna_progress_init
+    call luna_init
+    call luna_progress_init
 
     #Cho Init
-    if not hasattr(renpy.store,'cc_base') or reset_persistants: #important!
-        call cho_init
-    #if not hasattr(renpy.store,'chof2_first'): #important!
-    #    call cho_progress_init
+    call cho_init
+    call cho_progress_init
 
     #Susan Init
-    if not hasattr(renpy.store,'sus_base') or reset_persistants: #important!
-        call sus_init
-    #if not hasattr(renpy.store,'sus_known'): #important!
-    #    call sus_progress_init
+    call susan_init
+    call susan_progress_init
 
     #Astoria Init
-    #if not hasattr(renpy.store,'ast_base') or reset_persistants: #important!
-    #    call ast_init
-    #if not hasattr(renpy.store,'ast_base'): #important!
-    #    call ast_progress_init
+    call astoria_init
+    call astoria_progress_init
+    
+    #Tonks Init
+    call tonks_init
+    call tonks_progress_init
 
-    if not hasattr(renpy.store,'wardrobe_page_choice') or reset_persistants: #important!
-        call wardrobe_init
+    call wardrobe_init
 
-   
     
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
     if not hasattr(renpy.store,'mentioned_ginnys_hair'):
@@ -288,6 +284,9 @@ label __init_variables:
         $ flashing_tits_with_ginny      = False #Pr FlasAClassmate
     
     
+    #Update max tutoring if there is add more events 
+    $ max_tutoring = 14 
+    
     #Sorter Values
     $ zorder_character = 7
    
@@ -295,6 +294,6 @@ label __init_variables:
     $ row_index_selected = 0
     $ column_index_selected = 0
     
-    $ reset_persistants = False
-    
     return
+    
+    

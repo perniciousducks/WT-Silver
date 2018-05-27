@@ -65,4 +65,45 @@ label equip_her_misc_item:
                 
             jump return_to_wardrobe
             
+        if misc_item_choice == "small_buttplug":
+    
+            $ wardrobe_active = 0 #activates dissolve in her_main 
+  
+            call set_h_buttplug("plug_a_on") #Updates clothing and body.
+
+            jump return_to_wardrobe
+            
+        if misc_item_choice == "medium_buttplug":
+    
+            $ wardrobe_active = 0 #activates dissolve in her_main 
+
+            call set_h_buttplug("plug_b_on") #Updates clothing and body.
+
+            jump return_to_wardrobe
+            
+        if misc_item_choice == "large_buttplug":
+    
+            $ wardrobe_active = 0 #activates dissolve in her_main 
+
+            call set_h_buttplug("plug_c_on") #Updates clothing and body.
+
+            jump return_to_wardrobe
+            
+        if misc_item_choice == "remove_buttplug":
+        
+            call her_main("You want me to take the buttplug out?","angry","wink")
+            call her_main("(I was just getting used to it...)","annoyed","ahegao")
+            call her_main("Well alright then...","smile","base")
+            hide screen hermione_main
+            with d5
+            call play_sound("pop")
+                
+            call set_h_buttplug("remove") #Updates clothing and body.
+            
+            jump return_to_wardrobe
+            
+            
+            
+            
+            
             

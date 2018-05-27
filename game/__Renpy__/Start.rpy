@@ -1,7 +1,5 @@
 
 
-
-
 label start_ht:
     
     $ daytime = True
@@ -449,18 +447,18 @@ $ day = 0
 
 
 ### CHARACTER INIT RESET ###
+$ reset_persistants            = True
 
 #Snape
 call snape_init
 call snape_progress_init
 
 #Hermione
-call her_init
-call her_clothing_init
-call her_clothing_lists_init
-call her_chibi_init
-call her_clothing_save_state
-call her_progress_init
+call her_init                 #Everything resets here!
+call her_clothing_init        #Everything resets here!
+call her_clothing_lists_init  #Everything resets here!
+call her_chibi_init           #Everything resets here!
+call her_progress_init        #Everything resets here!
 
 #Luna
 call luna_init
@@ -471,13 +469,16 @@ call cho_init
 call cho_progress_init
 
 #Susan
-call sus_init
-call sus_progress_init
+call susan_init
+call susan_progress_init
 
 #Astoria
-#call ast_init
-#call ast_progress_init
+call astoria_init
+call astoria_progress_init
 
+#Astoria
+call tonks_init
+call tonks_progress_init
 
 
 #Wardrobe Reset
@@ -568,6 +569,7 @@ $ custom_outfit_3_bought = False
 $ custom_outfit_4_bought = False
 $ addicted = False
 
+$ reset_persistants            = False
 
 
 ### START ANIMATION ###
@@ -615,7 +617,6 @@ screen statistics: #http://www.renpy.org/doc/html/screens.html
 
 
 jump day_start
-
 
 
 

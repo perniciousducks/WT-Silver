@@ -92,10 +92,8 @@ screen desk: #Genie's desk.
 
 screen chair_left: #aka chair_02
     add "images/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
-    zorder 1
 screen chair_right:
     add "images/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
-    zorder 1
 
 screen owl: #DEFAULT OWL WITH ENVELOPE IN IT'S MOUTH.   
     add "images/main_room/owl_01.png" at Position(xpos=315+140, ypos=270, xanchor="center", yanchor="center")

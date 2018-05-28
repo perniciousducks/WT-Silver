@@ -62,8 +62,8 @@ hide screen owl
 hide screen owl_02
 
 
-show screen chair_right
 show screen main_room
+show screen chair_right
 show screen candlefire
 
 show screen genie

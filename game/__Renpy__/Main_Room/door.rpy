@@ -7,8 +7,9 @@ label door:
         "-Examine the door-" if not door_examined:
             $ door_examined = True
             hide screen genie
-            call gen_chibi("stand","door","base")
             show screen chair_left #Empty chair near the desk.
+            show screen chair_right
+            call gen_chibi("stand","door","base")
             show screen desk
             with Dissolve(0.5)
             m "A sturdy looking door..."

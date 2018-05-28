@@ -159,8 +159,8 @@ hide screen with_snape_animated #Genie hangs out with Snape in front of the fire
 if package_is_here:
     hide screen package
 
-show screen chair_right
 show screen main_room
+show screen chair_right
 
 show screen genie
 

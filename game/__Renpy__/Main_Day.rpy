@@ -27,7 +27,6 @@ call luna_day_flags
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking   = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ aftersperm    = False #Shows cum stains on Hermione's uniform.
 $ uni_sperm     = False
 
 $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
@@ -78,6 +77,8 @@ else: #Normal (2) & hardcore (3) difficulty
     $ gold4 = renpy.random.randint(45, 135)
 
 
+scene black
+hide screen main_room
 
 $ daytime = True #True when it is daytime. Turns False during nighttime.
 $ interface_color = "gold"
@@ -136,18 +137,15 @@ if deliveryQ.got_mail():
 
 
 
-
-scene black
-
 $ raining = False #No rain before the weather has been chosen at the beginning of every day.
 hide screen new_window #Hiding clear sky bg.
 
 ### WEATHER
 $ weather_gen = renpy.random.randint(1, 6)
 $ show_weather()
+show screen weather
 
 hide screen candlefire
-hide screen main_room
 
 hide screen chair_left
 hide screen chair_right

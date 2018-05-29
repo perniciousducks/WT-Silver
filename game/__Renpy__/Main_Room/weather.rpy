@@ -28,7 +28,7 @@ init python:
             raining = True
             weather_animations.append("rain")
             renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-        renpy.show_screen("weather")
+        #renpy.show_screen("weather") #Please do not fucking add shit like this! It fucks up the transitions.
     
     def hide_weather():
         renpy.hide_screen("weather")

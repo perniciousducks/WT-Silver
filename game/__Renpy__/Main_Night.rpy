@@ -14,11 +14,14 @@ call reset_hermione_main
 $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ aftersperm = False #Shows cum stains on Hermione's uniform.
 $ uni_sperm = False
 $ textColor = "#1e1008"
 
 call luna_night_flags
+
+scene black
+hide screen main_room
+
 $ daytime = False
 $ interface_color = "gray"
 $ snape_busy = False
@@ -31,7 +34,6 @@ $ gifted = False #Prevents you from giving Hermione a several gifts in a row. Tu
 stop bg_sounds #Stops playing the fire SFX.
 stop weather #Stops playing the rain SFX.
 
-scene black
 
 hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen done_reading #Hiding genie sitting with closed book in his hands.
@@ -44,9 +46,7 @@ hide screen blkfade
 
 ### WEATHER ###
 $ show_weather()
-
-
-
+show screen weather
 
 
 if package_is_here:

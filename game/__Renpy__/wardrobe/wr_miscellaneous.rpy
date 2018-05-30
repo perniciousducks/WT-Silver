@@ -68,7 +68,15 @@ label equip_her_misc_item:
         if misc_item_choice == "small_buttplug":
     
             $ wardrobe_active = 0 #activates dissolve in her_main 
-  
+        
+            call her_main("You want me to use a buttplug? Again?","angry","wink")
+            call her_main("(...)","annoyed","ahegao")
+            call her_main("(It's small enough. Shouldn't be too bad...)","disgust","down_raised")
+            call her_main("Alright,... Let me put it in real quick...","base","base")
+            hide screen hermione_main
+            with d5
+            pause.2
+
             call set_h_buttplug("plug_a_on") #Updates clothing and body.
 
             jump return_to_wardrobe
@@ -76,6 +84,13 @@ label equip_her_misc_item:
         if misc_item_choice == "medium_buttplug":
     
             $ wardrobe_active = 0 #activates dissolve in her_main 
+        
+            call her_main("Are you sure this is the medium size one?","soft","wink")
+            call her_main("(It still looks so big.)","angry","worriedCl")
+            call her_main("Fine, I'll wear it... Just give me a second...","disgust","down")
+            hide screen hermione_main
+            with d5
+            pause.2
 
             call set_h_buttplug("plug_b_on") #Updates clothing and body.
 
@@ -84,19 +99,34 @@ label equip_her_misc_item:
         if misc_item_choice == "large_buttplug":
     
             $ wardrobe_active = 0 #activates dissolve in her_main 
+        
+            call her_main("The big one?","soft","base")
+            g9 "The giant one!"
+            call her_main("...","annoyed","angry")
+            call her_main("(Why am I not surprised...)","annoyed","angryL")
+            call her_main("(This is going to hurt...)","angry","worriedCl",cheeks="blush")
+            call her_main("Fine... Let me put it on.","base","baseL")
+            g9 "Don't you mean... \"in\"?"
+            call her_main("...","annoyed","frown")
+            hide screen hermione_main
+            with d5
+            pause.2
 
             call set_h_buttplug("plug_c_on") #Updates clothing and body.
 
             jump return_to_wardrobe
             
         if misc_item_choice == "remove_buttplug":
+    
+            $ wardrobe_active = 0 #activates dissolve in her_main 
         
             call her_main("You want me to take the buttplug out?","angry","wink")
             call her_main("(I was just getting used to it...)","annoyed","ahegao")
-            call her_main("Well alright then...","smile","base")
+            call her_main("Well alright then...","base","base")
             hide screen hermione_main
             with d5
             call play_sound("pop")
+            pause.2
                 
             call set_h_buttplug("remove") #Updates clothing and body.
             

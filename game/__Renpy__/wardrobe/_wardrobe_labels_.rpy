@@ -851,15 +851,13 @@ label use_potion:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
         menu:
-            "-Universal potion-"
+            "-Universal potion-" ">Potions that can be used at any time of day."
             "-Change Clothing Transparency-" if "transparency" in cs_existing_stock:
                 $ misc_item_choice = "transparency"
                 jump equip_misc_item
             #"-Hair-Growth Potion-" #Hermione Pubic Hair. Not yet added.
             "-Never mind-":
                 jump return_to_wardrobe
-    else:
-        pass
         
     if daytime:
         hide screen wardrobe
@@ -949,14 +947,17 @@ label use_item: #Not in use.
             "-Buttplug Menu-"
             "-Buttplug Event-" if daytime:
                 jump hg_ps_Buttplug
-            "-Equip Small Buttplug-" if buttplug_1_worn:
+            "-Equip Small Buttplug-" if buttplug_1_worn and not (hermione_wear_buttplug and h_buttplug == "plug_a_on"):
                 $ misc_item_choice = "small_buttplug"
                 jump equip_misc_item
-            "-Equip Medium Buttplug-" if buttplug_2_worn:
+            "-Equip Medium Buttplug-" if buttplug_2_worn and not (hermione_wear_buttplug and h_buttplug == "plug_b_on"):
                 $ misc_item_choice = "medium_buttplug"
                 jump equip_misc_item
-            "-Equip Large Buttplug-" if buttplug_3_worn:
+            "-Equip Large Buttplug-" if buttplug_3_worn and not (hermione_wear_buttplug and h_buttplug == "plug_c_on"):
                 $ misc_item_choice = "large_buttplug"
+                jump equip_misc_item
+            "-Unequip Buttplug-" if hermione_wear_buttplug:
+                $ misc_item_choice = "remove_buttplug"
                 jump equip_misc_item
             "-Never mind-":
                 jump return_to_wardrobe

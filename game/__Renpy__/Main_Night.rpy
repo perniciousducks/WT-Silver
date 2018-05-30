@@ -21,6 +21,7 @@ call luna_night_flags
 
 scene black
 hide screen main_room
+hide screen weather
 
 $ daytime = False
 $ interface_color = "gray"

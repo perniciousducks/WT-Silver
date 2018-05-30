@@ -79,6 +79,7 @@ else: #Normal (2) & hardcore (3) difficulty
 
 scene black
 hide screen main_room
+hide screen weather
 
 $ daytime = True #True when it is daytime. Turns False during nighttime.
 $ interface_color = "gold"

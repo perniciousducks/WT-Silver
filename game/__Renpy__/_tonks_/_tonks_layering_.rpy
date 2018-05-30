@@ -6,8 +6,9 @@ screen nymphadora_tonks:
     add tonks_base xpos tonks_xpos ypos tonks_ypos #Add the base body
     add tonks_boobs xpos tonks_xpos ypos tonks_ypos #Add the base body
     ### EMOTIONS
-    add tonks_eye xpos tonks_xpos ypos tonks_ypos #Add the eye outline
+    add tonks_white xpos tonks_xpos ypos tonks_ypos #Add the white of her eye
     add tonks_pupil xpos tonks_xpos ypos tonks_ypos #Add the pupil
+    add tonks_eye xpos tonks_xpos ypos tonks_ypos #Add the eye outline
     add tonks_eyebrow xpos tonks_xpos ypos tonks_ypos #Add the eyebrow
     add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos #Add the hair shadow
     ###MOUTH
@@ -36,7 +37,7 @@ screen nymphadora_tonks:
     zorder tonks_zorder
 
 label ton_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, xpos=None, ypos=None, base=None, extra_1=None, extra_2=None, extra_3=None):
-    $ changetonks(eye, eyebrow, pupil, mouth, xpos, ypos, base, extra_1, extra_2, extra_3)
+    $ changeTonks(eye, eyebrow, pupil, mouth, xpos, ypos, base, extra_1, extra_2, extra_3)
     if text != "":
         $ renpy.say(ton, text)
     return
@@ -67,11 +68,11 @@ init python:
         if eye is not None:
             tonks_eye         = "characters/tonks/face/eyes/eye_"+eye+".png" 
         if eyebrow is not None:
-            tonks_eyebrow     = "characters/tonks/face/eyes/eyebrow_"+eyebrow+".png" 
+            tonks_eyebrow     = "characters/tonks/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:
             tonks_pupil       = "characters/tonks/face/eyes/pupil_"+pupil+".png" 
         if mouth is not None:
-            tonks_mouth       = "characters/tonks/face/mouth/mouth_"+mouth+".png" 
+            tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png" 
         ###POSITION CONTROL
         if x_pos is not None:
             tonks_xpos        = x_pos
@@ -87,5 +88,5 @@ init python:
         if extra_3 is not None:
             tonks_extra_3     = "characters/tonks/extras/"+extra_3+".png" 
         ###DISPLAY THE UPDATED SCREEEN
-        renpy.show_screen("tonks_greengrass")
+        renpy.show_screen("nymphadora_tonks")
         renpy.with_statement(Dissolve(0.3))

@@ -1,6 +1,6 @@
 
 
-label tonks_init:
+label ton_init:
 
     #Body
     $ tonks_base                = "characters/tonks/body/base/base_01.png" 
@@ -16,6 +16,7 @@ label tonks_init:
     #Face
     $ tonks_mouth               = "characters/tonks/face/mouth/default.png" 
     $ tonks_eye                 = "characters/tonks/face/eyes/eye_standard.png" 
+    $ tonks_white               = "characters/tonks/face/eyes/white.png" 
     $ tonks_eyebrow             = "characters/tonks/face/eyes/brow_standard.png" 
     $ tonks_pupil               = "characters/tonks/face/eyes/pupil_standard.png" 
     $ tonks_tears               = "characters/tonks/extras/blank.png" 
@@ -42,8 +43,8 @@ label tonks_init:
     return
 
 
-label tonks_progress_init:
-
+label ton_progress_init:
+    $ tonks_level = 0
     ##Favour stuff
     
 return

@@ -261,16 +261,22 @@ label __init_variables:
     #    call cho_progress_init
 
     #Susan Init
-    if not hasattr(renpy.store,'sus_base') or reset_persistants: #important!
+    if not hasattr(renpy.store,'susan_base') or reset_persistants: #important!
         call sus_init
-    #if not hasattr(renpy.store,'sus_known'): #important!
-    #    call sus_progress_init
+    if not hasattr(renpy.store,'susan_level'): #important!
+        call sus_progress_init
 
     #Astoria Init
-    #if not hasattr(renpy.store,'ast_base') or reset_persistants: #important!
-    #    call ast_init
-    #if not hasattr(renpy.store,'ast_base'): #important!
-    #    call ast_progress_init
+    if not hasattr(renpy.store,'astoria_base') or reset_persistants: #important!
+        call ast_init
+    if not hasattr(renpy.store,'astoria_spell_progress'): #important!
+        call ast_progress_init
+
+    #Tonks Init
+    if not hasattr(renpy.store,'tonks_base') or reset_persistants: #important!
+        call ton_init
+    if not hasattr(renpy.store,'tonks_level'): #important!
+        call ton_progress_init
 
     if not hasattr(renpy.store,'wardrobe_page_choice') or reset_persistants: #important!
         call wardrobe_init

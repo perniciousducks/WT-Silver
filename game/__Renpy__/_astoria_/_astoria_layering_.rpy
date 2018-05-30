@@ -12,8 +12,9 @@ screen astoria_greengrass:
     ###MOUTH
     add astoria_mouth xpos astoria_xpos ypos astoria_ypos #Add the mouth
     ### FACE
-    add astoria_tears xpos astoria_xpos ypos astoria_ypos #Add the tears
-    add astoria_blush xpos astoria_xpos ypos astoria_ypos #Add the tears
+    add astoria_extra_1 xpos astoria_xpos ypos astoria_ypos #Add the extras
+    add astoria_extra_2 xpos astoria_xpos ypos astoria_ypos #Add the extras
+    add astoria_extra_3 xpos astoria_xpos ypos astoria_ypos #Add the extras
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:
         add astoria_bra xpos astoria_xpos ypos astoria_ypos # Add the bra

@@ -32,7 +32,7 @@ screen susan_bones:
     zorder susan_zorder
 
 label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, xpos=None, ypos=None, base=None, extra_1=None, extra_2=None, extra_3=None):
-    $ changesusan(eye, eyebrow, pupil, mouth, xpos, ypos, base, extra_1, extra_2, extra_3)
+    $ changeSusan(eye, eyebrow, pupil, mouth, xpos, ypos, base, extra_1, extra_2, extra_3)
     if text != "":
         $ renpy.say(sus, text)
     return
@@ -63,11 +63,11 @@ init python:
         if eye is not None:
             susan_eye         = "characters/susan/face/eyes/eye_"+eye+".png" 
         if eyebrow is not None:
-            susan_eyebrow     = "characters/susan/face/eyes/eyebrow_"+eyebrow+".png" 
+            susan_eyebrow     = "characters/susan/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:
             susan_pupil       = "characters/susan/face/eyes/pupil_"+pupil+".png" 
         if mouth is not None:
-            susan_mouth       = "characters/susan/face/mouth/mouth_"+mouth+".png" 
+            susan_mouth       = "characters/susan/face/mouth/"+mouth+".png" 
         ###POSITION CONTROL
         if x_pos is not None:
             susan_xpos        = x_pos

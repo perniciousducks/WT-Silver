@@ -475,8 +475,12 @@ call sus_init
 call sus_progress_init
 
 #Astoria
-#call ast_init
-#call ast_progress_init
+call ast_init
+call ast_progress_init
+
+#Tonks
+call ton_init
+call ton_progress_init
 
 
 

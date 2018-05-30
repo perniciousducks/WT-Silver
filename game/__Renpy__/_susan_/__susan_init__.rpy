@@ -1,6 +1,6 @@
 
 
-label susan_init:
+label sus_init:
 
     #Body
     $ susan_base                = "characters/susan/body/base/base_01.png" 
@@ -39,8 +39,8 @@ label susan_init:
     return
 
 
-label susan_progress_init:
-
+label sus_progress_init:
+    $ susan_level = 0
     ##Favour stuff
     
 

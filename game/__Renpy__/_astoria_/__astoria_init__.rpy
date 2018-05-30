@@ -1,6 +1,6 @@
 
 
-label astoria_init:
+label ast_init:
 
     #Body
     $ astoria_base                = "characters/astoria/body/base/base_01.png" 
@@ -19,8 +19,9 @@ label astoria_init:
     $ astoria_eye                 = "characters/astoria/face/eyes/eye_averted.png" 
     $ astoria_eyebrow             = "characters/astoria/face/eyes/brow_averted.png" 
     $ astoria_pupil               = "characters/astoria/face/eyes/pupil_averted.png" 
-    $ astoria_tears               = "characters/astoria/extras/blank.png" 
-    $ astoria_blush               = "characters/astoria/extras/blank.png"
+    $ astoria_extra_1             = "characters/astoria/extras/blank.png" 
+    $ astoria_extra_2             = "characters/astoria/extras/blank.png" 
+    $ astoria_extra_3             = "characters/astoria/extras/blank.png" 
 
     #Clothes
     $ astoria_top                 = "characters/astoria/clothes/uniform/shirt_1.png" 
@@ -40,7 +41,7 @@ label astoria_init:
     return
 
 
-label astoria_progress_init:
+label ast_progress_init:
 
     ##Favour stuff
     

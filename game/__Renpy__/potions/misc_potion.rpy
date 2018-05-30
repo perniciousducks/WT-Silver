@@ -1,7 +1,7 @@
 ###POTION SCENES
 
-label potion_scene_10: #Time stop potion
-    m "Do you ever feel conflicted about what we do in here [hermione_name]?"
+#label potion_scene_10: #Time stop potion
+#    m "Do you ever feel conflicted about what we do in here [hermione_name]?"
 
     #Paralyze/time stop Hermione
     #Have genie molest her
@@ -20,16 +20,16 @@ label potion_scene_10: #Time stop potion
 
 
 
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen ctc
-    with Dissolve(.3)
+#    hide screen bld1
+#    hide screen hermione_main
+#    hide screen blktone 
+#    hide screen ctc
+#    with Dissolve(.3)
     
-    call her_walk("mid","leave",2)
+#    call her_walk("mid","leave",2)
     
-    $ hermione_takes_classes = True
-    jump day_main_menu
+#    $ hermione_takes_classes = True
+#    jump day_main_menu
 
 
 

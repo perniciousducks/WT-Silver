@@ -1,4 +1,4 @@
-label phoenix:
+label phoenix_lbl:
     if bird_interact == 2: # Counts how many times you have interacted with the bird.
         stop music fadeout 3.0
         $ bird_interact += 1 # Counts how many times you have interacted with the bird.
@@ -20,14 +20,14 @@ label phoenix_menu:
             #$ tt_ypos=90
             #show screen genie_stands
             call gen_chibi("stand","mid","base",flip=True)
-            show screen chair_02 #Empty chair near the desk.
+            show screen chair_left #Empty chair near the desk.
             show screen desk
             with Dissolve(0.5)
             m "Hm....."
             m "Even this weird looking bird radiates magic..."
             show screen genie
             hide screen genie_stands
-            hide screen chair_02 #Empty chair near the desk.
+            hide screen chair_left #Empty chair near the desk.
             hide screen desk
             with Dissolve(0.5)
             jump day_main_menu

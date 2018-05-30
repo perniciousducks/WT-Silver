@@ -1,4 +1,5 @@
 
+
 label update_wr_lists:
     call update_wr_color_list
     call update_wr_head_list
@@ -550,19 +551,20 @@ label update_wr_miscellaneous_list:
   
         #Potions
         $ wr_potions_list.append("universal_potion") #Potion that can be used day AND night!
-        
-        if "Polyjuice Potion" in p_inv or "Cat Transformation Potion" in p_inv or "Luna Transformation Potion" or "Clone Potion" in p_inv:
+        if potion_inv.has("p_cat_transformation") or potion_inv.has("p_luna_transformation"):
             $ wr_potions_list.append("polyjuice_potion")
-        if "Expanding Elixir" in p_inv or "Breast Expansion Potion" in p_inv or "Ass Expansion Potion" in p_inv:
+        if potion_inv.has("p_breast_expansion") or potion_inv.has("p_ass_expansion"):
             $ wr_potions_list.append("expanding_elixir")
-        if "Milk Potion" in p_inv:
+        if potion_inv.has("p_milk_potion"):
             $ wr_potions_list.append("milk_potion")
-        if "Cum Addiction Potion" in p_inv or "Hypno Potion" in p_inv:
+        if potion_inv.has("p_cum_addiction") or potion_inv.has("p_hypno"):
             $ wr_potions_list.append("love_potion")
-        if "Transparency Potion" in p_inv:
+        if potion_inv.has("p_transparency"):
             $ wr_potions_list.append("clothes_potion")
 
         #Items #Butt-plugs, Gags, Brooms,...
+        if gift_item_inv[AnalPlugs.id] > 0:
+            $ wr_items_list.append("buttplugs")
         
         #Piercings
         if whoring >= 5:
@@ -608,3 +610,6 @@ label update_wr_miscellaneous_list:
     #if active_girl == "astoria":
 
     return
+    
+    
+    

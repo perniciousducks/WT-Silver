@@ -74,7 +74,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         hide screen genie
         call her_chibi("hide")
-        show screen chair_02
+        show screen chair_left
         call u_play_ani
         hide screen bld1
         hide screen blkfade
@@ -399,7 +399,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         call play_music("playful_tension")# SEX THEME.                                                                                                                                                                           #HERMIONE
         hide screen genie
         call her_chibi("hide")
-        show screen chair_02
+        show screen chair_left
         call u_play_ani
         hide screen bld1
         hide screen blkfade
@@ -862,7 +862,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         call play_music("playful_tension")# SEX THEME.                                                                                                                                                                       #HERMIONE
         hide screen genie
         call her_chibi("hide")
-        show screen chair_02
+        show screen chair_left
         call u_play_ani
         hide screen bld1
         hide screen blkfade
@@ -1230,7 +1230,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call gen_chibi("hide")
     show screen genie

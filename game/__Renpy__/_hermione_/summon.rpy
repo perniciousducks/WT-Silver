@@ -7,8 +7,7 @@ label summon_hermione:
     call play_sound("door") #Sound of a door opening.
 
     ### RANDOM CLOTHING EVENTS ###
-    if not hermione_door_event_happened:
-        call hermione_door_event
+    call hermione_door_event
 
     call update_her_uniform
 
@@ -18,25 +17,25 @@ label summon_hermione:
 
         if mad >=1 and mad < 3:
             call her_main("","normal","base",xpos="base",ypos="base")
-            call nar(">Looks like Hermione is still a little upset with you...")
+            ">Looks like Hermione is still a little upset with you..."
         elif mad >=3 and mad < 10:
             call her_main("","normal","base",xpos="base",ypos="base")
-            call nar(">Hermione is upset with you.")
+            ">Hermione is upset with you."
         elif mad >=10 and mad < 20:
             call her_main("","annoyed","frown",xpos="base",ypos="base")
-            call nar(">Hermione is very upset with you.")
+            ">Hermione is very upset with you."
         elif mad >=20 and mad < 40:
             call her_main("","angry","angry",xpos="base",ypos="base")
-            call nar(">Hermione is mad at you.")
+            ">Hermione is mad at you."
         elif mad >=40 and mad < 50:
             call her_main("","angry","angry",xpos="base",ypos="base")
-            call nar(">Hermione is very mad at you.")
+            ">Hermione is very mad at you."
         elif mad >=50 and mad < 60:
             call her_main("","angry","angry",xpos="base",ypos="base")
-            call nar(">Hermione is furious at you.")
+            ">Hermione is furious at you."
         elif mad >=60:
             call her_main("","angry","angry",xpos="base",ypos="base")
-            call nar(">Hermione hates your guts.")
+            ">Hermione hates your guts."
 
     else:
         if not hermione_door_event_happened:

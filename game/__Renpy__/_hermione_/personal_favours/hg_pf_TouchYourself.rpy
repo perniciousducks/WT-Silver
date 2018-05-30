@@ -530,7 +530,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         ">Hermione slowly walks towards your desk and stands in front of you."
         
         show screen desk
-        show screen chair_02
+        show screen chair_left
         hide screen genie
         $ genie_chibi_xpos = -217
         $ genie_chibi_ypos = 13
@@ -672,7 +672,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ctc
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     show screen genie
     call her_chibi("stand","desk","base")

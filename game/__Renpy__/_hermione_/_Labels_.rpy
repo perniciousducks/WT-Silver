@@ -327,6 +327,8 @@ label silver_requests:
                 jump day_time_requests
             
     else:
+        show screen hermione_main
+        with d3
         her "The Gryffindors are in the lead. I don't need to do this."
         jump day_time_requests
     
@@ -336,7 +338,7 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     show screen blkfade
     with d3
     
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
     hide screen bld1
@@ -404,7 +406,7 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen hermione_main
     hide screen hermione_main_ass
 
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     hide screen hermione_04 #Stands with tits out.
     hide screen groping_naked_tits
@@ -573,10 +575,10 @@ label Night_Request_Block:
     python:
         for i in hg_pr_list: #Call any public request event if it's in progress
             if i.inProgress:
-                renpy.call(i.complete_label)
+                renpy.jump(i.complete_label)
         for i in hg_ps_list: #Call any public shaming event if it's in progress
             if i.inProgress:
-                renpy.call(i.complete_label)
+                renpy.jump(i.complete_label)
                 
     jump night_resume
     
@@ -658,4 +660,3 @@ init python:
             menu_image = "interface/check_"+str(self.complete)+".png"
             return "Event: "+self.menu_text+" {image="+menu_image+"}"
     
-

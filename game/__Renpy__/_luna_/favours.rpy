@@ -2818,7 +2818,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">You stand up and walk in front of luna, towering over her."
             hide screen bld1
             hide screen genie
-            show screen chair_02
+            show screen chair_left
             show screen desk
             $ genie_chibi_xpos = -20
             $ genie_chibi_ypos = 10
@@ -2971,7 +2971,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             $ luna_wear_bra = True
             $ luna_wear_panties = True
             $ luna_cum = 2
-            hide screen chair_02
+            hide screen chair_left
             hide screen desk
             ">Luna quickly picks her clothes up off your desk and gets dressed, putting on her shirt over the cum."
             show screen luna
@@ -3001,7 +3001,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">You stand up and walk in front of luna, feeling the pressure of her gaze."
             hide screen bld1
             hide screen genie
-            show screen chair_02
+            show screen chair_left
             show screen desk
             $ genie_chibi_xpos = -20
             $ genie_chibi_ypos = 10
@@ -3134,7 +3134,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_wear_panties = True
                 $ luna_wear_cum = False
                 show screen genie
-                hide screen chair_02
+                hide screen chair_left
                 hide screen desk
                 hide screen g_c_u
                 show screen luna
@@ -3165,7 +3165,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_wear_panties = True
                 $ luna_cum = 2
                 show screen genie
-                hide screen chair_02
+                hide screen chair_left
                 hide screen desk
                 hide screen g_c_u
                 show screen luna
@@ -3244,7 +3244,7 @@ label luna_favour_4: ###Luna handjob
         ">You open your cloak and pull out your cock."
         hide screen bld1
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen desk
         $ genie_chibi_xpos = -20
         $ genie_chibi_ypos = 10
@@ -3491,7 +3491,7 @@ label luna_favour_4: ###Luna handjob
 
         hide screen g_c_u
         show screen genie
-        hide screen chair_02
+        hide screen chair_left
         hide screen desk
 
         jump luna_away
@@ -3556,7 +3556,7 @@ label luna_favour_4: ###Luna handjob
             ">You open your cloak and pull out your cock."
             hide screen bld1
             hide screen genie
-            show screen chair_02
+            show screen chair_left
             show screen desk
             $ genie_chibi_xpos = -20
             $ genie_chibi_ypos = 10
@@ -3765,7 +3765,7 @@ label luna_favour_4: ###Luna handjob
             ">You open your cloak and pull out your cock."
             hide screen bld1
             hide screen genie
-            show screen chair_02
+            show screen chair_left
             show screen desk
             $ genie_chibi_xpos = -20
             $ genie_chibi_ypos = 10
@@ -3980,7 +3980,7 @@ label luna_favour_4: ###Luna handjob
 
     hide screen g_c_u
     show screen genie
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
 
     jump luna_away
@@ -4122,7 +4122,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         show screen blkfade
         hide screen bld1
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen desk
         $ genie_chibi_xpos = -20
         $ genie_chibi_ypos = 10
@@ -4238,7 +4238,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         with d3
         hide screen bld1
         show screen genie
-        hide screen chair_02
+        hide screen chair_left
         hide screen desk
         hide screen g_c_u
         call luna_main("...", 5, 8, 4, 1)
@@ -4515,7 +4515,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         with d3
         hide screen bld1
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen desk
         $ genie_chibi_xpos = -20
         $ genie_chibi_ypos = 10
@@ -4693,7 +4693,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ hermione_zorder = 5
         hide screen genie_sprite
         show screen genie
-        hide screen chair_02
+        hide screen chair_left
         hide screen desk
         hide screen g_c_u
         $ hermione_SC.chibi.xpos = 600 #Near the desk: 400. (210 - standing on desk.)
@@ -4814,7 +4814,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         with d3
         hide screen bld1
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen desk
         $ genie_chibi_xpos = -20
         $ genie_chibi_ypos = 10
@@ -4974,7 +4974,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         show screen hermione_main
         hide screen genie_sprite
         show screen genie
-        hide screen chair_02
+        hide screen chair_left
         hide screen desk
         hide screen g_c_u
         $ hermione_SC.chibi.xpos = 600 #Near the desk: 400. (210 - standing on desk.)

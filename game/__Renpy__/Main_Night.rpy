@@ -14,11 +14,15 @@ call reset_hermione_main
 $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ aftersperm = False #Shows cum stains on Hermione's uniform.
 $ uni_sperm = False
 $ textColor = "#1e1008"
 
 call luna_night_flags
+
+scene black
+hide screen main_room
+hide screen weather
+
 $ daytime = False
 $ interface_color = "gray"
 $ snape_busy = False
@@ -31,80 +35,41 @@ $ gifted = False #Prevents you from giving Hermione a several gifts in a row. Tu
 stop bg_sounds #Stops playing the fire SFX.
 stop weather #Stops playing the rain SFX.
 
-scene black
 
 hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen done_reading #Hiding genie sitting with closed book in his hands.
 hide screen done_reading_near_fire #Done reading by the fire
 hide screen new_window #Hiding clear sky bg.
-hide screen cloud #THE CLOUD.
 
 hide screen bld1
 hide screen blktone
 hide screen blkfade
 
-hide screen lightening #Hide lighting so it wouldn't get stuck during clear sky weather and such.
-###WEATHER
-if wather_generator >= 81 and wather_generator <= 90: # RAIN WITH LIGHTENING.
-    show image "images/main_room/weather/night_sky_04.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-elif wather_generator >= 1 and wather_generator <= 30: #Clear sky with stars.
-    show image "images/main_room/weather/night_sky.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
-
-elif wather_generator >= 41 and wather_generator <= 50: #Clear sky with stars 02. (floating cloud during the day).
-    show image "images/main_room/weather/night_sky.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
-
-elif wather_generator >= 31 and wather_generator <= 40: #CLEAR FULL MOON.
-    show image "images/main_room/weather/night_sky_02.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
-
-elif wather_generator >= 51 and wather_generator <= 60: #FULL MOON WITH CLOUDS
-    show screen cloud_night_01
-    show screen cloud_night_02
-    show screen cloud_night_03
-    show image "images/main_room/weather/night_sky_02.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")
-
-elif wather_generator >= 61 and wather_generator <= 80: #HEAVY CLOUDS.
-    show image "images/main_room/weather/night_sky_04.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")
-    $ lighting_generator = renpy.random.randint(1, 2)
-    if lighting_generator == 1:
-        show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Lighting
-
-elif wather_generator >= 91 and wather_generator <= 100: #RAIN.
-    show image "images/main_room/weather/night_sky_04.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
-
-
+### WEATHER ###
+$ show_weather()
+show screen weather
 
 
 if package_is_here:
     hide screen package
-hide screen room #Hiding main room BG.
-show screen room_night #Showing main room NIGHT BG.
-hide screen door
-hide screen cupboard
-hide screen chair
-hide screen fireplace
-hide screen phoenix
-hide screen candle_01
-hide screen candle_02
+
+
+hide screen main_room
+
+hide screen chair_left
+hide screen chair_right
 hide screen genie
 hide screen owl
 hide screen owl_02
 
-show screen door
-show screen cupboard
-show screen chair
-show screen fireplace
-show screen phoenix
-show screen candle_01
-show screen candlefire_01 #CANDLE FIRE.
-show screen candle_02
-show screen candlefire_02 #CANDLE FIRE.
+
+show screen main_room
+show screen chair_right
+show screen candlefire
+
+show screen genie
 if package_is_here:
     show screen package
-show screen genie
 
 #hide screen statistics
 #show screen statistics

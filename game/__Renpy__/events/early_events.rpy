@@ -522,12 +522,12 @@ label event_05:
 
     pause.1
 
+
+    show screen snape_glass
+    pause 3
+
     hide screen genie
     hide screen snape_defends
-
-    $ end_u_1_pic =  "glass"
-    show screen end_u_1
-    pause 3
 
     $ mQuest_A.counter = 5 #Main Quest Milestone!
     call update_quests
@@ -701,6 +701,7 @@ label event_06:
 
     $ mQuest_A.counter = 6 #Main Quest Milestone!
     call update_quests
+    hide screen duel
 
     jump day_start
 

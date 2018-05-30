@@ -11,10 +11,12 @@ label gallery_ht:
             jump music_room
         
         "-Sacred scrolls volume I-":
-            jump volone_ht
+            $ scrolls_range = range(1,16)
+            jump ss_vol
         
         "-Sacred scrolls volume II-":
-            jump voltwo
+            $ scrolls_range = range(16,31)
+            jump ss_vol
             
 #        "-Gallery volume 02-":
 #            jump volumetwo
@@ -54,439 +56,45 @@ label gallery_ht:
                     jump after_cam
         
             
-        "-Commentaries (on)-" if commentaries:
-            $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 
-            jump after_cam
-        
-        "-Commentaries (off)-" if not commentaries:
-            $ commentaries = True # In the GALLERY turns commentaries ON and OFF. 
+        "-Commentaries ([commentaries])-":
+            $ commentaries = not commentaries # In the GALLERY turns commentaries ON and OFF. 
             jump after_cam
             
         "-Cancel-":
             return 
             
             
-label volone_ht:
-    menu:
-        "-S.01: [scroll_name[1]]-" if persistent.ss_01:
-            show image "images/misc/extras/01.png" with d3
-            if commentaries:
-                a1 "This is a first ever draft of the Dumbledore's office."
-                a1 "Not a very exciting thing to look at, sure. But holds great historical value."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/01.png" with d3
-            pass
-        "-S.02: [scroll_name[2]]-" if persistent.ss_02:
-            show image "images/misc/extras/02.png" with d3
-            if commentaries:
-                a1 "The calendar..."
-                a1 "On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay..."
-                a1 "I soon realized how much more difficult it would be to create a game like that..."
-                a1 "And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea..."
-                a1 "Later on I used this drawing as a parchment paper for letters to be written on..."
+label ss_vol:
+    python:
+        scrolls_menu = []
+        for scroll in scrolls_range:
+            sc = sacred_scrolls[scroll]
+            if persistent.ss_[sc.id]:
+                scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", sc) )
+        scrolls_menu.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(scrolls_menu)
 
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/02.png" with d3
-            pass
-        "-S.03: [scroll_name[3]]-" if persistent.ss_03:
-            show image "images/misc/extras/03.png" with d3
-            if commentaries:
-                a1 "A couple of very early drawings of Hermione..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/03.png" with d3
-            pass
-            
-        "-S.04: [scroll_name[4]]-" if persistent.ss_04:
-            show image "images/misc/extras/04.png" with d3
-            if commentaries:
-                a1 "The deepthroating scene..."
-                a1 "My first attempt."
-                a1 "Been deemed unworthy and ended up here."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/04.png" with d3
-            pass
-            
-        "-S.05: [scroll_name[5]]-" if persistent.ss_05:
-            show image "images/misc/extras/05.png" with d3
-            if commentaries:
-                a1 "The game poster..."
-                a1 "Hermione is Dahr's work. The rest is me..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/05.png" with d3
-            pass
-            
-        "-S.06: [scroll_name[6]]-" if persistent.ss_06:
-            show image "images/misc/extras/06.png" with d3
-            if commentaries:
-                a1 "Alternative game poster."
-                a1 "This one has never been released."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/06.png" with d3
-            pass
-            
-        "-S.07: [scroll_name[7]]-" if persistent.ss_07:
-            show image "images/misc/extras/07.png" with d3
-            if commentaries:
-                a1 "Some chibi closeups."
-                a1 "The one on the left never made it into the final game..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/07.png" with d3
-            pass
-            
-        "-S.08: [scroll_name[8]]-" if persistent.ss_08:
-            show image "images/misc/extras/08.png" with d3
-            if commentaries:
-                a1 "A banch of items that I ended up not using..."
-                a1 "I blame dahr and his awesome artwork."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/08.png" with d3
-            pass
-            
-        "-S.09: [scroll_name[9]]-" if persistent.ss_09:
-            show image "images/misc/extras/09.png" with d3
-            if commentaries:
-                a1 "The drawing of Hermione from the poster. (by Dahr)"
-                a1 "I like one on the right with her panties still on."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/09.png" with d3
-            pass
-            
-        "-S.10: [scroll_name[10]]-" if persistent.ss_10:
-            show image "images/misc/extras/10.png" with d3
-            if commentaries:
-                a1 "Another ithing that never made it into the final game..."
-                a1 "The idea here was that the more you level up Hermione the more pegs she would let you to put on her..."
-                a1 "And the nipple chain was supposed to be worn to class under the uniform."
-    
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/10.png" with d3
-            pass
-            
-        "-S.11: [scroll_name[11]]-" if persistent.ss_11:
-            show image "images/misc/extras/11.png" with d3
-            if commentaries:
-                a1 "The house-elf brothel... Just another thing that never happened."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/11.png" with d3
-            pass
-            
-        "-S.12: [scroll_name[12]]-" if persistent.ss_12:
-            show image "images/misc/extras/12.png" with d3
-            if commentaries:
-                a1 "A drawing featuring yours truly as a Durmstrung mage and Lola as a student..."
-                a2 "The drawing itself is by Dahr of course."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/12.png" with d3
-            pass
-        
-        
-        "-S.13: [scroll_name[13]]-" if persistent.ss_13:
-            show image "images/misc/extras/13.png" with d3
-            if commentaries:
-                a1 "Another one of those side-quests that never happened..."
-                a1 "This one was about--"
-                a1 "No, I better not. Who knows, maybe we will get to adding those quests eventually."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/13.png" with d3
-            pass
-        
-        "-S.14: [scroll_name[14]]-" if persistent.ss_14:
-            show image "images/misc/extras/14.png" with d3
-            if commentaries:
-                a1 "Another sub-quest..."
-                a1 "This one involving the school's wizard chess club."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/14.png" with d3
-            pass
-        
-        "-S.15: [scroll_name[15]]-" if persistent.ss_15:
-            show image "images/misc/extras/15.png" with d3
-            if commentaries:
-                a1 "There is more then one way for a pretty girl to carry her books around."
-                a1 "I thought it would be cool to change the way Hermione carries the books as she progresses with her training."
-                a1 "Since the whole tutoring arc got canceled I am showing it here..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/15.png" with d3
-            pass
-        
-        "\"Never mind\"":
-            jump after_cam
-        
-    jump volone_ht
-        
-        
-        
-        
-label voltwo:
-    menu:
-        "-S.16: [scroll_name[16]]-" if persistent.ss_16:
-            show image "images/misc/extras/16.png" with d3
-            if commentaries:
-                a1 "A couple of items that didn't make it into the final game..."
-                a1 "The one on the left is an actual live house-elf to give as a present."
-                a1 "The one on the right is a portrait of a pervy but wise wizard. Supposed to be helping with studying..."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/16.png" with d3
-            pass
-        "-S.17: [scroll_name[17]]-" if persistent.ss_17:
-            show image "images/misc/extras/17.png" with d3
-            if commentaries:
-                #17.
-                a1 "Few more items..."
-                a1 "A newspaper, a bottle of perfume and a magical hat that says things you want to hear..."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/17.png" with d3
-            pass
-        "-S.18: [scroll_name[18]]-" if persistent.ss_18:
-            show image "images/misc/extras/18.png" with d3
-            if commentaries:
-                 #18.
-                a1 "The fiction books..."
-                a1 "The top row are my sketches, the bottom row are finalized drawings by dahr."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/18.png" with d3
-            pass
-            
-        "-S.19: [scroll_name[19]]-" if persistent.ss_19:
-            show image "images/misc/extras/19.png" with d3
-            if commentaries:
-                #19.
-                a1 "A drawing of a famous singer."
-                a1 "Has no connection to this game and is here for no reason whatsoever."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/19.png" with d3
-            pass
-            
-        "-S.20: [scroll_name[20]]-" if persistent.ss_20:
-            show image "images/misc/extras/20.png" with d3
-            if commentaries:
-                #20.
-                a1 "It took me a while to come up with a proper look for Hermione..."
-                a1 "Version \"A\" was my first attempt. And I liked it up until the moment when I started to hate it..."
-                a2 "Version \"B\" was my second attempt. And it's good. But her confident and semi-aggressive facial features didn't fit the character well..."
-                a1 "Version \C\" is the one that got the role. The Hermione that we all grew to care for by now, I'm sure."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/20.png" with d3
-            pass
-            
-        "-S.21: [scroll_name[21]]-" if persistent.ss_21:
-            show image "images/misc/extras/21.png" with d3
-            if commentaries:
-                #21 
-                a1 "Sub-quests that never happened."
-                a1 "You are allowed to feel bad for rushing me."
-                a1 "If you did not rush me you are allowed to feel angry at people who did."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/21.png" with d3
-            pass
-            
-        "-S.22: [scroll_name[22]]-" if persistent.ss_22:
-            show image "images/misc/extras/22.png" with d3
-            if commentaries:
-                #22
-                a1 "Hermione presenting her body to Genie..."
-                a1 "This would have been a quite memorable scene..."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/22.png" with d3
-            pass
-            
-        "-S.23: [scroll_name[23]]-" if persistent.ss_23:
-            show image "images/misc/extras/23.png" with d3
-            if commentaries:
-                #23. 
-                a1 "Didn't expect this one, did you?"
-                a1 "In case you're wondering this is still Hermione."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/23.png" with d3
-            pass
-            
-        "-S.24: [scroll_name[24]]-" if persistent.ss_24:
-            show image "images/misc/extras/24.png" with d3
-            if commentaries:
-                #24.
-                a1 "................................."
-                a1 "Sub-quests of course..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/24.png" with d3
-            pass
-            
-        "-S.25: [scroll_name[25]]-" if persistent.ss_25:
-            show image "images/misc/extras/25.png" with d3
-            if commentaries:
-                #25.
-                a1 "Another sub-quest..."
-                a1 "We had a rather lengthy discussion with Dahr about this one..."
-                a1 "I was sort of against it, but then Dahr sent me this picture and it made me shut up."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/25.png" with d3
-            pass
-            
-        "-S.26: [scroll_name[26]]-" if persistent.ss_26:
-            show image "images/misc/extras/26.png" with d3
-            if commentaries:
-                #26.
-                a1 "One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs..."
-                a1 "At first many of the sub-quests involved deciding on how to spend the Hogwarts budget..."
-                a1 "Spend your money to finance the school quiddich team, or to hire new teachers and such..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/26.png" with d3
-            pass
-            
-        "-S.27: [scroll_name[27]]-" if persistent.ss_27:
-            show image "images/misc/extras/27.png" with d3
-            if commentaries:
-                #27.
-                a1 "Isn't she adorable?"
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/27.png" with d3
-            pass
-
-        
-        "-S.28: [scroll_name[28]]-" if persistent.ss_28:
-            show image "images/misc/extras/28.png" with d3
-            if commentaries:
-                #28.
-                a1 "Another (rather lengthy) sub-quest..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/28.png" with d3
-            pass
-        
-        "-S.29: [scroll_name[29]]-" if persistent.ss_29:
-            show image "images/misc/extras/29.png" with d3
-            if commentaries:
-                #29.
-                a1 ".........."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/29.png" with d3
-            pass
-        
-        "-S.30: [scroll_name[30]]-" if persistent.ss_30:
-            show image "images/misc/extras/30.png" with d3
-            if commentaries:
-                #30.
-                a1 "One of the very early sketches related to the quiddich sub-quests..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "images/misc/extras/30.png" with d3
-            pass
-        
-        "\"Never mind\"":
-            jump after_cam
-        
-    jump voltwo
-    
-        
-        
-        
-        
-        
-    
-            
-               
+    if result == "nvm":
+        jump after_cam
+    else:
+        $ the_gift = "images/misc/extras/"+str(result.id)+".png"
+        show screen gift
+        with d3
+        if commentaries:
+            python:
+                for comment in result.comments:
+                    renpy.say(a1,comment)
+        show screen ctc
+        pause
+        hide screen ctc
+        hide screen gift
+        with d3
+        pass
+        jump ss_vol
 
 
-                
 
-                
-
-                
-                
-                
-
-                
-
-                
-
-                
-
-                
-                
-
-                
-
-                
-
-
-        
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    ### OUTSKIRTS OF HOGWARTS CGs ###
+### OUTSKIRTS OF HOGWARTS CGs ###
 label out_hog:
     show image  "images/yule_ball/171.png" with d3
     show screen ctc
@@ -1457,371 +1065,50 @@ label end02_03:
         jump hp
         
         
+init -2:
+    $ music_room_playing = ""
     ### MUSIC ROOM ###
 label music_room:
-    $ d_flag_01 = False
-    $ d_flag_02 = False
-    $ d_flag_03 = False
-    $ d_flag_04 = False
-    $ d_flag_05 = False
-    $ d_flag_06 = False
-    $ d_flag_07 = False
-    $ d_flag_08 = False
-    $ d_flag_09 = False
-    $ d_flag_10 = False
-    $ d_flag_11 = False
-    $ d_flag_12 = False
-    $ d_flag_13 = False
-    $ d_flag_14 = False
-    $ d_flag_15 = False
-    
-    label music_room2:
-        pass
-    
-    menu:
-        "{image=note2.png} Playful Tension by Shadow16nh {image=note2.png}" if d_flag_01:
-            pass
-        "Playful Tension by Shadow16nh" if not d_flag_01:
-            $ d_flag_01 = True
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        
-        "{image=note2.png} Shanghai Honey by Orange Range {image=note2.png}" if d_flag_02:
-            pass
-        "Shanghai Honey by Orange Range" if not d_flag_02:
-            $ d_flag_01 = False
-            $ d_flag_02 = True
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/02 - Shanghai Honey.mp3" fadein 1 fadeout 1 
-       
-        
-        
-        
-        
-        "{image=note2.png} Introducing Colin Harry Potter OST {image=note2.png}" if d_flag_03:
-            pass
-        "Introducing Colin Harry Potter OST" if not d_flag_03:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = True
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 
-        
-        "{image=note2.png} Neville's Waltz Harry Potter OST {image=note2.png}" if d_flag_04:
-            pass
-        "Neville's Waltz Harry Potter OST" if not d_flag_04:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = True
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 
+    python:
+        music_list = [
+            ["Playful Tension by Shadow16nh","music/(Orchestral) Playful Tension by Shadow16nh.mp3"],
+            ["Shanghai Honey by Orange Range","music/02 - Shanghai Honey.mp3"],
+            ["Introducing Colin Harry Potter OST","music/07 Introducing Colin2.mp3"],
+            ["Neville's Waltz Harry Potter OST","music/11 Neville's Waltz.mp3"],
+            ["The Quidditch Match Harry Potter OST","music/11 The Quidditch Match.mp3"],
+            ["Anguish by Kevin MacLeod","music/Anguish.mp3"],
+            ["Brittle Rille by Kevin MacLeod","music/Brittle Rille.mp3"],
+            ["Chipper Doodle v2 by Kevin MacLeod","music/Chipper Doodle v2.mp3"],
+            ["Dark Fog by Kevin MacLeod","music/Dark Fog.mp3"],
+            ["Final Fantasy VII Game Over Theme","music/Final Fantasy 7 Game Over Theme.mp3"],
+            ["Final Fantasy VII Boss Theme","music/Final Fantasy VII Boss Theme.mp3"],
+            ["Hitman by Kevin MacLeod","music/Hitman.mp3"],
+            ["Music for Manatees by Kevin MacLeod","music/Music for Manatees.mp3"],
+            ["Plaint by Kevin MacLeod","music/Plaint.mp3"],
+            ["Under-the-Radar by PhobyAk","music/Under-the-Radar by PhobyAk.mp3"]
+        ]
+        music_room_menu = []
+        for title, file in music_list:
+            if music_room_playing == file:
+                music_room_menu.append( ("{image=interface/note2.png} "+title+" {image=interface/note2.png}", None) )
+            else:
+                music_room_menu.append( (title, file) )
             
-            
-            
-            
-        "{image=note2.png} The Quidditch Match Harry Potter OST {image=note2.png}" if d_flag_05:
-            pass
-        "The Quidditch Match Harry Potter OST" if not d_flag_05:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = True
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 
-        
-        
-        "{image=note2.png} Anguish by Kevin MacLeod {image=note2.png}" if d_flag_06:
-            pass
-        "Anguish by Kevin MacLeod" if not d_flag_06:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = True
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Anguish.mp3" fadein 1 fadeout 1 
-            
-            
-            
-            
-        "{image=note2.png} Brittle Rille by Kevin MacLeod {image=note2.png}" if d_flag_07:
-            pass
-        "Brittle Rille by Kevin MacLeod" if not d_flag_07:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = True
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 
-            
-            
-            
-            
-            
-        "{image=note2.png} Chipper Doodle v2 by Kevin MacLeod {image=note2.png}" if d_flag_08:
-            pass
-        "Chipper Doodle v2 by Kevin MacLeod" if not d_flag_08:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = True
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
+        music_room_menu.append(("-No music-", "stop_music"))
+        music_room_menu.append(("-Keep the current tune-", "keep"))
+        result = renpy.display_menu(music_room_menu)
 
+    if result == "stop_music":
+        $ music_room_playing = ""
+        stop music fadeout 1.0
+        jump music_room
+    if result == "keep":
+        jump gallery_ht
+    if not None:
+        $ music_room_playing = result
+        play music result fadein 1 fadeout 1 
 
-
- 
-        "{image=note2.png} Dark Fog by Kevin MacLeod {image=note2.png}" if d_flag_09:
-            pass
-        "Dark Fog by Kevin MacLeod" if not d_flag_09:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = True
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
-
-
-
-        "{image=note2.png} Final Fantasy VII Game Over Theme {image=note2.png}" if d_flag_10:
-            pass
-        "Final Fantasy VII Game Over Theme" if not d_flag_10:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = True
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Final Fantasy 7 Game Over Theme.mp3" fadein 1 fadeout 1
-
-
- 
-        "{image=note2.png} Final Fantasy VII Boss Theme {image=note2.png}" if d_flag_11:
-            pass
-        "Final Fantasy VII Boss Theme" if not d_flag_11:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = True
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
-
-
-
- 
-        "{image=note2.png} Hitman by Kevin MacLeod {image=note2.png}" if d_flag_12:
-            pass
-        "Hitman by Kevin MacLeod" if not d_flag_12:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = True
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Hitman.mp3" fadein 1 fadeout 1
-
-
-
- 
-        "{image=note2.png} Music for Manatees by Kevin MacLeod {image=note2.png}" if d_flag_13:
-            pass
-        "Music for Manatees by Kevin MacLeod" if not d_flag_13:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = True
-            $ d_flag_14 = False
-            $ d_flag_15 = False
-            play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
-
-
-
- 
-        "{image=note2.png} Plaint by Kevin MacLeod {image=note2.png}" if d_flag_14:
-            pass
-        "Plaint by Kevin MacLeod" if not d_flag_14:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = True
-            $ d_flag_15 = False
-            play music "music/Plaint.mp3" fadein 1 fadeout 1
-
-
-
- 
-        "{image=note2.png} Under-the-Radar by PhobyAk {image=note2.png}" if d_flag_15:
-            pass
-        "Under-the-Radar by PhobyAk" if not d_flag_15:
-            $ d_flag_01 = False
-            $ d_flag_02 = False
-            $ d_flag_03 = False
-            $ d_flag_04 = False
-            $ d_flag_05 = False
-            $ d_flag_06 = False
-            $ d_flag_07 = False
-            $ d_flag_08 = False
-            $ d_flag_09 = False
-            $ d_flag_10 = False
-            $ d_flag_11 = False
-            $ d_flag_12 = False
-            $ d_flag_13 = False
-            $ d_flag_14 = False
-            $ d_flag_15 = True
-            play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 
-            
-            
-            
-            
-        "-No music-":
-            stop music fadeout 1.0
-            jump music_room
-        "-Keep the current tune-":
-            jump gallery_ht
-    jump music_room2
+    jump music_room
         
         
         

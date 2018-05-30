@@ -681,7 +681,7 @@ label l_tutoring:
         
         ">You grab her tits and squeeze them gently."
         
-        show screen chair_02
+        show screen chair_left
         hide screen genie_and_tits_01
         show screen groping_naked_tits
         call hide_blkfade
@@ -722,7 +722,7 @@ label l_tutoring:
         
         call h_action("none")
         
-        hide screen chair_02
+        hide screen chair_left
         hide screen groping_naked_tits
         hide screen genie
         show screen genie_and_hermione
@@ -1478,7 +1478,7 @@ label l_tutoring:
         $ genie_chibi_xpos = -10
         $ genie_chibi_ypos = 10
         $ g_c_u_pic = "blowjob_ani"
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
         call hide_blkfade
         call ctc
@@ -1509,7 +1509,7 @@ label l_tutoring:
 
         ">She wipes her mouth."
         hide screen g_c_u
-        hide screen chair_02
+        hide screen chair_left
         show screen genie
         call her_chibi("stand","desk","base")
         call hide_blkfade
@@ -1812,7 +1812,7 @@ label l_tutoring:
         call nar(">You take advantage of her moment of distraction to force you cock into her butthole.")
 
         hide screen no_groping_laying_02
-        show screen chair_02
+        show screen chair_left
         show screen scr_her_sex("slow")
         hide screen bld1
         with d1
@@ -1883,7 +1883,7 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
         
-        hide screen chair_02
+        hide screen chair_left
         hide screen hermione_main
         hide screen scr_her_sex_cum_outside
         pause 1

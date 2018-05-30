@@ -27,7 +27,6 @@ call luna_day_flags
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking   = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ aftersperm    = False #Shows cum stains on Hermione's uniform.
 $ uni_sperm     = False
 
 $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
@@ -40,12 +39,6 @@ hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen phoenix_food
 hide screen done_reading
 hide screen done_reading_near_fire
-hide screen candlefire_01 #CANDLE FIRE.
-hide screen candlefire_02 #CANDLE FIRE.
-hide screen lightening #Hide lighting so it won't get stuck during clear sky weather and such.
-hide screen cloud_night_01 #NIGHT CLOUDS.
-hide screen cloud_night_02 #NIGHT CLOUDS.
-hide screen cloud_night_03 #NIGHT CLOUDS.
 
 hide screen bld1
 hide screen blktone
@@ -84,6 +77,9 @@ else: #Normal (2) & hardcore (3) difficulty
     $ gold4 = renpy.random.randint(45, 135)
 
 
+scene black
+hide screen main_room
+hide screen weather
 
 $ daytime = True #True when it is daytime. Turns False during nighttime.
 $ interface_color = "gold"
@@ -142,61 +138,18 @@ if deliveryQ.got_mail():
 
 
 
-
-scene black
-
 $ raining = False #No rain before the weather has been chosen at the beginning of every day.
 hide screen new_window #Hiding clear sky bg.
-hide screen cloud #THE CLOUD.
 
+### WEATHER
+$ weather_gen = renpy.random.randint(1, 6)
+$ show_weather()
+show screen weather
 
-$ wather_generator = renpy.random.randint(1, 100)
+hide screen candlefire
 
-#Sunny Weather
-if wather_generator >=  1 and wather_generator < 41:
-    show screen new_window #<<<------------------------------------------!!!!!!!!!!!
-    #show image "images/main_room/weather/sunny.png"
-
-#Floating Cloud
-elif wather_generator >= 41 and wather_generator < 61:
-    show screen new_window #<<<------------------------------------------!!!!!!!!!!!
-    show screen cloud
-    #show image "images/main_room/weather/sunny.png"
-    #show cloud_01 at Position(xpos=280, ypos=215, xanchor="center", yanchor="center")
-
-#Cloudy Weather
-elif wather_generator >= 61 and wather_generator < 81:
-    show image "images/main_room/weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    $ lighting_generator = renpy.random.randint(1, 2)
-    if lighting_generator == 1:
-        show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
-#Raining
-elif wather_generator >= 81 and wather_generator < 91:
-    #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    $ raining = True
-    show image "images/main_room/weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
-#Thunder and Lightning!
-elif wather_generator >= 91 and wather_generator < 101:
-    #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    $ raining = True
-    show image "images/main_room/weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-
-
-hide screen room_night
-show screen room
-
-hide screen door
-hide screen cupboard
-hide screen chair
-hide screen fireplace
-hide screen phoenix
-hide screen candle_01
-hide screen candle_02
+hide screen chair_left
+hide screen chair_right
 hide screen genie
 hide screen owl
 hide screen owl_02
@@ -205,14 +158,9 @@ hide screen with_snape_animated #Genie hangs out with Snape in front of the fire
 if package_is_here:
     hide screen package
 
+show screen main_room
+show screen chair_right
 
-show screen door
-show screen cupboard
-show screen chair
-show screen fireplace
-show screen phoenix
-show screen candle_01
-show screen candle_02
 show screen genie
 
 

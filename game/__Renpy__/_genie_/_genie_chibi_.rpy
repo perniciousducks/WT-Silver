@@ -37,22 +37,22 @@ screen genie: #Sitting behind desk.
 
 screen rum_screen: #Rummaging through the cumpboard.
     tag genie_chibi
-    add "images/main_room/02_cupboard_03.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
-    add "images/main_room/04_chair_02.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/cupboard_open.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+141, ypos=331, xanchor="center", yanchor="center") 
     add "rum" xpos 20+140 ypos 110
     zorder 1
     
 screen feeding: #FEEDING THE PHOENIX.
     tag genie_chibi
-    add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
     add "feeding" xpos 270+140 ypos 75
     zorder 1
     
 screen petting: #PETTING THE PHOENIX.
     tag genie_chibi
-    add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
     add "petting" xpos 250+140 ypos 65
     zorder 1
@@ -70,28 +70,28 @@ screen paperwork: #GENIE DOING PAPERWORK BEHIND HIS DESK.
 
 screen reading_near_fire: #GENIE READING A BOOK BY THE FIRE.
     tag genie_chibi
-    add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
     add "reading_near_fire" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen reading: #GENIE READING A BOOK.
     tag genie_chibi
-    add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
     add "reading" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading: #DONE READING THE BOOK.
     tag genie_chibi
-    add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
     add im.Flip("images/animation/reading_07.png", horizontal=True) xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
     
 screen done_reading_near_fire: #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
-    add "images/main_room/04_chair_02.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
     add "images/animation/reading_07.png" xpos 290+140 ypos 205
 

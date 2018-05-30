@@ -71,7 +71,7 @@ label hg_ps_WearMyCum_Scene_1:
     call her_chibi("hide")
     call gen_chibi("handjob","desk","base")
     
-    show screen chair_02
+    show screen chair_left
     hide screen desk
     show screen desk
     
@@ -221,7 +221,7 @@ label hg_ps_WearMyCum_Scene_1:
     ">You tuck your cock back into your robe."
     
     call gen_chibi("hide")
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     show screen genie
     call her_chibi("stand","desk","base")
@@ -273,7 +273,7 @@ label hg_ps_WearMyCum_Scene_2:
     call her_chibi("hide")
     call gen_chibi("handjob","desk","base")
     
-    show screen chair_02
+    show screen chair_left
     hide screen desk
     show screen desk
     
@@ -444,7 +444,7 @@ label hg_ps_WearMyCum_Scene_2:
     ">You tuck your cock back into your robe."
     
     call gen_chibi("hide")
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     show screen genie
     call her_chibi("stand","desk","base")
@@ -489,7 +489,7 @@ label hg_ps_WearMyCum_Scene_3:
     $ genie_chibi_xpos = 60 #-185 behind the desk.
     $ genie_chibi_ypos = 10
     $ g_c_u_pic = "handjob_ani"
-    show screen chair_02
+    show screen chair_left
     show screen g_c_u
     show screen desk_02
     hide screen blktone
@@ -590,7 +590,7 @@ label hg_ps_WearMyCum_Scene_3:
             m "Yes... I Feel so much better now..."
             call her_main("me too...","normal","worriedCl") 
     show screen hermione_stand 
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk_02
     show screen genie
     hide screen g_c_u
@@ -606,7 +606,7 @@ label hg_ps_WearMyCum_Scene_3:
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ctc
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk_02
     show screen genie
     show screen bld1

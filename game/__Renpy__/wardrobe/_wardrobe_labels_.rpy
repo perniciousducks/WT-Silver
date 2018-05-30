@@ -851,15 +851,13 @@ label use_potion:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
         menu:
-            "-Universal potion-"
+            "-Universal potion-" ">Potions that can be used at any time of day."
             "-Change Clothing Transparency-" if "transparency" in cs_existing_stock:
                 $ misc_item_choice = "transparency"
                 jump equip_misc_item
             #"-Hair-Growth Potion-" #Hermione Pubic Hair. Not yet added.
             "-Never mind-":
                 jump return_to_wardrobe
-    else:
-        pass
         
     if daytime:
         hide screen wardrobe
@@ -880,7 +878,6 @@ label use_potion:
                 # "-Clone potion-" if potion_inv.has("p_clone"):
                 #     $ potion_inv.remove("p_clone")
                 #     $ renpy.jump( potion_lib.getJumpLabel("p_clone") )
-                
                 "-Never mind-":
                     jump return_to_wardrobe
                     
@@ -890,11 +887,10 @@ label use_potion:
                 "-Breast Expansion-" if potion_inv.has("p_breast_expansion"):
                     $ potion_inv.remove("p_breast_expansion")
                     $ renpy.jump( potion_lib.getJumpLabel("p_breast_expansion") )
-
+                
                 "-Ass Expansion" if potion_inv.has("p_ass_expansion"):
                     $ potion_inv.remove("p_ass_expansion")
                     $ renpy.jump( potion_lib.getJumpLabel("p_ass_expansion") )
-
                 "-Never mind-":
                     jump return_to_wardrobe
                         
@@ -913,7 +909,7 @@ label use_potion:
                 "-Cum Addiction-" if potion_inv.has("p_cum_addiction"):
                     $ potion_inv.remove("p_cum_addiction")
                     $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
-
+                
                 "-Hypno potion-" if potion_inv.has("p_hypno"):
                     $ potion_inv.remove("p_hypno")
                     $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
@@ -922,17 +918,16 @@ label use_potion:
                 # "-Voluptatem-" if potion_inv.has("p_voluptatem"):
                 #     $ potion_inv.remove("p_voluptatem")
                 #     $ renpy.jump( potion_lib.getJumpLabel("p_voluptatem") )
-
                 "-Never mind-":
                     jump return_to_wardrobe
                     
         if potion_choice == "clothes_potion":
             menu:
-                "-Clothes potion-"
+                "-Clothe potion-"
                 "-Transparent Clothes-" if potion_inv.has("p_transparency"):
                     $ potion_inv.remove("p_transparency")
                     $ renpy.jump( potion_lib.getJumpLabel("p_transparency") )
-
+                
                 "-Never mind-":
                     jump return_to_wardrobe
                         
@@ -947,11 +942,22 @@ label use_potion:
 label use_item: #Not in use.
     hide screen wardrobe
     call her_main(xpos="right",ypos="base",trans="fade")
-    if item_choice == "buttplug":
+    if item_choice == "buttplugs":
         menu:
             "-Buttplug Menu-"
-            "-Small Buttplug-": #Hypno potion event.
+            "-Buttplug Event-" if daytime:
+                jump hg_ps_Buttplug
+            "-Equip Small Buttplug-" if buttplug_1_worn and not (hermione_wear_buttplug and h_buttplug == "plug_a_on"):
                 $ misc_item_choice = "small_buttplug"
+                jump equip_misc_item
+            "-Equip Medium Buttplug-" if buttplug_2_worn and not (hermione_wear_buttplug and h_buttplug == "plug_b_on"):
+                $ misc_item_choice = "medium_buttplug"
+                jump equip_misc_item
+            "-Equip Large Buttplug-" if buttplug_3_worn and not (hermione_wear_buttplug and h_buttplug == "plug_c_on"):
+                $ misc_item_choice = "large_buttplug"
+                jump equip_misc_item
+            "-Unequip Buttplug-" if hermione_wear_buttplug:
+                $ misc_item_choice = "remove_buttplug"
                 jump equip_misc_item
             "-Never mind-":
                 jump return_to_wardrobe
@@ -1045,6 +1051,20 @@ label set_h_garterbelt(garterbelt="", color=""):
     return
 
 
+label set_h_buttplug(buttplug=""):
+    hide screen hermione_main
+    if buttplug == "None" or buttplug == "" or buttplug == "remove":
+        $ h_request_wear_buttplug = False
+        $ hermione_wear_buttplug = False
+        $ h_buttplug = "00_blank"
+    else:
+        $ h_request_wear_buttplug = True
+        $ hermione_wear_buttplug = True
+        $ h_buttplug = buttplug
+    call update_her_uniform
+    show screen hermione_main
+    return
+    
 ### OUTFITS SECTION ###
 
 ## Outfit equip ##
@@ -1069,3 +1089,7 @@ label wardrobe_give_gift:
 label wardrobe_give_potion:
     hide screen wardrobe_gifts
     $ renpy.jump("potion_scene_"+str(wardrobe_potion))
+    
+    
+    
+    

@@ -105,7 +105,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
 
         call play_music("playful_tension")# SEX THEME.                                                                                                                                                                                 #HERMIONE
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen desk
         call her_chibi("stand","mid","base")
         call gen_chibi("hold_dick","desk","base")
@@ -137,7 +137,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         call blkfade
                                                                                                                                                                                        #HERMIONE
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         hide screen desk
         show screen desk
         call her_chibi("hide")
@@ -473,7 +473,7 @@ label start_titfuck:
         pause.8
  
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen desk
         call her_chibi("hide")
         call gen_chibi("titjob","mid","base")
@@ -831,7 +831,7 @@ label done_with_titjob:
 
     call gen_chibi("hide")
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     show screen genie
     call her_chibi("stand","desk","base")

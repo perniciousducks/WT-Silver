@@ -317,7 +317,7 @@ label hermione_cho:
                     jump night_main_menu   
             
 label end_cho_event:
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call gen_chibi("hide")
     hide screen cho_chang

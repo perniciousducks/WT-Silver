@@ -89,12 +89,11 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         call gen_chibi("hide")
         call her_chibi("hide")
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
         
         if use_cgs:
-            hide screen candlefire_01
-            hide screen candlefire_02
+            hide screen candlefire
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
@@ -385,12 +384,11 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         call gen_chibi("hide")
         call her_chibi("hide")
         $ g_c_u_pic = "sex_ani"
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
         
         if use_cgs:
-            hide screen candlefire_01
-            hide screen candlefire_02
+            hide screen candlefire
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
@@ -647,7 +645,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
         $ genie_chibi_ypos = 10
         $ g_c_u_pic = "sex_ani"
-        show screen chair_02
+        show screen chair_left
         show screen g_c_u
         
         call her_chibi("hide")
@@ -810,11 +808,10 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     if not daytime:
-        show screen candlefire_01
-        show screen candlefire_02
+        show screen candlefire
         
     call her_chibi("stand","desk","base")
     call gen_chibi("hide")

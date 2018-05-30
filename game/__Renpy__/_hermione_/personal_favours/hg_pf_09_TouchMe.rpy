@@ -105,7 +105,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         call play_music("playful_tension")# SEX THEME.
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         hide screen genie
-        show screen chair_02
+        show screen chair_left
         hide screen desk
         show screen desk
         call gen_chibi("jerking_off","on_girl","base")
@@ -127,7 +127,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         ">Hermione puts her slender hands on your cock..."
         m "Good. Now stroke it."
         call her_head("Right...","angry","worriedCl",emote="05") 
-        show screen chair_02
+        show screen chair_left
         hide screen desk
         show screen desk
         call her_chibi("hide")
@@ -463,7 +463,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 pause.2
 
                 hide screen hermione_main
-                hide screen chair_02
+                hide screen chair_left
                 hide screen desk
                 call gen_chibi("hide")
                 call her_chibi("stand","desk","base")
@@ -558,7 +558,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         g9 "Actually, yes! Very nice!"
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         
-        show screen chair_02
+        show screen chair_left
         hide screen desk
         show screen desk
         call her_chibi("hide")
@@ -852,7 +852,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 ">Hermione releases your still pulsating cock."
                 
-                hide screen chair_02
+                hide screen chair_left
                 hide screen desk
                 call her_chibi("stand","desk","base")
                 call gen_chibi("hide")
@@ -926,7 +926,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 call blkfade
                 
                 call her_chibi("stand","desk","base")
-                hide screen chair_02
+                hide screen chair_left
                 hide screen desk
                 call gen_chibi("hide")
                 show screen genie
@@ -966,7 +966,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
     call her_chibi("stand","desk","base")
 
-    hide screen chair_02
+    hide screen chair_left
     show screen genie 
     show screen hermione_main
     hide screen blktone
@@ -1043,7 +1043,7 @@ label hg_pf_TouchMe_KissSuck: #Jumps here after event #03 and if WHORING >= LEVE
     m "You can let go now..."
     call blkfade
     
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     call her_chibi("stand","desk","base")
     call gen_chibi("hide")

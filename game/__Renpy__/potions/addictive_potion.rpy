@@ -74,7 +74,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
     $ g_c_u_pic = "blowjob_ani"
-    show screen chair_02
+    show screen chair_left
     show screen g_c_u
     
     call her_chibi("hide")
@@ -345,7 +345,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ctc
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     show screen genie
     hide screen blktone
@@ -693,7 +693,7 @@ label potion_scene_3_3_1: #Hypno potion
     
     hide screen genie
     call gen_chibi("jerking_off","desk","base")
-    show screen chair_02
+    show screen chair_left
     show screen desk
 
     hide screen blktone
@@ -772,7 +772,7 @@ label potion_scene_3_3_1: #Hypno potion
     call blkfade
     
     call gen_chibi("hide")
-    hide screen chair_02
+    hide screen chair_left
     hide screen desk
     show screen genie
     call her_chibi("stand","desk","base")

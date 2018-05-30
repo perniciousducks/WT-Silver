@@ -4,7 +4,7 @@ label cupboard:
     menu:
         "-Examine the cupboard-" if not cupboard_examined:
             $ cupboard_examined = True
-            show screen chair_02 #Empty chair near the desk.
+            show screen chair_left #Empty chair near the desk.
             hide screen genie
             call gen_chibi("stand","behind_desk","base",flip=True)
             show screen desk
@@ -15,7 +15,7 @@ label cupboard:
             m "Maybe I should rummage through this one later..."
             show screen genie
             hide screen genie_stands_f
-            hide screen chair_02 #Empty chair near the desk.
+            hide screen chair_left #Empty chair near the desk.
             hide screen desk
             with Dissolve(0.5)
             jump day_main_menu
@@ -256,139 +256,35 @@ label cupboard:
 label scrolls_menu:
     menu:
         "-Sacred scrolls volume I-" if cataloug_found:
-            label sc_col_men:
-            menu:
-                "-S.01: [scroll_name[1]]-" if sscroll_[1] or persistent.ss_01:
-                    call disp_sacred_scrolls(1)
-                    jump sc_col_men
-                    
-                "-S.02: [scroll_name[2]]-" if sscroll_[2] or persistent.ss_02:
-                    call disp_sacred_scrolls(2)
-                    jump sc_col_men
-                    
-                "-S.03: [scroll_name[3]]-" if sscroll_[3] or persistent.ss_03:
-                    call disp_sacred_scrolls(3)
-                    jump sc_col_men
-                    
-                "-S.04: [scroll_name[4]]-" if sscroll_[4] or persistent.ss_04:
-                    call disp_sacred_scrolls(4)
-                    jump sc_col_men
-                    
-                "-S.05: [scroll_name[5]]-" if sscroll_[5] or persistent.ss_05:
-                    call disp_sacred_scrolls(5)
-                    jump sc_col_men
-                    
-                "-S.06: [scroll_name[6]]-" if sscroll_[6] or persistent.ss_06:
-                    call disp_sacred_scrolls(6)
-                    jump sc_col_men
-                    
-                "-S.07: [scroll_name[7]]-" if sscroll_[7] or persistent.ss_07:
-                    call disp_sacred_scrolls(7)
-                    jump sc_col_men
-                    
-                "-S.08: [scroll_name[8]]-" if sscroll_[8] or persistent.ss_08:
-                    call disp_sacred_scrolls(8)
-                    jump sc_col_men
-                    
-                "-S.09: [scroll_name[9]]-" if sscroll_[9] or persistent.ss_09:
-                    call disp_sacred_scrolls(9)
-                    jump sc_col_men
-                    
-                "-S.10: [scroll_name[10]]-" if sscroll_[10] or persistent.ss_10:
-                    call disp_sacred_scrolls(10)
-                    jump sc_col_men
-                
-                "-S.11: [scroll_name[11]]-" if sscroll_[11] or persistent.ss_11:
-                    call disp_sacred_scrolls(11)
-                    jump sc_col_men
-                
-                "-S.12: [scroll_name[12]]-" if sscroll_[12] or persistent.ss_12:
-                    call disp_sacred_scrolls(12)
-                    jump sc_col_men
-                
-                "-S.13: [scroll_name[13]]-" if sscroll_[13] or persistent.ss_13:
-                    call disp_sacred_scrolls(13)
-                    jump sc_col_men
-                
-                "-S.14: [scroll_name[14]]-" if sscroll_[14] or persistent.ss_14:
-                    call disp_sacred_scrolls(14)
-                    jump sc_col_men
-                
-                "-S.15: [scroll_name[15]]-" if sscroll_[15] or persistent.ss_15:
-                    call disp_sacred_scrolls(15)
-                    jump sc_col_men
-
-                "-Never mind-":
-                    jump scrolls_menu
-        
+            $ scrolls_range = range(1,16)
         "-Sacred scrolls volume II-" if cataloug_found:
-                    label sc_col_men2:
-                    menu:
-                        "-S.16: [scroll_name[16]]-" if sscroll_[16] or persistent.ss_16:
-                            call disp_sacred_scrolls(16)
-                            jump sc_col_men2
-                            
-                        "-S.17: [scroll_name[17]]-" if sscroll_[17] or persistent.ss_17:
-                            call disp_sacred_scrolls(17)
-                            jump sc_col_men2
-                            
-                        "-S.18: [scroll_name[18]]-" if sscroll_[18] or persistent.ss_18:
-                            call disp_sacred_scrolls(18)
-                            jump sc_col_men2
-                            
-                        "-S.19: [scroll_name[19]]-" if sscroll_[19] or persistent.ss_19:
-                            call disp_sacred_scrolls(19)
-                            jump sc_col_men2
-                            
-                        "-S.20: [scroll_name[20]]-" if sscroll_[20] or persistent.ss_20:
-                            call disp_sacred_scrolls(20)
-                            jump sc_col_men2
-                            
-                        "-S.21: [scroll_name[21]]-" if sscroll_[21] or persistent.ss_21:
-                            call disp_sacred_scrolls(21)
-                            jump sc_col_men2
-                            
-                        "-S.22: [scroll_name[22]]-" if sscroll_[22] or persistent.ss_22:
-                            call disp_sacred_scrolls(22)
-                            jump sc_col_men2
-                            
-                        "-S.23: [scroll_name[23]]-" if sscroll_[23] or persistent.ss_23:
-                            call disp_sacred_scrolls(23)
-                            jump sc_col_men2
-                            
-                        "-S.24: [scroll_name[24]]-" if sscroll_[24] or persistent.ss_24:
-                            call disp_sacred_scrolls(24)
-                            jump sc_col_men2
-                            
-                        "-S.25: [scroll_name[25]]-" if sscroll_[25] or persistent.ss_25:
-                            call disp_sacred_scrolls(25)
-                            jump sc_col_men2
-                        
-                        "-S.26: [scroll_name[26]]-" if sscroll_[26] or persistent.ss_26:
-                            call disp_sacred_scrolls(26)
-                            jump sc_col_men2
-                        
-                        "-S.27: [scroll_name[27]]-" if sscroll_[27] or persistent.ss_27:
-                            call disp_sacred_scrolls(27)
-                            jump sc_col_men2
-                        
-                        "-S.28: [scroll_name[28]]-" if sscroll_[28] or persistent.ss_28:
-                            call disp_sacred_scrolls(28)
-                            jump sc_col_men2
-                        
-                        "-S.29: [scroll_name[29]]-" if sscroll_[29] or persistent.ss_29:
-                            call disp_sacred_scrolls(29)
-                            jump sc_col_men2
-                        
-                        "-S.30: [scroll_name[30]]-" if sscroll_[30] or persistent.ss_30:
-                            call disp_sacred_scrolls(30)
-                            jump sc_col_men2
-
-                        "-Never mind-":
-                            jump scrolls_menu
-        
+            $ scrolls_range = range(16,31)
         "-Never Mind-":
             jump day_main_menu
+
+    label sc_col_men:
+    python:
+        scrolls_menu = []
+        for scroll in scrolls_range:
+            sc = sacred_scrolls[scroll]
+            if sscroll_[sc.id] or persistent.ss_[sc.id]:
+                scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", scroll) )
+        scrolls_menu.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(scrolls_menu)
+
+    if result == "nvm":
+        jump scrolls_menu
+    else:
+        $ the_gift = "images/misc/extras/"+str(result)+".png" # SACRED SCROLL
+        show screen gift
+        show screen ctc
+        with d3
+        pause
+        hide screen gift
+        hide screen ctc
+        with d3
+        jump sc_col_men
+
     
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
@@ -405,7 +301,6 @@ label rummaging:
     
     $ rum_times += 1 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
     
-    hide screen cupboard
     hide screen genie
     show screen rum_screen
     with d3
@@ -423,7 +318,6 @@ label rummaging:
             ">You found some sort of potion..." 
             hide screen gift
             with d3
-            show screen cupboard
             show screen genie
             hide screen rum_screen
             
@@ -444,7 +338,6 @@ label rummaging:
         ">You found a map of the school grounds...\n>You can now leave the office."
         hide screen gift
         with d3
-        show screen cupboard
         show screen genie
         hide screen rum_screen
         
@@ -461,7 +354,6 @@ label rummaging:
             jump rum_rewards
         else:                                  #Easy difficulty
             ">...You find nothing of value."
-            show screen cupboard
             show screen genie
             hide screen rum_screen
     
@@ -541,9 +433,7 @@ label rum_rewards:
                 call rum_block(ViktorKrumPoster)
             elif one_of_tw == 19:
                 call rum_block(ThestralStrapon)
-            
-                   
-        show screen cupboard
+        
         show screen genie
         hide screen rum_screen
     
@@ -553,18 +443,7 @@ label rum_rewards:
         if daytime:
             jump day_main_menu
         else: 
-            jump night_main_menu 
-    
-label disp_sacred_scrolls(scroll):
-    $ the_gift = "images/misc/extras/"+str(scroll)+".png" # SACRED SCROLL
-    show screen gift
-    show screen ctc
-    with d3
-    pause
-    hide screen gift
-    hide screen ctc
-    with d3
-    return
+            jump night_main_menu
         
 label rum_block(item = None):
     if isinstance(item, gift_item):

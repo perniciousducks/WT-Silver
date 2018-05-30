@@ -403,7 +403,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
 
     call her_chibi("stand","desk","base")
 
-    hide screen chair_02
+    hide screen chair_left
     show screen genie 
     show screen hermione_main
     hide screen blktone

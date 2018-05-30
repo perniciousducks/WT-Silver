@@ -45,12 +45,7 @@ label your_whore:
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen candlefire_01 #CANDLE FIRE.
-    hide screen candlefire_02 #CANDLE FIRE.
-    hide screen lightening #Hide lighting so it wouldn't get stuck during clear sky weather and such.
-    hide screen cloud_night_01 #NIGHT CLOUDS.
-    hide screen cloud_night_02 #NIGHT CLOUDS.
-    hide screen cloud_night_03 #NIGHT CLOUDS.
+    hide screen candlefire
     hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
      
     hide screen main_room_menu  
@@ -3251,12 +3246,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen candlefire_01 #CANDLE FIRE.
-    hide screen candlefire_02 #CANDLE FIRE.
-    hide screen lightening #Hide lighting so it woudn't get stuck during clear sky weather and such.
-    hide screen cloud_night_01 #NIGHT CLOUDS.
-    hide screen cloud_night_02 #NIGHT CLOUDS.
-    hide screen cloud_night_03 #NIGHT CLOUDS.
+    hide screen candlefire
     hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
      
     show screen new_window # CLEAR WEATHER.
@@ -3264,27 +3254,15 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     hide screen room_night #Hiding NIGHT BG from last night.
     show screen room #Showing main room BG. 
 
-    hide screen door   
-    hide screen cupboard
-    hide screen chair
-    hide screen fireplace
-    hide screen phoenix
-    hide screen candle_01    
-    hide screen candle_02
+    hide screen chair_right
     hide screen genie
     hide screen owl
     hide screen owl_02
     hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
     hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
 
-        
-    show screen door   
-    show screen cupboard
-    show screen chair
-    show screen fireplace
-    show screen phoenix
-    show screen candle_01    
-    show screen candle_02
+    
+    show screen chair_right
     show screen dumbledore
 
     hide screen blkback
@@ -3447,10 +3425,6 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     $ persistent.gift_item_inv = []
     $ persistent.gift_item_inv = gift_item_inv
     
-    # scroll invintory
-    $ persistent.sscroll_ = []
-    $ persistent.sscroll_ = sscroll_
-    
     # outfit invintory 
     #$ persistent.outfit_inventory = []
     #$ persistent.outfit_inventory = outfit_inventory
@@ -3479,76 +3453,10 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     
            
     ### SACRED SCROLLS ###
-    
-    if sscroll_[1]:
-        $ persistent.ss_01 = True # Sacred Scroll 01 will be unlocked in the gallery.
-    if sscroll_[2]:
-        $ persistent.ss_02 = True # Sacred Scroll 02 will be unlocked in the gallery.
-    if sscroll_[3]:
-        $ persistent.ss_03 = True # Sacred Scroll 03 will be unlocked in the gallery.
-    if sscroll_[4]:
-        $ persistent.ss_04 = True # Sacred Scroll 04 will be unlocked in the gallery.
-    if sscroll_[5]:
-        $ persistent.ss_05 = True # Sacred Scroll 05 will be unlocked in the gallery.
-    if sscroll_[6]:
-        $ persistent.ss_06 = True # Sacred Scroll 06 will be unlocked in the gallery.
-    if sscroll_[7]:
-        $ persistent.ss_07 = True # Sacred Scroll 07 will be unlocked in the gallery.
-    if sscroll_[8]:
-        $ persistent.ss_08 = True # Sacred Scroll 08 will be unlocked in the gallery.
-    if sscroll_[9]:
-        $ persistent.ss_09 = True # Sacred Scroll 09 will be unlocked in the gallery.
-    if sscroll_[10]:
-        $ persistent.ss_10 = True # Sacred Scroll 10 will be unlocked in the gallery.
-        
-    if sscroll_[11]:
-        $ persistent.ss_11 = True # Sacred Scroll 11 will be unlocked in the gallery.
-    if sscroll_[12]:
-        $ persistent.ss_12 = True # Sacred Scroll 12 will be unlocked in the gallery.
-    if sscroll_[13]:
-        $ persistent.ss_13 = True # Sacred Scroll 13 will be unlocked in the gallery.
-    if sscroll_[14]:
-        $ persistent.ss_14 = True # Sacred Scroll 14 will be unlocked in the gallery.
-    if sscroll_[15]:
-        $ persistent.ss_15 = True # Sacred Scroll 15 will be unlocked in the gallery.
-    if sscroll_[16]:
-        $ persistent.ss_16 = True # Sacred Scroll 16 will be unlocked in the gallery.
-    if sscroll_[17]:
-        $ persistent.ss_17 = True # Sacred Scroll 17 will be unlocked in the gallery.
-    if sscroll_[18]:
-        $ persistent.ss_18 = True # Sacred Scroll 18 will be unlocked in the gallery.
-    if sscroll_[19]:
-        $ persistent.ss_19 = True # Sacred Scroll 19 will be unlocked in the gallery.
-    if sscroll_[20]:
-        $ persistent.ss_20 = True # Sacred Scroll 11 will be unlocked in the gallery.
-            
-             
-    if sscroll_[21]:
-        $ persistent.ss_21 = True # Sacred Scroll 21 will be unlocked in the gallery.
-    if sscroll_[22]:
-        $ persistent.ss_22 = True # Sacred Scroll 22 will be unlocked in the gallery.
-    if sscroll_[23]:
-        $ persistent.ss_23 = True # Sacred Scroll 23 will be unlocked in the gallery.
-    if sscroll_[24]:
-        $ persistent.ss_24 = True # Sacred Scroll 24 will be unlocked in the gallery.
-    if sscroll_[25]:
-        $ persistent.ss_25 = True # Sacred Scroll 25 will be unlocked in the gallery.
-    if sscroll_[26]:
-        $ persistent.ss_26 = True # Sacred Scroll 26 will be unlocked in the gallery.
-    if sscroll_[27]:
-        $ persistent.ss_27 = True # Sacred Scroll 27 will be unlocked in the gallery.
-    if sscroll_[28]:
-        $ persistent.ss_28 = True # Sacred Scroll 28 will be unlocked in the gallery.
-    if sscroll_[29]:
-        $ persistent.ss_29 = True # Sacred Scroll 29 will be unlocked in the gallery.
-    if sscroll_[30]:
-        $ persistent.ss_30 = True # Sacred Scroll 12 will be unlocked in the gallery.
-        
+    $ persistent.ss_ = []
+    $ persistent.ss_ = sscroll_
         
         
     $ renpy.full_restart()
-        
-        
-
         
         

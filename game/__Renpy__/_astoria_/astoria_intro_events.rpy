@@ -20,17 +20,19 @@
 #TELL HERMIONE ABOUT THE LETTER
 label letter_intro_hermione:
     m "I received a letter not too long ago."
-    call her_main("I assume you receive hundreds of letters each day. You're the headmaster of hogwarts after all...")
+    call her_main("I assume you receive hundreds of letters each day. You're the headmaster of hogwarts after all...","soft","baseL")
     m "this one was different."
     m "Apparently they've detected something called an \'unforgivable\' curse at the school."
-    call her_main("AN unforgivable CURSE!!!")
+    call her_main("AN unforgivable CURSE!!!","shock","wide")
+    call her_main("AT out school?!","shock","wide_stare")
     call her_main("SOMEONE COULD BE DEAD!")
     call her_main("OR TORTURED!!")
-    call her_main("OR WORSE!!!")
+    call her_main("OR WORSE!!!","disgust","worriedCL")
     m "really?"
     call her_main("Those are the only things that can happen with an unforgivable curse [genie_name]!")
     m "of course... I'm just making sure you were aware of them..."
     call her_main("It's the first lesson we ever received in defense against the dark arts.")
+    m "Really? Seems to me like this happened ."
     m "Well, one's been cast somewhere on the school."
     m "and I need your help finding out who did it..."
     call her_main("Why do you need my help?")

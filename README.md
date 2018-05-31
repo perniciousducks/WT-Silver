@@ -1,8 +1,8 @@
 
 ## What is WT Silver?
 
--Silver is a complete rework of Akabur's Game, Witch Trainer.
--It combines several mods for Witch Trainer into one game, with new features, bugfixes, improvements, Qol-changes, events, and new art being added periodically.
+- Silver is a complete rework of Akabur's Game, Witch Trainer.
+- It combines several mods for Witch Trainer into one game, with new features, bugfixes, improvements, Qol-changes, events, and new art being added periodically.
 
 ## How do I install Witch Trainer: Silver?
 
@@ -10,13 +10,13 @@ You have two options for installing silver:
 - Download the stable build from the Mega link in the Pastebin (Recommended).
 - For an experimantal version of the game you can download the latest build from the Git-Hub, then copy and replace the game folder into the "shell" game.
 
-Download links can be found on the Pastebin:
-https://pastebin.com/KY3RGQei
+Download links can be found on the [Pastebin](https://pastebin.com/KY3RGQei).
 
 ## Where can I support Witch Trainer: Silver?
 
-Here is a link to the Witch Trainer: Silver Patreon page:
-https://www.patreon.com/MoCoder(edited)
+[Here](https://www.patreon.com/MoCoder)is a link to the [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) page.
+
+And a link to [support our artist Soggy](https://www.patreon.com/SoggyIllustrations).
 
 
 ## Current Team

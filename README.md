@@ -1,29 +1,46 @@
-## How do I install the latest WT Silver?:
+
+## What is WT Silver?
+
+-Silver is a complete rework of Akabur's Game, Witch Trainer.
+-It combines several mods for Witch Trainer into one game, with new features, bugfixes, improvements, Qol-changes, events, and new art being added periodically.
+
+## How do I install Witch Trainer: Silver?
+
 You have two options for installing silver:
-  1. Download a stable build from the following [mega link](https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig)
-  2. For an experimantal version of the game you can download the latest build from here on git then copy replace the game folder into the "shell" game from the following [google drive link](https://drive.google.com/folderview?id=0Bydic_JmulRMRDliYnF0VHVwVXM&usp=sharing)
+- Download the stable build from the Mega link in the Pastebin (Recommended).
+- For an experimantal version of the game you can download the latest build from the Git-Hub, then copy and replace the game folder into the "shell" game.
 
-## What is WT Silver?:
-- Silver is an unofficial mod/addition to [Akabur's](https://www.patreon.com/akabur) Game Witch Trainer.
-- It's a modpack of a few different mods and some new content. It adds some new scenes, a map, scene changes, potions, custom outfits and evolving outfits. At the moment it is in a  beta state with new content and bug fixes being added periodically.
-  * Cheats are in the closet
+Download links can be found on the Pastebin:
+https://pastebin.com/KY3RGQei
 
-## Credits (In no particular order):
-- **Mo**:		Writing, coding and mod compilation
+## Where can I support Witch Trainer: Silver?
+
+Here is a link to the Witch Trainer: Silver Patreon page:
+https://www.patreon.com/MoCoder(edited)
+
+
+## Current Team
+- **Mo**:		        Writing, coding and mod compilation
 - **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, bugfixing, some writing.
-- **Asease1**:		Coding
-- **UE Crew**:		Tutoring and additional assets.
-- **CatBug**:		Writing, coding and selecting some faces.
-- **Anons**:		Art and other stuff
-- **STG Anon**:		Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
+- **Soggy**:        Artist
+- **STG Anon**:		  Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
+- **Asease1**:		  Coding
+- **Sandmaster**:   Help with Discord, contests, and moderation.
+- **Sir Bedevere**: Help with Discord, contests, and moderation.
+
+
+## Additional Credits (In no particular order):
+- **UE Crew**:		  Tutoring and additional assets.
+- **CatBug**:		    Writing, coding and selecting some faces.
+- **Anons**:		    Art and other stuff
 - **CaptainNemo**:	Art (Luna)
-- **Artguy**:		Art (Heart Dancer outfit and Weasley twins)
-- **Linear**:		Art (Most Outfits)
-- **Heretic**:		Writing (Custom Events)
-- **Maverick**:		Miscellaneous
-- **Cleanzo**:		Coding (Helped with the python methods.)
-- **Techy**:		Outfit
-- **Akabur**:		Making Witch Trainer
+- **Artguy**:		    Art (Heart Dancer outfit and Weasley twins)
+- **Linear**:		    Art (Most Outfits)
+- **Heretic**:		  Writing (Custom Events)
+- **Maverick**:		  Miscellaneous
+- **Cleanzo**:		  Coding (Helped with the python methods.)
+- **Techy**:		    Outfit
+- **Akabur**:		    Making Witch Trainer
 - *(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)*
 
 ## More Info:

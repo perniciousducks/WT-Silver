@@ -51,6 +51,7 @@ init python:
     ### TEACHERS ###
     sna  = Character('Severus Snape', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     sna  = Character('Severus Snape', color="#402313", window_right_padding=270, show_two_window=True, ctc="ctc3", ctc_position="fixed")  #Text box used for "head only" speech. (Because it has padding).
+    ton  = Character('Tonks', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     
     spo  = Character('Professor Sprout', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     hoo  = Character('Madam Hooch', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")

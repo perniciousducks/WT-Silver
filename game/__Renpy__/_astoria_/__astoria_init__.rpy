@@ -25,7 +25,7 @@ label astoria_init:
         $ astoria_blush               = "characters/astoria/extras/blank.png"
         $ astoria_extra_1             = "characters/astoria/extras/blank.png" 
         $ astoria_extra_2             = "characters/astoria/extras/blank.png" 
-        $ astoria_extra_3             = "characters/astoria/extras/blank.png" 
+        $ astoria_extra_3             = "characters/astoria/extras/blank.png"
 
         #Clothes
         $ astoria_top                 = "characters/astoria/clothes/uniform/shirt_1.png" 
@@ -42,7 +42,10 @@ label astoria_init:
         $ astoria_wear_stockings      = True 
         $ astoria_wear_acc            = True
     
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
+    if not hasattr(renpy.store,'astoria_extra_1') or reset_persistants: #Remove before update
+        $ astoria_extra_1             = "characters/astoria/extras/blank.png" 
+        $ astoria_extra_2             = "characters/astoria/extras/blank.png" 
+        $ astoria_extra_3             = "characters/astoria/extras/blank.png" 
 
     return
 

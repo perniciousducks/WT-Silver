@@ -125,9 +125,9 @@ label sna_chibi(action = "", xpos=snape_chibi_xpos, ypos=snape_chibi_ypos, pic =
 
 
 label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter = True,redux_pause = 0):
-    hide screen sna_main
     hide screen bld1
     hide screen blktone
+    call hide_characters
     with d3
     
     hide screen snape_walk

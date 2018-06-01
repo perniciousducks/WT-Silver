@@ -504,7 +504,7 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
 label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
-    hide screen hermione_main
+    call hide_characters
     with d3
     
     hide screen hermione_walk

@@ -1,6 +1,20 @@
 
 ### Misc Labels ###
 
+label hide_characters:
+    
+    hide screen hermione_main
+    #hide screen luna #Needs testing her events.
+    #hide screen cho_chang #Needs testing her events.
+    hide screen astoria_greengrass
+    hide screen susan_bones
+    hide screen nymphadora_tonks
+    hide screen snape_main
+    
+    #Do not add transitions. Use one after return.
+    
+    return
+    
 label bld:
     show screen bld1
     with d3
@@ -95,6 +109,13 @@ label play_sound(sound=""):
 
     if sound == "kiss" or sound == "kissing":
         $ renpy.play('sounds/kiss.mp3')
+        
+    if sound == "spell":
+        $ renpy.play('sounds/magic2.mp3')
+        
+    if sound == "magic":
+        $ renpy.play('sounds/magic4.mp3')
+        
     return
 
 label play_music(music=""): 

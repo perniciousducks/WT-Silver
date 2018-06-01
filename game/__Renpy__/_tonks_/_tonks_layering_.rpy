@@ -1,6 +1,6 @@
 
 
-screen nymphadora_tonks:
+screen tonks_main:
     ### BASE IMAGE
     add tonks_l_arm xpos tonks_xpos ypos tonks_ypos #Add the arms
     add tonks_r_arm xpos tonks_xpos ypos tonks_ypos #Add the arms
@@ -90,5 +90,5 @@ init python:
         if extra_3 is not None:
             tonks_extra_3     = "characters/tonks/extras/"+extra_3+".png" 
         ###DISPLAY THE UPDATED SCREEEN
-        renpy.show_screen("nymphadora_tonks")
+        renpy.show_screen("tonks_main")
         renpy.with_statement(Dissolve(0.3))

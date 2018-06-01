@@ -6,9 +6,9 @@ label hide_characters:
     hide screen hermione_main
     #hide screen luna #Needs testing her events.
     #hide screen cho_chang #Needs testing her events.
-    hide screen astoria_greengrass
-    hide screen susan_bones
-    hide screen nymphadora_tonks
+    hide screen astoria_main
+    hide screen susan_main
+    hide screen tonks_main
     hide screen snape_main
     
     #Do not add transitions. Use one after return.

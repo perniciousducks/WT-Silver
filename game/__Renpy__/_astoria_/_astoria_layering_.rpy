@@ -1,6 +1,6 @@
 
 
-screen astoria_greengrass:
+screen astoria_main:
     ### BASE IMAGE
     add astoria_l_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
     add astoria_r_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
@@ -88,5 +88,5 @@ init python:
         if extra_3 is not None:
             astoria_extra_3     = "characters/astoria/extras/"+extra_3+".png" 
         ###DISPLAY THE UPDATED SCREEEN
-        renpy.show_screen("astoria_greengrass")
+        renpy.show_screen("astoria_main")
         renpy.with_statement(Dissolve(0.3))

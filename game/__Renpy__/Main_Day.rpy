@@ -301,6 +301,7 @@ if day == 1 and daytime and bird_examined and desk_examined and cupboard_examine
 
 hide screen bld1
 hide screen blktone
+call hide_characters
 with d1
 
 show screen animation_feather

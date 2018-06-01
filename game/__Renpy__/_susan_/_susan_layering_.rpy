@@ -1,6 +1,6 @@
 
 
-screen susan_bones:
+screen susan_main:
     ### BASE IMAGE
     add susan_l_arm xpos susan_xpos ypos susan_ypos #Add the arms
     add susan_r_arm xpos susan_xpos ypos susan_ypos #Add the arms
@@ -85,5 +85,5 @@ init python:
         if extra_3 is not None:
             susan_extra_3     = "characters/susan/extras/"+extra_3+".png" 
         ###DISPLAY THE UPDATED SCREEEN
-        renpy.show_screen("susan_bones")
+        renpy.show_screen("susan_main")
         renpy.with_statement(Dissolve(0.3))

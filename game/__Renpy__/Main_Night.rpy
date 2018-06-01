@@ -162,6 +162,7 @@ if phoenix_is_feed:
 
 hide screen bld1
 hide screen blktone
+call hide_characters
 with d1
 
 show screen animation_feather

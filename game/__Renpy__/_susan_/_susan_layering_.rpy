@@ -20,16 +20,16 @@ screen susan_main:
     ### CLOTHES 
     if susan_wear_bra and not susan_wear_top:
         add susan_bra xpos susan_xpos ypos susan_ypos # Add the bra
-    if susan_wear_panties and not susan_wear_skirt:
+    if susan_wear_panties and not susan_wear_bottom:
         add susan_panties xpos susan_xpos ypos susan_ypos # Add the panties
-    if susan_wear_skirt:
+    if susan_wear_bottom:
         add susan_skirt xpos susan_xpos ypos susan_ypos # Add the skirt
     if susan_wear_top:
         add susan_top xpos susan_xpos ypos susan_ypos # Add the top
-    if susan_wear_acc:
-        add susan_acc xpos susan_xpos ypos susan_ypos # Add the accessory
+    if susan_wear_accs:
+        add susan_accs xpos susan_xpos ypos susan_ypos # Add the accessory
     if susan_wear_stockings:
-        add susan_stock xpos susan_xpos ypos susan_ypos # Add the stockings
+        add susan_stockings xpos susan_xpos ypos susan_ypos # Add the stockings
     ### ZORDER
     zorder susan_zorder
 

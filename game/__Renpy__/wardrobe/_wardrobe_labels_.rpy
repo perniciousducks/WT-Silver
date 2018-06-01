@@ -10,8 +10,10 @@ label wardrobe: #NOT IN USE
         call her_main("",xpos="wardrobe")
     #if active_girl == "luna":
     #    call lun_main("",xpos="wardrobe")
-    #if active_girl == "astoria":
-    #    call ast_main("",xpos="wardrobe")
+    if active_girl == "astoria":
+        call ast_main("",xpos=540)
+    if active_girl == "susan":
+        call sus_main("",xpos=540)
 
     hide screen main_room_menu
     call screen wardrobe
@@ -43,9 +45,16 @@ label reset_wardrobe_vars:
 
 label return_to_wardrobe:
     if not wardrobe_active:
-        call her_main(xpos="wardrobe",ypos="base",trans="fade")
+        if active_girl == "hermione":
+            call her_main(xpos="wardrobe",ypos="base",trans="fade")
+        if active_girl == "astoria":
+            call ast_main("",xpos=540)
+        if active_girl == "susan":
+            call sus_main("",xpos=540)
+            
         $ wardrobe_active = 1
         call screen wardrobe
+        
     else:
         $ wardrobe_active = 1
 
@@ -53,8 +62,10 @@ label return_to_wardrobe:
             call her_main(xpos="wardrobe",ypos="base")
         #if active_girl == "luna":
         #    call lun_main("",xpos="wardrobe")
-        #if active_girl == "astoria":
-        #    call ast_main("",xpos="wardrobe")
+        if active_girl == "astoria":
+            call ast_main("",xpos=540)
+        if active_girl == "susan":
+            call sus_main("",xpos=540)
 
         call screen wardrobe
 
@@ -67,8 +78,10 @@ label update_wardrobe_color:
         call her_main("",xpos="wardrobe")
     #if active_girl == "luna":
     #    call lun_main("",xpos="wardrobe")
-    #if active_girl == "astoria":
-    #    call ast_main("",xpos="wardrobe")
+    if active_girl == "astoria":
+        call ast_main("",xpos=540)
+    if active_girl == "susan":
+        call sus_main("",xpos=540)
 
     hide screen main_room_menu
     call screen wardrobe
@@ -117,9 +130,12 @@ label wardrobe_update:
     #if active_girl == "luna":
     #    call wr_lun_clothing_reset
     #    call lun_main("",xpos="wardrobe")
-    #if active_girl == "astoria":
-    #    call wr_ast_clothing_reset
-    #    call ast_main("",xpos="wardrobe")
+    if active_girl == "astoria":
+        #call wr_ast_clothing_reset
+        call ast_main("",xpos=540)
+    if active_girl == "susan":
+        #call wr_ast_clothing_reset
+        call sus_main("",xpos=540)
 
     hide screen main_room_menu
     call screen wardrobe
@@ -145,7 +161,26 @@ label wr_her_clothing_reset:
     return
 
 #ADD label wr_lun_clothing_reset
-#ADD label wr_ast_clothing_reset
+
+label wr_ast_clothing_reset:
+
+    #Reload Clothing
+    #call load_astoria_clothing_saves
+
+    #Qol stuff
+    #if wardrobe_page != 6:
+    #    if astoria_action != "none":
+    #        $ astoria_use_action = True
+
+    #else: #Underwear page Qol
+    #    $ astoria_use_action = False #Hide Action so Underwear can be turned on.
+    #    if whoring >= 12:
+    #        $ astoria_wear_top = False
+    #        $ astoria_wear_bottom = False
+
+    #call update_her_uniform
+
+    return
 
 
 ### CLOSE WARDROBE LABELS ###
@@ -161,8 +196,10 @@ label close_wardrobe:
         call her_main("","base","base",xpos="base") #reset hermione face and position to default
     #if active_girl == "luna":
     #    call lun_main("",xpos="base")
-    #if active_girl == "astoria":
-    #    call ast_main("",xpos="base")
+    if active_girl == "astoria":
+        call ast_main("",xpos=300)
+    if active_girl == "susan":
+        call sus_main("",xpos=300)
 
     jump day_time_requests
 

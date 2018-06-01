@@ -50,7 +50,12 @@ screen wardrobe():
 
         ## Always Active ##
         hotspot (745+280,10,45,45) clicked [SetVariable("wardrobe_page",0),Jump("close_wardrobe")]    #Close Wardrobe and set to default.
-        text ""+hermione_name xalign 0.5 xpos 820 ypos 57 size 20
+        if active_girl == "hermione":
+            text ""+hermione_name xalign 0.5 xpos 820 ypos 57 size 20
+        if active_girl == "astoria":
+            text "Astoria Greengrass" xalign 0.5 xpos 820 ypos 57 size 20
+        if active_girl == "susan":
+            text "Susan Bones" xalign 0.5 xpos 820 ypos 57 size 20
         text "Wardrobe" xpos 668 ypos 154+360 size 12
 
         hotspot (993,10,32,23) clicked Jump("hide_wardrobe")

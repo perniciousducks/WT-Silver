@@ -20,16 +20,16 @@ screen astoria_main:
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:
         add astoria_bra xpos astoria_xpos ypos astoria_ypos # Add the bra
-    if astoria_wear_panties and not astoria_wear_skirt:
+    if astoria_wear_panties and not astoria_wear_bottom:
         add astoria_panties xpos astoria_xpos ypos astoria_ypos # Add the panties
-    if astoria_wear_skirt:
+    if astoria_wear_bottom:
         add astoria_skirt xpos astoria_xpos ypos astoria_ypos # Add the skirt
     if astoria_wear_top:
         add astoria_top xpos astoria_xpos ypos astoria_ypos # Add the top
-    if astoria_wear_acc:
-        add astoria_acc xpos astoria_xpos ypos astoria_ypos # Add the accessory
+    if astoria_wear_accs:
+        add astoria_accs xpos astoria_xpos ypos astoria_ypos # Add the accessory
     if astoria_wear_stockings:
-        add astoria_stock xpos astoria_xpos ypos astoria_ypos # Add the stockings
+        add astoria_stockings xpos astoria_xpos ypos astoria_ypos # Add the stockings
     ### OTHER
     add astoria_l_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
     add astoria_r_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand

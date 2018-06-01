@@ -4,6 +4,32 @@ label cupboard:
     menu:
         "Astoria Test":
             menu:
+                "-Astoria Wardrobe Test-":
+                    
+                    $ active_girl = "astoria"
+
+                    #call load_hermione_clothing_saves
+
+                    call reset_wardrobe_vars
+                    call update_wr_color_list
+
+                    $ wardrobe_active = 1 #True
+                    call ast_main(xpos=540,ypos=0)
+                    call screen wardrobe
+                    
+                "-Susan Wardrobe Test-":
+                    
+                    $ active_girl = "susan"
+
+                    #call load_hermione_clothing_saves
+
+                    call reset_wardrobe_vars
+                    call update_wr_color_list
+
+                    $ wardrobe_active = 1 #True
+                    call sus_main(xpos=540,ypos=0)
+                    call screen wardrobe
+                    
                 "-Start Ast Event 1 Hermione-":
                     jump letter_intro_hermione
                 "-Start Ast Event 1 Snape-":

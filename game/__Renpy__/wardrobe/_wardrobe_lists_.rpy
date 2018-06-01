@@ -206,8 +206,19 @@ label update_wr_tops_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
 
+        #Uniform
+        $ wr_tops_uniform.append("shirt_1")
+        $ wr_tops_uniform.append("shirt_2")
+        $ wr_tops_uniform.append("shirt_3")
+        $ wr_tops_uniform.append("shirt_4")
+        
+    if active_girl == "susan":
+
+        #Uniform
+        $ wr_tops_uniform.append("shirt_1")
+        
     return
 
 
@@ -259,8 +270,17 @@ label update_wr_bottoms_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
 
+        #Uniform
+        $ wr_bottoms_uniform.append("skirt_1")
+        $ wr_bottoms_uniform.append("skirt_2")
+        
+    if active_girl == "susan":
+
+        #Uniform
+        $ wr_bottoms_uniform.append("skirt_1")
+        
     return
 
 

@@ -36,11 +36,78 @@ screen astoria_main:
     ### ZORDER
     zorder astoria_zorder
 
-label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, xpos=None, ypos=None, base=None, extra_1=None, extra_2=None, extra_3=None):
-    $ changeAstoria(eye, eyebrow, pupil, mouth, xpos, ypos, base, extra_1, extra_2, extra_3)
+label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+    hide screen atoria_main
+    
+    #Positioning
+    if xpos != astoria_xpos:
+        if xpos in ["base","default"]: #All the way to the right.
+            $ astoria_xpos = 640
+            $ menu_x = 0.1 #Don't add ypos!
+        elif xpos == "mid":                     #Centered.
+            $ astoria_xpos = 300
+            $ menu_x = 0.5 #Don't add ypos!
+        elif xpos == "right":                   #Bit more to the right.
+            $ astoria_xpos = 400
+            $ menu_x = 0.5 #Don't add ypos!
+        elif xpos == "wardrobe":
+            $ astoria_xpos = 540
+        else:
+            $ astoria_xpos = xpos
+
+    if ypos != astoria_ypos:
+        if ypos == "base" or ypos == "default":
+            $ astoria_ypos = 0
+        if ypos == "head":
+            $ astoria_ypos = 400 #Not the correct number!
+            #ADD zorder change to be in front of textbox!
+        else:
+            $ astoria_ypos = ypos
+            
+    #$ x_pos = astoria_xpos
+    #$ y_pos = astoria_ypos
+            
+    $ changeAstoria(eye, eyebrow, pupil, mouth, x_pos, y_pos, base, extra_1, extra_2, extra_3)
+    
+    show screen astoria_main
+    show screen bld1
+    
+    #Transitions
+    if trans != None:         #d3 is default.
+        if trans == "d1":
+            with d1
+        elif trans == "d3": #Default anyways.
+            with d3
+        elif trans == "d5":
+            with d5
+        elif trans == "d7":
+            with d7
+        elif trans == "d9":
+            with d9
+
+        elif trans == "fade":
+            with fade
+        elif trans == "hpunch":
+            with hpunch
+        elif trans == "vpunch":
+            with vpunch
+
+        #Skip Transitions
+        elif trans == "none" or trans == "skip":
+            pass
+        else: #for typos and preventing crashes...
+            with d3
+            
+    #Default transition.
+    else:
+        if not wardrobe_active:
+            with d3
+            
     if text != "":
         $ renpy.say(ast, text)
+        
     return
+    
 
 init python:
     def changeAstoria(  eye=None,
@@ -77,8 +144,8 @@ init python:
         if x_pos is not None:
             astoria_xpos        = x_pos
         if y_pos is not None:
-            astoria_ypos        = ypos
-        #BODY CONTROL
+            astoria_ypos        = y_pos
+        ###BODY CONTROL
         if base is not None:
             astoria_base        = "characters/astoria/base/"+base+".png" 
         if extra_1 is not None:
@@ -87,6 +154,3 @@ init python:
             astoria_extra_2     = "characters/astoria/extras/"+extra_2+".png" 
         if extra_3 is not None:
             astoria_extra_3     = "characters/astoria/extras/"+extra_3+".png" 
-        ###DISPLAY THE UPDATED SCREEEN
-        renpy.show_screen("astoria_main")
-        renpy.with_statement(Dissolve(0.3))

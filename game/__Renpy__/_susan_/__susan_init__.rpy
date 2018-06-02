@@ -17,13 +17,13 @@ label susan_init:
         $ susan_zorder              = 5
 
         #Face
-        $ susan_mouth               = "characters/susan/face/mouth/default.png" 
+        $ susan_mouth               = "characters/susan/face/mouth/base.png" 
         $ sus_mouth                 = "base"
         $ sus_lipstick              = "nude" 
         
-        $ susan_eye                 = "characters/susan/face/eyes/eye_default.png" 
-        $ susan_eyebrow             = "characters/susan/face/eyes/brow_default.png" 
-        $ susan_pupil               = "characters/susan/face/eyes/pupil_default.png" 
+        $ susan_eye                 = "characters/susan/face/eyes/eye_base.png" 
+        $ susan_eyebrow             = "characters/susan/face/eyes/brow_base.png" 
+        $ susan_pupil               = "characters/susan/face/eyes/pupil_base.png" 
         $ sus_eye_color             = "blue"
         
         $ susan_tears               = "characters/susan/extras/blank.png" 

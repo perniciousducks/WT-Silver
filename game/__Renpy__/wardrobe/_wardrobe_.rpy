@@ -1117,9 +1117,10 @@ screen wardrobe():
             add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_panties.png" xpos 15+90 ypos 17 zoom 0.35
             text "Panties" xpos 76+90 ypos 140+75 size 10
             #One-Pieces #NOT IMPLEMENTED YET.
-            #hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",2),Show("wardrobe")]
-            #add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 60 zoom 0.35
-            #text "One-Pieces" xpos 76+180 ypos 140+75 size 10
+            if active_girl == "astoria" or active_girl == "susan":
+                hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",2),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 60 zoom 0.35
+                text "One-Pieces" xpos 76+180 ypos 140+75 size 10
             #Garterbelts
             hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",3),Show("wardrobe")]
             add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_garterbelt.png" xpos 15+270 ypos 17 zoom 0.35
@@ -1166,16 +1167,16 @@ screen wardrobe():
                     add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_panties[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
 
             #Nighties & Onepieces #Needs art edits for large breasts, poses,...
-            #if wardrobe_underwear_category == 2:
-            #    hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
-            #    add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 60 zoom 0.35
-            #    text "One-Pieces" xpos 76+180 ypos 140+75 size 10
-            #    for i in range(0,len(wr_onepieces)):
-            #        $ row = i // 5
-            #        $ col = i % 5
+            #if wardrobe_underwear_category == 2 and (active_girl == "astoria" or active_girl == "susan"):
+                hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 60 zoom 0.35
+                text "One-Pieces" xpos 76+180 ypos 140+75 size 10
+                for i in range(0,len(wr_onepieces)):
+                    $ row = i // 5
+                    $ col = i % 5
 
-            #        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",(wr_onepieces[i])), Jump("equip_onepiece")]
-            #        add "characters/"+str(active_girl)+"/clothes/onepieces/"+str(wardrobe_underwear_color)+"/"+wr_onepieces[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",(wr_onepieces[i])), Jump("equip_onepiece")]
+                    add "characters/"+str(active_girl)+"/clothes/onepieces/"+str(wardrobe_underwear_color)+"/"+wr_onepieces[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35
 
             #Garterbelts
             if wardrobe_underwear_category == 3:
@@ -1395,19 +1396,7 @@ screen wardrobe():
 
 # ADD wardrobe page for stats here!
 
-screen wardrobe_potions: #(Removed)
-        
-        for i in range(0,6):
-            hotspot ((21+(90*i)), 140, 83, 85):
-                hovered [SetVariable("potion_name",p_potion_names[i])]
-                clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
-        
-        for i in range(1,7):
-            add "images/store/potions/potion_"+str(i)+".png" xpos -80+(90*i) ypos 135 zoom 0.8
-        for i in range(7,11):
-            add "images/store/potions/potion_"+str(i)+".png" xpos -80+(90*(i-6)) ypos 225 zoom 0.8
-        
-#
+
 
 
 

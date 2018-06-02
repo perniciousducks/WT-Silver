@@ -33,12 +33,76 @@ screen susan_main:
     ### ZORDER
     zorder susan_zorder
 
-label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, xpos=None, ypos=None, base=None, extra_1=None, extra_2=None, extra_3=None):
-    $ changeSusan(eye, eyebrow, pupil, mouth, xpos, ypos, base, extra_1, extra_2, extra_3)
+    
+label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+    hide screen susan_main
+    $ changeSusan(eye, eyebrow, pupil, mouth, base, extra_1, extra_2, extra_3)
+    
+    #Positioning
+    if xpos != susan_xpos:
+        if xpos in ["base","default"]: #All the way to the right.
+            $ susan_xpos = 640
+            $ menu_x = 0.1 #Don't add ypos!
+        elif xpos == "mid":                     #Centered.
+            $ susan_xpos = 300
+            $ menu_x = 0.5 #Don't add ypos!
+        elif xpos == "right":                   #Bit more to the right.
+            $ susan_xpos = 400
+            $ menu_x = 0.5 #Don't add ypos!
+        elif xpos == "wardrobe":
+            $ susan_xpos = 540
+        else:
+            $ susan_xpos = xpos
+
+    if ypos != susan_ypos:
+        if ypos == "base" or ypos == "default":
+            $ susan_ypos = 0
+        if ypos == "head":
+            $ susan_ypos = 400 #Not the correct number!
+            #ADD zorder change to be in front of textbox!
+        else:
+            $ susan_ypos = ypos
+            
+    show screen susan_main
+    show screen bld1
+    
+    #Transitions
+    if trans != None:         #d3 is default.
+        if trans == "d1":
+            with d1
+        elif trans == "d3": #Default anyways.
+            with d3
+        elif trans == "d5":
+            with d5
+        elif trans == "d7":
+            with d7
+        elif trans == "d9":
+            with d9
+
+        elif trans == "fade":
+            with fade
+        elif trans == "hpunch":
+            with hpunch
+        elif trans == "vpunch":
+            with vpunch
+
+        #Skip Transitions
+        elif trans == "none" or trans == "skip":
+            pass
+        else: #for typos and preventing crashes...
+            with d3
+            
+    #Default transition.
+    else:
+        if not wardrobe_active:
+            with d3
+            
     if text != "":
         $ renpy.say(sus, text)
+        
     return
 
+    
 init python:
     def changeSusan(  eye=None,
                         eyebrow=None, 
@@ -84,6 +148,3 @@ init python:
             susan_extra_2     = "characters/susan/extras/"+extra_2+".png" 
         if extra_3 is not None:
             susan_extra_3     = "characters/susan/extras/"+extra_3+".png" 
-        ###DISPLAY THE UPDATED SCREEEN
-        renpy.show_screen("susan_main")
-        renpy.with_statement(Dissolve(0.3))

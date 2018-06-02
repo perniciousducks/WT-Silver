@@ -14,7 +14,7 @@ label cupboard:
                     call update_wr_color_list
 
                     $ wardrobe_active = 1 #True
-                    call ast_main(xpos=540,ypos=0)
+                    call ast_main(xpos="wardrobe",ypos="base")
                     call screen wardrobe
                     
                 "-Susan Wardrobe Test-":
@@ -27,7 +27,7 @@ label cupboard:
                     call update_wr_color_list
 
                     $ wardrobe_active = 1 #True
-                    call sus_main(xpos=540,ypos=0)
+                    call sus_main(xpos="wardrobe",ypos="base")
                     call screen wardrobe
                     
                 "-Start Ast Event 1 Hermione-":

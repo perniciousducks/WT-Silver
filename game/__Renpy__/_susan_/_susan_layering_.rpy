@@ -36,7 +36,7 @@ screen susan_main:
     
 label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
     hide screen susan_main
-    $ changeSusan(eye, eyebrow, pupil, mouth, base, extra_1, extra_2, extra_3)
+    
     
     #Positioning
     if xpos != susan_xpos:
@@ -52,7 +52,7 @@ label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
         elif xpos == "wardrobe":
             $ susan_xpos = 540
         else:
-            $ susan_xpos = xpos
+            $ susan_xpos = int(xpos)
 
     if ypos != susan_ypos:
         if ypos == "base" or ypos == "default":
@@ -61,8 +61,10 @@ label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
             $ susan_ypos = 400 #Not the correct number!
             #ADD zorder change to be in front of textbox!
         else:
-            $ susan_ypos = ypos
+            $ susan_ypos = int(ypos)
             
+    $ changeSusan(eye, eyebrow, pupil, mouth, susan_xpos, susan_ypos, base, extra_1, extra_2, extra_3)
+    
     show screen susan_main
     show screen bld1
     

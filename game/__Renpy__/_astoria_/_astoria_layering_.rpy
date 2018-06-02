@@ -53,7 +53,7 @@ label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
         elif xpos == "wardrobe":
             $ astoria_xpos = 540
         else:
-            $ astoria_xpos = xpos
+            $ astoria_xpos = int(xpos)
 
     if ypos != astoria_ypos:
         if ypos == "base" or ypos == "default":
@@ -62,12 +62,11 @@ label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
             $ astoria_ypos = 400 #Not the correct number!
             #ADD zorder change to be in front of textbox!
         else:
-            $ astoria_ypos = ypos
+            $ astoria_ypos = int(ypos)
             
-    #$ x_pos = astoria_xpos
-    #$ y_pos = astoria_ypos
+
             
-    $ changeAstoria(eye, eyebrow, pupil, mouth, x_pos, y_pos, base, extra_1, extra_2, extra_3)
+    $ changeAstoria(eye, eyebrow, pupil, mouth, astoria_xpos, astoria_ypos, base, extra_1, extra_2, extra_3)
     
     show screen astoria_main
     show screen bld1

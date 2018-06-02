@@ -29,16 +29,117 @@ label update_ast_uniform:
 label set_ast_top(top=""):
     hide screen astoria_main
     
-    if astoria_wear_top:
-        $ ast_request_wear_top = False
-        $ astoria_wear_top = False
-    else:
-        $ ast_request_wear_top = True
-        $ astoria_wear_top = True
-        $ ast_top = top
+    $ ast_request_wear_top = True
+    $ astoria_wear_top = True
+    $ ast_top = top
     
     call update_ast_uniform
+    show screen astoria_main
     
+    return
+    
+#Bottom equip.    
+label set_ast_bottom(bottom=""):
+    hide screen astoria_main
+    
+    $ ast_request_wear_bottom = True
+    $ astoria_wear_bottom = True
+    $ ast_skirt = bottom
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
+#Bra equip.    
+label set_ast_bra(bra=""):
+    hide screen astoria_main
+    
+    $ ast_request_wear_bra = True
+    $ astoria_wear_bra = True
+    $ ast_bra = bra
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
+#One-Piece equip.    
+label set_ast_onepiece(onepiece=""):
+    hide screen astoria_main
+    
+    $ ast_request_wear_onepiece = True
+    $ astoria_wear_onepiece = True
+    $ ast_onepiece = onepiece
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
+#Panties equip.    
+label set_ast_panties(panties=""):
+    hide screen astoria_main
+    
+    $ ast_request_wear_panties = True
+    $ astoria_wear_panties = True
+    $ ast_panties = panties
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
+#Garterbelt equip.    
+label set_ast_garterbelt(garter=""):
+    hide screen astoria_main
+    
+    if astoria_wear_garterbelt:
+        $ ast_request_wear_garterbelt = False
+        $ astoria_wear_garterbelt = False
+        $ ast_garterbelt = garter
+    else:
+        $ ast_request_wear_garterbelt = True
+        $ astoria_wear_garterbelt = True
+        $ ast_garterbelt = garter
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
+#Stockings equip.    
+label set_ast_stockings(stockings=""):
+    hide screen astoria_main
+    
+    if astoria_wear_stockings:
+        $ ast_request_wear_stockings = False
+        $ astoria_wear_stockings = False
+        $ ast_stockings = stockings
+    else:
+        $ ast_request_wear_stockings = True
+        $ astoria_wear_stockings = True
+        $ ast_stockings = stockings
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
+#Robe equip.    
+label set_ast_robe(robe=""):
+    hide screen astoria_main
+    
+    if astoria_wear_robe:
+        $ ast_request_wear_robe = False
+        $ astoria_wear_robe = False
+        $ ast_robe = robe
+    else:
+        $ ast_request_wear_robe = True
+        $ astoria_wear_robe = True
+        $ ast_robe = robe
+    
+    call update_ast_uniform
     show screen astoria_main
     
     return

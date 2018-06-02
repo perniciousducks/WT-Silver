@@ -248,12 +248,12 @@ label wardrobe_change_her_action:
 ### TOGGLE LABELS ###
 
 label wardrobe_chitchat_toggle:
-    hide screen hermione_main
+    
     if wardrobe_chitchat_active:
         $ wardrobe_chitchat_active = False
     else:
         $ wardrobe_chitchat_active = True
-    show screen hermione_main
+        
     call screen wardrobe
 
 # Top Toggle #
@@ -783,12 +783,6 @@ label set_h_gloves(gloves="", color=""):
     show screen hermione_main
     return
 
-## Stockings ##
-label equip_stockings:
-    call set_h_stockings(stockings_choice, stockings_color_choice)
-    
-    hide screen wardrobe
-    call screen wardrobe
 
 label set_h_stockings(stockings="", color=""):
     hide screen hermione_main
@@ -804,12 +798,6 @@ label set_h_stockings(stockings="", color=""):
     show screen hermione_main
     return
 
-## Robes ##
-label equip_robe:
-    call set_h_robe(robe_choice)
-
-    hide screen wardrobe
-    call screen wardrobe
 
 label set_h_robe(robe=""):
     hide screen hermione_main
@@ -1010,12 +998,6 @@ label use_item: #Not in use.
     
 ### UNDERWEAR SECTION ###
 
-## Bra equip ##
-label equip_bra:
-    call set_h_bra(underwear_choice, underwear_color_choice)
-
-    hide screen wardrobe
-    call screen wardrobe
 
 label set_h_bra(bra="", color=""):
     hide screen hermione_main
@@ -1030,12 +1012,6 @@ label set_h_bra(bra="", color=""):
     show screen hermione_main
     return
 
-## Panties equip ##
-label equip_panties:
-    call set_h_panties(underwear_choice, underwear_color_choice)
-
-    hide screen wardrobe
-    call screen wardrobe
 
 label set_h_panties(panties="", color=""):
     hide screen hermione_main

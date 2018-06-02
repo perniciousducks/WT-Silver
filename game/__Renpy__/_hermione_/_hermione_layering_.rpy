@@ -423,7 +423,7 @@ label update_her_uniform:
     $ hermione_neckwear = "characters/hermione/clothes/neckwear/"+h_neckwear_color+"/"+str(h_neckwear)+".png"
     $ hermione_gloves = "characters/hermione/clothes/gloves/"+h_gloves_color+"/"+str(h_gloves)+".png"
     $ hermione_stockings = "characters/hermione/clothes/stockings/"+h_stockings_color+"/"+str(h_stockings)+".png"
-    $ hermione_robe = "characters/hermione/clothes/robe/"+str(h_robe)+".png"
+    $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
 
 
     #Accessories

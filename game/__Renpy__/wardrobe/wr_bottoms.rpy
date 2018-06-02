@@ -11,6 +11,9 @@ label equip_bottom:
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_bottom
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_bottom
 
 
 ### Equip Bottom ###
@@ -774,66 +777,51 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
 ### Equip Luna's Bottom ###
 
 label equip_lun_bottom:
-
-    if skirt_choice == l_skirt and bottom_color_choice == l_skirt_color:
-        $ wardrobe_active = 1
-        #">She's already wearing that!" #Remove line. Just for testing.
-        jump return_to_wardrobe
-
-    elif mad >= 1:
-        jump equipping_failed
-
-    else:
-        if wardrobe_chitchat_active:
-            hide screen hermione_main 
-            with d3
-
-            $ wardrobe_active = 0 #activates dissolve in her_main 
-            $ luna_xpos = 665
-
-            m "[luna_name]..."
-
-            ### Uniform Skirts ###
-
-            #Uniform Skirt Very Long #Done
-            if skirt_choice == "uni_skirt_1":
-                m "Would you wear your school skirt for me? The very long one." 
-
-            # Copy stuff from Hermione's equip and make it work for Luna
-            # WIP!!!!!!!
-#
+    return
 
 
 ### Equip Astoria's Bottom ###
 
 label equip_ast_bottom:
 
-    if skirt_choice == a_skirt and bottom_color_choice == a_skirt_color:
+    if skirt_choice == ast_skirt and bottom_color_choice == ast_skirt_color:
         $ wardrobe_active = 1
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
-    elif mad >= 1:
-        jump equipping_failed
+    #elif mad >= 1:
+    #    jump equipping_failed
 
     else:
         if wardrobe_chitchat_active:
-            hide screen astoria_main 
-            with d3
+            pass
+            #hide screen astoria_main 
+            #with d3
 
-            $ wardrobe_active = 0 #activates dissolve in her_main 
-            $ astoria_xpos = 665
+            #$ wardrobe_active = 0 #activates dissolve in her_main 
+            #$ astoria_xpos = 665
 
-            m "[astoria_name]..."
+            #m "[astoria_name]..."
 
             ### Uniform Skirts ###
 
             #Uniform Skirt Very Long #Done
-            if skirt_choice == "uni_skirt_1":
+            if skirt_choice == "skirt_1":
                 m "Would you wear your school skirt for me? The very long one." 
+        else:
+            pass
+        
+        $ wardrobe_active = 1
+        
+        call set_ast_bottom(skirt_choice)
+        
+        call ast_main(xpos="wardrobe")
+        call screen wardrobe
 
-            # Copy stuff from Hermione's equip and make it work for Astoria
-            # WIP!!!!!!!
-#
+### Equip Susan's Bottom ###
+label equip_sus_bottom:
+    call set_sus_bottom(skirt_choice)
 
+    hide screen wardrobe
+    call screen wardrobe
 

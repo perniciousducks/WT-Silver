@@ -134,5 +134,79 @@ label equip_her_body_accessory:
 #Add Luna Body Accessory Texts
 #Add Astoria Body Accessory Texts
 
+### Stockings Equip ###
+label equip_stockings:
 
+    #Hermione
+    if active_girl == "hermione":
+        jump equip_her_stockings
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_stockings
+    #Astoria
+    if active_girl == "astoria":
+        jump equip_ast_stockings
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_stockings
+        
+### Equip Hermione's Stockings ###
+label equip_her_stockings:
+    call set_h_stockings(stockings_choice, stockings_color_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Astoria's Stockings ###
+label equip_ast_stockings:
+    call set_ast_stockings(stockings_choice)
 
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Susan's Stockings ###
+label equip_sus_stockings:
+    call set_sus_stockings(stockings_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+    
+    
+
+### Robe Equip ###
+label equip_robe:
+
+    #Hermione
+    if active_girl == "hermione":
+        jump equip_her_robe
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_robe
+    #Astoria
+    if active_girl == "astoria":
+        jump equip_ast_robe
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_robe
+        
+        
+### Equip Hermione's Robe ###
+label equip_her_robe:
+    call set_h_robe(robe_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Astoria's Robe ###
+label equip_ast_robe:
+    call set_ast_robe(robe_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Susan's Robe ###
+label equip_sus_robe:
+    call set_sus_robe(robe_choice)
+
+    hide screen wardrobe
+    call screen wardrobe

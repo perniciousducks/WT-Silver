@@ -11,6 +11,9 @@ label equip_top:
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_top
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_top
 
 
 ### Equip Hermione's Top ###
@@ -984,6 +987,14 @@ label equip_ast_top:
         
         call ast_main(xpos="wardrobe")
         call screen wardrobe
+        
+        
+### Equip Susan's Top ###
+label equip_sus_top:
+    call set_sus_top(top_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
         
         
 

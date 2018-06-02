@@ -39,7 +39,7 @@ label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
     
     
     #Positioning
-    if xpos != susan_xpos:
+    if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
             $ susan_xpos = 640
             $ menu_x = 0.1 #Don't add ypos!
@@ -54,10 +54,10 @@ label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
         else:
             $ susan_xpos = int(xpos)
 
-    if ypos != susan_ypos:
+    if ypos != None:
         if ypos == "base" or ypos == "default":
             $ susan_ypos = 0
-        if ypos == "head":
+        elif ypos == "head":
             $ susan_ypos = 400 #Not the correct number!
             #ADD zorder change to be in front of textbox!
         else:
@@ -140,7 +140,7 @@ init python:
         if x_pos is not None:
             susan_xpos        = x_pos
         if y_pos is not None:
-            susan_ypos        = ypos
+            susan_ypos        = y_pos
         #BODY CONTROL
         if base is not None:
             susan_base        = "characters/susan/base/"+base+".png" 

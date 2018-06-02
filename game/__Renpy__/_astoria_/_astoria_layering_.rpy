@@ -40,7 +40,7 @@ label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
     hide screen atoria_main
     
     #Positioning
-    if xpos != astoria_xpos:
+    if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
             $ astoria_xpos = 640
             $ menu_x = 0.1 #Don't add ypos!
@@ -55,10 +55,10 @@ label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
         else:
             $ astoria_xpos = int(xpos)
 
-    if ypos != astoria_ypos:
+    if ypos != None:
         if ypos == "base" or ypos == "default":
             $ astoria_ypos = 0
-        if ypos == "head":
+        elif ypos == "head":
             $ astoria_ypos = 400 #Not the correct number!
             #ADD zorder change to be in front of textbox!
         else:

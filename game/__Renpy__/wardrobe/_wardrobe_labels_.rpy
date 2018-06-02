@@ -201,9 +201,11 @@ label close_wardrobe:
     
     if active_girl == "astoria":
         call ast_main("",xpos="mid")
+        jump day_main_menu
         #jump astoria_requests
     if active_girl == "susan":
         call sus_main("",xpos="mid")
+        jump day_main_menu
         #jump susan_requests?
 
 ### Pose/Action ###

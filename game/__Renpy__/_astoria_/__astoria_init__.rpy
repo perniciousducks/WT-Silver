@@ -163,7 +163,7 @@ label astoria_init:
 
 label astoria_progress_init:
 
-    if not hasattr(renpy.store,'astoria_spell_progress') or reset_persistants:
+    if not hasattr(renpy.store,'astoria_name') or reset_persistants:
 
         ##Favour stuff
 
@@ -177,6 +177,9 @@ label astoria_progress_init:
         $ days_since_astoria = 0
         $ astoria_arrival_day = 30
         $ astoria_arrvial_whoring = 9
+        
+        $ astoria_name = "Miss Greengrass"
+        $ ast_genie_name = "Sir"
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

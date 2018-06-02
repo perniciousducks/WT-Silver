@@ -53,9 +53,9 @@ screen wardrobe():
         if active_girl == "hermione":
             text ""+hermione_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "astoria":
-            text "Astoria Greengrass" xalign 0.5 xpos 820 ypos 57 size 20
+            text ""+astoria_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "susan":
-            text "Susan Bones" xalign 0.5 xpos 820 ypos 57 size 20
+            text ""+susan_name xalign 0.5 xpos 820 ypos 57 size 20
         text "Wardrobe" xpos 668 ypos 154+360 size 12
 
         hotspot (993,10,32,23) clicked Jump("hide_wardrobe")

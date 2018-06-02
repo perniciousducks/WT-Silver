@@ -150,10 +150,14 @@ label susan_init:
 
 label susan_progress_init:
 
-    if not hasattr(renpy.store,'susan_level') or reset_persistants:
+    if not hasattr(renpy.store,'susan_name') or reset_persistants:
     
         ##Favour stuff
         $ susan_level = 0
+        
+        $ susan_name = "Miss Bones"
+        $ ast_susan_name = "Cow"
+        $ sus_genie_name = "Sir"
     
 
     return

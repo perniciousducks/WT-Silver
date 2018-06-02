@@ -396,8 +396,18 @@ label update_wr_other_clothings_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
-
+    if active_girl == "astoria":
+    
+        $ wr_stockings.append("nighty_stockings")
+            
+        $ wr_robes.append("robe")
+        
+    if active_girl == "susan":
+    
+        $ wr_neckwears.append("chain_chocker")
+        
+        $ wr_stockings.append("stockings")
+        
     return
 
 
@@ -466,8 +476,30 @@ label update_wr_underwear_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
+        $ wr_bras.append("clear_bra")
+        $ wr_bras.append("lace_bra")
+        $ wr_bras.append("lewd_bra")
 
+        $ wr_onepieces.append("nighty")
+        
+        $ wr_panties.append("clear_panties")
+        $ wr_panties.append("lace_panties")
+        $ wr_panties.append("lewd_panties")
+        $ wr_panties.append("nighty_panties")
+        
+    if active_girl == "susan":
+        #$ wr_bras.append("")
+        $ wr_bras.append("lace_bra")
+        $ wr_bras.append("chain_bra")
+    
+        $ wr_onepieces.append("sling_1")
+        $ wr_onepieces.append("sling_2")
+        
+        #$ wr_panties.append("")
+        $ wr_panties.append("lace_panties")
+        $ wr_panties.append("chain_panties")
+    
     return
 
 

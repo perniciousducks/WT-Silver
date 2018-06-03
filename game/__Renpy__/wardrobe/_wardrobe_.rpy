@@ -9,11 +9,11 @@ screen wardrobe():
         cache False
         
         if active_girl == "hermione":
-            [SetVariable("icon_ypos_offset",0)]
+            $icon_ypos_offset = 0
         if active_girl == "astoria": #She's too small! >.<
-            [SetVariable("icon_ypos_offset",10)]
+            $icon_ypos_offset = 10
         if active_girl == "susan":
-            [SetVariable("icon_ypos_offset",0)]
+            $icon_ypos_offset = 0
 
         ## Ground & Hovers ##
         if wardrobe_page == 0: #default

@@ -29,9 +29,13 @@ label update_sus_uniform:
 label set_sus_top(top=""):
     hide screen susan_main
     
-    $ sus_request_wear_top = True
-    $ susan_wear_top = True
-    $ sus_top = top
+    if susan_wear_top and sus_top == top:
+        $ sus_request_wear_top = False
+        $ susan_wear_top = False
+    else:
+        $ sus_request_wear_top = True
+        $ susan_wear_top = True
+        $ sus_top = top
     
     call update_sus_uniform
     show screen susan_main
@@ -42,9 +46,13 @@ label set_sus_top(top=""):
 label set_sus_bottom(bottom=""):
     hide screen susan_main
     
-    $ sus_request_wear_bottom = True
-    $ susan_wear_bottom = True
-    $ sus_skirt = bottom
+    if susan_wear_bottom and sus_skirt == bottom:
+        $ sus_request_wear_bottom = False
+        $ susan_wear_bottom = False
+    else:
+        $ sus_request_wear_bottom = True
+        $ susan_wear_bottom = True
+        $ sus_skirt = bottom
     
     call update_sus_uniform
     show screen susan_main
@@ -55,9 +63,13 @@ label set_sus_bottom(bottom=""):
 label set_sus_bra(bra=""):
     hide screen susan_main
     
-    $ sus_request_wear_bra = True
-    $ susan_wear_bra = True
-    $ sus_bra = bra
+    if susan_wear_bra and sus_bra == bra:
+        $ sus_request_wear_bra = False
+        $ susan_wear_bra = False
+    else:
+        $ sus_request_wear_bra = True
+        $ susan_wear_bra = True
+        $ sus_bra = bra
     
     call update_sus_uniform
     show screen susan_main
@@ -68,9 +80,13 @@ label set_sus_bra(bra=""):
 label set_sus_onepiece(onepiece=""):
     hide screen susan_main
     
-    $ sus_request_wear_onepiece = True
-    $ susan_wear_onepiece = True
-    $ sus_onepiece = onepiece
+    if susan_wear_onepiece and sus_onepiece == onepiece:
+        $ sus_request_wear_onepiece = False
+        $ susan_wear_onepiece = False
+    else:
+        $ sus_request_wear_onepiece = True
+        $ susan_wear_onepiece = True
+        $ sus_onepiece = onepiece
     
     call update_sus_uniform
     show screen susan_main
@@ -81,9 +97,13 @@ label set_sus_onepiece(onepiece=""):
 label set_sus_panties(panties=""):
     hide screen susan_main
     
-    $ sus_request_wear_panties = True
-    $ susan_wear_panties = True
-    $ sus_panties = panties
+    if susan_wear_panties and sus_panties == panties:
+        $ sus_request_wear_panties = False
+        $ susan_wear_panties = False
+    else:
+        $ sus_request_wear_panties = True
+        $ susan_wear_panties = True
+        $ sus_panties = panties
     
     call update_sus_uniform
     show screen susan_main
@@ -94,10 +114,9 @@ label set_sus_panties(panties=""):
 label set_sus_garterbelt(garter=""):
     hide screen susan_main
     
-    if susan_wear_garterbelt:
+    if susan_wear_garterbelt and sus_garterbelt == garter:
         $ sus_request_wear_garterbelt = False
         $ susan_wear_garterbelt = False
-        $ sus_garterbelt = garter
     else:
         $ sus_request_wear_garterbelt = True
         $ susan_wear_garterbelt = True
@@ -112,10 +131,9 @@ label set_sus_garterbelt(garter=""):
 label set_sus_stockings(stockings=""):
     hide screen susan_main
     
-    if susan_wear_stockings:
+    if susan_wear_stockings and sus_stockings == stockings:
         $ sus_request_wear_stockings = False
         $ susan_wear_stockings = False
-        $ sus_stockings = stockings
     else:
         $ sus_request_wear_stockings = True
         $ susan_wear_stockings = True
@@ -130,10 +148,9 @@ label set_sus_stockings(stockings=""):
 label set_sus_robe(robe=""):
     hide screen susan_main
     
-    if susan_wear_robe:
+    if susan_wear_robe and sus_robe == robe:
         $ sus_request_wear_robe = False
         $ susan_wear_robe = False
-        $ sus_robe = robe
     else:
         $ sus_request_wear_robe = True
         $ susan_wear_robe = True
@@ -142,4 +159,101 @@ label set_sus_robe(robe=""):
     call update_sus_uniform
     show screen susan_main
     
+    return
+    
+    
+    
+    
+    
+    
+label load_susan_clothing_saves:
+
+    #Uniform & Underwear
+    if sus_request_wear_top:
+        $ susan_wear_top          = True
+    else:
+        $ susan_wear_top          = False
+
+    if sus_request_wear_onepiece:
+        $ susan_wear_onepiece     = True
+    else:
+        $ susan_wear_onepiece     = False
+
+    if sus_request_wear_bra:
+        $ susan_wear_bra          = True
+    else:
+        $ susan_wear_bra          = False
+
+    if sus_request_wear_bottom:
+        $ susan_wear_bottom       = True
+    else:
+        $ susan_wear_bottom       = False
+
+    if sus_request_wear_panties:
+        $ susan_wear_panties      = True 
+    else:
+        $ susan_wear_panties      = False
+
+    if sus_request_wear_garterbelt:
+        $ susan_wear_garterbelt   = True 
+    else:
+        $ susan_wear_garterbelt   = False
+
+    #Other Clothing
+    if sus_request_wear_neckwear:
+        $ susan_wear_neckwear     = True
+    else:
+        $ susan_wear_neckwear     = False
+
+    if sus_request_wear_accs:
+        $ susan_wear_accs    = True
+    else:
+        $ susan_wear_accs    = False
+
+    if sus_request_wear_gloves:
+        $ susan_wear_gloves       = True
+    else:
+        $ susan_wear_gloves       = False
+
+    if sus_request_wear_stockings:
+        $ susan_wear_stockings    = True
+    else:
+        $ susan_wear_stockings    = False
+
+    if sus_request_wear_robe:
+        $ susan_wear_robe         = True
+    else:
+        $ susan_wear_robe         = False
+
+    #Head Accessories
+    if sus_request_wear_hat:
+        $ susan_wear_hat          = True
+    else:
+        $ susan_wear_hat          = False
+
+    if sus_request_wear_glasses:
+        $ susan_wear_glasses      = True
+    else:
+        $ susan_wear_glasses      = False
+
+    if sus_request_wear_ears:
+        $ susan_wear_ears         = True
+    else:
+        $ susan_wear_ears         = False
+
+    if sus_request_wear_makeup:
+        $ susan_wear_makeup       = True
+    else:
+        $ susan_wear_makeup       = False
+
+    if sus_request_wear_piercings:
+        $ susan_wear_piercings    = True
+    else:
+        $ susan_wear_piercings    = False
+
+    if sus_request_wear_tattoos:
+        $ susan_wear_tattoos      = True
+    else:
+        $ susan_wear_tattoos      = False
+
     return

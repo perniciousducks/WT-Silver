@@ -24,7 +24,7 @@ label update_ast_uniform:
     
     return
     
-    
+        
 #Top equip.    
 label set_ast_top(top=""):
     hide screen astoria_main
@@ -68,9 +68,13 @@ label set_ast_bra(bra=""):
 label set_ast_onepiece(onepiece=""):
     hide screen astoria_main
     
-    $ ast_request_wear_onepiece = True
-    $ astoria_wear_onepiece = True
-    $ ast_onepiece = onepiece
+    if astoria_wear_onepiece and ast_onepiece == onepiece:
+        $ ast_request_wear_onepiece = False
+        $ astoria_wear_onepiece = False
+    else:
+        $ ast_request_wear_onepiece = True
+        $ astoria_wear_onepiece = True
+        $ ast_onepiece = onepiece
     
     call update_ast_uniform
     show screen astoria_main
@@ -94,10 +98,9 @@ label set_ast_panties(panties=""):
 label set_ast_garterbelt(garter=""):
     hide screen astoria_main
     
-    if astoria_wear_garterbelt:
+    if astoria_wear_garterbelt and ast_garterbelt == garter:
         $ ast_request_wear_garterbelt = False
         $ astoria_wear_garterbelt = False
-        $ ast_garterbelt = garter
     else:
         $ ast_request_wear_garterbelt = True
         $ astoria_wear_garterbelt = True
@@ -112,10 +115,9 @@ label set_ast_garterbelt(garter=""):
 label set_ast_stockings(stockings=""):
     hide screen astoria_main
     
-    if astoria_wear_stockings:
+    if astoria_wear_stockings and ast_stockings == stockings:
         $ ast_request_wear_stockings = False
         $ astoria_wear_stockings = False
-        $ ast_stockings = stockings
     else:
         $ ast_request_wear_stockings = True
         $ astoria_wear_stockings = True
@@ -130,10 +132,9 @@ label set_ast_stockings(stockings=""):
 label set_ast_robe(robe=""):
     hide screen astoria_main
     
-    if astoria_wear_robe:
+    if astoria_wear_robe and ast_robe = robe:
         $ ast_request_wear_robe = False
         $ astoria_wear_robe = False
-        $ ast_robe = robe
     else:
         $ ast_request_wear_robe = True
         $ astoria_wear_robe = True
@@ -142,4 +143,101 @@ label set_ast_robe(robe=""):
     call update_ast_uniform
     show screen astoria_main
     
+    return
+    
+    
+    
+    
+    
+    
+label load_astoria_clothing_saves:
+
+    #Uniform & Underwear
+    if ast_request_wear_top:
+        $ astoria_wear_top          = True
+    else:
+        $ astoria_wear_top          = False
+
+    if ast_request_wear_onepiece:
+        $ astoria_wear_onepiece     = True
+    else:
+        $ astoria_wear_onepiece     = False
+
+    if ast_request_wear_bra:
+        $ astoria_wear_bra          = True
+    else:
+        $ astoria_wear_bra          = False
+
+    if ast_request_wear_bottom:
+        $ astoria_wear_bottom       = True
+    else:
+        $ astoria_wear_bottom       = False
+
+    if ast_request_wear_panties:
+        $ astoria_wear_panties      = True 
+    else:
+        $ astoria_wear_panties      = False
+
+    if ast_request_wear_garterbelt:
+        $ astoria_wear_garterbelt   = True 
+    else:
+        $ astoria_wear_garterbelt   = False
+
+    #Other Clothing
+    if ast_request_wear_neckwear:
+        $ astoria_wear_neckwear     = True
+    else:
+        $ astoria_wear_neckwear     = False
+
+    if ast_request_wear_accs:
+        $ astoria_wear_accs    = True
+    else:
+        $ astoria_wear_accs    = False
+
+    if ast_request_wear_gloves:
+        $ astoria_wear_gloves       = True
+    else:
+        $ astoria_wear_gloves       = False
+
+    if ast_request_wear_stockings:
+        $ astoria_wear_stockings    = True
+    else:
+        $ astoria_wear_stockings    = False
+
+    if ast_request_wear_robe:
+        $ astoria_wear_robe         = True
+    else:
+        $ astoria_wear_robe         = False
+
+    #Head Accessories
+    if ast_request_wear_hat:
+        $ astoria_wear_hat          = True
+    else:
+        $ astoria_wear_hat          = False
+
+    if ast_request_wear_glasses:
+        $ astoria_wear_glasses      = True
+    else:
+        $ astoria_wear_glasses      = False
+
+    if ast_request_wear_ears:
+        $ astoria_wear_ears         = True
+    else:
+        $ astoria_wear_ears         = False
+
+    if ast_request_wear_makeup:
+        $ astoria_wear_makeup       = True
+    else:
+        $ astoria_wear_makeup       = False
+
+    if ast_request_wear_piercings:
+        $ astoria_wear_piercings    = True
+    else:
+        $ astoria_wear_piercings    = False
+
+    if ast_request_wear_tattoos:
+        $ astoria_wear_tattoos      = True
+    else:
+        $ astoria_wear_tattoos      = False
+
     return

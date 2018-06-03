@@ -42,9 +42,9 @@ label astoria_init:
         
         #Save State
         $ ast_request_wear_top              = True
-        $ ast_request_wear_bra              = False
+        $ ast_request_wear_bra              = True
         $ ast_request_wear_bottom           = True
-        $ ast_request_wear_panties          = False
+        $ ast_request_wear_panties          = True
 
         $ ast_request_wear_onepiece         = False
         $ ast_request_wear_garterbelt       = False

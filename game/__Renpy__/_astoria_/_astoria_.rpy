@@ -40,7 +40,7 @@ label imperio_spell_1: #third level imperio spell
         ast "What does it say dumby!"
         m "When venus and mars meet, all my knowledge shall be at your feet..."
         ast "what does that mean?"
-        jump astoria_book_question:
+        jump astoria_book_question
         menu:
             "-We have to be touching to open it-":
                 pass
@@ -223,12 +223,13 @@ label astoria_learn_spell: #Astoria spell learning loop
         jump imperio_spell_3
 
 label astoria_spell_practice:
-        show screen blkfade 
-        with d3
-        $ renpy.call('astoria_lap_'+str(astoria_affection)+'_'+str(renpy.random.randint(1, 3)))
-        hide screen blkfade with d3
-        $ astoria_spell_practice =+ 1
-        $ astoria_busy = True
+    show screen blkfade 
+    with d3
+    $ renpy.call('astoria_lap_'+str(astoria_affection)+'_'+str(renpy.random.randint(1, 3)))
+    hide screen blkfade
+    with d3
+    $ astoria_spell_practice =+ 1
+    $ astoria_busy = True
     jump day_main_menu
 
 

@@ -67,7 +67,46 @@ label equip_sus_bra:
     hide screen wardrobe
     call screen wardrobe
     
+        
+        
+### Equip Onepiece ###
+label equip_onepiece:
+
+    #Hermione
+    if active_girl == "hermione":
+        jump equip_her_onepiece
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_onepiece
+    #Astoria
+    if active_girl == "astoria":
+        jump equip_ast_onepiece
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_onepiece
+        
+### Equip Hermione's OnePiece/Nighty ###
+label equip_her_onepiece:
+    call set_h_onepiece(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
     
+### Equip Astoria's OnePiece/Nighty ###
+label equip_ast_onepiece:
+    call set_ast_onepiece(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Susan's OnePiece/Nighty ###
+label equip_sus_onepiece:
+    call set_sus_onepiece(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+        
+        
         
 ### Equip Panties ###
 label equip_panties:
@@ -85,7 +124,6 @@ label equip_panties:
     if active_girl == "susan":
         jump equip_sus_panties
 
-        
 ### Equip Hermione's Panties ###
 label equip_her_panties:
     call set_h_panties(underwear_choice, underwear_color_choice)
@@ -132,6 +170,45 @@ label equip_ast_panties:
 ### Equip Susan's Panties ###
 label equip_sus_panties:
     call set_sus_panties(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+    
+        
+        
+### Equip Garterbelt ###
+label equip_garterbelt:
+
+    #Hermione
+    if active_girl == "hermione":
+        jump equip_her_garterbelt
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_garterbelt
+    #Astoria
+    if active_girl == "astoria":
+        jump equip_ast_garterbelt
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_garterbelt
+
+### Equip Hermione's Garterbelt ###
+label equip_her_garterbelt:
+    call set_h_garterbelt(underwear_choice, underwear_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Astoria's Garterbelt ###
+label equip_ast_garterbelt:
+    call set_ast_garterbelt(underwear_choice, underwear_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Susan's Garterbelt ###
+label equip_sus_garterbelt:
+    call set_sus_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe

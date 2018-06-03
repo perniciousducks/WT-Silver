@@ -593,20 +593,6 @@ label her_tattoos_toggle:
 
 
 
-## Neckwear ##
-label equip_neckwear:
-    call set_h_neckwear(neckwear_choice, neckwear_color_choice)
-    
-    hide screen wardrobe
-    call screen wardrobe
-
-
-## Gloves ##
-label equip_gloves:
-    call set_h_gloves(gloves_choice, gloves_color_choice)
-    
-    hide screen wardrobe
-    call screen wardrobe
 
 
 

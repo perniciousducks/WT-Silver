@@ -145,8 +145,15 @@ label update_wr_head_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
 
+        $ wr_hair.append("A")
+        $ wr_hair.append("L")
+        
+    if active_girl == "susan":
+    
+        $ wr_hair.append("A")
+        
     return
 
 

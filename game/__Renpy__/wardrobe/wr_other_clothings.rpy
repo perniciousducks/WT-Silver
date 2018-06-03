@@ -7,6 +7,86 @@
 ### Equip Robe ### MISSING TEXTS
 
 
+
+### Neckwear Equip ###
+label equip_neckwear:
+
+    #Hermione
+    if active_girl == "hermione":
+        jump equip_her_neckwear
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_neckwear
+    #Astoria
+    if active_girl == "astoria":
+        jump equip_ast_neckwear
+    #Susan
+    if active_girl == "susan":
+        jump equip_ast_neckwear
+        
+### Equip Hermione's Neckwear ###
+label equip_her_neckwear:
+    call set_h_neckwear(neckwear_choice, neckwear_color_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Astoria's Neckwear ###
+label equip_ast_neckwear:
+    call set_ast_neckwear(neckwear_choice, neckwear_color_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Susan's Neckwear ###
+label equip_sus_neckwear:
+    call set_sus_neckwear(neckwear_choice, neckwear_color_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+
+    
+    
+### Gloves Equip ###
+label equip_gloves:
+
+    #Hermione
+    if active_girl == "hermione":
+        jump equip_her_gloves
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_gloves
+    #Astoria
+    if active_girl == "astoria":
+        jump equip_ast_gloves
+    #Susan
+    if active_girl == "susan":
+        jump equip_ast_gloves
+        
+### Equip Hermione's Gloves ###
+label equip_her_gloves:
+    call set_h_gloves(gloves_choice, gloves_color_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Astoria's Gloves ###
+label equip_ast_gloves:
+    call set_ast_gloves(gloves_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+    
+### Equip Susan's Gloves ###
+label equip_sus_gloves:
+    call set_sus_gloves(gloves_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+    
+    
+    
+### Body Accs Equip ###
 label equip_body_accessory:
 
     #Hermione
@@ -18,10 +98,11 @@ label equip_body_accessory:
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_body_accessory
-
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_body_accessory
 
 ### Equip Hermione's Body Accessory ###
-
 label equip_her_body_accessory:
 
     if mad >= 1:

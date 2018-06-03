@@ -771,52 +771,15 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
             call set_h_bottom(skirt_choice,bottom_color_choice)
             call her_main("","","",xpos="wardrobe")
             call screen wardrobe
-#
 
-
-### Equip Luna's Bottom ###
-
-label equip_lun_bottom:
-    return
 
 
 ### Equip Astoria's Bottom ###
-
-label equip_ast_bottom:
-
-    if skirt_choice == ast_skirt and bottom_color_choice == ast_skirt_color:
-        $ wardrobe_active = 1
-        #">She's already wearing that!" #Remove line. Just for testing.
-        jump return_to_wardrobe
-
-    #elif mad >= 1:
-    #    jump equipping_failed
-
-    else:
-        if wardrobe_chitchat_active:
-            pass
-            #hide screen astoria_main 
-            #with d3
-
-            #$ wardrobe_active = 0 #activates dissolve in her_main 
-            #$ astoria_xpos = 665
-
-            #m "[astoria_name]..."
-
-            ### Uniform Skirts ###
-
-            #Uniform Skirt Very Long #Done
-            if skirt_choice == "skirt_1":
-                m "Would you wear your school skirt for me? The very long one." 
-        else:
-            pass
+label equip_ast_bottom: 
+    call set_ast_bottom(skirt_choice)
         
-        $ wardrobe_active = 1
-        
-        call set_ast_bottom(skirt_choice)
-        
-        call ast_main(xpos="wardrobe")
-        call screen wardrobe
+    hide screen wardrobe
+    call screen wardrobe
 
 ### Equip Susan's Bottom ###
 label equip_sus_bottom:

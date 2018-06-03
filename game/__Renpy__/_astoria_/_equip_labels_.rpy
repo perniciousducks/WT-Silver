@@ -29,9 +29,13 @@ label update_ast_uniform:
 label set_ast_top(top=""):
     hide screen astoria_main
     
-    $ ast_request_wear_top = True
-    $ astoria_wear_top = True
-    $ ast_top = top
+    if astoria_wear_top and ast_top == top:
+        $ ast_request_wear_top = False
+        $ astoria_wear_top = False
+    else:
+        $ ast_request_wear_top = True
+        $ astoria_wear_top = True
+        $ ast_top = top
     
     call update_ast_uniform
     show screen astoria_main
@@ -42,9 +46,13 @@ label set_ast_top(top=""):
 label set_ast_bottom(bottom=""):
     hide screen astoria_main
     
-    $ ast_request_wear_bottom = True
-    $ astoria_wear_bottom = True
-    $ ast_skirt = bottom
+    if astoria_wear_bottom and ast_skirt == bottom:
+        $ ast_request_wear_bottom = False
+        $ astoria_wear_bottom = False
+    else:
+        $ ast_request_wear_bottom = True
+        $ astoria_wear_bottom = True
+        $ ast_skirt = bottom
     
     call update_ast_uniform
     show screen astoria_main
@@ -132,7 +140,7 @@ label set_ast_stockings(stockings=""):
 label set_ast_robe(robe=""):
     hide screen astoria_main
     
-    if astoria_wear_robe and ast_robe = robe:
+    if astoria_wear_robe and ast_robe == robe:
         $ ast_request_wear_robe = False
         $ astoria_wear_robe = False
     else:

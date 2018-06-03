@@ -168,8 +168,9 @@ label astoria_progress_init:
         ##Favour stuff
 
         ##Stats
+        $ astoria_spells = [0,0,0,0,0,0]
         $ astoria_spell_progress = 0
-        $ astoria_spell = 1 #Imperio
+        $ astoria_affection = 0
         $ astoria_points = 0
 
         ##Flags

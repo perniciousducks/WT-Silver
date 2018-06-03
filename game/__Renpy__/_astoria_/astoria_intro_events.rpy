@@ -635,7 +635,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "So how did Susan become involved in all this then?"
     call ast_main("It was her own fault!","sad","sad","sad","c_blank")
     m "..."
-    call ast_main("What does she expect to happen when she keeps flaunting those disgusting udders of hers!","sad","sad","sad","c_blank")
+    call ast_main("What does she expect to happen when she keeps flaunting those disgusting udders of hers around the school!","sad","sad","sad","c_blank")
     call ast_main("It's only fair that someone put her in her place!","sad","sad","sad","c_blank")
     m "And this someone was you?"
     call ast_main("...","sad","sad","sad","c_blank")
@@ -662,17 +662,16 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "Can you make her do it again?"
     call ast_main("WHAT!","sad","sad","sad","c_blank")
     call ast_main("professor! I can't do something like that!","sad","sad","sad","c_blank")
-    #menu:
-    #    "\"Why not?\"":
-    #        call ast_main("Because... because it's wrong!","sad","sad","sad","c_blank")
-    #        call ast_main("You're too old!","sad","sad","sad","c_blank")
-    #        call ast_main("And you're her teacher!","sad","sad","sad","c_blank")
-    #        m "So what?"
-    #    "\"Come on...\"":
-    #        call ast_main("...","sad","sad","sad","c_blank")
-    #        call ast_main("Is this a joke sir?","sad","sad","sad","c_blank")
-    #        m "Maybe..."
-
+    menu:
+        "\"Why not?\"":
+            call ast_main("Because... because it's wrong!","sad","sad","sad","c_blank")
+            call ast_main("You're too old!","sad","sad","sad","c_blank")
+            call ast_main("And you're her teacher!","sad","sad","sad","c_blank")
+            m "So what?"
+        "\"Come on...\"":
+            call ast_main("...","sad","sad","sad","c_blank")
+            call ast_main("Is this a joke sir?","sad","sad","sad","c_blank")
+            m "Maybe..."
     call ast_main("You can't expect me to do something like that!","sad","sad","sad","c_blank")
     call ast_main("Unless...","sad","sad","sad","c_blank")
     m "Unless?"
@@ -716,12 +715,13 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call nar(">As the two of you talk Susan slowly removes her vest.")
     call ast_main("That's it Susy, one piece at a time.","sad","sad","sad","c_blank")
     m "You seemed to have changed your tone..."
-    call ast_main("Because now know this isn't a test.","sad","sad","sad","c_blank")
+    call ast_main("Because now I know this isn't a test.","sad","sad","sad","c_blank")
     call nar(">Susan quietly removes her tie.")
     call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","sad","sad","sad","c_blank")
     call ast_main("but after asking to see Susy's boobs, well...","sad","sad","sad","c_blank")
     call nar(">Susan peels her stressed shirt off.")
     call ast_main("And now I get to learn some cool new spells!","sad","sad","sad","c_blank")
+    call ast_main("...","sad","sad","sad","c_blank")
     call ast_main("They better be cool old man!","sad","sad","sad","c_blank")
     call ast_main("I don't want something boring like fireworks or something.","sad","sad","sad","c_blank")
     m "What did you have in mind?"
@@ -750,8 +750,8 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call sus_main("yes...","base","base","base","base")
     m "Aw, but we were just getting to the best bit!"
     call ast_main("You can save that for next time old man, I think you've had enough fun today.","sad","sad","sad","c_blank")
-    call ast_main("Any more and you're heart will probably give out!","sad","sad","sad","c_blank")
-    call ast_main("In the mean time, I want you to think up fun and secret spells!","sad","sad","sad","c_blank")
+    call ast_main("Anymore and you're heart will probably give out!","sad","sad","sad","c_blank")
+    call ast_main("In the mean time, I want you to think up some fun and secret spells!","sad","sad","sad","c_blank")
     m "Sure..."
     call ast_main("Alright, well don't bring me up here again until you've got them!","sad","sad","sad","c_blank")
     call ast_main("Good bye professor!","sad","sad","sad","c_blank")
@@ -978,14 +978,86 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
 
 
 label astoria_book_intro: #Summon Astoria and tell her that you have a book of spells as well as the pimping with Tonks
-    #Summon Astoria to your office
-    #Tell her you have a book of new spells for her
-    #She's very excited, says she can't wait to learn them all
-    #Tell her that as payment for her learning these new spells, she'll have to do something for Genie
-    #Explain that she will have to go see Tonks now
-    #Astoria shocked, upset that she has to go see the Auror, scared about Azkaban
-    #Genie tells her not to worry, that she will come back to his office afterwards just to make sure she's alright
-    #She reluctantly agrees
+    ">You summon Astoria to your office."
+    ast "Hi Dumby!"
+    m "Ugh..."
+    m "Hello Astoria."
+    ast "So have you finally managed to remember some cool spells?"
+    ast "Or is remembering stuff too hard for you now?"
+    m "I'll have you know that I've got a whole book full of new spells for you to learn."
+    ast "Really?"
+    ast "Maybe you're not so such a Dumby after all!"
+    m "Do you want to learn them or not?"
+    ast "Of course! I've just spent the whole day listening to Mcgonagall prattle on about the importance of a transfiguration spell."
+    ast "When all it did was turn a stupid rat yellow!"
+    ast "I wanna learn something that's actually fun!"
+    m "Well in that case I'll need you to do something for me."
+    ast "Should I get Susan up here so you can stare at her stupid fat udders again?"
+    ast "I won't send her away this time..."
+    ast "As long as you behave!"
+    m "As tempting as that offer is, that's not it."
+    ast "Well what is it then?"
+    ast "You don't expect me to dance for you do you?"
+    m "(Not yet...)"
+    m "No, this involves Nymphomaniac Tonks or whatever she was called..."
+    ast "The auror!"
+    ast "You're not going to send me to Azkaban are you?"
+    ast "You promised!"
+    m "No ones sending you to Azkaban."
+    ast "r-r-r-really... then why does she want to see me?"
+    menu:
+        "-Tell the truth-":
+            m "Well, you know how some of the teachers here like to award bonus points to students-"
+            ast "You mean the favour trading."
+            m "You know about that?"
+            ast "Of course! Half the girls in slytherin earn extra points of Snape."
+            ast "A few have even earned some off of slughorn."
+            "Astoria shivers at the thought."
+            ast "But I've never done anything like that, Snape gives me the creeps..."
+            ast "(Plus he only likes girls with big boobs...)"
+        "-Lie-":
+            m "She just wants to ask you a few questions."
+            ast "Like what?"
+            m "I'm not sure, you'll have to wait and see..."
+            ast "I don't wanna!"
+            m "Come on now... She might even pay you some points afterwards."
+            ast "Some points? You mean..."
+            ast "Am I going to have to sell her a favour, Dumby?!"
+            m "a favour? whatever do you mean..."
+            ast "Everyone knows about the favour trading at school, Dumby."
+            ast "I've even got three friends who sell them to Snape."
+            m "Really?"
+            ast "Yeah, although they're all huge sluts... I'd never do something like that."
+            ast "(Plus Snape only likes girls with big boobs...)"
+    m "Well we won't be able to practice these new spells without you heading over there."
+    ast "Really? You mean I have to go see that creepy old lady..."
+    m "She's not old!"
+    ast "Maybe not compared to you old man, but she is to me!"
+    ast "I be you she's like, 29, or something."
+    ast "she could even be 30!"
+    m "You'll be spending a lot longer than 30 years in Alakazam if you don't go over there."
+    ast "What? You promised Dumby!"
+    m "I promised I wouldn't send you to Alkatraz, I never said Tonka trucks wouldn't."
+    ast "I don't think that's her name sir..."
+    m "Whatever, just head over there."
+    m "I told her not to do anything strange to you anyway. She probably only wants to talk."
+    ast "Are you sure?"
+    m "at worst she'll make you take your skirt off..."
+    ast "DUMBy!"
+    m "Just go say hello."
+    ast "what if she does something weird?"
+    m "You can come back here afterwards to tell me what happened. If she does anything too weird we can stop it."
+    ast "Do I have to?"
+    m "Only if you want to practice a new spell."
+    ast "Ugh... fine."
+    ast "But she better keep her wrinkly old hands to herself."
+    m "I'll show you wrinkly old hands."
+    ">You reach out to grab her."
+    ast "Ahhhh! Fine, I'm leaving!"
+    ">Astoria sprints out the door, giggling as she goes."
+
+
+    
     
 
 

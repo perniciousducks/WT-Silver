@@ -36,7 +36,7 @@ label imperio_spell_1: #third level imperio spell
         ast "Does it say anything on the cover?" #need soggy to draw the book here
         m "No."
         ast "The back?"
-        m "There's a poem."
+        m "Noth- no wait, there's a poem."
         ast "What does it say dumby!"
         m "When venus and mars meet, all my knowledge shall be at your feet..."
         ast "what does that mean?"
@@ -46,7 +46,7 @@ label imperio_spell_1: #third level imperio spell
                 pass
             "-We have to wait until venus and mars are aligned-"
 
-        ast "Oh... is that why you want me to sit on your lap?"
+        ast "Oh... is that why you wanted me to sit on your lap?"
         m "o-of course... why else would I ask?"
         ast "hmmm...."
         ast "well alright... Just don't try anything funny!"
@@ -58,12 +58,52 @@ label imperio_spell_1: #third level imperio spell
         call nar("As it opens you swear you heard a slow sexual moan eminate from between the covers...")
         ast "Did the book just moan?"
         m "I think so..."
-        ast "Cool! All the scary spell books in the forbidden section of the library to that too..."
-        ast "Although they don't normally sound like that."
+        ast "Cool! All the scary spell books in the forbidden section of the library do to that too!"
+        ast "Although they don't normally sound like this..."
+        m "Let's just see what the first spell is shall we?"
+        call nar(">Astoria slowly opens the book, turning it to the first spell she can find.")
+        ast "\"imperio of the heart\""
+        ast "Imperio?!?!"
+        ast "Everyone and their dumb dog knows this one!"
+        m "What's the heart mean?"
+        ast "Who cares! This isn't secret at all!"
+        m "Just wait a second now, lets at least read the first line."
+        ast "Fine..."
+        ast "\"Imperio of the heart is a forbidden variant of the unforgivable curse.\""
+        ast "\"Whereas the regular imperio only allows control over the victims mind, imperio of the heart allows the caster-\""
+        ast "\"to implant desires into the heart of their victim whilst leaving the mind untouched...\""
+        ast "..."
+        ast "What's that supposed to mean then Dumby?"
+        m "I think it means you can make Susan want stuff."
+        ast "Couldn't I do that with the regular spell?"
+        m "I'm not sure..."
+        m "Although when you cast it on her the other day she did seem to lose her free will."
+        m "So maybe this lets her keep it?"
+        ast "Hmmmm..."
+        ast "So this spell lets us change what she wants? But not control her completely?"
+        ast "That seems worse than the regular version!"
+        m "Not if you want to hide the fact that you've cast it on her."
+        ast "Ohhhh... so that means we can change stuff about her without her realising?"
+        m "It would seem so."
+        ast "That is cool!"
+        ast "Maybe we could change her into a big slut who walks around school with her gross boobs hanging out."
+        call nar(">You feel yourself starting to harden at the idea.")
+        m "Hmmm..."
+        call nar(">Astoria quickly hops off your lap in response.")
+        ast "Dumby!!!"
+        m "Sorry... let's just keep reading then shall we?"
+        ast "Alright... just try and keep those nasty thoughts to yourself from now on..."
+        m "You said it!"
+        ast "..."
+
         
     if astoria_spell_progress < 3:
         jump astoria_spell_practice
     #expose boobs to genie
+    ast "It's the end of the chapter!"
+    ast "Can we try it out on Susan now?"
+    m "I don't see why not."
+    ast "YAY! You're the best teacher ever dumby!"
     $ astoria_spells[0] = 1
     $ astoria_spell_progress = 0
 label imperio_spell_2: #third level imperio spell
@@ -212,7 +252,7 @@ label astoria_lap_sit_0_1:
     ast "Don't read ahead!"
     m "Fine..."
     ast "Good... Night dumby!"
-    call nar("With a cheerful grin, astoria hops of your lap and out of your office.")
+    call nar("With a cheerful grin, astoria hops off your lap and out of your office.")
     return
 label astoria_lap_sit_0_2:
     call nar(">Astoria lightly hops up onto your lap.")
@@ -235,7 +275,7 @@ label astoria_lap_sit_0_2:
     ast "*hmph* I'm not going to put up with your slowness old man..."
     ast "I may as well go to bed."
     ast "night dumby..."
-    call nar("With a sullen put, astoria hops of your lap and out of your office.")
+    call nar("With a sullen put, astoria hops off your lap and out of your office.")
     return
 label astoria_lap_sit_0_3: 
     call nar(">Astoria lightly hops up onto your lap.")
@@ -258,7 +298,7 @@ label astoria_lap_sit_0_3:
     ast "alright... we can catch up on this later..."
     ast "goodnight dumby..."
     m "goodnight astoria."
-    call nar("With tired face, astoria hops of your lap and out of your office.")
+    call nar("With tired face, astoria hops off of your lap and out of your office.")
     return
 
 #

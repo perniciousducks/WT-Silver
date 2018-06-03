@@ -119,6 +119,23 @@ label set_ast_garterbelt(garter=""):
     
     return
     
+#Neckwear equip.    
+label set_ast_neckwear(neck=""):
+    hide screen astoria_main
+    
+    if astoria_wear_neckwear and ast_neckwear == neck:
+        $ ast_request_wear_neckwear = False
+        $ astoria_wear_neckwear = False
+    else:
+        $ ast_request_wear_neckwear = True
+        $ astoria_wear_neckwear = True
+        $ ast_neckwear = neck
+    
+    call update_ast_uniform
+    show screen astoria_main
+    
+    return
+    
 #Stockings equip.    
 label set_ast_stockings(stockings=""):
     hide screen astoria_main

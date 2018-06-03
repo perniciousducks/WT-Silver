@@ -34,6 +34,8 @@ screen astoria_main:
         add astoria_accs xpos astoria_xpos ypos astoria_ypos # Add the accessory
     if astoria_wear_stockings:
         add astoria_stockings xpos astoria_xpos ypos astoria_ypos # Add the stockings
+    if astoria_wear_neckwear:
+        add astoria_neckwear xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_robe:
         add astoria_robe xpos astoria_xpos ypos astoria_ypos
     ### OTHER

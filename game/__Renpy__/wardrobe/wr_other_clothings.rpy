@@ -22,7 +22,7 @@ label equip_neckwear:
         jump equip_ast_neckwear
     #Susan
     if active_girl == "susan":
-        jump equip_ast_neckwear
+        jump equip_sus_neckwear
         
 ### Equip Hermione's Neckwear ###
 label equip_her_neckwear:
@@ -33,14 +33,14 @@ label equip_her_neckwear:
 
 ### Equip Astoria's Neckwear ###
 label equip_ast_neckwear:
-    call set_ast_neckwear(neckwear_choice, neckwear_color_choice)
+    call set_ast_neckwear(neckwear_choice)
     
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Susan's Neckwear ###
 label equip_sus_neckwear:
-    call set_sus_neckwear(neckwear_choice, neckwear_color_choice)
+    call set_sus_neckwear(neckwear_choice)
     
     hide screen wardrobe
     call screen wardrobe

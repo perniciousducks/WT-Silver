@@ -34,6 +34,8 @@ screen susan_main:
         add susan_accs xpos susan_xpos ypos susan_ypos # Add the accessory
     if susan_wear_stockings:
         add susan_stockings xpos susan_xpos ypos susan_ypos # Add the stockings
+    if susan_wear_neckwear:
+        add susan_neckwear xpos susan_xpos ypos susan_ypos
     if susan_wear_robe:
         add susan_robe xpos susan_xpos ypos susan_ypos
     ### ZORDER

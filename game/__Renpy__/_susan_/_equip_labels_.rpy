@@ -127,6 +127,23 @@ label set_sus_garterbelt(garter=""):
     
     return
     
+#Neckwear equip.    
+label set_sus_neckwear(neck=""):
+    hide screen susan_main
+    
+    if susan_wear_neckwear and sus_neckwear == neck:
+        $ sus_request_wear_neckwear = False
+        $ susan_wear_neckwear = False
+    else:
+        $ sus_request_wear_neckwear = True
+        $ susan_wear_neckwear = True
+        $ sus_neckwear = neck
+    
+    call update_sus_uniform
+    show screen susan_main
+    
+    return
+    
 #Stockings equip.    
 label set_sus_stockings(stockings=""):
     hide screen susan_main

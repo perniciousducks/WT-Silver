@@ -22,6 +22,10 @@ screen astoria_main:
         add astoria_bra xpos astoria_xpos ypos astoria_ypos # Add the bra
     if astoria_wear_panties and not astoria_wear_bottom:
         add astoria_panties xpos astoria_xpos ypos astoria_ypos # Add the panties
+    if astoria_wear_garterbelt:
+        add astoria_garterbelt xpos astoria_xpos ypos astoria_ypos
+    if astoria_wear_onepiece and not astoria_wear_top and not astoria_wear_robe:
+        add astoria_onepiece xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_bottom and not astoria_wear_robe:
         add astoria_skirt xpos astoria_xpos ypos astoria_ypos # Add the skirt
     if astoria_wear_top and not astoria_wear_robe:
@@ -31,7 +35,7 @@ screen astoria_main:
     if astoria_wear_stockings:
         add astoria_stockings xpos astoria_xpos ypos astoria_ypos # Add the stockings
     if astoria_wear_robe:
-        add astoria_robe xpos astoria_xpos ypos astoria_ypos # Add the stockings
+        add astoria_robe xpos astoria_xpos ypos astoria_ypos
     ### OTHER
     add astoria_l_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
     add astoria_r_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand

@@ -809,6 +809,15 @@ label h_update:
 
     return
 
+#Hair update.
+label update_her_hair:
+    if hermione_costume and hermoine_outfit_GLBL.hair_layer != "":
+        $ hermione_hair_a = "characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+".png"
+        $ hermione_hair_b = "characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+"_2.png"
+    else:
+        $ hermione_hair_a = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
+        $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    return
 
 #Hair Update 
 label h_update_hair:

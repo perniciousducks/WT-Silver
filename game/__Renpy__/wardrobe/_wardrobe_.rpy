@@ -7,6 +7,13 @@ screen wardrobe():
 
     imagemap:
         cache False
+        
+        if active_girl == "hermione":
+            [SetVariable("icon_ypos_offset",0)]
+        if active_girl == "astoria": #She's too small! >.<
+            [SetVariable("icon_ypos_offset",10)]
+        if active_girl == "susan":
+            [SetVariable("icon_ypos_offset",0)]
 
         ## Ground & Hovers ##
         if wardrobe_page == 0: #default
@@ -776,7 +783,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("top_color_choice",wardrobe_uniform_color),SetVariable("top_choice",wr_tops_uniform[i]), Jump("equip_top")]
-                    add "characters/"+str(active_girl)+"/clothes/tops/"+str(wardrobe_uniform_color)+"/"+wr_tops_uniform[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35
+                    add "characters/"+str(active_girl)+"/clothes/tops/"+str(wardrobe_uniform_color)+"/"+wr_tops_uniform[i]+".png" xpos 15+(90*col) ypos (60+"+icon_ypos_offset+"+92+(92*row)) zoom 0.35
 
             #Muggle
             if wardrobe_tops_category == 1:
@@ -1053,12 +1060,12 @@ screen wardrobe():
             #Piercings
             if active_girl in ["hermione"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",3),Show("wardrobe")]
-                add "interface/wardrobe/icons/items/piercing.png" xpos 0+270 ypos 90 zoom 0.3
+                add "interface/wardrobe/icons/items/piercingB.png" xpos 0+270 ypos 90 zoom 0.3
                 text "Piercings" xpos 76+270 ypos 140+75 size 10
             #Tattoos
             if active_girl in ["hermione"]:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",4),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+360 ypos -120
+                add "interface/wardrobe/icons/items/tattoo.png" xpos 0+360 ypos 90 zoom 0.3
                 text "Tattoos" xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
@@ -1105,7 +1112,7 @@ screen wardrobe():
             ##  Piercings ##
             if wardrobe_accessories_category == 3:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/items/piercing.png" xpos 0+270 ypos 90 zoom 0.3
+                add "interface/wardrobe/icons/items/piercingB.png" xpos 0+270 ypos 90 zoom 0.3
                 text "Piercings" xpos 76+270 ypos 140+75 size 10
                 for i in range(0,len(wr_piercings_list)):
                     $ row = i // 5
@@ -1117,7 +1124,7 @@ screen wardrobe():
             ##  Tattoos ##
             if wardrobe_accessories_category == 4:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/spew_badge.png" xpos -130+360 ypos -120
+                add "interface/wardrobe/icons/items/tattoo.png" xpos 0+360 ypos 90 zoom 0.3
                 text "Tattoos" xpos 76+360 ypos 140+75 size 10
                 for i in range(0,len(wr_tattoos_list)):
                     $ row = i // 5

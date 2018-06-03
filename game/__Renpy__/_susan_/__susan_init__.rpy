@@ -34,9 +34,9 @@ label susan_init:
         
         #Save State
         $ sus_request_wear_top              = True
-        $ sus_request_wear_bra              = False
+        $ sus_request_wear_bra              = True
         $ sus_request_wear_bottom           = True
-        $ sus_request_wear_panties          = False
+        $ sus_request_wear_panties          = True
 
         $ sus_request_wear_onepiece         = False
         $ sus_request_wear_garterbelt       = False

@@ -1,122 +1,85 @@
+label add_house_points(house, points):
+    $ house_pos = {"r":175,"s":286,"g":393,"h":502}
+    show screen points_overlay(house)
+    show screen adding_house_points(points, house_pos[house])
+    with Dissolve(0.75)
+    if house == "r":
+        $ ravenclaw += int(points)
+    if house == "s":
+        $ slytherin += int(points)
+    if house == "g":
+        $ gryffindor += int(points)
+    if house == "h":
+        $ hufflepuff += int(points)
+    pause 1
+    hide screen adding_house_points
+    hide screen points_overlay
+    with Dissolve(0.75)
+return
 
+screen adding_house_points(points, house_xpos):
+    text "[points]" at Position(xpos=house_xpos, ypos=8)
+    zorder 4
+
+screen points_overlay(house): #House points screen.
+    add "interface/points/TopUI_Bar_Overlay.png" at Position(xpos=140, ypos=1)
+    if house != "s":
+        hbox:
+            spacing 10 xpos 286 ypos 11
+            text "{size=-5}[slytherin]{/size}"
+    if house != "g":
+        hbox:
+            spacing 10 xpos 392 ypos 11
+            text "{size=-5}[gryffindor]{/size}" #сумма текстом
+    if house != "h":
+        hbox: 
+            spacing 10 xpos 505 ypos 11
+            text "{size=-5}[hufflepuff]{/size}" 
+    if house != "r":
+        hbox: 
+            spacing 10 xpos 177 ypos 11
+            text "{size=-5}[ravenclaw]{/size}"
+    zorder 3
 
 ### Gryffindor, Hufflepuff, Ravenclaw Points ###
-
 label points_changes_gryffindor:
 
     ### GRYFFINDOR POINTS ###
-    if generating_points_gryffindor == 1 or generating_points_gryffindor == 2: # 0 POINT.
-        pass
-    elif generating_points_gryffindor == 3 or generating_points_gryffindor == 4: # 1 POINTS.
-        $ gryffindor +=1
-        hide screen g_p_u
-        $ g_p_u_pic = "what_01_points"
-        show screen g_p_u
-
-    elif generating_points_gryffindor == 5 or generating_points_gryffindor == 6: # 2 POINTS.
-        $ gryffindor +=2
-        hide screen g_p_u
-        $ g_p_u_pic = "what_02_points"
-        show screen g_p_u
-    
-    elif generating_points_gryffindor == 7 or generating_points_gryffindor == 8: # 3 POINTS
-        $ gryffindor +=3
-        hide screen g_p_u
-        $ g_p_u_pic = "what_03_points"
-        show screen g_p_u
-
-    elif generating_points_gryffindor == 9: # 5 POINTS.
-        $ gryffindor +=5
-        hide screen g_p_u
-        $ g_p_u_pic = "what_05_points"
-        show screen g_p_u
-
-        
-    elif generating_points_gryffindor == 10: 
-        $ gryffindor +=11
-        hide screen g_p_u
-        $ g_p_u_pic = "what_11_points"
-        show screen g_p_u
+    elif 3 <= generating_points_gryffindor <= 4:
+        call add_house_points("g","+1")
+    elif 5 <= generating_points_gryffindor <= 6:
+        call add_house_points("g","+2")
+    elif 7 <= generating_points_gryffindor <= 8:
+        call add_house_points("g","+3")
+    elif generating_points_gryffindor == 9:
+        call add_house_points("g","+5")
+    elif generating_points_gryffindor == 10:
+        call add_house_points("g","+11")
 
 
-
-    
-###  Hufflepuff ###
-
-
-    if generating_points_hufflepuff == 1 or generating_points_hufflepuff == 2: # 0 POINT.
-        pass
-        
-    elif generating_points_hufflepuff == 3 or generating_points_hufflepuff == 4: # 1 POINTS.
-        $ hufflepuff +=1
-        hide screen h_p_u
-        $ h_p_u_pic = "what_01_points"
-        show screen h_p_u
-    
-    elif generating_points_hufflepuff == 5 or generating_points_hufflepuff == 6: # 2 POINTS.
-        $ hufflepuff +=2
-        hide screen h_p_u
-        $ h_p_u_pic = "what_02_points"
-        show screen h_p_u
-    
-    elif generating_points_hufflepuff == 7 or generating_points_hufflepuff == 8: # 3 POINTS
-        $ hufflepuff +=4
-        hide screen h_p_u
-        $ h_p_u_pic = "what_04_points"
-        show screen h_p_u
-        
-    elif generating_points_hufflepuff == 9: # 5 POINTS.
-        $ hufflepuff +=7
-        hide screen h_p_u
-        $ h_p_u_pic = "what_07_points"
-        show screen h_p_u
-        
-    elif generating_points_hufflepuff == 10: #15 POINTS.
-        $ hufflepuff +=14
-        hide screen h_p_u
-        $ h_p_u_pic = "what_14_points"
-        show screen h_p_u
+    ###  Hufflepuff ###
+    if 3 <= generating_points_hufflepuff <= 4:
+        call add_house_points("h","+1")
+    elif 5 <= generating_points_hufflepuff <= 6:
+        call add_house_points("h","+2")
+    elif 7 <= generating_points_hufflepuff <= 8:
+        call add_house_points("h","+4")
+    elif generating_points_hufflepuff == 9:
+        call add_house_points("h","+7")
+    elif generating_points_hufflepuff == 10:
+        call add_house_points("h","+14")
 
 
-### Ravenclaw ###
+    ### Ravenclaw ###
+    if 3 <= generating_points_ravenclaw <= 4:
+        call add_house_points("r","+1")
+    elif 5 <= generating_points_ravenclaw <= 6:
+        call add_house_points("r","+2")
+    elif 7 <= generating_points_ravenclaw <= 8:
+        call add_house_points("r","+6")
+    elif generating_points_ravenclaw == 9:
+        call add_house_points("r","+8")
+    elif generating_points_ravenclaw == 10:
+        call add_house_points("r","+13")
 
-
-    if generating_points_ravenclaw == 1 or generating_points_ravenclaw == 2: # 0 POINT.
-        pass
-    elif generating_points_ravenclaw == 3 or generating_points_ravenclaw == 4: # 1 POINTS.
-        $ ravenclaw +=1
-        hide screen r_p_u
-        $ r_p_u_pic = "what_01_points"
-        show screen r_p_u
-    
-    elif generating_points_ravenclaw == 5 or generating_points_ravenclaw == 6: # 2 POINTS.
-        $ ravenclaw +=2
-        hide screen r_p_u
-        $ r_p_u_pic = "what_02_points"
-        show screen r_p_u
-    
-    elif generating_points_ravenclaw == 7 or generating_points_ravenclaw == 8: # 3 POINTS
-        $ ravenclaw +=6
-        hide screen r_p_u
-        $ r_p_u_pic = "what_06_points"
-        show screen r_p_u
-        
-    elif generating_points_ravenclaw == 9: # 5 POINTS.
-        $ ravenclaw +=8
-        hide screen r_p_u
-        $ r_p_u_pic = "what_08_points"
-        show screen r_p_u
-        
-    elif generating_points_ravenclaw == 10: #15 POINTS.
-        $ ravenclaw +=13
-        hide screen r_p_u
-        $ r_p_u_pic = "what_13_points"
-        show screen r_p_u
-
-
-
-
-
-return 
-
-
+return

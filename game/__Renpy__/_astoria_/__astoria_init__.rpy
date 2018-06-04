@@ -16,7 +16,7 @@ label astoria_init:
         $ astoria_zorder              = 5
 
         #Face
-        $ astoria_mouth               = "characters/astoria/face/mouth/c_smile.png"
+        $ astoria_mouth               = "characters/astoria/face/mouth/smile.png"
         $ ast_mouth                   = "base"
         $ ast_lipstick                = "nude" 
         

@@ -16,11 +16,11 @@ label tonks_init:
         $ tonks_zorder              = 5
 
         #Face
-        $ tonks_mouth               = "characters/tonks/face/mouth/default.png" 
-        $ tonks_eye                 = "characters/tonks/face/eyes/eye_standard.png" 
+        $ tonks_mouth               = "characters/tonks/face/mouth/base.png" 
+        $ tonks_eye                 = "characters/tonks/face/eyes/eye_base.png" 
         $ tonks_white               = "characters/tonks/face/eyes/white.png" 
-        $ tonks_eyebrow             = "characters/tonks/face/eyes/brow_standard.png" 
-        $ tonks_pupil               = "characters/tonks/face/eyes/pupil_standard.png" 
+        $ tonks_eyebrow             = "characters/tonks/face/eyes/brow_base.png" 
+        $ tonks_pupil               = "characters/tonks/face/eyes/pupil_base.png" 
         $ tonks_tears               = "characters/tonks/extras/blank.png" 
         $ tonks_blush               = "characters/tonks/extras/blank.png"
 
@@ -28,19 +28,19 @@ label tonks_init:
         $ tonks_coat                = "characters/tonks/clothes/auror/coat.png" 
         $ tonks_coat_back           = "characters/tonks/clothes/auror/coat_back.png" 
         $ tonks_top                 = "characters/tonks/clothes/auror/undershirt.png" 
-        $ tonks_acc                 = "characters/tonks/clothes/auror/earing.png" 
+        $ tonks_accs                = "characters/tonks/clothes/auror/earing.png" 
         $ tonks_skirt               = "characters/tonks/clothes/auror/pants.png" 
-        $ tonks_stock               = "characters/tonks/clothes/blank.png" 
+        $ tonks_stockings           = "characters/tonks/clothes/blank.png" 
         $ tonks_bra                 = "characters/tonks/clothes/blank.png"  
         $ tonks_panties             = "characters/tonks/clothes/blank.png" 
 
         $ tonks_wear_coat           = True
         $ tonks_wear_top            = True
         $ tonks_wear_bra            = True
-        $ tonks_wear_skirt          = True
+        $ tonks_wear_bottom         = True
         $ tonks_wear_panties        = True
         $ tonks_wear_stockings      = True 
-        $ tonks_wear_acc            = True
+        $ tonks_wear_accs           = True
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

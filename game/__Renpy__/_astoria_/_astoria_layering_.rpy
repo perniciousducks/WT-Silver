@@ -44,7 +44,7 @@ screen astoria_main:
     ### ZORDER
     zorder astoria_zorder
 
-label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
     hide screen atoria_main
     
     #Positioning
@@ -74,7 +74,7 @@ label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
             
 
             
-    $ changeAstoria(eye, eyebrow, pupil, mouth, astoria_xpos, astoria_ypos, base, extra_1, extra_2, extra_3)
+    $ changeAstoria(mouth, eye, eyebrow, pupil, astoria_xpos, astoria_ypos, base, extra_1, extra_2, extra_3)
     
     show screen astoria_main
     show screen bld1
@@ -117,10 +117,10 @@ label ast_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
     
 
 init python:
-    def changeAstoria(  eye=None,
+    def changeAstoria(  mouth=None,
+                        eye=None,
                         eyebrow=None, 
-                        pupil=None, 
-                        mouth=None, 
+                        pupil=None,  
                         x_pos=None, 
                         y_pos=None,
                         base=None,
@@ -128,10 +128,10 @@ init python:
                         extra_2=None,
                         extra_3=None): 
         ###DEFINE GLOBAL VARIABLES
+        global astoria_mouth
         global astoria_eye
         global astoria_eyebrow
         global astoria_pupil
-        global astoria_mouth
         global astoria_xpos
         global astoria_ypos
         global astoria_base
@@ -139,14 +139,14 @@ init python:
         global astoria_extra_2
         global astoria_extra_3
         ###EMOTION CONTROL
+        if mouth is not None:
+            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
         if eye is not None:
             astoria_eye         = "characters/astoria/face/eyes/eye_"+eye+".png" 
         if eyebrow is not None:
             astoria_eyebrow     = "characters/astoria/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:
             astoria_pupil       = "characters/astoria/face/eyes/pupil_"+pupil+".png" 
-        if mouth is not None:
-            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
         ###POSITION CONTROL
         if x_pos is not None:
             astoria_xpos        = x_pos

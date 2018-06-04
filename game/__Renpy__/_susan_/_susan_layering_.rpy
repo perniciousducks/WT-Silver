@@ -42,7 +42,7 @@ screen susan_main:
     zorder susan_zorder
 
     
-label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
     hide screen susan_main
     
     
@@ -71,7 +71,7 @@ label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
         else:
             $ susan_ypos = int(ypos)
             
-    $ changeSusan(eye, eyebrow, pupil, mouth, susan_xpos, susan_ypos, base, extra_1, extra_2, extra_3)
+    $ changeSusan(mouth, eye, eyebrow, pupil, susan_xpos, susan_ypos, base, extra_1, extra_2, extra_3)
     
     show screen susan_main
     show screen bld1
@@ -114,10 +114,10 @@ label sus_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None, base=None
 
     
 init python:
-    def changeSusan(  eye=None,
+    def changeSusan(    mouth=None, 
+                        eye=None,
                         eyebrow=None, 
                         pupil=None, 
-                        mouth=None, 
                         x_pos=None, 
                         y_pos=None,
                         base=None,
@@ -125,10 +125,10 @@ init python:
                         extra_2=None,
                         extra_3=None): 
         ###DEFINE GLOBAL VARIABLES
+        global susan_mouth
         global susan_eye
         global susan_eyebrow
         global susan_pupil
-        global susan_mouth
         global susan_xpos
         global susan_ypos
         global susan_base
@@ -136,14 +136,14 @@ init python:
         global susan_extra_2
         global susan_extra_3
         ###EMOTION CONTROL
+        if mouth is not None:
+            susan_mouth       = "characters/susan/face/mouth/"+mouth+".png"
         if eye is not None:
             susan_eye         = "characters/susan/face/eyes/eye_"+eye+".png" 
         if eyebrow is not None:
             susan_eyebrow     = "characters/susan/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:
-            susan_pupil       = "characters/susan/face/eyes/pupil_"+pupil+".png" 
-        if mouth is not None:
-            susan_mouth       = "characters/susan/face/mouth/"+mouth+".png" 
+            susan_pupil       = "characters/susan/face/eyes/pupil_"+pupil+".png"  
         ###POSITION CONTROL
         if x_pos is not None:
             susan_xpos        = x_pos

@@ -160,38 +160,38 @@ label astoria_captured_intro:
     call her_main("","normal","angry")
     pause.2
     
-    call ast_main("...","averted","sad","averted","c_pout")
+    call ast_main("...","pout","averted","sad","averted")
     m "..."
     m "Who's this?"
-    call ast_main("My name is Astoria Greengrass, sir.","averted","sad","averted","c_grimace")
+    call ast_main("My name is Astoria Greengrass, sir.","disgust","averted","sad","averted",xpos="mid",ypos="base")
     m "And why are you here?"
     call her_main("You asked me to bring you the person who cast the unforgivable curse sir.","soft","annoyed")
     call her_main("Here she is.","grin","angry")
     m "I thought it would be some angsty teen who listens to death metal or something..."
     m "not some little girl..."
-    call ast_main("I am not a little girl!","angry","angry","angry","o_angry")
+    call ast_main("I am not a little girl!","scream","angry","angry","angry")
     m "What are you then, a 600 year old vampire?"
-    call ast_main("Vampires aren't real!","angry","angry","averted","c_pout")
+    call ast_main("Vampires aren't real!","pout","angry","angry","averted")
     m "..."
     m "So how are you not a little girl then?"
-    call ast_main("I'm older than I look!","angry","angry","angry","c_pout")
+    call ast_main("I'm older than I look!","pout","angry","angry","angry")
     m "I've heard that one before..."
     call her_main("It's true, sir. She was a cursed child, born with a frailty that affects her growth.","normal","concerned")
-    call ast_main("Told you!","angry","angry","averted","c_smile")
+    call ast_main("Told you!","smile","angry","angry","averted")
     m "Whatever... that still doesn't get you out of punishment."
-    call ast_main("punishment? for what?","surprised","surprised","surprised","c_pout")
+    call ast_main("punishment? for what?","pout","surprised","surprised","surprised")
     call her_main("You know what you did!","angry","angryCl")
-    call ast_main("I never casted Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!","surprised","sad","averted","c_pout")
+    call ast_main("I never casted Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!","pout","surprised","sad","averted")
     m "Miss Granger..."
     call her_main("I overheard her boasting about it to a group of slytherins in the library.","annoyed","concerned")
     call her_main("By the sounds of it she used Imperio to control another student.","annoyed","narrow")
-    call ast_main("Did not!","angry","sad","angry","c_worried")
+    call ast_main("Did not!","worried","angry","sad","angry")
     m "Well, given the severity of the situation, I'm sure there's something we can use to get a clear answer out of you..."
     call her_main("Shall I go fetch a vial of veritaserum from professor snape, sir?","grin","narrow")
-    call ast_main("v-veritaserum? Isn't that against the rules?","surprised","sad","surprised","c_worried2")
+    call ast_main("v-veritaserum? Isn't that against the rules?","scream","surprised","sad","surprised")
     call her_main("Not when you've been casting unforgivable curses you evil little witch!","grin","angry")
-    call ast_main("OK... I'll tell you what happened sir...","sad","sad","sad","c_pout")
-    call ast_main("But only if Hermione leaves!","halflid","halflid","halflid","c_pout")
+    call ast_main("OK... I'll tell you what happened sir...","pout","sad","sad","sad")
+    call ast_main("But only if Hermione leaves!","pout","halflid","halflid","halflid")
     call her_main("Not a chance!","scream","angryCl")
     m "Miss granger..."
     call her_main("professor! I think it's only fair, given that I was the one to catch her!","upset","annoyed")
@@ -216,31 +216,31 @@ label astoria_captured_intro:
     hide screen white
     with hpunch
     
-    call ast_main("IMPERIO!!!","angry","angry","angry","o_angry")
+    call ast_main("IMPERIO!!!","scream","angry","angry","angry")
     
     call blktone
     m "..."
     m "What was that?"
     call hide_blktone
     
-    call ast_main("I just casted Imperio on you, professor! Now you have to do everything I say!","halflid","halflid","halflid","c_grin")
+    call ast_main("I just casted Imperio on you, professor! Now you have to do everything I say!","grin","halflid","halflid","halflid")
     g4 "Did you just do it again? Another bloody curse... on me?"
-    call ast_main("yes... but it should have... why aren't you...","halflid","scared","halflid","c_worried")
+    call ast_main("yes... but it should have... why aren't you...","worried","halflid","scared","halflid")
     m "Ugh..."
     m "I better get Snape up here."
-    call ast_main("professor snape? I command you not to!","angry","angry","angry","c_worried2")
+    call ast_main("professor snape? I command you not to!","scream","angry","angry","angry")
     m "yeah, no. I'm bringing him up here because now we're probably going to have to deal with something called an auror coming to the school."
-    call ast_main("An auror?!","surprised","surprised","surprised","c_worried")
-    call ast_main("But they'll send me to Azkaban!","sad","scared","sad","c_worried2")
+    call ast_main("An auror?!","worried","surprised","surprised","surprised")
+    call ast_main("But they'll send me to Azkaban!","scream","sad","scared","sad")
     m "I'm sure they'll be lenient, you're only a child after all."
-    call ast_main("I am not a child!","angry","angry","angry","o_angry")
+    call ast_main("I am not a child!","scream","angry","angry","angry")
     m "ugh... I better get Snape."
     
     call play_sound("door")
     call sna_walk("door","mid",2)
     
     call sna_main("gen- oh, I see you already have a visitor...","snape_01",xpos="base",ypos="base")
-    call ast_main("...","averted","scared","averted","c_pout")
+    call ast_main("...","pout","averted","scared","averted")
     sna "Little young isn't she? even for you..."
     m "It's not that sort of visit."
     sna "Really? Then what's she doing here."
@@ -249,9 +249,9 @@ label astoria_captured_intro:
     sna "I expect better than this from my students, miss Greengrass..."
     sna "The very first lesson I give you is to not. get. caught!"
     sna "Do you have anything to say for yourself?"
-    call ast_main("I-I'm sorry, sir... It won't happen again.","sad","sad","sad","c_grimace")
+    call ast_main("I-I'm sorry, sir... It won't happen again.","disgust","sad","sad","sad")
     sna "Well as long as you only cast it once..."
-    call ast_main("Twice...","averted","sad","averted","c_grimace")
+    call ast_main("Twice...","disgust","averted","sad","averted")
     sna "TWICE!?!"
     sna "But that means..."
     sna "There's probably an auror on the way right now!"
@@ -259,11 +259,11 @@ label astoria_captured_intro:
     pause.5
     sna "Who did you cast them on you little idiot?"
     sna "Who did you curse?"
-    call ast_main("Well the first time I was just testing it out on Susan Bones...","sad","sad","sad","c_grimace")
-    call ast_main("She was being mean to me so I... might have used imperio... to embarrass her a little...","halflid","sad","halflid","c_smile")
+    call ast_main("Well the first time I was just testing it out on Susan Bones...","disgust","sad","sad","sad")
+    call ast_main("She was being mean to me so I... might have used imperio... to embarrass her a little...","smile","halflid","sad","halflid")
     sna "And the second time?"
-    call ast_main("I just tried to use imperio on professor Dumbledore then, so he wouldn't get me in trouble...","averted","averted","averted","c_grimace")
-    call ast_main("But it didn't work!","averted","averted","surprised","c_pout")
+    call ast_main("I just tried to use imperio on professor Dumbledore then, so he wouldn't get me in trouble...","disgust","averted","averted","averted")
+    call ast_main("But it didn't work!","pout","averted","averted","surprised")
     sna "Really? It must be because he's a geni-"
     sna "Genius wizard!"
     sna "But this is not good... If they're sending an auror here then they'll want to talk to you... Dumbledore..."
@@ -275,30 +275,30 @@ label astoria_captured_intro:
     call sna_walk("mid","leave",1.5)
     
     g4 "COWARD!"
-    call ast_main("So there really is an auror coming?","scared","scared","scared","c_worried")
-    call ast_main("I've heard that they're all trained by madeye moody...","scared","scared","scared","c_worried")
-    call ast_main("PLEASE SIR!","surprised","surprised","surprised","c_worried",extra_1="tears_1")
+    call ast_main("So there really is an auror coming?","worried","scared","scared","scared")
+    call ast_main("I've heard that they're all trained by madeye moody...","worried","scared","scared","scared")
+    call ast_main("PLEASE SIR!","worried","surprised","surprised","surprised",extra_1="tears_1")
     call ast_main("YOU CAN'T LET THEM SEND ME TO Azkaban!")
-    call ast_main("I promise I'll be good! I won't cast anymore curses!","sad","sad","sad","c_worried2")
-    call ast_main("I'll do whatever you want!","averted","sad","averted","c_worried2")
+    call ast_main("I promise I'll be good! I won't cast anymore curses!","scream","sad","sad","sad")
+    call ast_main("I'll do whatever you want!","scream","averted","sad","averted")
     m "Calm down..."
-    call ast_main("b-b-but... I don't want to... go to Azkaban...","sad","sad","sad","c_worried")
+    call ast_main("b-b-but... I don't want to... go to Azkaban...","worried","sad","sad","sad")
     m "I'm not going to let them take you to Azkaban."
-    call ast_main("r-r-r-really? even after I tried to control you?","sad","sad","sad","c_smile")
+    call ast_main("r-r-r-really? even after I tried to control you?","smile","sad","sad","sad")
     m "(There's not a single being that could possibly control me!)" #4th wall break, lololol
     m "we'll talk about your punishment later. For now, I think it's better for you to go back to your room."
-    call ast_main("A-a-alright... but what about the auror?","one","one","one","c_worried")
+    call ast_main("A-a-alright... but what about the auror?","worried","one","one","one")
     m "I'll just explain to them that this was all a simple misunderstanding."
-    call ast_main("T-thank you, sir...","halflid","halflid","halflid","c_smile")
+    call ast_main("T-thank you, sir...","smile","halflid","halflid","halflid")
     m "However, I do expect you to come to my office whenever I summon you from now on."
-    call ast_main("W-what? Why?","surprised","sad","surprised","c_pout",extra_1="blank")
+    call ast_main("W-what? Why?","pout","surprised","sad","surprised",extra_1="blank")
     m "I might have to call you up here to see the auror. Not to mention we still have the matter of your punishment."
-    call ast_main("But I thought it was all just a misunderstanding?","averted","halflid","averted","c_pout")
+    call ast_main("But I thought it was all just a misunderstanding?","pout","averted","halflid","averted")
     m "You've committed a very serious offense here young girl. Just because you're not going to Azkaban, doesn't mean you're getting out of punishment."
-    call ast_main("Alright sir...","averted","sad","averted","c_pout")
+    call ast_main("Alright sir...","pout","averted","sad","averted")
     m "Good. Now go back to your room until I summon you."
     g4 "And stop with the bloody curses!"
-    call ast_main("yes sir...","sad","sad","sad","c_pout")
+    call ast_main("yes sir...","pout","sad","sad","sad")
     hide screen astoria_main
     with d3
     
@@ -318,117 +318,117 @@ label tonks_intro_event: #occurs a day or two after the last event
     m "(Shit, another female... Is snape the only dude on this planet?)"
     g9 "(Better to just let my charm play...)"
     m "Yes... come in."
-    call ton_main("","base","base","mid","base")
+    call ton_main("","base","base","base","mid")
     call ctc
     g4 "(Holy shit!)"
     g9 "(She's hot!)"
-    call ton_main("Thank you sir... I assume you know why I'm here then?","base","base","mid","open")
+    call ton_main("Thank you sir... I assume you know why I'm here then?","open","base","base","mid")
     m "The curses, I'd imagine."
-    call ton_main("Yes. As I'm sure you're aware, it's ministry protocol to have an auror investigate every instance of an unforgivable curse being cast.","base","base","R","base")
-    call ton_main("The ministry was willing to ignore one curse given the likelihood that it was just a student playing about...","base","base","down","base")
-    call ton_main("Two curses on the other hand, cannot be ignored.","base","concerned","mid","base")
+    call ton_main("Yes. As I'm sure you're aware, it's ministry protocol to have an auror investigate every instance of an unforgivable curse being cast.","base","base","base","R")
+    call ton_main("The ministry was willing to ignore one curse given the likelihood that it was just a student playing about...","base","base","base","down")
+    call ton_main("Two curses on the other hand, cannot be ignored.","base","base","concerned","mid")
     m "I understand..."
-    call ton_main("Well, first things first, do you know who it was that cast the spells?","base","raised","mid","base")
+    call ton_main("Well, first things first, do you know who it was that cast the spells?","base","base","raised","mid")
     m "I do."
-    call ton_main("Fantastic, that saves me most of the effort involved with divination and location spells.","base","base","L","base")
-    call ton_main("Secondly, are you aware of what spell was cast?","base","base","mid","base")
+    call ton_main("Fantastic, that saves me most of the effort involved with divination and location spells.","base","base","base","L")
+    call ton_main("Secondly, are you aware of what spell was cast?","base","base","base","mid")
     m "(Shit... what was it called again?)"
     menu:
         "\'Imperio\'":
-            call ton_main("I thought as much.","base","base","R","base")
+            call ton_main("I thought as much.","base","base","base","R")
         "\'Imperial\'":
-            call ton_main("Do you mean imperio sir?","base","raised","mid","base")
+            call ton_main("Do you mean imperio sir?","base","base","raised","mid")
             m "Yes of course, forgive me..."
         "\'Imp Pio?\'":
-            call ton_main("...","base","raised","mid","base")
-            call ton_main("This is a serious matter sir, I'd prefer if you kept the jokes to a minimum.","base","base","mid","base")
+            call ton_main("...","base","base","raised","mid")
+            call ton_main("This is a serious matter sir, I'd prefer if you kept the jokes to a minimum.","base","base","base","mid")
             m "certainly..."
-    call ton_main("Well, I'm not surprised, It usually is Imperio. Most students don't have the guts to cast crucio on another person, let alone Avada Cadavara...","base","concerned","R","base")
-    call ton_main("And lastly, are you aware who the curse was cast on?","base","raised","mid","base")
+    call ton_main("Well, I'm not surprised, It usually is Imperio. Most students don't have the guts to cast crucio on another person, let alone Avada Cadavara...","base","base","concerned","R")
+    call ton_main("And lastly, are you aware who the curse was cast on?","base","base","raised","mid")
     m "I am."
-    call ton_main("If you wouldn't mind...","base","base","up","base")
+    call ton_main("If you wouldn't mind...","base","base","base","up")
     m "Susan Bones."
     m "(Whoever that is...)"
-    call ton_main("Susan Bones!","wide","wide","wide","wide")
+    call ton_main("Susan Bones!","open","wide","wide","wide")
     m "Is there something wrong?"
-    call ton_main("Of course there's something wrong!","wide","angry","wide","wide")
-    call ton_main("Susan's my niece!","base","angry","mid","wide")
-    call ton_main("and you just let her have an unforgivable curse cast on her?","base","angry","mid","wide")
+    call ton_main("Of course there's something wrong!","open","wide","angry","wide")
+    call ton_main("Susan's my niece!","open","base","angry","mid")
+    call ton_main("and you just let her have an unforgivable curse cast on her?","open","base","angry","mid")
     call ton_main("Aren't you supposed to protect your students from these sort of things?")
     m "There's only so much I can do-"
-    call ton_main("Typical! You're just like the ministry, never willing to take responsibility for your failings.","base","angry","R","wide")
-    call ton_main("At least bring the son of a bitch who cursed my niece up here so I can escort them to Azkaban.","base","angry","mid","wide")
+    call ton_main("Typical! You're just like the ministry, never willing to take responsibility for your failings.","open","base","angry","R")
+    call ton_main("At least bring the son of a bitch who cursed my niece up here so I can escort them to Azkaban.","open","base","angry","mid")
     m "Azkaban? I thought that I was being put in charge of their punishment?"
-    call ton_main("That was before I found out who it was that had been cursed, Dumbledore!","base","angry","mid","wide")
-    call ton_main("Now they're going to be punished to the full extent of the law.","wide","angry","wide","wide")
-    call ton_main("Which means a lifetime sentence in Azkaban!","base","base","mid","base")             #CONTINUE!!!!!!!!!!
+    call ton_main("That was before I found out who it was that had been cursed, Dumbledore!","open","base","angry","mid")
+    call ton_main("Now they're going to be punished to the full extent of the law.","open","wide","angry","wide")
+    call ton_main("Which means a lifetime sentence in Azkaban!","open","base","base","mid")             #CONTINUE!!!!!!!!!!
     m "..."
-    call ton_main("Well are you going to bring them up here or not?","base","base","mid","base")
+    call ton_main("Well are you going to bring them up here or not?","open","base","base","mid")
     m "I really don't think-"
-    call ton_main("I don't care if it was Harry {b}fucking{/b} Potter himself that did it, they're going to Azkaban!","base","base","mid","base")
-    call ton_main("so... Bring. {size=+2}them. {size=+2}up. {size=+2}here. {size=+2}now!{/size}","base","base","mid","base")
+    call ton_main("I don't care if it was Harry {b}fucking{/b} Potter himself that did it, they're going to Azkaban!","open","base","base","mid")
+    call ton_main("so... Bring. {size=+2}them. {size=+2}up. {size=+2}here. {size=+2}now!{/size}","open","base","base","mid")
     m "alright..."
     ">You summon Astoria up to your office."
-    call ast_main("Hello professor.","sad","sad","sad","c_blank")
-    call ton_main("...","base","base","mid","base")
-    call ast_main("Hello mam.","sad","sad","sad","c_blank")
-    call ton_main("H-hello...","base","base","mid","base")
-    call ast_main("You wanted to see me sir?","sad","sad","sad","c_blank")
+    call ast_main("Hello professor.","upset","sad","sad","sad")
+    call ton_main("...","base","base","base","mid")
+    call ast_main("Hello mam.","upset","sad","sad","sad")
+    call ton_main("H-hello...","base","base","base","mid")
+    call ast_main("You wanted to see me sir?","upset","sad","sad","sad")
     m "I'm afraid not, it was actually Miss Tonks here who wanted you brought up here."
-    call ast_main("Oh...","sad","sad","sad","c_blank")
-    call ast_main("Is everything alright?","sad","sad","sad","c_blank")
-    call ton_main("You can't be serious Dumbledore...","base","base","mid","base")
-    call ton_main("Bring the actual caster up here.","base","base","mid","base")
+    call ast_main("Oh...","upset","sad","sad","sad")
+    call ast_main("Is everything alright?","upset","sad","sad","sad")
+    call ton_main("You can't be serious Dumbledore...","base","base","base","mid")
+    call ton_main("Bring the actual caster up here.","base","base","base","mid")
     m "You're looking at her."
-    call ton_main("Honestly?","base","base","mid","base")
+    call ton_main("Honestly?","base","base","base","mid")
     m "Truly."
-    call ast_main("Is this about the imperio I cast...","sad","sad","sad","c_blank")
-    call ast_main("I'm really sorry! I promise I won't ever cast it again!","sad","sad","sad","c_blank")
-    call ton_main("Really? It was you that cast the spell?","base","base","mid","base")
-    call ton_main("but...","base","base","mid","base")
-    call ton_main("but.......","base","base","mid","base")
-    call ton_main("But you're so {size=+20}cute!{/size}","base","base","mid","base")
+    call ast_main("Is this about the imperio I cast...","upset","sad","sad","sad")
+    call ast_main("I'm really sorry! I promise I won't ever cast it again!","upset","sad","sad","sad")
+    call ton_main("Really? It was you that cast the spell?","base","base","base","mid")
+    call ton_main("but...","base","base","base","mid")
+    call ton_main("but.......","base","base","base","mid")
+    call ton_main("But you're so {size=+20}cute!{/size}","base","base","base","mid")
     m "..."
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ton_main("It couldn't possibly have been someone like you!","base","base","mid","base")
-    call ast_main("I'm sorry miss... it was me...","sad","sad","sad","c_blank")
-    call ton_main("really?","base","base","mid","base")
-    call ast_main("please don't send me to Azkaban!","sad","sad","sad","c_blank")
-    call ast_main("I don't want to go where the dementors are!","sad","sad","sad","c_blank")
-    call ton_main("Don't worry, It won't come to that...","base","base","mid","base")
-    call ast_main("r-r-r-really?","sad","sad","sad","c_blank")
-    call ton_main("Of course not! THe ministry isn't going to lock away a cute little thing like yourself for life over a little harmless fun.","base","base","mid","base")
+    call ast_main("...","upset","sad","sad","sad")
+    call ton_main("It couldn't possibly have been someone like you!","base","base","base","mid")
+    call ast_main("I'm sorry miss... it was me...","upset","sad","sad","sad")
+    call ton_main("really?","base","base","base","mid")
+    call ast_main("please don't send me to Azkaban!","upset","sad","sad","sad")
+    call ast_main("I don't want to go where the dementors are!","upset","sad","sad","sad")
+    call ton_main("Don't worry, It won't come to that...","base","base","base","mid")
+    call ast_main("r-r-r-really?","upset","sad","sad","sad")
+    call ton_main("Of course not! THe ministry isn't going to lock away a cute little thing like yourself for life over a little harmless fun.","base","base","base","mid")
     m "..."
-    call ton_main("So what did you make susan do anyway? RUn around like a chicken?","base","base","mid","base")
-    call ast_main("Not exactly...","sad","sad","sad","c_blank")
-    call ton_main("Well come on then, no need to be secretive here.","base","base","mid","base")
-    call ast_main("I might have made her show her boobs to some second years...","sad","sad","sad","c_blank")
-    call ast_main("Just for a second!","sad","sad","sad","c_blank")
-    call ton_main("hahahaha!","base","base","mid","base")
+    call ton_main("So what did you make susan do anyway? RUn around like a chicken?","base","base","base","mid")
+    call ast_main("Not exactly...","upset","sad","sad","sad")
+    call ton_main("Well come on then, no need to be secretive here.","base","base","base","mid")
+    call ast_main("I might have made her show her boobs to some second years...","upset","sad","sad","sad")
+    call ast_main("Just for a second!","upset","sad","sad","sad")
+    call ton_main("hahahaha!","base","base","base","mid")
     m "(what's going on here?)"
-    call ton_main("Is that all? You probably did Susan some good then, lord knows she needs to loosen up a bit.","base","base","mid","base")
-    call ton_main("She always has been very sensitive about her body for some reason.","base","base","mid","base")
-    call ast_main("So I'm not going to get in trouble?","sad","sad","sad","c_blank")
-    call ton_main("I didn't say that... You still cast a very serious spell...","base","base","mid","base")
-    call ton_main("However, given the circumstances, I'm going to leave your punishment in the hands of professor Dumbledore.","base","base","mid","base")
+    call ton_main("Is that all? You probably did Susan some good then, lord knows she needs to loosen up a bit.","base","base","base","mid")
+    call ton_main("She always has been very sensitive about her body for some reason.","base","base","base","mid")
+    call ast_main("So I'm not going to get in trouble?","upset","sad","sad","sad")
+    call ton_main("I didn't say that... You still cast a very serious spell...","base","base","base","mid")
+    call ton_main("However, given the circumstances, I'm going to leave your punishment in the hands of professor Dumbledore.","base","base","base","mid")
     m "Me?"
-    call ton_main("That's not going to be an issue is it sir?","base","base","mid","base")
+    call ton_main("That's not going to be an issue is it sir?","base","base","base","mid")
     m "Not at all!"
-    call ton_main("Fantastic.","base","base","mid","base")
-    call ton_main("Now as part of standard ministry proceedings, I'm going to be staying at the school a little while longer.","base","base","mid","base")
-    call ton_main("Just to ensure that there is nothing else at play.","base","base","mid","base")
-    call ton_main("Ever since the imperio recursion event at Beauxbatons last year they've been on edge over dark wizards and these sort of spells...","base","base","mid","base")
+    call ton_main("Fantastic.","base","base","base","mid")
+    call ton_main("Now as part of standard ministry proceedings, I'm going to be staying at the school a little while longer.","base","base","base","mid")
+    call ton_main("Just to ensure that there is nothing else at play.","base","base","base","mid")
+    call ton_main("Ever since the imperio recursion event at Beauxbatons last year they've been on edge over dark wizards and these sort of spells...","base","base","base","mid")
     m "Alright..."
-    call ton_main("You may leave now, little one.","base","base","mid","base")
-    call ast_main("Uhm... Ok. Thank you, sir... Ma'am.","sad","sad","sad","c_blank")
+    call ton_main("You may leave now, little one.","base","base","base","mid")
+    call ast_main("Uhm... Ok. Thank you, sir... Ma'am.","upset","sad","sad","sad")
     hide screen astoria_main
     with d3
     pause.8
     
-    call ton_main("So {size=+5}cute!{/size} {image=textheart}","base","base","mid","base")
-    call ton_main("Anyways, I assume that I'll be allowed to sleep in the teachers quarters?","base","base","mid","base")
+    call ton_main("So {size=+5}cute!{/size} {image=textheart}","base","base","base","mid")
+    call ton_main("Anyways, I assume that I'll be allowed to sleep in the teachers quarters?","base","base","base","mid")
     m "Of course, I'll have a bed made up for you immediately."
-    call ton_main("Thank you, Dumbledore. Have a nice evening.","base","base","mid","base")
+    call ton_main("Thank you, Dumbledore. Have a nice evening.","base","base","base","mid")
     m "You too..."
     hide screen tonks_main
     with d3
@@ -481,87 +481,87 @@ label snape_spell_intro: #Snape tells genie that he has adjusted the magic shiel
 
 label astoria_susan_intro: #have astoria demonstrate the imperio spell for the first time on Susan
     ">You summon Astoria to your office."
-    call ast_main("You wanted to see me, sir?","sad","sad","sad","c_blank")
+    call ast_main("You wanted to see me, sir?","upset","sad","sad","sad")
     m "Yes. I think it's about time we addressed the issue of your punishment."
-    call ast_main("oh... I was hoping you'd forgotten about that.","sad","sad","sad","c_blank")
+    call ast_main("oh... I was hoping you'd forgotten about that.","upset","sad","sad","sad")
     m "Afraid not."
-    call ast_main("What am I going to have to do then?","sad","sad","sad","c_blank")
-    call ast_main("I won't have to clean the toilets will I?","sad","sad","sad","c_blank")
+    call ast_main("What am I going to have to do then?","upset","sad","sad","sad")
+    call ast_main("I won't have to clean the toilets will I?","upset","sad","sad","sad")
     m "Don't worry, it's nothing like that."
-    call ast_main("Oh...","sad","sad","sad","c_blank")
-    call ast_main("Then what will it be?","sad","sad","sad","c_blank")
+    call ast_main("Oh...","upset","sad","sad","sad")
+    call ast_main("Then what will it be?","upset","sad","sad","sad")
     m "First things first, I expect you to come to this office whenever I summon you from now on."
-    call ast_main("What? Can't we just get this all over with at once?","sad","sad","sad","c_blank")
+    call ast_main("What? Can't we just get this all over with at once?","upset","sad","sad","sad")
     m "Something like an unforgivable curse isn't so easily forgiven miss Greengrass."
     m "It's in the name!"
     m "You know what the usual punishment is..."
-    call ast_main("life in Azkaban...","sad","sad","sad","c_blank")
+    call ast_main("life in Azkaban...","upset","sad","sad","sad")
     m "That's right... Now unless you want me to send you away, I think you better agree to this arrangement."
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("fine... but you better not be up to anything!","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("fine... but you better not be up to anything!","upset","sad","sad","sad")
     g4 "Me?"
     m "Never..."
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("What's your second request.","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("What's your second request.","upset","sad","sad","sad")
     m "My second, and last request, is that you cast an unforgivable curse."
-    call ast_main("{size=+10}What?{/size}","sad","sad","sad","c_blank")
-    call ast_main("But I don't want to go to Azkaban! You heard what that nasty old lady said!","sad","sad","sad","c_blank")
+    call ast_main("{size=+10}What?{/size}","upset","sad","sad","sad")
+    call ast_main("But I don't want to go to Azkaban! You heard what that nasty old lady said!","upset","sad","sad","sad")
     m "Don't worry, you won't go to Azkaban."
-    call ast_main("How can you be so sure? Won't she be able to tell if I cast another one?","sad","sad","sad","c_blank")
+    call ast_main("How can you be so sure? Won't she be able to tell if I cast another one?","upset","sad","sad","sad")
     m "Not anymore, I've made sure that no one will be any the wiser."
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("But why do you want me to cast unforgivable curses?","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("But why do you want me to cast unforgivable curses?","upset","sad","sad","sad")
     m "Let's just say I'm curious."
     m "(I wanna see someone get mind controlled!)"
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("This isn't a test is it?","sad","sad","sad","c_blank")
-    call ast_main("You're just getting me to cast one so that I really do get sent to Azkaban aren't you?","sad","sad","sad","c_blank")
-    call ast_main("Well I won't do it!","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("This isn't a test is it?","upset","sad","sad","sad")
+    call ast_main("You're just getting me to cast one so that I really do get sent to Azkaban aren't you?","upset","sad","sad","sad")
+    call ast_main("Well I won't do it!","upset","sad","sad","sad")
     m "I think that you're forgetting that I can already send you to Azkaban."
-    call ast_main("Oh...","sad","sad","sad","c_blank")
-    call ast_main("But I still don't understand, why would you want to see me cast a curse like that?","sad","sad","sad","c_blank")
+    call ast_main("Oh...","upset","sad","sad","sad")
+    call ast_main("But I still don't understand, why would you want to see me cast a curse like that?","upset","sad","sad","sad")
     m "(Ugh...)"
     m "Because of you're exceptional skill! Not everyone can just cast a curse like that!"
-    call ast_main("I suppose not... I was pretty angry when I casted it though...","sad","sad","sad","c_blank")
-    call ast_main("I'm not sure if I could do it again...","sad","sad","sad","c_blank")
+    call ast_main("I suppose not... I was pretty angry when I casted it though...","upset","sad","sad","sad")
+    call ast_main("I'm not sure if I could do it again...","upset","sad","sad","sad")
     m "Consider this a test then!"
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("Alright...","sad","sad","sad","c_blank")
-    call ast_main("But I better not end up in Azkaban!","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("Alright...","upset","sad","sad","sad")
+    call ast_main("But I better not end up in Azkaban!","upset","sad","sad","sad")
     m "Scout's honor."
-    call ast_main("Well who do you want me to cast it on?","sad","sad","sad","c_blank")
-    call ast_main("It didn't work the last time I tried it on you...","sad","sad","sad","c_blank")
+    call ast_main("Well who do you want me to cast it on?","upset","sad","sad","sad")
+    call ast_main("It didn't work the last time I tried it on you...","upset","sad","sad","sad")
     m "Who did you say you casted it on last time?"
-    call ast_main("Susan Bones, sir.","sad","sad","sad","c_blank")
+    call ast_main("Susan Bones, sir.","upset","sad","sad","sad")
     m "Let's just try that again, seeing as how we know that worked."
-    call ast_main("What? You want me to cast a curse on another student?","sad","sad","sad","c_blank")
+    call ast_main("What? You want me to cast a curse on another student?","upset","sad","sad","sad")
     m "They won't remember that we've done it will they?"
-    call ast_main("I suppose not...","sad","sad","sad","c_blank")
-    call ast_main("I just didn't expect you to be OK with us doing something like this...","sad","sad","sad","c_blank")
+    call ast_main("I suppose not...","upset","sad","sad","sad")
+    call ast_main("I just didn't expect you to be OK with us doing something like this...","upset","sad","sad","sad")
     m "Believe me, I've done worse..."
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("Alright... I'll do it.","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("Alright... I'll do it.","upset","sad","sad","sad")
     m "Fantastic!"
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("Are you going to summon her?","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("Are you going to summon her?","upset","sad","sad","sad")
     m "I can't."
-    call ast_main("Why not?","sad","sad","sad","c_blank")
+    call ast_main("Why not?","upset","sad","sad","sad")
     m "Because she hasn't visited my office yet. For some reason I can only summon people I've met before."
-    call ast_main("That seems stupid.","sad","sad","sad","c_blank")
+    call ast_main("That seems stupid.","upset","sad","sad","sad")
     m "You're telling me!"
-    call ast_main("Should I go and get her then?","sad","sad","sad","c_blank")
+    call ast_main("Should I go and get her then?","upset","sad","sad","sad")
     m "If you wouldn't mind."
-    call ast_main("OK... what should I say to her?","sad","sad","sad","c_blank")
+    call ast_main("OK... what should I say to her?","upset","sad","sad","sad")
     m "About?"
-    call ast_main("To get her to come up here!","sad","sad","sad","c_blank")
-    call ast_main("I need to tell her something.","sad","sad","sad","c_blank")
+    call ast_main("To get her to come up here!","upset","sad","sad","sad")
+    call ast_main("I need to tell her something.","upset","sad","sad","sad")
     m "Just tell her I want to have a word with her."
-    call ast_main("Really? Can't it be something a little more fun?","sad","sad","sad","c_blank")
+    call ast_main("Really? Can't it be something a little more fun?","upset","sad","sad","sad")
     m "Fun?"
-    call ast_main("You know, something to make her think she's in trouble so she's all scared and nervous when she gets up here.","sad","sad","sad","c_blank")
+    call ast_main("You know, something to make her think she's in trouble so she's all scared and nervous when she gets up here.","upset","sad","sad","sad")
     m "You can tell her whatever you want, so long as you get her up here."
-    call ast_main("yay!","sad","sad","sad","c_blank")
-    call ast_main("I'll be right back.","sad","sad","sad","c_blank")
+    call ast_main("yay!","upset","sad","sad","sad")
+    call ast_main("I'll be right back.","upset","sad","sad","sad")
     show screen blkfade
     with d3
     ">Astoria leaves your office, skipping and humming as she goes."
@@ -603,160 +603,160 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "Oh, um... Did Astoria not tell you?"
     call sus_main("N-no sir...","base","base","base","base")
     m "Well, Miss Greengrass and I were discussing how best to further the educat-"
-    call ast_main("IMPERIO!!!","sad","sad","sad","c_blank")
+    call ast_main("IMPERIO!!!","upset","sad","sad","sad")
     call nar(">A puff of yellow smoke appears in front of Susan's face.")
     call sus_main("W-what is thi-","base","base","base","base")
     call nar(">As quick as it appeared, it seems to fly up Susan's nose, her expression relaxing as it moves.")
     call sus_main("...","base","base","base","base")
     call nar(">Susan's eye's seem to empty as her body relaxes.")
-    call ast_main("Yay! It worked!","sad","sad","sad","c_blank")
+    call ast_main("Yay! It worked!","upset","sad","sad","sad")
     m "Fantastic!"
-    call ast_main("So what should we do now?","sad","sad","sad","c_blank")
-    call ast_main("Want me to make her dance like a chicken?","sad","sad","sad","c_blank")
+    call ast_main("So what should we do now?","upset","sad","sad","sad")
+    call ast_main("Want me to make her dance like a chicken?","upset","sad","sad","sad")
     m "Not exactly..."
-    call ast_main("What then?","sad","sad","sad","c_blank")
+    call ast_main("What then?","upset","sad","sad","sad")
     m "Well what did you do to her the first time?"
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("I can't say...","sad","sad","sad","c_blank")
-    call ast_main("It's too embarrassing!","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("I can't say...","upset","sad","sad","sad")
+    call ast_main("It's too embarrassing!","upset","sad","sad","sad")
     m "embarrassing? Now I have to know!"
-    call ast_main("OK... but you have to promise that you won't get mad at me!","sad","sad","sad","c_blank")
+    call ast_main("OK... but you have to promise that you won't get mad at me!","upset","sad","sad","sad")
     m "Sure."
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("Well a few of the other girls have been talking about...","sad","sad","sad","c_blank")
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("they were talking about breasts, sir!","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("Well a few of the other girls have been talking about...","upset","sad","sad","sad")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("they were talking about breasts, sir!","upset","sad","sad","sad")
     g9 "(JACKPOT!)"
     m "go on..."
-    call ast_main("they were talking about how boys only like big ones...","sad","sad","sad","c_blank")
-    call ast_main("and that only the girls with big boobs would get asked to the autumn ball...","sad","sad","sad","c_blank")
+    call ast_main("they were talking about how boys only like big ones...","upset","sad","sad","sad")
+    call ast_main("and that only the girls with big boobs would get asked to the autumn ball...","upset","sad","sad","sad")
     m "Was Susan one of these girls?"
-    call ast_main("No sir. It was just a few of the \'Slytherin\' girls talking in the common room.","sad","sad","sad","c_blank")
+    call ast_main("No sir. It was just a few of the \'Slytherin\' girls talking in the common room.","upset","sad","sad","sad")
     m "So how did Susan become involved in all this then?"
-    call ast_main("It was her own fault!","sad","sad","sad","c_blank")
+    call ast_main("It was her own fault!","upset","sad","sad","sad")
     m "..."
-    call ast_main("What does she expect to happen when she keeps flaunting those disgusting udders of hers around the school!","sad","sad","sad","c_blank")
-    call ast_main("It's only fair that someone put her in her place!","sad","sad","sad","c_blank")
+    call ast_main("What does she expect to happen when she keeps flaunting those disgusting udders of hers around the school!","upset","sad","sad","sad")
+    call ast_main("It's only fair that someone put her in her place!","upset","sad","sad","sad")
     m "And this someone was you?"
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("yes...","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("yes...","upset","sad","sad","sad")
     m "So what did you do?"
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("I might have... made her...","sad","sad","sad","c_blank")
-    call ast_main("I made her walk around without a shirt on...","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("I might have... made her...","upset","sad","sad","sad")
+    call ast_main("I made her walk around without a shirt on...","upset","sad","sad","sad")
     m "What? Really?"
-    call ast_main("I'm sorry sir! It was just around the common-room.","sad","sad","sad","c_blank")
-    call ast_main("I was just so angry about her getting all the attention from the boys.","sad","sad","sad","c_blank")
-    call ast_main("So I gave her all the attention she could ever ask for!","sad","sad","sad","c_blank")
-    call ast_main("Although it was only around the girls common-room so it wasn't that big a deal...","sad","sad","sad","c_blank")
-    call ast_main("And it's not like she can remember it anyway...","sad","sad","sad","c_blank")
-    call ast_main("It was just so {b}exciting{/b} to see her taken down a notch...","sad","sad","sad","c_blank")
+    call ast_main("I'm sorry sir! It was just around the common-room.","upset","sad","sad","sad")
+    call ast_main("I was just so angry about her getting all the attention from the boys.","upset","sad","sad","sad")
+    call ast_main("So I gave her all the attention she could ever ask for!","upset","sad","sad","sad")
+    call ast_main("Although it was only around the girls common-room so it wasn't that big a deal...","upset","sad","sad","sad")
+    call ast_main("And it's not like she can remember it anyway...","upset","sad","sad","sad")
+    call ast_main("It was just so {b}exciting{/b} to see her taken down a notch...","upset","sad","sad","sad")
     m "and What did the other girls do once you started parading her around?"
-    call ast_main("They were all shocked at first...","sad","sad","sad","c_blank")
-    call ast_main("A few of them just told her to stop showing off and put a top on...","sad","sad","sad","c_blank")
-    call ast_main("So I had to make things a little more embarrassing for her...","sad","sad","sad","c_blank")
+    call ast_main("They were all shocked at first...","upset","sad","sad","sad")
+    call ast_main("A few of them just told her to stop showing off and put a top on...","upset","sad","sad","sad")
+    call ast_main("So I had to make things a little more embarrassing for her...","upset","sad","sad","sad")
     m "How's that?"
-    call ast_main("I may have made her do a little dance...","sad","sad","sad","c_blank")
+    call ast_main("I may have made her do a little dance...","upset","sad","sad","sad")
     m "A dance?"
-    call ast_main("Well... it was sort of just making her shake her boobs for them...","sad","sad","sad","c_blank")
+    call ast_main("Well... it was sort of just making her shake her boobs for them...","upset","sad","sad","sad")
     m "Can you make her do it again?"
-    call ast_main("WHAT!","sad","sad","sad","c_blank")
-    call ast_main("professor! I can't do something like that!","sad","sad","sad","c_blank")
+    call ast_main("WHAT!","upset","sad","sad","sad")
+    call ast_main("professor! I can't do something like that!","upset","sad","sad","sad")
     menu:
         "\"Why not?\"":
-            call ast_main("Because... because it's wrong!","sad","sad","sad","c_blank")
-            call ast_main("You're too old!","sad","sad","sad","c_blank")
-            call ast_main("And you're her teacher!","sad","sad","sad","c_blank")
+            call ast_main("Because... because it's wrong!","upset","sad","sad","sad")
+            call ast_main("You're too old!","upset","sad","sad","sad")
+            call ast_main("And you're her teacher!","upset","sad","sad","sad")
             m "So what?"
         "\"Come on...\"":
-            call ast_main("...","sad","sad","sad","c_blank")
-            call ast_main("Is this a joke sir?","sad","sad","sad","c_blank")
+            call ast_main("...","upset","sad","sad","sad")
+            call ast_main("Is this a joke sir?","upset","sad","sad","sad")
             m "Maybe..."
-    call ast_main("You can't expect me to do something like that!","sad","sad","sad","c_blank")
-    call ast_main("Unless...","sad","sad","sad","c_blank")
+    call ast_main("You can't expect me to do something like that!","upset","sad","sad","sad")
+    call ast_main("Unless...","upset","sad","sad","sad")
     m "Unless?"
-    call ast_main("Maybe if you made it worth my while...","sad","sad","sad","c_blank")
-    call ast_main("Maybe I would be OK...","sad","sad","sad","c_blank")
-    call ast_main("With making Susan dance with you...","sad","sad","sad","c_blank")
-    call ast_main("Maybe!","sad","sad","sad","c_blank")
+    call ast_main("Maybe if you made it worth my while...","upset","sad","sad","sad")
+    call ast_main("Maybe I would be OK...","upset","sad","sad","sad")
+    call ast_main("With making Susan dance with you...","upset","sad","sad","sad")
+    call ast_main("Maybe!","upset","sad","sad","sad")
     m "And what sort of reward would that be?"
-    call ast_main("I want points!","sad","sad","sad","c_blank")
+    call ast_main("I want points!","upset","sad","sad","sad")
     m "What's your house called?"
-    call ast_main("Slytherin! You should know that!","sad","sad","sad","c_blank")
+    call ast_main("Slytherin! You should know that!","upset","sad","sad","sad")
     m "of course I do... I was just making sure you knew."
-    call ast_main("...","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
     m "Is that-"
-    call ast_main("Not done!","sad","sad","sad","c_blank")
-    call ast_main("I also expect you to teach me some new spells!","sad","sad","sad","c_blank")
+    call ast_main("Not done!","upset","sad","sad","sad")
+    call ast_main("I also expect you to teach me some new spells!","upset","sad","sad","sad")
     m "What?"
-    call ast_main("All the spells I've been learning in class are so {b}boring!{/b}","sad","sad","sad","c_blank")
-    call ast_main("Those dumb teachers only want us to learn safe spells...","sad","sad","sad","c_blank")
-    call ast_main("that's part of the reason why I cursed Susan in the first place...","sad","sad","sad","c_blank")
-    call ast_main("The unforgivable curses were the first fun spells I learned about!","sad","sad","sad","c_blank")
-    call ast_main("Well maybe not crucio or avada kadavra...","sad","sad","sad","c_blank")
-    call ast_main("But imperio!","sad","sad","sad","c_blank")
-    call ast_main("It's so much fun!!!","sad","sad","sad","c_blank")
-    call ast_main("I wanna learn more spells like this!","sad","sad","sad","c_blank")
-    call ast_main("So I expect you to teach me them, I'm sure you know them all, old man.","sad","sad","sad","c_blank")
+    call ast_main("All the spells I've been learning in class are so {b}boring!{/b}","upset","sad","sad","sad")
+    call ast_main("Those dumb teachers only want us to learn safe spells...","upset","sad","sad","sad")
+    call ast_main("that's part of the reason why I cursed Susan in the first place...","upset","sad","sad","sad")
+    call ast_main("The unforgivable curses were the first fun spells I learned about!","upset","sad","sad","sad")
+    call ast_main("Well maybe not crucio or avada kadavra...","upset","sad","sad","sad")
+    call ast_main("But imperio!","upset","sad","sad","sad")
+    call ast_main("It's so much fun!!!","upset","sad","sad","sad")
+    call ast_main("I wanna learn more spells like this!","upset","sad","sad","sad")
+    call ast_main("So I expect you to teach me them, I'm sure you know them all, old man.","upset","sad","sad","sad")
     m "(I don't know shit.)"
     m "Alright..."
-    call ast_main("yay!","sad","sad","sad","c_blank")
-    call ast_main("Well in that case...","sad","sad","sad","c_blank")
-    call ast_main("Susan, give professor Dumbledore a nice dance...","sad","sad","sad","c_blank")
+    call ast_main("yay!","upset","sad","sad","sad")
+    call ast_main("Well in that case...","upset","sad","sad","sad")
+    call ast_main("Susan, give professor Dumbledore a nice dance...","upset","sad","sad","sad")
     call sus_main("yes...","base","base","base","base")
     call nar(">Susan starts moving her hips slowly to the sides, barely moving.")
-    call ast_main("That's terrible!","sad","sad","sad","c_blank")
+    call ast_main("That's terrible!","upset","sad","sad","sad")
     call sus_main("oh...","base","base","base","base")
-    call ast_main("Take your top off at least...","sad","sad","sad","c_blank")
-    call ast_main("Don't worry Dumby, I'll make sure you get a good show!","sad","sad","sad","c_blank")
+    call ast_main("Take your top off at least...","upset","sad","sad","sad")
+    call ast_main("Don't worry Dumby, I'll make sure you get a good show!","upset","sad","sad","sad")
     m "Dumby?"
-    call ast_main("short for Dumbledore!","sad","sad","sad","c_blank")
+    call ast_main("short for Dumbledore!","upset","sad","sad","sad")
     m "oh... right..."
     call nar(">As the two of you talk Susan slowly removes her vest.")
-    call ast_main("That's it Susy, one piece at a time.","sad","sad","sad","c_blank")
+    call ast_main("That's it Susy, one piece at a time.","upset","sad","sad","sad")
     m "You seemed to have changed your tone..."
-    call ast_main("Because now I know this isn't a test.","sad","sad","sad","c_blank")
+    call ast_main("Because now I know this isn't a test.","upset","sad","sad","sad")
     call nar(">Susan quietly removes her tie.")
-    call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","sad","sad","sad","c_blank")
-    call ast_main("but after asking to see Susy's boobs, well...","sad","sad","sad","c_blank")
+    call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","upset","sad","sad","sad")
+    call ast_main("but after asking to see Susy's boobs, well...","upset","sad","sad","sad")
     call nar(">Susan peels her stressed shirt off.")
-    call ast_main("And now I get to learn some cool new spells!","sad","sad","sad","c_blank")
-    call ast_main("...","sad","sad","sad","c_blank")
-    call ast_main("They better be cool old man!","sad","sad","sad","c_blank")
-    call ast_main("I don't want something boring like fireworks or something.","sad","sad","sad","c_blank")
+    call ast_main("And now I get to learn some cool new spells!","upset","sad","sad","sad")
+    call ast_main("...","upset","sad","sad","sad")
+    call ast_main("They better be cool old man!","upset","sad","sad","sad")
+    call ast_main("I don't want something boring like fireworks or something.","upset","sad","sad","sad")
     m "What did you have in mind?"
-    call ast_main("Hmmm","sad","sad","sad","c_blank")
-    call ast_main("Something no one else will know!","sad","sad","sad","c_blank")
+    call ast_main("Hmmm","upset","sad","sad","sad")
+    call ast_main("Something no one else will know!","upset","sad","sad","sad")
     m "so you want secret spells?"
-    call ast_main("Yes! And they have to be fun as well! I don't want a secret spell to find a frog!","sad","sad","sad","c_blank")
+    call ast_main("Yes! And they have to be fun as well! I don't want a secret spell to find a frog!","upset","sad","sad","sad")
     call nar(">Susan slowly moves her arms to unclip her bra...")
     m "ah... sure... whatever you said..."
-    call ast_main("Oh...","sad","sad","sad","c_blank")
-    call ast_main("Are you excited to see her boobs old man?","sad","sad","sad","c_blank")
+    call ast_main("Oh...","upset","sad","sad","sad")
+    call ast_main("Are you excited to see her boobs old man?","upset","sad","sad","sad")
     m "Yeah... it's not every day you get to see a pair like these..."
-    call ast_main("Hmph","sad","sad","sad","c_blank")
-    call ast_main("Typical...","sad","sad","sad","c_blank")
+    call ast_main("Hmph","upset","sad","sad","sad")
+    call ast_main("Typical...","upset","sad","sad","sad")
     m "Shh..."
-    call ast_main("...","sad","sad","sad","c_blank")
+    call ast_main("...","upset","sad","sad","sad")
     call nar(">Susan unceremoniously removes her bra, letting it fall to the floor.")
     m "Incredible..."
-    call ast_main("They're gross...","sad","sad","sad","c_blank")
-    call ast_main("Everyone {size=-2}knows {size=-2}that {size=-2}flat {size=-2}boobs {size=-2}are {size=-2}justice...{/size}","sad","sad","sad","c_blank")
+    call ast_main("They're gross...","upset","sad","sad","sad")
+    call ast_main("Everyone {size=-2}knows {size=-2}that {size=-2}flat {size=-2}boobs {size=-2}are {size=-2}justice...{/size}","upset","sad","sad","sad")
     m "DIdn't you say something about making her dance..."
-    call ast_main("Not anymore!","sad","sad","sad","c_blank")
-    call ast_main("I think you've seen enough old man!","sad","sad","sad","c_blank")
+    call ast_main("Not anymore!","upset","sad","sad","sad")
+    call ast_main("I think you've seen enough old man!","upset","sad","sad","sad")
     m "You can't be serious!"
-    call ast_main("Put your clothes on, go back to your room and go to sleep Susan!","sad","sad","sad","c_blank")
+    call ast_main("Put your clothes on, go back to your room and go to sleep Susan!","upset","sad","sad","sad")
     call sus_main("yes...","base","base","base","base")
     m "Aw, but we were just getting to the best bit!"
-    call ast_main("You can save that for next time old man, I think you've had enough fun today.","sad","sad","sad","c_blank")
-    call ast_main("Anymore and you're heart will probably give out!","sad","sad","sad","c_blank")
-    call ast_main("In the mean time, I want you to think up some fun and secret spells!","sad","sad","sad","c_blank")
+    call ast_main("You can save that for next time old man, I think you've had enough fun today.","upset","sad","sad","sad")
+    call ast_main("Anymore and you're heart will probably give out!","upset","sad","sad","sad")
+    call ast_main("In the mean time, I want you to think up some fun and secret spells!","upset","sad","sad","sad")
     m "Sure..."
-    call ast_main("Alright, well don't bring me up here again until you've got them!","sad","sad","sad","c_blank")
-    call ast_main("Good bye professor!","sad","sad","sad","c_blank")
+    call ast_main("Alright, well don't bring me up here again until you've got them!","upset","sad","sad","sad")
+    call ast_main("Good bye professor!","upset","sad","sad","sad")
     m "Good bye, child..."
-    call ast_main("*hmph*(I'm not a child...)","sad","sad","sad","c_blank")
+    call ast_main("*hmph*(I'm not a child...)","upset","sad","sad","sad")
     ">Astoria turns heel and exits your office."
     jump day_main_menu
 
@@ -835,134 +835,134 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     "*knock* *Knock* *Thwump*"
     
     ">Your door is flung open as Tonks enters the room, a worried look covering her face."
-    call ton_main("Sir, I have reason to believe that there is in fact a dark wizard operating somewhere on the grounds.","base","base","mid","base")
+    call ton_main("Sir, I have reason to believe that there is in fact a dark wizard operating somewhere on the grounds.","base","base","base","mid")
     m "A dark wizard?"
     m "Surely you meant to say an African American wizard?"
-    call ton_main("This isn't the time for your stupid jokes, Professor!","base","base","mid","base")
-    call ton_main("I've recently detected another instance of an unforgivable curse being cast in my vicinity.","base","base","mid","base")
-    call ton_main("But what's really troubling is that the ministry hasn't contacted me...","base","base","mid","base")
-    call ton_main("It must mean that the wizard is concealing themselves to the ministries global detection spell.","base","base","mid","base")
-    call ton_main("We have to evacuate the school until they're caught... We can't risk the death of a student...","base","base","mid","base")
+    call ton_main("This isn't the time for your stupid jokes, Professor!","base","base","base","mid")
+    call ton_main("I've recently detected another instance of an unforgivable curse being cast in my vicinity.","base","base","base","mid")
+    call ton_main("But what's really troubling is that the ministry hasn't contacted me...","base","base","base","mid")
+    call ton_main("It must mean that the wizard is concealing themselves to the ministries global detection spell.","base","base","base","mid")
+    call ton_main("We have to evacuate the school until they're caught... We can't risk the death of a student...","base","base","base","mid")
     m "Oh... I think those spells you were picking up on might have involved me..."
-    call ton_main("you can't mean...","base","base","mid","base")
-    call ton_main("You're the dark wizard???","base","base","mid","base")
+    call ton_main("you can't mean...","base","base","base","mid")
+    call ton_main("You're the dark wizard???","base","base","base","mid")
     m "I told you, I don't think you can say that anymore..."
-    call ton_main("THIS IS NO LAUGHING MATTER!","base","base","mid","base")
+    call ton_main("THIS IS NO LAUGHING MATTER!","base","base","base","mid")
     m "I'm not a \'dark\' wizard! the spells are occurring under my strict supervision."
-    call ton_main("You mean you've been letting students cast unforgivable curses? And hiding it from the Ministry?","base","base","mid","base")
-    call ton_main("What are you thinking?","base","base","mid","base")
+    call ton_main("You mean you've been letting students cast unforgivable curses? And hiding it from the Ministry?","base","base","base","mid")
+    call ton_main("What are you thinking?","base","base","base","mid")
     m "As headmaster of this school, I believe that teaching students is my business, thank you very much."
-    call ton_main("Well unforgivable curses are my business, Dumbledore!","base","base","mid","base")
-    call ton_main("I demand you explain what's going on before I Floo back to the ministry and tell them everything!","base","base","mid","base")
+    call ton_main("Well unforgivable curses are my business, Dumbledore!","base","base","base","mid")
+    call ton_main("I demand you explain what's going on before I Floo back to the ministry and tell them everything!","base","base","base","mid")
     m "(Shit...)"
     m "Alright fine..."
     m "I've been tutoring a student..."
-    call ton_main("In the dark arts? Are you crazy?","base","base","mid","base")
+    call ton_main("In the dark arts? Are you crazy?","base","base","base","mid")
     m "Don't worry, I'm not letting her kill anyone..."
-    call ton_main("Her? Who exactly are you tutoring then?","base","base","mid","base")
+    call ton_main("Her? Who exactly are you tutoring then?","base","base","base","mid")
     m "Astoria Greengrass. I believe you've met--"
-    call ton_main("Astoria? You mean that cute little lo--{p}lady...","base","base","mid","base")
-    call ton_main("Why on earth are you teaching her curses?","base","base","mid","base")
+    call ton_main("Astoria? You mean that cute little lo--{p}lady...","base","base","base","mid")
+    call ton_main("Why on earth are you teaching her curses?","base","base","base","mid")
     m "Miss Greengrass approached me about wanting to learn some more advanced spells."
-    call ton_main("So you decided to teach her how to cast Imperio???","base","base","mid","base")
-    call ton_main("And if she's casting imperio under your supervision, then who is the cursee?","base","base","mid","base")
-    call ton_main("I don't suppose you'd let her curse you.","base","base","mid","base")
+    call ton_main("So you decided to teach her how to cast Imperio???","base","base","base","mid")
+    call ton_main("And if she's casting imperio under your supervision, then who is the cursee?","base","base","base","mid")
+    call ton_main("I don't suppose you'd let her curse you.","base","base","base","mid")
     m "Remember your niece?"
-    call ton_main("SUSAN?","base","base","mid","base")
-    call ton_main("You cannot be serious!!! {p}What sort of school are you running here?","base","base","mid","base")
+    call ton_main("SUSAN?","base","base","base","mid")
+    call ton_main("You cannot be serious!!! {p}What sort of school are you running here?","base","base","base","mid")
     m "A magic one?"
-    call ton_main("...","base","base","mid","base")
-    call ton_main("What are you and Astoria making Susan do then?","base","base","mid","base")
+    call ton_main("...","base","base","base","mid")
+    call ton_main("What are you and Astoria making Susan do then?","base","base","base","mid")
     m "Oh... um..."
     m "Dancing like a chicken?"
-    call ton_main("Really...","base","base","mid","base")
-    call ton_main("You honestly expect me to believe that?","base","base","mid","base")
+    call ton_main("Really...","base","base","base","mid")
+    call ton_main("You honestly expect me to believe that?","base","base","base","mid")
     m "It was worth a shot."
-    call ton_main("So let me get this straight...","base","base","mid","base")
-    call ton_main("You've been teaching dark arts to a student, concealing your actions from the ministry of magic...","base","base","mid","base")
-    call ton_main("And controlling my niece to do who knows what?","base","base","mid","base")
-    call ton_main("Do you have any idea how much trouble you're in?","base","base","mid","base")
+    call ton_main("So let me get this straight...","base","base","base","mid")
+    call ton_main("You've been teaching dark arts to a student, concealing your actions from the ministry of magic...","base","base","base","mid")
+    call ton_main("And controlling my niece to do who knows what?","base","base","base","mid")
+    call ton_main("Do you have any idea how much trouble you're in?","base","base","base","mid")
     m "Is that a rhetorical question?"
-    call ton_main("...","base","base","mid","base")
-    call ton_main("This probably means that those letters from Miss Granger were actually telling the truth as well.","base","base","mid","base")
+    call ton_main("...","base","base","base","mid")
+    call ton_main("This probably means that those letters from Miss Granger were actually telling the truth as well.","base","base","base","mid")
     m "What letters?"
-    call ton_main("The ministry received a formal complaint from miss granger a few weeks ago about a sexual favour ring at hogwarts.","base","base","mid","base")
-    call ton_main("Obviously the ministry ignored the matter. I mean who could believe that the famous Albus Dumbledore would let something like that happen...","base","base","mid","base")
-    call ton_main("But now I'm not so sure...","base","base","mid","base")
+    call ton_main("The ministry received a formal complaint from miss granger a few weeks ago about a sexual favour ring at hogwarts.","base","base","base","mid")
+    call ton_main("Obviously the ministry ignored the matter. I mean who could believe that the famous Albus Dumbledore would let something like that happen...","base","base","base","mid")
+    call ton_main("But now I'm not so sure...","base","base","base","mid")
     m "..."
-    call ton_main("So is it true then?","base","base","mid","base")
-    call ton_main("Are you fucking your students Dumbledore?","base","base","mid","base")
-    call ton_main("Or are you just covering up for the other teachers here?","base","base","mid","base")
+    call ton_main("So is it true then?","base","base","base","mid")
+    call ton_main("Are you fucking your students Dumbledore?","base","base","base","mid")
+    call ton_main("Or are you just covering up for the other teachers here?","base","base","base","mid")
     menu:
         "-lie-":
             m "I'd never allow--"
         "-tell the truth-":
             m "It all started--"
-    call ton_main("I don't care, either way you're going to Azkaban for the rest of your life...","base","base","mid","base")
+    call ton_main("I don't care, either way you're going to Azkaban for the rest of your life...","base","base","base","mid")
     m "*gulp*"
-    call ton_main("Unless...","base","base","mid","base")
+    call ton_main("Unless...","base","base","base","mid")
     m "Unless what?"
-    call ton_main("Do you have an opening for a defense against the dark arts professor?","base","base","mid","base")
+    call ton_main("Do you have an opening for a defense against the dark arts professor?","base","base","base","mid")
     m "..."
     m "What?"
-    call ton_main("Ugh... You can't think I like being an auror do you?","base","base","mid","base")
-    call ton_main("It's just constant busy work...","base","base","mid","base")
-    call ton_main("Not to mention the hours.","base","base","mid","base")
-    call ton_main("And the mortality rate...","base","base","mid","base")
-    call ton_main("If I'd realized the benefits of being a teacher at hogwarts, I would have signed up straight away!","base","base","mid","base")
+    call ton_main("Ugh... You can't think I like being an auror do you?","base","base","base","mid")
+    call ton_main("It's just constant busy work...","base","base","base","mid")
+    call ton_main("Not to mention the hours.","base","base","base","mid")
+    call ton_main("And the mortality rate...","base","base","base","mid")
+    call ton_main("If I'd realized the benefits of being a teacher at hogwarts, I would have signed up straight away!","base","base","base","mid")
     m "benefits?"
     m "You mean the favour trading?"
-    call ton_main("no, I mean the health care... Of course I mean the favour trading Dumbledore!","base","base","mid","base")
-    call ton_main("I always assumed that you and Snape wouldn't allow holding hands in the corridors...","base","base","mid","base")
-    call ton_main("But if you're playing around with your students...","base","base","mid","base")
-    call ton_main("Well let's just say I want in.","base","base","mid","base")
+    call ton_main("no, I mean the health care... Of course I mean the favour trading Dumbledore!","base","base","base","mid")
+    call ton_main("I always assumed that you and Snape wouldn't allow holding hands in the corridors...","base","base","base","mid")
+    call ton_main("But if you're playing around with your students...","base","base","base","mid")
+    call ton_main("Well let's just say I want in.","base","base","base","mid")
     m "(...)"
     m "You are hired!"
     m "Consider yourself the new defense of the ancients teacher or whatever..."
-    call ton_main("What about Quirrel?","base","base","mid","base")
+    call ton_main("What about Quirrel?","base","base","base","mid")
     m "Who?"
-    call ton_main("The current defense against the dark arts professor...","base","base","mid","base")
+    call ton_main("The current defense against the dark arts professor...","base","base","base","mid")
     m "Oh yeah... I'll get snape to deal with him..."
-    call ton_main("So snape is in on this too?","base","base","mid","base")
+    call ton_main("So snape is in on this too?","base","base","base","mid")
     m "Yeah..."
-    call ton_main("Huh... I didn't think that sad sack even knew what fun was...","base","base","mid","base")
-    call ton_main("So what's the going rate around here then?","base","base","mid","base")
+    call ton_main("Huh... I didn't think that sad sack even knew what fun was...","base","base","base","mid")
+    call ton_main("So what's the going rate around here then?","base","base","base","mid")
     m "Going rate?"
-    call ton_main("How much do you pay your students to fool around?","base","base","mid","base")
+    call ton_main("How much do you pay your students to fool around?","base","base","base","mid")
     m "Oh... It depends on what you want them to do."
-    call ton_main("How much for a lap dance?","base","base","mid","base")
+    call ton_main("How much for a lap dance?","base","base","base","mid")
     m "Again, it depends on the student."
-    call ton_main("...","base","base","mid","base")
+    call ton_main("...","base","base","base","mid")
     m "But if I had to guess, I'd say about 25 points."
-    call ton_main("Wait...","base","base","mid","base")
-    call ton_main("You pay them in points?","base","base","mid","base")
+    call ton_main("Wait...","base","base","base","mid")
+    call ton_main("You pay them in points?","base","base","base","mid")
     m "Most of them."
-    call ton_main("So you've managed to convince these girls to offer themselves up for a bunch of imaginary points that don't mean anything?","base","base","mid","base")
+    call ton_main("So you've managed to convince these girls to offer themselves up for a bunch of imaginary points that don't mean anything?","base","base","base","mid")
     m "Works for the internet..."
-    call ton_main("what?","base","base","mid","base")
+    call ton_main("what?","base","base","base","mid")
     m "Anyway, you can't just ask for a lap dance straight away, You have to butter them up first."
-    call ton_main("how so?","base","base","mid","base")
+    call ton_main("how so?","base","base","base","mid")
     m "Well most of them aren't going to just do whatever you say from the get go..."
     m "You have to slowly earn their trust over time and start out small..."
-    call ton_main("Awww really... Can't I just cheat a bit?","base","base","mid","base")
+    call ton_main("Awww really... Can't I just cheat a bit?","base","base","base","mid")
     m "..."
     m "Just take it slow alright, I'm sure you'll find a cute boy who'll be willing to do whatever you want anyway."
-    call ton_main("...And what if I want a girl?","base","base","mid","base")
+    call ton_main("...And what if I want a girl?","base","base","base","mid")
     m "Whatever floats your boat."
-    call ton_main("Well what if I want a specific girl?","base","base","mid","base")
+    call ton_main("Well what if I want a specific girl?","base","base","base","mid")
     m "which one?"
-    call ton_main("Astoria Greengrass.","base","base","mid","base")
+    call ton_main("Astoria Greengrass.","base","base","base","mid")
     m "Astoria? Isn't she a little-"
-    call ton_main("She's perfect! She's just so cute and innocent... I can't wait to gobble her up!","base","base","mid","base")
-    call ton_main("mmm... I bet she tastes like heaven...","base","base","mid","base")
+    call ton_main("She's perfect! She's just so cute and innocent... I can't wait to gobble her up!","base","base","base","mid")
+    call ton_main("mmm... I bet she tastes like heaven...","base","base","base","mid")
     m "..."
     m "I'm not sure if she'd be up for that to be honest-"
-    call ton_main("Well you better make her up for it then...","base","base","mid","base")
-    call ton_main("Unless I need to tell the ministry about all this...","base","base","mid","base")
+    call ton_main("Well you better make her up for it then...","base","base","base","mid")
+    call ton_main("Unless I need to tell the ministry about all this...","base","base","base","mid")
     m "Fine..."
-    call ton_main("Good... I expect her to pay me a little visit soon.","base","base","mid","base")
+    call ton_main("Good... I expect her to pay me a little visit soon.","base","base","base","mid")
     m "..."
-    call ton_main("Now if that's all I'll be off.","base","base","mid","base")
+    call ton_main("Now if that's all I'll be off.","base","base","base","mid")
     m "Sure..."
     ">Tonks turns and leaves your office."
     m "..."

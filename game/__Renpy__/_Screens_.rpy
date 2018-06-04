@@ -199,70 +199,7 @@ screen emo: #Character talking off screen.
     #zorder 3 
     add "emo8" at Position(xpos=840, ypos=100, xanchor=0, yanchor=0) 
 
-
-
-        ### ADDING HOUSE POINTS ###
-screen adding_03_points:
-    add "what_03_points" at Position(xpos=131+140, ypos=0)
-
-        ### GRYFFINDOR POINTS ###
-screen gryffindor_03_points:
-    add "what_03_points" at Position(xpos=238+140, ypos=0)
-screen gryffindor_01_points:
-    add "what_01_points" at Position(xpos=238+140, ypos=0)
-screen gryffindor_02_points:
-    add "what_02_points" at Position(xpos=238+140, ypos=0)
-screen gryffindor_05_points:
-    add "what_05_points" at Position(xpos=238+140, ypos=0)
-screen gryffindor_15_points:
-    add "what_15_points" at Position(xpos=238+140, ypos=0)
-    
-    
-### Hufflepuff POINTS ###
-screen hufflepuff_03_points:
-    add "what_03_points" at Position(xpos=348+140, ypos=0)
-screen hufflepuff_01_points:
-    add "what_01_points" at Position(xpos=348+140, ypos=0)
-screen hufflepuff_02_points:
-    add "what_02_points" at Position(xpos=348+140, ypos=0)
-screen hufflepuff_05_points:
-    add "what_05_points" at Position(xpos=348+140, ypos=0)
-screen hufflepuff_15_points:
-    add "what_15_points" at Position(xpos=348+140, ypos=0)
-    
-### Ravenclaw POINTS ###
-screen ravenclaw_03_points:
-    add "what_03_points" at Position(xpos=22+140, ypos=0)
-screen ravenclaw_01_points:
-    add "what_01_points" at Position(xpos=22+140, ypos=0)
-screen ravenclaw_02_points:
-    add "what_02_points" at Position(xpos=22+140, ypos=0)
-screen ravenclaw_05_points:
-    add "what_05_points" at Position(xpos=22+140, ypos=0)
-screen ravenclaw_15_points:
-    add "what_15_points" at Position(xpos=22+140, ypos=0)
-    
-    
-### UNIVERSAL POINTS AWARDING SCREEN FOR EVERY HOUSE ###
-
-screen s_p_u: # SLYTHERIN
-    add s_p_u_pic at Position(xpos=131+140, ypos=0)
-    
-screen g_p_u: # GRYFFINDOR
-    add g_p_u_pic at Position(xpos=238+140, ypos=0)
-    
-screen h_p_u: # HUFFLEPUFF 
-    add h_p_u_pic at Position(xpos=348+140, ypos=0)
-    
-screen r_p_u: # RAVENCLAW
-    add r_p_u_pic at Position(xpos=22+140, ypos=0)
-    
-### MAIN SCREEN FOR ADDING POINTS ###
-
-
-    
 ### DUEL ###
-
 screen snape_defends:
     add "ch_sna defend" at Position(xpos=-90+140, ypos=-5)
     zorder 2

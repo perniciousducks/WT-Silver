@@ -22,9 +22,10 @@ label susan_init:
         $ sus_lipstick              = "nude" 
         
         $ susan_eye                 = "characters/susan/face/eyes/eye_base.png" 
+        $ susan_eye_bg              = "characters/susan/face/eyes/eye_base_bg.png" 
         $ susan_eyebrow             = "characters/susan/face/eyes/brow_base.png" 
-        $ susan_pupil               = "characters/susan/face/eyes/pupil_base.png" 
-        $ sus_eye_color             = "blue"
+        $ susan_pupil               = "characters/susan/face/eyes/pupil_mid.png" 
+        $ sus_eye_color             = "green"
         
         $ susan_tears               = "characters/susan/extras/blank.png" 
         $ susan_blush               = "characters/susan/extras/blank.png"

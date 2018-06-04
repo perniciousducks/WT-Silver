@@ -8,8 +8,9 @@ screen susan_main:
     add susan_base xpos susan_xpos ypos susan_ypos #Add the base body
     add susan_boobs xpos susan_xpos ypos susan_ypos #Add the base body
     ### EMOTIONS
-    add susan_eye xpos susan_xpos ypos susan_ypos #Add the eye outline
+    add susan_eye_bg xpos susan_xpos ypos susan_ypos #Add the eye white
     add susan_pupil xpos susan_xpos ypos susan_ypos #Add the pupil
+    add susan_eye xpos susan_xpos ypos susan_ypos #Add the eye outline
     add susan_eyebrow xpos susan_xpos ypos susan_ypos #Add the eyebrow
     add susan_hair_shadow xpos susan_xpos ypos susan_ypos #Add the hair shadow
     ###MOUTH
@@ -127,6 +128,7 @@ init python:
         ###DEFINE GLOBAL VARIABLES
         global susan_mouth
         global susan_eye
+        global susan_eye_bg
         global susan_eyebrow
         global susan_pupil
         global susan_xpos
@@ -138,8 +140,9 @@ init python:
         ###EMOTION CONTROL
         if mouth is not None:
             susan_mouth       = "characters/susan/face/mouth/"+mouth+".png"
-        if eye is not None:
-            susan_eye         = "characters/susan/face/eyes/eye_"+eye+".png" 
+        if eye is not None: 
+            susan_eye         = "characters/susan/face/eyes/eye_"+eye+".png"
+            susan_eye_bg      = "characters/susan/face/eyes/eye_"+eye+"_bg.png"
         if eyebrow is not None:
             susan_eyebrow     = "characters/susan/face/eyes/brow_"+eyebrow+".png" 
         if pupil is not None:

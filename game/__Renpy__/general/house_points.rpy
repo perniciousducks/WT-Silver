@@ -45,7 +45,7 @@ screen points_overlay(house): #House points screen.
 label points_changes_gryffindor:
 
     ### GRYFFINDOR POINTS ###
-    elif 3 <= generating_points_gryffindor <= 4:
+    if 3 <= generating_points_gryffindor <= 4:
         call add_house_points("g","+1")
     elif 5 <= generating_points_gryffindor <= 6:
         call add_house_points("g","+2")

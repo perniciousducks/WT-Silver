@@ -2,7 +2,7 @@ label astoria_spell_event: #have genie talk to astoria about which spell to cast
 
 
 
-label imperio_spell_1: #third level imperio spell
+label imperio_spell_1: #first level imperio spell
     if astoria_spell_progress == 0:
         #talk about needing to practice the spell, what it does new and about sitting on lap
         m "So I managed to get a book of brand new spells of an old friend of mine."
@@ -40,11 +40,17 @@ label imperio_spell_1: #third level imperio spell
         ast "What does it say dumby!"
         m "When venus and mars meet, all my knowledge shall be at your feet..."
         ast "what does that mean?"
-        jump astoria_book_question
-        menu:
-            "-We have to be touching to open it-":
-                pass
-            "-We have to wait until venus and mars are aligned-"
+        label astoria_book_question:
+            menu:
+                "-We have to be touching to open it-":
+                    pass
+                "-We have to wait until venus and mars are aligned-":
+                    ast "That could take forever!"
+                    ast "It's gotta be something else dumby!"
+                    jump astoria_book_question
+                "-We've gotta get some ancients gods to hook up-":
+                    ast "Stop being such a dumby!"
+                    jump astoria_book_question
 
         ast "Oh... is that why you wanted me to sit on your lap?"
         m "o-of course... why else would I ask?"
@@ -99,22 +105,156 @@ label imperio_spell_1: #third level imperio spell
         
     if astoria_spell_progress < 3:
         jump astoria_spell_practice
-    #expose boobs to genie
     ast "It's the end of the chapter!"
     ast "Can we try it out on Susan now?"
     m "I don't see why not."
     ast "YAY! You're the best teacher ever dumby!"
+    m "and you're probably the worst student..."
+    ast "Dumby!"
+    m "Not that I mind..."
+    ast "Good. Now Hurry up and bring her up here!"
+    call nar(">You summon Susan up to your office.")
+    sus "You wanted to see me sir-"
+    sus "Astoria! What are you doing here!"
+    sus "And why are you sitting on Dumbledore's lap?"
+    ast "Because we were reading!"
+    sus "I don't see why that makes it-"
+    call nar(">With a quick flash, Astoria hops off your lap and pulls out her wand.")
+    ast "Imperio Cor Meum!"
+    sus "W-what are you-"
+    call nar("A puff of orange smoke appears from the end of Astoria's wand, working it's way up into Susan's nose.")
+    sus "-doing..."
+    sus "..."
+    ast "OK, so what should we do now?"
+    m "You read the book as well didn't you?"
+    ast "That was just on how to cast it Dumby!"
+    ast "What should we make her want?"
+    m "Hmmm?"
+    m "How about making her want to strip?"
+    ast "Dumby!"
+    m "What? Didn't you already do that?"
+    ast "I only made her take her top off."
+    m "Ugh, fine... let's just go with that again."
+    ast "OK..."
+    ast "Susy, are you listening?"
+    sus "yes..."
+    ast "Good, I want you to pay attention."
+    sus "..."
+    ast "From now on you have an uncontrollable urge to show Dumby and I your boobs!"
+    sus "My boobs? Ok..."
+    ast "Alright, now wake up!"
+    sus "I am awa-......"
+    call nar(">Susan's body shifts a little as the life returns to her eyes.")
+    sus "W-w-what happened?"
+    sus "Weren't you sitting on Dumbledore's lap Astoria?"
+    ast "No. Why would I sit on his gross old lap?!"
+    m "Hey!"
+    sus "You wouldn't..."
+    sus "But there's something else."
+    sus "I have to show you two something..."
+    ast "reaaaally? And what's that Susy?"
+    sus "I can't say... it's too-"
+    sus "You have to close your eyes!"
+    ast "How are you supposed to show us something with our eyes closed?"
+    sus "I don't know! I-I-I-I have to show you my-"
+    ast "Your what Susy?"
+    sus "m-m-m-my..."
+    pause
+    sus "{size-=5}boobs...{/size}"
+    show screen blkfade
+    with d3
+    call nar(">As susan finishes her sentence, her hands begin to slowly remove her shirt and vest in one smooth motion.")
+    sus "Why do I..."
+    hide screen blkfade
+    with d3
+    sus "..."
+    call nar(">Susan stands in front of you and Astoria in only a bra, her eyes desperately trying to avoid yours.")
+    sus "I-I-I'm sorry Professor Dumbledore, I don't know what's come over me..."
+    sus "I'm Sorry you have to see this..."
+    ast "See what Susy?"
+    sus "My gross boobs..."
+    ast "(I knew they were gross!)"
+    ast "Well I don't think he can see them yet!"
+    sus "WHAT?! Of course he can!"
+    ast "Nuh-uh! You're still wearing a bra silly!"
+    m "I have to agree with Miss Greengrass on this matter I'm afraid."
+    m "A bra doesn't count."
+    sus "Professor Dumbledore! How can you say something like that!"
+    call nar(">As susan speaks her hands slowly slide up to her bra, gently undoing the clasp.")
+    sus "You don't really expect me to show you both my breasts do you?"
+    call nar(">Susan's bra slowly falls to the floor on top of her vest and shirt.")
+    sus "!!!"
+    g4 "{size+=10}Nice!{/size}"
+    ast "Dumby!"
+    m "What? You can't blame me for this!"
+    ast "Not that! You're not supposed to think they're nice!"
+    m "Why not?"
+    ast "Because they're huge and soft and squishy and and and gross!"
+    m "You're right about them looking huge and soft..."
+    ast "Dumby!"
+    sus "How can you two be so mean!"
+    ast "Oh calm down Bessy!"
+    sus "Bessy!? What's that supposed to mean?"
+    ast "Pfft... you know."
+    sus "How dare you!"
+    sus "Are you just going to let her say that sir?"
+    g4 "What's that? I was a little-ugh... distracted..."
+    call nar(">Your eyes fall back down to Susan's heaving chest.")
+    m "So big..."
+    sus "..."
+    ast "Alright, I think you're enjoying this a little too much Dumby..."
+    m "Just a little longer..."
+    ast "IMPERIO!"
+    sus "W-w-what..."
+    call nar(">A soft line of yellow smoke puffs from astoria's wand and into Susan's nose.")
+    sus "..."
+    ast "Get dressed Susy."
+    sus "Alright..."
+    call nar("Susan mechanically puts her clothes back on, her eyes staring blankly forward the entire time.")
+    m "Aww... why'd you do that?"
+    ast "You were getting too excited old man."
+    m "So what?"
+    ast "Well you can't go having too much fun, otherwise you'll never want to practice the new spells!"
+    m "You could of at least made her dance or something..."
+    ast "We could already do that!"
+    m "Then why don't we?"
+    ast "Because it's boring!"
+    ast "I wanna learn more spells!"
+    m "Ugh... fine..."
+    ast "Good, I already read what the next one is called!"
+    m "Really, what's that?"
+    ast "Imperio of time..."
+    ast "I didn't read what it does though..."
+    m "Wanna start reading it now?"
+    ast "It's a little late sir."
+    ast "Besides, I better put bessy here back in her barn before people start to notice."
+    m "Alright..."
+    ast "Just let me know when you're ready to read the next chapter Dumby!"
+    m "You got it."
+    ast "Night dumby!"
+    m "Good night Astoria."
+    ast "Come on susy, go back to your room and go to sleep."
+    sus "yes..."
+    ast "(This is so much fun!)"
+
+
+
+    $ astoria_affection = 1
     $ astoria_spells[0] = 1
     $ astoria_spell_progress = 0
-label imperio_spell_2: #third level imperio spell
+    jump day_main_menu
+label imperio_spell_2: #second level imperio spell
     if astoria_spell_progress == 0:
         #talk about what it does new and about sitting on lap
-        $ astoria_affection = 1
+        
     if astoria_spell_progress < 3:
         jump astoria_spell_practice
     #Strip susan for genie
+
+    $ astoria_affection = 2
     $ astoria_spells[0] = 2
     $ astoria_spell_progress = 0
+    jump day_main_menu
 label imperio_spell_3: #third level imperio spell
     if astoria_spell_progress == 0:
         #talk about what it does new and about sitting on lap

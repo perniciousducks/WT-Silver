@@ -1,7 +1,6 @@
 label add_house_points(house, points):
-    $ house_pos = {"r":175,"s":286,"g":393,"h":502}
     show screen points_overlay(house)
-    show screen adding_house_points(points, house_pos[house])
+    show screen adding_house_points(points, house)
     with Dissolve(0.75)
     if house == "r":
         $ ravenclaw += int(points)
@@ -17,8 +16,9 @@ label add_house_points(house, points):
     with Dissolve(0.75)
 return
 
-screen adding_house_points(points, house_xpos):
-    text "[points]" at Position(xpos=house_xpos, ypos=8)
+screen adding_house_points(points, house):
+    $ house_pos = {"r":175,"s":286,"g":393,"h":502}
+    text "[points]" at Position(xpos=house_pos[house], ypos=8)
     zorder 4
 
 screen points_overlay(house): #House points screen.

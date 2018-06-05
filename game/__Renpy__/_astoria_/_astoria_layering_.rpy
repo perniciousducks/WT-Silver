@@ -6,17 +6,20 @@ screen astoria_main:
     add astoria_r_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
     add astoria_hair xpos astoria_xpos ypos astoria_ypos #Add the hair base
     add astoria_base xpos astoria_xpos ypos astoria_ypos #Add the base body
-    ### EMOTIONS
-    add astoria_eye xpos astoria_xpos ypos astoria_ypos #Add the eye outline
+    
+    ### FACE
+    add astoria_eye_bg xpos astoria_xpos ypos astoria_ypos #Add the eye white
     add astoria_pupil xpos astoria_xpos ypos astoria_ypos #Add the pupil
+    add astoria_eye xpos astoria_xpos ypos astoria_ypos #Add the eye outline
+    
     add astoria_eyebrow xpos astoria_xpos ypos astoria_ypos #Add the eyebrow
     add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
-    ###MOUTH
     add astoria_mouth xpos astoria_xpos ypos astoria_ypos #Add the mouth
-    ### FACE
+    
     add astoria_extra_1 xpos astoria_xpos ypos astoria_ypos #Add the extras
     add astoria_extra_2 xpos astoria_xpos ypos astoria_ypos #Add the extras
     add astoria_extra_3 xpos astoria_xpos ypos astoria_ypos #Add the extras
+    
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:
         add astoria_bra xpos astoria_xpos ypos astoria_ypos # Add the bra
@@ -38,12 +41,16 @@ screen astoria_main:
         add astoria_neckwear xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_robe:
         add astoria_robe xpos astoria_xpos ypos astoria_ypos
+        
     ### OTHER
     add astoria_l_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
     add astoria_r_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
+    
     ### ZORDER
     zorder astoria_zorder
 
+    
+    
 label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
     hide screen atoria_main
     
@@ -130,6 +137,7 @@ init python:
         ###DEFINE GLOBAL VARIABLES
         global astoria_mouth
         global astoria_eye
+        global astoria_eye_bg
         global astoria_eyebrow
         global astoria_pupil
         global astoria_xpos
@@ -143,8 +151,9 @@ init python:
             astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
         if eye is not None:
             astoria_eye         = "characters/astoria/face/eyes/eye_"+eye+".png" 
+            astoria_eye_bg      = "characters/astoria/face/eyes/eye_"+eye+"_bg.png"
         if eyebrow is not None:
-            astoria_eyebrow     = "characters/astoria/face/eyes/brow_"+eyebrow+".png" 
+            astoria_eyebrow     = "characters/astoria/face/brow/"+eyebrow+".png" 
         if pupil is not None:
             astoria_pupil       = "characters/astoria/face/eyes/pupil_"+pupil+".png" 
         ###POSITION CONTROL

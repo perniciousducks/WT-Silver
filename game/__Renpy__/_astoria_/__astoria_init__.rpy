@@ -20,13 +20,13 @@ label astoria_init:
         $ ast_mouth                   = "base"
         $ ast_lipstick                = "nude" 
         
-        $ astoria_eye                 = "characters/astoria/face/eyes/eye_averted.png" 
-        $ astoria_eyebrow             = "characters/astoria/face/eyes/brow_averted.png" 
-        $ astoria_pupil               = "characters/astoria/face/eyes/pupil_averted.png" 
+        $ astoria_eye                 = "characters/astoria/face/eyes/eye_base.png" 
+        $ astoria_eye_bg              = "characters/astoria/face/eyes/eye_base_bg.png" 
+        $ astoria_pupil               = "characters/astoria/face/eyes/pupil_mid.png" 
         $ ast_eye_color               = "blue"
         
-        $ astoria_tears               = "characters/astoria/extras/blank.png" 
-        $ astoria_blush               = "characters/astoria/extras/blank.png"
+        $ astoria_eyebrow             = "characters/astoria/face/brow/base.png" 
+        
         $ astoria_extra_1             = "characters/astoria/extras/blank.png" 
         $ astoria_extra_2             = "characters/astoria/extras/blank.png" 
         $ astoria_extra_3             = "characters/astoria/extras/blank.png"

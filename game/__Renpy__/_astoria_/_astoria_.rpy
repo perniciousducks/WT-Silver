@@ -246,6 +246,7 @@ label imperio_spell_1: #first level imperio spell
 label imperio_spell_2: #second level imperio spell
     if astoria_spell_progress == 0:
         #talk about what it does new and about sitting on lap
+        pass
         
     if astoria_spell_progress < 3:
         jump astoria_spell_practice

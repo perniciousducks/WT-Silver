@@ -23,12 +23,14 @@ label susan_init:
         
         $ susan_eye                 = "characters/susan/face/eyes/eye_base.png" 
         $ susan_eye_bg              = "characters/susan/face/eyes/eye_base_bg.png" 
-        $ susan_eyebrow             = "characters/susan/face/eyes/brow_base.png" 
         $ susan_pupil               = "characters/susan/face/eyes/pupil_mid.png" 
         $ sus_eye_color             = "green"
         
-        $ susan_tears               = "characters/susan/extras/blank.png" 
-        $ susan_blush               = "characters/susan/extras/blank.png"
+        $ susan_eyebrow             = "characters/susan/face/brow/base.png" 
+        
+        $ susan_extra_1             = "characters/susan/extras/blank.png" 
+        $ susan_extra_2             = "characters/susan/extras/blank.png" 
+        $ susan_extra_3             = "characters/susan/extras/blank.png"
 
         
         #Clothes

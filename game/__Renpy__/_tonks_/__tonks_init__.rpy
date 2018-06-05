@@ -17,12 +17,16 @@ label tonks_init:
 
         #Face
         $ tonks_mouth               = "characters/tonks/face/mouth/base.png" 
+        
         $ tonks_eye                 = "characters/tonks/face/eyes/eye_base.png" 
-        $ tonks_white               = "characters/tonks/face/eyes/white.png" 
-        $ tonks_eyebrow             = "characters/tonks/face/eyes/brow_base.png" 
-        $ tonks_pupil               = "characters/tonks/face/eyes/pupil_base.png" 
-        $ tonks_tears               = "characters/tonks/extras/blank.png" 
-        $ tonks_blush               = "characters/tonks/extras/blank.png"
+        $ tonks_eye_bg              = "characters/tonks/face/eyes/white.png" 
+        $ tonks_pupil               = "characters/tonks/face/eyes/pupil_base.png"
+        
+        $ tonks_eyebrow             = "characters/tonks/face/brow/base.png"  
+        
+        $ tonks_extra_1             = "characters/tonks/extras/blank.png" 
+        $ tonks_extra_2             = "characters/tonks/extras/blank.png" 
+        $ tonks_extra_3             = "characters/tonks/extras/blank.png"
 
         #Clothes
         $ tonks_coat                = "characters/tonks/clothes/auror/coat.png" 

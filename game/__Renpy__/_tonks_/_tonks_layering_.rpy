@@ -7,17 +7,20 @@ screen tonks_main:
     add tonks_hair xpos tonks_xpos ypos tonks_ypos #Add the hair base
     add tonks_base xpos tonks_xpos ypos tonks_ypos #Add the base body
     add tonks_boobs xpos tonks_xpos ypos tonks_ypos #Add the base body
-    ### EMOTIONS
-    add tonks_white xpos tonks_xpos ypos tonks_ypos #Add the white of her eye
+    
+    ### FACE
+    add tonks_eye_bg xpos tonks_xpos ypos tonks_ypos #Add the eye white
     add tonks_pupil xpos tonks_xpos ypos tonks_ypos #Add the pupil
     add tonks_eye xpos tonks_xpos ypos tonks_ypos #Add the eye outline
+    
     add tonks_eyebrow xpos tonks_xpos ypos tonks_ypos #Add the eyebrow
     add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos #Add the hair shadow
-    ###MOUTH
     add tonks_mouth xpos tonks_xpos ypos tonks_ypos #Add the mouth
-    ### FACE
-    add tonks_tears xpos tonks_xpos ypos tonks_ypos #Add the tears
-    add tonks_blush xpos tonks_xpos ypos tonks_ypos #Add the tears
+    
+    add tonks_extra_1 xpos tonks_xpos ypos tonks_ypos #Add the extras
+    add tonks_extra_2 xpos tonks_xpos ypos tonks_ypos #Add the extras
+    add tonks_extra_3 xpos tonks_xpos ypos tonks_ypos #Add the extras
+    
     ### CLOTHES 
     if tonks_wear_coat:
         add tonks_coat_back xpos tonks_xpos ypos tonks_ypos # Add the coat back
@@ -35,9 +38,12 @@ screen tonks_main:
         add tonks_stockings xpos tonks_xpos ypos tonks_ypos # Add the stockings
     if tonks_wear_coat:
         add tonks_coat xpos tonks_xpos ypos tonks_ypos # Add the coat
+        
     ### ZORDER
     zorder tonks_zorder
 
+    
+    
 label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
     hide screen tonks_main
     
@@ -136,8 +142,9 @@ init python:
             tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png"
         if eye is not None:
             tonks_eye         = "characters/tonks/face/eyes/eye_"+eye+".png" 
+            tonks_eye_bg      = "characters/tonks/face/eyes/white.png"
         if eyebrow is not None:
-            tonks_eyebrow     = "characters/tonks/face/eyes/brow_"+eyebrow+".png" 
+            tonks_eyebrow     = "characters/tonks/face/brow/"+eyebrow+".png" 
         if pupil is not None:
             tonks_pupil       = "characters/tonks/face/eyes/pupil_"+pupil+".png"  
         ###POSITION CONTROL

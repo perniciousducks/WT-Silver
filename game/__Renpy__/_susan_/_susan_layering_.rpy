@@ -7,17 +7,20 @@ screen susan_main:
     add susan_hair xpos susan_xpos ypos susan_ypos #Add the hair base
     add susan_base xpos susan_xpos ypos susan_ypos #Add the base body
     add susan_boobs xpos susan_xpos ypos susan_ypos #Add the base body
-    ### EMOTIONS
+    
+    ### FACE
     add susan_eye_bg xpos susan_xpos ypos susan_ypos #Add the eye white
     add susan_pupil xpos susan_xpos ypos susan_ypos #Add the pupil
     add susan_eye xpos susan_xpos ypos susan_ypos #Add the eye outline
+    
     add susan_eyebrow xpos susan_xpos ypos susan_ypos #Add the eyebrow
     add susan_hair_shadow xpos susan_xpos ypos susan_ypos #Add the hair shadow
-    ###MOUTH
     add susan_mouth xpos susan_xpos ypos susan_ypos #Add the mouth
-    ### FACE
-    add susan_tears xpos susan_xpos ypos susan_ypos #Add the tears
-    add susan_blush xpos susan_xpos ypos susan_ypos #Add the tears
+    
+    add susan_extra_1 xpos susan_xpos ypos susan_ypos #Add the extras
+    add susan_extra_2 xpos susan_xpos ypos susan_ypos #Add the extras
+    add susan_extra_3 xpos susan_xpos ypos susan_ypos #Add the extras
+    
     ### CLOTHES 
     if susan_wear_bra and not susan_wear_top:
         add susan_bra xpos susan_xpos ypos susan_ypos # Add the bra
@@ -39,9 +42,11 @@ screen susan_main:
         add susan_neckwear xpos susan_xpos ypos susan_ypos
     if susan_wear_robe:
         add susan_robe xpos susan_xpos ypos susan_ypos
+        
     ### ZORDER
     zorder susan_zorder
 
+    
     
 label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
     hide screen susan_main
@@ -144,7 +149,7 @@ init python:
             susan_eye         = "characters/susan/face/eyes/eye_"+eye+".png"
             susan_eye_bg      = "characters/susan/face/eyes/eye_"+eye+"_bg.png"
         if eyebrow is not None:
-            susan_eyebrow     = "characters/susan/face/eyes/brow_"+eyebrow+".png" 
+            susan_eyebrow     = "characters/susan/face/brow/"+eyebrow+".png" 
         if pupil is not None:
             susan_pupil       = "characters/susan/face/eyes/pupil_"+pupil+".png"  
         ###POSITION CONTROL

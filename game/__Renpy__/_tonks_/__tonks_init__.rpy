@@ -57,5 +57,13 @@ label tonks_progress_init:
 
         ##Favour stuff
         $ tonks_level = 0
+        
+        $ ton_genie_name = "Professor"
+        $ gen_tonks_name = "Tonks"
+        
+        $ ast_tonks_name = "Ma'am"
+        $ ton_astoria_name = "Cutie"
+        
+        $ tonks_busy = False
     
     return

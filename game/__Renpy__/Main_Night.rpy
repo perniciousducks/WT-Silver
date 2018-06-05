@@ -18,6 +18,10 @@ $ uni_sperm = False
 $ textColor = "#1e1008"
 
 call luna_night_flags
+$ astoria_busy = False
+$ susan_busy = False
+$ tonks_busy = False
+
 
 scene black
 hide screen main_room

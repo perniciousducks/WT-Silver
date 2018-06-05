@@ -24,6 +24,10 @@ $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
 $ save_name = temp_name
 
 call luna_day_flags
+$ astoria_busy = False
+$ susan_busy = False
+$ tonks_busy = False
+
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking   = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.

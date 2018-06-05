@@ -68,20 +68,35 @@ label door:
                 m "Maybe there is one hidden somewhere in this room..."
                 jump day_main_menu
                 
+                
+                
         "{color=#858585}-Summon Astoria-{/color}" if astoria_busy:
             if daytime:
                 call nar(">Astoria is taking classes.")
-                $ cust_char_1_enabled = True
-                $ cust_char_2_enabled = True
-                $ cust_char_3_enabled = True
                 jump day_main_menu
             else:
                 call nar(">Astoria is already asleep.")
                 jump night_main_menu
         
         "-Summon Astoria-" if not astoria_busy:
+            call play_music("chipper_doodle")
             jump summon_astoria
+            
+            
 
+        "{color=#858585}-Summon Susan-{/color}" if susan_busy:
+            if daytime:
+                call nar(">Susan is taking classes.")
+                jump day_main_menu
+            else:
+                call nar(">Susan is already asleep.")
+                jump night_main_menu
+        
+        "-Summon Susan-" if not susan_busy:
+            jump summon_susan
+
+            
+            
         "{color=#858585}-Summon Hermione-{/color}" if summoning_hermione_unlocked and hermione_takes_classes or hermione_sleeping:
             if hermione_takes_classes:
                 call nar(">Hermione is taking classes.")
@@ -100,32 +115,39 @@ label door:
             elif hermione_sleeping:
                 call nar(">Hermione is already asleep.")
                 jump night_main_menu
-                
             else:
                 jump summon_hermione
 
+                
+                
         "{color=#858585}-Summon Luna-{/color}" if luna_known and luna_unlocked and luna_busy:
-            call nar(">Luna is unavailable.")
             if daytime:
+                call nar(">Luna is taking classes.")
                 jump day_main_menu
             else: 
+                call nar(">Luna is already asleep.")
                 jump night_main_menu
             
         "-Summon Luna-" if luna_known and luna_unlocked and not luna_busy:
-            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # LUNA'S THEME (placeholder probably)
+            call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
             jump luna_door
 
+            
+            
         "{color=#858585}-Summon Cho-{/color}" if cho_met and cho_busy:
-            call nar(">Cho is unavailable.")
             if daytime:
+                call nar(">Cho is taking classes.")
                 jump day_main_menu
             else: 
+                call nar(">Cho is already asleep.")
                 jump night_main_menu
             
         "-Summon Cho-" if cho_met and not cho_busy:
             call play_music("chipper_doodle") # CHO'S THEME (placeholder probably)
             jump cho_menu
-                            
+                  
+
+                  
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:
             call nar(">Professor Snape is unavailable.")
             if daytime:
@@ -134,8 +156,11 @@ label door:
                 jump night_main_menu
             
         "-Summon Snape-" if hanging_with_snape and not snape_busy:
-            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+            call play_music("dark_fog") # SNAPE'S THEME
             jump summon_snape
+            
+            
+            
         "-Never mind-":
             jump day_main_menu
     

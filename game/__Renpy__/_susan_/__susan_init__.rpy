@@ -28,9 +28,9 @@ label susan_init:
         
         $ susan_eyebrow             = "characters/susan/face/brow/base.png" 
         
-        $ susan_extra_1             = "characters/susan/extras/blank.png" 
-        $ susan_extra_2             = "characters/susan/extras/blank.png" 
-        $ susan_extra_3             = "characters/susan/extras/blank.png"
+        $ susan_cheeks              = "characters/susan/face/extras/blank.png" 
+        $ susan_tears               = "characters/susan/face/extras/blank.png" 
+        $ susan_extra               = "characters/susan/face/extras/blank.png"
 
         
         #Clothes

@@ -16,9 +16,9 @@ screen astoria_main:
     add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
     add astoria_mouth xpos astoria_xpos ypos astoria_ypos #Add the mouth
     
-    add astoria_extra_1 xpos astoria_xpos ypos astoria_ypos #Add the extras
-    add astoria_extra_2 xpos astoria_xpos ypos astoria_ypos #Add the extras
-    add astoria_extra_3 xpos astoria_xpos ypos astoria_ypos #Add the extras
+    add astoria_cheeks xpos astoria_xpos ypos astoria_ypos #Add the extras
+    add astoria_tears xpos astoria_xpos ypos astoria_ypos #Add the extras
+    add astoria_extra xpos astoria_xpos ypos astoria_ypos #Add the extras
     
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:
@@ -51,9 +51,15 @@ screen astoria_main:
 
     
     
-label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen atoria_main
     
+    #Reset
+    if cheeks == None:
+        $ cheeks = "blank"
+    if tears == None:
+        $ tears = "blank"
+        
     #Positioning
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
@@ -81,7 +87,7 @@ label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
             
 
             
-    $ changeAstoria(mouth, eye, eyebrow, pupil, astoria_xpos, astoria_ypos, base, extra_1, extra_2, extra_3)
+    $ changeAstoria(mouth, eye, eyebrow, pupil, astoria_xpos, astoria_ypos, base, cheeks, tears, extra)
     
     show screen astoria_main
     show screen bld1
@@ -131,9 +137,9 @@ init python:
                         x_pos=None, 
                         y_pos=None,
                         base=None,
-                        extra_1=None,
-                        extra_2=None,
-                        extra_3=None): 
+                        cheeks=None,
+                        tears=None,
+                        extra=None): 
         ###DEFINE GLOBAL VARIABLES
         global astoria_mouth
         global astoria_eye
@@ -143,9 +149,9 @@ init python:
         global astoria_xpos
         global astoria_ypos
         global astoria_base
-        global astoria_extra_1
-        global astoria_extra_2
-        global astoria_extra_3
+        global astoria_cheeks
+        global astoria_tears
+        global astoria_extra
         ###EMOTION CONTROL
         if mouth is not None:
             astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
@@ -164,9 +170,9 @@ init python:
         ###BODY CONTROL
         if base is not None:
             astoria_base        = "characters/astoria/base/"+base+".png" 
-        if extra_1 is not None:
-            astoria_extra_1     = "characters/astoria/extras/"+extra_1+".png" 
-        if extra_2 is not None:
-            astoria_extra_2     = "characters/astoria/extras/"+extra_2+".png" 
-        if extra_3 is not None:
-            astoria_extra_3     = "characters/astoria/extras/"+extra_3+".png" 
+        if cheeks is not None:
+            astoria_cheeks      = "characters/astoria/face/extras/"+cheeks+".png" 
+        if tears is not None:
+            astoria_tears       = "characters/astoria/face/extras/"+tears+".png" 
+        if extra is not None:
+            astoria_extra       = "characters/astoria/face/extras/"+extra+".png" 

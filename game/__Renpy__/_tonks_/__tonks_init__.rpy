@@ -24,9 +24,9 @@ label tonks_init:
         
         $ tonks_eyebrow             = "characters/tonks/face/brow/base.png"  
         
-        $ tonks_extra_1             = "characters/tonks/extras/blank.png" 
-        $ tonks_extra_2             = "characters/tonks/extras/blank.png" 
-        $ tonks_extra_3             = "characters/tonks/extras/blank.png"
+        $ tonks_cheeks              = "characters/tonks/face/extras/blank.png" 
+        $ tonks_tears               = "characters/tonks/face/extras/blank.png" 
+        $ tonks_extra               = "characters/tonks/face/extras/blank.png"
 
         #Clothes
         $ tonks_coat                = "characters/tonks/clothes/auror/coat.png" 

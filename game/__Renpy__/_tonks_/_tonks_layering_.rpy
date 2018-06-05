@@ -17,9 +17,9 @@ screen tonks_main:
     add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos #Add the hair shadow
     add tonks_mouth xpos tonks_xpos ypos tonks_ypos #Add the mouth
     
-    add tonks_extra_1 xpos tonks_xpos ypos tonks_ypos #Add the extras
-    add tonks_extra_2 xpos tonks_xpos ypos tonks_ypos #Add the extras
-    add tonks_extra_3 xpos tonks_xpos ypos tonks_ypos #Add the extras
+    add tonks_cheeks xpos tonks_xpos ypos tonks_ypos #Add the extras
+    add tonks_tears xpos tonks_xpos ypos tonks_ypos #Add the extras
+    add tonks_extra xpos tonks_xpos ypos tonks_ypos #Add the extras
     
     ### CLOTHES 
     if tonks_wear_coat:
@@ -44,9 +44,15 @@ screen tonks_main:
 
     
     
-label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen tonks_main
     
+    #Reset
+    if cheeks == None:
+        $ cheeks = "blank"
+    if tears == None:
+        $ tears = "blank"
+        
     #Positioning
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
@@ -73,7 +79,7 @@ label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None,
             $ tonks_ypos = int(ypos)
             
 
-    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, base, extra_1, extra_2, extra_3)
+    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, base, cheeks, tears, extra)
     
     show screen tonks_main
     show screen bld1
@@ -123,9 +129,9 @@ init python:
                         x_pos=None, 
                         y_pos=None,
                         base=None,
-                        extra_1=None,
-                        extra_2=None,
-                        extra_3=None): 
+                        cheeks=None,
+                        tears=None,
+                        extra=None): 
         ###DEFINE GLOBAL VARIABLES
         global tonks_mouth
         global tonks_eye
@@ -134,9 +140,9 @@ init python:
         global tonks_xpos
         global tonks_ypos
         global tonks_base
-        global tonks_extra_1
-        global tonks_extra_2
-        global tonks_extra_3
+        global tonks_cheeks
+        global tonks_tears
+        global tonks_extra
         ###EMOTION CONTROL
         if mouth is not None:
             tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png"
@@ -155,9 +161,9 @@ init python:
         #BODY CONTROL
         if base is not None:
             tonks_base        = "characters/tonks/base/"+base+".png" 
-        if extra_1 is not None:
-            tonks_extra_1     = "characters/tonks/extras/"+extra_1+".png" 
-        if extra_2 is not None:
-            tonks_extra_2     = "characters/tonks/extras/"+extra_2+".png" 
-        if extra_3 is not None:
-            tonks_extra_3     = "characters/tonks/extras/"+extra_3+".png" 
+        if cheeks is not None:
+            tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png" 
+        if tears is not None:
+            tonks_tears       = "characters/tonks/face/extras/"+tears+".png" 
+        if extra is not None:
+            tonks_extra       = "characters/tonks/face/extras/"+extra+".png" 

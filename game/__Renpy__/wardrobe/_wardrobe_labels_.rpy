@@ -143,6 +143,7 @@ label wr_her_clothing_reset:
             $ hermione_use_action = True
     else: #Underwear page Qol
         $ hermione_use_action = False #Hide Action so Underwear can be turned on.
+        $ hermione_wear_robe = False
         if whoring >= 12:
             $ hermione_wear_top = False
             $ hermione_wear_bottom = False
@@ -161,6 +162,7 @@ label wr_ast_clothing_reset:
     #    if astoria_action != "none":
     #        $ astoria_use_action = True
     else: #Underwear page Qol
+        $ astoria_wear_robe = False
         $ astoria_wear_top = False
         $ astoria_wear_bottom = False
 
@@ -178,6 +180,7 @@ label wr_sus_clothing_reset:
     #    if susan_action != "none":
     #        $ susan_use_action = True
     else: #Underwear page Qol
+        $ susan_wear_robe = False
         $ susan_wear_top = False
         $ susan_wear_bottom = False
 
@@ -200,8 +203,7 @@ label close_wardrobe:
     
     if active_girl == "astoria":
         call ast_main(xpos="base",ypos="base")
-        jump day_main_menu
-        #jump astoria_requests
+        jump astoria_requests
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
         jump day_main_menu

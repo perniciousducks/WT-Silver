@@ -27,9 +27,9 @@ label astoria_init:
         
         $ astoria_eyebrow             = "characters/astoria/face/brow/base.png" 
         
-        $ astoria_extra_1             = "characters/astoria/extras/blank.png" 
-        $ astoria_extra_2             = "characters/astoria/extras/blank.png" 
-        $ astoria_extra_3             = "characters/astoria/extras/blank.png"
+        $ astoria_cheeks              = "characters/astoria/face/extras/blank.png" 
+        $ astoria_tears               = "characters/astoria/face/extras/blank.png" 
+        $ astoria_extra               = "characters/astoria/face/extras/blank.png"
 
         #Hair
         $ astoria_hair                = "characters/astoria/body/hair/hair_1_base.png" 

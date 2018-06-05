@@ -68,6 +68,20 @@ label door:
                 m "Maybe there is one hidden somewhere in this room..."
                 jump day_main_menu
                 
+        "{color=#858585}-Summon Astoria-{/color}" if astoria_busy:
+            if daytime:
+                call nar(">Astoria is taking classes.")
+                $ cust_char_1_enabled = True
+                $ cust_char_2_enabled = True
+                $ cust_char_3_enabled = True
+                jump day_main_menu
+            else:
+                call nar(">Astoria is already asleep.")
+                jump night_main_menu
+        
+        "-Summon Astoria-" if not astoria_busy:
+            jump summon_astoria
+
         "{color=#858585}-Summon Hermione-{/color}" if summoning_hermione_unlocked and hermione_takes_classes or hermione_sleeping:
             if hermione_takes_classes:
                 call nar(">Hermione is taking classes.")

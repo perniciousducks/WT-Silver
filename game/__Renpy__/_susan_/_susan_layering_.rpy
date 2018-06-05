@@ -17,9 +17,9 @@ screen susan_main:
     add susan_hair_shadow xpos susan_xpos ypos susan_ypos #Add the hair shadow
     add susan_mouth xpos susan_xpos ypos susan_ypos #Add the mouth
     
-    add susan_extra_1 xpos susan_xpos ypos susan_ypos #Add the extras
-    add susan_extra_2 xpos susan_xpos ypos susan_ypos #Add the extras
-    add susan_extra_3 xpos susan_xpos ypos susan_ypos #Add the extras
+    add susan_cheeks xpos susan_xpos ypos susan_ypos #Add the extras
+    add susan_tears xpos susan_xpos ypos susan_ypos #Add the extras
+    add susan_extra xpos susan_xpos ypos susan_ypos #Add the extras
     
     ### CLOTHES 
     if susan_wear_bra and not susan_wear_top:
@@ -48,9 +48,14 @@ screen susan_main:
 
     
     
-label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, extra_1=None, extra_2=None, extra_3=None, xpos=None, ypos=None, trans=None):
+label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen susan_main
     
+    #Reset
+    if cheeks == None:
+        $ cheeks = "blank"
+    if tears == None:
+        $ tears = "blank"
     
     #Positioning
     if xpos != None:
@@ -77,7 +82,7 @@ label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
         else:
             $ susan_ypos = int(ypos)
             
-    $ changeSusan(mouth, eye, eyebrow, pupil, susan_xpos, susan_ypos, base, extra_1, extra_2, extra_3)
+    $ changeSusan(mouth, eye, eyebrow, pupil, susan_xpos, susan_ypos, base, cheeks, tears, extra)
     
     show screen susan_main
     show screen bld1
@@ -127,9 +132,9 @@ init python:
                         x_pos=None, 
                         y_pos=None,
                         base=None,
-                        extra_1=None,
-                        extra_2=None,
-                        extra_3=None): 
+                        cheeks=None,
+                        tears=None,
+                        extra=None): 
         ###DEFINE GLOBAL VARIABLES
         global susan_mouth
         global susan_eye
@@ -139,9 +144,9 @@ init python:
         global susan_xpos
         global susan_ypos
         global susan_base
-        global susan_extra_1
-        global susan_extra_2
-        global susan_extra_3
+        global susan_cheeks
+        global susan_tears
+        global susan_extra
         ###EMOTION CONTROL
         if mouth is not None:
             susan_mouth       = "characters/susan/face/mouth/"+mouth+".png"
@@ -160,9 +165,9 @@ init python:
         #BODY CONTROL
         if base is not None:
             susan_base        = "characters/susan/base/"+base+".png" 
-        if extra_1 is not None:
-            susan_extra_1     = "characters/susan/extras/"+extra_1+".png" 
-        if extra_2 is not None:
-            susan_extra_2     = "characters/susan/extras/"+extra_2+".png" 
-        if extra_3 is not None:
-            susan_extra_3     = "characters/susan/extras/"+extra_3+".png" 
+        if cheeks is not None:
+            susan_cheeks     = "characters/susan/face/extras/"+cheeks+".png" 
+        if tears is not None:
+            susan_tears     = "characters/susan/face/extras/"+tears+".png" 
+        if extra is not None:
+            susan_extra     = "characters/susan/face/extras/"+extra+".png" 

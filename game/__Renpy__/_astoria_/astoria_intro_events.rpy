@@ -160,10 +160,10 @@ label astoria_captured_intro:
     call her_main("","normal","angry")
     pause.2
     
-    call ast_main("...","pout","base","sad","R")
+    call ast_main("...","pout","base","worried","R")
     m "..."
     m "Who's this?"
-    call ast_main("My name is Astoria Greengrass, sir.","disgust","base","sad","mid",xpos="mid",ypos="base")
+    call ast_main("My name is Astoria Greengrass, sir.","disgust","base","worried","mid",xpos="mid",ypos="base")
     m "And why are you here?"
     call her_main("You asked me to bring you the person who cast the unforgivable curse sir.","soft","annoyed")
     call her_main("Here she is.","grin","angry")
@@ -179,16 +179,16 @@ label astoria_captured_intro:
     call her_main("It's true, sir. She was a cursed child, born with a frailty that affects her growth.","normal","concerned")
     call ast_main("Told you!","smile","angry","angry","R")
     m "Whatever... that still doesn't get you out of punishment."
-    call ast_main("punishment? for what?","pout","wide","surprised","wide")
+    call ast_main("punishment? for what?","pout","wide","wide","wide")
     call her_main("You know what you did!","angry","angryCl")
-    call ast_main("I never casted Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!","pout","wide","sad","R")
+    call ast_main("I never casted Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!","pout","wide","worried","R")
     m "Miss Granger..."
     call her_main("I overheard her boasting about it to a group of slytherins in the library.","annoyed","concerned")
     call her_main("By the sounds of it she used Imperio to control another student.","annoyed","base")
-    call ast_main("Did not!","worried","angry","sad","angry")
+    call ast_main("Did not!","worried","angry","worried","angry")
     m "Well, given the severity of the situation, I'm sure there's something we can use to get a clear answer out of you..."
     call her_main("Shall I go fetch a vial of veritaserum from professor snape, sir?","grin","base")
-    call ast_main("v-veritaserum? Isn't that against the rules?","scream","wide","sad","wide")
+    call ast_main("v-veritaserum? Isn't that against the rules?","scream","wide","worried","wide")
     call her_main("Not when you've been casting unforgivable curses you evil little witch!","grin","angry")
     call ast_main("OK... I'll tell you what happened sir...","pout","closed","base","mid")
     call ast_main("But only if Hermione leaves!","pout","narrow","base","mid")
@@ -225,13 +225,13 @@ label astoria_captured_intro:
     
     call ast_main("I just casted Imperio on you, professor! Now you have to do everything I say!","grin","narrow","base","mid")
     g4 "Did you just do it again? Another bloody curse... on me?"
-    call ast_main("yes... but it should have... why aren't you...","worried","narrow","scared","mid")
+    call ast_main("yes... but it should have... why aren't you...","worried","narrow","worried","mid")
     m "Ugh..."
     m "I better get Snape up here."
     call ast_main("professor snape? I command you not to!","scream","angry","angry","angry")
     m "yeah, no. I'm bringing him up here because now we're probably going to have to deal with something called an auror coming to the school."
-    call ast_main("An auror?!","worried","wide","surprised","wide")
-    call ast_main("But they'll send me to Azkaban!","scream","wide","scared","wide")
+    call ast_main("An auror?!","worried","wide","wide","wide")
+    call ast_main("But they'll send me to Azkaban!","scream","wide","worried","wide")
     m "I'm sure they'll be lenient, you're only a child after all."
     call ast_main("I am not a child!","scream","angry","angry","angry")
     m "ugh... I better get Snape."
@@ -240,7 +240,7 @@ label astoria_captured_intro:
     call sna_walk("door","mid",2)
     
     call sna_main("gen- oh, I see you already have a visitor...","snape_01",xpos="base",ypos="base")
-    call ast_main("...","pout","base","scared","R")
+    call ast_main("...","pout","base","worried","R")
     sna "Little young isn't she? even for you..."
     m "It's not that sort of visit."
     sna "Really? Then what's she doing here."
@@ -251,7 +251,7 @@ label astoria_captured_intro:
     sna "Do you have anything to say for yourself?"
     call ast_main("I-I'm sorry, sir... It won't happen again.","disgust","closed","base","mid")
     sna "Well as long as you only cast it once..."
-    call ast_main("Twice...","disgust","base","sad","R")
+    call ast_main("Twice...","disgust","base","worried","R")
     sna "TWICE!?!"
     sna "But that means..."
     sna "There's probably an auror on the way right now!"
@@ -260,7 +260,7 @@ label astoria_captured_intro:
     sna "Who did you cast them on you little idiot?"
     sna "Who did you curse?"
     call ast_main("Well the first time I was just testing it out on Susan Bones...","disgust","closed","base","mid")
-    call ast_main("She was being mean to me so I... might have used imperio... to embarrass her a little...","smile","narrow","sad","mid")
+    call ast_main("She was being mean to me so I... might have used imperio... to embarrass her a little...","smile","narrow","worried","mid")
     sna "And the second time?"
     call ast_main("I just tried to use imperio on professor Dumbledore then, so he wouldn't get me in trouble...","disgust","base","base","R")
     call ast_main("But it didn't work!","pout","base","base","wide")
@@ -275,27 +275,27 @@ label astoria_captured_intro:
     call sna_walk("mid","leave",1.5)
     
     g4 "COWARD!"
-    call ast_main("So there really is an auror coming?","worried","closed","scared","mid")
-    call ast_main("I've heard that they're all trained by madeye moody...","worried","closed","scared","mid")
-    call ast_main("PLEASE SIR!","worried","wide","surprised","wide",extra_1="crying")
-    call ast_main("YOU CAN'T LET THEM SEND ME TO Azkaban!")
-    call ast_main("I promise I'll be good! I won't cast anymore curses!","scream","closed","base","mid")
-    call ast_main("I'll do whatever you want!","scream","base","sad","R")
+    call ast_main("So there really is an auror coming?","worried","closed","worried","mid")
+    call ast_main("I've heard that they're all trained by madeye moody...","worried","closed","worried","mid")
+    call ast_main("PLEASE SIR!","worried","wide","wide","wide",tears="crying")
+    call ast_main("YOU CAN'T LET THEM SEND ME TO Azkaban!",tears="crying")
+    call ast_main("I promise I'll be good! I won't cast anymore curses!","scream","closed","base","mid",tears="crying")
+    call ast_main("I'll do whatever you want!","scream","base","worried","R",tears="crying")
     m "Calm down..."
-    call ast_main("b-b-but... I don't want to... go to Azkaban...","worried","closed","base","mid")
+    call ast_main("b-b-but... I don't want to... go to Azkaban...","worried","closed","base","mid",tears="crying")
     m "I'm not going to let them take you to Azkaban."
-    call ast_main("r-r-r-really? even after I tried to control you?","smile","closed","base","mid")
+    call ast_main("r-r-r-really? even after I tried to control you?","smile","closed","base","mid",tears="crying")
     m "(There's not a single being that could possibly control me!)" #4th wall break, lololol
     m "we'll talk about your punishment later. For now, I think it's better for you to go back to your room."
-    call ast_main("A-a-alright... but what about the auror?","worried","wink","base","mid")
+    call ast_main("A-a-alright... but what about the auror?","worried","wink","base","mid",tears="crying")
     m "I'll just explain to them that this was all a simple misunderstanding."
-    call ast_main("T-thank you, sir...","smile","narrow","base","mid")
+    call ast_main("T-thank you, sir...","smile","narrow","base","mid",tears="crying")
     m "However, I do expect you to come to my office whenever I summon you from now on."
-    call ast_main("W-what? Why?","pout","wide","sad","wide",extra_1="blank")
+    call ast_main("W-what? Why?","pout","wide","worried","wide")
     m "I might have to call you up here to see the auror. Not to mention we still have the matter of your punishment."
     call ast_main("But I thought it was all just a misunderstanding?","pout","base","narrow","R")
     m "You've committed a very serious offense here young girl. Just because you're not going to Azkaban, doesn't mean you're getting out of punishment."
-    call ast_main("Alright sir...","pout","base","sad","R")
+    call ast_main("Alright sir...","pout","base","worried","R")
     m "Good. Now go back to your room until I summon you."
     g4 "And stop with the bloody curses!"
     call ast_main("yes sir...","pout","closed","base","mid")
@@ -326,7 +326,7 @@ label tonks_intro_event: #occurs a day or two after the last event
     m "The curses, I'd imagine."
     call ton_main("Yes. As I'm sure you're aware, it's ministry protocol to have an auror investigate every instance of an unforgivable curse being cast.","base","base","base","R")
     call ton_main("The ministry was willing to ignore one curse given the likelihood that it was just a student playing about...","base","base","base","down")
-    call ton_main("Two curses on the other hand, cannot be ignored.","base","base","concerned","mid")
+    call ton_main("Two curses on the other hand, cannot be ignored.","base","base","worried","mid")
     m "I understand..."
     call ton_main("Well, first things first, do you know who it was that cast the spells?","base","base","raised","mid")
     m "I do."
@@ -343,7 +343,7 @@ label tonks_intro_event: #occurs a day or two after the last event
             call ton_main("...","base","base","raised","mid")
             call ton_main("This is a serious matter sir, I'd prefer if you kept the jokes to a minimum.","base","base","base","mid")
             m "certainly..."
-    call ton_main("Well, I'm not surprised, It usually is Imperio. Most students don't have the guts to cast crucio on another person, let alone Avada Cadavara...","base","base","concerned","R")
+    call ton_main("Well, I'm not surprised, It usually is Imperio. Most students don't have the guts to cast crucio on another person, let alone Avada Cadavara...","base","base","worried","R")
     call ton_main("And lastly, are you aware who the curse was cast on?","base","base","raised","mid")
     m "I am."
     call ton_main("If you wouldn't mind...","base","base","base","up")

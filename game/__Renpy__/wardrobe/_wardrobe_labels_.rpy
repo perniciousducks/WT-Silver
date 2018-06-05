@@ -206,8 +206,7 @@ label close_wardrobe:
         jump astoria_requests
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
-        jump day_main_menu
-        #jump susan_requests?
+        jump susan_requests
 
 ### Pose/Action ###
 

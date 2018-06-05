@@ -25,7 +25,18 @@ $ save_name = temp_name
 
 call luna_day_flags
 $ astoria_busy = False
+
+#Susan Daily Flags.
 $ susan_busy = False
+if susan_imperio_counter > 0:
+    $ susan_imperio_counter -= 1            #Removes 1 at each new day.
+    $ susan_imperio_influence = True
+    if susan_imperio_counter <= 0:
+        $ susan_imperio_influence = False
+        $ reset_susans_wardrobe = True
+        call susan_init
+        $ reset_susans_wardrobe = False
+    
 $ tonks_busy = False
 
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.

@@ -207,15 +207,9 @@ label astoria_captured_intro:
     
     call bld
     m "Right, well now that Hermione's gone, why don't you tell me exactly what--"
+    
     #magic sound effect and screen shake
-    
-    stop music fadeout 2.0
-    call play_sound("spell")
-    show screen white 
-    pause.1
-    hide screen white
-    with hpunch
-    
+    call cast_spell("imperio") #Different effects for different spells.
     call ast_main("IMPERIO!!!","scream","angry","angry","angry")
     
     call blktone

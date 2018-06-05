@@ -181,6 +181,8 @@ label astoria_progress_init:
         
         $ astoria_name = "Miss Greengrass"
         $ ast_genie_name = "Sir"
+        $ ast_susan_name = "Cow"
+        $ ast_tonks_name = "Ma'am"
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

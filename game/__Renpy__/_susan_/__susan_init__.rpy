@@ -2,8 +2,7 @@
 
 label susan_init:
 
-    #if not hasattr(renpy.store,'susan_base') or reset_persistants:
-    if not hasattr(renpy.store,'sus_ears') or reset_persistants:    #Remove before update!
+    if not hasattr(renpy.store,'susan_base') or reset_persistants or reset_susans_wardrobe:
 
         #Body
         $ susan_base                = "characters/susan/body/base/base_01.png" 
@@ -158,8 +157,11 @@ label susan_progress_init:
         ##Favour stuff
         $ susan_level = 0
         
+        $ susan_imperio_influence = False
+        $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
+        $ reset_susans_wardrobe = False
+        
         $ susan_name = "Miss Bones"
-        $ ast_susan_name = "Cow"
         $ sus_genie_name = "Sir"
         
         $ susan_busy = False

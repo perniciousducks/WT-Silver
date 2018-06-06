@@ -114,7 +114,10 @@ label play_sound(sound=""):
 
     if sound in ["glass_break","glass"]:
         $ renpy.play('sounds/glass_break.mp3')
-
+        
+    if sound in ["scratch"]:
+        $ renpy.play('sounds/scratch.wav')
+    
     if sound in ["slap","slapping"]:
         $ renpy.play('sounds/slap_02.mp3')
 

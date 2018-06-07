@@ -464,3 +464,49 @@ label astoria_lap_sit_2_2:
 label astoria_lap_sit_2_3: 
     
     return
+    
+    
+    
+    
+    
+    
+    
+label set_ast_susan_name:
+    if one_of_ten == 1:
+        $ ast_susan_name = "Susy"
+    if one_of_ten == 2:
+        $ ast_susan_name = "Cow"
+    if one_of_ten == 3:
+        $ ast_susan_name = "Cow Tits"
+    if one_of_ten == 4:
+        $ ast_susan_name = "Milk Bag"
+    if one_of_ten == 5:
+        $ ast_susan_name = "Slut"
+    if one_of_ten == 6:
+        $ ast_susan_name = "Whore"
+    if one_of_ten == 7:
+        $ ast_susan_name = "Piggy"
+    if one_of_ten == 8:
+        $ ast_susan_name = "Pig"
+    if one_of_ten == 9:
+        $ ast_susan_name = "Bessie"
+    if one_of_ten == 10:
+        $ ast_susan_name = "Moo Moo"
+    
+    return
+    
+    
+label set_ast_tonks_name:
+    if one_of_five == 1:
+        $ ast_tonks_name = "Hag"
+    if one_of_five == 2:
+        $ ast_tonks_name = "Old Hag"
+    if one_of_five == 3:
+        $ ast_tonks_name = "Punk"
+    if one_of_five == 4:
+        $ ast_tonks_name = "Dyke"
+    if one_of_five == 5:
+        $ ast_tonks_name = "Lesbo"
+        
+    return
+    

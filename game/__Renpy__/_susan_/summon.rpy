@@ -32,13 +32,13 @@ label summon_susan:
 
     menu:
         "-Talk-":
-        #    if not chitchated_with_ast: 
-        #        call ast_chit_chat 
-        #        jump susan_requests
-        #    else:
-            jump susan_talk 
+            if not chitchated_with_susan: 
+                call susan_chit_chat 
+                jump susan_talk
+            else:
+                jump susan_talk 
         #"-Tutoring-":
-        "-Inventory-" if susan_imperio_influence:
+        "-Inventory-" if susan_wardrobe_unlocked and susan_imperio_influence:
             $ active_girl = "susan"
 
             call load_susan_clothing_saves
@@ -49,7 +49,7 @@ label summon_susan:
             $ wardrobe_active = 1 #True
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
-        "{color=#858585}-Inventory-{/color}" if not susan_imperio_influence:
+        "{color=#858585}-Inventory-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
             call nar(">You will need to cast imperio on Susan to change her Wardrobe!","start")
             call nar(">Would you like to summon Astoria to cast the spell?","end")
             menu:

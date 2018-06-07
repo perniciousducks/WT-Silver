@@ -1012,6 +1012,8 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     call nar(">Tonks turns and leaves your office.")
     m "..."
     m "Did I just become a pimp?"
+    
+    $ astoria_unlocked = True
 
     jump day_main_menu
     
@@ -1050,6 +1052,7 @@ label astoria_book_intro: #Summon Astoria and tell her that you have a book of s
     ast "You promised!"
     m "No ones sending you to Azkaban."
     ast "r-r-r-really... then why does she want to see me?"
+    
     menu:
         "-Tell the truth-":
             m "Well, you know how some of the teachers here like to award bonus points to students-"
@@ -1057,7 +1060,8 @@ label astoria_book_intro: #Summon Astoria and tell her that you have a book of s
             m "You know about that?"
             ast "Of course! Half the girls in slytherin earn extra points of Snape."
             ast "A few have even earned some off of slughorn."
-            "Astoria shivers at the thought."
+            with hpunch
+            call nar("Astoria shivers at the thought.")
             ast "But I've never done anything like that, Snape gives me the creeps..."
             ast "(Plus he only likes girls with big boobs...)"
         "-Lie-":
@@ -1074,6 +1078,7 @@ label astoria_book_intro: #Summon Astoria and tell her that you have a book of s
             m "Really?"
             ast "Yeah, although they're all huge sluts... I'd never do something like that."
             ast "(Plus Snape only likes girls with big boobs...)"
+            
     m "Well we won't be able to practice these new spells without you heading over there."
     ast "Really? You mean I have to go see that creepy old lady..."
     m "She's not old!"
@@ -1081,14 +1086,14 @@ label astoria_book_intro: #Summon Astoria and tell her that you have a book of s
     ast "I be you she's like, 29, or something."
     ast "she could even be 30!"
     m "You'll be spending a lot longer than 30 years in Alakazam if you don't go over there."
-    ast "What? You promised Dumby!"
+    ast "What? But you promised! [ast_genie_name]!!!"
     m "I promised I wouldn't send you to Alkatraz, I never said Tonka trucks wouldn't."
     ast "I don't think that's her name sir..."
     m "Whatever, just head over there."
     m "I told her not to do anything strange to you anyway. She probably only wants to talk."
     ast "Are you sure?"
     m "at worst she'll make you take your skirt off..."
-    ast "DUMBy!"
+    ast "[ast_genie_name]!"
     m "Just go say hello."
     ast "what if she does something weird?"
     m "You can come back here afterwards to tell me what happened. If she does anything too weird we can stop it."

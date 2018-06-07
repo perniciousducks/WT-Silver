@@ -161,10 +161,16 @@ label susan_progress_init:
         $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
         $ reset_susans_wardrobe = False
         
+        ##Flags
+        $ susan_busy = False
+        $ susan_unlocked = False
+        $ susan_wardrobe_unlocked = False
+        $ chitchated_with_susan = False
+        
+        ##Names
         $ susan_name = "Miss Bones"
         $ sus_genie_name = "Sir"
         
-        $ susan_busy = False
     
 
     return

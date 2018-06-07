@@ -28,13 +28,22 @@ label summon_astoria:
 
     menu:
         "-Talk-":
-        #    if not chitchated_with_ast: 
-        #        call ast_chit_chat 
-        #        jump astoria_talk
-        #    else:
-            jump astoria_talk 
-        #"-Tutoring-":
-        "-Inventory-":
+            if not chitchated_with_astoria: 
+                call astoria_chit_chat 
+                jump astoria_talk
+            else:
+                jump astoria_talk 
+        "-Tutoring-":
+            jump astpria_spell_event
+            
+        "{color=#858585}-Use a Spell-{/color}" if spells_locked:
+            call nar(">You have recently used a curse.")
+            jump astoria_requests
+            
+        "-Use a Spell-" if not spells_locked:
+            jump astoria_spells
+            
+        "-Inventory-" if astoria_wardrobe_unlocked:
             $ active_girl = "astoria"
 
             call load_astoria_clothing_saves
@@ -76,8 +85,12 @@ label astoria_talk:
                     call ast_main("Very well, [ast_genie_name].","smile","base","base","mid")
                     jump astoria_talk
                 "-Dumbledore-":
-                    $ ast_genie_name = "Dumbledore"
-                    call ast_main("Ok, [ast_genie_name].","smile","base","base","down")
+                    $ ast_genie_name = "Dumby"
+                    call ast_main("[ast_genie_name]!","smile","happyCl","base","mid")
+                    m "No, I said Dumbledore!-- Dumbledore!"
+                    call ast_main("But I like [ast_genie_name] better!","grin","base","base","mid")
+                    m "Damn it."
+                    m "Fine, have it your way..."
                     jump astoria_talk
                 "-Professor-":
                     $ ast_genie_name = "Professor"

@@ -52,7 +52,7 @@ screen astoria_main:
     
     
 label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
-    hide screen atoria_main
+    hide screen astoria_main
     
     #Reset
     if cheeks == None:

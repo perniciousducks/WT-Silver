@@ -37,8 +37,8 @@ label summon_astoria:
             else:
                 jump astoria_talk
                 
-        "-Tutoring-":
-            jump astoria_spell_event
+        "-Spell Training-":
+            jump astoria_spell_training
             
         "{color=#858585}-Use a Spell-{/color}" if spells_locked:
             call nar(">You have recently used an unforgivable curse!/n>Tonks will want to have a word with you before you can use another.")
@@ -66,6 +66,12 @@ label summon_astoria:
                     "{color=#858585}-Imperio-{/color}" if susan_imperio_influence: #
                         call nar(">Susan is still under the influence of this curse!")
                         jump curse_susan
+                    "-Imperio 1-" if astoria_spells[0] >= 1:
+                        jump imperio_spell_1
+                    "-Imperio 2-" if astoria_spells[0] >= 2:
+                        jump imperio_spell_2
+                    "-Imperio 3-" if astoria_spells[0] >= 3:
+                        jump imperio_spell_3
                     "-Back-":
                         jump astoria_target_select
             

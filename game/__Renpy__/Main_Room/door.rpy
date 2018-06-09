@@ -70,7 +70,7 @@ label door:
                 
                 
                 
-        "{color=#858585}-Summon Astoria-{/color}" if astoria_busy:
+        "{color=#858585}-Summon Astoria-{/color}" if astoria_busy and astoria_unlocked:
             if daytime:
                 call nar(">Astoria is taking classes.")
                 jump day_main_menu
@@ -78,13 +78,13 @@ label door:
                 call nar(">Astoria is already asleep.")
                 jump night_main_menu
         
-        "-Summon Astoria-" if not astoria_busy:
+        "-Summon Astoria-" if not astoria_busy and astoria_unlocked: #Summoning after intro events done.
             call play_music("chipper_doodle")
             jump summon_astoria
             
             
 
-        "{color=#858585}-Summon Susan-{/color}" if susan_busy:
+        "{color=#858585}-Summon Susan-{/color}" if susan_unlocked and susan_busy:
             if daytime:
                 call nar(">Susan is taking classes.")
                 jump day_main_menu
@@ -92,7 +92,7 @@ label door:
                 call nar(">Susan is already asleep.")
                 jump night_main_menu
         
-        "-Summon Susan-" if not susan_busy:
+        "-Summon Susan-" if susan_unlocked and not susan_busy:
             jump summon_susan
 
             
@@ -109,14 +109,7 @@ label door:
                 jump night_main_menu
         
         "-Summon Hermione-" if summoning_hermione_unlocked and not hermione_takes_classes and not hermione_sleeping:
-            if hermione_takes_classes:
-                call nar(">Hermione is taking classes.")
-                jump day_main_menu
-            elif hermione_sleeping:
-                call nar(">Hermione is already asleep.")
-                jump night_main_menu
-            else:
-                jump summon_hermione
+            jump summon_hermione
 
                 
                 
@@ -159,6 +152,17 @@ label door:
             call play_music("dark_fog") # SNAPE'S THEME
             jump summon_snape
             
+            
+            
+        "{color=#858585}-Summon Tonks-{/color}" if tonks_unlocked and tonks_busy:
+            call nar(">Tonks is unavailable.")
+            if daytime:
+                jump day_main_menu
+            else:
+                jump night_main_menu
+        
+        "-Summon Tonks-" if tonks_unlocked and not tonks_busy:
+            jump summon_tonks
             
             
         "-Never mind-":

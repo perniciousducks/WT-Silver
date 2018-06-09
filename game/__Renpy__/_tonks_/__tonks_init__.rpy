@@ -58,10 +58,15 @@ label tonks_progress_init:
         ##Favour stuff
         $ tonks_level = 0
         
+        ##Flags
+        $ tonks_busy = False
+        $ tonks_unlocked = False
+        $ chitchated_with_tonks = False
+        
+        ##Names
         $ tonks_name = "Tonks"
         $ ton_genie_name = "Professor"
         $ ton_astoria_name = "Cutie"
         
-        $ tonks_busy = False
     
     return

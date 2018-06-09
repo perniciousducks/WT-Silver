@@ -4,31 +4,17 @@ label cupboard:
     menu:
         "Astoria Test":
             menu:
-                "-Astoria Wardrobe Test-":
+                "-Unlock Summons-":
                     
-                    $ active_girl = "astoria"
+                    $ astoria_unlocked = True
+                    $ susan_unlocked = True
+                    $ tonks_unlocked = True
 
-                    #call load_hermione_clothing_saves
-
-                    call reset_wardrobe_vars
-                    call update_wr_color_list
-
-                    $ wardrobe_active = 1 #True
-                    call ast_main(xpos="wardrobe",ypos="base")
-                    call screen wardrobe
+                    jump cupboard
                     
-                "-Susan Wardrobe Test-":
-                    
-                    $ active_girl = "susan"
-
-                    #call load_hermione_clothing_saves
-
-                    call reset_wardrobe_vars
-                    call update_wr_color_list
-
-                    $ wardrobe_active = 1 #True
-                    call sus_main(xpos="wardrobe",ypos="base")
-                    call screen wardrobe
+                "-Unlock Wardrobes-":
+                    $ astoria_wardrobe_unlock = True
+                    $ susan_wardrobe_unlock = True
                     
                 "-Start Ast Event 1 Hermione-":
                     jump letter_intro_hermione
@@ -46,6 +32,8 @@ label cupboard:
                     jump snape_book_intro
                 "-Start Ast Event 7 Tonks-":
                     jump astoria_tonks_intro
+                "-Start Ast Event 8 Astoria-":
+                    jump astoria_book_intro
                 "-Back-":
                     jump cupboard
             

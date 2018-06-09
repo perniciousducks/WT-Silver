@@ -20,21 +20,59 @@ label summon_astoria:
     else:
         call ast_main("Hi, [genie_name]!","grin","angry","base","mid",xpos="base",ypos="base")
 
+    $ astoria_busy = True
+    
     label astoria_requests:
 
-    $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
+    $ menu_x = 0.1 #Menu is moved to the left.
+    $ menu_y = 0.5 #Menu is moved to the middle.
 
     $ wardrobe_active = False
 
     menu:
         "-Talk-":
-        #    if not chitchated_with_ast: 
-        #        call ast_chit_chat 
-        #        jump astoria_talk
-        #    else:
-            jump astoria_talk 
-        #"-Tutoring-":
-        "-Inventory-":
+            if not chitchated_with_astoria: 
+                call astoria_chit_chat 
+                jump astoria_talk
+            else:
+                jump astoria_talk
+                
+        "-Tutoring-":
+            jump astoria_spell_event
+            
+        "{color=#858585}-Use a Spell-{/color}" if spells_locked:
+            call nar(">You have recently used an unforgivable curse!/n>Tonks will want to have a word with you before you can use another.")
+            jump astoria_requests
+        "-Use a Spell-" if not spells_locked:
+            label astoria_target_select:
+            menu:
+                ">Choose a target."
+                "-Susan-" if not susan_busy:
+                    jump curse_susan
+                "{color=#858585}-Susan-{/color}" if susan_busy:
+                    call nar(">Susan is unavailable.")
+                    jump astoria_target_select
+                "{color=#858585}-Hermione-{/color}": #Hermione?
+                    call nar(">This feature has not been added yet.")
+                    jump astoria_target_select
+                "-Never mind-":
+                    jump astoria_requests
+            
+            label curse_susan:
+                menu:
+                    ">Choose your curse."
+                    "-Imperio-" if not susan_imperio_influence:
+                        jump susan_imperio
+                    "{color=#858585}-Imperio-{/color}" if susan_imperio_influence: #
+                        call nar(">Susan is still under the influence of this curse!")
+                        jump curse_susan
+                    "-Back-":
+                        jump astoria_target_select
+            
+        "{color=#858585}-Unavailable-{/color}" if not astoria_wardrobe_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump astoria_requests
+        "-Inventory-" if astoria_wardrobe_unlocked:
             $ active_girl = "astoria"
 
             call load_astoria_clothing_saves
@@ -76,8 +114,12 @@ label astoria_talk:
                     call ast_main("Very well, [ast_genie_name].","smile","base","base","mid")
                     jump astoria_talk
                 "-Dumbledore-":
-                    $ ast_genie_name = "Dumbledore"
-                    call ast_main("Ok, [ast_genie_name].","smile","base","base","down")
+                    $ ast_genie_name = "Dumby"
+                    call ast_main("[ast_genie_name]!","smile","happyCl","base","mid")
+                    m "No, I said Dumbledore!-- Dumbledore!"
+                    call ast_main("But I like [ast_genie_name] better!","grin","base","base","mid")
+                    m "Damn it."
+                    m "Fine, have it your way..."
                     jump astoria_talk
                 "-Professor-":
                     $ ast_genie_name = "Professor"

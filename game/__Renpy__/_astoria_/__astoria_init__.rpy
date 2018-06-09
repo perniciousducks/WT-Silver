@@ -175,14 +175,21 @@ label astoria_progress_init:
 
         ##Flags
         $ astoria_busy = False
+        $ astoria_unlocked = False
+        $ astoria_wardrobe_unlocked = False
+        $ chitchated_with_astoria = False
+        
         $ days_since_astoria = 0
         $ astoria_arrival_day = 30
         $ astoria_arrvial_whoring = 9
         
+        ##Names
         $ astoria_name = "Miss Greengrass"
-        $ ast_genie_name = "Sir"
+        $ ast_genie_name = "Dumby"
         $ ast_susan_name = "Cow"
-        $ ast_tonks_name = "Ma'am"
+        $ ast_tonks_name = "Old Hag"
+        
+        $ spells_locked = False
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

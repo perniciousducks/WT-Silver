@@ -661,28 +661,36 @@ label astoria_lap_sit_1_2:
     call nar("With tired expression, astoria hops off of your lap and slowly out of your office.")
     return
 label astoria_lap_sit_1_3: 
-    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
-    ast "Come on Dumby, let's start reading it already!"
+    call nar(">Astoria effortlessly hops up onto your lap, eager to start reading the final parts of the spell.")
+    ast "Come on Dumby, let's go! We're almost done!"
     m "Alright..."
-    call nar("You and Astoria turn to the page and start reading over the new spell.")
-    ast "Hmmm... This one seems a lot harder than the last one..."
-    m "Do you think you'll be able to cast it?"
-    ast "Of course dumby! It'll just take me a while to learn it is all..."
-    m "Good..."
-    call nar(">You and Astoria slowly poor over the book, your eyes occasionaly drifting shut...")
-    ast "Wake up dumby!"
-    m "I'm up!"
-    ast "*hmph* I bet your too busy thinking about Susan's gross boobs aren't you!"
-    m "I am now..."
-    ast "Well stop it!"
-    ast "You should be focusing on the spell, this part seems pretty hard..."
-    m "Ugh, can we continue this tomorrow?"
-    ast "What's a matter dumby? Are you all tuckered out from sitting in your chair all day?"
-    m "As a matter of fact I am."
-    ast "Pfft, figures."
-    ast "Well get some rest old man, I expect you to start pulling your weight next time!"
-    m "ugh..."
-    call nar("With teasing face, astoria hops off of your lap and out of your office.")
+    call nar("You and Astoria turn to one of the last pages and start reading over where you left off.")
+    ast "Hmmm... we might need to go back a little bit..."
+    m "Why?"
+    ast "I don't really remember this..."
+    ast "I might have fallen asleep last time..."
+    m "I thought you weren't tired?"
+    ast "Shut up dumby, no one likes a smarty pants!"
+    m "You're telling me..."
+    call nar(">You and Astoria turn back a few pages and continue reading...")
+    ast "That's it!"
+    m "Finally..."
+    ast "*hmph* we would have been done faster if you didn't ask me what every second word meant!"
+    m "I'm just testing you..."
+    ast "Pfft!"
+    ast "I don't even know how you got to be headmaster here without knowing what wingardium leviosa does..."
+    m "Uhhh, my work here's mostly administrative..."
+    ast "Administering your grossness on the other girls more like!"
+    m "Speaking of which... How about we get susan bones up here?"
+    ast "At this hour?"
+    ast "I don't think so dumby..."
+    m "ugh... fine..."
+    call nar("Astoria hops off of your lap.")
+    ast "Don't worry, we can try it out later sir."
+    m "I look forward to it."
+    m "Goodnight astoria."
+    ast "night dumby!"
+    call nar(">Astoria queitly walks out of your office, a small smirk forming in the corner of her mouth.")
     return
 
 #
@@ -735,6 +743,7 @@ label astoria_lap_sit_2_2:
     call nar("With teasing face, astoria hops off of your lap and out of your office.")
     return
 label astoria_lap_sit_2_3: 
+<<<<<<< HEAD
     call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
     ast "Come on Dumby, let's start reading it already!"
     m "Alright..."
@@ -758,3 +767,53 @@ label astoria_lap_sit_2_3:
     m "ugh..."
     call nar("With teasing face, astoria hops off of your lap and out of your office.")
     return
+=======
+    
+    return
+    
+    
+    
+    
+    
+    
+    
+label set_ast_susan_name:
+    if one_of_ten == 1:
+        $ ast_susan_name = "Susy"
+    if one_of_ten == 2:
+        $ ast_susan_name = "Cow"
+    if one_of_ten == 3:
+        $ ast_susan_name = "Cow Tits"
+    if one_of_ten == 4:
+        $ ast_susan_name = "Milk Bag"
+    if one_of_ten == 5:
+        $ ast_susan_name = "Slut"
+    if one_of_ten == 6:
+        $ ast_susan_name = "Whore"
+    if one_of_ten == 7:
+        $ ast_susan_name = "Piggy"
+    if one_of_ten == 8:
+        $ ast_susan_name = "Pig"
+    if one_of_ten == 9:
+        $ ast_susan_name = "Bessie"
+    if one_of_ten == 10:
+        $ ast_susan_name = "Moo Moo"
+    
+    return
+    
+    
+label set_ast_tonks_name:
+    if one_of_five == 1:
+        $ ast_tonks_name = "Hag"
+    if one_of_five == 2:
+        $ ast_tonks_name = "Old Hag"
+    if one_of_five == 3:
+        $ ast_tonks_name = "Punk"
+    if one_of_five == 4:
+        $ ast_tonks_name = "Dyke"
+    if one_of_five == 5:
+        $ ast_tonks_name = "Lesbo"
+        
+    return
+    
+>>>>>>> 1ee2d884f937be58592a3372b3896fea4ba7112c

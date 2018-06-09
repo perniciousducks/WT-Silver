@@ -1,10 +1,6 @@
+
+
 label summon_snape:
-    if snape_busy:
-        ">Professor Snape is unavailable."
-        if daytime:
-            jump day_main_menu
-        else: 
-            jump night_main_menu
     
     call play_sound("door")
     $ menu_x = 0.5
@@ -167,11 +163,8 @@ label summon_snape:
 
             if daytime:
                 sna "Alright, back to work then..."
-                call play_music("brittle_rille") #Day Theme
             else: 
                 sna "Goodnight then."
-                call play_music("manatees") #Night Theme
-                play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
 
             $ snape_busy = True
             hide screen snape_01 #Snape stands still.
@@ -181,8 +174,10 @@ label summon_snape:
             call play_sound("door")
 
             if daytime:
+                call play_music("brittle_rille") #Day Theme
                 jump day_main_menu
             else: 
+                call play_music("manatees") #Night Theme
                 jump night_main_menu
     
     

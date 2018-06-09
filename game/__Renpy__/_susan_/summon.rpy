@@ -32,13 +32,17 @@ label summon_susan:
 
     menu:
         "-Talk-":
-        #    if not chitchated_with_ast: 
-        #        call ast_chit_chat 
-        #        jump susan_requests
-        #    else:
-            jump susan_talk 
+            if not chitchated_with_susan: 
+                call susan_chit_chat 
+                jump susan_talk
+            else:
+                jump susan_talk 
         #"-Tutoring-":
-        "-Inventory-" if susan_imperio_influence:
+        
+        "{color=#858585}-Unavailable-{/color}" if not susan_wardrobe_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump susan_requests
+        "-Inventory-" if susan_wardrobe_unlocked and susan_imperio_influence:
             $ active_girl = "susan"
 
             call load_susan_clothing_saves
@@ -49,50 +53,9 @@ label summon_susan:
             $ wardrobe_active = 1 #True
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
-        "{color=#858585}-Inventory-{/color}" if not susan_imperio_influence:
-            call nar(">You will need to cast imperio on Susan to change her Wardrobe!","start")
-            call nar(">Would you like to summon Astoria to cast the spell?","end")
-            menu:
-                "-Summon Astoria-":
-                    call blkfade
-                    call play_music("silly_fun_loop")
-                    call play_sound("door")
-                    hide screen blkfade
-                    call ast_main("Hi, [ast_genie_name]! You called for me?",xpos="mid",ypos="base",trans="fade")
-                    call ast_main("Hey [ast_susan_name]...","grin","angry","angry","R")
-                    m "Yes, could you cast--"
-                    call ast_main("50 points!","scream","closed","base","mid")
-                    m "..."
-                    m "Alright... 50 points to \"Slytherin\"!"
-                    $ slytherin +=50
-                    call ast_main("Thank you!","grin","happyCl","base","mid")
-                    pause.5
-                    call blkfade
-                    
-                    call ast_main("","grin","angry","angry","L",xpos="base",ypos="base") #uses the fade from the next line.
-                    hide screen blkfade
-                    call sus_main("What are you--","open","wide","worried","R",xpos="mid",ypos="base",trans="fade")
-                    
-                    call cast_spell("imperio")
-                    call ast_main("{size=+10}{b}IMPERIO{/b}{/size}","scream","angry","angry","angry")
-                    
-                    show screen blktone
-                    call ast_main("[ast_susan_name], I command you to do whatever the old man tells you to do!")
-                    call sus_main("Of course, I will do whatever the old man sa--","open","base","base","up")
-                    
-                    hide screen blktone
-                    call ast_main("All done, [ast_genie_name]! This will probably last a couple of days...","smile","base","base","R")
-                    call ast_main("Have fun with her, [ast_genie_name]. She's all yours now! See ya [ast_susan_name]!","grin","happyCl","base","mid")
-                    
-                    $ susan_imperio_counter += 30 #Lasts 30 days.
-                    $ susan_imperio_influence = True
-                    
-                    hide screen astoria_main
-                    call sus_main("(...)","base","base","base","up",xpos="base",ypos="base",trans="fade")
-                    call nar(">Susan is now under the influence of imperio.\n>The effect will last for 30 days.")
-                    jump susan_requests
-                "-Never mind-":
-                    jump susan_requests
+        "{color=#858585}-Inventory-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
+            call nar(">You will need to cast imperio on Susan to change her Wardrobe!")
+            jump susan_requests
             
         "-Dismiss her-":
             if daytime:

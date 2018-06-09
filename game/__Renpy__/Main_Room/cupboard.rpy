@@ -12,13 +12,9 @@ label cupboard:
 
                     jump cupboard
                     
-                "-Disable Summons-":
-                    
-                    $ astoria_unlocked = False
-                    $ susan_unlocked = False
-                    $ tonks_unlocked = False
-
-                    jump cupboard
+                "-Unlock Wardrobes-":
+                    $ astoria_wardrobe_unlock = True
+                    $ susan_wardrobe_unlock = True
                     
                 "-Start Ast Event 1 Hermione-":
                     jump letter_intro_hermione
@@ -36,6 +32,8 @@ label cupboard:
                     jump snape_book_intro
                 "-Start Ast Event 7 Tonks-":
                     jump astoria_tonks_intro
+                "-Start Ast Event 8 Astoria-":
+                    jump astoria_book_intro
                 "-Back-":
                     jump cupboard
             

@@ -56,7 +56,7 @@ label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None,
     #Positioning
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
-            $ tonks_xpos = 640
+            $ tonks_xpos = 525
             $ menu_x = 0.1 #Don't add ypos!
         elif xpos == "mid":                     #Centered.
             $ tonks_xpos = 300

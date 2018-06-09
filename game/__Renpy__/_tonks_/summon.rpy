@@ -31,11 +31,11 @@ label summon_tonks:
             else:
                 call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.")
             jump tonks_requests
-            
         "-Send Astoria with her-" if spells_locked and daytime and not astoria_busy:
             call blkfade
             call nar(">You summon Astoria.")
             pause.5
+            hide screen blkfade
             call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
             call ast_main("Uhm, hello, Miss Tonks.","worried","base","worried","R")
             call ton_main("Hello, [ton_astoria_name].","horny","base","raised","L")

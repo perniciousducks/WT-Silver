@@ -310,6 +310,10 @@ label astoria_captured_intro:
     m "(I feel like I'm actually starting to run this damn school.)"
     m "(This isn't what I signed on for...)"
 
+    call give_reward(">You've unlocked the ability to summon Astoria to your office.","images/store/astoria_unlock_01.png")
+    $ astoria_unlocked = True
+    $ astoria_busy = True
+    
     jump day_main_menu
 
     
@@ -417,7 +421,7 @@ label tonks_intro_event: #occurs a day or two after the last event
     call ast_main("...","disgust","wide","wide","wide")
     m "..."
     call ton_main("It couldn't possibly have been someone like you!","open","base","wide","L")
-    call ast_main("I'm sorry miss... it was me...","open_upset","closed","base","R")
+    call ast_main("I'm sorry miss... it was me...","open","closed","base","R")
     call ton_main("Really?","base","base","raised","L")
     call ast_main("Please don't send me to Azkaban!","scream","wide","wide","wide")
     call ast_main("I don't want to go where the dementors are!","scream","closed","worried","mid")
@@ -530,7 +534,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("life in Azkaban...","disgust","closed","worried","mid")
     m "That's right... Now unless you want me to send you away, I think you better agree to this arrangement."
     call ast_main("...","pout","narrow","narrow","R")
-    call ast_main("fine... but you better not be up to anything!","open_upset","angry","worried","angry")
+    call ast_main("fine... but you better not be up to anything!","open","angry","worried","angry")
     g4 "Me?"
     m "Never..."
     call ast_main("...","pout","base","base","R")
@@ -542,7 +546,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("How can you be so sure? Won't she be able to tell if I cast another one?","scream","narrow","narrow","mid")
     m "Not anymore, I've made sure that no one will be any the wiser."
     call ast_main("...","disgust","wide","wide","down")
-    call ast_main("But why do you want me to cast unforgivable curses?","open_upset","wink","worried","mid")
+    call ast_main("But why do you want me to cast unforgivable curses?","open","wink","worried","mid")
     m "Let's just say I'm curious."
     m "(I wanna see someone get mind controlled!)"
     call ast_main("...","pout","angry","angry","angry")
@@ -551,11 +555,11 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("Well I won't do it!","scream","closed","base","mid")
     m "I think that you're forgetting that I can already send you to Azkaban."
     call ast_main("Oh...","disgust","base","worried","down")
-    call ast_main("But I still don't understand, why would you want to see me cast a curse like that?","open_upset","base","worried","mid")
+    call ast_main("But I still don't understand, why would you want to see me cast a curse like that?","open","base","worried","mid")
     m "(Ugh...)"
     m "Because of your exceptional skill! Not everyone can just cast a curse like that!"
     call ast_main("I suppose not... I was pretty angry when I casted it though...","pout","base","base","R")
-    call ast_main("I'm not sure if I could do it again...","open_upset","wink","base","mid")
+    call ast_main("I'm not sure if I could do it again...","open","wink","base","mid")
     m "Consider this a test then!"
     call ast_main("...","upset","base","worried","mid")
     call ast_main("Alright...","pout","base","worried","L")
@@ -569,7 +573,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("What? You want me to cast a curse on another student? Again?","scream","wide","wide","wide")
     m "They won't remember that we've done it will they?"
     call ast_main("I suppose not...","pout","narrow","narrow","R")
-    call ast_main("I just didn't expect you to be OK with us doing something like this...","open_upset","base","base","mid")
+    call ast_main("I just didn't expect you to be OK with us doing something like this...","open","base","base","mid")
     m "Believe me, I've done worse..."
     call ast_main("...","smile","base","base","down")
     call ast_main("Alright... I'll do it.","grin","base","base","mid")
@@ -578,9 +582,8 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     
     call ast_main("...","pout","base","base","R")
     call ctc
-    call ctc
     
-    call ast_main("Are you not going to summon her?","open_upset","wink","base","mid")
+    call ast_main("Are you not going to summon her?","open","wink","base","mid")
     m "I can't."
     call ast_main("Why not?","upset","narrow","narrow","mid")
     m "Because she hasn't visited my office yet. For some reason I can only summon people I've met before."
@@ -590,12 +593,12 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "If you wouldn't mind."
     call ast_main("OK... what should I say to her?","grin","closed","base","mid")
     m "About?"
-    call ast_main("To get her to come up here!","open_upset","base","base","down")
-    call ast_main("I need to tell her something.","open_upset","base","base","mid")
+    call ast_main("To get her to come up here!","open","base","base","down")
+    call ast_main("I need to tell her something.","open","base","base","mid")
     m "Just tell her I want to have a word with her."
     call ast_main("Really? Can't it be something a little more fun?","pout","angry","base","R")
     m "Fun?"
-    call ast_main("You know, something to make her think she's in trouble so she's all scared and nervous when she gets up here.","open_upset","base","base","L")
+    call ast_main("You know, something to make her think she's in trouble so she's all scared and nervous when she gets up here.","open","base","base","L")
     m "You can tell her whatever you want, so long as you get her up here."
     call ast_main("yay!","happy","base","base","mid")
     call ast_main("I'll be right back.","grin","angry","angry","mid")
@@ -638,7 +641,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call sus_main("","upset","base","worried","mid",xpos="mid",ypos="base")
     call ctc
     with hpunch
-    g9 "!!!"
+    g4 "!!!"
     g9 "(LOOK AT THOSE KNOCKERS!)"
     call ast_main("","pout","angry","angry","L",xpos="base",ypos="base")
     pause.8
@@ -668,152 +671,177 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("Yay! It worked!","grin","angry","angry","angry")
     m "Fantastic!"
     call ast_main("So what should we do now?","grin","closed","base","mid")
-    call ast_main("Want me to make her dance like a chicken?","grin","angry","angry","L")           ### Continue here!
+    call ast_main("Want me to make her dance like a chicken?","grin","angry","angry","L")
     m "Not exactly..."
-    call ast_main("What then?","upset","closed","base","mid")
+    call ast_main("What then?","open","wink","base","mid")
     m "Well what did you do to her the first time?"
-    call ast_main("...","upset","closed","base","mid")
-    call ast_main("I can't say...","upset","closed","base","mid")
-    call ast_main("It's too embarrassing!","upset","closed","base","mid")
-    m "embarrassing? Now I have to know!"
-    call ast_main("OK... but you have to promise that you won't get mad at me!","upset","closed","base","mid")
-    m "Sure."
-    call ast_main("...","upset","closed","base","mid")
-    call ast_main("Well a few of the other girls have been talking about...","upset","closed","base","mid")
-    call ast_main("...","upset","closed","base","mid")
-    call ast_main("they were talking about breasts, sir!","upset","closed","base","mid")
+    call ast_main("...","pout","angry","angry","R")
+    call ast_main("I can't say... It's too embarrassing!","pout","narrow","narrow","R")
+    g9 "Now I have to know!"
+    call ast_main("OK... but you have to promise that you won't get mad at me!","pout","narrow","narrow","mid")
+    m "Sure..."
+    call ast_main("Well, a few of the other girls have been talking about...","open","base","base","mid")
+    call ast_main("...","upset","base","worried","down")
+    call ast_main("they were talking about breasts, sir!","disgust","base","base","down",cheeks="blush")
     g9 "(JACKPOT!)"
-    m "go on..."
-    call ast_main("they were talking about how boys only like big ones...","upset","closed","base","mid")
-    call ast_main("and that only the girls with big boobs would get asked to the autumn ball...","upset","closed","base","mid")
+    m "Go on..."
+    call ast_main("They were talking about how boys only like the big ones...","open","narrow","narrow","down",cheeks="blush")
+    call ast_main("And that only the girls with big boobs would get asked to the autumn ball...","open","narrow","worried","down",cheeks="blush")
     m "Was Susan one of these girls?"
-    call ast_main("No sir. It was just a few of the \'Slytherin\' girls talking in the common room.","upset","closed","base","mid")
+    call ast_main("No sir. It was just a few of the \'Slytherin\' girls talking in the common room.","open","base","base","mid")
     m "So how did Susan become involved in all this then?"
-    call ast_main("It was her own fault!","upset","closed","base","mid")
+    call ast_main("It was her own fault!","pout","angry","angry","R")
     m "..."
-    call ast_main("What does she expect to happen when she keeps flaunting those disgusting udders of hers around the school!","upset","closed","base","mid")
-    call ast_main("It's only fair that someone put her in her place!","upset","closed","base","mid")
+    call ast_main("What does she expect to happen when she keeps flaunting those disgusting udders of hers around the school!","pout","angry","angry","L")
+    call ast_main("It's only fair that someone put her in her place!","pout","angry","angry","mid")
     m "And this someone was you?"
-    call ast_main("...","upset","closed","base","mid")
-    call ast_main("yes...","upset","closed","base","mid")
+    call ast_main("...","upset","narrow","narrow","mid")
+    call ast_main("yes...","worried","narrow","narrow","down",cheeks="blush")
     m "So what did you do?"
-    call ast_main("...","upset","closed","base","mid")
-    call ast_main("I might have... made her...","upset","closed","base","mid")
-    call ast_main("I made her walk around without a shirt on...","upset","closed","base","mid")
+    call ast_main("I might have... made her...","worried","angry","angry","R")
+    call ast_main("I made her walk around without a shirt on...","pout","angry","angry","R")
     m "What? Really?"
-    call ast_main("I'm sorry sir! It was just around the common-room.","upset","closed","base","mid")
-    call ast_main("I was just so angry about her getting all the attention from the boys.","upset","closed","base","mid")
-    call ast_main("So I gave her all the attention she could ever ask for!","upset","closed","base","mid")
-    call ast_main("Although it was only around the girls common-room so it wasn't that big a deal...","upset","closed","base","mid")
-    call ast_main("And it's not like she can remember it anyway...","upset","closed","base","mid")
-    call ast_main("It was just so {b}exciting{/b} to see her taken down a notch...","upset","closed","base","mid")
-    m "and What did the other girls do once you started parading her around?"
-    call ast_main("They were all shocked at first...","upset","closed","base","mid")
-    call ast_main("A few of them just told her to stop showing off and put a top on...","upset","closed","base","mid")
-    call ast_main("So I had to make things a little more embarrassing for her...","upset","closed","base","mid")
-    m "How's that?"
-    call ast_main("I may have made her do a little dance...","upset","closed","base","mid")
+    call ast_main("I'm sorry sir! It was just around the common-room.","open","base","worried","mid")
+    call ast_main("I was just so angry about her getting all the attention from the boys.","worried","base","worried","down")
+    call ast_main("So I gave her all the attention she could ever ask for!","worried","base","base","L")
+    call ast_main("Although it was only around the girls common-room, so it wasn't that big a deal...","open","closed","base","mid")
+    call ast_main("And it's not like she can remember it anyway...","open","base","base","R")
+    call ast_main("It was just so {b}exciting{/b} to see her taken down a notch...","grin","angry","angry","R")
+    m "And what did the other girls do once you started parading her around?"
+    call ast_main("They were all shocked at first...","grin","base","base","mid")
+    call ast_main("A few of them just told her to stop showing off and put a top on...","open","angry","angry","R")
+    call ast_main("So I had to make things a little more embarrassing for her...","grin","angry","angry","mid")
+    m "How that?"
+    call ast_main("I may have made her do a little dance...","grin","base","base","mid")
     m "A dance?"
-    call ast_main("Well... it was sort of just making her shake her boobs for them...","upset","closed","base","mid")
+    call ast_main("Well... it was sort of just making her shake her boobs for them...","smile","base","base","R")
     m "Can you make her do it again?"
-    call ast_main("WHAT!","upset","closed","base","mid")
-    call ast_main("professor! I can't do something like that!","upset","closed","base","mid")
+    call ast_main("WHAT!","disgust","wide","wide","wide")
+    call ast_main("Professor! I can't do something like that!","scream","closed","base","mid")
+    
     menu:
         "\"Why not?\"":
-            call ast_main("Because... because it's wrong!","upset","closed","base","mid")
-            call ast_main("You're too old!","upset","closed","base","mid")
-            call ast_main("And you're her teacher!","upset","closed","base","mid")
+            call ast_main("Because... because it's wrong!","open","closed","worried","mid")
+            call ast_main("You're too old!","scream","wide","wide","mid")
+            call ast_main("And you're her teacher!","worried","wide","wide","wide")
             m "So what?"
         "\"Come on...\"":
-            call ast_main("...","upset","closed","base","mid")
-            call ast_main("Is this a joke sir?","upset","closed","base","mid")
+            call ast_main("...","pout","angry","angry","mid")
+            call ast_main("Is this a joke sir?","pout","angry","angry","R")
             m "Maybe..."
-    call ast_main("You can't expect me to do something like that!","upset","closed","base","mid")
-    call ast_main("Unless...","upset","closed","base","mid")
+            
+    call ast_main("You can't expect me to do something like that!","disgust","closed","worried","mid")
+    call ast_main("Unless...","open","wide","wide","wide")
     m "Unless?"
-    call ast_main("Maybe if you made it worth my while...","upset","closed","base","mid")
-    call ast_main("Maybe I would be OK...","upset","closed","base","mid")
-    call ast_main("With making Susan dance with you...","upset","closed","base","mid")
-    call ast_main("Maybe!","upset","closed","base","mid")
+    call ast_main("Maybe if you made it worth my while...","grin","angry","angry","mid")
+    call ast_main("Maybe I would be OK...","open","narrow","narrow","mid")
+    call ast_main("With making Susan dance with you...","open","narrow","narrow","R")
     m "And what sort of reward would that be?"
-    call ast_main("I want points!","upset","closed","base","mid")
+    call ast_main("I want points!","scream","closed","angry","mid",trans="hpunch")
     m "What's your house called?"
-    call ast_main("Slytherin! You should know that!","upset","closed","base","mid")
-    m "of course I do... I was just making sure you knew."
-    call ast_main("...","upset","closed","base","mid")
-    m "Is that-"
-    call ast_main("Not done!","upset","closed","base","mid")
-    call ast_main("I also expect you to teach me some new spells!","upset","closed","base","mid")
+    call ast_main("Slytherin! You should know that!","pout","narrow","narrow","R")
+    m "How about instead--"
+    call ast_main("Not done!","scream","closed","angry","mid",trans="hpunch")
+    call ast_main("I also expect you to teach me some new spells!","scream","angry","angry","mid")
     m "What?"
-    call ast_main("All the spells I've been learning in class are so {b}boring!{/b}","upset","closed","base","mid")
-    call ast_main("Those dumb teachers only want us to learn safe spells...","upset","closed","base","mid")
-    call ast_main("that's part of the reason why I cursed Susan in the first place...","upset","closed","base","mid")
-    call ast_main("The unforgivable curses were the first fun spells I learned about!","upset","closed","base","mid")
-    call ast_main("Well maybe not crucio or avada kadavra...","upset","closed","base","mid")
-    call ast_main("But imperio!","upset","closed","base","mid")
-    call ast_main("It's so much fun!!!","upset","closed","base","mid")
-    call ast_main("I wanna learn more spells like this!","upset","closed","base","mid")
-    call ast_main("So I expect you to teach me them, I'm sure you know them all, old man.","upset","closed","base","mid")
+    call ast_main("All the spells I've been learning in class are so {b}boring!{/b}","pout","angry","angry","R")
+    call ast_main("Those dumb teachers only want us to learn safe spells...","pout","angry","angry","L")
+    call ast_main("that's part of the reason why I cursed Susan in the first place...","pout","angry","angry","mid")
+    call ast_main("The unforgivable curses were the first fun spells I learned about!","open","narrow","narrow","mid")
+    call ast_main("Well maybe not crucio or avada kadavra...","open","narrow","narrow","down")
+    call ast_main("But imperio!","clench","angry","angry","angry")
+    call ast_main("It's so much fun!!!","grin","closed","base","mid")
+    call ast_main("I wanna learn more spells like this!","grin","angry","angry","mid")
+    call ast_main("So I expect you to teach me them, I'm sure you know them all, old man.","open","closed","base","mid")
     m "(I don't know shit.)"
     m "Alright..."
-    call ast_main("yay!","upset","closed","base","mid")
-    call ast_main("Well in that case...","upset","closed","base","mid")
-    call ast_main("Susan, give professor Dumbledore a nice dance...","upset","closed","base","mid")
-    call sus_main("yes...","base","base","base","mid")
+    call ast_main("Yay!","grin","closed","base","mid")
+    call ast_main("Well in that case...","smile","base","base","mid")
+    
+    #Susan Strips.
+    call ast_main("Susan, give professor Dumbledore a nice dance...","scream","closed","base","mid")
+    call sus_main("Yes...","base","base","base","mid")
     call nar(">Susan starts moving her hips slowly to the sides, barely moving.")
-    call ast_main("That's terrible!","upset","closed","base","mid")
-    call sus_main("oh...","base","base","base","mid")
-    call ast_main("Take your top off at least...","upset","closed","base","mid")
-    call ast_main("Don't worry Dumby, I'll make sure you get a good show!","upset","closed","base","mid")
+    call ast_main("That's terrible!","scream","wide","wide","L")
+    call sus_main("Oh...","upset","base","worried","mid")
+    call ast_main("Take your top off at least...","grin","angry","angry","L")
+    call ast_main("Don't worry Dumby, I'll make sure you get a good show!","open","closed","base","mid")
     m "Dumby?"
-    call ast_main("short for Dumbledore!","upset","closed","base","mid")
+    call ast_main("Short for Dumbledore!","pout","narrow","narrow","mid")
     m "oh... right..."
-    call nar(">As the two of you talk Susan slowly removes her vest.")
-    call ast_main("That's it Susy, one piece at a time.","upset","closed","base","mid")
+    
+    call set_sus_top("shirt_1") #ADD Shirt without vest.
+    pause.5
+    
+    call nar(">As the two of you talk, Susan slowly removes her vest.")
+    call ast_main("That's it Susy, one piece at a time.","scream","narrow","base","L")
     m "You seemed to have changed your tone..."
-    call ast_main("Because now I know this isn't a test.","upset","closed","base","mid")
+    call ast_main("Because now I know this isn't a test.","open","closed","base","mid")
+    
+    call set_sus_top("shirt_1") #ADD Shirt without vest and tie.
+    pause.5
+    
     call nar(">Susan quietly removes her tie.")
-    call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","upset","closed","base","mid")
-    call ast_main("but after asking to see Susy's boobs, well...","upset","closed","base","mid")
+    call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","open","base","base","mid")
+    call ast_main("But after you've asked to see Susy's boobs,... well...","open","base","base","L")
+    
+    $ susan_wear_top = False
+    call update_sus_uniform
+    call sus_main("","base","base","base","mid")
+    pause.5
+    
     call nar(">Susan peels her stressed shirt off.")
-    call ast_main("And now I get to learn some cool new spells!","upset","closed","base","mid")
-    call ast_main("...","upset","closed","base","mid")
-    call ast_main("They better be cool old man!","upset","closed","base","mid")
-    call ast_main("I don't want something boring like fireworks or something.","upset","closed","base","mid")
+    call ast_main("And now I get to learn some cool new spells!","grin","angry","angry","L")
+    call ast_main("...","pout","narrow","narrow","L")
+    call ast_main("They better be cool old man!","pout","angry","angry","mid")
+    call ast_main("I don't want something boring like fireworks or something.","open","closed","base","mid")
     m "What did you have in mind?"
-    call ast_main("Hmmm","upset","closed","base","mid")
-    call ast_main("Something no one else will know!","upset","closed","base","mid")
-    m "so you want secret spells?"
-    call ast_main("Yes! And they have to be fun as well! I don't want a secret spell to find a frog!","upset","closed","base","mid")
+    call ast_main("Hmmm--","pout","base","base","R")
+    call ast_main("Something no one else will know!","grin","angry","angry","mid")
+    m "So you want secret spells?"
+    call ast_main("Yes! And they have to be fun as well! I don't want a secret spell to find a frog!","open","closed","base","mid")
+    
+    
     call nar(">Susan slowly moves her arms to unclip her bra...")
-    m "ah... sure... whatever you said..."
-    call ast_main("Oh...","upset","closed","base","mid")
-    call ast_main("Are you excited to see her boobs old man?","upset","closed","base","mid")
+    m "Ah... sure... whatever you said..."
+    call ast_main("...","pout","narrow","narrow","mid")
+    call ast_main("Are you excited to see her boobs old man?","open","narrow","narrow","L")
     m "Yeah... it's not every day you get to see a pair like these..."
-    call ast_main("Hmph","upset","closed","base","mid")
-    call ast_main("Typical...","upset","closed","base","mid")
+    call ast_main("Hmph","pout","narrow","narrow","R")
+    call ast_main("Typical...","pout","narrow","base","R")
     m "Shh..."
-    call ast_main("...","upset","closed","base","mid")
-    call nar(">Susan unceremoniously removes her bra, letting it fall to the floor.")
-    m "Incredible..."
-    call ast_main("They're gross...","upset","closed","base","mid")
-    call ast_main("Everyone {size=-2}knows {size=-2}that {size=-2}flat {size=-2}boobs {size=-2}are {size=-2}justice...{/size}","upset","closed","base","mid")
-    m "DIdn't you say something about making her dance..."
-    call ast_main("Not anymore!","upset","closed","base","mid")
-    call ast_main("I think you've seen enough old man!","upset","closed","base","mid")
+    call ast_main("They're gross...","pout","closed","angry","mid")
+    call ast_main("Everyone {size=-2}knows {size=-2}that {size=-2}flat {size=-2}boobs {size=-2}are {size=-2}justice...{/size}","scream","closed","base","mid")
+    call ast_main("I think you've seen enough old man!","scream","angry","angry","mid",trans="hpunch")
     m "You can't be serious!"
-    call ast_main("Put your clothes on, go back to your room and go to sleep Susan!","upset","closed","base","mid")
-    call sus_main("yes...","base","base","base","mid")
+    call ast_main("[ast_susan_name], I command you to stop!","open","base","base","L")
+    call ast_main("Put your clothes on, go back to your room and go to sleep!","grin","base","base","L")
+    call sus_main("yes...","base","base","base","up")
+    pause.5
+    
+    call set_sus_top("shirt_1") #Normal top.
+    pause.8
+    
+    call play_sound("door")
+    hide screen susan_main
+    with d3
+    
+    call ast_main("","grin","angry","angry","mid")
+    pause.5
+    
     m "Aw, but we were just getting to the best bit!"
-    call ast_main("You can save that for next time old man, I think you've had enough fun today.","upset","closed","base","mid")
-    call ast_main("Anymore and you're heart will probably give out!","upset","closed","base","mid")
-    call ast_main("In the mean time, I want you to think up some fun and secret spells!","upset","closed","base","mid")
+    call ast_main("You can save that for next time old man, I think you've had enough fun today.","open","closed","base","mid")
+    call ast_main("Anymore and you're heart will probably give out!","grin","angry","angry","mid")
+    call ast_main("In the mean time, I want you to think up some fun and secret spells!","open","base","base","R")
     m "Sure..."
-    call ast_main("Alright, well don't bring me up here again until you've got them!","upset","closed","base","mid")
-    call ast_main("Good bye professor!","upset","closed","base","mid")
+    call ast_main("Alright, well don't bring me up here again until you've got them!","smile","closed","base","mid")
+    call ast_main("Good bye, Professor!","open","base","base","mid")
     m "Good bye, child..."
-    call ast_main("*hmph*(I'm not a child...)","upset","closed","base","mid")
-    ">Astoria turns heel and exits your office."
+    call ast_main("*hmph*(I'm not a child...)","pout","angry","angry","R")
+    hide screen astoria_main
+    hide screen bld1
+    with d3
+    
     jump day_main_menu
 
 
@@ -1009,102 +1037,110 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     call ton_main("Now if that's all I'll be off.","base","base","base","mid")
     m "Sure..."
     hide screen tonks_main
+    with d3
     call nar(">Tonks turns and leaves your office.")
     m "..."
     m "Did I just become a pimp?"
     
-    $ astoria_unlocked = True
+    call give_reward(">You've unlocked the ability to summon Tonks to your office.","images/store/tonks_unlock_01.png")
+    $ tonks_unlocked = True
+    $ tonks_busy = True
+    
 
     jump day_main_menu
     
 
 
+#ASTORIA TONKS FAVOUR INTRO. #Done
+label astoria_book_intro: #Tell Astoria that you have a book of spells as well as the pimping with Tonks
 
-
-
-
-
-label astoria_book_intro: #Summon Astoria and tell her that you have a book of spells as well as the pimping with Tonks
-    ">You summon Astoria to your office."
-    ast "Hi Dumby!"
-    m "Ugh..."
-    m "Hello Astoria."
-    ast "So have you finally managed to remember some cool spells?"
-    ast "Or is remembering stuff too hard for you now?"
+    call ast_main("So have you finally managed to remember some cool spells?","grin","angry","angry","mid")
+    call ast_main("Or is remembering stuff too hard for you now?","tongue_silly","angry","angry","mid")
     m "I'll have you know that I've got a whole book full of new spells for you to learn."
-    ast "Really?"
-    ast "Maybe you're not so such a Dumby after all!"
+    call ast_main("Really?","happy","wide","wide","wide")
+    call ast_main("Maybe you're not so such a Dumby after all!","grin","happyCl","base","mid")
     m "Do you want to learn them or not?"
-    ast "Of course! I've just spent the whole day listening to Mcgonagall prattle on about the importance of a transfiguration spell."
-    ast "When all it did was turn a stupid rat yellow!"
-    ast "I wanna learn something that's actually fun!"
+    call ast_main("Of course!","grin","base","base","mid")
+    call ast_main("I had to spent the whole day listening to Mcgonagall prattle on about the importance of a transfiguration spell.","pout","angry","angry","R")
+    call ast_main("When all it did was turn a stupid rat yellow!","upset","ahegao","ahegao","ahegao")
+    call ast_main("I wanna learn something that's actually fun!","pout","narrow","narrow","down")
     m "Well in that case I'll need you to do something for me."
-    ast "Should I get Susan up here so you can stare at her stupid fat udders again?"
-    ast "I won't send her away this time..."
-    ast "As long as you behave!"
+    call ast_main("Should I get Susan up here so you can stare at her stupid fat udders again?","grin","angry","angry","mid")
+    call ast_main("I won't send her away this time...","open","base","base","R")
+    call ast_main("As long as you behave!","clench","angry","angry","angry")
     m "As tempting as that offer is, that's not it."
-    ast "Well what is it then?"
-    ast "You don't expect me to dance for you do you?"
+    call ast_main("Well what is it then?","open","base","base","L")
+    call ast_main("You don't expect me to dance for you do you?","upset","wink","worried","mid")
     m "(Not yet...)"
     m "No, this involves Nymphomaniac Tonks or whatever she was called..."
-    ast "The auror!"
-    ast "You're not going to send me to Azkaban are you?"
-    ast "You promised!"
+    call ast_main("The auror!","disgust","wide","wide","wide")
+    m "(Well technically she's your teacher now...)"
+    call ast_main("You're not going to send me to Azkaban, are you?","scream","closed","worried","mid")
+    call ast_main("You promised!","disgust","narrow","worried","down")
     m "No ones sending you to Azkaban."
-    ast "r-r-r-really... then why does she want to see me?"
+    call ast_main("Then why does she want to see me?","pout","angry","angry","R")
     
     menu:
         "-Tell the truth-":
             m "Well, you know how some of the teachers here like to award bonus points to students-"
-            ast "You mean the favour trading."
+            call ast_main("You mean the favour trading?","upset","base","base","mid")
             m "You know about that?"
-            ast "Of course! Half the girls in slytherin earn extra points of Snape."
-            ast "A few have even earned some off of slughorn."
+            call ast_main("Of course I know. Half the girls in slytherin earn extra points of Snape.","pout","base","base","R")
+            call ast_main("A few have even earned some off of slughorn.","disgust","narrow","base","down")
             with hpunch
             call nar("Astoria shivers at the thought.")
-            ast "But I've never done anything like that, Snape gives me the creeps..."
-            ast "(Plus he only likes girls with big boobs...)"
+            call ast_main("But I've never done anything like that, Snape gives me the creeps...","pout","angry","angry","L")
+            call ast_main("(Plus he only likes girls with big boobs...)","pout","angry","angry","R")
         "-Lie-":
             m "She just wants to ask you a few questions."
-            ast "Like what?"
+            call ast_main("Like what?","upset","wink","worried","mid")
             m "I'm not sure, you'll have to wait and see..."
-            ast "I don't wanna!"
-            m "Come on now... She might even pay you some points afterwards."
-            ast "Some points? You mean..."
-            ast "Am I going to have to sell her a favour, Dumby?!"
-            m "a favour? whatever do you mean..."
-            ast "Everyone knows about the favour trading at school, Dumby."
-            ast "I've even got three friends who sell them to Snape."
+            call ast_main("I don't wanna!","pout","angry","angry","R")
+            m "Come on now... She might even pay you some points afterwards..."
+            call ast_main("Some points? You mean...","scream","wide","wide","wide")
+            call ast_main("Am I going to have to sell her favours, [ast_genie_name]?!","disgust","wide","wide","mid")
+            m "Favours? I have no idea what you're talking about..."
+            call ast_main("[ast_genie_name]! Everyone knows about the favour trading here at school.","open","angry","angry","mid")
+            call ast_main("I've got three friends who even buy favours from Snape!","disgust","narrow","narrow","R")
             m "Really?"
-            ast "Yeah, although they're all huge sluts... I'd never do something like that."
-            ast "(Plus Snape only likes girls with big boobs...)"
+            call ast_main("Yeah, although they're all huge sluts... I'd never do something like that.","pout","narrow","narrow","R")
+            call ast_main("(Plus Snape only likes girls with big boobs...)","pout","ahegao","ahegao","ahegao")
             
     m "Well we won't be able to practice these new spells without you heading over there."
-    ast "Really? You mean I have to go see that creepy old lady..."
-    m "She's not old!"
-    ast "Maybe not compared to you old man, but she is to me!"
-    ast "I be you she's like, 29, or something."
-    ast "she could even be 30!"
-    m "You'll be spending a lot longer than 30 years in Alakazam if you don't go over there."
-    ast "What? But you promised! [ast_genie_name]!!!"
-    m "I promised I wouldn't send you to Alkatraz, I never said Tonka trucks wouldn't."
-    ast "I don't think that's her name sir..."
-    m "Whatever, just head over there."
-    m "I told her not to do anything strange to you anyway. She probably only wants to talk."
-    ast "Are you sure?"
-    m "at worst she'll make you take your skirt off..."
-    ast "[ast_genie_name]!"
+    call ast_main("Really? You mean I have to go see that creepy old lady...","pout","angry","angry","R")
+    m "She's not that old!"
+    call ast_main("Maybe for you...!","pout","angry","angry","down")
+    call ast_main("She looks ancient!","pout","angry","angry","mid")
+    m "You'll look ancient too after 30 years in Alakazam if you don't go over there!\nNOW!"
+    call ast_main("What? But you promised! [ast_genie_name]!!!","scream","wide","wide","mid")
+    m "I promised you I wouldn't! I've never said that Tonka wouldn't lock you up in Alkatraz instead of me!"
+    call ast_main("I don't think that's her name, sir...\n(Nor the right prison...)","worried","narrow","narrow","L")
+    m "Whatever, just head over there!"
+    m "She won't do anything strange with you. Just talking..."
+    call ast_main("Are you sure?","worried","closed","worried","mid")
+    m "What's the worst that could happen, really?"
+    m "Scared she'll look under your skirt?"
+    call ast_main("[ast_genie_name]!","scream","wide","wide","wide")
     m "Just go say hello."
-    ast "what if she does something weird?"
-    m "You can come back here afterwards to tell me what happened. If she does anything too weird we can stop it."
-    ast "Do I have to?"
-    m "Only if you want to practice a new spell."
-    ast "Ugh... fine."
-    ast "But she better keep her wrinkly old hands to herself."
-    m "I'll show you wrinkly old hands."
-    ">You reach out to grab her."
-    ast "Ahhhh! Fine, I'm leaving!"
-    ">Astoria sprints out the door, giggling as she goes."
+    m "Come back here afterwards and tell me what happened."
+    call ast_main("Do I have to?","disgust","closed","worried","mid")
+    m "Only if you want to practice cool new spell..."
+    call ast_main("Ugh... fine.","pout","angry","angry","R")
+    call ast_main("But she better keep her wrinkly old hands to herself.","open","closed","base","mid")
+    g9 "I'll show you wrinkly old hands."
+    call nar(">You reach out to grab her.")
+    call ast_main("Ahhhh!-- Fine, I'm leaving!","scream","closed","worried","mid")
+    hide screen astoria_main
+    call play_sound("door")
+    with d3
+    pause.2
+    
+    $ astoria_busy = True
+    $ tonks_busy = True
+    
+    call nar(">Astoria sprints out the door, giggling as she goes.")
+    
+    jump day_main_menu
 
 
     

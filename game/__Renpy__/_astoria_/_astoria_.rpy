@@ -2,7 +2,7 @@ label astoria_spell_event: #have genie talk to astoria about which spell to cast
 
 
 
-label imperio_spell_1: #first level imperio spell
+label imperio_spell_1: #first level imperio spell #needs posing
     if astoria_spell_progress == 0:
         #talk about needing to practice the spell, what it does new and about sitting on lap
         m "So I managed to get a book of brand new spells of an old friend of mine."
@@ -105,7 +105,6 @@ label imperio_spell_1: #first level imperio spell
         
     if astoria_spell_progress < 3:
         jump astoria_spell_practice
-    ast "It's the end of the chapter!"
     ast "Can we try it out on Susan now?"
     m "I don't see why not."
     ast "YAY! You're the best teacher ever dumby!"
@@ -195,7 +194,7 @@ label imperio_spell_1: #first level imperio spell
     sus "How can you two be so mean!"
     ast "Oh calm down Bessy!"
     sus "Bessy!? What's that supposed to mean?"
-    ast "Pfft... you know."
+    ast "Pfft... you know..."
     sus "How dare you!"
     sus "Are you just going to let her say that sir?"
     g4 "What's that? I was a little-ugh... distracted..."
@@ -223,8 +222,8 @@ label imperio_spell_1: #first level imperio spell
     m "Ugh... fine..."
     ast "Good, I already read what the next one is called!"
     m "Really, what's that?"
-    ast "Imperio of time..."
-    ast "I didn't read what it does though..."
+    ast "Imperio tempus..."
+    ast "I didn't see what it could do though..."
     m "Wanna start reading it now?"
     ast "It's a little late sir."
     ast "Besides, I better put bessy here back in her barn before people start to notice."
@@ -243,20 +242,180 @@ label imperio_spell_1: #first level imperio spell
     $ astoria_spells[0] = 1
     $ astoria_spell_progress = 0
     jump day_main_menu
-label imperio_spell_2: #second level imperio spell
+
+
+
+label imperio_spell_2: #second level imperio spell #needs posing
     if astoria_spell_progress == 0:
         #talk about what it does new and about sitting on lap
+        m "ready to practice the next spell?"
+        ast "Uh huh!"
         pass
         
     if astoria_spell_progress < 3:
         jump astoria_spell_practice
-    #Strip susan for genie
+    ast "Are you finally ready to try out the new spell Dumby?"
+    m "You bet!"
+    ast "Awesome, I can't wait to see the look on Susan's dumb face..."
+    m "Let me just bring her up here."
+    call nar(">You summon Susan up to your office.")
+    sus "You wanted to see me sir?"
+    sus "Astoria? What are you doing here?"
+    ast "Oh... no reason..."
+    sus "Is there something wrong Professor?"
+    m "As a matter of fact there is..."
+    sus "R-really? Is this about me returning my books to the library a day late?"
+    sus "I swear it won't happen again!"
+    m "What? No, I'm afraid there's an issue with your uniform..."
+    sus "Oh... Is it because I'm not wearing the school robe?"
+    sus "I can wear it from now on if you like!"
+    m "Actually, Wearing too many clothes is the problem."
+    sus "W-w-what???"
+    sus "You can't be serious sir!"
+    m "I am Ms bones... Hiding away those glorious milk duds of yours is a serious offense!"
+    ast "(Pffft, gloriously gross)"
+    sus "Professor Dumbledore! How can you say something like that!"
+    sus "I think I better go..."
+    call nar(">Susan turns to leave your office, but as soon as she turns her back, Astoria is a flurry of motion.")
+    ast "Imperio Tempus!"
+    call nar("A flash of purple smoke erupts from Astoria's wand and flies towards Susan.")
+    sus "What is-"
+    sus "..."
+    ast "hahahaha"
+    ast "Her face was priceless when you said milk duds..."
+    m "You liked that?"
+    ast "Of course! Anything to bring Bessy here down a peg."
+    ast "Although you said that before I cast Imperio on her, so we might have to obliviate that if we want to keep this a secret."
+    m "Yeah sure..."
+    m "(What in the hells is obliviate?)"
+    ast "So what should we make her do today Dumby?"
+    m "Well, if the books to be believed, this spell should let us change something about her permanently."
+    ast "Hmmm... I know!"
+    ast "Lets make her forget everything that happens in this room as soon as she leaves!"
+    ast "That way we don't have to worry about her tattling on us."
+    m "Good thinking boy wonder."
+    ast "..."
+    m "But is that all we're going to change about her?"
+    m "Can't we do something a little more... adventurous?"
+    ast "You mean like making her show you her milk duds?"
+    m "Well if you insist..."
+    ast "ugh... you're such a filthy pervert dumby!"
+    m "we can do something else if you-"
+    ast "I didn't say no..."
+    m "Oh... well how about you make it so-"
+    ast "I get to choose dumby!"
+    m "What? Why?"
+    ast "Because it's my spell and my wand!"
+    ast "Not to mention you'd probably do something over the top and gross..."
+    m "Probably..."
+    m "So what's your plan?"
+    ast "Just wait and see old man!"
+    ast "Susan, listen up!"
+    sus "Yes..."
+    ast "From now on, you'll no longer remember anything that happens in this office."
+    sus "Ok..."
+    m "Is that all?"
+    ast "Shush old man, I'm not done yet!"
+    ast "You'll also get an uncontrollable urge to take your top off whenever you see Dumby and I together, OK?"
+    sus "yes..."
+    m "Nice! But won't she just run away from now on?"
+    ast "Hmmm, you're probably right..."
+    ast "Last of all, you're not allowed to leave this office until I say so OK Susy?"
+    sus "yes astoria..."
+    ast "Awesome! Now wake up Bessy!"
+    sus "..."
+    call nar(">The colour slowly returns to Susan's eyes...")
+    sus "ugh..."
+    sus "What happened?"
+    ast "Nothing Susy, Dumbledore was just explaining how your uniform wasn't up to scratch."
+    sus "My uniform... You're right... Too many clothes..."
+    sus "I need to take off my top..."
+    ast "Mhmm, that's right susy... Why don't you show old dumby here your gross boobs..."
+    sus "B-b-b-but he's so old..."
+    ast "That's right... Only a nasty slut would show their boobs to such a wrinkly old man..."
+    m "Hey!"
+    ast "Shhh dumby, don't ruin my fun!"
+    m "Fine..."
+    sus "I-i-i-i'm not a slut..."
+    ast "well I'm sure you'll be able to keep your top on then susy..."
+    sus "I... There's something wrong sir!"
+    sus "I can't help it..."
+    call nar(">Tears begin to form in Susan's eyes as she slowly removes her top, exposing her veluptous chest...")
+    g4 "Nice!"
+    call nar(">Your hands unconciously drop to your rock hard cock and start to pump away as you gaze at the redheads embarressed form.")
+    ast "Dumby! Are you touching yourself?"
+    m "Ugh... I can't help it..."
+    m "It's not everyday you get to see a rack like this..."
+    ast "Well stop it! It's gross!"
+    m "Alri-"
+    sus "Please sir... it's too much!"
+    sus "It's bad enough I have to show you my breasts..."
+    ast "Wait..."
+    ast "Keep going dumby!"
+    m "What?"
+    sus "What?"
+    ast "Well if bessy here hates it... Then I love it!"
+    ast "Besides, it's not like I can see anything under the desk."
+    m "So you're OK with this?"
+    ast "Mhmmm, just don't expect me to touch it old man!"
+    sus "I'm not OK with this!"
+    ast "Tough! No one asked you slut!"
+    sus "I am not a slut!"
+    ast "ha! You're standing here, letting old man dumbledore oggle your fat tits while he jerks his wrinkly old cock!"
+    ast "If that's not a slut then I don't know what is!"
+    sus "I-i-i-i-i don't know why I'm doing this..."
+    sus "You probably cursed me!"
+    ast "Duh!"
+    sus "well stop it!"
+    ast "Nuh!"
+    sus "Please astoria..."
+    call nar(">You start to zone out the two girls argument as you focus in on Susan's heaving boosom...")
+    g4 "Ugh yeah... that's it..."
+    ast "You can leave once old dumby here's done."
+    sus "What? you mean I have to wait until he..."
+    sus "This is unbelievable!"
+    sus "I'm going to report both of you to the ministry of magic!"
+    sus "My aunt is an auror you know!"
+    ast "yeah... I've met your creepy old aunt."
+    sus "What? Did you curse her two you evil little witch?"
+    ast "I wish..."
+    sus "Well she's going to lock both of you away in azkaban!"
+    sus "You'll never see me or anyone else again..."
+    ast "Ha!"
+    sus "and you dumbledore! I hope you enjoy wanking that nasty cock of yours because it'll be the last time you ever get to!"
+    g4 "Ugh yeah... say that again..."
+    sus "Ugh! You're both sick!"
+    g4 "mmm, keep shaking those tits of yours..."
+    g4 "Almost there {b}slut!{/b}"
+    sus "I am not a {size+=10}slut!{/size}"
+    call nar(">As susan yells at the top of her voice, the effort causes her gigantic tits to rise and slap back together.")
+    g4 "{size+=10}HERE IT COMES!{/size}"
+    call nar(">The sight proves to much as your cock explodes, audibly painting the bottom of your desk in a thick layer of cum.")
+    g4 "{size+=10}AHHH... YESS!!!!{/size}"
+    ast "Woah... I didn't think you'd have that much in you dumby..."
+    sus "{size+=10}Hmph! I hope you Enjoy azkaban perverts!{/size}"
+    call nar(">With Susan's curse broken by your colossal ejaculation, she turns and runs out of your office, her shirt in hand...")
+    m "Ugh... should we stop her?"
+    ast "It's fine dumby, I made it so she forgets everything that happens in here, remember?"
+    m "Oh... yeah..."
+    ast "Well I'll let you clean up..."
+    m "mmmm"
+    ast "See ya dumby!, don't forget that we've got a new spell to learn!"
+    m "Can't we just do that one again?"
+    ast "NO!"
+    m "Fine... See you later..."
+    call nar(">Astoria turns to leave your office, skipping cheerfully as she goes...")
+    ast "(I can't believe that old man could cum so much...)"
+
+
 
     $ astoria_affection = 2
     $ astoria_spells[0] = 2
     $ astoria_spell_progress = 0
     jump day_main_menu
-label imperio_spell_3: #third level imperio spell
+
+
+label imperio_spell_3: #third level imperio spell #needs posing
     if astoria_spell_progress == 0:
         #talk about what it does new and about sitting on lap
         $ astoria_affection = 2
@@ -299,7 +458,7 @@ label astoria_tonks_event: #send astoria to go see tonks
 
 
 
-label astoria_tonks_1: #First time astoria sent to tonks
+label astoria_tonks_1: #First time astoria sent to tonks #needs posing
     #Astoria says tonks just asked her a few questions
     #Stuff like her interests and age, what subjects she likes, etc
     #Astoria not sure why she had to spend time with tonks
@@ -366,10 +525,10 @@ label astoria_learn_spell: #Astoria spell learning loop
 label astoria_spell_practice:
     show screen blkfade 
     with d3
-    $ renpy.call('astoria_lap_'+str(astoria_affection)+'_'+str(renpy.random.randint(1, 3)))
+    $ renpy.call('astoria_lap_'+str(astoria_affection)+'_'+str(astoria_spell_progress))
     hide screen blkfade
     with d3
-    $ astoria_spell_practice =+ 1
+    $ astoria_spell_progress =+ 1
     $ astoria_busy = True
     jump day_main_menu
 
@@ -433,11 +592,12 @@ label astoria_lap_sit_0_3:
     ast "..."
     ast "Just open the book dumby."
     call nar(">You and Astoria read the book long into the night, occasionaly asking the other questions...")
-    ast "ugh... that's the end of the page..."
-    ast "should we stop here?"
-    m "probably... it's getting a little late..."
-    ast "Can't we keep going?"
-    ast "alright... we can catch up on this later..."
+    ast "ugh... that's the end of the spell..."
+    ast "should we bring susan up here?"
+    m "probably not... it's getting a little late..."
+    ast "Can't we do it now?"
+    m "I don't think she'll be up."
+    ast "alright... we can try it out on her later..."
     ast "goodnight dumby..."
     m "goodnight astoria."
     call nar("With tired face, astoria hops off of your lap and out of your office.")
@@ -445,22 +605,156 @@ label astoria_lap_sit_0_3:
 
 #
 label astoria_lap_sit_1_1:
-    
+    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
+    ast "Come on Dumby, let's start reading it already!"
+    m "Alright..."
+    call nar("You and Astoria turn to the page and start reading over the new spell.")
+    ast "According to the guide, this one is called imperio tempus..."
+    ast "It allows us to permanently set commands for the person we curse..."
+    m "That seems useful!"
+    ast "And fun!"
+    ast "Hmmm... This one seems a lot harder than the last one though..."
+    m "Do you think you'll be able to cast it?"
+    ast "Of course dumby! It'll just take me a while to learn it is all..."
+    m "Good..."
+    call nar(">You and Astoria slowly poor over the book, your eyes occasionaly drifting shut...")
+    ast "Wake up dumby!"
+    m "I'm up!"
+    ast "*hmph* I bet your too busy thinking about Susan's gross boobs aren't you!"
+    m "I am now..."
+    ast "Well stop it!"
+    ast "You should be focusing on the spell, this part seems pretty hard..."
+    m "Ugh, can we continue this tomorrow?"
+    ast "What's a matter dumby? Are you all tuckered out from sitting in your chair all day?"
+    m "As a matter of fact I am."
+    ast "Pfft, figures."
+    ast "Well get some rest old man, I expect you to start pulling your weight next time!"
+    m "ugh..."
+    call nar("With teasing face, astoria hops off of your lap and out of your office.")
+
     return
 label astoria_lap_sit_1_2:
-    
+    call nar(">Astoria slowly hops up onto your lap, quietly opening the book.")
+    m "What's the matter? You seem a little tired."
+    ast "Am not!"
+    ast "I just had a long day is all..."
+    ast "Ms Sprout made us spend all day plucking mandrakes to make juice..."
+    ast "They're really hard to pull out!"
+    m "I bet..."
+    m "If you're feeling tired, we can go through this tomorrow."
+    ast "I'm not tired!"
+    m "If you say so..."
+    call nar(">You begin to read over the complex spell, Astoria taking far longer to read through the pages...")
+    ast "..."
+    m "Are you ready to read the next page?"
+    ast "yea..."
+    call nar(">As you turn the page you start to feel Astoria's body go limp on your lap.")
+    m "Hmmm, poor little thing..."
+    call nar(">You nudge astoria on the back slightly.")
+    ast "W-what... Keep your hands of me old man!"
+    m "Pfft... I think it's time you went to bed."
+    ast "I told you, I'm not *yawn* tired..."
+    m "..."
+    ast "Fine... we can keep reading tomorrow I guess."
+    ast "Night dumby..."
+    m "Goodnight Astoria."
+    call nar("With tired expression, astoria hops off of your lap and slowly out of your office.")
     return
 label astoria_lap_sit_1_3: 
-    
+    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
+    ast "Come on Dumby, let's start reading it already!"
+    m "Alright..."
+    call nar("You and Astoria turn to the page and start reading over the new spell.")
+    ast "Hmmm... This one seems a lot harder than the last one..."
+    m "Do you think you'll be able to cast it?"
+    ast "Of course dumby! It'll just take me a while to learn it is all..."
+    m "Good..."
+    call nar(">You and Astoria slowly poor over the book, your eyes occasionaly drifting shut...")
+    ast "Wake up dumby!"
+    m "I'm up!"
+    ast "*hmph* I bet your too busy thinking about Susan's gross boobs aren't you!"
+    m "I am now..."
+    ast "Well stop it!"
+    ast "You should be focusing on the spell, this part seems pretty hard..."
+    m "Ugh, can we continue this tomorrow?"
+    ast "What's a matter dumby? Are you all tuckered out from sitting in your chair all day?"
+    m "As a matter of fact I am."
+    ast "Pfft, figures."
+    ast "Well get some rest old man, I expect you to start pulling your weight next time!"
+    m "ugh..."
+    call nar("With teasing face, astoria hops off of your lap and out of your office.")
     return
 
 #
 label astoria_lap_sit_2_1:
-    
+    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
+    ast "Come on Dumby, let's start reading it already!"
+    m "Alright..."
+    call nar("You and Astoria turn to the page and start reading over the new spell.")
+    ast "Hmmm... This one seems a lot harder than the last one..."
+    m "Do you think you'll be able to cast it?"
+    ast "Of course dumby! It'll just take me a while to learn it is all..."
+    m "Good..."
+    call nar(">You and Astoria slowly poor over the book, your eyes occasionaly drifting shut...")
+    ast "Wake up dumby!"
+    m "I'm up!"
+    ast "*hmph* I bet your too busy thinking about Susan's gross boobs aren't you!"
+    m "I am now..."
+    ast "Well stop it!"
+    ast "You should be focusing on the spell, this part seems pretty hard..."
+    m "Ugh, can we continue this tomorrow?"
+    ast "What's a matter dumby? Are you all tuckered out from sitting in your chair all day?"
+    m "As a matter of fact I am."
+    ast "Pfft, figures."
+    ast "Well get some rest old man, I expect you to start pulling your weight next time!"
+    m "ugh..."
+    call nar("With teasing face, astoria hops off of your lap and out of your office.")
     return
 label astoria_lap_sit_2_2:
-    
+    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
+    ast "Come on Dumby, let's start reading it already!"
+    m "Alright..."
+    call nar("You and Astoria turn to the page and start reading over the new spell.")
+    ast "Hmmm... This one seems a lot harder than the last one..."
+    m "Do you think you'll be able to cast it?"
+    ast "Of course dumby! It'll just take me a while to learn it is all..."
+    m "Good..."
+    call nar(">You and Astoria slowly poor over the book, your eyes occasionaly drifting shut...")
+    ast "Wake up dumby!"
+    m "I'm up!"
+    ast "*hmph* I bet your too busy thinking about Susan's gross boobs aren't you!"
+    m "I am now..."
+    ast "Well stop it!"
+    ast "You should be focusing on the spell, this part seems pretty hard..."
+    m "Ugh, can we continue this tomorrow?"
+    ast "What's a matter dumby? Are you all tuckered out from sitting in your chair all day?"
+    m "As a matter of fact I am."
+    ast "Pfft, figures."
+    ast "Well get some rest old man, I expect you to start pulling your weight next time!"
+    m "ugh..."
+    call nar("With teasing face, astoria hops off of your lap and out of your office.")
     return
 label astoria_lap_sit_2_3: 
-    
+    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.")
+    ast "Come on Dumby, let's start reading it already!"
+    m "Alright..."
+    call nar("You and Astoria turn to the page and start reading over the new spell.")
+    ast "Hmmm... This one seems a lot harder than the last one..."
+    m "Do you think you'll be able to cast it?"
+    ast "Of course dumby! It'll just take me a while to learn it is all..."
+    m "Good..."
+    call nar(">You and Astoria slowly poor over the book, your eyes occasionaly drifting shut...")
+    ast "Wake up dumby!"
+    m "I'm up!"
+    ast "*hmph* I bet your too busy thinking about Susan's gross boobs aren't you!"
+    m "I am now..."
+    ast "Well stop it!"
+    ast "You should be focusing on the spell, this part seems pretty hard..."
+    m "Ugh, can we continue this tomorrow?"
+    ast "What's a matter dumby? Are you all tuckered out from sitting in your chair all day?"
+    m "As a matter of fact I am."
+    ast "Pfft, figures."
+    ast "Well get some rest old man, I expect you to start pulling your weight next time!"
+    m "ugh..."
+    call nar("With teasing face, astoria hops off of your lap and out of your office.")
     return

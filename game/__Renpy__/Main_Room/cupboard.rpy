@@ -13,8 +13,8 @@ label cupboard:
                     jump cupboard
                     
                 "-Unlock Wardrobes-":
-                    $ astoria_wardrobe_unlock = True
-                    $ susan_wardrobe_unlock = True
+                    $ astoria_wardrobe_unlocked = True
+                    $ susan_wardrobe_unlocked = True
                     
                 "-Start Ast Event 1 Hermione-":
                     jump letter_intro_hermione

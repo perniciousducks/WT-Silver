@@ -56,16 +56,25 @@ label susan_imperio:
     
     
 label imperio_spell_1:
-    ast "Good. Now Hurry up and bring her up here!"
-    call nar(">You summon Susan up to your office.")
-    sus "You wanted to see me sir-"
-    sus "Astoria! What are you doing here!"
-    sus "And why are you sitting on Dumbledore's lap?"
-    ast "Because we were reading!"
-    sus "I don't see why that makes it-"
-    call nar(">With a quick flash, Astoria hops off your lap and pulls out her wand.")
+    call blkfade
+    
+    call nar(">You summon Susan to your office.")
+    pause.5
+    call play_sound("door")
+    hide screen blkfade
+    call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
+    call ast_main("Hey [ast_susan_name]!","grin","narrow","narrow","L",xpos="base",ypos="base")
+    call sus_main("Astoria? What are you doing here?","open","base","worried","R")
+
+    call ast_main("Oh, don't mind me...","pout","base","base","R")
+    call ast_main("I'm only here to put a curse on you.","grin","angry","angry","mid")
+    call sus_main("P-Put a curse on me?!!","open","wide","worried","wide")
+    call sus_main("No! Professor, do someth--","scream","wide","worried","mid")
+    
+    call cast_spell("imperio")
     ast "Imperio Cor Meum!"
-    sus "W-what are you-"
+    
+    sus "W-what are you--"
     call nar("A puff of orange smoke appears from the end of Astoria's wand, working it's way up into Susan's nose.")
     sus "-doing..."
     sus "..."

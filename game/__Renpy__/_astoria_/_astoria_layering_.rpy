@@ -13,12 +13,13 @@ screen astoria_main:
     add astoria_eye xpos astoria_xpos ypos astoria_ypos #Add the eye outline
     
     add astoria_eyebrow xpos astoria_xpos ypos astoria_ypos #Add the eyebrow
-    add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
     add astoria_mouth xpos astoria_xpos ypos astoria_ypos #Add the mouth
     
     add astoria_cheeks xpos astoria_xpos ypos astoria_ypos #Add the extras
     add astoria_tears xpos astoria_xpos ypos astoria_ypos #Add the extras
     add astoria_extra xpos astoria_xpos ypos astoria_ypos #Add the extras
+    
+    add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
     
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:

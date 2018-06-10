@@ -24,6 +24,21 @@ label update_sus_uniform:
     
     return
     
+#Hair equip.
+label set_sus_hair(hair=None,color=None):
+    hide screen susan_main
+    
+    if hair != None:
+        $ sus_hair_style   = hair
+    if color != None:
+        $ sus_hair_color   = color
+        
+    $ susan_hair         = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+(sus_hair_color)+"_base.png"
+    $ susan_hair_shadow  = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+(sus_hair_color)+"_top.png"
+    
+    show screen susan_main
+    
+    return
     
 #Top equip.    
 label set_sus_top(top=""):

@@ -32,9 +32,9 @@ label astoria_init:
         $ astoria_extra               = "characters/astoria/face/extras/blank.png"
 
         #Hair
-        $ astoria_hair                = "characters/astoria/body/hair/hair_1_base.png" 
-        $ astoria_hair_shadow         = "characters/astoria/body/hair/hair_1_top.png" 
-        $ ast_hair_style              = 1
+        $ astoria_hair                = "characters/astoria/body/hair/hair_A_1_base.png" 
+        $ astoria_hair_shadow         = "characters/astoria/body/hair/hair_A_1_top.png" 
+        $ ast_hair_style              = "A"
         $ ast_hair_color              = 1
         
         

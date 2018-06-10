@@ -9,8 +9,6 @@ label susan_init:
         $ susan_boobs               = "characters/susan/body/base/boobs_0.png" 
         $ susan_l_arm               = "characters/susan/body/arms/l_arm_back.png" 
         $ susan_r_arm               = "characters/susan/body/arms/r_arm_thigh.png" 
-        $ susan_hair                = "characters/susan/body/hair/hair_1_base.png" 
-        $ susan_hair_shadow         = "characters/susan/body/hair/hair_1_top.png" 
         $ susan_xpos                = 300
         $ susan_ypos                = 0
         $ susan_zorder              = 5
@@ -31,6 +29,11 @@ label susan_init:
         $ susan_tears               = "characters/susan/face/extras/blank.png" 
         $ susan_extra               = "characters/susan/face/extras/blank.png"
 
+        #Hair
+        $ susan_hair                = "characters/susan/body/hair/hair_A_1_base.png"
+        $ susan_hair_shadow         = "characters/susan/body/hair/hair_A_1_top.png" 
+        $ sus_hair_style            = "A"
+        $ sus_hair_color            = 1
         
         #Clothes
         

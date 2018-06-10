@@ -770,18 +770,19 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("Short for Dumbledore!","pout","narrow","narrow","mid")
     m "oh... right..."
     
-    call set_sus_top("shirt_1") #ADD Shirt without vest.
-    pause.5
+    #call set_sus_top("shirt_2") #ADD Shirt without vest.
+    #pause.5
     
-    call nar(">As the two of you talk, Susan slowly removes her vest.")
-    call ast_main("That's it Susy, one piece at a time.","scream","narrow","base","L")
+    #call nar(">As the two of you talk, Susan slowly removes her vest.")
+    #call ast_main("That's it Susy, one piece at a time.","scream","narrow","base","L")
+    call ast_main("That's it Susy, show us those cow tits and take off your vest.","grin","narrow","base","L")
     m "You seemed to have changed your tone..."
     call ast_main("Because now I know this isn't a test.","open","closed","base","mid")
     
-    call set_sus_top("shirt_1") #ADD Shirt without vest and tie.
-    pause.5
+    #call set_sus_top("shirt_3") #ADD Shirt without vest and tie.
+    #pause.5
     
-    call nar(">Susan quietly removes her tie.")
+    #call nar(">Susan quietly removes her tie.")
     call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","open","base","base","mid")
     call ast_main("But after you've asked to see Susy's boobs,... well...","open","base","base","L")
     

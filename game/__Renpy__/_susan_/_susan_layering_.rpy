@@ -14,12 +14,13 @@ screen susan_main:
     add susan_eye xpos susan_xpos ypos susan_ypos #Add the eye outline
     
     add susan_eyebrow xpos susan_xpos ypos susan_ypos #Add the eyebrow
-    add susan_hair_shadow xpos susan_xpos ypos susan_ypos #Add the hair shadow
     add susan_mouth xpos susan_xpos ypos susan_ypos #Add the mouth
     
     add susan_cheeks xpos susan_xpos ypos susan_ypos #Add the extras
     add susan_tears xpos susan_xpos ypos susan_ypos #Add the extras
     add susan_extra xpos susan_xpos ypos susan_ypos #Add the extras
+    
+    add susan_hair_shadow xpos susan_xpos ypos susan_ypos #Add the hair shadow
     
     ### CLOTHES 
     if susan_wear_bra and not susan_wear_top:

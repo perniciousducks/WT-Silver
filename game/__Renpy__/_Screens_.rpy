@@ -87,6 +87,9 @@ screen fireplace_fire: #FIREPLACE FIRE.
     
 $ width_offset = 140
     
+screen fireplace:
+    add "images/main_room/fireplace.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+
 screen desk: #Genie's desk.
     add "images/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
 

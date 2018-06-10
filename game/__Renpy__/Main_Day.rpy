@@ -179,6 +179,7 @@ hide screen candlefire
 
 hide screen chair_left
 hide screen chair_right
+hide screen fireplace
 hide screen genie
 hide screen owl
 hide screen owl_02
@@ -189,6 +190,7 @@ if package_is_here:
 
 show screen main_room
 show screen chair_right
+show screen fireplace
 
 show screen genie
 

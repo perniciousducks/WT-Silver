@@ -65,6 +65,7 @@ hide screen main_room
 
 hide screen chair_left
 hide screen chair_right
+hide screen fireplace
 hide screen genie
 hide screen owl
 hide screen owl_02
@@ -72,6 +73,7 @@ hide screen owl_02
 
 show screen main_room
 show screen chair_right
+show screen fireplace
 show screen candlefire
 
 show screen genie

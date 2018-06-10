@@ -166,31 +166,30 @@ label imperio_spell_1_training: #first level imperio spell #needs posing
     if astoria_spell_progress < 3:
         call astoria_spell_practice
         if astoria_spell_progress < 3:
-            jump day_main_menu
+            call play_sound("door")
+            hide screen astoria_main
+            hide screen bld1
+            hide screen blkfade
+            with fade
+            
+            if daytime:
+                call play_music("day_theme")
+                jump day_main_menu
+            else:
+                call play_music("night_theme")
+                jump night_main_menu
         
-    ast "I think that was the last page."
-    ast "Doesn't seem to complicated to me..."
-    ast "Can we try it out on Susan?"
-    m "I don't see why not."
-    ast "YAY! You're the best teacher ever dumby!"
-    m "and you're probably the worst student..."
-    ast "Dumby!"
-    m "Not that I mind..."
-    
     call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png")
-    
-    call blkfade
-    call nar("Astoria quickly hops off your lap.")
-    
-    #Hide CG scene.
-    
-    hide screen blkfade
-    call ast_main("","grin","angry","angry","mid",xpos="base",ypos="base",trans="fade")
     
     #Unlocks spell 1.
     $ astoria_spells[0] = 1
     
-    jump astoria_requests       #Astoria summon menu.
+    if daytime:
+        call play_music("day_theme")
+        jump day_main_menu
+    else:
+        call play_music("night_theme")
+        jump night_main_menu
     
     
     
@@ -207,28 +206,29 @@ label imperio_spell_2_training: #second level imperio spell #needs posing
     if astoria_spell_progress < 3:
         call astoria_spell_practice
         if astoria_spell_progress < 3:
-            jump day_main_menu
-        
-    ast "I think that's it."
-    ast "That really looks like a fun one, [ast_genie_name]!"
-    ast "Can we try it out? Please!"
-    m "Sure..."
-    ast "YAY! You're the best!"
-    
+            call play_sound("door")
+            hide screen astoria_main
+            hide screen bld1
+            with d3
+            
+            if daytime:
+                call play_music("day_theme")
+                jump day_main_menu
+            else:
+                call play_music("night_theme")
+                jump night_main_menu
+     
     call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png")
-    
-    call blkfade
-    call nar("Astoria quickly hops off your lap.")
-    
-    #Hide CG scene.
-    
-    hide screen blkfade
-    call ast_main("","smile","base","base","mid",xpos="base",ypos="base",trans="fade")
     
     #Unlocks Spell 2.
     $ astoria_spells[0] = 2
     
-    jump astoria_requests       #Astoria summon menu.
+    if daytime:
+        call play_music("day_theme")
+        jump day_main_menu
+    else:
+        call play_music("night_theme")
+        jump night_main_menu
     
     
     

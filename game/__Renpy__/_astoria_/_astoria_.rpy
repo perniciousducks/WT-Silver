@@ -8,8 +8,6 @@ label imperio_spell_3_training: #third level imperio spell #needs posing
     if astoria_spell_progress < 3:
         jump astoria_spell_practice
         
-    label imperio_spell_3_complete: #Jump here after last spell practice!
-        
     #Unlocks spell 3.
     $ astoria_spells[0] = 3
     jump astoria_requests
@@ -114,13 +112,19 @@ label astoria_tonks_6:
 
 
 label astoria_spell_practice:
-    show screen blkfade 
-    with d3
+    hide screen astoria_main
+    hide screen bld1
+    call blkfade
+    
     #$ renpy.call('astoria_lap_'+str(astoria_affection)+'_'+str(astoria_spell_progress))
+    
     hide screen blkfade
+    hide screen astoria_main
     with d3
+    
     $ astoria_spell_progress += 1
     $ astoria_busy = True
+    
     return
 
 
@@ -144,6 +148,7 @@ label astoria_lap_sit_0_1:
     ast "Don't read ahead!"
     m "Fine..."
     ast "Good... Night dumby!"
+    
     call nar("With a cheerful grin, astoria hops off your lap and out of your office.")
     return
 label astoria_lap_sit_0_2:
@@ -169,7 +174,7 @@ label astoria_lap_sit_0_2:
     ast "night dumby..."
     call nar("With a sullen put, astoria hops off your lap and out of your office.")
     return
-label astoria_lap_sit_0_3: 
+label astoria_lap_sit_0_3:
     call nar(">Astoria lightly hops up onto your lap.")
     ast "Can we start reading now?"
     m "Ready when you are."

@@ -407,7 +407,7 @@ label update_wr_other_clothings_list:
     
         $ wr_stockings.append("nighty_stockings")
             
-        $ wr_robes.append("robe")
+        $ wr_robes.append("slyth_1")
         
     if active_girl == "susan":
     

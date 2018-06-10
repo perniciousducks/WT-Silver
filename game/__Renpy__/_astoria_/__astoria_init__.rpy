@@ -132,8 +132,8 @@ label astoria_init:
         $ ast_stockings               = "blank" 
         $ ast_stockings_color         = "base" 
          
-        $ astoria_robe                = "characters/astoria/clothes/robe/base/blank.png"
-        $ ast_robe                    = "blank"
+        $ astoria_robe                = "characters/astoria/clothes/robe/base/slyth_1.png"
+        $ ast_robe                    = "slyth_1"
         $ ast_robe_color              = "base"
 
         

@@ -15,6 +15,9 @@ label change_hair:
     #Astoria
     if active_girl == "astoria":
         jump change_ast_hair
+    #Susan
+    if active_girl == "susan":
+        jump change_sus_hair
 
 
 ### Change Hermione's Hair Color ###

@@ -7,7 +7,7 @@ label summon_astoria:
     call play_sound("door") #Sound of a door opening.
 
     ### RANDOM CLOTHING EVENTS ###
-    #call astoria_door_event
+    call astoria_door_event
 
     call update_ast_uniform
 
@@ -41,7 +41,7 @@ label summon_astoria:
             jump astoria_spell_training
             
         "{color=#858585}-Use a Spell-{/color}" if spells_locked:
-            call nar(">You have recently used an unforgivable curse!/n>Tonks will want to have a word with you before you can use another.")
+            call nar(">You have recently used an unforgivable curse!\n>Tonks will want to have a word with you before you can use another.")
             jump astoria_requests
         "-Use a Spell-" if not spells_locked:
             label astoria_target_select:
@@ -61,9 +61,9 @@ label summon_astoria:
             label curse_susan:
                 menu:
                     ">Choose your curse."
-                    "-Imperio-" if not susan_imperio_influence:
+                    "-Imperio-" if susan_wardrobe_unlocked and not susan_imperio_influence:
                         jump susan_imperio
-                    "{color=#858585}-Imperio-{/color}" if susan_imperio_influence: #
+                    "{color=#858585}-Imperio-{/color}" if susan_wardrobe_unlocked and susan_imperio_influence:
                         call nar(">Susan is still under the influence of this curse!")
                         jump curse_susan
                     "-Imperio 1-" if astoria_spells[0] >= 1:
@@ -72,10 +72,24 @@ label summon_astoria:
                         jump imperio_spell_2
                     "-Imperio 3-" if astoria_spells[0] >= 3:
                         jump imperio_spell_3
+                        
+                    "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
+                        call nar(">You haven't unlocked this spell yet.")
+                        jump astoria_target_select
+                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 1:
+                        call nar(">You haven't unlocked this spell yet.")
+                        jump astoria_target_select
+                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 2:
+                        call nar(">You haven't unlocked this spell yet.")
+                        jump astoria_target_select
+                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 3:
+                        call nar(">You haven't unlocked this spell yet.")
+                        jump astoria_target_select
+                        
                     "-Back-":
                         jump astoria_target_select
             
-        "{color=#858585}-Unavailable-{/color}" if not astoria_wardrobe_unlocked:
+        "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump astoria_requests
         "-Inventory-" if astoria_wardrobe_unlocked:

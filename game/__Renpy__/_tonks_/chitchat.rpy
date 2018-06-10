@@ -58,7 +58,7 @@ label tonks_chit_chat:
         elif random_number == 11:
             call ton_main("Snape doesn't seem to like me much...","base","base","base","R")
             call ton_main("First I thought it was because I stole a girding potion in my youth...","open","base","base","L")
-            call ton_main("But it seems to be more because he wants my job...,"open","base","raised","mid")
+            call ton_main("But it seems to be more because he wants my job...","open","base","raised","mid")
             call ton_main("The sunlight could probably do him some good.","base","base","angry","mid")
 
         elif random_number == 12:

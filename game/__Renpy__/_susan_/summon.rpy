@@ -37,11 +37,7 @@ label summon_susan:
                 jump susan_talk
             else:
                 jump susan_talk 
-        #"-Tutoring-":
-        
-        "{color=#858585}-Unavailable-{/color}" if not susan_wardrobe_unlocked:
-            call nar(">You haven't unlocked this feature yet.")
-            jump susan_requests
+                
         "-Inventory-" if susan_wardrobe_unlocked and susan_imperio_influence:
             $ active_girl = "susan"
 
@@ -54,7 +50,10 @@ label summon_susan:
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
         "{color=#858585}-Inventory-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
-            call nar(">You will need to cast imperio on Susan to change her Wardrobe!")
+            call nar(">Susan isn't willing to let you change her Wardrobe!")
+            jump susan_requests
+        "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
             jump susan_requests
             
         "-Dismiss her-":

@@ -168,6 +168,11 @@ label wr_ast_clothing_reset:
 
     call update_ast_uniform
 
+    if not astoria_wear_top or not astoria_wear_bottom:
+        call ast_main("","pout","angry","angry","R")
+    else:
+        call ast_main("","smile","base","base","mid")
+        
     return
 
 label wr_sus_clothing_reset:

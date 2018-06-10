@@ -303,7 +303,7 @@ label astoria_tonks_2:
     m "Mhmm..."
     ast "She said she'd just be a minute... and then Ginny Weasley walked out?"
     m "Miss Weasley?"
-    m "(Is that Miss Grangers Lesbo friend? I can't remember...)"
+    m "(Is that the Granger girl's Lesbo friend? I can't remember...)"
     ast "Yeah... her face was all red and she didn't want to look at me..."
     ast "I figured that she was probably getting in trouble for something so I went in."
     ast "She asked what spell I'd cast this time..."

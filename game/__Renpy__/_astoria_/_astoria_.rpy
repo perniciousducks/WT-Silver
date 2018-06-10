@@ -328,6 +328,30 @@ label astoria_tonks_2:
     jump astoria_learn_spell
 
 label astoria_tonks_3:
+    ">Astoria happily walks into your office, humming a tune as she closes the door."
+    ast "Hey Dumby!"
+    m "Hello Astoria. You seem chipper today."
+    ast "Guess what?"
+    m "What's that?"
+    ast "Tonks wants me to be a model!"
+    m "A model?"
+    ast "Uh huh! Did you know she's actually a costume designer in her spare time?"
+    m "I did not..."
+    ast "Well she is! And she thinks I've got what it takes to be a model!"
+    m "Really..."
+    ast "Yep! She even spent all day taking my measurements so she could start working on some special outfits for me!"
+    ast "Plus she even said she'd start working on a new, cooler version of my uniform!"
+    m "Huh..."
+    ast "Isn't that great sir?"
+    m "Sure is."
+    ast "And to think I thought she'd do something nasty..."
+    m "I wouldn't put that past her just yet..."
+    ast "Pfft, you're one to talk old man!"
+    ast "I bet you spent all day thinking about what we're going to do to Susan next didn't you?"
+    m "The thought might have crossed my mind..."
+    ast "Well if you wanna get to that we have to learn the new spell first Dumby!"
+    ast "Speaking of which..."
+    jump astoria_learn_spell
     
 label astoria_tonks_4:
     

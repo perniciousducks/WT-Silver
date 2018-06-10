@@ -44,7 +44,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
         else:
             $ hermione_xpos = xpos
 
-    if ypos != h_ypos:
+    if ypos != hermione_ypos:
         if ypos == "base" or ypos == "default":
             $ hermione_ypos = 0
         else:
@@ -58,20 +58,12 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     if trans != "":         #d3 is default.
         if trans == "d1":
             with d1
-        elif trans == "d2":
-            with d2
         elif trans == "d3": #Default anyways.
             with d3
-        elif trans == "d4":
-            with d4
         elif trans == "d5":
             with d5
-        elif trans == "d6":
-            with d6
         elif trans == "d7":
             with d7
-        elif trans == "d8":
-            with d8
         elif trans == "d9":
             with d9
 

@@ -145,8 +145,15 @@ label update_wr_head_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
 
+        $ wr_hair.append("A")
+        $ wr_hair.append("L")
+        
+    if active_girl == "susan":
+    
+        $ wr_hair.append("A")
+        
     return
 
 
@@ -206,8 +213,19 @@ label update_wr_tops_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
 
+        #Uniform
+        $ wr_tops_uniform.append("shirt_1")
+        $ wr_tops_uniform.append("shirt_2")
+        $ wr_tops_uniform.append("shirt_3")
+        $ wr_tops_uniform.append("shirt_4")
+        
+    if active_girl == "susan":
+
+        #Uniform
+        $ wr_tops_uniform.append("shirt_1")
+        
     return
 
 
@@ -259,8 +277,17 @@ label update_wr_bottoms_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
 
+        #Uniform
+        $ wr_bottoms_uniform.append("skirt_1")
+        $ wr_bottoms_uniform.append("skirt_2")
+        
+    if active_girl == "susan":
+
+        #Uniform
+        $ wr_bottoms_uniform.append("skirt_1")
+        
     return
 
 
@@ -376,8 +403,18 @@ label update_wr_other_clothings_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
-
+    if active_girl == "astoria":
+    
+        $ wr_stockings.append("nighty_stockings")
+            
+        $ wr_robes.append("slyth_1")
+        
+    if active_girl == "susan":
+    
+        $ wr_neckwears.append("chain_chocker")
+        
+        $ wr_stockings.append("stockings")
+        
     return
 
 
@@ -446,8 +483,30 @@ label update_wr_underwear_list:
 
     #if active_girl == "luna":
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
+        $ wr_bras.append("clear_bra")
+        $ wr_bras.append("lace_bra")
+        $ wr_bras.append("lewd_bra")
 
+        $ wr_onepieces.append("nighty")
+        
+        $ wr_panties.append("clear_panties")
+        $ wr_panties.append("lace_panties")
+        $ wr_panties.append("lewd_panties")
+        $ wr_panties.append("nighty_panties")
+        
+    if active_girl == "susan":
+        #$ wr_bras.append("")
+        $ wr_bras.append("lace_bra")
+        $ wr_bras.append("chain_bra")
+    
+        $ wr_onepieces.append("sling_1")
+        $ wr_onepieces.append("sling_2")
+        
+        #$ wr_panties.append("")
+        $ wr_panties.append("lace_panties")
+        $ wr_panties.append("chain_panties")
+    
     return
 
 

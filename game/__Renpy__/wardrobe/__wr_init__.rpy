@@ -2,7 +2,7 @@
 
 label wardrobe_init:
 
-    if not hasattr(renpy.store,'wardrobe_page') or reset_persistants:
+    if not hasattr(renpy.store,'icon_xpos_offset') or reset_persistants:
 
         $ wardrobe_active = 0
         $ active_girl = "hermione"
@@ -45,6 +45,10 @@ label wardrobe_init:
         $ wardrobe_underwear_color       = "base"
         $ wardrobe_outfits_color         = "base"
 
+        #Wardrobe Icons
+        $ icon_xpos_offset = 0
+        $ icon_ypos_offset = 0
+        
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 
     return

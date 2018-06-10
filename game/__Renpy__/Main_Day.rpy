@@ -14,8 +14,11 @@ call her_chibi("hide")
 call sna_chibi("hide")
 
 $ flip = False
-$ chitchated_with_her = False #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
-$ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
+$ chitchated_with_her = False
+$ chitchated_with_astoria = False
+$ chitchated_with_susan = False
+$ chitchated_with_snape = False
+$ chitchated_with_tonks = False
 
 $ hermione_main_zorder = 5 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
 $ gifted    = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
@@ -24,13 +27,28 @@ $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
 $ save_name = temp_name
 
 call luna_day_flags
+$ astoria_busy = False
+
+
+#Susan Daily Flags.
+$ susan_busy = False
+if susan_imperio_counter > 0:
+    $ susan_imperio_counter -= 1            #Removes 1 at each new day.
+    $ susan_imperio_influence = True
+    if susan_imperio_counter <= 0:
+        $ susan_imperio_influence = False
+        $ reset_susans_wardrobe = True
+        call susan_init
+        $ reset_susans_wardrobe = False
+    
+$ tonks_busy = False
+
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking   = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ uni_sperm     = False
 
 $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
-$ day_random = renpy.random.randint(0, 10)
 
 stop bg_sounds #Stops playing the fire SFX.
 stop weather #Stops playing the rain SFX.
@@ -62,6 +80,17 @@ $ one_of_five = renpy.random.randint(1, 5) #Generating one number out of three f
 $ i_of_vii = renpy.random.randint(1, 7)
 $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
 $ one_of_tw = renpy.random.randint(1, 20) #Generating one number out of three for various porpoises.
+
+$ day_random = renpy.random.randint(0, 10)
+
+if day_random in [0,1,2]:
+    call set_ast_susan_name
+if day_random in [3,4,5]:
+    call set_ast_tonks_name
+if day_random in [6,7,8]:
+    call set_ton_astoria_name
+if day_random in [9,10]:
+    pass
 
 ### CUPBOARD MONEY GENERATOR ###
 
@@ -301,6 +330,7 @@ if day == 1 and daytime and bird_examined and desk_examined and cupboard_examine
 
 hide screen bld1
 hide screen blktone
+call hide_characters
 with d1
 
 show screen animation_feather

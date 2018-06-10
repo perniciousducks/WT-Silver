@@ -370,7 +370,7 @@ label her_clothing_init:
         $ h_stockings_color         = "base"
         $ temp_stockings            = h_stockings
 
-        $ hermione_robe             = "characters/hermione/clothes/robe/gryff_robe.png"
+        $ hermione_robe             = "characters/hermione/clothes/robe/base/gryff_robe.png"
         $ h_robe                    = "gryff_robe"
         $ h_robe_color              = "base"
 
@@ -390,9 +390,9 @@ label her_clothing_init:
     
 
         #Miscellaneous
-        $ hermione_wear_buttplug = False
-        $ hermione_buttplug      = "characters/hermione/accessories/plugs/00_blank.png"
-        $ h_buttplug             = "00_blank"
+        $ hermione_wear_buttplug     = False
+        $ hermione_buttplug          = "characters/hermione/accessories/plugs/00_blank.png"
+        $ h_buttplug                 = "00_blank"
 
         $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/00_blank.png"
         $ h_pubic_hair               = "00_blank"

@@ -18,6 +18,17 @@ $ uni_sperm = False
 $ textColor = "#1e1008"
 
 call luna_night_flags
+$ astoria_busy = False
+$ susan_busy = False
+$ tonks_busy = False
+$ snape_busy = False
+$ hermione_takes_classes = False
+
+$ chitchated_with_her = False
+$ chitchated_with_astoria = False
+$ chitchated_with_susan = False
+$ chitchated_with_snape = False
+$ chitchated_with_tonks = False
 
 scene black
 hide screen main_room
@@ -25,10 +36,6 @@ hide screen weather
 
 $ daytime = False
 $ interface_color = "gray"
-$ snape_busy = False
-$ hermione_takes_classes = False
-$ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
-$ chitchated_with_her = False #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
 $ gifted = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
 
 
@@ -162,6 +169,7 @@ if phoenix_is_feed:
 
 hide screen bld1
 hide screen blktone
+call hide_characters
 with d1
 
 show screen animation_feather

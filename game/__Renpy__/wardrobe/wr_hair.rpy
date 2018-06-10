@@ -15,6 +15,9 @@ label change_hair:
     #Astoria
     if active_girl == "astoria":
         jump change_ast_hair
+    #Susan
+    if active_girl == "susan":
+        jump change_sus_hair
 
 
 ### Change Hermione's Hair Color ###
@@ -434,10 +437,17 @@ label compliment_her_hair_style:
             call her_main("Maybe next time, [genie_name].","smile","baseL")
 
     return
-#
-
-#ADD Change Luna's Hair Style/Color
-#ADD Change Astoria's Hair Style/Color
 
 
+label change_ast_hair:
+    call set_ast_hair(hair_style_choice, hair_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+label change_sus_hair:
+    call set_sus_hair(hair_style_choice, hair_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 

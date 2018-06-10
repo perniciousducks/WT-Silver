@@ -11,6 +11,9 @@ label equip_top:
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_top
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_top
 
 
 ### Equip Hermione's Top ###
@@ -937,73 +940,25 @@ label equip_her_top:
             call set_h_top(top_choice,top_color_choice)
             call her_main("","","",xpos="wardrobe")
             call screen wardrobe
-#
 
-
-### Equip Luna's Top ###
-
-label equip_lun_top:    
-
-    if top_choice == l_top and top_color_choice == l_top_color:
-        $ wardrobe_active = 1
-        #">She's already wearing that!" #Remove line. Just for testing.
-        jump return_to_wardrobe
-
-    elif mad >= 1:
-        jump equipping_failed
-
-    else:
-        if wardrobe_chitchat_active:
-            hide screen luna_main 
-            with d3
-
-            $ wardrobe_active = 0 #activates dissolve in her_main 
-            $ luna_xpos = 665
-
-            m "[luna_name]..."
-
-            ### Uniform ###
-
-            #Uniform Top Vest and Tie #Done
-            if top_choice == "uni_top_1":
-                m "Would you wear your uniform top for me? All of it, vest and tie!" 
-
-            # Copy stuff from Hermione's equip and make it work for Luna
-            # WIP!!!!!!!
-#
+            
 
 
 ### Equip Astoria's Top ###
+label equip_ast_top: 
+    call set_ast_top(top_choice)
+        
+    hide screen wardrobe
+    call screen wardrobe
+        
+### Equip Susan's Top ###
+label equip_sus_top:
+    call set_sus_top(top_choice)
 
-#label equip_ast_top: 
-
-    if top_choice == a_top and top_color_choice == a_top_color:
-        $ wardrobe_active = 1
-        #">She's already wearing that!" #Remove line. Just for testing.
-        jump return_to_wardrobe
-
-    elif mad >= 1:
-        jump equipping_failed
-
-    else:
-        if wardrobe_chitchat_active:
-            hide screen atoria_main 
-            with d3
-
-            $ wardrobe_active = 0 #activates dissolve in her_main 
-            $ astoria_xpos = 525
-
-            m "[astoria_name]..."
-
-            ### Uniform ###
-
-            #Uniform Top Vest and Tie #Done
-            if top_choice == "uni_top_1":
-                m "Would you wear your uniform top for me? All of it, vest and tie!" 
-
-            # Copy stuff from Hermione's equip and make it work for Astoria
-            # WIP!!!!!!!
-#
+    hide screen wardrobe
+    call screen wardrobe
+        
+        
 
 
 

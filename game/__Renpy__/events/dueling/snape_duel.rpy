@@ -14,10 +14,13 @@ init python:
     
 label __init_variables:
     
+    $ genie_max_hp = 1000
+    $ snape_max_hp = 2000
+
     if not hasattr(renpy.store,'genie_hp'): #important!
-        $ genie_hp = 1000
+        $ genie_hp = genie_max_hp
     if not hasattr(renpy.store,'snape_hp'): #important!
-        $ snape_hp = 2000
+        $ snape_hp = snape_max_hp
     if not hasattr(renpy.store,'blocking'): #important!
         $ blocking = False
     if not hasattr(renpy.store,'snape_blocking'): #important!
@@ -50,8 +53,8 @@ label duel:
     
     
     ### Set Duel Defaults ###
-    $ genie_hp = 1000
-    $ snape_hp = 2000 #Must be 2000
+    $ genie_hp = genie_max_hp
+    $ snape_hp = snape_max_hp
     
     $ blocking = False #True when "block" command is chosen, when Gennie turn into a guard.
     $ snape_blocking = False #True when Snape goes into defensive stance.
@@ -415,13 +418,13 @@ screen duel:
 screen hp_bar:
     zorder 3
     
-    ### 369 health = one px movement ###
-    add "images/dueling/snape/hp_bar_02.png" xpos (-1*((100000-genie_hp)/369)) ypos 0
+    ### health bar is 271 px wide ###
+    add "images/dueling/snape/hp_bar_02.png" xpos int((genie_hp-genie_max_hp)/(genie_max_hp/271.0)) ypos 0
     add "images/dueling/snape/hp_bar.png" #Genie avatr pic.
     
-    ### 3 health = one px movement ###
+    ### health bar is 727 px wide ###
     add "images/dueling/snape/hp_bar_11.png" #Black background for HP bar.
-    add "images/dueling/snape/hp_bar_12.png" xpos ((2000-snape_hp)/3) ypos 0 
+    add "images/dueling/snape/hp_bar_12.png" xpos int((snape_max_hp-snape_hp)/(snape_max_hp/727.0)) ypos 0
     add "images/dueling/snape/hp_bar_10.png" #Snape avatr pic.
 
     add "images/dueling/snape/hp_bar_05.png" xpos 140 ypos 0 #Inactive buttons.

@@ -25,9 +25,10 @@ And a link to [support our artist Soggy](https://www.patreon.com/SoggyIllustrati
 - **Soggy**:        Artist
 - **STG Anon**:		  Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
 - **Asease1**:		  Coding
-- **Johnny28**:		  Writing
+- **Johnny**:		    Writing
 - **Sandmaster**:   Help with Discord, contests, and moderation.
-- **Magik**: Help with Discord, contests, and moderation.
+- **Magik**:        Help with Discord, contests, and moderation.
+- **Pinguino**:     Support, and being a Penguin.
 
 
 ## Additional Credits (In no particular order):

@@ -173,6 +173,10 @@ label __init_variables:
     if not hasattr(renpy.store,'potion_scene_11_progress'): #important!
         $ potion_scene_11_progress = 0
 
+
+    #HD RESCALE RATION
+    if not hasattr(renpy.store,'scaleratio'): #important!
+        $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
         
     ###CGs
     if not hasattr(renpy.store,'cgg_folder'): #important!

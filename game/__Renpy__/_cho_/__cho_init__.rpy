@@ -13,6 +13,7 @@ label cho_init:
         $ cc_xpos                = 300
         $ cc_ypos                = 0
         $ cc_zorder              = 5
+        $ cc_flip                = 1
 
         #Face
         $ cc_mouth               = "characters/cho/mouth/mouth_01.png" 

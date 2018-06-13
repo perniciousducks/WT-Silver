@@ -6093,6 +6093,11 @@ label luna_favour_7:
     her "I'm sure you'll love it as well!"
     lun "I hope so..."
     her "Are you ready [genie_name]?"
+    $ ccg_folder = "luna_"
+    $ ccg1 = "luna_1"
+    $ ccg2 = "herm_1"
+    $ ccg3 = "gene_herm_1"
+    show screen ccg
     m "Am I!"
     menu:
         "-Be gentle...-":

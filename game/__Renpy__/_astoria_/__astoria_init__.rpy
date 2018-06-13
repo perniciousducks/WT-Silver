@@ -14,6 +14,7 @@ label astoria_init:
         $ astoria_xpos                = 300
         $ astoria_ypos                = 0
         $ astoria_zorder              = 5
+        $ astoria_flip                = 1
 
         #Face
         $ astoria_mouth               = "characters/astoria/face/mouth/smile.png"

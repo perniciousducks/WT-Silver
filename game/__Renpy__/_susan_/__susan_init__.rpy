@@ -12,6 +12,7 @@ label susan_init:
         $ susan_xpos                = 300
         $ susan_ypos                = 0
         $ susan_zorder              = 5
+        $ susan_flip                = 1
 
         #Face
         $ susan_mouth               = "characters/susan/face/mouth/base.png" 

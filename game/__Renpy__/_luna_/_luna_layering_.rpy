@@ -22,54 +22,54 @@
 
 screen luna:
     ### BASE IMAGE
-    add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the base body
-    add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the left arm
-    add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the right arm
-    add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add her blush to base
-    add "characters/luna/body/head/hair_"+str(luna_hair)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the hair base
+    add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the base body
+    add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the left arm
+    add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the right arm
+    add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add her blush to base
+    add "characters/luna/body/head/hair_"+str(luna_hair)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the hair base
     ### EMOTIONS
-    add luna_mouth xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the mouth
-    add "characters/luna/body/face/eye_white.png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip
-    add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the pupil
-    add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eye outline
-    add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eyebrow
-    add "characters/luna/body/face/tears/tears_"+str(luna_tears)+".png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip
-    add "characters/luna/body/head/hair_"+str(luna_hair)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip #add the hair overlayer
+    add luna_mouth xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the mouth
+    add "characters/luna/body/face/eye_white.png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)
+    add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the pupil
+    add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the eye outline
+    add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the eyebrow
+    add "characters/luna/body/face/tears/tears_"+str(luna_tears)+".png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)
+    add "characters/luna/body/head/hair_"+str(luna_hair)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio) #add the hair overlayer
 
     if luna_wear_cum_under: #Luna cum but under clothes
-        add "characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
+        add "characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the top
     ### CLOTHES 
     if luna_wear_glasses:
-        add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the glasses
+        add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the glasses
     if luna_wear_bra and not luna_wear_top:
-        add luna_bra xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the bra
+        add luna_bra xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the bra
     if luna_wear_panties:
-        add luna_panties xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the panties
+        add luna_panties xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the panties
     if luna_wear_skirt:
-        add luna_skirt xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the skirt
+        add luna_skirt xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the skirt
     if luna_wear_top:
-        add luna_top xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
+        add luna_top xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the top
     if luna_wear_acc:
-        add luna_acc xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the accessory (jewellery)
+        add luna_acc xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the accessory (jewellery)
 
     ### ARM OVERLAYS
-    add "characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the left arm
-    add "characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the right arm
+    add "characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the left arm
+    add "characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the right arm
 
     if luna_wear_cum:
-        add "characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
+        add "characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)# Add the top
 
     if genie_sprite_base == "characters/genie/base_4.png": #add genies dick for licking/sucking
         add "characters/genie/dick_1.png" xpos genie_sprite_xpos ypos genie_sprite_ypos
-        add "characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the right leg cover for the dick. What's a thigh job called again?
+        add "characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the right leg cover for the dick. What's a thigh job called again?
     
     if luna_wear_cum and genie_sprite_base == "characters/genie/base_4.png":
-        add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip
+        add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom (1.0/scaleratio)
     ### ZORDER
     zorder luna_zorder
 
 screen luna_chibi:
-    add luna_chibi_image xpos luna_chibi_xpos ypos luna_chibi_ypos xzoom luna_flip  
+    add luna_chibi_image xpos luna_chibi_xpos ypos luna_chibi_ypos xzoom luna_flip zoom (1.0/scaleratio)  
     zorder luna_chibi_zorder
 
 

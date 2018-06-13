@@ -2,35 +2,35 @@
 
 screen cho_chang:
     ### BASE IMAGE
-    add cc_arms xpos cc_xpos ypos cc_ypos #Add the arms
-    add cc_base xpos cc_xpos ypos cc_ypos #Add the base body
-    add cc_hair_shadow xpos cc_xpos ypos cc_ypos #Add the hair shadow
+    add cc_arms xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the arms
+    add cc_base xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the base body
+    add cc_hair_shadow xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the hair shadow
     ### EMOTIONS
-    add cc_eye xpos cc_xpos ypos cc_ypos #Add the eye outline
-    add cc_pupil xpos cc_xpos ypos cc_ypos #Add the pupil
-    add cc_eyebrow xpos cc_xpos ypos cc_ypos #Add the eyebrow
-    add cc_hair xpos cc_xpos ypos cc_ypos #Add the hair shadow
+    add cc_eye xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the eye outline
+    add cc_pupil xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the pupil
+    add cc_eyebrow xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the eyebrow
+    add cc_hair xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the hair shadow
     ###MOUTH
-    add cc_mouth xpos cc_xpos ypos cc_ypos #Add the mouth
+    add cc_mouth xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the mouth
     ###TEARS for fears
-    add cc_tears xpos cc_xpos ypos cc_ypos #Add the tears
+    add cc_tears xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the tears
     ### CLOTHES 
     if cc_wear_bra and not cc_wear_top:
-        add cc_bra xpos cc_xpos ypos cc_ypos # Add the bra
+        add cc_bra xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the bra
     if cc_wear_panties and not cc_wear_skirt:
-        add cc_panties xpos cc_xpos ypos cc_ypos # Add the panties
+        add cc_panties xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the panties
     if cc_wear_skirt:
-        add cc_skirt xpos cc_xpos ypos cc_ypos # Add the skirt
+        add cc_skirt xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the skirt
     if cc_wear_top:
-        add cc_top xpos cc_xpos ypos cc_ypos # Add the top
+        add cc_top xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the top
     if cc_wear_acc:
-        add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
+        add cc_acc xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the accessory
     if cc_wear_vest:
-        add cc_vest xpos cc_xpos ypos cc_ypos # Add the vest
+        add cc_vest xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the vest
     if cc_wear_stockings:
-        add cc_stock xpos cc_xpos ypos cc_ypos # Add the stockings
+        add cc_stock xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the stockings
     ### OTHER
-    add cc_l_hand xpos cc_xpos ypos cc_ypos # Add the left hand
+    add cc_l_hand xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the left hand
     ### ZORDER
     zorder cc_zorder
 

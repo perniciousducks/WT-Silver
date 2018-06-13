@@ -2,50 +2,50 @@
 
 screen astoria_main:
     ### BASE IMAGE
-    add astoria_l_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
-    add astoria_r_arm xpos astoria_xpos ypos astoria_ypos #Add the arms
-    add astoria_hair xpos astoria_xpos ypos astoria_ypos #Add the hair base
-    add astoria_base xpos astoria_xpos ypos astoria_ypos #Add the base body
+    add astoria_l_arm xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the arms
+    add astoria_r_arm xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the arms
+    add astoria_hair xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the hair base
+    add astoria_base xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the base body
     
     ### FACE
-    add astoria_eye_bg xpos astoria_xpos ypos astoria_ypos #Add the eye white
-    add astoria_pupil xpos astoria_xpos ypos astoria_ypos #Add the pupil
-    add astoria_eye xpos astoria_xpos ypos astoria_ypos #Add the eye outline
+    add astoria_eye_bg xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the eye white
+    add astoria_pupil xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the pupil
+    add astoria_eye xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the eye outline
     
-    add astoria_eyebrow xpos astoria_xpos ypos astoria_ypos #Add the eyebrow
-    add astoria_mouth xpos astoria_xpos ypos astoria_ypos #Add the mouth
+    add astoria_eyebrow xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the eyebrow
+    add astoria_mouth xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the mouth
     
-    add astoria_cheeks xpos astoria_xpos ypos astoria_ypos #Add the extras
-    add astoria_tears xpos astoria_xpos ypos astoria_ypos #Add the extras
-    add astoria_extra xpos astoria_xpos ypos astoria_ypos #Add the extras
+    add astoria_cheeks xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the extras
+    add astoria_tears xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the extras
+    add astoria_extra xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the extras
     
-    add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos #Add the hair shadow
+    add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the hair shadow
     
     ### CLOTHES 
     if astoria_wear_bra and not astoria_wear_top:
-        add astoria_bra xpos astoria_xpos ypos astoria_ypos # Add the bra
+        add astoria_bra xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the bra
     if astoria_wear_panties and not astoria_wear_bottom:
-        add astoria_panties xpos astoria_xpos ypos astoria_ypos # Add the panties
+        add astoria_panties xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the panties
     if astoria_wear_garterbelt:
         add astoria_garterbelt xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_onepiece and not astoria_wear_top and not astoria_wear_robe:
         add astoria_onepiece xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_bottom and not astoria_wear_robe:
-        add astoria_skirt xpos astoria_xpos ypos astoria_ypos # Add the skirt
+        add astoria_skirt xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the skirt
     if astoria_wear_top and not astoria_wear_robe:
-        add astoria_top xpos astoria_xpos ypos astoria_ypos # Add the top
+        add astoria_top xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the top
     if astoria_wear_accs:
-        add astoria_accs xpos astoria_xpos ypos astoria_ypos # Add the accessory
+        add astoria_accs xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the accessory
     if astoria_wear_stockings:
-        add astoria_stockings xpos astoria_xpos ypos astoria_ypos # Add the stockings
+        add astoria_stockings xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the stockings
     if astoria_wear_neckwear:
         add astoria_neckwear xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_robe:
         add astoria_robe xpos astoria_xpos ypos astoria_ypos
         
     ### OTHER
-    add astoria_l_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
-    add astoria_r_hand xpos astoria_xpos ypos astoria_ypos # Add the left hand
+    add astoria_l_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand
+    add astoria_r_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand
     
     ### ZORDER
     zorder astoria_zorder

@@ -2,47 +2,47 @@
 
 screen susan_main:
     ### BASE IMAGE
-    add susan_l_arm xpos susan_xpos ypos susan_ypos #Add the arms
-    add susan_r_arm xpos susan_xpos ypos susan_ypos #Add the arms
-    add susan_hair xpos susan_xpos ypos susan_ypos #Add the hair base
-    add susan_base xpos susan_xpos ypos susan_ypos #Add the base body
-    add susan_boobs xpos susan_xpos ypos susan_ypos #Add the base body
+    add susan_l_arm xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the arms
+    add susan_r_arm xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the arms
+    add susan_hair xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the hair base
+    add susan_base xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the base body
+    add susan_boobs xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the base body
     
     ### FACE
-    add susan_eye_bg xpos susan_xpos ypos susan_ypos #Add the eye white
-    add susan_pupil xpos susan_xpos ypos susan_ypos #Add the pupil
-    add susan_eye xpos susan_xpos ypos susan_ypos #Add the eye outline
+    add susan_eye_bg xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the eye white
+    add susan_pupil xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the pupil
+    add susan_eye xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the eye outline
     
-    add susan_eyebrow xpos susan_xpos ypos susan_ypos #Add the eyebrow
-    add susan_mouth xpos susan_xpos ypos susan_ypos #Add the mouth
+    add susan_eyebrow xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the eyebrow
+    add susan_mouth xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the mouth
     
-    add susan_cheeks xpos susan_xpos ypos susan_ypos #Add the extras
-    add susan_tears xpos susan_xpos ypos susan_ypos #Add the extras
-    add susan_extra xpos susan_xpos ypos susan_ypos #Add the extras
+    add susan_cheeks xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the extras
+    add susan_tears xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the extras
+    add susan_extra xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the extras
     
-    add susan_hair_shadow xpos susan_xpos ypos susan_ypos #Add the hair shadow
+    add susan_hair_shadow xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) #Add the hair shadow
     
     ### CLOTHES 
     if susan_wear_bra and not susan_wear_top:
-        add susan_bra xpos susan_xpos ypos susan_ypos # Add the bra
+        add susan_bra xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the bra
     if susan_wear_panties and not susan_wear_bottom:
-        add susan_panties xpos susan_xpos ypos susan_ypos # Add the panties
+        add susan_panties xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the panties
     if susan_wear_garterbelt:
-        add susan_garterbelt xpos susan_xpos ypos susan_ypos
+        add susan_garterbelt xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
     if susan_wear_onepiece and not susan_wear_top and not susan_wear_robe:
-        add susan_onepiece xpos susan_xpos ypos susan_ypos
+        add susan_onepiece xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
     if susan_wear_bottom:
-        add susan_skirt xpos susan_xpos ypos susan_ypos # Add the skirt
+        add susan_skirt xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the skirt
     if susan_wear_top:
-        add susan_top xpos susan_xpos ypos susan_ypos # Add the top
+        add susan_top xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the top
     if susan_wear_accs:
-        add susan_accs xpos susan_xpos ypos susan_ypos # Add the accessory
+        add susan_accs xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the accessory
     if susan_wear_stockings:
-        add susan_stockings xpos susan_xpos ypos susan_ypos # Add the stockings
+        add susan_stockings xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the stockings
     if susan_wear_neckwear:
-        add susan_neckwear xpos susan_xpos ypos susan_ypos
+        add susan_neckwear xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
     if susan_wear_robe:
-        add susan_robe xpos susan_xpos ypos susan_ypos
+        add susan_robe xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
         
     ### ZORDER
     zorder susan_zorder

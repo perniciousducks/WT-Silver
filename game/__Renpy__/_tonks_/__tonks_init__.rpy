@@ -14,6 +14,7 @@ label tonks_init:
         $ tonks_xpos                = 600
         $ tonks_ypos                = 0
         $ tonks_zorder              = 5
+        $ tonks_flip                = 1
 
         #Face
         $ tonks_mouth               = "characters/tonks/face/mouth/base.png" 

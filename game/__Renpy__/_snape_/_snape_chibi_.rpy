@@ -64,13 +64,16 @@ label sna_chibi(action = "", xpos=snape_chibi_xpos, ypos=snape_chibi_ypos, pic =
             $ snape_chibi_xpos = 420
         elif xpos == "door":
             $ snape_chibi_xpos = 750
+        else:
+            $ snape_chibi_xpos = int(xpos)
 
     if ypos != snape_chibi_ypos:
         if ypos == "base" or ypos == "default":
             $ snape_chibi_ypos = 250
         if ypos == "on_desk":
             $ snape_chibi_ypos = 250
-
+        else:
+            $ snape_chibi_ypos = int(ypos)
 
     #Snape Chibi Actions.
             

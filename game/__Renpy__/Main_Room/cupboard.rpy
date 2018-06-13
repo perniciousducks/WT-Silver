@@ -2,6 +2,12 @@
 
 label cupboard:
     menu:
+        "puzzle Test":
+            jump start_slide_puzzle
+        "Mirror Test":
+            hide screen main_room_menu
+            hide screen main_room
+            jump enter_room_of_req
         "Astoria Test":
             menu:
                 "-Unlock Summons-":

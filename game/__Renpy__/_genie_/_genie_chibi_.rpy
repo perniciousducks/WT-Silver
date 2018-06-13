@@ -221,10 +221,14 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
             $ genie_chibi_xpos = 750
         elif xpos == "behind_desk":
             $ genie_chibi_xpos = 230
+        else:
+            $ genie_chibi_xpos = int(xpos)
 
     if ypos != genie_chibi_ypos:
         if ypos == "base" or ypos == "default":
             $ genie_chibi_ypos = 190
+        else:
+            $ genie_chibi_ypos = int(ypos)
 
 
     #Genie Chibi Actions.

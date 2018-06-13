@@ -4,6 +4,7 @@
 - Silver is a complete rework of Akabur's Game, Witch Trainer.
 - It combines several mods for Witch Trainer into one game, with new features, bugfixes, improvements, Qol-changes, events, and new art being added periodically.
 
+
 ## How do I install Witch Trainer: Silver?
 
 You have two options for installing silver:
@@ -12,20 +13,21 @@ You have two options for installing silver:
 
 Download links can be found on the [Pastebin](https://pastebin.com/KY3RGQei).
 
+
 ## Where can I support Witch Trainer: Silver?
 
-[Here](https://www.patreon.com/MoCoder) is a link to the [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) page.
-
-And a link to [support our artist Soggy](https://www.patreon.com/SoggyIllustrations).
+On Patreon:
+Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) page.
 
 
 ## Current Team
 - **Mo**:		        Writing, coding and mod compilation
 - **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, bugfixing, some writing.
-- **Soggy**:        Artist
+- **Soggy**:        Our main Artist. You can support him [here](https://www.patreon.com/SoggyIllustrations).
 - **STG Anon**:		  Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
 - **Asease1**:		  Coding
 - **Johnny**:		    Writing
+- **Booom313**:		  Mobile port for Android. You can support him [here](https://www.patreon.com/booom313/).
 - **Sandmaster**:   Help with Discord, contests, and moderation.
 - **Magik**:        Help with Discord, contests, and moderation.
 - **Pinguino**:     Support, and being a Penguin.
@@ -42,7 +44,7 @@ And a link to [support our artist Soggy](https://www.patreon.com/SoggyIllustrati
 - **Maverick**:		  Miscellaneous
 - **Cleanzo**:		  Coding (Helped with the python methods.)
 - **Techy**:		    Outfit
-- **Akabur**:		    Making Witch Trainer
+- **Akabur**:		    Creater of Witch Trainer and other awesome games! You can support him [here](https://www.patreon.com/akabur). 
 - *(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)*
 
 ## More Info:

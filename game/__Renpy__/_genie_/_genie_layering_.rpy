@@ -1,7 +1,7 @@
 ###SCREEN CODE FOR GENIE
 screen genie_sprite:
-    add genie_sprite_base xpos genie_sprite_xpos ypos genie_sprite_ypos xzoom genie_sprite_flip#Add the base body
-    add genie_sprite_exp xpos genie_sprite_xpos ypos genie_sprite_ypos xzoom genie_sprite_flip#Add genie expression
+    add genie_sprite_base xpos genie_sprite_xpos ypos genie_sprite_ypos xzoom genie_sprite_flip zoom (1.0/scaleratio)#Add the base body
+    add genie_sprite_exp xpos genie_sprite_xpos ypos genie_sprite_ypos xzoom genie_sprite_flip zoom (1.0/scaleratio)#Add genie expression
 
     zorder genie_zorder
 

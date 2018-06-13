@@ -98,19 +98,19 @@ label sna_head(text="",face="",xpos=snape_head_xpos ,ypos=snape_head_ypos):
 ### SNAPE FULL
 screen snape_main: #Snape. Full size.
     tag big_snape
-    add s_sprite xpos snape_xpos ypos snape_ypos #tt_xpos+140 ypos tt_ypos
+    add s_sprite xpos snape_xpos ypos snape_ypos zoom (1.0/scaleratio)#tt_xpos+140 ypos tt_ypos
     #zorder hermione_main_zorder #(5) Otherwise candle light is shown on top.
     zorder snape_zorder #5
     
 ### SNAPE HEAD
 screen snape_head: #Snape. Full size.
     tag big_snape
-    add s_sprite xpos snape_head_xpos ypos snape_head_ypos
+    add s_sprite xpos snape_head_xpos ypos snape_head_ypos zoom (1.0/scaleratio)
     zorder 8 #8 #In front of text box.
 
 
 ### SNAPE EMOTIONS
 screen s_emo_01: #Closed eyes and closed mouth.
     tag semo
-    add "characters/snape/main/s_emo_01.png" xpos tt_xpos ypos tt_ypos
+    add "characters/snape/main/s_emo_01.png" xpos tt_xpos ypos tt_ypos zoom (1.0/scaleratio)
     zorder 4 #2 #Otherwise candle light is shown on top.

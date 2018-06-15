@@ -1,16 +1,25 @@
 label start_slide_puzzle:
     $ imagepuzzle = [["images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in range(0,4)] for y in range(0,4)] 
     $ imagepuzzle[3][3] = "empty"
-    $ emptyposition = 15
     python:
-        for x in range(0,15):
+        for x in range(0,16):
             xposS = int(x/4)
             yposS = int(x%4)
             tempimage = imagepuzzle[xposS][yposS]
-            xposE = int(((x+3)%15)/4)
-            yposE = int(((x+3)%15)%4)
+            xposE = int(((x+3)%16)/4)
+            yposE = int(((x+3)%16)%4)
             imagepuzzle[xposS][yposS] = imagepuzzle[xposE][yposE]
             imagepuzzle[xposE][yposE] = tempimage
+        for x in range(0,16):
+            xposS = int(x/4)
+            yposS = int(x%4)
+            if imagepuzzle[xposS][yposS] == "empty":
+                emptyposition = x
+        
+        #This is to make it solvable 
+        tempimage = imagepuzzle[1][0]
+        imagepuzzle[1][0] = imagepuzzle[2][0]
+        imagepuzzle[2][0] = tempimage
     jump update_puzzle_slide
         
       
@@ -37,14 +46,18 @@ label update_puzzle_slide:
             for y in range(0,4):
                 if ((imagepuzzle[y][x] != "images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
-    
-    #do stuff when finish
-    m "Finally... Sweet, phoenix tears! Down the hatch we go."
-    #sound effect needet
-    m "...."
-    m "I feel no difference..."
-    m "Hold on a minute there's a book/notes in here..."
-    # implement popup
+    if unlocked_7th == False:
+        m "Finally... Sweet, phoenix tears! Down the hatch we go."
+        $renpy.play("sounds/pop03.mp3")
+        $renpy.play("sounds/gulp.mp3")
+        $renpy.play("sounds/gulp.mp3")
+        m "...."
+        m "I feel no difference..."
+        m "Hold on a minute there's a book/notes in here..."
+        call give_reward("You've unlocked something on the 7th floor","/images/store/unlock_genie_question_mark.png")
+        $ unlocked_7th = True
+    else:
+        m "Empty... I don't know what I expected."
     jump cupboard
  
         

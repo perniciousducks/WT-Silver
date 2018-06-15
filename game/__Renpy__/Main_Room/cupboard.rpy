@@ -2,8 +2,6 @@
 
 label cupboard:
     menu:
-        "puzzle Test":
-            jump start_slide_puzzle
         "Mirror Test":
             hide screen main_room_menu
             hide screen main_room
@@ -192,7 +190,8 @@ label cupboard:
                     hide screen gift
                     with d3
                     jump possessions
-                
+                "Box with a puzzle on it" if found_puzzle_1 == True:
+                    jump start_slide_puzzle
                 "-Never mind-":
                     jump cupboard
         

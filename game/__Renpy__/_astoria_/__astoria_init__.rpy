@@ -185,6 +185,7 @@ label astoria_progress_init:
         $ astoria_arrvial_whoring = 9
         
         ##Events
+        $ ministry_letter          = False
         $ ministry_letter_received = False
         $ hermione_on_the_lookout  = False
         $ hermione_finds_astoria   = False

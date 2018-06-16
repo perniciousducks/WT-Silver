@@ -13,9 +13,10 @@ label astoria_intro_branches: #This label runs every day and night. Never call t
 
     if day >= 30 and whoring >= 9 and not ministry_letter_received:
     
-        #ADD letter into mail queue here.
-        $ ministry_letter_received = True
-        "Developer note:" "Talk to Hermione and then Snape to start this content." #Remove this once the mail is in place!
+        if not ministry_letter:
+            $ ministry_letter = True
+            $ letters += 1 #Displays Owl
+        
         if daytime:
             jump day_resume
         else:

@@ -17,6 +17,7 @@ label summon_astoria:
     call astoria_door_event
 
     call update_ast_uniform
+    call update_sus_uniform
 
     #call ast_chibi("stand","mid","base")
     

@@ -490,6 +490,7 @@ label imperio_spell_3:
     
     hide screen susan_main
     $ susan_wear_top = False
+    call update_sus_uniform
     call sus_main("","upset","base","worried","mid")
     pause.5
     
@@ -501,6 +502,7 @@ label imperio_spell_3:
     
     hide screen susan_main
     $ susan_wear_bra = False
+    call update_sus_uniform
     call sus_main("","base","base","base","mid")
     pause.5
     
@@ -646,7 +648,7 @@ label imperio_spell_3:
     call ast_main("Please stop?","open","narrow","narrow","down")
     call ast_main("Or please coat me in cum?","disgust","narrow","narrow","down")
     with hpunch
-    "ASTORIA!"
+    sus "ASTORIA!"
     call ast_main("Answer the question, Susy...","open","base","base","mid")
     sus "..."
     sus "Please sir..."
@@ -725,7 +727,7 @@ label imperio_spell_3:
     
     call nar(">Susan slowly crawls out from under your desk...")
     
-    $ susan_cum_covered = True
+    $ susan_face_covered = True
     hide screen blkfade
     call sus_main("","upset","narrow","worried","L",xpos="mid",ypos="base",trans="fade")
     call ctc
@@ -742,7 +744,7 @@ label imperio_spell_3:
     call nar(">Susan slowly wipes the cum from her face as she gets dressed.")
     
     hide screen susan_main
-    $ susan_cum_covered = False
+    $ susan_face_covered = False
     call sus_main("I hope you two are happy...","upset","narrow","base","down")
     
     call play_sound("door")

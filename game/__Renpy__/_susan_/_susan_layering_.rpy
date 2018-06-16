@@ -41,6 +41,16 @@ screen susan_main:
         add susan_accs xpos susan_xpos ypos susan_ypos # Add the accessory
     if susan_wear_neckwear:
         add susan_neckwear xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+        
+    #Cum layers.
+    if susan_face_covered:
+        add susan_face_cum xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+    if susan_body_covered:
+        add susan_body_cum xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+    if susan_aftersperm:
+        add susan_clothes_cum xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+        
+        
     if susan_wear_robe:
         add susan_robe xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
         

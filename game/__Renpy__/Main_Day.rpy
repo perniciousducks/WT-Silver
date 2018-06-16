@@ -222,6 +222,7 @@ with fade
 
 $ day +=1
 
+call points_changes #Makes house points changes.
 
 ###4 Houses
 call FH_day

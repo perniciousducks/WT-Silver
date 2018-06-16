@@ -471,7 +471,7 @@ label hg_pf_TheGamble_complete:
         m "Now, what does a fucktoy want?"
         ">You lower her, teasing her asshole with the tip of your cock."
         #her "N-Nothing. A toy w-wants nothing. It's just used by its owner."
-        call her_head("N-Nothing. A toy w-wants nothing. It's just used by its owner.","wide_open_tongue","aheagao_mad",cheeks="blush") from _call_her_head_1503
+        call her_head("N-Nothing. A toy w-wants nothing. It's just used by its owner.","wide_open_tongue","ahegao_mad",cheeks="blush") from _call_her_head_1503
         m "VERY good."
         ">You drop her onto your dick."
         $ renpy.play('sounds/gltch.mp3')
@@ -488,7 +488,7 @@ label hg_pf_TheGamble_complete:
         m "I'll give you a few choices."
         m "Do you want me to fuck your ass?"
         #her "Yes."215
-        call her_head("Yes.","wide_open_tongue","aheagao_mad",cheeks="blush") from _call_her_head_1506
+        call her_head("Yes.","wide_open_tongue","ahegao_mad",cheeks="blush") from _call_her_head_1506
         m "How?"
         #her "Haaard. Pound me. Fill me with your cum!"
         call her_head("Haaard. Pound me. Fill me with your cum!","base","ahegao_raised",cheeks="blush") from _call_her_head_1507

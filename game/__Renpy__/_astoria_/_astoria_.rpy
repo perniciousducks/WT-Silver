@@ -11,7 +11,7 @@
    
 label astoria_intro_branches: #This label runs every day and night. Never call to it!
 
-    if day >= 30 and whoring >= 9 and not ministry_letter_received:
+    if not ministry_letter_received:
     
         if not ministry_letter:
             $ ministry_letter = True
@@ -25,7 +25,7 @@ label astoria_intro_branches: #This label runs every day and night. Never call t
     #Talk to Hermione now.
     
     #Talk to Snape now.
-    #Talk to Snape again.
+    #Talk to Snape again if you talked to Snape first.
     
     #Hermione finds Astoria. #Start of day.
     if daytime and hermione_finds_astoria and days_without_an_event >= 2 and not astoria_unlocked:
@@ -86,8 +86,8 @@ label snape_talk:
         if snape_on_the_lookout:
             $ chitchated_with_snape = True 
             call sna_main("I'm still on the lookout, Genie.","snape_01")
-            call sna_main("If I find the little maggot that casts those spells,...","snape_01")
-            call sna_main("I will crush his bones!","snape_01")
+            call sna_main("If I find the little maggot that casts those spells,...","snape_10")
+            call sna_main("I will crush his bones!","snape_16")
             jump snape_ready
         $ snape_busy = True
         $ snape_on_the_lookout = True

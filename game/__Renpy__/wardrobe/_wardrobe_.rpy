@@ -948,7 +948,7 @@ screen wardrobe():
             #Body Accessories
             if active_girl in ["hermione"]:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",1),Show("wardrobe")]
-                add "images/store/scaleratio9.png" xpos 0+90 ypos 90 zoom 0.3
+                add "images/store/29.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Body Accs." xpos 76+90 ypos 140+75 size 10
             #Gloves
             if active_girl in ["hermione"]:
@@ -994,7 +994,7 @@ screen wardrobe():
             #Body Accessories
             if wardrobe_stockings_category == 1:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",0),Show("wardrobe")]
-                add "images/store/scaleratio9.png" xpos 0+90 ypos 90 zoom 0.3
+                add "images/store/29.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Body Accs." xpos 76+90 ypos 140+75 size 10
                 for i in range(0,len(wr_body_accs)):
                     $ row = i // 5
@@ -1356,7 +1356,7 @@ screen wardrobe():
             # image files are starting with/off by 1.
 
             hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
-            add "images/store/gifts/scaleratio.png" xpos 0 ypos 90 zoom 0.3      #Gifts
+            add "images/store/gifts/2.png" xpos 0 ypos 90 zoom 0.3      #Gifts
             text "Gifts" xpos 76 ypos 140+75 size 10
 
             #hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",1),Show("wardrobe")]
@@ -1378,7 +1378,7 @@ screen wardrobe():
             #Sweets
             if wardrobe_gifts_category == 0:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
-                add "images/store/gifts/scaleratio.png" xpos 0 ypos 90 zoom 0.3      #Gifts
+                add "images/store/gifts/2.png" xpos 0 ypos 90 zoom 0.3      #Gifts
                 text "Gifts" xpos 76 ypos 140+75 size 10
 
                 if active_girl == "hermione":

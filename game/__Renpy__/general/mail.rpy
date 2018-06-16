@@ -228,7 +228,7 @@ if ministry_letter: #Letter from the ministry
     show screen owl_02
     #$ mail_from_her = False #Comented out because replaced with $ letters += 1
     $ letters -= 1
-    label astoria_intro_ministry_letter_again:
+    label ministry_letter_again:
     show screen letter
     show screen ctc
     show screen bld1

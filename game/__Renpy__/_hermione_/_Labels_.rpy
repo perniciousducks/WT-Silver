@@ -581,7 +581,7 @@ label Night_Request_Block:
                 renpy.jump(i.complete_label)
             
     #Astoria Intro
-    if day >= 30 and whoring >= 9 and not astoria_intro_completed: 
+    if day >= 25 and whoring >= 9 and not astoria_intro_completed: 
         jump astoria_intro_branches
             
     jump night_resume

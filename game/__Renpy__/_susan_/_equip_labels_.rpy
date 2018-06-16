@@ -35,6 +35,8 @@ label update_sus_body:
         $ susan_boobs               = "characters/susan/body/base/boobs_1.png" 
     else:
         $ susan_boobs               = "characters/susan/body/base/boobs_1.png" 
+        
+    return
     
 #Hair equip.
 label set_sus_hair(hair=None,color=None):

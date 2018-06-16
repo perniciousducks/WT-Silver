@@ -220,10 +220,10 @@ screen hermione_face:
 
     add hermione_hair_b xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     if face_on_cg and ccg_folder == "herm_sex":
-        add "images/28_cg/herm_sex/genie_hand.png" #Genies hand on head.
+        add "images/28_cg/herm_sex/genie_hand.png" zoom (1.0/scaleratio) #Genies hand on head.
 
     ### EMOTES ###
-    add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos
+    add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     
     zorder 5
 

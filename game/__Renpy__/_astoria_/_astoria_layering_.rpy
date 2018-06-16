@@ -41,7 +41,7 @@ screen astoria_main:
     if astoria_wear_neckwear:
         add astoria_neckwear xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_robe:
-        add astoria_robe xpos astoria_xpos ypos astoria_ypos
+        add astoria_robe xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
         
     ### OTHER
     add astoria_l_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand

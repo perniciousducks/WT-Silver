@@ -60,7 +60,7 @@ label luna_favour_menu:
             jump luna_favour_5
         "-Suck it-" if luna_corruption >= 14 and not luna_reverted:
             jump luna_favour_6
-        #"-Sex-":
+        "-Sex-" if luna_corruption >= 17 and not luna_reverted:
             jump luna_favour_7
         "-Never mind-":
             jump luna_door_menu

@@ -962,7 +962,7 @@ label luna_revert_2: #Non-Reversion event
             pause
             hide screen ctc
             $ uni_sperm = True
-            $ u_sperm = "images/13_hermione_main/auto_08.png"
+            $ u_sperm = "characters/hermione/face/auto_08.png"
             hide screen bld1
             with d3
             show screen ctc
@@ -1036,7 +1036,7 @@ label luna_revert_2: #Non-Reversion event
             call luna_main("Cover this slut!", 8, 3, 2, 1)
             g9  "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             $ uni_sperm = True
-            $ u_sperm = "images/13_hermione_main/auto_15.png"
+            $ u_sperm = "characters/hermione/face/auto_15.png"
             $ luna_xpos = 550
             $ luna_l_arm = 1
             $ hermione_kneel_leg = False
@@ -1050,7 +1050,7 @@ label luna_revert_2: #Non-Reversion event
             g9  "take it all!"
             hide screen g_c_c_u
             $ g_c_u_pic = "images/animation/06_jerking_01.png"
-            $ u_sperm = "images/13_hermione_main/auto_16.png"
+            $ u_sperm = "characters/hermione/face/auto_16.png"
             pause 
             call her_kneel("...","open_wide_tongue","ahegao")
             ">Hermione kneels before you, unable to move as her face is plastered with more cum than you've ever seen."

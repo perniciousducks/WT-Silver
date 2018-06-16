@@ -107,7 +107,7 @@ screen hermione_main:
 
 
     ### EMOTES ###
-    add hermione_emote xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
+    add hermione_emote xpos hermione_xpos ypos hermione_ypos 
 
 
     zorder hermione_zorder
@@ -965,7 +965,7 @@ screen hermione_action:
 screen hermione_kneel:
     tag hermione_kneel
     
-    $ hermione_head_xpos = hermione_head_xpos+220
+    $ hermione_head_xpos = hermione_head_xpos
     $ hermione_head_ypos_offset = hermione_head_ypos-150
 
     if not hermione_kneel_leg:

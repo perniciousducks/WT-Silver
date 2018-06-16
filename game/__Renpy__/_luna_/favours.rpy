@@ -4108,7 +4108,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ hermione_SC.chibi.xpos = 40 #40 = Near Luna
         $ hermione_SC.chibi.ypos = 60
         $ h_c_u_pic = "characters/hermione/chibis/dance/08_sits.png"
-        $ hermione_head_xpos=390
+        $ hermione_head_xpos=590
         show screen h_c_u 
         with d3
         call her_kneel("...","annoyed","ahegao")
@@ -4150,7 +4150,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ luna_r_arm = 3
         $ luna_flip = 1
         $ luna_xpos = 640
-        $ hermione_head_xpos = 390
+        $ hermione_head_xpos = 590
         $ hermione_head_ypos = 390
         $ genie_sprite_xpos = 550
         call gen_main("!!!", 4, 2)
@@ -4218,7 +4218,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         hide screen white
         pause.2
         $ uni_sperm = True
-        $ u_sperm = "images/13_hermione_main/auto_07.png"
+        $ u_sperm = "characters/hermione/face/auto_07.png"
         show screen white 
         pause .1
         hide screen white
@@ -4279,7 +4279,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
             call luna_main("mmmmm... you taste even better...", 2, 1, 4, 1)
             call her_main("...","open","worriedCl") 
             ">Hermione stands still, letting luna slowly wipe the cum from her face..."
-            $ u_sperm = "images/13_hermione_main/auto_08.png"
+            $ u_sperm = "characters/hermione/face/auto_08.png"
             call her_main("...","shock","worriedCl") 
             call luna_main("mmmmm...", 2, 1, 4, 13)
             ">Luna slowly fills her mouth with cum before eventually swallowing."
@@ -4326,7 +4326,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
             call luna_main("mmmmm... that's it... make sure you get it all slut...", 5, 3, 4, 1)
             m "(woah...)"
             ">Hermione slowly continues to clear her face of cum."
-            $ u_sperm = "images/13_hermione_main/auto_08.png"
+            $ u_sperm = "characters/hermione/face/auto_08.png"
             call her_kneel("...","full_cum","dead") #Cheek full
             ">She fills her mouth with cum before eventually swallowing."
             call her_kneel("*gulp*","cum","worriedCl")
@@ -4510,7 +4510,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ hermione_SC.chibi.xpos = 40 #40 = Near Luna
         $ hermione_SC.chibi.ypos = 60
         $ h_c_u_pic = "characters/hermione/chibis/dance/08_sits.png"
-        $ hermione_head_xpos=390
+        $ hermione_head_xpos=590
         show screen h_c_u 
         with d3
         hide screen bld1
@@ -4525,7 +4525,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ luna_r_arm = 3
         $ luna_flip = 1
         $ luna_xpos = 640
-        $ hermione_head_xpos = 390
+        $ hermione_head_xpos = 590
         $ hermione_head_ypos = 390
         $ genie_sprite_xpos = 550
         show screen genie_sprite
@@ -4592,7 +4592,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ hermione_right_arm = "characters/hermione/body/arms/right/dick.png"
         $ genie_sprite_base = "characters/genie/base_2.png"
         $ genie_sprite_exp = "characters/genie/exp_4.png"
-        $ hermione_xpos = 500
+        $ hermione_xpos = 590
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
@@ -4825,7 +4825,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ luna_r_arm = 2
         $ luna_flip = 1
         $ luna_xpos = 640
-        $ hermione_head_xpos = 390
+        $ hermione_head_xpos = 590
         $ hermione_head_ypos = 390
         $ genie_sprite_xpos = 550
         $ hermione_wear_skirt = False
@@ -4945,7 +4945,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         show screen white 
         pause.1
         $ uni_sperm = True
-        $ u_sperm = "images/13_hermione_main/auto_16.png"
+        $ u_sperm = "characters/hermione/face/auto_16.png"
         hide screen white
         pause.2
         show screen white 
@@ -4987,16 +4987,16 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ luna_cheeks = "characters/luna/body/face/cheeks/cheeks_2.png"
         call luna_main("mmmmm... just look at you... you look so... delicous...", 1, 6, 4, 1)
         call her_main("...","open","baseL")
-        $ luna_xpos = 600
+        $ luna_xpos = 500
         $ luna_r_arm = 2
         ">Luna moves closer to Hermione before picking up a strand of cum with her finger and moving it to her mouth."
         call her_main("go on...","soft","ahegao") 
         m "(mmmm...)"
-        $ luna_xpos = 630
+        $ luna_xpos = 530
         call luna_main("mmmmm... you taste even better...", 2, 1, 4, 1)
         call her_main("...","grin","dead") 
         ">Hermione stands still, letting luna slowly wipe the cum from her face..."
-        $ u_sperm = "images/13_hermione_main/auto_08.png"
+        $ u_sperm = "characters/hermione/face/auto_08.png"
         call her_main("that's it... make sure you get it all...","base","down") 
         call luna_main("mmmmm...", 2, 1, 4, 13)
         ">Luna slowly fills her mouth with cum before eventually swallowing."
@@ -5774,7 +5774,7 @@ label luna_favour_6: #luna and hermione blowjob
         ">Eventually Luna kneels before you, gazing up into your eyes while hermione stands behind her, examining her actions."
         her "remember to look him in the eye... he loves that."
         $ ccg_folder = "luna_bj"
-        $ ccg2 = "herm"
+        $ ccg1 = "herm"
         $ ccg3 = "gene"
         $ ccg2 = 1
         show screen ccg

@@ -40,7 +40,7 @@ label equip_gryyf_stockings:
             call her_main("!","shock","wide") from _call_her_main_516
             m "It's a gift, [hermione_name], to show you what a great guy ME, Proffesor DeltaDwarf, really is!"
             call her_main("...") from _call_her_main_517
-            call her_main("hhmppphhh", "body_42") from _call_her_main_518
+            call her_main("hhmppphhh","full","ahegao_intense") from _call_her_main_518
             call her_main("hahahahahahaha!","smile","happyCl",cheeks="blush",emote="06") from _call_her_main_519
             call her_main("ahhh....","base","concerned",cheeks="blush",tears="soft") from _call_her_main_520
             call her_main("You're too funny! Thanks for the gift! I'll put them on right away","base","base") from _call_her_main_521
@@ -73,8 +73,8 @@ label equip_gryyf_stockings:
             call her_main("....") from _call_her_main_530
             $ hermione_emote_exclam = False
             $ hermione_emote_hearts = True
-            call her_main("I NEED THEM!", "body_34") from _call_her_main_531
-            call her_main("What'll it cost me!?", "body_34") from _call_her_main_532
+            call her_main("I NEED THEM!","angry","worriedCl",emote="05") from _call_her_main_531
+            call her_main("What'll it cost me!?","angry","worriedCl",emote="05") from _call_her_main_532
             call her_main("WHAT DO I HAVE TO DO!?","scream","worriedCl") from _call_her_main_533
             $ hermione_emote_hearts = False
             m "Just a small favour"
@@ -82,7 +82,7 @@ label equip_gryyf_stockings:
             m "All I want, [hermione_name], is to see how great they look on you."
             m "Easy, right?"
             call her_main("...") from _call_her_main_535
-            call her_main("You just want to see me in stockings? That should be no problem...", "body_14") from _call_her_main_536
+            call her_main("You just want to see me in stockings? That should be no problem...","open","base") from _call_her_main_536
             call her_main("(Is he up to something?)","normal","frown") from _call_her_main_537
             call her_main(".....") from _call_her_main_538
             call her_main("","base","base",xpos=120) from _call_her_main_539 #Hermione xpos middle
@@ -102,7 +102,7 @@ label equip_gryyf_stockings:
             call her_main("(sigh...)","angry","angry") from _call_her_main_546
             call her_main("(alright, [hermione_name], we've done this before, it's as easy as Arithmancy)","angry","angry") from _call_her_main_547
             call her_main("(there's nothing embarrassing about this!)","clench","worried",cheeks="blush",tears="soft") from _call_her_main_548 #Worried, embarrassing, small tears
-            call her_main("I'm just showing that bastard a little square of fabric", "body_186") from _call_her_main_549
+            call her_main("I'm just showing that bastard a little square of fabric","open","annoyed",cheeks="blush") from _call_her_main_549
             call her_main("That's all!") from _call_her_main_550
             call her_main("And think of how much more I'll get done without boys staring at my legs all day...","angry","suspicious",cheeks="blush") from _call_her_main_551 #Worried, angry, embarrassed
             m "I'm waiting, [hermione_name]. Don't tell me you don't want your gift?"
@@ -124,9 +124,9 @@ label equip_gryyf_stockings:
             call her_main("",xpos=510) from _call_her_main_556 #510=default Hermione xpos
             m "They suit you, [hermione_name]"
             call her_main("Again with the sweet talk?") from _call_her_main_557
-            call her_main("(it won't work on someone like me...)", "body_182") from _call_her_main_558
+            call her_main("(it won't work on someone like me...)","open","worriedCl",cheeks="blush") from _call_her_main_558
             m "Your panties, your stockings... they make you look so pretty"
-            call her_main("(ahh! he called me pretty)", "body_188") from _call_her_main_559
+            call her_main("(ahh! he called me pretty)","base","baseL",cheeks="blush") from _call_her_main_559
             call her_main("You saw what you wanted... now I can go, right [genie_name]?","angry","suspicious",cheeks="blush") from _call_her_main_560
             #call her_main("Please?","angry","suspicious",cheeks="blush")
             m "(True, I did get a great panty shot)"
@@ -157,7 +157,7 @@ label equip_gryyf_stockings:
                     g9 "And then I'm going to get a proper look. Just as we agreed."
                     call set_hermione_action("") from _call_set_hermione_action_9
                     $ hermione_emote_anger = True
-                    call her_main("NO", "body_218") from _call_her_main_566
+                    call her_main("NO","scream","angry",cheeks="blush",emote="01") from _call_her_main_566
                     g4 "(?)"
                     call her_main("NO WAY!") from _call_her_main_567
                     call her_main("THERE IS ABSOLUTELY NO WAY AM I GOING TO DO THAT!!!") from _call_her_main_568

@@ -333,7 +333,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             call her_main("Ah-a...{image=textheart} yessss...","silly","ahegao_raised",cheeks="blush") from _call_her_main_4382
             m "Cum."
             $ hermione_squirt = True
-            call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","body_133b") from _call_her_main_4383
+            call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","silly","dead",cheeks="blush") from _call_her_main_4383
             
             call cum_block from _call_cum_block_47
             
@@ -342,7 +342,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             call her_main("Ah... ah...{image=textheart}","silly","ahegao") from _call_her_main_4385
             call her_main("...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4386
             call her_main("*heavy panting*","open_wide_tongue","ahegao") from _call_her_main_4387
-            call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}", "body_135") from _call_her_main_4388
+            call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4388
             call her_main(".............","soft","ahegao") from _call_her_main_4389
             call nar(">Hermione takes a minute to collect herself.") from _call_nar_504
             m "You feeling alright?"
@@ -518,7 +518,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
                 m "You nasty slut!"
                 call her_main("Ah...{image=textheart} ah-a...{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4455
                 call her_main("I am...") from _call_her_main_4456
-                call her_main("A nasty slut... Ah...{image=textheart}", "body_133") from _call_her_main_4457
+                call her_main("A nasty slut... Ah...{image=textheart}","silly","dead") from _call_her_main_4457
                 m "You are a disgrace, [hermione_name]!"
                 call her_main("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4458
                 
@@ -644,7 +644,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         m "show me your tits [hermione_name]!"
         m "I want to see you cum while you play with them."
         $ hermione_squirt = True
-        call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","body_133b") from _call_her_main_4503
+        call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","silly","dead",cheeks="blush") from _call_her_main_4503
         
         call cum_block from _call_cum_block_48
         

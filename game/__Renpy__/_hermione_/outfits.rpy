@@ -169,6 +169,24 @@ label __init_variables:
     $ hg_witch_OBJ.outfit_layers = []
     $ hg_witch_OBJ.outfit_layers.extend(("witch_stockings.png","witch_top.png","witch_cloak.png","witch_hat.png"))
 
+    if not hasattr(renpy.store,'hg_bio_OBJ'):
+        $ hg_bio_OBJ = hermione_outfit()
+    $ hg_bio_OBJ.name = "Bioshock outfit"
+    $ hg_bio_OBJ.cost = 200
+    $ hg_bio_OBJ.wait_time = 2
+    $ hg_bio_OBJ.store_image = "bio.png"
+    $ hg_bio_OBJ.outfit_layers = []
+    $ hg_bio_OBJ.outfit_layers.extend(("bio_skirt.png","bio_chocker.png","bio_jacket.png","bio_corset.png"))
+
+    if not hasattr(renpy.store,'hg_yenn_OBJ'):
+        $ hg_yenn_OBJ = hermione_outfit()
+    $ hg_yenn_OBJ.name = "Yennefer's costume"
+    $ hg_yenn_OBJ.cost = 275
+    $ hg_yenn_OBJ.wait_time = 4
+    $ hg_yenn_OBJ.store_image = "yenn.png"
+    $ hg_yenn_OBJ.outfit_layers = []
+    $ hg_yenn_OBJ.outfit_layers.extend(("yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"))
+
 
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
@@ -188,6 +206,8 @@ label __init_variables:
     $ hermione_outfits_list.append(hg_present_OBJ)
     $ hermione_outfits_list.append(hg_japan_OBJ)
     $ hermione_outfits_list.append(hg_witch_OBJ)
+    $ hermione_outfits_list.append(hg_bio_OBJ)
+    $ hermione_outfits_list.append(hg_yenn_OBJ)
     
     return
    

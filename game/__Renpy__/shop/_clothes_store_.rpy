@@ -246,6 +246,29 @@ label custom_orders:
                 maf "ok"
                 call place_outfit_order
                 jump clothes_menu
+
+            if clothes_store_order_choice == hg_bio_OBJ:
+                m "Have you ever heard of bioshock infinite?"
+                maf "Biology what now?"
+                m "..."
+                m "It might be something to ask your grandson about..."
+                maf "I assume you want the costume from whatever that is?"
+                m "If it's not too much..."
+                maf "Consider it done!"
+                m "Thank you very much."
+                maf "You're welcome."
+                call place_outfit_order
+                jump clothes_menu
+
+            if clothes_store_order_choice == hg_yenn_OBJ:
+                m "Have you ever heard of the sorceress yennefer?"
+                maf "Of course! The mother of a universe hopper isn't quickly forgotten..."
+                m "Think you could make a copy of her outfit?"
+                maf "Certainly."
+                m "Thank you very much."
+                maf "You can thank me with coin!"
+                call place_outfit_order
+                jump clothes_menu
     else:
         jump clothes_menu
         

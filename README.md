@@ -1,7 +1,7 @@
 
 ## What is Witch Trainer: Silver?
 
-- Silver is a complete rework of Akabur's Game, Witch Trainer.
+- Silver is a complete rework of [Akabur's](https://www.patreon.com/akabur) Game, Witch Trainer.
 - It combines several mods for Witch Trainer into one game, with new features, bugfixes, improvements, Qol-changes, events, and new art being added periodically.
 
 
@@ -9,7 +9,7 @@
 
 You have two options for installing silver:
 - Download the stable build from the Mega link in the Pastebin (Recommended).
-- For an experimantal version of the game you can download the latest build from the Git-Hub, then copy and replace the game folder into the "shell" game.
+- For an experimantal version of the game you can download the latest build from the Git-Hub, then run it with the Ren'Py launcher.
 
 Download links can be found on the [Pastebin](https://pastebin.com/KY3RGQei).
 
@@ -51,4 +51,4 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 for more information see [the pastebin](https://pastebin.com/KY3RGQei)
 
 ## Bugs:
-please submit any bugs as an issue for this project [here](https://github.com/stg-trainer-annon/BT-Silver-Base/issues)
+please submit any bugs as an issue for this project [here](https://github.com/slavetrainermod/WT-Silver/issues)

@@ -267,7 +267,7 @@ label scrolls_menu:
         scrolls_menu = []
         for scroll in scrolls_range:
             sc = sacred_scrolls[scroll]
-            if sscroll_[sc.id] or persistent.ss_[sc.id]:
+            if sscroll_[sc.id]:
                 scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", scroll) )
         scrolls_menu.append(("-Never mind-", "nvm"))
         result = renpy.display_menu(scrolls_menu)

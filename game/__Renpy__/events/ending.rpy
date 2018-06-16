@@ -3458,7 +3458,6 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     
            
     ### SACRED SCROLLS ###
-    $ persistent.ss_ = []
     $ persistent.ss_ = sscroll_
         
         

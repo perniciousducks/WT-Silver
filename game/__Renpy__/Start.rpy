@@ -267,6 +267,9 @@ label start_ht:
     $ nets = 0 #Amount.
     $ bought_nets = False #Affects 15_mail.rpy
 
+    # Scrolls
+    $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
+
     ### MINISKIRT ###
     $ bought_skirt_already = False # Turns TRUE after you redeem the voucher and get the mini skirt.
     $ bought_miniskirt = False #Affects 15_mail.rpy
@@ -357,6 +360,11 @@ label start_ht:
                 if persistent.wine >= 1:
                     $ wine = wine + persistent.wine # WINE.
                     ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
+
+                if persistent.ss_ not None:
+                    $ sscroll_ = persistent.ss_
+                    $ tmp = len(persistent.ss_)
+                    ">[tmp] scrolls have been added to your possessions."                    
 
 
             ### THE SKIRT ###

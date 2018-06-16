@@ -36,6 +36,7 @@ screen ccg:
     add "images/28_cg/"+ccg_folder+"/"+str(ccg1)+".png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg2)+".png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg3)+".png"
+    zorder -10
 
 screen gui_tooltip:
     add my_picture xpos my_tt_xpos ypos my_tt_ypos

@@ -61,6 +61,7 @@ screen luna:
 
     if genie_sprite_base == "characters/genie/base_4.png": #add genies dick for licking/sucking
         add "characters/genie/dick_1.png" xpos genie_sprite_xpos ypos genie_sprite_ypos
+    if genie_sprite_base == "characters/genie/base_4.png" and not luna_wear_skirt and not luna_wear_panties: #add leg
         add "characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/scaleratio)#Add the right leg cover for the dick. What's a thigh job called again?
     
     if luna_wear_cum and genie_sprite_base == "characters/genie/base_4.png":

@@ -3575,7 +3575,7 @@ label luna_favour_4: ###Luna handjob
             $ luna_r_arm = 3
             $ genie_sprite_xpos = 300
             $ luna_xpos = 390
-            call gen_main("!!!", 4, 2)
+            call gen_main("!!!", 4, 4)
             call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
             call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
             ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
@@ -3784,7 +3784,7 @@ label luna_favour_4: ###Luna handjob
             $ luna_r_arm = 3
             $ genie_sprite_xpos = 300
             $ luna_xpos = 390
-            call gen_main("!!!", 4, 2)
+            call gen_main("!!!", 4, 4)
             call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
             call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
             ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."

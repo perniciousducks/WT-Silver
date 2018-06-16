@@ -5,10 +5,10 @@ screen genie_sprite:
 
     zorder genie_zorder
 
-label gen_main(text="",face=genie_sprite_exp,body=genie_sprite_base):
-    if face != genie_sprite_exp:
+label gen_main(text="",face=None,body=None):
+    if face != None:
         $ genie_sprite_exp = "characters/genie/exp_" + str(face) + ".png"
-    if body != genie_sprite_base:
+    if body != None:
         $ genie_sprite_base = "characters/genie/base_" + str(body) + ".png"
 
     show screen genie_sprite 

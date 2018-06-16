@@ -148,7 +148,7 @@ label luna_revert_1: #Reversion event
     $ luna_r_arm = 3
     $ genie_sprite_xpos = 300
     $ luna_xpos = 390
-    call gen_main("!!!", 4, 2)
+    call gen_main("!!!", 4, 4)
 
     call luna_main("It's so big...", 5, 3, 4, 1) 
     call luna_main("(I can't even fit my hand around it.)", 5, 2, 4, 1) 
@@ -517,7 +517,7 @@ label luna_revert_2: #Non-Reversion event
     $ luna_r_arm = 3
     $ genie_sprite_xpos = 300
     $ luna_xpos = 390
-    call gen_main("!!!", 4, 2)
+    call gen_main("!!!", 4, 4)
     call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
     call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
     ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
@@ -650,7 +650,7 @@ label luna_revert_2: #Non-Reversion event
     $ luna_r_arm = 2
     hide screen genie_sprite
     with d3
-    call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","wink")
+    call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","wink", xpos=600)
     call her_main("But I really need a good-.","angry","down_raised")
     $ changeLuna(4, 1, 4, 3, 400)
     call luna_main("...", 7, 1, 3, 3)

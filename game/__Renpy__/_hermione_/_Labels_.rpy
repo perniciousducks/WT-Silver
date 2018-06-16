@@ -266,7 +266,7 @@ label silver_requests:
                 if result == "nvm":
                     jump silver_requests_root
                 elif result == "vague":
-                    call vague_idea
+                    call vague_idea from _call_vague_idea
                     jump not_now_pf
                 else:
                     $ renpy.jump(result)
@@ -298,7 +298,7 @@ label silver_requests:
                     if result == "nvm":
                         jump silver_requests_root
                     elif result == "vague":
-                        call vague_idea
+                        call vague_idea from _call_vague_idea_1
                         jump not_now_pr
                     else:
                         $ renpy.jump(result)
@@ -345,30 +345,30 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     hide screen blktone 
     
     if hermione_xpos_name == "desk":
-        call her_chibi("stand","desk","base")
+        call her_chibi("stand","desk","base") from _call_her_chibi_9
     else:
-        call her_chibi("stand","mid","base")
+        call her_chibi("stand","mid","base") from _call_her_chibi_10
         
-    call gen_chibi("hide")
+    call gen_chibi("hide") from _call_gen_chibi_6
     show screen genie
-    call hide_blkfade
+    call hide_blkfade from _call_hide_blkfade_8
     
     if hermione_xpos_name == "desk":
-        call her_walk("desk","leave",2.7)
+        call her_walk("desk","leave",2.7) from _call_her_walk_23
     else:
-        call her_walk("mid","leave",2)
+        call her_walk("mid","leave",2) from _call_her_walk_24
     
-    call reset_hermione_main
+    call reset_hermione_main from _call_reset_hermione_main_3
 
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
     if daytime:
-        call play_music("day_theme")
+        call play_music("day_theme") from _call_play_music_37
         $ hermione_takes_classes = True
         jump day_main_menu
     else:
-        call play_music("night_theme")
+        call play_music("night_theme") from _call_play_music_38
         $ hermione_sleeping = True
         jump night_main_menu
     
@@ -381,21 +381,21 @@ label hg_pr_transition_block:
     with d3
     
     if hermione_xpos_name == "desk":
-        call her_walk("desk","leave",2.7)
+        call her_walk("desk","leave",2.7) from _call_her_walk_25
     elif hermione_xpos_name == "mid":
-        call her_walk("mid","leave",2)
+        call her_walk("mid","leave",2) from _call_her_walk_26
     else:
-        call her_chibi("leave")
+        call her_chibi("leave") from _call_her_chibi_11
     
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
 
     if daytime:
-        call play_music("day_theme")
+        call play_music("day_theme") from _call_play_music_39
         $ hermione_takes_classes = True
         jump day_main_menu
     else:
-        call play_music("night_theme")
+        call play_music("night_theme") from _call_play_music_40
         $ hermione_sleeping = True
         jump night_main_menu
         
@@ -413,9 +413,9 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen genie_and_tits_01
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
     if hermione_xpos_name == "desk":
-        call her_chibi("stand","desk","base")
+        call her_chibi("stand","desk","base") from _call_her_chibi_12
     else:
-        call her_chibi("stand","mid","base")
+        call her_chibi("stand","mid","base") from _call_her_chibi_13
     show screen genie
 
     hide screen bld1
@@ -424,16 +424,16 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     with fade
     
     if hermione_xpos_name == "desk":
-        call her_walk("desk","leave",2.7)
+        call her_walk("desk","leave",2.7) from _call_her_walk_27
     else:
-        call her_walk("mid","leave",2)
+        call her_walk("mid","leave",2) from _call_her_walk_28
     
     if daytime:
-        call play_music("day_theme")
+        call play_music("day_theme") from _call_play_music_41
         $ hermione_takes_classes = True
         jump day_main_menu
     else:
-        call play_music("night_theme")
+        call play_music("night_theme") from _call_play_music_42
         $ hermione_sleeping = True
         jump night_main_menu
      
@@ -442,34 +442,34 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
 ### MUSIC BLOCK ###
 label music_block:
     if daytime:
-        call play_music("day_theme")
+        call play_music("day_theme") from _call_play_music_43
     else:
-        call play_music("night_theme")
+        call play_music("night_theme") from _call_play_music_44
     return
     
 ### YOU LUCK IMAGINATION ###
 label vague_idea:
 
-    call nar(">You lack imagination for an idea of this caliber.")
+    call nar(">You lack imagination for an idea of this caliber.") from _call_nar_14
     
     return
     
 ### ALL THE SCREAMS ABOUT RAPE ###
 label screams_of_rapings:
-    call her_head("NO! What have you done!!?","angry","worriedCl",cheeks="blush",tears="soft_blink")
+    call her_head("NO! What have you done!!?","angry","worriedCl",cheeks="blush",tears="soft_blink") from _call_her_head_7
     ">Hermione gives you an unexpectedly strong shove..."
     with hpunch
-    call her_head("Why would you do this to me, [genie_name]...?","angry","worriedCl",cheeks="blush",tears="soft_blink")
-    call her_head("I never agreed to... to...","angry","worriedCl",cheeks="blush",tears="crying_blink")
-    call her_head("You... you...","angry","worriedCl",cheeks="blush",tears="crying_blink")
+    call her_head("Why would you do this to me, [genie_name]...?","angry","worriedCl",cheeks="blush",tears="soft_blink") from _call_her_head_8
+    call her_head("I never agreed to... to...","angry","worriedCl",cheeks="blush",tears="crying_blink") from _call_her_head_9
+    call her_head("You... you...","angry","worriedCl",cheeks="blush",tears="crying_blink") from _call_her_head_10
     with hpunch
-    call her_head("{size=+7}YOU RAPED ME!{/size}","scream","worriedCl",cheeks="blush",tears="messy")
+    call her_head("{size=+7}YOU RAPED ME!{/size}","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_11
     g4 "What? Don't be ridiculous, [hermione_name]! I did no such thing!"
-    call her_head("Yes you did! Yes you did!","scream","worriedCl",cheeks="blush",tears="messy")
+    call her_head("Yes you did! Yes you did!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_12
     g4 "I most certainly did not!"
-    call her_head("No, you did, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy")
-    call her_head("Now, you will give me 20--","angry","angry",cheeks="blush",tears="down")
-    call her_head("No, 100 house points or I am reporting you to the Ministry of magic!","angry","angry",cheeks="blush",tears="down")
+    call her_head("No, you did, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_13
+    call her_head("Now, you will give me 20--","angry","angry",cheeks="blush",tears="down") from _call_her_head_14
+    call her_head("No, 100 house points or I am reporting you to the Ministry of magic!","angry","angry",cheeks="blush",tears="down") from _call_her_head_15
     menu:
         m "(Ah, crap...)"
         "\"Alright, alright... 100 points it is...\"":
@@ -477,24 +477,24 @@ label screams_of_rapings:
             m "One hundred points to \"Gryffindor\" !"
             m "There, it is done..."
             m "Now would you calm yourself down, [hermione_name]?"
-            call her_head("No, I will not!","scream","worriedCl",cheeks="blush",tears="messy")
-            call her_head("I've just been raped!","scream","worriedCl",cheeks="blush",tears="messy")
+            call her_head("No, I will not!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_16
+            call her_head("I've just been raped!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_17
             g4 "Oh, snap out of it [hermione_name], I didn't rape you! All I did was--"
             with hpunch
-            call her_head("{size=+7}You raped me!!!{/size}","scream","worriedCl",cheeks="blush",tears="messy")
+            call her_head("{size=+7}You raped me!!!{/size}","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_18
             g4 "By the great desert sands, would you keep it down about the rapes!?"
             g4  "Someone may hear you!"
-            call her_head("Good! I want them to hear!","scream","worriedCl",cheeks="blush",tears="messy")
+            call her_head("Good! I want them to hear!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_19
             m "Why would you want that? I already paid you!"
-            call her_head("Oh... right...","angry","base",cheeks="blush",tears="mascara")
-            call her_head("But I hate you! I hate you [genie_name]!","scream","angryCl",cheeks="blush",tears="mascara")
+            call her_head("Oh... right...","angry","base",cheeks="blush",tears="mascara") from _call_her_head_20
+            call her_head("But I hate you! I hate you [genie_name]!","scream","angryCl",cheeks="blush",tears="mascara") from _call_her_head_21
             $ mad +=30
 
         "\"You're bluffing, [hermione_name]!\"":
-            call her_head("No, I'm not! I'm gonna do it!","scream","worriedCl",cheeks="blush",tears="messy")
+            call her_head("No, I'm not! I'm gonna do it!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_22
             g4 "By all means, go ahead..."
             g4 "There was no rape!"
-            call her_head("I hate you, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy")
+            call her_head("I hate you, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_head_23
             $ mad +=50
 
 
@@ -508,13 +508,13 @@ label screams_of_rapings:
     hide screen blktone8
     with d3
     
-    call her_walk("mid","door",2)
+    call her_walk("mid","door",2) from _call_her_walk_29
 
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
-        call her_head("...........................","disgust","down_raised",cheeks="blush")
+        call her_head("...........................","disgust","down_raised",cheeks="blush") from _call_her_head_24
         
         
-    call her_chibi("leave","door","base")
+    call her_chibi("leave","door","base") from _call_her_chibi_14
 
     if daytime:
         $ hermione_takes_classes = True
@@ -525,13 +525,13 @@ label screams_of_rapings:
     
 ### SCREAM OF PLEASURES ###    
 label screams_of_pleasure:
-    call her_head("Ah....","silly","glance",cheeks="blush")
-    call her_head("It's inside of me...")
-    call her_head("No, [genie_name], you must stop now...","base","glance",cheeks="blush")
+    call her_head("Ah....","silly","glance",cheeks="blush") from _call_her_head_25
+    call her_head("It's inside of me...") from _call_her_head_26
+    call her_head("No, [genie_name], you must stop now...","base","glance",cheeks="blush") from _call_her_head_27
     m "Why? You don't like it?"
-    call her_head("It doesn't matter whether I like this or not, [genie_name].")
-    call her_head("You know why I'm doing this...")
-    call her_head("And it is wrong for me to let you do this to me for a meagre 15 points...")
+    call her_head("It doesn't matter whether I like this or not, [genie_name].") from _call_her_head_28
+    call her_head("You know why I'm doing this...") from _call_her_head_29
+    call her_head("And it is wrong for me to let you do this to me for a meagre 15 points...") from _call_her_head_30
     ">Hermione pulls away from you..."
     m "Heh... I see..."
     m "Well, in that case..."
@@ -541,7 +541,7 @@ label screams_of_pleasure:
 label Day_Request_Block:
     
     if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
-        call hg_pr_SexWithClassmate_Alt
+        call hg_pr_SexWithClassmate_Alt from _call_hg_pr_SexWithClassmate_Alt
     
     return
     
@@ -594,17 +594,17 @@ label her_walk_desk_blkfade:
     with d3
     pause.2
 
-    call her_walk("mid","desk",2,loiter=False, redux_pause = 2)
-    call blkfade
+    call her_walk("mid","desk",2,loiter=False, redux_pause = 2) from _call_her_walk_30
+    call blkfade from _call_blkfade_11
     
     return
 
 #############This massage shows when you make a request, and Hermione refuses because she is not slutty enough yet.
 label too_much:
     stop music fadeout 2.0
-    call her_main("[genie_name]??!","shock","wide",xpos="mid",trans="fade")
+    call her_main("[genie_name]??!","shock","wide",xpos="mid",trans="fade") from _call_her_main_507
     her "How could you ask for such a thing!?"
-    call her_main("I think I better leave.","angry","worriedCl",emote="05")
+    call her_main("I think I better leave.","angry","worriedCl",emote="05") from _call_her_main_508
     
     $ mad += 7
     
@@ -612,9 +612,9 @@ label too_much:
 
 label very_no:
     stop music fadeout 2.0
-    call her_main("Absolutely not!","annoyed","angryL",xpos="mid",trans="fade")
+    call her_main("Absolutely not!","annoyed","angryL",xpos="mid",trans="fade") from _call_her_main_509
     her "I'll show you that my integrity and honour as a Gryffindor cannot be bought!"
-    call her_main("I'm leaving this instant.","scream","angryCl")
+    call her_main("I'm leaving this instant.","scream","angryCl") from _call_her_main_510
     
     $ mad += 7
 

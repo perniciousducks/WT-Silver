@@ -3,17 +3,17 @@
 ### CALL WARDROBE LABELS ###
 
 label wardrobe: #NOT IN USE
-    call reset_wardrobe_vars
+    call reset_wardrobe_vars from _call_reset_wardrobe_vars
     #call update_wr_lists       #updates all lists
 
     if active_girl == "hermione":
-        call her_main("",xpos="wardrobe")
+        call her_main("",xpos="wardrobe") from _call_her_main_2004
     #if active_girl == "luna":
     #    call lun_main("",xpos="wardrobe")
     if active_girl == "astoria":
-        call ast_main("",xpos="wardrobe")
+        call ast_main("",xpos="wardrobe") from _call_ast_main_480
     if active_girl == "susan":
-        call sus_main("",xpos="wardrobe")
+        call sus_main("",xpos="wardrobe") from _call_sus_main_130
 
     hide screen main_room_menu
     call screen wardrobe
@@ -49,11 +49,11 @@ label reset_wardrobe_vars:
 label return_to_wardrobe:
     if not wardrobe_active:
         if active_girl == "hermione":
-            call her_main(xpos="wardrobe",ypos="base",trans="fade")
+            call her_main(xpos="wardrobe",ypos="base",trans="fade") from _call_her_main_2005
         if active_girl == "astoria":
-            call ast_main(xpos="wardrobe",ypos="base",trans="fade")
+            call ast_main(xpos="wardrobe",ypos="base",trans="fade") from _call_ast_main_481
         if active_girl == "susan":
-            call sus_main(xpos="wardrobe",ypos="base",trans="fade")
+            call sus_main(xpos="wardrobe",ypos="base",trans="fade") from _call_sus_main_131
             
         $ wardrobe_active = 1
         call screen wardrobe
@@ -62,11 +62,11 @@ label return_to_wardrobe:
         $ wardrobe_active = 1
 
         if active_girl == "hermione":
-            call her_main(xpos="wardrobe",ypos="base")
+            call her_main(xpos="wardrobe",ypos="base") from _call_her_main_2006
         if active_girl == "astoria":
-            call ast_main(xpos="wardrobe",ypos="base")
+            call ast_main(xpos="wardrobe",ypos="base") from _call_ast_main_482
         if active_girl == "susan":
-            call sus_main(xpos="wardrobe",ypos="base")
+            call sus_main(xpos="wardrobe",ypos="base") from _call_sus_main_132
 
         call screen wardrobe
 
@@ -76,11 +76,11 @@ label return_to_wardrobe:
 label update_wardrobe_color:
 
     if active_girl == "hermione":
-        call her_main(xpos="wardrobe",ypos="base")
+        call her_main(xpos="wardrobe",ypos="base") from _call_her_main_2007
     if active_girl == "astoria":
-        call ast_main(xpos="wardrobe",ypos="base")
+        call ast_main(xpos="wardrobe",ypos="base") from _call_ast_main_483
     if active_girl == "susan":
-        call sus_main(xpos="wardrobe",ypos="base")
+        call sus_main(xpos="wardrobe",ypos="base") from _call_sus_main_133
 
     hide screen main_room_menu
     call screen wardrobe
@@ -88,29 +88,29 @@ label update_wardrobe_color:
 label wardrobe_update:
 
     if wardrobe_page_choice == 0: #Default
-        call update_wr_color_list
+        call update_wr_color_list from _call_update_wr_color_list
         $ wardrobe_page = 0
     if wardrobe_page != 1 and wardrobe_page_choice == 1:
-        call update_wr_head_list
+        call update_wr_head_list from _call_update_wr_head_list
         $ wardrobe_page = 1
     if wardrobe_page != 2 and wardrobe_page_choice == 2:
-        call update_wr_tops_list
+        call update_wr_tops_list from _call_update_wr_tops_list
         $ wardrobe_page = 2
     if wardrobe_page != 3 and wardrobe_page_choice == 3:
-        call update_wr_bottoms_list
+        call update_wr_bottoms_list from _call_update_wr_bottoms_list
         $ wardrobe_page = 3
     if wardrobe_page != 4 and wardrobe_page_choice == 4:
-        call update_wr_other_clothings_list
+        call update_wr_other_clothings_list from _call_update_wr_other_clothings_list
         $ wardrobe_page = 4
     if wardrobe_page != 5 and wardrobe_page_choice == 5:
-        call update_wr_miscellaneous_list
+        call update_wr_miscellaneous_list from _call_update_wr_miscellaneous_list
         $ wardrobe_page = 5
     if wardrobe_page != 6 and wardrobe_page_choice == 6:
-        call update_wr_underwear_list
-        call update_wr_other_clothings_list #For stockings
+        call update_wr_underwear_list from _call_update_wr_underwear_list
+        call update_wr_other_clothings_list from _call_update_wr_other_clothings_list_1 #For stockings
         $ wardrobe_page = 6
     if wardrobe_page != 7 and wardrobe_page_choice == 7:
-        call update_wr_outfits_list
+        call update_wr_outfits_list from _call_update_wr_outfits_list
         $ wardrobe_page = 7
     if wardrobe_page != 8 and wardrobe_page_choice == 8: #gifts
         $ wardrobe_page = 8
@@ -124,21 +124,21 @@ label wardrobe_update:
     $ add_wardrobe_sound = False
 
     if active_girl == "hermione":
-        call wr_her_clothing_reset
-        call her_main(xpos="wardrobe",ypos="base")
+        call wr_her_clothing_reset from _call_wr_her_clothing_reset
+        call her_main(xpos="wardrobe",ypos="base") from _call_her_main_2008
     if active_girl == "astoria":
-        call wr_ast_clothing_reset
-        call ast_main(xpos="wardrobe",ypos="base")
+        call wr_ast_clothing_reset from _call_wr_ast_clothing_reset
+        call ast_main(xpos="wardrobe",ypos="base") from _call_ast_main_484
     if active_girl == "susan":
-        call wr_sus_clothing_reset
-        call sus_main(xpos="wardrobe",ypos="base")
+        call wr_sus_clothing_reset from _call_wr_sus_clothing_reset
+        call sus_main(xpos="wardrobe",ypos="base") from _call_sus_main_134
 
     hide screen main_room_menu
     call screen wardrobe
 
 label wr_her_clothing_reset:
     #Reload Clothing
-    call load_hermione_clothing_saves
+    call load_hermione_clothing_saves from _call_load_hermione_clothing_saves_2
 
     #Qol stuff
     if wardrobe_page != 6:
@@ -151,13 +151,13 @@ label wr_her_clothing_reset:
             $ hermione_wear_top = False
             $ hermione_wear_bottom = False
 
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_22
 
     return
 
 label wr_ast_clothing_reset:
     #Reload Clothing
-    call load_astoria_clothing_saves
+    call load_astoria_clothing_saves from _call_load_astoria_clothing_saves_1
 
     #Qol stuff
     if wardrobe_page != 6:
@@ -169,18 +169,18 @@ label wr_ast_clothing_reset:
         $ astoria_wear_top = False
         $ astoria_wear_bottom = False
 
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_1
 
     if not astoria_wear_top or not astoria_wear_bottom:
-        call ast_main("","pout","angry","angry","R")
+        call ast_main("","pout","angry","angry","R") from _call_ast_main_485
     else:
-        call ast_main("","smile","base","base","mid")
+        call ast_main("","smile","base","base","mid") from _call_ast_main_486
         
     return
 
 label wr_sus_clothing_reset:
     #Reload Clothing
-    call load_susan_clothing_saves
+    call load_susan_clothing_saves from _call_load_susan_clothing_saves
 
     #Qol stuff
     if wardrobe_page != 6:
@@ -192,28 +192,28 @@ label wr_sus_clothing_reset:
         $ susan_wear_top = False
         $ susan_wear_bottom = False
 
-    call update_sus_uniform
+    call update_sus_uniform from _call_update_sus_uniform_9
 
     return
 
 ### CLOSE WARDROBE LABELS ###
 
 label hide_wardrobe:
-    call ctc
+    call ctc from _call_ctc_144
     call screen wardrobe
 
 label close_wardrobe:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     if active_girl == "hermione":
-        call her_main("","base","base",xpos="base") #reset hermione face and position to default
+        call her_main("","base","base",xpos="base") from _call_her_main_2009 #reset hermione face and position to default
         jump day_time_requests
     
     if active_girl == "astoria":
-        call ast_main(xpos="base",ypos="base")
+        call ast_main(xpos="base",ypos="base") from _call_ast_main_487
         jump astoria_requests
     if active_girl == "susan":
-        call sus_main(xpos="base",ypos="base")
+        call sus_main(xpos="base",ypos="base") from _call_sus_main_135
         jump susan_requests
 
 ### Pose/Action ###
@@ -223,33 +223,33 @@ label wardrobe_change_her_action:
     hide screen hermione_main
 
     if wr_her_action == "none":
-        call h_action("none")
+        call h_action("none") from _call_h_action_17
     if wr_her_action == "lift_top":
-        call h_action("lift_top")
+        call h_action("lift_top") from _call_h_action_18
     if wr_her_action == "lift_skirt":
-        call h_action("lift_skirt")
+        call h_action("lift_skirt") from _call_h_action_19
     if wr_her_action == "hold_book":
-        call h_action("hold_book")
+        call h_action("hold_book") from _call_h_action_20
     if wr_her_action == "milk_breasts":
         $ milking = 1
-        call h_action("milk_breasts")
+        call h_action("milk_breasts") from _call_h_action_21
 
     if wr_her_action == "lift_breasts":
-        call h_action("lift_breasts")
+        call h_action("lift_breasts") from _call_h_action_22
     if wr_her_action == "hands_behind":
-        call h_action("hands_behind")
+        call h_action("hands_behind") from _call_h_action_23
     if wr_her_action == "covering":
-        call h_action("covering")
+        call h_action("covering") from _call_h_action_24
     if wr_her_action == "fingering":
-        call h_action("fingering")
+        call h_action("fingering") from _call_h_action_25
     if wr_her_action == "pinch":
-        call h_action("pinch")
+        call h_action("pinch") from _call_h_action_26
     if wr_her_action == "hands_cuffed":
-        call h_action("hands_cuffed")
+        call h_action("hands_cuffed") from _call_h_action_27
     if wr_her_action == "naked":
-        call h_action("naked")
+        call h_action("naked") from _call_h_action_28
 
-    call her_main("",xpos="wardrobe")
+    call her_main("",xpos="wardrobe") from _call_her_main_2010
     call screen wardrobe
 
 
@@ -267,7 +267,7 @@ label wardrobe_chitchat_toggle:
 # Top Toggle #
 label top_toggle:
     if active_girl == "hermione":
-        call her_top_toggle
+        call her_top_toggle from _call_her_top_toggle
     #if active_girl == "luna":
     #    call lun_top_toggle
     #if active_girl == "astoria":
@@ -281,7 +281,7 @@ label her_top_toggle:
     else:
         $ h_request_wear_top = True
         $ hermione_wear_top = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_23
     show screen hermione_main
     call screen wardrobe
 
@@ -291,26 +291,26 @@ label her_bra_toggle:
     if h_request_wear_bra: #Toggle OFF
         $ h_request_wear_bra = False
         $ hermione_wear_bra = False
-        call update_her_uniform
+        call update_her_uniform from _call_update_her_uniform_24
 
         if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed_wBlush
+            call her_main_rndm_annoyed_wBlush from _call_her_main_rndm_annoyed_wBlush
         elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_naughty_wBlush
+            call her_main_rndm_naughty_wBlush from _call_her_main_rndm_naughty_wBlush
         else: #21+
-            call her_main_rndm_naughty
+            call her_main_rndm_naughty from _call_her_main_rndm_naughty
 
     else: #Toggle ON
         $ h_request_wear_bra = True
         $ hermione_wear_bra = True
-        call update_her_uniform
+        call update_her_uniform from _call_update_her_uniform_25
 
         if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed
+            call her_main_rndm_annoyed from _call_her_main_rndm_annoyed
         elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_neutral
+            call her_main_rndm_neutral from _call_her_main_rndm_neutral
         else: #21+
-            call her_main_rndm_happy
+            call her_main_rndm_happy from _call_her_main_rndm_happy_2
 
     hide screen wardrobe
     call screen wardrobe
@@ -328,7 +328,7 @@ label her_onepiece_toggle:
     else:
         $ h_request_wear_onepiece = True
         $ hermione_wear_onepiece = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_26
     show screen hermione_main
     call screen wardrobe
 
@@ -341,7 +341,7 @@ label her_bottom_toggle:
     else:
         $ h_request_wear_bottom = True
         $ hermione_wear_bottom = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_27
     show screen hermione_main
     call screen wardrobe
 
@@ -351,26 +351,26 @@ label her_panties_toggle:
     if h_request_wear_panties: #Toggle OFF
         $ h_request_wear_panties = False
         $ hermione_wear_panties = False
-        call update_her_uniform
+        call update_her_uniform from _call_update_her_uniform_28
 
         if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed_wBlush
+            call her_main_rndm_annoyed_wBlush from _call_her_main_rndm_annoyed_wBlush_1
         elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_naughty_wBlush
+            call her_main_rndm_naughty_wBlush from _call_her_main_rndm_naughty_wBlush_1
         else: #21+
-            call her_main_rndm_naughty
+            call her_main_rndm_naughty from _call_her_main_rndm_naughty_1
 
     else: #Toggle ON
         $ h_request_wear_panties = True
         $ hermione_wear_panties = True
-        call update_her_uniform
+        call update_her_uniform from _call_update_her_uniform_29
 
         if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed
+            call her_main_rndm_annoyed from _call_her_main_rndm_annoyed_1
         elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_neutral
+            call her_main_rndm_neutral from _call_her_main_rndm_neutral_1
         else: #21+
-            call her_main_rndm_happy
+            call her_main_rndm_happy from _call_her_main_rndm_happy_3
 
     hide screen wardrobe
     call screen wardrobe
@@ -387,7 +387,7 @@ label her_garterbelt_toggle:
     else:
         $ h_request_wear_garterbelt = True
         $ hermione_wear_garterbelt = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_30
     show screen hermione_main
     call screen wardrobe
 
@@ -404,7 +404,7 @@ label her_neckwear_toggle:
     else:
         $ h_request_wear_neckwear = True
         $ hermione_wear_neckwear = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_31
     show screen hermione_main
     call screen wardrobe
 
@@ -420,7 +420,7 @@ label her_body_accs_toggle:
     else:
         $ h_request_wear_body_accs = True
         $ hermione_wear_body_accs = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_32
     show screen hermione_main
     call screen wardrobe
 
@@ -436,7 +436,7 @@ label her_gloves_toggle:
     else:
         $ h_request_wear_gloves = True
         $ hermione_wear_gloves = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_33
     show screen hermione_main
     call screen wardrobe
 
@@ -452,7 +452,7 @@ label her_stockings_toggle:
     else:
         $ h_request_wear_stockings = True
         $ hermione_wear_stockings = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_34
     show screen hermione_main
     call screen wardrobe
 
@@ -465,7 +465,7 @@ label her_robe_toggle:
     else:
         $ h_request_wear_robe = True
         $ hermione_wear_robe = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_35
     show screen hermione_main
     hide screen wardrobe
     call screen wardrobe 
@@ -481,8 +481,8 @@ label her_outfit_toggle:
     #    $ wardrobe_costume_selection = False
     #else:
     #    $ wardrobe_costume_selection = True
-    call update_her_uniform
-    call her_main("")
+    call update_her_uniform from _call_update_her_uniform_36
+    call her_main("") from _call_her_main_2011
     show screen hermione_main
     hide screen wardrobe
     call screen wardrobe 
@@ -502,7 +502,7 @@ label her_hat_toggle:
     else:
         $ h_request_wear_hat = True
         $ hermione_wear_hat = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_37
     show screen hermione_main
     call screen wardrobe
 
@@ -518,7 +518,7 @@ label her_glasses_toggle:
     else:
         $ h_request_wear_glasses = True
         $ hermione_wear_glasses = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_38
     show screen hermione_main
     call screen wardrobe
 
@@ -534,7 +534,7 @@ label her_ears_toggle:
     else:
         $ h_request_wear_ears = True
         $ hermione_wear_ears = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_39
     show screen hermione_main
     call screen wardrobe
 
@@ -550,7 +550,7 @@ label her_makeup_toggle:
     else:
         $ h_request_wear_makeup = True
         $ hermione_wear_makeup = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_40
     show screen hermione_main
     call screen wardrobe
 
@@ -566,7 +566,7 @@ label her_piercings_toggle:
     else:
         $ h_request_wear_piercings = True
         $ hermione_wear_piercings = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_41
     show screen hermione_main
     call screen wardrobe
 
@@ -582,7 +582,7 @@ label her_tattoos_toggle:
     else:
         $ h_request_wear_tattoos = True
         $ hermione_wear_tattoos = True
-    call update_her_uniform
+    call update_her_uniform from _call_update_her_uniform_42
     show screen hermione_main
     call screen wardrobe
 
@@ -611,7 +611,7 @@ label her_tattoos_toggle:
 
 ## Piercings ##
 label equip_piercing:
-    call set_h_piercing(piercing_choice, piercing_color_choice)
+    call set_h_piercing(piercing_choice, piercing_color_choice) from _call_set_h_piercing
 
     hide screen wardrobe
     call screen wardrobe
@@ -640,7 +640,7 @@ label equip_tattoo:
 label use_potion:
     if potion_choice == "universal_potion": #Potion that can be used day AND night!
         hide screen wardrobe
-        call her_main(xpos="right",ypos="base",trans="fade")
+        call her_main(xpos="right",ypos="base",trans="fade") from _call_her_main_2012
         menu:
             "-Universal potion-" ">Potions that can be used at any time of day."
             "-Change Clothing Transparency-" if "transparency" in cs_existing_stock:
@@ -652,7 +652,7 @@ label use_potion:
         
     if daytime:
         hide screen wardrobe
-        call her_main(xpos="right",ypos="base",trans="fade")
+        call her_main(xpos="right",ypos="base",trans="fade") from _call_her_main_2013
         
         if potion_choice == "polyjuice_potion":
             menu:
@@ -724,7 +724,7 @@ label use_potion:
                         
     else:
         hide screen wardrobe
-        call nar(">Potions can only be used during the day.")
+        call nar(">Potions can only be used during the day.") from _call_nar_278
 
         jump return_to_wardrobe
 
@@ -732,7 +732,7 @@ label use_potion:
 ## Items and Toys ##
 label use_item: #Not in use.
     hide screen wardrobe
-    call her_main(xpos="right",ypos="base",trans="fade")
+    call her_main(xpos="right",ypos="base",trans="fade") from _call_her_main_2014
     if item_choice == "buttplugs":
         menu:
             "-Buttplug Menu-"
@@ -762,8 +762,8 @@ label use_item: #Not in use.
 ## Outfit equip ##
 label wardrobe_wear_costume:
     hide screen hermione_main
-    call h_outfit_OBJ(wardrobe_costume_selection)
-    call update_her_uniform
+    call h_outfit_OBJ(wardrobe_costume_selection) from _call_h_outfit_OBJ_5
+    call update_her_uniform from _call_update_her_uniform_43
     show screen hermione_main
     hide screen wardrobe
     call screen wardrobe
@@ -773,7 +773,7 @@ label wardrobe_wear_costume:
 
 ## Gifts ##
 label wardrobe_give_gift:
-    call give_her_gift(wardrobe_gift_item)
+    call give_her_gift(wardrobe_gift_item) from _call_give_her_gift
     hide screen wardrobe
     call screen wardrobe
 

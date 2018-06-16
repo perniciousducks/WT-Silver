@@ -374,7 +374,7 @@ screen hermione_head:
 label update_her_uniform:
 
     if hermione_action != "none":
-        call update_her_action
+        call update_her_action from _call_update_her_action
 
     ### Uniform ###
     
@@ -453,8 +453,8 @@ label update_her_uniform:
     #Costume Action/Pose
     $ hermione_costume_action_a = "characters/hermione/clothes/custom/"+str(h_action_a)+""
 
-    call update_chibi_uniform
-    call h_update_body
+    call update_chibi_uniform from _call_update_chibi_uniform
+    call h_update_body from _call_h_update_body_1
     
     return
 

@@ -450,39 +450,39 @@ $ day = 0
 $ reset_persistants            = True
 
 #Snape
-call snape_init
-call snape_progress_init
+call snape_init from _call_snape_init
+call snape_progress_init from _call_snape_progress_init
 
 #Hermione
-call her_init                 #Everything resets here!
-call her_clothing_init        #Everything resets here!
-call her_clothing_lists_init  #Everything resets here!
-call her_chibi_init           #Everything resets here!
-call her_progress_init        #Everything resets here!
+call her_init from _call_her_init                 #Everything resets here!
+call her_clothing_init from _call_her_clothing_init        #Everything resets here!
+call her_clothing_lists_init from _call_her_clothing_lists_init  #Everything resets here!
+call her_chibi_init from _call_her_chibi_init           #Everything resets here!
+call her_progress_init from _call_her_progress_init        #Everything resets here!
 
 #Luna
-call luna_init
-call luna_progress_init
+call luna_init from _call_luna_init_1
+call luna_progress_init from _call_luna_progress_init
 
 #Cho
-call cho_init
-call cho_progress_init
+call cho_init from _call_cho_init
+call cho_progress_init from _call_cho_progress_init
 
 #Susan
-call susan_init
-call susan_progress_init
+call susan_init from _call_susan_init
+call susan_progress_init from _call_susan_progress_init
 
 #Astoria
-call astoria_init
-call astoria_progress_init
+call astoria_init from _call_astoria_init
+call astoria_progress_init from _call_astoria_progress_init
 
 #Astoria
-call tonks_init
-call tonks_progress_init
+call tonks_init from _call_tonks_init
+call tonks_progress_init from _call_tonks_progress_init
 
 
 #Wardrobe Reset
-call wardrobe_init
+call wardrobe_init from _call_wardrobe_init
 
 
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###

@@ -26,21 +26,21 @@ label equip_neckwear:
         
 ### Equip Hermione's Neckwear ###
 label equip_her_neckwear:
-    call set_h_neckwear(neckwear_choice, neckwear_color_choice)
+    call set_h_neckwear(neckwear_choice, neckwear_color_choice) from _call_set_h_neckwear
     
     hide screen wardrobe
     call screen wardrobe
 
 ### Equip Astoria's Neckwear ###
 label equip_ast_neckwear:
-    call set_ast_neckwear(neckwear_choice)
+    call set_ast_neckwear(neckwear_choice) from _call_set_ast_neckwear
     
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Susan's Neckwear ###
 label equip_sus_neckwear:
-    call set_sus_neckwear(neckwear_choice)
+    call set_sus_neckwear(neckwear_choice) from _call_set_sus_neckwear
     
     hide screen wardrobe
     call screen wardrobe
@@ -65,21 +65,21 @@ label equip_gloves:
         
 ### Equip Hermione's Gloves ###
 label equip_her_gloves:
-    call set_h_gloves(gloves_choice, gloves_color_choice)
+    call set_h_gloves(gloves_choice, gloves_color_choice) from _call_set_h_gloves
     
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Astoria's Gloves ###
 label equip_ast_gloves:
-    call set_ast_gloves(gloves_choice)
+    call set_ast_gloves(gloves_choice) from _call_set_ast_gloves
     
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Susan's Gloves ###
 label equip_sus_gloves:
-    call set_sus_gloves(gloves_choice)
+    call set_sus_gloves(gloves_choice) from _call_set_sus_gloves
     
     hide screen wardrobe
     call screen wardrobe
@@ -122,8 +122,8 @@ label equip_her_body_accessory:
             if body_accessory_choice == "badge_SPEW":
                 m "Would you wear this badge for me?"
                 if whoring >= 0:
-                    call her_main("A S.P.E.W. badge?","base","base")
-                    call her_main("I'll wear this with pride [genie_name].","open","closed")
+                    call her_main("A S.P.E.W. badge?","base","base") from _call_her_main_3621
+                    call her_main("I'll wear this with pride [genie_name].","open","closed") from _call_her_main_3622
 
             #I <3 Cum Badge
             if body_accessory_choice == "badge_I_love_cum":
@@ -131,23 +131,23 @@ label equip_her_body_accessory:
 
                 if whoring >= 20:
                     if whoring < 24:
-                        call her_main("Hm...?","soft","base")
-                        call her_main("An \"I love cum\" badge?","annoyed","suspicious")
-                        call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}","base","down")
-                        call her_main("Alright, I'll wear it.","base","glance")
+                        call her_main("Hm...?","soft","base") from _call_her_main_3623
+                        call her_main("An \"I love cum\" badge?","annoyed","suspicious") from _call_her_main_3624
+                        call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}","base","down") from _call_her_main_3625
+                        call her_main("Alright, I'll wear it.","base","glance") from _call_her_main_3626
                     else: #24
-                        call her_main("An \"I love cum\" badge?","annoyed","suspicious")
-                        call her_main("Sure, [genie_name]!","soft","base")
-                        call her_main("Let me put it on for you.","base","glance")
+                        call her_main("An \"I love cum\" badge?","annoyed","suspicious") from _call_her_main_3627
+                        call her_main("Sure, [genie_name]!","soft","base") from _call_her_main_3628
+                        call her_main("Let me put it on for you.","base","glance") from _call_her_main_3629
                 else:
                     if whoring < 8:
                         jump too_much
                     else: #8-19
-                        call her_main("An I love cum badge...?","open","worried")
-                        call her_main("You cannot be serious, [genie_name]!","open","base")
+                        call her_main("An I love cum badge...?","open","worried") from _call_her_main_3630
+                        call her_main("You cannot be serious, [genie_name]!","open","base") from _call_her_main_3631
                         m "What's wrong?"
-                        call her_main("I am not going to wear a badge that says that{w=0.5} {b}I{/b}{w=0.5} {b}love{/b}{w=0.5} {b}cum!{/b}","normal","frown")
-                        call her_main("I absolutely refuse!","annoyed","frown")
+                        call her_main("I am not going to wear a badge that says that{w=0.5} {b}I{/b}{w=0.5} {b}love{/b}{w=0.5} {b}cum!{/b}","normal","frown") from _call_her_main_3632
+                        call her_main("I absolutely refuse!","annoyed","frown") from _call_her_main_3633
                     ">She won't cover herself in cum just yet."
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 20."
@@ -158,17 +158,17 @@ label equip_her_body_accessory:
 
             pause.5
 
-            call set_h_body_accessory(body_accessory_choice)
+            call set_h_body_accessory(body_accessory_choice) from _call_set_h_body_accessory
 
-            call her_main("","","",xpos="wardrobe")
+            call her_main("","","",xpos="wardrobe") from _call_her_main_3634
             $ wardrobe_active = 1
             call screen wardrobe
 
         else:
 
             $ wardrobe_active = 1
-            call set_h_body_accessory(body_accessory_choice)
-            call her_main("","","",xpos="wardrobe")
+            call set_h_body_accessory(body_accessory_choice) from _call_set_h_body_accessory_1
+            call her_main("","","",xpos="wardrobe") from _call_her_main_3635
             call screen wardrobe
 
 
@@ -186,29 +186,29 @@ label equip_her_body_accessory:
             #S.P.E.W Basge
             if body_accessory_choice == "badge_SPEW":
                 m "Could you remove that Spew badge again?"
-                call her_main("Alright. Let me take it off.","annoyed","down")
+                call her_main("Alright. Let me take it off.","annoyed","down") from _call_her_main_3636
 
             #I <3 Cum Badge
             if body_accessory_choice == "badge_I_love_cum":
                 m "Could you remove that Cum badge again?"
-                call her_main("Alright. Let me take it off.","annoyed","down")
+                call her_main("Alright. Let me take it off.","annoyed","down") from _call_her_main_3637
 
             hide screen hermione_main
             with d3
 
             pause.5
 
-            call set_h_body_accessory(body_accessory_choice) #Removes Item
+            call set_h_body_accessory(body_accessory_choice) from _call_set_h_body_accessory_2 #Removes Item
 
-            call her_main("","","",xpos="wardrobe")
+            call her_main("","","",xpos="wardrobe") from _call_her_main_3638
             $ wardrobe_active = 1
             call screen wardrobe
 
         else:
 
             $ wardrobe_active = 1
-            call set_h_body_accessory(body_accessory_choice) #Removes Item
-            call her_main("",xpos="wardrobe")
+            call set_h_body_accessory(body_accessory_choice) from _call_set_h_body_accessory_3 #Removes Item
+            call her_main("",xpos="wardrobe") from _call_her_main_3639
             call screen wardrobe
 #
 
@@ -233,21 +233,21 @@ label equip_stockings:
         
 ### Equip Hermione's Stockings ###
 label equip_her_stockings:
-    call set_h_stockings(stockings_choice, stockings_color_choice)
+    call set_h_stockings(stockings_choice, stockings_color_choice) from _call_set_h_stockings_2
     
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Astoria's Stockings ###
 label equip_ast_stockings:
-    call set_ast_stockings(stockings_choice)
+    call set_ast_stockings(stockings_choice) from _call_set_ast_stockings
 
     hide screen wardrobe
     call screen wardrobe
 
 ### Equip Susan's Stockings ###
 label equip_sus_stockings:
-    call set_sus_stockings(stockings_choice)
+    call set_sus_stockings(stockings_choice) from _call_set_sus_stockings
 
     hide screen wardrobe
     call screen wardrobe
@@ -273,21 +273,21 @@ label equip_robe:
         
 ### Equip Hermione's Robe ###
 label equip_her_robe:
-    call set_h_robe(robe_choice)
+    call set_h_robe(robe_choice) from _call_set_h_robe
 
     hide screen wardrobe
     call screen wardrobe
 
 ### Equip Astoria's Robe ###
 label equip_ast_robe:
-    call set_ast_robe(robe_choice)
+    call set_ast_robe(robe_choice) from _call_set_ast_robe
 
     hide screen wardrobe
     call screen wardrobe
 
 ### Equip Susan's Robe ###
 label equip_sus_robe:
-    call set_sus_robe(robe_choice)
+    call set_sus_robe(robe_choice) from _call_set_sus_robe
 
     hide screen wardrobe
     call screen wardrobe

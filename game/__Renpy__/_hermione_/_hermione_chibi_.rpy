@@ -467,7 +467,7 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
         pass
 
     elif action == "leave":
-        call play_sound("door") 
+        call play_sound("door") from _call_play_sound_179 
         hide screen hermione_main   
         hide screen bld1
         hide screen blktone
@@ -504,7 +504,7 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
 label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
-    call hide_characters
+    call hide_characters from _call_hide_characters_2
     with d3
     
     hide screen hermione_walk
@@ -577,7 +577,7 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
         hide screen hermione_run_f
         hide screen hermione_walk_f
         if pos2 == "leave":
-            call play_sound("door") #Sound of a door opening.
+            call play_sound("door") from _call_play_sound_180 #Sound of a door opening.
             with d3
             pause.5
         if loiter:

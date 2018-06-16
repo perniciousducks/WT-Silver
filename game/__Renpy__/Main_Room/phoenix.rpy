@@ -7,7 +7,7 @@ label phoenix_lbl:
         m "Here you are."
         hide screen blktone8
         with d3
-        call music_block
+        call music_block from _call_music_block_7
         jump day_main_menu
     jump phoenix_menu
 
@@ -19,7 +19,7 @@ label phoenix_menu:
             #$ tt_xpos=270
             #$ tt_ypos=90
             #show screen genie_stands
-            call gen_chibi("stand","mid","base",flip=True)
+            call gen_chibi("stand","mid","base",flip=True) from _call_gen_chibi_58
             show screen chair_left #Empty chair near the desk.
             show screen desk
             with Dissolve(0.5)
@@ -106,15 +106,15 @@ label petting:
                     ">You see someone standing just outside of the door, too far for you to see."
                     her "I felt something calling me here."
                     m "Well come right on in then..."
-                    call her_walk(610,400,2)
+                    call her_walk(610,400,2) from _call_her_walk_71
                     show screen hermione_02
                     pause.5
                     show screen bld1
                     with d3
                     show screen hermione_01
-                    call her_main("Something... feels different...","open","worriedL",xpos=390,ypos=0)
+                    call her_main("Something... feels different...","open","worriedL",xpos=390,ypos=0) from _call_her_main_2508
                     ">She looks up at the bird you're petting and her eyes grow wide."
-                    call her_main("Professor. Something's wrong.","angry","wide")
+                    call her_main("Professor. Something's wrong.","angry","wide") from _call_her_main_2509
                     m "Why don't you tell me why you're here in the first place?"
                     her "Professor! Fawkes is-!"
                     $ renpy.play('sounds/pistol2.mp3')
@@ -124,12 +124,12 @@ label petting:
                     m "What the fuck?! What's going on?!"
                     $ ce_hair_style = "B"
                     $ ce_hair_color = "4"
-                    call ce_her_main("","fawkes_1",xpos=140,ypos=0)
+                    call ce_her_main("","fawkes_1",xpos=140,ypos=0) from _call_ce_her_main
                     show screen ctc
                     pause
                     hide screen ctc
                     hide screen hermione_main
-                    call ce_her_main("","fawkes_1",xpos=390)
+                    call ce_her_main("","fawkes_1",xpos=390) from _call_ce_her_main_1
                     "Hermione- I think" "Sup?"
                     m "..."
                     m "What?"
@@ -137,18 +137,18 @@ label petting:
                     m "Why don't you just go ahead and fill me in."
                     "Hermione- I think" "Seeing as you can't figure it out, it's me.  Fawkes."
                     m "... Is that supposed to mean something to me?"
-                    call ce_her_main("","fawkes_2")
+                    call ce_her_main("","fawkes_2") from _call_ce_her_main_2
                     faw "The bird you've been petting so nicely for the past few days."
                     m "?"
                     m "Then how are you in the girl?"
-                    call ce_her_main("","fawkes_1")
+                    call ce_her_main("","fawkes_1") from _call_ce_her_main_3
                     faw "Really?"
                     faw "It's called magic.  You've been so horny it's started to affect me."
-                    call ce_her_main("","fawkes_3")
+                    call ce_her_main("","fawkes_3") from _call_ce_her_main_4
                     faw "So I figured I'd jump into the girl for a bit and see if I can't fix your little... problem."
                     m "Oh?"
                     g9 "And how do you plan on doing that?"
-                    call ce_her_main("","fawkes_2")
+                    call ce_her_main("","fawkes_2") from _call_ce_her_main_5
                     faw "Well that depends on you.  I can only take over her if her defences are down."
                     m "Huh?"
                     faw "You need to make her horny for me to jump her."
@@ -157,7 +157,7 @@ label petting:
                     faw "I don't have much time left, but how about I show you some of my other outfits?"
                     m "A small consolation."
                     faw "Enjoy."
-                    call ce_her_main("","fawkes_4")
+                    call ce_her_main("","fawkes_4") from _call_ce_her_main_6
                     show screen ctc
                     pause
                     hide screen ctc
@@ -169,38 +169,38 @@ label petting:
                     $ hermione_SC.chibi.xpos=400
                     $ hermione_SC.chibi.ypos=240
                     show screen hermione_02_b
-                    call ce_her_main("","fawkes_5")
+                    call ce_her_main("","fawkes_5") from _call_ce_her_main_7
                     show screen ctc
                     pause
                     hide screen ctc
                     faw "Do you like this one?"
                     g9 "Now this I can get behind!"
                     faw "I bet you'd love that."
-                    call ce_her_main("","fawkes_6")
+                    call ce_her_main("","fawkes_6") from _call_ce_her_main_8
                     faw "Wouldn't you?"
                     g5 "..."
                     g10 "..."
                     m "You god damned bet I would."
-                    call ce_her_main("","fawkes_7")
+                    call ce_her_main("","fawkes_7") from _call_ce_her_main_9
                     faw "Well, it's been fun, but I'm gonna bring the girl back now."
                     m "That didn't last nearly as long as I'd hoped."
                     faw "I'll do you a small favor and leave her like this."
                     hide screen custom_event_h
                     with d3
                     $ ce_hair_color = 1
-                    call ce_her_main("...","hermione_1")
+                    call ce_her_main("...","hermione_1") from _call_ce_her_main_10
                     hide screen custom_event_h
                     with d3
                     $ ce_hair_style = "A"
-                    call ce_her_main("Professor?!","hermione_2")
-                    call ce_her_main("What's going on?!","hermione_3")
+                    call ce_her_main("Professor?!","hermione_2") from _call_ce_her_main_11
+                    call ce_her_main("What's going on?!","hermione_3") from _call_ce_her_main_12
                     m "Hell if I know"
-                    call ce_her_main("Why am I wearing this? What's happening? What-!")
+                    call ce_her_main("Why am I wearing this? What's happening? What-!") from _call_ce_her_main_13
                     hide screen hermione_02
                     hide screen hermione_02_b
                     hide screen custom_event_h
                     with d3
-                    call her_walk(400,610,0.75)
+                    call her_walk(400,610,0.75) from _call_her_walk_72
                     $ renpy.play('sounds/door.mp3')
                     m "Well I guess that was interesting"
                     $ fawkes_intro_done = True #Makes this non-repeatable
@@ -209,7 +209,7 @@ label petting:
                     hide screen blktone8
                     hide screen bld1
                     with d3
-                    call music_block
+                    call music_block from _call_music_block_8
                     jump day_main_menu
                 "-Stop petting the bird-":
                     $ bird_interact -= 2 # Counts how many times you have interacted with the bird.
@@ -218,7 +218,7 @@ label petting:
                     show screen genie
                     hide screen blktone8
                     with d3
-                    call music_block
+                    call music_block from _call_music_block_9
                     jump day_main_menu
 
         else: #needs more interactions for introduction
@@ -259,7 +259,7 @@ label petting:
             hide screen blktone8
             show screen genie
             with d3
-            call music_block
+            call music_block from _call_music_block_10
             jump day_main_menu
 
         elif bird_interact == 20 and whoring ==1:
@@ -338,7 +338,7 @@ label talkingfawkes:
             show screen hermione_02_b
             $ tmp_robe = hermione_wear_robe
             $ hermione_wear_robe = True
-            call her_main("Professor.  There was something... calling me here.","open","worriedL",xpos=390,ypos=0)
+            call her_main("Professor.  There was something... calling me here.","open","worriedL",xpos=390,ypos=0) from _call_her_main_2510
             g9 "And what was it calling you here for?"
             her "I'm not sure... Maybe I shouldn'tve come sir."
             m "No no, stay."
@@ -361,30 +361,30 @@ label talkingfawkes:
             pause 2.5
             hide screen hermione_chibi_robe
             show screen hermione_02_b
-            call ce_her_main("...","h0a",xpos=390,ypos=0)
+            call ce_her_main("...","h0a",xpos=390,ypos=0) from _call_ce_her_main_14
             her "Professor... I shouldn't be here."
             g9 "Oh no, you're right where you should be."
             $ renpy.play('sounds/glass_break.mp3')
-            call ce_her_main("{size=+3}No professor I-{w=.5}{nw}","h0b")
+            call ce_her_main("{size=+3}No professor I-{w=.5}{nw}","h0b") from _call_ce_her_main_15
             faw "Oh no you don't!"
             $ renpy.play('sounds/magic2.mp3')
             hide screen custom_event_h
             with d3
             $ ce_hair_color = 4
-            call ce_her_main("","h1a")
+            call ce_her_main("","h1a") from _call_ce_her_main_16
             faw "Don't you worry.  She's not going anywhere."
             hide screen custom_event_h
             with d3
             $ ce_hair_style = "A"
             $ ce_hair_color = 1
-            call ce_her_main("No!  Why can't I move?","h1b")
+            call ce_her_main("No!  Why can't I move?","h1b") from _call_ce_her_main_17
             faw "Damnit!  I have to keep her under control!"
             $ renpy.play('sounds/magic2.mp3')
-            call ce_her_main("","h2")
+            call ce_her_main("","h2") from _call_ce_her_main_18
             ">..."
             m "..."
             m "Girl?"
-            call ce_her_main("","h3")
+            call ce_her_main("","h3") from _call_ce_her_main_19
             "Hermione?" "Is this what you want?"
             m "Well shit.  I guess we broke her."
             "Hermione?" "Oh don't worry."
@@ -392,16 +392,16 @@ label talkingfawkes:
             with d3
             $ ce_hair_style = "B"
             $ ce_hair_color = 4
-            call ce_her_main("","f_new")
+            call ce_her_main("","f_new") from _call_ce_her_main_20
             faw "I've got her now."
             g9 "Finally!  Now I get to fuck your brains out."
-            call ce_her_main("","f_dis")
+            call ce_her_main("","f_dis") from _call_ce_her_main_21
             faw "Well... I'd love to, but that's not really an option right now."
             m "What?"
             faw "She's still too resistant to my magic."
             m "..."
             g4 "{size=+4}WHAT?!{/size}"
-            call ce_her_main("","f_wor")
+            call ce_her_main("","f_wor") from _call_ce_her_main_22
             faw "Oh come on now."
             faw "I brought her in, and I've got her wearing this don't I?"
             m "Doesn't mean I'm happy yet."
@@ -410,21 +410,21 @@ label talkingfawkes:
             m "I guess that's what I'm here in the first place."
             faw "Well, I hope you enjoyed the view, but she's coming back."
             faw "Would you rather I leave her here?..."
-            call ce_her_main("","f_sin")
+            call ce_her_main("","f_sin") from _call_ce_her_main_23
             faw "Or surprise her and make her wear this outside?"
             menu:
                 "-Make her stay-":
                     g9 "Go ahead and stay here"
                     faw "Oh I like the way you think."
-                    call ce_her_main("","f_trans")
+                    call ce_her_main("","f_trans") from _call_ce_her_main_24
                     $ renpy.play('sounds/magic2.mp3')
                     hide screen custom_event_h
                     with d3
                     $ ce_hair_style = "A"
                     $ ce_hair_color = 1
-                    call ce_her_main("...","h_trans")
-                    call ce_her_main("...","h_react1")
-                    call ce_her_main("Professor?","h_react2")
+                    call ce_her_main("...","h_trans") from _call_ce_her_main_25
+                    call ce_her_main("...","h_react1") from _call_ce_her_main_26
+                    call ce_her_main("Professor?","h_react2") from _call_ce_her_main_27
                     her "Oh god.  What's happening?!"
                     hide screen hermione_02_b
                     hide screen custom_event_h

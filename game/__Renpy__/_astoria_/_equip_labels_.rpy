@@ -52,7 +52,7 @@ label set_ast_top(top=""):
         $ astoria_wear_top = True
         $ ast_top = top
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_3
     show screen astoria_main
     
     return
@@ -69,7 +69,7 @@ label set_ast_bottom(bottom=""):
         $ astoria_wear_bottom = True
         $ ast_skirt = bottom
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_4
     show screen astoria_main
     
     return
@@ -82,7 +82,7 @@ label set_ast_bra(bra=""):
     $ astoria_wear_bra = True
     $ ast_bra = bra
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_5
     show screen astoria_main
     
     return
@@ -99,7 +99,7 @@ label set_ast_onepiece(onepiece=""):
         $ astoria_wear_onepiece = True
         $ ast_onepiece = onepiece
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_6
     show screen astoria_main
     
     return
@@ -112,7 +112,7 @@ label set_ast_panties(panties=""):
     $ astoria_wear_panties = True
     $ ast_panties = panties
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_7
     show screen astoria_main
     
     return
@@ -129,7 +129,7 @@ label set_ast_garterbelt(garter=""):
         $ astoria_wear_garterbelt = True
         $ ast_garterbelt = garter
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_8
     show screen astoria_main
     
     return
@@ -146,7 +146,7 @@ label set_ast_neckwear(neck=""):
         $ astoria_wear_neckwear = True
         $ ast_neckwear = neck
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_9
     show screen astoria_main
     
     return
@@ -163,7 +163,7 @@ label set_ast_stockings(stockings=""):
         $ astoria_wear_stockings = True
         $ ast_stockings = stockings
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_10
     show screen astoria_main
     
     return
@@ -180,7 +180,7 @@ label set_ast_robe(robe=""):
         $ astoria_wear_robe = True
         $ ast_robe = robe
     
-    call update_ast_uniform
+    call update_ast_uniform from _call_update_ast_uniform_11
     show screen astoria_main
     
     return

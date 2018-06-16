@@ -1,14 +1,14 @@
 
 
 label update_wr_lists:
-    call update_wr_color_list
-    call update_wr_head_list
-    call update_wr_tops_list
-    call update_wr_bottoms_list
-    call update_wr_other_clothings_list
-    call update_wr_miscellaneous_list
-    call update_wr_underwear_list
-    call update_wr_outfits_list
+    call update_wr_color_list from _call_update_wr_color_list_2
+    call update_wr_head_list from _call_update_wr_head_list_1
+    call update_wr_tops_list from _call_update_wr_tops_list_1
+    call update_wr_bottoms_list from _call_update_wr_bottoms_list_1
+    call update_wr_other_clothings_list from _call_update_wr_other_clothings_list_2
+    call update_wr_miscellaneous_list from _call_update_wr_miscellaneous_list_1
+    call update_wr_underwear_list from _call_update_wr_underwear_list_1
+    call update_wr_outfits_list from _call_update_wr_outfits_list_1
     return
 
 

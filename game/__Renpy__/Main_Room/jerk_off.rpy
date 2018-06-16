@@ -25,11 +25,11 @@ label jerk_off:
 
     hide screen bld1
     hide screen genie
-    call gen_chibi("jerking_off_behind_desk")
+    call gen_chibi("jerking_off_behind_desk") from _call_gen_chibi_61
     with d3
     pause 1
     
-    call bld
+    call bld from _call_bld_98
     m "How should I finish this thing?"
     
     label how_to_finish:
@@ -45,20 +45,20 @@ label jerk_off:
 ### JERKING OFF ###
 hide screen bld1
 show screen blktone
-call nar(">You decide to spend some time by jerking off...")
+call nar(">You decide to spend some time by jerking off...") from _call_nar_489
 pause.5
 
 if d_flag_01 and not cum_on_panties:
-    call nar(">You fantasize about Princess Jasmine...")
+    call nar(">You fantasize about Princess Jasmine...") from _call_nar_490
 if d_flag_02 and not cum_on_panties:
-    call nar(">You fantasize about Lara Croft...")
+    call nar(">You fantasize about Lara Croft...") from _call_nar_491
 if cum_on_panties:
-    call nar(">You fantasize about Hermione...")
+    call nar(">You fantasize about Hermione...") from _call_nar_492
     
 g4 "Yes... that's a good slut!"
 pause.5
 
-call nar(">You are ready to cum...")
+call nar(">You are ready to cum...") from _call_nar_493
 pause.2
 
 if d_flag_01 and not cum_on_panties:
@@ -69,24 +69,24 @@ if cum_on_panties:
     g4 "Suck my almighty cock, you little whore!!!"
 
 hide screen blktone
-call gen_chibi("cumming_behind_desk")
+call gen_chibi("cumming_behind_desk") from _call_gen_chibi_62
 with hpunch
 pause 1
 
 if not cum_on_panties:
-    call nar(">You cum on the floor.")
+    call nar(">You cum on the floor.") from _call_nar_494
 if cum_on_panties:
     $ hg_ps_PantyThief_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
-    call nar(">You cum all over Hermione's panties, and then use them to wipe the cum off the floor...")
-    call gen_chibi("cum_on_desk")
+    call nar(">You cum all over Hermione's panties, and then use them to wipe the cum off the floor...") from _call_nar_495
+    call gen_chibi("cum_on_desk") from _call_gen_chibi_63
     pause.5
     
-    call nar(">You received the item: \"Cum-soaked panties\".")
+    call nar(">You received the item: \"Cum-soaked panties\".") from _call_nar_496
 
-call gen_chibi("cum_on_desk")
+call gen_chibi("cum_on_desk") from _call_gen_chibi_64
 pause.2
 
-call bld
+call bld from _call_bld_99
 m "..."
 m "This was a pretty sweet jerk-off session..."
 m "Back to being productive!"
@@ -98,7 +98,7 @@ $ d_flag_03 = False
 $ cum_on_panties = False #True when choose to cum on Hermione's panties.
 
 hide screen genie_jerking_sperm_02
-call gen_chibi("hide")
+call gen_chibi("hide") from _call_gen_chibi_65
 show screen genie
 hide screen bld1
 

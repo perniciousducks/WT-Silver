@@ -8,13 +8,13 @@ label open_guide:
     #call update_tip_of_the_day
     $ sQuest_get_map.counter = 1 #Testing Purpose only
     $ sQuest_buy_at_shop.counter = 1 #Testing Purpose only
-    call update_quests
-    call update_tip_of_the_day
-    call blktone
+    call update_quests from _call_update_quests_4
+    call update_tip_of_the_day from _call_update_tip_of_the_day
+    call blktone from _call_blktone_20
     call screen guide
     label guide_return_point:
         $ renpy.play('sounds/scroll.mp3')
-        call hide_blktone
+        call hide_blktone from _call_hide_blktone_17
         call screen main_room_menu
     
 

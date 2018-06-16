@@ -335,17 +335,17 @@ label reading_book:
             $ BookOBJ.progress = BookOBJ.chapters
         elif BookOBJ in Books_OBJ.get_fic():
             label cheat_reading_loop:
-                call read_chapter
+                call read_chapter from _call_read_chapter
                 if BookOBJ.progress < BookOBJ.chapters:
                     jump cheat_reading_loop
         jump book_complete
     else:
-        call read_book
+        call read_book from _call_read_book
 
         if _return == "DONE":
             jump book_complete
 
-        call book_speed_check
+        call book_speed_check from _call_book_speed_check
         $ speed_check = _return
         if speed_check >= 1:
             if s_reading_lvl == 1:
@@ -356,13 +356,13 @@ label reading_book:
                 ">Implementing speed reading techniques allows you to save time and keep on reading."
             if s_reading_lvl > 3:
                 ">Implementing advanced speed reading techniques lets you blaze through the book."
-            call read_book
+            call read_book from _call_read_book_1
 
         if _return == "DONE":
             jump book_complete
         
         if speed_check == 2:
-            call read_book
+            call read_book from _call_read_book_2
 
         if _return == "DONE":
             jump book_complete
@@ -373,7 +373,7 @@ label reading_book:
                 ">You try to keep on reading but after a while you realize that the air in your chambers is too damp for your liking."
             else:
                 ">The rain outside of your tower calms your mood and you feel like keeping on reading..."
-                call read_book
+                call read_book from _call_read_book_3
 
         if _return == "DONE":
             jump book_complete
@@ -411,7 +411,7 @@ label book_speed_check:
 label read_book:
     if BookOBJ.progress >= BookOBJ.chapters:
         return "DONE" #prevents cases where book is done but read_book was called
-    call read_chapter
+    call read_chapter from _call_read_chapter_1
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
@@ -428,7 +428,7 @@ label read_chapter:
     $ BookOBJ.progress += 1 
     if BookOBJ in Books_OBJ.get_fic():
         if BookOBJ.id == "Dear_Wifu":
-            call waifu
+            call waifu from _call_waifu
         else:
             $tmp_desc = BookOBJ.getChapterDesc()
             "[tmp_desc]"

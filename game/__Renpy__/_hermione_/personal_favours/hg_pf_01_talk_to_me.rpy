@@ -25,51 +25,51 @@ label hg_pf_TalkToMe:
         menu:
             "\"(Yes, let's do it!)\"":
                 m "[hermione_name], before I request a favor, I'd like you to dress up."
-                call her_main("As what?","open","worriedL")
+                call her_main("As what?","open","worriedL") from _call_her_main_370
                 menu:
                     "-A maid-" if hg_maid_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_maid_OBJ)
+                        call play_sound("door") from _call_play_sound_24 #Sound of a door opening.
+                        call set_hermione_outfit(hg_maid_OBJ) from _call_set_hermione_outfit
                         pass
                     "-A Cheerleader-" if hg_gryffCheer_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_gryffCheer_OBJ)
+                        call play_sound("door") from _call_play_sound_25 #Sound of a door opening.
+                        call set_hermione_outfit(hg_gryffCheer_OBJ) from _call_set_hermione_outfit_1
                         pass
                     "-A Slytherin Cheerleader-" if hg_slythCheer_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_slythCheer_OBJ)
+                        call play_sound("door") from _call_play_sound_26 #Sound of a door opening.
+                        call set_hermione_outfit(hg_slythCheer_OBJ) from _call_set_hermione_outfit_2
                         pass
                     "-Ms Marvel-" if hg_msMarvel_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_msMarvel_OBJ)
+                        call play_sound("door") from _call_play_sound_27 #Sound of a door opening.
+                        call set_hermione_outfit(hg_msMarvel_OBJ) from _call_set_hermione_outfit_3
                         pass
                     "-A heart dancer-" if hg_heartDancer_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_heartDancer_OBJ)
+                        call play_sound("door") from _call_play_sound_28 #Sound of a door opening.
+                        call set_hermione_outfit(hg_heartDancer_OBJ) from _call_set_hermione_outfit_4
                         pass
                     "-power girl-" if hg_powerGirl_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_powerGirl_OBJ)
+                        call play_sound("door") from _call_play_sound_29 #Sound of a door opening.
+                        call set_hermione_outfit(hg_powerGirl_OBJ) from _call_set_hermione_outfit_5
                         pass  
                     "-Harley Quinn-" if hg_harleyQuinn_OBJ.purchased:
                         her "Fine, let me go change."
-                        call play_sound("door") #Sound of a door opening.
-                        call set_hermione_outfit(hg_harleyQuinn_OBJ)
+                        call play_sound("door") from _call_play_sound_30 #Sound of a door opening.
+                        call set_hermione_outfit(hg_harleyQuinn_OBJ) from _call_set_hermione_outfit_6
                         pass
             "\"(Not right now.)\"":
                 pass
 
-    call play_music("chipper_doodle")
+    call play_music("chipper_doodle") from _call_play_music_27
 
     m "Alright then..."
     m "Just tell me some news about you."
-    call her_main("","open","suspicious")
+    call her_main("","open","suspicious") from _call_her_main_371
     
     if hg_pf_TalkToMe_OBJ.points == 0: #First time this event taking place.
         her "Ehm... Alright..."
@@ -77,8 +77,8 @@ label hg_pf_TalkToMe:
     else:
         her "Here in the middle, right? I remember..."
     
-    call her_main("","base","base",xpos="mid",ypos="base",trans="fade")
-    call ctc
+    call her_main("","base","base",xpos="mid",ypos="base",trans="fade") from _call_her_main_372
+    call ctc from _call_ctc_9
     
     m "Well?"
 
@@ -88,9 +88,9 @@ label hg_pf_TalkToMe:
         $ new_request_01_heart = 1 #Event hearts level (0-3)#Event hearts level (0-3)
         $ hg_pf_TalkToMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
 
-        call her_main("Em... very well...","open","worried")
-        call nar(">Hermione is feeling confused...")
-        call her_main("...................","annoyed","angryL")
+        call her_main("Em... very well...","open","worried") from _call_her_main_373
+        call nar(">Hermione is feeling confused...") from _call_nar_5
+        call her_main("...................","annoyed","angryL") from _call_her_main_374
 
     #Event 1 and 2
     if whoring >= 0 and  whoring <= 5:
@@ -99,7 +99,7 @@ label hg_pf_TalkToMe:
             $ new_request_01_heart = 2 #Event hearts level (0-3)
             $ hg_pf_TalkToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
 
-        call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
+        call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL") from _call_her_main_375
         her "Apart from the day when I failed that test..."
         her "I still can't believe it happened..."
 
@@ -107,19 +107,19 @@ label hg_pf_TalkToMe:
             "-Jerk off while she is talking-":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
                 hide screen hermione_main
-                call nar(">You reach under the desk and grab your cock...")
+                call nar(">You reach under the desk and grab your cock...") from _call_nar_6
                 
                 hide screen genie
                 show screen genie_jerking_off
                 hide screen bld1
                 with d3
                 
-                call ctc
+                call ctc from _call_ctc_10
                 
-                call her_main("[genie_name], what are you doing?","open","base",xpos="mid")
+                call her_main("[genie_name], what are you doing?","open","base",xpos="mid") from _call_her_main_376
                 m "What? Oh, it's nothing. Just scratching my leg."
                 m "You were saying?"
-                call her_main("Yes... Well, that test I failed...","open","base")
+                call her_main("Yes... Well, that test I failed...","open","base") from _call_her_main_377
             "-Participate in the conversation-":
                 $ d_flag_01 = False #NOT JERKING OFF.
                 m "Yes, what a tragedy that was..."
@@ -137,9 +137,9 @@ label hg_pf_TalkToMe:
         else:
             m "(Professor Sprout... He-he, what a ridiculous name...)"
         
-        call her_main("Did you say something, [genie_name]?","normal","frown")
+        call her_main("Did you say something, [genie_name]?","normal","frown") from _call_her_main_378
         m "It's nothing, keep going..."
-        call her_main("Well, some students are making fun of professor Quirell behind his back...","open","base")
+        call her_main("Well, some students are making fun of professor Quirell behind his back...","open","base") from _call_her_main_379
 
         her "I disapprove of such behavior, of course."
         if d_flag_01:
@@ -149,8 +149,8 @@ label hg_pf_TalkToMe:
 
         her "Oh, and my \"Men's Rights Movement\" group is gaining popularity..."
         her "I'm very happy about that..."
-        call her_main("I think, given time, we will be able to make a real difference...","open","closed")
-        call her_main("It is so invigorating to know that you are doing the right thing!","base","base")
+        call her_main("I think, given time, we will be able to make a real difference...","open","closed") from _call_her_main_380
+        call her_main("It is so invigorating to know that you are doing the right thing!","base","base") from _call_her_main_381
         her "Wouldn't you agree, professor?"
 
         if d_flag_01:
@@ -161,11 +161,11 @@ label hg_pf_TalkToMe:
         else:
             m "Zzzz........"
             
-        call her_main("[genie_name]?","angry","angry")
+        call her_main("[genie_name]?","angry","angry") from _call_her_main_382
         m "Yes, yes, I'm totally listening..."
         m "This is all very self-righteous, er..."
         m "I mean, very invigorating and stuff..."
-        call her_main("..........................","normal","frown")
+        call her_main("..........................","normal","frown") from _call_her_main_383
 
     #Event 3
     elif whoring >= 6:
@@ -173,41 +173,41 @@ label hg_pf_TalkToMe:
         $ new_request_01_heart = 3 #Event hearts level (0-3)
         $ hg_pf_TalkToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
 
-        call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
+        call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL") from _call_her_main_384
         her "Hm..."
         her "There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house."
         her "To be honest, [genie_name], there should be none..."
         her "\"Gryffindor\" would have been in the lead if not for those \"Slytherin\" harlots..."
         her "The things I hear those girls do simply to get a few extra points..."
-        call her_main("How despicable!","open","angryCl")
+        call her_main("How despicable!","open","angryCl") from _call_her_main_385
         m "What does this make you then, [hermione_name]?"
-        call her_main("Exactly!","normal","base")
+        call her_main("Exactly!","normal","base") from _call_her_main_386
         m "Huh?"
-        call her_main("I have to work even harder to compensate for the damage those nasty girls are doing...","open","angryCl")
-        call her_main("Thank you for helping me out, [genie_name].","normal","base")
+        call her_main("I have to work even harder to compensate for the damage those nasty girls are doing...","open","angryCl") from _call_her_main_387
+        call her_main("Thank you for helping me out, [genie_name].","normal","base") from _call_her_main_388
 
         menu: 
             "-Start jerking off-":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
                 hide screen hermione_main
-                call nar(">You reach under the desk and grab your cock...")
+                call nar(">You reach under the desk and grab your cock...") from _call_nar_7
                 hide screen genie
                 show screen genie_jerking_off
                 with d3
                 
-                call ctc
+                call ctc from _call_ctc_11
                 
-                call her_main("[genie_name], what are you doing?","open","base",xpos="mid")
+                call her_main("[genie_name], what are you doing?","open","base",xpos="mid") from _call_her_main_389
                 her "You are not.....?"
-                call her_main("Are you...?","annoyed","worriedL")
+                call her_main("Are you...?","annoyed","worriedL") from _call_her_main_390
                 m "What? Oh, it's nothing. Keep going."
-                call her_main("Hm...","normal","frown")
+                call her_main("Hm...","normal","frown") from _call_her_main_391
                 m "{size=-4}(Is she onto me? Nah...){/size}"
             "-Participate in the conversation-":
                 $ d_flag_01 = False #NOT JERKING OFF.
                 m "Don't mention it."
                 
-        call her_main("Well, like I was saying...","open","closed",xpos="mid")
+        call her_main("Well, like I was saying...","open","closed",xpos="mid") from _call_her_main_392
         her "I heard that this one girl sold one of the professors some naughty pictures of herself for ten house points..."
 
         if d_flag_01:
@@ -218,62 +218,62 @@ label hg_pf_TalkToMe:
         her "Yes..."
 
         if d_flag_01:
-            call her_main("And these two other girls...","annoyed","worriedL")
+            call her_main("And these two other girls...","annoyed","worriedL") from _call_her_main_393
             her "There is a rumor that they are actually sleeping with professor snape..."
             m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
-            call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...","base","base")
+            call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...","base","base") from _call_her_main_394
             m "{size=-4}(Yes... This is good stuff, go on!){/size}"
-            call her_main("And this other girl, she sucked off a teacher!","annoyed","worriedL")
+            call her_main("And this other girl, she sucked off a teacher!","annoyed","worriedL") from _call_her_main_395
             m "{size=-4}(Yes! Yes!){/size}"
-            call her_main("And another girl let a teacher cum in her mouth...","smile","baseL")
+            call her_main("And another girl let a teacher cum in her mouth...","smile","baseL") from _call_her_main_396
             her "And she swallowed it all and loved it!"
             m "{size=-4}(Wait... Is she making this up?){/size}"
-            call her_main("I'm a nasty girl too, you know...","smile","glance")
+            call her_main("I'm a nasty girl too, you know...","smile","glance") from _call_her_main_397
             g4 "What?!"
-            call her_main("I just want to suck a cock...","open_tongue","glance")
+            call her_main("I just want to suck a cock...","open_tongue","glance") from _call_her_main_398
             her "I want men to cum on my face like in those videos I saw!"
             g4 "{size=-4}(You little slut! That did it!) *Argh!*{/size}"
 
             hide screen hermione_main
             with d3
 
-            call cum_block
+            call cum_block from _call_cum_block_1
 
             g4 "Argh! YES!"
             hide screen bld1
             with d1
             show screen genie_jerking_sperm
             with d3
-            call ctc
+            call ctc from _call_ctc_12
 
             if whoring <= 10:
                 $ mad = +7
-                call her_main("I knew it! You were touching yourself, [genie_name]!","angry","angry")
+                call her_main("I knew it! You were touching yourself, [genie_name]!","angry","angry") from _call_her_main_399
                 #show screen genie_jerking_sperm_02
                 #with d3
                 g4 "What? No, I was just... ah, shit, this feels good..."
                 show screen genie
                 with d3
-                call her_main("This is disgusting! How could you!?","scream","worriedCl")
+                call her_main("This is disgusting! How could you!?","scream","worriedCl") from _call_her_main_400
                 her "[genie_name], you are the headmaster! You are supposed to set a good example!"
                 m "Hey, little missy, are you going to judge me or do you want your points?"
-                call her_main("My points please, I believe I earned those.","angry","worriedCl",emote="05")
+                call her_main("My points please, I believe I earned those.","angry","worriedCl",emote="05") from _call_her_main_401
                 m "Yes, you did."
-                call her_main("Ew... I feel so dirty now...","angry","angry")
+                call her_main("Ew... I feel so dirty now...","angry","angry") from _call_her_main_402
                 hide screen genie_jerking_sperm_02
                 with d3
             else:
-                call her_main("I knew it! You were touching yourself, [genie_name]!","smile","glance")
+                call her_main("I knew it! You were touching yourself, [genie_name]!","smile","glance") from _call_her_main_403
                 #show screen genie_jerking_sperm_02
                 #with d3
                 g4 "What? No, I was just... ah, shit, this feels good..."
                 show screen genie
                 with d3
-                call her_main("How could you [genie_name]? In front of a young innocent student!","scream","angryCl")
+                call her_main("How could you [genie_name]? In front of a young innocent student!","scream","angryCl") from _call_her_main_404
                 m "Hey, little missy, what you were saying wasn't exactly innocent"
-                call her_main("I don't know what you're talking about...","smile","baseL")
+                call her_main("I don't know what you're talking about...","smile","baseL") from _call_her_main_405
                 m "I'm sure. Do you want your points or not?"
-                call her_main("{size=-4}he sure did cum a lot{image=textheart}{/size}","base","base")
+                call her_main("{size=-4}he sure did cum a lot{image=textheart}{/size}","base","base") from _call_her_main_406
                 hide screen genie_jerking_sperm_02
                 with d3
 
@@ -295,9 +295,9 @@ label hg_pf_TalkToMe:
         m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         her "Oh, don't worry about the points, [genie_name]. We were just having a nice talk."
         m "Really? What about \"Gryffindor\" winning the cup?"
-        call her_main("It's only 5 points...","soft","baseL")
+        call her_main("It's only 5 points...","soft","baseL") from _call_her_main_407
         m "If you say so."
-        call her_main("Will this be all then?","base","base")
+        call her_main("Will this be all then?","base","base") from _call_her_main_408
         m "Yes, you can go now."
     else:
         $ gryffindor +=5
@@ -311,7 +311,7 @@ label hg_pf_TalkToMe:
         m "Yes, you can go now."
 
     if hg_pf_TalkToMe_OBJ.points == 0:
-        call her_main("Another 5 points... The Guys will be so happy.","base","base")
+        call her_main("Another 5 points... The Guys will be so happy.","base","base") from _call_her_main_409
         her "Thank you, [genie_name]."
     
     if whoring < 3: #Adds points till 3.

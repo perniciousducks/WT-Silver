@@ -18,36 +18,36 @@ label hg_pr_FlirtClassmate:
             "\"(Not right now.)\"":
                 jump silver_requests
 
-    call bld
+    call bld from _call_bld_139
     
     m "[hermione_name]?"
-    call her_main("Yes?","soft","baseL",xpos="right",ypos="base")
+    call her_main("Yes?","soft","baseL",xpos="right",ypos="base") from _call_her_main_6653
 
     #Intro.
     if hg_pr_FlirtClassmate_OBJ.points == 0 and whoring < 6: ### LEVEL 01 and LEVEL 02
 
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
+        call play_music("chipper_doodle") from _call_play_music_276 # HERMIONE'S THEME.
         m "What is your opinion on the boys of the \"Slytherin\" house?"
-        call her_main("I detest them, [genie_name].","angry","angry")
+        call her_main("I detest them, [genie_name].","angry","angry") from _call_her_main_6654
         m "Well, too bad. Because I want you to get really friendly with a few of them today."
-        call her_main("If I must...","soft","baseL")
+        call her_main("If I must...","soft","baseL") from _call_her_main_6655
         her "Yes, I think I can manage to be civil with them for one day."
         m "Yes, and when I say \"get friendly with them...\""
         m "I actually mean that I need you to flirt with them..."
-        call her_main("Flirt?!","shock","wide")
-        call her_main("[genie_name]!","angry","angry")
-        call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...","annoyed","suspicious")
-        call her_main("But why \"Slytherin\"?","open","worried")
+        call her_main("Flirt?!","shock","wide") from _call_her_main_6656
+        call her_main("[genie_name]!","angry","angry") from _call_her_main_6657
+        call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...","annoyed","suspicious") from _call_her_main_6658
+        call her_main("But why \"Slytherin\"?","open","worried") from _call_her_main_6659
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't be another house?"
-        call her_main("The \"Gryffindors\" maybe?","upset","wink")
+        call her_main("The \"Gryffindors\" maybe?","upset","wink") from _call_her_main_6660
         m "I am only trying to protect your reputation, [hermione_name]."
-        call her_main("[genie_name]?","soft","base")
+        call her_main("[genie_name]?","soft","base") from _call_her_main_6661
         m "Do you value the opinion the \"Slytherin\" students have of you?"
-        call her_main("I couldn't care less about the opinions of those Neanderthals.","scream","angryCl")
+        call her_main("I couldn't care less about the opinions of those Neanderthals.","scream","angryCl") from _call_her_main_6662
         m "What about the students of the \"Gryffindor\" house?"
-        call her_main("Their opinion means the world to me--","annoyed","worriedL")
-        call her_main("Oh, I see...","base","base")
+        call her_main("Their opinion means the world to me--","annoyed","worriedL") from _call_her_main_6663
+        call her_main("Oh, I see...","base","base") from _call_her_main_6664
         m "Exactly... Just looking out for you [hermione_name]."
         her "Em... Thank you [genie_name]..."
         
@@ -58,14 +58,14 @@ label hg_pr_FlirtClassmate:
             m "I need you to go make some new friends at \"Slytherin\" house."
             her "You mean you need me to flirt with the \"Slytherin\" boys again [genie_name]?"
             m "That's exactly what I need you to do today, [hermione_name]."
-            call her_main("Must I really do this [genie_name]?","open","base")
+            call her_main("Must I really do this [genie_name]?","open","base") from _call_her_main_6665
             m "We have been through this, [hermione_name]."
             m "Going to the \"Slytherin\" boys is in your best interests."
-            call her_main("Yes, I know, [genie_name].","open","angryCl")
+            call her_main("Yes, I know, [genie_name].","open","angryCl") from _call_her_main_6666
             her "But why must I do this at all?"
             m "Nobody is forcing you, [hermione_name]..."
-            call her_main("You don't need to remind me of that, [genie_name]...","angry","angry")
-            call her_main("Alright if I must... [genie_name]...","normal","frown")
+            call her_main("You don't need to remind me of that, [genie_name]...","angry","angry") from _call_her_main_6667
+            call her_main("Alright if I must... [genie_name]...","normal","frown") from _call_her_main_6668
             
         else: #if whoring >= 3 and whoring >= 6: ### LEVEL 02 and higher ##
             m "I need you to flirt with some boys from \"Slytherin\" today."
@@ -81,13 +81,13 @@ label hg_pr_FlirtClassmate:
 
 label hg_pr_FlirtClassmate_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
+    call play_sound("door") from _call_play_sound_207 #Sound of a door opening.
+    call her_walk("door","mid",2) from _call_her_walk_127
+    call bld from _call_bld_140
     
 
     #First time event.
-    call her_main("Good evening, [genie_name].","base","base",xpos="right",ypos="base")
+    call her_main("Good evening, [genie_name].","base","base",xpos="right",ypos="base") from _call_her_main_6669
     m "[hermione_name]..."
     m "Did you complete your task?"
     her "I did as you asked, [genie_name]..."
@@ -100,7 +100,7 @@ label hg_pr_FlirtClassmate_complete:
             with d3
             m "How many boys did you flirt with today, [hermione_name]?"
             m "Give me the details."
-            call blktone
+            call blktone from _call_blktone_30
 
             #First Level.
             if whoring >= 0 and whoring < 3:
@@ -108,74 +108,74 @@ label hg_pr_FlirtClassmate_complete:
                 #Event A
                 if one_out_of_three == 1:
                     stop music fadeout 1.0
-                    call her_main("Well...","open","worriedL",xpos="right",ypos="base")
+                    call her_main("Well...","open","worriedL",xpos="right",ypos="base") from _call_her_main_6670
                     her "There was this one freshman boy..."
                     her "........."
                     m "I'm listening..."
                     her "Well... I went to him and I said \"Hey, handsome!\"."
                     m "And?"
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("He showed me his tongue and ran off, [genie_name].","normal","frown")
+                    call play_music("chipper_doodle") from _call_play_music_277 # HERMIONE'S THEME.
+                    call her_main("He showed me his tongue and ran off, [genie_name].","normal","frown") from _call_her_main_6671
                     m "Did you try to lure him in with a lolipop?"
-                    call her_main("I did not, [genie_name]...","open","worriedL")
+                    call her_main("I did not, [genie_name]...","open","worriedL") from _call_her_main_6672
                     her "The thought never crossed my mind, but--"
                     m "That was a joke, [hermione_name]."
-                    call her_main("[genie_name]?","normal","frown")
+                    call her_main("[genie_name]?","normal","frown") from _call_her_main_6673
                     m "I didn't send you out there to harass little kids!"
-                    call her_main(".............","annoyed","frown")
+                    call her_main(".............","annoyed","frown") from _call_her_main_6674
                     m "I told you to flirt with boys {size=+5}your{/size} age!"
-                    call her_main("I wanted to at first, but...","normal","frown")
-                    call her_main("I guess I got scared...","annoyed","angryL")
+                    call her_main("I wanted to at first, but...","normal","frown") from _call_her_main_6675
+                    call her_main("I guess I got scared...","annoyed","angryL") from _call_her_main_6676
                     her "I mean I despise those \"Slytherins\" way too much to flirt with them, [genie_name]!"
-                    call her_main("I would have to fight my gag-reflex the entire time!","angry","angry")
+                    call her_main("I would have to fight my gag-reflex the entire time!","angry","angry") from _call_her_main_6677
                     menu:
                         "\"Fine. Just try harder next time.\"":
-                            call her_main("Thank you, [genie_name].","base","base")
+                            call her_main("Thank you, [genie_name].","base","base") from _call_her_main_6678
                             her "I will, I promise!"
                         "\"Favour failed! No points for you!\"":
                             stop music fadeout 1.0
-                            call her_main("I understand...","normal","frown")
+                            call her_main("I understand...","normal","frown") from _call_her_main_6679
                             m "Get out of my sight..."
-                            call her_main("Yes, [genie_name]...Sorry, [genie_name]...","annoyed","frown")
+                            call her_main("Yes, [genie_name]...Sorry, [genie_name]...","annoyed","frown") from _call_her_main_6680
                             
                             $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
                 
                 #Event B
                 elif one_out_of_three == 2:
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("Well, I tried to complement an upperclassman...","open","worriedL",xpos="right",ypos="base")
+                    call play_music("chipper_doodle") from _call_play_music_278 # HERMIONE'S THEME.
+                    call her_main("Well, I tried to complement an upperclassman...","open","worriedL",xpos="right",ypos="base") from _call_her_main_6681
                     m "Did he appreciate it?"
-                    call her_main("He called me a \"Gryffindor whore\", [genie_name]!","angry","angry",emote="01")
+                    call her_main("He called me a \"Gryffindor whore\", [genie_name]!","angry","angry",emote="01") from _call_her_main_6682
                     m "I see..."
                     m "What did you do then?"
-                    call her_main("Well, that was not the proper way to address a fellow \"Hogwarts\" student...","open","angryCl")
+                    call her_main("Well, that was not the proper way to address a fellow \"Hogwarts\" student...","open","angryCl") from _call_her_main_6683
                     her "So I told him that I would report him."
                     m "A truly captivating story..."
                     m "Anything else?"
-                    call her_main("Yes, there was also this one student at the library...","annoyed","frown")
+                    call her_main("Yes, there was also this one student at the library...","annoyed","frown") from _call_her_main_6684
                     her "He was obviously struggling with a problem..."
                     her "So I offered my help..."
                     m "And?"
-                    call her_main("He called me a \"Patronizing Gryffindor Whore\", [genie_name]...","angry","angry",emote="01")
+                    call her_main("He called me a \"Patronizing Gryffindor Whore\", [genie_name]...","angry","angry",emote="01") from _call_her_main_6685
                     m "Did you threaten to report him as well?"
-                    call her_main("Of course, [genie_name].","open","angryCl")
+                    call her_main("Of course, [genie_name].","open","angryCl") from _call_her_main_6686
                     m "*sigh*"
                     m "Anything else?"
-                    call her_main("Well, there was one more incident but the outcome was pretty much the same...","annoyed","frown")
+                    call her_main("Well, there was one more incident but the outcome was pretty much the same...","annoyed","frown") from _call_her_main_6687
                     m "\"The Gryffindor whore\"?"
-                    call her_main(".........yes, [genie_name].","disgust","glance")
+                    call her_main(".........yes, [genie_name].","disgust","glance") from _call_her_main_6688
                     m "You are doing it all wrong, [hermione_name]."
-                    call her_main("I am sorry, [genie_name]. I thought this would be easy...","annoyed","angryL")
+                    call her_main("I am sorry, [genie_name]. I thought this would be easy...","annoyed","angryL") from _call_her_main_6689
                     menu:
                         "\"Well, at least you are trying.\"":
-                            call her_main("Apparently flirting is not my forte...","angry","worriedCl",emote="05")
+                            call her_main("Apparently flirting is not my forte...","angry","worriedCl",emote="05") from _call_her_main_6690
                         "\"Favour failed! No points of you!\"":
                             stop music fadeout 1.0
-                            call her_main("You are not going to pay me, [genie_name]?","open","worried")
+                            call her_main("You are not going to pay me, [genie_name]?","open","worried") from _call_her_main_6691
                             $ mad +=15
-                            call her_main("But, you promised!","angry","base",tears="soft")
-                            call her_main("................","mad","worriedCl",tears="soft_blink")
+                            call her_main("But, you promised!","angry","base",tears="soft") from _call_her_main_6692
+                            call her_main("................","mad","worriedCl",tears="soft_blink") from _call_her_main_6693
                             
                             $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
@@ -183,25 +183,25 @@ label hg_pr_FlirtClassmate_complete:
                 #Event C
                 elif one_out_of_three == 3:
                     stop music fadeout 1.0
-                    call her_main("Well, the \"Slytherin\" quidditch team was practicing in the stadium today...","open","worriedL",xpos="right",ypos="base")
+                    call her_main("Well, the \"Slytherin\" quidditch team was practicing in the stadium today...","open","worriedL",xpos="right",ypos="base") from _call_her_main_6694
                     her "I thought I could sneak into the bleachers and cheer them on..."
-                    call her_main("But...","annoyed","angryL")
+                    call her_main("But...","annoyed","angryL") from _call_her_main_6695
                     m "Yes?"
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("A whole flock of those \"Slytherin\" harlots was already there, [genie_name].","angry","angry")
+                    call play_music("chipper_doodle") from _call_play_music_279 # HERMIONE'S THEME.
+                    call her_main("A whole flock of those \"Slytherin\" harlots was already there, [genie_name].","angry","angry") from _call_her_main_6696
                     her "They were cheering and yelling..."
-                    call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...","angry","angry")
+                    call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...","angry","angry") from _call_her_main_6697
                     her "I cannot believe our school accepts such behavior..."
                     m "So... how did this captivating drama end?"
-                    call her_main("I just left [genie_name]...","annoyed","angryL")
+                    call her_main("I just left [genie_name]...","annoyed","angryL") from _call_her_main_6698
                     menu:
                         m "Hm..."
                         "\"Well, here are your points.\"":
-                            call her_main("Thank you, [genie_name]...","open","closed")               
+                            call her_main("Thank you, [genie_name]...","open","closed") from _call_her_main_6699               
                             
                         "\"Favour failed! No points for you!\"":
                             stop music fadeout 1.0
-                            call her_main("I don't feel like I deserved any this time anyway...","annoyed","angryL")
+                            call her_main("I don't feel like I deserved any this time anyway...","annoyed","angryL") from _call_her_main_6700
                             
                             $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt
@@ -212,183 +212,183 @@ label hg_pr_FlirtClassmate_complete:
                 #Event A
                 if one_out_of_three == 1:
                     stop music fadeout 1.0
-                    call her_main("Well, there was this one guy at the library...","open","worriedL",xpos="right",ypos="base")
+                    call her_main("Well, there was this one guy at the library...","open","worriedL",xpos="right",ypos="base") from _call_her_main_6701
                     her "He was obviously struggling with some assignment, so I offered my help..."
                     m "And?"
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("Well, to my surprise he accepted it...","smile","happyCl")
+                    call play_music("chipper_doodle") from _call_play_music_280 # HERMIONE'S THEME.
+                    call her_main("Well, to my surprise he accepted it...","smile","happyCl") from _call_her_main_6702
                     her "He let me finish the assignment for him..."
-                    call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","angry","worriedCl",emote="05")
+                    call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","angry","worriedCl",emote="05") from _call_her_main_6703
                     m "So, basically, he was the one doing the flirting..."
-                    call her_main("well... yes.","grin","worriedCl",emote="05")
-                    call her_main("But, despite my better judgment, I did encourage his improper behavior...","base","base")
+                    call her_main("well... yes.","grin","worriedCl",emote="05") from _call_her_main_6704
+                    call her_main("But, despite my better judgment, I did encourage his improper behavior...","base","base") from _call_her_main_6705
                     m "By being quiet?"
                     her "Yes, [genie_name]..."
                     her "I mean, this does amount to something, right?"
                     m "Meh..."
                     m "What else do you have for me?"
-                    call her_main("Right...","annoyed","angryL")
+                    call her_main("Right...","annoyed","angryL") from _call_her_main_6706
                     her "Later in a corridor these two other guys complemented my appearance in a very vulgar manner..."
-                    call her_main("But I just smiled at them...","angry","worriedCl",emote="05")
+                    call her_main("But I just smiled at them...","angry","worriedCl",emote="05") from _call_her_main_6707
                     m "You were on the receiving end again, then..."
                     m "This is not what I ordered you to do, [hermione_name]."
-                    call her_main("I know, [genie_name]!","angry","worriedCl",emote="05")
-                    call her_main("But I am so busy. Between the \"MRM\" meetings and the classes...","annoyed","angryL")
+                    call her_main("I know, [genie_name]!","angry","worriedCl",emote="05") from _call_her_main_6708
+                    call her_main("But I am so busy. Between the \"MRM\" meetings and the classes...","annoyed","angryL") from _call_her_main_6709
                     her "I barely have any time--"
                     m "Is this all you got for me this time then?"
-                    call her_main("No, [genie_name].","annoyed","angryL")
+                    call her_main("No, [genie_name].","annoyed","angryL") from _call_her_main_6710
                     her "On my way here I ran into Draco Malfoy, [genie_name]."
                     m "No way!!! (No idea who that is...)"
                     her "I forced myself to be friendly with him and..."
-                    call her_main("We ended up having a decent conversation for a change.","base","happyCl") 
+                    call her_main("We ended up having a decent conversation for a change.","base","happyCl") from _call_her_main_6711 
                     m "I see... That \"Dark-oh\" guy..."
                     m "Was he looking at your legs at all?"
-                    call her_main("What?","open","base")
+                    call her_main("What?","open","base") from _call_her_main_6712
                     m "Did he stare at your legs or not, [hermione_name]?"
-                    call her_main("Em... He might have...","upset","wink")
+                    call her_main("Em... He might have...","upset","wink") from _call_her_main_6713
                     m "What about your tits?"
-                    call her_main("[genie_name]!!!","angry","angry")
+                    call her_main("[genie_name]!!!","angry","angry") from _call_her_main_6714
                     m "Fine. You get your points. Keep up the good work."
-                    call her_main("","annoyed","worriedL")
+                    call her_main("","annoyed","worriedL") from _call_her_main_6715
                 
                 #Event B
                 elif one_out_of_three == 2:
                     stop music fadeout 1.0
-                    call her_main("Well...","open","worriedL",xpos="right",ypos="base")
+                    call her_main("Well...","open","worriedL",xpos="right",ypos="base") from _call_her_main_6716
                     her "This morning I did flirt with this one guy..."
-                    call her_main("Then after the second period there was this other guy...","soft","baseL")
-                    call her_main("And then something bizarre happened...","angry","worried")
-                    call play_music("playful_tension")# SEX THEME.
+                    call her_main("Then after the second period there was this other guy...","soft","baseL") from _call_her_main_6717
+                    call her_main("And then something bizarre happened...","angry","worried") from _call_her_main_6718
+                    call play_music("playful_tension") from _call_play_music_281# SEX THEME.
                     her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
-                    call her_main("I told him \"no\" at first, but we ended up taking a walk together.","soft","baseL")
+                    call her_main("I told him \"no\" at first, but we ended up taking a walk together.","soft","baseL") from _call_her_main_6719
                     m "Did you enjoy yourself, [hermione_name]?"
-                    call her_main("I think I did, [genie_name]... To my own astonishment...","open","base")
-                    call her_main("There was something about his \"devil-may-care\" attitude...","base","base")
-                    call her_main("He was so confident and calm and...","base","happyCl")
-                    call her_main("I still loathe the \"Slytherin\" house of course!","angry","worriedCl",emote="05")
-                    call her_main("But...","annoyed","down")
+                    call her_main("I think I did, [genie_name]... To my own astonishment...","open","base") from _call_her_main_6720
+                    call her_main("There was something about his \"devil-may-care\" attitude...","base","base") from _call_her_main_6721
+                    call her_main("He was so confident and calm and...","base","happyCl") from _call_her_main_6722
+                    call her_main("I still loathe the \"Slytherin\" house of course!","angry","worriedCl",emote="05") from _call_her_main_6723
+                    call her_main("But...","annoyed","down") from _call_her_main_6724
                     her "Maybe some of the students got there by mistake?"
-                    call her_main("Could the \"sorting hat\" make... miscalculations?","open","worriedL")
+                    call her_main("Could the \"sorting hat\" make... miscalculations?","open","worriedL") from _call_her_main_6725
                     menu:
                         "\"Just take your points and go!\"":
-                            call her_main("................","normal","frown")
+                            call her_main("................","normal","frown") from _call_her_main_6726
                         "\"The almighty hat is never wrong!\"":
-                            call her_main("Yes, of course... Everybody knows that...","soft","baseL")
+                            call her_main("Yes, of course... Everybody knows that...","soft","baseL") from _call_her_main_6727
                         "\"Could what make what?\"":
-                            call her_main("Oh, nevermind me, [genie_name].","soft","baseL")
+                            call her_main("Oh, nevermind me, [genie_name].","soft","baseL") from _call_her_main_6728
                             her "Everyone knows that the \"Sorting Hat\" is never wrong."
                 
                 #Event C
                 elif one_out_of_three == 3:
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("Five guys, [genie_name]!","smile","happyCl",xpos="right",ypos="base")
+                    call play_music("chipper_doodle") from _call_play_music_282 # HERMIONE'S THEME.
+                    call her_main("Five guys, [genie_name]!","smile","happyCl",xpos="right",ypos="base") from _call_her_main_6729
                     m "Really?"
-                    call her_main("Yes!","base","happyCl")
-                    call her_main("This one guy this morning.","base","happyCl")
+                    call her_main("Yes!","base","happyCl") from _call_her_main_6730
+                    call her_main("This one guy this morning.","base","happyCl") from _call_her_main_6731
                     her "Then another two right after the first period."
                     her "And then another one before the third period."
-                    call her_main("And after that I had a surprisingly pleasant conversation with one more.","grin","baseL")
-                    call her_main("That last one was quite smart and well-mannered too.","base","happyCl")
+                    call her_main("And after that I had a surprisingly pleasant conversation with one more.","grin","baseL") from _call_her_main_6732
+                    call her_main("That last one was quite smart and well-mannered too.","base","happyCl") from _call_her_main_6733
                     her "............................"
                     her "................"
-                    call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].","angry","worriedCl",emote="05")
+                    call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].","angry","worriedCl",emote="05") from _call_her_main_6734
                     m "I'm not asking you to, [hermione_name]."
                     her "I am only doing this to help my own house!"
-                    call her_main("The proud house of \"Gryffndor\"!","scream","worriedCl")
+                    call her_main("The proud house of \"Gryffndor\"!","scream","worriedCl") from _call_her_main_6735
                     m "Alright, alright. Calm down, [hermione_name]."
-                    call her_main("","base","happyCl")
+                    call her_main("","base","happyCl") from _call_her_main_6736
 
             #Third Level.
             elif whoring >= 6:
 
                 #Event A
                 if one_out_of_three == 1:
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
+                    call play_music("chipper_doodle") from _call_play_music_283 # HERMIONE'S THEME.
                     $ sc34CG(2, 7, 1, 1)
-                    call her_main("Eleven boys, [genie_name]!","smile","happyCl",xpos="right",ypos="base")
+                    call her_main("Eleven boys, [genie_name]!","smile","happyCl",xpos="right",ypos="base") from _call_her_main_6737
                     m "Eleven? Really? Your personal best, [hermione_name]."
-                    call her_main("Yes.","base","happyCl")
-                    call her_main("Let's see...","grin","baseL")
+                    call her_main("Yes.","base","happyCl") from _call_her_main_6738
+                    call her_main("Let's see...","grin","baseL") from _call_her_main_6739
                     her "Those two handsome guys right before the first period started..."
-                    call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.","smile","glance")
-                    call her_main("After that there was this one other guy...","grin","baseL")
-                    call her_main("Then those three guys...","annoyed","down")
-                    call her_main("Then one more right before the last period...","base","happyCl")
-                    call her_main("And finally this last guy that walked me right to your tower, [genie_name]...","smile","happyCl")
+                    call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.","smile","glance") from _call_her_main_6740
+                    call her_main("After that there was this one other guy...","grin","baseL") from _call_her_main_6741
+                    call her_main("Then those three guys...","annoyed","down") from _call_her_main_6742
+                    call her_main("Then one more right before the last period...","base","happyCl") from _call_her_main_6743
+                    call her_main("And finally this last guy that walked me right to your tower, [genie_name]...","smile","happyCl") from _call_her_main_6744
                     m "So, eleven then?"
                     m "Those \"Slytherin\" boys are really starting to like you, huh?"
                     $ sc34CG(2, 7, 1, 2)
-                    call her_main("I suppose so...","base","happyCl")
-                    call her_main("Well, not all of them were nice to me at first...","annoyed","down")
-                    call her_main("But I use this trick to \"tame\" them.","smile","glance")
+                    call her_main("I suppose so...","base","happyCl") from _call_her_main_6745
+                    call her_main("Well, not all of them were nice to me at first...","annoyed","down") from _call_her_main_6746
+                    call her_main("But I use this trick to \"tame\" them.","smile","glance") from _call_her_main_6747
                     m "A trick?"
                     $ sc34CG(2, 6, 1, 1)
-                    call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...","base","happyCl")
+                    call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...","base","happyCl") from _call_her_main_6748
                     her "I just swallow my pride and smile in response."
                     m "Hm..."
                     m "So, if for example, somebody were to call you a \"whore\" you would just smile at them?"
-                    call her_main("Well, yes, [genie_name]...","angry","worriedCl",emote="05")
+                    call her_main("Well, yes, [genie_name]...","angry","worriedCl",emote="05") from _call_her_main_6749
                     m "Yeah, I'm sure that wins them over."
                     m "Great job, [hermione_name]."
-                    call her_main("","grin","baseL")
+                    call her_main("","grin","baseL") from _call_her_main_6750
                     hide screen sccg
                     with d3
                     
                 #Event B
                 elif one_out_of_three == 2:
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("Two dates, seven quite pleasant conversations...","smile","happyCl",xpos="right",ypos="base")
-                    call her_main("And I even let this one guy kiss me...","grin","baseL")
+                    call play_music("chipper_doodle") from _call_play_music_284 # HERMIONE'S THEME.
+                    call her_main("Two dates, seven quite pleasant conversations...","smile","happyCl",xpos="right",ypos="base") from _call_her_main_6751
+                    call her_main("And I even let this one guy kiss me...","grin","baseL") from _call_her_main_6752
                     m "Quite impressive, [hermione_name]."
-                    call her_main("I think so too, [genie_name]. Thank you.","base","happyCl")
-                    call her_main("Oh, and there was also this little freshman kid...","smile","happyCl")
+                    call her_main("I think so too, [genie_name]. Thank you.","base","happyCl") from _call_her_main_6753
+                    call her_main("Oh, and there was also this little freshman kid...","smile","happyCl") from _call_her_main_6754
                     her "I tried to flirt with him too, but we ended up just chatting..."
                     her "He kept calling me \"Miss Hermione\"..."
                     her "So adorable..."
                     m "Well, I didn't send you to harass little kids, [hermione_name]."
-                    call her_main("I didn't haras--","disgust","glance")
-                    call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","angry","worriedCl",emote="05")
+                    call her_main("I didn't haras--","disgust","glance") from _call_her_main_6755
+                    call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","angry","worriedCl",emote="05") from _call_her_main_6756
                     m "Oh, absolutely."
-                    call her_main("Then I would like to receive my payment now...","scream","angryCl")
-                    call her_main("","normal","worriedCl")
+                    call her_main("Then I would like to receive my payment now...","scream","angryCl") from _call_her_main_6757
+                    call her_main("","normal","worriedCl") from _call_her_main_6758
                     
                 #Event C
                 elif one_out_of_three == 3:
                     stop music fadeout 1.0
-                    call her_main("[genie_name], I am sorry, but...","normal","worriedCl",xpos="right",ypos="base")
-                    call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("I hate those \"Slytherin\" tramps, [genie_name]!","angry","angry")
+                    call her_main("[genie_name], I am sorry, but...","normal","worriedCl",xpos="right",ypos="base") from _call_her_main_6759
+                    call play_music("chipper_doodle") from _call_play_music_285 # HERMIONE'S THEME.
+                    call her_main("I hate those \"Slytherin\" tramps, [genie_name]!","angry","angry") from _call_her_main_6760
                     m "Tell me what happened."
-                    call her_main("I don't want to talk about it...","annoyed","angryL")
+                    call her_main("I don't want to talk about it...","annoyed","angryL") from _call_her_main_6761
                     m "Tell me what happened, [hermione_name]!"
-                    call her_main("I don't want to talk about it, [genie_name].","angry","angry",emote="01")
-                    call her_main("Please don't make me...","annoyed","angryL")
+                    call her_main("I don't want to talk about it, [genie_name].","angry","angry",emote="01") from _call_her_main_6762
+                    call her_main("Please don't make me...","annoyed","angryL") from _call_her_main_6763
                     menu:
                         "\"Fine. I'll let it go for today.\"":
-                            call her_main("Thank you, [genie_name].","normal","worriedCl")
+                            call her_main("Thank you, [genie_name].","normal","worriedCl") from _call_her_main_6764
                             m "No luck with the flirting today then?"
-                            call her_main("Oh, quite the opposite, [genie_name].","angry","worriedCl",emote="05")
-                            call play_music("playful_tension")# SEX THEME.
+                            call her_main("Oh, quite the opposite, [genie_name].","angry","worriedCl",emote="05") from _call_her_main_6765
+                            call play_music("playful_tension") from _call_play_music_286# SEX THEME.
                             her "One of the boys actually took me to the \"Slytherin\" common room today..."
-                            call her_main("There were at least a dozen of them there...","normal","base")
-                            call her_main("All of the boys knew who I was...","open","angryCl")
+                            call her_main("There were at least a dozen of them there...","normal","base") from _call_her_main_6766
+                            call her_main("All of the boys knew who I was...","open","angryCl") from _call_her_main_6767
                             her "I was the center of attention at first..."
-                            call her_main("And it felt sort of wonderful...","base","ahegao_raised")
-                            call play_music("chipper_doodle") # HERMIONE'S THEME.
-                            call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...","disgust","glance")
+                            call her_main("And it felt sort of wonderful...","base","ahegao_raised") from _call_her_main_6768
+                            call play_music("chipper_doodle") from _call_play_music_287 # HERMIONE'S THEME.
+                            call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...","disgust","glance") from _call_her_main_6769
                             m "And?"
-                            call her_main("Well, they started saying stuff and doing things...","annoyed","angryL")
+                            call her_main("Well, they started saying stuff and doing things...","annoyed","angryL") from _call_her_main_6770
                             her "Anyway, I had to leave..."
                             m "I see..."
                             m "Well, I say you deserve your points anyway, [hermione_name]."
-                            call her_main("","base","happyCl")
+                            call her_main("","base","happyCl") from _call_her_main_6771
 
                         "\"Tell me now, or lose the points!\"":
                             $ mad +=10
-                            call her_main("[genie_name], please, I don't want to discuss this with you, [genie_name].","disgust","glance")
+                            call her_main("[genie_name], please, I don't want to discuss this with you, [genie_name].","disgust","glance") from _call_her_main_6772
                             m "No one is forcing you, [hermione_name]."
                             m "You are free to leave."
-                            call her_main("{size=-4}(Stubborn old man!){/size}","angry","angry")
+                            call her_main("{size=-4}(Stubborn old man!){/size}","angry","angry") from _call_her_main_6773
                             
                             $ hg_pr_FlirtClassmate_OBJ.inProgress = False
                             jump could_not_flirt

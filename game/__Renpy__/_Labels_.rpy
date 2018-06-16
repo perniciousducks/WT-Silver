@@ -73,7 +73,7 @@ label cum_block:
     return
     
 label slap_her:
-    call play_sound("slap") #SLAP!
+    call play_sound("slap") from _call_play_sound_45 #SLAP!
     show screen white
     with hpunch
     pause.08
@@ -82,7 +82,7 @@ label slap_her:
     return
 
 label kiss_her:
-    call play_sound("kiss") #Kiss!
+    call play_sound("kiss") from _call_play_sound_46 #Kiss!
     with hpunch
     pause.08
 
@@ -92,7 +92,7 @@ label cast_spell(spell=""):
     if spell == "imperio":
         
         stop music fadeout 2.0
-        call play_sound("spell")
+        call play_sound("spell") from _call_play_sound_47
         show screen white 
         pause.1
         hide screen white

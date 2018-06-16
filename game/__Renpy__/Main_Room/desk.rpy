@@ -63,14 +63,14 @@ label paperwork:
     with Dissolve(0.3)
     ">You do some paperwork."
     
-    call finished_working_chapter #Chapter finished. $ report_chapters += 1
+    call finished_working_chapter from _call_finished_working_chapter #Chapter finished. $ report_chapters += 1
     
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+    call report_chapters_check from _call_report_chapters_check #Checks whether or not the completed chapter was the final one.
         
     if not daytime and (1 < weather_gen < 4): # FULL MOON
-        call f_moon_bonus
+        call f_moon_bonus from _call_f_moon_bonus
            
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+    call report_chapters_check from _call_report_chapters_check_1 #Checks whether or not the completed chapter was the final one.
     
 #   ### CONCENTRATION CHECK ###========================================================================
 #   if concentration == 1:
@@ -95,22 +95,22 @@ label paperwork:
 #            call concentration_label
     ###==============================================================================================
     
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+    call report_chapters_check from _call_report_chapters_check_2 #Checks whether or not the completed chapter was the final one.
     
     ### SPEEDWRITING CHECK ###========================================================================
     if speedwriting == 1:
         $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for dummies.\"" # 1/10 chance
         if speedwriting_check == 1:
-            call speedwriting_label
+            call speedwriting_label from _call_speedwriting_label
     if speedwriting == 2:
         $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for beginners.\"" # 1/8 chance of it to pop up.
         if speedwriting_check > 1:
-            call speedwriting_label
+            call speedwriting_label from _call_speedwriting_label_1
     if speedwriting == 3:
-            call speedwriting_label
+            call speedwriting_label from _call_speedwriting_label_2
     if speedwriting >= 4:
-            call speedwriting_label
-            call concentration_label
+            call speedwriting_label from _call_speedwriting_label_3
+            call concentration_label from _call_concentration_label
 #    if speedwriting == 5:
 #        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for experts.\"" # 1/2 chance of it to pop up.
 #        if speedwriting_check == 1:
@@ -118,7 +118,7 @@ label paperwork:
 #    if speedwriting == 6:
 #        call speedwriting_label #""\"Speedwriting for maniacs.\"" # 1 (sure) chance of it to pop up.
     
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+    call report_chapters_check from _call_report_chapters_check_3 #Checks whether or not the completed chapter was the final one.
             
 
     show screen genie

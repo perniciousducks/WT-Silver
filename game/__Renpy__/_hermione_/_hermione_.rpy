@@ -25,7 +25,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     else:
         $ h_emote = "00_blank"
 
-    call h_update
+    call h_update from _call_h_update_2
 
 
     #Positioning
@@ -116,7 +116,7 @@ label her_head(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     else:
         $ h_emote = "00_blank"
 
-    call h_update
+    call h_update from _call_h_update_3
 
     $ hermione_head_xpos = 605
     $ hermione_head_ypos = 235
@@ -179,7 +179,7 @@ label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, em
     else:
         $ h_emote = "00_blank"
 
-    call h_update
+    call h_update from _call_h_update_4
 
     show screen hermione_kneel #h_head2
 
@@ -194,7 +194,7 @@ label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, em
 
 label set_hermione_action(action="", update=""):
     hide screen hermione_main
-    call h_action(action,update)
+    call h_action(action,update) from _call_h_action_78
 
     show screen hermione_main
     with d3
@@ -225,7 +225,7 @@ label h_action(action =  "", update=""):
 
         if update != "skip_update":
         
-            call load_hermione_clothing_saves
+            call load_hermione_clothing_saves from _call_load_hermione_clothing_saves_3
 
     else:
 
@@ -346,7 +346,7 @@ label h_action(action =  "", update=""):
                 $ hermione_wear_robe = False
            
         
-    call update_her_uniform            #calls update_her_action, update_chibi_uniform, and h_update_body;
+    call update_her_uniform from _call_update_her_uniform_94            #calls update_her_action, update_chibi_uniform, and h_update_body;
 
     return
     
@@ -368,7 +368,7 @@ label reset_hermione_main:
     hide screen hermione_blank_chibi
 
     #Hermione clothing save state
-    call load_hermione_clothing_saves
+    call load_hermione_clothing_saves from _call_load_hermione_clothing_saves_4
     
     $ hermione_dribble = False
     $ hermione_squirt = False
@@ -377,10 +377,10 @@ label reset_hermione_main:
     hide screen hermione_main
     #call h_outfit_OBJ(None)
     if hermione_action != "none":
-        call h_action("none")
-    call update_her_uniform
-    call h_update_body
-    call h_update_hair
+        call h_action("none") from _call_h_action_79
+    call update_her_uniform from _call_update_her_uniform_95
+    call h_update_body from _call_h_update_body_4
+    call h_update_hair from _call_h_update_hair_11
     return
     
 label load_hermione_clothing_saves:

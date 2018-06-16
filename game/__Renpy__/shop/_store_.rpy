@@ -7,7 +7,10 @@ label __init_variables:
         $ bought_glasses = False
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
-    
+    if not hasattr(renpy.store,'fiction_books_intro'): #important!
+        $ fiction_books_intro = False
+
+
     $ sacred_scrolls = [
         silver_scroll(id=0 , name="None",               cost=0,     comments=[]),
         silver_scroll(id=1 , name="The room",           cost=10,    comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."]),
@@ -129,12 +132,17 @@ label shop_books:
     menu:
         "-Educational Books-":
             label education_menu:
-            $ books_menu_list = Books_OBJ.get_edu()
+            $ books_menu_list = []
+            $ books_menu_list.extend(Books_OBJ.read_books)
+            $ books_menu_list.extend(Books_OBJ.write_books)
         "-Fiction books-":
-            twi "These books are mostly light erotica..." 
-            ger "Some of the girls insisted that I order them in."
+            if not fiction_books_intro:
+                twi "These books are mostly light erotica..." 
+                ger "Some of the girls insisted that I order them in."
+                $ fiction_books_intro = True
             label fiction_menu:
-            $ books_menu_list = Books_OBJ.get_fic()
+            $ books_menu_list = []
+            $ books_menu_list.extend(Books_OBJ.fiction_books)
         "-Never mind-":
             call screen shop_screen 
     python:
@@ -192,7 +200,7 @@ label shop_potion_menu:
     if isinstance(PotionOBJ, silver_potion):
         python:
             potion_menu = []
-            potion_menu.append(("-Buy the potion for "+PotionOBJ.cost+" Gold-", PotionOBJ))
+            potion_menu.append(("-Buy the potion for "+str(PotionOBJ.cost)+" Gold-", PotionOBJ))
             potion_menu.append(("-Never mind-", "nvm"))
             choice = renpy.display_menu(potion_menu)
         if isinstance(choice, silver_potion):

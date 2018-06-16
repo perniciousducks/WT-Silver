@@ -3225,13 +3225,15 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     pause.5
     centered "{size=+7}{color=#cbcbcb}The morning after...{/color}{/size}"
     
-    #Night interface.
+    #Set Daytime.
+    $ daytime = True
     $ interface_color = "gold"
     
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False
     $ h_hair_style = "A"
     
+    call h_outfit_OBJ(None) #Updates uniform.
     call reset_hermione_main
     
     hide screen end_u_1                                           #<---- SCREEN
@@ -3246,15 +3248,18 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
+    hide screen chair_left
     hide screen candlefire
     hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
      
-    show screen new_window # CLEAR WEATHER.
     
-    hide screen room_night #Hiding NIGHT BG from last night.
-    show screen room #Showing main room BG. 
+    $ show_weather()
+    show screen weather
+    
+    show screen main_room
+    show screen chair_right
+    show screen fireplace
 
-    hide screen chair_right
     hide screen genie
     hide screen owl
     hide screen owl_02

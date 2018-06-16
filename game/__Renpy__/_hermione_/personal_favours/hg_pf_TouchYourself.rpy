@@ -323,7 +323,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             m "Do you need a little more encouragement?"
             call her_main("Ah... yes... please....{image=textheart}","open","worriedCl")
             m "Tch... You nasty whore!"
-            call her_main("yes [genie_name], ah...{image=textheart}","grin","ahegao_angry",cheeks="blush")
+            call her_main("yes [genie_name], ah...{image=textheart}","grin","aheagao_mad",cheeks="blush")
             call her_main("please... ah... more...{image=textheart}","grin","angry",cheeks="blush")
             g4 "You need to be punished for being such a slut!"
             call her_main("yes, [genie_name]... punish me...","open","ahegao_raised",cheeks="blush")
@@ -505,7 +505,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
                 call her_main("...","open","baseL",cheeks="blush")
                 call set_hermione_action("lift_breasts_naked")
                 
-                call her_main("Mmmm...","grin","ahegao_angry",cheeks="blush")
+                call her_main("Mmmm...","grin","aheagao_mad",cheeks="blush")
                 m "That's it..."
                 call nar(">You stare at Hermione's breasts with hunger...")
                 call her_main("ah...","silly","dead")
@@ -567,7 +567,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
                 call her_main(".......")
                 call her_main("I love this...","grin","dead")
                 call her_main("Standing here... playing with myself...","base","down")
-                call her_main("Ah... while you play with me...{image=textheart}","grin","ahegao_angry",cheeks="blush")
+                call her_main("Ah... while you play with me...{image=textheart}","grin","aheagao_mad",cheeks="blush")
                 m "Heh... Nice."
                 call her_main("Ah...{image=textheart}","open","ahegao_raised",cheeks="blush")
                 call her_main("I sometimes wish I could spend all day in here...","grin","angry",cheeks="blush")
@@ -580,7 +580,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
                 m "What's was that [hermione_name]? You'll have to speak up."
                 call her_main("Please finger me...","open","ahegao_raised",cheeks="blush")
                 m "Once more, a little louder this time."
-                call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}","grin","ahegao_angry",cheeks="blush")
+                call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}","grin","aheagao_mad",cheeks="blush")
                 $ g_c_u_pic = "groping_06"
                 call nar(">You swiftly plunge two fingers into her dripping pussy.")
                 call h_action("lift_breasts_naked")
@@ -640,7 +640,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         m "are you cumming, [hermione_name]?"
         call her_main("ah...{image=textheart} yes!!","grin","ahegao")
         call her_main("I'm cumming [genie_name]!!{image=textheart}","grin","dead")
-        call her_main("I'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}","grin","ahegao_angry",cheeks="blush")
+        call her_main("I'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}","grin","aheagao_mad",cheeks="blush")
         m "show me your tits [hermione_name]!"
         m "I want to see you cum while you play with them."
         $ hermione_squirt = True

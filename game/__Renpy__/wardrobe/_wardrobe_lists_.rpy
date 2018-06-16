@@ -498,7 +498,7 @@ label update_wr_underwear_list:
     if active_girl == "susan":
         #$ wr_bras.append("")
         $ wr_bras.append("lace_bra")
-        $ wr_bras.append("chain_bra")
+        #$ wr_bras.append("chain_bra")
     
         $ wr_onepieces.append("sling_1")
         $ wr_onepieces.append("sling_2")

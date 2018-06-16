@@ -39,7 +39,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
         elif xpos == "right":                   #Bit more to the right.
             $ hermione_xpos = 400
             $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "wardrobe":
+        elif xpos in ["wardrobe","close"]:
             $ hermione_xpos = 540
         else:
             $ hermione_xpos = xpos
@@ -375,7 +375,7 @@ label reset_hermione_main:
     $ aftersperm = False #Show cum stains on Hermione's uniform.
     
     hide screen hermione_main
-    call h_outfit_OBJ(None)
+    #call h_outfit_OBJ(None)
     if hermione_action != "none":
         call h_action("none")
     call update_her_uniform

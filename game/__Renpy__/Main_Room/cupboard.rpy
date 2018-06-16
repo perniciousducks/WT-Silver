@@ -2,41 +2,6 @@
 
 label cupboard:
     menu:
-        "Astoria Test":
-            menu:
-                "-Unlock Summons-":
-                    
-                    $ astoria_unlocked = True
-                    $ susan_unlocked = True
-                    $ tonks_unlocked = True
-
-                    jump cupboard
-                    
-                "-Unlock Wardrobes-":
-                    $ astoria_wardrobe_unlocked = True
-                    $ susan_wardrobe_unlocked = True
-                    
-                "-Start Ast Event 1 Hermione-":
-                    jump letter_intro_hermione
-                "-Start Ast Event 1 Snape-":
-                    jump letter_intro_snape
-                "-Start Ast Event 2 Astoria-":
-                    jump astoria_captured_intro
-                "-Start Ast Event 3 Tonks-":
-                    jump tonks_intro_event
-                "-Start Ast Event 4 Snape-":
-                    jump snape_spell_intro
-                "-Start Ast Event 5 Susan-":
-                    jump astoria_susan_intro
-                "-Start Ast Event 6 Snape-":
-                    jump snape_book_intro
-                "-Start Ast Event 7 Tonks-":
-                    jump astoria_tonks_intro
-                "-Start Ast Event 8 Astoria-":
-                    jump astoria_book_intro
-                "-Back-":
-                    jump cupboard
-            
         "-Examine the cupboard-" if not cupboard_examined:
             $ cupboard_examined = True
             show screen chair_left #Empty chair near the desk.

@@ -1336,7 +1336,7 @@ label cho_favor_2:
                         jump chofbm
                     "-35 points-":
                         m "I could get Hermione to do it for 35 points."
-                        call cho_main("{siZe=-2}35? Really?....{/size}", 6, 2, 5, 9)
+                        call cho_main("{size=-2}35? Really?....{/size}", 6, 2, 5, 9)
                         call cho_main("{size=+2}If her fat ass is worth 35 then mine must be worth 40.{/size}", 3, 2, 3, 8)
                         m "Fine."
                         jump chofbm

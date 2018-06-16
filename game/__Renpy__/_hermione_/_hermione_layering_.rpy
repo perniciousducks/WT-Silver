@@ -225,7 +225,7 @@ screen hermione_face:
     ### EMOTES ###
     add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos
     
-    zorder 3
+    zorder 5
 
 
 ### HERMIONE HEAD ###

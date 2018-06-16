@@ -25,7 +25,7 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 - **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, bugfixing, some writing.
 - **Soggy**:        Our main Artist. You can support him [here](https://www.patreon.com/SoggyIllustrations).
 - **STG Anon**:		  Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
-- **Asease1**:		  Coding
+- **Asease1**:		  Codingpport, and being a Penguin.
 - **Johnny**:		    Writing
 - **Booom313**:		  Mobile port for Android. You can support him [here](https://www.patreon.com/booom313/).
 - **Sandmaster**:   Help with Discord, contests, and moderation.

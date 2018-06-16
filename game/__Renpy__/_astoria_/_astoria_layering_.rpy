@@ -28,6 +28,8 @@ screen astoria_main:
         add astoria_panties xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the panties
     if astoria_wear_garterbelt:
         add astoria_garterbelt xpos astoria_xpos ypos astoria_ypos
+    if astoria_wear_stockings:
+        add astoria_stockings xpos astoria_xpos ypos astoria_ypos # Add the stockings
     if astoria_wear_onepiece and not astoria_wear_top and not astoria_wear_robe:
         add astoria_onepiece xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_bottom and not astoria_wear_robe:
@@ -35,9 +37,7 @@ screen astoria_main:
     if astoria_wear_top and not astoria_wear_robe:
         add astoria_top xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the top
     if astoria_wear_accs:
-        add astoria_accs xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the accessory
-    if astoria_wear_stockings:
-        add astoria_stockings xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the stockings
+        add astoria_accs xpos astoria_xpos ypos astoria_ypos # Add the accessory
     if astoria_wear_neckwear:
         add astoria_neckwear xpos astoria_xpos ypos astoria_ypos
     if astoria_wear_robe:
@@ -72,7 +72,7 @@ label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
         elif xpos == "right":                   #Bit more to the right.
             $ astoria_xpos = 400
             $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "wardrobe":
+        elif xpos in ["wardrobe","close"]:
             $ astoria_xpos = 540
         else:
             $ astoria_xpos = int(xpos)

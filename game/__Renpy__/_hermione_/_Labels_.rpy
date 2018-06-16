@@ -579,7 +579,11 @@ label Night_Request_Block:
         for i in hg_ps_list: #Call any public shaming event if it's in progress
             if i.inProgress:
                 renpy.jump(i.complete_label)
-                
+            
+    #Astoria Intro
+    if day >= 30 and whoring >= 9 and not astoria_intro_completed: 
+        jump astoria_intro_branches
+            
     jump night_resume
     
 label her_walk_desk_blkfade:

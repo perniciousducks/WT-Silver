@@ -728,7 +728,7 @@ screen wardrobe():
 
             #Uniform
             hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_tops_category",0),Show("wardrobe")]
-            add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_uniform.png" xpos 15 ypos 60 zoom 0.35
+            add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_uniform.png" xpos 15 ypos 60+icon_ypos_offset zoom 0.35
             text "Uniform" xpos 76 ypos 140+75 size 10
             #Muggle
             if active_girl in ["hermione"]:
@@ -776,7 +776,7 @@ screen wardrobe():
             #Uniforms
             if wardrobe_tops_category == 0:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_tops_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_uniform.png" xpos 15 ypos 60 zoom 0.35
+                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_uniform.png" xpos 15 ypos 60+icon_ypos_offset zoom 0.35
                 text "Uniform" xpos 76 ypos 140+75 size 10
                 for i in range(0,len(wr_tops_uniform)):
                     $ row = i // 5
@@ -1141,7 +1141,7 @@ screen wardrobe():
 
             #Bras
             hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
-            add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_bra.png" xpos 15 ypos 60 zoom 0.35
+            add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_bra.png" xpos 15 ypos 47+icon_ypos_offset zoom 0.35
             text "Bras" xpos 76 ypos 140+75 size 10
             #Panties
             hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",1),Show("wardrobe")]
@@ -1150,10 +1150,10 @@ screen wardrobe():
             #One-Pieces
             if active_girl in ["astoria","susan"]:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",2),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 60 zoom 0.35
+                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 47+icon_ypos_offset zoom 0.35
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10
             #Garterbelts
-            if active_girl in ["hermione","astoria","susan"]:
+            if active_girl in ["hermione","susan"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_garterbelt.png" xpos 15+270 ypos 17 zoom 0.35
                 text "Garterbelts" xpos 76+270 ypos 140+75 size 10
@@ -1179,14 +1179,14 @@ screen wardrobe():
             #Bras
             if wardrobe_underwear_category == 0:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_bra.png" xpos 15 ypos 60 zoom 0.35
+                add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_bra.png" xpos 15 ypos 47+icon_ypos_offset zoom 0.35
                 text "Bras" xpos 76 ypos 140+75 size 10
                 for i in range(0,len(wr_bras)):
                     $ row = i // 5
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",wr_bras[i]), Jump("equip_bra")]
-                    add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_bras[i]+".png" xpos 15+(90*col) ypos (60+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_bras[i]+".png" xpos 15+(90*col) ypos (47+icon_ypos_offset+92+(92*row)) zoom 0.35
 
             #Panties
             if wardrobe_underwear_category == 1:
@@ -1203,7 +1203,7 @@ screen wardrobe():
             #Nighties & Onepieces #Needs art edits for large breasts, poses,...
             if wardrobe_underwear_category == 2 and (active_girl == "astoria" or active_girl == "susan"):
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 60 zoom 0.35
+                add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 47+icon_ypos_offset zoom 0.35
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10
                 for i in range(0,len(wr_onepieces)):
                     $ row = i // 5
@@ -1242,31 +1242,36 @@ screen wardrobe():
         if wardrobe_page == 7:
 
             #Outfits
-            hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
-            add "images/store/cs_gui/maid.png" xpos 75 ypos 116 zoom 0.18
-            text "Outfits" xpos 76 ypos 140+75 size 10
+            if active_girl in ["hermione","astoria","susan"]:
+                hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/outfits.png" xpos 75 ypos 116 zoom 0.18
+                text "Outfits" xpos 76 ypos 140+75 size 10
             #Costumes
-            hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",1),Show("wardrobe")]
-            add "images/store/cs_gui/pirate.png" xpos 75+90 ypos 116 zoom 0.18
-            text "Costumes" xpos 76+90 ypos 140+75 size 10
+            if active_girl in ["hermione","astoria"]:
+                hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",1),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/costumes.png" xpos 75+90 ypos 116 zoom 0.18
+                text "Costumes" xpos 76+90 ypos 140+75 size 10
             #One-Pieces
-            hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",2),Show("wardrobe")]
-            add "images/store/cs_gui/nightgown.png" xpos 75+180 ypos 116 zoom 0.18
-            text "One-Pieces" xpos 76+180 ypos 140+75 size 10
-            #Swimsuits
-            hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",3),Show("wardrobe")]
-            add "images/store/cs_gui/mannequin.png" xpos 75+270 ypos 116 zoom 0.18
-            text "Swimsuits" xpos 76+270 ypos 140+75 size 10
+            if active_girl in ["hermione"]:
+                hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",2),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/onepieces.png" xpos 75+180 ypos 116 zoom 0.18
+                text "One-Pieces" xpos 76+180 ypos 140+75 size 10
+            #
+            #if active_girl in []:
+                #hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",3),Show("wardrobe")]
+                #add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/mannequin.png" xpos 75+270 ypos 116 zoom 0.18
+                #text "" xpos 76+270 ypos 140+75 size 10
             #Dresses
-            hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",4),Show("wardrobe")]
-            add "images/store/cs_gui/ball_dress.png" xpos 75+360 ypos 116 zoom 0.18
-            text "Dresses" xpos 76+360 ypos 140+75 size 10
+            if active_girl in ["hermione","astoria","susan"]:
+                hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",4),Show("wardrobe")]
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/dresses.png" xpos 75+360 ypos 116 zoom 0.18
+                text "Dresses" xpos 76+360 ypos 140+75 size 10
 
 
             #Outfits
             if wardrobe_outfits_category == 0:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
-                add "images/store/cs_gui/maid.png" xpos 75 ypos 116 zoom 0.18
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/outfits.png" xpos 75 ypos 116 zoom 0.18
                 text "Outfits" xpos 76 ypos 140+75 size 10
                 $ index = 0
                 for i in range(0,len(wr_outfits)):
@@ -1282,7 +1287,7 @@ screen wardrobe():
             #Costumes
             if wardrobe_outfits_category == 1:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
-                add "images/store/cs_gui/pirate.png" xpos 75+90 ypos 116 zoom 0.18
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/costumes.png" xpos 75+90 ypos 116 zoom 0.18
                 text "Costumes" xpos 76+90 ypos 140+75 size 10
                 $ index = 0
                 for i in range(0,len(wr_costumes)):
@@ -1298,7 +1303,7 @@ screen wardrobe():
             #One-Pieces
             if wardrobe_outfits_category == 2:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
-                add "images/store/cs_gui/nightgown.png" xpos 75+180 ypos 116 zoom 0.18
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/onepieces.png" xpos 75+180 ypos 116 zoom 0.18
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10
                 $ index = 0
                 for i in range(0,len(wr_outfits_onepieces)):
@@ -1311,26 +1316,26 @@ screen wardrobe():
                         add "images/store/cs_gui/"+wr_outfits_onepieces[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
                         $ index = index+1
 
-            #Swimsuits
+            #
             #if wardrobe_outfits_category == 3:
-                hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
-                add "images/store/cs_gui/mannequin.png" xpos 75+270 ypos 116 zoom 0.18
-                text "Swimsuits" xpos 76+270 ypos 140+75 size 10
-                $ index = 0
-                for i in range(0,len(wr_swimsuits)):
-                    $ row = i // 5
-                    $ col = i % 5
+            #    hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
+            #    add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/mannequin.png" xpos 75+270 ypos 116 zoom 0.18
+            #    text "" xpos 76+270 ypos 140+75 size 10
+            #    $ index = 0
+            #    for i in range(0,len(wr_swimsuits)):
+            #        $ row = i // 5
+            #        $ col = i % 5
 
-                    if index < len(hg_purchased_swimsuits):
+            #        if index < len(hg_purchased_swimsuits):
 
-                        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_swimsuits[index]), Jump("wardrobe_wear_costume")]
-                        add "images/store/cs_gui/"+wr_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
-                        $ index = index+1
+            #            hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_swimsuits[index]), Jump("wardrobe_wear_costume")]
+            #            add "images/store/cs_gui/"+wr_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
+            #            $ index = index+1
 
             #Dresses
             if wardrobe_outfits_category == 4:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
-                add "images/store/cs_gui/ball_dress.png" xpos 75+360 ypos 116 zoom 0.18
+                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/dresses.png" xpos 75+360 ypos 116 zoom 0.18
                 text "Dresses" xpos 76+360 ypos 140+75 size 10
                 $ index = 0
                 for i in range(0,len(wr_dresses)):
@@ -1376,13 +1381,16 @@ screen wardrobe():
                 add "images/store/gifts/scaleratio.png" xpos 0 ypos 90 zoom 0.3      #Gifts
                 text "Gifts" xpos 76 ypos 140+75 size 10
 
-                for i in range(0,18): #0,18
-                    $ row = i // 5    #6
-                    $ col = i % 5     #6
-                    if gift_item_inv[i] > 0:
-                        hotspot ((75+(90*col)), (140+92+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",i),Jump("wardrobe_give_gift")]
-                    add "images/store/gifts/"+str(i+1)+".png" xpos 0+(90*col) ypos (90+92+(92*row)) zoom 0.30
-                    text str(gift_item_inv[i]) xpos 75+(90*col) ypos (210+92+(92*row))
+                if active_girl == "hermione":
+                    for i in range(0,18): #0,18
+                        $ row = i // 5    #6
+                        $ col = i % 5     #6
+                        if gift_item_inv[i] > 0:
+                            hotspot ((75+(90*col)), (140+92+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",i),Jump("wardrobe_give_gift")]
+                        add "images/store/gifts/"+str(i+1)+".png" xpos 0+(90*col) ypos (90+92+(92*row)) zoom 0.30
+                        text str(gift_item_inv[i]) xpos 75+(90*col) ypos (210+92+(92*row))
+                else: #ADD for Astoria
+                    pass
 
             #Magazines
             #if wardrobe_gifts_category == 1: 

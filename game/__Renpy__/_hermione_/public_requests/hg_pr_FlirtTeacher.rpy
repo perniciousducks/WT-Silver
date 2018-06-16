@@ -249,7 +249,7 @@ label hg_pr_FlirtTeacher_complete:
                                     call her_main("Well, alright, but only to clear my idol's name...","angry","angry")
                                     pause.5
              
-                                    call her_head("Here....","disgust","down_raised",cheeks="blush",xpos="mid",ypos="base",trans="fade")
+                                    call her_main("Here....","disgust","down_raised",cheeks="blush",xpos="mid",ypos="base",trans="fade")
                                     
                                     call set_hermione_action("lift_skirt")
                                     pause.5

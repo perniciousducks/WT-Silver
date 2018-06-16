@@ -101,7 +101,12 @@ call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of
 # call snape_bonus # Not in use anymore.
 
 ### NIGHT REQUESTS ###
+if astoria_tonks_event_in_progress:
+    jump astoria_tonks_event
+    
+#EVENTS
 jump Night_Request_Block
+
 
 
 label night_resume:

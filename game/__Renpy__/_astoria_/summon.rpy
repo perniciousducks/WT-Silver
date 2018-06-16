@@ -6,13 +6,20 @@ label summon_astoria:
 
     call play_sound("door") #Sound of a door opening.
 
+    #Events
+    if spells_unlocked and not susan_unlocked:
+        $ susan_unlocked = True
+        $ third_curse_got_cast = True
+        $ spells_locked = True
+        jump astoria_susan_intro
+        
     ### RANDOM CLOTHING EVENTS ###
     call astoria_door_event
 
     call update_ast_uniform
 
     #call ast_chibi("stand","mid","base")
-
+    
     if one_of_ten < 4:
         call ast_main("Heya, [genie_name]!","tongue_silly","wink","base","mid",xpos="base",ypos="base")
     elif one_of_ten < 7:
@@ -37,13 +44,20 @@ label summon_astoria:
             else:
                 jump astoria_talk
                 
-        "-Spell Training-":
-            jump astoria_spell_training
-            
-        "{color=#858585}-Use a Spell-{/color}" if spells_locked:
-            call nar(">You have recently used an unforgivable curse!\n>Tonks will want to have a word with you before you can use another.")
+        "-Spell Training-" if snape_gave_spellbook:
+            if not astoria_book_intro_happened:
+                $ astoria_book_intro_happened = True
+                jump astoria_book_intro
+            else:
+                jump astoria_spell_training
+        "{color=#858585}-Spell Training-{/color}" if spells_unlocked and not snape_gave_spellbook:
+            call nar(">You will need to find a book for that.")
             jump astoria_requests
-        "-Use a Spell-" if not spells_locked:
+        "{color=#858585}-Hidden-{/color}" if not spells_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump astoria_requests
+            
+        "-Use a Spell-" if spells_unlocked and not spells_locked:
             label astoria_target_select:
             menu:
                 ">Choose a target."
@@ -61,17 +75,18 @@ label summon_astoria:
             label curse_susan:
                 menu:
                     ">Choose your curse."
-                    "-Imperio-" if susan_wardrobe_unlocked and not susan_imperio_influence:
+                    "-Imperio-" if astoria_spells[0] >= 1:
+                        jump imperio_spell_1
+                    "-Imperio Tempus-" if astoria_spells[0] >= 2:
+                        jump imperio_spell_2
+                    "-IMPERIO MAXIMUS-" if astoria_spells[0] >= 3:
+                        jump imperio_spell_3
+                    "-Imperio Tempo-" if susan_wardrobe_unlocked and not susan_imperio_influence:
+                        "Developer Note:" ">This is a temporary spell that will most likely get remove in the future.\n>It currently unlocks Susan's wardrobe for a short amount of time."
                         jump susan_imperio
-                    "{color=#858585}-Imperio-{/color}" if susan_wardrobe_unlocked and susan_imperio_influence:
+                    "{color=#858585}-Imperio Tempo-{/color}" if susan_wardrobe_unlocked and susan_imperio_influence:
                         call nar(">Susan is still under the influence of this curse!")
                         jump curse_susan
-                    "-Imperio 1-" if astoria_spells[0] >= 1:
-                        jump imperio_spell_1
-                    "-Imperio 2-" if astoria_spells[0] >= 2:
-                        jump imperio_spell_2
-                    "-Imperio 3-" if astoria_spells[0] >= 3:
-                        jump imperio_spell_3
                         
                     "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
                         call nar(">You haven't unlocked this spell yet.")
@@ -88,6 +103,13 @@ label summon_astoria:
                         
                     "-Back-":
                         jump astoria_target_select
+        "{color=#858585}-Use a Spell-{/color}" if tonks_unlocked and spells_locked:
+            call nar(">You have recently used an unforgivable curse!\n>Tonks will want to have a word with you before you can use another.")
+            jump astoria_requests
+        "{color=#858585}-Use a Spell-{/color}" if not tonks_unlocked:
+            call nar(">You'll need to find a way to deal with the Ministry first before casting any more curses!")
+            jump astoria_requests
+            
             
         "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
@@ -119,9 +141,9 @@ label summon_astoria:
             $ astoria_busy = True  
             
             if daytime:
-                jump day_main_menu
+                jump day_resume #Other return events can trigger after this!
             else:
-                jump night_main_menu
+                jump night_resume #Other return events can trigger after this!
                     
 
 label astoria_talk: 

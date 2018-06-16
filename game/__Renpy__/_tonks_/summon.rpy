@@ -64,7 +64,7 @@ label summon_tonks:
             $ astoria_busy = True
             $ tonks_busy = True
             
-            #ADD event in progress variable so Astoria returns during the evening.
+            $ astoria_tonks_event_in_progress = True
             
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu

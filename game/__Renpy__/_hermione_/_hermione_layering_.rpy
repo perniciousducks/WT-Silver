@@ -973,8 +973,11 @@ screen hermione_kneel:
     else:
         add "characters/hermione/body/kneel/kneel_base_2.png" xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio) #Add the base body
 
-    add hermione_body xpos hermione_head_xpos ypos hermione_head_ypos_offset
-    add hermione_tears xpos hermione_head_xpos ypos hermione_head_ypos_offset
+    add hermione_cheeks xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
+    add hermione_eyes xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
+    #add hermione_eyebrows xpos hermione_head_xpos ypos hermione_ypos zoom (1.0/scaleratio)
+    add hermione_tears xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
+    add hermione_mouth xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
     
     add "characters/hermione/body/kneel/kneel_hair.png" xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio) #Add the base body
 

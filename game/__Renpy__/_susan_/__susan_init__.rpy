@@ -149,6 +149,17 @@ label susan_init:
         $ susan_ears                = "characters/susan/accessories/ears/blank.png"
         $ sus_ears                    = "blank" 
 
+        
+        #Cum layers
+        $ susan_face_covered        = False
+        $ susan_face_cum            = "characters/susan/face/cum/cum_0.png"
+        
+        $ susan_body_covered        = False
+        $ susan_body_cum            = "characters/susan/face/cum/cum_3.png"
+        
+        $ susan_aftersperm          = False
+        $ susan_clothes_cum         = "characters/susan/face/cum/aftersperm.png"
+        
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 
     return

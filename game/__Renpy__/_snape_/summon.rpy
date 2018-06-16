@@ -136,27 +136,21 @@ label summon_snape:
                 "\"Never mind.\"":
                     jump snape_ready
 
-        "-Chit chat-" if sfmax and not chitchated_with_snape and not daytime: # sfmax - friendship with Snape maxed out.
-            $ chitchated_with_snape = True #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
-            $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
-            #$ snape_busy = True
-            jump snape_chitchat
-        "-Chit chat-" if daytime and not chitchated_with_snape: # sfmax - friendship with Snape maxed out.
-            $ chitchated_with_snape = True #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
-            $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
-            #$ snape_busy = True
-            jump snape_chitchat
+        "\"Talk-\"" if not chitchated_with_snape:
+            $ chitchated_with_snape = True
+            jump snape_talk
+        
         "\"Let's hang.\"" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
-                call not_today #Snape says: "I am busy tonight."
+                jump not_today #Snape says: "I am busy tonight."
 #            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
-#                call not_today #Snape says: "I am busy tonight."
+#                jump not_today #Snape says: "I am busy tonight."
             elif snape_friendship >= 88 and whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
-                call not_today #Snape says: "I am busy tonight."
+                jump not_today #Snape says: "I am busy tonight."
             else:
-                pass
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
+                
         "\"Never mind.\"":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -179,9 +173,7 @@ label summon_snape:
             else: 
                 call play_music("manatees") #Night Theme
                 jump night_main_menu
-    
-    
-    
+
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     

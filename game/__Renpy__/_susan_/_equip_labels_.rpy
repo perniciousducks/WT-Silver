@@ -22,6 +22,20 @@ label update_sus_uniform:
     $ susan_stockings      = "characters/susan/clothes/stockings/base/"+str(sus_stockings)+".png"
     $ susan_robe           = "characters/susan/clothes/robe/base/"+str(sus_robe)+".png"
     
+    call update_sus_body
+    
+    return
+    
+label update_sus_body:
+    hide screen susan_main
+    
+    if susan_wear_top:
+        $ susan_boobs               = "characters/susan/body/base/boobs_0.png" 
+    elif susan_wear_bra and not susan_wear_top:
+        $ susan_boobs               = "characters/susan/body/base/boobs_1.png" 
+    else:
+        $ susan_boobs               = "characters/susan/body/base/boobs_1.png" 
+        
     return
     
 #Hair equip.
@@ -33,8 +47,8 @@ label set_sus_hair(hair=None,color=None):
     if color != None:
         $ sus_hair_color   = color
         
-    $ susan_hair         = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+(sus_hair_color)+"_base.png"
-    $ susan_hair_shadow  = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+(sus_hair_color)+"_top.png"
+    $ susan_hair         = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_base.png"
+    $ susan_hair_shadow  = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_top.png"
     
     show screen susan_main
     

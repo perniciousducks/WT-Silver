@@ -22,15 +22,15 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 
 ## Current Team
 - **Mo**:		        Writing, coding and mod compilation
-- **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, bugfixing, some writing.
+- **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, some writing.
 - **Soggy**:        Our main Artist. You can support him [here](https://www.patreon.com/SoggyIllustrations).
-- **STG Anon**:		  Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
+- **STG Anon**:		  Coding
 - **Asease1**:		  Coding
 - **Johnny**:		    Writing
 - **Booom313**:		  Mobile port for Android. You can support him [here](https://www.patreon.com/booom313/).
-- **Sandmaster**:   Help with Discord, contests, and moderation.
-- **Magik**:        Help with Discord, contests, and moderation.
-- **Pinguino**:     Support, and being a Penguin.
+- **Sandmaster**:   Assitant Management, Networking, and moderation.
+- **Magik**:        Networking, Management, and Administration.
+- **Pinguino**:     Support, QA, being a Penguin.
 
 
 ## Additional Credits (In no particular order):

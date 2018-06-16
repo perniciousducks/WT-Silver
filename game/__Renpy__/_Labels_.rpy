@@ -121,6 +121,9 @@ label play_sound(sound=""):
     if sound in ["slap","slapping"]:
         $ renpy.play('sounds/slap_02.mp3')
 
+    if sound in ["kick","bump"]:
+        $ renpy.play('sounds/kick.ogg')
+        
     if sound in ["kiss","kissing"]:
         $ renpy.play('sounds/kiss.mp3')
         

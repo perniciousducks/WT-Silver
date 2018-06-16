@@ -3,12 +3,8 @@
 ### Snape Chitchat ###
 
 label snape_chitchat:
-#    if not chitchat_event_01_happened and tutoring_hermione_unlocked and days_without_an_event >=2:
-#        jump chitchat_event_01
  
 #    $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
-    
-    ### CHIT CHATS WITH SNAPE ###
 
     ### WHORING LEVEL 01 ###
     if whoring >= 0 and whoring <= 2:
@@ -463,5 +459,5 @@ label snape_chitchat:
             call sna_main("","snape_23")
     
 
-    jump snape_ready
+    return
     

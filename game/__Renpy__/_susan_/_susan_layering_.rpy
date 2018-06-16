@@ -28,7 +28,9 @@ screen susan_main:
     if susan_wear_panties and not susan_wear_bottom:
         add susan_panties xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the panties
     if susan_wear_garterbelt:
-        add susan_garterbelt xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+        add susan_garterbelt xpos susan_xpos ypos susan_ypos
+    if susan_wear_stockings:
+        add susan_stockings xpos susan_xpos ypos susan_ypos # Add the stockings
     if susan_wear_onepiece and not susan_wear_top and not susan_wear_robe:
         add susan_onepiece xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
     if susan_wear_bottom:
@@ -36,11 +38,19 @@ screen susan_main:
     if susan_wear_top:
         add susan_top xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the top
     if susan_wear_accs:
-        add susan_accs xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the accessory
-    if susan_wear_stockings:
-        add susan_stockings xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio) # Add the stockings
+        add susan_accs xpos susan_xpos ypos susan_ypos # Add the accessory
     if susan_wear_neckwear:
         add susan_neckwear xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+        
+    #Cum layers.
+    if susan_face_covered:
+        add susan_face_cum xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+    if susan_body_covered:
+        add susan_body_cum xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+    if susan_aftersperm:
+        add susan_clothes_cum xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
+        
+        
     if susan_wear_robe:
         add susan_robe xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/scaleratio)
         
@@ -69,7 +79,7 @@ label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
         elif xpos == "right":                   #Bit more to the right.
             $ susan_xpos = 400
             $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "wardrobe":
+        elif xpos in ["wardrobe","close"]:
             $ susan_xpos = 540
         else:
             $ susan_xpos = int(xpos)

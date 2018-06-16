@@ -96,12 +96,15 @@ with fade
 
 
 
-call points_changes #Makes changes in the Slytherin house points.
-call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of the houses) house points. (07_points_gry.rpy)
-# call snape_bonus # Not in use anymore.
+call points_changes #Makes house points changes.
 
 ### NIGHT REQUESTS ###
+if astoria_tonks_event_in_progress:
+    jump astoria_tonks_event
+    
+#EVENTS
 jump Night_Request_Block
+
 
 
 label night_resume:

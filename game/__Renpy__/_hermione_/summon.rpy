@@ -56,6 +56,8 @@ label summon_hermione:
             jump hat_intro_2
         "-Talk-":
             if not chitchated_with_her:
+                jump hermione_talk_branches
+                label hermione_talk_branches_return:
                 if mad <= 7:
                     $ chitchated_with_her = True 
                     call chit_chat

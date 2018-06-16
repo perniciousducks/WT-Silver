@@ -33,8 +33,8 @@ label set_ast_hair(hair=None,color=None):
     if color != None:
         $ ast_hair_color   = color
         
-    $ astoria_hair         = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+(ast_hair_color)+"_base.png"
-    $ astoria_hair_shadow  = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+(ast_hair_color)+"_top.png"
+    $ astoria_hair         = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_base.png"
+    $ astoria_hair_shadow  = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_top.png"
     
     show screen astoria_main
     

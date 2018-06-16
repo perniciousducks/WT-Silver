@@ -222,6 +222,7 @@ with fade
 
 $ day +=1
 
+call points_changes #Makes house points changes.
 
 ###4 Houses
 call FH_day
@@ -233,6 +234,10 @@ if days_since_cho == 4 and not cho_met:
 
 
 #EVENTS
+if day >= 25 and whoring >= 9 and not astoria_intro_completed: 
+    jump astoria_intro_branches #This jumps to day_resume if nothing happens!
+    
+label day_resume:
 
 if day == 7:
     call event_08 #Returns #Hermione shows up for the first time.

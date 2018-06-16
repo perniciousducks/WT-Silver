@@ -82,7 +82,7 @@ label letter_intro_hermione:
     
     call her_walk("mid","leave",2)
     
-    if astoria_intro_flag_1 == True:
+    if snape_on_the_lookout:
         m "I wonder if she'll find them before Snape..."
     else:
         m "I should probably go tell Snape as well..."
@@ -96,6 +96,7 @@ label letter_intro_snape:
     call sna_main("Really?","snape_03") #No xpos change.
     call sna_main("Why are you telling me?","snape_04")
     m "Apparently they've detected something called an \'unforgivable\' curse at the school..."
+    call play_sound("scratch")
     call sna_main("","snape_11")
     with hpunch
     pause.2
@@ -151,7 +152,7 @@ label astoria_captured_intro:
     pause.5
     
     call her_main("Get in here Astoria!","annoyed","angryL",xpos="base",ypos="base")
-    ast "No!"
+    ast "{size=+2}{b}No!{/b}{/size}"
     call her_main("Do you want to make this worse?","scream","closed",trans="hpunch")
     ast "no..."
     call nar(">Slowly, a small girl enters your office.")
@@ -160,12 +161,13 @@ label astoria_captured_intro:
     call her_main("","normal","angry")
     pause.2
     
+    call play_sound("door")
     call ast_main("...","pout","base","worried","R")
     m "..."
     m "Who's this?"
     call ast_main("My name is Astoria Greengrass, sir.","disgust","base","worried","mid",xpos="mid",ypos="base")
     m "And why are you here?"
-    call her_main("You asked me to bring you the person who cast the unforgivable curse sir.","soft","annoyed")
+    call her_main("You asked me to bring you the person who cast the unforgivable curse sir.","soft","annoyed",xpos="close",ypos="base")
     call her_main("Here she is.","grin","angry")
     m "I thought it would be some angsty teen who listens to death metal or something..."
     m "not some little girl..."
@@ -181,7 +183,7 @@ label astoria_captured_intro:
     m "Whatever... that still doesn't get you out of punishment."
     call ast_main("punishment? for what?","pout","wide","wide","wide")
     call her_main("You know what you did!","angry","angryCl")
-    call ast_main("I never casted Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!","pout","wide","worried","R")
+    call ast_main("I never cast Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!","pout","wide","worried","R")
     m "Miss Granger..."
     call her_main("I overheard her boasting about it to a group of slytherins in the library.","annoyed","concerned")
     call her_main("By the sounds of it she used Imperio to control another student.","annoyed","base")
@@ -217,7 +219,7 @@ label astoria_captured_intro:
     m "What was that?"
     call hide_blktone
     
-    call ast_main("I just casted Imperio on you, professor! Now you have to do everything I say!","grin","narrow","base","mid")
+    call ast_main("I just cast Imperio on you, professor! Now you have to do everything I say!","grin","narrow","base","mid")
     g4 "Did you just do it again? Another bloody curse... on me?"
     call ast_main("yes... but it should have... why aren't you...","worried","narrow","worried","mid")
     m "Ugh..."
@@ -311,8 +313,10 @@ label astoria_captured_intro:
     m "(This isn't what I signed on for...)"
 
     call give_reward(">You've unlocked the ability to summon Astoria to your office.","images/store/astoria_unlock_01.png")
-    $ astoria_unlocked = True
+
     $ astoria_busy = True
+    $ hermione_takes_classes = True
+    $ snape_busy = True
     
     jump day_main_menu
 
@@ -414,7 +418,7 @@ label tonks_intro_event: #occurs a day or two after the last event
     m "Truly."
     call ast_main("Is this about the imperio I cast...","pout","narrow","worried","down")
     call ast_main("I'm really sorry! I promise I won't ever cast it again!","scream","closed","worried","mid")
-    call ton_main("Really? It was you who casted the spell?","open","base","worried","L")
+    call ton_main("Really? It was you who cast the spell?","open","base","worried","L")
     call ton_main("but...","open","base","angry","down")
     call ton_main("but.......","open","base","raised","L")
     call ton_main("But you're so {size=+10}cute!{/size}","open","wide","wide","wide",trans="hpunch")
@@ -473,6 +477,8 @@ label tonks_intro_event: #occurs a day or two after the last event
     m "(I really need to clean this thing...)"
     m "asd"
 
+    $ astoria_busy = True
+    
     jump day_main_menu
 
 
@@ -495,7 +501,7 @@ label snape_spell_intro: #Snape tells genie that he has adjusted the magic shiel
     m "And this masking spell,... will it work?"
     call sna_main("It's an enormous magical force-field surrounding us, Genie.","snape_24")
     call sna_main("Hiding the castle and all that's in it from all non-magical beings. Making it disappear.","snape_24")
-    call sna_main("I was able to modify it to also shroud all unforgivable curses that are casted within it!","snape_23")
+    call sna_main("I was able to modify it to also shroud all unforgivable curses that are cast within it!","snape_23")
     call sna_main("Except for the deadly one, of course. The others are in my opinion quite harmless...","snape_09")
     call sna_main("You should know, magic in this world is closely monitored by the ministry of magic.","snape_01")
     m "And that should stop the ministry from coming here?"
@@ -508,10 +514,13 @@ label snape_spell_intro: #Snape tells genie that he has adjusted the magic shiel
     call sna_main("What? Well what's the most impressive thing you've done with magic then?","snape_25")
     m "I once changed the world into a desolate Arabian wasteland..."
     call sna_main("...","snape_09")
-    call sna_main("Wanna get drunk?","snape_02")
-    m "Do I!"
-    
-    jump snape_dates #Snape Genie drinking. Jumps to next day.
+    if daytime:
+        jump snape_ready
+    else:
+        call sna_main("Wanna get drunk?","snape_02")
+        m "Do I!"
+        
+        jump snape_dates #Snape Genie drinking. Jumps to next day.
 
 
     
@@ -558,7 +567,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("But I still don't understand, why would you want to see me cast a curse like that?","open","base","worried","mid")
     m "(Ugh...)"
     m "Because of your exceptional skill! Not everyone can just cast a curse like that!"
-    call ast_main("I suppose not... I was pretty angry when I casted it though...","pout","base","base","R")
+    call ast_main("I suppose not... I was pretty angry when I cast it though...","pout","base","base","R")
     call ast_main("I'm not sure if I could do it again...","open","wink","base","mid")
     m "Consider this a test then!"
     call ast_main("...","upset","base","worried","mid")
@@ -567,7 +576,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "Scout's honor."
     call ast_main("Well who do you want me to cast it on?","worried","base","base","mid")
     call ast_main("It didn't work the last time I tried it on you...","worried","base","base","R")
-    m "Who did you say you casted it on last time?"
+    m "Who did you say you cast it on last time?"
     call ast_main("Susan Bones, sir.","smile","base","base","mid")
     m "Let's just try that again, seeing as how we know that worked."
     call ast_main("What? You want me to cast a curse on another student? Again?","scream","wide","wide","wide")
@@ -735,9 +744,10 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "Unless?"
     call ast_main("Maybe if you made it worth my while...","grin","angry","angry","mid")
     call ast_main("Maybe I would be OK...","open","narrow","narrow","mid")
-    call ast_main("With making Susan dance with you...","open","narrow","narrow","R")
+    call ast_main("With making Susan dance for you...","open","narrow","narrow","R")
     m "And what sort of reward would that be?"
     call ast_main("I want points!","scream","closed","angry","mid",trans="hpunch")
+    m "(... here we go again...)"
     m "What's your house called?"
     call ast_main("Slytherin! You should know that!","pout","narrow","narrow","R")
     m "How about instead--"
@@ -786,6 +796,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","open","base","base","mid")
     call ast_main("But after you've asked to see Susy's boobs,... well...","open","base","base","L")
     
+    hide susan_main
     $ susan_wear_top = False
     call update_sus_uniform
     call sus_main("","base","base","base","mid")
@@ -821,13 +832,16 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     pause.5
     
     call set_sus_top("shirt_1") #Normal top.
+    with d3
     pause.8
     
     call play_sound("door")
     hide screen susan_main
     with d3
+    pause.2
     
-    call ast_main("","grin","angry","angry","mid")
+    call play_music("hermione_theme")
+    call ast_main("","grin","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
     pause.5
     
     m "Aw, but we were just getting to the best bit!"
@@ -842,6 +856,11 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     hide screen astoria_main
     hide screen bld1
     with d3
+    
+    call give_reward(">You've unlocked the ability to summon Susan to your office.","images/store/susan_unlock_01.png")
+    
+    $ astoria_busy = True
+    $ susan_busy = True
     
     jump day_main_menu
 
@@ -893,10 +912,14 @@ label snape_book_intro: #Have genie ask for a book of sex spells
     call sna_main("It'll take a fair bit of practice before they'll be able to give them a go.","snape_10")
     m "Thanks, even if she can't manage to cast them, the fact you made them should get her off my back."
     call sna_main("Will that be all Genie?","snape_09")
-    m "I guess... Unless you fancy a drink?"
-    call sna_main("I thought you'd never ask.","snape_02")
+    if daytime:
+        m "(...)"
+        jump snape_ready
+    else:
+        m "I guess... Unless you fancy a drink?"
+        call sna_main("I thought you'd never ask.","snape_02")
     
-    jump snape_dates #Snape Genie drinking. Jumps to next day.
+        jump snape_dates #Snape Genie drinking. Jumps to next day.
     
 
 
@@ -915,9 +938,13 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     call ton_main("It must mean that the wizard is concealing themselves to the ministries global detection spell system.","open","base","raised","mid")
     call ton_main("We have to evacuate the school until they're caught... We can't risk the death of a student...","open","base","angry","mid")
     m "Oh... I think those spells you were picking up on might have involved me..."
+    
+    stop music fadeout 1.0
     call ton_main("you can't mean...","base","wide","wide","wide")
     call ton_main("You're the dark wizard???","open","wide","wide","wide")
     m "I told you, I don't think you can say that anymore..."
+    
+    call play_music("hitman")
     call ton_main("THIS IS NO LAUGHING MATTER!","open","base","angry","mid")
     m "I'm not a \'dark\' wizard! the spells are occurring under my strict supervision."
     call ton_main("You mean you've been letting students cast unforgivable curses? And hiding it from the Ministry?","open","wide","wide","wide")
@@ -973,6 +1000,8 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     m "*gulp*"
     call ton_main("Unless...","open","base","raised","R")
     m "Unless what?"
+    
+    call play_music("hermione_theme")
     call ton_main("Do you have an opening for a defense against the dark arts teacher?","open","base","worried","mid")
     m "..."
     m "What?"
@@ -1044,7 +1073,6 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     m "Did I just become a pimp?"
     
     call give_reward(">You've unlocked the ability to summon Tonks to your office.","images/store/tonks_unlock_01.png")
-    $ tonks_unlocked = True
     $ tonks_busy = True
     
 
@@ -1055,7 +1083,7 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
 #ASTORIA TONKS FAVOUR INTRO. #Done
 label astoria_book_intro: #Tell Astoria that you have a book of spells as well as the pimping with Tonks
 
-    call ast_main("So have you finally managed to remember some cool spells?","grin","angry","angry","mid")
+    call ast_main("So have you finally managed to remember some cool spells?","grin","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
     call ast_main("Or is remembering stuff too hard for you now?","tongue_silly","angry","angry","mid")
     m "I'll have you know that I've got a whole book full of new spells for you to learn."
     call ast_main("Really?","happy","wide","wide","wide")

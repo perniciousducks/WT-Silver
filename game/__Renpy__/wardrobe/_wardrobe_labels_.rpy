@@ -33,7 +33,10 @@ label reset_wardrobe_vars:
 
     if active_girl == "hermione":
         $ wardrobe_hair_color         = h_hair_color
+    else:
+        $ wardrobe_hair_color         = "1"
     $ wardrobe_head_color             = "base"
+    $ wardrobe_uniform_color          = "base"
     $ wardrobe_tops_color             = "base"
     $ wardrobe_bottoms_color          = "base"
     $ wardrobe_other_clothings_color  = "base"

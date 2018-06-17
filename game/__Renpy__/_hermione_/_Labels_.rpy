@@ -559,7 +559,7 @@ label Night_Request_Block:
     if current_job == 4:
         jump slytherin_cheer_responses
 
-    if hermione_wear_ears == True:
+    if cat_ears_potion_return:
         jump potion_scene_1_1_2
 
     if transparency < 1 and transparent_quest:

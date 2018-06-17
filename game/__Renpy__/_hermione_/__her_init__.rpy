@@ -644,6 +644,7 @@ label her_clothing_lists_init: #Lists update at every game start!
 
 label her_progress_init:
 
+    #Update 1.3
     if not hasattr(renpy.store,'whoring') or reset_persistants:
     
         # Hermione levels
@@ -767,9 +768,14 @@ label her_progress_init:
         $ reward_her_pink_lipstick = False
         $ reward_her_black_lipstick = False
         
-        
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
-    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
+    
+    #Update 1.31
+    if not hasattr(renpy.store,'cat_ears_potion_return') or reset_persistants:
 
+        $ cat_ears_potion_return = False
+        
+        
+    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
+        
     return
 

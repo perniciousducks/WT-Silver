@@ -57,7 +57,7 @@ label potion_scene_1_1_1: #catears (keep in mind Genie is trying to transform he
     
     call her_walk("mid","leave",2) 
     
-    $ ears = True #Triggers Hermione return
+    $ cat_ears_potion_return = True #Triggers Hermione return
 
     #Equip Cat-Ears
     $ h_ears = "cat_ears"
@@ -96,7 +96,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
             
             call her_walk("mid","leave",2) 
             
-            $ ears = False #Triggers Hermione return
+            $ cat_ears_potion_return = False #Triggers Hermione return
             $ h_request_wear_ears = False
             $ hermione_wear_ears = False
             call update_her_uniform 
@@ -228,7 +228,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     hide screen blktone 
     with fade
 
-    $ ears = False #Triggers Hermione return
+    $ cat_ears_potion_return = False #Triggers Hermione return
     $ hermione_wear_ears = False
     call update_her_uniform 
 

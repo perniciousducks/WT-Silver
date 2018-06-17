@@ -2,7 +2,8 @@
 
 label luna_init:
     
-    if not hasattr(renpy.store,'luna_base') or reset_persistants:
+    #Update 1.3
+    if not hasattr(renpy.store,'luna_base') or reset_persistants or reset_luna_content:
 
         #Body
         $ luna_base              = "characters/luna/body/base/base_01.png" 
@@ -58,7 +59,8 @@ label luna_init:
 
 label luna_progress_init:
     
-    if not hasattr(renpy.store,'luna_known') or reset_persistants:
+    #Update 1.3
+    if not hasattr(renpy.store,'luna_known') or reset_persistants or reset_luna_content:
 
         $ hat_known = False
         $ luna_known = False
@@ -79,7 +81,9 @@ label luna_progress_init:
         $ luna_addicted = False
         $ luna_herm_talk = False
 
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
+    #Update 1.31
+    if not hasattr(renpy.store,'reset_luna_content') or reset_persistants or reset_luna_content:
+        $ reset_luna_content = False
 
     return
 

@@ -1545,7 +1545,7 @@ label l_tutoring:
         
         ###MAKE HER WEAR JUST A ROBE
         $ h_robe = "gryff_robe_gap"
-        $ hermione_robe = "characters/hermione/clothes/robe/"+str(h_robe)+".png"
+        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
         call h_action("naked") #Removes all clothes.
         $ hermione_wear_robe = True
         call update_chibi_uniform 
@@ -1567,7 +1567,7 @@ label l_tutoring:
         
         hide screen hermione_main
         $ h_robe = "gryff_robe_gap_wide"
-        $ hermione_robe = "characters/hermione/clothes/robe/"+str(h_robe)+".png"
+        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
         call her_main("","open","squint",cheeks="blush") 
         call ctc 
         
@@ -1578,7 +1578,7 @@ label l_tutoring:
         
         hide screen hermione_main
         $ h_robe = "gryff_robe_off"
-        $ hermione_robe = "characters/hermione/clothes/robe/"+str(h_robe)+".png"
+        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
         call her_main("","base","closed",cheeks="blush",trans="d5") 
         call ctc 
         
@@ -1587,7 +1587,7 @@ label l_tutoring:
 
         hide screen hermione_main
         $ h_robe = "gryff_robe_gap_wide"
-        $ hermione_robe = "characters/hermione/clothes/robe/"+str(h_robe)+".png"
+        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
 
         call her_main("Alright then, can we start the lesson now?","smile","angry",cheeks="blush") 
         m "Maybe, I don't know... do you like butterbeer?"

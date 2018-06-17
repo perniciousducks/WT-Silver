@@ -240,16 +240,13 @@ label cupboard:
 
 
         "-Reset ALL Luna content-":
-            $ hat_known = False
+            $ reset_luna_content = True
             call luna_init 
+            call luna_progress_init 
+            $ reset_luna_content = False
             ">Luna content reset!"
             jump cupboard
 
-        #"-Bugfix: Reset Hermione-":
-        #    $ reset_persistants = True
-        #    "Save and reload for Hermione to reset!"
-        #    jump cupboard
-        
         "-Never mind-":
             jump day_main_menu
 

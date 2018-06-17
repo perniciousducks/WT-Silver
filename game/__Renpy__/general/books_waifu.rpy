@@ -242,7 +242,7 @@ label waifu_completed:
         if not found_dahrs_ticket_once:
             m "Hm...?"
             m "What is that...? A bookmark?"
-            $ the_gift = "01_hp/18_store/06.png" # The DAHR's ticket.
+            $ the_gift = "images/store/06.png" # The DAHR's ticket.
             show screen gift
             with d3
             $ renpy.play('sounds/win2.mp3') #Sound of finding an item.

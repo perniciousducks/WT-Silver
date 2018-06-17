@@ -242,13 +242,7 @@ label waifu_completed:
         if not found_dahrs_ticket_once:
             m "Hm...?"
             m "What is that...? A bookmark?"
-            $ the_gift = "01_hp/18_store/06.png" # The DAHR's ticket.
-            show screen gift
-            with d3
-            $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
-            ">You found a DAHR's voucher."
-            hide screen gift
-            with d3
+            call give_reward(">You found a DAHR's voucher.","images/store/06.png")
             m "Hm..."
             $ vouchers += 1 #Shows the amount of DAHR's vouchers in your possession.
             $ found_dahrs_ticket_once = True # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.

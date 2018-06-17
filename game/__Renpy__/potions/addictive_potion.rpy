@@ -355,11 +355,17 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     call hide_blkfade 
     
     $ hermione_main_zorder = 5
+    
     $ hermione_sleeping = True
-
+    call music_block
     jump night_main_menu
     
-    label potion_scene_7: #hyper sensitivity potion
+    
+    
+    
+    
+    
+label potion_scene_7: #hyper sensitivity potion
     m "I'd like you to drink a potion today."
     her "Alright then."
     m "Just like that? No putting up a fight or demanding to know what it is?"
@@ -795,6 +801,7 @@ label potion_scene_3_3_1: #Hypno potion
     
     call reset_hermione_main 
     
+    $ hermione_takes_classes = True
     call music_block 
     jump day_main_menu
       
@@ -1006,5 +1013,7 @@ label potion_scene_3_4_1:
     show screen genie
     hide screen blkfade
     with d3
+    
     $ hermione_takes_classes = True
+    call music_block
     jump day_main_menu

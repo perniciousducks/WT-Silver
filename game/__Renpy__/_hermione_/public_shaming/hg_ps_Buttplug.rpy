@@ -406,15 +406,10 @@ label hg_ps_Buttplug:
     $ hg_ps_Buttplug_OBJ.inProgress = True
     
     jump hg_pr_transition_block
-    if buttplug_size == 2:
-        
-        call set_h_buttplug("plug_b_on") #Updates clothing and body.
-        
-    if buttplug_size == 3:
-        
-        call set_h_buttplug("plug_c_on") #Updates clothing and body.
-        
-    jump day_main_menu
+    
+    
+    
+    
     
 label hg_ps_Buttplug_complete:
     

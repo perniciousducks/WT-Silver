@@ -239,6 +239,8 @@ label __init_variables:
     #Reset Persistants
     if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
         $ reset_persistants            = False
+    if not hasattr(renpy.store,'reset_luna_content'):
+        $ reset_luna_content = False
 
     #Genie Init
     if not hasattr(renpy.store,'genie_sprite_base'): #important!

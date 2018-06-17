@@ -81,9 +81,7 @@ label luna_progress_init:
         $ luna_addicted = False
         $ luna_herm_talk = False
 
-    #Update 1.31
-    if not hasattr(renpy.store,'reset_luna_content') or reset_persistants or reset_luna_content:
-        $ reset_luna_content = False
+
 
     return
 

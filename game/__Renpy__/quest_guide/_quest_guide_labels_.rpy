@@ -14,6 +14,7 @@ label open_guide:
     call screen guide
     label guide_return_point:
         $ renpy.play('sounds/scroll.mp3')
+        hide screen bld1
         call hide_blktone 
         call screen main_room_menu
     

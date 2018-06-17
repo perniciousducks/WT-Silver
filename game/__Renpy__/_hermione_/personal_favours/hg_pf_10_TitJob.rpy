@@ -148,12 +148,14 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         else:
             call h_action("lift_breasts") 
 
-        $ ccg_folder = "herm_boob"
-        $ ccg1 = 5
-        $ ccg2 = "blank"
-        $ ccg3 = "blank"
-        show screen ccg
-        with d3
+        if use_cgs:
+            $ ccg_folder = "herm_boob"
+            $ ccg1 = 5
+            $ ccg2 = "blank"
+            $ ccg3 = "blank"
+            show screen ccg
+            with d3
+        
         call nar(">Hermione clumsily wraps her tits around your cock...") 
         m "That's a start. Now, up and down..."
         call her_head("Alright...","angry","worriedCl",emote="05",xpos="base",ypos="high") 
@@ -507,12 +509,15 @@ label start_titfuck:
         call gen_chibi("titjob","mid","base") 
         
         ">Hermione wraps her plump tits around your cock..."
-        $ ccg_folder = "herm_boob"
-        $ ccg1 = 6
-        $ ccg2 = "blank"
-        $ ccg3 = "blank"
-        show screen ccg
-        with d3
+        
+        if use_cgs:
+            $ ccg_folder = "herm_boob"
+            $ ccg1 = 6
+            $ ccg2 = "blank"
+            $ ccg3 = "blank"
+            show screen ccg
+            with d3
+            
         call h_action("lift_breasts","skip_update") 
 
         stop music fadeout 3.0

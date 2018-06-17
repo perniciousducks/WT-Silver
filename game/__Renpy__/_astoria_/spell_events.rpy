@@ -5,7 +5,7 @@
 
 
 label susan_imperio:
-    call ast_main("Alright, [ast_genie_name].","smile","base","base","mid") 
+    call ast_main("Alright, [ast_genie_name].","smile","base","base","mid",xpos="base",ypos="base",trans="fade") 
     call ast_main("I will bring the [ast_susan_name]!","grin","angry","angry","mid") 
     call blkfade 
     
@@ -17,17 +17,18 @@ label susan_imperio:
     call sus_main("You wanted to see me?","upset","base","worried","down") 
     
     m "Yes, Miss Bones, if you could just stand there in the middle while--"
-    call ast_main("Wait a second, [ast_genie_name],...","scream","closed","base","mid",trans="hpunch") 
+    call ast_main("Wait a second, [ast_genie_name],...","scream","closed","base","mid",xpos="close",ypos="base",trans="hpunch") 
     call ast_main("50 points, remember!","grin","angry","angry","mid") 
     m "..."
     m "Right..."
     m "Alright... 50 points to \"Slytherin\"!"
     $ slytherin +=50
     call ast_main("Thank you!","grin","happyCl","base","mid") 
-    pause.5
+    hide screen astoria_main
+    with d3
+    call ast_main("","grin","angry","angry","L",xpos="base",ypos="base")
     call blkfade 
                     
-    call ast_main("","grin","angry","angry","L",xpos="base",ypos="base") #uses the fade from the next line.
     hide screen blkfade
     call sus_main("What are you--","open","wide","worried","R",xpos="mid",ypos="base",trans="fade") 
                     

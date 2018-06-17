@@ -232,12 +232,15 @@ label potion_scene_11_2: #Milking potion part 2
     $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
     with hpunch
     pause.5    
-    $ ccg_folder = "herm_boob"
-    $ ccg1 = 1
-    $ ccg2 = "blank"
-    $ ccg3 = "blank"
-    show screen ccg
-    with d3
+    
+    if use_cgs:
+        $ ccg_folder = "herm_boob"
+        $ ccg1 = 1
+        $ ccg2 = "blank"
+        $ ccg3 = "blank"
+        show screen ccg
+        with d3
+        
     call nar(">You notice hermione's breasts swell for the final time.") 
     call her_head("!!!","upset","worriedCl",cheeks="blush",xpos="base",ypos="base") 
     pause

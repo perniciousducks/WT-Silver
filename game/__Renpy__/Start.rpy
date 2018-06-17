@@ -424,7 +424,7 @@ label start_ht:
                 $ avogadro_law = False
     
     menu:
-        "Use chibi animations or image sprites." ">This will only affect two scenes.\n>This can be changed in the cupboard menu."
+        "Use chibi animations or image sprites." ">This will only affect a couple of scenes.\n>This can be changed in the cupboard menu."
         "-Use chibis-":
             $ use_cgs = False
         "-Use sprites-":

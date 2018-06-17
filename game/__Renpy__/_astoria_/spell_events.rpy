@@ -118,7 +118,7 @@ label imperio_spell_1:
     hide screen susan_main
     $ susan_wear_top = False
     call update_sus_uniform 
-    with d3
+    call sus_main("","upset","closed","worried","mid")
     pause.5
     
     m "Oh no, Miss Bones!"
@@ -142,7 +142,7 @@ label imperio_spell_1:
     hide screen susan_main
     $ susan_wear_bra = False
     call update_sus_uniform 
-    with d3
+    call sus_main("","upset","closed","worried","mid") 
     call ctc 
     
     g4 "{size=+10}Nice!{/size}"

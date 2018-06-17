@@ -695,7 +695,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("glasses_color_choice",wardrobe_head_color),SetVariable("head_accessory_choice",wr_glasses[i]), Jump("equip_head_accessory")]
-                    add "characters/"+str(active_girl)+"/accessories/glasses/"+str(wardrobe_head_color)+"/"+wr_glasses[i]+".png" xpos -165+(90*col) ypos (-10+92+(92*row))
+                    add "characters/"+str(active_girl)+"/accessories/glasses/"+str(wardrobe_head_color)+"/"+wr_glasses[i]+".png" xpos -165+(90*col) ypos (-10+92+(92*row)) zoom 1.0/scaleratio
 
             #Ears
             if wardrobe_head_category == 3:

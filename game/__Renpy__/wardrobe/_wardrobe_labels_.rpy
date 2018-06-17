@@ -23,6 +23,7 @@ label reset_wardrobe_vars:
     $ wardrobe_page_choice = 0
     $ wardrobe_active = 1                 #1=True #hides dissolve from "her_main"
     $ wardrobe_toggle_page = 0            #default page
+    $ wardrobe_head_category = 0          #default page
     $ wardrobe_tops_category = 0          #default page
     $ wardrobe_bottoms_category = 0       #default page
     $ wardrobe_stockings_category = 0     #default page

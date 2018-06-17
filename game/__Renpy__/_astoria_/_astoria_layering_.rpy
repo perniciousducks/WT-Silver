@@ -27,19 +27,19 @@ screen astoria_main:
     if astoria_wear_panties and not astoria_wear_bottom:
         add astoria_panties xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the panties
     if astoria_wear_garterbelt:
-        add astoria_garterbelt xpos astoria_xpos ypos astoria_ypos
+        add astoria_garterbelt xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
     if astoria_wear_stockings:
-        add astoria_stockings xpos astoria_xpos ypos astoria_ypos # Add the stockings
+        add astoria_stockings xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio) # Add the stockings
     if astoria_wear_onepiece and not astoria_wear_top and not astoria_wear_robe:
-        add astoria_onepiece xpos astoria_xpos ypos astoria_ypos
+        add astoria_onepiece xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
     if astoria_wear_bottom and not astoria_wear_robe:
         add astoria_skirt xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the skirt
     if astoria_wear_top and not astoria_wear_robe:
         add astoria_top xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the top
     if astoria_wear_accs:
-        add astoria_accs xpos astoria_xpos ypos astoria_ypos # Add the accessory
+        add astoria_accs xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio) # Add the accessory
     if astoria_wear_neckwear:
-        add astoria_neckwear xpos astoria_xpos ypos astoria_ypos
+        add astoria_neckwear xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
     if astoria_wear_robe:
         add astoria_robe xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
         

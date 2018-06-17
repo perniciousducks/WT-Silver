@@ -5191,7 +5191,7 @@ label luna_favour_6: #luna and hermione blowjob
         ">Eventually Luna kneels before you, gazing up into your eyes while hermione stands behind her, examining her actions."
         call her_main("that's it... eye contact is very important.","disgust","down_raised") 
         $ ccg_folder = "luna_bj"
-        $ ccg2 = "herm"
+        $ ccg1 = "herm"
         $ ccg3 = "gene"
         $ ccg2 = 1
         show screen ccg
@@ -5480,7 +5480,7 @@ label luna_favour_6: #luna and hermione blowjob
         ">Eventually Luna kneels before you, gazing up into your eyes while hermione stands behind her, examining her actions."
         her "remember to look him in the eye... he loves that."
         $ ccg_folder = "luna_bj"
-        $ ccg2 = "herm"
+        $ ccg1 = "herm"
         $ ccg3 = "gene"
         $ ccg2 = 1
         show screen ccg

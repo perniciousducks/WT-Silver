@@ -200,7 +200,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'hg_ps_PantyThief_OBJ'): #important!
         $ hg_ps_PantyThief_OBJ = public_shaming()
-    $ hg_ps_PantyThief_OBJ.menu_text = "Panty Theif"
+    $ hg_ps_PantyThief_OBJ.menu_text = "Panty Thief"
     $ hg_ps_PantyThief_OBJ.start_label = "hg_ps_PantyThief"
     $ hg_ps_PantyThief_OBJ.complete_label = "hg_ps_PantyThief_complete"
     

@@ -9,7 +9,7 @@ label door:
             hide screen genie
             show screen chair_left #Empty chair near the desk.
             show screen chair_right
-            call gen_chibi("stand","door","base") from _call_gen_chibi_110
+            call gen_chibi("stand","door","base") 
             show screen desk
             with Dissolve(0.5)
             m "A sturdy looking door..."
@@ -19,7 +19,7 @@ label door:
                 "-Knock on the door-":
                     show screen blktone8
                     with d3
-                    call play_sound("knocking") from _call_play_sound_185
+                    call play_sound("knocking") 
                     "*Knock-knock-knock*"
                     "..................."
                     hide screen blktone8
@@ -52,7 +52,7 @@ label door:
                     m "I think I'll let it be for now..."
                     pass
 
-            call gen_chibi("hide") from _call_gen_chibi_111
+            call gen_chibi("hide") 
             hide screen chair_left #Empty chair near the desk.
             hide screen desk
             show screen genie
@@ -72,24 +72,24 @@ label door:
                 
         "{color=#858585}-Summon Astoria-{/color}" if astoria_busy and astoria_unlocked:
             if daytime:
-                call nar(">Astoria is taking classes.") from _call_nar_554
+                call nar(">Astoria is taking classes.") 
                 jump day_main_menu
             else:
-                call nar(">Astoria is already asleep.") from _call_nar_555
+                call nar(">Astoria is already asleep.") 
                 jump night_main_menu
         
         "-Summon Astoria-" if not astoria_busy and astoria_unlocked: #Summoning after intro events done.
-            call play_music("chipper_doodle") from _call_play_music_207
+            call play_music("chipper_doodle") 
             jump summon_astoria
             
             
 
         "{color=#858585}-Summon Susan-{/color}" if susan_unlocked and susan_busy:
             if daytime:
-                call nar(">Susan is taking classes.") from _call_nar_556
+                call nar(">Susan is taking classes.") 
                 jump day_main_menu
             else:
-                call nar(">Susan is already asleep.") from _call_nar_557
+                call nar(">Susan is already asleep.") 
                 jump night_main_menu
         
         "-Summon Susan-" if susan_unlocked and not susan_busy:
@@ -99,13 +99,13 @@ label door:
             
         "{color=#858585}-Summon Hermione-{/color}" if summoning_hermione_unlocked and hermione_takes_classes or hermione_sleeping:
             if hermione_takes_classes:
-                call nar(">Hermione is taking classes.") from _call_nar_558
+                call nar(">Hermione is taking classes.") 
                 $ cust_char_1_enabled = True
                 $ cust_char_2_enabled = True
                 $ cust_char_3_enabled = True
                 jump day_main_menu
             elif hermione_sleeping:
-                call nar(">Hermione is already asleep.") from _call_nar_559
+                call nar(">Hermione is already asleep.") 
                 jump night_main_menu
         
         "-Summon Hermione-" if summoning_hermione_unlocked and not hermione_takes_classes and not hermione_sleeping:
@@ -115,47 +115,47 @@ label door:
                 
         "{color=#858585}-Summon Luna-{/color}" if luna_known and luna_unlocked and luna_busy:
             if daytime:
-                call nar(">Luna is taking classes.") from _call_nar_560
+                call nar(">Luna is taking classes.") 
                 jump day_main_menu
             else: 
-                call nar(">Luna is already asleep.") from _call_nar_561
+                call nar(">Luna is already asleep.") 
                 jump night_main_menu
             
         "-Summon Luna-" if luna_known and luna_unlocked and not luna_busy:
-            call play_music("dark_fog") from _call_play_music_208 # LUNA'S THEME (placeholder probably)
+            call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
             jump luna_door
 
             
             
         "{color=#858585}-Summon Cho-{/color}" if cho_met and cho_busy:
             if daytime:
-                call nar(">Cho is taking classes.") from _call_nar_562
+                call nar(">Cho is taking classes.") 
                 jump day_main_menu
             else: 
-                call nar(">Cho is already asleep.") from _call_nar_563
+                call nar(">Cho is already asleep.") 
                 jump night_main_menu
             
         "-Summon Cho-" if cho_met and not cho_busy:
-            call play_music("chipper_doodle") from _call_play_music_209 # CHO'S THEME (placeholder probably)
+            call play_music("chipper_doodle") # CHO'S THEME (placeholder probably)
             jump cho_menu
                   
 
                   
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:
-            call nar(">Professor Snape is unavailable.") from _call_nar_564
+            call nar(">Professor Snape is unavailable.") 
             if daytime:
                 jump day_main_menu
             else: 
                 jump night_main_menu
             
         "-Summon Snape-" if hanging_with_snape and not snape_busy:
-            call play_music("dark_fog") from _call_play_music_210 # SNAPE'S THEME
+            call play_music("dark_fog") # SNAPE'S THEME
             jump summon_snape
             
             
             
         "{color=#858585}-Summon Tonks-{/color}" if tonks_unlocked and tonks_busy:
-            call nar(">Tonks is unavailable.") from _call_nar_565
+            call nar(">Tonks is unavailable.") 
             if daytime:
                 jump day_main_menu
             else:

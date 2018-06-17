@@ -314,7 +314,7 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
         pass
 
     elif action == "leave":
-        call play_sound("door") from _call_play_sound_181
+        call play_sound("door") 
         with d3
         pause.5
 
@@ -377,7 +377,7 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
         $ genie_chibi_xpos = walk_xpos2
         hide screen genie_walk
         if pos2 == "leave":
-            call play_sound("door") from _call_play_sound_182
+            call play_sound("door") 
             with d3
             pause.5
         if loiter:

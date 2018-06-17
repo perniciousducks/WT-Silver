@@ -426,8 +426,8 @@ label tutoring:
     her_wOneopen "(Hermione grits her teeth more and furrows her brow.)"
     her_wOneopen "Ih gnoch huerking!"
     m "I beg your pardon?"
-    call her_head("(She takes the wand from her mouth.)","annoyed","frown",cheeks="blush") from _call_her_head_961
-    call her_head("Professor, it’s just not working.  I don’t feel anything at all!") from _call_her_head_962
+    call her_head("(She takes the wand from her mouth.)","annoyed","frown",cheeks="blush") 
+    call her_head("Professor, it’s just not working.  I don’t feel anything at all!") 
     m "Please hand me your wand, Miss Granger.  I want to examine it again."
     her "(Hermione hands the wand over)"
     m "Alas, I see no change whatsoever in the wand’s aura.  There are now some teeth marks, I'm afraid."

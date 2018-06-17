@@ -6,7 +6,7 @@ label cupboard:
             $ cupboard_examined = True
             show screen chair_left #Empty chair near the desk.
             hide screen genie
-            call gen_chibi("stand","behind_desk","base",flip=True) from _call_gen_chibi_44
+            call gen_chibi("stand","behind_desk","base",flip=True) 
             show screen desk
             with Dissolve(0.5)
 
@@ -23,7 +23,7 @@ label cupboard:
         "-Rummage through the cupboard-" if not searched and not day == 1:
             jump rummaging
         "{color=#858585}-Rummage through the cupboard-{/color}" if searched and not day == 1:
-            call already_did from _call_already_did #Message that says that you have searched the cupboard today already.
+            call already_did #Message that says that you have searched the cupboard today already.
             jump cupboard
         
         "-Your possessions-" if not day == 1:
@@ -120,7 +120,7 @@ label cupboard:
                     $ the_gift = "images/store/30.png" # FISHNETS.
                     show screen gift
                     with d3
-                    call nets_text from _call_nets_text
+                    call nets_text 
                     hide screen gift
                     with d3
                     jump possessions
@@ -241,7 +241,7 @@ label cupboard:
 
         "-Reset ALL Luna content-":
             $ hat_known = False
-            call luna_init from _call_luna_init_3
+            call luna_init 
             ">Luna content reset!"
             jump cupboard
 
@@ -370,69 +370,69 @@ label rummaging:
 label rum_rewards:
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             if one_of_tw == 20:
-                call rum_block(PlushOwl) from _call_rum_block
+                call rum_block(PlushOwl) 
             elif one_of_tw == 1 or one_of_tw == 2:
-                call rum_block(Lollipop) from _call_rum_block_1
+                call rum_block(Lollipop) 
             elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18:
-                call rum_block("gold1") from _call_rum_block_2
+                call rum_block("gold1") 
             elif one_of_tw >= 10 and one_of_tw <= 16:
-                call rum_block("wine") from _call_rum_block_3
+                call rum_block("wine") 
             elif one_of_tw == 17:
-                call rum_block(Chocolate) from _call_rum_block_4
+                call rum_block(Chocolate) 
             elif one_of_tw == 19:
-                call rum_block(SexyLingerie) from _call_rum_block_5
+                call rum_block(SexyLingerie) 
         
         
         ### EVENT LEVEL 02 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 6 and whoring <= 11: # Lv 3-4. 
             if one_of_tw == 20:
-                call rum_block(PornMagazines) from _call_rum_block_6
+                call rum_block(PornMagazines) 
             elif one_of_tw == 1 or one_of_tw ==2:
-                call rum_block(Lollipop) from _call_rum_block_7
+                call rum_block(Lollipop) 
             elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:
-                call rum_block("gold2") from _call_rum_block_8
+                call rum_block("gold2") 
             elif one_of_tw >= 11 and one_of_tw <= 15:
-                call rum_block("wine") from _call_rum_block_9
+                call rum_block("wine") 
             elif one_of_tw == 16:
-                call rum_block(SexyLingerie) from _call_rum_block_10
+                call rum_block(SexyLingerie) 
             elif one_of_tw == 17:
-                call rum_block(Chocolate) from _call_rum_block_11
+                call rum_block(Chocolate) 
             elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster) from _call_rum_block_12
+                call rum_block(ViktorKrumPoster) 
         
         
         ### EVENT LEVEL 03 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             if one_of_tw == 20:
-                call rum_block(Vibrator) from _call_rum_block_13
+                call rum_block(Vibrator) 
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(PackOfCondoms) from _call_rum_block_14
+                call rum_block(PackOfCondoms) 
             elif one_of_tw == 5 or one_of_tw == 6:
-                call rum_block("gold1") from _call_rum_block_15 #Bugfix? Previously was just (1). 
+                call rum_block("gold1") #Bugfix? Previously was just (1). 
             elif one_of_tw >= 7 and one_of_tw <= 14:
-                call rum_block("gold3") from _call_rum_block_16
+                call rum_block("gold3") 
             elif one_of_tw >= 15 and one_of_tw <= 18:
-                call rum_block("wine") from _call_rum_block_17
+                call rum_block("wine") 
             elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster) from _call_rum_block_18
+                call rum_block(ViktorKrumPoster) 
         
         
         ### EVENT LEVEL 04 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 18: # Lv 7+  
             if one_of_tw == 20:
-                call rum_block(SpeedStick2000) from _call_rum_block_19
+                call rum_block(SpeedStick2000) 
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(Butterbeer) from _call_rum_block_20
+                call rum_block(Butterbeer) 
             elif one_of_tw >= 5 and one_of_tw <= 8:
-                call rum_block(Chocolate) from _call_rum_block_21
+                call rum_block(Chocolate) 
             elif one_of_tw >= 9 and one_of_tw <= 16:
-                call rum_block("gold4") from _call_rum_block_22
+                call rum_block("gold4") 
             elif one_of_tw == 17:
-                call rum_block(AnalPlugs) from _call_rum_block_23
+                call rum_block(AnalPlugs) 
             elif one_of_tw == 18:
-                call rum_block(ViktorKrumPoster) from _call_rum_block_24
+                call rum_block(ViktorKrumPoster) 
             elif one_of_tw == 19:
-                call rum_block(ThestralStrapon) from _call_rum_block_25
+                call rum_block(ThestralStrapon) 
         
         show screen genie
         hide screen rum_screen

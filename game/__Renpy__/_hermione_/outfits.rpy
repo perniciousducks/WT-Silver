@@ -219,7 +219,7 @@ label set_hermione_outfit(outfit):
     show screen blkfade
     hide screen hermione_main
     with d3
-    call h_outfit_OBJ(outfit) from _call_h_outfit_OBJ_4
+    call h_outfit_OBJ(outfit) 
     pause .5
     hide screen blkfade
     with d5
@@ -228,8 +228,8 @@ label set_hermione_outfit(outfit):
 label h_outfit_OBJ(outfit):
     if outfit == None:
         $ hermione_costume = False
-        call update_her_uniform from _call_update_her_uniform_20
-        call h_update_hair from _call_h_update_hair_9
+        call update_her_uniform 
+        call h_update_hair 
     else:
         $ hermione_costume = True
         
@@ -238,10 +238,10 @@ label h_outfit_OBJ(outfit):
         if hermione_use_action and hermione_action in hermoine_outfit_GLBL.actions:
             pass
         else:
-            call h_action("None") from _call_h_action_16
+            call h_action("None") 
 
-        call update_her_uniform from _call_update_her_uniform_21
-        call h_update_hair from _call_h_update_hair_10
+        call update_her_uniform 
+        call h_update_hair 
         
         if transparency < 1 or not hermione_wear_top:
             if not hermione_perm_expand:

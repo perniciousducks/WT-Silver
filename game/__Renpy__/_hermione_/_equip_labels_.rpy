@@ -7,23 +7,23 @@ label set_her_hair(hair_style="A", color=1): #Not in use
     hide screen hermione_main
     $ h_hair_style = hair_style
     $ h_hair_color = color
-    call update_her_hair from _call_update_her_hair_1                     #Hermione_layering.rpy
+    call update_her_hair #Hermione_layering.rpy
     show screen hermione_main
     return
 
 label set_her_hair_style(hair_style = "A"):
     hide screen hermione_main
     $ h_hair_style = hair_style
-    call update_her_hair from _call_update_her_hair_2                     #Hermione_layering.rpy
-    call update_her_uniform from _call_update_her_uniform_46                  #updates cat ears
+    call update_her_hair #Hermione_layering.rpy
+    call update_her_uniform #updates cat ears
     show screen hermione_main
     return
     
 label set_her_hair_color(hair_color = 1):
     hide screen hermione_main
     $ h_hair_color = hair_color
-    call update_her_hair from _call_update_her_hair_3                     #Hermione_layering.rpy
-    call update_her_uniform from _call_update_her_uniform_47                  #updates cat ears
+    call update_her_hair #Hermione_layering.rpy
+    call update_her_uniform #updates cat ears
     show screen hermione_main
     return
 
@@ -41,7 +41,7 @@ label set_h_makeup(makeup = ""):
     else:
         $ h_request_wear_makeup = True
         $ hermione_wear_makeup = True
-    call update_her_uniform from _call_update_her_uniform_48
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -56,7 +56,7 @@ label set_h_glasses(glasses="", color=""):
         $ hermione_wear_glasses = True
         $ h_glasses = glasses
         $ h_glasses_color = color
-    call update_her_uniform from _call_update_her_uniform_49
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -71,8 +71,8 @@ label set_h_ears(ears=""):
         $ hermione_wear_ears = True
         $ h_ears = ears
         if h_ears == "elf_ears":
-            call set_her_hair_style("B") from _call_set_her_hair_style
-    call update_her_uniform from _call_update_her_uniform_50
+            call set_her_hair_style("B") 
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -86,7 +86,7 @@ label set_h_hat(hat=""):
         $ h_request_wear_hat = True
         $ hermione_wear_hat = True
         $ h_hat = hat
-    call update_her_uniform from _call_update_her_uniform_51
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -99,7 +99,7 @@ label set_h_top(top="", color=""):
         $ hermione_wear_bottom = True
     $ h_top = top
     $ h_top_color = color
-    call update_her_uniform from _call_update_her_uniform_52
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -112,7 +112,7 @@ label set_h_bottom(bottom="", color=""):
         $ hermione_wear_top = True
     $ h_skirt = bottom
     $ h_skirt_color = color
-    call update_her_uniform from _call_update_her_uniform_53
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -126,7 +126,7 @@ label set_h_bra(bra="", color=""):
     else:
         $ h_bra = bra
         $ h_bra_color = color
-    call update_her_uniform from _call_update_her_uniform_54
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -141,7 +141,7 @@ label set_h_onepiece(onepiece="", color=""):
         $ hermione_wear_onepiece = True
         $ h_onepiece = onepiece
         $ h_onepiece_color = color
-    call update_her_uniform from _call_update_her_uniform_55
+    call update_her_uniform 
     show screen hermione_main
     return
     
@@ -155,7 +155,7 @@ label set_h_panties(panties="", color=""):
     else:
         $ h_panties = panties
         $ h_panties_color = color
-    call update_her_uniform from _call_update_her_uniform_56
+    call update_her_uniform 
     show screen hermione_main
     return
     
@@ -170,7 +170,7 @@ label set_h_garterbelt(garterbelt="", color=""):
         $ hermione_wear_garterbelt = True
         $ h_garterbelt = garterbelt
         $ h_garterbelt_color = color
-    call update_her_uniform from _call_update_her_uniform_57
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -185,7 +185,7 @@ label set_h_neckwear(neck="", color=""):
         $ hermione_wear_neckwear = True
         $ h_neckwear = neck
         $ h_neckwear_color = color
-    call update_her_uniform from _call_update_her_uniform_58
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -202,8 +202,8 @@ label set_h_body_accessory(accessory=""):
     else:
         $ h_request_wear_body_accs = True
         $ hermione_wear_body_accs = True
-    call update_chibi_uniform from _call_update_chibi_uniform_1
-    call update_her_uniform from _call_update_her_uniform_59
+    call update_chibi_uniform 
+    call update_her_uniform 
     show screen hermione_main
     return
     
@@ -218,7 +218,7 @@ label set_h_gloves(gloves="", color=""):
         $ hermione_wear_gloves = True
         $ h_gloves = gloves
         $ h_gloves_color = color
-    call update_her_uniform from _call_update_her_uniform_60
+    call update_her_uniform 
     show screen hermione_main
     return
     
@@ -233,7 +233,7 @@ label set_h_stockings(stockings="", color=""):
         $ hermione_wear_stockings = True
         $ h_stockings = stockings
         $ h_stockings_color = color
-    call update_her_uniform from _call_update_her_uniform_61
+    call update_her_uniform 
     show screen hermione_main
     return
 
@@ -247,7 +247,7 @@ label set_h_robe(robe=""):
         $ h_request_wear_robe = True
         $ hermione_wear_robe = True
         $ h_robe = robe
-    call update_her_uniform from _call_update_her_uniform_62
+    call update_her_uniform 
     show screen hermione_main
     return
     
@@ -262,7 +262,7 @@ label set_h_buttplug(buttplug=""):
         $ h_request_wear_buttplug = True
         $ hermione_wear_buttplug = True
         $ h_buttplug = buttplug
-    call update_her_uniform from _call_update_her_uniform_63
+    call update_her_uniform 
     show screen hermione_main
     return
     
@@ -297,7 +297,7 @@ label set_h_piercing(piercing="", color=""):
         $ h_request_wear_piercings = True
         $ hermione_wear_piercings = True
     
-    call update_her_uniform from _call_update_her_uniform_64
+    call update_her_uniform 
     show screen hermione_main
     return
     

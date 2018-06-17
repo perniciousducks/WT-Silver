@@ -22,7 +22,7 @@ label update_sus_uniform:
     $ susan_stockings      = "characters/susan/clothes/stockings/base/"+str(sus_stockings)+".png"
     $ susan_robe           = "characters/susan/clothes/robe/base/"+str(sus_robe)+".png"
     
-    call update_sus_body from _call_update_sus_body
+    call update_sus_body 
     
     return
     
@@ -66,7 +66,7 @@ label set_sus_top(top=""):
         $ susan_wear_top = True
         $ sus_top = top
     
-    call update_sus_uniform from _call_update_sus_uniform_11
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -83,7 +83,7 @@ label set_sus_bottom(bottom=""):
         $ susan_wear_bottom = True
         $ sus_skirt = bottom
     
-    call update_sus_uniform from _call_update_sus_uniform_12
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -100,7 +100,7 @@ label set_sus_bra(bra=""):
         $ susan_wear_bra = True
         $ sus_bra = bra
     
-    call update_sus_uniform from _call_update_sus_uniform_13
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -117,7 +117,7 @@ label set_sus_onepiece(onepiece=""):
         $ susan_wear_onepiece = True
         $ sus_onepiece = onepiece
     
-    call update_sus_uniform from _call_update_sus_uniform_14
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -134,7 +134,7 @@ label set_sus_panties(panties=""):
         $ susan_wear_panties = True
         $ sus_panties = panties
     
-    call update_sus_uniform from _call_update_sus_uniform_15
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -151,7 +151,7 @@ label set_sus_garterbelt(garter=""):
         $ susan_wear_garterbelt = True
         $ sus_garterbelt = garter
     
-    call update_sus_uniform from _call_update_sus_uniform_16
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -168,7 +168,7 @@ label set_sus_neckwear(neck=""):
         $ susan_wear_neckwear = True
         $ sus_neckwear = neck
     
-    call update_sus_uniform from _call_update_sus_uniform_17
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -185,7 +185,7 @@ label set_sus_stockings(stockings=""):
         $ susan_wear_stockings = True
         $ sus_stockings = stockings
     
-    call update_sus_uniform from _call_update_sus_uniform_18
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -202,7 +202,7 @@ label set_sus_robe(robe=""):
         $ susan_wear_robe = True
         $ sus_robe = robe
     
-    call update_sus_uniform from _call_update_sus_uniform_19
+    call update_sus_uniform 
     show screen susan_main
     
     return

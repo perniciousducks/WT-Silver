@@ -67,8 +67,8 @@ label hermione_talk_branches:
     if ministry_letter_received and not astoria_unlocked:
         if hermione_on_the_lookout:
             $ chitchated_with_her = True 
-            call her_main("I'm still looking for that student, [genie_name]!","open","closed") from _call_her_main_969
-            call her_main("Trust in me, I will find that slytherin scum!","angry","angry") from _call_her_main_970
+            call her_main("I'm still looking for that student, [genie_name]!","open","closed") 
+            call her_main("Trust in me, I will find that slytherin scum!","angry","angry") 
             jump hermione_talk
         $ hermione_takes_classes = True
         $ hermione_on_the_lookout = True
@@ -85,9 +85,9 @@ label snape_talk:
             $ hermione_finds_astoria = True
         if snape_on_the_lookout:
             $ chitchated_with_snape = True 
-            call sna_main("I'm still on the lookout, Genie.","snape_01") from _call_sna_main_118
-            call sna_main("If I find the little maggot that casts those spells,...","snape_10") from _call_sna_main_119
-            call sna_main("I will crush his bones!","snape_16") from _call_sna_main_120
+            call sna_main("I'm still on the lookout, Genie.","snape_01") 
+            call sna_main("If I find the little maggot that casts those spells,...","snape_10") 
+            call sna_main("I will crush his bones!","snape_16") 
             jump snape_ready
         $ snape_busy = True
         $ snape_on_the_lookout = True
@@ -99,7 +99,7 @@ label snape_talk:
         jump snape_book_intro
         
     else:
-        call snape_chitchat from _call_snape_chitchat
+        call snape_chitchat 
         jump snape_ready
        
         

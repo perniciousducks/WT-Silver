@@ -120,7 +120,7 @@ label points_changes:
         $ ravenclaw += 13
         $ ravenclaw_p_gain = "+13"
         
-    call slyterin_points from _call_slyterin_points
+    call slyterin_points 
         
-    call points_animation from _call_points_animation
+    call points_animation 
     return

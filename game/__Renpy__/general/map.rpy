@@ -56,7 +56,7 @@ label map_forest: #Label controlling what happens when you go to the forest
     else:
         pass
         
-    call outskirts_of_hogwarts from _call_outskirts_of_hogwarts
+    call outskirts_of_hogwarts 
     
     m "Lets see what I can find out here..."
         
@@ -94,7 +94,7 @@ label map_lake: #Label controlling what happens when you go to the lake
         jump day_main_menu
     else:
         pass
-    call outskirts_of_hogwarts from _call_outskirts_of_hogwarts_1
+    call outskirts_of_hogwarts 
     
     m "Lets see what I can find out here..." 
     
@@ -189,15 +189,15 @@ label map_pitch: #Label controlling what happens when you go to the quidditch pi
         jump return_office
             
 label outskirts_of_hogwarts:
-    call blkfade from _call_blkfade_165
+    call blkfade 
     hide screen genie
     show screen chair_left
     show screen desk
-    call gen_chibi("stand","desk","base") from _call_gen_chibi_108
-    call hide_blkfade from _call_hide_blkfade_121
+    call gen_chibi("stand","desk","base") 
+    call hide_blkfade 
         
-    call gen_walk("desk","leave",3) from _call_gen_walk_1
-    call blkfade from _call_blkfade_166
+    call gen_walk("desk","leave",3) 
+    call blkfade 
         
     stop music fadeout 1.0
     
@@ -210,7 +210,7 @@ label outskirts_of_hogwarts:
     $ end_u_1_pic =  "images/yule_ball/171.png"
     show screen end_u_1
     pause.3
-    call hide_blkfade from _call_hide_blkfade_122
+    call hide_blkfade 
     pause.8
     $ renpy.play('sounds/steps_grass.mp3') # SOUNDS OF STEPS IN THE GRASS.
     $ end_u_3_pic =  "images/yule_ball/172.png"
@@ -220,18 +220,18 @@ label outskirts_of_hogwarts:
     return
     
 label return_office:
-    call blkfade from _call_blkfade_167
+    call blkfade 
     #">You return to your office."
     
     hide screen end_u_1
     hide screen end_u_3
     hide screen chair_left
     hide screen desk
-    call gen_chibi("hide") from _call_gen_chibi_109
+    call gen_chibi("hide") 
     show screen genie
     hide screen blkback
     pause.5
-    call hide_blkfade from _call_hide_blkfade_123
+    call hide_blkfade 
     
     if daytime:
         jump day_main_menu

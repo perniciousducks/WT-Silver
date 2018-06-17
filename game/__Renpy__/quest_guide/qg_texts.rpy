@@ -242,14 +242,14 @@ label update_quests:
     #Call Reward
     if mQuest_A.counter >= 7 and not mQuest_A.completed:
         $ mQuest_A.completed = True
-        call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","images/store/snape_unlock_01.png") from _call_give_reward_11
+        call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","images/store/snape_unlock_01.png") 
 
     if mQuest_B.counter == 6 and not mQuest_B.completed:
-        call give_reward(">You've unlocked the ability to summon Hermione to your office.","images/store/hermione_unlock_01.png") from _call_give_reward_12
+        call give_reward(">You've unlocked the ability to summon Hermione to your office.","images/store/hermione_unlock_01.png") 
         $ mQuest_B.counter = 7 #Makes sure it only triggers once!
     if mQuest_B.counter == 8 and not mQuest_B.completed:
         $ mQuest_B.completed = True
-        call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","images/store/hermione_unlock_02.png") from _call_give_reward_13
+        call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","images/store/hermione_unlock_02.png") 
 
     #Set Main Quest
     if mQuest_A.counter >= 1:

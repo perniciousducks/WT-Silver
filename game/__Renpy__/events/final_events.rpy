@@ -4,23 +4,23 @@ label want_to_rule:
     
     $ event_chairman_happened = True #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
     
-    call hg_event_EnterRoom_block from _call_hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
+    call hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
     
-    call play_music("chipper_doodle") from _call_play_music_28 # HERMIONE'S THEME.
+    call play_music("chipper_doodle") # HERMIONE'S THEME.
     
     #her "Professor Dumbledore?"
-    call her_main("[genie_name]?","soft","base",xpos="right",ypos="base") from _call_her_main_410
+    call her_main("[genie_name]?","soft","base",xpos="right",ypos="base") 
     m "Miss Granger, how can I help you?"
-    call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?","open","base") from _call_her_main_411
+    call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?","open","base") 
     m "\"ABOC\"?"
-    call her_main("The \"Autumn Ball Organization Committee\", sir...","open","closed") from _call_her_main_412
+    call her_main("The \"Autumn Ball Organization Committee\", sir...","open","closed") 
     m "Ehm... Sure..."
-    call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown") from _call_her_main_413
-    call her_main("But I think you should put me in charge.","open","angryCl") from _call_her_main_414
+    call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown") 
+    call her_main("But I think you should put me in charge.","open","angryCl") 
     her "I did it last year and it was the best organized \"autumn ball\" Hogwarts has had in years."
-    call her_main("You said so yourself, sir. Do you remember?","normal","base") from _call_her_main_415
+    call her_main("You said so yourself, sir. Do you remember?","normal","base") 
     m "Right, of course..."
-    call her_main("So, is this a yes?","base","base") from _call_her_main_416
+    call her_main("So, is this a yes?","base","base") 
     her "Does this mean I will be in charge again this year?"
 
     menu:
@@ -29,15 +29,15 @@ label want_to_rule:
             jump one_thing
 
         "\"No. Professor Snape shall be in charge!\"":
-            call her_main("Professor Snape, sir?","normal","frown") from _call_her_main_417
+            call her_main("Professor Snape, sir?","normal","frown") 
             her "But, traditionally organizing and hosting the ball is the responsibility of the students..."
             her "Teachers are only present as the guests of honour..."
             m "Well of course... I was just kidding."
             m "You shall be in charge, [hermione_name]..."
             label one_thing:
-                call her_main("Thank you, [genie_name].","base","base") from _call_her_main_418
+                call her_main("Thank you, [genie_name].","base","base") 
             m "There is one condition, though..."
-            call her_main("A conditions, [genie_name]?","normal","frown") from _call_her_main_419
+            call her_main("A conditions, [genie_name]?","normal","frown") 
             
             $ d_flag_04 = False
             label no_sleeping_with_professor:
@@ -62,53 +62,53 @@ label want_to_rule:
                 "\"You will have to sleep with me.\"" if not d_flag_04:
                     $ mad += 17
                     $ d_flag_04 = True
-                    call her_main("I will have to... sleep...?","angry","wide") from _call_her_main_420
-                    call her_main("...................","angry","angry",cheeks="blush") from _call_her_main_421
-                    call play_music("chipper_doodle") from _call_play_music_29 # HERMIONE'S THEME.
+                    call her_main("I will have to... sleep...?","angry","wide") 
+                    call her_main("...................","angry","angry",cheeks="blush") 
+                    call play_music("chipper_doodle") # HERMIONE'S THEME.
                     her "I am not stupid, sir... Quite the opposite in fact."
                     her "And I understand that the nature of the favours I have been selling you lately..."
                     her "...Might have led you to believe that I would be willing to..."
                     her "...To let you have your way with me eventually, sir..."
                     m "Wha-a-a...? I would never--"
-                    call her_main("Please, let me finish, sir.","scream","angry",emote="01") from _call_her_main_422
+                    call her_main("Please, let me finish, sir.","scream","angry",emote="01") 
                     m "Right..."
-                    call her_main("I know that you are a rather wise man yourself, sir.","angry","angry") from _call_her_main_423
-                    call her_main("So, please... understand this...","disgust","glance") from _call_her_main_424
+                    call her_main("I know that you are a rather wise man yourself, sir.","angry","angry") 
+                    call her_main("So, please... understand this...","disgust","glance") 
                     her "I may be willing to sacrifice my pride and even my dignity for the sake of my house..."
                     her "But sleeping with my headmaster?"
-                    call her_main("That is where I draw the line, sir.","angry","angry",cheeks="blush") from _call_her_main_425
+                    call her_main("That is where I draw the line, sir.","angry","angry",cheeks="blush") 
                     m "Got it. Let's just forget I said anything."
-                    call her_main("{size=-5}(I wish I could...){/size}","angry","suspicious",cheeks="blush") from _call_her_main_426
+                    call her_main("{size=-5}(I wish I could...){/size}","angry","suspicious",cheeks="blush") 
                     jump no_sleeping_with_professor 
        
                 "\"Never mind. the Position is yours.\"":
                     hide screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3         
-                    call blkfade from _call_blkfade
+                    call blkfade 
                     pass
     
 
             if d_flag_01 or d_flag_02 or d_flag_03:
-                call her_main("What?!","open","base") from _call_her_main_427
+                call her_main("What?!","open","base") 
                 m "What?"
                 #her "Professor!"
-                call her_main("[genie_name]!","angry","angry") from _call_her_main_428
+                call her_main("[genie_name]!","angry","angry") 
                 m "What?"
-                call her_main("You are abusing your power, sir. Again!","disgust","glance") from _call_her_main_429
+                call her_main("You are abusing your power, sir. Again!","disgust","glance") 
                 m "Seriously? After all those favours you sold me?"
-                call her_main("Those were for the sake of my house, sir.","annoyed","annoyed") from _call_her_main_430
+                call her_main("Those were for the sake of my house, sir.","annoyed","annoyed") 
                 m "Well this one is for the sake of the \"Autumn prom\"."
-                call her_main("It's the \"Autumn Ball\", sir...","upset","closed") from _call_her_main_431
+                call her_main("It's the \"Autumn Ball\", sir...","upset","closed") 
                 m "Oh, come on..."
                 m "Entrusting the thing to somebody else would be a crime, you know that."
-                call her_main("..........","annoyed","angryL") from _call_her_main_432
+                call her_main("..........","annoyed","angryL") 
                 m "Don't you care about your classmates at all?"
-                call her_main("What?","open","base") from _call_her_main_433
+                call her_main("What?","open","base") 
                 m "Put your selfishness aside for once, would you?"
-                call her_main("My... selfishness?","annoyed","worriedL") from _call_her_main_434
+                call her_main("My... selfishness?","annoyed","worriedL") 
                 m "Your classmates deserve the best organized ball possible!"
                 m "And only {size=+5}YOU{/size} can give them that!"
-                call her_main("...that is true actually.","angry","down_raised") from _call_her_main_435
+                call her_main("...that is true actually.","angry","down_raised") 
                 m "People depend on you, girl!"
 
                 if d_flag_01:
@@ -119,87 +119,87 @@ label want_to_rule:
                     m "So I suggest that you stop being selfish and get naked for me!"
 
                 #her "You are completely right, professor!"
-                call her_main("You are completely right, [genie_name]!","open","down") from _call_her_main_436
-                call her_main("I must do this. Everyone depends on me.","upset","closed") from _call_her_main_437
-                call her_main("Just give me a second please...","base","glance") from _call_her_main_438
+                call her_main("You are completely right, [genie_name]!","open","down") 
+                call her_main("I must do this. Everyone depends on me.","upset","closed") 
+                call her_main("Just give me a second please...","base","glance") 
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d5   
                 m "............"
 
                 if d_flag_01: # SHOW ME TITS
-                    call play_music("playful_tension") from _call_play_music_30# SEX THEME.
+                    call play_music("playful_tension") # SEX THEME.
                     hide screen blkfade
                     hide screen bld1
                     hide screen hermione_main
                     with d5
                     pause.3
-                    call her_chibi("lift_top","mid","base") from _call_her_chibi_2
+                    call her_chibi("lift_top","mid","base") 
                     with fade
                     pause.8
                     
                     $ hermione_wear_bra = False
-                    call h_action("lift_top") from _call_h_action
+                    call h_action("lift_top") 
                     pause.5
                     
                     show screen blktone
-                    call her_main("","annoyed","base") from _call_her_main_439
-                    call ctc from _call_ctc_13
+                    call her_main("","annoyed","base") 
+                    call ctc 
 
                     m "Very good miss Granger..."
                     m "Your ample tits are always a welcome sight..."
-                    call her_main("....................","disgust","down_raised") from _call_her_main_440
-                    call ctc from _call_ctc_14
+                    call her_main("....................","disgust","down_raised") 
+                    call ctc 
 
                     hide screen hermione_main
                     hide screen blktone
-                    call blkfade from _call_blkfade_1
-                    call reset_hermione_main from _call_reset_hermione_main
+                    call blkfade 
+                    call reset_hermione_main 
 
                 elif d_flag_02: # SHOW ME PUSSY
-                    call play_music("playful_tension") from _call_play_music_31# SEX THEME.
+                    call play_music("playful_tension") # SEX THEME.
                     
                     hide screen blkfade
                     hide screen bld1
                     hide screen hermione_main
                     with d5
-                    call ctc from _call_ctc_15
+                    call ctc 
 
                     $ hermione_wear_panties = False
-                    call her_chibi("lift_skirt","mid","base") from _call_her_chibi_3
+                    call her_chibi("lift_skirt","mid","base") 
                     with fade
-                    call ctc from _call_ctc_16
+                    call ctc 
             
-                    call h_action("lift_skirt") from _call_h_action_1
+                    call h_action("lift_skirt") 
                     pause.5
                     
                     show screen blktone
-                    call her_main("","annoyed","base") from _call_her_main_441
-                    call ctc from _call_ctc_17
+                    call her_main("","annoyed","base") 
+                    call ctc 
                     
-                    call her_main("","base","worriedCl") from _call_her_main_442
-                    call ctc from _call_ctc_18
+                    call her_main("","base","worriedCl") 
+                    call ctc 
                     
                     her ".............................."
                     with hpunch
                     g4 "What are you doing, girl?!"
                     g4 "I am your headmaster! Do you have no shame?!"
-                    call her_main("What?! But--","angry","angry",cheeks="blush") from _call_her_main_443
+                    call her_main("What?! But--","angry","angry",cheeks="blush") 
                     g9 "He-he... Relax, girl. I'm just kidding."
-                    call her_main("[genie_name], that was just mean.","scream","angryCl") from _call_her_main_444
+                    call her_main("[genie_name], that was just mean.","scream","angryCl") 
                     g9 "He-he..."
-                    call her_main(".....................................","annoyed","angry") from _call_her_main_445
+                    call her_main(".....................................","annoyed","angry") 
                     m "I do like your shaved little pussy though..."
-                    call her_main(".....thank you, sir.","annoyed","angry") from _call_her_main_446
-                    call ctc from _call_ctc_19
+                    call her_main(".....thank you, sir.","annoyed","angry") 
+                    call ctc 
 
                     hide screen hermione_main   
                     hide screen blktone   
-                    call blkfade from _call_blkfade_2
+                    call blkfade 
 
-                    call reset_hermione_main from _call_reset_hermione_main_1
+                    call reset_hermione_main 
                 
                 elif d_flag_03: # STRIP NAKED
-                    call play_music("playful_tension") from _call_play_music_32# SEX THEME.
+                    call play_music("playful_tension") # SEX THEME.
 
                     hide screen blkfade
                     hide screen bld1
@@ -208,7 +208,7 @@ label want_to_rule:
                     
                     
                     #Walks to the door
-                    call her_walk("mid","door",2) from _call_her_walk_16
+                    call her_walk("mid","door",2) 
                     
                     #Locks the door
                     pause.5
@@ -221,138 +221,138 @@ label want_to_rule:
                     pause.5
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
                     pause.4
-                    call her_chibi("stand","door","base") from _call_her_chibi_4
+                    call her_chibi("stand","door","base") 
                     pause.5
                     
                     #Returns from the door
                     m "??!"
-                    call her_walk("door","mid",3) from _call_her_walk_17
+                    call her_walk("door","mid",3) 
                     pause.2
                     show screen bld1
                     with d3
                     
-                    call her_main("Just in case...","annoyed","angryL") from _call_her_main_447
-                    call ctc from _call_ctc_20
+                    call her_main("Just in case...","annoyed","angryL") 
+                    call ctc 
                     m ".........................."
 
                     show screen blktone
-                    call nar(">Hermione is taking her clothes off...") from _call_nar_8
+                    call nar(">Hermione is taking her clothes off...") 
                     pause.2
                     
                     $ hermione_wear_bra = False
-                    call set_hermione_action("lift_top") from _call_set_hermione_action
+                    call set_hermione_action("lift_top") 
                     pause.5
                 
                     $ hermione_wear_top = False
-                    call set_hermione_action("None","skip_update") from _call_set_hermione_action_1
+                    call set_hermione_action("None","skip_update") 
                     pause.5
 
-                    call nar(">One piece after another...") from _call_nar_9
+                    call nar(">One piece after another...") 
 
                     $ hermione_wear_panties = True
-                    call set_hermione_action("lift_skirt") from _call_set_hermione_action_2
+                    call set_hermione_action("lift_skirt") 
                     pause.5
                 
                     $ hermione_wear_bottom = False
-                    call set_hermione_action("None","skip_update") from _call_set_hermione_action_3
+                    call set_hermione_action("None","skip_update") 
                     pause.5
 
-                    call nar(">Vest, shirt, her skirt, and finally...") from _call_nar_10
+                    call nar(">Vest, shirt, her skirt, and finally...") 
                     
                     $ hermione_wear_panties = False
-                    call set_hermione_action("covering") from _call_set_hermione_action_4
+                    call set_hermione_action("covering") 
                     pause.5
 
-                    call nar(">The panties.") from _call_nar_11
-                    call ctc from _call_ctc_21
+                    call nar(">The panties.") 
+                    call ctc 
                     
                     g9 "Ni-i-i-ce!"
-                    call her_main("","soft","squintL") from _call_her_main_448
-                    call ctc from _call_ctc_22
+                    call her_main("","soft","squintL") 
+                    call ctc 
                     her "*Sob!*"
                     m "Huh?"
                     
                     $ display_h_tears = True
                     $ u_tears_pic = "characters/hermione/face/tears_01.png"
                     
-                    call her_main("Oh, please, don't mind me, sir.","open","baseL",) from _call_her_main_449
-                    call her_main("Just enjoy the... {w}the... {w}the view...","soft","squintL") from _call_her_main_450
+                    call her_main("Oh, please, don't mind me, sir.","open","baseL",) 
+                    call her_main("Just enjoy the... {w}the... {w}the view...","soft","squintL") 
                     m "Are you... crying?"
-                    call her_main("*Sob!* No, not really, sir... *sob!*...","angry","worriedCl") from _call_her_main_451
+                    call her_main("*Sob!* No, not really, sir... *sob!*...","angry","worriedCl") 
                     her "It is just that I am standing here before my headmaster completely naked... *SOB!*"
-                    call her_main("These are the tears of shame, sir.","shock","angryL",tears="messy") from _call_her_main_452
+                    call her_main("These are the tears of shame, sir.","shock","angryL",tears="messy") 
                     her "I can't help it! *Sob!*"
                     m "Are you sure that you are ok with this?"
-                    call her_main("Yes, yes, sir, please.... *Sob!*","soft","angry",tears="messy") from _call_her_main_453
-                    call her_main("Please keep on looking at my naked body... *Sob!*","shock","wide",tears="messy") from _call_her_main_454
+                    call her_main("Yes, yes, sir, please.... *Sob!*","soft","angry",tears="messy") 
+                    call her_main("Please keep on looking at my naked body... *Sob!*","shock","wide",tears="messy") 
                     
-                    call her_main("","angry","angry",cheeks="blush",tears="messy") from _call_her_main_455
-                    call set_hermione_action("lift_breasts") from _call_set_hermione_action_5
+                    call her_main("","angry","angry",cheeks="blush",tears="messy") 
+                    call set_hermione_action("lift_breasts") 
                     pause.2
                     
                     g4 "(What the...?)"
-                    call her_main("Sir, I am begging you!","angry","angry",cheeks="blush",tears="messy") from _call_her_main_456
+                    call her_main("Sir, I am begging you!","angry","angry",cheeks="blush",tears="messy") 
                     m "Kind of sounds like an order--"       
-                    call her_main("I need it!","angry","dead_mad",cheeks="blush",tears="messy") from _call_her_main_457
+                    call her_main("I need it!","angry","dead_mad",cheeks="blush",tears="messy") 
                     her "...I need to shamelessly present my naked body before you like this!"
                     m ".............?"
-                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*","upset","dead_mad",cheeks="blush",tears="messy") from _call_her_main_458
-                    call her_main("The fate of the \"Autumn ball\" depends on this...","grin","ahegao_mad",cheeks="blush",tears="messy") from _call_her_main_459
+                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*","upset","dead_mad",cheeks="blush",tears="messy") 
+                    call her_main("The fate of the \"Autumn ball\" depends on this...","grin","ahegao_mad",cheeks="blush",tears="messy") 
                     her "So, sir, please..."
-                    call her_main("Keep looking at my naked breasts, and my pussy...","grin","angry",cheeks="blush",tears="messy") from _call_her_main_460
-                    call ctc from _call_ctc_23
+                    call her_main("Keep looking at my naked breasts, and my pussy...","grin","angry",cheeks="blush",tears="messy") 
+                    call ctc 
 
-                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","open","ahegao_raised",cheeks="blush",tears="messy") from _call_her_main_461
+                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","open","ahegao_raised",cheeks="blush",tears="messy") 
                     m "Ehm... right... Ok..."
                     m "Listen, I think this will do..."
-                    call set_hermione_action("pinch") from _call_set_hermione_action_6
-                    call her_main("Are you sure, sir?","angry","angry",cheeks="blush",tears="messy") from _call_her_main_462
+                    call set_hermione_action("pinch") 
+                    call her_main("Are you sure, sir?","angry","angry",cheeks="blush",tears="messy") 
                     her "Are you sure that you humiliated me enough, sir?"
                     m "...................."
                     m "(Is she getting off on this? Is she being sarcastic? I don't get it...)"
                     her ".........................."
-                    call ctc from _call_ctc_24
+                    call ctc 
 
                     m "Just put your clothes back on, Miss Granger. You're making me feel uncomfortable."
-                    call her_main("As you wish, sir...","annoyed","angryL",tears="messy") from _call_her_main_463
+                    call her_main("As you wish, sir...","annoyed","angryL",tears="messy") 
                     
-                    call ctc from _call_ctc_25
+                    call ctc 
                     
                     hide screen hermione_main  
                     hide screen blktone
-                    call blkfade from _call_blkfade_3
+                    call blkfade 
 
                     $  u_tears_pic = "characters/hermione/face/tears_03.png"
 
-                    call reset_hermione_main from _call_reset_hermione_main_2
+                    call reset_hermione_main 
 
                 
                     
                     
                     
-    call play_music("chipper_doodle") from _call_play_music_33 # HERMIONE'S THEME.             
+    call play_music("chipper_doodle") # HERMIONE'S THEME.             
                     
-    call her_chibi("stand","mid","base") from _call_her_chibi_5
-    call hide_blkfade from _call_hide_blkfade_1
-    call ctc from _call_ctc_26
+    call her_chibi("stand","mid","base") 
+    call hide_blkfade 
+    call ctc 
 
     show screen bld1
-    call her_main("So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?","base","happyCl",xpos="right",ypos="base") from _call_her_main_464
+    call her_main("So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?","base","happyCl",xpos="right",ypos="base") 
     m "That you are."
     her "Thank you sir! You will not regret this, I promise!"
     m "{size=-4}(Why would I?){/size}"
     m "{size=-4}(I couldn't care less about the whole thing...){/size}"
-    call her_main("Well, I'd better go now. I have so many arrangements to make!","grin","baseL") from _call_her_main_465
+    call her_main("Well, I'd better go now. I have so many arrangements to make!","grin","baseL") 
     m "By all means, Miss Granger. Have a nice day."
     hide screen hermione_main
     hide screen bld1
     with d3 
     pause.2
     
-    call her_walk("mid","leave",2) from _call_her_walk_18
+    call her_walk("mid","leave",2) 
 
     pause.5
-    call bld from _call_bld_33
+    call bld 
     m "........................................"
     m "A ball, huh?"
     m "I wonder if I will have to show up for that..."
@@ -364,7 +364,7 @@ label want_to_rule:
 
     $ display_h_tears = False
     
-    call music_block from _call_music_block
+    call music_block 
     
     return
     
@@ -378,59 +378,59 @@ label against_the_rule:
     $ snape_against_chairman_hap = True # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
     $ days_without_an_event = 0
     
-    call play_sound("door") from _call_play_sound_31 #Sound of a door opening.
-    call sna_walk("door","mid",3) from _call_sna_walk_8
+    call play_sound("door") #Sound of a door opening.
+    call sna_walk("door","mid",3) 
     pause.2
 
     show screen bld1
-    call sna_main("Are you bloody insane?!","snape_01",xpos="base",ypos="base") from _call_sna_main_83
+    call sna_main("Are you bloody insane?!","snape_01",xpos="base",ypos="base") 
     m "You know, sometimes I think I may be..."
  
-    call sna_main("You appointed the girl as the head of the \"Autumn Ball Organization Committee\"?!!","snape_01") from _call_sna_main_84
+    call sna_main("You appointed the girl as the head of the \"Autumn Ball Organization Committee\"?!!","snape_01") 
     m "I'm guessing that's bad?"
-    call sna_main("Bad?{w} {size=+5}BAD?!{/size}","snape_10") from _call_sna_main_85
-    call sna_main("{size=+5}That's a catastrophe!{/size}","snape_15") from _call_sna_main_86
-    call sna_main("last year's ball was completely horrible!","snape_16") from _call_sna_main_87
+    call sna_main("Bad?{w} {size=+5}BAD?!{/size}","snape_10") 
+    call sna_main("{size=+5}That's a catastrophe!{/size}","snape_15") 
+    call sna_main("last year's ball was completely horrible!","snape_16") 
     m "Was it? I heard differently..."
-    call sna_main("Oh really? And who told you that?","snape_10") from _call_sna_main_88
+    call sna_main("Oh really? And who told you that?","snape_10") 
     m "not a very reliable source apparently..."
-    call sna_main("Dammit... Dammit all to hell...","snape_08") from _call_sna_main_89
-    call sna_main("I had big plans for the thing...","snape_07") from _call_sna_main_90
+    call sna_main("Dammit... Dammit all to hell...","snape_08") 
+    call sna_main("I had big plans for the thing...","snape_07") 
     m "Really? Like what?"
-    call sna_main("Oh, that doesn't matter now...","snape_06") from _call_sna_main_91
+    call sna_main("Oh, that doesn't matter now...","snape_06") 
     #sna "The girl is a complete control freak..."
     sna "Now the girl will use prefects or the ghosts to keep an eye on me throughout entire thing..."
     m "Right, that reminds me..."
     m "Am I supposed to show up as well?"
-    call sna_main("Show up?","snape_03") from _call_sna_main_92
+    call sna_main("Show up?","snape_03") 
     sna "You are expected to host the bloody thing!"
-    call sna_main("But don't you worry! I'll figure something out!","snape_09") from _call_sna_main_93
-    call sna_main("Hm... I'll Probably have to host the ball instead...","snape_06") from _call_sna_main_94
+    call sna_main("But don't you worry! I'll figure something out!","snape_09") 
+    call sna_main("Hm... I'll Probably have to host the ball instead...","snape_06") 
     m "............"
-    call sna_main("Well, the Autumn ball is about to happen and Hermione Granger is in charge...","snape_09") from _call_sna_main_95
+    call sna_main("Well, the Autumn ball is about to happen and Hermione Granger is in charge...","snape_09") 
     sna "There is no changing it now..."
-    call sna_main("Sorry for the outburst...","snape_05") from _call_sna_main_96
-    call sna_main("That girl brings out the worst in me...","snape_16") from _call_sna_main_97
+    call sna_main("Sorry for the outburst...","snape_05") 
+    call sna_main("That girl brings out the worst in me...","snape_16") 
     m "Don't sweat it..."
-    call sna_main("You know what...?","snape_06") from _call_sna_main_98
+    call sna_main("You know what...?","snape_06") 
     sna "I don't feel like working today..."
-    call sna_main("Do we still have any of Dumbledore's wine left?","snape_05") from _call_sna_main_99
+    call sna_main("Do we still have any of Dumbledore's wine left?","snape_05") 
     m "I believe so..."
-    call sna_main("Great! Pour me some...","snape_02") from _call_sna_main_100
+    call sna_main("Great! Pour me some...","snape_02") 
     m "Seriously? You're just gonna bail on your class like that?"
-    call sna_main("Yeah, big news - I hate my job.","snape_03") from _call_sna_main_101
+    call sna_main("Yeah, big news - I hate my job.","snape_03") 
     sna "And since you are my boss..."
-    call sna_main("I don't know why I even bother teaching those so-called students...","snape_06") from _call_sna_main_102
+    call sna_main("I don't know why I even bother teaching those so-called students...","snape_06") 
     m "To maintain the charade?"
     m "for the Same reason why I never leave this room...?"
-    call sna_main("Right...","snape_05") from _call_sna_main_103
+    call sna_main("Right...","snape_05") 
     sna "But you know what else could endanger out little enterprise?"
-    call sna_main("Me losing it during class and strangling a couple of \"Gryffindor\" maggots with my bare hands...","snape_07") from _call_sna_main_104
+    call sna_main("Me losing it during class and strangling a couple of \"Gryffindor\" maggots with my bare hands...","snape_07") 
     m "Hm... I see your point..."
-    call sna_main("Seriously, man... I need a drink...","snape_06") from _call_sna_main_105
+    call sna_main("Seriously, man... I need a drink...","snape_06") 
 
     hide screen snape_main
-    call blkfade from _call_blkfade_4
+    call blkfade 
     
     show screen with_snape_animated
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
@@ -441,18 +441,18 @@ label against_the_rule:
     show screen desk
     
     $ fire_in_fireplace = True
-    call sna_chibi("hide") from _call_sna_chibi_1
+    call sna_chibi("hide") 
     hide screen bld1
-    call hide_blkfade from _call_hide_blkfade_2
+    call hide_blkfade 
     
-    call bld from _call_bld_34
-    call nar("Professor Snape spends the day in your chamber, drinking the stress away.") from _call_nar_12
+    call bld 
+    call nar("Professor Snape spends the day in your chamber, drinking the stress away.") 
     
     if not sfmax:# Turns TRUE when friendship with Snape been maxed out.
-        call nar(">Your relationship with him has improved.") from _call_nar_13
+        call nar(">Your relationship with him has improved.") 
         $ snape_friendship +=1
    
-    call blkfade from _call_blkfade_5
+    call blkfade 
     
     hide screen with_snape_animated
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
@@ -476,31 +476,31 @@ label crying_about_dress:
     $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
     
-    call hg_event_EnterRoom_block from _call_hg_event_EnterRoom_block_1 #Chibi stands mid. bld1 active.
+    call hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
     
-    call play_music("chipper_doodle") from _call_play_music_34 # HERMIONE'S THEME.
+    call play_music("chipper_doodle") # HERMIONE'S THEME.
     
-    call her_main("My parents sent me the wrong dress!","angry","base",tears="soft",xpos="right",ypos="base") from _call_her_main_466
+    call her_main("My parents sent me the wrong dress!","angry","base",tears="soft",xpos="right",ypos="base") 
     m "are You kidding me!?"
-    call her_main("They sent me the dress I wore to the ball last year...","angry","base",tears="soft") from _call_her_main_467
+    call her_main("They sent me the dress I wore to the ball last year...","angry","base",tears="soft") 
     m "Those inconsiderate bastards!"
-    call her_main("Are you making fun of me sir?","mad","worried",tears="soft") from _call_her_main_468
+    call her_main("Are you making fun of me sir?","mad","worried",tears="soft") 
     m "Can you blame me?"
-    call her_main("I will become the laughingstock of Hogwarts! *Sob!*","clench","worried",cheeks="blush",tears="soft") from _call_her_main_469
-    call her_main("My reputation is as good as ruined! *Sob!*","angry","dead",cheeks="blush",tears="crying") from _call_her_main_470
+    call her_main("I will become the laughingstock of Hogwarts! *Sob!*","clench","worried",cheeks="blush",tears="soft") 
+    call her_main("My reputation is as good as ruined! *Sob!*","angry","dead",cheeks="blush",tears="crying") 
     m "Seriously? After all the favours you sold me you care about a thing like this?"
-    call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_471
+    call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.","shock","down_raised",cheeks="blush",tears="crying") 
     with hpunch
     g4 "You've gotta be kidding me..."
-    call her_main("Oh, you wouldn't understand...","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_472
-    call her_main("You're just like my father!","scream","angry",cheeks="blush",tears="messy") from _call_her_main_473
+    call her_main("Oh, you wouldn't understand...","angry","suspicious",cheeks="blush",tears="messy") 
+    call her_main("You're just like my father!","scream","angry",cheeks="blush",tears="messy") 
     m "I beg your pardon?"
-    call her_main("I mean... ehm...","open","surprised",cheeks="blush",tears="messy") from _call_her_main_474
+    call her_main("I mean... ehm...","open","surprised",cheeks="blush",tears="messy") 
     her "Forgive me sir..."
-    call her_main("I don't know why I am telling you all of this...","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_475
+    call her_main("I don't know why I am telling you all of this...","shock","down_raised",cheeks="blush",tears="crying") 
     m "................"
-    call her_main("......................*sob!*","angry","dead",cheeks="blush",tears="crying") from _call_her_main_476
-    call her_main("I think I'd better go now...*sob*","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_477
+    call her_main("......................*sob!*","angry","dead",cheeks="blush",tears="crying") 
+    call her_main("I think I'd better go now...*sob*","angry","suspicious",cheeks="blush",tears="messy") 
     m "Well, don't let me keep you a moment longer, miss Granger...."
     
     hide screen bld1
@@ -508,13 +508,13 @@ label crying_about_dress:
     hide screen blktone
     with d3
     
-    call her_walk("mid","door",2) from _call_her_walk_19
+    call her_walk("mid","door",2) 
     pause.3 
 
     show screen bld1
-    call her_head("(My life is ruined...)","angry","suspicious",cheeks="blush",tears="messy",xpos="base",ypos="base") from _call_her_head_6
+    call her_head("(My life is ruined...)","angry","suspicious",cheeks="blush",tears="messy",xpos="base",ypos="base") 
     pause.1
-    call her_chibi("leave","door","base") from _call_her_chibi_6
+    call her_chibi("leave","door","base") 
  
     m "Hm... I don't remember ever seeing the girl this desperate..."
     m "And that says a lot, all things considered..."
@@ -527,7 +527,7 @@ label crying_about_dress:
     
     $ hermione_takes_classes = True
     
-    call music_block from _call_music_block_1
+    call music_block 
     
     return 
     
@@ -540,30 +540,30 @@ label sorry_about_hesterics:
     $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
     
-    call hg_event_EnterRoom_block from _call_hg_event_EnterRoom_block_2 #Chibi stands mid. bld1 active.
+    call hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
     
-    call play_music("chipper_doodle") from _call_play_music_35 # HERMIONE'S THEME.
+    call play_music("chipper_doodle") # HERMIONE'S THEME.
     
     m "Miss Granger?"
-    call her_main("Sorry to disturb you sir...","open","worried",xpos="right",ypos="base") from _call_her_main_478
-    call her_main("I came to apologize for my...","open","worriedL") from _call_her_main_479
+    call her_main("Sorry to disturb you sir...","open","worried",xpos="right",ypos="base") 
+    call her_main("I came to apologize for my...","open","worriedL") 
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
-    call her_main("Thank you, sir.","open","base") from _call_her_main_480
-    call her_main("Still, I cannot help but feel awful for causing a scene...","open","angryCl") from _call_her_main_481
+    call her_main("Thank you, sir.","open","base") 
+    call her_main("Still, I cannot help but feel awful for causing a scene...","open","angryCl") 
     m "So the issue has been resolved then?"
-    call her_main("Not really...","open","worried") from _call_her_main_482
-    call her_main("Not at all actually...","annoyed","angryL") from _call_her_main_483
+    call her_main("Not really...","open","worried") 
+    call her_main("Not at all actually...","annoyed","angryL") 
     m "Hm..?"
-    call her_main("But that is not a big deal...","annoyed","down") from _call_her_main_484
+    call her_main("But that is not a big deal...","annoyed","down") 
     her "I'm just overreacting..."
     play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
-    call her_main("I woN't be able to attend the ball this year... so what?","annoyed","down") from _call_her_main_485
-    call her_main("I spent countless hours with organizing the event...","normal","worriedCl") from _call_her_main_486
-    call her_main("I worked so hard... and...","open","worried",tears="soft") from _call_her_main_487
-    call her_main("And now I will not even be able to... to... *Sob!*","shock","baseL",cheeks="blush",tears="soft") from _call_her_main_488
-    call her_main("To... *SOB!*","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_489
-    call her_main("Excuse me sir!","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_490
+    call her_main("I woN't be able to attend the ball this year... so what?","annoyed","down") 
+    call her_main("I spent countless hours with organizing the event...","normal","worriedCl") 
+    call her_main("I worked so hard... and...","open","worried",tears="soft") 
+    call her_main("And now I will not even be able to... to... *Sob!*","shock","baseL",cheeks="blush",tears="soft") 
+    call her_main("To... *SOB!*","shock","down_raised",cheeks="blush",tears="crying") 
+    call her_main("Excuse me sir!","angry","suspicious",cheeks="blush",tears="messy") 
     hide screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
     hide screen no_groping_02
@@ -571,10 +571,10 @@ label sorry_about_hesterics:
     show screen genie
     with d1
     
-    call her_walk("mid","leave",2,action="run") from _call_her_walk_20
+    call her_walk("mid","leave",2,action="run") 
     pause.5
     
-    call bld from _call_bld_35
+    call bld 
     m "......................................."
     m "Hm..."
 
@@ -583,7 +583,7 @@ label sorry_about_hesterics:
     hide screen bld1
     with d3
     
-    call music_block from _call_music_block_2
+    call music_block 
     
     return
     
@@ -619,59 +619,59 @@ label giving_thre_dress:
     ">You give the ball gown to Hermione..."
     hide screen gift
     with d3
-    call her_main("Hm...? What is this?","base","base") from _call_her_main_491
-    call her_main("{size=+7}A DRESS?!{/size}","angry","wide") from _call_her_main_492
+    call her_main("Hm...? What is this?","base","base") 
+    call her_main("{size=+7}A DRESS?!{/size}","angry","wide") 
     with hpunch
     m "I thought that you--"
-    call play_music("chipper_doodle") from _call_play_music_36 # HERMIONE'S THEME.
-    call her_main("[genie_name]!","angry","base",tears="soft") from _call_her_main_493
+    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call her_main("[genie_name]!","angry","base",tears="soft") 
     g4 "What? What happened? Don't tell me it's the wrong color or something!"
-    call her_main("It's perfect, sir...*sob!*","angry","base",tears="soft") from _call_her_main_494
+    call her_main("It's perfect, sir...*sob!*","angry","base",tears="soft") 
     her "It's perfect... *sob!* ...I love it."
     m "You sure don't look like it..."
     her "I am sorry, sir... *Sob!*"
-    call her_main("I... I am just...","clench","worried",cheeks="blush",tears="soft") from _call_her_main_495
-    call her_main("I am so happy...","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_496
+    call her_main("I... I am just...","clench","worried",cheeks="blush",tears="soft") 
+    call her_main("I am so happy...","shock","down_raised",cheeks="blush",tears="crying") 
     her "Thank you, sir. Thank you so much."
-    call her_main("I cannot believe that you would do something like that for me...","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_497
+    call her_main("I cannot believe that you would do something like that for me...","angry","suspicious",cheeks="blush",tears="messy") 
     m "Well, I did. Now stop crying."
-    call her_main("I can't, sir. I am so happy and so grateful...","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_main_498
-    call her_main("Do you want me to suck your cock, sir?","open","surprised",cheeks="blush",tears="messy") from _call_her_main_499
+    call her_main("I can't, sir. I am so happy and so grateful...","scream","worriedCl",cheeks="blush",tears="messy") 
+    call her_main("Do you want me to suck your cock, sir?","open","surprised",cheeks="blush",tears="messy") 
     m "What?"
-    call her_main("Because I will do it!","open","surprised",cheeks="blush",tears="messy") from _call_her_main_500
+    call her_main("Because I will do it!","open","surprised",cheeks="blush",tears="messy") 
     her "And I will swallow and everything!"
-    call her_main("And you wouldn't have to pay me a single house point!","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_501
+    call her_main("And you wouldn't have to pay me a single house point!","shock","down_raised",cheeks="blush",tears="crying") 
     m "uhm... Maybe some other time..."
     m "This is not the type of crying I find arousing..."
-    call her_main("I'm sorry, sir. I'm such a mess...","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_502
-    call her_main("But this is so unexpected...","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_503
+    call her_main("I'm sorry, sir. I'm such a mess...","angry","suspicious",cheeks="blush",tears="messy") 
+    call her_main("But this is so unexpected...","shock","down_raised",cheeks="blush",tears="crying") 
     her "You made me so happy, sir...*sob!*"
-    call her_main("Thank you sir! *SOB!* Thank you! *SOB!*","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_504
+    call her_main("Thank you sir! *SOB!* Thank you! *SOB!*","angry","suspicious",cheeks="blush",tears="messy") 
     m "Well... err... there, there..."
     m "Better stop crying before you stain that new dress of yours with those tears..."
-    call her_main("My new dress! *SOB!*","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_main_505
+    call her_main("My new dress! *SOB!*","scream","worriedCl",cheeks="blush",tears="messy") 
     m "Alright, you know what? Just get out of my office."
     m "Just take your dress and leave."
-    call her_main("Of course... I am sorry, sir!","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_506
+    call her_main("Of course... I am sorry, sir!","angry","suspicious",cheeks="blush",tears="messy") 
     hide screen hermione_main  
     hide screen bld1                                                                                                                                                                               #HERMIONE
     with d3          
     pause.1
     
-    call her_chibi("stand","mid","base") from _call_her_chibi_7
+    call her_chibi("stand","mid","base") 
     pause.3
-    call her_chibi("stand","mid","base",flip="True") from _call_her_chibi_8
+    call her_chibi("stand","mid","base",flip="True") 
     pause.2
     
-    call her_walk("mid","leave",2) from _call_her_walk_21
+    call her_walk("mid","leave",2) 
     
-    call bld from _call_bld_36
+    call bld 
     m "......................"
     m "Women..."
     hide screen bld1
     with d3
 
-    call music_block from _call_music_block_3
+    call music_block 
     
     if daytime:
         $ hermione_takes_classes = True
@@ -691,40 +691,40 @@ label good_bye_snape:
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
     
-    call play_sound("door") from _call_play_sound_32 #Sound of a door opening.
-    call sna_walk("door","desk",2.5) from _call_sna_walk_9 
+    call play_sound("door") #Sound of a door opening.
+    call sna_walk("door","desk",2.5) 
     pause 1.5
 
     show screen bld1
-    call sna_main("Genie...","snape_01",xpos="base",ypos="base") from _call_sna_main_106
+    call sna_main("Genie...","snape_01",xpos="base",ypos="base") 
     m "Severus?"
-    call sna_main("I think I may have figured out why your magic does not work the way it should...","snape_05") from _call_sna_main_107
+    call sna_main("I think I may have figured out why your magic does not work the way it should...","snape_05") 
     g4 "Seriously?!"
-    call sna_main("Yes...","snape_23") from _call_sna_main_108
+    call sna_main("Yes...","snape_23") 
     sna "It's quite obvious actually... I'm surprised that it didn't cross my mind before."
-    call sna_main("You see, the thing is that every building in \"Hogwarts\" is enchanted with all kinds of protection spells...","snape_24") from _call_sna_main_109
+    call sna_main("You see, the thing is that every building in \"Hogwarts\" is enchanted with all kinds of protection spells...","snape_24") 
     m "Protection spells, huh?"
-    call sna_main("Yes...","snape_23") from _call_sna_main_110
+    call sna_main("Yes...","snape_23") 
     sna "Very powerful, old and nasty magic..."
-    call sna_main("Even the land itself is heavily enchanted for kilometers in every direction...","snape_24") from _call_sna_main_111
+    call sna_main("Even the land itself is heavily enchanted for kilometers in every direction...","snape_24") 
     m "Hm..."
-    call sna_main("Basically, any number of spells could be interfering with your powers around here...","snape_25") from _call_sna_main_112
+    call sna_main("Basically, any number of spells could be interfering with your powers around here...","snape_25") 
     m "Wait, then how come that you have no problems with casting your spells?"
-    call sna_main("My magic is \"Hogwarts\" magic, friend...","snape_05") from _call_sna_main_113
+    call sna_main("My magic is \"Hogwarts\" magic, friend...","snape_05") 
     sna "But I bet your powers are alien enough to be perceived as a threat."
     m "Interesting..."
-    call sna_main("I think if you manage to get far enough from the school grounds...","snape_24") from _call_sna_main_114
+    call sna_main("I think if you manage to get far enough from the school grounds...","snape_24") 
     m "I will be able to go home... finally..."
-    call sna_main("Yes, and the best time to do that would be tonight...","snape_02") from _call_sna_main_115
-    call sna_main("While everyone is preoccupied with that bloody \"Autumn ball\" you could sneak out unnoticed...","snape_23") from _call_sna_main_116
+    call sna_main("Yes, and the best time to do that would be tonight...","snape_02") 
+    call sna_main("While everyone is preoccupied with that bloody \"Autumn ball\" you could sneak out unnoticed...","snape_23") 
     
     ### SHAKE HANDS WITH SNAPE ###
     hide screen snape_main
-    call blkfade from _call_blkfade_6
+    call blkfade 
     
     hide screen genie
     hide screen bld1
-    call sna_chibi("hide") from _call_sna_chibi_2
+    call sna_chibi("hide") 
     show screen chair_left
     show screen g_c_u
     $ genie_chibi_xpos = 220
@@ -735,73 +735,73 @@ label good_bye_snape:
     
     m "Right, tonight is the night of the \"Autumn ball\"..."
     m "So it ends tonight then..."
-    call sna_head("Seems like it...","snape_09") from _call_sna_head_122
-    call hide_blkfade from _call_hide_blkfade_3
+    call sna_head("Seems like it...","snape_09") 
+    call hide_blkfade 
     pause.5
 
-    call sna_head("In case I'm right and will never see you again...","snape_05") from _call_sna_head_123
+    call sna_head("In case I'm right and will never see you again...","snape_05") 
     m "Right..."
-    call blkfade from _call_blkfade_7
+    call blkfade 
 
     $ g_c_u_pic = "images/main_room/hand_01.png"
-    call hide_blkfade from _call_hide_blkfade_4
+    call hide_blkfade 
     pause 2
 
-    call bld from _call_bld_37
-    call sna_head("The past several month were the best months of my life, Genie...","snape_26") from _call_sna_head_124
-    call sna_head("Thank you for that, you incredible traveler from another world...") from _call_sna_head_125
-    call sna_head("Thank you, my friend...") from _call_sna_head_126
+    call bld 
+    call sna_head("The past several month were the best months of my life, Genie...","snape_26") 
+    call sna_head("Thank you for that, you incredible traveler from another world...") 
+    call sna_head("Thank you, my friend...") 
     m "I don't know what to say, Severus..."
-    call sna_head("Then don't say anything...","snape_06") from _call_sna_head_127
-    call sna_head("Just move on to your next adventure...") from _call_sna_head_128
-    call sna_head("Our world has stalled you long enough...") from _call_sna_head_129
+    call sna_head("Then don't say anything...","snape_06") 
+    call sna_head("Just move on to your next adventure...") 
+    call sna_head("Our world has stalled you long enough...") 
     m "Thank you for keeping me company and being my only friend here, Severus."
-    call sna_head("Thank you for being mine...","snape_27") from _call_sna_head_130 #TEARS?
-    call sna_head("I'd better go now...","snape_06") from _call_sna_head_131
+    call sna_head("Thank you for being mine...","snape_27") #TEARS?
+    call sna_head("I'd better go now...","snape_06") 
     #Goes to the door, stops and turns around.
     
     hide screen s_head2
-    call blkfade from _call_blkfade_8
+    call blkfade 
 
     hide screen chair_left
     hide screen g_c_u
     show screen genie
     pause.5
 
-    call sna_chibi("stand","desk","base") from _call_sna_chibi_3
+    call sna_chibi("stand","desk","base") 
     hide screen bld1
-    call hide_blkfade from _call_hide_blkfade_5
+    call hide_blkfade 
     pause.5
     
-    call sna_walk("desk","door",3) from _call_sna_walk_10
+    call sna_walk("desk","door",3) 
     pause.5
 
-    call sna_chibi("stand","door","base") from _call_sna_chibi_4
+    call sna_chibi("stand","door","base") 
     pause.5
 
-    call bld from _call_bld_38
-    call sna_head("One more thing though...","snape_01") from _call_sna_head_132
+    call bld 
+    call sna_head("One more thing though...","snape_01") 
     m "Yes?"
-    call sna_head("If it all goes well...","snape_24") from _call_sna_head_133
-    call sna_head("Will I find the real Albus Dumbledore in that chair tomorrow?") from _call_sna_head_134
+    call sna_head("If it all goes well...","snape_24") 
+    call sna_head("Will I find the real Albus Dumbledore in that chair tomorrow?") 
     m "I believe so..."
-    call sna_head("Hm...","snape_04") from _call_sna_head_135
-    call sna_head("Albus can't know that I was aware of his absence...","snape_03") from _call_sna_head_136
-    call sna_head("Is there a way to tell you guys apart?","snape_01") from _call_sna_head_137
+    call sna_head("Hm...","snape_04") 
+    call sna_head("Albus can't know that I was aware of his absence...","snape_03") 
+    call sna_head("Is there a way to tell you guys apart?","snape_01") 
     m ".............."
     m "How about a secret password?"
-    call sna_head("A password?","snape_05") from _call_sna_head_138
+    call sna_head("A password?","snape_05") 
     m "Yes... just ask me tomorrow: \"Who rules?\"."
-    call sna_head("\"Who rules?\"","snape_01") from _call_sna_head_139
+    call sna_head("\"Who rules?\"","snape_01") 
     g9 "\"Akabur rules!\""
-    call sna_head("Akuba... ehm... What does it mean?","snape_05") from _call_sna_head_140
+    call sna_head("Akuba... ehm... What does it mean?","snape_05") 
     m "Just a phrase that you will only be able to hear from the real me..."
-    call sna_head("I understand...","snape_02") from _call_sna_head_141
-    call sna_head("Alright then...","snape_06") from _call_sna_head_142
-    call sna_head("Have a save trip home...") from _call_sna_head_143
+    call sna_head("I understand...","snape_02") 
+    call sna_head("Alright then...","snape_06") 
+    call sna_head("Have a save trip home...") 
     hide screen s_head2
     m "Thank you. Have fun with hosting the ball..."
-    call sna_head("*Sigh*","snape_06") from _call_sna_head_144
+    call sna_head("*Sigh*","snape_06") 
     pause.3
 
     hide screen bld1
@@ -810,10 +810,10 @@ label good_bye_snape:
     
     stop music fadeout 1.0
 
-    call sna_chibi("stand","door","base",flip=True) from _call_sna_chibi_5
+    call sna_chibi("stand","door","base",flip=True) 
     pause.3
 
-    call sna_chibi("leave","door","base") from _call_sna_chibi_6
+    call sna_chibi("leave","door","base") 
     pause.8
     
     m "............................"
@@ -837,7 +837,7 @@ label good_bye_snape:
         m "I suppose I could leave her a note or something..."
         
         m "Let's see..."
-        call bld from _call_bld_39
+        call bld 
         hide screen genie
         show screen paperwork
         with d3
@@ -959,30 +959,30 @@ label good_bye_snape:
     with d3
     m "Well, off I go then..."
     
-    call blkfade from _call_blkfade_9
+    call blkfade 
 
     hide screen genie
     show screen chair_left
     hide screen desk
     show screen desk
-    call gen_chibi("stand","desk","base") from _call_gen_chibi_4
+    call gen_chibi("stand","desk","base") 
     hide screen bld1
-    call hide_blkfade from _call_hide_blkfade_6
+    call hide_blkfade 
     
     m "........."
 
-    call gen_walk("desk","door",3) from _call_gen_walk
+    call gen_walk("desk","door",3) 
     pause 1
 
     m "...................."
     m "Agrabah... here I come..."
-    call ctc from _call_ctc_27
+    call ctc 
     
-    call gen_chibi("leave","door","base") from _call_gen_chibi_5
+    call gen_chibi("leave","door","base") 
     pause.3
     ">.......................{w}............................{w}.....................{w}......................"
     pause.7
-    call blkfade from _call_blkfade_10
+    call blkfade 
     
     stop music fadeout 1.0
     
@@ -995,8 +995,8 @@ label good_bye_snape:
     $ end_u_1_pic =  "images/yule_ball/171.png" #<---- SCREEN
     show screen end_u_1                                           #<---- SCREEN
     pause.3
-    call hide_blkfade from _call_hide_blkfade_7
-    call ctc from _call_ctc_28
+    call hide_blkfade 
+    call ctc 
     
     m "Severus was right..."
     pause.5
@@ -1020,7 +1020,7 @@ label good_bye_snape:
     m "Agrabah, here I come..."
 
     if not persistent.game_complete: # FIRST PLAYTHOURGH. 
-        call ctc from _call_ctc_29
+        call ctc 
         
         show screen blkfade 
         with d9
@@ -1084,7 +1084,7 @@ label good_bye_snape:
     
     m "I must see the girl one last time..."
     
-    call ctc from _call_ctc_30
+    call ctc 
     
     show screen blkfade
     with d7
@@ -1107,10 +1107,10 @@ label good_bye_snape:
     
 
 label hg_event_EnterRoom_block: #Chibi stands mid. bld1 active.
-    call play_sound("door") from _call_play_sound_33 #Sound of a door opening.
-    call her_walk("door","mid",2) from _call_her_walk_22
+    call play_sound("door") #Sound of a door opening.
+    call her_walk("door","mid",2) 
     pause.5
-    call bld from _call_bld_40
+    call bld 
     return
     
     

@@ -3,8 +3,8 @@ label open_stat_menu(charName="hermione"):
     $stat_char = ""
     if charName == "hermione":
         $ hermione_xpos=540
-        call updateHermioneWords from _call_updateHermioneWords
-        call update_her_uniform from _call_update_her_uniform_83
+        call updateHermioneWords 
+        call update_her_uniform 
         $stat_char = "hermione_main"
         $stat_screen = "hermione_stat_menu"
         show screen hermione_stat_menu
@@ -28,9 +28,9 @@ label open_stat_menu(charName="hermione"):
         hide screen select_character
         jump day_main_menu
     elif _return == "color":
-        call open_stat_menu(charName) from _call_open_stat_menu
+        call open_stat_menu(charName) 
     else:
-        call open_stat_menu(_return) from _call_open_stat_menu_1
+        call open_stat_menu(_return) 
      
 screen select_character:
     zorder 4

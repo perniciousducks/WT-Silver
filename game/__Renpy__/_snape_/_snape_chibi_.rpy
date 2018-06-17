@@ -127,7 +127,7 @@ label sna_chibi(action = "", xpos=snape_chibi_xpos, ypos=snape_chibi_ypos, pic =
 label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter = True,redux_pause = 0):
     hide screen bld1
     hide screen blktone
-    call hide_characters from _call_hide_characters
+    call hide_characters 
     with d3
     
     hide screen snape_walk
@@ -175,7 +175,7 @@ label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter 
         $ snape_chibi_xpos = walk_xpos2
         hide screen snape_walk_f
         if pos2 == "leave":
-            call play_sound("door") from _call_play_sound_70
+            call play_sound("door") 
             with d3
             pause.5
         if loiter:

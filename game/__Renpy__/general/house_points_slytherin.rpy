@@ -46,7 +46,7 @@ label slyterin_points: #points_changes: # SLYTHERIN POINTS AWARDING
                 $ slytherin_p_gain = "+29"
         
             if snapes_support == 9: #Controls how much points is awarded to SLYTHERIN daily.
-                call add_house_points("s","+31") from _call_add_house_points
+                call add_house_points("s","+31") 
             
             if snapes_support == 10: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 34

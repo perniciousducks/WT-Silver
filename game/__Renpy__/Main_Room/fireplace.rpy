@@ -13,7 +13,7 @@ label fireplace:
             "-Examine the fireplace-" if not fireplace_examined:
                 $ fireplace_examined = True
                 hide screen genie
-                call gen_chibi("stand","mid","base") from _call_gen_chibi_7
+                call gen_chibi("stand","mid","base") 
                 show screen chair_left #Empty chair near the desk.
                 show screen desk
                 with Dissolve(0.5)

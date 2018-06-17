@@ -7,11 +7,11 @@ label day_start:
 
 ### RESETING STUFF ###
 
-call reset_hermione_main from _call_reset_hermione_main_7
+call reset_hermione_main 
 
-call gen_chibi("hide") from _call_gen_chibi_107
-call her_chibi("hide") from _call_her_chibi_166
-call sna_chibi("hide") from _call_sna_chibi_18
+call gen_chibi("hide") 
+call her_chibi("hide") 
+call sna_chibi("hide") 
 
 $ flip = False
 $ chitchated_with_her = False
@@ -26,7 +26,7 @@ $ searched  = False #Turns true after you search the cupboard. Turns back to Fal
 $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
 $ save_name = temp_name
 
-call luna_day_flags from _call_luna_day_flags
+call luna_day_flags 
 $ astoria_busy = False
 
 
@@ -38,7 +38,7 @@ if susan_imperio_counter > 0:
     if susan_imperio_counter <= 0:
         $ susan_imperio_influence = False
         $ reset_susans_wardrobe = True
-        call susan_init from _call_susan_init_2
+        call susan_init 
         $ reset_susans_wardrobe = False
     
 $ tonks_busy = False
@@ -84,11 +84,11 @@ $ one_of_tw = renpy.random.randint(1, 20) #Generating one number out of three fo
 $ day_random = renpy.random.randint(0, 10)
 
 if day_random in [0,1,2]:
-    call set_ast_susan_name from _call_set_ast_susan_name
+    call set_ast_susan_name 
 if day_random in [3,4,5]:
-    call set_ast_tonks_name from _call_set_ast_tonks_name
+    call set_ast_tonks_name 
 if day_random in [6,7,8]:
-    call set_ton_astoria_name from _call_set_ton_astoria_name
+    call set_ton_astoria_name 
 if day_random in [9,10]:
     pass
 
@@ -205,7 +205,7 @@ if day == 12: # LETTER THAT UNLOCKS PAPERWORK BUTTON.
     $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
 
 if outfit_order_placed and not outfit_ready:
-    call outfit_purchase_check from _call_outfit_purchase_check
+    call outfit_purchase_check 
 
 if package_is_here:
     play sound "sounds/owl.mp3"  #Quiet...
@@ -222,10 +222,10 @@ with fade
 
 $ day +=1
 
-call points_changes from _call_points_changes #Makes house points changes.
+call points_changes #Makes house points changes.
 
 ###4 Houses
-call FH_day from _call_FH_day
+call FH_day 
 if days_since_cho == 2:
     jump hermione_cho
 if days_since_cho == 4 and not cho_met:
@@ -240,18 +240,18 @@ if day >= 25 and whoring >= 9 and not astoria_intro_completed:
 label day_resume:
 
 if day == 7:
-    call event_08 from _call_event_08 #Returns #Hermione shows up for the first time.
+    call event_08 #Hermione shows up for the first time.
 if (day >= 8 or day >= 12) and hermione_is_waiting_01 and not event09:
-    call event_09 from _call_event_09 #Returns #Second visit from Hermione. Says she sent a letter to the Minestry.
+    call event_09 #Second visit from Hermione. Says she sent a letter to the Minestry.
                   #Takes place after first special event with Snape, where he just complains about Hermione.
 if event13_happened and not event14_happened:
-    call event_14 from _call_event_14 #Returns
+    call event_14 #Returns
 
 if whoring == 11 and not touched_by_boy:
-    call nar("!!! Attention !!!","start") from _call_nar_550
+    call nar("!!! Attention !!!","start") 
     ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
     ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
-    call nar(">You should also save your game here.","end") from _call_nar_551
+    call nar(">You should also save your game here.","end") 
     menu:
         "-Understood-":
             pass
@@ -259,20 +259,20 @@ if whoring == 11 and not touched_by_boy:
             pass
 
 if whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-    call want_to_rule from _call_want_to_rule #Returns
+    call want_to_rule #Returns
 
 if whoring >= 15 and event_chairman_happened and days_without_an_event >= 2 and not snape_against_chairman_hap: # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
     jump against_the_rule #No return.
 
 if whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap and not have_no_dress_hap: #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-    call crying_about_dress from _call_crying_about_dress #Returns
+    call crying_about_dress #Returns
 
 if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
-    call sorry_about_hesterics from _call_sorry_about_hesterics #Returns
+    call sorry_about_hesterics #Returns
 
 #HAT EVENT
 if whoring >= 21 and not hat_known:
-    call hat_intro from _call_hat_intro #Returns
+    call hat_intro #Returns
 
 #Luna event's
 if luna_corruption == 10 and luna_reverted:
@@ -299,7 +299,7 @@ if skip_duel == True:
     
 ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
 if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
-    call event_01 from _call_event_01 #Returns
+    call event_01 #Returns
 
 if collar == 5:
     jump collar_scene
@@ -307,11 +307,11 @@ if collar == 5:
 ### Guide ###
 #Random Number for Tip/Fact of the Day
 $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
-call update_quests from _call_update_quests_5
-call update_hints from _call_update_hints
+call update_quests 
+call update_hints 
 
 
-call Day_Request_Block from _call_Day_Request_Block
+call Day_Request_Block 
 
 
 
@@ -337,7 +337,7 @@ if day == 1 and daytime and bird_examined and desk_examined and cupboard_examine
 
 hide screen bld1
 hide screen blktone
-call hide_characters from _call_hide_characters_1
+call hide_characters 
 with d1
 
 show screen animation_feather

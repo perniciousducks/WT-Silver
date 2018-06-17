@@ -9,7 +9,7 @@ label night_start:
 
 ###RESET STUFF
 
-call reset_hermione_main from _call_reset_hermione_main_8
+call reset_hermione_main 
 
 $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking = False #When True - blinking animation is not displayed.
@@ -17,7 +17,7 @@ $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ uni_sperm = False
 $ textColor = "#1e1008"
 
-call luna_night_flags from _call_luna_night_flags
+call luna_night_flags 
 $ astoria_busy = False
 $ susan_busy = False
 $ tonks_busy = False
@@ -96,7 +96,7 @@ with fade
 
 
 
-call points_changes from _call_points_changes_1 #Makes house points changes.
+call points_changes #Makes house points changes.
 
 ### NIGHT REQUESTS ###
 if astoria_tonks_event_in_progress:
@@ -111,7 +111,7 @@ label night_resume:
 
 ### NIGHT EVENTS ###
 if day == 1:
-    call event_02 from _call_event_02 #Returns
+    call event_02 #Returns
 if day == 2:
     jump event_03 #No return. Jumps next day.
 if day == 4:
@@ -119,19 +119,19 @@ if day == 4:
 if day == 5:
     jump event_07 #No return.
 if days_without_an_event == 1 and hermione_is_waiting_02 and not event11_happened:
-    call event_11 from _call_event_11 #Returns
+    call event_11 #Returns
 if days_without_an_event == 1 and event11_happened and not event12_happened:
     jump event_12 #No return.
 if days_without_an_event == 1 and event12_happened and not event13_happened:
     jump event_13 #No return.
 if day >= 15 and day <=20 and not event15_happened:
-    call event_15 from _call_event_15 #Returns
+    call event_15 #Returns
     
 if whoring == 11 and not touched_by_boy:
-    call nar("!!! Attention !!!","start") from _call_nar_601
+    call nar("!!! Attention !!!","start") 
     ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
     ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
-    call nar(">You should also save your game here.","end") from _call_nar_602
+    call nar(">You should also save your game here.","end") 
     menu:
         "-Understood-":
             pass
@@ -143,21 +143,21 @@ if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turn
 
 
 if luna_known and not luna_unlocked:
-    call hat_intro_3 from _call_hat_intro_3 #Returns
+    call hat_intro_3 #Returns
 
 if luna_corruption == 11 and luna_reverted:
     jump luna_reverted_greeting_2 #No return.
 
 if milking == -1:
-    call potion_scene_11_1_2 from _call_potion_scene_11_1_2 #Returns
+    call potion_scene_11_1_2 #Returns
 if milking == -3:
-    call potion_scene_11_3_2 from _call_potion_scene_11_3_2
+    call potion_scene_11_3_2 
 
 ### Guide ###
 #Random Number for Tip/Fact of the Day
 $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
-call update_quests from _call_update_quests_6
-call update_hints from _call_update_hints_1
+call update_quests 
+call update_hints 
 
 
 
@@ -174,7 +174,7 @@ if phoenix_is_feed:
 
 hide screen bld1
 hide screen blktone
-call hide_characters from _call_hide_characters_3
+call hide_characters 
 with d1
 
 show screen animation_feather

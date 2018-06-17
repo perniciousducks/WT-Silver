@@ -42,7 +42,7 @@ label clothes_store:
         maf "one moment, let me go fetch it"
         maf "..."
         maf "here you are."
-        call pickup_outfit from _call_pickup_outfit
+        call pickup_outfit 
         if clothes_intro_done == False:
             ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
             ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
@@ -69,7 +69,7 @@ label clothes_store:
 label clothes_menu:
     menu:
         "{color=#858585}-Custom Orders-{/color}"if outfit_order_placed:
-            call cust_excuse("only one order can be placed at a time.") from _call_cust_excuse
+            call cust_excuse("only one order can be placed at a time.") 
             jump clothes_menu
         "-Custom Orders-"if not outfit_order_placed:
             jump custom_orders
@@ -82,11 +82,11 @@ label clothes_menu:
    
 label custom_orders:
     
-    call clothes_store_gui from _call_clothes_store_gui
+    call clothes_store_gui 
     
     if isinstance(clothes_store_order_choice,hermione_outfit):
         if clothes_store_order_choice.purchased:
-            call cust_excuse("You already own this outfit.") from _call_cust_excuse_1
+            call cust_excuse("You already own this outfit.") 
             jump custom_orders
         else:
             if clothes_store_order_choice == hg_gryffCheer_OBJ:
@@ -100,7 +100,7 @@ label custom_orders:
                 m "Not really, just make it sporty I suppose."
                 maf "Ok, well come and see me in a few days and I will have it for you."
                 m "Thank you."
-                call place_outfit_order from _call_place_outfit_order
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_slythCheer_OBJ:
@@ -112,7 +112,7 @@ label custom_orders:
                 m "Maybe make this one a little more sporty if you know what I mean."
                 maf "Well you can come pick it up in a few days."
                 m "Thank you."
-                call place_outfit_order from _call_place_outfit_order_1
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_maid_OBJ:
@@ -127,7 +127,7 @@ label custom_orders:
                 maf "..."
                 maf "Well I should have it available for pickup in a few days after I get the materials in."
                 m "Thank you."
-                call place_outfit_order from _call_place_outfit_order_2
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_silkNightgown_OBJ:
@@ -145,11 +145,11 @@ label custom_orders:
                 m "Don't worry about the cost."
                 maf "As you wish Sir, it should be ready in a couple of days."
                 m "Thank you."
-                call place_outfit_order from _call_place_outfit_order_3
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_ballDress_OBJ and not sorry_for_hesterics:
-                call cust_excuse("You cannot purchase this outfit... yet.") from _call_cust_excuse_2
+                call cust_excuse("You cannot purchase this outfit... yet.") 
                 jump custom_orders
             if clothes_store_order_choice == hg_ballDress_OBJ and sorry_for_hesterics:
                 m "Do you sell Ball Dresses?"
@@ -165,7 +165,7 @@ label custom_orders:
                 maf "A ball dress isn't something that's thrown together. It requires love and attention. It doesn't come cheap either."
                 m "Well, thank you."
                 maf "You're welcome."
-                call place_outfit_order from _call_place_outfit_order_4
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_msMarvel_OBJ:
@@ -178,7 +178,7 @@ label custom_orders:
                 maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
                 m "Thank you very much."
                 maf "No need to thank me sir. Payment will suffice."
-                call place_outfit_order from _call_place_outfit_order_5
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_heartDancer_OBJ:
@@ -190,7 +190,7 @@ label custom_orders:
                 maf "As you wish."
                 m "Thank you very much."
                 maf "You're quite welcome sir."
-                call place_outfit_order from _call_place_outfit_order_6
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_powerGirl_OBJ:
@@ -201,7 +201,7 @@ label custom_orders:
                 maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
                 m "Thank you very much."
                 maf "No need to thank me sir. Payment will suffice."
-                call place_outfit_order from _call_place_outfit_order_7
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_harleyQuinn_OBJ:
@@ -212,7 +212,7 @@ label custom_orders:
                 maf "But I'm sure that my grandson has a comic of hers. I'll just have to wrestle it out of his grubby little hands."
                 m "Thank you very much."
                 maf "You're quite welcome."
-                call place_outfit_order from _call_place_outfit_order_8
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_laraCroft_OBJ:
@@ -225,7 +225,7 @@ label custom_orders:
                 m "Thank you very much."
                 maf "You're welcome. I'm seeing him tonight so I should be able to complete this one slightly faster than usual."
                 m "Fantastic."
-                call place_outfit_order from _call_place_outfit_order_9
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_christmas_OBJ:
@@ -238,13 +238,13 @@ label custom_orders:
                 m "Thank you very much."
                 maf "You're welcome. I'll even give you a special price. Consider it my Christmas gift to you.."
                 m "Thank you."
-                call place_outfit_order from _call_place_outfit_order_10
+                call place_outfit_order 
                 jump clothes_menu
             
             if clothes_store_order_choice == hg_pirate_OBJ:
                 m "I want a pirate outfit"
                 maf "ok"
-                call place_outfit_order from _call_place_outfit_order_11
+                call place_outfit_order 
                 jump clothes_menu
 
             if clothes_store_order_choice == hg_bio_OBJ:
@@ -257,7 +257,7 @@ label custom_orders:
                 maf "Consider it done!"
                 m "Thank you very much."
                 maf "You're welcome."
-                call place_outfit_order from _call_place_outfit_order_12
+                call place_outfit_order 
                 jump clothes_menu
 
             if clothes_store_order_choice == hg_yenn_OBJ:
@@ -267,7 +267,7 @@ label custom_orders:
                 maf "Certainly."
                 m "Thank you very much."
                 maf "You can thank me with coin!"
-                call place_outfit_order from _call_place_outfit_order_13
+                call place_outfit_order 
                 jump clothes_menu
     else:
         jump clothes_menu
@@ -301,8 +301,8 @@ label pickup_outfit:
     if outfit_order_placed: # OUTFIT
         $ outfit_order.purchased = True
         #$ outfit_inventory.append(outfit_order)
-        call display_package(">A "+outfit_order.name+R" outfit has been added to your possessions.") from _call_display_package
-        call receive_package from _call_receive_package
+        call display_package(">A "+outfit_order.name+R" outfit has been added to your possessions.") 
+        call receive_package 
         call screen main_room_menu
         
 return
@@ -336,7 +336,7 @@ label existing_stock:
             label existing_stock_dyes:
             menu:
                 "{color=#858585}-Blonde Dye- (20 Gold)-{/color}"if "blonde_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_3
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Blonde Dye- (20 Gold)" if "blonde_dye" not in cs_existing_stock:
                     maf "A very nice shade of yellow."
@@ -344,13 +344,13 @@ label existing_stock:
                         ">Requires a whoring level of 5 to be used.<"
                     menu:
                         "-Buy the item (20 gold)-":
-                            call cs_buy_stock("blonde_dye", 20) from _call_cs_buy_stock
+                            call cs_buy_stock("blonde_dye", 20) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Red Dye- (20 Gold)-{/color}"if "red_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_4
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Red Dye- (20 Gold)" if "red_dye" not in cs_existing_stock:
                     maf "A very nice shade of red."
@@ -358,13 +358,13 @@ label existing_stock:
                         ">Requires a whoring level of 5 to be used.<"
                     menu:
                         "-Buy the item (20 gold)-":
-                            call cs_buy_stock("red_dye", 20) from _call_cs_buy_stock_1
+                            call cs_buy_stock("red_dye", 20) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Crimson Dye- (40 Gold)-{/color}"if "crimson_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_5
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Crimson Dye- (40 Gold)" if "crimson_dye" not in cs_existing_stock:
                     maf "A very rich shade of red."
@@ -372,13 +372,13 @@ label existing_stock:
                         ">Requires a whoring level of 8 to be used.<"
                     menu:
                         "-Buy the item (40 gold)-":
-                            call cs_buy_stock("crimson_dye", 40) from _call_cs_buy_stock_2
+                            call cs_buy_stock("crimson_dye", 40) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Black Dye- (200 Gold)-{/color}"if "black_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_6
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Black Dye- (200 Gold)" if "black_dye" not in cs_existing_stock:
                     maf "As black as a Testral! So I have heard."
@@ -386,13 +386,13 @@ label existing_stock:
                         ">Requires a whoring level of 8 to be used.<"
                     menu:
                         "-Buy the item (200 gold)-":
-                            call cs_buy_stock("black_dye", 200) from _call_cs_buy_stock_3
+                            call cs_buy_stock("black_dye", 200) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Green Dye- (60 Gold)-{/color}"if "green_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_7
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Green Dye- (60 Gold)" if "green_dye" not in cs_existing_stock:
                     maf "A bright shade of green."
@@ -400,13 +400,13 @@ label existing_stock:
                         ">Requires a whoring level of 11 to be used.<"
                     menu:
                         "-Buy the item (60 gold)-":
-                            call cs_buy_stock("green_dye", 60) from _call_cs_buy_stock_4
+                            call cs_buy_stock("green_dye", 60) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Blue Dye- (60 Gold)-{/color}"if "blue_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_8
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Blue Dye- (60 Gold)" if "blue_dye" not in cs_existing_stock:
                     maf "A bright shade of blue."
@@ -414,13 +414,13 @@ label existing_stock:
                         ">Requires a whoring level of 11 to be used.<"
                     menu:
                         "-Buy the item (60 gold)-":
-                            call cs_buy_stock("blue_dye", 60) from _call_cs_buy_stock_5
+                            call cs_buy_stock("blue_dye", 60) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Purple Dye- (80 Gold)-{/color}"if "purple_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_9
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Purple Dye- (80 Gold)" if "purple_dye" not in cs_existing_stock:
                     maf "A very nice shade of purple."
@@ -428,13 +428,13 @@ label existing_stock:
                         ">Requires a whoring level of 11 to be used.<"
                     menu:
                         "-Buy the item (80 gold)-":
-                            call cs_buy_stock("purple_dye", 80) from _call_cs_buy_stock_6
+                            call cs_buy_stock("purple_dye", 80) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-Pink Dye- (200 Gold)-{/color}"if "pink_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_10
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-Pink Dye- (200 Gold)" if "pink_dye" not in cs_existing_stock:
                     maf "As bright and pink as my... I better not say any more."
@@ -442,13 +442,13 @@ label existing_stock:
                         ">Requires a whoring level of 14 to be used.<"
                     menu:
                         "-Buy the item (200 gold)-":
-                            call cs_buy_stock("pink_dye", 200) from _call_cs_buy_stock_7
+                            call cs_buy_stock("pink_dye", 200) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
 
                 "{color=#858585}-White Dye- (400 Gold)-{/color}"if "white_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_11
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_dyes
                 "-White Dye- (400 Gold)" if "white_dye" not in cs_existing_stock:
                     maf "A white as bright and pure as a Unicorn's skin."
@@ -456,7 +456,7 @@ label existing_stock:
                         ">Requires a whoring level of 17 to be used.<"
                     menu:
                         "-Buy the item (400 gold)-":
-                            call cs_buy_stock("white_dye", 400) from _call_cs_buy_stock_8
+                            call cs_buy_stock("white_dye", 400) 
                             jump existing_stock_dyes
                         "-Never mind-":
                             jump existing_stock_dyes
@@ -470,7 +470,7 @@ label existing_stock:
             label existing_stock_tops:
             menu:
                 "{color=#858585}-Muggle Pullover- (50 Gold)-{/color}"if "normal_pullover" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_12
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_tops
                 "-Muggle Pullover- (50 Gold)" if "normal_pullover" not in cs_existing_stock:
                     maf "A cute pink pullover. Has a heart shaped hole for her cleavage that can magically appear if you want!"
@@ -478,13 +478,13 @@ label existing_stock:
                         ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (50 gold)-":
-                            call cs_buy_stock("normal_pullover", 50) from _call_cs_buy_stock_9
+                            call cs_buy_stock("normal_pullover", 50) 
                             jump existing_stock_tops
                         "-Never mind-":
                             jump existing_stock_tops
 
                 "{color=#858585}-Muggle Sweater- (60 Gold)-{/color}"if "normal_sweater" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_13
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_tops
                 "-Muggle Sweater- (60 Gold)" if "normal_sweater" not in cs_existing_stock:
                     maf "The sweater she has worn in movie 3! When she punched that rascal Malfoy in the face! Loved that scene."
@@ -492,7 +492,7 @@ label existing_stock:
                         ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (60 gold)-":
-                            call cs_buy_stock("normal_sweater", 60) from _call_cs_buy_stock_10
+                            call cs_buy_stock("normal_sweater", 60) 
                             jump existing_stock_tops
                         "-Never mind-":
                             jump existing_stock_tops
@@ -512,7 +512,7 @@ label existing_stock:
                 #            jump existing_stock_tops
 
                 "{color=#858585}-Leather Jacket Short Sleeves- (200 Gold)-{/color}"if "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_14
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_tops
                 "-Leather Jacket Short Sleeves- (200 Gold)" if "wicked_leather_jacket_short_sleeves" not in cs_existing_stock:
                     maf "A black leather jacket with short sleeves. Can also be worn open of course."
@@ -520,13 +520,13 @@ label existing_stock:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
-                            call cs_buy_stock("wicked_leather_jacket_short_sleeves", 200) from _call_cs_buy_stock_11
+                            call cs_buy_stock("wicked_leather_jacket_short_sleeves", 200) 
                             jump existing_stock_tops
                         "-Never mind-":
                             jump existing_stock_tops
 
                 "{color=#858585}-Leather Jacket No Sleeves- (200 Gold)-{/color}"if "wicked_leather_jacket_sleeveless" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_15
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_tops
                 "-Leather Jacket No Sleeves- (200 Gold)" if "wicked_leather_jacket_sleeveless" not in cs_existing_stock:
                     maf "A black leather jacket with no sleeves. Can also be worn open of course."
@@ -534,13 +534,13 @@ label existing_stock:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
-                            call cs_buy_stock("wicked_leather_jacket_sleeveless", 200) from _call_cs_buy_stock_12
+                            call cs_buy_stock("wicked_leather_jacket_sleeveless", 200) 
                             jump existing_stock_tops
                         "-Never mind-":
                             jump existing_stock_tops
 
                 "{color=#858585}-Leather Jacket Long Sleeves- (200 Gold)-{/color}"if "wicked_leather_jacket_sleeves" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_16
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_tops
                 "-Leather Jacket Long Sleeves- (200 Gold)" if "wicked_leather_jacket_sleeves" not in cs_existing_stock:
                     maf "A black leather jacket with long sleeves. Can also be worn open of course."
@@ -548,13 +548,13 @@ label existing_stock:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
-                            call cs_buy_stock("wicked_leather_jacket_sleeves", 200) from _call_cs_buy_stock_13
+                            call cs_buy_stock("wicked_leather_jacket_sleeves", 200) 
                             jump existing_stock_tops
                         "-Never mind-":
                             jump existing_stock_tops
 
                 "{color=#858585}-Fishnets Top- (60 Gold)-{/color}"if "top_fishnets" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Requires whoring level 20 for it to appear in the wardrobe.") from _call_cust_excuse_17
+                    call cust_excuse("You already own this. - Requires whoring level 20 for it to appear in the wardrobe.") 
                     jump existing_stock_tops
                 "-Fishnets Top- (60 Gold)" if "top_fishnets" not in cs_existing_stock:
                     maf "This fishnets top hides nothing! What girl would possibly want to wear this on school grounds?"
@@ -562,7 +562,7 @@ label existing_stock:
                         ">Requires a whoring level of 20 to be worn.<"
                     menu:
                         "-Buy the item (60 gold)-":
-                            call cs_buy_stock("top_fishnets", 60) from _call_cs_buy_stock_14
+                            call cs_buy_stock("top_fishnets", 60) 
                             jump existing_stock_tops
                         "-Never mind-":
                             jump existing_stock_tops
@@ -575,7 +575,7 @@ label existing_stock:
             label existing_stock_pants_skirts:
             menu:
                 "{color=#858585}-Belted Mini Skirt- (75 Gold)-{/color}"if "skirt_belted_mini" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_18
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_pants_skirts
                 "-Belted Mini Skirt- (75 Gold)" if "skirt_belted_mini" not in cs_existing_stock:
                     maf "A short skirt with a belt. Very trendy!"
@@ -583,13 +583,13 @@ label existing_stock:
                         ">Requires a whoring level of 8 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
-                            call cs_buy_stock("skirt_belted_mini", 75) from _call_cs_buy_stock_15
+                            call cs_buy_stock("skirt_belted_mini", 75) 
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts
 
                 "{color=#858585}-Belted Micro Skirt- (150 Gold)-{/color}"if "skirt_belted_micro" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_19
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_pants_skirts
                 "-Belted Micro Skirt- (150 Gold)" if "skirt_belted_micro" not in cs_existing_stock:
                     maf "A very short skirt with a belt. Very revealing! Lets just hope the girl is wearing a pair of underwear!"
@@ -597,13 +597,13 @@ label existing_stock:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
-                            call cs_buy_stock("skirt_belted_micro", 150) from _call_cs_buy_stock_16
+                            call cs_buy_stock("skirt_belted_micro", 150) 
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts
 
                 "{color=#858585}-Jeans- (75 Gold)-{/color}"if "pants_jeans_long" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_20
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_pants_skirts
                 "-Jeans- (75 Gold)" if "pants_jeans_long" not in cs_existing_stock:
                     maf "A pair of standard muggle jeans, albeit a little low slung."
@@ -611,13 +611,13 @@ label existing_stock:
                         ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
-                            call cs_buy_stock("pants_jeans_long", 75) from _call_cs_buy_stock_17
+                            call cs_buy_stock("pants_jeans_long", 75) 
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts
 
                 "{color=#858585}-Short Jeans- (150 Gold)-{/color}"if "pants_jeans_short" in cs_existing_stock:
-                    call cust_excuse(">You already own this.") from _call_cust_excuse_21
+                    call cust_excuse(">You already own this.") 
                     jump existing_stock_pants_skirts
                 "-Short Jeans- (150 Gold)" if "pants_jeans_short" not in cs_existing_stock:
                     maf "A pair of short daisy dukes."
@@ -625,7 +625,7 @@ label existing_stock:
                         ">Requires a whoring level of 11 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
-                            call cs_buy_stock("pants_jeans_short", 150) from _call_cs_buy_stock_18
+                            call cs_buy_stock("pants_jeans_short", 150) 
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts
@@ -651,50 +651,50 @@ label existing_stock:
             label existing_stock_stockings:
             menu:
                 "{color=#858585}-Gryffindor Stockings- (50 Gold)-{/color}"if "stockings_gryff" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_22
+                    call cust_excuse("You already own this.") 
                     jump existing_stock_stockings
                 "-Gryffindor Stockings- (50 Gold)" if "stockings_gryff" not in cs_existing_stock:
                     maf "A pair of cheerful school stockings, in Gryffindor's colours."
                     menu:
                         "-Buy the item (50 gold)-":
-                            call cs_buy_stock("stockings_gryff", 50) from _call_cs_buy_stock_19
+                            call cs_buy_stock("stockings_gryff", 50) 
                             jump existing_stock_stockings
                         "-Never mind-":
                             jump existing_stock_stockings
 
                 "{color=#858585}-Slytherin Stockings- (50 Gold)-{/color}"if "stockings_slyth" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.") from _call_cust_excuse_23
+                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.") 
                     jump existing_stock_stockings
                 "-Slytherin Stockings- (50 Gold)" if "stockings_slyth" not in cs_existing_stock:
                     maf "A pair of cheerful school stockings, in Slytherin's colours."
                     ">Requires a whoring level of 9 to be worn.<"
                     menu:
                         "-Buy the item (50 gold)-":
-                            call cs_buy_stock("stockings_slyth", 50) from _call_cs_buy_stock_20
+                            call cs_buy_stock("stockings_slyth", 50) 
                             jump existing_stock_stockings
                         "-Never mind-":
                             jump existing_stock_stockings
 
                 "{color=#858585}-Fishnet Stockings- (75 Gold)-{/color}"if "stockings_fishnet_black" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_24
+                    call cust_excuse("You already own this.") 
                     jump existing_stock_stockings
                 "-Fishnet Stockings- (75 Gold)" if "stockings_fishnet_black" not in cs_existing_stock:
                     maf "A pair of sultry fishnet stockings."
                     menu:
                         "-Buy the item (75 gold)-":
-                            call cs_buy_stock("stockings_fishnet_black", 75) from _call_cs_buy_stock_21
+                            call cs_buy_stock("stockings_fishnet_black", 75) 
                             jump existing_stock_stockings
                         "-Never mind-":
                             jump existing_stock_stockings
 
                 "{color=#858585}-Lace Stockings- (30 Gold)-{/color}"if "stockings_lace_black" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_25
+                    call cust_excuse("You already own this.") 
                     jump existing_stock_stockings
                 "-Lace Stockings- (30 Gold)" if "stockings_lace_black" not in cs_existing_stock:
                     maf "A pair of black lace stockings."
                     menu:
                         "-Buy the item (30 gold)-":
-                            call cs_buy_stock("stockings_lace_black", 30) from _call_cs_buy_stock_22
+                            call cs_buy_stock("stockings_lace_black", 30) 
                             jump existing_stock_stockings
                         "-Never mind-":
                             jump existing_stock_stockings
@@ -759,104 +759,104 @@ label existing_stock:
             label accessories:
             menu:
                 "{color=#858585}-\"S.P.E.W.\" badge-{/color}"if "SPEW_badge" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_26
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-\"S.P.E.W.\" badge-" if "SPEW_badge" not in cs_existing_stock:
                     maf "A badge designed to show one's opposition of elf slavery."
                     menu:
                         "-Buy the item (100 gold)-":
-                            call cs_buy_stock("SPEW_badge",100) from _call_cs_buy_stock_23
+                            call cs_buy_stock("SPEW_badge",100) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-\"I <3 C.U.M.\" badge-{/color}"if "CUM_badge" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_27
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-\"I <3 C.U.M.\" badge-" if "CUM_badge" not in cs_existing_stock:
                     maf "A badge that displays ones affection towards semen."
                     menu:
                         "-Buy the item (150 gold)-":
-                            call cs_buy_stock("CUM_badge",150) from _call_cs_buy_stock_24
+                            call cs_buy_stock("CUM_badge",150) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-Freckles-{/color}"if "freckles" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_28
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-Freckles-" if "freckles" not in cs_existing_stock:
                     maf "Some lovely freckle paint. Now non-toxic!"
                     menu:
                         "-Buy the item (50 gold)-":
-                            call cs_buy_stock("freckles",50) from _call_cs_buy_stock_25
+                            call cs_buy_stock("freckles",50) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-reading glasses-{/color}"if "reading_glasses" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_29
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-reading glasses-" if "reading_glasses" not in cs_existing_stock:
                     maf "I wish I only needed fake reading glasses."
                     menu:
                         "-Buy the item (75 gold)-":
-                            call cs_buy_stock("reading_glasses",75) from _call_cs_buy_stock_26
+                            call cs_buy_stock("reading_glasses",75) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-vintage glasses-{/color}"if "vintage_glasses" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_30
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-vintage glasses-" if "vintage_glasses" not in cs_existing_stock:
                     maf "These old glasses used to be quite fashionable."
                     menu:
                         "-Buy the item (60 gold)-":
-                            call cs_buy_stock("vintage_glasses",60) from _call_cs_buy_stock_27
+                            call cs_buy_stock("vintage_glasses",60) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-fake cum-{/color}"if "fake_cum" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_31
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-fake cum-" if "fake_cum" not in cs_existing_stock:
                     maf "it's Just a little bit of margarita mix..."
                     menu:
                         "-Buy the item (100 gold)-":
-                            call cs_buy_stock("fake_cum",100) from _call_cs_buy_stock_28
+                            call cs_buy_stock("fake_cum",100) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-Cat ears-{/color}"if "cat_ears" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_32
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-Cat Ears-" if "cat_ears" not in cs_existing_stock:
                     maf "it's a pair of cat ears..."
                     maf "and it even comes with a clip on tail..."
                     menu:
                         "-Buy the item (70 gold)-":
-                            call cs_buy_stock("cat_ears",70) from _call_cs_buy_stock_29
+                            call cs_buy_stock("cat_ears",70) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-Transparency Potion-{/color}"if "transparency" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_33
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-Transparency Potion-" if "transparency" not in cs_existing_stock:
                     maf "This renders the users clothes slightly see through."
                     maf "I'd save this for private occasions if I was you..."
                     menu:
                         "-Buy the item (130 gold)-":
-                            call cs_buy_stock("transparency",130) from _call_cs_buy_stock_30
+                            call cs_buy_stock("transparency",130) 
                             jump accessories
                         "-Never mind-":
                             jump accessories
                 "{color=#858585}-elf ears-{/color}"if "elf_ears" in cs_existing_stock:
-                    call cust_excuse("You already own this.") from _call_cust_excuse_34
+                    call cust_excuse("You already own this.") 
                     jump accessories
                 "-elf ears-" if "elf_ears" not in cs_existing_stock:
                     maf "A pair of fake elf ears."
                     maf "The real ones are much harder to import..."
                     menu:
                         "-Buy the item (80 gold)-":
-                            call cs_buy_stock("elf_ears",80) from _call_cs_buy_stock_31
+                            call cs_buy_stock("elf_ears",80) 
                             jump accessories
                         "-Never mind-":
                             jump accessories

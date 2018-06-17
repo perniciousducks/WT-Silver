@@ -114,10 +114,10 @@ label store_scrolls:
                     ">A New scroll has been added to your sacred scrolls collection."
                     hide screen gift
                     with d3
-                    call thx_4_shoping2 from _call_thx_4_shoping2 #Massage that says "Thank you for shopping here!".
+                    call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
                     call screen shop_screen
                 else:
-                    call no_gold from _call_no_gold #Massage: m "I don't have enough gold".
+                    call no_gold #Massage: m "I don't have enough gold".
                     hide screen gift
                     return
             "-Never mind-":
@@ -157,9 +157,9 @@ label shop_books:
     if BookOBJ == "nvm":
         jump shop_book_menu
     elif BookOBJ.purchased:
-        call do_have_book from _call_do_have_book #Message that says that you already bought this book.
+        call do_have_book #Message that says that you already bought this book.
     else:
-        call purchase_book from _call_purchase_book
+        call purchase_book 
     if BookOBJ in Books_OBJ.get_edu():
         jump education_menu
     if BookOBJ in Books_OBJ.get_fic():
@@ -179,7 +179,7 @@ label purchase_book:
                 hide screen gift
                 with d3
             else:
-                call no_gold from _call_no_gold_1 #Massage: m "I don't have enough gold".
+                call no_gold #Massage: m "I don't have enough gold".
         "-Never mind-":
             hide screen gift
     return
@@ -227,7 +227,7 @@ label shop_potion_menu:
                 fre "Hmm... I think I heard that it's found by the lake."
         jump shop_potion_menu
     if PotionOBJ == "whoring":
-        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.") from _call_cust_excuse_35
+        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.") 
     if PotionOBJ == "nvm":
         pass    
     call screen shop_screen
@@ -249,7 +249,7 @@ label gifts_menu:
     elif result == "oos":
         jump out
     else:
-        call object_gift_block(result) from _call_object_gift_block
+        call object_gift_block(result) 
         jump shop_menu
     
 label object_gift_block(item):
@@ -263,13 +263,13 @@ label object_gift_block(item):
     $ cost4 = item.cost * 8
     menu:
         "-Buy 1 for ([item.cost] galleons)-":
-            call object_purchase_item(item, 1) from _call_object_purchase_item
+            call object_purchase_item(item, 1) 
         "-Buy 2 for ([cost2] galleons)-":
-            call object_purchase_item(item, 2) from _call_object_purchase_item_1
+            call object_purchase_item(item, 2) 
         "-Buy 4 for ([cost3] galleons)-":
-            call object_purchase_item(item, 4) from _call_object_purchase_item_2
+            call object_purchase_item(item, 4) 
         "-Buy 8 for ([cost4] galleons)-":
-            call object_purchase_item(item, 8) from _call_object_purchase_item_3
+            call object_purchase_item(item, 8) 
         "-Never mind-":
             hide screen gift
             pass
@@ -301,7 +301,7 @@ label object_purchase_item(item, quantity):
         with d3
         
     else:
-        call no_gold from _call_no_gold_2 #Massage: m "I don't have enough gold".
+        call no_gold #Massage: m "I don't have enough gold".
     
     return
     
@@ -316,17 +316,17 @@ label app:
             menu:
                 "-Buy the item (100 gold)-":
                     if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
-                        call do_have_book from _call_do_have_book_1 # "I already own this one."
+                        call do_have_book # "I already own this one."
                         jump app
                     else:
                         if gold >= 100:
                             $ gold -=100
                             $ order_placed = True
                             $ bought_badge_01 = True #Affects 15_mail.rpy
-                            call thx_4_shoping from _call_thx_4_shoping #Massage that says "Thank you for shopping here!".
+                            call thx_4_shoping #Massage that says "Thank you for shopping here!".
                             call screen shop_screen
                         else:
-                            call no_gold from _call_no_gold_3 #Massage: m "I don't have enough gold".
+                            call no_gold #Massage: m "I don't have enough gold".
                             hide screen gift
                             with d3
                             jump app
@@ -338,17 +338,17 @@ label app:
             $ the_gift = "images/store/glasses.png" # GLASSES
             show screen gift
             with d3
-            call glasses_text from _call_glasses_text
+            call glasses_text 
             menu:
                 "-Buy the item (60 gold)-":
                     if gold >= 60:
                         $ gold -= 60
                         $ order_placed = True
                         $ bought_glasses = True #Affects 15_mail.rpy
-                        call thx_4_shoping from _call_thx_4_shoping_1 #Massage that says "Thank you for shopping here!".
+                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
                         call screen shop_screen
                     else:
-                        call no_gold from _call_no_gold_4 #Massage: m "I don't have enough gold".
+                        call no_gold #Massage: m "I don't have enough gold".
                         jump app
                 "-Never mind-":
                     hide screen gift
@@ -357,21 +357,21 @@ label app:
             $ the_gift = "images/store/30.png" # FISHNETS.
             show screen gift
             with d3
-            call nets_text from _call_nets_text_1
+            call nets_text 
             menu:
                 "-Buy the item (120 gold)-":
                     if nets == 7 or nets == 1: # == 7 means "gifted already"
-                        call do_have_book from _call_do_have_book_2 # "I already own this one."
+                        call do_have_book # "I already own this one."
                         jump app
                     else:
                         if gold >= 120:
                             $ gold -= 120
                             $ order_placed = True
                             $ bought_nets = True #Affects 15_mail.rpy
-                            call thx_4_shoping from _call_thx_4_shoping_2 #Massage that says "Thank you for shopping here!".
+                            call thx_4_shoping #Massage that says "Thank you for shopping here!".
                             call screen shop_screen
                         else:
-                            call no_gold from _call_no_gold_5 #Massage: m "I don't have enough gold".
+                            call no_gold #Massage: m "I don't have enough gold".
                             hide screen gift
                             with d3
                             jump app
@@ -390,7 +390,7 @@ label app:
                         $ vouchers -= 1 #Shows the amount of DAHR's vouchers in your possession.
                         $ order_placed = True
                         $ bought_miniskirt = True #Affects 15_mail.rpy
-                        call thx_4_shoping from _call_thx_4_shoping_3 #Massage that says "Thank you for shopping here!".
+                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
                         call screen shop_screen
                     else:
                         dahr "This item is only redeemable with a \"DAHR's voucher\"."
@@ -417,10 +417,10 @@ label app:
                         $ gold -=1500
                         $ order_placed = True
                         $ bought_ball_dress = True #Affects 15_mail.rpy
-                        call thx_4_shoping from _call_thx_4_shoping_4 #Massage that says "Thank you for shopping here!".
+                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
                         call screen shop_screen
                     else:
-                        call no_gold from _call_no_gold_6 #Massage: m "I don't have enough gold".
+                        call no_gold #Massage: m "I don't have enough gold".
                         hide screen gift
                         with d3
                         jump app

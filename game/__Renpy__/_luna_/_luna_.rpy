@@ -20,21 +20,21 @@ return
 
 
 label luna_door:
-    call luna_reset from _call_luna_reset_3
+    call luna_reset 
     $ renpy.play('sounds/door.mp3')
     $ luna_chibi("stand")
     if luna_dom >= luna_sub:
         if luna_dom >= 4:
-            call luna_main("[l_genie_name]...", 9, 2, 2, 2) from _call_luna_main_2038
+            call luna_main("[l_genie_name]...", 9, 2, 2, 2) 
         else:
-            call luna_main("[l_genie_name]...", 8, 2, 3, 3) from _call_luna_main_2039
+            call luna_main("[l_genie_name]...", 8, 2, 3, 3) 
     else:
-        call luna_main("[l_genie_name]...", 1, 1, 4, 2) from _call_luna_main_2040
+        call luna_main("[l_genie_name]...", 1, 1, 4, 2) 
 
 label luna_door_menu:
     menu:
         "-Chit Chat-":
-            call luna_chitchat from _call_luna_chitchat
+            call luna_chitchat 
             jump luna_door_menu
         "-favours-":
             if gold <= 100:
@@ -70,12 +70,12 @@ label luna_summon:
 return
 
 label luna_away:
-    call luna_reset from _call_luna_reset_4
+    call luna_reset 
     $ luna_busy = True
     $ renpy.play('sounds/door2.mp3')
     hide screen chair_left
     hide screen desk
-    call gen_chibi("hide") from _call_gen_chibi_113
+    call gen_chibi("hide") 
     show screen genie
     hide screen luna
     hide screen luna_chibi
@@ -103,8 +103,8 @@ label luna_reset:
     return
 
 label luna_no_money:
-    call luna_main("You expect me to do it for free?", 8, 2, 3, 3) from _call_luna_main_2041
-    call luna_main("Hmph!", 8, 2, 3, 3) from _call_luna_main_2042
+    call luna_main("You expect me to do it for free?", 8, 2, 3, 3) 
+    call luna_main("Hmph!", 8, 2, 3, 3) 
     jump luna_away
 
 ###CHIBIS###------------------------------------------------------

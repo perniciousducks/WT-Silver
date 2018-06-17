@@ -22,101 +22,101 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
     #First time event.
     if hg_pf_TouchYourself_OBJ.points == 0:
         m "[hermione_name]..."
-        call her_main("Yes, [genie_name]?","base","base") from _call_her_main_4247
+        call her_main("Yes, [genie_name]?","base","base") 
         m "Do you ever touch yourself?"
         if whoring < 8:
             jump too_much
             
         $ hg_pf_TouchYourself_OBJ.hearts_level = 1
         
-        call her_main("What? why?","upset","wink") from _call_her_main_4248
+        call her_main("What? why?","upset","wink") 
         m "Do you?"
-        call her_main("[genie_name]!","scream","worriedCl") from _call_her_main_4249
+        call her_main("[genie_name]!","scream","worriedCl") 
         m "It's a simple question [hermione_name]..."
-        call her_main("......","normal","worriedCl") from _call_her_main_4250
-        call her_main("{size=-5}I do...{/size}","angry","worriedCl",emote="05") from _call_her_main_4251
+        call her_main("......","normal","worriedCl") 
+        call her_main("{size=-5}I do...{/size}","angry","worriedCl",emote="05") 
         m "Huh? What was that?"
-        call her_main("I said that I do alright!!!","scream","worriedCl") from _call_her_main_4252
+        call her_main("I said that I do alright!!!","scream","worriedCl") 
         m "Hmmmm, I'm not sure I believe you..."
-        call her_main("What? why would I lie?","annoyed","worriedL") from _call_her_main_4253
+        call her_main("What? why would I lie?","annoyed","worriedL") 
         m "I'm not sure..."
         m "But don't worry, I'm sure a quick little demonstration will erase any doubts..."
-        call her_main("...{p}And how much will this demonstration earn me?","annoyed","suspicious") from _call_her_main_4254
+        call her_main("...{p}And how much will this demonstration earn me?","annoyed","suspicious") 
         
         menu:
             "\"You will get 20 house points.\"":
                 $ current_payout = 20
-                call her_main("......","annoyed","angryL") from _call_her_main_4255
-                call her_main("well I suppose I could.","open","down") from _call_her_main_4256
-                call her_main("But you better keep your hands to yourself...","open","down") from _call_her_main_4257
+                call her_main("......","annoyed","angryL") 
+                call her_main("well I suppose I could.","open","down") 
+                call her_main("But you better keep your hands to yourself...","open","down") 
                 m "Witcher's promise."
-                call her_main("...","annoyed","suspicious") from _call_her_main_4258
+                call her_main("...","annoyed","suspicious") 
             "\"you will get 40 house points.\"":
                 $ current_payout = 40
-                call her_main(".....","base","base") from _call_her_main_4259
-                call her_main("40 house points...?","soft","baseL") from _call_her_main_4260
+                call her_main(".....","base","base") 
+                call her_main("40 house points...?","soft","baseL") 
                 her "That could put \"Gryffindor\" back on top..."
                 m "so Is that a \"yes\"?"
-                call her_main("Yes, it is, [genie_name].","base","squint") from _call_her_main_4261
+                call her_main("Yes, it is, [genie_name].","base","squint") 
                 m "fantastic!"
             "\"you will get 80 house points!\"":
-                call play_music("chipper_doodle") from _call_play_music_169 # HERMIONE'S THEME.
+                call play_music("chipper_doodle") # HERMIONE'S THEME.
                 $ current_payout = 80 #Used when haggling about price of th favor.
                 $ mad = 0
-                call her_main("80 house points?!","scream","wide_stare") from _call_her_main_4262
+                call her_main("80 house points?!","scream","wide_stare") 
                 m "Is that enough?"
-                call her_main("Of course [genie_name]!","smile","happyCl") from _call_her_main_4263
-                call her_main("If it's 80 points for Gryffindor then I don't mind giving you a little... show.","smile","happyCl",emote="06") from _call_her_main_4264
+                call her_main("Of course [genie_name]!","smile","happyCl") 
+                call her_main("If it's 80 points for Gryffindor then I don't mind giving you a little... show.","smile","happyCl",emote="06") 
        
-        call play_music("playful_tension") from _call_play_music_170# SEX THEME.
-        call her_main("...........","upset","wink",xpos="mid",ypos="base",trans="fade") from _call_her_main_4265
-        call her_main("Do you want me to... start?","upset","wink") from _call_her_main_4266
+        call play_music("playful_tension") # SEX THEME.
+        call her_main("...........","upset","wink",xpos="mid",ypos="base",trans="fade") 
+        call her_main("Do you want me to... start?","upset","wink") 
         m "Maybe take off your top first..."
-        call her_main("...","angry","worriedCl",emote="05") from _call_her_main_4267
-        call her_main("You want me to strip for you as well as...","angry","worriedCl",emote="05") from _call_her_main_4268
+        call her_main("...","angry","worriedCl",emote="05") 
+        call her_main("You want me to strip for you as well as...","angry","worriedCl",emote="05") 
         m "There's an extra 10 points for \"gryffindor\" in it for you."
         $ current_payout += 10
-        call her_main("alright... {p}but I'm leaving my skirt on...","upset","wink") from _call_her_main_4269
+        call her_main("alright... {p}but I'm leaving my skirt on...","upset","wink") 
         hide screen bld1
         with d3
         
-        call set_hermione_action("lift_top") from _call_set_hermione_action_108
+        call set_hermione_action("lift_top") 
         pause.5
         
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update") from _call_set_hermione_action_109
+        call set_hermione_action("none","skip_update") 
         pause.5
         
-        call her_main("...........","upset","wink") from _call_her_main_4270
+        call her_main("...........","upset","wink") 
         m "Mmmm, that's it, [hermione_name]..."
         
-        call her_main("(I can't believe I'm going to do this...)","normal","worriedCl") from _call_her_main_4271 
+        call her_main("(I can't believe I'm going to do this...)","normal","worriedCl") 
         
         
-        call set_hermione_action("covering_top") from _call_set_hermione_action_110
-        call ctc from _call_ctc_262
+        call set_hermione_action("covering_top") 
+        call ctc 
         
-        call play_music("playful_tension") from _call_play_music_171# SEX THEME.
-        call nar(">Hermione slowly starts grinding her mound against her hand.") from _call_nar_497
+        call play_music("playful_tension") # SEX THEME.
+        call nar(">Hermione slowly starts grinding her mound against her hand.") 
         g9 "Nice..."
-        call her_main("........","upset","wink") from _call_her_main_4272 
+        call her_main("........","upset","wink") 
         m "............."
-        call her_main(".............","normal","worriedCl") from _call_her_main_4273
-        call her_main("umm... [genie_name]?") from _call_her_main_4274 
+        call her_main(".............","normal","worriedCl") 
+        call her_main("umm... [genie_name]?") 
         m "Yes, what is it?"
-        call her_main("How long do I have to keep doing this?","open","base") from _call_her_main_4275 
+        call her_main("How long do I have to keep doing this?","open","base") 
         m "Until you finish [hermione_name]..."
         
         if daytime:
-            call her_main("What? my classes are about to start [genie_name]...","upset","wink") from _call_her_main_4276
+            call her_main("What? my classes are about to start [genie_name]...","upset","wink") 
         else: 
-            call her_main("What? it's getting pretty late [genie_name]...","upset","wink") from _call_her_main_4277
+            call her_main("What? it's getting pretty late [genie_name]...","upset","wink") 
             
-        call her_main("I'm not sure if I'll be able to finish... in time.","upset","wink") from _call_her_main_4278
+        call her_main("I'm not sure if I'll be able to finish... in time.","upset","wink") 
         m "Do you need the points or not?"
-        call her_main("I do, [genie_name]! I'm sorry...","open","down") from _call_her_main_4279
-        call her_main("I'll just keep ...going...","disgust","down_raised") from _call_her_main_4280
+        call her_main("I do, [genie_name]! I'm sorry...","open","down") 
+        call her_main("I'll just keep ...going...","disgust","down_raised") 
         m "(Hmmm, I might have to give her a little encouragement.)"
         
         #MAIN FAVOUR MENU
@@ -124,262 +124,262 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         menu:
             m "..."
             "\"That's it slut, keep going.\"":
-                call her_main("[genie_name]!!!","angry","angry") from _call_her_main_4281
-                call her_main("How dare you!") from _call_her_main_4282
+                call her_main("[genie_name]!!!","angry","angry") 
+                call her_main("How dare you!") 
                 m "what?"
-                call her_main("I hardly think that language is appropriate.","upset","wink") from _call_her_main_4283 
+                call her_main("I hardly think that language is appropriate.","upset","wink") 
                 m "And masturbating in front of your headmaster is?"
-                call her_main("Well... this is different.","open","down") from _call_her_main_4284
-                call her_main("I'm doing this for the honor of \"gryffindor\"...") from _call_her_main_4285
-                call her_main("To help my--") from _call_her_main_4286
-                call nar(">You notice how she's starting to grind her hips a little faster.") from _call_nar_498
+                call her_main("Well... this is different.","open","down") 
+                call her_main("I'm doing this for the honor of \"gryffindor\"...") 
+                call her_main("To help my--") 
+                call nar(">You notice how she's starting to grind her hips a little faster.") 
                 $ hermione_dribble = True
-                call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","soft","ahegao") from _call_her_main_4287
-                call her_main("My classmates win the house cup...","angry","wink") from _call_her_main_4288
+                call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","soft","ahegao") 
+                call her_main("My classmates win the house cup...","angry","wink") 
                 m "Are you sure that's the only reason slut?"
-                call her_main("I don't know--","normal","worriedCl") from _call_her_main_4289
-                call her_main("ah-a{image=textheart}...","open","worriedCl") from _call_her_main_4290
-                call her_main("I don't know what you mean, [genie_name]...","angry","down_raised") from _call_her_main_4291
+                call her_main("I don't know--","normal","worriedCl") 
+                call her_main("ah-a{image=textheart}...","open","worriedCl") 
+                call her_main("I don't know what you mean, [genie_name]...","angry","down_raised") 
                 m "It seems to me that you might be enjoying this a little too much..."
-                call her_main("I am not, [genie_name]!","open","worriedCl") from _call_her_main_4292
+                call her_main("I am not, [genie_name]!","open","worriedCl") 
                 m "Really?"
-                call her_main("......................","normal","worriedCl") from _call_her_main_4293
+                call her_main("......................","normal","worriedCl") 
                 m "Then why is your pussy so wet slut?"
-                call ctc from _call_ctc_263
+                call ctc 
                 
-                call her_main("ah...{image=textheart}","open","worriedCl") from _call_her_main_4294
+                call her_main("ah...{image=textheart}","open","worriedCl") 
                 m "ha! just Admit it, you enjoy being called a slut!"
-                call her_main("I do not!","normal","worriedCl") from _call_her_main_4295
-                call her_main("Aha...{image=textheart}","open","worriedCl") from _call_her_main_4296 
-                call her_main("I'm just thinking about how happy everyone will be when we win!","shock","worriedCl") from _call_her_main_4297
+                call her_main("I do not!","normal","worriedCl") 
+                call her_main("Aha...{image=textheart}","open","worriedCl") 
+                call her_main("I'm just thinking about how happy everyone will be when we win!","shock","worriedCl") 
                 m "and what if they find out how you earned the points?"
-                call her_main("what?!","shock","wide") from _call_her_main_4298
+                call her_main("what?!","shock","wide") 
                 m "then it wouldn't just be me degrading you..."
-                call her_main("...","soft","squintL") from _call_her_main_4299
+                call her_main("...","soft","squintL") 
                 m "It would be the whole school."
-                call her_main("ah...{image=textheart}","silly","dead") from _call_her_main_4300
+                call her_main("ah...{image=textheart}","silly","dead") 
                 m "Little. miss. slut."
-                call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4301
-                call her_main("[genie_name], please... don't tell anyone...","angry","wink") from _call_her_main_4302 
-                call nar(">Hermione keeps on grinding her hips against her hand...") from _call_nar_499
-                call her_main("they can't find out...","angry","base") from _call_her_main_4303
-                call her_main("if harry and ron knew...","angry","down_raised") from _call_her_main_4304
-                call her_main("i'd... ah...{image=textheart}","soft","ahegao") from _call_her_main_4305
+                call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") 
+                call her_main("[genie_name], please... don't tell anyone...","angry","wink") 
+                call nar(">Hermione keeps on grinding her hips against her hand...") 
+                call her_main("they can't find out...","angry","base") 
+                call her_main("if harry and ron knew...","angry","down_raised") 
+                call her_main("i'd... ah...{image=textheart}","soft","ahegao") 
                 m "You'd what [hermione_name]?"
-                call her_main("I'd...","open","worriedCl") from _call_her_main_4306
-                call her_main("I'd...{image=textheart}","shock","worriedCl") from _call_her_main_4307
-                call her_main("I...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4308
+                call her_main("I'd...","open","worriedCl") 
+                call her_main("I'd...{image=textheart}","shock","worriedCl") 
+                call her_main("I...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") 
             
             "\"Play with your breasts\"" if hg_pf_TouchYourself_OBJ.points > 0:
-                call her_main("my breasts...","open","down") from _call_her_main_4309
-                call set_hermione_action("covering_top") from _call_set_hermione_action_111
+                call her_main("my breasts...","open","down") 
+                call set_hermione_action("covering_top") 
                 
-                call her_main("I'm not sure if I should--","clench","down_raised") from _call_her_main_4310
+                call her_main("I'm not sure if I should--","clench","down_raised") 
                 m "There's another 10 points for \"gryffindor\" in it for you..."
                 $ current_payout += 10
-                call her_main("...","soft","squintL") from _call_her_main_4311
-                call her_main("......","soft","squintL") from _call_her_main_4312
-                call set_hermione_action("lift_breasts") from _call_set_hermione_action_112
+                call her_main("...","soft","squintL") 
+                call her_main("......","soft","squintL") 
+                call set_hermione_action("lift_breasts") 
                 
-                call her_main("ah...{image=textheart}","open","baseL") from _call_her_main_4313
+                call her_main("ah...{image=textheart}","open","baseL") 
                 m "There... Isn't that better?"
                 $ hermione_dribble = True
-                call her_main("Ah... y-yes...{image=textheart}","grin","ahegao") from _call_her_main_4314
-                call h_action("covering_top") from _call_h_action_71
-                call her_main("Mmmm...","smile","happyCl") from _call_her_main_4315
+                call her_main("Ah... y-yes...{image=textheart}","grin","ahegao") 
+                call h_action("covering_top") 
+                call her_main("Mmmm...","smile","happyCl") 
                 m "That's it..."
-                call h_action("lift_breasts") from _call_h_action_72
-                call her_main("[genie_name], do you mind...","base","ahegao_raised") from _call_her_main_4316
+                call h_action("lift_breasts") 
+                call her_main("[genie_name], do you mind...","base","ahegao_raised") 
                 m "What [hermione_name]?"
-                call her_main("Could you... Call me names...","open","ahegao_raised",cheeks="blush") from _call_her_main_4317
+                call her_main("Could you... Call me names...","open","ahegao_raised",cheeks="blush") 
                 m "Such as?"
-                call set_hermione_action("covering_top") from _call_set_hermione_action_113
+                call set_hermione_action("covering_top") 
                 
-                call her_main("...{p}{size=-5}Slut...{/size}{p}Only if it's not too much...","base","ahegao_raised",cheeks="blush") from _call_her_main_4318
+                call her_main("...{p}{size=-5}Slut...{/size}{p}Only if it's not too much...","base","ahegao_raised",cheeks="blush") 
                 m "You little whore..."
-                call her_main("Ah...{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4319
+                call her_main("Ah...{image=textheart}{image=textheart}","grin","ahegao") 
                 m "What would your parents think if they saw this?"
-                call her_main("i-{image=textheart}","base","ahegao_raised",cheeks="blush") from _call_her_main_4320
-                call set_hermione_action("lift_breasts") from _call_set_hermione_action_114
+                call her_main("i-{image=textheart}","base","ahegao_raised",cheeks="blush") 
+                call set_hermione_action("lift_breasts") 
                 
-                call her_main("Ah...{image=textheart} I don't know...","base","ahegao_raised",cheeks="blush") from _call_her_main_4321
-                call her_main("To be perfectly honest [genie_name]... I don't think I care...{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush") from _call_her_main_4322
+                call her_main("Ah...{image=textheart} I don't know...","base","ahegao_raised",cheeks="blush") 
+                call her_main("To be perfectly honest [genie_name]... I don't think I care...{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush") 
                 m "Really?"
-                call set_hermione_action("covering_top") from _call_set_hermione_action_115
+                call set_hermione_action("covering_top") 
                 
-                call her_main("Really...{image=textheart}","silly","ahegao_raised",cheeks="blush") from _call_her_main_4323
+                call her_main("Really...{image=textheart}","silly","ahegao_raised",cheeks="blush") 
                 m "Would you at least stop?"
-                call her_main("Ah...{image=textheart}","open_tongue","ahegao_raised",cheeks="blush") from _call_her_main_4324
-                call set_hermione_action("lift_breasts") from _call_set_hermione_action_116
+                call her_main("Ah...{image=textheart}","open_tongue","ahegao_raised",cheeks="blush") 
+                call set_hermione_action("lift_breasts") 
                 
-                call her_main("Maybe....","open_tongue","ahegao_raised",cheeks="blush") from _call_her_main_4325
-                call her_main("I'm not sure...","open","baseL",cheeks="blush") from _call_her_main_4326
-                call set_hermione_action("covering_top") from _call_set_hermione_action_117
+                call her_main("Maybe....","open_tongue","ahegao_raised",cheeks="blush") 
+                call her_main("I'm not sure...","open","baseL",cheeks="blush") 
+                call set_hermione_action("covering_top") 
                 
-                call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush") from _call_her_main_4327
+                call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush") 
 
             "\"Take off your skirt\"" if hg_pf_TouchYourself_OBJ.points > 0:
-                call her_main("Excuse me?","soft","wide") from _call_her_main_4328 
+                call her_main("Excuse me?","soft","wide") 
                 m "You heard me, [hermione_name]..."
-                call her_main("........","annoyed","angryL",cheeks="blush") from _call_her_main_4329
-                call her_main("............","disgust","down_raised",cheeks="blush") from _call_her_main_4330 
-                call her_main("*sigh!*..............","open","ahegao_raised",cheeks="blush") from _call_her_main_4331
-                call her_main("Well, I might as well, I suppose...") from _call_her_main_4332
-                call nar(">Hermione stops masturbating and slowly pulls down her skirt.") from _call_nar_500
+                call her_main("........","annoyed","angryL",cheeks="blush") 
+                call her_main("............","disgust","down_raised",cheeks="blush") 
+                call her_main("*sigh!*..............","open","ahegao_raised",cheeks="blush") 
+                call her_main("Well, I might as well, I suppose...") 
+                call nar(">Hermione stops masturbating and slowly pulls down her skirt.") 
 
                 $ hermione_wear_bottom = False
-                call set_hermione_action("covering") from _call_set_hermione_action_118
+                call set_hermione_action("covering") 
                 
-                call her_main("...","open","down") from _call_her_main_4333 
+                call her_main("...","open","down") 
                 m "That's not so bad now, is it?"
-                call her_main("No, I suppose not...","upset","wink") from _call_her_main_4334 
+                call her_main("No, I suppose not...","upset","wink") 
                 m "Well, back to work..."
-                call her_main("...","normal","worriedCl") from _call_her_main_4335 
-                call her_main("Well, alright...","base","ahegao_raised",cheeks="blush") from _call_her_main_4336
+                call her_main("...","normal","worriedCl") 
+                call her_main("Well, alright...","base","ahegao_raised",cheeks="blush") 
                 m "Good... Just keep playing with that slutty little pussy of yours!"
-                call her_main("[genie_name]!","mad","angry",cheeks="blush") from _call_her_main_4337
+                call her_main("[genie_name]!","mad","angry",cheeks="blush") 
                 m "What?"
                 $ hermione_dribble = True
-                call her_main("It's not {size=-5}slutty...{/size}","annoyed","angryL",cheeks="blush") from _call_her_main_4338 
+                call her_main("It's not {size=-5}slutty...{/size}","annoyed","angryL",cheeks="blush") 
                 m "Are you sure? Because from where I'm sitting it looks nice and wet."
-                call her_main("Ah...{image=textheart}","base","ahegao_raised",cheeks="blush") from _call_her_main_4339 
-                call her_main("It's just sweat [genie_name]...","open","baseL",cheeks="blush") from _call_her_main_4340 
+                call her_main("Ah...{image=textheart}","base","ahegao_raised",cheeks="blush") 
+                call her_main("It's just sweat [genie_name]...","open","baseL",cheeks="blush") 
                 m "Whatever you say..."
-                call her_main("...............","base","ahegao_raised",cheeks="blush") from _call_her_main_4341 
+                call her_main("...............","base","ahegao_raised",cheeks="blush") 
                 m "{size=-5}Slut.{/size}"
-                call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush") from _call_her_main_4342
-                call her_main("Sir... please...","open","baseL",cheeks="blush") from _call_her_main_4343
-                call set_hermione_action("pinch") from _call_set_hermione_action_119
+                call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush") 
+                call her_main("Sir... please...","open","baseL",cheeks="blush") 
+                call set_hermione_action("pinch") 
                 
-                call nar(">Hermione starts gently fingering herself.") from _call_nar_501
+                call nar(">Hermione starts gently fingering herself.") 
                 m "Very good..."
-                call her_main("...{image=textheart}","silly","ahegao_raised",cheeks="blush") from _call_her_main_4344
-                call her_main("Ah...{image=textheart}","open_tongue","ahegao_raised",cheeks="blush") from _call_her_main_4345
+                call her_main("...{image=textheart}","silly","ahegao_raised",cheeks="blush") 
+                call her_main("Ah...{image=textheart}","open_tongue","ahegao_raised",cheeks="blush") 
                 m "That's it slut. Try going a little deeper...."
-                call her_main("...","open_tongue","ahegao_raised",cheeks="blush") from _call_her_main_4346
-                call set_hermione_action("covering") from _call_set_hermione_action_120
+                call her_main("...","open_tongue","ahegao_raised",cheeks="blush") 
+                call set_hermione_action("covering") 
                 
-                call her_main("Mmmm...{image=textheart}","scream","worriedCl",cheeks="blush") from _call_her_main_4347
+                call her_main("Mmmm...{image=textheart}","scream","worriedCl",cheeks="blush") 
 
 
         if hg_pf_TouchYourself_OBJ.points == 0: #HERMIONE DOESN'T CUM
-                call her_main("Ah...","shock","baseL",cheeks="blush",tears="soft") from _call_her_main_4348
+                call her_main("Ah...","shock","baseL",cheeks="blush",tears="soft") 
                 m "almost there [hermione_name]?"
-                call her_main("a-almost...","clench","worried",cheeks="blush",tears="soft") from _call_her_main_4349
-                call her_main("I just need a bit longer...") from _call_her_main_4350
+                call her_main("a-almost...","clench","worried",cheeks="blush",tears="soft") 
+                call her_main("I just need a bit longer...") 
                 m "well you better hurry..."
-                call her_main("Ah... i know, [genie_name].","mad","worriedCl",tears="soft_blink") from _call_her_main_4351
-                call her_main("...........","shock","baseL",cheeks="blush",tears="soft") from _call_her_main_4352
+                call her_main("Ah... i know, [genie_name].","mad","worriedCl",tears="soft_blink") 
+                call her_main("...........","shock","baseL",cheeks="blush",tears="soft") 
                 m "is everything alright?"
-                call her_main("................","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_4353
+                call her_main("................","shock","down_raised",cheeks="blush",tears="crying") 
                 m "Why are you being so quiet [hermione_name]?"
-                call her_main("......","clench","worried",cheeks="blush",tears="soft") from _call_her_main_4354
-                call her_main("[genie_name]... I don't think I can...") from _call_her_main_4355
+                call her_main("......","clench","worried",cheeks="blush",tears="soft") 
+                call her_main("[genie_name]... I don't think I can...") 
                 m "what?"
-                call her_main("...finish...","angry","dead",cheeks="blush",tears="crying") from _call_her_main_4356
+                call her_main("...finish...","angry","dead",cheeks="blush",tears="crying") 
                 
                 menu:
                     "-Chastise her-":
                         m "Well then I guess \"Slytherin\" will have to win the house cup this year."
-                        call her_main("B-but--","scream","wide") from _call_her_main_4357
+                        call her_main("B-but--","scream","wide") 
                         m "now, now [hermione_name], a deals a deal."
-                        call her_main("Really?","open","worriedCl") from _call_her_main_4358
-                        call her_main("but I'm trying [genie_name]...","shock","worriedCl") from _call_her_main_4359
+                        call her_main("Really?","open","worriedCl") 
+                        call her_main("but I'm trying [genie_name]...","shock","worriedCl") 
                         m "try harder..."
-                        call nar(">Hermione starts grinding furiously against hand") from _call_nar_502
-                        call her_main("*SOB!* i can't...","shock","down_raised",cheeks="blush",tears="crying") from _call_her_main_4360
+                        call nar(">Hermione starts grinding furiously against hand") 
+                        call her_main("*SOB!* i can't...","shock","down_raised",cheeks="blush",tears="crying") 
                         m "well then, 0 points to \"Gryffindor\"..."
-                        call her_main("{size=-5}After all...{/size} Really [genie_name]?","clench","worried",cheeks="blush",tears="soft") from _call_her_main_4361
-                        call her_main("After I stood here and...","scream","angry",cheeks="blush",tears="messy") from _call_her_main_4362
-                        call her_main("..........","angry","suspicious",cheeks="blush",tears="messy") from _call_her_main_4363
-                        call nar(">Hermione wipes the tears from her eyes.") from _call_nar_503
-                        call her_main("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry",cheeks="blush") from _call_her_main_4364
+                        call her_main("{size=-5}After all...{/size} Really [genie_name]?","clench","worried",cheeks="blush",tears="soft") 
+                        call her_main("After I stood here and...","scream","angry",cheeks="blush",tears="messy") 
+                        call her_main("..........","angry","suspicious",cheeks="blush",tears="messy") 
+                        call nar(">Hermione wipes the tears from her eyes.") 
+                        call her_main("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry",cheeks="blush") 
                         
                         $ mad += 15
                         jump end_touch_yourself
                         
                     "-Forgive her-":
                         m "It's alright, [hermione_name]."
-                        call her_main("Really?","open","surprised",cheeks="blush",tears="messy") from _call_her_main_4365
+                        call her_main("Really?","open","surprised",cheeks="blush",tears="messy") 
                         m "I'm sure you're just a little nervous."
-                        call her_main("Thank you [genie_name].","clench","worried",cheeks="blush",tears="soft") from _call_her_main_4366
-                        call her_main("I promise to try harder next time.","scream","worriedCl",cheeks="blush",tears="messy") from _call_her_main_4367
+                        call her_main("Thank you [genie_name].","clench","worried",cheeks="blush",tears="soft") 
+                        call her_main("I promise to try harder next time.","scream","worriedCl",cheeks="blush",tears="messy") 
                         
         else: #HERMIONE CUMS
             $ hg_pf_TouchYourself_OBJ.hearts_level = 2
-            call her_main("A-ha... {image=textheart}ah...","open","worriedCl") from _call_her_main_4368
-            call her_main("Ah... {image=textheart}-aha...","open","worriedCl") from _call_her_main_4369
+            call her_main("A-ha... {image=textheart}ah...","open","worriedCl") 
+            call her_main("Ah... {image=textheart}-aha...","open","worriedCl") 
             m "..."
-            call her_main("Ah-ah...","open","worriedCl") from _call_her_main_4370
+            call her_main("Ah-ah...","open","worriedCl") 
             m "......................"
-            call her_main("Ah... ah...{image=textheart}","open","worriedCl") from _call_her_main_4371
-            call her_main("Ah... [genie_name]?","soft","squintL") from _call_her_main_4372
+            call her_main("Ah... ah...{image=textheart}","open","worriedCl") 
+            call her_main("Ah... [genie_name]?","soft","squintL") 
             m "What is it?"
-            call her_main("Ah... Do you.... like this?","open","worriedCl") from _call_her_main_4373
+            call her_main("Ah... Do you.... like this?","open","worriedCl") 
             m "Do I like watching you finger your slutty little pussy?"
             m "Very much so, [hermione_name]. Why?"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}","normal","worriedCl") from _call_her_main_4374
-            call her_main("Ah... You're just so quiet...","open","worriedCl") from _call_her_main_4375
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","normal","worriedCl") 
+            call her_main("Ah... You're just so quiet...","open","worriedCl") 
             m "Do you need a little more encouragement?"
-            call her_main("Ah... yes... please....{image=textheart}","open","worriedCl") from _call_her_main_4376
+            call her_main("Ah... yes... please....{image=textheart}","open","worriedCl") 
             m "Tch... You nasty whore!"
-            call her_main("yes [genie_name], ah...{image=textheart}","grin","ahegao_mad",cheeks="blush") from _call_her_main_4377
-            call her_main("please... ah... more...{image=textheart}","grin","angry",cheeks="blush") from _call_her_main_4378
+            call her_main("yes [genie_name], ah...{image=textheart}","grin","ahegao_mad",cheeks="blush") 
+            call her_main("please... ah... more...{image=textheart}","grin","angry",cheeks="blush") 
             g4 "You need to be punished for being such a slut!"
-            call her_main("yes, [genie_name]... punish me...","open","ahegao_raised",cheeks="blush") from _call_her_main_4379
-            call her_main("make me your little slut....","open","ahegao_raised",cheeks="blush") from _call_her_main_4380
-            call her_main("I will... ah... {image=textheart}do anything... ah...{image=textheart}","silly","dead") from _call_her_main_4381
+            call her_main("yes, [genie_name]... punish me...","open","ahegao_raised",cheeks="blush") 
+            call her_main("make me your little slut....","open","ahegao_raised",cheeks="blush") 
+            call her_main("I will... ah... {image=textheart}do anything... ah...{image=textheart}","silly","dead") 
             m "Anything [hermione_name]?"
-            call her_main("Ah-a...{image=textheart} yessss...","silly","ahegao_raised",cheeks="blush") from _call_her_main_4382
+            call her_main("Ah-a...{image=textheart} yessss...","silly","ahegao_raised",cheeks="blush") 
             m "Cum."
             $ hermione_squirt = True
-            call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","silly","dead",cheeks="blush") from _call_her_main_4383
+            call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","silly","dead",cheeks="blush") 
             
-            call cum_block from _call_cum_block_47
+            call cum_block 
             
             $ hermione_squirt = False
-            call her_main("Ah...{image=textheart}...{image=textheart}","grin","ahegao") from _call_her_main_4384
-            call her_main("Ah... ah...{image=textheart}","silly","ahegao") from _call_her_main_4385
-            call her_main("...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4386
-            call her_main("*heavy panting*","open_wide_tongue","ahegao") from _call_her_main_4387
-            call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4388
-            call her_main(".............","soft","ahegao") from _call_her_main_4389
-            call nar(">Hermione takes a minute to collect herself.") from _call_nar_504
+            call her_main("Ah...{image=textheart}...{image=textheart}","grin","ahegao") 
+            call her_main("Ah... ah...{image=textheart}","silly","ahegao") 
+            call her_main("...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") 
+            call her_main("*heavy panting*","open_wide_tongue","ahegao") 
+            call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao") 
+            call her_main(".............","soft","ahegao") 
+            call nar(">Hermione takes a minute to collect herself.") 
             m "You feeling alright?"
-            call her_main("Yes, [genie_name]... I just need a little longer...","shock","baseL",cheeks="blush",tears="soft") from _call_her_main_4390
+            call her_main("Yes, [genie_name]... I just need a little longer...","shock","baseL",cheeks="blush",tears="soft") 
             m "take your time."
-            call her_main("ah... {image=textheart}","silly","worried",cheeks="blush",tears="soft") from _call_her_main_4391
+            call her_main("ah... {image=textheart}","silly","worried",cheeks="blush",tears="soft") 
 
     #Second time event.
     elif hg_pf_TouchYourself_OBJ.points == 1: # SECOND EVENT
         m "[hermione_name]..."
-        call her_main("Yes, [genie_name]?","base","base") from _call_her_main_4392
+        call her_main("Yes, [genie_name]?","base","base") 
         m "Are you feeling horny?"
-        call her_main("maybe A little, [genie_name].","base","glance") from _call_her_main_4393
+        call her_main("maybe A little, [genie_name].","base","glance") 
         m "Ah, well perhaps we can fix that..."
-        call her_main("[genie_name]...","open","worriedCl") from _call_her_main_4394
+        call her_main("[genie_name]...","open","worriedCl") 
         m "[hermione_name], I would like to buy yet another favour from you today."
-        call her_main("Of course, [genie_name].","base","down") from _call_her_main_4395
+        call her_main("Of course, [genie_name].","base","down") 
         g9 "The favour being you playing with that slutty little pussy of yours!"
-        call her_main("{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4396
-        call her_main(".............","soft","ahegao") from _call_her_main_4397
-        call her_main("Alright...","base","down") from _call_her_main_4398
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","grin","ahegao") 
+        call her_main(".............","soft","ahegao") 
+        call her_main("Alright...","base","down") 
         
-        call her_main("","base","glance",xpos="mid",ypos="base",trans="fade") from _call_her_main_4399
-        call set_hermione_action("lift_top") from _call_set_hermione_action_121
+        call her_main("","base","glance",xpos="mid",ypos="base",trans="fade") 
+        call set_hermione_action("lift_top") 
         pause.5
         
-        call her_main("...........","upset","wink") from _call_her_main_4400
+        call her_main("...........","upset","wink") 
         m "Mmmm, that's it [hermione_name]..."
         
-        call her_main("(I can't believe I'm going to do this... again...)","angry","down_raised") from _call_her_main_4401 
-        call set_hermione_action("covering_top") from _call_set_hermione_action_122
-        call ctc from _call_ctc_264
+        call her_main("(I can't believe I'm going to do this... again...)","angry","down_raised") 
+        call set_hermione_action("covering_top") 
+        call ctc 
         
-        call play_music("playful_tension") from _call_play_music_172# SEX THEME.
-        call nar(">Hermione slowly starts grinding her mound against her hand.") from _call_nar_505
+        call play_music("playful_tension") # SEX THEME.
+        call nar(">Hermione slowly starts grinding her mound against her hand.") 
         g9 "Nice..."
-        call her_main("........","grin","ahegao") from _call_her_main_4402 
+        call her_main("........","grin","ahegao") 
         
 
         jump TouchYourself_menu
@@ -390,142 +390,142 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         $ hg_pf_TouchYourself_OBJ.hearts_level = 3 #Event hearts level (0-3)
         
         m "[hermione_name]?"
-        call her_main("[genie_name]?","base","base") from _call_her_main_4403
+        call her_main("[genie_name]?","base","base") 
         m "You don't mind pleasuring yourself in front of me, do you?"
         if whoring <= 16:
-            call her_main("As long as I am being paid...","grin","baseL") from _call_her_main_4404
+            call her_main("As long as I am being paid...","grin","baseL") 
             m "Well, come on then. Time to earn those points."
         else:
-            call her_main("I mean I have done it once today already...","grin","baseL") from _call_her_main_4405
+            call her_main("I mean I have done it once today already...","grin","baseL") 
             m "Once more for good luck then!"
-            call her_main("If you insist...{image=textheart}","open","baseL",cheeks="blush") from _call_her_main_4406
+            call her_main("If you insist...{image=textheart}","open","baseL",cheeks="blush") 
         
-        call her_main("","base","glance",xpos="mid",ypos="base",trans="fade") from _call_her_main_4407
-        call set_hermione_action("lift_top") from _call_set_hermione_action_123
+        call her_main("","base","glance",xpos="mid",ypos="base",trans="fade") 
+        call set_hermione_action("lift_top") 
         pause.5
         
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update") from _call_set_hermione_action_124
+        call set_hermione_action("none","skip_update") 
         pause.5
         
-        call her_main("(I can't believe I'm doing this... again...)","base","baseL",cheeks="blush") from _call_her_main_4408 
+        call her_main("(I can't believe I'm doing this... again...)","base","baseL",cheeks="blush") 
         m "Now the skirt."
         
-        call set_hermione_action("lift_skirt") from _call_set_hermione_action_125
+        call set_hermione_action("lift_skirt") 
         pause.5
         
         $ hermione_wear_bottom = False
         $ hermione_wear_panties = False
-        call set_hermione_action("none","skip_update") from _call_set_hermione_action_126
+        call set_hermione_action("none","skip_update") 
         pause.5
         
-        call her_main("...","base","glance") from _call_her_main_4409 
-        call set_hermione_action("covering") from _call_set_hermione_action_127
+        call her_main("...","base","glance") 
+        call set_hermione_action("covering") 
         
         stop music fadeout 3.0
-        call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL") from _call_her_main_4410
-        call play_music("chipper_doodle") from _call_play_music_173 # HERMIONE'S THEME.
+        call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL") 
+        call play_music("chipper_doodle") # HERMIONE'S THEME.
 
         m "Yes, yes, like that..."
         m "Try going a little deeper with your fingers."
-        call her_main("Alright [genie_name]...","base","happyCl") from _call_her_main_4411
+        call her_main("Alright [genie_name]...","base","happyCl") 
         $ hermione_dribble = True
-        call her_main("Ah... ah...{image=textheart}","open","worriedCl") from _call_her_main_4412
-        call her_main("Ah... [genie_name]...{image=textheart}","open","worriedCl") from _call_her_main_4413
+        call her_main("Ah... ah...{image=textheart}","open","worriedCl") 
+        call her_main("Ah... [genie_name]...{image=textheart}","open","worriedCl") 
         
         menu:
             m "..."
             "\"What are you thinking about?\"":
-                call her_main("Huh?","open","worriedCl",cheeks="blush") from _call_her_main_4414
-                call her_main("Oh, um... nothing...","upset","worriedCl",cheeks="blush") from _call_her_main_4415      
+                call her_main("Huh?","open","worriedCl",cheeks="blush") 
+                call her_main("Oh, um... nothing...","upset","worriedCl",cheeks="blush") 
                 m "[hermione_name]..."
-                call her_main("[genie_name], please, it's too embarrassing...","disgust","down_raised",cheeks="blush") from _call_her_main_4416         
+                call her_main("[genie_name], please, it's too embarrassing...","disgust","down_raised",cheeks="blush") 
                 g4 "Well now I have to hear it."
-                call her_main("OK... but you have to promise not to tell anyone!","open","baseL",cheeks="blush") from _call_her_main_4417         
+                call her_main("OK... but you have to promise not to tell anyone!","open","baseL",cheeks="blush") 
                 m "Witcher's honor."
-                call her_main("......","annoyed","annoyed") from _call_her_main_4418         
+                call her_main("......","annoyed","annoyed") 
                 m "[hermione_name]..."
-                call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","open","down") from _call_her_main_4419      
+                call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","open","down") 
                 m "....."
-                call her_main("ah...{image=textheart}","soft","ahegao") from _call_her_main_4420
-                call set_hermione_action("pinch") from _call_set_hermione_action_128
+                call her_main("ah...{image=textheart}","soft","ahegao") 
+                call set_hermione_action("pinch") 
                 
-                call her_main("It was ah... {image=textheart} in front of the entire class as well.") from _call_her_main_4421
-                call set_hermione_action("covering") from _call_set_hermione_action_129
+                call her_main("It was ah... {image=textheart} in front of the entire class as well.") 
+                call set_hermione_action("covering") 
                 
-                call her_main("He refused to let me answer any questions for a week after that.","base","down") from _call_her_main_4422       
-                call her_main("But it was worth it...","soft","squintL") from _call_her_main_4423      
-                call her_main("The look on his face when he realised he was wrong...{image=textheart}","soft","ahegao") from _call_her_main_4424
-                call set_hermione_action("pinch") from _call_set_hermione_action_130
+                call her_main("He refused to let me answer any questions for a week after that.","base","down") 
+                call her_main("But it was worth it...","soft","squintL") 
+                call her_main("The look on his face when he realised he was wrong...{image=textheart}","soft","ahegao") 
+                call set_hermione_action("pinch") 
                 
-                call her_main("a-ah...{image=textheart}") from _call_her_main_4425
-                call set_hermione_action("covering") from _call_set_hermione_action_131
+                call her_main("a-ah...{image=textheart}") 
+                call set_hermione_action("covering") 
                 
-                call her_main("It just felt so good!{image=textheart}","grin","dead") from _call_her_main_4426 
+                call her_main("It just felt so good!{image=textheart}","grin","dead") 
                 m "OK, I think that's enough..."
-                call her_main("Was it too much?","angry","wink") from _call_her_main_4427            
+                call her_main("Was it too much?","angry","wink") 
                 m "Let's just get back to business shall we?"
-                call her_main(".................","soft","ahegao") from _call_her_main_4428  
-                call nar(">Hermione keeps on plunging her fingers into herself.","start") from _call_nar_506
-                call nar(">She is doing a great job of it too.","end") from _call_nar_507
+                call her_main(".................","soft","ahegao") 
+                call nar(">Hermione keeps on plunging her fingers into herself.","start") 
+                call nar(">She is doing a great job of it too.","end") 
                 m "Yes, yes... Like that."
                 
             "\"You really are a shameless slut, aren't you?\"":
-                call her_main("Yes...","soft","ahegao") from _call_her_main_4429
-                call set_hermione_action("pinch") from _call_set_hermione_action_132
+                call her_main("Yes...","soft","ahegao") 
+                call set_hermione_action("pinch") 
                 
-                call her_main("ah... {image=textheart}","silly","dead") from _call_her_main_4430 
-                call her_main("I don't know if it's the time I'm spending with you...{image=textheart}","angry","wink") from _call_her_main_4431
-                call her_main("Or if i've always been this way...{image=textheart}","angry","down_raised") from _call_her_main_4432
-                call her_main("But... {image=textheart} ah... {image=textheart} I'm a slut [genie_name]...{image=textheart}","soft","ahegao") from _call_her_main_4433 
-                call her_main("A shameless slut...","grin","dead") from _call_her_main_4434
-                call her_main("That pleasures herself...{image=textheart} ah...","soft","ahegao") from _call_her_main_4435
-                call her_main("Just to make her headmaster happy...","grin","dead") from _call_her_main_4436
+                call her_main("ah... {image=textheart}","silly","dead") 
+                call her_main("I don't know if it's the time I'm spending with you...{image=textheart}","angry","wink") 
+                call her_main("Or if i've always been this way...{image=textheart}","angry","down_raised") 
+                call her_main("But... {image=textheart} ah... {image=textheart} I'm a slut [genie_name]...{image=textheart}","soft","ahegao") 
+                call her_main("A shameless slut...","grin","dead") 
+                call her_main("That pleasures herself...{image=textheart} ah...","soft","ahegao") 
+                call her_main("Just to make her headmaster happy...","grin","dead") 
                 m "Oh, yes..."
-                call her_main("That's it [genie_name]...","base","down") from _call_her_main_4437
-                call her_main("Enjoy yourself while I stand here...","silly","dead") from _call_her_main_4438
-                call her_main("Ah...{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4439
-                call her_main("Fingering my pussy...","silly","ahegao") from _call_her_main_4440
-                call her_main("Ah... ah...{image=textheart}","grin","ahegao") from _call_her_main_4441
-                call her_main("Ah... Do you.... like this [genie_name]?","shock","worriedCl") from _call_her_main_4442
-                call her_main("Watching me Ah...{image=textheart} degrade myself?","silly","dead") from _call_her_main_4443
+                call her_main("That's it [genie_name]...","base","down") 
+                call her_main("Enjoy yourself while I stand here...","silly","dead") 
+                call her_main("Ah...{image=textheart}","open_wide_tongue","ahegao") 
+                call her_main("Fingering my pussy...","silly","ahegao") 
+                call her_main("Ah... ah...{image=textheart}","grin","ahegao") 
+                call her_main("Ah... Do you.... like this [genie_name]?","shock","worriedCl") 
+                call her_main("Watching me Ah...{image=textheart} degrade myself?","silly","dead") 
                 m "Very much, [hermione_name]. Just keep going..."
-                call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","dead") from _call_her_main_4444
+                call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","dead") 
                 
             "\"Play with your tits some more!\"":
-                call her_main("Hm?","soft","ahegao") from _call_her_main_4445
-                call her_main("alright... if you insist...","open","baseL",cheeks="blush") from _call_her_main_4446
-                call set_hermione_action("pinch") from _call_set_hermione_action_133
+                call her_main("Hm?","soft","ahegao") 
+                call her_main("alright... if you insist...","open","baseL",cheeks="blush") 
+                call set_hermione_action("pinch") 
                 
-                call her_main("ah...{image=textheart}","angry","wink") from _call_her_main_4447
+                call her_main("ah...{image=textheart}","angry","wink") 
                 m "Now lift them up."
-                call her_main("[genie_name]...","open","squint",cheeks="blush") from _call_her_main_4448    
+                call her_main("[genie_name]...","open","squint",cheeks="blush") 
                 m "do it, [hermione_name]."
-                call her_main("...","open","baseL",cheeks="blush") from _call_her_main_4449
-                call set_hermione_action("lift_breasts_naked") from _call_set_hermione_action_134
+                call her_main("...","open","baseL",cheeks="blush") 
+                call set_hermione_action("lift_breasts_naked") 
                 
-                call her_main("Mmmm...","grin","ahegao_mad",cheeks="blush") from _call_her_main_4450
+                call her_main("Mmmm...","grin","ahegao_mad",cheeks="blush") 
                 m "That's it..."
-                call nar(">You stare at Hermione's breasts with hunger...") from _call_nar_508
-                call her_main("ah...","silly","dead") from _call_her_main_4451
+                call nar(">You stare at Hermione's breasts with hunger...") 
+                call her_main("ah...","silly","dead") 
                 m "So do you like playing with those tits of yours, [hermione_name]?"
-                call her_main("I do, [genie_name]... ah...{image=textheart}","soft","ahegao") from _call_her_main_4452
-                call her_main("I don't know why...","base","baseL",cheeks="blush") from _call_her_main_4453
-                call set_hermione_action("pinch") from _call_set_hermione_action_135
+                call her_main("I do, [genie_name]... ah...{image=textheart}","soft","ahegao") 
+                call her_main("I don't know why...","base","baseL",cheeks="blush") 
+                call set_hermione_action("pinch") 
                 
-                call her_main("But I love it...{image=textheart}{image=textheart}","base","down") from _call_her_main_4454
+                call her_main("But I love it...{image=textheart}{image=textheart}","base","down") 
                 m "You nasty slut!"
-                call her_main("Ah...{image=textheart} ah-a...{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4455
-                call her_main("I am...") from _call_her_main_4456
-                call her_main("A nasty slut... Ah...{image=textheart}","silly","dead") from _call_her_main_4457
+                call her_main("Ah...{image=textheart} ah-a...{image=textheart}","open_wide_tongue","ahegao") 
+                call her_main("I am...") 
+                call her_main("A nasty slut... Ah...{image=textheart}","silly","dead") 
                 m "You are a disgrace, [hermione_name]!"
-                call her_main("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao") from _call_her_main_4458
+                call her_main("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao") 
                 
         m "Why don't you come a little closer?"
-        call her_main("...","base","down") from _call_her_main_4459
+        call her_main("...","base","down") 
         
-        call her_walk_desk_blkfade from _call_her_walk_desk_blkfade_18
+        call her_walk_desk_blkfade 
         
         ">Hermione slowly walks towards your desk and stands in front of you."
         
@@ -539,131 +539,131 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         
         hide screen blktone
         hide screen bld1
-        call hide_blkfade from _call_hide_blkfade_101
-        call ctc from _call_ctc_265
+        call hide_blkfade 
+        call ctc 
         
-        call set_hermione_action("lift_breasts_naked") from _call_set_hermione_action_136
-        call her_main("..............","base","ahegao_raised",cheeks="blush") from _call_her_main_4460
+        call set_hermione_action("lift_breasts_naked") 
+        call her_main("..............","base","ahegao_raised",cheeks="blush") 
         
         menu:
             m "..."
             "-Grab her tits-":
-                call nar(">You reach forward and grab a hold of her supple breasts.") from _call_nar_509
+                call nar(">You reach forward and grab a hold of her supple breasts.") 
                 $ g_c_u_pic = "groping_naked_tits_ani"
-                call set_hermione_action("fingering") from _call_set_hermione_action_137
+                call set_hermione_action("fingering") 
                 
-                call her_main("[genie_name]!","shock","worriedCl") from _call_her_main_4461
-                call her_main("This wasn't part of the deal!","open","worriedCl") from _call_her_main_4462
-                call her_main("I don't think we should...","annoyed","angryL",cheeks="blush") from _call_her_main_4463
+                call her_main("[genie_name]!","shock","worriedCl") 
+                call her_main("This wasn't part of the deal!","open","worriedCl") 
+                call her_main("I don't think we should...","annoyed","angryL",cheeks="blush") 
                 m "Don't worry [hermione_name], You can keep playing with yourself."
                 m "This is just to hurry things along."
-                call her_main("Ah...{image=textheart} Well, as long as it's just to make this end faster...","open","ahegao_raised",cheeks="blush") from _call_her_main_4464
-                call her_main("I suppose I can... ah{image=textheart} allow it...","base","baseL",cheeks="blush") from _call_her_main_4465
-                call nar(">You give her tits a couple of firm squeezes...") from _call_nar_510
+                call her_main("Ah...{image=textheart} Well, as long as it's just to make this end faster...","open","ahegao_raised",cheeks="blush") 
+                call her_main("I suppose I can... ah{image=textheart} allow it...","base","baseL",cheeks="blush") 
+                call nar(">You give her tits a couple of firm squeezes...") 
                 m "Just admit that you love it."
-                call her_main("Ah... fine...{image=textheart}","open","worriedCl",cheeks="blush") from _call_her_main_4466
-                call her_main("{size=-5}I like it...{/size}","soft","ahegao") from _call_her_main_4467
+                call her_main("Ah... fine...{image=textheart}","open","worriedCl",cheeks="blush") 
+                call her_main("{size=-5}I like it...{/size}","soft","ahegao") 
                 m "What was that [hermione_name]?"
-                call her_main(".......") from _call_her_main_4468
-                call her_main("I love this...","grin","dead") from _call_her_main_4469
-                call her_main("Standing here... playing with myself...","base","down") from _call_her_main_4470
-                call her_main("Ah... while you play with me...{image=textheart}","grin","ahegao_mad",cheeks="blush") from _call_her_main_4471
+                call her_main(".......") 
+                call her_main("I love this...","grin","dead") 
+                call her_main("Standing here... playing with myself...","base","down") 
+                call her_main("Ah... while you play with me...{image=textheart}","grin","ahegao_mad",cheeks="blush") 
                 m "Heh... Nice."
-                call her_main("Ah...{image=textheart}","open","ahegao_raised",cheeks="blush") from _call_her_main_4472
-                call her_main("I sometimes wish I could spend all day in here...","grin","angry",cheeks="blush") from _call_her_main_4473
+                call her_main("Ah...{image=textheart}","open","ahegao_raised",cheeks="blush") 
+                call her_main("I sometimes wish I could spend all day in here...","grin","angry",cheeks="blush") 
                 m "Mmmm"
-                call nar(">You keep on massaging the girl's breasts...") from _call_nar_511
-                call her_main(".......") from _call_her_main_4474
-                call her_main("[genie_name]... I know it's greedy of me...","base","baseL",cheeks="blush") from _call_her_main_4475
-                call her_main("ah...{image=textheart}","base","down") from _call_her_main_4476
-                call her_main("but could you touch me... down there...","open","squint",cheeks="blush") from _call_her_main_4477
+                call nar(">You keep on massaging the girl's breasts...") 
+                call her_main(".......") 
+                call her_main("[genie_name]... I know it's greedy of me...","base","baseL",cheeks="blush") 
+                call her_main("ah...{image=textheart}","base","down") 
+                call her_main("but could you touch me... down there...","open","squint",cheeks="blush") 
                 m "What's was that [hermione_name]? You'll have to speak up."
-                call her_main("Please finger me...","open","ahegao_raised",cheeks="blush") from _call_her_main_4478
+                call her_main("Please finger me...","open","ahegao_raised",cheeks="blush") 
                 m "Once more, a little louder this time."
-                call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}","grin","ahegao_mad",cheeks="blush") from _call_her_main_4479
+                call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}","grin","ahegao_mad",cheeks="blush") 
                 $ g_c_u_pic = "groping_06"
-                call nar(">You swiftly plunge two fingers into her dripping pussy.") from _call_nar_512
-                call h_action("lift_breasts_naked") from _call_h_action_73
-                call her_main("{image=textheart}{image=textheart}{size=+5}!!!{/size}{image=textheart}{image=textheart}","silly","ahegao") from _call_her_main_4480
+                call nar(">You swiftly plunge two fingers into her dripping pussy.") 
+                call h_action("lift_breasts_naked") 
+                call her_main("{image=textheart}{image=textheart}{size=+5}!!!{/size}{image=textheart}{image=textheart}","silly","ahegao") 
                 
             "-Finger her-":
                 $ g_c_u_pic = "groping_06"
-                call nar(">You run your hands up and down Hermione's legs...") from _call_nar_513
-                call her_main("!!!","open","worriedCl") from _call_her_main_4481
-                call nar(">And slowly move your hands towards her pussy...") from _call_nar_514
-                call her_main(".................","silly","dead") from _call_her_main_4482
+                call nar(">You run your hands up and down Hermione's legs...") 
+                call her_main("!!!","open","worriedCl") 
+                call nar(">And slowly move your hands towards her pussy...") 
+                call her_main(".................","silly","dead") 
                 m "That's it [hermione_name]..."
-                call her_main("{size=-7}[genie_name]...{/size}","soft","ahegao") from _call_her_main_4483
+                call her_main("{size=-7}[genie_name]...{/size}","soft","ahegao") 
                 m "Shhh. Just play with your tits."
-                call her_main("...fine, [genie_name]...","base","ahegao_raised",cheeks="blush") from _call_her_main_4484
+                call her_main("...fine, [genie_name]...","base","ahegao_raised",cheeks="blush") 
                 m "Good girl."
-                call her_main("....................","base","closed") from _call_her_main_4485
+                call her_main("....................","base","closed") 
                 m "Just be quiet..."
-                call nar(">you enjoy the sensation of gently stroking the inside of her thighs...") from _call_nar_515
+                call nar(">you enjoy the sensation of gently stroking the inside of her thighs...") 
                 m "as my hands explore you"
                 m "your thighs..."
-                call nar(">your start kneading the flesh of her thighs, moving ever closer to her dripping cunt") from _call_nar_516
+                call nar(">your start kneading the flesh of her thighs, moving ever closer to her dripping cunt") 
                 m "your big, firm ass"
-                call nar(">You move around and squeeze her ass gently...") from _call_nar_517
-                call her_main(".....................","grin","ahegao") from _call_her_main_4486
+                call nar(">You move around and squeeze her ass gently...") 
+                call her_main(".....................","grin","ahegao") 
                 m "your loins..."
-                call nar(">You move one hand back around, and start circling just above her clit.") from _call_nar_518
-                call her_main(".....................{size=-8}[genie_name]...{/size}","silly","dead") from _call_her_main_4487
+                call nar(">You move one hand back around, and start circling just above her clit.") 
+                call her_main(".....................{size=-8}[genie_name]...{/size}","silly","dead") 
                 m "What was that, [hermione_name]?"
-                call her_main(".....................","annoyed","wink",cheeks="blush") from _call_her_main_4488
-                call her_main("...i... {size=-5}...i need you... inside of me...{/size}","disgust","down_raised",cheeks="blush") from _call_her_main_4489
+                call her_main(".....................","annoyed","wink",cheeks="blush") 
+                call her_main("...i... {size=-5}...i need you... inside of me...{/size}","disgust","down_raised",cheeks="blush") 
                 m "You'll have to speak up if you expect me to hear you..."
-                call her_main("I... ah...{image=textheart} need...","open","ahegao_raised",cheeks="blush") from _call_her_main_4490
-                call nar(">You swiftly plunge two fingers into her drenched snatch.") from _call_nar_519
-                call her_main("!!!{image=textheart}{image=textheart}","grin","ahegao") from _call_her_main_4491
-                call nar(">you start to pump your fingers inside her before she can do more than gasp") from _call_nar_520
-                call her_main("{size=+10}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{/size}","silly","dead") from _call_her_main_4492
+                call her_main("I... ah...{image=textheart} need...","open","ahegao_raised",cheeks="blush") 
+                call nar(">You swiftly plunge two fingers into her drenched snatch.") 
+                call her_main("!!!{image=textheart}{image=textheart}","grin","ahegao") 
+                call nar(">you start to pump your fingers inside her before she can do more than gasp") 
+                call her_main("{size=+10}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{/size}","silly","dead") 
                 m "That's it [hermione_name]. Just enjoy yourself."
-                call her_main("..................................................","base","ahegao_raised",cheeks="blush") from _call_her_main_4493
+                call her_main("..................................................","base","ahegao_raised",cheeks="blush") 
                 m "do you like this?"
                 m "you like it when i finger your cunt?"
-                call her_main("i love it!{image=textheart} i love your fingers in my tight, wet pussy!!{image=textheart}","silly","ahegao") from _call_her_main_4494
+                call her_main("i love it!{image=textheart} i love your fingers in my tight, wet pussy!!{image=textheart}","silly","ahegao") 
                 m "well, i think we can do better."
-                call nar(">with your other hand, you start rubbing the base of your palm against her clit.") from _call_nar_521
-                call her_main("{size=+10}!!!{/size}","open","ahegao_raised",cheeks="blush") from _call_her_main_4495
+                call nar(">with your other hand, you start rubbing the base of your palm against her clit.") 
+                call her_main("{size=+10}!!!{/size}","open","ahegao_raised",cheeks="blush") 
 
 
-        call nar(">you don't even need to move as she pounds herself against your fingers.") from _call_nar_522
-        call her_main("ah...{image=textheart} please...{image=textheart} keep...{image=textheart}","silly","dead","blush") from _call_her_main_4496
-        call her_main("fingering my cunt!{image=textheart}{image=textheart}","silly","ahegao","blush") from _call_her_main_4497
+        call nar(">you don't even need to move as she pounds herself against your fingers.") 
+        call her_main("ah...{image=textheart} please...{image=textheart} keep...{image=textheart}","silly","dead","blush") 
+        call her_main("fingering my cunt!{image=textheart}{image=textheart}","silly","ahegao","blush") 
         g9 "As you command!"
-        call nar(">you force another finger into her pussy!") from _call_nar_523
-        call her_main("ah yes... {image=textheart}iloveitiloveitiloveit","grin","ahegao","blush") from _call_her_main_4498
+        call nar(">you force another finger into her pussy!") 
+        call her_main("ah yes... {image=textheart}iloveitiloveitiloveit","grin","ahegao","blush") 
         m "what do you love, [hermione_name]?"
-        call her_main("ah!!{image=textheart} I love your fingers in my pussy [genie_name]!{image=textheart}","open_wide_tongue","ahegao","blush") from _call_her_main_4499
-        call nar(">her movements are becoming more frantic") from _call_nar_524
+        call her_main("ah!!{image=textheart} I love your fingers in my pussy [genie_name]!{image=textheart}","open_wide_tongue","ahegao","blush") 
+        call nar(">her movements are becoming more frantic") 
         m "are you cumming, [hermione_name]?"
-        call her_main("ah...{image=textheart} yes!!","grin","ahegao") from _call_her_main_4500
-        call her_main("I'm cumming [genie_name]!!{image=textheart}","grin","dead") from _call_her_main_4501
-        call her_main("I'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}","grin","ahegao_mad",cheeks="blush") from _call_her_main_4502
+        call her_main("ah...{image=textheart} yes!!","grin","ahegao") 
+        call her_main("I'm cumming [genie_name]!!{image=textheart}","grin","dead") 
+        call her_main("I'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}","grin","ahegao_mad",cheeks="blush") 
         m "show me your tits [hermione_name]!"
         m "I want to see you cum while you play with them."
         $ hermione_squirt = True
-        call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","silly","dead",cheeks="blush") from _call_her_main_4503
+        call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","silly","dead",cheeks="blush") 
         
-        call cum_block from _call_cum_block_48
+        call cum_block 
         
         $ hermione_squirt = False
-        call her_main("Ah...{image=textheart}...{image=textheart}","grin","ahegao") from _call_her_main_4504
-        call her_main("Ah... ah...{image=textheart}","silly","ahegao") from _call_her_main_4505
-        call her_main("...........","silly","ahegao") from _call_her_main_4506
-        call her_main("........................","silly","ahegao") from _call_her_main_4507
-        call nar(">You release her...") from _call_nar_525
+        call her_main("Ah...{image=textheart}...{image=textheart}","grin","ahegao") 
+        call her_main("Ah... ah...{image=textheart}","silly","ahegao") 
+        call her_main("...........","silly","ahegao") 
+        call her_main("........................","silly","ahegao") 
+        call nar(">You release her...") 
         $ g_c_u_pic = "images/animation/grope_e_01.png"
         m "This will do for now [hermione_name]."
     
     
     label end_touch_yourself:
     hide screen hermione_main
-    call blkfade from _call_blkfade_143
+    call blkfade 
     ">Hermione quickly puts her clothes back on."
     
-    call h_action("none") from _call_h_action_74 #Resets clothes.
+    call h_action("none") #Resets clothes.
     
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
@@ -675,20 +675,20 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
     hide screen chair_left
     hide screen desk
     show screen genie
-    call her_chibi("stand","desk","base") from _call_her_chibi_146
+    call her_chibi("stand","desk","base") 
     pause.1
     
     hide screen blktone
     hide screen bld1
-    call hide_blkfade from _call_hide_blkfade_102
+    call hide_blkfade 
     pause.5
 
     if whoring < 19:
-        call her_main("Now about my payment.","scream","surprised",cheeks="blush",tears="messy",xpos="right",ypos="base") from _call_her_main_4508
+        call her_main("Now about my payment.","scream","surprised",cheeks="blush",tears="messy",xpos="right",ypos="base") 
         m "Yes, yes, [hermione_name]. [current_payout] to \"Gryffindor\"." 
         $ gryffindor +=current_payout
 
-    call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base") from _call_her_main_4509
+    call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base") 
     
     if whoring < 14: #Adds points till 14.
         $ whoring +=1

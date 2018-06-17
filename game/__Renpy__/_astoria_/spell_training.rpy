@@ -9,10 +9,10 @@ label astoria_spell_training:
     elif astoria_spells[0] == 2 and astoria_affection == 2: #You have to try the spell once before you can train the next one.
         jump imperio_spell_3_training
     elif astoria_affection >= 3: #ADD Max affection level.
-        call nar(">There are currently no more spells to train!") from _call_nar_15
+        call nar(">There are currently no more spells to train!") 
         jump astoria_requests
     else:
-        call nar(">You haven't used your newest unlocked spell yet!\n>You should use it before training your next.") from _call_nar_16
+        call nar(">You haven't used your newest unlocked spell yet!\n>You should use it before training your next.") 
         jump astoria_requests
 
         
@@ -22,72 +22,72 @@ label imperio_spell_1_training: #first level imperio spell
     #Spell Intro.
     if astoria_spell_progress == 0:
         #talk about needing to practice the spell, what it does new and about sitting on lap
-        call ast_main("","smile","base","base","mid",xpos="right",ypos="base",trans="fade") from _call_ast_main
+        call ast_main("","smile","base","base","mid",xpos="right",ypos="base",trans="fade") 
         m "So I managed to get a book of brand new spells of an old friend of mine."
         m "Apparently he made them himself..."
-        call ast_main("Really? So no one else knows them?","happy","base","base","mid") from _call_ast_main_1
+        call ast_main("Really? So no one else knows them?","happy","base","base","mid") 
         m "Not a soul."
-        call ast_main("cool...","grin","happyCl","base","mid") from _call_ast_main_2
-        call ast_main("So can I see it?","grin","angry","angry","mid") from _call_ast_main_3
+        call ast_main("cool...","grin","happyCl","base","mid") 
+        call ast_main("So can I see it?","grin","angry","angry","mid") 
         m "Sure, just come hop up on my lap and we can start reading it together."
-        call ast_main("WHAT???","scream","wide","wide","wide") from _call_ast_main_4
-        call ast_main("Why do I have to sit up on your lap?","open","angry","angry","mid") from _call_ast_main_5
-        call ast_main("It was bad enough that you made me go hang out with that old hag...","disgust","angry","angry","R") from _call_ast_main_6
-        call ast_main("Why can't I just use a chair?","disgust","angry","angry","mid") from _call_ast_main_7
+        call ast_main("WHAT???","scream","wide","wide","wide") 
+        call ast_main("Why do I have to sit up on your lap?","open","angry","angry","mid") 
+        call ast_main("It was bad enough that you made me go hang out with that old hag...","disgust","angry","angry","R") 
+        call ast_main("Why can't I just use a chair?","disgust","angry","angry","mid") 
         m "I only have one chair..."
-        call ast_main("There is another chair right here! Dumby!!!","scream","wide","wide","mid") from _call_ast_main_8
+        call ast_main("There is another chair right here! Dumby!!!","scream","wide","wide","mid") 
         m "No that's..."
         m "My antique shelve..."
         g9 "Besides, it'll be fun!"
-        call ast_main("Fun?","pout","angry","angry","mid") from _call_ast_main_9
+        call ast_main("Fun?","pout","angry","angry","mid") 
         g9 "It'll be fun for me..."
-        call ast_main("Ugh...","disgust","ahegao","ahegao","ahegao") from _call_ast_main_10
-        call ast_main("At least tell me what the spell does and I'll decide...","open","closed","base","mid") from _call_ast_main_11
+        call ast_main("Ugh...","disgust","ahegao","ahegao","ahegao") 
+        call ast_main("At least tell me what the spell does and I'll decide...","open","closed","base","mid") 
         m "OK, let me just open it up."
-        call ctc from _call_ctc_31
+        call ctc 
         
-        call ast_main("","pout","narrow","narrow","mid") from _call_ast_main_12
+        call ast_main("","pout","narrow","narrow","mid") 
         pause.5
-        call nar(">You try to open the spell book only to find it doesn't budge.") from _call_nar_17
+        call nar(">You try to open the spell book only to find it doesn't budge.") 
         m "(What gives?)"
-        call ast_main("Come on, old man...","pout","narrow","narrow","L") from _call_ast_main_13
+        call ast_main("Come on, old man...","pout","narrow","narrow","L") 
         m "I... can't open it..."
-        call ast_main("What? You're not that weak are you, dumby?","tongue_silly","angry","angry","mid") from _call_ast_main_14
+        call ast_main("What? You're not that weak are you, dumby?","tongue_silly","angry","angry","mid") 
         m "I'm not a damn cripple!"
-        call ast_main("Pffft, I think most cripples can open a book.","smile","base","base","mid") from _call_ast_main_15
+        call ast_main("Pffft, I think most cripples can open a book.","smile","base","base","mid") 
         pause.8
         m "I think it's magically locked..."
-        call ast_main("Really? It must be powerful then...","worried","wide","wide","wide") from _call_ast_main_16
-        call ast_main("Does it say anything on the cover?","open","base","base","mid") from _call_ast_main_17      #need soggy to draw the book here
+        call ast_main("Really? It must be powerful then...","worried","wide","wide","wide") 
+        call ast_main("Does it say anything on the cover?","open","base","base","mid") #need soggy to draw the book here
         m "No..."
-        call ast_main("And on the back?","pout","base","base","R") from _call_ast_main_18
+        call ast_main("And on the back?","pout","base","base","R") 
         m "Noth- no wait, there's a poem."
-        call ast_main("What does it say, dumby!","grin","angry","angry","mid") from _call_ast_main_19
+        call ast_main("What does it say, dumby!","grin","angry","angry","mid") 
         m "When venus and mars meet, all my knowledge shall be at your feet..."
-        call ast_main("What does that mean?!","open","wide","wide","mid") from _call_ast_main_20
+        call ast_main("What does that mean?!","open","wide","wide","mid") 
         
         label astoria_book_question:
             menu:
                 "-We have to be touching to open it-":
                     pass
                 "-We have to wait until venus and mars are aligned-":
-                    call ast_main("But that could take forever!","open","ahegao","ahegao","ahegao") from _call_ast_main_21
-                    call ast_main("It's gotta be something else dumby!","pout","angry","angry","mid") from _call_ast_main_22
+                    call ast_main("But that could take forever!","open","ahegao","ahegao","ahegao") 
+                    call ast_main("It's gotta be something else dumby!","pout","angry","angry","mid") 
                     jump astoria_book_question
                 "-We've gotta get some ancient gods to hook up-":
-                    call ast_main("Stop being such a dumby!","pout","narrow","narrow","R") from _call_ast_main_23
+                    call ast_main("Stop being such a dumby!","pout","narrow","narrow","R") 
                     jump astoria_book_question
 
-        call ast_main("Oh... is that why you wanted me to sit on your lap?","disgust","base","base","down") from _call_ast_main_24
+        call ast_main("Oh... is that why you wanted me to sit on your lap?","disgust","base","base","down") 
         m "o-of course... why else would I ask?"
-        call ast_main("hmpf...","pout","angry","angry","R") from _call_ast_main_25
-        call ast_main("well alright... Just don't try anything funny!","open","closed","base","mid") from _call_ast_main_26
+        call ast_main("hmpf...","pout","angry","angry","R") 
+        call ast_main("well alright... Just don't try anything funny!","open","closed","base","mid") 
         
         hide screen astoria_main
         hide screen bld1
-        call blkfade from _call_blkfade_12
+        call blkfade 
         
-        call nar(">Astoria hops up onto your lap.") from _call_nar_18
+        call nar(">Astoria hops up onto your lap.") 
         
         #Set up CG scene here.
         $ ccg_folder = "astoria_sit"
@@ -101,8 +101,8 @@ label imperio_spell_1_training: #first level imperio spell
         $ ccg("e3","b0","m0")
         ast "Now let's start reading!"
         m "(Snape better not have booby trapped this...)"
-        call nar(">You and astoria begin to turn the pages together, words begining to manifest on the pages.","start") from _call_nar_19
-        call nar(">As astoria flicks through the pages you hear a slow sexual moan eminate from between the covers...","end") from _call_nar_20
+        call nar(">You and astoria begin to turn the pages together, words begining to manifest on the pages.","start") 
+        call nar(">As astoria flicks through the pages you hear a slow sexual moan eminate from between the covers...","end") 
         $ ccg("e1","b1","m1")
         ast "Did the book just moan?"
         m "I think so..."
@@ -111,7 +111,7 @@ label imperio_spell_1_training: #first level imperio spell
         $ ccg("e0","b1","m3")
         ast "Although they don't normally sound like this..."
         m "Let's just see what the first spell is shall we?"
-        call nar(">Astoria slowly opens the book, turning it to the first spell she can find.") from _call_nar_21
+        call nar(">Astoria slowly opens the book, turning it to the first spell she can find.") 
         $ ccg("e0","b0","m3")
         ast "\"imperio of the heart\""
         $ ccg("e1","b3","m1")
@@ -151,14 +151,14 @@ label imperio_spell_1_training: #first level imperio spell
         ast "That is cool!"
         $ ccg("e3","b3","m2")
         ast "Maybe we could change her into a big slut who walks around school with her gross boobs hanging out."
-        call nar(">You feel yourself starting to harden at the idea.") from _call_nar_22
+        call nar(">You feel yourself starting to harden at the idea.") 
         m "Hmmm..."
         $ ccg("e7","b4","m1")
         ast "Dumby!!!"
         
-        call blkfade from _call_blkfade_13
+        call blkfade 
         
-        call nar(">Astoria quickly hops off your lap in response.") from _call_nar_23
+        call nar(">Astoria quickly hops off your lap in response.") 
         
         #Hide CG scene.
         hide screen ccg
@@ -166,25 +166,25 @@ label imperio_spell_1_training: #first level imperio spell
         pause.5
         hide screen blkfade
         
-        call ast_main("What the hell was that?!","scream","closed","angry","mid",trans="fade") from _call_ast_main_27
+        call ast_main("What the hell was that?!","scream","closed","angry","mid",trans="fade") 
         m "I have no idea what you are talking about..."
-        call ast_main("You better keep those nasty thoughts to yourself, old man!","scream","angry","angry","angry") from _call_ast_main_28
-        call ast_main("Or you'll have to go and kiss that granny's feet yourself!","clench","angry","angry","angry") from _call_ast_main_29
+        call ast_main("You better keep those nasty thoughts to yourself, old man!","scream","angry","angry","angry") 
+        call ast_main("Or you'll have to go and kiss that granny's feet yourself!","clench","angry","angry","angry") 
         m "Fine... I'm sorry..."
-        call ast_main("...","pout","angry","angry","R") from _call_ast_main_30
+        call ast_main("...","pout","angry","angry","R") 
         
         hide screen bld1
         hide screen astoria_main
-        call blkfade from _call_blkfade_14
+        call blkfade 
 
-        call nar(">Astoria hops back on to your lap.") from _call_nar_24
+        call nar(">Astoria hops back on to your lap.") 
         
         $ astoria_spell_progress = 1
         
     if astoria_spell_progress < 4:
-        call astoria_spell_practice from _call_astoria_spell_practice
+        call astoria_spell_practice 
         if astoria_spell_progress < 4:
-            call play_sound("door") from _call_play_sound_38
+            call play_sound("door") 
             hide screen astoria_main
             hide screen bld1
             hide screen blkfade
@@ -195,17 +195,17 @@ label imperio_spell_1_training: #first level imperio spell
             else:
                 jump day_start
         
-    call ast_main("Don't worry, we can try it out later sir.","smile","base","base","mid") from _call_ast_main_31
+    call ast_main("Don't worry, we can try it out later sir.","smile","base","base","mid") 
     m "I look forward to it."
     m "Goodnight astoria."
-    call ast_main("night dumby!","grin","closed","base","mid") from _call_ast_main_32
+    call ast_main("night dumby!","grin","closed","base","mid") 
     hide screen astoria_main
     with d3
     pause.5
     
-    call nar(">Astoria queitly walks out of your office, a small smirk forming in the corner of her mouth.") from _call_nar_25
+    call nar(">Astoria queitly walks out of your office, a small smirk forming in the corner of her mouth.") 
     
-    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png") from _call_give_reward_1
+    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png") 
     
     #Unlocks spell 1.
     $ astoria_spells[0] = 1
@@ -221,7 +221,7 @@ label imperio_spell_2_training: #second level imperio spell
         #talk about what it does new and about sitting on lap
         
         
-        call ast_main("","smile","base","base","mid",xpos="right",ypos="base",trans="fade") from _call_ast_main_33
+        call ast_main("","smile","base","base","mid",xpos="right",ypos="base",trans="fade") 
         m "ready to practice the next spell?"
         ast "Uh huh!"
         pass
@@ -229,9 +229,9 @@ label imperio_spell_2_training: #second level imperio spell
         $ astoria_spell_progress = 1
         
     if astoria_spell_progress < 4:
-        call astoria_spell_practice from _call_astoria_spell_practice_1
+        call astoria_spell_practice 
         if astoria_spell_progress < 4:
-            call play_sound("door") from _call_play_sound_39
+            call play_sound("door") 
             hide screen astoria_main
             hide screen bld1
             with d3
@@ -241,7 +241,7 @@ label imperio_spell_2_training: #second level imperio spell
             else:
                 jump day_start
         
-    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png") from _call_give_reward_2
+    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png") 
     
     #Unlocks Spell 2.
     $ astoria_spells[0] = 2
@@ -255,15 +255,15 @@ label imperio_spell_2_training: #second level imperio spell
 label imperio_spell_3_training: #third level imperio spell
     if astoria_spell_progress == 0:
         #talk about what it does new and about sitting on lap
-        call ast_main("So are you ready to learn the final imperio spell, [ast_genie_name]?","grin","angry","angry","mid",xpos="right",ypos="base",trans="fade") from _call_ast_main_34
+        call ast_main("So are you ready to learn the final imperio spell, [ast_genie_name]?","grin","angry","angry","mid",xpos="right",ypos="base",trans="fade") 
         m "Ready as I'll ever be..."
         
         $ astoria_spell_progress = 1
         
     if astoria_spell_progress < 4:
-        call astoria_spell_practice from _call_astoria_spell_practice_2
+        call astoria_spell_practice 
         if astoria_spell_progress < 4:
-            call play_sound("door") from _call_play_sound_40
+            call play_sound("door") 
             hide screen astoria_main
             hide screen bld1
             with d3
@@ -273,7 +273,7 @@ label imperio_spell_3_training: #third level imperio spell
             else:
                 jump day_start
         
-    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png") from _call_give_reward_3
+    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png") 
     
     #Unlocks Spell 3.
     $ astoria_spells[0] = 3
@@ -317,7 +317,7 @@ label orgasmio_spell_3_training: #third level orgasmio spell
 label astoria_spell_practice:
     hide screen astoria_main
     hide screen bld1
-    call blkfade from _call_blkfade_15
+    call blkfade 
     
     #Set up CG scene here!
     $ ccg_folder = "astoria_sit"
@@ -330,7 +330,7 @@ label astoria_spell_practice:
     $ renpy.call('astoria_lap_sit_'+str(astoria_affection)+'_'+str(astoria_spell_progress))
     
     pause.8
-    call blkfade from _call_blkfade_16
+    call blkfade 
     
     #Hide CG scene here!
     hide screen ccg
@@ -348,7 +348,7 @@ label astoria_spell_practice:
 
 #
 label astoria_lap_sit_0_1:
-    call nar(">Astoria lightly hops up onto your lap.") from _call_nar_26
+    call nar(">Astoria lightly hops up onto your lap.") 
     $ ccg("e6","b1","m3")
     ast "I suppose this isn't too bad..."
     $ ccg("e7","b0","m1")
@@ -363,8 +363,8 @@ label astoria_lap_sit_0_1:
     ast "I thought it would be easier than this dumby!"
     m "Tough..."
     $ ccg("e0","b1","m4")
-    call nar(">You and Astoria spend the night pouring over the spell book, both of you talking about how you think it works...") from _call_nar_27
-    call nar(">Your growing interest in the foreign magic distracts you from Asoria's incestant wiggling...") from _call_nar_28
+    call nar(">You and Astoria spend the night pouring over the spell book, both of you talking about how you think it works...") 
+    call nar(">Your growing interest in the foreign magic distracts you from Asoria's incestant wiggling...") 
     $ ccg("e2","b2","m1")
     ast "ah.... I think I better go to bed now dumby..."
     m "So soon? But we've still got so many pages left..."
@@ -376,12 +376,12 @@ label astoria_lap_sit_0_1:
     $ ccg("e7","b0","m1")
     ast "Good... Night dumby!"
     
-    call nar("With a cheerful grin, astoria hops off your lap and out of your office.") from _call_nar_29
+    call nar("With a cheerful grin, astoria hops off your lap and out of your office.") 
     
     return
     
 label astoria_lap_sit_0_2:
-    call nar(">Astoria lightly hops up onto your lap.") from _call_nar_30
+    call nar(">Astoria lightly hops up onto your lap.") 
     $ ccg("e7","b1","m3")
     ast "Do I really have to sit here?"
     m "Is it that bad?"
@@ -397,7 +397,7 @@ label astoria_lap_sit_0_2:
     m "well then you'll just have to make do with my lap."
     $ ccg("e2","b4","m1")
     ast "Fine!"
-    call nar(">You and Astoria spend the night reading over the spell, both of you silently reading along...") from _call_nar_31
+    call nar(">You and Astoria spend the night reading over the spell, both of you silently reading along...") 
     $ ccg("e0","b0","m0")
     ast "next page!"
     m "Already? I've still got a few lines left..."
@@ -412,12 +412,12 @@ label astoria_lap_sit_0_2:
     ast "I may as well go to bed."
     $ ccg("e6","b4","m4")
     ast "night dumby..."
-    call nar("With a sullen put, astoria hops off your lap and out of your office.") from _call_nar_32
+    call nar("With a sullen put, astoria hops off your lap and out of your office.") 
     
     return
     
 label astoria_lap_sit_0_3:
-    call nar(">Astoria lightly hops up onto your lap.") from _call_nar_33
+    call nar(">Astoria lightly hops up onto your lap.") 
     $ ccg("e7","b0","m1")
     ast "Can we start reading now?"
     m "Ready when you are."
@@ -436,7 +436,7 @@ label astoria_lap_sit_0_3:
     ast "..."
     $ ccg("e7","b1","m4")
     ast "Just open the book dumby."
-    call nar(">You and Astoria read the book long into the night, occasionaly asking the other questions...") from _call_nar_34
+    call nar(">You and Astoria read the book long into the night, occasionaly asking the other questions...") 
     $ ccg("e0","b2","m0")
     ast "ugh... that's the end of the spell..."
     $ ccg("e7","b0","m1")
@@ -450,7 +450,7 @@ label astoria_lap_sit_0_3:
     $ ccg("e7","b2","m3")
     ast "goodnight dumby..."
     m "goodnight astoria."
-    call nar("With tired face, astoria hops off of your lap and out of your office.") from _call_nar_35
+    call nar("With tired face, astoria hops off of your lap and out of your office.") 
     
     return
     
@@ -458,11 +458,11 @@ label astoria_lap_sit_0_3:
     
 #
 label astoria_lap_sit_1_1:
-    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.") from _call_nar_36
+    call nar(">Astoria excitedely hops up onto your lap, eager to start reading.") 
     $ ccg("e7","b0","m1")
     ast "Come on Dumby, let's start reading it already!"
     m "Alright..."
-    call nar("You and Astoria turn to the page and start reading over the new spell.") from _call_nar_37
+    call nar("You and Astoria turn to the page and start reading over the new spell.") 
     $ ccg("e0","b1","m1")
     ast "According to the guide, this one is called imperio tempus..."
     $ ccg("e7","b0","m0")
@@ -476,7 +476,7 @@ label astoria_lap_sit_1_1:
     $ ccg("e7","b4","m1")
     ast "Of course dumby! It'll just take me a while to learn it is all..."
     m "Good..."
-    call nar(">You and Astoria slowly pour over the book, your eyes occasionaly drifting shut...") from _call_nar_38
+    call nar(">You and Astoria slowly pour over the book, your eyes occasionaly drifting shut...") 
     $ ccg("e7","b4","m1")
     ast "Wake up dumby!"
     m "I'm up!"
@@ -496,12 +496,12 @@ label astoria_lap_sit_1_1:
     $ ccg("e7","b4","m1")
     ast "Well get some rest old man, I expect you to start pulling your weight next time!"
     m "ugh..."
-    call nar("With teasing face, astoria hops off of your lap and out of your office.") from _call_nar_39
+    call nar("With teasing face, astoria hops off of your lap and out of your office.") 
 
     return
     
 label astoria_lap_sit_1_2:
-    call nar(">Astoria slowly hops up onto your lap, quietly opening the book.") from _call_nar_40
+    call nar(">Astoria slowly hops up onto your lap, quietly opening the book.") 
     $ ccg("e0","b2","m3")
     m "What's the matter? You seem a little tired."
     $ ccg("e7","b4","m1")
@@ -516,16 +516,16 @@ label astoria_lap_sit_1_2:
     $ ccg("e7","b4","m1")
     ast "I'm not tired!"
     m "If you say so..."
-    call nar(">You begin to read over the complex spell, Astoria taking far longer to read through the pages...") from _call_nar_41
+    call nar(">You begin to read over the complex spell, Astoria taking far longer to read through the pages...") 
     $ ccg("e2","b1","m4")
     ast "..."
     m "Are you ready to read the next page?"
     $ ccg("e0","b1","m4")
     ast "yea..."
     $ ccg("e2","b2","m3")
-    call nar(">As you turn the page you start to feel Astoria's body go limp on your lap.") from _call_nar_42
+    call nar(">As you turn the page you start to feel Astoria's body go limp on your lap.") 
     m "Hmmm, poor little thing..."
-    call nar(">You nudge astoria on the back slightly.") from _call_nar_43
+    call nar(">You nudge astoria on the back slightly.") 
     $ ccg("e5","b4","m4")
     ast "W-what... Keep your hands of me old man!"
     m "Pfft... I think it's time you went to bed."
@@ -537,16 +537,16 @@ label astoria_lap_sit_1_2:
     $ ccg("e7","b2","m4")
     ast "Night dumby..."
     m "Goodnight Astoria."
-    call nar("With tired expression, astoria hops off of your lap and slowly out of your office.") from _call_nar_44
+    call nar("With tired expression, astoria hops off of your lap and slowly out of your office.") 
     
     return
     
 label astoria_lap_sit_1_3: 
-    call nar(">Astoria effortlessly hops up onto your lap, eager to start reading the final parts of the spell.") from _call_nar_45
+    call nar(">Astoria effortlessly hops up onto your lap, eager to start reading the final parts of the spell.") 
     $ ccg("e7","b0","m1")
     ast "Come on Dumby, let's go! We're almost done!"
     m "Alright..."
-    call nar("You and Astoria turn to one of the last pages and start reading over where you left off.") from _call_nar_46
+    call nar("You and Astoria turn to one of the last pages and start reading over where you left off.") 
     $ ccg("e0","b1","m4")
     ast "Hmmm... we might need to go back a little bit..."
     m "Why?"
@@ -558,7 +558,7 @@ label astoria_lap_sit_1_3:
     $ ccg("e6","b4","m1")
     ast "Shut up dumby, no one likes a smarty pants!"
     m "You're telling me..."
-    call nar(">You and Astoria turn back a few pages and continue reading...") from _call_nar_47
+    call nar(">You and Astoria turn back a few pages and continue reading...") 
     $ ccg("e1","b0","m2")
     ast "That's it!"
     m "Finally..."
@@ -577,7 +577,7 @@ label astoria_lap_sit_1_3:
     $ ccg("e7","b4","m1")
     ast "I don't think so dumby..."
     m "ugh... fine..."
-    call nar("Astoria hops off of your lap.") from _call_nar_48
+    call nar("Astoria hops off of your lap.") 
     
     return
 
@@ -585,11 +585,11 @@ label astoria_lap_sit_1_3:
     
 #
 label astoria_lap_sit_2_1:
-    call nar(">Astoria quickly hops up onto your lap.") from _call_nar_49
+    call nar(">Astoria quickly hops up onto your lap.") 
     $ ccg("e7","b0","m1")
     ast "Let's go dumby!"
     m "Alright..."
-    call nar("You and Astoria turn to the page and start reading over the final version of the imperio spell.") from _call_nar_50
+    call nar("You and Astoria turn to the page and start reading over the final version of the imperio spell.") 
     $ ccg("e1","b0","m1")
     ast "wow... this one gives us complete control over someone..."
     m "How's that different from the regular one?"
@@ -606,7 +606,7 @@ label astoria_lap_sit_2_1:
     m "Don't I get a-"
     $ ccg("e3","b0","m0")
     ast "Nope! Now let's keep reading..."
-    call nar(">You and Astoria star to pour over the book, astoria seeming to need to reread several pages to fully understand them...") from _call_nar_51
+    call nar(">You and Astoria star to pour over the book, astoria seeming to need to reread several pages to fully understand them...") 
     $ ccg("e0","b1","m4")
     ast "This seems pretty hard..."
     $ ccg("e2","b1","m4")
@@ -621,12 +621,12 @@ label astoria_lap_sit_2_1:
     $ ccg("e6","b0","m1")
     ast "Well you can read it to me later, I promised Pansy I'd hang out tonight."
     m "alright then..."
-    call nar("You close the book as astoria hops off of your lap and out of your office.") from _call_nar_52
+    call nar("You close the book as astoria hops off of your lap and out of your office.") 
     
     return
     
 label astoria_lap_sit_2_2:
-    call nar(">Astoria hops up onto your lap, wiggling her little butt as she settles in.") from _call_nar_53
+    call nar(">Astoria hops up onto your lap, wiggling her little butt as she settles in.") 
     $ ccg("e7","b0","m1")
     ast "Come on Dumby, let's finish this spell so we can try it already!"
     $ ccg("e3","b0","m1")
@@ -640,14 +640,14 @@ label astoria_lap_sit_2_2:
     m "Forget I said anything."
     $ ccg("e6","b1","m4")
     ast "Hmmm, alright... let's just read the book old man."
-    call nar(">You and astoria start to read over the complex spell. Your knowledge of latin proving essential to the small witch's understanding.") from _call_nar_54
+    call nar(">You and astoria start to read over the complex spell. Your knowledge of latin proving essential to the small witch's understanding.") 
     $ ccg("e7","b4","m1")
     ast "That's not a real word!"
     m "Yes it is..."
     $ ccg("e6","b4","m4")
     ast "Pffft... whoever made this dumb language is dumber than you dumby!"
     m "Ugh..."
-    call nar(">You and astoria return to the book...") from _call_nar_55
+    call nar(">You and astoria return to the book...") 
     $ ccg("e0","b4","m1")
     ast "ugh... whoever wrote this book has terrible handwriting!"
     m "alright, I think we better call it there for tonight."
@@ -663,17 +663,17 @@ label astoria_lap_sit_2_2:
     ast "fine... but you're the one with the problem!"
     m "...."
     $ ccg("e2","b4","m4")
-    call nar("With pouty face, astoria hops off of your lap and out of your office.") from _call_nar_56
+    call nar("With pouty face, astoria hops off of your lap and out of your office.") 
     
     return
     
 label astoria_lap_sit_2_3: 
-    call nar(">Astoria leaps into your lap as if you were santa claus at christmas time...") from _call_nar_57
+    call nar(">Astoria leaps into your lap as if you were santa claus at christmas time...") 
     $ ccg("e7","b0","m1")
     ast "Let's go dumby! We're almost at the end!"
     m "Almost..."
     $ ccg("e0","b0","m0")
-    call nar(">You and Astoria turn to bookmarked page and start reading over the final pages of the spell.") from _call_nar_58
+    call nar(">You and Astoria turn to bookmarked page and start reading over the final pages of the spell.") 
     $ ccg("e3","b0","m0")
     ast "Wow... I think I'm finally getting good at Latin!"
     m "You're alright..."
@@ -683,7 +683,7 @@ label astoria_lap_sit_2_3:
     m "Well come on then, why don't you read the next page out loud then?"
     $ ccg("e6","b4","m1")
     ast "Fine!"
-    call nar(">You and Astoria slowly read over the next few pages, Astoria stumbling over every second word...") from _call_nar_59
+    call nar(">You and Astoria slowly read over the next few pages, Astoria stumbling over every second word...") 
     $ ccg("e3","b0","m2")
     ast "Done! I told you I was the best Dumby!"
     m "You sure showed me..."
@@ -700,7 +700,7 @@ label astoria_lap_sit_2_3:
     m "Fine... I suppose it is getting a little late."
     $ ccg("e7","b0","m0")
     ast "At least you can read a clock!"
-    call nar(">With a teasing look on her face, astoria hops off of your lap and out of your office.") from _call_nar_60
+    call nar(">With a teasing look on her face, astoria hops off of your lap and out of your office.") 
     
     return
     

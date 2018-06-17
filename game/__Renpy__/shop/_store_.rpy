@@ -119,7 +119,7 @@ label store_scrolls:
                 else:
                     call no_gold #Massage: m "I don't have enough gold".
                     hide screen gift
-                    return
+                    jump store_scrolls
             "-Never mind-":
                 hide screen gift
         jump store_scrolls

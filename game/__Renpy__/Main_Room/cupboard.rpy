@@ -237,7 +237,12 @@ label cupboard:
 
         "-Cheats-" if cheats_active:
             jump cheats
-
+            
+        "-Send Ministry letter again-" if day >= 25 and whoring >= 9 and not ministry_letter_received:
+            $ ministry_letter = True
+            $ letters += 1 #Displays Owl
+            ">You received a new letter."
+            jump cupboard
 
         "-Reset ALL Luna content-":
             $ reset_luna_content = True

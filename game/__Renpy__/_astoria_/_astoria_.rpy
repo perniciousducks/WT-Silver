@@ -65,6 +65,8 @@ label astoria_intro_branches: #This label runs every day and night. Never call t
 label hermione_talk_branches:
     #You tell Hermione about the curses.
     if ministry_letter_received and not astoria_unlocked:
+        if snape_on_the_lookout:
+            $ hermione_finds_astoria = True
         if hermione_on_the_lookout:
             $ chitchated_with_her = True 
             call her_main("I'm still looking for that student, [genie_name]!","open","closed") 

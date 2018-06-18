@@ -387,7 +387,7 @@ label snape_chitchat:
         elif one_of_ten == 10:
             call sna_main("I used to hate my job so much...","snape_24") 
             call sna_main("Hate is clean, simple and certain...","snape_06") 
-            call sna_main("Now, don't get me wrong - I still hate it.","snape_0") 
+            call sna_main("Now, don't get me wrong - I still hate it.","snape_09") 
             call sna_main("But I also sort of love it now...","snape_05") 
             sna "How could I not? With all that has been happening lately?"
             call sna_main("To both cherish and hate something to an equal degree...","snape_06") 

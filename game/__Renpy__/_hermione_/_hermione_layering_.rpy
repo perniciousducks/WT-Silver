@@ -70,7 +70,7 @@ screen hermione_main:
 
     #Costume
     if hermione_costume:
-        if hermione_wear_top or hermione_wear_bottom:
+        if hermione_wear_top:
             use hermione_costume
         else:
             use hermione_uniform
@@ -281,7 +281,7 @@ screen hermione_head:
         
     #Costume
     else:
-        if hermione_wear_top or hermione_wear_bottom:
+        if hermione_wear_top:
             use hermione_head_costume
         else:
             use hermione_head_uniform
@@ -757,8 +757,9 @@ label h_update_body:
 
 
     if hermione_costume:
-        if hermione_wear_top or hermione_wear_bottom:
-            $ h_breasts = "breasts_nipfix"
+        if hermione_wear_top:
+            $ h_breasts = hermoine_outfit_GLBL.breast_layer
+        
 
     #Transparency Fix
     if transparency < 1:

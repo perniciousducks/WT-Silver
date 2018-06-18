@@ -478,12 +478,7 @@ label her_outfit_toggle:
         $ hermione_costume = False
     else:
         $ hermione_costume = True
-    #if wardrobe_costume_selection:
-    #    $ wardrobe_costume_selection = False
-    #else:
-    #    $ wardrobe_costume_selection = True
     call update_her_uniform 
-    call her_main("") 
     show screen hermione_main
     hide screen wardrobe
     call screen wardrobe 

@@ -7,6 +7,7 @@ label __init_variables:
     $ hg_maid_OBJ.store_image = "maid.png"
     $ hg_maid_OBJ.outfit_layers = []
     $ hg_maid_OBJ.outfit_layers.extend(("maid_stockings.png","maid_skirt.png","maid_top.png","maid_gloves.png"))
+    $ hg_maid_OBJ.breast_layer = "breasts_normal_pressed"
     $ hg_maid_OBJ.top_layers = []
     $ hg_maid_OBJ.top_layers.append("maid_hat.png")
     
@@ -18,6 +19,7 @@ label __init_variables:
     $ hg_gryffCheer_OBJ.store_image = "cheer.png"
     $ hg_gryffCheer_OBJ.outfit_layers = []
     $ hg_gryffCheer_OBJ.outfit_layers.extend(("cheer_stockings.png","cheer_pants.png","cheer_top.png"))
+    $ hg_gryffCheer_OBJ.breast_layer = "breasts_normal_pressed"
     $ hg_gryffCheer_OBJ.actions = []
     $ hg_gryffCheer_OBJ.action_images = []
     $ hg_gryffCheer_OBJ.actions.append("lift_top")
@@ -31,6 +33,7 @@ label __init_variables:
     $ hg_slythCheer_OBJ.store_image = "s_cheer.png"
     $ hg_slythCheer_OBJ.outfit_layers = []
     $ hg_slythCheer_OBJ.outfit_layers.extend(("s_cheer_stockings.png","s_cheer_pants.png","s_cheer_top.png"))
+    $ hg_slythCheer_OBJ.breast_layer = "breasts_normal_pressed"
     $ hg_slythCheer_OBJ.actions = []
     $ hg_slythCheer_OBJ.action_images = []
     $ hg_slythCheer_OBJ.actions.append("lift_top")
@@ -44,6 +47,7 @@ label __init_variables:
     $ hg_heartDancer_OBJ.store_image = "heart.png"
     $ hg_heartDancer_OBJ.outfit_layers = []
     $ hg_heartDancer_OBJ.outfit_layers.extend(("heart_legs.png","heart_top.png","heart_collar.png"))
+    $ hg_heartDancer_OBJ.breast_layer = "breasts_normal"
     
     if not hasattr(renpy.store,'hg_silkNightgown_OBJ'):
         $ hg_silkNightgown_OBJ = hermione_outfit()
@@ -63,6 +67,7 @@ label __init_variables:
     $ hg_pirate_OBJ.store_image = "pirate.png"
     $ hg_pirate_OBJ.outfit_layers = []
     $ hg_pirate_OBJ.outfit_layers.extend(("pirate_legs.png","pirate_pants.png","pirate_top.png"))
+    $ hg_pirate_OBJ.breast_layer = "breasts_nipfix"
     
     if not hasattr(renpy.store,'hg_powerGirl_OBJ'):
         $ hg_powerGirl_OBJ = hermione_outfit()
@@ -72,6 +77,7 @@ label __init_variables:
     $ hg_powerGirl_OBJ.store_image = "power.png"
     $ hg_powerGirl_OBJ.outfit_layers = []
     $ hg_powerGirl_OBJ.outfit_layers.extend(("power_cape.png","power_top.png","power_gloves.png","power_belt.png"))
+    $ hg_powerGirl_OBJ.breast_layer = "breasts_normal"
     $ hg_powerGirl_OBJ.hair_layer = "power_hair"
     
     if not hasattr(renpy.store,'hg_msMarvel_OBJ'):
@@ -82,6 +88,7 @@ label __init_variables:
     $ hg_msMarvel_OBJ.store_image = "marvel.png"
     $ hg_msMarvel_OBJ.outfit_layers = []
     $ hg_msMarvel_OBJ.outfit_layers.extend(("marvel_pants.png","marvel_top.png","marvel_sash.png","marvel_gloves.png"))
+    $ hg_msMarvel_OBJ.breast_layer = "breasts_normal"
     
     if not hasattr(renpy.store,'hg_harleyQuinn_OBJ'):
         $ hg_harleyQuinn_OBJ = hermione_outfit()
@@ -91,6 +98,7 @@ label __init_variables:
     $ hg_harleyQuinn_OBJ.store_image = "harley.png"
     $ hg_harleyQuinn_OBJ.outfit_layers = []
     $ hg_harleyQuinn_OBJ.outfit_layers.extend(("harley_pants.png","harley_top.png","harley_gloves.png","harley_collar.png"))
+    $ hg_harleyQuinn_OBJ.breast_layer = "breasts_normal"
     $ hg_harleyQuinn_OBJ.hair_layer = "harley_hair"
     
     if not hasattr(renpy.store,'hg_ballDress_OBJ'):
@@ -101,6 +109,7 @@ label __init_variables:
     $ hg_ballDress_OBJ.store_image = "ball_dress.png"
     $ hg_ballDress_OBJ.outfit_layers = []
     $ hg_ballDress_OBJ.outfit_layers.extend(("ball_dress_skirt.png","ball_dress_top.png"))
+    $ hg_ballDress_OBJ.breast_layer = "breasts_nipfix"
     
     if not hasattr(renpy.store,'hg_christmas_OBJ'):
         $ hg_christmas_OBJ = hermione_outfit()
@@ -112,7 +121,7 @@ label __init_variables:
     $ hg_christmas_OBJ.outfit_layers.extend(("christmas_pants.png","christmas_top.png","christmas_gloves.png","christmas_collar.png"))
     $ hg_christmas_OBJ.top_layers = []
     $ hg_christmas_OBJ.top_layers.append("christmas_antlers.png")
-    $ hg_christmas_OBJ.breast_layer = "breasts_normal"
+    $ hg_christmas_OBJ.breast_layer = "breasts_normal_pressed"
     
     if not hasattr(renpy.store,'hg_laraCroft_OBJ'):
         $ hg_laraCroft_OBJ = hermione_outfit()
@@ -122,6 +131,7 @@ label __init_variables:
     $ hg_laraCroft_OBJ.store_image = "lara.png"
     $ hg_laraCroft_OBJ.outfit_layers = []
     $ hg_laraCroft_OBJ.outfit_layers.extend(("lara_pants.png","lara_top.png","lara_gloves.png"))
+    $ hg_laraCroft_OBJ.breast_layer = "breasts_normal"
 
     if not hasattr(renpy.store,'hg_tifa_OBJ'):
         $ hg_tifa_OBJ = hermione_outfit()
@@ -131,6 +141,7 @@ label __init_variables:
     $ hg_tifa_OBJ.store_image = "tifa.png"
     $ hg_tifa_OBJ.outfit_layers = []
     $ hg_tifa_OBJ.outfit_layers.extend(("tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"))
+    $ hg_tifa_OBJ.breast_layer = "breasts_normal"
     $ hg_tifa_OBJ.hair_layer = "tifa_hair"
 
     if not hasattr(renpy.store,'hg_rocker_OBJ'):
@@ -141,6 +152,7 @@ label __init_variables:
     $ hg_rocker_OBJ.store_image = "rocker.png"
     $ hg_rocker_OBJ.outfit_layers = []
     $ hg_rocker_OBJ.outfit_layers.extend(("rocker_skirt.png","rocker_top.png","rocker_band.png"))
+    $ hg_rocker_OBJ.breast_layer = "breasts_normal"
 
     if not hasattr(renpy.store,'hg_present_OBJ'):
         $ hg_present_OBJ = hermione_outfit()
@@ -150,6 +162,7 @@ label __init_variables:
     $ hg_present_OBJ.store_image = "present.png"
     $ hg_present_OBJ.outfit_layers = []
     $ hg_present_OBJ.outfit_layers.extend(("present_pant.png","present_top.png"))
+    $ hg_present_OBJ.breast_layer = "breasts_nipfix"
 
     if not hasattr(renpy.store,'hg_japan_OBJ'):
         $ hg_japan_OBJ = hermione_outfit()
@@ -159,6 +172,7 @@ label __init_variables:
     $ hg_japan_OBJ.store_image = "japan.png"
     $ hg_japan_OBJ.outfit_layers = []
     $ hg_japan_OBJ.outfit_layers.extend(("japan_pant.png","japan_top.png"))
+    $ hg_japan_OBJ.breast_layer = "breasts_normal_pressed"
 
     if not hasattr(renpy.store,'hg_witch_OBJ'):
         $ hg_witch_OBJ = hermione_outfit()
@@ -168,6 +182,7 @@ label __init_variables:
     $ hg_witch_OBJ.store_image = "witch.png"
     $ hg_witch_OBJ.outfit_layers = []
     $ hg_witch_OBJ.outfit_layers.extend(("witch_stockings.png","witch_top.png","witch_cloak.png","witch_hat.png"))
+    $ hg_witch_OBJ.breast_layer = "breasts_normal_pressed"
 
     if not hasattr(renpy.store,'hg_bio_OBJ'):
         $ hg_bio_OBJ = hermione_outfit()
@@ -177,6 +192,7 @@ label __init_variables:
     $ hg_bio_OBJ.store_image = "bio.png"
     $ hg_bio_OBJ.outfit_layers = []
     $ hg_bio_OBJ.outfit_layers.extend(("bio_skirt.png","bio_chocker.png","bio_jacket.png","bio_corset.png"))
+    $ hg_bio_OBJ.breast_layer = "breasts_normal_pressed"
 
     if not hasattr(renpy.store,'hg_yenn_OBJ'):
         $ hg_yenn_OBJ = hermione_outfit()
@@ -186,6 +202,7 @@ label __init_variables:
     $ hg_yenn_OBJ.store_image = "yenn.png"
     $ hg_yenn_OBJ.outfit_layers = []
     $ hg_yenn_OBJ.outfit_layers.extend(("yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"))
+    $ hg_yenn_OBJ.breast_layer = "breasts_normal"
 
 
     $ hermione_outfits_list = []
@@ -232,6 +249,9 @@ label h_outfit_OBJ(outfit):
         call h_update_hair 
     else:
         $ hermione_costume = True
+        
+        $ h_request_wear_top = True
+        $ hermione_wear_top = True
         
         $ hermoine_outfit_GLBL = outfit
 

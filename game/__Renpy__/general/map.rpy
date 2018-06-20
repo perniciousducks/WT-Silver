@@ -25,6 +25,45 @@ screen map_screen:
 # TODO: change how "random" chance works for getting items from locations or immplement a 
 # limit to searching an area b/c currenly if day_random is above a vlaue the player can get
 # as many items as they want
+label floor_7th:
+    if first_time_7th == True:
+        m"\"I don't have any reason to go to this floor...\""
+        show screen main_room_menu
+    else:
+        call blkfade 
+        hide screen main_room_menu
+        hide screen main_room
+        hide screen chair_right
+        hide screen fireplace
+        show screen floor_7th_screen
+        
+        
+        if unlocked_7th and first_time_7th:
+            call gen_chibi(xpos="door", ypos="base", flip=True)
+            call hide_blkfade
+            $ first_time_7th=False
+            m"So... he was walking around here."
+            call gen_chibi(action="hide")
+            call gen_walk(pos1="door", pos2="200")
+            m"I can definitely sense a strong magical energy in this place..."
+            call gen_walk(pos1="200", pos2="door")
+            m"Maybe if I...or I could..."
+            call gen_walk(pos1="door", pos2="200")
+            m"Why, I could be in my office jacking off right now!!"
+            show screen room_of_req_door
+            pause 1
+            call gen_chibi(xpos="200", ypos="base")
+            m"Well... will you look at that"
+            hide screen room_of_req_door
+            call screen floor_7th_menu
+        else:
+            
+            call gen_chibi(xpos="200", ypos="base")
+            call hide_blkfade
+            pause 1
+            call screen floor_7th_menu
+            
+
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
         ">You venture up to the attic but find that the door is locked."
@@ -228,6 +267,7 @@ label return_office:
     hide screen chair_left
     hide screen desk
     call gen_chibi("hide") 
+    show screen main_room
     show screen genie
     hide screen blkback
     pause.5

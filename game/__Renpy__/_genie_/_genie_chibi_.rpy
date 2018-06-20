@@ -349,7 +349,7 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
     elif pos1 == "door":
         $ walk_xpos = 750
     else:
-        $ walk_xpos = pos1
+        $ walk_xpos = int(pos1)
 
     if pos2 == "mid":
         $ walk_xpos2 = 500
@@ -361,7 +361,7 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
         $ walk_xpos2 = 750
         $ loiter = False
     else:
-        $ walk_xpos2 = pos2
+        $ walk_xpos2 = int(pos2)
 
     $ genie_chibi_ypos = 190
     $ genie_speed = speed #Speed of walking animation. (lower = faster)

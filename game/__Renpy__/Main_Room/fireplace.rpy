@@ -11,7 +11,7 @@ label fireplace:
                     m "(A loose brick...If only I could..*Hhng*...There we go.)"
                     call give_reward("You have unlocked a puzzle in the cupboard", "images/store/unlock_puzzle_1.png")
                     m "Seems straight forward enough"
-                    hide screen glow_effect
+                    hide screen fireplace_glow
                     $ found_puzzle_1 = True
                     
                 "Turn fire off/on":

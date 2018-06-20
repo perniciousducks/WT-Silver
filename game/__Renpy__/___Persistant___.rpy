@@ -7,7 +7,8 @@ label __init_variables:
     #place save variables here 
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
-
+    if not hasattr(renpy.store,'first_time_7th'): #important!
+        $ first_time_7th = True
     if not hasattr(renpy.store,'pitch_open'): #important!
         $ pitch_open = True
     if not hasattr(renpy.store,'maid_working_unlocked'): #important!

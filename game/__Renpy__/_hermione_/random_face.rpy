@@ -6,7 +6,7 @@
 label her_main_rndm_neutral: #01(06,45,52), 03,54,82,84,(198),201 #DONE
     $ rndm_one_of_six = renpy.random.randint(1, 6)
     if rndm_one_of_six == 1:
-        call her_main("","base","base") #default look #01,06,45 and 52 are exactly the same!
+        call her_main("","base","base") #01,06,45 and 52 are exactly the same!
     elif rndm_one_of_six == 2:
         call her_main("","normal","base") #
     elif rndm_one_of_six == 3:
@@ -24,7 +24,7 @@ label her_main_rndm_neutral: #01(06,45,52), 03,54,82,84,(198),201 #DONE
 label her_main_rndm_happy: #01(06,45,52), 53,54,68,74,84 #DONE
     $ rndm_one_of_six = renpy.random.randint(1, 6)
     if rndm_one_of_six == 1:
-        call her_main("","base","base") #default look #01,06,45 and 52 are exactly the same!
+        call her_main("","base","base") #01,06,45 and 52 are exactly the same!
     elif rndm_one_of_six == 2:
         call her_main("","base","squint") #sly. naughty
     elif rndm_one_of_six == 3:
@@ -68,15 +68,15 @@ label her_main_rndm_naughty: #58,59,78,106,111,124,128,129,134,136, #DONE
 label her_main_rndm_naughty_wBlush: #188,200,205,209,213 #DONE
     $ rndm_one_of_five = renpy.random.randint(1, 5)
     if rndm_one_of_five == 1:
-        call her_main("","base","baseL",cheeks="blush") #look left #+
+        call her_main("","base","baseL",cheeks="blush") #+
     elif rndm_one_of_five == 2:
-        call her_main("","soft","baseL",cheeks="blush") #shy + look left #+
+        call her_main("","soft","baseL",cheeks="blush") #+
     elif rndm_one_of_five == 3:
-        call her_main("","base","ahegao_raised",cheeks="blush") #eyes rolled up #+
+        call her_main("","base","ahegao_raised",cheeks="blush") #+
     elif rndm_one_of_five == 4:
-        call her_main("","grin","wink",cheeks="blush") #wink + smile #+
+        call her_main("","grin","wink",cheeks="blush") #+
     elif rndm_one_of_five == 5:
-        call her_main("","base","ahegao_raised",cheeks="blush") #naughty #+
+        call her_main("","base","ahegao_raised",cheeks="blush") #+
     return
 
 

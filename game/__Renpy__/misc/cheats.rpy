@@ -68,7 +68,7 @@ label cheats:
             menu:
                 "-Reset ALL Luna content-":
                     $ hat_known = False
-                    call luna_init
+                    call luna_progress_init 
                     ">Luna content reset!"
                     jump cheats
                 "-never mind-":

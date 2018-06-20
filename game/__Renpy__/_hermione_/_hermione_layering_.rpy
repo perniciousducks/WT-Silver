@@ -70,7 +70,10 @@ screen hermione_main:
 
     #Costume
     if hermione_costume:
-        use hermione_costume
+        if hermione_wear_top:
+            use hermione_costume
+        else:
+            use hermione_uniform
 
     ### ACCESORIES LAYERS ###
 
@@ -107,7 +110,7 @@ screen hermione_main:
 
 
     ### EMOTES ###
-    add hermione_emote xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
+    add hermione_emote xpos hermione_xpos ypos hermione_ypos 
 
 
     zorder hermione_zorder
@@ -220,12 +223,12 @@ screen hermione_face:
 
     add hermione_hair_b xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     if face_on_cg and ccg_folder == "herm_sex":
-        add "images/28_cg/herm_sex/genie_hand.png" #Genies hand on head.
+        add "images/28_cg/herm_sex/genie_hand.png" zoom (1.0/scaleratio) #Genies hand on head.
 
     ### EMOTES ###
-    add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos
+    add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     
-    zorder 3
+    zorder 5
 
 
 ### HERMIONE HEAD ###
@@ -274,59 +277,14 @@ screen hermione_head:
 
     #Uniform
     if not hermione_costume:
-
-        #Piercings
-        if hermione_wear_piercings:
-            add hermione_ear_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-            add hermione_nipple_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-            add hermione_belly_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-            add hermione_intimate_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-
-        #Bra
-        if hermione_wear_bra and not (h_top in h_top_remove_bra_list and hermione_wear_top):
-            add hermione_bra xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
-
-        #One-Piece
-        if hermione_wear_onepiece: 
-            if not h_onepiece in h_onepieces_nighties_list:
-                add hermione_onepiece xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
-
-            #Nighties
-            else:
-                if hermione_wear_top or hermione_wear_bottom:
-                    pass
-                else:
-                    add hermione_onepiece xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
-
-        #Gloves
-        if hermione_wear_gloves:
-            add hermione_gloves xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
-
-        #Top
-        if hermione_wear_top:
-            add hermione_top xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
-
-        #Body Accessories
-        if hermione_wear_body_accs:
-            use hermione_head_body_accs
-
-        #Action/Pose Fixes
-        if hermione_action != "none":
-            add hermione_action_a xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-            add hermione_action_b xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-
-        #Robe
-        if hermione_wear_robe:
-            add hermione_robe xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-
-        #Neckwear
-        if hermione_wear_neckwear:
-            add hermione_neckwear xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
-
+        use hermione_head_uniform
+        
     #Costume
     else:
-        use hermione_head_costume
-
+        if hermione_wear_top:
+            use hermione_head_costume
+        else:
+            use hermione_head_uniform
 
     ### ACCESORIES LAYERS ###
 
@@ -367,6 +325,60 @@ screen hermione_head:
 
     zorder hermione_head_zorder #Should be 8.
 
+    
+screen hermione_head_uniform:
+    tag hermione_head
+
+    #Piercings
+    if hermione_wear_piercings:
+        add hermione_ear_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+        add hermione_nipple_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+        add hermione_belly_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+        add hermione_intimate_piercing xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+
+    #Bra
+    if hermione_wear_bra and not (h_top in h_top_remove_bra_list and hermione_wear_top):
+        add hermione_bra xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+
+    #One-Piece
+    if hermione_wear_onepiece: 
+        if not h_onepiece in h_onepieces_nighties_list:
+            add hermione_onepiece xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+
+        #Nighties
+        else:
+            if hermione_wear_top or hermione_wear_bottom:
+                pass
+            else:
+                add hermione_onepiece xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+
+    #Gloves
+    if hermione_wear_gloves:
+        add hermione_gloves xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+
+    #Top
+    if hermione_wear_top:
+        add hermione_top xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+
+    #Body Accessories
+    if hermione_wear_body_accs:
+        use hermione_head_body_accs
+
+    #Action/Pose Fixes
+    if hermione_action != "none":
+        add hermione_action_a xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+        add hermione_action_b xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+
+    #Robe
+    if hermione_wear_robe:
+        add hermione_robe xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
+
+    #Neckwear
+    if hermione_wear_neckwear:
+        add hermione_neckwear xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+        
+    zorder hermione_head_zorder #Should be 8.
+        
 
 
 #Uniform Update
@@ -374,7 +386,7 @@ screen hermione_head:
 label update_her_uniform:
 
     if hermione_action != "none":
-        call update_her_action
+        call update_her_action 
 
     ### Uniform ###
     
@@ -453,8 +465,8 @@ label update_her_uniform:
     #Costume Action/Pose
     $ hermione_costume_action_a = "characters/hermione/clothes/custom/"+str(h_action_a)+""
 
-    call update_chibi_uniform
-    call h_update_body
+    call update_chibi_uniform 
+    call h_update_body 
     
     return
 
@@ -744,8 +756,10 @@ label h_update_body:
                 $ h_breasts = "breasts_normal" # normal breasts
 
 
-    if hermione_costume == True:
-        $ h_breasts = "breasts_nipfix"
+    if hermione_costume:
+        if hermione_wear_top:
+            $ h_breasts = hermoine_outfit_GLBL.breast_layer
+        
 
     #Transparency Fix
     if transparency < 1:
@@ -946,6 +960,7 @@ screen hermione_head_costume:
     add hermione_costume_action_a xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     zorder hermione_head_zorder
     
+    
 screen hermione_action:
     tag hermione_main
     if h_action_show_skirt:
@@ -965,7 +980,7 @@ screen hermione_action:
 screen hermione_kneel:
     tag hermione_kneel
     
-    $ hermione_head_xpos = hermione_head_xpos+220
+    $ hermione_head_xpos = hermione_head_xpos
     $ hermione_head_ypos_offset = hermione_head_ypos-150
 
     if not hermione_kneel_leg:
@@ -973,8 +988,11 @@ screen hermione_kneel:
     else:
         add "characters/hermione/body/kneel/kneel_base_2.png" xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio) #Add the base body
 
-    add hermione_body xpos hermione_head_xpos ypos hermione_head_ypos_offset
-    add hermione_tears xpos hermione_head_xpos ypos hermione_head_ypos_offset
+    add hermione_cheeks xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
+    add hermione_eyes xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
+    #add hermione_eyebrows xpos hermione_head_xpos ypos hermione_ypos zoom (1.0/scaleratio)
+    add hermione_tears xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
+    add hermione_mouth xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio)
     
     add "characters/hermione/body/kneel/kneel_hair.png" xpos hermione_head_xpos ypos hermione_head_ypos_offset zoom (1.0/scaleratio) #Add the base body
 

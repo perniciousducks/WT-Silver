@@ -2,50 +2,11 @@
 
 label cupboard:
     menu:
-        "Mirror Test":
-            hide screen main_room_menu
-            hide screen main_room
-            jump enter_room_of_req
-        "Astoria Test":
-            menu:
-                "-Unlock Summons-":
-                    
-                    $ astoria_unlocked = True
-                    $ susan_unlocked = True
-                    $ tonks_unlocked = True
-
-                    jump cupboard
-                    
-                "-Unlock Wardrobes-":
-                    $ astoria_wardrobe_unlocked = True
-                    $ susan_wardrobe_unlocked = True
-                    
-                "-Start Ast Event 1 Hermione-":
-                    jump letter_intro_hermione
-                "-Start Ast Event 1 Snape-":
-                    jump letter_intro_snape
-                "-Start Ast Event 2 Astoria-":
-                    jump astoria_captured_intro
-                "-Start Ast Event 3 Tonks-":
-                    jump tonks_intro_event
-                "-Start Ast Event 4 Snape-":
-                    jump snape_spell_intro
-                "-Start Ast Event 5 Susan-":
-                    jump astoria_susan_intro
-                "-Start Ast Event 6 Snape-":
-                    jump snape_book_intro
-                "-Start Ast Event 7 Tonks-":
-                    jump astoria_tonks_intro
-                "-Start Ast Event 8 Astoria-":
-                    jump astoria_book_intro
-                "-Back-":
-                    jump cupboard
-            
         "-Examine the cupboard-" if not cupboard_examined:
             $ cupboard_examined = True
             show screen chair_left #Empty chair near the desk.
             hide screen genie
-            call gen_chibi("stand","behind_desk","base",flip=True)
+            call gen_chibi("stand","behind_desk","base",flip=True) 
             show screen desk
             with Dissolve(0.5)
 
@@ -159,7 +120,7 @@ label cupboard:
                     $ the_gift = "images/store/30.png" # FISHNETS.
                     show screen gift
                     with d3
-                    call nets_text
+                    call nets_text 
                     hide screen gift
                     with d3
                     jump possessions
@@ -277,19 +238,21 @@ label cupboard:
 
         "-Cheats-" if cheats_active:
             jump cheats
-
+            
+        "-Send Ministry letter again-" if day >= 25 and whoring >= 9 and not ministry_letter_received:
+            $ ministry_letter = True
+            $ letters += 1 #Displays Owl
+            ">You received a new letter."
+            jump cupboard
 
         "-Reset ALL Luna content-":
-            $ hat_known = False
-            call luna_init
+            $ reset_luna_content = True
+            call luna_init 
+            call luna_progress_init 
+            $ reset_luna_content = False
             ">Luna content reset!"
             jump cupboard
 
-        #"-Bugfix: Reset Hermione-":
-        #    $ reset_persistants = True
-        #    "Save and reload for Hermione to reset!"
-        #    jump cupboard
-        
         "-Never mind-":
             jump day_main_menu
 
@@ -307,7 +270,7 @@ label scrolls_menu:
         scrolls_menu = []
         for scroll in scrolls_range:
             sc = sacred_scrolls[scroll]
-            if sscroll_[sc.id] or persistent.ss_[sc.id]:
+            if sscroll_[sc.id]:
                 scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", scroll) )
         scrolls_menu.append(("-Never mind-", "nvm"))
         result = renpy.display_menu(scrolls_menu)
@@ -410,69 +373,69 @@ label rummaging:
 label rum_rewards:
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             if one_of_tw == 20:
-                call rum_block(PlushOwl)
+                call rum_block(PlushOwl) 
             elif one_of_tw == 1 or one_of_tw == 2:
-                call rum_block(Lollipop)
+                call rum_block(Lollipop) 
             elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18:
-                call rum_block("gold1")
+                call rum_block("gold1") 
             elif one_of_tw >= 10 and one_of_tw <= 16:
-                call rum_block("wine")
+                call rum_block("wine") 
             elif one_of_tw == 17:
-                call rum_block(Chocolate)
+                call rum_block(Chocolate) 
             elif one_of_tw == 19:
-                call rum_block(SexyLingerie)
+                call rum_block(SexyLingerie) 
         
         
         ### EVENT LEVEL 02 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 6 and whoring <= 11: # Lv 3-4. 
             if one_of_tw == 20:
-                call rum_block(PornMagazines)
+                call rum_block(PornMagazines) 
             elif one_of_tw == 1 or one_of_tw ==2:
-                call rum_block(Lollipop)
+                call rum_block(Lollipop) 
             elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:
-                call rum_block("gold2")
+                call rum_block("gold2") 
             elif one_of_tw >= 11 and one_of_tw <= 15:
-                call rum_block("wine")
+                call rum_block("wine") 
             elif one_of_tw == 16:
-                call rum_block(SexyLingerie)
+                call rum_block(SexyLingerie) 
             elif one_of_tw == 17:
-                call rum_block(Chocolate)
+                call rum_block(Chocolate) 
             elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(ViktorKrumPoster) 
         
         
         ### EVENT LEVEL 03 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             if one_of_tw == 20:
-                call rum_block(Vibrator)
+                call rum_block(Vibrator) 
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(PackOfCondoms)
+                call rum_block(PackOfCondoms) 
             elif one_of_tw == 5 or one_of_tw == 6:
                 call rum_block("gold1") #Bugfix? Previously was just (1). 
             elif one_of_tw >= 7 and one_of_tw <= 14:
-                call rum_block("gold3")
+                call rum_block("gold3") 
             elif one_of_tw >= 15 and one_of_tw <= 18:
-                call rum_block("wine")
+                call rum_block("wine") 
             elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(ViktorKrumPoster) 
         
         
         ### EVENT LEVEL 04 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 18: # Lv 7+  
             if one_of_tw == 20:
-                call rum_block(SpeedStick2000)
+                call rum_block(SpeedStick2000) 
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(Butterbeer)
+                call rum_block(Butterbeer) 
             elif one_of_tw >= 5 and one_of_tw <= 8:
-                call rum_block(Chocolate)
+                call rum_block(Chocolate) 
             elif one_of_tw >= 9 and one_of_tw <= 16:
-                call rum_block("gold4")
+                call rum_block("gold4") 
             elif one_of_tw == 17:
-                call rum_block(AnalPlugs)
+                call rum_block(AnalPlugs) 
             elif one_of_tw == 18:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(ViktorKrumPoster) 
             elif one_of_tw == 19:
-                call rum_block(ThestralStrapon)
+                call rum_block(ThestralStrapon) 
         
         show screen genie
         hide screen rum_screen

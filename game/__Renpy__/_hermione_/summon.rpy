@@ -2,46 +2,46 @@
 
 label summon_hermione:
 
-    call load_hermione_clothing_saves
+    call load_hermione_clothing_saves 
 
     call play_sound("door") #Sound of a door opening.
 
     ### RANDOM CLOTHING EVENTS ###
-    call hermione_door_event
+    call hermione_door_event 
 
-    call update_her_uniform
+    call update_her_uniform 
 
-    call her_chibi("stand","mid","base")
+    call her_chibi("stand","mid","base") 
 
     if mad >= 1:
 
         if mad >=1 and mad < 3:
-            call her_main("","normal","base",xpos="base",ypos="base")
+            call her_main("","normal","base",xpos="base",ypos="base") 
             ">Looks like Hermione is still a little upset with you..."
         elif mad >=3 and mad < 10:
-            call her_main("","normal","base",xpos="base",ypos="base")
+            call her_main("","normal","base",xpos="base",ypos="base") 
             ">Hermione is upset with you."
         elif mad >=10 and mad < 20:
-            call her_main("","annoyed","frown",xpos="base",ypos="base")
+            call her_main("","annoyed","frown",xpos="base",ypos="base") 
             ">Hermione is very upset with you."
         elif mad >=20 and mad < 40:
-            call her_main("","angry","angry",xpos="base",ypos="base")
+            call her_main("","angry","angry",xpos="base",ypos="base") 
             ">Hermione is mad at you."
         elif mad >=40 and mad < 50:
-            call her_main("","angry","angry",xpos="base",ypos="base")
+            call her_main("","angry","angry",xpos="base",ypos="base") 
             ">Hermione is very mad at you."
         elif mad >=50 and mad < 60:
-            call her_main("","angry","angry",xpos="base",ypos="base")
+            call her_main("","angry","angry",xpos="base",ypos="base") 
             ">Hermione is furious at you."
         elif mad >=60:
-            call her_main("","angry","angry",xpos="base",ypos="base")
+            call her_main("","angry","angry",xpos="base",ypos="base") 
             ">Hermione hates your guts."
 
     else:
         if not hermione_door_event_happened:
-            call her_main("Yes, [genie_name]?","base","base",xpos="base",ypos="base")
+            call her_main("Yes, [genie_name]?","base","base",xpos="base",ypos="base") 
         else:
-            call her_main("...","base","base",xpos="base",ypos="base")
+            call her_main("...","base","base",xpos="base",ypos="base") 
 
     label day_time_requests:
 
@@ -51,14 +51,16 @@ label summon_hermione:
 
     menu:
         "-Ask for a new student-" if hat_known and not luna_known:
-            call luna_init
+            call luna_init 
             $ luna_known = True
             jump hat_intro_2
         "-Talk-":
             if not chitchated_with_her:
+                jump hermione_talk_branches
+                label hermione_talk_branches_return:
                 if mad <= 7:
                     $ chitchated_with_her = True 
-                    call chit_chat
+                    call chit_chat 
                     jump hermione_talk
                 else:
                     her "I have nothing to say to you sir..."    
@@ -112,13 +114,13 @@ label summon_hermione:
         "-Inventory-":
             $ active_girl = "hermione"
 
-            call load_hermione_clothing_saves
+            call load_hermione_clothing_saves 
 
-            call reset_wardrobe_vars
-            call update_wr_color_list
+            call reset_wardrobe_vars 
+            call update_wr_color_list 
 
             $ wardrobe_active = 1 #True
-            call her_main("","","",xpos="wardrobe",ypos="base")
+            call her_main("","","",xpos="wardrobe",ypos="base") 
             call screen wardrobe
                         
         #"-Ending \"Your whore\"-":
@@ -339,21 +341,21 @@ label hermione_talk:
                     
                     
 label genie_change:
-    call her_main("Ok, from now on I'll call you [genie_name].","base","base")
+    call her_main("Ok, from now on I'll call you [genie_name].","base","base") 
     jump hermione_talk
     
 label genie_change_fail:
-    call her_main("I'm not calling you that!","scream","angryCl")
+    call her_main("I'm not calling you that!","scream","angryCl") 
     jump hermione_talk
     
 label hermione_change:
     if whoring >= 20:
-        call her_main("You can call me whatever you want, [genie_name]!","base","glance")
+        call her_main("You can call me whatever you want, [genie_name]!","base","glance") 
     else:
-        call her_main("Sure, [genie_name]. I like that name.","base","base")
+        call her_main("Sure, [genie_name]. I like that name.","base","base") 
     jump hermione_talk
     
 label hermione_change_fail:
-    call her_main("I'm not letting you call me that!","scream","angryCl")
+    call her_main("I'm not letting you call me that!","scream","angryCl") 
     jump hermione_talk
     

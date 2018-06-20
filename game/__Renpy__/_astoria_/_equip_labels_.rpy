@@ -33,8 +33,8 @@ label set_ast_hair(hair=None,color=None):
     if color != None:
         $ ast_hair_color   = color
         
-    $ astoria_hair         = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+(ast_hair_color)+"_base.png"
-    $ astoria_hair_shadow  = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+(ast_hair_color)+"_top.png"
+    $ astoria_hair         = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_base.png"
+    $ astoria_hair_shadow  = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_top.png"
     
     show screen astoria_main
     
@@ -52,7 +52,7 @@ label set_ast_top(top=""):
         $ astoria_wear_top = True
         $ ast_top = top
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -69,7 +69,7 @@ label set_ast_bottom(bottom=""):
         $ astoria_wear_bottom = True
         $ ast_skirt = bottom
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -82,7 +82,7 @@ label set_ast_bra(bra=""):
     $ astoria_wear_bra = True
     $ ast_bra = bra
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -99,7 +99,7 @@ label set_ast_onepiece(onepiece=""):
         $ astoria_wear_onepiece = True
         $ ast_onepiece = onepiece
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -112,7 +112,7 @@ label set_ast_panties(panties=""):
     $ astoria_wear_panties = True
     $ ast_panties = panties
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -129,7 +129,7 @@ label set_ast_garterbelt(garter=""):
         $ astoria_wear_garterbelt = True
         $ ast_garterbelt = garter
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -146,7 +146,7 @@ label set_ast_neckwear(neck=""):
         $ astoria_wear_neckwear = True
         $ ast_neckwear = neck
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -163,7 +163,7 @@ label set_ast_stockings(stockings=""):
         $ astoria_wear_stockings = True
         $ ast_stockings = stockings
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return
@@ -180,7 +180,7 @@ label set_ast_robe(robe=""):
         $ astoria_wear_robe = True
         $ ast_robe = robe
     
-    call update_ast_uniform
+    call update_ast_uniform 
     show screen astoria_main
     
     return

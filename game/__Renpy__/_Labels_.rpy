@@ -92,7 +92,7 @@ label cast_spell(spell=""):
     if spell == "imperio":
         
         stop music fadeout 2.0
-        call play_sound("spell")
+        call play_sound("spell") 
         show screen white 
         pause.1
         hide screen white
@@ -121,6 +121,9 @@ label play_sound(sound=""):
     if sound in ["slap","slapping"]:
         $ renpy.play('sounds/slap_02.mp3')
 
+    if sound in ["kick","bump"]:
+        $ renpy.play('sounds/kick.ogg')
+        
     if sound in ["kiss","kissing"]:
         $ renpy.play('sounds/kiss.mp3')
         

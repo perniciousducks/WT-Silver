@@ -36,6 +36,7 @@ screen ccg:
     add "images/28_cg/"+ccg_folder+"/"+str(ccg1)+".png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg2)+".png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg3)+".png"
+    zorder 4
 
 screen gui_tooltip:
     add my_picture xpos my_tt_xpos ypos my_tt_ypos
@@ -43,7 +44,7 @@ screen gui_tooltip:
     
 screen animation_feather: #Falling feather animation
     add "feather" xpos 360+140 ypos 140
-    zorder 3
+    zorder 2
     
 screen notes: #A bunch of notes poping out with a "win" sound effect.
     add "notes" xpos 320+140 ypos 330
@@ -84,7 +85,7 @@ screen phoenix_food: #Phoenix's food.
     
 screen fireplace_fire: #FIREPLACE FIRE.
     add "fireplace_fire" xpos 436+140 ypos 141
-    zorder 3
+    zorder 2
     
     
 $ width_offset = 140
@@ -176,7 +177,7 @@ screen letter:
         text letter_text
 
 screen blkfade:
-    zorder 5
+    zorder 6
     add "interface/blackfade.png"
     
 screen blktone:
@@ -461,6 +462,21 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("cg")
         renpy.with_statement(Dissolve(0.5))
+
+    def ccg(layer1=None, layer2=None, layer3=None):
+        global ccg1
+        global ccg2
+        global ccg3
+
+        if layer1 is not None:
+            ccg1 = layer1
+        if layer2 is not None:
+            ccg2 = layer2
+        if layer3 is not None:
+            ccg3 = layer3
+        renpy.show_screen("ccg")
+        renpy.with_statement(Dissolve(0.5))
+
 
     def sc34CG(scene=None, image1=None, image2=None, image3=None):
         global sc_cg_base

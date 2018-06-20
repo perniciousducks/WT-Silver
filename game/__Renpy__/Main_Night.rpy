@@ -9,7 +9,7 @@ label night_start:
 
 ###RESET STUFF
 
-call reset_hermione_main
+call reset_hermione_main 
 
 $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking = False #When True - blinking animation is not displayed.
@@ -17,7 +17,7 @@ $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ uni_sperm = False
 $ textColor = "#1e1008"
 
-call luna_night_flags
+call luna_night_flags 
 $ astoria_busy = False
 $ susan_busy = False
 $ tonks_busy = False
@@ -100,12 +100,15 @@ with fade
 
 
 
-call points_changes #Makes changes in the Slytherin house points.
-call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of the houses) house points. (07_points_gry.rpy)
-# call snape_bonus # Not in use anymore.
+call points_changes #Makes house points changes.
 
 ### NIGHT REQUESTS ###
+if astoria_tonks_event_in_progress:
+    jump astoria_tonks_event
+    
+#EVENTS
 jump Night_Request_Block
+
 
 
 label night_resume:
@@ -129,10 +132,10 @@ if day >= 15 and day <=20 and not event15_happened:
     call event_15 #Returns
     
 if whoring == 11 and not touched_by_boy:
-    call nar("!!! Attention !!!","start")
+    call nar("!!! Attention !!!","start") 
     ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
     ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
-    call nar(">You should also save your game here.","end")
+    call nar(">You should also save your game here.","end") 
     menu:
         "-Understood-":
             pass
@@ -152,13 +155,13 @@ if luna_corruption == 11 and luna_reverted:
 if milking == -1:
     call potion_scene_11_1_2 #Returns
 if milking == -3:
-    call potion_scene_11_3_2
+    call potion_scene_11_3_2 
 
 ### Guide ###
 #Random Number for Tip/Fact of the Day
 $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
-call update_quests
-call update_hints
+call update_quests 
+call update_hints 
 
 
 
@@ -175,7 +178,7 @@ if phoenix_is_feed:
 
 hide screen bld1
 hide screen blktone
-call hide_characters
+call hide_characters 
 with d1
 
 show screen animation_feather

@@ -7,7 +7,7 @@ label your_whore:
     
     hide screen bld1
     hide screen blktone
-    call her_chibi("hide")
+    call her_chibi("hide") 
     show screen blkback
     show screen end_u_1
     $ end_u_1_pic =  "images/yule_ball/02.png"
@@ -18,7 +18,7 @@ label your_whore:
     #Hermione Hair
     $ h_hair_style = "B"
     $ h_hair_color = 1
-    call update_her_hair
+    call update_her_hair 
 
     #Hermione Clothes
     $ transparency             = 1 #Disabled
@@ -58,8 +58,8 @@ label your_whore:
     pause.1
     hide screen bld1
     hide screen blktone
-    call hide_blkfade
-    call ctc
+    call hide_blkfade 
+    call ctc 
 
     show screen bld1
     with d7
@@ -134,20 +134,20 @@ label your_whore:
         fem "(*Pouting*)"
         
     hide screen bld1
-    call hide_blktone
-    call ctc
+    call hide_blktone 
+    call ctc 
     
     
     $ end_u_2_pic =  "images/yule_ball/01.png"
     show screen end_u_2
     with d7
-    call ctc
+    call ctc 
 
-    call bld
+    call bld 
     m "(There she is!)"
     
     mal "Hermione, hey..."
-    call her_head("Oh, hello.","base","base",xpos="base",ypos="high")     
+    call her_head("Oh, hello.","base","base",xpos="base",ypos="high") 
     mal "You look... so beautiful tonight, Hermione."
     call her_head("Thank you, you are too sweet.","base","closed") 
     mal2 "Can I have the next dance?"
@@ -162,12 +162,12 @@ label your_whore:
     stop music fadeout 3.0
     m "Here is my chance!"
     m "(Pst! Girl!)"
-    call her_head("???","upset","base")     
+    call her_head("???","upset","base") 
     m "(Girl, it's me! Over here!)"
-    call her_head("[genie_name]?","open","base")     
+    call her_head("[genie_name]?","open","base") 
     #her "Professor Dumbledore?"
     m "(Shush! Keep your voice down and follow me.)"
-    call her_head("Oh?","open","base")     
+    call her_head("Oh?","open","base") 
     pause.1
     $ end_u_1_pic =  "images/yule_ball/02.png"
     hide screen blktone8
@@ -175,37 +175,37 @@ label your_whore:
     hide screen bld1
     show screen end_u_1 #<---- SCREEN
     with fade
-    call ctc
+    call ctc 
 
-    call bld
+    call bld 
     # ALCOVE 
-    call her_head("Sir, what is going on? Why are you... lurking in the shadows?","upset","base")
+    call her_head("Sir, what is going on? Why are you... lurking in the shadows?","upset","base") 
     m "Just be quiet and listen for a second! Can you do that for me?"
-    call play_music("playful_tension")# SEX THEME.
-    call her_head("Yes, sir...","upset","base")
+    call play_music("playful_tension") # SEX THEME.
+    call her_head("Yes, sir...","upset","base") 
     m "Well, here is the thing then..."
     m "There is something you need to kn--"
-    call her_head("Of course sir!","grin","squint",cheeks="blush")
+    call her_head("Of course sir!","grin","squint",cheeks="blush") 
     m "What?"
-    call her_head("Let's just make this quick, alright?","soft","glanceL",cheeks="blush")
+    call her_head("Let's just make this quick, alright?","soft","glanceL",cheeks="blush") 
     g4 "Let's make what quick?"
-    call her_head("You want me to thank you for the dress now, don't you, sir?","base","glance",cheeks="blush")
+    call her_head("You want me to thank you for the dress now, don't you, sir?","base","glance",cheeks="blush") 
     m "The dress? No, no that's not why I am here."
-    call her_head("It is fine, sir. I do not mind.","soft","glanceL",cheeks="blush")
+    call her_head("It is fine, sir. I do not mind.","soft","glanceL",cheeks="blush") 
     m "Listen to me, girl! I am not who you think--"
-    call her_head("Please, sir, let me suck on your cock a little.","open_tongue","concerned",cheeks="blush")
+    call her_head("Please, sir, let me suck on your cock a little.","open_tongue","concerned",cheeks="blush") 
     g4 "Gh--!!!"
-    call her_head("Just a little will do. Please. I'm begging you...","open_tongue","concerned",cheeks="blush")
+    call her_head("Just a little will do. Please. I'm begging you...","open_tongue","concerned",cheeks="blush") 
     g4 "Damn you, you damn witch!"
     g4 "Stop this! I really need to talk to you!"
-    call her_head("Well of course, sir.","base","glance",cheeks="blush")
-    call her_head("Put your dick in my mouth and talk to me.","open_tongue","concerned",cheeks="blush")
-    call her_head("Talk dirty to me...")
+    call her_head("Well of course, sir.","base","glance",cheeks="blush") 
+    call her_head("Put your dick in my mouth and talk to me.","open_tongue","concerned",cheeks="blush") 
+    call her_head("Talk dirty to me...") 
     g4 "*growl!*"
     m "*Sigh....*"
     m "Fine, let's have it your way..."
     m "But you are abusing your power, girl!"
-    call her_head("*Giggle!*","crooked_smile","worriedCl",cheeks="blush")
+    call her_head("*Giggle!*","crooked_smile","worriedCl",cheeks="blush") 
     m "And after we're done, we'll have that talk!"
     
     # SUCKING
@@ -219,7 +219,7 @@ label your_whore:
     hide screen blkfade
     hide screen bld1
     with d7
-    call ctc
+    call ctc 
     her "*Slurp!* *Gulp!* *Slurp!*"
     her "*Slurp--"
     $ end_u_2_pic =  "images/yule_ball/04.png" #<---- SCREEN
@@ -518,7 +518,7 @@ label your_whore:
         with d7                                                                       #<---- SCREEN
         her "*Slurp--.........................."
         her "!!!"
-        call ctc
+        call ctc 
         
         show screen blkfade 
         with d7
@@ -528,7 +528,7 @@ label your_whore:
         g4 "{size=+5}What the hell are you doing--{/size}"
         hide screen blkfade 
         with d7
-        call ctc
+        call ctc 
         
         her "{size=+5}Cum for me. sir! Cum for me!{/size}"
         with hpunch
@@ -578,7 +578,7 @@ label your_whore:
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
         her "..........................................."
-        call ctc
+        call ctc 
         
         show screen blkfade
         with d7
@@ -587,22 +587,22 @@ label your_whore:
         pause.5
         m "What on earth just happened, girl?!"
         $ her_head_ypos = her_head_tits
-        call her_head("What do you mean, sir?","soft","glanceL",cheeks="blush")  
+        call her_head("What do you mean, sir?","soft","glanceL",cheeks="blush") 
         $ end_u_1_pic =  "images/yule_ball/02.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         hide screen blkfade
         with d7
         m "Do I really need to point this out to you, girl?"
         g4 "{size=+5}Do I really?{/size}"
-        call her_head("Oh... You mean the hair thing...?","soft","glanceL",cheeks="blush")
+        call her_head("Oh... You mean the hair thing...?","soft","glanceL",cheeks="blush") 
         m "Yes...\"the hair thing\"..."
-        call her_head("Well, what did you expect me to do, sir?","crooked_smile","worriedCl",cheeks="blush")
+        call her_head("Well, what did you expect me to do, sir?","crooked_smile","worriedCl",cheeks="blush") 
         m "Literally anything..."
         g4 "...but {size=+7}THAT!{/size}"
-        call her_head("But... I need to look my best for the coronation...","open","base")
+        call her_head("But... I need to look my best for the coronation...","open","base") 
         m "And a hairdo full of cum is supposed to ensure that?"
-        call her_head("Well... yes...","soft","glanceL",cheeks="blush")
-        call her_head("You see, cum is a great hair fixative and--","open","base")
+        call her_head("Well... yes...","soft","glanceL",cheeks="blush") 
+        call her_head("You see, cum is a great hair fixative and--","open","base") 
         
         show screen bld1
         with d5
@@ -613,7 +613,7 @@ label your_whore:
         hide screen bld1
         with d5
         
-        call her_head("The coronation! I must go now!","open","surprised")
+        call her_head("The coronation! I must go now!","open","surprised") 
         $ renpy.play('sounds/run_03.mp3')    #<--------------------Sound of running off.
         pause 3
         
@@ -622,7 +622,7 @@ label your_whore:
         m "..."
         with hpunch
         g4 "{size=+9}WHAT THE HELL...?!!{/size}"
-        call ctc
+        call ctc 
         
         show screen blkfade
         with d7
@@ -674,7 +674,7 @@ label your_whore:
         #with d3                                                                        #<---- SCREEN
         hide screen white
         with vpunch
-        call ctc
+        call ctc 
         
         her "*gobble??!*"
         m "No, don't you stop now!"
@@ -697,7 +697,7 @@ label your_whore:
         show screen end_u_2                                            #<---- SCREEN
         hide screen white
         with vpunch
-        call ctc
+        call ctc 
         
         her "!!!!!!!!!!!"
         her "......................................?"
@@ -723,7 +723,7 @@ label your_whore:
         $ end_u_2_pic =  "images/yule_ball/17.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
         with vpunch
-        call ctc
+        call ctc 
         
         her "..........................."
         her ".................."
@@ -906,25 +906,25 @@ label your_whore:
     if public_whore_ending: #Students talking. Ending "Public whore".
         $ snape_head_xpos = 330 # x = 330,
         $ snape_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-        call sna_head("Miss Granger...?","snape_03")
-        call sna_head("You decided to show up after all?","snape_04")
+        call sna_head("Miss Granger...?","snape_03") 
+        call sna_head("You decided to show up after all?","snape_04") 
         $ s_sprite = "characters/snape/main/.png"
-        call sna_head("What an unpleasant surprise...","snape_03")
+        call sna_head("What an unpleasant surprise...","snape_03") 
         #her "Professor..."
-        call her_head("Professor...","upset","base")
-        call sna_head("Well, go ahead then...","snape_10")
-        call sna_head("Here is the tiara...")
-        call sna_head("And the stage is yours...")
+        call her_head("Professor...","upset","base") 
+        call sna_head("Well, go ahead then...","snape_10") 
+        call sna_head("Here is the tiara...") 
+        call sna_head("And the stage is yours...") 
         $ tiara = True #Tiara is displayed.
         #her "Thank you, professor."
-        call her_head("Thank you, professor.","base","closed")
+        call her_head("Thank you, professor.","base","closed") 
         pause.7
         
         $ end_u_1_pic =  "images/yule_ball/108.png" #<---- SCREEN
         hide screen blkfade
         with d7
         $ renpy.play('sounds/applause01.ogg') # APPLAUSE
-        call ctc
+        call ctc 
         
         her "..............."
         her ".................................."
@@ -1068,7 +1068,7 @@ label your_whore:
         with d3
         
         her "I am so lucky to be a student here..."
-        call ctc
+        call ctc 
         
         stop music
         #$ renpy.play('sounds/scratch.wav')
@@ -1076,7 +1076,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/116.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        call ctc
+        call ctc 
         
         # TIT BARES
         # MUSIC STOPS
@@ -1086,10 +1086,10 @@ label your_whore:
         with hpunch
         g4 "!!!"
         #call play_music("playful_tension")# SEX THEME.
-        call sna_head("!!!","snape_11")
+        call sna_head("!!!","snape_11") 
         hide screen blktone
         hide screen bld1
-        call ctc
+        call ctc 
         
         play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 # BALL THEME.
         her "Thank you, everyone..."
@@ -1101,7 +1101,7 @@ label your_whore:
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "Thank you for making me your ball queen this year..."
-        call ctc
+        call ctc 
         
         # SEX MUSIC STARTS TO PLAY
         
@@ -1117,7 +1117,7 @@ label your_whore:
         fem "(But...!!)"
         hide screen blktone
         with d7
-        call ctc
+        call ctc 
         
         her "And most of all I am thankful to my parents..."
         her "The people who raised me..."
@@ -1128,7 +1128,7 @@ label your_whore:
         her "I wish you could see how much Hogwarts changed me..."
         her "I wish you could see your little girl right now..."
         her "{size=-5}Ah...{/size}{image=textheart}"
-        call ctc
+        call ctc 
         
         show screen blktone
         with d7
@@ -1144,7 +1144,7 @@ label your_whore:
         with d7                                                                        #<---- SCREEN
         her "..............................."
         her ".................."
-        call ctc
+        call ctc 
         
         show screen blktone
         with d7
@@ -1168,7 +1168,7 @@ label your_whore:
         with d7                                                                        #<---- SCREEN
         her "{size=-3}Ah...{/size}{image=textheart}"
         her "...............................a-ha...{image=textheart}{image=textheart}{image=textheart}"
-        call ctc
+        call ctc 
         
         show screen bld1
         with d7
@@ -1195,7 +1195,7 @@ label your_whore:
         with d7                                                                        #<---- SCREEN
         her "......................................"
         her ".........................................................."
-        call ctc
+        call ctc 
         
         show screen bld1
         with d7
@@ -1226,7 +1226,7 @@ label your_whore:
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "Ah...{image=textheart}{image=textheart}{image=textheart}"
-        call ctc
+        call ctc 
         
         show screen bld1
         with d7
@@ -1268,7 +1268,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/120.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        call ctc
+        call ctc 
         
         show screen blkfade
         with d7
@@ -1287,19 +1287,19 @@ label your_whore:
         with d7
         show screen bld1
         with d5
-        call ctc
+        call ctc 
         
         $ her_head_ypos = her_head_tits
-        call her_head("[genie_name]...","soft","glanceL",cheeks="blush")
+        call her_head("[genie_name]...","soft","glanceL",cheeks="blush") 
         #her "Professor Dumbledore..."
-        call her_head("There was something you wanted to discuss with me?")
+        call her_head("There was something you wanted to discuss with me?") 
         g4 "Not right now, whore!"
         show screen blkfade
         with d5
-        call her_head("Sir?!","base","glance",cheeks="blush")
+        call her_head("Sir?!","base","glance",cheeks="blush") 
         g4 "I want to fuck you so badly! Come over here!"
-        call play_music("playful_tension")# SEX THEME.
-        call her_head("Of course, sir...","silly","ahegao_squint",cheeks="blush")
+        call play_music("playful_tension") # SEX THEME.
+        call her_head("Of course, sir...","silly","ahegao_squint",cheeks="blush") 
         # INSERTION
         
         $ renpy.play('sounds/gltch.mp3')
@@ -1316,7 +1316,7 @@ label your_whore:
         hide screen bld1
         with d7
         
-        call ctc
+        call ctc 
         
         
         her "Aaah!!!"
@@ -1476,7 +1476,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/126.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        call ctc
+        call ctc 
         
         her "!!!"
         sly1 "I thought it could be you, \"gryffindor\" filth..."
@@ -1539,7 +1539,7 @@ label your_whore:
         pause.2
         hide screen white
         with hpunch
-        call ctc
+        call ctc 
         
         $ end_u_1_pic =  "images/yule_ball/133.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
@@ -1581,7 +1581,7 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
         her "Aahah!!!"
         sly1 "Yes... You are ours now, slut!"
-        call ctc
+        call ctc 
         
         # DICKS OUT
         $ end_u_1_pic =  "images/yule_ball/136.png" #<---- SCREEN
@@ -1613,7 +1613,7 @@ label your_whore:
         pause.2
         hide screen white
         with hpunch
-        call ctc
+        call ctc 
         
         $ end_u_2_pic =  "images/yule_ball/140.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
@@ -1629,7 +1629,7 @@ label your_whore:
         pause.2
         hide screen white
         with hpunch
-        call ctc
+        call ctc 
         
         # SPIT!
         $ end_u_1_pic =  "images/yule_ball/142.png" #<---- SCREEN
@@ -1654,7 +1654,7 @@ label your_whore:
         pause.2
         hide screen white
         with hpunch
-        call ctc
+        call ctc 
 
         
         # SPIT!
@@ -1684,7 +1684,7 @@ label your_whore:
         with hpunch                                                                        #<---- SCREEN
         
         # DICK IN MOUTH
-        call ctc
+        call ctc 
         
         her "!!!........................................................."
         sly2 "Cool! I'm next!"
@@ -1751,7 +1751,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/148.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with hpunch                                                                       #<---- SCREEN
-        call ctc
+        call ctc 
         
         $ end_u_2_pic =  "images/yule_ball/149.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
@@ -1832,7 +1832,7 @@ label your_whore:
         pause.2
         hide screen white
         with hpunch
-        call ctc
+        call ctc 
 
         
         # SPIT!
@@ -1974,7 +1974,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/162.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with hpunch
-        call ctc
+        call ctc 
 
         
         her "{size=+8}AAAAAAAAAAAAH!{/size}"
@@ -1991,7 +1991,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/163.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with hpunch
-        call ctc
+        call ctc 
         
         her "{size=+5}AAAAAAAAAAAAH!{/size}"
         sly2 "Argh! Here! Me too!"
@@ -2007,12 +2007,12 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/164.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with hpunch
-        call ctc
+        call ctc 
         
         $ end_u_2_pic =  "images/yule_ball/165.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        call ctc
+        call ctc 
         
         her "{size=+4}I'm cumming!{/size}"
         m "Well, don't mind if I do!"
@@ -2033,7 +2033,7 @@ label your_whore:
         $ end_u_1_pic =  "images/yule_ball/167.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with hpunch
-        call ctc
+        call ctc 
         
         her "{size=+8}AAAAAAAAAAAAH!{/size}"
         $ end_u_2_pic =  "images/yule_ball/168.png" #<---- SCREEN
@@ -2053,7 +2053,7 @@ label your_whore:
         #with d3                                                                        #<---- SCREEN
         hide screen white
         with vpunch
-        call ctc
+        call ctc 
         
         $ end_u_2_pic =  "images/yule_ball/170.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
@@ -2065,7 +2065,7 @@ label your_whore:
         her "{size=+8}I'll go insane!{/size}"
         
         # SPIT!
-        call ctc
+        call ctc 
         
         show screen white
         with d9
@@ -2086,7 +2086,7 @@ label your_whore:
         sly1 "Yeah, let's go!"
         sly2 "Bye, mudblood whore!"
         sly1 "Yeah, thank you for being such a slut!"
-        call her_head("..........................","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_head("..........................","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         $ renpy.play('sounds/footsteps.mp3') #Walking away sound
         # Walking away sound...."
         
@@ -2105,14 +2105,14 @@ label your_whore:
         g4 "I'm not ancient, you young punks!"
         m "Although I suppose in a way I am..."
         
-        call her_head("..........................","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_head("..........................","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         m "Whore! Why so quiet?"
-        call her_head("I...","silly","ahegao",cheeks="blush",tears="mascara_soft")
-        call her_head("I am... not sure...")
-        call her_head("What...? What is.......","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_head("I...","silly","ahegao",cheeks="blush",tears="mascara_soft") 
+        call her_head("I am... not sure...") 
+        call her_head("What...? What is.......","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         m "Come on, girl. Pull yourself together!"
-        call her_head("I... I... What?","open","concerned",cheeks="blush",tears="mascara_soft")
-        call her_head("I don't understand... I...")
+        call her_head("I... I... What?","open","concerned",cheeks="blush",tears="mascara_soft") 
+        call her_head("I don't understand... I...") 
         m "Hm..."
 #        m "Doesn't look like you are in any condition for serious talks..."
 #        show screen h_head2                                                             # HERMIONE
@@ -2128,19 +2128,19 @@ label your_whore:
 #        m "Yes! Concentrate for a second, would you?"
 #        m "I wrote you a letter. It should explain a couple of things."
         m "I will be leaving now."
-        call her_head("Leaving...?","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_head("Leaving...?","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         m "Yes. Maybe you should too..."
         m "Go clean yourself up and rest or something."
-        call her_head("But I can't leave... No... I must...","open","concerned",cheeks="blush",tears="mascara_soft")
-        call her_head("The formal dance... I must...")
+        call her_head("But I can't leave... No... I must...","open","concerned",cheeks="blush",tears="mascara_soft") 
+        call her_head("The formal dance... I must...") 
         m "A dance? You can't dance in this condition."
-        call her_head("No! I am the ball queen! I must....","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_head("No! I am the ball queen! I must....","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         m "Well, suit yourself."
         m "I'm leaving..."
-        call her_head("Good bye... sir...","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_head("Good bye... sir...","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         m "............."
         m "Farewell, girl."
-        call ctc
+        call ctc 
         
         show screen blkfade 
         $ end_u_2_pic =  "images/yule_ball/90.png" #<---- SCREEN
@@ -2151,12 +2151,12 @@ label your_whore:
         with d5
         
         play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 # BALL THEME 02.
-        call ctc
+        call ctc 
         
         m "Hm..."
         m "Maybe I should stay and watch Hermione's post-multiple-orgasm dancing?"
         m "No... This ball is almost over. This is my only chance to sneak out unnoticed."
-        call ctc
+        call ctc 
         
         show screen blkfade 
         with d7
@@ -2170,11 +2170,11 @@ label your_whore:
         sna "Miss Granger...?"
         $ s_sprite = "characters/snape/main/snape_04.png"
         sna "You decided to show up after all? What an unpleasant surprise..."
-        call her_head("...............................","full","ahegao",cheeks="blush",tears="mascara")
+        call her_head("...............................","full","ahegao",cheeks="blush",tears="mascara") 
         $ s_sprite = "characters/snape/main/snape_13.png"
         show screen s_head2
         sna "What happened to your face, girl?"
-        call her_head(".......................................","full","down",cheeks="blush",tears="mascara")
+        call her_head(".......................................","full","down",cheeks="blush",tears="mascara") 
         $ s_sprite = "characters/snape/main/snape_13.png"
         show screen s_head2
         sna "Hm... Well, go ahead then..."
@@ -2190,7 +2190,7 @@ label your_whore:
         with d7
         
         $ renpy.play('sounds/applause01.ogg')
-        call ctc
+        call ctc 
         
         her "..............."
         her ".................................."
@@ -2234,7 +2234,7 @@ label your_whore:
         with d3                                                                        #<---- SCREEN
         stop music fadeout 1.0
         her ".................................................."
-        call ctc
+        call ctc 
         
         $ end_u_1_pic =  "images/yule_ball/41.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
@@ -2276,7 +2276,7 @@ label your_whore:
         ">A few rather feeble applauses..."
         hide screen bld1
         with d3
-        call ctc
+        call ctc 
         
         show screen blktone
         with d5
@@ -2346,7 +2346,7 @@ label your_whore:
         ">The crowd explodes with loud cheers and whistles interspersed by occasional booing..."
         hide screen bld1
         with d5
-        call ctc
+        call ctc 
         
         show screen blkfade
         with d7
@@ -2355,12 +2355,12 @@ label your_whore:
         m "Great speech..."
         m "Very arousing... Ehm, I mean inspiring."
         $ tiara = True #Tiara is displayed.
-        call her_head("Thank you, sir.","soft","glanceL",cheeks="blush")   
+        call her_head("Thank you, sir.","soft","glanceL",cheeks="blush") 
         m "Swallowing my load in front of the entire school?"
         g9 "Very nice touch."
-        call her_head("........................................................","crooked_smile","worriedCl",cheeks="blush")                     
+        call her_head("........................................................","crooked_smile","worriedCl",cheeks="blush") 
         
-        call play_music("playful_tension")# SEX THEME.
+        call play_music("playful_tension") # SEX THEME.
         
         $ end_u_2_pic =  "images/yule_ball/02.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
@@ -2370,27 +2370,27 @@ label your_whore:
         show screen bld1 
         with d3
         m "Alright, girl. Let's have that talk now..." 
-        call her_head("....................","upset","base")
+        call her_head("....................","upset","base") 
         m "There is something I need to tell you..."
         m "Not sure where to start though..."
         m "........................................"
         m "Well, first of all I am--"
-        call her_head("Sir, I think I know exactly what you are about to say.","open","base")
+        call her_head("Sir, I think I know exactly what you are about to say.","open","base") 
         m "You do?"
-        call her_head("Of course.","open","base")
-        call her_head("One hasty blowjob is not nearly enough to repay my debt to you, am I right?","base","glance",cheeks="blush")
+        call her_head("Of course.","open","base") 
+        call her_head("One hasty blowjob is not nearly enough to repay my debt to you, am I right?","base","glance",cheeks="blush") 
         m "What? No, that's not what I--"
-        call her_head("It's fine, sir. Really.","base","glance",cheeks="blush")
-        call her_head("Let me just pull my panties down a little...","soft","glanceL",cheeks="blush")
+        call her_head("It's fine, sir. Really.","base","glance",cheeks="blush") 
+        call her_head("Let me just pull my panties down a little...","soft","glanceL",cheeks="blush") 
         g4 "Damn you girl! Will you let me finish!?"
-        call her_head("Of course sir...","base","glance",cheeks="blush")
+        call her_head("Of course sir...","base","glance",cheeks="blush") 
         m "Huh?"
-        call her_head("Just make sure you don't hit my dress, alright?","open_tongue","concerned",cheeks="blush")
+        call her_head("Just make sure you don't hit my dress, alright?","open_tongue","concerned",cheeks="blush") 
         g4 "*Low growl!*"
         g4 "Come here, whore!"
         g4 "Suppose I might as well fuck you one last time!"
-        call her_head("(One last time?)","upset","base")
-        call ctc
+        call her_head("(One last time?)","upset","base") 
+        call ctc 
         
         show screen blkfade 
         with d7
@@ -2402,7 +2402,7 @@ label your_whore:
         with kissiris
         
         $ her_head_ypos = her_head_only
-        call her_head("{size=+5}Ahh!!!{/size}","open","surprised",cheeks="blush",tears="soft")            
+        call her_head("{size=+5}Ahh!!!{/size}","open","surprised",cheeks="blush",tears="soft") 
         g4 "Oh, yes!"
         
         $ end_u_2_pic =  "images/yule_ball/46.png" #<---- SCREEN
@@ -2411,7 +2411,7 @@ label your_whore:
         hide screen blkfade 
         hide screen bld1
         with d7
-        call ctc
+        call ctc 
         
         her "Ah-ah..."
         m "Hm? Your pussy..."
@@ -2503,7 +2503,7 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
         her "Spank me harder, sir! I deserve it!"
         m "That's the spirit!"
-        call ctc
+        call ctc 
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -2511,7 +2511,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_1_pic =  "images/yule_ball/55.png" #<---- SCREEN
-        call ctc
+        call ctc 
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -2519,7 +2519,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_1_pic =  "images/yule_ball/55.png" #<---- SCREEN
-        call ctc
+        call ctc 
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -2527,7 +2527,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_1_pic =  "images/yule_ball/58.png" #<---- SCREEN
-        call ctc
+        call ctc 
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -2535,7 +2535,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_1_pic =  "images/yule_ball/58.png" #<---- SCREEN
-        call ctc
+        call ctc 
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -2543,7 +2543,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_1_pic =  "images/yule_ball/59.png" #<---- SCREEN
-        call ctc
+        call ctc 
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -2551,7 +2551,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_2_pic =  "images/yule_ball/59.png" #<---- SCREEN
-        call ctc
+        call ctc 
         
         her "{size=+7}Aaaaaah............................{/size}"
 
@@ -2599,18 +2599,18 @@ label your_whore:
         $ renpy.play('sounds/boing.mp3') #Sound of # POP!
         with hpunch
         pause.3
-        call her_head("Ah...","open","surprised",cheeks="blush",tears="soft")
-        call her_head("Sir, no. You must listen to me--","open_tongue","concerned",cheeks="blush")     
+        call her_head("Ah...","open","surprised",cheeks="blush",tears="soft") 
+        call her_head("Sir, no. You must listen to me--","open_tongue","concerned",cheeks="blush") 
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         
         # INSERTION
-        call her_head("{size=+7}!!!!!!!!!!!!!!!!!{/size}","scream","surprised",cheeks="blush",tears="soft")
-        call her_head("My...{w} My...{w} My...")
+        call her_head("{size=+7}!!!!!!!!!!!!!!!!!{/size}","scream","surprised",cheeks="blush",tears="soft") 
+        call her_head("My...{w} My...{w} My...") 
         m "Shut it, girl! You are being loud."
         with hpunch
-        call her_head("{size=+7}My anus!!!!!!!!!!!!!{/size}","scream","surprised",cheeks="blush",tears="soft")  
+        call her_head("{size=+7}My anus!!!!!!!!!!!!!{/size}","scream","surprised",cheeks="blush",tears="soft") 
         g4 "Dammit, girl. I said, be quiet."
         
         $ end_u_2_pic =  "images/yule_ball/63.png" #<---- SCREEN
@@ -2741,7 +2741,7 @@ label your_whore:
         $ renpy.play('sounds/boing.mp3') #Sound of # POP!
         with hpunch
         pause.3
-        call her_head("...........","angry","ahegao",cheeks="blush",tears="messy")                       
+        call her_head("...........","angry","ahegao",cheeks="blush",tears="messy") 
         m "There..."
         
      
@@ -2912,36 +2912,36 @@ label your_whore:
         
                 
         $ her_head_ypos = her_head_tits
-        call ctc
+        call ctc 
         
         show screen blkfade
         with d9
         stop music fadeout 1.0
-        call her_head("Ah...","silly","ahegao",cheeks="blush",tears="mascara_soft")
-        call her_head("I can... barely... stand...")
+        call her_head("Ah...","silly","ahegao",cheeks="blush",tears="mascara_soft") 
+        call her_head("I can... barely... stand...") 
         g4 "I know what you mean, girl."
         g4 "This was our most intense fuck session yet!"
-        call her_head("Yes... I never knew I could...","silly","ahegao",cheeks="blush",tears="mascara_soft")
-        call her_head("...orgasm so hard...")
+        call her_head("Yes... I never knew I could...","silly","ahegao",cheeks="blush",tears="mascara_soft") 
+        call her_head("...orgasm so hard...") 
     #    her "But I must, go... The dance..."
     #    m "Go then..."
-        call her_head("Sir... That thing you wanted to discuss with me...","soft","ahegao",cheeks="blush",tears="mascara_soft")     
+        call her_head("Sir... That thing you wanted to discuss with me...","soft","ahegao",cheeks="blush",tears="mascara_soft") 
         m "Yeah... You know what? I actually wrote you a little letter on the matter..."
-        call her_head("A letter?","open","concerned",cheeks="blush",tears="mascara_soft")     
+        call her_head("A letter?","open","concerned",cheeks="blush",tears="mascara_soft") 
         m "Yeah... It should explain a couple of things..."
-        call her_head("Oh... Alright...","silly","ahegao",cheeks="blush",tears="mascara_soft")     
+        call her_head("Oh... Alright...","silly","ahegao",cheeks="blush",tears="mascara_soft") 
         m "Just read it tomorrow morning..."
         m "Or whenever..."
         m "Or don't read it at all, I don't care..."
         g4 "............."
-        call her_head("Sir...?","base","worried",cheeks="blush",tears="mascara")     
+        call her_head("Sir...?","base","worried",cheeks="blush",tears="mascara") 
         m "Stop it with the eyes! You're making me feel uncomfortable..."
         m "I wrote you a letter, so what?"
         call her_head("I think it's sweet.............","base","worried",cheeks="blush",tears="mascara") 
         g4 "I said, stop gawking at me girl. I thought you were late for your dance or something!"
-        call her_head("THE DANCE!","open","wide",cheeks="blush",tears="mascara")
-        call her_head("I'm sorry, I have to go!")
-        call her_head("I will see you later, sir!")
+        call her_head("THE DANCE!","open","wide",cheeks="blush",tears="mascara") 
+        call her_head("I'm sorry, I have to go!") 
+        call her_head("I will see you later, sir!") 
         
         $ renpy.play('sounds/run_03.mp3')    #<--------------------Sound of running off.
         pause 3
@@ -2964,7 +2964,7 @@ label your_whore:
         ">You watch Hermione participate in the formal dance..."
         hide screen blkfade
         with d7
-        call ctc
+        call ctc 
         
         ">She is tired and exhausted no doubt, but she hides it well..."
         show screen bld1
@@ -2985,7 +2985,7 @@ label your_whore:
         m "(I'd better go now...)"
         hide screen bld1
         with d5
-        call ctc
+        call ctc 
     
     
     #FINAL SCENE. GENIE IS LEAVING.
@@ -3009,7 +3009,7 @@ label your_whore:
     with d7
     
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
-    call ctc
+    call ctc 
     
     $ renpy.play('sounds/steps_grass.mp3') # SOUNDS OF STEPS IN THE GRESS.
     m "......."
@@ -3057,7 +3057,7 @@ label your_whore:
     
     hide screen end_u_4                                           #<---- SCREEN
     with d7                                                                       #<---- SCREEN
-    call ctc
+    call ctc 
     
     show screen blktone
     with d7
@@ -3216,7 +3216,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
               
               
     pause 1
-    call ctc
+    call ctc 
     
     show screen blkfade
     with d9
@@ -3225,14 +3225,16 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     pause.5
     centered "{size=+7}{color=#cbcbcb}The morning after...{/color}{/size}"
     
-    #Night interface.
+    #Set Daytime.
+    $ daytime = True
     $ interface_color = "gold"
     
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False
     $ h_hair_style = "A"
     
-    call reset_hermione_main
+    call h_outfit_OBJ(None) #Updates uniform.
+    call reset_hermione_main 
     
     hide screen end_u_1                                           #<---- SCREEN
     hide screen end_u_2                                           #<---- SCREEN
@@ -3246,15 +3248,18 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     hide screen phoenix_food
     hide screen done_reading
     hide screen done_reading_near_fire
+    hide screen chair_left
     hide screen candlefire
     hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
      
-    show screen new_window # CLEAR WEATHER.
     
-    hide screen room_night #Hiding NIGHT BG from last night.
-    show screen room #Showing main room BG. 
+    $ show_weather()
+    show screen weather
+    
+    show screen main_room
+    show screen chair_right
+    show screen fireplace
 
-    hide screen chair_right
     hide screen genie
     hide screen owl
     hide screen owl_02
@@ -3273,16 +3278,16 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     if public_whore_ending: # PUBLIC WHORE ENDING
     
         call play_sound("door") #Sound of a door opening.
-        call sna_chibi("stand","door","base")
+        call sna_chibi("stand","door","base") 
         pause.8
         
-        call sna_walk("door","mid",2)
+        call sna_walk("door","mid",2) 
         pause.8
        
-        call bld
+        call bld 
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
         dum_[1]"Good morning, Severus."                                                                                     # SNAPE
-        call sna_main(".......................................","snape_09",xpos="base",ypos="base")
+        call sna_main(".......................................","snape_09",xpos="base",ypos="base") 
         hide screen s_head2              
         dum_[1]"I have the most extraordinary tale to share with you, old friend."                                                                                               # SNAPE
         sna "......................................" 
@@ -3290,17 +3295,17 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         sna "........................................"
         dum_[2] "Ehm... Severus?"                                                                                              # SNAPE
         sna "........................................."                                                                                               # SNAPE
-        call sna_main("Who rules?","snape_06")    
+        call sna_main("Who rules?","snape_06") 
         dum_[2] "I beg your pardon?"                                                                                                # SNAPE
-        call sna_main("Who rules?",snape_26)  
+        call sna_main("Who rules?",snape_26) 
         dum_[2] "...who rules what?"                                                                                               # SNAPE
         sna "A...?"    
         dum_[2] "A?"                                                                                             # SNAPE
-        call sna_main("Aka-a....?","snape_27")   
+        call sna_main("Aka-a....?","snape_27") 
         dum_[2] "You don't make any sense, Severus."                                                                                             # SNAPE
-        call sna_main("Ah, bloody hell...................","snape_29")   
+        call sna_main("Ah, bloody hell...................","snape_29") 
         pause.5
-        call ctc
+        call ctc 
         
         stop music fadeout 1.0
         
@@ -3314,30 +3319,30 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     else: # PERSONAL WHORE ENDING 
     
         call play_sound("door") #Sound of a door opening.
-        call her_chibi("stand","door","base")
+        call her_chibi("stand","door","base") 
         pause.8
         
-        call her_walk("door","mid",3)
+        call her_walk("door","mid",3) 
         pause.8
         
-        call bld
+        call bld 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         
-        call her_main("Sir, if this is about yesterday...","upset","closed",xpos="right",ypos="base")
+        call her_main("Sir, if this is about yesterday...","upset","closed",xpos="right",ypos="base") 
         #her "You wanted to see me, sir?"
         dum_[1]"Good morning, Miss Granger."
-        call her_main("It's not like I actually enjoyed it or anything, you know...","annoyed","annoyed")  
+        call her_main("It's not like I actually enjoyed it or anything, you know...","annoyed","annoyed") 
         dum_[1]"Miss Granger, I found this letter on my desk..."
         dum_[1]"It's addressed to you..."
-        call her_main("A letter, sir?","soft","base")
-        call her_main("Oh, of course! The one you wrote for me, sir.","grin","worriedCl",emote="05")  
+        call her_main("A letter, sir?","soft","base") 
+        call her_main("Oh, of course! The one you wrote for me, sir.","grin","worriedCl",emote="05") 
         dum_[1]"This letter is not from me, miss Granger."
-        call her_main("It is not?","annoyed","suspicious")
-        call her_main("Oh, I see...","grin","worriedCl",emote="05")
-        call her_main("There is no need to be so shy about this, sir. It's alright.")
+        call her_main("It is not?","annoyed","suspicious") 
+        call her_main("Oh, I see...","grin","worriedCl",emote="05") 
+        call her_main("There is no need to be so shy about this, sir. It's alright.") 
         dum_[1]"*ahem*... here it is."
-        call her_main("Thank you, sir.","base","base")
-        call her_main("Let's see....","annoyed","down")
+        call her_main("Thank you, sir.","base","base") 
+        call her_main("Let's see....","annoyed","down") 
         hide screen hermione_main
         with d3
         stop music fadeout 7.0
@@ -3347,8 +3352,8 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         
         label last_letter:
         show screen letter
-        call bld
-        call ctc
+        call bld 
+        call ctc 
         
         menu:
             "-Done reading-":
@@ -3358,51 +3363,51 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
                 
         hide screen letter
 
-        call her_main(".............................................................................................................................................................","disgust","shocked",cheeks="blush")  
+        call her_main(".............................................................................................................................................................","disgust","shocked",cheeks="blush") 
         dum_[1]"I assume the sender of this letter is that Genie fellow?"
         dum_[1]"The one who has been impersonating me for the past several months?"
-        call her_main(".............................................................................................................................................................","disgust","shocked",cheeks="blush")  
+        call her_main(".............................................................................................................................................................","disgust","shocked",cheeks="blush") 
         dum_[1]"Well, now that I am back..."
         dum_[1]"I will be putting an end to all that \"favour-selling-business\" of course."
-        call her_main("","scream","angry",emote="01")
+        call her_main("","scream","angry",emote="01") 
         pause.1
         with hpunch
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         her "{size=+7}What?!!{/size}"
-        call her_main("How am I supposed to win any points then?","disgust","glance")
+        call her_main("How am I supposed to win any points then?","disgust","glance") 
         dum_[1]"The same way you always did, miss Granger."
-        call her_main("Huh...?","open","annoyed",cheeks="blush")
+        call her_main("Huh...?","open","annoyed",cheeks="blush") 
         dum_[1]"With hard work."
-        call her_main("That's just stupid!","angry","angry",cheeks="blush")
+        call her_main("That's just stupid!","angry","angry",cheeks="blush") 
         dum_[2] "Miss Granger, would you mind to guard your tongue when--"
         ### TITS ###
         hide screen hermione_main
         $ hermione_wear_bra = False
-        call h_action("lift_top")
-        call her_main("","annoyed","annoyed",xpos="mid",trans="fade")
+        call h_action("lift_top") 
+        call her_main("","annoyed","annoyed",xpos="mid",trans="fade") 
         stop music
-        call ctc
+        call ctc 
         
         dum_[3] "{size=+4}!!!{/size}"
-        call her_main("Or would you rather see my pussy, sir?","scream","angry",emote="01")
-        call her_main("","annoyed","angry")
+        call her_main("Or would you rather see my pussy, sir?","scream","angry",emote="01") 
+        call her_main("","annoyed","angry") 
         
         $ hermione_wear_panties = False
-        call set_hermione_action("lift_skirt")
-        call ctc
+        call set_hermione_action("lift_skirt") 
+        call ctc 
         
         with hpunch
         dum_[5] "{size=+7}GHT!!!{/size}"
         her "I am willing to do anything to get those points, sir!"
-        call h_action("")
+        call h_action("") 
         with hpunch
-        call her_main("And I mean {size=+9}ANYTHING!!!{/size}","scream","angry",emote="01")
+        call her_main("And I mean {size=+9}ANYTHING!!!{/size}","scream","angry",emote="01") 
         hide screen hermione_main
         hide screen bld1
         with d3
         pause.2
         
-        call her_walk_desk_blkfade
+        call her_walk_desk_blkfade 
         
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking. 
         pause.7
@@ -3453,7 +3458,6 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     
            
     ### SACRED SCROLLS ###
-    $ persistent.ss_ = []
     $ persistent.ss_ = sscroll_
         
         

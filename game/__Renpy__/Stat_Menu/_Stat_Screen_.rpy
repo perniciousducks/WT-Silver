@@ -3,22 +3,23 @@ label open_stat_menu(charName="hermione"):
     $stat_char = ""
     if charName == "hermione":
         $ hermione_xpos=540
-        call updateHermioneWords
-        call update_her_uniform
+        call updateHermioneWords 
+        call update_her_uniform 
         $stat_char = "hermione_main"
         $stat_screen = "hermione_stat_menu"
-        show screen hermione_stat_menu
-        
+    
     elif charName == "luna":
         $ luna_xpos=540
-        show screen luna
         $stat_char = "luna"
         $stat_screen = "luna_stat_menu"
-        show screen luna_stat_menu
     else:
         $stat_screen = "not_implemented"
-        show screen not_implemented
-    
+
+    if stat_char != "":
+        $ renpy.show_screen(stat_char)
+    if stat_screen != "":
+        $ renpy.show_screen(stat_screen)
+
     show screen select_character
     $ _return = ui.interact()
     
@@ -28,8 +29,10 @@ label open_stat_menu(charName="hermione"):
         hide screen select_character
         jump day_main_menu
     elif _return == "color":
-        call open_stat_menu(charName)
+        call open_stat_menu(charName) 
     else:
+        $renpy.hide_screen(stat_screen)
+        $renpy.hide_screen(stat_char)
         call open_stat_menu(_return)
      
 screen select_character:
@@ -67,7 +70,7 @@ screen select_character:
             ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
             idle Transform("interface/stat_select/CharacterIcon/LunaIcon.png", zoom=.40) 
             hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
-            action Return("lune")
+            action Return("luna")
         $ indexSize += 1 
         
     #Wardrobe background color

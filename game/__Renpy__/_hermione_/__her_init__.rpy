@@ -161,6 +161,65 @@ label __init_variables:
 
 label her_init:
 
+    if not hasattr(renpy.store,'hermione_SC'): #important!
+        $ hermione_SC = silver_character(
+            root = "characters/hermione/",
+            
+            xpos = 370,
+            ypos = 0,
+            
+            name = "Hermione Granger",
+            pet_name = "Miss Granger",
+            genie_name = "Professor",
+            
+            eye_color = "brown",
+        
+            screen = "test_herm_obj",
+            screen_head = "test_herm_head_obj",
+            
+            chibi = hermione_character_chibi(
+                stand_img = "characters/hermione/chibis/walk/h_walk_a_01.png",
+                blink_img = "ch_hem blink_a",
+                blink_img_f = "ch_hem blink_a_flip",
+                walk_img = "ch_hem walk_a",
+                walk_img_f = "ch_hem walk_a_flip",
+                run_img = "ch_hem run_a",
+                run_img_f = "ch_hem run_a_flip",
+                fly_img = "ch_hem fly_a",
+                fly_img_f = "ch_hem fly_a_flip",
+                xpos = 540,
+                ypos = 250
+            ),
+            
+            char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250),
+            h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
+            
+            body = sliver_character_body(
+                head = sliver_character_head(
+                    expression = None,
+                    base = "hermione_base.png",
+                    hair = "A_1.png",
+                    cheeks = "",
+                    glasses = ""
+                ),
+                left_arm = "left_1.png",
+                right_arm = "right_1.png",
+                torso = "torso.png",
+                torso_pressed = "torso_pressed.png",
+                abdomen = "abdomen.png",
+                legs = "legs_1.png"
+                
+            ),
+            
+            uniform = hermione_character_uniform(
+                top = 1,
+                bot = 1,
+                panties = "base_panties_1.png",
+                bra = "base_bra_white_1.png",
+            ),
+            acc = ""
+        )
+
     if not hasattr(renpy.store,'hermione_base') or reset_persistants:
     
         #Body
@@ -585,6 +644,7 @@ label her_clothing_lists_init: #Lists update at every game start!
 
 label her_progress_init:
 
+    #Update 1.3
     if not hasattr(renpy.store,'whoring') or reset_persistants:
     
         # Hermione levels
@@ -708,9 +768,14 @@ label her_progress_init:
         $ reward_her_pink_lipstick = False
         $ reward_her_black_lipstick = False
         
-        
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
-    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
+    
+    #Update 1.31
+    if not hasattr(renpy.store,'cat_ears_potion_return') or reset_persistants:
 
+        $ cat_ears_potion_return = False
+        
+        
+    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
+        
     return
 

@@ -1,7 +1,7 @@
 
 ## What is Witch Trainer: Silver?
 
-- Silver is a complete rework of Akabur's Game, Witch Trainer.
+- Silver is a complete rework of [Akabur's](https://www.patreon.com/akabur) Game, Witch Trainer.
 - It combines several mods for Witch Trainer into one game, with new features, bugfixes, improvements, Qol-changes, events, and new art being added periodically.
 
 
@@ -9,7 +9,7 @@
 
 You have two options for installing silver:
 - Download the stable build from the Mega link in the Pastebin (Recommended).
-- For an experimantal version of the game you can download the latest build from the Git-Hub, then copy and replace the game folder into the "shell" game.
+- For an experimantal version of the game you can download the latest build from the Git-Hub, then run it with the Ren'Py launcher.
 
 Download links can be found on the [Pastebin](https://pastebin.com/KY3RGQei).
 
@@ -22,15 +22,15 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 
 ## Current Team
 - **Mo**:		        Writing, coding and mod compilation
-- **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, bugfixing, some writing.
+- **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, some writing.
 - **Soggy**:        Our main Artist. You can support him [here](https://www.patreon.com/SoggyIllustrations).
-- **STG Anon**:		  Massive amount of coding, including a complete overhaul of the aspect ratio and layering.
+- **STG Anon**:		  Coding
 - **Asease1**:		  Coding
 - **Johnny**:		    Writing
 - **Booom313**:		  Mobile port for Android. You can support him [here](https://www.patreon.com/booom313/).
-- **Sandmaster**:   Help with Discord, contests, and moderation.
-- **Magik**:        Help with Discord, contests, and moderation.
-- **Pinguino**:     Support, and being a Penguin.
+- **Sandmaster**:   Assitant Management, Networking, and moderation.
+- **Magik**:        Networking, Management, and Administration.
+- **Pinguino**:     Support, QA, being a Penguin.
 
 
 ## Additional Credits (In no particular order):
@@ -51,4 +51,4 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 for more information see [the pastebin](https://pastebin.com/KY3RGQei)
 
 ## Bugs:
-please submit any bugs as an issue for this project [here](https://github.com/stg-trainer-annon/BT-Silver-Base/issues)
+please submit any bugs as an issue for this project [here](https://github.com/slavetrainermod/WT-Silver/issues)

@@ -21,21 +21,21 @@ label hg_pf_TheGamble:
     with d3
     
     m "You know what? I've been doing too much of the work lately."
-    call her_main("[genie_name]?","open","base")#247
+    call her_main("[genie_name]?","open","base") #247
     m "You heard me. Lately, all you've done is bend over the desk, while I slam your cunt and your ass to a sloppy, screaming orgasm."
     if whoring < 21:
         jump too_much
 
-    call her_main("I... then... ahem. What would you like to do then?","open","worriedL")#249
+    call her_main("I... then... ahem. What would you like to do then?","open","worriedL") #249
     m "I am going to sit back and you are going to sit and bounce on my cock."
-    call her_main("What?! [genie_name], I don't-","angry","wide")#250
+    call her_main("What?! [genie_name], I don't-","angry","wide") #250
     m "So Gryffindor doesn't need any points then? Oh, well. I tried. Good day Miss Granger."
-    call her_main("Aright, alright. So... what's the pay?","annoyed","frown")#252
+    call her_main("Aright, alright. So... what's the pay?","annoyed","frown") #252
     m "The standard. I have been doing all the work lately. It's only fair."
     
-    call play_music("playful_tension")# SEX THEME.
+    call play_music("playful_tension") # SEX THEME.
     
-    call her_walk(400,325,1.25)
+    call her_walk(400,325,1.25) 
     
     show screen blkfade
     with fade
@@ -44,15 +44,15 @@ label hg_pf_TheGamble:
     show screen bld1
     hide screen hermione_main
     
-    call her_head("...fine. Just let me... there we...","open","angryCl")#253
+    call her_head("...fine. Just let me... there we...","open","angryCl") #253
 
     #*Penetration transition*
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
     
-    call her_head("OOOOOOOHH! {image=textheart}","body_235")#254
-    call her_head("Yes...","body_236")#255
+    call her_head("OOOOOOOHH! {image=textheart}","body_235") #254
+    call her_head("Yes...","body_236") #255
     
     hide screen hermione_main
     hide screen genie
@@ -66,39 +66,39 @@ label hg_pf_TheGamble:
     
     ">Hermione begins to slowly slide up and down your dick."
     m "You can do better than this! Pick up the pace whore!"
-    call her_head("Ah... ah...{image=textheart}","body_237")#256
+    call her_head("Ah... ah...{image=textheart}","body_237") #256
     "She moves a little faster..."
     $ g_c_u_pic = "bounce_ani"
     show screen g_c_u
     m "Did you hear me, slut? I said go faster you little whore!"
     ">You feel a shiver pass through her with each insult."
     m "Go."
-    call soft_slaps
+    call soft_slaps 
     m "Faster."
-    call soft_slaps
+    call soft_slaps 
     #">You punctuate each word with a slap to her ass."
-    call her_head("AAAH! {image=textheart} {image=textheart} {image=textheart}","open_tongue","ahegao_raised",cheeks="blush")#257
+    call her_head("AAAH! {image=textheart} {image=textheart} {image=textheart}","open_tongue","ahegao_raised",cheeks="blush") #257
     "She starts to move much faster."
     $ g_c_u_pic = "bounce_ani_f"
     show screen g_c_u
-    call her_head("Yes! Harder!","body_232")#258
+    call her_head("Yes! Harder!","body_232") #258
     m "Honestly."
     ">You reach under her shirt with one hand and start to twist and pull on one of her nipples."
     ">You spank even harder with the other."
-    call hard_slaps
-    call her_head("IT HUUURTS! {image=textheart} {image=textheart}","smile","angry",cheeks="blush")#259
+    call hard_slaps 
+    call her_head("IT HUUURTS! {image=textheart} {image=textheart}","smile","angry",cheeks="blush") #259
     m "Even now, I still have to take the initiative, you self-deluding whore!"
-    call her_head("I- AH! {image=textheart} I'm n- Ah-a!","body_235")#260
+    call her_head("I- AH! {image=textheart} I'm n- Ah-a!","body_235") #260
     m "You're still claiming this is all just for the house points? Even while you're bouncing yourself up and down on my cock? "
-    call her_head("I-i-it i-i-i-isss- Ah! {image=textheart}","body_236")#261
+    call her_head("I-i-it i-i-i-isss- Ah! {image=textheart}","body_236") #261
     m "All right, fine. Prove it. If you can go {i}ONE FULL MONTH{/i} without any form of sexual relief;" 
     m "I'll award \"Gryffindor\" {i}ONE THOUSAND{/i} points and double the points of any favours you choose to take thereafter."
-    call her_head("!!!! REALLY?! (Oh god, I'm getting so close...)","soft","wide")#262
+    call her_head("!!!! REALLY?! (Oh god, I'm getting so close...)","soft","wide") #262
     m "Yes. BUT. If you can't, you belong to me. No more house points. You'll be my personal fucktoy from then on. Do we have a deal?"
-    call her_head("Yessss...","body_236")#263
+    call her_head("Yessss...","body_236") #263
     m "Answer me clearly, whore! Do we have a deal?"
-    call her_head("OH GOD! YES! YES WE HAVE A DEAL!","body_234")#264
-    call her_head("I! I'M-","body_234")#265
+    call her_head("OH GOD! YES! YES WE HAVE A DEAL!","body_234") #264
+    call her_head("I! I'M-","body_234") #265
     stop music fadeout 1 
     m "Good."
     
@@ -111,7 +111,7 @@ label hg_pf_TheGamble:
     show screen genie
     
     ">You lift Hermione off of you."
-    call her_head("!!! W-what are you-","shock","wide",cheeks="blush")#266
+    call her_head("!!! W-what are you-","shock","wide",cheeks="blush") #266
     m "We did just make an agreement. Of course if you wish to forfeit already..."
     
     
@@ -121,20 +121,20 @@ label hg_pf_TheGamble:
     
     #show full sprite and chibi in middle
     
-    call her_main("I- N-no! I was just surprised.","angry","worriedCl",cheeks="blush",emote="05")#267
+    call her_main("I- N-no! I was just surprised.","angry","worriedCl",cheeks="blush",emote="05") #267
     m "Oh, and before I forget."
-    call cast_spell
+    call cast_spell 
     ">You cast a spell on Hermione"
     m "There."
-    call her_main("What did you just do?","mad","wide",cheeks="blush")
+    call her_main("What did you just do?","mad","wide",cheeks="blush") 
     m "I cast a spell to prevent you from feeling any relief."
     m "After all, it wouldn't due for you to lose by accident! This is a test of character, not chance. "
-    call her_main("I suppose.","annoyed","angryL",cheeks="blush")#*Looks at you cautiously*
-    call her_main("...Thank you.","open","baseL",cheeks="blush")
+    call her_main("I suppose.","annoyed","angryL",cheeks="blush") #*Looks at you cautiously*
+    call her_main("...Thank you.","open","baseL",cheeks="blush") 
     m "You'll need to stop by every morning so I can reapply it."
-    call her_main("I-very well. Until then.","disgust","down_raised",cheeks="blush")
+    call her_main("I-very well. Until then.","disgust","down_raised",cheeks="blush") 
     
-    call hermione_exit
+    call hermione_exit 
     $ hermione_takes_classes = True
     
     m "Well. My balls are going to be the right colour for a little while..."
@@ -159,19 +159,19 @@ label hg_pf_TheGamble_complete:
         if hg_pf_TheGamble_OBJ.points == 1:
             #*Scene transitions to morning. Hermione enters.*
             
-            call hermione_enter
+            call hermione_enter 
             
-            call her_main("","normal","worriedCl")
-            call her_main("G-good morning, [genie_name].","upset","wink")
+            call her_main("","normal","worriedCl") 
+            call her_main("G-good morning, [genie_name].","upset","wink") 
             ">Hermione can't stop twitching and fidgeting."
             m "Good morning, Miss Granger."
             m "Hm. You don't appear to have slept well. Is something the matter?"
-            call her_main("I-no! I mean- its fine.","disgust","narrow")
+            call her_main("I-no! I mean- its fine.","disgust","narrow") 
             m "...If you say so."
-            call cast_spell
+            call cast_spell 
             ">You cast a spell on Hermione"
             m "There you go. Until next time."
-            call her_main("I-yes.","angry","worriedCl",emote="05")
+            call her_main("I-yes.","angry","worriedCl",emote="05") 
             $ hg_pf_TheGamble_OBJ.points += 1
         elif hg_pf_TheGamble_OBJ.points == 2:
             #*Scene transitions to morning*
@@ -179,7 +179,7 @@ label hg_pf_TheGamble_complete:
             m "Huh. What do you know? She's late."
             pause 1.0
             ">Hermione enters the room dazed and distracted"
-            call hermione_enter
+            call hermione_enter 
             
             m "Miss Granger?"
             m "Hello?"
@@ -196,18 +196,18 @@ label hg_pf_TheGamble_complete:
             m "{size=+7}WHORE!{/size}"
             with hpunch
             ">Hermione jumps"
-            call her_main("I- Oh. Good morning [genie_name]...","grin","dead")
+            call her_main("I- Oh. Good morning [genie_name]...","grin","dead") 
             ">As she trails off you notice her repeatedly glancing at your crotch."
             m "You don't seem to have improved from yesterday morning. Did you sleep at all?"
-            call her_main("I-","base","down")
+            call her_main("I-","base","down") 
             ">her hands keep drifting towards her groin and chests before she jerks and moves them away"
-            call her_main("I'm fine.","grin","dead")
+            call her_main("I'm fine.","grin","dead") 
             m "Are you certain?"
-            call her_main("I, uh, I need to get to class.","soft","ahegao")
+            call her_main("I, uh, I need to get to class.","soft","ahegao") 
             m "Very well, then."
-            call cast_spell
+            call cast_spell 
             ">you cast the spell."
-            call her_main("","base","down")
+            call her_main("","base","down") 
             ">Hermione glances at your groin one last time before she leaves."
             $ hg_pf_TheGamble_OBJ.points += 1
         
@@ -218,7 +218,7 @@ label hg_pf_TheGamble_complete:
         # show screen blkfade
         # with d3
         
-        call hermione_exit
+        call hermione_exit 
         $ hermione_takes_classes = True
         
         hide screen genie_stand
@@ -279,10 +279,10 @@ label hg_pf_TheGamble_complete:
         # show screen hermione_blink #Hermione stands still.
         # with d3
         ">Hermione enters. She does not look happy"
-        call hermione_enter
+        call hermione_enter 
         m "Miss Granger?"
         
-        call her_walk(400,320,1.25)
+        call her_walk(400,320,1.25) 
         show screen blkfade
         with fade
         "She says nothing as she walks around the desk."
@@ -290,7 +290,7 @@ label hg_pf_TheGamble_complete:
         m "Mi-"
         
         
-        call play_music("playful_tension")# SEX THEME.
+        call play_music("playful_tension") # SEX THEME.
         hide screen hermione_main
         hide screen genie
         $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
@@ -351,7 +351,7 @@ label hg_pf_TheGamble_complete:
         $ hermione_SC.chibi.xpos = -150 #-185 behind the desk. (Also 5 is something).
         $ hermione_SC.chibi.ypos = 10
         $ h_c_u_pic = "hand_ani"
-        call u_pause_ani
+        call u_pause_ani 
         # show screen h_c_u
         # hide screen g_c_u
         # with d3
@@ -360,10 +360,10 @@ label hg_pf_TheGamble_complete:
         hide screen h_c_u # NOT SUCKING
         
         #her "Please- Give- Need- Please!"
-        call her_head("Please- Give- Need- Please!","grin","wink",cheeks="blush")
+        call her_head("Please- Give- Need- Please!","grin","wink",cheeks="blush") 
         m "So much for a month! You couldn't even last a week!"
         #her "Need- Please-"
-        call her_head("Need- Please-","scream","wide",cheeks="blush")
+        call her_head("Need- Please-","scream","wide",cheeks="blush") 
         #">She scrambles to stand as you lift her by her hair and half toss her onto the desk."
         ">Hermione scrambles to stand as you lift her by her hair and half toss her onto the desk."
         m "Well, since you asked so nicely."
@@ -384,19 +384,19 @@ label hg_pf_TheGamble_complete:
         
         
         #her "AAAAAAAAAAHHH! Biiiiiiig!!!!!"
-        call her_head("AAAAAAAAAAHHH! Biiiiiiig!!!!!","open_tongue","ahegao_raised",cheeks="blush")
+        call her_head("AAAAAAAAAAHHH! Biiiiiiig!!!!!","open_tongue","ahegao_raised",cheeks="blush") 
         m "Has your pussy actually gotten tighter?"
         #her "AAAAH! NO! NO! STILL NEEEEED!!!"
-        call her_head("AAAAH! NO! NO! STILL NEEEEED!!!","mad","wide",cheeks="blush")
+        call her_head("AAAAH! NO! NO! STILL NEEEEED!!!","mad","wide",cheeks="blush") 
         m "Oh, right the spell. Well, you'll just have to wait till I'm ready to cum myself."
         #her "!!!"
-        call her_head("!!!","mad","angry",cheeks="blush")
+        call her_head("!!!","mad","angry",cheeks="blush") 
         ">Hermione starts slamming herself against you with abandon."
         $ g_c_u_pic = "sex2_ani"
         show screen g_c_u
         with hpunch
         #her "GIVE! GIVE! GIVE! GIVE! GIVE!"
-        call her_head("GIVE! GIVE! GIVE! GIVE! GIVE!","base","ahegao_raised",cheeks="blush")
+        call her_head("GIVE! GIVE! GIVE! GIVE! GIVE!","base","ahegao_raised",cheeks="blush") 
         ">With every thrust she seems to get tighter."
         m "FUCK! ALMOST. ALMOST! HERE WE GO!"
         ">You undo the spell as you flood Hermione's cunt with your cum."
@@ -434,7 +434,7 @@ label hg_pf_TheGamble_complete:
         $ g_c_u_pic = "pause_sex"
         
         #her "!!!!"
-        call her_head("!!!!","body_234")
+        call her_head("!!!!","body_234") 
         ">Hermione tries to scream but can only manage to gasp and convulse as she finally gets her release."
         ">You watch her and wait for her spasms to die down."
         
@@ -446,11 +446,11 @@ label hg_pf_TheGamble_complete:
         ">Hermione's eyes are still glassy but she nods."
         m "Good. A deal is a deal. You belong to me now. Understand?"
         #her "Yesss."
-        call her_head("Yesss.","disgust","down_raised",cheeks="blush")
+        call her_head("Yesss.","disgust","down_raised",cheeks="blush") 
         m "Ready for more?"
         ">Still twitching on the ground, she speaks slowly, as though her thoughts are traveling through molasses."
         #her "I... but... class..."
-        call her_head("I... but... class...","shock","wide",cheeks="blush")
+        call her_head("I... but... class...","shock","wide",cheeks="blush") 
         m "Oh, you're not going to class."
         m "I'm going to thoroughly enjoy my first day as your owner."
         ">You walk to the door and send for Snape."
@@ -458,55 +458,55 @@ label hg_pf_TheGamble_complete:
         ">You walk over to Hermione and lift her. Keeping her back to your chest and your hands under her thighs, you hold her up with her legs spread."
         m "Now put your hands around the back of my neck and tell me what you are."
         #her "Your whore."
-        call her_head("Your whore.","grin","wink",cheeks="blush")
+        call her_head("Your whore.","grin","wink",cheeks="blush") 
         m "Wrong."
         #her "?"
-        call her_head("?","scream","wide",cheeks="blush")
+        call her_head("?","scream","wide",cheeks="blush") 
         m "You see, whores get paid. Whores are people."
         m "You don't get paid. You stopped being a person when you sold yourself to me for release."
         m "You are my slave now. My toy. My pretty little fucktoy."
         m "SAY IT."
         #her "I'm your fucktoy."
-        call her_head("I'm your fucktoy.","disgust","down_raised",cheeks="blush")
+        call her_head("I'm your fucktoy.","disgust","down_raised",cheeks="blush") 
         m "Now, what does a fucktoy want?"
         ">You lower her, teasing her asshole with the tip of your cock."
         #her "N-Nothing. A toy w-wants nothing. It's just used by its owner."
-        call her_head("N-Nothing. A toy w-wants nothing. It's just used by its owner.","wide_open_tongue","ahegao_angry",cheeks="blush")
+        call her_head("N-Nothing. A toy w-wants nothing. It's just used by its owner.","wide_open_tongue","ahegao_mad",cheeks="blush") 
         m "VERY good."
         ">You drop her onto your dick."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         #her "MY AAASS!!!"
-        call her_head("MY AAASS!!!","open_tongue","ahegao_raised",cheeks="blush")
+        call her_head("MY AAASS!!!","open_tongue","ahegao_raised",cheeks="blush") 
         m "Whose ass?"
         ">You lift her off your dick."
         #her "YOURS! YOUR FUCKTOY'S ASS!"
-        call her_head("YOURS! YOUR FUCKTOY'S ASS!","soft","dead")
+        call her_head("YOURS! YOUR FUCKTOY'S ASS!","soft","dead") 
         ">Desperate tears form in her eyes."
         m "Since it is your first day, I'll be nice."
         m "I'll give you a few choices."
         m "Do you want me to fuck your ass?"
         #her "Yes."215
-        call her_head("Yes.","wide_open_tongue","ahegao_angry",cheeks="blush")
+        call her_head("Yes.","wide_open_tongue","ahegao_mad",cheeks="blush") 
         m "How?"
         #her "Haaard. Pound me. Fill me with your cum!"
-        call her_head("Haaard. Pound me. Fill me with your cum!","base","ahegao_raised",cheeks="blush")
+        call her_head("Haaard. Pound me. Fill me with your cum!","base","ahegao_raised",cheeks="blush") 
         m "As you wish!"
         ">You drop her back onto your dick and start pounding her ass, your dick is harder than it's ever been."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         #her "MY ASS!!! YOU'LL BREAK IT!!"
-        call her_head("MY ASS!!! YOU'LL BREAK IT!!","open_tongue","ahegao_raised",cheeks="blush")
+        call her_head("MY ASS!!! YOU'LL BREAK IT!!","open_tongue","ahegao_raised",cheeks="blush") 
         ">You lift her up slowly, making the threat clear."
         #her "AHH!! BREAK IT!! BREAK ME!! HARDER!!"
-        call her_head("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236")
-        call snape_enter
+        call her_head("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236") 
+        call snape_enter 
         sna_[1] "What did you-"
         sna_[8] "!!!"
         #her "CUMMING!! MY ASS IS CUMMING!!"
-        call her_head("CUMMING!! MY ASS IS CUMMING!!","body_236")
+        call her_head("CUMMING!! MY ASS IS CUMMING!!","body_236") 
         m "As you can see, Miss Granger will be indisposed."
         ">Hermione's grip slips and she catches herself on your desk. She quivers as you adapt and start pounding her from behind."
        
@@ -517,18 +517,18 @@ label hg_pf_TheGamble_complete:
         
         m "Can you arrange an excuse for the next day? Or three?"
         #her "AAAAH! OH GOD!"
-        call her_head("AAAAH! OH GOD!","body_238")
+        call her_head("AAAAH! OH GOD!","body_238") 
         sna_[18] "Ha! Of course!"
         #her "AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}"
-        call her_head("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237")
+        call her_head("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237") 
         sna_[21] "(This might be the happiest day of my life!)"
-        call snape_leave
+        call snape_leave 
         ">Hermione kept screaming and shaking her ass on your dick. You're fairly certain she didn't notice the conversation."
         #her "I'm going insane! Your dick is driving your fucktoy insane!"
-        call her_head("I'm going insane! Your dick is driving your fucktoy insane!","body_236")
+        call her_head("I'm going insane! Your dick is driving your fucktoy insane!","body_236") 
         m "You and your way with words!"
         #her "CUMMING! STILL CUMMING!"
-        call her_head("CUMMING! STILL CUMMING!","body_234")
+        call her_head("CUMMING! STILL CUMMING!","body_234") 
         m "Here, let me JOIN YOU!"
         
         show screen white 
@@ -557,12 +557,12 @@ label hg_pf_TheGamble_complete:
         
         
         #her "MY ASS! SO HOT!"
-        call her_head("MY ASS! SO HOT!","body_235")
+        call her_head("MY ASS! SO HOT!","body_235") 
         #her "FILLING MY ASS!"
-        call her_head("FILLING MY ASS!","body_236")
+        call her_head("FILLING MY ASS!","body_236") 
         m "YOU LIKE IT?"
         #her "YES!!!! {image=textheart} {image=textheart}"
-        call her_head("YES!!!! {image=textheart} {image=textheart}","body_234")
+        call her_head("YES!!!! {image=textheart} {image=textheart}","body_234") 
         m "HAVE SOME MORE!"
         ">Hermione tries to scream as you flood her ass but once again can only manage gasps as she collapses to your desk, quivering."
         

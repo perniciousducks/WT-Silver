@@ -267,6 +267,9 @@ label start_ht:
     $ nets = 0 #Amount.
     $ bought_nets = False #Affects 15_mail.rpy
 
+    # Scrolls
+    $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
+
     ### MINISKIRT ###
     $ bought_skirt_already = False # Turns TRUE after you redeem the voucher and get the mini skirt.
     $ bought_miniskirt = False #Affects 15_mail.rpy
@@ -358,6 +361,11 @@ label start_ht:
                     $ wine = wine + persistent.wine # WINE.
                     ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
 
+                if persistent.ss_ not None:
+                    $ sscroll_ = persistent.ss_
+                    $ tmp = len(persistent.ss_)
+                    ">[tmp] scrolls have been added to your possessions."                    
+
 
             ### THE SKIRT ###
                 if persistent.haveskirt: # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
@@ -416,7 +424,7 @@ label start_ht:
                 $ avogadro_law = False
     
     menu:
-        "Use chibi animations or image sprites." ">This will only affect two scenes.\n>This can be changed in the cupboard menu."
+        "Use chibi animations or image sprites." ">This will only affect a couple of scenes.\n>This can be changed in the cupboard menu."
         "-Use chibis-":
             $ use_cgs = False
         "-Use sprites-":
@@ -450,39 +458,39 @@ $ day = 0
 $ reset_persistants            = True
 
 #Snape
-call snape_init
-call snape_progress_init
+call snape_init 
+call snape_progress_init 
 
 #Hermione
-call her_init                 #Everything resets here!
-call her_clothing_init        #Everything resets here!
-call her_clothing_lists_init  #Everything resets here!
-call her_chibi_init           #Everything resets here!
-call her_progress_init        #Everything resets here!
+call her_init #Everything resets here!
+call her_clothing_init #Everything resets here!
+call her_clothing_lists_init #Everything resets here!
+call her_chibi_init #Everything resets here!
+call her_progress_init #Everything resets here!
 
 #Luna
-call luna_init
-call luna_progress_init
+call luna_init 
+call luna_progress_init 
 
 #Cho
-call cho_init
-call cho_progress_init
+call cho_init 
+call cho_progress_init 
 
 #Susan
-call susan_init
-call susan_progress_init
+call susan_init 
+call susan_progress_init 
 
 #Astoria
-call astoria_init
-call astoria_progress_init
+call astoria_init 
+call astoria_progress_init 
 
 #Astoria
-call tonks_init
-call tonks_progress_init
+call tonks_init 
+call tonks_progress_init 
 
 
 #Wardrobe Reset
-call wardrobe_init
+call wardrobe_init 
 
 
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###

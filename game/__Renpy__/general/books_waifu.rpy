@@ -115,7 +115,7 @@ label waifu:
     if Dear_Wifu_OBJ.progress < 20:
         if Dear_Wifu_OBJ.progress == 1 and not complited_leena_already and not complited_stevens_already and not complited_shea_already:
             m "Oh, it's one of \"those\" books then. Ok, let's see..."
-        call school_ended
+        call school_ended 
     elif Dear_Wifu_OBJ.progress == 20:
         if complited_leena_already and complited_shea_already and complited_stevens_already and victoria >= 1 and shea >= 1 and leena >= 1:
             "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You decide to go to the prom and you're surprised to see the \"library girl\" there. She invites you to a dance and kisses you. You notice Shea staring at you incredulously.{/size}"
@@ -147,12 +147,12 @@ label waifu:
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}The School gym is full of all sorts of decorations for tonight's prom. Ms.Stevens is the head of the decorating committee, she seems very busy.{/size}" 
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}She notices you. You tell her about your plan to bail on the prom, but it Doesn't look like she cares.{/size}"
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You return home and go to bed early.{/size}"
-                        call epilogue
+                        call epilogue 
                         return
                     if victoria < 4:
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}School gym is full of all sorts of declarations for the tonights prom. What of time the whole thing is...{/size}" 
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You return home and go to sleep early.{/size}"
-                        call epilogue
+                        call epilogue 
                         return
                 "-Stay home (Page 51)-":
                     if shea >= 8: #1
@@ -166,11 +166,11 @@ label waifu:
                     if shea >= 4:
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You decide to stay home and To your surprise Shea does the same. You toy with the idea of asking her out to the prom but then decide against it.{/size}"
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}Shea goes to the prom with some other guy, while You just stay home.{/size}"
-                        call epilogue
+                        call epilogue 
                         return
                     if shea < 4:
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You decide to stay home And bail on the prom.{/size}"
-                        call epilogue
+                        call epilogue 
                         return
                 "-Hang around the library (page 97)-":
                     if leena >= 8:
@@ -185,11 +185,11 @@ label waifu:
                     if leena >= 4:
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You ignore the prom and head towards the library. It's deserted, so You take your usual seat. A girl appears out of nowhere and sits beside you.{/size}" 
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}She starts talking to you and says her name is Leena, but Suddenly two men in black suits appear. You see fear on her face as They take her away. You wish you could do something...{/size}"
-                        call epilogue
+                        call epilogue 
                         return
                     if leena < 4: 
                         "\"Chapter [Dear_Wifu_OBJ.progress]\"" "{size=-2}You ignore the prom and head towards the library. It's deserted, so You take your usual seat. After a while you return home and go to bed.{/size}"
-                        call epilogue
+                        call epilogue 
                         return
     return
 
@@ -242,13 +242,7 @@ label waifu_completed:
         if not found_dahrs_ticket_once:
             m "Hm...?"
             m "What is that...? A bookmark?"
-            $ the_gift = "01_hp/18_store/06.png" # The DAHR's ticket.
-            show screen gift
-            with d3
-            $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
-            ">You found a DAHR's voucher."
-            hide screen gift
-            with d3
+            call give_reward(">You found a DAHR's voucher.","images/store/06.png")
             m "Hm..."
             $ vouchers += 1 #Shows the amount of DAHR's vouchers in your possession.
             $ found_dahrs_ticket_once = True # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.

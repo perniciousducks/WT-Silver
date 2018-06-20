@@ -1,14 +1,14 @@
 
 
 label update_wr_lists:
-    call update_wr_color_list
-    call update_wr_head_list
-    call update_wr_tops_list
-    call update_wr_bottoms_list
-    call update_wr_other_clothings_list
-    call update_wr_miscellaneous_list
-    call update_wr_underwear_list
-    call update_wr_outfits_list
+    call update_wr_color_list 
+    call update_wr_head_list 
+    call update_wr_tops_list 
+    call update_wr_bottoms_list 
+    call update_wr_other_clothings_list 
+    call update_wr_miscellaneous_list 
+    call update_wr_underwear_list 
+    call update_wr_outfits_list 
     return
 
 
@@ -117,8 +117,8 @@ label update_wr_head_list:
         #Hair Style
         $ wr_hair.append("A")
         $ wr_hair.append("B")
-        #if hg_ ADD _OBJ.purchased: #Add Elizabeth Outfit.
-        $ wr_hair.append("E")
+        if hg_bio_OBJ.purchased: #Add Elizabeth Outfit.
+            $ wr_hair.append("E")
 
         #Makeup
         $ wr_makeup.append("lipstick")
@@ -498,7 +498,7 @@ label update_wr_underwear_list:
     if active_girl == "susan":
         #$ wr_bras.append("")
         $ wr_bras.append("lace_bra")
-        $ wr_bras.append("chain_bra")
+        #$ wr_bras.append("chain_bra")
     
         $ wr_onepieces.append("sling_1")
         $ wr_onepieces.append("sling_2")
@@ -569,6 +569,12 @@ label update_wr_outfits_list:
         if hg_witch_OBJ.purchased:
             $ wr_costumes.append("witch")
             $ hg_purchased_costumes.append(hg_witch_OBJ)
+        if hg_bio_OBJ.purchased:
+            $ wr_costumes.append("bio")
+            $ hg_purchased_costumes.append(hg_bio_OBJ)
+        if hg_yenn_OBJ.purchased:
+            $ wr_costumes.append("yenn")
+            $ hg_purchased_costumes.append(hg_yenn_OBJ)
 
         #One-Pieces
         #$ hg_purchased_onepieces = []
@@ -591,10 +597,10 @@ label update_wr_outfits_list:
             $ wr_dresses.append("ball_dress")
             $ hg_purchased_dresses.append(hg_ballDress_OBJ)
 
-    #if active_girl == "luna":
-
     #if active_girl == "astoria":
 
+    #if active_girl == "susan":
+    
     return
 
 ### Miscellaneous List ###

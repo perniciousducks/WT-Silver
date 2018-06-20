@@ -7,7 +7,10 @@ label __init_variables:
         $ bought_glasses = False
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
-    
+    if not hasattr(renpy.store,'fiction_books_intro'): #important!
+        $ fiction_books_intro = False
+
+
     $ sacred_scrolls = [
         silver_scroll(id=0 , name="None",               cost=0,     comments=[]),
         silver_scroll(id=1 , name="The room",           cost=10,    comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."]),
@@ -116,7 +119,7 @@ label store_scrolls:
                 else:
                     call no_gold #Massage: m "I don't have enough gold".
                     hide screen gift
-                    return
+                    jump store_scrolls
             "-Never mind-":
                 hide screen gift
         jump store_scrolls
@@ -129,12 +132,17 @@ label shop_books:
     menu:
         "-Educational Books-":
             label education_menu:
-            $ books_menu_list = Books_OBJ.get_edu()
+            $ books_menu_list = []
+            $ books_menu_list.extend(Books_OBJ.read_books)
+            $ books_menu_list.extend(Books_OBJ.write_books)
         "-Fiction books-":
-            twi "These books are mostly light erotica..." 
-            ger "Some of the girls insisted that I order them in."
+            if not fiction_books_intro:
+                twi "These books are mostly light erotica..." 
+                ger "Some of the girls insisted that I order them in."
+                $ fiction_books_intro = True
             label fiction_menu:
-            $ books_menu_list = Books_OBJ.get_fic()
+            $ books_menu_list = []
+            $ books_menu_list.extend(Books_OBJ.fiction_books)
         "-Never mind-":
             call screen shop_screen 
     python:
@@ -151,7 +159,7 @@ label shop_books:
     elif BookOBJ.purchased:
         call do_have_book #Message that says that you already bought this book.
     else:
-        call purchase_book
+        call purchase_book 
     if BookOBJ in Books_OBJ.get_edu():
         jump education_menu
     if BookOBJ in Books_OBJ.get_fic():
@@ -192,7 +200,7 @@ label shop_potion_menu:
     if isinstance(PotionOBJ, silver_potion):
         python:
             potion_menu = []
-            potion_menu.append(("-Buy the potion for "+PotionOBJ.cost+" Gold-", PotionOBJ))
+            potion_menu.append(("-Buy the potion for "+str(PotionOBJ.cost)+" Gold-", PotionOBJ))
             potion_menu.append(("-Never mind-", "nvm"))
             choice = renpy.display_menu(potion_menu)
         if isinstance(choice, silver_potion):
@@ -219,7 +227,7 @@ label shop_potion_menu:
                 fre "Hmm... I think I heard that it's found by the lake."
         jump shop_potion_menu
     if PotionOBJ == "whoring":
-        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.") 
     if PotionOBJ == "nvm":
         pass    
     call screen shop_screen
@@ -241,7 +249,7 @@ label gifts_menu:
     elif result == "oos":
         jump out
     else:
-        call object_gift_block(result)
+        call object_gift_block(result) 
         jump shop_menu
     
 label object_gift_block(item):
@@ -255,13 +263,13 @@ label object_gift_block(item):
     $ cost4 = item.cost * 8
     menu:
         "-Buy 1 for ([item.cost] galleons)-":
-            call object_purchase_item(item, 1)
+            call object_purchase_item(item, 1) 
         "-Buy 2 for ([cost2] galleons)-":
-            call object_purchase_item(item, 2)
+            call object_purchase_item(item, 2) 
         "-Buy 4 for ([cost3] galleons)-":
-            call object_purchase_item(item, 4)
+            call object_purchase_item(item, 4) 
         "-Buy 8 for ([cost4] galleons)-":
-            call object_purchase_item(item, 8)
+            call object_purchase_item(item, 8) 
         "-Never mind-":
             hide screen gift
             pass
@@ -330,7 +338,7 @@ label app:
             $ the_gift = "images/store/glasses.png" # GLASSES
             show screen gift
             with d3
-            call glasses_text
+            call glasses_text 
             menu:
                 "-Buy the item (60 gold)-":
                     if gold >= 60:
@@ -349,7 +357,7 @@ label app:
             $ the_gift = "images/store/30.png" # FISHNETS.
             show screen gift
             with d3
-            call nets_text
+            call nets_text 
             menu:
                 "-Buy the item (120 gold)-":
                     if nets == 7 or nets == 1: # == 7 means "gifted already"

@@ -2,16 +2,16 @@
 
 label summon_snape:
     
-    call play_sound("door")
+    call play_sound("door") 
     $ menu_x = 0.5
     $ menu_y = 0.5
 
     $ snape_chibi_xpos = 500 #Mid
     $ snape_chibi_ypos = 240
     show screen snape_01 #Snape stands still.
-    call bld
+    call bld 
 
-    call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base")
+    call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base") 
 
     label snape_ready:
         pass
@@ -136,27 +136,21 @@ label summon_snape:
                 "\"Never mind.\"":
                     jump snape_ready
 
-        "-Chit chat-" if sfmax and not chitchated_with_snape and not daytime: # sfmax - friendship with Snape maxed out.
-            $ chitchated_with_snape = True #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
-            $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
-            #$ snape_busy = True
-            jump snape_chitchat
-        "-Chit chat-" if daytime and not chitchated_with_snape: # sfmax - friendship with Snape maxed out.
-            $ chitchated_with_snape = True #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
-            $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
-            #$ snape_busy = True
-            jump snape_chitchat
+        "\"Talk-\"" if not chitchated_with_snape:
+            $ chitchated_with_snape = True
+            jump snape_talk
+        
         "\"Let's hang.\"" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
-                call not_today #Snape says: "I am busy tonight."
+                jump not_today #Snape says: "I am busy tonight."
 #            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
-#                call not_today #Snape says: "I am busy tonight."
+#                jump not_today #Snape says: "I am busy tonight."
             elif snape_friendship >= 88 and whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
-                call not_today #Snape says: "I am busy tonight."
+                jump not_today #Snape says: "I am busy tonight."
             else:
-                pass
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
+                
         "\"Never mind.\"":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -171,7 +165,7 @@ label summon_snape:
             hide screen bld1
             hide screen snape_main
             with d3
-            call play_sound("door")
+            call play_sound("door") 
 
             if daytime:
                 call play_music("brittle_rille") #Day Theme
@@ -179,9 +173,7 @@ label summon_snape:
             else: 
                 call play_music("manatees") #Night Theme
                 jump night_main_menu
-    
-    
-    
+
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     
@@ -220,9 +212,9 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     
     if wine >= 1 and not wine_not: # Using Dumbledor's wine for the first time.
         $ wine_not = True # Turns True after you use Dumbledore's wine in the "Snape dating" for the first time. Makes sure the cut-scene is shown only once.
-        call wine_first
+        call wine_first 
     elif wine >= 1 and wine_not: # Using Dumbledor's wine not for the first time.
-        call wine_not_first
+        call wine_not_first 
     else:
         pass
     
@@ -231,49 +223,49 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     
     
     if snape_friendship >= 5 and snape_events == 0:
-        call date_with_snape_01
+        call date_with_snape_01 
         
     elif snape_friendship >= 12 and snape_events == 1: #LEVEL 02
-        call date_with_snape_02
+        call date_with_snape_02 
         
     elif snape_friendship >= 19 and snape_events == 2: #LEVEL 03
-        call date_with_snape_03
+        call date_with_snape_03 
         
     elif snape_friendship >= 27 and snape_events == 3: #LEVEL 04
-        call date_with_snape_04
+        call date_with_snape_04 
         
     elif snape_friendship >= 34 and snape_events == 4: #LEVEL 05
-        call date_with_snape_05
+        call date_with_snape_05 
         
     elif snape_friendship >= 41 and snape_events == 5: #LEVEL 06. Can't proceed after this until whoring >= Lv 3.
-        call date_with_snape_06
+        call date_with_snape_06 
       
     elif snape_friendship >= 48 and snape_events == 6: #LEVEL 07
-        call date_with_snape_07
+        call date_with_snape_07 
          
     elif snape_friendship >= 55 and snape_events == 7: #LEVEL 08
-        call date_with_snape_08
+        call date_with_snape_08 
         
     elif snape_friendship >= 62 and snape_events == 8: #LEVEL 09
-        call date_with_snape_09
+        call date_with_snape_09 
         
     elif snape_friendship >= 69 and snape_events == 9: #EVENT 10
-        call date_with_snape_10
+        call date_with_snape_10 
         
     elif snape_friendship >= 76 and snape_events == 10: #EVENT 10
-        call date_with_snape_11
+        call date_with_snape_11 
         
     elif snape_friendship >= 83 and snape_events == 11: #EVENT 11
-        call date_with_snape_12
+        call date_with_snape_12 
          
     elif snape_friendship >= 88 and snape_events == 12: #EVENT 12. If whoring level > 5.
-        call date_with_snape_13
+        call date_with_snape_13 
         
     elif snape_friendship >= 93 and snape_events == 13: #EVENT 13
-        call date_with_snape_14
+        call date_with_snape_14 
         
     elif snape_friendship >= 98 and snape_events == 14: #EVENT 14
-        call date_with_snape_15
+        call date_with_snape_15 
         
     else:
             
@@ -704,8 +696,8 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 ####################################
 label wine_first:
     m "Look what I've got!"
-    call sna_head("Hm..?","snape_05")
-    call sna_head("Let me see...")
+    call sna_head("Hm..?","snape_05") 
+    call sna_head("Let me see...") 
     pause.1
     $ the_gift = "images/store/27.png" # WINE.
     show screen gift
@@ -716,10 +708,10 @@ label wine_first:
     $ wine -= 1
     
     
-    call sna_head("This one has got to be from Albus' personal stash!","snape_24")
-    call sna_head("Some pricey and incredibly rare stuff.","snape_06")
+    call sna_head("This one has got to be from Albus' personal stash!","snape_24") 
+    call sna_head("Some pricey and incredibly rare stuff.","snape_06") 
     m "Shall we then?"
-    call sna_head("We most certainly shall!","snape_02")
+    call sna_head("We most certainly shall!","snape_02") 
     show screen bld1
     with d3
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
@@ -744,30 +736,30 @@ label wine_not_first:
     with d3
     $ wine -= 1
 
-    call sna_head("Another one?","snape_05")
+    call sna_head("Another one?","snape_05") 
     if one_of_ten == 1:
-        call sna_head("Splendid!","snape_02")
+        call sna_head("Splendid!","snape_02") 
     elif one_of_ten == 2:
-        call sna_head("Alright!","snape_02")
+        call sna_head("Alright!","snape_02") 
     elif one_of_ten == 3:
-        call sna_head("Awesome!","snape_02")
+        call sna_head("Awesome!","snape_02") 
     elif one_of_ten == 4:
-        call sna_head("Well done, my friend!","snape_02")
+        call sna_head("Well done, my friend!","snape_02") 
     elif one_of_ten == 5:
-        call sna_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
+        call sna_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05") 
     elif one_of_ten == 6:
-        call sna_head("lately I am having hard time drinking anything but this!","snape_02")
+        call sna_head("lately I am having hard time drinking anything but this!","snape_02") 
     elif one_of_ten == 7:
-        call sna_head("Great! I feel less stressed out already!","snape_02")
+        call sna_head("Great! I feel less stressed out already!","snape_02") 
     elif one_of_ten == 8:
-        call sna_head("This just keeps getting better and better!","snape_02")
+        call sna_head("This just keeps getting better and better!","snape_02") 
     elif one_of_ten == 9:
-        call sna_head("Seriously, how big is that stash?","snape_05")
+        call sna_head("Seriously, how big is that stash?","snape_05") 
     elif one_of_ten == 2:
-        call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02")
+        call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02") 
     
-    call bld
-    call give_reward(">Your relationship with Professor Snape has improved.","images/store/01.png")
+    call bld 
+    call give_reward(">Your relationship with Professor Snape has improved.","images/store/01.png") 
     #">Your relationship with Professor Snape has improved."
 
     if game_difficulty < 2:      #Easy difficulty

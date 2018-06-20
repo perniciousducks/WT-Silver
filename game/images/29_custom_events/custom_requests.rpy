@@ -41,7 +41,7 @@ label new_custom_request:
                 #level 3:
 
             "{color=#858585}-A vague idea-{/color}" if imagination == 1:
-                call vague_idea
+                call vague_idea from _call_vague_idea_2
                 jump not_now_custom
             "{color=#858585}Favour: \"Show her who's in charge\"" if not daytime:
                 show screen blktone
@@ -60,7 +60,7 @@ label new_custom_request:
             ### LEVEL 02 ###
 
             "{color=#858585}-A vague idea-{/color}" if imagination == 1:
-                call vague_idea
+                call vague_idea from _call_vague_idea_3
                 jump not_now_custom
             "Favour: \"Use her as a Dildo Container\" {image=heart_00}" if daytime and not heretic_01 and not heretic_02 and not heretic_03:
                 jump heretic
@@ -115,9 +115,9 @@ label c_r_night:
 ### IF-CLAUSES ###
 
 if shaming_busy:
-    call shaming_night
+    call shaming_night from _call_shaming_night
 if heretic_busy:
-    call heretic_night
+    call heretic_night from _call_heretic_night
 
 ###############################
 

@@ -221,6 +221,36 @@ if letter_from_hermione_02: #Letter from Hermione #02.
     with Dissolve(.3)
     call screen main_room_menu
 
+if ministry_letter: #Letter from the ministry
+    $ ministry_letter = False
+    $ letter_text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
+    hide screen owl
+    show screen owl_02
+    #$ mail_from_her = False #Comented out because replaced with $ letters += 1
+    $ letters -= 1
+    label ministry_letter_again:
+    show screen letter
+    show screen ctc
+    show screen bld1
+    with Dissolve(.3)
+    pause
+    menu:
+        "-Done reading-":
+            pass    
+        "-Not yet-":
+            jump ministry_letter_again
+    hide screen letter
+    hide screen ctc
+    hide screen bld1
+    with Dissolve(.3)
+    m "That doesn't sound good..."
+    m "Perhaps I should tell Snape about this."
+    m "Or maybe miss granger?"
+    
+    #Unlocks next event.
+    $ ministry_letter_received = True
+    call screen main_room_menu
+
 
 
 

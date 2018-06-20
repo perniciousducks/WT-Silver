@@ -245,43 +245,45 @@ label __init_variables:
     #Reset Persistants
     if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
         $ reset_persistants            = False
+    if not hasattr(renpy.store,'reset_luna_content'):
+        $ reset_luna_content = False
 
     #Genie Init
     if not hasattr(renpy.store,'genie_sprite_base'): #important!
-        call init_genie_layering
+        call init_genie_layering 
 
     #Snape Init
-    call snape_init
-    call snape_progress_init
+    call snape_init 
+    call snape_progress_init 
 
     #Hermione Init
-    call her_init                #Defines newly added variables. Resets variables after creating a new game.
-    call her_clothing_init       #Defines newly added variables. Resets variables after creating a new game.
-    call her_chibi_init          #Defines newly added variables. Resets variables after creating a new game.
+    call her_init #Defines newly added variables. Resets variables after creating a new game.
+    call her_clothing_init #Defines newly added variables. Resets variables after creating a new game.
+    call her_chibi_init #Defines newly added variables. Resets variables after creating a new game.
     call her_clothing_lists_init #Lists update every time!
-    call her_progress_init       #Defines newly added variables. Resets variables after creating a new game.
+    call her_progress_init #Defines newly added variables. Resets variables after creating a new game.
     
     #Luna Init
-    call luna_init
-    call luna_progress_init
+    call luna_init 
+    call luna_progress_init 
 
     #Cho Init
-    call cho_init
-    call cho_progress_init
+    call cho_init 
+    call cho_progress_init 
 
     #Susan Init
-    call susan_init
-    call susan_progress_init
+    call susan_init 
+    call susan_progress_init 
 
     #Astoria Init
-    call astoria_init
-    call astoria_progress_init
+    call astoria_init 
+    call astoria_progress_init 
     
     #Tonks Init
-    call tonks_init
-    call tonks_progress_init
+    call tonks_init 
+    call tonks_progress_init 
 
-    call wardrobe_init
+    call wardrobe_init 
 
     
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.

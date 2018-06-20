@@ -22,6 +22,20 @@ label update_sus_uniform:
     $ susan_stockings      = "characters/susan/clothes/stockings/base/"+str(sus_stockings)+".png"
     $ susan_robe           = "characters/susan/clothes/robe/base/"+str(sus_robe)+".png"
     
+    call update_sus_body 
+    
+    return
+    
+label update_sus_body:
+    hide screen susan_main
+    
+    if susan_wear_top:
+        $ susan_boobs               = "characters/susan/body/base/boobs_0.png" 
+    elif susan_wear_bra and not susan_wear_top:
+        $ susan_boobs               = "characters/susan/body/base/boobs_1.png" 
+    else:
+        $ susan_boobs               = "characters/susan/body/base/boobs_1.png" 
+        
     return
     
 #Hair equip.
@@ -33,8 +47,8 @@ label set_sus_hair(hair=None,color=None):
     if color != None:
         $ sus_hair_color   = color
         
-    $ susan_hair         = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+(sus_hair_color)+"_base.png"
-    $ susan_hair_shadow  = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+(sus_hair_color)+"_top.png"
+    $ susan_hair         = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_base.png"
+    $ susan_hair_shadow  = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_top.png"
     
     show screen susan_main
     
@@ -52,7 +66,7 @@ label set_sus_top(top=""):
         $ susan_wear_top = True
         $ sus_top = top
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -69,7 +83,7 @@ label set_sus_bottom(bottom=""):
         $ susan_wear_bottom = True
         $ sus_skirt = bottom
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -86,7 +100,7 @@ label set_sus_bra(bra=""):
         $ susan_wear_bra = True
         $ sus_bra = bra
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -103,7 +117,7 @@ label set_sus_onepiece(onepiece=""):
         $ susan_wear_onepiece = True
         $ sus_onepiece = onepiece
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -120,7 +134,7 @@ label set_sus_panties(panties=""):
         $ susan_wear_panties = True
         $ sus_panties = panties
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -137,7 +151,7 @@ label set_sus_garterbelt(garter=""):
         $ susan_wear_garterbelt = True
         $ sus_garterbelt = garter
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -154,7 +168,7 @@ label set_sus_neckwear(neck=""):
         $ susan_wear_neckwear = True
         $ sus_neckwear = neck
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -171,7 +185,7 @@ label set_sus_stockings(stockings=""):
         $ susan_wear_stockings = True
         $ sus_stockings = stockings
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return
@@ -188,7 +202,7 @@ label set_sus_robe(robe=""):
         $ susan_wear_robe = True
         $ sus_robe = robe
     
-    call update_sus_uniform
+    call update_sus_uniform 
     show screen susan_main
     
     return

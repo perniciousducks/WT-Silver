@@ -6,7 +6,7 @@ label __init_variables:
     if not hasattr(renpy.store,'genie_xpos'):
         $ genie_xpos = 60
         $ genie_ypos = 0
-        $ genie_zorder = 5
+        $ genie_zorder = 4
 
         #$ genie_head_xpos = 60
         #$ genie_head_ypos = 0

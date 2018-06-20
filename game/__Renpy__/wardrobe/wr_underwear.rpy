@@ -19,7 +19,7 @@ label equip_bra:
         
 ### Equip Hermione's Bra ###
 label equip_her_bra:
-    call set_h_bra(underwear_choice, underwear_color_choice)
+    call set_h_bra(underwear_choice, underwear_color_choice) 
 
     hide screen wardrobe
     call screen wardrobe
@@ -55,14 +55,14 @@ label equip_ast_bra:
         
         $ wardrobe_active = 1
         
-        call set_ast_bra(underwear_choice)
+        call set_ast_bra(underwear_choice) 
         
-        call ast_main(xpos="wardrobe")
+        call ast_main(xpos="wardrobe") 
         call screen wardrobe
         
 ### Equip Susan's Bra ###
 label equip_sus_bra:
-    call set_sus_bra(underwear_choice)
+    call set_sus_bra(underwear_choice) 
 
     hide screen wardrobe
     call screen wardrobe
@@ -87,21 +87,21 @@ label equip_onepiece:
         
 ### Equip Hermione's OnePiece/Nighty ###
 label equip_her_onepiece:
-    call set_h_onepiece(underwear_choice)
+    call set_h_onepiece(underwear_choice) 
 
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Astoria's OnePiece/Nighty ###
 label equip_ast_onepiece:
-    call set_ast_onepiece(underwear_choice)
+    call set_ast_onepiece(underwear_choice) 
 
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Susan's OnePiece/Nighty ###
 label equip_sus_onepiece:
-    call set_sus_onepiece(underwear_choice)
+    call set_sus_onepiece(underwear_choice) 
 
     hide screen wardrobe
     call screen wardrobe
@@ -126,7 +126,7 @@ label equip_panties:
 
 ### Equip Hermione's Panties ###
 label equip_her_panties:
-    call set_h_panties(underwear_choice, underwear_color_choice)
+    call set_h_panties(underwear_choice, underwear_color_choice) 
 
     hide screen wardrobe
     call screen wardrobe
@@ -162,14 +162,14 @@ label equip_ast_panties:
         
         $ wardrobe_active = 1
         
-        call set_ast_panties(underwear_choice)
+        call set_ast_panties(underwear_choice) 
         
-        call ast_main(xpos="wardrobe")
+        call ast_main(xpos="wardrobe") 
         call screen wardrobe
         
 ### Equip Susan's Panties ###
 label equip_sus_panties:
-    call set_sus_panties(underwear_choice)
+    call set_sus_panties(underwear_choice) 
 
     hide screen wardrobe
     call screen wardrobe
@@ -194,21 +194,21 @@ label equip_garterbelt:
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
-    call set_h_garterbelt(underwear_choice, underwear_color_choice)
+    call set_h_garterbelt(underwear_choice, underwear_color_choice) 
 
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Astoria's Garterbelt ###
 label equip_ast_garterbelt:
-    call set_ast_garterbelt(underwear_choice, underwear_color_choice)
+    call set_ast_garterbelt(underwear_choice, underwear_color_choice) 
 
     hide screen wardrobe
     call screen wardrobe
     
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
-    call set_sus_garterbelt(underwear_choice, underwear_color_choice)
+    call set_sus_garterbelt(underwear_choice, underwear_color_choice) 
 
     hide screen wardrobe
     call screen wardrobe

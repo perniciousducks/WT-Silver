@@ -25,7 +25,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     else:
         $ h_emote = "00_blank"
 
-    call h_update
+    call h_update 
 
 
     #Positioning
@@ -39,7 +39,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
         elif xpos == "right":                   #Bit more to the right.
             $ hermione_xpos = 400
             $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "wardrobe":
+        elif xpos in ["wardrobe","close"]:
             $ hermione_xpos = 540
         else:
             $ hermione_xpos = xpos
@@ -116,7 +116,7 @@ label her_head(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     else:
         $ h_emote = "00_blank"
 
-    call h_update
+    call h_update 
 
     $ hermione_head_xpos = 605
     $ hermione_head_ypos = 235
@@ -179,7 +179,7 @@ label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, em
     else:
         $ h_emote = "00_blank"
 
-    call h_update
+    call h_update 
 
     show screen hermione_kneel #h_head2
 
@@ -194,7 +194,7 @@ label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, em
 
 label set_hermione_action(action="", update=""):
     hide screen hermione_main
-    call h_action(action,update)
+    call h_action(action,update) 
 
     show screen hermione_main
     with d3
@@ -225,7 +225,7 @@ label h_action(action =  "", update=""):
 
         if update != "skip_update":
         
-            call load_hermione_clothing_saves
+            call load_hermione_clothing_saves 
 
     else:
 
@@ -346,7 +346,7 @@ label h_action(action =  "", update=""):
                 $ hermione_wear_robe = False
            
         
-    call update_her_uniform            #calls update_her_action, update_chibi_uniform, and h_update_body;
+    call update_her_uniform #calls update_her_action, update_chibi_uniform, and h_update_body;
 
     return
     
@@ -368,19 +368,19 @@ label reset_hermione_main:
     hide screen hermione_blank_chibi
 
     #Hermione clothing save state
-    call load_hermione_clothing_saves
+    call load_hermione_clothing_saves 
     
     $ hermione_dribble = False
     $ hermione_squirt = False
     $ aftersperm = False #Show cum stains on Hermione's uniform.
     
     hide screen hermione_main
-    call h_outfit_OBJ(None)
+    #call h_outfit_OBJ(None)
     if hermione_action != "none":
-        call h_action("none")
-    call update_her_uniform
-    call h_update_body
-    call h_update_hair
+        call h_action("none") 
+    call update_her_uniform 
+    call h_update_body 
+    call h_update_hair 
     return
     
 label load_hermione_clothing_saves:

@@ -63,48 +63,48 @@ label hat_intro:
 
 label hat_intro_2: #Bringing in Hermione
     m "[hermione_name], I wanted to talk to you about something."
-    call her_main("Whats that [genie_name]?","open","base")
+    call her_main("Whats that [genie_name]?","open","base") 
     m "Do you feel that any of your friends are in the wrong house?"
-    call her_main("What do you mean In the wrong house?","soft","base")
+    call her_main("What do you mean In the wrong house?","soft","base") 
     m "well, do you know anyone who'd be better suited being in a different house?"
-    call her_main("That's a weird question [genie_name].","open","base")
-    call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...","open","suspicious")
+    call her_main("That's a weird question [genie_name].","open","base") 
+    call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...","open","suspicious") 
     m "(Probably don't want him...)"
     m "Anyone else come to mind?"
-    call her_main("I don't think so...","open","worriedL")
+    call her_main("I don't think so...","open","worriedL") 
     m "Oh well, just-"
-    call her_main("Wait, I know! Luna Lovegood!","scream","angryCl")
+    call her_main("Wait, I know! Luna Lovegood!","scream","angryCl") 
     m "And why is that?"
-    call her_main("Well surely you've seen her grades [genie_name]...","open","closed")
-    call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","annoyed","suspicious")
+    call her_main("Well surely you've seen her grades [genie_name]...","open","closed") 
+    call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","annoyed","suspicious") 
     m "Fantastic. Could you please tell her to come to my office later this afternoon?"
-    call her_main("Why? You're not going to ask her for favours are you?","annoyed","annoyed")
+    call her_main("Why? You're not going to ask her for favours are you?","annoyed","annoyed") 
     m "Nothing of the sort. This is strictly school business."
-    call her_main("...","annoyed","annoyed")
-    call her_main("Fine... Just don't do anything too bad...","annoyed","suspicious")
+    call her_main("...","annoyed","annoyed") 
+    call her_main("Fine... Just don't do anything too bad...","annoyed","suspicious") 
     m "Scouts honor!"
-    call her_main("Well if that's all then [genie_name], I better head to class.","open","closed")
+    call her_main("Well if that's all then [genie_name], I better head to class.","open","closed") 
 
     jump end_hg_pf
 
 label hat_intro_3: #Luna change scene 
     $ luna_hair = 2
-    call play_sound("knocking")
+    call play_sound("knocking") 
     "*knock* *knock* *knock*"
     lun "It's Luna Lovegood sir..."
     m "come in, come in..."
-    call play_sound("door")
+    call play_sound("door") 
     ">Luna stands in front of you."
     $ luna_chibi("stand")
-    call luna_main("Hermione said you wanted to see me?", 1, 2, 1, 2)
+    call luna_main("Hermione said you wanted to see me?", 1, 2, 1, 2) 
     m "Yes. It's about your school house."
-    call luna_main("Ravenclaw?", 1, 1, 5, 2)
+    call luna_main("Ravenclaw?", 1, 1, 5, 2) 
     m "Yes. I've been speaking with the sorting hat recently and I've been worried that he may have gotten a few student's houses wrong over the years."
-    call luna_main("Really? So am I going to have to change house?", 1, 1, 4, 3)
+    call luna_main("Really? So am I going to have to change house?", 1, 1, 4, 3) 
     m "Of course not!"
-    call luna_main("*Phew*!", 2, 1, 1, 1)
+    call luna_main("*Phew*!", 2, 1, 1, 1) 
     m "I just wanted to put the hat on your head to see if he made the right choice."
-    call luna_main("oh, alright then!", 1, 2, 1, 1)
+    call luna_main("oh, alright then!", 1, 2, 1, 1) 
     ">You turn around and reach for the hat."
     m "Almost there... Just grab the edge of it..."
     hat "Careful!"
@@ -112,13 +112,13 @@ label hat_intro_3: #Luna change scene
     hat "*Psst*{size=-5}Nice work! Now just put me on her head.{/size}"
     m "Here we are Miss Lovegood..."
     ">You place the hat gingerly on her head."
-    call luna_main("...", 1, 2, 1, 3)
-    call luna_main("Is it-", 1, 2, 5, 3)
+    call luna_main("...", 1, 2, 1, 3) 
+    call luna_main("Is it-", 1, 2, 5, 3) 
     hat "{size=+5}HMMMM{/size}yes... {size=-5}yes...{/size} I see. Very interesting... {size=+5}Very{/size}{p} {size=+5}interesting...{/size}"
-    call luna_main("What's interesting?", 1, 1, 5, 2)
+    call luna_main("What's interesting?", 1, 1, 5, 2) 
     hat "What? Oh nothing, nothing. Just close your eyes, try and get a bit of sleep..."
-    call luna_main("Sleep?", 6, 2, 5, 2)
-    call luna_main("Why would I... want{p} to...", 3, 1, 4, 2)
+    call luna_main("Sleep?", 6, 2, 5, 2) 
+    call luna_main("Why would I... want{p} to...", 3, 1, 4, 2) 
     call luna_main("...", 1, 6, 4, 2) #hypno eyes
     m "is she alright?"
     hat "She's fine. Just having a bit of a rest. Now about that personality..."

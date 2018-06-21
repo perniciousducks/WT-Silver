@@ -5,7 +5,6 @@ label door:
 
     menu:
         "Go to 7th floor":
-            hide screen main_room
             hide screen main_room_menu
             jump floor_7th
         "-Examine the door-" if not door_examined:

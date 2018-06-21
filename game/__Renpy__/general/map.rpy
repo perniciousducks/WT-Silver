@@ -26,7 +26,7 @@ screen map_screen:
 # limit to searching an area b/c currenly if day_random is above a vlaue the player can get
 # as many items as they want
 label floor_7th:
-    if first_time_7th == True:
+    if unlocked_7th == True:
         m"\"I don't have any reason to go to this floor...\""
         show screen main_room_menu
     else:

@@ -91,10 +91,11 @@ label enter_room_of_req:
     show screen room_of_requirement
     hide screen floor_7th_screen
     hide screen floor_7th_menu
-    call gen_chibi(action = "", xpos = "door", ypos = "base", flip=True)
-    call hide_blkfade
+    
     
     if first_visit_req == False:
+        call gen_chibi(action = "", xpos = "door", ypos = "base", flip=True)
+        call hide_blkfade
         $ first_visit_req = True
         m"It's just an empty room....with a mirror?"
         call gen_walk(pos1="door", pos2="200")
@@ -158,5 +159,7 @@ For how long have you been roaming the school grounds?"
         call sna_chibi(action="hide")
         call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
         
+    call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
+    call hide_blkfade    
     call screen room_of_requirement_menu
     

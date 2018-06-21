@@ -47,9 +47,11 @@ label update_puzzle_slide:
                 if ((imagepuzzle[y][x] != "images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
     if unlocked_7th == False:
-        m "Finally... Sweet, phoenix tears! Down the hatch we go."
+        m "Finally... "
+        m "Sweet, phoenix tears! Down the hatch we go."
         $renpy.play("sounds/pop03.mp3")
         $renpy.play("sounds/gulp.mp3")
+        pause
         $renpy.play("sounds/gulp.mp3")
         m "...."
         m "I feel no difference..."

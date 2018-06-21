@@ -73,7 +73,7 @@ screen room_of_req_door:
 
 screen floor_7th_screen:
     add "images/room_of_requirement/corridor.png"
-    if unlocked_7th and not first_time_7th:
+    if unlocked_7th and first_time_7th:
         add "images/room_of_requirement/front_door.png" at fade_in(450, 150, 1)
     #TODO: Add some light
     zorder -1

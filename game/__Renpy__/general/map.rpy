@@ -26,7 +26,7 @@ screen map_screen:
 # limit to searching an area b/c currenly if day_random is above a vlaue the player can get
 # as many items as they want
 label floor_7th:
-    if unlocked_7th == True:
+    if unlocked_7th == False:
         m"\"I don't have any reason to go to this floor...\""
         show screen main_room_menu
     else:
@@ -35,6 +35,7 @@ label floor_7th:
         hide screen main_room
         hide screen chair_right
         hide screen fireplace
+        hide screen candlefire
         show screen floor_7th_screen
         
         
@@ -57,7 +58,7 @@ label floor_7th:
             hide screen room_of_req_door
             call screen floor_7th_menu
         else:
-            
+            show screen room_of_req_door
             call gen_chibi(xpos="200", ypos="base")
             call hide_blkfade
             pause 1

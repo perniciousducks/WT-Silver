@@ -55,7 +55,7 @@ label update_puzzle_slide:
         $renpy.play("sounds/gulp.mp3")
         m "...."
         m "I feel no difference..."
-        m "Hold on a minute there's a book/notes in here..."
+        m "Hold on a minute, there's a book/notes in here..."
         call give_reward("You've unlocked something on the 7th floor","/images/store/unlock_genie_question_mark.png")
         $ unlocked_7th = True
     else:

@@ -73,8 +73,6 @@ screen room_of_req_door:
 
 screen floor_7th_screen:
     add "images/room_of_requirement/corridor.png"
-    if unlocked_7th and first_time_7th:
-        add "images/room_of_requirement/front_door.png" at fade_in(450, 150, 1)
     #TODO: Add some light
     zorder -1
 
@@ -101,9 +99,10 @@ label enter_room_of_req:
         call gen_walk(pos1="door", pos2="200")
         m"...."
         "So you've found the mirror of Erised"
+        m"*cough I mean...yes Severus, it is I...*"
         call sna_chibi(xpos="door")
         call gen_chibi(action = "", xpos = "200", ypos = "base")
-        m "Snape!... cough I mean, Severus I'm glad to be back...I went to this horrible world filled with sand."
+        m "I'm so glad to be back..."
         sna "....."
         m "Worth a shot..."
         sna "I'm quite certain I told you to stay in your office...
@@ -125,6 +124,7 @@ For how long have you been roaming the school grounds?"
         sna "Now, continuing where I left off. This mirror that you've found..."
         #TODO: snape smirkface
         sna "I thought Albus would've moved it out of the school after the last incident... "
+        call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
         sna "I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?"
         m "*Squints* Just seems like an old mirror to me, a bit dusty and cloudy thou...hold on a minute."
@@ -138,7 +138,7 @@ For how long have you been roaming the school grounds?"
         sna "The mirror is known as the mirror of Erised, or Desire backwards..."
         g9 "Very clever..."
         sna "Quite...in short, it's designed to show you your deepest desire... but by your comment I'm sure you already got that."
-        m "Your magic might be foreign to me but this seems like nothing more than party trick, I already know what I desire. "
+        m "Your magic might be foreign to me but this seems like nothing more than a party trick, I already know what I desire. "
         sna "Well, it would be quite dull... if you didn't include the changes I made that had it locked up in the first place."
         m "I could probably make a good guess already but please, do tell..."
         sna "Well... the original intentions are quite boring so I expanded the enchantment and it turned out to be incredibly difficult but clever that I am..."
@@ -155,7 +155,7 @@ For how long have you been roaming the school grounds?"
         m "It's staying right where it is, I've been getting incredibly bored lately and might consider roaming the school a bit more...actually, I feel the urge to take a trip to the girls dormitory right now."
         sna "Fine, it stays. Please don't... just remember that it will take time for it to reshape and create imagery so check back every now and then."
         m "Noted... Out. Now."
-        call give_reward("You've unlocked the room of requirements", "images/store/06.png") 
+        call give_reward("You've unlocked the room of requirement", "images/store/06.png") 
         call sna_chibi(action="hide")
         call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
         

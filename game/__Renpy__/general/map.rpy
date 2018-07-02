@@ -21,10 +21,6 @@ screen map_screen:
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
         
 
-###MAP LOCATIONS AND RESPONSES
-# TODO: change how "random" chance works for getting items from locations or immplement a 
-# limit to searching an area b/c currenly if day_random is above a vlaue the player can get
-# as many items as they want
 label floor_7th:
     if unlocked_7th == False:
         m"\"I don't have any reason to go to this floor...\""
@@ -64,7 +60,6 @@ label floor_7th:
             pause 1
             call screen floor_7th_menu
             
-
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
         ">You venture up to the attic but find that the door is locked."
@@ -102,7 +97,8 @@ label map_forest: #Label controlling what happens when you go to the forest
         
     menu:
         "-Search the area-":
-            if day_random >= 7:
+            $ ran = renpy.random.random()
+            if ran < 0.3:
                 ">You search around the forest and manage to find an odd looking herb."
                 m "This must be wormwood."
                 menu: 
@@ -113,7 +109,7 @@ label map_forest: #Label controlling what happens when you go to the forest
                         pass
                 ">Finding nothing else of interest you return to your office."
                 jump return_office
-            elif day_random > 5:
+            elif ran < 0.6:
                 ">You search around the forest and manage to find an odd looking herb."
                 m "This must be Knotgrass."
                 menu: 
@@ -140,7 +136,8 @@ label map_lake: #Label controlling what happens when you go to the lake
     
     menu:
         "-Search the area-":
-            if day_random >= 7:
+            $ ran = renpy.random.random()
+            if ran < 0.3:
                 ">You search around the lake and manage to find an slender, green vine."
                 m "This must be Niffler's fancy."
                 menu: 
@@ -151,7 +148,7 @@ label map_lake: #Label controlling what happens when you go to the lake
                         pass
                 ">Finding nothing else of interest you return to your office."
                 jump return_office
-            elif day_random > 5:
+            elif ran < 0.6:
                 ">You search around the lake and manage to find an exposed root that looks similar to ginger."
                 m "This must be Root of Aconite."
                 menu: 
@@ -169,7 +166,8 @@ label map_lake: #Label controlling what happens when you go to the lake
 label map_dorms: #Label controlling what happens when you go to the dorms
     menu:
         "-Search the area-":#Luna's Hair
-            if day_random >= 7:
+            $ ran = renpy.random.random()
+            if ran < 0.3:
                 ">You search around the dorms and manage to find a clump for bright orange fur."
                 m "This must belong to some sort of animal."
                 menu: 
@@ -180,7 +178,7 @@ label map_dorms: #Label controlling what happens when you go to the dorms
                         pass
                 ">Finding nothing else of interest you return to your office."
                 jump return_office
-            elif day_random > 5:
+            elif ran < 0.6:
                 ">You search around the dorms and manage to find an comb with some hair in it."
                 m "This must be someones hair."
                 menu: 

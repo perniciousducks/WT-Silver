@@ -102,8 +102,17 @@ label equip_her_makeup:
                         call her_main("well as long as it's not real...","base","glance") 
                     else: #24
                         call her_main("Hm...?","soft","base") 
-                        call her_main("You want me to cover myself in fake cum?","annoyed","suspicious") 
-                        call her_main("{size=-5}(It's a shame it's not real...){/size}","base","down") 
+                        call her_main("Do you want me to cover myself in fake cum, [genie_name]?","annoyed","suspicious") 
+                        call her_main("Or just my face?","annoyed","suspicious") 
+                        menu:
+                            "-Covered-":
+                                $ makeup_choice = "fake_cum_2"
+                                call her_main("Mmmm, thank you [genie_name]...","grin","ahegao") 
+                            "-Face-":
+                                $ makeup_choice = "fake_cum_3"
+                                call her_main("Oh. Alright then [genie_name]...","upset","concerned") 
+
+                        call her_main("{size=-5}(It's a shame this isn't real...){/size}","base","down") 
                         call her_main("Fine, I'll do it [genie_name].","base","glance") 
                 else:
                     if whoring < 8:

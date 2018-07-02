@@ -263,7 +263,7 @@ label handle_book_selection:
     with d3
     "[BookOBJ.book_description]"
     if BookOBJ.done:
-        if result == Armchairs_OBJ:
+        if BookOBJ.id == "Armchairs":
             m "Why would I want to do this to myself again?"
         else:
             ">You already finished this one."

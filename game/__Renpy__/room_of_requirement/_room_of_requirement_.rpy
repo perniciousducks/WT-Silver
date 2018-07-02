@@ -66,13 +66,19 @@ screen candle_light_1:
     add "candle_fire_01" xpos 590 ypos 85
     
 screen candle_light_2:
-    add "candle_fire_01" xpos 240 ypos 85
+    add "candle_fire_02" xpos 240 ypos 85
     
 screen room_of_req_door:
     add "images/room_of_requirement/front_door.png" at fade_in(450, 150, 1)
 
 screen floor_7th_screen:
     add "images/room_of_requirement/corridor.png"
+    add "images/main_room/candle.png" xpos 300 ypos 95
+    add "candle_fire_01" xpos 300 ypos 95
+    add "images/main_room/candle.png" xpos 600 ypos 95
+    add "candle_fire_02" xpos 600 ypos 95
+    add "images/main_room/candle.png" xpos 900 ypos 95
+    add "candle_fire_01" xpos 900 ypos 95
     #TODO: Add some light
     zorder -1
 
@@ -87,6 +93,7 @@ screen floor_7th_menu:
 label enter_room_of_req:
     call blkfade 
     show screen room_of_requirement
+    hide screen room_of_req_door
     hide screen floor_7th_screen
     hide screen floor_7th_menu
     
@@ -98,63 +105,63 @@ label enter_room_of_req:
         m"It's just an empty room....with a mirror?"
         call gen_walk(pos1="door", pos2="200")
         m"...."
-        "So you've found the mirror of Erised"
+        vQ"So you've found the mirror of Erised"
         m"*cough I mean...yes Severus, it is I...*"
         call sna_chibi(xpos="door")
         call gen_chibi(action = "", xpos = "200", ypos = "base")
         m "I'm so glad to be back..."
-        sna "....."
+        call sna_main(".....","snape_05") 
         m "Worth a shot..."
-        sna "I'm quite certain I told you to stay in your office...
-For how long have you been roaming the school grounds?"
+        call sna_main("I'm quite certain I told you to stay in your office... For how long have you been roaming the school grounds?", "snape_06")
         m "This is the first time... hence why I was so lost."
-        sna "...."
+        call sna_main(".....","snape_05")
         m "Only for the past week or so..."
-        sna "...."
+        call sna_main(".....","snape_07")
         m "Yeah pretty much since the moment I got here."
-        sna "*Sigh* Well, you've not been caught so I suppose it's okay as long as you don't make any weird requests or comments to other staff members."
+        call sna_main("*Sigh* Well, you've not been caught so I suppose it's okay as long as you don't make any weird requests or comments to other staff members.","snape_06")
         m "...."
-        sna "...."
+        call sna_main(".....","snape_03") 
         m "I might have ordered a few oddities from Madam Mafkin..."
-        #TODO: snape laugh face
-        sna "Hahahah...That old hag?"
+        call sna_main("Hahahah...That old hag?","snape_28")
         # TODO: now serius
-        sna "She's nuts, she can sow that's for damn sure but she'd never know nor care...do whatever you want with her. "
+        call sna_main("She's nuts, she can sow that's for damn sure but she'd never know nor care...do whatever you want with her. ", "snape_01")
         m "\"I'd rather not...\""
-        sna "Now, continuing where I left off. This mirror that you've found..."
-        #TODO: snape smirkface
-        sna "I thought Albus would've moved it out of the school after the last incident... "
+        call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")
+        call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
         call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
-        sna "I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?"
+        call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_06")
         m "*Squints* Just seems like an old mirror to me, a bit dusty and cloudy thou...hold on a minute."
-        #TODO: snape smirks
-        sna "...."
+        call sna_main(".....", "snape_23")
         m "... I see myself...I've won the house cup."
-        sna "Really?"
+        call sna_main("Really?", "snape_05")
         m "No, I can see myself in Agrabah. I'm surrounded by a harem of women all dedicated to pleasing me."
-        sna "You really are nothing more than a sexual deviant are you? "
+        call sna_main("You really are nothing more than a sexual deviant are you?", "snape_02")
         m "Pretty much."
-        sna "The mirror is known as the mirror of Erised, or Desire backwards..."
+        call sna_main("The mirror is known as the mirror of Erised, or Desire backwards...", "snape_09")
         g9 "Very clever..."
-        sna "Quite...in short, it's designed to show you your deepest desire... but by your comment I'm sure you already got that."
+        call sna_main("Quite...in short, it's designed to show you your deepest desire... but by your comment I'm sure you already got that.", "snape_05")
         m "Your magic might be foreign to me but this seems like nothing more than a party trick, I already know what I desire. "
-        sna "Well, it would be quite dull... if you didn't include the changes I made that had it locked up in the first place."
+        call sna_main("Well, it would be quite dull... if you didn't include the changes I made that had it locked up in the first place.", "snape_20")
         m "I could probably make a good guess already but please, do tell..."
-        sna "Well... the original intentions are quite boring so I expanded the enchantment and it turned out to be incredibly difficult but clever that I am..."
+        call sna_main("Well... the original intentions are quite boring so I expanded the enchantment and it turned out to be incredibly difficult but clever that I am...", "snape_23")
         m "Getting bored!"
-        sna "It's a porn creator.."
-        m "A what, sorry?"
-        sna "A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn."
+        call sna_main("It's a porn creator..", "snape_03")
+        g5 "A what, sorry?"
+        call sna_main("A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn.", "snape_01")
         g5 "And you didn't tell me a thing like this existed?"
-        sna "Well, it didn't exist until I made it...and I thought it was moved or destroyed."
-        m "Get out."
-        sna "What?"
-        m "I said get out, I found it so I get to keep it."
-        sna "But, I thought maybe I could move..."
-        m "It's staying right where it is, I've been getting incredibly bored lately and might consider roaming the school a bit more...actually, I feel the urge to take a trip to the girls dormitory right now."
-        sna "Fine, it stays. Please don't... just remember that it will take time for it to reshape and create imagery so check back every now and then."
+        call sna_main("Well, it didn't exist until I made it...and I thought it was moved or destroyed.", "snape_26")
+        g4 "Get out."
+        call sna_main("What?", "snape_05")
+        g9 "I said get out, I found it so I get to keep it."
+        call sna_main("But, I thought maybe I could move...", "snape_06")
+        g4 "It's staying right where it is, I've been getting incredibly bored lately and might consider roaming the school a bit more...actually, I feel the urge to take a trip to the girls dormitory right now."
+        call sna_main("Fine, it stays. Please don't... just remember that it will take time for it to reshape and create imagery so check back every now and then.", "snape_06")
         m "Noted... Out. Now."
+        
+        hide screen snape_main
+        hide screen snape_head
+        hide screen bld1
         call give_reward("You've unlocked the room of requirement", "images/store/06.png") 
         call sna_chibi(action="hide")
         call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)

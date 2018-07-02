@@ -50,11 +50,11 @@ label floor_7th:
             call gen_walk(pos1="200", pos2="door")
             m"Maybe if I...or I could..."
             call gen_walk(pos1="door", pos2="200")
-            m"I could be in my office jacking off right now!!"
+            g11"I could be in my office jacking off right now!!"
             show screen room_of_req_door
             pause 1
             call gen_chibi(xpos="200", ypos="base")
-            m"Well... will you look at that"
+            g9"Well... will you look at that"
             hide screen room_of_req_door
             call screen floor_7th_menu
         else:

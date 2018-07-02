@@ -4,9 +4,6 @@ label door:
     $ menu_y = 0.5 #Menu is moved to the middle.
 
     menu:
-        "Go to 7th floor":
-            hide screen main_room_menu
-            jump floor_7th
         "-Examine the door-" if not door_examined:
             $ door_examined = True
             hide screen genie

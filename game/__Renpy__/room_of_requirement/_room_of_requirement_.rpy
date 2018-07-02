@@ -69,30 +69,69 @@ screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
     
 screen room_of_req_door:
-    add "images/room_of_requirement/front_door.png" at fade_in(450, 150, 1)
+    add "images/room_of_requirement/front_door.png" at fade_in(200, 160, 1)
+    zorder -1
 
 screen floor_7th_screen:
     add "images/room_of_requirement/corridor.png"
+    add "images/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
+    add "flower_animation" xpos 830 ypos 160 zoom 0.60
+    add "images/main_room/candle.png" xpos 0 ypos 95
+    add "candle_fire_02" xpos 0 ypos 95
     add "images/main_room/candle.png" xpos 300 ypos 95
     add "candle_fire_01" xpos 300 ypos 95
     add "images/main_room/candle.png" xpos 600 ypos 95
     add "candle_fire_02" xpos 600 ypos 95
     add "images/main_room/candle.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
+    
     #TODO: Add some light
     zorder -1
+    
+image flower_animation:
+    "images/animation/Bouquet4.png"
+    pause 30
+    "images/animation/BouquetPaf.png"
+    pause .2
+    "images/animation/Flower1.png"
+    pause .2
+    "images/animation/Flower2.png"
+    pause .2
+    "images/animation/Flower3.png"
+    pause .2
+    "images/animation/Flower4.png"
+    pause 30
+    "images/animation/FlowerPaf.png"
+    pause .2
+    "images/animation/Bouquet1.png"
+    pause .2
+    "images/animation/Bouquet1.png"
+    pause .2
+    "images/animation/Bouquet2.png"
+    pause .2
+    "images/animation/Bouquet3.png"
+    pause .2
+    "images/animation/Bouquet4.png"
+    repeat
+    
 
+screen floor_7th_door:
+    add "images/room_of_requirement/front_door.png" xpos 200 ypos 160
+    zorder -1
+    
 screen floor_7th_menu:
     imagebutton:
-        xpos 450
-        ypos 150
+        xpos 200
+        ypos 160
         idle "images/room_of_requirement/front_door.png"
         hover "images/room_of_requirement/front_door.png"
         action [Jump("enter_room_of_req")]
+    zorder -1
     
 label enter_room_of_req:
     call blkfade 
     show screen room_of_requirement
+    hide screen floor_7th_door
     hide screen room_of_req_door
     hide screen floor_7th_screen
     hide screen floor_7th_menu
@@ -123,7 +162,6 @@ label enter_room_of_req:
         call sna_main(".....","snape_03") 
         m "I might have ordered a few oddities from Madam Mafkin..."
         call sna_main("Hahahah...That old hag?","snape_28")
-        # TODO: now serius
         call sna_main("She's nuts, she can sow that's for damn sure but she'd never know nor care...do whatever you want with her. ", "snape_01")
         m "\"I'd rather not...\""
         call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")

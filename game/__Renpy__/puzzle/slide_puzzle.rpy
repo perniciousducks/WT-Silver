@@ -55,7 +55,26 @@ label update_puzzle_slide:
         $renpy.play("sounds/gulp.mp3")
         m "...."
         m "I feel no difference..."
-        m "Hold on a minute, there's a book/notes in here..."
+        m "Hold on a second, there's a book in here..."
+        m "Seems to be some sort of notebook, I'll skim through it....."
+        hide screen chair_right
+        hide screen genie
+        show screen reading
+        with Dissolve(0.3)
+        m "My dear phoenix has been losing its feathers lately, I think it's time soon..... "
+        m "*Time for what?*"
+        m "That Potter boy is mighty cute, looks just like his father.... "
+        g9 "*Well, well....*"
+        m "Severus gave me a weird look today I wonder what he thinks about my......"
+        g4 "*This is all trash...*"
+        m "*Wait a minute.... this seems interesting.*"
+        m "I was walking around in the seventh floor corridor looking for a bathroom..."
+        m "Whilst searching a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
+        m "* I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.*"
+        show screen chair_right
+        show screen genie
+        hide screen reading
+        with Dissolve(0.3)
         call give_reward("You've unlocked something on the 7th floor","/images/store/unlock_genie_question_mark.png")
         $ unlocked_7th = True
     else:

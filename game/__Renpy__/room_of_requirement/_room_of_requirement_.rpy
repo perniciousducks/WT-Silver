@@ -74,8 +74,8 @@ screen room_of_req_door:
 
 screen floor_7th_screen:
     add "images/room_of_requirement/corridor.png"
-    add "images/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
-    add "flower_animation" xpos 830 ypos 160 zoom 0.60
+    #add "images/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
+    #add "flower_animation" xpos 830 ypos 160 zoom 0.60
     add "images/main_room/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
     add "images/main_room/candle.png" xpos 300 ypos 95
@@ -88,6 +88,7 @@ screen floor_7th_screen:
     #TODO: Add some light
     zorder -1
     
+#animation of flower for painting maybe?    
 image flower_animation:
     "images/animation/Bouquet4.png"
     pause 30

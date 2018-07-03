@@ -69,7 +69,7 @@ label update_puzzle_slide:
         g4 "*This is all trash...*"
         m "*Wait a minute.... this seems interesting.*"
         m "I was walking around in the seventh floor corridor looking for a bathroom..."
-        m "Whilst searching a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
+        m "Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
         m "* I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.*"
         show screen chair_right
         show screen genie

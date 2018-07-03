@@ -145,7 +145,7 @@ label enter_room_of_req:
         call gen_walk(pos1="door", pos2="200")
         m"...."
         vQ"So you've found the mirror of Erised"
-        m"*cough I mean...yes Severus, it is I...*"
+        m"cough I mean...yes Severus, it is I... \"Dumbledore\""
         call sna_chibi(xpos="door")
         call gen_chibi(action = "", xpos = "200", ypos = "base")
         m "I'm so glad to be back..."

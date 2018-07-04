@@ -48,9 +48,9 @@ label wardrobe_init:
         #Wardrobe Icons
         $ icon_xpos_offset = 0
         $ icon_ypos_offset = 0
-        
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
+
+    #1.4
+    if not hasattr(renpy.store,'wardrobe_load_custom_outfit') or reset_persistants:
+        $ wardrobe_load_custom_outfit = True
 
     return
-    
-    

@@ -1,11 +1,11 @@
 
 
 init python:
-    
+
     class hermione_character_face(silver_character_face):
         description = ""
         id = 0
-        
+
         eyes = ""
         eye_color = ""
         nose = ""
@@ -13,13 +13,13 @@ init python:
         mouth = ""
         lipstick = ""
         tears = ""
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def set(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def getLayers(self, parent):
             layers = []
             if self.cheeks != "":
@@ -33,7 +33,7 @@ init python:
             if self.tears != "":
                 layers.append(parent.root+"body/face/tears/"+self.tears)
             return layers
-    
+
     class hermione_character_chibi(silver_character_chibi):
         level_ref = [
         ["characters/hermione/chibis/walk/h_walk_n_01.png","ch_hem blink_n","ch_hem blink_n_flip","ch_hem walk_n","ch_hem walk_n_flip","ch_hem run_a","ch_hem run_a_flip","ch_hem fly_a","ch_hem fly_a_flip"],
@@ -44,7 +44,7 @@ init python:
         ["characters/hermione/chibis/walk/h_walk_g_01.png","ch_hem blink_g","ch_hem blink_g_flip","ch_hem walk_g","ch_hem walk_g_flip","ch_hem run_a","ch_hem run_a_flip","ch_hem fly_a","ch_hem fly_a_flip"],
         ["characters/hermione/chibis/walk/h_walk_h_01.png","ch_hem blink_h","ch_hem blink_h_flip","ch_hem walk_h","ch_hem walk_h_flip","ch_hem run_a","ch_hem run_a_flip","ch_hem fly_a","ch_hem fly_a_flip"]
         ]
-        
+
         def setLevel(self, level):
             if level >= 0 and level < len(self.level_ref):
                 self.stand_img = self.level_ref[level][0]
@@ -56,20 +56,20 @@ init python:
                 self.run_img_f = self.level_ref[level][6]
                 self.fly_img = self.level_ref[level][7]
                 self.fly_img_f = self.level_ref[level][8]
-    
+
     class hermione_character_uniform(sliver_character_uniform):
         level_ref = [["",""],[1,1],[2,1],[3,2],[4,3],[5,4],[6,4]]
-        
+
         bot_color = ""
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def setLevel(self, level):
             if level >= 0 and level < len(self.level_ref):
                 self.top = self.level_ref[level][0]
                 self.bot = self.level_ref[level][1]
-        
+
         def getLayers(self, parent):
             layers = []
             if self.panties != "" and self.wear_panties and not self.wear_bot:
@@ -81,10 +81,10 @@ init python:
             if self.top != "" and self.wear_top:
                 layers.append(parent.root+"clothes/uniform/top/"+str(self.top)+".png")
             return layers
-    
+
 
 label __init_variables:
-    
+
 
     if not hasattr(renpy.store,'reset_char_obj'): #important!
         $ reset_char_obj            = True
@@ -92,19 +92,19 @@ label __init_variables:
     if not hasattr(renpy.store,'hermione_SC'): #important!
         $ hermione_SC = silver_character(
             root = "characters/hermione/",
-            
+
             xpos = 370,
             ypos = 0,
-            
+
             name = "Hermione Granger",
             pet_name = "Miss Granger",
             genie_name = "Professor",
-            
+
             eye_color = "brown",
-        
+
             screen = "test_herm_obj",
             screen_head = "test_herm_head_obj",
-            
+
             chibi = hermione_character_chibi(
                 stand_img = "characters/hermione/chibis/walk/h_walk_a_01.png",
                 blink_img = "ch_hem blink_a",
@@ -118,10 +118,10 @@ label __init_variables:
                 xpos = 540,
                 ypos = 250
             ),
-            
+
             char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250),
             h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
-            
+
             body = sliver_character_body(
                 head = sliver_character_head(
                     expression = None,
@@ -136,9 +136,9 @@ label __init_variables:
                 torso_pressed = "torso_pressed.png",
                 abdomen = "abdomen.png",
                 legs = "legs_1.png"
-                
+
             ),
-            
+
             uniform = hermione_character_uniform(
                 top = 1,
                 bot = 1,
@@ -150,7 +150,7 @@ label __init_variables:
 
     $ hermione_SC.faces = getCharacterFaces('hermione_face',hermione_character_face)
     $ hermione_SC.setFace(1)
-    
+
     $ reset_char_obj             = False
 
     return
@@ -164,19 +164,19 @@ label her_init:
     if not hasattr(renpy.store,'hermione_SC'): #important!
         $ hermione_SC = silver_character(
             root = "characters/hermione/",
-            
+
             xpos = 370,
             ypos = 0,
-            
+
             name = "Hermione Granger",
             pet_name = "Miss Granger",
             genie_name = "Professor",
-            
+
             eye_color = "brown",
-        
+
             screen = "test_herm_obj",
             screen_head = "test_herm_head_obj",
-            
+
             chibi = hermione_character_chibi(
                 stand_img = "characters/hermione/chibis/walk/h_walk_a_01.png",
                 blink_img = "ch_hem blink_a",
@@ -190,10 +190,10 @@ label her_init:
                 xpos = 540,
                 ypos = 250
             ),
-            
+
             char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250),
             h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
-            
+
             body = sliver_character_body(
                 head = sliver_character_head(
                     expression = None,
@@ -208,9 +208,9 @@ label her_init:
                 torso_pressed = "torso_pressed.png",
                 abdomen = "abdomen.png",
                 legs = "legs_1.png"
-                
+
             ),
-            
+
             uniform = hermione_character_uniform(
                 top = 1,
                 bot = 1,
@@ -221,7 +221,7 @@ label her_init:
         )
 
     if not hasattr(renpy.store,'hermione_base') or reset_persistants:
-    
+
         #Body
         $ hermione_base             = "characters/hermione/body/base/hermione_base.png"
         $ hermione_body             = "characters/hermione/body/face/preset/body_01.png"     ### REMOVED! NOT IN USE!
@@ -253,7 +253,7 @@ label her_init:
         $ hermione_emote_question   = False
         $ hermione_emote_sweat      = False
         $ hermione_emote_suprize    = False
-    
+
 
         #Breasts
         $ hermione_breasts          = "characters/hermione/body/breasts/breasts_nipfix.png"
@@ -285,7 +285,7 @@ label her_init:
         $ h_hair_style              = "A"
         $ h_hair_color              = 1
         $ h_can_color               = ["A","B"]
-    
+
 
         #Actions/Posing
         $ hermione_action        = "none"
@@ -296,29 +296,29 @@ label her_init:
         $ h_action_bottom        = ""
         $ h_action_panties       = ""
         $ h_action_gloves        = ""
-    
-    
+
+
         $ hermione_action_left_arm  = "characters/hermione/clothes/uniform/action/00_blank.png"
         $ hermione_action_right_arm = "characters/hermione/clothes/uniform/action/00_blank.png"
         $ hermione_action_a         = "characters/hermione/clothes/uniform/action/00_blank.png"
         $ hermione_action_b         = "characters/hermione/clothes/uniform/action/00_blank.png"
-    
+
         $ h_action_right_arm        = "00_blank.png"
         $ h_action_left_arm         = "00_blank.png"
         $ h_action_a                = "00_blank.png"
         $ h_action_b                = "00_blank.png"
-    
+
         $ h_action_show_arms        = False
         $ h_action_show_bra         = True
         $ h_action_show_panties     = True
         $ h_action_show_top         = True
         $ h_action_show_skirt       = True
-    
+
         $ hermione_action_bra       = "characters/hermione/clothes/underwear/base/bra_base.png"
         $ hermione_action_panties   = "characters/hermione/clothes/underwear/base/panties_base.png"
         $ hermione_action_top       = "characters/hermione/clothes/tops/base/uni_top_1.png"
         $ hermione_action_skirt     = "characters/hermione/clothes/bottoms/base/uni_skirt_1.png"
-    
+
         $ custom_outfit             = 0
         $ hermione_costume          = False
         $ hermione_wear_costume     = False
@@ -333,7 +333,7 @@ label her_init:
         $ h_xpos                    = 0   #NOT IN USE
         $ h_ypos                    = 0   #NOT IN USE
         $ hermione_zorder           = 5
-    
+
         $ hermione_head_xpos        = 605
         $ hermione_head_ypos        = 235
         $ hermione_head_xpos_name   = "base" #Stored xpos name
@@ -343,8 +343,8 @@ label her_init:
         $ her_head_only             = 300 #(340,300,290) #NOT IN USE
         $ her_head_tits             = 235 #NOT IN USE
 
-    
-    
+
+
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
     ### ADD MORE BODY PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
 
@@ -356,7 +356,7 @@ label her_init:
 label her_clothing_init:
 
     if not hasattr(renpy.store,'h_request_wear_top') or reset_persistants:
-    
+
         #Save State
         $ h_request_wear_top              = True
         $ h_request_wear_bra              = False
@@ -376,7 +376,7 @@ label her_clothing_init:
         $ h_request_wear_ears             = False
         $ h_request_wear_makeup           = False
         $ h_request_wear_body_accs        = False
-    
+
         $ h_request_wear_buttplug         = False
         $ h_request_wear_piercings        = False
         $ h_request_wear_tattoos          = False
@@ -418,7 +418,7 @@ label her_clothing_init:
         $ h_neckwear                = "00_blank"
         $ h_neckwear_color          = "base"
 
-        $ hermione_body_accs_list   = [] 
+        $ hermione_body_accs_list   = []
 
         $ hermione_gloves           = "characters/hermione/clothes/gloves/base/00_blank.png"
         $ h_gloves                  = "00_blank"
@@ -445,8 +445,8 @@ label her_clothing_init:
         $ h_glasses_color           = "base"
 
         $ hermione_ears             = "characters/hermione/accessories/ears/00_blank.png"
-        $ h_ears                    = "00_blank" 
-    
+        $ h_ears                    = "00_blank"
+
 
         #Miscellaneous
         $ hermione_wear_buttplug     = False
@@ -460,15 +460,15 @@ label her_clothing_init:
         $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/00_blank.png"
         $ h_ear_piercing             = "00_blank"
         $ h_ear_piercing_color       = "base"
-    
+
         $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/00_blank.png"
         $ h_nipple_piercing          = "00_blank"
         $ h_nipple_piercing_color    = "base"
-    
+
         $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/00_blank.png"
         $ h_belly_piercing           = "00_blank"
         $ h_belly_piercing_color     = "base"
-    
+
         $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/00_blank.png"
         $ h_intimate_piercing        = "00_blank"
         $ h_intimate_piercing_color  = "base"
@@ -502,7 +502,7 @@ label her_clothing_init:
         $ hermione_wear_piercings         = False
         $ hermione_wear_tattoos           = False
 
-        
+
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
     ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
 
@@ -523,7 +523,7 @@ label her_chibi_init:
         $ hermione_chibi_run_f       = "ch_hem run_a_flip"
         $ hermione_chibi_fly         = "ch_hem fly_a"
         $ hermione_chibi_fly_f       = "ch_hem fly_a_flip"
-    
+
         $ her_chibi_dance_xpos       = 350 #Not in use
         $ her_chibi_dance_ypos       = 180 #Not in use
 
@@ -532,12 +532,12 @@ label her_chibi_init:
         $ u_h_animation_paused       = ""
         $ u_h_ani_xpos               = 0
         $ u_h_ani_ypos               = 0
-    
+
         $ hermione_SC.chibi.xpos     = 540
         $ hermione_SC.chibi.ypos     = 250
         $ hermione_chibi_zorder      = 3
 
-        
+
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
     ### ADD MORE CHIBI PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
 
@@ -548,74 +548,74 @@ label her_clothing_lists_init: #Lists update at every game start!
 
     #Tops
     $ h_top_nipfix_list             = ["onepiece_microdress",
-                                       "top_fishnets",  
+                                       "top_fishnets",
                                       ]
 
-    $ h_top_has_no_recolor_list     = ["wicked_leather_jacket_short_sleeves",  
-                                       "wicked_leather_jacket_short_sleeves_open", 
-                                       "wicked_leather_jacket_sleeveless",  
-                                       "wicked_leather_jacket_sleeveless_open", 
-                                       "wicked_leather_jacket_sleeves",  
-                                       "wicked_leather_jacket_sleeves_open", 
+    $ h_top_has_no_recolor_list     = ["wicked_leather_jacket_short_sleeves",
+                                       "wicked_leather_jacket_short_sleeves_open",
+                                       "wicked_leather_jacket_sleeveless",
+                                       "wicked_leather_jacket_sleeveless_open",
+                                       "wicked_leather_jacket_sleeves",
+                                       "wicked_leather_jacket_sleeves_open",
                                        "wicked_rocker_top",
                                        "top_fishnets",
                                        ]
-    
-    $ h_top_remove_bra_list         = ["uni_top_1", 
-                                       "uni_top_2", 
-                                       "uni_top_3", 
-                                       "uni_top_4", 
-                                       "uni_top_6", 
-                                       "uni_top_cheer_skimpy", 
-                                       "uni_top_cheer",   
-                                       "normal_pullover", 
-                                       "normal_sweater",  
+
+    $ h_top_remove_bra_list         = ["uni_top_1",
+                                       "uni_top_2",
+                                       "uni_top_3",
+                                       "uni_top_4",
+                                       "uni_top_6",
+                                       "uni_top_cheer_skimpy",
+                                       "uni_top_cheer",
+                                       "normal_pullover",
+                                       "normal_sweater",
                                        ]
 
-    $ h_lift_top_list               = ["uni_top_1", 
-                                       "uni_top_2", 
-                                       "uni_top_3", 
-                                       "uni_top_4", 
-                                       "uni_top_6", 
-                                       "normal_pullover",   
-                                       "normal_pullover_sexy", 
-                                       "top_fishnets", 
-                                       "wicked_rocker_top",    
+    $ h_lift_top_list               = ["uni_top_1",
+                                       "uni_top_2",
+                                       "uni_top_3",
+                                       "uni_top_4",
+                                       "uni_top_6",
+                                       "normal_pullover",
+                                       "normal_pullover_sexy",
+                                       "top_fishnets",
+                                       "wicked_rocker_top",
                                        ]
 
 
     #Bottoms
-    $ h_skirts_list                 = ["uni_skirt_1", 
-                                       "uni_skirt_2", 
-                                       "uni_skirt_3", 
-                                       "uni_skirt_4", 
-                                       "uni_skirt_5", 
-                                       "uni_skirt_1_low", 
-                                       "uni_skirt_2_low",   
-                                       "uni_skirt_3_low", 
-                                       "uni_skirt_4_low", 
-                                       "uni_skirt_cheer",   
-                                       "uni_skirt_cheer_skimpy", 
-                                       "skirt_belted_mini",  
-                                       "skirt_belted_micro",  
+    $ h_skirts_list                 = ["uni_skirt_1",
+                                       "uni_skirt_2",
+                                       "uni_skirt_3",
+                                       "uni_skirt_4",
+                                       "uni_skirt_5",
+                                       "uni_skirt_1_low",
+                                       "uni_skirt_2_low",
+                                       "uni_skirt_3_low",
+                                       "uni_skirt_4_low",
+                                       "uni_skirt_cheer",
+                                       "uni_skirt_cheer_skimpy",
+                                       "skirt_belted_mini",
+                                       "skirt_belted_micro",
                                        ]
 
-    $ h_pants_list                  = ["pants_jeans_long", 
-                                       "pants_jeans_short", 
-                                       "pants_retro_shorts", 
-                                       "pants_rocker",   
+    $ h_pants_list                  = ["pants_jeans_long",
+                                       "pants_jeans_short",
+                                       "pants_retro_shorts",
+                                       "pants_rocker",
                                        ]
 
     #One-pieces & Nighties
-    $ h_onepieces_list              = ["onepiece_microdress", 
-                                       "onepiece_bunny", 
-                                       "onepiece_swimsuit", 
+    $ h_onepieces_list              = ["onepiece_microdress",
+                                       "onepiece_bunny",
+                                       "onepiece_swimsuit",
                                        "onepiece_swimsuit_halterless",
-                                       "onepiece_bikini_string", 
+                                       "onepiece_bikini_string",
                                       ]
 
-    $ h_onepieces_nighties_list     = ["nighty_short", 
-                                       "nighty_long", 
+    $ h_onepieces_nighties_list     = ["nighty_short",
+                                       "nighty_long",
                                        "nighty_dress",
                                       ]
 
@@ -628,9 +628,10 @@ label her_clothing_lists_init: #Lists update at every game start!
                                       ]
 
     #Piercings
-    $ ear_piercings_list            = ["ears_hearts_large", 
-                                       "ears_hearts", 
+    $ ear_piercings_list            = ["ears_hearts_large",
+                                       "ears_hearts",
                                        "ears_pearls",
+                                       "ears_straight",
                                       ]
     $ nipple_piercings_list         = ["nipples_pearls",
                                       ]
@@ -646,7 +647,7 @@ label her_progress_init:
 
     #Update 1.3
     if not hasattr(renpy.store,'whoring') or reset_persistants:
-    
+
         # Hermione levels
         $ whoring = 0 #Default: 0
         $ hg_whoring = 0
@@ -658,7 +659,7 @@ label her_progress_init:
 
         $ mad = 0 #Every day -1.
         $ being_mean = 0 #+1 every time you are being mean to hermione.
-    
+
         $ dates = 0 #Tracks how many times Hermione been tutored.
         $ tutoring_events = 0 #Get's +1 point every time a tutoring special event happens.
         $ knowledge = 0
@@ -683,29 +684,29 @@ label her_progress_init:
         $ hermione_takes_classes = False #Turns True when Hermione becomes unavailable for summon after performing personal request in the morning.
         $ hermione_sleeping = False
 
-    
+
         ### HERMIONE FAVOURS ###
-    
+
         #Personal Favor Points
         $ hg_pf_points = [0] * 12
         $ hg_pf_hearts = [0] * 12
         $ hg_pf_complete = [False] * 12
-        
-        
+
+
         #Public Request Points
         $ hg_pr_points = [0] * 11
         $ hg_pr_complete = [False] * 11
         $ hg_pr_InProgress = [False] * 11
-    
+
         #Public Request Vars.
         $ hg_pr_SexWithClassmate_AltFlag = False
-    
+
         #Public Shaming Flags
         $ hg_ps_PantyThief_SoakedPantiesFlag = False
 
         $ transparent_quest = False
 
-    
+
         ### HERMIONE EVENT VARS ###
 
         $ v_tutoring = 0
@@ -746,7 +747,7 @@ label her_progress_init:
         $ buttplug_1_question    = False
         $ buttplug_2_question    = False
         $ buttplug_3_question    = False
-    
+
     #Custom Variables Previously Defined at desk
         $ current_job = 0
         $ custom_breast = 0
@@ -755,27 +756,26 @@ label her_progress_init:
 
     #Clothing Events
         $ hermione_door_event_happened = False
-    
+
     #Rewards
     if not hasattr(renpy.store,'reward_her_wool_clothing') or reset_persistants:
-        $ reward_her_wool_clothing = False   
-        $ reward_her_lace_clothing = False  
+        $ reward_her_wool_clothing = False
+        $ reward_her_lace_clothing = False
         $ reward_her_latex_clothing = False
-        $ autograph = False #Professor Lockhart's tattoo. 
-    
+        $ autograph = False #Professor Lockhart's tattoo.
+
     if not hasattr(renpy.store,'reward_her_red_lipstick') or reset_persistants:
         $ reward_her_red_lipstick = False
         $ reward_her_pink_lipstick = False
         $ reward_her_black_lipstick = False
-        
-    
+
+
     #Update 1.31
     if not hasattr(renpy.store,'cat_ears_potion_return') or reset_persistants:
 
         $ cat_ears_potion_return = False
-        
-        
-    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
-        
-    return
 
+
+    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
+
+    return

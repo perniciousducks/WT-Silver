@@ -1,17 +1,14 @@
 
 
 label summon_snape:
-    
-    call play_sound("door") 
+
+    call play_sound("door")
     $ menu_x = 0.5
     $ menu_y = 0.5
 
-    $ snape_chibi_xpos = 500 #Mid
-    $ snape_chibi_ypos = 240
-    show screen snape_01 #Snape stands still.
-    call bld 
+    call sna_chibi("stand","mid","base")
 
-    call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base") 
+    call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base")
 
     label snape_ready:
         pass
@@ -20,7 +17,7 @@ label summon_snape:
         "-Get a potion-" if whoring > 10:
             hide screen snape_main
             with fade
-            
+
             sna_[9] "I notice you're making a bit of progress on Miss Granger."
             sna_[21] "I've got some potions here that normally aren't available to students."
             sna_[21] "These might help speed up the process..."
@@ -87,8 +84,8 @@ label summon_snape:
                                         sna_[19] "I also put an undetectable extension charm on the cannister... Promise to tell me what happens!"
                                     "-no-":
                                           sna_[7] "Too bad..."
-                                          jump snape_potion_choice  
-                                          
+                                          jump snape_potion_choice
+
                                 $ potion_version = 2
                             "-Permanent breast expansion-":
                                 sna_[18] "The milk production will still only last a day..."
@@ -100,14 +97,14 @@ label summon_snape:
                                         sna_[19] "Fantastic!!!"
                                     "-no-":
                                           sna_[7] "Too bad..."
-                                          jump snape_potion_choice  
+                                          jump snape_potion_choice
 
                                 $ potion_version = 3
                         ">Snape quickly pushes the milky potion into your hands."
                         ">Milking potion received!"
                         $ potion_inv.add("p_milk_potion")
                     jump snape_ready
-                
+
                 "-Veritaserum-" if potion_inv.has("p_veritaserum"):
                     ">You already have a Veritaserum potion."
                     jump snape_ready
@@ -120,7 +117,7 @@ label summon_snape:
                     ">Veritaserum received!"
                     $ potion_inv.add("p_veritaserum")
                     jump snape_ready
-                
+
                 "-Voluptatem-" if potion_inv.has("p_voluptatem"):
                     ">You already a bottle of Voluptatem."
                     jump snape_ready
@@ -136,11 +133,11 @@ label summon_snape:
                 "\"Never mind.\"":
                     jump snape_ready
 
-        "\"Talk-\"" if not chitchated_with_snape:
+        "-Talk-" if not chitchated_with_snape:
             $ chitchated_with_snape = True
             jump snape_talk
-        
-        "\"Let's hang.\"" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
+
+        "-Let's hang-" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
                 jump not_today #Snape says: "I am busy tonight."
 #            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
@@ -150,14 +147,14 @@ label summon_snape:
             else:
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
-                
-        "\"Never mind.\"":
+
+        "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
 
             if daytime:
                 sna "Alright, back to work then..."
-            else: 
+            else:
                 sna "Goodnight then."
 
             $ snape_busy = True
@@ -165,18 +162,18 @@ label summon_snape:
             hide screen bld1
             hide screen snape_main
             with d3
-            call play_sound("door") 
+            call play_sound("door")
 
             if daytime:
                 call play_music("brittle_rille") #Day Theme
                 jump day_main_menu
-            else: 
+            else:
                 call play_music("manatees") #Night Theme
                 jump night_main_menu
 
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    
+
     show screen blkfade
     $ fire_in_fireplace = True
     hide screen genie
@@ -185,21 +182,21 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     show screen desk
     show screen with_snape_animated
     show screen fireplace_fire
-    
+
     hide screen snape_01 #Snape stands still.
     hide screen bld1
     hide screen snape_main
     with d3
-    
+
     hide screen blkfade
     with fade
-    
-   
+
+
     if snape_against_hermione: #Turns True after event_08 (Hermione shows up for the first time).
                                #Activates special event when hanging out with Snape next time.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape
-    
+
     if snape_against_hermione_02: #Activates after second visit from Hermione (event_09).
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_02
@@ -207,68 +204,68 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     if hg_pf_DanceForMe_OBJ.points >= 2 and not snape_invated_to_watch: #After second dance where Snape entered room.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_03
-    
+
     #ADD sQuest here "Pensieve Event"
-    
+
     if wine >= 1 and not wine_not: # Using Dumbledor's wine for the first time.
         $ wine_not = True # Turns True after you use Dumbledore's wine in the "Snape dating" for the first time. Makes sure the cut-scene is shown only once.
-        call wine_first 
+        call wine_first
     elif wine >= 1 and wine_not: # Using Dumbledor's wine not for the first time.
-        call wine_not_first 
+        call wine_not_first
     else:
         pass
-    
-    
-    
-    
-    
+
+
+
+
+
     if snape_friendship >= 5 and snape_events == 0:
-        call date_with_snape_01 
-        
+        call date_with_snape_01
+
     elif snape_friendship >= 12 and snape_events == 1: #LEVEL 02
-        call date_with_snape_02 
-        
+        call date_with_snape_02
+
     elif snape_friendship >= 19 and snape_events == 2: #LEVEL 03
-        call date_with_snape_03 
-        
+        call date_with_snape_03
+
     elif snape_friendship >= 27 and snape_events == 3: #LEVEL 04
-        call date_with_snape_04 
-        
+        call date_with_snape_04
+
     elif snape_friendship >= 34 and snape_events == 4: #LEVEL 05
-        call date_with_snape_05 
-        
+        call date_with_snape_05
+
     elif snape_friendship >= 41 and snape_events == 5: #LEVEL 06. Can't proceed after this until whoring >= Lv 3.
-        call date_with_snape_06 
-      
+        call date_with_snape_06
+
     elif snape_friendship >= 48 and snape_events == 6: #LEVEL 07
-        call date_with_snape_07 
-         
+        call date_with_snape_07
+
     elif snape_friendship >= 55 and snape_events == 7: #LEVEL 08
-        call date_with_snape_08 
-        
+        call date_with_snape_08
+
     elif snape_friendship >= 62 and snape_events == 8: #LEVEL 09
-        call date_with_snape_09 
-        
+        call date_with_snape_09
+
     elif snape_friendship >= 69 and snape_events == 9: #EVENT 10
-        call date_with_snape_10 
-        
+        call date_with_snape_10
+
     elif snape_friendship >= 76 and snape_events == 10: #EVENT 10
-        call date_with_snape_11 
-        
+        call date_with_snape_11
+
     elif snape_friendship >= 83 and snape_events == 11: #EVENT 11
-        call date_with_snape_12 
-         
+        call date_with_snape_12
+
     elif snape_friendship >= 88 and snape_events == 12: #EVENT 12. If whoring level > 5.
-        call date_with_snape_13 
-        
+        call date_with_snape_13
+
     elif snape_friendship >= 93 and snape_events == 13: #EVENT 13
-        call date_with_snape_14 
-        
+        call date_with_snape_14
+
     elif snape_friendship >= 98 and snape_events == 14: #EVENT 14
-        call date_with_snape_15 
-        
+        call date_with_snape_15
+
     else:
-            
+
         show screen bld1
         with d3
         $ renpy.play('sounds/win_04.mp3')   #Not loud.
@@ -277,15 +274,15 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him has improved."
         hide screen bld1
         with d3
-        
-        
 
- 
+
+
+
     $ snape_friendship +=1
-   
+
     jump day_start
-    
-   
+
+
 ### SPECIAL DATE ###
 label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     $ snape_against_hermione = False #Turns True after event_08. Activates special event (THIS EVENT) when hanging out with Snape next time.
@@ -340,7 +337,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     m "I know... She kinda forced her way in..."
     sna_[1] "I imagine she did..."
     sna_[1] "What did she want?"
-    
+
     if jerk_off_session:
         m "I'm not sure..."
         sna_[11] "??"
@@ -358,29 +355,29 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
         m "Yeah... We immortals tend to not give a fuck."
         sna_[9] "Understandable..."
         sna_[10] "Unfortunately, us mere mortals cannot afford such a luxury..."
-        
+
     else:
         m "Not sure... She was talking a lot..."
         m "Something about some \"greefeendo\" points... and..."
         m "Er... I wasn't paying attention to be honest..."
         sna_[1] "Nah... Probably another load of self-righteous crap..."
         sna_[7] "She is famous for that..."
-    
+
 
     sna_[7] "I have a class early tomorrow, so let us call it a night."
     m "What about you teaching me magic and stuff?"
     sna_[10] "Yeah, absolutely..."
     sna_[10] "Next time..."
     m "Alright..."
-    
-    
 
-    
+
+
+
     $ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
-    
+
     jump day_start
-    
-#######################################################################################################################    
+
+#######################################################################################################################
 label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE. (Where she says that she sent letter to the ministry.)
     show screen bld1
     with d5
@@ -395,7 +392,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "Well, alright, let it out..."
     sna_[2] "How come one tiny....cunt, is able to cause me so much grief?!"
     sna_[4] "I thought with you as my ally I will have a chance to--"
-    m "To unclench?" 
+    m "To unclench?"
     sna_[2] "Yeah, that could be the word..."
     sna_[16] "But all I did was give her more leverage to harass me with..."
     sna_[16] "She's even turning the teachers against me now..."
@@ -467,7 +464,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
             sna_[10] "Er..."
             sna_[10] "This is still you, genie, right?"
             m "Yeah, yeah, still here..."
-            sna_[18] "OK, good."  
+            sna_[18] "OK, good."
             if d_flag_01 and d_flag_02 and d_flag_03:
                 pass
             else:
@@ -520,19 +517,19 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[6] "Now, pour me some more wine."
 
     ">You spend rest of the evening in Snape's company drinking your worries away."
-    
-    $ snape_against_hermione_02 = False #Turns True after event_10. Activates special event (THIS EVENT) when hanging out with Snape next time.   
+
+    $ snape_against_hermione_02 = False #Turns True after event_10. Activates special event (THIS EVENT) when hanging out with Snape next time.
     $ hermione_is_waiting_02 = True #Triggers another visit from Hermione. (Event_11)
-   
+
 
     #$ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
     hide screen bld1
     with d3
     $ days_without_an_event = 0 #Making sure next even will not start right away.
     jump day_start
-   
-   
-#######################################################################################################################    
+
+
+#######################################################################################################################
 label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE. (Where she says that she sent letter to the ministry.)
     show screen bld1
     with d5
@@ -543,8 +540,8 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "Well..."
     m "I don't think the girl would be willing to--"
     sna_[12] "Those naked, perfectly shaped breasts..."
-    sna_[13] "Those magnificent long legs..." 
-    sna_[12] "Her ample and tender behind..." 
+    sna_[13] "Those magnificent long legs..."
+    sna_[12] "Her ample and tender behind..."
     sna_[13] "I've seen everything..."
     sna_[20] "I've seen it all!"
     m "(...)"
@@ -577,10 +574,10 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 
     $ days_without_an_event = 0 #Making sure next even will not start right away.
     jump day_start
-    
-   
-   
-    
+
+
+
+
 ####Snape bonus###
 #label snape_bonus:
 #    if snape_events == 1:
@@ -589,98 +586,98 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=3
 #            "Slytherin got +3 points as a Snape-Bonus."
-    
+
 #    if snape_events == 2:#WEEK No.2
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=7
 #            "Slytherin got +7 points as a Snape-Bonus."
-    
+
 #    if snape_events == 3:#WEEK No.3
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=10
 #            "Slytherin got +10 points as a Snape-Bonus."
-            
+
 #    if snape_events == 4:#WEEK No.4
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=12
 #            "Slytherin got +12 points as a Snape-Bonus."
-            
+
 #    if snape_events == 5:#WEEK No.5
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=16
 #            "Slytherin got +16 points as a Snape-Bonus."
-            
+
 #    if snape_events == 6:#WEEK No.6
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=22
 #            "Slytherin got +22 points as a Snape-Bonus."
-            
+
 #    if snape_events == 7:#WEEK No.7
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=26
 #            "Slytherin got +26 points as a Snape-Bonus."
-            
+
 #    if snape_events == 8:#WEEK No.8
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=32
 #            "Slytherin got +32 points as a Snape-Bonus."
-            
+
 #    if snape_events == 9:#WEEK No.9
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=36
 #            "Slytherin got +36 points as a Snape-Bonus."
-            
+
 #    if snape_events == 10:#WEEK No.10
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=43
 #            "Slytherin got +43 points as a Snape-Bonus."
-            
+
 #    if snape_events == 11:#WEEK No.11
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=46
 #            "Slytherin got +46 points as a Snape-Bonus."
-            
+
 #    if snape_events == 12:#WEEK No.12
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=50
 #            "Slytherin got +50 points as a Snape-Bonus."
-            
+
 #    if snape_events == 13:#WEEK No.13
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=56
 #            "Slytherin got +56 points as a Snape-Bonus."
-            
+
 #    if snape_events == 14:#WEEK No.14
 #        if generating_snape_bonus == 1:
 #            pass
 #        elif generating_snape_bonus == 2:
 #            $ slytherin +=61
 #            "Slytherin got +61 points as a Snape-Bonus."
-            
+
 #    if snape_events == 15:#WEEK No.15
 #        if generating_snape_bonus == 1:
 #            pass
@@ -696,22 +693,22 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 ####################################
 label wine_first:
     m "Look what I've got!"
-    call sna_head("Hm..?","snape_05") 
-    call sna_head("Let me see...") 
+    call sna_head("Hm..?","snape_05")
+    call sna_head("Let me see...")
     pause.1
     $ the_gift = "images/store/27.png" # WINE.
     show screen gift
     with d3
-    ">You hand over the bottle you found in the cupboard to professor Snape..." 
+    ">You hand over the bottle you found in the cupboard to professor Snape..."
     hide screen gift
     with d3
     $ wine -= 1
-    
-    
-    call sna_head("This one has got to be from Albus' personal stash!","snape_24") 
-    call sna_head("Some pricey and incredibly rare stuff.","snape_06") 
+
+
+    call sna_head("This one has got to be from Albus' personal stash!","snape_24")
+    call sna_head("Some pricey and incredibly rare stuff.","snape_06")
     m "Shall we then?"
-    call sna_head("We most certainly shall!","snape_02") 
+    call sna_head("We most certainly shall!","snape_02")
     show screen bld1
     with d3
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
@@ -726,40 +723,40 @@ label wine_first:
 
 label wine_not_first:
     m "Look what I've got!"
-    hide screen s_head2    
+    hide screen s_head2
     pause.1
     $ the_gift = "images/store/27.png" # WINE.
     show screen gift
     with d3
-    ">You hand over the bottle you fond in the cupboard to professor Snape..." 
+    ">You hand over the bottle you fond in the cupboard to professor Snape..."
     hide screen gift
     with d3
     $ wine -= 1
 
-    call sna_head("Another one?","snape_05") 
+    call sna_head("Another one?","snape_05")
     if one_of_ten == 1:
-        call sna_head("Splendid!","snape_02") 
+        call sna_head("Splendid!","snape_02")
     elif one_of_ten == 2:
-        call sna_head("Alright!","snape_02") 
+        call sna_head("Alright!","snape_02")
     elif one_of_ten == 3:
-        call sna_head("Awesome!","snape_02") 
+        call sna_head("Awesome!","snape_02")
     elif one_of_ten == 4:
-        call sna_head("Well done, my friend!","snape_02") 
+        call sna_head("Well done, my friend!","snape_02")
     elif one_of_ten == 5:
-        call sna_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05") 
+        call sna_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
     elif one_of_ten == 6:
-        call sna_head("lately I am having hard time drinking anything but this!","snape_02") 
+        call sna_head("lately I am having hard time drinking anything but this!","snape_02")
     elif one_of_ten == 7:
-        call sna_head("Great! I feel less stressed out already!","snape_02") 
+        call sna_head("Great! I feel less stressed out already!","snape_02")
     elif one_of_ten == 8:
-        call sna_head("This just keeps getting better and better!","snape_02") 
+        call sna_head("This just keeps getting better and better!","snape_02")
     elif one_of_ten == 9:
-        call sna_head("Seriously, how big is that stash?","snape_05") 
+        call sna_head("Seriously, how big is that stash?","snape_05")
     elif one_of_ten == 2:
-        call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02") 
-    
-    call bld 
-    call give_reward(">Your relationship with Professor Snape has improved.","images/store/01.png") 
+        call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02")
+
+    call bld
+    call give_reward(">Your relationship with Professor Snape has improved.","images/store/01.png")
     #">Your relationship with Professor Snape has improved."
 
     if game_difficulty < 2:      #Easy difficulty
@@ -768,8 +765,8 @@ label wine_not_first:
         $ snape_friendship +=2
 
     return
-    
-    
+
+
   ########
 label not_today:
     if one_out_of_three == 1:
@@ -778,11 +775,5 @@ label not_today:
         sna "Sorry, I have other business to attend to tonight..."
     elif one_out_of_three == 3:
         sna "Sorry, I have other plans. Maybe some other time?"
-    
+
     jump snape_ready
-        
-        
-         
-    
-    
-    

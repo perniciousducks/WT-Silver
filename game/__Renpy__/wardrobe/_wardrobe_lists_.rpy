@@ -1,14 +1,14 @@
 
 
 label update_wr_lists:
-    call update_wr_color_list 
-    call update_wr_head_list 
-    call update_wr_tops_list 
-    call update_wr_bottoms_list 
-    call update_wr_other_clothings_list 
-    call update_wr_miscellaneous_list 
-    call update_wr_underwear_list 
-    call update_wr_outfits_list 
+    call update_wr_color_list
+    call update_wr_head_list
+    call update_wr_tops_list
+    call update_wr_bottoms_list
+    call update_wr_other_clothings_list
+    call update_wr_miscellaneous_list
+    call update_wr_underwear_list
+    call update_wr_outfits_list
     return
 
 
@@ -149,11 +149,11 @@ label update_wr_head_list:
 
         $ wr_hair.append("A")
         $ wr_hair.append("L")
-        
+
     if active_girl == "susan":
-    
+
         $ wr_hair.append("A")
-        
+
     return
 
 
@@ -220,12 +220,12 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("shirt_2")
         $ wr_tops_uniform.append("shirt_3")
         $ wr_tops_uniform.append("shirt_4")
-        
+
     if active_girl == "susan":
 
         #Uniform
         $ wr_tops_uniform.append("shirt_1")
-        
+
     return
 
 
@@ -282,12 +282,12 @@ label update_wr_bottoms_list:
         #Uniform
         $ wr_bottoms_uniform.append("skirt_1")
         $ wr_bottoms_uniform.append("skirt_2")
-        
+
     if active_girl == "susan":
 
         #Uniform
         $ wr_bottoms_uniform.append("skirt_1")
-        
+
     return
 
 
@@ -366,7 +366,7 @@ label update_wr_other_clothings_list:
             $ wr_stockings.append("stockings_cheer_short")
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_cheer_vibe") #Will be in accessories instead
- 
+
         if whoring >= 5:
             $ wr_stockings.append("stockings_pantyhose")
             $ wr_stockings.append("stockings_cute")
@@ -404,17 +404,17 @@ label update_wr_other_clothings_list:
     #if active_girl == "luna":
 
     if active_girl == "astoria":
-    
+
         $ wr_stockings.append("nighty_stockings")
-            
+
         $ wr_robes.append("slyth_1")
-        
+
     if active_girl == "susan":
-    
+
         $ wr_neckwears.append("chain_chocker")
-        
+
         $ wr_stockings.append("stockings")
-        
+
     return
 
 
@@ -489,24 +489,24 @@ label update_wr_underwear_list:
         $ wr_bras.append("lewd_bra")
 
         $ wr_onepieces.append("nighty")
-        
+
         $ wr_panties.append("clear_panties")
         $ wr_panties.append("lace_panties")
         $ wr_panties.append("lewd_panties")
         $ wr_panties.append("nighty_panties")
-        
+
     if active_girl == "susan":
         #$ wr_bras.append("")
         $ wr_bras.append("lace_bra")
         #$ wr_bras.append("chain_bra")
-    
+
         $ wr_onepieces.append("sling_1")
         $ wr_onepieces.append("sling_2")
-        
+
         #$ wr_panties.append("")
         $ wr_panties.append("lace_panties")
         $ wr_panties.append("chain_panties")
-    
+
     return
 
 
@@ -515,9 +515,8 @@ label update_wr_outfits_list:
 
     $ wr_outfits = []
     $ wr_costumes = []
-    $ wr_outfits_onepieces = []
-    $ wr_swimsuits = []
     $ wr_dresses = []
+    $ wr_custom_outfits = []
 
 
     if active_girl == "hermione":
@@ -527,21 +526,12 @@ label update_wr_outfits_list:
         if hg_maid_OBJ.purchased:
             $ wr_outfits.append("maid")
             $ hg_purchased_outfits.append(hg_maid_OBJ)
-        if hg_gryffCheer_OBJ.purchased:
-            $ wr_outfits.append("cheer")
-            $ hg_purchased_outfits.append(hg_gryffCheer_OBJ)
-        if hg_slythCheer_OBJ.purchased:
-            $ wr_outfits.append("s_cheer")
-            $ hg_purchased_outfits.append(hg_slythCheer_OBJ)
         if hg_christmas_OBJ.purchased:
             $ wr_outfits.append("christmas")
             $ hg_purchased_outfits.append(hg_christmas_OBJ)
         if hg_present_OBJ.purchased:
             $ wr_outfits.append("present")
             $ hg_purchased_outfits.append(hg_present_OBJ)
-        if hg_rocker_OBJ.purchased:
-            $ wr_outfits.append("rocker")
-            $ hg_purchased_outfits.append(hg_rocker_OBJ)
         if hg_japan_OBJ.purchased:
             $ wr_outfits.append("japan")
             $ hg_purchased_outfits.append(hg_japan_OBJ)
@@ -576,18 +566,6 @@ label update_wr_outfits_list:
             $ wr_costumes.append("yenn")
             $ hg_purchased_costumes.append(hg_yenn_OBJ)
 
-        #One-Pieces
-        #$ hg_purchased_onepieces = []
-        #if hg_silkNightgown_OBJ.purchased:
-        #    $ wr_outfits_onepieces.append("nightgown")
-        #    $ hg_purchased_onepieces.append(hg_silkNightgown_OBJ)
-
-        #Swimsuits
-        $ hg_purchased_swimsuits = []
-        #if .purchased:
-        #    $ wr_swimsuits.append("")
-        #    $ hg_purchased_swimsuits.append()
-
         #Dresses
         $ hg_purchased_dresses = []
         if hg_heartDancer_OBJ.purchased:
@@ -597,10 +575,27 @@ label update_wr_outfits_list:
             $ wr_dresses.append("ball_dress")
             $ hg_purchased_dresses.append(hg_ballDress_OBJ)
 
+        $ saved_custom_outfits = []
+        if whoring >= 0:
+            $ saved_custom_outfits.append(hg_clothing_save_01)
+            $ saved_custom_outfits.append(hg_clothing_save_02)
+        if whoring >= 5:
+            $ saved_custom_outfits.append(hg_clothing_save_03)
+        if whoring >= 8:
+            $ saved_custom_outfits.append(hg_clothing_save_04)
+        if whoring >= 11:
+            $ saved_custom_outfits.append(hg_clothing_save_05)
+        if vouchers != 0:
+            $ saved_custom_outfits.append(hg_clothing_save_06)
+            $ saved_custom_outfits.append(hg_clothing_save_07)
+            $ saved_custom_outfits.append(hg_clothing_save_08)
+            $ saved_custom_outfits.append(hg_clothing_save_09)
+            $ saved_custom_outfits.append(hg_clothing_save_10)
+
     #if active_girl == "astoria":
 
     #if active_girl == "susan":
-    
+
     return
 
 ### Miscellaneous List ###
@@ -613,7 +608,7 @@ label update_wr_miscellaneous_list:
 
 
     if active_girl == "hermione":
-  
+
         #Potions
         $ wr_potions_list.append("universal_potion") #Potion that can be used day AND night!
         if potion_inv.has("p_cat_transformation") or potion_inv.has("p_luna_transformation"):
@@ -630,7 +625,7 @@ label update_wr_miscellaneous_list:
         #Items #Butt-plugs, Gags, Brooms,...
         if gift_item_inv[AnalPlugs.id] > 0:
             $ wr_items_list.append("buttplugs")
-        
+
         #Piercings
         if whoring >= 5:
             $ wr_piercings_list.append("ears_hearts_large")
@@ -669,12 +664,9 @@ label update_wr_miscellaneous_list:
             $ wr_tattoos_list.append("pubic/cunt")
             $ wr_tattoos_list.append("pubic/mudblood")
             $ wr_tattoos_list.append("pubic/punk_mudblood")
-          
+
     #if active_girl == "luna":
 
     #if active_girl == "astoria":
 
     return
-    
-    
-    

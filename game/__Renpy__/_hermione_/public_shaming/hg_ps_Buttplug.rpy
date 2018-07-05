@@ -389,7 +389,7 @@ label hg_ps_Buttplug:
                     call her_main("{image=textheart}ah{image=textheart}...","silly","ahegao")
                     call her_main("Thank you, [genie_name].","base","glance")
                     call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","soft","ahegao")
-                    hide screen hermione_main_ass
+                    hide screen hermione_main
                     with d3
                     pause.2
                     m "(Maybe those Weasley boys have anything that could help me with my friction problem...)"

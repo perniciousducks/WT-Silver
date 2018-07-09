@@ -225,3 +225,4 @@ pip-log.txt
 *.rpyb
 game/saves/
 game/cache/
+game/__Renpy__/_hermione_/outfits.rpy

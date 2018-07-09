@@ -15,16 +15,44 @@ label equip_bra:
     #Susan
     if active_girl == "susan":
         jump equip_sus_bra
-        
-        
+
+
 ### Equip Hermione's Bra ###
 label equip_her_bra:
-    call set_h_bra(underwear_choice, underwear_color_choice) 
+    if underwear_choice == h_bra and underwear_color_choice == h_bra_color:
+        $ wardrobe_active = 1
+        #">She's already wearing that!" #Remove line. Just for testing.
+        jump return_to_wardrobe
 
-    hide screen wardrobe
-    call screen wardrobe
-    
-    
+    elif mad >= 1:
+        jump equipping_failed
+
+    else:
+        if wardrobe_chitchat_active:
+            hide screen hermione_main
+            with d3
+
+            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ hermione_xpos = 665
+
+            m "[hermione_name]..."
+
+            #Bras
+            if underwear_choice == "bra_1":
+                pass
+            call set_h_bra(underwear_choice, underwear_color_choice)
+
+            hide screen wardrobe
+            call screen wardrobe
+
+        else:
+            $ wardrobe_active = 1
+            call set_h_bra(underwear_choice, underwear_color_choice)
+
+            hide screen wardrobe
+            call screen wardrobe
+
+
 ### Equip Astoria's Bra ###
 label equip_ast_bra:
 
@@ -39,36 +67,36 @@ label equip_ast_bra:
     else:
         if wardrobe_chitchat_active:
             pass
-            #hide screen astoria_main 
+            #hide screen astoria_main
             #with d3
 
-            #$ wardrobe_active = 0 #activates dissolve in her_main 
+            #$ wardrobe_active = 0 #activates dissolve in her_main
             #$ astoria_xpos = 665
 
             #m "[astoria_name]..."
 
             #Panties
             if underwear_choice == "bra_1":
-                m "Would you wear your school panties for me? The very long one." 
+                m "Would you wear your school panties for me? The very long one."
         else:
             pass
-        
+
         $ wardrobe_active = 1
-        
-        call set_ast_bra(underwear_choice) 
-        
-        call ast_main(xpos="wardrobe") 
+
+        call set_ast_bra(underwear_choice)
+
+        call ast_main(xpos="wardrobe")
         call screen wardrobe
-        
+
 ### Equip Susan's Bra ###
 label equip_sus_bra:
-    call set_sus_bra(underwear_choice) 
+    call set_sus_bra(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
-        
-        
+
+
+
 ### Equip Onepiece ###
 label equip_onepiece:
 
@@ -84,30 +112,30 @@ label equip_onepiece:
     #Susan
     if active_girl == "susan":
         jump equip_sus_onepiece
-        
+
 ### Equip Hermione's OnePiece/Nighty ###
 label equip_her_onepiece:
-    call set_h_onepiece(underwear_choice) 
+    call set_h_onepiece(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
+
 ### Equip Astoria's OnePiece/Nighty ###
 label equip_ast_onepiece:
-    call set_ast_onepiece(underwear_choice) 
+    call set_ast_onepiece(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
+
 ### Equip Susan's OnePiece/Nighty ###
 label equip_sus_onepiece:
-    call set_sus_onepiece(underwear_choice) 
+    call set_sus_onepiece(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
-        
-        
-        
+
+
+
 ### Equip Panties ###
 label equip_panties:
 
@@ -126,12 +154,12 @@ label equip_panties:
 
 ### Equip Hermione's Panties ###
 label equip_her_panties:
-    call set_h_panties(underwear_choice, underwear_color_choice) 
+    call set_h_panties(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
-    
+
+
 ### Equip Astoria's Panties ###
 label equip_ast_panties:
 
@@ -146,36 +174,36 @@ label equip_ast_panties:
     else:
         if wardrobe_chitchat_active:
             pass
-            #hide screen astoria_main 
+            #hide screen astoria_main
             #with d3
 
-            #$ wardrobe_active = 0 #activates dissolve in her_main 
+            #$ wardrobe_active = 0 #activates dissolve in her_main
             #$ astoria_xpos = 665
 
             #m "[astoria_name]..."
 
             #Panties
             if underwear_choice == "panties_1":
-                m "Would you wear your school panties for me? The very long one." 
+                m "Would you wear your school panties for me? The very long one."
         else:
             pass
-        
+
         $ wardrobe_active = 1
-        
-        call set_ast_panties(underwear_choice) 
-        
-        call ast_main(xpos="wardrobe") 
+
+        call set_ast_panties(underwear_choice)
+
+        call ast_main(xpos="wardrobe")
         call screen wardrobe
-        
+
 ### Equip Susan's Panties ###
 label equip_sus_panties:
-    call set_sus_panties(underwear_choice) 
+    call set_sus_panties(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
-        
-        
+
+
+
 ### Equip Garterbelt ###
 label equip_garterbelt:
 
@@ -194,21 +222,21 @@ label equip_garterbelt:
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
-    call set_h_garterbelt(underwear_choice, underwear_color_choice) 
+    call set_h_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
+
 ### Equip Astoria's Garterbelt ###
 label equip_ast_garterbelt:
-    call set_ast_garterbelt(underwear_choice, underwear_color_choice) 
+    call set_ast_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe
-    
+
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
-    call set_sus_garterbelt(underwear_choice, underwear_color_choice) 
+    call set_sus_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe

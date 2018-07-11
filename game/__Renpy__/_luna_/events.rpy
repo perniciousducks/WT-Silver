@@ -845,7 +845,7 @@ label luna_revert_2: #Non-Reversion event
     $ luna_xpos=635
     $ hermione_head_ypos=390
     $ hermione_kneel_leg = True
-    ">Luna thrusts her mound forward, griding it under Hermione's nose and against her closed mouth."
+    ">Luna thrusts her mound forward, grinding it under Hermione's nose and against her closed mouth."
     hide screen blkfade
     call her_kneel("!!!","angry","worriedCl") 
     m "!!!"

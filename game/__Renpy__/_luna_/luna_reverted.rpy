@@ -1,6 +1,6 @@
 label luna_reverted_events: #MUST BE WEARING GLASSES!
-	menu:
-	    "-Masturbate for me!-":
+    menu:
+        "-Masturbate for me!-":
             jump luna_reverted_event_1
         "-Watch me Masturbate!-":
             jump luna_reverted_event_2
@@ -275,7 +275,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     lun "..."
     lun "it's..."
     lun "it's......"
-    lun "it's perfect... it's just the best..."
+    lun "it's perfect... it's just the best!"
     m "mmm... that's it... you always know what to say..."
     lun "I'm not just..."
     lun "How can you make this?"
@@ -283,7 +283,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     lun "It's incredible..."
     lun "It's soaking in through my skin... I can't..."
     lun "The wrackspurts... I think this is..."
-    lun "Ah... I think I should probably leave now sir..."
+    lun "Ah... I think I should... probably leave now sir..."
     m "You're not going to clean yourself up first?"
     lun "Oh..."
     lun "If it's ok with you sir... I might clean myself up back in my room..."
@@ -309,8 +309,17 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
 
 
 label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and lick it like a lollipop for an hour
+    ">*knock* *knock* *knock*"
+    ">Before waiting for a response, your door swings open to reveal Luna Lovegood."
+    lun "Hello sir! Lovely day today isn't it?"
+    m "It is now..."
+    lun "Awww..."
+    m "Well what brings you up to my office today then Miss Lovegood?"
+    m "Those troublesome little wrockspoons giving you grief?"
+    lun "Not exactly..."
 
-label luna_reverted_event_4: #Luna gentle BJ for anout 9 hours and 14 orgasms from Genie
+
+label luna_reverted_event_4: #Luna gentle BJ for anout 9 hours and 14 orgasms from Genie (Soggy is working on an underdesk background for the Luna BJ CG)
 
 label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna masturbating the whole time
 

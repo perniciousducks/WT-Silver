@@ -845,7 +845,7 @@ label luna_revert_2: #Non-Reversion event
     $ luna_xpos=635
     $ hermione_head_ypos=390
     $ hermione_kneel_leg = True
-    ">Luna thrusts her mound forward, griding it under Hermione's nose and against her closed mouth."
+    ">Luna thrusts her mound forward, grinding it under Hermione's nose and against her closed mouth."
     hide screen blkfade
     call her_kneel("!!!","angry","worriedCl") 
     m "!!!"
@@ -1186,7 +1186,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             call play_sound("door") #Sound of a door opening.
             $ luna_chibi("stand")
             ">Luna stands in front of your desk."
-            call luna_main("Hello Professor...", 1, 1, 4, 1) 
+            call luna_main("Hello...", 1, 1, 4, 1) 
             m "Miss Lovegood."
             pass
 
@@ -1199,7 +1199,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             call play_sound("door") #Sound of a door opening.
             $ luna_chibi("stand")
             ">Luna stands in front of your desk."
-            call luna_main("Hello Professor...", 1, 1, 4, 1) 
+            call luna_main("Hello...", 1, 1, 4, 1) 
             m "Oh, um... Hello miss lovegood."
 
     $ luna_l_arm = 1
@@ -1217,7 +1217,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
     call luna_main("I remember! The wrackspurt infestation!", 2, 2, 4, 1) 
     menu: 
         "\"Wrackspurts?... Is that some sort of wizard STD?\"":
-            call luna_main("Hahaha, I guess you could say that, Professor! ", 1, 2, 4, 1) 
+            call luna_main("Hahaha, I guess you could say that! ", 1, 2, 4, 1) 
             call luna_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.", 1, 1, 4, 2) 
             $ luna_l_arm = 2
             call luna_main("You can only view them wearing these spectrespecs!", 1, 4, 1, 1) 
@@ -1230,18 +1230,18 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             g4 "DID YOU JUST CAST A SPELL ON ME?!"
             $ luna_l_arm = 2
             $ luna_r_arm = 2
-            call luna_main("Professor?", 4, 1, 4, 3) 
+            call luna_main("Sir?", 4, 1, 4, 3) 
             g4 "EXPLAIN YOURSELF!"
             $ luna_l_arm = 1
             $ luna_r_arm = 1
-            call luna_main("I am sorry Professor, I am not sure what-", 4, 2, 4, 2) 
+            call luna_main("I am sorry Sir, I am not sure what-", 4, 2, 4, 2) 
             g4 "XENOFIUS! What does it do?"
-            call luna_main("Xenofius? I’ve not heard of that spell before, Professor.", 7, 1, 4, 2) 
+            call luna_main("Xenofius? I’ve not heard of that spell before, Sir.", 7, 1, 4, 2) 
             m "The spell... That you just... Never mind."
-            call luna_main("(A Secret spell?) Professor, your magic is the strongest in Hogwarts and these wrackspurts are really getting to me.", 8, 2, 4, 3) 
+            call luna_main("(A Secret spell?) Sir, your magic is the strongest there is and these wrackspurts are really getting to me.", 8, 2, 4, 3) 
             m "I see... do go on."
         "\"I am afraid I can’t help you Miss Lovegood.\"":
-            call luna_main("Oh please, Professor! You’re the only one powerful enough to help.", 4, 1, 4, 15) 
+            call luna_main("Oh please, Sir! You’re the only one powerful enough to help.", 4, 1, 4, 15) 
             "*You can see Luna is rocking her pelvis as though she were grinding the air*"
             m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
             call luna_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!", 1, 1, 4, 2) 
@@ -1249,7 +1249,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             m "*Reading* “Rotfang conspiracy... 300 ways to tie up a ghost... “ Ah! Wrackspurts..."
             "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
             "*Luna points to her spectrespecs* "
-            call luna_main("I can see them, Professor.", 2, 1, 1, 1) 
+            call luna_main("I can see them, Sir.", 2, 1, 1, 1) 
             m "I see...(No wonder Hermione called her Loony Lovegood)."
         "\"What in Agrabah are you wearing?\"":
             call luna_main("Oh! These are my spectrespecs, professor!", 1, 5, 4, 1) 
@@ -1260,7 +1260,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             m "Ah yes, very nice..."
             m "So about these wrecksputs..."
 
-    call luna_main("Yes, Professor, they’re proving to be quite a pain.", 3, 1, 4, 2) 
+    call luna_main("Yes, Sir, they’re proving to be quite a pain.", 3, 1, 4, 2) 
 
     "*Luna is visibly grinding her pelvis against her thighs.*"
     m "(Is she really?... Ohhh). Miss Lovegood, how exactly do these wickspurts make you feel?"
@@ -1312,7 +1312,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     call play_sound("door") #Sound of a door opening.
     $ luna_chibi("stand")
     ">Luna stands in front of your desk."
-    call luna_main("Hello, Professor...", 2, 1, 1, 1) 
+    call luna_main("Hello, Sir...", 2, 1, 1, 1) 
     m "Miss Lovegood. So, Did the wickerspats leave you alone today?"
     call luna_main("Not at all! They were worse than ever!", 1, 2, 2, 3) 
     m "Really?"
@@ -1397,7 +1397,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     m "We'll try some self-applied massage to the area to start with."
     call luna_main("So I just start massaging the area that they're making fuzzy?", 1, 1, 4, 14) 
     m "That's correct, I'll be here to give you some guidance."
-    call luna_main("thank you, professor!", 2, 2, 4, 1) 
+    call luna_main("thank you, Sir!", 2, 2, 4, 1) 
     m "You're quite welcome."
     call luna_main("...", 1, 3, 4, 1) 
     $ luna_l_arm = 4

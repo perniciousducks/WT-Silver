@@ -8,8 +8,7 @@ label whose_points:
     m "First, let me introduce todays contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     
-    call her_head("", "grin","worried",cheeks="blush", xpos="base", ypos="base")
-    pause
+    call her_head(" ", "grin","worried",cheeks="blush", xpos="base", ypos="base")
     
     m "Today we're playing scenes from a hat."
     
@@ -17,7 +16,7 @@ label whose_points:
     
     m "But the notes are already inside you. I put them there last night."
     
-    hat "You put notes inside me without my consent? *Spits note out*"
+    hat "You put notes inside me without my consent? \n*Spits note out*"
     
     m "Looks like we have our first promt."
     m "Things you might say in potions class... But also in your bedroom."
@@ -28,43 +27,45 @@ label whose_points:
     
     m "Quiet now, it was a good euphemism, 10 points to Gryffindor."
     
-    call ast_main( "Snape, get your gross hands off my shoulders, you creep!" ,"clench" ,"angry" ,"angry" ,"angry") 
+    call ast_main( "Snape, get your gross hands off my shoulders, you creep!","clench" ,"angry" ,"angry" ,"angry" ) 
     
     m "I'm not sure you got the idea of the game there..."
     
-    call luna_main("Oops. I was supposed to squeeze the mucus out with my hands and not crush it.")
+    hide screen astoria_main
+    call luna_main("Oops. I was supposed to squeeze the mucus out with my hands and not crush it.", "2", "1", "1","11" )
     
     m "Sounds painful... 15 points to Ravenclaw."
-    hide screen astoria_main
+    hide screen luna
     
     call her_head("How's that worth more than my one...", "annoyed","worried", xpos="base", ypos="base")
     
     m "Any more? On to the next promt then. Hat?"
     
-    hat "Sorry, what did you cough call me? That's "Sorting" Hat to you. (coughs out note.)"
+    hat "Sorry, what did you cough call me? That's \"Sorting\" Hat to you. (coughs out note.)"
     
     g9 "Things you might do in quidditch... but also with your lover..."
     
-    call ast_main( "I'm going first this time! I have a good one!" ,"clench" ,"angry" ,"angry" ,"angry") 
+    call ast_main( "I'm going first this time! I have a good one!", "grin", "base", "base", "base") 
     
     m "Go on...."
     
-    call ast_main( "Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"clench" ,"angry" ,"angry" ,"angry") 
+    call ast_main( "Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"grin") 
     
     m "Again, I don't think you understand the game..."
     
-    call ast_main( "Give me the points!" ,"clench" ,"angry" ,"angry" ,"angry") 
+    call ast_main( "Give me the points!" ,"scream") 
     
     m "Disquallified!"
     
-    call ast_main( "Wait, you can do that?" ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "Wait, you can do that?" ,"scream" ,"wide")
     
-    m "It's my game, I make the rules."
+    g9 "It's my game, I make the rules."
     
-    call ast_main( "\"We'll see about that....\"" ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "\"We'll see about that....\"")
+    hide screen astoria_main
     
-    call her_head("My turn.", "grin","worried",cheeks="blush", xpos="base", ypos="base")
-    call her_head("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.", "grin","worried",cheeks="blush", xpos="base", ypos="base")
+    call her_head("My turn.", xpos="base", ypos="base")
+    call her_head("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.", "grin", cheeks="blush", xpos="base", ypos="base")
     
     m "A bit direct but I like it. \n15 points to Gryffindor."
     
@@ -84,16 +85,17 @@ label whose_points:
     
     m "That can't be right...."
     
-    call ast_main( "Let me check professor!" ,"clench" ,"angry" ,"angry" ,"angry")
-    call ast_main( "I found the last note, it was stuck under one of the folds!" ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "Let me check professor!" )
+    call ast_main( "I found the last note, it was stuck under one of the folds!")
     
     hat "Are you calling me fat young lady?"
     
-    call ast_main( "I'll read it for you shall I?" ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "I'll read it for you shall I?")
     
     m "Go ahead."
     
-    call ast_main( "Things that you would not share with your classmates... but would share with dumby." ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "Things that you would not share with your classmates... but would share with dumby.")
+    hide screen astoria_main
     
     m "\"I don't remember writing that one...\""
     
@@ -107,7 +109,7 @@ label whose_points:
 
     call bld 
     
-    m "500 points to Gryffindor!"
+    g9 "500 points to Gryffindor!"
     
     call luna_main("That's cheating, I didnt even get to finish! ", mouth = "mouth_11")
     

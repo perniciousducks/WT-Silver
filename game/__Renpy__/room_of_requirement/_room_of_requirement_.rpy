@@ -16,7 +16,7 @@ screen room_of_requirement_menu:
         ypos 180
         idle "images/room_of_requirement/mirror.png"
         hover "images/room_of_requirement/mirror.png"
-        action [Hide("room_of_rquirement_menu"), Jump("mirror_menu")]
+        action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
     
     imagebutton: # DOOR
         xpos 758+140
@@ -26,7 +26,7 @@ screen room_of_requirement_menu:
         yanchor "center"
         idle "images/main_room/door.png"
         hover "images/main_room/door_hover.png"
-        action [Hide("room_of_rquirement_menu"), Jump("leave_room_req")]
+        action [Hide("room_of_requirement_menu"), Jump("leave_room_req")]
         
     imagebutton: # Cadle Fire left
         xpos 350
@@ -36,7 +36,7 @@ screen room_of_requirement_menu:
         yanchor "center"
         idle "images/main_room/candle.png"
         hover "images/main_room/candle.png"
-        action [Hide("room_of_rquirement_menu"), Jump("turn_on_cadle_2")]
+        action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_2")]
         
     imagebutton: # Cadle Fire Right
         xpos 700
@@ -46,7 +46,7 @@ screen room_of_requirement_menu:
         yanchor "center"
         idle "images/main_room/candle.png"
         hover "images/main_room/candle.png"
-        action [Hide("room_of_rquirement_menu"), Jump("turn_on_cadle_1")]
+        action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_1")]
     zorder -1
 
 label turn_on_cadle_1:  
@@ -70,67 +70,123 @@ label leave_room_req:
     jump return_office
     
 label mirror_menu:
-    python:
-        pf_menu = []
-        for i in range(0, len(mr_evs_list)) :
-            pf_menu.append((mr_evs_list[i].getMenuText() , str(i)))
-        pf_menu.append(("-Never mind-", "nvm"))
-        result = renpy.display_menu(pf_menu)
+    $ currentpage = 0
+    show screen event_menu
+    $ _return = ui.interact()
     
-    if result == "nwm":
-        jump enter_room_of_req
+    hide screen event_menu
     
-    $ event_object = mr_evs_list[int(result)]
-    call screen event_menu(event_object)
+    if _return == "Cancel":
+        call screen room_of_requirement_menu
+        
+    elif _return == "Info":
+        call screen info_screen
+    
+    else:
+        $renpy.jump(_return)
 
-screen event_menu(mr_event):
+screen info_screen:
+    imagebutton: # X
+        xpos 1013
+        ypos 13
+        idle "interface/map/close_ground.png"
+        hover "interface/map/close_hover.png"
+        action [Hide("info_screen"), Jump("mirror_menu")]
+        
+    add "interface/frames/"+interface_color+"/PinkBox.png" xalign 0.5 yalign 0.5 zoom 3
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        xsize 300
+        ysize 300
+        
+        text "The mirror of Erised contains a collection of side stories. Ones that would either not fit in the main game or over the top parodies dreamt up by the genie. \n\nThe stories can be unlocked by completing the task listed in the description of each entry. Make sure to look at the story theme to see what you want to go for first." xalign 0.5 yalign 0.5
+        
+screen event_menu:
+    imagebutton: # X
+        xpos 1013
+        ypos 13
+        idle "interface/map/close_ground.png"
+        hover "interface/map/close_hover.png"
+        action Return("Cancel")
+        
+    imagebutton:
+        xpos 960
+        ypos 530
+        idle "interface/info.png"
+        hover "interface/info_hover.png"
+        action Return("Info")
+    
+           
     frame:
         background #00000000
-        xsize 555
-        ysize 348
-        xalign 0.65
+        xsize 638
+        ysize 544
+        xalign 0.5
         yalign 0.5
         
         add "interface/room_of_req/mirror_event_menu.png"
         
         hbox:
-            xpos 60
-            ypos 6
-            xsize 226
-            ysize 32
-            text mr_event.title xalign 0.5 yalign 0.5 size 16 bold 0.2
+            xpos 11
+            ypos 30
+            xsize 419
+            ysize 41
+            text "The PornMaker" xalign 0.5 yalign 0.5 size 16 bold 0.2
+        
         
         vbox:
-            xsize 330
-            xpos 10
-            ypos 65
-            text "Authors" xalign 0.5 yalign 0.5 size 16 bold 0.2
-            for a in mr_event.authors:
-                text a xalign 0.5 yalign 0.5 size 12 
-            text "Theme" xalign 0.5 yalign 0.5 size 16 bold 0.2
-            for a in mr_event.categories:
-                text a xalign 0.5 yalign 0.5 size 12 
-            text "Achievement Description" xalign 0.5 yalign 0.5 size 16 bold 0.2
-            text mr_event.ach_desc xalign 0.5 yalign 0.5 size 12 
-    
-    imagebutton:
-        xpos 10
-        ypos 530
-        idle "interface/return.png" 
-        hover "interface/return_hover.png" 
-        action [Hide("event_menu"), Jump("mirror_menu")]
+            xpos 12
+            ypos 86
+            xsize 598
+            ysize 448
         
-    if mr_event.unlocked:
-        imagebutton:
-            xpos 900
-            ypos 530
-            idle "interface/room_of_req/play.png" 
-            hover "interface/room_of_req/play_hover.png" 
-            action [Hide("event_menu"), Jump(mr_event.start_label)]
-    else:
-        add "interface/room_of_req/play_gray.png" xpos 900 ypos 530
+            for i in range(0, 5):
+                if (currentpage*5)+i > len(mr_evs_list):
+                    add "interface/room_of_req/mirror_event_item.png"
+                else:
+                    use mirror_item(mr_evs_list[currentpage*5])
+            
+screen mirror_item(mirror_story):
+    frame:
+        background #00000000
+        xpos -6
+        ypos -7
+        xsize 601
+        ysize 90
         
-    
+        if mirror_story.unlocked:
+            imagebutton:
+                idle "interface/room_of_req/mirror_event_item.png"
+                hover "interface/room_of_req/mirror_event_item.png"
+                action Return(mirror_story.start_label)
+        else:
+            add "interface/room_of_req/mirror_event_item.png"
+        
+        vbox:
+            xpos 0
+            ypos 1
+            xsize 82
+            ysize 81
+            
+            add "interface/room_of_req/locked.png" xalign 0.5 yalign 0.5 zoom 0.8
+        
+        vbox:
+            xpos 94
+            ypos 3
+            xsize 500
+            ysize 22
+            
+            text mirror_story.getMenuText() yalign 0.5
+            
+        vbox:
+            xpos 94
+            ypos 30
+            xsize 500
+            ysize 55
+            
+            text mirror_story.getDescription()   
+            
 screen candle_light_1:
     add "candle_fire_01" xpos 590 ypos 85
     

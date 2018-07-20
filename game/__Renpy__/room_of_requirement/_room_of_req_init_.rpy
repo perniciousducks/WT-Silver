@@ -7,12 +7,20 @@ label __init_variables:
         $mr_ev_WPIIA = mirror_stories(
                 title = "Whose points is it anyway?",
                 start_label = "whose_points",
-                authors = ["Johnny",""],
+                authors = ["Johnny"],
                 categories= ["Parody","Lewd", "Gameshow",""],
                 ach_desc = "Unlock the mirror of noisrevrep/Erised"
             )
+            
     
     $ mr_evs_list = []
+    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_WPIIA)
     
         
@@ -23,15 +31,24 @@ init python:
         start_label = ""
         authors = []
         categories = []
+        story_description = ""
         ach_desc = ""
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
         
         def getMenuText(self):
-            ret_str = self.title
+            ret_str = "\""+self.title+"\" by "
+            for s in self.authors:
+                ret_str += s +", "
+
+            return ret_str[0:len(ret_str)-2]
+       
+        def getDescription(self):
+            returnV = "{size=12}"
             if self.unlocked:
-               ret_str += "  {image=images/room_of_requirement/unlocked_icon.png}"
+                returnV += "story description: " + self.story_description
             else:
-               ret_str += "  {image=images/room_of_requirement/lock_icon.png}"
-            return ret_str
+                returnV += self.ach_desc
+                    
+            return returnV+"{/size}"  

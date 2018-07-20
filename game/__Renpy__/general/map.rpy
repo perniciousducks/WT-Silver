@@ -25,7 +25,7 @@ screen map_screen:
 label floor_7th:
     if unlocked_7th == False:
         m"\"I don't have any reason to go to this floor...\""
-        show screen main_room_menu
+        jump return_office
     else:
         call blkfade 
         hide screen main_room_menu

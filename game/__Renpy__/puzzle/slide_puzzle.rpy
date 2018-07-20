@@ -1,4 +1,5 @@
 label start_slide_puzzle:
+    $ puzzle_tries = 0
     $ imagepuzzle = [["images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in range(0,4)] for y in range(0,4)] 
     $ imagepuzzle[3][3] = "empty"
     python:
@@ -40,12 +41,27 @@ label update_puzzle_slide:
         $imagepuzzle[xposE][yposE] = imagepuzzle[xposS][yposS]
         $imagepuzzle[xposS][yposS] = "empty"
         $ emptyposition = move
-
+    
+    if move == -2:
+        jump open_pyzzle_box
+    
     python:
         for x in range(0,4):
             for y in range(0,4):
                 if ((imagepuzzle[y][x] != "images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
+                    
+    
+    jump open_pyzzle_box
+
+label open_pyzzle_box:
+    if unlocked_7th == True:
+        m "Empty... I don't know what I expected." 
+        jump cupboard
+    if move == -2:
+        m "Fuck it... Smash"
+        m "A broken bottle..."
+        m "Phoenix tears... well, too late now."
     if unlocked_7th == False:
         m "Finally... "
         m "Sweet, phoenix tears! Down the hatch we go."
@@ -55,33 +71,30 @@ label update_puzzle_slide:
         $renpy.play("sounds/gulp.mp3")
         m "...."
         m "I feel no difference..."
-        m "Hold on a second, there's a book in here..."
-        m "Seems to be some sort of notebook, I'll skim through it....."
-        hide screen chair_right
-        hide screen genie
-        show screen reading
-        with Dissolve(0.3)
-        m "My dear phoenix has been losing its feathers lately, I think it's time soon..... "
-        m "*Time for what?*"
-        m "That Potter boy is mighty cute, looks just like his father.... "
-        g9 "*Well, well....*"
-        m "Severus gave me a weird look today I wonder what he thinks about my......"
-        g4 "*This is all trash...*"
-        m "*Wait a minute.... this seems interesting.*"
-        m "I was walking around in the seventh floor corridor looking for a bathroom..."
-        m "Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
-        m "* I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.*"
-        show screen chair_right
-        show screen genie
-        hide screen reading
-        with Dissolve(0.3)
-        call give_reward("You've unlocked something on the 7th floor","/images/store/unlock_genie_question_mark.png")
-        $ unlocked_7th = True
-    else:
-        m "Empty... I don't know what I expected."
-    jump cupboard
- 
         
+    m "Hold on a second, there's a book in here..."
+    m "Seems to be some sort of notebook, I'll skim through it....."
+    hide screen chair_right
+    hide screen genie
+    show screen reading
+    with Dissolve(0.3)
+    m "My dear phoenix has been losing its feathers lately, I think it's time soon..... "
+    m "*Time for what?*"
+    m "That Potter boy is mighty cute, looks just like his father.... "
+    g9 "*Well, well....*"
+    m "Severus gave me a weird look today I wonder what he thinks about my......"
+    g4 "*This is all trash...*"
+    m "*Wait a minute.... this seems interesting.*"
+    m "I was walking around in the seventh floor corridor looking for a bathroom..."
+    m "Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
+    m "* I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.*"
+    show screen chair_right
+    show screen genie
+    hide screen reading
+    with Dissolve(0.3)
+    call give_reward("You've unlocked something on the 7th floor","/images/store/unlock_genie_question_mark.png")
+    $ unlocked_7th = True
+    jump cupboard
     
 screen puzzle_board:
     imagebutton: # X
@@ -91,7 +104,16 @@ screen puzzle_board:
         hover "interface/map/close_hover.png"
         action Return(-1)
         
+    if puzzle_tries > 300:
+        imagebutton:
+            xpos 240
+            ypos 100
+            idle "interface/slide/fuck.png"
+            hover "interface/slide/fuck_hover.png"
+            action Return(-2)
+            
     frame:
+        background #00000000
         xalign 0.5
         yalign 0.5
         xsize 425

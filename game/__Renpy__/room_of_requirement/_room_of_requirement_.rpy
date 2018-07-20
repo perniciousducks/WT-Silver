@@ -12,6 +12,13 @@ screen room_of_requirement_menu:
     tag room_screen
     
     imagebutton: # DOOR
+        xpos 100
+        ypos 180
+        idle "images/room_of_requirement/mirror.png"
+        hover "images/room_of_requirement/mirror.png"
+        action [Hide("room_of_rquirement_menu"), Jump("mirror_menu")]
+    
+    imagebutton: # DOOR
         xpos 758+140
         ypos 315
         focus_mask True
@@ -61,6 +68,68 @@ label leave_room_req:
     hide screen candle_light_1
     hide screen candle_light_2
     jump return_office
+    
+label mirror_menu:
+    python:
+        pf_menu = []
+        for i in range(0, len(mr_evs_list)) :
+            pf_menu.append((mr_evs_list[i].getMenuText() , str(i)))
+        pf_menu.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(pf_menu)
+    
+    if result == "nwm":
+        jump enter_room_of_req
+    
+    $ event_object = mr_evs_list[int(result)]
+    call screen event_menu(event_object)
+
+screen event_menu(mr_event):
+    frame:
+        background #00000000
+        xsize 555
+        ysize 348
+        xalign 0.65
+        yalign 0.5
+        
+        add "interface/room_of_req/mirror_event_menu.png"
+        
+        hbox:
+            xpos 60
+            ypos 6
+            xsize 226
+            ysize 32
+            text mr_event.title xalign 0.5 yalign 0.5 size 16 bold 0.2
+        
+        vbox:
+            xsize 330
+            xpos 10
+            ypos 65
+            text "Authors" xalign 0.5 yalign 0.5 size 16 bold 0.2
+            for a in mr_event.authors:
+                text a xalign 0.5 yalign 0.5 size 12 
+            text "Theme" xalign 0.5 yalign 0.5 size 16 bold 0.2
+            for a in mr_event.categories:
+                text a xalign 0.5 yalign 0.5 size 12 
+            text "Achievement Description" xalign 0.5 yalign 0.5 size 16 bold 0.2
+            text mr_event.ach_desc xalign 0.5 yalign 0.5 size 12 
+    
+    imagebutton:
+        xpos 10
+        ypos 530
+        idle "interface/return.png" 
+        hover "interface/return_hover.png" 
+        action [Hide("event_menu"), Jump("mirror_menu")]
+        
+    if mr_event.unlocked:
+        imagebutton:
+            xpos 900
+            ypos 530
+            idle "interface/room_of_req/play.png" 
+            hover "interface/room_of_req/play_hover.png" 
+            action [Hide("event_menu"), Jump(mr_event.start_label)]
+    else:
+        add "interface/room_of_req/play_gray.png" xpos 900 ypos 530
+        
     
 screen candle_light_1:
     add "candle_fire_01" xpos 590 ypos 85

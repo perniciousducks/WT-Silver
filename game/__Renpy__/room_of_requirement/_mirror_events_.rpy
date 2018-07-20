@@ -20,7 +20,7 @@ label whose_points:
     hat "You put notes inside me without my consent? *Spits note out*"
     
     m "Looks like we have our first promt."
-    m "Things you would say in potions class... But also your bedroom."
+    m "Things you might say in potions class... But also in your bedroom."
     
     call her_head("This cauldron hasn't been used for years. It's all moldy and full of muck!", "grin","worried",cheeks="blush", xpos="base", ypos="base")
     
@@ -28,7 +28,7 @@ label whose_points:
     
     m "Quiet now, it was a good euphemism, 10 points to Gryffindor."
     
-    call ast_main( "Snape, get your grose hands off my shoulders you creep!" ,"clench" ,"angry" ,"angry" ,"angry") 
+    call ast_main( "Snape, get your gross hands off my shoulders, you creep!" ,"clench" ,"angry" ,"angry" ,"angry") 
     
     m "I'm not sure you got the idea of the game there..."
     
@@ -43,15 +43,15 @@ label whose_points:
     
     hat "Sorry, what did you cough call me? That's "Sorting" Hat to you. (coughs out note.)"
     
-    g9 "Things you would do in quidditch... but also with your lover... spicy..."
+    g9 "Things you might do in quidditch... but also with your lover..."
     
     call ast_main( "I'm going first this time! I have a good one!" ,"clench" ,"angry" ,"angry" ,"angry") 
     
     m "Go on...."
     
-    call ast_main( "Madam Hooch, get your grose hands off my quidditch robes you creep!" ,"clench" ,"angry" ,"angry" ,"angry") 
+    call ast_main( "Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"clench" ,"angry" ,"angry" ,"angry") 
     
-    m "Again, I don't think you understood the game..."
+    m "Again, I don't think you understand the game..."
     
     call ast_main( "Give me the points!" ,"clench" ,"angry" ,"angry" ,"angry") 
     
@@ -80,9 +80,9 @@ label whose_points:
     m "Last round ladies. You better make it a good one. It's still all to play for."
     m "The last note if you please!"
     
-    hat "I'm all out, seems like you only wrote two after all!"
+    hat "I'm all out, looks like you only wrote two after all!"
     
-    m "Thay can't be right...."
+    m "That can't be right...."
     
     call ast_main( "Let me check professor!" ,"clench" ,"angry" ,"angry" ,"angry")
     call ast_main( "I found the last note, it was stuck under one of the folds!" ,"clench" ,"angry" ,"angry" ,"angry")
@@ -93,7 +93,7 @@ label whose_points:
     
     m "Go ahead."
     
-    call ast_main( "Things that you'd share with your friends... but also dumby." ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "Things that you would not share with your classmates... but would share with dumby." ,"clench" ,"angry" ,"angry" ,"angry")
     
     m "\"I don't remember writing that one...\""
     

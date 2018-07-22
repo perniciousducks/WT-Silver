@@ -132,7 +132,7 @@ screen event_menu:
             ypos 30
             xsize 419
             ysize 41
-            text "The PornMaker" xalign 0.5 yalign 0.5 size 16 bold 0.2
+            text "The rekamnrop \n Short stories written for and by the Witch Trainer community." xalign 0.5 yalign 0.5 size 16 bold 0.2
         
         
         vbox:

@@ -1,16 +1,23 @@
+screen whose_points_screen:
+    add "images/room_of_requirement/whose_points.png"
+    
 label whose_points:
+    call hide_room_req
+    show screen whose_points_screen
+
     m "Hello and welcome to whose points is it anyway."
     m "The show where everything is made up but the points doesn't matter."
     m "Just like at Hogwarts."
     
-    call her_head("\"I hope I win! I need those housepoints.\"", "base","squintL", xpos="base", ypos="base")
+    call her_main("\"I hope I win! I need those housepoints.\"", "base","squintL",xpos="mid")
     
     m "First, let me introduce todays contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     
-    call her_head(" ", "grin","worried",cheeks="blush", xpos="base", ypos="base")
+    call her_main(" ", "grin","worried",cheeks="blush")
     
     m "Today we're playing scenes from a hat."
+    hide screen hermione_main
     
     hat "Stay the fuck away from me."
     
@@ -21,11 +28,12 @@ label whose_points:
     m "Looks like we have our first promt."
     m "Things you might say in potions class... But also in your bedroom."
     
-    call her_head("This cauldron hasn't been used for years. It's all moldy and full of muck!", "grin","worried",cheeks="blush", xpos="base", ypos="base")
+    call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!", "grin","worried",cheeks="blush")
     
     hat "Boo, there's no cauldrons in the bedroom!"
     
     m "Quiet now, it was a good euphemism, 10 points to Gryffindor."
+    hide screen hermione_main
     
     call ast_main( "Snape, get your gross hands off my shoulders, you creep!","clench" ,"angry" ,"angry" ,"angry" ) 
     
@@ -37,46 +45,50 @@ label whose_points:
     m "Sounds painful... 15 points to Ravenclaw."
     hide screen luna
     
-    call her_head("How's that worth more than my one...", "annoyed","worried", xpos="base", ypos="base")
-    
+    call her_main("How's that worth more than my one...", "annoyed","worried")
+    hide screen hermione_main
     m "Any more? On to the next promt then. Hat?"
     
     hat "Sorry, what did you cough call me? That's \"Sorting\" Hat to you. (coughs out note.)"
     
     g9 "Things you might do in quidditch... but also with your lover..."
     
-    call ast_main( "I'm going first this time! I have a good one!", "grin", "base", "base", "base") 
+    call ast_main( "I'm going first this time! I have a good one!", "grin", "base", "base", "mid") 
     
     m "Go on...."
     
-    call ast_main( "Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"grin") 
+    call ast_main( "Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"clench", "angry", "angry", "mid") 
     
     m "Again, I don't think you understand the game..."
     
-    call ast_main( "Give me the points!" ,"scream") 
+    call ast_main( "Give me the points!" , "scream", "narrow", "narrow", "mid") 
     
     m "Disquallified!"
     
-    call ast_main( "Wait, you can do that?" ,"scream" ,"wide")
+    call ast_main( "Wait, you can do that?" ,"scream" ,"wide", "wide")
     
     g9 "It's my game, I make the rules."
     
-    call ast_main( "\"We'll see about that....\"")
+    call ast_main( "\"We'll see about that....\"", "upset", "narrow","narrow")
     hide screen astoria_main
     
-    call her_head("My turn.", xpos="base", ypos="base")
-    call her_head("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.", "grin", cheeks="blush", xpos="base", ypos="base")
+    call her_main("My turn.")
+    call her_main("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.", "grin", cheeks="blush")
     
     m "A bit direct but I like it. \n15 points to Gryffindor."
+    hide screen hermione_main
     
-    call luna_main("It's quite exciting but also a bit hard. You need to make sure not to end up with one of the balls in your throat.")
+    call luna_main("It's quite exciting but also a bit hard. You need to make sure not to end up with one of the balls in your throat.",5,1,1,11)
     
     g9 "\"I don't mind having you end up with one of mine in your throat one day\""
     m "20 points to Ravenclaw"
+    hide screen luna
     
-    call her_head("\"Seems like pleasing the judge is the way to go. Only one round left...\"", "annoyed","worried", xpos="base", ypos="base")
+    call her_main("\"Seems like pleasing the judge is the way to go. Only one round left...\"", "annoyed","worried")
+    hide screen hermione_main
     
-    call luna_main("", mouth = "mouth_11")
+    call luna_main(" ", "2","1","1", "11")
+    hide screen luna
     
     m "Last round ladies. You better make it a good one. It's still all to play for."
     m "The last note if you please!"
@@ -115,21 +127,24 @@ label whose_points:
     
     m "Well, that's all for this episode of whose points is it anyway."
     
-    call her_head("I win, all the points for me!", "annoyed","worried", xpos="base", ypos="base")
+    call her_main("I win, all the points for me!", "annoyed","worried")
     
     call luna_main("Don't end now! This game is rigged!", mouth = "mouth_11")
     
     m "And remember the points doesn't matter!"
     
-    call her_head("Wait, they don't?!? I thought they were house points!", "annoyed","worried", xpos="base", ypos="base")
+    call her_main("Wait, they don't?!? I thought they were house points!", "annoyed","worried")
     
     call ast_main( "Harlot! Harlot! Harlot!" ,"clench" ,"angry" ,"angry" ,"angry")
     
     call luna_main("How does those points taste now? ", mouth = "mouth_11")
     call luna_main("The whole wizarding world are going see your tits!", mouth = "mouth_11")
     
-    call her_head("Oh no, I forgot about that!", "annoyed","worried", xpos="base", ypos="base")
+    call her_main("Oh no, I forgot about that!", "annoyed","worried")
     
     g9 "Good night!"
     
     "To be continued?"
+    
+    hide screen whose_points_screen
+    jump enter_room_of_req

@@ -26,7 +26,7 @@ screen room_of_requirement_menu:
         yanchor "center"
         idle "images/main_room/door.png"
         hover "images/main_room/door_hover.png"
-        action [Hide("room_of_requirement_menu"), Jump("leave_room_req")]
+        action [Jump("leave_room_req")]
         
     imagebutton: # Cadle Fire left
         xpos 350
@@ -64,13 +64,17 @@ label turn_on_cadle_2:
     call screen room_of_requirement_menu
     
 label leave_room_req: 
+    call hide_room_req
+    jump return_office
+
+label hide_room_req:
+    hide screen room_of_requirement_menu
     hide screen room_of_requirement
     hide screen candle_light_1
     hide screen candle_light_2
-    jump return_office
+    return
     
 label mirror_menu:
-    $ currentpage = 0
     show screen event_menu
     $ _return = ui.interact()
     
@@ -78,20 +82,23 @@ label mirror_menu:
     
     if _return == "Cancel":
         call screen room_of_requirement_menu
-        
-    elif _return == "Info":
-        call screen info_screen
-    
+
+    elif _return == "inc":
+        $ currentpage += currentpage+1
+        jump mirror_menu
+    elif _return == "dec":
+        $ currentpage += -1
+        jump mirror_menu
     else:
         $renpy.jump(_return)
 
 screen info_screen:
-    imagebutton: # X
+    imagebutton: # X 
         xpos 1013
         ypos 13
-        idle "interface/map/close_ground.png"
-        hover "interface/map/close_hover.png"
-        action [Hide("info_screen"), Jump("mirror_menu")]
+        idle "interface/general/"+interface_color+"/button_close.png"
+        hover "interface/general/"+interface_color+"/button_close_hover.png"
+        action [Hide("info_screen"), SetVariable("currentpage",0), Jump("mirror_menu")]
         
     add "interface/frames/"+interface_color+"/PinkBox.png" xalign 0.5 yalign 0.5 zoom 3
     vbox:
@@ -103,21 +110,30 @@ screen info_screen:
         text "The mirror of Erised contains a collection of side stories. Ones that would either not fit in the main game or over the top parodies dreamt up by the genie. \n\nThe stories can be unlocked by completing the task listed in the description of each entry. Make sure to look at the story theme to see what you want to go for first." xalign 0.5 yalign 0.5
         
 screen event_menu:
-    imagebutton: # X
+    imagebutton: # X 
         xpos 1013
         ypos 13
-        idle "interface/map/close_ground.png"
-        hover "interface/map/close_hover.png"
+        idle "interface/general/"+interface_color+"/button_close.png"
+        hover "interface/general/"+interface_color+"/button_close_hover.png"
         action Return("Cancel")
-        
-    imagebutton:
-        xpos 960
-        ypos 530
-        idle "interface/info.png"
-        hover "interface/info_hover.png"
-        action Return("Info")
     
-           
+    if not currentpage <= 0:
+        imagebutton:
+            xpos 855
+            ypos 270
+            idle "interface/general/"+interface_color+"/button_arrow_up.png"
+            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+            action Return("dec")
+            
+    if currentpage < math.ceil(len(mr_evs_list)/5):
+        imagebutton:
+            xpos 855
+            ypos 330
+            idle "interface/general/"+interface_color+"/button_arrow_down.png"
+            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+            action Return("inc")
+            
+             
     frame:
         background #00000000
         xsize 638
@@ -132,7 +148,7 @@ screen event_menu:
             ypos 30
             xsize 419
             ysize 41
-            text "The rekamnrop \n Short stories written for and by the Witch Trainer community." xalign 0.5 yalign 0.5 size 16 bold 0.2
+            text "The rekamnrop \n {size=12}Short stories written for and by the Witch Trainer community. {/size}" xalign 0.5 yalign 0.5 size 16 bold 0.2
         
         
         vbox:
@@ -262,6 +278,9 @@ label enter_room_of_req:
     hide screen floor_7th_screen
     hide screen floor_7th_menu
     
+    python:
+        for i in mr_evs_list:
+            i.checkLock()
     
     if first_visit_req == False:
         call gen_chibi(action = "", xpos = "door", ypos = "base", flip=True)

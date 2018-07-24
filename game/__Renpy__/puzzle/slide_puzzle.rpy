@@ -97,11 +97,11 @@ label open_pyzzle_box:
     jump cupboard
     
 screen puzzle_board:
-    imagebutton: # X
+    imagebutton: # X 
         xpos 1013
         ypos 13
-        idle "interface/map/close_ground.png"
-        hover "interface/map/close_hover.png"
+        idle "interface/general/"+interface_color+"/button_close.png"
+        hover "interface/general/"+interface_color+"/button_close_hover.png"
         action Return(-1)
         
     if puzzle_tries > 300:

@@ -49,11 +49,11 @@ screen select_character:
     add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
     text "-Character Select-" xpos 40 ypos 100 size 14 
     
-    imagebutton: # X
+    imagebutton: # X 
         xpos 1013
         ypos 13
-        idle "interface/map/close_ground.png"
-        hover "interface/map/close_hover.png"
+        idle "interface/general/"+interface_color+"/button_close.png"
+        hover "interface/general/"+interface_color+"/button_close_hover.png"
         action Return("Cancel")
     
     imagebutton:

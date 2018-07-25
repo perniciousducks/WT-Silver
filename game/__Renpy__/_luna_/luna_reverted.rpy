@@ -55,7 +55,7 @@ label luna_reverted_event_1: #Masturbate for genie again.
     m "The positive feelings you have are your body reacting to the wickerspats being expelled from your body."
     call luna_main("really?", "closed", "right", "sad", "default") 
     call luna_main("ah...", "default", "left_stare", "sad", "upset") 
-    call luna_main("I must... ah... be expelling a lot then...", 5, 1, 4, "talk") 
+    call luna_main("I must... ah... be expelling a lot then...", "seductive", "default", "sad", "talk") 
     call luna_main("in fact...", "wide", "right", "sad", "upset") 
     call luna_main("ah...", "seductive", "down", "sad", "upset") 
     call luna_main("I think... ah... I'm about to... ah...", "seductive", "default", "sad", "pout") 
@@ -119,10 +119,10 @@ label luna_reverted_event_1: #Masturbate for genie again.
     call luna_main("Ah... ah...{image=textheart}", "seductive", "right", "sad", "grin") 
     call luna_main("{size=+4}mmm... yes...{image=textheart}{/size}", "seductive", "down", "sad", "default") 
     call luna_main("{size=+8}ah... oh... frickity!!!{/size}", "seductive", "left_stare", "sad", "grin") 
-    call luna_main("!!!", "wide", 9, "default", "grin") #orgasm face
+    call luna_main("!!!", "wide", "default", "sad", "grin") #orgasm face
     ">THere's a blur of movement under Luna's skirt."
     call luna_main("ah! thank you sir!", "wide", "left_stare", "sad", "default") 
-    call luna_main("!!!", "default", 9, "sad", "default") #orgasm face
+    call luna_main("!!!", "wide", "default", "sad", "default") #orgasm face
     m "Is everything OK?"
     call luna_main("Ah... yes{image=textheart} thank you{image=textheart} sir...{image=textheart}", "seductive", "right", "sad", "upset") 
     m "so Have the wickspots left you alone now?"
@@ -170,7 +170,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     call luna_main("if only I could spend all day up here...", "default", "left_stare", "sad", "pout") 
     m "Do you think a full day of treatment would get rid of them?"
     call luna_main("ah...", "default", "left_stare", "sad", "upset") 
-    call luna_main("probably not...", 5, 1, 4, "talk") 
+    call luna_main("probably not...", "seductive", "default", "sad", "talk") 
     call luna_main("but...", "wide", "right", "sad", "upset") 
     call luna_main("ah...", "seductive", "down", "sad", "upset") 
     call luna_main("I think... it'd probably feel...", "seductive", "default", "sad", "pout") 

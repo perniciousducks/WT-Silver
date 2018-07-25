@@ -25,11 +25,11 @@ label luna_door:
     $ luna_chibi("stand")
     if luna_dom >= luna_sub:
         if luna_dom >= 4:
-            call luna_main("[l_genie_name]...", 9, 2, 2, 2) 
+            call luna_main("[l_genie_name]...", "doubtful", "right", "angry", "upset") 
         else:
-            call luna_main("[l_genie_name]...", 8, 2, 3, 3) 
+            call luna_main("[l_genie_name]...", "mad", "right", "mad", "angry") 
     else:
-        call luna_main("[l_genie_name]...", 1, 1, 4, 2) 
+        call luna_main("[l_genie_name]...", "default", "default", "sad", "upset") 
 
 label luna_door_menu:
     menu:
@@ -103,8 +103,8 @@ label luna_reset:
     return
 
 label luna_no_money:
-    call luna_main("You expect me to do it for free?", 8, 2, 3, 3) 
-    call luna_main("Hmph!", 8, 2, 3, 3) 
+    call luna_main("You expect me to do it for free?", "mad", "right", "mad", "angry") 
+    call luna_main("Hmph!", "mad", "right", "mad", "angry") 
     jump luna_away
 
 ###CHIBIS###------------------------------------------------------

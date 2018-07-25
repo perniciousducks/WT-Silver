@@ -158,20 +158,20 @@ init python: ###Method Definition for new characters
                 # luna_cheeks = luna_cheeks
 
         if l_eye is not None:
-            luna_eye = "characters/luna/body/face/eye/eye_"+str(l_eye)+".png" 
+            luna_eye = "characters/luna/body/face/eye/"+str(l_eye)+".png" 
 
         if l_pupil is not None and not luna_unlocked:
-            luna_pupil = "characters/luna/body/face/pupil/pupil_"+str(l_pupil)+".png" 
+            luna_pupil = "characters/luna/body/face/pupil/"+str(l_pupil)+".png" 
         if l_pupil is not None and luna_unlocked:
-            luna_pupil = "characters/luna/body/face/pupil/pupil_"+str(l_pupil)+"_G.png" 
+            luna_pupil = "characters/luna/body/face/pupil/"+str(l_pupil)+"_G.png" 
         if l_pupil is not None and luna_reverted:
-            luna_pupil = "characters/luna/body/face/pupil/pupil_"+str(l_pupil)+".png" 
+            luna_pupil = "characters/luna/body/face/pupil/"+str(l_pupil)+".png" 
 
         if l_eyebrow is not None:
-            luna_eyebrow = "characters/luna/body/face/eyebrow/eyebrow_"+str(l_eyebrow)+".png" 
+            luna_eyebrow = "characters/luna/body/face/eyebrow/"+str(l_eyebrow)+".png" 
 
         if l_mouth is not None:
-            luna_mouth = "characters/luna/body/face/mouth/mouth_"+str(l_mouth)+".png" 
+            luna_mouth = "characters/luna/body/face/mouth/"+str(l_mouth)+".png" 
             
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("luna")

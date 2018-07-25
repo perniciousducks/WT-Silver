@@ -16,10 +16,10 @@ label cho_init:
         $ cc_flip                = 1
 
         #Face
-        $ cc_mouth               = "characters/cho/mouth/mouth_01.png" 
-        $ cc_eye                 = "characters/cho/eye/eye_01.png" 
-        $ cc_eyebrow             = "characters/cho/eye/eyebrow_01.png" 
-        $ cc_pupil               = "characters/cho/eye/pupil_01.png" 
+        $ cc_mouth               = "characters/cho/mouth/default.png" 
+        $ cc_eye                 = "characters/cho/eye/default.png" 
+        $ cc_eyebrow             = "characters/cho/eyebrow/default.png" 
+        $ cc_pupil               = "characters/cho/pupil/default.png" 
         $ cc_tears               = "characters/cho/tears/tears_0.png" 
 
         #Clothes

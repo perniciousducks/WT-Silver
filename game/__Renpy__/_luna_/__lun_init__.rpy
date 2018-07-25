@@ -17,10 +17,10 @@ label luna_init:
         $ luna_flip              = 1
 
         #Face
-        $ luna_mouth             = "characters/luna/body/face/mouth/mouth_1.png" 
-        $ luna_eye               = "characters/luna/body/face/eye/eye_1.png" 
-        $ luna_eyebrow           = "characters/luna/body/face/eyebrow/eyebrow_1.png" 
-        $ luna_pupil             = "characters/luna/body/face/pupil/pupil_1.png"
+        $ luna_mouth             = "characters/luna/body/face/mouth/default.png" 
+        $ luna_eye               = "characters/luna/body/face/eye/default.png" 
+        $ luna_eyebrow           = "characters/luna/body/face/eyebrow/default.png" 
+        $ luna_pupil             = "characters/luna/body/face/pupil/default.png"
         $ luna_tears             = 0 
 
         #Clothes

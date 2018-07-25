@@ -96,15 +96,15 @@ label hat_intro_3: #Luna change scene
     call play_sound("door") 
     ">Luna stands in front of you."
     $ luna_chibi("stand")
-    call luna_main("Hermione said you wanted to see me?", 1, 2, 1, 2) 
+    call luna_main("Hermione said you wanted to see me?", "default", "right", "default", "upset") 
     m "Yes. It's about your school house."
-    call luna_main("Ravenclaw?", 1, 1, 5, 2) 
+    call luna_main("Ravenclaw?", "default", "default", "raised", "upset") 
     m "Yes. I've been speaking with the sorting hat recently and I've been worried that he may have gotten a few student's houses wrong over the years."
-    call luna_main("Really? So am I going to have to change house?", 1, 1, 4, 3) 
+    call luna_main("Really? So am I going to have to change house?", "default", "default", "sad", "angry") 
     m "Of course not!"
-    call luna_main("*Phew*!", 2, 1, 1, 1) 
+    call luna_main("*Phew*!", "closed_happy", "default", "default", "default") 
     m "I just wanted to put the hat on your head to see if he made the right choice."
-    call luna_main("oh, alright then!", 1, 2, 1, 1) 
+    call luna_main("oh, alright then!", "default", "right", "default", "default") 
     ">You turn around and reach for the hat."
     m "Almost there... Just grab the edge of it..."
     hat "Careful!"
@@ -112,23 +112,23 @@ label hat_intro_3: #Luna change scene
     hat "*Psst*{size=-5}Nice work! Now just put me on her head.{/size}"
     m "Here we are Miss Lovegood..."
     ">You place the hat gingerly on her head."
-    call luna_main("...", 1, 2, 1, 3) 
-    call luna_main("Is it-", 1, 2, 5, 3) 
+    call luna_main("...", "default", "right", "default", "angry") 
+    call luna_main("Is it-", "default", "right", "raised", "angry") 
     hat "{size=+5}HMMMM{/size}yes... {size=-5}yes...{/size} I see. Very interesting... {size=+5}Very{/size}{p} {size=+5}interesting...{/size}"
-    call luna_main("What's interesting?", 1, 1, 5, 2) 
+    call luna_main("What's interesting?", "default", "default", "raised", "upset") 
     hat "What? Oh nothing, nothing. Just close your eyes, try and get a bit of sleep..."
-    call luna_main("Sleep?", 6, 2, 5, 2) 
-    call luna_main("Why would I... want{p} to...", 3, 1, 4, 2) 
-    call luna_main("...", 1, 6, 4, 2) #hypno eyes
+    call luna_main("Sleep?", "doubtful", "right", "raised", "upset") 
+    call luna_main("Why would I... want{p} to...", "closed", "default", "sad", "upset") 
+    call luna_main("...", "default", "empty", "sad", "upset") #hypno eyes
     m "is she alright?"
     hat "She's fine. Just having a bit of a rest. Now about that personality..."
     hat "Oh yes... Hmmmm, {p}well I suppose that could work..."
     hat "{size=-5}yes... I'm sure salazar would be proud...{/size}"
     hat "Just a little longer..."
-    call luna_main("...", 1, 6, 4, 2) #hypno eyes
-    call luna_main("...", 1, 6, 1, 2) #hypno eyes
+    call luna_main("...", "default", "empty", "sad", "upset") #hypno eyes
+    call luna_main("...", "default", "empty", "default", "upset") #hypno eyes
     $ luna_unlocked = True
-    call luna_main("...", 1, 6, 1, 2) #hypno eyes
+    call luna_main("...", "default", "empty", "default", "upset") #hypno eyes
     m "Wait what happened?! Her eyes just changed color!"
     hat "Really? Hmmm... didn't expect that... what color are they?"
     m "Green."
@@ -142,7 +142,7 @@ label hat_intro_3: #Luna change scene
     hat "Yes, she's in a fairly... lucid state..."
     ">You take the hat off of Luna's head."
     m "Thank you very much Miss Lovegood. I think you better be off to bed now "
-    call luna_main("yes... bed...", 1, 6, 1, 2) #hypno eyes
+    call luna_main("yes... bed...", "default", "empty", "default", "upset") #hypno eyes
     hide screen luna_chibi
     hide screen luna
     with d3

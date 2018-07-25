@@ -75,25 +75,25 @@ init python: ###Method Definition for new characters
             if cho_eye == "0":
                 cc_eye = "characters/blank.png"
             else:
-                cc_eye = "characters/cho/eye/eye_0"+cho_eye+".png" 
+                cc_eye = "characters/cho/eye/"+cho_eye+".png" 
 
         if cho_eyebrow is not None:
             if cho_eyebrow == "0":
                 cc_eyebrow = "characters/blank.png"
             else:
-                cc_eyebrow = "characters/cho/eye/eyebrow_0"+cho_eyebrow+".png" 
+                cc_eyebrow = "characters/cho/eyebrow/"+cho_eyebrow+".png" 
 
         if cho_pupil is not None:
             if cho_pupil == "0":
                 cc_pupil = "characters/blank.png"
             else:
-                cc_pupil = "characters/cho/eye/pupil_0"+cho_pupil+".png" 
+                cc_pupil = "characters/cho/pupil/"+cho_pupil+".png" 
 
         if cho_mouth is not None:
             if cho_mouth == "0":
                 cc_mouth = "characters/blank.png"
             else:
-                cc_mouth = "characters/cho/mouth/mouth_0"+cho_mouth+".png" 
+                cc_mouth = "characters/cho/mouth/"+cho_mouth+".png" 
             
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("cho_chang")

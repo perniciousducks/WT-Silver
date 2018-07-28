@@ -7,23 +7,30 @@ label __init_variables:
     if not hasattr(renpy.store,'mr_ev_WPIIA'):
         $mr_ev_WPIIA = mirror_stories(
                 title = "Whose points is it anyway?",
+                story_description = "Parody of the game show of \"whose points is it anyway?\"",
                 start_label = "whose_points",
                 authors = ["Johnny"],
                 categories= ["Parody","Lewd", "Gameshow"],
-                ach_desc = "Unlock the mirror of noisrevrep/Erised",
+                ach_desc = "Unlock the characters",
                 content_characters = ["luna", "astoria", "hermione"]
             )
-            
+    
+    if not hasattr(renpy.store,'mr_ev_GHE'):
+        $mr_ev_GHE = mirror_stories(
+                title = "The genie, the desk and the door",
+                story_description = "Short story about genie and his house-elf",
+                start_label = "genie_house_elf",
+                authors = ["Johnny"],
+                categories= ["Parody"],
+                ach_desc = "Unlock the mirror of noisrevrep/Erised",
+                content_characters = []
+            )
+    
+    
     
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
-    $ mr_evs_list.append(mr_ev_WPIIA)
+    $ mr_evs_list.append(mr_ev_GHE)
     
     $currentpage = 0
         
@@ -57,7 +64,27 @@ init python:
                 returnV += self.ach_desc
                     
             return returnV+"{/size}" 
-
+        
+        def getCharcters(self):
+            ret_str = ""
+            for c in self.content_characters:
+                if c == "luna":
+                    ret_str += "{image=interface/room_of_req/luna_icon.png}"
+                elif c == "hermione":
+                    ret_str += "{image=interface/room_of_req/hermione_icon.png}"
+                elif c == "astoria":
+                    ret_str += "{image=interface/room_of_req/astoria_icon.png}"
+                elif c == "susan":
+                    ret_str += "{image=interface/room_of_req/susan_icon.png}"
+                elif c == "cho":
+                    ret_str += "{image=interface/room_of_req/cho_icon.png}"
+                elif c == "tonks":
+                    ret_str += "{image=interface/room_of_req/tonks_icon.png}"
+                else:
+                    ret_str += "{image=heart_00}"
+            
+            return ret_str
+        
         def checkLock(self):
             unlocked = True
             for c in self.content_characters:

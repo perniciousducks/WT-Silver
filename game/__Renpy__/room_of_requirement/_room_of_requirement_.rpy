@@ -158,10 +158,10 @@ screen event_menu:
             ysize 448
         
             for i in range(0, 5):
-                if (currentpage*5)+i > len(mr_evs_list):
-                    add "interface/room_of_req/mirror_event_item.png"
+                if (currentpage*5)+i < len(mr_evs_list):
+                    use mirror_item(mr_evs_list[(currentpage*5)+i])
                 else:
-                    use mirror_item(mr_evs_list[currentpage*5])
+                    add "interface/room_of_req/mirror_event_item.png"
             
 screen mirror_item(mirror_story):
     frame:
@@ -174,7 +174,7 @@ screen mirror_item(mirror_story):
         if mirror_story.unlocked:
             imagebutton:
                 idle "interface/room_of_req/mirror_event_item.png"
-                hover "interface/room_of_req/mirror_event_item.png"
+                hover "interface/room_of_req/mirror_event_item_hover.png"
                 action Return(mirror_story.start_label)
         else:
             add "interface/room_of_req/mirror_event_item.png"
@@ -184,8 +184,10 @@ screen mirror_item(mirror_story):
             ypos 1
             xsize 82
             ysize 81
-            
-            add "interface/room_of_req/locked.png" xalign 0.5 yalign 0.5 zoom 0.8
+            if mirror_story.unlocked == False:
+                add "interface/room_of_req/locked.png" xalign 0.5 yalign 0.5 zoom 0.8
+            else:
+                add "interface/room_of_req/unlocked.png" xalign 0.5 yalign 0.5 zoom 0.8
         
         vbox:
             xpos 94
@@ -201,7 +203,16 @@ screen mirror_item(mirror_story):
             xsize 500
             ysize 55
             
-            text mirror_story.getDescription()   
+            text mirror_story.getDescription()
+        
+        vbox:
+            xpos 94
+            ypos 30
+            xsize 500
+            ysize 55
+            
+            text mirror_story.getCharcters() xalign 1.0 yalign 1.0
+            
             
 screen candle_light_1:
     add "candle_fire_01" xpos 590 ypos 85
@@ -210,7 +221,10 @@ screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
     
 screen room_of_req_door:
-    add "images/room_of_requirement/front_door.png" at fade_in(200, 160, 1)
+    add "images/room_of_requirement/front_door.png" at fade_in(440, 115, 1)
+    add "images/room_of_requirement/owlbasin.png" at fade_in(350, 250, 1) zoom 0.3
+    add "images/room_of_requirement/owlbasin.png" at fade_in(700, 250, 1) zoom 0.3
+    
     zorder -1
 
 screen floor_7th_screen:
@@ -219,10 +233,10 @@ screen floor_7th_screen:
     #add "flower_animation" xpos 830 ypos 160 zoom 0.60
     add "images/main_room/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
-    add "images/main_room/candle.png" xpos 300 ypos 95
-    add "candle_fire_01" xpos 300 ypos 95
-    add "images/main_room/candle.png" xpos 600 ypos 95
-    add "candle_fire_02" xpos 600 ypos 95
+    #add "images/main_room/candle.png" xpos 300 ypos 95
+    #add "candle_fire_01" xpos 300 ypos 95
+    #add "images/main_room/candle.png" xpos 600 ypos 95
+    #add "candle_fire_02" xpos 600 ypos 95
     add "images/main_room/candle.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
     
@@ -258,15 +272,21 @@ image flower_animation:
     
 
 screen floor_7th_door:
-    add "images/room_of_requirement/front_door.png" xpos 200 ypos 160
+    add "fireplace_fire" xpos 265 ypos 50
+    add "images/room_of_requirement/owlbasin.png" xpos 350 ypos 250 zoom 0.3
+    
+    add "images/room_of_requirement/front_door.png" xpos 440 ypos 115
+    add "fireplace_fire" xpos 615 ypos 50
+    add "images/room_of_requirement/owlbasin.png" xpos 700 ypos 250 zoom 0.3
+    
     zorder -1
     
 screen floor_7th_menu:
     imagebutton:
-        xpos 200
-        ypos 160
+        xpos 440
+        ypos 115
         idle "images/room_of_requirement/front_door.png"
-        hover "images/room_of_requirement/front_door.png"
+        hover "images/room_of_requirement/front_door_hover.png"
         action [Jump("enter_room_of_req")]
     zorder -1
     

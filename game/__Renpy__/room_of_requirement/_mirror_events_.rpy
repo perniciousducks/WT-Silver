@@ -33,6 +33,7 @@ label whose_points:
     hat "Boo, there's no cauldrons in the bedroom!"
     
     m "Quiet now, it was a good euphemism, 10 points to Gryffindor."
+    call play_sound("applause01")
     hide screen hermione_main
     
     call ast_main( "Snape, get your gross hands off my shoulders, you creep!","clench" ,"angry" ,"angry" ,"angry" ) 
@@ -40,9 +41,10 @@ label whose_points:
     m "I'm not sure you got the idea of the game there..."
     
     hide screen astoria_main
-    call luna_main("Oops. I was supposed to squeeze the mucus out with my hands and not crush it.", "2", "1", "1","11" )
+    call luna_main("Oops. I was supposed to squeeze the mucus out with my hands and not crush it.", "closed", "raised", "default","wide_smile" )
     
     m "Sounds painful... 15 points to Ravenclaw."
+    call play_sound("applause01")
     hide screen luna
     
     call her_main("How's that worth more than my one...", "annoyed","worried")
@@ -76,18 +78,20 @@ label whose_points:
     call her_main("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.", "grin", cheeks="blush")
     
     m "A bit direct but I like it. \n15 points to Gryffindor."
+    call play_sound("applause01")
     hide screen hermione_main
     
-    call luna_main("It's quite exciting but also a bit hard. You need to make sure not to end up with one of the balls in your throat.",5,1,1,11)
+    call luna_main("It's quite exciting but also a bit hard. You need to make sure not to end up with one of the balls in your throat.", "wink","raised", "default","grin")
     
     g9 "\"I don't mind having you end up with one of mine in your throat one day\""
     m "20 points to Ravenclaw"
+    call play_sound("applause01")
     hide screen luna
     
     call her_main("\"Seems like pleasing the judge is the way to go. Only one round left...\"", "annoyed","worried")
     hide screen hermione_main
     
-    call luna_main(" ", "2","1","1", "11")
+    call luna_main(" ", "default", "default", "default", "wide_smile")
     hide screen luna
     
     m "Last round ladies. You better make it a good one. It's still all to play for."
@@ -97,13 +101,14 @@ label whose_points:
     
     m "That can't be right...."
     
-    call ast_main( "Let me check professor!" )
+    call ast_main( "Let me check professor!", "happy", "base", "base", "ahegao")
     call ast_main( "I found the last note, it was stuck under one of the folds!")
+    hide screen astoria_main
     
     hat "Are you calling me fat young lady?"
     
     call ast_main( "I'll read it for you shall I?")
-    
+
     m "Go ahead."
     
     call ast_main( "Things that you would not share with your classmates... but would share with dumby.")
@@ -111,40 +116,122 @@ label whose_points:
     
     m "\"I don't remember writing that one...\""
     
-    call luna_main("I see invisible creatures... but people don't belie... ", mouth = "mouth_11")
+    call luna_main("I see invisible creatures... but people don't belie... ", "tired", "sad", "down",  "talk")
+    hide screen luna
     
     call h_action("lift_top") 
 
     call play_music("playful_tension") # SEX THEME.
 
     call her_chibi("lift_top","mid","base") 
-
+    
     call bld 
     
     g9 "500 points to Gryffindor!"
+    call play_sound("applause01")
     
-    call luna_main("That's cheating, I didnt even get to finish! ", mouth = "mouth_11")
+    call luna_main("That's cheating, I didnt even get to finish! ", "mad", "angry", "default", "yell")
+    hide screen luna
     
     m "Well, that's all for this episode of whose points is it anyway."
     
     call her_main("I win, all the points for me!", "annoyed","worried")
     
-    call luna_main("Don't end now! This game is rigged!", mouth = "mouth_11")
+    call luna_main("Don't end now! This game is rigged!", "mad", "angry", "default", "yell")
+    hide screen luna
     
     m "And remember the points doesn't matter!"
     
     call her_main("Wait, they don't?!? I thought they were house points!", "annoyed","worried")
     
-    call ast_main( "Harlot! Harlot! Harlot!" ,"clench" ,"angry" ,"angry" ,"angry")
+    call ast_main( "Harlot! Harlot! Harlot!" ,"grin" ,"happyCl" ,"R" ,"base")
     
-    call luna_main("How does those points taste now? ", mouth = "mouth_11")
-    call luna_main("The whole wizarding world are going see your tits!", mouth = "mouth_11")
+    call luna_main("How does those points taste now? ", "default", "default", "default", "grin")
+    call luna_main("The whole wizarding world are going see your tits!", "default", "default", "default", "wide_smile")
+    hide screen luna
     
     call her_main("Oh no, I forgot about that!", "annoyed","worried")
     
     g9 "Good night!"
+    call play_sound("applause01")
     
     "To be continued?"
     
     hide screen whose_points_screen
     jump enter_room_of_req
+    
+label genie_house_elf:
+    call hide_room_req
+    show screen main_room
+    
+    "This story takes place in between the introduction of Snape and first meeting Hermione."
+
+    m "thoughts: How does that door work?"
+    m "thoughts: How does the people know I’ve summoned them?"
+    m "thoughts: I don’t have a secretary...that I know of anyway. "
+    m "thoughts Have they been keeping a secretary from me? I should ask Snape."
+
+    call sna_walk("door","mid",2) 
+    call sna_main("opens the door, his pointy nose protruding under his silky hair. ", "snape_01", xpos="base", ypos="base")
+    call sna_main("You called? ", "snape_23", xpos="base", ypos="base")
+
+    m "How did you, how do you...this door, how does it work? [angry]"
+    m "thoughts: What is this... this unfamiliar magic."
+    m "thoughts: I know the ins and outs of the universe. But this world is just so alien to me…"
+    m "thoughts: At least I know things about aliens…."
+
+    call sna_main("Well, you’re the headmaster are you not? ", "snape_23", xpos="base", ypos="base")
+
+    m "What’s that supposed to mean?"
+
+    call sna_main("...", "snape_02", xpos="base", ypos="base")
+    call sna_main("I keep forgetting that you don’t know these things.", "snape_01", xpos="base", ypos="base")
+    call sna_main("People that were educated here already knows how things work. ", "snape_01", xpos="base", ypos="base")
+    call sna_main("The headmaster is in control of the school and its inhabitants.", "snape_24", xpos="base", ypos="base")
+
+    m "I know that, we have schools in my world to..."
+    m "But we generally don’t wave wooden sticks around yelling random words."
+
+    call sna_main("...", "snape_08", xpos="base", ypos="base")
+    call sna_main("No. You’re literally in control over the school....look.", "snape_01", xpos="base", ypos="base")
+    call sna_main("Revelio!", "snape_01", xpos="base", ypos="base")
+
+    helf "Oh, hello there sir!"
+
+    m "What the hell is that? [Shocked face]"
+
+    call sna_main("That…", "snape_01", xpos="base", ypos="base")
+    call sna_main("Is an house elf.", "snape_01", xpos="base", ypos="base")
+
+    m "An house...elf. Is that like a Santa's elf? [normal face]"
+
+    call sna_main("Sort of, they don’t get paid so they do have that in common…", "snape_01", xpos="base", ypos="base")
+    call sna_main("Ahem, anyway…. The house elf here can send us messages so we’ll go where we are needed.", "snape_01", xpos="base", ypos="base")
+    call sna_main("He just sits here invisible during the day and cleans and eat at night.", "snape_01", xpos="base", ypos="base")
+    
+    m "The house elf cleans? I thought I had some sort of magic self cleaning desk…"
+
+    helf "No sir... I see it all, I clean it all....every...last bit of it."
+
+    call sna_main("...", "snape_08", xpos="base", ypos="base")
+    
+    m "..."
+
+    
+    call sna_walk("mid","door",2) 
+    call sna_main("If that is all, I’ll be in the dungeons. I’ve been working on a new cleaning solution.", "snape_01", xpos="base", ypos="base")
+    call sna_main("It seems like it might come in handy sooner than I thought.", "snape_01", xpos="base", ypos="base")
+    call sna_walk("door","leave",2) 
+    
+    m "..."
+
+    helf "So, should I turn invisible again sir?"
+
+    m "Yes...yes that will be for the best."
+
+    "The end."
+    
+    hide screen main_room
+    jump enter_room_of_req
+    
+    

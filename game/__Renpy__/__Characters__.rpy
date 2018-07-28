@@ -7,7 +7,9 @@ init python:
     m = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     g4 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage4.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     g9 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage9.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
-
+    
+    ### House-Elf ###
+    helf = Character(None, window_left_padding=250, show_side_image=Image("characters/house-elf/house-elf.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     
     ### SNAPE HEAD ###
     sna_ = [""]

@@ -1,10 +1,14 @@
 
 
-label sna_main(text="",face="",xpos=snape_xpos,ypos=snape_ypos,trans=None):
+label sna_main(text="",face="",xpos=snape_xpos,ypos=snape_ypos,trans=None, remove=False):
     hide screen snape_main
     hide screen snape_head
     show screen bld1
-
+    
+    if remove == True:
+        pause 0.1
+        return
+    
     if xpos != snape_xpos:
         if xpos == "base" or xpos == "default":
             $ snape_xpos = 525
@@ -22,36 +26,7 @@ label sna_main(text="",face="",xpos=snape_xpos,ypos=snape_ypos,trans=None):
     show screen snape_main
     show screen bld1
     
-    #Transitions
-    if trans != None:         #d3 is default.
-        if trans == "d1":
-            with d1
-        elif trans == "d3": #Default anyways.
-            with d3
-        elif trans == "d5":
-            with d5
-        elif trans == "d7":
-            with d7
-        elif trans == "d9":
-            with d9
-
-        elif trans == "fade":
-            with fade
-        elif trans == "hpunch":
-            with hpunch
-        elif trans == "vpunch":
-            with vpunch
-
-        #Skip Transitions
-        elif trans == "none" or trans == "skip":
-            pass
-        else: #for typos and preventing crashes...
-            with d3
-            
-    #Default transition.
-    else:
-        with d3
-            
+    call transition(trans)
 
     if text != "":
         if "[hermione_name]" in text or "[genie_name]" in text:

@@ -18,7 +18,7 @@ label __init_variables:
     if not hasattr(renpy.store,'mr_ev_GHE'):
         $mr_ev_GHE = mirror_stories(
                 title = "The genie, the desk and the door",
-                story_description = "Short story about genie and his house-elf",
+                story_description = "The genie tries to figure out how people know when he calls for them.",
                 start_label = "genie_house_elf",
                 authors = ["Johnny"],
                 categories= ["Parody"],

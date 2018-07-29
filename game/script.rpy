@@ -7,6 +7,7 @@
 define e = Character('Eileen', color="#c8ffc8")
 
 
+
 # The game starts here.
 label start:
     $ init_variables()
@@ -698,6 +699,7 @@ define g12 = Character(None, window_left_padding=250, image="mage12", color="#40
 define g13 = Character(None, window_left_padding=250, image="mage13", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g14 = Character(None, window_left_padding=250, image="mage14", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g15 = Character(None, window_left_padding=250, image="mage15", color="#402313", ctc="ctc3", ctc_position="fixed")
+define n = Character('Narrator ', window_left_padding=250, image="characters/dumbledore/dum_narritor.png", color="#402313", ctc="ctc3", ctc_position="fixed")
 
 
 #Akabur

@@ -33,6 +33,7 @@ screen genie_stands_f: #Genie stands. Facing left.
 screen genie: #Sitting behind desk.
     tag genie_chibi
     add "images/main_room/11_genie_00.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
+    zorder 1
 
 
 screen rum_screen: #Rummaging through the cumpboard.

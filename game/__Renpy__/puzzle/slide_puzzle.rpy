@@ -36,6 +36,7 @@ label update_puzzle_slide:
     $yposS = int(move%4)
     $xposE = int(emptyposition/4)
     $yposE = int(emptyposition%4)
+    $ puzzle_tries = puzzle_tries + 1
     
     if (((xposS == xposE-1 or xposS == xposE+1) and yposS == yposE) or ((yposS == yposE-1 or yposS == yposE+1) and xposS == xposE)):
         $imagepuzzle[xposE][yposE] = imagepuzzle[xposS][yposS]

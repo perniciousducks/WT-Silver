@@ -311,8 +311,8 @@ label enter_room_of_req:
         $ first_visit_req = True
         m"It's just an empty room....with a mirror?"
         call gen_walk(pos1="door", pos2="200")
-        m"...."
-        vQ"So you've found the mirror of Erised"
+        m "...."
+        whom "So you've found the mirror of Erised"
         m"cough I mean...yes Severus, it is I... \"Dumbledore\""
         call sna_chibi(xpos="door")
         call gen_chibi(action = "", xpos = "200", ypos = "base")

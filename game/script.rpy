@@ -683,7 +683,6 @@ image side mage14 = "characters/genie/mage14.png"
 image side mage15 = "characters/genie/mage15.png"
 
 define s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
-define vQ = Character('Mysterious Voice', color="#402313", show_two_window=True, ctc_position="fixed")
 define m = Character(None, window_left_padding=250, image="mage", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g = Character(None, window_left_padding=250, image="mage2", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g2 = Character(None, window_left_padding=250, image="mage3", color="#402313", ctc="ctc3", ctc_position="fixed")

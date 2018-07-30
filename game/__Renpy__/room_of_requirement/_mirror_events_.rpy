@@ -2,6 +2,8 @@ screen whose_points_screen:
     add "images/room_of_requirement/whose_points.png"
     
 label whose_points:
+    show screen bld1
+    with Dissolve(.3)
     call hide_room_req
     show screen whose_points_screen
 
@@ -166,6 +168,8 @@ label whose_points:
     jump enter_room_of_req
     
 label genie_house_elf:
+    show screen bld1
+    with Dissolve(.3)
     call hide_room_req
     show screen main_room
     show screen genie

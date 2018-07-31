@@ -18,6 +18,7 @@ label cho_init:
         #Face
         $ cc_mouth               = "characters/cho/mouth/default.png" 
         $ cc_eye                 = "characters/cho/eye/default.png" 
+        $ cc_eyewhite            = "characters/cho/eye/white.png" 
         $ cc_eyebrow             = "characters/cho/eyebrow/default.png" 
         $ cc_pupil               = "characters/cho/pupil/default.png" 
         $ cc_tears               = "characters/cho/tears/tears_0.png" 

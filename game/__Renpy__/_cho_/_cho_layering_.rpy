@@ -6,8 +6,9 @@ screen cho_chang:
     add cc_base xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the base body
     add cc_hair_shadow xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the hair shadow
     ### EMOTIONS
-    add cc_eye xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the eye outline
+    add cc_eyewhite xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the eye white
     add cc_pupil xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the pupil
+    add cc_eye xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the eye outline
     add cc_eyebrow xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the eyebrow
     add cc_hair xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) #Add the hair shadow
     ###MOUTH

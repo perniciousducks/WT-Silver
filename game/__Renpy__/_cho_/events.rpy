@@ -1,6 +1,6 @@
 label cho_menu:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ changeCho(1, 1, 2, 1)
+    $ changeCho("default", "default", "right", "smile")
     menu:
         "-Personal Favours-":
             menu:
@@ -370,7 +370,7 @@ label cho2begin:
     $ cho_mad = 0
     $ cho_whoring = 0
     $ renpy.play ('sounds/door.mp3')
-    $ changeCho(3, 3, 3, 4)
+    $ changeCho("closed", "sad", "left", "upset")
     ">Cho enters and stands in the middle of the room."
     m "Now, what was it you needed?"
     call cho_main("I... um...", "default", "sad", "right", "frown") 
@@ -388,12 +388,12 @@ label cho2begin:
     call cho_main("It doesn't matter...", "suspicious", "angry", "right_down", "default") 
     call cho_main("It doesn't matter how hard i try or how good I am!", "suspicious", "angry", "down", "default") 
     call cho_main("i can't beat them any other way.", "shocked", "angry", "default", "default") 
-    $ changeCho(5, 2, 1, 9)
+    $ changeCho("wide", "angry", "default", "pout")
     m "I see."
     m "But...why sell your favors to me, specifically?"
     m "If you suspect that Miss Granger is selling me favors, wouldn't you earn points faster from a less 'occupied' professor?"
     call cho_main("I...um...I looked, but the only other professor trading favors is Snape.", "suspicious", "sad", "right_down", "pout") 
-    call cho_main("AND I will nEver tRade that slytherin scum a single favor!", 6, 2, 5, "angry") 
+    call cho_main("AND I will nEver tRade that slytherin scum a single favor!", "suspicious", "angry", "right", "angry") 
     menu:
         "I really don't feel it would be appropriate.":
             m "I really don't feel that it would be appropriate. I'm sure you understand."
@@ -515,7 +515,7 @@ label cho2begin:
                                                         m "..."
                                                         jump cho2end
                                                     "-Did I say five? I meant more-":
-                                                        $ changeCho(6, 2, 5, 4)
+                                                        $ changeCho("suspicious", "angry", "right" "upset")
                                                         $ cho_mad +=5
                                                         jump cho2howmuch
                                             "-15 points-":
@@ -532,7 +532,7 @@ label cho2begin:
                                                 call cho_main("that's sooo much, professor.", "default", "default", "right", "lip_bite") 
                                                 call cho_main("Do you want me to take the rest off?", "angry", "sad", "right", "quiver") 
                                                 $ cho_points = 100
-                                        $ changeCho(2, 1, 2, 5)
+                                        $ changeCho("angry", "default", "angry", "quiver")
                                         m "Miss Chang, the rest if you would."
                                         call cho_main("Of course, sir.", "default", "default", "default", "lip_bite") 
                                         ">Cho reaches over her head and pulls her bra off in one smooth motion.{p}Her small, pert breasts barely move as she dips low and pulls her painties down her fit legs."
@@ -546,7 +546,7 @@ label cho2begin:
                                                 m  "Her tits sag too much, and her fat hips are disgusting."
                                                 call cho_main("She really is a...", "suspicious", "angry", "right_down", "lip_bite") 
                                                 call cho_main("...stupid...", "suspicious", "angry", "right_down", "upset") 
-                                                call cho_main("...fat...", 6, 2, 6, "angry") 
+                                                call cho_main("...fat...", "suspicious", "angry", "right_down", "angry") 
                                                 call cho_main("...cow, isn't she?", "suspicious", "angry", "down", "quiver") 
                                                 ">From your desk, you can see Cho's hand moving closer to her mound. She's clearly getting wet."
                                             "-I can't choose-":
@@ -555,7 +555,7 @@ label cho2begin:
                                             "-Nope, you lose-":
                                                 m "I'm afraid, Miss Granger is simply more sexy. Jealousy is quite unbecoming of a young witch."
                                                 call cho_main("What?", "suspicious", "angry", "down", "default") 
-                                                call cho_main("but she doesn't even Work out. Sir.", 6, 2, 6, "angry") 
+                                                call cho_main("but she doesn't even Work out. Sir.", "suspicious", "angry", "right_down", "angry") 
                                                 $ cho_mad +=5
                                         menu:
                                             "-Take out your cock and start jerking off behind your desk-":
@@ -594,7 +594,7 @@ label cho2begin:
                                                                 ">Cho's legs, suddenly too weak to hold her lithe body, collapse beneath her and she falls to the floor."
                                                             "-Play along-":
                                                                 m  "Only when I'm around students like you, Miss Chang."
-                                                                $ changeCho(6, 3, 6, 5)
+                                                                $ changeCho("suspicious", "sad", "right_down", "lip_bite")
                                                                 ">As you continue to stroke your cock you notice Cho shifting her weight.{w=.04} The tight muscles of her thighs are squeezing in desperate rythym."
                                                                 hide screen cho_chang
                                                                 m "Miss Chang, what are you doing?"

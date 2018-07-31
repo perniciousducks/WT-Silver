@@ -184,6 +184,10 @@ label __init_variables:
         $ ccg1 = "herm"
         $ ccg2 = 1
         $ ccg3 = "gene"
+
+    #1.32 var updates
+    if not hasattr(renpy.store,'cc_eyewhite'): #important!
+        $ cc_eyewhite = "characters/cho/eye/white.png" 
         
     #SC34 update 2 stuff, thanks akabur.
     if not hasattr(renpy.store,'sc_cg_base'): #important!

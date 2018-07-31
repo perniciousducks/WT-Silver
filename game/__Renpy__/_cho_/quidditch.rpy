@@ -1,59 +1,61 @@
 label cho_quidd_intro: #have cho come in and talk about wanting help to win more quidditch games against slytherin and gryffindor
     #genie suggest for her to play dirty
     ">With a loud bang, your door is flung open as a disgruntled girl marches in."
-    cho "It's not fair!"
-    cho "Malfoy's pompous old man just bought the whole \'Slytherin\'' team brand new Nimbus 2018s!"
-    cho "\'Ravenclaw\'' can't be expected to win against that!"
-    cho "I demand you level the playing field sir!"
+    call cho_main("It's not fair!", "angry", "angry", "right", "pout")
+    call cho_main("Malfoy's pompous old man just bought the whole \'Slytherin\'' team brand new Nimbus 2018s!", "closed", "angry", "closed", "yell")
+    call cho_main("\'Ravenclaw\'' can't be expected to win against that!", "angry", "angry", "right_down", "angry")
+    call cho_main("I demand you level the playing field sir!", "angry", "angry", "default", "yell")
     m "Why? Is that crooked as well?"
-    cho "This isn't funny sir! With \'Slytherin\' playing dirty there's no way we can win!"
-    cho "Ugh! I knew you wouldn't do anything..."
+    call cho_main("This isn't funny sir! With \'Slytherin\' playing dirty there's no way we can win!", "angry", "sad", "right", "frown")
+    call cho_main("Ugh! I knew you wouldn't do anything...", "angry", "angry", "default", "frown")
     m "So you don't want to hear my solution then?"
-    cho "Wait... You are going to help?!"
-    cho "Thank you, thank you, thank you!"
-    cho "I take a small size broom and I'd like gold trim with a dark-"
+    call cho_main("Wait... You are going to help?!", "shocked", "sad", "default", "smile")
+    call cho_main("Thank you, thank you, thank you!", "closed", "default", "closed", "smile")
+    call cho_main("I take a small size broom and I'd like gold trim with a dark-", "default", "default", "right", "open")
     m "I'm not buying you a broom..."
     m "(Is quidditch like curling then?)"
-    cho "Oh..."
-    cho "Then what's your solution?"
+    call cho_main("Oh...", "shocked", "sad", "right_down", "frown")
+    call cho_main("Then what's your solution?", "suspicious", "angry", "default", "open")
     m "You said that the \'Slytherin\'s were playing dirty..."
     m "How about you fight fire with fire then?"
-    cho "So you think we should fight dirty too?"
-    cho "But how? The rules forbid almost all foul play."
+    call cho_main("So you think we should fight dirty too?", "suspicious", "default", "default", "lip_bite")
+    call cho_main("But how? The rules forbid almost all foul play.", "angry", "sad", "right_down", "pout")
     m "Hmmmm..."
     m "What do they say about uniform?"
-    cho "Ugh... I don't think there's anything about the uniform in the rule book sir."
+    call cho_main("Ugh... I don't think there's anything about the uniform in the rule book sir.", "default", "default", "right", "default")
     m "So if you intended to wear a skirt while you played-"
-    cho "I couldn't do that!"
-    cho "Everyone would be able to see straight up it!"
-    cho "Not to mention all the other player-"
-    cho "Oh..."
-    cho "So that's your plan then? For me to distract \'Slytherin\' with some upskirt?"
+    call cho_main("I couldn't do that!", "wide", "angry", "default", "yell")
+    call cho_main("Everyone would be able to see straight up it!", "wide", "angry", "right_down", "quiver")
+    call cho_main("Not to mention all the other player-", "suspicious", "sad", "right", "lip_bite")
+    call cho_main("Oh...", "suspicious", "angry", "default", "pout")
+    call cho_main("So that's your plan then? For me to distract \'Slytherin\' with some upskirt?", "angry", "angry", "default", "pout")
     m "If you don't think it would work-"
-    cho "Of course it would work! Those \'Slytherin\'s are all a bunch of perverts..."
-    cho "But I can't go and play a game with a skirt on!"
-    cho "All my friends would see!"
+    call cho_main("Of course it would work! Those \'Slytherin\'s are all a bunch of perverts...", "suspicious", "angry", "right", "open")
+    call cho_main("But I can't go and play a game with a skirt on!", "shocked", "sad", "down", "lip_bite")
+    call cho_main("All my friends would see!", "shocked", "sad", "default", "frown")
     m "They'll forget all about it after you defeat \'Slytherin\'!"
-    cho "I really don't think they will..."
+    call cho_main("I really don't think they will...", "suspicious", "sad", "right_down", "upset")
     m "Then just tell them it was the only way to win. I'm sure they'll understand."
-    cho "You... might be right..."
-    cho "But still... I can't do that... can I?"
+    call cho_main("You... might be right...", "default", "sad", "right_down", "open")
+    call cho_main("But still... I can't do that... can I?", "shocked", "sad", "default", "quiver")
     m "Miss Granger would..."
-    cho "{size=-5}She would?{/size}"
-    cho "Alright! I'll do it!"
-    cho "Go Go \'Raveclaw\'!"
+    call cho_main("{size=-5}She would?{/size}", "shocked", "sad", "right", "lip_bite")
+    call cho_main("Alright! I'll do it!", "default", "default", "default", "smile")
+    call cho_main("Go Go \'Raveclaw\'!", "closed", "sad", "closed", "yell")
     m "So when's your next game?"
-    cho "I'm actually about to head over for a practice game against \'hufflepuff\' now..."
+    call cho_main("I'm actually about to head over for a practice game against \'hufflepuff\' now...", "default", "default", "default", "open")
     m "Sounds like the perfect time to test out your new uniform..."
-    cho "Already!"
-    cho "Can't we wait a bit longer sir..."
+    call cho_main("Already!", "shocked", "sad", "default", "open")
+    call cho_main("Can't we wait a bit longer sir...", "default", "sad", "right_down", "frown")
     m "Hmmm... if you don't feel up for it, Miss Granger could prob-"
-    cho "Fine..."
+    call cho_main("Fine...", "suspicious", "angry", "default", "frown")
     m "Fantastic! Just come back here after the game to tell me how it went!"
-    cho "What? Can't I just run back to my dorm?"
+    call cho_main("What? Can't I just run back to my dorm?", "shocked", "sad", "right", "pout")
     m "Not unless you want the rules to change again..."
-    cho "Ugh... Whatever old man..."
+    call cho_main("Ugh... Whatever old man...", "suspicious", "angry", "default", "quiver")
     ">With that Cho turns to leave your office."
+    hide screen cho_chang
+    with d3
     m "..."
     m "(I still have no idea what quidditch is...)"
     
@@ -72,110 +74,113 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
             m "Ah miss Chong... Come on in!"
             cho "..."
     ">Cho quickly enters your office, quickly turning her head to make sure she's alone."
+    call cho_main("...", "suspicious", "angry", "right", "frown")
     m "You seem a little on edge today..."
-    cho "On edge?"
-    cho "Of course I'm on edge! I've never felt so humiliated in my life!"
-    cho "You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practice didn't you!"
-    cho "I bet you were probably in on it..."
+    call cho_main("On edge?", "shocked", "angry", "default", "yell")
+    call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!", "wide", "angry", "default", "angry")
+    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practice didn't you!", "suspicious", "angry", "right", "pout")
+    call cho_main("I bet you were probably in on it...", "suspicious", "angry", "default", "upset")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
     m "Score many... points?"
     m "(I hope this stupid game has points...)"
-    cho "As a matter of fact I did!"
-    cho "{size+=10}150 of them!!!{/size}"
+    call cho_main("As a matter of fact I did!", "closed", "default", "closed", "open")
+    call cho_main("{size=+10}150 of them!!!{/size}", "default", "default", "default", "yell")
     m "Wow... That seems like a lot!"
-    cho "Of course it is, I caught the snitch!"
+    call cho_main("Of course it is, I caught the snitch!", "closed", "default", "closed", "smile")
     m "(The snitch? Is this prison rules?)"
-    cho "Today, I was racing after the snitch along with that blockhead Cedric Diggory..."
-    cho "I'm normally never fast enough to beat him with my crummy old nimbus 2010..."
-    cho "But today I just flew above him as we were both after the snitch!"
-    cho "Ah!!! I can't believe I was able to finally catch it!"
+    call cho_main("Today, I was racing after the snitch along with that blockhead Cedric Diggory...", "default", "sad", "right", "open")
+    call cho_main("I'm normally never fast enough to beat him with my crummy old nimbus 2010...", "angry", "angry", "right_down", "pout")
+    call cho_main("But today I just flew above him as we were both after the snitch!", "default", "default", "default", "smile")
+    call cho_main("Ah!!! I can't believe I was able to finally catch it!", "closed", "default", "closed", "smile")
     m "Is this the first time you've caught the... snitch?"
-    cho "Of course! This is the first game of quidditch \"Ravenclaw\" has won in over six years!"
+    call cho_main("Of course! This is the first game of quidditch \"Ravenclaw\" has won in over six years!", "default", "default", "default", "smile")
     m "Wasn't this just a practice game?"
-    cho "I was including the practices sir..."
+    call cho_main("I was including the practices sir...", "suspicious", "sad", "right_down", "frown")
     m "oh..."
-    cho "\"Ravenclaw\"... isn't very good..."
-    cho "But I have a feeling that's going to change this year!"
-    cho "We're a boot in to win the quidditch school cup!"
+    call cho_main("\"Ravenclaw\"... isn't very good...", "suspicious", "sad", "down", "pout")
+    call cho_main("But I have a feeling that's going to change this year!", "closed", "default", "closed", "smile")
+    call cho_main("We're a boot in to win the quidditch school cup!", "default", "angry", "default", "smile")
     m "Wizarding School Cup?"
-    cho "Stop being an idiot, Dumbledore!"
-    cho "You know what the Q\.S\.C\. is! You've only hosted it for the last 30 years!"
+    call cho_main("Stop being an idiot, Dumbledore!", "suspicious", "angry", "right", "smile")
+    call cho_main("You know what the \"Q.S.C.\" is! You've only hosted it for the last 30 years!", "suspicious", "default", "default", "open")
     m "O-of course..."
-    cho "Speaking of which you better start getting prepared, it starts in under a month."
+    call cho_main("Speaking of which you better start getting prepared, it starts in under a month.", "closed", "default", "closed", "open")
     m "I'd be more worried about your team..."
     m "I don't think everyone is going to go down as easily as Cedric Digidy."
     m "Speaking of... What happened to him?"
-    cho "Oh... he um... crashed... into some... banisters..."
+    call cho_main("Oh... he um... crashed... into some... banisters...", "suspicious", "sad", "right_down", "quiver")
     m "(Crashed? Is this game a racetrack now?)"
-    cho "The nurses said he'll be able to walk again by the end of the week!"
-    cho "{size-=1}They're {size-=1}not {size-=1}so {size-=1}sure {size-=1}whether {size-=1}or {size-=1}not {size-=1}he'll {size-=1}wake {size-=1}up {size-=1}though...{/size}"
+    call cho_main("The nurses said he'll be able to walk again by the end of the week!", "default", "default", "right", "lip_bite")
+    call cho_main("{size=-1}They're {size=-1}not {size=-1}so {size=-1}sure {size=-1}whether {size=-1}or {size=-1}not {size=-1}he'll {size=-1}wake {size=-1}up {size=-1}though...{/size}", "suspicious", "sad", "right", "smile")
     m "Anyway, my point is I don't think you'll be able to get away with just a skirt from now on."
-    cho "You don't?"
+    call cho_main("You don't?", "shocked", "sad", "default", "pout")
     m "If you want to have any chance of winning this years cup I think you'll need me as a coach."
-    cho "Coach?"
-    cho "Are you sure you're able to do this sir?"
+    call cho_main("Coach?", "suspicious", "default", "default", "quiver")
+    call cho_main("Are you sure you're able to do this sir?", "suspicious", "sad", "default", "pout")
     m "Look, I gave you one bit of advice and you won your first game in six years."
     m "Imagine what having me coach you for a season could do!"
-    cho "OK..."
-    cho "But if you want me to keep doing these sorts of things..."
-    cho "I want some points!"
+    call cho_main("OK...", "suspicious", "default", "right", "lip_bite")
+    call cho_main("But if you want me to keep doing these sorts of things...", "default", "angry", "default", "open")
+    call cho_main("I want some points!", "default", "default", "right", "smile")
     m "Ugh... really?"
     m "(I was hoping she'd forgotten about that...)"
-    cho "Yep! If you expect me to come back here and tell you how I've humiliated myself for you then \"Ravenclaw\" should at least reap the benefits."
+    call cho_main("Yep! If you expect me to come back here and tell you how I've humiliated myself, then \"Ravenclaw\" should at least reap the benefits.", "closed", "default", "closed", "smile")
     m "Fine..."
     m "How many do you want then?"
-    cho "How much would Hermione do this for?"
+    call cho_main("How much would Hermione do this for?", "suspicious", "default", "default", "pout")
     menu:
         "-20 points-":
-            cho "Pffft, she really is a slut..."
-            cho "I want 100!"
+            call cho_main("Pffft, she really is a slut...", "shocked", "default", "default", "smile")
+            call cho_main("I want 100!", "default", "default", "default", "open")
             m "I don't think so..."
-            cho "75!"
+            call cho_main("75!", "suspicious", "angry", "default", "smile")
             m "30."
-            cho "70!"
+            call cho_main("70!", "suspicious", "angry", "default", "quiver")
             m "40."
-            cho "60!"
+            call cho_main("60!", "suspicious", "angry", "default", "open")
             m "50, final offer."
-            cho "Done!"
+            call cho_main("Done!", "closed", "default", "closed", "smile")
             $ current_payout = 50
         "-50 points-":
-            cho "Done!"
+            call cho_main("Done!", "closed", "default", "closed", "smile")
             $ current_payout = 50
         "-100 points-":
-            cho "100? Really?"
-            cho "Done!"
+            call cho_main("100? Really?", "shocked", "sad", "default", "open")
+            call cho_main("Done!", "closed", "default", "closed", "smile")
             m "Wait, would you have done it for less?"
-            cho "Too late!"
+            call cho_main("Too late!", "default", "default", "right", "smile")
             $ current_payout = 100
     m "[current_payout] points to \"Gryff-I mean \"Ravenclaw\"!"
-    $ Ravenclaw += current_payout
-    cho "Thank you sir."
+    $ ravenclaw += current_payout
+    call cho_main("Thank you sir.", "closed", "default", "closed", "smile")
     m "So are you ready for my next bit of coaching advice?"
-    cho "Already? Can't I just keep wearing the skirt for now?"
+    call cho_main("Already? Can't I just keep wearing the skirt for now?", "shocked", "sad", "right", "open")
     m "And keep using the same old tactics?"
     m "What sort of coach do you take me for?"
-    cho "Well what did you have in mind?"
+    call cho_main("Well what did you have in mind?", "suspicious", "default", "default", "pout")
     m "Seeing as how the skirt was such a success, how about we up the ante then?"
-    cho "How do you mean?"
+    call cho_main("How do you mean?", "suspicious", "raised", "default", "open")
     m "Well that skirt seems a little long to me..."
     m "if you took a few inches off of it the other players probably wouldn't be able to keep their eyes off of you."
-    cho "They already couldn't keep their eyes off of me..."
+    call cho_main("They already can't keep their eyes off of me...", "closed", "default", "closed", "smile")
     m "For now... They'll probably get bored of that skirt after a while..."
-    cho "They will not!"
+    call cho_main("They will not!", "shocked", "angry", "default", "yell")
     m "Are you going to let me coach you or not?"
-    cho "..."
-    cho "How much shorter?"
+    call cho_main("...", "suspicious", "angry", "right", "pout")
+    call cho_main("How much shorter?", "suspicious", "sad", "default", "lip_bite")
     m "Just a few inches..."
-    cho "Alright... I'll get madmam mafkin to make some adjustments..."
+    call cho_main("Alright... I'll get madmam mafkin to make some adjustments...", "suspicious", "sad", "down", "default")
     m "Very good. Now when is your next game?"
-    cho "In two days. Another practice match, this time against \"Gryffindor\"."
+    call cho_main("In two days. Another practice match, this time against \"Gryffindor\".", "default", "sad", "right", "open")
     m "Do you think they'll be distracted by your new skirt?"
-    cho "Ha ha ha... if Those \"Gryffindor\" boys lose it over hermione, just imagine what they do when they see me!"
+    call cho_main("Ha ha ha... if Those \"Gryffindor\" boys lose it over hermione, just imagine what they do when they see me!", "suspicious", "default", "default", "smile")
     m "I'm sure you'll win then..."
-    cho "So am I. And I'm sure you'll be happy to reward me with a hefty amount of points after the game..."
+    call cho_main("So am I. And I'm sure you'll be happy to reward me with a hefty amount of points after the game...", "suspicious", "angry", "default", "smile")
     m "I look forward to it..."
     ">With that, cho turns and leaves to leave your office."
+    hide screen cho_chang
+    with d3
     m "(I've really gotta learn what this quitit game is...)"
     jump day_main_menu
 
@@ -186,55 +191,57 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     m "Come in..."
     ">Cho Chang quickly enters your office, a spring in her step."
     m "How did your game go?"
-    cho "We won again!"
-    cho "I can't believe that we've broken our 6 year dry streak with two back-to-back wins!"
-    cho "We could actually win the cup!"
+    call cho_main("We won again!", "shocked", "default", "default", "yell")
+    call cho_main("I can't believe that we've broken our 6 year dry streak with two back-to-back wins!", "default", "default", "default", "smile")
+    call cho_main("We could actually win the cup!", "shocked", "angry", "left", "open")
     m "And you weren't embarrassed?"
-    cho "I was a little at the start of the game..."
-    cho "But once I realized how much it was affecting those slack-jawed \"gryffindor\"s..."
-    cho "It was like having my own personal weapon of mass distraction!"
-    cho "I don't think Harry even knew where the snitch was most of the time!"
-    cho "All he seemed to do was follow me around..."
-    cho "{size=-2}Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}"
+    call cho_main("I was a little at the start of the game...", "suspicious", "sad", "right_down", "quiver")
+    call cho_main("But once I realized how much it was affecting those slack-jawed \"gryffindor\"s...", "angry", "angry", "right", "smile")
+    call cho_main("It was like having my own personal weapon of mass distraction!", "shocked", "angry", "default", "smile")
+    call cho_main("I don't think Harry even knew where the snitch was most of the time!", "default", "default", "right_down", "lip_bite")
+    call cho_main("All he seemed to do was follow me around...", "suspicious", "sad", "down", "lip_bite")
+    call cho_main("{size=-2}Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}", "suspicious", "sad", "right_down", "quiver")
     m "So you're prepared to continue our coaching?"
-    cho "As long as we keep winning games, I think it's only reasonable..."
-    cho "Speaking of which... did you have any more coaching tips?"
+    call cho_main("As long as we keep winning games, I think it's only reasonable...", "closed", "default", "closed", "open")
+    call cho_main("Speaking of which... did you have any more coaching tips?", "wink", "raised", "default", "smile")
     m "As a matter of fact I do..."
-    cho "Good... You can tell me all about them after you pay me my points!"
+    call cho_main("Good... You can tell me all about them after you pay me my points!", "default", "angry", "default", "smile")
     m "How does fifty sound?"
-    cho "Pfft... Only fifty when my skirt is this short?"
-    cho "I want at least sixty..."
+    call cho_main("Pfft... Only fifty when my skirt is this short?", "angry", "raised", "right", "pout")
+    call cho_main("I want at least sixty...", "angry", "angry", "default", "smile")
     m "Ugh fine..."
-    cho "(yes!)"
+    call cho_main("(yes!)", "closed", "default", "closed", "smile")
     m "60 points to \"Ravenclaw\"!"
-    $ Ravenclaw += 60
-    cho "Thank you sir."
-    cho "Now about that tip..."
+    $ ravenclaw += 60
+    call cho_main("Thank you sir.", "closed", "default", "closed", "default")
+    call cho_main("Now about that tip...", "suspicious", "default", "default", "smile")
     m "I've got a tip for you alright... and a bit more-"
-    cho "Professor!"
+    call cho_main("Professor!", "shocked", "angry", "default", "open")
     m "alright, alright... for now, why don't you try shortening that skirt of your again."
-    cho "Again? Isn't this short enough?"
+    call cho_main("Again? Isn't this short enough?", "wink", "sad", "default", "pout")
     m "Not if you want to win the grand prix or whatever..."
-    cho "The quidditch school cup sir..."
+    call cho_main("The quidditch school cup sir...", "suspicious", "default", "default", "pout")
     m "Sure..."
-    cho "Well I suppose I could take another inch or two off..."
-    cho "But we better win the next practice against \"Slytherin\"!"
+    call cho_main("Well I suppose I could take another inch or two off...", "suspicious", "sad", "right_down", "quiver")
+    call cho_main("But we better win the next practice against \"Slytherin\"!", "suspicious", "angry", "default", "yell")
     m "Hey, the games up to you... All I can give is pointers."
-    cho "Hmph... That's not what a coach is supposed to say!"
-    cho "You're supposed to believe in me!"
+    call cho_main("Hmph... That's not what a coach is supposed to say!", "suspicious", "angry", "default", "pout")
+    call cho_main("You're supposed to believe in me!", "closed", "angry", "closed", "open")
     m "You've gotta show some commitment to the game first."
-    cho "commitment..."
-    cho "Isn't wearing a skirt enough?"
+    call cho_main("commitment...", "shocked", "angry", "default", "default")
+    call cho_main("Isn't wearing a skirt enough?", "suspicious", "angry", "right", "pout")
     m "For now..."
-    cho "What's that supposed to mean?"
+    call cho_main("What's that supposed to mean?", "suspicious", "angry", "default", "upset")
     m "It means stop being such a prude and shorten that skirt!"
-    cho "..."
-    cho "fine..."
-    cho "Is that all then coach?"
+    call cho_main("...", "default", "sad", "right", "pout")
+    call cho_main("fine...", "suspicious", "sad", "down", "default")
+    call cho_main("Is that all then coach?", "default", "default", "left", "default")
     m "Unless you wanna fool around a little?"
-    cho "Not after a game..."
+    call cho_main("Not after a game...", "suspicious", "default", "right", "quiver")
     m "Then that will be all. "
-    cho "Alright then coach..."
+    call cho_main("Alright then coach...", "closed", "default", "closed", "open")
+    hide screen cho_chang
+    with d3
     ">With that Cho, turns and leaves your office."
     jump day_main_menu
 
@@ -242,62 +249,64 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     ">*knock* *knock* *knock*"
     m "You can just come in from now on Cho..."
     ">With that, your door slowly opens as Cho enters."
-    cho "What if you're in here with that floozy Hermione?"
-    cho "I don't want to have to see that!"
+    call cho_main("What if you're in here with that floozy Hermione?", "suspicious", "angry", "default", "pout")
+    call cho_main("I don't want to have to see that!", "suspicious", "angry", "right", "upset")
     m "Fair enough..."
     m "Now did you manage to win todays game?"
-    cho "..."
-    cho "No..."
+    call cho_main("...", "suspicious", "sad", "right_down", "pout")
+    call cho_main("No...", "suspicious", "sad", "down", "open")
     m "You didn't? Why not?"
     m "Wasn't your skirt distracting enough?"
-    cho "It wasn't that..."
-    cho "If anything went wrong it's that my skirt was too distracting!"
+    call cho_main("It wasn't that...", "suspicious", "sad", "right_down", "pout")
+    call cho_main("If anything went wrong it's that my skirt was too distracting!", "angry", "angry", "right", "frown")
     m "How's that? Don't you want the other players distracted?"
-    cho "I do..."
-    cho "But this was too much!"
-    cho "I couldn't get them off of me!"
-    cho "Half the \"slytherin\" team spent the whole game following me around, trying to get a peak from underneath!"    
+    call cho_main("I do...", "suspicious", "sad", "right", "quiver")
+    call cho_main("But this was too much!", "closed", "angry", "closed", "yell")
+    call cho_main("I couldn't get them off of me!", "angry", "angry", "right", "open")
+    call cho_main("Half the \"slytherin\" team spent the whole game following me around, trying to get a peak from underneath!", "angry", "angry", "default", "yell")    
     m "Hmmm, I was worried this might happen...."
-    cho "Well how are you going to fix it then coach?"
+    call cho_main("Well how are you going to fix it then coach?", "suspicious", "angry", "default", "pout")
     m "I think we'll need to change our angle of attack..."
-    cho "Our angle?"
+    call cho_main("Our angle?", "wink", "raised", "default", "frown")
     m "At the moment panty shot that all the boys are hoping for can only be seen from underneath-"
     m "-so as a result, most of the boys are hounding you to get a look."
     m "But if we widen our angle of attack, they won't be forced to chase you to get a look..."
-    cho "Widen our angle? What do you mean?"
+    call cho_main("Widen our angle? What do you mean?", "wink", "raised", "default", "pout")
     m "You're gonna have to loose the jacket..."
     m "Probably the sweater as well if we're being honest..."
-    cho "You want me to take my jacket off?"
-    cho "I'll freeze!"
-    cho "Not to mention the other players and the spectators will be able to see everything!"
-    cho "My skirt was at least a little hidden before..."
+    call cho_main("You want me to take my jacket off?", "shocked", "angry", "default", "upset")
+    call cho_main("I'll freeze!", "wide", "angry", "default", "yell")
+    call cho_main("Not to mention the other players and the spectators will be able to see everything!", "angry", "sad", "right", "lip_bite")
+    call cho_main("My skirt was at least a little hidden before...", "suspicious", "angry", "right", "pout")
     m "If you want to win this is the only way..."
-    cho "Can't I just go back to the longer skirt? That was working!"
+    call cho_main("Can't I just go back to the longer skirt? That was working!", "shocked", "sad", "default", "open")
     m "I don't think these \"slytherin\" boys are going to be interested in that after what they saw today..."
     m "I know I wouldn't..."
-    cho "Coach!"
+    call cho_main("Coach!", "angry", "angry", "default", "yell")
     m "Just trust me... If you lose the next game you can put it back on..."
-    cho "OK... but I want some points!"
-    cho "Seventy five to be precise..."
+    call cho_main("OK... but I want some points!", "suspicious", "sad", "default", "pout")
+    call cho_main("Seventy five to be precise...", "closed", "default", "closed", "smile")
     m "...fine..."
-    cho "(awesome!)"
+    call cho_main("(awesome!)", "wink", "default", "right", "smile")
     m "75 points to \"Ravenclaw\"!"
-    $ Ravenclaw += 75
-    cho "Alright... well I'll come and see you after the next game..."
-    cho "When I'm not wearing a jacket..."
+    $ ravenclaw += 75
+    call cho_main("Alright... well I'll come and see you after the next game...", "suspicious", "sad", "default", "default")
+    call cho_main("When I'm not wearing a jacket...", "suspicious", "sad", "right", "open")
     m "And wearing a mini-skirt..."
-    cho "And wearing... a mini-skirt..."
+    call cho_main("And wearing... a mini-skirt...", "suspicious", "sad", "right_down", "pout")
     m "Good. With tactics like this we can't lose."
-    cho "We better not!"
-    cho "This might be the first real chance \"Ravenclaw\" has ever had to win the cup."
+    call cho_main("We better not!", "suspicious", "angry", "default", "upset")
+    call cho_main("This might be the first real chance \"Ravenclaw\" has ever had to win the cup.", "closed", "sad", "closed", "open")
     m "I'm sure this must mean a lot to you..."
-    cho "It does... I might even get picked up by a pro team!"
+    call cho_main("It does... I might even get picked up by a pro team!", "default", "default", "right", "smile")
     m "..."
-    cho "Agh, I can't wait!"
-    cho "I better go talk to the team!"
+    call cho_main("Agh, I can't wait!", "closed", "default", "closed", "yell")
+    call cho_main("I better go talk to the team!", "default", "default", "right", "default")
     m "Well, off you go then."
-    cho "Thank you Professor..."
+    call cho_main("Thank you Professor...", "wink", "default", "default", "smile")
     ">Cho cheerily leaves your office."
+    hide screen cho_chang
+    with d3
 
     jump day_main_menu
 

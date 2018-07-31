@@ -57,10 +57,10 @@ label __init_variables:
 
     if not hasattr(renpy.store,'hg_MaidLingerie_OBJ'):
         $ hg_MaidLingerie_OBJ = hermione_outfit()
-    $ hg_silkNightgown_OBJ.name = "Maid Lingerie"
-    $ hg_silkNightgown_OBJ.cost = 160
-    $ hg_silkNightgown_OBJ.wait_time = 2
-    $ hg_silkNightgown_OBJ.store_image = "maid_lingerie.png"
+    $ hg_MaidLingerie_OBJ.name = "Maid Lingerie"
+    $ hg_MaidLingerie_OBJ.cost = 160
+    $ hg_MaidLingerie_OBJ.wait_time = 2
+    $ hg_MaidLingerie_OBJ.store_image = "maid_lingerie.png"
 
     if not hasattr(renpy.store,'hg_silkNightgown_OBJ'):
         $ hg_silkNightgown_OBJ = hermione_outfit()

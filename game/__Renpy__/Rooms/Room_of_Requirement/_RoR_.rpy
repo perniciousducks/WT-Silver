@@ -1,9 +1,9 @@
 
 
 screen room_of_requirement:
-    add "images/room_of_requirement/empty_room.png"
+    add "images/rooms/room_of_requirement/empty_room.png"
     add "images/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
-    add "images/room_of_requirement/mirror.png" xpos 100 ypos 180
+    add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
     add "images/main_room/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
     add "images/main_room/candle.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
     zorder -1
@@ -14,8 +14,8 @@ screen room_of_requirement_menu:
     imagebutton: # Mirror
         xpos 100
         ypos 180
-        idle "images/room_of_requirement/mirror.png"
-        hover "images/room_of_requirement/mirror_hover.png"
+        idle "images/rooms/room_of_requirement/mirror.png"
+        hover "images/rooms/room_of_requirement/mirror_hover.png"
         action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
     
     imagebutton: # DOOR
@@ -221,26 +221,26 @@ screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
     
 screen room_of_req_door:
-    add "images/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
-    add "images/room_of_requirement/owlbasin.png" at fade_in(350, 255, 1) zoom 0.3
-    add "images/room_of_requirement/owlbasin.png" at fade_in(660, 255, 1) zoom 0.3
+    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
+    add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(350, 255, 1) zoom 0.3
+    add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(660, 255, 1) zoom 0.3
     
     zorder -1
     
 screen floor_7th_door:
     add "fireplace_fire" xpos 265 ypos 60
-    add "images/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
+    add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
     
-    add "images/room_of_requirement/front_door.png" xpos 420 ypos 105
+    add "images/rooms/room_of_requirement/front_door.png" xpos 420 ypos 105
     
     add "fireplace_fire" xpos 575 ypos 60
-    add "images/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
+    add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
     
     zorder -1
 
 screen floor_7th_screen:
-    add "images/room_of_requirement/corridor_edit.png"
-    #add "images/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
+    add "images/rooms/room_of_requirement/corridor_edit.png"
+    #add "images/rooms/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
     #add "flower_animation" xpos 830 ypos 160 zoom 0.60
     add "images/main_room/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
@@ -288,8 +288,8 @@ screen floor_7th_menu:
     imagebutton:
         xpos 420
         ypos 105
-        idle "images/room_of_requirement/front_door.png"
-        hover "images/room_of_requirement/front_door_hover.png"
+        idle "images/rooms/room_of_requirement/front_door.png"
+        hover "images/rooms/room_of_requirement/front_door_hover.png"
         action [Jump("enter_room_of_req")]
     zorder -1
     

@@ -1,6 +1,6 @@
 label start_slide_puzzle:
     $ puzzle_tries = 0
-    $ imagepuzzle = [["images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in range(0,4)] for y in range(0,4)] 
+    $ imagepuzzle = [["images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in range(0,4)] for y in range(0,4)] 
     $ imagepuzzle[3][3] = "empty"
     python:
         for x in range(0,16):
@@ -49,7 +49,7 @@ label update_puzzle_slide:
     python:
         for x in range(0,4):
             for y in range(0,4):
-                if ((imagepuzzle[y][x] != "images/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
+                if ((imagepuzzle[y][x] != "images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
                     
     
@@ -120,7 +120,7 @@ screen puzzle_board:
         xsize 425
         ysize 425
         
-        add "images/room_of_requirement/puzzle/lock.png"
+        add "images/rooms/room_of_requirement/puzzle/lock.png"
         
         for x in range(0,4):
             for y in range(0,4):

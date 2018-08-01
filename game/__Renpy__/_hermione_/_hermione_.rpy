@@ -2,7 +2,7 @@
 
 ### HERMIONE GRANGER ###
 
-label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None, trans="", xpos=hermione_xpos, ypos=hermione_ypos):   
+label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None, trans="", xpos=hermione_xpos, ypos=hermione_ypos):
     hide screen hermione_head
     hide screen hermione_main
 
@@ -25,7 +25,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     else:
         $ h_emote = "00_blank"
 
-    call h_update 
+    call h_update
 
 
     #Positioning
@@ -50,11 +50,11 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
         else:
             $ hermione_ypos = ypos
 
-            
+
     #Transitions
     show screen bld1 #Should be active anyways.
     show screen hermione_main
-    
+
     if trans != "":         #d3 is default.
         if trans == "d1":
             with d1
@@ -116,7 +116,7 @@ label her_head(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     else:
         $ h_emote = "00_blank"
 
-    call h_update 
+    call h_update
 
     $ hermione_head_xpos = 605
     $ hermione_head_ypos = 235
@@ -142,7 +142,7 @@ label her_head(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
             hide screen hermione_face
             show screen hermione_face
             with d3
-    
+
     else:
         show screen bld1 #Should be active anyways.
         show screen hermione_head
@@ -155,7 +155,7 @@ label her_head(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
         hide screen hermione_head
 
     return
-    
+
 
 label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None):
     hide screen hermione_kneel
@@ -179,7 +179,7 @@ label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, em
     else:
         $ h_emote = "00_blank"
 
-    call h_update 
+    call h_update
 
     show screen hermione_kneel #h_head2
 
@@ -194,16 +194,16 @@ label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, em
 
 label set_hermione_action(action="", update=""):
     hide screen hermione_main
-    call h_action(action,update) 
+    call h_action(action,update)
 
     show screen hermione_main
     with d3
 
     return
-    
-    
+
+
 label h_action(action =  "", update=""):
-    
+
     if action == "" or action == "none" or action == "None" or action == 0:
 
         $ hermione_action = "none"
@@ -224,8 +224,8 @@ label h_action(action =  "", update=""):
 
 
         if update != "skip_update":
-        
-            call load_hermione_clothing_saves 
+
+            call load_hermione_clothing_saves
 
     else:
 
@@ -248,12 +248,12 @@ label h_action(action =  "", update=""):
             if action == "lift_top":
                 $ hermione_action = "lift_top"
                 $ hermione_use_action = True
-            
+
             ### HOLD BOOK ###
             if action == "hold_book":
                 $ hermione_action = "hold_book"
                 $ hermione_use_action = True
-            
+
             ### LIFT BREASTS ###
             if action == "lift_breasts" or action == "lift_breasts_large":
                 $ hermione_action = "lift_breasts"
@@ -262,7 +262,7 @@ label h_action(action =  "", update=""):
                 if action == "lift_breasts_large":
                     $ hermione_expand_breasts = True
 
-                
+
 
             ### NAKED ACTIONS ###
 
@@ -283,7 +283,7 @@ label h_action(action =  "", update=""):
             if action == "hands_behind":
                 $ hermione_action = "hands_behind"
                 $ hermione_use_action = True
-                
+
             #Covering
             if action == "covering":
                 $ hermione_action = "covering"
@@ -298,12 +298,12 @@ label h_action(action =  "", update=""):
             if action == "covering_top":
                 $ hermione_action = "covering_top"
                 $ hermione_use_action = True
-                
+
             #Pinch
             if action == "pinch":
                 $ hermione_action = "pinch"
                 $ hermione_use_action = True
-            
+
             #Hands Cuffed
             if action == "hands_cuffed":
                 $ hermione_action = "hands_cuffed"
@@ -321,7 +321,7 @@ label h_action(action =  "", update=""):
             if action == "expand_breasts":
                 $ hermione_expand_breasts_counter = 5
                 $ hermione_expand_breasts = True
-            
+
             if action == "expand_ass":
                 $ hermione_expand_ass_counter = 5
                 $ hermione_expand_ass = True
@@ -344,12 +344,12 @@ label h_action(action =  "", update=""):
                 $ hermione_wear_gloves = False
                 $ hermione_wear_stockings = False
                 $ hermione_wear_robe = False
-           
-        
+
+
     call update_her_uniform #calls update_her_action, update_chibi_uniform, and h_update_body;
 
     return
-    
+
 label set_h_action_vars:
     $ hermione_action_right_arm = "characters/hermione/body/arms/right/"+str(h_action_right_arm)
     $ hermione_action_left_arm = "characters/hermione/body/arms/left/"+(h_action_left_arm)
@@ -357,8 +357,8 @@ label set_h_action_vars:
     $ hermione_action_b = "characters/hermione/clothes/uniform/action/"+str(h_action_b)
     $ hermione_costume_action_a = "characters/hermione/clothes/custom/"+str(h_action_a)
     return
-    
-    
+
+
 label reset_hermione_main:
     show screen hermione_blank_main
     show screen hermione_blank_head
@@ -366,23 +366,22 @@ label reset_hermione_main:
     hide screen hermione_blank_main
     hide screen hermione_blank_head
     hide screen hermione_blank_chibi
+    hide screen hermione_main
 
     #Hermione clothing save state
-    call load_hermione_clothing_saves 
-    
+    call load_hermione_clothing_saves
+
     $ hermione_dribble = False
     $ hermione_squirt = False
     $ aftersperm = False #Show cum stains on Hermione's uniform.
-    
-    hide screen hermione_main
-    #call h_outfit_OBJ(None)
+
     if hermione_action != "none":
-        call h_action("none") 
-    call update_her_uniform 
-    call h_update_body 
-    call h_update_hair 
+        call h_action("none")
+    call update_her_uniform
+    call h_update_body
+    call h_update_hair
     return
-    
+
 label load_hermione_clothing_saves:
 
     #Uniform & Underwear
@@ -407,12 +406,12 @@ label load_hermione_clothing_saves:
         $ hermione_wear_bottom       = False
 
     if h_request_wear_panties:
-        $ hermione_wear_panties      = True 
+        $ hermione_wear_panties      = True
     else:
         $ hermione_wear_panties      = False
 
     if h_request_wear_garterbelt:
-        $ hermione_wear_garterbelt   = True 
+        $ hermione_wear_garterbelt   = True
     else:
         $ hermione_wear_garterbelt   = False
 
@@ -473,10 +472,9 @@ label load_hermione_clothing_saves:
     else:
         $ hermione_wear_tattoos      = False
 
-    return
+    if h_request_wear_outfit:
+        $ hermione_costume = True
+    else:
+        $ hermione_costume = False
 
-    
-    
-    
-    
-    
+    return

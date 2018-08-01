@@ -1,68 +1,58 @@
 
 
 label clothes_store:
+    call blktone
+
+    if clothes_intro_done == False:
+        ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
+        ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
+        m "Hello."
+        maf "Hello, Professor Dumbledore."
+        maf "What can I do for you? Would you like a new cloak, or do you require some alterations to an existing item?"
+        m "Neither thank you, I'm just here to make a few inquiries."
+        maf "Of course sir, what could I help you with?"
+        m "Firstly, what type of items do you sell?"
+        maf "Well, I'm a tailor. I make uniforms for the staff and students."
+        maf "I also perform alterations to existing items. This is mainly when a student goes through a growth spurt or gets a hole in their cloak."
+        m "I see. Do you ever make custom orders?"
+        maf "Not really, although it is my passion. Most of what I'm asked to make are standard black robes."
+        m "So you're interested in making unique outfits?"
+        maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
+        maf "What did you have in mind?"
+        m "A few things. I haven't decided on anything specific yet."
+        m "Well, while your making up your mind, feel free to browse the store."
+        $ clothes_intro_done = True
+        jump open_clothes_store
+
     if outfit_ready:
         maf "here to pick up your order?"
         m "yes."
         maf "one moment, let me go fetch it"
         maf "..."
         maf "here you are."
-        call pickup_outfit
-        if clothes_intro_done == False:
-            ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
-            ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
-            m "Hello."
-            maf "Hello, Professor Dumbledore."
-            maf "What can I do for you? Would you like a new cloak, or do you require some alterations to an existing item?"
-            m "Neither thank you, I'm just here to make a few inquiries."
-            maf "Of course sir, what could I help you with?"
-            m "Firstly, what type of items do you sell?"
-            maf "Well, I'm a tailor. I make uniforms for the staff and students."
-            maf "I also perform alterations to existing items. This is mainly when a student goes through a growth spurt or gets a hole in their cloak."
-            m "I see. Do you ever make custom orders?"
-            maf "Not really, although it is my passion. Most of what I'm asked to make are standard black robes."
-            m "So you're interested in making unique outfits?"
-            maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
-            maf "What did you have in mind?"
-            m "A few things. I haven't decided on anything specific yet."
-            m "Well, while your making up your mind, feel free to browse the store."
-            $ clothes_intro_done = True
-            jump clothes_menu
-    maf "Well, what can I get for you today?"
-    jump clothes_menu
 
-label clothes_menu:
-    menu:
-        "{color=#858585}-Clothing Sets-{/color}"if outfit_order_placed:
-            call cust_excuse("only one order can be placed at a time.")
-            jump clothes_menu
-        "-Clothing Sets-"if not outfit_order_placed:
-            jump buy_clothing_sets
+        jump pickup_outfit
 
-        "{color=#858585}-Custom Outfits-{/color}"if outfit_order_placed:
-            call cust_excuse("only one order can be placed at a time.")
-            jump clothes_menu
-        "-Custom Outfits-"if not outfit_order_placed:
-            jump buy_outfits
+    if outfit_order_placed:
+        maf "I'm sorry luv, but I'm still quite busy working on your item."
+        maf "Come back once it's' ready. I will send you an owl."
 
-        "-Miscellaneous-":
-            jump existing_stock
-        "-Leave-":
-            m "That's all for today, thank you."
-            maf "You're welcome, sir. Come back any time."
+        if daytime:
             jump day_main_menu
-
-label buy_clothing_sets:
-
-    $ store_items = "clothing_sets"
-    call clothes_store_gui(store_items)
-
-    if isinstance(clothes_store_order_choice,hermione_outfit):
-        if clothes_store_order_choice.purchased:
-            call cust_excuse("You already own this set.")
-            jump buy_outfits
         else:
-            if clothes_store_order_choice == hg_gryffCheer_OBJ:
+            jump night_main_menu
+
+    maf "Well, what can I get for you today?"
+    jump open_clothes_store
+
+
+label buy_outfit:
+
+        #if clothes_store_order_choice.unlocked:
+        #    call cust_excuse("You already own this set.")
+        #    jump return_clothes_store
+        #else:
+            if clothes_store_order_choice == hg_cheer_g_OBJ:
                 m "I'd like to order a cheerleader outfit."
                 maf "A cheerleader outfit? Those horribly crass things popular in America?"
                 maf "Why on earth would you want to buy that?"
@@ -73,10 +63,9 @@ label buy_clothing_sets:
                 m "Not really, just make it sporty I suppose."
                 maf "Ok, well come and see me in a few days and I will have it for you."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
-            if clothes_store_order_choice == hg_slythCheer_OBJ:
+            if clothes_store_order_choice == hg_cheer_s_OBJ:
                 m "I'd like to order another cheerleader outfit."
                 maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
                 m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
@@ -85,10 +74,9 @@ label buy_clothing_sets:
                 m "Maybe make this one a little more sporty if you know what I mean."
                 maf "Well you can come pick it up in a few days."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
-            if clothes_store_order_choice == hg_ravenCheer_OBJ:
+            if clothes_store_order_choice == hg_cheer_r_OBJ:
                 m "I'd like to order another cheerleader outfit."
                 maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
                 m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
@@ -97,10 +85,9 @@ label buy_clothing_sets:
                 m "Maybe make this one a little more sporty if you know what I mean."
                 maf "Well you can come pick it up in a few days."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
-            if clothes_store_order_choice == hg_hufflCheer_OBJ:
+            if clothes_store_order_choice == hg_cheer_h_OBJ:
                 m "I'd like to order another cheerleader outfit."
                 maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
                 m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
@@ -109,23 +96,8 @@ label buy_clothing_sets:
                 m "Maybe make this one a little more sporty if you know what I mean."
                 maf "Well you can come pick it up in a few days."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
-    else:
-        jump clothes_menu
+                jump place_outfit_order
 
-
-
-label buy_outfits:
-
-    $ store_items = "outfits"
-    call clothes_store_gui(store_items)
-
-    if isinstance(clothes_store_order_choice,hermione_outfit):
-        if clothes_store_order_choice.purchased:
-            call cust_excuse("You already own this outfit.")
-            jump buy_outfits
-        else:
             if clothes_store_order_choice == hg_maid_OBJ:
                 m "I'd like to order a maid outfit."
                 maf "A maid costume, what on earth for? Surely the cleaning elves keep your office tidy."
@@ -138,10 +110,9 @@ label buy_outfits:
                 maf "..."
                 maf "Well I should have it available for pickup in a few days after I get the materials in."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
-            if clothes_store_order_choice == hg_silkNightgown_OBJ:
+            if clothes_store_order_choice == hg_nighty_silk_OBJ:
                 m "I'd like to order another custom outfit today."
                 maf "Certainly Sir. These outfits have started to become the highlight of my job. Everything else seems quite conservative by comparison."
                 m "Well I can assure you that this outfit is not conservative."
@@ -156,18 +127,21 @@ label buy_outfits:
                 m "Don't worry about the cost."
                 maf "As you wish Sir, it should be ready in a couple of days."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
-            if clothes_store_order_choice == hg_ballDress_OBJ and not sorry_for_hesterics:
-                call cust_excuse("You cannot purchase this outfit... yet.")
-                jump buy_outfits
-            if clothes_store_order_choice == hg_ballDress_OBJ and sorry_for_hesterics:
-                m "Do you sell Ball Dresses?"
-                maf "Hmmm, we do although they're nothing special. Why?"
-                m "A 'girl' approached me with a problem. Apparently she's unable to aquire a dress for this years autumn ball."
-                maf "How tragic, well I'm sure that one of these cheap ones will suffice."
-                m "I was thinking that I could have a custom one made. She is a very good girl."
+            if clothes_store_order_choice == hg_ballDress_OBJ:
+                if not sorry_for_hesterics:
+                    m "Do you sell Dresses?"
+                    maf "A dress? Are we talking ball-dresses, or more burlesque?"
+                    m "Hmm... Balls actually."
+                    maf "How surprising."
+                    m "I was thinking that I could have a custom one made. For a very good girl of mine."
+                if sorry_for_hesterics:
+                    m "Do you sell Ball Dresses?"
+                    maf "Hmmm, we do although they're nothing special. Why?"
+                    m "A 'girl' approached me with a problem. Apparently she's unable to aquire a dress for this years autumn ball."
+                    maf "How tragic, well I'm sure that one of these cheap ones will suffice."
+                    m "I was thinking that I could have a custom one made. She is a very good girl."
                 maf "I see. Would I be correct in assuming that this girls measurements are the same as the other outfits you've had me make?"
                 m "Yes you would."
                 maf "Well then I'll make her the best dress this school's ever seen. From what I've heard she's earned it..."
@@ -176,8 +150,7 @@ label buy_outfits:
                 maf "A ball dress isn't something that's thrown together. It requires love and attention. It doesn't come cheap either."
                 m "Well, thank you."
                 maf "You're welcome."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_msMarvel_OBJ:
                 m "Tell me Madam Mafkin, have you ever heard of super-heroes?"
@@ -189,8 +162,7 @@ label buy_outfits:
                 maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
                 m "Thank you very much."
                 maf "No need to thank me sir. Payment will suffice."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_heartDancer_OBJ:
                 m "Have you ever seen a burlesque show Madam?"
@@ -201,8 +173,7 @@ label buy_outfits:
                 maf "As you wish."
                 m "Thank you very much."
                 maf "You're quite welcome sir."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_powerGirl_OBJ:
                 m "I was wondering if it would be possible for you to make me a super hero costume."
@@ -212,8 +183,7 @@ label buy_outfits:
                 maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
                 m "Thank you very much."
                 maf "No need to thank me sir. Payment will suffice."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_harleyQuinn_OBJ:
                 m "I was wondering if it would be possible for you to make me a super villain costume."
@@ -223,8 +193,7 @@ label buy_outfits:
                 maf "But I'm sure that my grandson has a comic of hers. I'll just have to wrestle it out of his grubby little hands."
                 m "Thank you very much."
                 maf "You're quite welcome."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_laraCroft_OBJ:
                 m "I was wondering if it would be possible for you to make me another costume."
@@ -236,8 +205,7 @@ label buy_outfits:
                 m "Thank you very much."
                 maf "You're welcome. I'm seeing him tonight so I should be able to complete this one slightly faster than usual."
                 m "Fantastic."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_christmas_OBJ:
                 m "I was wondering if it would be possible for you to make me a festive costume."
@@ -249,14 +217,12 @@ label buy_outfits:
                 m "Thank you very much."
                 maf "You're welcome. I'll even give you a special price. Consider it my Christmas gift to you.."
                 m "Thank you."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_pirate_OBJ:
                 m "I want a pirate outfit"
                 maf "ok"
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_bio_OBJ:
                 m "Have you ever heard of bioshock infinite?"
@@ -268,8 +234,7 @@ label buy_outfits:
                 maf "Consider it done!"
                 m "Thank you very much."
                 maf "You're welcome."
-                call place_outfit_order
-                jump clothes_menu
+                jump place_outfit_order
 
             if clothes_store_order_choice == hg_yenn_OBJ:
                 m "Have you ever heard of the sorceress yennefer?"
@@ -278,10 +243,10 @@ label buy_outfits:
                 maf "Certainly."
                 m "Thank you very much."
                 maf "You can thank me with coin!"
-                call place_outfit_order
-                jump clothes_menu
-    else:
-        jump clothes_menu
+                jump place_outfit_order
+
+            "> This outfit/Set is Missing Texts!"
+            jump place_outfit_order
 
 
 label place_outfit_order:
@@ -291,13 +256,19 @@ label place_outfit_order:
         $ outfit_wait_time = outfit_OBJ.wait_time
         $ outfit_order = clothes_store_order_choice
         $ outfit_order_placed = True
+
+        call give_reward("> Your order has been made.","images/store/31.png")
         maf "I'll send you an owl when it's done."
-        jump clothes_menu
+
+        if daytime:
+            jump day_main_menu
+        else:
+            jump night_main_menu
+
     else:
         m "I don't have [outfit_OBJ.cost] gold."
         m "Well this is depressing."
-        jump clothes_menu
-return
+        jump return_clothes_store
 
 label outfit_purchase_check:
     if outfit_wait_time <= 0:
@@ -310,13 +281,31 @@ return
 label pickup_outfit:
 
     if outfit_order_placed: # OUTFIT
-        $ outfit_order.purchased = True
-        #$ outfit_inventory.append(outfit_order)
-        call display_package(">A "+outfit_order.name+R" outfit has been added to your possessions.")
+        if outfit_order in hermione_outfits_list:
+            $ outfit_order.purchased = True # Todo : Change ".purchased" from outfit_OBJ to ".unlocked"
+            call display_package(">A "+outfit_order.name+R" outfit has been added to Hermione's Wardrobe.")
+        else:
+            $ outfit_order.unlocked = True
+            call display_package(">A "+outfit_order.name+R" set has been added to Hermione's Wardrobe.")
+        $ clothes_store_selection = None
+        $ clothes_store_order_choice = None
         call receive_package
-        call screen main_room_menu
 
-return
+    maf "Anything else I can help you with?"
+
+    menu:
+        "-Open the store-":
+            jump return_clothes_store
+        "-Leave-":
+            m "Not right now."
+            maf "Very well then."
+
+            if daytime:
+                maf "Good day, Professor."
+                jump day_main_menu
+            else:
+                maf "Good night, Professor."
+                jump night_main_menu
 
 label display_package(str1):
     $ the_gift = "images/store/07.png"
@@ -336,146 +325,13 @@ label receive_package:
 return
 
 label cust_excuse(text="Meh, you cant use this yet"): #custom text option for other ideas
-    show screen blktone8
+    show screen blktone5
     ">[text]"
-    hide screen blktone8
+    hide screen blktone5
     return
 
 label existing_stock:
     menu:
-        "-Colour Dyes-":
-            label existing_stock_dyes:
-            menu:
-                "{color=#858585}-Blonde Dye- (20 Gold)-{/color}"if "blonde_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Blonde Dye- (20 Gold)" if "blonde_dye" not in cs_existing_stock:
-                    maf "A very nice shade of yellow."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 5 to be used.<"
-                    menu:
-                        "-Buy the item (20 gold)-":
-                            call cs_buy_stock("blonde_dye", 20)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Red Dye- (20 Gold)-{/color}"if "red_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Red Dye- (20 Gold)" if "red_dye" not in cs_existing_stock:
-                    maf "A very nice shade of red."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 5 to be used.<"
-                    menu:
-                        "-Buy the item (20 gold)-":
-                            call cs_buy_stock("red_dye", 20)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Crimson Dye- (40 Gold)-{/color}"if "crimson_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Crimson Dye- (40 Gold)" if "crimson_dye" not in cs_existing_stock:
-                    maf "A very rich shade of red."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 8 to be used.<"
-                    menu:
-                        "-Buy the item (40 gold)-":
-                            call cs_buy_stock("crimson_dye", 40)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Black Dye- (200 Gold)-{/color}"if "black_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Black Dye- (200 Gold)" if "black_dye" not in cs_existing_stock:
-                    maf "As black as a Testral! So I have heard."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 8 to be used.<"
-                    menu:
-                        "-Buy the item (200 gold)-":
-                            call cs_buy_stock("black_dye", 200)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Green Dye- (60 Gold)-{/color}"if "green_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Green Dye- (60 Gold)" if "green_dye" not in cs_existing_stock:
-                    maf "A bright shade of green."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 11 to be used.<"
-                    menu:
-                        "-Buy the item (60 gold)-":
-                            call cs_buy_stock("green_dye", 60)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Blue Dye- (60 Gold)-{/color}"if "blue_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Blue Dye- (60 Gold)" if "blue_dye" not in cs_existing_stock:
-                    maf "A bright shade of blue."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 11 to be used.<"
-                    menu:
-                        "-Buy the item (60 gold)-":
-                            call cs_buy_stock("blue_dye", 60)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Purple Dye- (80 Gold)-{/color}"if "purple_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Purple Dye- (80 Gold)" if "purple_dye" not in cs_existing_stock:
-                    maf "A very nice shade of purple."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 11 to be used.<"
-                    menu:
-                        "-Buy the item (80 gold)-":
-                            call cs_buy_stock("purple_dye", 80)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-Pink Dye- (200 Gold)-{/color}"if "pink_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-Pink Dye- (200 Gold)" if "pink_dye" not in cs_existing_stock:
-                    maf "As bright and pink as my... I better not say any more."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 14 to be used.<"
-                    menu:
-                        "-Buy the item (200 gold)-":
-                            call cs_buy_stock("pink_dye", 200)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "{color=#858585}-White Dye- (400 Gold)-{/color}"if "white_dye" in cs_existing_stock:
-                    call cust_excuse(">You already own this.")
-                    jump existing_stock_dyes
-                "-White Dye- (400 Gold)" if "white_dye" not in cs_existing_stock:
-                    maf "A white as bright and pure as a Unicorn's skin."
-                    if cheats_active or game_difficulty <= 2:
-                        ">Requires a whoring level of 17 to be used.<"
-                    menu:
-                        "-Buy the item (400 gold)-":
-                            call cs_buy_stock("white_dye", 400)
-                            jump existing_stock_dyes
-                        "-Never mind-":
-                            jump existing_stock_dyes
-
-                "-Return-":
-                    jump existing_stock
-
-
 
         "-Tops-":#Jeans#Stockings#Fishnet Stockings#Lace Bra and Panties#Cup-less Lace Bra#Silk Bra and Panties
             label existing_stock_tops:
@@ -714,55 +570,6 @@ label existing_stock:
                 "-Return-":
                     jump existing_stock
 
-        #"-Bras and Panties-":    ###Taken out as bra/panties not really needed
-        #    label existing_stock_bras_panties:
-        #    menu:
-        #        "{color=#858585}-Lace Bra and Panties- (50 Gold){/color}"if "lace_set" in cs_existing_stock:
-        #            call cust_excuse("You already own this.")
-        #            jump existing_stock_bras_panties
-        #        "-Lace Bra and Panties- (50 Gold)" if "lace_set" not in cs_existing_stock:
-        #            "A lovely lace bra and panty set."
-        #            menu:
-        #                "-Buy the item (50 gold)-":
-        #                    call cs_buy_stock("lace_set", 50)
-        #                    jump existing_stock_bras_panties
-        #                "-Never mind-":
-        #                    jump existing_stock_bras_panties
-        #        "{color=#858585}-Cup-less Lace Bra and panties- (125 Gold){/color}"if "cup_set" in cs_existing_stock:
-        #            call cust_excuse("You already own this.")
-        #            jump existing_stock_bras_panties
-        #        "-Cup-less Lace Bra and panties- (125 Gold)" if "cup_set" not in cs_existing_stock:
-        #            "A revealing piece of clothing that only serves to highlight the wearer's breasts."
-        #            menu:
-        #                "-Buy the item (125 gold)-":
-        #                    call cs_buy_stock("cup_set", 125)
-        #                    jump existing_stock_bras_panties
-        #                "-Never mind-":
-        #                    jump existing_stock_bras_panties
-        #        "{color=#858585}-Silk Bra and Panties- (150 Gold){/color}"if "silk_set" in cs_existing_stock:
-        #            call cust_excuse("You already own this.")
-        #            jump existing_stock_bras_panties
-        #        "-Silk Bra and Panties- (150 Gold)" if "silk_set" not in cs_existing_stock:
-        #            "A smooth and comfortable lace bra and panty set."
-        #            menu:
-        #                "-Buy the item (150 gold)-":
-        #                    call cs_buy_stock("silk_set", 150)
-        #                    jump existing_stock_bras_panties
-        #                "-Never mind-":
-        #                    jump existing_stock_bras_panties
-        #        "{color=#858585}-Latex Bra and Panties- (150 Gold){/color}"if "latex_set" in cs_existing_stock:
-        #            call cust_excuse("You already own this.")
-        #            jump existing_stock_bras_panties
-        #        "-Latex Bra and Panties- (150 Gold)" if "latex_set" not in cs_existing_stock:
-        #            "A tight and shiny lace bra and panty set."
-        #            menu:
-        #                "-Buy the item (150 gold)-":
-        #                    call cs_buy_stock("latex_set", 150)
-        #                    jump existing_stock_bras_panties
-        #                "-Never mind-":
-        #                    jump existing_stock_bras_panties
-        #        "-Never Mind-":
-        #            jump existing_stock
 
 
 
@@ -887,89 +694,362 @@ label cs_buy_stock(item_id = "", cost):
             maf "Thank you very much."
             return
     else:
-        m "I don't have enough."
+        m "I don't have enough gold for this."
         return
 
-label clothes_store_gui(items = ""):
-    if items == "clothing_sets":
-        $ cs_gui_OBJ = cs_gui_clothing_set_class()
-    else:
-        $ cs_gui_OBJ = cs_gui_outfit_class()
+label open_clothes_store:
+    $ cs_gui_OBJ = cs_gui_outfit_class() #This will reset all clothes store variables.
+    $ mannequin_preview = "hg_mannequin.png"
+    $ clothes_store_selection = None
+
+
+    label return_clothes_store:
+
+        call update_clothes_store_lists
+
+
+    #Set mannequin outfit
+    #call mannequin_01("preview_main",xpos="cs_main",ypos="base")
+
+    #call mannequin_02("preview_left",xpos="cs_preview_left",ypos="cs_preview")
+    #call mannequin_03("preview_mid",xpos="cs_preview_mid",ypos="cs_preview")
+    #call mannequin_04("preview_right",xpos="cs_preview_right",ypos="cs_preview")
 
     call screen cs_gui
 
+
+
 label cs_select:
-    $ mannequin_preview = clothes_store_selection.store_image
+    $ mannequin_preview = clothes_store_selection.image
     #$ clothes_store_order_choice = clothes_store_selection
     call screen cs_gui
 
 label cs_buy:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
-    $ clothes_store_order_choice = clothes_store_selection.store_image
+    $ clothes_store_order_choice = clothes_store_selection.image
     #$ clothes_store_order_choice = clothes_store_selection
     jump clothes_menu
+
+label cs_buy_item:
+    if gold > selected_item.cost:
+        $ selected_item.unlocked = True #Unlocks item.
+        $ selected_item = None
+        call cust_excuse("Item purchased!")
+    else:
+        call cust_excuse("You don't have enough gold for this!")
+    jump return_clothes_store
 
 label close_clothes_store:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
-    jump clothes_menu
+    m "That's all for today, thank you."
+    maf "You're welcome, sir. Come back any time."
+
+    if daytime:
+        jump day_main_menu
+    else:
+        jump night_main_menu
 
 
 screen cs_gui():
 
     tag clothes_menu
-    zorder hermione_main_zorder-1
+    zorder 5
 
     imagemap:
         cache False
-        add "interface/store/icons/hermione/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
-        ground "interface/store/"+str(interface_color)+"/ground.png"
-        idle "interface/store/"+str(interface_color)+"/idle.png"
-        hover "interface/store/"+str(interface_color)+"/hover.png"
 
-        hotspot (745+280,10,45,45) clicked Jump("close_clothes_store")
+        # Outfits & Sets
+        if cs_gui_OBJ.category in [0,1]:
 
-        $ page_list = cs_gui_OBJ.getListOfItems()
+            # Main Interface
+            if clothes_store_selection == None:
+                add "interface/store/icons/outfits/hg_mannequin.png" xpos 600 ypos 0 zoom 1.0/scaleratio
 
-        $ index = 0
-        for i in range(0,3):
-            if index < len(page_list):
-                hotspot(70+(227*i),(107),175,284) clicked [SetVariable("clothes_store_selection",page_list[index]),Jump("cs_select")]
+                ground "interface/store/"+str(interface_color)+"/clothing_ground.png"
+                hover "interface/store/"+str(interface_color)+"/clothing_hover.png"
 
-                #Bag of gold icon. Buy item.
-                hotspot(726,505,90,80) clicked [SetVariable("clothes_store_selection",page_list[index]),Jump("cs_select")]
-                add page_list[index].getStoreImage() xpos (-7+(227*i)) ypos 30 zoom 0.6/scaleratio
-                $ index = index+1
+            else:
+                if clothes_store_selection in hermione_outfits_list:
+                    add "interface/store/icons/outfits/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
+                else:
+                    add "interface/store/icons/sets/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
 
-        if cs_gui_OBJ.current_page > 0:
-            hotspot (722, 212, 45, 45) clicked Jump("cs_gui_index_down")
-        if cs_gui_OBJ.current_page < cs_gui_OBJ.getTotalPages():
-            hotspot (722, 266, 45, 45) clicked Jump("cs_gui_index_up")
+                ground "interface/store/"+str(interface_color)+"/clothing_full_ground.png"
+                hover "interface/store/"+str(interface_color)+"/clothing_full_hover.png"
+
+            # Left Button
+            imagebutton:
+                xpos 977
+                ypos 544
+                idle "interface/general/"+interface_color+"/button_arrow_left.png"
+
+                if cs_gui_OBJ.character > 1:
+                    hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
+                    action Jump("cs_gui_character_back")
+
+            # Right Button
+            imagebutton:
+                xpos 1029
+                ypos 544
+                idle "interface/general/"+interface_color+"/button_arrow_right.png"
+
+                if cs_gui_OBJ.character < 5:
+                    hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
+                    action Jump("cs_gui_character_forward")
+
+            # Bag of Gold Icon
+            if clothes_store_selection != None:
+
+                imagebutton:
+                    xpos 705
+                    ypos 490
+                    idle "interface/general/gold_bag.png"
+
+                    hover "interface/general/gold_bag_hover.png"
+                    action [SetVariable("clothes_store_order_choice",clothes_store_selection), Jump("buy_outfit")]
+
+
+
+        # Clothing Items & Dyes
+        if cs_gui_OBJ.category in [2]:
+
+            # Main Interface
+            ground "interface/store/"+str(interface_color)+"/items_ground.png"
+            hover "interface/store/"+str(interface_color)+"/items_hover.png"
+
+            text "Clothing Items" xalign 0.5 yalign 0.5 xpos 309 ypos 130 size 24
+
+
+        # Always Active
+
+        # Close Button
+        imagebutton:
+            xpos 1028
+            ypos 11
+            idle "interface/general/"+interface_color+"/button_close.png"
+            hover "interface/general/"+interface_color+"/button_close_hover.png"
+            action Jump("close_clothes_store")
+
+        # Category Buttons
+        if cs_gui_OBJ.category == 0:# Outfits Button
+            text "Outfits" xalign 0.5 yalign 0.5 xpos 767 ypos 121 size 16
+        else:
+            hotspot (727,105,80,30) clicked [SetVariable("clothes_store_category","outfits"), Jump("change_cs_category")]
+            text "Outfits" xalign 0.5 yalign 0.5 xpos 767 ypos 121 size 14
+
+        if cs_gui_OBJ.category == 1: # Sets Button
+            text "Sets" xalign 0.5 yalign 0.5 xpos 767 ypos 121+44 size 16
+        else:
+            hotspot (727,149,80,30) clicked [SetVariable("clothes_store_category","sets"), Jump("change_cs_category")]
+            text "Sets" xalign 0.5 yalign 0.5 xpos 767 ypos 121+44 size 14
+
+        if cs_gui_OBJ.category == 2: # Items Button
+            text "Items" xalign 0.5 yalign 0.5 xpos 767 ypos 121+88 size 16
+        else:
+            hotspot (727,193,80,30) clicked [SetVariable("clothes_store_category","items"), Jump("change_cs_category")]
+            text "Items" xalign 0.5 yalign 0.5 xpos 767 ypos 121+88 size 14
+
+        # Up Button
+        imagebutton:
+            xpos 725
+            ypos 240
+            idle "interface/general/"+interface_color+"/button_arrow_up.png"
+
+            if cs_gui_OBJ.current_page > 0:
+                hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+                action Jump("cs_gui_index_up")
+
+        # Down Button
+        imagebutton:
+            xpos 725
+            ypos 292
+            idle "interface/general/"+interface_color+"/button_arrow_down.png"
+
+            if cs_gui_OBJ.current_page < cs_gui_OBJ.getTotalPages():
+                hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+                action Jump("cs_gui_index_down")
+
+
+
+        # Outfits & Sets
+        if cs_gui_OBJ.category in [0,1]:
+            if clothes_store_selection != None:
+                text clothes_store_selection.getStoreName() xpos 83 ypos 458 size 16
+                text clothes_store_selection.getStoreDescription() xpos 85 ypos 490 size 12
+
+                if clothes_store_selection in hermione_outfits_list:
+                    text "Outfit" xpos 509 ypos 458 size 16
+                else:
+                    text "Clothing Set" xpos 509 ypos 458 size 16
+
+                for i in range(0,len(clothes_store_selection.getStoreItems() )):
+                    $ row = i % 3
+                    $ col = i % 2
+
+                    text "+"+clothes_store_selection.getStoreItems()[i] xpos 511+(80*col) ypos (490+(12*row)) size 12
+
+                text clothes_store_selection.getStoreWaitTime() xpos 83 ypos 557 size 16
+                text clothes_store_selection.getStoreCost() xpos 509 ypos 557 size 16
+
+
+            $ page_list = cs_gui_OBJ.getListOfItems()
+
+
+
+            $ index = 0
+            for i in range(0,3):
+                if index < len(page_list):
+                    hotspot(70+(227*i),(107),175,284) clicked [SetVariable("clothes_store_selection",page_list[index]),Jump("cs_select")]
+
+                    add page_list[index].getStoreImage() xpos (-7+(227*i)) ypos 30 zoom 0.6/scaleratio
+                    $ index = index+1
+
+        # Items
+        if cs_gui_OBJ.category in [2]:
+
+            if cs_show_clothing: #Toggle Clothing Items
+                hotspot (470,109,18,18) clicked [SetVariable("cs_show_clothing",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470 ypos 104
+            else:
+                hotspot (470,109,18,18) clicked [SetVariable("cs_show_clothing",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470 ypos 104
+            text "Clothing" xpos 492 ypos 113 size 10
+
+            if cs_show_accs: #Toggle Accessory Items
+                hotspot (470+100,109,18,18) clicked [SetVariable("cs_show_accs",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470+100 ypos 104
+            else:
+                hotspot (470+100,109,18,18) clicked [SetVariable("cs_show_accs",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470+100 ypos 104
+            text "Accs." xpos 492+100 ypos 113 size 10
+
+            if cs_show_dyes: #Toggle Dye Items
+                hotspot (470,109+22,18,18) clicked [SetVariable("cs_show_dyes",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470 ypos 104+22
+            else:
+                hotspot (470,109+22,18,18) clicked [SetVariable("cs_show_dyes",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470 ypos 104+22
+            text "Dyes" xpos 492 ypos 113+22 size 10
+
+
+            $ page_list = cs_gui_OBJ.getListOfItems()
+
+            $ index = 0
+            for i in range(0,4):
+                if index < len(page_list):
+                    hotspot (172, (164+(90*i)), 83, 83) clicked [SetVariable("selected_item",page_list[index]),Jump("cs_buy_item")]
+
+                    add page_list[index].getStoreImage() xalign 0.5 xpos 217 yalign 0.5 ypos (209+(+90*i)) zoom 0.8 #page_list[index].getStoreImageZoom()
+
+                    text page_list[index].getStoreName() xpos 269 ypos (170+(90*i)) size 16
+                    text page_list[index].getStoreDescription() xpos 269 ypos (196+(90*i)) size 12
+                    text page_list[index].getStoreCost() xpos 269+270 ypos (170+(90*i)) size 16
+
+                    #for j in range(0, len(page_list[index].getStoreItems() )):
+                    #    $ col = i % 2
+
+                    #    text "+"+page_list[index].getStoreItems()[j] xpos 269+(80*col) ypos (196+48+(90*i)) size 12
+
+                    $ index = index+1
+
+
+
+label change_cs_category:
+    if clothes_store_category == "outfits":
+        $ cs_gui_OBJ.category = 0
+    if clothes_store_category == "sets":
+        $ cs_gui_OBJ.category = 1
+    if clothes_store_category == "items":
+        $ cs_gui_OBJ.category = 2
+    $ cs_gui_OBJ.current_page = 0
+    jump return_clothes_store
+
+label cs_gui_character_forward:
+    $ cs_gui_OBJ.character = cs_gui_OBJ.character+1
+    $ cs_gui_OBJ.current_page = 0
+    jump return_clothes_store
+label cs_gui_character_back:
+    $ cs_gui_OBJ.character = cs_gui_OBJ.character-1
+    $ cs_gui_OBJ.current_page = 0
+    jump return_clothes_store
 
 label cs_gui_index_up:
-    $ cs_gui_OBJ.current_page = cs_gui_OBJ.current_page+1
-    call screen cs_gui
-label cs_gui_index_down:
     $ cs_gui_OBJ.current_page = cs_gui_OBJ.current_page-1
     call screen cs_gui
+label cs_gui_index_down:
+    $ cs_gui_OBJ.current_page = cs_gui_OBJ.current_page+1
+    call screen cs_gui
+
+label update_clothes_store_lists:
+
+    $ cs_inventory_list = []
+    if cs_gui_OBJ.category == 0: #Outfits
+        if cs_gui_OBJ.character == 1: #Hermione
+            python:
+                for i in hermione_outfits_list:
+                    #if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.purchased: # Todo : rename ".purchased" ot ".unlocked"
+                            cs_inventory_list.append(i)
+
+        elif cs_gui_OBJ.character == 2: #Luna
+            $ cs_inventory_list = []
+
+        elif cs_gui_OBJ.character == 3: #Susan
+            $ cs_inventory_list = []
+
+        elif cs_gui_OBJ.character == 4: #Astoria
+            $ cs_inventory_list = []
+            #$ cs_inventory_list.append(ag_lazyTown_OBJ)
+            #$ cs_inventory_list.append(ag_ballDress_OBJ)
+
+        else: #Cho
+            $ cs_inventory_list = []
+
+
+    if cs_gui_OBJ.category == 1: #Sets
+        if cs_gui_OBJ.character == 1: #Hermione
+            python:
+                for i in hermione_clothing_sets_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
+
+
+    if cs_gui_OBJ.category == 2: #Clothing Items
+        python:
+            if cs_show_clothing:
+                pass
+            if cs_show_accs:
+                pass
+            if cs_show_dyes:
+                for i in dye_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
+
+
+
+
+    return
+
 
 init python:
-    class cs_gui_clothing_set_class(object):
-        current_page = 0
-
-        def getListOfItems(self):
-            return hermione_clothing_set_list[(self.current_page*8):min((self.current_page*8)+3, len(hermione_clothing_set_list))]
-        def getNamesOfItems(self):
-            return [i.name for i in self.getListOfItems()]
-        def getTotalPages(self):
-            return len(hermione_clothing_set_list)/8
 
     class cs_gui_outfit_class(object):
         current_page = 0
+        character = 1
+        category = 0
 
         def getListOfItems(self):
-            return hermione_outfits_list[(self.current_page*8):min((self.current_page*8)+8, len(hermione_outfits_list))]
+            if self.category in [0,1]: # 0=Outfits, 1=Sets
+                return cs_inventory_list [ (self.current_page *3) : min ( ((self.current_page+1)*3) , len (cs_inventory_list) ) ]
+            else:
+                return cs_inventory_list [ (self.current_page *4) : min ( ((self.current_page+1)*4) , len (cs_inventory_list) ) ]
         def getNamesOfItems(self):
             return [i.name for i in self.getListOfItems()]
         def getTotalPages(self):
-            return len(hermione_outfits_list)/8
+            if self.category in [0,1]:
+                return len(cs_inventory_list)/3
+            else:
+                return len(cs_inventory_list)/4

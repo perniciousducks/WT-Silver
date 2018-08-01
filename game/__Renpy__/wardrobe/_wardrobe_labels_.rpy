@@ -474,10 +474,15 @@ label her_robe_toggle:
 
 # Outfit Toggle #
 label her_outfit_toggle:
+    if hermoine_outfit_GLBL == None:
+        ">No item equipped."
+        call screen wardrobe
     hide screen hermione_main
     if hermione_costume:
+        $ h_request_wear_outfit = False
         $ hermione_costume = False
     else:
+        $ h_request_wear_outfit = True
         $ hermione_costume = True
     call update_her_uniform
     show screen hermione_main

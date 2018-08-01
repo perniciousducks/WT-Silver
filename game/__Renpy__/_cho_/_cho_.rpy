@@ -16,6 +16,8 @@ label FH_day:
     # Increment shit
     if cho_known:
         $ days_since_cho += 1
+    if cho_quidd:
+        $ days_since_quidd += 1
 
     #reset cho's outfit just incase
     $ cc_wear_top = True

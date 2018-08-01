@@ -1,14 +1,16 @@
 label luna_reverted_events: #MUST BE WEARING GLASSES!
-    menu:
-        "-Masturbate for me!-":
-            jump luna_reverted_event_1
-        "-Watch me Masturbate!-":
-            jump luna_reverted_event_2
-        "-Drink the elixir-":
-            jump luna_reverted_event_3
+    if luna_corruption == 0:
+        jump luna_reverted_event_1
+    elif luna_corruption == 1:
+        jump luna_reverted_event_2
+    elif luna_corruption == 2:
+        jump luna_reverted_event_3
 
+    jump day_main_menu
 
 label luna_reverted_event_1: #Masturbate for genie again. 
+    $ luna_corruption = 1
+    $ days_to_luna = 4
     "*knock* *knock* *knock*"
     m "Come in..."
     call play_sound("door") #Sound of a door opening.
@@ -140,6 +142,8 @@ label luna_reverted_event_1: #Masturbate for genie again.
 
 
 label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's face
+    $ luna_corruption = 2
+    $ days_to_luna = 3
     "*knock* *knock* *knock*"
     lun "Can I please come in sir..."
     ">There's a desperate twang to Luna's voice."
@@ -352,6 +356,8 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
 
 
 label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and lick it like a lollipop for an hour
+    $ luna_corruption = 3
+    $ days_to_luna = 4
     ">*knock* *knock* *knock*"
     ">Before waiting for a response, your door swings open to reveal Luna Lovegood."
     $ luna_chibi("stand")

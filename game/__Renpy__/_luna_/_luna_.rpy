@@ -11,6 +11,7 @@
 label luna_day_flags:
     $ luna_cheeks = "characters/luna/body/face/cheeks/cheeks_1.png"
     $ luna_busy = False
+    $ days_to_luna-=1
 return
 
 label luna_night_flags:

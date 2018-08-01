@@ -1,5 +1,18 @@
+label cho_quidd_events:
+    $ days_since_quidd = 0
+    if cho_quidd_points == 0:
+        jump cho_quidd_1_1
+    elif cho_quidd_points == 1:
+        jump cho_quidd_1_2
+    elif cho_quidd_points == 2:
+        jump cho_quidd_1_3
+    jump day_main_menu
+
+
+
 label cho_quidd_intro: #have cho come in and talk about wanting help to win more quidditch games against slytherin and gryffindor
     #genie suggest for her to play dirty
+    $ cho_quidd = True
     #Temporary way of doing outfits for Cho for now 
     $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
     $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
@@ -82,6 +95,7 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
 
 
 label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrassed)
+    $ cho_quidd_points = 1
     ">*knock* *knock* *knock*"
     $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
     $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
@@ -219,6 +233,8 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
 
 
 label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (happy they won)
+    $ cho_quidd_points = 2
+
     $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
     $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
     $ cc_acc                 = "characters/cho/base/blank.png"
@@ -286,6 +302,8 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     jump day_main_menu
 
 label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused)
+    $ cho_quidd_points = 1
+
     $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
     $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
     $ cc_acc                 = "characters/cho/base/blank.png"

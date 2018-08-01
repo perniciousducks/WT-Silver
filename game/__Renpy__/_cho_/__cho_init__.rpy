@@ -31,6 +31,7 @@ label cho_init:
         $ cc_stock               = "characters/cho/clothes/uniform/stockings.png" 
         $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
         $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+        $ cc_gloves              = "characters/cho/base/blank.png" 
 
         $ cc_wear_top            = True
         $ cc_wear_bra            = True

@@ -1,5 +1,14 @@
 label cho_quidd_intro: #have cho come in and talk about wanting help to win more quidditch games against slytherin and gryffindor
     #genie suggest for her to play dirty
+    #Temporary way of doing outfits for Cho for now 
+    $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
+    $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
+    $ cc_acc                 = "characters/cho/base/blank.png"
+    $ cc_skirt               = "characters/cho/clothes/quidditch/pants.png" 
+    $ cc_stock               = "characters/cho/base/blank.png" 
+    $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
+    $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+    $ cc_gloves              = "characters/cho/clothes/quidditch/gloves.png" 
     ">With a loud bang, your door is flung open as a disgruntled girl marches in."
     call cho_main("It's not fair!", "angry", "angry", "right", "pout")
     call cho_main("Malfoy's pompous old man just bought the whole \'Slytherin\'' team brand new Nimbus 2018s!", "closed", "angry", "closed", "yell")
@@ -58,6 +67,14 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
     with d3
     m "..."
     m "(I still have no idea what quidditch is...)"
+    $ cc_vest                = "characters/cho/clothes/uniform/vest.png" 
+    $ cc_top                 = "characters/cho/clothes/uniform/top.png" 
+    $ cc_acc                 = "characters/cho/clothes/uniform/tie.png" 
+    $ cc_skirt               = "characters/cho/clothes/uniform/skirt.png" 
+    $ cc_stock               = "characters/cho/clothes/uniform/stockings.png" 
+    $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
+    $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+    $ cc_gloves              = "characters/cho/base/blank.png" 
     
     jump day_main_menu
 
@@ -66,6 +83,14 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
 
 label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrassed)
     ">*knock* *knock* *knock*"
+    $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
+    $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
+    $ cc_acc                 = "characters/cho/base/blank.png"
+    $ cc_skirt               = "characters/cho/clothes/uniform/skirt.png" 
+    $ cc_stock               = "characters/cho/base/blank.png" 
+    $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
+    $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+    $ cc_gloves              = "characters/cho/clothes/quidditch/gloves.png" 
     menu:
         "\"Come in!\"":
             cho "Yes sir..."
@@ -182,11 +207,26 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
     hide screen cho_chang
     with d3
     m "(I've really gotta learn what this quitit game is...)"
+    $ cc_vest                = "characters/cho/clothes/uniform/vest.png" 
+    $ cc_top                 = "characters/cho/clothes/uniform/top.png" 
+    $ cc_acc                 = "characters/cho/clothes/uniform/tie.png" 
+    $ cc_stock               = "characters/cho/clothes/uniform/stockings.png" 
+    $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
+    $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+    $ cc_gloves              = "characters/cho/base/blank.png" 
     jump day_main_menu
 
 
 
 label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (happy they won)
+    $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
+    $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
+    $ cc_acc                 = "characters/cho/base/blank.png"
+    $ cc_skirt               = "characters/cho/clothes/uniform/skirt_2.png" 
+    $ cc_stock               = "characters/cho/base/blank.png" 
+    $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
+    $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+    $ cc_gloves              = "characters/cho/clothes/quidditch/gloves.png" 
     ">*knock* *knock* *knock*"
     m "Come in..."
     ">Cho Chang quickly enters your office, a spring in her step."
@@ -246,6 +286,14 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     jump day_main_menu
 
 label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused)
+    $ cc_vest                = "characters/cho/clothes/quidditch/jacket.png" 
+    $ cc_top                 = "characters/cho/clothes/quidditch/sweater.png" 
+    $ cc_acc                 = "characters/cho/base/blank.png"
+    $ cc_skirt               = "characters/cho/clothes/uniform/skirt_3.png" 
+    $ cc_stock               = "characters/cho/base/blank.png" 
+    $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
+    $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+    $ cc_gloves              = "characters/cho/clothes/quidditch/gloves.png" 
     ">*knock* *knock* *knock*"
     m "You can just come in from now on Cho..."
     ">With that, your door slowly opens as Cho enters."

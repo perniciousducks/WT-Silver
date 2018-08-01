@@ -32,6 +32,7 @@ screen cho_chang:
         add cc_stock xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the stockings
     ### OTHER
     add cc_l_hand xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the left hand
+    add cc_gloves xpos cc_xpos ypos cc_ypos xzoom cc_flip zoom (1.0/scaleratio) # Add the gloves
     ### ZORDER
     zorder cc_zorder
 

@@ -80,7 +80,7 @@ label mirror_menu:
     
     hide screen event_menu
     
-    if _return == "Cancel":
+    if _return == "Close":
         call screen room_of_requirement_menu
 
     elif _return == "inc":
@@ -91,44 +91,23 @@ label mirror_menu:
         jump mirror_menu
     else:
         $renpy.jump(_return)
-
-screen info_screen:
-    imagebutton: # X 
-        xpos 1013
-        ypos 13
-        idle "interface/general/"+interface_color+"/button_close.png"
-        hover "interface/general/"+interface_color+"/button_close_hover.png"
-        action [Hide("info_screen"), SetVariable("currentpage",0), Jump("mirror_menu")]
-        
-    add "interface/frames/"+interface_color+"/PinkBox.png" xalign 0.5 yalign 0.5 zoom 3
-    vbox:
-        xalign 0.5
-        yalign 0.5
-        xsize 300
-        ysize 300
-        
-        text "The mirror of Erised contains a collection of side stories. Ones that would either not fit in the main game or over the top parodies dreamt up by the genie. \n\nThe stories can be unlocked by completing the task listed in the description of each entry. Make sure to look at the story theme to see what you want to go for first." xalign 0.5 yalign 0.5
         
 screen event_menu:
-    imagebutton: # X 
-        xpos 1013
-        ypos 13
-        idle "interface/general/"+interface_color+"/button_close.png"
-        hover "interface/general/"+interface_color+"/button_close_hover.png"
-        action Return("Cancel")
+    $ event_shown=5
+    use close_button
     
     if not currentpage <= 0:
         imagebutton:
-            xpos 855
-            ypos 270
+            xpos 725
+            ypos 240
             idle "interface/general/"+interface_color+"/button_arrow_up.png"
             hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
             action Return("dec")
             
-    if currentpage < math.ceil(len(mr_evs_list)/5):
+    if currentpage < math.ceil(len(mr_evs_list)/event_shown):
         imagebutton:
-            xpos 855
-            ypos 330
+            xpos 725
+            ypos 292
             idle "interface/general/"+interface_color+"/button_arrow_down.png"
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
@@ -157,9 +136,9 @@ screen event_menu:
             xsize 598
             ysize 448
         
-            for i in range(0, 5):
-                if (currentpage*5)+i < len(mr_evs_list):
-                    use mirror_item(mr_evs_list[(currentpage*5)+i])
+            for i in range(0, event_shown):
+                if (currentpage*event_shown)+i < len(mr_evs_list):
+                    use mirror_item(mr_evs_list[(currentpage*event_shown)+i])
                 else:
                     add "interface/room_of_req/mirror_event_item.png"
             

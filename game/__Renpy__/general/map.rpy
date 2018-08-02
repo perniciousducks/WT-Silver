@@ -33,6 +33,7 @@ label floor_7th:
         hide screen chair_right
         hide screen fireplace
         hide screen candlefire
+        hide screen desk
         show screen floor_7th_screen
         
         

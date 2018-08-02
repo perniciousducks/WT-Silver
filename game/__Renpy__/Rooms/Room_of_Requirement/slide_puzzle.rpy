@@ -29,7 +29,7 @@ label update_puzzle_slide:
     $ move = ui.interact() 
     hide screen puzzle_board    
         
-    if move == -1:
+    if int(move) == -1:
         jump cupboard 
         
     $xposS = int(move/4)
@@ -98,12 +98,8 @@ label open_pyzzle_box:
     jump cupboard
     
 screen puzzle_board:
-    imagebutton: # X 
-        xpos 1013
-        ypos 13
-        idle "interface/general/"+interface_color+"/button_close.png"
-        hover "interface/general/"+interface_color+"/button_close_hover.png"
-        action Return(-1)
+
+    use close_button(close_var=lambda : -1)
         
     if puzzle_tries > 300:
         imagebutton:

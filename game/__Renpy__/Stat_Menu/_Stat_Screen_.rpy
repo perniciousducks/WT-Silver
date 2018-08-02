@@ -23,7 +23,7 @@ label open_stat_menu(charName="hermione"):
     show screen select_character
     $ _return = ui.interact()
     
-    if _return == "Cancel":
+    if _return == "Close":
         $renpy.hide_screen(stat_screen)
         $renpy.hide_screen(stat_char)
         hide screen select_character
@@ -49,12 +49,7 @@ screen select_character:
     add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
     text "-Character Select-" xpos 40 ypos 100 size 14 
     
-    imagebutton: # X 
-        xpos 1013
-        ypos 13
-        idle "interface/general/"+interface_color+"/button_close.png"
-        hover "interface/general/"+interface_color+"/button_close_hover.png"
-        action Return("Cancel")
+    use close_button
     
     imagebutton:
         xpos 40 + ( 85 * (indexSize%2))
@@ -188,6 +183,14 @@ screen luna_stat_menu:
     add stateEmptyImage xpos 250 ypos 325
     add stateEmptyImage xpos 250 ypos 500    
     zorder 8
+    
+screen close_button(offsetx = 0, offsety = 0, close_var=lambda : "Close"):
+    imagebutton:
+            xpos 1028-offsetx
+            ypos 11-offsety
+            idle "interface/general/"+interface_color+"/button_close.png"
+            hover "interface/general/"+interface_color+"/button_close_hover.png"
+            action Return(close_var())
 
 label updateHermioneWords:
     $ whoringWords = ["Pure", "Naive", "Curious", "Naughty", "Perverse", "Immoral", "Slutty", "Shameless", "Cumslut", "Total Cumslut", "Shameless Cumslut"] 

@@ -6,7 +6,7 @@ label whose_points:
     with Dissolve(.3)
     call hide_room_req
     show screen whose_points_screen
-
+    
     m "Hello and welcome to whose points is it anyway."
     m "The show where everything is made up but the points doesn't matter."
     m "Just like at Hogwarts."
@@ -168,85 +168,117 @@ label whose_points:
     jump enter_room_of_req
     
 label genie_house_elf:
-    show screen bld1
-    with Dissolve(.3)
     call hide_room_req
     show screen main_room
     show screen genie
     
-    "This story takes place in between the introduction of Snape and first meeting Hermione."
+    show screen blkfade
+    pause 0.3
+    hide screen blkfade
+    with d3
+    
+    n "This story takes place in between the introduction of Snape and first meeting Hermione."
+    n "The genie, the desk and the door:"
+    n "How does that door work? The genie thought."
 
-    m "\"How does that door work?\""
-    m "\"How does the people know I’ve summoned them?\""
-    m "\"thoughts: I don’t have a secretary...that I know of anyway.\""
-    m "\"Have they been keeping a secretary from me? I should ask Snape.\""
+    m "\"How does the people know I’ve summoned them? I don’t have a secretary...that I know of anyway.\""
+
+    m "Have they been keeping a secretary from me? I should ask Sn..."
+    
+    n "Snape then openeded the door, his pointy nose protruding under his silky hair."
 
     call sna_walk("door","mid",2) 
     call sna_main("You called? ", "snape_23", xpos="base", ypos="base")
 
-    g11 "How did you, how do you...this door, how does it work?"
-    m "\"What is this... this unfamiliar magic.\""
-    m "\"I know the ins and outs of the universe. But this world is just so alien to me…\""
-    m "\"thoughts: At least I know things about aliens….\""
+    n "Snape said with a smirk, doing his best to hide his amusement."
+    
+    g11 "How did you, how do you..."
+    m "This door, how does it work?"
+    
+    n " The genie said, now even more frustrated. "
+    n "The genie wasn’t used to this... this unfamiliar magic."
+    n "He was used to knowing the ins and outs of the universe. But this world, it was to alien to him..."
+    n "At least he knew things about aliens..."
 
-    call sna_main("Well, you’re the headmaster are you not? ", "snape_23", xpos="base", ypos="base")
+    call sna_main("Well, you’re the headmaster are you not? ", "snape_06", xpos="base", ypos="base")
 
-    m "What’s that supposed to mean?"
+    n "Snape said as if that meant anything."
 
-    call sna_main("...", "snape_02", xpos="base", ypos="base")
+    n "A look of confusion spread across the genies face which only made Snape smirk even more."
+    n "He theb composed himself after seeing this unusual expression on the headmasters."
+
     call sna_main("I keep forgetting that you don’t know these things.", "snape_01", xpos="base", ypos="base")
-    call sna_main("People that were educated here already knows how things work. ", "snape_01", xpos="base", ypos="base")
+    call sna_main("People that were educated here learns it in passing.", "snape_01", xpos="base", ypos="base")
     call sna_main("The headmaster is in control of the school and its inhabitants.", "snape_24", xpos="base", ypos="base")
 
-    m "I know that, we have schools in my world to..."
-    m "But we generally don’t wave wooden sticks around yelling random words."
+    n "Snape said in a matter of fact sort of way."
+    
+    m "I know that, we have schools in my world to."
+    m "But generally we don’t wave wooden sticks around yelling random words."
 
-    call sna_main("...", "snape_08", xpos="base", ypos="base")
-    call sna_main("No. You’re literally in control over the school....look.", "snape_01", xpos="base", ypos="base")
+    n "Snape flinched as the notion of magic just involving waving your wand and yelling random words was the most absurd statement someone could make."
+    
+    call sna_main("No. You’re literally in control over the school....look.", "snape_08", xpos="base", ypos="base")
+    
+    n "Snape says, pulling his wand out, waving it."
+    
     call sna_main("Revelio!", "snape_01", xpos="base", ypos="base")
     call sna_main(remove=True)
     
-    call helf_main("Oh, hello there sir!")
+    n "After a flash of light and a small pop a house elf appears in the corner of the room."
+    
+    call helf_main(" ")
     
     g5 "What the hell is that?"
     
+    n "The genie said, jumping onto the desk as if things appearing out of thin air was new to him."
+    
     call helf_main(remove=True)
     
-    call sna_main("That…", "snape_01", xpos="base", ypos="base")
-    call sna_main("Is an house elf.", "snape_01", xpos="base", ypos="base")
-
-    m "An house...elf. Is that like a Santa's elf?"
-
-    call sna_main("Sort of, they don’t get paid so they do have that in common…", "snape_01", xpos="base", ypos="base")
-    call sna_main("Ahem, anyway…. The house elf here can send us messages so we’ll go where we are needed.", "snape_01", xpos="base", ypos="base")
-    call sna_main("He just sits here invisible during the day and cleans and eat at night.", "snape_01", xpos="base", ypos="base")
+    call sna_main("That...is an house elf.", "snape_01", xpos="base", ypos="base")
     
-    m "The house elf cleans? I thought I had some sort of magic self cleaning desk…"
+    m "An house...elf."
+    g10 "Is that like a Santa's elf? "
     
+    n "The genie said now climbing down to sit on his chair."
+
+    call sna_main("Sort of, they don’t get paid so they do have that in common...", "snape_05", xpos="base", ypos="base")
+    
+    n "Snape muttered under his breath..."  
+    
+    call sna_main("The house elf here can send us messages so we'll go where we are needed.", "snape_05", xpos="base", ypos="base")
+    
+    call sna_main("He just sits here invisible during the day and cleans and eats at night.", "snape_01", xpos="base", ypos="base")
+    
+    m "The house elf cleans?"
+    m "I thought I had some sort of magic self cleaning desk..."
+    
+    n "The genie said sheepishly." 
     call sna_main(remove=True)
     
-    call helf_main("No sir... I see it all, I clean it all....every...last bit of it.")
+    call helf_main("No sir...")
+    
+    n "Said the elf, trying his hardest to bite his tongue but failing."
+    
+    call helf_main("I see it all, I clean it all....every...last bit of it.")
     call helf_main(remove=True)
     
     call sna_main("...", "snape_08", xpos="base", ypos="base")
     
-    m "..."
-
+    n "After a few moments Snape turned around, started walking towards the door and said."
     
-    call sna_walk("mid","door",2) 
-    call sna_main("If that is all, I’ll be in the dungeons. I’ve been working on a new cleaning solution.", "snape_01", xpos="base", ypos="base")
-    call sna_main("It seems like it might come in handy sooner than I thought.", "snape_01", xpos="base", ypos="base")
+    call sna_main("If that is all, I’ll be in the dungeons.", "snape_01", xpos="base", ypos="base")
+    call sna_main("I’ve been working on a new cleaning solution.", "snape_01", xpos="base", ypos="base")
+    call sna_main("It might come in handy sooner than I thought.", "snape_02", xpos="base", ypos="base")
     call sna_walk("door","leave",2) 
-    
-    m "..."
-
     call sna_main(remove=True)
     
+    n "The door shut and silence spread across the room only interrupted after a few minutes by the house elf."
+    
     call helf_main("So, should I turn invisible again sir?")
-    call helf_main(remove=True)
     
     m "Yes...yes that will be for the best."
-
+    call helf_main(remove=True)
     "The end."
     
     hide screen genie

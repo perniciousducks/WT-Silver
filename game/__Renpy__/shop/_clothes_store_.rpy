@@ -764,19 +764,14 @@ screen cs_gui():
 
             # Main Interface
             if clothes_store_selection == None:
-                add "interface/store/icons/outfits/hg_mannequin.png" xpos 600 ypos 0 zoom 1.0/scaleratio
-
-                ground "interface/store/"+str(interface_color)+"/clothing_ground.png"
-                hover "interface/store/"+str(interface_color)+"/clothing_hover.png"
+                ground "interface/store/"+str(interface_color)+"/clothing_panel_main.png"
+                hover "interface/store/"+str(interface_color)+"/clothing_panel_main_hover.png"
 
             else:
-                if clothes_store_selection in hermione_outfits_list:
-                    add "interface/store/icons/outfits/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
-                else:
-                    add "interface/store/icons/sets/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
+                ground "interface/store/"+str(interface_color)+"/clothing_panel_full.png"
+                hover "interface/store/"+str(interface_color)+"/clothing_panel_full_hover.png"
 
-                ground "interface/store/"+str(interface_color)+"/clothing_full_ground.png"
-                hover "interface/store/"+str(interface_color)+"/clothing_full_hover.png"
+            add cs_gui_OBJ.getMannequinPreview() xpos 600 ypos 0 zoom 1.0/scaleratio
 
             # Left Button
             imagebutton:
@@ -815,8 +810,8 @@ screen cs_gui():
         if cs_gui_OBJ.category in [2]:
 
             # Main Interface
-            ground "interface/store/"+str(interface_color)+"/items_ground.png"
-            hover "interface/store/"+str(interface_color)+"/items_hover.png"
+            ground "interface/store/"+str(interface_color)+"/items_panel.png"
+            hover "interface/store/"+str(interface_color)+"/items_panel_hover.png"
 
             text "Clothing Items" xalign 0.5 yalign 0.5 xpos 309 ypos 130 size 24
 
@@ -831,23 +826,43 @@ screen cs_gui():
             hover "interface/general/"+interface_color+"/button_close_hover.png"
             action Jump("close_clothes_store")
 
-        # Category Buttons
-        if cs_gui_OBJ.category == 0:# Outfits Button
+        # Outfits Buttons
+        imagebutton:
+            xpos 727
+            ypos 105
+            idle "interface/general/"+interface_color+"/button_select.png"
+            if cs_gui_OBJ.category != 0: # Outfits
+                hover "interface/general/"+interface_color+"/button_select_hover.png"
+                action [SetVariable("clothes_store_category","outfits"), Jump("change_cs_category")]
+        if cs_gui_OBJ.category == 0: # Outfits
             text "Outfits" xalign 0.5 yalign 0.5 xpos 767 ypos 121 size 16
         else:
-            hotspot (727,105,80,30) clicked [SetVariable("clothes_store_category","outfits"), Jump("change_cs_category")]
             text "Outfits" xalign 0.5 yalign 0.5 xpos 767 ypos 121 size 14
 
-        if cs_gui_OBJ.category == 1: # Sets Button
+        # Sets Button
+        imagebutton:
+            xpos 727
+            ypos 149
+            idle "interface/general/"+interface_color+"/button_select.png"
+            if cs_gui_OBJ.category != 1: # Sets
+                hover "interface/general/"+interface_color+"/button_select_hover.png"
+                action [SetVariable("clothes_store_category","sets"), Jump("change_cs_category")]
+        if cs_gui_OBJ.category == 1: # Sets
             text "Sets" xalign 0.5 yalign 0.5 xpos 767 ypos 121+44 size 16
         else:
-            hotspot (727,149,80,30) clicked [SetVariable("clothes_store_category","sets"), Jump("change_cs_category")]
             text "Sets" xalign 0.5 yalign 0.5 xpos 767 ypos 121+44 size 14
 
-        if cs_gui_OBJ.category == 2: # Items Button
+        # Items Button
+        imagebutton:
+            xpos 727
+            ypos 193
+            idle "interface/general/"+interface_color+"/button_select.png"
+            if cs_gui_OBJ.category != 2: # Items
+                hover "interface/general/"+interface_color+"/button_select_hover.png"
+                action [SetVariable("clothes_store_category","items"), Jump("change_cs_category")]
+        if cs_gui_OBJ.category == 2: # Items
             text "Items" xalign 0.5 yalign 0.5 xpos 767 ypos 121+88 size 16
         else:
-            hotspot (727,193,80,30) clicked [SetVariable("clothes_store_category","items"), Jump("change_cs_category")]
             text "Items" xalign 0.5 yalign 0.5 xpos 767 ypos 121+88 size 14
 
         # Up Button
@@ -894,8 +909,6 @@ screen cs_gui():
 
 
             $ page_list = cs_gui_OBJ.getListOfItems()
-
-
 
             $ index = 0
             for i in range(0,3):
@@ -946,10 +959,10 @@ screen cs_gui():
                     text page_list[index].getStoreDescription() xpos 269 ypos (196+(90*i)) size 12
                     text page_list[index].getStoreCost() xpos 269+270 ypos (170+(90*i)) size 16
 
-                    #for j in range(0, len(page_list[index].getStoreItems() )):
-                    #    $ col = i % 2
+                    for j in range(0, len(page_list[index].getStoreItems() )):
+                        $ col = j % 3
 
-                    #    text "+"+page_list[index].getStoreItems()[j] xpos 269+(80*col) ypos (196+48+(90*i)) size 12
+                        text "+"+page_list[index].getStoreItems()[j] xpos 269+(110*col) ypos (196+32+(90*i)) size 12
 
                     $ index = index+1
 
@@ -968,10 +981,12 @@ label change_cs_category:
 label cs_gui_character_forward:
     $ cs_gui_OBJ.character = cs_gui_OBJ.character+1
     $ cs_gui_OBJ.current_page = 0
+    $ clothes_store_selection = None
     jump return_clothes_store
 label cs_gui_character_back:
     $ cs_gui_OBJ.character = cs_gui_OBJ.character-1
     $ cs_gui_OBJ.current_page = 0
+    $ clothes_store_selection = None
     jump return_clothes_store
 
 label cs_gui_index_up:
@@ -1040,6 +1055,7 @@ init python:
         current_page = 0
         character = 1
         category = 0
+        preview = "interface/store/icons/outfits/hg_mannequin.png"
 
         def getListOfItems(self):
             if self.category in [0,1]: # 0=Outfits, 1=Sets
@@ -1053,3 +1069,19 @@ init python:
                 return len(cs_inventory_list)/3
             else:
                 return len(cs_inventory_list)/4
+        def getMannequinPreview(self):
+            if clothes_store_selection == None:
+                if self.character == 1: # Hermione
+                    return "interface/store/icons/outfits/hg_mannequin.png"
+                elif self.character == 2: # Luna
+                    return "interface/store/icons/outfits/ll_mannequin.png" # Placeholder
+                elif self.character == 3: # Susan
+                    return "interface/store/icons/outfits/sb_mannequin.png"
+                elif self.character == 4: # Astoria
+                    return "interface/store/icons/outfits/ag_mannequin.png"
+                elif self.character == 5: # Cho
+                    return "interface/store/icons/outfits/cc_mannequin.png" # Placeholder
+                else:
+                    return "interface/store/icons/outfits/hg_mannequin.png"
+            else:
+                return clothes_store_selection.getStoreImage()

@@ -2,46 +2,46 @@
 
 label summon_hermione:
 
-    call load_hermione_clothing_saves 
+    call load_hermione_clothing_saves
 
     call play_sound("door") #Sound of a door opening.
 
     ### RANDOM CLOTHING EVENTS ###
-    call hermione_door_event 
+    call hermione_door_event
 
-    call update_her_uniform 
+    call update_her_uniform
 
-    call her_chibi("stand","mid","base") 
+    call her_chibi("stand","mid","base")
 
     if mad >= 1:
 
         if mad >=1 and mad < 3:
-            call her_main("","normal","base",xpos="base",ypos="base") 
+            call her_main("","normal","base",xpos="base",ypos="base")
             ">Looks like Hermione is still a little upset with you..."
         elif mad >=3 and mad < 10:
-            call her_main("","normal","base",xpos="base",ypos="base") 
+            call her_main("","normal","base",xpos="base",ypos="base")
             ">Hermione is upset with you."
         elif mad >=10 and mad < 20:
-            call her_main("","annoyed","frown",xpos="base",ypos="base") 
+            call her_main("","annoyed","frown",xpos="base",ypos="base")
             ">Hermione is very upset with you."
         elif mad >=20 and mad < 40:
-            call her_main("","angry","angry",xpos="base",ypos="base") 
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione is mad at you."
         elif mad >=40 and mad < 50:
-            call her_main("","angry","angry",xpos="base",ypos="base") 
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione is very mad at you."
         elif mad >=50 and mad < 60:
-            call her_main("","angry","angry",xpos="base",ypos="base") 
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione is furious at you."
         elif mad >=60:
-            call her_main("","angry","angry",xpos="base",ypos="base") 
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione hates your guts."
 
     else:
         if not hermione_door_event_happened:
-            call her_main("Yes, [genie_name]?","base","base",xpos="base",ypos="base") 
+            call her_main("Yes, [genie_name]?","base","base",xpos="base",ypos="base")
         else:
-            call her_main("...","base","base",xpos="base",ypos="base") 
+            call her_main("...","base","base",xpos="base",ypos="base")
 
     label day_time_requests:
 
@@ -50,20 +50,16 @@ label summon_hermione:
     $ wardrobe_active = False
 
     menu:
-        "-Ask for a new student-" if hat_known and not luna_known:
-            call luna_init 
-            $ luna_known = True
-            jump hat_intro_2
         "-Talk-":
             if not chitchated_with_her:
                 jump hermione_talk_branches
                 label hermione_talk_branches_return:
                 if mad <= 7:
-                    $ chitchated_with_her = True 
-                    call chit_chat 
+                    $ chitchated_with_her = True
+                    call chit_chat
                     jump hermione_talk
                 else:
-                    her "I have nothing to say to you sir..."    
+                    her "I have nothing to say to you sir..."
                     jump day_time_requests
             else:
                 jump hermione_talk
@@ -85,7 +81,7 @@ label summon_hermione:
                 jump day_time_requests
             else:
                 jump l_tutoring_check
-                    
+
         "-Buy sexual favours-" if buying_favors_from_hermione_unlocked:
             if mad >=1 and mad < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
@@ -110,27 +106,27 @@ label summon_hermione:
                 jump day_time_requests
             else:
                 jump silver_requests
-                    
+
         "-Inventory-":
             $ active_girl = "hermione"
 
-            call load_hermione_clothing_saves 
+            call load_hermione_clothing_saves
 
-            call reset_wardrobe_vars 
-            call update_wr_color_list 
+            call reset_wardrobe_vars
+            call update_wr_color_list
 
             $ wardrobe_active = 1 #True
-            call her_main("","","",xpos="wardrobe",ypos="base") 
+            call her_main("","","",xpos="wardrobe",ypos="base")
             call screen wardrobe
-                        
+
         #"-Ending \"Your whore\"-":
         #    $ public_whore_ending = False
         #    jump your_whore
-                        
+
         #"-Ending \"Public whore\"-":
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
         #    jump your_whore
-                    
+
         "-Dismiss her-":
             if daytime:
                 if mad >=3 and mad < 7:
@@ -148,7 +144,7 @@ label summon_hermione:
                     her "Oh, alright. I will go to bed then."
 
             hide screen bld1
-            hide screen blktone 
+            hide screen blktone
 
             hide screen hermione_main
             hide screen hermione_blink #Hermione stands still.
@@ -158,57 +154,62 @@ label summon_hermione:
 
             $ menu_x = 0.5 #Menu position is back to default. (Center).
             $ menu_y = 0.5 #Menu position is back to default. (Center).
-                        
+
             if daytime:
                 $ hermione_takes_classes = True
                 jump day_main_menu
             else:
                 $ hermione_sleeping = True
                 jump night_main_menu
-                    
-                    
 
-label hermione_talk: 
-    menu:           
+
+
+label hermione_talk:
+    menu:
         "-Working-":
             label working_menu:
             menu:
-                "-Work as a maid-" if daytime and hg_maid_OBJ.purchased:
+                "-Work as a maid-" if daytime and hg_maid_OBJ.unlocked:
                     jump job_1
 
-                "-Work as a maid-" if daytime and not hg_maid_OBJ.purchased:
+                "-Work as a maid-" if daytime and not hg_maid_OBJ.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
-                                        
+
                 "{color=#858585}-Work as a maid-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
-                                    
-                "-Work as a cheerleader for Gryffindor-" if daytime and hg_gryffCheer_OBJ.purchased:
+
+                "-Work as a cheerleader for Gryffindor-" if daytime and hg_gryffCheer_OBJ.unlocked:
                      jump job_3
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and not hg_gryffCheer_OBJ.purchased:
+                "-Work as a cheerleader for Gryffindor-" if daytime and not hg_gryffCheer_OBJ.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
-                                    
+
                 "{color=#858585}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
-                                    
-                "-Work as a cheerleader for Slytherin-" if daytime and hg_slythCheer_OBJ.purchased:
+
+                "-Work as a cheerleader for Slytherin-" if daytime and hg_slythCheer_OBJ.unlocked:
                     jump job_4
 
-                "-Work as a cheerleader for Slytherin-" if daytime and not hg_slythCheer_OBJ.purchased:
+                "-Work as a cheerleader for Slytherin-" if daytime and not hg_slythCheer_OBJ.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
-                                    
+
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
-                                          
+
                 "-Never mind-":
-                    jump hermione_talk     
-                            
+                    jump hermione_talk
+
+        "-Ask for a new student-" if hat_known and not luna_known:
+            call luna_init
+            $ luna_known = True
+            jump hat_intro_2
+
         "-Address me only as-":
             menu:
                 "-Sir-":
@@ -272,7 +273,7 @@ label hermione_talk:
                         jump genie_change_fail
                 "-Never mind-":
                     jump hermione_talk
-                            
+
         "-From now on I will refer to you as-":
             menu:
                 "-Miss Granger-":
@@ -335,27 +336,29 @@ label hermione_talk:
                         jump hermione_change_fail
                 "-Never mind-":
                     jump hermione_talk
-                            
+
+        "-Start the Ending-" if her_dress_wearable: #Starts the ending of the game.
+            jump start_end_events
+
         "-Never mind":
             jump day_time_requests
-                    
-                    
+
+
 label genie_change:
-    call her_main("Ok, from now on I'll call you [genie_name].","base","base") 
+    call her_main("Ok, from now on I'll call you [genie_name].","base","base")
     jump hermione_talk
-    
+
 label genie_change_fail:
-    call her_main("I'm not calling you that!","scream","angryCl") 
+    call her_main("I'm not calling you that!","scream","angryCl")
     jump hermione_talk
-    
+
 label hermione_change:
     if whoring >= 20:
-        call her_main("You can call me whatever you want, [genie_name]!","base","glance") 
+        call her_main("You can call me whatever you want, [genie_name]!","base","glance")
     else:
-        call her_main("Sure, [genie_name]. I like that name.","base","base") 
+        call her_main("Sure, [genie_name]. I like that name.","base","base")
     jump hermione_talk
-    
+
 label hermione_change_fail:
-    call her_main("I'm not letting you call me that!","scream","angryCl") 
+    call her_main("I'm not letting you call me that!","scream","angryCl")
     jump hermione_talk
-    

@@ -532,7 +532,7 @@ label cho2begin:
                                                 call cho_main("that's sooo much, professor.", "default", "default", "right", "lip_bite") 
                                                 call cho_main("Do you want me to take the rest off?", "angry", "sad", "right", "quiver") 
                                                 $ cho_points = 100
-                                        $ changeCho("angry", "default", "angry", "quiver")
+                                        $ changeCho("angry", "angry", "default", "quiver")
                                         m "Miss Chang, the rest if you would."
                                         call cho_main("Of course, sir.", "default", "default", "default", "lip_bite") 
                                         ">Cho reaches over her head and pulls her bra off in one smooth motion.{p}Her small, pert breasts barely move as she dips low and pulls her painties down her fit legs."

@@ -8,7 +8,7 @@ label luna_init:
         #Body
         $ luna_base              = "characters/luna/body/base/base_01.png" 
         $ luna_cheeks            = "characters/luna/body/face/cheeks/cheeks_1.png" 
-        $ luna_hair              = 1
+        $ luna_hair              = 2
         $ luna_l_arm             = 1
         $ luna_r_arm             = 1
         $ luna_xpos              = 600

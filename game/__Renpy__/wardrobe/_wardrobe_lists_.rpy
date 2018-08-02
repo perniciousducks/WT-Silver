@@ -1,5 +1,5 @@
 
-
+# Todo : Change all ".purchase" from the outfit_OBJ to ".unlocked"
 label update_wr_lists:
     call update_wr_color_list
     call update_wr_head_list
@@ -30,24 +30,24 @@ label update_wr_color_list:
     if active_girl == "hermione":
 
         $ wr_haircolor.append("1")
-        if "blonde_dye" in cs_existing_stock:
+        if yellow_dye_OBJ.unlocked: #if "blonde_dye" in cs_existing_stock:
             $ wr_haircolor.append("2")
-        if "red_dye" in cs_existing_stock:
+        if red_dye_OBJ.unlocked: #if "red_dye" in cs_existing_stock:
             $ wr_haircolor.append("3")
-        if "crimson_dye" in cs_existing_stock:
+        if crimson_dye_OBJ.unlocked: #if "crimson_dye" in cs_existing_stock:
             $ wr_haircolor.append("4")
-        if "black_dye" in cs_existing_stock:
+        if black_dye_OBJ.unlocked: #if "black_dye" in cs_existing_stock:
             $ wr_haircolor.append("5")
 
-        if "green_dye" in cs_existing_stock:
+        if dark_green_dye_OBJ.unlocked: #if "green_dye" in cs_existing_stock:
             $ wr_haircolor.append("6")
-        if "blue_dye" in cs_existing_stock:
+        if dark_blue_dye_OBJ.unlocked: #if "blue_dye" in cs_existing_stock:
             $ wr_haircolor.append("7")
-        if "purple_dye" in cs_existing_stock:
+        if purple_dye_OBJ.unlocked: #if "purple_dye" in cs_existing_stock:
             $ wr_haircolor.append("8")
-        if "pink_dye" in cs_existing_stock:
+        if pink_dye_OBJ.unlocked: #if "pink_dye" in cs_existing_stock:
             $ wr_haircolor.append("9")
-        if "white_dye" in cs_existing_stock:
+        if gray_dye_OBJ.unlocked: #if "white_dye" in cs_existing_stock:
             $ wr_haircolor.append("10")
 
 
@@ -55,13 +55,13 @@ label update_wr_color_list:
     $ wr_housecolor = []
 
     if active_girl == "hermione":
-        if "blue_dye" in cs_existing_stock:
+        if blue_dye_OBJ.unlocked: #if "blue_dye" in cs_existing_stock:
             $ wr_housecolor.append("blue")
-        if "green_dye" in cs_existing_stock:
+        if green_dye_OBJ.unlocked: #if "green_dye" in cs_existing_stock:
             $ wr_housecolor.append("green")
-        if "red_dye" in cs_existing_stock:
+        if red_dye_OBJ.unlocked: #if "red_dye" in cs_existing_stock:
             $ wr_housecolor.append("red")
-        if "blonde_dye" in cs_existing_stock:
+        if yellow_dye_OBJ.unlocked: #if "blonde_dye" in cs_existing_stock:
             $ wr_housecolor.append("yellow")
 
 
@@ -69,34 +69,34 @@ label update_wr_color_list:
     $ wr_clothcolor = []
 
     if active_girl == "hermione":
-        if "blue_dye" in cs_existing_stock:
+        if dark_blue_dye_OBJ.unlocked:
             $ wr_clothcolor.append("dark_blue")
-        if "green_dye" in cs_existing_stock:
+        if dark_green_dye_OBJ.unlocked:
             $ wr_clothcolor.append("dark_green")
-        if "red_dye" in cs_existing_stock:
+        if crimson_dye_OBJ.unlocked:
             $ wr_clothcolor.append("crimson")
-        if "blonde_dye" in cs_existing_stock:      #Temp name
+        if orange_dye_OBJ.unlocked:
             $ wr_clothcolor.append("orange")
-        if "purple_dye" in cs_existing_stock:
+        if purple_dye_OBJ.unlocked:
             $ wr_clothcolor.append("purple")
-        if "black_dye" in cs_existing_stock:    #Temp name
+        if brown_dye_OBJ.unlocked:
             $ wr_clothcolor.append("brown")
-        if "black_dye" in cs_existing_stock:
+        if black_dye_OBJ.unlocked:
             $ wr_clothcolor.append("black")
 
-        if "blue_dye" in cs_existing_stock:
+        if blue_dye_OBJ.unlocked:
             $ wr_clothcolor.append("blue")
-        if "green_dye" in cs_existing_stock:
+        if green_dye_OBJ.unlocked:
             $ wr_clothcolor.append("green")
-        if "red_dye" in cs_existing_stock:
+        if red_dye_OBJ.unlocked:
             $ wr_clothcolor.append("red")
-        if "blonde_dye" in cs_existing_stock:
+        if yellow_dye_OBJ.unlocked:
             $ wr_clothcolor.append("yellow")
-        if "pink_dye" in cs_existing_stock:
+        if pink_dye_OBJ.unlocked:
             $ wr_clothcolor.append("pink")
-        if "black_dye" in cs_existing_stock:    #Temp name
+        if gray_dye_OBJ.unlocked:
             $ wr_clothcolor.append("gray")
-        if "white_dye" in cs_existing_stock:
+        if white_dye_OBJ.unlocked:
             $ wr_clothcolor.append("white")
 
     return
@@ -116,8 +116,9 @@ label update_wr_head_list:
 
         #Hair Style
         $ wr_hair.append("A")
-        $ wr_hair.append("B")
-        if hg_bio_OBJ.purchased: #Add Elizabeth Outfit.
+        if hg_maid_OBJ.purchased or hg_lingerie_maid_OBJ.unlocked or hg_ballDress_OBJ.purchased: #Updo Hair from Outfits/Sets
+            $ wr_hair.append("B")
+        if hg_bio_OBJ.purchased: #Elizabeth Hair from Outfit.
             $ wr_hair.append("E")
 
         #Makeup
@@ -178,18 +179,19 @@ label update_wr_tops_list:
             $ wr_tops_uniform.append("uni_top_5")
         $ wr_tops_uniform.append("uni_top_6")
 
-        if hg_gryffCheer_OBJ.purchased or hg_slythCheer_OBJ.purchased:
+        if hg_cheer_g_OBJ.unlocked or hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked:
             $ wr_tops_uniform.append("uni_top_cheer")
+        if hg_cheer_g_sexy_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked:
             $ wr_tops_uniform.append("uni_top_cheer_skimpy")
 
         #Muggle
-        if "normal_pullover" in cs_existing_stock:
+        if hg_muggle_cold_OBJ.unlocked:
             $ wr_tops_normal.append("normal_pullover")
             $ wr_tops_normal.append("normal_pullover_sexy")
-        if "normal_sweater" in cs_existing_stock:
+        if hg_muggle_rainy_OBJ.unlocked:
             $ wr_tops_normal.append("normal_sweater")
-        #if "normal_waitress_top" in cs_existing_stock:
-        #    $ wr_tops_normal.append("normal_waitress_top")
+        if hg_muggle_hot_OBJ.unlocked:
+            $ wr_tops_normal.append("normal_waitress_top")
 
         #Wicked
         if "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
@@ -202,16 +204,10 @@ label update_wr_tops_list:
             $ wr_tops_wicked.append("wicked_leather_jacket_sleeves")
             $ wr_tops_wicked.append("wicked_leather_jacket_sleeves_open")
 
-        if hg_rocker_OBJ.purchased:
+        if hg_punk_rocker_OBJ.unlocked:
             $ wr_tops_wicked.append("wicked_rocker_top")
-        if whoring >= 19 and "top_fishnets" in cs_existing_stock:
+        if hg_lingerie_fishnet_OBJ.unlocked:
             $ wr_tops_wicked.append("top_fishnets")
-
-        #Misc. Tops
-        #if whoring >= 17:
-        #    $ wr_tops_misc.append("top_ripped_tie_striped")
-
-    #if active_girl == "luna":
 
     if active_girl == "astoria":
 
@@ -248,16 +244,16 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("uni_skirt_4")
         $ wr_bottoms_uniform.append("uni_skirt_5")
 
-        if hg_gryffCheer_OBJ.purchased or hg_slythCheer_OBJ.purchased:
+        if hg_cheer_g_OBJ.unlocked or hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked:
             $ wr_bottoms_uniform.append("uni_skirt_cheer")
+        if hg_cheer_g_sexy_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked:
             $ wr_bottoms_uniform.append("uni_skirt_cheer_skimpy")
 
         #Uniform Low
         $ wr_bottoms_uniform_low.append("uni_skirt_1_low")
         $ wr_bottoms_uniform_low.append("uni_skirt_2_low")
         $ wr_bottoms_uniform_low.append("uni_skirt_3_low")
-        #if micro_skirt unlocked/purchased:
-        #$ wr_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
+        $ wr_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
 
         #Skirts
         if "skirt_belted_mini" in cs_existing_stock:
@@ -266,16 +262,14 @@ label update_wr_bottoms_list:
             $ wr_bottoms_skirts.append("skirt_belted_micro")
 
         #Pants
-        if "pants_jeans_long" in cs_existing_stock:
+        if hg_muggle_cold_OBJ.unlocked or hg_muggle_rainy_OBJ.unlocked:
             $ wr_bottoms_pants.append("pants_jeans_long")
-        if "pants_jeans_short" in cs_existing_stock:
+        if hg_muggle_hot_OBJ.unlocked:
             $ wr_bottoms_pants.append("pants_jeans_short")
         #if "pants_retro_shorts" in cs_existing_stock:
         #    $ wr_bottoms_pants.append("pants_retro_shorts")
-        if hg_rocker_OBJ.purchased:
+        if hg_punk_rocker_OBJ.unlocked:
             $ wr_bottoms_pants.append("pants_rocker")
-
-    #if active_girl == "luna":
 
     if active_girl == "astoria":
 
@@ -313,7 +307,7 @@ label update_wr_other_clothings_list:
         if whoring >= 17:
             $ wr_neckwears.append("neck_bondage_collar")
 
-        if whoring >= 7 and hg_rocker_OBJ.purchased:
+        if whoring >= 7 and hg_punk_rocker_OBJ.unlocked:
             $ wr_neckwears.append("neck_lace_choker")
         if whoring >= 7 and hg_ballDress_OBJ.purchased:
             $ wr_neckwears.append("neck_pearl_necklace")
@@ -343,14 +337,14 @@ label update_wr_other_clothings_list:
             $ wr_gloves.append("gloves_wool_short")
         if whoring >= 10:
             $ wr_gloves.append("gloves_lace")
-        if whoring >= 19:
+        if hg_lingerie_latex_OBJ.unlocked:
             $ wr_gloves.append("gloves_latex")
 
-        if whoring >= 13 and hg_maid_OBJ.purchased:
+        if hg_maid_OBJ.purchased or hg_lingerie_maid_OBJ.unlocked:
             $ wr_gloves.append("gloves_french_maid")
         if whoring >= 13 and hg_laraCroft_OBJ.purchased:
             $ wr_gloves.append("gloves_leather_short")
-        #if whoring >= 19 and hg_powerGirl_OBJ.purchased:
+        #if whoring >= 19 and hg_powerGirl_OBJ.unlocked:
         #    $ wr_gloves.append("gloves_latex_hero_blue")
         if whoring >= 22 and hg_harleyQuinn_OBJ.purchased:
             $ wr_gloves.append("gloves_leather")
@@ -361,8 +355,9 @@ label update_wr_other_clothings_list:
             $ wr_stockings.append("stockings_striped")
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_striped_vibe") #Will be in accessories instead
-        if whoring >= 8 and (hg_gryffCheer_OBJ.purchased or hg_slythCheer_OBJ.purchased):
+        if whoring >= 8 and (hg_cheer_g_OBJ.unlocked or hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked):
             $ wr_stockings.append("stockings_cheer")
+        if whoring >= 8 and (hg_cheer_g_sexy_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked):
             $ wr_stockings.append("stockings_cheer_short")
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_cheer_vibe") #Will be in accessories instead
@@ -370,9 +365,9 @@ label update_wr_other_clothings_list:
         if whoring >= 5:
             $ wr_stockings.append("stockings_pantyhose")
             $ wr_stockings.append("stockings_cute")
-        if whoring >= 17:
+        if hg_maid_OBJ.purchased or hg_lingerie_maid_OBJ.unlocked:
             $ wr_stockings.append("stockings_high")
-        if whoring >= 20:
+        if hg_lingerie_latex_OBJ.unlocked:
             $ wr_stockings.append("stockings_latex")
 
         if "stockings_lace_black" in cs_existing_stock:
@@ -429,40 +424,46 @@ label update_wr_underwear_list:
 
     if active_girl == "hermione":
 
-        #Bra
-        if whoring >= 10:
-            $ wr_bras.append("bra_base")
+        #Bras
+        $ wr_bras.append("bra_base")
+
+        if hg_lingerie_silk_OBJ.unlocked:
             $ wr_bras.append("bra_silk")
+        if hg_lingerie_lace_OBJ.unlocked:
             $ wr_bras.append("bra_lace")
-
-        if whoring >= 16:
+        if hg_onepiece_sling_OBJ.unlocked:
             $ wr_bras.append("bra_bikini_string")
+        if hg_bikini_latex_OBJ.unlocked:
             $ wr_bras.append("bra_bikini")
-
-        if whoring >= 19:
+        if hg_lingerie_latex_OBJ.unlocked:
             $ wr_bras.append("bra_latex")
+        if hg_lingerie_maid_OBJ.unlocked:
             $ wr_bras.append("bra_french_maid")
 
         if whoring >= 22:
             $ wr_bras.append("bra_tape")
 
-        if whoring >= 22 and "top_fishnets" in cs_existing_stock:
+        if hg_lingerie_fishnet_OBJ.unlocked:
             $ wr_bras.append("top_fishnets")
 
         #Panties
-        if whoring >= 10:
-            $ wr_panties.append("panties_base")
+        $ wr_panties.append("panties_base")
+
+        if hg_lingerie_silk_OBJ.unlocked:
             $ wr_panties.append("panties_silk")
+        if hg_nighty_silk_OBJ.unlocked:
             $ wr_panties.append("panties_silk_low")
+        if hg_lingerie_lace_OBJ.unlocked:
             $ wr_panties.append("panties_lace")
-
-        if whoring >= 16:
+        if hg_onepiece_sling_OBJ.unlocked:
             $ wr_panties.append("panties_bikini_string")
+        if hg_bikini_latex_OBJ.unlocked:
             $ wr_panties.append("panties_bikini")
+        if hg_lingerie_latex_OBJ.unlocked:
             $ wr_panties.append("panties_latex")
-
-        if whoring >= 19:
+        if hg_lingerie_maid_OBJ.unlocked:
             $ wr_panties.append("panties_french_maid")
+        if hg_lingerie_fishnet_OBJ.unlocked:
             $ wr_panties.append("panties_fishnet_string")
 
         #One-Pieces & Nighties
@@ -470,12 +471,14 @@ label update_wr_underwear_list:
         $ wr_onepieces.append("onepiece_swimsuit")
         $ wr_onepieces.append("onepiece_bunny")
         $ wr_onepieces.append("onepiece_microdress")
-        $ wr_onepieces.append("onepiece_bikini_string")
 
-        if whoring >= 19: #and "" in cs_existing_stock:
+        if hg_onepiece_sling_OBJ.unlocked:
+            $ wr_onepieces.append("onepiece_bikini_string")
+        if hg_nighty_silk_OBJ.unlocked:
             $ wr_onepieces.append("nighty_short")
+        if hg_nightgown_OBJ.unlocked:
             $ wr_onepieces.append("nighty_long")
-            $ wr_onepieces.append("nighty_dress")
+        $ wr_onepieces.append("nighty_dress")
 
         #Garterbelts
         if whoring >= 10: #and "garterbelt_lace" in cs_existing_stock:
@@ -575,22 +578,6 @@ label update_wr_outfits_list:
             $ wr_dresses.append("ball_dress")
             $ hg_purchased_dresses.append(hg_ballDress_OBJ)
 
-        $ saved_custom_outfits = []
-        if whoring >= 0:
-            $ saved_custom_outfits.append(hg_clothing_save_01)
-            $ saved_custom_outfits.append(hg_clothing_save_02)
-        if whoring >= 5:
-            $ saved_custom_outfits.append(hg_clothing_save_03)
-        if whoring >= 8:
-            $ saved_custom_outfits.append(hg_clothing_save_04)
-        if whoring >= 11:
-            $ saved_custom_outfits.append(hg_clothing_save_05)
-        if vouchers != 0:
-            $ saved_custom_outfits.append(hg_clothing_save_06)
-            $ saved_custom_outfits.append(hg_clothing_save_07)
-            $ saved_custom_outfits.append(hg_clothing_save_08)
-            $ saved_custom_outfits.append(hg_clothing_save_09)
-            $ saved_custom_outfits.append(hg_clothing_save_10)
 
     #if active_girl == "astoria":
 

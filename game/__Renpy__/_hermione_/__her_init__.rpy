@@ -503,7 +503,10 @@ label her_clothing_init:
         $ hermione_wear_tattoos           = False
 
 
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
+    # Update 1.4
+    if not hasattr(renpy.store,'h_request_wear_outfit') or reset_persistants:
+        $ h_request_wear_outfit = False
+        $ hermione_wear_outfit = False
     ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
 
     return
@@ -770,10 +773,11 @@ label her_progress_init:
         $ reward_her_black_lipstick = False
 
 
-    #Update 1.31
-    if not hasattr(renpy.store,'cat_ears_potion_return') or reset_persistants:
+    #Update 1.4
+    if not hasattr(renpy.store,'her_dress_wearable') or reset_persistants:
 
         $ cat_ears_potion_return = False
+        $ her_dress_wearable = False
 
 
     ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.

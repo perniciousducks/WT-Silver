@@ -167,7 +167,7 @@ label luna_revert_1: #Reversion event
     m "My cock, of course!"
     call luna_main("[l_genie_name]!", "mad", "default", "angry", "furious") 
     m "I'm kidding, [luna_name]."
-    call luna_main("oh...", 7, 2, 4, "talk") 
+    call luna_main("oh...","doubtful" , "right", "sad", "talk") 
     m "But I do expect you to improve..."
     call luna_main("Doesn't this feel good?...", "mad", "default", "raised", "pout") 
     m "It's alright..."
@@ -175,7 +175,7 @@ label luna_revert_1: #Reversion event
     menu:
         "\"Take your shirt off\"":
             $ luna_choice = 1
-            call luna_main("My shirt? Really?", 8, 1, 2, "talk") 
+            call luna_main("My shirt? Really?", "angry", "default", "angry", "talk")  
             m "It'd make this go a lot faster."
             call luna_main("...", "doubtful", "down", "sad", "angry") 
             call luna_main("Fine...", "mad", "default", "sad", "upset") 
@@ -209,7 +209,7 @@ label luna_revert_1: #Reversion event
             m "Just a little bit."
             call luna_main("...", "mad", "default", "sad", "angry") 
             call luna_main("......", "angry", "right", "sad", "angry") 
-            call luna_main("*Ptew*", 6, 3, 4, "open_tongue") 
+            call luna_main("*Ptew*","tired" , "down", "sad", "open_tongue") 
             ">Luna spits into her hand before placing it back on your cock."
     call gen_main("Mmmm... yes that's it, [luna_name]...", 4) 
     call luna_main("...", "seductive", "default", "default", "default") 
@@ -225,7 +225,7 @@ label luna_revert_1: #Reversion event
         g9 "Just to make sure everything is nice and lubricated..."
         call luna_main("...", "seductive", "right", "default", "default") 
         call luna_main("Alright...", "seductive", "down", "default", "default") 
-        call luna_main("*Ptew*", 6, 3, 4, "open_tongue") 
+        call luna_main("*Ptew*","tired" , "down", "sad", "open_tongue") 
         ">Luna spits into her hand again and places it back on your cock."
     ">She starts pumping your cock even faster."
     g9 "Gods yes..."
@@ -292,7 +292,7 @@ label luna_revert_1: #Reversion event
     call luna_main("How could you!", "angry", "default", "mad", "furious") 
     m "Ahh... that was fantastic, slut..."
     $ g_c_u_pic = "images/animation/06_groping_01.png"
-    call luna_main("[l_genie_name]!!!", 8, 1, 3, "open") 
+    call luna_main("[l_genie_name]!!!", "angry", "default", "mad", "open")  
     call play_sound("door") #Sound of a door opening.
     $ hermione_SC.chibi.xpos = 600 #Near the desk.
     show screen hermione_blink #Hermione stands still.
@@ -303,17 +303,17 @@ label luna_revert_1: #Reversion event
     $ luna_r_arm = 2
     hide screen genie_sprite
     with d3
-    call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","wink") 
-    $ changeLuna(4, 1, 4, 3, 400)
+    call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","wink",xpos=600) 
+    $ changeLuna("wide", "default", "sad", "angry", 400)
     call her_main("But I really need a good-.","angry","down_raised") 
     call her_main("...","shock","wide") 
     call luna_main("...", "wide", "right", "sad", "angry") 
     m "..."
     pause
     call her_main("{size=+5}WHAT{/size}","annoyed","annoyed") 
-    $ changeLuna(4, 3, 4, 3)
+    $ changeLuna("wide", "down", "sad", "angry")
     call her_main("{size=+10}THE{/size}","angry","angry") 
-    $ changeLuna(4, 2, 4, 3)
+    $ changeLuna("wide", "right", "sad", "angry")
     call her_main("{size=+15}FRICK!{/size}","scream","angry",emote="01") 
     call luna_main("It's not what it looks-", "seductive", "right", "sad", "furious") 
     show screen white 
@@ -334,7 +334,7 @@ label luna_revert_1: #Reversion event
     call her_main("How did you even get Luna to agree to this, sir?","annoyed","annoyed") 
     call her_main("I don't even think she knows what house she's in half the time.","angry","angry") 
     call her_main("I can't imagine her sense of house pride is large enough to warrant this...","annoyed","annoyed") 
-    $ changeLuna(4, 3, 4, 2)
+    $ changeLuna("wide", "down", "sad", "upset")
     m "I can explain this..."
     call her_main("Really? {p}Go on...","angry","angry") 
     m "Well I was sitting here alone in my office."
@@ -528,7 +528,7 @@ label luna_revert_2: #Non-Reversion event
     m "Yes, that's it..."
     call luna_main("(Men really are the worst)", "doubtful", "down", "mad", "angry") 
     m "Mmmm, yes... just like that [luna_name]..."
-    call luna_main("Is this good [l_genie_name]?", 6, 1, 4, "talk") 
+    call luna_main("Is this good [l_genie_name]?","tired" , "default", "sad", "talk") 
     m "yes, yes, this is amazing..."
     call luna_main("good...", "doubtful", "default", "sad", "default") 
     call luna_main("but...", "doubtful", "right", "sad", "upset") 
@@ -578,7 +578,7 @@ label luna_revert_2: #Non-Reversion event
             call luna_main("......", "seductive", "default", "mad", "default") 
             g4 "Please..."
             call luna_main("Good boy.", "angry", "default", "angry", "default") 
-            call luna_main("*Ptew*", 5, 8, 2, "open_tongue") 
+            call luna_main("*Ptew*", "seductive", "down_left", "angry", "open_tongue")  
             ">Luna spits into her hand before placing it back on your cock."
     call gen_main("Mmmm, yes that's it [luna_name]...", 4) 
     call luna_main("...", "angry", "left_stare", "angry", "default") 
@@ -587,7 +587,7 @@ label luna_revert_2: #Non-Reversion event
     if luna_choice == 1:
         ">Luna gently starts shaking her boobs as she jerks you off."
     else:
-        call luna_main("*Ptew*", 8, 8, 3, "open_tongue") 
+        call luna_main("*Ptew*", "angry", "down_left", "mad", "open_tongue")  
         ">Luna spits into her hand again and places it back on your cock."
     ">She then starts pumping your cock even faster."
     g9  "Gods yes..."
@@ -652,18 +652,18 @@ label luna_revert_2: #Non-Reversion event
     with d3
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","wink", xpos=600) 
     call her_main("But I really need a good-.","angry","down_raised") 
-    $ changeLuna(4, 1, 4, 3, 400)
+    $ changeLuna("wide", "default", "sad", "upset", 400)
     call luna_main("...", "angry", "default", "mad", "angry") 
     call her_main("...","scream","wide_stare") 
     m "..."
     pause
     call her_main("{size=+5}WHAT{/size}","annoyed","annoyed") 
-    $ changeLuna(8, 1, 3, 3)
+    $ changeLuna("angry", "default", "angry", "upset")
     call her_main("{size=+10}THE{/size}","angry","angry") 
-    $ changeLuna(9, 1, 3, 3)
+    $ changeLuna("mad", "default", "angry", "upset")
     call her_main("{size=+15}FRICK!{/size}","scream","angry",emote="01") 
     call her_main("What on earth is going on-","angry","angry") 
-    call luna_main("{size=+15}petrificus totalus!{/size}", 8, 1, 3, "open") 
+    call luna_main("{size=+15}petrificus totalus!{/size}","angry" , "default", "mad", "open") 
     show screen white 
     pause .1
     hide screen white
@@ -674,7 +674,7 @@ label luna_revert_2: #Non-Reversion event
     hide screen luna
     with d3
     $ luna_flip = 1
-    $ changeLuna(9, 1, 3, 7, 400)
+    $ changeLuna("mad", "default", "mad", "snarl", 400)
     ">Luna turns back around to face you, leaving Hermione paralyzed in the middle of the room. "
     call luna_main("{size=+15}What is the meaning of this?{/size}", "angry", "default", "mad", "snarl") 
     m "I don't know, Miss Granger must have come up here to ask for something."
@@ -725,7 +725,7 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("[point_estimate]... {p}points?", "angry", "default", "raised", "upset") 
     m "you know. For \"gryffiedoore\"..."
     call luna_main("...", "seductive", "default", "raised", "upset") 
-    call luna_main("hahahaha!", 2, 1, 1, "smile_large") 
+    call luna_main("hahahaha!","closed_happy" , "default", "default", "smile_large") 
     call her_main("...","annoyed","angryL") 
     m "..."
     hide screen luna
@@ -739,9 +739,9 @@ label luna_revert_2: #Non-Reversion event
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call luna_main("liquescimus corporis!", 5, 1, 2, "open") 
+    call luna_main("liquescimus corporis!","seductive" , "default", "angry", "open") 
     ">Another flash of light as Hermione becomes un-petrified."
-    $ changeLuna(5, 2, 1, 1, 400)
+    $ changeLuna("seductive", "right", "default", "default", 400)
     call her_main("Professor! What is the meaning of this!","scream","angryCl") 
     call her_main("And what were the two of you doing before I got here?","angry","angry") 
     call luna_main("oh... I was just helping out Professor Dumbledore...", "seductive", "down", "default", "upset") 
@@ -754,13 +754,13 @@ label luna_revert_2: #Non-Reversion event
     call her_main("You... you...","annoyed","annoyed") 
     call her_main("{size=+10}You Stupid whore!{/size}","angry","angry") 
     call her_main("{size=+15}You're nothing more than a prostit-{/size}","angry","angry",emote="01") 
-    call luna_main("{size=+15}petrificus totalus!{/size}", 9, 1, 3, "open") 
+    call luna_main("{size=+15}petrificus totalus!{/size}", "mad", "default", "mad", "open")  
     show screen white 
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     ">Luna paralyzes Hermione for the second time."
-    $ changeLuna(9, 1, 3, 2, 400)
+    $ changeLuna("mad", "default", "mad", "upset", 400)
     call her_main("!!!","angry","wide") 
     call her_main("...","angry","angry") 
     ">Hermione stares at Luna with a blind rage."
@@ -775,7 +775,7 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("So, how should we punish her?", "seductive", "right", "default", "grin") 
     call her_main("!!!","angry","wide") 
     m "Punish her?"
-    call luna_main("Of course! For what she said.", 5, 1, 2, "smile_large") 
+    call luna_main("Of course! For what she said.", "seductive", "default", "angry", "smile_large")  
     call her_main("...","clench","down_raised") 
     call luna_main("You're not going to let her get away with that are you?", "angry", "default", "mad", "angry") 
     menu:
@@ -1019,7 +1019,7 @@ label luna_revert_2: #Non-Reversion event
             call luna_main("hear that hermione?", "mad", "left_stare", "mad", "grin") 
             call her_kneel("...","open_wide_tongue","down_raised") 
             call luna_main("you're headmaster has a nice load of cum ready for you...", "doubtful", "left_stare", "angry", "default") 
-            call luna_main("if you're lucky he might even give \"gryffindor\" some points...", 5, 3, 1, "smile_large") 
+            call luna_main("if you're lucky he might even give \"gryffindor\" some points...","seductive" , "down", "default", "smile_large") 
             g9  "Yes..."
             call her_kneel("...","open_wide_tongue","angryCl") 
             call luna_main("Aww, you look so upset...", "seductive", "down", "sad", "upset") 
@@ -1108,7 +1108,7 @@ label luna_revert_2: #Non-Reversion event
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call luna_main("scourgify!", 7, 1, 2, "open") 
+    call luna_main("scourgify!", "doubtful", "default", "angry", "open")  
     $ uni_sperm = False
     ">All the cum vanishes from hermione's body."
     call her_kneel("...","annoyed","base") 
@@ -1117,7 +1117,7 @@ label luna_revert_2: #Non-Reversion event
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call luna_main("obliviate!", 8, 1, 2, "open") 
+    call luna_main("obliviate!", "angry", "default", "angry", "open")  
     ">Another flash of light as hermione's eye's glaze over."
     call her_kneel("...","soft","dead") 
     m "..."
@@ -1125,7 +1125,7 @@ label luna_revert_2: #Non-Reversion event
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call luna_main("liquescimus corporis!", 7, 1, 3, "open") 
+    call luna_main("liquescimus corporis!", "doubtful", "default", "mad", "open")  
     ">Hermione collapses to the floor in a limp heap."
     call her_kneel("agh...","shock","dead") 
     hide screen hermione_kneel
@@ -1135,7 +1135,7 @@ label luna_revert_2: #Non-Reversion event
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call luna_main("vestimenta lacus!", 9, 1, 2, "open") 
+    call luna_main("vestimenta lacus!", "mad", "default", "angry", "open")  
     ">All of Hermione's clothes wriggle like worms back onto her body."
     hide screen luna
     with d3
@@ -1169,7 +1169,8 @@ label luna_revert_2: #Non-Reversion event
 
 
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
-    $ luna_corruption += 1
+    $ days_to_luna = 4
+    $ luna_corruption = 0
     $ luna_wear_glasses = True
     $ luna_wear_acc = True
     $ luna_l_arm = 1
@@ -1241,7 +1242,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             call luna_main("(A Secret spell?) Sir, your magic is the strongest there is and these wrackspurts are really getting to me.", "mad", "right", "sad", "angry") 
             m "I see... do go on."
         "\"I am afraid I can’t help you Miss Lovegood.\"":
-            call luna_main("Oh please, Sir! You’re the only one powerful enough to help.", 4, 1, 4, "open") 
+            call luna_main("Oh please, Sir! You’re the only one powerful enough to help.","wide" , "default", "sad", "open") 
             "*You can see Luna is rocking her pelvis as though she were grinding the air*"
             m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
             call luna_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!", "default", "default", "sad", "upset") 
@@ -1266,7 +1267,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
     m "(Is she really?... Ohhh). Miss Lovegood, how exactly do these wickspurts make you feel?"
     call luna_main("they're Just like the quibbler says sir, except...", "seductive", "right", "sad", "upset") 
     m "Go on..."
-    call luna_main("Well, it's not my brain they're making fuzzy.", 5, 3, 4, "talk") 
+    call luna_main("Well, it's not my brain they're making fuzzy.","seductive" , "down", "sad", "talk") 
     m "Where exactly is fuzzy, Miss Lovegood?"
     call luna_main("Umm... I'm not sure if I can say...", "seductive", "right", "sad", "upset") 
     m "(YES!)"
@@ -1306,7 +1307,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
 
 label luna_reverted_greeting_2: #Explaining to Luna what will happen or something
-    $ luna_corruption += 1
+    $ luna_corruption = 0
     "*knock* *knock* *knock*"
     m "Come in..."
     call play_sound("door") #Sound of a door opening.
@@ -1395,7 +1396,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     call luna_main("...", "default", "right", "raised", "upset") 
     call luna_main("How do I do that?", "default", "default", "sad", "angry") 
     m "We'll try some self-applied massage to the area to start with."
-    call luna_main("So I just start massaging the area that they're making fuzzy?", 1, 1, 4, "talk") 
+    call luna_main("So I just start massaging the area that they're making fuzzy?","default" , "default", "sad", "talk") 
     m "That's correct, I'll be here to give you some guidance."
     call luna_main("thank you, Sir!", "closed_happy", "right", "sad", "default") 
     m "You're quite welcome."
@@ -1413,7 +1414,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     m "As long as it's feeling good I'm sure it's working. If you keep this up I'm sure you'll be rid of those nasty wickerspoons."
     call luna_main("that's nice...", "closed", "right", "sad", "default") 
     call luna_main("...", "default", "left_stare", "sad", "upset") 
-    call luna_main("are you sure this will work, sir?", 5, 1, 4, "talk") 
+    call luna_main("are you sure this will work, sir?","seductive" , "default", "sad", "talk") 
     m "Of course I am! Do you dare doubt the powerful Dumbelldoor?"
     call luna_main("certainly not, sir...", "wide", "right", "sad", "upset") 
     call luna_main("it's just...", "seductive", "down", "sad", "upset") 
@@ -1481,10 +1482,10 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     call luna_main("Ah... ah...{image=textheart}", "seductive", "right", "sad", "grin") 
     call luna_main("{size=+4}mmm... yes...{image=textheart}{/size}", "seductive", "down", "sad", "default") 
     call luna_main("{size=+8}ah... ah...{/size}", "seductive", "left_stare", "sad", "grin") 
-    call luna_main("!!!", "wide", 9, "default", "grin") #orgasm face
+    call luna_main("!!!", "wide", "empty", "default", "grin") #orgasm face
     ">THere's a blur of movement under Luna's skirt."
     call luna_main("ah! I think they're attacking me, sir!", "wide", "left_stare", "sad", "default") 
-    call luna_main("!!!", "default", 9, "sad", "default") #orgasm face
+    call luna_main("!!!", "default", "empty", "sad", "default") #orgasm face
     m "Is everything OK?"
     call luna_main("Ah... yes sir...{image=textheart}", "seductive", "right", "sad", "upset") 
     call luna_main("it's just...", "seductive", "right", "sad", "default") 
@@ -1528,7 +1529,7 @@ label luna_cum_addict_event:
     call gen_main("Down we go!", 4, 4) 
     $ luna_ypos = 225
     $ luna_xpos = 350
-    call luna_main("Stop right now! This wasn't an option [l_genie_name]!", 4, 1, 3, "open") 
+    call luna_main("Stop right now! This wasn't an option [l_genie_name]!", "wide", "default", "mad", "open")  
     g4 "Argh, too late slut!"
     call luna_main("!!!", "closed", "default", "mad", "angry") 
     $ luna_cum = 11
@@ -1584,20 +1585,20 @@ label luna_cum_addict_event:
     m "(She seems different...)"
     $ luna_cum = 12
     ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}", 5, 6, 4, "cheeks_full") 
+    call luna_main("{image=textheart}{image=textheart}{image=textheart}","seductive" , "empty", "sad", "cheeks_full") 
     call luna_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}", "closed_happy", "left_stare", "sad", "default") 
     call luna_main("can I have the rest? Please sir?", "wide", "default", "sad", "default") 
     m "Sure..."
     ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
     $ luna_cum = 13
-    call luna_main("...", 5, 6, 4, "cheeks_full") 
+    call luna_main("...","seductive" , "empty", "sad", "cheeks_full") 
     call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
     pause
     $ luna_cum = 14
-    call luna_main("...", 5, 6, 4, "cheeks_full") 
+    call luna_main("...","seductive" , "empty", "sad", "cheeks_full") 
     call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
     $ luna_cum = 15
-    call luna_main("...", 5, 6, 4, "cheeks_full") 
+    call luna_main("...","seductive" , "empty", "sad", "cheeks_full") 
     call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
     $ luna_wear_cum = False
     call luna_main("ah...", "closed_happy", "left_stare", "sad", "default") 

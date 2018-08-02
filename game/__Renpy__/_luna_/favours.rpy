@@ -30,7 +30,7 @@ label luna_favour_1: ###TALK TO ME
                 "-50 gold-":
                     $ current_payout = 50
                     m "How does fifty gold sound [luna_name]?"
-                    call luna_main("{size=+10}(FIFTY GOLD!){/size}", 4, 1, 1, "open_wide_tongue") 
+                    call luna_main("{size=+10}(FIFTY GOLD!){/size}", "wide", "default", "default", "open_wide_tongue") 
                     call luna_main("*Hmph* I suppose that's a fair amount.", "closed_happy", "down", "default", "default") 
                     call luna_main("Just don't think it buys you anything other than a conversation.", "angry", "default", "angry", "upset") 
                     m "Of course not. Speaking of which..."
@@ -79,7 +79,7 @@ label luna_favour_1: ###TALK TO ME
                     m "{size=-4}(Yes...){/size}"
                     call luna_main("another one of your precious students, dressing like a slut.", "seductive", "right", "default", "default") 
                     m "{size=-2}(Yes......){/size}"
-                    call luna_main("showing off her body for anyone that will look.", 6, 2, 2, "smile_large") 
+                    call luna_main("showing off her body for anyone that will look.", "tired", "right", "angry", "smile_large") 
                     m "{size=+2}(Yes.........){/size}"
                     call luna_main("You probably want me to act like those \"slytherin\" sluts too...", "doubtful", "default", "angry", "default") 
                     m "{size=+4}(Yes! Yes!){/size}"
@@ -225,7 +225,7 @@ label luna_favour_1: ###TALK TO ME
                         m "I'd never do any-"
                         call luna_main("Do you even know how old I am?", "doubtful", "default", "raised", "default") 
                         m "of course..."
-                        call luna_main("*Hmph* Are you sure about that?", 9, 1, 5, "talk") 
+                        call luna_main("*Hmph* Are you sure about that?", "angry", "default", "raised", "talk") 
                         m "..."
                         call luna_main("Back to stroking it [l_genie_name]...", "doubtful", "default", "mad", "default") 
                         ">You start stroking your cock again."
@@ -237,7 +237,7 @@ label luna_favour_1: ###TALK TO ME
                         m "{size=-2}(What?){/size}"
                         call luna_main("come on...", "doubtful", "default", "sad", "default") 
                         g4 "{size=+4}(agh... almost there...){/size}"
-                        call luna_main("come for your little girl...", 9, 1, 3, "talk") 
+                        call luna_main("come for your little girl...", "angry", "default", "mad", "talk") 
                         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                         hide screen luna
                         with d3
@@ -403,7 +403,7 @@ label luna_favour_1: ###TALK TO ME
                 call luna_main("Why don't you start buying the quibbler [l_genie_name]?.", "seductive", "default", "default", "default") 
                 m "I hardly think one more person is going to turn things around."
                 call luna_main("Not you personally [l_genie_name], hogwarts!", "mad", "default", "angry", "upset") 
-                call luna_main("Just imagine how many copies the entire school would buy!", 1, 2, 2, "smile_large") 
+                call luna_main("Just imagine how many copies the entire school would buy!", "default", "right", "angry", "smile_large") 
                 m "Hmmm, I'll think about it..."
                 call luna_main("You'll {size=+4}think{/size} about it?", "doubtful", "default", "mad", "angry") 
                 call luna_main("*Hmph* Maybe I'll just have to {size=+4}think{/size} about getting my father to write a story...", "doubtful", "right", "mad", "angry") 
@@ -446,8 +446,8 @@ label luna_favour_1: ###TALK TO ME
                 call luna_main("that's it [l_genie_name], cum for your princess...", "doubtful", "default", "sad", "default") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call luna_main("cum...", 9, 1, 3, "talk") 
-                call luna_main("{size=+4}cum!{/size}", 9, 1, 3, "talk") 
+                call luna_main("cum...", "angry", "default", "mad", "talk") 
+                call luna_main("{size=+4}cum!{/size}", "angry", "default", "mad", "talk") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 hide screen luna
                 with d3
@@ -665,10 +665,10 @@ label luna_favour_1: ###TALK TO ME
         call luna_main("Really? What sort?", "seductive", "right", "sad", "default") 
         call her_main("how about the time we nearly got caught during blowjob practice...","base","down") 
         $ luna_flip = -1
-        call luna_main("What? Not that one!", 4, 1, 4, "open") 
+        call luna_main("What? Not that one!", "wide", "default", "sad", "open") 
         m "What happened?"
         $ luna_flip = 1
-        call luna_main("It's too embarrassing! I'm not telling him that one!", 4, 2, 4, "open") 
+        call luna_main("It's too embarrassing! I'm not telling him that one!", "wide", "right", "sad", "open") 
         call her_main("well I don't mind...","open","baseL") 
         $ luna_flip = -1
         call luna_main("please hermione...", "wide", "default", "sad", "upset") 
@@ -691,7 +691,7 @@ label luna_favour_1: ###TALK TO ME
         call her_main("she hid all 6 inches of it in her mouth... down her throat...","base","glance") 
         call her_main("just so we wouldn't get found out...","base","suspicious") 
         $ luna_flip = -1
-        call luna_main("well what else was I supposed to do...", 4, 1, 4, "open") 
+        call luna_main("well what else was I supposed to do...", "wide", "default", "sad", "open") 
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
         g4 "{size=+4}(agh... almost there...){/size}"
         $ luna_flip = 1
@@ -849,7 +849,7 @@ label luna_favour_2: ###SIT ON MY LAP
                         $ luna_chibi_xpos = 500
                         hide screen blkfade
                         with d3 
-                        call luna_main("Professor!", 9, 1, 3, "talk") 
+                        call luna_main("Professor!", "angry", "default", "mad", "talk") 
                         m "What on earth did you stop for?"
                         call luna_main("Sitting on your lap is one thing.", "mad", "right", "angry", "angry") 
                         call luna_main("But letting you do that...", "doubtful", "default", "mad", "upset") 
@@ -915,7 +915,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 m "ah..."
                 call luna_main("pathetic...", "seductive", "right", "angry", "angry") 
                 ">She starts rocking back and forward on your lap"
-                call luna_main("You really are disgusting [l_genie_name]...", 5, 2, 1, "talk") 
+                call luna_main("You really are disgusting [l_genie_name]...", "seductive", "right", "default", "talk") 
                 m "mmmm"
                 call luna_main("begging your students for a lap dance...", "mad", "right", "mad", "angry") 
                 m "yes, yes..."
@@ -962,7 +962,7 @@ label luna_favour_2: ###SIT ON MY LAP
                     $ l_genie_name = "Pervert"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
-                call luna_main("*hmph* You're not even ashamed are you?", 5, 2, 1, "talk") 
+                call luna_main("*hmph* You're not even ashamed are you?", "seductive", "right", "default", "talk") 
                 m "of what?"
                 call luna_main("What? begging your student for a lap dance.", "mad", "right", "angry", "angry") 
                 m "I don't recall begging."
@@ -1276,7 +1276,7 @@ label luna_favour_2: ###SIT ON MY LAP
                                 call luna_main("this isn't right...", "angry", "right", "sad", "angry") 
                                 m "I know, I know... But it's hard to resist..."
                                 call luna_main(".................", "seductive", "down", "sad", "upset") 
-                                call luna_main("....................ah...{image=textheart}", 5, 3, 4, "talk") 
+                                call luna_main("....................ah...{image=textheart}", "seductive", "down", "sad", "talk") 
                                 call luna_main("[l_genie_name], you need to stop now...", "angry", "right", "sad", "angry") 
                                 m "Just a bit longer..."
                                 $ luna_tears = 2
@@ -1317,7 +1317,7 @@ label luna_favour_2: ###SIT ON MY LAP
                     $ luna_name = "Princess"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
-                call luna_main("*hmph* You're not even ashamed are you?", 5, 2, 3, "talk") 
+                call luna_main("*hmph* You're not even ashamed are you?", "seductive", "right", "mad", "talk") 
                 m "of what?"
                 call luna_main("What? begging your student for a lap dance.", "mad", "right", "angry", "angry") 
                 m "I don't recall begging."
@@ -1402,7 +1402,7 @@ label luna_favour_2: ###SIT ON MY LAP
                     $ l_genie_name = "Pervert"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
-                call luna_main("*hmph* You're not even ashamed are you?", 5, 3, 2, "talk") 
+                call luna_main("*hmph* You're not even ashamed are you?", "seductive", "down", "angry", "talk") 
                 m "of what?"
                 call luna_main("What? begging your student for a lap dance.", "mad", "right", "angry", "default") 
                 m "I don't recall begging."
@@ -1435,7 +1435,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 m "{size=-2}(mmmm...){/size}"
                 call luna_main("come on...", "doubtful", "default", "angry", "default") 
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call luna_main("come for your little girl...", 9, 1, 4, "talk") 
+                call luna_main("come for your little girl...", "angry", "default", "sad", "talk") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
                 hide screen luna
@@ -1459,7 +1459,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 ">Luna starts rolling her hips, focusing on the head of your cock."
                 g11 "ah, please, not after I just came."
                 call luna_main("really?", "mad", "right", "raised", "default") 
-                call luna_main("But you sounded so sincere earlier when you were begging for this.", 5, 2, 4, "talk") 
+                call luna_main("But you sounded so sincere earlier when you were begging for this.", "seductive", "right", "sad", "talk") 
                 call luna_main("Surely you don't want it to end already?", "seductive", "right", "angry", "default") 
                 ">she pushes hard against your cock."
                 g11 "ah..."
@@ -1704,7 +1704,7 @@ label luna_favour_2: ###SIT ON MY LAP
                         call luna_main("[l_genie_name]... this isn't right...", "angry", "right", "sad", "angry") 
                         m "you don't seem to mind..."
                         call luna_main("(I'll let him keep going for a little bit more...)", "seductive", "down", "sad", "upset") 
-                        call luna_main("(Then I'll make him stop).......ah...{image=textheart}", 5, 3, 4, "talk") 
+                        call luna_main("(Then I'll make him stop).......ah...{image=textheart}", "seductive", "down", "sad", "talk") 
                         call luna_main("[l_genie_name], how much longer do you need?...", "angry", "right", "sad", "angry") 
                         m "Just a bit longer..."
                         ">Luna keeps rubbing her ass against your sensitive cock."
@@ -1712,7 +1712,7 @@ label luna_favour_2: ###SIT ON MY LAP
                         call luna_main("p-please hurry [l_genie_name]...", "doubtful", "right", "sad", "angry") 
                         m "Well I think I might know a way to speed this up."
                         call luna_main("really?", "mad", "right", "sad", "default") 
-                        call luna_main("what are-", 5, 2, 4, "talk") 
+                        call luna_main("what are-", "seductive", "right", "sad", "talk") 
                         ">You quickly move your hands up and grab a hold of her supple breasts through her vest."
                         call luna_main("!!!!", "wide", "default", "mad", "furious") 
                         ">Luna's body quivers as her hips roll against you."
@@ -1769,7 +1769,7 @@ label luna_favour_2: ###SIT ON MY LAP
                     $ l_genie_name = "Pervert"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
-                call luna_main("*hmph* You're not even ashamed are you?", 5, 3, 2, "talk") 
+                call luna_main("*hmph* You're not even ashamed are you?", "seductive", "down", "angry", "talk") 
                 m "of what?"
                 call luna_main("What? begging your student for a lap dance.", "mad", "right", "angry", "default") 
                 m "I don't recall begging."
@@ -1802,7 +1802,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 m "{size=-2}(mmmm...){/size}"
                 call luna_main("come on...", "doubtful", "default", "angry", "default") 
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call luna_main("come for your little girl...", 9, 1, 4, "talk") 
+                call luna_main("come for your little girl...", "angry", "default", "sad", "talk") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
                 hide screen luna
@@ -1826,7 +1826,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 ">Luna starts rolling her hips, focusing on the head of your cock."
                 g11 "ah, please, not after I just came."
                 call luna_main("really?", "mad", "right", "raised", "default") 
-                call luna_main("But you sounded so sincere earlier when you were begging for this.", 5, 2, 4, "talk") 
+                call luna_main("But you sounded so sincere earlier when you were begging for this.", "seductive", "right", "sad", "talk") 
                 call luna_main("Surely you don't want it to end already?", "seductive", "right", "angry", "default") 
                 ">she pushes hard against your cock."
                 g11 "ah..."
@@ -1886,7 +1886,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 call luna_main("enjoy the feeling of your disgusting old cock rub against me...", "doubtful", "down", "angry", "default") 
                 ">Luna stands moving her hips backward and forwards..."
                 m "ah..."
-                call luna_main("*hmph* that's it... tell me how good it feels.", 5, 3, 2, "talk") 
+                call luna_main("*hmph* that's it... tell me how good it feels.", "seductive", "down", "angry", "talk") 
                 m "w-what?"
                 call luna_main("tell me how good it feels to rub that filthy cock of your against me...", "mad", "right", "angry", "default") 
                 m "..."
@@ -1917,7 +1917,7 @@ label luna_favour_2: ###SIT ON MY LAP
                 m "{size=-2}(mmmm...){/size}"
                 call luna_main("come on...", "doubtful", "default", "angry", "default") 
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call luna_main("come for your little girl...", 9, 1, 4, "talk") 
+                call luna_main("come for your little girl...", "angry", "default", "sad", "talk") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
                 hide screen luna
@@ -2009,7 +2009,7 @@ label luna_favour_2: ###SIT ON MY LAP
         call her_main("probably...","base","down") 
         call her_main("but are you sure it's just him who wants a show?","base","suspicious") 
         $ luna_cheeks = "characters/luna/body/face/cheeks/cheeks_2.png" 
-        call luna_main("what?", 4, 1, 4, "open") 
+        call luna_main("what?", "wide", "default", "sad", "open") 
         ">Luna starts grinding even faster."
         call luna_main("what are you talking about?", "wide", "down", "sad", "upset") 
         call her_main("from the looks of it you don't need any help cranking a nice big load out of [genie_name]...","open","down") 
@@ -2020,7 +2020,7 @@ label luna_favour_2: ###SIT ON MY LAP
         call luna_main("...", "mad", "right", "sad", "upset") 
         call luna_main("Fine...", "mad", "down", "sad", "angry") 
         call her_main("say it...","base","suspicious") 
-        call luna_main("I want to look at your boobs alright!", 2, 1, 4, "open") 
+        call luna_main("I want to look at your boobs alright!", "closed_happy", "default", "sad", "open") 
         ">hermione quickly removes her top and bra."
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
@@ -2043,24 +2043,24 @@ label luna_favour_2: ###SIT ON MY LAP
         call h_action("covering") 
         call her_main("how do you feel?","base","down") 
         call luna_main("so good...", "seductive", "down", "sad", "default") 
-        call luna_main("...", "mad", 9, "sad", "default") 
+        call luna_main("...", "mad", "up", "sad", "default") 
         ">luna tilts her hips back, grinding as much of her sex against you as possible..."
         ">you swear you can feel her wetness seeping through your robe."
         m "ah..."
         call h_action("pinch") 
         call her_main("good...","open","baseL") 
-        call luna_main("ah...", "angry", 9, "sad", "default") 
+        call luna_main("ah...", "angry", "up", "sad", "default") 
         ">Luna starts rubbing hard against your lap."
         m "{size=-2}(mmmm...){/size}"
-        call luna_main("yes...", "seductive", 9, "sad", "default") 
+        call luna_main("yes...", "seductive", "up", "sad", "default") 
         call h_action("lift_breasts") 
         call her_main("why don't you two see if you can cum together?","base","glance") 
         g4 "{size=+4}agh... almost there...{/size}"
-        call luna_main("m-me too...", "seductive", 9, "sad", "default") 
+        call luna_main("m-me too...", "seductive", "up", "sad", "default") 
         call h_action("pinch") 
         call her_main("cum for me you nasty perverts!","base","suspicious") 
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-        call luna_main("ah...{image=textheart}{image=textheart}{image=textheart}", 9, 9, 4, "open") 
+        call luna_main("ah...{image=textheart}{image=textheart}{image=textheart}", "angry", "up", "sad", "open") 
         ">You start shooting your load against the inside of your cloak as you feel an explosion of wetness from luna's pussy."
         hide screen luna
         with d3
@@ -2073,10 +2073,10 @@ label luna_favour_2: ###SIT ON MY LAP
         hide screen white
         with hpunch
         g4 "Argh! YES!"
-        call luna_main("ugh... amazing...", "seductive", 9, "sad", "default") 
+        call luna_main("ugh... amazing...", "seductive", "up", "sad", "default") 
         call h_action("covering") 
         call her_main("mmmm...","base","glance") 
-        call luna_main("...", "seductive", 9, "sad", "default") 
+        call luna_main("...", "seductive", "up", "sad", "default") 
         call luna_main("......", "angry", "down", "sad", "default") 
         call luna_main(".........", "seductive", "right", "sad", "default") 
         ">Luna slowly keeps rolling her sensitive pussy on your cock..."
@@ -2093,7 +2093,7 @@ label luna_favour_2: ###SIT ON MY LAP
         call update_her_uniform 
         call h_action("none") 
         call her_main("feel better you two?","base","glance") 
-        call luna_main("yes...", "mad", 9, "sad", "default") 
+        call luna_main("yes...", "mad", "up", "sad", "default") 
         m "ah... you sluts..."
         $ luna_cheeks = "characters/luna/body/face/cheeks/cheeks_1.png" 
         call her_main("well come on then luna, we've got some studying to do. Can you pay us now [genie_name]?","base","down") 
@@ -2262,7 +2262,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call luna_main("well seeing as how you said the magic word I suppose it's only fair...", "doubtful", "right", "default", "default") 
                 m "thank you [luna_name]."
                 call luna_main("(Who'd have thought it'd be the easy...)", "angry", "right", "default", "default") 
-                call luna_main("well... close your eyes...",8, "default", "angry", "upset") 
+                call luna_main("well... close your eyes...", "angry", "default", "angry", "upset") 
                 hide screen luna
                 show screen blkfade
                 with d3
@@ -2518,13 +2518,13 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call luna_main("that's it [l_genie_name], cum for your princess...", "doubtful", "default", "sad", "default") 
             g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
             g4 "{size=+4}(agh... almost there...){/size}"
-            call luna_main("cum...", 9, 1, 3, "talk") 
+            call luna_main("cum...", "angry", "default", "mad", "talk") 
             if luna_wear_panties:
-                call luna_main("{size=+4}cum all over my bra!{/size}", 9, 1, 3, "talk") 
+                call luna_main("{size=+4}cum all over my bra!{/size}", "angry", "default", "mad", "talk") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You grab Luna's bra and start stroking your cock into it."
             else:
-                call luna_main("{size=+4}cum all over my panties!{/size}", 9, 1, 3, "talk") 
+                call luna_main("{size=+4}cum all over my panties!{/size}", "angry", "default", "mad", "talk") 
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You grab Luna's panties and start stroking your cock into them."
             hide screen luna
@@ -2669,7 +2669,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call luna_main("There... are you happy now!", "seductive", "right", "angry", "upset") 
                 g9 "Of course!"
                 g9 "I only expected you to take your shirt off!"
-                call luna_main("What!", 4, 1, 2, "open") 
+                call luna_main("What!", "wide", "default", "angry", "open") 
                 call luna_main("Please! let me put them back on!", "wide", "default", "sad", "upset") 
                 ">Luna scrambles to pick her panties back up off your desk but you're too fast for her, quickly snatching them up."
                 m "Ah ah ah, Miss Lovegood."
@@ -2753,7 +2753,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call luna_main("well seeing as how you said the magic word I suppose it's only fair...", "doubtful", "default", "default", "default") 
                 m "thank you [luna_name]."
                 call luna_main("(I've got him wrapped around my finger...)", "angry", "right", "default", "default") 
-                call luna_main("well... close your eyes...",8, "default", "angry", "upset") 
+                call luna_main("well... close your eyes...", "angry", "default", "angry", "upset") 
                 hide screen luna
                 show screen blkfade
                 with d3
@@ -2995,7 +2995,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             m "what?"
             call luna_main("why don't you stand up and take a good look [l_genie_name]...", "mad", "default", "mad", "default") 
             m "I don't think that-"
-            call luna_main("shhh...", 9, 1, 2, "talk") 
+            call luna_main("shhh...", "angry", "default", "angry", "talk") 
             call luna_main("just stand up sir.....", "angry", "default", "angry", "default") 
             m "..."
             ">You stand up and walk in front of luna, feeling the pressure of her gaze."
@@ -3064,7 +3064,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call luna_main("well?", "doubtful", "default", "sad", "default") 
             g4 "{size=+4}(agh... almost there...){/size}"
             call luna_main("do it...", "angry", "default", "angry", "default") 
-            call luna_main("{size=+4}cum all over me!{/size}", 7, 1, 2, "smile_large") 
+            call luna_main("{size=+4}cum all over me!{/size}", "doubtful", "default", "angry", "smile_large") 
             g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
             $ genie_cum_chibi_xpos = -20
             $ genie_cum_chibi_ypos  = 10
@@ -3113,14 +3113,14 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call luna_main("mmmm{image=textheart}{image=textheart}", "seductive", "left_stare", "sad", "default") 
                 ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
                 $ luna_cum = 13
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("{image=textheart}{image=textheart}{image=textheart}", "seductive", "left_stare", "sad", "default") 
                 pause
                 $ luna_cum = 14
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("{image=textheart}{image=textheart}{image=textheart}", "seductive", "left_stare", "sad", "default") 
                 $ luna_cum = 15
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("{image=textheart}{image=textheart}{image=textheart}", "seductive", "left_stare", "sad", "default") 
                 $ luna_wear_cum = False
                 call luna_main("ah...", "seductive", "left_stare", "sad", "default") 
@@ -3274,7 +3274,7 @@ label luna_favour_4: ###Luna handjob
         m "ugh... Yes, that's it..."
         call luna_main("See, one hand's all you need.", "doubtful", "down", "mad", "angry") 
         m "Mmmm, yes... just like that [luna_name]..."
-        call luna_main("Is this good [l_genie_name]?", 6, 1, 4, "talk") 
+        call luna_main("Is this good [l_genie_name]?", "tired", "default", "sad", "talk") 
         m "yes, yes, this is amazing..."
         call luna_main("good...", "doubtful", "default", "sad", "default") 
         call luna_main("but...", "doubtful", "right", "sad", "upset") 
@@ -3342,7 +3342,7 @@ label luna_favour_4: ###Luna handjob
                 call luna_main("Good boy.", "angry", "down", "angry", "default") 
                 $ luna_xpos = 390
                 $ luna_ypos = 0
-                call luna_main("*Ptew*", 5, 8, 2, "open_tongue") 
+                call luna_main("*Ptew*", "seductive", "down_left", "angry", "open_tongue") 
                 $ luna_r_arm = 3
                 $ luna_flip = 1
                 $ genie_sprite_base = "characters/genie/base_2.png"
@@ -3354,7 +3354,7 @@ label luna_favour_4: ###Luna handjob
         if luna_choice == 1:
             ">Luna gently starts shaking her boobs as she jerks you off."
         else:
-            call luna_main("*Ptew*", 8, 8, 3, "open_tongue") 
+            call luna_main("*Ptew*", "angry", "down_left", "mad", "open_tongue") 
             ">Luna spits into her hand again and places it back on your cock."
         ">She then starts pumping your cock even faster."
         g4 "Gods yes..."
@@ -3377,12 +3377,12 @@ label luna_favour_4: ###Luna handjob
         ">She takes her hand off your cock, leaving you high and dry."
         call luna_main("from now on, the only place you'll be coming is here...", "doubtful", "default", "mad", "angry") 
         g4 "Mmmm yes!"
-        call luna_main("...", 5, 3, 2, "wide_smile") 
+        call luna_main("...", "seductive", "down", "angry", "wide_smile") 
         $ luna_xpos = 310
         ">She leans forward, giving your cock a tentative lick."
-        call luna_main("...", 7, 8, 4, "wide_smile") 
-        call luna_main("(This doesn't taste nearly as good...)", 7, 2, 3, "wide_smile") 
-        call luna_main("(although it's not the worst...)", 5, 3, 4, "wide_smile") 
+        call luna_main("...", "doubtful", "down_left", "sad", "wide_smile") 
+        call luna_main("(This doesn't taste nearly as good...)", "doubtful", "right", "mad", "wide_smile") 
+        call luna_main("(although it's not the worst...)", "seductive", "down", "sad", "wide_smile") 
         g4 "Almost there slut!"
         $ luna_xpos = 350
         ">She moves back slightly from your cock."
@@ -3404,7 +3404,7 @@ label luna_favour_4: ###Luna handjob
                 pause .1
                 hide screen white
                 with hpunch
-                call luna_main("{image=textheart}{image=textheart}{image=textheart}", 2, 3, 4, "wide_smile") 
+                call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "down", "sad", "wide_smile") 
                 pause
                 ">You start shooting your load across her face, coating her in your sticky cum."
                 hide screen g_c_c_u
@@ -3424,17 +3424,17 @@ label luna_favour_4: ###Luna handjob
                 m "Sure..."
                 ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
                 $ luna_cum = 13
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
                 pause
                 $ luna_cum = 14
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
                 $ luna_cum = 15
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
                 $ luna_wear_cum = False
-                call luna_main("...", 5, 6, 4, "cheeks_full") 
+                call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
                 call luna_main("*gulp*", "closed_happy", "left_stare", "sad", "default") 
                 call luna_main("ah...", "closed_happy", "left_stare", "sad", "default") 
                 call luna_main("amazing...", "seductive", "left_stare", "sad", "default") 
@@ -3448,14 +3448,14 @@ label luna_favour_4: ###Luna handjob
                 pause .1
                 hide screen white
                 with hpunch
-                call luna_main("{image=textheart}{image=textheart}{image=textheart}", 2, 3, 4, "cheeks_full") 
+                call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "down", "sad", "cheeks_full") 
                 pause
                 ">You start firing your load directly into her open mouth. Her eyes glaze over as she struggles to fit it all in."
                 g4 "Argh! by the gods {size=+10}YES!{/size}"
-                call luna_main("!!!", 5, 6, 4, "cheeks_full") 
+                call luna_main("!!!", "seductive", "empty", "sad", "cheeks_full") 
                 pause
-                call luna_main("(It's so good...)", 5, 2, 4, "cheeks_full") 
-                call luna_main("...", 5, 3, 4, "cheeks_full") 
+                call luna_main("(It's so good...)", "seductive", "right", "sad", "cheeks_full") 
+                call luna_main("...", "seductive", "down", "sad", "cheeks_full") 
                 g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
                 g4 "mmmm....."
                 hide screen g_c_c_u
@@ -3586,7 +3586,7 @@ label luna_favour_4: ###Luna handjob
             m "ugh... Yes, that's it..."
             call luna_main("(Men really are the worst)", "doubtful", "down", "mad", "angry") 
             m "Mmmm, yes... just like that [luna_name]..."
-            call luna_main("Is this good [l_genie_name]?", 6, 1, 4, "talk") 
+            call luna_main("Is this good [l_genie_name]?", "tired", "default", "sad", "talk") 
             m "yes, yes, this is amazing..."
             call luna_main("good...", "doubtful", "default", "sad", "default") 
             call luna_main("but...", "doubtful", "right", "sad", "upset") 
@@ -3638,7 +3638,7 @@ label luna_favour_4: ###Luna handjob
                     call luna_main("......", "seductive", "default", "mad", "default") 
                     g9 "Please..."
                     call luna_main("Good boy.", "angry", "default", "angry", "default") 
-                    call luna_main("*Ptew*", 5, 8, 2, "open_tongue") 
+                    call luna_main("*Ptew*", "seductive", "down_left", "angry", "open_tongue") 
                     ">Luna spits into her hand before placing it back on your cock."
             g4 "Mmmm, yes that's it [luna_name]..."
             call luna_main("...", "angry", "left_stare", "angry", "default") 
@@ -3647,7 +3647,7 @@ label luna_favour_4: ###Luna handjob
             if luna_choice == 1:
                 ">Luna gently starts shaking her boobs as she jerks you off."
             else:
-                call luna_main("*Ptew*", 8, 8, 3, "open_tongue") 
+                call luna_main("*Ptew*", "angry", "down_left", "mad", "open_tongue") 
                 ">Luna spits into her hand again and places it back on your cock."
             ">She then starts pumping your cock even faster."
             g4 "Gods yes..."
@@ -3795,7 +3795,7 @@ label luna_favour_4: ###Luna handjob
             m "ugh... Yes, that's it..."
             call luna_main("(He loves this...)", "doubtful", "down", "mad", "default") 
             m "Mmmm, yes... just like that [luna_name]..."
-            call luna_main("Is this good [l_genie_name]?", 6, 1, 4, "talk") 
+            call luna_main("Is this good [l_genie_name]?", "tired", "default", "sad", "talk") 
             m "yes, yes, this is amazing..."
             call luna_main("good...", "doubtful", "default", "sad", "default") 
             call luna_main("but...", "doubtful", "right", "sad", "upset") 
@@ -3847,7 +3847,7 @@ label luna_favour_4: ###Luna handjob
                     call luna_main("Hmmm, do You want me to spit on your cock then?", "seductive", "default", "raised", "default") 
                     g9 "yes... please [luna_name]..."
                     call luna_main("Good boy.", "angry", "default", "angry", "default") 
-                    call luna_main("*Ptew*", 5, 8, 2, "open_tongue") 
+                    call luna_main("*Ptew*", "seductive", "down_left", "angry", "open_tongue") 
                     ">Luna spits into her hand before placing it back on your cock."
             g4 "Mmmm, yes that's it [luna_name]..."
             call luna_main("...", "angry", "left_stare", "angry", "default") 
@@ -3857,7 +3857,7 @@ label luna_favour_4: ###Luna handjob
                 ">Luna gently starts shaking her boobs as she jerks you off."
                 call luna_main("......", "seductive", "left_stare", "angry", "default") 
             else:
-                call luna_main("*Ptew*", 8, 8, 3, "open_tongue") 
+                call luna_main("*Ptew*", "angry", "down_left", "mad", "open_tongue") 
                 ">Luna spits into her hand again and places it back on your cock."
             ">She then starts pumping your cock even faster."
             g4 "Gods yes..."
@@ -4281,13 +4281,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
             ">Hermione stands still, letting luna slowly wipe the cum from her face..."
             $ u_sperm = "characters/hermione/face/auto_08.png"
             call her_main("...","shock","worriedCl") 
-            call luna_main("mmmmm...", 2, 1, 4, "cheeks_full") 
+            call luna_main("mmmmm...", "closed_happy", "default", "sad", "cheeks_full") 
             ">Luna slowly fills her mouth with cum before eventually swallowing."
             call luna_main("*gulp*", "seductive", "empty", "sad", "default") 
             ">Eventually she finally gets the last strand into her mouth."
             $ uni_sperm = False
             call her_main("...","disgust","down_raised") 
-            call luna_main("...", 2, 1, 4, "cheeks_full") 
+            call luna_main("...", "closed_happy", "default", "sad", "cheeks_full") 
             call luna_main("*gulp*", "seductive", "empty", "sad", "default") 
             call her_main("...","annoyed","worriedL") 
             $ luna_l_arm = 2
@@ -4493,7 +4493,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         m "whatever. An extra 20 points for gryffindor then."
         $ hermione_payout += 20
         call her_main("yay!","smile","baseL") 
-        call luna_main("I still can't believe you get excited over points.", "doubtful", 9, "angry", "upset") 
+        call luna_main("I still can't believe you get excited over points.", "doubtful", "up", "angry", "upset") 
         call her_main("Why? Don't you want to see that look of excitement on your friends faces when they win the house cup?","base","squint") 
         call her_main("and the look of dissapointment on those nasty slytherins faces when they lose!","base","ahegao_raised") 
         call luna_main("pfft, friends...", "default", "right", "mad", "upset") 
@@ -4608,11 +4608,11 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         call her_main("mmm, that's it [genie_name]. just enjoy yourself.","open","baseL") 
         call luna_main("as if he could...", "angry", "right", "angry", "upset") 
         g9 "ah..."
-        call luna_main("go on [l_genie_name], tell her i'm better.", "mad", 9, "angry", "upset") 
+        call luna_main("go on [l_genie_name], tell her i'm better.", "mad", "up", "angry", "upset") 
         ">you can barely mutter more than a guttural moan in response."
         g9 "Ugh..."
-        call luna_main("...", "doubtful", 9, "angry", "upset") 
-        call luna_main("tell her i'm better!", "doubtful", 9, "mad", "angry") 
+        call luna_main("...", "doubtful", "up", "angry", "upset") 
+        call luna_main("tell her i'm better!", "doubtful", "up", "mad", "angry") 
         g9 "mmmm"
         call her_main("I'm not sure he can hear you... He must be enjoying himself too much.","open","down") 
         call her_main("speaking of which... are you ready [genie_name]?","soft","squintL") 
@@ -4644,42 +4644,42 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         call luna_main("{image=textheart}{image=textheart}{image=textheart}", "angry", "left_stare", "angry", "default") 
         call luna_main("it's not nasty!", "seductive", "left_stare", "angry", "default") 
         call her_main("oh that's right... I almost forgot how much of a cumslut you are.","angry","down_raised") 
-        call luna_main("I am not!", "angry", 9, "angry", "upset") 
+        call luna_main("I am not!", "angry", "up", "angry", "upset") 
         call her_main("so you're not going to eat all of that \'delicous\' cum on your face then?","base","suspicious") 
         call luna_main("...", "seductive", "left_stare", "angry", "default") 
         ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
         $ luna_cum = 13
-        call luna_main("...", 5, 6, 4, "cheeks_full") 
+        call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
         call her_main("that's it Cumslut...","base","glance") 
         call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
         pause
         $ luna_cum = 14
-        call luna_main("...", 5, 6, 4, "cheeks_full") 
+        call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
         call her_main("keep going...","base","down") 
         call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
         $ luna_cum = 15
-        call luna_main("...", 5, 6, 4, "cheeks_full") 
+        call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
         call her_main("mmmm...","grin","baseL") 
         call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default") 
         $ luna_wear_cum = False
-        call luna_main("...", 5, 6, 4, "cheeks_full") 
+        call luna_main("...", "seductive", "empty", "sad", "cheeks_full") 
         call luna_main("*gulp*", "closed_happy", "left_stare", "sad", "default") 
         call luna_main("ah...", "closed_happy", "left_stare", "sad", "default") 
-        call luna_main("amazing...", "seductive", 9, "sad", "default") 
-        call luna_main("I didn't know it was possible for someone to cum so much...", "default", 9, "sad", "default") 
+        call luna_main("amazing...", "seductive", "up", "sad", "default") 
+        call luna_main("I didn't know it was possible for someone to cum so much...", "default", "up", "sad", "default") 
         call her_main("well of course you didn't. I'm surprised you were able to make [genie_name] cum at all!","open","closed") 
         call her_main("what with that shoddy technique of yours...","annoyed","suspicious") 
-        call luna_main("it's not that bad...", "angry", 9, "sad", "upset") 
+        call luna_main("it's not that bad...", "angry", "up", "sad", "upset") 
         call her_main("whatever you have to tell yourself...","open","closed") 
-        call luna_main("...", "mad", 9, "angry", "upset") 
+        call luna_main("...", "mad", "up", "angry", "upset") 
         call luna_main("fine... i'm not as good at giving hand jobs as you...", "doubtful", "right", "default", "upset") 
-        call luna_main("but that's only because you've spent the entire year in here whoring yourself out to our headmaster!", "doubtful", 9, "mad", "upset") 
+        call luna_main("but that's only because you've spent the entire year in here whoring yourself out to our headmaster!", "doubtful", "up", "mad", "upset") 
         call her_main("well I can teach you a few things if you'd like.","smile","baseL") 
-        call luna_main("what?", "angry", 9, "default", "pout") 
-        call luna_main("why would you help me?", "angry", 9, "sad", "upset") 
+        call luna_main("what?", "angry", "up", "default", "pout") 
+        call luna_main("why would you help me?", "angry", "up", "sad", "upset") 
         call her_main("I wouldn't be doing it for free...","open","baseL") 
         call luna_main("...", "seductive", "left_stare", "angry", "upset") 
-        call luna_main("what do you want?", "doubtful", 9, "sad", "angry") 
+        call luna_main("what do you want?", "doubtful", "up", "sad", "angry") 
         call her_main("before I tell you, you have to answer one question...","open","baseL") 
         m "(ugh... I need to sit down after all that.)"
         show screen blkfade
@@ -4704,7 +4704,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         with d3
         call luna_main("alright...", "doubtful", "default", "angry", "upset") 
         call her_main("how are your grades?","base","base") 
-        call luna_main("WHAT?", 4, 1, 4, "open") 
+        call luna_main("WHAT?", "wide", "default", "sad", "open") 
         call luna_main("my grades? why do you care?", "angry", "default", "angry", "pout") 
         call her_main("it's a simple question...","base","down") 
         call luna_main("well I'm not going to answer it...", "mad", "default", "mad", "angry") 
@@ -4998,13 +4998,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         ">Hermione stands still, letting luna slowly wipe the cum from her face..."
         $ u_sperm = "characters/hermione/face/auto_08.png"
         call her_main("that's it... make sure you get it all...","base","down") 
-        call luna_main("mmmmm...", 2, 1, 4, "cheeks_full") 
+        call luna_main("mmmmm...", "closed_happy", "default", "sad", "cheeks_full") 
         ">Luna slowly fills her mouth with cum before eventually swallowing."
         call luna_main("*gulp*", "seductive", "empty", "sad", "default") 
         ">Eventually she finally gets the last strand into her mouth."
         $ uni_sperm = False
         call her_main("better?","base","glance") 
-        call luna_main("...", 2, 1, 4, "cheeks_full") 
+        call luna_main("...", "closed_happy", "default", "sad", "cheeks_full") 
         call luna_main("*gulp*", "seductive", "empty", "sad", "default") 
         call luna_main("much.", "seductive", "empty", "sad", "default") 
         call her_main("good.","base","suspicious") 
@@ -6068,9 +6068,9 @@ label luna_favour_7:
     call her_main("Why not Luna? We've talked about this...","soft","worried") 
     call her_main("We even spent all last weekend \'practicing\'...","normal","worriedL") 
     call luna_main("I know...", "default", "right", "mad", "pout") 
-    call luna_main("It's just...", 1, 3, 4, "talk") 
+    call luna_main("It's just...", "default", "down", "sad", "talk") 
     call luna_main("I don't think I can handle it...", "default", "right", "sad", "angry") 
-    call luna_main("I'm not like you... I can't be good at everything...", 3, 2, 4, "open") 
+    call luna_main("I'm not like you... I can't be good at everything...", "closed", "closed_happy", "sad", "open") 
     show screen blkfade
     "*SLAP*"
     ">You close your eyes and recoil, expecting the stinging in your face to start any moment, however it never comes."

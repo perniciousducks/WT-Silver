@@ -1262,10 +1262,10 @@ screen wardrobe():
                 #text "" xpos 76+270 ypos 140+75 size 10
 
             #Save/Load Custom Outfit
-            if active_girl in ["hermione"]:
-                hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",4),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/maid.png" xpos 77+360 ypos 139 zoom 0.31/scaleratio
-                text "Custom" xpos 76+360 ypos 140+75 size 10
+            #if active_girl in ["hermione"]:
+            #    hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",4),Show("wardrobe")]
+            #    add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/maid.png" xpos 77+360 ypos 139 zoom 0.31/scaleratio
+            #    text "Custom" xpos 76+360 ypos 140+75 size 10
 
 
             #Outfits
@@ -1446,13 +1446,5 @@ screen wardrobe():
                     else:
                         add "characters/hermione/accessories/collars/collar_5.png" xpos -40+270 ypos 55+92 zoom 0.5/scaleratio
 
-                    #Dress/Start End Event
-                    if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
-                        hotspot (75+360, 140+92, 83, 85) clicked [Jump("giving_the_dress")]
-                        add "images/store/cs_gui/ball_dress.png" xpos 70+370 ypos 116+92 zoom 0.18
-                        text "End" xpos 76+360 ypos 140+65+92 size 10
-                        text "Event" xpos 76+360 ypos 140+75+92 size 10
-                    else:
-                        add "images/store/cs_gui/ball_dress_b.png" xpos 70+370 ypos 116+92 zoom 0.18
 
 # ADD wardrobe page for stats here!

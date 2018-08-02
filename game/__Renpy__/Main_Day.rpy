@@ -230,6 +230,13 @@ if days_since_cho == 2:
     jump hermione_cho
 if days_since_cho == 4 and not cho_met:
     jump cho_intro_2
+
+if days_since_cho >= 15 and not cho_quidd:
+    jump cho_quidd_intro
+
+if cho_quidd and days_since_quidd >= 4:
+    jump cho_quidd_events
+
     
 
 
@@ -275,8 +282,10 @@ if whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
 #Luna event's
-if luna_corruption == 10 and luna_reverted:
-    jump luna_reverted_greeting_1 #No return.
+if luna_reverted and luna_corruption == 10:
+    jump luna_reverted_greeting_1#No return.
+elif luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
+    jump luna_reverted_events
 
 ### NOT IN USE
 #if day == 10:

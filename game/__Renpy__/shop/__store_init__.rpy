@@ -10,8 +10,6 @@ label __init_variables:
     if not hasattr(renpy.store,'outfit_order'): #important!
         $ outfit_order = None
 
-    $ clothes_store_order_choice = None
-    $ clothes_store_selection = None
 
     if not hasattr(renpy.store,'cs_stock_inventory'): #important!
         $ cs_stock_inventory = []
@@ -33,8 +31,17 @@ label __init_variables:
         $ cs_existing_stock_gifted = []
 
     #Update 1.4
-    if not hasattr(renpy.store,'mannequin_preview'): #important!
-        $ mannequin_preview = "ball_dress_b.png"
+    if not hasattr(renpy.store,'cs_show_misc'): #important!
+        $ mannequin_preview = "hg_mannequin.png"
+        $ cs_inventory_list = []
+        $ clothes_store_category = ""
 
+        $ clothes_store_order_choice = None
+        $ clothes_store_selection = None
+
+        $ cs_show_clothing = True
+        $ cs_show_accs = True
+        $ cs_show_dyes = True
+        $ cs_show_misc = True
 
     return

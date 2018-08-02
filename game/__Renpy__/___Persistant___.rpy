@@ -195,6 +195,12 @@ label __init_variables:
     #1.32 var updates
     if not hasattr(renpy.store,'cc_eyewhite'): #important!
         $ cc_eyewhite = "characters/cho/eye/white.png" 
+        $ cc_gloves = "characters/cho/base/blank.png" 
+        $ cho_quidd = False
+        $ cho_quidd_points = 0
+        $ days_since_quidd = 0
+        $ days_to_luna = 0
+
         
     #SC34 update 2 stuff, thanks akabur.
     if not hasattr(renpy.store,'sc_cg_base'): #important!

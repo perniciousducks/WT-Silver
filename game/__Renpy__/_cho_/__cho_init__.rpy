@@ -31,6 +31,7 @@ label cho_init:
         $ cc_stock               = "characters/cho/clothes/uniform/stockings.png" 
         $ cc_bra                 = "characters/cho/clothes/workout/bra.png" 
         $ cc_panties             = "characters/cho/clothes/workout/panties.png" 
+        $ cc_gloves              = "characters/cho/base/blank.png" 
 
         $ cc_wear_top            = True
         $ cc_wear_bra            = True
@@ -55,10 +56,13 @@ label cho_progress_init:
         $ cho_whoring = 0
         $ cho_mad = 0
         $ cho_points = 0
+        $ cho_quidd_points = 0
 
         ##Flags
         $ cho_busy = False
         $ days_since_cho = 0
+        $ days_since_quidd = 0
+        $ cho_quidd = False
         $ cho_known = False
         $ cho_met = False
 

@@ -26,7 +26,7 @@ label __init_variables:
     if not hasattr(renpy.store,'orange_dye_OBJ'): # Orange
         $ orange_dye_OBJ = store_item_class()
     $ orange_dye_OBJ.id = "orange_dye"
-    $ orange_dye_OBJ.name = "Butter Beer {b}B{/b}orange"
+    $ orange_dye_OBJ.name = "Butter Beer"
     $ orange_dye_OBJ.type = "dye"
     $ orange_dye_OBJ.items = ["clothing dye"]
     $ orange_dye_OBJ.image = "dye_orange.png"

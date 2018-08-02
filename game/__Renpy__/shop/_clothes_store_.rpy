@@ -753,6 +753,13 @@ label close_clothes_store:
 
 screen cs_gui():
 
+    if cs_gui_OBJ.category in [0,1]:
+        $ UI_xpos_offset = 0
+        $ UI_ypos_offset = 0
+    else:
+        $ UI_xpos_offset = 150
+        $ UI_ypos_offset = 77
+
     tag clothes_menu
     zorder 5
 
@@ -764,19 +771,14 @@ screen cs_gui():
 
             # Main Interface
             if clothes_store_selection == None:
-                add "interface/store/icons/outfits/hg_mannequin.png" xpos 600 ypos 0 zoom 1.0/scaleratio
-
-                ground "interface/store/"+str(interface_color)+"/clothing_ground.png"
-                hover "interface/store/"+str(interface_color)+"/clothing_hover.png"
+                ground "interface/store/"+str(interface_color)+"/clothing_panel_main.png"
+                hover "interface/store/"+str(interface_color)+"/clothing_panel_main_hover.png"
 
             else:
-                if clothes_store_selection in hermione_outfits_list:
-                    add "interface/store/icons/outfits/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
-                else:
-                    add "interface/store/icons/sets/"+str(mannequin_preview)+"" xpos 600 ypos 0 zoom 1.0/scaleratio
+                ground "interface/store/"+str(interface_color)+"/clothing_panel_full.png"
+                hover "interface/store/"+str(interface_color)+"/clothing_panel_full_hover.png"
 
-                ground "interface/store/"+str(interface_color)+"/clothing_full_ground.png"
-                hover "interface/store/"+str(interface_color)+"/clothing_full_hover.png"
+            add cs_gui_OBJ.getMannequinPreview() xpos 600 ypos 0 zoom 1.0/scaleratio
 
             # Left Button
             imagebutton:
@@ -812,48 +814,70 @@ screen cs_gui():
 
 
         # Clothing Items & Dyes
-        if cs_gui_OBJ.category in [2]:
+        else:
 
             # Main Interface
-            ground "interface/store/"+str(interface_color)+"/items_ground.png"
-            hover "interface/store/"+str(interface_color)+"/items_hover.png"
+            xpos 150
+            ypos 77
+            ground "interface/store/"+str(interface_color)+"/items_panel.png"
+            hover "interface/store/"+str(interface_color)+"/items_panel_hover.png"
 
-            text "Clothing Items" xalign 0.5 yalign 0.5 xpos 309 ypos 130 size 24
+            text "Clothing Items" xalign 0.5 yalign 0.5 xpos 309-UI_xpos_offset ypos 130-UI_ypos_offset size 24
 
 
         # Always Active
 
         # Close Button
         imagebutton:
-            xpos 1028
-            ypos 11
+            xpos 1028-UI_xpos_offset
+            ypos 11-UI_ypos_offset
             idle "interface/general/"+interface_color+"/button_close.png"
             hover "interface/general/"+interface_color+"/button_close_hover.png"
             action Jump("close_clothes_store")
 
-        # Category Buttons
-        if cs_gui_OBJ.category == 0:# Outfits Button
-            text "Outfits" xalign 0.5 yalign 0.5 xpos 767 ypos 121 size 16
+        # Outfits Buttons
+        imagebutton:
+            xpos 725-UI_xpos_offset
+            ypos 105-UI_ypos_offset
+            idle "interface/general/"+interface_color+"/button_select.png"
+            if cs_gui_OBJ.category != 0: # Outfits
+                hover "interface/general/"+interface_color+"/button_select_hover.png"
+                action [SetVariable("clothes_store_category","outfits"), Jump("change_cs_category")]
+        if cs_gui_OBJ.category == 0: # Outfits
+            text "Outfits" xalign 0.5 yalign 0.5 xpos 767-UI_xpos_offset ypos 121-UI_ypos_offset size 16
         else:
-            hotspot (727,105,80,30) clicked [SetVariable("clothes_store_category","outfits"), Jump("change_cs_category")]
-            text "Outfits" xalign 0.5 yalign 0.5 xpos 767 ypos 121 size 14
+            text "Outfits" xalign 0.5 yalign 0.5 xpos 767-UI_xpos_offset ypos 121-UI_ypos_offset size 14
 
-        if cs_gui_OBJ.category == 1: # Sets Button
-            text "Sets" xalign 0.5 yalign 0.5 xpos 767 ypos 121+44 size 16
+        # Sets Button
+        imagebutton:
+            xpos 725-UI_xpos_offset
+            ypos 149-UI_ypos_offset
+            idle "interface/general/"+interface_color+"/button_select.png"
+            if cs_gui_OBJ.category != 1: # Sets
+                hover "interface/general/"+interface_color+"/button_select_hover.png"
+                action [SetVariable("clothes_store_category","sets"), Jump("change_cs_category")]
+        if cs_gui_OBJ.category == 1: # Sets
+            text "Sets" xalign 0.5 yalign 0.5 xpos 767-UI_xpos_offset ypos 121+44-UI_ypos_offset size 16
         else:
-            hotspot (727,149,80,30) clicked [SetVariable("clothes_store_category","sets"), Jump("change_cs_category")]
-            text "Sets" xalign 0.5 yalign 0.5 xpos 767 ypos 121+44 size 14
+            text "Sets" xalign 0.5 yalign 0.5 xpos 767-UI_xpos_offset ypos 121+44-UI_ypos_offset size 14
 
-        if cs_gui_OBJ.category == 2: # Items Button
-            text "Items" xalign 0.5 yalign 0.5 xpos 767 ypos 121+88 size 16
+        # Items Button
+        imagebutton:
+            xpos 725-UI_xpos_offset
+            ypos 193-UI_ypos_offset
+            idle "interface/general/"+interface_color+"/button_select.png"
+            if cs_gui_OBJ.category != 2: # Items
+                hover "interface/general/"+interface_color+"/button_select_hover.png"
+                action [SetVariable("clothes_store_category","items"), Jump("change_cs_category")]
+        if cs_gui_OBJ.category == 2: # Items
+            text "Items" xalign 0.5 yalign 0.5 xpos 767-UI_xpos_offset ypos 121+88-UI_ypos_offset size 16
         else:
-            hotspot (727,193,80,30) clicked [SetVariable("clothes_store_category","items"), Jump("change_cs_category")]
-            text "Items" xalign 0.5 yalign 0.5 xpos 767 ypos 121+88 size 14
+            text "Items" xalign 0.5 yalign 0.5 xpos 767-UI_xpos_offset ypos 121+88-UI_ypos_offset size 14
 
         # Up Button
         imagebutton:
-            xpos 725
-            ypos 240
+            xpos 725-UI_xpos_offset
+            ypos 240-UI_ypos_offset
             idle "interface/general/"+interface_color+"/button_arrow_up.png"
 
             if cs_gui_OBJ.current_page > 0:
@@ -862,8 +886,8 @@ screen cs_gui():
 
         # Down Button
         imagebutton:
-            xpos 725
-            ypos 292
+            xpos 725-UI_xpos_offset
+            ypos 292-UI_ypos_offset
             idle "interface/general/"+interface_color+"/button_arrow_down.png"
 
             if cs_gui_OBJ.current_page < cs_gui_OBJ.getTotalPages():
@@ -895,8 +919,6 @@ screen cs_gui():
 
             $ page_list = cs_gui_OBJ.getListOfItems()
 
-
-
             $ index = 0
             for i in range(0,3):
                 if index < len(page_list):
@@ -909,28 +931,28 @@ screen cs_gui():
         if cs_gui_OBJ.category in [2]:
 
             if cs_show_clothing: #Toggle Clothing Items
-                hotspot (470,109,18,18) clicked [SetVariable("cs_show_clothing",False), Jump("return_clothes_store")]
-                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470 ypos 104
+                hotspot (470-UI_xpos_offset,109-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_clothing",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470-UI_xpos_offset ypos 104-UI_ypos_offset
             else:
-                hotspot (470,109,18,18) clicked [SetVariable("cs_show_clothing",True), Jump("return_clothes_store")]
-                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470 ypos 104
-            text "Clothing" xpos 492 ypos 113 size 10
+                hotspot (470-UI_xpos_offset,109-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_clothing",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470-UI_xpos_offset ypos 104-UI_ypos_offset
+            text "Clothing" xpos 492-UI_xpos_offset ypos 113-UI_ypos_offset size 10
 
             if cs_show_accs: #Toggle Accessory Items
-                hotspot (470+100,109,18,18) clicked [SetVariable("cs_show_accs",False), Jump("return_clothes_store")]
-                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470+100 ypos 104
+                hotspot (470+100-UI_xpos_offset,109-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_accs",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470+100-UI_xpos_offset ypos 104-UI_ypos_offset
             else:
-                hotspot (470+100,109,18,18) clicked [SetVariable("cs_show_accs",True), Jump("return_clothes_store")]
-                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470+100 ypos 104
-            text "Accs." xpos 492+100 ypos 113 size 10
+                hotspot (470+100-UI_xpos_offset,109-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_accs",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470+100-UI_xpos_offset ypos 104-UI_ypos_offset
+            text "Accs." xpos 492+100-UI_xpos_offset ypos 113-UI_ypos_offset size 10
 
             if cs_show_dyes: #Toggle Dye Items
-                hotspot (470,109+22,18,18) clicked [SetVariable("cs_show_dyes",False), Jump("return_clothes_store")]
-                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470 ypos 104+22
+                hotspot (470-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_dyes",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470-UI_xpos_offset ypos 104+22-UI_ypos_offset
             else:
-                hotspot (470,109+22,18,18) clicked [SetVariable("cs_show_dyes",True), Jump("return_clothes_store")]
-                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470 ypos 104+22
-            text "Dyes" xpos 492 ypos 113+22 size 10
+                hotspot (470-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_dyes",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470-UI_xpos_offset ypos 104+22-UI_ypos_offset
+            text "Dyes" xpos 492-UI_xpos_offset ypos 113+22-UI_ypos_offset size 10
 
 
             $ page_list = cs_gui_OBJ.getListOfItems()
@@ -938,18 +960,18 @@ screen cs_gui():
             $ index = 0
             for i in range(0,4):
                 if index < len(page_list):
-                    hotspot (172, (164+(90*i)), 83, 83) clicked [SetVariable("selected_item",page_list[index]),Jump("cs_buy_item")]
+                    hotspot (172-UI_xpos_offset, (164-UI_ypos_offset+(90*i)), 83, 83) clicked [SetVariable("selected_item",page_list[index]),Jump("cs_buy_item")]
 
-                    add page_list[index].getStoreImage() xalign 0.5 xpos 217 yalign 0.5 ypos (209+(+90*i)) zoom 0.8 #page_list[index].getStoreImageZoom()
+                    add page_list[index].getStoreImage() xalign 0.5 xpos 217-UI_xpos_offset yalign 0.5 ypos (209-UI_ypos_offset+(+90*i)) zoom 0.8 #page_list[index].getStoreImageZoom()
 
-                    text page_list[index].getStoreName() xpos 269 ypos (170+(90*i)) size 16
-                    text page_list[index].getStoreDescription() xpos 269 ypos (196+(90*i)) size 12
-                    text page_list[index].getStoreCost() xpos 269+270 ypos (170+(90*i)) size 16
+                    text page_list[index].getStoreName() xpos 269-UI_xpos_offset ypos (170-UI_ypos_offset+(90*i)) size 16
+                    text page_list[index].getStoreDescription() xpos 269-UI_xpos_offset ypos (196-UI_ypos_offset+(90*i)) size 12
+                    text page_list[index].getStoreCost() xpos 269+270-UI_xpos_offset ypos (170-UI_ypos_offset+(90*i)) size 16
 
-                    #for j in range(0, len(page_list[index].getStoreItems() )):
-                    #    $ col = i % 2
+                    for j in range(0, len(page_list[index].getStoreItems() )):
+                        $ col = j % 3
 
-                    #    text "+"+page_list[index].getStoreItems()[j] xpos 269+(80*col) ypos (196+48+(90*i)) size 12
+                        text "+"+page_list[index].getStoreItems()[j] xpos 269-UI_xpos_offset+(110*col) ypos (196+32-UI_ypos_offset+(90*i)) size 12
 
                     $ index = index+1
 
@@ -968,10 +990,12 @@ label change_cs_category:
 label cs_gui_character_forward:
     $ cs_gui_OBJ.character = cs_gui_OBJ.character+1
     $ cs_gui_OBJ.current_page = 0
+    $ clothes_store_selection = None
     jump return_clothes_store
 label cs_gui_character_back:
     $ cs_gui_OBJ.character = cs_gui_OBJ.character-1
     $ cs_gui_OBJ.current_page = 0
+    $ clothes_store_selection = None
     jump return_clothes_store
 
 label cs_gui_index_up:
@@ -1040,6 +1064,7 @@ init python:
         current_page = 0
         character = 1
         category = 0
+        preview = "interface/store/icons/outfits/hg_mannequin.png"
 
         def getListOfItems(self):
             if self.category in [0,1]: # 0=Outfits, 1=Sets
@@ -1053,3 +1078,19 @@ init python:
                 return len(cs_inventory_list)/3
             else:
                 return len(cs_inventory_list)/4
+        def getMannequinPreview(self):
+            if clothes_store_selection == None:
+                if self.character == 1: # Hermione
+                    return "interface/store/icons/outfits/hg_mannequin.png"
+                elif self.character == 2: # Luna
+                    return "interface/store/icons/outfits/ll_mannequin.png" # Placeholder
+                elif self.character == 3: # Susan
+                    return "interface/store/icons/outfits/sb_mannequin.png"
+                elif self.character == 4: # Astoria
+                    return "interface/store/icons/outfits/ag_mannequin.png"
+                elif self.character == 5: # Cho
+                    return "interface/store/icons/outfits/cc_mannequin.png" # Placeholder
+                else:
+                    return "interface/store/icons/outfits/hg_mannequin.png"
+            else:
+                return clothes_store_selection.getStoreImage()

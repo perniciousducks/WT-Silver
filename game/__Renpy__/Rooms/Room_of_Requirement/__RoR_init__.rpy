@@ -25,12 +25,24 @@ label __init_variables:
                 ach_desc = "Unlock the mirror of noisrevrep/Erised",
                 content_characters = []
             )
+    if not hasattr(renpy.store,'mr_ev_ABTTD'):
+        $mr_ev_ABTTD = mirror_stories(
+                title = "A bad time to disrobe.",
+                story_description = "The genie gets a hold of a invisibility cloak and puts it to good use.",
+                start_label = "a_bad_time_to_disrobe",
+                authors = ["Johnny"],
+                categories= [],
+                ach_desc = "Finish private favour, \"Show them to me!\" at least once.",
+                content_characters = ["hermione"]
+                unlock_check = lambda self : hg_pf_ShowThemToMe_OBJ.points > 0
+            )
     
     
     
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
+     $ mr_evs_list.append(mr_ev_ABTTD)
     
     $currentpage = 0
         
@@ -44,7 +56,13 @@ init python:
         story_description = ""
         ach_desc = ""
         content_characters = []
-        unlock_check = lambda self : True
+        # lambda is just a function that can be parsed around like a parameter simple said
+        # how to define a lambda 
+        # lambda 
+        # followed by the arguments split with a , since this lambda is inside a class it need self
+        # use : to start the manipulation of arguments
+        # manipulate the global or parameters here like "whoring > 12"
+        unlock_check = lambda self : True 
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)

@@ -1,11 +1,181 @@
 screen whose_points_screen:
     add "images/room_of_requirement/whose_points.png"
     
+    
+label a_bad_time_to_disrobe:
+    call hide_room_req
+    show screen main_room
+    show screen genie
+    show screen blkfade
+    
+    n "In this story the genie has found an invisibility cloak."
+    n "And with the cloak comes great oportunities"
+    n "Title: A bad time to disrobe."
+    
+    hide screen blkfade
+    with d3
+    
+    m "Miss Granger. Have you ever been excited about the thought of being caught?"
+    
+    h "Caught?" 
+    h "In what way professor?"
+    
+    m "Well, for todays favour I have a prop for you to use."
+    
+    h "A prop sir?"
+
+    m "Yes, I'd like you to put this invisibility cloak on and sneak into one of the girl restricted areas of the school."
+    
+    h "Well, I guess that would be fine...
+    h "Seems a bit different than your usual requests.
+
+    m "You'd be naked of course."
+    
+    h "Naked!?! But what if someone saw me?"
+    
+    m "You'll be wearing the cloak..."
+    m "No one would even know you were there."
+    
+    h "35 points..." [tiny text?]
+    
+    m "25 points you said? sounds good to me." 
+
+    (Hermione walks to the door and stands in the doorway) 
+    h "You heard what I said..." [tiny text?]
+    [Hermione walks out]
+    
+    m "\"Some of that bartering skill put to good use..."" [smirk] 
+
+    [Fade to Black]
+    n "Later that evening. Hermione returns."
+    [Fade to office evening]
+
+    m "I'll take that cloak back if you don't mind."
+    
+    h "Certainly."
+    
+    m "Now, spill the beans."
+    
+    h "I..I don't have any beans on me sir."
+    
+    m "\"Is this girl for real?""
+
+    m "It's just an expression, tell me... did you complete your assignment?"
+    
+    h "I did sir. I snuck into the boys dormitory using the cloak as you suggested."
+    
+    m "Naked?"
+    
+    h "Naked..ish"
+    
+    m "How can you be naked...ish?"
+    
+    h "Well, I had my underwear on, I'd be cold otherwise"
+    
+    m "Cold? You'd have the cloak on you...
+    m "What happened next then?"
+    
+    h "Well, a few of the boys were in there."
+    h "They were playing wizards chess..."
+    h "Pretty badly in fact." 
+
+    m "I'm sorry miss Granger but you're going to have to do better than this." 
+    m "I expect better from you by now."
+    
+    h "So, no points then?"
+    
+    m "No, I know you can do better."
+    
+    h "Fine! I'll do better next time. Double points! I'll show you!"
+    
+    m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
+
+    h "Thank you professor... I'll remember that for next time" 
+
+    [Fade to black screen]
+    [Hermione will remember that (Joke reference)?] https://goo.gl/images/mgX6Wo
+    [Fade away message]
+    n "Hermione returns the next morning, looking nervous but more determined than yesterday."
+    [Fade to office Day]
+
+    h "I see that you have the cloak ready for me sir."
+    
+    m "Indeed, I'm expecting better from you today girl."
+    
+    h "I wont dissapoint you sir!"
+    
+    m "I'll be the judge of that..."
+
+    [Fade to black]
+    n "Later that evening a distraught looking Hermione enters the office. "
+    [Fade to office Evening]
+
+    [Hermione with tits out + chibi]
+    h "..."
+    
+    m "What happened? Is there anything wrong?"
+    
+    h "What does it look like?" 
+    
+    m "Well, I know what it looks like..." 
+    
+    h "I didn't want to dissapoint sir so I did what you asked..."
+    h "I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers."
+
+    m "Well done. And then?"
+    
+    h "I took the cloak and snuck into the boys changing room..."
+    h "I stood next to the doorway so that they wouldn't bump into me."
+    
+    m "Great idea.. and you weren't noticed?" 
+    
+    h "Well, I though I weren't at least... This damn cloak, it's too short."
+    h "I didn't want to stand bent over so I thought it was fine to stand up a bit.." 
+    h "But my feet popped out without me noticing!"
+    
+    m "\"Well, that's a shame.\""
+
+    h "One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and."
+    
+    m "And what?" [Angry face]
+    
+    h "And I slipped and my butt fell out!"
+    
+    m "30 POINTS TO...." [Yell] 
+    
+    h "I'm not done!"
+    
+    m "Sorry, you carry on my dear!"
+
+    h "I think the boy may have seen me." 
+    h "Professor.... I'm beginning to have second thoughts about this cloak idea." m "The boy didn't see your face, that's what matters."
+    
+    m "You could've draped the cloak around your head and it would be enough."
+    
+    h "Professor!"
+
+    m "Just trying to lighten the mood." 
+    m "Here's an extra 5 points for a Job well done, miss Granger."
+    m "35 points to Gryffindor!"
+    
+    h "Thank you professor...." (Hermione walks to door) 
+    h "\"He's right, they wouldn't recognize me if I didn't show my face..."" [Blushing] 
+    h "\"would they?"" [Blushing] 
+
+    "The End."
+    
+    hide screen genie
+    hide screen main_room
+    jump enter_room_of_req
+    
 label whose_points:
-    show screen bld1
-    with Dissolve(.3)
     call hide_room_req
     show screen whose_points_screen
+    show screen blkfade
+    pause 0.3
+    hide screen blkfade
+    with d3
+    
     
     m "Hello and welcome to whose points is it anyway."
     m "The show where everything is made up but the points doesn't matter."

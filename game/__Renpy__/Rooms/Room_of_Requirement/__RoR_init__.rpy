@@ -33,8 +33,8 @@ label __init_variables:
                 authors = ["Johnny"],
                 categories= [],
                 ach_desc = "Finish private favour, \"Show them to me!\" at least once.",
-                content_characters = ["hermione"]
-                unlock_check = lambda self : hg_pf_ShowThemToMe_OBJ.points > 0
+                content_characters = ["hermione"],
+                #unlock_check = lambda self : hg_pf_ShowThemToMe_OBJ.points > 0
             )
     
     
@@ -42,7 +42,7 @@ label __init_variables:
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
-     $ mr_evs_list.append(mr_ev_ABTTD)
+    $ mr_evs_list.append(mr_ev_ABTTD)
     
     $currentpage = 0
         

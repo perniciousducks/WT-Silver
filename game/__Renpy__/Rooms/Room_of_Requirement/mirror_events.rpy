@@ -139,59 +139,61 @@ label a_bad_time_to_disrobe:
 
     call her_chibi("top_naked", "desk", "base")
     $ hermione_wear_top = False
+    $ hermione_breasts_temp = hermione_breasts
+    $ hermione_breasts = "characters/hermione/body/breasts/breasts_normal.png"
     #TODO: Remove top
-    call her_main( "...", "upset", "base" )
+    call her_main( "...", "upset", "base", tears="mascara_soft")
     
     m "What happened? Is there anything wrong?"
     
-    call her_main( "What does it look like?", "upset", "base" ) 
+    call her_main( "What does it look like?", "upset", "base", tears="mascara_soft" ) 
     
     m "Well, I know what it looks like..." 
     
-    call her_main( "I didn't want to dissapoint sir so I did what you asked...", "soft", "base" )
-    call her_main( "I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.", "base", "base" )
+    call her_main( "I didn't want to dissapoint sir so I did what you asked...", "soft", "base", tears="mascara_soft" )
+    call her_main( "I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.", "base", "base", tears="mascara_soft" )
 
     m "Well done. And then?"
     
-    call her_main( "I took the cloak and snuck into the boys changing room...", "base", "base" )
-    call her_main( "I stood next to the doorway so that they wouldn't bump into me.", "base", "base" )
+    call her_main( "I took the cloak and snuck into the boys changing room...", "base", "base", tears="mascara" )
+    call her_main( "I stood next to the doorway so that they wouldn't bump into me.", "base", "base", tears="mascara" )
     
     m "Great idea.. and you weren't noticed?" 
     
-    call her_main( "Well, at first I wasn't... This damn cloak is too small.", "angry", "base" )
-    call her_main( "I thought I would be short enough to fit under it...", "base", "base" ) 
-    call her_main( "I didn't notice that my feet were visible...", "upset", "angry" )
+    call her_main( "Well, at first I wasn't... This damn cloak is too small.", "angry", "base", tears="mascara" )
+    call her_main( "I thought I would be short enough to fit under it...", "base", "base", tears="mascara" ) 
+    call her_main( "I didn't notice that my feet were visible...", "upset", "angry", tears="mascara" )
     
     m "\"Well, that's a shame.\""
 
-    call her_main( "One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "shocked_raised" )
+    call her_main( "One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "shocked_raised", tears="mascara" )
     
     g11 "And what?" 
     
-    call her_main( "And I slipped and my butt fell out!", "scream", "surprised" )
+    call her_main( "And I slipped and my butt fell out!", "scream", "surprised", tears="mascara" )
     
     g9 "{size=18}30 POINTS TO....{/size}" 
     
-    call her_main( "I'm not done!", "open", "down" )
+    call her_main( "I'm not done!", "open", "down", tears="mascara" )
     
     m "Sorry, you carry on my dear!"
 
-    call her_main( "I think the boy may have seen me.", "soft", "concerned" ) 
-    call her_main( "Professor.... I'm beginning to have second thoughts about this cloak idea." , "soft", "concerned" )
+    call her_main( "I think the boy may have seen me.", "soft", "concerned", tears="mascara" ) 
+    call her_main( "Professor.... I'm beginning to have second thoughts about this cloak idea." , "soft", "concerned", tears="mascara" )
     
     m "The boy didn't see your face, that's what matters."
     m "You could've draped the cloak around your head and it would be enough."
     
-    call her_main( "Professor!", "shock", "wide_stare" )
+    call her_main( "Professor!", "shock", "wide_stare", tears="mascara" )
 
     m "Just trying to lighten the mood." 
     m "Here's an extra 5 points for a Job well done, miss Granger."
     g9 "35 points to Gryffindor!"
     
-    call her_main( "Thank you professor....", "grin", "base" ) 
+    call her_main( "Thank you professor....", "grin", "base", tears="mascara" ) 
     call her_walk ("desk", "door", 2)
-    call her_main( "\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "base", cheeks="blush" )
-    call her_main( "\"would they?\"", "base", "base", cheeks="blush" )
+    call her_main( "\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "base", cheeks="blush", tears="mascara" )
+    call her_main( "\"would they?\"", "base", "base", cheeks="blush", tears="mascara" )
     call her_chibi("leave")
     "The End."
     
@@ -199,6 +201,7 @@ label a_bad_time_to_disrobe:
     hide screen main_room
     hide screen hermione_main
     $ hermione_wear_top = True
+    $ hermione_breasts = hermione_breasts_temp
     $ daytime = temp_time
     jump enter_room_of_req
     

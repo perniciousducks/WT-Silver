@@ -24,7 +24,31 @@ image fireplace_fire: #Fireplace fire.
     pause.1
     repeat
 
-
+    
+###Glow effect###
+image glow_effect: #Candle fire.
+    "images/animation/glow_effect/glow_1.png"
+    pause.1
+    "images/animation/glow_effect/glow_2.png"
+    pause.1
+    "images/animation/glow_effect/glow_3.png"
+    pause.1
+    "images/animation/glow_effect/glow_4.png"
+    pause.2
+    "images/animation/glow_effect/glow_3.png"
+    pause.1
+    "images/animation/glow_effect/glow_2.png"
+    pause.1
+    "images/animation/glow_effect/glow_4.png"
+    pause.2
+    "images/animation/glow_effect/glow_3.png"
+    pause.1
+    "images/animation/glow_effect/glow_2.png"
+    pause.1
+    "images/animation/glow_effect/glow_1.png"
+    pause.1
+    repeat
+    
 ### Candle Fire ###
 image candle_fire_01: #Candle fire.
     "images/main_room/fire_01.png"

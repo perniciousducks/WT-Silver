@@ -33,6 +33,7 @@ screen genie_stands_f: #Genie stands. Facing left.
 screen genie: #Sitting behind desk.
     tag genie_chibi
     add "images/main_room/11_genie_00.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
+    zorder 1
 
 
 screen rum_screen: #Rummaging through the cumpboard.
@@ -185,7 +186,7 @@ screen genie_groping:
 
 
 
-label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic = "", flip=False):
+label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_ypos), pic = "", flip=False):
     hide screen genie_stands
     hide screen genie_stands_f
 
@@ -221,10 +222,14 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
             $ genie_chibi_xpos = 750
         elif xpos == "behind_desk":
             $ genie_chibi_xpos = 230
+        elif xpos.isdigit():
+            $ genie_chibi_xpos = int(xpos)
 
     if ypos != genie_chibi_ypos:
         if ypos == "base" or ypos == "default":
             $ genie_chibi_ypos = 190
+        elif ypos.isdigit():
+            $ genie_chibi_ypos = int(ypos)
 
 
     #Genie Chibi Actions.
@@ -345,7 +350,7 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
     elif pos1 == "door":
         $ walk_xpos = 750
     else:
-        $ walk_xpos = pos1
+        $ walk_xpos = int(pos1)
 
     if pos2 == "mid":
         $ walk_xpos2 = 500
@@ -357,7 +362,7 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
         $ walk_xpos2 = 750
         $ loiter = False
     else:
-        $ walk_xpos2 = pos2
+        $ walk_xpos2 = int(pos2)
 
     $ genie_chibi_ypos = 190
     $ genie_speed = speed #Speed of walking animation. (lower = faster)

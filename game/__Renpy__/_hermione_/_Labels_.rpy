@@ -483,7 +483,7 @@ label screams_of_rapings:
             with hpunch
             call her_head("{size=+7}You raped me!!!{/size}","scream","worriedCl",cheeks="blush",tears="messy") 
             g4 "By the great desert sands, would you keep it down about the rapes!?"
-            g4  "Someone may hear you!"
+            g4 "Someone may hear you!"
             call her_head("Good! I want them to hear!","scream","worriedCl",cheeks="blush",tears="messy") 
             m "Why would you want that? I already paid you!"
             call her_head("Oh... right...","angry","base",cheeks="blush",tears="mascara") 

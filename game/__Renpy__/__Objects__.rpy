@@ -1,4 +1,6 @@
 init python:
+    import math
+
     def notNull(object):
         if object == None or object == "":
             return False

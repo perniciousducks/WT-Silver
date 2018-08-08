@@ -282,8 +282,9 @@ screen hermione_chibi_sit_naked_B:
     tag hermione_chibi
     add "characters/hermione/chibis/sitting/sit_naked.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
     
-
-
+screen hermione_chibi_stand_no_shirt:
+    tag hermione_chibi
+    add "characters/hermione/chibis/dance/03_no_shirt_03.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
 
 label update_chibi_uniform:
 
@@ -440,7 +441,11 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
     #Hermione Chibi Dance. #Strips automatically when removing clothes.
     elif action == "dance":
         show screen hermione_chibi_dance
-
+    
+    #Stnad top less
+    elif action == "top_naked":
+        show screen hermione_chibi_stand_no_shirt
+    
     #Sit Naked
     elif action == "sit_naked":
         show screen hermione_chibi_sit_naked_A

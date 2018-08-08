@@ -76,6 +76,10 @@ show screen chair_right
 show screen fireplace
 show screen candlefire
 
+$ puzzle_random = renpy.random.randint(0, 2)
+if (1 < weather_gen < 4) and (puzzle_random == 0) and (found_puzzle_1 == False):
+    show screen fireplace_glow
+
 show screen genie
 if package_is_here:
     show screen package

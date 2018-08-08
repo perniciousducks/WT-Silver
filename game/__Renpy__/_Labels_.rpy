@@ -179,7 +179,7 @@ label nar(text="",action=""):
         with d3
 
     if text != "":
-        $ renpy.say(nar,text)
+        $ renpy.say(s,text)
 
     if action != "start": #Narration just started, blktone won't get hidden.
         hide screen blktone5

@@ -57,7 +57,7 @@ hide screen notes #A bunch of notes poping out with a "win" sound effect.
 hide screen phoenix_food
 hide screen done_reading
 hide screen done_reading_near_fire
-
+hide screen fireplace_glow
 hide screen bld1
 hide screen blktone
 hide screen blkfade

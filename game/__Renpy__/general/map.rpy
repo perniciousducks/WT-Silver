@@ -15,12 +15,53 @@ screen map_screen:
         hotspot (25+140, 374, 102, 66) clicked Jump("map_forest") #forest
         hotspot (302+140, 523, 112, 49) clicked Jump("map_lake") #lake
         hotspot (273+140, 459, 75, 8) clicked Jump("map_dorms") #dorms
+        hotspot (453, 300, 75, 45) clicked Jump("floor_7th") #7th floor
         #hotspot (656+140, 232, 106, 33) clicked Jump("inn_menu") #inn
         #hotspot (376+140, 84, 111, 57) clicked Jump("map_pitch") #pitch
         hotspot (307+140, 240, 59, 37) clicked Jump("shop_intro") #shop
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
         
 
+label floor_7th:
+    if unlocked_7th == False:
+        m"\"I don't have any reason to go to this floor...\""
+        jump return_office
+    else:
+        call blkfade 
+        hide screen main_room_menu
+        hide screen main_room
+        hide screen chair_right
+        hide screen fireplace
+        hide screen candlefire
+        hide screen desk
+        show screen floor_7th_screen
+        
+        
+        if unlocked_7th and first_time_7th:
+            call gen_chibi(xpos="door", ypos="base", flip=True)
+            call hide_blkfade
+            $ first_time_7th=False
+            m"So... he was walking around here."
+            call gen_chibi(action="hide")
+            call gen_walk(pos1="door", pos2="200")
+            m"I can definitely sense a strong magical energy in this place..."
+            call gen_walk(pos1="200", pos2="door")
+            m"Maybe if I...or I could..."
+            call gen_walk(pos1="door", pos2="100")
+            g11"I could be in my office jacking off right now!!"
+            show screen room_of_req_door
+            pause 1
+            call gen_chibi(xpos="100", ypos="base")
+            g9"Well... will you look at that"
+            hide screen room_of_req_door
+            show screen floor_7th_door
+            call screen floor_7th_menu
+        else:
+            call gen_chibi(xpos="100", ypos="base")
+            show screen floor_7th_door
+            call hide_blkfade
+            call screen floor_7th_menu
+            
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
         ">You venture up to the attic but find that the door is locked."
@@ -227,6 +268,7 @@ label return_office:
     hide screen chair_left
     hide screen desk
     call gen_chibi("hide") 
+    show screen main_room
     show screen genie
     hide screen blkback
     pause.5

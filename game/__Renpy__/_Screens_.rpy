@@ -69,7 +69,9 @@ screen G_Flowers_out:  #  Genie flowers vanish
     zorder 5
 
 
-
+screen fireplace_glow:
+    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.15
+    zorder 1
 
 screen candlefire:
     add "candle_fire_01" xpos 240 ypos 43
@@ -162,7 +164,7 @@ screen points: #House points screen.
 screen gift:
     zorder 6 #5
     add "interface/frames/"+str(interface_color)+"/reward_background.png"
-    add the_gift at Position(xpos=140, ypos=0)
+    add the_gift at Position(xalign=0.5, yalign=0.5)
     
     
 

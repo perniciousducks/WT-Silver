@@ -7,7 +7,8 @@ label __init_variables:
     #place save variables here 
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
-
+    if not hasattr(renpy.store,'first_time_7th'): #important!
+        $ first_time_7th = True
     if not hasattr(renpy.store,'pitch_open'): #important!
         $ pitch_open = True
     if not hasattr(renpy.store,'maid_working_unlocked'): #important!
@@ -156,6 +157,12 @@ label __init_variables:
         $ table_position_x = 20
 
     ###MISC
+    if not hasattr(renpy.store,'unlocked_7th'): #important!
+        $ unlocked_7th = False
+    
+    if not hasattr(renpy.store,'found_puzzle_1'): #important!
+        $ found_puzzle_1 = False
+        
     if not hasattr(renpy.store,'hermione_action_under'): #important!
         $ hermione_action_under = False
 

@@ -14,6 +14,12 @@ init -2:
 
     $ config.autoreload = False
     
+    transform fade_in(x, y, speed):
+        alpha 0
+        xpos x
+        ypos y
+        linear speed alpha 1
+    
     transform universal_chibi_walk(x,x2,speed,y): #Universal transform for all chibis
         xpos x
         ypos y

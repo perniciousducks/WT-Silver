@@ -44,7 +44,7 @@ screen snape_stands_holds_dick:
 
 
 
-label sna_chibi(action = "", xpos=snape_chibi_xpos, ypos=snape_chibi_ypos, pic = "", flip=False):
+label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_ypos), pic = "", flip=False):
     hide screen snape_01
     hide screen snape_01_f
 
@@ -64,13 +64,16 @@ label sna_chibi(action = "", xpos=snape_chibi_xpos, ypos=snape_chibi_ypos, pic =
             $ snape_chibi_xpos = 420
         elif xpos == "door":
             $ snape_chibi_xpos = 750
+        elif xpos.isdigit():
+            $ snape_chibi_xpos = int(xpos)
 
     if ypos != snape_chibi_ypos:
         if ypos == "base" or ypos == "default":
             $ snape_chibi_ypos = 250
-        if ypos == "on_desk":
+        elif ypos == "on_desk":
             $ snape_chibi_ypos = 250
-
+        elif ypos.isdigit():
+            $ snape_chibi_ypos = int(ypos)
 
     #Snape Chibi Actions.
             

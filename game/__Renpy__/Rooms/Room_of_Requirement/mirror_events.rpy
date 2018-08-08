@@ -1,5 +1,5 @@
 #Regex find h\s+"([ -}]+)"
-#Regex replace (call her_main\( "\1", "base", "defualt" \))
+#Regex replace (call her_main\( "\1", "base", "base" \))
 
     
     
@@ -18,36 +18,36 @@ label a_bad_time_to_disrobe:
     call her_chibi("stand", "desk")
     m "Miss Granger. Have you ever been excited about the thought of being caught?"
     
-    call her_main( "Caught?", "base", "defualt" ) 
-    call her_main( "In what way professor?", "base", "defualt" )
+    call her_main( "Caught?", "base", "base" ) 
+    call her_main( "In what way professor?", "base", "base" )
     
     m "Well, for todays favour I have a prop for you to use."
     
-    call her_main( "A prop sir?", "base", "defualt" )
+    call her_main( "A prop sir?", "base", "base" )
 
     m "Yes, I'd like you to put this invisibility cloak on and sneak into one of the girl restricted areas of the school."
     
-    call her_main( "Well, I guess that would be fine...", "base", "defualt" )
-    call her_main( "Seems a bit different than your usual requests.", "base", "defualt" )
+    call her_main( "Well, I guess that would be fine...", "base", "base" )
+    call her_main( "Seems a bit different than your usual requests.", "base", "base" )
 
     m "You'd be naked of course."
     
-    call her_main( "Naked!?! But what if someone saw me?", "base", "wide" )
+    call her_main( "Naked!?! But what if someone saw me?", "open", "wide" )
     
     m "You'll be wearing the cloak..."
     m "No one would even know you were there."
     
-    call her_main( "{size=7}35 points...{\size}", "annoyed", "shut_closed_disapproval" )
+    call her_main( "{size=7}35 points...{/size}", "annoyed", "angryCl" )
     
     m "25 points you said? sounds good to me." 
 
     call her_walk("desk","door", 2)
-    call her_main( "{size=7}You heard what I said...{\size}", "base", "defualt" ) 
+    call her_main( "{size=7}You heard what I said...{/size}", "annoyed", "closed" ) 
     call her_chibi("leave")
     
     g9 "\"Some of that bartering skill put to good use...\""  
 
-    show screen blkfade
+    show screen day_to_night
     with d3
     hide screen main_room
     hide screen genie
@@ -56,37 +56,37 @@ label a_bad_time_to_disrobe:
     $ daytime = False
     show screen main_room
     show screen genie
-    hide screen blkfade
+    hide screen day_to_night
     with d3
     
     g9 "I'll take that cloak back if you don't mind."
     
-    call her_main( "Certainly.", "base", "defualt" )
+    call her_main( "Certainly.", "base", "base" )
     
     m "Now, spill the beans."
     
-    call her_main( "I..I don't have any beans on me sir.", "base", "defualt" )
+    call her_main( "I..I don't have any beans on me sir.", "base", "base" )
     
     m "\"Is this girl for real?\""
 
     m "It's just an expression, tell me... did you complete your assignment?"
     
-    call her_main( "I did sir. I snuck into the boys dormitory using the cloak as you suggested.", "base", "defualt" )
+    call her_main( "I did sir. I snuck into the boys dormitory using the cloak as you suggested.", "soft", "happyCl" )
     
     m "Naked?"
     
-    call her_main( "Naked..ish", "base", "defualt" )
+    call her_main( "Naked..ish", "disgust", "baseL" )
     
     m "How can you be naked...ish?"
     
-    call her_main( "Well, I had my underwear on, I'd be cold otherwise", "base", "defualt" )
+    call her_main( "Well, I had my underwear on, I'd be cold otherwise", "base", "base" )
     
     m "Cold? You'd have the cloak on you..."
     m "What happened next then?"
     
-    call her_main( "Well, a few of the boys were in there.", "base", "defualt" )
-    call her_main( "They were playing wizards chess...", "base", "defualt" )
-    call her_main( "Pretty badly in fact.", "disgust", "open_right_closed" ) 
+    call her_main( "Well, a few of the boys were in there.", "base", "base" )
+    call her_main( "They were playing wizards chess...", "base", "base" )
+    call her_main( "Pretty badly in fact.", "disgust", "wink" ) 
 
     m "I'm sorry miss Granger but you're going to have to do better than this." 
     m "I expect better from you by now."
@@ -95,11 +95,11 @@ label a_bad_time_to_disrobe:
     
     m "No, I know you can do better."
     
-    call her_main( "Fine! I'll do better next time. Double points! I'll show you!", "angry", "angry_variation" )
+    call her_main( "Fine! I'll do better next time. Double points! I'll show you!", "angry", "angryL" )
     
     m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
 
-    call her_main( "Thank you professor... I'll remember that for next time", "grin", "defualt_left_squint" ) 
+    call her_main( "Thank you professor... I'll remember that for next time", "grin", "happy" ) 
 
     show screen blkfade
     with d3
@@ -111,69 +111,72 @@ label a_bad_time_to_disrobe:
     show screen main_room
     show screen genie
     hide screen quistion_pop_up
+    hide screen hermione_main
     hide screen blkfade
     with d3
-
+    
+    
     call her_chibi("stand", "desk", "base")
-    call her_main( "I see that you have the cloak ready for me sir.", "base", "looking_down" )
+    call her_main( "I see that you have the cloak ready for me sir.", "base", "baseL" )
     
     m "Indeed, I'm expecting better from you today girl."
     
-    call her_main( "I wont dissapoint you sir!", "grin", "defualt" )
+    call her_main( "I wont dissapoint you sir!", "grin", "base" )
     
     m "I'll be the judge of that..."
 
-    show screen blkfade
-    with d3
     hide screen main_room
     hide screen genie
+    hide screen hermione_main
+    show screen day_to_night
+    with d3
     n "Later that evening a distraught looking Hermione enters the office. "
     $ daytime = False
     show screen main_room
     show screen genie
-    hide screen blkfade
+    hide screen day_to_night
     with d3
 
     call her_chibi("top_naked", "desk", "base")
     #TODO: Remove top
-    call her_main( "...", "looking_down_upset", "defualt" )
+    call her_main( "...", "upset", "base" )
     
     m "What happened? Is there anything wrong?"
     
-    call her_main( "What does it look like?", "upset", "defualt" ) 
+    call her_main( "What does it look like?", "upset", "base" ) 
     
     m "Well, I know what it looks like..." 
     
-    call her_main( "I didn't want to dissapoint sir so I did what you asked...", "soft", "defualt" )
-    call her_main( "I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.", "base", "defualt" )
+    call her_main( "I didn't want to dissapoint sir so I did what you asked...", "soft", "base" )
+    call her_main( "I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.", "base", "base" )
 
     m "Well done. And then?"
     
-    call her_main( "I took the cloak and snuck into the boys changing room...", "base", "defualt" )
-    call her_main( "I stood next to the doorway so that they wouldn't bump into me.", "base", "defualt" )
+    call her_main( "I took the cloak and snuck into the boys changing room...", "base", "base" )
+    call her_main( "I stood next to the doorway so that they wouldn't bump into me.", "base", "base" )
     
     m "Great idea.. and you weren't noticed?" 
     
-    call her_main( "Well, at first I wasn't... This damn cloak is too small.", "angry", "defualt" )
-    call her_main( "I thought I would be short enough to fit under it...", "base", "default" ) 
-    call her_main( "I didn't notice that my feet were visible...", "base", "angry" )
+    call her_main( "Well, at first I wasn't... This damn cloak is too small.", "angry", "base" )
+    call her_main( "I thought I would be short enough to fit under it...", "base", "base" ) 
+    call her_main( "I didn't notice that my feet were visible...", "upset", "angry" )
     
     m "\"Well, that's a shame.\""
 
-    call her_main( "One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "hypnotized_worry" )
+    call her_main( "One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "shocked_raised" )
     
     g11 "And what?" 
     
-    call her_main( "And I slipped and my butt fell out!", "scream", "surprise" )
+    call her_main( "And I slipped and my butt fell out!", "scream", "surprised" )
     
-    g14 "30 POINTS TO...." 
+    g9 "{size=18}30 POINTS TO....{/size}" 
     
-    call her_main( "I'm not done!", "open", "looking_down" )
+    call her_main( "I'm not done!", "open", "down" )
     
     m "Sorry, you carry on my dear!"
 
-    call her_main( "I think the boy may have seen me.", "base", "defualt" ) 
-    call her_main( "Professor.... I'm beginning to have second thoughts about this cloak idea." , "base", "defualt" )
+    call her_main( "I think the boy may have seen me.", "soft", "concerned" ) 
+    call her_main( "Professor.... I'm beginning to have second thoughts about this cloak idea." , "soft", "concerned" )
     
     m "The boy didn't see your face, that's what matters."
     m "You could've draped the cloak around your head and it would be enough."
@@ -184,15 +187,17 @@ label a_bad_time_to_disrobe:
     m "Here's an extra 5 points for a Job well done, miss Granger."
     g9 "35 points to Gryffindor!"
     
-    call her_main( "Thank you professor....", "grin", "defualt" ) 
+    call her_main( "Thank you professor....", "grin", "base" ) 
     call her_walk ("desk", "door", 2)
-    call her_main( "\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "defualt", cheeks="blush" )
-    call her_main( "\"would they?\"", "base", "defualt", cheeks="blush" )
-
+    call her_main( "\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "base", cheeks="blush" )
+    call her_main( "\"would they?\"", "base", "base", cheeks="blush" )
+    call her_chibi("leave")
     "The End."
     
     hide screen genie
     hide screen main_room
+    hide screen hermione_main
+    $ daytime = temp_time
     jump enter_room_of_req
     
 label whose_points:

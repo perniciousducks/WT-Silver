@@ -33,8 +33,7 @@ label __init_variables:
                 authors = ["Johnny"],
                 categories= [],
                 ach_desc = "Finish private favour, \"Show them to me!\" at least once.",
-                content_characters = ["hermione"],
-                #unlock_check = lambda self : hg_pf_ShowThemToMe_OBJ.points > 0
+                content_characters = ["hermione"]
             )
     
     
@@ -56,26 +55,19 @@ init python:
         story_description = ""
         ach_desc = ""
         content_characters = []
-        # lambda is just a function that can be parsed around like a parameter simple said
-        # how to define a lambda 
-        # lambda 
-        # followed by the arguments split with a , since this lambda is inside a class it need self
-        # use : to start the manipulation of arguments
-        # manipulate the global or parameters here like "whoring > 12"
-        unlock_check = lambda self : True 
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
         
         def getMenuText(self):
-            ret_str = "\""+self.title+"\" by "
+            ret_str = "{size=12}\""+self.title+"\" by "
             for s in self.authors:
                 ret_str += s +", "
 
-            return ret_str[0:len(ret_str)-2]
+            return ret_str[0:len(ret_str)-2]+"{/size}"
        
         def getDescription(self):
-            returnV = "{size=12}"
+            returnV = "{size=10}"
             if self.unlocked:
                 returnV += "story description: " + self.story_description
             else:
@@ -122,4 +114,12 @@ init python:
                     unlocked = False
             self.unlocked = unlocked and self.unlock_check()
             return self.unlocked
+            
+        #Make a elif with the title and the cretevia to unlock
+        #And if you dont make any then it will all ways be true
+        def unlock_check(self):
+            if self.title == "A bad time to disrobe.":
+                return hg_pf_ShowThemToMe_OBJ.points > 0
+            else:
+                return True
             

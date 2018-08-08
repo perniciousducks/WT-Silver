@@ -112,66 +112,54 @@ screen event_menu:
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
             
-             
-    frame:
-        background #00000000
+        
+            
+    imagemap:
         xsize 638
         ysize 544
         xalign 0.5
         yalign 0.5
         
-        add "interface/room_of_req/mirror_event_menu.png"
-        
+        ground "interface/store/"+interface_color+"/items_panel.png"
+        hover "interface/store/"+interface_color+"/items_panel_hover.png"
+ 
         hbox:
-            xpos 11
+            xpos 5
             ypos 30
-            xsize 419
+            xsize 300
             ysize 41
-            text "The rekamnrop \n {size=12}Short stories written for and by the Witch Trainer community. {/size}" xalign 0.5 yalign 0.5 size 16 bold 0.2
+            text "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}" xalign 0.5 yalign 0.5 size 16 bold 0.2
         
-        
-        vbox:
-            xpos 12
-            ypos 86
-            xsize 598
-            ysize 448
-        
-            for i in range(0, event_shown):
-                if (currentpage*event_shown)+i < len(mr_evs_list):
-                    use mirror_item(mr_evs_list[(currentpage*event_shown)+i])
-                else:
-                    add "interface/room_of_req/mirror_event_item.png"
+   
+
+        for i in range(0, event_shown):
+            if (currentpage*event_shown)+i < len(mr_evs_list):
+                hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
+                use mirror_item(mr_evs_list[(currentpage*event_shown)+i], 77+90*i)
+
             
-screen mirror_item(mirror_story):
+screen mirror_item(mirror_story, ypos=0):
     frame:
         background #00000000
-        xpos -6
-        ypos -7
-        xsize 601
-        ysize 90
-        
-        if mirror_story.unlocked:
-            imagebutton:
-                idle "interface/room_of_req/mirror_event_item.png"
-                hover "interface/room_of_req/mirror_event_item_hover.png"
-                action Return(mirror_story.start_label)
-        else:
-            add "interface/room_of_req/mirror_event_item.png"
-        
+        xpos 12
+        ypos ypos
+        xsize 535
+        ysize 100
+       
         vbox:
             xpos 0
             ypos 1
             xsize 82
             ysize 81
             if mirror_story.unlocked == False:
-                add "interface/room_of_req/locked.png" xalign 0.5 yalign 0.5 zoom 0.8
+                add "interface/room_of_req/locked.png" xalign 0.5 yalign 0.5 zoom 0.6
             else:
-                add "interface/room_of_req/unlocked.png" xalign 0.5 yalign 0.5 zoom 0.8
+                add "interface/room_of_req/unlocked.png" xalign 0.5 yalign 0.5 zoom 0.6
         
         vbox:
             xpos 94
             ypos 3
-            xsize 500
+            xsize 440
             ysize 22
             
             text mirror_story.getMenuText() yalign 0.5
@@ -179,18 +167,13 @@ screen mirror_item(mirror_story):
         vbox:
             xpos 94
             ypos 30
-            xsize 500
+            xsize 430
             ysize 55
             
             text mirror_story.getDescription()
-        
-        vbox:
-            xpos 94
-            ypos 30
-            xsize 500
-            ysize 55
+
             
-            text mirror_story.getCharcters() xalign 1.0 yalign 1.0
+        text mirror_story.getCharcters() xalign 1.0 yalign 1.0
             
             
 screen candle_light_1:
@@ -203,18 +186,20 @@ screen room_of_req_door:
     add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
     add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(350, 255, 1) zoom 0.3
     add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(660, 255, 1) zoom 0.3
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" at fade_in(200, 105, 1)
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" at fade_in(800, 105, 1)
     
     zorder -1
     
 screen floor_7th_door:
     add "fireplace_fire" xpos 265 ypos 60
     add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
-    
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
     add "images/rooms/room_of_requirement/front_door.png" xpos 420 ypos 105
-    
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
     add "fireplace_fire" xpos 575 ypos 60
     add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
-    
+      
     zorder -1
 
 screen floor_7th_screen:
@@ -227,7 +212,7 @@ screen floor_7th_screen:
     #add "candle_fire_01" xpos 300 ypos 95
     #add "images/main_room/candle.png" xpos 600 ypos 95
     #add "candle_fire_02" xpos 600 ypos 95
-    add "images/main_room/candle.png" xpos 900 ypos 95
+    add "images/main_room/candleM.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
     
     #TODO: Add some light

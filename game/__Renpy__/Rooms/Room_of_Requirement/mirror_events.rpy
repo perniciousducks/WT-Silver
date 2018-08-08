@@ -138,6 +138,7 @@ label a_bad_time_to_disrobe:
     with d3
 
     call her_chibi("top_naked", "desk", "base")
+    $ hermione_wear_top = False
     #TODO: Remove top
     call her_main( "...", "upset", "base" )
     
@@ -197,6 +198,7 @@ label a_bad_time_to_disrobe:
     hide screen genie
     hide screen main_room
     hide screen hermione_main
+    $ hermione_wear_top = True
     $ daytime = temp_time
     jump enter_room_of_req
     

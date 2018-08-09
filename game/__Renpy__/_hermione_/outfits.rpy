@@ -5,23 +5,29 @@ label __init_variables:
         $ hg_maid_OBJ = hermione_outfit()
     $ hg_maid_OBJ.name = "Maid"
     $ hg_maid_OBJ.cost = 250
+    $ hg_maid_OBJ.unlocked = False
+    $ hg_maid_OBJ.unlockable = False
+    $ hg_maid_OBJ.type = "outfit"
+    $ hg_maid_OBJ.items = ["outfit","hair","hat","gloves","stockings"]
     $ hg_maid_OBJ.wait_time = 2
     $ hg_maid_OBJ.image = "hg_maid.png"
-    $ hg_maid_OBJ.outfit_layers = []
-    $ hg_maid_OBJ.outfit_layers.extend(("maid_stockings.png","maid_skirt.png","maid_top.png","maid_gloves.png"))
+    $ hg_maid_OBJ.outfit_layers = ["maid_stockings.png","maid_skirt.png","maid_top.png","maid_gloves.png"]
     $ hg_maid_OBJ.breast_layer = "breasts_normal_pressed"
-    $ hg_maid_OBJ.top_layers = []
-    $ hg_maid_OBJ.top_layers.append("maid_hat.png")
+    $ hg_maid_OBJ.hair_layer = "B"
+    $ hg_maid_OBJ.top_layers = "maid_hat"
     $ hg_maid_OBJ.description = "Temp A"
 
     if not hasattr(renpy.store,'hg_heartDancer_OBJ'):
         $ hg_heartDancer_OBJ = hermione_outfit()
     $ hg_heartDancer_OBJ.name = "Heart Dancer"
-    $ hg_heartDancer_OBJ.cost = 300
-    $ hg_heartDancer_OBJ.wait_time = 4
+    $ hg_heartDancer_OBJ.cost = 80
+    $ hg_heartDancer_OBJ.unlocked = False
+    $ hg_heartDancer_OBJ.unlockable = False
+    $ hg_heartDancer_OBJ.type = "dress"
+    $ hg_heartDancer_OBJ.items = ["outfit"]
+    $ hg_heartDancer_OBJ.wait_time = 1
     $ hg_heartDancer_OBJ.image = "hg_heart.png"
-    $ hg_heartDancer_OBJ.outfit_layers = []
-    $ hg_heartDancer_OBJ.outfit_layers.extend(("heart_legs.png","heart_top.png","heart_collar.png"))
+    $ hg_heartDancer_OBJ.outfit_layers = ["heart_legs.png","heart_top.png","heart_collar.png"]
     $ hg_heartDancer_OBJ.breast_layer = "breasts_normal"
     $ hg_heartDancer_OBJ.description = "Temp B"
 
@@ -29,10 +35,13 @@ label __init_variables:
         $ hg_pirate_OBJ = hermione_outfit()
     $ hg_pirate_OBJ.name = "Pirate"
     $ hg_pirate_OBJ.cost = 75
-    $ hg_pirate_OBJ.wait_time = 2
+    $ hg_pirate_OBJ.unlocked = False
+    $ hg_pirate_OBJ.unlockable = False
+    $ hg_pirate_OBJ.type = "outfit"
+    $ hg_pirate_OBJ.items = ["outfit"]
+    $ hg_pirate_OBJ.wait_time = 1
     $ hg_pirate_OBJ.image = "hg_pirate.png"
-    $ hg_pirate_OBJ.outfit_layers = []
-    $ hg_pirate_OBJ.outfit_layers.extend(("pirate_legs.png","pirate_pants.png","pirate_top.png"))
+    $ hg_pirate_OBJ.outfit_layers = ["pirate_legs.png","pirate_pants.png","pirate_top.png"]
     $ hg_pirate_OBJ.breast_layer = "breasts_nipfix"
     $ hg_pirate_OBJ.description = "Temp C"
 
@@ -40,22 +49,28 @@ label __init_variables:
         $ hg_powerGirl_OBJ = hermione_outfit()
     $ hg_powerGirl_OBJ.name = "Power Girl"
     $ hg_powerGirl_OBJ.cost = 350
+    $ hg_powerGirl_OBJ.unlocked = False
+    $ hg_powerGirl_OBJ.unlockable = False
+    $ hg_powerGirl_OBJ.type = "costume"
+    $ hg_powerGirl_OBJ.items = ["outfit"]
     $ hg_powerGirl_OBJ.wait_time = 3
     $ hg_powerGirl_OBJ.image = "hg_power.png"
-    $ hg_powerGirl_OBJ.outfit_layers = []
-    $ hg_powerGirl_OBJ.outfit_layers.extend(("power_cape.png","power_top.png","power_gloves.png","power_belt.png"))
+    $ hg_powerGirl_OBJ.outfit_layers = ["power_cape.png","power_top.png","power_cape_top.png","power_gloves.png","power_belt.png"]
     $ hg_powerGirl_OBJ.breast_layer = "breasts_normal"
-    $ hg_powerGirl_OBJ.hair_layer = "power_hair"
+    $ hg_powerGirl_OBJ.hair_layer = "P"
     $ hg_powerGirl_OBJ.description = "Temp D"
 
     if not hasattr(renpy.store,'hg_msMarvel_OBJ'):
         $ hg_msMarvel_OBJ = hermione_outfit()
     $ hg_msMarvel_OBJ.name = "Mrs Marvel"
     $ hg_msMarvel_OBJ.cost = 250
-    $ hg_msMarvel_OBJ.wait_time = 5
+    $ hg_msMarvel_OBJ.unlocked = False
+    $ hg_msMarvel_OBJ.unlockable = False
+    $ hg_msMarvel_OBJ.type = "costume"
+    $ hg_msMarvel_OBJ.items = ["outfit"]
+    $ hg_msMarvel_OBJ.wait_time = 2
     $ hg_msMarvel_OBJ.image = "hg_marvel.png"
-    $ hg_msMarvel_OBJ.outfit_layers = []
-    $ hg_msMarvel_OBJ.outfit_layers.extend(("marvel_pants.png","marvel_top.png","marvel_sash.png","marvel_gloves.png"))
+    $ hg_msMarvel_OBJ.outfit_layers = ["marvel_pants.png","marvel_top.png","marvel_sash.png","marvel_gloves.png"]
     $ hg_msMarvel_OBJ.breast_layer = "breasts_normal"
     $ hg_msMarvel_OBJ.description = "Temp E"
 
@@ -63,46 +78,59 @@ label __init_variables:
         $ hg_harleyQuinn_OBJ = hermione_outfit()
     $ hg_harleyQuinn_OBJ.name = "Harley Quinn"
     $ hg_harleyQuinn_OBJ.cost = 300
-    $ hg_harleyQuinn_OBJ.wait_time = 4
+    $ hg_harleyQuinn_OBJ.unlocked = False
+    $ hg_harleyQuinn_OBJ.unlockable = False
+    $ hg_harleyQuinn_OBJ.type = "costume"
+    $ hg_harleyQuinn_OBJ.items = ["outfit"]
+    $ hg_harleyQuinn_OBJ.wait_time = 3
     $ hg_harleyQuinn_OBJ.image = "hg_harley.png"
-    $ hg_harleyQuinn_OBJ.outfit_layers = []
-    $ hg_harleyQuinn_OBJ.outfit_layers.extend(("harley_pants.png","harley_top.png","harley_gloves.png","harley_collar.png"))
+    $ hg_harleyQuinn_OBJ.outfit_layers = ["harley_pants.png","harley_top.png","harley_gloves.png","harley_collar.png"]
     $ hg_harleyQuinn_OBJ.breast_layer = "breasts_normal"
-    $ hg_harleyQuinn_OBJ.hair_layer = "harley_hair"
+    $ hg_harleyQuinn_OBJ.hair_layer = "H"
     $ hg_harleyQuinn_OBJ.description = "Temp F"
 
     if not hasattr(renpy.store,'hg_ballDress_OBJ'):
         $ hg_ballDress_OBJ = hermione_outfit()
     $ hg_ballDress_OBJ.name = "Ball Dress"
     $ hg_ballDress_OBJ.cost = 1500
+    $ hg_ballDress_OBJ.unlocked = False
+    $ hg_ballDress_OBJ.unlockable = False
+    $ hg_ballDress_OBJ.type = "dress"
+    $ hg_ballDress_OBJ.items = ["outfit","hair","neckless","tiara"]
     $ hg_ballDress_OBJ.wait_time = 7
     $ hg_ballDress_OBJ.image = "hg_ball_dress.png"
-    $ hg_ballDress_OBJ.outfit_layers = []
-    $ hg_ballDress_OBJ.outfit_layers.extend(("ball_dress_skirt.png","ball_dress_top.png"))
+    $ hg_ballDress_OBJ.outfit_layers = ["ball_dress_skirt.png","ball_dress_top.png"]
     $ hg_ballDress_OBJ.breast_layer = "breasts_nipfix"
+    $ hg_ballDress_OBJ.hair_layer = "B"
+    $ hg_ballDress_OBJ.top_layers = "tiara"
     $ hg_ballDress_OBJ.description = "Temp G"
 
     if not hasattr(renpy.store,'hg_christmas_OBJ'):
         $ hg_christmas_OBJ = hermione_outfit()
     $ hg_christmas_OBJ.name = "Christmas Girl"
     $ hg_christmas_OBJ.cost = 50
+    $ hg_christmas_OBJ.unlocked = False
+    $ hg_christmas_OBJ.unlockable = False
+    $ hg_christmas_OBJ.type = "outfit"
+    $ hg_christmas_OBJ.items = ["outfit"]
     $ hg_christmas_OBJ.wait_time = 2
     $ hg_christmas_OBJ.image = "hg_christmas.png"
-    $ hg_christmas_OBJ.outfit_layers = []
-    $ hg_christmas_OBJ.outfit_layers.extend(("christmas_pants.png","christmas_top.png","christmas_gloves.png","christmas_collar.png"))
-    $ hg_christmas_OBJ.top_layers = []
-    $ hg_christmas_OBJ.top_layers.append("christmas_antlers.png")
+    $ hg_christmas_OBJ.outfit_layers = ["christmas_pants.png","christmas_top.png","christmas_gloves.png","christmas_collar.png"]
     $ hg_christmas_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_christmas_OBJ.top_layers = "antlers"
     $ hg_christmas_OBJ.description = "Temp H"
 
     if not hasattr(renpy.store,'hg_laraCroft_OBJ'):
         $ hg_laraCroft_OBJ = hermione_outfit()
     $ hg_laraCroft_OBJ.name = "Lara Croft"
     $ hg_laraCroft_OBJ.cost = 270
+    $ hg_laraCroft_OBJ.unlocked = False
+    $ hg_laraCroft_OBJ.unlockable = False
+    $ hg_laraCroft_OBJ.type = "costume"
+    $ hg_laraCroft_OBJ.items = ["outfit","gloves"]
     $ hg_laraCroft_OBJ.wait_time = 2
     $ hg_laraCroft_OBJ.image = "hg_lara.png"
-    $ hg_laraCroft_OBJ.outfit_layers = []
-    $ hg_laraCroft_OBJ.outfit_layers.extend(("lara_pants.png","lara_top.png","lara_gloves.png"))
+    $ hg_laraCroft_OBJ.outfit_layers = ["lara_pants.png","lara_top.png","lara_gloves.png"]
     $ hg_laraCroft_OBJ.breast_layer = "breasts_normal"
     $ hg_laraCroft_OBJ.description = "Temp I"
 
@@ -110,22 +138,28 @@ label __init_variables:
         $ hg_tifa_OBJ = hermione_outfit()
     $ hg_tifa_OBJ.name = "Tifa"
     $ hg_tifa_OBJ.cost = 220
+    $ hg_tifa_OBJ.unlocked = False
+    $ hg_tifa_OBJ.unlockable = False
+    $ hg_tifa_OBJ.type = "costume"
+    $ hg_tifa_OBJ.items = ["outfit"]
     $ hg_tifa_OBJ.wait_time = 2
     $ hg_tifa_OBJ.image = "hg_tifa.png"
-    $ hg_tifa_OBJ.outfit_layers = []
-    $ hg_tifa_OBJ.outfit_layers.extend(("tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"))
+    $ hg_tifa_OBJ.outfit_layers = ["tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"]
     $ hg_tifa_OBJ.breast_layer = "breasts_normal"
-    $ hg_tifa_OBJ.hair_layer = "tifa_hair"
+    $ hg_tifa_OBJ.hair_layer = "T"
     $ hg_tifa_OBJ.description = "Temp J"
 
     if not hasattr(renpy.store,'hg_present_OBJ'):
         $ hg_present_OBJ = hermione_outfit()
     $ hg_present_OBJ.name = "Present"
     $ hg_present_OBJ.cost = 35
+    $ hg_present_OBJ.unlocked = False
+    $ hg_present_OBJ.unlockable = False
+    $ hg_present_OBJ.type = "outfit"
+    $ hg_present_OBJ.items = ["outfit"]
     $ hg_present_OBJ.wait_time = 1
     $ hg_present_OBJ.image = "hg_present.png"
-    $ hg_present_OBJ.outfit_layers = []
-    $ hg_present_OBJ.outfit_layers.extend(("present_pant.png","present_top.png"))
+    $ hg_present_OBJ.outfit_layers = ["present_pant.png","present_top.png"]
     $ hg_present_OBJ.breast_layer = "breasts_nipfix"
     $ hg_present_OBJ.description = "Temp K"
 
@@ -133,10 +167,13 @@ label __init_variables:
         $ hg_japan_OBJ = hermione_outfit()
     $ hg_japan_OBJ.name = "Japanese Schoolgirl"
     $ hg_japan_OBJ.cost = 125
+    $ hg_japan_OBJ.unlocked = False
+    $ hg_japan_OBJ.unlockable = False
+    $ hg_japan_OBJ.type = "outfit"
+    $ hg_japan_OBJ.items = ["outfit"]
     $ hg_japan_OBJ.wait_time = 2
     $ hg_japan_OBJ.image = "hg_japan.png"
-    $ hg_japan_OBJ.outfit_layers = []
-    $ hg_japan_OBJ.outfit_layers.extend(("japan_pant.png","japan_top.png"))
+    $ hg_japan_OBJ.outfit_layers = ["japan_pant.png","japan_top.png"]
     $ hg_japan_OBJ.breast_layer = "breasts_normal_pressed"
     $ hg_japan_OBJ.description = "Temp L"
 
@@ -144,32 +181,43 @@ label __init_variables:
         $ hg_witch_OBJ = hermione_outfit()
     $ hg_witch_OBJ.name = "Witch outfit"
     $ hg_witch_OBJ.cost = 250
+    $ hg_witch_OBJ.unlocked = False
+    $ hg_witch_OBJ.unlockable = False
+    $ hg_witch_OBJ.type = "outfit"
+    $ hg_witch_OBJ.items = ["outfit","hat"]
     $ hg_witch_OBJ.wait_time = 3
     $ hg_witch_OBJ.image = "hg_witch.png"
-    $ hg_witch_OBJ.outfit_layers = []
-    $ hg_witch_OBJ.outfit_layers.extend(("witch_stockings.png","witch_top.png","witch_cloak.png","witch_hat.png"))
+    $ hg_witch_OBJ.outfit_layers = ["witch_stockings.png","witch_top.png","witch_cloak.png"]
     $ hg_witch_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_witch_OBJ.top_layers = "witch_hat"
     $ hg_witch_OBJ.description = "Temp M"
 
     if not hasattr(renpy.store,'hg_bio_OBJ'):
         $ hg_bio_OBJ = hermione_outfit()
     $ hg_bio_OBJ.name = "Bioshock outfit"
     $ hg_bio_OBJ.cost = 400
+    $ hg_bio_OBJ.unlocked = False
+    $ hg_bio_OBJ.unlockable = False
+    $ hg_bio_OBJ.type = "outfit"
+    $ hg_bio_OBJ.items = ["outfit","hair","choker"]
     $ hg_bio_OBJ.wait_time = 3
     $ hg_bio_OBJ.image = "hg_bio.png"
-    $ hg_bio_OBJ.outfit_layers = []
-    $ hg_bio_OBJ.outfit_layers.extend(("bio_skirt.png","bio_chocker.png","bio_corset.png","bio_jacket.png"))
+    $ hg_bio_OBJ.outfit_layers = ["bio_skirt.png","bio_chocker.png","bio_corset.png","bio_jacket.png"]
     $ hg_bio_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_bio_OBJ.hair_layer = "E"
     $ hg_bio_OBJ.description = "Temp N"
 
     if not hasattr(renpy.store,'hg_yenn_OBJ'):
         $ hg_yenn_OBJ = hermione_outfit()
     $ hg_yenn_OBJ.name = "Yennefer's costume"
     $ hg_yenn_OBJ.cost = 500
-    $ hg_yenn_OBJ.wait_time = 4
+    $ hg_yenn_OBJ.unlocked = False
+    $ hg_yenn_OBJ.unlockable = False
+    $ hg_yenn_OBJ.type = "outfit"
+    $ hg_yenn_OBJ.items = ["outfit","scarf","choker","stockings"]
+    $ hg_yenn_OBJ.wait_time = 3
     $ hg_yenn_OBJ.image = "hg_yenn.png"
-    $ hg_yenn_OBJ.outfit_layers = []
-    $ hg_yenn_OBJ.outfit_layers.extend(("yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"))
+    $ hg_yenn_OBJ.outfit_layers = ["yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"]
     $ hg_yenn_OBJ.breast_layer = "breasts_normal"
     $ hg_yenn_OBJ.description = "Temp O"
 
@@ -190,49 +238,64 @@ label __init_variables:
     $ hermione_outfits_list.append(hg_bio_OBJ)
     $ hermione_outfits_list.append(hg_yenn_OBJ)
 
-    if not hasattr(renpy.store,'hermoine_outfit_GLBL'):
+
+
+    # Astoria
+    if not hasattr(renpy.store,'ag_ball_dress_OBJ'):
+        $ ag_ball_dress_OBJ = hermione_outfit()
+    $ ag_ball_dress_OBJ.name = "Ball Dress"
+    $ ag_ball_dress_OBJ.cost = 300
+    $ ag_ball_dress_OBJ.type = "dress"
+    $ ag_ball_dress_OBJ.items = ["outfit"]
+    $ ag_ball_dress_OBJ.wait_time = 4
+    $ ag_ball_dress_OBJ.image = "ag_ball_dress.png"
+    $ ag_ball_dress_OBJ.outfit_layers = ["ball_dress.png"]
+    $ ag_ball_dress_OBJ.description = "> A cute dress for your favourite princess!"
+
+    if not hasattr(renpy.store,'ag_lazy_OBJ'):
+        $ ag_lazy_OBJ = hermione_outfit()
+    $ ag_lazy_OBJ.name = "Lazy Town Outfit"
+    $ ag_lazy_OBJ.cost = 120
+    $ ag_lazy_OBJ.type = "costume"
+    $ ag_lazy_OBJ.items = ["outfit","hair","bracelet"]
+    $ ag_lazy_OBJ.wait_time = 1
+    $ ag_lazy_OBJ.image = "ag_lazy.png"
+    $ ag_lazy_OBJ.outfit_layers = ["lazy_tights.png","lazy_dress.png","lazy_bracelet.png"]
+    $ ag_lazy_OBJ.hair_layer = "L"
+    $ ag_lazy_OBJ.description = "Lazy Town Outfit"
+
+    if not hasattr(renpy.store,'ag_lazy_short_OBJ'):
+        $ ag_lazy_short_OBJ = hermione_outfit()
+    $ ag_lazy_short_OBJ.name = "Short Lazy Town Outfit"
+    $ ag_lazy_short_OBJ.unlockable = True
+    $ ag_lazy_short_OBJ.cost = 120
+    $ ag_lazy_short_OBJ.type = "costume"
+    $ ag_lazy_short_OBJ.items = ["outfit","hair","bracelet"]
+    $ ag_lazy_short_OBJ.wait_time = 1
+    $ ag_lazy_short_OBJ.image = "ag_lazy_short.png"
+    $ ag_lazy_short_OBJ.outfit_layers = ["lazy_tights.png","lazy_dress_short.png","lazy_bracelet.png"]
+    $ ag_lazy_short_OBJ.hair_layer = "L"
+    $ ag_lazy_short_OBJ.description = "Lazy Town Outfit"
+
+    $ astoria_outfits_list = []
+    $ astoria_outfits_list.append(ag_ball_dress_OBJ)
+    $ astoria_outfits_list.append(ag_lazy_OBJ)
+    $ astoria_outfits_list.append(ag_lazy_short_OBJ)
+
+
+    if not hasattr(renpy.store,'astoria_outfit_GLBL'):
         $ hermoine_outfit_GLBL = None
+        $ astoria_outfit_GLBL = None
+        $ susan_outfit_GLBL = None
+        $ cho_outfit_GLBL = None
+        $ luna_outfit_GLBL = None
+
 
     return
 
 
 
 
-## Outfit Blocks
-label set_hermione_outfit(outfit):
-    show screen blkfade
-    hide screen hermione_main
-    with d3
-    call h_outfit_OBJ(outfit)
-    pause .5
-    show screen hermione_main
-    hide screen blkfade
-    with d5
-    return
-
-label h_outfit_OBJ(outfit):
-    if outfit == None:
-        $ h_request_wear_outfit = False
-        $ hermione_costume = False
-        call update_her_uniform
-        call h_update_hair
-    else:
-        $ hermione_costume = True
-
-        $ h_request_wear_top = True
-        $ hermione_wear_top = True
-
-        $ hermoine_outfit_GLBL = outfit
-
-        #if hermione_use_action and hermione_action in hermoine_outfit_GLBL.actions:
-        #    pass
-        #else:
-        #    call h_action("None")
-
-        call update_her_uniform
-        call h_update_hair
-
-    return
 
 
 label set_defined_menu_vars:
@@ -261,10 +324,12 @@ init python:
 
     class hermione_outfit(object):
         name = ""
-        purchased = False
+        purchased = False #Not in use anymore! Keep it for crashfixes for update 1.4! # Todo remove in 1.5 when redoing the class!
         unlockable = False
         unlocked = False
         cost = 0
+        type = "outfit"
+        items = ["outfit"]
         wait_time = 0 #the ammount of time to wait until compleded from clothes store
         top_layers = []
         outfit_layers = []
@@ -278,22 +343,21 @@ init python:
 
         def getMenuText(self):
             return "-"+self.name+"-"
-        def getFullPath(self, passed_list):
-            list = []
-            for i in passed_list:
-                list.append("characters/hermione/clothes/custom/"+i)
-            return list
         def getOutfitLayers(self):
-            return self.getFullPath(self.outfit_layers)
+            return self.outfit_layers
+        def getHairLayers(self):
+            return self.hair_layer
         def getTopLayers(self):
-            return self.getFullPath(self.top_layers)
+            return self.top_layers
         def getActionImage(self, action):
             return self.action_images[self.actions.index(action)]
 
         def getStoreName(self):
             return self.name
+        def getImage(self):
+            return self.image
         def getStoreImage(self):
-            return "interface/store/icons/outfits/"+self.image
+            return "interface/icons/outfits/"+self.image
         def getStoreCost(self):
             return "Cost: "+str(self.cost)+" gold"
         def getStoreWaitTime(self):
@@ -301,5 +365,7 @@ init python:
         def getStoreDescription(self):
             return self.description
 
+        def getType(self):
+            return self.type
         def getStoreItems(self):
-            return ["Outfit"]
+            return self.items

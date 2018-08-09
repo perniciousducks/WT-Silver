@@ -4,7 +4,7 @@
 
 screen map_screen:
     zorder hermione_main_zorder-1
-    
+
     imagemap:
         ground "interface/map/map_ground.png"
         idle "interface/map/map_idle.png"
@@ -20,7 +20,7 @@ screen map_screen:
         #hotspot (376+140, 84, 111, 57) clicked Jump("map_pitch") #pitch
         hotspot (307+140, 240, 59, 37) clicked Jump("shop_intro") #shop
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
-        
+
 
 label floor_7th:
     if unlocked_7th == False:
@@ -92,18 +92,18 @@ label map_forest: #Label controlling what happens when you go to the forest
         jump day_main_menu
     else:
         pass
-        
-    call outskirts_of_hogwarts 
-    
+
+    call outskirts_of_hogwarts
+
     m "Lets see what I can find out here..."
-        
+
     menu:
         "-Search the area-":
             $ ran = renpy.random.random()
             if ran < 0.3:
                 ">You search around the forest and manage to find an odd looking herb."
                 m "This must be wormwood."
-                menu: 
+                menu:
                     "-Take the wormwood-":
                         ">You gain 1 wormwood."
                         $ potion_inv.add("ing_wormwood")
@@ -114,7 +114,7 @@ label map_forest: #Label controlling what happens when you go to the forest
             elif ran < 0.6:
                 ">You search around the forest and manage to find an odd looking herb."
                 m "This must be Knotgrass."
-                menu: 
+                menu:
                     "-Take the Knotgrass-":
                         ">You gain 1 Knotgrass."
                         $ potion_inv.add("ing_knotgrass")
@@ -125,24 +125,24 @@ label map_forest: #Label controlling what happens when you go to the forest
             else:
                 ">You search around the forest but find nothing of interest."
                 jump return_office
-   
+
 label map_lake: #Label controlling what happens when you go to the lake
     if daytime:
         m "I really shouldn't be leaving the castle during the day. It's too risky..."
         jump day_main_menu
     else:
         pass
-    call outskirts_of_hogwarts 
-    
-    m "Lets see what I can find out here..." 
-    
+    call outskirts_of_hogwarts
+
+    m "Lets see what I can find out here..."
+
     menu:
         "-Search the area-":
             $ ran = renpy.random.random()
             if ran < 0.3:
                 ">You search around the lake and manage to find an slender, green vine."
                 m "This must be Niffler's fancy."
-                menu: 
+                menu:
                     "-Take the Niffler's fancy-":
                         ">You gain 1 Niffler's fancy."
                         $ potion_inv.add("ing_niffler_fancy")
@@ -153,7 +153,7 @@ label map_lake: #Label controlling what happens when you go to the lake
             elif ran < 0.6:
                 ">You search around the lake and manage to find an exposed root that looks similar to ginger."
                 m "This must be Root of Aconite."
-                menu: 
+                menu:
                     "-Take the Root of Aconite-":
                         ">You gain 1 Root of Aconite."
                         $ potion_inv.add("ing_aconite_root")
@@ -163,7 +163,7 @@ label map_lake: #Label controlling what happens when you go to the lake
                 jump return_office
             else:
                 ">You search around the lake but find nothing of interest."
-                jump return_office  
+                jump return_office
 
 label map_dorms: #Label controlling what happens when you go to the dorms
     menu:
@@ -172,7 +172,7 @@ label map_dorms: #Label controlling what happens when you go to the dorms
             if ran < 0.3:
                 ">You search around the dorms and manage to find a clump for bright orange fur."
                 m "This must belong to some sort of animal."
-                menu: 
+                menu:
                     "-Take the Fur-":
                         ">You gain 1 Cat Fur."
                         $ potion_inv.add("ing_cat_hair")
@@ -183,7 +183,7 @@ label map_dorms: #Label controlling what happens when you go to the dorms
             elif ran < 0.6:
                 ">You search around the dorms and manage to find an comb with some hair in it."
                 m "This must be someones hair."
-                menu: 
+                menu:
                     "-Take the hair-":
                         ">You gain 1 Luna's Hair."
                         $ potion_inv.add("ing_luna_hair")
@@ -193,8 +193,8 @@ label map_dorms: #Label controlling what happens when you go to the dorms
                 jump return_office
             else:
                 ">You search around the dorms but find nothing of interest."
-                jump return_office         
-            
+                jump return_office
+
 label map_pitch: #Label controlling what happens when you go to the quidditch pitch
     if pitch_open:
         hoo "Hello Professor Dumbledore, nice to see you out of your office today."
@@ -227,42 +227,43 @@ label map_pitch: #Label controlling what happens when you go to the quidditch pi
         ">You look around the open field but can't see any students or teachers"
         m "Mustn't be a practice day."
         jump return_office
-            
+
 label outskirts_of_hogwarts:
-    call blkfade 
+    call blkfade
     hide screen genie
     show screen chair_left
     show screen desk
-    call gen_chibi("stand","desk","base") 
-    call hide_blkfade 
-        
-    call gen_walk("desk","leave",3) 
-    call blkfade 
-        
+    call gen_chibi("stand","desk","base")
+    call hide_blkfade
+
+    call gen_walk("desk","leave",3)
+    call blkfade
+
     stop music fadeout 1.0
-    
+
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
-    
+
     show screen blkback # Hide room
 
     $ end_u_1_pic =  "images/yule_ball/171.png"
     show screen end_u_1
     pause.3
-    call hide_blkfade 
+    call hide_blkfade
     pause.8
     $ renpy.play('sounds/steps_grass.mp3') # SOUNDS OF STEPS IN THE GRASS.
     $ end_u_3_pic =  "images/yule_ball/172.png"
     show screen end_u_3
-    with d7 
-    
+    with d7
+
     return
-    
+
+
 label return_office:
-    call blkfade 
+    call blkfade
     #">You return to your office."
-    
+
     hide screen end_u_1
     hide screen end_u_3
     hide screen chair_left
@@ -272,8 +273,8 @@ label return_office:
     show screen genie
     hide screen blkback
     pause.5
-    call hide_blkfade 
-    
+    call hide_blkfade
+
     if daytime:
         jump day_main_menu
     else:

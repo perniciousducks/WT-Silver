@@ -282,11 +282,10 @@ label pickup_outfit:
 
     if outfit_order_placed: # OUTFIT
         if outfit_order in hermione_outfits_list:
-            $ outfit_order.purchased = True # Todo : Change ".purchased" from outfit_OBJ to ".unlocked"
             call display_package(">A "+outfit_order.name+R" outfit has been added to Hermione's Wardrobe.")
         else:
-            $ outfit_order.unlocked = True
             call display_package(">A "+outfit_order.name+R" set has been added to Hermione's Wardrobe.")
+        $ outfit_order.unlocked = True
         $ clothes_store_selection = None
         $ clothes_store_order_choice = None
         call receive_package
@@ -902,10 +901,7 @@ screen cs_gui():
                 text clothes_store_selection.getStoreName() xpos 83 ypos 458 size 16
                 text clothes_store_selection.getStoreDescription() xpos 85 ypos 490 size 12
 
-                if clothes_store_selection in hermione_outfits_list:
-                    text "Outfit" xpos 509 ypos 458 size 16
-                else:
-                    text "Clothing Set" xpos 509 ypos 458 size 16
+                text clothes_store_selection.getType() xpos 509 ypos 458 size 16
 
                 for i in range(0,len(clothes_store_selection.getStoreItems() )):
                     $ row = i % 3
@@ -1012,8 +1008,8 @@ label update_clothes_store_lists:
         if cs_gui_OBJ.character == 1: #Hermione
             python:
                 for i in hermione_outfits_list:
-                    #if not i.unlockable: #Unlockables DO NOT get added to the Shop!
-                        if not i.purchased: # Todo : rename ".purchased" ot ".unlocked"
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
                             cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 2: #Luna
@@ -1023,15 +1019,18 @@ label update_clothes_store_lists:
             $ cs_inventory_list = []
 
         elif cs_gui_OBJ.character == 4: #Astoria
-            $ cs_inventory_list = []
-            #$ cs_inventory_list.append(ag_lazyTown_OBJ)
-            #$ cs_inventory_list.append(ag_ballDress_OBJ)
+            python:
+                for i in astoria_outfits_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
         else: #Cho
             $ cs_inventory_list = []
 
 
-    if cs_gui_OBJ.category == 1: #Sets
+    #Sets
+    if cs_gui_OBJ.category == 1:
         if cs_gui_OBJ.character == 1: #Hermione
             python:
                 for i in hermione_clothing_sets_list:
@@ -1039,8 +1038,25 @@ label update_clothes_store_lists:
                         if not i.unlocked:
                             cs_inventory_list.append(i)
 
+        elif cs_gui_OBJ.character == 2: #Luna
+            $ cs_inventory_list = []
 
-    if cs_gui_OBJ.category == 2: #Clothing Items
+        elif cs_gui_OBJ.character == 3: #Susan
+            $ cs_inventory_list = []
+
+        elif cs_gui_OBJ.character == 4: #Astoria
+            python:
+                for i in astoria_clothing_sets_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
+
+        else: #Cho
+            $ cs_inventory_list = []
+
+
+    #Items
+    if cs_gui_OBJ.category == 2:
         python:
             if cs_show_clothing:
                 pass
@@ -1064,7 +1080,7 @@ init python:
         current_page = 0
         character = 1
         category = 0
-        preview = "interface/store/icons/outfits/hg_mannequin.png"
+        preview = "interface/icons/outfits/hg_mannequin.png"
 
         def getListOfItems(self):
             if self.category in [0,1]: # 0=Outfits, 1=Sets
@@ -1074,23 +1090,23 @@ init python:
         def getNamesOfItems(self):
             return [i.name for i in self.getListOfItems()]
         def getTotalPages(self):
-            if self.category in [0,1]:
+            if self.category in [0,1]: #Outfits & Sets
                 return len(cs_inventory_list)/3
-            else:
+            else: #Item Store
                 return len(cs_inventory_list)/4
         def getMannequinPreview(self):
             if clothes_store_selection == None:
                 if self.character == 1: # Hermione
-                    return "interface/store/icons/outfits/hg_mannequin.png"
+                    return "interface/icons/outfits/hg_mannequin.png"
                 elif self.character == 2: # Luna
-                    return "interface/store/icons/outfits/ll_mannequin.png" # Placeholder
+                    return "interface/icons/outfits/ll_mannequin.png" # Placeholder
                 elif self.character == 3: # Susan
-                    return "interface/store/icons/outfits/sb_mannequin.png"
+                    return "interface/icons/outfits/sb_mannequin.png"
                 elif self.character == 4: # Astoria
-                    return "interface/store/icons/outfits/ag_mannequin.png"
+                    return "interface/icons/outfits/ag_mannequin.png"
                 elif self.character == 5: # Cho
-                    return "interface/store/icons/outfits/cc_mannequin.png" # Placeholder
+                    return "interface/icons/outfits/cc_mannequin.png" # Placeholder
                 else:
-                    return "interface/store/icons/outfits/hg_mannequin.png"
+                    return "interface/icons/outfits/hg_mannequin.png"
             else:
                 return clothes_store_selection.getStoreImage()

@@ -148,7 +148,7 @@ label hg_ps_Buttplug:
 
             m "Today's favour shall be..."
             call her_main(".........","angry","base",xpos="right",ypos="base")
-            m "Wearing your favorite little buttplug to class!"
+            m "Wearing your favourite little buttplug to class!"
             call her_main("...again?","angry","down_raised")
             m "Sure, why not?"
             m "And another fifty five house points for the \"Gryffindor\" house of course."
@@ -213,7 +213,7 @@ label hg_ps_Buttplug:
 
             m "Today my gracious request will be..."
             call her_main(".........","angry","base",xpos="right",ypos="base")
-            m "That you wear everyone's favorite magical buttplug to class!"
+            m "That you wear everyone's favourite magical buttplug to class!"
             call her_main("...again?","angry","down_raised")
             m "why not? This will be the easiest fifty five points you'll ever earn!"
             call her_main("..........","annoyed","worriedL")

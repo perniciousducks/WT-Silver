@@ -316,8 +316,8 @@ label her_init:
 
         $ hermione_action_bra       = "characters/hermione/clothes/underwear/base/bra_base.png"
         $ hermione_action_panties   = "characters/hermione/clothes/underwear/base/panties_base.png"
-        $ hermione_action_top       = "characters/hermione/clothes/tops/base/uni_top_1.png"
-        $ hermione_action_skirt     = "characters/hermione/clothes/bottoms/base/uni_skirt_1.png"
+        $ hermione_action_top       = "characters/hermione/clothes/tops/base/top_1_g.png"
+        $ hermione_action_skirt     = "characters/hermione/clothes/bottoms/base/skirt_1.png"
 
         $ custom_outfit             = 0
         $ hermione_costume          = False
@@ -355,7 +355,7 @@ label her_init:
 
 label her_clothing_init:
 
-    if not hasattr(renpy.store,'h_request_wear_top') or reset_persistants:
+    if not hasattr(renpy.store,'h_request_wear_top') or reset_her_clothing or reset_persistants:
 
         #Save State
         $ h_request_wear_top              = True
@@ -382,14 +382,14 @@ label her_clothing_init:
         $ h_request_wear_tattoos          = False
 
         #Top
-        $ hermione_top              = "characters/hermione/clothes/tops/base/uni_top_1.png"
-        $ h_top                     = "uni_top_1"
+        $ hermione_top              = "characters/hermione/clothes/tops/base/top_1_g.png"
+        $ h_top                     = "top_1_g"
         $ h_top_color               = "base"
 
 
         #Bottom
-        $ hermione_skirt            = "characters/hermione/clothes/bottoms/base/uni_skirt_1.png"
-        $ h_skirt                   = "uni_skirt_1"
+        $ hermione_skirt            = "characters/hermione/clothes/bottoms/base/skirt_1.png"
+        $ h_skirt                   = "skirt_1"
         $ h_skirt_color             = "base"
 
 
@@ -414,17 +414,17 @@ label her_clothing_init:
 
 
         #Other Clothing
-        $ hermione_neckwear         = "characters/hermione/clothes/neckwear/base/00_blank.png"
+        $ hermione_neckwear         = "characters/hermione/clothes/neckwear/00_blank.png"
         $ h_neckwear                = "00_blank"
         $ h_neckwear_color          = "base"
 
         $ hermione_body_accs_list   = []
 
-        $ hermione_gloves           = "characters/hermione/clothes/gloves/base/00_blank.png"
+        $ hermione_gloves           = "characters/hermione/clothes/gloves/00_blank.png"
         $ h_gloves                  = "00_blank"
         $ h_gloves_color            = "base"
 
-        $ hermione_stockings        = "characters/hermione/clothes/stockings/base/00_blank.png"
+        $ hermione_stockings        = "characters/hermione/clothes/stockings/00_blank.png"
         $ h_stockings               = "00_blank"
         $ h_stockings_color         = "base"
         $ temp_stockings            = h_stockings
@@ -564,22 +564,28 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_fishnets",
                                        ]
 
-    $ h_top_remove_bra_list         = ["uni_top_1",
-                                       "uni_top_2",
-                                       "uni_top_3",
-                                       "uni_top_4",
-                                       "uni_top_6",
-                                       "uni_top_cheer_skimpy",
-                                       "uni_top_cheer",
+    $ h_top_remove_bra_list         = ["top_1_g",
+                                       "top_2_g",
+                                       "top_3_g",
+                                       "top_4_g",
+                                       "top_6_g",
+                                       "top_cheer_sexy_g",
+                                       "top_cheer_sexy_s",
+                                       "top_cheer_sexy_r",
+                                       "top_cheer_sexy_h",
+                                       "top_cheer_g",
+                                       "top_cheer_s",
+                                       "top_cheer_r",
+                                       "top_cheer_h",
                                        "normal_pullover",
                                        "normal_sweater",
                                        ]
 
-    $ h_lift_top_list               = ["uni_top_1",
-                                       "uni_top_2",
-                                       "uni_top_3",
-                                       "uni_top_4",
-                                       "uni_top_6",
+    $ h_lift_top_list               = ["top_1_g",
+                                       "top_2_g",
+                                       "top_3_g",
+                                       "top_4_g",
+                                       "top_6_g",
                                        "normal_pullover",
                                        "normal_pullover_sexy",
                                        "top_fishnets",
@@ -588,17 +594,23 @@ label her_clothing_lists_init: #Lists update at every game start!
 
 
     #Bottoms
-    $ h_skirts_list                 = ["uni_skirt_1",
-                                       "uni_skirt_2",
-                                       "uni_skirt_3",
-                                       "uni_skirt_4",
-                                       "uni_skirt_5",
-                                       "uni_skirt_1_low",
-                                       "uni_skirt_2_low",
-                                       "uni_skirt_3_low",
-                                       "uni_skirt_4_low",
-                                       "uni_skirt_cheer",
-                                       "uni_skirt_cheer_skimpy",
+    $ h_skirts_list                 = ["skirt_1",
+                                       "skirt_2",
+                                       "skirt_3",
+                                       "skirt_4",
+                                       "skirt_5",
+                                       "skirt_1_low",
+                                       "skirt_2_low",
+                                       "skirt_3_low",
+                                       "skirt_4_low",
+                                       "skirt_cheer_g",
+                                       "skirt_cheer_s",
+                                       "skirt_cheer_r",
+                                       "skirt_cheer_h",
+                                       "skirt_cheer_sexy_g",
+                                       "skirt_cheer_sexy_s",
+                                       "skirt_cheer_sexy_r",
+                                       "skirt_cheer_sexy_h",
                                        "skirt_belted_mini",
                                        "skirt_belted_micro",
                                        ]

@@ -431,9 +431,9 @@ label update_her_uniform:
 
 
     ### Other Clothing ###
-    $ hermione_neckwear = "characters/hermione/clothes/neckwear/"+h_neckwear_color+"/"+str(h_neckwear)+".png"
-    $ hermione_gloves = "characters/hermione/clothes/gloves/"+h_gloves_color+"/"+str(h_gloves)+".png"
-    $ hermione_stockings = "characters/hermione/clothes/stockings/"+h_stockings_color+"/"+str(h_stockings)+".png"
+    $ hermione_neckwear = "characters/hermione/clothes/neckwear/"+str(h_neckwear)+".png"
+    $ hermione_gloves = "characters/hermione/clothes/gloves/"+str(h_gloves)+".png"
+    $ hermione_stockings = "characters/hermione/clothes/stockings/"+str(h_stockings)+".png"
     $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
 
 
@@ -821,23 +821,14 @@ label h_update:
 
 #Hair update.
 label update_her_hair:
-    if hermione_costume and hermoine_outfit_GLBL.hair_layer != "":
-        $ hermione_hair_a = "characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+".png"
-        $ hermione_hair_b = "characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+"_2.png"
-    else:
-        $ hermione_hair_a = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
-        $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    $ hermione_hair_a = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
+    $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     return
 
 #Hair Update
 label h_update_hair:
-
-    if hermione_costume and hermoine_outfit_GLBL.hair_layer != "":
-        $ hermione_hair_a = "characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+".png"
-        $ hermione_hair_b = "characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+"_2.png"
-    else:
-        $ hermione_hair_a = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
-        $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    $ hermione_hair_a = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
+    $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     return
 
 
@@ -941,7 +932,7 @@ screen hermione_clone:
 screen hermione_costume:
     tag hermione_main
     for i in hermoine_outfit_GLBL.getOutfitLayers():
-        add i xpos hermione_xpos ypos hermione_ypos alpha transparency zoom (1.0/scaleratio)
+        add "characters/hermione/clothes/custom/"+i xpos hermione_xpos ypos hermione_ypos alpha transparency zoom (1.0/scaleratio)
     add hermione_hair_b xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
     #add hermione_costume_e xpos hermione_xpos ypos hermione_ypos
     add hermione_costume_action_a xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)

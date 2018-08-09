@@ -116,9 +116,9 @@ label update_wr_head_list:
 
         #Hair Style
         $ wr_hair.append("A")
-        if hg_maid_OBJ.purchased or hg_lingerie_maid_OBJ.unlocked or hg_ballDress_OBJ.purchased: #Updo Hair from Outfits/Sets
+        if hg_maid_OBJ.unlocked or hg_lingerie_maid_OBJ.unlocked or hg_ballDress_OBJ.unlocked: #Updo Hair from Outfits/Sets
             $ wr_hair.append("B")
-        if hg_bio_OBJ.purchased: #Elizabeth Hair from Outfit.
+        if hg_bio_OBJ.unlocked: #Elizabeth Hair from Outfit.
             $ wr_hair.append("E")
 
         #Makeup
@@ -141,15 +141,27 @@ label update_wr_head_list:
             $ wr_ears.append("elf_ears")
 
         #Hats
-        if hg_ballDress_OBJ.purchased:
+        if hg_maid_OBJ.unlocked:
+            $ wr_hats.append("witch_hat")
+        if hg_witch_OBJ.unlocked:
+            $ wr_hats.append("maid_hat")
+        if hg_ballDress_OBJ.unlocked:
             $ wr_hats.append("tiara")
 
     #if active_girl == "luna":
 
     if active_girl == "astoria":
 
+        #Hair
         $ wr_hair.append("A")
-        $ wr_hair.append("L")
+        if ag_lazy_OBJ.unlocked or ag_lazy_short_OBJ.unlocked:
+            $ wr_hair.append("L")
+        if ag_boss_uniform_OBJ.unlocked:
+            $ wr_hair.append("N")
+
+        #Hats
+        if ag_boss_uniform_OBJ.unlocked:
+            $ wr_hats.append("boss_hat")
 
     if active_girl == "susan":
 
@@ -162,6 +174,7 @@ label update_wr_head_list:
 label update_wr_tops_list:
 
     $ wr_tops_uniform = [] #ADD school clothing and cheerleader tops,...
+    $ wr_tops_cheerleader = []  #Cheerleader Tops
     $ wr_tops_normal = []  #ADD Pullovers, Sweaters, Shirts, Muggle Clothing
     $ wr_tops_wicked = []  #ADD kinky clothing items like leather, fishnet
     $ wr_tops_misc = []    #ADD Misc top items
@@ -170,19 +183,33 @@ label update_wr_tops_list:
     if active_girl == "hermione":
 
         #Uniform
-        $ wr_tops_uniform.append("uni_top_1")
-        $ wr_tops_uniform.append("uni_top_2")
+        $ wr_tops_uniform.append("top_1_g")
+        $ wr_tops_uniform.append("top_2_g")
         if whoring < 11:
-            $ wr_tops_uniform.append("uni_top_3")
-        $ wr_tops_uniform.append("uni_top_4")
+            $ wr_tops_uniform.append("top_3_g")
+        $ wr_tops_uniform.append("top_4_g")
         if whoring >= 11:
-            $ wr_tops_uniform.append("uni_top_5")
-        $ wr_tops_uniform.append("uni_top_6")
+            $ wr_tops_uniform.append("top_5_g")
+        $ wr_tops_uniform.append("top_6_g")
 
-        if hg_cheer_g_OBJ.unlocked or hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked:
-            $ wr_tops_uniform.append("uni_top_cheer")
-        if hg_cheer_g_sexy_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked:
-            $ wr_tops_uniform.append("uni_top_cheer_skimpy")
+        #Cheerleader
+        if hg_cheer_g_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_g")
+        if hg_cheer_s_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_s")
+        if hg_cheer_r_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_r")
+        if hg_cheer_h_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_h")
+
+        if hg_cheer_g_sexy_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_sexy_g")
+        if hg_cheer_s_sexy_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_sexy_s")
+        if hg_cheer_r_sexy_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_sexy_r")
+        if hg_cheer_h_sexy_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_sexy_h")
 
         #Muggle
         if hg_muggle_cold_OBJ.unlocked:
@@ -216,6 +243,8 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("shirt_2")
         $ wr_tops_uniform.append("shirt_3")
         $ wr_tops_uniform.append("shirt_4")
+        if ag_boss_uniform_OBJ.unlocked:
+            $ wr_tops_uniform.append("shirt_boss")
 
     if active_girl == "susan":
 
@@ -229,7 +258,7 @@ label update_wr_tops_list:
 label update_wr_bottoms_list:
 
     $ wr_bottoms_uniform = []
-    $ wr_bottoms_uniform_low = []  #Add low hanging school skirts
+    $ wr_bottoms_cheerleader = []  #Add low hanging school skirts
     $ wr_bottoms_skirts = []       #Add skirts
     $ wr_bottoms_pants = []        #Add
     $ wr_bottoms_misc = []         #ADD Misc bottom items
@@ -238,22 +267,35 @@ label update_wr_bottoms_list:
     if active_girl == "hermione":
 
         #Uniform
-        $ wr_bottoms_uniform.append("uni_skirt_1")
-        $ wr_bottoms_uniform.append("uni_skirt_2")
-        $ wr_bottoms_uniform.append("uni_skirt_3")
-        $ wr_bottoms_uniform.append("uni_skirt_4")
-        $ wr_bottoms_uniform.append("uni_skirt_5")
+        $ wr_bottoms_uniform.append("skirt_1")
+        $ wr_bottoms_uniform.append("skirt_2")
+        $ wr_bottoms_uniform.append("skirt_3")
+        $ wr_bottoms_uniform.append("skirt_4")
+        $ wr_bottoms_uniform.append("skirt_5")
 
-        if hg_cheer_g_OBJ.unlocked or hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked:
-            $ wr_bottoms_uniform.append("uni_skirt_cheer")
-        if hg_cheer_g_sexy_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked:
-            $ wr_bottoms_uniform.append("uni_skirt_cheer_skimpy")
+        $ wr_bottoms_uniform.append("skirt_1_low")
+        $ wr_bottoms_uniform.append("skirt_2_low")
+        $ wr_bottoms_uniform.append("skirt_3_low")
+        $ wr_bottoms_uniform.append("skirt_4_low") #micro skirt
 
-        #Uniform Low
-        $ wr_bottoms_uniform_low.append("uni_skirt_1_low")
-        $ wr_bottoms_uniform_low.append("uni_skirt_2_low")
-        $ wr_bottoms_uniform_low.append("uni_skirt_3_low")
-        $ wr_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
+        #Cheerleader
+        if hg_cheer_g_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_g")
+        if hg_cheer_s_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_s")
+        if hg_cheer_r_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_r")
+        if hg_cheer_h_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_h")
+
+        if hg_cheer_g_sexy_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_sexy_g")
+        if hg_cheer_s_sexy_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_sexy_s")
+        if hg_cheer_r_sexy_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_sexy_r")
+        if hg_cheer_h_sexy_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_sexy_h")
 
         #Skirts
         if "skirt_belted_mini" in cs_existing_stock:
@@ -277,6 +319,10 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_1")
         $ wr_bottoms_uniform.append("skirt_2")
 
+        #Pants
+        if ag_boss_uniform_OBJ.unlocked:
+            $ wr_bottoms_pants.append("pants_boss")
+
     if active_girl == "susan":
 
         #Uniform
@@ -298,31 +344,38 @@ label update_wr_other_clothings_list:
     if active_girl == "hermione":
 
         #Neckwear
-        $ wr_neckwears.append("neck_tie_striped")
+        $ wr_neckwears.append("tie_striped_g")
         if reward_her_wool_clothing:
-            $ wr_neckwears.append("neck_scarf_striped")
+            $ wr_neckwears.append("scarf_striped_g")
         if whoring >= 14:
-            $ wr_neckwears.append("neck_banner")
-            $ wr_neckwears.append("neck_leather_collar")
+            $ wr_neckwears.append("banner_g")
+            $ wr_neckwears.append("banner_unicorn")
         if whoring >= 17:
-            $ wr_neckwears.append("neck_bondage_collar")
+            $ wr_neckwears.append("banner_s")
+            $ wr_neckwears.append("banner_death")
+            $ wr_neckwears.append("collar_leather")
+        if whoring >= 20:
+            $ wr_neckwears.append("collar_bondage")
 
         if whoring >= 7 and hg_punk_rocker_OBJ.unlocked:
-            $ wr_neckwears.append("neck_lace_choker")
-        if whoring >= 7 and hg_ballDress_OBJ.purchased:
-            $ wr_neckwears.append("neck_pearl_necklace")
-        if whoring >= 16 and hg_christmas_OBJ.purchased:
-            $ wr_neckwears.append("neck_xmas")
+            $ wr_neckwears.append("choker_lace")
+        if whoring >= 7 and hg_ballDress_OBJ.unlocked:
+            $ wr_neckwears.append("necklace_pearls")
+        if whoring >= 16 and hg_christmas_OBJ.unlocked:
+            $ wr_neckwears.append("collar_xmas")
 
-        if whoring >= 20 and hg_ballDress_OBJ.purchased:
-            $ wr_neckwears.append("neck_miss_hogwarts")
+        if hg_yenn_OBJ.unlocked:
+            $ wr_neckwears.append("choker_leather")
+            $ wr_neckwears.append("scarf_silk")
+        if her_dress_wearable:
+            $ wr_neckwears.append("banner_miss_hogwarts")
         #$ wr_neckwears.append("neck_goggles") #sQuest reward
         if collar == 1:
-            $ wr_neckwears.append("neck_slave_shackle") #sQuest collar reward
+            $ wr_neckwears.append("collar_slave_shackle") #sQuest collar reward
         if collar == 2:
-            $ wr_neckwears.append("neck_slut_shackle") #sQuest collar reward
+            $ wr_neckwears.append("collar_slut_shackle") #sQuest collar reward
         if collar == 3:
-            $ wr_neckwears.append("neck_whore_shackle") #sQuest collar reward
+            $ wr_neckwears.append("collar_whore_shackle") #sQuest collar reward
 
         #Body Accessories
         if "SPEW_badge" in cs_existing_stock:
@@ -334,41 +387,51 @@ label update_wr_other_clothings_list:
 
         #Gloves
         if reward_her_wool_clothing:
-            $ wr_gloves.append("gloves_wool_short")
+            $ wr_gloves.append("gloves_wool_short_g")
+        if hg_christmas_OBJ.unlocked:
+            $ wr_gloves.append("gloves_wool_short_xmas")
         if whoring >= 10:
             $ wr_gloves.append("gloves_lace")
         if hg_lingerie_latex_OBJ.unlocked:
             $ wr_gloves.append("gloves_latex")
 
-        if hg_maid_OBJ.purchased or hg_lingerie_maid_OBJ.unlocked:
+        if hg_maid_OBJ.unlocked or hg_lingerie_maid_OBJ.unlocked:
             $ wr_gloves.append("gloves_french_maid")
-        if whoring >= 13 and hg_laraCroft_OBJ.purchased:
+        if whoring >= 13 and hg_laraCroft_OBJ.unlocked:
             $ wr_gloves.append("gloves_leather_short")
-        #if whoring >= 19 and hg_powerGirl_OBJ.unlocked:
-        #    $ wr_gloves.append("gloves_latex_hero_blue")
-        if whoring >= 22 and hg_harleyQuinn_OBJ.purchased:
+        if whoring >= 22 and hg_harleyQuinn_OBJ.unlocked:
             $ wr_gloves.append("gloves_leather")
         #$ wr_gloves.append("gloves_egyptian") #ADD Egypt Outfit
 
         #Stockings
         if reward_her_wool_clothing:
-            $ wr_stockings.append("stockings_striped")
+            $ wr_stockings.append("stockings_striped_g")
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_striped_vibe") #Will be in accessories instead
-        if whoring >= 8 and (hg_cheer_g_OBJ.unlocked or hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked):
-            $ wr_stockings.append("stockings_cheer")
-        if whoring >= 8 and (hg_cheer_g_sexy_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked):
-            $ wr_stockings.append("stockings_cheer_short")
+        if whoring >= 8 and hg_cheer_g_OBJ.unlocked:
+            $ wr_stockings.append("stockings_cheer_g")
+        if whoring >= 11 and (hg_cheer_s_OBJ.unlocked or hg_cheer_r_OBJ.unlocked or hg_cheer_h_OBJ.unlocked):
+            $ wr_stockings.append("stockings_cheer_h")
+            $ wr_stockings.append("stockings_cheer_r")
+            $ wr_stockings.append("stockings_cheer_s")
+        if whoring >= 8 and hg_cheer_g_sexy_OBJ.unlocked:
+            $ wr_stockings.append("stockings_cheer_short_g")
+        if whoring >= 11 and (hg_cheer_s_sexy_OBJ.unlocked or hg_cheer_r_sexy_OBJ.unlocked or hg_cheer_h_sexy_OBJ.unlocked):
+            $ wr_stockings.append("stockings_cheer_short_h")
+            $ wr_stockings.append("stockings_cheer_short_r")
+            $ wr_stockings.append("stockings_cheer_short_s")
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_cheer_vibe") #Will be in accessories instead
 
         if whoring >= 5:
             $ wr_stockings.append("stockings_pantyhose")
             $ wr_stockings.append("stockings_cute")
-        if hg_maid_OBJ.purchased or hg_lingerie_maid_OBJ.unlocked:
+        if hg_maid_OBJ.unlocked or hg_lingerie_maid_OBJ.unlocked:
             $ wr_stockings.append("stockings_high")
         if hg_lingerie_latex_OBJ.unlocked:
             $ wr_stockings.append("stockings_latex")
+        if hg_yenn_OBJ.unlocked:
+            $ wr_stockings.append("stockings_silk_flowers")
 
         if "stockings_lace_black" in cs_existing_stock:
             $ wr_stockings.append("stockings_lace")
@@ -525,61 +588,51 @@ label update_wr_outfits_list:
     if active_girl == "hermione":
 
         #Outfits
-        $ hg_purchased_outfits = []
-        if hg_maid_OBJ.purchased:
-            $ wr_outfits.append("maid")
-            $ hg_purchased_outfits.append(hg_maid_OBJ)
-        if hg_christmas_OBJ.purchased:
-            $ wr_outfits.append("christmas")
-            $ hg_purchased_outfits.append(hg_christmas_OBJ)
-        if hg_present_OBJ.purchased:
-            $ wr_outfits.append("present")
-            $ hg_purchased_outfits.append(hg_present_OBJ)
-        if hg_japan_OBJ.purchased:
-            $ wr_outfits.append("japan")
-            $ hg_purchased_outfits.append(hg_japan_OBJ)
+        if hg_maid_OBJ.unlocked:
+            $ wr_outfits.append(hg_maid_OBJ)
+        if hg_christmas_OBJ.unlocked:
+            $ wr_outfits.append(hg_christmas_OBJ)
+        if hg_present_OBJ.unlocked:
+            $ wr_outfits.append(hg_present_OBJ)
+        if hg_japan_OBJ.unlocked:
+            $ wr_outfits.append(hg_japan_OBJ)
 
         #Costumes
-        $ hg_purchased_costumes = []
-        if hg_pirate_OBJ.purchased:
-            $ wr_costumes.append("pirate")
-            $ hg_purchased_costumes.append(hg_pirate_OBJ)
-        if hg_powerGirl_OBJ.purchased:
-            $ wr_costumes.append("power")
-            $ hg_purchased_costumes.append(hg_powerGirl_OBJ)
-        if whoring >= 7 and hg_msMarvel_OBJ.purchased:
-            $ wr_costumes.append("marvel")
-            $ hg_purchased_costumes.append(hg_msMarvel_OBJ)
-        if hg_harleyQuinn_OBJ.purchased:
-            $ wr_costumes.append("harley")
-            $ hg_purchased_costumes.append(hg_harleyQuinn_OBJ)
-        if hg_laraCroft_OBJ.purchased:
-            $ wr_costumes.append("lara")
-            $ hg_purchased_costumes.append(hg_laraCroft_OBJ)
-        if hg_tifa_OBJ.purchased:
-            $ wr_costumes.append("tifa")
-            $ hg_purchased_costumes.append(hg_tifa_OBJ)
-        if hg_witch_OBJ.purchased:
-            $ wr_costumes.append("witch")
-            $ hg_purchased_costumes.append(hg_witch_OBJ)
-        if hg_bio_OBJ.purchased:
-            $ wr_costumes.append("bio")
-            $ hg_purchased_costumes.append(hg_bio_OBJ)
-        if hg_yenn_OBJ.purchased:
-            $ wr_costumes.append("yenn")
-            $ hg_purchased_costumes.append(hg_yenn_OBJ)
+        if hg_pirate_OBJ.unlocked:
+            $ wr_costumes.append(hg_pirate_OBJ)
+        if hg_powerGirl_OBJ.unlocked:
+            $ wr_costumes.append(hg_powerGirl_OBJ)
+        if whoring >= 7 and hg_msMarvel_OBJ.unlocked:
+            $ wr_costumes.append(hg_msMarvel_OBJ)
+        if hg_harleyQuinn_OBJ.unlocked:
+            $ wr_costumes.append(hg_harleyQuinn_OBJ)
+        if hg_laraCroft_OBJ.unlocked:
+            $ wr_costumes.append(hg_laraCroft_OBJ)
+        if hg_tifa_OBJ.unlocked:
+            $ wr_costumes.append(hg_tifa_OBJ)
+        if hg_witch_OBJ.unlocked:
+            $ wr_costumes.append(hg_witch_OBJ)
+        if hg_bio_OBJ.unlocked:
+            $ wr_costumes.append(hg_bio_OBJ)
+        if hg_yenn_OBJ.unlocked:
+            $ wr_costumes.append(hg_yenn_OBJ)
 
         #Dresses
-        $ hg_purchased_dresses = []
-        if hg_heartDancer_OBJ.purchased:
-            $ wr_dresses.append("heart")
-            $ hg_purchased_dresses.append(hg_heartDancer_OBJ)
-        if hg_ballDress_OBJ.purchased:
-            $ wr_dresses.append("ball_dress")
-            $ hg_purchased_dresses.append(hg_ballDress_OBJ)
+        if hg_heartDancer_OBJ.unlocked:
+            $ wr_dresses.append(hg_heartDancer_OBJ)
+        if hg_ballDress_OBJ.unlocked:
+            $ wr_dresses.append(hg_ballDress_OBJ)
 
 
-    #if active_girl == "astoria":
+    if active_girl == "astoria":
+        #Costumes
+        if ag_lazy_OBJ.unlocked:
+            $ wr_costumes.append(ag_lazy_OBJ)
+        if ag_lazy_short_OBJ.unlocked:
+            $ wr_costumes.append(ag_lazy_short_OBJ)
+        #Dresses
+        if ag_ball_dress_OBJ.unlocked:
+            $ wr_dresses.append(ag_ball_dress_OBJ)
 
     #if active_girl == "susan":
 

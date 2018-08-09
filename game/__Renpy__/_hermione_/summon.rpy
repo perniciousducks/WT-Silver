@@ -107,7 +107,7 @@ label summon_hermione:
             else:
                 jump silver_requests
 
-        "-Inventory-":
+        "-Wardrobe-":
             $ active_girl = "hermione"
 
             call load_hermione_clothing_saves

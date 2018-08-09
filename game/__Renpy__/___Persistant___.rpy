@@ -3,8 +3,8 @@
 ### PERSISTANTS ###
 
 label __init_variables:
-    
-    #place save variables here 
+
+    #place save variables here
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
     if not hasattr(renpy.store,'first_time_7th'): #important!
@@ -42,8 +42,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
-        
-        
+
+
     if not hasattr(renpy.store,'shaming'): #important!
         $ shaming = 0
     if not hasattr(renpy.store,'shaming_busy'): #important!
@@ -54,8 +54,8 @@ label __init_variables:
         $ shaming_02 = False
     if not hasattr(renpy.store,'shaming_03'): #important!
         $ shaming_03 = False
-        
-        
+
+
     if not hasattr(renpy.store,'heretic'): #important!
         $ heretic = 0
     if not hasattr(renpy.store,'heretic_01'): #important!
@@ -66,8 +66,8 @@ label __init_variables:
         $ heretic_03 = False
     if not hasattr(renpy.store,'heretic_busy'): #important!
         $ heretic_busy = False
-        
-        
+
+
     if not hasattr(renpy.store,'legs_03'): #important!
         $ legs_03 = False
     if not hasattr(renpy.store,'scene_number'): #important!
@@ -80,7 +80,7 @@ label __init_variables:
         $ cust_char_3_enabled = False
     if not hasattr(renpy.store,'fawkes_intro_done'): #important!
         $ fawkes_intro_done = True
-    if not hasattr(renpy.store,'temp_outfit'): #important! 
+    if not hasattr(renpy.store,'temp_outfit'): #important!
         $ temp_outfit = custom_outfit_old
 
     ### Interface ###
@@ -101,8 +101,8 @@ label __init_variables:
         $ skip_duel = False
     if not hasattr(renpy.store,'next_day'): #important!
         $ next_day = False
-    
-    
+
+
     if not hasattr(renpy.store,'new_request_01_heart'): #important!
         $ new_request_01_heart = 0
     if not hasattr(renpy.store,'new_request_02_heart'): #important!
@@ -127,7 +127,7 @@ label __init_variables:
         $ new_request_29_heart = 0
     if not hasattr(renpy.store,'new_request_31_heart'): #important!
         $ new_request_31_heart = 0
-    
+
     if not hasattr(renpy.store,'pub_q_sex_teach'): #important!
         $ pub_q_sex_teach = False
     if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'): #important!
@@ -138,7 +138,7 @@ label __init_variables:
         $ hg_pf_TheGamble_FlagB = False
     if not hasattr(renpy.store,'hg_pf_TheGamble_FlagC'): #important!
         $ hg_pf_TheGamble_FlagC = False
-    
+
 
     if not hasattr(renpy.store,'gift_order'): #important!
         $ gift_order = None
@@ -184,7 +184,7 @@ label __init_variables:
     #HD RESCALE RATION
     if not hasattr(renpy.store,'scaleratio'): #important!
         $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
-        
+
     ###CGs
     if not hasattr(renpy.store,'cgg_folder'): #important!
         $ ccg_folder = "luna_bj"
@@ -192,16 +192,6 @@ label __init_variables:
         $ ccg2 = 1
         $ ccg3 = "gene"
 
-    #1.32 var updates
-    if not hasattr(renpy.store,'cc_eyewhite'): #important!
-        $ cc_eyewhite = "characters/cho/eye/white.png" 
-        $ cc_gloves = "characters/cho/base/blank.png" 
-        $ cho_quidd = False
-        $ cho_quidd_points = 0
-        $ days_since_quidd = 0
-        $ days_to_luna = 0
-
-        
     #SC34 update 2 stuff, thanks akabur.
     if not hasattr(renpy.store,'sc_cg_base'): #important!
         $ sc_cg_base = "images/28_cg/sc34/1/base_1.png"
@@ -216,7 +206,7 @@ label __init_variables:
         $ face_on_cg = False #"call her_head" will use screen "her_face". Face gets positioned automatically.
         $ use_cgs = False
 
-        
+
     #Favor ID's
     $ hg_pf_TalkToMe_ID = 0        #00 Genie touches himself.
     $ hg_pf_NicePanties_ID = 1     #01 "Lift your skirt".
@@ -230,7 +220,7 @@ label __init_variables:
     $ hg_pf_LetsHaveSex_ID = 9     #09 (Sex).
     $ hg_pf_TimeForAnal_ID = 10    #10 (Anal sex)
     $ hg_pf_TheGamble_ID = 11      #11 (Gamble with hg)
-    
+
     $ hg_pr_FlirtClassmate_ID = 0 #00 "Flirt with 3 classmates".
     $ hg_pr_FlirtTeacher_ID = 1 #01 "Flirt with a teacher".
     $ hg_pr_ClassmateTouchYou_ID = 2 #02 "Let a classmate molest you."
@@ -240,9 +230,9 @@ label __init_variables:
     $ hg_pr_BlowjobClassmate_ID = 6 #06 (Blow a classamate).
     $ hg_pr_BlowjobTeacher_ID = 7 #07 (Blow a teacher)
     $ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
-    
-    
-    
+
+
+
     #Character Paths
     $ gen_path = "characters/genie/"
     $ sna_path = "characters/snape/"
@@ -251,21 +241,38 @@ label __init_variables:
     $ cho_path = "characters/cho/"
     $ sus_path = "characters/susan/"
     $ ast_path = "characters/astoria/"
-    
+
 
     #Reset Persistants
     if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
         $ reset_persistants            = False
+
+    #Reset Clothing Manually
+    if not hasattr(renpy.store,'reset_her_clothing'): #Turn to true when chlothing needs to be reset for an update.
+        $ reset_her_clothing = False
+        $ reset_ast_clothing = False
+        $ reset_sus_clothing = False
+        $ reset_lun_clothing = False
+        $ reset_cho_clothing = False
+
     if not hasattr(renpy.store,'reset_luna_content'):
         $ reset_luna_content = False
 
+    # Store Init
+    call store_init
+
+    #Update or Reset Persistants
+    call update_persistants #Reset vars for a specific update in here!
+
+
+
     #Genie Init
     if not hasattr(renpy.store,'genie_sprite_base'): #important!
-        call init_genie_layering 
+        call init_genie_layering
 
     #Snape Init
-    call snape_init 
-    call snape_progress_init 
+    call snape_init
+    call snape_progress_init
 
     #Hermione Init
     call her_init #Defines newly added variables. Resets variables after creating a new game.
@@ -273,30 +280,30 @@ label __init_variables:
     call her_chibi_init #Defines newly added variables. Resets variables after creating a new game.
     call her_clothing_lists_init #Lists update every time!
     call her_progress_init #Defines newly added variables. Resets variables after creating a new game.
-    
+
     #Luna Init
-    call luna_init 
-    call luna_progress_init 
+    call luna_init
+    call luna_progress_init
 
     #Cho Init
-    call cho_init 
-    call cho_progress_init 
+    call cho_init
+    call cho_progress_init
 
     #Susan Init
-    call susan_init 
-    call susan_progress_init 
+    call susan_init
+    call susan_progress_init
 
     #Astoria Init
-    call astoria_init 
-    call astoria_progress_init 
-    
+    call astoria_init
+    call astoria_progress_init
+
     #Tonks Init
-    call tonks_init 
-    call tonks_progress_init 
+    call tonks_init
+    call tonks_progress_init
 
-    call wardrobe_init 
+    call wardrobe_init
 
-    
+
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
     if not hasattr(renpy.store,'mentioned_ginnys_hair'):
         $ mentioned_ginnys_hair         = False #Wardrobe Hair #Always available.
@@ -305,16 +312,22 @@ label __init_variables:
         $ handjob_practice_with_ginny   = False #Pf Handjob
         $ kissed_ginny                  = False #Pr KissAGirl
         $ flashing_tits_with_ginny      = False #Pr FlasAClassmate
-    
-    
-    #Update max tutoring if there is add more events 
-    $ max_tutoring = 14 
-    
+
+
+    #Update max tutoring if there is add more events
+    $ max_tutoring = 14
+
     #Sorter Values
     $ zorder_character = 7
-   
-    
+
+
     $ row_index_selected = 0
     $ column_index_selected = 0
-    
+
+    # Clothing reset turns False so this only happens once after it was needed for an update (see above).
+    $ reset_her_clothing = False
+    $ reset_ast_clothing = False
+    $ reset_sus_clothing = False
+    $ reset_lun_clothing = False
+    $ reset_cho_clothing = False
     return

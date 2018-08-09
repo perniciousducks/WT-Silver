@@ -57,7 +57,7 @@ label equip_her_top:
             ### Uniform ###
 
             #Uniform Top Vest and Tie #Done
-            if top_choice == "uni_top_1":
+            if top_choice == "top_1_g":
                 m "Would you wear your uniform top for me? All of it, vest and tie!"
                 if whoring < 8:
                     call her_main("Of course, [genie_name].","soft","baseL")
@@ -108,7 +108,7 @@ label equip_her_top:
                     call her_main("Ugh--Fine, let me change it real quick.","annoyed","baseL")
 
             #Uniform Top Tie only #Done
-            elif top_choice == "uni_top_2":
+            elif top_choice == "top_2_g":
                 m "Would you wear your uniform top for me? But leave the vest off."
                 if whoring >= 2:
                     if whoring < 5:
@@ -147,7 +147,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Top No Tie #Done
-            elif top_choice == "uni_top_3":
+            elif top_choice == "top_3_g":
                 m "Would you wear your uniform top for me? But remove the tie and the vest."
                 if whoring >= 5: #Gets removed at level 11.
                     call her_main("You better appreciate this, [genie_name].","annoyed","annoyed")
@@ -183,7 +183,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Top Cleavage #Done
-            elif top_choice == "uni_top_4":
+            elif top_choice == "top_4_g":
                 m "Would you wear your uniform top for me? Just the shirt..."
                 g9 "And unbutton some of those buttons! I want you to show some cleavage!"
                 if whoring >= 8:
@@ -233,7 +233,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Crop-Top #Done
-            elif top_choice == "uni_top_5":
+            elif top_choice == "top_5_g":
                 m "I want you to pull up the two ends of your school top and tie them together around your chest."
                 if whoring >= 11:
                     if whoring < 14:
@@ -267,7 +267,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Top Vest with Cleavage #Done
-            elif top_choice == "uni_top_6":
+            elif top_choice == "top_6_g":
                 m "Would you wear your vest for me? Just the vest. Maybe your shirt beneath it. But don't think about closing any of those buttons!"
                 if whoring >= 8:
                     if whoring < 11:
@@ -300,20 +300,20 @@ label equip_her_top:
 
 
             #Uniform Top Cheer #Done
-            elif top_choice == "uni_top_cheer" or top_choice == "uni_top_cheer_skimpy":
-                if top_color_choice == "green" or top_color_choice == "blue" or top_color_choice == "yellow":
+            elif top_choice in ["top_cheer_g","top_cheer_s","top_cheer_r","top_cheer_h"] or top_choice in ["top_cheer_sexy_g","top_cheer_sexy_s","top_cheer_sexy_r","top_cheer_sexy_h"]:
+                if top_choice in ["top_cheer_s","top_cheer_r","top_cheer_h"] or top_choice in ["top_cheer_sexy_s","top_cheer_sexy_r","top_cheer_sexy_h"]: #Not gryffindor!
                     m "Would you wear this cheerleader skirt for me?"
                     if whoring >= 11:
                         if whoring < 14:
-                            if top_color_choice == "green":
+                            if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                                 call her_main("But [genie_name], that's for Slytherins!","angry","wink")
-                            if top_color_choice == "blue":
+                            if top_choice in ["top_cheer_r","top_cheer_sexy_r"]:
                                 call her_main("But [genie_name], that's for Ravenclaws!","angry","wink")
-                            if top_color_choice == "yellow":
+                            if top_choice in ["top_cheer_h","top_cheer_sexy_h"]:
                                 call her_main("But [genie_name], that's for Hufflepuffs!","angry","wink")
                             m "And?"
                             call her_main("I'm a Gryffindor!","annoyed","annoyed")
-                            if top_color_choice == "green":
+                            if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                                 call her_main("(A muggle-born on top of that.)","disgust","down_raised")
                             call her_main("I can't wear this!","open","worriedCl")
                             m "Why not?"
@@ -325,7 +325,7 @@ label equip_her_top:
                             m "As a form of bonding method... To bring the four houses closer together!"
                             call her_main("But... the Hogwarts houses are supposed to compete with each other! Especially in a sport activity such as Quidditch!","disgust","glance")
                             g4 "Nonsense! All it does is cause a hateful and unhealthy relationship between students!"
-                            if top_color_choice == "green":
+                            if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                                 m "Especially Gryffindor and Slytherin!"
                                 m "I mean, do you like being called a mudblood every day by them?"
                                 call her_main("No, [genie_name].","angry","wink")
@@ -344,7 +344,7 @@ label equip_her_top:
                             call her_main("(How humiliating to wear this as a Gryffindor...)","disgust","narrow")
                             call her_main("Let me just change it.","soft","baseL")
                         else: #20+
-                            if top_color_choice == "green":
+                            if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                                 call her_main("Of course I will wear it!","smile","angry")
                                 call her_main("Gimme-Gimme--Gimme!!!","smile","happyCl")
                                 call her_main("(I'm definitely going to root for them on the next game!)","soft","baseL",cheeks="blush")
@@ -354,17 +354,17 @@ label equip_her_top:
                                 call her_main("If I really have to...","annoyed","annoyed")
                                 call her_main("Let me just change it.","soft","baseL")
                     else:
-                        if top_color_choice == "green":
+                        if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                             call her_main("In green?","shock","wide")
-                        if top_color_choice == "blue":
+                        if top_choice in ["top_cheer_r","top_cheer_sexy_r"]:
                             call her_main("In blue?","shock","wide")
-                        if top_color_choice == "yellow":
+                        if top_choice in ["top_cheer_h","top_cheer_sexy_h"]:
                             call her_main("In yellow?","shock","wide")
                         call her_main("Are you serious, [genie_name]?","angry","angry")
                         call her_main("Are you sure you didn't just pick the wrong colour for me?","annoyed","suspicious")
-                        if top_color_choice == "green":
+                        if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                             m "(Something tells me she doesn't want to wear green stuff.)"
-                            m "(Is she allergic to grasshoppers or something?)"
+                            m "(Is she grasshoppers allergies or something?)"
                         else:
                             m "(Could have sworn I picked the right color for her...)"
                         m "Forget about it, girl."
@@ -374,7 +374,7 @@ label equip_her_top:
                         jump return_to_wardrobe
 
                 else: #Gryffindor #Base color and red color.
-                    if top_choice == "uni_top_cheer":
+                    if top_choice in ["top_cheer_g"]:
 
                         m "Could you wear your cheerleader attire for me? Just the top."
                         if whoring >= 5:
@@ -408,7 +408,7 @@ label equip_her_top:
                                 ">Try again at whoring level 5."
                             jump return_to_wardrobe
 
-                    if top_choice == "uni_top_cheer_skimpy":
+                    if top_choice in ["top_cheer_sexy_g"]:
                         m "Could you wear the top from your cheerleader attire for me?"
                         if whoring >= 8:
                             g9 "The skimpy one!"
@@ -726,7 +726,7 @@ label equip_her_top:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
 
-        
+
             elif top_choice == "top_fishnets":
                 if whoring >= 20:
                     pass
@@ -756,59 +756,59 @@ label equip_her_top:
             #    jump return_to_wardrobe
 
             #Uniform
-            if top_choice == "uni_top_2" and whoring < 2: #no vest
+            if top_choice == "top_2_g" and whoring < 2: #no vest
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
-            if top_choice == "uni_top_3" and whoring < 5: #no tie
+            if top_choice == "top_3_g" and whoring < 5: #no tie
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 5."
                 jump return_to_wardrobe
-            if top_choice == "uni_top_4" and whoring < 8: #cleavage
+            if top_choice == "top_4_g" and whoring < 8: #cleavage
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
-            if top_choice == "uni_top_5" and whoring < 11: #crop top
+            if top_choice == "top_5_g" and whoring < 11: #crop top
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
-            if top_choice == "uni_top_6" and whoring < 8: #vest w/cleavage
+            if top_choice == "top_6_g" and whoring < 8: #vest w/cleavage
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
 
-            if top_choice == "uni_top_cheer":
-                if (top_color_choice == "green" or top_color_choice == "dark_green" or top_color_choice == "blue" or top_color_choice == "dark_blue" or top_color_choice == "yellow"):
+            if top_choice in ["top_cheer_g"]:
+                if whoring < 5:
+                    ">She won't wear that top just yet."
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 5."
+                    jump return_to_wardrobe
+
+            if top_choice in ["top_cheer_s","top_cheer_r","top_cheer_h"]:
                     if whoring < 11:
                         ">She won't wear that top just yet."
                         if cheats_active or game_difficulty <= 2:
                             ">Try again at whoring level 11."
-                        jump return_to_wardrobe
-                else: #Gryffindor
-                    if whoring < 5:
-                        ">She won't wear that top just yet."
-                        if cheats_active or game_difficulty <= 2:
-                            ">Try again at whoring level 5."
                         jump return_to_wardrobe
 
-            if top_choice == "uni_top_cheer_skimpy":
-                if (top_color_choice == "green" or top_color_choice == "dark_green" or top_color_choice == "blue" or top_color_choice == "dark_blue" or top_color_choice == "yellow"):
-                    if whoring < 11:
-                        ">She won't wear that top just yet."
-                        if cheats_active or game_difficulty <= 2:
-                            ">Try again at whoring level 11."
-                        jump return_to_wardrobe
-                else: #Gryffindor
-                    if whoring < 8:
-                        ">She won't wear that top just yet."
-                        if cheats_active or game_difficulty <= 2:
-                            ">Try again at whoring level 8."
-                        jump return_to_wardrobe
+            if top_choice in ["top_cheer_sexy_g"]:
+                if whoring < 8:
+                    ">She won't wear that top just yet."
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 8."
+                    jump return_to_wardrobe
+
+            if top_choice in ["top_cheer_sexy_s","top_cheer_sexy_r","top_cheer_sexy_h"]:
+                if whoring < 11:
+                    ">She won't wear that top just yet."
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 11."
+                    jump return_to_wardrobe
 
             #Muggle
             if top_choice == "normal_pullover" and whoring < 2:

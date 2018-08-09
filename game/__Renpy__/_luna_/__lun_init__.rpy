@@ -1,13 +1,13 @@
 
 
 label luna_init:
-    
+
     #Update 1.3
-    if not hasattr(renpy.store,'luna_base') or reset_persistants or reset_luna_content:
+    if not hasattr(renpy.store,'luna_base') or reset_lun_clothing or reset_persistants or reset_luna_content:
 
         #Body
-        $ luna_base              = "characters/luna/body/base/base_01.png" 
-        $ luna_cheeks            = "characters/luna/body/face/cheeks/cheeks_1.png" 
+        $ luna_base              = "characters/luna/body/base/base_01.png"
+        $ luna_cheeks            = "characters/luna/body/face/cheeks/cheeks_1.png"
         $ luna_hair              = 2
         $ luna_l_arm             = 1
         $ luna_r_arm             = 1
@@ -17,19 +17,19 @@ label luna_init:
         $ luna_flip              = 1
 
         #Face
-        $ luna_mouth             = "characters/luna/body/face/mouth/default.png" 
-        $ luna_eye               = "characters/luna/body/face/eye/default.png" 
-        $ luna_eyebrow           = "characters/luna/body/face/eyebrow/default.png" 
+        $ luna_mouth             = "characters/luna/body/face/mouth/default.png"
+        $ luna_eye               = "characters/luna/body/face/eye/default.png"
+        $ luna_eyebrow           = "characters/luna/body/face/eyebrow/default.png"
         $ luna_pupil             = "characters/luna/body/face/pupil/default.png"
-        $ luna_tears             = 0 
+        $ luna_tears             = 0
 
         #Clothes
-        $ luna_glasses           = "characters/luna/misc/glasses.png" 
-        $ luna_top               = "characters/luna/clothes/uniform/top_1.png" 
-        $ luna_acc               = "characters/luna/misc/jewel.png" 
-        $ luna_skirt             = "characters/luna/clothes/uniform/skirt_1.png" 
-        $ luna_panties           = "characters/luna/clothes/underwear/panties.png" 
-        $ luna_bra               = "characters/luna/clothes/underwear/bra.png" 
+        $ luna_glasses           = "characters/luna/misc/glasses.png"
+        $ luna_top               = "characters/luna/clothes/uniform/top_1.png"
+        $ luna_acc               = "characters/luna/misc/jewel.png"
+        $ luna_skirt             = "characters/luna/clothes/uniform/skirt_1.png"
+        $ luna_panties           = "characters/luna/clothes/underwear/panties.png"
+        $ luna_bra               = "characters/luna/clothes/underwear/bra.png"
         $ luna_cum               = 1
         $ luna_wear_cum          = False
         $ luna_wear_cum_under    = False
@@ -42,11 +42,11 @@ label luna_init:
         $ luna_wear_acc          = True
 
         #Chibi
-        $ luna_chibi_image       = "characters/luna/chibis/luna_stand.png" 
+        $ luna_chibi_image       = "characters/luna/chibis/luna_stand.png"
         $ luna_chibi_xpos        = 500
         $ luna_chibi_ypos        = 250
         $ luna_chibi_zorder      = 4
-    
+
         #CG
         $ hermione_kneel_leg     = False
         $ hermione_kneel_cock    = False
@@ -58,8 +58,8 @@ label luna_init:
 
 
 label luna_progress_init:
-    
-    #Update 1.3
+
+    # Update 1.3
     if not hasattr(renpy.store,'luna_known') or reset_persistants or reset_luna_content:
 
         $ hat_known = False
@@ -81,7 +81,10 @@ label luna_progress_init:
         $ luna_addicted = False
         $ luna_herm_talk = False
 
+    # Update 1.4
+    if not hasattr(renpy.store,'days_to_luna') or reset_persistants or reset_luna_content:
+
+        $ days_to_luna = 0
 
 
     return
-

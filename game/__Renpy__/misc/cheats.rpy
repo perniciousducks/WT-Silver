@@ -11,7 +11,7 @@ label cheats:
                     $ whoring = 24
                     ">Hermione is now a giant slut."
                     jump cheats_hermione
-                    
+
                 "-Increase Whoring-":
                     if whoring >= 24:
                         ">Hermione's whoring is at the max level and can't be increased any further!"
@@ -34,11 +34,13 @@ label cheats:
                     ">Public favours unlocked!"
                     jump cheats_hermione
 
-                "-Add all costumes-":
+                "-Unlock all outfits & sets-":
                     python:
                         for i in hermione_outfits_list:
-                            i.purchased = True
-                    ">All of Hermione's costumes have been unlocked"
+                            i.unlocked = True
+                        for i in hermione_clothing_sets_list:
+                            i.unlocked = True
+                    ">All of Hermione's outfits and clothing sets have been unlocked."
                     jump cheats
 
                 "-Toggle Breast Expansion-":
@@ -68,7 +70,7 @@ label cheats:
             menu:
                 "-Reset ALL Luna content-":
                     $ hat_known = False
-                    call luna_progress_init 
+                    call luna_progress_init
                     ">Luna content reset!"
                     jump cheats
                 "-never mind-":

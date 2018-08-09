@@ -1,27 +1,63 @@
 
 
 screen astoria_main:
+    tag astoria_main
+
     ### BASE IMAGE
     add astoria_l_arm xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the arms
     add astoria_r_arm xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the arms
     add astoria_hair xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the hair base
     add astoria_base xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the base body
-    
+
     ### FACE
     add astoria_eye_bg xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the eye white
     add astoria_pupil xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the pupil
     add astoria_eye xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the eye outline
-    
+
     add astoria_eyebrow xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the eyebrow
     add astoria_mouth xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the mouth
-    
+
     add astoria_cheeks xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the extras
     add astoria_tears xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the extras
     add astoria_extra xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the extras
-    
+
+    ### CLOTHING LAYERS ###
+
+    #Uniform
+    if not astoria_wear_outfit:
+        use astoria_uniform
+
+    #Outfit
+    if astoria_wear_outfit:
+        if astoria_wear_top:
+            use astoria_outfit
+        else:
+            use astoria_uniform
+
+    ### ACCESORIES LAYERS ###
+
+    #Robe
+    if astoria_wear_robe:
+        add astoria_robe xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
+
+    #Hair+
     add astoria_hair_shadow xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)#Add the hair shadow
-    
-    ### CLOTHES 
+
+    #Hat
+    if astoria_wear_hat:
+        add astoria_hat xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
+
+    add astoria_l_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand
+    add astoria_r_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand
+
+    ### ZORDER
+    zorder astoria_zorder
+
+
+screen astoria_uniform:
+    tag astoria_main
+
+    ### CLOTHES
     if astoria_wear_bra and not astoria_wear_top:
         add astoria_bra xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the bra
     if astoria_wear_panties and not astoria_wear_bottom:
@@ -40,27 +76,31 @@ screen astoria_main:
         add astoria_accs xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio) # Add the accessory
     if astoria_wear_neckwear:
         add astoria_neckwear xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
-    if astoria_wear_robe:
-        add astoria_robe xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)
-        
-    ### OTHER
-    add astoria_l_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand
-    add astoria_r_hand xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/scaleratio)# Add the left hand
-    
+
     ### ZORDER
     zorder astoria_zorder
 
-    
-    
+
+screen astoria_outfit:
+    tag astoria_main
+
+    for i in astoria_outfit_GLBL.getOutfitLayers():
+        add "characters/astoria/clothes/custom/"+i xpos astoria_xpos ypos astoria_ypos alpha transparency zoom (1.0/scaleratio)
+
+    ### ZORDER
+    zorder astoria_zorder
+
+
+
 label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen astoria_main
-    
+
     #Reset
     if cheeks == None:
         $ cheeks = "blank"
     if tears == None:
         $ tears = "blank"
-        
+
     #Positioning
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
@@ -85,14 +125,14 @@ label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
             #ADD zorder change to be in front of textbox!
         else:
             $ astoria_ypos = int(ypos)
-            
 
-            
+
+
     $ changeAstoria(mouth, eye, eyebrow, pupil, astoria_xpos, astoria_ypos, base, cheeks, tears, extra)
-    
+
     show screen astoria_main
     show screen bld1
-    
+
     #Transitions
     if trans != None:         #d3 is default.
         if trans == "d1":
@@ -118,29 +158,29 @@ label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
             pass
         else: #for typos and preventing crashes...
             with d3
-            
+
     #Default transition.
     else:
         if not wardrobe_active:
             with d3
-            
+
     if text != "":
         $ renpy.say(ast, text)
-        
+
     return
-    
+
 
 init python:
     def changeAstoria(  mouth=None,
                         eye=None,
-                        eyebrow=None, 
-                        pupil=None,  
-                        x_pos=None, 
+                        eyebrow=None,
+                        pupil=None,
+                        x_pos=None,
                         y_pos=None,
                         base=None,
                         cheeks=None,
                         tears=None,
-                        extra=None): 
+                        extra=None):
         ###DEFINE GLOBAL VARIABLES
         global astoria_mouth
         global astoria_eye
@@ -155,14 +195,14 @@ init python:
         global astoria_extra
         ###EMOTION CONTROL
         if mouth is not None:
-            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png" 
+            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png"
         if eye is not None:
-            astoria_eye         = "characters/astoria/face/eyes/eye_"+eye+".png" 
+            astoria_eye         = "characters/astoria/face/eyes/eye_"+eye+".png"
             astoria_eye_bg      = "characters/astoria/face/eyes/eye_"+eye+"_bg.png"
         if eyebrow is not None:
-            astoria_eyebrow     = "characters/astoria/face/brow/"+eyebrow+".png" 
+            astoria_eyebrow     = "characters/astoria/face/brow/"+eyebrow+".png"
         if pupil is not None:
-            astoria_pupil       = "characters/astoria/face/eyes/pupil_"+pupil+".png" 
+            astoria_pupil       = "characters/astoria/face/eyes/pupil_"+pupil+".png"
         ###POSITION CONTROL
         if x_pos is not None:
             astoria_xpos        = x_pos
@@ -170,10 +210,10 @@ init python:
             astoria_ypos        = y_pos
         ###BODY CONTROL
         if base is not None:
-            astoria_base        = "characters/astoria/base/"+base+".png" 
+            astoria_base        = "characters/astoria/base/"+base+".png"
         if cheeks is not None:
-            astoria_cheeks      = "characters/astoria/face/extras/"+cheeks+".png" 
+            astoria_cheeks      = "characters/astoria/face/extras/"+cheeks+".png"
         if tears is not None:
-            astoria_tears       = "characters/astoria/face/extras/"+tears+".png" 
+            astoria_tears       = "characters/astoria/face/extras/"+tears+".png"
         if extra is not None:
-            astoria_extra       = "characters/astoria/face/extras/"+extra+".png" 
+            astoria_extra       = "characters/astoria/face/extras/"+extra+".png"

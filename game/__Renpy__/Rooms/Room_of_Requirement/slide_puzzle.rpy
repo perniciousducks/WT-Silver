@@ -79,11 +79,11 @@ label open_pyzzle_box:
     hide screen genie
     show screen reading
     with Dissolve(0.3)
-    m "My dear phoenix has been losing its feathers lately, I think it's time soon..... "
+    m "My dear phoenix has been losing his feathers lately, I think it's time soon..... "
     m "*Time for what?*"
     m "That Potter boy is mighty cute, looks just like his father.... "
     g9 "*Well, well....*"
-    m "Severus gave me a weird look today I wonder what he thinks about my......"
+    m "Severus gave me a weird look today, I wonder what he thinks about my......"
     g4 "*This is all trash...*"
     m "*Wait a minute.... this seems interesting.*"
     m "I was walking around in the seventh floor corridor looking for a bathroom..."

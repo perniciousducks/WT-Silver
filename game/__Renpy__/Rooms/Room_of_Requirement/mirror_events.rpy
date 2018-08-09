@@ -21,11 +21,11 @@ label a_bad_time_to_disrobe:
     call her_main( "Caught?", "base", "base" ) 
     call her_main( "In what way professor?", "base", "base" )
     
-    m "Well, for todays favour I have a prop for you to use."
+    m "Well, for today's favour I have a prop for you to use."
     
     call her_main( "A prop sir?", "base", "base" )
 
-    m "Yes, I'd like you to put this invisibility cloak on and sneak into one of the girl restricted areas of the school."
+    m "Yes, I'd like you to put this invisibility cloak on and sneak into one of the boy only areas of the school."
     
     call her_main( "Well, I guess that would be fine...", "base", "base" )
     call her_main( "Seems a bit different than your usual requests.", "base", "base" )
@@ -121,7 +121,7 @@ label a_bad_time_to_disrobe:
     
     m "Indeed, I'm expecting better from you today girl."
     
-    call her_main( "I wont dissapoint you sir!", "grin", "base" )
+    call her_main( "I won't dissapoint you sir!", "grin", "base" )
     
     m "I'll be the judge of that..."
 
@@ -150,7 +150,7 @@ label a_bad_time_to_disrobe:
     
     m "Well, I know what it looks like..." 
     
-    call her_main( "I didn't want to dissapoint sir so I did what you asked...", "soft", "base", tears="mascara_soft" )
+    call her_main( "I didn't want to disappoint, sir, so I did what you asked...", "soft", "base", tears="mascara_soft" )
     call her_main( "I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.", "base", "base", tears="mascara_soft" )
 
     m "Well done. And then?"
@@ -158,9 +158,9 @@ label a_bad_time_to_disrobe:
     call her_main( "I took the cloak and snuck into the boys changing room...", "base", "base", tears="mascara" )
     call her_main( "I stood next to the doorway so that they wouldn't bump into me.", "base", "base", tears="mascara" )
     
-    m "Great idea.. and you weren't noticed?" 
+    m "Great idea... and no one noticed?" 
     
-    call her_main( "Well, at first I wasn't... This damn cloak is too small.", "angry", "base", tears="mascara" )
+    call her_main( "Well, at first... This damn cloak is too small.", "angry", "base", tears="mascara" )
     call her_main( "I thought I would be short enough to fit under it...", "base", "base", tears="mascara" ) 
     call her_main( "I didn't notice that my feet were visible...", "upset", "angry", tears="mascara" )
     
@@ -215,7 +215,7 @@ label whose_points:
     
     
     m "Hello and welcome to whose points is it anyway."
-    m "The show where everything is made up but the points doesn't matter."
+    m "The show where everything is made up but the points don't matter."
     m "Just like at Hogwarts."
     
     call her_main("\"I hope I win! I need those housepoints.\"", "base","squintL",xpos="mid")
@@ -234,7 +234,7 @@ label whose_points:
     
     hat "You put notes inside me without my consent? \n*Spits note out*"
     
-    m "Looks like we have our first promt."
+    m "Looks like we have our first prompt."
     m "Things you might say in potions class... But also in your bedroom."
     
     call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!", "grin","worried",cheeks="blush")
@@ -258,7 +258,7 @@ label whose_points:
     
     call her_main("How's that worth more than my one...", "annoyed","worried")
     hide screen hermione_main
-    m "Any more? On to the next promt then. Hat?"
+    m "Any more? On to the next prompt then. Hat?"
     
     hat "Sorry, what did you cough call me? That's \n\"Sorting\" Hat to you. (coughs out note.)"
     
@@ -274,7 +274,7 @@ label whose_points:
     
     call ast_main( "Give me the points!" , "scream", "narrow", "narrow", "mid") 
     
-    m "Disquallified!"
+    m "Disqualified!"
     
     call ast_main( "Wait, you can do that?" ,"scream" ,"wide", "wide")
     
@@ -357,7 +357,7 @@ label whose_points:
     call ast_main( "Harlot! Harlot! Harlot!", "grin", "happyCl", "base", "R")
     
     call luna_main("How does those points taste now? ", "default", "default", "default", "grin")
-    call luna_main("The whole wizarding world are going see your tits!", "default", "default", "default", "wide_smile")
+    call luna_main("The whole wizarding world is going see your tits!", "default", "default", "default", "wide_smile")
     hide screen luna
     hide screen astoria_main
     
@@ -388,11 +388,11 @@ label genie_house_elf:
     n "The genie, the desk and the door:"
     n "How does that door work? The genie thought."
 
-    m "\"How does the people know I’ve summoned them? I don’t have a secretary...that I know of anyway.\""
+    m "\"How do the people know I’ve summoned them? I don’t have a secretary...that I know of anyway.\""
 
     m "Have they been keeping a secretary from me? I should ask Sn..."
     
-    n "Snape then openeded the door, his pointy nose protruding under his silky hair."
+    n "Snape then opened the door, his pointy nose protruding under his silky hair."
 
     call sna_walk("door","mid",2) 
     call sna_main("You called? ", "snape_23", xpos="base", ypos="base")
@@ -412,18 +412,18 @@ label genie_house_elf:
     n "Snape said as if that meant anything."
 
     n "A look of confusion spread across the genies face which only made Snape smirk even more."
-    n "He theb composed himself after seeing this unusual expression on the headmasters."
+    n "He then composed himself after seeing this unusual expression on the headmasters face."
 
     call sna_main("I keep forgetting that you don’t know these things.", "snape_01", xpos="base", ypos="base")
-    call sna_main("People that were educated here learns it in passing.", "snape_01", xpos="base", ypos="base")
+    call sna_main("students learn it on day one.", "snape_01", xpos="base", ypos="base")
     call sna_main("The headmaster is in control of the school and its inhabitants.", "snape_24", xpos="base", ypos="base")
 
     n "Snape said in a matter of fact sort of way."
     
-    m "I know that, we have schools in my world to."
+    m "I know that, we have schools in my world too."
     m "But generally we don’t wave wooden sticks around yelling random words."
 
-    n "Snape flinched as the notion of magic just involving waving your wand and yelling random words was the most absurd statement someone could make."
+    n "Snape flinched, as if the notion of magic consisting of waving a wand and yelling random words was utterly absurd."
     
     call sna_main("No. You’re literally in control over the school....look.", "snape_08", xpos="base", ypos="base")
     
@@ -442,18 +442,18 @@ label genie_house_elf:
     
     call helf_main(remove=True)
     
-    call sna_main("That...is an house elf.", "snape_01", xpos="base", ypos="base")
+    call sna_main("That...is a house elf.", "snape_01", xpos="base", ypos="base")
     
-    m "An house...elf."
+    m "A house...elf."
     g10 "Is that like a Santa's elf? "
     
-    n "The genie said now climbing down to sit on his chair."
+    n "The genie said, now climbing down to sit on his chair."
 
     call sna_main("Sort of, they don’t get paid so they do have that in common...", "snape_05", xpos="base", ypos="base")
     
     n "Snape muttered under his breath..."  
     
-    call sna_main("The house elf here can send us messages so we'll go where we are needed.", "snape_05", xpos="base", ypos="base")
+    call sna_main("The houses elves here can send us messages so we can go where we're needed.", "snape_05", xpos="base", ypos="base")
     
     call sna_main("He just sits here invisible during the day and cleans and eats at night.", "snape_01", xpos="base", ypos="base")
     

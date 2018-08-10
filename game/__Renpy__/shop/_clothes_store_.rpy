@@ -1090,7 +1090,7 @@ init python:
         def getNamesOfItems(self):
             return [i.name for i in self.getListOfItems()]
         def getTotalPages(self):
-            if self.category in [0,1]: #Outfits & Sets
+            if self.category in [0,1]: # 0=Outfits, 1=Sets
                 return len(cs_inventory_list)/3
             else: #Item Store
                 return len(cs_inventory_list)/4

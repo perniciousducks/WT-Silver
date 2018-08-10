@@ -3,6 +3,7 @@ label store_init:
     if not hasattr(renpy.store,'gold') or reset_persistants:
         $ gold = 0
 
+
     #Update 1.3
     if not hasattr(renpy.store,'clothes_intro_done') or reset_persistants:
         $ clothes_intro_done = False

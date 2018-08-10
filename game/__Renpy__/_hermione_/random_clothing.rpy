@@ -18,11 +18,11 @@ label hermione_door_event:
             $ hermione_wear_stockings   = True
 
             if h_neckwear == "00_blank" or whoring <= 8:
-                $ h_neckwear = "neck_scarf_striped" #Change to Scarf
+                $ h_neckwear = "scarf_striped_g" #Change to Scarf
             if h_gloves == "00_blank":
-                $ h_gloves = "gloves_wool_short"
+                $ h_gloves = "gloves_wool_short_g"
             if h_stockings == "00_blank":
-                $ h_stockings = "stockings_striped"
+                $ h_stockings = "stockings_striped_g"
 
             call update_her_uniform
             call her_chibi("stand","mid","base")

@@ -1,93 +1,108 @@
 
 
 label summon_tonks:
-    
-    call play_sound("door") 
+
+    call play_sound("door")
     $ menu_x = 0.5
     $ menu_y = 0.5
 
     #ADD Tonks chibi here.
-    
-    call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base") 
-    
+
+    call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
+
     label tonks_requests:
-    
+
     $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
-    
+
     menu:
         "-Talk-":
-            if not chitchated_with_tonks: 
-                call tonks_chit_chat 
+            if not chitchated_with_tonks:
+                call tonks_chit_chat
                 #jump tonks_talk
                 jump tonks_requests
             else:
                 #jump tonks_talk
                 jump tonks_requests
-            
-            
+
+
+        "-Ask about outfit changes-" if astoria_wardrobe_unlocked:
+            m "Do you think you could change some of these outfits?"
+            m "Make them a bit... you know. Sluttier."
+            call ton_main("Let me see...","base","base","base","down")
+
+            call check_tonks_cs_inventory
+            if tonks_cs_inventory_list != []:
+                call ton_main("I do have an idea for a couple of those.","base","base","base","down")
+                call ton_main("Which one would you like me to change?","base","base","base","down")
+                call screen tonks_clothing_shop
+            else:
+                call ton_main("I'm sorry [ton_genie_name], but I don't think those outfits you have can be improved.","base","base","base","down")
+                call ton_main("Ask me should you get a new one and I will see what I can do.","base","base","base","down")
+                jump tonks_requests
+
         "{color=#858585}-Send Astoria with her-{/color}" if spells_locked and (astoria_busy or not daytime):
             if daytime:
-                call nar(">Astoria is currently unavailable.") 
+                call nar(">Astoria is currently unavailable.")
             else:
-                call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.") 
+                call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.")
             jump tonks_requests
         "-Send Astoria with her-" if spells_locked and daytime and not astoria_busy:
-            call blkfade 
-            call nar(">You summon Astoria.") 
+            call blkfade
+            call nar(">You summon Astoria.")
             pause.5
             hide screen blkfade
-            call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade") 
-            call ast_main("Uhm, hello, Miss Tonks.","worried","base","worried","R") 
-            call ton_main("Hello, [ton_astoria_name].","horny","base","raised","L") 
-            call ast_main("{size=-2}[ast_tonks_name]...{/size}","pout","narrow","narrow","L") 
+            call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
+            call ast_main("Uhm, hello, Miss Tonks.","worried","base","worried","R")
+            call ton_main("Hello, [ton_astoria_name].","horny","base","raised","L")
+            call ast_main("{size=-2}[ast_tonks_name]...{/size}","pout","narrow","narrow","L")
             if one_out_of_three == 1:
                 m "Astoria, I want you to spend the day with Miss Tonks again."
             if one_out_of_three == 2:
                 m "Miss Greengrass, you are going to spend some quality time with Miss Tonks today."
             if one_out_of_three == 3:
                 m "Girl, you're going with Miss Tonks today. Like it or not..."
-            call ast_main("Again?! Do I really have to?","pout","base","worried","mid") 
+            call ast_main("Again?! Do I really have to?","pout","base","worried","mid")
             m "Yes."
-            call ton_main("Don't worry [ton_astoria_name]. It's gonna be fun!","base","base","base","L") 
-            call ton_main("Take care, [ton_genie_name].","base","base","base","mid") 
-            call ast_main("...","pout","base","worried","L") 
-            call play_sound("door") 
+            call ton_main("Don't worry [ton_astoria_name]. It's gonna be fun!","base","base","base","L")
+            call ton_main("Take care, [ton_genie_name].","base","base","base","mid")
+            call ast_main("...","pout","base","worried","L")
+            call play_sound("door")
             hide screen tonks_main
             with d3
-            
+
             pause.5
-            call play_sound("door") 
+            call play_sound("door")
             hide screen astoria_main
             hide screen bld1
             with d3
-            
+
             $ astoria_busy = True
             $ tonks_busy = True
-            
+
             $ astoria_tonks_event_in_progress = True
-            
+
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu
-            
-            
+
+
         "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
 
             if daytime:
                 ton "Alright, back to work then..."
-            else: 
+            else:
                 ton "Sweet dreams, [ton_genie_name]."
 
             $ tonks_busy = True
             hide screen bld1
             hide screen tonks_main
             with d3
-            call play_sound("door") 
+            call play_sound("door")
 
             if daytime:
                 call play_music("brittle_rille") #Day Theme
                 jump day_main_menu
-            else: 
+            else:
                 call play_music("manatees") #Night Theme
                 jump night_main_menu

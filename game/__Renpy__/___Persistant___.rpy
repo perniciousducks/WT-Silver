@@ -99,6 +99,8 @@ label __init_variables:
         $ force_unlock_pub_favors = False
     if not hasattr(renpy.store,'skip_duel'): #important!
         $ skip_duel = False
+    if not hasattr(renpy.store,'skip_to_hermione'): #important!
+        $ skip_to_hermione = False
     if not hasattr(renpy.store,'next_day'): #important!
         $ next_day = False
 
@@ -159,10 +161,10 @@ label __init_variables:
     ###MISC
     if not hasattr(renpy.store,'unlocked_7th'): #important!
         $ unlocked_7th = False
-    
+
     if not hasattr(renpy.store,'found_puzzle_1'): #important!
         $ found_puzzle_1 = False
-        
+
     if not hasattr(renpy.store,'hermione_action_under'): #important!
         $ hermione_action_under = False
 

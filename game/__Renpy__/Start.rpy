@@ -1,11 +1,11 @@
 
 
 label start_ht:
-    
+
     $ daytime = True
     $ gold = 0
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
-    
+
     ### HERMIONE_MAIN SCREN FLAGS ###
     $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
     $ no_blinking = False #When True - blinking animation is not displayed.
@@ -86,7 +86,7 @@ label start_ht:
     $ gave_the_dress = False #Turns True when Hermione has the dress.
 
 ### HEARTS ###
-    
+
     $  new_request_01_01 = False # Talk to me.
     $  new_request_01_02 = False
     $  new_request_01_03 = False
@@ -275,7 +275,7 @@ label start_ht:
     $ bought_miniskirt = False #Affects 15_mail.rpy
     $ have_miniskirt = False # Turns TRUE when you have the skirt in your possession.
     $ gave_miniskirt = False #Turns True when Hermione has the miniskirt.
-    
+
     show image "interface/blackfade.png"
     if persistent.game_complete: # Offer for game+
         menu:
@@ -284,7 +284,7 @@ label start_ht:
                 # Code needed here for adding persistant items across games
                 $ gold = gold + persistent.gold
                 ">[persistent.gold] gold has been added to your founds."
-                
+
                 if persistent.lolipop >= 1:
                     $ candy = candy + persistent.lolipop # LOLIPOP.
                     ">[persistent.lolipop] pieces of candy have been added to your possessions."
@@ -364,7 +364,7 @@ label start_ht:
                 if persistent.ss_ not None:
                     $ sscroll_ = persistent.ss_
                     $ tmp = len(persistent.ss_)
-                    ">[tmp] scrolls have been added to your possessions."                    
+                    ">[tmp] scrolls have been added to your possessions."
 
 
             ### THE SKIRT ###
@@ -422,7 +422,7 @@ label start_ht:
             "-Disable Cheats-":
                 $ cheats_active = False
                 $ avogadro_law = False
-    
+
     menu:
         "Use chibi animations or image sprites." ">This will only affect a couple of scenes.\n>This can be changed in the cupboard menu."
         "-Use chibis-":
@@ -439,8 +439,11 @@ label start_ht:
         "-Skip to after the duel-" if cheats_active:
             $ skip_duel = True
             jump hp
-            
-       
+        "-Skip to Hermione-" if cheats_active:
+            $ skip_to_hermione = True
+            jump hp
+
+
 
 
 ### GAME STARTS HERE ###
@@ -458,8 +461,8 @@ $ day = 0
 $ reset_persistants            = True
 
 #Snape
-call snape_init 
-call snape_progress_init 
+call snape_init
+call snape_progress_init
 
 #Hermione
 call her_init #Everything resets here!
@@ -469,28 +472,30 @@ call her_chibi_init #Everything resets here!
 call her_progress_init #Everything resets here!
 
 #Luna
-call luna_init 
-call luna_progress_init 
+call luna_init
+call luna_progress_init
 
 #Cho
-call cho_init 
-call cho_progress_init 
+call cho_init
+call cho_progress_init
 
 #Susan
-call susan_init 
-call susan_progress_init 
+call susan_init
+call susan_progress_init
 
 #Astoria
-call astoria_init 
-call astoria_progress_init 
+call astoria_init
+call astoria_progress_init
 
 #Astoria
-call tonks_init 
-call tonks_progress_init 
+call tonks_init
+call tonks_progress_init
 
+#Store
+call store_init
 
 #Wardrobe Reset
-call wardrobe_init 
+call wardrobe_init
 
 
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
@@ -618,7 +623,7 @@ pause 1
 
 ###SCREENS### NO NEED FOR THIS ONE ANYMORE. (SHOWS WHORING THOUGH).
 screen statistics: #http://www.renpy.org/doc/html/screens.html
-    hbox: 
+    hbox:
         spacing 10 xpos 630 ypos 2
         text "{size=-3}Day: [day]\nWhoring: [whoring]\nLevel: [level]\nKnowledge: [knowledge]\nSlytherin [slytherin]\nGryffindor [gryffindor]\nS.Freind: [snape_friendship]\nDay of week: [day_of_week]\nConcentration: [concentration]\nSpeedwriting: [speedwriting]{/size}" #сумма текстом
 

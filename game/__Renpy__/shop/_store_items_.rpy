@@ -449,13 +449,13 @@ label __init_variables:
     # Astoria
     if not hasattr(renpy.store,'ag_boss_uniform_OBJ'): #Like in Hugo Boss...
         $ ag_boss_uniform_OBJ = store_item_class()
+    $ ag_boss_uniform_OBJ.id = "ag_boss_uniform"
     $ ag_boss_uniform_OBJ.name = "Boss Uniform"
     $ ag_boss_uniform_OBJ.cost = 500
     $ ag_boss_uniform_OBJ.type = "set"
     $ ag_boss_uniform_OBJ.items = ["top","bottom","hair","hat"]
     $ ag_boss_uniform_OBJ.wait_time = 3
     $ ag_boss_uniform_OBJ.image = "ag_boss_uniform.png"
-    $ ag_boss_uniform_OBJ.hair_layer = "N"
     $ ag_boss_uniform_OBJ.description = "> A uniform I designed with an old friend of mine.\n  Makes me wonder what happened to Hugo..."
 
     $ astoria_clothing_sets_list = []

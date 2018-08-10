@@ -3,7 +3,7 @@ label __init_variables:
 
     # outfit unlocks/purchases are the only dynamic value we care about so they have been separated into their own dict
     if not hasattr(renpy.store,'unlocked_clothing_list'):
-        unlocked_clothing_list = []
+        $ unlocked_clothing_list = []
 
     # Setup for 1.5
     # Since we probably have to change the outfits, all purchased outfits will get an .unlocked = True variable,

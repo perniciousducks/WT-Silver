@@ -7,11 +7,11 @@ label day_start:
 
 ### RESETING STUFF ###
 
-call reset_hermione_main 
+call reset_hermione_main
 
-call gen_chibi("hide") 
-call her_chibi("hide") 
-call sna_chibi("hide") 
+call gen_chibi("hide")
+call her_chibi("hide")
+call sna_chibi("hide")
 
 $ flip = False
 $ chitchated_with_her = False
@@ -26,7 +26,7 @@ $ searched  = False #Turns true after you search the cupboard. Turns back to Fal
 $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
 $ save_name = temp_name
 
-call luna_day_flags 
+call luna_day_flags
 $ astoria_busy = False
 
 
@@ -38,9 +38,9 @@ if susan_imperio_counter > 0:
     if susan_imperio_counter <= 0:
         $ susan_imperio_influence = False
         $ reset_susans_wardrobe = True
-        call susan_init 
+        call susan_init
         $ reset_susans_wardrobe = False
-    
+
 $ tonks_busy = False
 
 $ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
@@ -84,11 +84,11 @@ $ one_of_tw = renpy.random.randint(1, 20) #Generating one number out of three fo
 $ day_random = renpy.random.randint(0, 10)
 
 if day_random in [0,1,2]:
-    call set_ast_susan_name 
+    call set_ast_susan_name
 if day_random in [3,4,5]:
-    call set_ast_tonks_name 
+    call set_ast_tonks_name
 if day_random in [6,7,8]:
-    call set_ton_astoria_name 
+    call set_ton_astoria_name
 if day_random in [9,10]:
     pass
 
@@ -132,12 +132,12 @@ if hermione_expand_breasts_counter != 0:
     $ hermione_expand_breasts_counter -= 1
 else:
     $ hermione_expand_breasts = False
-    
+
 if hermione_expand_ass_counter != 0:
     $ hermione_expand_ass_counter -= 1
 else:
     $ hermione_expand_ass = False
-    
+
 
 
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
@@ -205,7 +205,7 @@ if day == 12: # LETTER THAT UNLOCKS PAPERWORK BUTTON.
     $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
 
 if outfit_order_placed and not outfit_ready:
-    call outfit_purchase_check 
+    call outfit_purchase_check
 
 if package_is_here:
     play sound "sounds/owl.mp3"  #Quiet...
@@ -225,7 +225,7 @@ $ day +=1
 call points_changes #Makes house points changes.
 
 ###4 Houses
-call FH_day 
+call FH_day
 if days_since_cho == 2:
     jump hermione_cho
 if days_since_cho == 4 and not cho_met:
@@ -237,13 +237,13 @@ if days_since_cho >= 15 and not cho_quidd:
 if cho_quidd and days_since_quidd >= 4:
     jump cho_quidd_events
 
-    
+
 
 
 #EVENTS
-if day >= 25 and whoring >= 9: 
+if day >= 25 and whoring >= 9:
     jump astoria_intro_branches #This jumps to day_resume if nothing happens!
-    
+
 label day_resume:
 
 if day == 7:
@@ -255,10 +255,10 @@ if event13_happened and not event14_happened:
     call event_14 #Returns
 
 if whoring == 11 and not touched_by_boy:
-    call nar("!!! Attention !!!","start") 
+    call nar("!!! Attention !!!","start")
     ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
     ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
-    call nar(">You should also save your game here.","end") 
+    call nar(">You should also save your game here.","end")
     menu:
         "-Understood-":
             pass
@@ -297,15 +297,31 @@ elif luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
 #if day >= 13 and not event10 and hermione_is_waiting_02:
 #    call event_10 #Hermione shows up for the third time. Says that she started "MRM" and sent letter to the ministry.
 
-if skip_duel == True:
-    $ day = 5
-    $ bird_examined = True 
+if skip_duel or skip_to_hermione:
+    $ bird_examined = True
     $ desk_examined = True
-    $ cupboard_examined = True 
+    $ cupboard_examined = True
     $ door_examined = True
     $ fireplace_examined = True
-    $ skip_duel = False
-    
+    if skip_duel:
+        $ skip_duel = False
+
+        $ day = 5
+
+    if skip_to_hermione:
+        $ skip_to_hermione = False
+        #Add vars
+        $ hanging_with_snape = True
+        $ event08_happened = True
+        $ event09 = True #You let Hermione in. This event will stop looping now.
+        $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
+        $ event11_happened = True #Allows next event to start.
+        $ event12_happened = True #Allows next event to start.
+        $ event13_happened = True #Allows next event to start.
+        if day < 14:
+            $ day = 14
+        call event_14 #returns
+
 ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
 if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
     call event_01 #Returns
@@ -316,11 +332,11 @@ if collar == 5:
 ### Guide ###
 #Random Number for Tip/Fact of the Day
 $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
-call update_quests 
-call update_hints 
+call update_quests
+call update_hints
 
 
-call Day_Request_Block 
+call Day_Request_Block
 
 
 
@@ -334,7 +350,7 @@ $ menu_y = 0.5
 
 if phoenix_is_feed:
     show screen phoenix_food
-    
+
 if day == 1 and daytime and bird_examined and desk_examined and cupboard_examined and door_examined and fireplace_examined:
     show screen bld1
     with d3
@@ -346,7 +362,7 @@ if day == 1 and daytime and bird_examined and desk_examined and cupboard_examine
 
 hide screen bld1
 hide screen blktone
-call hide_characters 
+call hide_characters
 with d1
 
 show screen animation_feather

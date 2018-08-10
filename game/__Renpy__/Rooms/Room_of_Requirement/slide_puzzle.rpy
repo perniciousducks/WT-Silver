@@ -60,10 +60,10 @@ label open_pyzzle_box:
         m "Empty... I don't know what I expected." 
         jump cupboard
     if move == -2:
-        m "Fuck it... Smash"
+        m "Fuck it... {size=18}*Smash*{/size}"
         m "A broken bottle..."
-        m "Phoenix tears... well, too late now."
-    if unlocked_7th == False:
+        m "Oh well, to late now and continue with Wait a minute there's some sort of notebook"
+    elif unlocked_7th == False:
         m "Finally... "
         m "Sweet, phoenix tears! Down the hatch we go."
         $renpy.play("sounds/pop03.mp3")
@@ -79,11 +79,11 @@ label open_pyzzle_box:
     hide screen genie
     show screen reading
     with Dissolve(0.3)
-    m "My dear phoenix has been losing its feathers lately, I think it's time soon..... "
+    m "My dear phoenix has been losing his feathers lately, I think it's time soon..... "
     m "*Time for what?*"
     m "That Potter boy is mighty cute, looks just like his father.... "
     g9 "*Well, well....*"
-    m "Severus gave me a weird look today I wonder what he thinks about my......"
+    m "Severus gave me a weird look today, I wonder what he thinks about my......"
     g4 "*This is all trash...*"
     m "*Wait a minute.... this seems interesting.*"
     m "I was walking around in the seventh floor corridor looking for a bathroom..."

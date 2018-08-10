@@ -134,7 +134,8 @@ screen event_menu:
 
         for i in range(0, event_shown):
             if (currentpage*event_shown)+i < len(mr_evs_list):
-                hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
+                if mr_evs_list[i].unlocked:
+                    hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
                 use mirror_item(mr_evs_list[(currentpage*event_shown)+i], 77+90*i)
 
             
@@ -183,23 +184,11 @@ screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
     
 screen room_of_req_door:
-    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
-    add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(350, 255, 1) zoom 0.3
-    add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(660, 255, 1) zoom 0.3
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" at fade_in(200, 105, 1)
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" at fade_in(800, 105, 1)
-    
+    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1) 
     zorder -1
     
 screen floor_7th_door:
-    add "fireplace_fire" xpos 265 ypos 60
-    add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
     add "images/rooms/room_of_requirement/front_door.png" xpos 420 ypos 105
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
-    add "fireplace_fire" xpos 575 ypos 60
-    add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
-      
     zorder -1
 
 screen floor_7th_screen:
@@ -214,8 +203,12 @@ screen floor_7th_screen:
     #add "candle_fire_02" xpos 600 ypos 95
     add "images/main_room/candleM.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
-    
-    #TODO: Add some light
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
+    add "fireplace_fire" xpos 575 ypos 60
+    add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
+    add "fireplace_fire" xpos 265 ypos 60
+    add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
     zorder -1
     
 #animation of flower for painting maybe?    
@@ -277,7 +270,8 @@ label enter_room_of_req:
         call gen_walk(pos1="door", pos2="200")
         m "...."
         whom "So you've found the mirror of Erised"
-        m"cough I mean...yes Severus, it is I... \"Dumbledore\""
+        m "Dumbledore!"
+        m "*Cough* I mean...yes Severus, it is I... \"Dumbledore\""
         call sna_chibi(xpos="door")
         call gen_chibi(action = "", xpos = "200", ypos = "base")
         m "I'm so glad to be back..."
@@ -294,7 +288,7 @@ label enter_room_of_req:
         call sna_main(".....","snape_03") 
         m "I might have ordered a few oddities from Madam Mafkin..."
         call sna_main("Hahahah...That old hag?","snape_28")
-        call sna_main("She's nuts, she can sow that's for damn sure but she'd never know nor care...do whatever you want with her. ", "snape_01")
+        call sna_main("She's nuts, she can sew that's for damn sure but she'd never know nor care...do whatever you want with her. ", "snape_01")
         m "\"I'd rather not...\""
         call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
@@ -314,8 +308,8 @@ label enter_room_of_req:
         m "Your magic might be foreign to me but this seems like nothing more than a party trick, I already know what I desire. "
         call sna_main("Well, it would be quite dull... if you didn't include the changes I made that had it locked up in the first place.", "snape_20")
         m "I could probably make a good guess already but please, do tell..."
-        call sna_main("Well... the original intentions are quite boring so I expanded the enchantment and it turned out to be incredibly difficult but clever that I am...", "snape_23")
-        m "Getting bored!"
+        call sna_main("The intended purpose was far too boring, so I modified the enchantment. This would be incredibly difficult for a lesser wizard, but genius like I am...", "snape_23")
+        m "Booooring."
         call sna_main("It's a porn creator..", "snape_03")
         g5 "A what, sorry?"
         call sna_main("A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn.", "snape_01")

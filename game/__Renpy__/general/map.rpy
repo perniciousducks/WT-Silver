@@ -1,4 +1,15 @@
-
+label leave_main_room:
+    hide screen main_room_menu
+    hide screen main_room
+    hide screen chair_right
+    hide screen fireplace
+    hide screen candlefire
+    hide screen desk
+    hide screen phoenix_food
+    hide screen owl
+    hide screen owl_02
+    hide screen owl_03
+    return
 
 ### Map Screen ###
 
@@ -28,12 +39,7 @@ label floor_7th:
         jump return_office
     else:
         call blkfade 
-        hide screen main_room_menu
-        hide screen main_room
-        hide screen chair_right
-        hide screen fireplace
-        hide screen candlefire
-        hide screen desk
+        call leave_main_room
         show screen floor_7th_screen
         
         

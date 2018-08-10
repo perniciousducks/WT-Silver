@@ -134,7 +134,8 @@ screen event_menu:
 
         for i in range(0, event_shown):
             if (currentpage*event_shown)+i < len(mr_evs_list):
-                hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
+                if mr_evs_list[i].unlocked:
+                    hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
                 use mirror_item(mr_evs_list[(currentpage*event_shown)+i], 77+90*i)
 
             
@@ -183,23 +184,11 @@ screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
     
 screen room_of_req_door:
-    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
-    add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(350, 255, 1) zoom 0.3
-    add "images/rooms/room_of_requirement/owlbasin.png" at fade_in(660, 255, 1) zoom 0.3
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" at fade_in(200, 105, 1)
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" at fade_in(800, 105, 1)
-    
+    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1) 
     zorder -1
     
 screen floor_7th_door:
-    add "fireplace_fire" xpos 265 ypos 60
-    add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
     add "images/rooms/room_of_requirement/front_door.png" xpos 420 ypos 105
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
-    add "fireplace_fire" xpos 575 ypos 60
-    add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
-      
     zorder -1
 
 screen floor_7th_screen:
@@ -214,8 +203,12 @@ screen floor_7th_screen:
     #add "candle_fire_02" xpos 600 ypos 95
     add "images/main_room/candleM.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
-    
-    #TODO: Add some light
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
+    add "fireplace_fire" xpos 575 ypos 60
+    add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
+    add "fireplace_fire" xpos 265 ypos 60
+    add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
+    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
     zorder -1
     
 #animation of flower for painting maybe?    

@@ -60,10 +60,10 @@ label open_pyzzle_box:
         m "Empty... I don't know what I expected." 
         jump cupboard
     if move == -2:
-        m "Fuck it... Smash"
+        m "Fuck it... {size=18}*Smash*{/size}"
         m "A broken bottle..."
-        m "Phoenix tears... well, too late now."
-    if unlocked_7th == False:
+        m "Oh well, to late now and continue with Wait a minute there's some sort of notebook"
+    elif unlocked_7th == False:
         m "Finally... "
         m "Sweet, phoenix tears! Down the hatch we go."
         $renpy.play("sounds/pop03.mp3")

@@ -65,7 +65,7 @@ label a_bad_time_to_disrobe:
     
     m "Now, spill the beans."
     
-    call her_main( "I..I don't have any beans on me sir.", "base", "base" )
+    call her_main( "I..I don't have any beans on me sir.", "soft", "narrow" )
     
     m "\"Is this girl for real?\""
 
@@ -88,6 +88,7 @@ label a_bad_time_to_disrobe:
     call her_main( "They were playing wizards chess...", "base", "base" )
     call her_main( "Pretty badly in fact.", "disgust", "wink" ) 
 
+    m "..."
     m "I'm sorry miss Granger but you're going to have to do better than this." 
     m "I expect better from you by now."
     
@@ -223,8 +224,14 @@ label whose_points:
     m "First, let me introduce todays contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     
-    call her_main(" ", "grin","worried",cheeks="blush")
+    call her_main("...", "grin","worried",cheeks="blush")
     
+    m "The ravishing ravenclaw who'll rock your socks off. Luna! "
+    call luna_main("heh...hello.", "wink", "default", "default", "default")
+
+    m "And the small girl with a big personality. Astoria!"
+    call ast_main( "Hey!","scream" ,"angry" ,"angry" ,"angry" ) 
+ 
     m "Today we're playing scenes from a hat."
     hide screen hermione_main
     
@@ -300,7 +307,7 @@ label whose_points:
     call her_main("\"Seems like pleasing the judge is the way to go. Only one round left...\"", "annoyed","worried")
     hide screen hermione_main
     
-    call luna_main(" ", "default", "default", "default", "wide_smile")
+    call luna_main("...", "default", "default", "default", "wide_smile")
     hide screen luna
     
     m "Last round ladies. You better make it a good one. It's still all to play for."

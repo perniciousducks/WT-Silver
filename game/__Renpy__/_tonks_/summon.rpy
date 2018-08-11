@@ -42,7 +42,7 @@ label summon_tonks:
             else:
                 call ast_main("Uhm, hello, Miss Tonks.","worried","base","worried","R")
                 call ton_main("Hello, [ton_astoria_name].","horny","base","raised","L")
-                call ton_main("{size=-2}[ast_tonks_name]...{/size}","pout","narrow","narrow","L")
+                call ast_main("{size=-2}[ast_tonks_name]...{/size}","pout","narrow","narrow","L")
             if one_out_of_three == 1:
                 m "Astoria, I want you to spend the day with Miss [tonks_name] again."
             if one_out_of_three == 2:
@@ -98,7 +98,7 @@ label summon_tonks:
 
 label tonks_talk:
     menu:
-        "-Ask about outfit upgrades-" if astoria_wardrobe_unlocked:
+        "-Ask about outfit upgrades-":
             m "[tonks_name],..."
             m "Do you think you could change any of these outfits?"
             m "You know..."

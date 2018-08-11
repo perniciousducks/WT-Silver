@@ -125,6 +125,9 @@ label equip_her_bra:
                         pass
                     else:
                         pass
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 17."
+                    jump return_to_wardrobe
 
             elif underwear_choice in ["bra_latex"]:
                 if whoring >= 11: #Success
@@ -137,6 +140,9 @@ label equip_her_bra:
                         pass
                     else:
                         pass
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 17."
+                    jump return_to_wardrobe
 
             elif underwear_choice in ["bra_french_maid"]:
                 if whoring >= 11: #Success
@@ -149,6 +155,9 @@ label equip_her_bra:
                         pass
                     else:
                         pass
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 17."
+                    jump return_to_wardrobe
 
             elif underwear_choice in ["bra_tape"]:
                 if whoring >= 11: #Success
@@ -161,6 +170,9 @@ label equip_her_bra:
                         pass
                     else:
                         pass
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 17."
+                    jump return_to_wardrobe
 
             elif underwear_choice in ["top_fishnets"]:
                 if whoring >= 11: #Success
@@ -170,18 +182,22 @@ label equip_her_bra:
                         pass
                 else: #Fail
                     if whoring < 5:
-                        m "[hermione_name], "
-                        call her_main("What? What's this? ?","soft","base")
-                        m "It's a fishnet t--"
-                        call her_main("Oh, I get it!","grin","down")
-                        call her_main("This isn't really a hobby I considered pursuing, [genie_name]...","open","baseL")
-                        call her_main("But if you say it will help me with my grades then I'll try my best.","soft","down")
-                        m "Wait what?"
-                        call her_main("I will try it out later if that's alright with you.","base","glance")
-                        m "(...)"
-                        m "(Does she want to wear the top now or did she decide to go fishing with it...?)"
+                        pass
+                    #    m "[hermione_name], "
+                    #    call her_main("What? What's this? ?","soft","base")
+                    #    m "It's a fishnet t--"
+                    #    call her_main("Oh, I get it!","grin","down")
+                    #    call her_main("This isn't really a hobby I considered pursuing, [genie_name]...","open","baseL")
+                    #    call her_main("But if you say it will help me with my grades then I'll try my best.","soft","down")
+                    #    m "Wait what?"
+                    #    call her_main("I will try it out later if that's alright with you.","base","glance")
+                    #    m "(...)"
+                    #    m "(Does she want to wear the top now or did she decide to go fishing with it...?)"
                     else:
                         pass
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 17."
+                    jump return_to_wardrobe
 
 
 
@@ -193,6 +209,7 @@ label equip_her_bra:
 
             call set_h_bra(underwear_choice, underwear_color_choice)
 
+            call her_main(xpos="wardrobe")
             hide screen wardrobe
             call screen wardrobe
 
@@ -200,44 +217,19 @@ label equip_her_bra:
             $ wardrobe_active = 1
             call set_h_bra(underwear_choice, underwear_color_choice)
 
+            call her_main(xpos="wardrobe")
             hide screen wardrobe
             call screen wardrobe
 
 
+
+
 ### Equip Astoria's Bra ###
 label equip_ast_bra:
+    call set_ast_bra(underwear_choice)
 
-    if underwear_choice == ast_bra and underwear_color_choice == ast_bra_color:
-        $ wardrobe_active = 1
-        #">She's already wearing that!" #Remove line. Just for testing.
-        jump return_to_wardrobe
-
-    #elif mad >= 1:
-    #    jump equipping_failed
-
-    else:
-        if wardrobe_chitchat_active:
-            pass
-            #hide screen astoria_main
-            #with d3
-
-            #$ wardrobe_active = 0 #activates dissolve in her_main
-            #$ astoria_xpos = 665
-
-            #m "[astoria_name]..."
-
-            #Panties
-            if underwear_choice == "bra_1":
-                m "Would you wear your school panties for me? The very long one."
-        else:
-            pass
-
-        $ wardrobe_active = 1
-
-        call set_ast_bra(underwear_choice)
-
-        call ast_main(xpos="wardrobe")
-        call screen wardrobe
+    hide screen wardrobe
+    call screen wardrobe
 
 ### Equip Susan's Bra ###
 label equip_sus_bra:
@@ -313,38 +305,11 @@ label equip_her_panties:
 
 ### Equip Astoria's Panties ###
 label equip_ast_panties:
+    call set_ast_panties(underwear_choice)
 
-    if underwear_choice == ast_panties and underwear_color_choice == ast_panties_color:
-        $ wardrobe_active = 1
-        #">She's already wearing that!" #Remove line. Just for testing.
-        jump return_to_wardrobe
+    hide screen wardrobe
+    call screen wardrobe
 
-    #elif mad >= 1:
-    #    jump equipping_failed
-
-    else:
-        if wardrobe_chitchat_active:
-            pass
-            #hide screen astoria_main
-            #with d3
-
-            #$ wardrobe_active = 0 #activates dissolve in her_main
-            #$ astoria_xpos = 665
-
-            #m "[astoria_name]..."
-
-            #Panties
-            if underwear_choice == "panties_1":
-                m "Would you wear your school panties for me? The very long one."
-        else:
-            pass
-
-        $ wardrobe_active = 1
-
-        call set_ast_panties(underwear_choice)
-
-        call ast_main(xpos="wardrobe")
-        call screen wardrobe
 
 ### Equip Susan's Panties ###
 label equip_sus_panties:

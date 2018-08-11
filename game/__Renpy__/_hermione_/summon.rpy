@@ -180,10 +180,10 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and hg_gryffCheer_OBJ.unlocked:
+                "-Work as a cheerleader for Gryffindor-" if daytime and (hg_cheer_g_OBJ.unlocked or hg_cheer_g_sexy_OBJ.unlocked):
                      jump job_3
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and not hg_gryffCheer_OBJ.unlocked:
+                "-Work as a cheerleader for Gryffindor-" if daytime and not (hg_cheer_g_OBJ.unlocked or hg_cheer_g_sexy_OBJ.unlocked):
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 
@@ -191,10 +191,10 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
 
-                "-Work as a cheerleader for Slytherin-" if daytime and hg_slythCheer_OBJ.unlocked:
+                "-Work as a cheerleader for Slytherin-" if daytime and (hg_cheer_s_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked):
                     jump job_4
 
-                "-Work as a cheerleader for Slytherin-" if daytime and not hg_slythCheer_OBJ.unlocked:
+                "-Work as a cheerleader for Slytherin-" if daytime and not (hg_cheer_s_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked):
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 

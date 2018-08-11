@@ -2,26 +2,26 @@
 
 screen tonks_main:
     ### BASE IMAGE
+    add tonks_base xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the base body
     add tonks_l_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the arms
     add tonks_r_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the arms
     add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the hair base
-    add tonks_base xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the base body
     add tonks_boobs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the base body
-    
+
     ### FACE
     add tonks_eye_bg xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the eye white
     add tonks_pupil xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the pupil
     add tonks_eye xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the eye outline
-    
+
     add tonks_eyebrow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the eyebrow
     add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the hair shadow
     add tonks_mouth xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the mouth
-    
+
     add tonks_cheeks xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the extras
     add tonks_tears xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the extras
     add tonks_extra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the extras
-    
-    ### CLOTHES 
+
+    ### CLOTHES
     if tonks_wear_coat:
         add tonks_coat_back xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the coat back
     if tonks_wear_bra and not tonks_wear_top:
@@ -38,21 +38,21 @@ screen tonks_main:
         add tonks_stockings xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the stockings
     if tonks_wear_coat:
         add tonks_coat xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the coat
-        
+
     ### ZORDER
     zorder tonks_zorder
 
-    
-    
-label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
+
+
+label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None, breasts=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen tonks_main
-    
+
     #Reset
     if cheeks == None:
         $ cheeks = "blank"
     if tears == None:
         $ tears = "blank"
-        
+
     #Positioning
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
@@ -77,13 +77,13 @@ label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None,
             #ADD zorder change to be in front of textbox!
         else:
             $ tonks_ypos = int(ypos)
-            
 
-    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, base, cheeks, tears, extra)
-    
+
+    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, base, breasts, cheeks, tears, extra)
+
     show screen tonks_main
     show screen bld1
-    
+
     #Transitions
     if trans != None:         #d3 is default.
         if trans == "d1":
@@ -109,29 +109,30 @@ label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None,
             pass
         else: #for typos and preventing crashes...
             with d3
-            
+
     #Default transition.
     else:
         if not wardrobe_active:
             with d3
-            
+
     if text != "":
         $ renpy.say(ton, text)
-        
+
     return
 
-    
+
 init python:
     def changeTonks(    mouth=None,
                         eye=None,
-                        eyebrow=None, 
-                        pupil=None,  
-                        x_pos=None, 
+                        eyebrow=None,
+                        pupil=None,
+                        x_pos=None,
                         y_pos=None,
                         base=None,
+                        breasts=None,
                         cheeks=None,
                         tears=None,
-                        extra=None): 
+                        extra=None):
         ###DEFINE GLOBAL VARIABLES
         global tonks_mouth
         global tonks_eye
@@ -140,6 +141,7 @@ init python:
         global tonks_xpos
         global tonks_ypos
         global tonks_base
+        global tonks_boobs
         global tonks_cheeks
         global tonks_tears
         global tonks_extra
@@ -147,12 +149,12 @@ init python:
         if mouth is not None:
             tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png"
         if eye is not None:
-            tonks_eye         = "characters/tonks/face/eyes/eye_"+eye+".png" 
+            tonks_eye         = "characters/tonks/face/eyes/eye_"+eye+".png"
             tonks_eye_bg      = "characters/tonks/face/eyes/white.png"
         if eyebrow is not None:
-            tonks_eyebrow     = "characters/tonks/face/brow/"+eyebrow+".png" 
+            tonks_eyebrow     = "characters/tonks/face/brow/"+eyebrow+".png"
         if pupil is not None:
-            tonks_pupil       = "characters/tonks/face/eyes/pupil_"+pupil+".png"  
+            tonks_pupil       = "characters/tonks/face/eyes/pupil_"+pupil+".png"
         ###POSITION CONTROL
         if x_pos is not None:
             tonks_xpos        = x_pos
@@ -160,10 +162,12 @@ init python:
             tonks_ypos        = y_pos
         #BODY CONTROL
         if base is not None:
-            tonks_base        = "characters/tonks/base/"+base+".png" 
+            tonks_base        = "characters/tonks/body/base/"+base+".png"
+        if breasts is not None:
+            tonks_boobs       = "characters/tonks/body/base/"+breasts+".png"
         if cheeks is not None:
-            tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png" 
+            tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png"
         if tears is not None:
-            tonks_tears       = "characters/tonks/face/extras/"+tears+".png" 
+            tonks_tears       = "characters/tonks/face/extras/"+tears+".png"
         if extra is not None:
-            tonks_extra       = "characters/tonks/face/extras/"+extra+".png" 
+            tonks_extra       = "characters/tonks/face/extras/"+extra+".png"

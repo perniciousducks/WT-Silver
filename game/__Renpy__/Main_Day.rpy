@@ -305,7 +305,6 @@ if skip_duel or skip_to_hermione:
     $ fireplace_examined = True
     if skip_duel:
         $ skip_duel = False
-
         $ day = 5
 
     if skip_to_hermione:
@@ -318,9 +317,15 @@ if skip_duel or skip_to_hermione:
         $ event11_happened = True #Allows next event to start.
         $ event12_happened = True #Allows next event to start.
         $ event13_happened = True #Allows next event to start.
+
         if day < 14:
             $ day = 14
         call event_14 #returns
+
+        $ work_unlock = True # Send a letter that will unlock the ability to write reports.
+        $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
+        play sound "sounds/owl.mp3"  #Quiet...
+        show screen owl
 
 ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
 if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:

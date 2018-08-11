@@ -8,55 +8,16 @@ label open_guide:
     #call update_tip_of_the_day
     $ sQuest_get_map.counter = 1 #Testing Purpose only
     $ sQuest_buy_at_shop.counter = 1 #Testing Purpose only
-    call update_quests 
-    call update_tip_of_the_day 
-    call blktone 
+    call update_quests
+    call update_tip_of_the_day
+    call blktone
     call screen guide
     label guide_return_point:
         $ renpy.play('sounds/scroll.mp3')
         hide screen bld1
-        call hide_blktone 
+        call hide_blktone
         call screen main_room_menu
-    
 
-label give_reward(text="",gift=""):
-    show screen blktone5
-    with d3
-    
-    $ renpy.play('sounds/win2.mp3') 
-    show screen notes
-    with d9
-    hide screen notes
-    with d3
-
-    if gift!="":
-        $ the_gift = gift
-    else:
-        $ the_gift = "images/store/01.png"
-
-    $ menu_x = 0.5
-    $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
-
-    if text != "":
-        $ quest_reward_text = text
-
-    show screen gift
-    with d3
-
-    menu:
-        "[quest_reward_text]"
-        "-Done Reading-":
-            pass
-
-    hide screen gift
-    with d1
-    
-    hide screen blktone5
-    with d3
-    
-    $ menu_y = 0.5 #return to default menu align
-
-    return
 
 #Adds star next to personal favours if you can gain whoring points.
 label update_hints:
@@ -142,4 +103,3 @@ label update_hints:
         $ hg_pf_TimeForAnal_OBJ.progress_hint = False
 
     return
-

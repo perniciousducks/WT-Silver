@@ -208,8 +208,37 @@ label job_3:
     else:
         her "As you wish [genie_name]."
 
-    call set_hermione_outfit(hg_gryffCheer_OBJ)
 
+    # Setup Cheerleader Outfit.
+    hide screen hermione_main
+    with d3
+
+    $ h_request_wear_outfit = False
+    $ h_request_wear_top = True
+    $ h_request_wear_bottom = True
+    $ h_request_wear_stockings = True
+
+    if hg_cheer_g_sexy_OBJ.unlocked and whoring >= 11: #Sexy
+        $ h_top = "top_cheer_sexy_g"
+        $ h_skirt = "skirt_cheer_sexy_g"
+        $ h_stockings = "stockings_cheer_short_g"
+    else: #Normal
+        $ h_top = "top_cheer_g"
+        $ h_skirt = "skirt_cheer_g"
+        $ h_stockings = "stockings_cheer_g"
+
+    $ h_top_color = "base"
+    $ h_skirt_color = "base"
+
+    call load_hermione_clothing_saves
+    call update_her_uniform
+    pause.8
+
+    show screen hermione_main
+    with d3
+    pause.5
+
+    g9 "You look great!"
     m "Off you go then..."
     if whoring <= 6:
         her "*Humph!*..."
@@ -234,8 +263,6 @@ label gryffindor_cheer_responses:
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
     pause.2
-
-    call h_outfit_OBJ(hg_gryffCheer_OBJ)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
@@ -351,12 +378,40 @@ label job_4:
     if whoring <= 6:
         her "*Humph!*..."
     elif whoring >=7 and whoring <= 15:
-        her "Yes [genie_name]..."
+        her "Yes, [genie_name]..."
     else:
-        her "As you wish [genie_name]."
+        her "As you wish, [genie_name]."
 
-    call set_hermione_outfit(hg_slythCheer_OBJ)
+    # Setup Cheerleader Outfit.
+    hide screen hermione_main
+    with d3
 
+    $ h_request_wear_outfit = False
+    $ h_request_wear_top = True
+    $ h_request_wear_bottom = True
+    $ h_request_wear_stockings = True
+
+    if hg_cheer_s_sexy_OBJ.unlocked and whoring >= 11: #Sexy
+        $ h_top = "top_cheer_sexy_s"
+        $ h_skirt = "skirt_cheer_sexy_s"
+        $ h_stockings = "stockings_cheer_short_s"
+    else: #Normal
+        $ h_top = "top_cheer_s"
+        $ h_skirt = "skirt_cheer_s"
+        $ h_stockings = "stockings_cheer_s"
+
+    $ h_top_color = "base"
+    $ h_skirt_color = "base"
+
+    call load_hermione_clothing_saves
+    call update_her_uniform
+    pause.8
+
+    show screen hermione_main
+    with d3
+    pause.5
+
+    g4 "You look incredible!"
     m "Off you go then..."
     if whoring <= 6:
         her "*Humph!*..."
@@ -381,8 +436,6 @@ label slytherin_cheer_responses:
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
     pause.2
-
-    call h_outfit_OBJ(hg_slythCheer_OBJ)
 
     if day_random >=9 and lock_public_favors == False:
         $ uni_sperm = True

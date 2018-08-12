@@ -144,7 +144,7 @@ label a_bad_time_to_disrobe:
     
     call her_main( "...", "upset", "base", tears="mascara_soft")
     
-    m "What happened? Is there anything wrong?"
+    m "What happened? Where's your shirt?"
     
     call her_main( "What does it look like?", "upset", "base", tears="mascara_soft" ) 
     
@@ -178,7 +178,7 @@ label a_bad_time_to_disrobe:
     
     m "Sorry, you carry on my dear!"
 
-    call her_main( "I think the boy may have seen me.", "soft", "concerned", tears="mascara" ) 
+    call her_main( "I ran out and grabbed what I could of my clothes... I think the boy may have seen me.", "soft", "concerned", tears="mascara" ) 
     call her_main( "Professor.... I'm beginning to have second thoughts about this cloak idea." , "soft", "concerned", tears="mascara" )
     
     m "The boy didn't see your face, that's what matters."

@@ -9,9 +9,9 @@ label a_bad_time_to_disrobe:
     show screen genie
     show screen blkfade
     
-    n "In this story the genie has found an invisibility cloak."
-    n "And with the cloak comes great oportunities"
-    n "Title: A bad time to disrobe."
+    nar "In this story the genie has found an invisibility cloak."
+    nar "And with the cloak comes great oportunities"
+    nar "Title: A bad time to disrobe."
     
     hide screen blkfade
     with d3
@@ -51,7 +51,7 @@ label a_bad_time_to_disrobe:
     with d3
     hide screen main_room
     hide screen genie
-    n "Later that evening. Hermione returns."
+    nar "Later that evening. Hermione returns."
     $ temp_time = daytime
     $ daytime = False
     show screen main_room
@@ -107,7 +107,7 @@ label a_bad_time_to_disrobe:
     hide screen main_room
     hide screen genie
     show screen quistion_pop_up("Hermione will remember that")
-    n "Hermione returns the next morning, looking nervous but more determined than yesterday."
+    nar "Hermione returns the next morning, looking nervous but more determined than yesterday."
     $ daytime = True
     show screen main_room
     show screen genie
@@ -131,7 +131,7 @@ label a_bad_time_to_disrobe:
     hide screen hermione_main
     show screen day_to_night
     with d3
-    n "Later that evening a distraught looking Hermione enters the office. "
+    nar "Later that evening a distraught looking Hermione enters the office. "
     $ daytime = False
     show screen main_room
     show screen genie
@@ -140,9 +140,8 @@ label a_bad_time_to_disrobe:
 
     call her_chibi("top_naked", "desk", "base")
     $ hermione_wear_top = False
-    $ hermione_breasts_temp = hermione_breasts
-    $ hermione_breasts = "characters/hermione/body/breasts/breasts_normal.png"
-    #TODO: Remove top
+    call update_her_uniform
+    
     call her_main( "...", "upset", "base", tears="mascara_soft")
     
     m "What happened? Is there anything wrong?"
@@ -202,7 +201,6 @@ label a_bad_time_to_disrobe:
     hide screen main_room
     hide screen hermione_main
     $ hermione_wear_top = True
-    $ hermione_breasts = hermione_breasts_temp
     $ daytime = temp_time
     jump enter_room_of_req
     
@@ -219,21 +217,23 @@ label whose_points:
     m "The show where everything is made up but the points don't matter."
     m "Just like at Hogwarts."
     
-    call her_main("\"I hope I win! I need those housepoints.\"", "base","squintL",xpos="mid")
+    call her_main("\"I hope I win! I need those housepoints.\"", "base","squintL",xpos="left")
     
     m "First, let me introduce todays contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     
-    call her_main("...", "grin","worried",cheeks="blush")
+    call her_main("...", "grin","worried",cheeks="blush", xpos="left")
     
     m "The ravishing ravenclaw who'll rock your socks off. Luna! "
     call luna_main("heh...hello.", "wink", "default", "default", "default")
 
     m "And the small girl with a big personality. Astoria!"
-    call ast_main( "Hey!","scream" ,"angry" ,"angry" ,"angry" ) 
+    call ast_main( "Hey!","scream" ,"angry" ,"angry" ,"angry", xpos="right" ) 
  
     m "Today we're playing scenes from a hat."
     hide screen hermione_main
+    hide screen luna
+    hide screen astoria_main
     
     hat "Stay the fuck away from me."
     
@@ -338,7 +338,7 @@ label whose_points:
     call h_action("lift_top") 
 
     call play_music("playful_tension") # SEX THEME.
-
+    
     call her_chibi("lift_top","mid","base") 
     
     call bld 
@@ -391,61 +391,61 @@ label genie_house_elf:
     hide screen blkfade
     with d3
     
-    n "This story takes place in between the introduction of Snape and first meeting Hermione."
-    n "The genie, the desk and the door:"
-    n "How does that door work? The genie thought."
+    nar "This story takes place in between the introduction of Snape and first meeting Hermione."
+    nar "The genie, the desk and the door:"
+    nar "How does that door work? The genie thought."
 
     m "\"How do the people know I’ve summoned them? I don’t have a secretary...that I know of anyway.\""
 
     m "Have they been keeping a secretary from me? I should ask Sn..."
     
-    n "Snape then opened the door, his pointy nose protruding under his silky hair."
+    nar "Snape then opened the door, his pointy nose protruding under his silky hair."
 
     call sna_walk("door","mid",2) 
     call sna_main("You called? ", "snape_23", xpos="base", ypos="base")
 
-    n "Snape said with a smirk, doing his best to hide his amusement."
+    nar "Snape said with a smirk, doing his best to hide his amusement."
     
     g11 "How did you, how do you..."
     m "This door, how does it work?"
     
-    n " The genie said, now even more frustrated. "
-    n "The genie wasn’t used to this... this unfamiliar magic."
-    n "He was used to knowing the ins and outs of the universe. But this world, it was to alien to him..."
-    n "At least he knew things about aliens..."
+    nar " The genie said, now even more frustrated. "
+    nar "The genie wasn’t used to this... this unfamiliar magic."
+    nar "He was used to knowing the ins and outs of the universe. But this world, it was to alien to him..."
+    nar "At least he knew things about aliens..."
 
     call sna_main("Well, you’re the headmaster are you not? ", "snape_06", xpos="base", ypos="base")
 
-    n "Snape said as if that meant anything."
+    nar "Snape said as if that meant anything."
 
-    n "A look of confusion spread across the genies face which only made Snape smirk even more."
-    n "He then composed himself after seeing this unusual expression on the headmasters face."
+    nar "A look of confusion spread across the genies face which only made Snape smirk even more."
+    nar "He then composed himself after seeing this unusual expression on the headmasters face."
 
     call sna_main("I keep forgetting that you don’t know these things.", "snape_01", xpos="base", ypos="base")
     call sna_main("students learn it on day one.", "snape_01", xpos="base", ypos="base")
     call sna_main("The headmaster is in control of the school and its inhabitants.", "snape_24", xpos="base", ypos="base")
 
-    n "Snape said in a matter of fact sort of way."
+    nar "Snape said in a matter of fact sort of way."
     
     m "I know that, we have schools in my world too."
     m "But generally we don’t wave wooden sticks around yelling random words."
 
-    n "Snape flinched, as if the notion of magic consisting of waving a wand and yelling random words was utterly absurd."
+    nar "Snape flinched, as if the notion of magic consisting of waving a wand and yelling random words was utterly absurd."
     
     call sna_main("No. You’re literally in control over the school....look.", "snape_08", xpos="base", ypos="base")
     
-    n "Snape says, pulling his wand out, waving it."
+    nar "Snape says, pulling his wand out, waving it."
     
     call sna_main("Revelio!", "snape_01", xpos="base", ypos="base")
     call sna_main(remove=True)
     
-    n "After a flash of light and a small pop a house elf appears in the corner of the room."
+    nar "After a flash of light and a small pop a house elf appears in the corner of the room."
     
     call helf_main(" ")
     
     g5 "What the hell is that?"
     
-    n "The genie said, jumping onto the desk as if things appearing out of thin air was new to him."
+    nar "The genie said, jumping onto the desk as if things appearing out of thin air was new to him."
     
     call helf_main(remove=True)
     
@@ -454,11 +454,11 @@ label genie_house_elf:
     m "A house...elf."
     g10 "Is that like a Santa's elf? "
     
-    n "The genie said, now climbing down to sit on his chair."
+    nar "The genie said, now climbing down to sit on his chair."
 
     call sna_main("Sort of, they don’t get paid so they do have that in common...", "snape_05", xpos="base", ypos="base")
     
-    n "Snape muttered under his breath..."  
+    nar "Snape muttered under his breath..."  
     
     call sna_main("The houses elves here can send us messages so we can go where we're needed.", "snape_05", xpos="base", ypos="base")
     
@@ -467,19 +467,19 @@ label genie_house_elf:
     m "The house elf cleans?"
     m "I thought I had some sort of magic self cleaning desk..."
     
-    n "The genie said sheepishly." 
+    nar "The genie said sheepishly." 
     call sna_main(remove=True)
     
     call helf_main("No sir...")
     
-    n "Said the elf, trying its hardest to bite his tongue but failing."
+    nar "Said the elf, trying its hardest to bite his tongue but failing."
     
     call helf_main("I see it all, I clean it all....every...last bit of it.")
     call helf_main(remove=True)
     
     call sna_main("...", "snape_08", xpos="base", ypos="base")
     
-    n "After a few moments Snape turned around, started walking towards the door and said."
+    nar "After a few moments Snape turned around, started walking towards the door and said."
     
     call sna_main("If that is all, I’ll be in the dungeons.", "snape_01", xpos="base", ypos="base")
     call sna_main("I’ve been working on a new cleaning solution.", "snape_01", xpos="base", ypos="base")
@@ -487,7 +487,7 @@ label genie_house_elf:
     call sna_walk("mid","leave",2) 
     call sna_main(remove=True)
     
-    n "The door shut and silence spread across the room only interrupted after a few minutes by the house elf."
+    nar "The door shut and silence spread across the room only interrupted after a few minutes by the house elf."
     
     call helf_main("So, should I turn invisible again sir?")
     
@@ -498,5 +498,345 @@ label genie_house_elf:
     hide screen genie
     hide screen main_room
     jump enter_room_of_req
+
+label a_spaced_out_conversation:
+    $ temp_time = daytime
+    $ daytime = False
     
+    call hide_room_req
+    show screen main_room
+    show screen fireplace_fire
+    show screen with_snape_animated
+    call blkfade 
+    call hide_blkfade
     
+    nar "The flames flickered higher up the fireplace." 
+    nar "Licking in greedy hunger as if wanting taste the wine the two men sedately drank just out of the fire’s reach."
+    nar "The men took no notice of the flames, except to silently acknowledge the warmth it provided."
+    nar "They were an odd pair, these two, sitting as they frequently did, beside the old fireplace sipping wine."
+    nar "One, dressed all in black, with matching flowing black hair, stared sullenly at his glass."
+    nar "Perhaps it was the darkness surrounding him that made his skin look so pale."
+    nar "And maybe it was only the voluminous robes wrapped loosely across his body that made him appear gaunt."
+    nar "The other was even more mysterious..."
+    nar "Draped in gray-white costume, he had a long, flowing beard and a curious aura of both age and vitality."
+    nar "Sometimes, if the flames flickered just so, he almost appeared entirely different, as a burly, cowled man with a short curled beard."
+    nar "They sat in front of the fire as they did on many nights and talked of worlds upon worlds. And of magic. The dark man was first to speak."
+
+    call sna_main( "So, let me try to understand this,", "snape_05" )
+    
+    nar "Snape said slowly." 
+    
+    call sna_main( "You live in a little bottle?", "snape_05" )
+
+    nar "The gray figure nodded."
+
+    call sna_main( "How does that work?", "snape_05" )
+
+    m "I believe it’s based on tessaracted space."
+    
+    nar "Genie said, his tone becoming akin to a professor lecturing a class."
+    
+    m "The whole process is very Loki."
+
+    nar "Snape didn’t hear the last words as a flicker and shadow from the flames made Genie appear different."
+    nar "Almost as if gleaming golden horns arose from his head."
+
+    call sna_main( "Come again?", "snape_03" )
+    
+    nar "Snape asked, gaping at the sight before it was gone so fast that he was left unsure he had seen anything."
+
+    m "I said, they keep the whole thing low key."
+    
+    nar "Genie repeated."
+    
+    m "Keeps most people from knowing how they make it bigger on the inside."
+
+    call sna_main( "Most people?", "snape_05" )
+    nar "Snape asked."
+
+    m "Well, Who knows..."
+    nar "Genie answered."
+
+    call sna_main( "Do you know?", "snape_24" )
+    
+    nar "Snape asked."
+
+    m "Who knows."
+    
+    nar "Genie repeated."
+
+    call sna_main( "So, who knows?", "snape_08" )
+    
+    nar "Snape asked again, getting a little irritated."
+    nar "Patience was not a trait Snape had ever cared to master."
+
+    m "Yes, Who knows!"
+    
+    nar "Genie said."
+    nar "Snape flicked his hands impatiently and just decided to move on"
+    nar "Determining when Genie was serious or not was still beyond his ability."
+    nar "Plus, there had been another one of those weird flickers and he could have sworn he had seen a multicolor scarf around Genie’s neck."
+
+    call sna_main( "And, you then grant the summoner three wishes?", "snape_01" )
+    
+    nar "Snape continued."
+    
+    call sna_main( "Anything they want? You can make anything come true?", "snape_05" )
+
+    m "Those are the rules of my existence, yes."
+    
+    nar "Genie replied, thinking, not for the first time, how limited his real life was."
+
+    call sna_main( "That seems stupid.", "snape_09" )
+    
+    nar "Snape said bluntly."
+    nar "Genie smiled. Snape was never much for niceties."
+    nar "Genie found it refreshing to talk with someone whose disdain for others so matched his own."
+
+    nar "Snape frowned at that smile. He got along almost perfectly with Genie."
+    nar "Their lusts and passions were quite similar..."
+    nar "It’s just Genie’s sense of humor that made Snape doubt his seriousness sometimes."
+
+    call sna_main("You’ve got the power of a god,", "snape_06" )
+    
+    nar "Snape pushed forward."
+    
+    call sna_main("Can’t you just magic yourself free?", "snape_05" )
+
+    m "It doesn’t work that way,"
+    
+    nar "Genie said sadly." 
+    
+    g "I can only grant magic to others."
+
+    nar "Snape shook his head."
+    
+    call sna_main( "It still seems stupid...", "snape_06" )
+    call sna_main( "What if I were to visit you in your world and make one of my wishes that you be free to use your magic however you should please?", "snape_09" )
+
+    nar "Genie stared at Snape with something like wonder."
+    nar "It takes quite a bit to make an ageless being like Genie gape in awe."
+
+    g5 "That’s…That’s brilliant!"
+    
+    nar "Genie shouted."
+    
+    g6 "Great Gods, man, that could actually work!"
+
+    nar "Snape was taken aback by Genie’s enthusiastic shout, but quickly recovered."
+    nar "He was happy for his friend’s excitement, but puzzled."
+
+    call sna_main( "Haven’t you ever thought of that before?", "snape_05" )
+    
+    nar "Snape asked."
+
+    m "Well, no..."
+    
+    nar "Said Genie, and if ageless beings could blush, one would assume that’s what Genie would be doing."
+    
+    m "It’s not something that ever came up."
+
+    call sna_main( "No one suggested it to you?", "snape_01" )
+    
+    nar "Snape asked, hoping to skip past Genie’s discomfort."
+
+    m "Surprisingly, when given three opportunities at your fondest dreams, helping others doesn’t seem to come up very often."
+    
+    nar "Genie said with a sarcastic edge that relieved Snape."
+
+    call sna_main( "Well, then...", "snape_01" )
+    
+    nar "Snape said."
+    
+    call sna_main( "After we find a way to get you back to your home, maybe I could come visit you and we could work something out.", "snape_28" )
+
+    nar "Genie eyed him curiously and then, with a bit of his usual humor asked," 
+    
+    g9 "Are you sure you could resist the urge to use all three on yourself?"
+
+    nar "Snape chuckled. He momentarily considered how rarely he chuckled." 
+    nar "Not with humor, at least. He hadn’t really done that since…"
+
+    call sna_main( "Yes", "snape_28" )
+    
+    nar "Snape said with sudden certainty." 
+    
+    call sna_main( "There is really only one wish I would really want.", "snape_23" )
+
+    nar "Genie raised an eyebrow at that, but let it stand."
+
+    m "What would be your wish, my friend?"
+    
+    nar "He asked Snape kindly."
+
+    call sna_main( "I wish I could go back and have wooed Lily for my own", "snape_23" )
+    
+    nar "Snape said dreamily. In his mind’s eye, he remembered the flaming red hair that lit a fire in his own heart."
+
+    call sna_main( "I sometimes wonder if that would have made all the difference.", "snape_29" )
+    
+    nar "Snape mused."
+    
+    call sna_main( "If I would have been a better, a kinder man than I am today.", "snape_06" )
+
+    g9 "But would you have been as popular?"
+    
+    nar "Genie asked."
+    
+    g10 "you were central in every book and movie. Everyone loves you."
+
+    call sna_main( "What?", "snape_05" )
+    
+    nar "Snape snapped from his reverie. He looked at Genie in confusion."
+
+    m "I mean, would you have been as powerful."
+    
+    nar "Genie said hastily."
+    
+    m "Wasn’t that rejection what drove you to your studies and your mastery?"
+
+    nar "Snape eyed Genie suspiciously, but let the matter pass."
+
+    call sna_main( "Yes, but I would sacrifice all that to be rid of this loneliness.", "snape_06" )
+    
+    nar "Snape returned to his imaginings."
+
+    m "Well, even if you didn’t stay together,"
+    
+    nar "Genie said mischievously,"
+    
+    m "you could at least have had a little fun with her. Maybe even take her on her wedding night."
+
+    nar "Snape’s head snapped up angrily. How dare Genie sully the memory of Lily."
+    nar "But then, a wicked thought entered his head."
+
+    call sna_main( "Hmm, what if the boy wasn’t really James’ after all?", "snape_02")
+    
+    nar "Snape said, and the smile that formed on his face could have frozen the dancing fire beside them."
+
+    call sna_main( "Then, one day, I could reach out to that insipid boy, with his foolish fantasies about Potter and say, ‘Harry, I am your father!’", "snape_28" )
+
+    nar "Genie nodded."
+    
+    g9 "It could work. You’ve got the black robes already. You just need the helmet."
+
+    nar "Snape cocked an eyebrow in confusion. The flames leapt and danced and Genie flickered once again."
+
+    g9 "No mind pay you." 
+    
+    nar "Genie said."
+    
+    g9 "Darkness that path, take you it will."
+
+    call sna_main( "Um?", "snape_29" )
+    
+    nar "Snape stammered."
+
+    m "What?"
+    
+    nar "Genie asked."
+
+    call sna_main( "For a moment there, I thought you...", "snape_01" ) 
+    
+    nar "Snape trailed off, reluctant to go on."
+
+    m "You thought I what?"
+    
+    nar "Genie prodded."
+    
+    m "Out with it man!"
+
+    call sna_main( "I thought you looked all shrunken, like a deformed house elf.", "snape_06" )
+    
+    nar "Snape finally managed to say."
+    nar "Genie laughed."
+    
+    m "Muppet?"
+
+    call sna_main( "No thanks, I’ll just have the wine,", "snape_05")
+    
+    nar "Snape replied."
+
+    m "I’m afraid that’s the last of it."
+    
+    nar "Genie said, looking mournfully at the bottle."
+    nar "He eyed Snape through the red droppings of wine still remaining in his glass. It looked like Snape was bleeding."
+    nar "The image disturbed him and he put his glass down."
+
+    m "So..."
+    
+    nar "Genie coughed once, cleared his throat and continued."
+    
+    m "Did you mean it?"
+
+    call sna_main( "About the wishes?", "snape_05" )
+    
+    nar "Snape asked."
+
+    m "Yes."
+    
+    nar "Genie said, unable to keep the excitement from his voice."
+    
+    m "Would you really come to my world and set me free with a wish."
+
+    call sna_main( "Why not?", "snape_06" )
+    
+    nar "Snape said."
+    
+    call sna_main( "Assuming we can find a way to send you back.", "snape_09" )
+
+    m "Right."
+    
+    nar "Genie said, sobering up."
+    
+    m "There’s that."
+
+    nar "Snape looked at his friend and sensed his growing gloom."
+
+    call sna_main( "Cheer up, Genie.", "snape_23" )
+    
+    nar "He said, clapping the image of his old wizard master on the shoulder."
+    
+    call sna_main( "We just need to be careful. We don’t want to make a mistake and send you somewhere crazy.", "snape_05" )
+
+    m "Like a space station?"
+    
+    nar "Genie asked, his humor returning with his hope."
+
+    call sna_main( "Exactly." , "snape_28" )
+    
+    nar "Snape replied."
+    nar "Not sure what a ‘space station’ was." 
+    
+    call sna_main( "We don’t want you to end up far, far away.", "snape_24" )
+
+    m "In the final frontier?"
+    
+    nar "Genie asked, with a wink that to Snape always meant some kind of inside joke Snape never understood."
+    nar "He decided to ignore it as he had many other times."
+
+    call sna_main( "Let me continue to research why your powers of transdimensional travel are muted here and we’ll find a way to fix your problem.", "snape_05" )
+
+    m "Both our problems." 
+    
+    nar "Genie suggested and this time, both of them laughed together."
+
+    call sna_main( "You know, Genie, this could be the start of a beautiful friendship.", "snape_23" )
+    
+    nar "Snape said, standing to leave."
+    hide screen snape_main
+    with d3
+    
+    m "Well, you know what the game devs say."
+    
+    nar "Genie replied, causing the dark man to pause and look back quizzically."
+
+    m "Play it again, Snape."
+    
+    "The End"
+    
+    $ daytime = temp_time
+    hide screen main_room
+    hide screen fireplace_fire
+    hide screen with_snape_animated
+    jump enter_room_of_req

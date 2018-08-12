@@ -25,9 +25,10 @@ label __init_variables:
                 ach_desc = "Unlock the mirror of noisrevrep/Erised",
                 content_characters = []
             )
+            
     if not hasattr(renpy.store,'mr_ev_ABTTD'):
         $mr_ev_ABTTD = mirror_stories(
-                title = "A bad time to disrobe.",
+                title = "A bad time to disrobe",
                 story_description = "The genie gets a hold of a invisibility cloak and puts it to good use.",
                 start_label = "a_bad_time_to_disrobe",
                 authors = ["Johnny"],
@@ -36,12 +37,24 @@ label __init_variables:
                 content_characters = ["hermione"]
             )
     
+    if not hasattr(renpy.store,'mr_ev_ASOC'):
+        $mr_ev_ASOC = mirror_stories(
+                title = "A spaced out conversation",
+                story_description = "The genie and Snape gets real for a little bit.",
+                start_label = "a_spaced_out_conversation",
+                authors = ["Ignatz"],
+                categories= [],
+                ach_desc = "Unlocks after spending some evenings by the fire with Snape.",
+                content_characters = []
+            )
+    
     
     
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
     $ mr_evs_list.append(mr_ev_ABTTD)
+    $ mr_evs_list.append(mr_ev_ASOC)
     
     $currentpage = 0
         
@@ -118,8 +131,10 @@ init python:
         #Make a elif with the title and the cretevia to unlock
         #And if you dont make any then it will all ways be true
         def unlock_check(self):
-            if self.title == "A bad time to disrobe.":
+            if self.title == "A bad time to disrobe":
                 return hg_pf_ShowThemToMe_OBJ.points > 0
+            elif self.title == "A spaced out conversation":
+                return snape_events > 6
             else:
                 return True
             

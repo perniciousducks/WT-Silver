@@ -243,7 +243,7 @@ label whose_points:
     m "Looks like we have our first prompt."
     m "Things you might say in potions class... But also in your bedroom."
     
-    call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!", "grin","worried",cheeks="blush")
+    call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!", "grin","worried",cheeks="blush", xpos="right")
     
     hat "Boo, there's no cauldrons in the bedroom!"
     
@@ -336,14 +336,17 @@ label whose_points:
     
     call h_action("lift_top") 
 
-    call play_music("playful_tension") # SEX THEME.
-    
+     # SEX THEME.
+    call play_sound("scratch")
+    stop music
     call her_chibi("lift_top","mid","base") 
-    
     call bld 
+    call her_main("...", "smile","worried")
+    
     
     g9 "500 points to Gryffindor!"
-    call play_sound("applause01")
+    hide screen hermione_main
+    call play_music("playful_tension")
     
     call luna_main("That's cheating, I didnt even get to finish! ", "mad", "default", "angry", "yell")
     hide screen luna
@@ -351,6 +354,7 @@ label whose_points:
     m "Well, that's all for this episode of whose points is it anyway."
     
     call her_main("I win, all the points for me!", "smile","worried")
+    hide screen hermione_main
     
     call luna_main("Don't end now! This game is rigged!", "mad", "default", "angry", "yell")
     hide screen luna
@@ -373,6 +377,11 @@ label whose_points:
     call play_sound("applause01")
     
     "To be continued?"
+    
+    if daytime:
+        call play_music("day_theme")
+    else:
+        call play_music("night_theme")
     
     hide screen whose_points_screen
     call h_action() 

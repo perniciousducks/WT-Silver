@@ -889,9 +889,9 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
     #Third event.
     elif whoring >= 12:
-        call her_head("{size=-5}(That was so exhilerating...){/size}","base","ahegao_raised",cheeks="blush") 
-        call her_head("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry",cheeks="blush") 
-        call her_head("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!){/size}","angry","angry",cheeks="blush") 
+        call her_head("{size=-5}(That was so exhilerating...) {/size}", "base", "ahegao_raised", cheeks="blush") 
+        call her_head("{size=-5}(No, Hermione, you silly girl!) {/size}", "angry", "angry", cheeks="blush") 
+        call her_head("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!) {/size}", "angry", "angry", cheeks="blush") 
         call her_head(".................................","base","ahegao_raised",cheeks="blush") 
     elif whoring >= 18 and aftersperm:
         call her_head("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised",cheeks="blush") 

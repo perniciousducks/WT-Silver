@@ -157,14 +157,5 @@ screen main_room_menu:
             #hovered [Show("gui_tooltip", my_picture="hoot", my_tt_xpos=250, my_tt_ypos=180) ] 
             #unhovered [Hide("gui_tooltip")]
             action [Hide("main_room_menu"), Jump("mail")]
-    
-    imagebutton: #Quest Guide
-        xpos 128
-        ypos 15
-        focus_mask True
-        xanchor "center"
-        yanchor "center"
-        idle "interface/check_07.png"
-        hover "interface/check_08.png"
-        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("open_guide")]
+
     zorder 1

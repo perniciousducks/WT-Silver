@@ -122,7 +122,7 @@ label a_bad_time_to_disrobe:
     
     m "Indeed, I'm expecting better from you today girl."
     
-    call her_main( "I won't dissapoint you sir!", "grin", "base" )
+    call her_main( "I won't disappoint you sir!", "grin", "base" )
     
     m "I'll be the judge of that..."
 

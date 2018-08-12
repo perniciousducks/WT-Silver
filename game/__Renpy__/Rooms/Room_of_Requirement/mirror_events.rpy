@@ -472,7 +472,7 @@ label genie_house_elf:
     
     call helf_main("No sir...")
     
-    n "Said the elf, trying his hardest to bite his tongue but failing."
+    n "Said the elf, trying its hardest to bite his tongue but failing."
     
     call helf_main("I see it all, I clean it all....every...last bit of it.")
     call helf_main(remove=True)
@@ -484,7 +484,7 @@ label genie_house_elf:
     call sna_main("If that is all, I’ll be in the dungeons.", "snape_01", xpos="base", ypos="base")
     call sna_main("I’ve been working on a new cleaning solution.", "snape_01", xpos="base", ypos="base")
     call sna_main("It might come in handy sooner than I thought.", "snape_02", xpos="base", ypos="base")
-    call sna_walk("door","leave",2) 
+    call sna_walk("mid","leave",2) 
     call sna_main(remove=True)
     
     n "The door shut and silence spread across the room only interrupted after a few minutes by the house elf."

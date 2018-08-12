@@ -941,7 +941,7 @@ screen hermione_costume:
 screen hermione_head_costume:
     tag hermione_head
     for i in hermoine_outfit_GLBL.getOutfitLayers():
-        add i xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
+        add "characters/hermione/clothes/custom/"+i xpos hermione_head_xpos ypos hermione_head_ypos alpha transparency zoom (1.0/scaleratio)
     add hermione_hair_b xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     #add hermione_costume_e xpos hermione_xpos ypos hermione_ypos
     add hermione_costume_action_a xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)

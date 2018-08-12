@@ -64,7 +64,7 @@ init python:
 
     ### Other Characters ###
     s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
-    nar = Character("Narrator", color="#402313", show_two_window=False, ctc="ctc3", ctc_position="fixed")
+    nar = Character('Narrator ', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
 
     maf  = Character('Madam Mafkin', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/mafkin/maf_1.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=270)
     abe  = Character('Aberforth', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")

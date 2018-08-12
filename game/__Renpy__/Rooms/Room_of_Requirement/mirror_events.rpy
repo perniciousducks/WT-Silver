@@ -47,6 +47,7 @@ label a_bad_time_to_disrobe:
     
     g9 "\"Some of that bartering skill put to good use...\""  
 
+    
     show screen day_to_night
     with d3
     hide screen main_room

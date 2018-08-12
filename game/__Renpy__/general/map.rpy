@@ -2,6 +2,7 @@ label leave_main_room:
     hide screen main_room_menu
     hide screen main_room
     hide screen chair_right
+    hide screen fireplace
     hide screen fireplace_fire
     hide screen candlefire
     hide screen desk

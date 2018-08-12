@@ -8,5 +8,6 @@ screen quistion_pop_up(content=""):
     zorder 10
     
 screen day_to_night:
+    use blkfade
     add "images/rooms/room_of_requirement/day_to_night.png" xalign 0.5 yalign 0.5
     zorder 5

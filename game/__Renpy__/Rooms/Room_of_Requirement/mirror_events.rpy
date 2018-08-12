@@ -200,8 +200,7 @@ label a_bad_time_to_disrobe:
     hide screen genie
     hide screen main_room
     hide screen hermione_main
-    $ hermione_wear_top = True
-    $ daytime = temp_time
+    call load_hermione_clothing_saves
     jump enter_room_of_req
     
 label whose_points:

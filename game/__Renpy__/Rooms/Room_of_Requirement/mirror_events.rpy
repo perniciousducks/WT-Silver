@@ -86,7 +86,7 @@ label a_bad_time_to_disrobe:
     
     call her_main( "Well, a few of the boys were in there.", "base", "base" )
     call her_main( "They were playing wizards chess...", "base", "base" )
-    call her_main( "Pretty badly in fact.", "disgust", "wink" ) 
+    call her_main( "Pretty poorly in fact.", "disgust", "wink" ) 
 
     m "..."
     m "I'm sorry miss Granger but you're going to have to do better than this." 
@@ -122,7 +122,7 @@ label a_bad_time_to_disrobe:
     
     m "Indeed, I'm expecting better from you today girl."
     
-    call her_main( "I won't dissapoint you sir!", "grin", "base" )
+    call her_main( "I won't disappoint you sir!", "grin", "base" )
     
     m "I'll be the judge of that..."
 
@@ -263,7 +263,7 @@ label whose_points:
     call play_sound("applause01")
     hide screen luna
     
-    call her_main("How's that worth more than my one...", "annoyed","worried")
+    call her_main("How's that worth more than mine...", "annoyed","worried")
     hide screen hermione_main
     m "Any more? On to the next prompt then. Hat?"
     
@@ -363,7 +363,7 @@ label whose_points:
     
     call ast_main( "Harlot! Harlot! Harlot!", "grin", "happyCl", "base", "R")
     
-    call luna_main("How does those points taste now? ", "default", "default", "default", "grin")
+    call luna_main("How do those points taste now? ", "default", "default", "default", "grin")
     call luna_main("The whole wizarding world is going see your tits!", "default", "default", "default", "wide_smile")
     hide screen luna
     hide screen astoria_main

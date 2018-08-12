@@ -216,7 +216,7 @@ label __init_variables:
     $ hg_cheer_r_OBJ.cost = 80
     $ hg_cheer_r_OBJ.wait_time = 2
     $ hg_cheer_r_OBJ.image = "hg_cheer_r.png"
-    $ hg_cheer_r_OBJ.description = "The Ravenclaw version of the Cheerleader attire."
+    $ hg_cheer_r_OBJ.description = "> The Ravenclaw version of the Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_r_sexy_OBJ'):
         $ hg_cheer_r_sexy_OBJ = store_item_class()
@@ -345,7 +345,7 @@ label __init_variables:
     $ hg_bikini_latex_OBJ.cost = 100
     $ hg_bikini_latex_OBJ.wait_time = 1
     $ hg_bikini_latex_OBJ.image = "hg_bikini_latex.png"
-    $ hg_bikini_latex_OBJ.description = "> A set for when you want to become one with your underwear"
+    $ hg_bikini_latex_OBJ.description = "> A set for when you want to become one with your\n underwear"
 
     if not hasattr(renpy.store,'hg_bikini_sling_OBJ'):
         $ hg_bikini_sling_OBJ = store_item_class()
@@ -356,7 +356,7 @@ label __init_variables:
     $ hg_bikini_sling_OBJ.cost = 69
     $ hg_bikini_sling_OBJ.wait_time = 1
     $ hg_bikini_sling_OBJ.image = "hg_bikini_sling.png"
-    $ hg_bikini_sling_OBJ.description = "Temp J"
+    $ hg_bikini_sling_OBJ.description = "> Provides even less coverage than the Latex Bikini"
 
 
     # One-pieces
@@ -369,7 +369,7 @@ label __init_variables:
     $ hg_onepiece_sling_OBJ.cost = 69
     $ hg_onepiece_sling_OBJ.wait_time = 1
     $ hg_onepiece_sling_OBJ.image = "hg_onepiece_sling.png"
-    $ hg_onepiece_sling_OBJ.description = "Temp J"
+    $ hg_onepiece_sling_OBJ.description = "> A Mononoke variant of the Sling Bikini"
 
 
 
@@ -382,7 +382,7 @@ label __init_variables:
     $ hg_muggle_cold_OBJ.cost = 80
     $ hg_muggle_cold_OBJ.wait_time = 1
     $ hg_muggle_cold_OBJ.image = "hg_muggle_cold.png"
-    $ hg_muggle_cold_OBJ.description = "> A more muggle styled set of clothes for cold weather."
+    $ hg_muggle_cold_OBJ.description = "> A more muggle styled set of clothes for cold\n weather."
 
     if not hasattr(renpy.store,'hg_muggle_hot_OBJ'):
         $ hg_muggle_hot_OBJ = store_item_class()
@@ -393,7 +393,7 @@ label __init_variables:
     $ hg_muggle_hot_OBJ.cost = 100
     $ hg_muggle_hot_OBJ.wait_time = 1
     $ hg_muggle_hot_OBJ.image = "hg_muggle_hot.png"
-    $ hg_muggle_hot_OBJ.description = "> A more muggle styled set of clothes for warm weather"
+    $ hg_muggle_hot_OBJ.description = "> A more muggle styled set of clothes for warm\n weather"
 
     if not hasattr(renpy.store,'hg_muggle_rainy_OBJ'):
         $ hg_muggle_rainy_OBJ = store_item_class()
@@ -404,7 +404,7 @@ label __init_variables:
     $ hg_muggle_rainy_OBJ.cost = 60
     $ hg_muggle_rainy_OBJ.wait_time = 1
     $ hg_muggle_rainy_OBJ.image = "hg_muggle_rainy.png"
-    $ hg_muggle_rainy_OBJ.description = "> A more muggle styled set of clothes for rainy weather."
+    $ hg_muggle_rainy_OBJ.description = "> A more muggle styled set of clothes for rainy\n weather."
 
     if not hasattr(renpy.store,'hg_punk_rocker_OBJ'):
         $ hg_punk_rocker_OBJ = store_item_class()
@@ -415,7 +415,7 @@ label __init_variables:
     $ hg_punk_rocker_OBJ.cost = 180
     $ hg_punk_rocker_OBJ.wait_time = 2
     $ hg_punk_rocker_OBJ.image = "hg_punk_rocker.png"
-    $ hg_punk_rocker_OBJ.description = "> A punk-rock set of clothes for the more rebellious type of witch."
+    $ hg_punk_rocker_OBJ.description = "> A punk-rock set of clothes for the more rebellious\n type of witch."
 
     $ hermione_clothing_sets_list = []
     $ hermione_clothing_sets_list.append(hg_cheer_g_OBJ)

@@ -161,6 +161,9 @@ label cupboard:
         
         "-Options-":
             menu:
+                "-Save and Load-":
+                    call screen save()
+            
                 "-Change Save Name-":
                     jump custom_save
         

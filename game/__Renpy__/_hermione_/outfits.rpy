@@ -43,7 +43,7 @@ label __init_variables:
     $ hg_pirate_OBJ.image = "hg_pirate.png"
     $ hg_pirate_OBJ.outfit_layers = ["pirate_legs.png","pirate_pants.png","pirate_top.png"]
     $ hg_pirate_OBJ.breast_layer = "breasts_nipfix"
-    $ hg_pirate_OBJ.description = "> A lightweight Pirates outfit with only room for the necessities\n   >Comes with two canon ball storage compartments"
+    $ hg_pirate_OBJ.description = "> A lightweight Pirates outfit with only room for the\n   > necessities. Comes with two canon ball storage compartments"
 
     if not hasattr(renpy.store,'hg_powerGirl_OBJ'):
         $ hg_powerGirl_OBJ = hermione_outfit()
@@ -87,7 +87,7 @@ label __init_variables:
     $ hg_harleyQuinn_OBJ.outfit_layers = ["harley_pants.png","harley_top.png","harley_gloves.png","harley_collar.png"]
     $ hg_harleyQuinn_OBJ.breast_layer = "breasts_normal"
     $ hg_harleyQuinn_OBJ.hair_layer = "H"
-    $ hg_harleyQuinn_OBJ.description = "> For when you're actually nuts rather than just crazy for them"
+    $ hg_harleyQuinn_OBJ.description = "> A outfit for when you're actually nuts\n   > rather than just crazy for them"
 
     if not hasattr(renpy.store,'hg_ballDress_OBJ'):
         $ hg_ballDress_OBJ = hermione_outfit()
@@ -103,7 +103,7 @@ label __init_variables:
     $ hg_ballDress_OBJ.breast_layer = "breasts_nipfix"
     $ hg_ballDress_OBJ.hair_layer = "B"
     $ hg_ballDress_OBJ.top_layers = "tiara"
-    $ hg_ballDress_OBJ.description = "> A traditional ball dress complete with a imitation ball-queen tiara"
+    $ hg_ballDress_OBJ.description = "> A traditional ball dress complete with a imitation\n   > ball-queen tiara"
 
     if not hasattr(renpy.store,'hg_christmas_OBJ'):
         $ hg_christmas_OBJ = hermione_outfit()
@@ -118,7 +118,7 @@ label __init_variables:
     $ hg_christmas_OBJ.outfit_layers = ["christmas_pants.png","christmas_top.png","christmas_gloves.png","christmas_collar.png"]
     $ hg_christmas_OBJ.breast_layer = "breasts_normal_pressed"
     $ hg_christmas_OBJ.top_layers = "antlers"
-    $ hg_christmas_OBJ.description = "> A christmas themed outfit complete with tightly wrapped snowglobes"
+    $ hg_christmas_OBJ.description = "> A christmas themed outfit complete with tightly wrapped\n   > snowglobes"
 
     if not hasattr(renpy.store,'hg_laraCroft_OBJ'):
         $ hg_laraCroft_OBJ = hermione_outfit()
@@ -132,7 +132,7 @@ label __init_variables:
     $ hg_laraCroft_OBJ.image = "hg_lara.png"
     $ hg_laraCroft_OBJ.outfit_layers = ["lara_pants.png","lara_top.png","lara_gloves.png"]
     $ hg_laraCroft_OBJ.breast_layer = "breasts_normal"
-    $ hg_laraCroft_OBJ.description = "> An outfit perfectly suited for exploring deep, dark and moist caverns"
+    $ hg_laraCroft_OBJ.description = "> An outfit perfectly suited for exploring deep, dark\n   > and moist caverns"
 
     if not hasattr(renpy.store,'hg_tifa_OBJ'):
         $ hg_tifa_OBJ = hermione_outfit()
@@ -147,7 +147,7 @@ label __init_variables:
     $ hg_tifa_OBJ.outfit_layers = ["tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"]
     $ hg_tifa_OBJ.breast_layer = "breasts_normal"
     $ hg_tifa_OBJ.hair_layer = "T"
-    $ hg_tifa_OBJ.description = "> An outfit for when when your sexual fantasies are just getting started"
+    $ hg_tifa_OBJ.description = "> An outfit for when when your sexual fantasies\n   > are just getting started"
 
     if not hasattr(renpy.store,'hg_present_OBJ'):
         $ hg_present_OBJ = hermione_outfit()
@@ -190,7 +190,7 @@ label __init_variables:
     $ hg_witch_OBJ.outfit_layers = ["witch_stockings.png","witch_top.png","witch_cloak.png"]
     $ hg_witch_OBJ.breast_layer = "breasts_normal_pressed"
     $ hg_witch_OBJ.top_layers = "witch_hat"
-    $ hg_witch_OBJ.description = "> Release your inner witch with this halloween inspired outfit"
+    $ hg_witch_OBJ.description = "> Release your inner witch with this halloween\n   > inspired outfit"
 
     if not hasattr(renpy.store,'hg_bio_OBJ'):
         $ hg_bio_OBJ = hermione_outfit()
@@ -219,7 +219,7 @@ label __init_variables:
     $ hg_yenn_OBJ.image = "hg_yenn.png"
     $ hg_yenn_OBJ.outfit_layers = ["yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"]
     $ hg_yenn_OBJ.breast_layer = "breasts_normal"
-    $ hg_yenn_OBJ.description = "> A Witcher inspired outfit to fit even the most perverted witch"
+    $ hg_yenn_OBJ.description = "> A Witcher inspired outfit to fit even the most\n   > perverted witch"
 
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)

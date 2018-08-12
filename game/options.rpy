@@ -232,6 +232,8 @@ init -1 python hide:v
 
     ## Used when exiting the game menu to the game.
     config.exit_transition = None
+    
+    config.quit_action = Quit(False)
 
     ## Used between screens of the game menu.
     config.intra_transition = None

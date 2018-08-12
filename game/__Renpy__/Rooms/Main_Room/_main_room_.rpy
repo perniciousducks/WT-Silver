@@ -110,7 +110,6 @@ screen main_room_menu:
         idle "newanimation"
         hover "images/main_room/11_genie_02.png"
         hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ] 
-        #hovered [Show("config_afterchoices_skip_idle.png", xpos=46, ypos=518) ]
         unhovered [Hide("gui_tooltip")]
         action [Hide("main_room_menu"), Hide("animation_feather"), Jump("desk")]
     
@@ -168,3 +167,4 @@ screen main_room_menu:
         idle "interface/check_07.png"
         hover "interface/check_08.png"
         action [Hide("main_room_menu"), Hide("animation_feather"), Jump("open_guide")]
+    zorder 1

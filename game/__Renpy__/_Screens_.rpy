@@ -337,6 +337,7 @@ screen with_snape:
     add "images/main_room/with_snape.png" at Position(xpos=0+140, ypos=0)
     tag hanging_with_snape
     zorder 3
+    
 screen with_snape_animated:
     add "genie_toast_goblet" at Position(xpos=0+140, ypos=0)
     tag hanging_with_snape

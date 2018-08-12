@@ -2,7 +2,7 @@ label leave_main_room:
     hide screen main_room_menu
     hide screen main_room
     hide screen chair_right
-    hide screen fireplace
+    hide screen fireplace_fire
     hide screen candlefire
     hide screen desk
     hide screen phoenix_food
@@ -280,6 +280,9 @@ label return_office:
     hide screen blkback
     pause.5
     call hide_blkfade
+    
+    if fire_in_fireplace:
+        show screen fireplace_fire
 
     if daytime:
         jump day_main_menu

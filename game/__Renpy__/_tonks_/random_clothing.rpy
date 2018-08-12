@@ -22,7 +22,7 @@ label tonks_random_clothing:
             with d5
             call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid",xpos="base",ypos="base",trans="d5")
             g9 "You are naked!"
-            call ton_main("Indeed I am, [ton_genie_name].","open","base","raised","mid")
+            call ton_main("Indeed I am.","open","base","raised","mid")
             call ton_main("Is that a problem, [ton_genie_name]?","horny","base","raised","mid")
             call ton_main("Am I going to get fired now?","open","base","raised","mid")
             call ton_main("A person of authority?","open","base","raised","R")
@@ -30,7 +30,7 @@ label tonks_random_clothing:
             g9 "How about a raise instead?"
             call ton_main("(Fuck me... I love this job...)","base","base","raised","ahegao")
             call ton_main("A raise? For showing you my naked body?","open","base","raised","mid")
-            call ton_main("Ho much am I worth to you, [ton_genie_name]?","base","base","raised","mid")
+            call ton_main("How much am I worth to you, [ton_genie_name]?","base","base","raised","mid")
 
             menu:
                 "-1 gold-":

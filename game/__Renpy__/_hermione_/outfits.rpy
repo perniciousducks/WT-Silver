@@ -5,8 +5,6 @@ label __init_variables:
         $ hg_maid_OBJ = hermione_outfit()
     $ hg_maid_OBJ.name = "Maid"
     $ hg_maid_OBJ.cost = 250
-    $ hg_maid_OBJ.unlocked = False
-    $ hg_maid_OBJ.unlockable = False
     $ hg_maid_OBJ.type = "outfit"
     $ hg_maid_OBJ.items = ["outfit","hair","hat","gloves","stockings"]
     $ hg_maid_OBJ.wait_time = 2
@@ -21,8 +19,6 @@ label __init_variables:
         $ hg_heartDancer_OBJ = hermione_outfit()
     $ hg_heartDancer_OBJ.name = "Heart Dancer"
     $ hg_heartDancer_OBJ.cost = 80
-    $ hg_heartDancer_OBJ.unlocked = False
-    $ hg_heartDancer_OBJ.unlockable = False
     $ hg_heartDancer_OBJ.type = "dress"
     $ hg_heartDancer_OBJ.items = ["outfit"]
     $ hg_heartDancer_OBJ.wait_time = 1
@@ -35,8 +31,6 @@ label __init_variables:
         $ hg_pirate_OBJ = hermione_outfit()
     $ hg_pirate_OBJ.name = "Pirate"
     $ hg_pirate_OBJ.cost = 75
-    $ hg_pirate_OBJ.unlocked = False
-    $ hg_pirate_OBJ.unlockable = False
     $ hg_pirate_OBJ.type = "outfit"
     $ hg_pirate_OBJ.items = ["outfit"]
     $ hg_pirate_OBJ.wait_time = 1
@@ -49,8 +43,6 @@ label __init_variables:
         $ hg_powerGirl_OBJ = hermione_outfit()
     $ hg_powerGirl_OBJ.name = "Power Girl"
     $ hg_powerGirl_OBJ.cost = 350
-    $ hg_powerGirl_OBJ.unlocked = False
-    $ hg_powerGirl_OBJ.unlockable = False
     $ hg_powerGirl_OBJ.type = "costume"
     $ hg_powerGirl_OBJ.items = ["outfit"]
     $ hg_powerGirl_OBJ.wait_time = 3
@@ -64,8 +56,6 @@ label __init_variables:
         $ hg_msMarvel_OBJ = hermione_outfit()
     $ hg_msMarvel_OBJ.name = "Mrs Marvel"
     $ hg_msMarvel_OBJ.cost = 250
-    $ hg_msMarvel_OBJ.unlocked = False
-    $ hg_msMarvel_OBJ.unlockable = False
     $ hg_msMarvel_OBJ.type = "costume"
     $ hg_msMarvel_OBJ.items = ["outfit"]
     $ hg_msMarvel_OBJ.wait_time = 2
@@ -78,8 +68,6 @@ label __init_variables:
         $ hg_harleyQuinn_OBJ = hermione_outfit()
     $ hg_harleyQuinn_OBJ.name = "Harley Quinn"
     $ hg_harleyQuinn_OBJ.cost = 300
-    $ hg_harleyQuinn_OBJ.unlocked = False
-    $ hg_harleyQuinn_OBJ.unlockable = False
     $ hg_harleyQuinn_OBJ.type = "costume"
     $ hg_harleyQuinn_OBJ.items = ["outfit"]
     $ hg_harleyQuinn_OBJ.wait_time = 3
@@ -93,8 +81,6 @@ label __init_variables:
         $ hg_ballDress_OBJ = hermione_outfit()
     $ hg_ballDress_OBJ.name = "Ball Dress"
     $ hg_ballDress_OBJ.cost = 1500
-    $ hg_ballDress_OBJ.unlocked = False
-    $ hg_ballDress_OBJ.unlockable = False
     $ hg_ballDress_OBJ.type = "dress"
     $ hg_ballDress_OBJ.items = ["outfit","hair","neckless","tiara"]
     $ hg_ballDress_OBJ.wait_time = 7
@@ -109,8 +95,6 @@ label __init_variables:
         $ hg_christmas_OBJ = hermione_outfit()
     $ hg_christmas_OBJ.name = "Christmas Girl"
     $ hg_christmas_OBJ.cost = 50
-    $ hg_christmas_OBJ.unlocked = False
-    $ hg_christmas_OBJ.unlockable = False
     $ hg_christmas_OBJ.type = "outfit"
     $ hg_christmas_OBJ.items = ["outfit"]
     $ hg_christmas_OBJ.wait_time = 2
@@ -124,8 +108,6 @@ label __init_variables:
         $ hg_laraCroft_OBJ = hermione_outfit()
     $ hg_laraCroft_OBJ.name = "Lara Croft"
     $ hg_laraCroft_OBJ.cost = 270
-    $ hg_laraCroft_OBJ.unlocked = False
-    $ hg_laraCroft_OBJ.unlockable = False
     $ hg_laraCroft_OBJ.type = "costume"
     $ hg_laraCroft_OBJ.items = ["outfit","gloves"]
     $ hg_laraCroft_OBJ.wait_time = 2
@@ -138,8 +120,6 @@ label __init_variables:
         $ hg_tifa_OBJ = hermione_outfit()
     $ hg_tifa_OBJ.name = "Tifa"
     $ hg_tifa_OBJ.cost = 220
-    $ hg_tifa_OBJ.unlocked = False
-    $ hg_tifa_OBJ.unlockable = False
     $ hg_tifa_OBJ.type = "costume"
     $ hg_tifa_OBJ.items = ["outfit"]
     $ hg_tifa_OBJ.wait_time = 2
@@ -153,8 +133,6 @@ label __init_variables:
         $ hg_present_OBJ = hermione_outfit()
     $ hg_present_OBJ.name = "Present"
     $ hg_present_OBJ.cost = 35
-    $ hg_present_OBJ.unlocked = False
-    $ hg_present_OBJ.unlockable = False
     $ hg_present_OBJ.type = "outfit"
     $ hg_present_OBJ.items = ["outfit"]
     $ hg_present_OBJ.wait_time = 1
@@ -167,8 +145,6 @@ label __init_variables:
         $ hg_japan_OBJ = hermione_outfit()
     $ hg_japan_OBJ.name = "Japanese Schoolgirl"
     $ hg_japan_OBJ.cost = 125
-    $ hg_japan_OBJ.unlocked = False
-    $ hg_japan_OBJ.unlockable = False
     $ hg_japan_OBJ.type = "outfit"
     $ hg_japan_OBJ.items = ["outfit"]
     $ hg_japan_OBJ.wait_time = 2
@@ -181,8 +157,6 @@ label __init_variables:
         $ hg_witch_OBJ = hermione_outfit()
     $ hg_witch_OBJ.name = "Witch outfit"
     $ hg_witch_OBJ.cost = 250
-    $ hg_witch_OBJ.unlocked = False
-    $ hg_witch_OBJ.unlockable = False
     $ hg_witch_OBJ.type = "outfit"
     $ hg_witch_OBJ.items = ["outfit","hat"]
     $ hg_witch_OBJ.wait_time = 3
@@ -196,8 +170,6 @@ label __init_variables:
         $ hg_bio_OBJ = hermione_outfit()
     $ hg_bio_OBJ.name = "Bioshock outfit"
     $ hg_bio_OBJ.cost = 400
-    $ hg_bio_OBJ.unlocked = False
-    $ hg_bio_OBJ.unlockable = False
     $ hg_bio_OBJ.type = "outfit"
     $ hg_bio_OBJ.items = ["outfit","hair","choker"]
     $ hg_bio_OBJ.wait_time = 3
@@ -211,8 +183,6 @@ label __init_variables:
         $ hg_yenn_OBJ = hermione_outfit()
     $ hg_yenn_OBJ.name = "Yennefer's costume"
     $ hg_yenn_OBJ.cost = 500
-    $ hg_yenn_OBJ.unlocked = False
-    $ hg_yenn_OBJ.unlockable = False
     $ hg_yenn_OBJ.type = "outfit"
     $ hg_yenn_OBJ.items = ["outfit","scarf","choker","stockings"]
     $ hg_yenn_OBJ.wait_time = 3

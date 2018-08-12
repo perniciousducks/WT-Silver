@@ -58,7 +58,7 @@ label __init_variables:
     $ hg_powerGirl_OBJ.outfit_layers = ["power_cape.png","power_top.png","power_cape_top.png","power_gloves.png","power_belt.png"]
     $ hg_powerGirl_OBJ.breast_layer = "breasts_normal"
     $ hg_powerGirl_OBJ.hair_layer = "P"
-    $ hg_powerGirl_OBJ.description = "> An outfit for when you feel extra heroic \n   >"Sometimes it takes balls to be a woman""
+    $ hg_powerGirl_OBJ.description = "> An outfit for when you feel extra heroic\n   >"Sometimes it takes balls to be a woman""
 
     if not hasattr(renpy.store,'hg_msMarvel_OBJ'):
         $ hg_msMarvel_OBJ = hermione_outfit()

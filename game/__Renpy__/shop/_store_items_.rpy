@@ -216,7 +216,7 @@ label __init_variables:
     $ hg_cheer_r_OBJ.cost = 80
     $ hg_cheer_r_OBJ.wait_time = 2
     $ hg_cheer_r_OBJ.image = "hg_cheer_r.png"
-    $ hg_cheer_r_OBJ.description = "The Ravenclaw version of the Cheerleader attire."
+    $ hg_cheer_r_OBJ.description = "> The Ravenclaw version of the Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_r_sexy_OBJ'):
         $ hg_cheer_r_sexy_OBJ = store_item_class()
@@ -356,7 +356,7 @@ label __init_variables:
     $ hg_bikini_sling_OBJ.cost = 69
     $ hg_bikini_sling_OBJ.wait_time = 1
     $ hg_bikini_sling_OBJ.image = "hg_bikini_sling.png"
-    $ hg_bikini_sling_OBJ.description = "Temp J"
+    $ hg_bikini_sling_OBJ.description = "> Provides even less coverage than the Latex Bikini"
 
 
     # One-pieces
@@ -369,7 +369,7 @@ label __init_variables:
     $ hg_onepiece_sling_OBJ.cost = 69
     $ hg_onepiece_sling_OBJ.wait_time = 1
     $ hg_onepiece_sling_OBJ.image = "hg_onepiece_sling.png"
-    $ hg_onepiece_sling_OBJ.description = "Temp J"
+    $ hg_onepiece_sling_OBJ.description = "> A Mononoke variant of the Sling Bikini"
 
 
 

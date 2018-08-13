@@ -9,7 +9,7 @@ label __init_variables:
                 title = "Whose points is it anyway?",
                 story_description = "Parody of the game show of \"whose points is it anyway?\"",
                 start_label = "whose_points",
-                authors = ["Johnny"],
+                authors = ["TeamSilver"],
                 categories= ["Parody","Lewd", "Gameshow"],
                 ach_desc = "Unlock the characters",
                 content_characters = ["luna", "astoria", "hermione"]
@@ -20,7 +20,7 @@ label __init_variables:
                 title = "The genie, the desk and the door",
                 story_description = "The genie tries to figure out how people know when he calls for them.",
                 start_label = "genie_house_elf",
-                authors = ["Johnny"],
+                authors = ["TeamSilver"],
                 categories= ["Parody"],
                 ach_desc = "Unlock the mirror of noisrevrep/Erised",
                 content_characters = []
@@ -31,7 +31,7 @@ label __init_variables:
                 title = "A bad time to disrobe",
                 story_description = "The genie gets a hold of a invisibility cloak and puts it to good use.",
                 start_label = "a_bad_time_to_disrobe",
-                authors = ["Johnny"],
+                authors = ["TeamSilver"],
                 categories= [],
                 ach_desc = "Finish private favour, \"Show them to me!\" at least once.",
                 content_characters = ["hermione"]

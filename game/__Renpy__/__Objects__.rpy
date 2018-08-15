@@ -269,7 +269,7 @@ init python:
         layers = []
 
     import xml.etree.ElementTree as ET
-    character_faces = ET.parse(renpy.loader.transfn('character_faces.xml')).getroot()
+    character_faces = ET.parse(renpy.file('character_faces.xml')).getroot()
 
     def getCharacterFaces(tag=None, character_face=None):
         if tag != None and character_face!=None:

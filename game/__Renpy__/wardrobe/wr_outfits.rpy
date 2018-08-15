@@ -61,21 +61,21 @@ label equip_her_outfit:
                 m "..."
                 m "How do you feel about wearing a pirates outfit?"
                 if whoring >= 17: #Success                  
-                    call her_main( "Depends...[genie_name] what kind of pirate are we talking about?","open","base")
+                    call her_main( "Depends...[genie_name] what kind of pirate are we talking about?","base","base")
                     m "More of the adventurous type for sure."
-                    call her_main( "I don't know..."
+                    call her_main( "I don't know...","open","base")
                     m "The kind that fights a corrupt government for the good of the people."
-                    call her_main( "...","open","base")
+                    call her_main( "...","open","down_raised")
                     m "It will feel very empowering I'm sure."
                     m "The female pirates were said to have a very good relationship with their crew."
-                    call her_main( "Fine... shipmate [genie_name].","open","base")
+                    call her_main( "Fine... shipmate [genie_name].","crooked_smile","base")
                 else: #Fail
-                    call her_main( "Doesn't really sound like my kind of thing to be honest [genie_name].","open","base")
+                    call her_main( "Doesn't really sound like my kind of thing to be honest [genie_name].","base","baseL")
                     m "I thought you might be a fan of seamen..."
                     call her_main( "I don't really have anything against seamen...but pirates aren't really the same thing.","open","base")
                     m "Butt pirates?"
-                    call her_main( "What?","open","base")
-                    call her_main( "It's a bit to revealing... drop it for now okay?","open","base")
+                    call her_main( "What?","base","base")
+                    call her_main( "It's a bit to revealing... drop it for now okay?","disgust","base")
                     m "Fair enough, I'm sure we'll find something you'd like to wear."
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 17."
@@ -86,14 +86,14 @@ label equip_her_outfit:
                 call her_main( "I know that, I'm a muggle born after all.","open","base")
                 m "Right, would you put this Japanese schoolgirl outfit on?"
                 if whoring >= 17: #Success
-                    call her_main( "Cute, where did you even get this? I didn't know you've visited Japan.","open","base")
+                    call her_main( "Cute, where did you even get this? I didn't know you've visited Japan.","base","base")
                     m "It's a replica..."
-                    call her_main( "oh...well, the colour is nice.", "open","base")
-                    call her_main( "I guess I could wear it for a bit.", "open","base")
+                    call her_main( "oh...well, the colour is nice.", "grin","base")
+                    call her_main( "I guess I could wear it for a bit.", "grin","heppyCl")
                 else: #Fail
-                    call her_main( "I'd rather not be accused of stirring cultural appropriation.", "open","base")
+                    call her_main( "I'd rather not be accused of stirring cultural appropriation.", "annoyed","base")
                     m "Cultural what now?"
-                    call her_main( "Never mind.", "open","base")
+                    call her_main( "Never mind.", "annoyed" ,"angryCl")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
@@ -224,23 +224,23 @@ label equip_her_outfit:
                 m "Know anything about Batman?"
                 call her_main( "Uh, do you mean like vampires?","soft","narrow")
                 m "No, he's a comic book character."
-                call her_main( "Comics are usually a bit to unrealistic to me.","soft","narrow")
+                call her_main( "Comics are usually a bit to unrealistic to me.","base","base")
                 m "\"In a world with actual wizards, Batman is too unrealistic?\""
                 m "I'd like you to try out this villain outfit."
                 if whoring >= 17: #Success
-                    call her_main( "I don't know, sell it to me.","soft","narrow")
+                    call her_main( "I don't know, sell it to me.","base","base")
                     m "Uh, she's a misunderstood girl in love with one of the main characters enemies."
-                    call her_main( "I feel missunderstood at times too, does she get her love in the end?","soft","narrow")
+                    call her_main( "I feel miss understood at times too, does she get her love in the end?","base","narrow")
                     m "Well, it's complicated. There's a bunch of different itterations too."
-                    call her_main( "Will you stop talking about it if I put it on?","soft","narrow")
+                    call her_main( "Will you stop talking about it if I put it on?","annoyed","worried")
                     m "Yes."
-                    call her_main( "Fine." 
+                    call her_main( "Fine." ,"base","base")
                 else: #Fail
-                    call her_main( "No thanks, it seems a bit too tight for me.","soft","narrow")
+                    call her_main( "No thanks, it seems a bit too tight for me.", "soft", "worried")
                     m "\"I'll loosen you up soon enough.\""
-                    call her_main( "What are you looking at. Is it something I said?","soft","narrow")
+                    call her_main( "What are you looking at. Is it something I said?","base","narrow")
                     m "Oh, nothing my dear...I was just meditating."
-                    call her_main( "\"More like, falling asleep.\"","soft","narrow")
+                    call her_main( "\"More like, falling asleep.\"","base","suspicious")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe

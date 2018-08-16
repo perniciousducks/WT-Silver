@@ -612,7 +612,7 @@ screen wardrobe():
             #Makeup
             if active_girl in ["hermione"]:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_head_category",1),Show("wardrobe")]
-                add "interface/wardrobe/icons/items/lipstick.png" xpos 0+90 ypos 90 zoom 0.3
+                add "interface/wardrobe/icons/items/red_lipstick.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Makeup" xpos 76+90 ypos 140+75 size 10
             #Glasses
             if active_girl in ["hermione"]:
@@ -670,7 +670,7 @@ screen wardrobe():
             #Makeup
             if wardrobe_head_category == 1:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_head_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/items/lipstick.png" xpos 0+90 ypos 90 zoom 0.3
+                add "interface/wardrobe/icons/items/red_lipstick.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Makeup" xpos 76+90 ypos 140+75 size 10
                 for i in range(0,len(wr_makeup)):
                     $ row = i // 5
@@ -1253,7 +1253,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(184*row)), 83, 175) clicked [SetVariable("outfit_choice",wr_outfits[i]), Jump("equip_outfit")]
-                    add "interface/icons/outfits/"+wr_outfits[i].getImage() xpos 31+(90*col) ypos 131+92+(179*row) zoom 0.31/scaleratio
+                    add "interface/icons/outfit/"+wr_outfits[i].getImage() xpos 31+(90*col) ypos 131+92+(179*row) zoom 0.31/scaleratio
 
             #Costumes
             if wardrobe_outfits_category == 1:
@@ -1266,7 +1266,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(184*row)), 83, 175) clicked [SetVariable("outfit_choice",wr_costumes[i]), Jump("equip_outfit")]
-                    add "interface/icons/outfits/"+wr_costumes[i].getImage() xpos 31+(90*col) ypos 131+92+(179*row) zoom 0.31/scaleratio
+                    add "interface/icons/outfit/"+wr_costumes[i].getImage() xpos 31+(90*col) ypos 131+92+(179*row) zoom 0.31/scaleratio
 
             #Dresses
             if wardrobe_outfits_category == 2:
@@ -1279,7 +1279,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(184*row)), 83, 175) clicked [SetVariable("outfit_choice",wr_dresses[i]), Jump("equip_outfit")]
-                    add "interface/icons/outfits/"+wr_dresses[i].getImage() xpos 31+(90*col) ypos 131+92+(179*row) zoom 0.31/scaleratio
+                    add "interface/icons/outfit/"+wr_dresses[i].getImage() xpos 31+(90*col) ypos 131+92+(179*row) zoom 0.31/scaleratio
 
             #
             #if wardrobe_outfits_category == 3:

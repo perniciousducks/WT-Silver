@@ -1,5 +1,104 @@
 label __init_variables:
 
+    #Single Clothing Items
+    $ cs_clothing_list = []
+
+    #Ears
+    if not hasattr(renpy.store,'cat_ears_OBJ'):
+        $ cat_ears_OBJ = store_item_class()
+    $ cat_ears_OBJ.id = "cat_ears"
+    $ cat_ears_OBJ.name = "Cat Ears"
+    $ cat_ears_OBJ.items = ["ears"]
+    $ cat_ears_OBJ.image = "cat_ears.png"
+    $ cat_ears_OBJ.cost = 40
+    $ cat_ears_OBJ.description = "> A fluffy set of catlike ears that matches\n  one's hair-color!"
+
+    if not hasattr(renpy.store,'elf_ears_OBJ'):
+        $ elf_ears_OBJ = store_item_class()
+    $ elf_ears_OBJ.id = "elf_ears"
+    $ elf_ears_OBJ.name = "Elf Ears"
+    $ elf_ears_OBJ.items = ["ears"]
+    $ elf_ears_OBJ.image = "elf_ears.png"
+    $ elf_ears_OBJ.cost = 20
+    $ elf_ears_OBJ.description = "> A pointy set of elven ears."
+
+    #Glasses
+    if not hasattr(renpy.store,'reading_glasses_OBJ'):
+        $ reading_glasses_OBJ = store_item_class()
+    $ reading_glasses_OBJ.id = "reading_glasses"
+    $ reading_glasses_OBJ.name = "Reading Glasses"
+    $ reading_glasses_OBJ.items = ["glasses"]
+    $ reading_glasses_OBJ.image = "reading_glasses.png"
+    $ reading_glasses_OBJ.cost = 50
+    $ reading_glasses_OBJ.description = "> A lot of wizards are into girls wearing these!"
+
+    if not hasattr(renpy.store,'vintage_glasses_OBJ'):
+        $ vintage_glasses_OBJ = store_item_class()
+    $ vintage_glasses_OBJ.id = "vintage_glasses"
+    $ vintage_glasses_OBJ.name = "Vintage Glasses"
+    $ vintage_glasses_OBJ.items = ["glasses"]
+    $ vintage_glasses_OBJ.image = "vintage_glasses.png"
+    $ vintage_glasses_OBJ.cost = 70
+    $ vintage_glasses_OBJ.description = "> Wearing these doesn't automatically make you a nerd!"
+
+    $ cs_accessories_list = []
+    $ cs_accessories_list.append(cat_ears_OBJ)
+    $ cs_accessories_list.append(elf_ears_OBJ)
+    $ cs_accessories_list.append(reading_glasses_OBJ)
+    $ cs_accessories_list.append(vintage_glasses_OBJ)
+    python:
+        for i in cs_accessories_list:
+            i.type = "accessory"
+
+
+
+    #Makeup
+    if not hasattr(renpy.store,'red_lipstick_OBJ'):
+        $ red_lipstick_OBJ = store_item_class()
+    $ red_lipstick_OBJ.id = "red_lipstick"
+    $ red_lipstick_OBJ.name = "Red Lipstick"
+    $ red_lipstick_OBJ.type = "makeup"
+    $ red_lipstick_OBJ.items = ["lipstick"]
+    $ red_lipstick_OBJ.image = "lipstick_red.png"
+    $ red_lipstick_OBJ.cost = 100
+    $ red_lipstick_OBJ.description = "> They call this one the red rocket!"
+
+    if not hasattr(renpy.store,'pink_lipstick_OBJ'):
+        $ pink_lipstick_OBJ = store_item_class()
+    $ pink_lipstick_OBJ.id = "pink_lipstick"
+    $ pink_lipstick_OBJ.name = "Pink Lipstick"
+    $ pink_lipstick_OBJ.type = "makeup"
+    $ pink_lipstick_OBJ.items = ["lipstick"]
+    $ pink_lipstick_OBJ.unlockable = True #Unlocked from potion event.
+    $ pink_lipstick_OBJ.image = "lipstick_pink.png"
+    #$ pink_lipstick_OBJ.cost = 100
+    $ pink_lipstick_OBJ.description = "> Bright, pink, bimbo lipstick!"
+
+    if not hasattr(renpy.store,'freckles_makeup_OBJ'):
+        $ freckles_makeup_OBJ = store_item_class()
+    $ freckles_makeup_OBJ.id = "freckles_makeup"
+    $ freckles_makeup_OBJ.name = "Freckles"
+    $ freckles_makeup_OBJ.type = "makeup"
+    $ freckles_makeup_OBJ.items = ["freckles"]
+    $ freckles_makeup_OBJ.image = "makeup_freckles.png"
+    $ freckles_makeup_OBJ.cost = 20
+    $ freckles_makeup_OBJ.description = "> A magical item that makes the wearer's freckles more\n  pronounced!"
+
+    if not hasattr(renpy.store,'fake_cum_makeup_OBJ'):
+        $ fake_cum_makeup_OBJ = store_item_class()
+    $ fake_cum_makeup_OBJ.id = "fake_cum_makeup"
+    $ fake_cum_makeup_OBJ.name = "Fake Cum"
+    $ fake_cum_makeup_OBJ.type = "makeup"
+    $ fake_cum_makeup_OBJ.items = ["fake cum"]
+    $ fake_cum_makeup_OBJ.image = "makeup_fake_cum.png"
+    $ fake_cum_makeup_OBJ.cost = 20
+    $ fake_cum_makeup_OBJ.description = "> When she doen't want to wear your real cum just yet.\n  Be patient!"
+
+    $ cs_miscellaneous_list = []
+    $ cs_miscellaneous_list.append(red_lipstick_OBJ)
+    $ cs_miscellaneous_list.append(pink_lipstick_OBJ)
+    $ cs_miscellaneous_list.append(freckles_makeup_OBJ)
+    $ cs_miscellaneous_list.append(fake_cum_makeup_OBJ)
 
 
     # Dyes
@@ -7,7 +106,6 @@ label __init_variables:
         $ brown_dye_OBJ = store_item_class()
     $ brown_dye_OBJ.id = "brown_dye"
     $ brown_dye_OBJ.name = "Mud-Blood Brown"
-    $ brown_dye_OBJ.type = "dye"
     $ brown_dye_OBJ.items = ["clothing dye","hair dye"]
     $ brown_dye_OBJ.image = "dye_brown.png"
     $ brown_dye_OBJ.cost = 20
@@ -17,7 +115,6 @@ label __init_variables:
         $ yellow_dye_OBJ = store_item_class()
     $ yellow_dye_OBJ.id = "yellow_dye"
     $ yellow_dye_OBJ.name = "Niffler's Gold"
-    $ yellow_dye_OBJ.type = "dye"
     $ yellow_dye_OBJ.items = ["clothing dye","hair dye"]
     $ yellow_dye_OBJ.image = "dye_yellow.png"
     $ yellow_dye_OBJ.cost = 40
@@ -27,7 +124,6 @@ label __init_variables:
         $ orange_dye_OBJ = store_item_class()
     $ orange_dye_OBJ.id = "orange_dye"
     $ orange_dye_OBJ.name = "Butter Beer"
-    $ orange_dye_OBJ.type = "dye"
     $ orange_dye_OBJ.items = ["clothing dye"]
     $ orange_dye_OBJ.image = "dye_orange.png"
     $ orange_dye_OBJ.cost = 60
@@ -37,7 +133,6 @@ label __init_variables:
         $ red_dye_OBJ = store_item_class()
     $ red_dye_OBJ.id = "red_dye"
     $ red_dye_OBJ.name = "Weasel Red"
-    $ red_dye_OBJ.type = "dye"
     $ red_dye_OBJ.items = ["clothing dye","hair dye"]
     $ red_dye_OBJ.image = "dye_red.png"
     $ red_dye_OBJ.cost = 60
@@ -47,7 +142,6 @@ label __init_variables:
         $ crimson_dye_OBJ = store_item_class()
     $ crimson_dye_OBJ.id = "crimson_dye"
     $ crimson_dye_OBJ.name = "Crimson Lion"
-    $ crimson_dye_OBJ.type = "dye"
     $ crimson_dye_OBJ.items = ["clothing dye","hair dye"]
     $ crimson_dye_OBJ.image = "dye_crimson.png"
     $ crimson_dye_OBJ.cost = 80
@@ -57,7 +151,6 @@ label __init_variables:
         $ green_dye_OBJ = store_item_class()
     $ green_dye_OBJ.id = "green_dye"
     $ green_dye_OBJ.name = "Bowtruckle Paint"
-    $ green_dye_OBJ.type = "dye"
     $ green_dye_OBJ.items = ["clothing dye"]
     $ green_dye_OBJ.image = "dye_green.png"
     $ green_dye_OBJ.cost = 60
@@ -67,7 +160,6 @@ label __init_variables:
         $ dark_green_dye_OBJ = store_item_class()
     $ dark_green_dye_OBJ.id = "dark_green_dye"
     $ dark_green_dye_OBJ.name = "Serpent Green"
-    $ dark_green_dye_OBJ.type = "dye"
     $ dark_green_dye_OBJ.items = ["clothing dye","hair dye"]
     $ dark_green_dye_OBJ.image = "dye_dark_green.png"
     $ dark_green_dye_OBJ.cost = 80
@@ -77,7 +169,6 @@ label __init_variables:
         $ blue_dye_OBJ = store_item_class()
     $ blue_dye_OBJ.id = "blue_dye"
     $ blue_dye_OBJ.name = "Pixie Dye"
-    $ blue_dye_OBJ.type = "dye"
     $ blue_dye_OBJ.items = ["clothing dye"]
     $ blue_dye_OBJ.image = "dye_blue.png"
     $ blue_dye_OBJ.cost = 60
@@ -87,7 +178,6 @@ label __init_variables:
         $ dark_blue_dye_OBJ = store_item_class()
     $ dark_blue_dye_OBJ.id = "dark_blue_dye"
     $ dark_blue_dye_OBJ.name = "Raven Blue"
-    $ dark_blue_dye_OBJ.type = "dye"
     $ dark_blue_dye_OBJ.items = ["clothing dye","hair dye"]
     $ dark_blue_dye_OBJ.image = "dye_dark_blue.png"
     $ dark_blue_dye_OBJ.cost = 80
@@ -97,7 +187,6 @@ label __init_variables:
         $ purple_dye_OBJ = store_item_class()
     $ purple_dye_OBJ.id = "purple_dye"
     $ purple_dye_OBJ.name = "Pygmy Puff Purple"
-    $ purple_dye_OBJ.type = "dye"
     $ purple_dye_OBJ.items = ["clothing dye","hair dye"]
     $ purple_dye_OBJ.image = "dye_purple.png"
     $ purple_dye_OBJ.cost = 120
@@ -107,17 +196,15 @@ label __init_variables:
         $ pink_dye_OBJ = store_item_class()
     $ pink_dye_OBJ.id = "pink_dye"
     $ pink_dye_OBJ.name = "Pussy Pink"
-    $ pink_dye_OBJ.type = "dye"
     $ pink_dye_OBJ.items = ["clothing dye","hair dye"]
     $ pink_dye_OBJ.image = "dye_pink.png"
     $ pink_dye_OBJ.cost = 200
-    $ pink_dye_OBJ.description = "> A color so pink, it makes you want to\n  cover your whole room with it!"
+    $ pink_dye_OBJ.description = "> A color so pink, it makes you want to cover your\n  whole room with it!"
 
     if not hasattr(renpy.store,'gray_dye_OBJ'): # Gray
         $ gray_dye_OBJ = store_item_class()
     $ gray_dye_OBJ.id = "gray_dye"
     $ gray_dye_OBJ.name = "Ghostly Gray"
-    $ gray_dye_OBJ.type = "dye"
     $ gray_dye_OBJ.items = ["clothing dye","hair dye"]
     $ gray_dye_OBJ.image = "dye_gray.png"
     $ gray_dye_OBJ.cost = 200
@@ -127,7 +214,6 @@ label __init_variables:
         $ black_dye_OBJ = store_item_class()
     $ black_dye_OBJ.id = "black_dye"
     $ black_dye_OBJ.name = "Seriously Black"
-    $ black_dye_OBJ.type = "dye"
     $ black_dye_OBJ.items = ["clothing dye","hair dye"]
     $ black_dye_OBJ.image = "dye_black.png"
     $ black_dye_OBJ.cost = 400
@@ -137,27 +223,29 @@ label __init_variables:
         $ white_dye_OBJ = store_item_class()
     $ white_dye_OBJ.id = "white_dye"
     $ white_dye_OBJ.name = "Patroni White"
-    $ white_dye_OBJ.type = "dye"
     $ white_dye_OBJ.items = ["clothing dye"]
     $ white_dye_OBJ.image = "dye_white.png"
     $ white_dye_OBJ.cost = 400
     $ white_dye_OBJ.description = "> As bright and pure as a Patronus!"
 
-    $ dye_list = []
-    $ dye_list.append(brown_dye_OBJ)
-    $ dye_list.append(yellow_dye_OBJ)
-    $ dye_list.append(orange_dye_OBJ)
-    $ dye_list.append(red_dye_OBJ)
-    $ dye_list.append(crimson_dye_OBJ)
-    $ dye_list.append(green_dye_OBJ)
-    $ dye_list.append(dark_green_dye_OBJ)
-    $ dye_list.append(blue_dye_OBJ)
-    $ dye_list.append(dark_blue_dye_OBJ)
-    $ dye_list.append(purple_dye_OBJ)
-    $ dye_list.append(pink_dye_OBJ)
-    $ dye_list.append(gray_dye_OBJ)
-    $ dye_list.append(black_dye_OBJ)
-    $ dye_list.append(white_dye_OBJ)
+    $ cs_dye_list = []
+    $ cs_dye_list.append(brown_dye_OBJ)
+    $ cs_dye_list.append(yellow_dye_OBJ)
+    $ cs_dye_list.append(orange_dye_OBJ)
+    $ cs_dye_list.append(red_dye_OBJ)
+    $ cs_dye_list.append(crimson_dye_OBJ)
+    $ cs_dye_list.append(green_dye_OBJ)
+    $ cs_dye_list.append(dark_green_dye_OBJ)
+    $ cs_dye_list.append(blue_dye_OBJ)
+    $ cs_dye_list.append(dark_blue_dye_OBJ)
+    $ cs_dye_list.append(purple_dye_OBJ)
+    $ cs_dye_list.append(pink_dye_OBJ)
+    $ cs_dye_list.append(gray_dye_OBJ)
+    $ cs_dye_list.append(black_dye_OBJ)
+    $ cs_dye_list.append(white_dye_OBJ)
+    python:
+        for i in cs_dye_list:
+            i.type = "dye"
 
 
     # Clothing Sets
@@ -165,22 +253,20 @@ label __init_variables:
         $ hg_cheer_g_OBJ = store_item_class()
     $ hg_cheer_g_OBJ.id = "hg_cheer_g"
     $ hg_cheer_g_OBJ.name = "Gryffindor Cheerleader"
-    $ hg_cheer_g_OBJ.type = "set"
     $ hg_cheer_g_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_g_OBJ.cost = 80
     $ hg_cheer_g_OBJ.wait_time = 2
     $ hg_cheer_g_OBJ.image = "hg_cheer_g.png"
-    $ hg_cheer_g_OBJ.description = "> A basic Cheerleader attire for Gryffindor's\n  Quidditch team.\n> Inludes a ."
+    $ hg_cheer_g_OBJ.description = "> A basic Cheerleader attire for Gryffindor's\n  Quidditch team."
 
     if not hasattr(renpy.store,'hg_cheer_g_sexy_OBJ'):
         $ hg_cheer_g_sexy_OBJ = store_item_class()
     $ hg_cheer_g_sexy_OBJ.id = "hg_cheer_g_sexy"
     $ hg_cheer_g_sexy_OBJ.name = "Sexy Gryffindor Cheerleader"
-    $ hg_cheer_g_sexy_OBJ.type = "set"
     $ hg_cheer_g_sexy_OBJ.items = ["top","bottom","stockings"]
-    $ hg_cheer_g_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after speaking to Tonks.
-    $ hg_cheer_g_sexy_OBJ.cost = 140
-    $ hg_cheer_g_sexy_OBJ.wait_time = 1
+    $ hg_cheer_g_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
+    #$ hg_cheer_g_sexy_OBJ.cost = 140
+    #$ hg_cheer_g_sexy_OBJ.wait_time = 1
     $ hg_cheer_g_sexy_OBJ.image = "hg_cheer_g_sexy.png"
     $ hg_cheer_g_sexy_OBJ.description = "> A sexy version of the Cheerleader attire."
 
@@ -188,7 +274,6 @@ label __init_variables:
         $ hg_cheer_s_OBJ = store_item_class()
     $ hg_cheer_s_OBJ.id = "hg_cheer_s"
     $ hg_cheer_s_OBJ.name = "Slythrin Cheerleader"
-    $ hg_cheer_s_OBJ.type = "set"
     $ hg_cheer_s_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_s_OBJ.cost = 80
     $ hg_cheer_s_OBJ.wait_time = 2
@@ -199,11 +284,10 @@ label __init_variables:
         $ hg_cheer_s_sexy_OBJ = store_item_class()
     $ hg_cheer_s_sexy_OBJ.id = "hg_cheer_s_sexy"
     $ hg_cheer_s_sexy_OBJ.name = "Sexy Slythrin Cheerleader"
-    $ hg_cheer_s_sexy_OBJ.type = "set"
     $ hg_cheer_s_sexy_OBJ.items = ["top","bottom","stockings"]
-    $ hg_cheer_s_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after speaking to Tonks.
-    $ hg_cheer_s_sexy_OBJ.cost = 140
-    $ hg_cheer_s_sexy_OBJ.wait_time = 1
+    $ hg_cheer_s_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
+    #$ hg_cheer_s_sexy_OBJ.cost = 140
+    #$ hg_cheer_s_sexy_OBJ.wait_time = 1
     $ hg_cheer_s_sexy_OBJ.image = "hg_cheer_s_sexy.png"
     $ hg_cheer_s_sexy_OBJ.description = "> The sexy version of the Slytherin Cheerleader attire."
 
@@ -211,7 +295,6 @@ label __init_variables:
         $ hg_cheer_r_OBJ = store_item_class()
     $ hg_cheer_r_OBJ.id = "hg_cheer_r"
     $ hg_cheer_r_OBJ.name = "Ravenclaw Cheerleader"
-    $ hg_cheer_r_OBJ.type = "set"
     $ hg_cheer_r_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_r_OBJ.cost = 80
     $ hg_cheer_r_OBJ.wait_time = 2
@@ -222,11 +305,10 @@ label __init_variables:
         $ hg_cheer_r_sexy_OBJ = store_item_class()
     $ hg_cheer_r_sexy_OBJ.id = "hg_cheer_r_sexy"
     $ hg_cheer_r_sexy_OBJ.name = "Sexy Ravenclaw Cheerleader"
-    $ hg_cheer_r_sexy_OBJ.type = "set"
     $ hg_cheer_r_sexy_OBJ.items = ["top","bottom","stockings"]
-    $ hg_cheer_r_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after speaking to Tonks.
-    $ hg_cheer_r_sexy_OBJ.cost = 140
-    $ hg_cheer_r_sexy_OBJ.wait_time = 1
+    $ hg_cheer_r_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
+    #$ hg_cheer_r_sexy_OBJ.cost = 140
+    #$ hg_cheer_r_sexy_OBJ.wait_time = 1
     $ hg_cheer_r_sexy_OBJ.image = "hg_cheer_r_sexy.png"
     $ hg_cheer_r_sexy_OBJ.description = "> The sexy version of the Ravenclaw Cheerleader attire."
 
@@ -234,7 +316,6 @@ label __init_variables:
         $ hg_cheer_h_OBJ = store_item_class()
     $ hg_cheer_h_OBJ.id = "hg_cheer_h"
     $ hg_cheer_h_OBJ.name = "Hufflepuff Cheerleader"
-    $ hg_cheer_h_OBJ.type = "set"
     $ hg_cheer_h_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_h_OBJ.cost = 80
     $ hg_cheer_h_OBJ.wait_time = 2
@@ -245,11 +326,10 @@ label __init_variables:
         $ hg_cheer_h_sexy_OBJ = store_item_class()
     $ hg_cheer_h_sexy_OBJ.id = "hg_cheer_h_sexy"
     $ hg_cheer_h_sexy_OBJ.name = "Sexy Hufflepuff Cheerleader"
-    $ hg_cheer_h_sexy_OBJ.type = "set"
     $ hg_cheer_h_sexy_OBJ.items = ["top","bottom","stockings"]
-    $ hg_cheer_h_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after speaking to Tonks.
-    $ hg_cheer_h_sexy_OBJ.cost = 140
-    $ hg_cheer_h_sexy_OBJ.wait_time = 1
+    $ hg_cheer_h_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
+    #$ hg_cheer_h_sexy_OBJ.cost = 140
+    #$ hg_cheer_h_sexy_OBJ.wait_time = 1
     $ hg_cheer_h_sexy_OBJ.image = "hg_cheer_h_sexy.png"
     $ hg_cheer_h_sexy_OBJ.description = "> The sexy version of the Hufflepuff cheerleader attire."
 
@@ -259,7 +339,6 @@ label __init_variables:
         $ hg_lingerie_lace_OBJ = store_item_class()
     $ hg_lingerie_lace_OBJ.id = "hg_lingerie_lace"
     $ hg_lingerie_lace_OBJ.name = "Lace Lingerie"
-    $ hg_lingerie_lace_OBJ.type = "set"
     $ hg_lingerie_lace_OBJ.items = ["bra","panties"]
     $ hg_lingerie_lace_OBJ.cost = 40
     $ hg_lingerie_lace_OBJ.wait_time = 1
@@ -270,7 +349,6 @@ label __init_variables:
         $ hg_lingerie_silk_OBJ = store_item_class()
     $ hg_lingerie_silk_OBJ.id = "hg_lingerie_silk"
     $ hg_lingerie_silk_OBJ.name = "Maid Lingerie"
-    $ hg_lingerie_silk_OBJ.type = "set"
     $ hg_lingerie_silk_OBJ.items = ["bra","panties"]
     $ hg_lingerie_silk_OBJ.cost = 80
     $ hg_lingerie_silk_OBJ.wait_time = 1
@@ -281,7 +359,6 @@ label __init_variables:
         $ hg_lingerie_maid_OBJ = store_item_class()
     $ hg_lingerie_maid_OBJ.id = "hg_lingerie_maid"
     $ hg_lingerie_maid_OBJ.name = "Maid Lingerie"
-    $ hg_lingerie_maid_OBJ.type = "set"
     $ hg_lingerie_maid_OBJ.items = ["bra","panties","gloves","stockings","hair","hat"]
     $ hg_lingerie_maid_OBJ.cost = 160
     $ hg_lingerie_maid_OBJ.wait_time = 2
@@ -292,7 +369,6 @@ label __init_variables:
         $ hg_lingerie_latex_OBJ = store_item_class()
     $ hg_lingerie_latex_OBJ.id = "hg_lingerie_latex"
     $ hg_lingerie_latex_OBJ.name = "Latex Lingerie"
-    $ hg_lingerie_latex_OBJ.type = "set"
     $ hg_lingerie_latex_OBJ.items = ["bra","panties","gloves","stockings"]
     $ hg_lingerie_latex_OBJ.cost = 200
     $ hg_lingerie_latex_OBJ.wait_time = 2
@@ -303,7 +379,6 @@ label __init_variables:
         $ hg_lingerie_fishnet_OBJ = store_item_class()
     $ hg_lingerie_fishnet_OBJ.id = "hg_lingerie_fishnet"
     $ hg_lingerie_fishnet_OBJ.name = "Fishnet Lingerie"
-    $ hg_lingerie_fishnet_OBJ.type = "set"
     $ hg_lingerie_fishnet_OBJ.items = ["top","bra","panties"]
     $ hg_lingerie_fishnet_OBJ.cost = 100
     $ hg_lingerie_fishnet_OBJ.wait_time = 1
@@ -316,7 +391,6 @@ label __init_variables:
         $ hg_nighty_silk_OBJ = store_item_class()
     $ hg_nighty_silk_OBJ.id = "hg_nighty_silk"
     $ hg_nighty_silk_OBJ.name = "Silk Nighty"
-    $ hg_nighty_silk_OBJ.type = "set"
     $ hg_nighty_silk_OBJ.items = ["one-piece","panties"]
     $ hg_nighty_silk_OBJ.cost = 80
     $ hg_nighty_silk_OBJ.wait_time = 1
@@ -327,7 +401,6 @@ label __init_variables:
         $ hg_nightgown_OBJ = store_item_class()
     $ hg_nightgown_OBJ.id = "hg_nighty_silk"
     $ hg_nightgown_OBJ.name = "Silk Nightgown"
-    $ hg_nightgown_OBJ.type = "set"
     $ hg_nightgown_OBJ.items = ["one-piece"]
     $ hg_nightgown_OBJ.cost = 80
     $ hg_nightgown_OBJ.wait_time = 1
@@ -340,7 +413,6 @@ label __init_variables:
         $ hg_bikini_latex_OBJ = store_item_class()
     $ hg_bikini_latex_OBJ.id = "hg_bikini_latex"
     $ hg_bikini_latex_OBJ.name = "Latex Bikini"
-    $ hg_bikini_latex_OBJ.type = "set"
     $ hg_bikini_latex_OBJ.items = ["bra","panties"]
     $ hg_bikini_latex_OBJ.cost = 100
     $ hg_bikini_latex_OBJ.wait_time = 1
@@ -351,7 +423,6 @@ label __init_variables:
         $ hg_bikini_sling_OBJ = store_item_class()
     $ hg_bikini_sling_OBJ.id = "hg_bikini_sling"
     $ hg_bikini_sling_OBJ.name = "Sling Bikini"
-    $ hg_bikini_sling_OBJ.type = "set"
     $ hg_bikini_sling_OBJ.items = ["bra","panties"]
     $ hg_bikini_sling_OBJ.cost = 69
     $ hg_bikini_sling_OBJ.wait_time = 1
@@ -364,7 +435,6 @@ label __init_variables:
         $ hg_onepiece_sling_OBJ = store_item_class()
     $ hg_onepiece_sling_OBJ.id = "hg_onepiece_sling"
     $ hg_onepiece_sling_OBJ.name = "Sling Monokini"
-    $ hg_onepiece_sling_OBJ.type = "set"
     $ hg_onepiece_sling_OBJ.items = ["one-piece"]
     $ hg_onepiece_sling_OBJ.cost = 69
     $ hg_onepiece_sling_OBJ.wait_time = 1
@@ -377,7 +447,6 @@ label __init_variables:
         $ hg_muggle_cold_OBJ = store_item_class()
     $ hg_muggle_cold_OBJ.id = "hg_muggle_cold"
     $ hg_muggle_cold_OBJ.name = "Cold Weather Clothing"
-    $ hg_muggle_cold_OBJ.type = "set"
     $ hg_muggle_cold_OBJ.items = ["pullover A","pullover B","long jeans"]
     $ hg_muggle_cold_OBJ.cost = 80
     $ hg_muggle_cold_OBJ.wait_time = 1
@@ -388,7 +457,6 @@ label __init_variables:
         $ hg_muggle_hot_OBJ = store_item_class()
     $ hg_muggle_hot_OBJ.id = "hg_muggle_hot"
     $ hg_muggle_hot_OBJ.name = "Hot Weather Clothing"
-    $ hg_muggle_hot_OBJ.type = "set"
     $ hg_muggle_hot_OBJ.items = ["top","short jeans"]
     $ hg_muggle_hot_OBJ.cost = 100
     $ hg_muggle_hot_OBJ.wait_time = 1
@@ -399,7 +467,6 @@ label __init_variables:
         $ hg_muggle_rainy_OBJ = store_item_class()
     $ hg_muggle_rainy_OBJ.id = "hg_muggle_rainy"
     $ hg_muggle_rainy_OBJ.name = "Rainy Weather Clothing"
-    $ hg_muggle_rainy_OBJ.type = "set"
     $ hg_muggle_rainy_OBJ.items = ["sweater","long jeans"]
     $ hg_muggle_rainy_OBJ.cost = 60
     $ hg_muggle_rainy_OBJ.wait_time = 1
@@ -410,7 +477,6 @@ label __init_variables:
         $ hg_punk_rocker_OBJ = store_item_class()
     $ hg_punk_rocker_OBJ.id = "hg_punk_rocker"
     $ hg_punk_rocker_OBJ.name = "Rocker"
-    $ hg_punk_rocker_OBJ.type = "set"
     $ hg_punk_rocker_OBJ.items = ["top","bottom","gloves","choker"]
     $ hg_punk_rocker_OBJ.cost = 180
     $ hg_punk_rocker_OBJ.wait_time = 2
@@ -438,12 +504,15 @@ label __init_variables:
     $ hermione_clothing_sets_list.append(hg_bikini_latex_OBJ)
     $ hermione_clothing_sets_list.append(hg_bikini_sling_OBJ)
 
-    $ hermione_clothing_sets_list.append(hg_onepiece_sling_OBJ)
+    #$ hermione_clothing_sets_list.append(hg_onepiece_sling_OBJ)
 
     $ hermione_clothing_sets_list.append(hg_muggle_cold_OBJ)
     $ hermione_clothing_sets_list.append(hg_muggle_hot_OBJ)
     $ hermione_clothing_sets_list.append(hg_muggle_rainy_OBJ)
     $ hermione_clothing_sets_list.append(hg_punk_rocker_OBJ)
+    python:
+        for i in hermione_clothing_sets_list:
+            i.type = "set"
 
 
     # Astoria
@@ -452,7 +521,6 @@ label __init_variables:
     $ ag_boss_uniform_OBJ.id = "ag_boss_uniform"
     $ ag_boss_uniform_OBJ.name = "Boss Uniform"
     $ ag_boss_uniform_OBJ.cost = 500
-    $ ag_boss_uniform_OBJ.type = "set"
     $ ag_boss_uniform_OBJ.items = ["top","bottom","hair","hat"]
     $ ag_boss_uniform_OBJ.wait_time = 3
     $ ag_boss_uniform_OBJ.image = "ag_boss_uniform.png"
@@ -460,6 +528,9 @@ label __init_variables:
 
     $ astoria_clothing_sets_list = []
     $ astoria_clothing_sets_list.append(ag_boss_uniform_OBJ)
+    python:
+        for i in astoria_clothing_sets_list:
+            i.type = "set"
 
 
 
@@ -472,12 +543,12 @@ init python:
     class store_item_class(object):
         id = ""
         name = ""
-        type = ""
+        type = "" #This dictates the folder location after interface/icons/+type+...
         items = []
         image = ""
         unlockable = False #If True, prevents this item to be shown in the shop.
         unlocked = False #Set to True once unlocked or purchased.
-        cost = 60
+        cost = 0
         wait_time = 1
         description = "> Item for Purchase."
 
@@ -493,12 +564,7 @@ init python:
         def getStoreCost(self):
             return "Cost: "+str(self.cost)+" gold"
         def getStoreImage(self):
-            return "interface/icons/"+self.type+"s/"+self.image
-        def getStoreImageZoom(self):
-            if self.type in ["dye"]:
-                return 0.8
-            else:
-                return 1.0
+            return "interface/icons/"+self.type+"/"+self.image
 
         def getType(self):
             return self.type

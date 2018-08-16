@@ -25,51 +25,36 @@ label equip_her_makeup:
     if mad >= 1:
         jump equipping_failed
 
-    if makeup_choice == "lipstick":
+    if makeup_choice in ["red_lipstick","pink_lipstick"]:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
 
-        menu:
-            "-Change Lipstick Colour-"
-            "-Red Lipstick-" if reward_her_red_lipstick and not h_lipstick == "red": #Hypno potion event.
-                $ makeup_choice = "red_lipstick"
-                jump equi_her_makeup_lipstick
-            "-Remove Red Lipstick-" if h_lipstick == "red": #Unequip
-                $ makeup_choice = "nude"
-                jump equi_her_makeup_lipstick
-            "-Never mind-":
-                jump return_to_wardrobe
+        if makeup_choice != h_lipstick:
+            $ wardrobe_active = 0 #activates dissolve in her_main
 
-        label equi_her_makeup_lipstick:
+            call her_main("You want me to put on lipstick?","normal","worriedCl")
+            call her_main("Really, [genie_name]!","scream","angryCl")
+            m "Just a little bit."
 
-            if makeup_choice == "red_lipstick":
+            call her_main("Alright then...","base","glance")
+            hide screen hermione_main
+            with d5
 
-                $ wardrobe_active = 0 #activates dissolve in her_main
+            $ h_lipstick = makeup_choice
 
-                if h_lipstick == "nude":
-                    call her_main("You want me to put on lipstick?","normal","worriedCl")
-                    call her_main("Really, [genie_name]!","scream","angryCl")
-                    m "Just a little bit."
+            call update_her_uniform #Updates clothing and body.
 
-                    call her_main("Alright then...","base","glance")
-                    hide screen hermione_main
-                    with d5
+        else: #Nude
+            call her_main("You want me to take the lipstick off?","annoyed","ahegao")
+            call her_main("Alright then...","annoyed","down")
+            hide screen hermione_main
+            with d5
 
-                    $ h_lipstick = "red"
+            $ h_lipstick = "nude"
 
-                    call update_her_uniform #Updates clothing and body.
+            call update_her_uniform #Updates clothing and body.
 
-            else: #Nude
-                call her_main("You want me to take the lipstick off?","annoyed","ahegao")
-                call her_main("Alright then...","annoyed","down")
-                hide screen hermione_main
-                with d5
-
-                $ h_lipstick = "nude"
-
-                call update_her_uniform #Updates clothing and body.
-
-            jump return_to_wardrobe
+        jump return_to_wardrobe
 
     if makeup_choice not in hermione_makeup_list:
         if wardrobe_chitchat_active:

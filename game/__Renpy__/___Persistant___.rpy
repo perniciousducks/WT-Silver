@@ -263,11 +263,6 @@ label __init_variables:
     # Store Init
     call store_init
 
-    #Update or Reset Persistants
-    call update_persistants #Reset vars for a specific update in here!
-
-
-
     #Genie Init
     if not hasattr(renpy.store,'genie_sprite_base'): #important!
         call init_genie_layering
@@ -305,6 +300,8 @@ label __init_variables:
 
     call wardrobe_init
 
+    #Update or Reset Persistants
+    call update_persistants # Reset/update old vars for a specific update here! To make it compatible with older saves/prevent crashes!
 
     #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
     if not hasattr(renpy.store,'mentioned_ginnys_hair'):

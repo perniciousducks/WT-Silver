@@ -942,14 +942,21 @@ screen cs_gui():
                 add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470+100-UI_xpos_offset ypos 104-UI_ypos_offset
             text "Accs." xpos 492+100-UI_xpos_offset ypos 113-UI_ypos_offset size 10
 
-            if cs_show_dyes: #Toggle Dye Items
-                hotspot (470-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_dyes",False), Jump("return_clothes_store")]
+            if cs_show_misc: #Toggle Dye Items
+                hotspot (470-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_misc",False), Jump("return_clothes_store")]
                 add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470-UI_xpos_offset ypos 104+22-UI_ypos_offset
             else:
-                hotspot (470-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_dyes",True), Jump("return_clothes_store")]
+                hotspot (470-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_misc",True), Jump("return_clothes_store")]
                 add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470-UI_xpos_offset ypos 104+22-UI_ypos_offset
-            text "Dyes" xpos 492-UI_xpos_offset ypos 113+22-UI_ypos_offset size 10
+            text "Misc." xpos 492-UI_xpos_offset ypos 113+22-UI_ypos_offset size 10
 
+            if cs_show_dyes: #Toggle Dye Items
+                hotspot (470+100-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_dyes",False), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_true.png" xpos 470+100-UI_xpos_offset ypos 104+22-UI_ypos_offset
+            else:
+                hotspot (470+100-UI_xpos_offset,109+22-UI_ypos_offset,18,18) clicked [SetVariable("cs_show_dyes",True), Jump("return_clothes_store")]
+                add "interface/general/"+str(interface_color)+"/check_false.png" xpos 470+100-UI_xpos_offset ypos 104+22-UI_ypos_offset
+            text "Dyes" xpos 492+100-UI_xpos_offset ypos 113+22-UI_ypos_offset size 10
 
             $ page_list = cs_gui_OBJ.getListOfItems()
 
@@ -958,7 +965,7 @@ screen cs_gui():
                 if index < len(page_list):
                     hotspot (172-UI_xpos_offset, (164-UI_ypos_offset+(90*i)), 83, 83) clicked [SetVariable("selected_item",page_list[index]),Jump("cs_buy_item")]
 
-                    add page_list[index].getStoreImage() xalign 0.5 xpos 217-UI_xpos_offset yalign 0.5 ypos (209-UI_ypos_offset+(+90*i)) zoom 0.8 #page_list[index].getStoreImageZoom()
+                    add page_list[index].getStoreImage() xalign 0.5 xpos 217-UI_xpos_offset yalign 0.5 ypos (202-UI_ypos_offset+(+90*i)) zoom 0.4
 
                     text page_list[index].getStoreName() xpos 269-UI_xpos_offset ypos (170-UI_ypos_offset+(90*i)) size 16
                     text page_list[index].getStoreDescription() xpos 269-UI_xpos_offset ypos (196-UI_ypos_offset+(90*i)) size 12
@@ -1059,17 +1066,27 @@ label update_clothes_store_lists:
     if cs_gui_OBJ.category == 2:
         python:
             if cs_show_clothing:
-                pass
+                for i in cs_clothing_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
             if cs_show_accs:
-                pass
+                for i in cs_accessories_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
+            if cs_show_misc:
+                for i in cs_miscellaneous_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
             if cs_show_dyes:
-                for i in dye_list:
+                for i in cs_dye_list:
                     if not i.unlockable: #Unlockables DO NOT get added to the Shop!
                         if not i.unlocked:
                             cs_inventory_list.append(i)
 
-
-
+    $ cs_gui_OBJ.current_page = 0
 
     return
 
@@ -1080,7 +1097,7 @@ init python:
         current_page = 0
         character = 1
         category = 0
-        preview = "interface/icons/outfits/hg_mannequin.png"
+        preview = "interface/icons/outfit/hg_mannequin.png"
 
         def getListOfItems(self):
             if self.category in [0,1]: # 0=Outfits, 1=Sets
@@ -1097,16 +1114,16 @@ init python:
         def getMannequinPreview(self):
             if clothes_store_selection == None:
                 if self.character == 1: # Hermione
-                    return "interface/icons/outfits/hg_mannequin.png"
+                    return "interface/icons/outfit/hg_mannequin.png"
                 elif self.character == 2: # Luna
-                    return "interface/icons/outfits/ll_mannequin.png" # Placeholder
+                    return "interface/icons/outfit/ll_mannequin.png" # Placeholder
                 elif self.character == 3: # Susan
-                    return "interface/icons/outfits/sb_mannequin.png"
+                    return "interface/icons/outfit/sb_mannequin.png"
                 elif self.character == 4: # Astoria
-                    return "interface/icons/outfits/ag_mannequin.png"
+                    return "interface/icons/outfit/ag_mannequin.png"
                 elif self.character == 5: # Cho
-                    return "interface/icons/outfits/cc_mannequin.png" # Placeholder
+                    return "interface/icons/outfit/cc_mannequin.png" # Placeholder
                 else:
-                    return "interface/icons/outfits/hg_mannequin.png"
+                    return "interface/icons/outfit/hg_mannequin.png"
             else:
                 return clothes_store_selection.getStoreImage()

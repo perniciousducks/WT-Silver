@@ -294,7 +294,6 @@ init python:
 
     class hermione_outfit(object):
         name = ""
-        purchased = False #Not in use anymore! Keep it for crashfixes for update 1.4! # Todo remove in 1.5 when redoing the class!
         unlockable = False
         unlocked = False
         cost = 0

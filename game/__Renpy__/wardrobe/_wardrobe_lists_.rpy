@@ -122,22 +122,25 @@ label update_wr_head_list:
             $ wr_hair.append("E")
 
         #Makeup
-        $ wr_makeup.append("lipstick")
-        if "freckles" in cs_existing_stock:
+        if red_lipstick_OBJ.unlocked:
+            $ wr_makeup.append("red_lipstick")
+        if pink_lipstick_OBJ.unlocked:
+            $ wr_makeup.append("pink_lipstick")
+        if freckles_makeup_OBJ.unlocked:
             $ wr_makeup.append("freckles")
-        if "fake_cum" in cs_existing_stock:
+        if fake_cum_makeup_OBJ.unlocked:
             $ wr_makeup.append("fake_cum")
 
         #Glasses
-        if "reading_glasses" in cs_existing_stock:
+        if reading_glasses_OBJ.unlocked:
             $ wr_glasses.append("reading_glasses")
-        if "vintage_glasses" in cs_existing_stock:
+        if vintage_glasses_OBJ.unlocked:
             $ wr_glasses.append("vintage_glasses")
 
         #Ears
-        if "cat_ears" in cs_existing_stock:
+        if cat_ears_OBJ.unlocked:
             $ wr_ears.append("cat_ears")
-        if "elf_ears" in cs_existing_stock:
+        if elf_ears_OBJ.unlocked:
             $ wr_ears.append("elf_ears")
 
         #Hats

@@ -99,9 +99,12 @@ label load_tonks_cloathing_saves:
 
 label update_tonks_body:
 
-    if tonks_wear_coat or tonks_wear_top or tonks_wear_bra:
+    if tonks_wear_coat:# or tonks_wear_top or tonks_wear_bra:
         $ tonks_boobs = "characters/tonks/body/base/boobs_0.png"
     else:
-        $ tonks_boobs = "characters/tonks/body/base/boobs_1.png"
+        if tonks_wear_top:
+            $ tonks_boobs = "characters/tonks/body/base/boobs_2.png"
+        else:
+            $ tonks_boobs = "characters/tonks/body/base/boobs_1.png"
 
     return

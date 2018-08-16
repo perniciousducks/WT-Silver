@@ -40,20 +40,20 @@ label tonks_random_clothing:
             with d5
             call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid",xpos="base",ypos="base",trans="d5")
             g9 "You are naked again."
-            call ton_main("Yes. Just felt like it.","horny","base","raised","mid")
+            call ton_main("Yes. Just felt like it.","base","base","raised","ahegao")
             m "You don't worry if anybody's sees you?"
             if random_number in [1,2]:
                 m "Snape could have been in here."
-                call ton_main("Snape? He already knows how I roll...","horny","base","raised","mid")
-                call ton_main("He asked me for a blowjob yesterday...","horny","base","raised","mid")
+                call ton_main("Snape? He already knows how I roll...","open","base","raised","mid")
+                call ton_main("He asked me for a blowjob yesterday...","open","base","base","R")
                 m "And? Did you?"
-                call ton_main("Let's just say I'm still toying with him...","horny","base","raised","mid")
+                call ton_main("Let's just say I'm still toying with him...","base","base","base","mid")
             else: #3,4
                 m "Astoria could have seen you."
                 call ton_main("Oh I would love for her to see me like this...","horny","base","raised","mid")
                 call ton_main("Why don't you invite her to your office!","horny","base","base","mid")
             m "Are you always such a slut?"
-            call ton_main("I'm sorry, [ton_genie_name]! It's in my nature.","horny","base","raised","mid")
+            call ton_main("I'm sorry, [ton_genie_name]! But it's in my nature.","horny","base","raised","mid")
             call ton_main("Are you going to punish me? For being such a masochistic freak?","tongue_out","base","base","ahegao")
 
         menu: #Continuation.
@@ -96,9 +96,9 @@ label tonks_random_clothing:
                 call ton_main("I'm terribly sorry, [ton_genie_name]...","open","base","base","down")
                 m "What will you do next? Climb under my desk to suck my cock?"
                 g4 "Spread your legs for one of your students?"
-                call ton_main("(Hngh-- I'd love to.)","base","base","ahegao","ahegao")
+                call ton_main("(Hngh-- I'd love to.)","base","base","raised","ahegao")
                 g4 "A cunt like you doesn't deserve to be a teacher. You are nothing more than a disgusting whore!"
-                call ton_main("You are so right, [ton_genie_name]!","tongue_out","base","ahegao","ahegao")
+                call ton_main("You are so right, [ton_genie_name]!","tongue_out","base","worried","ahegao")
                 m "I should make you the school's cum-dumpster instead. How would you like that position?"
                 m "Boys lining up in front of the school toilets, waiting their turn to dump their cum into their teacher's mouth, day after day!"
                 call ton_main("You are making me wet, [ton_genie_name]!","base","base","base","mid")
@@ -107,6 +107,7 @@ label tonks_random_clothing:
                 call ton_main("Me? I was in Hufflepuff.","open","base","raised","mid")
                 m "Very well then."
                 m "Minus 10 points from house-hufflepuff!"
+                $ hufflepuff -=10
                 call ton_main("What? But [ton_genie_name]! I'm not even a student--","open","wide","wide","mid")
                 g4 "In addition, from this point forward, you will be forbidden to wear even a single piece of clothing whenever you step into this room!"
                 call ton_main("Of course, [ton_genie_name].","base","base","raised","down")

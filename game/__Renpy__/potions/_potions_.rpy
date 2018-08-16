@@ -111,10 +111,10 @@ label __init_variables:
                 description = ""
             ),
             silver_potion(
-                id = "p_imperius_potation",
+                id = "p_imperius_potion",
                 cost = 45,
                 whoring_rec = 14,
-                name = "Imperius Potation",
+                name = "Imperius Potion",
                 effect = "",
                 description = ""
             ),
@@ -185,7 +185,7 @@ label __init_variables:
             ),
             silver_potion(
                 id = "p_hypno",
-                ingredients = ["ing_aconite_root","p_imperius_potation"],
+                ingredients = ["ing_aconite_root","p_imperius_potion"],
                 name = "Hypno Potion",
                 effect = "Hypno Potion",
                 start_label = "potion_scene_3_3_1",
@@ -193,7 +193,7 @@ label __init_variables:
             ),
             silver_potion(
                 id = "p_clone",
-                ingredients = ["p_polyjuice_potion","p_imperius_potation"],
+                ingredients = ["p_polyjuice_potion","p_imperius_potion"],
                 name = "Clone Potion",
                 effect = "Clone Potion",
                 start_label = "potion_scene_1_4",

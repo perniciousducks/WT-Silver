@@ -135,14 +135,11 @@ label tonks_talk:
             pause.8
 
             call ton_main("Do you like it, [ton_genie_name]?","horny","base","raised","mid")
-            call ton_main("The naked body of one of your subordinates?","tongue_wide","base","raised","ahegao")
-            m "I expect you to get naked whenever you step foot into this room."
-            call ton_main("Yes, [ton_genie_name].","horny","base","base","ahegao")
-            m "Even should there be a student in here. Or if I call somebody. Anybody..."
-            m "You will remain naked!"
-            g4 "Did you hear me, [tonks_name]?"
-            call ton_main("Yes, [ton_genie_name]!","base","base","base","mid")
-            m "Good."
+            call ton_main("The exposed body of one of your subordinates?","tongue_wide","base","raised","ahegao")
+            g4 "I do, [tonks_name]!"
+            g9 "You should teach like that!"
+            call ton_main("Hmm...","base","base","base","R")
+            call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
         "-Get dressed-" if tonks_naked:
@@ -279,7 +276,7 @@ label tonks_talk:
                     call ton_main("Uuuh, [ton_genie_name]...","base","base","raised","mid")
                     call ton_main("You better not call me that in front of a studant...","open","base","base","mid")
                     g9 "What if I do?"
-                    call ton_main("I dare you!... Do it!","horny","base","base","mid")
+                    call ton_main("Do it, I dare you!","horny","base","base","mid")
                     jump tonks_talk
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)")
@@ -288,13 +285,13 @@ label tonks_talk:
                         pass
                     else:
                         $ tonks_name = temp_name
-                        call ton_main("Hmm...","pout","angry","angry","R")
-                        call ton_main("Alright.","pout","angry","angry","R")
+                        call ton_main("Hmm...","base","base","base","R")
+                        call ton_main("Alright.","base","base","base","mid")
                         m "Really? You don't mind?"
-                        call ton_main("Not at all, [ton_genie_name].","pout","angry","base","mid")
-                        call ton_main("I've been called all kinds of things by my lovers","pout","angry","base","mid")
+                        call ton_main("Not at all, [ton_genie_name].","horny","base","raised","mid")
+                        call ton_main("I've been called quite many things by my lovers!","base","base","base","R")
                         g9 "I'm your lover now?"
-                        call ton_main("Never say never.","pout","angry","base","mid")
+                        call ton_main("Never say never.","base","base","base","mid")
                     jump tonks_talk
                 "-Never mind-":
                     jump tonks_talk

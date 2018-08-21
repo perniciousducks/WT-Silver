@@ -217,6 +217,7 @@ label update_wr_tops_list:
         #Muggle
         if hg_muggle_cold_OBJ.unlocked:
             $ wr_tops_normal.append("normal_pullover")
+        if hg_muggle_cold_sexy_OBJ.unlocked:
             $ wr_tops_normal.append("normal_pullover_sexy")
         if hg_muggle_rainy_OBJ.unlocked:
             $ wr_tops_normal.append("normal_sweater")
@@ -224,18 +225,16 @@ label update_wr_tops_list:
             $ wr_tops_normal.append("normal_waitress_top")
 
         #Wicked
-        if "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
-            $ wr_tops_wicked.append("wicked_leather_jacket_short_sleeves")
-            $ wr_tops_wicked.append("wicked_leather_jacket_short_sleeves_open")
-        if "wicked_leather_jacket_sleeveless" in cs_existing_stock:
-            $ wr_tops_wicked.append("wicked_leather_jacket_sleeveless")
-            $ wr_tops_wicked.append("wicked_leather_jacket_sleeveless_open")
-        if "wicked_leather_jacket_sleeves" in cs_existing_stock:
-            $ wr_tops_wicked.append("wicked_leather_jacket_sleeves")
-            $ wr_tops_wicked.append("wicked_leather_jacket_sleeves_open")
+        if hg_punk_leather_OBJ.unlocked:
+            $ wr_tops_wicked.append("leather_jacket_short_sleeves")
+            $ wr_tops_wicked.append("leather_jacket_short_sleeves_open")
+            $ wr_tops_wicked.append("leather_jacket_sleeveless")
+            $ wr_tops_wicked.append("leather_jacket_sleeveless_open")
+            $ wr_tops_wicked.append("leather_jacket_sleeves")
+            $ wr_tops_wicked.append("leather_jacket_sleeves_open")
 
         if hg_punk_rocker_OBJ.unlocked:
-            $ wr_tops_wicked.append("wicked_rocker_top")
+            $ wr_tops_wicked.append("top_rocker")
         if hg_lingerie_fishnet_OBJ.unlocked:
             $ wr_tops_wicked.append("top_fishnets")
 
@@ -301,19 +300,17 @@ label update_wr_bottoms_list:
             $ wr_bottoms_cheerleader.append("skirt_cheer_sexy_h")
 
         #Skirts
-        if "skirt_belted_mini" in cs_existing_stock:
+        if hg_muggle_cold_OBJ.unlocked: #Temporary
             $ wr_bottoms_skirts.append("skirt_belted_mini")
-        if "skirt_belted_micro" in cs_existing_stock:
+        if hg_muggle_cold_sexy_OBJ.unlocked:
             $ wr_bottoms_skirts.append("skirt_belted_micro")
 
         #Pants
-        if hg_muggle_cold_OBJ.unlocked or hg_muggle_rainy_OBJ.unlocked:
+        if hg_muggle_rainy_OBJ.unlocked:
             $ wr_bottoms_pants.append("pants_jeans_long")
         if hg_muggle_hot_OBJ.unlocked:
             $ wr_bottoms_pants.append("pants_jeans_short")
-        #if "pants_retro_shorts" in cs_existing_stock:
-        #    $ wr_bottoms_pants.append("pants_retro_shorts")
-        if hg_punk_rocker_OBJ.unlocked:
+        if hg_punk_rocker_OBJ.unlocked or hg_punk_leather_OBJ.unlocked: #ToDo Punk Rocker will get the belted version!
             $ wr_bottoms_pants.append("pants_rocker")
 
     if active_girl == "astoria":
@@ -348,7 +345,7 @@ label update_wr_other_clothings_list:
 
         #Neckwear
         $ wr_neckwears.append("tie_striped_g")
-        if reward_her_wool_clothing:
+        if hg_accs_wool_g_OBJ.unlocked:
             $ wr_neckwears.append("scarf_striped_g")
         if whoring >= 14:
             $ wr_neckwears.append("banner_g")
@@ -381,15 +378,15 @@ label update_wr_other_clothings_list:
             $ wr_neckwears.append("collar_whore_shackle") #sQuest collar reward
 
         #Body Accessories
-        if "SPEW_badge" in cs_existing_stock:
+        if spew_badge_OBJ.unlocked:
             $ wr_body_accs.append("badge_SPEW")
-        if "CUM_badge" in cs_existing_stock:
+        if I_love_cum_badge_OBJ.unlocked:
             $ wr_body_accs.append("badge_I_love_cum")
         if whoring >= 24:
             $ wr_body_accs.append("belt_band_of_condoms")
 
         #Gloves
-        if reward_her_wool_clothing:
+        if hg_accs_wool_g_OBJ.unlocked:
             $ wr_gloves.append("gloves_wool_short_g")
         if hg_christmas_OBJ.unlocked:
             $ wr_gloves.append("gloves_wool_short_xmas")
@@ -407,7 +404,7 @@ label update_wr_other_clothings_list:
         #$ wr_gloves.append("gloves_egyptian") #ADD Egypt Outfit
 
         #Stockings
-        if reward_her_wool_clothing:
+        if hg_accs_wool_g_OBJ.unlocked:
             $ wr_stockings.append("stockings_striped_g")
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_striped_vibe") #Will be in accessories instead
@@ -426,20 +423,21 @@ label update_wr_other_clothings_list:
             #if whoring  >= 22 and "vibrators" in cs_existing_stock:
             #    $ wr_stockings.append("stockings_cheer_vibe") #Will be in accessories instead
 
-        if whoring >= 5:
+        if hg_muggle_cold_OBJ.unlocked:
             $ wr_stockings.append("stockings_pantyhose")
+        if hg_muggle_hot_OBJ.unlocked:
             $ wr_stockings.append("stockings_cute")
-        if hg_maid_OBJ.unlocked or hg_lingerie_maid_OBJ.unlocked:
+        if hg_lingerie_maid_OBJ.unlocked:
             $ wr_stockings.append("stockings_high")
         if hg_lingerie_latex_OBJ.unlocked:
             $ wr_stockings.append("stockings_latex")
         if hg_yenn_OBJ.unlocked:
             $ wr_stockings.append("stockings_silk_flowers")
 
-        if "stockings_lace_black" in cs_existing_stock:
+        if hg_maid_OBJ.unlocked or hg_lingerie_silk_OBJ.unlocked:
             $ wr_stockings.append("stockings_lace")
 
-        if "stockings_fishnet_black" in cs_existing_stock:
+        if hg_punk_leather_OBJ.unlocked:
             $ wr_stockings.append("stockings_fishnets")
 
         #Robes
@@ -462,11 +460,9 @@ label update_wr_other_clothings_list:
         if whoring >= 16:
             $ wr_robes.append("slyth_quidditch")
 
-    #if active_girl == "luna":
-
     if active_girl == "astoria":
-
-        $ wr_stockings.append("nighty_stockings")
+        if ag_nighty_silk_OBJ.unlocked:
+            $ wr_stockings.append("nighty_stockings")
 
         $ wr_robes.append("slyth_1")
 
@@ -506,7 +502,7 @@ label update_wr_underwear_list:
         if hg_lingerie_maid_OBJ.unlocked:
             $ wr_bras.append("bra_french_maid")
 
-        if whoring >= 22:
+        if hg_punk_leather_OBJ.unlocked:
             $ wr_bras.append("bra_tape")
 
         if hg_lingerie_fishnet_OBJ.unlocked:
@@ -547,22 +543,31 @@ label update_wr_underwear_list:
         $ wr_onepieces.append("nighty_dress")
 
         #Garterbelts
-        if whoring >= 10: #and "garterbelt_lace" in cs_existing_stock:
+        if hg_maid_OBJ.unlocked or hg_lingerie_silk_OBJ.unlocked:
             $ wr_garterbelts.append("garterbelt_lace")
 
     #if active_girl == "luna":
 
     if active_girl == "astoria":
+
+        #Bras
         $ wr_bras.append("clear_bra")
-        $ wr_bras.append("lace_bra")
-        $ wr_bras.append("lewd_bra")
+        if ag_lingerie_lace_OBJ.unlocked:
+            $ wr_bras.append("lace_bra")
+        if ag_lingerie_lewd_OBJ.unlocked:
+            $ wr_bras.append("lewd_bra")
 
-        $ wr_onepieces.append("nighty")
+        if ag_nighty_silk_OBJ.unlocked:
+            $ wr_onepieces.append("nighty")
 
+        #Panties
         $ wr_panties.append("clear_panties")
-        $ wr_panties.append("lace_panties")
-        $ wr_panties.append("lewd_panties")
-        $ wr_panties.append("nighty_panties")
+        if ag_lingerie_lace_OBJ.unlocked:
+            $ wr_panties.append("lace_panties")
+        if ag_lingerie_lewd_OBJ.unlocked:
+            $ wr_panties.append("lewd_panties")
+        if ag_nighty_silk_OBJ.unlocked:
+            $ wr_panties.append("nighty_panties")
 
     if active_girl == "susan":
         #$ wr_bras.append("")
@@ -605,7 +610,7 @@ label update_wr_outfits_list:
             $ wr_costumes.append(hg_pirate_OBJ)
         if hg_powerGirl_OBJ.unlocked:
             $ wr_costumes.append(hg_powerGirl_OBJ)
-        if whoring >= 7 and hg_msMarvel_OBJ.unlocked:
+        if hg_msMarvel_OBJ.unlocked:
             $ wr_costumes.append(hg_msMarvel_OBJ)
         if hg_harleyQuinn_OBJ.unlocked:
             $ wr_costumes.append(hg_harleyQuinn_OBJ)
@@ -667,7 +672,12 @@ label update_wr_miscellaneous_list:
 
         #Items #Butt-plugs, Gags, Brooms,...
         if gift_item_inv[AnalPlugs.id] > 0:
-            $ wr_items_list.append("buttplugs")
+            if buttplug_1_worn: #Event happened.
+                $ wr_items_list.append("buttplug_small")
+            if buttplug_2_worn: #Event happened.
+                $ wr_items_list.append("buttplug_medium")
+            if buttplug_3_worn: #Event happened.
+                $ wr_items_list.append("buttplug_large")
 
         #Piercings
         if whoring >= 5:

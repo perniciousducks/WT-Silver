@@ -436,7 +436,7 @@ label her_clothing_init:
         #Accessories
         $ hermione_makeup_list      = []
 
-        $ hermione_hat              = "characters/hermione/accessories/hats/00_blank.png"
+        $ hermione_hat              = "characters/hermione/accessories/hats/hair_A/00_blank.png"
         $ h_hat                     = "00_blank"
         $ h_hat_color               = "base"
 
@@ -773,16 +773,11 @@ label her_progress_init:
         $ hermione_door_event_happened = False
 
     #Rewards
-    if not hasattr(renpy.store,'reward_her_wool_clothing') or reset_persistants:
-        $ reward_her_wool_clothing = False
-        $ reward_her_lace_clothing = False
-        $ reward_her_latex_clothing = False
+    if not hasattr(renpy.store,'autograph') or reset_persistants:
         $ autograph = False #Professor Lockhart's tattoo.
 
     if not hasattr(renpy.store,'reward_her_red_lipstick') or reset_persistants:
         $ reward_her_red_lipstick = False
-        $ reward_her_pink_lipstick = False
-        $ reward_her_black_lipstick = False
 
 
     #Update 1.4

@@ -441,11 +441,17 @@ label update_her_uniform:
     $ hermione_glasses = "characters/hermione/accessories/glasses/"+h_glasses_color+"/"+str(h_glasses)+".png"
 
     if h_ears == "cat_ears":
-        $ hermione_ears = "characters/hermione/accessories/ears/hair_"+str(h_hair_style)+"/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+        if h_hair_style in ["A","B","E"]:
+            $ hermione_ears = "characters/hermione/accessories/ears/hair_"+str(h_hair_style)+"/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+        else:
+            $ hermione_ears = "characters/hermione/accessories/ears/hair_A/"+str(h_ears)+"_"+str(h_hair_color)+".png"
     else:
         $ hermione_ears = "characters/hermione/accessories/ears/"+str(h_ears)+".png"
 
-    $ hermione_hat = "characters/hermione/accessories/hats/"+str(h_hat)+".png"
+    if h_hair_style in ["A","B","E"]:
+        $ hermione_hat = "characters/hermione/accessories/hats/hair_"+str(h_hair_style)+"/"+str(h_hat)+".png"
+    else:
+        $ hermione_hat = "characters/hermione/accessories/hats/hair_A/"+str(h_hat)+".png"
 
 
     #Miscellaneous

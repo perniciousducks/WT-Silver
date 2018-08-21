@@ -46,7 +46,7 @@ label __init_variables:
     ]
 
     return
-    
+
 label shop_intro:
     show screen shop_screen
     if shop_found:
@@ -73,12 +73,12 @@ label shop_intro:
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
         jump shop_menu
-    
+
 label shop_menu:
     show screen shop_screen
     call screen shop_screen
-    
-    
+
+
 label sscrolls:
     show screen shop_screen
     $ scrolls_range = range(1,16)
@@ -123,8 +123,8 @@ label store_scrolls:
             "-Never mind-":
                 hide screen gift
         jump store_scrolls
-    
-    
+
+
 label shop_books:
     show screen shop_screen
     twi "What type of book would you like?"
@@ -137,14 +137,14 @@ label shop_books:
             $ books_menu_list.extend(Books_OBJ.write_books)
         "-Fiction books-":
             if not fiction_books_intro:
-                twi "These books are mostly light erotica..." 
+                twi "These books are mostly light erotica..."
                 ger "Some of the girls insisted that I order them in."
                 $ fiction_books_intro = True
             label fiction_menu:
             $ books_menu_list = []
             $ books_menu_list.extend(Books_OBJ.fiction_books)
         "-Never mind-":
-            call screen shop_screen 
+            call screen shop_screen
     python:
         books_menu = []
         for book in books_menu_list:
@@ -159,12 +159,12 @@ label shop_books:
     elif BookOBJ.purchased:
         call do_have_book #Message that says that you already bought this book.
     else:
-        call purchase_book 
+        call purchase_book
     if BookOBJ in Books_OBJ.get_edu():
         jump education_menu
     if BookOBJ in Books_OBJ.get_fic():
         jump fiction_menu
-    
+
 label purchase_book:
     $ the_gift = BookOBJ.picture
     show screen gift
@@ -183,8 +183,8 @@ label purchase_book:
         "-Never mind-":
             hide screen gift
     return
-    
-    
+
+
 label shop_potion_menu:
     show screen shop_screen
     python:
@@ -227,12 +227,12 @@ label shop_potion_menu:
                 fre "Hmm... I think I heard that it's found by the lake."
         jump shop_potion_menu
     if PotionOBJ == "whoring":
-        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.") 
+        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
     if PotionOBJ == "nvm":
-        pass    
+        pass
     call screen shop_screen
-    
-    
+
+
 label gifts_menu:
     python:
         choices = []
@@ -243,15 +243,15 @@ label gifts_menu:
                 choices.append( ( ("-"+str(i.name)+"- ("+str(i.cost)+" g.)"), i) )
         choices.append(("-Never mind-", "nvm"))
         result = renpy.display_menu(choices)
-        
+
     if result == "nvm":
         jump shop_menu
     elif result == "oos":
         jump out
     else:
-        call object_gift_block(result) 
+        call object_gift_block(result)
         jump shop_menu
-    
+
 label object_gift_block(item):
     $ the_gift = item.image
     show screen gift
@@ -263,19 +263,19 @@ label object_gift_block(item):
     $ cost4 = item.cost * 8
     menu:
         "-Buy 1 for ([item.cost] galleons)-":
-            call object_purchase_item(item, 1) 
+            call object_purchase_item(item, 1)
         "-Buy 2 for ([cost2] galleons)-":
-            call object_purchase_item(item, 2) 
+            call object_purchase_item(item, 2)
         "-Buy 4 for ([cost3] galleons)-":
-            call object_purchase_item(item, 4) 
+            call object_purchase_item(item, 4)
         "-Buy 8 for ([cost4] galleons)-":
-            call object_purchase_item(item, 8) 
+            call object_purchase_item(item, 8)
         "-Never mind-":
             hide screen gift
             pass
-            
+
     return
-            
+
 label object_purchase_item(item, quantity):
     $ transit_time = renpy.random.randint(1, 5)
     $ order_cost = item.cost*quantity
@@ -299,140 +299,16 @@ label object_purchase_item(item, quantity):
             dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
         hide screen gift
         with d3
-        
+
     else:
         call no_gold #Massage: m "I don't have enough gold".
-    
+
     return
-    
-    
-label app:
-    menu:
-        "-\"S.P.E.W.\" badge (100 gold)-" if not badge_01 == 7:
-            $ the_gift = "images/store/29.png" # SPEW BADGE.
-            show screen gift
-            with d3
-            dahr "A \"S.P.E.W.\" badge. Pretend that you care..."
-            menu:
-                "-Buy the item (100 gold)-":
-                    if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
-                        call do_have_book # "I already own this one."
-                        jump app
-                    else:
-                        if gold >= 100:
-                            $ gold -=100
-                            $ order_placed = True
-                            $ bought_badge_01 = True #Affects 15_mail.rpy
-                            call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                            call screen shop_screen
-                        else:
-                            call no_gold #Massage: m "I don't have enough gold".
-                            hide screen gift
-                            with d3
-                            jump app
-                "-Never mind-":
-                    hide screen gift
-                    with d3
-                    jump app
-        "-Glasses- (60 g.)":
-            $ the_gift = "images/store/glasses.png" # GLASSES
-            show screen gift
-            with d3
-            call glasses_text 
-            menu:
-                "-Buy the item (60 gold)-":
-                    if gold >= 60:
-                        $ gold -= 60
-                        $ order_placed = True
-                        $ bought_glasses = True #Affects 15_mail.rpy
-                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                        call screen shop_screen
-                    else:
-                        call no_gold #Massage: m "I don't have enough gold".
-                        jump app
-                "-Never mind-":
-                    hide screen gift
-                    jump app            
-        "-Fishnet stokings (120 gold)-" if not nets == 7:
-            $ the_gift = "images/store/30.png" # FISHNETS.
-            show screen gift
-            with d3
-            call nets_text 
-            menu:
-                "-Buy the item (120 gold)-":
-                    if nets == 7 or nets == 1: # == 7 means "gifted already"
-                        call do_have_book # "I already own this one."
-                        jump app
-                    else:
-                        if gold >= 120:
-                            $ gold -= 120
-                            $ order_placed = True
-                            $ bought_nets = True #Affects 15_mail.rpy
-                            call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                            call screen shop_screen
-                        else:
-                            call no_gold #Massage: m "I don't have enough gold".
-                            hide screen gift
-                            with d3
-                            jump app
-                "-Never mind-":
-                    hide screen gift
-                    with d3
-                    jump app
-        "-School Miniskirt- (---)" if not bought_skirt_already and not gave_miniskirt and whoring >= 3:
-            $ the_gift = "images/store/07.png" # MINISKIRT
-            show screen gift
-            with d3
-            dahr "School miniskirt. Improves grades drastically."
-            menu:
-                "-Buy the skirt- (---)":
-                    if vouchers >= 1: #Shows the amount of DAHR's vouchers in your possession.
-                        $ vouchers -= 1 #Shows the amount of DAHR's vouchers in your possession.
-                        $ order_placed = True
-                        $ bought_miniskirt = True #Affects 15_mail.rpy
-                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                        call screen shop_screen
-                    else:
-                        dahr "This item is only redeemable with a \"DAHR's voucher\"."
-                        hide screen gift
-                        with d3
-                        jump app
-                "-Never mind-":
-                    hide screen gift
-                    with d3
-                    jump app
-        "-Item Sold Out-" if bought_dress_already:
-            "This item has been sold out."
-            jump app
-        "{color=#858585}-Item is out of stock-{/color}" if not sorry_for_hesterics: # NIGHT DRESS.
-            jump out # Message "Item us out of stock".
-        "-The Ball Dress- (1500 gold)" if sorry_for_hesterics and not bought_dress_already:
-            $ the_gift = "images/store/01.png" # DRESS.
-            show screen gift
-            with d3
-            dahr "A nightdress for special occasions."
-            menu:
-                "-Buy the dress (1500 gold)-":
-                    if gold >= 1500:
-                        $ gold -=1500
-                        $ order_placed = True
-                        $ bought_ball_dress = True #Affects 15_mail.rpy
-                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                        call screen shop_screen
-                    else:
-                        call no_gold #Massage: m "I don't have enough gold".
-                        hide screen gift
-                        with d3
-                        jump app
-                "-Never mind-":
-                    hide screen gift
-                    with d3
-                    jump app
-        "-Never mind-":
-                jump shop_menu
-    
-    
-    
+
+
+
+
+
 ### ALREADY HAVE THIS BOOK
 label do_have_book:
     show screen bld1
@@ -441,11 +317,11 @@ label do_have_book:
     hide screen gift
     with d3
     return
-    
+
 ### THANK YOU FOR shopping here.
 label thx_4_shoping:
     # $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
-    
+
     if one_of_five ==  1:
         dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
         hide screen gift
@@ -456,21 +332,21 @@ label thx_4_shoping:
         hide screen gift
         with d3
         return
-    
+
 ### THANK YOU FOR shopping here. IMMEDIATE DELIVERY.
 label thx_4_shoping2:
     dahr "Thank your for shopping at \"Dahr's oddities\"."
     hide screen gift
     with d3
     return
-    
+
 ### NOT ENOUGH GOLD ###
 label no_gold:
     m "I don't have enough gold... This is depressing..."
     hide screen gift
     with d3
     return
-    
+
 ### ITEM IS OUT OF STOCK ###
 label out:
     show screen bld1
@@ -479,4 +355,3 @@ label out:
     hide screen bld1
     with d3
     jump gifts_menu
-    

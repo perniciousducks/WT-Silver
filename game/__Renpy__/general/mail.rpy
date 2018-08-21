@@ -1,26 +1,26 @@
 init python:
-    
+
     class deliveryItem(object):
         object = None
         transit_time = 0
         quantity=1
         type = ''
-        
+
         def __init__(self,object,transit_time,quantity,type):
             self.object = object
             self.transit_time = transit_time
             self.quantity = quantity
             self.type = type
-        
+
     class deliveryQueue(object):
         queue = []
         max_wait = 15
-        
+
         def send(self, item, transit_time, quantity, type):
             if transit_time > self.max_wait:
                 transit_time = self.max_wait
             self.queue.append(deliveryItem(item, transit_time, quantity, type))
-        
+
         def got_mail(self):
             for i in self.queue:
                 i.transit_time -= 1
@@ -28,7 +28,7 @@ init python:
                 if i.transit_time <= 0:
                     return True
             return False
-        
+
         def get_mail(self):
             delivery = []
             for i in self.queue:
@@ -37,9 +37,9 @@ init python:
             for i in delivery:
                 self.queue.remove(i)
             return delivery
-    
+
     deliveryQ = deliveryQueue()
-    
+
 label mail:
     if finished_report >= 1:
         $ letters -= 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
@@ -51,79 +51,79 @@ label mail:
 
         if game_difficulty <= 1: #Rewards Doubled.
             if finished_report == 1:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}80 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}80 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 80
-        
+
             if finished_report == 2:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}140 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}140 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 140
-    
+
             if finished_report == 3:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}180 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}180 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 180
-            
+
             if finished_report == 4:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}220 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}220 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 220
-        
+
             if finished_report == 5:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}300 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}300 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 300
-            
+
             if finished_report >= 6:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}400 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}400 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 400
 
         elif game_difficulty == 2: #normal difficulty
             if finished_report == 1:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}60 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}60 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 60
-        
+
             if finished_report == 2:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}90 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}90 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 90
-    
+
             if finished_report == 3:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}120 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}120 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 120
-            
+
             if finished_report == 4:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}160 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}160 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 160
-        
+
             if finished_report == 5:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}220 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}220 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 220
-            
+
             if finished_report >= 6:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}300 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}300 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 300
 
         else: #hardcore difficulty
             if finished_report == 1:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}40 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}40 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 40
-        
+
             if finished_report == 2:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}70 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}70 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 70
-    
+
             if finished_report == 3:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}90 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}90 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 90
-            
+
             if finished_report == 4:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}110 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}110 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 110
-        
+
             if finished_report == 5:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}150 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}150 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 150
-            
+
             if finished_report >= 6:
-                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}200 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}200 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"
                 $ gold += 200
-        
+
         show screen bld1
         show screen letter
         show screen ctc
@@ -131,12 +131,12 @@ label mail:
         hide screen letter
         hide screen bld1
         hide screen ctc
-            
+
         $ finished_report = 0
 
         call screen main_room_menu
-    
-    
+
+
 ### MAIL FROM HERMIONE ###
 #place after ### MAIL FROM HERMIONE ###
 
@@ -152,7 +152,7 @@ if outfit_ready:
     pause
     menu:
         "-Done reading-":
-            pass    
+            pass
         "-Not yet-":
             jump letter_outfit
     $ letters -= 1
@@ -161,10 +161,10 @@ if outfit_ready:
     hide screen bld1
     with Dissolve(.3)
     call screen main_room_menu
-    
+
 if day == 1:
     #$ letter_text = "{size=-4}-To professor Dumbledore-\n\nI am writing you to bring the current situation in our school to your attention.\n I'm afraid I'll need your help to sort this out.\n\n\n-Sincerely yours Hermione Granger-{/size}"
-    $ letter_text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.\n\n{size=-3}With deepest respect,\nHermione Granger.{/size}" 
+    $ letter_text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.\n\n{size=-3}With deepest respect,\nHermione Granger.{/size}"
     hide screen owl
     show screen owl_02
     #$ mail_from_her = False #Comented out because replaced with $ letters += 1
@@ -177,7 +177,7 @@ if day == 1:
     pause
     menu:
         "-Done reading-":
-            pass    
+            pass
         "-Not yet-":
             jump letter01_agagin
     hide screen letter
@@ -193,7 +193,7 @@ if day == 1:
     with d3
     jump event_00
     #call screen main_room_menu
-    
+
 
 
 if letter_from_hermione_02: #Letter from Hermione #02.
@@ -212,7 +212,7 @@ if letter_from_hermione_02: #Letter from Hermione #02.
     pause
     menu:
         "-Done reading-":
-            pass    
+            pass
         "-Not yet-":
             jump letter02_agagin
     hide screen letter
@@ -236,7 +236,7 @@ if ministry_letter: #Letter from the ministry
     pause
     menu:
         "-Done reading-":
-            pass    
+            pass
         "-Not yet-":
             jump ministry_letter_again
     hide screen letter
@@ -246,7 +246,7 @@ if ministry_letter: #Letter from the ministry
     m "That doesn't sound good..."
     m "Perhaps I should tell Snape about this."
     m "Or maybe miss granger?"
-    
+
     #Unlocks next event.
     $ ministry_letter_received = True
     call screen main_room_menu
@@ -271,7 +271,7 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     pause
     menu:
         "-Done reading-":
-            pass    
+            pass
         "-Not yet-":
             jump letter_work
     hide screen letter
@@ -304,22 +304,22 @@ label get_package:
                     renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name))
                 renpy.hide_screen("gift")
                 renpy.with_statement(Dissolve(0.3))
-            
+
             if item.type == 'Event_item':
                 pass
-               
+
     $ package_is_here = False
     call screen main_room_menu
-    
-label mail_02: #Packages only. <=====================================================================### PACKAGES ###=================================================== 
-    
-### ITEMS ###   
+
+label mail_02: #Packages only. <=====================================================================### PACKAGES ###===================================================
+
+### ITEMS ###
     if gift_order != None:
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
+
         $ gift_item_inv[gift_order.id] += order_quantity
-        
+
         $ the_gift = gift_order.image
         show screen gift
         with d3
@@ -334,86 +334,28 @@ label mail_02: #Packages only. <================================================
         with d3
         $ gift_order = None
         call screen main_room_menu
-        
-    
-    
-    if bought_ball_dress:
-        $ bought_ball_dress = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        #$ gifts12 += ["ball_dress"]
-        $ bought_dress_already = True #Makes sure that you won't buy the dress twice.
-        
-        $ gifts12.append("ball_dress")
-        $ the_gift = "images/store/01.png" # THE NIGHT DRESS.
-        show screen gift
-        with d3
-        ">A fancy nightdress has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_room_menu
-    
-    if bought_miniskirt:
-        $ bought_miniskirt = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        #$ gifts12 += ["ball_dress"]
-        $ bought_skirt_already = True #Makes sure that you won't buy the skirt twice.
-        $ have_miniskirt = True # Turns TRUE when you have the skirt in your possession.
-        $ the_gift = "images/store/07.png" # MINISKIRT.
-        show screen gift
-        with d3
-        ">A School miniskirt has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_room_menu
-    
-    if bought_glasses:
-        $ bought_glasses = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ glasses = True #Glasses owned
-        $ glasses_worn = False
-
-        $ the_gift = "images/store/glasses.png" # MAGAZINE # 3
-        show screen gift
-        with d3
-        ">Some fine reading glasses have been added to your possession."
-        hide screen gift
-        with d3
-        call screen main_room_menu
-    
-    if bought_badge_01:
-        $ bought_badge_01 = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ badge_01 = 1 
-
-        $ the_gift = "images/store/29.png" # S.P.E.W. Badge.
-        show screen gift
-        with d3
-        ">A \"S.P.E.W.\" badge has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_room_menu
-    
-    if bought_nets:
-        $ bought_nets = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ nets = 1 
-
-        $ the_gift = "images/store/30.png" # FISHNETS.
-        show screen gift
-        with d3
-        ">A pair of fishnet stockings have been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_room_menu
 
 
+
+init python:
+
+    class mail_letter_class(object):
+        id = ""
+        mailed = False
+        read = False
+        text = ""
+
+        def mailLetter(self):
+            self.mailed = True
+            self.read = False
+            if self not in mail_queue_list:
+                return mail_queue_list.append(self)
+            else:
+                return
+
+        def mailRead(self):
+            self.read = True
+            return mail_queue_list.remove(self)
+
+        def getLetterText(self):
+            return self.text

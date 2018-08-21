@@ -227,7 +227,7 @@ label tonks_talk:
                         pass
                     else:
                         $ ton_genie_name = temp_name
-                        call ton_main("Hmm, [ton_genie_name]... I loke it.","horny","base","raised","mid")
+                        call ton_main("Hmm, [ton_genie_name]... I like it.","horny","base","raised","mid")
                     jump tonks_talk
                 "-Never mind-":
                     jump tonks_talk
@@ -274,7 +274,7 @@ label tonks_talk:
                 "-Cunt-":
                     $ tonks_name = "Cunt"
                     call ton_main("Uuuh, [ton_genie_name]...","base","base","raised","mid")
-                    call ton_main("You better not call me that in front of a studant...","open","base","base","mid")
+                    call ton_main("You better not call me that in front of a student...","open","base","base","mid")
                     g9 "What if I do?"
                     call ton_main("Do it, I dare you!","horny","base","base","mid")
                     jump tonks_talk

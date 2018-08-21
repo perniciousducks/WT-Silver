@@ -33,7 +33,7 @@ label equip_her_top:
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
         menu:
             "-Make her get dressed-":
-                call h_action("none")
+                call h_action(None)
                 hide screen hermione_main
 
             "-nvm-":
@@ -461,46 +461,41 @@ label equip_her_top:
 
             #Muggle Pullover #Done
             elif top_choice == "normal_pullover":
-                m "Could you wear this top I bought you?"
+                m "Could you wear your pullover again?"
                 if whoring >= 0:
                     if whoring < 5:
-                        call her_main("[genie_name], that's a pullover!","angry","wink")
-                        m "... So what?"
-                        call her_main("Muggle clothing!","disgust","down_raised",cheeks="blush")
-                        call her_main("Muggle clothes are against the Hogwarts rules for--","open","closed")
-                        m "Proper school attire... Yeah yeah, heard that one a hundred times already..."
-                        call her_main("(...)","annoyed","annoyed") #very upset, annoyed
-                        m "I'm telling you to wear it. I'm the headmaster, after all."
-                        g9 "(I can do shit like that!)"
-                        call her_main("Fine... Let me go and put it on...","annoyed","angryL")
-                    elif whoring < 11:
+                        call her_main("My pullover? But that's muggle clothing?","angry","wink")
+                        m "So what? Didn't you already wear it before?"
+                        call her_main("Well yes, but that was an exception. Because it was raining and-","open","baseL")
+                        m "Pull it over already..."
+                        call her_main("Fine... Just give me a second...","annoyed","angryL")
+                    else:
                         call her_main("Alright, [genie_name].","soft","baseL")
                         call her_main("(I really like the colour...)","base","down")
                         call her_main("(I probably look really cute in it!)","base","happyCl")
-                        call her_main("Let me put it on, [genie_name].","base","base")
-                    else: #11+
-                        call her_main("Sure, [genie_name].","smile","glance")
-                        call her_main("Let me put it on real quick.","base","glance")
+                        call her_main("Let me put it on, [genie_name].","base","glance")
                 else:
                     pass
 
             #Muggle Pullover #Done
             elif top_choice == "normal_pullover_sexy":
-                m "Could you wear this pullover I bought you?"
-                if whoring >= 2:
-                    if whoring < 11:
+                m "Could you wear your pullover again?"
+                if whoring >= 0:
+                    if whoring < 17:
                         call her_main("Very well, [genie_name]. Just let me---","soft","baseL")
                         m "One second,... I'm almost done..."
                         call her_main("Done, [genie_name]? What are you doing with the--","open","suspicious")
                         m "Shhh! Be quiet, girl... I have to read the manual."
-                        g4 "(Right,... I just have to push here, and pull on this...)"
+                        call her_main("What manual?","soft","suspicious")
+                        m "The one Tonks gave me... Now shhhh and be quiet!"
+                        g4 "(Right,... I have to push here, and pull on this...)"
                         ">A heart shaped hole magically appeared in the fabric!"
                         g9 "(Ah, there is is!)"
                         m "Ok girl, now put it on."
                         call her_main("(What did he just do to that pullover?)","annoyed","suspicious")
                         call her_main("(Doesn't look any different to me...)","annoyed","down")
                         call her_main("OK, [genie_name]. Let me put it on.","soft","baseL")
-                    elif whoring < 20:
+                    else:
                         call her_main("You never mentioned that there's a hole in it.","open","down")
                         call her_main("(Right over my enormous cleavage...)","disgust","down_raised")
                         m "It's not my fault you never noticed..."
@@ -509,26 +504,17 @@ label equip_her_top:
                         m "Oh yes! I think something like that was mentioned in the manual!"
                         call her_main("(...)","disgust","glance")
                         call her_main("Fine... Let me just put it on.","soft","ahegao")
-                    else: #20+
-                        call her_main("Alright, [genie_name].","smile","happyCl")
-                        call her_main("Let me put it on real quick.","base","glance")
                 else:
-                    call her_main("I'm sorry, [genie_name].","base","base")
-                    call her_main("But that would be against the Hogwarts rules for proper school attire!","open","closed")
-                    call her_main("I have to refuse, [genie_name].","normal","base")
-                    if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 2."
-                    jump return_to_wardrobe
+                    pass
 
             #Muggle Sweater #Done
             elif top_choice == "normal_sweater":
-                m "Could you wear this top I bought you?"
-                if whoring >= 2:
+                m "Could you wear that sweater again?"
+                if whoring >= 0:
                     if whoring < 5:
-                        call her_main("[genie_name], that's a sweater!","angry","wink")
+                        call her_main("But, [genie_name], that's muggle clothing!","angry","wink")
                         m "... So what?"
-                        call her_main("Muggle clothing!","disgust","down_raised",cheeks="blush")
-                        call her_main("Muggle clothes are against the Hogwarts rules for--","open","closed")
+                        call her_main("They are against the Hogwarts rules for--","open","closed")
                         m "Proper school attire... Yeah yeah, heard that one a hundred times already..."
                         call her_main("(...)","annoyed","annoyed")
                         m "I'm telling you to wear it. I'm the headmaster, after all."
@@ -536,47 +522,32 @@ label equip_her_top:
                         call her_main("Fine... Let me go and put it on...","annoyed","angryL")
                     elif whoring < 20:
                         call her_main("OK, [genie_name].","soft","baseL")
-                        call her_main("(It does look a lot like one of my old sweaters...)","annoyed","down")
                         call her_main("Let me put it on.","base","base")
                     else: #20+
                         call her_main("Sure, [genie_name].","smile","glance")
                         call her_main("Let me put it on real quick.","base","glance")
                 else:
-                    call her_main("I'm sorry, [genie_name].","base","base")
-                    call her_main("But that would be against the Hogwarts rules for proper school attire!","open","closed")
-                    call her_main("I have to refuse, [genie_name].","normal","base")
-                    if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 2."
-                    jump return_to_wardrobe
+                    pass
 
             #Muggle Waitress Top #Kinda done
             elif top_choice == "normal_waitress_top":
-                m "Would you wear this top I bought you."
-                if whoring >= 8:
+                m "Would you wear this top again. The one with the massive cleavage?"
+                if whoring >= 0:
                     if whoring < 11:
+                        call her_main("(I already regret wearing this in front of him... But it was so hot that day...)","disgust","down")
                         call her_main("Fine, [genie_name].","open","closed")
-                        call her_main("Let me put it on before I change my mind...","annoyed","annoyed")
+                        call her_main("Just don't stare too much at my chest this time.","annoyed","angry")
                     else: #11+
                         call her_main("Alright, [genie_name].","soft","ahegao")
                         call her_main("Let me just change it.","base","glance")
                 else:
-                    if whoring < 2:
-                        call her_main("I'm sorry, [genie_name].","base","base")
-                        call her_main("But that would be against the Hogwarts rules for proper school attire!","open","closed")
-                        call her_main("I have to refuse, [genie_name].","normal","base")
-                    else: #2-7
-                        call her_main("I'm sorry, [genie_name].","open","closed")
-                        call her_main("But don't even think I would wear a top like this in school!","angry","angry")
-                        call her_main("No thanks.","annoyed","annoyed")
-                    if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 8."
-                    jump return_to_wardrobe
+                    pass
 
 
             ### Wicked ###
 
             #Leather Jacket #Done
-            elif top_choice == "wicked_leather_jacket_short_sleeves" or top_choice == "wicked_leather_jacket_sleeveless" or top_choice == "wicked_leather_jacket_sleeves":
+            elif top_choice in ["leather_jacket_short_sleeves","leather_jacket_sleeveless","leather_jacket_sleeves"]:
                 m "Could you wear this leather Jacket for me?"
 
                 if whoring >= 17:
@@ -620,7 +591,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Leather Jacket Open #Done
-            elif top_choice == "wicked_leather_jacket_short_sleeves_open" or top_choice == "wicked_leather_jacket_sleeveless_open" or top_choice == "wicked_leather_jacket_sleeves_open":
+            elif top_choice in ["leather_jacket_short_sleeves_open","leather_jacket_sleeveless_open","leather_jacket_sleeves_open"]:
                 m "Could you wear this leather Jacket for me?"
                 g9 "But leave the front open!"
                 if whoring >= 11:
@@ -675,9 +646,9 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Rocker Top #Done
-            elif top_choice == "wicked_rocker_top":
+            elif top_choice == "top_rocker":
                 if whoring < 5:
-                    m "Could you wear this top--"
+                    m "Could you wear this top-"
                 else:
                     m "Could you wear this top for me?"
 
@@ -696,15 +667,15 @@ label equip_her_top:
                         call her_main("Let me just put it on real quick.","base","glance")
                 else:
                     if whoring < 5:
-                        call her_main("A--...","shock","worriedCl") #Add screen shake and sneeze sound.
-                        call her_main("A--Achou!!","angry","worriedCl",cheeks="blush",emote="05") #Add screen shake and sneeze sound.
-                        ">Hermione sneezed."
+                        call her_main("A--...","shock","worriedCl")
+                        call her_main("A--Achou!!","angry","worriedCl",cheeks="blush",emote="05",trans="hpunch")
+                        call nar(">Hermione sneezed.")
                         call her_main("Ahh,...","silly","ahegao")
                         call her_main("I'm terribly sorry [genie_name]...","angry","wink")
                         call her_main("Thank you...","base","happyCl")
-                        ">Hermione grabs the tissue."
+                        call nar(">Hermione grabs the tissue.")
                         g4 "(Wait! what tissue?! Not my...)"
-                        ">Hermione sneezes into the top."
+                        call nar(">Hermione sneezes into the top.")
                         m "(Oh that's just perfect...)"
                         call her_main("I'm sorry sir. What was it you asked me?","soft","baseL")
                         m "Nothing, girl..."
@@ -727,11 +698,33 @@ label equip_her_top:
                     jump return_to_wardrobe
 
 
-            elif top_choice == "top_fishnets":
-                if whoring >= 20:
-                    pass
-                else:
-                    ">She won't wear that top just yet."
+            elif top_choice in ["top_fishnets"]:
+                g9 "I have something for you! Try it out!"
+                if whoring >= 20: #Success
+                    call her_main("Wow. Fishnets?","smile","down")
+                    call her_main("That's so naughty!","grin","glance")
+                    g9 "Glad you like it!"
+                    call her_main("Indeed I do, [genie_name].","soft","baseL")
+                    call her_main("Let me put it on for you.","base","glance")
+                else: #Fail
+                    if whoring < 5:
+                        call her_main("What? Oh what's this?","soft","base")
+                        m "It's a fishnet to-"
+                        call her_main("Oh, I get it!","grin","down")
+                        call her_main("This isn't really a hobby I considered pursuing, [genie_name]...","open","baseL")
+                        call her_main("But if you say it will help me with my grades then I'll try my best.","soft","down")
+                        m "Wait what?"
+                        call her_main("I will go down to the lake later and try it out, if that's ok with you, [genie_name].","base","glance")
+                        m "(...)"
+                        m "(Wait, does she want to go fishing with it...?)"
+                    else:
+                        call her_main("Antoher one of your way too revealing tops?","disgust","angry")
+                        g9 "Yes, glad you noticed! Now if you don't mind just-"
+                        call her_main("I'm not going to wear it! You can see everything in this! My nipples would poke right through it!!!","scream","angryCl")
+                        m "I wouldn't mind if they did..."
+                        call her_main("That's just... typical!","clench","angry")
+                        call her_main("You disgust me, [genie_name]!","clench","angry")
+                        m "Alright- Jeesh... I'm sorry."
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
@@ -743,7 +736,7 @@ label equip_her_top:
 
             call set_h_top(top_choice,top_color_choice)
 
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             $ wardrobe_active = 1
             call screen wardrobe
 
@@ -810,102 +803,31 @@ label equip_her_top:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
 
-            #Muggle
-            if top_choice == "normal_pullover" and whoring < 2:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 2."
-                jump return_to_wardrobe
-            if top_choice == "normal_pullover_sexy" and whoring < 2:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 2."
-                jump return_to_wardrobe
-            if top_choice == "normal_sweater" and whoring < 2:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 2."
-                jump return_to_wardrobe
-            if top_choice == "normal_waitress_top" and whoring < 8:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 8."
-                jump return_to_wardrobe
-            if top_choice == "normal_waitress_top" and whoring < 11:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 11."
-                jump return_to_wardrobe
-
-            #Wicked
-            if top_choice == "wicked_leather_jacket_short_sleeves" and whoring < 17:
+            if top_choice in ["leather_jacket_short_sleeves","leather_jacket_sleeveless","leather_jacket_sleeves"] and whoring < 17:
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
-            if top_choice == "wicked_leather_jacket_short_sleeves_open" and whoring < 17:
+            if top_choice in ["leather_jacket_short_sleeves_open","leather_jacket_sleeveless_open","leather_jacket_sleeves_open"] and whoring < 17:
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
-            if top_choice == "wicked_leather_jacket_sleeveless" and whoring < 17:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
-                jump return_to_wardrobe
-            if top_choice == "wicked_leather_jacket_sleeveless_open" and whoring < 17:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
-                jump return_to_wardrobe
-            if top_choice == "wicked_leather_jacket_sleeves" and whoring < 17:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
-                jump return_to_wardrobe
-            if top_choice == "wicked_leather_jacket_sleeves_open" and whoring < 17:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
-                jump return_to_wardrobe
-            if top_choice == "wicked_rocker_top" and whoring < 20:
+            if top_choice == "top_rocker" and whoring < 20:
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 20."
-                jump return_to_wardrobe
-
-            #Misc
-            if top_choice == "top_banner" and top_color_choice != "green" and top_color_choice != "dark_green" and whoring < 11:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 11."
-                jump return_to_wardrobe
-            if top_choice == "top_ripped_tie_striped" and whoring < 11:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 11."
-                jump return_to_wardrobe
-            if top_choice == "top_tie_striped" and whoring < 11:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 11."
-                jump return_to_wardrobe
-            if top_choice == "top_banner" and (top_color_choice == "green" or top_color_choice == "dark_green") and whoring < 17:
-                ">She won't wear that top just yet."
-                if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "top_fishnets" and whoring < 20:
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 20."
                 jump return_to_wardrobe
-            else:
-                pass
 
+            #Success!
             $ wardrobe_active = 1
             call set_h_top(top_choice,top_color_choice)
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
 
 

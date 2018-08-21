@@ -34,13 +34,15 @@ label cheats:
                     ">Public favours unlocked!"
                     jump cheats_hermione
 
-                "-Unlock all outfits & sets-":
+                "-Unlock all purchasable outfits & sets-":
                     python:
                         for i in hermione_outfits_list:
-                            i.unlocked = True
+                            if not i.unlockable:
+                                i.unlocked = True
                         for i in hermione_clothing_sets_list:
-                            i.unlocked = True
-                    ">All of Hermione's outfits and clothing sets have been unlocked."
+                            if not i.unlockable:
+                                i.unlocked = True
+                    ">All of Hermione's purchasable outfits and clothing sets have been unlocked."
                     jump cheats
 
                 "-Toggle Breast Expansion-":

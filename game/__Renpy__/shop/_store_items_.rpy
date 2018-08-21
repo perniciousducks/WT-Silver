@@ -3,22 +3,41 @@ label __init_variables:
     #Single Clothing Items
     $ cs_clothing_list = []
 
+    #Badges
+    if not hasattr(renpy.store,'spew_badge_OBJ'):
+        $ spew_badge_OBJ = store_item_class()
+    $ spew_badge_OBJ.id = "spew_badge"
+    $ spew_badge_OBJ.name = "S.P.E.W. Badge"
+    $ spew_badge_OBJ.items = ["badge"]
+    $ spew_badge_OBJ.image = "badge_spew.png"
+    $ spew_badge_OBJ.cost = 5
+    $ spew_badge_OBJ.description = "> A badge designed to show one's opposition of elf\n  slavery."
+
+    if not hasattr(renpy.store,'I_love_cum_badge_OBJ'):
+        $ I_love_cum_badge_OBJ = store_item_class()
+    $ I_love_cum_badge_OBJ.id = "I_love_cum_badge"
+    $ I_love_cum_badge_OBJ.name = "I <3 C.U.M. Badge"
+    $ I_love_cum_badge_OBJ.items = ["badge"]
+    $ I_love_cum_badge_OBJ.image = "badge_I_love_cum.png"
+    $ I_love_cum_badge_OBJ.cost = 15
+    $ I_love_cum_badge_OBJ.description = "> A badge that displays ones affection towards semen."
+
     #Ears
     if not hasattr(renpy.store,'cat_ears_OBJ'):
         $ cat_ears_OBJ = store_item_class()
     $ cat_ears_OBJ.id = "cat_ears"
     $ cat_ears_OBJ.name = "Cat Ears"
-    $ cat_ears_OBJ.items = ["ears"]
-    $ cat_ears_OBJ.image = "cat_ears.png"
+    $ cat_ears_OBJ.items = ["ears","tail"]
+    $ cat_ears_OBJ.image = "ears_cat.png"
     $ cat_ears_OBJ.cost = 40
-    $ cat_ears_OBJ.description = "> A fluffy set of catlike ears that matches\n  one's hair-color!"
+    $ cat_ears_OBJ.description = "> A fluffy set of catlike ears that matches one's\n  hair-color!"
 
     if not hasattr(renpy.store,'elf_ears_OBJ'):
         $ elf_ears_OBJ = store_item_class()
     $ elf_ears_OBJ.id = "elf_ears"
     $ elf_ears_OBJ.name = "Elf Ears"
     $ elf_ears_OBJ.items = ["ears"]
-    $ elf_ears_OBJ.image = "elf_ears.png"
+    $ elf_ears_OBJ.image = "ears_elf.png"
     $ elf_ears_OBJ.cost = 20
     $ elf_ears_OBJ.description = "> A pointy set of elven ears."
 
@@ -28,7 +47,7 @@ label __init_variables:
     $ reading_glasses_OBJ.id = "reading_glasses"
     $ reading_glasses_OBJ.name = "Reading Glasses"
     $ reading_glasses_OBJ.items = ["glasses"]
-    $ reading_glasses_OBJ.image = "reading_glasses.png"
+    $ reading_glasses_OBJ.image = "glasses_reading.png"
     $ reading_glasses_OBJ.cost = 50
     $ reading_glasses_OBJ.description = "> A lot of wizards are into girls wearing these!"
 
@@ -37,11 +56,13 @@ label __init_variables:
     $ vintage_glasses_OBJ.id = "vintage_glasses"
     $ vintage_glasses_OBJ.name = "Vintage Glasses"
     $ vintage_glasses_OBJ.items = ["glasses"]
-    $ vintage_glasses_OBJ.image = "vintage_glasses.png"
+    $ vintage_glasses_OBJ.image = "glasses_vintage.png"
     $ vintage_glasses_OBJ.cost = 70
     $ vintage_glasses_OBJ.description = "> Wearing these doesn't automatically make you a nerd!"
 
     $ cs_accessories_list = []
+    $ cs_accessories_list.append(spew_badge_OBJ)
+    $ cs_accessories_list.append(I_love_cum_badge_OBJ)
     $ cs_accessories_list.append(cat_ears_OBJ)
     $ cs_accessories_list.append(elf_ears_OBJ)
     $ cs_accessories_list.append(reading_glasses_OBJ)
@@ -71,8 +92,6 @@ label __init_variables:
     $ pink_lipstick_OBJ.items = ["lipstick"]
     $ pink_lipstick_OBJ.unlockable = True #Unlocked from potion event.
     $ pink_lipstick_OBJ.image = "lipstick_pink.png"
-    #$ pink_lipstick_OBJ.cost = 100
-    $ pink_lipstick_OBJ.description = "> Bright, pink, bimbo lipstick!"
 
     if not hasattr(renpy.store,'freckles_makeup_OBJ'):
         $ freckles_makeup_OBJ = store_item_class()
@@ -259,16 +278,13 @@ label __init_variables:
     $ hg_cheer_g_OBJ.image = "hg_cheer_g.png"
     $ hg_cheer_g_OBJ.description = "> A basic Cheerleader attire for Gryffindor's\n  Quidditch team."
 
-    if not hasattr(renpy.store,'hg_cheer_g_sexy_OBJ'):
+    if not hasattr(renpy.store,'hg_cheer_g_sexy_OBJ'): #Not a store item!
         $ hg_cheer_g_sexy_OBJ = store_item_class()
     $ hg_cheer_g_sexy_OBJ.id = "hg_cheer_g_sexy"
     $ hg_cheer_g_sexy_OBJ.name = "Sexy Gryffindor Cheerleader"
     $ hg_cheer_g_sexy_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_g_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
-    #$ hg_cheer_g_sexy_OBJ.cost = 140
-    #$ hg_cheer_g_sexy_OBJ.wait_time = 1
     $ hg_cheer_g_sexy_OBJ.image = "hg_cheer_g_sexy.png"
-    $ hg_cheer_g_sexy_OBJ.description = "> A sexy version of the Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_s_OBJ'):
         $ hg_cheer_s_OBJ = store_item_class()
@@ -280,16 +296,13 @@ label __init_variables:
     $ hg_cheer_s_OBJ.image = "hg_cheer_s.png"
     $ hg_cheer_s_OBJ.description = "> The Slytherin version of the Cheerleader attire."
 
-    if not hasattr(renpy.store,'hg_cheer_s_sexy_OBJ'):
+    if not hasattr(renpy.store,'hg_cheer_s_sexy_OBJ'):  #Not a store item!
         $ hg_cheer_s_sexy_OBJ = store_item_class()
     $ hg_cheer_s_sexy_OBJ.id = "hg_cheer_s_sexy"
     $ hg_cheer_s_sexy_OBJ.name = "Sexy Slythrin Cheerleader"
     $ hg_cheer_s_sexy_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_s_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
-    #$ hg_cheer_s_sexy_OBJ.cost = 140
-    #$ hg_cheer_s_sexy_OBJ.wait_time = 1
     $ hg_cheer_s_sexy_OBJ.image = "hg_cheer_s_sexy.png"
-    $ hg_cheer_s_sexy_OBJ.description = "> The sexy version of the Slytherin Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_r_OBJ'):
         $ hg_cheer_r_OBJ = store_item_class()
@@ -301,16 +314,13 @@ label __init_variables:
     $ hg_cheer_r_OBJ.image = "hg_cheer_r.png"
     $ hg_cheer_r_OBJ.description = "> The Ravenclaw version of the Cheerleader attire."
 
-    if not hasattr(renpy.store,'hg_cheer_r_sexy_OBJ'):
+    if not hasattr(renpy.store,'hg_cheer_r_sexy_OBJ'):  #Not a store item!
         $ hg_cheer_r_sexy_OBJ = store_item_class()
     $ hg_cheer_r_sexy_OBJ.id = "hg_cheer_r_sexy"
     $ hg_cheer_r_sexy_OBJ.name = "Sexy Ravenclaw Cheerleader"
     $ hg_cheer_r_sexy_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_r_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
-    #$ hg_cheer_r_sexy_OBJ.cost = 140
-    #$ hg_cheer_r_sexy_OBJ.wait_time = 1
     $ hg_cheer_r_sexy_OBJ.image = "hg_cheer_r_sexy.png"
-    $ hg_cheer_r_sexy_OBJ.description = "> The sexy version of the Ravenclaw Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_h_OBJ'):
         $ hg_cheer_h_OBJ = store_item_class()
@@ -322,16 +332,13 @@ label __init_variables:
     $ hg_cheer_h_OBJ.image = "hg_cheer_h.png"
     $ hg_cheer_h_OBJ.description = "> The Hufflepuff version of the Cheerleader attire."
 
-    if not hasattr(renpy.store,'hg_cheer_h_sexy_OBJ'):
+    if not hasattr(renpy.store,'hg_cheer_h_sexy_OBJ'):  #Not a store item!
         $ hg_cheer_h_sexy_OBJ = store_item_class()
     $ hg_cheer_h_sexy_OBJ.id = "hg_cheer_h_sexy"
     $ hg_cheer_h_sexy_OBJ.name = "Sexy Hufflepuff Cheerleader"
     $ hg_cheer_h_sexy_OBJ.items = ["top","bottom","stockings"]
     $ hg_cheer_h_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
-    #$ hg_cheer_h_sexy_OBJ.cost = 140
-    #$ hg_cheer_h_sexy_OBJ.wait_time = 1
     $ hg_cheer_h_sexy_OBJ.image = "hg_cheer_h_sexy.png"
-    $ hg_cheer_h_sexy_OBJ.description = "> The sexy version of the Hufflepuff cheerleader attire."
 
 
     # Lingerie
@@ -349,7 +356,7 @@ label __init_variables:
         $ hg_lingerie_silk_OBJ = store_item_class()
     $ hg_lingerie_silk_OBJ.id = "hg_lingerie_silk"
     $ hg_lingerie_silk_OBJ.name = "Maid Lingerie"
-    $ hg_lingerie_silk_OBJ.items = ["bra","panties"]
+    $ hg_lingerie_silk_OBJ.items = ["bra","panties","garter","stockings"]
     $ hg_lingerie_silk_OBJ.cost = 80
     $ hg_lingerie_silk_OBJ.wait_time = 1
     $ hg_lingerie_silk_OBJ.image = "hg_lingerie_silk.png"
@@ -442,74 +449,99 @@ label __init_variables:
     $ hg_onepiece_sling_OBJ.description = "> A Mononoke variant of the Sling Bikini"
 
 
+    # Accessories
+    if not hasattr(renpy.store,'hg_accs_wool_g_OBJ'): # Not a store item!
+        $ hg_accs_wool_g_OBJ = store_item_class()
+    $ hg_accs_wool_g_OBJ.id = "hg_wool_accs_g"
+    $ hg_accs_wool_g_OBJ.name = "Gryffindor Wool Accessories"
+    $ hg_accs_wool_g_OBJ.items = ["scarf","gloves","stockings"]
+    $ hg_accs_wool_g_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
+    $ hg_accs_wool_g_OBJ.image = "hg_accs_wool_g.png"
 
-    if not hasattr(renpy.store,'hg_muggle_cold_OBJ'):
+    # Clothing
+    if not hasattr(renpy.store,'hg_muggle_cold_OBJ'): # Not a store item!
         $ hg_muggle_cold_OBJ = store_item_class()
     $ hg_muggle_cold_OBJ.id = "hg_muggle_cold"
     $ hg_muggle_cold_OBJ.name = "Cold Weather Clothing"
-    $ hg_muggle_cold_OBJ.items = ["pullover A","pullover B","long jeans"]
-    $ hg_muggle_cold_OBJ.cost = 80
-    $ hg_muggle_cold_OBJ.wait_time = 1
+    $ hg_muggle_cold_OBJ.items = ["pullover","skirt","pantyhose"]
+    $ hg_muggle_cold_OBJ.unlockable = True # Not purchasable. Unlocks randomly when summoning Hermione.
     $ hg_muggle_cold_OBJ.image = "hg_muggle_cold.png"
-    $ hg_muggle_cold_OBJ.description = "> A more muggle styled set of clothes for cold\n weather."
 
-    if not hasattr(renpy.store,'hg_muggle_hot_OBJ'):
+    if not hasattr(renpy.store,'hg_muggle_cold_sexy_OBJ'): # Not a store item!
+        $ hg_muggle_cold_sexy_OBJ = store_item_class()
+    $ hg_muggle_cold_sexy_OBJ.id = "hg_muggle_cold_sexy"
+    $ hg_muggle_cold_sexy_OBJ.name = "Sexy Cold Weather Clothing"
+    $ hg_muggle_cold_sexy_OBJ.items = ["pullover","skirt","pantyhose"]
+    $ hg_muggle_cold_sexy_OBJ.unlockable = True # Not purchasable. Upgradable after buying base version and then speaking to Tonks.
+    $ hg_muggle_cold_sexy_OBJ.image = "hg_muggle_cold_sexy.png"
+
+    if not hasattr(renpy.store,'hg_muggle_hot_OBJ'): # Not a store item!
         $ hg_muggle_hot_OBJ = store_item_class()
     $ hg_muggle_hot_OBJ.id = "hg_muggle_hot"
     $ hg_muggle_hot_OBJ.name = "Hot Weather Clothing"
-    $ hg_muggle_hot_OBJ.items = ["top","short jeans"]
-    $ hg_muggle_hot_OBJ.cost = 100
-    $ hg_muggle_hot_OBJ.wait_time = 1
+    $ hg_muggle_hot_OBJ.items = ["top","skirt","stockings"]
+    $ hg_muggle_hot_OBJ.unlockable = True # Not purchasable. Unlocks randomly when summoning Hermione.
     $ hg_muggle_hot_OBJ.image = "hg_muggle_hot.png"
-    $ hg_muggle_hot_OBJ.description = "> A more muggle styled set of clothes for warm\n weather"
 
-    if not hasattr(renpy.store,'hg_muggle_rainy_OBJ'):
+    if not hasattr(renpy.store,'hg_muggle_rainy_OBJ'): # Not a store item!
         $ hg_muggle_rainy_OBJ = store_item_class()
     $ hg_muggle_rainy_OBJ.id = "hg_muggle_rainy"
     $ hg_muggle_rainy_OBJ.name = "Rainy Weather Clothing"
     $ hg_muggle_rainy_OBJ.items = ["sweater","long jeans"]
-    $ hg_muggle_rainy_OBJ.cost = 60
-    $ hg_muggle_rainy_OBJ.wait_time = 1
+    $ hg_muggle_rainy_OBJ.unlockable = True # Not purchasable. Unlocks randomly when summoning Hermione.
     $ hg_muggle_rainy_OBJ.image = "hg_muggle_rainy.png"
-    $ hg_muggle_rainy_OBJ.description = "> A more muggle styled set of clothes for rainy\n weather."
 
     if not hasattr(renpy.store,'hg_punk_rocker_OBJ'):
         $ hg_punk_rocker_OBJ = store_item_class()
     $ hg_punk_rocker_OBJ.id = "hg_punk_rocker"
-    $ hg_punk_rocker_OBJ.name = "Rocker"
+    $ hg_punk_rocker_OBJ.name = "Punk Rocker"
     $ hg_punk_rocker_OBJ.items = ["top","bottom","gloves","choker"]
     $ hg_punk_rocker_OBJ.cost = 180
     $ hg_punk_rocker_OBJ.wait_time = 2
     $ hg_punk_rocker_OBJ.image = "hg_punk_rocker.png"
-    $ hg_punk_rocker_OBJ.description = "> A punk-rock set of clothes for the more rebellious\n type of witch."
+    $ hg_punk_rocker_OBJ.description = ">A punk-rock set of clothes for the more rebellious\n type of witch."
+
+    if not hasattr(renpy.store,'hg_punk_leather_OBJ'):
+        $ hg_punk_leather_OBJ = store_item_class()
+    $ hg_punk_leather_OBJ.id = "hg_punk_leather"
+    $ hg_punk_leather_OBJ.name = "Punk Leather"
+    $ hg_punk_leather_OBJ.items = ["top","bottom","bra","stockings"]
+    $ hg_punk_leather_OBJ.cost = 300
+    $ hg_punk_leather_OBJ.wait_time = 3
+    $ hg_punk_leather_OBJ.image = "hg_punk_leather.png"
+    $ hg_punk_leather_OBJ.description = ">A punk-leather set for wicked witches!\n The sleeve-length of the Leather-jacket can be changed."
 
     $ hermione_clothing_sets_list = []
     $ hermione_clothing_sets_list.append(hg_cheer_g_OBJ)
-    $ hermione_clothing_sets_list.append(hg_cheer_g_sexy_OBJ)
+    $ hermione_clothing_sets_list.append(hg_cheer_g_sexy_OBJ) #Unlockable
     $ hermione_clothing_sets_list.append(hg_cheer_s_OBJ)
-    $ hermione_clothing_sets_list.append(hg_cheer_s_sexy_OBJ)
+    $ hermione_clothing_sets_list.append(hg_cheer_s_sexy_OBJ) #Unlockable
     $ hermione_clothing_sets_list.append(hg_cheer_r_OBJ)
-    $ hermione_clothing_sets_list.append(hg_cheer_r_sexy_OBJ)
+    $ hermione_clothing_sets_list.append(hg_cheer_r_sexy_OBJ) #Unlockable
     $ hermione_clothing_sets_list.append(hg_cheer_h_OBJ)
-    $ hermione_clothing_sets_list.append(hg_cheer_h_sexy_OBJ)
+    $ hermione_clothing_sets_list.append(hg_cheer_h_sexy_OBJ) #Unlockable
 
     $ hermione_clothing_sets_list.append(hg_lingerie_lace_OBJ)
     $ hermione_clothing_sets_list.append(hg_lingerie_silk_OBJ)
     $ hermione_clothing_sets_list.append(hg_lingerie_maid_OBJ)
     $ hermione_clothing_sets_list.append(hg_lingerie_latex_OBJ)
 
-    $ hermione_clothing_sets_list.append(hg_nighty_silk_OBJ)
-    $ hermione_clothing_sets_list.append(hg_nightgown_OBJ)
+    #$ hermione_clothing_sets_list.append(hg_nighty_silk_OBJ)
+    #$ hermione_clothing_sets_list.append(hg_nightgown_OBJ)
 
     $ hermione_clothing_sets_list.append(hg_bikini_latex_OBJ)
     $ hermione_clothing_sets_list.append(hg_bikini_sling_OBJ)
 
     #$ hermione_clothing_sets_list.append(hg_onepiece_sling_OBJ)
 
-    $ hermione_clothing_sets_list.append(hg_muggle_cold_OBJ)
-    $ hermione_clothing_sets_list.append(hg_muggle_hot_OBJ)
-    $ hermione_clothing_sets_list.append(hg_muggle_rainy_OBJ)
+    $ hermione_clothing_sets_list.append(hg_accs_wool_g_OBJ) #Unlockable
+
+    $ hermione_clothing_sets_list.append(hg_muggle_cold_OBJ) #Unlockable
+    $ hermione_clothing_sets_list.append(hg_muggle_cold_sexy_OBJ) #Unlockable
+    $ hermione_clothing_sets_list.append(hg_muggle_hot_OBJ) #Unlockable
+    $ hermione_clothing_sets_list.append(hg_muggle_rainy_OBJ) #Unlockable
     $ hermione_clothing_sets_list.append(hg_punk_rocker_OBJ)
+    $ hermione_clothing_sets_list.append(hg_punk_leather_OBJ)
     python:
         for i in hermione_clothing_sets_list:
             i.type = "set"
@@ -524,10 +556,45 @@ label __init_variables:
     $ ag_boss_uniform_OBJ.items = ["top","bottom","hair","hat"]
     $ ag_boss_uniform_OBJ.wait_time = 3
     $ ag_boss_uniform_OBJ.image = "ag_boss_uniform.png"
-    $ ag_boss_uniform_OBJ.description = "> A uniform I designed with an old friend of mine.\n  Makes me wonder what happened to Hugo..."
+    $ ag_boss_uniform_OBJ.description = ">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo..."
+
+    #Lingerie
+    if not hasattr(renpy.store,'ag_lingerie_lace_OBJ'):
+        $ ag_lingerie_lace_OBJ = store_item_class()
+    $ ag_lingerie_lace_OBJ.id = "ag_lingerie_lace"
+    $ ag_lingerie_lace_OBJ.name = "Lace Lingerie"
+    $ ag_lingerie_lace_OBJ.cost = 80
+    $ ag_lingerie_lace_OBJ.items = ["bra","panties"]
+    $ ag_lingerie_lace_OBJ.wait_time = 1
+    $ ag_lingerie_lace_OBJ.image = "ag_lingerie_lace.png"
+    $ ag_lingerie_lace_OBJ.description = ">A cute lace lingerie set."
+
+    if not hasattr(renpy.store,'ag_lingerie_lewd_OBJ'):
+        $ ag_lingerie_lewd_OBJ = store_item_class()
+    $ ag_lingerie_lewd_OBJ.id = "ag_lingerie_lewd"
+    $ ag_lingerie_lewd_OBJ.name = "Lewd Lingerie"
+    $ ag_lingerie_lewd_OBJ.cost = 120
+    $ ag_lingerie_lewd_OBJ.items = ["bra","panties"]
+    $ ag_lingerie_lewd_OBJ.wait_time = 1
+    $ ag_lingerie_lewd_OBJ.image = "ag_lingerie_lewd.png"
+    $ ag_lingerie_lewd_OBJ.description ="> A very rewealing lingerie set."
+
+    #One-Piece
+    if not hasattr(renpy.store,'ag_nighty_silk_OBJ'):
+        $ ag_nighty_silk_OBJ = store_item_class()
+    $ ag_nighty_silk_OBJ.id = "ag_nighty_silk"
+    $ ag_nighty_silk_OBJ.name = "Silk Nighty"
+    $ ag_nighty_silk_OBJ.cost = 140
+    $ ag_nighty_silk_OBJ.items = ["nighty","panties","stockings"]
+    $ ag_nighty_silk_OBJ.wait_time = 1
+    $ ag_nighty_silk_OBJ.image = "ag_nighty_silk.png"
+    $ ag_nighty_silk_OBJ.description = ">+2 attack points while pillow-fighting!"
 
     $ astoria_clothing_sets_list = []
     $ astoria_clothing_sets_list.append(ag_boss_uniform_OBJ)
+    $ astoria_clothing_sets_list.append(ag_lingerie_lace_OBJ)
+    $ astoria_clothing_sets_list.append(ag_lingerie_lewd_OBJ)
+    $ astoria_clothing_sets_list.append(ag_nighty_silk_OBJ)
     python:
         for i in astoria_clothing_sets_list:
             i.type = "set"
@@ -543,14 +610,15 @@ init python:
     class store_item_class(object):
         id = ""
         name = ""
-        type = "" #This dictates the folder location after interface/icons/+type+...
+        type = ""
         items = []
         image = ""
         unlockable = False #If True, prevents this item to be shown in the shop.
         unlocked = False #Set to True once unlocked or purchased.
+        quantity = 0 #Amount of items of this type that you posess. Can be used for weasley store and gift items.
         cost = 0
         wait_time = 1
-        description = "> Item for Purchase."
+        description = ""
 
         def getStoreName(self):
             return self.name
@@ -564,7 +632,10 @@ init python:
         def getStoreCost(self):
             return "Cost: "+str(self.cost)+" gold"
         def getStoreImage(self):
-            return "interface/icons/"+self.type+"/"+self.image
+            if self.type == "outfit" or self.type == "set":
+                return "interface/icons/"+self.type+"/"+self.image
+            else:
+                return "interface/icons/"+self.image #Images aren't stored in a folder.
 
         def getType(self):
             return self.type

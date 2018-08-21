@@ -545,13 +545,13 @@ label potion_scene_3_3_1: #Hypno potion
 
     #Setting up Bimbo clothes.
     $ h_hair_color = 2 #Blonde
-    $ h_lipstick = "pink"
+    $ h_lipstick = "pink_lipstick"
 
     $ h_request_wear_top = True
-    $ h_top = "uni_top_5"
+    $ h_top = "top_5_g"
 
     $ h_request_wear_bottom = True
-    $ h_skirt = "uni_skirt_4_low"
+    $ h_skirt = "skirt_4_low"
     $ h_skirt_color = "purple"
 
     $ h_request_wear_bra = True
@@ -563,7 +563,7 @@ label potion_scene_3_3_1: #Hypno potion
     $ h_panties_color = "pink"
 
     $ h_request_wear_neckwear = True
-    $ h_neckwear = "neck_lace_choker"
+    $ h_neckwear = "choker_lace"
 
     $ h_request_wear_stockings = True
     $ h_stockings = "stockings_fishnets"
@@ -585,7 +585,7 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
             call her_main("Aaaaanyway...","open","baseL")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
-        "-Where is your badge, cumslut?!-":
+        "-Where is your badge, cumslut?!-" if I_love_cum_badge_OBJ.unlocked:
             call her_main("Oh no I forgot that!","soft","wide")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
             call her_main("It's this one, isn't it...","soft","down")
@@ -797,7 +797,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "(Maybe I should have told her to get dressed first...)"
 
     $ pink_lipstick_OBJ.unlocked = True #Unlocks pink lipstick.
-    call give_reward(">Hermione can now use pink lipstick!","interface/icons/makeup/lipstick_pink.png") #Need lipstick shop image!
+    call give_reward(">Hermione can now use pink lipstick!","interface/icons/lipstick_pink.png") #Need lipstick shop image!
 
     call reset_hermione_main
 

@@ -143,7 +143,7 @@ label astoria_init:
         #Accessories
         $ astoria_makeup_list         = []
 
-        $ astoria_hat                 = "characters/astoria/accessories/hats/blank.png"
+        $ astoria_hat                 = "characters/astoria/accessories/hats/hair_A/blank.png"
         $ ast_hat                     = "blank"
         $ ast_hat_color               = "base"
 

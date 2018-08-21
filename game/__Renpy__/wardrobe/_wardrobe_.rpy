@@ -713,7 +713,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("head_accessory_choice",(wr_hats[i])), Jump("equip_head_accessory")]
-                    add "characters/"+str(active_girl)+"/accessories/hats/"+wr_hats[i]+".png" xpos -65+(90*col) ypos (110+icon_ypos_offset+92+(92*row)) zoom 0.6/scaleratio
+                    add "characters/"+str(active_girl)+"/accessories/hats/hair_A/"+wr_hats[i]+".png" xpos -65+(90*col) ypos (110+icon_ypos_offset+92+(92*row)) zoom 0.6/scaleratio
 
 
 ### Wardrope Tops ###
@@ -1074,8 +1074,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("item_choice",(wr_items_list[i])), Jump("use_item")]
-                    add "interface/wardrobe/icons/items/"+wr_items_list[i]+".png" xpos 0+(90*col) ypos (90+92+(92*row)) zoom 0.3
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("misc_item_choice",(wr_items_list[i])), Jump("equip_misc_item")]
+                    add "interface/icons/"+wr_items_list[i]+".png" xpos 0+(90*col) ypos (90+92+(92*row)) zoom 0.3
 
             ##
             #if wardrobe_accessories_category == 2:

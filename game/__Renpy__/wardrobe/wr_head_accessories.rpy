@@ -25,7 +25,7 @@ label equip_her_makeup:
     if mad >= 1:
         jump equipping_failed
 
-    if makeup_choice in ["red_lipstick","pink_lipstick"]:
+    if makeup_choice in ["red_lipstick","pink_lipstick","turquoise_lipstick"]:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
 

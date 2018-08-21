@@ -14,6 +14,24 @@ label summon_snape:
         pass
 
     menu:
+
+        "-Talk-":
+            if not chitchated_with_snape:
+                $ chitchated_with_snape = True
+                call snape_chitchat
+            jump snape_talk
+
+        "-Let's hang-" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
+            if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
+                jump not_today #Snape says: "I am busy tonight."
+#            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
+#                jump not_today #Snape says: "I am busy tonight."
+            elif snape_friendship >= 88 and whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
+                jump not_today #Snape says: "I am busy tonight."
+            else:
+                $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
+                jump snape_dates
+
         "-Get a potion-" if whoring > 10:
             hide screen snape_main
             with fade
@@ -133,21 +151,6 @@ label summon_snape:
                 "\"Never mind.\"":
                     jump snape_ready
 
-        "-Talk-" if not chitchated_with_snape:
-            $ chitchated_with_snape = True
-            jump snape_talk
-
-        "-Let's hang-" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
-            if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
-                jump not_today #Snape says: "I am busy tonight."
-#            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
-#                jump not_today #Snape says: "I am busy tonight."
-            elif snape_friendship >= 88 and whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
-                jump not_today #Snape says: "I am busy tonight."
-            else:
-                $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
-                jump snape_dates
-
         "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -170,6 +173,32 @@ label summon_snape:
             else:
                 call play_music("manatees") #Night Theme
                 jump night_main_menu
+
+
+
+label snape_talk:
+    menu:
+        "-Talk about the ministry letter-" if ministry_letter_received and not astoria_unlocked:
+            #You tell Snape about the curses.
+            if hermione_on_the_lookout: #Already talked to Hermione.
+                $ hermione_finds_astoria = True
+            if snape_on_the_lookout:
+                call sna_main("I'm still on the lookout, Genie.","snape_01")
+                call sna_main("If I find the little maggot that casts those spells,...","snape_10")
+                call sna_main("I will crush his bones!","snape_16")
+                jump snape_talk
+            $ snape_busy = True
+            $ snape_on_the_lookout = True
+            jump letter_intro_snape
+
+        "-Ask for a spellbook-" if third_curse_got_cast or spells_unlocked and not snape_gave_spellbook:
+                $ snape_gave_spellbook = True
+                jump snape_book_intro
+
+        "-Never mind":
+            jump snape_ready
+
+
 
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...

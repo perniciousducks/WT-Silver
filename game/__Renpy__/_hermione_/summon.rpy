@@ -1,47 +1,10 @@
 
 
 label summon_hermione:
-
-    call load_hermione_clothing_saves
-
     call play_sound("door") #Sound of a door opening.
 
     ### RANDOM CLOTHING EVENTS ###
-    call hermione_door_event
-
-    call update_her_uniform
-
-    call her_chibi("stand","mid","base")
-
-    if mad >= 1:
-
-        if mad >=1 and mad < 3:
-            call her_main("","normal","base",xpos="base",ypos="base")
-            ">Looks like Hermione is still a little upset with you..."
-        elif mad >=3 and mad < 10:
-            call her_main("","normal","base",xpos="base",ypos="base")
-            ">Hermione is upset with you."
-        elif mad >=10 and mad < 20:
-            call her_main("","annoyed","frown",xpos="base",ypos="base")
-            ">Hermione is very upset with you."
-        elif mad >=20 and mad < 40:
-            call her_main("","angry","angry",xpos="base",ypos="base")
-            ">Hermione is mad at you."
-        elif mad >=40 and mad < 50:
-            call her_main("","angry","angry",xpos="base",ypos="base")
-            ">Hermione is very mad at you."
-        elif mad >=50 and mad < 60:
-            call her_main("","angry","angry",xpos="base",ypos="base")
-            ">Hermione is furious at you."
-        elif mad >=60:
-            call her_main("","angry","angry",xpos="base",ypos="base")
-            ">Hermione hates your guts."
-
-    else:
-        if not hermione_door_event_happened:
-            call her_main("Yes, [genie_name]?","base","base",xpos="base",ypos="base")
-        else:
-            call her_main("...","base","base",xpos="base",ypos="base")
+    call hermione_random_clothing
 
     label day_time_requests:
 
@@ -52,8 +15,6 @@ label summon_hermione:
     menu:
         "-Talk-":
             if not chitchated_with_her:
-                jump hermione_talk_branches
-                label hermione_talk_branches_return:
                 if mad <= 7:
                     $ chitchated_with_her = True
                     call chit_chat
@@ -63,6 +24,7 @@ label summon_hermione:
                     jump day_time_requests
             else:
                 jump hermione_talk
+
         "-Tutoring-" if not daytime and v_tutoring < 14: #13 is last level.
             if mad >=1 and mad < 3:
                 her "I'm sorry, maybe tomorrow..."
@@ -209,6 +171,18 @@ label hermione_talk:
             call luna_init
             $ luna_known = True
             jump hat_intro_2
+
+        "-Talk about the ministry letter-" if ministry_letter_received and not astoria_unlocked:
+            #You tell Hermione about the curses.
+            if snape_on_the_lookout: #Already talked to Snape.
+                $ hermione_finds_astoria = True
+            if hermione_on_the_lookout:
+                call her_main("I'm still looking for that student, [genie_name]!","open","closed")
+                call her_main("Trust in me, I will find that slytherin scum!","angry","angry")
+                jump hermione_talk
+            $ hermione_takes_classes = True
+            $ hermione_on_the_lookout = True
+            jump letter_intro_hermione
 
         "-Address me only as-":
             menu:

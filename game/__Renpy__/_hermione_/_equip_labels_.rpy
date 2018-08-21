@@ -254,7 +254,6 @@ label set_h_buttplug(buttplug=""):
     if buttplug == "None" or buttplug == "" or buttplug == "remove":
         $ h_request_wear_buttplug = False
         $ hermione_wear_buttplug = False
-        $ h_buttplug = "00_blank"
     else:
         $ h_request_wear_buttplug = True
         $ hermione_wear_buttplug = True

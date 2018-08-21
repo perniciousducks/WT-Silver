@@ -12,11 +12,14 @@ label check_tonks_clothing_upgrades:
     if hg_cheer_h_OBJ.unlocked and not hg_cheer_h_sexy_OBJ.unlocked:
         $ upgradable_clothing.append(hg_cheer_h_sexy_OBJ)
 
+    if hg_muggle_cold_OBJ.unlocked and not hg_muggle_cold_sexy_OBJ.unlocked:
+        $ upgradable_clothing.append(hg_muggle_cold_sexy_OBJ)
+
     if ag_lazy_OBJ.unlocked and not ag_lazy_short_OBJ.unlocked:
         $ upgradable_clothing.append(ag_lazy_short_OBJ)
 
     if upgradable_clothing != []:
-        $ clothing_unlock =upgradable_clothing[ renpy.random.randint(0,len(upgradable_clothing)-1)]
+        $ clothing_unlock = upgradable_clothing[ renpy.random.randint(0,len(upgradable_clothing)-1)]
 
     return
 

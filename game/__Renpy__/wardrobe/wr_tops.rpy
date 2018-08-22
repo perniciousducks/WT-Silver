@@ -480,32 +480,23 @@ label equip_her_top:
             #Muggle Pullover #Done
             elif top_choice == "normal_pullover_sexy":
                 m "Could you wear your pullover again?"
-                if whoring >= 0:
-                    if whoring < 17:
-                        call her_main("Very well, [genie_name]. Just let me---","soft","baseL")
-                        m "One second,... I'm almost done..."
-                        call her_main("Done, [genie_name]? What are you doing with the--","open","suspicious")
-                        m "Shhh! Be quiet, girl... I have to read the manual."
-                        call her_main("What manual?","soft","suspicious")
-                        m "The one Tonks gave me... Now shhhh and be quiet!"
-                        g4 "(Right,... I have to push here, and pull on this...)"
-                        ">A heart shaped hole magically appeared in the fabric!"
-                        g9 "(Ah, there is is!)"
-                        m "Ok girl, now put it on."
-                        call her_main("(What did he just do to that pullover?)","annoyed","suspicious")
-                        call her_main("(Doesn't look any different to me...)","annoyed","down")
-                        call her_main("OK, [genie_name]. Let me put it on.","soft","baseL")
-                    else:
-                        call her_main("You never mentioned that there's a hole in it.","open","down")
-                        call her_main("(Right over my enormous cleavage...)","disgust","down_raised")
-                        m "It's not my fault you never noticed..."
-                        call her_main("I can really feel that it's brimming with magic!","base","glance")
-                        call her_main("Maybe to see it you need a certain degree of... sexual awareness, for it to appear...","soft","baseL",cheeks="blush")
-                        m "Oh yes! I think something like that was mentioned in the manual!"
-                        call her_main("(...)","disgust","glance")
-                        call her_main("Fine... Let me just put it on.","soft","ahegao")
+                if whoring >= 5:
+                    call her_main("The one with the heart, [genie_name]?","open","baseL")
+                    g9 "Oh yes,... The one that shows your cleavage!"
+                    call her_main("Alright. Just give me a second.","base","down")
+                    call her_main("(I hope I remember the spell correctly...)","disgust","down")
+                    ">Hermione's quickly waving her wand. You watch as a heart shaped hole magically appeared in the fabric!"
+                    g9 "Nice! That's quite the magic trick, [hermione_name]!"
+                    call her_main("Thank you, [genie_name].","base","glance")
                 else:
-                    pass
+                    call her_main("This one?","soft","base")
+                    m "Yes, the one with the hole in it."
+                    call her_main("Hole, [genie_name]? There aren't any holes in my clothing!...","open","closed")
+                    call her_main("Do you want me to wear it or not?","open","angry")
+                    m "Sure."
+                    m "(No cleavage for me today...)"
+                    call her_main("Here you go.","base","base")
+                    $ top_choice == "normal_pullover"
 
             #Muggle Sweater #Done
             elif top_choice == "normal_sweater":
@@ -532,7 +523,7 @@ label equip_her_top:
             #Muggle Waitress Top #Kinda done
             elif top_choice == "normal_waitress_top":
                 m "Would you wear this top again. The one with the massive cleavage?"
-                if whoring >= 0:
+                if whoring >= 5:
                     if whoring < 11:
                         call her_main("(I already regret wearing this in front of him... But it was so hot that day...)","disgust","down")
                         call her_main("Fine, [genie_name].","open","closed")
@@ -541,7 +532,12 @@ label equip_her_top:
                         call her_main("Alright, [genie_name].","soft","ahegao")
                         call her_main("Let me just change it.","base","glance")
                 else:
-                    pass
+                    call her_main("What? I'm not wearing a top like that!","open","wide")
+                    m "Please?"
+                    call her_main("Not a chance, [genie_name]!","clench","angry")
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 5."
+                    jump return_to_wardrobe
 
 
             ### Wicked ###

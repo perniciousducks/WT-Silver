@@ -89,6 +89,32 @@ label hermione_random_clothing:
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_OBJ)
 
+            elif whoring >= 5 and hg_muggle_cold_OBJ.unlocked and not hg_muggle_cold_sexy_OBJ.unlocked and not hermione_door_event_happened:
+                $ hg_muggle_cold_sexy_OBJ.unlocked = True
+                $ hermione_door_event_happened = True #Hermione won't greet you again.
+
+                $ hermione_wear_neckwear    = False
+                $ hermione_wear_gloves      = False
+                $ hermione_wear_stockings   = True
+                $ h_top = "normal_pullover_sexy"
+                $ h_skirt = "skirt_belted_micro"
+                $ h_stockings = "stockings_pantyhose"
+
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+                pause.2
+                call her_main("","base","base",xpos="base",ypos="base")
+                call ctc
+
+                m "That's quite the cute outfit, [hermione_name]."
+                call her_main("Thank you, [genie_name]. I made some changes to the old one...","open","baseL")
+                call her_main("Do you like it?","soft","base")
+                g9 "Very much so, [hermione_name]. I love the breast window."
+                $ mad -= 10
+
+                #Unlocks rewards.
+                call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_OBJ)
+
             elif not hg_muggle_rainy_OBJ.unlocked and not hermione_door_event_happened:
                 $ hg_muggle_rainy_OBJ.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.

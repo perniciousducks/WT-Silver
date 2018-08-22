@@ -160,8 +160,8 @@ label hermione_random_clothing:
 
             if not h_request_wear_robe:
                 pause.8 #Shows Hermione with robe for a bit.
-            call update_chibi_uniform
             call load_hermione_clothing_saves
+            call update_chibi_uniform
 
     else: #Clear weather.
         if daytime and random_number in [1,2,3,4,5]: #50% chance:
@@ -203,6 +203,7 @@ label hermione_random_clothing:
     call her_chibi("stand","mid","base")
     pause.2
     call load_hermione_clothing_saves
+    call update_chibi_uniform
 
     #Hermione greeting.
     if mad >= 1:

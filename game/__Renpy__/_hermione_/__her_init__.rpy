@@ -359,9 +359,9 @@ label her_clothing_init:
 
         #Save State
         $ h_request_wear_top              = True
-        $ h_request_wear_bra              = False
+        $ h_request_wear_bra              = True
         $ h_request_wear_bottom           = True
-        $ h_request_wear_panties          = False
+        $ h_request_wear_panties          = True
 
         $ h_request_wear_onepiece         = False
         $ h_request_wear_garterbelt       = False

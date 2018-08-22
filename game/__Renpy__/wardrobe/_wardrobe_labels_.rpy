@@ -448,12 +448,15 @@ label her_stockings_toggle:
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
-    if h_request_wear_stockings:
-        $ h_request_wear_stockings = False
-        $ hermione_wear_stockings = False
+    if whoring < 11 and h_skirt in ["skirt_belted_mini","skirt_belted_micro"]:
+        call nar(">You can't remove her pantyhose while wearing that skirt!")
     else:
-        $ h_request_wear_stockings = True
-        $ hermione_wear_stockings = True
+        if h_request_wear_stockings:
+            $ h_request_wear_stockings = False
+            $ hermione_wear_stockings = False
+        else:
+            $ h_request_wear_stockings = True
+            $ hermione_wear_stockings = True
     call update_her_uniform
     show screen hermione_main
     call screen wardrobe

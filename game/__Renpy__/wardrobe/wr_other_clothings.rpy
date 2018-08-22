@@ -233,7 +233,10 @@ label equip_stockings:
 
 ### Equip Hermione's Stockings ###
 label equip_her_stockings:
-    call set_h_stockings(stockings_choice) 
+    if whoring < 11 and h_skirt in ["skirt_belted_mini","skirt_belted_micro"]:
+        call nar(">You can't remove her pantyhose while wearing that skirt!")
+    else:
+        call set_h_stockings(stockings_choice)
 
     hide screen wardrobe
     call screen wardrobe

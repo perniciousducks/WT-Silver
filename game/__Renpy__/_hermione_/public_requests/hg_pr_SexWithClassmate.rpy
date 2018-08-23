@@ -54,7 +54,7 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
 label hg_pr_SexWithClassmate_complete:
 
     #Event A
-    if one_out_of_three == 1: ### EVENT (A)
+    if hg_pr_SexWithClassmate_OBJ.points <= 0 or one_out_of_three == 1: ### EVENT (A)
 
         if fucked_ron_and_har:
             jump returns_next_morning

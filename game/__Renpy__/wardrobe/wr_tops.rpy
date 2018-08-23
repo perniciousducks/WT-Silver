@@ -302,7 +302,7 @@ label equip_her_top:
             #Uniform Top Cheer #Done
             elif top_choice in ["top_cheer_g","top_cheer_s","top_cheer_r","top_cheer_h"] or top_choice in ["top_cheer_sexy_g","top_cheer_sexy_s","top_cheer_sexy_r","top_cheer_sexy_h"]:
                 if top_choice in ["top_cheer_s","top_cheer_r","top_cheer_h"] or top_choice in ["top_cheer_sexy_s","top_cheer_sexy_r","top_cheer_sexy_h"]: #Not gryffindor!
-                    m "Would you wear this cheerleader skirt for me?"
+                    m "Would you wear this cheerleader top for me?"
                     if whoring >= 11:
                         if whoring < 14:
                             if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:

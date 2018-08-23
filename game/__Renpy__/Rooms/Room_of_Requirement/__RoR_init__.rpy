@@ -44,7 +44,7 @@ label __init_variables:
                 start_label = "a_spaced_out_conversation",
                 authors = ["Ignatz"],
                 categories= [],
-                ach_desc = "Unlocks after spending some evenings by the fire with Snape.",
+                ach_desc = "Unlocks after spending some evenings drinking by the fire with Snape.",
                 content_characters = []
             )
     

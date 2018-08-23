@@ -538,11 +538,6 @@ label screams_of_pleasure:
     jump ending_of_screams_of_pleasure
 
 
-label Day_Request_Block:
-
-    if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
-        jump hg_pr_SexWithClassmate_Alt
-
 label Night_Request_Block:
     ###JOBS###
     if current_job == 1:

@@ -340,8 +340,8 @@ $ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
 call update_quests
 call update_hints
 
-
-call Day_Request_Block
+if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
+    jump hg_pr_SexWithClassmate_Alt
 
 
 

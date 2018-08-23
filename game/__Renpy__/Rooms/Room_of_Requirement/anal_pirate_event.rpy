@@ -287,7 +287,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Oh... Ye cavern be perfect, lass..."
                 call her_head("................","shock","down_raised",cheeks="blush",tears="crying")
                 m "Why are ye bein' so quiet lass?"
-                call her_head("'cause 'tis cavern be knee-deep for ye ship...","clench","worried",cheeks="blush",tears="soft")
+                call her_head("'cause 'tis cavern be too shallow for ye ship...","clench","worried",cheeks="blush",tears="soft")
                 call her_head("'n I jus' wants ye t' cum sooner, captain...")
                 m "So ye stifle yer cries o' pain?"
                 call her_head("Aye captain. *Sob!*","angry","dead",cheeks="blush",tears="crying")
@@ -402,7 +402,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
                 call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead")
-                g4 "Aye!!! Allover yer hold!"
+                g4 "Aye!!! All over yer hold!"
                 call her_head("Ah... No, me hull!","silly","ahegao")
                 hide screen bld1
                 with d3

@@ -82,7 +82,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Neigh! We needs t' excavate yer cavern a wee!"
                 call her_head("But I don't wants ye t'!","mad","worriedCl",tears="soft_blink")
                 m "Aye? How do ye expect scallywags t' farrg ye up yer arse then?"
-                call her_head("Wha' scallywags?shock","worriedCl")
+                call her_head("Wha' scallywags?shock","shock","worriedCl")
                 g4 "Ye know... scallywags."
                 g4 "Argh, Blimey... Me canon be to wide now."
                 call her_head("Stop then! Avast, [genie_name]!","open","worriedCl")
@@ -670,5 +670,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     $ custom_outfit_old = temp_outfit
 
+    call blkfade
+    call her_chibi(action="leave")
     hide screen main_room
     jump enter_room_of_req

@@ -134,7 +134,7 @@ screen event_menu:
 
         for i in range(0, event_shown):
             if (currentpage*event_shown)+i < len(mr_evs_list):
-                if mr_evs_list[i].unlocked:
+                if mr_evs_list[(currentpage*event_shown)+i].unlocked:
                     hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
                 use mirror_item(mr_evs_list[(currentpage*event_shown)+i], 77+90*i)
 
@@ -328,7 +328,8 @@ label enter_room_of_req:
         hide screen bld1
         call give_reward("You've unlocked the room of requirement", "images/store/06.png") 
         call sna_chibi(action="hide")
-        call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
+        call gen_chibi(action = "hide", xpos = "200", ypos = "base", flip=True)
+        
         
     call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
     call hide_blkfade    

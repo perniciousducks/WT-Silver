@@ -64,7 +64,7 @@ label tonks_random_clothing:
             "-Play nice-":
                 g9 "How about a raise instead?"
                 call ton_main("(Fuck me... I love this job...)","base","base","raised","ahegao")
-                call ton_main("A raise? For showing my boss my body?","open","base","raised","mid")
+                call ton_main("A raise? For showing my body to my own boss?","open","base","raised","mid")
                 call ton_main("How much am I worth to you, [ton_genie_name]?","base","base","raised","mid")
 
                 menu:
@@ -95,7 +95,7 @@ label tonks_random_clothing:
 
             "-Scold her-":
                 m "You know I have to, Miss [tonks_name]."
-                m "Walking into your Boss' room, utterly naked!"
+                m "Walking into the room of your boss, completely naked?"
                 m "A behaviour like that from a teacher... that's just unspeakable!"
                 call ton_main("I'm terribly sorry, [ton_genie_name]...","open","base","base","down")
                 m "What will you do next? Climb under my desk and suck my cock?"

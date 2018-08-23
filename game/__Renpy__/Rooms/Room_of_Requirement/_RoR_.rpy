@@ -93,20 +93,20 @@ label mirror_menu:
         $renpy.jump(_return)
         
 screen event_menu:
-    $ event_shown=5
+    $ event_shown=4
     use close_button
     
     if not currentpage <= 0:
         imagebutton:
-            xpos 725
+            xpos 825
             ypos 240
             idle "interface/general/"+interface_color+"/button_arrow_up.png"
             hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
             action Return("dec")
             
-    if currentpage < math.ceil(len(mr_evs_list)/event_shown):
+    if currentpage < math.ceil((len(mr_evs_list)-1)/event_shown):
         imagebutton:
-            xpos 725
+            xpos 825
             ypos 292
             idle "interface/general/"+interface_color+"/button_arrow_down.png"
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"

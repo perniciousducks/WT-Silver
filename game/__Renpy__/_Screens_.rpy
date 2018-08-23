@@ -71,7 +71,7 @@ screen G_Flowers_out:  #  Genie flowers vanish
 
 screen fireplace_glow:
     add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.15
-    zorder 1
+    zorder 10
 
 screen candlefire:
     add "candle_fire_01" xpos 240 ypos 43

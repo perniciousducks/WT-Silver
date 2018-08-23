@@ -80,6 +80,7 @@ $ puzzle_random = renpy.random.randint(0, 2)
 
 if day > 25 and(1 < weather_gen < 4) and (puzzle_random == 0) and (found_puzzle_1 == False):
     show screen fireplace_glow
+    
 else:
     $ puzzle_random = 1
     

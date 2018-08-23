@@ -48,6 +48,17 @@ label __init_variables:
                 content_characters = []
             )
     
+    if not hasattr(renpy.store,'mr_ev_ABAS'):
+        $mr_ev_ABAS = mirror_stories( 
+                title = "A Booty at sea",
+                story_description = "The genie imagine himself to be a great pirate and roleplays his most intimate times with Hermione.",
+                start_label = "anal_parit_event",
+                authors = ["TeamSilver"],
+                categories= [],
+                ach_desc = "Finish the \"Time for Anal\" Private favours and bought the pirate outfit",
+                content_characters = ["hermione"]
+            )
+    
     
     
     $ mr_evs_list = []
@@ -55,6 +66,7 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_GHE)
     $ mr_evs_list.append(mr_ev_ABTTD)
     $ mr_evs_list.append(mr_ev_ASOC)
+    $ mr_evs_list.append(mr_ev_ABAS)
     
     $currentpage = 0
         
@@ -135,6 +147,8 @@ init python:
                 return hg_pf_ShowThemToMe_OBJ.points > 0
             elif self.title == "A spaced out conversation":
                 return snape_events > 6
+            elif self.title == "A Booty at sea":
+                return hg_pf_TimeForAnal_OBJ.points == > 2 and hg_pirate_OBJ.unlocked
             else:
                 return True
             

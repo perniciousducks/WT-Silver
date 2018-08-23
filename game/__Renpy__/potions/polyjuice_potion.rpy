@@ -300,71 +300,71 @@ label potion_scene_1_2: #Luna potion
     hide screen hermione_blink
     $ luna_chibi("stand")
     
-    $ changeLuna(1, 1, 4, 1)
+    $ changeLuna("default", "default", "sad", "default")
     
     her "Ughhh... I feel like I'm going to throw up! Did the Polyjuice work??"
     m "Like a charm."
     call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.") 
-    $ changeLuna(5, 1, 5, 1)
+    $ changeLuna("seductive", "default", "raised", "default")
     her "Apparently I'm still a girl. Someone from Ravenclaw?"
     m "Keen powers of observation, Miss Granger"
     call nar(">Hermione grabs a lock of her hair") 
-    $ changeLuna(1, 7, 1, 4)
+    $ changeLuna("default", "crossed", "default", "pout")
     her "Definitely a blonde, though she could absolutely use a comb"
-    $ changeLuna(1, 5, 1, 1)
+    $ changeLuna("default", "nose", "default", "default")
     call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.") 
-    $ changeLuna(4, 1, 3, 1)
+    $ changeLuna("wide", "default", "angry", "default")
     her "..."
     her "You turned me into Loony Lovegood... I mean Luna Lovegood!?!"
     m "Very astute [hermione_name]."
     m "(No idea who that is, but she looks good.)"
-    $ changeLuna(4, 1, 3, 17)
+    $ changeLuna("wide", "default", "angry", "wide")
     her "Why on earth would you want me to look like Luna? She's completely mental!"
     m "I'm not seeing anything really wrong with her."
-    $ changeLuna(1, 1, 4, 4)
+    $ changeLuna("default", "default", "sad", "pout")
     her "She has... imaginary friends and believes in things that can't possibly exist [genie_name]. She is absolutely mad."
     m "Fortunately, I'm not really interested in her mental health. I am interested in her impressive, and quite real, chest."
-    $ changeLuna(5, 1, 5, 3)
+    $ changeLuna("seductive", "default", "raised", "frown")
     her "You can't possibly be interested in that... that girl's paltry breasts."
     m "Currently they're yours. And they don't look so paltry from where I'm sitting [hermione_name]. Do I detect a hint of jealousy?"
-    $ changeLuna(1, 1, 3, 3)
+    $ changeLuna("default", "default", "angry", "frown")
     her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
     m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
-    $ changeLuna(1, 1, 4, 9)
+    $ changeLuna("default", "default", "sad", "disgust")
     her "I..I apologize [genie_name]. I don't know what came over me."
     m "Apology accepted. I'm sure they can't hold a candle to the brilliance of your boobs."
-    $ changeLuna(1, 2, 1, 4)
+    $ changeLuna("default", "right", "default", "pout")
     her "I'd like to think I'm more than just a pair of breasts... but thank you [genie_name]. That was flattering. In a way."
     m "If you want to dispel all doubt, we could compare. Why don't you lift your shirt and show me what you... err... She's got under that sweater."
-    $ changeLuna(4, 2, 3, 4)
+    $ changeLuna("wide", "right", "angry", "pout")
     her "I'm still not entirely comfortable with this..."
     call nar(">Hermione quickly strips off her Ravenclaw top, followed by her bra.") 
     hide screen luna
     $ luna_chibi("stand_topless")
     $ luna_wear_top = False
     $ luna_wear_bra = False
-    $ changeLuna(5, 2, 5, 3)
+    $ changeLuna("seductive", "right", "raised", "frown")
     her "There, see. Perfectly ordinary breasts. Absolutely no need to keep looking at them."
     m "I'm not quite convinced, the soft pale skin, the cute pink nipples and they look like quite a handful. I think you might have some serious competition here [hermione_name]."
-    $ changeLuna(5, 1, 3, 17)
+    $ changeLuna("seductive", "default", "angry", "wide")
     her "You can't be serious! They're saggy and couldn't even fill a first-year's palm!"
     m "Hmmm, I'm not sure. I think a closer examination is required."
     call nar(">In a huff, Hermione walks over and presents her new set of breasts") 
     m "Yes yes, upon closer inspection it seems I was wrong. Luna's breasts are indeed second to your own."
-    $ changeLuna(5, 1, 3, 4)
+    $ changeLuna("seductive", "default", "angry", "pout")
     her "I'm glad you came to your senses. Thank you, If you're completely satisfied, I'll cover these hideous things up now."
     m "Completely [hermione_name]. 20 points to Gryffindor."
     hide screen luna
     $ luna_chibi("stand")
     $ luna_wear_top = True
     $ luna_wear_bra = True
-    $ changeLuna(3, 1, 1, 1)
+    $ changeLuna("closed", "default", "default", "default")
     her "Well I best be off to classes."
     m "You're going to class looking like a fellow classmate?"
-    $ changeLuna(1, 1, 5, 1)
+    $ changeLuna("default", "default", "raised", "default")
     her "It's not going to be a problem. Luna's barely in class as it is, I can just pretend to be her. Maybe I'll even improve her test scores. You'll notify the teachers I can't attend class right?"
     m "Absolutely. (Not a chance) But, what if you bump into her in the halls?"
-    $ changeLuna(5, 1, 1, 4)
+    $ changeLuna("seductive", "default", "default", "pout")
     her "Believe me [genie_name], Luna will probably think I'm some kind of Wrackspurt that's messing with her head."
     hide screen bld1
     hide screen blkfade

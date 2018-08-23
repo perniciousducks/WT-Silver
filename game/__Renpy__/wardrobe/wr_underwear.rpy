@@ -256,7 +256,7 @@ label equip_her_bra:
             call set_h_bra(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
-            hide screen wardrobe
+            $ wardrobe_active = 1
             call screen wardrobe
 
         else:
@@ -573,7 +573,7 @@ label equip_her_panties:
             call set_h_panties(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
-            hide screen wardrobe
+            $ wardrobe_active = 1
             call screen wardrobe
 
         else:

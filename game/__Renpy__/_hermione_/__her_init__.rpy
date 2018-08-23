@@ -503,7 +503,7 @@ label her_clothing_init:
         $ hermione_wear_tattoos           = False
 
 
-    # Update 1.4
+    # Update 1.33
     if not hasattr(renpy.store,'h_request_wear_outfit') or reset_persistants:
         $ h_request_wear_outfit = False
         $ hermione_wear_outfit = False
@@ -554,13 +554,13 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_fishnets",
                                       ]
 
-    $ h_top_has_no_recolor_list     = ["wicked_leather_jacket_short_sleeves",
-                                       "wicked_leather_jacket_short_sleeves_open",
-                                       "wicked_leather_jacket_sleeveless",
-                                       "wicked_leather_jacket_sleeveless_open",
-                                       "wicked_leather_jacket_sleeves",
-                                       "wicked_leather_jacket_sleeves_open",
-                                       "wicked_rocker_top",
+    $ h_top_has_no_recolor_list     = ["leather_jacket_short_sleeves",
+                                       "leather_jacket_short_sleeves_open",
+                                       "leather_jacket_sleeveless",
+                                       "leather_jacket_sleeveless_open",
+                                       "leather_jacket_sleeves",
+                                       "leather_jacket_sleeves_open",
+                                       "top_rocker",
                                        "top_fishnets",
                                        ]
 
@@ -589,7 +589,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "normal_pullover",
                                        "normal_pullover_sexy",
                                        "top_fishnets",
-                                       "wicked_rocker_top",
+                                       "top_rocker",
                                        ]
 
 
@@ -777,10 +777,10 @@ label her_progress_init:
         $ autograph = False #Professor Lockhart's tattoo.
 
     if not hasattr(renpy.store,'reward_her_red_lipstick') or reset_persistants:
-        $ reward_her_red_lipstick = False
+        $ reward_her_red_lipstick = False #Outdated! Not in use anymore. See pink_lipstick_OBJ
 
 
-    #Update 1.4
+    #Update 1.33
     if not hasattr(renpy.store,'her_dress_wearable') or reset_persistants:
 
         $ cat_ears_potion_return = False

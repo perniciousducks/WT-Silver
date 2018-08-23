@@ -671,6 +671,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     $ custom_outfit_old = temp_outfit
 
     call blkfade
+    call h_outfit_OBJ(None)
     call her_chibi(action="leave")
     hide screen main_room
     jump enter_room_of_req

@@ -351,6 +351,7 @@ label cs_buy:
 label cs_buy_item:
     if gold > selected_item.cost:
         $ selected_item.unlocked = True #Unlocks item.
+        $ gold -= selected_item.cost
         $ selected_item = None
         call cust_excuse("Item purchased!")
     else:

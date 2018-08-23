@@ -655,9 +655,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     hide screen chair_left
     hide screen desk
     hide screen ccg
-    if not daytime:
-        show screen candlefire
-
+   
     call her_chibi("stand","desk","base")
     show screen genie
     call hide_blkfade

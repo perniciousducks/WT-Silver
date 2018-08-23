@@ -549,6 +549,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     $ h_request_wear_top = True
     $ h_top = "top_5_g"
+    $ h_top_color = "base"
 
     $ h_request_wear_bottom = True
     $ h_skirt = "skirt_4_low"

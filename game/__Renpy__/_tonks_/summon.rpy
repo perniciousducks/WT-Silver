@@ -252,7 +252,7 @@ label tonks_talk:
                 "-Nympho-":
                     $ tonks_name = "Nympho"
                     call ton_main("You think I'm a nympho, [ton_genie_name]?","horny","base","raised","mid")
-                    call ton_main("Like a filthy, sex craved maniac? Who wouldn't shy away from fulfilling even a single one of her fantasies?","open","base","worried","mid")
+                    call ton_main("Like a filthy, sex craved maniac? Who wouldn't shy away from fulfilling every single one of her fantasies?","open","base","worried","mid")
                     call ton_main("It fits quite well, actually.","base","base","base","ahegao")
                     jump tonks_talk
                 "-Fuck Puppet-":

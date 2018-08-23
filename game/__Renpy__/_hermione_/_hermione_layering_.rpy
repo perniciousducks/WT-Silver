@@ -553,7 +553,7 @@ label update_her_action:
             if h_top in h_lift_top_list:
                 $ h_right_arm        = "00_blank"
                 $ h_left_arm         = "lift_top"
-            elif h_top == "uni_top_5":
+            elif h_top == "top_5_g":
                 $ h_right_arm        = "00_blank"
                 $ h_left_arm         = "00_blank"
             else:
@@ -927,8 +927,8 @@ screen hermione_clone:
   ### CLOTHES
     add "characters/hermione/clothes/stockings/fishnet_a.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/scaleratio)
 
-    add "characters/hermione/clothes/uniform/skirt_6.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/scaleratio)
-    add "characters/hermione/clothes/uniform/top_5.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/scaleratio)
+    add "characters/hermione/clothes/bottoms/base/skirt_6.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/scaleratio)
+    add "characters/hermione/clothes/tops/base/top_5_g.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/scaleratio)
 
     add "characters/hermione/body/head/B_2_2.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/scaleratio) #Add the hair shadow
     ### ZORDER

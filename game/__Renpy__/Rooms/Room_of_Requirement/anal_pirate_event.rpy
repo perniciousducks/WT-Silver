@@ -666,7 +666,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 
     $ custom_outfit_old = temp_outfit
-
     call blkfade
     call h_outfit_OBJ(None)
     call her_chibi(action="leave")

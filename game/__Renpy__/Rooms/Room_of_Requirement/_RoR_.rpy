@@ -252,6 +252,7 @@ screen floor_7th_menu:
     
 label enter_room_of_req:
     call blkfade 
+    call play_standart_theme
     show screen room_of_requirement
     hide screen floor_7th_door
     hide screen room_of_req_door
@@ -335,3 +336,9 @@ label enter_room_of_req:
     call hide_blkfade    
     call screen room_of_requirement_menu
     
+label play_standart_theme:
+    if daytime:
+        call play_music("day_theme")
+    else:
+        call play_music("night_theme")
+    return

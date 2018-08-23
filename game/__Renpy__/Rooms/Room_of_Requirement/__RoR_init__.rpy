@@ -69,6 +69,8 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_ABAS)
     
     $currentpage = 0
+    
+    return
         
 init python:
     class mirror_stories:

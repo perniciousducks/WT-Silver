@@ -67,6 +67,8 @@ label hermione_random_clothing:
                 $ hg_muggle_cold_OBJ.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
+                $ h_request_wear_stockings    = True
+
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
                 $ hermione_wear_stockings   = True
@@ -92,6 +94,8 @@ label hermione_random_clothing:
             elif whoring >= 5 and hg_muggle_cold_OBJ.unlocked and not hg_muggle_cold_sexy_OBJ.unlocked and not hermione_door_event_happened:
                 $ hg_muggle_cold_sexy_OBJ.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
+
+                $ h_request_wear_stockings    = True
 
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False

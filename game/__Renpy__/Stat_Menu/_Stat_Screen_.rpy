@@ -206,8 +206,7 @@ label updateHermioneWords:
         $ madValue = 10
     elif mad < 0:
         $ madValue = 0
-        $ moodWord = madWords[mad]
-        $ madValue = mad
+        $ moodWord = madWords[madValue]
     else:
         $ moodWord = madWords[mad]
         $ madValue = mad

@@ -43,7 +43,7 @@ label equip_her_bra:
                         call her_main("Of course, [genie_name].","base","glance")
                     else:
                         call her_main("That old thing?","disgust","down")
-                        call her_main("It looks so boring...","annoyed","down")
+                        call her_main("It looks so mundane...","annoyed","down")
                         call her_main("Do I really have to wear this?","soft","base")
                         m "Yep..."
                         call her_main("Fine... Let me put it on real quick.","base","baseL")
@@ -73,12 +73,12 @@ label equip_her_bra:
                 else: #Fail
                     if whoring < 5:
                         call her_main("A bra?","shock","shocked")
-                        call her_main("Why in the world would you buy me a bra, [genie_name]?","disgust","down")
+                        call her_main("Why on earth would you buy me a bra, [genie_name]?","disgust","down")
                         m "So you can... uhm... wear it?"
                         call her_main("Wear it? Are you out of your mind?","angry","angry")
                         call her_main("I'm your student! Don't ever request something like that again!","angry","angry")
                         m "Fine. Forget about it..."
-                        call her_main("(Damn perv...)","annoyed","angry")
+                        call her_main("(Bloody pervert...)","annoyed","angry")
                     else:
                         call her_main("No, [genie_name]!","annoyed","closed")
                         m "Why not? It's a really nice one!"
@@ -99,19 +99,19 @@ label equip_her_bra:
                     else:
                         call her_main("Of course!","grin","happyCl")
                         m "Really?"
-                        call her_main("Yeah I sometimes do sun-bathing during school-breaks.","open","closed")
-                        call her_main("I just lay down in the grass and relax. I even remove my top sometimes so I won't get any tan-lines!","smile","base")
-                        call her_main("I'm always attracting a crowd... Seems like the boys really like watching me.","base","glance")
+                        call her_main("Of course, I sometimes do sun-bathing during break-time.","open","closed")
+                        call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!","smile","base")
+                        call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
                 else: #Fail
                     call her_main("Bikinis?","soft","wink")
                     call her_main("I mostly wear a bathing-suit when I'm out swimming.","open","baseL")
                     call her_main("Why do you ask, [genie_name]?","base","base")
                     m "I would like you to wear one."
-                    call her_main("At school? [genie_name], we don't even have swimming lessions here.","open","wide_stare")
-                    m "Swimming lessions, hmm."
-                    m "Do you think we could arrange someting like that? Down at the lake?"
+                    call her_main("At school? [genie_name], we don't even have swimming lessons here.","open","wide_stare")
+                    m "Swimming lessons, hmm."
+                    m "Do you think something like that could be arranged? Down at the lake?"
                     call her_main("The lake? That water is way too cold to swim in, [genie_name]! Especially in a bikini!","disgust","base")
-                    m "Alright alright, I'll think of other school activities to do in a bikini."
+                    m "Right then, I'll think of another school activity we could do in a bikini."
                     call her_main("There are none, [genie_name]...","annoyed","angry")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 14."
@@ -121,20 +121,20 @@ label equip_her_bra:
                 g9 "[hermione_name], I have a new bra for you!"
                 if whoring >= 17: #Success
                     call her_main("Oh wow...","soft","down")
-                    call her_main("And you want me to wear it?","open","base")
+                    call her_main("And you'd like me to wear it?","open","base")
                     m "Yes please."
-                    call her_main("Alright then.","base","baseL")
+                    call her_main("Very well...","base","baseL")
                     call her_main("Anything for you, [genie_name].","base","glance")
                 else: #Fail
                     if whoring < 8:
                         call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
                         m "So you can wear it for me?"
                         call her_main("No! I'm not going to wear bras for you!","angry","angry")
-                        call her_main("What is this bra even made of? I's so rubbery...","disgust","down")
+                        call her_main("What is this even made of? I's so rubbery...","disgust","down")
                         m "It's-"
                         call her_main("I don't care! You can have it back!","open","closed")
-                        m "Alright. Better luck next time..."
-                        call her_main("(Pervert...)","annoyed","angryL")
+                        m "Fine. Maybe another time then..."
+                        call her_main("(Weirdo...)","annoyed","angryL")
                     elif whoring < 11:
                         call her_main("Please, [genie_name]...","open","closed")
                         call her_main("Stop buying me bras...","annoyed","angry")
@@ -142,11 +142,11 @@ label equip_her_bra:
                         call her_main("That doesn't matter, [genie_name]. Bras aren't appropriate gifts for students!","annoyed","angry")
                         m "Well if you don't like gifts... I will just keep it."
                     else:
-                        call her_main("No, [genie_name]. They are way too perverted!","open","angry")
+                        call her_main("No, [genie_name]. They are way too sexual!","open","angry")
                         g4 "What? How could you say such a thing?"
-                        m "That bra is perfectly normal!"
-                        call her_main("Where did you even get this one? From a sex-shop?","annoyed","angry")
-                        g4 "That's non of your business!"
+                        m "That bra is perfectly fine!"
+                        call her_main("Where did you even get this one? From an adult shop?","annoyed","angry")
+                        g4 "That's none of your concern!"
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 17."
@@ -158,17 +158,17 @@ label equip_her_bra:
                     m "I'd like you to wear it!"
                     call her_main("Of course, [genie_name].","base","glance")
                     m "You don't mind wearing this, even in classes?"
-                    call her_main("Why no. Oh right, the holes...","soft","down")
+                    call her_main("Why? Oh right, the holes...","soft","down")
                     call her_main("I can just cover myself with some books if I have to...","open","closed")
-                    call her_main("(Not that I want to!)","base","ahegao")
+                    call her_main("(Not that I'd want to!)","base","ahegao")
                 else: #Fail
                     if whoring < 8:
                         call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
-                        m "So you can wear it for me?"
+                        m "So you could wear it for me?"
                         call her_main("No! I'm not going to wear bras for you!","angry","angry")
                         m "But this one has those pretty frills!"
                         call her_main("I don't care! You can keep it!","open","closed")
-                        m "Alright. Better luck next time..."
+                        m "Fine. Maybe another time then..."
                         call her_main("(Pervert...)","annoyed","angryL")
                     elif whoring < 14:
                         call her_main("Please, [genie_name]...","open","closed")
@@ -177,11 +177,11 @@ label equip_her_bra:
                         call her_main("That doesn't matter, [genie_name]. Bras aren't appropriate gifts for students!","annoyed","angry")
                         m "Well if you don't like gifts... I will just keep it."
                     else:
-                        call her_main("No, [genie_name]. They are way too perverted!","open","angry")
+                        call her_main("No, [genie_name]. They are way too sexual!","open","angry")
                         g4 "What? How could you say such a thing?"
                         m "That bra is perfectly normal!"
                         call her_main("There is a giant hole in it!","scream","angryCl")
-                        m "Alright, alright... No need to scream."
+                        m "Okay, fine... No need to scream."
                         m "I see your point."
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
@@ -189,12 +189,12 @@ label equip_her_bra:
                     jump return_to_wardrobe
 
             elif underwear_choice in ["bra_tape"]:
-                m "[hermione_name], could you remove your bra for me? And then put these over your nipples."
+                m "[hermione_name], could you take off your bra for me? And then put these over your nipples."
                 if whoring >= 20: #Success
-                    call her_main("Pasties?... My tits might as well be naked if I wear those...","soft","down")
+                    call her_main("Pasties?... My tits might as well be completely exposed if I were to wear those...","soft","down")
                     g9 "Just leaving enough to the imagination!"
-                    call her_main("Hmm... I can already see the boys imagining all kinds of things with them...","open","ahegao")
-                    call her_main("They always tell me how great my tits are!","base","glance")
+                    call her_main("Hmm... I can already see the boys imagine doing all kinds of things with them...","open","ahegao")
+                    call her_main("They always tell me how great my breasts look!","base","glance")
                 else: #Fail
                     if whoring < 11:
                         call her_main("Do you ask this from every girl, [genie_name]?","open","wink")
@@ -205,48 +205,48 @@ label equip_her_bra:
                         m "What's so bad about biting nipples?"
                         call her_main("[genie_name], these are some serious matters! We immediately have to inform the other teachers about this issue!","open","angry")
                         m "What?! No just put on the pasties!"
-                        call her_main("I'm sorry, [genie_name], but this protection tape won't be enough! Hagrid can't gift students those horrible creatures again!","open","closed")
-                        call her_main("Here, you can have those back. I'll have the situation settled by tomorrow! You can count on me.","base","angry")
+                        call her_main("I'm sorry, [genie_name], but this protection tape won't be enough! Hagrid can't let students handle those horrible creatures again!","open","closed")
+                        call her_main("Here, you can have these back. I'll have the situation settled by tomorrow! You can count on me.","base","angry")
                         m "Damn it..."
                     else:
-                        call her_main("You want me to put those tapes on my tits?","open","angryCl")
-                        call her_main("Are you crazy?!","scream","angry")
+                        call her_main("You want me to put these bits of tape on my tits?","open","angryCl")
+                        call her_main("That's ridiculous!","scream","angry")
                         m "What's so bad about it? Your breasts are covered..."
-                        call her_main("It's as if I had a target on them!","disgust","down")
-                        call her_main("No!... And you can have your perverted duct tape back...","annoyed","angry")
-                        m "Hey! No need to insult duct tape... Shit is useful..."
+                        call her_main("It would look as if I had a target on them!","disgust","down")
+                        call her_main("No!... And you can have your disgusting duct tape back...","annoyed","angry")
+                        m "Hey! No need to insult duct tape... It's like magic..."
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["top_fishnets"]:
-                g9 "I have something for you! Try it out!"
+                g9 "I've got something for you! Try it out!"
                 if whoring >= 20: #Success
                     call her_main("Wow. Fishnets?","smile","down")
                     call her_main("That's so naughty!","grin","glance")
                     g9 "Glad you like it!"
-                    call her_main("Indeed I do, [genie_name].","soft","baseL")
-                    call her_main("Let me remove my bra and put this on instead.","base","glance")
+                    call her_main("I do, [genie_name]!","soft","baseL")
+                    call her_main("Let me take off my bra and put these on instead.","base","glance")
                 else: #Fail
                     if whoring < 5:
-                        call her_main("What? Oh what's this?","soft","base")
+                        call her_main("What? Oh, what's this?","soft","base")
                         m "It's a fishnet to-"
                         call her_main("Oh, I get it!","grin","down")
                         call her_main("This isn't really a hobby I considered pursuing, [genie_name]...","open","baseL")
-                        call her_main("But if you say it will help me with my grades then I'll try my best.","soft","down")
-                        m "Wait what?"
+                        call her_main("But if you say it would help me with my grades then I'll try my best.","soft","down")
+                        m "Wait, what?"
                         call her_main("I will go down to the lake later and try it out, if that's ok with you, [genie_name].","base","glance")
                         m "(...)"
-                        m "(Wait, does she want to go fishing with it...?)"
+                        m "(Wait, is she expecting to catch fish with it...?)"
                     else:
-                        call her_main("Antoher one of your way too revealing tops?","disgust","angry")
+                        call her_main("Another one of your way too revealing tops?","disgust","angry")
                         g9 "Yes, but I want you to wear it as a bra!"
                         call her_main("What?!","open","wide")
                         call her_main("But you can see everything in this! My nipples would poke right through it!!!","scream","angryCl")
                         m "I wouldn't mind if they did..."
                         call her_main("That's just... typical!","clench","angry")
                         call her_main("You disgust me, [genie_name]!","clench","angry")
-                        m "Alright- Jeesh... I'm sorry."
+                        m "Okay- Jeesh... I'm sorry."
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
@@ -415,7 +415,7 @@ label equip_her_panties:
                     if whoring < 17:
                         call her_main("Hmm...","annoyed","down")
                         call her_main("They looks decent enough...","annoyed","down_raised")
-                        call her_main("Alright, I'll wear them.","open","baseL")
+                        call her_main("Fine, I'll wear them.","open","baseL")
                         call her_main("Give me a second to put them on.","base","base")
                     else:
                         call her_main("Of course, [genie_name]! I love those!","grin","closed")
@@ -424,7 +424,7 @@ label equip_her_panties:
                 else: #Fail
                     if whoring < 5:
                         call her_main("Panties?!","shock","shocked")
-                        call her_main("Why in the world would you buy me panties, [genie_name]?","disgust","down")
+                        call her_main("Why on earth would you buy me panties, [genie_name]?","disgust","down")
                         m "So you can... uhm... wear them?"
                         call her_main("Wear them? Are you out of your mind?","angry","angry")
                         call her_main("I'm your student! Don't ever request something like that again!","angry","angry")
@@ -449,9 +449,9 @@ label equip_her_panties:
                     else:
                         call her_main("Of course!","grin","happyCl")
                         m "Really?"
-                        call her_main("Yeah I sometimes do sun-bathing during school-breaks.","open","closed")
-                        call her_main("I just lay down in the grass and relax. I even remove my top sometimes so I won't get any tan-lines!","smile","base")
-                        call her_main("I'm always attracting a crowd... Seems like the boys really like watching me.","base","glance")
+                        call her_main("Yeah I sometimes do sun-bathing during break-time.","open","closed")
+                        call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!","smile","base")
+                        call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
                 else: #Fail
                     call her_main("Bikinis?","soft","wink")
                     call her_main("I mostly wear a bathing-suit when I'm out swimming.","open","baseL")
@@ -459,9 +459,9 @@ label equip_her_panties:
                     m "I would like you to wear one."
                     call her_main("At school? [genie_name], we don't even have swimming lessions here.","open","wide_stare")
                     m "Swimming lessions, hmm."
-                    m "Do you think we could arrange someting like that? Down at the lake?"
+                    m "Do you think something like that could be arranged? Down at the lake?"
                     call her_main("The lake? That water is way too cold to swim in, [genie_name]! Especially in a bikini!","disgust","base")
-                    m "Alright alright, I'll think of other school activities to do in a bikini."
+                    m "Right then, I'll think of another school activity we could do in a bikini."
                     call her_main("There are none, [genie_name]...","annoyed","angry")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 14."
@@ -471,9 +471,9 @@ label equip_her_panties:
                 g9 "[hermione_name], I have some new panties for you!"
                 if whoring >= 17: #Success
                     call her_main("Oh wow...","soft","down")
-                    call her_main("And you want me to wear them?","open","base")
+                    call her_main("And you'd like me to wear them?","open","base")
                     m "Yes please."
-                    call her_main("Alright then.","base","baseL")
+                    call her_main("Very well...","base","baseL")
                     call her_main("Anything for you, [genie_name].","base","glance")
                 else: #Fail
                     if whoring < 8:
@@ -483,7 +483,7 @@ label equip_her_panties:
                         call her_main("What are these panties even made of? They're so rubbery...","disgust","down")
                         m "It's-"
                         call her_main("I don't care! You can have them back!","open","closed")
-                        m "Alright. Better luck next time..."
+                        m "Fine. Maybe another time then..."
                         call her_main("(Pervert...)","annoyed","angryL")
                     elif whoring < 11:
                         call her_main("Please, [genie_name]...","open","closed")
@@ -495,8 +495,8 @@ label equip_her_panties:
                         call her_main("No, [genie_name]. They are way too perverted!","open","angry")
                         g4 "What? How could you say such a thing?"
                         m "Those panties is perfectly normal!"
-                        call her_main("Where did you even get this one? From a sex-shop?","annoyed","angry")
-                        g4 "That's non of your business!"
+                        call her_main("Where did you even get this one? From an adult shop?","annoyed","angry")
+                        g4 "That's none of your concern!"
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 17."
@@ -508,17 +508,17 @@ label equip_her_panties:
                     m "I'd like you to wear them."
                     call her_main("Of course, [genie_name].","base","glance")
                     m "Really? You don't mind wearing them, even in classes?"
-                    call her_main("Why no. Oh right, the is a hole in it...","soft","down")
+                    call her_main("Why? Oh right, there is a hole in it...","soft","down")
                     call her_main("I can just cover myself with some books if I have to...","open","closed")
-                    call her_main("(Not that I want to!)","base","ahegao")
+                    call her_main("(Not that I'd want to!)","base","ahegao")
                 else: #Fail
                     if whoring < 8:
                         call her_main("What? [genie_name] why would you give me panties?","shock","shocked")
-                        m "So you can wear them for me?"
+                        m "So you could wear them for me?"
                         call her_main("No! I'm not going to wear panties for you!","angry","angry")
                         m "But this one has those pretty frills!"
-                        call her_main("I don't care! You can keep it!","open","closed")
-                        m "Alright. Better luck next time..."
+                        call her_main("I don't care! You can keep them!","open","closed")
+                        m "Fine. Maybe another time then..."
                         call her_main("(Pervert...)","annoyed","angryL")
                     elif whoring < 14:
                         call her_main("Please, [genie_name]...","open","closed")
@@ -527,11 +527,11 @@ label equip_her_panties:
                         call her_main("That doesn't matter, [genie_name]. Panties aren't appropriate gifts for students!","annoyed","angry")
                         m "Well if you don't like gifts... I will just keep them."
                     else:
-                        call her_main("No, [genie_name]. They are way too perverted!","open","angry")
+                        call her_main("No, [genie_name]. They are way too sexual!","open","angry")
                         g4 "What? How could you say such a thing?"
                         m "Those panties is perfectly normal!"
                         call her_main("There is a giant hole in it!","scream","angryCl")
-                        m "Alright, alright... No need to scream."
+                        m "Okay, fine... No need to scream."
                         m "I see your point."
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
@@ -543,8 +543,8 @@ label equip_her_panties:
                 if whoring >= 20: #Success
                     call her_main("Wow. Fishnet Panties?","smile","down")
                     call her_main("That's so naughty!","grin","glance")
-                    g9 "Glad you like it!"
-                    call her_main("Indeed I do, [genie_name].","soft","baseL")
+                    g9 "Glad you like them!"
+                    call her_main("I do, [genie_name].","soft","baseL")
                     call her_main("Let me put them on real quick.","base","glance")
                 else: #Fail
                     if whoring < 11:
@@ -557,13 +557,13 @@ label equip_her_panties:
                         call her_main("You can keep them...","annoyed","angry")
                         m "(She'll wear them sooner or later...)"
                     else:
-                        call her_main("Antoher one of your way too small panties?","disgust","angry")
+                        call her_main("Another one of your way too revealing panties?","disgust","angry")
                         g9 "Even better! I can see through the net!"
                         call her_main("What?!","open","wide")
                         call her_main("This doesn't even cover anything!!!","soft","wide")
                         call her_main("[genie_name], this is disgusting!","scream","angryCl")
-                        call her_main("You can have them back you perv...","clench","angry")
-                        m "Alright- Jeesh... No need to make a scene..."
+                        call her_main("You can have them back you freak...","clench","angry")
+                        m "Okay- Jeesh... No need to make a scene..."
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe

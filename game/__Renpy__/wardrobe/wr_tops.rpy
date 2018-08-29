@@ -151,9 +151,9 @@ label equip_her_top:
                 m "Would you wear your uniform top for me? But remove the tie and the vest."
                 if whoring >= 5: #Gets removed at level 11.
                     call her_main("You better appreciate this, [genie_name].","annoyed","annoyed")
-                    call her_main("Can't believe I'm willing to remove my precious Grffindor tie for you...","angry","angry")
+                    call her_main("Can't believe I'm willing to remove my precious Gryffindor tie for you...","angry","angry")
                     m "It's only a tie, girl!"
-                    call her_main("No it is not...","scream","worriedCl")
+                    call her_main("No, it is not...","scream","worriedCl")
                     call her_main("...","annoyed","worriedL")
                     call her_main("Just let me go and change...","annoyed","base")
                 else:
@@ -714,7 +714,7 @@ label equip_her_top:
                         m "(...)"
                         m "(Wait, does she want to go fishing with it...?)"
                     else:
-                        call her_main("Antoher one of your way too revealing tops?","disgust","angry")
+                        call her_main("Another one of your way too revealing tops?","disgust","angry")
                         g9 "Yes, glad you noticed! Now if you don't mind just-"
                         call her_main("I'm not going to wear it! You can see everything in this! My nipples would poke right through it!!!","scream","angryCl")
                         m "I wouldn't mind if they did..."

@@ -42,7 +42,7 @@ label equip_her_outfit:
                     m "No, actually. Just put on the outfit."
                     call her_main("Alright...","smile","base")
                 else: #Fail
-                    call her_main("Your maid? [genie_name] isn't it the house elf's job to clean up the rooms?","open","base")
+                    call her_main("Your maid? [genie_name] isn't it the house elves job to clean up the rooms?","open","base")
                     call her_main("(Not that I approve of this horrible house-elf enslavement...)","annoyed","angryL")
                     call her_main("I have more important things to attent to. I have no time to clean up behind you...","open","closed")
                     call her_main("Unless... there are some points in it for me...","soft","baseL")
@@ -62,7 +62,7 @@ label equip_her_outfit:
                 m "How do you feel about wearing a pirates outfit?"
                 if whoring >= 5: #Success
                     call her_main( "Depends...[genie_name] what kind of pirate are we talking about?","base","base")
-                    m "More of the adventurous type for sure."
+                    m "The adventurous type for sure."
                     call her_main( "I don't know...","open","base")
                     m "The kind that fights a corrupt government for the good of the people."
                     call her_main( "...","open","down_raised")
@@ -88,7 +88,7 @@ label equip_her_outfit:
                 if whoring >= 8: #Success
                     call her_main( "Cute, where did you even get this? I didn't know you've visited Japan.","base","base")
                     m "It's a replica..."
-                    call her_main( "oh...well, the colour is nice.", "grin","base")
+                    call her_main( "Oh... well, the colour is nice.", "grin","base")
                     call her_main( "I guess I could wear it for a bit.", "grin","heppyCl")
                 else: #Fail
                     call her_main( "I'd rather not be accused of stirring cultural appropriation.", "annoyed","base")
@@ -204,7 +204,7 @@ label equip_her_outfit:
                 else: #Fail
                     call her_main("Of course!","open","worriedL")
                     call her_main("Rowena Ravenclaw, Helga Hufflepuff, Isolt Sayre, Joan of Arc,...","open","worriedL")
-                    call her_main("I can name you hundrets! All witches I admire and look up to!","grin","closed")
+                    call her_main("I can name you hundreds! All witches I admire and look up to!","grin","closed")
                     m "(Who?)"
                     m "No no, I'm talking about Comic-books! Super-heroes!"
                     call her_main("Oh...","soft","narrow")
@@ -230,7 +230,7 @@ label equip_her_outfit:
                 if whoring >= 14: #Success
                     call her_main( "I don't know, sell it to me.","base","base")
                     m "Uh, she's a misunderstood girl in love with one of the main characters enemies."
-                    call her_main( "I feel miss understood at times too, does she get her love in the end?","base","narrow")
+                    call her_main( "I feel misunderstood at times too, does she get her love in the end?","base","narrow")
                     m "Well, it's complicated. There's a bunch of different itterations too."
                     call her_main( "Will you stop talking about it if I put it on?","annoyed","worried")
                     m "Yes."
@@ -239,7 +239,7 @@ label equip_her_outfit:
                     call her_main( "No thanks, it seems a bit too tight for me.", "soft", "worried")
                     m "\"I'll loosen you up soon enough.\""
                     call her_main( "What are you looking at. Is it something I said?","base","narrow")
-                    m "Oh, nothing my dear...I was just meditating."
+                    m "Oh, nothing my dear... I was just meditating."
                     call her_main( "\"More like, falling asleep.\"","base","suspicious")
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at whoring level 14."
@@ -247,7 +247,7 @@ label equip_her_outfit:
 
             if outfit_choice == hg_tifa_OBJ:
                 m "Do you know anything about video games [hermione_name]?"
-                call her_main( "I was usually too busy reading to have any time for such things, why?", "soft","narrow")
+                call her_main( "I was usually too busy reading at home to have time for such things, why?", "soft","narrow")
                 m "I'd like you to put this Tifa outfit for me"
                 if whoring >= 11: #Success
                     call her_main( "Why do you even know anything about video games professor?" ,"soft","narrow")
@@ -340,7 +340,7 @@ label equip_her_outfit:
                 else: #Fail
                     call her_main("It's a corset, [genie_name]!","open","wink")
                     m "So what?"
-                    call her_main("It's too tight! How am I even supposed to breath in it?","open","closed")
+                    call her_main("It's too tight! How am I even supposed to breathe in it?","open","closed")
                     m "Breathing is overrated..."
                     call her_main("I have to refuse, [genie_name].","normal","base")
                     if cheats_active or game_difficulty <= 2:

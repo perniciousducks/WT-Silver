@@ -24,7 +24,7 @@ label equip_her_outfit:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = 0
+            $ wardrobe_active = False
             $ hermione_xpos = 665
 
             # Outfits
@@ -407,10 +407,11 @@ label equip_her_outfit:
             call h_outfit_OBJ(outfit_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call screen wardrobe
 
         else: # No chit-chat
+            $ wardrobe_active = True
             hide screen hermione_main
 
             call h_outfit_OBJ(outfit_choice)
@@ -423,7 +424,7 @@ label equip_her_outfit:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             m "[hermione_name], could you take off that outfit again?"
@@ -437,10 +438,11 @@ label equip_her_outfit:
             call h_outfit_OBJ(None)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
+            $ wardrobe_active = True
             hide screen hermione_main
 
             call h_outfit_OBJ(None)

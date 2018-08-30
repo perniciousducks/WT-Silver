@@ -30,7 +30,7 @@ label equip_her_makeup:
         call her_main(xpos="right",ypos="base",trans="fade")
 
         if makeup_choice != h_lipstick:
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             call her_main("You want me to put on lipstick?","normal","worriedCl")
             call her_main("Really, [genie_name]!","scream","angryCl")
@@ -62,7 +62,7 @@ label equip_her_makeup:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -120,15 +120,15 @@ label equip_her_makeup:
 
             call set_h_makeup(makeup_choice)
 
-            call her_main("","","",xpos="wardrobe")
-            $ wardrobe_active = 1
+            call her_main(xpos="wardrobe")
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call set_h_makeup(makeup_choice)
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
 
 
@@ -139,7 +139,7 @@ label equip_her_makeup:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -160,20 +160,17 @@ label equip_her_makeup:
 
             call set_h_makeup(makeup_choice) #Removes Item
 
-            call her_main("","","",xpos="wardrobe")
-            $ wardrobe_active = 1
+            call her_main(xpos="wardrobe")
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call set_h_makeup(makeup_choice) #Removes Item
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
-#
 
-#Add Luna Makeup Texts
-#Add Astoria Makeup Texts
 
 
 
@@ -213,7 +210,7 @@ label equip_her_head_accessory:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -318,23 +315,23 @@ label equip_her_head_accessory:
 
             pause.5
 
-            if head_accessory_choice == "reading_glasses" or head_accessory_choice == "vintage_glasses":
+            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
                 call set_h_glasses(head_accessory_choice, glasses_color_choice)
-            if head_accessory_choice == "cat_ears" or head_accessory_choice == "elf_ears":
+            if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_h_ears(head_accessory_choice)
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
                 call set_h_hat(head_accessory_choice)
 
-            call her_main("","","",xpos="wardrobe")
-            $ wardrobe_active = 1
+            call her_main(xpos="wardrobe")
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = 1
-            if head_accessory_choice == "reading_glasses" or head_accessory_choice == "vintage_glasses":
+            $ wardrobe_active = True
+            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
                 call set_h_glasses(head_accessory_choice, glasses_color_choice)
-            if head_accessory_choice == "cat_ears" or head_accessory_choice == "elf_ears":
+            if head_accessory_choice in ["cat_ears","elf_ears"]:
                 if whoring >= 11:
                     call set_h_ears(head_accessory_choice)
                 else:
@@ -346,7 +343,7 @@ label equip_her_head_accessory:
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
                 call set_h_hat(head_accessory_choice)
 
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
 
 
@@ -357,7 +354,7 @@ label remove_head_accessory: #Remove/Toggle off
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -391,28 +388,28 @@ label remove_head_accessory: #Remove/Toggle off
 
             pause.5
 
-            if head_accessory_choice == "reading_glasses" or head_accessory_choice == "vintage_glasses":
+            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
                 call set_h_glasses(head_accessory_choice, glasses_color_choice)
-            if head_accessory_choice == "cat_ears" or head_accessory_choice == "elf_ears":
+            if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_h_ears(head_accessory_choice)
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
                 call set_h_hat(head_accessory_choice)
 
-            call her_main("","","",xpos="wardrobe")
-            $ wardrobe_active = 1
+            call her_main(xpos="wardrobe")
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = 1
-            if head_accessory_choice == "reading_glasses" or head_accessory_choice == "vintage_glasses":
+            $ wardrobe_active = True
+            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
                 call set_h_glasses(head_accessory_choice, glasses_color_choice)
-            if head_accessory_choice == "cat_ears" or head_accessory_choice == "elf_ears":
+            if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_h_ears(head_accessory_choice)
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
                 call set_h_hat(head_accessory_choice)
 
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
 
 #

@@ -34,9 +34,9 @@ label job_1:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_takes_classes = True
+    $ hermione_busy = True
     $ current_job = 1
-    jump day_main_menu
+    jump day_resume
 
 label maid_responses:
     $ payment = renpy.random.randint(10, 25)
@@ -109,7 +109,7 @@ label maid_responses:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_sleeping = True
+    $ hermione_busy = True
     $ current_job = 0
     jump night_main_menu
 
@@ -141,9 +141,9 @@ label job_2:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_takes_classes = True
+    $ hermione_busy = True
     $ current_job = 2
-    jump day_main_menu
+    jump day_resume
 
 label barmaid_responses:
     $ payment = renpy.random.randint(20, 50)
@@ -171,13 +171,13 @@ label barmaid_responses:
                 $ gold += payment
             elif day_random >= 3 and day_random <= 5:
                 "bla bla bla"
-                jump day_time_requests
+                jump hermione_requests
             elif day_random >= 6 and day_random <= 8:
                 "bla bla bla"
-                jump day_time_requests
+                jump hermione_requests
             elif day_random >=9:
                 "bla bla bla"
-                jump day_time_requests
+                jump hermione_requests
         "-Dismiss her-":
             her "Here's your payment."
             ">You receive [payment] gold coins."
@@ -192,7 +192,7 @@ label barmaid_responses:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_sleeping = True
+    $ hermione_busy = True
     $ current_job = 0
     jump night_main_menu
 
@@ -253,9 +253,9 @@ label job_3:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_takes_classes = True
+    $ hermione_busy = True
     $ current_job = 3
-    jump day_main_menu
+    jump day_resume
 
 label gryffindor_cheer_responses:
     $ payment = renpy.random.randint(40, 80)
@@ -366,7 +366,7 @@ label gryffindor_cheer_responses:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_sleeping = True
+    $ hermione_busy = True
     $ current_job = 0
     jump night_main_menu
 
@@ -426,9 +426,9 @@ label job_4:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_takes_classes = True
+    $ hermione_busy = True
     $ current_job = 4
-    jump day_main_menu
+    jump day_resume
 
 label slytherin_cheer_responses:
     $ payment = renpy.random.randint(50, 100)
@@ -540,7 +540,7 @@ label slytherin_cheer_responses:
 
     call her_walk("mid","leave",2)
 
-    $ hermione_sleeping = True
+    $ hermione_busy = True
     $ current_job = 0
     $ uni_sperm = False
     jump night_main_menu

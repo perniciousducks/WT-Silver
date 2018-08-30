@@ -160,19 +160,11 @@ label summon_snape:
             else:
                 sna "Goodnight then."
 
-            $ snape_busy = True
-            hide screen snape_01 #Snape stands still.
-            hide screen bld1
-            hide screen snape_main
-            with d3
             call play_sound("door")
 
-            if daytime:
-                call play_music("brittle_rille") #Day Theme
-                jump day_main_menu
-            else:
-                call play_music("manatees") #Night Theme
-                jump night_main_menu
+            $ snape_busy = True
+
+            jump main_room
 
 
 
@@ -182,6 +174,7 @@ label snape_talk:
             #You tell Snape about the curses.
             if hermione_on_the_lookout: #Already talked to Hermione.
                 $ hermione_finds_astoria = True
+                $ days_without_an_event = 0 #So the event won't happen right after.
             if snape_on_the_lookout:
                 call sna_main("I'm still on the lookout, Genie.","snape_01")
                 call sna_main("If I find the little maggot that casts those spells,...","snape_10")

@@ -21,13 +21,13 @@ label equip_top:
 label equip_her_top:
 
     if top_choice == h_top and top_color_choice == h_top_color:
-        $ wardrobe_active = 1
+        $ wardrobe_active = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
     if hermione_action == "hands_behind" or hermione_action == "covering" or hermione_action == "fingering" or hermione_action == "covering_top" or hermione_action == "pinch" or hermione_action == "hands_cuffed" or hermione_action == "milk_breasts":
 
-        $ wardrobe_active = 1
+        $ wardrobe_active = True
         hide screen hermione_main
         with d3
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
@@ -50,7 +50,7 @@ label equip_her_top:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -733,7 +733,7 @@ label equip_her_top:
             call set_h_top(top_choice,top_color_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
@@ -821,7 +821,7 @@ label equip_her_top:
                 jump return_to_wardrobe
 
             #Success!
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call set_h_top(top_choice,top_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe

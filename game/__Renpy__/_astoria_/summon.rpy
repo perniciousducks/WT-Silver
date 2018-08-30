@@ -28,14 +28,13 @@ label summon_astoria:
     else:
         call ast_main("Hi, [genie_name]!","grin","angry","base","mid",xpos="base",ypos="base")
 
-    $ astoria_busy = True
-
     label astoria_requests:
+
+    $ astoria_busy = True
+    $ wardrobe_active = False
 
     $ menu_x = 0.1 #Menu is moved to the left.
     $ menu_y = 0.5 #Menu is moved to the middle.
-
-    $ wardrobe_active = False
 
     menu:
         "-Talk-":
@@ -123,7 +122,7 @@ label summon_astoria:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = 1 #True
+            $ wardrobe_active = True
             call ast_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
@@ -133,18 +132,12 @@ label summon_astoria:
             else:
                 call ast_main("Oh, alright. Good night, [ast_genie_name].","smile","base","base","mid")
 
-            hide screen astoria_main
-            #hide screen astoria_blink #Astoria chibi.
-
-            $ menu_x = 0.5 #Menu position is back to default. (Center).
-            $ menu_y = 0.5 #Menu position is back to default. (Center).
+            call play_sound("door")
 
             $ astoria_busy = True
 
-            if daytime:
-                jump day_resume #Other return events can trigger after this!
-            else:
-                jump night_resume #Other return events can trigger after this!
+            jump main_room
+
 
 
 label astoria_talk:

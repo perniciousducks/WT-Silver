@@ -20,7 +20,7 @@ label equip_bra:
 ### Equip Hermione's Bra ###
 label equip_her_bra:
     if underwear_choice == h_bra and underwear_color_choice == h_bra_color:
-        $ wardrobe_active = 1
+        $ wardrobe_active = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
@@ -32,7 +32,7 @@ label equip_her_bra:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             #Bras
@@ -260,7 +260,7 @@ label equip_her_bra:
             call screen wardrobe
 
         else:
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
 
             #Fails
             if whoring < 11 and underwear_choice in ["bra_base","bra_lace","bra_silk"]:
@@ -371,7 +371,7 @@ label equip_panties:
 ### Equip Hermione's Panties ###
 label equip_her_panties:
     if underwear_choice == h_panties and underwear_color_choice == h_panties_color:
-        $ wardrobe_active = 1
+        $ wardrobe_active = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
@@ -383,7 +383,7 @@ label equip_her_panties:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             #Bras
@@ -577,7 +577,7 @@ label equip_her_panties:
             call screen wardrobe
 
         else:
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
 
             #Fails
             if whoring < 11 and underwear_choice in ["panties_base","panties_lace","panties_silk","panties_silk_low"]:

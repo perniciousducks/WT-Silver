@@ -263,6 +263,14 @@ label h_action(action =  "", update=""):
                 $ hermione_action = "covering"
                 $ hermione_use_action = True
 
+            if action == "covering_uniform":
+                $ hermione_action = "covering_uniform"
+                $ hermione_use_action = True
+
+            if action == "covering_cloak":
+                $ hermione_action = "covering_cloak"
+                $ hermione_use_action = True
+
             #Fingering
             if action == "fingering":
                 $ hermione_action = "fingering"

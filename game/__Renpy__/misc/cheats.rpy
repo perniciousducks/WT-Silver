@@ -6,7 +6,7 @@ label cheats:
                 "-Reset Hermione's mood-":
                     $ mad = 0
                     ">Hermione is no longer mad at you."
-                    jump cheats_hermione
+                    jump cheats
                 "-Max Whoring-":
                     $ whoring = 24
                     ">Hermione is now a giant slut."
@@ -82,6 +82,10 @@ label cheats:
         "-Cho Cheats-":
             label cheats_cho:
             menu:
+                "-Reset Cho's mood-":
+                    $ cho_mad = 0
+                    ">Cho is no longer mad at you."
+                    jump cheats
                 "-Reset ALL Cho content-":
                     $ reset_cho_content = True
                     call cho_progress_init

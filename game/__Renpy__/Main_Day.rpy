@@ -350,6 +350,7 @@ if skip_duel or skip_to_hermione:
     $ fireplace_examined = True
     if skip_duel:
         $ skip_duel = False
+        $ rum_times = 3 #7 unlocks map!
         $ day = 5
 
     if skip_to_hermione:
@@ -362,6 +363,7 @@ if skip_duel or skip_to_hermione:
         $ event11_happened = True #Allows next event to start.
         $ event12_happened = True #Allows next event to start.
         $ event13_happened = True #Allows next event to start.
+        $ rum_times = 6 #7 unlocks map!
 
         if day < 14:
             $ day = 14

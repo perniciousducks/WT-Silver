@@ -291,8 +291,9 @@ label a_bad_time_to_disrobe_part_2:
     hide screen day_to_night
     with d3
     
+    call her_chibi("stand", "door")
+    call her_walk("door","desk",2)
     
-
     call her_main( "...", "normal", "dead", cheeks="blush" )
     m "Mission success?"
     call her_main( "...", "normal", "dead", cheeks="blush" )

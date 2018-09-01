@@ -266,6 +266,10 @@ label h_action(action =  "", update=""):
             if action == "covering_uniform":
                 $ hermione_action = "covering_uniform"
                 $ hermione_use_action = True
+                $ hermione_wear_bottom = False
+                $ hermione_wear_panties = False
+                $ hermione_wear_garterbelt = False
+                $ hermione_wear_stockings = False
 
             if action == "covering_cloak":
                 $ hermione_action = "covering_cloak"

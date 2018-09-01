@@ -7,13 +7,13 @@ label wardrobe: #NOT IN USE
     #call update_wr_lists       #updates all lists
 
     if active_girl == "hermione":
-        call her_main("",xpos="wardrobe")
+        call her_main(xpos="wardrobe")
     #if active_girl == "luna":
     #    call lun_main("",xpos="wardrobe")
     if active_girl == "astoria":
-        call ast_main("",xpos="wardrobe")
+        call ast_main(xpos="wardrobe")
     if active_girl == "susan":
-        call sus_main("",xpos="wardrobe")
+        call sus_main(xpos="wardrobe")
 
     hide screen main_room_menu
     call screen wardrobe
@@ -21,7 +21,7 @@ label wardrobe: #NOT IN USE
 label reset_wardrobe_vars:
     $ wardrobe_page = 0
     $ wardrobe_page_choice = 0
-    $ wardrobe_active = 1                 #1=True #hides dissolve from "her_main"
+    $ wardrobe_active = True
     $ wardrobe_toggle_page = 0            #default page
     $ wardrobe_head_category = 0          #default page
     $ wardrobe_tops_category = 0          #default page
@@ -57,11 +57,11 @@ label return_to_wardrobe:
         if active_girl == "susan":
             call sus_main(xpos="wardrobe",ypos="base",trans="fade")
 
-        $ wardrobe_active = 1
+        $ wardrobe_active = True
         call screen wardrobe
 
     else:
-        $ wardrobe_active = 1
+        $ wardrobe_active = True
 
         if active_girl == "hermione":
             call her_main(xpos="wardrobe",ypos="base")
@@ -208,8 +208,9 @@ label close_wardrobe:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     if active_girl == "hermione":
-        call her_main("","base","base",xpos="base") #reset hermione face and position to default
-        jump day_time_requests
+        call set_her_face("random")
+        call her_main(xpos="base",ypos="base") #reset hermione face and position to default
+        jump hermione_requests
 
     if active_girl == "astoria":
         call ast_main(xpos="base",ypos="base")
@@ -251,9 +252,35 @@ label wardrobe_change_her_action:
     if wr_her_action == "naked":
         call h_action("naked")
 
-    call her_main("",xpos="wardrobe")
+    call her_main(xpos="wardrobe")
     call screen wardrobe
 
+
+
+### Randomizing Her Face ###
+label touched_her_boobies:
+    if whoring >= 0 and whoring < 11:
+        call set_her_face("annoyed")
+    elif whoring >= 11 and whoring < 14:
+        call set_her_face("happy")
+    else:
+        call set_her_face("naughty")
+
+    call her_main(xpos="wardrobe")
+    call screen wardrobe
+
+label touched_her_crotch:
+    if whoring >= 0 and whoring < 5:
+        call set_her_face("angry")
+    elif whoring >= 5 and whoring < 17:
+        call set_her_face("annoyed")
+    elif whoring >= 17 and whoring < 20:
+        call set_her_face("happy")
+    else:
+        call set_her_face("naughty")
+
+    call her_main(xpos="wardrobe")
+    call screen wardrobe
 
 ### TOGGLE LABELS ###
 
@@ -296,11 +323,9 @@ label her_bra_toggle:
         call update_her_uniform
 
         if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed_wBlush
-        elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_naughty_wBlush
+            call set_her_face("annoyed")
         else: #21+
-            call her_main_rndm_naughty
+            call set_her_face("naughty")
 
     else: #Toggle ON
         $ h_request_wear_bra = True
@@ -308,12 +333,13 @@ label her_bra_toggle:
         call update_her_uniform
 
         if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed
+            call set_her_face("annoyed")
         elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_neutral
+            call set_her_face("neutral")
         else: #21+
-            call her_main_rndm_happy
+            call set_her_face("happy")
 
+    call her_main(xpos="wardrobe",ypos="base")
     hide screen wardrobe
     call screen wardrobe
 
@@ -355,24 +381,22 @@ label her_panties_toggle:
         $ hermione_wear_panties = False
         call update_her_uniform
 
-        if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed_wBlush
-        elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_naughty_wBlush
+        if whoring < 15:
+            call set_her_face("annoyed")
         else: #21+
-            call her_main_rndm_naughty
+            call set_her_face("naughty")
 
     else: #Toggle ON
         $ h_request_wear_panties = True
         $ hermione_wear_panties = True
         call update_her_uniform
 
-        if whoring >= 11 and whoring < 15:
-            call her_main_rndm_annoyed
+        if whoring < 15:
+            call set_her_face("annoyed")
         elif whoring >= 15 and whoring < 21:
-            call her_main_rndm_neutral
+            call set_her_face("neutral")
         else: #21+
-            call her_main_rndm_happy
+            call set_her_face("happy")
 
     hide screen wardrobe
     call screen wardrobe
@@ -642,122 +666,114 @@ label equip_tattoo:
 
 ## Potions ##
 label use_potion:
-    if potion_choice == "universal_potion": #Potion that can be used day AND night!
-        hide screen wardrobe
-        call her_main(xpos="right",ypos="base",trans="fade")
-        menu:
-            "-Universal potion-" ">Potions that can be used at any time of day."
-            "-Change Clothing Transparency-" if "transparency" in cs_existing_stock:
-                $ misc_item_choice = "transparency"
-                jump equip_misc_item
-            #"-Hair-Growth Potion-" #Hermione Pubic Hair. Not yet added.
-            "-Never mind-":
-                jump return_to_wardrobe
 
-    if daytime:
-        hide screen wardrobe
-        call her_main(xpos="right",ypos="base",trans="fade")
-
-        if potion_choice == "polyjuice_potion":
-            menu:
-                "-Polyjuice potion-"
-                "-Cat Ears-" if potion_inv.has("p_cat_transformation"):
-                    $ potion_inv.remove("p_cat_transformation")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
-
-                "-luna potion-" if potion_inv.has("p_luna_transformation"):
-                    $ potion_inv.remove("p_luna_transformation")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_luna_transformation") )
-
-                # TODO: uncomment when scene is complete
-                # "-Clone potion-" if potion_inv.has("p_clone"):
-                #     $ potion_inv.remove("p_clone")
-                #     $ renpy.jump( potion_lib.getJumpLabel("p_clone") )
-                "-Never mind-":
-                    jump return_to_wardrobe
-
-        if potion_choice == "expanding_elixir":
-            menu:
-                "-Expanding elixir-"
-                "-Breast Expansion-" if potion_inv.has("p_breast_expansion"):
-                    $ potion_inv.remove("p_breast_expansion")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_breast_expansion") )
-
-                "-Ass Expansion" if potion_inv.has("p_ass_expansion"):
-                    $ potion_inv.remove("p_ass_expansion")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_ass_expansion") )
-                "-Never mind-":
-                    jump return_to_wardrobe
-
-        if potion_choice == "milk_potion":
-            menu:
-                "-Lactantium-"
-                "-Lactantium-" if potion_inv.has("p_milk_potion"):
-                    $ potion_inv.remove("p_milk_potion")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_milk_potion") )
-                "-Never mind-":
-                    jump return_to_wardrobe
-
-        if potion_choice == "love_potion":
-            menu:
-                "-Love potion-"
-                "-Cum Addiction-" if potion_inv.has("p_cum_addiction"):
-                    $ potion_inv.remove("p_cum_addiction")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
-
-                "-Hypno potion-" if potion_inv.has("p_hypno"):
-                    $ potion_inv.remove("p_hypno")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
-
-                # TODO: uncomment if ready unsure if ready for current release
-                # "-Voluptatem-" if potion_inv.has("p_voluptatem"):
-                #     $ potion_inv.remove("p_voluptatem")
-                #     $ renpy.jump( potion_lib.getJumpLabel("p_voluptatem") )
-                "-Never mind-":
-                    jump return_to_wardrobe
-
-        if potion_choice == "clothes_potion":
-            menu:
-                "-Clothe potion-"
-                "-Transparent Clothes-" if potion_inv.has("p_transparency"):
-                    $ potion_inv.remove("p_transparency")
-                    $ renpy.jump( potion_lib.getJumpLabel("p_transparency") )
-
-                "-Never mind-":
-                    jump return_to_wardrobe
-
-    else:
-        hide screen wardrobe
-        call nar(">Potions can only be used during the day.")
-
-        jump return_to_wardrobe
-
-
-## Items and Toys ##
-label use_item: #Not in use.
     hide screen wardrobe
     call her_main(xpos="right",ypos="base",trans="fade")
-    if item_choice == "buttplugs":
+
+    if potion_choice == "polyjuice_potion":
         menu:
-            "-Buttplug Menu-"
-            "-Buttplug Event-" if daytime:
-                jump hg_ps_Buttplug
-            "-Equip Small Buttplug-" if buttplug_1_worn and not (hermione_wear_buttplug and h_buttplug == "plug_a_on"):
-                $ misc_item_choice = "small_buttplug"
-                jump equip_misc_item
-            "-Equip Medium Buttplug-" if buttplug_2_worn and not (hermione_wear_buttplug and h_buttplug == "plug_b_on"):
-                $ misc_item_choice = "medium_buttplug"
-                jump equip_misc_item
-            "-Equip Large Buttplug-" if buttplug_3_worn and not (hermione_wear_buttplug and h_buttplug == "plug_c_on"):
-                $ misc_item_choice = "large_buttplug"
-                jump equip_misc_item
-            "-Unequip Buttplug-" if hermione_wear_buttplug:
-                $ misc_item_choice = "remove_buttplug"
-                jump equip_misc_item
+            ">Polyjuice potion. You know what it does..."
+            "-Cat Transformation-" if daytime and potion_inv.has("p_cat_transformation"):
+                $ potion_inv.remove("p_cat_transformation")
+                $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
+            "{color=#858585}-Cat Transformation-{/color}" if not daytime and potion_inv.has("p_cat_transformation"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            "-Luna Transformation-" if daytime and potion_inv.has("p_luna_transformation"):
+                $ potion_inv.remove("p_luna_transformation")
+                $ renpy.jump( potion_lib.getJumpLabel("p_luna_transformation") )
+            "{color=#858585}-Luna Transformation-{/color}" if not daytime and potion_inv.has("p_luna_transformation"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            # TODO: uncomment when scene is complete
+            # "-Clone potion-" if potion_inv.has("p_clone"):
+            #     $ potion_inv.remove("p_clone")
+            #     $ renpy.jump( potion_lib.getJumpLabel("p_clone") )
             "-Never mind-":
                 jump return_to_wardrobe
 
-        jump return_to_wardrobe
+    if potion_choice == "expanding_elixir":
+        menu:
+            ">Potions that enhance the user's body."
+            "-Breast Expansion-" if daytime and potion_inv.has("p_breast_expansion"):
+                $ potion_inv.remove("p_breast_expansion")
+                $ renpy.jump( potion_lib.getJumpLabel("p_breast_expansion") )
+            "{color=#858585}-Breast Expansion-{/color}" if not daytime and potion_inv.has("p_breast_expansion"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            "-Ass Expansion" if daytime and potion_inv.has("p_ass_expansion"):
+                $ potion_inv.remove("p_ass_expansion")
+                $ renpy.jump( potion_lib.getJumpLabel("p_ass_expansion") )
+            "{color=#858585}-Ass Expansion-{/color}" if not daytime and potion_inv.has("p_ass_expansion"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            "-Never mind-":
+                jump return_to_wardrobe
+
+    if potion_choice == "milk_potion":
+        menu:
+            ">Potions for when you run out of milk in the fridge."
+            "-Lactantium-" if daytime and potion_inv.has("p_milk_potion"):
+                $ potion_inv.remove("p_milk_potion")
+                $ renpy.jump( potion_lib.getJumpLabel("p_milk_potion") )
+            "{color=#858585}-Lactantium-{/color}" if not daytime and potion_inv.has("p_milk_potion"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            "-Never mind-":
+                jump return_to_wardrobe
+
+    if potion_choice == "love_potion":
+        menu:
+            ">Potions that change the user's mood or emotions."
+            "-Cum Addiction-" if daytime and potion_inv.has("p_cum_addiction"):
+                $ potion_inv.remove("p_cum_addiction")
+                $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
+            "{color=#858585}-Cum Addiction-{/color}" if not daytime and potion_inv.has("p_cum_addiction"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            "-Hypno potion-" if daytime and potion_inv.has("p_hypno"):
+                $ potion_inv.remove("p_hypno")
+                $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
+            "{color=#858585}-Hypno potion-{/color}" if not daytime and potion_inv.has("p_hypno"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            # TODO: uncomment if ready unsure if ready for current release
+            # "-Voluptatem-" if potion_inv.has("p_voluptatem"):
+            #     $ potion_inv.remove("p_voluptatem")
+            #     $ renpy.jump( potion_lib.getJumpLabel("p_voluptatem") )
+            "-Never mind-":
+                jump return_to_wardrobe
+
+    if potion_choice == "clothes_potion":
+        menu:
+            ">Potions that affect the wearer's clothing."
+            "-Transparent Clothes-" if daytime and potion_inv.has("p_transparency"):
+                $ potion_inv.remove("p_transparency")
+                $ renpy.jump( potion_lib.getJumpLabel("p_transparency") )
+            "{color=#858585}-Transparent Clothes-{/color}" if not daytime and potion_inv.has("p_transparency"):
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
+
+            "-Permanent Clothing Transparency-" if potion_inv.has("p_transparency"):
+                $ misc_item_choice = "transparency"
+                jump equip_misc_item
+
+            "-Never mind-":
+                jump return_to_wardrobe
+
+label wardrobe_fail(text=""):
+    hide screen wardrobe
+    if text != "":
+        call nar(">[text]")
+
+    return
 
 
 

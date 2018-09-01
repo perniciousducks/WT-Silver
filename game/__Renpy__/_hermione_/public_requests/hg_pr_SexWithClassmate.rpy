@@ -67,7 +67,7 @@ label hg_pr_SexWithClassmate_complete:
         m "Hm..."
         $ hg_pr_SexWithClassmate_OBJ.points += 1
         $ hg_pr_SexWithClassmate_OBJ.inProgress = False
-        $ hermione_sleeping = True
+        $ hermione_busy = True
         $ hg_pr_SexWithClassmate_AltFlag = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
 
         jump day_start
@@ -138,6 +138,9 @@ label hg_pr_SexWithClassmate_complete:
     $ hg_pr_SexWithClassmate_OBJ.inProgress = False
 
     jump hg_pr_transition_block
+
+    return
+
 
 
 label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label where she shows up next morning.

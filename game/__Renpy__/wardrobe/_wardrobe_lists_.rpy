@@ -658,7 +658,6 @@ label update_wr_miscellaneous_list:
     if active_girl == "hermione":
 
         #Potions
-        $ wr_potions_list.append("universal_potion") #Potion that can be used day AND night!
         if potion_inv.has("p_cat_transformation") or potion_inv.has("p_luna_transformation"):
             $ wr_potions_list.append("polyjuice_potion")
         if potion_inv.has("p_breast_expansion") or potion_inv.has("p_ass_expansion"):

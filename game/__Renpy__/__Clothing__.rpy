@@ -1,36 +1,5 @@
 label __init_variables:
 
-
-    # outfit unlocks/purchases are the only dynamic value we care about so they have been separated into their own dict
-    if not hasattr(renpy.store,'unlocked_clothing_list'):
-        $ unlocked_clothing_list = []
-
-    # Setup for 1.5
-    # Since we probably have to change the outfits, all purchased outfits will get an .unlocked = True variable,
-    # And those outfits will get added to the "unlocked_clothing_list",
-    # with which we can unlock all outfits again in the next update if needed, so people don't have to buy and wait for outfits againself.
-
-    python:
-
-        #Outfits
-        for i in hermione_outfits_list:
-            if i.unlocked and i not in unlocked_clothing_list:
-                unlocked_clothing_list.append(i)
-        for i in astoria_outfits_list:
-            if i.unlocked and i not in unlocked_clothing_list:
-                unlocked_clothing_list.append(i)
-
-        #Sets
-        for i in hermione_clothing_sets_list:
-            if i.unlocked and i not in unlocked_clothing_list:
-                unlocked_clothing_list.append(i)
-        for i in astoria_clothing_sets_list:
-            if i.unlocked and i not in unlocked_clothing_list:
-                unlocked_clothing_list.append(i)
-
-        #Items
-
-
     #Todo
     #Remove everything below. Needs to stay for a crash fix, for now. (1.4)
     if not hasattr(renpy.store,'hg_clothing_saves'):

@@ -864,11 +864,6 @@ label hg_pf_DanceForMe:
                             call sna_main("!!?","snape_08")
                             call sna_main("Albus, please, not in front of the girl!","snape_17")
                             m "Alright, alright..."
-
-                            #if not snapes_plan_for_ginny:
-                            #    call nar(>Your curiosity about Ginny grows!)
-                            #$ snapes_plan_for_ginny = True
-
                             call her_main("{size=-5}(Ginny...){/size}","open","down")
                         "\"How would you grade Hermione's butt?\"":
                             call sna_main("miss Granger's buttocks?","snape_05")
@@ -1938,31 +1933,10 @@ label hg_pf_DanceForMe:
     m "Yes, [hermione_name]. [current_payout] to the \"Gryffindor\" house."
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="base",ypos="base")
-    hide screen hermione_main
-    hide screen bld1
-    with d3
-
-    $ sperm_on_tits = False
-    $ uni_sperm = False
-
-    pause.2
-    call her_walk("desk","leave",3)
-
-    call reset_hermione_main
 
     if whoring < 12: #Adds points till 12.
         $ whoring +=1
 
     $ hg_pf_DanceForMe_OBJ.points += 1
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
-
-    if daytime:
-        call play_music("day_theme")
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        call play_music("night_theme")
-        $ hermione_sleeping = True
-        jump night_main_menu
+    jump end_hg_pf

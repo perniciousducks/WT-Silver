@@ -2,7 +2,7 @@
 
 ### HERMIONE GRANGER ###
 
-label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None, trans="", xpos=hermione_xpos, ypos=hermione_ypos):
+label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None, trans=None, xpos=hermione_xpos, ypos=hermione_ypos):
     hide screen hermione_head
     hide screen hermione_main
 
@@ -58,36 +58,7 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     show screen bld1 #Should be active anyways.
     show screen hermione_main
 
-    if trans != "":         #d3 is default.
-        if trans == "d1":
-            with d1
-        elif trans == "d3": #Default anyways.
-            with d3
-        elif trans == "d5":
-            with d5
-        elif trans == "d7":
-            with d7
-        elif trans == "d9":
-            with d9
-
-        elif trans == "fade":
-            with fade
-        elif trans == "hpunch":
-            with hpunch
-        elif trans == "vpunch":
-            with vpunch
-
-
-        #Skip Transitions
-        elif trans == "none" or trans == "skip":
-            pass
-        else: #for typos and preventing crashes...
-            with d3
-
-    else: #Default Transition
-        if not wardrobe_active:
-            with d3
-
+    call transition(trans)
 
     #Text
     if text != "":
@@ -290,6 +261,14 @@ label h_action(action =  "", update=""):
             #Covering
             if action == "covering":
                 $ hermione_action = "covering"
+                $ hermione_use_action = True
+
+            if action == "covering_uniform":
+                $ hermione_action = "covering_uniform"
+                $ hermione_use_action = True
+
+            if action == "covering_cloak":
+                $ hermione_action = "covering_cloak"
                 $ hermione_use_action = True
 
             #Fingering

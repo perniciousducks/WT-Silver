@@ -26,9 +26,10 @@ label summon_susan:
 
     label susan_requests:
 
-    $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
-
+    $ susan_busy = True
     $ wardrobe_active = False
+
+    $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
 
     menu:
         "-Talk-":
@@ -46,11 +47,11 @@ label summon_susan:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = 1 #True
+            $ wardrobe_active = True
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
         "{color=#858585}-Wardrobe-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
-            call nar(">Susan isn't willing to let you change her appearance!") 
+            call nar(">Susan isn't willing to let you change her appearance!")
             jump susan_requests
         "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
@@ -62,18 +63,12 @@ label summon_susan:
             else:
                 call sus_main("Uhm... good night then, [sus_genie_name].","base","base","base","down")
 
-            hide screen susan_main
-            #hide screen susan_blink #Susan chibi.
-
-            $ menu_x = 0.5 #Menu position is back to default. (Center).
-            $ menu_y = 0.5 #Menu position is back to default. (Center).
+            call play_sound("door")
 
             $ susan_busy = True
 
-            if daytime:
-                jump day_main_menu
-            else:
-                jump night_main_menu
+            jump main_room
+
 
 
 label susan_talk:

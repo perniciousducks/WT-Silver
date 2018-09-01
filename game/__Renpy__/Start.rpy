@@ -32,6 +32,11 @@ label start_ht:
     $ p_level_06_active = False #When turns TRUE public favors of level 06 become available.
     $ p_level_07_active = False #When turns TRUE public favors of level 07 become available.
 
+    $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. "Lazy Akabur bug". Turns FALSE after that.
+    $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
+    $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
+    $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
+    $ ignore_warning = False
 
 
 
@@ -355,16 +360,11 @@ label start_ht:
                     $ wine = wine + persistent.wine # WINE.
                     ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
 
-                if persistent.ss_ not None:
+                if persistent.ss_ is not None:
                     $ sscroll_ = persistent.ss_
                     $ tmp = len(persistent.ss_)
                     ">[tmp] scrolls have been added to your possessions."
 
-
-            ### THE SKIRT ###
-                if persistent.haveskirt: # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
-                    $ gave_miniskirt = True #Turns True when Hermione has the miniskirt.
-                    ">School miniskirt has been added to Hermione's wardrobe."
 
             "\"No need.\"":
                 pass

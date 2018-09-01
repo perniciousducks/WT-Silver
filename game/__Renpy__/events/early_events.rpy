@@ -165,9 +165,6 @@ label event_00:
 
     $ days_without_an_event = 0
 
-    $ mQuest_A.counter = 1 #Main Quest Milestone!
-    call update_quests
-
     jump day_start
 
 
@@ -182,8 +179,6 @@ label event_02:
     m "What? An owl?"
     hide screen bld1
     with d3
-
-    $ mQuest_A.counter = 2 #Main Quest Milestone!
 
     return
 
@@ -292,9 +287,8 @@ label event_03:
     with d3
     pause.5
 
-    $ mQuest_A.counter = 3 #Main Quest Milestone!
-
     jump day_start
+
 
 #NOT IN USE
 label event_04:
@@ -529,10 +523,8 @@ label event_05:
     hide screen genie
     hide screen snape_defends
 
-    $ mQuest_A.counter = 5 #Main Quest Milestone!
-    call update_quests
-
     jump duel
+
 
 
 ### EVENT 6 ###
@@ -699,11 +691,11 @@ label event_06:
 
     sna_[7] "(A genie? Now that's new...)"
 
-    $ mQuest_A.counter = 6 #Main Quest Milestone!
-    call update_quests
     hide screen duel
 
     jump day_start
+
+
 
 #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
 label event_07:
@@ -836,13 +828,11 @@ label event_07:
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
 
-    $ mQuest_A.counter = 7 #Main Quest Milestone! #END OF MAIN QUEST A.
-    call update_quests
-    #">You've unlocked the ability to summon Severus Snape to your office."
-
-    $ hanging_with_snape = True
+    call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","images/store/snape_unlock_01.png")
+    $ snape_unlocked = True
 
     jump day_start
+
 
 
 ### EVENT 8 ###
@@ -1130,14 +1120,13 @@ label event_08:
     hide screen genie_jerking_sperm_02
     with d3
 
-    $ mQuest_B.counter = 1 #Main Quest Milestone!
-
     $ snape_against_hermione = True #Turns True after event_08. Activates special date with Snape # 01.
     $ event08_happened = True
 
     call play_music("brittle_rille")
 
     return
+
 
 
 ### EVENT 9 ###
@@ -1254,15 +1243,13 @@ label event_09:
 
     m "...................."
 
-
-    $ mQuest_B.counter = 2 #Main Quest Milestone!
-
     $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
     $ snape_against_hermione_02 = True #Turns True after event_09. Activates second event when hanging out with Snape.
 
     call play_music("brittle_rille")
 
     return
+
 
 
 ### EVENT 11 ###
@@ -1354,9 +1341,6 @@ label event_11:
     call her_walk("mid","leave",2)
 
     $ hermione_wear_robe = False
-    $ only_upper = False #Otherwise skirt shows up under the robe.
-
-    $ mQuest_B.counter = 3 #Main Quest Milestone!
 
     $ event11_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
@@ -1364,6 +1348,7 @@ label event_11:
     call play_music("night_theme")
 
     return
+
 
 
 ### EVENT 12 ###
@@ -1425,12 +1410,11 @@ label event_12:
 
     call her_walk("desk","leave",3)
 
-    $ mQuest_B.counter = 4 #Main Quest Milestone!
-
     $ event12_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
 
     jump day_start
+
 
 
 ### EVENT 13 ###
@@ -1475,12 +1459,11 @@ label event_13:
     m "She will be alright..."
     m "I think..."
 
-    $ mQuest_B.counter = 5 #Main Quest Milestone!
-
     $ event13_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
 
     jump day_start
+
 
 
 ### EVENT 14 ###
@@ -1568,11 +1551,10 @@ label event_14:
 
     stop music fadeout 1.0
 
-    $ mQuest_B.counter = 6 #Main Quest Milestone!
-    #>You unlocked the ability to summon Hermione Granger to your office."
+    call give_reward(">You've unlocked the ability to summon Hermione to your office.","images/store/hermione_unlock_01.png")
 
-    $ summoning_hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
-    $ hermione_takes_classes = True
+    $ hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
+    $ hermione_busy = True
     $ tutoring_hermione_unlocked = True
 
     $ event14_happened = True #Allows next event to start.
@@ -1581,6 +1563,7 @@ label event_14:
     call play_music("brittle_rille")
 
     return
+
 
 
 ### EVENT 15 ###
@@ -1908,16 +1891,16 @@ label event_15:
 
     stop music fadeout 1.0
 
-    $ mQuest_B.counter = 8 #Main Quest Milestone! END OF QUEST B.
-    #">You unlocked the ability to buy sexual favours from Hermione."
+    call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","images/store/hermione_unlock_02.png")
 
-    $ buying_favors_from_hermione_unlocked = True
+    $ hermione_favors = True
 
     $ event15_happened = True #Turns TRUE after event_15
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
-    $ hermione_sleeping = True
+    $ hermione_busy = True
 
     return
+
 
 
 init python:

@@ -611,7 +611,7 @@ label update_her_action:
 
 
     #Naked Actions
-    if hermione_use_action and hermione_action == "hands_behind" or hermione_action == "covering" or hermione_action == "fingering" or hermione_action == "covering_top" or hermione_action == "pinch" or hermione_action == "hands_cuffed" or hermione_action == "milk_breasts":
+    if hermione_use_action and hermione_action in ["hands_behind","covering","covering_cloak","fingering","covering_top","pinch","hands_cuffed","milk_breasts"]:
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
@@ -630,6 +630,16 @@ label update_her_action:
             $ h_left_arm         = "covering"
             #$ hermione_action_a  = "characters/hermione/body/arms/both/covering.png"
             #$ hermione_breasts   = "characters/hermione/body/breasts/breasts_nipfix.png"
+
+        if hermione_action == "covering_uniform":
+
+            $ h_right_arm        = "00_blank"
+            $ h_left_arm         = "covering_uniform"
+
+        if hermione_action == "covering_cloak":
+
+            $ h_right_arm        = "00_blank"
+            $ h_left_arm         = "covering_cloak"
 
         if hermione_action == "fingering":
 

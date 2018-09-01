@@ -286,6 +286,8 @@ label a_bad_time_to_disrobe_part_2:
     call play_standart_theme
     show screen main_room
     show screen genie
+    call h_unequip_temp_outfit()
+    call h_action("covering_uniform")
     hide screen day_to_night
     with d3
     
@@ -370,7 +372,7 @@ label a_bad_time_to_disrobe_part_2:
     $ daytime = temp_time
     call play_standart_theme
     call reset_hermione_main
-    call h_unequip_temp_outfit
+    call h_action("none")
     jump enter_room_of_req
  
 label whose_points:

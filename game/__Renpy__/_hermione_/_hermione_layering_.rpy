@@ -611,7 +611,7 @@ label update_her_action:
 
 
     #Naked Actions
-    if hermione_use_action and hermione_action in ["hands_behind","covering","covering_cloak","fingering","covering_top","pinch","hands_cuffed","milk_breasts"]:
+    if hermione_use_action and hermione_action in ["hands_behind","covering","covering_uniform","covering_cloak","fingering","covering_top","pinch","hands_cuffed","milk_breasts"]:
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False

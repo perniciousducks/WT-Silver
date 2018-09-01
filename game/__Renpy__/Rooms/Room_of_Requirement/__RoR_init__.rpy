@@ -1,6 +1,9 @@
 label __init_variables:
     #Check if you have visit room of req before
     
+    if not hasattr(renpy.store,'temp_outfit_GLBL'): #important!
+        $ temp_outfit_GLBL = None
+    
     if not hasattr(renpy.store,'first_visit_req'): #important!
         $ first_visit_req = False
         
@@ -128,7 +131,7 @@ init python:
                 if c == "luna":
                     unlocked = unlocked and luna_unlocked
                 elif c == "hermione":
-                    unlocked = unlocked and summoning_hermione_unlocked
+                    unlocked = unlocked and hermione_unlocked
                 elif c == "astoria":
                     unlocked = unlocked and astoria_unlocked
                 elif c == "susan":

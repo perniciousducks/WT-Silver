@@ -336,6 +336,7 @@ label h_outfit_OBJ(outfit):
         call h_update_hair
 
     return
+    
 label h_equip_temp_outfit(outfit):
     if temp_outfit_GLBL == None:
         $ temp_outfit_GLBL = hermoine_outfit_GLBL

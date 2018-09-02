@@ -16,11 +16,11 @@ label luna_reverted_event_1: #Masturbate for genie again.
     call play_sound("door") #Sound of a door opening.
     $ luna_chibi("stand")
     ">Luna stands in front of your desk."
-    call luna_main("Hello again Sir...", "closed_happy", "default", "default", "default") 
+    call luna_main("Hello again [l_genie_name]...", "closed_happy", "default", "default", "default") 
     m "Miss Lovegood. How have you been?"
     call luna_main("Alright... but the wrackspurts seem to have come back..", "default", "right", "angry", "angry") 
     m "Again? So soon?"
-    call luna_main("I'm afraid so sir...", "default", "default", "sad", "upset") 
+    call luna_main("I'm afraid so [l_genie_name]...", "default", "default", "sad", "upset") 
     call luna_main("Everytime I think about what we did in here...", "wide", "default", "sad", "upset") 
     call luna_main("It just makes them feel so much... stronger...", "angry", "right", "sad", "upset") 
     m "Yes... They must be afraid of my powerful techniques..."
@@ -29,7 +29,7 @@ label luna_reverted_event_1: #Masturbate for genie again.
     m "Why else would they attack you when you think about curing them?"
     call luna_main("You're right...", "angry", "default", "sad", "upset") 
     m "So... Are you ready to try and dispel them again?"
-    call luna_main("Only if it's not too much trouble sir... I wouldn't want to disturb you...", "angry", "right", "sad", "angry") 
+    call luna_main("Only if it's not too much trouble [l_genie_name]... I wouldn't want to disturb you...", "angry", "right", "sad", "angry") 
     m "Please, as headmaster it's my duty to make sure my students are safe..."
     call luna_main("You're right...", "seductive", "down", "sad", "upset") 
     call luna_main("I just feel guilty coming up her so often...", "seductive", "right", "sad", "upset") 
@@ -46,7 +46,7 @@ label luna_reverted_event_1: #Masturbate for genie again.
     m "Would you like to start Miss lovegood?"
     $ luna_l_arm = 4
     ">Luna quickly puts her hand down her skirt, barely waiting for you to finish your sentence..."
-    call luna_main("ah... thank you sir...", "seductive", "down", "sad", "upset") 
+    call luna_main("ah... thank you [l_genie_name]...", "seductive", "down", "sad", "upset") 
     m "You seem relieved..."
     call luna_main("ah... of course... I've been waiting to come here since yesterday...", "wide", "default", "sad", "default") 
     call luna_main("I think Those slimy wrackspurts have infested the commonroom...", "seductive", "down", "sad", "default") 
@@ -106,7 +106,7 @@ label luna_reverted_event_1: #Masturbate for genie again.
     call luna_main("ah...", "closed_happy", "right", "sad", "grin") 
     call luna_main("{image=textheart}", "closed_happy", "right", "sad", "default") 
     call luna_main("...", "closed_happy", "right", "sad", "angry") 
-    call luna_main("ah... sir...", "seductive", "default", "sad", "upset") 
+    call luna_main("ah... [l_genie_name]...", "seductive", "default", "sad", "upset") 
     call luna_main("I think...", "seductive", "down", "sad", "grin") 
     call luna_main("ah...", "seductive", "right", "sad", "grin") 
     call luna_main("I think I've almost got them...", "closed_happy", "right", "sad", "grin") 
@@ -123,19 +123,19 @@ label luna_reverted_event_1: #Masturbate for genie again.
     call luna_main("{size=+8}ah... oh... frickity!!!{/size}", "seductive", "left_stare", "sad", "grin") 
     call luna_main("!!!", "wide", "default", "sad", "grin") #orgasm face
     ">THere's a blur of movement under Luna's skirt."
-    call luna_main("ah! thank you sir!", "wide", "left_stare", "sad", "default") 
+    call luna_main("ah! thank you [l_genie_name]!", "wide", "left_stare", "sad", "default") 
     call luna_main("!!!", "wide", "default", "sad", "default") #orgasm face
     m "Is everything OK?"
-    call luna_main("Ah... yes{image=textheart} thank you{image=textheart} sir...{image=textheart}", "seductive", "right", "sad", "upset") 
+    call luna_main("Ah... yes{image=textheart} thank you{image=textheart} [l_genie_name]...{image=textheart}", "seductive", "right", "sad", "upset") 
     m "so Have the wickspots left you alone now?"
-    call luna_main("I think so, sir...", "seductive", "default", "sad", "upset") 
+    call luna_main("I think so, [l_genie_name]...", "seductive", "default", "sad", "upset") 
     $ luna_l_arm = 1
     ">Luna slowly pulls her sopping hand out from under her skirt."
     call luna_main("at least That nasty itch seems to have gone away.", "default", "default", "sad", "default") 
     m "Fantastic! will that be all then, Miss Lovegood."
     call luna_main("well I don't suppose I could go-", "seductive", "down", "sad", "upset") 
     call luna_main("No... I better get to bed...", "seductive", "right", "sad", "angry") 
-    call luna_main("Thanks again sir!", "seductive", "down", "sad", "upset") 
+    call luna_main("Thanks again [l_genie_name]!", "seductive", "down", "sad", "upset") 
     ">Luna gives you one last smile before leaving your office."
     m "What an odd girl."
     jump luna_away
@@ -145,17 +145,17 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     $ luna_corruption = 2
     $ days_to_luna = 3
     "*knock* *knock* *knock*"
-    lun "Can I please come in sir..."
+    lun "Can I please come in [l_genie_name]..."
     ">There's a desperate twang to Luna's voice."
     menu:
         "-Let her in-":
             m "Of course."
         "-mess with her-":
             m "Who is it?"
-            lun "Luna Lovegood sir..."
+            lun "Luna Lovegood [l_genie_name]..."
             lun "May I please come in?"
             m "Luna who?"
-            lun "Lovegood sir..."
+            lun "Lovegood [l_genie_name]..."
             m "Oh miss lovegood! Come in..."
     ">Luna quickly enters your office, her face covered in a deep blush."
     $ luna_chibi("stand")
@@ -165,7 +165,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     call luna_main("I-I... need...", "seductive", "down", "sad", "talk") 
     $ luna_l_arm = 4
     ">Luna quickly puts her hand down her skirt, not even waiting on your reply..."
-    call luna_main("ah... I'm sorry sir... I just... needed... this...{image=textheart}", "seductive", "up", "sad", "default") 
+    call luna_main("ah... I'm sorry [l_genie_name]... I just... needed... this...{image=textheart}", "seductive", "up", "sad", "default") 
     m "You seem relieved..."
     call luna_main("ah... {image=textheart} yes...", "wide", "left_stare", "sad", "default") 
     call luna_main("these visits are starting to become all I can think about...", "seductive", "down", "sad", "default") 
@@ -181,7 +181,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     call luna_main("I think... it'd probably feel...", "seductive", "default", "sad", "talk") 
     call luna_main("nice...{image=textheart}{image=textheart}{image=textheart}", "seductive", "right", "sad", "default") 
     m "Speaking of feeling nice..."
-    call luna_main("Ah... I think I'm... cumming sir...", "seductive", "down", "sad", "open_tongue") 
+    call luna_main("Ah... I think I'm... cumming [l_genie_name]...", "seductive", "down", "sad", "open_tongue") 
     call luna_main("ah...{image=textheart}", "seductive", "left_stare", "sad", "default") 
     call luna_main("mmmmm{image=textheart}", "seductive", "default", "sad", "default") 
     call luna_main("Ah... I'm cumming...{image=textheart}{image=textheart}", "wide", "up", "sad", "default") 
@@ -200,12 +200,12 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     call luna_main("What? They got you too?", "angry", "left_stare", "sad", "default") 
     m "I was afraid this might happen with you dispelling all of your personal wrackspurts into this room..."
     m "This is why I didn't want you doing this outside the office..."
-    call luna_main("It could have been a disaster sir...", "angry", "left_stare", "sad", "default") 
+    call luna_main("It could have been a disaster [l_genie_name]...", "angry", "left_stare", "sad", "default") 
     call luna_main("But will you be alright?", "wink", "default", "raised", "talk") 
     m "Oh don't worry about me, I'm a {i}master{/i} when it comes to this..."
     call luna_main("Of course... These are your techniques after all...", "closed_happy", "default", "sad", "default") 
     call luna_main("Would it...", "seductive", "right", "sad", "default") 
-    call luna_main("Would it be OK if I watched sir?", "tired", "default", "sad", "default") 
+    call luna_main("Would it be OK if I watched [l_genie_name]?", "tired", "default", "sad", "default") 
     call luna_main("Just as a way to improve my own technique!", "wink", "left_stare", "default", "default")
     m "Mmmm, I see nothing wrong with it..."
     m "Here, I'll come give you a {b}nice{/b} view..."
@@ -249,7 +249,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     lun "Taking it all in..."
     ">Luna stares intently at your cock for a few seconds before suddenly snapping from her reverie."
     $ ccg1 = "7"
-    lun "OK sir, I'll take it all in!"
+    lun "OK [l_genie_name], I'll take it all in!"
     ">Before you even have time to react, Luna swoops her head in towards your cock, placing her nostrils at the head..."
     $ ccg1 = "8"
     ">Luna takes a huge breath inwards, closing her eyes as she does..."
@@ -325,20 +325,20 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     lun "It's soaking in through my skin... I can't..."
     lun "The wrackspurts... I think this is..."
     $ ccg1 = "32"
-    lun "Ah... I think I should... probably leave now sir..."
+    lun "Ah... I think I should... probably leave now [l_genie_name]..."
     m "You're not going to clean yourself up first?"
     $ ccg1 = "33"
     lun "Oh..."
-    lun "If it's ok with you sir... I might clean myself up back in my room..."
+    lun "If it's ok with you [l_genie_name]... I might clean myself up back in my room..."
     m "Whatever suits you miss lovegood..."
     $ ccg1 = "30"
-    lun "thank you sir... for... everything..."
+    lun "thank you [l_genie_name]... for... everything..."
     m "Will that be all miss lovegood?"
     lun "Oh, um yes..."
     $ ccg1 = "32"
     lun "I'll see you the next time those wrackspurts come up again..."
     m "See that you do."
-    lun "yes sir..."
+    lun "yes [l_genie_name]..."
     show screen blkfade
     with d3
     hide screen ccg
@@ -361,7 +361,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     ">*knock* *knock* *knock*"
     ">Before waiting for a response, your door swings open to reveal Luna Lovegood."
     $ luna_chibi("stand")
-    call luna_main("Hello sir! Lovely day today isn't it?", "closed_happy", "default", "default", "default") 
+    call luna_main("Hello [l_genie_name]! Lovely day today isn't it?", "closed_happy", "default", "default", "default") 
     m "It is now..."
     call luna_main("Awww... that's so nice!", "wink", "default", "sad", "default") 
     m "What brings you up to my office today then Miss Lovegood?"
@@ -369,7 +369,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     call luna_main("Not exactly...", "seductive", "down", "sad", "talk") 
     m "Oh... Something else I can help you with then?"
     call luna_main("Well... I was just walking past when I remembered how those nasty wrackspurts affected you the other day...", "default", "right", "sad", "open") 
-    call luna_main("They aren't by any chance bothering you at the moment are they sir?", "wink", "left_stare", "sad", "default") 
+    call luna_main("They aren't by any chance bothering you at the moment are they [l_genie_name]?", "wink", "left_stare", "sad", "default") 
     m "Now that you mention it, they have been giving me a little trouble..."
     m "But I'm much too tired to relieve them myself... I'm such an old man you see..."
     call luna_main("Really? But you look...", "wide", "default", "sad", "talk") 
@@ -378,7 +378,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     call luna_main("Is there any way I could help?", "wink", "default", "sad", "default") 
     m "Hmmmm... There is a special technique that I've been developing..."
     m "I'm not sure your ready for it though..."
-    call luna_main("Please sir! I know I can handle it!", "wide", "default", "sad", "default") 
+    call luna_main("Please [l_genie_name]! I know I can handle it!", "wide", "default", "sad", "default") 
     m "Well if you insist..."
     m "Just make sure you don't let anyone else know about this..."
     call luna_main("I wouldn't dare... A cure for wrackspurts would be the talk of the magical world...", "wide", "default", "angry", "default") 
@@ -397,7 +397,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     m "You expect me to just sit here while you suck them out?"
     call luna_main("Mhmm!", "closed_happy", "default", "default", "default") 
     m "And you want that?"
-    call luna_main("Only if it's not too much trouble sir, I know you must be busy...", "wink", "right", "sad", "upset") 
+    call luna_main("Only if it's not too much trouble [l_genie_name], I know you must be busy...", "wink", "right", "sad", "upset") 
     m "No trouble at all..."
     call luna_main("Hooray!", "wide", "empty", "default", "default") 
     call luna_main("Now how's this secret technique work?", "wink", "default", "raised", "default") 
@@ -412,7 +412,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     call luna_main("...", "seductive", "down", "sad", "default") 
     m "..."
     m "If you want to crawl under the desk feel free..."
-    call luna_main("Thank you sir...", "closed_happy", "default", "default", "default") 
+    call luna_main("Thank you [l_genie_name]...", "closed_happy", "default", "default", "default") 
     show screen blkfade
     with d3
     hide screen luna
@@ -432,7 +432,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     m "Wait..."
     m "Magic?"
     $ ccg1 = "3"
-    lun "Can't you feel it sir?"
+    lun "Can't you feel it [l_genie_name]?"
     $ ccg1 = "4"
     lun "It's so heavy in the air... It's {b}all{/b} over the wood..."
     $ ccg1 = "5"
@@ -486,12 +486,12 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
             m "Now, seeing as how I'm a little tired..."
             m "Why don't you open my robe and pull out the 'affected area'..."
             $ ccg1 = "9"
-            lun "Of course sir..."
+            lun "Of course [l_genie_name]..."
             ">Luna reverently opens your robe and softly withdraws your hard cock."
             $ ccg1 = "12"
             lun "What do you..."
             $ ccg1 = "13"
-            lun "What now sir?"
+            lun "What now [l_genie_name]?"
             m "Put the tip in your mouth and Imagine it's a tasty lollipop..."
             m "Just don't bite it."
             $ ccg1 = "14"
@@ -511,7 +511,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     lun "Hi hm? (I am?)"
     g4 "yes..."
     $ ccg1 = "20"
-    lun "Hnnk hoo hrr! (Thank you sir!)"
+    lun "Hnnk hoo hrr! (Thank you [l_genie_name]!)"
     ">In response to your misguided praise, Luna's tongue seems to increase in speed."
     g4 "Argh..."
     $ ccg1 = "17"
@@ -523,7 +523,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     ">Luna takes your cock out of her mouth."
     g4 "Ah...."
     $ ccg1 = "12"
-    lun "Was I doing a bad job sir?"
+    lun "Was I doing a bad job [l_genie_name]?"
     m "You were just going a little-"
     $ ccg1 = "22"
     lun "I knew I was hurting you!"
@@ -540,13 +540,13 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     $ ccg1 = "26"
     lun "Those tricky little..."
     $ ccg1 = "13"
-    lun "Don't worry sir, I'll have them out in no time!"
+    lun "Don't worry [l_genie_name], I'll have them out in no time!"
     ">With that, Luna begins her tongue lashing of your cock anew."
     $ ccg1 = "21"
     g4 "A-Ah..."
     g4 "G-good work miss lovegood..."
     $ ccg1 = "27"
-    lun "Hnnk hoo hrr! (Thank you sir!)"
+    lun "Hnnk hoo hrr! (Thank you [l_genie_name]!)"
     show screen blkfade
     with d3
     $ ccg1 = "28"
@@ -585,22 +585,22 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     hide screen ccg
     hide screen blkfade
     with d3
-    call luna_main("Those nasty wrackspurts sure were giving you trouble weren't they sir?", "seductive", "default", "sad", "default") 
+    call luna_main("Those nasty wrackspurts sure were giving you trouble weren't they [l_genie_name]?", "seductive", "default", "sad", "default") 
     m "yeah... sure..."
     call luna_main("Well if they bother you again just let me know!", "closed_happy", "default", "default", "default") 
     call luna_main("Getting all of them out was a bit of a struggle...", "doubtful", "right", "sad", "talk") 
     call luna_main("But I think we did it!", "closed_happy", "default", "default", "default") 
     m "You sure did..."
     m "Now if you don't mind Miss granger..."
-    call luna_main("Lovegood sir...", "wink", "default", "sad", "pout") 
+    call luna_main("Lovegood [l_genie_name]...", "wink", "default", "sad", "pout") 
     m "Right, right... miss love...good..."
     m "This run in with those... things... has left me rather exhausted..."
     call luna_main("Oh...", "wide", "default", "default", "talk") 
-    call luna_main("Of course sir! I best be off to divination class anyway...", "default", "right", "sad", "default") 
+    call luna_main("Of course [l_genie_name]! I best be off to divination class anyway...", "default", "right", "sad", "default") 
     call luna_main("Just make sure you let me know if you need any help with those wrackspurts again!", "seductive", "default", "sad", "default") 
     call luna_main("(I can't believe they taste so good...)", "seductive", "empty", "sad", "default") 
     m "You'll be the first to know."
-    call luna_main("Thanks sir! Have a nice day!", "closed_happy", "default", "default", "default") 
+    call luna_main("Thanks [l_genie_name]! Have a nice day!", "closed_happy", "default", "default", "default") 
     ">With that, Luna turns and merrily skips out of your office."
     hide screen luna_chibi
     hide screen luna
@@ -614,7 +614,39 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
 
 
 
-label luna_reverted_event_4: #Luna gentle BJ for anout 9 hours and 14 orgasms from Genie (Soggy is working on an underdesk background for the Luna BJ CG)
+label luna_reverted_event_4: #Luna gentle BJ for anout 9 hours and 14 orgasms from Genie
+    $ luna_corruption = 4
+    $ days_to_luna = 6
+    ">*knock* *knock* *knock* *knock* *knock* {b}*knock* *knock*{/b}"
+    ">Your door swings wide as the ever cheerful Luna Lovegood strolls in."
+    $ luna_chibi("stand")
+    call luna_main("Hello [l_genie_name]!", "closed_happy", "default", "default", "default") 
+    m "Miss Lovegood, to what do I owe the {i}pleasure{/i}?"
+    call luna_main("Well...", "wink", "default", "sad", "default")
+    call luna_main("today is a sunday...", "wink", "default", "sad", "default")
+    m "It is?"
+    call luna_main("Of course! Can't you tell how happy the sun is?", "wink", "default", "sad", "default")
+    m "..."
+    call luna_main("anyway... seeing as how it's Mr Sun's happy day...", "wink", "default", "sad", "default")
+    call luna_main("I don't have any classes!", "wink", "default", "sad", "default")
+    call luna_main("So I was wondering... what are you up to today [l_genie_name]?", "wink", "default", "sad", "default")
+    m "Probably just working on some reports for the ministry..."
+    m "Why?"
+    call luna_main("Well if you wouldn't mind...", "wink", "default", "sad", "default")
+    call luna_main("Maybe I could get a few more of my nasty wrackspurts out for you?", "wink", "default", "sad", "default")
+    call luna_main("I just feel so bad knowing that I gave them to you...", "wink", "default", "sad", "default")
+    m "I wouldn't blame yourself-"
+    call luna_main("But I do!", "wink", "default", "sad", "default")
+    call luna_main("The idea of all those nasty things being trapped in there...", "wink", "default", "sad", "default")
+    call luna_main("Causing so much discomfort...", "wink", "default", "sad", "default")
+    call luna_main("It's all I've been able to think about!", "wink", "default", "sad", "default")
+    m "I suppose if it's bothering you so much I can let you get a few out."
+    call luna_main("oh thank you, thank you, thank you!", "default", "default", "sad", "default")
+    call luna_main("You don't know how much better I'll feel once I get them {b}all{/b} out!", "default", "default", "sad", "default")
+    m "I don't think yo-"
+    show screen blkfade 
+    with d3
+    
 
 label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna masturbating the whole time
 

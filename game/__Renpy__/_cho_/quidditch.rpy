@@ -376,7 +376,11 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
 
     jump day_main_menu
 
+label cho_quidd_2_1: #Comes back after playing without a robe on
 
+label cho_quidd_2_2: #Comes back after playing without a jumper on
+
+label cho_quidd_3_1: 
 
 
 

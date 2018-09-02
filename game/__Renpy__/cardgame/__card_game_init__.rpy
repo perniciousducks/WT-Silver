@@ -12,42 +12,50 @@ label __init_variables:
         enemyboarder = enemyTint("images/cardgame/sides.png")
         
         
-        
-        hermione_cheer1 = card()
-        hermione_cheer2 = card()
-        hermione_cheer3 = card()
-        hermione_cheer4 = card()
-        hermione_cheer5 = card()
-        hermione_cheer_en1 = card(playercard=False)
-        hermione_cheer_en2 = card(playercard=False)
-        hermione_cheer_en3 = card(playercard=False)
-        hermione_cheer_en4 = card(playercard=False)
-        hermione_cheer_en5 = card(playercard=False)
+        if not hasattr(renpy.store,'hermione_cheer1'):
+            hermione_cheer1 = card_new(imagepath="images/cardgame/cheerl.png")
+            hermione_cheer2 = card_new(imagepath="images/cardgame/cheerl.png")
+            hermione_cheer3 = card_new(imagepath="images/cardgame/cheerl.png")
+            hermione_cheer4 = card_new(imagepath="images/cardgame/cheerl.png")
+            hermione_cheer5 = card_new(imagepath="images/cardgame/cheerl.png")
+            hermione_cheer_en1 = card_new(playercard=False)
+            hermione_cheer_en2 = card_new(playercard=False)
+            hermione_cheer_en3 = card_new(playercard=False)
+            hermione_cheer_en4 = card_new(playercard=False)
+            hermione_cheer_en5 = card_new(playercard=False)
         
         playerdeck = [hermione_cheer1, hermione_cheer2,hermione_cheer3,hermione_cheer4,hermione_cheer5]
         enemydeck = [hermione_cheer_en1 ,hermione_cheer_en2 ,hermione_cheer_en3,hermione_cheer_en4,hermione_cheer_en5]
         
         
 init python:
-    
-    
+   
     def playerTint(image):
         return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(0.5, 0.5, 1.0))
     def enemyTint(image):
         return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1, 0.5, 0.5))
-        
-    def get_witdh(image):
+      
+    def get_image_size(image):
         myDisplayable = im.Image(image)
         myRender = renpy.render(myDisplayable, 800, 600, 0, 0)
         sizes = myRender.get_size()
         x = sizes[0]
         y = sizes[1]
         
-        return x
+        return (x,y)
         
+    def get_witdh(image):   
+        return get_image_size(image)[0]
+        
+    def get_height(image):
+        return get_image_size(image)[1]    
+    
     def reset_table_cards():
-        table_cards = [[None for x in range(0,2)] for y in range(0,2)] 
+        for y in range(0,3):
+            for x in range(0,3):
+                table_cards[x][y] = None
         return
+        
     def check_winner():
         playerpoints = 0
         for y in range(0,3):
@@ -69,20 +77,11 @@ init python:
         if not new_card_x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue >= table_cards[x+1][y].leftvalue:
             table_cards[x+1][y+1].playercard = table_cards[x][y].playercard
             
-    def get_height(image):
-        myDisplayable = im.Image(image)
-        myRender = renpy.render(myDisplayable, 800, 600, 0, 0)
-        sizes = myRender.get_size()
-        x = sizes[0]
-        y = sizes[1]
-        
-        return y
     
-    class card(object):
+    
+    class card_new(object):
         playercard = True
         imagepath = "images/cardgame/cheerl.png"
-        cardimage = None
-        cardimagehover = None
         
         topvalue = 0
         buttomvalue = 1
@@ -91,9 +90,7 @@ init python:
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-            self.cardimage = im.Scale(self.imagepath, card_width*cardzoom, card_height*cardzoom)
-            self.cardimagehover = im.MatrixColor(self.cardimage,im.matrix.brightness(0.12))
-            
+
         def getAIScore(self, table_of_cards):
             high_score = 0
             position = 0

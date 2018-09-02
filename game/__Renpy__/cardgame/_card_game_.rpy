@@ -2,10 +2,13 @@ label start_cardgame:
     python:
         player_deck = []
         for card in playerdeck:
+            card.playerdeck = True
             player_deck.append(card)
         enemy_deck = []
         for card in enemydeck:
+            card.playerdeck = False
             enemy_deck.append(card)
+        reset_table_cards()
     "Test"
     jump cardgame
     
@@ -19,7 +22,6 @@ label cardgame:
         jump cardgame
     
     elif _return == "Close":
-        $ reset_table_cards()
         $ selectcard = -1
         hide screen card_battle
         jump enter_room_of_req
@@ -74,7 +76,6 @@ label check_winner:
     else:
         nar "you lost"
     
-    $ reset_table_cards()
     $ selectcard = -1
     hide screen card_battle
     jump enter_room_of_req
@@ -113,11 +114,11 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
 
         if interact:
             imagebutton:
-                idle card.cardimage
-                hover card.cardimagehover
+                idle im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom)
+                hover im.MatrixColor(im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom),im.matrix.brightness(0.12))
                 action Return(card)
         else:
-            add card.cardimage
+            add im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom)
         
         if card.playercard:
             add playerboarder zoom cardzoom

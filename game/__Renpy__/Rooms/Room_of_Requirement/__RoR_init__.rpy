@@ -63,13 +63,25 @@ label __init_variables:
             )
     
     
-    
+    if not hasattr(renpy.store,'mr_ev_Test'):
+        $mr_ev_Test = mirror_stories(
+                title = "This is a test of card game",
+                story_description = "Parody of the game show of \"whose points is it anyway?\"",
+                start_label = "start_cardgame",
+                authors = ["TeamSilver"],
+                categories= [],
+                ach_desc = "",
+                content_characters = []
+            )
+            
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
     $ mr_evs_list.append(mr_ev_ABTTD)
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
+    $ mr_evs_list.append(mr_ev_Test)
+    
     
     $currentpage = 0
     

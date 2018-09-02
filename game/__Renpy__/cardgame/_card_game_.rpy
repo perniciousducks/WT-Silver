@@ -2,11 +2,11 @@ label start_cardgame:
     python:
         player_deck = []
         for card in playerdeck:
-            card.playerdeck = True
+            card.playercard = True
             player_deck.append(card)
         enemy_deck = []
         for card in enemydeck:
-            card.playerdeck = False
+            card.playercard = False
             enemy_deck.append(card)
         reset_table_cards()
     "Test"

@@ -94,18 +94,40 @@ init python:
         def getAIScore(self, table_of_cards):
             high_score = 0
             position = 0
+            wallscore = 2
+            getcardscore = 9
             for y in range(0,3):
                 for x in range(0,3):
                     score = 0
                     if table_cards[x][y] == None:
                         if  not y == 0:
-                            score += self.topvalue
+                            if not table_cards[x][y-1] == None and self.topvalue > table_cards[x][y-1].buttomvalue:
+                                score += getcardscore
+                            else:
+                                score += self.topvalue
+                        else:
+                            score += wallscore
                         if not y == 2:
-                            score += self.buttomvalue
+                            if not table_cards[x][y+1] == None and self.buttomvalue > table_cards[x][y+1].topvalue:
+                                score += getcardscore
+                            else:
+                                score += self.buttomvalue
+                        else:
+                            score += wallscore
                         if  not x == 0:
-                            score += self.leftvalue
+                            if not table_cards[x-1][y] == None and self.leftvalue > table_cards[x-1][y].rightvalue:
+                                score += getcardscore
+                            else:
+                                score += self.leftvalue
+                        else:
+                            score += wallscore
                         if not x == 2:
-                            score += self.rightvalue
+                            if not table_cards[x+1][y] == None and self.rightvalue > table_cards[x+1][y].leftvalue:
+                                score += getcardscore
+                            else:
+                                score += self.rightvalue
+                        else:
+                            score += wallscore
                             
                         if score > high_score:
                             high_score = score

@@ -696,10 +696,6 @@ label her_progress_init:
         $ letter_from_hermione_02 = False #Turns true when you get second letter from Hermione.
 
 
-        $ hermione_takes_classes = False #Turns True when Hermione becomes unavailable for summon after performing personal request in the morning.
-        $ hermione_sleeping = False
-
-
         ### HERMIONE FAVOURS ###
 
         #Personal Favor Points
@@ -730,9 +726,14 @@ label her_progress_init:
         ### HERMIONE EVENT VARS ###
 
         $ v_tutoring = 0
-        $ summoning_hermione_unlocked = False #Unlocks after event_14. Adds "Summon Hermione" button to the door.
-        $ tutoring_hermione_unlocked = False #Unlocks after event_14.
-        $ buying_favors_from_hermione_unlocked = False
+
+        $ hermione_unlocked = False
+        $ hermione_favors = False
+        $ hermione_tutoring = False
+
+        $ summoning_hermione_unlocked = False #Removed! Not in use anymore!
+        $ buying_favors_from_hermione_unlocked = False #Removed! Not in use anymore!
+        $ tutoring_hermione_unlocked = False #Removed! Not in use anymore!
 
         $ jerk_off_session = False #Turns True when you choose to jerk off while Hermione talks (Event_08)
 
@@ -782,12 +783,13 @@ label her_progress_init:
         $ autograph = False #Professor Lockhart's tattoo.
 
     if not hasattr(renpy.store,'reward_her_red_lipstick') or reset_persistants:
-        $ reward_her_red_lipstick = False #Outdated! Not in use anymore. See pink_lipstick_OBJ
+        $ reward_her_red_lipstick = False #Removed! Not in use anymore!
 
 
     #Update 1.33
-    if not hasattr(renpy.store,'her_dress_wearable') or reset_persistants:
+    if not hasattr(renpy.store,'hermione_busy') or reset_persistants:
 
+        $ hermione_busy = False
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
 

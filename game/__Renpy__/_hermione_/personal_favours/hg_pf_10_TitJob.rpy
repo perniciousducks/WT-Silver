@@ -18,7 +18,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                 pass
             "\"(Not right now.)\"":
                 jump silver_requests
-    
+
     $ current_payout = 45 #Used when haggling about price of th favor.
 
     call bld
@@ -187,13 +187,6 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         else:
             call her_head("Well, it's just that I promised Ginny that we'd hang out tonight...","upset","wink")
             call her_head("She's pretty upset that I'm spending so much time in here...")
-
-
-        #if not hanging_out_with_ginny:
-        #    m "(Isn't Ginny that hot redhead?!)"
-        #    call nar(>Your curiosity about Ginny grows!)
-        #$ hanging_out_with_ginny = True
-
         m "Do you need the points or not?"
         $ ccg1 = 6
         call her_head("I do, [genie_name]! I'm sorry...","grin","worriedCl")

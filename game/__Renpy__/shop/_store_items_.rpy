@@ -11,7 +11,7 @@ label __init_variables:
     $ spew_badge_OBJ.items = ["badge"]
     $ spew_badge_OBJ.image = "badge_spew.png"
     $ spew_badge_OBJ.cost = 5
-    $ spew_badge_OBJ.description = "> A badge designed to show one's opposition of elf\n  slavery."
+    $ spew_badge_OBJ.description = ">A badge designed to show one's opposition of elf\n slavery."
 
     if not hasattr(renpy.store,'I_love_cum_badge_OBJ'):
         $ I_love_cum_badge_OBJ = store_item_class()
@@ -20,7 +20,7 @@ label __init_variables:
     $ I_love_cum_badge_OBJ.items = ["badge"]
     $ I_love_cum_badge_OBJ.image = "badge_I_love_cum.png"
     $ I_love_cum_badge_OBJ.cost = 15
-    $ I_love_cum_badge_OBJ.description = "> A badge that displays ones affection towards semen."
+    $ I_love_cum_badge_OBJ.description = ">A badge that displays ones affection towards semen."
 
     #Ears
     if not hasattr(renpy.store,'cat_ears_OBJ'):
@@ -30,7 +30,7 @@ label __init_variables:
     $ cat_ears_OBJ.items = ["ears","tail"]
     $ cat_ears_OBJ.image = "ears_cat.png"
     $ cat_ears_OBJ.cost = 40
-    $ cat_ears_OBJ.description = "> A fluffy set of catlike ears that matches one's\n  hair-color!"
+    $ cat_ears_OBJ.description = ">A fluffy set of catlike ears that matches one's\n hair-color!"
 
     if not hasattr(renpy.store,'elf_ears_OBJ'):
         $ elf_ears_OBJ = store_item_class()
@@ -39,7 +39,7 @@ label __init_variables:
     $ elf_ears_OBJ.items = ["ears"]
     $ elf_ears_OBJ.image = "ears_elf.png"
     $ elf_ears_OBJ.cost = 20
-    $ elf_ears_OBJ.description = "> A pointy set of elven ears."
+    $ elf_ears_OBJ.description = ">A pointy set of elven ears."
 
     #Glasses
     if not hasattr(renpy.store,'reading_glasses_OBJ'):
@@ -49,7 +49,7 @@ label __init_variables:
     $ reading_glasses_OBJ.items = ["glasses"]
     $ reading_glasses_OBJ.image = "glasses_reading.png"
     $ reading_glasses_OBJ.cost = 50
-    $ reading_glasses_OBJ.description = "> A lot of wizards are into girls wearing these!"
+    $ reading_glasses_OBJ.description = ">A lot of wizards are into girls wearing these!"
 
     if not hasattr(renpy.store,'vintage_glasses_OBJ'):
         $ vintage_glasses_OBJ = store_item_class()
@@ -58,7 +58,7 @@ label __init_variables:
     $ vintage_glasses_OBJ.items = ["glasses"]
     $ vintage_glasses_OBJ.image = "glasses_vintage.png"
     $ vintage_glasses_OBJ.cost = 70
-    $ vintage_glasses_OBJ.description = "> Wearing these doesn't automatically make you a nerd!"
+    $ vintage_glasses_OBJ.description = ">Wearing these doesn't automatically make you a nerd!"
 
     $ cs_accessories_list = []
     $ cs_accessories_list.append(spew_badge_OBJ)
@@ -82,7 +82,7 @@ label __init_variables:
     $ red_lipstick_OBJ.items = ["lipstick"]
     $ red_lipstick_OBJ.image = "lipstick_red.png"
     $ red_lipstick_OBJ.cost = 100
-    $ red_lipstick_OBJ.description = "> They call this one the red rocket!"
+    $ red_lipstick_OBJ.description = ">They call this one the red rocket!"
 
     if not hasattr(renpy.store,'pink_lipstick_OBJ'):
         $ pink_lipstick_OBJ = store_item_class()
@@ -101,7 +101,7 @@ label __init_variables:
     $ freckles_makeup_OBJ.items = ["freckles"]
     $ freckles_makeup_OBJ.image = "makeup_freckles.png"
     $ freckles_makeup_OBJ.cost = 20
-    $ freckles_makeup_OBJ.description = "> A magical item that makes the wearer's freckles more\n  pronounced!"
+    $ freckles_makeup_OBJ.description = ">A magical item that makes the wearer's freckles more\n pronounced!"
 
     if not hasattr(renpy.store,'fake_cum_makeup_OBJ'):
         $ fake_cum_makeup_OBJ = store_item_class()
@@ -111,7 +111,7 @@ label __init_variables:
     $ fake_cum_makeup_OBJ.items = ["fake cum"]
     $ fake_cum_makeup_OBJ.image = "makeup_fake_cum.png"
     $ fake_cum_makeup_OBJ.cost = 20
-    $ fake_cum_makeup_OBJ.description = "> When she doen't want to wear your real cum just yet.\n  Be patient!"
+    $ fake_cum_makeup_OBJ.description = ">When she doen't want to wear your real cum just yet.\n Be patient!"
 
     $ cs_miscellaneous_list = []
     $ cs_miscellaneous_list.append(red_lipstick_OBJ)
@@ -128,7 +128,7 @@ label __init_variables:
     $ brown_dye_OBJ.items = ["clothing dye","hair dye"]
     $ brown_dye_OBJ.image = "dye_brown.png"
     $ brown_dye_OBJ.cost = 20
-    $ brown_dye_OBJ.description = "> Basic shade of brown. Simple yet elegant!"
+    $ brown_dye_OBJ.description = ">Basic shade of brown. Simple yet elegant!"
 
     if not hasattr(renpy.store,'yellow_dye_OBJ'): # Yellow
         $ yellow_dye_OBJ = store_item_class()
@@ -137,7 +137,7 @@ label __init_variables:
     $ yellow_dye_OBJ.items = ["clothing dye","hair dye"]
     $ yellow_dye_OBJ.image = "dye_yellow.png"
     $ yellow_dye_OBJ.cost = 40
-    $ yellow_dye_OBJ.description = "> A very nice shade of yellow."
+    $ yellow_dye_OBJ.description = ">A very nice shade of yellow."
 
     if not hasattr(renpy.store,'orange_dye_OBJ'): # Orange
         $ orange_dye_OBJ = store_item_class()
@@ -146,7 +146,7 @@ label __init_variables:
     $ orange_dye_OBJ.items = ["clothing dye"]
     $ orange_dye_OBJ.image = "dye_orange.png"
     $ orange_dye_OBJ.cost = 60
-    $ orange_dye_OBJ.description = "> A very nice shade of orange."
+    $ orange_dye_OBJ.description = ">A very nice shade of orange."
 
     if not hasattr(renpy.store,'red_dye_OBJ'): # Red
         $ red_dye_OBJ = store_item_class()
@@ -155,7 +155,7 @@ label __init_variables:
     $ red_dye_OBJ.items = ["clothing dye","hair dye"]
     $ red_dye_OBJ.image = "dye_red.png"
     $ red_dye_OBJ.cost = 60
-    $ red_dye_OBJ.description = "> A very nice shade of red."
+    $ red_dye_OBJ.description = ">A very nice shade of red."
 
     if not hasattr(renpy.store,'crimson_dye_OBJ'): # Crimson
         $ crimson_dye_OBJ = store_item_class()
@@ -164,7 +164,7 @@ label __init_variables:
     $ crimson_dye_OBJ.items = ["clothing dye","hair dye"]
     $ crimson_dye_OBJ.image = "dye_crimson.png"
     $ crimson_dye_OBJ.cost = 80
-    $ crimson_dye_OBJ.description = "> A very rich shade of red."
+    $ crimson_dye_OBJ.description = ">A very rich shade of red."
 
     if not hasattr(renpy.store,'green_dye_OBJ'): # Green
         $ green_dye_OBJ = store_item_class()
@@ -173,7 +173,7 @@ label __init_variables:
     $ green_dye_OBJ.items = ["clothing dye"]
     $ green_dye_OBJ.image = "dye_green.png"
     $ green_dye_OBJ.cost = 60
-    $ green_dye_OBJ.description = "> A bright shade of green."
+    $ green_dye_OBJ.description = ">A bright shade of green."
 
     if not hasattr(renpy.store,'dark_green_dye_OBJ'): # Dark Green
         $ dark_green_dye_OBJ = store_item_class()
@@ -182,7 +182,7 @@ label __init_variables:
     $ dark_green_dye_OBJ.items = ["clothing dye","hair dye"]
     $ dark_green_dye_OBJ.image = "dye_dark_green.png"
     $ dark_green_dye_OBJ.cost = 80
-    $ dark_green_dye_OBJ.description = "> A darker shade of green."
+    $ dark_green_dye_OBJ.description = ">A darker shade of green."
 
     if not hasattr(renpy.store,'blue_dye_OBJ'): # Blue
         $ blue_dye_OBJ = store_item_class()
@@ -191,7 +191,7 @@ label __init_variables:
     $ blue_dye_OBJ.items = ["clothing dye"]
     $ blue_dye_OBJ.image = "dye_blue.png"
     $ blue_dye_OBJ.cost = 60
-    $ blue_dye_OBJ.description = "> A bright shade of blue."
+    $ blue_dye_OBJ.description = ">A bright shade of blue."
 
     if not hasattr(renpy.store,'dark_blue_dye_OBJ'): # Dark Blue
         $ dark_blue_dye_OBJ = store_item_class()
@@ -200,7 +200,7 @@ label __init_variables:
     $ dark_blue_dye_OBJ.items = ["clothing dye","hair dye"]
     $ dark_blue_dye_OBJ.image = "dye_dark_blue.png"
     $ dark_blue_dye_OBJ.cost = 80
-    $ dark_blue_dye_OBJ.description = "> A darker shade of blue."
+    $ dark_blue_dye_OBJ.description = ">A darker shade of blue."
 
     if not hasattr(renpy.store,'purple_dye_OBJ'): # Purple
         $ purple_dye_OBJ = store_item_class()
@@ -209,7 +209,7 @@ label __init_variables:
     $ purple_dye_OBJ.items = ["clothing dye","hair dye"]
     $ purple_dye_OBJ.image = "dye_purple.png"
     $ purple_dye_OBJ.cost = 120
-    $ purple_dye_OBJ.description = "> A very nice shade of purple."
+    $ purple_dye_OBJ.description = ">A very nice shade of purple."
 
     if not hasattr(renpy.store,'pink_dye_OBJ'): # Pink
         $ pink_dye_OBJ = store_item_class()
@@ -218,7 +218,7 @@ label __init_variables:
     $ pink_dye_OBJ.items = ["clothing dye","hair dye"]
     $ pink_dye_OBJ.image = "dye_pink.png"
     $ pink_dye_OBJ.cost = 200
-    $ pink_dye_OBJ.description = "> A color so pink, it makes you want to cover your\n  whole room with it!"
+    $ pink_dye_OBJ.description = ">A color so pink, it makes you want to cover your\n whole room with it!"
 
     if not hasattr(renpy.store,'gray_dye_OBJ'): # Gray
         $ gray_dye_OBJ = store_item_class()
@@ -227,7 +227,7 @@ label __init_variables:
     $ gray_dye_OBJ.items = ["clothing dye","hair dye"]
     $ gray_dye_OBJ.image = "dye_gray.png"
     $ gray_dye_OBJ.cost = 200
-    $ gray_dye_OBJ.description = "> A very classy shade of gray."
+    $ gray_dye_OBJ.description = ">A very classy shade of gray."
 
     if not hasattr(renpy.store,'black_dye_OBJ'): # Black
         $ black_dye_OBJ = store_item_class()
@@ -236,7 +236,7 @@ label __init_variables:
     $ black_dye_OBJ.items = ["clothing dye","hair dye"]
     $ black_dye_OBJ.image = "dye_black.png"
     $ black_dye_OBJ.cost = 400
-    $ black_dye_OBJ.description = "> As black as a Testral."
+    $ black_dye_OBJ.description = ">As black as a Testral."
 
     if not hasattr(renpy.store,'white_dye_OBJ'): # White
         $ white_dye_OBJ = store_item_class()
@@ -245,7 +245,7 @@ label __init_variables:
     $ white_dye_OBJ.items = ["clothing dye"]
     $ white_dye_OBJ.image = "dye_white.png"
     $ white_dye_OBJ.cost = 400
-    $ white_dye_OBJ.description = "> As bright and pure as a Patronus!"
+    $ white_dye_OBJ.description = ">As bright and pure as a Patronus!"
 
     $ cs_dye_list = []
     $ cs_dye_list.append(brown_dye_OBJ)
@@ -276,7 +276,7 @@ label __init_variables:
     $ hg_cheer_g_OBJ.cost = 80
     $ hg_cheer_g_OBJ.wait_time = 2
     $ hg_cheer_g_OBJ.image = "hg_cheer_g.png"
-    $ hg_cheer_g_OBJ.description = "> A basic Cheerleader attire for Gryffindor's\n  Quidditch team."
+    $ hg_cheer_g_OBJ.description = ">A basic Cheerleader attire for Gryffindor's\n  Quidditch team."
 
     if not hasattr(renpy.store,'hg_cheer_g_sexy_OBJ'): #Not a store item!
         $ hg_cheer_g_sexy_OBJ = store_item_class()
@@ -294,7 +294,7 @@ label __init_variables:
     $ hg_cheer_s_OBJ.cost = 80
     $ hg_cheer_s_OBJ.wait_time = 2
     $ hg_cheer_s_OBJ.image = "hg_cheer_s.png"
-    $ hg_cheer_s_OBJ.description = "> The Slytherin version of the Cheerleader attire."
+    $ hg_cheer_s_OBJ.description = ">The Slytherin version of the Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_s_sexy_OBJ'):  #Not a store item!
         $ hg_cheer_s_sexy_OBJ = store_item_class()
@@ -312,7 +312,7 @@ label __init_variables:
     $ hg_cheer_r_OBJ.cost = 80
     $ hg_cheer_r_OBJ.wait_time = 2
     $ hg_cheer_r_OBJ.image = "hg_cheer_r.png"
-    $ hg_cheer_r_OBJ.description = "> The Ravenclaw version of the Cheerleader attire."
+    $ hg_cheer_r_OBJ.description = ">The Ravenclaw version of the Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_r_sexy_OBJ'):  #Not a store item!
         $ hg_cheer_r_sexy_OBJ = store_item_class()
@@ -330,7 +330,7 @@ label __init_variables:
     $ hg_cheer_h_OBJ.cost = 80
     $ hg_cheer_h_OBJ.wait_time = 2
     $ hg_cheer_h_OBJ.image = "hg_cheer_h.png"
-    $ hg_cheer_h_OBJ.description = "> The Hufflepuff version of the Cheerleader attire."
+    $ hg_cheer_h_OBJ.description = ">The Hufflepuff version of the Cheerleader attire."
 
     if not hasattr(renpy.store,'hg_cheer_h_sexy_OBJ'):  #Not a store item!
         $ hg_cheer_h_sexy_OBJ = store_item_class()
@@ -350,7 +350,7 @@ label __init_variables:
     $ hg_lingerie_lace_OBJ.cost = 40
     $ hg_lingerie_lace_OBJ.wait_time = 1
     $ hg_lingerie_lace_OBJ.image = "hg_lingerie_lace.png"
-    $ hg_lingerie_lace_OBJ.description = "> A lovely lace bra and panty set."
+    $ hg_lingerie_lace_OBJ.description = ">A lovely lace bra and panty set."
 
     if not hasattr(renpy.store,'hg_lingerie_silk_OBJ'):
         $ hg_lingerie_silk_OBJ = store_item_class()
@@ -360,7 +360,7 @@ label __init_variables:
     $ hg_lingerie_silk_OBJ.cost = 80
     $ hg_lingerie_silk_OBJ.wait_time = 1
     $ hg_lingerie_silk_OBJ.image = "hg_lingerie_silk.png"
-    $ hg_lingerie_silk_OBJ.description = "> A smooth and comfortable lace bra and panty set."
+    $ hg_lingerie_silk_OBJ.description = ">A smooth and comfortable lace bra and panty set."
 
     if not hasattr(renpy.store,'hg_lingerie_maid_OBJ'):
         $ hg_lingerie_maid_OBJ = store_item_class()
@@ -370,7 +370,7 @@ label __init_variables:
     $ hg_lingerie_maid_OBJ.cost = 160
     $ hg_lingerie_maid_OBJ.wait_time = 2
     $ hg_lingerie_maid_OBJ.image = "hg_lingerie_maid.png"
-    $ hg_lingerie_maid_OBJ.description = "> A revealing piece of maid clothing that only serves\n  to highlight the wearer's breasts."
+    $ hg_lingerie_maid_OBJ.description = ">A revealing piece of maid clothing that only serves\n  to highlight the wearer's breasts."
 
     if not hasattr(renpy.store,'hg_lingerie_latex_OBJ'):
         $ hg_lingerie_latex_OBJ = store_item_class()
@@ -380,7 +380,7 @@ label __init_variables:
     $ hg_lingerie_latex_OBJ.cost = 200
     $ hg_lingerie_latex_OBJ.wait_time = 2
     $ hg_lingerie_latex_OBJ.image = "hg_lingerie_latex.png"
-    $ hg_lingerie_latex_OBJ.description = "> A tight and shiny lace bra and panty set."
+    $ hg_lingerie_latex_OBJ.description = ">A tight and shiny lace bra and panty set."
 
     if not hasattr(renpy.store,'hg_lingerie_fishnet_OBJ'):
         $ hg_lingerie_fishnet_OBJ = store_item_class()
@@ -390,7 +390,7 @@ label __init_variables:
     $ hg_lingerie_fishnet_OBJ.cost = 100
     $ hg_lingerie_fishnet_OBJ.wait_time = 1
     $ hg_lingerie_fishnet_OBJ.image = "hg_lingerie_fishnet.png"
-    $ hg_lingerie_fishnet_OBJ.description = "> A tight and shiny lace bra and panty set."
+    $ hg_lingerie_fishnet_OBJ.description = ">A very revealing set for fishnet lingerie."
 
 
     # Nighties
@@ -402,7 +402,7 @@ label __init_variables:
     $ hg_nighty_silk_OBJ.cost = 80
     $ hg_nighty_silk_OBJ.wait_time = 1
     $ hg_nighty_silk_OBJ.image = "hg_nighty_silk.png"
-    $ hg_nighty_silk_OBJ.description = "> A comfortable yet elegant Nightwear set."
+    $ hg_nighty_silk_OBJ.description = ">A comfortable yet elegant Nightwear set."
 
     if not hasattr(renpy.store,'hg_nightgown_OBJ'):
         $ hg_nightgown_OBJ = store_item_class()
@@ -412,7 +412,7 @@ label __init_variables:
     $ hg_nightgown_OBJ.cost = 80
     $ hg_nightgown_OBJ.wait_time = 1
     $ hg_nightgown_OBJ.image = "hg_nightgown.png"
-    $ hg_nightgown_OBJ.description = "> A more free-flowing set of Nightwear."
+    $ hg_nightgown_OBJ.description = ">A more free-flowing set of Nightwear."
 
 
     # Bikinis
@@ -424,7 +424,7 @@ label __init_variables:
     $ hg_bikini_latex_OBJ.cost = 100
     $ hg_bikini_latex_OBJ.wait_time = 1
     $ hg_bikini_latex_OBJ.image = "hg_bikini_latex.png"
-    $ hg_bikini_latex_OBJ.description = "> A set for when you want to become one with your\n underwear"
+    $ hg_bikini_latex_OBJ.description = ">A set for when you want to become one with your\n underwear"
 
     if not hasattr(renpy.store,'hg_bikini_sling_OBJ'):
         $ hg_bikini_sling_OBJ = store_item_class()
@@ -434,7 +434,7 @@ label __init_variables:
     $ hg_bikini_sling_OBJ.cost = 69
     $ hg_bikini_sling_OBJ.wait_time = 1
     $ hg_bikini_sling_OBJ.image = "hg_bikini_sling.png"
-    $ hg_bikini_sling_OBJ.description = "> Provides even less coverage than the Latex Bikini"
+    $ hg_bikini_sling_OBJ.description = ">Provides even less coverage than the Latex Bikini"
 
 
     # One-pieces
@@ -446,7 +446,7 @@ label __init_variables:
     $ hg_onepiece_sling_OBJ.cost = 69
     $ hg_onepiece_sling_OBJ.wait_time = 1
     $ hg_onepiece_sling_OBJ.image = "hg_onepiece_sling.png"
-    $ hg_onepiece_sling_OBJ.description = "> A Mononoke variant of the Sling Bikini"
+    $ hg_onepiece_sling_OBJ.description = ">A Mononoke variant of the Sling Bikini"
 
 
     # Accessories
@@ -525,6 +525,7 @@ label __init_variables:
     $ hermione_clothing_sets_list.append(hg_lingerie_silk_OBJ)
     $ hermione_clothing_sets_list.append(hg_lingerie_maid_OBJ)
     $ hermione_clothing_sets_list.append(hg_lingerie_latex_OBJ)
+    $ hermione_clothing_sets_list.append(hg_lingerie_fishnet_OBJ)
 
     #$ hermione_clothing_sets_list.append(hg_nighty_silk_OBJ)
     #$ hermione_clothing_sets_list.append(hg_nightgown_OBJ)
@@ -601,6 +602,300 @@ label __init_variables:
 
 
 
+    #Outfits
+    if not hasattr(renpy.store,'hg_maid_OBJ'): #important!
+        $ hg_maid_OBJ = hermione_outfit()
+    $ hg_maid_OBJ.name = "Maid"
+    $ hg_maid_OBJ.cost = 250
+    $ hg_maid_OBJ.type = "outfit"
+    $ hg_maid_OBJ.items = ["outfit","hair","hat","gloves","garter","stockings"]
+    $ hg_maid_OBJ.wait_time = 2
+    $ hg_maid_OBJ.image = "hg_maid.png"
+    $ hg_maid_OBJ.outfit_layers = ["maid_stockings.png","maid_skirt.png","maid_top.png","maid_gloves.png"]
+    $ hg_maid_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_maid_OBJ.hair_layer = "B"
+    $ hg_maid_OBJ.top_layers = "maid_hat"
+    $ hg_maid_OBJ.description = ">A classic Maids Outfit for a classy Witch."
+
+    if not hasattr(renpy.store,'hg_heartDancer_OBJ'):
+        $ hg_heartDancer_OBJ = hermione_outfit()
+    $ hg_heartDancer_OBJ.name = "Heart Dancer"
+    $ hg_heartDancer_OBJ.cost = 80
+    $ hg_heartDancer_OBJ.type = "dress"
+    $ hg_heartDancer_OBJ.items = ["outfit"]
+    $ hg_heartDancer_OBJ.wait_time = 1
+    $ hg_heartDancer_OBJ.image = "hg_heart.png"
+    $ hg_heartDancer_OBJ.outfit_layers = ["heart_legs.png","heart_top.png","heart_collar.png"]
+    $ hg_heartDancer_OBJ.breast_layer = "breasts_normal"
+    $ hg_heartDancer_OBJ.description = ">A sexy dancers outfit with heart shaped nipple tassels."
+
+    if not hasattr(renpy.store,'hg_pirate_OBJ'):
+        $ hg_pirate_OBJ = hermione_outfit()
+    $ hg_pirate_OBJ.name = "Pirate"
+    $ hg_pirate_OBJ.cost = 75
+    $ hg_pirate_OBJ.type = "outfit"
+    $ hg_pirate_OBJ.items = ["outfit"]
+    $ hg_pirate_OBJ.wait_time = 1
+    $ hg_pirate_OBJ.image = "hg_pirate.png"
+    $ hg_pirate_OBJ.outfit_layers = ["pirate_legs.png","pirate_pants.png","pirate_top.png"]
+    $ hg_pirate_OBJ.breast_layer = "breasts_nipfix"
+    $ hg_pirate_OBJ.description = "> A lightweight Pirates outfit with only room for the\n necessities Comes with two canon ball storage compartments."
+
+    if not hasattr(renpy.store,'hg_powerGirl_OBJ'):
+        $ hg_powerGirl_OBJ = hermione_outfit()
+    $ hg_powerGirl_OBJ.name = "Power Girl"
+    $ hg_powerGirl_OBJ.cost = 350
+    $ hg_powerGirl_OBJ.type = "costume"
+    $ hg_powerGirl_OBJ.items = ["outfit"]
+    $ hg_powerGirl_OBJ.wait_time = 3
+    $ hg_powerGirl_OBJ.image = "hg_power.png"
+    $ hg_powerGirl_OBJ.outfit_layers = ["power_cape.png","power_top.png","power_cape_top.png","power_gloves.png","power_belt.png"]
+    $ hg_powerGirl_OBJ.breast_layer = "breasts_normal"
+    $ hg_powerGirl_OBJ.hair_layer = "P"
+    $ hg_powerGirl_OBJ.description = ">An outfit for when you feel extra heroic\n \"Sometimes it takes balls to be a woman\"."
+
+    if not hasattr(renpy.store,'hg_msMarvel_OBJ'):
+        $ hg_msMarvel_OBJ = hermione_outfit()
+    $ hg_msMarvel_OBJ.name = "Mrs Marvel"
+    $ hg_msMarvel_OBJ.cost = 250
+    $ hg_msMarvel_OBJ.type = "costume"
+    $ hg_msMarvel_OBJ.items = ["outfit"]
+    $ hg_msMarvel_OBJ.wait_time = 2
+    $ hg_msMarvel_OBJ.image = "hg_marvel.png"
+    $ hg_msMarvel_OBJ.outfit_layers = ["marvel_pants.png","marvel_top.png","marvel_sash.png","marvel_gloves.png"]
+    $ hg_msMarvel_OBJ.breast_layer = "breasts_normal"
+    $ hg_msMarvel_OBJ.description = ">For the girl that likes the lightningbolt\n better on the chest than the forehead."
+
+    if not hasattr(renpy.store,'hg_harleyQuinn_OBJ'):
+        $ hg_harleyQuinn_OBJ = hermione_outfit()
+    $ hg_harleyQuinn_OBJ.name = "Harley Quinn"
+    $ hg_harleyQuinn_OBJ.cost = 300
+    $ hg_harleyQuinn_OBJ.type = "costume"
+    $ hg_harleyQuinn_OBJ.items = ["outfit"]
+    $ hg_harleyQuinn_OBJ.wait_time = 3
+    $ hg_harleyQuinn_OBJ.image = "hg_harley.png"
+    $ hg_harleyQuinn_OBJ.outfit_layers = ["harley_pants.png","harley_top.png","harley_gloves.png","harley_collar.png"]
+    $ hg_harleyQuinn_OBJ.breast_layer = "breasts_normal"
+    $ hg_harleyQuinn_OBJ.hair_layer = "H"
+    $ hg_harleyQuinn_OBJ.description = ">A outfit for when you're actually nuts\n rather than just crazy for them."
+
+    if not hasattr(renpy.store,'hg_ballDress_OBJ'):
+        $ hg_ballDress_OBJ = hermione_outfit()
+    $ hg_ballDress_OBJ.name = "Ball Dress"
+    $ hg_ballDress_OBJ.cost = 1500
+    $ hg_ballDress_OBJ.type = "dress"
+    $ hg_ballDress_OBJ.items = ["outfit","hair","neckless","tiara"]
+    $ hg_ballDress_OBJ.wait_time = 7
+    $ hg_ballDress_OBJ.image = "hg_ball_dress.png"
+    $ hg_ballDress_OBJ.outfit_layers = ["ball_dress_skirt.png","ball_dress_top.png"]
+    $ hg_ballDress_OBJ.breast_layer = "breasts_nipfix"
+    $ hg_ballDress_OBJ.hair_layer = "B"
+    $ hg_ballDress_OBJ.top_layers = "tiara"
+    $ hg_ballDress_OBJ.description = ">A traditional ball dress complete with a imitation\n ball-queen tiara."
+
+    if not hasattr(renpy.store,'hg_christmas_OBJ'):
+        $ hg_christmas_OBJ = hermione_outfit()
+    $ hg_christmas_OBJ.name = "Christmas Girl"
+    $ hg_christmas_OBJ.cost = 50
+    $ hg_christmas_OBJ.type = "outfit"
+    $ hg_christmas_OBJ.items = ["outfit"]
+    $ hg_christmas_OBJ.wait_time = 2
+    $ hg_christmas_OBJ.image = "hg_christmas.png"
+    $ hg_christmas_OBJ.outfit_layers = ["christmas_pants.png","christmas_top.png","christmas_gloves.png","christmas_collar.png"]
+    $ hg_christmas_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_christmas_OBJ.top_layers = "antlers"
+    $ hg_christmas_OBJ.description = ">A christmas themed outfit complete with tightly wrapped\n snowglobes."
+
+    if not hasattr(renpy.store,'hg_laraCroft_OBJ'):
+        $ hg_laraCroft_OBJ = hermione_outfit()
+    $ hg_laraCroft_OBJ.name = "Lara Croft"
+    $ hg_laraCroft_OBJ.cost = 270
+    $ hg_laraCroft_OBJ.type = "costume"
+    $ hg_laraCroft_OBJ.items = ["outfit","gloves"]
+    $ hg_laraCroft_OBJ.wait_time = 2
+    $ hg_laraCroft_OBJ.image = "hg_lara.png"
+    $ hg_laraCroft_OBJ.outfit_layers = ["lara_pants.png","lara_top.png","lara_gloves.png"]
+    $ hg_laraCroft_OBJ.breast_layer = "breasts_normal"
+    $ hg_laraCroft_OBJ.description = ">An outfit perfectly suited for exploring deep, dark\n and moist caverns."
+
+    if not hasattr(renpy.store,'hg_tifa_OBJ'):
+        $ hg_tifa_OBJ = hermione_outfit()
+    $ hg_tifa_OBJ.name = "Tifa"
+    $ hg_tifa_OBJ.cost = 220
+    $ hg_tifa_OBJ.type = "costume"
+    $ hg_tifa_OBJ.items = ["outfit"]
+    $ hg_tifa_OBJ.wait_time = 2
+    $ hg_tifa_OBJ.image = "hg_tifa.png"
+    $ hg_tifa_OBJ.outfit_layers = ["tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"]
+    $ hg_tifa_OBJ.breast_layer = "breasts_normal"
+    $ hg_tifa_OBJ.hair_layer = "T"
+    $ hg_tifa_OBJ.description = ">An outfit for when when your sexual fantasies\n are just getting started."
+
+    if not hasattr(renpy.store,'hg_present_OBJ'):
+        $ hg_present_OBJ = hermione_outfit()
+    $ hg_present_OBJ.name = "Present"
+    $ hg_present_OBJ.cost = 35
+    $ hg_present_OBJ.type = "outfit"
+    $ hg_present_OBJ.items = ["outfit"]
+    $ hg_present_OBJ.wait_time = 1
+    $ hg_present_OBJ.image = "hg_present.png"
+    $ hg_present_OBJ.outfit_layers = ["present_pant.png","present_top.png"]
+    $ hg_present_OBJ.breast_layer = "breasts_nipfix"
+    $ hg_present_OBJ.description = ">A tightly wrapped gift, scissors not included."
+
+    if not hasattr(renpy.store,'hg_japan_OBJ'):
+        $ hg_japan_OBJ = hermione_outfit()
+    $ hg_japan_OBJ.name = "Japanese Schoolgirl"
+    $ hg_japan_OBJ.cost = 125
+    $ hg_japan_OBJ.type = "outfit"
+    $ hg_japan_OBJ.items = ["outfit"]
+    $ hg_japan_OBJ.wait_time = 2
+    $ hg_japan_OBJ.image = "hg_japan.png"
+    $ hg_japan_OBJ.outfit_layers = ["japan_pant.png","japan_top.png"]
+    $ hg_japan_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_japan_OBJ.description = ">A schoolgirl outfit traditionally worn in Japan."
+
+    if not hasattr(renpy.store,'hg_witch_OBJ'):
+        $ hg_witch_OBJ = hermione_outfit()
+    $ hg_witch_OBJ.name = "Witch outfit"
+    $ hg_witch_OBJ.cost = 250
+    $ hg_witch_OBJ.type = "outfit"
+    $ hg_witch_OBJ.items = ["outfit","hat"]
+    $ hg_witch_OBJ.wait_time = 3
+    $ hg_witch_OBJ.image = "hg_witch.png"
+    $ hg_witch_OBJ.outfit_layers = ["witch_stockings.png","witch_top.png","witch_cloak.png"]
+    $ hg_witch_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_witch_OBJ.top_layers = "witch_hat"
+    $ hg_witch_OBJ.description = ">Release your inner witch with this halloween\n inspired outfit."
+
+    if not hasattr(renpy.store,'hg_bio_OBJ'):
+        $ hg_bio_OBJ = hermione_outfit()
+    $ hg_bio_OBJ.name = "Bioshock outfit"
+    $ hg_bio_OBJ.cost = 400
+    $ hg_bio_OBJ.type = "outfit"
+    $ hg_bio_OBJ.items = ["outfit","hair","choker"]
+    $ hg_bio_OBJ.wait_time = 3
+    $ hg_bio_OBJ.image = "hg_bio.png"
+    $ hg_bio_OBJ.outfit_layers = ["bio_skirt.png","bio_chocker.png","bio_corset.png","bio_jacket.png"]
+    $ hg_bio_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_bio_OBJ.hair_layer = "E"
+    $ hg_bio_OBJ.description = ">Flick some coins for this Bioshock inspired outfit."
+
+    if not hasattr(renpy.store,'hg_yenn_OBJ'):
+        $ hg_yenn_OBJ = hermione_outfit()
+    $ hg_yenn_OBJ.name = "Yennefer's costume"
+    $ hg_yenn_OBJ.cost = 500
+    $ hg_yenn_OBJ.type = "outfit"
+    $ hg_yenn_OBJ.items = ["outfit","scarf","choker","stockings"]
+    $ hg_yenn_OBJ.wait_time = 3
+    $ hg_yenn_OBJ.image = "hg_yenn.png"
+    $ hg_yenn_OBJ.outfit_layers = ["yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"]
+    $ hg_yenn_OBJ.breast_layer = "breasts_normal"
+    $ hg_yenn_OBJ.description = ">A Witcher inspired outfit to fit even the most\n perverted witch"
+
+    $ hermione_outfits_list = []
+    $ hermione_outfits_list.append(hg_maid_OBJ)
+    $ hermione_outfits_list.append(hg_heartDancer_OBJ)
+    $ hermione_outfits_list.append(hg_ballDress_OBJ)
+    $ hermione_outfits_list.append(hg_pirate_OBJ)
+    $ hermione_outfits_list.append(hg_powerGirl_OBJ)
+    $ hermione_outfits_list.append(hg_msMarvel_OBJ)
+    $ hermione_outfits_list.append(hg_harleyQuinn_OBJ)
+    $ hermione_outfits_list.append(hg_christmas_OBJ)
+    $ hermione_outfits_list.append(hg_laraCroft_OBJ)
+    $ hermione_outfits_list.append(hg_tifa_OBJ)
+    $ hermione_outfits_list.append(hg_present_OBJ)
+    $ hermione_outfits_list.append(hg_japan_OBJ)
+    $ hermione_outfits_list.append(hg_witch_OBJ)
+    $ hermione_outfits_list.append(hg_bio_OBJ)
+    $ hermione_outfits_list.append(hg_yenn_OBJ)
+
+
+
+    # Astoria
+    if not hasattr(renpy.store,'ag_ball_dress_OBJ'):
+        $ ag_ball_dress_OBJ = hermione_outfit()
+    $ ag_ball_dress_OBJ.name = "Ball Dress"
+    $ ag_ball_dress_OBJ.cost = 300
+    $ ag_ball_dress_OBJ.type = "dress"
+    $ ag_ball_dress_OBJ.items = ["outfit"]
+    $ ag_ball_dress_OBJ.wait_time = 4
+    $ ag_ball_dress_OBJ.image = "ag_ball_dress.png"
+    $ ag_ball_dress_OBJ.outfit_layers = ["ball_dress.png"]
+    $ ag_ball_dress_OBJ.description = ">A cute dress for your favourite princess!"
+
+    if not hasattr(renpy.store,'ag_lazy_OBJ'):
+        $ ag_lazy_OBJ = hermione_outfit()
+    $ ag_lazy_OBJ.name = "Lazy Town Outfit"
+    $ ag_lazy_OBJ.cost = 120
+    $ ag_lazy_OBJ.type = "costume"
+    $ ag_lazy_OBJ.items = ["outfit","hair","bracelet"]
+    $ ag_lazy_OBJ.wait_time = 1
+    $ ag_lazy_OBJ.image = "ag_lazy.png"
+    $ ag_lazy_OBJ.outfit_layers = ["lazy_tights.png","lazy_dress.png","lazy_bracelet.png"]
+    $ ag_lazy_OBJ.hair_layer = "L"
+    $ ag_lazy_OBJ.description = ">Nobody is lazy at Hogwarts!"
+
+    if not hasattr(renpy.store,'ag_lazy_short_OBJ'): #Not a store item!
+        $ ag_lazy_short_OBJ = hermione_outfit()
+    $ ag_lazy_short_OBJ.name = "Short Lazy Town Outfit"
+    $ ag_lazy_short_OBJ.unlockable = True
+    #$ ag_lazy_short_OBJ.cost = 120
+    $ ag_lazy_short_OBJ.type = "costume"
+    $ ag_lazy_short_OBJ.items = ["outfit","hair","bracelet"]
+    $ ag_lazy_short_OBJ.wait_time = 1
+    $ ag_lazy_short_OBJ.image = "ag_lazy_short.png"
+    $ ag_lazy_short_OBJ.outfit_layers = ["lazy_tights.png","lazy_dress_short.png","lazy_bracelet.png"]
+    $ ag_lazy_short_OBJ.hair_layer = "L"
+    $ ag_lazy_short_OBJ.description = ">Nobody is lazy at Hogwarts!"
+
+    $ astoria_outfits_list = []
+    $ astoria_outfits_list.append(ag_ball_dress_OBJ)
+    $ astoria_outfits_list.append(ag_lazy_OBJ)
+    $ astoria_outfits_list.append(ag_lazy_short_OBJ)
+
+
+    if not hasattr(renpy.store,'astoria_outfit_GLBL'):
+        $ hermoine_outfit_GLBL = None
+        $ astoria_outfit_GLBL = None
+        $ susan_outfit_GLBL = None
+        $ cho_outfit_GLBL = None
+        $ luna_outfit_GLBL = None
+
+
+
+
+
+
+
+
+    # outfit unlocks/purchases are the only dynamic value we care about so they have been separated into their own dict
+    if not hasattr(renpy.store,'unlocked_clothing_list'):
+        $ unlocked_clothing_list = []
+
+    # Setup for 1.5
+    # Since we probably have to change the outfits, all purchased outfits will get an .unlocked = True variable,
+    # And those outfits will get added to the "unlocked_clothing_list",
+    # with which we can unlock all outfits again in the next update if needed, so people don't have to buy and wait for outfits againself.
+
+    python:
+
+        #Outfits
+        for i in hermione_outfits_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+        for i in astoria_outfits_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+
+        #Sets
+        for i in hermione_clothing_sets_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+        for i in astoria_clothing_sets_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+
 
 
     return
@@ -636,6 +931,57 @@ init python:
                 return "interface/icons/"+self.type+"/"+self.image
             else:
                 return "interface/icons/"+self.image #Images aren't stored in a folder.
+
+        def getType(self):
+            return self.type
+        def getStoreItems(self):
+            return self.items
+
+
+    class outfit_list(list):
+        list = []
+
+    class hermione_outfit(object):
+        name = ""
+        unlockable = False
+        unlocked = False
+        cost = 0
+        type = "outfit"
+        items = ["outfit"]
+        wait_time = 0 #the ammount of time to wait until compleded from clothes store
+        top_layers = []
+        outfit_layers = []
+        actions = []
+        action_images = []
+        hair_layer = ""
+        breast_layer = "breasts_nipfix"
+        image = ""
+        description = ""
+
+
+        def getMenuText(self):
+            return "-"+self.name+"-"
+        def getOutfitLayers(self):
+            return self.outfit_layers
+        def getHairLayers(self):
+            return self.hair_layer
+        def getTopLayers(self):
+            return self.top_layers
+        def getActionImage(self, action):
+            return self.action_images[self.actions.index(action)]
+
+        def getStoreName(self):
+            return self.name
+        def getImage(self):
+            return self.image
+        def getStoreImage(self):
+            return "interface/icons/outfit/"+self.image
+        def getStoreCost(self):
+            return "Cost: "+str(self.cost)+" gold"
+        def getStoreWaitTime(self):
+            return "Wait Time: "+str(self.wait_time)+" days."
+        def getStoreDescription(self):
+            return self.description
 
         def getType(self):
             return self.type

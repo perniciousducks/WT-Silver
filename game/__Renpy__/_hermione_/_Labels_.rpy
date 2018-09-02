@@ -247,7 +247,7 @@ label __init_variables:
 
 
 label silver_requests:
-    if slytherin > gryffindor or slytherin == gryffindor:
+    if slytherin >= gryffindor:
         show screen hermione_main
 
         label silver_requests_root:
@@ -324,13 +324,15 @@ label silver_requests:
                     $ renpy.jump(result)
 
             "-Never mind-":
-                jump day_time_requests
+                jump hermione_requests
+
 
     else:
         show screen hermione_main
         with d3
         her "The Gryffindors are in the lead. I don't need to do this."
-        jump day_time_requests
+        jump hermione_requests
+
 
 
 label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
@@ -344,33 +346,29 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     hide screen bld1
     hide screen blktone
 
-    if hermione_xpos_name == "desk":
+    if hermione_xpos_name in ["desk"]:
         call her_chibi("stand","desk","base")
-    else:
+    elif hermione_xpos_name in ["mid"]:
         call her_chibi("stand","mid","base")
+    else:
+        call her_chibi("hide")
 
     call gen_chibi("hide")
     show screen genie
     call hide_blkfade
 
-    if hermione_xpos_name == "desk":
+    #Walk
+    if hermione_xpos_name in ["desk"]:
         call her_walk("desk","leave",2.7)
-    else:
+    if hermione_xpos_name in ["mid"]:
         call her_walk("mid","leave",2)
 
     call reset_hermione_main
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    $ hermione_busy = True
 
-    if daytime:
-        call play_music("day_theme")
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        call play_music("night_theme")
-        $ hermione_sleeping = True
-        jump night_main_menu
+    jump main_room
+
 
 
 label hg_pr_transition_block:
@@ -387,17 +385,11 @@ label hg_pr_transition_block:
     else:
         call her_chibi("leave")
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    $ hermione_busy = True
 
-    if daytime:
-        call play_music("day_theme")
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        call play_music("night_theme")
-        $ hermione_sleeping = True
-        jump night_main_menu
+    jump main_room
+
+
 
 label could_not_flirt: #Sent here when choose "Favour failed! No points for you!" (Hermione is leaving without getting any points).
 
@@ -428,14 +420,9 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     else:
         call her_walk("mid","leave",2)
 
-    if daytime:
-        call play_music("day_theme")
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        call play_music("night_theme")
-        $ hermione_sleeping = True
-        jump night_main_menu
+    $ hermione_busy = True
+
+    jump main_room
 
 
 
@@ -513,15 +500,18 @@ label screams_of_rapings:
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
         call her_head("...........................","disgust","down_raised",cheeks="blush")
 
-
     call her_chibi("leave","door","base")
 
+    $ hermione_busy = True
+   
     if daytime:
-        $ hermione_takes_classes = True
-        jump day_main_menu
+        call play_music("day_theme")
+        jump day_resume
     else:
-        $ hermione_sleeping = True
-        jump night_main_menu
+        call play_music("night_theme")
+        jump night_resume
+
+
 
 ### SCREAM OF PLEASURES ###
 label screams_of_pleasure:
@@ -538,46 +528,6 @@ label screams_of_pleasure:
     jump ending_of_screams_of_pleasure
 
 
-label Night_Request_Block:
-    ###JOBS###
-    if current_job == 1:
-        jump maid_responses
-
-    if current_job == 2:
-        jump barmaid_responses
-
-    if current_job == 3:
-        jump gryffindor_cheer_responses
-
-    if current_job == 4:
-        jump slytherin_cheer_responses
-
-    if cat_ears_potion_return:
-        jump potion_scene_1_1_2
-
-    if transparency < 1 and transparent_quest:
-        jump potion_scene_4_2
-
-    if addicted == True:
-        jump potion_scene_3_1_2
-
-
-    if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
-        jump hg_pf_TheGamble_complete
-
-    python:
-        for i in hg_pr_list: #Call any public request event if it's in progress
-            if i.inProgress:
-                renpy.jump(i.complete_label)
-        for i in hg_ps_list: #Call any public shaming event if it's in progress
-            if i.inProgress:
-                renpy.jump(i.complete_label)
-
-    #Astoria Intro
-    if day >= 25 and whoring >= 9:
-        jump astoria_intro_branches
-
-    jump night_resume
 
 label her_walk_desk_blkfade:
 

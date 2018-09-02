@@ -2,50 +2,135 @@
 
 label cho_init:
 
-    if not hasattr(renpy.store,'cc_base') or reset_cho_clothing or reset_persistants:
+    if not hasattr(renpy.store,'cho_base') or reset_cho_clothing or reset_persistants:
 
         #Body
-        $ cc_base                = "characters/cho/base/base_01.png"
-        $ cc_arms                = "characters/cho/base/side_arms.png"
-        $ cc_l_hand              = "characters/cho/base/left_hand.png"
-        $ cc_hair                = "characters/cho/base/hair_01.png"
-        $ cc_hair_shadow         = "characters/cho/base/hair_shadow.png"
-        $ cc_xpos                = 300
-        $ cc_ypos                = 0
-        $ cc_zorder              = 5
-        $ cc_flip                = 1
+        $ cho_base                = "characters/cho/body/base/base_01.png"
+        $ cho_arms                = "characters/cho/body/arms/side_arms.png"
+        $ cho_l_hand              = "characters/cho/body/arms/left_hand.png"
+        $ cho_xpos                = 300
+        $ cho_ypos                = 0
+        $ cho_zorder              = 5
+        $ cho_flip                = 1
 
         #Face
-        $ cc_mouth               = "characters/cho/mouth/default.png"
-        $ cc_eye                 = "characters/cho/eye/default.png"
-        $ cc_eyewhite            = "characters/cho/eye/white.png"
-        $ cc_eyebrow             = "characters/cho/eyebrow/default.png"
-        $ cc_pupil               = "characters/cho/pupil/default.png"
-        $ cc_tears               = "characters/cho/tears/tears_0.png"
+        $ cho_mouth               = "characters/cho/face/mouth/base.png"
+        $ cho_eye                 = "characters/cho/face/eyes/eyes_base.png"
+        $ cho_eyewhite            = "characters/cho/face/eyes/eye_white.png"
+        $ cho_eyebrow             = "characters/cho/face/brow/base.png"
+        $ cho_pupil               = "characters/cho/face/pupil/mid.png"
+        $ cho_tears               = "characters/cho/face/tears/tears_0.png"
+
+        #Hair
+        $ cho_hair                = "characters/cho/body/hair/hair_A_1_base.png"
+        $ cho_hair_shadow         = "characters/cho/body/hair/hair_A_1_top.png"
+        $ c_hair_style            = "A"
+        $ c_hair_color            = 1
 
         #Clothes
-        $ cc_vest                = "characters/cho/clothes/uniform/vest.png"
-        $ cc_top                 = "characters/cho/clothes/uniform/top.png"
-        $ cc_acc                 = "characters/cho/clothes/uniform/tie.png"
-        $ cc_skirt               = "characters/cho/clothes/uniform/skirt.png"
-        $ cc_stock               = "characters/cho/clothes/uniform/stockings.png"
-        $ cc_bra                 = "characters/cho/clothes/workout/bra.png"
-        $ cc_panties             = "characters/cho/clothes/workout/panties.png"
-        $ cc_gloves              = "characters/cho/base/blank.png"
+        $ cho_top                 = "characters/cho/clothes/tops/base/top_1.png"
+        $ c_top                   = "top_1"
+        $ c_top_color             = "base"
 
-        $ cc_wear_top            = True
-        $ cc_wear_bra            = True
-        $ cc_wear_skirt          = True
-        $ cc_wear_panties        = True
-        $ cc_wear_stockings      = True
-        $ cc_wear_vest           = True
-        $ cc_wear_acc            = True
+        $ cho_bra                 = "characters/cho/clothes/underwear/base/bra_sport.png"
+        $ c_bra                   = "bra_sport"
+        $ c_bra_color             = "base"
 
-    # Update 1.4
-    if not hasattr(renpy.store,'cc_eyewhite') or reset_persistants:
+        $ cho_bottom              = "characters/cho/clothes/bottoms/base/skirt_1.png"
+        $ c_bottom                = "skirt_1"
+        $ c_bottom_color          = "base"
 
-        $ cc_eyewhite            = "characters/cho/eye/white.png"
-        $ cc_gloves              = "characters/cho/base/blank.png"
+        $ cho_panties             = "characters/cho/clothes/underwear/base/panties_sport.png"
+        $ c_panties               = "panties_sport"
+        $ c_panties_color         = "base"
+
+        $ cho_onepiece            = "characters/cho/clothes/onepiece/blank.png"
+        $ c_onepiece              = "blank"
+        $ c_onepiece_color        = "base"
+
+        $ cho_garterbelt          = "characters/cho/clothes/underwear/blank.png"
+        $ c_garterbelt            = "blank"
+        $ c_garterbelt_color      = "base"
+
+        $ cho_neckwear            = "characters/cho/clothes/neckwear/blank.png"
+        $ c_neckwear              = "blank"
+        $ c_neckwear_color        = "base"
+
+        $ cho_gloves              = "characters/cho/clothes/gloves/blank.png"
+        $ c_gloves                = "blank"
+        $ c_gloves_color          = "base"
+
+        $ cho_stockings           = "characters/cho/clothes/stockings/stockings.png"
+        $ c_stockings             = "blank"
+        $ c_stockings_color       = "base"
+
+        $ cho_robe                = "characters/cho/clothes/robe/quidditch.png"
+        $ c_robe                  = "blank"
+        $ c_robe_color            = "base"
+
+        #Accessories
+        $ cho_hat                 = "characters/cho/accessories/hats/blank.png"
+        $ c_hat                   = "blank"
+        $ c_hat_color             = "base"
+
+        $ cho_glasses             = "characters/cho/accessories/glasses/blank.png"
+        $ c_glasses               = "blank"
+        $ c_glasses_color         = "base"
+
+        $ cho_ears                = "characters/cho/accessories/ears/blank.png"
+        $ c_ears                  = "blank"
+
+        $ cho_accs                = "characters/cho/accessories/blank.png"
+
+        #Save State
+        $ cho_request_wear_top              = True
+        $ cho_request_wear_bra              = True
+        $ cho_request_wear_bottom           = True
+        $ cho_request_wear_panties          = True
+
+        $ cho_request_wear_onepiece         = False
+        $ cho_request_wear_garterbelt       = False
+
+        $ cho_request_wear_neckwear         = False
+        $ cho_request_wear_gloves           = False
+        $ cho_request_wear_stockings        = False
+        $ cho_request_wear_robe             = False
+
+        $ cho_request_wear_hat              = False
+        $ cho_request_wear_glasses          = False
+        $ cho_request_wear_ears             = False
+        $ cho_request_wear_makeup           = False
+        $ cho_request_wear_accs             = False
+
+        $ cho_request_wear_buttplug         = False
+        $ cho_request_wear_piercings        = False
+        $ cho_request_wear_tattoos          = False
+
+        $ cho_request_wear_outfit           = False
+
+        #Toggle
+        $ cho_wear_top               = True
+        $ cho_wear_bra               = True
+        $ cho_wear_bottom            = True
+        $ cho_wear_panties           = True
+
+        $ cho_wear_onepiece          = False
+        $ cho_wear_garterbelt        = False
+
+        $ cho_wear_neckwear          = False
+        $ cho_wear_gloves            = False
+        $ cho_wear_stockings         = False
+        $ cho_wear_robe              = False
+
+        $ cho_wear_hat               = False
+        $ cho_wear_glasses           = False
+        $ cho_wear_ears              = False
+        $ cho_wear_makeup            = False
+        $ cho_wear_accs              = False
+        $ cho_wear_piercings         = False
+        $ cho_wear_tattoos           = False
+
+        $ cho_wear_outfit            = False
 
     return
 
@@ -53,7 +138,7 @@ label cho_init:
 label cho_progress_init:
 
     # Update 1.3
-    if not hasattr(renpy.store,'cho_whoring') or reset_persistants:
+    if not hasattr(renpy.store,'cho_whoring') or reset_persistants or reset_cho_content:
         ##Favour stuff
         $ chof2_first = True
 
@@ -66,12 +151,21 @@ label cho_progress_init:
         $ cho_busy = False
         $ days_since_cho = 0
         $ cho_known = False
-        $ cho_met = False
+        $ cho_met = False #Replaced! Not in use anymore!
 
-    # Update 1.4
-    if not hasattr(renpy.store,'cho_quidd') or reset_persistants:
+    # Update 1.32
+    if not hasattr(renpy.store,'cho_quidd') or reset_persistants or reset_cho_content:
         $ cho_quidd = False
         $ days_since_quidd = 0
         $ cho_quidd_points = 0
+
+    # Update 1.33
+    if not hasattr(renpy.store,'first_cho_favor_done') or reset_persistants or reset_cho_content:
+        $ cho_unlocked = False
+
+        $ cho_genie_name = "Professor"
+        $ cho_name = "Cho"
+
+        $ first_cho_favor_done = False
 
     return

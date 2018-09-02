@@ -1,7 +1,7 @@
 
 init python:
 
-    class main_quest(object):
+    class main_quest(object): #Not in use anymore!
         id = 0
         name = ""
         objective = ""
@@ -18,7 +18,7 @@ init python:
         counter = 0
         completed = False
 
-    class side_quest(object):
+    class side_quest(object): #Not in use anymore!
         id = 0
         name = ""
         objective = ""
@@ -83,7 +83,7 @@ label __init_variables:
     $ mQuest_A.full_text5 = ""
     $ mQuest_A.counter = 0 #counter
     $ mQuest_A.completed = False
-        
+
     if not hasattr(renpy.store,'mQuest_B'): #important!
         $ mQuest_B = main_quest()
     $ mQuest_B.id = 2
@@ -159,7 +159,7 @@ label __init_variables:
 ### Start of Game ###
 ### Activate Quest Guide and Icon after Dialogue ###
 
-label update_quests:
+label update_quests: #Nor in use anymore!
 
     #Side Quests
     $ side_quests = [] #list of your side quests
@@ -242,14 +242,14 @@ label update_quests:
     #Call Reward
     if mQuest_A.counter >= 7 and not mQuest_A.completed:
         $ mQuest_A.completed = True
-        call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","images/store/snape_unlock_01.png") 
+        call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","images/store/snape_unlock_01.png")
 
     if mQuest_B.counter == 6 and not mQuest_B.completed:
-        call give_reward(">You've unlocked the ability to summon Hermione to your office.","images/store/hermione_unlock_01.png") 
+        call give_reward(">You've unlocked the ability to summon Hermione to your office.","images/store/hermione_unlock_01.png")
         $ mQuest_B.counter = 7 #Makes sure it only triggers once!
     if mQuest_B.counter == 8 and not mQuest_B.completed:
         $ mQuest_B.completed = True
-        call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","images/store/hermione_unlock_02.png") 
+        call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","images/store/hermione_unlock_02.png")
 
     #Set Main Quest
     if mQuest_A.counter >= 1:
@@ -269,7 +269,7 @@ label update_quests:
 
 
 
-#Start: There is a star icon at the top left corner of the screen. This is will open the player guide. 
+#Start: There is a star icon at the top left corner of the screen. This is will open the player guide.
 #It will help you progress through the game, give you helpful tips, or even tell you what to do next entirely.
 
 #28.gifts.rpy
@@ -291,7 +291,7 @@ label update_quests:
 #strap on:       lvl 1-2= +20, 3-4= -15, 5-6= +10, 7+= +30
 #speed stick:    lvl 1-2= +20, 3-4= +20, 5-6= +30, 7+= +30
 #sex doll:       lvl 1-2= -20, 3-4= -20, 5-6= +10, 7+= +30
-#ADD:            lvl 1-2= ,  3-4= ,  5-6= ,  7+= 
+#ADD:            lvl 1-2= ,  3-4= ,  5-6= ,  7+=
 
 ### Run label every time before guide gets opened. ###
 ### Tip of the day ###
@@ -332,14 +332,14 @@ label update_tip_of_the_day:
             $ guide_tip_text2 = "Give her a lollipop to better her mood!"
             $ guide_tip_text3 = "You can also watch her lick it!"
         if rndm_one_of_ten ==  5: #Chocolate
-            $ guide_add_tip = True                                          #Max Characters                                          
+            $ guide_add_tip = True                                          #Max Characters
             $ guide_tip_text = "Seems like Hermione is mad at you!"
             $ guide_tip_text2 = "Why not give her some chocolate to better"
             $ guide_tip_text3 = "better her mood!"
 
         #whoring specific gifts
         if rndm_one_of_ten >= 6 and rndm_one_of_ten <= 10:
-            if whoring >= 0 and whoring <= 5:  #lvl 1-2    
+            if whoring >= 0 and whoring <= 5:  #lvl 1-2
                 $ rndm_one_of_three = renpy.random.randint(1, 3)
                 if rndm_one_of_three == 1:
                     $ guide_add_tip = True                                          #Max Characters
@@ -412,8 +412,8 @@ label update_tip_of_the_day:
 
 
     else:
-        
-        
+
+
 
         ## Funny Tips ##
         if daily_rndm_tip_or_fact ==  0:                                     #Max Characters

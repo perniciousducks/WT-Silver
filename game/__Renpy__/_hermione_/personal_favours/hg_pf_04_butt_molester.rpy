@@ -137,14 +137,7 @@ label hg_pf_ButtMolester:
 
                                                 $ hg_pf_ButtMolester_OBJ.points += 1
 
-                                                if daytime:
-                                                    call play_music("day_theme")
-                                                    $ hermione_takes_classes = True
-                                                    jump day_main_menu
-                                                else:
-                                                    call play_music("night_theme")
-                                                    $ hermione_sleeping = True
-                                                    jump night_main_menu
+                                                jump end_hg_pf
 
                                             "\"I'm subtracting points from you then!\"":
                                                 $ mad += 30
@@ -175,15 +168,9 @@ label hg_pf_ButtMolester:
                                                         g9 "I bet she actually enjoyed the slapping and just won't admit it..."
 
                                                 $ hg_pf_ButtMolester_OBJ.points += 1
+                                                $ hermione_busy = True
 
-                                                if daytime:
-                                                    call play_music("day_theme")
-                                                    $ hermione_takes_classes = True
-                                                    jump day_main_menu
-                                                else:
-                                                    call play_music("night_theme")
-                                                    $ hermione_sleeping = True
-                                                    jump night_main_menu
+                                                jump main_room
 
                 #You apologized.
                 call ctc
@@ -1147,14 +1134,4 @@ label hg_pf_ButtMolester:
 
     $ hg_pf_ButtMolester_OBJ.points += 1
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
-
-    if daytime:
-        call play_music("day_theme")
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        call play_music("night_theme")
-        $ hermione_sleeping = True
-        jump night_main_menu
+    jump end_hg_pf

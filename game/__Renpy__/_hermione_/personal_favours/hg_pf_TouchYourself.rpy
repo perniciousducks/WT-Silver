@@ -705,5 +705,4 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         $ new_request_16_heart = 3
         $ hg_pf_TouchYourself_OBJ.hearts_level = 3 #Event hearts level (0-3)
 
-
     jump end_hg_pf  #Resets screens. Hermione walks out. Resets Hermione.

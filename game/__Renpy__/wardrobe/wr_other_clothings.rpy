@@ -114,7 +114,7 @@ label equip_her_body_accessory:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -160,15 +160,15 @@ label equip_her_body_accessory:
 
             call set_h_body_accessory(body_accessory_choice)
 
-            call her_main("","","",xpos="wardrobe")
-            $ wardrobe_active = 1
+            call her_main(xpos="wardrobe")
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call set_h_body_accessory(body_accessory_choice)
-            call her_main("","","",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
 
 
@@ -178,7 +178,7 @@ label equip_her_body_accessory:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = 0 #activates dissolve in her_main
+            $ wardrobe_active = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             m "[hermione_name]..."
@@ -200,15 +200,15 @@ label equip_her_body_accessory:
 
             call set_h_body_accessory(body_accessory_choice) #Removes Item
 
-            call her_main("","","",xpos="wardrobe")
-            $ wardrobe_active = 1
+            call her_main(xpos="wardrobe")
+            $ wardrobe_active = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = 1
+            $ wardrobe_active = True
             call set_h_body_accessory(body_accessory_choice) #Removes Item
-            call her_main("",xpos="wardrobe")
+            call her_main(xpos="wardrobe")
             call screen wardrobe
 #
 

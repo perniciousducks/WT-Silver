@@ -7,28 +7,51 @@ label day_start:
 
 ### RESETING STUFF ###
 
-call reset_hermione_main
 
 call gen_chibi("hide")
 call her_chibi("hide")
 call sna_chibi("hide")
 
-$ flip = False
 $ chitchated_with_her = False
 $ chitchated_with_astoria = False
 $ chitchated_with_susan = False
 $ chitchated_with_snape = False
 $ chitchated_with_tonks = False
 
-$ hermione_main_zorder = 5 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
 $ gifted    = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
 $ searched  = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
 $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
 $ save_name = temp_name
 
-call luna_day_flags
-$ astoria_busy = False
 
+
+#Hermione Daily Flags.
+$ hermione_busy = False
+$ hermione_door_event_happened = False
+call reset_hermione_main
+$ flip = False
+$ no_blinking   = False #When True - blinking animation is not displayed.
+$ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
+$ uni_sperm     = False
+$ hermione_main_zorder = 5 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
+
+if hermione_expand_breasts_counter != 0:
+    $ hermione_expand_breasts_counter -= 1
+else:
+    $ hermione_expand_breasts = False
+
+if hermione_expand_ass_counter != 0:
+    $ hermione_expand_ass_counter -= 1
+else:
+    $ hermione_expand_ass = False
+
+
+#Luna Daily Flags.
+$ luna_busy = False
+call luna_day_flags
+
+#Astoria Daily Flags.
+$ astoria_busy = False
 
 #Susan Daily Flags.
 $ susan_busy = False
@@ -41,12 +64,20 @@ if susan_imperio_counter > 0:
         call susan_init
         $ reset_susans_wardrobe = False
 
+#Cho Daily Flags.
+$ cho_busy = False
+if cho_known:
+    $ days_since_cho += 1
+if cho_quidd:
+    $ days_since_quidd += 1
+
+#Tonks Daily Flags.
 $ tonks_busy = False
 
-$ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
-$ no_blinking   = False #When True - blinking animation is not displayed.
-$ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ uni_sperm     = False
+#Snape Daily Flags.
+$ snape_busy = False
+
+
 
 $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
 
@@ -113,53 +144,40 @@ hide screen weather
 $ daytime = True #True when it is daytime. Turns False during nighttime.
 $ interface_color = "gold"
 
-$ hermione_sleeping = False
-$ hermione_takes_classes = False
-$ hermione_door_event_happened = False
-
-$ snape_busy = False
 
 $ fire_in_fireplace = False
 hide screen fireplace_fire
 
 
 ### DAILY COUNTERS ###
-
 $ days_without_an_event +=1
 
-#Temporary Breasts and Ass expansion.
-if hermione_expand_breasts_counter != 0:
-    $ hermione_expand_breasts_counter -= 1
-else:
-    $ hermione_expand_breasts = False
-
-if hermione_expand_ass_counter != 0:
-    $ hermione_expand_ass_counter -= 1
-else:
-    $ hermione_expand_ass = False
-
-
-
-### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
 if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
     $ day_of_week = 0
     if finished_report >= 1:
         $ got_paycheck = True #When TRUE the paycheck is in the mail. Can't do paper work.
         $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
         #$ got_mail = True comented out because being replaced with $ letters += 1
+
 $ day_of_week += 1
 
-### HERMIONE ###
+### MOOD ###
 if game_difficulty <= 1: #Easy difficulty
     if mad >= 1:
         $ mad -= 3
-        if mad <= 0:
-            $ mad == 0
+    if cho_mad >= 1:
+        $ cho_mad -= 3
 else: #Normal (2) $ hardcore (3) difficulty
     if mad >= 1:
         $ mad -= 2
-        if mad < 0:
-            $ mad == 0
+    if cho_mad >= 1:
+        $ cho_mad -= 2
+
+if mad < 0:
+    $ mad == 0
+if cho_mad < 0:
+    $ cho_mad == 0
+
 
 
 if deliveryQ.got_mail():
@@ -204,6 +222,11 @@ if day == 12: # LETTER THAT UNLOCKS PAPERWORK BUTTON.
     $ work_unlock = True # Send a letter that will unlock an ability to write reports.
     $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
 
+#Astoria intro.
+if day >= 25 and whoring >= 9 and not ministry_letter_received:
+    $ ministry_letter = True
+    $ letters += 1 #Displays Owl
+
 if outfit_order_placed and not outfit_ready:
     call outfit_purchase_check
 
@@ -224,27 +247,26 @@ $ day +=1
 
 call points_changes #Makes house points changes.
 
-###4 Houses
-call FH_day
-if days_since_cho == 2:
-    jump hermione_cho
-if days_since_cho == 4 and not cho_met:
-    jump cho_intro_2
-
-if days_since_cho >= 15 and not cho_quidd:
-    jump cho_quidd_intro
-
-if cho_quidd and days_since_quidd >= 4:
-    jump cho_quidd_events
-
 
 
 
 #EVENTS
-if day >= 25 and whoring >= 9:
-    jump astoria_intro_branches #This jumps to day_resume if nothing happens!
 
 label day_resume:
+
+#Cho Events. They happen first because Cho wakes up at 5 in the morning apparently.
+if days_since_cho == 1 and days_without_an_event >= 1:
+    $ days_without_an_event = 0
+    jump hermione_cho
+if days_since_cho == 2 and days_without_an_event >= 1 and not cho_unlocked:
+    $ days_without_an_event = 0
+    jump cho_intro_2
+
+if days_since_cho >= 8 and not cho_quidd:
+    $ cho_quidd = True
+    jump cho_quidd_intro
+
+
 
 if day == 7:
     call event_08 #Hermione shows up for the first time.
@@ -254,16 +276,14 @@ if (day >= 8 or day >= 12) and hermione_is_waiting_01 and not event09:
 if event13_happened and not event14_happened:
     call event_14 #Returns
 
-if whoring == 11 and not touched_by_boy:
-    call nar("!!! Attention !!!","start")
-    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
-    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
-    call nar(">You should also save your game here.","end")
-    menu:
-        "-Understood-":
-            pass
-        "-Don't tell me what to do!-":
-            pass
+
+
+#Astoria Intro.
+if hermione_finds_astoria and days_without_an_event >= 2 and not astoria_unlocked:
+    $ astoria_unlocked = True
+    $ days_without_an_event = 0
+    jump astoria_captured_intro
+
 
 if whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
     call want_to_rule #Returns
@@ -283,8 +303,10 @@ if whoring >= 21 and not hat_known:
 
 #Luna event's
 if luna_reverted and luna_corruption == 10:
+    $ days_without_an_event = 0
     jump luna_reverted_greeting_1#No return.
 elif luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
+    $ days_without_an_event = 0
     jump luna_reverted_events
 
 ### NOT IN USE
@@ -297,6 +319,29 @@ elif luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
 #if day >= 13 and not event10 and hermione_is_waiting_02:
 #    call event_10 #Hermione shows up for the third time. Says that she started "MRM" and sent letter to the ministry.
 
+if collar == 5:
+    $ days_without_an_event = 0
+    jump collar_scene
+
+if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
+    call hg_pr_SexWithClassmate_Alt
+
+
+
+if whoring == 11 and not touched_by_boy and not ignore_warning:
+    call nar("!!! Attention !!!","start")
+    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
+    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
+    call nar(">You should also save your game here.","end")
+    menu:
+        "-Understood-":
+            pass
+        "-Don't tell me what to do!-":
+            $ ignore_warning = True
+
+
+
+### CHEATS / SKIPPING ###
 if skip_duel or skip_to_hermione:
     $ bird_examined = True
     $ desk_examined = True
@@ -305,18 +350,20 @@ if skip_duel or skip_to_hermione:
     $ fireplace_examined = True
     if skip_duel:
         $ skip_duel = False
+        $ rum_times = 3 #7 unlocks map!
         $ day = 5
 
     if skip_to_hermione:
         $ skip_to_hermione = False
         #Add vars
-        $ hanging_with_snape = True
+        $ snape_unlocked = True
         $ event08_happened = True
         $ event09 = True #You let Hermione in. This event will stop looping now.
         $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
         $ event11_happened = True #Allows next event to start.
         $ event12_happened = True #Allows next event to start.
         $ event13_happened = True #Allows next event to start.
+        $ rum_times = 6 #7 unlocks map!
 
         if day < 14:
             $ day = 14
@@ -331,17 +378,8 @@ if skip_duel or skip_to_hermione:
 if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
     call event_01 #Returns
 
-if collar == 5:
-    jump collar_scene
-
 ### Guide ###
-#Random Number for Tip/Fact of the Day
-$ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
-call update_quests
 call update_hints
-
-if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
-    jump hg_pr_SexWithClassmate_Alt
 
 
 

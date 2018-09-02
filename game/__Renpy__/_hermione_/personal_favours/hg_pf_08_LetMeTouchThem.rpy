@@ -18,7 +18,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 pass
             "\"(Not right now.)\"":
                 jump silver_requests
-    
+
     $ current_payout = 35 #Used when haggling about price of th favor.
 
     if hg_pf_LetMeTouchThem_OBJ.points == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
@@ -414,25 +414,4 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
         $ new_request_12_heart = 3
         $ hg_pf_LetMeTouchThem_OBJ.hearts_level = 3 #Event hearts level (0-3)
 
-
-    hide screen bld1
-    hide screen hermione_main
-    with d3
-    pause.2
-
-    call her_walk("desk","leave",2.5)
-
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-    $ custom_outfit_old = temp_outfit
-
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
-
-    if daytime:
-        call play_music("day_theme")
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        call play_music("night_theme")
-        $ hermione_sleeping = True
-        jump night_main_menu
+    jump end_hg_pf

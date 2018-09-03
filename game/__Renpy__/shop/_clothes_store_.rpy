@@ -316,7 +316,7 @@ label cust_excuse(text="You cant use this just yet"): #custom text option for ot
 ### CLOTHING STORE ###
 
 label open_clothes_store:
-    $ cs_gui_OBJ = cs_gui_class() #This will reset all clothes store variables.
+    $ cs_gui_OBJ = cs_gui_outfit_class() #This will reset all clothes store variables.
     $ mannequin_preview = "hg_mannequin.png"
     $ clothes_store_selection = None
 
@@ -713,7 +713,7 @@ label update_clothes_store_lists:
 
 init python:
 
-    class cs_gui_class(object):
+    class cs_gui_outfit_class(object):
         current_page = 0
         character = 1
         category = 0

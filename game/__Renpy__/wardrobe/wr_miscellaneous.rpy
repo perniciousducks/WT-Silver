@@ -24,7 +24,7 @@ label equip_her_misc_item:
             if whoring <= 11:
                 jump too_much
 
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ wardrobe_active = 0 #activates dissolve in her_main
 
             if transparency == 1:
                 call her_main("You want me to make my clothes see through?","normal","worriedCl")
@@ -69,7 +69,7 @@ label equip_her_misc_item:
         if misc_item_choice in ["buttplug_small","buttplug_medium","buttplug_large"]:
             if misc_item_choice == "buttplug_small" and not h_request_wear_buttplug:
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ wardrobe_active = 0 #activates dissolve in her_main
 
                 call her_main("You want me to use a buttplug? Again?","angry","wink")
                 call her_main("(...)","annoyed","ahegao")
@@ -85,7 +85,7 @@ label equip_her_misc_item:
 
             elif misc_item_choice == "buttplug_medium" and not h_request_wear_buttplug:
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ wardrobe_active = 0 #activates dissolve in her_main
 
                 call her_main("Are you sure this is the medium size one?","soft","wink")
                 call her_main("(It still looks so big.)","angry","worriedCl")
@@ -100,7 +100,7 @@ label equip_her_misc_item:
 
             elif misc_item_choice == "buttplug_large" and not h_request_wear_buttplug:
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ wardrobe_active = 0 #activates dissolve in her_main
 
                 call her_main("The big one?","soft","base")
                 g9 "The giant one!"
@@ -120,7 +120,7 @@ label equip_her_misc_item:
 
             else: #Remove
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ wardrobe_active = 0 #activates dissolve in her_main
 
                 call her_main("You want me to take the buttplug out?","angry","wink")
                 call her_main("(I was just getting used to it...)","annoyed","ahegao")

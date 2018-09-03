@@ -18,7 +18,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 pass
             "\"(Not right now.)\"":
                 jump silver_requests
-
+    
     $ current_payout = 45 #Used when haggling about price of th favor.
 
     call bld
@@ -647,6 +647,11 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 g4 "What did you just say?"
                 call her_main("Ginny Weasley, she taught me this one.","base","happyCl")
                 m "Oh, right..."
+
+                #if not handjob_practice_with_ginny:
+                #    call nar(>Your curiosity about Ginny grows!)
+                #$ handjob_practice_with_ginny = True
+
                 call her_main("She said any boy would fall in love with me if I did this to him...","base","down")
                 call her_main("There is also this thing when I form a ring with my fingers...")
                 call her_main("And then I put one finger here...")
@@ -967,7 +972,26 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         $ new_request_16_heart = 2
         $ hg_pf_TouchMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
 
-    jump end_hg_pf
+    hide screen bld1
+    hide screen hermione_main
+    with d3
+    pause.2
+
+    call her_walk("desk","leave",2.5)
+
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
+
+    $ menu_x = 0.5 #Menu is moved to the middle.
+    $ menu_y = 0.5 #Menu is moved to the middle.
+
+    if daytime:
+        call play_music("day_theme")
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        call play_music("night_theme")
+        $ hermione_sleeping = True
+        jump night_main_menu
 
 
 label hg_pf_TouchMe_KissSuck: #Jumps here after event #03 and if WHORING >= LEVEL 07 ### KISS SUCK! ###

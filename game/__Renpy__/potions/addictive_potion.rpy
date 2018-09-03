@@ -39,8 +39,8 @@ label potion_scene_3_1_1: #cum addiction - work in progress, has some scenes adj
     call her_walk("mid","leave",2)
 
     $ addicted = True
-    $ hermione_busy = True
-    jump main_room
+    $ hermione_takes_classes = True
+    jump day_main_menu
 
 label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum (replace sucking noises with actual text)
     call play_sound("door") #Sound of a door opening.
@@ -356,8 +356,9 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
 
     $ hermione_main_zorder = 5
 
-    $ hermione_busy = True
-    jump main_room
+    $ hermione_sleeping = True
+    call music_block
+    jump night_main_menu
 
 
 
@@ -801,9 +802,9 @@ label potion_scene_3_3_1: #Hypno potion
 
     call reset_hermione_main
 
-    $ hermione_busy = True
+    $ hermione_takes_classes = True
     call music_block
-    jump main_room
+    jump day_main_menu
 
 
 ### AHEGAO POTION ###
@@ -1014,6 +1015,6 @@ label potion_scene_3_4_1:
     hide screen blkfade
     with d3
 
-    $ hermione_busy = True
+    $ hermione_takes_classes = True
     call music_block
-    jump main_room
+    jump day_main_menu

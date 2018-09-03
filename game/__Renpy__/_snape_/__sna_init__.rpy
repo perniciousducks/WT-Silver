@@ -15,7 +15,7 @@ label snape_init:
         $ snape_chibi_ypos=210
         $ snape_speed = 2.0
         $ snape_chibi_zorder = 2
-
+    
 
 
     return
@@ -25,7 +25,7 @@ label snape_init:
 label snape_progress_init:
 
     if not hasattr(renpy.store,'snape_busy') or reset_persistants:
-
+    
         ###SNAPE STATS###
         $ snape_busy = False #When True, you can't summon Snape.
         $ snape_friendship = 0 #Get's +1 after every evening spent is Snape's company.
@@ -50,12 +50,16 @@ label snape_progress_init:
 
 
         ### SPECIAL DATES WITH SNAPE ###
-        $ snape_unlocked = False
-        $ hanging_with_snape = False #Removed! Not in use anymore!
+
+        $ hanging_with_snape = False #Turns true when "hanging with Snape during the night time" becomes available. (Snape becomes available for summons).
 
         $ date_with_snape_02_happened = False #Second date with Snape. They decide to de-throne Hermione.
                                       #Turns true after event_09
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
-
+    
     return
+
+
+
+

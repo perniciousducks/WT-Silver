@@ -6,12 +6,11 @@ label summon_hermione:
     ### RANDOM CLOTHING EVENTS ###
     call hermione_random_clothing
 
-    label hermione_requests:
-
-    $ hermione_busy = True
-    $ wardrobe_active = False
+    label day_time_requests:
 
     $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
+
+    $ wardrobe_active = False
 
     menu:
         "-Talk-":
@@ -22,51 +21,51 @@ label summon_hermione:
                     jump hermione_talk
                 else:
                     her "I have nothing to say to you sir..."
-                    jump hermione_requests
+                    jump day_time_requests
             else:
                 jump hermione_talk
 
         "-Tutoring-" if not daytime and v_tutoring < 14: #13 is last level.
             if mad >=1 and mad < 3:
                 her "I'm sorry, maybe tomorrow..."
-                jump hermione_requests
+                jump day_time_requests
             elif mad >=3 and mad < 10:
                 her "I am not in the mood today..."
-                jump hermione_requests
+                jump day_time_requests
             elif mad >= 10 and mad < 20:
                 her "Absolutely not, [genie_name]"
                 her "I {i}might{/i} consider it once you've said sorry"
-                jump hermione_requests
+                jump day_time_requests
                 # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
             elif mad >=20:
                 her "After what you did, [genie_name]?"
                 her "I don't think so..."
-                jump hermione_requests
+                jump day_time_requests
             else:
                 jump l_tutoring_check
 
-        "-Buy sexual favours-" if hermione_favors:
+        "-Buy sexual favours-" if buying_favors_from_hermione_unlocked:
             if mad >=1 and mad < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
-                jump hermione_requests
+                jump day_time_requests
             elif mad >=  3 and mad < 10:
                 her "I don't feel like it today..."
                 her "Maybe in a couple of days..."
-                jump hermione_requests
+                jump day_time_requests
             elif mad >= 10 and mad < 20:
                 her "No thank you...."
-                jump hermione_requests
+                jump day_time_requests
             elif mad >= 20 and mad < 30:
                 her "After what you did, [genie_name]?"
                 her "I don't think so..."
-                jump hermione_requests
+                jump day_time_requests
             elif mad >= 30 and mad < 40:
                 her "You can't be serious!"
-                jump hermione_requests
+                jump day_time_requests
             elif mad >= 40:
                 her "Is this some twisted joke to you, sir?!"
                 her "After what you did I don't feel like doing this ever again!"
-                jump hermione_requests
+                jump day_time_requests
             else:
                 jump silver_requests
 
@@ -78,8 +77,8 @@ label summon_hermione:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = True
-            call her_main(xpos="wardrobe",ypos="base")
+            $ wardrobe_active = 1 #True
+            call her_main("","","",xpos="wardrobe",ypos="base")
             call screen wardrobe
 
         #"-Ending \"Your whore\"-":
@@ -106,11 +105,24 @@ label summon_hermione:
                 else:
                     her "Oh, alright. I will go to bed then."
 
-            call play_sound("door")
+            hide screen bld1
+            hide screen blktone
 
-            $ hermione_busy = True
+            hide screen hermione_main
+            hide screen hermione_blink #Hermione stands still.
 
-            jump main_room
+            hide screen ctc
+            with d3
+
+            $ menu_x = 0.5 #Menu position is back to default. (Center).
+            $ menu_y = 0.5 #Menu position is back to default. (Center).
+
+            if daytime:
+                $ hermione_takes_classes = True
+                jump day_main_menu
+            else:
+                $ hermione_sleeping = True
+                jump night_main_menu
 
 
 
@@ -164,7 +176,6 @@ label hermione_talk:
             #You tell Hermione about the curses.
             if snape_on_the_lookout: #Already talked to Snape.
                 $ hermione_finds_astoria = True
-                $ days_without_an_event = 0 #So the event won't happen right after.
             if hermione_on_the_lookout:
                 call her_main("I'm still looking for that student, [genie_name]!","open","closed")
                 call her_main("Trust in me, I will find that slytherin scum!","angry","angry")
@@ -304,7 +315,7 @@ label hermione_talk:
             jump start_end_events
 
         "-Never mind":
-            jump hermione_requests
+            jump day_time_requests
 
 
 label genie_change:

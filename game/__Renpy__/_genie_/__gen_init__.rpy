@@ -1,9 +1,9 @@
 
-label genie_init:
+label __init_variables:
 
 
     #Genie
-    if not hasattr(renpy.store,'genie_xpos') or reset_persistants:
+    if not hasattr(renpy.store,'genie_xpos'):
         $ genie_xpos = 60
         $ genie_ypos = 0
         $ genie_zorder = 4
@@ -17,7 +17,7 @@ label genie_init:
         $ genie_speed = 2.0
         $ genie_chibi_zorder = 2
 
-    if not hasattr(renpy.store,'birthday_happened') or reset_persistants:
+    if not hasattr(renpy.store,'birthday_happened'):
         $ secretly_jerking_off = False
         $ birthday_happened = False # Outfit "Present" wardrobe dialogue.
 

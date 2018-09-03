@@ -261,6 +261,22 @@ label hg_pf_BreastMolester:
         else:
             call her_head("(I'll just ask him about it next time...)","annoyed","angryL")
 
+        pause.5
+        call her_chibi("leave","door","base")
+
+    else:
+        call her_walk("desk","leave",3)
+
     $ hg_pf_BreastMolester_OBJ.points += 1
 
-    jump end_hg_pf
+    $ menu_x = 0.5 #Menu is moved to the middle.
+    $ menu_y = 0.5 #Menu is moved to the middle.
+
+    if daytime:
+        call play_music("day_theme")
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        call play_music("night_theme")
+        $ hermione_sleeping = True
+        jump night_main_menu

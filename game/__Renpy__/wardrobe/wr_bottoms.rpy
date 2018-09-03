@@ -21,13 +21,13 @@ label equip_bottom:
 label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"text\"
 
     if skirt_choice == h_skirt and bottom_color_choice == h_skirt_color:
-        $ wardrobe_active = True
+        $ wardrobe_active = 1
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
     if hermione_action == "hands_behind" or hermione_action == "covering" or hermione_action == "fingering" or hermione_action == "covering_top" or hermione_action == "pinch" or hermione_action == "hands_cuffed" or hermione_action == "milk_breasts":
 
-        $ wardrobe_active = True
+        $ wardrobe_active = 1
         hide screen hermione_main
         with d3
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
@@ -50,7 +50,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ wardrobe_active = 0 #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -613,7 +613,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
             call set_h_bottom(skirt_choice,bottom_color_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = True
+            $ wardrobe_active = 1
             call screen wardrobe
 
         else:
@@ -736,7 +736,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
             else:
                 pass
 
-            $ wardrobe_active = True
+            $ wardrobe_active = 1
             call set_h_bottom(skirt_choice,bottom_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe

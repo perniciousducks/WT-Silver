@@ -4,7 +4,7 @@ label wardrobe_init:
 
     if not hasattr(renpy.store,'icon_xpos_offset') or reset_persistants:
 
-        $ wardrobe_active = False
+        $ wardrobe_active = 0
         $ active_girl = "hermione"
 
         $ wardrobe_page = 0

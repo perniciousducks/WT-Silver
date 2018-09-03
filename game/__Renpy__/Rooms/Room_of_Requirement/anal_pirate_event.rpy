@@ -3,6 +3,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     show screen main_room
     show screen genie
     show screen blkfade
+
     hide screen hermione_main
     with d3
 
@@ -14,7 +15,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     $ g_c_u_pic = "sex_slow_ani"
     
     nar "This story is a rewrite of the \"Time for anal\" Private favour. And the genie is a pirate? Who knows... Enjoy."
-    
     
     menu:
         "Path 1":
@@ -40,7 +40,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         hide screen hermione_main
 
         label lucky_anal_guess:
-        call h_equip_temp_outfit(hg_pirate_OBJ)
+        call set_hermione_outfit(hg_pirate_OBJ)
         call blkfade
         call hide_blkfade
         
@@ -451,7 +451,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         g9 "Raise anchor, you little tart!"
         
         hide screen hermione_main
-        call h_equip_temp_outfit(hg_pirate_OBJ)
+        call set_hermione_outfit(hg_pirate_OBJ)
         call blkfade
         
         stop music fadeout 1.0
@@ -664,8 +664,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     call her_main("Thank you, captain...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
+
+    $ custom_outfit_old = temp_outfit
     call blkfade
-    call h_unequip_temp_outfit
+    call h_outfit_OBJ(None)
     call her_chibi(action="leave")
     hide screen main_room
     jump enter_room_of_req

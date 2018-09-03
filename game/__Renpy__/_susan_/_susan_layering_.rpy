@@ -138,7 +138,35 @@ label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
     show screen bld1
 
     #Transitions
-    call transition(trans)
+    if trans != None:         #d3 is default.
+        if trans == "d1":
+            with d1
+        elif trans == "d3": #Default anyways.
+            with d3
+        elif trans == "d5":
+            with d5
+        elif trans == "d7":
+            with d7
+        elif trans == "d9":
+            with d9
+
+        elif trans == "fade":
+            with fade
+        elif trans == "hpunch":
+            with hpunch
+        elif trans == "vpunch":
+            with vpunch
+
+        #Skip Transitions
+        elif trans == "none" or trans == "skip":
+            pass
+        else: #for typos and preventing crashes...
+            with d3
+
+    #Default transition.
+    else:
+        if not wardrobe_active:
+            with d3
 
     if text != "":
         $ renpy.say(sus, text)

@@ -336,21 +336,3 @@ label h_outfit_OBJ(outfit):
         call h_update_hair
 
     return
-    
-label h_equip_temp_outfit(outfit):
-    if temp_outfit_GLBL == None:
-        $ temp_outfit_GLBL = hermoine_outfit_GLBL
-        $ temp_weir = h_request_wear_outfit 
-        $ temp_costume = hermione_costume
-
-    call h_outfit_OBJ(outfit)
-    return
-
-label h_unequip_temp_outfit():
-    $ hermoine_outfit_GLBL = temp_outfit_GLBL
-    if temp_weir and  temp_costume:
-        call h_outfit_OBJ(temp_outfit_GLBL)
-    else:
-        call h_outfit_OBJ(None)
-    $ temp_outfit_GLBL = None
-    return

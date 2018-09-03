@@ -18,7 +18,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 pass
             "\"(Not right now.)\"":
                 jump silver_requests
-
+    
     call set_u_ani("blowjob_ani","hand_ani",0,10)
     $ mouth_full_of_cum = False
 
@@ -1248,5 +1248,10 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     $ hg_pf_SuckIt_OBJ.points += 1
 
     $ custom_outfit_old = temp_outfit
+
+    hide screen hermione_main
+    hide screen bld1
+    with d3
+    pause.5
 
     jump end_hg_pf #Hides screens. Hermione walks out. Resets Hermione.

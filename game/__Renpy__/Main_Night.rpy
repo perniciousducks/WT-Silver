@@ -9,21 +9,20 @@ label night_start:
 
 ###RESET STUFF
 
+call reset_hermione_main
+
+$ only_upper = False #When true, legs are not displayed in the hermione_main screen.
 $ no_blinking = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ uni_sperm = False
 $ textColor = "#1e1008"
 
 call luna_night_flags
-
-call reset_hermione_main
-$ hermione_busy = False
 $ astoria_busy = False
 $ susan_busy = False
-$ luna_busy = False
-$ cho_busy = False
 $ tonks_busy = False
 $ snape_busy = False
+$ hermione_takes_classes = False
 
 $ chitchated_with_her = False
 $ chitchated_with_astoria = False
@@ -77,14 +76,14 @@ show screen chair_right
 show screen fireplace
 show screen candlefire
 
-$ puzzle_random = renpy.random.randint(0, 2)
+$ puzzle_random = renpy.random.randint(0, 2) 
 
 if day > 25 and(1 < weather_gen < 4) and (puzzle_random == 0) and (found_puzzle_1 == False):
     show screen fireplace_glow
     
 else:
     $ puzzle_random = 1
-
+    
 show screen genie
 if package_is_here:
     show screen package
@@ -107,10 +106,14 @@ with fade
 
 call points_changes #Makes house points changes.
 
-
-
+### NIGHT REQUESTS ###
+if astoria_tonks_event_in_progress:
+    jump astoria_tonks_event
 
 #EVENTS
+jump Night_Request_Block
+
+
 
 label night_resume:
 
@@ -132,68 +135,16 @@ if days_without_an_event == 1 and event12_happened and not event13_happened:
 if day >= 15 and day <=20 and not event15_happened:
     call event_15 #Returns
 
-#Tonks intro.
-if astoria_unlocked and not tonks_intro_happened and days_without_an_event >= 1:
-    $ tonks_intro_happened = True
-    $ days_without_an_event = 0
-    jump tonks_intro_event
-
-#Snape prevents the ministry from detecting curses.
-if tonks_intro_happened and not spells_unlocked and days_without_an_event >= 1:
-    $ spells_unlocked = True #Astoria can now use spells.
-    $ days_without_an_event = 0
-    jump snape_spell_intro
-
-#Tonks becomes a teacher.
-if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
-    $ tonks_unlocked = True
-    $ astoria_intro_completed = True
-    $ days_without_an_event = 0
-    jump astoria_tonks_intro
-
-#Hermione working return.
-if current_job == 1:
-    jump maid_responses
-if current_job == 2:
-    jump barmaid_responses
-if current_job == 3:
-    jump gryffindor_cheer_responses
-if current_job == 4:
-    jump slytherin_cheer_responses
-
-#Hermione Potions return.
-if cat_ears_potion_return:
-    jump potion_scene_1_1_2
-if transparency < 1 and transparent_quest:
-    jump potion_scene_4_2
-if addicted == True:
-    jump potion_scene_3_1_2
-
-if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
-    jump hg_pf_TheGamble_complete
-
-
-#Cho Quidditch event return.
-if cho_quidd and cho_quidd_points == 0: #Happens right after the Quidditch intro.
-    $ days_without_an_event = 0
-    jump cho_quidd_1_1
-if days_since_quidd >= 4 and cho_quidd_points == 1:
-    $ days_without_an_event = 0
-    jump cho_quidd_1_2
-if days_since_quidd >= 7 and cho_quidd_points == 2:
-    $ cho_quidd_points = 3 #Prevents this from looping.
-    $ days_without_an_event = 0
-    jump cho_quidd_1_3
-
-
-#Hermione Personal Requests, Public Shaming return.
-python:
-    for i in hg_pr_list: #Call any public request event if it's in progress
-        if i.inProgress:
-            renpy.jump(i.complete_label)
-    for i in hg_ps_list: #Call any public shaming event if it's in progress
-        if i.inProgress:
-            renpy.jump(i.complete_label)
+if whoring == 11 and not touched_by_boy:
+    call nar("!!! Attention !!!","start")
+    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
+    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
+    call nar(">You should also save your game here.","end")
+    menu:
+        "-Understood-":
+            pass
+        "-Don't tell me what to do!-":
+            pass
 
 if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
     jump good_bye_snape
@@ -210,27 +161,10 @@ if milking == -1:
 if milking == -3:
     call potion_scene_11_3_2
 
-
-if whoring == 11 and not touched_by_boy and not ignore_warning:
-    call nar("!!! Attention !!!","start")
-    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
-    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
-    call nar(">You should also save your game here.","end")
-    menu:
-        "-Understood-":
-            pass
-        "-Don't tell me what to do!-":
-            $ ignore_warning = True
-
-
-#Atoria / Tonks event return.
-if astoria_tonks_event_in_progress:
-    jump astoria_tonks_event #These do not return to 'night_resume'!
-
-
-
-
 ### Guide ###
+#Random Number for Tip/Fact of the Day
+$ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
+call update_quests
 call update_hints
 
 

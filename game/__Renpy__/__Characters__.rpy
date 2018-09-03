@@ -1,66 +1,5 @@
 
-# House Elf
-screen house_elf:
-    add "characters/house-elf/house-elf.png" xpos 700 ypos 200
-    zorder snape_zorder
-
-label helf_main(text="", trans=None, remove=False):
-    hide screen house_elf
-    show screen bld1
-
-    if remove == True:
-        pause 0.1
-        return
-
-    show screen house_elf
-    show screen bld1
-
-    call transition(trans)
-
-    helf "[text]"
-
-    return
-
-
-#Transitions
-label transition(trans=None):
-
-    if trans != None:         #d3 is default.
-        if trans == "d1":
-            with d1
-        elif trans == "d3": #Default anyways.
-            with d3
-        elif trans == "d5":
-            with d5
-        elif trans == "d7":
-            with d7
-        elif trans == "d9":
-            with d9
-
-        elif trans == "fade":
-            with fade
-        elif trans == "hpunch":
-            with hpunch
-        elif trans == "vpunch":
-            with vpunch
-        elif trans == "move":
-            with move(1.0)
-
-        #Skip Transitions
-        elif trans in ["None","none","skip"]:
-            pass
-        else: #for typos and preventing crashes...
-            with d3
-
-    #Default transition.
-    else:
-        if not wardrobe_active:
-            with d3
-
-    return
-
-
-
+###HARRY POTTER CHARACTERS###
 init python:
     # Character tables
 
@@ -73,14 +12,14 @@ init python:
     helf = Character("House-Elf", window_left_padding=250, show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
 
     ### SNAPE HEAD ###
-    sna_ = [""] #Please don't use this screen! Use 'call sna_head' instead!
+    sna_ = [""]
     for i in range(1,26):
         sna_.append("")
         sna_[i] = Character("Severus Snape", color="#402313", show_side_image=Image("characters/snape/head/head_" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
 
 
     ### HERMIONE HEAD (OLD) ###
-    her_ = [""] #Please don't use this screen! Use 'call her_head' instead!
+    her_ = [""]
     for i in range(1,43):
         her_.append("")
         her_[i] = Character('[hermione_name]', color="#402313", window_left_padding=250, window_right_padding=270, show_side_image=Image("images/15_hermione_head/" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")

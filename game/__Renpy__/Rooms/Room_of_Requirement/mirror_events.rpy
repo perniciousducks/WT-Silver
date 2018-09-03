@@ -1,20 +1,14 @@
 #Regex find h\s+"([ -}]+)"
 #Regex replace (call her_main\( "\1", "base", "base" \))
 
-label a_bad_time_to_disrobe:
-    call h_equip_temp_outfit(hg_standart_school_OBJ)
-    menu:
-        "Part 1":
-            jump a_bad_time_to_disrobe_part_1
-        "Part 2":
-            jump a_bad_time_to_disrobe_part_2
     
-label a_bad_time_to_disrobe_part_1:
+    
+label a_bad_time_to_disrobe:
     call hide_room_req
     show screen main_room
     show screen genie
     show screen blkfade
-        
+    
     nar "In this story the genie has found an invisibility cloak."
     nar "And with the cloak comes great oportunities"
     nar "Title: A bad time to disrobe."
@@ -142,11 +136,13 @@ label a_bad_time_to_disrobe_part_1:
     $ daytime = False
     show screen main_room
     show screen genie
-    call her_chibi("top_naked", "desk", "base")
-    call h_equip_temp_outfit(hg_standart_school_noshirt_OBJ)
     hide screen day_to_night
     with d3
 
+    call her_chibi("top_naked", "desk", "base")
+    $ hermione_wear_top = False
+    call update_her_uniform
+    
     call her_main( "...", "upset", "base", tears="mascara_soft")
     
     m "What happened? Where's your shirt?"
@@ -205,177 +201,9 @@ label a_bad_time_to_disrobe_part_1:
     hide screen genie
     hide screen main_room
     hide screen hermione_main
-    call reset_hermione_main
-    call h_unequip_temp_outfit
+    call load_hermione_clothing_saves
     jump enter_room_of_req
     
-label a_bad_time_to_disrobe_part_2:
-    show screen blkfade
-    $ temp_time = daytime
-    $ daytime = True
-    call play_standart_theme
-    call hide_room_req
-    show screen main_room
-    show screen genie   
-    call her_chibi("stand", "desk")
-    hide screen blkfade
-    with d3    
-    
-    m "Good afternoon miss Granger."
-    call her_main( "Good afternoon professor, what can I do for you today?", "base", "base" )
-    m "Glad you asked, I've got another task for you."
-    call her_main( "And what task may that be professor.", "soft", "baseL" ) 
-    m "Well miss Granger, I think somebody owes me a invisibility cloak."
-    call her_main( "Oh, do you want me to collect it from somebody?", "open", "base" )
-    m "That somebody is you miss Granger..."
-    m "You left my cloak at the scene of the crime."
-    call her_main( "What crime professor, what have you gotten me into?", "upset", "annoyed" ) 
-    m "I'm talking about when you went to visit the boys changing room."
-    m "Or have you forgotten already?"
-    call her_main( "{size=7}I've tried to.{/size}", "upset", "worriedL" )
-    m "Sorry?"
-    call her_main( "I said, I do remember.", "normal", "baseL" )
-    m "Right, well. Good invisibility cloaks are pretty hard to come by..."
-    m "\"I think...\""
-    call her_main( "No they're not... they're mass produced as far as I know.", "annoyed", "base" )
-    call her_main( "By house elves I bet...", "disgust", "angryCl" )
-    m "Hey now, I know they might be small but I wouldn't call them elves."
-    m "In any case, the cloak has more of a sentimental value to me... lots of memories."
-    g9 "\"Like the time where your butt fell out of it.\""
-    g9 "Oh, the memories... you must retrieve it for me." 
-    call her_main( "Fine, I'll do it... even though I hold you partly responsible for the situation that lead to me dropping it.", "annoyed", "angryCl" )
-    m "Great, let's not dwell on the past then."
-    call her_main( "...", "normal", "annoyed" )
-    call her_main( "Do you happen to have any idea of where it is?", "open", "base" )
-    m "Well, it hasn't been reported as found so unless someone stole it there's only one place it could be."
-    call her_main( "The boys changing room?", "base", "down" )
-    g9 "The boys changing room."
-    call her_main( "And how many house points?", "base", "base" )
-    m "For what exactly?"
-    call her_main( "Retrieving the cloak of course.", "annoyed", "base" )
-    m "You're demanding house points, for your own mistakes miss Granger?"
-    call her_main( "But I thought...", "upset", "worried" )
-    m "..."
-    call her_main( "...", "upset", "down" )
-    m "Fine, but only if we continue where we left of."
-    call her_main( "With my butt out?!?", "disgust", "surprised" )
-    m "With your bu..."
-    m "No, well... yes, but this time you'll be prepared."
-    call her_main( "But... what if they recognize me sir?", "open", "worried" )
-    m "You'd already know if they had recognized you..."
-    call her_main( "\"That's true...\"", "soft", "soft", cheeks="blush" ) 
-    call her_main( "And then what, you want me to just walk away?", "base", "base", cheeks="blush" )
-    m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."
-    call her_main( "And I want...", "open", "base" )
-    m "I'll give you 40 house points for it."
-    call her_main( "\"I was going to ask for 30.\"", "soft", "squintL", cheeks="blush" )
-    call her_main( "I'll do it...", "base", "base" )
-    g9 "Great, you're doing a great service to your house and making an old man very happy."
-    call her_main( "By getting your cloak back right?", "base", "worried" )
-    m "Right..."
-    call her_walk("desk","door", 2)
-    call her_chibi("leave")
-
-    show screen day_to_night
-    with d3
-    hide screen main_room
-    hide screen genie
-    nar "Later that evening"
-    $ temp_time = daytime
-    $ daytime = False
-    call play_standart_theme
-    show screen main_room
-    show screen genie
-    call h_unequip_temp_outfit()
-    call h_action("covering_uniform")
-    hide screen day_to_night
-    with d3
-    
-    call her_chibi("stand", "door")
-    call her_walk("door","desk",2)
-    
-    call her_main( "...", "normal", "dead", cheeks="blush" )
-    m "Mission success?"
-    call her_main( "...", "normal", "dead", cheeks="blush" )
-    m "Miss Granger?"
-    call her_main( "Oh, hello professor, yes. Here's your cloak back.", "base", "down" )
-    m "..."
-    m "And?"
-    call her_main( "And what?", "normal", "worriedCl" )
-    m "And what about your assignment. How did it go?"
-    call her_main( "Oh... yes, it went very well thank you... no hurdles in any way.", "soft", "worriedL", cheeks="blush")
-    m "Your face is glowing miss Granger, I can tell when you're being untruthful."
-    call her_main( "It is? I didn't even notice...", "normal", "down_raised", cheeks="blush" ) 
-    m "You're going to have to elaborate if you'd like those house points."
-    call her_main( "Oh... okay, I'l just go ahead then...", "mad", "base" )
-    m "Let me get the popcorn."
-    call her_main( "popcorn? Where would you get popcorn from in this office?", "annoyed", "base")
-    g9 "Magic cupboard."
-    call her_main( "Right... well, I'll just start in that case shall I?", "base", "glanceL" )
-    call her_main( "...", "base", "base", cheeks="blush")
-    call her_main( "So... I went to the boys changing room when they were in quidditch practice.", "open", "down" )
-    m "*CRUNCH*"
-    call her_main( "It's very messy in there... I thought the girls changing room was bad...", "base", "down_raised" )
-    m "*CRUNCH* *Chew* *Chew*"
-    m "*CRUNCH*"
-    call her_main( "Anyway... so I rumaged around in that mess...", "annoyed", "worried" ) 
-    call her_main( "I knew it had to have been somewhere between the showers and the doorway...", "base", "base" )
-    call her_main( "After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.", "open", "down" )
-    call her_main( "So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.", "base", "down_raised" )
-    call her_main( "But as I was stuffing my clothes in one of the lockers a boy walked in.", "clench", "worried")
-    m "*CRUNCH*"
-    call her_main( "Professor!", "scream", "angry" )
-    g4 "*Cough* *Cough*... sorry."
-    call her_main( "It is hard to talk about this as it is without your chewing distracting me.", "annoyed", "angry" )
-    call her_main( "Anyhow...", "base", "angryL" )
-    call her_main( "I expected the team to be going for at least another 30 minutes.", "open", "base" )
-    call her_main( "But that's when the boy walked in...", "normal", "closed" )
-    call her_main( "And I panicked and threw the cloak over myself and hid in one of the toilets.", "open", "worriedL")
-    m "Smart."
-    call her_main( "...", "base", "base", cheeks="blush" )
-    call her_main( "Well, it would've been if I had remembered to lock it.", "base", "down_raised" )
-    g9 "Not that smart..."
-    call her_main( "Do you want me to continue or not?", "annoyed", "annoyed" )
-    m "You're the one receiving the points here, I'm just providing the means of earning them."
-    call her_main( "...", "normal", "down" ) 
-    call her_main( "As I was saying...", "base", "down_raised" )
-    call her_main( "I went into one of the toilets and I heard the boy shuffling outside.", "base", "closed" )
-    call her_main( "The room was so small so I tried to back into a corner, but as he came in I knew it wasn't going to work...", "base", "down_raised", cheeks="blush")
-    call her_main( "So I prayed he wasn't about to sit down and instead I positioned myself above the toilet with my legs around the base.", "clench", "worriedCl" )
-    m "And did he sit down or not?"
-    call her_main( "No, but he was close enough for me to feel his...", "mad", "ahegao_squint" )
-    call her_main( "His...", "base", "ahegao_intense" )
-    m "His what? miss Granger..."
-    call her_main( "Well... His Penis brushed up against my butt.", "annoyed", "closed", cheeks="blush" )
-    m "How did he manage that?"
-    call her_main( "The boy wasn't in there to relieve himself in the way I assumed...", "open", "angryCl", cheeks="blush" )
-    call her_main( "I guess he wasn't paying attention to what sensation he was feeling on the tip of his...", "normal", "worried", cheeks="blush")
-    call her_main( "Anyway...", "open", "worriedL", cheeks="blush" )
-    m "..."
-    call her_main( "I'd like my points now.", "base", "down")
-    m "Certainly miss Granger..."
-    m "40 points to Gryffindor!"
-    call her_main( "Thank you professor...", "soft", "soft" ) 
-    
-    call her_walk("desk","door", 2)
-    
-    call her_main( "\"I'm glad I had time to clean the cloak before walking in here...\"", "base", "dead", cheeks="blush" )
-    call her_main( "\"That thing was massive...\"", "normal", "down" )
-    call her_main( "\"What am I thinking? snap out of it...\"", "base", "worriedCl", cheeks="blush" ) 
-
-    call her_chibi("leave")
-
-    "The end"
-    
-    hide screen genie
-    hide screen main_room
-    hide screen hermione_main
-    $ daytime = temp_time
-    call play_standart_theme
-    call reset_hermione_main
-    call h_action("none")
-    jump enter_room_of_req
- 
 label whose_points:
     call hide_room_req
     show screen whose_points_screen

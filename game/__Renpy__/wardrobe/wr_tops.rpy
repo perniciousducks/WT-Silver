@@ -21,13 +21,13 @@ label equip_top:
 label equip_her_top:
 
     if top_choice == h_top and top_color_choice == h_top_color:
-        $ wardrobe_active = True
+        $ wardrobe_active = 1
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
     if hermione_action == "hands_behind" or hermione_action == "covering" or hermione_action == "fingering" or hermione_action == "covering_top" or hermione_action == "pinch" or hermione_action == "hands_cuffed" or hermione_action == "milk_breasts":
 
-        $ wardrobe_active = True
+        $ wardrobe_active = 1
         hide screen hermione_main
         with d3
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
@@ -50,7 +50,7 @@ label equip_her_top:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ wardrobe_active = 0 #activates dissolve in her_main
 
             m "[hermione_name]..."
 
@@ -151,9 +151,9 @@ label equip_her_top:
                 m "Would you wear your uniform top for me? But remove the tie and the vest."
                 if whoring >= 5: #Gets removed at level 11.
                     call her_main("You better appreciate this, [genie_name].","annoyed","annoyed")
-                    call her_main("Can't believe I'm willing to remove my precious Gryffindor tie for you...","angry","angry")
+                    call her_main("Can't believe I'm willing to remove my precious Grffindor tie for you...","angry","angry")
                     m "It's only a tie, girl!"
-                    call her_main("No, it is not...","scream","worriedCl")
+                    call her_main("No it is not...","scream","worriedCl")
                     call her_main("...","annoyed","worriedL")
                     call her_main("Just let me go and change...","annoyed","base")
                 else:
@@ -714,7 +714,7 @@ label equip_her_top:
                         m "(...)"
                         m "(Wait, does she want to go fishing with it...?)"
                     else:
-                        call her_main("Another one of your way too revealing tops?","disgust","angry")
+                        call her_main("Antoher one of your way too revealing tops?","disgust","angry")
                         g9 "Yes, glad you noticed! Now if you don't mind just-"
                         call her_main("I'm not going to wear it! You can see everything in this! My nipples would poke right through it!!!","scream","angryCl")
                         m "I wouldn't mind if they did..."
@@ -733,7 +733,7 @@ label equip_her_top:
             call set_h_top(top_choice,top_color_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = True
+            $ wardrobe_active = 1
             call screen wardrobe
 
         else:
@@ -821,7 +821,7 @@ label equip_her_top:
                 jump return_to_wardrobe
 
             #Success!
-            $ wardrobe_active = True
+            $ wardrobe_active = 1
             call set_h_top(top_choice,top_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe

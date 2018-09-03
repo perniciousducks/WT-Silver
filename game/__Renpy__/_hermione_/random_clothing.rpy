@@ -67,11 +67,11 @@ label hermione_random_clothing:
                 $ hg_muggle_cold_OBJ.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
-                $ h_request_wear_stockings = True
+                $ h_request_wear_stockings    = True
 
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
-                $ hermione_wear_stockings = True
+                $ hermione_wear_stockings   = True
                 $ h_top = "normal_pullover"
                 $ h_skirt = "skirt_belted_mini"
                 $ h_stockings = "stockings_pantyhose"
@@ -95,7 +95,7 @@ label hermione_random_clothing:
                 $ hg_muggle_cold_sexy_OBJ.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
-                $ h_request_wear_stockings = True
+                $ h_request_wear_stockings    = True
 
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
@@ -212,28 +212,32 @@ label hermione_random_clothing:
     #Hermione greeting.
     if mad >= 1:
 
-        call set_her_face("random")
-        call her_main(xpos="base",ypos="base")
         if mad >=1 and mad < 3:
+            call her_main("","normal","base",xpos="base",ypos="base")
             ">Looks like Hermione is still a little upset with you..."
         elif mad >=3 and mad < 10:
+            call her_main("","normal","base",xpos="base",ypos="base")
             ">Hermione is upset with you."
         elif mad >=10 and mad < 20:
+            call her_main("","annoyed","frown",xpos="base",ypos="base")
             ">Hermione is very upset with you."
         elif mad >=20 and mad < 40:
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione is mad at you."
         elif mad >=40 and mad < 50:
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione is very mad at you."
         elif mad >=50 and mad < 60:
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione is furious at you."
         elif mad >=60:
+            call her_main("","angry","angry",xpos="base",ypos="base")
             ">Hermione hates your guts."
 
     else: #Not mad.
-        call set_her_face("happy")
         if not hermione_door_event_happened:
-            call her_main("Yes, [genie_name]?",xpos="base",ypos="base")
+            call her_main("Yes, [genie_name]?","base","base",xpos="base",ypos="base")
         else:
-            call her_main(xpos="base",ypos="base")
+            call her_main("","base","base",xpos="base",ypos="base")
 
     return

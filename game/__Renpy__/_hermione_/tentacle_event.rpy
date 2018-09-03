@@ -14,7 +14,7 @@ label tentacle_shop_scene:
     m "What's this scroll?"
     fre "This is the recipe for a powerful and forbidden potion."
     ger "Acquired completely legitimately I might add!"
-    m "What does it do?"
+    m "What does it do?" 
     fre "It transforms you into any magical creature you desire."
     m "Like what?"
     fre "Anything you can secure a sample of."
@@ -45,7 +45,7 @@ label tentacle_shop_scene:
             m "No thanks, not right now"
             fre "Perhaps later then"
             call screen shop_screen
-
+    
 label tentacle_scene_intro: #Public tentacle scene
     show screen blkfade
     spo "Today class, I have been requested by the Headmaster to teach you about a plant called Devil's Snare."
@@ -102,7 +102,7 @@ label tentacle_scene_intro: #Public tentacle scene
     if lock_public_favors == False:
         jump tentacle_1
     jump tentacle_2
-
+            
 
 label tentacle_1: #Public tentacle scene
     $ cg("images/28_cg/p1.png")
@@ -185,8 +185,8 @@ label tentacle_1: #Public tentacle scene
     spo "Oh yes, I suppose you should."
     $ tentacle_cosmetic = False
     hide screen cg
-    $ hermione_busy = True
-    jump day_resume
+    $ hermione_takes_classes = True
+    jump day_main_menu
 
     #enter vagina
     #put flower to ear
@@ -262,48 +262,48 @@ label tentacle_2: #Enjoyable tentacle scene
     spo "Quickly, someone take her to the hospital, and cover her up."
     $ tentacle_cosmetic = False
     hide screen cg
-    $ hermione_busy = True
-    jump day_resume
-
+    $ hermione_takes_classes = True
+    jump day_main_menu
+    
 
 
 ###COSTUME SCENES
 label costume_scene_1: #Maid role-play
-    call her_main("A costume? What on earth do you need me to dress up for?","angry","wide")
+    call her_main("A costume? What on earth do you need me to dress up for?","angry","wide") 
     m "[hermione_name], have you ever heard of the term role-play?"
-    call her_main("role-play?","smile","glance")
+    call her_main("role-play?","smile","glance") 
     m "It's where you pretend to be someone you're not."
-    call her_main("I gathered that much but why would I want to do that?","smile","glance")
+    call her_main("I gathered that much but why would I want to do that?","smile","glance") 
     m "Because it can be fun!"
-    call her_main("Hmmmm. Who would I be role-playing?","smile","glance")
+    call her_main("Hmmmm. Who would I be role-playing?","smile","glance") 
     m "Well I was thinking seeing as how I purchased you that lovely new cleaning outfit."
     m "You could play the role of my personal maid."
     if whoring < 17:
-        call her_main("And how much would this \"personal maid\" be paid?","smile","glance")
+        call her_main("And how much would this \"personal maid\" be paid?","smile","glance") 
         m "35 points sounds fair."
-    call her_main("...","smile","glance")
-    call her_main("Let me go change.","smile","glance")
+    call her_main("...","smile","glance") 
+    call her_main("Let me go change.","smile","glance") 
     $ stockings = 1
     $ custom_outfit_old = 1
-    call her_main("","smile","glance")
+    call her_main("","smile","glance") 
     pause
-    call her_main("Well?","smile","glance")
+    call her_main("Well?","smile","glance") 
     m "You certainly look the part. The question is can you act the part?"
-    call her_main("Act? I thought you just wanted me to clean your room?","smile","glance")
+    call her_main("Act? I thought you just wanted me to clean your room?","smile","glance") 
     m "Where's the fun in that? If I wanted a clean room, I'd just get those ugly dwarves to do it."
-    call her_main("House elfs.","smile","glance")
+    call her_main("House elfs.","smile","glance") 
     m "Whatever. Anyway I want you to act like a sexy french maid."
     her "Why does it have to be french?"
     m "Must I explain everything?"
-    call her_main("Fine...","smile","glance")
-    call her_main("Is there anything you need cleaned today sir?","smile","glance")
+    call her_main("Fine...","smile","glance") 
+    call her_main("Is there anything you need cleaned today sir?","smile","glance") 
     m "At least try to do the accent."
-    call her_main("...","smile","glance")
-    call her_main("Is there anything that you need cleaned today Monsieur?","mad","angry",cheeks="blush")
+    call her_main("...","smile","glance") 
+    call her_main("Is there anything that you need cleaned today Monsieur?","mad","angry",cheeks="blush") 
     m "Much better."
-    call her_main("Thank you Monsieur.","smile","glance")
+    call her_main("Thank you Monsieur.","smile","glance") 
     m "Now as for your cleaning I think that the fireplace could you a good dusting."
-    call her_main("As you command Monsieur!","smile","glance")
+    call her_main("As you command Monsieur!","smile","glance") 
     ">Hermione stands on her toes to reach the mantelpiece giving you a lovely view of the top of her stockings."
     m "That's it, just a little higher."
     ">You reach under the desk and start to stroke your cock."
@@ -334,3 +334,4 @@ label costume_scene_1: #Maid role-play
     m "Very well indeed! You've taken to role-play like a duck to water."
     m "40 points to Gyrffindor."
     her "Thank you [genie_name]."
+

@@ -6,7 +6,7 @@ label cheats:
                 "-Reset Hermione's mood-":
                     $ mad = 0
                     ">Hermione is no longer mad at you."
-                    jump cheats
+                    jump cheats_hermione
                 "-Max Whoring-":
                     $ whoring = 24
                     ">Hermione is now a giant slut."
@@ -71,26 +71,9 @@ label cheats:
             label cheats_luna:
             menu:
                 "-Reset ALL Luna content-":
-                    $ reset_luna_content = True
+                    $ hat_known = False
                     call luna_progress_init
-                    $ reset_luna_content = False
                     ">Luna content reset!"
-                    jump cheats
-                "-never mind-":
-                    jump cheats
-
-        "-Cho Cheats-":
-            label cheats_cho:
-            menu:
-                "-Reset Cho's mood-":
-                    $ cho_mad = 0
-                    ">Cho is no longer mad at you."
-                    jump cheats
-                "-Reset ALL Cho content-":
-                    $ reset_cho_content = True
-                    call cho_progress_init
-                    $ reset_cho_content = False
-                    ">Cho content reset!"
                     jump cheats
                 "-never mind-":
                     jump cheats
@@ -124,22 +107,18 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Solve the slider puzzle-" if found_puzzle_1 and unlocked_7th:
-            $ unlocked_7th = False
-            jump open_pyzzle_box
-
         "-Add Gold-":
             $ gold += 500
             "You've obtained 500g."
             jump cheats
 
         "-Add Slytherin Points-":
-            $ slytherin += 200
-            "200 points to Slytherin!"
+            $ slytherin +=100
+            "100 points to Slytherin!"
             jump cheats
 
-        "-Map-" if day >= 5 and not cataloug_found:
-            "The marauder's map has been added to your inventory!"
+        "-Map-":
+            "Map added to inventory!"
             $ cataloug_found = True
             jump cheats
 

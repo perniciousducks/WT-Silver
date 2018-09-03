@@ -7,7 +7,7 @@
     #Have genie molest her
     #Have options to molest breast/ass/pussy (required to do all 3)
     #Have her resume time and lose her mind from the cumulative amount of pleasure she felt
-    #Have genie carry her back to her dorm in a semi-conscious state.
+    #Have genie carry her back to her dorm in a semi-conscious state. 
 
 
 
@@ -22,11 +22,23 @@
 
 #    hide screen bld1
 #    hide screen hermione_main
-#    hide screen blktone
+#    hide screen blktone 
 #    hide screen ctc
 #    with Dissolve(.3)
-
+    
 #    call her_walk("mid","leave",2)
+    
+#    $ hermione_takes_classes = True
+#    jump day_main_menu
 
-#    $ hermione_busy = True
-#    jump main_room
+
+
+
+
+
+
+
+
+
+
+

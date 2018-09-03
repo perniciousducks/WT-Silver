@@ -20,7 +20,7 @@ label store_init:
         $ cs_existing_stock_gifted = []
 
     #Update 1.4
-    if not hasattr(renpy.store,'cs_gui_OBJ') or reset_persistants: #important!
+    if not hasattr(renpy.store,'cs_show_misc') or reset_persistants: #important!
         $ mannequin_preview = "hg_mannequin.png"
         $ cs_inventory_list = []
         $ clothes_store_category = ""
@@ -32,4 +32,5 @@ label store_init:
         $ cs_show_accs = True
         $ cs_show_dyes = True
         $ cs_show_misc = True
+
     return

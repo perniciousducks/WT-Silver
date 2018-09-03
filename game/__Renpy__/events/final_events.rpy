@@ -359,7 +359,7 @@ label want_to_rule:
     hide screen bld1
     with d3
 
-    $ hermione_busy = True
+    $ hermione_takes_classes = True
     $ days_without_an_event = 0
 
     $ display_h_tears = False
@@ -525,7 +525,7 @@ label crying_about_dress:
     hide screen bld1
     with d3
 
-    $ hermione_busy = True
+    $ hermione_takes_classes = True
 
     call music_block
 
@@ -578,7 +578,7 @@ label sorry_about_hesterics:
     m "......................................."
     m "Hm..."
 
-    $ hermione_busy = True
+    $ hermione_takes_classes = True
 
     hide screen bld1
     with d3
@@ -674,8 +674,17 @@ label giving_the_dress:
     call bld
     m "......................"
     m "Women..."
+    hide screen bld1
+    with d3
 
-    jump main_room
+    call music_block
+
+    if daytime:
+        $ hermione_takes_classes = True
+        jump night_main_menu
+    else:
+        $ hermione_sleeping = True
+        jump day_main_menu
 
 
 

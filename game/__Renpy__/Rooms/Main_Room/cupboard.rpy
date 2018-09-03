@@ -6,7 +6,7 @@ label cupboard:
             $ cupboard_examined = True
             show screen chair_left #Empty chair near the desk.
             hide screen genie
-            call gen_chibi("stand","behind_desk","base",flip=True)
+            call gen_chibi("stand","behind_desk","base",flip=True) 
             show screen desk
             with Dissolve(0.5)
 
@@ -19,16 +19,16 @@ label cupboard:
             hide screen desk
             with Dissolve(0.5)
             jump day_main_menu
-
+        
         "-Rummage through the cupboard-" if not searched and not day == 1:
             jump rummaging
         "{color=#858585}-Rummage through the cupboard-{/color}" if searched and not day == 1:
             call already_did #Message that says that you have searched the cupboard today already.
             jump cupboard
-
+        
         "-Your possessions-" if not day == 1:
             label possessions:
-
+                
             menu:
                 "-Gift Items-" if cataloug_found:
                     label possessions_gift_items:
@@ -49,13 +49,13 @@ label cupboard:
                             hide screen gift
                             with d3
                             jump possessions_gift_items
-
+                
                 "-Clothing-"if False:
                     label possessions_clothing:
                     menu:
                         "-Never mind-":
                             jump possessions
-
+                
                 "-Potion Items-" if False:
                     label possessions_potions:
                     menu:
@@ -85,7 +85,7 @@ label cupboard:
                                     jump possessions_potions
                         "-Never mind-":
                             jump possessions
-
+                
                 "-Tentacle Scroll-" if tentacle_owned:
                     ">Should I use this scroll..."
                     menu:
@@ -96,7 +96,7 @@ label cupboard:
                 "-Tentacle Scroll-" if tent_scroll and not tentacle_owned:
                     m "It's missing the key ingredient."
                     jump possessions
-
+                
                 "-The Ball Dress-" if "ball_dress" in gifts12 and not gave_the_dress:
                     $ the_gift = "images/store/01.png" # DRESS.
                     show screen gift
@@ -106,7 +106,7 @@ label cupboard:
                     hide screen gift
                     with d3
                     jump possessions
-
+                    
                 #"-\"S.P.E.W.\" Badge-" if badge_01 == 1:
                     $ the_gift = "images/store/29.png" # S.P.E.W. BADGE
                     show screen gift
@@ -115,16 +115,16 @@ label cupboard:
                     hide screen gift
                     with d3
                     jump possessions
-
+                    
                 #"-Fishnet stockings-" if nets == 1:
                     $ the_gift = "images/store/30.png" # FISHNETS.
                     show screen gift
                     with d3
-                    call nets_text
+                    call nets_text 
                     hide screen gift
                     with d3
                     jump possessions
-
+                    
                 #"-School miniskirt-" if have_miniskirt:
                     $ the_gift = "images/store/07.png" # MINISKIRT.
                     show screen gift
@@ -133,21 +133,21 @@ label cupboard:
                     hide screen gift
                     with d3
                     jump possessions
-
+                
                 "-Dumbledor's Wine-([wine])" if wine >= 1:
                     $ the_gift = "images/store/27.png" # WINE.
                     show screen gift
                     with d3
-                    ">A bottle of wine from professor dumbledore's personal stash..."
+                    ">A bottle of wine from professor dumbledore's personal stash..." 
                     hide screen gift
                     with d3
                     jump possessions
-
+                
                 "-Unknown potion-([potions])" if  potions >= 1:
                     $ the_gift = "images/store/32.png" # HEALING POTION.
                     show screen gift
                     with d3
-                    ">A potion of some sort..."
+                    ">A potion of some sort..." 
                     hide screen gift
                     with d3
                     jump possessions
@@ -155,18 +155,18 @@ label cupboard:
                     jump start_slide_puzzle
                 "-Never mind-":
                     jump cupboard
-
+        
         "-Potion crafting-" if shop_found:
             jump potion_menu
-
+        
         "-Options-":
             menu:
                 "-Save and Load-":
                     call screen save()
-
+            
                 "-Change Save Name-":
                     jump custom_save
-
+        
                 "-Change Game Difficulty-":
                     menu:
                         "-Enable Easy Difficulty-":                                 #CHANGE IN 00_HT_Start, Start of game option.
@@ -239,13 +239,19 @@ label cupboard:
                 "-Back-":
                     jump cupboard
 
-        "-Cheats-" if cheats_active and day > 1:
+        "-Cheats-" if cheats_active:
             jump cheats
+            
+        "-Send Ministry letter again-" if day >= 25 and whoring >= 9 and not ministry_letter_received:
+            $ ministry_letter = True
+            $ letters += 1 #Displays Owl
+            ">You received a new letter."
+            jump cupboard
 
-        "-Reset ALL Luna content-" if hat_known:
+        "-Reset ALL Luna content-":
             $ reset_luna_content = True
-            call luna_init
-            call luna_progress_init
+            call luna_init 
+            call luna_progress_init 
             $ reset_luna_content = False
             ">Luna content reset!"
             jump cupboard
@@ -285,7 +291,7 @@ label scrolls_menu:
         with d3
         jump sc_col_men
 
-
+    
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
     $ temp_name = temp_name.strip()
@@ -295,144 +301,156 @@ label custom_save:
     "Done."
     jump cupboard
 
-label rummaging:
-
+label rummaging:  
+    
     $ searched = True #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
-
+    
     $ rum_times += 1 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
-
+    
     hide screen genie
     show screen rum_screen
     with d3
     show screen bld1
     with d3
-    ">You rummage through the cupboard for a while..."
-
+    ">You rummage through the cupboard for a while..." 
+    
     if day <= 4:
         if rum_times == 2 or rum_times == 3:
+            $ renpy.play('sounds/win2.mp3')   #Not loud.
             $ potions += 1
-            call give_reward(">You found some sort of potion...","images/store/32.png")
-
+            $ the_gift = "images/store/32.png"
+            show screen gift
+            with d3
+            ">You found some sort of potion..." 
+            hide screen gift
+            with d3
             show screen genie
             hide screen rum_screen
+            
             hide screen bld1
             with d3
-
+            
             if daytime:
                 jump night_start
-            else:
+            else: 
                 jump day_start
-
+    
     if rum_times >= 7 and not cataloug_found:
+        $ renpy.play('sounds/win2.mp3')   #Not loud.
         $ cataloug_found = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
-        call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","images/store/31.png")
-
+        $ the_gift = "images/store/31.png" # DAHR's oddities catalog. 
+        show screen gift
+        with d3
+        ">You found a map of the school grounds...\n>You can now leave the office."
+        hide screen gift
+        with d3
         show screen genie
         hide screen rum_screen
+        
         hide screen bld1
         with d3
-
+        
         if daytime:
             jump night_start
-        else:
+        else: 
             jump day_start
-
-    if game_difficulty >= 2:               #Normal and hardcore difficulty
-        if i_of_iv in [1,2,3]: # Found something. 75% chance.
+        
+    if game_difficulty >= 2:                   #Normal and hardcore difficulty
+        if i_of_iv == 4: # Found something.
             jump rum_rewards
-        else:
+        else:                                  #Easy difficulty
             ">...You find nothing of value."
             show screen genie
             hide screen rum_screen
-
+    
             hide screen bld1
             with d3
-
+    
             if daytime:
                 jump day_main_menu
-            else:
+            else: 
                 jump night_main_menu
-    else:                                  #Easy difficulty
-        jump rum_rewards
+    else:
+        jump rum_rewards 
 
 label rum_rewards:
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             if one_of_tw == 20:
-                call rum_block(PlushOwl)
+                call rum_block(PlushOwl) 
             elif one_of_tw == 1 or one_of_tw == 2:
-                call rum_block(Lollipop)
+                call rum_block(Lollipop) 
             elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18:
-                call rum_block("gold1")
+                call rum_block("gold1") 
             elif one_of_tw >= 10 and one_of_tw <= 16:
-                call rum_block("wine")
+                call rum_block("wine") 
             elif one_of_tw == 17:
-                call rum_block(Chocolate)
+                call rum_block(Chocolate) 
             elif one_of_tw == 19:
-                call rum_block(SexyLingerie)
-
-
+                call rum_block(SexyLingerie) 
+        
+        
         ### EVENT LEVEL 02 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
-        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+        if whoring >= 6 and whoring <= 11: # Lv 3-4. 
             if one_of_tw == 20:
-                call rum_block(PornMagazines)
+                call rum_block(PornMagazines) 
             elif one_of_tw == 1 or one_of_tw ==2:
-                call rum_block(Lollipop)
+                call rum_block(Lollipop) 
             elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:
-                call rum_block("gold2")
+                call rum_block("gold2") 
             elif one_of_tw >= 11 and one_of_tw <= 15:
-                call rum_block("wine")
+                call rum_block("wine") 
             elif one_of_tw == 16:
-                call rum_block(SexyLingerie)
+                call rum_block(SexyLingerie) 
             elif one_of_tw == 17:
-                call rum_block(Chocolate)
+                call rum_block(Chocolate) 
             elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster)
-
-
+                call rum_block(ViktorKrumPoster) 
+        
+        
         ### EVENT LEVEL 03 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             if one_of_tw == 20:
-                call rum_block(Vibrator)
+                call rum_block(Vibrator) 
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(PackOfCondoms)
+                call rum_block(PackOfCondoms) 
             elif one_of_tw == 5 or one_of_tw == 6:
-                call rum_block("gold1") #Bugfix? Previously was just (1).
+                call rum_block("gold1") #Bugfix? Previously was just (1). 
             elif one_of_tw >= 7 and one_of_tw <= 14:
-                call rum_block("gold3")
+                call rum_block("gold3") 
             elif one_of_tw >= 15 and one_of_tw <= 18:
-                call rum_block("wine")
+                call rum_block("wine") 
             elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster)
-
-
+                call rum_block(ViktorKrumPoster) 
+        
+        
         ### EVENT LEVEL 04 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
-        if whoring >= 18: # Lv 7+
+        if whoring >= 18: # Lv 7+  
             if one_of_tw == 20:
-                call rum_block(SpeedStick2000)
+                call rum_block(SpeedStick2000) 
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(Butterbeer)
+                call rum_block(Butterbeer) 
             elif one_of_tw >= 5 and one_of_tw <= 8:
-                call rum_block(Chocolate)
+                call rum_block(Chocolate) 
             elif one_of_tw >= 9 and one_of_tw <= 16:
-                call rum_block("gold4")
+                call rum_block("gold4") 
             elif one_of_tw == 17:
-                call rum_block(AnalPlugs)
+                call rum_block(AnalPlugs) 
             elif one_of_tw == 18:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(ViktorKrumPoster) 
             elif one_of_tw == 19:
-                call rum_block(ThestralStrapon)
-
+                call rum_block(ThestralStrapon) 
+        
         show screen genie
         hide screen rum_screen
-
+    
         hide screen bld1
         with d3
-
+    
         if daytime:
             jump day_main_menu
-        else:
+        else: 
             jump night_main_menu
-
+        
 label rum_block(item = None):
     if isinstance(item, gift_item):
         $ renpy.play('sounds/win2.mp3')   #Not loud.
@@ -451,7 +469,7 @@ label rum_block(item = None):
             $ the_gift = "images/store/27.png" # WINE
             show screen gift
             with d3
-            ">You found a bottle of wine from professor dumbledore's personal stash..."
+            ">You found a bottle of wine from professor dumbledore's personal stash..." 
             hide screen gift
             with d3
         if "gold" in item:
@@ -467,14 +485,14 @@ label rum_block(item = None):
             $ the_gift = "images/store/28.png" # GOLD.
             show screen gift
             with d3
-            ">You found [tmp_gold] gold..."
+            ">You found [tmp_gold] gold..." 
             $ gold += tmp_gold
             hide screen gift
             with d3
     return
-
-
-
+        
+        
+        
 ######################
 label already_did:
     show screen bld1

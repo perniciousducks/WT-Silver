@@ -82,11 +82,18 @@ label summon_tonks:
             else:
                 ton "Sweet dreams, [ton_genie_name]."
 
+            $ tonks_busy = True
+            hide screen bld1
+            hide screen tonks_main
+            with d3
             call play_sound("door")
 
-            $ tonks_busy = True
-
-            jump main_room
+            if daytime:
+                call play_music("brittle_rille") #Day Theme
+                jump day_main_menu
+            else:
+                call play_music("manatees") #Night Theme
+                jump night_main_menu
 
 
 label tonks_talk:

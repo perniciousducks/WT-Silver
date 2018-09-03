@@ -182,7 +182,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     $ luna_cheeks = "characters/luna/body/face/cheeks/cheeks_2.png"
     ">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm."
     ">Her fingers keep casually stroking her needy sex..."
-    m "Well, it seems those wickedspots have been giving you a bit of grief now haven't they?"
+    m "It seems those wickedspots have been giving you a bit of grief now haven't they?"
     menu:
         "-Start jerking off-":
             pass
@@ -405,10 +405,13 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     m "..."
     m "If you want to crawl under the desk feel free..."
     call luna_main("Thank you [l_genie_name]...", "closed_happy", "default", "default", "default")
+
+    label luna_blowjob_under_desk:
+        pass
     show screen blkfade
     with d3
     hide screen luna
-    ">With that, Luna quickly walks around your desk and crawls under your spacious desk..."
+    ">Luna quickly walks around your desk and crawls under your spacious desk..."
     m "Are you ok down there?"
     $ ccg_folder = "luna_desk"
     $ ccg1 = "1"
@@ -429,7 +432,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     lun "It's so heavy in the air... It's {b}all{/b} over the wood..."
     $ ccg1 = "5"
     lun "You can almost taste it..."
-    ">With that Luna takes a deep breath in of the air under your soiled desk..."
+    ">Luna takes a deep breath in of the air under your soiled desk..."
     $ ccg1 = "6"
     lun "Wow..."
     m "Are you sure you're OK down there? I haven't cleaned it since... well... ever..."
@@ -593,7 +596,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     call luna_main("(I can't believe they taste so good...)", "seductive", "empty", "sad", "default")
     m "You'll be the first to know."
     call luna_main("Thanks [l_genie_name]! Have a nice day!", "closed_happy", "default", "default", "default")
-    ">With that, Luna turns and merrily skips out of your office."
+    ">Luna turns and merrily skips out of your office."
     hide screen luna_chibi
     hide screen luna
     with d3

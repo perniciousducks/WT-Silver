@@ -65,11 +65,16 @@ label luna_favour_menu:
             jump luna_favour_6
         "-Sex-" if luna_corruption >= 17 and not luna_reverted:
             jump luna_favour_7
+
+        #Luna reverted.
+        "-Sucking out Wrackspurts-" if luna_corruption >= 3 and luna_reverted:
+            jump luna_blowjob_under_desk #Repeat of event.
+
         "-Never mind-":
             jump luna_door_menu
 
 label luna_summon:
-    $ changeLuna(8, 2, 3, 3)
+    #$ changeLuna(8, 2, 3, 3)
 return
 
 label luna_away:

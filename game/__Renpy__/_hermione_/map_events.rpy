@@ -78,7 +78,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     m "Not as nice as your mouth."
     her "Alright then... Have it your way."
     $ ccg2 = 4
-    ">With that, Hermione leans forward and engulfs the head of your cock in her mouth."
+    ">Hermione leans forward and engulfs the head of your cock in her mouth."
     who2 "{size=-10}Wow...{/size}"
     $ ccg2 = 5
     her "!!!"
@@ -133,7 +133,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     show screen blkfade
     with d3
 
-    ">With that, Hermione hastily covers up and sprints away angrily as the ghostly apparition fades away..."
+    ">Hermione hastily covers up and sprints away angrily as the ghostly apparition fades away..."
     m "What was that..."
     ">You stumble back to your office in a confused and blue-balled stupor..."
 
@@ -352,7 +352,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     show screen blkfade
     with d3
 
-    ">With that, Hermione studiously removes, folds and lays her robe on the cool night grass."
+    ">Hermione studiously removes, folds and lays her robe on the cool night grass."
 
     $ ccg_folder = "herm_forest"
     $ ccg1 = "blank"
@@ -633,7 +633,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 19
     her "this is..."
     $ ccg2 = 16
-    ">With that, Hermione quickly pops her head forward, wrapping her soft lips around the tip of your shaft."
+    ">Hermione quickly pops her head forward, wrapping her soft lips around the tip of your shaft."
     her "*Mmmmm*"
     $ ccg2 = 18
     her "*slurp* *glck* *slrp*"
@@ -724,7 +724,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 34
     her "{size=+5}*glck*HNNOOO*glck*{/size}"
     $ ccg2 = 44
-    myr "So long as you're alright with that Sir... I don't have to mention you! It can just be Hermione!"
+    myr "So long as you're alright with that, Sir... I don't have to mention you! It can just be Hermione!"
     $ ccg2 = 34
     her "{size=+5}*glck*{image=textheart}*glck*{image=textheart}*glck*{/size}"
     $ ccg2 = 35
@@ -861,6 +861,6 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     show screen blkfade
     with d3
 
-    ">With that, you and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cumshot the whole way..."
+    ">You and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cumshot the whole way..."
 
     return

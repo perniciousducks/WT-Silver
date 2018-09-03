@@ -34,7 +34,7 @@ screen map_screen:
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
 
         #Map Events
-        if whoring >= 21 and one_of_five in [1,2] and not daytime:
+        if whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
             hotspot (217, 442, 55, 55) clicked Jump("hermione_map_BJ")
 
 
@@ -272,7 +272,9 @@ label outskirts_of_hogwarts:
 
 
 label return_office:
-    call blkfade
+    call hide_characters
+    show screen blkfade
+    with d3
     #">You return to your office."
 
     hide screen ccg
@@ -280,15 +282,19 @@ label return_office:
     hide screen end_u_3
     hide screen chair_left
     hide screen desk
+    call her_chibi("hide")
+    call sna_chibi("hide")
     call gen_chibi("hide")
     show screen main_room
     show screen genie
     hide screen blkback
-    pause.5
-    call hide_blkfade
-
     if fire_in_fireplace:
         show screen fireplace_fire
+
+    pause.5
+    hide screen blkfade
+    with d5
+
 
     $ menu_x = 0.5
     $ menu_y = 0.5

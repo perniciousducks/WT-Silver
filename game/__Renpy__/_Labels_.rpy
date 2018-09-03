@@ -172,6 +172,8 @@ label play_sound(sound=""):
     if sound in ["magic"]:
         $ renpy.play('sounds/magic4.mp3')
 
+    if sound in ["walking_on_grass","grass"]:
+        $ renpy.play('sounds/steps_grass.mp3')
     return
 
 label play_music(music=""):
@@ -196,6 +198,9 @@ label play_music(music=""):
 
     if music in ["manatees","night_theme"]:
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
+
+    if music in ["outside_night","night_outside"]:
+        play music "sounds/night.mp3" fadein 1 fadeout 1
 
     if music in ["hitman"]:
         play music "music/hitman.mp3" fadein 1 fadeout 1

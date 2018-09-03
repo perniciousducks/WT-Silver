@@ -3,26 +3,32 @@ label hermione_map_BJ:
     jump day_main_menu
 
 label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
+    $ forest_BJ_progress = 2
     show screen blkfade
     with d3
     ">Sure enough, the map seems to {b}magically{/b} guide you to the young girl, alone in the midnight air..."
     ">Seemingly scrapping the resin off of a tree..."
+    $ ccg_folder = "herm_forest"
+    $ ccg1 = "blank"
+    $ ccg2 = "blank"
+    $ ccg3 = "blank"
+    show screen ccg
     hide screen blkfade 
     with d3
     m "Miss Granger? What are you doing out here at this time of night?"
-    her "[genie_name]! I, ugh, I wasn't doing anything bad, I swear!"
+    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!","open","wideL",xpos="right",ypos="base",trans="fade")
     m "..."
-    her "Ugh, fine! If you must know, I was out here gathering up some mastick resin."
-    her "I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder..."
-    her "But I'm using it in my research for a natural analgesic!"
+    call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.","upset","down")
+    call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...","annoyed","baseL")
+    call her_main("But I'm using it in my research for a non addictive analgesic!","open","closed")
     m "Whatever..."
     menu:
         "-Let her get back to her botany-":
             m "Well I better leave you be then..."
-            her "Really?"
-            her "You mean you don't want to..."
+            call her_main("Really?","upset","shocked")
+            "You mean you don't want to..."
             m "Maybe some other time."
-            her "..."
+            call her_main("...","upset","down")
             show screen blkfade
             with d3
             ">You turn away from the miffed young girl."
@@ -31,21 +37,20 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             return
         "-Ask for a blowjob-":
             m "Well, seeing that we're all alone out here..."
-            her "Oh... I, um, guess we are..."
+            call her_main("Oh... I, um, guess we are...","open","wideL")
             m "Wanna fool around?"
-            her "Oh thank goodness... I thought you were going to murder me for a second there..."
+            call her_main("Oh thank goodness... I thought you were going to murder me for a second there...","base","happyCl")
             m "What? How could you think such a thing!"
             m "I don't know if I'll be able to-"
-            her "How about I make it up to you with my mouth then, hmmm?"
+            call her_main("How about I make it up to you with my mouth then, hmmm?","base","suspicious")
             m "Done."
     show screen blkfade
     with d3
     ">The girl softly lays her robe on the cool grass before kneeling down on it in front of your steaming cock."
-    $ ccg_folder = "herm_forest"
     $ ccg1 = "blank"
     $ ccg2 = 1
     $ ccg3 = "overlay"
-    show screen ccg
+    hide screen hermione_main
     hide screen blkfade
     with d3
     her "Mmmm... I don't think I'll ever get sick of this cock..."
@@ -117,22 +122,28 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     return
 
 label forest_BJ_2: 
+    $ forest_BJ_progress = 3
     show screen blkfade
     with d3
     ">The map yet again leads you to the curly haired girl, alone at the edge of the forest, picking mushrooms."
+    $ ccg_folder = "herm_forest"
+    $ ccg1 = "blank"
+    $ ccg2 = "blank"
+    $ ccg3 = "blank"
+    show screen ccg
     hide screen blkfade
     with d3
     m "More late night gardening?"
-    her "{size=+10}Professor!{/size}"
-    her "Ugh... Don't startle me like that!"
-    her "And yes, I've been collecting some mushroom samples."
+    call her_main("{size=+10}Professor!{/size}","shock","wide",xpos="right",ypos="base",trans="fade")
+    call her_main("Ugh... Don't startle me like that!","annoyed","baseL")
+    call her_main("And yes, I've been collecting some mushroom samples.","soft","base")
     m "Cool..."
-    her "So what are you doing out here?"
-    her "I thought you didn't leave your office anymore?"
+    call her_main("So what are you doing out here?","base","base")
+    call her_main("I thought you didn't leave your office anymore?","soft","suspicious")
     m "Oh, you know me... Always looking to connect with my students..."
-    her "Mhmmm... So that's what you're down here for then? To {i}connect{/i}?"
+    call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?","base","squint")
     m "Always..."
-    her "Fine... Just let me take my robe off..."
+    call her_main("Fine... Just let me take my robe off...","base","baseL")
     show screen blkfade
     with d3
     ">Hermione quietly folds up her robe and places it on the cold ground before kneeling down on it."
@@ -141,6 +152,7 @@ label forest_BJ_2:
     $ ccg2 = 12
     $ ccg3 = "overlay"
     show screen ccg
+    hide screen hermione_main
     hide screen blkfade
     with d3
     m "So you're not worried about that ghost?"
@@ -232,55 +244,64 @@ label forest_BJ_2:
     show screen blkfade 
     with d3
     ">Eventually your orgasm subsides and you allow your softening member to slide out of hermione's cum coated throat."
-    hide screen ccg
+    $ ccg1 = "blank"
+    $ ccg2 = "blank"
+    $ ccg3 = "blank"
     hide screen blkfade
     with d3
-    her "I can't believe you just did that?"
+    call her_main("I can't believe you just did that?","shock","angry")
     m "really? After everything we've done?"
-    her "It's a figure of speech! And More importantly..."
-    her "{size=+10}You just came down my throat in front of moaning myrtle!{/size}"
-    her "She's going to tell everyone about this now!"
+    call her_main("It's a figure of speech! And More importantly...","angry","angryCl")
+    call her_main("{size=+10}You just came down my throat in front of moaning myrtle!{/size}","scream","angryCl")
+    call her_main("She's going to tell everyone about this now!","annoyed","angry")
     m "So? Doesn't everyone sort of know by now anyway?"
-    her "Argh! That's not the point and you know it!"
-    her "You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!"
-    her "To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}..."
-    her "In front of whoever, or whatever, you want..."
-    her "..."
-    her "Well... I hope you've learned your lesson!"
-    her "I'm going to go back and..."
-    her "ge-Clean! myself off..."
-    her "And remember..."
-    her "no {size=-1}more... {size=-1}{b}cum{/b}... {size=-1}all... {size=-1}over... {size=-1}me... {size=-1}please...{image=textheart}{image=textheart}{image=textheart}{/size}"
+    call her_main("Argh! That's not the point and you know it!","annoyed","frown")
+    call her_main("You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!","angry","suspicious")
+    call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...","angry","dead")
+    call her_main("In front of whoever, or whatever, you want...","angry","ahegao")
+    call her_main("...","angry","dead")
+    call her_main("Well... I hope you've learned your lesson!","angry","ahegao_mad")
+    call her_main("I'm going to go back and...","angry","ahegao_raised")
+    call her_main("ge-Clean! myself off...","open","ahegao_squint")
+    call her_main("And remember...","open","ahegao_raised")
+    call her_main("no {size=-1}more... {size=-1}{b}cum{/b}... {size=-1}all... {size=-1}over... {size=-1}me... {size=-1}please...{image=textheart}{image=textheart}{image=textheart}{/size}","angry","dead")
     show screen blkfade
     with d3
     ">With that, hermione staggers back to the castle, still coated in your thick layer of seed."
+    hide screen ccg
     hide screen blkfade
     with d3
     return
 
     
 label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
+    $ forest_BJ_progress = 4
     show screen blkfade
     with d3
     ">Surely enough, the handwritten words \'hermione granger\', manage to lead you to the lone girl at the edge of an imposing forest."
     ">However she doesn't seem preoccupied with her usual botany."
+    $ ccg_folder = "herm_forest"
+    $ ccg1 = "blank"
+    $ ccg2 = "blank"
+    $ ccg3 = "blank"
+    show screen ccg
     hide screen blkfade
     with d3
     m "Aren't you usually out her to collect some forbidden plant [hermione_name]?"
-    her "Not always... Sometimes I just come out her to enjoy the cool air..."
+    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...","soft","baseL",xpos="right",ypos="base",trans="fade")
     m "I see..."
     m "So you're not waiting out here for your headmaster to arrive, just so you can suck his cock in public?"
-    her "What! o-of course not!"
-    her "I'm just out here to admire the moon!"
+    call her_main("What! o-of course not!","base","down")
+    call her_main("I'm just out here to admire the moon!","base","baseL")
     m "What moon?"
     ">Hermione frantically looks to the cloudy sky, unable to even glimpse the moon through the impenetrable greyness."
-    her "Oh... um..."
+    call her_main("Oh... um...","open","squintL")
     m "It's alright for you to admit that you're a dirty little cumslut, miss granger."
-    her "It's not like that!"
-    her "I just like sucking your dick OK!"
+    call her_main("It's not like that!","upset","annoyed")
+    call her_main("I just like sucking your dick, OK!","upset","glanceL")
     m "So you don't want me to cover you in cum like the cumslut you are?"
-    her "..."
-    her "Ugh..."
+    call her_main("...","base","down")
+    call her_main("Ugh...","base","dead")
     show screen blkfade
     with d3
     ">With that, Hermione studiously removes, folds and lays her robe on the cool night grass."
@@ -289,6 +310,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 15
     $ ccg3 = "overlay"
     show screen ccg
+    hide screen hermione_main
     hide screen blkfade 
     with d3
     her "Maybe I wouldn't have ended up a dirty little cumslut if your dick wasn't so nice..."
@@ -488,19 +510,24 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     show screen blkfade
     with d3
     ">Once more, the marauders map leads you to Hermione at the edge of the forest, waiting patiently, apparently having dropped all pretences botanical."
+    $ ccg_folder = "herm_forest"
+    $ ccg1 = "blank"
+    $ ccg2 = "blank"
+    $ ccg3 = "blank"
+    show screen ccg
     hide screen blkfade
     with d3
     m "[hermione_name]..."
-    her "About time you got here [genie_name]!"
-    her "Do you know how long I've been waiting out here in the cold?"
+    call her_main("About time you got here [genie_name]!","upset","annoyed",xpos="right",ypos="base",trans="fade")
+    call her_main("Do you know how long I've been waiting out here in the cold?","annoyed","squint")
     menu:
         "-Apologise-":
             m "Sorry about that..."
             m "I'll try and be on time for our blowjobs from now on."
-            her "Good... It's the least you can do..."
+            call her_main("Good... It's the least you can do...","base","angryCl")
         "-Tell her to come to your office instead-":
             m "You know where my office is..."
-            her "Hmph..."
+            call her_main("Hmph...","upset","angryL")
     show screen blkfade
     with d3
     ">Hermione then kneels down onto the pillow and rug she must have lain down before your arrival."
@@ -509,6 +536,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg1 = "blank"
     $ ccg2 = 15
     $ ccg3 = "overlay"
+    hide screen hermione_main
     show screen ccg
     hide screen blkfade 
     with d3
@@ -583,6 +611,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 32
     her "{size=+5}*glck*{image=textheart}*glck*{image=textheart}*glck*{/size}"
     $ ccg2 = 33
+    $ ccg1 = "blank"
     ">Myrtle floats down into the earth."
     $ ccg2 = 34
     her "{size=+10}!!!{/size}"
@@ -599,6 +628,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 34
     her "{size=+5}*glck*{image=textheart}*glck*{image=textheart}*glck*{/size}"
     $ ccg2 = 35
+    $ ccg1 = "m2"
     myr "Hermione! You horny little girl!"
     $ ccg2 = 34
     her "{size=+5}*glck*{image=textheart}*glck*{image=textheart}*glck*{/size}"
@@ -720,20 +750,24 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     show screen blkfade 
     with d3
     #Genie and Hermione back in the forest...
+    $ ccg1 = "blank"
+    $ ccg2 = "blank"
+    $ ccg3 = "blank"
     hide screen blkfade
     with d3
-    her "Wait, where's Myrtle?"
+    call her_main("Wait, where's Myrtle?","angry","concerned")
     m "Oh, she left as soon as I gave her the OK to blab on about you."
-    her "WHAT?"
-    her "you mean she didn't see any of..."
-    her "(I got my hair all sticky for nothing...)"
+    call her_main("WHAT?","scream","wide")
+    call her_main("you mean she didn't see any of...","upset","annoyed")
+    call her_main("(I got my hair all sticky for nothing...)","upset","down")
     m "So are you going to clean yourself up and get dressed?"
-    her "I'll get dressed..."
-    her "If it's all the same to you, I might leave the cum on..."
+    call her_main("I'll get dressed...","soft","baseL")
+    call her_main("but If it's all the same to you, I might leave the cum on...","base","dead")
     m "Good girl..."
     show screen blkfade 
     with d3
     ">With that, you and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cumshot the whole way..."
+    hide screen ccg
     hide screen blkfade
     with d3
     return

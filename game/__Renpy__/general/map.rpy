@@ -33,6 +33,10 @@ screen map_screen:
         hotspot (307+140, 240, 59, 37) clicked Jump("shop_intro") #shop
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
 
+        #Map Events
+        if whoring > 21 and one_of_five == 2 and daytime == False:
+            hotspot (217, 442, 55, 55) clicked Jump("hermione_map_BJ") 
+
 
 label floor_7th:
     if unlocked_7th == False:

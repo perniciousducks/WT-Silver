@@ -22,9 +22,10 @@ label update_persistants:
             $ pink_lipstick_OBJ.unlocked = True #Unlocks pink lipstick.
 
     if not hasattr(renpy.store,'update_1_33b'): # Reset/update old vars for a specific update here! To make it compatible with older saves/prevent crashes!
-        $ update_1_33b = "Add date"
+        $ update_1_33b = "2018-Aug-21"
 
         $ reset_cho_clothing = True
+        $ forest_BJ_progress = 1
         call cho_init
 
         if cho_met:

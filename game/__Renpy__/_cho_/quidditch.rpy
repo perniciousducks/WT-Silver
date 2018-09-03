@@ -374,7 +374,6 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     with d3
     call nar(">Cho cheerily leaves your office.")
 
-<<<<<<< HEAD
     jump day_main_menu
 
 label cho_quidd_2_1: #Comes back after playing without a robe on
@@ -392,16 +391,6 @@ label cho_quidd_3_1:
 
 
 
-
-
-
-
-
-
-
-
-=======
     call set_cho_clothing("uniform")
->>>>>>> b49d7b1da286e1e566697f5fcd17afcac88eb69a
 
     jump main_room

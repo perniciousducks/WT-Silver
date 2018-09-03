@@ -48,7 +48,8 @@ else:
 
 #Luna Daily Flags.
 $ luna_busy = False
-call luna_day_flags
+$ days_to_luna-= 1
+call reset_luna_main
 
 #Astoria Daily Flags.
 $ astoria_busy = False
@@ -297,17 +298,28 @@ if whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap a
 if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
     call sorry_about_hesterics #Returns
 
-#HAT EVENT
+
+
+#Luna events.
 if whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
-#Luna event's
 if luna_reverted and luna_corruption == 10:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_1#No return.
-elif luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
-    $ days_without_an_event = 0
-    jump luna_reverted_events
+    jump luna_reverted_greeting_1 #Sets luna_corruption to 0
+
+if luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
+    if luna_reverted and luna_corruption == 0:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_1
+    elif luna_reverted and luna_corruption == 1:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_2
+    elif luna_reverted and luna_corruption == 2:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_3
+    else:
+        pass
 
 ### NOT IN USE
 #if day == 10:

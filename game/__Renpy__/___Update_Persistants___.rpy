@@ -27,6 +27,8 @@ label update_persistants:
         $ reset_cho_clothing = True
         call cho_init
 
+        call reset_genie_init
+
         if cho_met:
             $ cho_unlocked = True
         if hanging_with_snape:

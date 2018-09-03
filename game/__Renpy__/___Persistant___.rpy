@@ -84,13 +84,17 @@ label __init_variables:
         $ temp_outfit = custom_outfit_old
 
     ### Interface ###
-    if not hasattr(renpy.store,'interface_color'): #important!
+    if not hasattr(renpy.store,'interface_color'):
         $ interface_color = "gold"
 
     ### Difficulty ###
-    if not hasattr(renpy.store,'game_difficulty'): #important!
+    if not hasattr(renpy.store,'game_difficulty'):
         $ game_difficulty = 2                      # 2 = normal
         $ hardcore_difficulty_active = False       # for hardcore play-through rewards
+
+    ### Gameplay ###
+    if not hasattr(renpy.store,'ignore_warning'):
+        $ ignore_warning = False #Warning message that tells you which ending you will get.
 
     ### Cheats ###
     if not hasattr(renpy.store,'cheats_active'): #important!
@@ -183,6 +187,17 @@ label __init_variables:
         $ potion_scene_11_progress = 0
 
 
+    #Update max tutoring if there is add more events
+    $ max_tutoring = 14
+
+    #Sorter Values
+    $ zorder_character = 7
+
+
+    $ row_index_selected = 0
+    $ column_index_selected = 0
+
+
     #HD RESCALE RATION
     if not hasattr(renpy.store,'scaleratio'): #important!
         $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
@@ -257,15 +272,15 @@ label __init_variables:
         $ reset_lun_clothing = False
         $ reset_cho_clothing = False
 
-    if not hasattr(renpy.store,'reset_luna_content'):
+    if not hasattr(renpy.store,'reset_cho_content'):
         $ reset_luna_content = False
+        $ reset_cho_content = False
 
     # Store Init
     call store_init
 
     #Genie Init
-    if not hasattr(renpy.store,'genie_sprite_base'): #important!
-        call init_genie_layering
+    call genie_init
 
     #Snape Init
     call snape_init
@@ -300,28 +315,14 @@ label __init_variables:
 
     call wardrobe_init
 
+
+
+    ### Do not add anything after this line !!!
+
+
     #Update or Reset Persistants
     call update_persistants # Reset/update old vars for a specific update here! To make it compatible with older saves/prevent crashes!
 
-    #Ginny unlock. #After 3 turn true, Genie wants to find out more about Ginny. #Not implemented.
-    if not hasattr(renpy.store,'mentioned_ginnys_hair'):
-        $ mentioned_ginnys_hair         = False #Wardrobe Hair #Always available.
-        $ snapes_plan_for_ginny         = False #Pf DanceForMe #Always available.
-        $ hanging_out_with_ginny        = False #Pf TitJob     #Always available.
-        $ handjob_practice_with_ginny   = False #Pf Handjob
-        $ kissed_ginny                  = False #Pr KissAGirl
-        $ flashing_tits_with_ginny      = False #Pr FlasAClassmate
-
-
-    #Update max tutoring if there is add more events
-    $ max_tutoring = 14
-
-    #Sorter Values
-    $ zorder_character = 7
-
-
-    $ row_index_selected = 0
-    $ column_index_selected = 0
 
     # Clothing reset turns False so this only happens once after it was needed for an update (see above).
     $ reset_her_clothing = False

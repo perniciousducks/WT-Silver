@@ -212,6 +212,8 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
     hide screen genie_titjob_cum_on_tits
 
     hide screen genie_groping
+    hide screen blktone
+    hide screen bld1
 
     if xpos != genie_chibi_xpos:
         if xpos == "mid":
@@ -265,15 +267,21 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
         else:
             show screen genie_jerking_off_standing
 
+    #Sit behinde desk
+    elif action in ["sit","sitting","sit_behind_desk"]:
+        hide screen chair_left
+        hide screen desk
+        show screen genie
+
     #Jerking off behind desk.
-    elif action == "jerking_behind_desk" or action == "jerking_off_behind_desk" or action == "cumming_behind_desk" or action == "cum_on_desk":
+    elif action in ["jerking_behind_desk","jerking_off_behind_desk","cumming_behind_desk","cum_on_desk","came_on_desk"]:
 
         $ secretly_jerking_off = True
 
         if action == "cumming_behind_desk":
             show screen genie_jerking_off
             show screen genie_jerking_sperm
-        elif action == "cum_on_desk":
+        elif action in ["cum_on_desk","came_on_desk"]:
             hide screen desk
             show screen genie
             show screen genie_jerking_sperm_02

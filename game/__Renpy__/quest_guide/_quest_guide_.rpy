@@ -9,11 +9,11 @@ screen quest_completed:
         ground "images/store/00.png"
         hover "images/store/00.png"
 
-screen guide:
-    
+screen guide: #Not in use anymore!
+
     tag guide_menu
     zorder 8
-    
+
     imagemap:
         cache False
 
@@ -27,10 +27,10 @@ screen guide:
 
         elif guide_show_next_step and guide_show_hint:                 #Visible both
             ground "interface/guide/ground_guide.png"
-            hover "interface/guide/hover_guide.png"        
+            hover "interface/guide/hover_guide.png"
 
         else:                                                          #Default #All hidden
-            ground "interface/guide/ground_guide_pixelated.png" 
+            ground "interface/guide/ground_guide_pixelated.png"
             hover "interface/guide/hover_guide_pixelated.png"
 
         hotspot (115, 4, 25, 25) clicked Jump("guide_return_point")

@@ -1,6 +1,7 @@
 label hermione_map_BJ:
     $ renpy.call('forest_BJ_'+str(forest_BJ_progress))
-    jump day_main_menu
+    $ hermione_busy = True
+    jump return_office
 
 label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     $ forest_BJ_progress = 2
@@ -8,15 +9,16 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     with d3
     ">Sure enough, the map seems to {b}magically{/b} guide you to the young girl, alone in the midnight air..."
     ">Seemingly scrapping the resin off of a tree..."
+    $ hermione_wear_robe = True
     $ ccg_folder = "herm_forest"
     $ ccg1 = "blank"
     $ ccg2 = "blank"
     $ ccg3 = "blank"
     show screen ccg
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     m "Miss Granger? What are you doing out here at this time of night?"
-    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!","open","wideL",xpos="right",ypos="base",trans="fade")
+    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!","open","wideL",xpos="right",ypos="base",trans="d5")
     m "..."
     call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.","upset","down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...","annoyed","baseL")
@@ -39,7 +41,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             m "Well, seeing that we're all alone out here..."
             call her_main("Oh... I, um, guess we are...","open","wideL")
             m "Wanna fool around?"
-            call her_main("Oh thank goodness... I thought you were going to murder me for a second there...","base","happyCl")
+            call her_main("Oh thank goodness... I thought you were going to murder me for a second there...","base","happyCl",trans="hpunch")
             m "What? How could you think such a thing!"
             m "I don't know if I'll be able to-"
             call her_main("How about I make it up to you with my mouth then, hmmm?","base","suspicious")
@@ -103,7 +105,8 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     $ ccg1 = "m1"
     myr "Tehehehe... Hi Hermione..."
     $ ccg2 = 11
-    g9 "{size=+10}AH! A G-G-GHOST!{/size}"
+    with hpunch
+    g4 "{size=+10}AH! A G-G-GHOST!{/size}"
     myr "hahahahah!"
     myr "Good one dumbledore! You always were a joker."
     her "Myrtle!"
@@ -115,16 +118,15 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     with d3
     hide screen ccg
     ">With that, Hermione hastily covers up and sprints away angrily as the ghostly apparition fades away..."
-    hide screen blkfade 
-    with d3
     m "What was that..."
     ">You stumble back to your office in a confused and blue-balled stupor..."
     return
 
-label forest_BJ_2: 
+label forest_BJ_2:
     $ forest_BJ_progress = 3
     show screen blkfade
     with d3
+    $ hermione_wear_robe = True
     ">The map yet again leads you to the curly haired girl, alone at the edge of the forest, picking mushrooms."
     $ ccg_folder = "herm_forest"
     $ ccg1 = "blank"
@@ -241,7 +243,7 @@ label forest_BJ_2:
     her "..."
     $ ccg2 = 25
     myr "Bye Hermione{image=textheart}{image=textheart}{image=textheart}"
-    show screen blkfade 
+    show screen blkfade
     with d3
     ">Eventually your orgasm subsides and you allow your softening member to slide out of hermione's cum coated throat."
     $ ccg1 = "blank"
@@ -273,7 +275,7 @@ label forest_BJ_2:
     with d3
     return
 
-    
+
 label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ forest_BJ_progress = 4
     show screen blkfade
@@ -311,7 +313,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg3 = "overlay"
     show screen ccg
     hide screen hermione_main
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     her "Maybe I wouldn't have ended up a dirty little cumslut if your dick wasn't so nice..."
     #Have her suck his cock
@@ -456,7 +458,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg1 = "m3"
     ">With that Moaning Myrtle rises up from the dewy ground and flashes her see-through breasts towards you."
     $ ccg2 = 41
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     g4 "{size=+7}ARGH! YES!!!{/size}"
     $ ccg2 = 42
@@ -538,7 +540,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg3 = "overlay"
     hide screen hermione_main
     show screen ccg
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     her "Mmmmm..."
     $ ccg2 = 17
@@ -712,7 +714,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg1 = "blank"
     ">At the edge of your orgasm, Hermione forcefully pushes herself off your dick and wraps your cock in her hands and hair."
     $ ccg2 = 45
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     her "{size=+5} That's it Professor Cum for me! sir! cover me in front of Myrtle!{/size}"
     with hpunch
@@ -747,7 +749,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     g4 "{size=+7}Argh!!! YES!!!{/size}"
     $ ccg2 = 50
     her "{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
-    show screen blkfade 
+    show screen blkfade
     with d3
     #Genie and Hermione back in the forest...
     $ ccg1 = "blank"
@@ -764,52 +766,10 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     call her_main("I'll get dressed...","soft","baseL")
     call her_main("but If it's all the same to you, I might leave the cum on...","base","dead")
     m "Good girl..."
-    show screen blkfade 
+    show screen blkfade
     with d3
     ">With that, you and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cumshot the whole way..."
     hide screen ccg
     hide screen blkfade
     with d3
     return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

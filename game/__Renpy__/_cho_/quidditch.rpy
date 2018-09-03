@@ -75,9 +75,7 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
     m "..."
     m "(I still have no idea what quidditch is...)"
 
-    call set_cho_clothing("uniform")
-
-    jump main_room
+    jump end_cho_event
 
 
 
@@ -222,9 +220,7 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
 
     m "(I've really gotta learn what this game is about...)"
 
-    call set_cho_clothing("uniform")
-
-    jump main_room
+    jump end_cho_event
 
 
 
@@ -292,12 +288,8 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     m "Then that will be all. "
     call cho_main("Alright then, [cho_genie_name]...","open","closed","base","mid")
     call nar(">With that Cho, turns and leaves your office.")
-    hide screen cho_chang
-    with d3
 
-    call set_cho_clothing("uniform")
-
-    jump main_room
+    jump end_cho_event
 
 
 
@@ -374,23 +366,11 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     with d3
     call nar(">Cho cheerily leaves your office.")
 
-    jump day_main_menu
+    jump end_cho_event
+
 
 label cho_quidd_2_1: #Comes back after playing without a robe on
 
 label cho_quidd_2_2: #Comes back after playing without a jumper on
 
-label cho_quidd_3_1: 
-
-
-
-
-
-
-
-
-
-
-    call set_cho_clothing("uniform")
-
-    jump main_room
+label cho_quidd_3_1:

@@ -1,10 +1,10 @@
 
 
 ### HERMIONE CHIBI SCREENS ###
-    
+
 
 ### UNIVERSAL SCREEN ###
-screen h_c_u: 
+screen h_c_u:
     tag hermione_chibi
     add h_c_u_pic at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
 
@@ -20,8 +20,8 @@ screen hermione_blank_head:
 screen hermione_blank_chibi:
     tag hermione_chibi
     zorder hermione_SC.chibi.zorder
-    
-    
+
+
 screen hermione_walk:
     tag hermione_chibi
     add hermione_chibi_walk at custom_walk_02(walk_xpos, walk_xpos2)
@@ -80,7 +80,7 @@ screen hermione_walk_01_f: #Hermione walking animation. facing right. (Leaving t
     tag hermione_chibi
     add hermione_chibi_walk_f at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
-    
+
 screen hermione_run: #Hermione running. facing right. (Leaving tower).
     tag hermione_chibi
     add hermione_chibi_run at custom_walk_02(walk_xpos, walk_xpos2)
@@ -89,7 +89,7 @@ screen hermione_run_f: #Hermione running. facing right. (Leaving tower).
     tag hermione_chibi
     add hermione_chibi_run_f at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
-    
+
 screen hermione_fly: #Hermione running. facing right. (Leaving tower).
     tag hermione_chibi
     add hermione_chibi_fly at custom_walk_02(walk_xpos, walk_xpos2)
@@ -113,15 +113,15 @@ screen hermione_chibi_robe_f: #Hermione. Chibi. Walking. Wearing a robe.
     else:
         add "ch_hem walk_robe_flip" at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
-    
+
 screen hermione_02_b: #Hermione stands still wearing a robe. #Not in use.
     tag hermione_chibi
     add "characters/hermione/chibis/walk/h_walk_robe_01.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
-  
+
 
 
 screen her_wand_slow:  # Hermione rubs wand slowly
-    add "rub_wand_slow_ani" 
+    add "rub_wand_slow_ani"
 
 screen hermione_02_w: #Hermione stands still wearing a robe.
     tag hermione
@@ -135,7 +135,7 @@ screen hermione_02_wFast: #Hermione rubs wand between her legs quickly.
 screen hermione_02_wf1: #Hermione finishes rubbing the wand - eyes closed.
     tag hermione
     add "images/animation/h_Wand_01f.png" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
-screen hermione_02_wf2: #Hermione finishes rubbing the wand - eyes opened. 
+screen hermione_02_wf2: #Hermione finishes rubbing the wand - eyes opened.
     tag hermione
     add "images/animation/h_Wand_02s.png" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 
@@ -148,7 +148,7 @@ screen hermione_chibi_lift_top:
     tag hermione_chibi
     add "characters/hermione/chibis/lift_top/tits_00.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
     zorder hermione_SC.chibi.zorder
-    
+
 #Lift skirt.
 screen hermione_chibi_lift_skirt:
     tag hermione_chibi
@@ -160,13 +160,13 @@ screen hermione_chibi_lift_skirt:
     else:
         add "characters/hermione/chibis/lift_skirt/panties_02.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
     zorder hermione_SC.chibi.zorder
-    
+
 #Drink potion.
 screen ch_potion:
     tag hermione_chibi
     add "ch_hem potion" at Position(xpos=hermione_SC.chibi.xpos-30, ypos=hermione_SC.chibi.ypos)
     zorder hermione_SC.chibi.zorder
- 
+
 
 
 ### HERMIONE CHIBI FAVOUR SCREENS (with Genie or Snape,...) ###
@@ -176,46 +176,46 @@ screen groping_01: #Facing Genie.
     tag favor
     add "groping_01" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
-    
+
 screen groping_02: #Facing Genie.
     tag favor
     add "groping_02" at Position(xpos=-60, ypos=10)
     add "groping_02_blinking" at Position(xpos=-60, ypos=10)
-    
+
 screen no_groping_01: #Facing Genie.
     tag favor
     add "images/animation/grope_05.png" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
-    
+
 screen no_groping_02: #Facing Genie.
     tag favor
     add "images/animation/grope_b_05.png" at Position(xpos=-60, ypos=10)
     add "groping_02_blinking" at Position(xpos=-60, ypos=10)
-    
+
 
 ### MOLESTING TITS FULLY CLOTHED ###
 screen groping_03: #Facing Genie.
     tag favor
     add "groping_03_ani" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
-    
+
 ### MOLESTING NAKED TITS ###
-screen groping_naked_tits: 
+screen groping_naked_tits:
     tag favor
     add "groping_naked_tits_ani" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
     zorder 1 #Otherwise chair is on top.
-    
+
 ### JERKING OFF ###
-screen jerking_off_01: 
+screen jerking_off_01:
     tag favor
     add "jerking_off_ani" at Position(xpos=-60, ypos=10)
-    if not no_blinking: #When True - blinking animation is not displayed. 
+    if not no_blinking: #When True - blinking animation is not displayed.
         add "groping_01_blinking" at Position(xpos=-60, ypos=10)
     zorder 1 #Otherwise chair is on top.
 
 ### SPERM ###
-screen jerking_off_cum: 
+screen jerking_off_cum:
     add "jerking_off_cum_ani" at Position(xpos=-60, ypos=10)
     #add "groping_01_blinking" at Position(xpos=-200, ypos=10)
     zorder 2 #Otherwise there is a bug with blinking.
@@ -244,48 +244,50 @@ screen hermione_chibi_dance:
             add "no_shirt_dance_ani" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
         else: #Nude
             add "no_shirt_no_skirt_dance_ani" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
-            
+    zorder hermione_SC.chibi.zorder
 
 screen clothed_dance: #Hermione stands still.
     tag hermione_chibi
     add "clothed_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
+    zorder hermione_SC.chibi.zorder
 screen clothed_dance_pause: #Hermione stands still.
     tag hermione_chibi
     add "ch_hem blink_a" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
+    zorder hermione_SC.chibi.zorder
 
 ### NO VEST ###
 screen no_vest_dance: #Hermione stands still.
     tag hermione_chibi
     add "no_vest_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    
+    zorder hermione_SC.chibi.zorder
 ### NO SHIRT ###
 screen no_shirt_dance: #Hermione stands still.
     tag hermione_chibi
     add "no_shirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-
+    zorder hermione_SC.chibi.zorder
 ### NO BOTTOM/SKIRT ###
 screen no_skirt_dance: #Hermione stands still.
     tag hermione_chibi
     add "no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-   
+    zorder hermione_SC.chibi.zorder
 ### NAKED DANCE ###
 screen no_shirt_no_skirt_dance: #Hermione stands still.
     tag hermione_chibi
     add "no_shirt_no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    
+    zorder hermione_SC.chibi.zorder
 ### SIT NAKED ###
 screen hermione_chibi_sit_naked_A:
     tag hermione_chibi
     add "characters/hermione/chibis/sitting/sit_naked_blink.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
-    
+    zorder hermione_SC.chibi.zorder
 screen hermione_chibi_sit_naked_B:
     tag hermione_chibi
     add "characters/hermione/chibis/sitting/sit_naked.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
-    
+    zorder hermione_SC.chibi.zorder
 screen hermione_chibi_stand_no_shirt:
     tag hermione_chibi
     add "characters/hermione/chibis/dance/03_no_shirt_03.png" at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
-
+    zorder hermione_SC.chibi.zorder
 label update_chibi_uniform:
 
     #Naked
@@ -297,7 +299,7 @@ label update_chibi_uniform:
         $ hermione_chibi_walk_f   = "ch_hem walk_n_flip"
         $ hermione_chibi_run      = "ch_hem run_a"
         $ hermione_chibi_run_f    = "ch_hem run_a_flip"
-        
+
     #Robe
     elif hermione_wear_robe and hermione_wear_top:
         $ hermione_chibi_blink    = "ch_hem blink_robe_blink"
@@ -371,7 +373,7 @@ label update_chibi_uniform:
         $ hermione_chibi_walk_f   = "ch_hem walk_h_flip"
         $ hermione_chibi_run      = "ch_hem run_a"
         $ hermione_chibi_run_f    = "ch_hem run_a_flip"
-        
+
     else:# shirt_00
         $ hermione_chibi_blink    = "ch_hem blink_a"
         $ hermione_chibi_blink_f  = "ch_hem blink_a_flip"
@@ -396,11 +398,11 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
     hide screen hermione_chibi_dance
 
     hide screen hermione_chibi_lift_top
-    hide screen hermione_chibi_lift_skirt 
+    hide screen hermione_chibi_lift_skirt
 
-    hide screen ch_potion  
+    hide screen ch_potion
     hide screen ch_hotdog
-    
+
     $ hermione_SC.chibi.xpos = 540
     $ hermione_SC.chibi.ypos = 250
 
@@ -441,21 +443,21 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
     #Hermione Chibi Dance. #Strips automatically when removing clothes.
     elif action == "dance":
         show screen hermione_chibi_dance
-    
+
     #Stnad top less
     elif action == "top_naked":
         show screen hermione_chibi_stand_no_shirt
-    
+
     #Sit Naked
     elif action == "sit_naked":
         show screen hermione_chibi_sit_naked_A
     elif action == "sit_naked_wide_eyes" or action == "sit_naked_scared" or action == "sit_naked_shocked":
         show screen hermione_chibi_sit_naked_B
-        
+
     #Drink POTION
     elif action == "drink_potion":
-        show screen ch_potion  
-        
+        show screen ch_potion
+
     #Special Images. These need custom xpos/ypos positions!
     elif action == "image":
 
@@ -472,8 +474,8 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
         pass
 
     elif action == "leave":
-        call play_sound("door") 
-        hide screen hermione_main   
+        call play_sound("door")
+        hide screen hermione_main
         hide screen bld1
         hide screen blktone
         with d3
@@ -501,7 +503,7 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
 # @param pos2 ending position for the chibi, defaults to the value of walk_xpos2
 # @param speed the the time it will take the chibi to move from pos1 to pos2 in seconds, defaults to the value of hermione_speed
 # @param loiter boolean flag to detetermine weather to show the chibi when the animation ends, defaults to False
-# @param redux_pause value to decrease the time to pause before hideing the animation early 
+# @param redux_pause value to decrease the time to pause before hideing the animation early
 
 
 
@@ -509,9 +511,9 @@ label her_chibi(action = "", xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi
 label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
-    call hide_characters 
+    call hide_characters
     with d3
-    
+
     hide screen hermione_walk
     hide screen hermione_walk_f
     hide screen hermione_run
@@ -587,9 +589,9 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
             pause.5
         if loiter:
             show screen hermione_blink_f
-        
+
     return
-    
+
 
 
 
@@ -610,8 +612,8 @@ label her_walk_end_loiter(dissolveTime = 3):
         hide screen hermione_blink
         hide screen hermione_blink_f
     return
-    
-    
+
+
 
 label set_h_animation(ani=u_h_animation, xpos = u_h_ani_xpos, ypos = u_h_ani_ypos):
     if ani != u_h_animation:
@@ -634,16 +636,16 @@ label play_h_animation:
         hide screen genie
         show screen chair_left
     #if:
-    
+
     show screen u_h_animation
     return
-    
+
 label pause_u_animation:
     hide screen u_h_ani_scr
     show screen u_h_ani_scr_pause
     with d2
     return
-    
+
 label end_h_animation:
     if u_h_animation == "sex_ani":
         show screen genie
@@ -651,11 +653,10 @@ label end_h_animation:
         hide screen u_h_animation
     #if:
     return
-    
-    
+
+
 screen u_h_ani_scr:
     add u_h_animation at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)
-    
+
 screen u_h_ani_scr_pause:
     add u_h_animation_paused at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)
-    

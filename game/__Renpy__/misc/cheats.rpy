@@ -124,8 +124,9 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Solve the slider puzzle-" if found_puzzle_1 and unlocked_7th:
-            $ unlocked_7th = False
+        "-Solve the slider puzzle-" if found_puzzle_1 and not unlocked_7th:
+            "There might be something of interest to you somewhere at the 7th floor."
+            $ unlocked_7th = True
             jump open_pyzzle_box
 
         "-Add Gold-":

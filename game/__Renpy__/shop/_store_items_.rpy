@@ -1,4 +1,4 @@
-label __init_variables:
+label store_items_init:
 
     #Single Clothing Items
     $ cs_clothing_list = []

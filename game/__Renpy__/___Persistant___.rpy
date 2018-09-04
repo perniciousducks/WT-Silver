@@ -278,6 +278,7 @@ label __init_variables:
 
     # Store Init
     call store_init
+    call store_items_init
 
     #Genie Init
     call genie_init

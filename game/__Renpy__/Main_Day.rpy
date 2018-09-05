@@ -304,11 +304,11 @@ if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_with
 if whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
-if luna_reverted and luna_corruption == 10:
+if luna_reverted and luna_corruption == -2 and days_to_luna <= 0:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_1 #Sets luna_corruption to 0
+    jump luna_reverted_greeting_1 #Sets luna_corruption to -1, returns next night.
 
-if luna_reverted and luna_corruption < 10 and days_to_luna <= 0:
+if luna_reverted and luna_corruption >= 0 and days_to_luna <= 0:
     if luna_reverted and luna_corruption == 0:
         $ days_without_an_event = 0
         jump luna_reverted_event_1

@@ -151,6 +151,14 @@ if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
     $ days_without_an_event = 0
     jump astoria_tonks_intro
 
+#Luna events.
+if luna_known and not luna_unlocked:
+    call hat_intro_3 #Returns
+
+if luna_reverted and luna_corruption == -1:
+    $ days_without_an_event = 0
+    jump luna_reverted_greeting_2 #Sets luna_corruption to 0
+
 #Hermione working return.
 if current_job == 1:
     jump maid_responses
@@ -197,13 +205,6 @@ python:
 
 if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
     jump good_bye_snape
-
-
-if luna_known and not luna_unlocked:
-    call hat_intro_3 #Returns
-
-if luna_corruption == 11 and luna_reverted:
-    jump luna_reverted_greeting_2 #No return.
 
 if milking == -1:
     call potion_scene_11_1_2 #Returns

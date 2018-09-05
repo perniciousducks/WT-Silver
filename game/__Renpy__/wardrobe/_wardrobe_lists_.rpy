@@ -194,7 +194,7 @@ label update_wr_tops_list:
         if whoring >= 11:
             $ wr_tops_uniform.append("top_5_g")
         $ wr_tops_uniform.append("top_6_g")
-        #$ wr_tops_uniform.append("top_7_g") #Needs variants for poses and large breases!
+        $ wr_tops_uniform.append("top_7_g")
 
         #Cheerleader
         if hg_cheer_g_OBJ.unlocked:
@@ -275,7 +275,7 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_3")
         $ wr_bottoms_uniform.append("skirt_4")
         $ wr_bottoms_uniform.append("skirt_5")
-        #$ wr_bottoms_uniform.append("skirt_7") #Needs color variants and versions for poses!
+        $ wr_bottoms_uniform.append("skirt_7")
 
         $ wr_bottoms_uniform.append("skirt_1_low")
         $ wr_bottoms_uniform.append("skirt_2_low")
@@ -531,10 +531,10 @@ label update_wr_underwear_list:
             $ wr_panties.append("panties_fishnet_string")
 
         #One-Pieces & Nighties
-        $ wr_panties.append("swimsuit_sport_1")
-        $ wr_panties.append("swimsuit_sport_2")
-        $ wr_panties.append("swimsuit_sport_3")
-        $ wr_panties.append("swimsuit_sport_4")
+        $ wr_onepieces.append("swimsuit_sport_1")
+        $ wr_onepieces.append("swimsuit_sport_2")
+        $ wr_onepieces.append("swimsuit_sport_3")
+        $ wr_onepieces.append("swimsuit_sport_4")
         #$ wr_onepieces.append("swimsuit_halterless")
         #$ wr_onepieces.append("onepiece_swimsuit")
         #$ wr_onepieces.append("onepiece_bunny")

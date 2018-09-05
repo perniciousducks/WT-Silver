@@ -1175,7 +1175,7 @@ screen wardrobe():
                     add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_panties[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Nighties & Onepieces #Needs art edits for large breasts, poses,...
-            if wardrobe_underwear_category == 2 and (active_girl == "astoria" or active_girl == "susan"):
+            if wardrobe_underwear_category == 2 and active_girl in ["hermione","astoria","susan"]:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 47+icon_ypos_offset zoom 0.35
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10

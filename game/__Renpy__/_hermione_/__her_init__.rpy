@@ -627,6 +627,10 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "onepiece_swimsuit",
                                        "onepiece_swimsuit_halterless",
                                        "onepiece_bikini_string",
+                                       "swimsuit_sport_1",
+                                       "swimsuit_sport_2",
+                                       "swimsuit_sport_3",
+                                       "swimsuit_sport_4",
                                       ]
 
     $ h_onepieces_nighties_list     = ["nighty_short",

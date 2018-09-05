@@ -398,6 +398,7 @@ label her_panties_toggle:
         else: #21+
             call set_her_face("happy")
 
+    call her_main(xpos="wardrobe",ypos="base")
     hide screen wardrobe
     call screen wardrobe
 

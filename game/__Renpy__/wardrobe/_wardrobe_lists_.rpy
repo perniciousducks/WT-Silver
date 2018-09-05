@@ -531,10 +531,12 @@ label update_wr_underwear_list:
             $ wr_panties.append("panties_fishnet_string")
 
         #One-Pieces & Nighties
-        $ wr_onepieces.append("swimsuit_sport_1")
-        $ wr_onepieces.append("swimsuit_sport_2")
-        $ wr_onepieces.append("swimsuit_sport_3")
-        $ wr_onepieces.append("swimsuit_sport_4")
+        if hg_onepiece_sport_swimsuit_OBJ.unlocked:
+            $ wr_onepieces.append("swimsuit_sport_1")
+            $ wr_onepieces.append("swimsuit_sport_2")
+            $ wr_onepieces.append("swimsuit_sport_3")
+            if whoring >= 14:
+                $ wr_onepieces.append("swimsuit_sport_4")
         #$ wr_onepieces.append("swimsuit_halterless")
         #$ wr_onepieces.append("onepiece_swimsuit")
         #$ wr_onepieces.append("onepiece_bunny")

@@ -448,6 +448,16 @@ label store_items_init:
     $ hg_onepiece_sling_OBJ.image = "hg_onepiece_sling.png"
     $ hg_onepiece_sling_OBJ.description = ">A Mononoke variant of the Sling Bikini"
 
+    if not hasattr(renpy.store,'hg_onepiece_sport_swimsuit_OBJ'):
+        $ hg_onepiece_sport_swimsuit_OBJ = store_item_class()
+    $ hg_onepiece_sport_swimsuit_OBJ.id = "hg_onepiece_sling"
+    $ hg_onepiece_sport_swimsuit_OBJ.name = "Sports Swimsuits"
+    $ hg_onepiece_sport_swimsuit_OBJ.items = ["one-piece"]
+    $ hg_onepiece_sport_swimsuit_OBJ.cost = 69
+    $ hg_onepiece_sport_swimsuit_OBJ.wait_time = 1
+    $ hg_onepiece_sport_swimsuit_OBJ.image = "hg_onepiece_swimsuit_sport.png"
+    $ hg_onepiece_sport_swimsuit_OBJ.description = ">Comes in 4 different variants. \nSwimmies not included!"
+
 
     # Accessories
     if not hasattr(renpy.store,'hg_accs_wool_g_OBJ'): # Not a store item!
@@ -534,6 +544,7 @@ label store_items_init:
     $ hermione_clothing_sets_list.append(hg_bikini_sling_OBJ)
 
     #$ hermione_clothing_sets_list.append(hg_onepiece_sling_OBJ)
+    $ hermione_clothing_sets_list.append(hg_onepiece_sport_swimsuit_OBJ)
 
     $ hermione_clothing_sets_list.append(hg_accs_wool_g_OBJ) #Unlockable
 

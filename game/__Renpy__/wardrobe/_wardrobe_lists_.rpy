@@ -194,6 +194,7 @@ label update_wr_tops_list:
         if whoring >= 11:
             $ wr_tops_uniform.append("top_5_g")
         $ wr_tops_uniform.append("top_6_g")
+        $ wr_tops_uniform.append("top_7_g")
 
         #Cheerleader
         if hg_cheer_g_OBJ.unlocked:
@@ -274,6 +275,7 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_3")
         $ wr_bottoms_uniform.append("skirt_4")
         $ wr_bottoms_uniform.append("skirt_5")
+        $ wr_bottoms_uniform.append("skirt_7")
 
         $ wr_bottoms_uniform.append("skirt_1_low")
         $ wr_bottoms_uniform.append("skirt_2_low")
@@ -510,6 +512,10 @@ label update_wr_underwear_list:
 
         #Panties
         $ wr_panties.append("panties_base")
+        $ wr_panties.append("sport_1")
+        $ wr_panties.append("sport_2")
+        $ wr_panties.append("sport_3")
+        $ wr_panties.append("sport_4")
 
         if hg_lingerie_silk_OBJ.unlocked:
             $ wr_panties.append("panties_silk")

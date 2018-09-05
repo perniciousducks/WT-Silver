@@ -512,10 +512,6 @@ label update_wr_underwear_list:
 
         #Panties
         $ wr_panties.append("panties_base")
-        $ wr_panties.append("sport_1")
-        $ wr_panties.append("sport_2")
-        $ wr_panties.append("sport_3")
-        $ wr_panties.append("sport_4")
 
         if hg_lingerie_silk_OBJ.unlocked:
             $ wr_panties.append("panties_silk")
@@ -535,18 +531,22 @@ label update_wr_underwear_list:
             $ wr_panties.append("panties_fishnet_string")
 
         #One-Pieces & Nighties
-        $ wr_onepieces.append("onepiece_swimsuit_halterless")
-        $ wr_onepieces.append("onepiece_swimsuit")
-        $ wr_onepieces.append("onepiece_bunny")
-        $ wr_onepieces.append("onepiece_microdress")
+        $ wr_panties.append("swimsuit_sport_1")
+        $ wr_panties.append("swimsuit_sport_2")
+        $ wr_panties.append("swimsuit_sport_3")
+        $ wr_panties.append("swimsuit_sport_4")
+        #$ wr_onepieces.append("swimsuit_halterless")
+        #$ wr_onepieces.append("onepiece_swimsuit")
+        #$ wr_onepieces.append("onepiece_bunny")
+        #$ wr_onepieces.append("onepiece_microdress")
 
-        if hg_onepiece_sling_OBJ.unlocked:
-            $ wr_onepieces.append("onepiece_bikini_string")
-        if hg_nighty_silk_OBJ.unlocked:
-            $ wr_onepieces.append("nighty_short")
-        if hg_nightgown_OBJ.unlocked:
-            $ wr_onepieces.append("nighty_long")
-        $ wr_onepieces.append("nighty_dress")
+        #if hg_onepiece_sling_OBJ.unlocked:
+        #    $ wr_onepieces.append("onepiece_bikini_string")
+        #if hg_nighty_silk_OBJ.unlocked:
+        #    $ wr_onepieces.append("nighty_short")
+        #if hg_nightgown_OBJ.unlocked:
+        #    $ wr_onepieces.append("nighty_long")
+        #$ wr_onepieces.append("nighty_dress")
 
         #Garterbelts
         if hg_maid_OBJ.unlocked or hg_lingerie_silk_OBJ.unlocked:

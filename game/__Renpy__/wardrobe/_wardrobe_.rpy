@@ -1122,7 +1122,7 @@ screen wardrobe():
             add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_panties.png" xpos 15+90 ypos 17 zoom 0.35
             text "Panties" xpos 76+90 ypos 140+75 size 10
             #One-Pieces
-            if active_girl in ["astoria","susan"]:
+            if active_girl in ["hermione","astoria","susan"]:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",2),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 47+icon_ypos_offset zoom 0.35
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10
@@ -1138,7 +1138,7 @@ screen wardrobe():
                 text "Stockings" xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
-            if active_girl in ["hermione"]:
+            if active_girl in ["hermione"] and wardrobe_underwear_category in [0,1,3]: #Not for onepieces yet. Not for stockings.
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_underwear_color","base"), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 
@@ -1183,8 +1183,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",(wr_onepieces[i])), Jump("equip_onepiece")]
-                    add "characters/"+str(active_girl)+"/clothes/onepieces/"+str(wardrobe_underwear_color)+"/"+wr_onepieces[i]+".png" xpos 15+(90*col) ypos (47+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_onepieces[i])), Jump("equip_onepiece")]
+                    add "characters/"+str(active_girl)+"/clothes/onepieces/base/"+wr_onepieces[i]+".png" xpos 15+(90*col) ypos (47+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Garterbelts
             if wardrobe_underwear_category == 3:

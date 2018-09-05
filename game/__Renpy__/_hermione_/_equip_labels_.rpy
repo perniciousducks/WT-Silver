@@ -131,16 +131,15 @@ label set_h_bra(bra="", color=""):
     return
 
 #Onepiece equip.
-label set_h_onepiece(onepiece="", color=""):
+label set_h_onepiece(onepiece=""):
     hide screen hermione_main
-    if h_onepiece == onepiece and h_onepiece_color == color and hermione_wear_onepiece: #Off toggle
+    if h_onepiece == onepiece and hermione_wear_onepiece: #Off toggle
         $ h_request_wear_onepiece = False
         $ hermione_wear_onepiece = False
     else:
         $ h_request_wear_onepiece = True
         $ hermione_wear_onepiece = True
         $ h_onepiece = onepiece
-        $ h_onepiece_color = color
     call update_her_uniform
     show screen hermione_main
     return
@@ -336,11 +335,11 @@ label h_outfit_OBJ(outfit):
         call h_update_hair
 
     return
-    
+
 label h_equip_temp_outfit(outfit):
     if temp_outfit_GLBL == None:
         $ temp_outfit_GLBL = hermoine_outfit_GLBL
-        $ temp_weir = h_request_wear_outfit 
+        $ temp_weir = h_request_wear_outfit
         $ temp_costume = hermione_costume
 
     call h_outfit_OBJ(outfit)

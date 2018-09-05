@@ -94,24 +94,21 @@ label duel_main:
 screen duel_buttons:
     zorder 10
     
-    imagebutton: # attack
+    imagemap: # attack
         xpos 140
-        focus_mask True
-        idle "images/dueling/snape/hp_bar_03.png"
+        ground "images/dueling/snape/hp_bar_03.png"
         hover "images/dueling/snape/hp_bar_04.png"
-        action [Jump("main_attack")]
-    imagebutton: # aguard
+        hotspot(517, 420, 119, 179) action [Jump("main_attack")]
+    imagemap: # aguard
         xpos 140
-        focus_mask True
-        idle "images/dueling/snape/hp_bar_07.png"
+        ground "images/dueling/snape/hp_bar_07.png"
         hover "images/dueling/snape/hp_bar_06.png"
-        action [Jump("main_defend")]
-    imagebutton: # item
+        hotspot(596, 418, 108, 178) action [Jump("main_defend")]
+    imagemap: # item
         xpos 140
-        focus_mask True
-        idle "images/dueling/snape/hp_bar_09.png"
+        ground "images/dueling/snape/hp_bar_09.png"
         hover "images/dueling/snape/hp_bar_08.png"
-        action [Jump("main_potion")]
+        hotspot(671, 416, 125, 181) action [Jump("main_potion")]
     
     
 label main_attack:

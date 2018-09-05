@@ -48,7 +48,7 @@ image newanimation2 = Animation("images/main_room/12_genie_01.png", 0.25,
 
 
 
-image newanimation: #Not in use.
+image newanimation:
     "images/main_room/12_genie_01.png"
     pause.1
     "images/main_room/12_genie_02.png"

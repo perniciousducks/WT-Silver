@@ -37,16 +37,26 @@ screen main_room_menu:
 #        idle "images/main_room/cupboard/idle_hat.png"
 #        hover "images/main_room/cupboard/hover_hat.png"
 #        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
-
-    imagebutton: # CUPBOARD SCROLL
-        xpos 120+140
-        ypos 280
-        focus_mask True
-        xanchor "center"
-        yanchor "center"
-        idle "images/main_room/cupboard/idle_scroll.png"
-        hover "images/main_room/cupboard/hover_scroll.png"
-        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("scrolls_menu")]
+    if renpy.variant('android'):
+        imagemap: # CUPBOARD SCROLL
+            xpos 120+140
+            ypos 280
+            xanchor "center"
+            yanchor "center"
+            ground "images/main_room/cupboard/idle_scroll.png"
+            hover "images/main_room/cupboard/hover_scroll.png"
+            hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Hide("animation_feather"), Jump("scrolls_menu")]
+    
+    else:
+        imagebutton: # CUPBOARD SCROLL
+            xpos 120+140
+            ypos 280
+            focus_mask True
+            xanchor "center"
+            yanchor "center"
+            idle "images/main_room/cupboard/idle_scroll.png"
+            hover "images/main_room/cupboard/hover_scroll.png"
+            action [Hide("main_room_menu"), Hide("animation_feather"), Jump("scrolls_menu")]
     if renpy.variant('android'):
         imagemap: # CUPBOARD CABINET
            xpos 120+140
@@ -110,18 +120,30 @@ screen main_room_menu:
                 #unhovered [Hide("gui_tooltip")]
                 action [Hide("main_room_menu"), Hide("package"), Jump("get_package")]
 
-
-    imagebutton: # GENIE
-        xpos 230+140
-        ypos 336
-        focus_mask True
-        xanchor "center"
-        yanchor "center"
-        idle "newanimation"
-        hover "images/main_room/11_genie_02.png"
-        hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ] 
-        unhovered [Hide("gui_tooltip")]
-        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("desk")]
+    if renpy.variant('android'):
+        imagemap: # GENIE
+            xpos 230+140
+            ypos 336
+            xanchor "center"
+            yanchor "center"
+            ground "newanimation"
+            hover "images/main_room/11_genie_02.png"
+            hotspot(49, 28, 188, 219) hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ] 
+            hotspot(49, 28, 188, 219) unhovered [Hide("gui_tooltip")]
+            hotspot(49, 28, 188, 219) action [Hide("main_room_menu"), Hide("animation_feather"), Jump("desk")]
+        
+    else:
+        imagebutton: # GENIE
+            xpos 230+140
+            ypos 336
+            focus_mask True
+            xanchor "center"
+            yanchor "center"
+            idle "newanimation"
+            hover "images/main_room/11_genie_02.png"
+            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ] 
+            unhovered [Hide("gui_tooltip")]
+            action [Hide("main_room_menu"), Hide("animation_feather"), Jump("desk")]
     
     imagebutton: # PHOENIX
         xpos 400+140

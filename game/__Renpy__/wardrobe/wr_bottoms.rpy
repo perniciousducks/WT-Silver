@@ -159,7 +159,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                     jump return_to_wardrobe
 
             #Uniform Skirt Shortest #Done
-        elif skirt_choice == "skirt_5":
+            elif skirt_choice == "skirt_5":
                 m "Would you wear your school skirt for me? The shortest one you have."
                 if whoring >= 17:
                     if whoring < 23:
@@ -186,7 +186,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                     jump return_to_wardrobe
 
             elif skirt_choice == "skirt_7":
-                m "Would you wear your school skirt for me? But make it a bit shorter would you."
+                m "Would you wear your school skirt for me? But open up the fron a bit."
                 if whoring >= 17:
                     if whoring < 20:
                         call her_main("Of course, [genie_name].","soft","baseL")
@@ -203,7 +203,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                         call her_main("But that would be against the Hogwarts rules for proper school attire!","open","closed")
                         call her_main("I have to refuse, [genie_name].","normal","base")
                     else:
-                        call her_main("That skirt doesn't even cover the front!","shock","wide")
+                        call her_main("Open up the front?!","shock","wide")
                         call her_main("Is that another one of your silly jokes, [genie_name]?","angry","worried")
                         call her_main("No, please, don't tell me.","open","closed")
                         call her_main("I don't even want to know...","annoyed","worriedL")

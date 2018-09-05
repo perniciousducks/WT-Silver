@@ -450,7 +450,7 @@ label store_items_init:
 
     if not hasattr(renpy.store,'hg_onepiece_sport_swimsuit_OBJ'):
         $ hg_onepiece_sport_swimsuit_OBJ = store_item_class()
-    $ hg_onepiece_sport_swimsuit_OBJ.id = "hg_onepiece_sling"
+    $ hg_onepiece_sport_swimsuit_OBJ.id = "hg_onepiece_sport_swimsuit"
     $ hg_onepiece_sport_swimsuit_OBJ.name = "Sports Swimsuits"
     $ hg_onepiece_sport_swimsuit_OBJ.items = ["one-piece"]
     $ hg_onepiece_sport_swimsuit_OBJ.cost = 69

@@ -186,7 +186,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                     jump return_to_wardrobe
 
             elif skirt_choice == "skirt_7":
-                m "Would you wear your school skirt for me? But open up the fron a bit."
+                m "Would you wear your school skirt for me? But open up the front a bit."
                 if whoring >= 17:
                     if whoring < 20:
                         call her_main("Of course, [genie_name].","soft","baseL")

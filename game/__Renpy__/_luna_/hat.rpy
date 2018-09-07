@@ -32,27 +32,27 @@ label hat_intro:
     m "so What's in it for you hat?"
     hat "Entertainment. Do you understand how boring it is to sit in this room all day, staring at the wall with nothing to do..."
     m "..."
-    hat "Oh, yeah... Well you should appreciate my offer to fight off the boredom for you then."
+    hat "Oh yeah... Well, you should appreciate my offer to fight off the boredom for you then."
     m "And how do you plan to \'corrupt a girl\' from up there on the shelf?"
     hat "I'm the sorting hat, I sort people."
     m "..."
-    m "and How does that help?"
-    hat "well Normally I'm placed on student's heads at the beginning of the year."
+    m "And how does that help?"
+    hat "Well, normally I'm placed on student's heads at the beginning of the year."
     hat "I then read their personality using Legilimency to decide what house they go in."
-    m "and how does that help us?"
-    hat "Well I can do more than just read personalities, I can alter them as well."
+    m "And how does that help us?"
+    hat "Well, I can do more than just read personalities, I can alter them as well."
     g9 "Really?"
     hat "Well I mean in theory... The real Dumbledore never let me try it out. Not even on \'him\'."
     g9 "So you're saying if I get a student in here you can turn them into whatever I want?"
     hat "To an extent."
-    m "what's that supposed to mean?"
-    hat "I can change what house their in, and their personalities will change to suit that, but I can't completely alter a person's mind."
+    m "What's that supposed to mean?"
+    hat "I can change what house they're in, and their personalities will change to suit that, but I can't completely alter a person's mind."
     m "So I still have to do all the hard work?"
     hat "If you call sexually harassing teens hard work..."
     m "I'll think about it."
     hat "Go ahead, I'm sure you'll have plenty of time to think it over while you sit there by yourself..."
     hat "But... {p}if you want to have some real fun, get that brat Miss Granger to bring one of her slutty little friends up here."
-    hat "then you Put me on their head and we'll have some fun."
+    hat "then you put me on their head and we'll have some fun."
     hat "Until then..."
     m "What?"
     hat "{size=+5}z{/size}{size=+4}z{/size}{size=+3}z{/size}{size=+2}z{/size}{size=+1}z{/size}"
@@ -75,7 +75,7 @@ label hat_intro_2: #Bringing in Hermione
     m "Oh well, just-"
     call her_main("Wait, I know! Luna Lovegood!","scream","angryCl") 
     m "And why is that?"
-    call her_main("Well surely you've seen her grades [genie_name]...","open","closed") 
+    call her_main("Well, surely you've seen her grades [genie_name]...","open","closed") 
     call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","annoyed","suspicious") 
     m "Fantastic. Could you please tell her to come to my office later this afternoon?"
     call her_main("Why? You're not going to ask her for favours are you?","annoyed","annoyed") 
@@ -91,7 +91,7 @@ label hat_intro_3: #Luna change scene
     $ luna_hair = 2
     call play_sound("knocking") 
     "*knock* *knock* *knock*"
-    lun "It's Luna Lovegood sir..."
+    lun "It's Luna Lovegood, sir..."
     m "come in, come in..."
     call play_sound("door") 
     ">Luna stands in front of you."
@@ -132,7 +132,7 @@ label hat_intro_3: #Luna change scene
     m "Wait what happened?! Her eyes just changed color!"
     hat "Really? Hmmm... didn't expect that... what color are they?"
     m "Green."
-    hat "Well that seems rather fitting."
+    hat "Well, that seems rather fitting."
     m "Why, what did you do to her personality?"
     hat "Not much, just made it a bit more Snake like..."
     m "What now."

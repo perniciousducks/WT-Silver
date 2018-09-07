@@ -804,6 +804,16 @@ label store_items_init:
     $ hg_yenn_OBJ.breast_layer = "breasts_normal"
     $ hg_yenn_OBJ.description = ">A Witcher inspired outfit to fit even the most\n perverted witch"
 
+    if not hasattr(renpy.store,'hg_egypt_OBJ'):
+        $ hg_egypt_OBJ = hermione_outfit()
+    $ hg_egypt_OBJ.name = "Egyptian Goddess"
+    #$ hg_egypt_OBJ.cost = 200
+    $ hg_egypt_OBJ.type = "outfit"
+    $ hg_egypt_OBJ.unlockable = True #Reward for card game.
+    $ hg_egypt_OBJ.image = "hg_egypt.png"
+    $ hg_egypt_OBJ.outfit_layers = ["egyptian_top.png","egyptian_bottom.png","egyptian_shackles.png"]
+    $ hg_egypt_OBJ.breast_layer = "breasts_normal"
+
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
     $ hermione_outfits_list.append(hg_heartDancer_OBJ)
@@ -820,6 +830,7 @@ label store_items_init:
     $ hermione_outfits_list.append(hg_witch_OBJ)
     $ hermione_outfits_list.append(hg_bio_OBJ)
     $ hermione_outfits_list.append(hg_yenn_OBJ)
+    $ hermione_outfits_list.append(hg_egypt_OBJ)
 
 
 

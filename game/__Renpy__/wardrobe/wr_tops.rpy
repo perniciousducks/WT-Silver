@@ -298,6 +298,25 @@ label equip_her_top:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
 
+            elif top_choice == "top_7_g":
+                m "Could you wear your uniform top, but like this?"
+                if whoring >= 17:
+                    if whoring < 14:
+                        call her_main("I really don't know if that's such a good idea, [genie_name]...","open","closed")
+                        call her_main("Everybody is going to look at my breasts...","annoyed","down")
+                        g9 "I would be concerned if they didn't!"
+                        call her_main("Ugh--Fine. {w=0.9}Let me just change it real quick.","soft","angry")
+                    else:
+                        call her_main("Of course, [genie_name].","grin","angry",cheeks="blush")
+                        call her_main("I will just change right here, if you don't mind.","base","glance")
+                else:
+                    call her_main("This is just ridiculous!","angry","angry")
+                    call her_main("I'm not walking around school wearing a shirt like that!","annoyed","suspicious")
+                    call her_main("I refuse!","open","worriedL")
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at whoring level 17."
+                    jump return_to_wardrobe
+
 
             #Uniform Top Cheer #Done
             elif top_choice in ["top_cheer_g","top_cheer_s","top_cheer_r","top_cheer_h"] or top_choice in ["top_cheer_sexy_g","top_cheer_sexy_s","top_cheer_sexy_r","top_cheer_sexy_h"]:
@@ -769,6 +788,11 @@ label equip_her_top:
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at whoring level 8."
+                jump return_to_wardrobe
+            if top_choice == "top_7_g" and whoring < 17: #vest w/cleavage
+                ">She won't wear that top just yet."
+                if cheats_active or game_difficulty <= 2:
+                    ">Try again at whoring level 17."
                 jump return_to_wardrobe
 
             if top_choice in ["top_cheer_g"]:

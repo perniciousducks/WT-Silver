@@ -14,9 +14,9 @@ $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ uni_sperm = False
 $ textColor = "#1e1008"
 
-call luna_night_flags
-
 call reset_hermione_main
+call reset_luna_main
+
 $ hermione_busy = False
 $ astoria_busy = False
 $ susan_busy = False
@@ -81,7 +81,7 @@ $ puzzle_random = renpy.random.randint(0, 2)
 
 if day > 25 and(1 < weather_gen < 4) and (puzzle_random == 0) and (found_puzzle_1 == False):
     show screen fireplace_glow
-    
+
 else:
     $ puzzle_random = 1
 
@@ -151,6 +151,14 @@ if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
     $ days_without_an_event = 0
     jump astoria_tonks_intro
 
+#Luna events.
+if luna_known and not luna_unlocked:
+    call hat_intro_3 #Returns
+
+if luna_reverted and luna_corruption == -1:
+    $ days_without_an_event = 0
+    jump luna_reverted_greeting_2 #Sets luna_corruption to 0
+
 #Hermione working return.
 if current_job == 1:
     jump maid_responses
@@ -197,13 +205,6 @@ python:
 
 if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
     jump good_bye_snape
-
-
-if luna_known and not luna_unlocked:
-    call hat_intro_3 #Returns
-
-if luna_corruption == 11 and luna_reverted:
-    jump luna_reverted_greeting_2 #No return.
 
 if milking == -1:
     call potion_scene_11_1_2 #Returns

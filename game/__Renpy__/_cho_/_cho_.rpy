@@ -54,6 +54,7 @@ label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, xpos=Non
 
 label end_cho_event:
     hide screen cho_chang
+    with d3
 
     call set_cho_clothing("uniform")
     call load_cho_clothing_saves #Resets Cho's clothing.

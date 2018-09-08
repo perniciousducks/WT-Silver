@@ -184,7 +184,10 @@ screen hermione_uniform:
     #Bottom #on top of top layer. #Most skirts get added here!
     if hermione_wear_bottom:
         if hermione_action != "none" and hermione_action != "hold_book" and hermione_action != "lift_top":
-            add hermione_skirt xpos hermione_xpos ypos hermione_ypos alpha transparency zoom (1.0/scaleratio)
+            if hermione_action == "lift_skirt" and (h_skirt in h_skirts_list or h_skirt in h_pants_list):
+                add hermione_skirt xpos hermione_xpos ypos hermione_ypos alpha transparency zoom (1.0/scaleratio)
+            else:
+                pass
         elif hermione_action == "lift_top":
             if h_top in h_lift_top_list:
                 add hermione_skirt xpos hermione_xpos ypos hermione_ypos alpha transparency zoom (1.0/scaleratio)
@@ -524,20 +527,26 @@ label update_her_action:
                 $ h_right_arm        = "00_blank"
                 $ h_left_arm         = "lift_skirt"
                 $ h_action_top       = "lift_skirt/"
-            if h_skirt in h_pants_list:
+                $ h_action_bottom    = "lift_skirt/"
+            elif h_skirt in h_pants_list:
                 $ h_right_arm        = "right_1"
                 $ h_left_arm         = "pants_down"
                 $ h_action_top       = "pants_down/"
-            $ h_action_bottom    = "lift_skirt/"
+                $ h_action_bottom    = "lift_skirt/"
+            else: #Skirt 7
+                pass
 
         elif hermione_wear_bottom:
             if h_skirt in h_skirts_list:
                 $ h_right_arm        = "00_blank"
                 $ h_left_arm         = "lift_skirt"
-            if h_skirt in h_pants_list:
+                $ h_action_bottom    = "lift_skirt/"
+            elif h_skirt in h_pants_list:
                 $ h_right_arm        = "00_blank"
                 $ h_left_arm         = "pants_down"
-            $ h_action_bottom    = "lift_skirt/"
+                $ h_action_bottom    = "lift_skirt/"
+            else: #Skirt 7
+                pass
 
         else:
             $ h_right_arm        = "right_1"

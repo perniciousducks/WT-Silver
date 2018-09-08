@@ -299,35 +299,36 @@ label potion_scene_1_2: #Luna potion
     hide screen hermione_main
     hide screen hermione_blink
     $ luna_chibi("stand")
-    
+
     $ changeLuna("default", "default", "sad", "default")
-    
+
     her "Ughhh... I feel like I'm going to throw up! Did the Polyjuice work??"
     m "Like a charm."
-    call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.") 
+    call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
     $ changeLuna("seductive", "default", "raised", "default")
     her "Apparently I'm still a girl. Someone from Ravenclaw?"
     m "Keen powers of observation, Miss Granger"
-    call nar(">Hermione grabs a lock of her hair") 
+    call nar(">Hermione grabs a lock of her hair")
     $ changeLuna("default", "crossed", "default", "pout")
     her "Definitely a blonde, though she could absolutely use a comb"
     $ changeLuna("default", "nose", "default", "default")
-    call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.") 
+    call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.")
     $ changeLuna("wide", "default", "angry", "default")
     her "..."
     her "You turned me into Loony Lovegood... I mean Luna Lovegood!?!"
-    m "Very astute [hermione_name]."
-    m "(No idea who that is, but she looks good.)"
-    $ changeLuna("wide", "default", "angry", "wide")
+    m "Very astute, [hermione_name]."
+    if not luna_known:
+        m "(No idea who that is, but she looks good.)"
+    $ changeLuna("wide", "default", "angry", "pout")
     her "Why on earth would you want me to look like Luna? She's completely mental!"
     m "I'm not seeing anything really wrong with her."
     $ changeLuna("default", "default", "sad", "pout")
     her "She has... imaginary friends and believes in things that can't possibly exist [genie_name]. She is absolutely mad."
     m "Fortunately, I'm not really interested in her mental health. I am interested in her impressive, and quite real, chest."
-    $ changeLuna("seductive", "default", "raised", "frown")
+    $ changeLuna("seductive", "default", "raised", "default")
     her "You can't possibly be interested in that... that girl's paltry breasts."
     m "Currently they're yours. And they don't look so paltry from where I'm sitting [hermione_name]. Do I detect a hint of jealousy?"
-    $ changeLuna("default", "default", "angry", "frown")
+    $ changeLuna("default", "default", "angry", "default")
     her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
     m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
     $ changeLuna("default", "default", "sad", "disgust")
@@ -343,10 +344,10 @@ label potion_scene_1_2: #Luna potion
     $ luna_chibi("stand_topless")
     $ luna_wear_top = False
     $ luna_wear_bra = False
-    $ changeLuna("seductive", "right", "raised", "frown")
+    $ changeLuna("seductive", "right", "raised", "default")
     her "There, see. Perfectly ordinary breasts. Absolutely no need to keep looking at them."
     m "I'm not quite convinced, the soft pale skin, the cute pink nipples and they look like quite a handful. I think you might have some serious competition here [hermione_name]."
-    $ changeLuna("seductive", "default", "angry", "wide")
+    $ changeLuna("seductive", "default", "angry", "angry")
     her "You can't be serious! They're saggy and couldn't even fill a first-year's palm!"
     m "Hmmm, I'm not sure. I think a closer examination is required."
     call nar(">In a huff, Hermione walks over and presents her new set of breasts")

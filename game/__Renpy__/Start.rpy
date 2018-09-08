@@ -487,6 +487,7 @@ call tonks_progress_init
 
 #Store
 call store_init
+call store_items_init
 
 #Wardrobe Reset
 call wardrobe_init

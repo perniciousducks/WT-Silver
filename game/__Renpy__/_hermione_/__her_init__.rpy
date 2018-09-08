@@ -627,6 +627,10 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "onepiece_swimsuit",
                                        "onepiece_swimsuit_halterless",
                                        "onepiece_bikini_string",
+                                       "swimsuit_sport_1",
+                                       "swimsuit_sport_2",
+                                       "swimsuit_sport_3",
+                                       "swimsuit_sport_4",
                                       ]
 
     $ h_onepieces_nighties_list     = ["nighty_short",
@@ -786,12 +790,13 @@ label her_progress_init:
         $ reward_her_red_lipstick = False #Removed! Not in use anymore!
 
 
-    #Update 1.33
-    if not hasattr(renpy.store,'hermione_busy') or reset_persistants:
+    #Update 1.33b
+    if not hasattr(renpy.store,'forest_BJ_progress') or reset_persistants:
 
         $ hermione_busy = False
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
+        $ forest_BJ_progress = 1
 
 
     ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.

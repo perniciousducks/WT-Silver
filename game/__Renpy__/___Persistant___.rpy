@@ -203,7 +203,7 @@ label __init_variables:
         $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
 
     ###CGs
-    if not hasattr(renpy.store,'cgg_folder'): #important!
+    if not hasattr(renpy.store,'ccg_folder'): #important!
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
         $ ccg2 = 1
@@ -278,6 +278,7 @@ label __init_variables:
 
     # Store Init
     call store_init
+    call store_items_init
 
     #Genie Init
     call genie_init

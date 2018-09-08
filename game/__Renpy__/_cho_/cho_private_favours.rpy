@@ -31,7 +31,7 @@ label cho_favor_1:
 label cho_favor_1_1:
     menu:
         "\"Take off your top\"":
-            m "[cho_name], why don't you take ofh your top?"
+            m "[cho_name], why don't you take off your top?"
             call cho_main("What, already? Shouldn't we talk a little bit first?","open","wide","sad","L")
             m "Not really..."
             m "Besides, Miss Granger is more than happy to show me her-"
@@ -50,14 +50,14 @@ label cho_favor_1_1:
             jump let_cho_strip
 
         "\"Take off your skirt\"":
-            m "[cho_name], why don't you take ofh your skirt?"
+            m "[cho_name], why don't you take off your skirt?"
             call cho_main("What, already? Shouldn't we talk a little bit first?","open","wide","sad","L")
             m "Not really..."
             m "Besides, Just thinking about Miss Granger's ass makes me-"
             call cho_main("Fine, I'll do it...","pout","base","angry","R")
             call nar(">Cho takes a deep breath, then swiftly drops her skirt.")
             $ cho_wear_bottom = False
-            call cho_main("There. My skirt is gone!","angry","base","sad","down")
+            call cho_main("There, my skirt is gone!","angry","base","sad","down")
             g9 "I can see that, Miss Chang!"
             m "Now take off your shirt..."
             call cho_main("O-okay...","open","base","sad","mid")
@@ -96,7 +96,7 @@ label cho_favor_1_1:
         else:
             call cho_main("That stupid slut can't spend even a single day without flirting with somebody that has legs attached...","open","angry","angry","mid")
 
-        call cho_main("I wake up every morning before dawn and run the quidditch pitch, until the sun rises!","angry","suspicious","angry","mid")
+        call cho_main("I wake up every morning before dawn and run the Quidditch pitch, until the sun rises!","angry","suspicious","angry","mid")
         call cho_main("My body's at the absolute peak of human and wizard conditioning!","open","angry","angry","mid")
         g4 "It is quite impressive, I've got to say!"
         call cho_main("Glad to hear it, [cho_genie_name].","smile","angry","angry","mid")
@@ -111,7 +111,7 @@ label cho_favor_1_1:
                 call cho_main("I guess that's ok, [cho_genie_name].","angry","suspicious","sad","down")
                 call blktone
                 m "(Really? She'd strip down for barely anything?)"
-                m "(Even Hermione gets more point for just her mindless talking...)"
+                m "(Even Hermione gets more points for just her mindless talking...)"
                 g4 "(Now she made me feel bad... I should probably pay her a little more.)"
                 call hide_blktone
                 m "Only the first time, Miss Chang. I will pay you 20 regularily."
@@ -122,7 +122,7 @@ label cho_favor_1_1:
                 m "It sure does..."
                 call cho_main("(...)","angry","base","base","R")
                 m "(Is it just me, or is the middle choice always the boring one...?)"
-                m "Anyways..."
+                m "Anyway..."
                 $ current_payout = 20
             "-100 points-":
                 call cho_main("100?","scream","wide","raised","mid")
@@ -169,10 +169,10 @@ label cho_favor_1_1:
 # Favour 1 - Second time event.
 label cho_favor_1_2:
 
-    m "Miss Chang how would you like to earn 20 house points the easy way?"
-    call cho_main("what do i have to do?","base","suspicious","sad","down")
+    m "Miss Chang, how would you like to earn 20 house points the easy way?"
+    call cho_main("What do i have to do?","base","suspicious","sad","down")
     m "I want to see your body!"
-    call cho_main("you want me to get naked, sir?","open","base","sad","R")
+    call cho_main("You want me to get naked, sir?","open","base","sad","R")
     m "Of course."
     m "If you're not interested, I'm sure Hermione wouldn't mind..."
     call cho_main("!!!","pout","wide","sad","mid",trans="hpunch")
@@ -186,7 +186,7 @@ label cho_favor_1_2:
             m "Now the bottom."
             call cho_main("Yes, uhm... [cho_genie_name].","pout","base","sad","mid")
             $ cho_wear_bottom = False
-            call cho_main("(house points...loads of house points...)","horny","closed","sad","mid")
+            call cho_main("(House points...loads of house points...)","horny","closed","sad","mid")
             $ cho_wear_bra = False
             call cho_main("(Am I really doing this?)","angry","base","sad","down")
             $ cho_wear_panties = False
@@ -205,9 +205,9 @@ label cho_favor_1_2:
             m "Nice."
             call cho_main("Thank you, [cho_genie_name].","base","closed","base","mid")
             call nar("Her hands nervously move to her bra.")
-            call cho_main("is this okay?","pout","base","sad","mid")
+            call cho_main("Is this okay?","pout","base","sad","mid")
             $ cho_wear_bra = False
-            call cho_main("what do you think?","horny","angry","sad","R")
+            call cho_main("What do you think?","horny","angry","sad","R")
             m "Simply gorgeous."
             call nar("Finally, she pushes her panties down.")
             $ cho_wear_panties = False
@@ -224,10 +224,10 @@ label cho_favor_1_2:
 # Favour 1 - Third time event.
 label cho_favor_1_3:
 
-    m "Miss Chang how would you like to earn 20 house points the easy way?"
-    call cho_main("what do i have to do?","base","angry","sad","mid")
+    m "Miss Chang, how would you like to earn 20 house points the easy way?"
+    call cho_main("What do i have to do?","base","angry","sad","mid")
     m "I want to see your body again."
-    call cho_main("you want me to get naked, sir?","horny","suspicious","sad","down")
+    call cho_main("You want me to get naked, sir?","horny","suspicious","sad","down")
     m "Of course."
     m "If you're not interested, I'm sure Hermione wouldn't mind..."
     call cho_main("!!!","scream","wide","sad","mid")
@@ -322,7 +322,7 @@ label jerk_off_to_cho:
                 menu:
                     "-Keep jerking off-":
                         if cho_whoring in [0]:
-                            call nar(">Your eyes continue to drift over the young quidditch players tight, athletic body.","start")
+                            call nar(">Your eyes continue to drift over the young Quidditch players tight, athletic body.","start")
                             call nar(">You lean back in your chair and begin stroking in earnest.","end")
                         call cho_main("...","quiver","suspicious","raised","downR")
                         call nar(">The young seeker looks mesmerized by your actions.")
@@ -378,7 +378,7 @@ label jerk_off_to_cho:
                                         call cho_main("Of course, [cho_genie_name].","horny","base","raised","downR")
                                         call ctc
                                     call nar(">You pump your cock faster and faster...")
-                                    g4 "(Look at the fucking abs on that girl!)"
+                                    g4 "(Look at those fucking abs on that girl!)"
                                     call nar("Cho's athletic, young body has you hard as stone.")
                                     g4 "(I want to play xylophone on it...)"
 
@@ -544,9 +544,9 @@ label cho_favor_2:
                 call cho_main("if you want to touch my firm ass, it's going to cost you.","scream","closed","base","mid")
                 call cho_main("I'll do it for 40 house points.","open","base","base","R")
                 m "That's a lot just to grab a students ass."
-                ">Cho twists her lithe, muscular body."
+                ">Cho twists her petite, muscular body."
                 ">You can see the firm lines of her ass under her uniform."
-                call cho_main("come on, PRofessor... isn't it worth it?","smile","base","base","mid")
+                call cho_main("come on, Professor... isn't it worth it?","smile","base","base","mid")
                 m "That is a nice ass..."
                 m "But I could get Hermione to do it for..."
                 menu:
@@ -584,7 +584,7 @@ label cho_favor_2:
             else:
                     m "Miss Chang. I'd like to touch your butt again."
                     if cho_whoring  == 1: #new variable cho_whoring
-                        call cho_main("welL...okay. but it'll cost you 40 house points","open","angry","sad","R")
+                        call cho_main("well...okay. but it'll cost you 40 house points","open","angry","sad","R")
                         m "Very well. Now come over here, girl."
                         jump chofbm
                     if cho_whoring  == 2:
@@ -612,22 +612,22 @@ label chofbm:
             ">Cho is standing just inches in front of you, the firm globes of her ass-"
             stop music
             $ renpy.play('sounds/scratch.wav')
-            call cho_main("hey! hogwarts, like most respectable institutions for magical learning, is locatED in the UK.","scream","closed","angry","mid")
-            call cho_main("please, stick to the metric system.","upset","closed","angry","mid")
+            call cho_main("Hey! Hogwarts, like most respectable institutions for magical learning, is located in the UK.","scream","closed","angry","mid")
+            call cho_main("Please, stick to the metric system.","upset","closed","angry","mid")
             ">Ah, yes...well..."
             #play music fadein 1.5
         else:
             call cho_main("Alright...","horny","base","sad","R")
             call cho_main("Alright...you can touch me a little.","quiver","base","sad","R")
         ">Cho is standing mere centimeters in front of you, the firm globes of her ass barely visible under her skirt."
-        ">Cho hands remain firmly planted on the edge of your desk."
+        ">Cho's hands remain firmly planted on the edge of your desk."
         ">You feel her quiver as the tips of your fingers touch her warm thighs."
         ">Cho's hands grip the desk firmly as your hands begin to slide up her legs."
-        ">You reach her panties, and feeling the contrast between flesh and soft fabric, you guide your palms over both cheeks."
-        ">You give both a series of firm squeezes, appreciating the thick, tight muscle underneath."
+        ">You reach her panties, and after feeling the contrast between flesh and soft fabric, you guide your palms over both cheeks."
+        ">You give both a series of firm squeezes, appreciating the thick tight muscles underneath."
         call cho_main("prof-Professor...","horny","closed","sad","mid")
         ">You hear Cho stiffle a nervous cry. Her ass squeezes tight under your palms."
-        call cho_main("that's enouGh, right Professor?","pout","base","sad","R")
+        call cho_main("That's enough, right Professor?","pout","base","sad","R")
         menu:
             "\"Yes\"":
                 m "Yes. I think that did the trick."
@@ -644,16 +644,16 @@ label chofbm:
                 $ cho_mad += 2
                 ">Cho's ass feels smooth and warm under your touch. Nevertheless, you begin to savage the poor girls ass."
                 call cho_main("Ow.","upset","shocked","angry","mid")
-                call cho_main("ow. ow. That hurts!","open","shocked","angry","mid")
+                call cho_main("Ow. ow. That hurts!","open","shocked","angry","mid")
                 call cho_main("Professor!","scream","shocked","angry","mid")
-                call cho_main("PRofessor! Professor, please stop.","open","shocked","angry","mid")
+                call cho_main("Professor! Professor, please stop.","open","shocked","angry","mid")
                 menu:
                     "-Do as she asks-":
                         ">You come to your senses and let the poor girl's ass be."
-                        ">Cho quickly pulls her skirt back down, rubbing her tender ass."
+                        ">Cho quickly pulls her skirt back down, rubbing her tender asscheeks."
                         call cho_main("Thank you, [cho_genie_name].","upset","closed","base","mid")
                         call cho_main("Can I have my house points now?","soft","angry","sad","mid")
-                        m "Of course, Miss Chang. You earned them."
+                        m "Of course, Miss Chang. You've earned them."
                         m "40 points to Ravenclaw."
                         $ ravenclaw += 40
                         jump chof2end
@@ -661,10 +661,10 @@ label chofbm:
                         ">You ignore the foolish girl's cries and continue to abuse her ass, sliding your hands under her panties."
                         call cho_main("Stop!","scream","wide","angry","mid")
                         ">You grab Cho's ass tightly and squeeze with all your might."
-                        ">The star quidditch player falls forward over your desk."
+                        ">The star Quidditch player falls forward over your desk."
                         call cho_main("It hurts!","scream","wide","sad","mid")
-                        ">You roll your hands over her ass, then, you guide your thumbs to her tight, little, brown hole."
-                        ">You can feel her beginning to fight, as you squeeze tightly and pull her ass open."
+                        ">You roll your hands over her ass and begin to guide your thumbs to her tight, little, brown hole."
+                        ">You can feel her starting to fight, as you squeeze tightly and pull her cheeks apart."
                         call cho_main("Professor Dumbledore!","scream","closed","angry","mid")
                         ">You suddenly release her ass and rain your firm hands across her cheeks."
                         $ renpy.play('sounds/slap_02.mp3')
@@ -691,14 +691,14 @@ label chofbm:
                         hide screen white
                         with hpunch
                         ">Cho's breathing is heavy and her legs shake under your assault."
-                        ">A thick, red outline of your hand is bruising on her ass."
+                        ">A thick, red outline of your hand is bruising on her buttcheeks."
                         call cho_main("Ack!","scream","wide","sad","mid")
                         call cho_main("Ack!...","horny","wide","angry","mid")
-                        call cho_main("ack!...Professor!","scream","wide","angry","mid")
-                        ">Cho finally gains enough control to wrench free of your grasp, and quickly moves away."
+                        call cho_main("Ack!...Professor!","scream","wide","angry","mid")
+                        ">Cho finally gains enough control to wriggle free of your grasp, and quickly moves away."
                         #Cho chibi walks to the middle of the room.
                         call cho_main("That's too far!","scream","closed","angry","mid")
-                        call cho_main("i never agreed to any of that.","scream","shocked","angry","mid")
+                        call cho_main("I never agreed to any of that.","scream","shocked","angry","mid")
                         call cho_main(".......i want 60 points.","scream","closed","angry","mid")
                         menu:
                             "-She earned 60-":
@@ -712,7 +712,7 @@ label chofbm:
                                 call cho_main("...","upset","suspicious","angry","downR")
                                 m "80 points to Ravenclaw."
                                 call cho_main("Really?","soft","suspicious","angry","down")
-                                call cho_main("well, i suppose it wasn't that bad...","pout","suspicious","sad","downR")
+                                call cho_main("Well, I suppose it wasn't that bad...","pout","suspicious","sad","downR")
                                 $ cho_mad +1
                                 $ ravenclaw += 80
                                 jump chof2end
@@ -747,7 +747,7 @@ label chofbm:
                                 call cho_main("...","horny","base","sad","R")
                                 ">You can feel Cho tensing up again."
                                 ">Your finger slides in and out of her tight asshole."
-                                ">Cho falls forward on the desk. Her breathing is getting faster, more ragged."
+                                ">Cho falls forward onto the desk. Her breathing is getting faster, more ragged."
                                 call cho_main("...","horny","closed","sad","mid")
                                 ">Suddenly, you feel her muscular ring pulse, squeezing your finger with unbearable tightness."
                                 call cho_main("Professor!","quiver","wide","sad","L")
@@ -772,7 +772,7 @@ label chofbm:
         menu:
             "No, that's quite enough.":
                 m "No, no. That's quite enough. Thank you, Miss Chang."
-                call cho_main("....uh. Yes. THank you, Professor.","smile","base","base","mid")
+                call cho_main("....uh. Yes. Thank you, Professor.","smile","base","base","mid")
                 m "40 points to Ravenclaw."
                 $ ravenclaw += 40
                 jump chof2end
@@ -783,16 +783,16 @@ label chofbm:
                 ">Cho begins to shake her hips suggestively, and move her ass."
                 ">She hooks her thumbs in the waist of her panties and pulls them outward."
                 cho_sexy "Well, sir. I suppose for 60 points I could take these ANNOYING panties off."
-                call cho_main("anD LEt you feEL me, sir...","smile","base","base","mid")
+                call cho_main("And let you feel me, sir...","smile","base","base","mid")
                 menu:
                     "60 it is.":
                         m "Well then, 60 it is."
                         $ ravenclaw += 60
-                        call cho_main("{size=-4}(wow, that was easy.){/size}","smile","base","base","mid")
-                        call cho_main("{size=-4}(i bet his nasty, old cock is going crazy...){/size}","smile","base","base","mid")
+                        call cho_main("{size=-4}(Wow, that was easy.){/size}","smile","base","base","mid")
+                        call cho_main("{size=-4}(I bet his nasty, old cock is going crazy...){/size}","smile","base","base","mid")
                         ">Cho slowly pushes her panties down past her hips, until they finally fall to her feet."
                         ">She steps out of them and spreads her feet wide before putting her hands on your desk."
-                        ">The young quidditch star arches her back, thrusting her firm ass toward you."
+                        ">The young Quidditch star arches her back, thrusting her firm ass toward you."
                         m "Very good, Miss Chang."
                         call cho_main("Thank you, sir.","smile","base","base","mid")
                         jump chof2wl2
@@ -878,7 +878,7 @@ label chofbm:
                     "Fine.":
                         ">You give your throbbing cock three quick pumps before nodding."
                         m "Fine. You'll get your points, girl."
-                        call cho_main("okay, pRofessor. but you'd better stop before...you know.","smile","base","base","mid")
+                        call cho_main("okay, professor. but you'd better stop before...you know.","smile","base","base","mid")
                         ">Cho shakes her ass from side to side."
                         ">You give it a light smack as it comes back, stroking your cock."
                         cho_sexy_surprise "..."
@@ -952,7 +952,7 @@ label chofbm:
                         ">You give you cock a quick stroke before guiding it back against Cho's ass."
                         cho_sexy_surprise "What are doing back there..."
                         ">Cho bounces her ass up and down a few times. You slap your cock head against it."
-                        call cho_main("{size=-4}(Oh my god...i can'T believe i'm letting an old man rub his cock on my ass.){/size}","smile","base","base","mid")
+                        call cho_main("{size=-4}(Oh my god...i can't believe i'm letting an old man rub his cock on my ass.){/size}","smile","base","base","mid")
                         call cho_main("Professor Dumbledore, make sure you tell me before you-{w=.5}{nw}","smile","base","base","mid")
                         ">You give your cock several good pumps and bring your free hand down across Cho's firm ass."
                         $ renpy.play('sounds/slap_02.mp3')
@@ -962,7 +962,7 @@ label chofbm:
                         hide screen white
                         call cho_main("Professor Dumbledore, make sure you tell me bEFOre you-CUM!","smile","base","base","mid")
                         call cho_main("(Oh blimey!)","smile","base","base","mid")
-                        ">Then you rub your cock head across her warm, naked ass flesh, dragging a trail of precum."
+                        ">Then you rub your tip across her warm, naked ass flesh, dragging a trail of precum."
                         call cho_main("Professor...","smile","base","base","mid")
                         ">You slap your bulging cock against her ass again and bury the head between her cheeks."
                         ">You pump your cock like a madman, until you feel a familar pressure in your magic balls."
@@ -1048,16 +1048,16 @@ label chofbm:
                 ">Cho begins to shake her hips suggestively, and move her ass."
                 ">Every so often you get a glimpse of her cute, little asshole."
                 ">Cho leans forward, pulling her ass cheeks apart."
-                call cho_main("WEll, sir. i suppose for just 65 points I could","smile","base","base","mid")
+                call cho_main("Well, sir. i suppose for just 65 points I could","smile","base","base","mid")
                 cho_sexy "Well, sir. I suppose for just 65 points I could put your big, strong cock between these."
                 cho_sexy "And rub you up and down until you cum."
                 menu: #[No.]
                     "65 it is.":
                         m "Well then, 65 it is."
                         call cho_main("{size=-4}(wow, that was easy.){/size}","smile","base","base","mid")
-                        call cho_main("{size=-4}(i bet his nasty, old wizard balls are completely full of cum.){/size}","smile","base","base","mid")
+                        call cho_main("{size=-4}(I bet his nasty, old wizard balls are completely full of cum.){/size}","smile","base","base","mid")
                         ">Cho arches her back, thusting her firm ass toward you."
-                        ">Then the young quidditch star slowly backs into your cock, before wrapping her ass tightly around you."
+                        ">Then the young Quidditch star slowly backs into your cock, before wrapping her ass tightly around you."
                         m "Very good, Miss Chang."
                         call cho_main("Thank you, sir.","smile","base","base","mid")
                         jump chof2hd
@@ -1123,7 +1123,7 @@ label chofbm:
                                         call cho_main("I knew you couldn't resist.","smile","base","base","mid")
                                         ">You lean forward and give Cho's ass a quick bite before leaning back."
                                         m "40 points to Ravenclaw."
-                                        call cho_main("THank you, Professor.","smile","base","base","mid")
+                                        call cho_main("Thank you, Professor.","smile","base","base","mid")
                                         $ ravenclaw += 40
                                         jump chof2end
 
@@ -1202,7 +1202,7 @@ label chofbm:
                                 #Genie cums.
                                 cho_stupid"..."
                                 cho_stupid"......"
-                                "Your cum splatters withing the young girl's ass cheeks in thick, messy spurts."
+                                "Your cum splatters between the young girl's ass cheeks in thick, messy spurts."
                                 cho_stupid"........."
                                 "Your wrinkly old balls pull tight and you dump the last of your cum in a fat glob that lands on her asshole."
                                 m "(Points) to Ravenclaw."
@@ -1252,7 +1252,7 @@ label chofbm:
                 ">Cho slowly drags her ass up and down over your cock."
                 m "Fantastic, girl."
                 ">Cho squeezes her ass around your dripping cock."
-                ">The athletic, young quidditch star arches her back and bounces her ass up a down, teasing the tip of your cock."
+                ">The athletic, young Quidditch star arches her back and bounces her ass up a down, teasing the tip of your cock."
                 m "You tease!"
                 ">You suddenly bring your palm down across her meaty cheek."
                 $ renpy.play('sounds/slap_02.mp3')
@@ -1262,8 +1262,8 @@ label chofbm:
                 hide screen white
                 cho_sexySurprise "Professor!"
                 ">Cho bounces her ass up and down a few more times, before  settling down on your lap."
-                call cho_main("{size=-4}(Oh my god...i can'T believe i'm rubbing my ass over an old wizard's cock.){/size}","smile","base","base","mid")
-                call cho_main("{size=-4}(my ass is so slimy...the smell is so thick...){/size}","smile","base","base","mid")
+                call cho_main("{size=-4}(Oh my god...i can't believe i'm rubbing my ass over an old wizard's cock.){/size}","smile","base","base","mid")
+                call cho_main("{size=-4}(My ass is so slimy...the smell is so thick...){/size}","smile","base","base","mid")
                 call cho_main("Professor Dumbledore, m-make sure you tell me before you-","smile","base","base","mid")
                 ">You can already feel the beginning of your orgasm."
                 ">You give the girls tight ass several slaps..."
@@ -1299,7 +1299,7 @@ label chofbm:
                                 call cho_main("look at this mess!","smile","base","base","mid")
                                 call cho_main("I'll never get this cleaned up...","smile","base","base","mid")
                                 call cho_main("{sIze=-2}...Thank you, sir.{/size}","smile","base","base","mid")
-                                ">Cho stands up. Cum drips down her firm ass, running in long, slimy rivulets down her thighs."
+                                ">Cho stands up. Cum dripping down her firm ass, running in long, slimy rivulets down her thighs."
                                 call cho_main("{size=-4}(He came so much...){/size}","smile","base","base","mid")
                                 cho_happy "{size=-4}(I bet Hermione never makes him cum like this.){/size}"
                                 ">Cho pulls her skirt back over her sticky ass and smoothes the fabric. Dark stains appear as the cum soaks through."
@@ -1439,12 +1439,12 @@ label cho_favor_3:
                                 $ current_payout = 40
                                 jump cho_favor_3_1
 
-        m "I asume you're familar with the ancient Chinese art of 'SukiSuki'."
+        m "I assume you're familar with the ancient Chinese art of 'SukiSuki'."
         call cho_main("What?","smile","base","base","mid")
         m "I want a blowjob."
         if cho_mad >= 6:
             jump cho_mad_blowjob
-        call cho_main("Okay. but i'm only doing this tO help my House.","smile","base","base","mid")
+        call cho_main("Okay. but i'm only doing this to help my House.","smile","base","base","mid")
         call cho_main("And i want [current_payout] points.","smile","base","base","mid")
         m "Yes, yes. Now get sucking."
         jump cho_favor_3_1
@@ -1457,13 +1457,13 @@ label cho_favor_3_1:
     menu:
         "-Are you serious?-":
             m "Are you serious?"
-            call cho_main("Of course i'm serious! i'm not a wHore like Hermione.","smile","base","base","mid")
-            m "You just suck my cock in your mouth like candy."
-            call cho_main("(LiKe cAndy? ew. now way that nasty, old...worm tastes like candy...)","smile","base","base","mid")
+            call cho_main("Of course I'm serious! I'm not a whore like Hermione.","smile","base","base","mid")
+            m "You just suck my cock in your mouth like a lollipop."
+            call cho_main("(Like candy? ew... No way, that's nasty. Old...worm tasting like candy...)","smile","base","base","mid")
             call cho_main("([current_payout]! [current_payout]!)","smile","base","base","mid")
-            "Cho drops awkwardly to her knees and opens her mouth, thrusting out her tongue."
+            "Cho awkwardly drops to her knees and opens her mouth, thrusting her tongue out."
             call cho_main("hoh's hhisss hHohessor?(How's this professor?)","smile","base","base","mid")
-            "You feel your cock twitch under your robes at the sight of your student on her knees like a whore."
+            "You feel your cock twitch under your robes at the sight of your student crouched down on her knees like a whore."
             m "Yes...that will do nicely."
             "You pull your throbbing cock out of your wizard's robes and stand over Cho."
             "The erotic sight causes pre-cum to ooze from the tip of your meaty wand."
@@ -1473,7 +1473,7 @@ label cho_favor_3_1:
             call cho_main("huhhhh...","smile","base","base","mid")
             call cho_main("'uT ith at?(what is that?)","smile","base","base","mid")
             "Cho's mouth drips with with saliva."
-            "You arch your cock toward her tongue and guide your cock into her mouth."
+            "You arch your cock toward her tongue and guide it into her mouth."
             call cho_main("(eww. it tastes weird...)","smile","base","base","mid")
             m "Yessss....That's better."
             "You let you cock rest there for a moment. Basking in the warmth of Cho's mouth."
@@ -1494,34 +1494,34 @@ label cho_favor_3_1:
                 "-15 points-":
                     m "Fine! Just do it!"
                     call cho_main("Okay.","smile","base","base","mid")
-                    "Cho leans forward and begins to quickly bobs her head over your cock."
+                    "Cho leans forward and begins to quickly bob her head over your cock."
                     "Her inexperienced mouth only manages to cover your bulbous head, but the constant stimulation quickly drives you over the edge."
                     m "You fucking whore!"
                     "Your cock twitches in Cho's mouth, dumping your cum across her tongue."
                     "Her cheeks begin to bulge with the heavy load."
                     "When it's over your cock pops out of the poor girls lips, leaving her struggling with the massive mouthful."
                     call cho_main("Hmmm!","smile","base","base","mid")
-                    "Cho looks around for a place to spit your load."
+                    "Cho looks around for a place to spit it out."
 
                 "-5 points-":
                     m "I'll give you 5 points."
                     call cho_main("...deal.","smile","base","base","mid")
-                    "Cho leans forward and begins to quickly bobs her head over your cock."
+                    "Cho leans forward and begins to quickly bob her head over your cock."
                     "Her inexperienced mouth fumbles around your head, but the constant stimulation quickly drives you over the edge."
                     m "Yes, take it!"
                     "Your cock twitches in Cho's mouth, dumping your cum in her mouth."
                     "Her cheeks begin to bulge with the heavy load."
                     "When it's over your cock slips out of the Cho's lips, leaving her struggling with the massive mouthful."
                     call cho_main("Hmmm!","smile","base","base","mid")
-                    "Cho looks around for a place to spit your load."
+                    "Cho looks around for a place to spit it out."
 
                     menu:
                         "-Give her an empty wine glass-":
-                            "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                            "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                            "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                            "You pass Ms. Chang the glass just as a little stream of cum dribbles over her lip."
                             call cho_main("Blehgff...","smile","base","base","mid")
-                            "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                            "In a few moments it's completely full."
+                            "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                            "After a few moments it's completely full."
                             call cho_main("Thank you, sir.","smile","base","base","mid")
                             "#gain item [Cum Goblet]"
                             m "Yes...well, [current_payout] to Ravenclaw."
@@ -1531,16 +1531,16 @@ label cho_favor_3_1:
                             m "Hey, I'm paying extra so you'd better swallow it."
                             call cho_main("fmMmhm mt?!(Swallow it?!)","smile","base","base","mid")
                             m "You want your points, don't you?"
-                            call cho_main("(now way, you gross, old pervert!)","smile","base","base","mid")
-                            call cho_main("(i'm gonna throw up!)","smile","base","base","mid")
-                            "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                            call cho_main("(no way, you gross, old pervert!)","smile","base","base","mid")
+                            call cho_main("(I'm gonna throw up!)","smile","base","base","mid")
+                            "Cho's eyes are turning red, and her overstuffed cheeks flush."
                             $ renpy.play('sounds/gulp.mp3')
                             $ renpy.play('sounds/gulp.mp3')
                             call cho_main("Blahg...","smile","base","base","mid")
                             call cho_main("Is...","smile","base","base","mid")
                             call cho_main("is...is that okay?","smile","base","base","mid")
                             m "Very good. [current_payout] to Ravenclaw."
-                            call cho_main("THank you, Profe-","smile","base","base","mid")
+                            call cho_main("Thank you, Profe-","smile","base","base","mid")
                             $ renpy.play('sounds/burp.mp3')
                             call cho_main("...","smile","base","base","mid")
                             jump end_cho_event
@@ -1551,7 +1551,7 @@ label cho_favor_3_1:
                     "After a few fast pumps your cock explodes, coating Cho in your smelly cum."
                     call cho_main("W-what?...","smile","base","base","mid")
                     m "[current_payout] to Ravenclaw. Now, get out of my office."
-                    call cho_main("but I can't go out like this!","smile","base","base","mid")
+                    call cho_main("But I can't go out like this!","smile","base","base","mid")
                     m "Get out."
                     call cho_main("...","smile","base","base","mid")
                     call cho_main("...Fine!","smile","base","base","mid")
@@ -1561,13 +1561,13 @@ label cho_favor_3_1:
                     jump end_cho_event
 
         "-Put my cock in your mouth.-":
-            m "You just put my cock in your mouth."
-            call cho_main("i know that!","smile","base","base","mid")
-            call cho_main("i kNow that! but after that...","smile","base","base","mid")
-            m "You just suck on it and rub it with your tongue."
-            call cho_main("(rub it with mY toNgue? ew. that sounds gross...)","smile","base","base","mid")
+            m "You just have to put my cock in your mouth."
+            call cho_main("I know that!","smile","base","base","mid")
+            call cho_main("I know that! But after that...","smile","base","base","mid")
+            m "Just suck on it and tease it with your tongue."
+            call cho_main("(Tease it with my tongue? ew. that sounds gross...)","smile","base","base","mid")
             call cho_main("([current_payout]! [current_payout]!)","smile","base","base","mid")
-            "Cho drops awkwardly to her knees and opens her mouth, thrusting out her tongue."
+            "Cho awkwardly drops to her knees and opens her mouth, thrusting her tongue out."
             call cho_main("'oo cahn puh i' In 'ow...(you can put it in now...)","smile","base","base","mid")
             "You feel your cock thicken under your robes."
             m "Don't mind if I do..."
@@ -1646,20 +1646,20 @@ label cho_favor_3_1:
                             "You wait for her to finish you off, but instead she crosses her arms."
                             call cho_main("i want 15 more points.","smile","base","base","mid")
                             m "What?!"
-                            call cho_main("you Just said i had to suck yOur cock. if you wanT to cum, i want 15 more points.","smile","base","base","mid")
+                            call cho_main("You only said I had to suck your cock. If you wanted to cum, I'd like another 15 points.","smile","base","base","mid")
 
                             menu:
                                 "-15 points-":
                                     m "Fine! Just do it!"
                                     call cho_main("Okay.","smile","base","base","mid")
-                                    "Cho leans forward and begins to quickly bobs her head over your cock."
+                                    "Cho leans forward and begins to quickly bob her head over your cock."
                                     "Her inexperienced mouth only manages to cover your bulbous head, but the constant stimulation quickly drives you over the edge."
                                     m "You fucking whore!"
                                     "Your cock twitches in Cho's mouth, dumping your cum across her tongue."
                                     "Her cheeks begin to bulge with the heavy load."
-                                    "When it's over your cock pops out of the poor girls lips, leaving her struggling with the massive mouthful."
+                                    "When it's over, your cock pops out of the poor girls lips, leaving her struggling with the massive mouthful."
                                     call cho_main("Hmmm!","smile","base","base","mid")
-                                    "Cho looks around for a place to spit your load."
+                                    "Cho looks around for a place to spit it out."
 
                                 "-5 points-":
                                     m "I'll give you 5 points."
@@ -1671,15 +1671,15 @@ label cho_favor_3_1:
                                     "Her cheeks begin to bulge with the heavy load."
                                     "When it's over your cock slips out of the Cho's lips, leaving her struggling with the massive mouthful."
                                     call cho_main("Hmmm!","smile","base","base","mid")
-                                    "Cho looks around for a place to spit your load."
+                                    "Cho looks around for a place to spit it out."
 
                                     menu:
                                         "-Give her an empty wine glass-":
-                                            "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                            "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                            "The only object in your office is a wine glass, left over from your nightly chats with Snape."
+                                            "You pass Ms. Chang the glass just she dribbles a little stream of cum over her lip."
                                             call cho_main("Blehgff...","smile","base","base","mid")
-                                            "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                            "In a few moments it's completely full."
+                                            "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                            "After a few moments it's completely full."
                                             call cho_main("Thank you, sir.","smile","base","base","mid")
                                             "#gain item [Cum Goblet]"
                                             m "Yes...well, [current_payout] to Ravenclaw."
@@ -1688,9 +1688,9 @@ label cho_favor_3_1:
                                             m "Hey, I'm paying extra so you'd better swallow it."
                                             call cho_main("fmMmhm mt?!(Swallow it?!)","smile","base","base","mid")
                                             m "You want your points, don't you?"
-                                            call cho_main("(now way, you gross, old pervert!)","smile","base","base","mid")
-                                            call cho_main("(i'm gonna throw up!)","smile","base","base","mid")
-                                            "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                            call cho_main("(No way, you gross, old pervert!)","smile","base","base","mid")
+                                            call cho_main("(I'm gonna throw up!)","smile","base","base","mid")
+                                            "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                             $ renpy.play('sounds/gulp.mp3')
                                             $ renpy.play('sounds/gulp.mp3')
                                             call cho_main("Blahg...","smile","base","base","mid")
@@ -1708,7 +1708,7 @@ label cho_favor_3_1:
                                     "After a few fast pumps your cock explodes, coating Cho in your smelly cum."
                                     call cho_main("W-what?...","smile","base","base","mid")
                                     m "[current_payout] to Ravenclaw. Now, get out of my office."
-                                    call cho_main("but I can't go out like this!","smile","base","base","mid")
+                                    call cho_main("But I can't go out like this!","smile","base","base","mid")
                                     m "Get out."
                                     call cho_main("...","smile","base","base","mid")
                                     call cho_main("...Fine!","smile","base","base","mid")
@@ -1718,13 +1718,13 @@ label cho_favor_3_1:
                                     jump end_cho_event
         "-Let's go slow-":
             m "Let's just go slow."
-            call cho_main("THank you, Professor Dumbledore.","smile","base","base","mid")
+            call cho_main("Thank you, Professor Dumbledore.","smile","base","base","mid")
             call cho_main("Do i just...you know, suck on it?","smile","base","base","mid")
-            m "Yes. Think of it like candy."
-            call cho_main("(LiKe candy? That might be okay...)","smile","base","base","mid")
-            call cho_main("(just ignore the fact that that the wrinkly, old cock in my mouth belongs to a crusty, old wizard...)","smile","base","base","mid")
+            m "Yes. Think of it like a lollipop."
+            call cho_main("(Like a lollipop? That might be okay...)","smile","base","base","mid")
+            call cho_main("(Just ignore the fact that that the wrinkly, old cock in my mouth belongs to a crusty, old wizard...)","smile","base","base","mid")
             call cho_main("([current_payout]! current_payout]!)","smile","base","base","mid")
-            "Cho drops awkwardly to her knees and opens her mouth, thrusting out her tongue."
+            "Cho awkwardly drops to her knees and opens her mouth, thrusting her tongue out."
             call cho_main("I' I' 'ood 'o'esser?(is this good, professor?)","smile","base","base","mid")
             "You gently carress Cho's warm cheek with the back of your hand."
             call cho_main("(Wow...that was nice.)","smile","base","base","mid")
@@ -1732,11 +1732,11 @@ label cho_favor_3_1:
             m "Yes, girl...that will do nicely."
             "You pull your throbbing cock out of your robes and stand over Cho."
             "The erotic sight causes pre-cum to ooze from the tip of your cock."
-            "Cho's eyes flinch as your cock bobs over her face."
+            "Cho's eyes flinch as your cock bobs above her face."
             "Her long Asian lashes blink fast as she fight the reflex to pull away."
             "A slimy stream of pre-cum drips down onto her face."
             call cho_main("ee! 'e 'arehul!(Be careful!)","smile","base","base","mid")
-            "The tip of your cock briefly Cho's tongue, leaving a line of pre-cum stretching between you."
+            "The tip of your cock briefly touches Cho's tongue, leaving a line of pre-cum stretching between you."
             call cho_main("huhhhh...","smile","base","base","mid")
             call cho_main("'uT ith at?(what is that?)","smile","base","base","mid")
             "Cho's mouth drips with with saliva."
@@ -1765,7 +1765,7 @@ label cho_favor_3_1:
                 "-Keep going-":
                     m "We're almost done, girl."
                     call cho_main("(this is definitely worth [current_payout]...)","smile","base","base","mid")
-                    "You gently guide your cock back in her mouth, careful not to go too deep."
+                    "You gently guide your cock back into her mouth, careful not to go too deep."
                     "Cho's tongue rolls around your cock with sweet effort, slipping around your head."
                     "To your surprise her tongue finds your hole, and the assault brings you to the edge."
 
@@ -1793,32 +1793,32 @@ label cho_favor_3_1:
                             "You wait for her to finish you off, but instead she looks up at you with a smile."
                             call cho_main("if you give me 5 extRa points i'll eat it.","smile","base","base","mid")
                             m "You'll eat it?"
-                            call cho_main("WeLl, yeah. I mean, it's gRoss, but I need the points...","smile","base","base","mid")
+                            call cho_main("Well, yeah. I mean, it's gross, but I need the points...","smile","base","base","mid")
 
                             menu:
                                 "-15 points-":
                                     m "I'll give you 15 points."
                                     call cho_main("what? Really?","smile","base","base","mid")
                                     call cho_main("Okay.","smile","base","base","mid")
-                                    "Cho dives forward and sucks your cock into her mouth."
+                                    "Cho dives forward and guides your cock into her mouth."
                                     "Her tongue wraps around your bulbous head, and twists back and forth."
                                     call cho_main("(Mmm. It is like candy!)","smile","base","base","mid")
                                     m "By the power of GreySkull!"
                                     #Genie cums in Cho's mouth.
                                     "Your balls pull tight against your body and your cock begins to twitch."
-                                    "Suddenly, you grab Cho's head and drive deeper into her soft lips, dumping your cum at the back of her mouth."
-                                    "You feel her trying to swallow, but her cheeks begin to bulge with the heavy load."
-                                    "When it's over your cock pops out of the smiling girl's lips, leaving her struggling with the massive mouthful."
+                                    "Suddenly, you grab Cho's head and drive deeper between her soft lips, dumping your cum at the back of her mouth."
+                                    "You feel her trying to swallow, but her cheeks start to bulge from the heavy load."
+                                    "When it's over, your cock pops out of the smiling girl's lips, leaving her struggling with the massive mouthful."
                                     call cho_main("Hmmm!","smile","base","base","mid")
-                                    "Cho looks around for a place to spit your load."
+                                    "Cho looks around for a place to spit it out."
 
                                     menu:
                                         "-Give her an empty wine glass-":
-                                            "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                            "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                            "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                            "You pass Ms. Chang the glass just as she dribbles a little stream of cum over her lip."
                                             call cho_main("Blehgff...","smile","base","base","mid")
-                                            "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                            "In a few moments it's completely full."
+                                            "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                            "After a few moments it's completely full."
                                             call cho_main("Thank you, sir.","smile","base","base","mid")
                                             #gain item [Cum Goblet]
                                             m "Yes...well, [current_payout] to Ravenclaw."
@@ -1827,9 +1827,9 @@ label cho_favor_3_1:
                                             m "Hey, I'm paying extra so you'd better swallow it all."
                                             call cho_main("fmMmhm mt?!(Swallow it all?!)","smile","base","base","mid")
                                             m "You want your points, don't you?"
-                                            call cho_main("(i'm seriously going to throw up...)","smile","base","base","mid")
+                                            call cho_main("(I'm seriously going to throw up...)","smile","base","base","mid")
                                             call cho_main("Mm hhmm!","smile","base","base","mid")
-                                            "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                            "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                             $ renpy.play('sounds/gulp.mp3')
                                             $ renpy.play('sounds/gulp.mp3')
                                             call cho_main("Blahg...","smile","base","base","mid")
@@ -1843,25 +1843,25 @@ label cho_favor_3_1:
                                 "-5 points-":
                                     m "Sure, I'll give you 5 points."
                                     call cho_main("You will?","smile","base","base","mid")
-                                    "Cho leans forward and begins to quickly bobs her head over your cock."
-                                    "Her inexperienced mouth works enthusiastically around your cock."
+                                    "Cho leans forward and begins to quickly bob her head over your cock."
+                                    "Her inexperienced mouth enthusiastically work your shaft."
                                     "Before long, you can feel the cum churning in your enchanted nut sack."
                                     m "It's magically delicious!"
                                     #Genie cums in Cho's mouth.
                                     Cho_WideEyes"!..."
                                     Cho_WideEyes"(What?)"
                                     "Cho's cheeks begin to bulge with the heavy load, causing her to forget your mad outburst."
-                                    "When it's over your cock slips out of the Cho's lips, leaving her struggling with the massive mouthful."
+                                    "When it's over, your cock slips out from between Cho's lips, leaving her struggling with the massive mouthful."
                                     call cho_main("Hmmm!","smile","base","base","mid")
-                                    "Cho looks around for a place to spit your load."
+                                    "Cho looks around for a place to spit it out."
 
                                     menu:
                                         "-Give her an empty wine glass-":
-                                            "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                            "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                            "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                            "You pass Ms. Chang the glass just she dribbles a little stream of cum over her lip."
                                             call cho_main("Blehgff...","smile","base","base","mid")
-                                            "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                            "In a few moments it's completely full."
+                                            "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                            "After a few moments it's completely full."
                                             call cho_main("Thank you, sir.","smile","base","base","mid")
                                             #gain item [Cum Goblet]
                                             m "Yes...well, [current_payout] to Ravenclaw."
@@ -1870,9 +1870,9 @@ label cho_favor_3_1:
                                             m "Hey, I'm paying extra so you'd better swallow it."
                                             call cho_main("fmMmhm mt?!(Swallow it?!)","smile","base","base","mid")
                                             m "You want your points, don't you?"
-                                            call cho_main("(now way, you gross, old pervert!)","smile","base","base","mid")
-                                            call cho_main("(i'm gonna throw up!)","smile","base","base","mid")
-                                            "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                            call cho_main("(No way, you gross, old pervert!)","smile","base","base","mid")
+                                            call cho_main("(I'm gonna throw up!)","smile","base","base","mid")
+                                            "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                             $ renpy.play('sounds/gulp.mp3')
                                             $ renpy.play('sounds/gulp.mp3')
                                             call cho_main("Blahg...","smile","base","base","mid")
@@ -1912,16 +1912,16 @@ label cho_favor_3_2:
         "Cho drops to her knees and waits patiently."
         call cho_main("whenever you're ready.","smile","base","base","mid")
         m "Open your mouth."
-        "Cho obeys, opening her mouth and thrusting out her tongue."
+        "Cho obeys, opening her mouth and thusting her tongue out."
         call cho_main("On 'ea'y...(I'm ready...)","smile","base","base","mid")
         "Your cock throbs under your robes."
         m "This is why I got into teaching..."
         "You pull your throbbing cock out of your robes and stand over Cho."
         "Cho's mouth drips with with saliva."
-        "You slap your cock against her tongue a few times before guiding it cock into her mouth."
-        call cho_main("(what's he doing...)","smile","base","base","mid")
-        m "Yessss....That's better."
-        "You let you cock rest there for a moment. Basking in the warmth of Cho's mouth."
+        "You slap your cock against her tongue a few times before guiding it into her mouth."
+        call cho_main("(What's he doing...)","smile","base","base","mid")
+        m "Yessss....that's better."
+        "You let your cock rest there for a moment. Basking in the warmth of Cho's mouth."
         call cho_main("Hmmm.","smile","base","base","mid")
         m "Hold on."
         "You slowly push your cock deeper into the young girls mouth."
@@ -1940,9 +1940,9 @@ label cho_favor_3_2:
                         m "We'll just consider this part of your education."
                         call cho_main("Thank you, sir.","smile","base","base","mid")
                         "Cho gently wraps her mouth around your cock."
-                        "Then, flattening her tongue, she takes your cock to the back of her mouth."
-                        "You can feel the the entrance to her throat tickle the lips at the tip of your head."
-                        m "Very good. Now just relax."
+                        "Then, flattening her tongue, she guides your cock to the back of her mouth."
+                        "You can feel the entrance to her throat tickle the tip of your head."
+                        m "Very good. Now, just relax."
                         call cho_main("Mmhm.","smile","base","base","mid")
                         "Cho's tongue twitches under your cock as she tries her best to relax her throat."
                         m "Mmm. Good. Now, try to swallow."
@@ -1952,10 +1952,10 @@ label cho_favor_3_2:
                         call cho_main("...","smile","base","base","mid")
                         call cho_main("......","smile","base","base","mid")
                         call cho_main("..........","smile","base","base","mid")
-                        call cho_main("*cough* *sputTer* ack! i almost had it.","smile","base","base","mid")
+                        call cho_main("*cough* *splutter* ack! i almost had it.","smile","base","base","mid")
                         call cho_main("Let me try again.","smile","base","base","mid")
                         "Cho takes you back into her mouth."
-                        "There's a determined look to her eye."
+                        "There's a determined look in her eyes."
                         call cho_main("*Gul* *gulp* *Gluck*","smile","base","base","mid")
                         "Your cock pop's back into her throat."
                         "You can feel Cho struggling to hold herself down."
@@ -1985,7 +1985,7 @@ label cho_favor_3_2:
 
                                     "-What? Absolutely not.-":
                                         m "Absolutely not."
-                                        call cho_main("but! You're not fair!","smile","base","base","mid")
+                                        call cho_main("but! That's not fair!","smile","base","base","mid")
                                         m "Take it or leave it, Ms. Chong."
                                         call cho_main("MY name is Chang, you old jerk!","smile","base","base","mid")
                                         Cho_Sad"It's not even a hard name..."
@@ -2003,33 +2003,33 @@ label cho_favor_3_2:
                                 "But instead she crosses her arms. and smirks cleverly."
                                 call cho_main("15 points.","smile","base","base","mid")
                                 m "What?!"
-                                call cho_main("the original deal was just for a blowjob. if you wanT to cum, i want 15 more points.","smile","base","base","mid")
+                                call cho_main("The original deal was just for a blowjob. if you want to cum, I want another 15 points.","smile","base","base","mid")
 
                                 menu:
 
                                     "-15 points-":
                                         m "Whatever, girl! Just do it!"
                                         call cho_main("Okay.","smile","base","base","mid")
-                                        "Cho leans forward and sucks your cock back into her mouth."
+                                        "Cho leans forward and guides your cock back into her mouth."
                                         "Unexpectedly, she drives forward, roughly shoving your cock back down her throat."
                                         "The sudden stimulation coupled with her slutty expression drives you over the edge."
                                         m "Take it your plebeian whore!"
                                         #Genie cums in Cho's mouth.
-                                        "Your cock twitches in Cho's throat, and your balls pull tight as you begin to dump your cum in her throat."
-                                        "The poor girl tries to swallow, but she can't take it all. She pulls back collecting the rest in her mouth."
+                                        "Your cock twitches and your balls pull tight as you begin to dump your cum down Cho's throat."
+                                        "The poor girl tries to swallow, but can't take it all. She pulls back collecting the rest in her mouth."
                                         "Her cheeks bulge with the heavy load."
-                                        "When it's over your cock pops out of the poor girls lips, leaving her struggling with the massive mouthful."
+                                        "When it's over your cock pops out from between the poor girls lips, leaving her struggling with the massive mouthful."
                                         call cho_main("Hmmm!","smile","base","base","mid")
-                                        "Cho looks around for a place to spit your load."
+                                        "Cho looks around for a place to spit it out."
 
                                         menu:
 
                                             "-Give her an empty wine glass-":
-                                                "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                                "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                                "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                                "You pass Ms. Chang the glass just as she dribbles a little stream of cum over her lip."
                                                 call cho_main("Blehgff...","smile","base","base","mid")
-                                                "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                                "In a few moments it's completely full."
+                                                "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                                "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
                                                 m "Yes...well, [current_payout] to Ravenclaw."
@@ -2039,9 +2039,9 @@ label cho_favor_3_2:
                                                 m "Hey, I'm paying extra so you'd better swallow it all."
                                                 call cho_main("fMmmhm mt?(Swallow it?)","smile","base","base","mid")
                                                 m "You want your points, don't you?"
-                                                call cho_main("(OF course, I do.)","smile","base","base","mid")
+                                                call cho_main("(Of course, I do.)","smile","base","base","mid")
                                                 call cho_main("(just pretend it's pudding.)","smile","base","base","mid")
-                                                "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                                "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                                 call cho_main("(salty, slimy pudding....)","smile","base","base","mid")
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 $ renpy.play('sounds/gulp.mp3')
@@ -2065,18 +2065,18 @@ label cho_favor_3_2:
                                         #Genie cums in Cho's mouth.
                                         "Your cock twitches in Cho's mouth, dumping your cum in her mouth."
                                         "Her cheeks begin to bulge with the heavy load."
-                                        "When it's over your cock slips out of the Cho's lips, leaving her struggling with the massive mouthful."
+                                        "When it's over, your cock slips out of the Cho's lips, leaving her struggling with the massive mouthful."
                                         call cho_main("Hmmm!","smile","base","base","mid")
-                                        "Cho looks around for a place to spit your load."
+                                        "Cho looks around for a place to spit it out"
 
                                         menu:
 
                                             "-Give her an empty wine glass-":
                                                 "The only object in your office is a wine glass left over from your nightly chats with Professor Snape."
-                                                "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                                "You pass Ms. Chang the glass just as she dribbles a little stream of cum over her lip."
                                                 call cho_main("Blehgff...","smile","base","base","mid")
-                                                "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                                "In a few moments it's completely full."
+                                                "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                                "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
                                                 m "Yes...well, [current_payout] to Ravenclaw."
@@ -2085,14 +2085,14 @@ label cho_favor_3_2:
                                                 m "Hey, I'm paying extra so you'd better swallow it."
                                                 call cho_main("fmMmhm mt?!(Swallow it?!)","smile","base","base","mid")
                                                 m "You want your points, don't you?"
-                                                call cho_main("(now way, you gross, old pervert!)","smile","base","base","mid")
-                                                call cho_main("(i'm gonna throw up!)","smile","base","base","mid")
-                                                "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                                call cho_main("(No way, you gross, old pervert!)","smile","base","base","mid")
+                                                call cho_main("(I'm gonna throw up!)","smile","base","base","mid")
+                                                "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 call cho_main("Blahg...","smile","base","base","mid")
                                                 call cho_main("Is...","smile","base","base","mid")
-                                                call cho_main("is...is that okay?","smile","base","base","mid")
+                                                call cho_main("Is...is that okay?","smile","base","base","mid")
                                                 m "Very good. [current_payout] to Ravenclaw."
                                                 call cho_main("THank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
@@ -2124,8 +2124,8 @@ label cho_favor_3_2:
                         call cho_main("I'm sor-MMPH","smile","base","base","mid")
                         "You shove your cock back in her mouth, enjoying the sputtering tightness."
                         m "That's quite all right, girl."
-                        "Cho's tongue thrashes violently around your cock effort, getting in the way more than helping."
-                        "You hold Cho's head and forcefully push your cock toward the back of her throat."
+                        "Cho's tongue thrashes violently around your cock, getting in the way more than helping."
+                        "You hold Cho's head and forcefully push your cock towards the back of her throat."
                         call cho_main("mmmph! Mmmm!","smile","base","base","mid")
                         "To your surprise the frantic writhing of her tongue feels incredible."
                         "Your cock finally pops into her tight oesophagus, and you hold it there, enjoying the warm tightness."
@@ -2151,12 +2151,12 @@ label cho_favor_3_2:
 
                                     "-I was pretty rough. 10 extra points.-":
                                         m "Alright, Ms. Chang. [current_payout] to Ravenclaw."
-                                        call cho_main("ThAt's all? i want more next time.","smile","base","base","mid")
+                                        call cho_main("That's all? I want more next time.","smile","base","base","mid")
                                         jump end_cho_event
 
                                     "-What? Absolutely not.-":
                                         m "What? Absolutely not."
-                                        call cho_main("but you almost killed me!","smile","base","base","mid")
+                                        call cho_main("But you almost killed me!","smile","base","base","mid")
                                         call cho_main("I couldn't breathe!","smile","base","base","mid")
                                         m "Take it or leave it, Ms. Chong."
                                         call cho_main("MY name is Chang, you old jerk!","smile","base","base","mid")
@@ -2168,37 +2168,37 @@ label cho_favor_3_2:
                             "-Warn Her-":
                                 m "I'm going to cum!"
                                 call cho_main("Hm!","smile","base","base","mid")
-                                call cho_main("hm!...Blehrg!","smile","base","base","mid")
+                                call cho_main("Hm!...Blehrg!","smile","base","base","mid")
                                 "Cho wrestles free of your grasp and spits your slippery cock out of her mouth."
                                 "Your slimy cock slaps against her face, leaving a line of spit and cockslime across her nose."
                                 call cho_main("i want 15 more points.","smile","base","base","mid")
                                 m "What?!"
-                                call cho_main("i only agreed to a blowjob. Cumming Is extra. i want 15 more points.","smile","base","base","mid")
+                                call cho_main("I only agreed to a blowjob. Cumming Is extra. I want another 15 points.","smile","base","base","mid")
 
                                 menu:
 
                                     "-15 points-":
                                         m "It's a deal, now finish it!"
                                         call cho_main("Okay.","smile","base","base","mid")
-                                        "Cho leans forward and gives your cock a few quick strokes before sucking the head into her mouth."
+                                        "Cho leans forward and gives your cock a few quick strokes before guiding the head into her mouth."
                                         "She continues to pump your cock while her tongue swirls around your head."
-                                        "Soon the constant stimulation drives you over the edge."
+                                        "Soon, the constant stimulation drives you over the edge."
                                         m "You whore!"
                                         #Genie cums in Cho's mouth.
                                         "Your cock twitches in Cho's mouth, dumping your cum across her tongue."
                                         "Her cheeks begin to bulge with the heavy load."
-                                        "When it's over your cock pops out of the poor girls lips, leaving her struggling with the massive mouthful."
+                                        "When it's over, your cock pops out between the poor girls lips, leaving her struggling with the massive mouthful."
                                         call cho_main("Hmmm!","smile","base","base","mid")
-                                        "Cho looks around for a place to spit your load."
+                                        "Cho looks around for a place to spit it out."
 
                                         menu:
 
                                             "-Give her an empty wine glass-":
-                                                "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                                "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                                "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                                "You pass Ms. Chang the glass just as she dribbles a little stream of cum over her lip."
                                                 call cho_main("Blehgff...","smile","base","base","mid")
-                                                "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                                "In a few moments it's completely full."
+                                                "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                                "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
                                                 m "Yes...well, [current_payout] to Ravenclaw."
@@ -2208,16 +2208,16 @@ label cho_favor_3_2:
                                                 m "Hey, I'm paying extra so you'd better swallow it."
                                                 call cho_main("fmMmhm mt?!(Swallow it?!)","smile","base","base","mid")
                                                 m "You want your points, don't you?"
-                                                call cho_main("(now way, you gross, old pervert!)","smile","base","base","mid")
-                                                call cho_main("(i'm gonna throw up!)","smile","base","base","mid")
-                                                "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                                call cho_main("(No way, you gross, old pervert!)","smile","base","base","mid")
+                                                call cho_main("(I'm gonna throw up!)","smile","base","base","mid")
+                                                "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 call cho_main("Blahg...","smile","base","base","mid")
                                                 call cho_main("Is...","smile","base","base","mid")
                                                 call cho_main("is...is that okay?","smile","base","base","mid")
                                                 m "Very good. [current_payout] to Ravenclaw."
-                                                call cho_main("THank you, Profe-","smile","base","base","mid")
+                                                call cho_main("Thank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
                                                 call cho_main("...","smile","base","base","mid")
                                                 jump end_cho_event
@@ -2225,7 +2225,7 @@ label cho_favor_3_2:
                                         m "I'll give you 5 points."
                                         call cho_main("...deal.","smile","base","base","mid")
                                         "Cho leans forward and begins to stroke your cock."
-                                        "THen, pumping your cock with her fist, she leans forwards and plants a sloppy kiss on your head."
+                                        "Then, pumping your cock with her fist, she leans forwards and plants a sloppy kiss on your head."
                                         "Her lips linger on your slit and she teases it with her tongue."
                                         "The intense stimulation finally pushes you over the edge."
                                         m "Yes, take it!"
@@ -2233,18 +2233,18 @@ label cho_favor_3_2:
                                         "Your cock twitches in Cho's hand, and you begin to cum."
                                         "Cho purses her lips, letting your load fill her mouth."
                                         "Her cheeks begin to bulge with the heavy load."
-                                        "When it's over your cock slips away from Cho's lips, leaving her struggling with the massive mouthful."
+                                        "When it's over, your cock slips away from Cho's lips, leaving her struggling with the massive mouthful."
                                         call cho_main("Hmmm!","smile","base","base","mid")
-                                        "Cho looks around for a place to spit your load."
+                                        "Cho looks around for a place to spit it out."
 
                                         menu:
 
                                             "-Give her an empty wine glass-":
-                                                "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                                "You pass Ms. Chang the glass just she loses a little stream of cum over her lips."
+                                                "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                                "You pass Ms. Chang the glass just as she dribbles a little stream of cum over her lip."
                                                 call cho_main("Blehgff...","smile","base","base","mid")
-                                                "You cum slowly pours out of the girls little mouth, oozing into the wine glass."
-                                                "In a few moments it's completely full."
+                                                "Your cum slowly pours out of the girls little mouth, oozing into the wine glass."
+                                                "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
                                                 m "Yes...well, [current_payout] to Ravenclaw."
@@ -2255,14 +2255,14 @@ label cho_favor_3_2:
                                                 m "You want your points, don't you?"
                                                 call cho_main("(Yes.)","smile","base","base","mid")
                                                 call cho_main("(This is so gross...)","smile","base","base","mid")
-                                                "Cho's eyes are getting red, and her overstuffed cheeks flush."
+                                                "Cho's eyes are turning red, and her overstuffed cheeks flush."
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 call cho_main("Blahg...","smile","base","base","mid")
                                                 call cho_main("Is...","smile","base","base","mid")
                                                 call cho_main("is...is that okay?","smile","base","base","mid")
                                                 m "Very good. [current_payout] to Ravenclaw."
-                                                call cho_main("THank you, Profe-","smile","base","base","mid")
+                                                call cho_main("Thank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
                                                 call cho_main("...","smile","base","base","mid")
                                                 jump end_cho_event
@@ -2428,11 +2428,11 @@ label cho_favor_3_3:
                             menu:
 
                                 "-Give her an empty wine glass-":
-                                    "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                    "You pass Ms. Chang the glass just she loses another little stream of cum over her lips."
+                                    "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                    "You pass Ms. Chang the glass just as she dribbles another little stream of cum over her lip."
                                     call cho_main("Blehgff...","smile","base","base","mid")
-                                    "You cum slowly pours out of the little witch's mouth, oozing into the wine glass."
-                                    "In a few moments it's completely full."
+                                    "Your cum slowly pours out of the little witch's mouth, oozing into the wine glass."
+                                    "After a few moments it's completely full."
                                     call cho_main("Thank you, sir.","smile","base","base","mid")
                                     "Cho licks around the rim of the goblet cleaning it for you."
                                     #gain item [Cum Goblet]
@@ -2459,9 +2459,9 @@ label cho_favor_3_3:
                         "-Cum in her throat-":
                             m "I want to cum down your throat."
                             call cho_main("Yeah?","smile","base","base","mid")
-                            "Cho leans forward swallowing your cock to the root."
+                            "Cho leans forward swallowing your cock."
                             "She rest for a moment, getting used to your size."
-                            "Then, she begins to fuck her throat with your cock."
+                            "Then, she begins to violently fuck her throat with your cock."
                             call cho_main("*gluck* *gluck* *gluck* *Gluck*","smile","base","base","mid")
                             m "By Gandalf's gay balls..."
                             call cho_main("*Hnnnng!*","smile","base","base","mid")
@@ -2491,8 +2491,8 @@ label cho_favor_3_3:
                                 call cho_main("*gack* *gack* *gack* *Gack!*","smile","base","base","mid")
                                 "Finally, you feel your balls begin to tighten."
                                 m "I'm almost-"
-                                "Cho spits your cock out of her mouth and begins to stroke your cock."
-                                call cho_main("CuM for me, Professor!","smile","base","base","mid")
+                                "Cho spits your cock out of her mouth and begins to stroke it."
+                                call cho_main("Cum for me, Professor!","smile","base","base","mid")
                                 ##Genie cums.
                                 "Your cock explodes, coating the proud, young witch in your old wizard jizz."
                                 call cho_main("Yes...","smile","base","base","mid")
@@ -2500,7 +2500,7 @@ label cho_favor_3_3:
                                 call cho_main("that was amazing.","smile","base","base","mid")
                                 m "[current_payout] to Ravenclaw."
                                 call cho_main("...","smile","base","base","mid")
-                                call cho_main("...i'm completely covereD, aren't I?","smile","base","base","mid")
+                                call cho_main("...i'm completely covered, aren't I?","smile","base","base","mid")
                                 m "Get out."
                                 call cho_main("...","smile","base","base","mid")
                                 call cho_main("okay, Professor.","smile","base","base","mid")
@@ -2512,11 +2512,11 @@ label cho_favor_3_3:
             call cho_main("What?...","smile","base","base","mid")
             m "I want to use your mouth like a pussy."
             call cho_main("Professor!","smile","base","base","mid")
-            call cho_main("PRofessor! that sounds so dirty.","smile","base","base","mid")
+            call cho_main("Professor! that sounds so dirty.","smile","base","base","mid")
             m "Get on your knees and open your mouth."
             call cho_main("Well...","smile","base","base","mid")
-            call cho_main("well...i am getting [current_payout] house Points...","smile","base","base","mid")
-            "Cho slides down to her knees and opens her mouth, sticking out her tongue."
+            call cho_main("Well...I am getting [current_payout] house Points...","smile","base","base","mid")
+            "Cho slides down to her knees and opens her mouth, sticking her tounge out."
             call cho_main("ah Oo 'ea'y?(are you Ready?)","smile","base","base","mid")
             "Your cock throbs against your heavy robes."
             m "That's good, girl."
@@ -2527,7 +2527,7 @@ label cho_favor_3_3:
             call cho_main("Hmmm...(it's so thick!)","smile","base","base","mid")
             "The young witch's mouth is warm and surprisingly accommodating."
             "You push your cock deeper into her mouth."
-            "You stop when your feel your thick head rest against the entrance to her throat."
+            "You stop when you feel your thick head rest against the entrance to her throat."
             call cho_main("*Hrk!*","smile","base","base","mid")
             call cho_main("*Hrk!* *Ack!*","smile","base","base","mid")
             call cho_main("*Hrk!* *Ack!* *Glg*...","smile","base","base","mid")
@@ -2537,15 +2537,15 @@ label cho_favor_3_3:
             "Then you grab Cho's head in your hands and hold tightly."
             m "There's a good witch..."
             "You drag your cock back, out of the slippery tightness of Cho's throat, stopping at the entrance."
-            "Then you thrust deep, driving your cock all the way to the hilt."
+            "Then you thrust deep, driving your it all the way to the hilt."
             call cho_main("AALG! HHHGGGGG!","smile","base","base","mid")
             call cho_main("AALG! HHhgGggG! (god he's choking me!)","smile","base","base","mid")
-            "The young witch's throat feels too good, and you begin to fuck her throat in earnest."
+            "The young witch's throat feels too good, and you begin to fuck it in earnest."
             call cho_main("*glug* *GluG* *glg* *Gluck*","smile","base","base","mid")
             call cho_main("(Oh my god....)","smile","base","base","mid")
             call cho_main("*GlG* *Glg* *Glg*","smile","base","base","mid")
             call cho_main("(My throat...)","smile","base","base","mid")
-            call cho_main("(My throat...feels so good...)","smile","base","base","mid")
+            call cho_main("(My throat...feels...so good...)","smile","base","base","mid")
 
             menu:
 
@@ -2558,11 +2558,11 @@ label cho_favor_3_3:
                     call cho_main("*glp!* *Gack!*","smile","base","base","mid")
                     $ renpy.play('sounds/gulp.mp3')
                     call cho_main("Hmmmm!","smile","base","base","mid")
-                    "Cho takes a finger and gently pushes the last of your cum into her mouth, smacking her lips"
+                    "Cho takes a finger and gently pushes the last of your cum into her mouth, licking her lips"
                     call cho_main("You know, Professor Dumbledore, sir, your cum's not that bad.","smile","base","base","mid")
-                    call cho_main("well, for A geezer, I mean.","smile","base","base","mid")
+                    call cho_main("Well, for a geezer, I mean.","smile","base","base","mid")
                     m "Thank you?"
-                    call cho_main("i'll take my points now.","smile","base","base","mid")
+                    call cho_main("I'll take my points now.","smile","base","base","mid")
                     m "..."
                     m "...Yes, of course. [current_payout] to Ravenclaw."
                     jump end_cho_event
@@ -2571,40 +2571,40 @@ label cho_favor_3_3:
                 "-Warn Her-":
                     m "I'm going to cum!"
                     call cho_main("Hm?","smile","base","base","mid")
-                    call cho_main("hm!...Blehrg!","smile","base","base","mid")
+                    call cho_main("Hm!...Blehrg!","smile","base","base","mid")
                     "Cho pushes against your legs and drags your slimy cock out of her tight throat."
-                    "Your nasty cock pops out of her lips and bops her nose, leaving a dangling line of spit and pre-cum connecting you."
-                    call cho_main("do you want me to eat it?","smile","base","base","mid")
+                    "Your nasty cock pops out between her lips and bops her nose, leaving a dangling line of spit and pre-cum connecting you."
+                    call cho_main("Do you want me to drink it?","smile","base","base","mid")
                     m "What?"
                     "Cho leans forward and presses her lips against your cock."
-                    call cho_main("i'll swallow all of that tasty cum if you want.","smile","base","base","mid")
-                    call cho_main("and i won't even charge extra...","smile","base","base","mid")
+                    call cho_main("I'll swallow all of that tasty cum if you want.","smile","base","base","mid")
+                    call cho_main("And i won't even charge extra...","smile","base","base","mid")
 
                     menu:
 
                         "-Cum in her mouth.-":
                             m "I want to cum in your mouth."
                             call cho_main("Okay.","smile","base","base","mid")
-                            "Cho leans forward and gives your cock a few quick strokes before sucking the head into her wet mouth."
+                            "Cho leans forward and gives your cock a few quick strokes before guiding the head into her wet mouth."
                             "She continues to pump your cock while her tongue swirls around your head, playing with your slit."
-                            "Soon the constant stimulation drives you over the edge."
+                            "Rapidly, the constant stimulation drives you over the edge."
                             m "You slut!"
                             #Genie cums in Cho's mouth.
                             "Your balls pull tight and your cum begins to pump into her mouth.."
                             call cho_main("Hmmmmmm....","smile","base","base","mid")
                             call cho_main("(Holy shit!)","smile","base","base","mid")
                             "Cho struggles to hold your load in her mouth."
-                            "A small stream of cum is already trickling down her lips."
+                            "A small stream of cum is already trickling down her lip."
                             "Cho looks up into your eyes, pleadingly."
 
                             menu:
 
                                 "-Give her an empty wine glass-":
-                                    "The only object in your office is a wine glass left over from your nightly chats with Severis."
-                                    "You pass Ms. Chang the glass just she loses another little stream of cum over her lips."
+                                    "The only object in your office is a wine glass left over from your nightly chats with Snape."
+                                    "You pass Ms. Chang the glass just as she dribbles another little stream of cum over her lip."
                                     call cho_main("Blehgff...","smile","base","base","mid")
-                                    "You cum slowly pours out of the little witch's mouth, oozing into the wine glass."
-                                    "In a few moments it's completely full."
+                                    "Your cum slowly pours out of the little witch's mouth, oozing into the wine glass."
+                                    "After a few moments it's completely full."
                                     call cho_main("Thank you, sir.","smile","base","base","mid")
                                     "Cho licks around the rim of the goblet cleaning it for you."
                                     #gain item [Cum Goblet]
@@ -2623,7 +2623,7 @@ label cho_favor_3_3:
                                     call cho_main("...","smile","base","base","mid")
                                     call cho_main("...Yummy.","smile","base","base","mid")
                                     m "You whore. [current_payout] to Ravenclaw."
-                                    call cho_main("THank you, Profe-","smile","base","base","mid")
+                                    call cho_main("Thank you, Profe-","smile","base","base","mid")
                                     $ renpy.play('sounds/burp.mp3')
                                     call cho_main("...","smile","base","base","mid")
                                     jump end_cho_event
@@ -2631,9 +2631,9 @@ label cho_favor_3_3:
                         "-Cum in her throat-":
                             m "I want to cum down your throat."
                             call cho_main("Yeah?","smile","base","base","mid")
-                            "Cho leans forward swallowing your cock to the root."
+                            "Cho leans forward swallowing your cock to the hilt."
                             "She rest for a moment, getting used to your size."
-                            "Then, she begins to fuck her throat with your cock."
+                            "Then, she begins to volently fuck her throat with your cock."
                             call cho_main("*gluck* *gluck* *gluck* *Gluck*","smile","base","base","mid")
                             m "By Gandalf's gay balls..."
                             call cho_main("*Hnnnng!*","smile","base","base","mid")
@@ -2647,10 +2647,10 @@ label cho_favor_3_3:
                             call cho_main("(god, this old man...)","smile","base","base","mid")
                             $ renpy.play('sounds/gulp.mp3')
                             call cho_main("(So much...)","smile","base","base","mid")
-                            "When it's over your cock slips away from Cho's lips, leaving her dazed."
+                            "When it's over, your cock slips away from Cho's lips, leaving her dazed."
                             call cho_main("Thank","smile","base","base","mid")
                             call cho_main("Thank you","smile","base","base","mid")
-                            call cho_main("THank you, Dumblesir...","smile","base","base","mid")
+                            call cho_main("Thank you, Dumbledore sir...","smile","base","base","mid")
                             m "[current_payout] to Ravenclaw."
                             jump end_cho_event
 
@@ -2665,16 +2665,16 @@ label cho_favor_3_3:
                                 call cho_main("*gack* *gack* *gack* *Gack!*","smile","base","base","mid")
                                 "Finally, you feel your balls begin to tighten."
                                 m "I'm almost-"
-                                "Cho spits your cock out of her mouth and begins to stroke your cock."
-                                call cho_main("CuM for me, Professor!","smile","base","base","mid")
+                                "Cho spits your cock out of her mouth and begins to stroke it."
+                                call cho_main("Cum for me, Professor!","smile","base","base","mid")
                                 ##Genie cums.
                                 "Your cock explodes, coating the proud, young witch in your old wizard jizz."
                                 call cho_main("Yes...","smile","base","base","mid")
                                 call cho_main("Oh my god...","smile","base","base","mid")
-                                call cho_main("that was amazing.","smile","base","base","mid")
+                                call cho_main("That was amazing.","smile","base","base","mid")
                                 m "[current_payout] to Ravenclaw."
                                 call cho_main("...","smile","base","base","mid")
-                                call cho_main("...i'm completely covereD, aren't I?","smile","base","base","mid")
+                                call cho_main("...I'm completely covered, aren't I?","smile","base","base","mid")
                                 m "Get out."
                                 call cho_main("...","smile","base","base","mid")
                                 call cho_main("okay, Professor.","smile","base","base","mid")
@@ -2683,7 +2683,7 @@ label cho_favor_3_3:
 
         "-Ms. Chong, do you eat ass?-":
             m "Ms. Chong, do you eat ass?"
-            call cho_main("are you asking or telling?","smile","base","base","mid")
+            call cho_main("Are you asking or telling?","smile","base","base","mid")
             m "Get over here."
             "Cho playfully hops over to you, stopping just in front of your desk."
             call cho_main("Well?","smile","base","base","mid")
@@ -2706,17 +2706,17 @@ label cho_favor_3_3:
                     call cho_main("*oomph* *Gluck*","smile","base","base","mid")
                     "Your cock prods the back of her throat, and Cho's movements suddenly stop as she focuses on fighting her gag reflex."
                     call cho_main("*gack!* *Cough*","smile","base","base","mid")
-                    "A mouthful of slime and spit shoots out around your cock as she chokes around it."
-                    call cho_main("(i'm going to die...)","smile","base","base","mid")
+                    "A mouthful of slime and spit shoots out around your cock as she chokes on it."
+                    call cho_main("(I'm going to die...)","smile","base","base","mid")
                     call cho_main("(You nasty, old man...)","smile","base","base","mid")
-                    "Cho's chin drips with with tangled cords of slime."
+                    "Cho's chin drips with tangled cords of slime."
                     "Your balls slap against her face as you pound her slippery fuck hole."
                     call cho_main("(I'm such a whore...)","smile","base","base","mid")
                     m "That's good, you fucking whore."
                     call cho_main("(Yes!)","smile","base","base","mid")
-                    "Suddenly, you feel Cho's hands tightly gripping your ass, and you realize that you haven't had to hold her down."
+                    "Suddenly, you feel Cho's hands tightly grip your ass, and you realize that you haven't had to hold her down."
                     "The crazed young witch desperately fucks her face against your cock."
-                    "You cock feels amazing, but you have other plans."
+                    "Your cock feels amazing, but you have other plans."
                     "You grab Cho's hands and push her down."
                     $ renpy.play('sounds/pop.mp3')
                     "Your cock pops out of her throat, and she falls back on her haunches."
@@ -2734,33 +2734,33 @@ label cho_favor_3_3:
                     "Your cock explodes in Cho's soft, slippery hands as her tongue presses deep into your ass."
                     "Thick, heavy ropes of your cum shoot across the room, coating the floor at your feet."
                     call cho_main("Wow!","smile","base","base","mid")
-                    call cho_main("wow! that was intense...","smile","base","base","mid")
-                    m "Good work, Ms. Chong. [current_payout] to Ravenclaw..."
-                    call cho_main("THank you, Professor Dumbledore.","smile","base","base","mid")
+                    call cho_main("Wow! that was intense...","smile","base","base","mid")
+                    m "Good work, Ms. Chang. [current_payout] to Ravenclaw..."
+                    call cho_main("Thank you, Professor Dumbledore.","smile","base","base","mid")
                     jump end_cho_event
 
 
 label cho_mad_blowjob:
-    call cho_main("i can't believe you, you old pervert.","smile","base","base","mid")
+    call cho_main("I can't believe you, you old pervert.","smile","base","base","mid")
     call cho_main("Fine.","smile","base","base","mid")
     call cho_main("Fine. I'll do it.","smile","base","base","mid")
     "Cho drops to her knees and reaches into your robes grabbing your semi-hard cock."
     call cho_main("You're not even hard yet.","smile","base","base","mid")
-    "Cho leans forward and gathering saliva in her mouth she spits a messy dollop across your cockhead."
+    "Cho leans forward and after gathering saliva in her mouth she spits a messy dollop across your cockhead."
     "The angry young witch begins to roughly pump your hardening cock."
     m "Take it easy."
-    call cho_main("take it easy?","smile","base","base","mid")
-    "Cho leans forward and sucks your cock into her mouth."
+    call cho_main("Take it easy?","smile","base","base","mid")
+    "Cho leans forward and guides your cock into her mouth."
     "Her tongue assaults your sensitive head, writhing against your glans."
     "Then she begins to bob her head back and forth, sucking hard."
     m "That's good."
     "Cho spits your cock out and pumps it with fast, rough strokes."
-    call cho_main("are you going to cum yet, you old jerk?","smile","base","base","mid")
+    call cho_main("Are you going to cum yet, you old jerk?","smile","base","base","mid")
     m "I'm almost there."
     "Cho takes your cock back into her mouth, sucking and bobbing."
-    "Soon you reach your limit, but before you can cum Cho feels your shaft twitch and pulls back."
+    "Soon, you reach your limit, but before you can cum Cho feels your shaft twitch and pulls back."
     call cho_main("Cumming so soon?","smile","base","base","mid")
-    "Cho squeezes your cock uncomfortably hard and pumps your shaft so fast that you mind reals from the twin sensations of pleasure and pain."
+    "Cho squeezes your cock uncomfortably hard and pumps your shaft so fast that your mind reals from the twin sensations of pleasure and pain."
     ##Genie cums
     "Suddenly, your cock throbs and just as you begin to cum Cho bends your twitching cock down, forcing you to cum on the floow at your feet."
     m "Ah! Cho, you Teenage Bitch!"

@@ -293,8 +293,3 @@ image petting: #PETTING THE PHOENIX.
     pause.1
     "images/animation/petting_01.png"
     pause.1
-
-
-
-
-

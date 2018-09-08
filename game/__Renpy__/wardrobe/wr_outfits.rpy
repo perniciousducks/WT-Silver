@@ -89,7 +89,7 @@ label equip_her_outfit:
                     call her_main( "Cute, where did you even get this? I didn't know you've visited Japan.","base","base")
                     m "It's a replica..."
                     call her_main( "Oh... well, the colour is nice.", "grin","base")
-                    call her_main( "I guess I could wear it for a bit.", "grin","heppyCl")
+                    call her_main( "I guess I could wear it for a bit.", "grin","happyCl")
                 else: #Fail
                     call her_main( "I'd rather not be accused of stirring cultural appropriation.", "annoyed","base")
                     m "Cultural what now?"

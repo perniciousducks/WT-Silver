@@ -4,16 +4,16 @@ init python:
         in_progress = False
         snape = ""
         genie = ""
-        
+
         def show(self,image=None,x=690,y=250,z=5):
             renpy.show(image,at_list=[Position(xpos=x, ypos=y, xanchor="center", yanchor="center")],layer="screens",zorder=z)
         def hide(self,image=None):
             renpy.hide(image,layer="screens")
-        
+
     duel_OBJ = silver_duel()
-    
+
 label __init_variables:
-    
+
     $ genie_max_hp = 1000
     $ snape_max_hp = 2000
 
@@ -27,21 +27,21 @@ label __init_variables:
         $ snape_blocking = False
     if not hasattr(renpy.store,'pentogram'): #important!
         $ pentogram = False
-    
+
     return
-    
-    
+
+
 label duel:
     ### DUEL ###
     $ d_flag_01 = False #Turns True after conversation triggered when Genie's HP runs low.
     $ d_flag_02 = False #Turns True after conversation triggered when Snape's HP runs low.
-    
+
     stop bg_sounds #Stops playing the fire SFX.
     stop weather #Stops playing the rain SFX.
-    
+
     # Hide all the screens.
     $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
-    
+
     hide screen notes #A bunch of notes poping out with a "win" sound effect.
     hide screen genie
     hide screen owl
@@ -50,22 +50,22 @@ label duel:
     hide screen ctc
     hide screen snape_defends
     hide screen blkfade
-    
-    
+
+
     ### Set Duel Defaults ###
     $ genie_hp = genie_max_hp
     $ snape_hp = snape_max_hp
-    
+
     $ blocking = False #True when "block" command is chosen, when Gennie turn into a guard.
     $ snape_blocking = False #True when Snape goes into defensive stance.
     $ pentogram = False #True when pentagram been casted an is displayed on the floor.
-    
+
     show screen duel
-    
+
     hide screen snape_glass
     with fade
-    
-    
+
+
     m "This is foolish... You are no match for me..."
     sna_[1] "Amusing..."
     m "{size=-4}(Actually my human body is quite weak...){/size}"
@@ -75,25 +75,25 @@ label duel:
     show screen hp_bar
     $ duel_OBJ.in_progress = True
     with d5
-    
-    
+
+
 label duel_main:
     if genie_hp <= 300 and not d_flag_01:
         $ d_flag_01 = True
         sna_[1] "Ready to give up yet?"
         g4 "Tsk..."
-        
+
     if snape_hp <= 400 and not d_flag_02:
         $ d_flag_02 = True
         g4 "{size=-4}(He is getting weaker, I can feel it!){/size}"
         sna_[1] "*Panting*"
-    
+
     call screen duel_buttons
-    
+
 
 screen duel_buttons:
     zorder 10
-    
+
     imagebutton: # attack
         xpos 140
         focus_mask True
@@ -112,8 +112,8 @@ screen duel_buttons:
         idle "images/dueling/snape/hp_bar_09.png"
         hover "images/dueling/snape/hp_bar_08.png"
         action [Jump("main_potion")]
-    
-    
+
+
 label main_attack:
     $ blocking = False #To stop the game treating Genie as being in a block stance.
     if snape_blocking:
@@ -130,41 +130,41 @@ label main_defend:
     $ duel_OBJ.genie = "defend"
     pause 1
     jump snapes_turn
-    
+
 label main_potion:
     if potions >= 1:
         jump potion
     else:
         m "Crap! I'm out of healing potions!"
         jump duel_main
-    
-    
-    
+
+
+
 ### SNAPE DEFENDS ### (Snape -0 HP)
 label snape_defends:
     $ renpy.play('sounds/magic4.ogg')
     $ duel_OBJ.show("smoke",x=690, y=250,z=5)
     $ duel_OBJ.show("snape_defend",x=690, y=250,z=4)
     $ duel_OBJ.snape = "block"
-    
+
     pause 2.3
     show screen minus_0
-    
+
     $ duel_OBJ.hide("snape_defend")
     $ duel_OBJ.snape = ""
     $ duel_OBJ.genie = "barb"
     pause 1
-    
+
     $ duel_OBJ.show("smoke",x=690, y=250,z=5)
     $ duel_OBJ.genie = ""
     pause 1
-    
+
     hide screen minus_0
-    
+
     jump snapes_turn
-    
+
 ### GENIE ATTACK ### (Snape -100 HP)
-label genie_attack:  
+label genie_attack:
     $ renpy.play('sounds/magic4.ogg')
     $ duel_OBJ.show("smoke",x=690,y=250,z=5)
     $ duel_OBJ.show("genie_attack",x=690,y=250,z=4)
@@ -172,7 +172,7 @@ label genie_attack:
     pause 1
     $ renpy.play('sounds/attack_axe.mp3')
     pause 1.8
-    
+
     if pentogram:
         if game_difficulty <= 2: #Easy
             hide screen minus_500
@@ -199,22 +199,22 @@ label genie_attack:
             hide screen minus_100
             show screen minus_100
             $ snape_hp -= 100
-    
+
     pause 1
     if snape_hp < 50: #Check for gameover
         jump snape_lost
-    
+
     $ duel_OBJ.show("smoke",x=690, y=250,z=5)
     $ duel_OBJ.hide("genie_attack")
     $ duel_OBJ.genie = ""
     pause 1
-    
+
     hide screen minus_300
     hide screen minus_100
-        
+
     jump snapes_turn
-    
-    
+
+
 ### SNAPE'S TURN ###
 label snapes_turn:
     if pentogram:
@@ -236,27 +236,27 @@ label snapes_turn:
             $ duel_OBJ.hide("hand_guard")
             $ duel_OBJ.snape = ""
 
-            if game_difficulty <= 2: #Easy         
+            if game_difficulty <= 2: #Easy
                 hide screen minus_0_genie
                 show screen minus_0_genie
-            elif game_difficulty == 2: #Normal        
+            elif game_difficulty == 2: #Normal
                 hide screen minus_50_genie
                 show screen minus_50_genie
                 $ genie_hp -= 50
-            else: #Hardcore #Shouldn't increase the penalty if you blocked correctly...          
+            else: #Hardcore #Shouldn't increase the penalty if you blocked correctly...
                 hide screen minus_50_genie
                 show screen minus_50_genie
                 $ genie_hp -= 50
-            
+
             if genie_hp < 50: #Check for gameover
                 jump genie_lost
-            
+
             $ duel_OBJ.show("smoke",x=690, y=250,z=5)
             $ duel_OBJ.genie = ""
             hide screen minus_50_genie
             jump duel_main
-            
-        
+
+
         else: # GENIE DOESN'T BLOCK AGAINST THE HAND. (Genie -400 HP)
             $ duel_OBJ.hide("hand")
             $ duel_OBJ.genie = "hand"
@@ -265,11 +265,11 @@ label snapes_turn:
             $ duel_OBJ.hide("hand_genie")
             $ duel_OBJ.snape = ""
 
-            if game_difficulty <= 2: #Easy         
+            if game_difficulty <= 2: #Easy
                 hide screen minus_300_genie
                 show screen minus_300_genie
                 $ genie_hp -= 300
-            elif game_difficulty == 2: #Normal  
+            elif game_difficulty == 2: #Normal
                 hide screen minus_400_genie
                 show screen minus_400_genie
                 $ genie_hp -= 400
@@ -284,26 +284,26 @@ label snapes_turn:
             $ duel_OBJ.genie = ""
             hide screen minus_400_genie
             jump duel_main
-    
-    
+
+
     else:
         $ snape_blocking = False
         #$ snape_decides = 3
         $ snape_decides = renpy.random.randint(1, 3)
 
-        if snape_decides == 1: #ATTACK 
+        if snape_decides == 1: #ATTACK
             if blocking:
                 $ blocking = False
                 jump snape_attack_guard
             else:
                 jump snape_attack
-        elif snape_decides == 2: #BLOCK 
+        elif snape_decides == 2: #BLOCK
             $ snape_blocking = True
             $ duel_OBJ.snape = "defend"
             pause 1
             jump duel_main
 
-        elif snape_decides == 3:  #MAGIC. CASTS THE PICTOGRAM. 
+        elif snape_decides == 3:  #MAGIC. CASTS THE PICTOGRAM.
             $ duel_OBJ.snape = "hand"
             show image "images/dueling/snape/snape_casting_01.png" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
             $ duel_OBJ.show("snape_summon",690,250,4)
@@ -313,28 +313,28 @@ label snapes_turn:
             pause 1
             $ duel_OBJ.hide("snape_summon")
             $ duel_OBJ.snape = ""
-            
+
             jump duel_main
-    
+
 
 ### GENIE DRINKS POTION ### (-300 HP)
 label potion:
     pause.5
     $ duel_OBJ.show("heal_02",500,330,4)
     $ renpy.play('sounds/attack_heal.ogg')
-    pause 1 
-    
+    pause 1
+
     show screen plus_300
     pause 1
     $ potions -= 1
     $ genie_hp += 300
     pause.5
-    
+
     $ duel_OBJ.hide("heal_02")
     hide screen plus_300
-    
+
     jump snapes_turn
-    
+
 
 
 ### SNAPE ATTACK ### (Genie -100 HP)
@@ -364,7 +364,7 @@ label snape_attack:
         jump genie_lost
 
     jump duel_main
-    
+
 ### SNAPE ATTACKS GUARD ### (-0 HP)
 label snape_attack_guard:
     $ duel_OBJ.show("snape_attack_guard",x=690, y=250,z=5)
@@ -377,20 +377,20 @@ label snape_attack_guard:
     pause 1
     hide screen minus_0_genie
     jump duel_main
-    
-    
-    
+
+
+
 ### DUEL ###
 screen duel:
     zorder 2
-    
+
     use chair_left
     use chair_right
     add "duel_table" at Position(xpos=325, ypos=330, xanchor="center", yanchor="center")
-    
+
     if pentogram:
         add "pentogram" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
-    
+
     if duel_OBJ.genie in ["attack"] or duel_OBJ.snape in ["attack","block"]:
         pass
     else:
@@ -404,7 +404,7 @@ screen duel:
             add "ch_gen barb" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
         else:
             add "ch_gen duel_01" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
-        
+
         if duel_OBJ.snape == "hand":
             pass
         elif duel_OBJ.snape == "lost":
@@ -413,24 +413,24 @@ screen duel:
             add "ch_sna defend" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
         else:
             add "ch_sna duel_01" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
-    
-    
+
+
 screen hp_bar:
     zorder 3
-    
+
     ### health bar is 271 px wide ###
     add "images/dueling/snape/hp_bar_02.png" xpos int((genie_hp-genie_max_hp)/(genie_max_hp/271.0)) ypos 0
     add "images/dueling/snape/hp_bar.png" #Genie avatr pic.
-    
+
     ### health bar is 727 px wide ###
     add "images/dueling/snape/hp_bar_11.png" #Black background for HP bar.
     add "images/dueling/snape/hp_bar_12.png" xpos int((snape_max_hp-snape_hp)/(snape_max_hp/727.0)) ypos 0
     add "images/dueling/snape/hp_bar_10.png" #Snape avatr pic.
 
     add "images/dueling/snape/hp_bar_05.png" xpos 140 ypos 0 #Inactive buttons.
-    
-    
-    
+
+
+
 ### SNAPE LOSES ###
 label snape_lost:
     $ pentogram = False
@@ -443,12 +443,12 @@ label snape_lost:
     with flashbulb
     pause 1
     jump event_06
-    
-    
+
+
 ### GENIE LOSES ###
 label genie_lost:
-    play music "music/Final Fantasy 7 Game Over Theme.mp3" fadein 1 fadeout 1 
-    
+    play music "music/Final Fantasy 7 Game Over Theme.mp3" fadein 1 fadeout 1
+
     show screen end_u_1
     $ end_u_1_pic =  "01_hp/20_intro/game_over.jpg"
     with flashbulb
@@ -458,7 +458,7 @@ label genie_lost:
     hide screen ctc
     menu:
         "-Try again-":
-            stop music 
+            stop music
             $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
             play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
             hide screen end_u_1
@@ -469,7 +469,7 @@ label genie_lost:
             else:
                 pass
             jump duel
-            
+
         "-Give up-":
             pass
 
@@ -490,7 +490,7 @@ init -1:
         "images/dueling/snape/06.png"
         pause.3
         "images/dueling/snape/07.png"
-    
+
     ### Harry Potter DUEL ANIMATIONS ###
     image smoke:
         "images/animation/smoke_01.png"
@@ -501,10 +501,10 @@ init -1:
         pause.1
         "images/animation/smoke_04.png"
         pause.1
-    
+
     image duel_table:
         "images/main_room/09_table.png"
-    
+
     ### GENIE ###
     image ch_gen duel_01:
         "images/dueling/snape/gen_01.png"
@@ -534,7 +534,7 @@ init -1:
         "images/dueling/snape/barb_02.png"
         pause.15
         repeat
-    
+
     image genie_attack:
         "images/dueling/snape/genie_attack_01.png"
         pause.15
@@ -579,11 +579,11 @@ init -1:
         "images/dueling/snape/genie_attack_15.png"
         pause.15
         repeat
-    
+
     image genie_no_magic:
         "images/dueling/snape/no_magic.png"
-    
-    
+
+
     ### SNAPE ###
     image ch_sna duel_01:
         "images/dueling/snape/snape_01.png"
@@ -595,7 +595,7 @@ init -1:
         "images/dueling/snape/snape_02.png"
         pause.1
         repeat
-    
+
     image ch_sna defend:
         "images/dueling/snape/snape_defend_01.png"
         pause.1
@@ -606,7 +606,7 @@ init -1:
         "images/dueling/snape/snape_defend_02.png"
         pause.1
         repeat
-    
+
     image snape_attack:
         "images/dueling/snape/sna_attack_01.png"
         pause.08
@@ -629,7 +629,7 @@ init -1:
         "images/dueling/snape/sna_attack_10.png"
         pause.08
         repeat
-    
+
     image snape_defend: #Snape is in defense stance. Barbarian throws axes at him.
         "images/dueling/snape/sna_block_01.png"
         pause.15
@@ -666,13 +666,13 @@ init -1:
         "images/dueling/snape/sna_block_13.png"
         pause.15
         repeat
-    
+
     image snape_summon:
         "images/dueling/snape/snape_casting_01.png"
-    
+
     image snape_lost:
         "images/dueling/snape/snape.png"
-    
+
     image snape_attack_guard: # CREDITS VERSION, with a longer pause.
         "images/dueling/snape/sna_attack_guard_01.png"
         pause.08
@@ -695,7 +695,7 @@ init -1:
         "images/dueling/snape/sna_attack_guard_10.png"
         pause.5
         repeat
-    
+
     image snape_attack_guard:
         "images/dueling/snape/sna_attack_guard_01.png"
         pause.08
@@ -718,8 +718,8 @@ init -1:
         "images/dueling/snape/sna_attack_guard_10.png"
         pause.08
         repeat
-    
-    
+
+
     ### HAND ###
     image pentogram:
         "images/dueling/snape/pen_05.png"
@@ -741,7 +741,7 @@ init -1:
         "images/dueling/snape/pen_05.png"
         pause.1
         repeat
-    
+
     image hand: #Hand appears.
         "images/dueling/snape/hand_01.png"
         pause.1
@@ -776,7 +776,7 @@ init -1:
         "images/dueling/snape/hand_16.png"
         pause.1
         repeat
-    
+
     image hand_genie: #Hand attacks Genie.
         "images/dueling/snape/hand_genie_01.png"
         pause.1
@@ -804,7 +804,7 @@ init -1:
         pause.1
         "images/dueling/snape/hand_genie_13.png"
         pause.1
-    
+
     image hand_guard: #Hand attacks the guard.
         "images/dueling/snape/hand_guard_01.png"
         pause.1
@@ -840,8 +840,8 @@ init -1:
         pause.1
         "images/dueling/snape/hand_guard_13.png"
         pause.1
-    
-    
+
+
     ### DAMAGE ###
     image plus_300:
         "images/dueling/damage/plus_300_01.png"
@@ -968,7 +968,7 @@ init -1:
         pause.2
         "images/dueling/damage/00.png"
         pause.2
-    
+
 
 screen snape_glass:
     # add "interface/blackfade.png"

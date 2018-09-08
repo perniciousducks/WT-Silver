@@ -34,17 +34,21 @@ screen map_screen:
         hotspot (307+140, 240, 59, 37) clicked Jump("shop_intro") #shop
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
 
+        #Map Events
+        if whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
+            hotspot (217, 442, 55, 55) clicked Jump("hermione_map_BJ")
+
 
 label floor_7th:
     if unlocked_7th == False:
         m"\"I don't have any reason to go to this floor...\""
         jump return_office
     else:
-        call blkfade 
+        call blkfade
         call leave_main_room
         show screen floor_7th_screen
-        
-        
+
+
         if unlocked_7th and first_time_7th:
             call gen_chibi(xpos="door", ypos="base", flip=True)
             call hide_blkfade
@@ -69,7 +73,7 @@ label floor_7th:
             show screen floor_7th_door
             call hide_blkfade
             call screen floor_7th_menu
-            
+
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
         ">You venture up to the attic but find that the door is locked."
@@ -269,24 +273,41 @@ label outskirts_of_hogwarts:
 
 
 label return_office:
-    call blkfade
+    call hide_characters
+    show screen blkfade
+    with d3
     #">You return to your office."
 
+    hide screen ccg
     hide screen end_u_1
     hide screen end_u_3
     hide screen chair_left
     hide screen desk
-    call gen_chibi("hide") 
+    call her_chibi("hide")
+    call sna_chibi("hide")
+    call gen_chibi("hide")
     show screen main_room
     show screen genie
     hide screen blkback
-    pause.5
-    call hide_blkfade
-    
     if fire_in_fireplace:
         show screen fireplace_fire
 
+    pause.5
+    hide screen blkfade
+    with d5
+
+
+    $ menu_x = 0.5
+    $ menu_y = 0.5
+
     if daytime:
-        jump day_main_menu
+        call play_music("day_theme")
     else:
-        jump night_main_menu
+        call play_music("night_theme")
+
+    pause.5
+
+    if daytime:
+        jump day_resume
+    else:
+        jump night_resume

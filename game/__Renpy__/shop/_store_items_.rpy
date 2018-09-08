@@ -1,4 +1,4 @@
-label __init_variables:
+label store_items_init:
 
     #Single Clothing Items
     $ cs_clothing_list = []
@@ -448,6 +448,16 @@ label __init_variables:
     $ hg_onepiece_sling_OBJ.image = "hg_onepiece_sling.png"
     $ hg_onepiece_sling_OBJ.description = ">A Mononoke variant of the Sling Bikini"
 
+    if not hasattr(renpy.store,'hg_onepiece_sport_swimsuit_OBJ'):
+        $ hg_onepiece_sport_swimsuit_OBJ = store_item_class()
+    $ hg_onepiece_sport_swimsuit_OBJ.id = "hg_onepiece_sport_swimsuit"
+    $ hg_onepiece_sport_swimsuit_OBJ.name = "Sports Swimsuits"
+    $ hg_onepiece_sport_swimsuit_OBJ.items = ["one-piece"]
+    $ hg_onepiece_sport_swimsuit_OBJ.cost = 69
+    $ hg_onepiece_sport_swimsuit_OBJ.wait_time = 1
+    $ hg_onepiece_sport_swimsuit_OBJ.image = "hg_onepiece_swimsuit_sport.png"
+    $ hg_onepiece_sport_swimsuit_OBJ.description = ">Comes in 4 different variants. \nSwimmies not included!"
+
 
     # Accessories
     if not hasattr(renpy.store,'hg_accs_wool_g_OBJ'): # Not a store item!
@@ -534,6 +544,7 @@ label __init_variables:
     $ hermione_clothing_sets_list.append(hg_bikini_sling_OBJ)
 
     #$ hermione_clothing_sets_list.append(hg_onepiece_sling_OBJ)
+    $ hermione_clothing_sets_list.append(hg_onepiece_sport_swimsuit_OBJ)
 
     $ hermione_clothing_sets_list.append(hg_accs_wool_g_OBJ) #Unlockable
 
@@ -793,6 +804,16 @@ label __init_variables:
     $ hg_yenn_OBJ.breast_layer = "breasts_normal"
     $ hg_yenn_OBJ.description = ">A Witcher inspired outfit to fit even the most\n perverted witch"
 
+    if not hasattr(renpy.store,'hg_egypt_OBJ'):
+        $ hg_egypt_OBJ = hermione_outfit()
+    $ hg_egypt_OBJ.name = "Egyptian Goddess"
+    #$ hg_egypt_OBJ.cost = 200
+    $ hg_egypt_OBJ.type = "outfit"
+    $ hg_egypt_OBJ.unlockable = True #Reward for card game.
+    $ hg_egypt_OBJ.image = "hg_egypt.png"
+    $ hg_egypt_OBJ.outfit_layers = ["egyptian_top.png","egyptian_bottom.png","egyptian_shackles.png"]
+    $ hg_egypt_OBJ.breast_layer = "breasts_normal"
+
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
     $ hermione_outfits_list.append(hg_heartDancer_OBJ)
@@ -809,6 +830,7 @@ label __init_variables:
     $ hermione_outfits_list.append(hg_witch_OBJ)
     $ hermione_outfits_list.append(hg_bio_OBJ)
     $ hermione_outfits_list.append(hg_yenn_OBJ)
+    $ hermione_outfits_list.append(hg_egypt_OBJ)
 
 
 

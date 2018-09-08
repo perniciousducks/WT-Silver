@@ -287,6 +287,80 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     with d3
     call screen main_room_menu
 
+### MAIL THAT UNLOCKS ABILITY TO WORK ###
+if deck_mail_send: # Send a letter that will unlock an ability to write reports
+    $ deck_unlocked = True # Send a letter that will unlock an ability to write reports
+    $ deck_mail_send = False
+    $ letters -= 1
+    hide screen owl
+    show screen owl_02
+    $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.{/size}"
+    show screen letter
+    show screen ctc
+    show screen bld1
+    with Dissolve(.3)
+    pause
+
+    hide screen letter
+    hide screen ctc
+    hide screen bld1
+    with Dissolve(.3)
+    
+    m "Wizard cards, what the hell is this..."
+
+    $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.\n\nWizard cards is a collectable card game...{/size}"
+    show screen letter
+    show screen ctc
+    show screen bld1
+    with Dissolve(.3)
+    pause
+
+    hide screen letter
+    hide screen ctc
+    hide screen bld1
+    with Dissolve(.3)
+    
+    
+    m "\"I'm not.\""
+    $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.\n\nWizard cards is a collectable card game... \n\nEvery card has an enchantment so that it will display something of your own favorite interest.\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a free booster, we don't even know what it is!{/size}"
+    show screen letter
+    show screen ctc
+    show screen bld1
+    with Dissolve(.3)
+    pause
+
+    hide screen letter
+    hide screen ctc
+    hide screen bld1
+    with Dissolve(.3)
+
+    m "Sounds like a scam to me..."
+    
+    
+    
+    m "..."
+    m "I guess I'll have a look at the booster at least..."
+
+    "Opens booster and sees the cards"
+    show screen bld1
+    with Dissolve(.3)
+    show screen start_deck
+    
+    pause
+    
+    hide screen start_deck
+    hide screen ctc
+    hide screen bld1
+    with Dissolve(.3)
+    
+    g9 "Hell yes I'm playing this..."
+    
+    call give_reward(">You've unlocked Wizard cards.\nUse your desk to edit the deck.","images/store/dahr2.png")
+    
+    hide screen blktone8
+    with d3
+    call screen main_room_menu
+
 
 
 label get_package:

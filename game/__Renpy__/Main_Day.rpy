@@ -227,6 +227,10 @@ if day >= 25 and whoring >= 9 and not ministry_letter_received:
     $ ministry_letter = True
     $ letters += 1 #Displays Owl
 
+if day >= 26 and not deck_unlocked:    
+    $ deck_mail_send = True
+    $ letters += 1 #Displays Owl
+    
 if outfit_order_placed and not outfit_ready:
     call outfit_purchase_check
 

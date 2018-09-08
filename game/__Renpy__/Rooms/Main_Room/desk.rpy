@@ -4,6 +4,9 @@ label desk:
             $ desk_examined = True
             m "A desk of some sort..."
             jump day_main_menu
+        "Build Deck" if deck_unlocked:
+            call leave_main_room
+            jump deck_builder
         "-Do paperwork-" if finished_report < 6 and not got_paycheck and not day == 1 and work_unlock2:
             jump paperwork
         "{color=#858585}-Do paperwork-{/color}" if finished_report >= 6 and not got_paycheck:

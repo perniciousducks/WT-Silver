@@ -39,7 +39,7 @@ label cardgame:
             $ update_table(x,y)
             
             pause
-            if len(player_deck) == 0:
+            if len(player_deck) == 0 OR len(enemy_deck) == 0:
                 jump check_winner
             else:
                 jump enemy_turn
@@ -104,7 +104,9 @@ screen card_battle(l_playerdeck, l_enemydeck):
         
     use close_button
         
-screen cardrender(card, xpos_card, ypos_card, interact=False):
+screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None):
+    if return_value == None:
+        $ return_value = card
     frame:
         xpos xpos_card -4
         ypos ypos_card -4
@@ -114,11 +116,11 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
 
         if interact:
             imagebutton:
-                idle im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom)
-                hover im.MatrixColor(im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom),im.matrix.brightness(0.12))
-                action Return(card)
+                idle card.get_card_image()
+                hover card.get_card_hover()
+                action Return(return_value)
         else:
-            add im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom)
+            add card.get_card_image()
         
         if card.playercard:
             add playerboarder zoom cardzoom
@@ -149,3 +151,11 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
             xsize card_width*cardzoom
             ysize card_height*cardzoom
             text lefttext+str(card.leftvalue)+righttext xalign 0.03 yalign 0.475
+            
+screen start_deck:
+    zorder 9
+    use cardrender(normalcl,250,200, interact=False)
+    use cardrender(cheer1,375,200, interact=False)
+    use cardrender(nightdress,500,200, interact=False)
+    use cardrender(nightdressbreast,625,200, interact=False)
+    use cardrender(snapeandelf,750,200, interact=False)

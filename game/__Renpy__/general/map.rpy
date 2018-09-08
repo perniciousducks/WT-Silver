@@ -10,6 +10,7 @@ label leave_main_room:
     hide screen owl
     hide screen owl_02
     hide screen owl_03
+    hide screen genie
     return
 
 ### Map Screen ###

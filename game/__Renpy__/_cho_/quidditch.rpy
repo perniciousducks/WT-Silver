@@ -370,7 +370,178 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
 
 
 label cho_quidd_2_1: #Comes back after playing without a robe on
+    cho "There's been a disaster!"
+    m "What? Did something happen during your game?"
+    cho "The game is {b}tomorrow{/b} sir..."
+    cho "I'm talking about what happened to Lee Jordan, our commentator!"
+    m "You have a commentator for practice games?"
+    cho "The commentators need to practice too!"
+    m "So what happened to him?"
+    cho "he was hit in the throat by a bludger during yesterdays game between gryffindor and slytherin."
+    m "Ouch..."
+    m "Is he OK?"
+    cho "Madam Pomfrey says he'll be able to talk in a few days but yelling is out of the picture for the rest of the season."
+    cho "What are we going to do! We can't have a \"W.S.C.\" without a commentator!"
+    m "Well I do know someone..."
+    menu:
+        "-Hermione-":
+            cho "Hermione Granger?"
+            pass
+    cho "She wouldn't know the first thing about quidditch!"
+    cho "You can't pick her!"
+    m "Now, now... Don't underestimate Miss Granger..."
+    m "Why don't we get her up here and ask shall we?"
+    cho "What? N-"
+    ">Before Cho has a chance to protest, you magically summon hermione up to your office..."
+    her "You wanted to see me sir?"
+    her "Oh... Hello cho..."
+    cho "Hermione..."
+    her "So what is it you two need?"
+    cho "Do you mind settling an argument for us and telling this oaf you don't know anything about quidditch..."
+    her "what? I know {b}EVERYTHING{\b} about quidditch!"
+    cho "..."
+    her "Do you really think that I, Hermione Granger, would be lacking in a subject so basic as quidditch?"
+    her "Not to mention I've been dragged along to every single one of Harry and Ron's games for the last seven years..."
+    m "So you'd know enough to commentate then?"
+    her "Wait... Do you want me to commentate this years wizarding school cup?"
+    cho "That's not what-"
+    her "I'd be honoured sir!"
+    her "Quidditch has always been one of my passions, to be able to commentate it..."
+    her "Not to mention getting to make all the announcements..."
+    her "The speeches..."
+    her "the paper..."
+    her "The {image=textheart}{i}preparation{/i}{image=textheart}..."
+    her "I accept!"
+    m "Congratulations miss granger! you can start tomorrow..."
+    her "Yay!"
+    cho "What? But I'll be..."
+    her "Oh, Will you be playing tomorrow, cho?"
+    her "I can't wait! I'll make sure that I keep an eye on you!"
+    cho "Please don't..."
+    her "Ah!!! I better start preparing my opening announcements in front of the mirror!!!"
+    ">With that hermione runs of with a cheerful glee in her eyes..."
+    cho "Argh! You're the worst coach ever!"
+    ">Cho storms off in a hurry, seething as she goes..."
+    m "Maybe it's about time I go see one of these games..."
 
-label cho_quidd_2_2: #Comes back after playing without a jumper on
+
+label cho_quidd_2_2: #Comes back after playing with the robe still on
+    ">Your door is nearly thrown off it's hinges as an angry young girl bursts into your room."
+    cho "I hate you, I hate you, I HATE YOU!"
+    m "Good hustle. Nice work catching that gold thing..."
+    cho "This isn't the time for your stupid jokes!"
+    cho "I've never felt so humiliated in my entire life!"
+    m "It wasn't that bad was it? At least you won."
+    cho "At the expense of my dignity!"
+    cho "Lee Jordan only used to say that I had a nice butt!"
+    cho "Hermione spent five minutes talking about my thighs!"
+    m "That was the highlight of the match for me!"
+    cho "Well this can't go on! I insist you fire Hermione!"
+    cho "Otherwise I'm going to stop listening to your ridiculous coaching!"
+    m "Ugh... fine..."
+    cho "Good..."
+    m "Should we talk strategy for the next game?"
+    m "I can't help but notice your robe stayed on this game..."
+    cho "I'm lucky I kept it on! Can you imagine what Hermione would have said otherwise?"
+    g9 "Mmmm, I'm picturing it now..."
+    cho "Professor!"
+    cho "I think it's time I left..."
+    m "So no strategy talk?"
+    cho "maybe later..."
+    ">Cho huffs as she frumps out of your office."
+    m "..."
+
+label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
+    ">Your door slowly creaks open as a bashful Cho Chang enters."
+    cho "..."
+    m "Miss Chang... In case you were wondering, I haven't gotten around to firing miss granger yet..."
+    cho "Oh... Um... About that..."
+    cho "Could you please... not... do that..."
+    m "What?"
+    m "You want Hermione to keep commentating your games?"
+    m "What about our strategies?"
+    cho "We can still do that..."
+    cho "..."
+    m "Miss Chang, is there something your not telling me?"
+    cho "Well..."
+    cho "It's just that..."
+    cho "People are being a lot nicer to me since that game!"
+    cho "All the gryffindors are inviting me to parties..."
+    cho "Most of the Slytherins have stopped being racist..."
+    cho "And the hufflepuff team weren't even upset that i beat them!"
+    m "So you want to keep on with my coaching?"
+    cho "Of course! It's the only chance Ravenclaw has to win the W.S.C.!"
+    m "Good, because It's about time you lost that robe of your while you play."
+    cho "Fine..."
+    m "And the jumper as well."
+    cho "What? I'll freeze!"
+    m "You're a witch aren't you? (Is she?)"
+    cho "I suppose I can use a warmth charm..."
+    cho "But everyone will see my butt!"
+    m "That's the point."
+    cho "But, but, but!"
+    m "That's probably what the crowd will be chanting..."
+    cho "Ugh..."
+    cho "Fine..."
+    cho "But- I better win!"
+    m ""
+
 
 label cho_quidd_3_1:
+
+
+
+label quidditch_game_1:
+    show screen blkfade
+    with d3
+    pause
+    $ ccg_folder = "herm_quidditch"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    her "{size+=5}-AND IT'S ANOTHER 10 POINTs FOR RAVENCLAW!{/size}"
+    her "{size+=5}I DON'T THINK ANY OF US EXPECTED THIS FROM THEM AFTER LAST YEARS PERFORMANCE!{/size}"
+    ">You get rather caught up in the spectacle of brooms flying around at a blinding pace, hurling deadly balls at each other... "
+    her "{size+=5}AND IT ALL SEEMS TO BE THANKS TO THEIR STAR SEEKER, CHO CHANG!{/size}"
+    #FADE TO CHO
+    show screen blkfade
+    with d3
+    pause 1
+    $ ccg_folder = "astoria_sit"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    ">Cho stops chasing the tiny golden snitch to turn towards hermione in the grandstand."
+    her "Her ingenious outfit seems to have made those hufflepuff boys lives a lot {b}harder{/b}."
+    ">Cho's face turns a deep red before she turns away and chases after the snitch once more."
+    show screen blkfade
+    with d3
+    pause 1
+    $ ccg_folder = "herm_quidditch"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    her "{size+=5}And I can't say that I blame them, she's certainly giving us all something nice to look at...{/size}"
+    her "{size+=5}But wait... Yes I think...{/size}"
+    her "{size+=5}She's caught it! SHe's caught the {size+=5}SNITCH!{/size}"
+    her "{size+=10}RAVENCLAW WIN! RAVENCLAW WIN!{/size}"
+    show screen blkfade
+    with d3
+    jump day_main_menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+

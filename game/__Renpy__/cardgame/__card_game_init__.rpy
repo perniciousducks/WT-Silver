@@ -61,6 +61,13 @@ label __init_variables:
                                     leftvalue = 2,
                                     title="Normal Hermione")
         
+        genieforest = card_new(     imagepath="images/cardgame/GenieForest.png",
+                                    topvalue = 4,
+                                    buttomvalue = 2,
+                                    rightvalue = 3,
+                                    leftvalue = 3,
+                                    title="Genie Forest")
+        
         hermione_cheer_en1 = card_new(playercard=False)
         hermione_cheer_en2 = card_new(playercard=False)
         hermione_cheer_en3 = card_new(playercard=False)
@@ -68,14 +75,14 @@ label __init_variables:
         hermione_cheer_en5 = card_new(playercard=False)
         
         if not hasattr(renpy.store,'unlocked_cards'):
-            unlocked_cards = [normalcl, cheer1, nightdress, nightdressbreast, snapeandelf]
+            unlocked_cards = [normalcl, cheer1, genieforest, nightdressbreast, snapeandelf]
             
         if not hasattr(renpy.store,'deck_unlocked'):
             deck_unlocked = False
             deck_mail_send = False
          
         if not hasattr(renpy.store,'playerdeck'):
-            playerdeck = [normalcl, cheer1, nightdress, nightdressbreast, snapeandelf]
+            playerdeck = [normalcl, cheer1, genieforest, nightdressbreast, snapeandelf]
         
         enemydeck = [hermione_cheer_en1 ,hermione_cheer_en2 ,hermione_cheer_en3,hermione_cheer_en4,hermione_cheer_en5]
         

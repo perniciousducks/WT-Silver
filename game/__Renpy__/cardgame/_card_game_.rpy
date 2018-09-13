@@ -154,8 +154,5 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
             
 screen start_deck:
     zorder 9
-    use cardrender(normalcl,250,200, interact=False)
-    use cardrender(cheer1,375,200, interact=False)
-    use cardrender(nightdress,500,200, interact=False)
-    use cardrender(nightdressbreast,625,200, interact=False)
-    use cardrender(snapeandelf,750,200, interact=False)
+    for i in range(0, len(playerdeck)):
+        use cardrender(playerdeck[i],250+125*i,200, interact=False)

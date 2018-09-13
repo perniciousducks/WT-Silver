@@ -1021,3 +1021,254 @@ label a_spaced_out_conversation:
     hide screen fireplace_fire
     hide screen with_snape_animated
     jump enter_room_of_req
+    
+label forgotten_lets_have_sex:
+    call hide_room_req
+    show screen main_room
+    show screen fireplace_fire
+    show screen genie
+    call blkfade
+    call hide_blkfade
+
+    hide screen hermione_main
+    with d3
+
+    $ menu_x = 0.5 #Menu is moved to the middle.
+    $ menu_y = 0.5 #Menu is moved to the middle.
+    $ genie_sprite_base = "characters/genie/base_4.png"
+    $ genie_sprite_xpos = 550
+    $ genie_sprite_ypos = 0
+    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "sex_ani"
+
+    call bld
+    call her_chibi("stand","desk")
+    m "[hermione_name]..."
+    m "I have a favour to ask of you..."
+    call her_main("Is it sex? {size=-2}Please let it be sex...{/size}","smile","baseL")
+    m "You certainly seem eager."
+    call her_main(".......","base","glance")
+    call her_main("Well I may have made some plans...","base","down")
+    her "but I can't tell you what..."
+    m "well as long as you bend over my desk I don't really care..."
+    call her_main("{image=textheart}{image=textheart}{image=textheart}","base","down")
+    stop music fadeout 1.0
+    hide screen hermione_main
+    call blkfade
+    # SEX
+
+    $ renpy.play('sounds/gltch.mp3')
+    with hpunch
+    with kissiris
+    call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide") #HERMIONE
+    hide screen genie
+
+    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "sex_ani"
+    show screen chair_left
+    show screen g_c_u
+
+    call her_chibi("hide")
+    hide screen blktone
+    hide screen bld1
+    hide screen blkfade
+    with fade
+    call ctc
+
+    call play_music("playful_tension") # SEX THEME.
+    show screen bld1
+    with d3
+
+    call her_head("Ah...{image=textheart}","open","worriedCl")
+    m "Your pussy feels drenched today..."
+    call her_head("Does it...{image=textheart} ah...{image=textheart}","open","worriedCl")
+    call her_head("That's all because of you [genie_name]...{image=textheart}","shock","worriedCl")
+
+    if daytime:
+        call her_head("I've been... looking forward to this all morning...{image=textheart}","silly","ahegao")
+    else:
+        call her_head("I've been... looking forward to this all day...{image=textheart}","silly","ahegao")
+
+    g4 "Agh, you whore!"
+    call her_head("Ah...{image=textheart}{image=textheart}","silly","ahegao")
+    m "Yes! Do you like it when I fuck you like this?"
+    call her_head("Yes, [genie_name]...","base","glance")
+
+    call play_sound("knocking")
+    call nar(">You hear a knock at the door.")
+
+    menu:
+        "\"Who is it?\"":
+            m "(Who would be knocking at a time like this?)"
+            lun "It's Luna Lovegood sir."
+            m "{size=-3}Who's that again, [hermione_name]?{/size}"
+            call her_head("the crazy blonde... ah...{image=textheart}... with the nice breasts...","open","closed")
+            m "Come in!"
+        "-Tell them to go away.-":
+            m "Go aw-!"
+            call her_head("no [genie_name]... let them in...","open","worriedCl")
+            m "You want to get caught?!"
+            call her_head("Ah...{image=textheart} yes...{image=textheart}","shock","worriedCl")
+            m "You are a such a little whore, [hermione_name]!"
+            call her_head("Ah-ah...{image=textheart} let them in... please...","shock","worriedCl")
+            m "You asked for it!"
+            call her_head("Ah-a...{image=textheart}{image=textheart}{image=textheart}","shock","worriedCl")
+            m "Come in!"
+
+    ">The door opens as Luna Lovegood walks in."
+    call play_sound("door") #Sound of a door opening.
+    $ luna_chibi("stand", 540, 250)
+    call luna_main("Hello Professor!", "wink", "default", "default", "default")
+    hide screen luna
+    #Stop sex
+    m "....."
+    call her_head("......","shock","worriedCl")
+
+    call luna_main("I wanted to talk to you about the school uniform.", "wink", "default", "default", "default")
+    hide screen luna
+    m "The uniform?"
+    call luna_main("Yes, I have some ideas about some necessary changes and I'd like you to listen.", "wink", "default", "default", "default")
+    hide screen luna
+    m "{size=-3}What's going on here, [hermione_name]?{/size}"
+
+    call her_head("I may have given her a suggestibility serum...","silly","ahegao")
+    m "{size=-3}A suggestibility serum?{/size}"
+    call luna_main("Who are you talking to sir?", "wink", "default", "default", "default")
+    hide screen luna
+    m "Oh, um.... no one, just ignore me..."
+    call luna_main("Ok then, I'll ignore you...", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head("I may have suggested that she come here...","silly","ahegao")
+    call her_head("And that she be unable to see me...","silly","ahegao")
+    call luna_main("As I was saying sir, the school uniform simply cannot stay as it is.", "wink", "default", "default", "default")
+    hide screen luna
+
+    show screen blktone
+    with d3
+    ">You pick up the pace some more."
+    $ g_c_u_pic = "sex2_ani"
+    ">The room fills up with rhythmical sound of a flesh hitting flesh..."
+    call her_head("Ah... ah... ah...","angry","down_raised")
+    m "{size=-3}So let me get this straight.{/size}"
+    m "{size=-3}You drugged your class mate...{/size}"
+    m "{size=-3}Just so she would come in here and watch you have sex with your headmaster.{/size}"
+    call her_head("Ah... yes...{image=textheart}{image=textheart}{image=textheart}")
+    call luna_main("The girls uniform is far too conservative!", "wink", "default", "default", "default")
+    hide screen luna
+    m "conservative?"
+    call luna_main("Indeed! Ms Granger is the only student that is dressing appropriately.", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head("ah...","silly","worried",cheeks="blush",tears="soft")
+    m "{size=-3}What else did you do to her?{/size}"
+    call her_head("I may have told her to... ah...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+    call her_head("act like the biggest slut she knows...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+    m "{size=-3}So you then?{/size}"
+    call her_head("yessss...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+    call luna_main("Sir please, pay attention.", "wink", "default", "default", "default")
+    m "Sorry Miss Lovesgood, go on."
+    call luna_main("Thank you. As I was saying I think you need to enact several new policies regarding the girls school uniform.", "wink", "default", "default", "default")
+    call luna_main("Everyone should strive to achieve the same level of perfection as Miss granger.", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head("{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+    call luna_main("I've come up with several rules that will help with this and I'd like you to enforce them.", "wink", "default", "default", "default")
+    m "alright..."
+    call luna_main("rule number one: shirts must reveal a minimum of 3 inches of cleavage.", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head("{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+    call luna_main("Rule number two: No skirt over 5 inches in length my be worn.", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head( "{image=textheart}{image=textheart}", "silly", "worried", cheeks="blush", tears="soft")
+    call luna_main("rule number three: No bras to be worn at anytime.", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head( "{image=textheart}{image=textheart}{image=textheart}", "silly", "worried", cheeks="blush", tears="soft")
+    call luna_main("And finally, rule number four: No panties to be worn at anytime.", "wink", "default", "default", "default")
+    hide screen luna
+    call her_head ("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "silly", "worried",cheeks="blush",tears="soft")
+
+    m "Why are your legs shaking, [hermione_name]?"
+    m "Are you cumming? In front of your classmate?"
+    call her_head( "Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","silly","dead")
+    m "Well, I think I will follow your example then."
+    call her_head("..............","silly","dead")
+    call nar(">You start fucking Hermione with renewed determination!")
+    call her_head("Ah! No! I can't...{image=textheart} not in front of...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","shock","baseL",cheeks="blush",tears="soft")
+    m "Shut it whore!"
+    call luna_main("Yes sir.", "wink", "default", "default", "default")
+    g4 "Argh!"
+    with hpunch
+    g4 "{size=+7}Argh!!!{/size}"
+    call cum_block
+    g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+    $ g_c_u_pic = "sex_cum_out_ani"
+    call cum_block
+    call ctc
+
+    $ uni_sperm = True
+    $ u_sperm = "characters/hermione/face/auto_08.png"
+    hide screen luna
+    call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead")
+    g4 "{size=+5}You whore! Take this!{/size}"
+    call her_head("{size=+5}!!!{/size}","silly","worried",cheeks="blush",tears="soft")
+    hide screen bld1
+    with d3
+    call ctc
+
+
+    $ g_c_u_pic = "sex_cum_out_blink_ani"
+    m "Well, that was pretty great..."
+    call her_head("Ah...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+    m "You alright there, slut?"
+    call her_head("Yes... I...","silly","dead")
+    m "Didn't you enjoy this?"
+    call her_head("....I think so...","grin","dead")
+    call ctc
+
+    call blkfade
+    call her_head("I think I came several times, [genie_name]...","soft","ahegao")
+    m "Well that'll do for now. You two best head to class."
+    call her_head("yes sir...","grin","dead")
+    call her_head("Come on Luna let's go.","grin","dead")
+    call luna_main("Hermione! WHen did you get here?", "wink", "default", "default", "default")
+    call luna_main("And what are you covered in?", "wink", "default", "default", "default")
+    call her_head("It doesn't matter...","soft","ahegao")
+    call her_head("{size=-7}You can lick it off later...{/size}","soft","ahegao")
+    
+    $ face_on_cg = False
+    call h_update_hair
+
+    hide screen ccg
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen chair_left
+    hide screen desk
+    if not daytime:
+        show screen candlefire
+
+    call her_chibi("stand","desk","base")
+    call gen_chibi("hide")
+    show screen genie
+    pause.1
+    hide screen blktone
+    hide screen bld1
+    call hide_blkfade
+    pause.5
+
+    call bld
+    stop music fadeout 4.0
+
+    m "Yes, [hermione_name]. 65 points to the \"Gryffindor\" house."
+    call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
+
+    $ hg_pf_LetsHaveSex_OBJ.points += 1
+    
+    hide screen luna
+    hide screen luna_chibi
+    call her_chibi("leave")
+    hide screen main_room
+    $ uni_sperm = False
+    hide screen hermione_main
+    hide screen fireplace_fire
+    jump enter_room_of_req

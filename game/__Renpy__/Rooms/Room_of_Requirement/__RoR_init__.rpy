@@ -73,6 +73,17 @@ label __init_variables:
                 ach_desc = "",
                 content_characters = []
             )
+     
+    if not hasattr(renpy.store,'mr_ev_FLHS'):
+        $mr_ev_FLHS = mirror_stories(
+                title = "Forgotten Lets have sex",
+                story_description = "A forgotten story about hermione",
+                start_label = "forgotten_lets_have_sex",
+                authors = ["TeamSilver"],
+                categories= [],
+                ach_desc = "Need to have seen all the scene of lets have sex",
+                content_characters = ["hermione", "luna"]
+            )
             
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_WPIIA)
@@ -81,6 +92,7 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
     $ mr_evs_list.append(mr_ev_Test)
+    $ mr_evs_list.append(mr_ev_FLHS)
     
     
     $currentpage = 0
@@ -166,6 +178,8 @@ init python:
                 return snape_events > 6
             elif self.title == "A Booty at sea":
                 return hg_pf_TimeForAnal_OBJ.points > 2 and hg_pirate_OBJ.unlocked
+            elif self.title == "Forgotten Lets have sex":
+                return hg_pf_LetsHaveSex_OBJ.points > 2
             else:
                 return True
             

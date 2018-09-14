@@ -127,13 +127,13 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
             add enemyboarder zoom cardzoom
         add "images/cardgame/dots.png" zoom cardzoom
         
-        $ lefttext = "{font=fonts/HARRYP__.ttf}{size=22}"
-        $ righttext = "{/size}{/font}"
+        $ lefttext = "{size=22}"
+        $ righttext = "{/size}"
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.topvalue)+righttext xalign 0.5 
+            text lefttext+str(card.topvalue)+righttext xalign 0.5 yalign -0.05
         
         hbox:
             xsize card_width*cardzoom
@@ -143,9 +143,9 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.rightvalue)+righttext xalign 0.97 yalign 0.475
+            text lefttext+str(card.rightvalue)+righttext xalign 1.0 yalign 0.5
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.leftvalue)+righttext xalign 0.03 yalign 0.475
+            text lefttext+str(card.leftvalue)+righttext xalign 0.00 yalign 0.5

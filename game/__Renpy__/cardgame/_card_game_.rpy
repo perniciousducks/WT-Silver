@@ -113,6 +113,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
         ysize card_height*cardzoom
         background #00000000
 
+
         if interact:
             imagebutton:
                 idle card.get_card_image()
@@ -125,7 +126,6 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
             add playerboarder zoom cardzoom
         else:
             add enemyboarder zoom cardzoom
-            
         add "images/cardgame/dots.png" zoom cardzoom
         
         $ lefttext = "{size=18}"
@@ -134,7 +134,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.topvalue)+righttext xalign 0.5 
+            text lefttext+str(card.topvalue)+righttext xalign 0.5 yalign -0.05
         
         hbox:
             xsize card_width*cardzoom
@@ -144,15 +144,14 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.rightvalue)+righttext xalign 0.97 yalign 0.475
+            text lefttext+str(card.rightvalue)+righttext xalign 1.0 yalign 0.5
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.leftvalue)+righttext xalign 0.03 yalign 0.475
+            text lefttext+str(card.leftvalue)+righttext xalign 0.00 yalign 0.5
             
 screen start_deck:
     zorder 9
     for i in range(0, len(playerdeck)):
         use cardrender(playerdeck[i],250+125*i,200, interact=False)
-        

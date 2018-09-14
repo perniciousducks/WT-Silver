@@ -5,7 +5,7 @@ label __init_variables:
         
         table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
         
-        card_width = get_witdh("images/cardgame/cheerl.png")
+        card_width = get_width("images/cardgame/cheerl.png")
         card_height = get_height("images/cardgame/cheerl.png")
         
         playerboarder = playerTint("images/cardgame/sides.png")
@@ -13,11 +13,11 @@ label __init_variables:
         
         
         if not hasattr(renpy.store,'hermione_cheer1'):
-            hermione_cheer1 = card_new(imagepath="images/cardgame/cheerl.png")
-            hermione_cheer2 = card_new(imagepath="images/cardgame/cheerl.png")
-            hermione_cheer3 = card_new(imagepath="images/cardgame/cheerl.png")
-            hermione_cheer4 = card_new(imagepath="images/cardgame/cheerl.png")
-            hermione_cheer5 = card_new(imagepath="images/cardgame/cheerl.png")
+            hermione_cheer1 = card_new(imagepath="images/cardgame/h_lewd_cheer.png")
+            hermione_cheer2 = card_new(imagepath="images/cardgame/h_wand.png")
+            hermione_cheer3 = card_new(imagepath="images/cardgame/h_show_pant.png")
+            hermione_cheer4 = card_new(imagepath="images/cardgame/h_lewd_cheer.png")
+            hermione_cheer5 = card_new(imagepath="images/cardgame/h_show_pant.png")
             hermione_cheer_en1 = card_new(playercard=False)
             hermione_cheer_en2 = card_new(playercard=False)
             hermione_cheer_en3 = card_new(playercard=False)
@@ -44,7 +44,7 @@ init python:
         
         return (x,y)
         
-    def get_witdh(image):   
+    def get_width(image):   
         return get_image_size(image)[0]
         
     def get_height(image):
@@ -81,7 +81,7 @@ init python:
     
     class card_new(object):
         playercard = True
-        imagepath = "images/cardgame/cheerl.png"
+        imagepath = "images/cardgame/h_lewd_cheer.png"
         
         topvalue = 0
         buttomvalue = 1

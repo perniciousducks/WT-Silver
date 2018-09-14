@@ -112,6 +112,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
         ysize card_height*cardzoom
         background #00000000
 
+
         if interact:
             imagebutton:
                 idle im.Scale(card.imagepath, card_width*cardzoom, card_height*cardzoom)
@@ -124,7 +125,6 @@ screen cardrender(card, xpos_card, ypos_card, interact=False):
             add playerboarder zoom cardzoom
         else:
             add enemyboarder zoom cardzoom
-            
         add "images/cardgame/dots.png" zoom cardzoom
         
         $ lefttext = "{font=fonts/HARRYP__.ttf}{size=22}"

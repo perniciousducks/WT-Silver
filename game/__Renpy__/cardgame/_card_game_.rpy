@@ -5,11 +5,10 @@ label start_cardgame:
             card.playercard = True
             player_deck.append(card)
         enemy_deck = []
-        for card in enemydeck:
+        for card in enemy_deck:
             card.playercard = False
             enemy_deck.append(card)
         reset_table_cards()
-    "Test"
     jump cardgame
     
 label cardgame:
@@ -129,8 +128,8 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
             
         add "images/cardgame/dots.png" zoom cardzoom
         
-        $ lefttext = "{font=fonts/HARRYP__.ttf}{size=22}"
-        $ righttext = "{/size}{/font}"
+        $ lefttext = "{size=18}"
+        $ righttext = "{/size}"
         
         hbox:
             xsize card_width*cardzoom
@@ -156,3 +155,4 @@ screen start_deck:
     zorder 9
     for i in range(0, len(playerdeck)):
         use cardrender(playerdeck[i],250+125*i,200, interact=False)
+        

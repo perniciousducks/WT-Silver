@@ -80,11 +80,23 @@ label __init_variables:
         if not hasattr(renpy.store,'deck_unlocked'):
             deck_unlocked = False
             deck_mail_send = False
-         
+            enemy_deck = []
+            duel_win_label = ""
+            duel_loss_label = ""
+        
+        if not hasattr(renpy.store,'beat_snape_ones'):
+            beat_snape_ones = False
+            beat_snape_twice = False
+            snape_let_duel_first = True
+        
         if not hasattr(renpy.store,'playerdeck'):
             playerdeck = [normalcl, cheer1, genieforest, nightdressbreast, snapeandelf]
         
-        enemydeck = [hermione_cheer_en1 ,hermione_cheer_en2 ,hermione_cheer_en3,hermione_cheer_en4,hermione_cheer_en5]
+        if not hasattr(renpy.store,'snape_first_deck'):
+            snape_first_deck = [normalcl, cheer1, genieforest, nightdressbreast, snapeandelf]
+            snape_second_deck = [normalcl, cheer1, genieforest, nightdressbreast, snapeandelf]
+            snape_third_deck = [normalcl, cheer1, genieforest, nightdressbreast, snapeandelf]
+        
         
         
 init python:

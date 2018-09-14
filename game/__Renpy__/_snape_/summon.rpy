@@ -150,7 +150,38 @@ label summon_snape:
 
                 "\"Never mind.\"":
                     jump snape_ready
-
+        "Let's Duel" if deck_unlocked:
+            if snape_let_duel_first:
+                m "Wizard Cards."
+                call sna_main( "What about them?","snape_05") 
+                m "You got any?"
+                call sna_main( "I do, I collected some when I was younger... never played though.","snape_09") 
+                m "Why not?"
+                call sna_main( "Didn't really have anyone to play with so I stopped buying them.","snape_06") 
+                m "You want to?"
+                call sna_main( "...", "snape_03") 
+                call sna_main( "Why not...", "snape_02") 
+                m "What do I get if I win?"
+                call sna_main( "What do you mean? there's no prizes in Wizard Cards...","snape_01") 
+                m "What..."
+                m "No wonder this game never took off..."
+                m "How about this, I beat you three times and you'll give me \[Items\]."
+                call sna_main( "And if I win?","snape_05") 
+                m "Isn't keeping me entertained in this office good enough?"
+                m "I thought our friend... partnership meant more to you than prizes."
+                call sna_main( "...","snape_01") 
+                call sna_main( "Fine, you'll get your \[Items\].","snape_06") 
+                call sna_main( "If you beat me that is...","snape_28")  
+                m "Now we're talking."
+                $ snape_let_duel_first = False
+            menu:
+                "First Duel":
+                    jump snape_first_duel
+                "Second Duel" if beat_snape_ones:
+                    jump snape_second_duel
+                "Third Duel" if beat_snape_twice:
+                    jump snape_third_duel
+                
         "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)

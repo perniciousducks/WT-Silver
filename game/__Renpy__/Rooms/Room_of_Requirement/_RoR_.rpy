@@ -258,6 +258,7 @@ label enter_room_of_req:
     hide screen room_of_req_door
     hide screen floor_7th_screen
     hide screen floor_7th_menu
+    hide screen candlefire
     
     python:
         for i in mr_evs_list:

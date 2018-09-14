@@ -13,7 +13,7 @@ label __init_variables:
         
         table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
         
-        card_width = get_witdh("images/cardgame/cheerl.png")
+        card_width = get_width("images/cardgame/cheerl.png")
         card_height = get_height("images/cardgame/cheerl.png")
         
         playerboarder = playerTint("images/cardgame/sides.png")
@@ -169,11 +169,11 @@ init python:
                      
     class card_new(object):
         playercard = True
-        imagepath = "images/cardgame/cheerl.png"
-        title = "Cheerleader BaseCard"
-        description = "She will cheer for you all the way up the wand"
-        copies = 0
         textcolor = "{color=#8f939b}"
+        copies = 0
+        description = "She will cheer for you all the way up the wand"
+        title = "Cheerleader BaseCard"
+        imagepath = "images/cardgame/h_lewd_cheer.png"
         
         topvalue = 0
         buttomvalue = 1

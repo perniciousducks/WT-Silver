@@ -344,7 +344,7 @@ label cs_select:
 
 label cs_buy:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
-    if clothes_store_order_choice != None
+    if clothes_store_order_choice != None:
         $ clothes_store_order_choice = clothes_store_selection.image
     #$ clothes_store_order_choice = clothes_store_selection
     jump clothes_menu

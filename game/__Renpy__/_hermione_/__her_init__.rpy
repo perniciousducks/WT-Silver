@@ -344,6 +344,10 @@ label her_init:
         $ her_head_tits             = 235 #NOT IN USE
 
 
+    #Update 1.34
+    if not hasattr(renpy.store,'hermione_sperm') or reset_persistants:
+        $ u_sperm = "characters/hermione/face/auto_02.png"
+        $ hermione_sperm = "characters/hermione/face/auto_02.png" #Not in use yet.
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
     ### ADD MORE BODY PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.

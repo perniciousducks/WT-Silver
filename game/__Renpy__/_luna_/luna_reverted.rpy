@@ -415,20 +415,20 @@ label luna_cum_addict_event:
     m "(She seems different...)"
     $ luna_cum = 12
     ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}","seductive" , "empty", "sad", "cheeks_full")
+    call luna_main("{image=textheart}{image=textheart}{image=textheart}","seductive" , "empty", "sad", "full")
     call luna_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}", "closed_happy", "left_stare", "sad", "default")
     call luna_main("can I have the rest? Please sir?", "wide", "default", "sad", "default")
     m "Sure..."
     ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
     $ luna_cum = 13
-    call luna_main("...","seductive" , "empty", "sad", "cheeks_full")
+    call luna_main("...","seductive" , "empty", "sad", "full")
     call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default")
     pause
     $ luna_cum = 14
-    call luna_main("...","seductive" , "empty", "sad", "cheeks_full")
+    call luna_main("...","seductive" , "empty", "sad", "full")
     call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default")
     $ luna_cum = 15
-    call luna_main("...","seductive" , "empty", "sad", "cheeks_full")
+    call luna_main("...","seductive" , "empty", "sad", "full")
     call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default")
     $ luna_wear_cum = False
     call luna_main("ah...", "closed_happy", "left_stare", "sad", "default")

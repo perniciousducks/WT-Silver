@@ -10,7 +10,7 @@ screen hermione_main:
         add hermione_buttplug xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
     if hermione_wear_ears:
         if h_ears == "cat_ears":
-            add "characters/hermione/accessories/ears/"+str(h_ears)+"_tail_"+str(h_hair_color)+".png" xpos hermione_xpos ypos hermione_ypos
+            add "characters/hermione/accessories/ears/"+str(h_ears)+"_tail_"+str(h_hair_color)+".png" xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
 
 
     ### BODY LAYERS ###
@@ -109,7 +109,7 @@ screen hermione_main:
 
     if uni_sperm:
         add u_sperm xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
-    if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
+    elif sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "characters/hermione/face/auto_02.png" xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "characters/hermione/face/auto_03.png" xpos hermione_xpos ypos hermione_ypos zoom (1.0/scaleratio)
@@ -322,7 +322,7 @@ screen hermione_head:
     ### SPERM LAYERS ###
     if uni_sperm:
         add u_sperm xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
-    if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
+    elif sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "characters/hermione/face/auto_02.png" xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "characters/hermione/face/auto_03.png" xpos hermione_head_xpos ypos hermione_head_ypos zoom (1.0/scaleratio)

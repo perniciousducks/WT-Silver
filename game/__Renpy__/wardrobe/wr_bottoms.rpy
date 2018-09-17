@@ -522,7 +522,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                         m "So what you are telling me is, you broke the rules?"
                         call her_main("No I did not, [genie_name]!","clench","angryCl")
                         call her_main("(I had no choice...)","annoyed","angryL")
-                        m "Stop with the excuses and put on those jeans, [hermione_main]."
+                        m "Stop with the excuses and put on those jeans, [hermione_name]."
                         call her_main("Fine, [genie_name]. If I have to.","open","closed")
                         call her_main("(Just hope those Slytherins will stop calling me mudblood because of this...)","annoyed","angryL")
                     elif whoring < 11:

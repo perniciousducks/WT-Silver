@@ -263,7 +263,13 @@ label set_cho_clothing(outfit=""):
 
     if outfit == "quidditch":
         #Temporary way of doing outfits for Cho for now
-        $ c_robe                = "quidditch"
+
+        if cho_quidd_points in [1,2,3, 5,6]: #Not 4 #Wears robe!
+            $ c_robe                = "quidditch"
+            $ cho_wear_robe = True
+        else:
+            $ cho_wear_robe = False
+
         $ c_top                 = "sweater"
         $ c_bra                 = "bra_sport"
         $ c_panties             = "panties_sport"
@@ -280,7 +286,6 @@ label set_cho_clothing(outfit=""):
 
         $ cho_wear_top = True
         $ cho_wear_bottom = True
-        $ cho_wear_robe = True
         $ cho_wear_bra = True
         $ cho_wear_panties = True
         $ cho_wear_gloves = True

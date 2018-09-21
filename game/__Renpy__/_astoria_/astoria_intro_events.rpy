@@ -1167,6 +1167,12 @@ label astoria_book_intro: #Tell Astoria that you have a book of spells as well a
     $ astoria_busy = True
     $ tonks_busy = True
 
+    $ astoria_tonks_event_in_progress = True
+    if not astoria_tonks_1_completed:
+        $ astoria_affection = 1 #First event
+    else:
+        $ astoria_affection = 2
+
     call nar(">Astoria sprints out the door, giggling as she goes.")
 
     jump main_room

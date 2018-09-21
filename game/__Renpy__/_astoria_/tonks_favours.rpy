@@ -51,8 +51,15 @@ label astoria_tonks_1: #First time astoria sent to tonks.
     m "Well... If you want to keep learning new spells you might have to..."
     call ast_main("*hmph*-- you haven't even taught me any yet!","clench","angry","angry","mid")
     call ast_main("They're probably not even fun...","pout","angry","angry","R")
-    m "Why don't you come over here then and we can start reading over the first one."
-    call ast_main("alright...","grin","base","base","mid")
+
+    if not snape_gave_spellbook:
+        m "(Right. I still need that spellbook.)"
+        m "Next time, [astoria_name]."
+        m "I've got... uhm-... I've got stuff to take care of, yes."
+        call ast_main("*I don't believe that one bit...","pout","angry","angry","R")
+    else:
+        m "Why don't you come over here then and we can start reading over the first one."
+        call ast_main("alright...","grin","base","base","mid")
 
     $ astoria_tonks_1_completed = True
 

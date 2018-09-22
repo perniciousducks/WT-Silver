@@ -174,13 +174,20 @@ label summon_snape:
                 call sna_main( "If you beat me that is...","snape_28")  
                 m "Now we're talking."
                 $ snape_let_duel_first = False
+            label snape_duel_menu:
             menu:
                 "First Duel":
                     jump snape_first_duel
                 "Second Duel" if beat_snape_ones:
                     jump snape_second_duel
+                "{color=#858585}You need to beat the first duel{/color}" if not beat_snape_ones:
+                    jump snape_duel_menu
                 "Third Duel" if beat_snape_twice:
                     jump snape_third_duel
+                "{color=#858585}You need to beat the second duel{/color}" if not beat_snape_twice:
+                    jump snape_duel_menu
+                "Never mind":
+                    jump snape_ready
                 
         "-Never mind-":
             stop music fadeout 1.0

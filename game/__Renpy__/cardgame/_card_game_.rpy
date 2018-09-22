@@ -1,29 +1,28 @@
-label start_cardgame:
+label setup_deck(opppent_deck): 
     python:
         player_deck = []
         for card in playerdeck:
             card.playercard = True
             player_deck.append(card)
         enemy_deck = []
-        for card in enemy_deck:
+        for card in opppent_deck:
             card.playercard = False
             enemy_deck.append(card)
         reset_table_cards()
-    jump cardgame
+    return
     
 label cardgame:
-    
     show screen card_battle(player_deck,enemy_deck)
     $ _return = ui.interact()
 
     if _return in player_deck:
         $ selectcard = player_deck.index(_return)
-        jump cardgame
+        return "NewTurn"
     
     elif _return == "Close":
         $ selectcard = -1
         hide screen card_battle
-        jump enter_room_of_req
+        return "Close"
 
     else:
         if not selectcard == -1:
@@ -39,11 +38,10 @@ label cardgame:
             
             pause
             if len(player_deck) == 0 OR len(enemy_deck) == 0:
-                jump check_winner
-            else:
-                jump enemy_turn
+                return
+            call enemy_turn
         else:
-            jump cardgame
+            return "NewTurn"
         
 label enemy_turn:
     python:
@@ -64,21 +62,8 @@ label enemy_turn:
         table_cards[x][y] = high_score_card        
         table_cards[x][y].playercard = False
         update_table(x,y)
-        
-    jump cardgame
-        
-
-label check_winner:
-
-    if check_winner():
-        nar "yea you won"
-    else:
-        nar "you lost"
-    
-    $ selectcard = -1
-    hide screen card_battle
-    jump enter_room_of_req
-    
+    return
+          
 screen card_battle(l_playerdeck, l_enemydeck):
     imagemap:
         ground "images/cardgame/card_table.png"

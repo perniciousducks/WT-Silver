@@ -3,7 +3,7 @@
 label sna_main(text="",face="",xpos=snape_xpos,ypos=snape_ypos,trans=None, remove=False):
     hide screen snape_main
     hide screen snape_head
-    show screen bld1
+    hide screen bld1
     
     if remove == True:
         pause 0.1

@@ -17,11 +17,13 @@ label cardgame:
 
     if _return in player_deck:
         $ selectcard = player_deck.index(_return)
+        $ response_card = "NewTurn"
         return "NewTurn"
     
     elif _return == "Close":
         $ selectcard = -1
         hide screen card_battle
+        $ response_card = "Close"
         return "Close"
 
     else:
@@ -37,10 +39,15 @@ label cardgame:
             $ update_table(x,y)
             
             pause
-            if len(player_deck) == 0 OR len(enemy_deck) == 0:
-                return
+            if (len(player_deck) == 0 or len(enemy_deck) == 0):
+                $ response_card = "EndGame"
+                hide screen card_battle
+                return "EndGame"
             call enemy_turn
+            $ response_card = "AfterEnemy"
+            return "NewTurn"
         else:
+            $ response_card = "NewTurn"
             return "NewTurn"
         
 label enemy_turn:

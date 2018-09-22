@@ -177,7 +177,6 @@ label play_sound(sound=""):
     return
 
 label play_music(music=""):
-
     if music in ["stop","pause"]:
         stop music fadeout 1.0
 

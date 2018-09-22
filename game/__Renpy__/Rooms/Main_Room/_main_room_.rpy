@@ -26,17 +26,7 @@ screen main_room_menu:
         idle "images/main_room/door.png"
         hover "images/main_room/door_hover.png"
         action [Hide("main_room_menu"), Hide("animation_feather"), Jump("door")]
-
-    
-#    imagebutton: # CUPBOARD HAT
-#        xpos 120+140
-#        ypos 280
-#        focus_mask True
-#        xanchor "center"
-#        yanchor "center"
-#        idle "images/main_room/cupboard/idle_hat.png"
-#        hover "images/main_room/cupboard/hover_hat.png"
-#        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
+  
     if renpy.variant('android'):
         imagemap: # CUPBOARD SCROLL
             xpos 120+140
@@ -78,36 +68,7 @@ screen main_room_menu:
             hover "images/main_room/cupboard/hover_cabinet.png"
             action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
     
-#    imagebutton: # CUPBOARD LEFT
-#        xpos 120+140
-#        ypos 280
-#        focus_mask True
-#        xanchor "center"
-#        yanchor "center"
-#        idle "images/main_room/cupboard/idle_lower_left.png"
-#        hover "images/main_room/cupboard/hover_lower_left.png"
-#        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
-    
-#    imagebutton: # CUPBOARD RIGHT
-#        xpos 120+140
-#        ypos 280
-#        focus_mask True
-#        xanchor "center"
-#        yanchor "center"
-#        idle "images/main_room/cupboard/idle_lower_right.png"
-#        hover "images/main_room/cupboard/hover_lower_right.png"
-#        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
-        
-    # imagebutton: # OLD CUPBOARD
-        # xpos 120+140
-        # ypos 280
-        # focus_mask True
-        # xanchor "center"
-        # yanchor "center"
-        # idle "images/main_room/02_cupboard.png"
-        # hover "images/main_room/02_cupboard_02.png"
-        # action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
-        
+              
     if package_is_here:
         imagebutton: # THE PACKAGE
                 xpos 260+140

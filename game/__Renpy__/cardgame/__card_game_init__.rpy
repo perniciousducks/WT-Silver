@@ -234,7 +234,8 @@ init python:
         def get_description(self):
             return self.textcolor+self.description+"{/color}"
             
-        
+        def clone(self):
+            return card_new()
                     
         def getAIScore(self, table_of_cards):
             high_score = 0

@@ -77,7 +77,7 @@ label snape_third_duel:
     hide screen genie
     hide screen candlefire
     call sna_main(remove=True)
-
+    call play_music("grape_soda")
     $ response_card = ""
     if renpy.random.randint(0,1) == 0:
         call enemy_turn

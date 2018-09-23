@@ -206,6 +206,9 @@ label play_music(music=""):
 
     if music in ["boss_theme"]:
         play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
+    
+    if music in ["boss_card_theme"]:
+        play music "music/Juhani_Junkala_Retro_Game_Music_Pack_Level_1_Normalized.mp3" fadein 1 fadeout 1
 
     if music in ["sad","grape_soda"]:
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 1 fadeout 1

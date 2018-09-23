@@ -61,19 +61,7 @@ label __init_variables:
                 ach_desc = "Finish the \"Time for Anal\" Private favours and bought the pirate outfit",
                 content_characters = ["hermione"]
             )
-    
-    
-    if not hasattr(renpy.store,'mr_ev_Test'):
-        $mr_ev_Test = mirror_stories(
-                title = "This is a test of card game",
-                story_description = "Parody of the game show of \"whose points is it anyway?\"",
-                start_label = "start_cardgame",
-                authors = ["TeamSilver"],
-                categories= [],
-                ach_desc = "",
-                content_characters = []
-            )
-     
+      
     if not hasattr(renpy.store,'mr_ev_FLHS'):
         $mr_ev_FLHS = mirror_stories(
                 title = "Forgotten Lets have sex",
@@ -91,7 +79,6 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_ABTTD)
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
-    $ mr_evs_list.append(mr_ev_Test)
     $ mr_evs_list.append(mr_ev_FLHS)
     
     

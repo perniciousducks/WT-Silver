@@ -7,11 +7,11 @@ label astoria_tonks_event: #send astoria to go see tonks
     if astoria_tonks_3_completed and not astoria_wardrobe_unlocked: #Unlocks Astoria's Wardrobe.
         jump astoria_tonks_wardrobe_unlock
 
-    if astoria_affection == 1 and not astoria_tonks_1_completed:
+    if astoria_affection <= 1 and not astoria_tonks_1_completed:
         jump astoria_tonks_1
-    elif astoria_affection == 2 and not astoria_tonks_2_completed:
+    elif astoria_affection <= 2 and not astoria_tonks_2_completed:
         jump astoria_tonks_2
-    elif astoria_affection == 3 and not astoria_tonks_3_completed:
+    elif astoria_affection <= 3 and not astoria_tonks_3_completed:
         jump astoria_tonks_3
     else: #Repeatable events.
         jump astoria_tonks_random

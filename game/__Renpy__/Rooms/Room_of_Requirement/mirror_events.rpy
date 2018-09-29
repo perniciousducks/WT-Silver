@@ -13,10 +13,11 @@ label a_bad_time_to_disrobe_part_1:
     call hide_room_req
     show screen main_room
     show screen genie
+    $ daytime = True
     show screen blkfade
 
     nar "In this story the genie has found an invisibility cloak."
-    nar "And with the cloak comes great oportunities"
+    nar "And with the cloak comes great opportunities"
     nar "Title: A bad time to disrobe."
 
     hide screen blkfade
@@ -58,6 +59,7 @@ label a_bad_time_to_disrobe_part_1:
     with d3
     hide screen main_room
     hide screen genie
+    show screen candlefire
     nar "Later that evening. Hermione returns."
     $ temp_time = daytime
     $ daytime = False
@@ -99,7 +101,7 @@ label a_bad_time_to_disrobe_part_1:
     m "I'm sorry miss Granger but you're going to have to do better than this."
     m "I expect better from you by now."
 
-    call her_main( "So, no points then?", "angry", "angry" )
+    call her_main( "So, no points then?", "angry", "annoyed" )
 
     m "No, I know you can do better."
 
@@ -107,12 +109,13 @@ label a_bad_time_to_disrobe_part_1:
 
     m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
 
-    call her_main( "Thank you professor... I'll remember that for next time", "grin", "happy" )
+    call her_main( "Thank you professor... I'll remember that for next time.", "grin", "happy" )
 
     show screen blkfade
     with d3
     hide screen main_room
     hide screen genie
+    hide screen candlefire
     show screen quistion_pop_up("Hermione will remember that")
     nar "Hermione returns the next morning, looking nervous but more determined than yesterday."
     $ daytime = True
@@ -142,6 +145,7 @@ label a_bad_time_to_disrobe_part_1:
     $ daytime = False
     show screen main_room
     show screen genie
+    show screen candlefire
     call her_chibi("top_naked", "desk", "base")
     call h_equip_temp_outfit(hg_standart_school_noshirt_OBJ)
     hide screen day_to_night
@@ -205,6 +209,7 @@ label a_bad_time_to_disrobe_part_1:
     hide screen genie
     hide screen main_room
     hide screen hermione_main
+    hide screen candlefire
     call reset_hermione_main
     call h_unequip_temp_outfit
     jump enter_room_of_req
@@ -286,6 +291,7 @@ label a_bad_time_to_disrobe_part_2:
     call play_standart_theme
     show screen main_room
     show screen genie
+    show screen candlefire
     call h_unequip_temp_outfit()
     call h_action("covering_uniform")
     hide screen day_to_night
@@ -370,6 +376,7 @@ label a_bad_time_to_disrobe_part_2:
     hide screen genie
     hide screen main_room
     hide screen hermione_main
+    hide screen candlefire
     $ daytime = temp_time
     call play_standart_theme
     call reset_hermione_main
@@ -397,7 +404,7 @@ label whose_points:
     call her_main("...", "grin","worried",cheeks="blush", xpos="left")
 
     m "The ravishing ravenclaw who'll rock your socks off. Luna! "
-    call luna_main("heh...hello.", "wink", "default", "default", "default")
+    call luna_main("heh...hello.", "wink", "default", "default", "grin")
 
     m "And the small girl with a big personality. Astoria!"
     call ast_main( "Hey!","scream" ,"angry" ,"angry" ,"angry", xpos="right" )
@@ -1120,29 +1127,29 @@ label forgotten_lets_have_sex:
     ">The door opens as Luna Lovegood walks in."
     call play_sound("door") #Sound of a door opening.
     $ luna_chibi("stand", 540, 250)
-    call luna_main("Hello Professor!", "wink", "default", "default", "default")
+    call luna_main("Hello Professor!", "seductive", "default", "raised", "smile_large")
     hide screen luna
     #Stop sex
     m "....."
     call her_head("......","shock","worriedCl")
 
-    call luna_main("I wanted to talk to you about the school uniform.", "wink", "default", "default", "default")
+    call luna_main("I wanted to talk to you about the school uniform.", "wink", "default", "default", "talk")
     hide screen luna
     m "The uniform?"
-    call luna_main("Yes, I have some ideas about some necessary changes and I'd like you to listen.", "wink", "default", "default", "default")
+    call luna_main("Yes, I have a few ideas about some necessary changes and I'd like for you to listen.", "closed", "default", "default", "pout")
     hide screen luna
     m "{size=-3}What's going on here, [hermione_name]?{/size}"
 
     call her_head("I may have given her a suggestibility serum...","silly","ahegao")
     m "{size=-3}A suggestibility serum?{/size}"
-    call luna_main("Who are you talking to sir?", "wink", "default", "default", "default")
+    call luna_main("Who are you talking to sir?", "wide", "default", "default", "smile_large")
     hide screen luna
     m "Oh, um.... no one, just ignore me..."
-    call luna_main("Ok then, I'll ignore you...", "wink", "default", "default", "default")
+    call luna_main("Ok then, I'll ignore you...", "default", "empty", "default", "default")
     hide screen luna
     call her_head("I may have suggested that she come here...","silly","ahegao")
     call her_head("And that she be unable to see me...","silly","ahegao")
-    call luna_main("As I was saying sir, the school uniform simply cannot stay as it is.", "wink", "default", "default", "default")
+    call luna_main("As I was saying sir, the school uniform simply cannot stay as it is.", "closed", "default", "default", "pout")
     hide screen luna
 
     show screen blktone
@@ -1155,10 +1162,10 @@ label forgotten_lets_have_sex:
     m "{size=-3}You drugged your class mate...{/size}"
     m "{size=-3}Just so she would come in here and watch you have sex with your headmaster.{/size}"
     call her_head("Ah... yes...{image=textheart}{image=textheart}{image=textheart}")
-    call luna_main("The girls uniform is far too conservative!", "wink", "default", "default", "default")
+    call luna_main("The girls uniform is far too conservative!", "mad", "default", "mad", "pout")
     hide screen luna
     m "conservative?"
-    call luna_main("Indeed! Ms Granger is the only student that is dressing appropriately.", "wink", "default", "default", "default")
+    call luna_main("Indeed! Ms Granger is the only student that is dressing appropriately.", "default", "default", "sad", "talk")
     hide screen luna
     call her_head("ah...","silly","worried",cheeks="blush",tears="soft")
     m "{size=-3}What else did you do to her?{/size}"
@@ -1166,24 +1173,24 @@ label forgotten_lets_have_sex:
     call her_head("act like the biggest slut she knows...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
     m "{size=-3}So you then?{/size}"
     call her_head("yessss...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
-    call luna_main("Sir please, pay attention.", "wink", "default", "default", "default")
-    m "Sorry Miss Lovesgood, go on."
-    call luna_main("Thank you. As I was saying I think you need to enact several new policies regarding the girls school uniform.", "wink", "default", "default", "default")
-    call luna_main("Everyone should strive to achieve the same level of perfection as Miss granger.", "wink", "default", "default", "default")
+    call luna_main("Sir please, pay attention.", "doubtful", "down", "mad", "upset")
+    m "Sorry Miss Lovegood, go on."
+    call luna_main("Thank you. As I was saying, I think you need to enact several new policies regarding the girls school uniform.", "wink", "default", "default", "talk")
+    call luna_main("Everyone should strive to achieve the same level of perfection as Miss granger.", "closed", "default", "default", "grin")
     hide screen luna
     call her_head("{image=textheart}","silly","worried",cheeks="blush",tears="soft")
-    call luna_main("I've come up with several rules that will help with this and I'd like you to enforce them.", "wink", "default", "default", "default")
+    call luna_main("I've come up with several rules that will help with this and I'd like you to enforce them.", "closed_happy", "default", "default", "smile_large")
     m "alright..."
-    call luna_main("rule number one: shirts must reveal a minimum of 3 inches of cleavage.", "wink", "default", "default", "default")
+    call luna_main("rule number one: shirts must reveal a minimum of 3 inches of cleavage.", "default", "default", "default", "talk")
     hide screen luna
     call her_head("{image=textheart}","silly","worried",cheeks="blush",tears="soft")
-    call luna_main("Rule number two: No skirt over 5 inches in length my be worn.", "wink", "default", "default", "default")
+    call luna_main("Rule number two: No skirt over 5 inches in length my be worn.", "wink", "default", "default", "smile_large")
     hide screen luna
     call her_head( "{image=textheart}{image=textheart}", "silly", "worried", cheeks="blush", tears="soft")
-    call luna_main("rule number three: No bras to be worn at anytime.", "wink", "default", "default", "default")
+    call luna_main("rule number three: No bras to be worn at anytime.", "closed", "default", "default", "open")
     hide screen luna
     call her_head( "{image=textheart}{image=textheart}{image=textheart}", "silly", "worried", cheeks="blush", tears="soft")
-    call luna_main("And finally, rule number four: No panties to be worn at anytime.", "wink", "default", "default", "default")
+    call luna_main("And finally, rule number four: No panties to be worn at anytime.", "mad", "default", "mad", "pout")
     hide screen luna
     call her_head ("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "silly", "worried",cheeks="blush",tears="soft")
 
@@ -1195,7 +1202,7 @@ label forgotten_lets_have_sex:
     call nar(">You start fucking Hermione with renewed determination!")
     call her_head("Ah! No! I can't...{image=textheart} not in front of...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","shock","baseL",cheeks="blush",tears="soft")
     m "Shut it whore!"
-    call luna_main("Yes sir.", "wink", "default", "default", "default")
+    call luna_main("Yes sir.", "default", "empty", "default", "default")
     g4 "Argh!"
     with hpunch
     g4 "{size=+7}Argh!!!{/size}"
@@ -1210,6 +1217,8 @@ label forgotten_lets_have_sex:
     hide screen luna
     call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead")
     g4 "{size=+5}You whore! Take this!{/size}"
+    call luna_main ("take what?", "default", "empty", "default", "open")
+    hide screen luna
     call her_head("{size=+5}!!!{/size}","silly","worried",cheeks="blush",tears="soft")
     hide screen bld1
     with d3
@@ -1230,12 +1239,13 @@ label forgotten_lets_have_sex:
     m "Well that'll do for now. You two best head to class."
     call her_head("yes sir...","grin","dead")
     call her_head("Come on Luna let's go.","grin","dead")
-    call luna_main("Hermione! WHen did you get here?", "wink", "default", "default", "default")
-    call luna_main("And what are you covered in?", "wink", "default", "default", "default")
+    call luna_main("Hermione! When did you get here?", "wide", "right", "default", "pout")
+    call luna_main("And what are you covered in?", "default", "down", "default", "talk")
     call her_head("It doesn't matter...","soft","ahegao")
     call her_head("{size=-7}You can lick it off later...{/size}","soft","ahegao")
+    hide screen luna
     
-    $ face_on_cg = False
+    $ face_on_cg = True
     call h_update_hair
 
     hide screen ccg
@@ -1259,9 +1269,6 @@ label forgotten_lets_have_sex:
     call bld
     stop music fadeout 4.0
 
-    m "Yes, [hermione_name]. 65 points to the \"Gryffindor\" house."
-    call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
-
     $ hg_pf_LetsHaveSex_OBJ.points += 1
     
     hide screen luna
@@ -1271,4 +1278,5 @@ label forgotten_lets_have_sex:
     $ uni_sperm = False
     hide screen hermione_main
     hide screen fireplace_fire
+    hide screen candlefire
     jump enter_room_of_req

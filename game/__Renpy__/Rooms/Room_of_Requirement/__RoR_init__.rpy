@@ -64,8 +64,8 @@ label __init_variables:
       
     if not hasattr(renpy.store,'mr_ev_FLHS'):
         $mr_ev_FLHS = mirror_stories(
-                title = "Forgotten Lets have sex",
-                story_description = "A forgotten story about hermione",
+                title = "Luna and Hermione Deleted Scene",
+                story_description = "A deleted scene with Luna and Hermione",
                 start_label = "forgotten_lets_have_sex",
                 authors = ["TeamSilver"],
                 categories= [],

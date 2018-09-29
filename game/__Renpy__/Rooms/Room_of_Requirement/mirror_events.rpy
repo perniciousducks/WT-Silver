@@ -13,6 +13,7 @@ label a_bad_time_to_disrobe_part_1:
     call hide_room_req
     show screen main_room
     show screen genie
+    $ temp_time = daytime
     $ daytime = True
     show screen blkfade
 
@@ -61,7 +62,6 @@ label a_bad_time_to_disrobe_part_1:
     hide screen genie
     show screen candlefire
     nar "Later that evening. Hermione returns."
-    $ temp_time = daytime
     $ daytime = False
     show screen main_room
     show screen genie

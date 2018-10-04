@@ -240,7 +240,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
 
 label potion_scene_1_2: #Luna potion
     m "Might I offer you a drink?"
-    call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base")
+    call her_main("You're not trying to get me drunk or something are you?","normal","base")
     m "Nothing of the sort, just a harmless little potion."
     call nar(">You hand her the potion bottle.")
     call her_main("Another of your mysterious potions?","open","suspicious")

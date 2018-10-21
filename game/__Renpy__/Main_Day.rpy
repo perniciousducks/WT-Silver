@@ -167,7 +167,7 @@ if game_difficulty <= 1:   # Easy difficulty
         $ mad -= 3
     if cho_mad >= 1:
         $ cho_mad -= 3
-elif game_difficutly == 2: # Normal difficulty
+elif game_difficulty == 2: # Normal difficulty
     if mad >= 1:
         $ mad -= 2
     if cho_mad >= 1:

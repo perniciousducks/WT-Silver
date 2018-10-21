@@ -4,12 +4,14 @@
 label hide_characters:
 
     hide screen hermione_main
-    #hide screen luna #Needs testing her events.
+    hide screen luna_main
     hide screen cho_chang
     hide screen astoria_main
     hide screen susan_main
+
     hide screen tonks_main
     hide screen snape_main
+    hide screen genie_main
 
     #Do not add transitions. Use one after return.
 
@@ -21,19 +23,15 @@ label main_room:
     show screen blkfade
     with d3
 
-    hide screen chair_left
-    hide screen desk
-    hide screen jerking_off_01 #Hermione topless. Genie jerking off.
     hide screen bld1
     hide screen blktone
     call her_chibi("hide")
+    call lun_chibi("hide")
     call sna_chibi("hide")
-    call gen_chibi("hide")
 
-    pause.2
-
-    show screen genie
-    call hide_blkfade
+    call gen_chibi("sit_behind_desk")
+    hide screen blkfade
+    with d3
 
     $ menu_x = 0.5
     $ menu_y = 0.5

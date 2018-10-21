@@ -355,12 +355,12 @@ label store_items_init:
     if not hasattr(renpy.store,'hg_lingerie_silk_OBJ'):
         $ hg_lingerie_silk_OBJ = store_item_class()
     $ hg_lingerie_silk_OBJ.id = "hg_lingerie_silk"
-    $ hg_lingerie_silk_OBJ.name = "Maid Lingerie"
+    $ hg_lingerie_silk_OBJ.name = "Silk Lingerie"
     $ hg_lingerie_silk_OBJ.items = ["bra","panties","garter","stockings"]
     $ hg_lingerie_silk_OBJ.cost = 80
     $ hg_lingerie_silk_OBJ.wait_time = 1
     $ hg_lingerie_silk_OBJ.image = "hg_lingerie_silk.png"
-    $ hg_lingerie_silk_OBJ.description = ">A smooth and comfortable lace bra and panty set."
+    $ hg_lingerie_silk_OBJ.description = ">A smooth and comfortable silk bra and panty set."
 
     if not hasattr(renpy.store,'hg_lingerie_maid_OBJ'):
         $ hg_lingerie_maid_OBJ = store_item_class()
@@ -489,7 +489,7 @@ label store_items_init:
         $ hg_muggle_hot_OBJ = store_item_class()
     $ hg_muggle_hot_OBJ.id = "hg_muggle_hot"
     $ hg_muggle_hot_OBJ.name = "Hot Weather Clothing"
-    $ hg_muggle_hot_OBJ.items = ["top","skirt","stockings"]
+    $ hg_muggle_hot_OBJ.items = ["top","hot pants","stockings"]
     $ hg_muggle_hot_OBJ.unlockable = True # Not purchasable. Unlocks randomly when summoning Hermione.
     $ hg_muggle_hot_OBJ.image = "hg_muggle_hot.png"
 
@@ -559,7 +559,48 @@ label store_items_init:
             i.type = "set"
 
 
-    # Astoria
+    # Luna Sets
+    if not hasattr(renpy.store,'ll_cheer_r_OBJ'):
+        $ ll_cheer_r_OBJ = store_item_class()
+    $ ll_cheer_r_OBJ.id = "ll_cheer_r"
+    $ ll_cheer_r_OBJ.name = "Ravenclaw Cheerleader" #British english...
+    $ ll_cheer_r_OBJ.cost = 80
+    $ ll_cheer_r_OBJ.items = ["top","bottom","stockings"]
+    $ ll_cheer_r_OBJ.wait_time = 2
+    $ ll_cheer_r_OBJ.image = "ll_cheer_r.png"
+    $ ll_cheer_r_OBJ.description = ">The Ravenclaw version of the Cheerleader attire."
+
+    if not hasattr(renpy.store,'ll_lingerie_silk_OBJ'):
+        $ ll_lingerie_silk_OBJ = store_item_class()
+    $ ll_lingerie_silk_OBJ.id = "ll_lingerie_silk"
+    $ ll_lingerie_silk_OBJ.name = "Silk Lingerie"
+    $ ll_lingerie_silk_OBJ.items = ["bra","panties"]
+    $ ll_lingerie_silk_OBJ.cost = 80
+    $ ll_lingerie_silk_OBJ.wait_time = 1
+    $ ll_lingerie_silk_OBJ.image = "ll_lingerie_silk.png"
+    $ ll_lingerie_silk_OBJ.description = ">A smooth and comfortable silk bra and panty set."
+
+    if not hasattr(renpy.store,'ll_pyjama_OBJ'):
+        $ ll_pyjama_OBJ = store_item_class()
+    $ ll_pyjama_OBJ.id = "ll_pyjama"
+    $ ll_pyjama_OBJ.name = "Pyjama" #British english...
+    #$ ll_pyjama_OBJ.unlockable = True
+    $ ll_pyjama_OBJ.cost = 40
+    $ ll_pyjama_OBJ.items = ["top","bottom"]
+    $ ll_pyjama_OBJ.wait_time = 1
+    $ ll_pyjama_OBJ.image = "ll_pyjama.png"
+    $ ll_pyjama_OBJ.description = ">A quirky pyjama for a quirky girl."
+
+    $ luna_clothing_sets_list = []
+    $ luna_clothing_sets_list.append(ll_cheer_r_OBJ)
+    $ luna_clothing_sets_list.append(ll_lingerie_silk_OBJ)
+    $ luna_clothing_sets_list.append(ll_pyjama_OBJ)
+    python:
+        for i in luna_clothing_sets_list:
+            i.type = "set"
+
+
+    # Astoria Sets
     if not hasattr(renpy.store,'ag_boss_uniform_OBJ'): #Like in Hugo Boss...
         $ ag_boss_uniform_OBJ = store_item_class()
     $ ag_boss_uniform_OBJ.id = "ag_boss_uniform"
@@ -570,7 +611,6 @@ label store_items_init:
     $ ag_boss_uniform_OBJ.image = "ag_boss_uniform.png"
     $ ag_boss_uniform_OBJ.description = ">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo..."
 
-    #Lingerie
     if not hasattr(renpy.store,'ag_lingerie_lace_OBJ'):
         $ ag_lingerie_lace_OBJ = store_item_class()
     $ ag_lingerie_lace_OBJ.id = "ag_lingerie_lace"
@@ -591,7 +631,6 @@ label store_items_init:
     $ ag_lingerie_lewd_OBJ.image = "ag_lingerie_lewd.png"
     $ ag_lingerie_lewd_OBJ.description ="> A very rewealing lingerie set."
 
-    #One-Piece
     if not hasattr(renpy.store,'ag_nighty_silk_OBJ'):
         $ ag_nighty_silk_OBJ = store_item_class()
     $ ag_nighty_silk_OBJ.id = "ag_nighty_silk"
@@ -612,8 +651,43 @@ label store_items_init:
             i.type = "set"
 
 
+    # Susan Sets
 
-    #Outfits
+    #ADD
+
+    $ susan_clothing_sets_list = []
+    #$ susan_clothing_sets_list.append()
+
+
+    # Cho Sets
+
+    if not hasattr(renpy.store,'cc_muggle_party_OBJ'): # Not a store item!
+        $ cc_muggle_hot_OBJ = store_item_class()
+    $ cc_muggle_hot_OBJ.id = "cc_muggle_hot"
+    $ cc_muggle_hot_OBJ.name = "Hot Weather Clothing"
+    $ cc_muggle_hot_OBJ.items = ["top","pants","stockings"]
+    $ cc_muggle_hot_OBJ.unlockable = True # Not purchasable. Unlocks randomly when summoning Cho.
+    $ cc_muggle_hot_OBJ.image = "cc_muggle_hot.png"
+
+    if not hasattr(renpy.store,'cc_party_OBJ'): # Not a store item!
+        $ cc_party_OBJ = store_item_class()
+    $ cc_party_OBJ.id = "cc_party"
+    $ cc_party_OBJ.name = "Party Clothing"
+    $ cc_party_OBJ.items = ["bra","skirt"]
+    $ cc_party_OBJ.unlockable = True
+    $ cc_party_OBJ.image = "cc_party.png"
+
+    $ cho_clothing_sets_list = []
+    $ cho_clothing_sets_list.append(cc_muggle_hot_OBJ)
+    $ cho_clothing_sets_list.append(cc_party_OBJ)
+    python:
+        for i in cho_clothing_sets_list:
+            i.type = "set"
+
+
+    ### OUTFITS ###
+
+    # Hermione Outfits
     if not hasattr(renpy.store,'hg_maid_OBJ'): #important!
         $ hg_maid_OBJ = hermione_outfit()
     $ hg_maid_OBJ.name = "Maid"
@@ -833,6 +907,13 @@ label store_items_init:
     $ hermione_outfits_list.append(hg_egypt_OBJ)
 
 
+    # Luna Outfits
+
+    #ADD
+
+    $ luna_outfits_list = []
+    #$ luna_outfits_list.append()
+
 
     # Astoria
     if not hasattr(renpy.store,'ag_ball_dress_OBJ'):
@@ -877,6 +958,44 @@ label store_items_init:
     $ astoria_outfits_list.append(ag_lazy_short_OBJ)
 
 
+    # Susan Outfits
+
+    #ADD
+
+    $ susan_outfits_list = []
+    #$ susan_outfits_list.append()
+
+
+    # Cho Outfits
+    if not hasattr(renpy.store,'cc_quidditch_OBJ'):
+        $ cc_quidditch_OBJ = hermione_outfit()
+    $ cc_quidditch_OBJ.name = "Quidditch Outfit"
+    $ cc_quidditch_OBJ.unlockable = True
+    #$ cc_quidditch_OBJ.cost = 100
+    $ cc_quidditch_OBJ.type = "outfit"
+    $ cc_quidditch_OBJ.items = ["outfit"]
+    $ cc_quidditch_OBJ.wait_time = 1
+    $ cc_quidditch_OBJ.image = "cc_quidditch.png"
+    $ cc_quidditch_OBJ.outfit_layers = []
+    call update_cho_quidditch_outfit #Adds outfit layers.
+    $ cc_quidditch_OBJ.description = ">Cho's Quidditch outfit."
+
+    if not hasattr(renpy.store,'cc_traditional_dress_OBJ'):
+        $ cc_traditional_dress_OBJ = hermione_outfit()
+    $ cc_traditional_dress_OBJ.name = "Traditional Dress"
+    $ cc_traditional_dress_OBJ.cost = 300
+    $ cc_traditional_dress_OBJ.type = "dress"
+    $ cc_traditional_dress_OBJ.items = ["outfit"]
+    $ cc_traditional_dress_OBJ.wait_time = 4
+    $ cc_traditional_dress_OBJ.image = "cc_traditional_dress.png"
+    $ cc_traditional_dress_OBJ.outfit_layers = ["traditional_dress.png"]
+    $ cc_traditional_dress_OBJ.description = ">A traditional dress inspired by chinese culture."
+
+    $ cho_outfits_list = []
+    $ cho_outfits_list.append(cc_quidditch_OBJ)
+    $ cho_outfits_list.append(cc_traditional_dress_OBJ)
+
+
     if not hasattr(renpy.store,'astoria_outfit_GLBL'):
         $ hermoine_outfit_GLBL = None
         $ astoria_outfit_GLBL = None
@@ -906,7 +1025,16 @@ label store_items_init:
         for i in hermione_outfits_list:
             if i.unlocked and i not in unlocked_clothing_list:
                 unlocked_clothing_list.append(i)
+        for i in luna_outfits_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
         for i in astoria_outfits_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+        for i in susan_outfits_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+        for i in cho_outfits_list:
             if i.unlocked and i not in unlocked_clothing_list:
                 unlocked_clothing_list.append(i)
 
@@ -914,7 +1042,16 @@ label store_items_init:
         for i in hermione_clothing_sets_list:
             if i.unlocked and i not in unlocked_clothing_list:
                 unlocked_clothing_list.append(i)
+        for i in luna_clothing_sets_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
         for i in astoria_clothing_sets_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+        for i in susan_clothing_sets_list:
+            if i.unlocked and i not in unlocked_clothing_list:
+                unlocked_clothing_list.append(i)
+        for i in cho_clothing_sets_list:
             if i.unlocked and i not in unlocked_clothing_list:
                 unlocked_clothing_list.append(i)
 

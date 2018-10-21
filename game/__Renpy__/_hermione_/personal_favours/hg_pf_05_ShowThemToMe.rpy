@@ -258,7 +258,8 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 call blkfade
                 ">Hermione pulls away from you and covers up hastily."
-                call h_action("none")
+
+                call h_action("none","update")
                 call her_head("I think I'd better go...","angry","worriedCl",cheeks="blush",xpos="base",ypos="base")
 
                 #End Groping
@@ -316,7 +317,8 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you suddenly and covers up."
-                call h_action("none")
+
+                call h_action("none","update")
                 call her_head("You promised not to touch, [genie_name]...","annoyed","angryL",cheeks="blush",xpos="base",ypos="base")
                 m "It was hard to resist..."
 
@@ -411,7 +413,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 ">You let go of the girl's breasts..."
                 ">Hermione covers up..."
 
-                call h_action("none")
+                call h_action("none","update")
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
 
                 if whoring >= 17:
@@ -494,7 +496,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             her "............."
             pause.2
 
-            call set_hermione_action("none")
+            call set_hermione_action("none","update")
             pause.5
 
             call blkfade
@@ -556,7 +558,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         ">Hermione pulls away from you and covers up..."
                         g4 "Don't you dare to leave me in this state, [hermione_name]!"
 
-                        call h_action("none")
+                        call h_action("none","update")
                         call her_head("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious",cheeks="blush",xpos="base",ypos="base")
 
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
@@ -583,7 +585,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         call her_head("Ew! [genie_name]!","angry","suspicious",cheeks="blush")
                         call her_head("I'm leaving!","angry","suspicious",cheeks="blush")
-                        call h_action("none")
+                        call h_action("none","update")
 
                         call music_block
                         jump could_not_flirt
@@ -643,7 +645,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         g4 "I'd better stop now I suppose..."
                         call her_head("...............","angry","worriedCl",cheeks="blush")
                         ">Hermione covers up..."
-                        call h_action("none")
+                        call h_action("none","update")
                     "-Just start cumming-":
                         #call play_music("chipper_doodle") # HERMIONE'S THEME.
                         g4 "Argh! You whore!"
@@ -682,7 +684,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         hide screen hermione_main
                         call blkfade
 
-                        call h_action("none")
+                        call h_action("none","update")
                         $ sperm_on_tits = False
 
                         hide screen jerking_off_01
@@ -821,7 +823,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         $ sperm_on_tits = False
                         $ aftersperm = True
-                        call h_action("none")
+                        call h_action("none","update")
 
                         hide screen jerking_off_01
                         hide screen chair_left
@@ -875,7 +877,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call blkfade
 
                         $ sperm_on_tits = False
-                        call h_action("none") #This reloads all her clothing!
+                        call h_action("none","update") #This reloads all her clothing!
 
                         show screen genie
                         hide screen jerking_off_01
@@ -893,7 +895,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     call blkfade
 
     $ sperm_on_tits = False
-    call h_action("none") #This reloads all her clothing!
+    call h_action("none","update") #This reloads all her clothing!
 
     hide screen jerking_off_01
     hide screen chair_left

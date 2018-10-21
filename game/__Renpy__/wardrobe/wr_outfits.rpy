@@ -6,12 +6,18 @@ label equip_outfit:
     #Hermione
     if active_girl == "hermione":
         jump equip_her_outfit
+    #Luna
+    if active_girl == "luna":
+        jump equip_lun_outfit
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_outfit
     #Susan
     if active_girl == "susan":
         jump equip_sus_outfit
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_outfit
 
 
 ### Equip Hermione's Outfit ###
@@ -452,6 +458,23 @@ label equip_her_outfit:
 
 
 
+### Equip Luna's Outfit ###
+label equip_lun_outfit:
+    if (outfit_choice != luna_outfit_GLBL) or (outfit_choice == luna_outfit_GLBL and not luna_wear_outfit):
+
+        call lun_outfit(outfit_choice)
+
+        hide screen wardrobe
+        call screen wardrobe
+
+    else: # Unequip
+
+        call lun_outfit(None)
+
+        hide screen wardrobe
+        call screen wardrobe
+
+
 ### Equip Astoria's Outfit ###
 label equip_ast_outfit:
     if (outfit_choice != astoria_outfit_GLBL) or (outfit_choice == astoria_outfit_GLBL and not astoria_wear_outfit):
@@ -469,7 +492,6 @@ label equip_ast_outfit:
         call screen wardrobe
 
 
-
 ### Equip Susan's Outfit ###
 label equip_sus_outfit:
     if (outfit_choice != susan_outfit_GLBL) or (outfit_choice == susan_outfit_GLBL and not susan_wear_outfit):
@@ -484,4 +506,21 @@ label equip_sus_outfit:
         call sus_outfit(None)
 
         hide screen wardrobe
+        call screen wardrobe
+
+
+### Equip Cho's Outfit ###
+label equip_cho_outfit:
+    if (outfit_choice != cho_outfit_GLBL) or (outfit_choice == cho_outfit_GLBL and not cho_wear_outfit):
+
+        call cho_outfit(outfit_choice)
+
+        call cho_main(xpos="wardrobe")
+        call screen wardrobe
+
+    else: # Unequip
+
+        call cho_outfit(None)
+
+        call cho_main(xpos="wardrobe")
         call screen wardrobe

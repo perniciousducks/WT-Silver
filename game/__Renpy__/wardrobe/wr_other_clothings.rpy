@@ -23,10 +23,20 @@ label equip_neckwear:
     #Susan
     if active_girl == "susan":
         jump equip_sus_neckwear
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_neckwear
 
 ### Equip Hermione's Neckwear ###
 label equip_her_neckwear:
     call set_h_neckwear(neckwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Luna's Neckwear ###
+label equip_lun_neckwear:
+    call set_lun_neckwear(neckwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -45,6 +55,12 @@ label equip_sus_neckwear:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Cho's Neckwear ###
+label equip_cho_neckwear:
+    call set_cho_neckwear(neckwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 
 
 ### Gloves Equip ###
@@ -61,11 +77,21 @@ label equip_gloves:
         jump equip_ast_gloves
     #Susan
     if active_girl == "susan":
-        jump equip_ast_gloves
+        jump equip_sus_gloves
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_gloves
 
 ### Equip Hermione's Gloves ###
 label equip_her_gloves:
     call set_h_gloves(gloves_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Luna's Gloves ###
+label equip_lun_gloves:
+    call set_lun_gloves(gloves_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -80,6 +106,13 @@ label equip_ast_gloves:
 ### Equip Susan's Gloves ###
 label equip_sus_gloves:
     call set_sus_gloves(gloves_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Cho's Gloves ###
+label equip_cho_gloves:
+    call set_cho_gloves(gloves_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -101,6 +134,9 @@ label equip_body_accessory:
     #Susan
     if active_girl == "susan":
         jump equip_sus_body_accessory
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_body_accessory
 
 ### Equip Hermione's Body Accessory ###
 label equip_her_body_accessory:
@@ -230,6 +266,9 @@ label equip_stockings:
     #Susan
     if active_girl == "susan":
         jump equip_sus_stockings
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_stockings
 
 ### Equip Hermione's Stockings ###
 label equip_her_stockings:
@@ -237,6 +276,13 @@ label equip_her_stockings:
         call nar(">You can't remove her pantyhose while wearing that skirt!")
     else:
         call set_h_stockings(stockings_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Luna's Stockings ###
+label equip_lun_stockings:
+    call set_lun_stockings(stockings_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -255,6 +301,12 @@ label equip_sus_stockings:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Cho's Stockings ###
+label equip_cho_stockings:
+    call set_cho_stockings(stockings_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 
 
 ### Robe Equip ###
@@ -272,11 +324,20 @@ label equip_robe:
     #Susan
     if active_girl == "susan":
         jump equip_sus_robe
-
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_robe
 
 ### Equip Hermione's Robe ###
 label equip_her_robe:
     call set_h_robe(robe_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Luna's Robe ###
+label equip_lun_robe:
+    call set_lun_robe(robe_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -291,6 +352,13 @@ label equip_ast_robe:
 ### Equip Susan's Robe ###
 label equip_sus_robe:
     call set_sus_robe(robe_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Cho's Robe ###
+label equip_cho_robe:
+    call set_cho_robe(robe_choice)
 
     hide screen wardrobe
     call screen wardrobe

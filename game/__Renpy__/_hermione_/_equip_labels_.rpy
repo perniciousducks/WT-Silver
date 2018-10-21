@@ -353,3 +353,180 @@ label h_unequip_temp_outfit():
         call h_outfit_OBJ(None)
     $ temp_outfit_GLBL = None
     return
+
+
+#Hermione Action
+
+label set_hermione_action(action="", update=""):
+    hide screen hermione_main
+    call h_action(action,update)
+
+    show screen hermione_main
+    with d3
+
+    return
+
+
+label h_action(action =  "", update=""):
+
+    if action == "" or action == "none" or action == "None" or action == 0:
+
+        $ hermione_action = "none"
+        $ hermione_use_action = False
+
+        $ h_right_arm        = "right_1"
+        $ h_left_arm         = "left_1"
+        $ h_action_top = ""
+        $ h_action_bottom = ""
+        $ h_action_gloves = ""
+
+        $ h_action_a = "00_blank.png"
+        $ h_action_b = "00_blank.png"
+        $ hermione_action_a = "characters/hermione/body/arms/left/00_blank.png"
+        $ hermione_action_b = "characters/hermione/body/arms/left/00_blank.png"
+        $ hermione_costume_action_a = "characters/hermione/clothes/custom/00_blank.png"
+        $ milking           = 0
+
+
+        if update == "update":
+
+            call load_hermione_clothing_saves
+
+    else:
+
+        if hermione_costume:
+            if action in hermoine_outfit_GLBL.actions:
+                $ hermione_use_action = True
+                $ h_action_a = hermoine_outfit_GLBL.getActionImage(action)
+            else:
+                $ hermione_use_action = False
+                $ h_action_a = "00_blank.png"
+
+        else:
+
+            ### LIFT SKIRT ###
+            if action == "lift_skirt":
+                $ hermione_action = "lift_skirt"
+                $ hermione_use_action = True
+
+            ### LIFT TOP ###
+            if action == "lift_top":
+                $ hermione_action = "lift_top"
+                $ hermione_use_action = True
+
+            ### HOLD BOOK ###
+            if action == "hold_book":
+                $ hermione_action = "hold_book"
+                $ hermione_use_action = True
+
+            ### LIFT BREASTS ###
+            if action == "lift_breasts" or action == "lift_breasts_large":
+                $ hermione_action = "lift_breasts"
+                $ hermione_use_action = True
+
+                if action == "lift_breasts_large":
+                    $ hermione_expand_breasts = True
+
+
+
+            ### NAKED ACTIONS ###
+
+            #Lift breasts
+            if action == "lift_breasts_naked" or action == "lift_breasts_large_naked":
+                $ hermione_action = "lift_breasts"
+                $ hermione_use_action = True
+
+                $ hermione_wear_bottom = False
+                $ hermione_wear_panties = False
+                $ hermione_wear_garterbelt = False
+                $ hermione_wear_stockings = False
+
+                if action == "lift_breasts_large_naked":
+                    $ hermione_expand_breasts = True
+
+            #Hands Behind
+            if action == "hands_behind":
+                $ hermione_action = "hands_behind"
+                $ hermione_use_action = True
+
+            #Covering
+            if action == "covering":
+                $ hermione_action = "covering"
+                $ hermione_use_action = True
+
+            if action == "covering_uniform":
+                $ hermione_action = "covering_uniform"
+                $ hermione_use_action = True
+
+            if action == "covering_cloak":
+                $ hermione_action = "covering_cloak"
+                $ hermione_use_action = True
+
+            #Fingering
+            if action == "fingering":
+                $ hermione_action = "fingering"
+                $ hermione_use_action = True
+
+            #Covering Top
+            if action == "covering_top":
+                $ hermione_action = "covering_top"
+                $ hermione_use_action = True
+
+            #Pinch
+            if action == "pinch":
+                $ hermione_action = "pinch"
+                $ hermione_use_action = True
+
+            #Hands Cuffed
+            if action == "hands_cuffed":
+                $ hermione_action = "hands_cuffed"
+                $ hermione_use_action = True
+
+            #Milk Breasts
+            if action == "milk_breasts":
+                $ hermione_action = "milk_breasts"
+                $ hermione_use_action = True
+
+
+            ### NO hermione_action CHANGE ###
+
+            #Temporarily expand Hermione #Resets after 5 days.
+            if action == "expand_breasts":
+                $ hermione_expand_breasts_counter = 5
+                $ hermione_expand_breasts = True
+
+            if action == "expand_ass":
+                $ hermione_expand_ass_counter = 5
+                $ hermione_expand_ass = True
+
+            if action == "expand_all":
+                $ hermione_expand_breasts_counter = 5
+                $ hermione_expand_ass_counter = 5
+                $ hermione_expand_breasts = True
+                $ hermione_expand_ass = True
+
+            #Strip Naked
+            if action == "hands_free" or action == "naked" or action == "strip":
+                $ hermione_wear_top = False
+                $ hermione_wear_bra = False
+                $ hermione_wear_bottom = False
+                $ hermione_wear_panties = False
+                $ hermione_wear_garterbelt = False
+                $ hermione_wear_neckwear = False
+                $ hermione_wear_body_accs = False
+                $ hermione_wear_gloves = False
+                $ hermione_wear_stockings = False
+                $ hermione_wear_robe = False
+
+
+    call update_her_uniform #calls update_her_action, update_chibi_uniform, and h_update_body;
+
+    return
+
+label set_h_action_vars:
+    $ hermione_action_right_arm = "characters/hermione/body/arms/right/"+str(h_action_right_arm)
+    $ hermione_action_left_arm = "characters/hermione/body/arms/left/"+(h_action_left_arm)
+    $ hermione_action_a = "characters/hermione/clothes/uniform/action/"+str(h_action_a)
+    $ hermione_action_b = "characters/hermione/clothes/uniform/action/"+str(h_action_b)
+    $ hermione_costume_action_a = "characters/hermione/clothes/custom/"+str(h_action_a)
+    return

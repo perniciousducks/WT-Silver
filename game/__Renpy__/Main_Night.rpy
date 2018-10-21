@@ -15,7 +15,6 @@ $ uni_sperm = False
 $ textColor = "#1e1008"
 
 call reset_hermione_main
-call reset_luna_main
 
 $ hermione_busy = False
 $ astoria_busy = False

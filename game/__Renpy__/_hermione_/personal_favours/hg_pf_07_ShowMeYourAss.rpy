@@ -92,7 +92,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
         pause.5
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.2
 
         call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}","disgust","down_raised",cheeks="blush")
@@ -103,7 +103,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
         call set_hermione_action("lift_skirt")
         pause.5
         call h_action("naked") #Removes all clothing.
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.2
         call ctc
 
@@ -156,7 +156,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
         pause.5
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.2
 
 
@@ -168,7 +168,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
         call set_hermione_action("lift_skirt")
         pause.5
         call h_action("naked") #Removes all clothing.
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.2
         call ctc
 
@@ -243,7 +243,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
                 ">Hermione pulls away from you and covers up hastily."
 
-                call h_action("none")
+                call h_action("none","update")
 
                 call her_head("I think I'd better go...","angry","worriedCl",cheeks="blush")
                 hide screen chair_left #Genie's chair.
@@ -293,7 +293,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
                 ">Hermione pulls away from you suddenly and covers up."
 
-                call h_action("none")
+                call h_action("none","update")
 
                 if current_payout < 100:
                     call her_head("You promised not to grab me, [genie_name]...","annoyed","angryL",cheeks="blush")
@@ -381,7 +381,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 ">You let go of the girl's ass..."
                 ">Hermione covers up..."
 
-                call h_action("none")
+                call h_action("none","update")
 
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
 
@@ -814,7 +814,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
     $ hermione_ass_cum = False
 
-    call h_action("none") #Resets clothing.
+    call h_action("none","update") #Resets clothing.
 
     hide screen hermione_main
     hide screen hermione_ass

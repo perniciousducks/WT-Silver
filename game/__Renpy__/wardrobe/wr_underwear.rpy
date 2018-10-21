@@ -15,6 +15,9 @@ label equip_bra:
     #Susan
     if active_girl == "susan":
         jump equip_sus_bra
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_bra
 
 
 ### Equip Hermione's Bra ###
@@ -297,6 +300,13 @@ label equip_her_bra:
 
 
 
+### Equip Luna's Bra ###
+label equip_lun_bra:
+    call set_lun_bra(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
 ### Equip Astoria's Bra ###
 label equip_ast_bra:
     call set_ast_bra(underwear_choice)
@@ -311,6 +321,12 @@ label equip_sus_bra:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Cho's Bra ###
+label equip_cho_bra:
+    call set_cho_bra(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 
 
 ### Equip Onepiece ###
@@ -328,10 +344,20 @@ label equip_onepiece:
     #Susan
     if active_girl == "susan":
         jump equip_sus_onepiece
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_onepiece
 
 ### Equip Hermione's OnePiece/Nighty ###
 label equip_her_onepiece:
     call set_h_onepiece(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Luna's OnePiece/Nighty ###
+label equip_lun_onepiece:
+    call set_lun_onepiece(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -350,6 +376,12 @@ label equip_sus_onepiece:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Cho's OnePiece/Nighty ###
+label equip_cho_onepiece:
+    call set_cho_onepiece(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 
 
 ### Equip Panties ###
@@ -367,6 +399,9 @@ label equip_panties:
     #Susan
     if active_girl == "susan":
         jump equip_sus_panties
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_panties
 
 ### Equip Hermione's Panties ###
 label equip_her_panties:
@@ -612,13 +647,19 @@ label equip_her_panties:
             call screen wardrobe
 
 
+### Equip Luna's Panties ###
+label equip_lun_panties:
+    call set_lun_panties(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
 ### Equip Astoria's Panties ###
 label equip_ast_panties:
     call set_ast_panties(underwear_choice)
 
     hide screen wardrobe
     call screen wardrobe
-
 
 ### Equip Susan's Panties ###
 label equip_sus_panties:
@@ -627,6 +668,12 @@ label equip_sus_panties:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Cho's Panties ###
+label equip_cho_panties:
+    call set_cho_panties(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 
 
 ### Equip Garterbelt ###
@@ -644,10 +691,20 @@ label equip_garterbelt:
     #Susan
     if active_girl == "susan":
         jump equip_sus_garterbelt
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_garterbelt
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
     call set_h_garterbelt(underwear_choice, underwear_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Luna's Garterbelt ###
+label equip_lun_garterbelt:
+    call set_lun_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -662,6 +719,13 @@ label equip_ast_garterbelt:
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
     call set_sus_garterbelt(underwear_choice, underwear_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Cho's Garterbelt ###
+label equip_cho_garterbelt:
+    call set_cho_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe

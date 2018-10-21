@@ -236,11 +236,11 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     jump main_room
 
 
-#Luna transformation.
+#Luna transformation. #DONE
 
 label potion_scene_1_2: #Luna potion
     m "Might I offer you a drink?"
-    call her_main("You're not trying to get me drunk or something are you?","normal","base")
+    call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base",xpos="right",ypos="base")
     m "Nothing of the sort, just a harmless little potion."
     call nar(">You hand her the potion bottle.")
     call her_main("Another of your mysterious potions?","open","suspicious")
@@ -257,6 +257,9 @@ label potion_scene_1_2: #Luna potion
     m "It'll taste a lot sweeter if you imagine all the points you'll earn for Gryffindor."
     m "How much of a lead did Slytherin have on you again?"
     her "You're right, [genie_name]. I can't let Gryffindor down!"
+    hide screen hermione_main
+    with d3
+    pause.2
 
     call her_chibi("drink_potion","mid","base")
     pause 2
@@ -265,6 +268,7 @@ label potion_scene_1_2: #Luna potion
     pause.5
 
     call her_chibi("stand","mid","base")
+    pause.2
 
     call her_main("Blehgh.","disgust","narrow")
     her "I was wrong, not muck. Snot. It's as thick as Trollsnot."
@@ -295,86 +299,116 @@ label potion_scene_1_2: #Luna potion
         call her_main("What do you mean? ...My face of course... I mean ...*urp*","scream","angryCl")
         m "Maybe you should check the mirror"
 
-    "*POOF*"
     hide screen hermione_main
+    with hpunch
     hide screen hermione_blink
-    $ luna_chibi("stand")
+    call lun_chibi("stand","base","base")
+    pause.5
 
-    $ changeLuna("default", "default", "sad", "default")
+    "*POOF*"
+
+    $ luna_xpos = 400 #400 = "right"
+    $ changeLuna("base","base","sad","mid")
+    show screen luna_main
+    with d3
 
     her "Ughhh... I feel like I'm going to throw up! Did the Polyjuice work??"
     m "Like a charm."
     call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
-    $ changeLuna("seductive", "default", "raised", "default")
+    $ changeLuna("base","seductive","raised","mid")
     her "Apparently I'm still a girl. Someone from Ravenclaw?"
     m "Keen powers of observation, Miss Granger"
     call nar(">Hermione grabs a lock of her hair")
-    $ changeLuna("default", "crossed", "default", "pout")
+    $ changeLuna("pout","base","base","crossed")
     her "Definitely a blonde, though she could absolutely use a comb"
-    $ changeLuna("default", "nose", "default", "default")
+    $ changeLuna("base","base","base","nose")
     call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.")
-    $ changeLuna("wide", "default", "angry", "default")
+    $ changeLuna("base","wide","angry","mid")
     her "..."
     her "You turned me into Loony Lovegood... I mean Luna Lovegood!?!"
     m "Very astute, [hermione_name]."
     if not luna_known:
         m "(No idea who that is, but she looks good.)"
-    $ changeLuna("wide", "default", "angry", "pout")
+    $ changeLuna("pout","wide","angry","mid")
     her "Why on earth would you want me to look like Luna? She's completely mental!"
     m "I'm not seeing anything really wrong with her."
-    $ changeLuna("default", "default", "sad", "pout")
+    $ changeLuna("pout","base","sad","mid")
     her "She has... imaginary friends and believes in things that can't possibly exist [genie_name]. She is absolutely mad."
     m "Fortunately, I'm not really interested in her mental health. I am interested in her impressive, and quite real, chest."
-    $ changeLuna("seductive", "default", "raised", "default")
+    $ changeLuna("base","seductive","raised","mid")
     her "You can't possibly be interested in that... that girl's paltry breasts."
     m "Currently they're yours. And they don't look so paltry from where I'm sitting [hermione_name]. Do I detect a hint of jealousy?"
-    $ changeLuna("default", "default", "angry", "default")
+    $ changeLuna("base","base","angry","mid")
     her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
     m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
-    $ changeLuna("default", "default", "sad", "disgust")
-    her "I..I apologize [genie_name]. I don't know what came over me."
+    $ changeLuna("disgust","base","sad","mid")
+    her "I..I apologize, [genie_name]. I don't know what came over me."
     m "Apology accepted. I'm sure they can't hold a candle to the brilliance of your boobs."
-    $ changeLuna("default", "right", "default", "pout")
+    $ changeLuna("pout","base","base","R")
     her "I'd like to think I'm more than just a pair of breasts... but thank you [genie_name]. That was flattering. In a way."
     m "If you want to dispel all doubt, we could compare. Why don't you lift your shirt and show me what you... err... She's got under that sweater."
-    $ changeLuna("wide", "right", "angry", "pout")
+    $ changeLuna("pout","wide","angry","R")
     her "I'm still not entirely comfortable with this..."
     call nar(">Hermione quickly strips off her Ravenclaw top, followed by her bra.")
-    hide screen luna
-    $ luna_chibi("stand_topless")
+    hide screen luna_main
+    with d3
+
     $ luna_wear_top = False
     $ luna_wear_bra = False
-    $ changeLuna("seductive", "right", "raised", "default")
+    call update_luna_chibi_uniform
+    call lun_chibi("stand","base","base")
+    pause.5
+
+    $ changeLuna("base","seductive","raised","R")
+    show screen luna_main
+    with d3
+
     her "There, see. Perfectly ordinary breasts. Absolutely no need to keep looking at them."
     m "I'm not quite convinced, the soft pale skin, the cute pink nipples and they look like quite a handful. I think you might have some serious competition here [hermione_name]."
-    $ changeLuna("seductive", "default", "angry", "angry")
+    $ changeLuna("upset","seductive","angry","mid")
     her "You can't be serious! They're saggy and couldn't even fill a first-year's palm!"
     m "Hmmm, I'm not sure. I think a closer examination is required."
+    hide screen luna_main
+    with d3
+
+    #call lun_walk("mid","desk",1.7) #Needs walking chibi that is topless.
+    call lun_chibi("stand","desk","base") #Temporary!
+
     call nar(">In a huff, Hermione walks over and presents her new set of breasts")
+    show screen luna_main
+    with d3
+
     m "Yes yes, upon closer inspection it seems I was wrong. Luna's breasts are indeed second to your own."
-    $ changeLuna("seductive", "default", "angry", "pout")
+    $ changeLuna("pout","seductive","angry","mid")
     her "I'm glad you came to your senses. Thank you, If you're completely satisfied, I'll cover these hideous things up now."
-    m "Completely [hermione_name]. 20 points to Gryffindor."
-    hide screen luna
-    $ luna_chibi("stand")
+    m "Completely, [hermione_name]. 20 points to Gryffindor."
+    hide screen luna_main
+    with d3
+
     $ luna_wear_top = True
     $ luna_wear_bra = True
-    $ changeLuna("closed", "default", "default", "default")
+    call update_luna_chibi_uniform
+    call lun_chibi("stand","desk","base")
+    pause.5
+
+    $ changeLuna("base","closed","base","mid")
+    show screen luna_main
+    with d3
+
     her "Well I best be off to classes."
     m "You're going to class looking like a fellow classmate?"
-    $ changeLuna("default", "default", "raised", "default")
+    $ changeLuna("base","base","raised","mid")
     her "It's not going to be a problem. Luna's barely in class as it is, I can just pretend to be her. Maybe I'll even improve her test scores. You'll notify the teachers I can't attend class right?"
     m "Absolutely. (Not a chance) But, what if you bump into her in the halls?"
-    $ changeLuna("seductive", "default", "default", "pout")
+    $ changeLuna("pout","seductive","base","mid")
     her "Believe me [genie_name], Luna will probably think I'm some kind of Wrackspurt that's messing with her head."
-    hide screen bld1
-    hide screen blkfade
-    hide screen luna
-    $ menu_x = 0.5
-    $ hermione_busy = True
-    call play_sound("door") #Sound of a door opening.
-    hide screen luna_chibi
+    hide screen luna_main
     with d3
+
+    call lun_walk("desk","leave",2.7)
+
+    $ hermione_busy = True
+
     jump main_room
 
 

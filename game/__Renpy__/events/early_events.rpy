@@ -828,7 +828,7 @@ label event_07:
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
 
-    call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","images/store/snape_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","interface/icons/head/snape_unlock_01.png")
     $ snape_unlocked = True
 
     jump day_start
@@ -1551,7 +1551,7 @@ label event_14:
 
     stop music fadeout 1.0
 
-    call give_reward(">You've unlocked the ability to summon Hermione to your office.","images/store/hermione_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Hermione to your office.","interface/icons/head/hermione_unlock_01.png")
 
     $ hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
     $ hermione_busy = True
@@ -1891,7 +1891,7 @@ label event_15:
 
     stop music fadeout 1.0
 
-    call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","images/store/hermione_unlock_02.png")
+    call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","interface/icons/head/hermione_unlock_02.png")
 
     $ hermione_favors = True
 

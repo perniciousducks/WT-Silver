@@ -132,7 +132,7 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call h_action("none")
+        call h_action("none","update")
 
         g9 "{size=-2}(And soon you'll love cock!){/size}"
         $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
@@ -720,7 +720,7 @@ label l_tutoring:
         call blkfade
         call ctc
 
-        call h_action("none")
+        call h_action("none","update")
 
         hide screen chair_left
         hide screen groping_naked_tits
@@ -815,7 +815,7 @@ label l_tutoring:
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         call her_main("","base","baseL",cheeks="blush")
@@ -846,7 +846,7 @@ label l_tutoring:
 
             call nar(">She slowly lowers her panties.")
 
-            call set_hermione_action("none","skip_update")
+            call set_hermione_action("None")
 
             hide screen groping_06
             show screen no_groping_06
@@ -914,7 +914,7 @@ label l_tutoring:
         hide screen no_groping_01
         "You dismiss Hermione."
 
-        call h_action("none") #Resets clothes.
+        call h_action("none","update") #Resets clothes.
 
         call her_chibi("stand","desk","base")
         show screen genie
@@ -982,7 +982,7 @@ label l_tutoring:
 
             $ hermione_wear_top = False
             $ hermione_wear_bra = False
-            call set_hermione_action("none","skip_update")
+            call set_hermione_action("None")
             pause.5
 
         else:
@@ -993,7 +993,7 @@ label l_tutoring:
             pause.5
 
             $ hermione_wear_top = False
-            call set_hermione_action("none","skip_update")
+            call set_hermione_action("None")
             pause.5
 
         her "You love them don't you?"
@@ -1009,7 +1009,7 @@ label l_tutoring:
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         $ b_her_tears = True
@@ -1028,7 +1028,7 @@ label l_tutoring:
             pause.5
 
             $ hermione_wear_panties = False
-            call set_hermione_action("none","skip_update")
+            call set_hermione_action("None")
             pause.5
 
             $ u_tears_pic = "characters/hermione/face/e_her_tears_02b.png"
@@ -1076,7 +1076,7 @@ label l_tutoring:
 
         ">Hermione catches her breath and puts her clothes back on."
 
-        call h_action("none") #Resets clothes.
+        call h_action("none","update") #Resets clothes.
 
         hide screen her_naked
         call her_chibi("stand","desk","base")
@@ -1136,7 +1136,7 @@ label l_tutoring:
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
 
         ">She rips off her shirt and rushes to your desk."
 
@@ -1251,7 +1251,7 @@ label l_tutoring:
 
         ">After a while, she puts her shirt back on."
 
-        call h_action("none") #Resets clothes.
+        call h_action("none","update") #Resets clothes.
 
         hide screen no_groping_05_desk
         show screen genie
@@ -1324,7 +1324,7 @@ label l_tutoring:
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         call her_main("My tits are the best in all of Hogwarts!","silly","ahegao_raised",cheeks="blush")
@@ -1353,7 +1353,7 @@ label l_tutoring:
 
         $ hermione_wear_bottom = False
         $ hermione_wear_panties = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         call her_main("Can we start now?","grin","angry",cheeks="blush")
@@ -1448,7 +1448,7 @@ label l_tutoring:
 
         ">She puts her shirt back on and rushes to the door."
 
-        call h_action("none") #Resets clothes.
+        call h_action("none","update") #Resets clothes.
 
         hide screen no_groping_05_desk
         call her_chibi("stand","door","base",flip=True)
@@ -1738,7 +1738,7 @@ label l_tutoring:
 
         $ v_tutoring = 13
 
-        call h_action("none") #Resets clothes.
+        call h_action("none","update") #Resets clothes.
 
         $ aftercum = False
         jump day_start
@@ -1789,7 +1789,7 @@ label l_tutoring:
         m "Ok now, put your books down and bend over the desk, my little whore."
         pause.5
 
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         hide screen hermione_main
@@ -1919,7 +1919,7 @@ label l_tutoring:
         ">You dismiss Hermione."
         ">She puts her clothes back on without haste."
 
-        call h_action("none") #Resets clothes.
+        call h_action("none","update") #Resets clothes.
 
         hide screen no_groping_laying_02
         pause 1

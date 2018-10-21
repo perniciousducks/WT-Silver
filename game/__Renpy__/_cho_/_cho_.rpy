@@ -36,7 +36,7 @@ label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, xpos=Non
         else:
             $ cho_ypos = int(ypos)
 
-    $ changeCho(mouth, eye, eyebrow, pupil)
+    $ changeCho(mouth, eye, eyebrow, pupil, cho_xpos, cho_ypos)
 
     show screen cho_chang
     show screen bld1
@@ -56,7 +56,7 @@ label end_cho_event:
     hide screen cho_chang
     with d3
 
-    call set_cho_clothing("uniform")
+    call cho_outfit(None)
     call load_cho_clothing_saves #Resets Cho's clothing.
 
     #Add more cho screens to hide here.

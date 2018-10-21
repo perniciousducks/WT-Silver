@@ -78,6 +78,27 @@ label shop_menu:
     show screen shop_screen
     call screen shop_screen
 
+screen shop_screen:
+    tag room_screen
+
+    zorder hermione_main_zorder-1
+
+    if daytime:
+        add "interface/map/room_bg1.png" at Position(xpos=140)
+    else:
+        add "interface/map/room_bg2.png" at Position(xpos=140)
+
+    imagemap:
+        ground "interface/map/shop_ground.png"
+        hover "interface/map/shop_hover.png"
+        # (X upper-left corner, Y upper-left corner, width, height).
+        hotspot (0, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
+        hotspot (0, 124, 268, 88) clicked Jump("sscrolls2") #Scrolls 2
+        hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
+        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
+        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
+        hotspot (606+280, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
+        hotspot (750+280, 550, 40, 40) clicked [Show("main_room_menu"),Jump("day_main_menu")] #Return Button
 
 label sscrolls:
     show screen shop_screen

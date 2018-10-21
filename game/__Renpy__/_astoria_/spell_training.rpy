@@ -208,7 +208,7 @@ label imperio_spell_1_training: #first level imperio spell
 
     call nar(">Astoria queitly walks out of your office, a small smirk forming in the corner of her mouth.")
 
-    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png")
+    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/astoria_unlock_02.png")
 
     #Unlocks spell 1.
     $ astoria_spells[0] = 1
@@ -244,7 +244,7 @@ label imperio_spell_2_training: #second level imperio spell
             else:
                 jump day_start
 
-    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png")
+    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/astoria_unlock_02.png")
 
     #Unlocks Spell 2.
     $ astoria_spells[0] = 2
@@ -276,7 +276,7 @@ label imperio_spell_3_training: #third level imperio spell
             else:
                 jump day_start
 
-    call give_reward(">Congratulations! Astoria has learned a new spell!","images/store/astoria_unlock_02.png")
+    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/astoria_unlock_02.png")
 
     #Unlocks Spell 3.
     $ astoria_spells[0] = 3

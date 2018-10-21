@@ -16,6 +16,12 @@ label equip_makeup:
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_makeup
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_makeup
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_makeup
 
 
 ### Equip Hermione's Makeup ###
@@ -181,18 +187,18 @@ label equip_head_accessory:
     #Hermione
     if active_girl == "hermione":
         jump equip_her_head_accessory
-
     #Luna
     if active_girl == "luna":
         jump equip_lun_head_accessory
-
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_hat
-
     #Susan
     if active_girl == "astoria":
         jump equip_sus_hat
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_head_accessory
 
 ### Equip Hermione's Head Accessory ###
 
@@ -412,18 +418,53 @@ label remove_head_accessory: #Remove/Toggle off
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
-#
 
-### Equip Astoria's Hat ###
-label equip_ast_hat:
-    call set_ast_hat(head_accessory_choice)
+
+
+### Equip Luna's Accessory ###
+label equip_lun_head_accessory:
+    if head_accessory_choice in []: #Ears
+        call set_lun_ears(head_accessory_choice)
+    if head_accessory_choice in ["spectrespecs"]: #Glasses
+        call set_lun_glasses(head_accessory_choice)
+    if head_accessory_choice in []: #Hat
+        call set_lun_hat(head_accessory_choice)
 
     hide screen wardrobe
     call screen wardrobe
 
-### Equip Susan's Hat ###
-label equip_sus_hat:
-    call set_sus_hat(head_accessory_choice)
+### Equip Astoria's Accessory ###
+label equip_ast_head_accessory:
+    if head_accessory_choice in []:
+        call set_ast_ears(head_accessory_choice)
+    if head_accessory_choice in []:
+        call set_ast_glasses(head_accessory_choice)
+    if head_accessory_choice in []:
+        call set_ast_hat(head_accessory_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Susan's Accessory ###
+label equip_sus_head_accessory:
+    if head_accessory_choice in []:
+        call set_sus_ears(head_accessory_choice)
+    if head_accessory_choice in []:
+        call set_sus_glasses(head_accessory_choice)
+    if head_accessory_choice in []:
+        call set_sus_hat(head_accessory_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Cho's Accessory ###
+label equip_cho_head_accessory:
+    if head_accessory_choice in []:
+        call set_cho_ears(head_accessory_choice)
+    if head_accessory_choice in []:
+        call set_cho_glasses(head_accessory_choice)
+    if head_accessory_choice in []:
+        call set_cho_hat(head_accessory_choice)
 
     hide screen wardrobe
     call screen wardrobe

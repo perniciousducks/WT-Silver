@@ -128,12 +128,18 @@ label wardrobe_update:
     if active_girl == "hermione":
         call wr_her_clothing_reset
         call her_main(xpos="wardrobe",ypos="base")
+    if active_girl == "luna":
+        call wr_lun_clothing_reset
+        call lun_main(xpos="wardrobe",ypos="base")
     if active_girl == "astoria":
         call wr_ast_clothing_reset
         call ast_main(xpos="wardrobe",ypos="base")
     if active_girl == "susan":
         call wr_sus_clothing_reset
         call sus_main(xpos="wardrobe",ypos="base")
+    if active_girl == "cho":
+        call wr_cho_clothing_reset
+        call cho_main(xpos="wardrobe",ypos="base")
 
     hide screen main_room_menu
     call screen wardrobe
@@ -154,6 +160,24 @@ label wr_her_clothing_reset:
             $ hermione_wear_bottom = False
 
     call update_her_uniform
+
+    return
+
+label wr_lun_clothing_reset:
+    #Reload Clothing
+    call load_luna_clothing_saves
+
+    #Qol stuff
+    if wardrobe_page != 6:
+        pass
+    #    if luna_action != "none":
+    #        $ luna_use_action = True
+    else: #Underwear page Qol
+        $ luna_wear_robe = False
+        $ luna_wear_top = False
+        $ luna_wear_bottom = False
+
+    call update_lun_uniform
 
     return
 
@@ -198,6 +222,25 @@ label wr_sus_clothing_reset:
 
     return
 
+label wr_cho_clothing_reset:
+    #Reload Clothing
+    call load_cho_clothing_saves
+
+    #Qol stuff
+    if wardrobe_page != 6:
+        pass
+    #    if cho_action != "none":
+    #        $ cho_use_action = True
+    else: #Underwear page Qol
+        $ cho_wear_robe = False
+        $ cho_wear_top = False
+        $ cho_wear_bottom = False
+
+    call update_cho_uniform
+
+    return
+
+
 ### CLOSE WARDROBE LABELS ###
 
 label hide_wardrobe:
@@ -212,12 +255,20 @@ label close_wardrobe:
         call her_main(xpos="base",ypos="base") #reset hermione face and position to default
         jump hermione_requests
 
+    if active_girl == "luna":
+        call lun_main(xpos="base",ypos="base")
+        pause.2
+        call lun_chibi("stand","mid","base")
+        jump luna_requests
     if active_girl == "astoria":
         call ast_main(xpos="base",ypos="base")
         jump astoria_requests
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
         jump susan_requests
+    if active_girl == "cho":
+        call cho_main(xpos="base",ypos="base")
+        jump cho_requests
 
 ### Pose/Action ###
 
@@ -226,7 +277,7 @@ label wardrobe_change_her_action:
     hide screen hermione_main
 
     if wr_her_action == "none":
-        call h_action("none")
+        call h_action("none","update")
     if wr_her_action == "lift_top":
         call h_action("lift_top")
     if wr_her_action == "lift_skirt":

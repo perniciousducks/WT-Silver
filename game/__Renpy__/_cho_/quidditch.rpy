@@ -4,8 +4,8 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
     $ cho_quidd = True
     $ cho_busy = True
 
-    #Temporary way of doing outfits for Cho for now
-    call set_cho_clothing("quidditch")
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("","annoyed","angry","angry","R",xpos="close",ypos="base")
@@ -84,7 +84,8 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
     $ cho_quidd_points = 1
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_1'
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -229,7 +230,8 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     $ cho_quidd_points = 2
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_2'
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -299,7 +301,8 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     $ cho_quidd_points = 3
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_3'
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -375,7 +378,8 @@ label cho_quidd_2_1: #Comes back after playing without a robe on
     $ cho_quidd_points = 4
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_3' & no robe
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("There's been a disaster!","scream","closed","angry","mid",xpos="mid",ypos="base")
@@ -406,7 +410,7 @@ label cho_quidd_2_1: #Comes back after playing without a robe on
             jump who_shall_commentate
         "-Luna-" if luna_unlocked:
             call cho_main("Luna? Luna Lovegood, [cho_genie_name]?","open","suspicious","raised","mid")
-            call cho_main("Knowing her she'd probably commentate the grass as it's growing instead...","open","closed","raised","mid")
+            call cho_main("Knowing her she'd probably commentate the grass as it's growing...","open","closed","raised","mid")
             call cho_main("Trust me, [cho_genie_name], Luna would be a terrible choice!","soft","angry","angry","mid")
             m "Fine. How about..."
             jump who_shall_commentate
@@ -477,7 +481,8 @@ label cho_quidd_2_2: #Comes back after playing with the robe still on
     $ cho_quidd_points = 5
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch")
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("","annoyed","angry","angry","R",xpos="close",ypos="base")
@@ -523,7 +528,8 @@ label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
     $ cho_quidd_points = 6
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch")
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("...","pout","suspicious","sad","R",xpos="mid",ypos="base")

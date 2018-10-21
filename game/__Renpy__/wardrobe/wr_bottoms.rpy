@@ -14,6 +14,9 @@ label equip_bottom:
     #Susan
     if active_girl == "susan":
         jump equip_sus_bottom
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_bottom
 
 
 ### Equip Bottom ###
@@ -25,7 +28,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
-    if hermione_action == "hands_behind" or hermione_action == "covering" or hermione_action == "fingering" or hermione_action == "covering_top" or hermione_action == "pinch" or hermione_action == "hands_cuffed" or hermione_action == "milk_breasts":
+    if hermione_action in ["hands_behind","covering","fingering","covering_top","pinch","hands_cuffed","milk_breasts"]:
 
         $ wardrobe_active = True
         hide screen hermione_main
@@ -33,7 +36,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
         menu:
             "-Make her get dressed-":
-                call h_action("none")
+                call h_action("none","update")
                 hide screen hermione_main
 
             "-nvm-":
@@ -769,6 +772,13 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
 
 
 
+### Equip Luna's Bottom ###
+label equip_lun_bottom:
+    call set_lun_bottom(skirt_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
 ### Equip Astoria's Bottom ###
 label equip_ast_bottom:
     call set_ast_bottom(skirt_choice)
@@ -779,6 +789,13 @@ label equip_ast_bottom:
 ### Equip Susan's Bottom ###
 label equip_sus_bottom:
     call set_sus_bottom(skirt_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Cho's Bottom ###
+label equip_cho_bottom:
+    call set_cho_bottom(skirt_choice)
 
     hide screen wardrobe
     call screen wardrobe

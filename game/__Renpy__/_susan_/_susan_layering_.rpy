@@ -98,7 +98,7 @@ screen susan_outfit:
 
 
 
-label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
+label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen susan_main
 
     #Reset
@@ -132,7 +132,7 @@ label sus_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
         else:
             $ susan_ypos = int(ypos)
 
-    $ changeSusan(mouth, eye, eyebrow, pupil, susan_xpos, susan_ypos, base, cheeks, tears, extra)
+    $ changeSusan(mouth, eye, eyebrow, pupil, susan_xpos, susan_ypos, cheeks, tears, extra)
 
     show screen susan_main
     show screen bld1
@@ -153,7 +153,6 @@ init python:
                         pupil=None,
                         x_pos=None,
                         y_pos=None,
-                        base=None,
                         cheeks=None,
                         tears=None,
                         extra=None):
@@ -165,7 +164,6 @@ init python:
         global susan_pupil
         global susan_xpos
         global susan_ypos
-        global susan_base
         global susan_cheeks
         global susan_tears
         global susan_extra
@@ -185,8 +183,6 @@ init python:
         if y_pos is not None:
             susan_ypos        = y_pos
         #BODY CONTROL
-        if base is not None:
-            susan_base        = "characters/susan/base/"+base+".png"
         if cheeks is not None:
             susan_cheeks     = "characters/susan/face/extras/"+cheeks+".png"
         if tears is not None:

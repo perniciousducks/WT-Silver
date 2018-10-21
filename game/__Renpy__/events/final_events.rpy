@@ -244,7 +244,7 @@ label want_to_rule:
                     pause.5
 
                     $ hermione_wear_top = False
-                    call set_hermione_action("None","skip_update")
+                    call set_hermione_action("None")
                     pause.5
 
                     call nar(">One piece after another...")
@@ -254,7 +254,7 @@ label want_to_rule:
                     pause.5
 
                     $ hermione_wear_bottom = False
-                    call set_hermione_action("None","skip_update")
+                    call set_hermione_action("None")
                     pause.5
 
                     call nar(">Vest, shirt, her skirt, and finally...")

@@ -10,7 +10,7 @@ label open_stat_menu(charName="hermione"):
     
     elif charName == "luna":
         $ luna_xpos=540
-        $stat_char = "luna"
+        $stat_char = "luna_main"
         $stat_screen = "luna_stat_menu"
     else:
         $stat_screen = "not_implemented"

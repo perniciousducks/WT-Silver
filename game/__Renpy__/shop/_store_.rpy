@@ -8,39 +8,39 @@ label __init_variables:
     if not hasattr(renpy.store,'fiction_books_intro'): #important!
         $ fiction_books_intro = False
 
-
-    $ sacred_scrolls = [
-        silver_scroll(id=1 , title="The room",           cost=10,    comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."]),
-        silver_scroll(id=2 , title="The calendar",       cost=30,    comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realized how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."]),
-        silver_scroll(id=3 , title="The girl",           cost=40,    comments=["A couple of very early drawings of Hermione..."]),
-        silver_scroll(id=4 , title="Deeptroating",       cost=70,    comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."]),
-        silver_scroll(id=5 , title="Poster 01",          cost=80,    comments=["The game poster...","Hermione is Dahr's work. The rest is me..."]),
-        silver_scroll(id=6 , title="Poster 02",          cost=80,    comments=["Alternative game poster.","This one has never been released."]),
-        silver_scroll(id=7 , title="Chibi-dancing",      cost=90,    comments=["Some chibi closeups.","The one on the left never made it into the final game..."]),
-        silver_scroll(id=8 , title="Game items",         cost=50,    comments=["A banch of items that I ended up not using...","I blame dahr and his awesome artwork."]),
-        silver_scroll(id=9 , title="Panties no panties", cost=90,    comments=["The drawing of Hermione from the poster. (by Dahr)","I like one on the right with her panties still on."]),
-        silver_scroll(id=10, title="A lot of pegs",      cost=50,    comments=["Another ithing that never made it into the final game...","The idea here was that the more you level up Hermione the more pegs she would let you to put on her...","And the nipple chain was supposed to be worn to class under the uniform."]),
-        silver_scroll(id=11, title="House-elf brothel",  cost=110,   comments=["The house-elf brothel... Just another thing that never happened."]),
-        silver_scroll(id=12, title="Me and Lola",        cost=110,   comments=["A drawing featuring yours truly as a Durmstrung mage and Lola as a student...","The drawing itself is by Dahr of course."]),
-        silver_scroll(id=13, title="Hard training",      cost=100,   comments=["Another one of those side-quests that never happened...","This one was about--","No, I better not. Who knows, maybe we will get to adding those quests eventually."]),
-        silver_scroll(id=14, title="Wizard's Chess",     cost=80,    comments=["Another sub-quest...","This one involving the school's wizard chess club."]),
-        silver_scroll(id=15, title="Tutoring books",     cost=40,    comments=["There is more then one way for a pretty girl to carry her books around.","I thought it would be cool to change the way Hermione carries the books as she progresses with her training.","Since the whole tutoring arc got canceled I am showing it here..."]),
-        silver_scroll(id=16, title="Extra gifts 01",     cost=30,    comments=["A couple of items that didn't make it into the final game...","The one on the left is an actual live house-elf to give as a present.","The one on the right is a portrait of a pervy but wise wizard. Supposed to be helping with studying..."]),
-        silver_scroll(id=17, title="Extra gifts 02",     cost=30,    comments=["Few more items...","A newspaper, a bottle of perfume and a magical hat that says things you want to hear..."]),
-        silver_scroll(id=18, title="Fiction books",      cost=90,    comments=["The fiction books...","The top row are my sketches, the bottom row are finalized drawings by dahr."]),
-        silver_scroll(id=19, title="Singer whore",       cost=50,    comments=["A drawing of a famous singer.","Has no connection to this game and is here for no reason whatsoever."]),
-        silver_scroll(id=20, title="Casting",            cost=70,    comments=["It took me a while to come up with a proper look for Hermione...","Version \"A\" was my first attempt. And I liked it up until the moment when I started to hate it...","Version \"B\" was my second attempt. And it's good. But her confident and semi-aggressive facial features didn't fit the character well...","Version \"C\" is the one that got the role. The Hermione that we all grew to care for by now, I'm sure."]),
-        silver_scroll(id=21, title="Witch robe 01",      cost=90,    comments=["Sub-quests that never happened.","You are allowed to feel bad for rushing me.","If you did not rush me you are allowed to feel angry at people who did."]),
-        silver_scroll(id=22, title="Witch robe 02",      cost=90,    comments=["Hermione presenting her body to Genie...","This would have been a quite memorable scene..."]),
-        silver_scroll(id=23, title="Witch robe 03",      cost=150,   comments=["Didn't expect this one, did you?","In case you're wondering this is still Hermione."]),
-        silver_scroll(id=24, title="Witch robe 04",      cost=150,   comments=[".................................","Sub-quests of course..."]),
-        silver_scroll(id=25, title="The walk",           cost=100,   comments=["Another sub-quest...","We had a rather lengthy discussion with Dahr about this one...","I was sort of against it, but then Dahr sent me this picture and it made me shut up."]),
-        silver_scroll(id=26, title="Durmstrang",         cost=80,    comments=["One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs...","At first many of the sub-quests involved deciding on how to spend the Hogwarts budget...","Spend your money to finance the school quiddich team, or to hire new teachers and such..."]),
-        silver_scroll(id=27, title="Gag ball",           cost=200,   comments=["Isn't she adorable?"]),
-        silver_scroll(id=28, title="New clothes 01",     cost=150,   comments=["Another (rather lengthy) sub-quest..."]),
-        silver_scroll(id=29, title="New clothes 02",     cost=200,   comments=[".........."]),
-        silver_scroll(id=30, title="The gang",           cost=70,    comments=["One of the very early sketches related to the quiddich sub-quests..."])
-    ]
+    if not hasattr(renpy.store,'sacred_scrolls'):
+        $ sacred_scrolls = [
+            silver_scroll(id=1 , title="The room",           cost=10,    comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."]),
+            silver_scroll(id=2 , title="The calendar",       cost=30,    comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realized how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."]),
+            silver_scroll(id=3 , title="The girl",           cost=40,    comments=["A couple of very early drawings of Hermione..."]),
+            silver_scroll(id=4 , title="Deeptroating",       cost=70,    comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."]),
+            silver_scroll(id=5 , title="Poster 01",          cost=80,    comments=["The game poster...","Hermione is Dahr's work. The rest is me..."]),
+            silver_scroll(id=6 , title="Poster 02",          cost=80,    comments=["Alternative game poster.","This one has never been released."]),
+            silver_scroll(id=7 , title="Chibi-dancing",      cost=90,    comments=["Some chibi closeups.","The one on the left never made it into the final game..."]),
+            silver_scroll(id=8 , title="Game items",         cost=50,    comments=["A banch of items that I ended up not using...","I blame dahr and his awesome artwork."]),
+            silver_scroll(id=9 , title="Panties no panties", cost=90,    comments=["The drawing of Hermione from the poster. (by Dahr)","I like one on the right with her panties still on."]),
+            silver_scroll(id=10, title="A lot of pegs",      cost=50,    comments=["Another ithing that never made it into the final game...","The idea here was that the more you level up Hermione the more pegs she would let you to put on her...","And the nipple chain was supposed to be worn to class under the uniform."]),
+            silver_scroll(id=11, title="House-elf brothel",  cost=110,   comments=["The house-elf brothel... Just another thing that never happened."]),
+            silver_scroll(id=12, title="Me and Lola",        cost=110,   comments=["A drawing featuring yours truly as a Durmstrung mage and Lola as a student...","The drawing itself is by Dahr of course."]),
+            silver_scroll(id=13, title="Hard training",      cost=100,   comments=["Another one of those side-quests that never happened...","This one was about--","No, I better not. Who knows, maybe we will get to adding those quests eventually."]),
+            silver_scroll(id=14, title="Wizard's Chess",     cost=80,    comments=["Another sub-quest...","This one involving the school's wizard chess club."]),
+            silver_scroll(id=15, title="Tutoring books",     cost=40,    comments=["There is more then one way for a pretty girl to carry her books around.","I thought it would be cool to change the way Hermione carries the books as she progresses with her training.","Since the whole tutoring arc got canceled I am showing it here..."]),
+            silver_scroll(id=16, title="Extra gifts 01",     cost=30,    comments=["A couple of items that didn't make it into the final game...","The one on the left is an actual live house-elf to give as a present.","The one on the right is a portrait of a pervy but wise wizard. Supposed to be helping with studying..."]),
+            silver_scroll(id=17, title="Extra gifts 02",     cost=30,    comments=["Few more items...","A newspaper, a bottle of perfume and a magical hat that says things you want to hear..."]),
+            silver_scroll(id=18, title="Fiction books",      cost=90,    comments=["The fiction books...","The top row are my sketches, the bottom row are finalized drawings by dahr."]),
+            silver_scroll(id=19, title="Singer whore",       cost=50,    comments=["A drawing of a famous singer.","Has no connection to this game and is here for no reason whatsoever."]),
+            silver_scroll(id=20, title="Casting",            cost=70,    comments=["It took me a while to come up with a proper look for Hermione...","Version \"A\" was my first attempt. And I liked it up until the moment when I started to hate it...","Version \"B\" was my second attempt. And it's good. But her confident and semi-aggressive facial features didn't fit the character well...","Version \"C\" is the one that got the role. The Hermione that we all grew to care for by now, I'm sure."]),
+            silver_scroll(id=21, title="Witch robe 01",      cost=90,    comments=["Sub-quests that never happened.","You are allowed to feel bad for rushing me.","If you did not rush me you are allowed to feel angry at people who did."]),
+            silver_scroll(id=22, title="Witch robe 02",      cost=90,    comments=["Hermione presenting her body to Genie...","This would have been a quite memorable scene..."]),
+            silver_scroll(id=23, title="Witch robe 03",      cost=150,   comments=["Didn't expect this one, did you?","In case you're wondering this is still Hermione."]),
+            silver_scroll(id=24, title="Witch robe 04",      cost=150,   comments=[".................................","Sub-quests of course..."]),
+            silver_scroll(id=25, title="The walk",           cost=100,   comments=["Another sub-quest...","We had a rather lengthy discussion with Dahr about this one...","I was sort of against it, but then Dahr sent me this picture and it made me shut up."]),
+            silver_scroll(id=26, title="Durmstrang",         cost=80,    comments=["One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs...","At first many of the sub-quests involved deciding on how to spend the Hogwarts budget...","Spend your money to finance the school quiddich team, or to hire new teachers and such..."]),
+            silver_scroll(id=27, title="Gag ball",           cost=200,   comments=["Isn't she adorable?"]),
+            silver_scroll(id=28, title="New clothes 01",     cost=150,   comments=["Another (rather lengthy) sub-quest..."]),
+            silver_scroll(id=29, title="New clothes 02",     cost=200,   comments=[".........."]),
+            silver_scroll(id=30, title="The gang",           cost=70,    comments=["One of the very early sketches related to the quiddich sub-quests..."])
+        ]
 
     return
 

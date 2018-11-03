@@ -340,27 +340,24 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     show screen blkfade
     with d3
 
-    hide screen chair_left
-    hide screen desk
-    hide screen jerking_off_01 #Hermione topless. Genie jerking off.
     hide screen bld1
     hide screen blktone
 
-    if hermione_xpos_name in ["desk"]:
+    if hermione_chibi_xpos_name in ["desk"]:
         call her_chibi("stand","desk","base")
-    elif hermione_xpos_name in ["mid"]:
+    elif hermione_chibi_xpos_name in ["mid"]:
         call her_chibi("stand","mid","base")
     else:
         call her_chibi("hide")
 
-    call gen_chibi("hide")
-    show screen genie
-    call hide_blkfade
+    call gen_chibi("sit_behind_desk")
+    hide screen blkfade
+    with d3
 
     #Walk
-    if hermione_xpos_name in ["desk"]:
+    if hermione_chibi_xpos_name in ["desk"]:
         call her_walk("desk","leave",2.7)
-    if hermione_xpos_name in ["mid"]:
+    if hermione_chibi_xpos_name in ["mid"]:
         call her_walk("mid","leave",2)
 
     call reset_hermione_main
@@ -378,9 +375,9 @@ label hg_pr_transition_block:
     hide screen blktone
     with d3
 
-    if hermione_xpos_name == "desk":
+    if hermione_chibi_xpos_name == "desk":
         call her_walk("desk","leave",2.7)
-    elif hermione_xpos_name == "mid":
+    elif hermione_chibi_xpos_name == "mid":
         call her_walk("mid","leave",2)
     else:
         call her_chibi("leave")
@@ -404,7 +401,7 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen groping_naked_tits
     hide screen genie_and_tits_01
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
-    if hermione_xpos_name == "desk":
+    if hermione_chibi_xpos_name == "desk":
         call her_chibi("stand","desk","base")
     else:
         call her_chibi("stand","mid","base")
@@ -415,7 +412,7 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen blkfade
     with fade
 
-    if hermione_xpos_name == "desk":
+    if hermione_chibi_xpos_name == "desk":
         call her_walk("desk","leave",2.7)
     else:
         call her_walk("mid","leave",2)
@@ -503,7 +500,7 @@ label screams_of_rapings:
     call her_chibi("leave","door","base")
 
     $ hermione_busy = True
-   
+
     if daytime:
         call play_music("day_theme")
         jump day_resume

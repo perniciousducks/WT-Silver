@@ -18,6 +18,9 @@ label change_hair:
     #Susan
     if active_girl == "susan":
         jump change_sus_hair
+    #Cho
+    if active_girl == "cho":
+        jump change_cho_hair
 
 
 ### Change Hermione's Hair Color ###
@@ -431,6 +434,12 @@ label compliment_her_hair_style:
     return
 
 
+label change_lun_hair:
+    call set_lun_hair(hair_style_choice, hair_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
 label change_ast_hair:
     call set_ast_hair(hair_style_choice, hair_color_choice)
 
@@ -439,6 +448,12 @@ label change_ast_hair:
 
 label change_sus_hair:
     call set_sus_hair(hair_style_choice, hair_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+label change_cho_hair:
+    call set_cho_hair(hair_style_choice, hair_color_choice)
 
     hide screen wardrobe
     call screen wardrobe

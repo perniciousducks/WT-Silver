@@ -199,8 +199,18 @@ label __init_variables:
 
 
     #HD RESCALE RATION
-    if not hasattr(renpy.store,'scaleratio'): #important!
+    if not hasattr(renpy.store,'genie_scaleratio'): #important!
         $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
+
+        $ genie_scaleratio = 2 #Scaleratio of each character can be changed to be used in custom "CG" scenes. Made larger, more zoomed in,...
+        $ snape_scaleratio = 2
+        $ tonks_scaleratio = 2
+
+        $ hermione_scaleratio = 2
+        $ luna_scaleratio = 2
+        $ astoria_scaleratio = 2
+        $ susan_scaleratio = 2
+        $ cho_scaleratio = 2
 
     ###CGs
     if not hasattr(renpy.store,'ccg_folder'): #important!
@@ -276,10 +286,6 @@ label __init_variables:
         $ reset_luna_content = False
         $ reset_cho_content = False
 
-    # Store Init
-    call store_init
-    call store_items_init
-
     #Genie Init
     call genie_init
 
@@ -316,6 +322,9 @@ label __init_variables:
 
     call wardrobe_init
 
+    # Store Init
+    call store_init
+    call store_items_init
 
 
     ### Do not add anything after this line !!!

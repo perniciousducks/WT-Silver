@@ -46,8 +46,13 @@ label summon_astoria:
 
         "-Spell Training-" if snape_gave_spellbook:
             if not astoria_book_intro_happened:
-                $ astoria_book_intro_happened = True
-                jump astoria_book_intro
+                menu:
+                    "-Discuss Tonks' request with her-" if daytime:
+                        $ astoria_book_intro_happened = True
+                        jump astoria_book_intro
+                    "{color=#858585}-Discuss Tonks' request with her-{/color}" if not daytime:
+                        call nar(">Tonks wants to spend a whole day with her. It's too late to do that now. Try again tomorrow morning.")
+                        jump astoria_requests
             else:
                 jump astoria_spell_training
         "{color=#858585}-Spell Training-{/color}" if spells_unlocked and not snape_gave_spellbook:

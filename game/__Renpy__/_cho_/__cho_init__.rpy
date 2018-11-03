@@ -139,6 +139,7 @@ label cho_progress_init:
 
     # Update 1.3
     if not hasattr(renpy.store,'cho_whoring') or reset_persistants or reset_cho_content:
+
         ##Favour stuff
         $ chof2_first = True
 
@@ -155,17 +156,26 @@ label cho_progress_init:
 
     # Update 1.32
     if not hasattr(renpy.store,'cho_quidd') or reset_persistants or reset_cho_content:
+
         $ cho_quidd = False
         $ days_since_quidd = 0
         $ cho_quidd_points = 0
 
     # Update 1.33
     if not hasattr(renpy.store,'first_cho_favor_done') or reset_persistants or reset_cho_content:
+
         $ cho_unlocked = False
 
         $ cho_genie_name = "Professor"
         $ cho_name = "Cho"
 
         $ first_cho_favor_done = False
+
+    # Update 1.34
+    if not hasattr(renpy.store,'cho_wardrobe_unlocked') or reset_persistants or reset_cho_content:
+
+        $ cho_wardrobe_unlocked = False
+
+
 
     return

@@ -21,13 +21,18 @@ label summon_tonks:
             else:
                 jump tonks_talk
 
-        "{color=#858585}-Send Astoria with her-{/color}" if spells_locked and (astoria_busy or not daytime):
-            if daytime:
-                call nar(">Astoria is currently unavailable.")
-            else:
+        "{color=#858585}-Send Astoria with her-{/color}" if astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked:
+            if not astoria_book_intro_happened:
+                call nar(">You should probably discuss this with Astoria first.")
+            elif not spells_locked:
+                call nar(">There is no reason to send Astoria with Tonks right now.")
+            elif not daytime:
                 call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.")
+            elif astoria_busy:
+                call nar(">Astoria is currently unavailable.")
             jump tonks_requests
-        "-Send Astoria with her-" if spells_locked and daytime and not astoria_busy:
+
+        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy:
             call blkfade
             call nar(">You summon Astoria.")
             pause.5

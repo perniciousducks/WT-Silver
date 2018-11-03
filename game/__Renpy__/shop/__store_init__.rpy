@@ -19,7 +19,7 @@ label store_init:
         $ cs_existing_stock = [False,False,False,False,False]
         $ cs_existing_stock_gifted = []
 
-    #Update 1.4
+    #Update 1.33
     if not hasattr(renpy.store,'cs_gui_OBJ') or reset_persistants: #important!
         $ mannequin_preview = "hg_mannequin.png"
         $ cs_inventory_list = []

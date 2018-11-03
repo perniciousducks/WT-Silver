@@ -14,6 +14,9 @@ label equip_top:
     #Susan
     if active_girl == "susan":
         jump equip_sus_top
+    #Cho
+    if active_girl == "cho":
+        jump equip_cho_top
 
 
 ### Equip Hermione's Top ###
@@ -852,6 +855,12 @@ label equip_her_top:
 
 
 
+### Equip Luna's Top ###
+label equip_lun_top:
+    call set_lun_top(top_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
 
 ### Equip Astoria's Top ###
 label equip_ast_top:
@@ -863,6 +872,13 @@ label equip_ast_top:
 ### Equip Susan's Top ###
 label equip_sus_top:
     call set_sus_top(top_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Cho's Top ###
+label equip_cho_top:
+    call set_cho_top(top_choice)
 
     hide screen wardrobe
     call screen wardrobe

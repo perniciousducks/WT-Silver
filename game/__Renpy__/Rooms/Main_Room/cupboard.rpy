@@ -337,8 +337,11 @@ label rummaging:
         else:
             jump day_start
 
+    # Item Reward.
+    $ random_number = renpy.random.randint(1, 5)
+
     if game_difficulty >= 2:               #Normal and hardcore difficulty
-        if i_of_iv in [1,2,3]: # Found something. 75% chance.
+        if random_number in [1,2,3,4]: # Found something. 80% chance.
             jump rum_rewards
         else:
             ">...You find nothing of value."
@@ -356,82 +359,114 @@ label rummaging:
         jump rum_rewards
 
 label rum_rewards:
+    $ random_number = renpy.random.randint(1, 20)
+
+    if game_difficulty <= 2: #Easy and Normal difficulty.
+
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
-            if one_of_tw == 20:
+            if random_number in [1,2]:
+                call rum_block(Lollipop)
+            elif random_number in [3]:
                 call rum_block(PlushOwl)
-            elif one_of_tw == 1 or one_of_tw == 2:
-                call rum_block(Lollipop)
-            elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18:
-                call rum_block("gold1")
-            elif one_of_tw >= 10 and one_of_tw <= 16:
-                call rum_block("wine")
-            elif one_of_tw == 17:
+            elif random_number in [4,5]:
                 call rum_block(Chocolate)
-            elif one_of_tw == 19:
+            elif random_number in [6]:
                 call rum_block(SexyLingerie)
+            else:
+                if random_number <= 12:
+                    call rum_block("gold1")
+                else:
+                    call rum_block("wine")
 
-
-        ### EVENT LEVEL 02 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
-            if one_of_tw == 20:
-                call rum_block(PornMagazines)
-            elif one_of_tw == 1 or one_of_tw ==2:
+            if random_number in [1,2]:
                 call rum_block(Lollipop)
-            elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:
-                call rum_block("gold2")
-            elif one_of_tw >= 11 and one_of_tw <= 15:
-                call rum_block("wine")
-            elif one_of_tw == 16:
+            elif random_number in [3]:
+                call rum_block(PornMagazines)
+            elif random_number in [4]:
                 call rum_block(SexyLingerie)
-            elif one_of_tw == 17:
+            elif random_number in [5]:
                 call rum_block(Chocolate)
-            elif one_of_tw == 19:
+            elif random_number in [6]:
                 call rum_block(ViktorKrumPoster)
+            else:
+                if random_number <= 14:
+                    call rum_block("gold2")
+                else:
+                    call rum_block("wine")
 
-
-        ### EVENT LEVEL 03 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
-            if one_of_tw == 20:
+            if random_number in [1]:
                 call rum_block(Vibrator)
-            elif one_of_tw >= 1 and one_of_tw <= 4:
+            elif random_number in [2,3]:
                 call rum_block(PackOfCondoms)
-            elif one_of_tw == 5 or one_of_tw == 6:
-                call rum_block("gold1") #Bugfix? Previously was just (1).
-            elif one_of_tw >= 7 and one_of_tw <= 14:
-                call rum_block("gold3")
-            elif one_of_tw >= 15 and one_of_tw <= 18:
-                call rum_block("wine")
-            elif one_of_tw == 19:
-                call rum_block(ViktorKrumPoster)
-
-
-        ### EVENT LEVEL 04 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
-        if whoring >= 18: # Lv 7+
-            if one_of_tw == 20:
-                call rum_block(SpeedStick2000)
-            elif one_of_tw >= 1 and one_of_tw <= 4:
+            elif random_number in [4,5]:
                 call rum_block(Butterbeer)
-            elif one_of_tw >= 5 and one_of_tw <= 8:
-                call rum_block(Chocolate)
-            elif one_of_tw >= 9 and one_of_tw <= 16:
-                call rum_block("gold4")
-            elif one_of_tw == 17:
-                call rum_block(AnalPlugs)
-            elif one_of_tw == 18:
+            elif random_number in [6]:
                 call rum_block(ViktorKrumPoster)
-            elif one_of_tw == 19:
+            else:
+                if random_number <= 16:
+                    call rum_block("gold3")
+                else:
+                    call rum_block("wine")
+
+        if whoring >= 18: # Lv 7+
+            if random_number in [1]:
+                call rum_block(SpeedStick2000)
+            elif random_number in [2,3,4]:
+                call rum_block(Butterbeer)
+            elif random_number in [5]:
+                call rum_block(Chocolate)
+            elif random_number in [6]:
+                call rum_block(ViktorKrumPoster)
+            elif random_number in [7]:
+                call rum_block(AnalPlugs)
+            elif random_number in [8]:
                 call rum_block(ThestralStrapon)
+            else:
+                if random_number <= 18:
+                    call rum_block("gold4")
+                else:
+                    call rum_block("wine")
 
-        show screen genie
-        hide screen rum_screen
+    else: # Hardcore difficulty. # Sex items only.
 
-        hide screen bld1
-        with d3
-
-        if daytime:
-            jump day_main_menu
+        if random_number in [1]:
+            call rum_block(PornMagazines)
+        elif random_number in [2]:
+            call rum_block(Vibrator)
+        elif random_number in [3]:
+            call rum_block(SexyLingerie)
+        elif random_number in [4]:
+            call rum_block(PackOfCondoms)
+        elif random_number in [5]:
+            call rum_block(AnalPlugs) #Butt Plug
+        elif random_number in [6]:
+            call rum_block(AnalBeads) #Snek
+        elif random_number in [7]:
+            call rum_block(JarOfLube)
+        elif random_number in [8]:
+            call rum_block(ThestralStrapon)
+        elif random_number in [9]:
+            call rum_block(BallGagAndCuffs)
+        elif random_number in [10]:
+            call rum_block(SexDollJoanne)
         else:
-            jump night_main_menu
+            if whoring >= 21: # Lv 7+
+                call rum_block(Butterbeer)
+            else:
+                call rum_block("wine")
+
+    show screen genie
+    hide screen rum_screen
+
+    hide screen bld1
+    with d3
+
+    if daytime:
+        jump day_main_menu
+    else:
+        jump night_main_menu
 
 label rum_block(item = None):
     if isinstance(item, gift_item):

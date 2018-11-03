@@ -49,7 +49,6 @@ else:
 #Luna Daily Flags.
 $ luna_busy = False
 $ days_to_luna-= 1
-call reset_luna_main
 
 #Astoria Daily Flags.
 $ astoria_busy = False
@@ -163,16 +162,18 @@ if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7
 $ day_of_week += 1
 
 ### MOOD ###
-if game_difficulty <= 1: #Easy difficulty
+if game_difficulty <= 1:   # Easy difficulty
     if mad >= 1:
         $ mad -= 3
     if cho_mad >= 1:
         $ cho_mad -= 3
-else: #Normal (2) $ hardcore (3) difficulty
+elif game_difficulty == 2: # Normal difficulty
     if mad >= 1:
         $ mad -= 2
     if cho_mad >= 1:
         $ cho_mad -= 2
+else:                      # Hardcore # Gifting items is required!
+    pass
 
 if mad < 0:
     $ mad == 0

@@ -98,9 +98,13 @@ label set_cho_bottom(bottom=""):
 label set_cho_bra(bra=""):
     hide screen cho_chang
 
-    $ cho_request_wear_bra = True
-    $ cho_wear_bra = True
-    $ c_bra = bra
+    if cho_wear_bra and c_bra == bra:
+        $ cho_request_wear_bra = False
+        $ cho_wear_bra = False
+    else:
+        $ cho_request_wear_bra = True
+        $ cho_wear_bra = True
+        $ c_bra = bra
 
     call update_cho_uniform
     show screen cho_chang
@@ -128,9 +132,13 @@ label set_cho_onepiece(onepiece=""):
 label set_cho_panties(panties=""):
     hide screen cho_chang
 
-    $ cho_request_wear_panties = True
-    $ cho_wear_panties = True
-    $ c_panties = panties
+    if cho_wear_panties and c_panties == panties:
+        $ cho_request_wear_panties = False
+        $ cho_wear_panties = False
+    else:
+        $ cho_request_wear_panties = True
+        $ cho_wear_panties = True
+        $ c_panties = panties
 
     call update_cho_uniform
     show screen cho_chang
@@ -223,10 +231,9 @@ label cho_outfit(outfit):
         $ cho_request_wear_outfit = False
         $ cho_wear_outfit = False
     else:
+        $ cho_request_wear_outfit = True
         $ cho_wear_outfit = True
-
         $ cho_request_wear_top = True
-        $ cho_wear_top = True
 
         $ cho_outfit_GLBL = outfit
 
@@ -239,56 +246,32 @@ label cho_outfit(outfit):
 
     call load_cho_clothing_saves
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
 
-label set_cho_clothing(outfit=""):
-    hide screen cho_chang
 
-    if outfit in ["uniform"]: #Remove outfit
-        $ c_top                 = "top_1"
-        $ c_bra                 = "bra_sport"
-        $ c_panties             = "panties_sport"
+label update_cho_quidditch_outfit:
 
-        if cho_quidd_points <= 1:
-            $ c_bottom              = "skirt_1"
-        elif cho_quidd_points == 2:
-            $ c_bottom              = "skirt_2"
-        else:
-            $ c_bottom              = "skirt_3"
+    $ cc_quidditch_OBJ.outfit_layers = []
 
-        call load_cho_clothing_saves
+    if cho_quidd_points == 0:
+        $ cc_quidditch_OBJ.outfit_layers.append("quid_pants_long.png")
+    elif cho_quidd_points == 1:
+        $ cc_quidditch_OBJ.outfit_layers.append("skirt_1.png")
+    elif cho_quidd_points == 2:
+        $ cc_quidditch_OBJ.outfit_layers.append("skirt_2.png")
+    else:
+        $ cc_quidditch_OBJ.outfit_layers.append("skirt_3.png")
 
-    if outfit == "quidditch":
-        #Temporary way of doing outfits for Cho for now
-        $ c_robe                = "quidditch"
-        $ c_top                 = "sweater"
-        $ c_bra                 = "bra_sport"
-        $ c_panties             = "panties_sport"
-        $ c_gloves              = "quidditch"
+    $ cc_quidditch_OBJ.outfit_layers.append("left_hand.png") #Hand Overlay #Important
 
-        if cho_quidd_points == 0:
-            $ c_bottom              = "pants_yoga_long"
-        elif cho_quidd_points == 1:
-            $ c_bottom              = "skirt_1"
-        elif cho_quidd_points == 2:
-            $ c_bottom              = "skirt_2"
-        else:
-            $ c_bottom              = "skirt_3"
+    $ cc_quidditch_OBJ.outfit_layers.append("quid_sweater.png")
 
-        $ cho_wear_top = True
-        $ cho_wear_bottom = True
-        $ cho_wear_robe = True
-        $ cho_wear_bra = True
-        $ cho_wear_panties = True
-        $ cho_wear_gloves = True
+    if cho_quidd_points in [0,1,2,3, 5,6]: #Not 4 #Wears robe!
+        $ cc_quidditch_OBJ.outfit_layers.append("quid_robe.png")
 
-        $ cho_wear_accs = False
-        $ cho_wear_stockings = False
-
-    call update_cho_uniform
+    $ cc_quidditch_OBJ.outfit_layers.append("quid_gloves.png")
 
     return
 
@@ -382,5 +365,10 @@ label load_cho_clothing_saves:
         $ cho_wear_tattoos      = True
     else:
         $ cho_wear_tattoos      = False
+
+    if cho_request_wear_outfit:
+        $ cho_wear_outfit      = True
+    else:
+        $ cho_wear_outfit      = False
 
     return

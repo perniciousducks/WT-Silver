@@ -4,8 +4,8 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
     $ cho_quidd = True
     $ cho_busy = True
 
-    #Temporary way of doing outfits for Cho for now
-    call set_cho_clothing("quidditch")
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("","annoyed","angry","angry","R",xpos="close",ypos="base")
@@ -84,7 +84,8 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
     $ cho_quidd_points = 1
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_1'
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -97,7 +98,8 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
             m "Ah miss Chong... Come on in!"
             cho "..."
 
-    call cho_main("...","annoyed","suspicious","angry","R")
+    call play_sound("door")
+    call cho_main("...","annoyed","suspicious","angry","R",xpos="mid",ypos="base")
     m "You seem a little on edge today..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
@@ -228,13 +230,15 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     $ cho_quidd_points = 2
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_2'
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
 
     m "Come in..."
-    call cho_main("...","base","closed","base","mid")
+    call play_sound("door")
+    call cho_main("...","base","closed","base","mid",xpos="mid",ypos="base")
     m "How did your game go?"
     call cho_main("We won again!","scream","shocked","base","mid",trans="hpunch")
     call cho_main("I can't believe that we've broken our 6 year dry streak with two back-to-back wins!","smile","base","base","mid")
@@ -297,7 +301,8 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     $ cho_quidd_points = 3
     $ cho_busy = True
 
-    call set_cho_clothing("quidditch") #Has 'skirt_3'
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -370,7 +375,243 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
 
 
 label cho_quidd_2_1: #Comes back after playing without a robe on
+    $ cho_quidd_points = 4
+    $ cho_busy = True
 
-label cho_quidd_2_2: #Comes back after playing without a jumper on
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
+
+    call play_sound("door")
+    call cho_main("There's been a disaster!","scream","closed","angry","mid",xpos="mid",ypos="base")
+    m "What? Did something happen during your game?"
+    call cho_main("The game is {b}tomorrow{/b} sir...","open","angry","angry","mid")
+    call cho_main("I'm talking about what happened to Lee Jordan, our commentator!","quiver","angry","angry","R")
+    m "You have a commentator for practice games?"
+    call cho_main("The commentators need to practice too!","open","angry","raised","mid")
+    m "So what happened to him?"
+    call cho_main("he was hit in the throat by a bludger during yesterdays game between gryffindor and slytherin.","quiver","base","raised","down")
+    m "Ouch..."
+    call cho_main("Madam Pomfrey says he'll be able to talk in a few days, but yelling is out of the picture for the rest of the season.","soft","closed","sad","mid")
+    call cho_main("What are we going to do! We can't have a \"W.S.C.\" without a commentator!","soft","base","sad","mid")
+    m "Well I do know someone..."
+
+    label who_shall_commentate:
+    menu:
+        ">Chose somebody to commentate Cho's quidditch match."
+        "-Hermione-":
+            call cho_main("Hermione Granger?","scream","shocked","raised","mid")
+            pass
+        "-Astoria-" if astoria_unlocked:
+            call cho_main("That brat?","scream","shocked","raised","mid")
+            call cho_main("Not a chance!","open","closed","angry","mid")
+            call cho_main("Besides, [cho_genie_name], did you forget that she's a slytherin?","open","angry","angry","mid")
+            m "Right. No slytherins. Got it."
+            m "How about..."
+            jump who_shall_commentate
+        "-Luna-" if luna_unlocked:
+            call cho_main("Luna? Luna Lovegood, [cho_genie_name]?","open","suspicious","raised","mid")
+            call cho_main("Knowing her she'd probably commentate the grass as it's growing...","open","closed","raised","mid")
+            call cho_main("Trust me, [cho_genie_name], Luna would be a terrible choice!","soft","angry","angry","mid")
+            m "Fine. How about..."
+            jump who_shall_commentate
+
+    call cho_main("She wouldn't know the first thing about quidditch!","open","angry","angry","mid")
+    call cho_main("You can't pick her!","upset","closed","raised","mid")
+    m "Now, now... Don't underestimate Miss Granger..."
+    m "Why don't we just ask her first?"
+    call cho_main("What? N-","scream","shocked","base","mid")
+    call nar(">Before Cho has a chance to protest, you magically summon hermione up to your office...")
+    call cho_main("","upset","angry","angry","R")
+    pause.5
+
+    #Hermione shouldn't be naked while sbd. else is presemt.
+    $ hermione_wear_top = True
+    $ hermione_wear_bottom = True
+    $ hermione_wear_bra = True
+
+    call play_sound("door")
+    call her_main("You wanted to see me, sir?","base","base",xpos="base",ypos="base")
+    call her_main("Oh... Hello cho...","soft","baseL")
+    call cho_main("Granger...","pout","angry","angry","L")
+    call her_main("So what is it you two need, Sir?","soft","base")
+    call cho_main("Do you mind settling an argument for us by telling this oaf you don't know anything about quidditch...","open","closed","angry","mid")
+    call her_main("What?","scream","wide",trans="hpunch")
+    hide screen hermione_main
+    with d3
+    call her_main("Sir, I know {b}EVERYTHING{/b} about quidditch!","open","angry",xpos="close",ypos="base") #Don't use {\b}, it's {/b}.
+    call cho_main("...","pout","angry","angry","L")
+    call her_main("Do you really think that I, Hermione Granger, would be lacking in a subject so basic as quidditch?","open","closed")
+    call her_main("Not to mention I've been dragged along to every single one of Harry and Ron's games...","open","angry")
+    m "So you'd know enough to commentate then?"
+    call her_main("Wait... Sir, you want me to commentate this years wizarding school cup?","open","wide_stare")
+    call cho_main("That's not what-","pout","angry","angry","R")
+    call her_main("I'd be honoured, sir!","scream","closed",trans="hpunch")
+    call her_main("Quidditch has always been one of my passions, to be able to commentate it...","open","angry")
+    call her_main("Not to mention getting to make all the announcements...","smile","baseL")
+    call her_main("The speeches...","grin","squint")
+    call her_main("the paper...","soft","ahegao")
+    call her_main("The {image=textheart}{i}preparation{/i}{image=textheart}...","open_tongue","ahegao_raised")
+    call her_main("I accept!","scream","angryCl",trans="hpunch")
+    m "Congratulations miss granger! you can start tomorrow..."
+    call her_main("Yay!","smile","happy")
+    call cho_main("What? But I'll be...","open","base","sad","mid")
+    call her_main("Oh, Will you be playing tomorrow, cho?","open","wide")
+    call her_main("I can't wait! I'll make sure that I keep an eye on you!","grin","angry")
+    call cho_main("Please don't...","quiver","base","sad","down")
+    call her_main("Ah!!! I better start preparing my opening announcements in front of the mirror!!!","open","wide_stare",trans="hpunch")
+
+    call play_sound("door")
+    hide screen hermione_main
+    with d3
+    pause.8
+
+    call cho_main("Argh! You're the worst coach ever!","scream","angry","angry","mid",trans="hpunch")
+
+    call play_sound("door")
+    hide screen cho_chang
+    with d3
+    pause.5
+
+    m "Maybe it's about time I go see one of these games..."
+
+    jump end_cho_event
+
+
+label cho_quidd_2_2: #Comes back after playing with the robe still on
+    $ cho_quidd_points = 5
+    $ cho_busy = True
+
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
+
+    call play_sound("door")
+    call cho_main("","annoyed","angry","angry","R",xpos="close",ypos="base")
+    pause.1
+    call play_sound("bump")
+    pause.5
+    call cho_main("","annoyed","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
+    pause.3
+
+    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",trans="hpunch")
+    m "Good hustle. Nice work catching that gold thing..."
+    call cho_main("This isn't the time for your stupid jokes!","open","angry","angry","mid")
+    call cho_main("I've never felt so humiliated in my entire life!","open","angry","angry","R")
+    m "It wasn't that bad, was it? At least you won."
+    call cho_main("At the expense of my dignity!","quiver","base","raised","down")
+    call cho_main("Lee Jordan only used to say that I had a nice butt!","soft","base","sad","down")
+    call cho_main("Hermione spent five minutes talking about my thighs!","open","base","raised","R")
+    g9 "That was the highlight of the match for me!"
+    call cho_main("Well this can't go on! I insist you fire Hermione!","open","closed","base","mid")
+    call cho_main("Otherwise I'm going to stop listening to your ridiculous coaching!","open","angry","angry","mid")
+    m "Ugh... fine..."
+    call cho_main("Good...","pout","angry","angry","mid")
+    m "Should we talk strategy for the next game?"
+    m "I can't help but notice your robe stayed on this game..."
+    call cho_main("I'm lucky I kept it on! Can you imagine what Hermione would have said otherwise?","open","closed","raised","mid")
+    g9 "Mmmm, I'm picturing it now..."
+    call cho_main("Professor!","quiver","shocked","raised","mid")
+    call cho_main("I think it's time I left...","open","suspicious","raised","down")
+    m "So no strategy talk?"
+    call cho_main("maybe later...","soft","suspicious","sad","R")
+
+    call play_sound("door")
+    hide screen cho_chang
+    with d3
+    pause.5
+
+    m "..."
+
+    jump end_cho_event
+
+
+label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
+    $ cho_quidd_points = 6
+    $ cho_busy = True
+
+    call update_cho_quidditch_outfit
+    call cho_outfit(cc_quidditch_OBJ)
+
+    call play_sound("door")
+    call cho_main("...","pout","suspicious","sad","R",xpos="mid",ypos="base")
+    m "Miss Chang... In case you were wondering, I haven't gotten around to firing miss granger yet..."
+    call cho_main("Oh... Um... About that...","soft","suspicious","raised","R")
+    call cho_main("Could you please... not... do that...","open","base","sad","down")
+    g4 "What? You want Hermione to keep commentating your games?"
+    g4 "What about our strategies?"
+    call cho_main("We can still do that...","soft","base","raised","down")
+    call cho_main("...","pout","base","raised","R")
+    m "[cho_name], is there something you're not telling me?"
+    call cho_main("Well...","soft","suspicious","raised","R")
+    call cho_main("It's just that...","open","suspicious","sad","mid")
+    call cho_main("People are being a lot nicer to me since that game!","quiver","suspicious","sad","mid")
+    call cho_main("All the gryffindors are inviting me to parties...","soft","base","raised","down")
+    call cho_main("Most of the Slytherins have stopped being racist...","open","closed","angry","mid")
+    call cho_main("And the hufflepuff team weren't even upset that i beat them!","open","base","raised","L")
+    m "So you want to keep on with my coaching?"
+    call cho_main("Of course! It's the only chance Ravenclaw has to win the W.S.C.!","pout","suspicious","raised","down")
+    m "Good, because It's about time you lost that robe of yours while you play."
+    call cho_main("Fine...","quiver","base","raised","mid")
+    m "And the jumper as well."
+    call cho_main("What? I'll freeze!","open","shocked","raised","mid")
+    m "You're a witch aren't you? (Is she?)"
+    call cho_main("I suppose I can use a warmth charm...","pout","base","raised","R")
+    call cho_main("But everyone will see my butt!","quiver","base","raised","down")
+    g4 "That's the point."
+    call cho_main("But, but, but!","open","closed","sad","mid")
+    g9 "That's probably what the crowd will be chanting..."
+    call cho_main("Ugh...","quiver","angry","angry","mid")
+    call cho_main("Fine...","pout","angry","angry","R")
+    call cho_main("But- I better win!","soft","angry","raised","mid")
+
+    call play_sound("door")
+    hide screen cho_chang
+    with d3
+    pause.5
+
+    jump end_cho_event
+
 
 label cho_quidd_3_1:
+
+
+
+label quidditch_game_1:
+    show screen blkfade
+    with d3
+    pause
+    $ ccg_folder = "herm_quidditch"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    her "{size+=5}-AND IT'S ANOTHER 10 POINTs FOR RAVENCLAW!{/size}"
+    her "{size+=5}I DON'T THINK ANY OF US EXPECTED THIS FROM THEM AFTER LAST YEARS PERFORMANCE!{/size}"
+    ">You get rather caught up in the spectacle of brooms flying around at a blinding pace, hurling deadly balls at each other... "
+    her "{size+=5}AND IT ALL SEEMS TO BE THANKS TO THEIR STAR SEEKER, CHO CHANG!{/size}"
+    #FADE TO CHO
+    show screen blkfade
+    with d3
+    pause 1
+    $ ccg_folder = "astoria_sit"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    ">Cho stops chasing the tiny golden snitch to turn towards hermione in the grandstand."
+    her "Her ingenious outfit seems to have made those hufflepuff boys lives a lot {b}harder{/b}."
+    ">Cho's face turns a deep red before she turns away and chases after the snitch once more."
+    show screen blkfade
+    with d3
+    pause 1
+    $ ccg_folder = "herm_quidditch"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    her "{size+=5}And I can't say that I blame them, she's certainly giving us all something nice to look at...{/size}"
+    her "{size+=5}But wait... Yes I think...{/size}"
+    her "{size+=5}She's caught it! SHe's caught the {size+=5}SNITCH!{/size}"
+    her "{size+=10}RAVENCLAW WIN! RAVENCLAW WIN!{/size}"
+    show screen blkfade
+    with d3
+    jump day_main_menu

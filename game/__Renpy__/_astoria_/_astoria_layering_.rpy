@@ -128,7 +128,7 @@ label ast_main(text="", mouth=None,eye=None, eyebrow=None, pupil=None, base=None
 
 
 
-    $ changeAstoria(mouth, eye, eyebrow, pupil, astoria_xpos, astoria_ypos, base, cheeks, tears, extra)
+    $ changeAstoria(mouth, eye, eyebrow, pupil, astoria_xpos, astoria_ypos, cheeks, tears, extra)
 
     show screen astoria_main
     show screen bld1
@@ -149,7 +149,6 @@ init python:
                         pupil=None,
                         x_pos=None,
                         y_pos=None,
-                        base=None,
                         cheeks=None,
                         tears=None,
                         extra=None):
@@ -161,7 +160,6 @@ init python:
         global astoria_pupil
         global astoria_xpos
         global astoria_ypos
-        global astoria_base
         global astoria_cheeks
         global astoria_tears
         global astoria_extra
@@ -181,8 +179,6 @@ init python:
         if y_pos is not None:
             astoria_ypos        = y_pos
         ###BODY CONTROL
-        if base is not None:
-            astoria_base        = "characters/astoria/base/"+base+".png"
         if cheeks is not None:
             astoria_cheeks      = "characters/astoria/face/extras/"+cheeks+".png"
         if tears is not None:

@@ -328,23 +328,24 @@ label her_init:
         #Positioning
         $ hermione_xpos             = 370
         $ hermione_ypos             = 0
-        $ hermione_xpos_name        = "base" #Stored xpos name
-        $ hermione_ypos_name        = "base" #Stored xpos name
         $ h_xpos                    = 0   #NOT IN USE
         $ h_ypos                    = 0   #NOT IN USE
         $ hermione_zorder           = 5
 
         $ hermione_head_xpos        = 605
         $ hermione_head_ypos        = 235
-        $ hermione_head_xpos_name   = "base" #Stored xpos name
-        $ hermione_head_ypos_name   = "base" #Stored xpos name
         $ hermione_head_zorder      = 8
 
         $ her_head_only             = 300 #(340,300,290) #NOT IN USE
         $ her_head_tits             = 235 #NOT IN USE
 
 
-
+    #Update 1.34
+    if not hasattr(renpy.store,'hermione_chibi_xpos_name') or reset_persistants:
+        $ u_sperm = "characters/hermione/face/auto_02.png"
+        $ hermione_sperm = "characters/hermione/face/auto_02.png" #Not in use yet.
+        $ hermione_chibi_xpos_name        = "base" #Stored xpos name
+        $ hermione_chibi_ypos_name        = "base" #Stored ypos name
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
     ### ADD MORE BODY PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
 

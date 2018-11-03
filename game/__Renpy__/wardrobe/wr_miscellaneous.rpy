@@ -13,6 +13,12 @@ label equip_misc_item:
     #Astoria
     if active_girl == "astoria":
         jump equip_ast_misc_item
+    #Susan
+    if active_girl == "susan":
+        jump equip_sus_misc_item
+    #Cho
+    if active_girl == "cho":
+        jump equip_sus_misc_item
 
 label equip_her_misc_item:
 

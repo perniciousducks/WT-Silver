@@ -20,7 +20,7 @@ label clothes_store:
         maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
         maf "What did you have in mind?"
         m "A few things. I haven't decided on anything specific yet."
-        m "Well, while your making up your mind, feel free to browse the store."
+        maf "Well, while your making up your mind, feel free to browse the store."
         $ clothes_intro_done = True
         jump open_clothes_store
 
@@ -344,7 +344,8 @@ label cs_select:
 
 label cs_buy:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
-    $ clothes_store_order_choice = clothes_store_selection.image
+    if clothes_store_order_choice != None:
+        $ clothes_store_order_choice = clothes_store_selection.image
     #$ clothes_store_order_choice = clothes_store_selection
     jump clothes_menu
 
@@ -640,10 +641,18 @@ label update_clothes_store_lists:
                             cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 2: #Luna
-            $ cs_inventory_list = []
+            python:
+                for i in luna_outfits_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 3: #Susan
-            $ cs_inventory_list = []
+            python:
+                for i in susan_outfits_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 4: #Astoria
             python:
@@ -653,7 +662,11 @@ label update_clothes_store_lists:
                             cs_inventory_list.append(i)
 
         else: #Cho
-            $ cs_inventory_list = []
+            python:
+                for i in cho_outfits_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
 
     #Sets
@@ -666,10 +679,18 @@ label update_clothes_store_lists:
                             cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 2: #Luna
-            $ cs_inventory_list = []
+            python:
+                for i in luna_clothing_sets_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 3: #Susan
-            $ cs_inventory_list = []
+            python:
+                for i in susan_clothing_sets_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
         elif cs_gui_OBJ.character == 4: #Astoria
             python:
@@ -679,8 +700,11 @@ label update_clothes_store_lists:
                             cs_inventory_list.append(i)
 
         else: #Cho
-            $ cs_inventory_list = []
-
+            python:
+                for i in cho_clothing_sets_list:
+                    if not i.unlockable: #Unlockables DO NOT get added to the Shop!
+                        if not i.unlocked:
+                            cs_inventory_list.append(i)
 
     #Items
     if cs_gui_OBJ.category == 2:

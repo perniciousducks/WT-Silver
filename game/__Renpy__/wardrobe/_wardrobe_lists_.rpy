@@ -151,7 +151,14 @@ label update_wr_head_list:
         if hg_ballDress_OBJ.unlocked:
             $ wr_hats.append("tiara")
 
-    #if active_girl == "luna":
+    if active_girl == "luna":
+
+        #Hair
+        $ wr_hair.append("A")
+        $ wr_hair.append("B")
+
+        if luna_reverted:
+            $ wr_glasses.append("spectrespecs")
 
     if active_girl == "astoria":
 
@@ -167,6 +174,10 @@ label update_wr_head_list:
             $ wr_hats.append("boss_hat")
 
     if active_girl == "susan":
+
+        $ wr_hair.append("A")
+
+    if active_girl == "cho":
 
         $ wr_hair.append("A")
 
@@ -239,6 +250,22 @@ label update_wr_tops_list:
         if hg_lingerie_fishnet_OBJ.unlocked:
             $ wr_tops_wicked.append("top_fishnets")
 
+    if active_girl == "luna":
+
+        #Uniform
+        $ wr_tops_uniform.append("top_1")
+        #if luna_top_level >= 2:
+        if luna_skirt_level >= 2: #Temporary
+            $ wr_tops_uniform.append("top_2")
+
+        #Cheerleader
+        if ll_cheer_r_OBJ.unlocked:
+            $ wr_tops_cheerleader.append("top_cheer_r")
+
+        #Muggle
+        if ll_pyjama_OBJ.unlocked:
+            $ wr_tops_normal.append("top_pyjama")
+
     if active_girl == "astoria":
 
         #Uniform
@@ -253,6 +280,18 @@ label update_wr_tops_list:
 
         #Uniform
         $ wr_tops_uniform.append("shirt_1")
+
+    if active_girl == "cho":
+
+        #Uniform
+        $ wr_tops_uniform.append("top_1")
+        $ wr_tops_uniform.append("top_2")
+        $ wr_tops_uniform.append("top_3")
+
+        #Muggle
+        $ wr_tops_normal.append("tanktop_long")
+        if cc_muggle_hot_OBJ.unlocked:
+            $ wr_tops_normal.append("tanktop_short")
 
     return
 
@@ -315,6 +354,21 @@ label update_wr_bottoms_list:
         if hg_punk_rocker_OBJ.unlocked or hg_punk_leather_OBJ.unlocked: #ToDo Punk Rocker will get the belted version!
             $ wr_bottoms_pants.append("pants_rocker")
 
+    if active_girl == "luna":
+
+        #Uniform
+        $ wr_bottoms_uniform.append("skirt_1")
+        if luna_skirt_level >= 2:
+            $ wr_bottoms_uniform.append("skirt_2")
+
+        #Cheerleader
+        if ll_cheer_r_OBJ.unlocked:
+            $ wr_bottoms_cheerleader.append("skirt_cheer_r")
+
+        #Muggle
+        if ll_pyjama_OBJ.unlocked:
+            $ wr_bottoms_pants.append("pants_pyjama")
+
     if active_girl == "astoria":
 
         #Uniform
@@ -329,6 +383,24 @@ label update_wr_bottoms_list:
 
         #Uniform
         $ wr_bottoms_uniform.append("skirt_1")
+
+    if active_girl == "cho":
+
+        #Uniform
+        $ wr_bottoms_uniform.append("skirt_1")
+        $ wr_bottoms_uniform.append("skirt_2")
+        $ wr_bottoms_uniform.append("skirt_3")
+
+        #Skirts
+        if cc_party_OBJ.unlocked:
+            $ wr_bottoms_skirts.append("skirt_party")
+
+        #Pants
+        $ wr_bottoms_pants.append("pants_sport_long")
+        $ wr_bottoms_pants.append("pants_yoga_long")
+        $ wr_bottoms_pants.append("pants_yoga_short")
+        if cc_muggle_hot_OBJ.unlocked:
+            $ wr_bottoms_pants.append("pants_jeans_short")
 
     return
 
@@ -462,6 +534,10 @@ label update_wr_other_clothings_list:
         if whoring >= 16:
             $ wr_robes.append("slyth_quidditch")
 
+    if active_girl == "luna":
+        if ll_cheer_r_OBJ.unlocked:
+            $ wr_stockings.append("stockings_cheer_r")
+
     if active_girl == "astoria":
         if ag_nighty_silk_OBJ.unlocked:
             $ wr_stockings.append("nighty_stockings")
@@ -554,7 +630,17 @@ label update_wr_underwear_list:
         if hg_maid_OBJ.unlocked or hg_lingerie_silk_OBJ.unlocked:
             $ wr_garterbelts.append("garterbelt_lace")
 
-    #if active_girl == "luna":
+    if active_girl == "luna":
+
+        #Bras
+        $ wr_bras.append("bra_basic")
+        if ll_lingerie_silk_OBJ.unlocked:
+            $ wr_bras.append("bra_silk")
+
+        #Panties
+        $ wr_panties.append("panties_basic")
+        if ll_lingerie_silk_OBJ.unlocked:
+            $ wr_panties.append("panties_silk")
 
     if active_girl == "astoria":
 
@@ -588,6 +674,14 @@ label update_wr_underwear_list:
         #$ wr_panties.append("")
         $ wr_panties.append("lace_panties")
         $ wr_panties.append("chain_panties")
+
+    if active_girl == "cho":
+
+        #Bras
+        $ wr_bras.append("bra_sport")
+
+        #Panties
+        $ wr_panties.append("panties_sport")
 
     return
 
@@ -639,6 +733,10 @@ label update_wr_outfits_list:
         if hg_ballDress_OBJ.unlocked:
             $ wr_dresses.append(hg_ballDress_OBJ)
 
+    #if active_girl == "luna":
+        #Outfits
+        #if ll_pajamas_OBJ.unlocked:
+        #    $ wr_dresses.append(ll_pajamas_OBJ)
 
     if active_girl == "astoria":
         #Costumes
@@ -651,6 +749,14 @@ label update_wr_outfits_list:
             $ wr_dresses.append(ag_ball_dress_OBJ)
 
     #if active_girl == "susan":
+
+    if active_girl == "cho":
+        #Outfit
+        $ wr_outfits.append(cc_quidditch_OBJ)
+
+        #Dresses
+        if cc_traditional_dress_OBJ.unlocked:
+            $ wr_dresses.append(cc_traditional_dress_OBJ)
 
     return
 

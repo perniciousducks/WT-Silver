@@ -22,13 +22,20 @@ init python:
         renpy.pause(speed)
         renpy.hide_screen("universal_walk")
 
-    class silver_scroll(object):
+    class silver_scroll(generic_menu_item):
         id = 0
-        name = ""
+        title = ""
+        imagepath = "images/store/31.png"
         cost = 0
         comments = []
+        unlocked = True
+        purchased = False
+        
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
+            
+        def get_description(self):
+            return self.comments[renpy.random.randint(0, len(self.comments)-1)]
 
 ##### Base Classes
     class silver_character_chibi(object):

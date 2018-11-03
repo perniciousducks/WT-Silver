@@ -1,354 +1,374 @@
 
 
-label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
+label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #DONE
     $ days_to_luna = 3
     $ luna_corruption = -1 #Triggers event during the evening.
-    $ luna_wear_glasses = True
-    $ luna_wear_acc = True
+
+    $ luna_pupil_color = "blue"
     $ luna_l_arm = 1
     $ luna_r_arm = 2
-    $ luna_hair = 2
-    $ l_genie_name = "sir" #reset genie's name with Luna
+
+    $ lun_hair_style = "A"
+
+    $ lun_request_wear_top = True
+    $ lun_request_wear_bottom = True
+    $ lun_request_wear_glasses = True
+    $ lun_request_wear_stockings = False
+    $ lun_top = "top_1"
+    $ lun_bottom = "skirt_1"
+    $ lun_glasses = "spectrespecs"
+
+    call luna_reset
+
+    $ l_genie_name = "Sir" #reset genie's name with Luna
     $ luna_name = "Miss Lovegood" #reset luna's name with genie
+
+    call play_sound("knocking")
     "*Knock* *Knock* *Knock*"
     lun "Hello?"
     m "(Sounds like Luna...)"
+
     menu:
         "-Let her in-":
             m "Come in!"
-            call play_sound("door") #Sound of a door opening.
-            $ luna_chibi("stand")
-            ">Luna stands in front of your desk."
-            call luna_main("Hello...", "default", "default", "sad", "default")
-            m "Miss Lovegood."
 
         "-Tell her to go away-":
             m "(SHe's probably here because of that thing with the hat!)"
             m "Ugh... I'm not here!"
             lun "..."
-            ">Your door opens as Luna walks in."
-            call play_sound("door") #Sound of a door opening.
-            $ luna_chibi("stand")
-            ">Luna stands in front of your desk."
-            call luna_main("Hello...", "default", "default", "sad", "default")
-            m "Oh, um... Hello miss lovegood."
+            call nar(">Your door opens as Luna walks in.")
+
+    call play_sound("door")
+    call lun_walk("door","desk",2.7)
+    pause.5
+
+    call lun_main("Hello...","base","base","sad","mid",xpos="mid",ypos="base")
+    m "Hello, miss lovegood."
 
     $ luna_l_arm = 1
     $ luna_r_arm = 1
-    call luna_main("...", "default", "right", "sad", "default")
-    call luna_main("......", "default", "down", "sad", "upset")
-    ">Luna starts looking around your room."
-    call luna_main("There's such a strange aura in here...", "doubtful", "right", "angry", "upset")
-    call luna_main("it's like a big hollow tree...", "default", "right", "sad", "upset")
+    call lun_main("...","base","base","sad","R")
+    call lun_main("......","normal","base","sad","down")
+    call nar(">Luna starts looking around your room.")
+    call lun_main("There's such a strange aura in here...","normal","suspicious","angry","R")
+    call lun_main("it's like a big hollow tree...","normal","base","sad","R")
     m "..."
     m "(What?)"
     m "Can I help you with something?"
-    call luna_main("oh... there was something I came here for, wasn't there...", "default", "down", "sad", "angry")
+    call lun_main("oh... there was something I came here for, wasn't there...","upset","base","sad","down")
     m "(What's going on here? I thought the hat wiped her mind!)"
-    call luna_main("I remember! The wrackspurt infestation!", "closed_happy", "right", "sad", "default")
+    call lun_main("I remember! The wrackspurt infestation!","base","happyCl","sad","R")
+
     menu:
         "\"Wrackspurts?... Is that some sort of wizard STD?\"":
-            call luna_main("Hahaha, I guess you could say that! ", "default", "right", "sad", "default")
-            call luna_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.", "default", "default", "sad", "upset")
+            call lun_main("Hahaha, I guess you could say that! ","base","base","sad","R")
+            call lun_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.","normal","base","sad","mid")
             $ luna_l_arm = 2
-            call luna_main("You can only view them wearing these spectrespecs!", "default", "left", "default", "default")
+            call lun_main("You can only view them wearing these spectrespecs!","base","base","base","L")
             $ luna_l_arm = 1
             m "I see... (This bitch really is crazy!)"
             m "(Maybe the hat was good for her...)"
             m "Well, Miss Lovegood, what can we do about it?"
-            call luna_main("I am not sure, professor... normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius-", "angry", "right", "sad", "upset")
+            call lun_main("I am not sure, professor... normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius-","normal","angry","sad","R")
             "*Genie jumps from the table*"
             g4 "DID YOU JUST CAST A SPELL ON ME?!"
             $ luna_l_arm = 2
             $ luna_r_arm = 2
-            call luna_main("Sir?", "wide", "default", "sad", "angry")
+            call lun_main("Sir?","upset","wide","sad","mid")
             g4 "EXPLAIN YOURSELF!"
             $ luna_l_arm = 1
             $ luna_r_arm = 1
-            call luna_main("I am sorry Sir, I am not sure what-", "wide", "right", "sad", "upset")
+            call lun_main("I am sorry Sir, I am not sure what-","normal","wide","sad","R")
             g4 "XENOFIUS! What does it do?"
-            call luna_main("Xenofius? I’ve not heard of that spell before, Sir.", "angry", "default", "sad", "upset")
+            call lun_main("Xenofius? I’ve not heard of that spell before, Sir.","normal","angry","sad","mid")
             m "The spell... That you just... Never mind."
-            call luna_main("(A Secret spell?) Sir, your magic is the strongest there is and these wrackspurts are really getting to me.", "mad", "right", "sad", "angry")
+            call lun_main("(A Secret spell?) Sir, your magic is the strongest there is and these wrackspurts are really getting to me.","upset","mad","sad","R")
             m "I see... do go on."
         "\"I am afraid I can’t help you Miss Lovegood.\"":
-            call luna_main("Oh please, Sir! You’re the only one powerful enough to help.","wide" , "default", "sad", "open")
+            call lun_main("Oh please, Sir! You’re the only one powerful enough to help.","open","wide","sad","mid")
             "*You can see Luna is rocking her pelvis as though she were grinding the air*"
             m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
-            call luna_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!", "default", "default", "sad", "upset")
+            call lun_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!","normal","base","sad","mid")
             "*Luna hands you a Quibbler*"
             m "*Reading* “Rotfang conspiracy... 300 ways to tie up a ghost... “ Ah! Wrackspurts..."
             "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
             "*Luna points to her spectrespecs* "
-            call luna_main("I can see them, Sir.", "closed_happy", "default", "default", "default")
+            call lun_main("I can see them, Sir.","base","happyCl","base","mid")
             m "I see...(No wonder Hermione called her Loony Lovegood)."
         "\"What in Agrabah are you wearing?\"":
-            call luna_main("Oh! These are my spectrespecs, professor!", "default", "crossed", "sad", "default")
+            call lun_main("Oh! These are my spectrespecs, professor!","base","base","sad","crossed")
             m "(Please don’t be mind-reading, please don’t be mind-reading-)"
-            call luna_main("They help me see the wrackspurts.", "default", "default", "sad", "upset")
+            call lun_main("They help me see the wrackspurts.","normal","base","sad","mid")
             m "(Thank the great desert sands!)"
-            call luna_main("And these are my plum earrings.", "default", "left", "sad", "default")
+            call lun_main("And these are my plum earrings.","base","base","sad","L")
             m "Ah yes, very nice..."
             m "So about these wrecksputs..."
 
-    call luna_main("Yes, Sir, they’re proving to be quite a pain.", "closed", "default", "sad", "upset")
+    call lun_main("Yes, Sir, they’re proving to be quite a pain.","normal","closed","sad","mid")
 
     "*Luna is visibly grinding her pelvis against her thighs.*"
     m "(Is she really?... Ohhh). Miss Lovegood, how exactly do these wickspurts make you feel?"
-    call luna_main("they're Just like the quibbler says sir, except...", "seductive", "right", "sad", "upset")
+    call lun_main("they're Just like the quibbler says sir, except...","normal","seductive","sad","R")
     m "Go on..."
-    call luna_main("Well, it's not my brain they're making fuzzy.","seductive" , "down", "sad", "talk")
+    call lun_main("Well, it's not my brain they're making fuzzy.","soft","seductive","sad","down")
     m "Where exactly is fuzzy, Miss Lovegood?"
-    call luna_main("Umm... I'm not sure if I can say...", "seductive", "right", "sad", "upset")
+    call lun_main("Umm... I'm not sure if I can say...","normal","seductive","sad","R")
     m "(YES!)"
     m "Now now, Miss Lovegood, as your headmaster there shouldn't be anything that you can't say to me."
-    call luna_main("Well alright...", "seductive", "down", "sad", "default")
-    call luna_main("the fuzziness is in between my legs, sir...", "seductive", "default", "sad", "default")
+    call lun_main("Well alright...","base","seductive","sad","down")
+    call lun_main("the fuzziness is in between my legs, sir...","base","seductive","sad","mid")
     m "Really? That seems quite strange..."
-    call luna_main("It is sir! I've only ever heard of people's brains going fuzzy...", "default", "default", "sad", "upset")
-    call luna_main("but this...", "angry", "default", "sad", "upset")
-    call luna_main("it's like this unbearable itch I can't scratch...", "seductive", "down", "sad", "angry")
+    call lun_main("It is sir! I've only ever heard of people's brains going fuzzy...","normal","base","sad","mid")
+    call lun_main("but this...","normal","angry","sad","mid")
+    call lun_main("it's like this unbearable itch I can't scratch...","upset","seductive","sad","down")
     m "(I know that feeling.)"
-    call luna_main("and I feel like I can't quite remember what I've been up to over the last few days...", "doubtful", "right", "sad", "upset")
+    call lun_main("and I feel like I can't quite remember what I've been up to over the last few days...","normal","suspicious","sad","R")
     m "Oh um... I wouldn't worry about that at all..."
     m "Let's just focus on this fuzziness of yours."
-    call luna_main("Alright, professor...", "seductive", "down", "sad", "upset")
-    call luna_main("As I was saying, this fuzziness has really been bothering me the last few days...", "seductive", "default", "sad", "upset")
+    call lun_main("Alright, professor...","normal","seductive","sad","down")
+    call lun_main("As I was saying, this fuzziness has really been bothering me the last few days...","normal","seductive","sad","mid")
     m "Hmmm, has it been affecting your studies at all?"
-    call luna_main("yes, it has, sir...", "seductive", "down", "sad", "angry")
+    call lun_main("yes, it has, sir...","upset","seductive","sad","down")
     m "Well, we can't have that now, can we?"
-    call luna_main("no, sir...", "seductive", "default", "sad", "default")
+    call lun_main("no, sir...","base","seductive","sad","mid")
     m "Are you free at the moment?"
-    call luna_main("Umm... I'm about to go to divination class, sir...", "seductive", "down", "sad", "upset")
+    call lun_main("Umm... I'm about to go to divination class, sir...","normal","seductive","sad","down")
     m "Well, in that case, we'll address that nasty itch of yours later on."
     m "Come to my office later tonight, and we'll see what we can do."
-    call luna_main("Oh, thank you, sir!", "wide", "default", "sad", "default")
-    call luna_main("I can't wait!", "seductive", "default", "sad", "default")
-    call luna_main("Do you think you could possibly stop the nargles stealing my shoes as well?", "default", "down", "sad", "default")
+    call lun_main("Oh, thank you, sir!","base","wide","sad","mid")
+    call lun_main("I can't wait!","base","seductive","sad","mid")
+    call lun_main("Do you think you could possibly stop the nargles stealing my shoes as well?","base","base","sad","down")
     m "(What the hell is a nargle?)"
     m "One step at a time, Miss Lovegood."
-    call luna_main("yes, you're right... the nargles wouldn't like it if we were multitasking...", "closed", "default", "sad", "upset")
+    call lun_main("yes, you're right... the nargles wouldn't like it if we were multitasking...","normal","closed","sad","mid")
     m "..."
-    call luna_main("well, I'd best be off... goodbye professor!", "closed_happy", "default", "default", "default")
+    call lun_main("well, I'd best be off... goodbye professor!","base","happyCl","base","mid")
     "*Luna skips out of the room, squeezing her legs together as she prances*"
     m "(This is going to be fun!)"
-    $ luna_wear_glasses = True
+
     jump luna_away
 
 
-label luna_reverted_greeting_2: #Explaining to Luna what will happen or something
+
+label luna_reverted_greeting_2: #Explaining to Luna what will happen or something #DONE
     $ luna_corruption = 0
+
+    call play_sound("knocking")
     "*knock* *knock* *knock*"
     m "Come in..."
-    call play_sound("door") #Sound of a door opening.
-    $ luna_chibi("stand")
-    ">Luna stands in front of your desk."
-    call luna_main("Hello, Sir...", "closed_happy", "default", "default", "default")
+
+    call play_sound("door")
+    call lun_walk("door","mid",2)
+    pause.5
+
+    call lun_main("Hello, Sir...","base","happyCl","base","mid",xpos="right",ypos="base")
     m "Miss Lovegood. So, Did the wickerspats leave you alone today?"
-    call luna_main("Not at all! They were worse than ever!", "default", "right", "angry", "angry")
+    call lun_main("Not at all! They were worse than ever!","upset","base","angry","R")
     m "Really?"
-    call luna_main("Really, sir. And I don't think it's just me they're affecting either.", "default", "default", "sad", "upset")
-    call luna_main("I fear the whole school is becoming overrun!", "wide", "default", "sad", "upset")
+    call lun_main("Really, sir. And I don't think it's just me they're affecting either.","normal","base","sad","mid")
+    call lun_main("I fear the whole school is becoming overrun!","normal","wide","sad","mid")
     m "What makes you say that?"
-    call luna_main("The way people are acting...", "angry", "right", "sad", "upset")
-    call luna_main("It's very strange, don't you think sir?", "angry", "default", "sad", "angry")
+    call lun_main("The way people are acting...","normal","angry","sad","R")
+    call lun_main("It's very strange, don't you think sir?","upset","angry","sad","mid")
     m "(Like this crazy bitch can call anyone strange!)"
     m "Strange how?"
-    call luna_main("it's Their auras sir!", "closed", "right", "sad", "upset")
+    call lun_main("it's Their auras sir!","normal","closed","sad","R")
     m "Oh..."
-    call luna_main("They're far too red!", "angry", "default", "sad", "upset")
+    call lun_main("They're far too red!","normal","angry","sad","mid")
     m "Too red?"
-    call luna_main("I'm afraid so...", "angry", "right", "sad", "angry")
+    call lun_main("I'm afraid so...","upset","angry","sad","R")
     m "And you think these wackspots are to blame?"
-    call luna_main("I'm not sure...", "seductive", "down", "sad", "upset")
-    call luna_main("According to my father's beastiaries, they should only ever produce a grey tinge to an aura...", "seductive", "right", "sad", "upset")
-    call luna_main("For them to be making auras red...", "wide", "down", "sad", "angry")
-    call luna_main("It could be very dangerous!", "wide", "default", "sad", "upset")
+    call lun_main("I'm not sure...","normal","seductive","sad","down")
+    call lun_main("According to my father's beastiaries, they should only ever produce a grey tinge to an aura...","normal","seductive","sad","R")
+    call lun_main("For them to be making auras red...","upset","wide","sad","down")
+    call lun_main("It could be very dangerous!","normal","wide","sad","mid")
     m "(Pffft... auras...)"
     m "yes, I see how that could be dangerous..."
-    "*Luna starts grinding her thighs together.*"
-    call luna_main("yes...", "seductive", "down", "sad", "default")
-    call luna_main("So, about this itch, sir...", "seductive", "default", "sad", "default")
+    call nar("*Luna starts grinding her thighs together.*")
+    call lun_main("yes...","base","seductive","sad","down")
+    call lun_main("So, about this itch, sir...","base","seductive","sad","mid")
     m "Yes."
-    call luna_main("Did you say you had some way to get rid of it?", "seductive", "default", "sad", "upset")
+    call lun_main("Did you say you had some way to get rid of it?","normal","seductive","sad","mid")
     m "I did."
-    call luna_main("well...", "seductive", "right", "sad", "angry")
+    call lun_main("well...","upset","seductive","sad","R")
     m "well, the first thing's first I need something from you, Miss Lovegood."
-    call luna_main("Something from me?", "wide", "default", "sad", "pout")
+    call lun_main("Something from me?","pout","wide","sad","mid")
     m "Yes, I need a promise."
-    call luna_main("oh...", "default", "right", "sad", "upset")
-    call luna_main("alright then!", "closed_happy", "default", "sad", "default")
+    call lun_main("oh...","normal","base","sad","R")
+    call lun_main("alright then!","base","happyCl","sad","mid")
     m "I haven't even told you what it is yet."
-    call luna_main("Don't worry sir, I trust you!", "wide", "default", "default", "default")
+    call lun_main("Don't worry sir, I trust you!","base","wide","base","mid")
     m "(this might be too easy!)"
     m "Yes well, the techniques I'm going to be showing you are proprietary so I'm going to have to make you promise not to talk to anyone about what goes on in this room."
-    call luna_main("techniques...", "seductive", "right", "sad", "upset")
-    call luna_main("proprietary...", "seductive", "down", "sad", "angry")
-    call luna_main("I'm not sure I understand, sir.", "seductive", "default", "sad", "upset")
+    call lun_main("techniques...","normal","seductive","sad","R")
+    call lun_main("proprietary...","upset","seductive","sad","down")
+    call lun_main("I'm not sure I understand, sir.","normal","seductive","sad","mid")
     m "Well, if what you're saying is correct, even if I use some powerful magic to remove them..."
     m "(I hope she buys this...)"
     m "They'll soon be back, and in greater numbers."
-    call luna_main("...", "seductive", "right", "sad", "upset")
+    call lun_main("...","normal","seductive","sad","R")
     m "(Did she buy it?)"
-    call luna_main("yes, You're right, sir.", "closed", "right", "sad", "upset")
+    call lun_main("yes, You're right, sir.","normal","closed","sad","R")
     m "(YES!)"
-    call luna_main("But are there really techniques to dispell them?", "seductive", "default", "raised", "upset")
+    call lun_main("But are there really techniques to dispell them?","normal","seductive","raised","mid")
     m "There are, but as I said, if you want to learn them you have to promise not to tell anyone what happens here."
-    call luna_main("I suppose that's only fair, This information would be worth more than a snorkack sighting!", "default", "default", "sad", "default")
+    call lun_main("I suppose that's only fair, This information would be worth more than a snorkack sighting!","base","base","sad","mid")
     m "..."
     m "well, it's Not just the techniques Miss Lovegood."
     m "You must promise to tell anyone anything that happens in this room, no matter what."
-    call luna_main("well...", "seductive", "right", "sad", "upset")
-    "*You can see Luna is awkwardly rocking her pelvis*"
-    call luna_main("alright then...", "seductive", "default", "sad", "default")
-    call luna_main("I solemnly swear that I will tell no one what happens within these hallowed walls...", "closed", "right", "default", "upset")
+    call lun_main("well...","normal","seductive","sad","R")
+    call nar("*You can see Luna is awkwardly rocking her pelvis*")
+    call lun_main("alright then...","base","seductive","sad","mid")
+    call lun_main("I solemnly swear that I will tell no one what happens within these hallowed walls...","normal","closed","base","R")
     m "Fantastic!"
-    call luna_main("so can you please teach me the techniques sir?", "wide", "default", "sad", "default")
-    ">There's a desperate need in Luna's eyes that excites you to no end."
+    call lun_main("so can you please teach me the techniques sir?","base","wide","sad","mid")
+    call nar(">There's a desperate need in Luna's eyes that excites you to no end.")
     m "yes, yes. I think I've made you wait long enough."
-    call luna_main("Thank you so much!", "closed_happy", "right", "default", "default")
+    call lun_main("Thank you so much!","base","happyCl","base","R")
     m "No need to thank me, Miss Lovegood, I'm simply doing what any good teacher should."
     m "Now, stand in the middle of the room for me."
-    hide screen luna
+    hide screen luna_main
     with d3
-    $ luna_xpos = 400
-    call luna_main("is Here ok?", "default", "default", "sad", "pout")
+
+    call lun_main("is Here ok?","pout","base","sad","mid",xpos="mid",ypos="base")
     m "Perfect."
     m "Before we begin I have to explain a few things."
-    ">Luna stares at you intently."
-    call luna_main("...", "angry", "default", "sad", "upset")
+    call nar(">Luna stares at you intently.")
+    call lun_main("...","normal","angry","sad","mid")
     m "From what I can tell these rockspits seem to have infected an unusual part of your body."
-    call luna_main("Yes... Normally they only make your head fuzzy.", "angry", "right", "sad", "pout")
+    call lun_main("Yes... Normally they only make your head fuzzy.","pout","angry","sad","R")
     m "And how do you get rid of them in that situation?"
-    call luna_main("By thinking positive thoughts, sir...", "closed_happy", "right", "sad", "default")
+    call lun_main("By thinking positive thoughts, sir...","base","happyCl","sad","R")
     m "Correct."
     m "So, in your current situation, you simply need to focus positive thoughts on the affected area."
-    call luna_main("...", "default", "right", "raised", "upset")
-    call luna_main("How do I do that?", "default", "default", "sad", "angry")
+    call lun_main("...","normal","base","raised","R")
+    call lun_main("How do I do that?","upset","base","sad","mid")
     m "We'll try some self-applied massage to the area to start with."
-    call luna_main("So I just start massaging the area that they're making fuzzy?","default" , "default", "sad", "talk")
+    call lun_main("So I just start massaging the area that they're making fuzzy?","soft","base","sad","mid")
     m "That's correct, I'll be here to give you some guidance."
-    call luna_main("thank you, Sir!", "closed_happy", "right", "sad", "default")
+    call lun_main("thank you, Sir!","base","happyCl","sad","R")
     m "You're quite welcome."
-    call luna_main("...", "default", "down", "sad", "default")
+    call lun_main("...","base","base","sad","down")
     $ luna_l_arm = 4
-    ">Luna quickly puts her hand down her skirt, barely acknowledging the nature of her actions."
-    call luna_main("ah...", "seductive", "down", "sad", "upset")
+    call nar(">Luna quickly puts her hand down her skirt, barely acknowledging the nature of her actions.")
+    call lun_main("ah...","normal","seductive","sad","down")
     m "Is everything alright, Miss Lovegood?"
-    call luna_main("ah... of course!", "wide", "default", "sad", "default")
-    call luna_main("It's just a little sensitive...", "seductive", "down", "sad", "default")
+    call lun_main("ah... of course!","base","wide","sad","mid")
+    call lun_main("It's just a little sensitive...","base","seductive","sad","down")
     m "That's to be expected. Keep going."
-    call luna_main("ah... yes sir...", "closed_happy", "right", "sad", "upset")
+    call lun_main("ah... yes sir...","normal","happyCl","sad","R")
     g4 "..."
-    call luna_main("ah... is this how it should be done?", "default", "left_stare", "sad", "pout")
+    call lun_main("ah... is this how it should be done?","pout","base","sad","stareL")
     m "As long as it's feeling good I'm sure it's working. If you keep this up I'm sure you'll be rid of those nasty wickerspoons."
-    call luna_main("that's nice...", "closed", "right", "sad", "default")
-    call luna_main("...", "default", "left_stare", "sad", "upset")
-    call luna_main("are you sure this will work, sir?","seductive" , "default", "sad", "talk")
+    call lun_main("that's nice...","base","closed","sad","R")
+    call lun_main("...","normal","base","sad","stareL")
+    call lun_main("are you sure this will work, sir?","soft","seductive","sad","mid")
     m "Of course I am! Do you dare doubt the powerful Dumbelldoor?"
-    call luna_main("certainly not, sir...", "wide", "right", "sad", "upset")
-    call luna_main("it's just...", "seductive", "down", "sad", "upset")
-    call luna_main("I'm not sure this is going to get rid of them...", "seductive", "default", "sad", "pout")
+    call lun_main("certainly not, sir...","normal","wide","sad","R")
+    call lun_main("it's just...","normal","seductive","sad","down")
+    call lun_main("I'm not sure this is going to get rid of them...","pout","seductive","sad","mid")
     m "What makes you say that?"
-    call luna_main("do you remember how I said the wickerspats were like a nasty itch, sir?", "seductive", "right", "sad", "upset")
+    call lun_main("do you remember how I said the wickerspats were like a nasty itch, sir?","normal","seductive","sad","R")
     m "I do."
-    call luna_main("well... as nice as this massage feels...", "seductive", "down", "sad", "upset")
-    call luna_main("it's not really scratching that itch sir...", "angry", "left_stare", "sad", "pout")
-    call luna_main("... {p}am I doing it wrong, sir?", "seductive", "default", "sad", "upset")
+    call lun_main("well... as nice as this massage feels...","normal","seductive","sad","down")
+    call lun_main("it's not really scratching that itch sir...","pout","angry","sad","stareL")
+    call lun_main("... {p}am I doing it wrong, sir?","normal","seductive","sad","mid")
     m "Certainly not, but this is worse than I feared."
-    call luna_main("really?", "wide", "default", "sad", "upset")
+    call lun_main("really?","normal","wide","sad","mid")
     m "Yes. It would seem that those nasty critters are trying to hide."
-    call luna_main("Hide? Where?", "wide", "down", "sad", "upset")
+    call lun_main("Hide? Where?","normal","wide","sad","down")
     m "Well, as long as you're still feeling that itch they can't have gone far."
     m "But this means you'll have to chase them down."
-    call luna_main("chase them down?", "seductive", "default", "raised", "upset")
+    call lun_main("chase them down?","normal","seductive","raised","mid")
     m "Don't worry, I'll be here to guide you through it."
-    call luna_main("thank you, sir.", "default", "right", "sad", "default")
+    call lun_main("thank you, sir.","base","base","sad","R")
     m "First things first, close your eyes."
-    call luna_main("...", "closed_happy", "right", "sad", "upset") #eyes closed
+    call lun_main("...","normal","happyCl","sad","R")
     m "Very good. Now I want you to block everything else out."
-    call luna_main("alright, sir...", "closed_happy", "right", "sad", "angry")
+    call lun_main("alright, sir...","upset","happyCl","sad","R")
     m "Imagine it's just you alone in your room."
-    call luna_main("yes...", "closed_happy", "right", "sad", "upset")
+    call lun_main("yes...","normal","happyCl","sad","R")
     m "Nice and cozy. Not a care in the world."
-    call luna_main("...", "closed_happy", "right", "sad", "default") #smile
+    call lun_main("...","base","happyCl","sad","R")
     m "Now, focus on where the itch is strongest."
-    call luna_main("Ah... alright...", "closed_happy", "right", "default", "default")
+    call lun_main("Ah... alright...","base","happyCl","base","R")
     m "I want you to chase that feeling with your fingers."
-    call luna_main("...", "closed_happy", "right", "default", "upset")
+    call lun_main("...","normal","happyCl","base","R")
     m "Focus on catching it."
-    call luna_main("I can't...", "closed_happy", "right", "sad", "pout")
-    call luna_main("It's like trying to grab rays of sunlight...", "closed_happy", "right", "sad", "upset")
+    call lun_main("I can't...","pout","happyCl","sad","R")
+    call lun_main("It's like trying to grab rays of sunlight...","normal","happyCl","sad","R")
     m "Don't try and grab a hold of it, just brush against it with the tips of your fingers."
-    call luna_main("...", "closed_happy", "right", "sad", "default")
-    call luna_main("...", "closed_happy", "right", "default", "default")
-    ">Luna starts dancing her fingers along under her skirt."
-    call luna_main("ah...", "closed_happy", "right", "sad", "default")
-    call luna_main("mmm...", "closed_happy", "right", "sad", "grin")
-    ">Luna starts to softly moan under her breath."
-    call luna_main("I'm close sir...", "closed_happy", "right", "sad", "default")
+    call lun_main("...","base","happyCl","sad","R")
+    call lun_main("...","base","happyCl","base","R")
+    call nar(">Luna starts dancing her fingers along under her skirt.")
+    call lun_main("ah...","base","happyCl","sad","R")
+    call lun_main("mmm...","grin","happyCl","sad","R")
+    call nar(">Luna starts to softly moan under her breath.")
+    call lun_main("I'm close sir...","base","happyCl","sad","R")
     m "Good. Just keep your eyes closed and focus on your fingers."
-    call luna_main("{image=textheart}", "closed_happy", "right", "default", "grin")
-    call luna_main("ah... I think it's working, sir!", "closed_happy", "right", "sad", "default")
-    call luna_main("I think I'm about to catch it!", "closed_happy", "right", "default", "default")
+    call lun_main("{image=textheart}","grin","happyCl","base","R")
+    call lun_main("ah... I think it's working, sir!","base","happyCl","sad","R")
+    call lun_main("I think I'm about to catch it!","base","happyCl","base","R")
     m "Shhh, don't speak, just focus..."
-    call luna_main("ok...", "closed_happy", "right", "sad", "upset")
-    call luna_main("...", "closed_happy", "right", "sad", "default")
-    call luna_main("ah...", "closed_happy", "right", "sad", "grin")
-    call luna_main("{image=textheart}", "closed_happy", "right", "sad", "default")
-    call luna_main("...", "closed_happy", "right", "sad", "angry")
-    call luna_main("ah... sir...", "seductive", "default", "sad", "upset")
-    call luna_main("I think...", "seductive", "down", "sad", "grin")
-    call luna_main("ah...", "seductive", "right", "sad", "grin")
-    call luna_main("I think I've almost got it...", "closed_happy", "right", "sad", "grin")
+    call lun_main("ok...","normal","happyCl","sad","R")
+    call lun_main("...","base","happyCl","sad","R")
+    call lun_main("ah...","grin","happyCl","sad","R")
+    call lun_main("{image=textheart}","base","happyCl","sad","R")
+    call lun_main("...","upset","happyCl","sad","R")
+    call lun_main("ah... sir...","normal","seductive","sad","mid")
+    call lun_main("I think...","grin","seductive","sad","down")
+    call lun_main("ah...","grin","seductive","sad","R")
+    call lun_main("I think I've almost got it...","grin","happyCl","sad","R")
     m "Shhh..."
-    call luna_main("ah...", "closed_happy", "default", "angry", "grin")
-    ">Luna's fingers start furiously dancing underneath her skirt."
-    call luna_main("mmmm...", "closed_happy", "default", "angry", "default")
-    call luna_main("ah...", "closed_happy", "default", "angry", "grin")
-    call luna_main("a-ah...", "seductive", "down", "sad", "default")
-    call luna_main("yes...", "seductive", "left_stare", "angry", "default")
+    call lun_main("ah...","grin","happyCl","angry","mid")
+    call nar(">Luna's fingers start furiously dancing underneath her skirt.")
+    call lun_main("mmmm...","base","happyCl","angry","mid")
+    call lun_main("ah...","grin","happyCl","angry","mid")
+    call lun_main("a-ah...","base","seductive","sad","down")
+    call lun_main("yes...","base","seductive","angry","stareL")
     m "(I think this is it!)"
-    call luna_main("Ah... ah...{image=textheart}", "seductive", "right", "sad", "grin")
-    call luna_main("{size=+4}mmm... yes...{image=textheart}{/size}", "seductive", "down", "sad", "default")
-    call luna_main("{size=+8}ah... ah...{/size}", "seductive", "left_stare", "sad", "grin")
-    call luna_main("!!!", "wide", "empty", "default", "grin") #orgasm face
-    ">THere's a blur of movement under Luna's skirt."
-    call luna_main("ah! I think they're attacking me, sir!", "wide", "left_stare", "sad", "default")
-    call luna_main("!!!", "default", "empty", "sad", "default") #orgasm face
+    call lun_main("Ah... ah...{image=textheart}","grin","seductive","sad","R")
+    call lun_main("{size=+4}mmm... yes...{image=textheart}{/size}","base","seductive","sad","down")
+    call lun_main("{size=+8}ah... ah...{/size}","grin","seductive","sad","stareL")
+    call lun_main("!!!","grin","wide","base","empty")
+    call nar(">There's a blur of movement under Luna's skirt.")
+    call lun_main("ah! I think they're attacking me, sir!","base","wide","sad","stareL")
+    call lun_main("!!!","base","base","sad","empty")
     m "Is everything OK?"
-    call luna_main("Ah... yes sir...{image=textheart}", "seductive", "right", "sad", "upset")
-    call luna_main("it's just...", "seductive", "right", "sad", "default")
+    call lun_main("Ah... yes sir...{image=textheart}","normal","seductive","sad","R")
+    call lun_main("it's just...","base","seductive","sad","R")
     m "..."
-    call luna_main("I-I've never...", "seductive", "right", "sad", "upset")
-    call luna_main("...", "seductive", "down", "sad", "default")
-    call luna_main("{size=-5}Ah...{/size}", "seductive", "right", "sad", "default")
+    call lun_main("I-I've never...","normal","seductive","sad","R")
+    call lun_main("...","base","seductive","sad","down")
+    call lun_main("{size=-5}Ah...{/size}","base","seductive","sad","R")
     m "so Have the wickspots left you alone?"
-    call luna_main("I think so, sir...", "seductive", "default", "sad", "upset")
+    call lun_main("I think so, sir...","normal","seductive","sad","mid")
     $ luna_l_arm = 1
-    ">Luna slowly pulls her hand out from under her skirt."
-    call luna_main("at least That nasty itch seems to have gone away.", "default", "default", "sad", "default")
+    call nar(">Luna slowly pulls her hand out from under her skirt.")
+    call lun_main("at least That nasty itch seems to have gone away.","base","base","sad","mid")
     m "Fantastic! will that be all then, Miss Lovegood."
-    call luna_main("OH... did you want me to leave already, sir?", "seductive", "down", "sad", "upset")
+    call lun_main("OH... did you want me to leave already, sir?","normal","seductive","sad","down")
     m "If there's nothing else I can help you with."
-    call luna_main("I suppose not... but what if the feeling comes back, sir?", "seductive", "right", "sad", "angry")
-    call luna_main("Should I try and get rid of them myself?", "seductive", "down", "sad", "upset")
+    call lun_main("I suppose not... but what if the feeling comes back, sir?","upset","seductive","sad","R")
+    call lun_main("Should I try and get rid of them myself?","normal","seductive","sad","down")
     m "Certainly not!"
-    call luna_main("Really? Why not?", "wide", "default", "sad", "upset")
+    call lun_main("Really? Why not?","normal","wide","sad","mid")
     m "as I said earlier miss lovegood, These techniques are to be kept secret."
     m "Not to mention dispelling them in your common room could lead to a school wide outbreak."
-    call luna_main("So what can I do if they come back?", "default", "default", "sad", "upset")
+    call lun_main("So what can I do if they come back?","normal","base","sad","mid")
     m "If you ever feel like you need to relieve yourself of those pesky little things again, my door is always open."
-    call luna_main("Are you sure, sir?", "seductive", "default", "sad", "upset")
-    call luna_main("I wouldn't want to bother you...", "seductive", "right", "sad", "upset")
+    call lun_main("Are you sure, sir?","normal","seductive","sad","mid")
+    call lun_main("I wouldn't want to bother you...","normal","seductive","sad","R")
     m "You'd be doing no such thing! besides, I've been meaning to test these sort of techniques for a while now."
     m "If anything you'll be helping me with important research."
-    call luna_main("Really? thank you very much, sir.", "wide", "default", "default", "default")
-    call luna_main("Hopefully they leave me alone, but if not I'll come and visit you again.", "default", "right", "sad", "default")
+    call lun_main("Really? thank you very much, sir.","base","wide","base","mid")
+    call lun_main("Hopefully they leave me alone, but if not I'll come and visit you again.","base","base","sad","R")
     m "I look forward to it."
-    call luna_main("...", "seductive", "default", "sad", "default")
-    ">Luna gives you one last smile before leaving your office."
+    call lun_main("...","base","seductive","sad","mid")
+    call nar(">Luna gives you one last smile before leaving your office.")
+
     jump luna_away
+
 
 
 label luna_cum_addict_event:
@@ -356,324 +376,325 @@ label luna_cum_addict_event:
     ">You put your arms on Luna's shoulders forcing her to her knees."
     $ luna_l_arm = 2
     $ luna_r_arm = 2
-    call gen_main("Down we go!", 4, 4)
+    $ genie_base = "characters/genie/base/hard.png"
+    call gen_main("Down we go!","grin")
     $ luna_ypos = 225
     $ luna_xpos = 350
-    call luna_main("Stop right now! This wasn't an option [l_genie_name]!", "wide", "default", "mad", "open")
+    call lun_main("Stop right now! This wasn't an option [l_genie_name]!","open","wide","mad","mid")
     g4 "Argh, too late slut!"
-    call luna_main("!!!", "closed", "default", "mad", "angry")
+    call lun_main("!!!","upset","closed","mad","mid")
     $ luna_cum = 11
-    show screen white
-    pause.1
-    hide screen white
-    pause.2
-    show screen white
-    pause .1
-    hide screen white
-    with hpunch
+    call cum_block
+
     $ luna_wear_cum = True
     ">You coat Luna's furious expression in a wave of hot cum!"
     pause
     g4 "Argh! by the gods {size=+10}YES!{/size}"
-    call luna_main("...", "seductive", "crossed", "default", "upset")
-    call luna_main("(What's this smell?)", "seductive", "down_left", "sad", "pout")
+    call lun_main("...","normal","seductive","base","crossed")
+    call lun_main("(What's this smell?)","pout","seductive","sad","downL")
     g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
     g4 "mmmm....."
     hide screen g_c_c_u
     $ g_c_u_pic = "images/animation/06_jerking_01.png"
     $ luna_r_arm = 2
-    hide screen genie_sprite
-    $ genie_sprite_base = "characters/genie/base_2.png"
+    hide screen genie_main
+    $ genie_base = "characters/genie/base/open.png"
     with d3
     m "That hit the spot..."
-    call luna_main("...", "mad", "left", "mad", "pout")
-    call luna_main("......", "angry", "down_left", "angry", "upset")
-    call luna_main(".........", "seductive", "empty", "sad", "default")
+    call lun_main("...","pout","mad","mad","L")
+    call lun_main("......","normal","angry","angry","downL")
+    call lun_main(".........","base","seductive","sad","empty")
     m "Ahh... that was fantastic slut..."
     $ g_c_u_pic = "images/animation/06_groping_01.png"
-    call luna_main("What {size=+4}is {size=+4}this {size=+4}smell?{/size}", "wide", "default", "sad", "default")
+    call lun_main("What {size=+4}is {size=+4}this {size=+4}smell?{/size}","base","wide","sad","mid")
     m "Cum?"
     ">Luna gets up from her knees"
     $ luna_ypos = 0
-    call luna_main("{size=+4}it{/size}", "doubtful", "left", "mad", "angry")
-    call luna_main("{size=+8}smells{/size}", "mad", "down_left", "angry", "upset")
-    call luna_main("{size=+12}incredible!!!{/size}", "wide", "empty", "sad", "default")
+    call lun_main("{size=+4}it{/size}","upset","suspicious","mad","L")
+    call lun_main("{size=+8}smells{/size}","normal","mad","angry","downL")
+    call lun_main("{size=+12}incredible!!!{/size}","base","wide","sad","empty")
     m "..."
     m "What?"
-    call luna_main("my god!!! there's so much magical energy in it!", "wide", "left_stare", "sad", "default")
-    call luna_main("I've never sensed anything this powerful before!", "wide", "down", "sad", "default")
+    call lun_main("my god!!! there's so much magical energy in it!","base","wide","sad","stareL")
+    call lun_main("I've never sensed anything this powerful before!","base","wide","sad","down")
     m "Ah yes, well I am the great fumblemore!"
-    call luna_main("even so sir...", "angry", "default", "angry", "pout")
-    call luna_main("This smell... it's too much for a mortal to make...", "angry", "default", "default", "default")
+    call lun_main("even so sir...","pout","angry","angry","mid")
+    call lun_main("This smell... it's too much for a mortal to make...","base","angry","base","mid")
     m "(Shit...)"
-    call luna_main("can I...", "default", "default", "sad", "upset")
-    call luna_main("taste it?", "seductive", "right", "sad", "upset")
+    call lun_main("can I...","normal","base","sad","mid")
+    call lun_main("taste it?","normal","seductive","sad","R")
     m "What sort of question is that?"
-    call luna_main("If it's too much...", "wide", "default", "sad", "upset")
+    call lun_main("If it's too much...","normal","wide","sad","mid")
     g9 "Of course you can taste my cum girl!"
-    call luna_main("thank you sir...", "wide", "default", "sad", "default")
+    call lun_main("thank you sir...","base","wide","sad","mid")
     m "(She seems different...)"
     $ luna_cum = 12
     ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}","seductive" , "empty", "sad", "cheeks_full")
-    call luna_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}", "closed_happy", "left_stare", "sad", "default")
-    call luna_main("can I have the rest? Please sir?", "wide", "default", "sad", "default")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","seductive","sad","empty")
+    call lun_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}","base","happyCl","sad","stareL")
+    call lun_main("can I have the rest? Please sir?","base","wide","sad","mid")
     m "Sure..."
     ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
     $ luna_cum = 13
-    call luna_main("...","seductive" , "empty", "sad", "cheeks_full")
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default")
+    call lun_main("...","full","seductive","sad","empty")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","stareL")
     pause
     $ luna_cum = 14
-    call luna_main("...","seductive" , "empty", "sad", "cheeks_full")
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default")
+    call lun_main("...","full","seductive","sad","empty")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","stareL")
     $ luna_cum = 15
-    call luna_main("...","seductive" , "empty", "sad", "cheeks_full")
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "left_stare", "sad", "default")
+    call lun_main("...","full","seductive","sad","empty")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","stareL")
     $ luna_wear_cum = False
-    call luna_main("ah...", "closed_happy", "left_stare", "sad", "default")
-    call luna_main("amazing...", "seductive", "left_stare", "sad", "default")
+    call lun_main("ah...","base","happyCl","sad","stareL")
+    call lun_main("amazing...","base","seductive","sad","stareL")
     m "Enjoy yourself did we?"
-    call luna_main("How could I not?", "angry", "right", "angry", "pout")
+    call lun_main("How could I not?","pout","angry","angry","R")
     m "(What is going on here? SHe seems all bitchy again...)"
-    call luna_main("You have to tell me how you did that!", "mad", "default", "angry", "upset")
+    call lun_main("You have to tell me how you did that!","normal","mad","angry","mid")
     m "Cum? I'm pretty sure you've got that all worked out..."
-    call luna_main("Not that, idiot!", "doubtful", "default", "mad", "upset")
-    call luna_main("why did it contain so much magical energy?", "angry", "default", "angry", "upset")
-    call luna_main("we lovegoods are sensitive to magic, but The only thing I've ever experienced like this was when I was allowed in the same room as some essence of Djinn...", "angry", "right", "mad", "pout")
-    call luna_main("But everyone knows the Djinn were hunted to extinction millenia ago...", "mad", "default", "angry", "upset")
+    call lun_main("Not that, idiot!","normal","suspicious","mad","mid")
+    call lun_main("why did it contain so much magical energy?","normal","angry","angry","mid")
+    call lun_main("we lovegoods are sensitive to magic, but The only thing I've ever experienced like this was when I was allowed in the same room as some essence of Djinn...","pout","angry","mad","R")
+    call lun_main("But everyone knows the Djinn were hunted to extinction millenia ago...","normal","mad","angry","mid")
     g4 "(!!!)"
     m "oh, um..."
     m "Trade secret..."
-    call luna_main("Fine! Be that way then [l_genie_name]...", "doubtful", "right", "angry", "pout")
+    call lun_main("Fine! Be that way then [l_genie_name]...","pout","suspicious","angry","R")
     ">Luna gets dressed in front of you in a huff."
-    $ luna_wear_skirt = True
-    $ luna_wear_bra = True
-    $ luna_wear_panties = True
-    $ luna_wear_top = True
-    call luna_main("Just don't expect me to let you get away with wasting that spunk anymore [l_genie_name]!", "mad", "default", "angry", "upset")
 
-    hide screen bld1
-    m "well... anyway, Here's your payment [luna_name]."
+    call load_luna_clothing_saves
+
+    call lun_main("Just don't expect me to let you get away with wasting that spunk anymore [l_genie_name]!","normal","mad","angry","mid")
+
+    m "well... anyway, Here's your payment, [luna_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
     ">You hand Luna [current_payout] gold."
-    call luna_main("Thank you, [l_genie_name].", "seductive", "right", "default", "default")
-    ">Luna leaves your office."
-
-    hide screen g_c_u
-    show screen genie
-    hide screen chair_left
-    hide screen desk
+    call lun_main("Thank you, [l_genie_name].","base","seductive","base","R")
 
     jump luna_away
 
 
 
-label luna_reverted_event_1: #Masturbate for genie again.
+label luna_reverted_event_1: #Masturbate for genie again. #DONE
     $ luna_corruption = 1
     $ days_to_luna = 4
+
+    call play_sound("knocking")
     "*knock* *knock* *knock*"
     m "Come in..."
-    call play_sound("door") #Sound of a door opening.
-    $ luna_chibi("stand")
-    ">Luna stands in front of your desk."
-    call luna_main("Hello again [l_genie_name]...", "closed_happy", "default", "default", "default")
+
+    call play_sound("door")
+    call lun_walk("door","mid",2.5)
+    pause.5
+
+    call lun_main("Hello again, [l_genie_name]...","base","happyCl","base","mid",xpos="right",ypos="base")
     m "Miss Lovegood. How have you been?"
-    call luna_main("Alright... but the wrackspurts seem to have come back..", "default", "right", "angry", "angry")
+    call lun_main("Alright... but the wrackspurts seem to have come back..","upset","base","angry","R")
     m "Again? So soon?"
-    call luna_main("I'm afraid so [l_genie_name]...", "default", "default", "sad", "upset")
-    call luna_main("Everytime I think about what we did in here...", "wide", "default", "sad", "upset")
-    call luna_main("It just makes them feel so much... stronger...", "angry", "right", "sad", "upset")
+    call lun_main("I'm afraid so [l_genie_name]...","normal","base","sad","mid")
+    call lun_main("Everytime I think about what we did in here...","normal","wide","sad","mid")
+    call lun_main("It just makes them feel so much... stronger...","normal","angry","sad","R")
     m "Yes... They must be afraid of my powerful techniques..."
-    call luna_main("Do you think so?", "closed", "right", "sad", "upset")
+    call lun_main("Do you think so?","normal","closed","sad","R")
     m "I do..."
     m "Why else would they attack you when you think about curing them?"
-    call luna_main("You're right...", "angry", "default", "sad", "upset")
+    call lun_main("You're right...","normal","angry","sad","mid")
     m "So... Are you ready to try and dispel them again?"
-    call luna_main("Only if it's not too much trouble [l_genie_name]... I wouldn't want to disturb you...", "angry", "right", "sad", "angry")
+    call lun_main("Only if it's not too much trouble [l_genie_name]... I wouldn't want to disturb you...","upset","angry","sad","R")
     m "Please, as headmaster it's my duty to make sure my students are safe..."
-    call luna_main("You're right...", "seductive", "down", "sad", "upset")
-    call luna_main("I just feel guilty coming up her so often...", "seductive", "right", "sad", "upset")
+    call lun_main("You're right...","normal","seductive","sad","down")
+    call lun_main("I just feel guilty coming up her so often...","normal","seductive","sad","R")
     m "don't..."
     "*Luna starts grinding her thighs together.*"
-    call luna_main("Ok...", "seductive", "down", "sad", "default")
-    call luna_main("So, is it OK if I start scratching...", "seductive", "default", "sad", "default")
+    call lun_main("Ok...","base","seductive","sad","down")
+    call lun_main("So, is it OK if I start scratching...","base","seductive","sad","mid")
     m "I don't see why not. Just stand in the middle of the room for me."
-    hide screen luna
+    hide screen luna_main
     with d3
-    $ luna_xpos = 400
-    call luna_main("...", "default", "default", "sad", "pout")
+
+    call lun_main("...","pout","base","sad","mid",xpos="mid",ypos="base")
     m "That's it..."
     m "Would you like to start Miss lovegood?"
     $ luna_l_arm = 4
-    ">Luna quickly puts her hand down her skirt, barely waiting for you to finish your sentence..."
-    call luna_main("ah... thank you [l_genie_name]...", "seductive", "down", "sad", "upset")
+    call nar(">Luna quickly puts her hand down her skirt, barely waiting for you to finish your sentence...")
+    call lun_main("ah... thank you [l_genie_name]...","normal","seductive","sad","down")
     m "You seem relieved..."
-    call luna_main("ah... of course... I've been waiting to come here since yesterday...", "wide", "default", "sad", "default")
-    call luna_main("I think Those slimy wrackspurts have infested the commonroom...", "seductive", "down", "sad", "default")
+    call lun_main("ah... of course... I've been waiting to come here since yesterday...","base","wide","sad","mid")
+    call lun_main("I think Those slimy wrackspurts have infested the commonroom...","base","seductive","sad","down")
     m "That's quite possible..."
-    call luna_main("ah... ah...", "closed_happy", "right", "sad", "upset")
-    call luna_main("but getting rid of them... feels... so... good...", "default", "left_stare", "sad", "pout")
-    call luna_main("I'm almost glad I've got them...", "default", "left_stare", "sad", "pout")
+    call lun_main("ah... ah...","normal","happyCl","sad","R")
+    call lun_main("but getting rid of them... feels... so... good...","pout","base","sad","stareL")
+    call lun_main("I'm almost glad I've got them...","pout","base","sad","stareL")
     m "The positive feelings you have are your body reacting to the wickerspats being expelled from your body."
-    call luna_main("really?", "closed", "right", "sad", "default")
-    call luna_main("ah...", "default", "left_stare", "sad", "upset")
-    call luna_main("I must... ah... be expelling a lot then...", "seductive", "default", "sad", "talk")
-    call luna_main("in fact...", "wide", "right", "sad", "upset")
-    call luna_main("ah...", "seductive", "down", "sad", "upset")
-    call luna_main("I think... ah... I'm about to... ah...", "seductive", "default", "sad", "pout")
-    call luna_main("Mmmm, it's just like... last time...", "seductive", "right", "sad", "upset")
+    call lun_main("really?","base","closed","sad","R")
+    call lun_main("ah...","normal","base","sad","stareL")
+    call lun_main("I must... ah... be expelling a lot then...","soft","seductive","sad","mid")
+    call lun_main("in fact...","normal","wide","sad","R")
+    call lun_main("ah...","normal","seductive","sad","down")
+    call lun_main("I think... ah... I'm about to... ah...","pout","seductive","sad","mid")
+    call lun_main("Mmmm, it's just like... last time...","normal","seductive","sad","R")
     m "Oh, are you cumming already?"
-    call luna_main("cumming?", "seductive", "down", "sad", "upset")
-    call luna_main("what's? ah...{image=textheart}", "angry", "left_stare", "sad", "pout")
-    call luna_main("Cumming?{image=textheart}", "seductive", "default", "sad", "upset")
-    call luna_main("Ah... I'm cumming...{image=textheart}{image=textheart}", "wide", "default", "sad", "upset")
+    call lun_main("cumming?","normal","seductive","sad","down")
+    call lun_main("what's? ah...{image=textheart}","pout","angry","sad","stareL")
+    call lun_main("Cumming?{image=textheart}","normal","seductive","sad","mid")
+    call lun_main("Ah... I'm cumming...{image=textheart}{image=textheart}","normal","wide","sad","mid")
     m "Mmmmm that's it girl..."
-    call luna_main("Ah...{image=textheart}", "wide", "down", "sad", "upset")
-    ">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm."
-    ">However despite this, her fingers remain a flurry of movement under her skirt."
+    call lun_main("Ah...{image=textheart}","normal","wide","sad","down")
+    call nar(">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm.","start")
+    call nar(">However despite this, her fingers remain a flurry of movement under her skirt.","end")
     m "Well, it seems those wickedspots have been giving you a bit of grief now haven't they?"
     label luna_masturbate_again:
         pass
-    call luna_main("ah...{image=textheart}yes{image=textheart}", "seductive", "default", "raised", "upset")
+    call lun_main("ah...{image=textheart}yes{image=textheart}","normal","seductive","raised","mid")
     m "Don't worry, that should sort them out for now..."
-    call luna_main("ummm...", "default", "right", "sad", "default")
+    call lun_main("ummm...","base","base","sad","R")
     m "What's wrong?"
-    call luna_main("...", "closed_happy", "right", "sad", "upset") #eyes closed
-    call luna_main("is it...", "closed_happy", "right", "sad", "angry")
-    call luna_main("Ok if I do it once more?", "closed_happy", "right", "sad", "upset")
+    call lun_main("...","normal","happyCl","sad","R")
+    call lun_main("is it...","upset","happyCl","sad","R")
+    call lun_main("Ok if I do it once more?","normal","happyCl","sad","R")
     m "What?"
-    call luna_main("If you need to do other things I can leave!", "closed_happy", "right", "sad", "default") #smile
+    call lun_main("If you need to do other things I can leave!","base","happyCl","sad","R")
     m "There's no need for that! You can stay here as long as you like..."
     m "I was just a little surprised that you needed to go again is all..."
-    call luna_main("Ah... well...", "closed_happy", "right", "default", "default")
-    call luna_main("these wrackspurts...", "closed_happy", "right", "default", "upset")
-    call luna_main("ah...", "closed_happy", "right", "sad", "pout")
-    call luna_main("they've been very tiresome...", "closed_happy", "right", "sad", "upset")
-    call luna_main("...", "closed_happy", "right", "sad", "default")
-    call luna_main("besides...", "closed_happy", "right", "default", "default")
-    ">Luna starts dancing her fingers along under her skirt."
-    call luna_main("ah...", "closed_happy", "right", "sad", "default")
-    call luna_main("I've been... waiting for this all day...", "closed_happy", "right", "sad", "grin")
-    ">Luna starts to softly moan under her breath."
-    call luna_main("standing here...", "closed_happy", "right", "sad", "default")
+    call lun_main("Ah... well...","base","happyCl","base","R")
+    call lun_main("these wrackspurts...","normal","happyCl","base","R")
+    call lun_main("ah...","pout","happyCl","sad","R")
+    call lun_main("they've been very tiresome...","normal","happyCl","sad","R")
+    call lun_main("...","base","happyCl","sad","R")
+    call lun_main("besides...","base","happyCl","base","R")
+    call nar(">Luna starts dancing her fingers along under her skirt.")
+    call lun_main("ah...","base","happyCl","sad","R")
+    call lun_main("I've been... waiting for this all day...","grin","happyCl","sad","R")
+    call nar(">Luna starts to softly moan under her breath.")
+    call lun_main("standing here...","base","happyCl","sad","R")
     m "..."
-    call luna_main("{image=textheart}{image=textheart}{image=textheart}", "closed_happy", "right", "default", "grin")
-    call luna_main("in front of my headmaster...", "closed_happy", "right", "sad", "default")
-    call luna_main("While he helps me to...", "closed_happy", "right", "default", "default")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","grin","happyCl","base","R")
+    call lun_main("in front of my headmaster...","base","happyCl","sad","R")
+    call lun_main("While he helps me to...","base","happyCl","base","R")
     m "Shhh, don't speak, just focus..."
-    call luna_main("ok...", "closed_happy", "right", "sad", "upset")
-    call luna_main("...", "closed_happy", "right", "sad", "default")
-    call luna_main("ah...", "closed_happy", "right", "sad", "grin")
-    call luna_main("{image=textheart}", "closed_happy", "right", "sad", "default")
-    call luna_main("...", "closed_happy", "right", "sad", "angry")
-    call luna_main("ah... [l_genie_name]...", "seductive", "default", "sad", "upset")
-    call luna_main("I think...", "seductive", "down", "sad", "grin")
-    call luna_main("ah...", "seductive", "right", "sad", "grin")
-    call luna_main("I think I've almost got them...", "closed_happy", "right", "sad", "grin")
+    call lun_main("ok...","normal","happyCl","sad","R")
+    call lun_main("...","base","happyCl","sad","R")
+    call lun_main("ah...","grin","happyCl","sad","R")
+    call lun_main("{image=textheart}","base","happyCl","sad","R")
+    call lun_main("...","upset","happyCl","sad","R")
+    call lun_main("ah... [l_genie_name]...","normal","seductive","sad","mid")
+    call lun_main("I think...","grin","seductive","sad","down")
+    call lun_main("ah...","grin","seductive","sad","R")
+    call lun_main("I think I've almost got them...","grin","happyCl","sad","R")
     m "Shhh..."
-    call luna_main("ah...", "closed_happy", "default", "angry", "grin")
-    ">Luna's fingers start furiously dancing underneath her skirt."
-    call luna_main("mmmm...", "closed_happy", "default", "angry", "default")
-    call luna_main("ah...", "closed_happy", "default", "angry", "grin")
-    call luna_main("a-ah...", "seductive", "down", "sad", "default")
-    call luna_main("yes...", "seductive", "left_stare", "angry", "default")
+    call lun_main("ah...","grin","happyCl","angry","mid")
+    call nar(">Luna's fingers start furiously dancing underneath her skirt.")
+    call lun_main("mmmm...","base","happyCl","angry","mid")
+    call lun_main("ah...","grin","happyCl","angry","mid")
+    call lun_main("a-ah...","base","seductive","sad","down")
+    call lun_main("yes...","base","seductive","angry","stareL")
     m "(I think this is it!)"
-    call luna_main("Ah... ah...{image=textheart}", "seductive", "right", "sad", "grin")
-    call luna_main("{size=+4}mmm... yes...{image=textheart}{/size}", "seductive", "down", "sad", "default")
-    call luna_main("{size=+8}ah... oh... frickity!!!{/size}", "seductive", "left_stare", "sad", "grin")
-    call luna_main("!!!", "wide", "default", "sad", "grin") #orgasm face
-    ">THere's a blur of movement under Luna's skirt."
-    call luna_main("ah! thank you [l_genie_name]!", "wide", "left_stare", "sad", "default")
-    call luna_main("!!!", "wide", "default", "sad", "default") #orgasm face
+    call lun_main("Ah... ah...{image=textheart}","grin","seductive","sad","R")
+    call lun_main("{size=+4}mmm... yes...{image=textheart}{/size}","base","seductive","sad","down")
+    call lun_main("{size=+8}ah... oh... frickity!!!{/size}","grin","seductive","sad","stareL")
+    call lun_main("!!!","grin","wide","sad","mid")
+    call nar(">THere's a blur of movement under Luna's skirt.")
+    call lun_main("ah! thank you, [l_genie_name]!","base","wide","sad","stareL")
+    call lun_main("!!!","base","wide","sad","mid")
     m "Is everything OK?"
-    call luna_main("Ah... yes{image=textheart} thank you{image=textheart} [l_genie_name]...{image=textheart}", "seductive", "right", "sad", "upset")
+    call lun_main("Ah... yes{image=textheart} thank you{image=textheart} [l_genie_name]...{image=textheart}","normal","seductive","sad","R")
     m "so Have the wickspots left you alone now?"
-    call luna_main("I think so, [l_genie_name]...", "seductive", "default", "sad", "upset")
+    call lun_main("I think so, [l_genie_name]...","normal","seductive","sad","mid")
     $ luna_l_arm = 1
-    ">Luna slowly pulls her sopping hand out from under her skirt."
-    call luna_main("at least That nasty itch seems to have gone away.", "default", "default", "sad", "default")
+    call nar(">Luna slowly pulls her sopping hand out from under her skirt.")
+    call lun_main("at least That nasty itch seems to have gone away.","base","base","sad","mid")
     m "Fantastic! will that be all then, Miss Lovegood."
-    call luna_main("well I don't suppose I could go-", "seductive", "down", "sad", "upset")
-    call luna_main("No... I better get to bed...", "seductive", "right", "sad", "angry")
-    call luna_main("Thanks again [l_genie_name]!", "seductive", "down", "sad", "upset")
-    ">Luna gives you one last smile before leaving your office."
-    m "What an odd girl."
+    call lun_main("well I don't suppose I could go-","normal","seductive","sad","down")
+    call lun_main("No... I better get to bed...","upset","seductive","sad","R")
+    call lun_main("Thanks again, [l_genie_name]!","normal","seductive","sad","down")
+    m "(What an odd girl.)"
+    call nar(">Luna gives you one last smile before leaving your office.")
+
     jump luna_away
 
 
-label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's face
+
+label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's face #DONE
     $ luna_corruption = 2
     $ days_to_luna = 3
+
+    call play_sound("knocking")
     "*knock* *knock* *knock*"
-    lun "Can I please come in [l_genie_name]..."
-    ">There's a desperate twang to Luna's voice."
+    lun "Can I please come in, [l_genie_name]?"
+    call nar(">There's a desperate twang to Luna's voice.")
+
     menu:
         "-Let her in-":
             m "Of course."
         "-mess with her-":
             m "Who is it?"
-            lun "Luna Lovegood [l_genie_name]..."
+            lun "Luna Lovegood, [l_genie_name]..."
             lun "May I please come in?"
             m "Luna who?"
-            lun "Lovegood [l_genie_name]..."
+            lun "Lovegood, [l_genie_name]..."
             m "Oh miss lovegood! Come in..."
-    ">Luna quickly enters your office, her face covered in a deep blush."
-    $ luna_chibi("stand")
-    call luna_main("...", "tired", "right", "sad", "pout")
+
+    call play_sound("door")
+    call lun_walk("door","mid",2.5)
+    pause.5
+
+    call lun_main("...","pout","annoyed","sad","R",cheeks="blush",xpos="right",ypos="base")
     m "Miss Lovegood..."
     m "What can I help you with today?"
-    call luna_main("I-I... need...", "seductive", "down", "sad", "talk")
+    call lun_main("I-I... need...","soft","seductive","sad","down")
     $ luna_l_arm = 4
-    ">Luna quickly puts her hand down her skirt, not even waiting on your reply..."
-    call luna_main("ah... I'm sorry [l_genie_name]... I just... needed... this...{image=textheart}", "seductive", "up", "sad", "default")
+    call nar(">Luna quickly puts her hand down her skirt, not even waiting on your reply...")
+    call lun_main("ah... I'm sorry [l_genie_name]... I just... needed... this...{image=textheart}","base","seductive","sad","up")
     m "You seem relieved..."
-    call luna_main("ah... {image=textheart} yes...", "wide", "left_stare", "sad", "default")
-    call luna_main("these visits are starting to become all I can think about...", "seductive", "down", "sad", "default")
+    call lun_main("ah... {image=textheart} yes...","base","wide","sad","stareL")
+    call lun_main("these visits are starting to become all I can think about...","base","seductive","sad","down")
     m "Hmmm... Do you think that's a bad thing?"
-    call luna_main("ah... of course not!", "closed_happy", "right", "sad", "upset")
-    call luna_main("it just... means that it's working...", "default", "left_stare", "sad", "pout")
-    call luna_main("if only I could spend all day up here...", "default", "left_stare", "sad", "default")
+    call lun_main("ah... of course not!","normal","happyCl","sad","R")
+    call lun_main("it just... means that it's working...","pout","base","sad","stareL")
+    call lun_main("if only I could spend all day up here...","base","base","sad","stareL")
     m "Do you think a full day of treatment would get rid of them?"
-    call luna_main("ah...", "default", "left_stare", "sad", "default")
-    call luna_main("probably not...", "seductive", "default", "sad", "talk")
-    call luna_main("but...", "wide", "right", "sad", "default")
-    call luna_main("ah...", "seductive", "down", "sad", "default")
-    call luna_main("I think... it'd probably feel...", "seductive", "default", "sad", "talk")
-    call luna_main("nice...{image=textheart}{image=textheart}{image=textheart}", "seductive", "right", "sad", "default")
+    call lun_main("ah...","base","base","sad","stareL")
+    call lun_main("probably not...","soft","seductive","sad","mid")
+    call lun_main("but...","base","wide","sad","R")
+    call lun_main("ah...","base","seductive","sad","down")
+    call lun_main("I think... it'd probably feel...","soft","seductive","sad","mid")
+    call lun_main("nice...{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","R")
     m "Speaking of feeling nice..."
-    call luna_main("Ah... I think I'm... cumming [l_genie_name]...", "seductive", "down", "sad", "open_tongue")
-    call luna_main("ah...{image=textheart}", "seductive", "left_stare", "sad", "default")
-    call luna_main("mmmmm{image=textheart}", "seductive", "default", "sad", "default")
-    call luna_main("Ah... I'm cumming...{image=textheart}{image=textheart}", "wide", "up", "sad", "default")
+    call lun_main("Ah... I think I'm... cumming [l_genie_name]...","open_tongue","seductive","sad","down")
+    call lun_main("ah...{image=textheart}","base","seductive","sad","stareL")
+    call lun_main("mmmmm{image=textheart}","base","seductive","sad","mid")
+    call lun_main("Ah... I'm cumming...{image=textheart}{image=textheart}","base","wide","sad","up")
     m "Mmmmm that's it girl..."
-    call luna_main("Ah...{image=textheart}", "seductive", "down", "sad", "talk")
-    $ luna_cheeks = "characters/luna/body/face/cheeks/cheeks_2.png"
-    ">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm."
-    ">Her fingers keep casually stroking her needy sex..."
+    call lun_main("Ah...{image=textheart}","soft","seductive","sad","down", cheeks="blush")
+    call nar(">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm.","start")
+    call nar(">Her fingers keep casually stroking her needy sex...","end")
     m "It seems those wickedspots have been giving you a bit of grief now haven't they?"
+
     menu:
         "-Start jerking off-":
             pass
         "-behave-":
             jump luna_masturbate_again
+
     m "Truth be told they've been starting to affect me as well..."
-    call luna_main("What? They got you too?", "angry", "left_stare", "sad", "default")
+    call lun_main("What? They got you too?","base","angry","sad","stareL")
     m "I was afraid this might happen with you dispelling all of your personal wrackspurts into this room..."
     m "This is why I didn't want you doing this outside the office..."
-    call luna_main("It could have been a disaster [l_genie_name]...", "angry", "left_stare", "sad", "default")
-    call luna_main("But will you be alright?", "wink", "default", "raised", "talk")
+    call lun_main("It could have been a disaster [l_genie_name]...","base","angry","sad","stareL")
+    call lun_main("But will you be alright?","soft","wink","raised","mid")
     m "Oh don't worry about me, I'm a {i}master{/i} when it comes to this..."
-    call luna_main("Of course... These are your techniques after all...", "closed_happy", "default", "sad", "default")
-    call luna_main("Would it...", "seductive", "right", "sad", "default")
-    call luna_main("Would it be OK if I watched [l_genie_name]?", "tired", "default", "sad", "default")
-    call luna_main("Just as a way to improve my own technique!", "wink", "left_stare", "default", "default")
+    call lun_main("Of course... These are your techniques after all...","base","happyCl","sad","mid")
+    call lun_main("Would it...","base","seductive","sad","R")
+    call lun_main("Would it be OK if I watched [l_genie_name]?","base","annoyed","sad","mid")
+    call lun_main("Just as a way to improve my own technique!","base","wink","base","stareL")
     m "Mmmm, I see nothing wrong with it..."
     m "Here, I'll come give you a {b}nice{/b} view..."
     show screen blkfade
+    hide screen luna_main
     with d3
-    hide screen luna
+
     ">With that you slowly rise out of your chair as your cock strains against your robe, brought furiously to life by Luna's own performance."
     ">You then walk around your desk until you stand in front of the pale blonde..."
     m "Here we go..."
@@ -689,6 +710,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     show screen ccg
     hide screen blkfade
     with d3
+
     lun "wow..."
     m "This is the place that those nasty little whiskersprouts like to hide on me..."
     $ ccg1 = "2"
@@ -800,87 +822,98 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     $ ccg1 = "32"
     lun "I'll see you the next time those wrackspurts come up again..."
     m "See that you do."
-    lun "yes [l_genie_name]..."
+    lun "yes, [l_genie_name]..."
     show screen blkfade
-    with d3
+    hide screen luna_main
     hide screen ccg
-    ">With that Luna stands up off the ground and leaves your office, still covered in cum..."
-    hide screen luna
-    hide screen luna_chibi
+    with d3
+
+    call lun_chibi("stand","mid","base")
+    call gen_chibi("sit_behind_desk")
     hide screen blkfade
     with d3
+
+    call lun_walk("mid","leave",2)
+
+    $ luna_busy = True
+
     m "She really is a bit loony..."
 
-
-
-    jump luna_away
+    jump main_room
 
 
 
-label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and lick it like a lollipop for an hour
+label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and lick it like a lollipop for an hour #DONE
     $ luna_corruption = 3
     $ days_to_luna = 4
+
+    call play_sound("knocking")
     ">*knock* *knock* *knock*"
-    ">Before waiting for a response, your door swings open to reveal Luna Lovegood."
-    $ luna_chibi("stand")
-    call luna_main("Hello [l_genie_name]! Lovely day today isn't it?", "closed_happy", "default", "default", "default")
+    call nar(">Before waiting for a response, your door swings open to reveal Luna Lovegood.")
+
+    call play_sound("door")
+    call lun_walk("door","mid",2)
+    pause.5
+
+    call lun_main("Hello, [l_genie_name]! Lovely day today isn't it?","base","happyCl","base","mid",xpos="right",ypos="base")
     m "It is now..."
-    call luna_main("Awww... that's so nice!", "wink", "default", "sad", "default")
+    call lun_main("Awww... that's so nice!","base","wink","sad","mid")
     m "What brings you up to my office today then Miss Lovegood?"
     m "Those troublesome little wrockspoons giving you grief again?"
-    call luna_main("Not exactly...", "seductive", "down", "sad", "talk")
+    call lun_main("Not exactly...","soft","seductive","sad","down")
     m "Oh... Something else I can help you with then?"
-    call luna_main("Well... I was just walking past when I remembered how those nasty wrackspurts affected you the other day...", "default", "right", "sad", "open")
-    call luna_main("They aren't by any chance bothering you at the moment are they [l_genie_name]?", "wink", "left_stare", "sad", "default")
+    call lun_main("Well... I was just walking past when I remembered how those nasty wrackspurts affected you the other day...","open","base","sad","R")
+    call lun_main("They aren't by any chance bothering you at the moment are they [l_genie_name]?","base","wink","sad","stareL")
     m "Now that you mention it, they have been giving me a little trouble..."
     m "But I'm much too tired to relieve them myself... I'm such an old man you see..."
-    call luna_main("Really? But you look...", "wide", "default", "sad", "talk")
-    call luna_main("so you won't...", "tired", "down", "sad", "pout")
-    call luna_main("...", "tired", "right", "sad", "upset")
-    call luna_main("Is there any way I could help?", "wink", "default", "sad", "default")
+    call lun_main("Really? But you look...","soft","wide","sad","mid")
+    call lun_main("so you won't...","pout","annoyed","sad","down")
+    call lun_main("...","normal","annoyed","sad","R")
+    call lun_main("Is there any way I could help?","base","wink","sad","mid")
     m "Hmmmm... There is a special technique that I've been developing..."
     m "I'm not sure your ready for it though..."
-    call luna_main("Please [l_genie_name]! I know I can handle it!", "wide", "default", "sad", "default")
+    call lun_main("Please, [l_genie_name]! I know I can handle it!","base","wide","sad","mid")
     m "Well if you insist..."
     m "Just make sure you don't let anyone else know about this..."
-    call luna_main("I wouldn't dare... A cure for wrackspurts would be the talk of the magical world...", "wide", "default", "angry", "default")
+    call lun_main("I wouldn't dare... A cure for wrackspurts would be the talk of the magical world...","base","wide","angry","mid")
     m "Yes..."
-    call luna_main("So what does this technique involve?", "wink", "default", "sad", "default")
+    call lun_main("So what does this technique involve?","base","wink","sad","mid")
     m "It involves you sucking the nasty things out."
-    call luna_main("Sucking them out!", "wide", "default", "mad", "open_wide")
+    call lun_main("Sucking them out!","scream","wide","mad","mid")
     m "(I wasn't sure if she'd fall for th-)"
-    call luna_main("That's brilliant!", "closed_happy", "default", "default", "open")
+    call lun_main("That's brilliant!","open","happyCl","base","mid")
     m "..."
     m "It is?"
-    call luna_main("Of course!", "default", "left", "sad", "default")
-    call luna_main("Everyone knows wrackspurts can't survive in someone's stomach!", "closed_happy", "default", "default", "default")
+    call lun_main("Of course!","base","base","sad","L")
+    call lun_main("Everyone knows wrackspurts can't survive in someone's stomach!","base","happyCl","base","mid")
     m "Very good Miss Lovegood... I see you know your... magic..."
-    call luna_main("Mhmm! it also allows you to just sit there and let me take get rid of them!", "seductive", "down", "default", "default")
+    call lun_main("Mhmm! it also allows you to just sit there and let me take get rid of them!","base","seductive","base","down")
     m "You expect me to just sit here while you suck them out?"
-    call luna_main("Mhmm!", "closed_happy", "default", "default", "default")
+    call lun_main("Mhmm!","base","happyCl","base","mid")
     m "And you want that?"
-    call luna_main("Only if it's not too much trouble [l_genie_name], I know you must be busy...", "wink", "right", "sad", "upset")
+    call lun_main("Only if it's not too much trouble, [l_genie_name], I know you must be busy...","normal","wink","sad","R")
     m "No trouble at all..."
-    call luna_main("Hooray!", "wide", "empty", "default", "default")
-    call luna_main("Now how's this secret technique work?", "wink", "default", "raised", "default")
+    call lun_main("Hooray!","base","wide","base","empty")
+    call lun_main("Now how's this secret technique work?","base","wink","raised","mid")
     m "Seeing as how you offered to do this while I was sitting, why don't you come over here."
-    call luna_main("Can I hide under your desk?", "default", "default", "default", "default")
+    call lun_main("Can I hide under your desk?","base","base","base","mid")
     m "You don't have to, I can turn the chair around."
-    call luna_main("Oh no, I want to...", "wink", "right", "sad", "default")
-    call luna_main("I've always been rather fond of small spaces like that ever since I was a little girl...", "default", "down", "sad", "default")
-    call luna_main("I used to hide in the roots of a huge Wiggentree near our home...", "seductive", "down", "sad", "talk")
-    call luna_main("I've never felt as safe as I did when was under the roots of that tree...", "closed_happy", "default", "default", "default")
-    call luna_main("It's like the wood wrapped around to hug me when it was cold...", "seductive", "right", "default", "default")
-    call luna_main("...", "seductive", "down", "sad", "default")
+    call lun_main("Oh no, I want to...","base","wink","sad","R")
+    call lun_main("I've always been rather fond of small spaces like that ever since I was a little girl...","base","base","sad","down")
+    call lun_main("I used to hide in the roots of a huge Wiggentree near our home...","soft","seductive","sad","down")
+    call lun_main("I've never felt as safe as I did when was under the roots of that tree...","base","happyCl","base","mid")
+    call lun_main("It's like the wood wrapped around to hug me when it was cold...","base","seductive","base","R")
+    call lun_main("...","base","seductive","sad","down")
     m "..."
     m "If you want to crawl under the desk feel free..."
-    call luna_main("Thank you [l_genie_name]...", "closed_happy", "default", "default", "default")
+    call lun_main("Thank you, [l_genie_name]...","base","happyCl","base","mid")
 
     label luna_blowjob_under_desk:
         pass
     show screen blkfade
+    hide screen luna_main
     with d3
-    hide screen luna
+
     ">Luna quickly walks around your desk and crawls under your spacious desk..."
     m "Are you ok down there?"
     $ ccg_folder = "luna_desk"
@@ -890,6 +923,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     show screen ccg
     hide screen blkfade
     with d3
+
     lun "My goodness... I've never seen so much..."
     m "Oh yeah... that..."
     $ ccg1 = "2"
@@ -897,7 +931,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     m "Wait..."
     m "Magic?"
     $ ccg1 = "3"
-    lun "Can't you feel it [l_genie_name]?"
+    lun "Can't you feel it, [l_genie_name]?"
     $ ccg1 = "4"
     lun "It's so heavy in the air... It's {b}all{/b} over the wood..."
     $ ccg1 = "5"
@@ -921,6 +955,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     $ ccg1 = "10"
     lun "Agh..."
     m "..."
+
     menu:
         "-Take your cock out-":
             ">While the naive young blonde sits under your desk you decide it's finally time for her to get to work."
@@ -951,12 +986,12 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
             m "Now, seeing as how I'm a little tired..."
             m "Why don't you open my robe and pull out the 'affected area'..."
             $ ccg1 = "9"
-            lun "Of course [l_genie_name]..."
+            lun "Of course, [l_genie_name]..."
             ">Luna reverently opens your robe and softly withdraws your hard cock."
             $ ccg1 = "12"
             lun "What do you..."
             $ ccg1 = "13"
-            lun "What now [l_genie_name]?"
+            lun "What now, [l_genie_name]?"
             m "Put the tip in your mouth and Imagine it's a tasty lollipop..."
             m "Just don't bite it."
             $ ccg1 = "14"
@@ -964,6 +999,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
             $ ccg1 = "15"
             lun "Ok then!"
             ">Without any further delay, Luna hops forward to take the head of your cock in her mouth."
+
     $ ccg1 = "16"
     ">Luna begins sucking in earnest as her tongue starts darting along the underside of the head of your sensitive cock at a blistering pace."
     $ ccg1 = "17"
@@ -976,7 +1012,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     lun "Hi hm? (I am?)"
     g4 "yes..."
     $ ccg1 = "20"
-    lun "Hnnk hoo hrr! (Thank you [l_genie_name]!)"
+    lun "Hnnk hoo hrr! (Thank you, [l_genie_name]!)"
     ">In response to your misguided praise, Luna's tongue seems to increase in speed."
     g4 "Argh..."
     $ ccg1 = "17"
@@ -988,7 +1024,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     ">Luna takes your cock out of her mouth."
     g4 "Ah...."
     $ ccg1 = "12"
-    lun "Was I doing a bad job [l_genie_name]?"
+    lun "Was I doing a bad job, [l_genie_name]?"
     m "You were just going a little-"
     $ ccg1 = "22"
     lun "I knew I was hurting you!"
@@ -1005,20 +1041,22 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     $ ccg1 = "26"
     lun "Those tricky little..."
     $ ccg1 = "13"
-    lun "Don't worry [l_genie_name], I'll have them out in no time!"
+    lun "Don't worry, [l_genie_name], I'll have them out in no time!"
     ">With that, Luna begins her tongue lashing of your cock anew."
     $ ccg1 = "21"
     g4 "A-Ah..."
     g4 "G-good work miss lovegood..."
     $ ccg1 = "27"
-    lun "Hnnk hoo hrr! (Thank you [l_genie_name]!)"
+    lun "Hnnk hoo hrr! (Thank you, [l_genie_name]!)"
     show screen blkfade
     with d3
+
     $ ccg1 = "28"
     ">Over the next hour, Luna continues to hide under your desk as she relentlessly assaults your cock."
     ">She has an uncanny ability to tell when you're about to cum and slows to a halt every time..."
     hide screen blkfade
     with d3
+
     g4 "I-I think this is it... again..."
     lun "Hmmmm... (Hmmmm...)"
     $ ccg1 = "17"
@@ -1045,32 +1083,40 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     $ ccg1 = "35"
     ">In the afterglow of your titanic enjoyment, all that can be heard is Luna slowly slurping up your cum under the desk."
     show screen blkfade
-    with d3
-    ">Once done, she Eventually decides to crawl out from underneath your desk..."
     hide screen ccg
+    with d3
+
+    ">Once done, she Eventually decides to crawl out from underneath your desk..."
+
+    call lun_chibi("stand","desk","base")
+    call gen_chibi("sit_behind_desk")
     hide screen blkfade
     with d3
-    call luna_main("Those nasty wrackspurts sure were giving you trouble weren't they [l_genie_name]?", "seductive", "default", "sad", "default")
+    pause.5
+
+    call lun_main("Those nasty wrackspurts sure were giving you trouble weren't they [l_genie_name]?","base","seductive","sad","mid",xpos="right",ypos="base")
     m "yeah... sure..."
-    call luna_main("Well if they bother you again just let me know!", "closed_happy", "default", "default", "default")
-    call luna_main("Getting all of them out was a bit of a struggle...", "doubtful", "right", "sad", "talk")
-    call luna_main("But I think we did it!", "closed_happy", "default", "default", "default")
+    call lun_main("Well if they bother you again just let me know!","base","happyCl","base","mid")
+    call lun_main("Getting all of them out was a bit of a struggle...","soft","suspicious","sad","R")
+    call lun_main("But I think we did it!","base","happyCl","base","mid")
     m "You sure did..."
     m "Now if you don't mind Miss granger..."
-    call luna_main("Lovegood [l_genie_name]...", "wink", "default", "sad", "pout")
+    call lun_main("Lovegood, [l_genie_name]...","pout","wink","sad","mid")
     m "Right, right... miss love...good..."
     m "This run in with those... things... has left me rather exhausted..."
-    call luna_main("Oh...", "wide", "default", "default", "talk")
-    call luna_main("Of course [l_genie_name]! I best be off to divination class anyway...", "default", "right", "sad", "default")
-    call luna_main("Just make sure you let me know if you need any help with those wrackspurts again!", "seductive", "default", "sad", "default")
-    call luna_main("(I can't believe they taste so good...)", "seductive", "empty", "sad", "default")
+    call lun_main("Oh...","soft","wide","base","mid")
+    call lun_main("Of course, [l_genie_name]! I best be off to divination class anyway...","base","base","sad","R")
+    call lun_main("Just make sure you let me know if you need any help with those wrackspurts again!","base","seductive","sad","mid")
+    call lun_main("(I can't believe they taste so good...)","base","seductive","sad","empty")
     m "You'll be the first to know."
-    call luna_main("Thanks [l_genie_name]! Have a nice day!", "closed_happy", "default", "default", "default")
-    ">Luna turns and merrily skips out of your office."
-    hide screen luna_chibi
-    hide screen luna
-    with d3
+    call lun_main("Thanks, [l_genie_name]! Have a nice day!","base","happyCl","base","mid")
+
+    call lun_walk("desk","leave",2.7)
+
+    $ luna_busy = True
+
     m "..."
+
     jump main_room
 
 
@@ -1082,32 +1128,39 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
 label luna_reverted_event_4: #Luna gentle BJ for anout 9 hours and 14 orgasms from Genie
     $ luna_corruption = 4
     $ days_to_luna = 6
+
+    call play_sound("knocking")
     ">*knock* *knock* *knock* *knock* *knock* {b}*knock* *knock*{/b}"
-    ">Your door swings wide as the ever cheerful Luna Lovegood strolls in."
-    $ luna_chibi("stand")
-    call luna_main("Hello [l_genie_name]!", "closed_happy", "default", "default", "default")
+
+    call play_sound("door")
+    call lun_walk("door","mid",2)
+    pause.2
+
+    call nar(">Your door swings wide as the ever cheerful Luna Lovegood strolls in.")
+
+    call lun_main("Hello, [l_genie_name]!","base","happyCl","base","mid",xpos="right",ypos="base")
     m "Miss Lovegood, to what do I owe the {i}pleasure{/i}?"
-    call luna_main("Well...", "wink", "default", "sad", "default")
-    call luna_main("today is a sunday...", "wink", "default", "sad", "default")
+    call lun_main("Well...","base","wink","sad","mid")
+    call lun_main("today is a sunday...","base","wink","sad","mid")
     m "It is?"
-    call luna_main("Of course! Can't you tell how happy the sun is?", "wink", "default", "sad", "default")
+    call lun_main("Of course! Can't you tell how happy the sun is?","base","wink","sad","mid")
     m "..."
-    call luna_main("anyway... seeing as how it's Mr Sun's happy day...", "wink", "default", "sad", "default")
-    call luna_main("I don't have any classes!", "wink", "default", "sad", "default")
-    call luna_main("So I was wondering... what are you up to today [l_genie_name]?", "wink", "default", "sad", "default")
+    call lun_main("anyway... seeing as how it's Mr Sun's happy day...","base","wink","sad","mid")
+    call lun_main("I don't have any classes!","base","wink","sad","mid")
+    call lun_main("So I was wondering... what are you up to today [l_genie_name]?","base","wink","sad","mid")
     m "Probably just working on some reports for the ministry..."
     m "Why?"
-    call luna_main("Well if you wouldn't mind...", "wink", "default", "sad", "default")
-    call luna_main("Maybe I could get a few more of my nasty wrackspurts out for you?", "wink", "default", "sad", "default")
-    call luna_main("I just feel so bad knowing that I gave them to you...", "wink", "default", "sad", "default")
+    call lun_main("Well if you wouldn't mind...","base","wink","sad","mid")
+    call lun_main("Maybe I could get a few more of my nasty wrackspurts out for you?","base","wink","sad","mid")
+    call lun_main("I just feel so bad knowing that I gave them to you...","base","wink","sad","mid")
     m "I wouldn't blame yourself-"
-    call luna_main("But I do!", "wink", "default", "sad", "default")
-    call luna_main("The idea of all those nasty things being trapped in there...", "wink", "default", "sad", "default")
-    call luna_main("Causing so much discomfort...", "wink", "default", "sad", "default")
-    call luna_main("It's all I've been able to think about!", "wink", "default", "sad", "default")
+    call lun_main("But I do!","base","wink","sad","mid")
+    call lun_main("The idea of all those nasty things being trapped in there...","base","wink","sad","mid")
+    call lun_main("Causing so much discomfort...","base","wink","sad","mid")
+    call lun_main("It's all I've been able to think about!","base","wink","sad","mid")
     m "I suppose if it's bothering you so much I can let you get a few out."
-    call luna_main("oh thank you, thank you, thank you!", "default", "default", "sad", "default")
-    call luna_main("You don't know how much better I'll feel once I get them {b}all{/b} out!", "default", "default", "sad", "default")
+    call lun_main("oh thank you, thank you, thank you!","base","base","sad","mid")
+    call lun_main("You don't know how much better I'll feel once I get them {b}all{/b} out!","base","base","sad","mid")
     m "I don't think yo-"
     show screen blkfade
     with d3

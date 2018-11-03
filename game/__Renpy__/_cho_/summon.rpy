@@ -2,7 +2,11 @@
 
 label cho_menu:
     call play_sound("door")
-    call cho_main("Hello, [cho_genie_name].","smile","base","base","mid",xpos="base",ypos="base")
+    $ menu_x = 0.5
+    $ menu_y = 0.5
+
+    #ADD Tonks chibi here.
+    call cho_random_clothing
 
     $ cho_busy = True
 
@@ -33,6 +37,21 @@ label cho_menu:
         #"-Public Favours-":
         #    "To be done."
         #    jump cho_menu
+
+        "{color=#858585}-Hidden-{/color}" if not cho_wardrobe_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump cho_requests
+        "-Wardrobe-" if cho_wardrobe_unlocked:
+            $ active_girl = "cho"
+
+            call load_cho_clothing_saves
+
+            call reset_wardrobe_vars
+            call update_wr_color_list
+
+            $ wardrobe_active = True
+            call cho_main(xpos="wardrobe",ypos="base")
+            call screen wardrobe
 
         "-Dismiss Her-":
             call cho_main("Good bye, [cho_genie_name].","smile","base","base","R")

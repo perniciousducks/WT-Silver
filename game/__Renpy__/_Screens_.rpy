@@ -6,36 +6,21 @@ screen room_back:
         add "interface/map/room_bg2.png"
     zorder 0
 
-screen shop_screen:
-    tag room_screen
+screen cg: #Used in tentacle event.
+    tag cg_screen
 
-    zorder hermione_main_zorder-1
-
-    if daytime:
-        add "interface/map/room_bg1.png" at Position(xpos=140)
-    else:
-        add "interface/map/room_bg2.png" at Position(xpos=140)
-
-    imagemap:
-        ground "interface/map/shop_ground.png"
-        hover "interface/map/shop_hover.png"
-        # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (0, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
-        hotspot (0, 124, 268, 88) clicked Jump("sscrolls2") #Scrolls 2
-        hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
-        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
-        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
-        hotspot (606+280, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
-        hotspot (750+280, 550, 40, 40) clicked [Show("main_room_menu"),Jump("day_main_menu")] #Return Button
-
-screen cg:
     add cg_image
 
+    zorder 4
+
 screen ccg:
+    tag cg_screen
+
     add "images/28_cg/"+ccg_folder+"/base.png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg1)+".png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg2)+".png"
     add "images/28_cg/"+ccg_folder+"/"+str(ccg3)+".png"
+
     zorder 4
 
 screen gui_tooltip:
@@ -168,8 +153,6 @@ screen gift:
 
 
 label give_reward(text="",gift=""):
-    show screen blktone5
-    with d3
 
     $ renpy.play('sounds/win2.mp3')
     show screen notes
@@ -189,6 +172,7 @@ label give_reward(text="",gift=""):
         $ quest_reward_text = text
 
     show screen gift
+    show screen blktone5
     with d3
 
     menu:
@@ -197,8 +181,6 @@ label give_reward(text="",gift=""):
             pass
 
     hide screen gift
-    with d1
-
     hide screen blktone5
     with d3
 
@@ -213,8 +195,6 @@ screen clothing_unlock:
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
 
 label unlock_clothing(text="",item=""):
-    show screen blktone5
-    with d3
 
     $ renpy.play('sounds/win2.mp3')
     show screen notes
@@ -234,6 +214,7 @@ label unlock_clothing(text="",item=""):
         $ quest_reward_text = text
 
     show screen clothing_unlock
+    show screen blktone5
     with d3
 
     menu:
@@ -242,8 +223,6 @@ label unlock_clothing(text="",item=""):
             pass
 
     hide screen clothing_unlock
-    with d1
-
     hide screen blktone5
     with d3
 
@@ -337,7 +316,7 @@ screen with_snape:
     add "images/main_room/with_snape.png" at Position(xpos=0+140, ypos=0)
     tag hanging_with_snape
     zorder 3
-    
+
 screen with_snape_animated:
     add "genie_toast_goblet" at Position(xpos=0+140, ypos=0)
     tag hanging_with_snape

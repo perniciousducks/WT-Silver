@@ -85,7 +85,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         call her_main("...........","upset","wink")
@@ -406,7 +406,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         call her_main("(I can't believe I'm doing this... again...)","base","baseL",cheeks="blush")
@@ -417,7 +417,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
 
         $ hermione_wear_bottom = False
         $ hermione_wear_panties = False
-        call set_hermione_action("none","skip_update")
+        call set_hermione_action("strip")
         pause.5
 
         call her_main("...","base","glance")
@@ -663,7 +663,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
     call blkfade
     ">Hermione quickly puts her clothes back on."
 
-    call h_action("none") #Resets clothes.
+    call h_action("none","update") #Resets clothes.
 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35

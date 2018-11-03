@@ -38,6 +38,12 @@ label update_persistants:
         if buying_favors_from_hermione_unlocked:
             $ hermione_favors = True
 
+    if not hasattr(renpy.store,'update_1_34'): # Reset/update old vars for a specific update here! To make it compatible with older saves/prevent crashes!
+        $ update_1_34 = "2018-Oct-00"
+
+        call reset_luna_base
+        call reset_luna_clothing
+
     return
 
 

@@ -7,11 +7,11 @@ label astoria_tonks_event: #send astoria to go see tonks
     if astoria_tonks_3_completed and not astoria_wardrobe_unlocked: #Unlocks Astoria's Wardrobe.
         jump astoria_tonks_wardrobe_unlock
 
-    if astoria_affection == 1 and not astoria_tonks_1_completed:
+    if astoria_affection <= 1 and not astoria_tonks_1_completed:
         jump astoria_tonks_1
-    elif astoria_affection == 2 and not astoria_tonks_2_completed:
+    elif astoria_affection <= 2 and not astoria_tonks_2_completed:
         jump astoria_tonks_2
-    elif astoria_affection == 3 and not astoria_tonks_3_completed:
+    elif astoria_affection <= 3 and not astoria_tonks_3_completed:
         jump astoria_tonks_3
     else: #Repeatable events.
         jump astoria_tonks_random
@@ -51,8 +51,15 @@ label astoria_tonks_1: #First time astoria sent to tonks.
     m "Well... If you want to keep learning new spells you might have to..."
     call ast_main("*hmph*-- you haven't even taught me any yet!","clench","angry","angry","mid")
     call ast_main("They're probably not even fun...","pout","angry","angry","R")
-    m "Why don't you come over here then and we can start reading over the first one."
-    call ast_main("alright...","grin","base","base","mid")
+
+    if not snape_gave_spellbook:
+        m "(Right. I still need that spellbook.)"
+        m "Next time, [astoria_name]."
+        m "I've got... uhm-... I've got stuff to take care of, yes."
+        call ast_main("*I don't believe that one bit...","pout","angry","angry","R")
+    else:
+        m "Why don't you come over here then and we can start reading over the first one."
+        call ast_main("alright...","grin","base","base","mid")
 
     $ astoria_tonks_1_completed = True
 
@@ -171,9 +178,9 @@ label astoria_tonks_wardrobe_unlock:
     m "I will try..."
     call ast_main("Great! Now lets get started!","grin","angry","angry","mid")
 
-    call give_reward(">Congratulations! You can now access Astoria's wardrobe and change her appearance!","images/store/astoria_unlock_02.png")
+    call give_reward(">Congratulations! You can now access Astoria's wardrobe and change her appearance!","interface/icons/head/astoria_unlock_02.png")
 
-    call give_reward(">Congratulations! Susan's wardrobe has also been unlocked!","images/store/susan_unlock_02.png")
+    call give_reward(">Congratulations! Susan's wardrobe has also been unlocked!","interface/icons/head/susan_unlock_02.png")
 
     "Developer note:" ">We have made both Susan's and Astoria's wardrobe available.\nAll available clothing has also been unlocked."
     "Developer note:" ">Susan's wardrobe as well as Astoria's clothings will unlock with future events instead in later patches."

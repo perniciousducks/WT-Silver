@@ -44,7 +44,7 @@ screen tonks_main:
 
 
 
-label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None, breasts=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
+label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
     hide screen tonks_main
 
     #Reset
@@ -79,7 +79,7 @@ label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, base=None,
             $ tonks_ypos = int(ypos)
 
 
-    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, base, breasts, cheeks, tears, extra)
+    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, cheeks, tears, extra)
 
     show screen tonks_main
     show screen bld1
@@ -100,8 +100,6 @@ init python:
                         pupil=None,
                         x_pos=None,
                         y_pos=None,
-                        base=None,
-                        breasts=None,
                         cheeks=None,
                         tears=None,
                         extra=None):
@@ -112,8 +110,6 @@ init python:
         global tonks_pupil
         global tonks_xpos
         global tonks_ypos
-        global tonks_base
-        global tonks_boobs
         global tonks_cheeks
         global tonks_tears
         global tonks_extra
@@ -133,10 +129,6 @@ init python:
         if y_pos is not None:
             tonks_ypos        = y_pos
         #BODY CONTROL
-        if base is not None:
-            tonks_base        = "characters/tonks/body/base/"+base+".png"
-        if breasts is not None:
-            tonks_boobs       = "characters/tonks/body/base/"+breasts+".png"
         if cheeks is not None:
             tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png"
         if tears is not None:

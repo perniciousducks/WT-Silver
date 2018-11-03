@@ -123,7 +123,7 @@ label door:
                 call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
             else:
                 call play_music("chipper_doodle") # LUNA'S THEME (placeholder probably)
-            jump luna_door
+            jump summon_luna
 
 
         #Cho

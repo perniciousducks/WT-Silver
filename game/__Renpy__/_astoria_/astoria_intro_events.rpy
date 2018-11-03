@@ -312,7 +312,7 @@ label astoria_captured_intro:
     m "(I feel like I'm actually starting to run this damn school.)"
     m "(This isn't what I signed on for...)"
 
-    call give_reward(">You've unlocked the ability to summon Astoria to your office.","images/store/astoria_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Astoria to your office.","interface/icons/head/astoria_unlock_01.png")
 
     $ astoria_busy = True
     $ hermione_busy = True
@@ -857,7 +857,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     hide screen bld1
     with d3
 
-    call give_reward(">You've unlocked the ability to summon Susan to your office.","images/store/susan_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Susan to your office.","interface/icons/head/susan_unlock_01.png")
 
     $ astoria_busy = True
     $ susan_busy = True
@@ -1072,7 +1072,7 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     m "..."
     m "Did I just become a pimp?"
 
-    call give_reward(">You've unlocked the ability to summon Tonks to your office.","images/store/tonks_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Tonks to your office.","interface/icons/head/tonks_unlock_01.png")
     $ tonks_busy = True
 
 
@@ -1166,6 +1166,8 @@ label astoria_book_intro: #Tell Astoria that you have a book of spells as well a
 
     $ astoria_busy = True
     $ tonks_busy = True
+
+    $ astoria_tonks_event_in_progress = True
 
     call nar(">Astoria sprints out the door, giggling as she goes.")
 

@@ -109,7 +109,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         pause.5
 
         $ hermione_wear_top = False
-        call set_hermione_action("None","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         hide screen hermione_main
@@ -468,7 +468,7 @@ label start_titfuck:
         pause.5
 
         $ hermione_wear_top = False
-        call set_hermione_action("None","skip_update")
+        call set_hermione_action("None")
         pause.5
 
         hide screen bld1
@@ -790,7 +790,7 @@ label start_titfuck:
                 call gen_chibi("stand","desk","base")
                 call her_chibi("stand","mid","base")
 
-                call h_action("none","skip_update")
+                call h_action("None")
 
                 call hide_blkfade
                 pause.5
@@ -859,7 +859,7 @@ label start_titfuck:
                 call gen_chibi("stand","desk","base")
                 call her_chibi("stand","mid","base")
 
-                call h_action("none","skip_update")
+                call h_action("None")
 
                 call hide_blkfade
                 pause.5
@@ -907,7 +907,7 @@ label done_with_titjob:
 
     hide screen hermione_main
 
-    call h_action("none")
+    call h_action("none","update")
 
     call gen_chibi("hide")
     hide screen g_c_c_u # Genie's sperm. Universal.

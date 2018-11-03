@@ -930,7 +930,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
 
-    call h_action("none") #Resets clothing.
+    call h_action("none","update") #Resets clothing.
 
     hide screen hermione_main
     hide screen hermione_ass

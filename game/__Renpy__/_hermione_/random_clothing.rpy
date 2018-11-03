@@ -10,7 +10,9 @@ label hermione_random_clothing:
     $ hermione_wear_bottom      = True
 
     $ random_number = renpy.random.randint(1, 10)
-    if weather_gen >= 5: #Rainy and Thundery Weather
+
+    # Rainy and Thundery Weather.
+    if weather_gen >= 5:
 
         if random_number in [1,2,3,4,5]: #50% chance
 
@@ -163,11 +165,10 @@ label hermione_random_clothing:
                 call her_main("","base","base",xpos="base",ypos="base")
 
             if not h_request_wear_robe:
-                pause.8 #Shows Hermione with robe for a bit.
-            call load_hermione_clothing_saves
-            call update_chibi_uniform
+                pause.5 #Shows Hermione with robe for a bit.
 
-    else: #Clear weather.
+    # Clear Weather.
+    else:
         if daytime and random_number in [1,2,3,4,5]: #50% chance:
 
             if not hg_muggle_hot_OBJ.unlocked and not hermione_door_event_happened and whoring >= 5:
@@ -207,7 +208,7 @@ label hermione_random_clothing:
     call her_chibi("stand","mid","base")
     pause.2
     call load_hermione_clothing_saves
-    call update_chibi_uniform
+    call update_her_uniform
 
     #Hermione greeting.
     if mad >= 1:

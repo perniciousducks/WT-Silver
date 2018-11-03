@@ -76,7 +76,31 @@ label __init_variables:
     return
         
 init python:
-    class mirror_stories:
+    class generic_menu_item(object):
+        imagepath = "images/store/potions/potion_3.png"
+        title = "This is the title"
+        description = ""
+        unlocked = False
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
+        def get_image(self):
+            return self.imagepath
+        
+        def get_title(self):
+            return self.title
+        
+        def get_description(self):
+            return self.description
+        
+        def get_buttom_right(self):
+            return ""
+            
+    class mirror_stories(generic_menu_item):
+        unlocked = False
+        start_label = ""
+        authors = []
         title = ""
         unlocked = False
         start_label = ""
@@ -89,14 +113,14 @@ init python:
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
         
-        def getMenuText(self):
+        def get_title(self):
             ret_str = "{size=12}\""+self.title+"\" by "
             for s in self.authors:
                 ret_str += s +", "
 
             return ret_str[0:len(ret_str)-2]+"{/size}"
        
-        def getDescription(self):
+        def get_description(self):
             returnV = "{size=10}"
             if self.unlocked:
                 returnV += "story description: " + self.story_description
@@ -104,6 +128,15 @@ init python:
                 returnV += self.ach_desc
                     
             return returnV+"{/size}" 
+        
+        def get_buttom_right(self):
+            return self.getCharcters()
+        
+        def get_image(self):
+            if self.unlocked == False:
+                return "interface/room_of_req/locked.png"
+            else:
+                return "interface/room_of_req/unlocked.png"
         
         def getCharcters(self):
             ret_str = ""

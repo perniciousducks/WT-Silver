@@ -75,10 +75,14 @@ label hide_room_req:
     return
     
 label mirror_menu:
-    show screen event_menu
+    show screen generic_scroll_menu(mr_evs_list, "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}")
     $ _return = ui.interact()
     
-    hide screen event_menu
+    hide screen generic_scroll_menu
+    
+    if isinstance(_return, generic_menu_item):
+        $ currentpage = 0
+        $renpy.jump(_return.start_label)
     
     if _return == "Close":
         call screen room_of_requirement_menu
@@ -89,93 +93,7 @@ label mirror_menu:
     elif _return == "dec":
         $ currentpage += -1
         jump mirror_menu
-    else:
-        $renpy.jump(_return)
-        
-screen event_menu:
-    $ event_shown=4
-    use close_button
-    
-    if not currentpage <= 0:
-        imagebutton:
-            xpos 825
-            ypos 240
-            idle "interface/general/"+interface_color+"/button_arrow_up.png"
-            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
-            action Return("dec")
-            
-    if currentpage < math.ceil((len(mr_evs_list)-1)/event_shown):
-        imagebutton:
-            xpos 825
-            ypos 292
-            idle "interface/general/"+interface_color+"/button_arrow_down.png"
-            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
-            action Return("inc")
-            
-        
-            
-    imagemap:
-        xsize 638
-        ysize 544
-        xalign 0.5
-        yalign 0.5
-        
-        ground "interface/store/"+interface_color+"/items_panel.png"
-        hover "interface/store/"+interface_color+"/items_panel_hover.png"
- 
-        hbox:
-            xpos 5
-            ypos 30
-            xsize 300
-            ysize 41
-            text "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}" xalign 0.5 yalign 0.5 size 16 bold 0.2
-        
-   
-
-        for i in range(0, event_shown):
-            if (currentpage*event_shown)+i < len(mr_evs_list):
-                if mr_evs_list[(currentpage*event_shown)+i].unlocked:
-                    hotspot (12, 86+90*i, 540, 90) clicked Return(mr_evs_list[(currentpage*event_shown)+i].start_label)
-                use mirror_item(mr_evs_list[(currentpage*event_shown)+i], 77+90*i)
-
-            
-screen mirror_item(mirror_story, ypos=0):
-    frame:
-        background #00000000
-        xpos 12
-        ypos ypos
-        xsize 535
-        ysize 100
-       
-        vbox:
-            xpos 0
-            ypos 1
-            xsize 82
-            ysize 81
-            if mirror_story.unlocked == False:
-                add "interface/room_of_req/locked.png" xalign 0.5 yalign 0.5 zoom 0.6
-            else:
-                add "interface/room_of_req/unlocked.png" xalign 0.5 yalign 0.5 zoom 0.6
-        
-        vbox:
-            xpos 94
-            ypos 3
-            xsize 440
-            ysize 22
-            
-            text mirror_story.getMenuText() yalign 0.5
-            
-        vbox:
-            xpos 94
-            ypos 30
-            xsize 430
-            ysize 55
-            
-            text mirror_story.getDescription()
-
-            
-        text mirror_story.getCharcters() xalign 1.0 yalign 1.0
-            
+                   
             
 screen candle_light_1:
     add "candle_fire_01" xpos 590 ypos 85

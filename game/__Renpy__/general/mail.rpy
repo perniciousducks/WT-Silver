@@ -295,7 +295,7 @@ label get_package:
             if item.type == 'Gift':
                 gift = item.object
                 gift_item_inv[gift.id] += item.quantity
-                the_gift = gift.image
+                the_gift = gift.imagepath
                 renpy.show_screen("gift")
                 renpy.with_statement(Dissolve(0.3))
                 if item.quantity > 1:

@@ -299,9 +299,9 @@ label get_package:
                 renpy.show_screen("gift")
                 renpy.with_statement(Dissolve(0.3))
                 if item.quantity > 1:
-                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name)+"'s")
+                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.title)+"'s")
                 else:
-                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name))
+                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.title))
                 renpy.hide_screen("gift")
                 renpy.with_statement(Dissolve(0.3))
 

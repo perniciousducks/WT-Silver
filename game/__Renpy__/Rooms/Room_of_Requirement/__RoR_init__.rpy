@@ -76,6 +76,12 @@ label __init_variables:
     return
         
 init python:
+    def blackTint(image):
+        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(0.2, 0.2, 0.2))
+    
+    def whiteTint(image):
+        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(0.9, 0.9, 0.9))
+    
     class generic_menu_item(object):
         imagepath = "images/store/potions/potion_3.png"
         title = "This is the title"

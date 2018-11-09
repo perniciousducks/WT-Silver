@@ -22,20 +22,20 @@ screen map_screen:
         idle "interface/map/map_idle.png"
         hover "interface/map/map_hover.png"
         # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (192+140, 229, 38, 20) clicked Jump("map_attic") #attic
-        hotspot (272+140, 373, 63, 41) clicked Jump("clothes_store") #clothes
-        hotspot (25+140, 374, 102, 66) clicked Jump("map_forest") #forest
-        hotspot (302+140, 523, 112, 49) clicked Jump("map_lake") #lake
-        hotspot (273+140, 459, 75, 8) clicked Jump("map_dorms") #dorms
-        hotspot (453, 300, 75, 45) clicked Jump("floor_7th") #7th floor
-        #hotspot (656+140, 232, 106, 33) clicked Jump("inn_menu") #inn
-        #hotspot (376+140, 84, 111, 57) clicked Jump("map_pitch") #pitch
-        hotspot (307+140, 240, 59, 37) clicked Jump("shop_intro") #shop
-        hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
+        hotspot (192+140, 229, 38, 20) clicked Return("map_attic") #attic
+        hotspot (272+140, 373, 63, 41) clicked Return("clothes_store") #clothes
+        hotspot (25+140, 374, 102, 66) clicked Return("map_forest") #forest
+        hotspot (302+140, 523, 112, 49) clicked Return("map_lake") #lake
+        hotspot (273+140, 459, 75, 8) clicked Return("map_dorms") #dorms
+        hotspot (453, 300, 75, 45) clicked Return("floor_7th") #7th floor
+        #hotspot (656+140, 232, 106, 33) clicked Return("inn_menu") #inn
+        #hotspot (376+140, 84, 111, 57) clicked Return("map_pitch") #pitch
+        hotspot (307+140, 240, 59, 37) clicked Return("shop_intro") #shop
+        hotspot (33+140, 535, 39, 39) clicked Return("day_main_menu") #return
 
         #Map Events
         if whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
-            hotspot (217, 442, 55, 55) clicked Jump("hermione_map_BJ")
+            hotspot (217, 442, 55, 55) clicked Return("hermione_map_BJ")
 
 
 label floor_7th:

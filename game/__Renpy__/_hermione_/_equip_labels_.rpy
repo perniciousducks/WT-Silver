@@ -110,8 +110,8 @@ label set_h_bottom(bottom="", color=""):
     $ hermione_wear_bottom = True
     if h_request_wear_top:
         $ hermione_wear_top = True
-    $ h_skirt = bottom
-    $ h_skirt_color = color
+    $ h_bottom = bottom
+    $ h_bottom_color = color
     call update_her_uniform
     show screen hermione_main
     return
@@ -311,12 +311,12 @@ label set_hermione_outfit(outfit): #This gets used outside the wardrobe.
 label h_outfit_OBJ(outfit):
     if outfit == None:
         $ h_request_wear_outfit = False
-        $ hermione_costume = False
+        $ hermione_wear_outfit = False
         call update_her_uniform
         call h_update_hair
     else:
         $ h_request_wear_outfit = True
-        $ hermione_costume = True
+        $ hermione_wear_outfit = True
 
         $ h_request_wear_top = True
         $ hermione_wear_top = True
@@ -340,7 +340,7 @@ label h_equip_temp_outfit(outfit):
     if temp_outfit_GLBL == None:
         $ temp_outfit_GLBL = hermoine_outfit_GLBL
         $ temp_weir = h_request_wear_outfit
-        $ temp_costume = hermione_costume
+        $ temp_costume = hermione_outfit
 
     call h_outfit_OBJ(outfit)
     return
@@ -394,7 +394,7 @@ label h_action(action =  "", update=""):
 
     else:
 
-        if hermione_costume:
+        if hermione_wear_outfit:
             if action in hermoine_outfit_GLBL.actions:
                 $ hermione_use_action = True
                 $ h_action_a = hermoine_outfit_GLBL.getActionImage(action)

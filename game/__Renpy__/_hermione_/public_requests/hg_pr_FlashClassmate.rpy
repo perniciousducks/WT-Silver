@@ -34,7 +34,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
         m "You know, flash your breasts to some boys..."
         call her_main("?!!","shock","wide")
 
-        if whoring < 9 or hg_pr_ClassmateTouchYou_OBJ.points < 2:
+        if her_whoring < 9 or hg_pr_ClassmateTouchYou_OBJ.points < 2:
             jump too_much
 
         her "[genie_name]!"
@@ -65,7 +65,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
 
     #Second time event.
     else:
-        if whoring >= 9 and whoring < 12: # LEVEL 04 FIRST EVENT.
+        if her_whoring >= 9 and her_whoring < 12: # LEVEL 04 FIRST EVENT.
             m "I think you need to show off your tits some more, [hermione_name]."
             call her_main("You mean to you, [genie_name]?","upset","wink",xpos="right",ypos="base")
             m "No, to your classmates..."
@@ -77,7 +77,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
             call her_main(".................","annoyed","angryL")
             call her_main("Well alright... I will see what I can do, [genie_name]...","disgust","glance")
 
-        elif whoring >= 12 and whoring < 15: # LEVEL 05
+        elif her_whoring >= 12 and her_whoring < 15: # LEVEL 05
             m "[hermione_name]. I have a question for you."
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "Why do you think women have breasts?"
@@ -100,7 +100,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
             m "Thirty five house points will be waiting for you here upon your return, [hermione_name]."
             call her_main("..............","annoyed","annoyed")
 
-        elif whoring >= 15: # LEVEL 06+
+        elif her_whoring >= 15: # LEVEL 06+
             m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."
             call her_main("I will do my best [genie_name].","open","closed",xpos="right",ypos="base")
             m "Really? Just like that? No complaints or anything?"
@@ -127,7 +127,7 @@ label hg_pr_FlashClassmate_complete:
 
 
     #First time event.
-    if whoring >= 9 and whoring < 12:
+    if her_whoring >= 9 and her_whoring < 12:
 
         #Event A
         if one_out_of_three == 1:
@@ -219,7 +219,7 @@ label hg_pr_FlashClassmate_complete:
             call her_main(xpos="right",ypos="base",trans="fade")
 
     #Second level event.
-    elif whoring >= 12 and whoring < 15:
+    elif her_whoring >= 12 and her_whoring < 15:
 
         #Event A
         if one_out_of_three == 1:
@@ -328,7 +328,7 @@ label hg_pr_FlashClassmate_complete:
             m "Well, alright... I think this counts..."
 
     #Third level event.
-    elif whoring >= 15:
+    elif her_whoring >= 15:
 
         #Event A
         if one_out_of_three == 1:
@@ -459,21 +459,21 @@ label hg_pr_FlashClassmate_complete:
     pause.3
 
     show screen blktone
-    if one_out_of_three == 2 and whoring >= 12 and whoring <= 14: #Event level 02.
-        call her_head("\"Slytherin\"...","upset","closed",xpos="base",ypos="base")
+    if one_out_of_three == 2 and her_whoring >= 12 and her_whoring <= 14: #Event level 02.
+        call her_main("\"Slytherin\"...","upset","closed",ypos="head")
 
-    if one_out_of_three == 3 and whoring >= 12 and whoring <= 14: #Event level 02.
-        call her_head("(I can't believe I did that today...)","upset","closed",xpos="base",ypos="base")
-        call her_head("(What if Harry or Ron saw me like that?)","angry","wide")
-        call her_head("(Standing there...)")
-        call her_head("(Pressing my breasts against that window glass...)")
-        call her_head("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised")
-        call her_head("(No. Protecting the honor of the \"Gryffindor\" house is my number one priority.)","upset","closed")
-        call her_head("(We must get the cup this year, no matter the cost...)")
-        call her_head("(........)","angry","down_raised")
+    if one_out_of_three == 3 and her_whoring >= 12 and her_whoring <= 14: #Event level 02.
+        call her_main("(I can't believe I did that today...)","upset","closed",ypos="head")
+        call her_main("(What if Harry or Ron saw me like that?)","angry","wide",ypos="head")
+        call her_main("(Standing there...)",ypos="head")
+        call her_main("(Pressing my breasts against that window glass...)",ypos="head")
+        call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised",ypos="head")
+        call her_main("(No. Protecting the honor of the \"Gryffindor\" house is my number one priority.)","upset","closed",ypos="head")
+        call her_main("(We must get the cup this year, no matter the cost...)",ypos="head")
+        call her_main("(........)","angry","down_raised",ypos="head")
 
-    if whoring >= 15 and one_out_of_three == 1:
-        call her_head(".........................","grin","dead",xpos="base",ypos="base")
+    if her_whoring >= 15 and one_out_of_three == 1:
+        call her_main(".........................","grin","dead",ypos="head")
 
     call hide_blktone
 
@@ -482,5 +482,8 @@ label hg_pr_FlashClassmate_complete:
 
     if hg_pr_FlashClassmate_OBJ.points >= 2:
         $ hg_pr_FlashClassmate_OBJ.complete = True
+
+    if her_reputation <= 11:
+        $ her_reputation +=1
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.

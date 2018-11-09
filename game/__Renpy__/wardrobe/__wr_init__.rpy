@@ -4,7 +4,7 @@ label wardrobe_init:
 
     if not hasattr(renpy.store,'icon_xpos_offset') or reset_persistants:
 
-        $ wardrobe_active = False
+        $ hide_transitions = False
         $ active_girl = "hermione"
 
         $ wardrobe_page = 0
@@ -35,6 +35,7 @@ label wardrobe_init:
         $ wardrobe_gifts_category = 0
 
         #Wardrobe Color Select
+        $ wr_background_color            = ["base","red","green","blue"]
         $ wardrobe_hair_color            = "1"
         $ wardrobe_head_color            = "base"
         $ wardrobe_uniform_color         = "base" #can be: base, red, greed, blue, or yellow.

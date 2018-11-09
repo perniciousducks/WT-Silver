@@ -13,7 +13,7 @@ label update_sus_uniform:
     $ susan_top            = "characters/susan/clothes/tops/base/"+str(sus_top)+".png"
 
     #Bottom
-    $ susan_skirt          = "characters/susan/clothes/bottoms/base/"+str(sus_skirt)+".png"
+    $ susan_bottom          = "characters/susan/clothes/bottoms/base/"+str(sus_bottom)+".png"
 
     #Underwear
     $ susan_bra            = "characters/susan/clothes/underwear/base/"+str(sus_bra)+".png"
@@ -29,6 +29,7 @@ label update_sus_uniform:
     #Accessories
     $ susan_hat            = "characters/susan/accessories/hats/"+str(sus_hat)+".png"
 
+    call update_susan_chibi_uniform
     call update_sus_body
 
     return
@@ -37,11 +38,17 @@ label update_sus_body:
     hide screen susan_main
 
     if susan_wear_top:
-        $ susan_boobs               = "characters/susan/body/base/boobs_0.png"
-    elif susan_wear_bra and not susan_wear_top:
-        $ susan_boobs               = "characters/susan/body/base/boobs_1.png"
+        if sus_top in ["top_1","top_2"]:
+            $ susan_boobs               = "characters/susan/body/base/boobs_nipfix.png"
+        else:
+            $ susan_boobs               = "characters/susan/body/base/boobs_pressed.png"
+    elif susan_wear_bra:
+        if sus_bra in ["bra_chain"]:
+            $ susan_boobs               = "characters/susan/body/base/boobs_base.png"
+        else:
+                $ susan_boobs           = "characters/susan/body/base/boobs_pressed.png"
     else:
-        $ susan_boobs               = "characters/susan/body/base/boobs_1.png"
+        $ susan_boobs                   = "characters/susan/body/base/boobs_base.png"
 
     return
 
@@ -97,13 +104,13 @@ label set_sus_top(top=""):
 label set_sus_bottom(bottom=""):
     hide screen susan_main
 
-    if susan_wear_bottom and sus_skirt == bottom:
+    if susan_wear_bottom and sus_bottom == bottom:
         $ sus_request_wear_bottom = False
         $ susan_wear_bottom = False
     else:
         $ sus_request_wear_bottom = True
         $ susan_wear_bottom = True
-        $ sus_skirt = bottom
+        $ sus_bottom = bottom
 
     call update_sus_uniform
     show screen susan_main

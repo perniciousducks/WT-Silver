@@ -1,21 +1,24 @@
 label inn_menu:
     show bld1
-    if inn_first:
+    if inn_intro:
         jump inn_intro
     abe "Welcome to the Hog's Head Inn"
     menu:
         "-Present Hermione to Aberforth-":
             m "I present you you're new barmaid."
-            $ robeon = True
-            $ stockings = 5
-            $ custom_outfit_old = 5
-            call her_main("","normal","frown") 
-            pause
+            $ hermione_wear_robe = True
+            call set_hermione_outfit(hg_outfit_maid_OBJ)
+            call her_main("","normal","frown")
+            call ctc
+
             abe "Well go on then girl, take the robe off."
             her "Fine..."
-            $ robeon = False
-            call her_main("","normal","worriedCl") 
+
+            hide screen hermione_main
+            $ hermione_wear_robe = False
+            call her_main("","normal","worriedCl")
             pause
+
             hide screen hermione_main
             jump inn_menu
         "-Talk to Aberforth-":
@@ -27,7 +30,7 @@ label inn_menu:
             jump return_office
 
 
-label inn_intro: 
+label inn_intro:
     m "Hello."
     abe "Hello Professor..."
     ">There is a sour tone in the mans voice."
@@ -62,9 +65,9 @@ label inn_intro:
     abe "Now how about a proper drink instead of that buttery crap."
     m "Sure."
     ">You drink well into the night, eventually staggering back to the castle"
-    $ inn_first = False
+    $ inn_intro = False
     jump day_start
-    
+
 label inn_talk: #Responses to Genie asking Aberforth how he's doing
 if day_random <= 2:
     "bla bla bla"

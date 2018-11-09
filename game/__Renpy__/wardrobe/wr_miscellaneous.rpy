@@ -18,7 +18,10 @@ label equip_misc_item:
         jump equip_sus_misc_item
     #Cho
     if active_girl == "cho":
-        jump equip_sus_misc_item
+        jump equip_cho_misc_item
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_misc_item
 
 label equip_her_misc_item:
 
@@ -27,10 +30,10 @@ label equip_her_misc_item:
 
     else:
         if misc_item_choice == "transparency":
-            if whoring <= 11:
+            if her_whoring <= 11:
                 jump too_much
 
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
 
             if transparency == 1:
                 call her_main("You want me to make my clothes see through?","normal","worriedCl")
@@ -43,13 +46,13 @@ label equip_her_misc_item:
                     "-A little bit-":
                         $ transparency_amount = 0.8
                         call her_main("(at least This shouldn't be too noticable.","normal","worriedCl")
-                    "-A fair bit-" if whoring >= 20:
+                    "-A fair bit-" if her_whoring >= 20:
                         $ transparency_amount = 0.5
                         call her_main("(Hopefully it's not too bad","annoyed","worriedL")
-                    "-A lot-" if whoring >= 23:
+                    "-A lot-" if her_whoring >= 23:
                         $ transparency_amount = 0.3
                         call her_main("(...)","base","down")
-                    "-All of it-" if whoring == 24:
+                    "-All of it-" if her_whoring == 24:
                         $ transparency_amount = 0.1
                         call her_main("...","grin","baseL")
 
@@ -75,7 +78,7 @@ label equip_her_misc_item:
         if misc_item_choice in ["buttplug_small","buttplug_medium","buttplug_large"]:
             if misc_item_choice == "buttplug_small" and not h_request_wear_buttplug:
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ hide_transitions = False #activates dissolve in her_main
 
                 call her_main("You want me to use a buttplug? Again?","angry","wink")
                 call her_main("(...)","annoyed","ahegao")
@@ -91,7 +94,7 @@ label equip_her_misc_item:
 
             elif misc_item_choice == "buttplug_medium" and not h_request_wear_buttplug:
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ hide_transitions = False #activates dissolve in her_main
 
                 call her_main("Are you sure this is the medium size one?","soft","wink")
                 call her_main("(It still looks so big.)","angry","worriedCl")
@@ -106,7 +109,7 @@ label equip_her_misc_item:
 
             elif misc_item_choice == "buttplug_large" and not h_request_wear_buttplug:
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ hide_transitions = False #activates dissolve in her_main
 
                 call her_main("The big one?","soft","base")
                 g9 "The giant one!"
@@ -126,7 +129,7 @@ label equip_her_misc_item:
 
             else: #Remove
 
-                $ wardrobe_active = False #activates dissolve in her_main
+                $ hide_transitions = False #activates dissolve in her_main
 
                 call her_main("You want me to take the buttplug out?","angry","wink")
                 call her_main("(I was just getting used to it...)","annoyed","ahegao")

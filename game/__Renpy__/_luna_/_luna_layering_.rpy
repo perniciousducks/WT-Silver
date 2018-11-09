@@ -1,5 +1,7 @@
 
 
+# Luna Screens.
+
 screen luna_main:
     tag luna_main
 
@@ -23,7 +25,7 @@ screen luna_main:
     add luna_hair xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the hair base
 
     add luna_mouth xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the mouth
-    add "characters/luna/face/eye_white.png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
+    add "characters/luna/face/eyes/_white_.png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
     add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the pupil
     add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the eye outline
     add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the eyebrow
@@ -98,7 +100,7 @@ screen luna_outfit:
     tag luna_main
 
     for i in luna_outfit_GLBL.getOutfitLayers():
-        add "characters/luna/clothes/custom/"+i xpos luna_xpos ypos luna_ypos alpha transparency zoom (1.0/luna_scaleratio)
+        add "characters/luna/clothes/custom/"+i xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
 
     ### ZORDER
     zorder luna_zorder

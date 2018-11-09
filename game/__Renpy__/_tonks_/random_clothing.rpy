@@ -4,10 +4,9 @@
 label tonks_random_clothing:
 
     $ random_number = renpy.random.randint(1, 20)
-    if random_number in [1,2,3,4] and not tonks_naked and astoria_affection >= 2: #Naked
+    if random_number in [1,2,3,4,5] and tonks_wear_top and astoria_affection >= 2: #Naked
         if not tonks_strip_happened: #First time.
             $ tonks_strip_happened = True
-            $ tonks_naked = True
 
             call set_tonks_action("strip_naked")
 
@@ -20,9 +19,7 @@ label tonks_random_clothing:
             call ton_main("","base","base","base","mid",xpos="mid",ypos="base",trans="d5")
             call ctc
 
-            hide screen tonks_main
-            with d5
-            call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid",xpos="base",ypos="base",trans="d5")
+            call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid")
             g9 "You are naked!"
             call ton_main("Indeed I am.","open","base","raised","mid")
             call ton_main("Is that a problem, [ton_genie_name]?","horny","base","raised","mid")
@@ -32,7 +29,6 @@ label tonks_random_clothing:
             call ton_main("Am I going to get punished?","horny","base","raised","mid")
 
         else: #Repeated Event.
-            $ tonks_naked = True
             call play_music("chipper_doodle")
 
             call set_tonks_action("strip_naked")
@@ -40,9 +36,7 @@ label tonks_random_clothing:
             call ton_main("","base","base","base","mid",xpos="mid",ypos="base",trans="d5")
             call ctc
 
-            hide screen tonks_main
-            with d5
-            call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid",xpos="base",ypos="base",trans="d5")
+            call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid")
             g9 "You are naked again."
             call ton_main("Yes. Just felt like it.","base","base","raised","ahegao")
             m "You don't worry if anybody's sees you?"
@@ -58,7 +52,7 @@ label tonks_random_clothing:
                 call ton_main("Why don't you invite her to your office!","horny","base","base","mid")
             m "Are you always such a slut?"
             call ton_main("I'm sorry, [ton_genie_name]! But it's in my nature.","horny","base","raised","mid")
-            call ton_main("Are you going to punish me? For being such a masochistic freak?","tongue_wide","base","base","ahegao")
+            call ton_main("Are you going to punish me? For being such a masochistic freak?","open_wide_tongue","base","base","ahegao")
 
         menu: #Continuation.
             "-Play nice-":
@@ -102,7 +96,7 @@ label tonks_random_clothing:
                 g4 "Spread your legs for one of your students?"
                 call ton_main("(Hngh-- I'd love to. All of it!)","base","base","raised","ahegao")
                 g4 "A cunt like you doesn't deserve to be a teacher. You are nothing more than a disgusting whore!"
-                call ton_main("You are so right, [ton_genie_name]!","tongue_wide","base","worried","ahegao")
+                call ton_main("You are so right, [ton_genie_name]!","open_wide_tongue","base","worried","ahegao")
                 m "I should make you the school's cum-dumpster instead. How would you like that position?"
                 m "Boys lining up in front of the school toilets, waiting their turn to dump their cum into their teacher's mouth, day after day!"
                 call ton_main("You are making me wet, [ton_genie_name]!","base","base","base","ahegao")
@@ -122,25 +116,14 @@ label tonks_random_clothing:
                 call ton_main("Yes, [ton_genie_name]!","base","base","base","mid")
                 m "Good."
 
-        call ton_main("Would you like me to put my clothes back on?","base","base","base","mid")
+        call ton_main("Whenever you want me to put my clothes back on, just tell me...","base","base","base","mid")
 
-        menu:
-            "-Yes-":
-                $ tonks_naked = False
-                m "Yes."
-                g9 "But I wouldn't mind getting a little stip show again!"
-                call ton_main("Anytime you want, [ton_genie_name]!","horny","base","raised","mid")
-                hide screen tonks_main
-                with d5
-                pause.5
-                call set_tonks_action(None)
-                call ton_main("","base","base","base","mid")
+        #Unlocks Wardrobe.
+        if not tonks_wardrobe_unlocked:
+            call give_reward(">Congratulations! You can now access Tonks' wardrobe and change her appearance!","interface/icons/head/head_tonks_4.png")
+        $ tonks_wardrobe_unlocked = True
 
-            "-Hell no!-":
-                $ tonks_naked = True
-                m "Absolutely not!"
-                call ton_main("Well, enjoy the view then, [ton_genie_name]!","horny","base","base","mid")
-                call ctc
+        call ton_main(xpos="base",ypos="base",trans="fade")
 
     else:
         if weather_gen >= 5: #Rainy & thundery weather.
@@ -148,11 +131,8 @@ label tonks_random_clothing:
         else:
             $ ton_request_wear_coat = False
 
-        if tonks_naked:
-            call set_tonks_action("strip_naked")
-
-        call load_tonks_cloathing_saves
-        call update_tonks_body
+        call load_tonks_clothing_saves
+        call update_ton_body
         call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
 
 

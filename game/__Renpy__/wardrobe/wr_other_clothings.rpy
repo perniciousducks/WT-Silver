@@ -26,6 +26,9 @@ label equip_neckwear:
     #Cho
     if active_girl == "cho":
         jump equip_cho_neckwear
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_neckwear
 
 ### Equip Hermione's Neckwear ###
 label equip_her_neckwear:
@@ -62,6 +65,14 @@ label equip_cho_neckwear:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Tonks's Neckwear ###
+label equip_ton_neckwear:
+    call set_ton_neckwear(neckwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+
 
 ### Gloves Equip ###
 label equip_gloves:
@@ -81,6 +92,9 @@ label equip_gloves:
     #Cho
     if active_girl == "cho":
         jump equip_cho_gloves
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_gloves
 
 ### Equip Hermione's Gloves ###
 label equip_her_gloves:
@@ -117,6 +131,13 @@ label equip_cho_gloves:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Tonks's Gloves ###
+label equip_ton_gloves:
+    call set_ton_gloves(gloves_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
 
 
 ### Body Accs Equip ###
@@ -137,6 +158,9 @@ label equip_body_accessory:
     #Cho
     if active_girl == "cho":
         jump equip_cho_body_accessory
+    #Tonks
+    if active_girl == "ton":
+        jump equip_ton_body_accessory
 
 ### Equip Hermione's Body Accessory ###
 label equip_her_body_accessory:
@@ -150,14 +174,14 @@ label equip_her_body_accessory:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
 
             m "[hermione_name]..."
 
             #S.P.E.W Badge
             if body_accessory_choice == "badge_SPEW":
                 m "Would you wear this badge for me?"
-                if whoring >= 0:
+                if her_whoring >= 0:
                     call her_main("A S.P.E.W. badge?","base","base")
                     call her_main("I'll wear this with pride [genie_name].","open","closed")
 
@@ -165,8 +189,8 @@ label equip_her_body_accessory:
             if body_accessory_choice == "badge_I_love_cum":
                 m "Would you wear this badge for me?"
 
-                if whoring >= 20:
-                    if whoring < 24:
+                if her_whoring >= 20:
+                    if her_whoring < 24:
                         call her_main("Hm...?","soft","base")
                         call her_main("An \"I love cum\" badge?","annoyed","suspicious")
                         call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}","base","down")
@@ -176,7 +200,7 @@ label equip_her_body_accessory:
                         call her_main("Sure, [genie_name]!","soft","base")
                         call her_main("Let me put it on for you.","base","glance")
                 else:
-                    if whoring < 8:
+                    if her_whoring < 8:
                         jump too_much
                     else: #8-19
                         call her_main("An I love cum badge...?","open","worried")
@@ -186,7 +210,7 @@ label equip_her_body_accessory:
                         call her_main("I absolutely refuse!","annoyed","frown")
                     ">She won't cover herself in cum just yet."
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
             hide screen hermione_main
@@ -197,12 +221,12 @@ label equip_her_body_accessory:
             call set_h_body_accessory(body_accessory_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call set_h_body_accessory(body_accessory_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -214,7 +238,7 @@ label equip_her_body_accessory:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             m "[hermione_name]..."
@@ -237,12 +261,12 @@ label equip_her_body_accessory:
             call set_h_body_accessory(body_accessory_choice) #Removes Item
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call screen wardrobe
 
         else:
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call set_h_body_accessory(body_accessory_choice) #Removes Item
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -269,10 +293,13 @@ label equip_stockings:
     #Cho
     if active_girl == "cho":
         jump equip_cho_stockings
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_stockings
 
 ### Equip Hermione's Stockings ###
 label equip_her_stockings:
-    if whoring < 11 and h_skirt in ["skirt_belted_mini","skirt_belted_micro"]:
+    if her_whoring < 11 and h_bottom in ["skirt_belted_mini","skirt_belted_micro"]:
         call nar(">You can't remove her pantyhose while wearing that skirt!")
     else:
         call set_h_stockings(stockings_choice)
@@ -308,6 +335,14 @@ label equip_cho_stockings:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Tonks's Stockings ###
+label equip_ton_stockings:
+    call set_ton_stockings(stockings_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+
 
 ### Robe Equip ###
 label equip_robe:
@@ -327,6 +362,9 @@ label equip_robe:
     #Cho
     if active_girl == "cho":
         jump equip_cho_robe
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_robe
 
 ### Equip Hermione's Robe ###
 label equip_her_robe:
@@ -359,6 +397,13 @@ label equip_sus_robe:
 ### Equip Cho's Robe ###
 label equip_cho_robe:
     call set_cho_robe(robe_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Tonks's Robe ###
+label equip_ton_robe:
+    call set_ton_robe(robe_choice)
 
     hide screen wardrobe
     call screen wardrobe

@@ -9,138 +9,138 @@ label slyterin_points: #points_changes: # SLYTHERIN POINTS AWARDING
         
 
         if game_difficulty <= 1:  #Easy Difficulty
-            if snapes_support == 0: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 0: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 8
                 $ slytherin_p_gain = "+8"
         
-            if snapes_support == 1: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 1: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 8
                 $ slytherin_p_gain = "+8"
 
-            if snapes_support == 2: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 2: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 11
                 $ slytherin_p_gain = "+11"
         
-            if snapes_support == 3: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 3: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 15
                 $ slytherin_p_gain = "+15"
 
-            if snapes_support == 4: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 4: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 18
                 $ slytherin_p_gain = "+18"
         
-            if snapes_support == 5: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 5: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 21
                 $ slytherin_p_gain = "+21"
         
-            if snapes_support == 6: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 6: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 24
                 $ slytherin_p_gain = "+24"
             
-            if snapes_support == 7: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 7: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 27
                 $ slytherin_p_gain = "+27"
         
-            if snapes_support == 8: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 8: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 29
                 $ slytherin_p_gain = "+29"
         
-            if snapes_support == 9: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 9: #Controls how much points is awarded to SLYTHERIN daily.
                 call add_house_points("s","+31") 
             
-            if snapes_support == 10: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 10: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 34
                 $ slytherin_p_gain = "+34"
 
-            if snapes_support == 11: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 11: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 38
                 $ slytherin_p_gain = "+38"
 
-            if snapes_support == 12: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 12: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 41
                 $ slytherin_p_gain = "+41"
         
-            if snapes_support == 13: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 13: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 44
                 $ slytherin_p_gain = "+44"
             
-            if snapes_support == 14: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 14: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 47
                 $ slytherin_p_gain = "+47"
 
-            if snapes_support == 15: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 15: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 50
                 $ slytherin_p_gain = "+50"
 
         else:   #normal difficulty
 
-            if snapes_support == 0: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 0: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 2
                 $ slytherin_p_gain = "+2"
        
-            if snapes_support == 1: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 1: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 5
                 $ slytherin_p_gain = "+5"
 
-            if snapes_support == 2: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 2: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 7
                 $ slytherin_p_gain = "+7"
         
-            if snapes_support == 3: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 3: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 8
                 $ slytherin_p_gain = "+8"
 
-            if snapes_support == 4: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 4: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 11
                 $ slytherin_p_gain = "+11"
         
-            if snapes_support == 5: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 5: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 13
                 $ slytherin_p_gain = "+13"
         
-            if snapes_support == 6: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 6: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 15
                 $ slytherin_p_gain = "+15"
             
-            if snapes_support == 7: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 7: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 17
                 $ slytherin_p_gain = "+17"
         
-            if snapes_support == 8: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 8: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 19
                 $ slytherin_p_gain = "+19"
         
-            if snapes_support == 9: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 9: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 21
                 $ slytherin_p_gain = "+21"
             
-            if snapes_support == 10: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 10: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 23
                 $ slytherin_p_gain = "+23"
 
-            if snapes_support == 11: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 11: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 25
                 $ slytherin_p_gain = "+25"
 
-            if snapes_support == 12: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 12: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 27
                 $ slytherin_p_gain = "+27"
         
-            if snapes_support == 13: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 13: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 29
                 $ slytherin_p_gain = "+29"
             
-            if snapes_support == 14: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 14: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 31
                 $ slytherin_p_gain = "+31"
 
-            if snapes_support == 15: #Controls how much points is awarded to SLYTHERIN daily.
+            if snape_support == 15: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin += 40
                 $ slytherin_p_gain = "+40"
     return
 
       
-#        if snapes_support == 1: #Controls how much points is awarded to SLYTHERIN daily.
+#        if snape_support == 1: #Controls how much points is awarded to SLYTHERIN daily.
 #            $ slytherin +=7
 #            "Slytherin got +7 points."
             

@@ -38,15 +38,15 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("Well come on then, summon her...","pout","mad","angry","mid")
         ">You summon Hermione. Somehow..."
         call play_sound("door") #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+
+        call her_walk("desk","mid",2)
+
         $ luna_flip = -1
         $ luna_r_arm = 2
         $ luna_xpos = 390
         call update_her_uniform
-        call ctc
 
-        call her_main("hello Prof-","soft","baseL")
+        call her_main("hello Prof-","soft","baseL",xpos="right",ypos="base")
         call her_main("Luna! what are you doing here?","angry","wide")
         call lun_main("same thing as you...","base","seductive","angry","mid")
         call her_main("Oh, um... you must be here to... help Professor dumbledore then...","open","worriedL")
@@ -119,8 +119,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("then kneel...","normal","suspicious","sad","mid")
 
         hide screen hermione_main
-        $ hermione_SC.chibi.xpos = 40 #40 = Near Luna
-        $ hermione_SC.chibi.ypos = 60
+        $ hermione_chibi_xpos = 40 #40 = Near Luna
+        $ hermione_chibi_ypos = 60
         $ h_c_u_pic = "characters/hermione/chibis/dance/08_sits.png"
         $ hermione_head_xpos=590
         show screen h_c_u
@@ -479,15 +479,15 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         ">You summon Hermione to your office."
         call play_sound("door") #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+
+        call her_walk("desk","mid",2)
+
         $ luna_flip = -1
         $ luna_r_arm = 2
         $ luna_xpos = 390
         call update_her_uniform
-        call ctc
 
-        call her_main("Hello [genie_name]...","base","base")
+        call her_main("Hello [genie_name]...","base","base",xpos="right",ypos="base")
         call her_main("Hello Luna...","open","suspicious")
         call lun_main("Hermione...","normal","suspicious","angry","mid")
         call her_main("What are you doing here?","annoyed","angryL")
@@ -544,8 +544,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">As they're putting their clothes in a pile you slowly get up from your desk and whip your cock out from in between your robes."
         call lun_main("On your knees then, slut...","base","seductive","angry","stareL")
         hide screen hermione_main
-        $ hermione_SC.chibi.xpos = 40 #40 = Near Luna
-        $ hermione_SC.chibi.ypos = 60
+        $ hermione_chibi_xpos = 40 #40 = Near Luna
+        $ hermione_chibi_ypos = 60
         $ h_c_u_pic = "characters/hermione/chibis/dance/08_sits.png"
         $ hermione_head_xpos=590
         show screen h_c_u
@@ -710,7 +710,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("whatever you have to tell yourself...","open","closed")
         call lun_main("...","normal","mad","angry","up")
         call lun_main("fine... i'm not as good at giving hand jobs as you...","normal","suspicious","base","R")
-        call lun_main("but that's only because you've spent the entire year in here whoring yourself out to our headmaster!","normal","suspicious","mad","up")
+        call lun_main("but that's only because you've spent the entire year in here Whoring yourself out to our headmaster!","normal","suspicious","mad","up")
         call her_main("well I can teach you a few things if you'd like.","smile","baseL")
         call lun_main("what?","pout","angry","base","up")
         call lun_main("why would you help me?","normal","angry","sad","up")

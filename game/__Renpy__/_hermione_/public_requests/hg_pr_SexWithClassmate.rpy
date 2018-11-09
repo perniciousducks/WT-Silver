@@ -25,7 +25,7 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
 
-        if whoring < 21 or hg_pr_BlowjobClassmate_OBJ.points < 2:
+        if her_whoring < 21 or hg_pr_BlowjobClassmate_OBJ.points < 2:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -177,5 +177,8 @@ label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label wher
     $ hg_pr_SexWithClassmate_OBJ.points += 1
     $ hg_pr_SexWithClassmate_OBJ.complete = True
     $ hg_pr_SexWithClassmate_OBJ.inProgress = False
+
+    if her_reputation <= 23:
+        $ her_reputation +=1
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.

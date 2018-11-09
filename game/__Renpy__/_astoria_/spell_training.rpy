@@ -3,10 +3,13 @@
 #Spell Training.
 label astoria_spell_training:
     if astoria_spells[0] == 0 and astoria_affection == 0:
+        $ astoria_training_counter += 1 #For Stats
         jump imperio_spell_1_training
     elif astoria_spells[0] == 1 and astoria_affection == 1: #You have to try the spell once before you can train the next one.
+        $ astoria_training_counter += 1 #For Stats
         jump imperio_spell_2_training
     elif astoria_spells[0] == 2 and astoria_affection == 2: #You have to try the spell once before you can train the next one.
+        $ astoria_training_counter += 1 #For Stats
         jump imperio_spell_3_training
     elif astoria_spells[0] == 3: #ADD Max affection level.
         call nar(">There are currently no more spells to train!")
@@ -208,7 +211,7 @@ label imperio_spell_1_training: #first level imperio spell
 
     call nar(">Astoria queitly walks out of your office, a small smirk forming in the corner of her mouth.")
 
-    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/astoria_unlock_02.png")
+    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks spell 1.
     $ astoria_spells[0] = 1
@@ -244,7 +247,7 @@ label imperio_spell_2_training: #second level imperio spell
             else:
                 jump day_start
 
-    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/astoria_unlock_02.png")
+    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks Spell 2.
     $ astoria_spells[0] = 2
@@ -276,7 +279,7 @@ label imperio_spell_3_training: #third level imperio spell
             else:
                 jump day_start
 
-    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/astoria_unlock_02.png")
+    call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks Spell 3.
     $ astoria_spells[0] = 3

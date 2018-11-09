@@ -3,15 +3,17 @@
 label summon_tonks:
 
     call play_sound("door")
-    $ menu_x = 0.5
-    $ menu_y = 0.5
 
     #ADD Tonks chibi here.
     call tonks_random_clothing
 
     label tonks_requests:
 
-    $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
+    $ menu_x = 0.1
+    $ menu_y = 0.5
+
+    $ hide_transitions = False
+    $ tonks_busy = True
 
     menu:
         "-Talk-":
@@ -38,7 +40,7 @@ label summon_tonks:
             pause.5
             hide screen blkfade
             call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
-            if tonks_naked:
+            if tonks_wear_top == False or tonks_wear_bottom == False: #Half or completely naked.
                 call ast_main("He--","worried","closed","base","mid")
                 call ast_main("[ast_tonks_name]?!","open","wide","wide","R",trans="hpunch")
                 call ast_main("[ast_genie_name], why is she naked?","scream","closed","worried","mid",trans="hpunch")
@@ -77,6 +79,21 @@ label summon_tonks:
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu
 
+        "-Wardrobe-" if tonks_wardrobe_unlocked:
+            $ active_girl = "tonks"
+
+            call load_tonks_clothing_saves
+
+            call reset_wardrobe_vars
+            call update_wr_color_list
+
+            $ hide_transitions = True
+            call ton_main(xpos="wardrobe",ypos="base")
+            call screen wardrobe
+
+        "{color=#858585}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump tonks_requests
 
         "-Never mind-":
             stop music fadeout 1.0
@@ -105,6 +122,7 @@ label tonks_talk:
 
             call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
             if upgradable_clothing != []:
+                $ tonks_sluttyfied_clothing += 1
                 call ton_main("Oh I really like this one.","open","base","raised","down")
                 call ton_main("I could make some adjustments here...","base","base","raised","down")
                 call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")
@@ -122,8 +140,7 @@ label tonks_talk:
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
 
-        "-Get naked!-" if tonks_strip_happened and not tonks_naked:
-            $ tonks_naked = True
+        "-Get naked!-" if tonks_strip_happened and (tonks_wear_top or tonks_wear_bottom):
             m "Get naked, [tonks_name]!"
             call ton_main("Of course, [ton_genie_name].","horny","base","base","ahegao")
             hide screen tonks_main
@@ -133,15 +150,14 @@ label tonks_talk:
             pause.8
 
             call ton_main("Do you like it, [ton_genie_name]?","horny","base","raised","mid")
-            call ton_main("The exposed body of one of your subordinates?","tongue_wide","base","raised","ahegao")
+            call ton_main("The exposed body of one of your subordinates?","open_wide_tongue","base","raised","ahegao")
             g4 "I do, [tonks_name]!"
             g9 "You should teach like that!"
             call ton_main("Hmm...","base","base","base","R")
             call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
-        "-Get dressed-" if tonks_naked:
-            $ tonks_naked = False
+        "-Get dressed-" if tonks_strip_happened and not (tonks_wear_top or tonks_wear_bottom):
             m "Put on some clothes, would you..."
             m "This is a school, after all."
             call ton_main("Of course, [ton_genie_name].","base","base","base","mid")
@@ -258,7 +274,7 @@ label tonks_talk:
                     call ton_main("A fuck puppet?","open","base","raised","mid")
                     call ton_main("[ton_genie_name], did you know I can take the shape of every person or being imaginable?","horny","base","base","mid")
                     m "You might have mentioned that..."
-                    call ton_main("You could say I'm perfect for that job.","tongue_wide","base","raised","ahegao")
+                    call ton_main("You could say I'm perfect for that job.","open_wide_tongue","base","raised","ahegao")
                     m "You need to show me one day. That ability of yours!"
                     call ton_main("Of course, [ton_genie_name].","horny","base","base","mid")
                     jump tonks_talk

@@ -373,7 +373,7 @@ label cho_intro_2:
     $ cho_whoring = 0
     $ cho_mad = 0
     $ cho_unlocked = True
-    call give_reward(">You've unlocked the ability to summon Cho Chang to your office, and buy favours from her.","interface/icons/head/cho_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Cho Chang to your office, and buy favours from her.","interface/icons/head/head_cho_1.png")
 
     pause.5
     call cho_main(xpos="base",ypos="base")

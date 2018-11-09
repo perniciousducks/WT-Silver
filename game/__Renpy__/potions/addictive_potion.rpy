@@ -83,7 +83,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     call hide_blkfade
     call ctc
 
-    $ hermione_main_zorder = 8
+    $ hermione_zorder = 8
 
     show screen bld1
     call nar(">As soon as you remove your cock from your robe Hermione is on top of you.")
@@ -354,7 +354,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     $ aftersperm = False
     call hide_blkfade
 
-    $ hermione_main_zorder = 5
+    $ hermione_zorder = 5
 
     $ hermione_busy = True
     jump main_room
@@ -551,8 +551,8 @@ label potion_scene_3_3_1: #Hypno potion
     $ h_top_color = "base"
 
     $ h_request_wear_bottom = True
-    $ h_skirt = "skirt_4_low"
-    $ h_skirt_color = "purple"
+    $ h_bottom = "skirt_4_low"
+    $ h_bottom_color = "purple"
 
     $ h_request_wear_bra = True
     $ h_bra = "bra_lace"
@@ -585,7 +585,7 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
             call her_main("Aaaaanyway...","open","baseL")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
-        "-Where is your badge, cumslut?!-" if I_love_cum_badge_OBJ.unlocked:
+        "-Where is your badge, cumslut?!-" if I_love_cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!","soft","wide")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
             call her_main("It's this one, isn't it...","soft","down")
@@ -796,10 +796,10 @@ label potion_scene_3_3_1: #Hypno potion
 
     m "(Maybe I should have told her to get dressed first...)"
 
-    $ pink_lipstick_OBJ.unlocked = True #Unlocks pink lipstick.
+    $ lipstick_pink_ITEM.unlocked = True #Unlocks pink lipstick.
     call give_reward(">Hermione can now use pink lipstick!","interface/icons/lipstick_pink.png") #Need lipstick shop image!
 
-    call reset_hermione_main
+    call reset_hermione
 
     $ hermione_busy = True
     call music_block

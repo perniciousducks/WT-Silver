@@ -4,6 +4,8 @@ label astoria_tonks_event: #send astoria to go see tonks
     $ spells_locked = False
     $ tonks_busy = True
     $ astoria_tonks_event_in_progress = False
+    $ ton_astoria_date_counter += 1 #For Stats
+
     if astoria_tonks_3_completed and not astoria_wardrobe_unlocked: #Unlocks Astoria's Wardrobe.
         jump astoria_tonks_wardrobe_unlock
 
@@ -178,9 +180,9 @@ label astoria_tonks_wardrobe_unlock:
     m "I will try..."
     call ast_main("Great! Now lets get started!","grin","angry","angry","mid")
 
-    call give_reward(">Congratulations! You can now access Astoria's wardrobe and change her appearance!","interface/icons/head/astoria_unlock_02.png")
+    call give_reward(">Congratulations! You can now access Astoria's wardrobe and change her appearance!","interface/icons/head/head_astoria_2.png")
 
-    call give_reward(">Congratulations! Susan's wardrobe has also been unlocked!","interface/icons/head/susan_unlock_02.png")
+    call give_reward(">Congratulations! Susan's wardrobe has also been unlocked!","interface/icons/head/head_susan_2.png")
 
     "Developer note:" ">We have made both Susan's and Astoria's wardrobe available.\nAll available clothing has also been unlocked."
     "Developer note:" ">Susan's wardrobe as well as Astoria's clothings will unlock with future events instead in later patches."
@@ -197,7 +199,7 @@ label astoria_tonks_wardrobe_unlock:
     call reset_wardrobe_vars
     call update_wr_color_list
 
-    $ wardrobe_active = True
+    $ hide_transitions = True
     call ast_main(xpos="wardrobe",ypos="base")
     call screen wardrobe
 

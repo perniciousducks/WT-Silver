@@ -6,25 +6,25 @@
 
 ### Fireplace ###
 image fireplace_fire: #Fireplace fire.
-    "images/main_room/fireplace_fire_01.png"
+    "images/rooms/main_room/fireplace_fire_01.png"
     pause.1
-    "images/main_room/fireplace_fire_02.png"
+    "images/rooms/main_room/fireplace_fire_02.png"
     pause.1
-    "images/main_room/fireplace_fire_03.png"
+    "images/rooms/main_room/fireplace_fire_03.png"
     pause.1
-    "images/main_room/fireplace_fire_04.png"
+    "images/rooms/main_room/fireplace_fire_04.png"
     pause.1
-    "images/main_room/fireplace_fire_05.png"
+    "images/rooms/main_room/fireplace_fire_05.png"
     pause.1
-    "images/main_room/fireplace_fire_06.png"
+    "images/rooms/main_room/fireplace_fire_06.png"
     pause.1
-    "images/main_room/fireplace_fire_07.png"
+    "images/rooms/main_room/fireplace_fire_07.png"
     pause.1
-    "images/main_room/fireplace_fire_08.png"
+    "images/rooms/main_room/fireplace_fire_08.png"
     pause.1
     repeat
 
-    
+
 ###Glow effect###
 image glow_effect: #Candle fire.
     "images/animation/glow_effect/glow_1.png"
@@ -48,51 +48,51 @@ image glow_effect: #Candle fire.
     "images/animation/glow_effect/glow_1.png"
     pause.1
     repeat
-    
+
 ### Candle Fire ###
 image candle_fire_01: #Candle fire.
-    "images/main_room/fire_01.png"
+    "images/rooms/main_room/fire_01.png"
     pause.1
-    "images/main_room/fire_02.png"
+    "images/rooms/main_room/fire_02.png"
     pause.1
-    "images/main_room/fire_03.png"
+    "images/rooms/main_room/fire_03.png"
     pause.1
-    "images/main_room/fire_04.png"
+    "images/rooms/main_room/fire_04.png"
     pause.1
-    "images/main_room/fire_05.png"
+    "images/rooms/main_room/fire_05.png"
     pause.1
-    "images/main_room/fire_06.png"
+    "images/rooms/main_room/fire_06.png"
     pause.1
-    "images/main_room/fire_07.png"
+    "images/rooms/main_room/fire_07.png"
     pause.1
-    "images/main_room/fire_08.png"
+    "images/rooms/main_room/fire_08.png"
     pause.1
-    "images/main_room/fire_09.png"
+    "images/rooms/main_room/fire_09.png"
     pause.1
-    "images/main_room/fire_10.png"
+    "images/rooms/main_room/fire_10.png"
     pause.1
     repeat
 
 image candle_fire_02: #Candle fire.
-    "images/main_room/fire_01.png"
+    "images/rooms/main_room/fire_01.png"
     pause.1
-    "images/main_room/fire_04.png"
+    "images/rooms/main_room/fire_04.png"
     pause.1
-    "images/main_room/fire_03.png"
+    "images/rooms/main_room/fire_03.png"
     pause.1
-    "images/main_room/fire_02.png"
+    "images/rooms/main_room/fire_02.png"
     pause.1
-    "images/main_room/fire_08.png"
+    "images/rooms/main_room/fire_08.png"
     pause.1
-    "images/main_room/fire_06.png"
+    "images/rooms/main_room/fire_06.png"
     pause.1
-    "images/main_room/fire_07.png"
+    "images/rooms/main_room/fire_07.png"
     pause.1
-    "images/main_room/fire_05.png"
+    "images/rooms/main_room/fire_05.png"
     pause.1
-    "images/main_room/fire_10.png"
+    "images/rooms/main_room/fire_10.png"
     pause.1
-    "images/main_room/fire_09.png"
+    "images/rooms/main_room/fire_09.png"
     pause.1
     repeat
 
@@ -170,22 +170,15 @@ image feather: #Falling feather.
 
 
 ### Owl Post ###
-image owl_01: #OWL WITH ENVELOPE IN IT'S MOUTH, BLINKING.
-    "images/main_room/owl_01.png"
+image owl_with_letter_blink:
+    "images/rooms/main_room/owl_01.png"
     pause.1
-    "images/main_room/owl_02.png"
+    "images/rooms/main_room/owl_02.png"
     pause.1
-    "images/main_room/owl_03.png"
+    "images/rooms/main_room/owl_03.png"
     pause.15
-    "images/main_room/owl_02.png"
+    "images/rooms/main_room/owl_02.png"
     pause.1
-    "images/main_room/owl_01.png"
+    "images/rooms/main_room/owl_01.png"
     pause 7
     repeat
-
-
-
-
-
-
-

@@ -1,9 +1,15 @@
 
 
-### LUNA LOVEGOOD ###
+### Luna Lovegood ###
 
-label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
+label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen luna_main
+
+    #Flip
+    if flip == False:
+        $ luna_flip = 1 #Default
+    if flip == True:
+        $ luna_flip = -1
 
     #Reset
     if cheeks == None:
@@ -12,6 +18,8 @@ label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
         $ tears = "blank"
     if extra == None:
         $ extra = "blank"
+    if emote == None:
+        $ emote = "blank"
 
     #Positioning
     if xpos != None:
@@ -32,17 +40,24 @@ label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
     if ypos != None:
         if ypos in ["base","default"]:
             $ luna_ypos = 0
+            $ luna_scaleratio = 2
             $ luna_zorder = 5
-        elif ypos == "head":
-            $ luna_ypos = 400 #Not the correct number!
-            #$ luna_zorder = 8 #ADD zorder change to be in front of textbox!
+            $ use_luna_head = False
+        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+            $ use_luna_head = True
+            $ luna_scaleratio = 2 #Reset
+
+            if luna_flip == -1: #Flipped
+                $ luna_xpos = 620
+            else:
+                $ luna_xpos = 590
+            $ luna_ypos = 230
+            $ luna_zorder = 8
         else:
             $ luna_ypos = int(ypos)
-            $ luna_zorder = 5
-
 
     call update_luna_chibi_uniform
-    $ changeLuna(mouth, eye, eyebrow, pupil, luna_xpos, luna_ypos, cheeks, tears, extra)
+    $ changeLuna(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
 
     show screen luna_main
     show screen bld1
@@ -53,12 +68,15 @@ label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
     if text != "":
         $ renpy.say(lun, text)
 
+    if use_luna_head:
+        hide screen luna_main
+
     return
 
 
 
 label luna_away:
-    call luna_reset
+    call reset_luna
     call gen_chibi("sit_behind_desk")
 
     if luna_chibi_xpos_name in ["desk"]:
@@ -81,27 +99,41 @@ label luna_away:
     jump main_room
 
 
-
-label luna_reset:
+label update_luna:
     $ luna_flip = 1
+    $ use_luna_head = False
 
     call update_lun_uniform
-    call load_luna_clothing_saves
     call update_luna_chibi_uniform
+
+    return
+
+
+label reset_luna:
+
+    call load_luna_clothing_saves
 
     $ luna_wear_cum = False
     $ luna_wear_cum_under = False
 
+    call update_luna
+
     return
 
-label reset_luna_main: #Not in use (?)
-    return
 
 label luna_no_money:
     call lun_main("You expect me to do it for free?", "angry", "mad", "mad", "R")
     call lun_main("Hmph!", "angry", "mad", "mad", "R")
     jump luna_away
 
+
+#LUNA PLOT
+#Turned into a bitchy Slytherin by the sorting hat. Willing to do anything for money/fame/status. Incredibly vain
+
+#Don't forget to incorporate the quibbler
+###PLOT###--------------------------------------------------------
+#After the sex favour, Luna will either return to normal if you choose the sub route or she will become a slytherin dom if you go the dom route
+#All the private favours will then have a 4th level unlocked, tailored to either the sub or dom option
 
 
 
@@ -116,52 +148,35 @@ init python: ###Method Definition for new characters
                     eye=None,
                     eyebrow=None,
                     pupil=None,
-                    x_pos=None,
-                    y_pos=None,
                     cheeks=None,
                     tears=None,
-                    extra=None):
+                    extra=None,
+                    emote=None):
 
-        ###DEFINE GLOBAL VARIABLES
+        ### DEFINE GLOBAL VARIABLES ###
         global luna_mouth
         global luna_eye
-        global luna_eye_bg
         global luna_eyebrow
         global luna_pupil
-        global luna_xpos
-        global luna_ypos
         global luna_cheeks
         global luna_tears
         global luna_extra
+        global luna_emote
 
-        ###EMOTION CONTROL
+        ### FACE CONTROL ###
         if mouth is not None:
-            luna_mouth = "characters/luna/face/mouth/"+str(mouth)+".png"
+            luna_mouth       = "characters/luna/face/mouth/"+str(mouth)+".png"
         if eye is not None:
-            luna_eye = "characters/luna/face/eye/"+str(eye)+".png"
+            luna_eye         = "characters/luna/face/eyes/"+str(eye)+".png"
         if eyebrow is not None:
-            luna_eyebrow = "characters/luna/face/eyebrow/"+str(eyebrow)+".png"
+            luna_eyebrow     = "characters/luna/face/brow/"+str(eyebrow)+".png"
         if pupil is not None:
-            luna_pupil = "characters/luna/face/pupil/"+str(luna_pupil_color)+"/"+str(pupil)+".png"
-
-        ###POSITION CONTROL
-        if x_pos is not None:
-            luna_xpos        = x_pos
-        if y_pos is not None:
-            luna_ypos        = y_pos
-
-        ###BODY CONTROL
+            luna_pupil       = "characters/luna/face/pupil/"+str(luna_pupil_color)+"/"+str(pupil)+".png"
         if cheeks is not None:
             luna_cheeks      = "characters/luna/face/extras/cheeks_"+str(cheeks)+".png"
         if tears is not None:
             luna_tears       = "characters/luna/face/extras/tears_"+str(tears)+".png"
         if extra is not None:
             luna_extra       = "characters/luna/face/extras/"+str(extra)+".png"
-
-#LUNA PLOT
-#Turned into a bitchy Slytherin by the sorting hat. Willing to do anything for money/fame/status. Incredibly vain
-
-#Don't forget to incorporate the quibbler
-###PLOT###--------------------------------------------------------
-#After the sex favour, Luna will either return to normal if you choose the sub route or she will become a slytherin dom if you go the dom route
-#All the private favours will then have a 4th level unlocked, tailored to either the sub or dom option
+        if emote is not None:
+            luna_emote       = "characters/emotes/"+str(emote)+".png"

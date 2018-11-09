@@ -205,7 +205,7 @@ label a_bad_time_to_disrobe_part_1:
     hide screen genie
     hide screen main_room
     hide screen hermione_main
-    call reset_hermione_main
+    call reset_hermione
     call h_unequip_temp_outfit
     jump enter_room_of_req
 
@@ -372,7 +372,7 @@ label a_bad_time_to_disrobe_part_2:
     hide screen hermione_main
     $ daytime = temp_time
     call play_standart_theme
-    call reset_hermione_main
+    call reset_hermione
     call h_action("none")
     jump enter_room_of_req
 
@@ -684,9 +684,10 @@ label a_spaced_out_conversation:
     $ temp_time = daytime
     $ daytime = False
 
+    $ fire_in_fireplace = True
+    show screen fireplace_fire
     call hide_room_req
     show screen main_room
-    show screen fireplace_fire
     show screen with_snape_animated
     call blkfade
     call hide_blkfade
@@ -1018,6 +1019,7 @@ label a_spaced_out_conversation:
 
     $ daytime = temp_time
     hide screen main_room
+    $ fire_in_fireplace = False
     hide screen fireplace_fire
     hide screen with_snape_animated
     jump enter_room_of_req

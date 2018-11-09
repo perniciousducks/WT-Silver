@@ -13,7 +13,7 @@ label update_ast_uniform:
     $ astoria_top            = "characters/astoria/clothes/tops/base/"+str(ast_top)+".png"
 
     #Bottom
-    $ astoria_skirt          = "characters/astoria/clothes/bottoms/base/"+str(ast_skirt)+".png"
+    $ astoria_bottom          = "characters/astoria/clothes/bottoms/base/"+str(ast_bottom)+".png"
 
     #Underwear
     $ astoria_bra            = "characters/astoria/clothes/underwear/base/"+str(ast_bra)+".png"
@@ -83,13 +83,13 @@ label set_ast_top(top=""):
 label set_ast_bottom(bottom=""):
     hide screen astoria_main
 
-    if astoria_wear_bottom and ast_skirt == bottom:
+    if astoria_wear_bottom and ast_bottom == bottom:
         $ ast_request_wear_bottom = False
         $ astoria_wear_bottom = False
     else:
         $ ast_request_wear_bottom = True
         $ astoria_wear_bottom = True
-        $ ast_skirt = bottom
+        $ ast_bottom = bottom
 
     call update_ast_uniform
     show screen astoria_main

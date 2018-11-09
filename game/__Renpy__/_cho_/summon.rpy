@@ -1,16 +1,19 @@
 
 
 label cho_menu:
-    call play_sound("door")
-    $ menu_x = 0.5
-    $ menu_y = 0.5
 
-    #ADD Tonks chibi here.
+    call play_sound("door")
+
+    #ADD Cho chibi here.
     call cho_random_clothing
 
-    $ cho_busy = True
-
     label cho_requests:
+
+    $ menu_x = 0.1
+    $ menu_y = 0.5
+
+    $ hide_transitions = False
+    $ cho_busy = True
 
     menu:
         #"-Talk-":
@@ -49,7 +52,7 @@ label cho_menu:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call cho_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 

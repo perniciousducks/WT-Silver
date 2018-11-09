@@ -43,7 +43,6 @@ label __init_variables:
     $ Golden_Book_OBJ.cost = 160
     $ Golden_Book_OBJ.imagepath = "images/store/books/1-8.png"
         
-    
     if not hasattr(renpy.store,'Speedwriting_Beginners_OBJ'): #important!
         $ Speedwriting_Beginners_OBJ = educational_book()
     $ Speedwriting_Beginners_OBJ.id = "Speedwriting_Beginners"
@@ -180,7 +179,7 @@ label __init_variables:
         "Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis.",
         "{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}"
     ]
-    
+
     $ Armchairs_OBJ.chapter_description = [
         "A family of noble northmen is introduced into the story.",
         "The royal family and the king are introduced into the story.",
@@ -194,17 +193,17 @@ label __init_variables:
         "Some new characters are introduced into the story.",
         "Some female characters get raped and then killed brutally.",
         "Some more members of the noble family of northmen find their untimely demise.",
-        "Some more women get raped. Some of them manage to survive. (Surely only to get raped some more later,.", 
+        "Some more women get raped. Some of them manage to survive. (Surely only to get raped some more later,.",
         "The characters you hate clash in an epic battle against the characters you are rooting for.",
         "Most of the characters you hate survive the battle. Every single character you were rooting for is dead.",
-        "Some more rapes take place, then some more murders... (You don't even care anymore...)", 
+        "Some more rapes take place, then some more murders... (You don't even care anymore...)",
         "A new group of characters is introduced into the story. You sort of starting to root for one of them.",
         "The character you were rooting for falls in love with a pretty girl.",
         "The character you were rooting for gets brutally murdered. His girl gets raped and then murdered as well.",
         "A new race of half-frozen undead monsters is introduced into the story. To be continued..."
     ]
-    
-    
+
+
     $ Books_OBJ = silver_book_lib()
     $ Books_OBJ.read_books.extend([
         Copper_Book_OBJ,
@@ -229,17 +228,17 @@ label __init_variables:
         $ cheat_reading = False
     if not hasattr(renpy.store,'books'): #important!
         $ books = []
-    
+
     ### GENIE STATS ###============================
     if not hasattr(renpy.store,'imagination'): #important!
-        $ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of whoring.
+        $ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of her_whoring.
     if not hasattr(renpy.store,'concentration'): #important!
         $ concentration = 0 #+1 for every completed book on concentration. Pops up during paperwork.
     if not hasattr(renpy.store,'speedwriting'): #important!
         $ speedwriting = 0 #+1 for every completed book on speedwriting. Pops up during paperwork.
     if not hasattr(renpy.store,'s_reading_lvl'): #important!
         $ s_reading_lvl = 0
-    
+
     return
 
 
@@ -267,8 +266,8 @@ label books_list:
         jump books_list
     else:
         jump handle_book_selection
-    
-    
+
+
 label handle_book_selection:
     $ the_gift = BookOBJ.imagepath
     show screen gift
@@ -293,28 +292,28 @@ label handle_book_selection:
         jump fiction_books_menu
     else:
         jump books_list
-    
+
 
 label check_book_order:
     if BookOBJ in Books_OBJ.read_books:
         if (BookOBJ.id == "Copper_Book") or (BookOBJ.id == "Bronze_Book" and Books_OBJ.isDone("Copper_Book")) or (BookOBJ.id == "Silver_Book" and Books_OBJ.isDone("Bronze_Book")) or (BookOBJ.id == "Golden_Book" and Books_OBJ.isDone("Silver_Book")):
             jump reading_book
-    
+
     if BookOBJ in Books_OBJ.write_books:
        if (BookOBJ.id == "Speedwriting_Beginners") or (BookOBJ.id == "Speedwriting_Amateurs" and Books_OBJ.isDone("Speedwriting_Beginners")) or (BookOBJ.id == "Speedwriting_Advanced" and Books_OBJ.isDone("Speedwriting_Amateurs")) or (BookOBJ.id == "Speedwriting_Experts" and Books_OBJ.isDone("Speedwriting_Advanced")):
             jump reading_book
-    
+
     if BookOBJ in Books_OBJ.fiction_books:
         if (BookOBJ.id == "Galadriel_II" and Books_OBJ.isDone("Galadriel_I")):
             jump reading_book
         elif BookOBJ.id != "Galadriel_II":
             jump reading_book
-    
+
     m "Reading books out of order won't do me any good."
 
     jump books_list
-    
-    
+
+
 label reading_book:
     stop music fadeout 2.0
     if raining:
@@ -325,7 +324,7 @@ label reading_book:
         play bg_sounds "sounds/day.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     if not daytime and not raining and not fire_in_fireplace:
         play bg_sounds "sounds/night.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-        
+
     if fire_in_fireplace:   #Shows Genie reading a book near the fireplace.
         hide screen chair_right
         hide screen genie
@@ -336,7 +335,7 @@ label reading_book:
         hide screen genie
         show screen reading
         with Dissolve(0.3)
-    
+
     if raining:
         ">You read a book called [BookOBJ.title], while listening to the sound of raindrops bombarding the roof of your tower."
     else:
@@ -347,17 +346,17 @@ label reading_book:
             $ BookOBJ.progress = BookOBJ.chapters
         elif BookOBJ in Books_OBJ.get_fic():
             label cheat_reading_loop:
-                call read_chapter 
+                call read_chapter
                 if BookOBJ.progress < BookOBJ.chapters:
                     jump cheat_reading_loop
         jump book_complete
     else:
-        call read_book 
+        call read_book
 
         if _return == "DONE":
             jump book_complete
 
-        call book_speed_check 
+        call book_speed_check
         $ speed_check = _return
         if speed_check >= 1:
             if s_reading_lvl == 1:
@@ -368,13 +367,13 @@ label reading_book:
                 ">Implementing speed reading techniques allows you to save time and keep on reading."
             if s_reading_lvl > 3:
                 ">Implementing advanced speed reading techniques lets you blaze through the book."
-            call read_book 
+            call read_book
 
         if _return == "DONE":
             jump book_complete
-        
+
         if speed_check == 2:
-            call read_book 
+            call read_book
 
         if _return == "DONE":
             jump book_complete
@@ -385,26 +384,26 @@ label reading_book:
                 ">You try to keep on reading but after a while you realize that the air in your chambers is too damp for your liking."
             else:
                 ">The rain outside of your tower calms your mood and you feel like keeping on reading..."
-                call read_book 
+                call read_book
 
         if _return == "DONE":
             jump book_complete
 
         ">There are still some chapters left."
-    
+
     if fire_in_fireplace:
         show screen done_reading_near_fire
         hide screen reading_near_fire
     else:
-        show screen done_reading  
+        show screen done_reading
         hide screen reading
-    
+
     if daytime:
         jump night_start
-    else: 
+    else:
         jump day_start
-    
-    
+
+
 label book_speed_check:
     if s_reading_lvl == 1: #33% chance
         if renpy.random.randint(1, 3) == 1: #Success.
@@ -417,13 +416,13 @@ label book_speed_check:
     if s_reading_lvl > 3: #Double 100% chance
         return 2
     return 0
-    
+
 
 
 label read_book:
     if BookOBJ.progress >= BookOBJ.chapters:
         return "DONE" #prevents cases where book is done but read_book was called
-    call read_chapter 
+    call read_chapter
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
@@ -434,13 +433,13 @@ label read_book:
     if BookOBJ.progress >= BookOBJ.chapters:
         return "DONE" #this is here to indicate completeing a book without escapeing the call otherwise renpy would treat a jump or call as a recursive action
     return
-    
-    
+
+
 label read_chapter:
-    $ BookOBJ.progress += 1 
+    $ BookOBJ.progress += 1
     if BookOBJ in Books_OBJ.get_fic():
         if BookOBJ.id == "Dear_Wifu":
-            call waifu 
+            call waifu
         else:
             $tmp_desc = BookOBJ.getChapterDesc()
             "[tmp_desc]"
@@ -465,12 +464,12 @@ label book_complete:
     if BookOBJ.id == "Armchairs":
         g4 "What a pile of garbage! I hate the guy who wrote this crap!"
         m "Although all those rapes gave me a few ideas..."
-    
+
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
     "[BookOBJ.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
-        
+
     if BookOBJ in Books_OBJ.fiction_books:
         $ imagination += 1
     if BookOBJ in Books_OBJ.read_books:
@@ -478,29 +477,29 @@ label book_complete:
     if BookOBJ in Books_OBJ.write_books:
         $ speedwriting += 1
         $ concentration += 1
-    
+
     $ BookOBJ.done = True
 
     if fire_in_fireplace:
         hide screen reading_near_fire
     else:
         hide screen reading
-    
+
     if daytime:
         jump night_start
-    else: 
+    else:
         jump day_start
-    
-    
+
+
 init python:
     class silver_book_lib(object):
         read_books = []
         write_books = []
         fiction_books = []
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def get_all(self):
             all_books = []
             all_books.extend(self.read_books)
@@ -514,20 +513,20 @@ init python:
             return edu_books
         def get_fic(self):
             return self.fiction_books
-            
-        
+
+
         def purchase(self, id=""):
             for book in self.get_all():
                 if book.id == id:
                     book.purchased = True
-        
+
         def get_purchased(self):
             purchased_books = []
             for book in self.get_all():
                 if book.purchased:
                     purchased_books.append(book)
             return purchased_books
-        
+
         def isDone(self, id=""):
             for book in self.get_all():
                 if book.id == id:
@@ -567,7 +566,7 @@ init python:
 
     class educational_book(silver_book):
         pass
-    
+
     class fiction_book(silver_book):
         chapter_description = []
         def getChapterDesc(self):

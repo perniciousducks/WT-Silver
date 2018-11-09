@@ -24,7 +24,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?","base","base")
         m "Do you ever touch yourself?"
-        if whoring < 8:
+        if her_whoring < 8:
             jump too_much
 
         $ hg_pf_TouchYourself_OBJ.hearts_level = 1
@@ -392,7 +392,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base")
         m "You don't mind pleasuring yourself in front of me, do you?"
-        if whoring <= 16:
+        if her_whoring <= 16:
             call her_main("As long as I am being paid...","grin","baseL")
             m "Well, come on then. Time to earn those points."
         else:
@@ -683,26 +683,25 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
     call hide_blkfade
     pause.5
 
-    if whoring < 19:
+    if her_whoring < 19:
         call her_main("Now about my payment.","scream","surprised",cheeks="blush",tears="messy",xpos="right",ypos="base")
         m "Yes, yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
         $ gryffindor +=current_payout
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
 
-    if whoring < 14: #Adds points till 14.
-        $ whoring +=1
+    if her_whoring < 14: #Adds points till 14.
+        $ her_whoring +=1
 
     $ hg_pf_TouchYourself_OBJ.points += 1
 
     if hg_pf_TouchYourself_OBJ.points == 1:
-        $ new_request_16_heart = 1
         $ hg_pf_TouchYourself_OBJ.hearts_level = 1 #Event hearts level (0-3)
+
     if hg_pf_TouchYourself_OBJ.points == 2:
-        $ new_request_16_heart = 2
         $ hg_pf_TouchYourself_OBJ.hearts_level = 2 #Event hearts level (0-3)
+
     if hg_pf_TouchYourself_OBJ.points == 3:
-        $ new_request_16_heart = 3
         $ hg_pf_TouchYourself_OBJ.hearts_level = 3 #Event hearts level (0-3)
 
     jump end_hg_pf  #Resets screens. Hermione walks out. Resets Hermione.

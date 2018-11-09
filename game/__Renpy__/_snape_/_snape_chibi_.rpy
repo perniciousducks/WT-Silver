@@ -1,26 +1,29 @@
 
-  
+
 ###  SNAPE CHIBI UNIVERSAL SCREEN ###
-screen s_c_u: 
+screen s_c_u:
     tag snape_chibi
-    add s_c_u_pic at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos) # (xpos=360, ypos=210) 
+    add s_c_u_pic at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos) # (xpos=360, ypos=210)
     zorder 3
 
 ###  SNAPE'S CUM UNIVERSAL SCREEN ###
-screen s_c_c_u: 
+screen s_c_c_u:
     add s_c_c_u_pic at Position(xpos=snape_cum_chibi_xpos+140, ypos=snape_cum_chibi_ypos)
+    zorder 3
 
 
 ### SNAPE CHIBI
 screen snape_01: #Snape stands still near the door.
     tag snape_chibi
     add "characters/snape/chibis/snape_stand.png" at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos-40)
-    
+    zorder 3
+
 screen snape_01_f: #Snape stands still near the door. (Mirrored).
     tag snape_chibi
     add im.Flip("characters/snape/chibis/snape_stand.png", horizontal=True) at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos-40)
-  
-screen snape_walk: #Default Snape walk animation. 
+    zorder 3
+
+screen snape_walk: #Default Snape walk animation.
     tag snape_chibi
     add "snape_walk" at custom_walk(walk_xpos, walk_xpos2)
     zorder 4
@@ -32,14 +35,17 @@ screen snape_walk_f: #Default Snape walk animation. (Mirrored).
 
 screen snape_jerking_off:
     tag snape_chibi
-    add "jerking_off_03_ani" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240) 
+    add "jerking_off_03_ani" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240)
+    zorder 3
 
 screen snape_jerking_off_cum:
-    add "snape_cum_01" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240) 
+    add "snape_cum_01" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240)
+    zorder 3
 
 screen snape_stands_holds_dick:
     tag snape_chibi
     add "images/animation/10_jerking_01.png" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240)
+    zorder 3
 
 
 
@@ -76,7 +82,7 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
             $ snape_chibi_ypos = int(ypos)
 
     #Snape Chibi Actions.
-            
+
     #Special Images. These need custom xpos/ypos positions!
     if action == "image":
 
@@ -112,7 +118,7 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
         pass
 
     elif action == "leave":
-        hide screen sna_main   
+        hide screen sna_main
         hide screen bld1
         hide screen blktone
         with d3
@@ -130,9 +136,9 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
 label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter = True,redux_pause = 0):
     hide screen bld1
     hide screen blktone
-    call hide_characters 
+    call hide_characters
     with d3
-    
+
     hide screen snape_walk
     hide screen snape_walk_f
 
@@ -178,11 +184,10 @@ label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter 
         $ snape_chibi_xpos = walk_xpos2
         hide screen snape_walk_f
         if pos2 == "leave":
-            call play_sound("door") 
+            call play_sound("door")
             with d3
             pause.5
         if loiter:
             show screen snape_01_f
 
     return
-    

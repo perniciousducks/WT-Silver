@@ -1,8 +1,9 @@
 
 
 label summon_luna:
-    call luna_reset
-    $ renpy.play('sounds/door.mp3')
+
+    call play_sound("door")
+
     call lun_chibi("stand","mid","base")
 
     if luna_dom >= luna_sub:
@@ -14,6 +15,13 @@ label summon_luna:
         call lun_main("[l_genie_name]...","normal","base","sad","mid",xpos="base",ypos="base")
 
     label luna_requests:
+
+    $ menu_x = 0.1
+    $ menu_y = 0.5
+
+    $ hide_transitions = False
+    $ luna_busy = True
+
     menu:
         "-Chit Chat-":
             call luna_chitchat
@@ -38,7 +46,7 @@ label summon_luna:
 
             call lun_chibi("stand","wardrobe","base")
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call lun_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 

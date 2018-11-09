@@ -43,31 +43,31 @@ image rum:
 
 
 ### Sitting Desk ###
-image newanimation2 = Animation("images/main_room/12_genie_01.png", 0.25,
-                            "images/main_room/11_genie_02.png", 0.25)
+image newanimation2 = Animation("images/rooms/main_room/12_genie_01.png", 0.25,
+                            "images/rooms/main_room/11_genie_02.png", 0.25)
 
 
 
 image newanimation:
-    "images/main_room/12_genie_01.png"
+    "images/rooms/main_room/12_genie_01.png"
     pause.1
-    "images/main_room/12_genie_02.png"
+    "images/rooms/main_room/12_genie_02.png"
     pause.1
-    "images/main_room/12_genie_03.png"
+    "images/rooms/main_room/12_genie_03.png"
     pause.1
-    "images/main_room/12_genie_02.png"
+    "images/rooms/main_room/12_genie_02.png"
     pause.1
-    "images/main_room/12_genie_01.png"
+    "images/rooms/main_room/12_genie_01.png"
     pause 5
-    "images/main_room/12_genie_01.png"
+    "images/rooms/main_room/12_genie_01.png"
     pause.15
-    "images/main_room/12_genie_04.png"
+    "images/rooms/main_room/12_genie_04.png"
     pause.15
-    "images/main_room/12_genie_01.png"
+    "images/rooms/main_room/12_genie_01.png"
     pause.15
-    "images/main_room/12_genie_04.png"
+    "images/rooms/main_room/12_genie_04.png"
     pause.15
-    "images/main_room/12_genie_01.png"
+    "images/rooms/main_room/12_genie_01.png"
     pause 6
     repeat
 
@@ -292,4 +292,5 @@ image petting: #PETTING THE PHOENIX.
     "images/animation/petting_02.png"
     pause.1
     "images/animation/petting_01.png"
-    pause.1
+    pause 3
+    repeat

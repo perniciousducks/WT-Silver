@@ -98,7 +98,7 @@ screen shop_screen_menu:
 screen shop_screen:
     tag room_screen
 
-    zorder hermione_main_zorder-1
+    zorder 4
 
     if daytime:
         add "interface/map/room_bg1.png" at Position(xpos=140)

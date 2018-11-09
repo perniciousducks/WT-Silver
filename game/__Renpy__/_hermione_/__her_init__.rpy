@@ -77,10 +77,10 @@ label her_init:
         $ h_action_gloves        = ""
 
 
-        $ hermione_action_left_arm  = "characters/hermione/clothes/uniform/action/00_blank.png"
-        $ hermione_action_right_arm = "characters/hermione/clothes/uniform/action/00_blank.png"
-        $ hermione_action_a         = "characters/hermione/clothes/uniform/action/00_blank.png"
-        $ hermione_action_b         = "characters/hermione/clothes/uniform/action/00_blank.png"
+        $ hermione_action_left_arm  = "00_blank.png"
+        $ hermione_action_right_arm = "00_blank.png"
+        $ hermione_action_a         = "00_blank.png"
+        $ hermione_action_b         = "00_blank.png"
 
         $ h_action_right_arm        = "00_blank.png"
         $ h_action_left_arm         = "00_blank.png"

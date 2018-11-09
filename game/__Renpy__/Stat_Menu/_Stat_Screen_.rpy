@@ -16,66 +16,56 @@ label open_stat_menu:
 
 
 label stat_screen_character:
-
     call update_stats
     $ hide_transitions = True
 
     if charName == "hermione":
         call set_her_face("random")
         call her_main(xpos="wardrobe",ypos="base")
-
         call screen stat_menu("hermione")
 
     elif charName == "luna":
         call lun_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("luna")
 
     elif charName == "astoria":
         call ast_main("","smile","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("astoria")
 
     elif charName == "susan":
         call sus_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("susan")
 
     elif charName == "cho":
         call cho_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("cho")
 
     elif charName == "genie":
         call gen_main(xpos="wardrobe",ypos="55",flip=True)
-
         call screen stat_menu("genie")
 
     elif charName == "snape":
         call sna_main("","snape_09",xpos="wardrobe",ypos="55")
-
         call screen stat_menu("snape")
 
     elif charName == "tonks":
         call ton_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("tonks")
+ 
+    elif charName=="Close":
+        $charName ="genie"
+        jump close_stats_screen
+    
+    show screen stat_menu(charName)
+    
+    $ charName = _return
+    call hide_characters
 
-
-
+    jump stat_screen_character
 
 label close_stats_screen:
     hide screen stat_menu
-
-    hide screen hermione_stat_menu
-    hide screen luna_stat_menu
-    hide screen astoria_stat_menu
-    hide screen susan_stat_menu
-    hide screen cho_stat_menu
-
-    hide screen genie_stat_menu
-    hide screen snape_stat_menu
-    hide screen tonks_stat_menu
+    hide screen stat_content
 
     call hide_characters
     hide screen bld1
@@ -85,89 +75,52 @@ label close_stats_screen:
     jump day_main_menu
 
 
-
-label return_stats_screen:
-
-    hide screen hermione_stat_menu
-    hide screen luna_stat_menu
-    hide screen astoria_stat_menu
-    hide screen susan_stat_menu
-    hide screen cho_stat_menu
-
-    hide screen genie_stat_menu
-    hide screen snape_stat_menu
-    hide screen tonks_stat_menu
-
-    call hide_characters
-
-    jump stat_screen_character
-
-
-
-
 screen stat_menu(character=""):
     tag stat_menu
     zorder 4
+    
+    add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
 
-    imagemap:
-        cache False
 
-        ground "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
-        hover "interface/stat_select/"+str(interface_color)+"/hover_stat_screen_"+str(wardrobe_color)+".png"
+    use close_button
 
-        # Close Button
-        imagebutton:
-            xpos 1028
-            ypos 11
-            idle "interface/general/"+interface_color+"/button_close.png"
-            hover "interface/general/"+interface_color+"/button_close_hover.png"
-            action Jump("close_stats_screen")
+    #Character Buttons.
+    
+    use generic_character_select(unlocked_character_list, "-Character Select-")
+    
+    text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
 
-        #Character Buttons.
-        text "-Character Select-" xpos 40 ypos 100 size 14
-        for i in range(0,len(unlocked_character_list)):
-            $ row = i // 2
-            $ col = i % 2
+    if character == "genie":
+        use charecter_name("genie")
+        use genie_stat_menu
 
-            #xpos 40 + ( 85 * (col))
-            #ypos 140 + ( 90 * (row))
+    if character == "snape":
+        use charecter_name("snape")
+        use snape_stat_menu
 
-            hotspot ((35+(90*col)), (138+(92*row)), 83, 85) clicked [SetVariable("charName",unlocked_character_list[i]), Jump("return_stats_screen")]
-            add "interface/icons/head/head_"+str(unlocked_character_list[i])+"_1.png" xpos -84+(92*col) ypos 67+(92*row) zoom 0.4
+    if character == "hermione":
+        use charecter_name(hermione_name)
+        use hermione_stat_menu
 
-        text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
+    if character == "luna":
+        use charecter_name(luna_name)
+        use luna_stat_menu
 
-        if character == "genie":
-            use charecter_name("genie")
-            use genie_stat_menu
+    if character == "astoria":
+        use charecter_name(astoria_name)
+        use astoria_stat_menu
 
-        if character == "snape":
-            use charecter_name("snape")
-            use snape_stat_menu
+    if character == "susan":
+        use charecter_name(susan_name)
+        use susan_stat_menu
 
-        if character == "hermione":
-            use charecter_name(hermione_name)
-            use hermione_stat_menu
+    if character == "cho":
+        use charecter_name(cho_name)
+        use cho_stat_menu
 
-        if character == "luna":
-            use charecter_name(luna_name)
-            use luna_stat_menu
-
-        if character == "astoria":
-            use charecter_name(astoria_name)
-            use astoria_stat_menu
-
-        if character == "susan":
-            use charecter_name(susan_name)
-            use susan_stat_menu
-
-        if character == "cho":
-            use charecter_name(cho_name)
-            use cho_stat_menu
-
-        if character == "tonks":
-            use charecter_name(tonks_name)
-            use tonks_stat_menu
+    if character == "tonks":
+        use charecter_name(tonks_name)
+        use tonks_stat_menu
 
 
 
@@ -210,7 +163,7 @@ screen charecter_name(name):
 ### Character Stats ###
 
 screen genie_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -233,7 +186,7 @@ screen genie_stat_menu:
     zorder 8
 
 screen snape_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -257,7 +210,7 @@ screen snape_stat_menu:
 
 
 screen hermione_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -324,7 +277,7 @@ screen hermione_stat_menu:
     zorder 8
 
 screen luna_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -342,7 +295,7 @@ screen luna_stat_menu:
     zorder 8
 
 screen astoria_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -360,7 +313,7 @@ screen astoria_stat_menu:
     zorder 8
 
 screen susan_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -380,7 +333,7 @@ screen cho_stat_menu:
     zorder 8
 
 screen tonks_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 

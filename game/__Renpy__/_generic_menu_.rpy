@@ -87,6 +87,32 @@ screen generic_scroll_item(mirror_story, ypos=0):
             text mirror_story.get_description()
 
         text mirror_story.get_buttom_right() xalign 1.0 yalign 1.0
+
+screen generic_character_select(character_list=[], menu_text="menu name", xposition=24, yposition=52):
+    
+    add "interface/stat_select/"+str(interface_color)+"/ground_character_screen_"+str(wardrobe_color)+".png" xpos xposition ypos yposition
+    vbox:
+        xpos 11+xposition
+        ypos 31+yposition 
+        xsize 173
+        ysize 41
+        text menu_text xalign 0.5 yalign 0.5  size 14
+    for i in range(0,len(character_list)):
+        $ row = i // 2
+        $ col = i % 2
+
+        $ button_image = im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4) if character_list[i][1] == 1 else blackTint(im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4))
+        imagebutton:
+            xpos -74+(90*col)+xposition
+            ypos 58+(92*row)+yposition
+            xsize 83
+            ysize 85
+            anchor(0.5,0.5)
+            focus_mask button_image
+            idle button_image
+            hover im.FactorScale(whiteTint("interface/icons/head/head_"+str(character_list[i][0])+"_1.png"),0.4)
+            action Return(character_list[i][0])
+                
         
 init python:
     toogle1_bool = True

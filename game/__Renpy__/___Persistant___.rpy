@@ -202,21 +202,21 @@ label __init_variables:
     call cheats_init
 
     label update_unlocked_character_list:
-    $ unlocked_character_list = ["genie"]
+    $ unlocked_character_list = [["genie", 1]]
     if snape_unlocked:
-        $ unlocked_character_list.append("snape")
+        $ unlocked_character_list.append(["snape", 1])
     if hermione_unlocked:
-        $ unlocked_character_list.append("hermione")
+        $ unlocked_character_list.append(["hermione", 1])
     if luna_unlocked:
-        $ unlocked_character_list.append("luna")
+        $ unlocked_character_list.append(["luna", 1])
     if astoria_unlocked:
-        $ unlocked_character_list.append("astoria")
+        $ unlocked_character_list.append(["astoria", 1])
     if susan_unlocked:
-        $ unlocked_character_list.append("susan")
+        $ unlocked_character_list.append(["susan", 1])
     if cho_unlocked:
-        $ unlocked_character_list.append("cho")
+        $ unlocked_character_list.append(["cho", 1])
     if tonks_unlocked:
-        $ unlocked_character_list.append("tonks")
+        $ unlocked_character_list.append(["tonks", 1])
 
 
 

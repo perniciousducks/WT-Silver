@@ -30,7 +30,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
         m "Do you know what a \"handjob\" is?"
 
-        if whoring < 12:
+        if her_whoring < 12:
             jump too_much
 
         call her_main("Why?","annoyed","annoyed")
@@ -47,7 +47,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         m "Sorry, I couldn't hear you..."
         call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
 
-        $ new_request_16_heart = 1
+
         $ hg_pf_TouchMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
 
         label back_to_handjob_choices:
@@ -106,7 +106,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
         ">Hermione puts her slender hands on your cock..."
         m "Good. Now stroke it."
-        call her_head("Right...","angry","worriedCl",emote="05")
+        call her_main("Right...","angry","worriedCl",emote="05",ypos="head")
         show screen chair_left
         hide screen desk
         show screen desk
@@ -313,7 +313,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 call blktone
                 m "Very good..."
                 m "Now touch it with your tongue."
-                call her_main("??!","open_tongue","")
+                call her_main("??!","open_tongue","closed")
                 m "That's the last thing I will be asking of you today."
                 her "............"
                 call nar(">You feel the tip of Hermione's tongue warily rubbing against the head of your cock...")
@@ -342,9 +342,9 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 hide screen hermione_main
                 call blkfade
 
-                call her_head("No, [genie_name], wait, I--","angry","base")
+                call her_main("No, [genie_name], wait, I--","angry","base",ypos="head")
                 g4 "{size=+5}Too late for that, slut!{/size}"
-                call her_head("*whimper*","angry","down_raised")
+                call her_main("*whimper*","angry","down_raised",ypos="head")
                 ">Hermione suddenly slides your already dripping cock under her shirt..."
                 g4 "?!!"
                 ">The sensation of her warm skin against your cock overwhelms you and you begin to ejaculate like a mad-man."
@@ -352,7 +352,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 call cum_block
 
                 g4 "{size=+5}ARGH! YES!!!{/size}"
-                call her_head("!!!!!!!!!!!","shock","wide")
+                call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
 
                 call gen_chibi("cumming_under_shirt","desk","base")
                 hide screen blktone
@@ -361,7 +361,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 call ctc
 
                 $ aftersperm = True
-                call her_main(".......................","angry","wide")
+                call her_main(".......................","angry","wide",xpos="right",ypos="base")
                 m "..........................."
                 call her_main(".......................","angry","wide")
                 m "....................?"
@@ -370,7 +370,6 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
 
-                show screen bld1
                 call her_main("I don't know... I suppose I just panicked...","angry","worriedCl",emote="05")
 
                 if daytime:
@@ -411,13 +410,13 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 g4 "ARGH!"
                 call blkfade
 
-                call her_head("WHAT?!","shock","wide")
+                call her_main("WHAT?!","shock","wide",ypos="head")
                 g4 "Take this!"
 
                 call cum_block
 
                 g4 "{size=+5}ARGH! YES!!!{/size}"
-                call her_head("!!!!!!!!!!!","shock","wide")
+                call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
 
                 call gen_chibi("cumming_on_shirt","desk","base")
                 hide screen blktone
@@ -426,8 +425,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
                 $ aftersperm = True
 
-                show screen bld1
-                call her_main(".......................","angry","wide")
+                call her_main(".......................","angry","wide",xpos="right",ypos="base")
                 call gen_chibi("cumming_on_shirt_pause")
                 m "Yes... I Feel so much better now..."
                 pause.5
@@ -484,8 +482,6 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
     #Second Event.
     elif hg_pf_TouchMe_OBJ.points == 1:
-
-        $ new_request_16_heart = 2
         $ hg_pf_TouchMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
 
         m "[hermione_name]?"
@@ -513,15 +509,13 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
     #Third Event.
     elif hg_pf_TouchMe_OBJ.points >= 2:
-
-        $ new_request_16_heart = 3
         $ hg_pf_TouchMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
 
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="mid",ypos="base")
         m "You don't mind giving me another handjob, do you?"
 
-        if whoring <= 16:
+        if her_whoring <= 16:
             call her_main("As long as I am getting paid...","grin","baseL")
             m "Well, come here then. Time to earn those points."
         else:
@@ -534,7 +528,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         call blkfade
 
         stop music fadeout 3.0
-        call her_head("Do you like it when I do it like this, [genie_name]?","grin","baseL")
+        call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL",ypos="head")
         g9 "Actually, yes! Very nice!"
         call play_music("chipper_doodle") # HERMIONE'S THEME.
 
@@ -783,7 +777,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
             m "..."
             "\"(Yes, I must warn her).\"":
                 g4 "I think I'm about to--"
-                if whoring >= 18: # LEVEL 07
+                if her_whoring >= 18: # LEVEL 07
                     jump hg_pf_TouchMe_KissSuck
                 else:
                     pass
@@ -800,7 +794,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
 
-                call her_head("!!!!!!!!!!!","shock","wide")
+                call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
 
                 call gen_chibi("cumming_under_shirt")
                 hide screen blktone
@@ -811,7 +805,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
                 g4 "Argh! You whore!"
                 show screen blktone
-                call her_main("Yes, [genie_name]! Just let it out!","base","down")
+                call her_main("Yes, [genie_name]! Just let it out!","base","down",xpos="right",ypos="base")
                 g4 "Argh! Fucking slut!"
                 call her_main("Ah!! It's so hot!","smile","glance")
                 call her_main("And it's getting everywhere! So much of it!","soft","ahegao")
@@ -848,7 +842,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 call her_main("And swallow your hot spunk like that, [genie_name]?","angry","wink")
                 m "Would keep your clothes clean."
 
-                if whoring <= 15:
+                if her_whoring <= 15:
                     call her_main("With all due respect [genie_name]...","upset","closed")
                     call her_main("Not for the meagre 45 points...","angry","wink")
                     call her_main("Speaking of which. Can I get may payment now please?")
@@ -858,7 +852,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
             "\"(Nah... no need).\"":
                 g4 "Here! Take this, whore!"
-                if whoring >= 18: # LEVEL 07
+                if her_whoring >= 18: # LEVEL 07
                     jump hg_pf_TouchMe_KissSuck
                 else:
                     pass
@@ -866,14 +860,14 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 g4 "ARGH!"
                 call blkfade
 
-                call her_head("WHAT?!","shock","wide")
+                call her_main("WHAT?!","shock","wide",ypos="head")
                 g4 "Take this!"
 
                 call cum_block
 
                 g4 "{size=+5}ARGH! YES!!!{/size}"
 
-                call her_head("!!!!!!!!!!!","shock","wide")
+                call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
 
                 call gen_chibi("cumming_under_shirt")
 
@@ -882,7 +876,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 call ctc
 
                 $ aftersperm = True
-                call her_head(".......................","angry","wide")
+                call her_main(".......................","angry","wide",ypos="head")
                 call gen_chibi("cumming_on_shirt_pause")
                 m "Yes... I Feel so much better now..."
                 call ctc
@@ -893,7 +887,6 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 $ u_sperm = "characters/hermione/face/auto_06.png"
                 $ uni_sperm = True
 
-                show screen bld1
                 call her_main("","soft","base",tears="soft",xpos="right",ypos="base")
                 call ctc
                 her ".........."
@@ -956,15 +949,13 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
     $ hg_pf_TouchMe_OBJ.points += 1
 
-    if whoring < 15:
-        $ whoring +=1
+    if her_whoring < 15:
+        $ her_whoring +=1
 
-    if whoring >= 12 and whoring < 15:
-        $ new_request_16_heart = 1
+    if her_whoring >= 12 and her_whoring < 15:
         $ hg_pf_TouchMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
 
-    if whoring >= 15 and whoring < 18:
-        $ new_request_16_heart = 2
+    if her_whoring >= 15 and her_whoring < 18:
         $ hg_pf_TouchMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
 
     jump end_hg_pf
@@ -984,17 +975,16 @@ label hg_pf_TouchMe_KissSuck: #Jumps here after event #03 and if WHORING >= LEVE
     call hide_blkfade
     call ctc
 
-    call bld
-    call her_head("*Gulp!-Gulp!-Gulp!*")
+    call her_main("*Gulp!-Gulp!-Gulp!*",ypos="head")
     g4 "Argh! You little whore!"
     g4 "Yes, you slut! Drink my cum! Drink all of it!"
-    her "*Gulp!-Gulp!-Gulp!*"
+    call her_main("*Gulp!-Gulp!-Gulp!*",ypos="head")
     g4 "Argh... Yes!"
     call nar(">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth.")
-    her "*Gulp!-Gulp!-Gulp!*"
+    call her_main("*Gulp!-Gulp!-Gulp!*",ypos="head")
     g4 "Ah..."
     g4 "This feels great..."
-    her "*Gulp!* *Gulp!* *Gulp!*"
+    call her_main("*Gulp!* *Gulp!* *Gulp!*",ypos="head")
     m "I think that's it, [hermione_name]..."
     m "You can let go now..."
     call blkfade

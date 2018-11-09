@@ -3,7 +3,7 @@
 label clothes_store:
     call blktone
 
-    if clothes_intro_done == False:
+    if clothes_store_intro_done == False:
         ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
         ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
         m "Hello."
@@ -21,7 +21,7 @@ label clothes_store:
         maf "What did you have in mind?"
         m "A few things. I haven't decided on anything specific yet."
         maf "Well, while your making up your mind, feel free to browse the store."
-        $ clothes_intro_done = True
+        $ clothes_store_intro_done = True
         jump open_clothes_store
 
     if outfit_ready:
@@ -52,7 +52,7 @@ label buy_outfit:
         #    call cust_excuse("You already own this set.")
         #    jump return_clothes_store
         #else:
-            if clothes_store_order_choice == hg_cheer_g_OBJ:
+            if clothes_store_order_choice == hg_cheer_g_ITEM:
                 m "I'd like to order a cheerleader outfit."
                 maf "A cheerleader outfit? Those horribly crass things popular in America?"
                 maf "Why on earth would you want to buy that?"
@@ -65,7 +65,7 @@ label buy_outfit:
                 m "Thank you."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_cheer_s_OBJ:
+            if clothes_store_order_choice == hg_cheer_s_ITEM:
                 m "I'd like to order another cheerleader outfit."
                 maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
                 m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
@@ -76,13 +76,13 @@ label buy_outfit:
                 m "Thank you."
                 jump place_outfit_order
 
-            #if clothes_store_order_choice == hg_cheer_r_OBJ:
+            #if clothes_store_order_choice == hg_cheer_r_ITEM:
             #    jump place_outfit_order
 
-            #if clothes_store_order_choice == hg_cheer_h_OBJ:
+            #if clothes_store_order_choice == hg_cheer_h_ITEM:
             #    jump place_outfit_order
 
-            if clothes_store_order_choice == hg_maid_OBJ:
+            if clothes_store_order_choice == hg_outfit_maid_ITEM:
                 m "I'd like to order a maid outfit."
                 maf "A maid costume, what on earth for? Surely the cleaning elves keep your office tidy."
                 m "It's going to be a present."
@@ -96,7 +96,7 @@ label buy_outfit:
                 m "Thank you."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_nighty_silk_OBJ:
+            if clothes_store_order_choice == hg_nighty_silk_ITEM:
                 m "I'd like to order another custom outfit today."
                 maf "Certainly Sir. These outfits have started to become the highlight of my job. Everything else seems quite conservative by comparison."
                 m "Well I can assure you that this outfit is not conservative."
@@ -113,7 +113,7 @@ label buy_outfit:
                 m "Thank you."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_ballDress_OBJ:
+            if clothes_store_order_choice == hg_dress_yule_ball_ITEM:
                 if not sorry_for_hesterics:
                     m "Do you sell Dresses?"
                     maf "A dress? Are we talking ball-dresses, or more burlesque?"
@@ -136,7 +136,7 @@ label buy_outfit:
                 maf "You're welcome."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_msMarvel_OBJ:
+            if clothes_store_order_choice == hg_costume_ms_marvel_ITEM:
                 m "Tell me Madam Mafkin, have you ever heard of super-heroes?"
                 maf "Yes yes, those people in the comic books. My grandson is quite fond of them."
                 m "Fantastic, I was wondering if it would be possible for you to make me a costume."
@@ -148,7 +148,7 @@ label buy_outfit:
                 maf "No need to thank me sir. Payment will suffice."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_heartDancer_OBJ:
+            if clothes_store_order_choice == hg_dress_dancer_ITEM:
                 m "Have you ever seen a burlesque show Madam?"
                 maf "I've done more than that, I've designed a few of the outfits for them!"
                 m "Splendid, I was wondering if I could commision one."
@@ -159,7 +159,7 @@ label buy_outfit:
                 maf "You're quite welcome sir."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_powerGirl_OBJ:
+            if clothes_store_order_choice == hg_costume_power_girl_ITEM:
                 m "I was wondering if it would be possible for you to make me a super hero costume."
                 maf "Certainly, who did you have in mind?"
                 m "Do you know Power Girl?"
@@ -169,7 +169,7 @@ label buy_outfit:
                 maf "No need to thank me sir. Payment will suffice."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_harleyQuinn_OBJ:
+            if clothes_store_order_choice == hg_costume_harley_quinn_ITEM:
                 m "I was wondering if it would be possible for you to make me a super villain costume."
                 maf "Certainly, who did you have in mind?"
                 m "Do you know Harley Quinn?"
@@ -179,7 +179,7 @@ label buy_outfit:
                 maf "You're quite welcome."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_laraCroft_OBJ:
+            if clothes_store_order_choice == hg_costume_lara_croft_ITEM:
                 m "I was wondering if it would be possible for you to make me another costume."
                 maf "Certainly, what are you after?"
                 m "I don't suppose that you know Lara croft?"
@@ -191,7 +191,7 @@ label buy_outfit:
                 m "Fantastic."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_christmas_OBJ:
+            if clothes_store_order_choice == hg_outfit_christmas_ITEM:
                 m "I was wondering if it would be possible for you to make me a festive costume."
                 maf "Certainly, what what holiday are you looking to \"celebrate\"?"
                 m "Christmas."
@@ -203,12 +203,12 @@ label buy_outfit:
                 m "Thank you."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_pirate_OBJ:
+            if clothes_store_order_choice == hg_outfit_pirate_ITEM:
                 m "I want a pirate outfit"
                 maf "ok"
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_bio_OBJ:
+            if clothes_store_order_choice == hg_costume_elizabeth_ITEM:
                 m "Have you ever heard of bioshock infinite?"
                 maf "Biology what now?"
                 m "..."
@@ -220,7 +220,7 @@ label buy_outfit:
                 maf "You're welcome."
                 jump place_outfit_order
 
-            if clothes_store_order_choice == hg_yenn_OBJ:
+            if clothes_store_order_choice == hg_costume_yennefer_ITEM:
                 m "Have you ever heard of the sorceress yennefer?"
                 maf "Of course! The mother of a universe hopper isn't quickly forgotten..."
                 m "Think you could make a copy of her outfit?"
@@ -254,13 +254,6 @@ label place_outfit_order:
         m "Well this is depressing."
         jump return_clothes_store
 
-label outfit_purchase_check:
-    if outfit_wait_time <= 0:
-        $ outfit_ready = True
-        $ letters += 1
-    else:
-       $ outfit_wait_time -= 1
-return
 
 label pickup_outfit:
 
@@ -290,6 +283,22 @@ label pickup_outfit:
                 maf "Good night, Professor."
                 jump night_main_menu
 
+label outfit_purchase_check:
+    if outfit_wait_time <= 1:
+        $ outfit_ready = True
+    else:
+       $ outfit_wait_time -= 1
+
+    return
+
+label receive_package:
+    $ outfit_order = None
+    $ outfit_order_placed = False
+    $ outfit_ready = False
+
+    return
+
+
 label display_package(str1):
     $ the_gift = "images/store/07.png"
     show screen gift
@@ -299,13 +308,6 @@ label display_package(str1):
     with d3
 return
 
-label receive_package:
-    if letters >= 1:
-        $ letters -= 1
-    $ outfit_order = None
-    $ outfit_order_placed = False
-    $ outfit_ready = False
-return
 
 label cust_excuse(text="You cant use this just yet"): #custom text option for other ideas
     show screen blktone5

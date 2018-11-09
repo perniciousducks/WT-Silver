@@ -312,7 +312,7 @@ label astoria_captured_intro:
     m "(I feel like I'm actually starting to run this damn school.)"
     m "(This isn't what I signed on for...)"
 
-    call give_reward(">You've unlocked the ability to summon Astoria to your office.","interface/icons/head/astoria_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Astoria to your office.","interface/icons/head/head_astoria_1.png")
 
     $ astoria_busy = True
     $ hermione_busy = True
@@ -329,11 +329,19 @@ label tonks_intro_event: #occurs a day or two after the last event
 
     m "Ugh..."
     m "Who is it?"
+    ton "Tonk-"
+    ton "Ugh-"
+    ton "(...)"
     ton "Nymphadora Tonks, sir."
     ton "I've been sent by the ministry of magic."
     m "(Shit, another female... Is Snape the only dude on this forsaken planet?)"
     g9 "(Better to just let my charm play...)"
     m "Yes... come in."
+
+    $ ton_request_wear_robe = True
+    $ ton_robe = "auror_coat"
+
+    call update_ton_uniform
 
     call play_sound("door")
     call ton_main("","base","base","base","mid",xpos="right",ypos="base")
@@ -780,7 +788,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("Short for Dumbledore!","pout","narrow","narrow","mid")
     m "oh... right..."
 
-    #call set_sus_top("shirt_2") #ADD Shirt without vest.
+    #call set_sus_top("top_2") #ADD Shirt without vest.
     #pause.5
 
     #call nar(">As the two of you talk, Susan slowly removes her vest.")
@@ -789,7 +797,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     m "You seemed to have changed your tone..."
     call ast_main("Because now I know this isn't a test.","open","closed","base","mid")
 
-    #call set_sus_top("shirt_3") #ADD Shirt without vest and tie.
+    #call set_sus_top("top_3") #ADD Shirt without vest and tie.
     #pause.5
 
     #call nar(">Susan quietly removes her tie.")
@@ -831,7 +839,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call sus_main("yes...","base","base","base","up")
     pause.5
 
-    call set_sus_top("shirt_1") #Normal top.
+    call set_sus_top("top_1") #Normal top.
     with d3
     pause.8
 
@@ -857,7 +865,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     hide screen bld1
     with d3
 
-    call give_reward(">You've unlocked the ability to summon Susan to your office.","interface/icons/head/susan_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Susan to your office.","interface/icons/head/head_susan_1.png")
 
     $ astoria_busy = True
     $ susan_busy = True
@@ -1056,7 +1064,7 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     call ton_main("Astoria Greengrass.","horny","base","angry","mid")
     m "Astoria? Isn't she a little too--"
     call ton_main("She's perfect! She's just so cute and innocent... I can't wait to gobble her up!","horny","base","worried","mid")
-    call ton_main("Mmmm... I bet she tastes like heaven...","tongue_wide","base","base","up")
+    call ton_main("Mmmm... I bet she tastes like heaven...","open_wide_tongue","base","base","up")
     m "..."
     m "I'm not sure if she'd be up for that to be honest--"
     call ton_main("Well you better make her up for it then...","base","base","raised","mid")
@@ -1072,7 +1080,7 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     m "..."
     m "Did I just become a pimp?"
 
-    call give_reward(">You've unlocked the ability to summon Tonks to your office.","interface/icons/head/tonks_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Tonks to your office.","interface/icons/head/head_tonks_1.png")
     $ tonks_busy = True
 
 

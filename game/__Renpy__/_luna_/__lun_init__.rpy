@@ -14,6 +14,7 @@ label luna_init:
         $ luna_ypos              = 0
         $ luna_zorder            = 5
         $ luna_flip              = 1
+        $ use_luna_head          = False
 
         #Hair
         $ luna_hair              = "characters/luna/body/hair/hair_A_1_base.png"
@@ -23,14 +24,17 @@ label luna_init:
 
         #Face
         $ luna_mouth             = "characters/luna/face/mouth/base.png"
-        $ luna_eye               = "characters/luna/face/eye/base.png"
-        $ luna_eyebrow           = "characters/luna/face/eyebrow/base.png"
+        $ luna_eye               = "characters/luna/face/eyes/base.png"
+        $ luna_eyebrow           = "characters/luna/face/brow/base.png"
         $ luna_pupil             = "characters/luna/face/pupil/blue/mid.png"
         $ luna_pupil_color       = "blue"
 
         $ luna_cheeks            = "characters/luna/face/extras/cheeks_blank.png"
         $ luna_tears             = "characters/luna/face/extras/tears_blank.png"
         $ luna_extra             = "characters/luna/face/extras/blank.png"
+        $ luna_emote             = "characters/emotes/blank.png"
+
+        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Cum
         $ luna_cum               = 1
@@ -56,11 +60,8 @@ label luna_init:
         $ hermione_kneel_cock    = False
 
 
-    #Update 1.34
     if not hasattr(renpy.store,'lun_request_wear_top') or reset_persistants or reset_luna_content:
         label reset_luna_clothing:
-
-        #Clothes
 
         #Save State
         $ lun_request_wear_top              = True
@@ -112,6 +113,8 @@ label luna_init:
         $ luna_wear_tattoos           = False
 
         $ luna_wear_outfit            = False
+
+
 
         #Top
         $ luna_top                 = "characters/luna/clothes/tops/base/top_1.png"
@@ -175,6 +178,11 @@ label luna_init:
 
         $ luna_ears                = "characters/luna/accessories/ears/blank.png"
         $ lun_ears                    = "blank"
+
+        #Outfits
+        $ luna_outfit_GLBL = None
+        $ luna_temp_outfit = None
+
 
 
     # Luna Lists

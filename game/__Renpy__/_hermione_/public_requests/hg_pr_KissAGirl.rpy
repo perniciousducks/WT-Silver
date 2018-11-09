@@ -25,7 +25,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
         m "Have You ever kissed another girl, [hermione_name]?"
         call her_main("?!","normal","frown",xpos="right",ypos="base")
 
-        if whoring < 12 or hg_pr_FlashClassmate_OBJ.points < 2: # Counts how many times you sent Hermione to flash a classmate.
+        if her_whoring < 12 or hg_pr_FlashClassmate_OBJ.points < 2: # Counts how many times you sent Hermione to flash a classmate.
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -47,7 +47,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
         m "[hermione_name], forty five house points are up for grabs today!"
         m "Are you interested?"
 
-        if whoring >= 12 and whoring < 15: # LEVEL 05 FIRST EVENT.
+        if her_whoring >= 12 and her_whoring < 15: # LEVEL 05 FIRST EVENT.
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("It depends...","normal","base",xpos="right",ypos="base")
             her "Will I have to do something depraved again?"
@@ -63,7 +63,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
             m "Great. See you after your classes then."
             call her_main("................","annoyed","annoyed")
 
-        elif whoring >= 15 and whoring < 18: # LEVEL 06. Event level 02.
+        elif her_whoring >= 15 and her_whoring < 18: # LEVEL 06. Event level 02.
             call her_main("I suppose...","annoyed","ahegao",xpos="right",ypos="base")
             m "Great. All you need to do is make out with another girl."
             call her_main("I see...","annoyed","down")
@@ -71,7 +71,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
             call her_main("I suppose...","annoyed","worriedL")
             m "Great. See you after your classes then."
 
-        elif whoring >= 18: # LEVEL 07+ Event level 03.
+        elif her_whoring >= 18: # LEVEL 07+ Event level 03.
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("Sure, why not?","base","base",xpos="right",ypos="base")
             m "Great."
@@ -93,7 +93,7 @@ label hg_pr_KissAGirl_complete:
 
 
     #First time event.
-    if whoring >= 12 and whoring < 15: # LEVEL 05
+    if her_whoring >= 12 and her_whoring < 15: # LEVEL 05
 
         #Event A
         if one_out_of_three == 1:
@@ -197,7 +197,7 @@ label hg_pr_KissAGirl_complete:
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
 
-    elif whoring >= 15 and whoring <= 17: # LEVEL 06. Event level 02.
+    elif her_whoring >= 15 and her_whoring <= 17: # LEVEL 06. Event level 02.
 
         #Event A
         if one_out_of_three == 1:
@@ -309,7 +309,7 @@ label hg_pr_KissAGirl_complete:
             m "Nicely done."
             call her_main("","base","base")
 
-    elif whoring >= 18: # LEVEL 07+
+    elif her_whoring >= 18: # LEVEL 07+
 
         #Event A
         if one_out_of_three == 1: #Snowballing
@@ -497,5 +497,8 @@ label hg_pr_KissAGirl_complete:
 
     if hg_pr_KissAGirl_OBJ.points >= 2:
         $ hg_pr_KissAGirl_OBJ.complete = True
+
+    if her_reputation <= 14:
+        $ her_reputation +=1
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.

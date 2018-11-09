@@ -50,7 +50,6 @@ label shop_intro:
         twi "Hello Professor! What would you like to buy?"
         jump shop_menu
     else:
-        $ show_clothes_store = True
         $ shop_found = True
         fre "Professor Dumbledore? What are you doing here? I thought you didn't leave your office anymore."
         ger "You're not here to shut us down are you?"
@@ -78,7 +77,7 @@ label shop_menu:
 screen shop_screen_menu:
     tag room_screen
 
-    zorder hermione_main_zorder-1
+    zorder 4
 
     if daytime:
         add "interface/map/room_bg1.png" at Position(xpos=140)
@@ -232,8 +231,8 @@ label shop_potion_menu:
         potion_menu = []
         potion_menu.append(("-Questions acquiring items-", "questions"))
         for potion in potion_lib.getBuyable():
-            if whoring < potion.whoring_rec:
-                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","whoring"))
+            if her_whoring < potion.whoring_rec:
+                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","her_whoring"))
             else:
                 potion_menu.append(("-"+potion.name+"-",potion))
         potion_menu.append(("-Never mind-", "nvm"))
@@ -267,7 +266,7 @@ label shop_potion_menu:
                 m "Do you know where I can find \"Niffler's Fancy\"?"
                 fre "Hmm... I think I heard that it's found by the lake."
         jump shop_potion_menu
-    if PotionOBJ == "whoring":
+    if PotionOBJ == "her_whoring":
         call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
     if PotionOBJ == "nvm":
         pass

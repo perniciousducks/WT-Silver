@@ -7,7 +7,7 @@ label snape_chitchat:
 #    $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
 
     ### WHORING LEVEL 01 ###
-    if whoring >= 0 and whoring <= 2:
+    if her_whoring >= 0 and her_whoring <= 2:
         if one_of_ten == 1:
             call sna_main("Do You really think you can do this?","snape_24") 
             call sna_main("Do You think you can break the girl?","snape_25") 
@@ -56,7 +56,7 @@ label snape_chitchat:
         
     
     ### WHORING LEVEL 02 ###
-    if whoring >= 3 and whoring <= 5:
+    if her_whoring >= 3 and her_whoring <= 5:
         if one_of_ten == 1:
             call sna_main("I have yet to notice any changes in miss Granger's behavior...","snape_24") 
             call sna_main("Are you sure that you know what you're doing?","snape_05") 
@@ -110,7 +110,7 @@ label snape_chitchat:
         
 
     ### WHORING LEVEL 03 ###
-    if whoring >= 6 and whoring <= 8:
+    if her_whoring >= 6 and her_whoring <= 8:
         if one_of_ten == 1:
             call sna_main("Any progress on breaking our little ms. know-it-all?","snape_24") 
             call sna_main("","snape_09") 
@@ -162,7 +162,7 @@ label snape_chitchat:
         
 
     ### WHORING LEVEL 04 ###
-    if whoring >= 9 and whoring <= 11:
+    if her_whoring >= 9 and her_whoring <= 11:
         if one_of_ten == 1:
             call sna_main("Lately miss Granger has gotten aggressive almost to the point of open hostility...","snape_24") 
             call sna_main("I hope you know what you're doing...","snape_05") 
@@ -217,7 +217,7 @@ label snape_chitchat:
 
         
     ### WHORING LEVEL 05 ###
-    if whoring >= 12 and whoring <= 14:
+    if her_whoring >= 12 and her_whoring <= 14:
         if one_of_ten == 1:
             call sna_main("15 points for a blowjob is a fair price, right?","snape_24") 
             call sna_main("","snape_23") 
@@ -274,7 +274,7 @@ label snape_chitchat:
         
         
     ### WHORING LEVEL 06 ###
-    if whoring >= 15 and whoring <= 17:
+    if her_whoring >= 15 and her_whoring <= 17:
         if one_of_ten == 1:
             call sna_main("What if the girl is not our pet, but we are hers?","snape_11") 
             call sna_main("","snape_26") 
@@ -329,7 +329,7 @@ label snape_chitchat:
         
    
     ### WHORING LEVEL 07 ###
-    if whoring >= 18 and whoring <= 20:
+    if her_whoring >= 18 and her_whoring <= 20:
         if one_of_ten == 1:
             call sna_main("Miss Granger really is changing. I can see it clearly now...","snape_24") 
             sna "Her grades went down and even her attendance is far from perfect now..."
@@ -396,7 +396,7 @@ label snape_chitchat:
         
         
     ### WHORING LEVEL 08+ ###
-    if whoring >= 21:
+    if her_whoring >= 21:
         if one_of_ten == 1:
             call sna_main("Do you know what a \"bukkake\" is?","snape_24") 
             sna "What about \"deepthroating\"?"

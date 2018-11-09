@@ -1,12 +1,15 @@
 label __init_variables:
 
+    if not hasattr(renpy.store,'potion_scene_11_progress'): #important!
+        $ potion_scene_11_progress = 0
+
     # base potions:
     # Polyjuice potion (Luna, Cat, Lamia)
     # Expanding Elixir (Breast, Ass)
     # Moreish mead (cum)
     # Transparent tincture (Transparency potion)
     # Coloring concoction (hair colors)
-    
+
     # Cum addiction = Moreish mead? + wormwood + your cum
     # Ass expansion = Expanding Elixir + knotgrass
     # Breast expansion = Expanding Elixir + Root of aconite
@@ -14,7 +17,7 @@ label __init_variables:
     # Luna potion = Polyjuice + Luna's hair
     # Lamia potion = Polyjuice + Basilisk scale
     # Transparency potion = Transparent tincture + Niffler's fancy
-    
+
     # Cum addiction: wormwood+your cum (jerk off into it)
     # Ass expansion: knotgrass
     # Breast expansion: Root of aconite
@@ -22,7 +25,7 @@ label __init_variables:
     # Transparency potion:  Niffler's fancy
     # Lamia potion: Basilisk scale
 
-    
+
     # wormwood = forbidden forest
     # knotgrass = ?
     # root_of_aconite =?
@@ -282,18 +285,18 @@ label potion_menu:
 
 
 init python:
-    
+
     class silver_potion_obj(object):
         id = ""
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def __repr__(self):
             return self.id
-        
+
         def __eq__(self, other):
-            if isinstance(other, self.__class__): 
+            if isinstance(other, self.__class__):
                 return self.id == other.id
             else:
                 return False

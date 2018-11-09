@@ -186,7 +186,7 @@ init python:
             elif self.title == "A spaced out conversation":
                 return snape_events > 6
             elif self.title == "A Booty at sea":
-                return hg_pf_TimeForAnal_OBJ.points > 2 and hg_pirate_OBJ.unlocked
+                return hg_pf_TimeForAnal_OBJ.points > 2 and hg_outfit_pirate_ITEM.unlocked
             else:
                 return True
             

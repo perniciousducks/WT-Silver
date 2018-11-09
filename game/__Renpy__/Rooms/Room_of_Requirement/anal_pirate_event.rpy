@@ -8,24 +8,24 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     $ menu_x = 0.5 #Menu is moved to the middle.
     $ menu_y = 0.5 #Menu is moved to the middle.
-    
+
     $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
     $ g_c_u_pic = "sex_slow_ani"
-    
+
     nar "This story is a rewrite of the \"Time for anal\" Private favour. And the genie is a pirate? Who knows... Enjoy."
-    
-    
+
+
     menu:
         "Path 1":
-            $ pathvalue = 0 
+            $ pathvalue = 0
         "Path 2":
             $ pathvalue = 1
         "Path 3":
             $ pathvalue = 2
-            
+
     call hide_blkfade
-    
+
     #Intro
     if pathvalue == 0:
         m "lass...I'd like you to roleplay with me."
@@ -40,10 +40,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         hide screen hermione_main
 
         label lucky_anal_guess:
-        call h_equip_temp_outfit(hg_pirate_OBJ)
+        call h_equip_temp_outfit(hg_outfit_pirate_ITEM)
         call blkfade
         call hide_blkfade
-        
+
         call her_head("...........","annoyed","worriedL")
         m "Time to get me ole canon out..."
         call her_head(".................","angry","worriedCl",emote="05")
@@ -108,7 +108,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 show screen g_c_u
 
                 if use_cgs:
-                    hide screen candlefire
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
@@ -181,8 +180,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_head("Ye ship be to great","shock","worriedCl")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_head(".....................","angry","suspicious",cheeks="blush")
-                
-                
+
+
                 # SEX
                 call her_chibi("hide") #HERMIONE
                 hide screen genie
@@ -194,7 +193,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 show screen g_c_u
 
                 if use_cgs:
-                    hide screen candlefire
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
@@ -261,7 +259,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 show screen g_c_u
 
                 if use_cgs:
-                    hide screen candlefire
                     $ face_on_cg = True
                     $ ccg_folder = "herm_sex"
                     $ ccg1 = "blank"
@@ -449,11 +446,11 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "How about another booty plunderin, lass?"
         call her_main("Of course, captain.","base","ahegao_raised")
         g9 "Raise anchor, you little tart!"
-        
+
         hide screen hermione_main
-        call h_equip_temp_outfit(hg_pirate_OBJ)
+        call h_equip_temp_outfit(hg_outfit_pirate_ITEM)
         call blkfade
-        
+
         stop music fadeout 1.0
 
         call her_head("........","annoyed","worriedL")
@@ -480,7 +477,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         show screen g_c_u
 
         if use_cgs:
-            hide screen candlefire
             $ face_on_cg = True
             $ ccg_folder = "herm_sex"
             $ ccg1 = "blank"
@@ -642,7 +638,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_head("I reckon I may still be leakin', captain.","grin","dead",cheeks="blush",tears="messy")
         call her_head("Or maybe nah...","grin","dead",cheeks="blush",tears="messy")
         call her_head("Everythin' be in a daze... 'n me legs feel so weak...")
-        if whoring < 24:
+        if her_whoring < 24:
             her "Can I jus' get paid now, captain?"
         stop music fadeout 1.0
 
@@ -655,7 +651,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     hide screen chair_left
     hide screen desk
     hide screen ccg
-   
+
     call her_chibi("stand","desk","base")
     show screen genie
     call hide_blkfade

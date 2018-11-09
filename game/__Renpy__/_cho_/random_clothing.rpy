@@ -18,14 +18,14 @@ label cho_random_clothing:
     else:
         if daytime and random_number in [1,2,3,4,5]: #50% chance:
 
-            if not cc_muggle_hot_OBJ.unlocked and cho_quidd_points >= 3:
-                $ cc_muggle_hot_OBJ.unlocked = True
+            if not cc_muggle_hot_ITEM.unlocked and cho_quidd_points >= 3:
+                $ cc_muggle_hot_ITEM.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
                 $ cho_wear_neckwear    = False
                 $ cho_wear_gloves      = False
                 $ cho_wear_stockings   = True
-                $ c_top = "tanktop_short"
+                $ c_top = "top_tanktop_2"
                 $ c_bottom = "pants_jeans_short"
                 $ c_stockings = "stockings"
 
@@ -51,11 +51,11 @@ label cho_random_clothing:
                 call cho_main(xpos="base",ypos="base")
 
                 #Unlocks Wardrobe.
-                call give_reward(">Congratulations! You can now access Cho's wardrobe and change her appearance!","interface/icons/head/cho_unlock_02.png")
+                call give_reward(">Congratulations! You can now access Cho's wardrobe and change her appearance!","interface/icons/head/head_cho_2.png")
                 $ cho_wardrobe_unlocked = True
 
                 #Unlocks rewards.
-                call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_muggle_hot_OBJ)
+                call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_muggle_hot_ITEM)
 
                 call cho_main(xpos="base",ypos="base") #Resets menu xpos.
 

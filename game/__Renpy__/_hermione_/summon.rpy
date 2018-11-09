@@ -1,17 +1,19 @@
 
 
 label summon_hermione:
-    call play_sound("door") #Sound of a door opening.
+
+    call play_sound("door")
 
     ### RANDOM CLOTHING EVENTS ###
     call hermione_random_clothing
 
     label hermione_requests:
 
-    $ hermione_busy = True
-    $ wardrobe_active = False
+    $ menu_x = 0.1
+    $ menu_y = 0.5
 
-    $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
+    $ hide_transitions = False
+    $ hermione_busy = True
 
     menu:
         "-Talk-":
@@ -26,7 +28,7 @@ label summon_hermione:
             else:
                 jump hermione_talk
 
-        "-Tutoring-" if not daytime and v_tutoring < 14: #13 is last level.
+        "-Tutoring-" if not daytime and her_tutoring < 14: #13 is last level.
             if mad >=1 and mad < 3:
                 her "I'm sorry, maybe tomorrow..."
                 jump hermione_requests
@@ -78,7 +80,7 @@ label summon_hermione:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call her_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
@@ -119,10 +121,10 @@ label hermione_talk:
         "-Working-":
             label working_menu:
             menu:
-                "-Work as a maid-" if daytime and hg_maid_OBJ.unlocked:
+                "-Work as a maid-" if daytime and hg_outfit_maid_ITEM.unlocked:
                     jump job_1
 
-                "-Work as a maid-" if daytime and not hg_maid_OBJ.unlocked:
+                "-Work as a maid-" if daytime and not hg_outfit_maid_ITEM.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 
@@ -130,10 +132,10 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and (hg_cheer_g_OBJ.unlocked or hg_cheer_g_sexy_OBJ.unlocked):
+                "-Work as a cheerleader for Gryffindor-" if daytime and (hg_cheer_g_ITEM.unlocked or hg_cheer_g_sexy_ITEM.unlocked):
                      jump job_3
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and not (hg_cheer_g_OBJ.unlocked or hg_cheer_g_sexy_OBJ.unlocked):
+                "-Work as a cheerleader for Gryffindor-" if daytime and not (hg_cheer_g_ITEM.unlocked or hg_cheer_g_sexy_ITEM.unlocked):
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 
@@ -141,10 +143,10 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
 
-                "-Work as a cheerleader for Slytherin-" if daytime and (hg_cheer_s_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked):
+                "-Work as a cheerleader for Slytherin-" if daytime and (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
                     jump job_4
 
-                "-Work as a cheerleader for Slytherin-" if daytime and not (hg_cheer_s_OBJ.unlocked or hg_cheer_s_sexy_OBJ.unlocked):
+                "-Work as a cheerleader for Slytherin-" if daytime and not (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 
@@ -160,7 +162,7 @@ label hermione_talk:
             $ luna_known = True
             jump hat_intro_2
 
-        "-Talk about the ministry letter-" if ministry_letter_received and not astoria_unlocked:
+        "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
             #You tell Hermione about the curses.
             if snape_on_the_lookout: #Already talked to Snape.
                 $ hermione_finds_astoria = True
@@ -169,7 +171,7 @@ label hermione_talk:
                 call her_main("I'm still looking for that student, [genie_name]!","open","closed")
                 call her_main("Trust in me, I will find that slytherin scum!","angry","angry")
                 jump hermione_talk
-            $ hermione_takes_classes = True
+            $ hermione_busy = True
             $ hermione_on_the_lookout = True
             jump letter_intro_hermione
 
@@ -188,37 +190,37 @@ label hermione_talk:
                     $ genie_name = "Old man"
                     jump genie_change
                 "-Genie-":
-                    if whoring >=5:
+                    if her_whoring >=5:
                         $ genie_name = "Genie"
                         jump genie_change
                     else:
                         jump genie_change_fail
                 "-My Lord-":
-                    if whoring >=7:
+                    if her_whoring >=7:
                         $ genie_name = "My Lord"
                         jump genie_change
                     else:
                         jump genie_change_fail
                 "-Darling-":
-                    if whoring >=10:
+                    if her_whoring >=10:
                         $ genie_name = "Darling"
                         jump genie_change
                     else:
                         jump genie_change_fail
                 "-Lord Voldemort-":
-                    if whoring >=15:
+                    if her_whoring >=15:
                         $ genie_name = "Lord Voldemort"
                         jump genie_change
                     else:
                         jump genie_change_fail
                 "-Daddy-":
-                    if whoring >=20:
+                    if her_whoring >=20:
                         $ genie_name = "Daddy"
                         jump genie_change
                     else:
                         jump genie_change_fail
                 "-Master-":
-                    if whoring >=20:
+                    if her_whoring >=20:
                         $ genie_name = "Master"
                         jump genie_change
                     else:
@@ -229,7 +231,7 @@ label hermione_talk:
                     if temp_name == "":
                         $ genie_name = "Sir"
                         jump genie_change
-                    if whoring >=20:
+                    if her_whoring >=20:
                         $ genie_name = temp_name
                         jump genie_change
                     else:
@@ -246,43 +248,43 @@ label hermione_talk:
                     $ hermione_name = "Girl"
                     jump hermione_change
                 "-Good Girl-":
-                    if whoring >=5:
+                    if her_whoring >=5:
                         $ hermione_name = "Good Girl"
                         jump hermione_change
                     else:
                         jump hermione_change_fail
                 "-Slave-":
-                    if whoring >=10:
+                    if her_whoring >=10:
                         $ hermione_name = "Slave"
                         jump hermione_change
                     else:
                         jump hermione_change_fail
                 "-Princess-":
-                    if whoring >=10:
+                    if her_whoring >=10:
                         $ hermione_name = "Princess"
                         jump hermione_change
                     else:
                         jump hermione_change_fail
                 "-Whore-":
-                    if whoring >=15:
+                    if her_whoring >=15:
                         $ hermione_name = "Whore"
                         jump hermione_change
                     else:
                         jump hermione_change_fail
                 "-Little Girl-":
-                    if whoring >=15:
+                    if her_whoring >=15:
                         $ hermione_name = "Little Girl"
                         jump hermione_change
                     else:
                         jump hermione_change_fail
                 "-Slytherin Slut-":
-                    if whoring >=18:
+                    if her_whoring >=18:
                         $ hermione_name = "Slytherin Slut"
                         jump hermione_change
                     else:
                         jump hermione_change_fail
                 "-Mudblood-":
-                    if whoring >=20:
+                    if her_whoring >=20:
                         $ hermione_name = "Mudblood"
                         jump hermione_change
                     else:
@@ -292,7 +294,7 @@ label hermione_talk:
                     $ temp_name = temp_name.strip()
                     if hermione_name == "":
                         $ hermione_name = "Miss granger"
-                    if whoring >=20:
+                    if her_whoring >=20:
                         $ hermione_name = temp_name
                         jump hermione_change
                     else:
@@ -316,7 +318,7 @@ label genie_change_fail:
     jump hermione_talk
 
 label hermione_change:
-    if whoring >= 20:
+    if her_whoring >= 20:
         call her_main("You can call me whatever you want, [genie_name]!","base","glance")
     else:
         call her_main("Sure, [genie_name]. I like that name.","base","base")

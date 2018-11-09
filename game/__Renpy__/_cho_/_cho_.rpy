@@ -2,14 +2,25 @@
 
 ### Cho Chang ###
 
-label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, xpos=None, ypos=None, trans=None):
+label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen cho_chang
 
+    #Flip
+    if flip == False:
+        $ cho_flip = 1 #Default
+    if flip == True:
+        $ cho_flip = -1
+
     #Reset
-    #if cheeks == None:
-    #    $ cheeks = "blank"
-    #if tears == None:
-    #    $ tears = "blank"
+    if cheeks == None:
+        $ cheeks = "blank"
+    if tears == None:
+        $ tears = "blank"
+    if extra == None:
+        $ extra = "blank"
+    if emote == None:
+        $ emote = "blank"
+
 
     #Positioning
     if xpos != None:
@@ -30,13 +41,23 @@ label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, xpos=Non
     if ypos != None:
         if ypos in ["base","default"]:
             $ cho_ypos = 0
-        elif ypos == "head":
-            $ cho_ypos = 400 #Not the correct number!
-            #ADD zorder change to be in front of textbox!
+            $ cho_scaleratio = 2
+            $ cho_zorder = 5
+            $ use_cho_head = False
+        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+            $ use_cho_head = True
+            $ cho_scaleratio = 2 #Reset
+
+            if cho_flip == -1: #Flipped
+                $ cho_xpos = 620
+            else:
+                $ cho_xpos = 590
+            $ cho_ypos = 230
+            $ cho_zorder = 8
         else:
             $ cho_ypos = int(ypos)
 
-    $ changeCho(mouth, eye, eyebrow, pupil, cho_xpos, cho_ypos)
+    $ changeCho(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
 
     show screen cho_chang
     show screen bld1
@@ -47,9 +68,19 @@ label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, xpos=Non
     if text != "":
         $ renpy.say(cho, text)
 
+    if use_cho_head:
+        hide screen cho_chang
+
     return
 
 
+
+label update_cho:
+
+    $ cho_flip = 1
+    $ use_cho_head = False
+
+    return
 
 
 label end_cho_event:
@@ -65,3 +96,43 @@ label end_cho_event:
     $ cho_busy = True
 
     jump main_room
+
+
+
+init python: ###Method Definition for new characters
+    def changeCho(  mouth=None,
+                    eye=None,
+                    eyebrow=None,
+                    pupil=None,
+                    cheeks=None,
+                    tears=None,
+                    extra=None,
+                    emote=None):
+
+        ### DEFINE GLOBAL VARIABLES ###
+        global cho_mouth
+        global cho_eye
+        global cho_eyebrow
+        global cho_pupil
+        global cho_cheeks
+        global cho_tears
+        global cho_extra
+        global cho_emote
+
+        ### FACE CONTROL ###
+        if mouth is not None:
+            cho_mouth         = "characters/cho/face/mouth/"+mouth+".png"
+        if eye is not None:
+            cho_eye           = "characters/cho/face/eyes/"+eye+".png"
+        if eyebrow is not None:
+            cho_eyebrow       = "characters/cho/face/brow/"+eyebrow+".png"
+        if pupil is not None:
+            cho_pupil         = "characters/cho/face/pupil/"+pupil+".png"
+        if cheeks is not None:
+            cho_cheeks        = "characters/cho/face/extras/cheeks_"+cheeks+".png"
+        if tears is not None:
+            cho_tears         = "characters/cho/face/extras/tears_"+tears+".png"
+        if extra is not None:
+            cho_extra         = "characters/cho/face/extras/"+extra+".png"
+        if emote is not None:
+            cho_emote         = "characters/emotes/"+str(emote)+".png"

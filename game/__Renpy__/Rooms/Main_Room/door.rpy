@@ -60,7 +60,7 @@ label door:
             jump day_main_menu
 
         "-Explore the Castle-" if door_examined:
-            if cataloug_found:
+            if map_unlocked:
                 hide screen main_room_menu
                 call screen map_screen
             else:
@@ -98,9 +98,6 @@ label door:
         "{color=#858585}-Summon Hermione-{/color}" if hermione_unlocked and hermione_busy:
             if daytime:
                 call nar(">Hermione is taking classes.")
-                $ cust_char_1_enabled = True
-                $ cust_char_2_enabled = True
-                $ cust_char_3_enabled = True
                 jump day_main_menu
             else:
                 call nar(">Hermione is already asleep.")

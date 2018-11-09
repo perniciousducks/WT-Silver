@@ -2,7 +2,8 @@
 
 label cho_init:
 
-    if not hasattr(renpy.store,'cho_base') or reset_cho_clothing or reset_persistants:
+    if not hasattr(renpy.store,'cho_base') or reset_persistants:
+        label reset_cho_clothing:
 
         #Body
         $ cho_base                = "characters/cho/body/base/base_01.png"
@@ -12,20 +13,81 @@ label cho_init:
         $ cho_ypos                = 0
         $ cho_zorder              = 5
         $ cho_flip                = 1
+        $ use_cho_head            = False
 
         #Face
         $ cho_mouth               = "characters/cho/face/mouth/base.png"
-        $ cho_eye                 = "characters/cho/face/eyes/eyes_base.png"
-        $ cho_eyewhite            = "characters/cho/face/eyes/eye_white.png"
+        $ cho_eye                 = "characters/cho/face/eyes/base.png"
+        $ cho_eyewhite            = "characters/cho/face/eyes/_white_.png"
         $ cho_eyebrow             = "characters/cho/face/brow/base.png"
         $ cho_pupil               = "characters/cho/face/pupil/mid.png"
-        $ cho_tears               = "characters/cho/face/tears/tears_0.png"
+
+        $ cho_cheeks              = "characters/cho/face/extra/cheeks_blank.png"
+        $ cho_tears               = "characters/cho/face/extra/tears_blank.png"
+        $ cho_extra               = "characters/cho/face/extra/blank.png"
+        $ cho_emote               = "characters/emotes/blank.png"
+
+        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Hair
         $ cho_hair                = "characters/cho/body/hair/hair_A_1_base.png"
         $ cho_hair_shadow         = "characters/cho/body/hair/hair_A_1_top.png"
         $ c_hair_style            = "A"
         $ c_hair_color            = 1
+
+
+
+        #Save State
+        $ cho_request_wear_top              = True
+        $ cho_request_wear_bra              = True
+        $ cho_request_wear_bottom           = True
+        $ cho_request_wear_panties          = True
+
+        $ cho_request_wear_onepiece         = False
+        $ cho_request_wear_garterbelt       = False
+
+        $ cho_request_wear_neckwear         = False
+        $ cho_request_wear_gloves           = False
+        $ cho_request_wear_stockings        = False
+        $ cho_request_wear_robe             = False
+
+        $ cho_request_wear_hat              = False
+        $ cho_request_wear_glasses          = False
+        $ cho_request_wear_ears             = False
+        $ cho_request_wear_makeup           = False
+        $ cho_request_wear_accs             = False
+
+        $ cho_request_wear_buttplug         = False
+        $ cho_request_wear_piercings        = False
+        $ cho_request_wear_tattoos          = False
+
+        $ cho_request_wear_outfit           = False
+
+        #Toggle
+        $ cho_wear_top               = True
+        $ cho_wear_bra               = True
+        $ cho_wear_bottom            = True
+        $ cho_wear_panties           = True
+
+        $ cho_wear_onepiece          = False
+        $ cho_wear_garterbelt        = False
+
+        $ cho_wear_neckwear          = False
+        $ cho_wear_gloves            = False
+        $ cho_wear_stockings         = False
+        $ cho_wear_robe              = False
+
+        $ cho_wear_hat               = False
+        $ cho_wear_glasses           = False
+        $ cho_wear_ears              = False
+        $ cho_wear_makeup            = False
+        $ cho_wear_accs              = False
+        $ cho_wear_piercings         = False
+        $ cho_wear_tattoos           = False
+
+        $ cho_wear_outfit            = False
+
+
 
         #Clothes
         $ cho_top                 = "characters/cho/clothes/tops/base/top_1.png"
@@ -82,55 +144,10 @@ label cho_init:
 
         $ cho_accs                = "characters/cho/accessories/blank.png"
 
-        #Save State
-        $ cho_request_wear_top              = True
-        $ cho_request_wear_bra              = True
-        $ cho_request_wear_bottom           = True
-        $ cho_request_wear_panties          = True
+        #Outfits
+        $ cho_outfit_GLBL = None
+        $ cho_temp_outfit = None
 
-        $ cho_request_wear_onepiece         = False
-        $ cho_request_wear_garterbelt       = False
-
-        $ cho_request_wear_neckwear         = False
-        $ cho_request_wear_gloves           = False
-        $ cho_request_wear_stockings        = False
-        $ cho_request_wear_robe             = False
-
-        $ cho_request_wear_hat              = False
-        $ cho_request_wear_glasses          = False
-        $ cho_request_wear_ears             = False
-        $ cho_request_wear_makeup           = False
-        $ cho_request_wear_accs             = False
-
-        $ cho_request_wear_buttplug         = False
-        $ cho_request_wear_piercings        = False
-        $ cho_request_wear_tattoos          = False
-
-        $ cho_request_wear_outfit           = False
-
-        #Toggle
-        $ cho_wear_top               = True
-        $ cho_wear_bra               = True
-        $ cho_wear_bottom            = True
-        $ cho_wear_panties           = True
-
-        $ cho_wear_onepiece          = False
-        $ cho_wear_garterbelt        = False
-
-        $ cho_wear_neckwear          = False
-        $ cho_wear_gloves            = False
-        $ cho_wear_stockings         = False
-        $ cho_wear_robe              = False
-
-        $ cho_wear_hat               = False
-        $ cho_wear_glasses           = False
-        $ cho_wear_ears              = False
-        $ cho_wear_makeup            = False
-        $ cho_wear_accs              = False
-        $ cho_wear_piercings         = False
-        $ cho_wear_tattoos           = False
-
-        $ cho_wear_outfit            = False
 
     return
 

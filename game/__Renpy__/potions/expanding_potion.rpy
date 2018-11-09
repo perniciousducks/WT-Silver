@@ -275,7 +275,7 @@ label potion_scene_2_2: #ass expansion
     m "Well this potion certainly is effective."
     call nar(">You start firmly stroking her ass cheeks. Pulling them apart to reveal her asshole and then squishing them together.","start")
     call nar(">Seeing her tight asshole gives you an idea.","end")
-    $ hermione_main_zorder = 8
+    $ hermione_zorder = 8
 
     menu: #Thought about adding a rimming option here but the chibis don't really support it
         "-Finger her asshole-":
@@ -331,7 +331,7 @@ label potion_scene_2_2: #ass expansion
             m "Well you best be off to class."
             call her_main("...With my butt looking like this?","angry","down_raised")
             m "I'm sure no one will be able to tell \nwith your skirt on. Now hurry up \nI have things to attend to."
-            $ hermione_main_zorder = 5
+            $ hermione_zorder = 5
             call blkfade
             pause 1
 
@@ -352,11 +352,10 @@ label potion_scene_2_2: #ass expansion
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.","grin","dead")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
-            $ custom_skirt = 0
             $ h_action_show_skirt = True
             call her_main("...","open","down")
 
-        "-Hot dog her-" if whoring >= 17:
+        "-Hot dog her-" if her_whoring >= 17:
             m "Bend over [hermione_name]."
             call nar(">Before she even has a chance to react you push her forward over your desk.")
             hide screen groping_02
@@ -417,7 +416,7 @@ label potion_scene_2_2: #ass expansion
             call blkfade
             pause 1
 
-            $ hermione_main_zorder = 5
+            $ hermione_zorder = 5
             hide screen chair_left
             hide screen groping_01
             hide screen groping_02
@@ -462,4 +461,4 @@ label potion_scene_2_2: #ass expansion
 
     jump main_room
         #will add this later
-        #"-Fuck her ass-" if whoring >= 22:
+        #"-Fuck her ass-" if her_whoring >= 22:

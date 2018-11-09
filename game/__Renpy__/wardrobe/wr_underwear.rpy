@@ -18,12 +18,15 @@ label equip_bra:
     #Cho
     if active_girl == "cho":
         jump equip_cho_bra
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_bra
 
 
 ### Equip Hermione's Bra ###
 label equip_her_bra:
     if underwear_choice == h_bra and underwear_color_choice == h_bra_color:
-        $ wardrobe_active = True
+        $ hide_transitions = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
@@ -35,14 +38,14 @@ label equip_her_bra:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             #Bras
             if underwear_choice in ["bra_base"]:
                 m "Would you wear this bra for me?"
-                if whoring >= 11: #Success
-                    if whoring < 17:
+                if her_whoring >= 11: #Success
+                    if her_whoring < 17:
                         call her_main("Of course, [genie_name].","base","glance")
                     else:
                         call her_main("That old thing?","disgust","down")
@@ -58,13 +61,13 @@ label equip_her_bra:
                     call her_main("I see no reason why I should ever change my bra for you...","open","closed")
                     call her_main("(Disgusting...)","annoyed","angryL")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["bra_lace","bra_silk"]:
                 g9 "Do you like this bra I bought you?"
-                if whoring >= 11: #Success
-                    if whoring < 17:
+                if her_whoring >= 11: #Success
+                    if her_whoring < 17:
                         call her_main("Hmm...","annoyed","down")
                         call her_main("It looks decent enough...","annoyed","down_raised")
                         call her_main("Alright, I'll wear it.","open","baseL")
@@ -74,7 +77,7 @@ label equip_her_bra:
                         call her_main("It's so soft and comfy!","grin","base")
                         call her_main("Let me put it on for you.","base","glance")
                 else: #Fail
-                    if whoring < 5:
+                    if her_whoring < 5:
                         call her_main("A bra?","shock","shocked")
                         call her_main("Why on earth would you buy me a bra, [genie_name]?","disgust","down")
                         m "So you can... uhm... wear it?"
@@ -89,13 +92,13 @@ label equip_her_bra:
                         m "I'd wear it myself but I lack the tits..."
                         call her_main("(Disgusting perv...)","clench","angryL")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["bra_bikini","bra_bikini_string"]:
                 m "[hermione_name], do you like wearing bikinis?"
-                if whoring >= 14: #Success
-                    if whoring < 20:
+                if her_whoring >= 14: #Success
+                    if her_whoring < 20:
                         call her_main("If I have to.","soft","baseL")
                         g9 "Great! That's good enough for me!"
                         call her_main("(I hope I won't regret this...)","disgust","down")
@@ -117,19 +120,19 @@ label equip_her_bra:
                     m "Right then, I'll think of another school activity we could do in a bikini."
                     call her_main("There are none, [genie_name]...","annoyed","angry")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 14."
+                        ">Try again at Whoring level 14."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["bra_latex"]:
                 g9 "[hermione_name], I have a new bra for you!"
-                if whoring >= 17: #Success
+                if her_whoring >= 17: #Success
                     call her_main("Oh wow...","soft","down")
                     call her_main("And you'd like me to wear it?","open","base")
                     m "Yes please."
                     call her_main("Very well...","base","baseL")
                     call her_main("Anything for you, [genie_name].","base","glance")
                 else: #Fail
-                    if whoring < 8:
+                    if her_whoring < 8:
                         call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
                         m "So you can wear it for me?"
                         call her_main("No! I'm not going to wear bras for you!","angry","angry")
@@ -138,7 +141,7 @@ label equip_her_bra:
                         call her_main("I don't care! You can have it back!","open","closed")
                         m "Fine. Maybe another time then..."
                         call her_main("(Weirdo...)","annoyed","angryL")
-                    elif whoring < 11:
+                    elif her_whoring < 11:
                         call her_main("Please, [genie_name]...","open","closed")
                         call her_main("Stop buying me bras...","annoyed","angry")
                         m "Don't you like them?"
@@ -152,12 +155,12 @@ label equip_her_bra:
                         g4 "That's none of your concern!"
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 17."
+                        ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["bra_french_maid"]:
                 m "[hermione_name], I bought a new bra for you."
-                if whoring >= 20: #Success
+                if her_whoring >= 20: #Success
                     m "I'd like you to wear it!"
                     call her_main("Of course, [genie_name].","base","glance")
                     m "You don't mind wearing this, even in classes?"
@@ -165,7 +168,7 @@ label equip_her_bra:
                     call her_main("I can just cover myself with some books if I have to...","open","closed")
                     call her_main("(Not that I'd want to!)","base","ahegao")
                 else: #Fail
-                    if whoring < 8:
+                    if her_whoring < 8:
                         call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
                         m "So you could wear it for me?"
                         call her_main("No! I'm not going to wear bras for you!","angry","angry")
@@ -173,7 +176,7 @@ label equip_her_bra:
                         call her_main("I don't care! You can keep it!","open","closed")
                         m "Fine. Maybe another time then..."
                         call her_main("(Pervert...)","annoyed","angryL")
-                    elif whoring < 14:
+                    elif her_whoring < 14:
                         call her_main("Please, [genie_name]...","open","closed")
                         call her_main("Stop buying me bras...","annoyed","angry")
                         m "Don't you like them?"
@@ -188,18 +191,18 @@ label equip_her_bra:
                         m "I see your point."
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["bra_tape"]:
                 m "[hermione_name], could you take off your bra for me? And then put these over your nipples."
-                if whoring >= 20: #Success
+                if her_whoring >= 20: #Success
                     call her_main("Pasties?... My tits might as well be completely exposed if I were to wear those...","soft","down")
                     g9 "Just leaving enough to the imagination!"
                     call her_main("Hmm... I can already see the boys imagine doing all kinds of things with them...","open","ahegao")
                     call her_main("They always tell me how great my breasts look!","base","glance")
                 else: #Fail
-                    if whoring < 11:
+                    if her_whoring < 11:
                         call her_main("Do you ask this from every girl, [genie_name]?","open","wink")
                         m "Why uhm... I mean yes. All the girls..."
                         call her_main("Is this some sort of protection for-","open","down")
@@ -219,19 +222,19 @@ label equip_her_bra:
                         call her_main("No!... And you can have your disgusting duct tape back...","annoyed","angry")
                         m "Hey! No need to insult duct tape... It's like magic..."
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["top_fishnets"]:
                 g9 "I've got something for you! Try it out!"
-                if whoring >= 20: #Success
+                if her_whoring >= 20: #Success
                     call her_main("Wow. Fishnets?","smile","down")
                     call her_main("That's so naughty!","grin","glance")
                     g9 "Glad you like it!"
                     call her_main("I do, [genie_name]!","soft","baseL")
                     call her_main("Let me take off my bra and put these on instead.","base","glance")
                 else: #Fail
-                    if whoring < 5:
+                    if her_whoring < 5:
                         call her_main("What? Oh, what's this?","soft","base")
                         m "It's a fishnet to-"
                         call her_main("Oh, I get it!","grin","down")
@@ -251,7 +254,7 @@ label equip_her_bra:
                         call her_main("You disgust me, [genie_name]!","clench","angry")
                         m "Okay- Jeesh... I'm sorry."
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
 
@@ -259,35 +262,35 @@ label equip_her_bra:
             call set_h_bra(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = 1
+            $ hide_transitions = 1
             call screen wardrobe
 
         else:
-            $ wardrobe_active = True
+            $ hide_transitions = True
 
             #Fails
-            if whoring < 11 and underwear_choice in ["bra_base","bra_lace","bra_silk"]:
+            if her_whoring < 11 and underwear_choice in ["bra_base","bra_lace","bra_silk"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 11."
+                    ">Try again at Whoring level 11."
                 jump return_to_wardrobe
 
-            if whoring < 14 and underwear_choice in ["bra_bikini","bra_bikini_string"]:
+            if her_whoring < 14 and underwear_choice in ["bra_bikini","bra_bikini_string"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 14."
+                    ">Try again at Whoring level 14."
                 jump return_to_wardrobe
 
-            if whoring < 17 and underwear_choice in ["bra_latex"]:
+            if her_whoring < 17 and underwear_choice in ["bra_latex"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
+                    ">Try again at Whoring level 17."
                 jump return_to_wardrobe
 
-            if whoring < 20 and underwear_choice in ["bra_french_maid","bra_tape","top_fishnets"]:
+            if her_whoring < 20 and underwear_choice in ["bra_french_maid","bra_tape","top_fishnets"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 20."
+                    ">Try again at Whoring level 20."
                 jump return_to_wardrobe
 
             #Success!
@@ -328,6 +331,14 @@ label equip_cho_bra:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Tonks's Bra ###
+label equip_ton_bra:
+    call set_ton_bra(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+
 
 ### Equip Onepiece ###
 label equip_onepiece:
@@ -347,6 +358,9 @@ label equip_onepiece:
     #Cho
     if active_girl == "cho":
         jump equip_cho_onepiece
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_onepiece
 
 ### Equip Hermione's OnePiece/Nighty ###
 label equip_her_onepiece:
@@ -383,6 +397,14 @@ label equip_cho_onepiece:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Tonks's OnePiece/Nighty ###
+label equip_ton_onepiece:
+    call set_ton_onepiece(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+
 
 ### Equip Panties ###
 label equip_panties:
@@ -402,11 +424,14 @@ label equip_panties:
     #Cho
     if active_girl == "cho":
         jump equip_cho_panties
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_panties
 
 ### Equip Hermione's Panties ###
 label equip_her_panties:
     if underwear_choice == h_panties and underwear_color_choice == h_panties_color:
-        $ wardrobe_active = True
+        $ hide_transitions = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
@@ -418,14 +443,14 @@ label equip_her_panties:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             #Bras
             if underwear_choice in ["panties_base"]:
                 m "Could you wear your normal panties again for me?"
-                if whoring >= 11: #Success
-                    if whoring < 17:
+                if her_whoring >= 11: #Success
+                    if her_whoring < 17:
                         call her_main("Of course, [genie_name].","base","glance")
                     else:
                         call her_main("These old things?","disgust","down")
@@ -441,13 +466,13 @@ label equip_her_panties:
                     call her_main("I see no reason why I should ever change my panties for you...","open","closed")
                     call her_main("(Disgusting...)","annoyed","angryL")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["panties_lace","panties_silk","panties_silk_low"]:
                 g9 "Do you like these panties I bought you?"
-                if whoring >= 11: #Success
-                    if whoring < 17:
+                if her_whoring >= 11: #Success
+                    if her_whoring < 17:
                         call her_main("Hmm...","annoyed","down")
                         call her_main("They looks decent enough...","annoyed","down_raised")
                         call her_main("Fine, I'll wear them.","open","baseL")
@@ -457,7 +482,7 @@ label equip_her_panties:
                         call her_main("They're so soft and comfy!","grin","base")
                         call her_main("Let me put them on for you.","base","glance")
                 else: #Fail
-                    if whoring < 5:
+                    if her_whoring < 5:
                         call her_main("Panties?!","shock","shocked")
                         call her_main("Why on earth would you buy me panties, [genie_name]?","disgust","down")
                         m "So you can... uhm... wear them?"
@@ -471,13 +496,13 @@ label equip_her_panties:
                         m "I'd wear it myself but I lack a great ass..."
                         call her_main("(Disgusting perv...)","clench","angryL")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["panties_bikini","panties_bikini_string"]:
                 m "[hermione_name], do you like wearing bikinis?"
-                if whoring >= 14: #Success
-                    if whoring < 20:
+                if her_whoring >= 14: #Success
+                    if her_whoring < 20:
                         call her_main("If I have to.","soft","baseL")
                         g9 "Great! That's good enough for me!"
                         call her_main("(I hope I won't regret this...)","disgust","down")
@@ -499,19 +524,19 @@ label equip_her_panties:
                     m "Right then, I'll think of another school activity we could do in a bikini."
                     call her_main("There are none, [genie_name]...","annoyed","angry")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 14."
+                        ">Try again at Whoring level 14."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["panties_latex"]:
                 g9 "[hermione_name], I have some new panties for you!"
-                if whoring >= 17: #Success
+                if her_whoring >= 17: #Success
                     call her_main("Oh wow...","soft","down")
                     call her_main("And you'd like me to wear them?","open","base")
                     m "Yes please."
                     call her_main("Very well...","base","baseL")
                     call her_main("Anything for you, [genie_name].","base","glance")
                 else: #Fail
-                    if whoring < 8:
+                    if her_whoring < 8:
                         call her_main("What? [genie_name] why would you give me panties?","shock","shocked")
                         m "So you can wear them for me?"
                         call her_main("No! I'm not going to wear panties for you!","angry","angry")
@@ -520,7 +545,7 @@ label equip_her_panties:
                         call her_main("I don't care! You can have them back!","open","closed")
                         m "Fine. Maybe another time then..."
                         call her_main("(Pervert...)","annoyed","angryL")
-                    elif whoring < 11:
+                    elif her_whoring < 11:
                         call her_main("Please, [genie_name]...","open","closed")
                         call her_main("Stop buying me panties...","annoyed","angry")
                         m "Don't you like them?"
@@ -534,12 +559,12 @@ label equip_her_panties:
                         g4 "That's none of your concern!"
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 17."
+                        ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["panties_french_maid"]:
                 m "[hermione_name], I bought some new panties for you."
-                if whoring >= 20: #Success
+                if her_whoring >= 20: #Success
                     m "I'd like you to wear them."
                     call her_main("Of course, [genie_name].","base","glance")
                     m "Really? You don't mind wearing them, even in classes?"
@@ -547,7 +572,7 @@ label equip_her_panties:
                     call her_main("I can just cover myself with some books if I have to...","open","closed")
                     call her_main("(Not that I'd want to!)","base","ahegao")
                 else: #Fail
-                    if whoring < 8:
+                    if her_whoring < 8:
                         call her_main("What? [genie_name] why would you give me panties?","shock","shocked")
                         m "So you could wear them for me?"
                         call her_main("No! I'm not going to wear panties for you!","angry","angry")
@@ -555,7 +580,7 @@ label equip_her_panties:
                         call her_main("I don't care! You can keep them!","open","closed")
                         m "Fine. Maybe another time then..."
                         call her_main("(Pervert...)","annoyed","angryL")
-                    elif whoring < 14:
+                    elif her_whoring < 14:
                         call her_main("Please, [genie_name]...","open","closed")
                         call her_main("Stop buying me panties...","annoyed","angry")
                         m "Don't you like them?"
@@ -570,19 +595,19 @@ label equip_her_panties:
                         m "I see your point."
                         call her_main("Tzzz!","clench","angryCl")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
             elif underwear_choice in ["panties_fishnet","panties_fishnet_string"]:
                 g9 "I have something for you! Try it out!"
-                if whoring >= 20: #Success
+                if her_whoring >= 20: #Success
                     call her_main("Wow. Fishnet Panties?","smile","down")
                     call her_main("That's so naughty!","grin","glance")
                     g9 "Glad you like them!"
                     call her_main("I do, [genie_name].","soft","baseL")
                     call her_main("Let me put them on real quick.","base","glance")
                 else: #Fail
-                    if whoring < 11:
+                    if her_whoring < 11:
                         call her_main("Don't tell me it's panties again...","annoyed","angry")
                         m "Yes, how did you know."
                         call her_main("[genie_name], I've told you before, gifting your students panties is not ok!","clench","closed")
@@ -600,7 +625,7 @@ label equip_her_panties:
                         call her_main("You can have them back you freak...","clench","angry")
                         m "Okay- Jeesh... No need to make a scene..."
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
 
@@ -608,35 +633,35 @@ label equip_her_panties:
             call set_h_panties(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = 1
+            $ hide_transitions = 1
             call screen wardrobe
 
         else:
-            $ wardrobe_active = True
+            $ hide_transitions = True
 
             #Fails
-            if whoring < 11 and underwear_choice in ["panties_base","panties_lace","panties_silk","panties_silk_low"]:
+            if her_whoring < 11 and underwear_choice in ["panties_base","panties_lace","panties_silk","panties_silk_low"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 11."
+                    ">Try again at Whoring level 11."
                 jump return_to_wardrobe
 
-            if whoring < 14 and underwear_choice in ["panties_bikini","panties_bikini_string"]:
+            if her_whoring < 14 and underwear_choice in ["panties_bikini","panties_bikini_string"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 14."
+                    ">Try again at Whoring level 14."
                 jump return_to_wardrobe
 
-            if whoring < 17 and underwear_choice in ["panties_latex"]:
+            if her_whoring < 17 and underwear_choice in ["panties_latex"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 17."
+                    ">Try again at Whoring level 17."
                 jump return_to_wardrobe
 
-            if whoring < 20 and underwear_choice in ["panties_french_maid","panties_fishnet","panties_fishnet_string"]:
+            if her_whoring < 20 and underwear_choice in ["panties_french_maid","panties_fishnet","panties_fishnet_string"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
-                    ">Try again at whoring level 20."
+                    ">Try again at Whoring level 20."
                 jump return_to_wardrobe
 
             #Success!
@@ -675,6 +700,14 @@ label equip_cho_panties:
     hide screen wardrobe
     call screen wardrobe
 
+### Equip Tonks's Panties ###
+label equip_ton_panties:
+    call set_ton_panties(underwear_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+
 
 ### Equip Garterbelt ###
 label equip_garterbelt:
@@ -694,6 +727,9 @@ label equip_garterbelt:
     #Cho
     if active_girl == "cho":
         jump equip_cho_garterbelt
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_ton_garterbelt
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
@@ -726,6 +762,13 @@ label equip_sus_garterbelt:
 ### Equip Cho's Garterbelt ###
 label equip_cho_garterbelt:
     call set_cho_garterbelt(underwear_choice, underwear_color_choice)
+
+    hide screen wardrobe
+    call screen wardrobe
+
+### Equip Tonks's Garterbelt ###
+label equip_ton_garterbelt:
+    call set_ton_garterbelt(underwear_choice, underwear_color_choice)
 
     hide screen wardrobe
     call screen wardrobe

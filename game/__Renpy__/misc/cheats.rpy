@@ -8,22 +8,22 @@ label cheats:
                     ">Hermione is no longer mad at you."
                     jump cheats
                 "-Max Whoring-":
-                    $ whoring = 24
+                    $ her_whoring = 24
                     ">Hermione is now a giant slut."
                     jump cheats_hermione
 
                 "-Increase Whoring-":
-                    if whoring >= 24:
-                        ">Hermione's whoring is at the max level and can't be increased any further!"
+                    if her_whoring >= 24:
+                        ">Hermione's Whoring is at the max level and can't be increased any further!"
                     else:
-                        $ whoring += 1
+                        $ her_whoring += 1
                         ">Hermione became more depraved..."
                     jump cheats_hermione
                 "-Decrease Whoring-":
-                    if whoring <= 0:
-                        "Hermione's whoring can't be decreased any further!"
+                    if her_whoring <= 0:
+                        "Hermione's Whoring can't be decreased any further!"
                     else:
-                        $ whoring -= 1
+                        $ her_whoring -= 1
                         "Hermione recovered some of her dignity"
                     jump cheats_hermione
 
@@ -139,10 +139,49 @@ label cheats:
             "200 points to Slytherin!"
             jump cheats
 
-        "-Map-" if day >= 5 and not cataloug_found:
+        "-Map-" if day >= 5 and not map_unlocked:
             "The marauder's map has been added to your inventory!"
-            $ cataloug_found = True
+            $ map_unlocked = True
             jump cheats
 
         "-Never mind-":
             jump day_main_menu
+
+label cheats_init:
+
+    #Update 1.34
+    if not hasattr(renpy.store,'character_summon_list') or reset_persistants:
+        $ character_choice = "hermione"
+        $ summoned_character_list = []
+
+        $ display_character_hermione = False
+        $ display_character_luna = False
+        $ display_character_astoria = False
+        $ display_character_susan = False
+        $ display_character_cho = False
+
+        $ display_character_genie = False
+        $ display_character_snape = False
+        $ display_character_tonks = False
+
+        $ display_background = False
+        $ custom_bg_image = "images/backgrounds/main_room_night.png"
+
+    $ character_summon_list = []
+    if hermione_unlocked:
+        $ character_summon_list.append("hermione")
+    if luna_unlocked:
+        $ character_summon_list.append("luna")
+    if astoria_unlocked:
+        $ character_summon_list.append("astoria")
+    if susan_unlocked:
+        $ character_summon_list.append("susan")
+    if cho_unlocked:
+        $ character_summon_list.append("cho")
+    $ character_summon_list.append("genie")
+    $ character_summon_list.append("snape")
+    if tonks_unlocked:
+        $ character_summon_list.append("tonks")
+    $ character_summon_list.append("bg")
+
+    return

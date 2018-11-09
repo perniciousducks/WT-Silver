@@ -1,7 +1,7 @@
 
 # House Elf
 screen house_elf:
-    add "characters/house-elf/house-elf.png" xpos 700 ypos 200
+    add "characters/misc/house-elf/house-elf.png" xpos 700 ypos 200
     zorder snape_zorder
 
 label helf_main(text="", trans=None, remove=False):
@@ -20,6 +20,23 @@ label helf_main(text="", trans=None, remove=False):
     helf "[text]"
 
     return
+
+#Narrator
+label nar(text="",action=""):
+
+    if action != "end": #Narration ended, blktone was already active.
+        show screen blktone5
+        with d3
+
+    if text != "":
+        $ renpy.say(s,text)
+
+    if action != "start": #Narration just started, blktone won't get hidden.
+        hide screen blktone5
+        with d3
+
+    return
+
 
 
 #Transitions
@@ -54,7 +71,7 @@ label transition(trans=None):
 
     #Default transition.
     else:
-        if not wardrobe_active:
+        if not hide_transitions:
             with d3
 
     return
@@ -90,7 +107,7 @@ init python:
     dum_ = [""]
     for i in range(1,6):
         dum_.append("")
-        dum_[i] = Character(None, window_left_padding=250, color="#402313", show_side_image=Image("characters/dumbledore/dum_"+str(i)+".png", xpos=20, yalign=1.0), show_two_window=False, ctc="ctc3", ctc_position="fixed")
+        dum_[i] = Character(None, window_left_padding=250, color="#402313", show_side_image=Image("characters/misc/dumbledore/dum_"+str(i)+".png", xpos=20, yalign=1.0), show_two_window=False, ctc="ctc3", ctc_position="fixed")
 
 
 
@@ -105,9 +122,9 @@ init python:
     sus  = Character('Susan', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     ast  = Character('Astoria', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
-    twi  = Character('Fred and George', color="#402313", show_two_window=True, show_side_image=Image("characters/weasley_twins/base_01.png", xalign=1.0, yalign=1.0), ctc="ctc3", ctc_position="fixed", window_right_padding=100)
-    fre  = Character('Fred', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/weasley_twins/fred_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
-    ger  = Character('George', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/weasley_twins/george_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
+    twi  = Character('Fred and George', color="#402313", show_two_window=True, show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0, yalign=1.0), ctc="ctc3", ctc_position="fixed", window_right_padding=100)
+    fre  = Character('Fred', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/misc/weasley_twins/fred_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
+    ger  = Character('George', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/misc/weasley_twins/george_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
 
 
 
@@ -125,9 +142,9 @@ init python:
 
     ### Other Characters ###
     s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
-    nar = Character('Narrator ', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
+    nar = Character('Narrator ', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/misc/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
 
-    maf  = Character('Madam Mafkin', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/mafkin/maf_1.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=270)
+    maf  = Character('Madam Mafkin', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/misc/mafkin/maf_1.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=270)
     abe  = Character('Aberforth', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     myr  = Character('Moaning Myrtle', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     vol  = Character('Lord Voldemort', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")

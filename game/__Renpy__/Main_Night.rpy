@@ -1,28 +1,56 @@
 
 
-####NIGHT STARTS HERE###<<<<<<<<<<<-----------------------------------------------------------------------------------------------------###
-###=====================================================================================================================================###
+#Night Start.
+
 label night_start:
     play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
-#    $ renpy.set_style_preference("dialog", "Night")
+    show screen blkfade
 
+#    $ renpy.set_style_preference("dialog", "Night")
+# $ textColor = "#1e1008"
+
+$ daytime = False
+$ interface_color = "gray"
+
+$ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
+$ save_name = temp_name
 
 ###RESET STUFF
+call room(hide_screens=True)
 
+# Hermione
+call reset_hermione
 $ no_blinking = False #When True - blinking animation is not displayed.
-$ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ uni_sperm = False
-$ textColor = "#1e1008"
-
-call reset_hermione_main
-
+$ gifted = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
 $ hermione_busy = False
-$ astoria_busy = False
-$ susan_busy = False
+
+#Luna
+call reset_luna
 $ luna_busy = False
+
+#Astoria
+call update_astoria
+$ astoria_busy = False
+
+#Susan
+call update_susan
+$ susan_busy = False
+
+#Cho
+call update_cho
 $ cho_busy = False
+
+#Tonks
+call update_tonks
 $ tonks_busy = False
+
+#Snape
+call update_snape
 $ snape_busy = False
+
+#Genie
+call update_genie
+
 
 $ chitchated_with_her = False
 $ chitchated_with_astoria = False
@@ -31,71 +59,34 @@ $ chitchated_with_snape = False
 $ chitchated_with_tonks = False
 
 scene black
-hide screen main_room
-hide screen weather
-
-$ daytime = False
-$ interface_color = "gray"
-$ gifted = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
 
 
-stop bg_sounds #Stops playing the fire SFX.
-stop weather #Stops playing the rain SFX.
-
-
-hide screen notes #A bunch of notes poping out with a "win" sound effect.
-hide screen done_reading #Hiding genie sitting with closed book in his hands.
-hide screen done_reading_near_fire #Done reading by the fire
-hide screen new_window #Hiding clear sky bg.
-
-hide screen bld1
-hide screen blktone
-hide screen blkfade
 
 ### WEATHER ###
+stop bg_sounds #Stops playing the fire SFX.
+stop weather #Stops playing the rain SFX.
 $ show_weather()
-show screen weather
 
 
-if package_is_here:
-    hide screen package
 
-
-hide screen main_room
-
-hide screen chair_left
-hide screen chair_right
-hide screen fireplace
-hide screen genie
-hide screen owl
-hide screen owl_02
-
-
-show screen main_room
-show screen chair_right
-show screen fireplace
-show screen candlefire
-
+#Puzzle
 $ puzzle_random = renpy.random.randint(0, 2)
 
+#Fireplace
 if day > 25 and(1 < weather_gen < 4) and (puzzle_random == 0) and (found_puzzle_1 == False):
     show screen fireplace_glow
-
 else:
     $ puzzle_random = 1
 
-show screen genie
-if package_is_here:
-    show screen package
+#Mail
+if day >= 1 and not letter_from_hermione_A_OBJ.read:
+    $ letter_from_hermione_A_OBJ.mailLetter()
 
-#hide screen statistics
-#show screen statistics
 
-hide screen points
-show screen points
 
-if got_mail or mail_from_her or letters >= 1:
-    show screen owl
+call room("main_room", hide_screens=False) #Screens already get hidden above.
+
+hide screen blkfade
 with fade
 
 
@@ -115,7 +106,7 @@ label night_resume:
 
 ### NIGHT EVENTS ###
 if day == 1:
-    call event_02 #Returns
+    call owl_intro #Returns
 if day == 2:
     jump event_03 #No return. Jumps next day.
 if day == 4:
@@ -211,15 +202,16 @@ if milking == -3:
     call potion_scene_11_3_2
 
 
-if whoring == 11 and not touched_by_boy and not ignore_warning:
+if her_whoring == 11 and not touched_by_boy and not ignore_warning:
     call nar("!!! Attention !!!","start")
-    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
-    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
+    ">Increasing Hermione's Whoring level any further without doing more public requests will lock your game to a specific ending."
+    ">This message will repeat until you increase her Whoring level, or do a certain number of public requests!"
     call nar(">You should also save your game here.","end")
     menu:
         "-Understood-":
             pass
         "-Don't tell me what to do!-":
+            call nar(">This message will stop appearing. You're on your own!")
             $ ignore_warning = True
 
 
@@ -243,13 +235,9 @@ label night_main_menu:
 $ menu_x = 0.5
 $ menu_y = 0.5
 
-if phoenix_is_feed:
-    show screen phoenix_food
-
 hide screen bld1
 hide screen blktone
 call hide_characters
 with d1
 
-show screen animation_feather
 call screen main_room_menu

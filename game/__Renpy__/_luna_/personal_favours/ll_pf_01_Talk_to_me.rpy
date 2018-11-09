@@ -658,7 +658,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("she hid all 6 inches of it in her mouth... down her throat...","base","glance")
         call her_main("just so we wouldn't get found out...","base","suspicious")
         $ luna_flip = -1
-        call lun_main("well what else was I supposed to do...","open","wide","sad","base", cheeks="blush")
+        call lun_main("well what else was I supposed to do...","open","wide","sad","mid", cheeks="blush")
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
         g4 "{size=+4}(agh... almost there...){/size}"
         $ luna_flip = 1
@@ -678,7 +678,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         show screen bld1
         with d3
 
-        call lun_main("...","base","seductive","sad","base", cheeks="blush")
+        call lun_main("...","base","seductive","sad","mid", cheeks="blush")
         call her_main("I told you he liked stories...","base","glance")
         show screen genie_jerking_sperm_02
         with d3

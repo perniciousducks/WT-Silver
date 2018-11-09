@@ -3,19 +3,16 @@ label leave_main_room:
     hide screen main_room
     hide screen chair_right
     hide screen fireplace
-    hide screen fireplace_fire
     hide screen candlefire
     hide screen desk
     hide screen phoenix_food
     hide screen owl
-    hide screen owl_02
-    hide screen owl_03
     return
 
 ### Map Screen ###
 
 screen map_screen:
-    zorder hermione_main_zorder-1
+    zorder 4
 
     imagemap:
         ground "interface/map/map_ground.png"
@@ -34,7 +31,7 @@ screen map_screen:
         hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
 
         #Map Events
-        if whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
+        if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
             hotspot (217, 442, 55, 55) clicked Jump("hermione_map_BJ")
 
 
@@ -288,8 +285,6 @@ label return_office:
     show screen main_room
     show screen genie
     hide screen blkback
-    if fire_in_fireplace:
-        show screen fireplace_fire
 
     pause.5
     hide screen blkfade

@@ -2,10 +2,10 @@
 
 label potion_scene_11: #Milking potion
 
-    if potion_scene_11_progress == 0 or whoring < 13:
+    if potion_scene_11_progress == 0 or her_whoring < 13:
         $ potion_scene_11_progress = 1
         jump potion_scene_11_1
-    elif potion_scene_11_progress == 1 or whoring < 18:
+    elif potion_scene_11_progress == 1 or her_whoring < 18:
         $ potion_scene_11_progress = 2
         jump potion_scene_11_2
     else:
@@ -242,27 +242,27 @@ label potion_scene_11_2: #Milking potion part 2
         with d3
 
     call nar(">You notice hermione's breasts swell for the final time.")
-    call her_head("!!!","upset","worriedCl",cheeks="blush",xpos="base",ypos="base")
+    call her_main("!!!","upset","worriedCl",cheeks="blush",ypos="head")
     pause
     $ ccg1 = 2
-    call her_head("[genie_name], this is ridiculous!","open","worriedCl",cheeks="blush")
-    call her_head("do they have to be so big?","angry","angry",cheeks="blush")
+    call her_main("[genie_name], this is ridiculous!","open","worriedCl",cheeks="blush")
+    call her_main("do they have to be so big?","angry","angry",cheeks="blush")
     m "Yes."
     $ ccg1 = 3
-    call her_head("...","annoyed","annoyed")
+    call her_main("...","annoyed","annoyed")
     $ ccg1 = 4
-    call her_head("pervert.","open","annoyed",cheeks="blush")
+    call her_main("pervert.","open","annoyed",cheeks="blush")
     m "Well seeing as how they've reached full size..."
     pause
     $ ccg1 = 2
-    call her_head("*hmph* Fine!","annoyed","annoyed")
+    call her_main("*hmph* Fine!","annoyed","annoyed")
     $ ccg1 = 1
-    call her_head("Let me just put on your weird milking device that you own for some reason!","annoyed","angryL")
+    call her_main("Let me just put on your weird milking device that you own for some reason!","annoyed","angryL")
     m "Well technically I'm just borrowing it, so if you could make sure not to break it..."
     $ ccg1 = 2
     pause
-    call her_head("...","annoyed","frown")
-    call her_head("Ugh... the things I put up with for this house.","annoyed","suspicious")
+    call her_main("...","annoyed","frown")
+    call her_main("Ugh... the things I put up with for this house.","annoyed","suspicious")
     hide screen ccg
     with d3
     call nar(">hermione slowly slips the harness on.")
@@ -270,7 +270,7 @@ label potion_scene_11_2: #Milking potion part 2
     $ milking = 1
     call set_hermione_action("milk_breasts")
 
-    call her_main("There! Happy now!","disgust","narrow")
+    call her_main("There! Happy now!","disgust","narrow",xpos="right",ypos="base")
     m "I mean if you could moo that would really Complete the picture..."
     call her_main("...","angry","angry")
     call her_main("can we just get this over with...","annoyed","angryL")

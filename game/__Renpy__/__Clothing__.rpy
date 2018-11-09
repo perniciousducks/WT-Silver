@@ -1,172 +1,224 @@
-label __init_variables:
-
-    #Todo
-    #Remove everything below. Needs to stay for a crash fix, for now. (1.4)
-    if not hasattr(renpy.store,'hg_clothing_saves'):
-        $ hg_clothing_saves  = {}
-        # this stores the state of the custom_outfit_objs for whenever .save() is called
-        # b/c this is a basic dictionary it will also persist through reloads
 
 
-    if not hasattr(renpy.store,'hg_clothing'):
-        $ hg_clothing = custom_outfit_obj()
-        # this is whats currently equipped to change to a diffrent outfit simply .load() it
+label clothing_init:
 
-    if not hasattr(renpy.store,'hg_clothing_save_01'):
-        $ hg_clothing_save_01 = custom_outfit_obj()
-        $ hg_clothing_save_02 = custom_outfit_obj()
-        $ hg_clothing_save_03 = custom_outfit_obj()
-        $ hg_clothing_save_04 = custom_outfit_obj()
-        $ hg_clothing_save_05 = custom_outfit_obj()
-        $ hg_clothing_save_06 = custom_outfit_obj()
-        $ hg_clothing_save_07 = custom_outfit_obj()
-        $ hg_clothing_save_08 = custom_outfit_obj()
-        $ hg_clothing_save_09 = custom_outfit_obj()
-        $ hg_clothing_save_10 = custom_outfit_obj()
+    ### OUTFITS ###
+
+    #Hermione Outfits.
+    if not hasattr(renpy.store,'hg_outfit_maid_OBJ'): #important!
+        $ hg_outfit_maid_OBJ = outfit_class()
+    $ hg_outfit_maid_OBJ.id = "hg_outfit_maid"
+    $ hg_outfit_maid_OBJ.image = "hg_maid.png"
+    $ hg_outfit_maid_OBJ.outfit_layers = ["maid_stockings.png","maid_skirt.png","maid_top.png","maid_gloves.png"]
+    $ hg_outfit_maid_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_outfit_maid_OBJ.hair_layer = "B"
+    $ hg_outfit_maid_OBJ.top_layers = "maid_hat"
+
+    if not hasattr(renpy.store,'hg_outfit_pirate_OBJ'):
+        $ hg_outfit_pirate_OBJ = outfit_class()
+    $ hg_outfit_pirate_OBJ.id = "hg_outfit_pirate"
+    $ hg_outfit_pirate_OBJ.image = "hg_pirate.png"
+    $ hg_outfit_pirate_OBJ.outfit_layers = ["pirate_legs.png","pirate_pants.png","pirate_top.png"]
+    $ hg_outfit_pirate_OBJ.breast_layer = "breasts_nipfix"
+
+    if not hasattr(renpy.store,'hg_outfit_christmas_OBJ'):
+        $ hg_outfit_christmas_OBJ = outfit_class()
+    $ hg_outfit_christmas_OBJ.id = "hg_outfit_christmas"
+    $ hg_outfit_christmas_OBJ.image = "hg_christmas.png"
+    $ hg_outfit_christmas_OBJ.outfit_layers = ["christmas_pants.png","christmas_top.png","christmas_gloves.png","christmas_collar.png"]
+    $ hg_outfit_christmas_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_outfit_christmas_OBJ.top_layers = "antlers"
+
+    if not hasattr(renpy.store,'hg_outfit_present_OBJ'):
+        $ hg_outfit_present_OBJ = outfit_class()
+    $ hg_outfit_present_OBJ.id = "hg_outfit_present"
+    $ hg_outfit_present_OBJ.image = "hg_present.png"
+    $ hg_outfit_present_OBJ.outfit_layers = ["present_pant.png","present_top.png"]
+    $ hg_outfit_present_OBJ.breast_layer = "breasts_nipfix"
+
+    if not hasattr(renpy.store,'hg_outfit_japan_OBJ'):
+        $ hg_outfit_japan_OBJ = outfit_class()
+    $ hg_outfit_japan_OBJ.id = "hg_outfit_japan"
+    $ hg_outfit_japan_OBJ.image = "hg_japan.png"
+    $ hg_outfit_japan_OBJ.outfit_layers = ["japan_pant.png","japan_top.png"]
+    $ hg_outfit_japan_OBJ.breast_layer = "breasts_normal_pressed"
+
+    if not hasattr(renpy.store,'hg_outfit_witch_OBJ'):
+        $ hg_outfit_witch_OBJ = outfit_class()
+    $ hg_outfit_witch_OBJ.id = "hg_outfit_witch"
+    $ hg_outfit_witch_OBJ.image = "hg_witch.png"
+    $ hg_outfit_witch_OBJ.outfit_layers = ["witch_stockings.png","witch_top.png","witch_cloak.png"]
+    $ hg_outfit_witch_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_outfit_witch_OBJ.top_layers = "witch_hat"
+
+    if not hasattr(renpy.store,'hg_outfit_egypt_OBJ'):
+        $ hg_outfit_egypt_OBJ = outfit_class()
+    $ hg_outfit_egypt_OBJ.id = "hg_outfit_egypt"
+    $ hg_outfit_egypt_OBJ.image = "hg_egypt.png"
+    $ hg_outfit_egypt_OBJ.outfit_layers = ["egyptian_top.png","egyptian_bottom.png","egyptian_shackles.png"]
+    $ hg_outfit_egypt_OBJ.breast_layer = "breasts_normal"
 
 
-    python:
-        # this is an example of a devloper assigned static save
-        hg_clothing_saves['example_static_save'] = {
-            'name'          :'name_of_outfit/save',
-            'top'           :'example_value_for_top',
-            'top_color'     :'example_color',
-            'panties'       :'example_value_for_panties',
-            'wear_panties'  : False
-        }
+    #Hermione Costumes.
+    if not hasattr(renpy.store,'hg_costume_power_girl_OBJ'):
+        $ hg_costume_power_girl_OBJ = outfit_class()
+    $ hg_costume_power_girl_OBJ.id = "hg_costume_power_girl"
+    $ hg_costume_power_girl_OBJ.image = "hg_power.png"
+    $ hg_costume_power_girl_OBJ.outfit_layers = ["power_cape.png","power_top.png","power_cape_top.png","power_gloves.png","power_belt.png"]
+    $ hg_costume_power_girl_OBJ.breast_layer = "breasts_normal"
+    $ hg_costume_power_girl_OBJ.hair_layer = "P"
 
-        # to load this save we would simply call hg_clothing.load('example_static_save')
+    if not hasattr(renpy.store,'hg_costume_ms_marvel_OBJ'):
+        $ hg_costume_ms_marvel_OBJ = outfit_class()
+    $ hg_costume_ms_marvel_OBJ.id = "hg_costume_ms_marvel"
+    $ hg_costume_ms_marvel_OBJ.image = "hg_marvel.png"
+    $ hg_costume_ms_marvel_OBJ.outfit_layers = ["marvel_pants.png","marvel_top.png","marvel_sash.png","marvel_gloves.png"]
+    $ hg_costume_ms_marvel_OBJ.breast_layer = "breasts_normal"
+
+    if not hasattr(renpy.store,'hg_costume_harley_quinn_OBJ'):
+        $ hg_costume_harley_quinn_OBJ = outfit_class()
+    $ hg_costume_harley_quinn_OBJ.id = "hg_costume_harley_quinn"
+    $ hg_costume_harley_quinn_OBJ.image = "hg_harley.png"
+    $ hg_costume_harley_quinn_OBJ.outfit_layers = ["harley_pants.png","harley_top.png","harley_gloves.png","harley_collar.png"]
+    $ hg_costume_harley_quinn_OBJ.breast_layer = "breasts_normal"
+    $ hg_costume_harley_quinn_OBJ.hair_layer = "H"
+
+    if not hasattr(renpy.store,'hg_costume_lara_croft_OBJ'):
+        $ hg_costume_lara_croft_OBJ = outfit_class()
+    $ hg_costume_lara_croft_OBJ.id = "hg_costume_lara_croft"
+    $ hg_costume_lara_croft_OBJ.image = "hg_lara.png"
+    $ hg_costume_lara_croft_OBJ.outfit_layers = ["lara_pants.png","lara_top.png","lara_gloves.png"]
+    $ hg_costume_lara_croft_OBJ.breast_layer = "breasts_normal"
+
+    if not hasattr(renpy.store,'hg_costume_tifa_OBJ'):
+        $ hg_costume_tifa_OBJ = outfit_class()
+    $ hg_costume_tifa_OBJ.id = "hg_costume_tifa"
+    $ hg_costume_tifa_OBJ.image = "hg_tifa.png"
+    $ hg_costume_tifa_OBJ.outfit_layers = ["tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"]
+    $ hg_costume_tifa_OBJ.breast_layer = "breasts_normal"
+    $ hg_costume_tifa_OBJ.hair_layer = "T"
+
+    if not hasattr(renpy.store,'hg_costume_elizabeth_OBJ'):
+        $ hg_costume_elizabeth_OBJ = outfit_class()
+    $ hg_costume_elizabeth_OBJ.id = "hg_costume_elizabeth"
+    $ hg_costume_elizabeth_OBJ.image = "hg_bio.png"
+    $ hg_costume_elizabeth_OBJ.outfit_layers = ["bio_skirt.png","bio_chocker.png","bio_corset.png","bio_jacket.png"]
+    $ hg_costume_elizabeth_OBJ.breast_layer = "breasts_normal_pressed"
+    $ hg_costume_elizabeth_OBJ.hair_layer = "E"
+
+    if not hasattr(renpy.store,'hg_costume_yennefer_OBJ'):
+        $ hg_costume_yennefer_OBJ = outfit_class()
+    $ hg_costume_yennefer_OBJ.id = "hg_costume_yennefer"
+    $ hg_costume_yennefer_OBJ.image = "hg_yenn.png"
+    $ hg_costume_yennefer_OBJ.outfit_layers = ["yenn_stockings.png","yenn_pant.png","yenn_skirt.png","yenn_top.png","yenn_gloves.png","yenn_chocker.png","yenn_scarf.png","yenn_belt.png"]
+    $ hg_costume_yennefer_OBJ.breast_layer = "breasts_normal"
+
+
+    #Hermione Dresses.
+    if not hasattr(renpy.store,'hg_dress_yule_ball_OBJ'):
+        $ hg_dress_yule_ball_OBJ = outfit_class()
+    $ hg_dress_yule_ball_OBJ.id = "hg_dress_yule_ball"
+    $ hg_dress_yule_ball_OBJ.image = "hg_ball_dress.png"
+    $ hg_dress_yule_ball_OBJ.outfit_layers = ["ball_dress_skirt.png","ball_dress_top.png"]
+    $ hg_dress_yule_ball_OBJ.breast_layer = "breasts_nipfix"
+    $ hg_dress_yule_ball_OBJ.hair_layer = "B"
+    $ hg_dress_yule_ball_OBJ.top_layers = "tiara"
+
+    if not hasattr(renpy.store,'hg_dress_dancer_OBJ'):
+        $ hg_dress_dancer_OBJ = outfit_class()
+    $ hg_dress_dancer_OBJ.id = "hg_dress_dancer"
+    $ hg_dress_dancer_OBJ.image = "hg_heart.png"
+    $ hg_dress_dancer_OBJ.outfit_layers = ["heart_legs.png","heart_top.png","heart_collar.png"]
+    $ hg_dress_dancer_OBJ.breast_layer = "breasts_normal"
+
+    #Event Costumes.
+    #Does not have a store item!
+    if not hasattr(renpy.store,'hg_standart_school_OBJ'): #important!
+        $ hg_standart_school_OBJ = outfit_class()
+    $ hg_standart_school_OBJ.id = "hg_standart_school"
+    $ hg_standart_school_OBJ.outfit_layers = ["../uniform/skirt_2.png", "../uniform/top_1.png"]
+    $ hg_standart_school_OBJ.breast_layer = "breasts_nipfix"
+
+    if not hasattr(renpy.store,'hg_standart_school_noshirt_OBJ'): #important!
+        $ hg_standart_school_noshirt_OBJ = outfit_class()
+    $ hg_standart_school_noshirt_OBJ.id = "hg_standart_school_noshirt"
+    $ hg_standart_school_noshirt_OBJ.outfit_layers = ["../uniform/skirt_2.png", "../underwear/base/bra_base.png"]
+    $ hg_standart_school_noshirt_OBJ.breast_layer = "breasts_nipfix"
+
+
+
+    # Luna Outfits
+
+    #ADD
+
+
+    # Astoria
+    if not hasattr(renpy.store,'ag_costume_lazy_town_OBJ'):
+        $ ag_costume_lazy_town_OBJ = outfit_class()
+    $ ag_costume_lazy_town_OBJ.id = "ag_costume_lazy_town"
+    $ ag_costume_lazy_town_OBJ.image = "ag_lazy.png"
+    $ ag_costume_lazy_town_OBJ.outfit_layers = ["lazy_tights.png","lazy_dress.png","lazy_bracelet.png"]
+    $ ag_costume_lazy_town_OBJ.hair_layer = "L"
+
+    if not hasattr(renpy.store,'ag_costume_lazy_town_short_OBJ'): #Not a store OBJ!
+        $ ag_costume_lazy_town_short_OBJ = outfit_class()
+    $ ag_costume_lazy_town_short_OBJ.id = "ag_costume_lazy_town_short"
+    $ ag_costume_lazy_town_short_OBJ.image = "ag_lazy_short.png"
+    $ ag_costume_lazy_town_short_OBJ.outfit_layers = ["lazy_tights.png","lazy_dress_short.png","lazy_bracelet.png"]
+    $ ag_costume_lazy_town_short_OBJ.hair_layer = "L"
+
+    if not hasattr(renpy.store,'ag_dress_yule_ball_OBJ'):
+        $ ag_dress_yule_ball_OBJ = outfit_class()
+    $ ag_dress_yule_ball_OBJ.id = "ag_dress_yule_ball"
+    $ ag_dress_yule_ball_OBJ.image = "ag_ball_dress.png"
+    $ ag_dress_yule_ball_OBJ.outfit_layers = ["ball_dress.png"]
+
+
+    # Susan Outfits
+
+    #ADD
+
+
+    # Cho Outfits
+    if not hasattr(renpy.store,'cc_outfit_quidditch_OBJ'):
+        $ cc_outfit_quidditch_OBJ = outfit_class()
+    $ cc_outfit_quidditch_OBJ.id = "cc_outfit_quidditch"
+    $ cc_outfit_quidditch_OBJ.image = "cc_quidditch.png"
+    $ cc_outfit_quidditch_OBJ.outfit_layers = []
+    call update_cho_quidditch_outfit #Adds outfit layers.
+
+    if not hasattr(renpy.store,'cc_dress_traditional_OBJ'):
+        $ cc_dress_traditional_OBJ = outfit_class()
+    $ cc_dress_traditional_OBJ.id = "cc_dress_traditional"
+    $ cc_dress_traditional_OBJ.image = "cc_traditional_dress.png"
+    $ cc_dress_traditional_OBJ.outfit_layers = ["traditional_dress.png"]
 
     return
 
 
 
-init -2 python:
+init python:
 
-    class custom_outfit_obj(object):
-        # id = 0 #ID 0 is the default. Outfits you saved (with ID 1,2,...) override 0 when equipped.
-        name = "defult" # replace id with unique name that could be taken as input, eaiser to track
-        mannequin_layers = []
+    class outfit_class(object):
+        id = ""
+        top_layers = []
+        outfit_layers = []
+        actions = []
+        action_images = []
+        hair_layer = ""
+        breast_layer = "breasts_nipfix"
+        image = ""
 
-        hair = "A"
-        hair_color = "base"
+        def getOutfitLayers(self):
+            return self.outfit_layers
+        def getHairLayers(self):
+            return self.hair_layer
+        def getTopLayers(self):
+            return self.top_layers
+        def getActionImage(self, action):
+            return self.action_images[self.actions.index(action)]
 
-        top = "top_1" #the name of the item.
-        top_color = "base" #which color folder the item is in.
-        wear_top = True #if the item is currently worn.
-        always_wear_top = True #if the item is worn on resetting the outfit.
-
-        onepiece = "blank"
-        onepiece_color = "base"
-        wear_onepiece = False
-        always_wear_onepiece = False
-
-        bottom = "skirt_1"
-        bottom_color = "base"
-        wear_bottom = True
-        always_wear_bottom = True
-
-        bra = "bra_base"
-        bra_color = "base"
-        wear_bra = True
-        always_wear_bra = True
-
-        panties = "panties_base"
-        panties_color = "base"
-        wear_panties = True
-        always_wear_panties = True
-
-        graterbelt = "blank"
-        garterbelt_color = "base"
-        wear_garterbelt = False
-        always_wear_garterbelt = False
-
-        neckwear = "blank"
-        neckwear_color = "base"
-        wear_neckwear = False
-        always_wear_neckwear = False
-
-        gloves = "blank"
-        gloves_color = "base"
-        wear_gloves  = False
-        always_wear_gloves  = False
-
-        stockings = "blank"
-        stockings_color = "base"
-        wear_stockings  = False
-        always_wear_stockings  = False
-
-        robe = "robe_1"
-        robe_color = "base"
-        wear_robe = False
-        always_wear_robe = False
-
-        hat = "blank"
-        hat_color = "base"
-        wear_hat = False
-        always_wear_hat = False
-
-        glasses = "blank"
-        glasses_color = "base"
-        wear_glasses = False
-        always_wear_glasses = False
-
-        ears = "blank"
-        wear_ears = True
-        always_wear_ears = True
-
-        makeup_lipstick = "nude"
-        makeup_list = []
-        wear_makeup = False
-        always_wear_makeup = False
-
-        accs = []
-        wear_accs = False
-        always_wear_accs = False
-
-        buttplug = "blank"
-        buttplug_color = "base"
-        wear_buttplug  = False
-        always_wear_buttplug  = False
-
-        piercings_ears = "blank"
-        piercings_ears_color = "base"
-        piercings_nipples = "blank"
-        piercings_nipples_color = "base"
-        piercings_belly = "blank"
-        piercings_belly_color = "base"
-        piercings_genitals = "blank"
-        piercings_genitals_color = "base"
-        wear_piercings = False
-        always_wear_piercings = False
-
-        tattoos_forehead = "blank"
-        tattoos_forehead_color = "base"
-        tattoos_arm_left = "blank"
-        tattoos_arm_left_color = "base"
-        tattoos_arm_right = "blank"
-        tattoos_arm_right_color = "base"
-        tattoos_breasts = "blank"
-        tattoos_breasts_color = "base"
-        tattoos_waist = "blank"
-        tattoos_waist_color = "base"
-        tattoos_abdomen = "blank"
-        tattoos_abdomen_color = "base"
-        tattoos_leg_left = "blank"
-        tattoos_leg_left_color = "base"
-        tattoos_leg_right = "blank"
-        tattoos_leg_right_color = "base"
-        wear_tattoos = False
-        always_wear_tattoos = False
-
-        transparency = 1
-
-
-        # saves and loads the state of this object to the dictionary 'hg_clothing_saves'
-
-        def save(self, name):
-            global hg_clothing_saves
-            hg_clothing_saves[name] = self.__dict__
-        def load(self, name):
-            global hg_clothing_saves
-            self.__dict__.update( hg_clothing_saves[name] )
+        def getImage(self):
+            return self.image
+        def getStoreImage(self):
+            return "interface/icons/outfit/"+self.image

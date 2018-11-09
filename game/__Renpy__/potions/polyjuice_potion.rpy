@@ -104,7 +104,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
             $ hermione_busy = True
             jump main_room
 
-        "-Make her suck you off-" if whoring >= 17:
+        "-Make her suck you off-" if her_whoring >= 17:
             pass
 
     m "Wait [hermione_name], how would you like to earn 75 additional points?"
@@ -143,7 +143,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     her "*Slurp?*"
     $ g_c_u_pic = "hand_ani"
     with d3
-    $ hermione_main_zorder = 8
+    $ hermione_zorder = 8
     call her_main("It's because of your stupid potion, it's \nmade my tongue all rough.","open_wide_tongue","angry")
     call her_main("Do you want to stop?","grin","baseL")
     hide screen hermione_main
@@ -218,7 +218,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     call her_main("..........","annoyed","worriedL")
     call her_main("I am...","smile","baseL")
 
-    $ hermione_main_zorder = 5
+    $ hermione_zorder = 5
     hide screen hermione_main
     hide screen chair_left
     call her_chibi("hide")
@@ -279,7 +279,7 @@ label potion_scene_1_2: #Luna potion
     call her_main("Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping.","open","closed")
     m "Troubling indeed."
 
-    if whoring <= 13:
+    if her_whoring <= 13:
         call her_main("It is! [genie_name], I used to be at the top of the class. My scores were impeccable. ","scream","angryCl")
         m "And how are your scores now?"
         call her_main("Well I'm still at the top... Just not by as much.","annoyed","angryL")

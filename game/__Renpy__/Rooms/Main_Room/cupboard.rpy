@@ -30,7 +30,7 @@ label cupboard:
             label possessions:
 
             menu:
-                "-Gift Items-" if cataloug_found:
+                "-Gift Items-" if map_unlocked:
                     label possessions_gift_items:
                         $ choices = []
                         python:
@@ -49,12 +49,6 @@ label cupboard:
                             hide screen gift
                             with d3
                             jump possessions_gift_items
-
-                "-Clothing-"if False:
-                    label possessions_clothing:
-                    menu:
-                        "-Never mind-":
-                            jump possessions
 
                 "-Potion Items-" if False:
                     label possessions_potions:
@@ -97,43 +91,6 @@ label cupboard:
                     m "It's missing the key ingredient."
                     jump possessions
 
-                "-The Ball Dress-" if "ball_dress" in gifts12 and not gave_the_dress:
-                    $ the_gift = "images/store/01.png" # DRESS.
-                    show screen gift
-                    with d3
-                    m "A fancy night dress I bought..."
-                    m "I hope it's the right size."
-                    hide screen gift
-                    with d3
-                    jump possessions
-
-                #"-\"S.P.E.W.\" Badge-" if badge_01 == 1:
-                    $ the_gift = "images/store/29.png" # S.P.E.W. BADGE
-                    show screen gift
-                    with d3
-                    m "A \"S.P.E.W.\" Badge..."
-                    hide screen gift
-                    with d3
-                    jump possessions
-
-                #"-Fishnet stockings-" if nets == 1:
-                    $ the_gift = "images/store/30.png" # FISHNETS.
-                    show screen gift
-                    with d3
-                    call nets_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-
-                #"-School miniskirt-" if have_miniskirt:
-                    $ the_gift = "images/store/07.png" # MINISKIRT.
-                    show screen gift
-                    with d3
-                    m "A school miniskirt... Improves grades drastically."
-                    hide screen gift
-                    with d3
-                    jump possessions
-
                 "-Dumbledor's Wine-([wine])" if wine >= 1:
                     $ the_gift = "images/store/27.png" # WINE.
                     show screen gift
@@ -151,8 +108,10 @@ label cupboard:
                     hide screen gift
                     with d3
                     jump possessions
+
                 "Box with a puzzle on it" if found_puzzle_1 == True:
                     jump start_slide_puzzle
+
                 "-Never mind-":
                     jump cupboard
 
@@ -242,22 +201,33 @@ label cupboard:
         "-Cheats-" if cheats_active and day > 1:
             jump cheats
 
-        "-Reset ALL Luna content-" if hat_known:
-            $ reset_luna_content = True
-            call luna_init
-            call luna_progress_init
-            $ reset_luna_content = False
-            ">Luna content reset!"
-            jump cupboard
+        "-Bugfix-":
+            menu:
+                "-Reset Clothing-":
+                    call reset_susan_clothing
+                    call reset_tonks_clothing
+                    jump cupboard
+                "-Reset ALL Luna content-" if hat_known:
+                    $ reset_luna_content = True
+                    call luna_init
+                    call luna_progress_init
+                    $ reset_luna_content = False
+                    ">Luna content reset!"
+                    jump cupboard
+                "-Never mind-":
+                    jump cupboard
+
+        "-Display Characters-" if day != 1:
+            jump summon_characters
 
         "-Never mind-":
             jump day_main_menu
 
 label scrolls_menu:
     menu:
-        "-Sacred scrolls volume I-" if cataloug_found:
+        "-Sacred scrolls volume I-" if map_unlocked:
             $ scrolls_range = range(1,16)
-        "-Sacred scrolls volume II-" if cataloug_found:
+        "-Sacred scrolls volume II-" if map_unlocked:
             $ scrolls_range = range(16,31)
         "-Never Mind-":
             jump day_main_menu
@@ -290,7 +260,7 @@ label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
     $ temp_name = temp_name.strip()
     if temp_name == "":
-        $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
+        $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
     $ save_name = temp_name
     "Done."
     jump cupboard
@@ -323,8 +293,8 @@ label rummaging:
             else:
                 jump day_start
 
-    if rum_times >= 7 and not cataloug_found:
-        $ cataloug_found = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
+    if rum_times >= 7 and not map_unlocked:
+        $ map_unlocked = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
         call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","images/store/31.png")
 
         show screen genie
@@ -363,7 +333,7 @@ label rum_rewards:
 
     if game_difficulty <= 2: #Easy and Normal difficulty.
 
-        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+        if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             if random_number in [1,2]:
                 call rum_block(Lollipop)
             elif random_number in [3]:
@@ -378,7 +348,7 @@ label rum_rewards:
                 else:
                     call rum_block("wine")
 
-        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+        if her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             if random_number in [1,2]:
                 call rum_block(Lollipop)
             elif random_number in [3]:
@@ -395,7 +365,7 @@ label rum_rewards:
                 else:
                     call rum_block("wine")
 
-        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+        if her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             if random_number in [1]:
                 call rum_block(Vibrator)
             elif random_number in [2,3]:
@@ -410,7 +380,7 @@ label rum_rewards:
                 else:
                     call rum_block("wine")
 
-        if whoring >= 18: # Lv 7+
+        if her_whoring >= 18: # Lv 7+
             if random_number in [1]:
                 call rum_block(SpeedStick2000)
             elif random_number in [2,3,4]:
@@ -452,7 +422,7 @@ label rum_rewards:
         elif random_number in [10]:
             call rum_block(SexDollJoanne)
         else:
-            if whoring >= 21: # Lv 7+
+            if her_whoring >= 21: # Lv 7+
                 call rum_block(Butterbeer)
             else:
                 call rum_block("wine")

@@ -11,7 +11,7 @@ label update_lun_uniform:
     $ luna_top            = "characters/luna/clothes/tops/base/"+str(lun_top)+".png"
 
     #Bottom
-    $ luna_bottom         = "characters/luna/clothes/bottoms/base/"+str(lun_bottom)+".png"
+    $ luna_bottom         = "characters/luna/clothes/bottoms/"+str(lun_bottom_color)+"/"+str(lun_bottom)+".png"
 
     #Underwear
     $ luna_bra            = "characters/luna/clothes/underwear/base/"+str(lun_bra)+".png"
@@ -80,16 +80,19 @@ label set_lun_top(top=""):
     return
 
 #Bottom equip.
-label set_lun_bottom(bottom=""):
+label set_lun_bottom(bottom="", color=""):
     hide screen luna_main
 
-    if luna_wear_bottom and lun_bottom == bottom:
+    if luna_wear_bottom and lun_bottom == bottom and lun_bottom_color == color:
         $ lun_request_wear_bottom = False
         $ luna_wear_bottom = False
     else:
+        if bottom in ["skirt_cheer_r","pants_pyjama"]: #Those have no recolors!
+            $ color = "base"
         $ lun_request_wear_bottom = True
         $ luna_wear_bottom = True
         $ lun_bottom = bottom
+        $ lun_bottom_color = color
 
     call update_lun_uniform
     show screen luna_main

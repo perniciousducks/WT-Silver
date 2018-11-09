@@ -2,33 +2,56 @@
 
 label susan_init:
 
-    if not hasattr(renpy.store,'susan_wear_outfit') or reset_sus_clothing or reset_persistants or reset_susans_wardrobe:
+    if not hasattr(renpy.store,'susan_wear_outfit') or reset_persistants:
+        label reset_susan_clothing:
 
         #Body
         $ susan_base                = "characters/susan/body/base/base_01.png"
-        $ susan_boobs               = "characters/susan/body/base/boobs_0.png"
+        $ susan_boobs               = "characters/susan/body/base/boobs_nipfix.png"
         $ susan_l_arm               = "characters/susan/body/arms/l_arm_back.png"
         $ susan_r_arm               = "characters/susan/body/arms/r_arm_thigh.png"
         $ susan_xpos                = 300
         $ susan_ypos                = 0
         $ susan_zorder              = 5
         $ susan_flip                = 1
+        $ use_susan_head            = False
 
         #Face
         $ susan_mouth               = "characters/susan/face/mouth/base.png"
         $ sus_mouth                 = "base"
         $ sus_lipstick              = "nude"
 
-        $ susan_eye                 = "characters/susan/face/eyes/eye_base.png"
-        $ susan_eye_bg              = "characters/susan/face/eyes/eye_base_bg.png"
-        $ susan_pupil               = "characters/susan/face/eyes/pupil_mid.png"
+        $ susan_eye                 = "characters/susan/face/eyes/base.png"
+        $ susan_eye_bg              = "characters/susan/face/eyes/base_bg.png"
+        $ susan_pupil               = "characters/susan/face/pupil/mid.png"
         $ sus_eye_color             = "green"
 
         $ susan_eyebrow             = "characters/susan/face/brow/base.png"
 
-        $ susan_cheeks              = "characters/susan/face/extras/blank.png"
-        $ susan_tears               = "characters/susan/face/extras/blank.png"
+        $ susan_cheeks              = "characters/susan/face/extras/cheeks_blank.png"
+        $ susan_tears               = "characters/susan/face/extras/tears_blank.png"
         $ susan_extra               = "characters/susan/face/extras/blank.png"
+        $ susan_emote               = "characters/emotes/blank.png"
+
+        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
+
+        #Chibi
+        $ susan_chibi_xpos          = 500
+        $ susan_chibi_ypos          = 250
+        $ susan_chibi_xpos_name     = "base" #Memory of chibi position.
+        $ susan_chibi_ypos_name     = "base" #Memory of chibi position.
+        $ susan_chibi_flip          = 1
+        $ susan_chibi_zorder        = 3
+
+        $ susan_chibi_stand         = "ch_sus blink"
+        $ susan_chibi_shoes         = "characters/susan/chibis/sb_walk_01_shoes.png"
+
+        $ susan_chibi_walk          = "ch_sus walk"
+        $ susan_chibi_walk_shoes    = "ch_sus walk_shoes"
+
+        $ susan_chibi_top           = "characters/susan/chibis/sb_cloth_shirt_h.png"
+        $ susan_chibi_bottom        = "characters/susan/chibis/sb_cloth_skirt.png"
+        $ susan_chibi_robe          = "characters/susan/chibis/blank.png"
 
         #Hair
         $ susan_hair                = "characters/susan/body/hair/hair_A_1_base.png"
@@ -90,22 +113,22 @@ label susan_init:
         $ susan_wear_outfit            = False
 
         #Top
-        $ susan_top                 = "characters/susan/clothes/tops/base/shirt_1.png"
-        $ sus_top                     = "shirt_1"
+        $ susan_top                 = "characters/susan/clothes/tops/base/top_1.png"
+        $ sus_top                     = "top_1"
         $ sus_top_color               = "base"
 
         #Bottom
-        $ susan_skirt               = "characters/susan/clothes/bottoms/base/skirt_1.png"
-        $ sus_skirt                   = "skirt_1"
-        $ sus_skirt_color             = "base"
+        $ susan_bottom              = "characters/susan/clothes/bottoms/base/skirt_1.png"
+        $ sus_bottom                  = "skirt_1"
+        $ sus_bottom_color            = "base"
 
         #Underwear
-        $ susan_bra                 = "characters/susan/clothes/underwear/base/lace_bra.png"
-        $ sus_bra                     = "lace_bra"
+        $ susan_bra                 = "characters/susan/clothes/underwear/base/bra_base.png"
+        $ sus_bra                     = "bra_base"
         $ sus_bra_color               = "base"
 
-        $ susan_panties             = "characters/susan/clothes/underwear/base/lace_panties.png"
-        $ sus_panties                 = "lace_panties"
+        $ susan_panties             = "characters/susan/clothes/underwear/base/panties_base.png"
+        $ sus_panties                 = "panties_base"
         $ sus_panties_color           = "base"
 
         $ susan_onepiece            = "characters/susan/clothes/onepieces/base/blank.png"
@@ -152,6 +175,9 @@ label susan_init:
         $ susan_ears                = "characters/susan/accessories/ears/blank.png"
         $ sus_ears                    = "blank"
 
+        #Outfits
+        $ susan_outfit_GLBL = None
+        $ susan_temp_outfit = None
 
         #Cum layers
         $ susan_face_covered        = False
@@ -177,7 +203,6 @@ label susan_progress_init:
 
         $ susan_imperio_influence = False
         $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
-        $ reset_susans_wardrobe = False
 
         ##Flags
         $ susan_busy = False
@@ -189,6 +214,8 @@ label susan_progress_init:
         $ susan_name = "Miss Bones"
         $ sus_genie_name = "Sir"
 
+        #Stats
+        $ susan_curse_counter = 2 #She got cursed twice beforeyou unlock her. Poor girl...
 
 
     return

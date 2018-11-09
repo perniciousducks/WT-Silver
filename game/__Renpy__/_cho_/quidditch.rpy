@@ -5,7 +5,7 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("","annoyed","angry","angry","R",xpos="close",ypos="base")
@@ -85,7 +85,7 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -231,7 +231,7 @@ label cho_quidd_1_2: #come back and describe playing with a shorter skirt on (ha
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -302,7 +302,7 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("knocking")
     ">*knock* *knock* *knock*"
@@ -379,7 +379,7 @@ label cho_quidd_2_1: #Comes back after playing without a robe on
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("There's been a disaster!","scream","closed","angry","mid",xpos="mid",ypos="base")
@@ -482,7 +482,7 @@ label cho_quidd_2_2: #Comes back after playing with the robe still on
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("","annoyed","angry","angry","R",xpos="close",ypos="base")
@@ -529,7 +529,7 @@ label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
     $ cho_busy = True
 
     call update_cho_quidditch_outfit
-    call cho_outfit(cc_quidditch_OBJ)
+    call cho_outfit(cc_outfit_quidditch_OBJ)
 
     call play_sound("door")
     call cho_main("...","pout","suspicious","sad","R",xpos="mid",ypos="base")

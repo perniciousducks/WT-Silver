@@ -699,14 +699,14 @@ label store_items_init:
     $ hg_outfit_maid_ITEM.image = "hg_maid.png"
     $ hg_outfit_maid_ITEM.description = ">A classic Maids Outfit for a classy Witch."
 
-    if not hasattr(renpy.store,'hg_outfit_pirate_ITEM'):
+    if not hasattr(renpy.store,'hg_outfit_pirate_ITEM'): #Also gets unlocked from mirror event.
         $ hg_outfit_pirate_ITEM = store_item_class()
     $ hg_outfit_pirate_ITEM.id = "hg_outfit_pirate"
     $ hg_outfit_pirate_ITEM.name = "Pirate"
-    #$ hg_outfit_pirate_ITEM.cost = 75
+    $ hg_outfit_pirate_ITEM.cost = 75
     $ hg_outfit_pirate_ITEM.type = "outfit"
     $ hg_outfit_pirate_ITEM.items = ["outfit"]
-    $ hg_outfit_pirate_ITEM.unlockable = True #Reward for mirror event.
+    $ hg_outfit_pirate_ITEM.wait_time = 1
     $ hg_outfit_pirate_ITEM.image = "hg_pirate.png"
     $ hg_outfit_pirate_ITEM.description = "> A lightweight Pirates outfit with only room for the\n necessities. Comes with two canon ball storage compartments."
 

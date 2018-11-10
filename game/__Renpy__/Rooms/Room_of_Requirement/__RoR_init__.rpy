@@ -140,9 +140,9 @@ init python:
 
         def get_image(self):
             if self.unlocked == False:
-                return "interface/room_of_req/locked.png"
+                return "interface/icons/icon_lock.png"
             else:
-                return "interface/room_of_req/unlocked.png"
+                return "interface/icons/icon_lock_open.png"
 
         def getCharcters(self):
             ret_str = ""

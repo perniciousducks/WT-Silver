@@ -46,10 +46,10 @@ label sus_chibi(action = "", xpos=susan_chibi_xpos, ypos=susan_chibi_ypos, flip=
 
     else:
         if flip or susan_flip != 1: #Same variable that the main sprite is using. #1 == Default
-            $ susan_chibi_flip = 1
+            $ susan_chibi_flip = -1
             show screen susan_stand
         else:
-            $ susan_chibi_flip = -1
+            $ susan_chibi_flip = 1
             show screen susan_stand
         with d3
 
@@ -140,7 +140,7 @@ label susan_walk_end_loiter(dissolveTime = 3):
 screen susan_stand:
     tag susan_chibi
 
-    add susan_chibi_blink    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_stand    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
     add susan_chibi_shoes    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
     add susan_chibi_top      xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
     add susan_chibi_bottom   xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)

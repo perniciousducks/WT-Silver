@@ -1,21 +1,21 @@
 label door:
     hide screen main_room_menu
-    
+
     $ summon_list = []
     $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
     $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
     $ summon_list.append(["astoria", 0 if astoria_busy else 1]) if astoria_unlocked else 0
     $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
-    $ summon_list.append(["tonks", 0 if tonks else 1]) if tonks_unlocked else 0
+    $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
     $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
-    
+
     show screen door_menu
-    
+
     $_return = ui.interact()
-    
+
     hide screen door_menu
-    
+
     if not door_examined and _return == "door":
         $ door_examined = True
         hide screen genie
@@ -169,16 +169,15 @@ label door:
             jump night_main_menu
     elif _return == "tonks" and not tonks_busy:
         jump summon_tonks
-    
+
     elif _return=="Close":
         jump day_main_menu
-    
+
     $ renpy.jump(_return)
-    
+
 screen door_menu:
     zorder 8
     add "images/backgrounds/desk.png"
     use close_button
     use map_screen
     use generic_character_select(summon_list, "-Summon-", 812, 23)
-    

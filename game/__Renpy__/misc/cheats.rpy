@@ -6,7 +6,7 @@ label cheats:
                 "-Reset Hermione's mood-":
                     $ mad = 0
                     ">Hermione is no longer mad at you."
-                    jump cheats
+                    jump cheats_hermione
                 "-Max Whoring-":
                     $ her_whoring = 24
                     ">Hermione is now a giant slut."
@@ -43,7 +43,7 @@ label cheats:
                             if not i.unlockable:
                                 i.unlocked = True
                     ">All of Hermione's purchasable outfits and clothing sets have been unlocked."
-                    jump cheats
+                    jump cheats_hermione
 
                 "-Toggle Breast Expansion-":
                     if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts:
@@ -54,7 +54,7 @@ label cheats:
                     else:
                         $ hermione_perm_expand_breasts = True
                         "Hermione's breasts grow..."
-                    jump cheats
+                    jump cheats_hermione
 
                 "-Toggle Futa Hermione-":
                     if hermione_futa:
@@ -63,7 +63,7 @@ label cheats:
                     else:
                         $ hermione_futa = True
                         "Hermione's grows a... dick!"
-                    jump cheats
+                    jump cheats_hermione
                 "-never mind-":
                     jump cheats
 
@@ -79,19 +79,38 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
+        "-Astoria & Susan Cheats-":
+            label cheats_astoria:
+            menu:
+                "-Mail ministry letter-":
+                    $ letter_curse_complaint_OBJ.mailLetter()
+                    ">Letter sent."
+                    jump cheats_astoria
+                "-Unlock all spells-":
+                    $ astoria_affection = 2
+                    $ astoria_tonks_1_completed = True
+                    $ astoria_tonks_2_completed = True
+                    $ astoria_tonks_3_completed = True
+
+                    $ astoria_spells[0] = 3
+                    ">All spells are now unlocked!"
+                    jump cheats_astoria
+                "-never mind-":
+                    jump cheats
+
         "-Cho Cheats-":
             label cheats_cho:
             menu:
                 "-Reset Cho's mood-":
                     $ cho_mad = 0
                     ">Cho is no longer mad at you."
-                    jump cheats
+                    jump cheats_cho
                 "-Reset ALL Cho content-":
                     $ reset_cho_content = True
                     call cho_progress_init
                     $ reset_cho_content = False
                     ">Cho content reset!"
-                    jump cheats
+                    jump cheats_cho
                 "-never mind-":
                     jump cheats
 

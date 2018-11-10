@@ -8,6 +8,7 @@ label hide_all_screens:
     #Chibis
     call her_chibi("hide")
     call lun_chibi("hide")
+    call sus_chibi("hide")
     call sna_chibi("hide")
     call gen_chibi("hide")
 

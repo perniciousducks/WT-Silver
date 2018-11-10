@@ -55,7 +55,7 @@ screen generic_scroll_menu(menu_items, title, toogle1="", toogle2=""):
                 use generic_scroll_item(menu_items[i], 77+90*(i-(currentpage*item_shown)))
 
             
-screen generic_scroll_item(mirror_story, ypos=0):
+screen generic_scroll_item(menu_item, ypos=0):
     frame:
         background #00000000
         xpos 12
@@ -63,30 +63,30 @@ screen generic_scroll_item(mirror_story, ypos=0):
         xsize 535
         ysize 100
         
-        $ image_zoom = get_zoom(mirror_story.get_image(), 82, 81)
+        $ image_zoom = get_zoom(menu_item.get_image(), 82, 81)
         
         vbox:
             xpos 0
             ypos 1
             xsize 82
             ysize 81
-            add mirror_story.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
+            add menu_item.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
         
         vbox:
             xpos 94
             ypos 3
             xsize 440
             ysize 22
-            text mirror_story.get_title() yalign 0.5
+            text menu_item.get_title() yalign 0.5
             
         vbox:
             xpos 94
             ypos 30
             xsize 430
             ysize 55
-            text mirror_story.get_description()
+            text menu_item.get_description()
 
-        text mirror_story.get_buttom_right() xalign 1.0 yalign 1.0
+        text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
 
 screen generic_character_select(character_list=[], menu_text="menu name", xposition=24, yposition=52):
     

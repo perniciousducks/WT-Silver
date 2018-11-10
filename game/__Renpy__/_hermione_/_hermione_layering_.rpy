@@ -679,18 +679,6 @@ label update_her_hair:
     $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     return
 
-#Hair Update
-label h_update_hair:
-    $ hermione_hair_a = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
-    $ hermione_hair_b = "characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
-    return
-
-
-
-
-
-
-
 
 #Makeup
 screen hermione_makeup:

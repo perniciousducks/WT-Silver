@@ -313,7 +313,7 @@ label h_outfit_OBJ(outfit):
         $ h_request_wear_outfit = False
         $ hermione_wear_outfit = False
         call update_her_uniform
-        call h_update_hair
+        call update_her_hair
     else:
         $ h_request_wear_outfit = True
         $ hermione_wear_outfit = True
@@ -332,23 +332,27 @@ label h_outfit_OBJ(outfit):
 
         call load_hermione_clothing_saves
         call update_her_uniform
-        call h_update_hair
+        call update_her_hair
 
     return
 
 label h_equip_temp_outfit(outfit):
     if temp_outfit_GLBL == None:
-        $ temp_outfit_GLBL = hermoine_outfit_GLBL
-        $ temp_weir = h_request_wear_outfit
-        $ temp_costume = hermione_outfit
+        $ temp_outfit_GLBL = hermoine_outfit_GLBL  #Saves equipped outfit.
+        $ temp_wear_outfit = h_request_wear_outfit #Saves equip state.
+        $ temp_wear_top = h_request_wear_top       #Saves equip state.
 
     call h_outfit_OBJ(outfit)
     return
 
 label h_unequip_temp_outfit():
+    hide screen hermione_main
     $ hermoine_outfit_GLBL = temp_outfit_GLBL
-    if temp_weir and  temp_costume:
-        call h_outfit_OBJ(temp_outfit_GLBL)
+    $ h_request_wear_outfit = temp_wear_outfit
+    $ h_request_wear_top = temp_wear_top
+
+    if h_request_wear_outfit:
+        call h_outfit_OBJ(hermoine_outfit_GLBL)
     else:
         call h_outfit_OBJ(None)
     $ temp_outfit_GLBL = None

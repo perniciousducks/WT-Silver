@@ -225,8 +225,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 #SUCKING
                 hide screen ccg
                 $ face_on_cg = False
-                hide screen hermione_face
-                call h_update_hair
+                hide screen hermione_main
+                call update_her_hair
                 call her_chibi("hide")
                 hide screen genie
                 show screen chair_left
@@ -364,9 +364,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call blkfade
                 $ face_on_cg = False
-                hide screen hermione_face
-                call h_update
-                call h_update_hair
+                hide screen hermione_main
+                call update_her_hair
 
                 call her_main("I apologize for saying that I hate you, captain...","base","baseL",cheeks="blush",tears="mascara",ypos="head")
                 call her_main("And your canon is not rusty...",cheeks="blush",tears="mascara")
@@ -410,9 +409,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call blkfade
                 $ face_on_cg = False
-                hide screen hermione_face
-                call h_update
-                call h_update_hair
+                hide screen hermione_main
+                call update_her_hair
 
                 m "Well, I'm done... You can get off my ship now."
                 call her_main("Yes, captain...","silly","worried",cheeks="blush",tears="soft",ypos="head")
@@ -631,7 +629,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         #Ending
         $ face_on_cg = False
-        call h_update_hair
+        call update_her_hair
 
         m "Well, tis been intense..."
         call her_main("Ah-ha...{image=textheart} ah...{image=textheart}","grin","dead",cheeks="blush",tears="messy",ypos="head")
@@ -662,11 +660,12 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     call her_main("Thank you, captain...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
 
-    call her_chibi("desk","leave",2.7)
+    call her_walk("desk","leave",2.7)
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 
-    call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
+    if not hg_outfit_pirate_ITEM.unlocked:
+        call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
 
     call blkfade
     call h_unequip_temp_outfit

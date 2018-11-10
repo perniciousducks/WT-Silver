@@ -126,7 +126,7 @@ label update_hermione:
 
     call update_her_uniform
     call h_update_body
-    call h_update_hair
+    call update_her_hair
 
     return
 

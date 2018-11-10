@@ -201,7 +201,7 @@ screen clothing_unlock:
     add "interface/store/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
 
-label unlock_clothing(text="",item=""):
+label unlock_clothing(text="",item=None):
 
     $ renpy.play('sounds/win2.mp3')
     show screen notes
@@ -209,7 +209,7 @@ label unlock_clothing(text="",item=""):
     hide screen notes
     with d3
 
-    if item !="":
+    if item != None:
         $ mannequin_preview = item.getStoreImage()
     else:
         $ mannequin_preview = "images/store/01.png"
@@ -217,21 +217,20 @@ label unlock_clothing(text="",item=""):
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
 
-    if text != "":
-        $ quest_reward_text = text
-
     show screen clothing_unlock
     show screen blktone5
     with d3
 
     menu:
-        "[quest_reward_text]"
+        "[text]"
         "-Done Reading-":
             pass
 
     hide screen clothing_unlock
     hide screen blktone5
     with d3
+
+    $ item.unlocked = True
 
     $ menu_y = 0.5 #return to default menu align
 

@@ -442,10 +442,10 @@ label rum_block(item = None):
     if isinstance(item, gift_item):
         $ renpy.play('sounds/win2.mp3')   #Not loud.
         $ gift_item_inv[item.id] += 1
-        $ the_gift = item.image
+        $ the_gift = item.imagepath
         show screen gift
         with d3
-        ">You found [item.name]..."
+        ">You found [item.title]..."
         ">[item.description]"
         hide screen gift
         with d3

@@ -219,7 +219,7 @@ screen genie_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(69/6.9), "-Lust-", "", 69)
+                use stat_bar(int(100/10), "-Lust-", "", 100)
                 use stat_bar(int(0/10), "-Sanity-", "", 0)
 
                 use text_stat("Bird fed:")
@@ -389,7 +389,11 @@ screen tonks_stat_menu:
             mousewheel True
 
             vbox:
-                #use stat_bar(int(snape_support/2.4), "-Support-", "", snape_support)
+                use stat_bar(int(69/6.9), "-Lust-", "", 69)
+                #use stat_bar(int(snape_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
+                #use stat_bar(int(snape_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
+                #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
+
                 use text_stat("Hung out with...")
                 use text_stat("- Astoria: ", " times -", ton_astoria_date_counter)
 

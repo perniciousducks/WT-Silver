@@ -450,7 +450,7 @@ label against_the_rule:
 
     if not snape_friendship_maxed:# Turns TRUE when friendship with Snape been maxed out.
         call nar(">Your relationship with him has improved.")
-        $ snape_friendship +=1
+        $ sna_friendship +=1
 
     call blkfade
 

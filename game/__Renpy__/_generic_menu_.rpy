@@ -66,13 +66,11 @@ screen generic_scroll_item(menu_item, ypos=0):
         $ image_zoom = get_zoom(menu_item.get_image(), 82, 81)
 
         vbox:
-            xpos 45
-            ypos 45
-            xalign 0.5
-            yalign 0.5
+            xpos 0
+            ypos 1
             xsize 82
             ysize 81
-            add menu_item.get_image() xalign 0.5 yalign 0.5 zoom 0.4
+            add mirror_story.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
 
         vbox:
             xpos 94

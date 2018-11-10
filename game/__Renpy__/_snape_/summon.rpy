@@ -22,9 +22,9 @@ label summon_snape:
         "-Let's hang-" if not daytime and not snape_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
                 jump not_today #Snape says: "I am busy tonight."
-#            elif snape_friendship >= 39 and her_whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
+#            elif sna_friendship >= 39 and her_whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
 #                jump not_today #Snape says: "I am busy tonight."
-            elif snape_friendship >= 88 and her_whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
+            elif sna_friendship >= 88 and her_whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
                 jump not_today #Snape says: "I am busy tonight."
             else:
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -240,51 +240,51 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 
 
 
-    if snape_friendship >= 5 and snape_events == 0:
+    if sna_friendship >= 5 and snape_events == 0:
         call date_with_snape_01
 
-    elif snape_friendship >= 12 and snape_events == 1: #LEVEL 02
+    elif sna_friendship >= 12 and snape_events == 1: #LEVEL 02
         call date_with_snape_02
 
-    elif snape_friendship >= 19 and snape_events == 2: #LEVEL 03
+    elif sna_friendship >= 19 and snape_events == 2: #LEVEL 03
         call date_with_snape_03
 
-    elif snape_friendship >= 27 and snape_events == 3: #LEVEL 04
+    elif sna_friendship >= 27 and snape_events == 3: #LEVEL 04
         call date_with_snape_04
 
-    elif snape_friendship >= 34 and snape_events == 4: #LEVEL 05
+    elif sna_friendship >= 34 and snape_events == 4: #LEVEL 05
         call date_with_snape_05
 
-    elif snape_friendship >= 41 and snape_events == 5: #LEVEL 06. Can't proceed after this until her_whoring >= Lv 3.
+    elif sna_friendship >= 41 and snape_events == 5: #LEVEL 06. Can't proceed after this until her_whoring >= Lv 3.
         call date_with_snape_06
 
-    elif snape_friendship >= 48 and snape_events == 6: #LEVEL 07
+    elif sna_friendship >= 48 and snape_events == 6: #LEVEL 07
         call date_with_snape_07
 
-    elif snape_friendship >= 55 and snape_events == 7: #LEVEL 08
+    elif sna_friendship >= 55 and snape_events == 7: #LEVEL 08
         call date_with_snape_08
 
-    elif snape_friendship >= 62 and snape_events == 8: #LEVEL 09
+    elif sna_friendship >= 62 and snape_events == 8: #LEVEL 09
         call date_with_snape_09
 
-    elif snape_friendship >= 69 and snape_events == 9: #EVENT 10
+    elif sna_friendship >= 69 and snape_events == 9: #EVENT 10
         call date_with_snape_10
 
-    elif snape_friendship >= 76 and snape_events == 10: #EVENT 10
+    elif sna_friendship >= 76 and snape_events == 10: #EVENT 10
         call date_with_snape_11
 
-    elif snape_friendship >= 83 and snape_events == 11: #EVENT 11
+    elif sna_friendship >= 83 and snape_events == 11: #EVENT 11
         call date_with_snape_12
 
-    elif snape_friendship >= 88 and snape_events == 12: #EVENT 12. If her_whoring level > 5.
+    elif sna_friendship >= 88 and snape_events == 12: #EVENT 12. If her_whoring level > 5.
         call date_with_snape_13
 
-    elif snape_friendship >= 93 and snape_events == 13: #EVENT 13
+    elif sna_friendship >= 93 and snape_events == 13: #EVENT 13
         call date_with_snape_14
 
-    elif snape_friendship >= 98 and snape_events == 14: #EVENT 14
+    elif sna_friendship >= 98 and snape_events == 14: #EVENT 14
         call date_with_snape_15
-        $ snape_friendship = 100
+        $ sna_friendship = 100
         $ snape_friendship_maxed = True
 
     else:
@@ -300,13 +300,13 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 
 
 
-    if snape_friendship < 100:
+    if sna_friendship < 100:
         if game_difficulty < 2: #Easy & Normal
-            $ snape_friendship += 3
+            $ sna_friendship += 3
         elif game_difficulty == 2:
-            $ snape_friendship += 2
+            $ sna_friendship += 2
         else:
-            $ snape_friendship += renpy.random.randint(0, 1) #Hardcore. Wine is required.
+            $ sna_friendship += renpy.random.randint(0, 1) #Hardcore. Wine is required.
 
     jump day_start
 
@@ -742,7 +742,7 @@ label wine_intro:
     hide screen notes
     show screen notes
     ">Your relationship with Professor Snape has improved."
-    $ snape_friendship +=1
+    $ sna_friendship +=1
     hide screen bld1
     with d3
     return
@@ -784,13 +784,13 @@ label drink_wine:
     call nar(">Your relationship with Professor Snape has improved.")
     #">Your relationship with Professor Snape has improved."
 
-    if snape_friendship < 100: #max
+    if sna_friendship < 100: #max
         if game_difficulty < 2:      #Easy difficulty
-            $ snape_friendship += 2
+            $ sna_friendship += 2
         elif game_difficulty == 2:   #Normal
-            $ snape_friendship += 3
+            $ sna_friendship += 3
         else:                        #Hardcore, larger wine bonus.
-            $ snape_friendship += 6
+            $ sna_friendship += 6
 
     return
 

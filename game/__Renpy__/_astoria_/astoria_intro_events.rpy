@@ -655,6 +655,10 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
 
     m "Come in."
     call play_sound("door")
+
+    call sus_walk("door","mid",2.5)
+    pause.8
+
     call sus_main("","upset","base","worried","mid",xpos="mid",ypos="base")
     call ctc
     with hpunch
@@ -844,9 +848,8 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     pause.8
 
     call play_sound("door")
-    hide screen susan_main
-    with d3
-    pause.2
+
+    call sus_walk("mid","leave",2.5)
 
     call play_music("hermione_theme")
     call ast_main("","grin","angry","angry","mid",xpos="mid",ypos="base",trans="fade")

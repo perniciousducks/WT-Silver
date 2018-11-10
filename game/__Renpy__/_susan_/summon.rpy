@@ -12,7 +12,7 @@ label summon_susan:
 
     call update_sus_uniform
 
-    call sus_walk("door","mid",2.5)
+    call sus_chibi("stand","mid","base")
 
     if one_of_ten < 4:
         if daytime:
@@ -65,8 +65,6 @@ label summon_susan:
                 call sus_main("Uhm... good night then, [sus_genie_name].","base","base","base","down")
 
             call play_sound("door")
-
-            call sus_walk("mid","leave",2.5)
 
             $ susan_busy = True
 

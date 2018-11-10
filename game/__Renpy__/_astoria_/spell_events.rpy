@@ -11,8 +11,12 @@ label susan_imperio:
 
     call nar(">Astoria leaves to summon Susan.")
     pause.5
+    call hide_blkfade
+
     call play_sound("door")
-    hide screen blkfade
+    call sus_walk("door","mid",2.5)
+    pause.8
+
     call sus_main("Hello, Professor.","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("You wanted to see me?","upset","base","worried","down")
 
@@ -43,8 +47,10 @@ label susan_imperio:
     call ast_main("All done, [ast_genie_name]! This will probably last a couple of days...","smile","base","base","R")
     call ast_main("You may leave now, [ast_susan_name]!","grin","happyCl","base","mid")
     call sus_main("Ok","base","base","base","up")
-    hide screen susan_main
-    with d3
+
+    call sus_walk("mid","leave",2.5)
+
+    call ast_main(xpos="base",ypos="base")
 
     $ susan_imperio_counter += 20 #Lasts 20 days.
     $ susan_imperio_influence = True
@@ -64,8 +70,12 @@ label imperio_spell_1:
 
     call nar(">You summon Susan to your office.")
     pause.5
+    call hide_blkfade
+
     call play_sound("door")
-    hide screen blkfade
+    call sus_walk("door","mid",2.5)
+    pause.8
+
     call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call ast_main("Hey [ast_susan_name]!","grin","narrow","narrow","L",xpos="base",ypos="base")
     call sus_main("Astoria? What are you doing here?","open","base","worried","R")
@@ -225,9 +235,8 @@ label imperio_spell_1:
     m "Good night..."
     call ast_main("Come on Susy, go back to your room and go to sleep.","open","base","base","L")
     call sus_main("yes...","upset","narrow","worried","down")
-    hide screen susan_main
-    with d3
-    pause.5
+
+    call sus_walk("mid","leave",2.5)
 
     call ast_main("(This is so much fun!)","grin","closed","base","mid")
     hide screen astoria_main
@@ -260,8 +269,12 @@ label imperio_spell_2: #second level imperio spell #needs posing
 
     call nar(">You summon Susan up to your office.")
     pause.5
+    call hide_blkfade
+
     call play_sound("door")
-    hide screen blkfade
+    call sus_walk("door","mid",2.5)
+    pause.8
+
     call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("Astoria? Why are you here again?","open","base","worried","R")
     call ast_main("Oh... no reason...","pout","base","base","down")
@@ -438,9 +451,9 @@ label imperio_spell_2: #second level imperio spell #needs posing
     $ susan_wear_bra = True
     call update_sus_uniform
     call sus_main("{size=+10}Hmph! I hope you Enjoy azkaban perverts!{/size}","upset","narrow","angry","down")
-    call play_sound("door")
-    hide screen susan_main
-    with d3
+
+    call sus_walk("mid","leave",2)
+
     call ast_main("","pout","narrow","narrow","R")
     call gen_chibi("cum_on_desk")
     pause.5
@@ -487,8 +500,12 @@ label imperio_spell_3:
 
     call nar(">You summon Susan up to your office.")
     pause.5
+    call hide_blkfade
+
     call play_sound("door")
-    hide screen blkfade
+    call sus_walk("door","mid",2.5)
+    pause.8
+
     call sus_main("You wanted to see me sir?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("Astoria?...","upset","base","worried","R")
     call sus_main("You seem to be here quite often...","upset","narrow","worried","R")
@@ -754,10 +771,7 @@ label imperio_spell_3:
     $ susan_face_covered = False
     call sus_main("I hope you two are happy...","upset","narrow","base","down")
 
-    call play_sound("door")
-    hide screen susan_main
-    with d3
-    pause.5
+    call sus_walk("mid","leave",2)
 
     call nar(">She turns and runs out the door, tears streaming down her face.")
     call ast_main("ahahahahaha, that was incredible, dumby!","happy","wide","wide","mid")

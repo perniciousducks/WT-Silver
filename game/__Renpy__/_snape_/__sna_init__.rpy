@@ -32,10 +32,10 @@ label snape_progress_init:
         ###SNAPE STATS###
         $ snape_busy = False #When True, you can't summon Snape.
 
-        $ snape_support = 0 #Controls how much points is awarded to SLYTHERIN daily.
+        $ sna_support = 0 #Controls how much points is awarded to SLYTHERIN daily.
         $ snape_events = 0 #Get's +1 point every time a special event with Snape happens.
         $ snape_dates_counter = 0
-        $ snape_friendship = 0 #Get's +1 after every evening spent is Snape's company.
+        $ sna_friendship = 0 #Get's +1 after every evening spent is Snape's company.
         $ snape_friendship_maxed = False
 
         $ wine_intro_done = False

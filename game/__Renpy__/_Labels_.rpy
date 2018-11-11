@@ -35,6 +35,9 @@ label hide_all_screens:
     hide screen package
     hide screen owl
 
+    #Other Rooms
+    hide screen weasley_store_room
+
     #General
     hide screen main_room_menu
     hide screen points
@@ -97,8 +100,12 @@ label room(room=None, hide_screens=True):
 
         call gen_chibi("sit_behind_desk")
 
-    if room in ["store", "shop"]:
-        pass
+    if room in ["weasley_store"]:
+        $ current_room = "weasley_store"
+
+        show screen weasley_store_room
+        show screen points
+
     if room in ["clothing_store", "clothe_store"]:
         pass
 

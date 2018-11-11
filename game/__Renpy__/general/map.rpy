@@ -30,7 +30,7 @@ screen map_screen:
             hotspot (318, 285, 75, 45) clicked Return("floor_7th") #7th floor
             #hotspot (656, 232, 106, 33) clicked Return("inn_menu") #inn
             #hotspot (376, 84, 111, 57) clicked Return("map_pitch") #pitch
-            hotspot (307, 230, 59, 37) clicked Return("shop_intro") #shop
+            hotspot (307, 230, 59, 37) clicked Return("open_store") #shop
             hotspot (33, 535, 39, 39) clicked Return("day_main_menu") #return
 
             #Map Events

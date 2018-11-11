@@ -115,7 +115,7 @@ label cupboard:
                 "-Never mind-":
                     jump cupboard
 
-        "-Potion crafting-" if shop_found:
+        "-Potion crafting-" if store_intro_done:
             jump potion_menu
 
         "-Options-":

@@ -1,8 +1,8 @@
 label tentacle_shop_scene:
-    show screen shop_screen
+    show screen weasley_store_room
     if tent_scroll:
         "You already own this scroll"
-        call screen shop_screen
+        call screen weasley_store_room
     if her_whoring <= 15:
         m "What's in this scroll?"
         ger "Don't worry about it."
@@ -10,7 +10,7 @@ label tentacle_shop_scene:
         ger "You're not ready for what's in this scroll."
         m "Well that just makes me want it more."
         ger "Too bad."
-        call screen shop_screen_menu
+        call screen weasley_store_menu
     m "What's this scroll?"
     fre "This is the recipe for a powerful and forbidden potion."
     ger "Acquired completely legitimately I might add!"
@@ -40,11 +40,11 @@ label tentacle_shop_scene:
             $ gold -= 300
             $ tent_scroll = True
             $ attic_open = True
-            call screen shop_screen_menu
+            call screen weasley_store_menu
         "-No thanks-":
             m "No thanks, not right now"
             fre "Perhaps later then"
-            call screen shop_screen_menu
+            call screen weasley_store_menu
 
 label tentacle_scene_intro: #Public tentacle scene
     show screen blkfade

@@ -188,6 +188,10 @@ label update_wr_head_list:
 
         $ wr_hair.append("A")
 
+        $ wr_hats.append("paper_bag_1")
+        $ wr_hats.append("paper_bag_2")
+        $ wr_hats.append("paper_bag_3")
+
     return
 
 

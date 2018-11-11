@@ -481,7 +481,7 @@ label equip_ton_head_accessory:
         call set_ton_ears(head_accessory_choice)
     if head_accessory_choice in []:
         call set_ton_glasses(head_accessory_choice)
-    if head_accessory_choice in []:
+    if head_accessory_choice in ["paper_bag_1","paper_bag_2","paper_bag_3"]:
         call set_ton_hat(head_accessory_choice)
 
     hide screen wardrobe

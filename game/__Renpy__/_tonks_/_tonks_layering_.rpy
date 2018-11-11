@@ -38,7 +38,8 @@ screen tonks_main:
     ### ACCESORIES LAYERS ###
 
     #Hair+
-    add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    if not (tonks_wear_hat and ton_hat in ["paper_bag_1","paper_bag_2","paper_bag_3"] ):
+        add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     #Hat
     if tonks_wear_hat:

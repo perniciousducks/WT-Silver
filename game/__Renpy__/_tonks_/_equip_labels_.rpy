@@ -29,7 +29,7 @@ label update_ton_uniform:
     $ tonks_robe_back      = "characters/tonks/clothes/robe/base/"+str(ton_robe)+"_back.png"
 
     #Accessories
-    $ tonks_hat            = "characters/tonks/accessories/hats/"+str(ton_hat)+".png"
+    $ tonks_hat            = "characters/tonks/accessories/hats/hair_"+str(ton_hair_style)+"/"+str(ton_hat)+".png"
 
     #Piercings
     $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/"+str(ton_ear_piercing_color)+"/"+str(ton_ear_piercing)+".png"

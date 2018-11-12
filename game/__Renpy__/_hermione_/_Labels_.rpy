@@ -55,14 +55,6 @@ label __init_variables:
             costume_event = False
         )
 
-    if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
-        $ hg_pf_LetMeTouchThem_OBJ = personal_favor(
-            imagination_level = 3,
-            menu_text = "Let me touch them!",
-            start_label = "hg_pf_LetMeTouchThem",
-            costume_event = False
-        )
-
     if not hasattr(renpy.store,'hg_pf_TouchYourself_OBJ'): #important!
         $ hg_pf_TouchYourself_OBJ = personal_favor(
             imagination_level = 4,
@@ -120,7 +112,6 @@ label __init_variables:
     $ hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
     $ hg_pf_list.append(hg_pf_DanceForMe_OBJ)
     $ hg_pf_list.append(hg_pf_ShowMeYourAss_OBJ)
-    $ hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
     $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
     $ hg_pf_list.append(hg_pf_TitJob_OBJ)
     $ hg_pf_list.append(hg_pf_TouchYourself_OBJ)
@@ -396,7 +387,6 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
 
     hide screen chair_left
     hide screen desk
-    hide screen hermione_04 #Stands with tits out.
     hide screen groping_naked_tits
     hide screen genie_and_tits_01
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.

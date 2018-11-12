@@ -234,7 +234,7 @@ screen hermione_stat_menu:
                 #Imagination 2:
                 if imagination >= 2:
                     use text_stat("You admired her tits:")
-                    use text_stat("- ", " times -", (hg_pf_BreastMolester_OBJ.points + hg_pf_LetMeTouchThem_OBJ.points) )
+                    use text_stat("- ", " times -", hg_pf_BreastMolester_OBJ.points)
                     use text_stat("You admired her butt:")
                     use text_stat("- ", " times -", (hg_pf_ButtMolester_OBJ.points + hg_pf_ShowMeYourAss_OBJ.points) )
                 else:

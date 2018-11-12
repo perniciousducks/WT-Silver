@@ -379,36 +379,30 @@ label update_hints:
         $ hg_pf_ShowMeYourAss_OBJ.progress_hint = False
 
     #Favour 8
-    if her_whoring >= 9 and her_whoring < 12 and game_difficulty <= 2:
-        $ hg_pf_LetMeTouchThem_OBJ.progress_hint = True
-    else:
-        $ hg_pf_LetMeTouchThem_OBJ.progress_hint = False
-
-    #Favour 9
     if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
         $ hg_pf_TouchMe_OBJ.progress_hint = True
     else:
         $ hg_pf_TouchMe_OBJ.progress_hint = False
 
-    #Favour 10
+    #Favour 9
     if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
         $ hg_pf_TitJob_OBJ.progress_hint = True
     else:
         $ hg_pf_TitJob_OBJ.progress_hint = False
 
-    #Favour 11
+    #Favour 10
     if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
         $ hg_pf_SuckIt_OBJ.progress_hint = True
     else:
         $ hg_pf_SuckIt_OBJ.progress_hint = False
 
-    #Favour 12
+    #Favour 11
     if her_whoring >= 18 and her_whoring < 21 and game_difficulty <= 2:
         $ hg_pf_LetsHaveSex_OBJ.progress_hint = True
     else:
         $ hg_pf_LetsHaveSex_OBJ.progress_hint = False
 
-    #Favour 13
+    #Favour 12
     if her_whoring >= 21 and her_whoring < 24 and game_difficulty <= 2:
         $ hg_pf_TimeForAnal_OBJ.progress_hint = True
     else:

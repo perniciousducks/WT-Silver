@@ -128,6 +128,293 @@ label hg_pf_SuckIt: #15+
 
 
 
+
+
+### First Blowjob ###
+
+label hg_blowjob_1: #Call label. Returns.
+    call play_music("playful_tension") # SEX THEME.
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen genie
+    call her_chibi("hide")
+    show screen chair_left
+    call u_play_ani
+    hide screen bld1
+    hide screen blkfade
+    with fade
+    call ctc
+
+    call her_main("*Slurp!* *Gulp!* *Slurp!*",ypos="head")
+    m "Yes..."
+    m "Try to take it deeper now..."
+    call her_main("*Gulp!* *Gobble!* *Gobble!*")
+    m "Yes, like that. Good."
+    call her_main("*Slurp!* *Gltch!* *Gulp!*")
+    m "Yes, that's a good girl."
+
+    menu:
+        m "Hm..."
+        "\"Whatever happened to your \"MRM\" thing?\"":
+            call her_main("*Slurp?*",ypos="head")
+            call u_pause_ani
+            call her_main("Oh, well...","angry","down_raised")
+            call her_main("We are still active, but...")
+            call u_play_ani
+            her "*Slurp!* *Gobble!*"
+            call u_pause_ani
+            call her_main("But we are not getting as popular and as much support as I thought we would...","angry","wink")
+            call u_play_ani
+            her "*Slurp!* *Gulp!* *Gulp!*"
+            m "Oh... This is good..."
+            her "*Slurp!* *Slurp!* *Slurp!*"
+            m "Hm..."
+            m "So you don't mind selling me sexual favours, letting me play with your tits and such..."
+            her "*Gobble!* *Gltch!* *Slurp!*"
+            m "And then condemn such behavior in front of the other students."
+            her "*Slurp!* *Slurp!* *Gulp!*"
+            m "You perverted, little hypocrite."
+            her "*Gulp--"
+            call u_pause_ani
+            call her_main("That's not what we stand for, [genie_name].","angry","base")
+            m "What do you mean?"
+            call her_main("The \"MRM\" is about gender equality.","open","closed")
+            call her_main("We are not as much against selling sexual favours to the teachers...")
+            call her_main("As we are against the gender inequality that the selling of sexual favour creates...")
+            m "Hm..."
+            m "This conversation is starting to bore me..."
+            m "Suck on my cock some more before we continue."
+            call her_main("Of course, [genie_name].","soft","ahegao")
+            call u_play_ani
+            her "*Gobble!* *Slurp!* *Slurp!*"
+            m "Yes, much better..."
+            m "But you still disapprove of selling the favours, right?"
+            her "*Slurp--"
+            call u_pause_ani
+            call her_main("Yes, it is frowned upon...","upset","closed")
+            m "And yet, you are the biggest offender by far."
+            call her_main("But what choice do I have?","upset","closed")
+            call her_main("I've been put in a very difficult position...")
+            m "The cock, [hermione_name]."
+            call her_main("Right, sorry...","upset","closed")
+            call u_play_ani
+            her "*Slurp!* *Gulp!* *Gltch!*"
+            her "*Slurp--"
+            call u_pause_ani
+            call her_main("This one time we had a meeting right after I sold you another favour, [genie_name].","angry","base")
+            call her_main("I had to give a speech with my uniform all messy and stained.")
+            call her_main("It felt awful that I had to do that...")
+            m "You did enjoy it a little bit though..."
+            call her_main("Well...","angry","down_raised")
+            m "Just admit it."
+            call her_main("...............","angry","base")
+            m "Yes, I knew it. You took pleasure in it, you little perv."
+            call her_main("I suppose it was embarrassing and exciting at the same time...","angry","down_raised")
+            call her_main("And it made me feel even worse about myself.")
+            m "You poor thing."
+            m "Cock back in the mouth."
+            call her_main("Yes, [genie_name].","angry","base")
+            call u_play_ani
+
+        "\"Your parents must be proud of you...\"":
+            call her_main("*Slurp--",ypos="head")
+            call u_pause_ani
+            call her_main("Yes, I believe they are...","smile","happyCl")
+            call her_main("With me being an excellent student despite being muggle-born and all...","base","happyCl")
+            call her_main("Although at first they were against sending me to some \"Bogus boarding school\".","angry","base")
+            call her_main("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","base","happyCl")
+            m "Yes, a respectable institution indeed."
+            m "Cock back in your mouth [hermione_name]."
+            call u_play_ani
+            her "*Slurp!* *Gulp!* *Gobble!*"
+            m "Yes, just keep at it for a while..."
+            her "*Slurp!* *Gltch!* *Gulp!*"
+            m "Good, good..."
+            m "So, what would your folks say if they were to see you now, [hermione_name]?"
+            her "*Slurp--"
+            call u_pause_ani
+            call her_main("They would not understand of course...","open","down")
+            call her_main("But I do not care.")
+            call her_main("I am not afraid to \"get my hands dirty\" and do what needs to be done.","upset","closed")
+            m "A bit rebellious, aren't you?"
+            call her_main("Hm... I suppose I am.","angry","wink")
+            m "Back to sucking then. Teach your folks a lesson."
+            call u_play_ani
+            her "*Slurp!* *Slurp!* *Slurp!*"
+
+        "\"Tell me about the \"Gryffindor\" house.\"":
+            call her_main("*Slurp--",ypos="head")
+            call u_pause_ani
+            call her_main("What can I say that you don't already know, [genie_name]?","soft","baseL")
+            m "Yes... Ehm... I know everything of course."
+            m "But I want to see how much you know."
+            m "To test your knowledge on the subject."
+            call nar(">As soon as you mention \"test\" Hermone's eyes light up with excitement.")
+            call her_main("OK. But I need a moment gather my thoughts...","smile","happyCl",emote="06")
+            call u_play_ani
+            her "*Slurp!* *Slurp!* *Gulp!*"
+            m "Oh, yes... Take as much time as you need, [hermione_name]."
+            her "*Slurp!* *Gulp!* *Slurp!*"
+            her "*Gulp--"
+            call u_pause_ani
+            call her_main("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","open","down")
+            call her_main("The heraldic animal of \"Gryffindor\" is the lion...")
+            call her_main("And it's colors are red and gold.","open","closed")
+            call u_play_ani
+            her "*Gulp!* *Slurp!* *Slurp!*"
+            call u_pause_ani
+            call her_main("Professor Minerva McGonagall is the headmaster of our house.","open","closed")
+            call her_main("The \"Gryffindor\" house emphasizes the traits of courage...")
+            call her_main("As well as \"daring, nerve and chivalry\"...")
+            call her_main("And thus its members are generally regarded as brave but reckless...")
+            call u_play_ani
+            her "*Slurp!* *Slurp!* *Slurp!*"
+            call u_pause_ani
+            call her_main("\"Gryffindor\" corresponds roughly to the element of fire...","open","closed")
+            call her_main("And for that reason the colours of red and gold were chosen.")
+            call u_play_ani
+            her "*Slurp!* *Gulp!* *Slurp!*"
+            m "Hm..."
+            m "Well, I thought I could turn this around somehow to make fun of you..."
+            her "*Slurp??*"
+            m "Well, with your house representing courage and righteousness and such..."
+            m "And you being a nasty slut..."
+            call u_pause_ani
+            call her_main("[genie_name]!","scream","angry",emote="01")
+            m "But to be honest..."
+            m "\"Daring, nerve, fire, recklessness\"..."
+            m "That sort of describes your personality quite well..."
+            call her_main("[genie_name]...","base","base")
+            call u_play_ani
+            her "*Gobble!!* *Gltch!!* *Gobble!!!*"
+            m "Good girl..."
+
+    m "Good..."
+    call her_main("*Gobble!* *Slurp!* *Slurp!*",ypos="head")
+    m "Good... Back and forth, back and forth... Good girl."
+    her "*Slurp!* *Slurp!* *Slurp!*"
+    her "*Slurp--"
+    call u_pause_ani
+    call her_main("[genie_name]... I am a... whore.","open","down")
+    m "What?"
+    call u_play_ani
+    her "*Slurp-Slurp-Slurp!*"
+    call u_pause_ani
+    call her_main("I truly am a slut and deeply enjoy sucking your cock.","angry","base")
+    m "Oh, yes, yes... Say more things like that."
+    call u_play_ani
+    her "*Slurp!* *Gulp!* *Slurp!*"
+    call u_pause_ani
+    call her_main("Please, [genie_name]. Cum for me.","soft","ahegao")
+    with hpunch
+    g4 "Argh! You little...!!!"
+    g4 "{size=-4}(Here it comes. Should I give her a warning?){/size}"
+
+    menu:
+        m "..."
+        "-Warn her-":
+            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="head")
+            g4 "Heads up, [hermione_name]! Here it comes!"
+            call her_main("!!!","angry","wide")
+            call ctc
+            hide screen bld1
+            call blkfade
+
+            call set_u_ani("cum_in_mouth_ani")
+            call u_play_ani
+            ">Hermione quickly puts your cock back in her mouth and continues to suck on it with great passion."
+            call cum_block
+            g4 "{size=+7}ARGH!{/size}"
+            her "*Gulp!-Gulp!-Gulp!*"
+            with hpunch
+            g4 "And some more!"
+            her "*Gulp!* *Gulp!* *Gulp!*"
+            call hide_blkfade
+            call ctc
+
+            call bld
+            m "Well, I think that's it."
+            call u_pause_ani
+            call her_main("..............","cum","worriedCl")
+            m "Are you alright there, [hermione_name]?"
+            call her_main("Yes, [genie_name]...","grin","dead")
+            call her_main("You came so much...")
+            m "You managed to swallow it all though."
+            call her_main("Yes... I thought I would choke...","grin","dead")
+            call her_main("But I made a promise to myself that I won't let go of your penis no matter what!")
+            m "Good girl."
+            call her_main("Thank you, [genie_name].","grin","dead")
+            call her_main("But, still... You came so much...")
+            call her_main("I almost feel as if I just got fed...","soft","ahegao")
+            call her_main("My stomach is so full...")
+            g9 "Yes, I fed you with my cum!"
+
+            if daytime:
+                call her_main("I think I may skip the meal and go straight to class today.","soft","ahegao")
+            else:
+                call her_main("Yes. I think I may skip supper tonight...","soft","ahegao")
+
+            call her_main("Can I get paid now?","angry","wink")
+            hide screen hermione_main
+            call blkfade
+
+            return
+
+        "-Don't bother-":
+            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="head")
+            call cum_block
+            g4 "{size=+7}Whore!{/size}"
+            call her_main("!!?","shock","wide")
+            hide screen bld1
+            call set_u_ani("cum_on_face_ani")
+            call u_play_ani
+
+            call ctc
+
+            call bld
+            $ uni_sperm = True
+            $ u_sperm = "characters/hermione/face/auto_07.png"
+            call her_main("[genie_name]...","shock","wide")
+            g4 "Don't you move now, [hermione_name]."
+            g4 "Yes, just be still and take it."
+            g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
+            call her_main("..............","angry","base",tears="soft")
+            m "Whew..."
+            call set_u_ani("cum_on_face_blink_ani")
+            call her_main("..............","normal","worriedCl")
+            m "Alright, I'm done..."
+            call her_main(".................","open","base")
+
+            if daytime:
+                her "My classes are about to start..."
+
+            m "Just wipe it off and you'll be alright."
+            call her_main("............","open","base")
+            m "Unless, you don't want to."
+            call her_main("Huh?","angry","worriedCl",emote="05")
+            m "And would rather go outside looking like this."
+            m "Let everyone see what a nasty little slut you are."
+            call her_main("Of course not, [genie_name]!","angry","worriedCl",emote="05")
+            call ctc
+            call blkfade
+
+            stop music fadeout 1.0
+
+            if daytime:
+                m "You better go before you are late for your classes..."
+            else:
+                m "It's getting late..."
+                call her_main("Yes...","angry","worriedCl",emote="05")
+
+            call her_main("Can I get paid before I leave, [genie_name]?","upset","wink")
+            hide screen hermione_main
+            call blkfade
+
+            $ aftersperm = True
+
+            return
+
+
+
 ### Third Blowjob ###
 
 label hg_blowjob_3: #Call label. Returns.
@@ -880,292 +1167,6 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
                 call her_main("Fine, but my skin better look better tomorrow.")
 
             call blkfade
-
-            return
-
-
-
-
-### First Blowjob ###
-
-label hg_blowjob_1: #Call label. Returns.
-    call play_music("playful_tension") # SEX THEME.
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    hide screen genie
-    call her_chibi("hide")
-    show screen chair_left
-    call u_play_ani
-    hide screen bld1
-    hide screen blkfade
-    with fade
-    call ctc
-
-    call her_main("*Slurp!* *Gulp!* *Slurp!*",ypos="head")
-    m "Yes..."
-    m "Try to take it deeper now..."
-    call her_main("*Gulp!* *Gobble!* *Gobble!*")
-    m "Yes, like that. Good."
-    call her_main("*Slurp!* *Gltch!* *Gulp!*")
-    m "Yes, that's a good girl."
-
-    menu:
-        m "Hm..."
-        "\"Whatever happened to your \"MRM\" thing?\"":
-            call her_main("*Slurp?*",ypos="head")
-            call u_pause_ani
-            call her_main("Oh, well...","angry","down_raised")
-            call her_main("We are still active, but...")
-            call u_play_ani
-            her "*Slurp!* *Gobble!*"
-            call u_pause_ani
-            call her_main("But we are not getting as popular and as much support as I thought we would...","angry","wink")
-            call u_play_ani
-            her "*Slurp!* *Gulp!* *Gulp!*"
-            m "Oh... This is good..."
-            her "*Slurp!* *Slurp!* *Slurp!*"
-            m "Hm..."
-            m "So you don't mind selling me sexual favours, letting me play with your tits and such..."
-            her "*Gobble!* *Gltch!* *Slurp!*"
-            m "And then condemn such behavior in front of the other students."
-            her "*Slurp!* *Slurp!* *Gulp!*"
-            m "You perverted, little hypocrite."
-            her "*Gulp--"
-            call u_pause_ani
-            call her_main("That's not what we stand for, [genie_name].","angry","base")
-            m "What do you mean?"
-            call her_main("The \"MRM\" is about gender equality.","open","closed")
-            call her_main("We are not as much against selling sexual favours to the teachers...")
-            call her_main("As we are against the gender inequality that the selling of sexual favour creates...")
-            m "Hm..."
-            m "This conversation is starting to bore me..."
-            m "Suck on my cock some more before we continue."
-            call her_main("Of course, [genie_name].","soft","ahegao")
-            call u_play_ani
-            her "*Gobble!* *Slurp!* *Slurp!*"
-            m "Yes, much better..."
-            m "But you still disapprove of selling the favours, right?"
-            her "*Slurp--"
-            call u_pause_ani
-            call her_main("Yes, it is frowned upon...","upset","closed")
-            m "And yet, you are the biggest offender by far."
-            call her_main("But what choice do I have?","upset","closed")
-            call her_main("I've been put in a very difficult position...")
-            m "The cock, [hermione_name]."
-            call her_main("Right, sorry...","upset","closed")
-            call u_play_ani
-            her "*Slurp!* *Gulp!* *Gltch!*"
-            her "*Slurp--"
-            call u_pause_ani
-            call her_main("This one time we had a meeting right after I sold you another favour, [genie_name].","angry","base")
-            call her_main("I had to give a speech with my uniform all messy and stained.")
-            call her_main("It felt awful that I had to do that...")
-            m "You did enjoy it a little bit though..."
-            call her_main("Well...","angry","down_raised")
-            m "Just admit it."
-            call her_main("...............","angry","base")
-            m "Yes, I knew it. You took pleasure in it, you little perv."
-            call her_main("I suppose it was embarrassing and exciting at the same time...","angry","down_raised")
-            call her_main("And it made me feel even worse about myself.")
-            m "You poor thing."
-            m "Cock back in the mouth."
-            call her_main("Yes, [genie_name].","angry","base")
-            call u_play_ani
-
-        "\"Your parents must be proud of you...\"":
-            call her_main("*Slurp--",ypos="head")
-            call u_pause_ani
-            call her_main("Yes, I believe they are...","smile","happyCl")
-            call her_main("With me being an excellent student despite being muggle-born and all...","base","happyCl")
-            call her_main("Although at first they were against sending me to some \"Bogus boarding school\".","angry","base")
-            call her_main("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","base","happyCl")
-            m "Yes, a respectable institution indeed."
-            m "Cock back in your mouth [hermione_name]."
-            call u_play_ani
-            her "*Slurp!* *Gulp!* *Gobble!*"
-            m "Yes, just keep at it for a while..."
-            her "*Slurp!* *Gltch!* *Gulp!*"
-            m "Good, good..."
-            m "So, what would your folks say if they were to see you now, [hermione_name]?"
-            her "*Slurp--"
-            call u_pause_ani
-            call her_main("They would not understand of course...","open","down")
-            call her_main("But I do not care.")
-            call her_main("I am not afraid to \"get my hands dirty\" and do what needs to be done.","upset","closed")
-            m "A bit rebellious, aren't you?"
-            call her_main("Hm... I suppose I am.","angry","wink")
-            m "Back to sucking then. Teach your folks a lesson."
-            call u_play_ani
-            her "*Slurp!* *Slurp!* *Slurp!*"
-
-        "\"Tell me about the \"Gryffindor\" house.\"":
-            call her_main("*Slurp--",ypos="head")
-            call u_pause_ani
-            call her_main("What can I say that you don't already know, [genie_name]?","soft","baseL")
-            m "Yes... Ehm... I know everything of course."
-            m "But I want to see how much you know."
-            m "To test your knowledge on the subject."
-            call nar(">As soon as you mention \"test\" Hermone's eyes light up with excitement.")
-            call her_main("OK. But I need a moment gather my thoughts...","smile","happyCl",emote="06")
-            call u_play_ani
-            her "*Slurp!* *Slurp!* *Gulp!*"
-            m "Oh, yes... Take as much time as you need, [hermione_name]."
-            her "*Slurp!* *Gulp!* *Slurp!*"
-            her "*Gulp--"
-            call u_pause_ani
-            call her_main("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","open","down")
-            call her_main("The heraldic animal of \"Gryffindor\" is the lion...")
-            call her_main("And it's colors are red and gold.","open","closed")
-            call u_play_ani
-            her "*Gulp!* *Slurp!* *Slurp!*"
-            call u_pause_ani
-            call her_main("Professor Minerva McGonagall is the headmaster of our house.","open","closed")
-            call her_main("The \"Gryffindor\" house emphasizes the traits of courage...")
-            call her_main("As well as \"daring, nerve and chivalry\"...")
-            call her_main("And thus its members are generally regarded as brave but reckless...")
-            call u_play_ani
-            her "*Slurp!* *Slurp!* *Slurp!*"
-            call u_pause_ani
-            call her_main("\"Gryffindor\" corresponds roughly to the element of fire...","open","closed")
-            call her_main("And for that reason the colours of red and gold were chosen.")
-            call u_play_ani
-            her "*Slurp!* *Gulp!* *Slurp!*"
-            m "Hm..."
-            m "Well, I thought I could turn this around somehow to make fun of you..."
-            her "*Slurp??*"
-            m "Well, with your house representing courage and righteousness and such..."
-            m "And you being a nasty slut..."
-            call u_pause_ani
-            call her_main("[genie_name]!","scream","angry",emote="01")
-            m "But to be honest..."
-            m "\"Daring, nerve, fire, recklessness\"..."
-            m "That sort of describes your personality quite well..."
-            call her_main("[genie_name]...","base","base")
-            call u_play_ani
-            her "*Gobble!!* *Gltch!!* *Gobble!!!*"
-            m "Good girl..."
-
-    m "Good..."
-    call her_main("*Gobble!* *Slurp!* *Slurp!*",ypos="head")
-    m "Good... Back and forth, back and forth... Good girl."
-    her "*Slurp!* *Slurp!* *Slurp!*"
-    her "*Slurp--"
-    call u_pause_ani
-    call her_main("[genie_name]... I am a... whore.","open","down")
-    m "What?"
-    call u_play_ani
-    her "*Slurp-Slurp-Slurp!*"
-    call u_pause_ani
-    call her_main("I truly am a slut and deeply enjoy sucking your cock.","angry","base")
-    m "Oh, yes, yes... Say more things like that."
-    call u_play_ani
-    her "*Slurp!* *Gulp!* *Slurp!*"
-    call u_pause_ani
-    call her_main("Please, [genie_name]. Cum for me.","soft","ahegao")
-    with hpunch
-    g4 "Argh! You little...!!!"
-    g4 "{size=-4}(Here it comes. Should I give her a warning?){/size}"
-
-    menu:
-        m "..."
-        "-Warn her-":
-            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="head")
-            g4 "Heads up, [hermione_name]! Here it comes!"
-            call her_main("!!!","angry","wide")
-            call ctc
-            hide screen bld1
-            call blkfade
-
-            call set_u_ani("cum_in_mouth_ani")
-            call u_play_ani
-            ">Hermione quickly puts your cock back in her mouth and continues to suck on it with great passion."
-            call cum_block
-            g4 "{size=+7}ARGH!{/size}"
-            her "*Gulp!-Gulp!-Gulp!*"
-            with hpunch
-            g4 "And some more!"
-            her "*Gulp!* *Gulp!* *Gulp!*"
-            call hide_blkfade
-            call ctc
-
-            call bld
-            m "Well, I think that's it."
-            call u_pause_ani
-            call her_main("..............","cum","worriedCl")
-            m "Are you alright there, [hermione_name]?"
-            call her_main("Yes, [genie_name]...","grin","dead")
-            call her_main("You came so much...")
-            m "You managed to swallow it all though."
-            call her_main("Yes... I thought I would choke...","grin","dead")
-            call her_main("But I made a promise to myself that I won't let go of your penis no matter what!")
-            m "Good girl."
-            call her_main("Thank you, [genie_name].","grin","dead")
-            call her_main("But, still... You came so much...")
-            call her_main("I almost feel as if I just got fed...","soft","ahegao")
-            call her_main("My stomach is so full...")
-            g9 "Yes, I fed you with my cum!"
-
-            if daytime:
-                call her_main("I think I may skip the meal and go straight to class today.","soft","ahegao")
-            else:
-                call her_main("Yes. I think I may skip supper tonight...","soft","ahegao")
-
-            call her_main("Can I get paid now?","angry","wink")
-            hide screen hermione_main
-            call blkfade
-
-            return
-
-        "-Don't bother-":
-            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="head")
-            call cum_block
-            g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?","shock","wide")
-            hide screen bld1
-            call set_u_ani("cum_on_face_ani")
-            call u_play_ani
-
-            call ctc
-
-            call bld
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_07.png"
-            call her_main("[genie_name]...","shock","wide")
-            g4 "Don't you move now, [hermione_name]."
-            g4 "Yes, just be still and take it."
-            g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
-            call her_main("..............","angry","base",tears="soft")
-            m "Whew..."
-            call set_u_ani("cum_on_face_blink_ani")
-            call her_main("..............","normal","worriedCl")
-            m "Alright, I'm done..."
-            call her_main(".................","open","base")
-
-            if daytime:
-                her "My classes are about to start..."
-
-            m "Just wipe it off and you'll be alright."
-            call her_main("............","open","base")
-            m "Unless, you don't want to."
-            call her_main("Huh?","angry","worriedCl",emote="05")
-            m "And would rather go outside looking like this."
-            m "Let everyone see what a nasty little slut you are."
-            call her_main("Of course not, [genie_name]!","angry","worriedCl",emote="05")
-            call ctc
-            call blkfade
-
-            stop music fadeout 1.0
-
-            if daytime:
-                m "You better go before you are late for your classes..."
-            else:
-                m "It's getting late..."
-                call her_main("Yes...","angry","worriedCl",emote="05")
-
-            call her_main("Can I get paid before I leave, [genie_name]?","upset","wink")
-            hide screen hermione_main
-            call blkfade
-
-            $ aftersperm = True
 
             return
 

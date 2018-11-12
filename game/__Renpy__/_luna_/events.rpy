@@ -1206,7 +1206,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("ugh...","disgust","down_raised")
     call her_main("(I could have sworn Luna was here...)","annoyed","worriedL")
     call her_main("(Wait, what was I doing here...)","annoyed","suspicious")
-    call luna_reset
+    call reset_luna
 
     $ luna_busy = True
     $ hermione_busy = True

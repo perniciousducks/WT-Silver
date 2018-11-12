@@ -333,7 +333,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call lun_chibi("leave")
 
             ">Luna quietly exits the room."
-            call luna_reset
+            call reset_luna
             $ luna_busy = True
 
             ">Hermione quietly gets dressed, a shocked look on her face..."

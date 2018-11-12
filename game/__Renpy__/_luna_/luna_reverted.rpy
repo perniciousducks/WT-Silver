@@ -18,7 +18,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #
     $ lun_bottom = "skirt_1"
     $ lun_glasses = "spectrespecs"
 
-    call luna_reset
+    call reset_luna
 
     $ lun_genie_name = "Sir" #reset genie's name with Luna
     $ luna_name = "Miss Lovegood" #reset luna's name with genie

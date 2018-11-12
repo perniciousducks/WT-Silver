@@ -135,8 +135,82 @@ label tonks_random_clothing:
         call update_ton_body
         call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
 
+    return
 
 
+
+
+
+
+
+label tonks_clothing_rep_level:
+
+    $ ton_clothing_level = 60
+
+    #Robe
+    if tonks_wear_robe:
+        $ ton_clothing_level +=10
+
+    #Top
+    if tonks_wear_top:
+        if ton_top in ["top_auror_1"]:
+            $ ton_clothing_level +=10
+        elif ton_top in ["top_auror_2","top_auror_3"] and not tonks_wear_bottom:
+            $ ton_clothing_level +=0
+        elif ton_top in ["top_corset_1"]:
+            $ ton_clothing_level -=5
+        else:
+            $ ton_clothing_level +=5
+    else:
+
+        #Belly Piercing
+        if tonks_wear_piercings and ton_nipple_piercing in ["belly_pearls"]:
+            $ ton_clothing_level -=5
+
+        #Bra
+        if tonks_wear_bra:
+            $ ton_clothing_level -=15
+        else:
+            #Nipple Piercing
+            if tonks_wear_piercings and ton_nipple_piercing in ["nipples_pearls"]:
+                $ ton_clothing_level -=25
+            else:
+                $ ton_clothing_level -=20
+
+        #Pubes
+        if tonks_wear_pubic_hair:
+            $ ton_clothing_level -=5
+
+    #Bottom
+    if tonks_wear_bottom and ton_bottom in ["skirt_1","skirt_2","pants_jeans_long"]: #Panties not visible
+        if ton_bottom in ["skirt_1"]:
+            $ ton_clothing_level +=30
+        else:
+            $ ton_clothing_level +=0
+    elif tonks_wear_bottom: #Panties visible
+        if ton_bottom in ["skirt_3","skirt_3_belted"]:
+            $ ton_clothing_level -=5
+        else:
+            $ ton_clothing_level -=10
+
+        #Panties
+        if not tonks_wear_panties:
+            $ ton_clothing_level -=15
+    else:
+        if not tonks_wear_panties:
+            $ ton_clothing_level -=20
+
+    #Hat
+    if tonks_wear_hat:
+        if ton_hat in ["paper_bag_1","paper_bag_2","paper_bag_3"]:
+            $ ton_clothing_level -=10
+        else:
+            $ ton_clothing_level +=0
+
+    if ton_clothing_level > 100:
+        $ ton_clothing_level = 100
+    if ton_clothing_level < 0:
+        $ ton_clothing_level = 0
 
 
     return

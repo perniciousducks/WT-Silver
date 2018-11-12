@@ -226,5 +226,6 @@ label tonks_progress_init:
         $ ton_friendship = 0 #Max is 100.
         $ ton_support = 0
         $ ton_reputation = 0
+        $ ton_clothing_level = 100
 
     return

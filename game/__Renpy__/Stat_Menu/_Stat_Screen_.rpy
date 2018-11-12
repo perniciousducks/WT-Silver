@@ -51,13 +51,13 @@ label stat_screen_character:
     elif charName == "tonks":
         call ton_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
         call screen stat_menu("tonks")
- 
+
     elif charName=="Close":
         $charName ="genie"
         jump close_stats_screen
-    
+
     show screen stat_menu(charName)
-    
+
     $ charName = _return
     call hide_characters
 
@@ -78,16 +78,16 @@ label close_stats_screen:
 screen stat_menu(character=""):
     tag stat_menu
     zorder 4
-    
+
     add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
 
 
     use close_button
 
     #Character Buttons.
-    
+
     use generic_character_select(unlocked_character_list, "-Character Select-")
-    
+
     text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
 
     if character == "genie":
@@ -346,9 +346,10 @@ screen tonks_stat_menu:
                 #use stat_bar(int(snape_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
                 #use stat_bar(int(snape_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
                 #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
+                use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
-                use text_stat("Hung out with...")
-                use text_stat("- Astoria: ", " times -", ton_astoria_date_counter)
+                use text_stat("Hung out with Astoria:")
+                use text_stat("- ", " times -", ton_astoria_date_counter)
 
                 use text_stat("Tonks has sluttyfied:")
                 use text_stat("- ", "/5 outfits -", tonks_sluttyfied_clothing)
@@ -381,5 +382,10 @@ label update_stats:
 
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
     $ sna_support_word = sna_support_word_list[int(snape_support/1.5)]
+
+    #Tonks
+    call tonks_clothing_rep_level
+    $ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
+    $ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
 
     return

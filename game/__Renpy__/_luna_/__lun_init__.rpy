@@ -203,7 +203,7 @@ label luna_progress_init:
         $ luna_known = False
         $ luna_busy = False
         $ luna_unlocked = False
-        $ l_genie_name = "Old man"
+        $ lun_genie_name = "Old man"
         $ luna_name = "Miss Lovegood"
 
         $ luna_dom = 0

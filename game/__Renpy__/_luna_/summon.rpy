@@ -8,11 +8,11 @@ label summon_luna:
 
     if luna_dom >= luna_sub:
         if luna_dom >= 4:
-            call lun_main("[l_genie_name]...","normal","suspicious","angry","R",xpos="base",ypos="base")
+            call lun_main("[lun_genie_name]...","normal","suspicious","angry","R",xpos="base",ypos="base")
         else:
-            call lun_main("[l_genie_name]...","upset","mad","mad","R",xpos="base",ypos="base")
+            call lun_main("[lun_genie_name]...","upset","mad","mad","R",xpos="base",ypos="base")
     else:
-        call lun_main("[l_genie_name]...","normal","base","sad","mid",xpos="base",ypos="base")
+        call lun_main("[lun_genie_name]...","normal","base","sad","mid",xpos="base",ypos="base")
 
     label luna_requests:
 

@@ -7,7 +7,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "I have a new favour for you to complete today, [luna_name]!"
         call lun_main("...","normal","angry","angry","mid")
         m "If it's not too much trouble."
-        call lun_main("save your begging [l_genie_name]... I'm fairly certain I know what you want.","base","seductive","angry","R")
+        call lun_main("save your begging [lun_genie_name]... I'm fairly certain I know what you want.","base","seductive","angry","R")
         m "You do?"
         call lun_main("Mhmmm... unless I'm mistaken, you probably want me to wrap my lips around that filthy old cock of yours...","base","angry","mad","mid")
         call lun_main("Am I mistaken sir?","base","seductive","angry","R")
@@ -281,7 +281,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("So what did you think luna? Not so bad now was it?","grin","baseL")
         call lun_main("I suppose not. although next time I think I should be able to move my head on my own!","normal","seductive","base","R")
         call her_main("Hmmm, I'm not sure if you're ready for that just yet...","grin","worriedCl")
-        call lun_main("Whatever... now about our payment [l_genie_name]...","normal","suspicious","angry","R")
+        call lun_main("Whatever... now about our payment [lun_genie_name]...","normal","suspicious","angry","R")
         m "Yes, yes. How does 60 points to \"gryffindor\" for Hermione and 150 gold for you sound?"
         call her_main("Actually we wanted to talk to you about that [genie_name]...","base","down")
         call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in seperate currencies.","base","worriedCl")
@@ -301,7 +301,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("Thank you [genie_name]!","base","base")
         call lun_main("...","normal","angry","angry","R")
         call her_main("Luna! Don't be rude.","angry","angry")
-        call lun_main("...Thanks [l_genie_name].","normal","seductive","sad","R")
+        call lun_main("...Thanks [lun_genie_name].","normal","seductive","sad","R")
         call her_main("...","disgust","down_raised")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!","grin","baseL")
         call her_main("(Not to mention more practice with the dildo...)","soft","squintL")

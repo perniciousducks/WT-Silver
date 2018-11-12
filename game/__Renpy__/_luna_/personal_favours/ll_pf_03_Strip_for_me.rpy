@@ -26,7 +26,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("...","normal","base","sad","down")
             call lun_main("Well... {size=-3}they're{/size} {size=-4}not{/size} {size=-5}really{/size} {size=-6}that{/size} {size=-7}restrictive.{/size}","normal","base","sad","R")
             m "..."
-            call lun_main("alright then, [l_genie_name]...","upset","base","sad","down")
+            call lun_main("alright then, [lun_genie_name]...","upset","base","sad","down")
             hide screen luna_main
             with d3
             $ luna_xpos = 270
@@ -66,7 +66,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 hide screen blkfade
                 with d3
 
-                call lun_main("There... are you happy now [l_genie_name]?","upset","mad","sad","down")
+                call lun_main("There... are you happy now [lun_genie_name]?","upset","mad","sad","down")
                 m "Almost... take off your shirt next."
                 call lun_main("...alright...","clench","suspicious","sad","R")
                 hide screen luna_main
@@ -102,7 +102,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
                 call ctc
 
-                call lun_main("There... are you happy now, [l_genie_name]?","normal","suspicious","sad","mid")
+                call lun_main("There... are you happy now, [lun_genie_name]?","normal","suspicious","sad","mid")
                 m "Almost... take off your skirt next."
                 call lun_main("...fine...","normal","angry","sad","R")
                 hide screen luna_main
@@ -173,7 +173,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("!!!","normal","wide","sad","mid")
             call lun_main("You're not serious are you?","normal","angry","sad","R")
             m "I am. And I expect you to do it now, [luna_name]."
-            call lun_main("[l_genie_name]!","upset","mad","mad","mid")
+            call lun_main("[lun_genie_name]!","upset","mad","mad","mid")
             m "don't you raise your voice at me, [luna_name]!"
             call lun_main(".....!!?","normal","angry","sad","R")
             m "Nobody is forcing you to do this."
@@ -182,7 +182,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             m "so If you don't think your father needs help with his failing magazine, please feel free to leave."
             call lun_main(".....................","upset","suspicious","sad","R")
             call lun_main(".......................................","normal","angry","sad","down")
-            call lun_main("please [l_genie_name]...","normal","mad","sad","mid",tears="soft")
+            call lun_main("please [lun_genie_name]...","normal","mad","sad","mid",tears="soft")
             call lun_main("isn't there anything else I can do...","normal","suspicious","sad","R",tears="soft")
 
             menu:
@@ -190,12 +190,12 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     $ current_payout = 40
                     m "Take off your underwear now, [luna_name]..."
                     call lun_main("{size=-5}(Should I really do this?){/size}","normal","suspicious","sad","down",tears="soft")
-                    call lun_main("[l_genie_name] I don't know about this... ","normal","mad","sad","mid",tears="soft")
+                    call lun_main("[lun_genie_name] I don't know about this... ","normal","mad","sad","mid",tears="soft")
                     if daytime:
                         m "Come on, [luna_name], just a little peek and then you'll be off to class."
                     else:
                         m "Come on, [luna_name], just a little peek and then you'll be off to bed."
-                    call lun_main("Alright, [l_genie_name]... ","normal","suspicious","sad","down",tears="soft")
+                    call lun_main("Alright, [lun_genie_name]... ","normal","suspicious","sad","down",tears="soft")
                     call lun_main("(Stripping for the headmaster...)","normal","suspicious","sad","R",tears="soft")
                     call lun_main("(imagine if daddy found out...)","normal","suspicious","sad","down",tears="soft")
                     call lun_main("......","normal","suspicious","sad","mid",tears="soft")
@@ -211,7 +211,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
                     m "Mmmm, very nice, [luna_name]."
                     m "Now for your panties..."
-                    call lun_main("yes, [l_genie_name]... ","upset","mad","sad","R",tears="crying")
+                    call lun_main("yes, [lun_genie_name]... ","upset","mad","sad","R",tears="crying")
                     hide screen luna_main
                     show screen blkfade
                     with d3
@@ -252,7 +252,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     ">You start stroking faster."
                     call lun_main("...","upset","suspicious","sad","down",tears="soft")
                     m "Yes... Ah, yes, this is good..."
-                    call lun_main("Fine! Have it your way, [l_genie_name]!","upset","suspicious","sad","down",tears="mascara")
+                    call lun_main("Fine! Have it your way, [lun_genie_name]!","upset","suspicious","sad","down",tears="mascara")
                     call lun_main("enjoy stroking your filthy old cock while you force me stand here...","upset","suspicious","mad","mid",tears="mascara")
                     m "{size=-4}(mmmm... yes...){/size}"
                     m "well seeing as how you are standing there... why don't you give those nice little tits of yours a good shake?"
@@ -261,7 +261,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("well...","normal","angry","mad","down",tears="mascara")
                     ">You keep on wanking while you gaze at Luna's milky tits..."
                     m "just a little bit faster..."
-                    call lun_main("*hmph*... just hurry up get it over with, [l_genie_name]...","upset","suspicious","sad","down",tears="mascara")
+                    call lun_main("*hmph*... just hurry up get it over with, [lun_genie_name]...","upset","suspicious","sad","down",tears="mascara")
                     ">Luna starts shaking her chest a little faster"
                     m "{size=-4}ah...{/size}"
                     m "that's it slut... keep going..."
@@ -309,21 +309,21 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">Luna quickly picks her clothes up off your desk and gets dressed."
             hide screen blkfade
 
-            call lun_main("I think I'd like to leave now, [l_genie_name]...","normal","angry","sad","down",xpos="base",ypos="base",trans="fade")
+            call lun_main("I think I'd like to leave now, [lun_genie_name]...","normal","angry","sad","down",xpos="base",ypos="base",trans="fade")
             m "You're free to leave whenever you like, [luna_name]."
             call lun_main("Well I'm certainly not leaving until you pay me!","upset","suspicious","angry","mid")
 
 
         else:
-            call lun_main("There... is this what you wanted to see, [l_genie_name]?","normal","angry","angry","mid")
+            call lun_main("There... is this what you wanted to see, [lun_genie_name]?","normal","angry","angry","mid")
             g4 "gods yes!"
             if luna_dom <= 5:
                 $ luna_dom += 1
             call lun_main("well... seeing as how you seem to be enjoying yourself so much...","base","seductive","angry","mid")
             m "what?"
-            call lun_main("why don't you start ...touching... yourself, [l_genie_name]...","base","seductive","angry","down")
+            call lun_main("why don't you start ...touching... yourself, [lun_genie_name]...","base","seductive","angry","down")
             m "I'm not sure if-"
-            call lun_main("that wasn't a question, [l_genie_name]...","normal","mad","angry","mid")
+            call lun_main("that wasn't a question, [lun_genie_name]...","normal","mad","angry","mid")
 
             call nar(">You reach under the desk and grab your cock...")
 
@@ -336,7 +336,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("Hmmm, I'm not sure if I believe you.","upset","suspicious","sad","mid")
             call lun_main("maybe you need a little encouragement...","base","suspicious","sad","R")
             m "encouragement?"
-            call lun_main("close your eyes, [l_genie_name]...","base","suspicious","sad","mid")
+            call lun_main("close your eyes, [lun_genie_name]...","base","suspicious","sad","mid")
             hide screen luna_main
             show screen blkfade
             with d3
@@ -353,7 +353,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">You feel something light get thrown against your chest..."
             m "???"
             m "Can I open my eyes yet, [luna_name]?"
-            lun "Go ahead, [l_genie_name]..."
+            lun "Go ahead, [lun_genie_name]..."
             hide screen blkfade
             call lun_main("","base","suspicious","sad","R")
             call ctc
@@ -373,10 +373,10 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             m "yes..."
             call lun_main("Shooting your filthy old cum all over my underwear...","base","mad","sad","down")
             m "..."
-            call lun_main("well come on then, [l_genie_name]...","base","suspicious","sad","mid")
+            call lun_main("well come on then, [lun_genie_name]...","base","suspicious","sad","mid")
             call lun_main("keep stroking that disgusting cock of yours...","base","suspicious","angry","mid")
             m "{size=-4}(argh... yes...){/size}"
-            call lun_main("do you need a little more encouragement, [l_genie_name]...","base","mad","mad","mid")
+            call lun_main("do you need a little more encouragement, [lun_genie_name]...","base","mad","mad","mid")
             m "{size=-4}yes...{/size}"
             call lun_main("say it louder...","base","mad","mad","mid")
             g9 "{size=+4}yes{/size}"
@@ -395,7 +395,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
             ">you can once more hear the soft ruffle of clothes..."
             m "{size=-2}(mmmm...){/size}"
-            lun "open wide, [l_genie_name]..."
+            lun "open wide, [lun_genie_name]..."
             hide screen blkfade
 
             call lun_main("","base","suspicious","angry","mid")
@@ -405,7 +405,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             g4 "{size=+4}(agh...){/size}"
             call nar(">you start stroking your cock even faster!")
             g4 "{size=+4}yes...{/size}"
-            call lun_main("that's it, [l_genie_name], cum for your princess...","base","suspicious","sad","mid")
+            call lun_main("that's it, [lun_genie_name], cum for your princess...","base","suspicious","sad","mid")
             g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
             g4 "{size=+4}(agh... almost there...){/size}"
             call lun_main("cum...","soft","angry","mad","mid")
@@ -430,7 +430,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             show screen bld1
             with d3
 
-            call lun_main("That's it, [l_genie_name], make sure you cover them...","base","suspicious","mad","mid")
+            call lun_main("That's it, [lun_genie_name], make sure you cover them...","base","suspicious","mad","mid")
             show screen genie_jerking_sperm_02
             with d3
             g4 "ah, shit they're so soft, why does this feels so good..."
@@ -496,7 +496,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("Well... {size=-3}I {size=-4}mean {size=-2}I {size=-2}do {size=-2}mind.","normal","base","sad","down")
             m "..."
             call lun_main("...","normal","base","sad","mid")
-            call lun_main("alright then, [l_genie_name]...","base","base","sad","R")
+            call lun_main("alright then, [lun_genie_name]...","base","base","sad","R")
             hide screen luna_main
             with d3
             $ luna_xpos = 270
@@ -525,7 +525,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call lun_main(".......","normal","angry","sad","R")
                 call lun_main("{size=-7}Alright...{/size}","base","angry","sad","R")
                 m "Mmmm, someone's eager today."
-                call lun_main("[l_genie_name]...","normal","closed","sad","down")
+                call lun_main("[lun_genie_name]...","normal","closed","sad","down")
                 call lun_main("...","base","base","sad","R")
                 hide screen luna_main
                 show screen blkfade
@@ -538,10 +538,10 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 hide screen blkfade
                 with d3
 
-                call lun_main("There... Is that all [l_genie_name]?","upset","mad","sad","R")
+                call lun_main("There... Is that all [lun_genie_name]?","upset","mad","sad","R")
                 m "Not quite..."
                 call lun_main("(Surely he doesn't want me to take off my panties?)","upset","suspicious","angry","R")
-                call lun_main("[l_genie_name] please...","normal","angry","sad","mid")
+                call lun_main("[lun_genie_name] please...","normal","angry","sad","mid")
                 m "Now now, [luna_name], a deal's a deal..."
                 call lun_main("...","upset","suspicious","sad","R")
                 call lun_main("At least close your eyes...","normal","angry","sad","mid",tears="soft")
@@ -566,7 +566,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 m "Don't complain too much, I was hoping you'd take those off anyway."
                 call lun_main("*hmph*","upset","suspicious","base","mid",tears="soft")
                 m "Well, seeing as how we've already crossed this line, how about you take off your top anyway."
-                call lun_main("You can't be serious! I think you've seen enough, [l_genie_name]!","upset","angry","angry","mid",tears="soft")
+                call lun_main("You can't be serious! I think you've seen enough, [lun_genie_name]!","upset","angry","angry","mid",tears="soft")
 
             "\"Take off your shirt.\"" if luna_sub > luna_dom:
                 $ luna_choice = 2
@@ -588,9 +588,9 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
                 call ctc
 
-                call lun_main("There... is that all, [l_genie_name]?","normal","suspicious","sad","mid")
+                call lun_main("There... is that all, [lun_genie_name]?","normal","suspicious","sad","mid")
                 m "Almost... take off your bra next."
-                call lun_main("[l_genie_name], I really don't-","normal","angry","sad","R")
+                call lun_main("[lun_genie_name], I really don't-","normal","angry","sad","R")
                 m "[luna_name]..."
                 call lun_main("...{p}fine...","base","angry","sad","R")
                 call lun_main("But you have to close your eyes.","normal","angry","sad","mid")
@@ -609,7 +609,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
                 m "Very nice..."
                 m "Now your skirt."
-                call lun_main("You can't be serious! I think you've seen enough, [l_genie_name]!","upset","angry","angry","mid")
+                call lun_main("You can't be serious! I think you've seen enough, [lun_genie_name]!","upset","angry","angry","mid")
 
 
             "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
@@ -673,12 +673,12 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             if luna_sub <= 6:
                 $ luna_sub += 1
             m "I am, and I expect you to do it now, [luna_name]."
-            call lun_main("[l_genie_name]... please...","normal","seductive","sad","mid",tears="soft")
+            call lun_main("[lun_genie_name]... please...","normal","seductive","sad","mid",tears="soft")
             m "Hmmm, well seeing as how I'm in a generous mood, how about we make another deal?"
             call lun_main("...","normal","angry","sad","R",tears="soft")
             call lun_main("Really? What sort?","normal","angry","sad","R")
             m "what's the closest school to Howgsmorts?"
-            call lun_main("?...{p}Um, probably Beauxbatons Academy of Magic, [l_genie_name]...","normal","seductive","sad","R")
+            call lun_main("?...{p}Um, probably Beauxbatons Academy of Magic, [lun_genie_name]...","normal","seductive","sad","R")
             m "Well, how about I send a glowing letter of recommendation to them concerning your father's magazine?"
             m "I'm sure that will probably boost sales."
             call lun_main("Really sir? You'd do that?","base","wide","base","mid")
@@ -752,12 +752,12 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     ">YOu start gently kneading her breasts."
                     m "Mmmm... that's it, [luna_name]..."
                     call lun_main("{size=-5}(What is he doing?){/size}","normal","suspicious","sad","R")
-                    call lun_main("[l_genie_name], you really have to stop... ","upset","mad","sad","mid")
+                    call lun_main("[lun_genie_name], you really have to stop... ","upset","mad","sad","mid")
                     if daytime:
                         m "Come on, [luna_name], just a little more, then you'll be off to class."
                     else:
                         m "Come on, [luna_name], just a little more, then you'll be off to bed."
-                    call lun_main("[l_genie_name]... no...","normal","suspicious","sad","down",tears="crying")
+                    call lun_main("[lun_genie_name]... no...","normal","suspicious","sad","down",tears="crying")
                     call lun_main("(I should stop him...)","normal","suspicious","sad","R",tears="crying")
                     call lun_main("(before he gets too excited...)","normal","suspicious","sad","down",tears="crying")
                     ">Luna pushes you back."
@@ -766,7 +766,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     $ genie_chibi_xpos = 20
                     call lun_main("...","upset","suspicious","sad","down",tears="crying")
                     m "Sorry..."
-                    call lun_main("It-it's alright, [l_genie_name]...","normal","suspicious","sad","R",tears="crying")
+                    call lun_main("It-it's alright, [lun_genie_name]...","normal","suspicious","sad","R",tears="crying")
                     call lun_main("You just got a little over-excited...","normal","suspicious","sad","down",tears="crying")
                     call lun_main("Just, please, try and control yourself next time...","base","suspicious","sad","R",tears="crying")
                     g9 "With tits like that, I'm not so sure!"
@@ -813,7 +813,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("You're disgusting...","normal","angry","mad","down",tears="crying")
                     ">You keep on wanking while you gaze at Luna's milky tits..."
                     m "mmmm... that's it, [luna_name]..."
-                    call lun_main("*hmph*... just hurry up get it over with, [l_genie_name]...","upset","suspicious","sad","down",tears="mascara")
+                    call lun_main("*hmph*... just hurry up get it over with, [lun_genie_name]...","upset","suspicious","sad","down",tears="mascara")
                     call lun_main("I'm sick of looking at that... thing...","normal","angry","sad","R",tears="mascara")
                     m "{size=-4}ah...{/size}"
                     m "that's it slut... keep looking..."
@@ -870,7 +870,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">Luna quickly picks her clothes up off your desk and gets dressed, putting on her shirt over the cum."
             hide screen blkfade
 
-            call lun_main("I think I'd like to leave now, [l_genie_name]...","normal","angry","sad","down")
+            call lun_main("I think I'd like to leave now, [lun_genie_name]...","normal","angry","sad","down")
             m "You're free to leave whenever you like, [luna_name]."
             call lun_main("Well I'm certainly not leaving until you pay me!","upset","suspicious","angry","mid")
 
@@ -884,11 +884,11 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             g9 "mmmm"
             if luna_dom <= 5:
                 $ luna_dom += 1
-            call lun_main("Like what you see [l_genie_name]?","base","seductive","base","R")
+            call lun_main("Like what you see [lun_genie_name]?","base","seductive","base","R")
             g9 "Yes... Yes..."
             call lun_main("well... why don't you come take a closer look?...","base","seductive","angry","mid")
             m "what?"
-            call lun_main("why don't you stand up and take a good look, [l_genie_name]...","base","mad","mad","mid")
+            call lun_main("why don't you stand up and take a good look, [lun_genie_name]...","base","mad","mad","mid")
             m "I don't think that-"
             call lun_main("shhh...","soft","angry","angry","mid")
             call lun_main("just stand up sir.....","base","angry","angry","mid")
@@ -918,7 +918,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             g9 "!!!"
             call lun_main("See something you like?...","base","suspicious","sad","R")
             m "ah, gods yes..."
-            call lun_main("mmmmm... why don't you take it out [l_genie_name]...","base","suspicious","sad","mid")
+            call lun_main("mmmmm... why don't you take it out [lun_genie_name]...","base","suspicious","sad","mid")
             m "..."
             call lun_main("be a good boy....","base","seductive","sad","mid")
             show screen blkfade
@@ -931,7 +931,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen blkfade
             with fade
 
-            call lun_main("that's it, [l_genie_name]...","base","suspicious","sad","mid")
+            call lun_main("that's it, [lun_genie_name]...","base","suspicious","sad","mid")
             ">you stare at her soft milky tits..."
             m "Mmmm..."
             call lun_main("Mmmm, isn't that better?","base","suspicious","sad","R")
@@ -946,7 +946,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             g9 "gods yes..."
             call lun_main("Shooting your filthy old cum all over me...","base","suspicious","angry","down")
             g9 "!!!"
-            call lun_main("come on then [l_genie_name]...","base","suspicious","angry","mid")
+            call lun_main("come on then [lun_genie_name]...","base","suspicious","angry","mid")
             call lun_main("stroke it faster...","base","seductive","sad","mid")
             m "{size=-4}(argh... yes...){/size}"
             call lun_main("get that nasty cum ready for me...","base","mad","mad","mid")
@@ -989,7 +989,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             with d3
 
             if luna_addicted:
-                call lun_main("That's it, [l_genie_name], make sure you cover me...","base","suspicious","mad","mid")
+                call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
                 show screen genie_jerking_sperm_02
                 with d3
                 g4 "ah, shit... ah... this is too good..."
@@ -1040,7 +1040,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ current_payout = 100
 
             else:
-                call lun_main("That's it, [l_genie_name], make sure you cover me...","base","suspicious","mad","mid")
+                call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
                 show screen genie_jerking_sperm_02
                 with d3
                 g4 "ah, shit... ah... this is too good..."
@@ -1105,9 +1105,9 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
     ">You hand Luna [current_payout] gold."
     if current_payout <= 40:
         call lun_main("(only [current_payout]?) *hmph*","upset","mad","angry","R")
-        call lun_main("Thank you, [l_genie_name].","normal","suspicious","angry","R")
+        call lun_main("Thank you, [lun_genie_name].","normal","suspicious","angry","R")
     else:
-        call lun_main("Thank you, [l_genie_name].","base","seductive","base","R")
+        call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
     ">Luna leaves your office."
     $ luna_wear_cum = False
     hide screen genie_jerking_sperm_02

@@ -221,6 +221,16 @@ label kiss_her:
 
     return
 
+label spit_on_her:
+    call play_sound("spit") #Kiss!
+    show screen white
+    pause.2
+    hide screen white
+    with hpunch
+    pause.08
+
+    return
+
 label cast_spell(spell=""):
     if spell == "imperio":
 

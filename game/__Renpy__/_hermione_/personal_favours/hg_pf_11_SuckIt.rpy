@@ -161,7 +161,7 @@ label hg_blowjob_3: #Call label. Returns.
         $ character_choice = ""
         $ hg_hidden_blowjob_character_list = ["snape"]
 
-        if luna_unlocked:
+        if luna_unlocked and luna_reverted:
             $ hg_hidden_blowjob_character_list.append("luna")
         #if astoria_unlocked:
         #    $ hg_hidden_blowjob_character_list.append("astoria")
@@ -188,9 +188,9 @@ label hg_blowjob_3: #Call label. Returns.
         #elif "cho" in hg_hidden_blowjob_character_list and "cho" not in hg_hidden_blowjob_seen_list:
         #    $ hg_hidden_blowjob_seen_list.append("cho")
         #    $ character_choice = "cho"
-        #elif "tonks" in hg_hidden_blowjob_character_list and "tonks" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("tonks")
-        #    $ character_choice = "tonks"
+        elif "tonks" in hg_hidden_blowjob_character_list and "tonks" not in hg_hidden_blowjob_seen_list:
+            $ hg_hidden_blowjob_seen_list.append("tonks")
+            $ character_choice = "tonks"
 
         #Random Pick.
         else:
@@ -200,8 +200,10 @@ label hg_blowjob_3: #Call label. Returns.
         if character_choice == "snape":
             call hg_hidden_blowjob_snape
 
-
         if character_choice == "luna":
+            call hg_hidden_blowjob_luna
+
+        if character_choice == "tonks":
             call hg_hidden_blowjob_luna
 
         #Genie Cums.
@@ -310,14 +312,14 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
 label hg_hidden_blowjob_luna: #Call label. Returns.
     call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
-    lun "[l_genie_name]? Are you there? I need to talk to you."
+    lun "[lun_genie_name]? Are you there? I need to talk to you."
     call her_main("(It's Luna!)","angry","base")
     call her_main("Please, [genie_name], send her away, I beg you!")
 
     menu:
         m "..."
         "\"Please, come on in, [luna_name].\"":
-            $ mad += 10
+            $ mad += 30
             stop music fadeout 1.0
             call her_main("[genie_name], no! Why would you let-","angry","angry",emote="01",ypos="head")
             m "Quiet, [hermione_name]! Unless you want to be noticed..."
@@ -327,63 +329,75 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
 
             call lun_walk("door","mid",3)
 
-            call lun_main("Hello [l_genie_name].","base","base","base","mid")
+            call lun_main("Hello, [lun_genie_name].","base","base","base","mid")
             $ g_c_u_pic = "blowjob_ani" # sucking
             call u_play_ani
 
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call lun_main("Um, are you going to turn around, sir?","open","base","base","R")
-            m "I'm afraid I'm a bit preoccupied at the moment."
-            call lun_main("Doing what?.","base","base","base","mid")
-            her "{size=-4}(What? *Slurp...?* *Gulp...?*){/size}"
+            g9 "Miss Lovegood! How can I help you?"
+            call lun_main("I have a message for you from Professor Sprout, [lun_genie_name].","open","base","base","R")
+            m "Professor Sprout?"
+            m "(Who was that again?)"
+            call lun_main("Yes, she's sent me to inform you about the school's newest grow of Venomous Tentacula.","base","base","base","mid")
+            her "{size=-4}(Those things are horrible... *Slurp...?* *Gulp...?*){/size}"
 
-            menu:
-                "-Tell the truth-":
-                    if collar == 0:
-                        $ collar = 5
-                    m "Miss Granger is helping relieve me as we speak."
-                    call lun_main("You mean that Hermione is behind your desk...","base","base","base","mid")
-                    call lun_main("Releiving you as we speak.","base","base","base","mid")
-                    call nar(">Hermione's face goes crimson with shame but she continues her efforts.")
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    m "Yes, that's correct."
-                    call lun_main("Well in that case I think I best be off. It seems that you're busy tending to other students.","base","base","base","mid")
-                    m "Thank you, [luna_name]"
+            lun "They are still quite young. Very tempered."
+            lun "You really have to train them well."
+            call lun_main("But they finally started sucking!","base","base","base","mid")
+            m "Wait,... what?"
+            call lun_main("Sucking, [lun_genie_name]!","base","base","base","mid")
+            call lun_main("They have started sucking like crazy!","base","base","base","mid")
+            lun "Notmally they only do that shortly before they spread their spores."
+            lun "Which means they are almost ready!"
+            m "Ready? for what?"
+            lun "Pollination!"
+            lun "That's then they wove thir tentacles into each other and shoot out their spores."
+            m "(How nasty!)"
 
-                    if daytime:
-                        m "Well, have a good day.."
-                        call lun_main("Yes, thank you. I know that you will...","base","base","base","mid")
-                    else:
-                        m "Good night, [luna_name]."
-                        call lun_main("Goodnight, [l_genie_name]..","base","base","base","mid")
-                        call lun_main("Goodnight hermione...","base","base","base","mid")
+            lun "You won't believe how hard it is to get them to that stage!"
+            lun "Getting them to suck is quite an achievement."
 
-                "-Lie-":
-                    m "Ehm... Just admiring...{w} the cupboard."
-                    m "Please continue..."
-                    call lun_main("...............","base","base","base","mid")
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    m "Did you want to discuss something?"
-                    call lun_main("Yes. These wrackspurts.","base","base","base","mid")
-                    her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
-                    m "Oh... What about them?"
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call lun_main("No matter what I do I can't seem to be rid of them!","base","base","base","mid")
-                    call lun_main("They only seem to be getting worse!","base","base","base","mid")
-                    m "I see... ah..."
-                    call lun_main("They're driving me crazy, I won't be able to cope much longer","base","base","base","mid")
-                    g4 "Yeah, they're driving me crazy as well... ah..."
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call lun_main("Will you take care of them then?","base","base","base","mid")
-                    m "Yes. I'll find a way to deal with these rapers soon."
-                    call lun_main("...Thank you [l_genie_name].","base","base","base","mid")
+            m "Yes, I know what you are talking about!"
+            lun "You do?"
+            m "Yes. I've got one right here!"
+            lun "Can I see it, [lun_genie_name]?"
+            m "I'm afraid not, [luna_name]."
+            g9 "It's a shy little thing."
+            m "I know everything about those devils..."
+            m "First they "
+            m "But now she's on her knees sucking like crazy!"
+            lun "They have knees? I didn't even know that!"
 
-                    if daytime:
-                        m "Well, have a good day, [luna_name]."
-                        call lun_main("Yes, thank you.","base","base","base","mid")
-                    else:
-                        m "Good night, [luna_name]."
-                        call lun_main("Goodnight, [l_genie_name]...","base","base","base","mid")
+            lun "Did it ever spit on you, [lun_genie_name]?"
+            m "What?"
+            lun "Professor Sprout said, if a Venomous Tentacula ever spits on you-"
+            lun "You should spit right back!"
+            g9 "Like this?"
+            call spit_on_her
+
+            g4 "Take that you nasty little plant."
+            her "{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            lun "That's right, [lun_genie_name]!"
+            g4 "This one wants more spit!"
+            call spit_on_her
+            her "{size=-4}(Stop it! *Slurp...* *Slurp...* *Gulp...*){/size}"
+            lun "Professor Sprout has said, sometimes, a bit of tough love is the only thing that can make them bend!"
+            m "She did?"
+            g9 "Oh no, mine is fighting back!"
+            lun "Be careful, [lun_genie_name]! They can bite!"
+            g4 "Don't worry, this one's getting a beating!"
+            call slap_her
+            her "{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call slap_her
+            call slap_her
+            g4 "Had enough, you narsty little thing?"
+            call slap_her
+            g4 "Want some more?"
+            call slap_her
+            call slap_her
+            lun "You are so good at this!"
+            lun "I need to tell Professor Sprout, she'll be overjoyed to hear about your training methods!"
+
 
             #Luna leaves.
             hide screen luna_main
@@ -404,10 +418,12 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
 
         "\"I am busy right now, [luna_name].\"":
             call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
-            lun "Busy? How so?"
-            lun "Are you helping another student fight off the wrackspurts?"
-            m "Yes, that's exactly what I'm doing."
-            lun "Oh... well, I'll visit you later then."
+            lun "Oh... well, I'll visit you later then, [lun_genie_name]."
+            if daytime:
+                lun "Have a good day!"
+            else:
+                lun "Have a good night!"
+            m "I definitely will, Miss Lovegood!"
 
             return
 

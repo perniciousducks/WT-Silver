@@ -282,6 +282,9 @@ label play_sound(sound=""):
     if sound in ["walking_on_grass","grass"]:
         $ renpy.play('sounds/steps_grass.mp3')
 
+    if sound in ["scroll"]:
+        $ renpy.play('sounds/scroll.mp3')
+
     return
 
 

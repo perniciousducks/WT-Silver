@@ -57,20 +57,21 @@ screen weasley_store_room:
 
 
 
-label open_store:
+label open_weasley_store:
     show screen blkfade
     with d3
 
     call room("weasley_store")
+    call gen_chibi("hide")
+
     if store_intro_done:
-        call gen_chibi("stand","100","base")
+        call gen_chibi("stand","left","base")
         call hide_blkfade
-        pause.8
     else:
         call gen_chibi("hide")
         call hide_blkfade
-        call gen_walk("0","100",1.4)
-        pause.2
+        call gen_walk("0","left",1.4)
+    pause.2
 
     call store_chit_chat
 

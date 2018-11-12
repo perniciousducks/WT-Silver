@@ -197,6 +197,7 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
     hide screen genie_stands_f
 
     hide screen g_c_u
+    hide screen genie
 
     $ secretly_jerking_off = False
     hide screen genie_jerking_off                #Jerking off sitting behind desk.
@@ -228,6 +229,8 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
             $ genie_chibi_xpos = 420
         elif xpos == "door":
             $ genie_chibi_xpos = 750
+        elif xpos == "left":
+            $ genie_chibi_xpos = 100
         elif xpos == "behind_desk":
             $ genie_chibi_xpos = 230
         elif xpos.isdigit():
@@ -370,6 +373,8 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
         $ walk_xpos2 = 500
     elif pos2 == "desk":
         $ walk_xpos2 = 440
+    elif pos2 == "left":
+        $ walk_xpos2 = 100
     elif pos2 == "door":
         $ walk_xpos2 = 750
     elif pos2 == "leave":

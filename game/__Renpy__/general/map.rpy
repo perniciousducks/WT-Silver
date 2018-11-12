@@ -10,38 +10,97 @@ label leave_main_room:
     hide screen genie
     return
 
+
+
 ### Map Screen ###
 
 screen map_screen:
     zorder 4
-    if not map_unlocked:
-        add blackTint("interface/map/map_ground.png")
-    else:
-        imagemap:
-            ground "interface/map/map_ground.png"
-            idle "interface/map/map_idle.png"
-            hover "interface/map/map_hover.png"
-            # (X upper-left corner, Y upper-left corner, width, height).
-            hotspot (189, 218, 38, 20) clicked Return("map_attic") #attic
-            hotspot (272, 373, 63, 41) clicked Return("clothes_store") #clothes
-            hotspot (25, 364, 102, 66) clicked Return("map_forest") #forest
-            hotspot (302, 508, 112, 49) clicked Return("map_lake") #lake
-            hotspot (275, 449, 75, 15) clicked Return("map_dorms") #dorms
-            hotspot (318, 285, 75, 45) clicked Return("floor_7th") #7th floor
-            #hotspot (656, 232, 106, 33) clicked Return("inn_menu") #inn
-            #hotspot (376, 84, 111, 57) clicked Return("map_pitch") #pitch
-            hotspot (307, 230, 59, 37) clicked Return("open_store") #shop
-            hotspot (33, 535, 39, 39) clicked Return("day_main_menu") #return
 
-            #Map Events
-            if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
-                hotspot (227, 442, 55, 55) clicked Return("hermione_map_BJ")
+    $ UI_xpos_offset = 140
+
+    add "interface/map/map.png" xpos UI_xpos_offset ypos 0
+
+    #Office
+    imagebutton:
+        xpos 0 +UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_office_idle.png"
+        hover "interface/map/room_office_hover.png"
+        action Return("main_room")
+
+    #Weasley Store
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_weasley_store_idle.png"
+        hover "interface/map/room_weasley_store_hover.png"
+        action Return("open_weasley_store")
+
+    #Clothing Store
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_clothing_store_idle.png"
+        hover "interface/map/room_clothing_store_hover.png"
+        action Return("clothes_store")
+
+    #Potions
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_potions_idle.png"
+        #hover "interface/map/room_potions_hover.png"
+        #action Return("potions_room")
+
+    #Room of Requirement
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        if unlocked_7th:
+            idle "interface/map/room_ror_idle.png"
+            hover "interface/map/room_ror_hover.png"
+        else:
+            idle "interface/map/room_ror_empty_idle.png"
+            hover "interface/map/room_ror_empty_hover.png"
+        action Return("floor_7th")
+
+    #Lake
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_boat_house_idle.png"
+        hover "interface/map/room_boat_house_hover.png"
+        action Return("map_lake")
+
+    #Forest (Temporary until we have a map for the nothern section!)
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_north_courtyard_idle.png"
+        hover "interface/map/room_north_courtyard_hover.png"
+        action Return("map_forest")
+
+    # (X upper-left corner, Y upper-left corner, width, height).
+    #hotspot (189, 218, 38, 20) clicked Return("map_attic") #attic
+    #hotspot (275, 449, 75, 15) clicked Return("map_dorms") #dorms
+
+    #Map Events
+    #if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
+    #    hotspot (227, 442, 55, 55) clicked Return("hermione_map_BJ")
 
 
 label floor_7th:
     if unlocked_7th == False:
-        m"\"I don't have any reason to go to this floor...\""
-        jump return_office
+        m"\"I don't have any reason to go there...\""
+        jump door
     else:
         call blkfade
         call leave_main_room
@@ -99,8 +158,8 @@ label map_attic: #Label controlling what happens when you access the attic
 
 label map_forest: #Label controlling what happens when you go to the forest
     if daytime:
-        m "I really shouldn't be leaving the castle during the day. It's too risky..."
-        jump day_main_menu
+        m "I shouldn't be leaving the castle during the day. It's too risky..."
+        jump door
     else:
         pass
 
@@ -139,8 +198,8 @@ label map_forest: #Label controlling what happens when you go to the forest
 
 label map_lake: #Label controlling what happens when you go to the lake
     if daytime:
-        m "I really shouldn't be leaving the castle during the day. It's too risky..."
-        jump day_main_menu
+        m "I shouldn't be leaving the castle during the day. It's too risky..."
+        jump door
     else:
         pass
     call outskirts_of_hogwarts

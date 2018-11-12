@@ -10,11 +10,16 @@ label door:
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
     $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
 
+    call play_sound("scroll")
     show screen door_menu
+    hide screen points
+    with d1
 
     $_return = ui.interact()
 
     hide screen door_menu
+    show screen points
+    #Do NOT add a transition here!
 
     if not door_examined and _return == "door":
         $ door_examined = True
@@ -179,5 +184,7 @@ screen door_menu:
     zorder 8
     add "images/backgrounds/desk.png"
     use close_button
-    use map_screen
-    use generic_character_select(summon_list, "-Summon-", 812, 23)
+    if map_unlocked:
+        use map_screen
+    else:
+        use generic_character_select(summon_list, "-Summon-", 812, 23)

@@ -1,6 +1,14 @@
 label door:
     hide screen main_room_menu
 
+    if day == 1:
+        if not door_examined:
+            menu:
+                "-Examine the door-":
+                    $ door_examined = True
+                    jump examine_door
+        jump day_main_menu
+
     $ summon_list = []
     $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
     $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
@@ -21,69 +29,33 @@ label door:
     show screen points
     #Do NOT add a transition here!
 
-    if not door_examined and _return == "door":
-        $ door_examined = True
-        hide screen genie
-        show screen chair_left #Empty chair near the desk.
-        show screen chair_right
-        call gen_chibi("stand","door","base")
-        show screen desk
-        with Dissolve(0.5)
-        m "A sturdy looking door..."
-        m "I wonder what's behind it."
-        label examining_the_door:
-        menu:
-            "-Knock on the door-":
-                show screen blktone8
-                with d3
-                call play_sound("knocking")
-                "*Knock-knock-knock*"
-                "..................."
-                hide screen blktone8
-                with d3
-                m "No reply..."
-                jump examining_the_door
-            "-Put your ear on it-":
-                show screen blktone8
-                with d3
-                ">You put your ear on the door and listen intently..."
-                m "I don't hear anything."
-                hide screen blktone8
-                with d3
-                jump examining_the_door
-            "-Kick the door-":
-                show screen blktone8
-                with d3
-                $ renpy.play('sounds/kick.ogg')
-                pause.2
-                with hpunch
-                "*Thump!*"
-                ".............................."
-                hide screen blktone8
-                with d3
-                m "This door could take a thousand kicks like that and it still wouldn't break..."
-                m "It doesn't look like it's locked though..."
-                jump examining_the_door
-            "-Leave it alone-":
-                m "Who knows what kind of dangers could be lurking behind that door?"
-                m "I think I'll let it be for now..."
-                pass
 
-        call gen_chibi("hide")
-        hide screen chair_left #Empty chair near the desk.
-        hide screen desk
-        show screen genie
-        with d3
-        jump day_main_menu
+    #Hermione
+    if _return == "hermione" and hermione_busy:
+        if daytime:
+            call nar(">Hermione is taking classes.")
+            jump day_main_menu
+        else:
+            call nar(">Hermione is already asleep.")
+            jump night_main_menu
+    elif _return == "hermione" and not hermione_busy:
+        jump summon_hermione
 
-        #"-Explore the Castle-" if door_examined:
-        #    if map_unlocked:
-        #        hide screen main_room_menu
-        #        call screen map_screen
-        #    else:
-        #        m "I would almost certainly get lost without a map."
-        #        m "Maybe there is one hidden somewhere in this room..."
-        #        jump day_main_menu
+
+    #Luna
+    elif luna_known and _return == "luna" and luna_busy:
+        if daytime:
+            call nar(">Luna is taking classes.")
+            jump day_main_menu
+        else:
+            call nar(">Luna is already asleep.")
+            jump night_main_menu
+    elif luna_known and _return == "luna" and not luna_busy:
+        if not lun_reverted:
+            call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
+        else:
+            call play_music("chipper_doodle") # LUNA'S THEME (placeholder probably)
+        jump summon_luna
 
 
     #Astoria
@@ -109,35 +81,6 @@ label door:
             jump night_main_menu
     elif _return == "susan" and not susan_busy:
         jump summon_susan
-
-
-    #Hermione
-    elif _return == "hermione" and hermione_busy:
-        if daytime:
-            call nar(">Hermione is taking classes.")
-            jump day_main_menu
-        else:
-            call nar(">Hermione is already asleep.")
-            jump night_main_menu
-    elif _return == "hermione" and not hermione_busy:
-        jump summon_hermione
-
-
-
-    #Luna
-    elif luna_known and _return == "luna" and luna_busy:
-        if daytime:
-            call nar(">Luna is taking classes.")
-            jump day_main_menu
-        else:
-            call nar(">Luna is already asleep.")
-            jump night_main_menu
-    elif luna_known and _return == "luna" and not luna_busy:
-        if not luna_reverted:
-            call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
-        else:
-            call play_music("chipper_doodle") # LUNA'S THEME (placeholder probably)
-        jump summon_luna
 
 
     #Cho
@@ -175,10 +118,14 @@ label door:
     elif _return == "tonks" and not tonks_busy:
         jump summon_tonks
 
-    elif _return=="Close":
+
+    #Close
+    elif _return == "Close":
         jump day_main_menu
 
     $ renpy.jump(_return)
+
+
 
 screen door_menu:
     zorder 8
@@ -188,3 +135,66 @@ screen door_menu:
         use map_screen
     else:
         use generic_character_select(summon_list, "-Summon-", 812, 23)
+
+
+
+
+
+
+
+
+
+
+#Day 1 room interact quest.
+label examine_door:
+    $ door_examined = True
+    show screen chair_left #Empty chair near the desk.
+    show screen chair_right
+    show screen desk
+    call gen_chibi("stand","door","base")
+    with d5
+
+    m "A sturdy looking door..."
+    m "I wonder what's behind it."
+    label examining_the_door:
+    menu:
+        "-Knock on the door-":
+            show screen blktone8
+            with d3
+            call play_sound("knocking")
+            "*Knock-knock-knock*"
+            "..................."
+            hide screen blktone8
+            with d3
+            m "No reply..."
+            jump examining_the_door
+        "-Put your ear on it-":
+            show screen blktone8
+            with d3
+            ">You put your ear on the door and listen intently..."
+            m "I don't hear anything."
+            hide screen blktone8
+            with d3
+            jump examining_the_door
+        "-Kick the door-":
+            show screen blktone8
+            with d3
+            $ renpy.play('sounds/kick.ogg')
+            pause.2
+            with hpunch
+            "*Thump!*"
+            ".............................."
+            hide screen blktone8
+            with d3
+            m "This door could take a thousand kicks like that and it still wouldn't break..."
+            m "It doesn't look like it's locked though..."
+            jump examining_the_door
+        "-Leave it alone-":
+            m "Who knows what kind of dangers could be lurking behind that door?"
+            m "I think I'll let it be for now..."
+            pass
+
+    call gen_chibi("sit_behind_desk")
+    with d3
+
+    jump day_main_menu

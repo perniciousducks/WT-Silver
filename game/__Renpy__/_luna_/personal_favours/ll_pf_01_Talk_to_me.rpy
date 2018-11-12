@@ -3,8 +3,8 @@
 label luna_favour_1: ###TALK TO ME #DONE
 
     m "{size=-4}(All I'll do is have a nice little conversation with her...){/size}"
-    if luna_corruption == 0: #FIRST TIME
-            $ luna_corruption += 1
+    if lun_corruption == 0: #FIRST TIME
+            $ lun_corruption += 1
             call play_music("chipper_doodle")
             m "Ok then..."
             m "Tell me a little about yourself, [luna_name]."
@@ -135,9 +135,9 @@ label luna_favour_1: ###TALK TO ME #DONE
 
 
 
-    elif luna_corruption == 1: #SECOND TIME
-        if luna_corruption <= 1:
-            $ luna_corruption += 1
+    elif lun_corruption == 1: #SECOND TIME
+        if lun_corruption <= 1:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Alright then..."
         m "How's school going, [luna_name]."
@@ -204,7 +204,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 call lun_main("Well... we can't have you wasting your money on any of those other little tarts can we?","upset","mad","mad","mid")
                 menu:
                     "-Play along-": #act submissive
-                        $ luna_dom += 1
+                        $ lun_dom += 1
                         $ current_payout = 150
                         m "ah... of course not..."
                         call lun_main("That's right... why bother with them when I'm here to talk with you...","base","mad","mad","mid")
@@ -263,7 +263,7 @@ label luna_favour_1: ###TALK TO ME #DONE
 
 
                     "-Let her know her place-": #note that he could get more for less from those tarts
-                        $ luna_sub += 1
+                        $ lun_sub += 1
                         m "well now that you mention it I'm sure those tarts would probably charge a lot less for a conversation..."
                         call lun_main("*Hmph* You get what you pay for...","upset","angry","mad","R")
                         m "And what exactly am I getting from you for my payment?"
@@ -271,7 +271,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                         m "Well you'll have to excuse my old eyes because I can barely see you..."
                         menu:
                             "-Ask her to open her top-":
-                                $ luna_sub += 1
+                                $ lun_sub += 1
                                 m "Perhaps you should undo a button or two so I can get a better look."
                                 call lun_main("Are you serious? You expect me to flaunt myself like some cheap tart?","normal","mad","angry","mid")
                                 m "No, I expect you to flaunt yourself like the princess you claim to be..."
@@ -282,7 +282,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                                 hide screen luna_main
                                 with d3
 
-                                $ luna_top_level = 2
+                                $ lun_top_level = 2
                                 call set_lun_top("top_2")
 
                                 call lun_main("...","normal","suspicious","sad","down")
@@ -357,9 +357,9 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif luna_corruption >= 2 and luna_corruption < 13: #THIRD TIME
-        if luna_corruption <= 2:
-            $ luna_corruption += 1
+    elif lun_corruption >= 2 and lun_corruption < 13: #THIRD TIME
+        if lun_corruption <= 2:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Tell me [luna_name]..."
         m "How's you're home life going?"
@@ -373,8 +373,8 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("He's struggling to get any institutions to stock it these days... ever since the ministry stopped buying it.","normal","suspicious","angry","R")
         menu:
             "-Say nothing-": #act submissive
-                if luna_dom <= 1:
-                    $ luna_dom += 1
+                if lun_dom <= 1:
+                    $ lun_dom += 1
                 $ current_payout = 150
                 call lun_main("Wait... that's it!","base","seductive","angry","mid")
                 m "what's it?"
@@ -458,8 +458,8 @@ label luna_favour_1: ###TALK TO ME #DONE
                 call lun_main("Now as a princess I expect a present for having to look at such a filthy act...","base","angry","angry","R")
 
             "-Make an offer-": #exchange quibbler purchase
-                if luna_sub <= 1:
-                    $ luna_sub += 1
+                if lun_sub <= 1:
+                    $ lun_sub += 1
                 $ current_payout = 50
                 m "well I'm sure that I could have a few words with the library staff about stocking it..."
                 call lun_main("Really? You'd do that?","base","wide","base","mid")
@@ -484,8 +484,8 @@ label luna_favour_1: ###TALK TO ME #DONE
 
                 menu:
                     "-Ask her to shorten her skirt-":
-                        if luna_sub <= 2:
-                            $ luna_sub += 1
+                        if lun_sub <= 2:
+                            $ lun_sub += 1
                         m "lets talk about that skirt of yours..."
                         call lun_main("What about it?","normal","mad","angry","mid")
                         m "have you ever considered wearing it a little... shorter?"
@@ -499,7 +499,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                         hide screen luna_main
                         with d3
 
-                        $ luna_skirt_level = 2
+                        $ lun_skirt_level = 2
                         call set_lun_bottom("skirt_2")
 
                         call lun_main("...","upset","suspicious","sad","down")

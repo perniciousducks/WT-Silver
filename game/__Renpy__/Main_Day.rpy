@@ -266,18 +266,18 @@ if her_whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_
 if her_whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
-if luna_reverted and luna_corruption == -2 and days_to_luna <= 0:
+if lun_reverted and lun_corruption == -2 and days_to_luna <= 0:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_1 #Sets luna_corruption to -1, returns next night.
+    jump luna_reverted_greeting_1 #Sets lun_corruption to -1, returns next night.
 
-if luna_reverted and luna_corruption >= 0 and days_to_luna <= 0:
-    if luna_reverted and luna_corruption == 0:
+if lun_reverted and lun_corruption >= 0 and days_to_luna <= 0:
+    if lun_reverted and lun_corruption == 0:
         $ days_without_an_event = 0
         jump luna_reverted_event_1
-    elif luna_reverted and luna_corruption == 1:
+    elif lun_reverted and lun_corruption == 1:
         $ days_without_an_event = 0
         jump luna_reverted_event_2
-    elif luna_reverted and luna_corruption == 2:
+    elif lun_reverted and lun_corruption == 2:
         $ days_without_an_event = 0
         jump luna_reverted_event_3
     else:

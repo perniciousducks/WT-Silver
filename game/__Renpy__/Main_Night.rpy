@@ -145,9 +145,9 @@ if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
 if luna_known and not luna_unlocked:
     call hat_intro_3 #Returns
 
-if luna_reverted and luna_corruption == -1:
+if lun_reverted and lun_corruption == -1:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_2 #Sets luna_corruption to 0
+    jump luna_reverted_greeting_2 #Sets lun_corruption to 0
 
 #Hermione working return.
 if current_job == 1:

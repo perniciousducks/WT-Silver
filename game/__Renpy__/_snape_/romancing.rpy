@@ -500,7 +500,7 @@ label date_with_snape_15:
     $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
-    $ snape_friendship_maxed = True # Turns TRUE when friendship with Snape been maxed out.
+    $ sna_friendship_maxed = True # Turns TRUE when friendship with Snape been maxed out.
 
     return
 

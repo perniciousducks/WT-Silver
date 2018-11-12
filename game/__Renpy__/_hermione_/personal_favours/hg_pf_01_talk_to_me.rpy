@@ -91,7 +91,7 @@ label hg_talk_1:
 
     menu:
         "-Jerk off while she is talking-":
-            $ jerked_off_in_front_of_her += 1
+            $ her_jerk_off_counter += 1
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
 
             hide screen hermione_main
@@ -179,7 +179,7 @@ label hg_talk_3:
 
     menu:
         "-Start jerking off-":
-            $ jerked_off_in_front_of_her += 1
+            $ her_jerk_off_counter += 1
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
 
             hide screen hermione_main

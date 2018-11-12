@@ -104,7 +104,7 @@ label set_lun_bra(bra=""):
     hide screen luna_main
 
     if luna_wear_bra and lun_bra == bra:
-        if luna_corruption > 8:
+        if lun_corruption > 8:
             $ lun_request_wear_bra = False
             $ luna_wear_bra = False
         else:
@@ -141,7 +141,7 @@ label set_lun_panties(panties=""):
     hide screen luna_main
 
     if luna_wear_panties and lun_panties == panties:
-        if luna_corruption > 8:
+        if lun_corruption > 8:
             $ lun_request_wear_panties = False
             $ luna_wear_panties = False
         else:

@@ -195,14 +195,14 @@ screen snape_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(snape_support/1.5), "-Support-", sna_support_word, snape_support) #Max is 15
+                use stat_bar(int(sna_support/1.5), "-Support-", sna_support_word, sna_support) #Max is 15
 
-                use stat_bar(int(snape_friendship/10), "-Friendship-", sna_friendship_word, snape_friendship)   #max is 100.
+                use stat_bar(int(sna_friendship/10), "-Friendship-", sna_friendship_word, sna_friendship)   #max is 100.
 
                 use text_stat("Hung out with Snape:")
-                use text_stat("- ", " times -", snape_dates_counter)
+                use text_stat("- ", " times -", sna_dates_counter)
                 use text_stat("Enjoyed some wine with Snape:")
-                use text_stat("- ", " times -", snape_wine_counter)
+                use text_stat("- ", " times -", sna_wine_counter)
 
         vbar value YScrollValue("vp")
 
@@ -227,7 +227,7 @@ screen hermione_stat_menu:
 
                 #Imagination 2:
                 use text_stat("You Jerked off in front of her:")
-                use text_stat("- ", " times -", jerked_off_in_front_of_her)
+                use text_stat("- ", " times -", her_jerk_off_counter)
                 use text_stat("You saw her panties:")
                 use text_stat("- ", " times -", hg_pf_NicePanties_OBJ.points)
 
@@ -286,9 +286,9 @@ screen luna_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(luna_corruption/2.4), "-Corruption-", "", luna_corruption)
-                use stat_bar(int(luna_dom/2.4), "-Dom points-", "", luna_dom)
-                use stat_bar(int(luna_sub/2.4), "-Sub points-", "", luna_sub)
+                use stat_bar(int(lun_corruption/2.4), "-Corruption-", "", lun_corruption)
+                use stat_bar(int(lun_dom/2.4), "-Dom points-", "", lun_dom)
+                use stat_bar(int(lun_sub/2.4), "-Sub points-", "", lun_sub)
 
         vbar value YScrollValue("vp")
 
@@ -304,9 +304,9 @@ screen astoria_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(astoria_spells[0]/0.4), "-Spells-", "", astoria_spells[0]) #Max is 4
-                use stat_bar(int(astoria_training_counter/0.9), "-Training-", "", astoria_training_counter) #Max is 9
-                use stat_bar(int(astoria_affection/0.3), "-Affection-", "", astoria_affection) #Max is 4
+                use stat_bar(int(ast_spells[0]/0.4), "-Spells-", "", ast_spells[0]) #Max is 4
+                use stat_bar(int(ast_training_counter/0.9), "-Training-", "", ast_training_counter) #Max is 9
+                use stat_bar(int(ast_affection/0.3), "-Affection-", "", ast_affection) #Max is 4
 
         vbar value YScrollValue("vp")
 
@@ -323,7 +323,7 @@ screen susan_stat_menu:
 
             vbox:
                 use text_stat("Times Cursed:")
-                use text_stat("- ", " times -", susan_curse_counter)
+                use text_stat("- ", " times -", sus_curse_counter)
 
         vbar value YScrollValue("vp")
 
@@ -343,8 +343,8 @@ screen tonks_stat_menu:
 
             vbox:
                 use stat_bar(int(69/6.9), "-Lust-", "", 69)
-                #use stat_bar(int(snape_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
-                #use stat_bar(int(snape_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
+                #use stat_bar(int(sna_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
+                #use stat_bar(int(sna_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
                 #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
                 use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
@@ -352,7 +352,7 @@ screen tonks_stat_menu:
                 use text_stat("- ", " times -", ton_astoria_date_counter)
 
                 use text_stat("Tonks has sluttyfied:")
-                use text_stat("- ", "/5 outfits -", tonks_sluttyfied_clothing)
+                use text_stat("- ", "/5 outfits -", ton_clothing_upgrades)
 
         vbar value YScrollValue("vp")
 
@@ -376,15 +376,20 @@ label update_stats:
     else:
         $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
+    #Astoria
+    #call astoria_clothing_level
+    #$ ast_cuteness_word_list = ["Ugly Duckling", "Swot", "", "", "", "", "", "Cutypie", "", "", ""]
+    #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
+
     #Snape
-    $ sna_friendship_word_list = ["???", "College", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF","Bros"]
-    $ sna_friendship_word = sna_friendship_word_list[int(snape_friendship/10)]
+    $ sna_friendship_word_list = ["Unknown", "College", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
+    $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
-    $ sna_support_word = sna_support_word_list[int(snape_support/1.5)]
+    $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
 
     #Tonks
-    call tonks_clothing_rep_level
+    call tonks_clothing_level
     $ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
     $ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
 

@@ -3,11 +3,11 @@
 label luna_favour_4: ###Luna handjob #DONE
 
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
-    if luna_corruption > 13:
+    if lun_corruption > 13:
         jump luna_handjob_hermione_call
-    if luna_addicted:
-        if luna_corruption <= 11:
-            $ luna_corruption += 1
+    if lun_addicted:
+        if lun_corruption <= 11:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "[luna_name]?"
         call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
@@ -289,9 +289,9 @@ label luna_favour_4: ###Luna handjob #DONE
 
 
     else:
-        if luna_corruption <= 10: #FIRST TIME - Change this to 10 when part 2 added
-            if luna_corruption <= 10:
-                $ luna_corruption += 1
+        if lun_corruption <= 10: #FIRST TIME - Change this to 10 when part 2 added
+            if lun_corruption <= 10:
+                $ lun_corruption += 1
             call play_music("chipper_doodle")
             m "[luna_name]?"
             call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
@@ -300,10 +300,10 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("Go on...","normal","angry","angry","R")
 
             menu:
-                "-Ask for a handjob politely-" if luna_sub < luna_dom:
+                "-Ask for a handjob politely-" if lun_sub < lun_dom:
                     $ current_payout = 160
-                    if luna_dom <= 8:
-                        $ luna_dom += 1
+                    if lun_dom <= 8:
+                        $ lun_dom += 1
                     $ luna_choice = 3
                     m "Well seeing as how you're so skilled at everything you turn your hand towards..."
                     call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -321,10 +321,10 @@ label luna_favour_4: ###Luna handjob #DONE
                     m "Fantastic! Let me just stand up."
                     call lun_main("(This couldn't get any easier)","base","mad","angry","R")
 
-                "-Beg for a handjob-" if luna_dom >= 7:
+                "-Beg for a handjob-" if lun_dom >= 7:
                     $ current_payout = 200
-                    if luna_dom <= 8:
-                        $ luna_dom += 1
+                    if lun_dom <= 8:
+                        $ lun_dom += 1
                     $ luna_choice = 4
                     m "Well if it's not too much trouble..."
                     call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -506,8 +506,8 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
         else: #last time event is run before cum addict variant
-            if luna_corruption <= 11:
-                $ luna_corruption += 1
+            if lun_corruption <= 11:
+                $ lun_corruption += 1
             call play_music("chipper_doodle")
             m "[luna_name]?"
             call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
@@ -517,10 +517,10 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("you know I like to hear you beg.","base","mad","mad","mid")
 
             menu:
-                "-Ask for a handjob politely-" if luna_sub < luna_dom:
+                "-Ask for a handjob politely-" if lun_sub < lun_dom:
                     $ current_payout = 160
-                    if luna_dom <= 8:
-                        $ luna_dom += 1
+                    if lun_dom <= 8:
+                        $ lun_dom += 1
                     $ luna_choice = 3
                     m "Well seeing as how you're so skilled at everything you turn your hand towards..."
                     call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -538,10 +538,10 @@ label luna_favour_4: ###Luna handjob #DONE
                     m "Fantastic! Let me just stand up."
                     call lun_main("(This couldn't get any easier)","base","mad","angry","R")
 
-                "-Beg for a handjob-" if luna_dom >= 7:
+                "-Beg for a handjob-" if lun_dom >= 7:
                     $ current_payout = 200
-                    if luna_dom <= 8:
-                        $ luna_dom += 1
+                    if lun_dom <= 8:
+                        $ lun_dom += 1
                     $ luna_choice = 4
                     m "Well if it's not too much trouble..."
                     call lun_main("Mhmmm...","upset","suspicious","angry","R")

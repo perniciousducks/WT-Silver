@@ -946,7 +946,7 @@ label event_08:
 
     menu:
         "\"(I will jerk off a little while she talks.)\"":
-            $ jerked_off_in_front_of_her += 1
+            $ her_jerk_off_counter += 1
             $ jerk_off_session = True #Affects next conversation with Snape.
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
         "\"(No, that's stupid! I Need to behave!)\"":

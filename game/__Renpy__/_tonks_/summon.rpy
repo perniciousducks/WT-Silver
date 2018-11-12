@@ -122,7 +122,7 @@ label tonks_talk:
 
             call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
             if upgradable_clothing != []:
-                $ tonks_sluttyfied_clothing += 1
+                $ ton_clothing_upgrades += 1
                 call ton_main("Oh I really like this one.","open","base","raised","down")
                 call ton_main("I could make some adjustments here...","base","base","raised","down")
                 call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")

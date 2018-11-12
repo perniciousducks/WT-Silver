@@ -4,7 +4,7 @@
 label tonks_random_clothing:
 
     $ random_number = renpy.random.randint(1, 20)
-    if random_number in [1,2,3,4,5] and tonks_wear_top and astoria_affection >= 2: #Naked
+    if random_number in [1,2,3,4,5] and tonks_wear_top and ast_affection >= 2: #Naked
         if not tonks_strip_happened: #First time.
             $ tonks_strip_happened = True
 
@@ -143,7 +143,7 @@ label tonks_random_clothing:
 
 
 
-label tonks_clothing_rep_level:
+label tonks_clothing_level:
 
     $ ton_clothing_level = 60
 
@@ -153,16 +153,14 @@ label tonks_clothing_rep_level:
 
     #Top
     if tonks_wear_top:
-        if ton_top in ["top_auror_1"]:
-            $ ton_clothing_level +=10
-        elif ton_top in ["top_auror_2","top_auror_3"] and not tonks_wear_bottom:
-            $ ton_clothing_level +=0
+        if ton_top in ["top_auror_1","top_auror_2","top_auror_3"]:
+            $ ton_clothing_level +=5
         elif ton_top in ["top_corset_1"]:
             $ ton_clothing_level -=5
         else:
-            $ ton_clothing_level +=5
-    else:
+            $ ton_clothing_level +=0
 
+    else:
         #Belly Piercing
         if tonks_wear_piercings and ton_nipple_piercing in ["belly_pearls"]:
             $ ton_clothing_level -=5
@@ -182,23 +180,41 @@ label tonks_clothing_rep_level:
             $ ton_clothing_level -=5
 
     #Bottom
-    if tonks_wear_bottom and ton_bottom in ["skirt_1","skirt_2","pants_jeans_long"]: #Panties not visible
-        if ton_bottom in ["skirt_1"]:
+    if tonks_wear_bottom:
+        if (tonks_wear_top and ton_top in ["top_auror_1"]) or ton_bottom in ["skirt_1","skirt_2","pants_jeans_long"]: #Panties not visible
+            $ ton_clothing_level +=0
+        elif ton_bottom in ["skirt_1"]:
             $ ton_clothing_level +=30
         else:
+            if ton_bottom in ["skirt_3","skirt_3_belted"]: #Panties visible
+                $ ton_clothing_level -=5
+            else:
+                $ ton_clothing_level -=10
+
+            if not tonks_wear_panties:
+                $ ton_clothing_level -=10
+
+    else:
+        if (tonks_wear_top and ton_top in ["top_auror_1"]): #Panties not visible
             $ ton_clothing_level +=0
-    elif tonks_wear_bottom: #Panties visible
-        if ton_bottom in ["skirt_3","skirt_3_belted"]:
+        elif tonks_wear_panties:
+            $ ton_clothing_level -=10
+        else:
+            $ ton_clothing_level -=20
+
+    #Neck
+    if tonks_wear_neckwear:
+        if ton_neckwear in [""]:
             $ ton_clothing_level -=5
         else:
-            $ ton_clothing_level -=10
+            $ ton_clothing_level +=0
 
-        #Panties
-        if not tonks_wear_panties:
-            $ ton_clothing_level -=15
-    else:
-        if not tonks_wear_panties:
-            $ ton_clothing_level -=20
+    #Stockings
+    if ton_wear_stockings:
+        if ton_stockings in ["stockings_auror"]:
+            $ ton_clothing_level -=5
+        else:
+            $ ton_clothing_level +=0
 
     #Hat
     if tonks_wear_hat:

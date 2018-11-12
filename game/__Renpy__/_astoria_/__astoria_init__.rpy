@@ -169,7 +169,7 @@ label astoria_init:
 
         #Outfits
         $ astoria_outfit_GLBL = None
-        $ astria_temp_outfit = None
+        $ astoria_temp_outfit = None
 
     return
 
@@ -178,15 +178,13 @@ label astoria_progress_init:
 
     if not hasattr(renpy.store,'astoria_name') or reset_persistants:
 
-        ##Favour stuff
+        #Stats
+        $ ast_spells = [0,0,0,0,0,0]
+        $ ast_spell_progress = 0 #Training times required to unlock a spell. Resets to 0 after it.
+        $ ast_affection      = 0 #Affection level with Tonks.
+        $ ast_mad = 0
 
-        ##Stats
-        $ astoria_spells = [0,0,0,0,0,0]
-        $ astoria_spell_progress = 0 #Training times required to unlock a spell. Resets to 0 after it.
-        $ astoria_affection      = 0 #Affection level with Tonks.
-        $ astoria_points         = 0 #Not in use.
-
-        ##Flags
+        #Flags
         $ astoria_busy = False
         $ astoria_unlocked = False
         $ astoria_wardrobe_unlocked = False
@@ -196,7 +194,13 @@ label astoria_progress_init:
         $ astoria_arrival_day = 30
         $ astoria_arrvial_whoring = 9
 
-        ##Events
+        #Names
+        $ astoria_name = "Miss Greengrass"
+        $ ast_genie_name = "Dumby"
+        $ ast_susan_name = "Cow"
+        $ ast_tonks_name = "Old Hag"
+
+        #Events
         $ hermione_on_the_lookout  = False
         $ hermione_finds_astoria   = False
         $ snape_on_the_lookout     = False
@@ -207,7 +211,7 @@ label astoria_progress_init:
         $ astoria_book_intro_happened = False
         $ astoria_intro_completed  = False
 
-        ##Tonks events
+        #Tonks events
         $ spells_locked = False
         $ astoria_tonks_event_in_progress = False
         $ astoria_tonks_1_completed = False
@@ -217,14 +221,8 @@ label astoria_progress_init:
         $ astoria_tonks_5_completed = False
         $ astoria_tonks_6_completed = False
 
-        ##Names
-        $ astoria_name = "Miss Greengrass"
-        $ ast_genie_name = "Dumby"
-        $ ast_susan_name = "Cow"
-        $ ast_tonks_name = "Old Hag"
-
-        #Stats
-        $ astoria_training_counter = 0
+        #Stat Screen
+        $ ast_training_counter = 0
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

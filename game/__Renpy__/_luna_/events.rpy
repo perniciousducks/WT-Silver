@@ -3,11 +3,11 @@
 label luna_reversion_event: #DONE
 
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
-    if luna_corruption <= 10: #FIRST TIME
-        if luna_corruption <= 9:
-            $ luna_corruption += 1
+    if lun_corruption <= 10: #FIRST TIME
+        if lun_corruption <= 9:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
-        if luna_sub > luna_dom: #Sub intro
+        if lun_sub > lun_dom: #Sub intro
             m "[luna_name]..."
             call lun_main("yes, [lun_genie_name]...","normal","suspicious","sad","down")
             m "Do you know what a handjob is?"
@@ -28,10 +28,10 @@ label luna_reversion_event: #DONE
             call lun_main("Go on...","normal","angry","angry","R")
 
         menu:
-            "-Tell her to give you a handjob-" if luna_sub >= 7:
+            "-Tell her to give you a handjob-" if lun_sub >= 7:
                 $ current_payout = 80
-                if luna_sub <= 8:
-                    $ luna_sub += 1
+                if lun_sub <= 8:
+                    $ lun_sub += 1
                 $ luna_choice = 1
                 m "Well seeing as how you're familiar with the concept, how about a practical demonstration."
                 call lun_main("...","upset","suspicious","angry","R")
@@ -59,10 +59,10 @@ label luna_reversion_event: #DONE
                 m "Fantastic! Let me just stand up."
                 call lun_main("You're despicable...","upset","mad","angry","mid")
 
-            "-Ask for a handjob-" if luna_sub > luna_dom:
+            "-Ask for a handjob-" if lun_sub > lun_dom:
                 $ current_payout = 120
-                if luna_sub <= 8:
-                    $ luna_sub += 1
+                if lun_sub <= 8:
+                    $ lun_sub += 1
                 $ luna_choice = 2
                 m "Well seeing as how you're familiar with the concept..."
                 call lun_main("...","upset","angry","mad","mid")
@@ -77,10 +77,10 @@ label luna_reversion_event: #DONE
                 m "Fantastic! Let me just stand up."
                 call lun_main("*Hmmmph* Don't expect that you'll be cumming anywhere near me though!","upset","mad","mad","mid")
 
-            "-Ask for a handjob politely-" if luna_sub < luna_dom:
+            "-Ask for a handjob politely-" if lun_sub < lun_dom:
                 $ current_payout = 160
-                if luna_dom <= 8:
-                    $ luna_dom += 1
+                if lun_dom <= 8:
+                    $ lun_dom += 1
                 $ luna_choice = 3
                 m "Well seeing as how you're so skilled at everything you turn your hand towards..."
                 call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -98,10 +98,10 @@ label luna_reversion_event: #DONE
                 m "Fantastic! Let me just stand up."
                 call lun_main("(This couldn't get any easier)","base","mad","angry","R")
 
-            "-Beg for a handjob-" if luna_dom >= 7:
+            "-Beg for a handjob-" if lun_dom >= 7:
                 $ current_payout = 200
-                if luna_dom <= 8:
-                    $ luna_dom += 1
+                if lun_dom <= 8:
+                    $ lun_dom += 1
                 $ luna_choice = 4
                 m "Well if it's not too much trouble..."
                 call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -467,9 +467,9 @@ label luna_revert_1: #Reversion event #DONE
     m "Don't you want to stay a little longer?"
     call her_main("I don't think so, sir...","disgust","glance")
 
-    $ luna_reverted = True
+    $ lun_reverted = True
     $ luna_wardrobe_unlocked = False
-    $ luna_corruption = -2 #Triggers new intro event.
+    $ lun_corruption = -2 #Triggers new intro event.
     $ days_to_luna = 3
 
     $ hermione_busy = True

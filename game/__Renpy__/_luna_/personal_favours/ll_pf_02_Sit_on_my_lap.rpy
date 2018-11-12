@@ -3,9 +3,9 @@
 label luna_favour_2: ###SIT ON MY LAP #DONE
 
     m "{size=-4}(I'll just ask her to sit on my lap...){/size}"
-    if luna_corruption <= 3: #FIRST TIME
-        if luna_corruption <= 3:
-            $ luna_corruption += 1
+    if lun_corruption <= 3: #FIRST TIME
+        if lun_corruption <= 3:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Before we get started, Would you like a seat, [luna_name]?"
         call lun_main("I would, but there's no chair [lun_genie_name]...","normal","angry","raised","mid")
@@ -28,9 +28,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         with d3
 
         menu:
-            "-Pull her onto your lap-" if luna_sub >= 2:
-                if luna_sub <= 3:
-                    $ luna_sub += 1
+            "-Pull her onto your lap-" if lun_sub >= 2:
+                if lun_sub <= 3:
+                    $ lun_sub += 1
                 $ luna_grope = True
                 call lun_main("...","upset","suspicious","angry","R")
                 call lun_main("Actually, I'm not sure if...","normal","mad","base","R")
@@ -144,7 +144,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
 
 
 
-            "-Do nothing-" if luna_dom < 2:
+            "-Do nothing-" if lun_dom < 2:
                 call lun_main("...","normal","angry","angry","R")
                 call lun_main("......","upset","mad","angry","R")
                 call lun_main("I guess I'll start then...","normal","suspicious","angry","R")
@@ -200,9 +200,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 120
 
 
-            "-Do nothing-" if luna_dom >= 2:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Do nothing-" if lun_dom >= 2:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 call lun_main("...","normal","angry","angry","mid")
                 call lun_main("......","upset","mad","angry","R")
                 call lun_main("I guess I'll start then...","normal","suspicious","angry","R")
@@ -326,12 +326,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
             call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif luna_corruption <= 4: #SECOND TIME
-        if luna_corruption <= 4:
-            $ luna_corruption += 1
+    elif lun_corruption <= 4: #SECOND TIME
+        if lun_corruption <= 4:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Can I offer you another seat [luna_name]?"
-        if luna_sub > luna_dom:
+        if lun_sub > lun_dom:
             call lun_main("...","normal","base","sad","down")
             call lun_main("Alright [lun_genie_name]...","normal","base","sad","R")
             m "Good girl."
@@ -353,9 +353,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         with d3
 
         menu:
-            "-Ask her to remove her skirt first-" if luna_sub >= 2:
-                if luna_sub <= 3:
-                    $ luna_sub += 1
+            "-Ask her to remove her skirt first-" if lun_sub >= 2:
+                if lun_sub <= 3:
+                    $ lun_sub += 1
                 $ luna_grope = True
                 m "How about you take off your skirt before we start?"
                 call lun_main("!!!","normal","wide","sad","R")
@@ -382,7 +382,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("...","upset","suspicious","sad","down")
                 jump luna_lap_dance_2
 
-            "-Tell her to sit down-" if luna_sub >= luna_dom:
+            "-Tell her to sit down-" if lun_sub >= lun_dom:
                 $ luna_grope = False
                 m "come on now..."
                 call lun_main("...","upset","mad","sad","R")
@@ -531,8 +531,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                                 call lun_main("I think I'd like to be paid now...","upset","mad","angry","R")
 
                             "-Hold her down-":
-                                if luna_sub <= 4:
-                                    $ luna_sub += 1
+                                if lun_sub <= 4:
+                                    $ lun_sub += 1
                                 call lun_main("Professor!","upset","wide","mad","mid")
                                 call lun_main("I'd like to leave now!","normal","mad","mad","R")
                                 m "just a bit longer [luna_name]..."
@@ -579,7 +579,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                                 call lun_main("can I please be paid now?","upset","mad","sad","down")
 
 
-            "-Do nothing-" if luna_sub <= luna_dom:
+            "-Do nothing-" if lun_sub <= lun_dom:
                 call lun_main("...","normal","angry","angry","mid")
                 call lun_main("......","upset","mad","angry","R")
                 call lun_main("I suppose I'll start then...","normal","suspicious","angry","R")
@@ -662,9 +662,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 200
 
 
-            "-Ask Nicely-" if luna_dom >= 2:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Ask Nicely-" if lun_dom >= 2:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 m "can you please sit on my lap [luna_name]?"
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("well seeing as how you asked so nicely...","base","suspicious","base","R")
@@ -773,7 +773,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 250
 
 
-        if luna_dom >= luna_sub:
+        if lun_dom >= lun_sub:
             m "Alright, alright. Here's your gold."
         else:
             m "Here's your payment [luna_name]."
@@ -787,12 +787,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
             call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif luna_corruption >= 5 and luna_corruption < 13: #THIRD TIME
-        if luna_corruption <= 5:
-            $ luna_corruption += 1
+    elif lun_corruption >= 5 and lun_corruption < 13: #THIRD TIME
+        if lun_corruption <= 5:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Can I offer you another seat [luna_name]?"
-        if luna_sub > luna_dom:
+        if lun_sub > lun_dom:
             call lun_main("...","normal","base","sad","down")
             call lun_main("Alright [lun_genie_name]...","normal","base","sad","R")
             m "Good girl."
@@ -814,9 +814,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         with d3
 
         menu:
-            "-Pull her onto your lap-" if luna_sub >= 3:
-                if luna_sub <= 4:
-                    $ luna_sub += 1
+            "-Pull her onto your lap-" if lun_sub >= 3:
+                if lun_sub <= 4:
+                    $ lun_sub += 1
                 $ luna_grope = True
                 ">You grab Luna by the waist and pull her hard onto your lap."
                 call lun_main("!!!","normal","wide","sad","R")
@@ -835,10 +835,10 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("...","upset","suspicious","sad","down")
                 jump luna_lap_dance_3
 
-            "-Tell her to sit down-" if luna_sub >= luna_dom:
+            "-Tell her to sit down-" if lun_sub >= lun_dom:
                 $ luna_grope = False
-                if luna_sub <= 3:
-                    $ luna_sub += 1
+                if lun_sub <= 3:
+                    $ lun_sub += 1
                 m "why don-"
                 ">Luna quickly sits down on your lap, wriggling around slightly until your cock rests between her cheeks."
                 call lun_main("(ah...{image=textheart})","base","mad","sad","down")
@@ -961,8 +961,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("..........................","normal","wide","sad","R")
                         ">You start stroking the insides of her thighs, moving closer towards her sex each time."
                         call lun_main("!!!!","clench","wide","mad","mid")
-                        if luna_sub <= 4:
-                            $ luna_sub += 1
+                        if lun_sub <= 4:
+                            $ lun_sub += 1
                         call lun_main("Professor...","upset","wide","mad","mid",tears="soft")
                         call lun_main("please...","normal","mad","mad","R",tears="soft")
                         m "just a bit longer [luna_name]..."
@@ -1021,9 +1021,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         m "ah... gods that was good"
                         call lun_main("I think I'd like to leave now [lun_genie_name]...","base","seductive","base","R",tears="soft")
 
-            "-Ask Nicely-" if luna_dom >= luna_sub:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Ask Nicely-" if lun_dom >= lun_sub:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 m "can you please sit on my lap [luna_name]?"
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -1133,9 +1133,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 250
 
 
-            "-Beg-" if luna_dom >= 3:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Beg-" if lun_dom >= 3:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 m "can you please sit on my lap [luna_name]?"
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -1209,7 +1209,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 250
 
 
-        if luna_dom >= luna_sub:
+        if lun_dom >= lun_sub:
             m "Alright, alright. Here's your gold."
         else:
             m "Here's your payment [luna_name]."

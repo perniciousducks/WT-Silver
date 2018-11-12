@@ -199,33 +199,34 @@ label luna_progress_init:
     # Update 1.3
     if not hasattr(renpy.store,'luna_known') or reset_persistants or reset_luna_content:
 
+        #Stats
+        $ lun_whoring = 0
+        $ lun_mad = 0
+
+        $ luna_gold = 0
+        $ lun_skirt_level = 1
+        $ lun_top_level = 1
+
+        $ lun_dom = 0
+        $ lun_sub = 0
+        $ lun_corruption = 0
+        $ lun_arousal = 0
+
+        #Flags
         $ hat_known = False
         $ luna_known = False
         $ luna_busy = False
         $ luna_unlocked = False
-        $ lun_genie_name = "Old man"
-        $ luna_name = "Miss Lovegood"
+        $ luna_wardrobe_unlocked = False
 
-        $ luna_dom = 0
-        $ luna_sub = 0
-        $ luna_gold = 0
-        $ luna_skirt_level = 1
-        $ luna_top_level = 1
-        $ luna_corruption = 0
-        $ luna_arousal = 0
-
-        $ luna_reverted = False
-        $ luna_addicted = False
         $ luna_herm_talk = False
-
-    # Update 1.33
-    if not hasattr(renpy.store,'days_to_luna') or reset_persistants or reset_luna_content:
+        $ lun_reverted = False
+        $ lun_addicted = False
 
         $ days_to_luna = 0
 
-    # Update 1.34
-    if not hasattr(renpy.store,'luna_wardrobe_unlocked') or reset_persistants or reset_luna_content:
-
-        $ luna_wardrobe_unlocked = False
+        #Names
+        $ lun_genie_name = "Old man"
+        $ luna_name = "Miss Lovegood"
 
     return

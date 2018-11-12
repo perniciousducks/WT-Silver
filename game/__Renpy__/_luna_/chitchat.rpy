@@ -1,8 +1,8 @@
 label luna_chitchat:
-    #if luna_dom >= luna_sub:
-    #    $ renpy.call('luna_chitdom_'+str(luna_dom)+'_'+str(renpy.random.randint(1, 3)))
+    #if lun_dom >= lun_sub:
+    #    $ renpy.call('luna_chitdom_'+str(lun_dom)+'_'+str(renpy.random.randint(1, 3)))
     #else:
-    #    $ renpy.call('luna_chitsub_'+str(luna_sub)+'_'+str(renpy.random.randint(1, 3)))
+    #    $ renpy.call('luna_chitsub_'+str(lun_sub)+'_'+str(renpy.random.randint(1, 3)))
     "Work in Progress"
     return
 

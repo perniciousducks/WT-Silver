@@ -161,7 +161,7 @@ label hg_blowjob_3: #Call label. Returns.
         $ character_choice = ""
         $ hg_hidden_blowjob_character_list = ["snape"]
 
-        if luna_unlocked and luna_reverted:
+        if luna_unlocked and lun_reverted:
             $ hg_hidden_blowjob_character_list.append("luna")
         #if astoria_unlocked:
         #    $ hg_hidden_blowjob_character_list.append("astoria")

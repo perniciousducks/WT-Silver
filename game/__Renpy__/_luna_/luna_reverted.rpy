@@ -2,7 +2,7 @@
 
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #DONE
     $ days_to_luna = 3
-    $ luna_corruption = -1 #Triggers event during the evening.
+    $ lun_corruption = -1 #Triggers event during the evening.
 
     $ luna_pupil_color = "blue"
     $ luna_l_arm = 1
@@ -151,7 +151,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #
 
 
 label luna_reverted_greeting_2: #Explaining to Luna what will happen or something #DONE
-    $ luna_corruption = 0
+    $ lun_corruption = 0
 
     call play_sound("knocking")
     "*knock* *knock* *knock*"
@@ -372,7 +372,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
 
 
 label luna_cum_addict_event:
-    $ luna_addicted = True #luna is now a cum addict. I'm a bit undecided about the whole thing tbh, might ruin the dom path but idk, we can work it in, make her a dommy cumslut or whatever........
+    $ lun_addicted = True #luna is now a cum addict. I'm a bit undecided about the whole thing tbh, might ruin the dom path but idk, we can work it in, make her a dommy cumslut or whatever........
     ">You put your arms on Luna's shoulders forcing her to her knees."
     $ luna_l_arm = 2
     $ luna_r_arm = 2
@@ -478,7 +478,7 @@ label luna_cum_addict_event:
 
 
 label luna_reverted_event_1: #Masturbate for genie again. #DONE
-    $ luna_corruption = 1
+    $ lun_corruption = 1
     $ days_to_luna = 4
 
     call play_sound("knocking")
@@ -617,7 +617,7 @@ label luna_reverted_event_1: #Masturbate for genie again. #DONE
 
 
 label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's face #DONE
-    $ luna_corruption = 2
+    $ lun_corruption = 2
     $ days_to_luna = 3
 
     call play_sound("knocking")
@@ -844,7 +844,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
 
 
 label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and lick it like a lollipop for an hour #DONE
-    $ luna_corruption = 3
+    $ lun_corruption = 3
     $ days_to_luna = 4
 
     call play_sound("knocking")
@@ -1126,7 +1126,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
 
 # UNFINISHED!!!
 label luna_reverted_event_4: #Luna gentle BJ for anout 9 hours and 14 orgasms from Genie
-    $ luna_corruption = 4
+    $ lun_corruption = 4
     $ days_to_luna = 6
 
     call play_sound("knocking")

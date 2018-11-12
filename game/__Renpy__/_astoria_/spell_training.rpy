@@ -2,16 +2,16 @@
 
 #Spell Training.
 label astoria_spell_training:
-    if astoria_spells[0] == 0 and astoria_affection == 0:
-        $ astoria_training_counter += 1 #For Stats
+    if ast_spells[0] == 0 and ast_affection == 0:
+        $ ast_training_counter += 1 #For Stats
         jump imperio_spell_1_training
-    elif astoria_spells[0] == 1 and astoria_affection == 1: #You have to try the spell once before you can train the next one.
-        $ astoria_training_counter += 1 #For Stats
+    elif ast_spells[0] == 1 and ast_affection == 1: #You have to try the spell once before you can train the next one.
+        $ ast_training_counter += 1 #For Stats
         jump imperio_spell_2_training
-    elif astoria_spells[0] == 2 and astoria_affection == 2: #You have to try the spell once before you can train the next one.
-        $ astoria_training_counter += 1 #For Stats
+    elif ast_spells[0] == 2 and ast_affection == 2: #You have to try the spell once before you can train the next one.
+        $ ast_training_counter += 1 #For Stats
         jump imperio_spell_3_training
-    elif astoria_spells[0] == 3: #ADD Max affection level.
+    elif ast_spells[0] == 3: #ADD Max affection level.
         call nar(">There are currently no more spells to train!")
         jump astoria_requests
     else:
@@ -26,7 +26,7 @@ label astoria_spell_training:
 label imperio_spell_1_training: #first level imperio spell
 
     #Spell Intro.
-    if astoria_spell_progress == 0:
+    if ast_spell_progress == 0:
         #talk about needing to practice the spell, what it does new and about sitting on lap
         call ast_main("","smile","base","base","mid",xpos="right",ypos="base",trans="fade")
         m "So I managed to get a book of brand new spells of an old friend of mine."
@@ -185,11 +185,11 @@ label imperio_spell_1_training: #first level imperio spell
 
         call nar(">Astoria hops back on to your lap.")
 
-        $ astoria_spell_progress = 1
+        $ ast_spell_progress = 1
 
-    if astoria_spell_progress < 4:
+    if ast_spell_progress < 4:
         call astoria_spell_practice
-        if astoria_spell_progress < 4:
+        if ast_spell_progress < 4:
             call play_sound("door")
             hide screen astoria_main
             hide screen bld1
@@ -214,7 +214,7 @@ label imperio_spell_1_training: #first level imperio spell
     call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks spell 1.
-    $ astoria_spells[0] = 1
+    $ ast_spells[0] = 1
 
     if daytime:
         jump night_start
@@ -223,7 +223,7 @@ label imperio_spell_1_training: #first level imperio spell
 
 
 label imperio_spell_2_training: #second level imperio spell
-    if astoria_spell_progress == 0:
+    if ast_spell_progress == 0:
         #talk about what it does new and about sitting on lap
 
 
@@ -232,11 +232,11 @@ label imperio_spell_2_training: #second level imperio spell
         ast "Uh huh!"
         pass
 
-        $ astoria_spell_progress = 1
+        $ ast_spell_progress = 1
 
-    if astoria_spell_progress < 4:
+    if ast_spell_progress < 4:
         call astoria_spell_practice
-        if astoria_spell_progress < 4:
+        if ast_spell_progress < 4:
             call play_sound("door")
             hide screen astoria_main
             hide screen bld1
@@ -250,7 +250,7 @@ label imperio_spell_2_training: #second level imperio spell
     call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks Spell 2.
-    $ astoria_spells[0] = 2
+    $ ast_spells[0] = 2
 
     if daytime:
         jump night_start
@@ -259,16 +259,16 @@ label imperio_spell_2_training: #second level imperio spell
 
 
 label imperio_spell_3_training: #third level imperio spell
-    if astoria_spell_progress == 0:
+    if ast_spell_progress == 0:
         #talk about what it does new and about sitting on lap
         call ast_main("So are you ready to learn the final imperio spell, [ast_genie_name]?","grin","angry","angry","mid",xpos="right",ypos="base",trans="fade")
         m "Ready as I'll ever be..."
 
-        $ astoria_spell_progress = 1
+        $ ast_spell_progress = 1
 
-    if astoria_spell_progress < 4:
+    if ast_spell_progress < 4:
         call astoria_spell_practice
-        if astoria_spell_progress < 4:
+        if ast_spell_progress < 4:
             call play_sound("door")
             hide screen astoria_main
             hide screen bld1
@@ -282,7 +282,7 @@ label imperio_spell_3_training: #third level imperio spell
     call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks Spell 3.
-    $ astoria_spells[0] = 3
+    $ ast_spells[0] = 3
 
     if daytime:
         jump night_start
@@ -333,7 +333,7 @@ label astoria_spell_practice:
     with fade
     pause.8
 
-    $ renpy.call('astoria_lap_sit_'+str(astoria_affection)+'_'+str(astoria_spell_progress))
+    $ renpy.call('astoria_lap_sit_'+str(ast_affection)+'_'+str(ast_spell_progress))
 
     pause.8
     call blkfade
@@ -346,7 +346,7 @@ label astoria_spell_practice:
     hide screen blkfade
     with fade
 
-    $ astoria_spell_progress += 1
+    $ ast_spell_progress += 1
     $ astoria_busy = True
 
     return

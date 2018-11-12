@@ -160,7 +160,7 @@ label update_wr_head_list:
         $ wr_hair.append("A")
         $ wr_hair.append("B")
 
-        if luna_reverted:
+        if lun_reverted:
             $ wr_glasses.append("spectrespecs")
 
     if active_girl == "astoria":

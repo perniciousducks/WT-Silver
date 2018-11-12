@@ -87,12 +87,12 @@ label cheats:
                     ">Letter sent."
                     jump cheats_astoria
                 "-Unlock all spells-":
-                    $ astoria_affection = 2
+                    $ ast_affection = 2
                     $ astoria_tonks_1_completed = True
                     $ astoria_tonks_2_completed = True
                     $ astoria_tonks_3_completed = True
 
-                    $ astoria_spells[0] = 3
+                    $ ast_spells[0] = 3
                     ">All spells are now unlocked!"
                     jump cheats_astoria
                 "-never mind-":

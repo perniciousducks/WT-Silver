@@ -56,7 +56,7 @@ label susan_imperio:
     $ susan_imperio_influence = True
     $ spells_locked = True
 
-    $ susan_curse_counter += 1 #For Stats
+    $ sus_curse_counter += 1 #For Stats
 
     call nar(">Susan is now under the influence of imperio.\n>The effect will last for 20 days.")
     jump astoria_requests
@@ -248,11 +248,11 @@ label imperio_spell_1:
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    $ susan_curse_counter += 1 #For Stats
+    $ sus_curse_counter += 1 #For Stats
 
-    if astoria_affection < 1:
-        $ astoria_affection = 1
-        $ astoria_spell_progress = 0
+    if ast_affection < 1:
+        $ ast_affection = 1
+        $ ast_spell_progress = 0
 
     jump day_main_menu
 
@@ -479,11 +479,11 @@ label imperio_spell_2: #second level imperio spell #needs posing
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    $ susan_curse_counter += 1 #For Stats
+    $ sus_curse_counter += 1 #For Stats
 
-    if astoria_affection < 2:
-        $ astoria_affection = 2
-        $ astoria_spell_progress = 0
+    if ast_affection < 2:
+        $ ast_affection = 2
+        $ ast_spell_progress = 0
 
     jump day_main_menu
 
@@ -806,11 +806,11 @@ label imperio_spell_3:
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    $ susan_curse_counter += 1 #For Stats
+    $ sus_curse_counter += 1 #For Stats
 
-    if astoria_affection < 3:
-        $ astoria_affection = 3
-        $ astoria_spell_progress = 0
+    if ast_affection < 3:
+        $ ast_affection = 3
+        $ ast_spell_progress = 0
 
     jump day_main_menu
 

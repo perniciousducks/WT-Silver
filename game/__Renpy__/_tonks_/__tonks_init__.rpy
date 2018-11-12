@@ -200,32 +200,27 @@ label tonks_progress_init:
 
     if not hasattr(renpy.store,'tonks_level') or reset_persistants:
 
-        ##Favour stuff
-        $ tonks_level = 0
-
-        ##Flags
-        $ tonks_busy = False
-        $ tonks_unlocked = False
-        $ chitchated_with_tonks = False
-
-        ##Names
-        $ tonks_name = "Tonks"
-        $ ton_genie_name = "Professor"
-        $ ton_astoria_name = "Cutie"
-
-        $ tonks_strip_happened            = False #Tonks random clothing event.
-        $ tonks_naked                     = False
-
-        $ tonks_wardrobe_unlocked = False
-        $ tonks_sluttyfied_clothing = 0
-
         #Stats
-        $ ton_astoria_date_counter = 0
-        $ ton_hermione_date_counter = 0
-
         $ ton_friendship = 0 #Max is 100.
         $ ton_support = 0
         $ ton_reputation = 0
         $ ton_clothing_level = 100
+
+        #Flags
+        $ tonks_busy = False
+        $ tonks_unlocked = False
+        $ tonks_wardrobe_unlocked = False
+        $ chitchated_with_tonks = False
+        $ tonks_strip_happened = False #Tonks random clothing event.
+
+        #Names
+        $ tonks_name = "Tonks"
+        $ ton_genie_name = "Professor"
+        $ ton_astoria_name = "Cutie"
+
+        #Stat Screen
+        $ ton_clothing_upgrades = 0
+        $ ton_astoria_date_counter = 0
+        $ ton_hermione_date_counter = 0
 
     return

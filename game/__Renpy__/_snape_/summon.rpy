@@ -19,7 +19,7 @@ label summon_snape:
                 call snape_chitchat
             jump snape_talk
 
-        "-Let's hang-" if not daytime and not snape_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
+        "-Let's hang-" if not daytime and not sna_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
                 jump not_today #Snape says: "I am busy tonight."
 #            elif sna_friendship >= 39 and her_whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
@@ -194,7 +194,7 @@ label snape_talk:
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
 
-    $ snape_dates_counter += 1
+    $ sna_dates_counter += 1
 
     show screen blkfade
     hide screen genie
@@ -229,7 +229,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 
 
     if wine >= 1:
-        $ snape_wine_counter += 1
+        $ sna_wine_counter += 1
         $ wine -= 1
 
         if not wine_intro_done: # Using Dumbledor's wine for the first time.
@@ -285,7 +285,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     elif sna_friendship >= 98 and snape_events == 14: #EVENT 14
         call date_with_snape_15
         $ sna_friendship = 100
-        $ snape_friendship_maxed = True
+        $ sna_friendship_maxed = True
 
     else:
 

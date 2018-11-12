@@ -176,7 +176,7 @@ init python:
                 elif c == "susan":
                     unlocked = unlocked and susan_unlocked
                 elif c == "cho":
-                    unlocked = unlocked and cho_met
+                    unlocked = unlocked and cho_unlocked
                 elif c == "tonks":
                     unlocked = unlocked and tonks_unlocked
                 else:

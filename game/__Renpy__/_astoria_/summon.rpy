@@ -80,11 +80,11 @@ label summon_astoria:
             label curse_susan:
                 menu:
                     ">Choose your curse."
-                    "-Imperio-" if astoria_spells[0] >= 1:
+                    "-Imperio-" if ast_spells[0] >= 1:
                         jump imperio_spell_1
-                    "-Imperio Tempus-" if astoria_spells[0] >= 2:
+                    "-Imperio Tempus-" if ast_spells[0] >= 2:
                         jump imperio_spell_2
-                    "-IMPERIO MAXIMUS-" if astoria_spells[0] >= 3:
+                    "-IMPERIO MAXIMUS-" if ast_spells[0] >= 3:
                         jump imperio_spell_3
                     "-Imperio Sluttify-" if susan_wardrobe_unlocked and not susan_imperio_influence:
                         "Developer Note:" ">This is a temporary spell that will most likely get remove in the future.\n>It currently unlocks Susan's wardrobe for a short amount of time."
@@ -96,13 +96,13 @@ label summon_astoria:
                     "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 1:
+                    "{color=#858585}-Hidden-{/color}" if ast_spells[0] < 1:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 2:
+                    "{color=#858585}-Hidden-{/color}" if ast_spells[0] < 2:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 3:
+                    "{color=#858585}-Hidden-{/color}" if ast_spells[0] < 3:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
 

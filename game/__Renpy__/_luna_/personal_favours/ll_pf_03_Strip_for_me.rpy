@@ -2,9 +2,9 @@
 
 label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options for each path. #DONE
 
-    if luna_corruption <= 8:
-        $ luna_corruption += 1
-    if luna_corruption >= 13:
+    if lun_corruption <= 8:
+        $ lun_corruption += 1
+    if lun_corruption >= 13:
         m "how do you feel about stripping?"
         call lun_main("really?","normal","angry","angry","mid")
         call lun_main("Aren't we a little past that?","normal","mad","raised","mid")
@@ -14,14 +14,14 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         m "well then..."
         jump luna_favour_6
     call play_music("chipper_doodle")
-    if luna_corruption < 8:
-        if luna_sub > luna_dom and luna_corruption < 5:
+    if lun_corruption < 8:
+        if lun_sub > lun_dom and lun_corruption < 5:
             m "Have you ever been naked in front of another person [luna_name]?"
             call lun_main("What?","normal","base","sad","down")
             call lun_main("Well... um... not really, I suppose.","normal","base","sad","R")
             m "Well then there's a first time for everything!"
             call lun_main("...","upset","base","sad","down")
-        elif luna_sub > luna_dom :
+        elif lun_sub > lun_dom :
             m "How would you like to step out of those restrictive clothes, [luna_name]?"
             call lun_main("...","normal","base","sad","down")
             call lun_main("Well... {size=-3}they're{/size} {size=-4}not{/size} {size=-5}really{/size} {size=-6}that{/size} {size=-7}restrictive.{/size}","normal","base","sad","R")
@@ -45,7 +45,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("...","normal","angry","angry","R")
 
         menu:
-            "\"Take off your skirt.\"" if luna_sub >= 5:
+            "\"Take off your skirt.\"" if lun_sub >= 5:
                 $ luna_choice = 1
                 call lun_main("you want me to take of my skirt!","pout","wide","sad","mid")
                 m "Yes... You think you could manage that?"
@@ -81,7 +81,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 hide screen blkfade
                 with d3
 
-            "\"Take off your shirt.\"" if luna_sub > luna_dom:
+            "\"Take off your shirt.\"" if lun_sub > lun_dom:
                 $ luna_choice = 2
                 call lun_main("my shirt?","normal","angry","sad","mid")
                 m "Did I stutter, [luna_name]?"
@@ -118,7 +118,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 hide screen blkfade
                 with d3
 
-            "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
+            "\"Please take off your shirt.\"" if lun_dom >= lun_sub:
                 $ luna_choice = 3
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -142,7 +142,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
                 call ctc
 
-            "\"Please take off your skirt [luna_name]...\"" if luna_dom >= 5:
+            "\"Please take off your skirt [luna_name]...\"" if lun_dom >= 5:
                 $ luna_choice = 4
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -167,8 +167,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call ctc
 
         if luna_choice <= 2: #luna sub choices
-            if luna_sub <= 5:
-                $ luna_sub += 1
+            if lun_sub <= 5:
+                $ lun_sub += 1
             m "Good... now your underwear..."
             call lun_main("!!!","normal","wide","sad","mid")
             call lun_main("You're not serious are you?","normal","angry","sad","R")
@@ -317,8 +317,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         else:
             call lun_main("There... is this what you wanted to see, [lun_genie_name]?","normal","angry","angry","mid")
             g4 "gods yes!"
-            if luna_dom <= 5:
-                $ luna_dom += 1
+            if lun_dom <= 5:
+                $ lun_dom += 1
             call lun_main("well... seeing as how you seem to be enjoying yourself so much...","base","seductive","angry","mid")
             m "what?"
             call lun_main("why don't you start ...touching... yourself, [lun_genie_name]...","base","seductive","angry","down")
@@ -490,7 +490,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 
     else: ###THIRD TIME EVENT IS RUN
-        if luna_sub > luna_dom :
+        if lun_sub > lun_dom :
             m "You don't mind taking your clothes off again, do you, [luna_name]?"
             call lun_main("...","normal","base","sad","R")
             call lun_main("Well... {size=-3}I {size=-4}mean {size=-2}I {size=-2}do {size=-2}mind.","normal","base","sad","down")
@@ -517,7 +517,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("...","base","suspicious","angry","mid")
 
         menu:
-            "\"Take off your skirt.\"" if luna_sub >= 5:
+            "\"Take off your skirt.\"" if lun_sub >= 5:
                 $ luna_choice = 1
                 call lun_main("My skirt?","pout","wide","sad","mid")
                 m "Yes..."
@@ -568,7 +568,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 m "Well, seeing as how we've already crossed this line, how about you take off your top anyway."
                 call lun_main("You can't be serious! I think you've seen enough, [lun_genie_name]!","upset","angry","angry","mid",tears="soft")
 
-            "\"Take off your shirt.\"" if luna_sub > luna_dom:
+            "\"Take off your shirt.\"" if lun_sub > lun_dom:
                 $ luna_choice = 2
                 call lun_main("my shirt?","normal","angry","sad","mid")
                 m "That's not too much is it, [luna_name]?"
@@ -612,7 +612,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call lun_main("You can't be serious! I think you've seen enough, [lun_genie_name]!","upset","angry","angry","mid")
 
 
-            "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
+            "\"Please take off your shirt.\"" if lun_dom >= lun_sub:
                 $ luna_choice = 3
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -641,7 +641,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 hide screen blkfade
                 with d3
 
-            "\"Please take off your skirt, [luna_name]...\"" if luna_dom >= 5:
+            "\"Please take off your skirt, [luna_name]...\"" if lun_dom >= 5:
                 $ luna_choice = 4
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -670,8 +670,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
         if luna_choice <= 2: #luna sub choices
-            if luna_sub <= 6:
-                $ luna_sub += 1
+            if lun_sub <= 6:
+                $ lun_sub += 1
             m "I am, and I expect you to do it now, [luna_name]."
             call lun_main("[lun_genie_name]... please...","normal","seductive","sad","mid",tears="soft")
             m "Hmmm, well seeing as how I'm in a generous mood, how about we make another deal?"
@@ -882,8 +882,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call ctc
 
             g9 "mmmm"
-            if luna_dom <= 5:
-                $ luna_dom += 1
+            if lun_dom <= 5:
+                $ lun_dom += 1
             call lun_main("Like what you see [lun_genie_name]?","base","seductive","base","R")
             g9 "Yes... Yes..."
             call lun_main("well... why don't you come take a closer look?...","base","seductive","angry","mid")
@@ -970,7 +970,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             $ g_c_c_u_pic = "genie_cum_03"
             show screen g_c_c_u
             $ luna_wear_cum = True
-            if luna_addicted:
+            if lun_addicted:
                 $ luna_cum = 11
             else:
                 $ luna_cum = 5
@@ -988,7 +988,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen bld1
             with d3
 
-            if luna_addicted:
+            if lun_addicted:
                 call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
                 show screen genie_jerking_sperm_02
                 with d3
@@ -1096,7 +1096,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 
     hide screen bld1
-    if luna_dom >= luna_sub:
+    if lun_dom >= lun_sub:
         m "Alright, alright. Here's your gold."
     else:
         m "well then, Here's your payment, [luna_name]."

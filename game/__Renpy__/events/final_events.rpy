@@ -448,7 +448,7 @@ label against_the_rule:
     call bld
     call nar("Professor Snape spends the day in your chamber, drinking the stress away.")
 
-    if not snape_friendship_maxed:# Turns TRUE when friendship with Snape been maxed out.
+    if not sna_friendship_maxed:# Turns TRUE when friendship with Snape been maxed out.
         call nar(">Your relationship with him has improved.")
         $ sna_friendship +=1
 

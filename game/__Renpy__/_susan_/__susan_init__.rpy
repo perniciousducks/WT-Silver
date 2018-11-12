@@ -198,24 +198,26 @@ label susan_progress_init:
 
     if not hasattr(renpy.store,'susan_busy') or reset_persistants:
 
-        ##Favour stuff
-        $ susan_level = 0
+        #Stats
+        $ sus_whoring = 0
+        $ sus_mad = 0
 
-        $ susan_imperio_influence = False
-        $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
-
-        ##Flags
+        #Flags
         $ susan_busy = False
         $ susan_unlocked = False
         $ susan_wardrobe_unlocked = False
         $ chitchated_with_susan = False
 
-        ##Names
+        #Favour stuff
+        $ susan_imperio_influence = False
+        $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
+
+        #Names
         $ susan_name = "Miss Bones"
         $ sus_genie_name = "Sir"
 
-        #Stats
-        $ susan_curse_counter = 2 #She got cursed twice beforeyou unlock her. Poor girl...
+        #Stats Screen
+        $ sus_curse_counter = 2 #She got cursed twice beforeyou unlock her. Poor girl...
 
 
     return

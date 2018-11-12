@@ -498,35 +498,36 @@ label her_clothing_lists_init: #Lists update at every game start!
 
 label her_progress_init:
 
-    #Update 1.3
     if not hasattr(renpy.store,'her_whoring') or reset_persistants:
 
-        # Hermione levels
+        #Stats
         $ her_whoring = 0
         $ her_reputation = 0
         $ her_tutoring = 0
 
-        $ level = "00" #Hermione's her_whoring level. #Is this used anywhere ?!
-
         $ mad = 0
+        $ forest_BJ_progress = 1
 
+        #Flags
         $ hermione_busy = False
         $ hermione_unlocked = False
         $ hermione_favors = False
         $ hermione_tutoring = False
 
+        $ hermione_desperate_done = False
+
+        #Names
         $ genie_name = "sir"
         $ hermione_name = "miss granger"
 
+        #Clothing Flags
         $ hermione_dribble = False
         $ dribble_equippable = False
         $ hermione_wetpanties = False
         $ wetpanties_equippable = False
 
-        $ hermione_desperate_done = False
-
-        #Personal Favour Vars.
-        $ jerked_off_in_front_of_her = 0
+        #Stat Screen
+        $ her_jerk_off_counter = 0
 
         #Public Request Vars.
         $ hg_pr_SexWithClassmate_AltFlag = False
@@ -566,19 +567,11 @@ label her_progress_init:
         $ hermione_door_event_happened = False
 
     #Rewards
-    if not hasattr(renpy.store,'autograph') or reset_persistants:
         $ autograph = False #Professor Lockhart's tattoo.
-
-
-    #Update 1.33b
-    if not hasattr(renpy.store,'forest_BJ_progress') or reset_persistants:
 
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
-        $ forest_BJ_progress = 1
 
-    #Update 1.34
-    if not hasattr(renpy.store,'hg_hidden_blowjob_character_list') or reset_persistants:
         $ hg_hidden_blowjob_character_list = ["snape"]
         $ hg_hidden_blowjob_seen_list = []
 

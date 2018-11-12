@@ -2,8 +2,8 @@
 
 label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
-    if luna_corruption <= 11:
-        $ luna_corruption += 1
+    if lun_corruption <= 11:
+        $ lun_corruption += 1
         m "[luna_name], how would you feel about selling another favour?"
         call lun_main("...","base","seductive","angry","mid")
         call lun_main("What is it this time [lun_genie_name]?","base","angry","angry","R")
@@ -276,7 +276,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_flip = -1
         $ luna_xpos = 300
 
-        if luna_addicted == True:
+        if lun_addicted == True:
             call lun_main("well it's not over yet...","base","seductive","sad","R")
             call her_kneel("...what?","mad","wide",cheeks="blush")
             call her_kneel("why?","open","baseL",cheeks="blush")
@@ -391,7 +391,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("[genie_name], what on earth was that all about?!","scream","angryCl")
         call her_main("Why on earth was Luna in here?","annoyed","angryL")
         call her_main("how on earth does she know about me selling favours?","angry","angry")
-        if luna_addicted == True:
+        if lun_addicted == True:
             call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?","angry","angry",emote="01")
         m "I can explain everything..."
         call her_main("Please do...","annoyed","annoyed")
@@ -418,7 +418,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Oh um..."
         m "Well that sort of just happened during my evaluation..."
         m "She wanted to help her fathers magazine anyway possible, and one thing led to another..."
-        if luna_addicted == True:
+        if lun_addicted == True:
             call her_main("what about the her loving the taste of your sperm?","angry","suspicious",cheeks="blush")
             m "Honestly I'm not really sure about that."
             m "I think that's just her being weird..."
@@ -465,8 +465,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_busy = True
         jump end_hg_pf
 
-    elif luna_corruption <= 12: #second time
-        $ luna_corruption += 1
+    elif lun_corruption <= 12: #second time
+        $ lun_corruption += 1
         $ luna_payout = 150
         $ hermione_payout = 40
         m "How would you feel about another handjob involving Miss Granger?"
@@ -831,8 +831,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
 
     else: #third handjob event, needs to be repeatable
-        if luna_corruption <= 13:
-            $ luna_corruption += 1
+        if lun_corruption <= 13:
+            $ lun_corruption += 1
         label luna_handjob_hermione_call:
             pass
         m "How about another handjob, [luna_name]?"

@@ -17,12 +17,12 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     call her_main("I am listening, [genie_name].",xpos="right",ypos="base")
     m "I will need your panties..."
 
-    if whoring <=2:
+    if her_whoring <=2:
         jump too_much
 
-    if hg_ps_PantyThief_OBJ.points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
+    if hg_ps_PantyThief_OBJ.points == 0 and her_whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
-        $ new_request_03_heart = 1 #Event hearts level (0-3)
+
         $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
 
         call her_main("W-what?","open","worried")
@@ -75,7 +75,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
             her "Again, [genie_name]?"
             m "Yes, again..."
         her "Here..."
-        if whoring >= 12: #LEVEL 05
+        if her_whoring >= 12: #LEVEL 05
             hide screen hermione_main
             with d3
             call nar(">Hermione pulls her panties out of her pocket...")
@@ -98,7 +98,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
 
 
 label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
-    if whoring >= 3 and whoring <= 5: # LEVEL 02
+    if her_whoring >= 3 and her_whoring <= 5: # LEVEL 02
         call her_main("Hm....?","annoyed","down",xpos="right",ypos="base")
         call her_main("[genie_name]? What is this?","angry","angry")
         her "What have you done to them?"
@@ -144,7 +144,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
             "\"Well, suit yourself...\"":
                 pass
 
-    if whoring >= 6 and whoring <= 8: # LEVEL 03 (SECOND EVENT)
+    if her_whoring >= 6 and her_whoring <= 8: # LEVEL 03 (SECOND EVENT)
         call her_main("My panties...","annoyed","down",xpos="right",ypos="base")
         call her_main("What happened to them [genie_name]?","annoyed","down")
 
@@ -166,7 +166,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
         call her_main("(This feels funny...)","angry","worriedCl",emote="05")
         call her_main("Will this be all, [genie_name]?","upset","wink")
 
-    if whoring >= 9 and whoring <= 15: #LEVEL 04+ (THIRD EVENT)
+    if her_whoring >= 9 and her_whoring <= 15: #LEVEL 04+ (THIRD EVENT)
         call her_main("My panties...","annoyed","down",xpos="right",ypos="base")
         if hg_ps_PantyThief_SoakedPantiesFlag:
             her "They are covered in something slimy again..."
@@ -205,7 +205,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione swiftly slides her drenched panties on...")
 
-    elif whoring > 15: ###New variant of the event
+    elif her_whoring > 15: ###New variant of the event
         call her_main("My panties...","base","ahegao_raised",xpos="right",ypos="base")
         if hg_ps_PantyThief_OBJ.points >= 1:
             her "You came all over them again..."
@@ -275,9 +275,10 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                 m "Of course."
 
         "\"How was your day, [hermione_name]?\"":
-            if  whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
-                $ new_request_03_heart = 1 #Event hearts level (0-3)
+            if  her_whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
+
                 $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
+
                 $ sc34CG(1, 10)
                 call her_main("Oh...","soft","base",xpos="base",ypos="base")
                 her "Quite ordinary actually..."
@@ -295,9 +296,10 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                     call her_main("And my payment?","open","base")
                     m "Yes, yes..."
 
-            elif whoring >= 6 and whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
-                $ new_request_03_heart = 2 #Event hearts level (0-3)
+            elif her_whoring >= 6 and her_whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
+
                 $ hg_ps_PantyThief_OBJ.hearts_level = 2 #Event hearts level (0-3)
+
                 $ sc34CG(1, 5)
                 call her_main("Oh...","soft","base",xpos="base",ypos="base")
                 her "It was quite ordinary really..."
@@ -335,9 +337,10 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                         else:
                             her "And my payment."
 
-            elif whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
-                $ new_request_03_heart = 3 #Event hearts level (0-3)
+            elif her_whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
+
                 $ hg_ps_PantyThief_OBJ.hearts_level = 3 #Event hearts level (0-3)
+
                 $ sc34CG(1, 11)
                 call her_main("Another ordinary day at hogwarts...","open","closed",xpos="base",ypos="base")
                 her "Nothing worth mentioning happened today..."
@@ -357,7 +360,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                     m "Yes, yes..."
 
     label back_from_soaked:
-    if hg_ps_PantyThief_SoakedPantiesFlag and whoring >= 9 and whoring <= 15 :
+    if hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 9 and her_whoring < 15 :
         m "You can go now."
         call her_main("What about my points?","scream","angryCl")
         m "You still want points after I just gave you a gift?"
@@ -370,7 +373,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         call her_main("Thank you, [genie_name]...","annoyed","suspicious")
         m "You can go now."
         her "Good night, [genie_name]."
-    elif hg_ps_PantyThief_SoakedPantiesFlag and whoring > 15:
+    elif hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 15:
         $ hg_ps_PantyThief_OBJ.hearts_level = 4 #Event hearts level (0-4)
         m "You can go now."
         call her_main("yes, [genie_name]","angry","down_raised")
@@ -389,8 +392,8 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         her "Good night, [genie_name]."
         #m "Yes, good night..."
 
-    if whoring <= 5:
-        $ whoring +=1
+    if her_whoring < 6:
+        $ her_whoring +=1
 
     $ hg_ps_PantyThief_OBJ.points += 1
     $ hg_ps_PantyThief_OBJ.inProgress = False #False when favor is not in progress

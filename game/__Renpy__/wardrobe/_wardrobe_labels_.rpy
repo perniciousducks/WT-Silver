@@ -21,7 +21,7 @@ label wardrobe: #NOT IN USE
 label reset_wardrobe_vars:
     $ wardrobe_page = 0
     $ wardrobe_page_choice = 0
-    $ wardrobe_active = True
+    $ hide_transitions = True
     $ wardrobe_toggle_page = 0            #default page
     $ wardrobe_head_category = 0          #default page
     $ wardrobe_tops_category = 0          #default page
@@ -35,6 +35,8 @@ label reset_wardrobe_vars:
 
     if active_girl == "hermione":
         $ wardrobe_hair_color         = h_hair_color
+    elif active_girl == "tonks":
+        $ wardrobe_hair_color         = ton_hair_color
     else:
         $ wardrobe_hair_color         = "1"
     $ wardrobe_head_color             = "base"
@@ -49,26 +51,38 @@ label reset_wardrobe_vars:
     return
 
 label return_to_wardrobe:
-    if not wardrobe_active:
+    if not hide_transitions:
         if active_girl == "hermione":
             call her_main(xpos="wardrobe",ypos="base",trans="fade")
+        if active_girl == "luna":
+            call lun_main(xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "astoria":
             call ast_main(xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
             call sus_main(xpos="wardrobe",ypos="base",trans="fade")
+        if active_girl == "cho":
+            call cho_main(xpos="wardrobe",ypos="base",trans="fade")
+        if active_girl == "tonks":
+            call ton_main(xpos="wardrobe",ypos="base",trans="fade")
 
-        $ wardrobe_active = True
+        $ hide_transitions = True
         call screen wardrobe
 
     else:
-        $ wardrobe_active = True
+        $ hide_transitions = True
 
         if active_girl == "hermione":
             call her_main(xpos="wardrobe",ypos="base")
+        if active_girl == "luna":
+            call lun_main(xpos="wardrobe",ypos="base")
         if active_girl == "astoria":
             call ast_main(xpos="wardrobe",ypos="base")
         if active_girl == "susan":
             call sus_main(xpos="wardrobe",ypos="base")
+        if active_girl == "cho":
+            call cho_main(xpos="wardrobe",ypos="base")
+        if active_girl == "tonks":
+            call ton_main(xpos="wardrobe",ypos="base")
 
         call screen wardrobe
 
@@ -79,10 +93,16 @@ label update_wardrobe_color:
 
     if active_girl == "hermione":
         call her_main(xpos="wardrobe",ypos="base")
+    if active_girl == "luna":
+        call lun_main(xpos="wardrobe",ypos="base")
     if active_girl == "astoria":
         call ast_main(xpos="wardrobe",ypos="base")
     if active_girl == "susan":
         call sus_main(xpos="wardrobe",ypos="base")
+    if active_girl == "cho":
+        call cho_main(xpos="wardrobe",ypos="base")
+    if active_girl == "tonks":
+        call ton_main(xpos="wardrobe",ypos="base")
 
     hide screen main_room_menu
     call screen wardrobe
@@ -140,6 +160,9 @@ label wardrobe_update:
     if active_girl == "cho":
         call wr_cho_clothing_reset
         call cho_main(xpos="wardrobe",ypos="base")
+    if active_girl == "tonks":
+        call wr_ton_clothing_reset
+        call ton_main(xpos="wardrobe",ypos="base")
 
     hide screen main_room_menu
     call screen wardrobe
@@ -155,7 +178,7 @@ label wr_her_clothing_reset:
     else: #Underwear page Qol
         $ hermione_use_action = False #Hide Action so Underwear can be turned on.
         $ hermione_wear_robe = False
-        if whoring >= 12:
+        if her_whoring >= 12:
             $ hermione_wear_top = False
             $ hermione_wear_bottom = False
 
@@ -240,6 +263,25 @@ label wr_cho_clothing_reset:
 
     return
 
+label wr_ton_clothing_reset:
+    #Reload Clothing
+    call load_tonks_clothing_saves
+
+    #Qol stuff
+    if wardrobe_page != 6:
+        pass
+    #    if cho_action != "none":
+    #        $ cho_use_action = True
+    else: #Underwear page Qol
+        $ tonks_wear_robe = False
+        $ tonks_wear_top = False
+        $ tonks_wear_bottom = False
+
+    call update_ton_uniform
+
+    return
+
+
 
 ### CLOSE WARDROBE LABELS ###
 
@@ -269,6 +311,9 @@ label close_wardrobe:
     if active_girl == "cho":
         call cho_main(xpos="base",ypos="base")
         jump cho_requests
+    if active_girl == "tonks":
+        call ton_main(xpos="base",ypos="base")
+        jump tonks_requests
 
 ### Pose/Action ###
 
@@ -277,31 +322,31 @@ label wardrobe_change_her_action:
     hide screen hermione_main
 
     if wr_her_action == "none":
-        call h_action("none","update")
+        call set_her_action("none","update")
     if wr_her_action == "lift_top":
-        call h_action("lift_top")
+        call set_her_action("lift_top")
     if wr_her_action == "lift_skirt":
-        call h_action("lift_skirt")
+        call set_her_action("lift_skirt")
     if wr_her_action == "hold_book":
-        call h_action("hold_book")
+        call set_her_action("hold_book")
     if wr_her_action == "milk_breasts":
         $ milking = 1
-        call h_action("milk_breasts")
+        call set_her_action("milk_breasts")
 
     if wr_her_action == "lift_breasts":
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
     if wr_her_action == "hands_behind":
-        call h_action("hands_behind")
+        call set_her_action("hands_behind")
     if wr_her_action == "covering":
-        call h_action("covering")
+        call set_her_action("covering")
     if wr_her_action == "fingering":
-        call h_action("fingering")
+        call set_her_action("fingering")
     if wr_her_action == "pinch":
-        call h_action("pinch")
+        call set_her_action("pinch")
     if wr_her_action == "hands_cuffed":
-        call h_action("hands_cuffed")
+        call set_her_action("hands_cuffed")
     if wr_her_action == "naked":
-        call h_action("naked")
+        call set_her_action("naked")
 
     call her_main(xpos="wardrobe")
     call screen wardrobe
@@ -310,9 +355,9 @@ label wardrobe_change_her_action:
 
 ### Randomizing Her Face ###
 label touched_her_boobies:
-    if whoring >= 0 and whoring < 11:
+    if her_whoring >= 0 and her_whoring < 11:
         call set_her_face("annoyed")
-    elif whoring >= 11 and whoring < 14:
+    elif her_whoring >= 11 and her_whoring < 14:
         call set_her_face("happy")
     else:
         call set_her_face("naughty")
@@ -321,11 +366,11 @@ label touched_her_boobies:
     call screen wardrobe
 
 label touched_her_crotch:
-    if whoring >= 0 and whoring < 5:
+    if her_whoring >= 0 and her_whoring < 5:
         call set_her_face("angry")
-    elif whoring >= 5 and whoring < 17:
+    elif her_whoring >= 5 and her_whoring < 17:
         call set_her_face("annoyed")
-    elif whoring >= 17 and whoring < 20:
+    elif her_whoring >= 17 and her_whoring < 20:
         call set_her_face("happy")
     else:
         call set_her_face("naughty")
@@ -373,7 +418,7 @@ label her_bra_toggle:
         $ hermione_wear_bra = False
         call update_her_uniform
 
-        if whoring >= 11 and whoring < 15:
+        if her_whoring >= 11 and her_whoring < 15:
             call set_her_face("annoyed")
         else: #21+
             call set_her_face("naughty")
@@ -383,9 +428,9 @@ label her_bra_toggle:
         $ hermione_wear_bra = True
         call update_her_uniform
 
-        if whoring >= 11 and whoring < 15:
+        if her_whoring >= 11 and her_whoring < 15:
             call set_her_face("annoyed")
-        elif whoring >= 15 and whoring < 21:
+        elif her_whoring >= 15 and her_whoring < 21:
             call set_her_face("neutral")
         else: #21+
             call set_her_face("happy")
@@ -396,7 +441,7 @@ label her_bra_toggle:
 
 # One-Piece Toggle #
 label her_onepiece_toggle:
-    if h_onepiece == "00_blank":
+    if h_onepiece == "blank":
         hide screen wardrobe
         ">No item equipped."
         call screen wardrobe
@@ -432,7 +477,7 @@ label her_panties_toggle:
         $ hermione_wear_panties = False
         call update_her_uniform
 
-        if whoring < 15:
+        if her_whoring < 15:
             call set_her_face("annoyed")
         else: #21+
             call set_her_face("naughty")
@@ -442,9 +487,9 @@ label her_panties_toggle:
         $ hermione_wear_panties = True
         call update_her_uniform
 
-        if whoring < 15:
+        if her_whoring < 15:
             call set_her_face("annoyed")
-        elif whoring >= 15 and whoring < 21:
+        elif her_whoring >= 15 and her_whoring < 21:
             call set_her_face("neutral")
         else: #21+
             call set_her_face("happy")
@@ -455,7 +500,7 @@ label her_panties_toggle:
 
 # Garterbelt Toggle #
 label her_garterbelt_toggle:
-    if h_garterbelt == "00_blank":
+    if h_garterbelt == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -472,7 +517,7 @@ label her_garterbelt_toggle:
 ### Other Clothings ###
 # Neckwear Toggle #
 label her_neckwear_toggle:
-    if h_neckwear == "00_blank":
+    if h_neckwear == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -504,7 +549,7 @@ label her_body_accs_toggle:
 
 # Gloves Toggle #
 label her_gloves_toggle:
-    if h_gloves == "00_blank":
+    if h_gloves == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -520,11 +565,11 @@ label her_gloves_toggle:
 
 # Stockings Toggle #
 label her_stockings_toggle:
-    if h_stockings == "00_blank":
+    if h_stockings == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
-    if whoring < 11 and h_skirt in ["skirt_belted_mini","skirt_belted_micro"]:
+    if her_whoring < 11 and h_bottom in ["skirt_belted_mini","skirt_belted_micro"]:
         call nar(">You can't remove her pantyhose while wearing that skirt!")
     else:
         if h_request_wear_stockings:
@@ -557,12 +602,12 @@ label her_outfit_toggle:
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
-    if hermione_costume:
+    if hermione_wear_outfit:
         $ h_request_wear_outfit = False
-        $ hermione_costume = False
+        $ hermione_wear_outfit = False
     else:
         $ h_request_wear_outfit = True
-        $ hermione_costume = True
+        $ hermione_wear_outfit = True
     call update_her_uniform
     show screen hermione_main
     hide screen wardrobe
@@ -572,7 +617,7 @@ label her_outfit_toggle:
 
 # Hat Toggle #
 label her_hat_toggle:
-    if h_hat == "00_blank":
+    if h_hat == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -588,7 +633,7 @@ label her_hat_toggle:
 
 # Glasses Toggle #
 label her_glasses_toggle:
-    if h_glasses == "00_blank":
+    if h_glasses == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -604,7 +649,7 @@ label her_glasses_toggle:
 
 # Ears Toggle #
 label her_ears_toggle:
-    if h_ears == "00_blank":
+    if h_ears == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -636,7 +681,7 @@ label her_makeup_toggle:
 
 # Piercings Toggle #
 label her_piercings_toggle:
-    if h_ear_piercing == "00_blank" and h_nipple_piercing == "00_blank" and h_belly_piercing == "00_blank" and h_intimate_piercing == "00_blank":
+    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_intimate_piercing == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -691,7 +736,10 @@ label her_tattoos_toggle:
 
 ## Piercings ##
 label equip_piercing:
-    call set_h_piercing(piercing_choice, piercing_color_choice)
+    if active_girl == "hermione":
+        call set_her_piercing(piercing_choice, piercing_color_choice)
+    if active_girl == "tonks":
+        call set_ton_piercing(piercing_choice, piercing_color_choice)
 
     hide screen wardrobe
     call screen wardrobe
@@ -716,109 +764,6 @@ label equip_tattoo:
     call screen wardrobe
 
 
-## Potions ##
-label use_potion:
-
-    hide screen wardrobe
-    call her_main(xpos="right",ypos="base",trans="fade")
-
-    if potion_choice == "polyjuice_potion":
-        menu:
-            ">Polyjuice potion. You know what it does..."
-            "-Cat Transformation-" if daytime and potion_inv.has("p_cat_transformation"):
-                $ potion_inv.remove("p_cat_transformation")
-                $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
-            "{color=#858585}-Cat Transformation-{/color}" if not daytime and potion_inv.has("p_cat_transformation"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            "-Luna Transformation-" if daytime and potion_inv.has("p_luna_transformation"):
-                $ potion_inv.remove("p_luna_transformation")
-                $ renpy.jump( potion_lib.getJumpLabel("p_luna_transformation") )
-            "{color=#858585}-Luna Transformation-{/color}" if not daytime and potion_inv.has("p_luna_transformation"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            # TODO: uncomment when scene is complete
-            # "-Clone potion-" if potion_inv.has("p_clone"):
-            #     $ potion_inv.remove("p_clone")
-            #     $ renpy.jump( potion_lib.getJumpLabel("p_clone") )
-            "-Never mind-":
-                jump return_to_wardrobe
-
-    if potion_choice == "expanding_elixir":
-        menu:
-            ">Potions that enhance the user's body."
-            "-Breast Expansion-" if daytime and potion_inv.has("p_breast_expansion"):
-                $ potion_inv.remove("p_breast_expansion")
-                $ renpy.jump( potion_lib.getJumpLabel("p_breast_expansion") )
-            "{color=#858585}-Breast Expansion-{/color}" if not daytime and potion_inv.has("p_breast_expansion"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            "-Ass Expansion" if daytime and potion_inv.has("p_ass_expansion"):
-                $ potion_inv.remove("p_ass_expansion")
-                $ renpy.jump( potion_lib.getJumpLabel("p_ass_expansion") )
-            "{color=#858585}-Ass Expansion-{/color}" if not daytime and potion_inv.has("p_ass_expansion"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            "-Never mind-":
-                jump return_to_wardrobe
-
-    if potion_choice == "milk_potion":
-        menu:
-            ">Potions for when you run out of milk in the fridge."
-            "-Lactantium-" if daytime and potion_inv.has("p_milk_potion"):
-                $ potion_inv.remove("p_milk_potion")
-                $ renpy.jump( potion_lib.getJumpLabel("p_milk_potion") )
-            "{color=#858585}-Lactantium-{/color}" if not daytime and potion_inv.has("p_milk_potion"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            "-Never mind-":
-                jump return_to_wardrobe
-
-    if potion_choice == "love_potion":
-        menu:
-            ">Potions that change the user's mood or emotions."
-            "-Cum Addiction-" if daytime and potion_inv.has("p_cum_addiction"):
-                $ potion_inv.remove("p_cum_addiction")
-                $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
-            "{color=#858585}-Cum Addiction-{/color}" if not daytime and potion_inv.has("p_cum_addiction"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            "-Hypno potion-" if daytime and potion_inv.has("p_hypno"):
-                $ potion_inv.remove("p_hypno")
-                $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
-            "{color=#858585}-Hypno potion-{/color}" if not daytime and potion_inv.has("p_hypno"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            # TODO: uncomment if ready unsure if ready for current release
-            # "-Voluptatem-" if potion_inv.has("p_voluptatem"):
-            #     $ potion_inv.remove("p_voluptatem")
-            #     $ renpy.jump( potion_lib.getJumpLabel("p_voluptatem") )
-            "-Never mind-":
-                jump return_to_wardrobe
-
-    if potion_choice == "clothes_potion":
-        menu:
-            ">Potions that affect the wearer's clothing."
-            "-Transparent Clothes-" if daytime and potion_inv.has("p_transparency"):
-                $ potion_inv.remove("p_transparency")
-                $ renpy.jump( potion_lib.getJumpLabel("p_transparency") )
-            "{color=#858585}-Transparent Clothes-{/color}" if not daytime and potion_inv.has("p_transparency"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
-
-            "-Permanent Clothing Transparency-" if potion_inv.has("p_transparency"):
-                $ misc_item_choice = "transparency"
-                jump equip_misc_item
-
-            "-Never mind-":
-                jump return_to_wardrobe
 
 label wardrobe_fail(text=""):
     hide screen wardrobe

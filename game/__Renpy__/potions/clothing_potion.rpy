@@ -37,11 +37,11 @@ label potion_scene_4: #Transparent uniform
     call her_walk("mid","leave",2)
 
     $ hermione_busy = True
-    if whoring <= 7:
+    if her_whoring <= 7:
         $ transparency = 0.8
-    elif whoring <= 13:
+    elif her_whoring <= 13:
         $ transparency = 0.6
-    elif whoring <= 20:
+    elif her_whoring <= 20:
         $ transparency = 0.4
     else:
         $ transparency = 0.2
@@ -55,7 +55,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
     call her_chibi("stand","mid","base")
 
     show screen bld1
-    if whoring <= 7: #Very angry and embarrassed
+    if her_whoring <= 7: #Very angry and embarrassed
         call nar(">Hermione bursts into your office.")
         call her_main("How could you [genie_name]!","angry","base",tears="soft")
         call her_main("I am the laughing stock of the entire school!","angry","base",tears="soft")
@@ -66,7 +66,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         $ transparency = 1
         # $ hermione_breasts = "characters/hermione/body/breasts/"+outfit.breast_layer+".png"
         # This is bugged and causes a crash. Things don't go catistrophically wrong without this line, so I've edited it out until you can fix it.
-    elif whoring <= 13: #Mildly aggravated
+    elif her_whoring <= 13: #Mildly aggravated
         call nar(">Hermione comes into your office quickly without knocking.")
         call her_main("Again?","angry","worriedCl",emote="05")
         m "What's this about [hermione_name]?"
@@ -90,7 +90,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Well fair enough. You may go now."
         call her_main("Hmmph. Goodbye [genie_name].","annoyed","worriedL")
 
-    elif whoring <= 20: #Slightly aroused
+    elif her_whoring <= 20: #Slightly aroused
         call nar(">Hermione enters your office")
         call her_main("Can you at least warn me next time?","open","suspicious")
         m "Well, that'd take away from the suspense wouldn't it?"

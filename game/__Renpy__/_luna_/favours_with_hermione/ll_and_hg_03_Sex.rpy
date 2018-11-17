@@ -32,7 +32,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("At least try and make it a little romantic for her...","smile","soft")
     m "Romantic?"
     call her_main("Work something out!","open","angry")
-    call lun_main("You really don't need to worry about it [l_genie_name]...","normal","base","sad","down")
+    call lun_main("You really don't need to worry about it [lun_genie_name]...","normal","base","sad","down")
     call her_main("Shh! You're first time needs to be at least a little bit special Luna!","upset","angryL")
     m "..."
     m "Luna Lovegood."

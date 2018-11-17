@@ -1,9 +1,61 @@
 
 ### Misc Labels ###
+label hide_all_screens:
+
+    #Sprites
+    call hide_characters
+
+    #Chibis
+    call her_chibi("hide")
+    call lun_chibi("hide")
+    call sus_chibi("hide")
+    call sna_chibi("hide")
+    call gen_chibi("hide")
+
+    #Main Room
+    hide screen main_room
+    hide screen weather
+    hide screen new_window #Hiding clear sky bg.
+
+    hide screen chair_left
+    hide screen chair_right
+
+    hide screen fireplace
+    hide screen fireplace_fire
+    hide screen fireplace_glow
+
+    hide screen phoenix_food
+    hide screen animation_feather
+
+    hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
+    hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
+    hide screen done_reading
+    hide screen done_reading_near_fire
+
+    hide screen package
+    hide screen owl
+
+    #Other Rooms
+    hide screen weasley_store_room
+
+    #General
+    hide screen main_room_menu
+    hide screen points
+    hide screen notes
+
+    #Filters
+    hide screen blktone
+    hide screen bld1
+
+
+
+    return
+
 
 label hide_characters:
 
     hide screen hermione_main
+    hide screen hermione_main_ass
     hide screen luna_main
     hide screen cho_chang
     hide screen astoria_main
@@ -18,18 +70,54 @@ label hide_characters:
     return
 
 
+
+label room(room=None, hide_screens=True):
+
+    if hide_screens:
+        call hide_all_screens
+
+    if room in ["main_room", "main"]:
+        $ current_room = "main_room"
+
+        show screen weather
+        show screen main_room
+        show screen chair_right
+        hide screen fireplace_fire
+        if fire_in_fireplace:
+            show screen fireplace_fire
+        show screen animation_feather
+        hide screen phoenix_food
+        if phoenix_is_fed:
+            show screen phoenix_food
+        hide screen owl
+        if letter_queue_list != []:
+            show screen owl
+        hide screen package
+        if package_is_here:
+            show screen package
+
+        show screen points
+
+        call gen_chibi("sit_behind_desk")
+
+    if room in ["weasley_store"]:
+        $ current_room = "weasley_store"
+
+        show screen weasley_store_room
+        show screen points
+
+    if room in ["clothing_store", "clothe_store"]:
+        pass
+
+    return
+
+
+
 label main_room:
-    call hide_characters
     show screen blkfade
-    with d3
 
-    hide screen bld1
-    hide screen blktone
-    call her_chibi("hide")
-    call lun_chibi("hide")
-    call sna_chibi("hide")
+    call room("main_room")
 
-    call gen_chibi("sit_behind_desk")
     hide screen blkfade
     with d3
 
@@ -47,6 +135,21 @@ label main_room:
         jump day_resume
     else:
         jump night_resume
+
+
+
+label reset_day_flags:
+    $ fire_in_fireplace = False
+    $ phoenix_is_fed = False
+    $ phoenix_is_petted = False
+    $ searched  = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
+
+    return
+
+label reset_day_and_night_flags:
+    $ her_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+
+    return
 
 
 label bld:
@@ -122,6 +225,16 @@ label kiss_her:
 
     return
 
+label spit_on_her:
+    call play_sound("spit") #Kiss!
+    show screen white
+    pause.2
+    hide screen white
+    with hpunch
+    pause.08
+
+    return
+
 label cast_spell(spell=""):
     if spell == "imperio":
 
@@ -172,11 +285,19 @@ label play_sound(sound=""):
 
     if sound in ["walking_on_grass","grass"]:
         $ renpy.play('sounds/steps_grass.mp3')
+
+    if sound in ["scroll"]:
+        $ renpy.play('sounds/scroll.mp3')
+
     return
+
 
 label play_music(music=""):
     if music in ["stop","pause"]:
         stop music fadeout 1.0
+
+    if music in ["hedwigs_theme"]:
+        play music "music/01 Prologue.mp3" fadein 1 fadeout 1
 
     if music in ["dark_fog","snape_theme"]:
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1
@@ -215,102 +336,80 @@ label play_music(music=""):
 
 
 
-#Narrator
-label nar(text="",action=""):
-
-    if action != "end": #Narration ended, blktone was already active.
-        show screen blktone5
-        with d3
-
-    if text != "":
-        $ renpy.say(s,text)
-
-    if action != "start": #Narration just started, blktone won't get hidden.
-        hide screen blktone5
-        with d3
-
-    return
-
-#Adds star next to personal favours if you can gain whoring points.
+#Adds star next to personal favours if you can gain her_whoring points.
 label update_hints:
 
     #Does not add star to hardcore difficulty (3+)!
     #Favour 1
-    if whoring < 3 and game_difficulty <= 2:
+    if her_whoring < 3 and game_difficulty <= 2:
         $ hg_pf_TalkToMe_OBJ.progress_hint = True
     else:
         $ hg_pf_TalkToMe_OBJ.progress_hint = False
 
     #Favour 2
-    if whoring < 3 and game_difficulty <= 2:
+    if her_whoring < 3 and game_difficulty <= 2:
         $ hg_pf_NicePanties_OBJ.progress_hint = True
     else:
         $ hg_pf_NicePanties_OBJ.progress_hint = False
 
     #Favour 3
-    if whoring >= 3 and whoring < 6 and game_difficulty <= 2:
+    if her_whoring >= 3 and her_whoring < 6 and game_difficulty <= 2:
         $ hg_pf_BreastMolester_OBJ.progress_hint = True
     else:
         $ hg_pf_BreastMolester_OBJ.progress_hint = False
 
     #Favour 4
-    if whoring >= 3 and whoring < 6 and game_difficulty <= 2:
+    if her_whoring >= 3 and her_whoring < 6 and game_difficulty <= 2:
         $ hg_pf_ButtMolester_OBJ.progress_hint = True
-    elif whoring >= 9 and not cho_known:
+    elif her_whoring >= 9 and not cho_known:
         $ hg_pf_ButtMolester_OBJ.progress_hint = True
     else:
         $ hg_pf_ButtMolester_OBJ.progress_hint = False
 
     #Favour 5
-    if whoring >= 6 and whoring < 9 and game_difficulty <= 2:
+    if her_whoring >= 6 and her_whoring < 9 and game_difficulty <= 2:
         $ hg_pf_ShowThemToMe_OBJ.progress_hint = True
     else:
         $ hg_pf_ShowThemToMe_OBJ.progress_hint = False
 
     #Favour 6
-    if whoring >= 9 and whoring < 12 and game_difficulty <= 2:
+    if her_whoring >= 9 and her_whoring < 12 and game_difficulty <= 2:
         $ hg_pf_DanceForMe_OBJ.progress_hint = True
     else:
         $ hg_pf_DanceForMe_OBJ.progress_hint = False
 
     #Favour 7
-    if whoring >= 9 and whoring < 12 and game_difficulty <= 2:
+    if her_whoring >= 9 and her_whoring < 12 and game_difficulty <= 2:
         $ hg_pf_ShowMeYourAss_OBJ.progress_hint = True
     else:
         $ hg_pf_ShowMeYourAss_OBJ.progress_hint = False
 
     #Favour 8
-    if whoring >= 9 and whoring < 12 and game_difficulty <= 2:
-        $ hg_pf_LetMeTouchThem_OBJ.progress_hint = True
-    else:
-        $ hg_pf_LetMeTouchThem_OBJ.progress_hint = False
-
-    #Favour 9
-    if whoring >= 12 and whoring < 15 and game_difficulty <= 2:
+    if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
         $ hg_pf_TouchMe_OBJ.progress_hint = True
     else:
         $ hg_pf_TouchMe_OBJ.progress_hint = False
 
-    #Favour 10
-    if whoring >= 15 and whoring < 18 and game_difficulty <= 2:
+    #Favour 9
+    if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
         $ hg_pf_TitJob_OBJ.progress_hint = True
     else:
         $ hg_pf_TitJob_OBJ.progress_hint = False
 
-    #Favour 11
-    if whoring >= 15 and whoring < 18 and game_difficulty <= 2:
+    #Favour 10
+    if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
         $ hg_pf_SuckIt_OBJ.progress_hint = True
     else:
         $ hg_pf_SuckIt_OBJ.progress_hint = False
 
-    #Favour 12
-    if whoring >= 18 and whoring < 21 and game_difficulty <= 2:
+    #Favour 11
+    if her_whoring >= 18 and her_whoring < 21 and game_difficulty <= 2:
         $ hg_pf_LetsHaveSex_OBJ.progress_hint = True
     else:
         $ hg_pf_LetsHaveSex_OBJ.progress_hint = False
 
-    #Favour 13
-    if whoring >= 21 and whoring < 24 and game_difficulty <= 2:
+    #Favour 12
+    if her_whoring >= 21 and her_whoring < 24 and game_difficulty <= 2:
         $ hg_pf_TimeForAnal_OBJ.progress_hint = True
     else:
         $ hg_pf_TimeForAnal_OBJ.progress_hint = False

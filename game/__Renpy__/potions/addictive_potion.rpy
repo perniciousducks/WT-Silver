@@ -83,7 +83,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     call hide_blkfade
     call ctc
 
-    $ hermione_main_zorder = 8
+    $ hermione_zorder = 8
 
     show screen bld1
     call nar(">As soon as you remove your cock from your robe Hermione is on top of you.")
@@ -354,7 +354,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     $ aftersperm = False
     call hide_blkfade
 
-    $ hermione_main_zorder = 5
+    $ hermione_zorder = 5
 
     $ hermione_busy = True
     jump main_room
@@ -512,11 +512,11 @@ label potion_scene_3_3_1: #Hypno potion
 
     if hermione_wear_top:
 
-        call set_hermione_action("lift_top")
+        call set_her_action("lift_top")
         pause.5
 
         $ hermione_wear_top = False
-        call set_hermione_action("none","skip_update")
+        call set_her_action("none","skip_update")
         pause.5
 
         call her_main("That's soooooo much better!","soft","ahegao")
@@ -526,11 +526,11 @@ label potion_scene_3_3_1: #Hypno potion
         call her_main("(I can still wear something shorter. Like a skirt...)","")
         call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})","grin","happyCl")
 
-        call set_hermione_action("lift_bottom")
+        call set_her_action("lift_bottom")
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("none","skip_update")
+        call set_her_action("none","skip_update")
         pause.5
 
         call her_main("I bet you like watching me strip mistah{image=textheart}","smile","glance")
@@ -544,15 +544,15 @@ label potion_scene_3_3_1: #Hypno potion
 
     #Setting up Bimbo clothes.
     $ h_hair_color = 2 #Blonde
-    $ h_lipstick = "pink_lipstick"
+    $ h_lipstick = "lipstick_pink"
 
     $ h_request_wear_top = True
     $ h_top = "top_5_g"
     $ h_top_color = "base"
 
     $ h_request_wear_bottom = True
-    $ h_skirt = "skirt_4_low"
-    $ h_skirt_color = "purple"
+    $ h_bottom = "skirt_4_low"
+    $ h_bottom_color = "purple"
 
     $ h_request_wear_bra = True
     $ h_bra = "bra_lace"
@@ -585,7 +585,7 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
             call her_main("Aaaaanyway...","open","baseL")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
-        "-Where is your badge, cumslut?!-" if I_love_cum_badge_OBJ.unlocked:
+        "-Where is your badge, cumslut?!-" if I_love_cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!","soft","wide")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
             call her_main("It's this one, isn't it...","soft","down")
@@ -629,24 +629,24 @@ label potion_scene_3_3_1: #Hypno potion
     m "That'd be a good start."
     call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}","grin","ahegao")
 
-    call set_hermione_action("lift_top")
+    call set_her_action("lift_top")
     pause.5
 
     $ hermione_wear_top = False
     $ hermione_wear_bra = False
-    call set_hermione_action("none","skip_update")
+    call set_her_action("none","skip_update")
     pause.5
 
     call her_main("You know they don't let us walk around naked at school?","annoyed","angryL")
     m "Really? I can't imagine why not."
     call her_main("I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked.","soft","ahegao")
 
-    call set_hermione_action("lift_skirt")
+    call set_her_action("lift_skirt")
     pause.5
 
     $ hermione_wear_bottom = False
     $ hermione_wear_panties = False
-    call set_hermione_action("none","skip_update")
+    call set_her_action("none","skip_update")
     pause.5
 
     call her_main("I know everyone who sees me naked is happy!","base","glance")
@@ -655,7 +655,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "(I don't think I can stand her saying the word happy much more...)"
     m "Now Hermione, I want you to touch your breasts."
     call nar(">Hermione moves her hands up to her breasts")
-    call set_hermione_action("lift_breasts")
+    call set_her_action("lift_breasts")
 
     call her_main("Like this? This feels sooooo gooood!","base","down")
     call her_main("It's like mah hands are moving on their own...","soft","ahegao")
@@ -682,13 +682,13 @@ label potion_scene_3_3_1: #Hypno potion
             m "Go on then."
             call her_main("Thank you soooo{image=textheart} much [genie_name]!","silly","ahegao")
 
-    call set_hermione_action("covering")
+    call set_her_action("covering")
     call her_main("This is soooo goood","grin","ahegao")
     call her_main("Mistah [genie_name] can you please do something for me?","grin","wink",cheeks="blush")
     m "What's that?"
     call her_main("If it's not tooo much trouble could you...","silly","ahegao")
     call nar(">Hermione starts pinching her nipple.")
-    call set_hermione_action("pinch")
+    call set_her_action("pinch")
     call her_main("could you please cum on me?","open_tongue","ahegao_raised",cheeks="blush")
     m "Well if it makes you happy."
     call nar(">you stand up and head towards her.")
@@ -707,32 +707,32 @@ label potion_scene_3_3_1: #Hypno potion
     call hide_blkfade
     call ctc
 
-    call set_hermione_action("covering")
+    call set_her_action("covering")
     call her_main("...","base","ahegao_raised")
-    call set_hermione_action("pinch")
+    call set_her_action("pinch")
     call her_main("I don't know how other girls do it...","annoyed","down")
     m "Do what?"
     call her_main("Stop themselves from coming here and getting you to cover them in yummy cummy!","annoyed","down")
-    call set_hermione_action("covering")
+    call set_her_action("covering")
     call her_main("I mean I can barely stop mahself coming here everyday!","smile","happyCl")
     m "That's it..."
-    call set_hermione_action("pinch")
+    call set_her_action("pinch")
     call her_main("Hmmm, I just luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}","base","ahegao_raised")
     call her_main("They're just so soft...","open","ahegao_raised",cheeks="blush")
-    call set_hermione_action("covering")
+    call set_her_action("covering")
     call her_main("And they feel soo good. They're really sensi--","base","ahegao_raised",cheeks="blush")
     call her_main("Sensi---","base","ahegao_raised",cheeks="blush")
-    call set_hermione_action("pinch")
+    call set_her_action("pinch")
     call her_main("What's the word?","annoyed","ahegao_raised",cheeks="blush")
     m "Sensitive."
-    call set_hermione_action("covering")
+    call set_her_action("covering")
     call her_main("That's right they're really sensitive!","silly","ahegao_raised",cheeks="blush")
     m "So am I..."
     call her_main("Are you going to cum?","open_tongue","ahegao_raised",cheeks="blush")
-    call set_hermione_action("pinch")
+    call set_her_action("pinch")
     call her_main("Please do it on my face!","open_tongue","ahegao_raised",cheeks="blush")
     call her_main("No wait my tits...","scream","worriedCl",cheeks="blush")
-    call set_hermione_action("covering")
+    call set_her_action("covering")
     call her_main("No wait my face!","silly","ahegao_raised",cheeks="blush")
 
     menu:
@@ -743,7 +743,7 @@ label potion_scene_3_3_1: #Hypno potion
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
             g4 "that's it, all over your face."
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
             call her_main("...{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
         "-Cum on her tits-":
             g4 "Here it comes fuckbunny!"
@@ -752,7 +752,7 @@ label potion_scene_3_3_1: #Hypno potion
             $ u_sperm = "characters/hermione/face/auto_02.png"
             $ uni_sperm = True
             g4 "All over your tits."
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
             call her_main("It's so warm...{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
         "-cover her in cum-":
             g4 "Here it comes whore!"
@@ -761,14 +761,14 @@ label potion_scene_3_3_1: #Hypno potion
             $ u_sperm = "characters/hermione/face/auto_05.png"
             $ uni_sperm = True
             g4 "that's right slut, All over you."
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
             call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
 
     call gen_chibi("hold_dick","desk","base")
     call her_main("...","grin","ahegao")
     $ hermione_dribble = True
     call her_main("That felt {size=+5}SOOOOO!{/size} good!","silly","ahegao")
-    call set_hermione_action("lift_breasts")
+    call set_her_action("lift_breasts")
 
     call her_main("Can we do it again! Please! Pretty please! Pretty please with cum on top!","silly","dead")
     m "Not today."
@@ -789,17 +789,17 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Why's that mistah [genie_name] sir?","annoyed","base")
     m "I think you need to have a little nap and let this wear off."
     call her_main("whatever you say sir!","annoyed","closed")
-    call set_hermione_action("none","skip_update")
+    call set_her_action("none","skip_update")
     call her_main("And thanks again!{image=textheart} You're the best!","smile","happyCl",emote="06")
 
     call her_walk("desk","leave",2.5)
 
     m "(Maybe I should have told her to get dressed first...)"
 
-    $ pink_lipstick_OBJ.unlocked = True #Unlocks pink lipstick.
+    $ lipstick_pink_ITEM.unlocked = True #Unlocks pink lipstick.
     call give_reward(">Hermione can now use pink lipstick!","interface/icons/lipstick_pink.png") #Need lipstick shop image!
 
-    call reset_hermione_main
+    call reset_hermione
 
     $ hermione_busy = True
     call music_block

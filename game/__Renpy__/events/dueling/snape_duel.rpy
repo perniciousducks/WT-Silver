@@ -40,12 +40,10 @@ label duel:
     stop weather #Stops playing the rain SFX.
 
     # Hide all the screens.
-    $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
 
     hide screen notes #A bunch of notes poping out with a "win" sound effect.
     hide screen genie
     hide screen owl
-    hide screen owl_02
     hide screen points
     hide screen ctc
     hide screen snape_defends
@@ -503,7 +501,7 @@ init -1:
         pause.1
 
     image duel_table:
-        "images/main_room/09_table.png"
+        "images/rooms/main_room/09_table.png"
 
     ### GENIE ###
     image ch_gen duel_01:

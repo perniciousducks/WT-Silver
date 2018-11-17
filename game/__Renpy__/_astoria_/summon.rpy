@@ -2,9 +2,9 @@
 
 label summon_astoria:
 
-    call load_astoria_clothing_saves
+    call play_sound("door")
 
-    call play_sound("door") #Sound of a door opening.
+    call load_astoria_clothing_saves
 
     #Events
     if spells_unlocked and not susan_unlocked:
@@ -30,11 +30,11 @@ label summon_astoria:
 
     label astoria_requests:
 
-    $ astoria_busy = True
-    $ wardrobe_active = False
+    $ menu_x = 0.1
+    $ menu_y = 0.5
 
-    $ menu_x = 0.1 #Menu is moved to the left.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    $ hide_transitions = False
+    $ astoria_busy = True
 
     menu:
         "-Talk-":
@@ -80,29 +80,29 @@ label summon_astoria:
             label curse_susan:
                 menu:
                     ">Choose your curse."
-                    "-Imperio-" if astoria_spells[0] >= 1:
+                    "-Imperio-" if ast_spells[0] >= 1:
                         jump imperio_spell_1
-                    "-Imperio Tempus-" if astoria_spells[0] >= 2:
+                    "-Imperio Tempus-" if ast_spells[0] >= 2:
                         jump imperio_spell_2
-                    "-IMPERIO MAXIMUS-" if astoria_spells[0] >= 3:
+                    "-IMPERIO MAXIMUS-" if ast_spells[0] >= 3:
                         jump imperio_spell_3
-                    "-Imperio Tempo-" if susan_wardrobe_unlocked and not susan_imperio_influence:
+                    "-Imperio Sluttify-" if susan_wardrobe_unlocked and not susan_imperio_influence:
                         "Developer Note:" ">This is a temporary spell that will most likely get remove in the future.\n>It currently unlocks Susan's wardrobe for a short amount of time."
                         jump susan_imperio
-                    "{color=#858585}-Imperio Tempo-{/color}" if susan_wardrobe_unlocked and susan_imperio_influence:
+                    "{color=#858585}-Imperio Sluttify-{/color}" if susan_wardrobe_unlocked and susan_imperio_influence:
                         call nar(">Susan is still under the influence of this curse!")
                         jump curse_susan
 
                     "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 1:
+                    "{color=#858585}-Hidden-{/color}" if ast_spells[0] < 1:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 2:
+                    "{color=#858585}-Hidden-{/color}" if ast_spells[0] < 2:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 3:
+                    "{color=#858585}-Hidden-{/color}" if ast_spells[0] < 3:
                         call nar(">You haven't unlocked this spell yet.")
                         jump astoria_target_select
 
@@ -127,7 +127,7 @@ label summon_astoria:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call ast_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 

@@ -1,8 +1,23 @@
 label store_init:
 
     #Update 1.3
-    if not hasattr(renpy.store,'clothes_intro_done') or reset_persistants:
-        $ clothes_intro_done = False
+    if not hasattr(renpy.store,'gift_order') or reset_persistants:
+
+        #Shop
+        $ order_placed = False #TRUE when and order has been placed on an item.
+        $ days_in_delivery = 0 # +1 day, every day since the orer has been made (when order_placed = True).
+        $ days_in_delivery2 = 0 # +1 day, every day since the orer has been made (when order_placed = True).
+        $ package_is_here = False # Turns true when days_in_delivery >= 5. Package is displayed.
+
+        $ cs_existing_stock = [False,False,False,False,False]
+
+        $ gift_order = None
+        $ order_quantity = 0
+        $ tentacle_owned = False
+        $ tent_scroll = False
+
+    if not hasattr(renpy.store,'clothes_store_intro_done') or reset_persistants:
+        $ clothes_store_intro_done = False
         $ outfit_order_placed = False
         $ outfit_ready = False
         $ outfit_wait_time = 0
@@ -10,17 +25,14 @@ label store_init:
 
 
         $ cs_stock_inventory = []
-        $ micro_skirt = False
         $ glasses = False
-        $ wear_shirts = True
-        $ wear_skirts = True
         $ gave_tinyminiskirt = False
         $ cs_accessories = [False,False,False]
         $ cs_existing_stock = [False,False,False,False,False]
         $ cs_existing_stock_gifted = []
 
     #Update 1.33
-    if not hasattr(renpy.store,'cs_gui_OBJ') or reset_persistants: #important!
+    if not hasattr(renpy.store,'store_intro_done') or reset_persistants: #important!
         $ mannequin_preview = "hg_mannequin.png"
         $ cs_inventory_list = []
         $ clothes_store_category = ""
@@ -32,4 +44,7 @@ label store_init:
         $ cs_show_accs = True
         $ cs_show_dyes = True
         $ cs_show_misc = True
+
+        $ store_intro_done = False
+
     return

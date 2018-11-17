@@ -1,8 +1,8 @@
 label __init_variables:
     if not hasattr(renpy.store,'gift_item_inv'): #important! Gift_Item.ID == Index in this array
         $ gift_item_inv = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    if not hasattr(renpy.store,'shop_found'): #important!
-        $ shop_found = False
+    if not hasattr(renpy.store,'store_intro_done'): #important!
+        $ store_intro_done = False
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
     if not hasattr(renpy.store,'fiction_books_intro'): #important!
@@ -44,14 +44,46 @@ label __init_variables:
 
     return
 
-label shop_intro:
-    show screen shop_screen
-    if shop_found:
-        twi "Hello Professor! What would you like to buy?"
-        jump shop_menu
+
+screen weasley_store_room:
+    tag room_screen
+
+    if daytime:
+        add "images/backgrounds/corridor.png" #Need day image.
     else:
-        $ show_clothes_store = True
-        $ shop_found = True
+        add "images/backgrounds/corridor.png"
+
+    zorder 0
+
+
+
+label open_weasley_store:
+    show screen blkfade
+    with d3
+
+    call room("weasley_store")
+    call gen_chibi("hide")
+
+    if store_intro_done:
+        call gen_chibi("stand","left","base")
+        call hide_blkfade
+    else:
+        call gen_chibi("hide")
+        call hide_blkfade
+        call gen_walk("0","left",1.4)
+    pause.2
+
+    call store_chit_chat
+
+    $ store_category = 0 # Reset Button
+
+    jump gifts_menu
+
+
+
+label store_chit_chat:
+    if not store_intro_done:
+        $ store_intro_done = True
         fre "Professor Dumbledore? What are you doing here? I thought you didn't leave your office anymore."
         ger "You're not here to shut us down are you?"
         m "Shut you down? What for?"
@@ -69,58 +101,98 @@ label shop_intro:
         m "Well do you sell anything else?"
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
-        jump shop_menu
+    else:
+        twi "Hello Professor! What would you like to buy?"
+
+    return
+
+
 
 label shop_menu:
-    show screen shop_screen
-    call screen shop_screen_menu
+    show screen weasley_store_room
+    call screen weasley_store_menu
 
-screen shop_screen_menu:
-    tag room_screen
+label close_weasley_store:
+    hide screen weasley_store_menu
 
-    zorder hermione_main_zorder-1
+    show screen blkfade
+    with d5
 
-    if daytime:
-        add "interface/map/room_bg1.png" at Position(xpos=140)
+    jump main_room
+
+
+
+screen weasley_store_menu:
+    tag store_menu
+    $ UI_xpos_offset = 100
+
+    zorder 4
+
+    # Close Button
+    imagebutton:
+        xpos 1028
+        ypos 11
+        idle "interface/general/"+interface_color+"/button_close.png"
+        hover "interface/general/"+interface_color+"/button_close_hover.png"
+        action Jump("close_weasley_store")
+
+    # Gifts Button
+    imagebutton:
+        xpos 725 +UI_xpos_offset
+        ypos 105
+        idle "interface/general/"+interface_color+"/button_select.png"
+        if store_category != 0: # Gifts
+            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            action [SetVariable("store_category",0), Jump("gifts_menu")]
+    if store_category == 0: # Gifts
+        text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 16
     else:
-        add "interface/map/room_bg2.png" at Position(xpos=140)
+        text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 14
 
-    imagemap:
-        ground "interface/map/shop_ground.png"
-        hover "interface/map/shop_hover.png"
-        # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (0, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
-        hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
-        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
-        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
-        hotspot (606+280, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
-        hotspot (750+280, 550, 40, 40) clicked [Show("main_room_menu"),Jump("day_main_menu")] #Return Button
-
-screen shop_screen:
-    tag room_screen
-
-    zorder hermione_main_zorder-1
-
-    if daytime:
-        add "interface/map/room_bg1.png" at Position(xpos=140)
+    # Books Button & Scrolls + Tentacle Scroll
+    imagebutton:
+        xpos 725 +UI_xpos_offset
+        ypos 149
+        idle "interface/general/"+interface_color+"/button_select.png"
+        if store_category != 1: # Books
+            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            action [SetVariable("store_category",1), Jump("shop_books")]
+    if store_category == 1: # Books
+        text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 16
     else:
-        add "interface/map/room_bg2.png" at Position(xpos=140)
-    
-    add "interface/map/shop_ground.png"        
-        
-label sscrolls:
-    jump store_scrolls
-label sscrolls2:
-    jump store_scrolls
+        text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 14
+
+    # Potions
+    imagebutton:
+        xpos 725 +UI_xpos_offset
+        ypos 193
+        idle "interface/general/"+interface_color+"/button_select.png"
+        if store_category != 2:
+            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            action [SetVariable("store_category",2), Jump("shop_potion_menu")]
+    if store_category == 2:
+        text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 16
+    else:
+        text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 14
+
+    #hotspot (0, 0, 266, 110) clicked Jump("store_scrolls") #Scrolls 1
+    #hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
+    #hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
+    #hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
+    #hotspot (606+280, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
+    #hotspot (750+280, 550, 40, 40) clicked [Show("main_room_menu"),Jump("day_main_menu")] #Return Button
+
+
 
 label store_scrolls:
+    show screen weasley_store_menu
+
     python:
         scrolls_menu = list(filter(lambda x: x.purchased==False, sacred_scrolls))
-        
-    show screen shop_screen
+
     show screen generic_scroll_menu(scrolls_menu, "Scroll Stock" )
     $ _return = ui.interact()
-    
+
     hide screen generic_scroll_menu
 
     if isinstance(_return, generic_menu_item):
@@ -138,74 +210,78 @@ label store_scrolls:
                     ">A New scroll has been added to your sacred scrolls collection."
                     hide screen gift
                     with d3
-                    call thx_4_shoping2 #Massage that says "Thank you for shopping here!".                    
+                    call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
                 else:
                     call no_gold #Massage: m "I don't have enough gold".
                     hide screen gift
- 
+
             "-Never mind-":
                 hide screen gift
-        
-        
+
+
     elif _return == "Close":
         $ currentpage = 0
-        jump shop_menu
-       
+        jump close_weasley_store
+
     elif _return == "inc":
         $ currentpage += 1
     elif _return == "dec":
         $ currentpage += -1
-           
+
     jump store_scrolls
-        
+
 
 
 label shop_books:
-    show screen shop_screen
+    show screen weasley_store_menu
+
     if not fiction_books_intro:
-        twi "These books are mostly light erotica..." 
+        hide screen weasley_store_menu
+        with d3
+
+        twi "These books are mostly light erotica..."
         ger "Some of the girls insisted that I order them in."
         $ fiction_books_intro = True
-    else:
-        twi "What type of book would you like?"
-        
+        pause.5
+
+        show screen weasley_store_menu
+
     label shop_book_menu:
     python:
         books_menu_list = []
-        if toogle1_bool:
+        if toggle1_bool:
             books_menu_list.extend(Books_OBJ.read_books)
             books_menu_list.extend(Books_OBJ.write_books)
-        if toogle2_bool:
+        if toggle2_bool:
             books_menu_list.extend(Books_OBJ.fiction_books)
-        
+
         books_menu_list = list(filter(lambda x: x.purchased==False, books_menu_list))
-       
-    show screen shop_screen
-    show screen generic_scroll_menu(books_menu_list, "Book Stock", toogle1="Educational Books", toogle2="Fiction Books" )
-    
+
+    show screen generic_scroll_menu(books_menu_list, "Book Stock", toggle1="Educational Books", toggle2="Fiction Books" )
+
     $ _return = ui.interact()
-    
+
     hide screen generic_scroll_menu
 
     if isinstance(_return, generic_menu_item):
         call purchase_book(_return)
-        
+
     elif _return == "Close":
         $ currentpage = 0
-        jump shop_menu
-        
-    elif _return == "toogle1":
-        $ toogle1_bool = not toogle1_bool
-    elif _return == "toogle2":
-        $ toogle2_bool = not toogle2_bool
-        
+        jump close_weasley_store
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+
     elif _return == "inc":
         $ currentpage += 1
     elif _return == "dec":
         $ currentpage += -1
-        
+
     jump shop_book_menu
-    
+
 label purchase_book(BookOBJ):
     $ the_gift = BookOBJ.imagepath
     show screen gift
@@ -227,13 +303,14 @@ label purchase_book(BookOBJ):
 
 
 label shop_potion_menu:
-    show screen shop_screen
+    show screen weasley_store_menu
+
     python:
         potion_menu = []
         potion_menu.append(("-Questions acquiring items-", "questions"))
         for potion in potion_lib.getBuyable():
-            if whoring < potion.whoring_rec:
-                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","whoring"))
+            if her_whoring < potion.whoring_rec:
+                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","her_whoring"))
             else:
                 potion_menu.append(("-"+potion.name+"-",potion))
         potion_menu.append(("-Never mind-", "nvm"))
@@ -251,7 +328,7 @@ label shop_potion_menu:
                 $ renpy.say(m, PotionOBJ.name+" aquired, although it's missing a key ingredient...")
             else:
                 $ renpy.say(m, "I don't have enough gold.")
-        call screen shop_screen_menu
+        call screen weasley_store_menu
     if PotionOBJ == "questions":
         menu:
             "-Knotgrass-":
@@ -267,35 +344,35 @@ label shop_potion_menu:
                 m "Do you know where I can find \"Niffler's Fancy\"?"
                 fre "Hmm... I think I heard that it's found by the lake."
         jump shop_potion_menu
-    if PotionOBJ == "whoring":
+    if PotionOBJ == "her_whoring":
         call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
     if PotionOBJ == "nvm":
         pass
-    call screen shop_screen_menu
+    call screen weasley_store_menu
 
 
 label gifts_menu:
-    show screen shop_screen
+    show screen weasley_store_menu
 
     show screen generic_scroll_menu(gift_list, "Gift Stock")
-    
+
     $ _return = ui.interact()
-    
+
     hide screen generic_scroll_menu
     if isinstance(_return, generic_menu_item):
-        call object_gift_block(_return) 
-        
+        call object_gift_block(_return)
+
     elif _return == "Close":
         $ currentpage = 0
-        jump shop_menu
+        jump close_weasley_store
 
     elif _return == "inc":
         $ currentpage += 1
     elif _return == "dec":
         $ currentpage += -1
-        
+
     jump gifts_menu
-    
+
 label object_gift_block(item):
     $ the_gift = item.imagepath
     show screen gift
@@ -353,29 +430,7 @@ label object_purchase_item(item, quantity):
 
 
 
-### ALREADY HAVE THIS BOOK
-label do_have_book:
-    show screen bld1
-    m "I already own this one."
-    hide screen bld1
-    hide screen gift
-    with d3
-    return
 
-### THANK YOU FOR shopping here.
-label thx_4_shoping:
-    # $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
-
-    if one_of_five ==  1:
-        dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
-        hide screen gift
-        with d3
-        return
-    else:
-        dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [one_of_five] days."
-        hide screen gift
-        with d3
-        return
 
 ### THANK YOU FOR shopping here. IMMEDIATE DELIVERY.
 label thx_4_shoping2:
@@ -390,12 +445,3 @@ label no_gold:
     hide screen gift
     with d3
     return
-
-### ITEM IS OUT OF STOCK ###
-label out:
-    show screen bld1
-    with d3
-    dahr "This item is currently out of stock."
-    hide screen bld1
-    with d3
-    jump gifts_menu

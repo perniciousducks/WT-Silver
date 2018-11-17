@@ -78,7 +78,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
             $ hermione_busy = True
 
-            call h_action("expand_breasts")
+            call set_her_action("expand_breasts")
 
             jump main_room
 
@@ -98,7 +98,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     pause .8
 
     hide screen hermione_main
-    call h_action("lift_top")
+    call set_her_action("lift_top")
     call her_chibi("hide")
     hide screen genie
     show screen groping_naked_tits
@@ -117,7 +117,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("...It feels like they're getting-","angry","down_raised")
     call ctc
 
-    call h_action("expand_breasts")
+    call set_her_action("expand_breasts")
     with vpunch
 
     call her_main("!!!","angry","wide")
@@ -220,11 +220,11 @@ label potion_scene_2_2: #ass expansion
     call her_main("It feels too sensitive... I have to take my skirt off","angry","wide") #changed so to too
 
     $ hermione_wear_panties = False
-    call set_hermione_action("lift_skirt")
+    call set_her_action("lift_skirt")
     pause.5
 
     $ hermione_wear_bottom = False
-    call set_hermione_action("none","skip_update")
+    call set_her_action("none","skip_update")
 
     call her_main("","silly","ahegao_intense",cheeks="blush")
     pause.8
@@ -235,7 +235,7 @@ label potion_scene_2_2: #ass expansion
     call her_main("Something is happening with my body, [genie_name]!","open","down_raised")
     call ctc
 
-    call set_hermione_action("expand_ass")
+    call set_her_action("expand_ass")
     with vpunch
 
     call her_main("","angry","down_raised")
@@ -275,7 +275,7 @@ label potion_scene_2_2: #ass expansion
     m "Well this potion certainly is effective."
     call nar(">You start firmly stroking her ass cheeks. Pulling them apart to reveal her asshole and then squishing them together.","start")
     call nar(">Seeing her tight asshole gives you an idea.","end")
-    $ hermione_main_zorder = 8
+    $ hermione_zorder = 8
 
     menu: #Thought about adding a rimming option here but the chibis don't really support it
         "-Finger her asshole-":
@@ -331,7 +331,7 @@ label potion_scene_2_2: #ass expansion
             m "Well you best be off to class."
             call her_main("...With my butt looking like this?","angry","down_raised")
             m "I'm sure no one will be able to tell \nwith your skirt on. Now hurry up \nI have things to attend to."
-            $ hermione_main_zorder = 5
+            $ hermione_zorder = 5
             call blkfade
             pause 1
 
@@ -352,11 +352,9 @@ label potion_scene_2_2: #ass expansion
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.","grin","dead")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
-            $ custom_skirt = 0
-            $ h_action_show_skirt = True
             call her_main("...","open","down")
 
-        "-Hot dog her-" if whoring >= 17:
+        "-Hot dog her-" if her_whoring >= 17:
             m "Bend over [hermione_name]."
             call nar(">Before she even has a chance to react you push her forward over your desk.")
             hide screen groping_02
@@ -417,7 +415,7 @@ label potion_scene_2_2: #ass expansion
             call blkfade
             pause 1
 
-            $ hermione_main_zorder = 5
+            $ hermione_zorder = 5
             hide screen chair_left
             hide screen groping_01
             hide screen groping_02
@@ -462,4 +460,4 @@ label potion_scene_2_2: #ass expansion
 
     jump main_room
         #will add this later
-        #"-Fuck her ass-" if whoring >= 22:
+        #"-Fuck her ass-" if her_whoring >= 22:

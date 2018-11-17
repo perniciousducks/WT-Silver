@@ -2,7 +2,8 @@
 
 label astoria_init:
 
-    if not hasattr(renpy.store,'astoria_wear_outfit') or reset_ast_clothing or reset_persistants:
+    if not hasattr(renpy.store,'astoria_wear_outfit') or reset_persistants:
+        label reset_astoria_clothing:
 
         #Body
         $ astoria_base                = "characters/astoria/body/base/base_01.png"
@@ -14,6 +15,7 @@ label astoria_init:
         $ astoria_ypos                = 0
         $ astoria_zorder              = 5
         $ astoria_flip                = 1
+        $ use_astoria_head            = False
 
         #Face
         $ astoria_mouth               = "characters/astoria/face/mouth/smile.png"
@@ -27,15 +29,19 @@ label astoria_init:
 
         $ astoria_eyebrow             = "characters/astoria/face/brow/base.png"
 
-        $ astoria_cheeks              = "characters/astoria/face/extras/blank.png"
-        $ astoria_tears               = "characters/astoria/face/extras/blank.png"
+        $ astoria_cheeks              = "characters/astoria/face/extras/cheeks_blank.png"
+        $ astoria_tears               = "characters/astoria/face/extras/cheeks_blank.png"
         $ astoria_extra               = "characters/astoria/face/extras/blank.png"
+        $ astoria_emote               = "characters/emotes/blank.png"
 
         #Hair
         $ astoria_hair                = "characters/astoria/body/hair/hair_A_1_base.png"
         $ astoria_hair_shadow         = "characters/astoria/body/hair/hair_A_1_top.png"
         $ ast_hair_style              = "A"
         $ ast_hair_color              = 1
+
+        $ changeAstoria("smile","base","base","mid","blank","blank","blank","blank")
+
 
 
         #Clothes
@@ -91,15 +97,17 @@ label astoria_init:
 
         $ astoria_wear_outfit            = False
 
+
+
         #Top
-        $ astoria_top                 = "characters/astoria/clothes/tops/base/shirt_1.png"
-        $ ast_top                     = "shirt_1"
+        $ astoria_top                 = "characters/astoria/clothes/tops/base/top_1.png"
+        $ ast_top                     = "top_1"
         $ ast_top_color               = "base"
 
         #Bottom
-        $ astoria_skirt               = "characters/astoria/clothes/bottoms/base/skirt_1.png"
-        $ ast_skirt                   = "skirt_1"
-        $ ast_skirt_color             = "base"
+        $ astoria_bottom               = "characters/astoria/clothes/bottoms/base/skirt_1.png"
+        $ ast_bottom                   = "skirt_1"
+        $ ast_bottom_color             = "base"
 
         #Underwear
         $ astoria_bra                 = "characters/astoria/clothes/underwear/base/lace_bra.png"
@@ -110,7 +118,7 @@ label astoria_init:
         $ ast_panties                 = "lace_panties"
         $ ast_panties_color           = "base"
 
-        $ astoria_onepiece            = "characters/astoria/clothes/onepieces/base/blank.png"
+        $ astoria_onepiece            = "characters/astoria/clothes/onepieces/blank.png"
         $ ast_onepiece                = "blank"
         $ ast_onepiece_color          = "base"
 
@@ -135,8 +143,8 @@ label astoria_init:
         $ ast_stockings               = "blank"
         $ ast_stockings_color         = "base"
 
-        $ astoria_robe                = "characters/astoria/clothes/robe/base/slyth_1.png"
-        $ ast_robe                    = "slyth_1"
+        $ astoria_robe                = "characters/astoria/clothes/robe/robe_1_s.png"
+        $ ast_robe                    = "robe_1_s"
         $ ast_robe_color              = "base"
 
 
@@ -155,11 +163,13 @@ label astoria_init:
         $ ast_ears                    = "blank"
 
 
-
-    if not hasattr(renpy.store,'astoria_extra_1') or reset_persistants: #Remove before update
         $ astoria_extra_1             = "characters/astoria/extras/blank.png"
         $ astoria_extra_2             = "characters/astoria/extras/blank.png"
         $ astoria_extra_3             = "characters/astoria/extras/blank.png"
+
+        #Outfits
+        $ astoria_outfit_GLBL = None
+        $ astoria_temp_outfit = None
 
     return
 
@@ -168,15 +178,13 @@ label astoria_progress_init:
 
     if not hasattr(renpy.store,'astoria_name') or reset_persistants:
 
-        ##Favour stuff
+        #Stats
+        $ ast_spells = [0,0,0,0,0,0]
+        $ ast_spell_progress = 0 #Training times required to unlock a spell. Resets to 0 after it.
+        $ ast_affection      = 0 #Affection level with Tonks.
+        $ ast_mad = 0
 
-        ##Stats
-        $ astoria_spells = [0,0,0,0,0,0]
-        $ astoria_spell_progress = 0
-        $ astoria_affection = 0
-        $ astoria_points = 0
-
-        ##Flags
+        #Flags
         $ astoria_busy = False
         $ astoria_unlocked = False
         $ astoria_wardrobe_unlocked = False
@@ -186,9 +194,13 @@ label astoria_progress_init:
         $ astoria_arrival_day = 30
         $ astoria_arrvial_whoring = 9
 
-        ##Events
-        $ ministry_letter          = False
-        $ ministry_letter_received = False
+        #Names
+        $ astoria_name = "Miss Greengrass"
+        $ ast_genie_name = "Dumby"
+        $ ast_susan_name = "Cow"
+        $ ast_tonks_name = "Old Hag"
+
+        #Events
         $ hermione_on_the_lookout  = False
         $ hermione_finds_astoria   = False
         $ snape_on_the_lookout     = False
@@ -199,7 +211,7 @@ label astoria_progress_init:
         $ astoria_book_intro_happened = False
         $ astoria_intro_completed  = False
 
-        ##Tonks events
+        #Tonks events
         $ spells_locked = False
         $ astoria_tonks_event_in_progress = False
         $ astoria_tonks_1_completed = False
@@ -209,12 +221,8 @@ label astoria_progress_init:
         $ astoria_tonks_5_completed = False
         $ astoria_tonks_6_completed = False
 
-        ##Names
-        $ astoria_name = "Miss Greengrass"
-        $ ast_genie_name = "Dumby"
-        $ ast_susan_name = "Cow"
-        $ ast_tonks_name = "Old Hag"
-
+        #Stat Screen
+        $ ast_training_counter = 0
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

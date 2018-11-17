@@ -2,34 +2,25 @@
 
 ### HERMIONE GRANGER ###
 
-label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None, trans=None, xpos=hermione_xpos, ypos=hermione_ypos):
-    hide screen hermione_head
+label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen hermione_main
+    hide screen hermione_face
 
-    #Face
-    if mouth!= "":
-        $ h_mouth = mouth
-    if eyes != "":
-        $ h_eyes = eyes
+    #Flip
+    if flip == False: #Default
+        $ hermione_flip = 1
+    if flip == True: #Flipped
+        $ hermione_flip = -1
 
-    if cheeks != None:
-        $ h_cheeks = cheeks
-    else:
-        $ h_cheeks = "00_blank"
-    if tears != None:
-        $ h_tears = tears
-    else:
-        $ h_tears = "00_blank"
-    if emote != None:
-        $ h_emote = emote
-    else:
-        $ h_emote = "00_blank"
-
-    call h_update
-
+    if cheeks == None:
+        $ cheeks = "blank"
+    if tears == None:
+        $ tears = "blank"
+    if emote == None:
+        $ emote = "blank"
 
     #Positioning
-    if xpos != hermione_xpos:
+    if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
             $ hermione_xpos = 640
             $ menu_x = 0.1 #Don't add ypos!
@@ -47,17 +38,76 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
         else:
             $ hermione_xpos = int(xpos)
 
-    if ypos != hermione_ypos:
-        if ypos == "base" or ypos == "default":
+    if ypos != None:
+        if ypos in ["base","default"]:
             $ hermione_ypos = 0
+            $ hermione_scaleratio = 2
+            $ hermione_zorder = 5
+            $ use_hermione_head = False
+
+        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+            $ use_hermione_head = True
+            $ hermione_scaleratio = 2 #Reset
+
+            if face_on_cg: #Only her face is visible. Face gets placed on top of the CG screen.
+                if ccg_folder == "herm_sex":
+                    $ hermione_flip = -1 #Flipped.
+                    $ hermione_scaleratio = 1.75
+                    $ hermione_xpos = 277
+                    $ hermione_ypos = 122
+                $ hermione_zorder = 5
+
+            else:
+                if hermione_flip == -1: #Flipped
+                    $ hermione_xpos = -70 #Left side of screen!
+                else:
+                    $ hermione_xpos = 590
+                $ hermione_ypos = 230
+                $ hermione_zorder = 8
+
         else:
             $ hermione_ypos = int(ypos)
 
+    $ changeHermione(mouth, eye, cheeks, tears, extra, emote, hermione_xpos, hermione_ypos)
+
+    if use_hermione_head and face_on_cg: #Only her face. Used in CG scenes.
+        show screen hermione_face
+    else:
+        show screen hermione_main
+
+    show screen bld1 #Should be active anyways.
 
     #Transitions
-    show screen bld1 #Should be active anyways.
-    show screen hermione_main
+    call transition(trans)
 
+    #Text
+    if text != "":
+        $ renpy.say(her,text)
+
+    if use_hermione_head and not face_on_cg:
+        hide screen hermione_main
+
+    return
+
+
+
+label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, trans=None):
+    hide screen hermione_kneel
+
+    if cheeks == None:
+        $ cheeks = "blank"
+    if tears == None:
+        $ tears = "blank"
+    if emote == None:
+        $ emote = "blank"
+
+    $ changeHermione(mouth, eye, cheeks, tears, extra, emote, hermione_xpos, hermione_ypos)
+
+    show screen hermione_kneel #h_head2
+
+    show screen bld1 #Should be active anyways.
+
+    #Transitions
     call transition(trans)
 
     #Text
@@ -67,127 +117,37 @@ label her_main(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emo
     return
 
 
-label her_head(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None, xpos = hermione_head_xpos, ypos = hermione_head_ypos):
-    hide screen hermione_main
-    hide screen hermione_head
 
-    #Face
-    if mouth!= "":
-        $ h_mouth = mouth
-    if eyes != "":
-        $ h_eyes = eyes
 
-    if cheeks != None:
-        $ h_cheeks = cheeks
-    else:
-        $ h_cheeks = "00_blank"
-    if tears != None:
-        $ h_tears = tears
-    else:
-        $ h_tears = "00_blank"
-    if emote != None:
-        $ h_emote = emote
-    else:
-        $ h_emote = "00_blank"
+label update_hermione:
 
-    call h_update
+    $ hermione_flip = 1
+    $ use_hermione_head = False
 
-    $ hermione_head_xpos = 605
-    $ hermione_head_ypos = 235
-
-    if xpos != hermione_head_xpos:
-        if xpos == "base" or xpos == "default":
-            $ hermione_head_xpos = 605
-        else:
-            $ hermione_head_xpos = int(xpos)
-
-    if ypos != hermione_head_ypos:
-        if ypos == "base" or ypos == "default":
-            $ hermione_head_ypos = 235
-        elif ypos == "up" or ypos == "high": #Use this for "lift_top" pose.
-            $ hermione_head_ypos = 195
-        else:
-            $ hermione_head_ypos = int(ypos)
-
-    if face_on_cg:
-        if ccg_folder == "herm_sex":
-            $ hermione_head_xpos = 305
-            $ hermione_head_ypos = 87
-            hide screen hermione_face
-            show screen hermione_face
-            with d3
-
-    else:
-        show screen bld1 #Should be active anyways.
-        show screen hermione_head
-        with d3
-
-    if text != "":
-        $ renpy.say(her2,text)
-
-    if not face_on_cg:
-        hide screen hermione_head
+    call update_her_uniform
+    call h_update_body
+    call update_her_hair
 
     return
 
-
-label her_kneel(text="", mouth=h_mouth, eyes=h_eyes, cheeks=None, tears=None, emote=None):
-    hide screen hermione_kneel
-
-    #Face
-    if mouth!= "":
-        $ h_mouth = mouth
-    if eyes != "":
-        $ h_eyes = eyes
-
-    if cheeks != None:
-        $ h_cheeks = cheeks
-    else:
-        $ h_cheeks = "00_blank"
-    if tears != None:
-        $ h_tears = tears
-    else:
-        $ h_tears = "00_blank"
-    if emote != None:
-        $ h_emote = emote
-    else:
-        $ h_emote = "00_blank"
-
-    call h_update
-
-    show screen hermione_kneel #h_head2
-
-    if text != "":
-        $ renpy.say(her,text)
-
-    return
-
-
-
-
-
-label reset_hermione_main:
-    show screen hermione_blank_main
-    show screen hermione_blank_head
-    show screen hermione_blank_chibi
-    hide screen hermione_blank_main
-    hide screen hermione_blank_head
-    hide screen hermione_blank_chibi
-    hide screen hermione_main
+label reset_hermione:
 
     #Hermione clothing save state
     call load_hermione_clothing_saves
 
     $ hermione_dribble = False
-    $ hermione_squirt = False
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
+    $ hermione_squirt  = False
+    $ aftersperm       = False #Show cum stains on Hermione's uniform.
+    $ uni_sperm        = False
+    $ sperm_on_tits    = False #Sperm on tits when Hermione pulls her shirt up.
 
     if hermione_action != "none":
-        call h_action("none","update")
-    call update_her_uniform
-    call h_update_body
-    call h_update_hair
+        call set_her_action("none","update")
+
+    call update_hermione
+
     return
+
 
 label load_hermione_clothing_saves:
 
@@ -280,8 +240,49 @@ label load_hermione_clothing_saves:
         $ hermione_wear_tattoos      = False
 
     if h_request_wear_outfit:
-        $ hermione_costume = True
+        $ hermione_wear_outfit = True
     else:
-        $ hermione_costume = False
+        $ hermione_wear_outfit = False
 
     return
+
+
+init python:
+    def changeHermione( mouth=None,
+                        eye=None,
+                        cheeks=None,
+                        tears=None,
+                        extra=None,
+                        emote=None,
+                        x_pos=None,
+                        y_pos=None):
+
+        ### DEFINE GLOBAL VARIABLES ###
+        global hermione_mouth
+        global hermione_eyes
+        global hermione_cheeks
+        global hermione_tears
+        global hermione_extra
+        global hermione_emote
+        global hermione_xpos
+        global hermione_ypos
+
+        ### FACE CONTROL ###
+        if mouth is not None:
+            hermione_mouth       = "characters/hermione/face/mouth/"+str(h_lipstick)+"/"+str(mouth)+".png"
+        if eye is not None:
+            hermione_eyes        = "characters/hermione/face/eyes/"+str(h_eye_color)+"/"+str(eye)+".png"
+        if cheeks is not None:
+            hermione_cheeks      = "characters/hermione/face/extras/cheeks_"+str(cheeks)+".png"
+        if tears is not None:
+            hermione_tears       = "characters/hermione/face/extras/tears_"+str(tears)+".png"
+        if extra is not None:
+            hermione_extra       = "characters/hermione/face/extras/"+str(extra)+".png"
+        if emote is not None:
+            hermione_emote       = "characters/emotes/"+str(emote)+".png"
+
+        ### POSITION CONTROL ###
+        if x_pos is not None:
+            hermione_xpos        = x_pos
+        if y_pos is not None:
+            hermione_ypos        = y_pos

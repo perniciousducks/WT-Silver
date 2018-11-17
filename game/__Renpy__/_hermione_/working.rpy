@@ -11,19 +11,19 @@ init python:
 # Maid Job
 label job_1:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes [genie_name]..."
     else:
         her "As you wish [genie_name]."
 
-    call set_hermione_outfit(hg_maid_OBJ)
+    call set_hermione_outfit(hg_outfit_maid_OBJ)
 
     m "Off you go then..."
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes, [genie_name]..."
     else:
         her "As you wish, [genie_name]."
@@ -45,7 +45,7 @@ label maid_responses:
     call her_walk("door","mid",2)
     pause.2
 
-    call h_outfit_OBJ(hg_maid_OBJ)
+    call set_her_outfit(hg_outfit_maid_OBJ)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
@@ -81,12 +81,12 @@ label maid_responses:
                 $ gryffindor+= 10
                 $ gold += payment
             elif day_random >= 6 and day_random <= 8:
-                if whoring >= 15:
+                if her_whoring >= 15:
                     her " "
                 else:
                     "bla bla bla"
             elif day_random >=9:
-                if whoring >= 15:
+                if her_whoring >= 15:
                     "bla bla bla"
                 else:
                     her "I think you need to start enforcing harsher punishment for sexual harrasment."
@@ -118,19 +118,19 @@ label maid_responses:
 # Barmaid Job
 label job_2:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes [genie_name]..."
     else:
         her "As you wish [genie_name]."
 
-    call set_hermione_outfit(hg_maid_OBJ)
+    call set_hermione_outfit(hg_outfit_maid_OBJ)
 
     m "Off you go then..."
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes, [genie_name]..."
     else:
         her "As you wish, [genie_name]."
@@ -152,7 +152,7 @@ label barmaid_responses:
     call her_walk("door","mid",2)
     pause.2
 
-    call h_outfit_OBJ(hg_maid_OBJ)
+    call set_her_outfit(hg_outfit_maid_OBJ)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
@@ -201,9 +201,9 @@ label barmaid_responses:
 # Gryffindor Cheerleader Job
 label job_3:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes [genie_name]..."
     else:
         her "As you wish [genie_name]."
@@ -218,17 +218,17 @@ label job_3:
     $ h_request_wear_bottom = True
     $ h_request_wear_stockings = True
 
-    if hg_cheer_g_sexy_OBJ.unlocked and whoring >= 11: #Sexy
+    if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         $ h_top = "top_cheer_sexy_g"
-        $ h_skirt = "skirt_cheer_sexy_g"
+        $ h_bottom = "skirt_cheer_sexy_g"
         $ h_stockings = "stockings_cheer_short_g"
     else: #Normal
         $ h_top = "top_cheer_g"
-        $ h_skirt = "skirt_cheer_g"
+        $ h_bottom = "skirt_cheer_g"
         $ h_stockings = "stockings_cheer_g"
 
     $ h_top_color = "base"
-    $ h_skirt_color = "base"
+    $ h_bottom_color = "base"
 
     call load_hermione_clothing_saves
     call update_her_uniform
@@ -240,9 +240,9 @@ label job_3:
 
     g9 "You look great!"
     m "Off you go then..."
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes, [genie_name]..."
     else:
         her "As you wish, [genie_name]."
@@ -312,7 +312,7 @@ label gryffindor_cheer_responses:
                 call her_main("Thank you [genie_name].","base","happyCl")
                 $ gryffindor+= 20
                 $ gold += payment
-            elif day_random >=9 and lock_public_favors == True or whoring <= 15:
+            elif day_random >=9 and lock_public_favors == True or her_whoring <= 15:
                 m "You seem very chipper today."
                 call her_main("Of course I am, we won!","base","base")
                 m "Won?"
@@ -375,9 +375,9 @@ label gryffindor_cheer_responses:
 # Slytherin Cheerleader Job
 label job_4:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes, [genie_name]..."
     else:
         her "As you wish, [genie_name]."
@@ -391,17 +391,17 @@ label job_4:
     $ h_request_wear_bottom = True
     $ h_request_wear_stockings = True
 
-    if hg_cheer_s_sexy_OBJ.unlocked and whoring >= 11: #Sexy
+    if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         $ h_top = "top_cheer_sexy_s"
-        $ h_skirt = "skirt_cheer_sexy_s"
+        $ h_bottom = "skirt_cheer_sexy_s"
         $ h_stockings = "stockings_cheer_short_s"
     else: #Normal
         $ h_top = "top_cheer_s"
-        $ h_skirt = "skirt_cheer_s"
+        $ h_bottom = "skirt_cheer_s"
         $ h_stockings = "stockings_cheer_s"
 
     $ h_top_color = "base"
-    $ h_skirt_color = "base"
+    $ h_bottom_color = "base"
 
     call load_hermione_clothing_saves
     call update_her_uniform
@@ -413,9 +413,9 @@ label job_4:
 
     g4 "You look incredible!"
     m "Off you go then..."
-    if whoring <= 6:
+    if her_whoring <= 6:
         her "*Humph!*..."
-    elif whoring >=7 and whoring <= 15:
+    elif her_whoring >=7 and her_whoring <= 15:
         her "Yes, [genie_name]..."
     else:
         her "As you wish, [genie_name]."

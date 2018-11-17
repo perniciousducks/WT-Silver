@@ -1,43 +1,43 @@
 label l_tutoring_check:
-    if v_tutoring == 0:
+    if her_tutoring == 0:
         jump l_tutoring
-    elif v_tutoring == 1 and whoring >= 1:
+    elif her_tutoring == 1 and her_whoring >= 1:
         jump l_tutoring
-    elif v_tutoring == 2 and whoring >= 2:
+    elif her_tutoring == 2 and her_whoring >= 2:
         jump l_tutoring
-    elif v_tutoring == 3 and whoring >= 3:
+    elif her_tutoring == 3 and her_whoring >= 3:
         jump l_tutoring
-    elif v_tutoring == 4 and whoring >= 5:
+    elif her_tutoring == 4 and her_whoring >= 5:
         jump l_tutoring
-    elif v_tutoring == 5 and whoring >= 8:
+    elif her_tutoring == 5 and her_whoring >= 8:
         jump l_tutoring
-    elif v_tutoring == 6 and whoring >= 11:
+    elif her_tutoring == 6 and her_whoring >= 11:
         jump l_tutoring
-    elif v_tutoring == 7 and whoring >= 14:
+    elif her_tutoring == 7 and her_whoring >= 14:
         if gift_item_inv[6] >= 1:# Adult magazines
             jump l_tutoring
         else:
             m "I need to buy adult magazines for this lesson."
-    elif v_tutoring == 8 and whoring >= 17:
+    elif her_tutoring == 8 and her_whoring >= 17:
         if gift_item_inv[7] >= 1:# Porn magazines
             jump l_tutoring
         else:
             m "I need to buy porn magazines for this lesson."
-    elif v_tutoring == 9 and whoring >= 20:
+    elif her_tutoring == 9 and her_whoring >= 20:
         if gift_item_inv[11] >= 1:# Vibrator
             jump l_tutoring
         else:
             m "I need to buy a vibrator for this lesson."
-    elif v_tutoring == 10 and whoring >= 23:
+    elif her_tutoring == 10 and her_whoring >= 23:
         if gift_item_inv[14] >= 1:# Anal plugs
             jump l_tutoring
         else:
             m "I need to buy anal plugs for this lesson."
-    elif v_tutoring == 11 and whoring >= 23:
+    elif her_tutoring == 11 and her_whoring >= 23:
         jump l_tutoring
-    elif v_tutoring == 12 and whoring >= 23:
+    elif her_tutoring == 12 and her_whoring >= 23:
         jump l_tutoring
-    elif v_tutoring == 13 and whoring >= 23:
+    elif her_tutoring == 13 and her_whoring >= 23:
         jump l_tutoring
     else:
         m "Not the right time. Soon..."
@@ -47,7 +47,7 @@ label l_tutoring_check:
 label l_tutoring:
     $ d_flag_01 = False
 
-    if v_tutoring == 0:   # Whoring lvl 0
+    if her_tutoring == 0:   # Whoring lvl 0
 
         call her_main("Of course, sir.","open","base")
         her "I'll go get my books then."
@@ -59,7 +59,7 @@ label l_tutoring:
         play sound sd_door
         pause.3
 
-        call h_action("hold_book")
+        call set_her_action("hold_book")
         call her_main("","base","base",xpos="mid",ypos="base")
 
         call hide_blkfade
@@ -111,18 +111,19 @@ label l_tutoring:
 
         call her_walk("mid","door",3)
 
-        call her_head("{size=-4}(I'm glad the professor agreed to tutor me!){/size}","base","worriedCl",cheeks="blush",xpos="base",ypos="base")
-        call her_head("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","annoyed","baseL")
+        call her_main("{size=-4}(I'm glad the professor agreed to tutor me!){/size}","base","worriedCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","annoyed","baseL",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 1
+        $ her_tutoring = 1
         $ aftercum = False
         jump day_start
 
-    if v_tutoring == 1:   # Whoring lvl 1
+    if her_tutoring == 1:   # Whoring lvl 1
 
         hide screen hermione_main
-        call h_action("hold_book")
+        call set_her_action("hold_book")
 
         call her_main("","base","base",trans="fade")
         m "Miss Granger, time for your first lesson."
@@ -132,7 +133,7 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call h_action("none","update")
+        call set_her_action("none","update")
 
         g9 "{size=-2}(And soon you'll love cock!){/size}"
         $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
@@ -174,15 +175,16 @@ label l_tutoring:
 
         call her_walk("mid","door",2)
 
-        call her_head("{size=-4}(Filthy whores...){/size}","angry","angryCl",cheeks="blush")
-        call her_head("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}","base","worriedCl",cheeks="blush")
+        call her_main("{size=-4}(Filthy whores...){/size}","angry","angryCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}","base","worriedCl",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 2
+        $ her_tutoring = 2
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 2:   # Whoring lvl 2
+    elif her_tutoring == 2:   # Whoring lvl 2
         m "Good, you didn't bring your books this time."
         call her_main("Not that I agree with it. All the knowledge I need is in those books.","annoyed","angryL")
         m "Books can't teach you everything, some knowlege only comes with practice and experience!"
@@ -230,16 +232,17 @@ label l_tutoring:
 
         call her_walk("mid","door",2)
 
-        call her_head("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}","base","down_raised",cheeks="blush")
-        call her_head("{size=-4}(Probably all the problems caused by those harlots.){/size}","base","glance",cheeks="blush")
-        call her_head("{size=-4}(Well, I will never be like them, so no need to worry.){/size}","silly","glance",cheeks="blush")
+        call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}","silly","glance",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 3
+        $ her_tutoring = 3
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 3:   # Whoring lvl 3
+    elif her_tutoring == 3:   # Whoring lvl 3
         call her_main("Sir, I want to apologize for doubting you.","open","base")
         m "Yes?"
         call her_main("Your \"atypical\" method works!","angry","worriedCl",emote="05")
@@ -306,16 +309,17 @@ label l_tutoring:
 
         call her_walk("mid","door",2)
 
-        call her_head("{size=-4}(Well, I'll try to investigate those two girls again.){/size}","disgust","down_raised",cheeks="blush")
-        call her_head("{size=-4}(Like a real anthropologist!){/size}","base","glance",cheeks="blush")
-        call her_head("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}","base","worriedCl",cheeks="blush")
+        call her_main("{size=-4}(Well, I'll try to investigate those two girls again.){/size}","disgust","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Like a real anthropologist!){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}","base","worriedCl",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 4
+        $ her_tutoring = 4
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 4:   # Whoring lvl 5
+    elif her_tutoring == 4:   # Whoring lvl 5
         m "So, any luck with your \"studies\"?"
         call her_main("Yes! When you hear the results of my hunt, you'll be proud of me!","base","happyCl")
         m "{size=-2}(\"Hunt\"?){/size}"
@@ -424,16 +428,17 @@ label l_tutoring:
 
         call her_walk("mid","door",2)
 
-        call her_head("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","base","ahegao_raised",cheeks="blush")
-        call her_head("{size=-4}(I lost control, it won't happen again!){/size}","shock","down_raised",cheeks="blush")
-        call her_head("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","base","glance",cheeks="blush")
+        call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I lost control, it won't happen again!){/size}","shock","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","base","glance",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 5
+        $ her_tutoring = 5
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 5:   # Whoring lvl 8
+    elif her_tutoring == 5:   # Whoring lvl 8
         m "Bravo, last time you experienced your first \"emotion\"."
         call her_main("Yes, I remember but I still don't see the link with magic.","open","suspicious")
         m "{size=-2}(Me neither...){/size}"
@@ -483,7 +488,7 @@ label l_tutoring:
         m "And you felt those emotions without even touching yourself."
         call her_main("Yes...","open","base",cheeks="blush")
         g9 "{size=-2}(What a slut!){/size}"
-        if whoring <= 12 or custom_bra >0:
+        if her_whoring <= 12 or hermione_wear_bra:
             call nar(">You move forward to her panties.")
         else:
             call nar(">You move forward to her pussy.")
@@ -511,16 +516,17 @@ label l_tutoring:
 
         call her_walk("desk","door",3)
 
-        call her_head("{size=-4}(This is wrong...){/size}","disgust","down_raised",cheeks="blush")
-        call her_head("{size=-4}(I shouldn't listen to him.){/size}","angry","worriedCl",cheeks="blush")
-        call her_head("{size=-4}(And yet...){/size}","base","down_raised",cheeks="blush")
+        call her_main("{size=-4}(This is wrong...){/size}","disgust","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I shouldn't listen to him.){/size}","angry","worriedCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(And yet...){/size}","base","down_raised",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 6
+        $ her_tutoring = 6
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 6:   # Whoring lvl 11
+    elif her_tutoring == 6:   # Whoring lvl 11
         m "So, have you started practicing my teachings?"
         call her_main("I don't even know where to start.","open","suspicious")
         m "You see, the secret is to stimulate appropriate areas."
@@ -591,7 +597,7 @@ label l_tutoring:
         call blkfade
         pause.5
 
-        call her_head("Don't stop, you idiot!","scream","angry",cheeks="blush",emote="01")
+        call her_main("Don't stop, you idiot!","scream","angry",cheeks="blush",emote="01",ypos="head")
 
         hide screen hermione_main
         hide screen groping_03
@@ -601,15 +607,14 @@ label l_tutoring:
         show screen hermione_blink
         call hide_blkfade
 
-        call her_head("...........","mad","wide",cheeks="blush")
+        call her_main("...........","mad","wide",cheeks="blush")
 
         call her_chibi("stand","desk","base")
         show screen genie
         hide screen bld1
         call hide_blkfade
 
-        show screen bld1
-        call her_head("Sorry, professor.","angry","angry",cheeks="blush")
+        call her_main("Sorry, professor.","angry","angry",cheeks="blush")
         m "Lesson is over. Time to practice by yourself."
         m "Good night my little witch."
         call her_main("Good night, professor, and thank you for this lesson.","base","happyCl")
@@ -621,15 +626,16 @@ label l_tutoring:
         call her_walk("desk","door",3)
 
         show screen hermione_stand_f
-        call her_head("{size=-4}(\"My little witch?\"){/size}","annoyed","angryL",cheeks="blush")
-        call her_head("{size=-4}(Why not, after all...){/size}","base","ahegao_raised",cheeks="blush")
+        call her_main("{size=-4}(\"My little witch?\"){/size}","annoyed","angryL",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Why not, after all...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 7
+        $ her_tutoring = 7
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 7:   # Whoring lvl 14
+    elif her_tutoring == 7:   # Whoring lvl 14
         m "So, Miss Granger, have you practiced my teachings?"
         call her_main("Yes...{w=0.2} a little.","annoyed","angryL",cheeks="blush")
         m "And?"
@@ -646,15 +652,20 @@ label l_tutoring:
         hide screen hermione_main
         call her_chibi("lift_top")
 
-        call h_action("lift_top")
+        call set_her_action("lift_top")
+
+        hide screen hermione_main
+        $ hermione_wear_top = False
 
         call her_main("Like that?","annoyed","angryL",cheeks="blush")
 
-        if custom_bra >=1 and badges and custom_outfit_old <= 0:
-            m "Without your bra Miss Granger... and come here."
-        else:
-            m "Yes and now come here."
+        if hermione_wear_bra:
+            m "Without your bra Miss Granger..."
+            hide screen hermione_main
+            $ hermione_wear_bra = False
+            call her_main()
 
+        m "Yes, and now come here."
         call her_main("........","annoyed","closed",cheeks="blush")
         call her_main("","base","closed")
         m "Now."
@@ -720,7 +731,7 @@ label l_tutoring:
         call blkfade
         call ctc
 
-        call h_action("none","update")
+        call set_her_action("none","update")
 
         hide screen chair_left
         hide screen groping_naked_tits
@@ -753,16 +764,17 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(I'm such a slut...){/size}","base","ahegao_raised",cheeks="blush")
-        call her_head("{size=-4}(Cumming in front of my professor...){/size}","base","down_raised",cheeks="blush")
-        call her_head("{size=-4}(I definitely need to do that again!){/size}","base","glance",cheeks="blush")
+        call her_main("{size=-4}(I'm such a slut...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Cumming in front of my professor...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I definitely need to do that again!){/size}","base","glance",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 8
+        $ her_tutoring = 8
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 8:   # Whoring lvl 17
+    elif her_tutoring == 8:   # Whoring lvl 17
         m "So tell me, were your readings enlightening?"
         call her_main("I'm not sure if \"readings\" is the right term but yes. Very \"stimulating\" too.","angry","worriedCl",cheeks="blush")
         m "Maybe it's time to discover new areas to stimulate."
@@ -791,13 +803,13 @@ label l_tutoring:
         call h_update_body
 
         if hermione_wear_bra:
-            call her_head("...",xpos="base",ypos="high")
+            call her_main("...",ypos="head")
             m "And your bra..."
 
             $ hermione_wear_bra = False
             call h_update_body
 
-        call her_head("........","annoyed","closed",cheeks="blush",xpos="base",ypos="high")
+        call her_main("........","annoyed","closed",cheeks="blush",ypos="head")
 
         call her_chibi("hide")
         hide screen genie
@@ -805,17 +817,16 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call bld
         call her_main("And free tits again, enjoy!","grin","angry",cheeks="blush",xpos="mid",ypos="base")
         m "I definitely intend to."
         g9 "Now take off your skirt."
         pause.8
 
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         call her_main("","base","baseL",cheeks="blush")
@@ -842,11 +853,11 @@ label l_tutoring:
             m "Now take them off."
 
             $ hermione_wear_panties = False
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
 
             call nar(">She slowly lowers her panties.")
 
-            call set_hermione_action("None")
+            call set_her_action("None")
 
             hide screen groping_06
             show screen no_groping_06
@@ -914,7 +925,7 @@ label l_tutoring:
         hide screen no_groping_01
         "You dismiss Hermione."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         call her_chibi("stand","desk","base")
         show screen genie
@@ -922,16 +933,17 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(Favorite...){/size}","base","ahegao_raised",cheeks="blush")
-        call her_head("{size=-4}(There's another one?){/size}","mad","wide",cheeks="blush")
-        call her_head("{size=-4}(I'll do my best to remain his favorite!){/size}","base","worriedCl",cheeks="blush")
+        call her_main("{size=-4}(Favorite...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(There's another one?){/size}","mad","wide",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I'll do my best to remain his favorite!){/size}","base","worriedCl",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 9
+        $ her_tutoring = 9
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 9:   # Whoring lvl 20
+    elif her_tutoring == 9:   # Whoring lvl 20
         m "So, Miss Granger, have you had an enjoyable night?"
         call her_main("You shouldn't ask such things, Professor.","open","closed")
         m "I have to make sure my students have a pleasant nights rest."
@@ -977,23 +989,23 @@ label l_tutoring:
             m "Take off your shirt and bra, I want to see your tits."
             pause.5
 
-            call set_hermione_action("lift_top")
+            call set_her_action("lift_top")
             pause.5
 
             $ hermione_wear_top = False
             $ hermione_wear_bra = False
-            call set_hermione_action("None")
+            call set_her_action("None")
             pause.5
 
         else:
             m "Take off your shirt, I want to see your tits."
             pause.5
 
-            call set_hermione_action("lift_top")
+            call set_her_action("lift_top")
             pause.5
 
             $ hermione_wear_top = False
-            call set_hermione_action("None")
+            call set_her_action("None")
             pause.5
 
         her "You love them don't you?"
@@ -1005,11 +1017,11 @@ label l_tutoring:
         m "Now remove your skirt!"
         pause.5
 
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         $ b_her_tears = True
@@ -1024,11 +1036,11 @@ label l_tutoring:
             her "Your wish is my command."
             pause.5
 
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
             pause.5
 
             $ hermione_wear_panties = False
-            call set_hermione_action("None")
+            call set_her_action("None")
             pause.5
 
             $ u_tears_pic = "characters/hermione/face/e_her_tears_02b.png"
@@ -1038,12 +1050,12 @@ label l_tutoring:
         else:
             call her_main("Touch her pussy like I'm touching mine now.","silly","ahegao_raised",cheeks="blush")
 
-        call set_hermione_action("pinch")
+        call set_her_action("pinch")
         pause.5
 
         call her_main("Caress it.","open_tongue","ahegao_raised",cheeks="blush")
 
-        call set_hermione_action("fingering")
+        call set_her_action("fingering")
         pause.2
 
         call her_main("Insert my fingers into her wet pussy.","open_tongue","ahegao_raised",cheeks="blush")
@@ -1076,7 +1088,7 @@ label l_tutoring:
 
         ">Hermione catches her breath and puts her clothes back on."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen her_naked
         call her_chibi("stand","desk","base")
@@ -1097,16 +1109,17 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(Rest...){/size}","base","down_raised",cheeks="blush")
-        call her_head("{size=-4}(Not before I've played with this marvelous toy again){/size}","base","glance",cheeks="blush")
-        call her_head("{size=-4}(And again){/size}","silly","glance",cheeks="blush")
+        call her_main("{size=-4}(Rest...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Not before I've played with this marvelous toy again){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(And again){/size}","silly","glance",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 10
+        $ her_tutoring = 10
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 10:   # Whoring lvl 23
+    elif her_tutoring == 10:   # Whoring lvl 23
         m "So... I hope my lessons are paying off."
         call her_main("You mean, by making me more \"open\" to the wonders of adulthood?","open","suspicious")
         m "Among other things..."
@@ -1131,12 +1144,12 @@ label l_tutoring:
         m "You still have things to learn..."
         call her_main("What?! What are we waiting for then?","scream","closed",cheeks="blush")
 
-        call set_hermione_action("lift_top")
+        call set_her_action("lift_top")
         pause.2
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("None")
+        call set_her_action("None")
 
         ">She rips off her shirt and rushes to your desk."
 
@@ -1251,7 +1264,7 @@ label l_tutoring:
 
         ">After a while, she puts her shirt back on."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen no_groping_05_desk
         show screen genie
@@ -1271,16 +1284,17 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(Finally tonight I'll just go to bed){/size}","base","worriedCl",cheeks="blush")
-        call her_head("{size=-4}(That was a little too intense){/size}","angry","worriedCl",cheeks="blush")
-        call her_head("{size=-4}(Not that I'm complaining...){/size}","silly","glance",cheeks="blush")
+        call her_main("{size=-4}(Finally tonight I'll just go to bed){/size}","base","worriedCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(That was a little too intense){/size}","angry","worriedCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Not that I'm complaining...){/size}","silly","glance",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 11
+        $ her_tutoring = 11
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 11:
+    elif her_tutoring == 11:
         m "[hermione_name], I have something for you."
         call her_main("Another gift for me?","base","ahegao_raised",cheeks="blush")
         call her_main("Please, please.","open","worriedCl",cheeks="blush")
@@ -1319,12 +1333,12 @@ label l_tutoring:
         her "{size=-2}(Old pervert...){/size}"
         call her_main("{size=-2}({b}My{/b} old pervert){/size}","open","worriedCl",cheeks="blush")
 
-        call set_hermione_action("lift_top")
+        call set_her_action("lift_top")
         pause.5
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         call her_main("My tits are the best in all of Hogwarts!","silly","ahegao_raised",cheeks="blush")
@@ -1348,12 +1362,12 @@ label l_tutoring:
         call blktone
         call her_main("I'm glad you love it.","angry","worriedCl",cheeks="blush",xpos="mid",ypos="base")
 
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
         $ hermione_wear_panties = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         call her_main("Can we start now?","grin","angry",cheeks="blush")
@@ -1448,7 +1462,7 @@ label l_tutoring:
 
         ">She puts her shirt back on and rushes to the door."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen no_groping_05_desk
         call her_chibi("stand","door","base",flip=True)
@@ -1483,7 +1497,7 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call her_head("*Slurp!* *Slurp!* *Gulp!*",xpos="base",ypos="base")
+        her "*Slurp!* *Slurp!* *Gulp!*"
         g9 "Yes, like that..."
         call nar(">Hermione eagerly sucks your dick.")
         m "You seem to be in a hurry. Is it because you're not getting points for this?"
@@ -1525,16 +1539,17 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(Sucking his cock without getting any points!){/size}","annoyed","angryL",cheeks="blush")
-        call her_head("{size=-4}(If he hadn't made me come so hard...){/size}","base","ahegao_raised",cheeks="blush")
-        call her_head("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","base","down_raised",cheeks="blush")
+        call her_main("{size=-4}(Sucking his cock without getting any points!){/size}","annoyed","angryL",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(If he hadn't made me come so hard...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","base","down_raised",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 12
+        $ her_tutoring = 12
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 12:
+    elif her_tutoring == 12:
         call her_main("Oh! I can't believe I forgot! Stay where you are, I'll be right back!","mad","wide",cheeks="blush")
         hide screen hermione_main
         play sound sd_door
@@ -1544,9 +1559,11 @@ label l_tutoring:
         pause.3
 
         ###MAKE HER WEAR JUST A ROBE
-        $ h_robe = "gryff_robe_gap"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
-        call h_action("naked") #Removes all clothes.
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_2_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_2_s.png"
+        call set_her_action("naked") #Removes all clothes.
         $ hermione_wear_robe = True
         call update_chibi_uniform
 
@@ -1566,8 +1583,10 @@ label l_tutoring:
         pause.2
 
         hide screen hermione_main
-        $ h_robe = "gryff_robe_gap_wide"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
         call her_main("","open","squint",cheeks="blush")
         call ctc
 
@@ -1577,8 +1596,10 @@ label l_tutoring:
         pause.2
 
         hide screen hermione_main
-        $ h_robe = "gryff_robe_off"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_open_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_open_s.png"
         call her_main("","base","closed",cheeks="blush",trans="d5")
         call ctc
 
@@ -1586,8 +1607,10 @@ label l_tutoring:
         g9 "Oh yes, definitely. Well done, my girl."
 
         hide screen hermione_main
-        $ h_robe = "gryff_robe_gap_wide"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
 
         call her_main("Alright then, can we start the lesson now?","smile","angry",cheeks="blush")
         m "Maybe, I don't know... do you like butterbeer?"
@@ -1655,7 +1678,7 @@ label l_tutoring:
 
         show screen no_groping_laying_02
 
-        call her_head("I'm ready, [genie_name].",xpos="base",ypos="base")
+        call her_main("I'm ready, [genie_name].",ypos="head")
         ">You take an empty butterbeer bottle, spit on the neck and push it inside her butthole."
 
         hide screen no_groping_laying_02
@@ -1705,7 +1728,7 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call her_main("*Panting* *panting*","grin","dead",cheeks="blush",tears="messy")
+        call her_main("*Panting* *panting*","grin","dead",cheeks="blush",tears="messy",ypos="head")
         call her_main("P-professor...{w=0.3} I'm so happy right now.","base","concerned",cheeks="blush",tears="soft")
         g9 "Glad to hear it."
         hide screen hermione_main
@@ -1732,25 +1755,26 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(Yes, sweet dreams...){/size}","base","worriedCl",cheeks="blush")
-        call her_head("{size=-4}(Sweet and wet!){/size}","silly","glance",cheeks="blush")
+        call her_main("{size=-4}(Yes, sweet dreams...){/size}","base","worriedCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Sweet and wet!){/size}","silly","glance",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 13
+        $ her_tutoring = 13
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         $ aftercum = False
         jump day_start
 
-    elif v_tutoring == 13:
+    elif her_tutoring == 13:
         call her_main("I'll go get my books right away, sir!","soft","baseL")
         hide screen hermione_main
         play sound sd_door
         call blkfade
         pause 1
 
-        call h_action("hold_book")
+        call set_her_action("hold_book")
 
         play sound sd_door
         pause.3
@@ -1778,8 +1802,8 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call h_action("naked")
-        call h_action("hold_book")
+        call set_her_action("naked")
+        call set_her_action("hold_book")
 
         call blktone
         hide screen blkfade
@@ -1789,7 +1813,7 @@ label l_tutoring:
         m "Ok now, put your books down and bend over the desk, my little whore."
         pause.5
 
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         hide screen hermione_main
@@ -1919,7 +1943,7 @@ label l_tutoring:
         ">You dismiss Hermione."
         ">She puts her clothes back on without haste."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen no_groping_laying_02
         pause 1
@@ -1932,12 +1956,13 @@ label l_tutoring:
 
         call her_walk("desk","door",2.5)
 
-        call her_head("{size=-4}(\"my beloved prince\"...){/size}","base","down_raised",cheeks="blush")
-        call her_head("{size=-4}(He's hardly Prince Charming but...){/size}","base","glance",cheeks="blush")
-        call her_head("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","grin","ahegao_raised",cheeks="blush")
+        call her_main("{size=-4}(\"my beloved prince\"...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(He's hardly Prince Charming but...){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","grin","ahegao_raised",cheeks="blush",ypos="head")
+
         call her_chibi("leave")
 
-        $ v_tutoring = 14
+        $ her_tutoring = 14
         $ aftercum = False
         jump day_start
 
@@ -1995,70 +2020,70 @@ define sd_win2 = "sounds/win2.mp3"
 # Screens
 screen genie_and_hermione: #Genie sitting, Hermione stands right in front of him (behind the desk even).
     tag favor
-    add "images/main_room/genie_and_hermione_01.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/rooms/main_room/genie_and_hermione_01.png" at Position(xpos = -84, ypos = 10)
 
 screen groping_05:
     tag favor
-    add "groping_05" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05" at Position(xpos = -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_05b:
     tag favor
-    add "groping_05b" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05b" at Position(xpos = -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_05:
     tag favor
-    add "images/animation/grope_d_05.png" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_d_05.png" at Position(xpos = -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_05_desk:
     tag favor
-    add "images/animation/grope_d_06.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_d_06.png" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_06: #Facing Genie.
     tag favor
-    add "images/animation/grope_e_05.png" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_e_05.png" at Position(xpos = -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_06:
     tag favor
-    add "groping_06" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06" at Position(xpos = -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_06b:
     tag favor
-    add "groping_06b" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06b" at Position(xpos = -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_laying_01:
     tag favor
-    add "images/animation/grope_laying_01.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_laying_01.png" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_laying_02:
     tag favor
-    add "images/animation/grope_laying_b_01.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_laying_b_01.png" at Position(xpos = -84, ypos = 10)
 
 screen scr_her_fingering_naked(speed="normal"):
     tag favor
     if speed == "slow":
-        add "ani_her_fingering_slow_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_fingering_slow_naked" at Position(xpos = -84, ypos = 10)
     else:
-        add "ani_her_fingering_naked" at Position(xpos = table_position_x -84, ypos = 10)
-    add "ani_her_fingering_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_fingering_naked" at Position(xpos = -84, ypos = 10)
+    add "ani_her_fingering_blinking" at Position(xpos = -84, ypos = 10)
 
 screen scr_her_sex(speed="normal"):
     tag favor
     if speed == "slow":
-        add "ani_her_sex_slow_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_sex_slow_naked" at Position(xpos = -84, ypos = 10)
     elif speed == "normal":
-        add "ani_her_sex_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_sex_naked" at Position(xpos = -84, ypos = 10)
     elif speed == "fast":
-        add "ani_her_sex_fast_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_sex_fast_naked" at Position(xpos = -84, ypos = 10)
 
 screen scr_her_sex_cum_outside(blink=0):
     tag favor
-    add "ani_her_sex_cum_outside_naked" at Position(xpos = table_position_x -84, ypos = 10)
+    add "ani_her_sex_cum_outside_naked" at Position(xpos = -84, ypos = 10)
 
 image groping_06: #Genie groping Hermione under her skirt. Hermione is facing Genie.
     "images/animation/grope_e_01.png"

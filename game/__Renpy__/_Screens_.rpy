@@ -16,10 +16,10 @@ screen cg: #Used in tentacle event.
 screen ccg:
     tag cg_screen
 
-    add "images/28_cg/"+ccg_folder+"/base.png"
-    add "images/28_cg/"+ccg_folder+"/"+str(ccg1)+".png"
-    add "images/28_cg/"+ccg_folder+"/"+str(ccg2)+".png"
-    add "images/28_cg/"+ccg_folder+"/"+str(ccg3)+".png"
+    add "images/CG/"+ccg_folder+"/base.png"
+    add "images/CG/"+ccg_folder+"/"+str(ccg1)+".png"
+    add "images/CG/"+ccg_folder+"/"+str(ccg2)+".png"
+    add "images/CG/"+ccg_folder+"/"+str(ccg3)+".png"
 
     zorder 4
 
@@ -54,50 +54,58 @@ screen G_Flowers_out:  #  Genie flowers vanish
     zorder 5
 
 
-screen fireplace_glow:
-    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.15
-    zorder 10
-
-screen candlefire:
-    add "candle_fire_01" xpos 240 ypos 43
-    add "candle_fire_02" xpos 723 ypos 108
-    zorder 1
-
 
 screen phoenix_food: #Phoenix's food.
-    add "images/main_room/06_phoenix_food.png" xpos 350+140 ypos 49
+    tag phoenix_food
+    add "images/rooms/main_room/06_phoenix_food.png" xpos 490 ypos 49
     zorder 2
 
-screen fireplace_fire: #FIREPLACE FIRE.
-    add "fireplace_fire" xpos 436+140 ypos 141
+
+screen fireplace: #Used to display a fireplace in a different room. Not needed for main room. Included in screen "main_room".
+    tag fireplace
+    add "images/rooms/main_room/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+    zorder 1
+
+screen fireplace_fire: #Used to display fire without the fireplace.
+    tag fireplace_fire
+    add "fireplace_fire" xpos 576 ypos 141 #xpos 576 ypos 141
     zorder 2
 
+screen fireplace_glow:
+    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.15
+    zorder 3
 
 $ width_offset = 140
 
-screen fireplace:
-    add "images/main_room/fireplace.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
 
-screen desk: #Genie's desk.
-    add "images/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
 
-screen chair_left: #aka chair_02
-    add "images/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
+screen desk: #Desk only!
+    add "images/rooms/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    zorder 2
+
+screen chair_left:
+    add "images/rooms/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
 screen chair_right:
-    add "images/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
+    zorder 1
 
-screen owl: #DEFAULT OWL WITH ENVELOPE IN IT'S MOUTH.
-    add "images/main_room/owl_01.png" at Position(xpos=315+140, ypos=270, xanchor="center", yanchor="center")
-screen owl_02: #OWL. No Envelope.
-    add "images/main_room/owl_05.png" at Position(xpos=315+140, ypos=270, xanchor="center", yanchor="center")
-screen package: #PACKAGE.
-    add "images/main_room/owl_06.png" at Position(xpos=260+140, ypos=235, xanchor="center", yanchor="center")
-screen owl_03: #OWL SITTING ON A PACKAGE.
-    add "images/main_room/owl_05.png" at Position(xpos=310+140, ypos=235, xanchor="center", yanchor="center")
+#Mail
+screen owl:
+    tag owl
+
+    if letter_queue_list != []: #Owl with letter.
+        add "images/rooms/main_room/owl_01.png" at Position(xpos=455, ypos=270, xanchor="center", yanchor="center")
+    else:
+        add "images/rooms/main_room/owl_05.png" at Position(xpos=455, ypos=270, xanchor="center", yanchor="center")
+
+screen package:
+    add "images/rooms/main_room/owl_06.png" at Position(xpos=400, ypos=235, xanchor="center", yanchor="center")
+
+
 
 screen dumbledore: # DUMBLEDORE AND HIS DESK.
     tag chibi_genie
-    add "images/main_room/dum.png" at Position(xpos=230+140, ypos=336, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/dum.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
 
 ### EMO
 screen thought: #Thinking emotion over a chibi.
@@ -117,7 +125,7 @@ screen universal_walk:
 screen bld1:
     tag bld
     add "interface/bld.png"
-    zorder 3 #4
+    zorder 3
 
 screen ctc:
     add "ctc4"
@@ -168,15 +176,14 @@ label give_reward(text="",gift=""):
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
 
-    if text != "":
-        $ quest_reward_text = text
+    $ reward_text = text
 
     show screen gift
     show screen blktone5
     with d3
 
     menu:
-        "[quest_reward_text]"
+        "[reward_text]"
         "-Done Reading-":
             pass
 
@@ -194,7 +201,7 @@ screen clothing_unlock:
     add "interface/store/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
 
-label unlock_clothing(text="",item=""):
+label unlock_clothing(text="",item=None):
 
     $ renpy.play('sounds/win2.mp3')
     show screen notes
@@ -202,7 +209,7 @@ label unlock_clothing(text="",item=""):
     hide screen notes
     with d3
 
-    if item !="":
+    if item != None:
         $ mannequin_preview = item.getStoreImage()
     else:
         $ mannequin_preview = "images/store/01.png"
@@ -210,15 +217,12 @@ label unlock_clothing(text="",item=""):
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
 
-    if text != "":
-        $ quest_reward_text = text
-
     show screen clothing_unlock
     show screen blktone5
     with d3
 
     menu:
-        "[quest_reward_text]"
+        "[text]"
         "-Done Reading-":
             pass
 
@@ -226,26 +230,31 @@ label unlock_clothing(text="",item=""):
     hide screen blktone5
     with d3
 
+    $ item.unlocked = True
+
     $ menu_y = 0.5 #return to default menu align
 
     return
 
 
-screen letter:
-    zorder 4
-    add "interface/points/letter.png" at Position(xpos=340, ypos=30)
-    hbox:
-        spacing 40 xpos 410 ypos 80 xmaximum 250
-        text letter_text
+
 
 screen blkfade:
     zorder 6
     add "interface/blackfade.png"
 
+screen whitefade:
+    zorder 6
+    add "interface/whitefade.png"
+
 screen blktone:
     tag blktone
     zorder 5 #Otherwise bird's food will be on top.
     add im.Alpha("interface/blackfade.png", 0.5)
+
+screen blktone2:
+    zorder 5 #Otherwise bird's food will be on top.
+    add im.Alpha("interface/blackfade.png", 0.2)
 
 screen blktone5: #For narrator. (label nar) #Don't add tag blktone!
     zorder 5 #Otherwise bird's food will be on top.
@@ -313,30 +322,21 @@ screen plus_300:
 ### HANGING WITH SNAPE ###
 
 screen with_snape:
-    add "images/main_room/with_snape.png" at Position(xpos=0+140, ypos=0)
+    add "images/rooms/main_room/with_snape.png" at Position(xpos=140, ypos=0)
     tag hanging_with_snape
     zorder 3
 
 screen with_snape_animated:
-    add "genie_toast_goblet" at Position(xpos=0+140, ypos=0)
+    add "genie_toast_goblet" at Position(xpos=140, ypos=0)
     tag hanging_with_snape
     zorder 3
 
 
 
-screen c_scene: #Custom Scenes
+screen c_scene: #Snape Classroom Scene
     tag gc
-    if scene_number == 1:
-        add "images/28_cg/scene_01.png" xpos 0+140 ypos 0
-    if scene_number == 2:
-        add "images/28_cg/scene_02.png" xpos 0+140 ypos 0
-    if scene_number == 3:
-        add "images/28_cg/scene_03.png" xpos 0+140 ypos 0
-    if scene_number == 4:
-        add "images/28_cg/scene_04.png" xpos 0+140 ypos 0
-    zorder 3
-
-
+    add "images/CG/scene_01.png" xpos 140 ypos 0
+    zorder 4
 
 
 
@@ -356,15 +356,55 @@ screen s_head2: #Snape. Head.
     zorder 8
 
 
+label teleport(position=None):
+    if position == "genie":
+        $ teleport_xpos = genie_chibi_xpos+75
+        $ teleport_ypos = genie_chibi_ypos-15
+        $ teleport_zorder = 3
+    elif position == "hermione":
+        $ teleport_xpos = hermione_chibi_xpos+45
+        $ teleport_ypos = hermione_chibi_ypos-80
+        $ teleport_zorder = 3
+    elif position == "desk":
+        $ teleport_xpos = 320
+        $ teleport_ypos = 160
+        $ teleport_zorder = 1
+        show screen desk
 
 
+    $ renpy.play('sounds/magic4.ogg')
+    show screen whitefade
+    with d1
 
+    hide screen whitefade
+    with d1
 
+    show screen blkfade
+    with d1
 
+    hide screen blkfade
+    show screen heal_animation
+    with d3
 
+    #stop music fadeout 1
 
+    hide screen heal_animation
+    show screen teleport_animation
+    with d5
 
+    hide screen teleport_animation
+    with d5
+    pause 1
 
+    return
+
+screen teleport_animation:
+    add "teleport_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos+60 zoom 0.5
+    zorder teleport_zorder
+
+screen heal_animation:
+    add "heal_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos zoom 0.5
+    zorder teleport_zorder
 
 
 
@@ -438,20 +478,20 @@ screen l_head: #Screen that shows a full sprite of HERMIONE.
 
 ### CGs ###
 screen snape_groping:
-    add "images/28_cg/scene_01.png"
-    zorder hermione_main_zorder
+    add "images/CG/scene_01.png"
+    zorder hermione_chibi_zorder
 
 screen snape_facial:
-    add "images/28_cg/scene_03.png"
-    zorder hermione_main_zorder
+    add "images/CG/scene_03.png"
+    zorder hermione_chibi_zorder
 
 screen snape_sex:
-    add "images/28_cg/scene_04.png"
-    zorder hermione_main_zorder
+    add "images/CG/scene_04.png"
+    zorder hermione_chibi_zorder
 
 screen dual_hand_job:
-    add "images/28_cg/scene_02.png"
-    zorder hermione_main_zorder
+    add "images/CG/scene_02.png"
+    zorder hermione_chibi_zorder
 
 screen blkback:
     zorder 1
@@ -464,56 +504,23 @@ screen sccg:
     add sc_cg_image_2 xpos sccgxpos ypos sccgypos
     add sc_cg_image_3 xpos sccgxpos ypos sccgypos
 
-    zorder hermione_main_zorder
+    zorder 6
 
+
+
+### Menu Screens ###
+
+#Close Button.
+screen close_button(offsetx = 0, offsety = 0, close_var=lambda : "Close"):
+    imagebutton:
+            xpos 1028-offsetx
+            ypos 11-offsety
+            idle "interface/general/"+interface_color+"/button_close.png"
+            hover "interface/general/"+interface_color+"/button_close_hover.png"
+            action Return(close_var())
 
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
-    def changeHermioneMainScreen(   image_name,
-                                    hid_char_list=None,
-                                    hid_dialog_list=None,
-                                    x_pos=370,
-                                    y_pos=0,
-                                    hide_trans=Dissolve(0.3),
-                                    show_trans=Dissolve(0.3),
-                                    char_list=None,
-                                    dialog_list=None):
-        # SCOPE THESE VARIABLES TO GLOBAL SO WE CAN REALLY
-        # UPDATE THEM
-        global h_xpos
-        global h_ypos
-        global h_body
-        renpy.hide_screen("hermione_main")
-        if hide_trans is not None:
-            renpy.with_statement(hide_trans)
-        #dialog if present
-        if hid_char_list is not None:
-            if len(hid_char_list) == 1:
-                #single character
-                for i in range(0,len(hid_dialog_list)):
-                    renpy.say(hid_char_list[0],hid_dialog_list[i])
-            elif len(hid_char_list) > 1:
-                #multiple characters
-                for i in range(0,len(hid_char_list)):
-                    renpy.say(hid_char_list[i],hid_dialog_list[i])
-        h_xpos = x_pos
-        h_ypos = y_pos
-        if image_name is not None:
-            h_body = image_name
-
-        renpy.show_screen("hermione_main")
-        if show_trans is not None:
-            renpy.with_statement(show_trans)
-        #dialog if present
-        if char_list is not None:
-            if len(char_list) == 1:
-                #single character
-                for i in range(0,len(dialog_list)):
-                    renpy.say(char_list[0],dialog_list[i])
-            elif len(char_list) > 1:
-                #multiple characters
-                for i in range(0,len(char_list)):
-                    renpy.say(char_list[i],dialog_list[i])
 
     def cg(image):
         global cg_image
@@ -551,19 +558,19 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("blkfade")
         #renpy.with_statement(Dissolve(0.5))
         if scene is not None:
-            sc_cg_base = "images/28_cg/sc34/"+str(scene)+"/base_1.png"
+            sc_cg_base = "images/CG/sc34/"+str(scene)+"/base_1.png"
         if image1 is not None:
-            sc_cg_image_1 = "images/28_cg/sc34/"+str(scene)+"/A_"+str(image1)+".png"
+            sc_cg_image_1 = "images/CG/sc34/"+str(scene)+"/A_"+str(image1)+".png"
         else:
-            sc_cg_image_1 = "00_blank.png"
+            sc_cg_image_1 = "blank.png"
         if image2 is not None:
-            sc_cg_image_2 = "images/28_cg/sc34/"+str(scene)+"/B_"+str(image2)+".png"
+            sc_cg_image_2 = "images/CG/sc34/"+str(scene)+"/B_"+str(image2)+".png"
         else:
-            sc_cg_image_2 = "00_blank.png"
+            sc_cg_image_2 = "blank.png"
         if image3 is not None:
-            sc_cg_image_3 = "images/28_cg/sc34/"+str(scene)+"/C_"+str(image3)+".png"
+            sc_cg_image_3 = "images/CG/sc34/"+str(scene)+"/C_"+str(image3)+".png"
         else:
-            sc_cg_image_3 = "00_blank.png"
+            sc_cg_image_3 = "blank.png"
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))

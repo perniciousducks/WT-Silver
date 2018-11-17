@@ -18,6 +18,9 @@ label equip_outfit:
     #Cho
     if active_girl == "cho":
         jump equip_cho_outfit
+    #Tonks
+    if active_girl == "tonks":
+        jump equip_cho_outfit
 
 
 ### Equip Hermione's Outfit ###
@@ -30,16 +33,16 @@ label equip_her_outfit:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = False
+            $ hide_transitions = False
             $ hermione_xpos = 665
 
             # Outfits
-            if outfit_choice == hg_maid_OBJ:
+            if outfit_choice == hg_outfit_maid_OBJ:
                 m "Do you know what a maid is?"
                 call her_main("Of course I know...","open","base")
                 call her_main("Wait, why would you ask me that?","normal","narrow")
                 g9 "I would like you to be my maid."
-                if whoring >= 11: #Success
+                if her_whoring >= 11: #Success
                     call her_main("Your maid? Does that mean I have to wear one of those silly outfits?","open","wink")
                     g9 "Absolutely!"
                     call her_main("...","normal","down")
@@ -58,15 +61,15 @@ label equip_her_outfit:
                     call her_main("Outfits don't win house-cups...","soft","angry")
                     m "(Damn her...)"
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_pirate_OBJ:
+            if outfit_choice == hg_outfit_pirate_OBJ:
                 m "Know anything about pirates [hermione_name]?"
                 call her_main( "They pillage and kill people.","open","base")
                 m "..."
                 m "How do you feel about wearing a pirates outfit?"
-                if whoring >= 5: #Success
+                if her_whoring >= 5: #Success
                     call her_main( "Depends...[genie_name] what kind of pirate are we talking about?","base","base")
                     m "The adventurous type for sure."
                     call her_main( "I don't know...","open","base")
@@ -84,14 +87,14 @@ label equip_her_outfit:
                     call her_main( "It's a bit to revealing... drop it for now okay?","disgust","base")
                     m "Fair enough, I'm sure we'll find something you'd like to wear."
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 5."
+                        ">Try again at Whoring level 5."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_japan_OBJ:
+            if outfit_choice == hg_outfit_japan_OBJ:
                 m "Hogwarts isn't the only school with a dress code you know."
                 call her_main( "I know that, I'm a muggle born after all.","open","base")
                 m "Right, would you put this Japanese schoolgirl outfit on?"
-                if whoring >= 8: #Success
+                if her_whoring >= 8: #Success
                     call her_main( "Cute, where did you even get this? I didn't know you've visited Japan.","base","base")
                     m "It's a replica..."
                     call her_main( "Oh... well, the colour is nice.", "grin","base")
@@ -101,15 +104,15 @@ label equip_her_outfit:
                     m "Cultural what now?"
                     call her_main( "Never mind.", "annoyed" ,"angryCl")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 8."
+                        ">Try again at Whoring level 8."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_christmas_OBJ:
+            if outfit_choice == hg_outfit_christmas_OBJ:
                 m "You better watch out--"
                 m "You better not cry--"
                 call her_main("Sir?","open","wink")
                 g9 "Santa Claus is going to town!"
-                if whoring >= 17: #Success
+                if her_whoring >= 17: #Success
                     call her_main("Oh...","soft","baseL")
                     call her_main("Am I on the naughty list, Mr. Santa?","soft","glance",cheeks="blush")
                     g4 "You are!"
@@ -123,11 +126,11 @@ label equip_her_outfit:
                     g9 "Damn right he's going to cum!"
                     call her_main("You aren't making any sense, [genie_name]!","annoyed","baseL")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 17."
+                        ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_present_OBJ:
-                if whoring >= 20: #Success
+            if outfit_choice == hg_outfit_present_OBJ:
+                if her_whoring >= 20: #Success
                     m "[hermione_name], did you know today is my birthday?"
                     call her_main("Oh really, [genie_name]? Your birthday?","base","glance")
                     g9 "It is!"
@@ -170,7 +173,7 @@ label equip_her_outfit:
                         call nar(">You hand her the ribbon.")
                     call her_main("I'm supposed to wrap it around me?","open","wink")
                     m "Yes. But first you need to get naked."
-                    if whoring < 5:
+                    if her_whoring < 5:
                         call her_main("What?","shock","wide")
                         call her_main("Are you out of your mind, [genie_name]?","open","angryCl")
                         call her_main("Never ask me something like this again!","angry","angry")
@@ -185,24 +188,24 @@ label equip_her_outfit:
                         m "Alright, alright... No need to scream like that."
                     call her_main("(What a perv...)","annoyed","angryL")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 20."
+                        ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
             # Costumes
-            if outfit_choice in [hg_powerGirl_OBJ,hg_msMarvel_OBJ]:
+            if outfit_choice in [hg_costume_power_girl_OBJ,hg_costume_ms_marvel_OBJ]:
                 m "Are there any heroines you know of?"
-                if whoring >= 11: #Success
+                if her_whoring >= 11: #Success
                     call her_main("You mean like super-heroines?","open","wink")
                     m "Yep"
-                    if outfit_choice == hg_powerGirl_OBJ:
+                    if outfit_choice == hg_costume_power_girl_OBJ:
                         m "I've got this Power Girl outfit I would like you to wear..."
-                    if outfit_choice == hg_msMarvel_OBJ:
+                    if outfit_choice == hg_costume_ms_marvel_OBJ:
                         m "I have this outfit for you. It's Miss Marvel's!"
                     call nar(">You hand her the outfit.")
                     call her_main("Fine. I'll wear it.","soft","baseL")
                     m "You will?"
                     call her_main("Of course! I like her. She's a great role model for young girls, after all!","open","closed")
-                    if outfit_choice == hg_powerGirl_OBJ:
+                    if outfit_choice == hg_costume_power_girl_OBJ:
                         call her_main("Although... That cleavage on her is a bit much.","disgust","down")
                         g9 "But that's the best part!"
                         call her_main("Why doesn't that suprise me. That you would think so...","annoyed","angry")
@@ -222,18 +225,18 @@ label equip_her_outfit:
                     call her_main("It's disgusting...","open","closed")
                     call her_main("I have to refuse, [genie_name]!","annoyed","angry")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
 
-            if outfit_choice == hg_harleyQuinn_OBJ:
+            if outfit_choice == hg_costume_harley_quinn_OBJ:
                 m "Know anything about Batman?"
                 call her_main( "Uh, do you mean like vampires?","soft","narrow")
                 m "No, he's a comic book character."
                 call her_main( "Comics are usually a bit to unrealistic to me.","base","base")
                 m "\"In a world with actual wizards, Batman is too unrealistic?\""
                 m "I'd like you to try out this villain outfit."
-                if whoring >= 14: #Success
+                if her_whoring >= 14: #Success
                     call her_main( "I don't know, sell it to me.","base","base")
                     m "Uh, she's a misunderstood girl in love with one of the main characters enemies."
                     call her_main( "I feel misunderstood at times too, does she get her love in the end?","base","narrow")
@@ -248,14 +251,14 @@ label equip_her_outfit:
                     m "Oh, nothing my dear... I was just meditating."
                     call her_main( "\"More like, falling asleep.\"","base","suspicious")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 14."
+                        ">Try again at Whoring level 14."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_tifa_OBJ:
+            if outfit_choice == hg_costume_tifa_OBJ:
                 m "Do you know anything about video games [hermione_name]?"
                 call her_main( "I was usually too busy reading at home to have time for such things, why?", "soft","narrow")
                 m "I'd like you to put this Tifa outfit for me"
-                if whoring >= 11: #Success
+                if her_whoring >= 11: #Success
                     call her_main( "Why do you even know anything about video games professor?" ,"soft","narrow")
                     m "Some people say video games are art miss Granger."
                     call her_main( "And?" ,"soft","narrow")
@@ -267,10 +270,10 @@ label equip_her_outfit:
                     call her_main( "I'd rather just wear my own clothes..." ,"soft","narrow")
                     call her_main( "suspenders has never really been my kind of thing." ,"soft","narrow")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_laraCroft_OBJ:
+            if outfit_choice == hg_costume_lara_croft_OBJ:
                 m "[hermione_name]..."
                 m "I'd like you to dress up."
                 call her_main("As what?","open","worriedL")
@@ -278,7 +281,7 @@ label equip_her_outfit:
                 call her_main("Gertrude Bell?","grin","closed")
                 m "What?"
                 m "No... I'm talking about Lara Croft..."
-                if whoring >= 17:
+                if her_whoring >= 17:
                     call her_main("...","annoyed","down")
                     call her_main("Fine, if I have to.","open","closed")
                     call her_main("Let me go and change.","annoyed","baseL")
@@ -292,10 +295,10 @@ label equip_her_outfit:
                     m "..."
                     m "(No they aren't...)"
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 17."
+                        ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_witch_OBJ:
+            if outfit_choice == hg_outfit_witch_OBJ:
                 m "[hermione_name], have you ever heard about witches?"
                 call her_main("[genie_name]? I am a witch?","soft","narrow")
                 m "Oh right,..."
@@ -303,7 +306,7 @@ label equip_her_outfit:
                 call her_main("I don't? How are witches supposed to look?","open","base")
                 m "Well, normally they'd wear stuff like witch-hats,... frills,... and capes!"
                 call her_main("Capes?","disgust","wink")
-                if whoring >= 17: #Success
+                if her_whoring >= 17: #Success
                     m "Here it is."
                     call nar(">You hand her the outfit.")
                     call her_main("It looks really old-fashioned...","disgust","down")
@@ -322,10 +325,10 @@ label equip_her_outfit:
                     m "I can respect that opinion."
                     m "(Is she nuts? Capes are awesome...)"
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 17."
+                        ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice in [hg_bio_OBJ,hg_yenn_OBJ]:
+            if outfit_choice in [hg_costume_elizabeth_OBJ,hg_costume_yennefer_OBJ]:
                 m "[hermione_name], I have a new outfit for you!"
                 call her_main("A new outfit? You mean as a gift?","open","wink")
                 m "Yes. It's a character from a video-ga--"
@@ -336,11 +339,11 @@ label equip_her_outfit:
                 call her_main("...","smile","base")
                 m "(Phew, that was close...)"
                 call nar(">You hand her the outfit.")
-                if whoring >= 11: #Success
+                if her_whoring >= 11: #Success
                     call her_main("It does look nice...","soft","down")
-                    if outfit_choice == hg_bio_OBJ:
+                    if outfit_choice == hg_costume_elizabeth_OBJ:
                         call her_main("(I really like her necklace...)","smile","down")
-                    if outfit_choice == hg_yenn_OBJ:
+                    if outfit_choice == hg_costume_yennefer_OBJ:
                         call her_main("(I really like her scarf...)","smile","down")
                     call her_main("Let me put it on real quick.","smile","glance")
                 else: #Fail
@@ -350,12 +353,12 @@ label equip_her_outfit:
                     m "Breathing is overrated..."
                     call her_main("I have to refuse, [genie_name].","normal","base")
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
             # Dresses
-            if outfit_choice == hg_heartDancer_OBJ:
-                if whoring >= 11: #Success
+            if outfit_choice == hg_dress_dancer_OBJ:
+                if her_whoring >= 11: #Success
                     m "Giuchie, Giuchie, ya-ya..."
                     call her_main("Da-Da","soft","glanceL")
                     m "Mocha Chocalata..."
@@ -378,10 +381,10 @@ label equip_her_outfit:
                     call her_main("No... {size=-10}Please stop.{/size}","disgust","base")
                     m "Fine..."
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at whoring level 11."
+                        ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_ballDress_OBJ:
+            if outfit_choice == hg_dress_yule_ball_OBJ:
                 if not have_no_dress_hap: # Dialogue for before she needs the dress.
                     m "Would you like to wear your new dress?"
                     call her_main("A dress? What would I need a dress for?","open","wink")
@@ -410,17 +413,17 @@ label equip_her_outfit:
             with d3
             pause.5
 
-            call h_outfit_OBJ(outfit_choice)
+            call set_her_outfit(outfit_choice)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call screen wardrobe
 
         else: # No chit-chat
-            $ wardrobe_active = True
+            $ hide_transitions = True
             hide screen hermione_main
 
-            call h_outfit_OBJ(outfit_choice)
+            call set_her_outfit(outfit_choice)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -430,7 +433,7 @@ label equip_her_outfit:
             hide screen hermione_main
             with d3
 
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
             $ hermione_xpos = 665
 
             m "[hermione_name], could you take off that outfit again?"
@@ -441,17 +444,17 @@ label equip_her_outfit:
             with d3
             pause.5
 
-            call h_outfit_OBJ(None)
+            call set_her_outfit(None)
 
             call her_main(xpos="wardrobe")
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call screen wardrobe
 
         else:
-            $ wardrobe_active = True
+            $ hide_transitions = True
             hide screen hermione_main
 
-            call h_outfit_OBJ(None)
+            call set_her_outfit(None)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -464,15 +467,13 @@ label equip_lun_outfit:
 
         call lun_outfit(outfit_choice)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
     else: # Unequip
 
         call lun_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Astoria's Outfit ###
@@ -481,15 +482,13 @@ label equip_ast_outfit:
 
         call ast_outfit(outfit_choice)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
     else: # Unequip
 
         call ast_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Susan's Outfit ###
@@ -505,8 +504,7 @@ label equip_sus_outfit:
 
         call sus_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Cho's Outfit ###
@@ -522,5 +520,21 @@ label equip_cho_outfit:
 
         call cho_outfit(None)
 
-        call cho_main(xpos="wardrobe")
+        jump return_to_wardrobe
+
+
+### Equip Tonks's Outfit ###
+label equip_ton_outfit:
+    if (outfit_choice != tonks_outfit_GLBL) or (outfit_choice == tonks_outfit_GLBL and not tonks_wear_outfit):
+
+        call ton_outfit(outfit_choice)
+
+        call ton_main(xpos="wardrobe")
+        call screen wardrobe
+
+    else: # Unequip
+
+        call ton_outfit(None)
+
+        call ton_main(xpos="wardrobe")
         call screen wardrobe

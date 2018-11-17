@@ -3,16 +3,16 @@
 
 label summon_susan:
 
-    call load_susan_clothing_saves
-
     call play_sound("door") #Sound of a door opening.
+
+    call load_susan_clothing_saves
 
     ### RANDOM CLOTHING EVENTS ###
     #call susan_door_event
 
     call update_sus_uniform
 
-    #call sus_chibi("stand","mid","base")
+    call sus_chibi("stand","mid","base")
 
     if one_of_ten < 4:
         if daytime:
@@ -26,10 +26,11 @@ label summon_susan:
 
     label susan_requests:
 
-    $ susan_busy = True
-    $ wardrobe_active = False
+    $ menu_x = 0.1
+    $ menu_y = 0.5
 
-    $ menu_y = 0.5 #Menu is moved to the middle. #Don't add xpos!
+    $ hide_transitions = False
+    $ susan_busy = True
 
     menu:
         "-Talk-":
@@ -47,7 +48,7 @@ label summon_susan:
             call reset_wardrobe_vars
             call update_wr_color_list
 
-            $ wardrobe_active = True
+            $ hide_transitions = True
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
         "{color=#858585}-Wardrobe-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:

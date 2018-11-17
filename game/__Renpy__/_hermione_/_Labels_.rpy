@@ -4,14 +4,15 @@ label __init_variables:
             imagination_level = 0,
             menu_text = "Talk to me",
             start_label = "hg_pf_TalkToMe",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_NicePanties_OBJ'): #important!
         $ hg_pf_NicePanties_OBJ = personal_favor(
             imagination_level = 0,
             menu_text = "Nice panties",
-            start_label = "hg_pf_NicePanties"
+            start_label = "hg_pf_NicePanties",
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_BreastMolester_OBJ'): #important!
@@ -19,7 +20,7 @@ label __init_variables:
             imagination_level = 2,
             menu_text = "Breast molester",
             start_label = "hg_pf_BreastMolester",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_ButtMolester_OBJ'): #important!
@@ -27,7 +28,7 @@ label __init_variables:
             imagination_level = 2,
             menu_text = "Butt molester",
             start_label = "hg_pf_ButtMolester",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_ShowThemToMe_OBJ'): #important!
@@ -35,7 +36,7 @@ label __init_variables:
             imagination_level = 3,
             menu_text = "Show them to me!",
             start_label = "hg_pf_ShowThemToMe",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ'): #important!
@@ -43,7 +44,7 @@ label __init_variables:
             imagination_level = 3,
             menu_text = "Dance for me!",
             start_label = "hg_pf_DanceForMe",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_ShowMeYourAss_OBJ'): #important!
@@ -52,14 +53,6 @@ label __init_variables:
             menu_text = "Show me that ass!",
             start_label = "hg_pf_ShowMeYourAss",
             costume_event = False
-        )
-
-    if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
-        $ hg_pf_LetMeTouchThem_OBJ = personal_favor(
-            imagination_level = 3,
-            menu_text = "Let me touch them!",
-            start_label = "hg_pf_LetMeTouchThem",
-            costume_event = True
         )
 
     if not hasattr(renpy.store,'hg_pf_TouchYourself_OBJ'): #important!
@@ -75,7 +68,7 @@ label __init_variables:
             imagination_level = 4,
             menu_text = "Touch me!",
             start_label = "hg_pf_TouchMe",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_TitJob_OBJ'): #important!
@@ -83,7 +76,7 @@ label __init_variables:
             imagination_level = 4,
             menu_text = "Let me fuck them!",
             start_label = "hg_pf_TitJob",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_SuckIt_OBJ'): #important!
@@ -91,7 +84,7 @@ label __init_variables:
             imagination_level = 4,
             menu_text = "Suck it!",
             start_label = "hg_pf_SuckIt",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_LetsHaveSex_OBJ'): #important!
@@ -99,7 +92,7 @@ label __init_variables:
             imagination_level = 5,
             menu_text = "Let's have sex!",
             start_label = "hg_pf_LetsHaveSex",
-            costume_event = True
+            costume_event = False
         )
 
     if not hasattr(renpy.store,'hg_pf_TimeForAnal_OBJ'): #important!
@@ -107,7 +100,7 @@ label __init_variables:
             imagination_level = 5,
             menu_text = "Time for anal!",
             start_label = "hg_pf_TimeForAnal",
-            costume_event = True
+            costume_event = False
         )
 
 
@@ -119,7 +112,6 @@ label __init_variables:
     $ hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
     $ hg_pf_list.append(hg_pf_DanceForMe_OBJ)
     $ hg_pf_list.append(hg_pf_ShowMeYourAss_OBJ)
-    $ hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
     $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
     $ hg_pf_list.append(hg_pf_TitJob_OBJ)
     $ hg_pf_list.append(hg_pf_TouchYourself_OBJ)
@@ -337,8 +329,6 @@ label silver_requests:
 
 label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     hide screen hermione_main
-    show screen blkfade
-    with d3
 
     hide screen bld1
     hide screen blktone
@@ -351,7 +341,7 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
         call her_chibi("hide")
 
     call gen_chibi("sit_behind_desk")
-    hide screen blkfade
+
     with d3
 
     #Walk
@@ -360,7 +350,7 @@ label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
     if hermione_chibi_xpos_name in ["mid"]:
         call her_walk("mid","leave",2)
 
-    call reset_hermione_main
+    call reset_hermione
 
     $ hermione_busy = True
 
@@ -397,7 +387,6 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
 
     hide screen chair_left
     hide screen desk
-    hide screen hermione_04 #Stands with tits out.
     hide screen groping_naked_tits
     hide screen genie_and_tits_01
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
@@ -438,91 +427,7 @@ label vague_idea:
 
     return
 
-### ALL THE SCREAMS ABOUT RAPE ###
-label screams_of_rapings:
-    call her_head("NO! What have you done!!?","angry","worriedCl",cheeks="blush",tears="soft_blink")
-    ">Hermione gives you an unexpectedly strong shove..."
-    with hpunch
-    call her_head("Why would you do this to me, [genie_name]...?","angry","worriedCl",cheeks="blush",tears="soft_blink")
-    call her_head("I never agreed to... to...","angry","worriedCl",cheeks="blush",tears="crying_blink")
-    call her_head("You... you...","angry","worriedCl",cheeks="blush",tears="crying_blink")
-    with hpunch
-    call her_head("{size=+7}YOU RAPED ME!{/size}","scream","worriedCl",cheeks="blush",tears="messy")
-    g4 "What? Don't be ridiculous, [hermione_name]! I did no such thing!"
-    call her_head("Yes you did! Yes you did!","scream","worriedCl",cheeks="blush",tears="messy")
-    g4 "I most certainly did not!"
-    call her_head("No, you did, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy")
-    call her_head("Now, you will give me 20--","angry","angry",cheeks="blush",tears="down")
-    call her_head("No, 100 house points or I am reporting you to the Ministry of magic!","angry","angry",cheeks="blush",tears="down")
-    menu:
-        m "(Ah, crap...)"
-        "\"Alright, alright... 100 points it is...\"":
-            $ gryffindor +=100
-            m "One hundred points to \"Gryffindor\" !"
-            m "There, it is done..."
-            m "Now would you calm yourself down, [hermione_name]?"
-            call her_head("No, I will not!","scream","worriedCl",cheeks="blush",tears="messy")
-            call her_head("I've just been raped!","scream","worriedCl",cheeks="blush",tears="messy")
-            g4 "Oh, snap out of it [hermione_name], I didn't rape you! All I did was--"
-            with hpunch
-            call her_head("{size=+7}You raped me!!!{/size}","scream","worriedCl",cheeks="blush",tears="messy")
-            g4 "By the great desert sands, would you keep it down about the rapes!?"
-            g4 "Someone may hear you!"
-            call her_head("Good! I want them to hear!","scream","worriedCl",cheeks="blush",tears="messy")
-            m "Why would you want that? I already paid you!"
-            call her_head("Oh... right...","angry","base",cheeks="blush",tears="mascara")
-            call her_head("But I hate you! I hate you [genie_name]!","scream","angryCl",cheeks="blush",tears="mascara")
-            $ mad +=30
 
-        "\"You're bluffing, [hermione_name]!\"":
-            call her_head("No, I'm not! I'm gonna do it!","scream","worriedCl",cheeks="blush",tears="messy")
-            g4 "By all means, go ahead..."
-            g4 "There was no rape!"
-            call her_head("I hate you, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy")
-            $ mad +=50
-
-
-    hide screen bld1
-    hide screen ctc
-    hide screen hermione_main
-    show screen genie
-    hide screen groping_01
-    hide screen groping_02
-    hide screen blkfade
-    hide screen blktone8
-    with d3
-
-    call her_walk("mid","door",2)
-
-    if whoring >= 3 and whoring <= 5: #First level. Not happy.
-        call her_head("...........................","disgust","down_raised",cheeks="blush")
-
-    call her_chibi("leave","door","base")
-
-    $ hermione_busy = True
-
-    if daytime:
-        call play_music("day_theme")
-        jump day_resume
-    else:
-        call play_music("night_theme")
-        jump night_resume
-
-
-
-### SCREAM OF PLEASURES ###
-label screams_of_pleasure:
-    call her_head("Ah....","silly","glance",cheeks="blush")
-    call her_head("It's inside of me...")
-    call her_head("No, [genie_name], you must stop now...","base","glance",cheeks="blush")
-    m "Why? You don't like it?"
-    call her_head("It doesn't matter whether I like this or not, [genie_name].")
-    call her_head("You know why I'm doing this...")
-    call her_head("And it is wrong for me to let you do this to me for a meagre 15 points...")
-    ">Hermione pulls away from you..."
-    m "Heh... I see..."
-    m "Well, in that case..."
-    jump ending_of_screams_of_pleasure
 
 
 

@@ -162,7 +162,7 @@ label __init_variables:
     $ AnalPlugs.title = "Anal plugs"
     $ AnalPlugs.unlocked = True
     $ AnalPlugs.imagepath= "images/store/gifts/15.png"
-    $ AnalPlugs.description = "Anal plugs decorated with actual tails. \nSizes vary to satisfy expert practitioners and beginner alike."
+    $ AnalPlugs.description = "Anal plugs decorated with actual tails. Sizes vary to satisfy expert practitioners and beginner alike."
     
     if not hasattr(renpy.store,'ThestralStrapon'): #important!
         $ ThestralStrapon = gift_item()

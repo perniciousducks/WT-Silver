@@ -2,136 +2,105 @@
 
 screen tonks_main:
     ### BASE IMAGE
-    add tonks_base xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the base body
-    add tonks_l_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the arms
-    add tonks_r_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the arms
-    add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the hair base
-    add tonks_boobs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the base body
+    add tonks_base xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
+    add tonks_l_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the arms
+    add tonks_r_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the arms
+    add tonks_boobs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
 
     ### FACE
-    add tonks_eye_bg xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the eye white
-    add tonks_pupil xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the pupil
-    add tonks_eye xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the eye outline
+    add tonks_eye_bg xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the eye white
+    add tonks_pupil xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the pupil
+    add tonks_eye xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the eye outline
 
-    add tonks_eyebrow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the eyebrow
-    add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the hair shadow
-    add tonks_mouth xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the mouth
+    add tonks_eyebrow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the eyebrow
+    #add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the hair shadow
+    if tonks_wear_pubic_hair:
+        add tonks_pubic_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    add tonks_mouth xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the mouth
 
-    add tonks_cheeks xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the extras
-    add tonks_tears xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the extras
-    add tonks_extra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) #Add the extras
+    add tonks_cheeks xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the extras
+    add tonks_tears xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the extras
+    add tonks_extra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the extras
 
     ### CLOTHES
-    if tonks_wear_coat:
-        add tonks_coat_back xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the coat back
-    if tonks_wear_bra and not tonks_wear_top:
-        add tonks_bra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the bra
-    if tonks_wear_panties and not tonks_wear_bottom:
-        add tonks_panties xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the panties
-    if tonks_wear_bottom:
-        add tonks_skirt xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the skirt
-    if tonks_wear_top:
-        add tonks_top xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the top
-    if tonks_wear_accs:
-        add tonks_accs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the accessory
-    if tonks_wear_stockings:
-        add tonks_stockings xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the stockings
-    if tonks_wear_coat:
-        add tonks_coat xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/scaleratio) # Add the coat
+
+    #Uniform
+    if not tonks_wear_outfit:
+        use tonks_uniform
+
+    #Outfit
+    if tonks_wear_outfit:
+        if tonks_wear_top:
+            use tonks_outfit
+        else:
+            use tonks_uniform
+
+    ### ACCESORIES LAYERS ###
+
+    #Hair+
+    if not (tonks_wear_hat and ton_hat in ["paper_bag_1","paper_bag_2","paper_bag_3"] ):
+        add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+
+    #Hat
+    if tonks_wear_hat:
+        add tonks_hat xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+
+    #Cum layers.
+    if tonks_face_covered:
+        add tonks_face_cum xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    if tonks_body_covered:
+        add tonks_body_cum xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    if tonks_aftersperm:
+        add tonks_clothes_cum xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     ### ZORDER
     zorder tonks_zorder
 
 
+screen tonks_uniform:
+    tag tonks_main
 
-label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, xpos=None, ypos=None, trans=None):
-    hide screen tonks_main
+    ### Piercings
+    if tonks_wear_piercings:
+        add tonks_ear_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_nipple_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_belly_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_intimate_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
-    #Reset
-    if cheeks == None:
-        $ cheeks = "blank"
-    if tears == None:
-        $ tears = "blank"
+    ### CLOTHES
+    if tonks_wear_robe:
+        add tonks_robe_back xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat back
+    if tonks_wear_bra and not (tonks_wear_robe or tonks_wear_top):
+        add tonks_bra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the bra
+    if tonks_wear_panties:
+        add tonks_panties xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the panties
+    if tonks_wear_stockings:
+        add tonks_stockings xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the stockings
+    if tonks_wear_top:
+        add tonks_top xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the top
+    if tonks_wear_bottom and not tonks_wear_robe:
+        add tonks_bottom xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the skirt
 
-    #Positioning
-    if xpos != None:
-        if xpos in ["base","default"]: #All the way to the right.
-            $ tonks_xpos = 525
-            $ menu_x = 0.1 #Don't add ypos!
-        elif xpos == "mid":                     #Centered.
-            $ tonks_xpos = 300
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "right":                   #Bit more to the right.
-            $ tonks_xpos = 400
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "wardrobe":
-            $ tonks_xpos = 540
-        else:
-            $ tonks_xpos = int(xpos)
+    add tonks_l_hand  xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
-    if ypos != None:
-        if ypos == "base" or ypos == "default":
-            $ tonks_ypos = 0
-        elif ypos == "head":
-            $ tonks_ypos = 400 #Not the correct number!
-            #ADD zorder change to be in front of textbox!
-        else:
-            $ tonks_ypos = int(ypos)
+    if tonks_wear_accs:
+        add tonks_accs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the accessory
+    if tonks_wear_neckwear:
+        add tonks_neckwear xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    if tonks_wear_robe:
+        add tonks_robe xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat
+    if tonks_wear_gloves:
+        add tonks_gloves xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
-
-    $ changeTonks(mouth, eye, eyebrow, pupil, tonks_xpos, tonks_ypos, cheeks, tears, extra)
-
-    show screen tonks_main
-    show screen bld1
-
-    #Transitions
-    call transition(trans)
-
-    if text != "":
-        $ renpy.say(ton, text)
-
-    return
+    ### ZORDER
+    zorder tonks_zorder
 
 
-init python:
-    def changeTonks(    mouth=None,
-                        eye=None,
-                        eyebrow=None,
-                        pupil=None,
-                        x_pos=None,
-                        y_pos=None,
-                        cheeks=None,
-                        tears=None,
-                        extra=None):
-        ###DEFINE GLOBAL VARIABLES
-        global tonks_mouth
-        global tonks_eye
-        global tonks_eyebrow
-        global tonks_pupil
-        global tonks_xpos
-        global tonks_ypos
-        global tonks_cheeks
-        global tonks_tears
-        global tonks_extra
-        ###EMOTION CONTROL
-        if mouth is not None:
-            tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png"
-        if eye is not None:
-            tonks_eye         = "characters/tonks/face/eyes/eye_"+eye+".png"
-            tonks_eye_bg      = "characters/tonks/face/eyes/white.png"
-        if eyebrow is not None:
-            tonks_eyebrow     = "characters/tonks/face/brow/"+eyebrow+".png"
-        if pupil is not None:
-            tonks_pupil       = "characters/tonks/face/eyes/pupil_"+pupil+".png"
-        ###POSITION CONTROL
-        if x_pos is not None:
-            tonks_xpos        = x_pos
-        if y_pos is not None:
-            tonks_ypos        = y_pos
-        #BODY CONTROL
-        if cheeks is not None:
-            tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png"
-        if tears is not None:
-            tonks_tears       = "characters/tonks/face/extras/"+tears+".png"
-        if extra is not None:
-            tonks_extra       = "characters/tonks/face/extras/"+extra+".png"
+screen tonks_outfit:
+    tag tonks_main
+
+    for i in tonks_outfit_GLBL.getOutfitLayers():
+        add "characters/tonks/clothes/custom/"+i xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+
+    ### ZORDER
+    zorder tonks_zorder

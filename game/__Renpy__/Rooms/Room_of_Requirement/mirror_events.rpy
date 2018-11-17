@@ -293,7 +293,7 @@ label a_bad_time_to_disrobe_part_2:
     show screen genie
     show screen candlefire
     call h_unequip_temp_outfit()
-    call h_action("covering_uniform")
+    call set_her_action("covering_uniform")
     hide screen day_to_night
     with d3
 
@@ -379,8 +379,8 @@ label a_bad_time_to_disrobe_part_2:
     hide screen candlefire
     $ daytime = temp_time
     call play_standart_theme
-    call reset_hermione_main
-    call h_action("none")
+    call reset_hermione
+    call set_her_action("none")
     jump enter_room_of_req
 
 label whose_points:
@@ -514,7 +514,7 @@ label whose_points:
     call lun_main("I see invisible creatures... but people don't belie... ","soft","annoyed","sad","down")
     hide screen luna_main
 
-    call h_action("lift_top")
+    call set_her_action("lift_top")
 
      # SEX THEME.
     call play_sound("scratch")
@@ -564,7 +564,7 @@ label whose_points:
         call play_music("night_theme")
 
     hide screen whose_points_screen
-    call h_action("none")
+    call set_her_action("none")
     call her_chibi(action="hide")
     hide screen hermione_main
     jump enter_room_of_req
@@ -691,9 +691,10 @@ label a_spaced_out_conversation:
     $ temp_time = daytime
     $ daytime = False
 
+    $ fire_in_fireplace = True
+    show screen fireplace_fire
     call hide_room_req
     show screen main_room
-    show screen fireplace_fire
     show screen with_snape_animated
     call blkfade
     call hide_blkfade
@@ -1025,6 +1026,7 @@ label a_spaced_out_conversation:
 
     $ daytime = temp_time
     hide screen main_room
+    $ fire_in_fireplace = False
     hide screen fireplace_fire
     hide screen with_snape_animated
     jump enter_room_of_req

@@ -1,8 +1,6 @@
 
 
-### HERMIONE PERSONAL FAVOUR 5 ###
-
-### LOOK AT HER TITS! ###
+### Hermione Show Breasts ###
 
 label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     hide screen hermione_main
@@ -23,7 +21,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             "\"(Not right now.)\"":
                 jump silver_requests
 
-    if whoring < 6:
+    if her_whoring < 6:
         jump too_much
 
     hide screen hermione_main
@@ -32,7 +30,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     $ current_payout = 25 #Used when haggling about price of th favor.
 
     #First time event
-    if hg_pf_ShowThemToMe_OBJ.points == 0 and whoring <= 11:
+    if hg_pf_ShowThemToMe_OBJ.points == 0 and her_whoring <= 11:
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]...","normal","base",xpos="mid",ypos="base")
         m "How much will it cost me to see your tits?"
@@ -92,7 +90,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         hide screen hermione_main
         with d5
 
-        call h_action("lift_top")
+        call set_her_action("lift_top")
 
         call play_music("playful_tension") # SEX THEME.
 
@@ -101,10 +99,11 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
         call bld
         m "Hm..."
-        call her_head("{size=-5}(My breasts are completely exposed...){/size}","disgust","down_raised",cheeks="blush")
+        call her_main("{size=-5}(My breasts are completely exposed...){/size}","disgust","down_raised",cheeks="blush",ypos="head")
         m "Come closer [hermione_name], let me take a better look..."
-        call her_head("............","annoyed","angryL",cheeks="blush")
+        call her_main("............","annoyed","angryL",cheeks="blush")
 
+        hide screen bld1
         call her_chibi("stand","mid","base")
         pause.2
 
@@ -118,12 +117,10 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         call hide_blkfade
         call ctc
 
-        call bld
-        call her_head("............","soft","baseL",cheeks="blush")
+        call her_main("............","soft","baseL",cheeks="blush")
         m "Very good..."
-        call her_head(".....","annoyed","angryL",cheeks="blush")
+        call her_main(".....","annoyed","angryL",cheeks="blush")
 
-        hide screen bld1
         show screen blktone
         call her_main("","annoyed","annoyed",trans="fade",xpos="mid",ypos="base")
         call ctc
@@ -134,12 +131,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         hide screen hermione_main
         with d3
 
-        if whoring >= 6 and whoring <= 8:
+        if her_whoring >= 6 and her_whoring <= 8:
             m "[hermione_name]?"
-            call her_head("Yes, [genie_name]?","annoyed","angryL")
+            call her_main("Yes, [genie_name]?","annoyed","angryL",ypos="head")
             m "I need to see your tits."
-            call her_head("............","annoyed","angryL",cheeks="blush")
-            call her_head("Do you promise not to touch, [genie_name]?","annoyed","angryL",cheeks="blush")
+            call her_main("............","annoyed","angryL",cheeks="blush")
+            call her_main("Do you promise not to touch, [genie_name]?","annoyed","angryL",cheeks="blush")
             m "Of course."
             hide screen bld1
             hide screen blktone
@@ -171,7 +168,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             call bld
             m "Very good..."
             call play_music("playful_tension") # SEX THEME.
-            call h_action("lift_top")
+            call set_her_action("lift_top")
 
             hide screen bld1
             show screen blktone
@@ -180,12 +177,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
             her "...................................."
 
-        elif whoring >= 9:
+        elif her_whoring >= 9:
             m "I need to see your tits, [hermione_name]."
-            if whoring >= 17:
-                call her_head("Of course [genie_name]","base","ahegao_raised",cheeks="blush")
+            if her_whoring >= 17:
+                call her_main("Of course [genie_name]","base","ahegao_raised",cheeks="blush",ypos="head")
             else:
-                call her_head("Are you only going to watch, [genie_name]?","angry","worriedCl",cheeks="blush")
+                call her_main("Are you only going to watch, [genie_name]?","angry","worriedCl",cheeks="blush",ypos="head")
                 m "Of course..."
             hide screen hermione_main
             call hide_blktone
@@ -216,7 +213,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             call bld
             m "Very good..."
 
-            call h_action("lift_top")
+            call set_her_action("lift_top")
             hide screen bld1
             show screen blktone
             call her_main("","base","closed",xpos="mid",trans="fade")
@@ -231,12 +228,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             #First Time Event.
 
             #Event Fails
-            if whoring >= 6 and whoring <= 8:
+            if her_whoring >= 6 and her_whoring <= 8:
                 hide screen hermione_main
                 call blkfade
 
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                call her_head("[genie_name], what are you doing?","mad","wide",cheeks="blush",xpos="base",ypos="high")
+                call her_main("[genie_name], what are you doing?","mad","wide",cheeks="blush",ypos="head")
 
                 #Start Groping
                 hide screen blktone
@@ -250,17 +247,17 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 m "Relax, [hermione_name]. Just stand still!"
                 m "Oh... Those are some nice titties you've got..."
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
-                call her_head("No, [genie_name], please! You mustn't do this...","shock","worriedCl")
+                call her_main("No, [genie_name], please! You mustn't do this...","shock","worriedCl")
                 m "This won't take long, just stand still."
-                call her_head("[genie_name], I didn't agree to this!","angry","angry",cheeks="blush")
+                call her_main("[genie_name], I didn't agree to this!","angry","angry",cheeks="blush")
                 with hpunch
-                call her_head("You must unhand me now!!!","scream","angry",cheeks="blush",emote="01")
+                call her_main("You must unhand me now!!!","scream","angry",cheeks="blush",emote="01")
 
                 call blkfade
                 ">Hermione pulls away from you and covers up hastily."
 
-                call h_action("none","update")
-                call her_head("I think I'd better go...","angry","worriedCl",cheeks="blush",xpos="base",ypos="base")
+                call set_her_action("none","update")
+                call her_main("I think I'd better go...","angry","worriedCl",cheeks="blush",xpos="base",ypos="base")
 
                 #End Groping
                 hide screen chair_left #Genie's chair.
@@ -273,23 +270,23 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 call bld
                 m "Go ahead, [hermione_name]. You are not getting paid if you do..."
-                call her_head("But I showed you my...","angry","worriedCl",cheeks="blush")
-                call her_head("And you touched me...","angry","angry",cheeks="blush")
-                call her_head("And I am getting nothing?","scream","angry",cheeks="blush",emote="01")
+                call her_main("But I showed you my...","angry","worriedCl",cheeks="blush")
+                call her_main("And you touched me...","angry","angry",cheeks="blush")
+                call her_main("And I am getting nothing?","scream","angry",cheeks="blush",emote="01")
                 m "You are dismissed, [hermione_name]..."
-                call her_head("Gr..................","angry","worriedCl",cheeks="blush")
-                call her_head("{size=-5}(Burn in hell, you wretched old---{/size}","angry","worriedCl",cheeks="blush")
+                call her_main("Gr..................","angry","worriedCl",cheeks="blush")
+                call her_main("{size=-5}(Burn in hell, you wretched old---{/size}","angry","worriedCl",cheeks="blush")
                 $ mad += 22
                 call music_block
                 jump could_not_flirt
 
             #Event Succeeds
-            elif whoring >= 9 and whoring <= 11:
+            elif her_whoring >= 9 and her_whoring <= 11:
                 hide screen hermione_main
                 call blkfade
 
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                call her_head("[genie_name], what are you doing?","mad","wide",cheeks="blush",xpos="base",ypos="high")
+                call her_main("[genie_name], what are you doing?","mad","wide",cheeks="blush",ypos="head")
 
                 #Start Groping
                 hide screen blktone8
@@ -303,23 +300,23 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 call bld
                 m "Relax, [hermione_name]. Just stand still!"
-                call her_head("I didn't agree to this, [genie_name]...","annoyed","angryL",cheeks="blush")
-                call her_head("I don't think you should...","annoyed","angryL",cheeks="blush")
+                call her_main("I didn't agree to this, [genie_name]...","annoyed","angryL",cheeks="blush")
+                call her_main("I don't think you should...","annoyed","angryL",cheeks="blush")
                 m "Don't you like it...?"
-                call her_head("What?","disgust","down_raised",cheeks="blush")
+                call her_main("What?","disgust","down_raised",cheeks="blush")
                 m "Don't you like it how I squeeze and pull on your breasts?"
-                call her_head("...............","disgust","down_raised",cheeks="blush")
+                call her_main("...............","disgust","down_raised",cheeks="blush")
                 m "Admit it, you like it a little bit..."
-                call her_head("{size=-5}(So strange to see my breasts in someone else's hands...){/size}","disgust","down_raised",cheeks="blush")
-                call her_head("[genie_name], I am letting you do this to me to help my house out, nothing more!","shock","worriedCl")
+                call her_main("{size=-5}(So strange to see my breasts in someone else's hands...){/size}","disgust","down_raised",cheeks="blush")
+                call her_main("[genie_name], I am letting you do this to me to help my house out, nothing more!","shock","worriedCl")
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
-                call her_head("Please, unhand me now!","annoyed","angryL",cheeks="blush")
+                call her_main("Please, unhand me now!","annoyed","angryL",cheeks="blush")
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you suddenly and covers up."
 
-                call h_action("none","update")
-                call her_head("You promised not to touch, [genie_name]...","annoyed","angryL",cheeks="blush",xpos="base",ypos="base")
+                call set_her_action("none","update")
+                call her_main("You promised not to touch, [genie_name]...","annoyed","angryL",cheeks="blush")
                 m "It was hard to resist..."
 
                 #End Groping
@@ -332,18 +329,18 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call ctc
 
                 call bld
-                call her_head(".............","soft","baseL",cheeks="blush")
-                call her_head("Can I get paid now please?","angry","worriedCl",cheeks="blush",emote="05")
+                call her_main(".............","soft","baseL",cheeks="blush")
+                call her_main("Can I get paid now please?","angry","worriedCl",cheeks="blush",emote="05")
                 m "Sure..."
                 $ mad += 9
 
             #Event Also Succeeds
-            elif whoring >= 12:
+            elif her_whoring >= 12:
                 hide screen hermione_main
                 call blkfade
 
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                call her_head("[genie_name], what are you doing?","mad","wide",cheeks="blush",xpos="base",ypos="high")
+                call her_main("[genie_name], what are you doing?","mad","wide",cheeks="blush",ypos="head")
 
                 #Start Groping
                 hide screen blktone8
@@ -357,31 +354,31 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 call bld
                 m "Relax, [hermione_name]. Just stand still!"
-                call her_head("But...","disgust","down_raised",cheeks="blush")
-                call her_head("ah...{image=textheart}","shock","worriedCl")
-                call her_head("I didn't agree to this...","disgust","down_raised",cheeks="blush")
+                call her_main("But...","disgust","down_raised",cheeks="blush")
+                call her_main("ah...{image=textheart}","shock","worriedCl")
+                call her_main("I didn't agree to this...","disgust","down_raised",cheeks="blush")
                 m "But you like it, don't you?"
 
-                if whoring >= 17:
-                    call her_head("I love it [genie_name]!{image=textheart}","open","baseL",cheeks="blush")
+                if her_whoring >= 17:
+                    call her_main("I love it [genie_name]!{image=textheart}","open","baseL",cheeks="blush")
                 else:
-                    call her_head("I do not, [genie_name]!{image=textheart}","shock","worriedCl")
+                    call her_main("I do not, [genie_name]!{image=textheart}","shock","worriedCl")
 
                 call blktone
                 ">You give her tits a couple of firm squeezes..."
                 call hide_blktone
 
-                if whoring >= 17:
-                    call her_head("[genie_name], you promised not to touch...","base","baseL",cheeks="blush")
+                if her_whoring >= 17:
+                    call her_main("[genie_name], you promised not to touch...","base","baseL",cheeks="blush")
                     m "I know, I know... But it's hard to resist..."
-                    call her_head(".................","base","ahegao_raised",cheeks="blush")
+                    call her_main(".................","base","ahegao_raised",cheeks="blush")
                 else:
-                    call her_head("[genie_name], you promised not to touch...","angry","worriedCl",cheeks="blush")
+                    call her_main("[genie_name], you promised not to touch...","angry","worriedCl",cheeks="blush")
                     m "I know, I know... But it's hard to resist..."
-                    call her_head(".................","angry","angry",cheeks="blush")
+                    call her_main(".................","angry","angry",cheeks="blush")
 
-                call her_head("....................ah...{image=textheart}","base","ahegao_raised",cheeks="blush")
-                call her_head("[genie_name], you need to stop now...","base","ahegao_raised",cheeks="blush")
+                call her_main("....................ah...{image=textheart}","base","ahegao_raised",cheeks="blush")
+                call her_main("[genie_name], you need to stop now...","base","ahegao_raised",cheeks="blush")
                 m "Just a bit longer..."
 
                 show screen blktone8
@@ -390,10 +387,10 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen blktone8
                 with d3
 
-                call her_head("[genie_name]... please, stop this...","open","ahegao_raised",cheeks="blush")
+                call her_main("[genie_name]... please, stop this...","open","ahegao_raised",cheeks="blush")
                 m "Why? Because you like it too much?"
-                call her_head("No it's not that...","base","baseL",cheeks="blush")
-                call her_head("I mean...","open","baseL",cheeks="blush")
+                call her_main("No it's not that...","base","baseL",cheeks="blush")
+                call her_main("I mean...","open","baseL",cheeks="blush")
 
                 show screen blktone8
                 with d3
@@ -401,11 +398,11 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen blktone8
                 with d3
 
-                call her_head("Ah...{image=textheart} [genie_name], I really need to go...","base","ahegao_raised",cheeks="blush")
+                call her_main("Ah...{image=textheart} [genie_name], I really need to go...","base","ahegao_raised",cheeks="blush")
                 if daytime:
-                    call her_head("That's right... the classes are about to start...","open","baseL",cheeks="blush")
+                    call her_main("That's right... the classes are about to start...","open","baseL",cheeks="blush")
                 else:
-                    call her_head("It is getting late...","open","baseL",cheeks="blush")
+                    call her_main("It is getting late...","open","baseL",cheeks="blush")
 
                 m "Well, alright..."
                 call blkfade
@@ -413,13 +410,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 ">You let go of the girl's breasts..."
                 ">Hermione covers up..."
 
-                call h_action("none","update")
+                call set_her_action("none","update")
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
 
-                if whoring >= 17:
-                    call her_head("Please don't think I forgot that you broke your promise, [genie_name].","base","baseL",cheeks="blush",xpos="base",ypos="base")
+                if her_whoring >= 17:
+                    call her_main("Please don't think I forgot that you broke your promise, [genie_name].","base","baseL",cheeks="blush")
                 else:
-                    call her_head("Please don't think I forgot that you broke your promise, [genie_name].","annoyed","angryL",cheeks="blush",xpos="base",ypos="base")
+                    call her_main("Please don't think I forgot that you broke your promise, [genie_name].","annoyed","angryL",cheeks="blush")
 
                 m "Right..."
 
@@ -434,10 +431,10 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 call bld
 
-                if whoring >= 17:
-                    call her_head("Thank you [genie_name].","open","baseL",cheeks="blush")
+                if her_whoring >= 17:
+                    call her_main("Thank you [genie_name].","open","baseL",cheeks="blush")
                 else:
-                    call her_head("Can I have my payment now?","base","ahegao_raised",cheeks="blush")
+                    call her_main("Can I have my payment now?","base","ahegao_raised",cheeks="blush")
                     $ mad +=7
 
 
@@ -445,7 +442,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             ">You take a long look at Hermione's naked tits..."
 
             #First time event.
-            if whoring >= 6 and whoring <= 8:
+            if her_whoring >= 6 and her_whoring <= 8:
                 call ctc
 
                 menu:
@@ -458,7 +455,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         her ".....................?"
 
             #Second time event.
-            elif whoring >= 9 and whoring <= 11:
+            elif her_whoring >= 9 and her_whoring <= 11:
                 call ctc
 
                 menu:
@@ -475,7 +472,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         her "Are we done then?"
 
             #Third time event.
-            elif whoring >= 12:
+            elif her_whoring >= 12:
                 call ctc
 
                 menu:
@@ -496,7 +493,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             her "............."
             pause.2
 
-            call set_hermione_action("none","update")
+            call set_her_action("none","update")
             pause.5
 
             call blkfade
@@ -513,7 +510,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         "\"Start jerking off.\"":
 
             #First Time Event.
-            if whoring >= 6 and whoring <= 8:
+            if her_whoring >= 6 and her_whoring <= 8:
                 $ mad += 2
                 hide screen hermione_main
                 with d3
@@ -521,7 +518,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call blkfade
 
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
-                call her_head("[genie_name]?!!","angry","wide")
+                call her_main("[genie_name]?!!","angry","wide",ypos="head")
                 m "Just stand still, [hermione_name]..."
 
                 #Start Jerking Off.
@@ -536,33 +533,33 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                 call bld
                 call nar(">You stare at Hermione's breasts with hunger...")
-                call her_head("[genie_name], what are you...?","shock","worriedCl")
+                call her_main("[genie_name], what are you...?","shock","worriedCl")
                 call nar(">You keep stroking your hard cock...")
-                call her_head("[genie_name], no...","disgust","down_raised",cheeks="blush")
-                call her_head("You must... Put it away...","disgust","down_raised",cheeks="blush")
+                call her_main("[genie_name], no...","disgust","down_raised",cheeks="blush")
+                call her_main("You must... Put it away...","disgust","down_raised",cheeks="blush")
                 m "Stop whining [hermione_name]. I'm not touching you, am I?"
-                call her_head("But...","angry","worriedCl",cheeks="blush")
-                call her_head("But I didn't agree to this!","angry","angry",cheeks="blush")
-                call her_head("I...","angry","worriedCl",cheeks="blush")
-                call her_head("I think I'd better leave now!","angry","worriedCl",cheeks="blush")
+                call her_main("But...","angry","worriedCl",cheeks="blush")
+                call her_main("But I didn't agree to this!","angry","angry",cheeks="blush")
+                call her_main("I...","angry","worriedCl",cheeks="blush")
+                call her_main("I think I'd better leave now!","angry","worriedCl",cheeks="blush")
 
                 menu:
                     "\"Leave now, and you'll get no points!\"":
 
-                        call her_head("After {size=+5}this{/size}? Are you kidding me, [genie_name]?","scream","wide",cheeks="blush")
-                        call her_head("I showed you my...","scream","wide",cheeks="blush")
-                        call her_head("..........","annoyed","angryL",cheeks="blush")
-                        call her_head("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry",cheeks="blush")
+                        call her_main("After {size=+5}this{/size}? Are you kidding me, [genie_name]?","scream","wide",cheeks="blush")
+                        call her_main("I showed you my...","scream","wide",cheeks="blush")
+                        call her_main("..........","annoyed","angryL",cheeks="blush")
+                        call her_main("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry",cheeks="blush")
                         call blkfade
 
                         ">Hermione pulls away from you and covers up..."
                         g4 "Don't you dare to leave me in this state, [hermione_name]!"
 
-                        call h_action("none","update")
-                        call her_head("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious",cheeks="blush",xpos="base",ypos="base")
+                        call set_her_action("none","update")
+                        call her_main("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious",cheeks="blush")
 
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
-                        call her_head("You are a horrible person, [genie_name]...","angry","suspicious",cheeks="blush",tears="messy")
+                        call her_main("You are a horrible person, [genie_name]...","angry","suspicious",cheeks="blush",tears="messy")
 
                         $ mad += 30
 
@@ -577,27 +574,27 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         $ mad += 35
 
                         ">You start jerking your cock furiously!"
-                        call her_head("No, [genie_name], stop!","scream","angry",cheeks="blush",emote="01")
+                        call her_main("No, [genie_name], stop!","scream","angry",cheeks="blush",emote="01")
                         ">You jerk it even faster!"
-                        call her_head("[genie_name], think I will be leaving now...","annoyed","angryL",cheeks="blush")
+                        call her_main("[genie_name], think I will be leaving now...","annoyed","angryL",cheeks="blush")
                         g4 "No, wait, I'm almost there!"
                         call blkfade
 
-                        call her_head("Ew! [genie_name]!","angry","suspicious",cheeks="blush")
-                        call her_head("I'm leaving!","angry","suspicious",cheeks="blush")
-                        call h_action("none","update")
+                        call her_main("Ew! [genie_name]!","angry","suspicious",cheeks="blush")
+                        call her_main("I'm leaving!","angry","suspicious",cheeks="blush")
+                        call set_her_action("none","update")
 
                         call music_block
                         jump could_not_flirt
 
             #Second Event.
-            elif whoring >= 9 and whoring <= 11:
+            elif her_whoring >= 9 and her_whoring <= 11:
                 hide screen hermione_main
                 call blkfade
 
                 ">You take your cock out and start stroking it..."
 
-                call her_head("[genie_name]?","angry","wide")
+                call her_main("[genie_name]?","angry","wide",ypos="head")
                 ">You stare at Hermione's breasts with hunger..."
 
                 #Start Jerking Off.
@@ -610,31 +607,30 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call hide_blkfade
                 call ctc
 
-                call bld
-                call her_head("[genie_name], I didn't agree to this...","shock","worriedCl")
+                call her_main("[genie_name], I didn't agree to this...","shock","worriedCl")
                 m "What are you complaining about, [hermione_name]?"
                 m "I'm not even touching you..."
-                call her_head("Yes, but you are... touching yourself, [genie_name].","shock","worriedCl")
+                call her_main("Yes, but you are... touching yourself, [genie_name].","shock","worriedCl")
                 call nar(">You pick up the pace...")
                 m "just stand still, [hermione_name]."
                 m "It will be over soon."
-                call her_head("..................","shock","worriedCl")
-                call her_head("(It's so big...)","disgust","down_raised",cheeks="blush")
+                call her_main("..................","shock","worriedCl")
+                call her_main("(It's so big...)","disgust","down_raised",cheeks="blush")
                 m "Yes... Yes, like this..."
                 m "Yes, with your tits all naked..."
-                call her_head("..............","disgust","down_raised",cheeks="blush")
-                call her_head("well, so be it...","open","baseL",cheeks="blush")
-                call her_head("You can keep touching yourself, [genie_name]...","open","baseL",cheeks="blush")
-                call her_head("But you must promise me not to...","soft","baseL",cheeks="blush")
-                call her_head("Not to... em...","open","baseL",cheeks="blush")
-                call her_head("Not to discharge...","annoyed","angryL",cheeks="blush")
-                call her_head("Not in front of me, [genie_name]...","angry","angry")
+                call her_main("..............","disgust","down_raised",cheeks="blush")
+                call her_main("well, so be it...","open","baseL",cheeks="blush")
+                call her_main("You can keep touching yourself, [genie_name]...","open","baseL",cheeks="blush")
+                call her_main("But you must promise me not to...","soft","baseL",cheeks="blush")
+                call her_main("Not to... em...","open","baseL",cheeks="blush")
+                call her_main("Not to discharge...","annoyed","angryL",cheeks="blush")
+                call her_main("Not in front of me, [genie_name]...","angry","angry")
                 m "Fine, whatever..."
                 m "Oh, you little slut. You nasty little slut!"
-                call her_head(".......................","angry","worriedCl",cheeks="blush")
+                call her_main(".......................","angry","worriedCl",cheeks="blush")
                 call nar(">You start to stroke your cock even harder...")
                 g4 "Yes, I know you want this! Yes!"
-                call her_head("................","angry","worriedCl",cheeks="blush")
+                call her_main("................","angry","worriedCl",cheeks="blush")
                 call blkfade
 
                 ">You are about to cum..."
@@ -643,13 +639,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                     "-Hold it as promised-":
                         g4 "Oh, alright..."
                         g4 "I'd better stop now I suppose..."
-                        call her_head("...............","angry","worriedCl",cheeks="blush")
+                        call her_main("...............","angry","worriedCl",cheeks="blush")
                         ">Hermione covers up..."
-                        call h_action("none","update")
+                        call set_her_action("none","update")
                     "-Just start cumming-":
                         #call play_music("chipper_doodle") # HERMIONE'S THEME.
                         g4 "Argh! You whore!"
-                        call her_head("Proff-- ??","scream","wide",cheeks="blush")
+                        call her_main("Proff-- ??","scream","wide",cheeks="blush")
                         call cum_block
                         g4 "Argh! YES!"
                         hide screen bld1
@@ -663,16 +659,16 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         call bld
                         $ sperm_on_tits = True
-                        call her_head("[genie_name], no, you promised!","scream","angry",cheeks="blush",emote="01")
+                        call her_main("[genie_name], no, you promised!","scream","angry",cheeks="blush",emote="01")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed.
                         hide screen jerking_off_cum
                         with d3
-                        call her_head("[genie_name], how could you...?","angry","suspicious",cheeks="blush")
+                        call her_main("[genie_name], how could you...?","angry","suspicious",cheeks="blush")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
-                        call her_main("","disgust","down_raised")
+                        call her_main("","disgust","down_raised",xpos="mid",ypos="base")
                         call ctc
                         her "My uniform..."
                         her "It's ruined...."
@@ -684,7 +680,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         hide screen hermione_main
                         call blkfade
 
-                        call h_action("none","update")
+                        call set_her_action("none","update")
                         $ sperm_on_tits = False
 
                         hide screen jerking_off_01
@@ -704,12 +700,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
 
             #Event three.
-            elif whoring >= 12:
+            elif her_whoring >= 12:
                 hide screen hermione_main
                 call blkfade
 
                 ">You take your cock out and start stroking it..."
-                call her_head("[genie_name]?","base","ahegao_raised",cheeks="blush")
+                call her_main("[genie_name]?","base","ahegao_raised",cheeks="blush",ypos="head")
                 ">You stare at Hermione's breasts with hunger..."
 
                 #Start Jerking Off.
@@ -722,50 +718,49 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call hide_blkfade
                 call ctc
 
-                call bld
-                if whoring >= 17:
-                    call her_head("ah...","base","ahegao_raised",cheeks="blush")
-                    call her_head("It's so big...","open","baseL",cheeks="blush")
-                    call her_head("You just couldn't help yourself, could you [genie_name]?","base","baseL",cheeks="blush")
-                    call her_head("..................","base","ahegao_raised",cheeks="blush")
+                if her_whoring >= 17:
+                    call her_main("ah...","base","ahegao_raised",cheeks="blush")
+                    call her_main("It's so big...","open","baseL",cheeks="blush")
+                    call her_main("You just couldn't help yourself, could you [genie_name]?","base","baseL",cheeks="blush")
+                    call her_main("..................","base","ahegao_raised",cheeks="blush")
                     m "Yes... Yes, like this..."
                     m "Yes, with your tits all naked..."
-                    call her_head("..............","base","ahegao_raised",cheeks="blush")
-                    call her_head("well, so be it...","open","baseL",cheeks="blush")
-                    call her_head("But you must promise me not to...","soft","baseL",cheeks="blush")
-                    call her_head("Not to... ehm...","open","baseL",cheeks="blush")
-                    call her_head("Not to cum on me, [genie_name]...","base","ahegao_raised",cheeks="blush")
+                    call her_main("..............","base","ahegao_raised",cheeks="blush")
+                    call her_main("well, so be it...","open","baseL",cheeks="blush")
+                    call her_main("But you must promise me not to...","soft","baseL",cheeks="blush")
+                    call her_main("Not to... ehm...","open","baseL",cheeks="blush")
+                    call her_main("Not to cum on me, [genie_name]...","base","ahegao_raised",cheeks="blush")
                     m "Fine, whatever..."
                     m "Oh, you little slut. You nasty little slut!"
-                    call her_head(".......................","base","ahegao_raised",cheeks="blush")
+                    call her_main(".......................","base","ahegao_raised",cheeks="blush")
                     call nar(">You start to stroke your cock even harder...")
                     g4 "Yes, I know you want this! Yes!"
-                    call her_head("................","base","ahegao_raised",cheeks="blush")
+                    call her_main("................","base","ahegao_raised",cheeks="blush")
                     # SAME AS PREVIOUS EVENT^^^
 
                 else:
-                    call her_head("[genie_name], actually I never agreed to this...","shock","worriedCl")
+                    call her_main("[genie_name], actually I never agreed to this...","shock","worriedCl")
                     m "What are you complaining about, [hermione_name]?"
                     m "I'm not even touching you..."
-                    call her_head("Yes, but you are... touching yourself, [genie_name].","shock","worriedCl")
+                    call her_main("Yes, but you are... touching yourself, [genie_name].","shock","worriedCl")
                     #">You pick up the pace..."
                     m "Just stand still, [hermione_name]."
                     m "It will be over soon."
-                    call her_head("..................","shock","worriedCl")
+                    call her_main("..................","shock","worriedCl")
                     m "Yes... Yes, like this..."
                     m "Yes, with your tits all naked..."
-                    call her_head("..............","disgust","down_raised",cheeks="blush")
-                    call her_head("well, so be it...","open","baseL",cheeks="blush")
-                    call her_head("But you must promise me not to...","soft","baseL",cheeks="blush")
-                    call her_head("Not to... ehm...","open","baseL",cheeks="blush")
-                    call her_head("Not to discharge...","annoyed","angryL",cheeks="blush")
-                    call her_head("Not in front of me, [genie_name]...","annoyed","angryL",cheeks="blush")
+                    call her_main("..............","disgust","down_raised",cheeks="blush")
+                    call her_main("well, so be it...","open","baseL",cheeks="blush")
+                    call her_main("But you must promise me not to...","soft","baseL",cheeks="blush")
+                    call her_main("Not to... ehm...","open","baseL",cheeks="blush")
+                    call her_main("Not to discharge...","annoyed","angryL",cheeks="blush")
+                    call her_main("Not in front of me, [genie_name]...","annoyed","angryL",cheeks="blush")
                     m "Fine, whatever..."
                     m "Oh, you little slut. You nasty little slut!"
-                    call her_head(".......................","disgust","down_raised",cheeks="blush")
+                    call her_main(".......................","disgust","down_raised",cheeks="blush")
                     call nar(">You start to stroke your cock even harder...")
                     g4 "Yes, I know you want this! Yes!"
-                    call her_head("................","disgust","down_raised",cheeks="blush")
+                    call her_main("................","disgust","down_raised",cheeks="blush")
                     # SAME AS PREVIOUS EVENT^^^
 
 
@@ -776,14 +771,14 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                     "-Hold it in-":
                         g4 "Oh, alright..."
                         g4 "I'd better stop now I suppose..."
-                        call her_head("...............","disgust","down_raised",cheeks="blush")
-                        call her_head("Ehm... I read that that is bad for you, [genie_name]...","disgust","down_raised",cheeks="blush")
+                        call her_main("...............","disgust","down_raised",cheeks="blush",ypos="head")
+                        call her_main("Ehm... I read that that is bad for you, [genie_name]...","disgust","down_raised",cheeks="blush")
                         m "Huh?"
-                        call her_head("It is bad for your health to just hold it in like this...","shock","worriedCl")
-                        call her_head("Em...","disgust","down_raised",cheeks="blush")
-                        call her_head("If you want to you can--","base","baseL",cheeks="blush")
+                        call her_main("It is bad for your health to just hold it in like this...","shock","worriedCl")
+                        call her_main("Em...","disgust","down_raised",cheeks="blush")
+                        call her_main("If you want to you can--","base","baseL",cheeks="blush")
                         g4 "Argh! You whore!"
-                        call her_head("???","mad","wide",cheeks="blush")
+                        call her_main("???","mad","wide",cheeks="blush")
 
                         call cum_block
 
@@ -798,13 +793,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call ctc
 
                         call bld
-                        call her_head("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...","angry","worriedCl",cheeks="blush",emote="05")
+                        call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...","angry","worriedCl",cheeks="blush",emote="05")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed.
                         hide screen jerking_off_cum
                         with d3
 
-                        call her_head("Well, what's done is done I suppose...","base","baseL",cheeks="blush")
+                        call her_main("Well, what's done is done I suppose...","base","baseL",cheeks="blush")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -823,7 +818,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         $ sperm_on_tits = False
                         $ aftersperm = True
-                        call h_action("none","update")
+                        call set_her_action("none","update")
 
                         hide screen jerking_off_01
                         hide screen chair_left
@@ -838,7 +833,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                     "-Just start cumming-":
                         g4 "Argh! You whore!"
-                        call her_head("???","mad","wide",cheeks="blush")
+                        call her_main("???","mad","wide",cheeks="blush",ypos="head")
 
                         call cum_block
 
@@ -852,14 +847,14 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call ctc
 
                         call bld
-                        call her_head("ah...{image=textheart} It's so hot...{image=textheart}","shock","worriedCl")
-                        call her_head("[genie_name], you promised...","angry","worriedCl",cheeks="blush",emote="05")
+                        call her_main("ah...{image=textheart} It's so hot...{image=textheart}","shock","worriedCl")
+                        call her_main("[genie_name], you promised...","angry","worriedCl",cheeks="blush",emote="05")
                         g4 "Oh, this is great, yes..."
 
                         $ no_blinking = False #When True - blinking animation is not displayed.
                         hide screen jerking_off_cum
                         with d3
-                        call her_head("Well, what's done is done I suppose...","angry","worriedCl",cheeks="blush")
+                        call her_main("Well, what's done is done I suppose...","angry","worriedCl",cheeks="blush")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -877,7 +872,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call blkfade
 
                         $ sperm_on_tits = False
-                        call h_action("none","update") #This reloads all her clothing!
+                        call set_her_action("none","update") #This reloads all her clothing!
 
                         show screen genie
                         hide screen jerking_off_01
@@ -892,10 +887,14 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         hide screen hermione_main
 
 
+
+### End Show Breasts ###
+
+label end_hg_show_breasts:
     call blkfade
 
     $ sperm_on_tits = False
-    call h_action("none","update") #This reloads all her clothing!
+    call set_her_action("none","update") #This reloads all her clothing!
 
     hide screen jerking_off_01
     hide screen chair_left
@@ -911,13 +910,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     pause.5
 
     call bld
-    if whoring <= 16:
+    if her_whoring <= 16:
         $ gryffindor +=current_payout
         m "The \"Gryffindor\" house gets [current_payout] points!"
 
     stop music fadeout 10.0
 
-    if whoring <= 16:
+    if her_whoring <= 16:
         call her_main("..................","annoyed","worriedL",xpos="base",ypos="base")
     else:
         call her_main("..................","base","happyCl",xpos="base",ypos="base")
@@ -929,14 +928,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     else:
         her "I'd better go now then. It's getting pretty late..."
 
-    if whoring >= 6 and whoring <= 8:
-        $ new_request_08_heart = 1
+    if her_whoring >= 6 and her_whoring < 9:
         $ hg_pf_ShowThemToMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
-    if whoring >= 9 and whoring <= 11:
-        $ new_request_08_heart = 2
+
+    if her_whoring >= 9 and her_whoring < 12:
         $ hg_pf_ShowThemToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
-    if whoring >= 12:
-        $ new_request_08_heart = 3
+
+    if her_whoring >= 12:
         $ hg_pf_ShowThemToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
 
 
@@ -945,30 +943,30 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     with d3
 
     #Door reaction.
-    if whoring >= 6:
+    if her_whoring >= 6:
 
         call her_walk("desk","door",3)
 
-        if whoring >= 6 and whoring <= 8:
-            call her_head("(How humiliating... What have I become...?)","disgust","down_raised",cheeks="blush")
+        if her_whoring >= 6 and her_whoring < 9:
+            call her_main("(How humiliating... What have I become...?)","disgust","down_raised",cheeks="blush",ypos="head")
 
-        elif whoring >= 9 and whoring <= 11:
-            call her_head("........................","disgust","down_raised",cheeks="blush")
+        elif her_whoring >= 9 and her_whoring < 12:
+            call her_main("........................","disgust","down_raised",cheeks="blush",ypos="head")
 
-        elif whoring >= 12:
-            call her_head("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised",cheeks="blush")
-            call her_head("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry",cheeks="blush")
-            call her_head("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry",cheeks="blush")
-            call her_head(".................................","base","ahegao_raised",cheeks="blush")
+        elif her_whoring >= 12:
+            call her_main("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+            call her_main("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry",cheeks="blush",ypos="head")
+            call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry",cheeks="blush",ypos="head")
+            call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
 
-        elif whoring >= 17 and aftersperm:
-            call her_head("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised",cheeks="blush")
-            call her_head("{size=-5}(I wonder if anyone will notice my uniform!){/size}","open","ahegao_raised",cheeks="blush")
-            call her_head("{size=-5}(What will people think of me?){/size}","open","ahegao_raised",cheeks="blush")
-            call her_head(".................................","base","ahegao_raised",cheeks="blush")
+        elif her_whoring >= 17 and aftersperm:
+            call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+            call her_main("{size=-5}(I wonder if anyone will notice my uniform!){/size}","open","ahegao_raised",cheeks="blush",ypos="head")
+            call her_main("{size=-5}(What will people think of me?){/size}","open","ahegao_raised",cheeks="blush",ypos="head")
+            call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
 
-    if whoring < 9: #Adds points till 9.
-        $ whoring +=1
+    if her_whoring < 9: #Adds points till 9.
+        $ her_whoring +=1
 
     $ hg_pf_ShowThemToMe_OBJ.points += 1
 

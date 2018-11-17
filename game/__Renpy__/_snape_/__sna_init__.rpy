@@ -2,10 +2,14 @@
 
 label snape_init:
 
-    if not hasattr(renpy.store,'snape_xpos') or reset_persistants:
+    if not hasattr(renpy.store,'snape_flip') or reset_persistants:
         $ snape_xpos = 525
         $ snape_ypos = 0
         $ snape_zorder = 5
+        $ snape_flip = 1
+        $ use_snape_head            = False
+
+        $ s_sprite = "characters/snape/main/snape_01.png"
 
         $ snape_head_xpos = 540
         $ snape_head_ypos = 380
@@ -15,7 +19,6 @@ label snape_init:
         $ snape_chibi_ypos=210
         $ snape_speed = 2.0
         $ snape_chibi_zorder = 2
-
 
 
     return
@@ -28,8 +31,17 @@ label snape_progress_init:
 
         ###SNAPE STATS###
         $ snape_busy = False #When True, you can't summon Snape.
-        $ snape_friendship = 0 #Get's +1 after every evening spent is Snape's company.
+
+        $ sna_support = 0 #Controls how much points is awarded to SLYTHERIN daily.
         $ snape_events = 0 #Get's +1 point every time a special event with Snape happens.
+        $ sna_dates_counter = 0
+        $ sna_friendship = 0 #Get's +1 after every evening spent is Snape's company.
+        $ sna_friendship_maxed = False
+
+        $ wine_intro_done = False
+        $ sna_wine_counter = 0
+
+
 
 
         ### SNAPE EVENTS ###

@@ -91,7 +91,7 @@ label cho_favor_1_1:
 
         call cho_main("I bet my body is worth more than hers!","open","base","base","mid")
         call cho_main("Does Hermione have abs like this? Of course she doesn't!","horny","base","raised","down")
-        if whoring < 17:
+        if her_whoring < 17:
             call cho_main("That boring book glutton is sitting at the library all day as if it's her home...","open","angry","angry","mid")
         else:
             call cho_main("That stupid slut can't spend even a single day without flirting with somebody that has legs attached...","open","angry","angry","mid")
@@ -2714,7 +2714,7 @@ label cho_favor_3_3:
                     call cho_main("(I'm such a whore...)","smile","base","base","mid")
                     m "That's good, you fucking whore."
                     call cho_main("(Yes!)","smile","base","base","mid")
-                    "Suddenly, you feel Cho's hands tightly grip your ass, and you realize that you haven't had to hold her down."
+                    "Suddenly, you feel Cho's hands tightly grip your ass, and you realise that you haven't had to hold her down."
                     "The crazed young witch desperately fucks her face against your cock."
                     "Your cock feels amazing, but you have other plans."
                     "You grab Cho's hands and push her down."

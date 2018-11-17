@@ -28,9 +28,19 @@ label event_01:
     return
 
 
-### EVENT 1 ###
+# Owl intro.
+label owl_intro:
+    call play_sound("owl")
+    show screen owl
+    call bld
+    m "What? An owl?"
+    hide screen bld1
+    with d3
 
-#First time genie meets snape
+    return
+
+
+# First time genie meets snape
 label event_00:
     call play_music("dark_fog")
     call play_sound("door")
@@ -168,19 +178,6 @@ label event_00:
     jump day_start
 
 
-### EVENT 2 ###
-
-#owl event
-label event_02:
-    $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
-    call play_sound("owl")
-    show screen owl
-    call bld
-    m "What? An owl?"
-    hide screen bld1
-    with d3
-
-    return
 
 
 ### EVENT 3 ###
@@ -828,7 +825,7 @@ label event_07:
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
 
-    call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","interface/icons/head/snape_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","interface/icons/head/head_snape_1.png")
     $ snape_unlocked = True
 
     jump day_start
@@ -949,6 +946,7 @@ label event_08:
 
     menu:
         "\"(I will jerk off a little while she talks.)\"":
+            $ her_jerk_off_counter += 1
             $ jerk_off_session = True #Affects next conversation with Snape.
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
         "\"(No, that's stupid! I Need to behave!)\"":
@@ -1551,7 +1549,7 @@ label event_14:
 
     stop music fadeout 1.0
 
-    call give_reward(">You've unlocked the ability to summon Hermione to your office.","interface/icons/head/hermione_unlock_01.png")
+    call give_reward(">You've unlocked the ability to summon Hermione to your office.","interface/icons/head/head_hermione_1.png")
 
     $ hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
     $ hermione_busy = True
@@ -1691,7 +1689,7 @@ label event_15:
             $ d_flag_06 = True
             pass
 
-    call her_main("Em, alright...","","",xpos="mid")
+    call her_main("Em, alright...",xpos="mid",ypos="base",trans="fade")
 
     if d_flag_01: #Show me your tongue.
         call her_main("M-my... tongue, sir?","grin","worriedCl",emote="05")
@@ -1729,17 +1727,17 @@ label event_15:
         show screen hermione_stand_f #Hermione stands still.
         with d7
 
-        call her_head(".................................","annoyed","baseL")
+        call her_main(".................................","annoyed","baseL",flip=True)
 
         menu:
             m "Hm..."
             "\"The uniform suits you, miss Granger...\"":
-                call her_head("............","soft","baseL",cheeks="blush")
-                call her_head("Thank you, professor Dumbledore...","open","baseL",cheeks="blush")
+                call her_main("............","soft","baseL",cheeks="blush")
+                call her_main("Thank you, professor Dumbledore...","open","baseL",cheeks="blush")
             "\"You have a nice body, miss Granger...\"":
-                call her_head("!!?","soft","wide")
-                call her_head("..............","annoyed","angryL",cheeks="blush")
-                call her_head("Thank you, professor...")
+                call her_main("!!?","soft","wide")
+                call her_main("..............","annoyed","angryL",cheeks="blush")
+                call her_main("Thank you, professor...")
             "\"That's enough. Here are your points...\"":
                 show screen hermione_stand #Hermione stands still.
                 with d7
@@ -1843,7 +1841,7 @@ label event_15:
         m "1 point to the \"Gryffindor\" house."
         $ gryffindor +=1
 
-    call her_main("Yay!..............","grin","worriedCl",emote="05",xpos="base")
+    call her_main("Yay!..............","grin","worriedCl",emote="05",xpos="base",ypos="base",flip=False,trans="fade")
     her "This was quite easy..."
     her "Do you think you could buy some more favours from me in the future, professor?"
 
@@ -1891,7 +1889,7 @@ label event_15:
 
     stop music fadeout 1.0
 
-    call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","interface/icons/head/hermione_unlock_02.png")
+    call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","interface/icons/head/head_hermione_2.png")
 
     $ hermione_favors = True
 

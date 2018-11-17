@@ -22,6 +22,11 @@ init -2:
         ypos 250
         linear hermione_speed xpos x2 # linear
 
+    transform susan_walk(x,x2): #Same custom walk but for Hermione.
+        xpos x
+        ypos 250
+        linear susan_speed xpos x2 # linear
+
     transform custom_walk(x,x2): # http://www.renpy.org/wiki/atl
         xpos x
         ypos 210

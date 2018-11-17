@@ -1,12 +1,12 @@
 label __init_variables:
     #Check if you have visit room of req before
-    
+
     if not hasattr(renpy.store,'temp_outfit_GLBL'): #important!
         $ temp_outfit_GLBL = None
-    
+
     if not hasattr(renpy.store,'first_visit_req'): #important!
         $ first_visit_req = False
-        
+
     if not hasattr(renpy.store,'mr_ev_WPIIA'):
         $mr_ev_WPIIA = mirror_stories(
                 title = "Whose points is it anyway?",
@@ -17,7 +17,7 @@ label __init_variables:
                 ach_desc = "Unlock the characters",
                 content_characters = ["luna", "astoria", "hermione"]
             )
-    
+
     if not hasattr(renpy.store,'mr_ev_GHE'):
         $mr_ev_GHE = mirror_stories(
                 title = "The genie, the desk and the door",
@@ -28,7 +28,7 @@ label __init_variables:
                 ach_desc = "Unlock the mirror of noisrevrep/Erised",
                 content_characters = []
             )
-            
+
     if not hasattr(renpy.store,'mr_ev_ABTTD'):
         $mr_ev_ABTTD = mirror_stories(
                 title = "A bad time to disrobe",
@@ -39,7 +39,7 @@ label __init_variables:
                 ach_desc = "Finish private favour, \"Show them to me!\" at least once.",
                 content_characters = ["hermione"]
             )
-    
+
     if not hasattr(renpy.store,'mr_ev_ASOC'):
         $mr_ev_ASOC = mirror_stories(
                 title = "A spaced out conversation",
@@ -50,15 +50,15 @@ label __init_variables:
                 ach_desc = "Unlocks after spending some evenings drinking by the fire with Snape.",
                 content_characters = []
             )
-    
+
     if not hasattr(renpy.store,'mr_ev_ABAS'):
-        $mr_ev_ABAS = mirror_stories( 
+        $mr_ev_ABAS = mirror_stories(
                 title = "A Booty at sea",
                 story_description = "The genie imagine himself to be a great pirate and roleplays his most intimate times with Hermione.",
                 start_label = "anal_parit_event",
                 authors = ["TeamSilver"],
                 categories= [],
-                ach_desc = "Finish the \"Time for Anal\" Private favours and bought the pirate outfit",
+                ach_desc = "Finish the \"Time for Anal\" Private favours.",
                 content_characters = ["hermione"]
             )
       
@@ -83,31 +83,37 @@ label __init_variables:
     
     
     $currentpage = 0
-    
+
     return
-        
+
 init python:
+    def grayTint(image):
+        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))
+
+    def yellowTint(image):
+        return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
+
     class generic_menu_item(object):
         imagepath = "images/store/potions/potion_3.png"
         title = "This is the title"
         description = ""
         unlocked = False
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def get_image(self):
             return self.imagepath
-        
+
         def get_title(self):
             return self.title
-        
+
         def get_description(self):
             return self.description
-        
+
         def get_buttom_right(self):
             return ""
-            
+
     class mirror_stories(generic_menu_item):
         unlocked = False
         start_label = ""
@@ -120,35 +126,35 @@ init python:
         story_description = ""
         ach_desc = ""
         content_characters = []
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def get_title(self):
             ret_str = "{size=12}\""+self.title+"\" by "
             for s in self.authors:
                 ret_str += s +", "
 
             return ret_str[0:len(ret_str)-2]+"{/size}"
-       
+
         def get_description(self):
             returnV = "{size=10}"
             if self.unlocked:
                 returnV += "story description: " + self.story_description
             else:
                 returnV += self.ach_desc
-                    
-            return returnV+"{/size}" 
-        
+
+            return returnV+"{/size}"
+
         def get_buttom_right(self):
             return self.getCharcters()
-        
+
         def get_image(self):
             if self.unlocked == False:
-                return "interface/room_of_req/locked.png"
+                return "interface/icons/icon_lock.png"
             else:
-                return "interface/room_of_req/unlocked.png"
-        
+                return "interface/icons/icon_lock_open.png"
+
         def getCharcters(self):
             ret_str = ""
             for c in self.content_characters:
@@ -166,9 +172,9 @@ init python:
                     ret_str += "{image=interface/room_of_req/tonks_icon.png}"
                 else:
                     ret_str += "{image=heart_00}"
-            
+
             return ret_str
-        
+
         def checkLock(self):
             unlocked = True
             for c in self.content_characters:
@@ -181,14 +187,14 @@ init python:
                 elif c == "susan":
                     unlocked = unlocked and susan_unlocked
                 elif c == "cho":
-                    unlocked = unlocked and cho_met
+                    unlocked = unlocked and cho_unlocked
                 elif c == "tonks":
                     unlocked = unlocked and tonks_unlocked
                 else:
                     unlocked = False
             self.unlocked = unlocked and self.unlock_check()
             return self.unlocked
-            
+
         #Make a elif with the title and the cretevia to unlock
         #And if you dont make any then it will all ways be true
         def unlock_check(self):
@@ -202,4 +208,3 @@ init python:
                 return hg_pf_LetsHaveSex_OBJ.points > 2
             else:
                 return True
-            

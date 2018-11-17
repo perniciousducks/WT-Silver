@@ -6,24 +6,24 @@ label cheats:
                 "-Reset Hermione's mood-":
                     $ mad = 0
                     ">Hermione is no longer mad at you."
-                    jump cheats
+                    jump cheats_hermione
                 "-Max Whoring-":
-                    $ whoring = 24
+                    $ her_whoring = 24
                     ">Hermione is now a giant slut."
                     jump cheats_hermione
 
                 "-Increase Whoring-":
-                    if whoring >= 24:
-                        ">Hermione's whoring is at the max level and can't be increased any further!"
+                    if her_whoring >= 24:
+                        ">Hermione's Whoring is at the max level and can't be increased any further!"
                     else:
-                        $ whoring += 1
+                        $ her_whoring += 1
                         ">Hermione became more depraved..."
                     jump cheats_hermione
                 "-Decrease Whoring-":
-                    if whoring <= 0:
-                        "Hermione's whoring can't be decreased any further!"
+                    if her_whoring <= 0:
+                        "Hermione's Whoring can't be decreased any further!"
                     else:
-                        $ whoring -= 1
+                        $ her_whoring -= 1
                         "Hermione recovered some of her dignity"
                     jump cheats_hermione
 
@@ -43,18 +43,17 @@ label cheats:
                             if not i.unlockable:
                                 i.unlocked = True
                     ">All of Hermione's purchasable outfits and clothing sets have been unlocked."
-                    jump cheats
+                    jump cheats_hermione
 
                 "-Toggle Breast Expansion-":
-                    if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts:
+                    if hermione_perm_expand_breasts or hermione_expand_breasts:
                         $ hermione_perm_expand_breasts = False
                         $ hermione_expand_breasts = False
-                        $ hermione_perm_expand = False
                         "Hermione's breasts shrink..."
                     else:
                         $ hermione_perm_expand_breasts = True
                         "Hermione's breasts grow..."
-                    jump cheats
+                    jump cheats_hermione
 
                 "-Toggle Futa Hermione-":
                     if hermione_futa:
@@ -63,7 +62,7 @@ label cheats:
                     else:
                         $ hermione_futa = True
                         "Hermione's grows a... dick!"
-                    jump cheats
+                    jump cheats_hermione
                 "-never mind-":
                     jump cheats
 
@@ -79,19 +78,38 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
+        "-Astoria & Susan Cheats-":
+            label cheats_astoria:
+            menu:
+                "-Mail ministry letter-":
+                    $ letter_curse_complaint_OBJ.mailLetter()
+                    ">Letter sent."
+                    jump cheats_astoria
+                "-Unlock all spells-":
+                    $ ast_affection = 2
+                    $ astoria_tonks_1_completed = True
+                    $ astoria_tonks_2_completed = True
+                    $ astoria_tonks_3_completed = True
+
+                    $ ast_spells[0] = 3
+                    ">All spells are now unlocked!"
+                    jump cheats_astoria
+                "-never mind-":
+                    jump cheats
+
         "-Cho Cheats-":
             label cheats_cho:
             menu:
                 "-Reset Cho's mood-":
                     $ cho_mad = 0
                     ">Cho is no longer mad at you."
-                    jump cheats
+                    jump cheats_cho
                 "-Reset ALL Cho content-":
                     $ reset_cho_content = True
                     call cho_progress_init
                     $ reset_cho_content = False
                     ">Cho content reset!"
-                    jump cheats
+                    jump cheats_cho
                 "-never mind-":
                     jump cheats
 
@@ -139,10 +157,49 @@ label cheats:
             "200 points to Slytherin!"
             jump cheats
 
-        "-Map-" if day >= 5 and not cataloug_found:
+        "-Map-" if day >= 5 and not map_unlocked:
             "The marauder's map has been added to your inventory!"
-            $ cataloug_found = True
+            $ map_unlocked = True
             jump cheats
 
         "-Never mind-":
             jump day_main_menu
+
+label cheats_init:
+
+    #Update 1.34
+    if not hasattr(renpy.store,'character_summon_list') or reset_persistants:
+        $ character_choice = "hermione"
+        $ summoned_character_list = []
+
+        $ display_character_hermione = False
+        $ display_character_luna = False
+        $ display_character_astoria = False
+        $ display_character_susan = False
+        $ display_character_cho = False
+
+        $ display_character_genie = False
+        $ display_character_snape = False
+        $ display_character_tonks = False
+
+        $ display_background = False
+        $ custom_bg_image = "images/backgrounds/main_room_night.png"
+
+    $ character_summon_list = []
+    if hermione_unlocked:
+        $ character_summon_list.append("hermione")
+    if luna_unlocked:
+        $ character_summon_list.append("luna")
+    if astoria_unlocked:
+        $ character_summon_list.append("astoria")
+    if susan_unlocked:
+        $ character_summon_list.append("susan")
+    if cho_unlocked:
+        $ character_summon_list.append("cho")
+    $ character_summon_list.append("genie")
+    $ character_summon_list.append("snape")
+    if tonks_unlocked:
+        $ character_summon_list.append("tonks")
+    $ character_summon_list.append("bg")
+
+    return

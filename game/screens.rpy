@@ -192,7 +192,7 @@ screen main_menu:
         yalign .96
 
         has vbox
-        
+
         if not persistent.game_complete:
             textbutton _("New Game") action Start()
         if persistent.game_complete:
@@ -219,19 +219,19 @@ screen extras:
         style_group "gm_nav"
         xalign .98
         yalign .98
-        
+
         has vbox
 
-        
-        
-        
+
+
+
         textbutton _("About...") action Start("abouttrainer")
         textbutton _("F.A.Q.") action Start("faq")
         if not persistent.game_complete:
             textbutton _("{color=#858585}Gallery{/color}") action Start("gallery_locked")
         if persistent.game_complete:
             textbutton _("Gallery") action Start("gallery")
-        textbutton _("Return") action Start("assmenu") # Sent here from "EXTRAS" menu. Basically just jumps to the title screen. 
+        textbutton _("Return") action Start("assmenu") # Sent here from "EXTRAS" menu. Basically just jumps to the title screen.
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"

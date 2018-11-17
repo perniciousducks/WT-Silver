@@ -8,7 +8,7 @@ label equipping_failed:
             with d3
 
             $ hermione_xpos = 665
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
 
             m "[hermione_name]..."
             m "Would you wear this--"
@@ -52,14 +52,14 @@ label equipping_failed:
                 "-Don't bother-":
                     call set_her_face("angry")
 
-        $ wardrobe_active = True
+        $ hide_transitions = True
         call her_main(xpos="wardrobe")
         call screen wardrobe
 
 
     if mad >= 6 and mad <=10:
         if wardrobe_chitchat_active:
-            $ wardrobe_active = False
+            $ hide_transitions = False
             hide screen hermione_main
             with d3
             m "[hermione_name]..."
@@ -107,14 +107,14 @@ label equipping_failed:
                 "-Don't bother-":
                     call set_her_face("angry")
 
-        $ wardrobe_active = True
+        $ hide_transitions = True
         call her_main(xpos="wardrobe")
         call screen wardrobe
 
 
     if mad >= 11:
         if wardrobe_chitchat_active:
-            $ wardrobe_active = False #activates dissolve in her_main
+            $ hide_transitions = False #activates dissolve in her_main
             hide screen hermione_main
             with d3
             m "[hermione_name]..."
@@ -132,6 +132,6 @@ label equipping_failed:
             call set_her_face("angry")
 
 
-        $ wardrobe_active = True
+        $ hide_transitions = True
         call her_main(xpos="wardrobe")
         call screen wardrobe

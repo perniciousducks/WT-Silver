@@ -3,8 +3,6 @@
 label summon_snape:
 
     call play_sound("door")
-    $ menu_x = 0.5
-    $ menu_y = 0.5
 
     call sna_chibi("stand","mid","base")
 
@@ -21,18 +19,18 @@ label summon_snape:
                 call snape_chitchat
             jump snape_talk
 
-        "-Let's hang-" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
+        "-Let's hang-" if not daytime and not sna_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
                 jump not_today #Snape says: "I am busy tonight."
-#            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
+#            elif sna_friendship >= 39 and her_whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
 #                jump not_today #Snape says: "I am busy tonight."
-            elif snape_friendship >= 88 and whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
+            elif sna_friendship >= 88 and her_whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
                 jump not_today #Snape says: "I am busy tonight."
             else:
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
 
-        "-Get a potion-" if whoring > 10:
+        "-Get a potion-" if her_whoring > 10:
             hide screen snape_main
             with fade
 
@@ -208,7 +206,7 @@ label summon_snape:
 
 label snape_talk:
     menu:
-        "-Talk about the ministry letter-" if ministry_letter_received and not astoria_unlocked:
+        "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
             #You tell Snape about the curses.
             if hermione_on_the_lookout: #Already talked to Hermione.
                 $ hermione_finds_astoria = True
@@ -234,14 +232,16 @@ label snape_talk:
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
 
+    $ sna_dates_counter += 1
+
     show screen blkfade
-    $ fire_in_fireplace = True
     hide screen genie
     hide screen chair_right
+    $ fire_in_fireplace = True
+    show screen fireplace_fire
     hide screen desk
     show screen desk
     show screen with_snape_animated
-    show screen fireplace_fire
 
     hide screen snape_01 #Snape stands still.
     hide screen bld1
@@ -261,84 +261,90 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_02
 
-    if hg_pf_DanceForMe_OBJ.points >= 2 and not snape_invated_to_watch: #After second dance where Snape entered room.
+    if hg_pf_DanceForMe_OBJ.points >= 2 and not snape_invited_to_watch: #After second dance where Snape entered room.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_03
 
-    #ADD sQuest here "Pensieve Event"
 
-    if wine >= 1 and not wine_not: # Using Dumbledor's wine for the first time.
-        $ wine_not = True # Turns True after you use Dumbledore's wine in the "Snape dating" for the first time. Makes sure the cut-scene is shown only once.
-        call wine_first
-    elif wine >= 1 and wine_not: # Using Dumbledor's wine not for the first time.
-        call wine_not_first
-    else:
-        pass
+    if wine >= 1:
+        $ sna_wine_counter += 1
+        $ wine -= 1
 
-
-
+        if not wine_intro_done: # Using Dumbledor's wine for the first time.
+            $ wine_intro_done = True # Turns True after you use Dumbledore's wine in the "Snape dating" for the first time. Makes sure the cut-scene is shown only once.
+            call wine_intro
+        else:
+            call drink_wine
 
 
-    if snape_friendship >= 5 and snape_events == 0:
+
+    if sna_friendship >= 5 and snape_events == 0:
         call date_with_snape_01
 
-    elif snape_friendship >= 12 and snape_events == 1: #LEVEL 02
+    elif sna_friendship >= 12 and snape_events == 1: #LEVEL 02
         call date_with_snape_02
 
-    elif snape_friendship >= 19 and snape_events == 2: #LEVEL 03
+    elif sna_friendship >= 19 and snape_events == 2: #LEVEL 03
         call date_with_snape_03
 
-    elif snape_friendship >= 27 and snape_events == 3: #LEVEL 04
+    elif sna_friendship >= 27 and snape_events == 3: #LEVEL 04
         call date_with_snape_04
 
-    elif snape_friendship >= 34 and snape_events == 4: #LEVEL 05
+    elif sna_friendship >= 34 and snape_events == 4: #LEVEL 05
         call date_with_snape_05
 
-    elif snape_friendship >= 41 and snape_events == 5: #LEVEL 06. Can't proceed after this until whoring >= Lv 3.
+    elif sna_friendship >= 41 and snape_events == 5: #LEVEL 06. Can't proceed after this until her_whoring >= Lv 3.
         call date_with_snape_06
 
-    elif snape_friendship >= 48 and snape_events == 6: #LEVEL 07
+    elif sna_friendship >= 48 and snape_events == 6: #LEVEL 07
         call date_with_snape_07
 
-    elif snape_friendship >= 55 and snape_events == 7: #LEVEL 08
+    elif sna_friendship >= 55 and snape_events == 7: #LEVEL 08
         call date_with_snape_08
 
-    elif snape_friendship >= 62 and snape_events == 8: #LEVEL 09
+    elif sna_friendship >= 62 and snape_events == 8: #LEVEL 09
         call date_with_snape_09
 
-    elif snape_friendship >= 69 and snape_events == 9: #EVENT 10
+    elif sna_friendship >= 69 and snape_events == 9: #EVENT 10
         call date_with_snape_10
 
-    elif snape_friendship >= 76 and snape_events == 10: #EVENT 10
+    elif sna_friendship >= 76 and snape_events == 10: #EVENT 10
         call date_with_snape_11
 
-    elif snape_friendship >= 83 and snape_events == 11: #EVENT 11
+    elif sna_friendship >= 83 and snape_events == 11: #EVENT 11
         call date_with_snape_12
 
-    elif snape_friendship >= 88 and snape_events == 12: #EVENT 12. If whoring level > 5.
+    elif sna_friendship >= 88 and snape_events == 12: #EVENT 12. If her_whoring level > 5.
         call date_with_snape_13
 
-    elif snape_friendship >= 93 and snape_events == 13: #EVENT 13
+    elif sna_friendship >= 93 and snape_events == 13: #EVENT 13
         call date_with_snape_14
 
-    elif snape_friendship >= 98 and snape_events == 14: #EVENT 14
+    elif sna_friendship >= 98 and snape_events == 14: #EVENT 14
         call date_with_snape_15
+        $ sna_friendship = 100
+        $ sna_friendship_maxed = True
 
     else:
 
         show screen bld1
         with d3
         $ renpy.play('sounds/win_04.mp3')   #Not loud.
-        hide screen notes
         show screen notes
         ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him has improved."
+        hide screen notes
         hide screen bld1
         with d3
 
 
 
-
-    $ snape_friendship +=1
+    if sna_friendship < 100:
+        if game_difficulty < 2: #Easy & Normal
+            $ sna_friendship += 3
+        elif game_difficulty == 2:
+            $ sna_friendship += 2
+        else:
+            $ sna_friendship += renpy.random.randint(0, 1) #Hardcore. Wine is required.
 
     jump day_start
 
@@ -624,7 +630,7 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 
     ">You spend rest of the evening in Snape's company talking about Hermione's naked breasts."
 
-    $ snape_invated_to_watch = True
+    $ snape_invited_to_watch = True
 
     hide screen bld1
     with d3
@@ -751,7 +757,7 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 
 
 ####################################
-label wine_first:
+label wine_intro:
     m "Look what I've got!"
     call sna_head("Hm..?","snape_05")
     call sna_head("Let me see...")
@@ -762,7 +768,6 @@ label wine_first:
     ">You hand over the bottle you found in the cupboard to professor Snape..."
     hide screen gift
     with d3
-    $ wine -= 1
 
 
     call sna_head("This one has got to be from Albus' personal stash!","snape_24")
@@ -775,13 +780,13 @@ label wine_first:
     hide screen notes
     show screen notes
     ">Your relationship with Professor Snape has improved."
-    $ snape_friendship +=1
+    $ sna_friendship +=1
     hide screen bld1
     with d3
     return
 
 
-label wine_not_first:
+label drink_wine:
     m "Look what I've got!"
     hide screen s_head2
     pause.1
@@ -791,7 +796,6 @@ label wine_not_first:
     ">You hand over the bottle you fond in the cupboard to professor Snape..."
     hide screen gift
     with d3
-    $ wine -= 1
 
     call sna_head("Another one?","snape_05")
     if one_of_ten == 1:
@@ -815,14 +819,16 @@ label wine_not_first:
     elif one_of_ten == 2:
         call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02")
 
-    call bld
-    call give_reward(">Your relationship with Professor Snape has improved.","images/store/01.png")
+    call nar(">Your relationship with Professor Snape has improved.")
     #">Your relationship with Professor Snape has improved."
 
-    if game_difficulty < 2:      #Easy difficulty
-        $ snape_friendship +=3
-    else:                        #Normal and hard difficulty
-        $ snape_friendship +=2
+    if sna_friendship < 100: #max
+        if game_difficulty < 2:      #Easy difficulty
+            $ sna_friendship += 2
+        elif game_difficulty == 2:   #Normal
+            $ sna_friendship += 3
+        else:                        #Hardcore, larger wine bonus.
+            $ sna_friendship += 6
 
     return
 

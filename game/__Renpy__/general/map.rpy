@@ -3,46 +3,185 @@ label leave_main_room:
     hide screen main_room
     hide screen chair_right
     hide screen fireplace
-    hide screen fireplace_fire
     hide screen candlefire
     hide screen desk
     hide screen phoenix_food
     hide screen owl
-    hide screen owl_02
-    hide screen owl_03
     hide screen genie
     return
+
+
 
 ### Map Screen ###
 
 screen map_screen:
-    zorder hermione_main_zorder-1
+    zorder 4
 
-    imagemap:
-        ground "interface/map/map_ground.png"
-        idle "interface/map/map_idle.png"
-        hover "interface/map/map_hover.png"
-        # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (192+140, 229, 38, 20) clicked Jump("map_attic") #attic
-        hotspot (272+140, 373, 63, 41) clicked Jump("clothes_store") #clothes
-        hotspot (25+140, 374, 102, 66) clicked Jump("map_forest") #forest
-        hotspot (302+140, 523, 112, 49) clicked Jump("map_lake") #lake
-        hotspot (273+140, 459, 75, 8) clicked Jump("map_dorms") #dorms
-        hotspot (453, 300, 75, 45) clicked Jump("floor_7th") #7th floor
-        #hotspot (656+140, 232, 106, 33) clicked Jump("inn_menu") #inn
-        #hotspot (376+140, 84, 111, 57) clicked Jump("map_pitch") #pitch
-        hotspot (307+140, 240, 59, 37) clicked Jump("shop_intro") #shop
-        hotspot (33+140, 535, 39, 39) clicked Jump("day_main_menu") #return
+    $ UI_xpos_offset = 140
 
-        #Map Events
-        if whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
-            hotspot (217, 442, 55, 55) clicked Jump("hermione_map_BJ")
+    add "interface/map/map.png" xpos UI_xpos_offset ypos 0
+
+    #Office
+    imagebutton:
+        xpos 0 +UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_office_idle.png"
+        hover "interface/map/room_office_hover.png"
+        action Return("main_room")
+
+    #Weasley Store
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_weasley_store_idle.png"
+        hover "interface/map/room_weasley_store_hover.png"
+        action Return("open_weasley_store")
+
+    #Clothing Store
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_clothing_store_idle.png"
+        hover "interface/map/room_clothing_store_hover.png"
+        action Return("clothes_store")
+
+    #Potions
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_potions_idle.png"
+        #hover "interface/map/room_potions_hover.png"
+        #action Return("potions_room")
+
+    #Room of Requirement
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        if unlocked_7th:
+            idle "interface/map/room_ror_idle.png"
+            hover "interface/map/room_ror_hover.png"
+        else:
+            idle "interface/map/room_ror_empty_idle.png"
+            hover "interface/map/room_ror_empty_hover.png"
+        action Return("floor_7th")
+
+    #Lake
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_boat_house_idle.png"
+        hover "interface/map/room_boat_house_hover.png"
+        action Return("map_lake")
+
+    #Forest (Temporary until we have a map for the nothern section!)
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_north_courtyard_idle.png"
+        hover "interface/map/room_north_courtyard_hover.png"
+        action Return("map_forest")
+
+    # (X upper-left corner, Y upper-left corner, width, height).
+    #hotspot (189, 218, 38, 20) clicked Return("map_attic") #attic
+    #hotspot (275, 449, 75, 15) clicked Return("map_dorms") #dorms
+
+    #Map Events
+    #if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
+    #    hotspot (227, 442, 55, 55) clicked Return("hermione_map_BJ")
+
+
+label update_character_map_location:
+    #her_random_number, gets defined once during the day and once during the nigh.
+    if her_whoring < 11:
+        if her_random_number == 1: #Library
+            $ hermione_map_xpos = 622
+            $ hermione_map_ypos = 118
+        elif her_random_number == 2: #Great Hall
+            $ hermione_map_xpos = 23
+            $ hermione_map_ypos = 370
+        else: #Gryff Room
+            $ hermione_map_xpos = 156
+            $ hermione_map_ypos = 269
+    else:
+        if lock_public_favors:
+            if her_random_number == 1: #Great Hall
+                $ hermione_map_xpos = 23
+                $ hermione_map_ypos = 370
+            elif her_random_number == 2: #Courtyard
+                $ hermione_map_xpos = 539
+                $ hermione_map_ypos = 263
+            else: #Gryff Room
+                $ hermione_map_xpos = 156
+                $ hermione_map_ypos = 269
+        else:
+            if her_random_number == 1: #Slytherin Room
+                $ hermione_map_xpos = 255
+                $ hermione_map_ypos = 156
+            elif her_random_number == 2: #Courtyard
+                $ hermione_map_xpos = 539
+                $ hermione_map_ypos = 263
+            else: #Gryff Room
+                $ hermione_map_xpos = 156
+                $ hermione_map_ypos = 269
+
+    #Tonks
+    $ tonks_map_xpos = 427
+    $ tonks_map_ypos = 222
+
+    #Snape
+    $ snape_map_xpos = 488
+    $ snape_map_ypos = 480
+
+    return
+
+
+screen map_screen_characters:
+    zorder 5
+
+    $ UI_xpos_offset = 140
+
+    #Hermione
+    if hermione_unlocked:
+        imagebutton:
+            xpos hermione_map_xpos +UI_xpos_offset
+            ypos hermione_map_ypos
+            focus_mask True
+            idle "interface/map/name_hermione.png"
+            hover "interface/map/name_hermione_hover.png"
+            action Return("hermione")
+
+    #Snape
+    if snape_unlocked:
+        imagebutton:
+            xpos snape_map_xpos +UI_xpos_offset
+            ypos snape_map_ypos
+            focus_mask True
+            idle "interface/map/name_snape.png"
+            hover "interface/map/name_snape_hover.png"
+            action Return("snape")
+
+    #Tonks
+    if tonks_unlocked:
+        imagebutton:
+            xpos tonks_map_xpos +UI_xpos_offset
+            ypos tonks_map_ypos
+            focus_mask True
+            idle "interface/map/name_tonks.png"
+            hover "interface/map/name_tonks_hover.png"
+            action Return("tonks")
 
 
 label floor_7th:
     if unlocked_7th == False:
-        m"\"I don't have any reason to go to this floor...\""
-        jump return_office
+        m"\"I don't have any reason to go there...\""
+        jump door
     else:
         call blkfade
         call leave_main_room
@@ -100,8 +239,8 @@ label map_attic: #Label controlling what happens when you access the attic
 
 label map_forest: #Label controlling what happens when you go to the forest
     if daytime:
-        m "I really shouldn't be leaving the castle during the day. It's too risky..."
-        jump day_main_menu
+        m "I shouldn't be leaving the castle during the day. It's too risky..."
+        jump door
     else:
         pass
 
@@ -140,8 +279,8 @@ label map_forest: #Label controlling what happens when you go to the forest
 
 label map_lake: #Label controlling what happens when you go to the lake
     if daytime:
-        m "I really shouldn't be leaving the castle during the day. It's too risky..."
-        jump day_main_menu
+        m "I shouldn't be leaving the castle during the day. It's too risky..."
+        jump door
     else:
         pass
     call outskirts_of_hogwarts
@@ -289,8 +428,6 @@ label return_office:
     show screen main_room
     show screen genie
     hide screen blkback
-    if fire_in_fireplace:
-        show screen fireplace_fire
 
     pause.5
     hide screen blkfade

@@ -3,21 +3,15 @@
 screen wardrobe():
 
     tag wardrobe_menu
-    zorder hermione_main_zorder-1
+    zorder 4
 
     if active_girl == "hermione":
         $ icon_ypos_offset = 0
-    if active_girl == "luna":
+    if active_girl in ["luna","susan","cho","tonks"]:
         $ icon_ypos_offset = 0
         $ wardrobe_toggle_page = 4 #Force disables toggle pages.
     if active_girl == "astoria": #She's too small! >.<
         $ icon_ypos_offset = -20
-        $ wardrobe_toggle_page = 4 #Force disables toggle pages.
-    if active_girl == "susan":
-        $ icon_ypos_offset = 0
-        $ wardrobe_toggle_page = 4 #Force disables toggle pages.
-    if active_girl == "cho":
-        $ icon_ypos_offset = 0
         $ wardrobe_toggle_page = 4 #Force disables toggle pages.
 
     imagemap:
@@ -78,6 +72,8 @@ screen wardrobe():
             text ""+susan_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "cho":
             text ""+cho_name xalign 0.5 xpos 820 ypos 57 size 20
+        if active_girl == "tonks":
+            text ""+tonks_name xalign 0.5 xpos 820 ypos 57 size 20
         text "Wardrobe" xpos 668 ypos 154+360 size 12
 
         hotspot (993,10,32,23) clicked Jump("hide_wardrobe")
@@ -188,7 +184,7 @@ screen wardrobe():
         if wardrobe_toggle_page == 1 or (wardrobe_toggle_page == 0 and wardrobe_page in [2,3,4,6,7]):
 
             ## Top Toggle ##
-            if whoring >= 12 and wardrobe_page != 6:
+            if her_whoring >= 12 and wardrobe_page != 6:
                 hotspot (667,120,18,18) clicked Jump("her_top_toggle")
                 if h_request_wear_top:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115 #ypos-5 of hotspot ypos #2nd row Ypos+25
@@ -203,7 +199,7 @@ screen wardrobe():
                 text "{color=#858585}Top{/color}" xpos 688 ypos 124 size 10            #grayed out
 
             ## One-Pieces ##
-            if whoring >= 12:
+            if her_whoring >= 12:
                 hotspot (667,120+25,18,18) clicked Jump("her_onepiece_toggle")
                 if hermione_wear_onepiece:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+25 #ypos-5 of hotspot ypos
@@ -218,7 +214,7 @@ screen wardrobe():
                 text "{color=#858585}One-Piece{/color}" xpos 688 ypos 124+25 size 10          #grayed out
 
             ## Bra Toggle ##
-            if whoring >= 12:
+            if her_whoring >= 12:
                 hotspot (667+5,120+50,18,18) clicked Jump("her_bra_toggle")
                 if hermione_wear_bra:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667+5 ypos 115+50 #ypos-5 of hotspot ypos
@@ -233,7 +229,7 @@ screen wardrobe():
                 text "{color=#858585}Bra{/color}" xpos 688+5 ypos 124+50 size 10          #grayed out
 
             ## Bottom Toggle ##
-            if whoring >= 12 and wardrobe_page != 6:
+            if her_whoring >= 12 and wardrobe_page != 6:
                 hotspot (667,120+75,18,18) clicked Jump("her_bottom_toggle")
                 if h_request_wear_bottom:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+75 #ypos-5 of hotspot ypos
@@ -248,7 +244,7 @@ screen wardrobe():
                 text "{color=#858585}Bottom{/color}" xpos 688 ypos 124+75 size 10          #grayed out
 
             ## Panties Toggle ##
-            if whoring >= 12:
+            if her_whoring >= 12:
                 hotspot (667+5,120+100,18,18) clicked Jump("her_panties_toggle")
                 if hermione_wear_panties:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667+5 ypos 115+100 #ypos-5 of hotspot ypos
@@ -263,7 +259,7 @@ screen wardrobe():
                 text "{color=#858585}Panties{/color}" xpos 688+5 ypos 124+100 size 10          #grayed out
 
             ## Garterbelt Toggle ##
-            if whoring >= 12:
+            if her_whoring >= 12:
                 hotspot (667+5,120+125,18,18) clicked Jump("her_garterbelt_toggle")
                 if hermione_wear_garterbelt:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667+5 ypos 115+125 #ypos-5 of hotspot ypos
@@ -278,7 +274,7 @@ screen wardrobe():
                 text "{color=#858585}Garter{/color}" xpos 688+5 ypos 124+125 size 10          #grayed out
 
             ## Neckwear ##
-            if whoring >= 0: #
+            if her_whoring >= 0: #
                 hotspot (667,120+150,18,18) clicked Jump("her_neckwear_toggle")
                 if hermione_wear_neckwear:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+150 #ypos-5 of hotspot ypos
@@ -289,7 +285,7 @@ screen wardrobe():
                 pass
 
             ## Body Accessories Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+175,18,18) clicked [SetVariable("toggle_obj","body_accs"), Jump("her_body_accs_toggle")]
                 if hermione_wear_body_accs:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+175 #ypos-5 of hotspot ypos
@@ -304,7 +300,7 @@ screen wardrobe():
                 text "{color=#858585}Body Accs.{/color}" xpos 688 ypos 124+175 size 10          #grayed out
 
             ## Gloves ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+200,18,18) clicked Jump("her_gloves_toggle")
                 if hermione_wear_gloves:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+200 #ypos-5 of hotspot ypos
@@ -315,7 +311,7 @@ screen wardrobe():
                 pass
 
             ## Stockings Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+225,18,18) clicked Jump("her_stockings_toggle")
                 if hermione_wear_stockings:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+225 #ypos-5 of hotspot ypos
@@ -326,7 +322,7 @@ screen wardrobe():
                 pass
 
             ## Robe Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+250,18,18) clicked Jump("her_robe_toggle")
                 if hermione_wear_robe:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+250 #ypos-5 of hotspot ypos
@@ -337,9 +333,9 @@ screen wardrobe():
                 pass
 
             ## Outfit Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+285,18,18) clicked Jump("her_outfit_toggle")
-                if not hermione_costume:
+                if not hermione_wear_outfit:
                     add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+285 #ypos-5 of hotspot ypos
                 else:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+285
@@ -351,7 +347,7 @@ screen wardrobe():
         if wardrobe_toggle_page == 2 or (wardrobe_toggle_page == 0 and wardrobe_page in [1,5]):
 
             ## Head Accessory Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120,18,18) clicked [SetVariable("toggle_obj","hat"), Jump("her_hat_toggle")]
                 if hermione_wear_hat:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115 #ypos-5 of hotspot ypos #2nd row Ypos+25
@@ -362,7 +358,7 @@ screen wardrobe():
                 pass
 
             ## Glasses Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+25,18,18) clicked [SetVariable("toggle_obj","glasses"), Jump("her_glasses_toggle")]
                 if hermione_wear_glasses:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+25 #ypos-5 of hotspot ypos
@@ -373,7 +369,7 @@ screen wardrobe():
                 pass
 
             ## Ears Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+50,18,18) clicked [SetVariable("toggle_obj","ears"), Jump("her_ears_toggle")]
                 if hermione_wear_ears:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+50 #ypos-5 of hotspot ypos
@@ -384,7 +380,7 @@ screen wardrobe():
                 pass
 
             ## Face (Makeup) Toggle ##
-            if whoring >= 0:
+            if her_whoring >= 0:
                 hotspot (667,120+75,18,18) clicked [SetVariable("toggle_obj","makeup"), Jump("her_makeup_toggle")]
                 if hermione_wear_makeup:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+75 #ypos-5 of hotspot ypos
@@ -395,7 +391,7 @@ screen wardrobe():
                 pass
 
             ## Piercings Toggle ##
-            if whoring >= 12:
+            if her_whoring >= 12:
                 hotspot (667,120+100,18,18) clicked [SetVariable("toggle_obj","piercings"), Jump("her_piercings_toggle")]
                 if hermione_wear_piercings:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+100 #ypos-5 of hotspot ypos
@@ -410,7 +406,7 @@ screen wardrobe():
                 text "{color=#858585}Piercings{/color}" xpos 688 ypos 124+100 size 10          #grayed out
 
             ## Tattoos Toggle ##
-            if whoring >= 6:
+            if her_whoring >= 6:
                 hotspot (667,120+125,18,18) clicked [SetVariable("toggle_obj","tattoos"), Jump("her_tattoos_toggle")]
                 if hermione_wear_tattoos:
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+125 #ypos-5 of hotspot ypos
@@ -436,7 +432,7 @@ screen wardrobe():
             text "No Pose" xpos 688 ypos 124 size 10
 
             ## Hold Book ##
-            if v_tutoring >= 1:
+            if her_tutoring >= 1:
                 hotspot (667,120+25,18,18) clicked [SetVariable("wr_her_action","hold_book"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "hold_book":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+25 #ypos-5 of hotspot ypos
@@ -451,7 +447,7 @@ screen wardrobe():
                 text "{color=#858585}Hold Book{/color}" xpos 688 ypos 124+25 size 10          #grayed out
 
             ## Lift Top ##
-            if whoring >= 9:
+            if her_whoring >= 9:
                 hotspot (667,120+50,18,18) clicked [SetVariable("wr_her_action","lift_top"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "lift_top":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+50 #ypos-5 of hotspot ypos #2nd row Ypos+25
@@ -466,7 +462,7 @@ screen wardrobe():
                 text "{color=#858585}Lift Top{/color}" xpos 688 ypos 124+50 size 10            #grayed out
 
             ## Lift Bottom ##
-            if whoring >= 6:
+            if her_whoring >= 6:
                 hotspot (667,120+75,18,18) clicked [SetVariable("wr_her_action","lift_skirt"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "lift_skirt":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+75 #ypos-5 of hotspot ypos
@@ -481,7 +477,7 @@ screen wardrobe():
                 text "{color=#858585}Lift Bottom{/color}" xpos 688 ypos 124+75 size 10          #grayed out
 
             ### FREE SPACE ###
-            #if whoring >= 20:
+            #if her_whoring >= 20:
             #    hotspot (667,120+100,18,18) clicked [SetVariable("wr_her_action","milk_breasts"), Jump("wardrobe_change_her_action")]
             #    if hermione_action == "milk_breasts":
             #        add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+100 #ypos-5 of hotspot ypos
@@ -496,7 +492,7 @@ screen wardrobe():
             #    text "{color=#858585}Milk Breasts{/color}" xpos 688 ypos 124+100 size 10          #grayed out
 
             ## Lift Breasts ##
-            if whoring >= 14:
+            if her_whoring >= 14:
                 hotspot (667,120+125,18,18) clicked [SetVariable("wr_her_action","lift_breasts"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "lift_breasts":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+125 #ypos-5 of hotspot ypos
@@ -511,7 +507,7 @@ screen wardrobe():
                 text "{color=#858585}Lift Breasts{/color}" xpos 688 ypos 124+125 size 10          #grayed out
 
             ## Hands Behind ##
-            if whoring >= 14:
+            if her_whoring >= 14:
                 hotspot (667,120+150,18,18) clicked [SetVariable("wr_her_action","hands_behind"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "hands_behind":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+150 #ypos-5 of hotspot ypos
@@ -526,7 +522,7 @@ screen wardrobe():
                 text "{color=#858585}Behind{/color}" xpos 688 ypos 124+150 size 10          #grayed out
 
             ## Covering ##
-            if whoring >= 11:
+            if her_whoring >= 11:
                 hotspot (667,120+175,18,18) clicked [SetVariable("wr_her_action","covering"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "covering":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+175 #ypos-5 of hotspot ypos
@@ -541,7 +537,7 @@ screen wardrobe():
                 text "{color=#858585}Covering{/color}" xpos 688 ypos 124+175 size 10          #grayed out
 
             ## Fingering ##
-            if whoring >= 17:
+            if her_whoring >= 17:
                 hotspot (667,120+200,18,18) clicked [SetVariable("wr_her_action","fingering"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "fingering":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+200 #ypos-5 of hotspot ypos
@@ -556,7 +552,7 @@ screen wardrobe():
                 text "{color=#858585}Fingering{/color}" xpos 688 ypos 124+200 size 10          #grayed out
 
             ## Pinch ##
-            if whoring >= 17:
+            if her_whoring >= 17:
                 hotspot (667,120+225,18,18) clicked [SetVariable("wr_her_action","pinch"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "pinch":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+225 #ypos-5 of hotspot ypos
@@ -571,7 +567,7 @@ screen wardrobe():
                 text "{color=#858585}Pinch{/color}" xpos 688 ypos 124+225 size 10          #grayed out
 
             ## Hands Cuffed ##
-            if whoring >= 20:
+            if her_whoring >= 20:
                 hotspot (667,120+250,18,18) clicked [SetVariable("wr_her_action","hands_cuffed"), Jump("wardrobe_change_her_action")]
                 if hermione_action == "hands_cuffed":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+250 #ypos-5 of hotspot ypos
@@ -586,7 +582,7 @@ screen wardrobe():
                 text "{color=#858585}Cuffed{/color}" xpos 688 ypos 124+250 size 10          #grayed out
 
             ## Strip Naked ##
-            if whoring >= 11:
+            if her_whoring >= 11:
                 hotspot (667+5,120+275,18,18) clicked [SetVariable("wr_her_action","naked"), Jump("wardrobe_change_her_action")]
                 if wr_her_action == "naked":
                     add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667+5 ypos 115+275 #ypos-5 of hotspot ypos
@@ -600,7 +596,7 @@ screen wardrobe():
                     add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667+5 ypos 115+275 #grayed out
                 text "{color=#858585}Strip{/color}" xpos 688+5 ypos 124+275 size 10          #grayed out
 
-        #Temporarily disables toggles for Susan/Astoria.
+        #Temporary. Disables toggles for Luna, Astoria, Susan, Cho, & Tonks.
         if wardrobe_toggle_page == 4:
             pass
 
@@ -624,7 +620,7 @@ screen wardrobe():
             #Makeup
             if active_girl in ["hermione"]:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_head_category",1),Show("wardrobe")]
-                add "interface/wardrobe/icons/items/red_lipstick.png" xpos 0+90 ypos 90 zoom 0.3
+                add "interface/wardrobe/icons/items/lipstick_red.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Makeup" xpos 76+90 ypos 140+75 size 10
             #Glasses
             if active_girl in ["hermione","luna"]:
@@ -637,13 +633,13 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/cat_ears.png" xpos -10+270 ypos 40 zoom 0.5
                 text "Ears" xpos 76+270 ypos 140+75 size 10
             #Hats
-            if active_girl in ["hermione","astoria"]:
+            if active_girl in ["hermione","astoria","tonks"]:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_head_category",4),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/witch_hat.png" xpos -40+360 ypos 15 zoom 0.6/scaleratio
                 text "Hats" xpos 76+360 ypos 140+75 size 10
 
             #Hair Color Palette
-            if wardrobe_head_category == 0 and active_girl in ["hermione"]: #Hair Color
+            if wardrobe_head_category == 0 and active_girl in ["hermione","tonks"]: #Hair Color
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_hair_color","1"), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 
@@ -682,7 +678,7 @@ screen wardrobe():
             #Makeup
             if wardrobe_head_category == 1:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_head_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/items/red_lipstick.png" xpos 0+90 ypos 90 zoom 0.3
+                add "interface/wardrobe/icons/items/lipstick_red.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Makeup" xpos 76+90 ypos 140+75 size 10
                 for i in range(0,len(wr_makeup)):
                     $ row = i // 5
@@ -747,7 +743,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_muggle.png" xpos 15+180 ypos 60 zoom 0.35
                 text "Muggle" xpos 76+180 ypos 140+75 size 10
             #Wicked
-            if active_girl in ["hermione"]:
+            if active_girl in ["hermione","tonks"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_tops_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_wicked.png" xpos 15+270 ypos 60 zoom 0.35
                 text "Wicked" xpos 76+270 ypos 140+75 size 10
@@ -844,12 +840,12 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms/bottoms_cheer.png" xpos 15+90 ypos 17 zoom 0.35
                 text "Cheerleader" xpos 76+90 ypos 140+75 size 10
             #Skirts
-            if active_girl in ["hermione","cho"]:
+            if active_girl in ["hermione","luna","cho","tonks"]:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",2),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms/bottoms_skirts.png" xpos 15+180 ypos 17 zoom 0.35
                 text "Skirts" xpos 76+180 ypos 140+75 size 10
             #Pants
-            if active_girl in ["hermione","luna","astoria","cho"]:
+            if active_girl in ["hermione","luna","astoria","cho","tonks"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms/bottoms_pants.png" xpos 15+270 ypos 17 zoom 0.35
                 text "Pants" xpos 76+270 ypos 140+75 size 10
@@ -859,7 +855,7 @@ screen wardrobe():
             #text "Misc." xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
-            if wardrobe_bottoms_category in [0,2,3] and active_girl in ["hermione"]: #Not available for cheerleader skirts!
+            if (wardrobe_bottoms_category in [0,2,3] and active_girl in ["hermione"]) or (wardrobe_bottoms_category in [0,2] and active_girl in ["luna","tonks"]): #Not available for cheerleader skirts!
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_bottoms_color","base"), SetVariable("update_wr_colors",True), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 
@@ -916,8 +912,12 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice",wardrobe_bottoms_color),SetVariable("skirt_choice",wr_bottoms_pants[i]), Jump("equip_bottom")]
-                    add "characters/"+str(active_girl)+"/clothes/bottoms/"+str(wardrobe_bottoms_color)+"/"+wr_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
+                    if active_girl in ["hermione"]: #Has recolored pants.
+                        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice",wardrobe_bottoms_color),SetVariable("skirt_choice",wr_bottoms_pants[i]), Jump("equip_bottom")]
+                        add "characters/"+str(active_girl)+"/clothes/bottoms/"+str(wardrobe_bottoms_color)+"/"+wr_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
+                    else: #Has no recolor version.
+                        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice","base"),SetVariable("skirt_choice",wr_bottoms_pants[i]), Jump("equip_bottom")]
+                        add "characters/"+str(active_girl)+"/clothes/bottoms/base/"+wr_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
 
             #Misc
             #if wardrobe_bottoms_category == 4:
@@ -937,7 +937,7 @@ screen wardrobe():
         if wardrobe_page == 4:
 
             #Neckwear
-            if active_girl in ["hermione","astoria","susan"]:
+            if active_girl in ["hermione","astoria","susan","tonks"]:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",0),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/neckwear.png" xpos 15 ypos 60 zoom 0.35
                 text "Neckwear" xpos 76 ypos 140+75 size 10
@@ -947,17 +947,17 @@ screen wardrobe():
                 add "images/store/29.png" xpos 0+90 ypos 90 zoom 0.3
                 text "Body Accs." xpos 76+90 ypos 140+75 size 10
             #Gloves
-            if active_girl in ["hermione","cho"]:
+            if active_girl in ["hermione","cho","tonks"]:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",2),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/gloves.png" xpos 15+180 ypos 30 zoom 0.35
                 text "Gloves" xpos 76+180 ypos 140+75 size 10
             #Stockings
-            if active_girl in ["hermione","luna","astoria","susan","cho"]:
+            if active_girl in ["hermione","luna","astoria","susan","cho","tonks"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",3),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos -85+270 ypos -195 zoom 0.7
+                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos 15+270 ypos 15 zoom 0.35
                 text "Stockings" xpos 76+270 ypos 140+75 size 10
             #Robes
-            if active_girl in ["hermione","astoria","cho"]:
+            if active_girl in ["hermione","astoria","cho","tonks"]:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",4),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/robes.png" xpos 45+360 ypos 75 zoom 0.25
                 text "Robes" xpos 76+360 ypos 140+75 size 10
@@ -1002,7 +1002,7 @@ screen wardrobe():
             #Stockings
             if wardrobe_stockings_category == 3:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos -85+270 ypos -195 zoom 0.7
+                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos 15+270 ypos 15 zoom 0.35
                 text "Stockings" xpos 76+270 ypos 140+75 size 10
                 for i in range(0,len(wr_stockings)):
                     $ row = i // 5
@@ -1021,7 +1021,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("robe_choice",wr_robes[i]),Jump("equip_robe")]
-                    add "characters/"+str(active_girl)+"/clothes/robe/base/"+str(wr_robes[i])+".png" xpos 45+(90*col) ypos 77+92+(92*row) zoom 0.25/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/robe/"+str(wr_robes[i])+".png" xpos 45+(90*col) ypos 77+92+(92*row) zoom 0.25/scaleratio
 
 
 ## Wardrobe Miscellaneous Accessories ##
@@ -1029,7 +1029,7 @@ screen wardrobe():
         if wardrobe_page == 5:
 
             #Potions
-            if active_girl in ["hermione"]:
+            if active_girl in ["hermione","tonks"]:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
                 add "images/store/32.png" xpos 0 ypos 90 zoom 0.3
                 text "Potions" xpos 76 ypos 140+75 size 10
@@ -1043,7 +1043,7 @@ screen wardrobe():
             #add "" xpos 0+180 ypos 90 zoom 0.3/scaleratio
             #text "" xpos 76+180 ypos 140+75 size 10
             #Piercings
-            if active_girl in ["hermione"]:
+            if active_girl in ["hermione","tonks"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/items/piercingB.png" xpos 0+270 ypos 90 zoom 0.3
                 text "Piercings" xpos 76+270 ypos 140+75 size 10
@@ -1138,14 +1138,14 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 47+icon_ypos_offset zoom 0.35
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10
             #Garterbelts
-            if active_girl in ["hermione","susan"]:
+            if active_girl in ["hermione"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_garterbelt.png" xpos 15+270 ypos 17 zoom 0.35
                 text "Garterbelts" xpos 76+270 ypos 140+75 size 10
             #Stockings
-            if active_girl in ["hermione","luna","astoria","susan","cho"]:
+            if active_girl in ["hermione","luna","astoria","susan","cho","tonks"]:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",4),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos -85+360 ypos -195 zoom 0.7
+                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos 15+360 ypos 15 zoom 0.35
                 text "Stockings" xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
@@ -1212,7 +1212,7 @@ screen wardrobe():
             #Stockings
             if wardrobe_underwear_category == 4:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos -85+360 ypos -195 zoom 0.7
+                add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/stockings.png" xpos 15+360 ypos 15 zoom 0.35
                 text "Stockings" xpos 76+360 ypos 140+75 size 10
                 for i in range(0,len(wr_stockings)):
                     $ row = i // 5
@@ -1417,7 +1417,7 @@ screen wardrobe():
                 if active_girl == "hermione":
 
                     #Collar Event
-                    if collar == 0 and whoring >= 24:
+                    if collar == 0 and her_whoring >= 24:
                         hotspot (75+270, 140+92, 83, 85) clicked [Jump("start_collar_event")]
                         add "characters/hermione/accessories/collars/collar_0.png" xpos -40+270 ypos 55+92 zoom 0.5/scaleratio
                         text "Collar Event" xpos 76+270 ypos 140+75+92 size 10

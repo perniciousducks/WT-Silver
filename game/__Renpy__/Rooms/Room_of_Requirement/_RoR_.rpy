@@ -2,10 +2,10 @@
 
 screen room_of_requirement:
     add "images/rooms/room_of_requirement/empty_room.png"
-    add "images/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
-    add "images/main_room/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
-    add "images/main_room/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
     zorder -1
     
 screen room_of_requirement_menu:
@@ -24,8 +24,8 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/main_room/door.png"
-        hover "images/main_room/door_hover.png"
+        idle "images/rooms/main_room/door.png"
+        hover "images/rooms/main_room/door_hover.png"
         action [Jump("leave_room_req")]
         
     imagebutton: # Cadle Fire left
@@ -34,8 +34,8 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/main_room/candle.png"
-        hover "images/main_room/candle.png"
+        idle "images/rooms/main_room/candle.png"
+        hover "images/rooms/main_room/candle.png"
         action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_2")]
         
     imagebutton: # Cadle Fire Right
@@ -44,8 +44,8 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/main_room/candleM.png"
-        hover "images/main_room/candleM.png"
+        idle "images/rooms/main_room/candleM.png"
+        hover "images/rooms/main_room/candleM.png"
         action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_1")]
     zorder -1
 
@@ -113,13 +113,13 @@ screen floor_7th_screen:
     add "images/rooms/room_of_requirement/corridor_edit.png"
     #add "images/rooms/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
     #add "flower_animation" xpos 830 ypos 160 zoom 0.60
-    add "images/main_room/candle.png" xpos 0 ypos 95
+    add "images/rooms/main_room/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
-    #add "images/main_room/candle.png" xpos 300 ypos 95
+    #add "images/rooms/main_room/candle.png" xpos 300 ypos 95
     #add "candle_fire_01" xpos 300 ypos 95
-    #add "images/main_room/candle.png" xpos 600 ypos 95
+    #add "images/rooms/main_room/candle.png" xpos 600 ypos 95
     #add "candle_fire_02" xpos 600 ypos 95
-    add "images/main_room/candleM.png" xpos 900 ypos 95
+    add "images/rooms/main_room/candleM.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
     add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
     add "fireplace_fire" xpos 575 ypos 60

@@ -14,6 +14,7 @@ label luna_init:
         $ luna_ypos              = 0
         $ luna_zorder            = 5
         $ luna_flip              = 1
+        $ use_luna_head          = False
 
         #Hair
         $ luna_hair              = "characters/luna/body/hair/hair_A_1_base.png"
@@ -23,14 +24,17 @@ label luna_init:
 
         #Face
         $ luna_mouth             = "characters/luna/face/mouth/base.png"
-        $ luna_eye               = "characters/luna/face/eye/base.png"
-        $ luna_eyebrow           = "characters/luna/face/eyebrow/base.png"
+        $ luna_eye               = "characters/luna/face/eyes/base.png"
+        $ luna_eyebrow           = "characters/luna/face/brow/base.png"
         $ luna_pupil             = "characters/luna/face/pupil/blue/mid.png"
         $ luna_pupil_color       = "blue"
 
         $ luna_cheeks            = "characters/luna/face/extras/cheeks_blank.png"
         $ luna_tears             = "characters/luna/face/extras/tears_blank.png"
         $ luna_extra             = "characters/luna/face/extras/blank.png"
+        $ luna_emote             = "characters/emotes/blank.png"
+
+        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Cum
         $ luna_cum               = 1
@@ -56,11 +60,8 @@ label luna_init:
         $ hermione_kneel_cock    = False
 
 
-    #Update 1.34
     if not hasattr(renpy.store,'lun_request_wear_top') or reset_persistants or reset_luna_content:
         label reset_luna_clothing:
-
-        #Clothes
 
         #Save State
         $ lun_request_wear_top              = True
@@ -113,6 +114,8 @@ label luna_init:
 
         $ luna_wear_outfit            = False
 
+
+
         #Top
         $ luna_top                 = "characters/luna/clothes/tops/base/top_1.png"
         $ lun_top                     = "top_1"
@@ -132,7 +135,7 @@ label luna_init:
         $ lun_panties                 = "panties_basic"
         $ lun_panties_color           = "base"
 
-        $ luna_onepiece            = "characters/luna/clothes/onepieces/base/blank.png"
+        $ luna_onepiece            = "characters/luna/clothes/onepieces/blank.png"
         $ lun_onepiece                = "blank"
         $ lun_onepiece_color          = "base"
 
@@ -157,7 +160,7 @@ label luna_init:
         $ lun_stockings               = "blank"
         $ lun_stockings_color         = "base"
 
-        $ luna_robe                = "characters/luna/clothes/robe/base/blank.png"
+        $ luna_robe                = "characters/luna/clothes/robe/blank.png"
         $ lun_robe                    = "blank"
         $ lun_robe_color              = "base"
 
@@ -176,6 +179,11 @@ label luna_init:
         $ luna_ears                = "characters/luna/accessories/ears/blank.png"
         $ lun_ears                    = "blank"
 
+        #Outfits
+        $ luna_outfit_GLBL = None
+        $ luna_temp_outfit = None
+
+
 
     # Luna Lists
     $ luna_arms_up_list  = ["top_cheer_r",
@@ -191,33 +199,34 @@ label luna_progress_init:
     # Update 1.3
     if not hasattr(renpy.store,'luna_known') or reset_persistants or reset_luna_content:
 
+        #Stats
+        $ lun_whoring = 0
+        $ lun_mad = 0
+
+        $ luna_gold = 0
+        $ lun_skirt_level = 1
+        $ lun_top_level = 1
+
+        $ lun_dom = 0
+        $ lun_sub = 0
+        $ lun_corruption = 0
+        $ lun_arousal = 0
+
+        #Flags
         $ hat_known = False
         $ luna_known = False
         $ luna_busy = False
         $ luna_unlocked = False
-        $ l_genie_name = "Old man"
-        $ luna_name = "Miss Lovegood"
+        $ luna_wardrobe_unlocked = False
 
-        $ luna_dom = 0
-        $ luna_sub = 0
-        $ luna_gold = 0
-        $ luna_skirt_level = 1
-        $ luna_top_level = 1
-        $ luna_corruption = 0
-        $ luna_arousal = 0
-
-        $ luna_reverted = False
-        $ luna_addicted = False
         $ luna_herm_talk = False
-
-    # Update 1.33
-    if not hasattr(renpy.store,'days_to_luna') or reset_persistants or reset_luna_content:
+        $ lun_reverted = False
+        $ lun_addicted = False
 
         $ days_to_luna = 0
 
-    # Update 1.34
-    if not hasattr(renpy.store,'luna_wardrobe_unlocked') or reset_persistants or reset_luna_content:
-
-        $ luna_wardrobe_unlocked = False
+        #Names
+        $ lun_genie_name = "Old man"
+        $ luna_name = "Miss Lovegood"
 
     return

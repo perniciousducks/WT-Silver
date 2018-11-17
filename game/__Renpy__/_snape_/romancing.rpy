@@ -18,7 +18,7 @@ label date_with_snape_01:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -45,7 +45,7 @@ label date_with_snape_02:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -70,7 +70,7 @@ label date_with_snape_03:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how many points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how many points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -103,7 +103,7 @@ label date_with_snape_04:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -139,7 +139,7 @@ label date_with_snape_05:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -168,7 +168,7 @@ label date_with_snape_06:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -206,7 +206,7 @@ label date_with_snape_07:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -237,7 +237,7 @@ label date_with_snape_08:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -276,7 +276,7 @@ label date_with_snape_09:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -318,7 +318,7 @@ label date_with_snape_10:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -348,7 +348,7 @@ label date_with_snape_11:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -385,7 +385,7 @@ label date_with_snape_12:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -417,7 +417,7 @@ label date_with_snape_13:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -450,7 +450,7 @@ label date_with_snape_14:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
     return
@@ -497,10 +497,10 @@ label date_with_snape_15:
     call sly_plus
     call hide_blktone
 
-    $ snapes_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
+    $ sna_support += 1 #Controls how much points is awarded to SLYTHERIN daily.
     $ snape_events += 1 #Makes sure this event will happen only once. Also triggers next event with Snape.
 
-    $ sfmax = True # Turns TRUE when friendship with Snape been maxed out.
+    $ sna_friendship_maxed = True # Turns TRUE when friendship with Snape been maxed out.
 
     return
 

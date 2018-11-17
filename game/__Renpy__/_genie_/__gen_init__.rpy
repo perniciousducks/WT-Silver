@@ -4,13 +4,14 @@ label genie_init:
 
     #Genie
     if not hasattr(renpy.store,'genie_flip') or reset_persistants:
-        label reset_genie_init:
+        label reset_genie_base:
 
         #Sprite
         $ genie_xpos = 200
         $ genie_ypos = 0
         $ genie_zorder = 4
         $ genie_flip = 1
+        $ use_genie_head      = False
 
         $ genie_base = "characters/genie/base/base.png"
         $ genie_face = "characters/genie/face/base.png"

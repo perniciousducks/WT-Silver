@@ -1,4 +1,4 @@
-init python:   
+init python:
         ### Weather Types ###
 
         ## Day ##
@@ -28,11 +28,7 @@ init python:
             raining = True
             weather_animations.append("rain")
             renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-        #renpy.show_screen("weather") #Please do not fucking add shit like this! It fucks up the transitions.
-    
-    def hide_weather():
-        renpy.hide_screen("weather")
-    
+
 init -2:
     transform cloud_move: #http://www.renpy.org/wiki/atl
         xpos 520
@@ -50,7 +46,7 @@ init -2:
         linear 15.0 xpos 280 # linear
         pause 7
         repeat
-    
+
     transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
         xpos 520
         choice:
@@ -79,59 +75,59 @@ init -2:
         linear 50.0 xpos 280 # linear
         pause 2
         repeat
-    
+
 image rain: #Rain.
-    "images/main_room/weather/rain_01.png"
+    "images/rooms/main_room/weather/rain_01.png"
     pause.1
-    "images/main_room/weather/rain_02.png"
+    "images/rooms/main_room/weather/rain_02.png"
     pause.1
-    "images/main_room/weather/rain_03.png"
+    "images/rooms/main_room/weather/rain_03.png"
     pause.1
     repeat
 
 image lightning: #Lightening during rain behind the window.
     pause 20
-    "images/main_room/weather/lightining_01.png"
+    "images/rooms/main_room/weather/lightining_01.png"
     pause.1
-    "images/main_room/weather/lightining_02.png"
+    "images/rooms/main_room/weather/lightining_02.png"
     pause.1
-    "images/main_room/weather/lightining_03.png"
+    "images/rooms/main_room/weather/lightining_03.png"
     pause.1
-    "images/main_room/weather/lightining_04.png"
+    "images/rooms/main_room/weather/lightining_04.png"
     pause.1
-    "images/main_room/weather/lightining_05.png"
+    "images/rooms/main_room/weather/lightining_05.png"
     pause.1
-    "images/main_room/weather/lightining_06.png"
+    "images/rooms/main_room/weather/lightining_06.png"
     pause.1
-    "images/main_room/weather/lightining_05.png"
+    "images/rooms/main_room/weather/lightining_05.png"
     pause.1
-    "images/main_room/weather/lightining_06.png"
+    "images/rooms/main_room/weather/lightining_06.png"
     pause.1
-    "images/main_room/weather/lightining_05.png"
+    "images/rooms/main_room/weather/lightining_05.png"
     pause 20
     repeat
-    
+
 screen weather:
     zorder -1
     if daytime:
         if weather_gen < 4:# (cloud across sky)
-            add "images/main_room/weather/sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-            add "images/main_room/weather/cloud_small.png" at cloud_move
+            add "images/rooms/main_room/weather/sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
+            add "images/rooms/main_room/weather/cloud_small.png" at cloud_move
         if weather_gen >= 4:# (heavy clouds)
-            add "images/main_room/weather/cloudy.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
+            add "images/rooms/main_room/weather/cloudy.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
     else:
         ## Weather Types
         if weather_gen == 1:# (clear sky)
-            add "images/main_room/weather/night_sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
+            add "images/rooms/main_room/weather/night_sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
         if weather_gen == 2:# (Clear sky with moon)
-            add "images/main_room/weather/night_sky_02.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
+            add "images/rooms/main_room/weather/night_sky_02.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
         if weather_gen == 3:# (clouds across moon)
-            add "images/main_room/weather/night_sky_02.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-            add "images/main_room/weather/night_cloud_02.png" at cloud_night_move_01
-            add "images/main_room/weather/night_cloud_01.png" at cloud_night_move_02
-            add "images/main_room/weather/night_cloud_03.png" at cloud_night_move_03
+            add "images/rooms/main_room/weather/night_sky_02.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
+            add "images/rooms/main_room/weather/night_cloud_02.png" at cloud_night_move_01
+            add "images/rooms/main_room/weather/night_cloud_01.png" at cloud_night_move_02
+            add "images/rooms/main_room/weather/night_cloud_03.png" at cloud_night_move_03
         if weather_gen >= 4:# (heavy clouds)
-            add "images/main_room/weather/night_sky_04.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
+            add "images/rooms/main_room/weather/night_sky_04.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
 
     for img in weather_animations:
         add img at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")

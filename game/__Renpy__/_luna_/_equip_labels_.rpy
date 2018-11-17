@@ -11,11 +11,11 @@ label update_lun_uniform:
     $ luna_top            = "characters/luna/clothes/tops/base/"+str(lun_top)+".png"
 
     #Bottom
-    $ luna_bottom         = "characters/luna/clothes/bottoms/base/"+str(lun_bottom)+".png"
+    $ luna_bottom         = "characters/luna/clothes/bottoms/"+str(lun_bottom_color)+"/"+str(lun_bottom)+".png"
 
     #Underwear
     $ luna_bra            = "characters/luna/clothes/underwear/base/"+str(lun_bra)+".png"
-    $ luna_onepiece       = "characters/luna/clothes/onepieces/base/"+str(lun_onepiece)+".png"
+    $ luna_onepiece       = "characters/luna/clothes/onepieces/"+str(lun_onepiece)+".png"
     $ luna_panties        = "characters/luna/clothes/underwear/base/"+str(lun_panties)+".png"
     $ luna_garterbelt     = "characters/luna/clothes/underwear/base/"+str(lun_garterbelt)+".png"
 
@@ -41,7 +41,6 @@ label set_lun_hair(hair=None,color=None):
         $ lun_hair_color   = color
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -58,7 +57,6 @@ label set_lun_hat(hat=""):
         $ lun_hat = hat
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -75,24 +73,25 @@ label set_lun_top(top=""):
         $ lun_top = top
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
 #Bottom equip.
-label set_lun_bottom(bottom=""):
+label set_lun_bottom(bottom="", color=""):
     hide screen luna_main
 
-    if luna_wear_bottom and lun_bottom == bottom:
+    if luna_wear_bottom and lun_bottom == bottom and lun_bottom_color == color:
         $ lun_request_wear_bottom = False
         $ luna_wear_bottom = False
     else:
+        if bottom in ["skirt_cheer_r","pants_pyjama"]: #Those have no recolors!
+            $ color = "base"
         $ lun_request_wear_bottom = True
         $ luna_wear_bottom = True
         $ lun_bottom = bottom
+        $ lun_bottom_color = color
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -101,7 +100,7 @@ label set_lun_bra(bra=""):
     hide screen luna_main
 
     if luna_wear_bra and lun_bra == bra:
-        if luna_corruption > 8:
+        if lun_corruption > 8:
             $ lun_request_wear_bra = False
             $ luna_wear_bra = False
         else:
@@ -112,7 +111,6 @@ label set_lun_bra(bra=""):
         $ lun_bra = bra
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -129,7 +127,6 @@ label set_lun_onepiece(onepiece=""):
         $ lun_onepiece = onepiece
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -138,7 +135,7 @@ label set_lun_panties(panties=""):
     hide screen luna_main
 
     if luna_wear_panties and lun_panties == panties:
-        if luna_corruption > 8:
+        if lun_corruption > 8:
             $ lun_request_wear_panties = False
             $ luna_wear_panties = False
         else:
@@ -149,7 +146,6 @@ label set_lun_panties(panties=""):
         $ lun_panties = panties
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -166,7 +162,6 @@ label set_lun_garterbelt(garter=""):
         $ lun_garterbelt = garter
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -183,7 +178,6 @@ label set_lun_neckwear(neck=""):
         $ lun_neckwear = neck
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -200,7 +194,6 @@ label set_lun_stockings(stockings=""):
         $ lun_stockings = stockings
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -217,7 +210,6 @@ label set_lun_robe(robe=""):
         $ lun_robe = robe
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -234,7 +226,6 @@ label set_lun_glasses(glasses=""):
         $ lun_glasses = glasses
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -251,7 +242,6 @@ label set_lun_ears(ears=""):
         $ lun_ears = ears
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -288,7 +278,6 @@ label luna_outfit(outfit):
 
     call load_luna_clothing_saves
     call update_lun_uniform
-    show screen luna_main
 
     return
 

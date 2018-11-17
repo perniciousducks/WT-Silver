@@ -24,11 +24,12 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
     call her_main("Of course...","base","base")
     m "After I cum on you...."
 
-    if whoring < 10:
+    if her_whoring < 9:
         jump too_much
-    elif whoring < 15:
+
+    elif her_whoring < 15:
         jump hg_ps_WearMyCum_Scene_1
-    elif whoring < 20:
+    elif her_whoring < 21:
         jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 2
     else:
         jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 3
@@ -80,41 +81,41 @@ label hg_ps_WearMyCum_Scene_1:
     call hide_blkfade
     call ctc
 
-    call her_head("Why are you making me do this, [genie_name]?","angry","base")
+    call her_main("Why are you making me do this, [genie_name]?","angry","base",ypos="head")
     m "What do you mean?"
-    call her_head("Why are you making me jerk you off...","angry","down_raised")
-    call her_head("So that you can cum on me...","soft","ahegao")
-    call her_head("And make me wear it around the school?","open","worriedCl")
+    call her_main("Why are you making me jerk you off...","angry","down_raised")
+    call her_main("So that you can cum on me...","soft","ahegao")
+    call her_main("And make me wear it around the school?","open","worriedCl")
     m "I'm not making you do anything."
     m "You're doing this because I asked you to."
-    call her_head("But if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
+    call her_main("But if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
     m "And?"
-    call her_head("Harry and Ron will be so dissapointed...","angry","worried")
+    call her_main("Harry and Ron will be so dissapointed...","angry","worried")
     m "So that's why you are doing this? For those two boys?"
-    call her_head("Sort of... I'm not sure that they'd be too upset though.","annoyed","worriedL")
+    call her_main("Sort of... I'm not sure that they'd be too upset though.","annoyed","worriedL")
     m "Are you sure it's not because you love it."
-    call her_head("What?","upset","wink")
+    call her_main("What?","upset","wink")
     m "Coming in here whenever I summon you."
     m "Doing whatever I tell you, whenever I tell you."
     m "Doing slutty things in front of your peers because I tell you."
-    call her_head("...","disgust","down_raised")
+    call her_main("...","disgust","down_raised")
     m "I'll tell you what, I'll make things interesting."
     m "So long as I cum on you and you wear it around classes today, Gryffindor will get 50 points."
-    call her_head("How does that make it interesting?","disgust","glance")
+    call her_main("How does that make it interesting?","disgust","glance")
     m "Because I'll let you choose where I cum."
     call nar(">You fell her hands tense around your cock.")
-    call her_head("You're letting me choose?","smile","baseL")
+    call her_main("You're letting me choose?","smile","baseL")
     m "Anywhere, as long as it's on you. It can be your shoes for all I care."
-    call her_head("Ok...","base","squint")
+    call her_main("Ok...","base","squint")
     m "Well hurry up [hermione_name], classes will start soon."
     call nar(">She starts jerking your cock with renewed vigour.")
     m "So where are you going to hide it?"
-    call her_head("I'm not sure.","upset","wink")
-    call her_head("I'm trying to think of somewhere no one will be able to see it.","upset","wink")
+    call her_main("I'm not sure.","upset","wink")
+    call her_main("I'm trying to think of somewhere no one will be able to see it.","upset","wink")
     m "Well you better think of some place soon!"
-    call her_head("Why's that?","angry","wink")
+    call her_main("Why's that?","angry","wink")
     g9 "Because I'm about to cum!"
-    call her_head("Already? Where should I-","angry","wide")
+    call her_main("Already? Where should I-","angry","wide")
 
     menu:
         "-Stay Silent-": # Cum under shirt
@@ -129,11 +130,11 @@ label hg_ps_WearMyCum_Scene_1:
             call cum_block
             pause.5
 
-            call her_head("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
 
             $ aftersperm = True
 
-            call her_main("Well, this shouldn't be too bad...","upset","wink")
+            call her_main("Well, this shouldn't be too bad...","upset","wink",xpos="right",ypos="base")
             m "I'm sure no one will notice."
             call her_main("They better not.","angry","angry")
 
@@ -142,7 +143,7 @@ label hg_ps_WearMyCum_Scene_1:
 
             call nar(">Hermionely keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready whore, here it comes!"
-            call her_head("Wait, where am I supposed to-","angry","worried")
+            call her_main("Wait, where am I supposed to-","angry","worried",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -156,7 +157,7 @@ label hg_ps_WearMyCum_Scene_1:
             $ u_sperm = "characters/hermione/face/auto_11.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
             m "That's it, all over you slut."
             call her_main("...","annoyed","down")
 
@@ -176,9 +177,9 @@ label hg_ps_WearMyCum_Scene_1:
 
             call nar(">Hermione bends down and place your cock in front of her face.")
             m "Get ready slut, here it comes!"
-            call her_head("...","scream","wide_stare")
+            call her_main("...","scream","wide_stare",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
-            call her_head("I can't...","clench","down_raised")
+            call her_main("I can't...","clench","down_raised")
 
             call nar(">Hermione moves your cock away from her face at the last second.","start")
             call nar(">You erupt over the top of her head, covering her hair in your spunk.","end")
@@ -192,7 +193,7 @@ label hg_ps_WearMyCum_Scene_1:
             $ u_sperm = "characters/hermione/face/auto_12.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("..............","normal","worriedCl")
 
@@ -282,45 +283,45 @@ label hg_ps_WearMyCum_Scene_2:
     call hide_blkfade
     call ctc
 
-    call her_head("Why are you asking me to do this [genie_name]?","angry","base")
+    call her_main("Why are you asking me to do this [genie_name]?","angry","base",ypos="head")
     m "This question again?"
     m "Let me answer your question with one of my own."
-    call her_head("Ok...","angry","down_raised")
+    call her_main("Ok...","angry","down_raised")
     m "Why are you jerking me off [hermione_name]?"
-    call her_head("Because you asked me to...","soft","ahegao")
+    call her_main("Because you asked me to...","soft","ahegao")
     m "And is that the only reason?"
-    call her_head("No...","open","worriedCl")
+    call her_main("No...","open","worriedCl")
     m "Are you sure?"
     m "What is your other reason then?"
-    call her_head("if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
+    call her_main("if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
     m "That lie again?"
-    call her_head("It's not a lie...","angry","worried")
+    call her_main("It's not a lie...","angry","worried")
     m "So you'd rather win the house cup than make me happy?"
-    call her_head("Maybe... Can't I do both?","annoyed","worriedL")
+    call her_main("Maybe... Can't I do both?","annoyed","worriedL")
     m "You can..."
-    call her_head("Good","base","squint")
+    call her_main("Good","base","squint")
     m "But I want you to be honest."
     m "So I'm going to give you a choice."
     m "You can stop jerking me off right now, leave the room and I'll give you the 80 points. However, I'll be very upset."
-    call her_head("or?","open","base")
+    call her_main("or?","open","base")
     m "Or, you can keep jerking me off, wear my cum around the school and get no points."
-    call her_head("NO POINTS?","scream","worriedCl")
+    call her_main("NO POINTS?","scream","worriedCl")
     m "None. You will make an old man very happy though."
-    call her_head("Can't you just pay me for wearing your cum?","angry","worriedCl",emote="05")
+    call her_main("Can't you just pay me for wearing your cum?","angry","worriedCl",emote="05")
     m "No."
     call nar(">You fell her hands tense around your cock.")
-    call her_head("You're making me choose? Between getting 80 points for doing nothing.","annoyed","annoyed")
-    call her_head("Or getting paid nothing for wearing your cum around the school.","angry","annoyed",emote="01")
+    call her_main("You're making me choose? Between getting 80 points for doing nothing.","annoyed","annoyed")
+    call her_main("Or getting paid nothing for wearing your cum around the school.","angry","annoyed",emote="01")
     m "Indeed I am [hermione_name]."
-    call her_head("{size=-5}Ok...{/size}","disgust","down_raised")
+    call her_main("{size=-5}Ok...{/size}","disgust","down_raised")
     m "Well hurry up [hermione_name], classes will start soon, best make your decision."
     call nar(">She starts jerking your cock with renewed vigour.")
-    call her_head("...","annoyed","suspicious")
-    call her_head("You better appreciate this.","annoyed","angryL")
+    call her_main("...","annoyed","suspicious")
+    call her_main("You better appreciate this.","annoyed","angryL")
     m "Oh I'm appreciating it!"
-    call her_head("Really?","open","base")
+    call her_main("Really?","open","base")
     g9 "You're about to see how much I'm appreciating it!"
-    call her_head("What, Already? Where should I-","angry","wide")
+    call her_main("What, Already? Where should I-","angry","wide")
 
     menu:
         "-Stay Silent-": # Legs
@@ -328,7 +329,7 @@ label hg_ps_WearMyCum_Scene_2:
 
             call nar(">Hermionely keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready slut, here it comes!"
-            call her_head("Wait, where am I supposed to-","angry","worried")
+            call her_main("Wait, where am I supposed to-","angry","worried",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -340,7 +341,7 @@ label hg_ps_WearMyCum_Scene_2:
             $ u_sperm = "characters/hermione/face/auto_13.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
 
             m "That's it, all over your milky thighs."
             call her_main("...","annoyed","down")
@@ -371,7 +372,7 @@ label hg_ps_WearMyCum_Scene_2:
 
             call nar(">Hermionely keeps jerking your cock, her eyes focused intently on it.")
             g4 "Get ready whore, here i come!"
-            call her_head("...","angry","worried")
+            call her_main("...","angry","worried",ypos="head")
             g9 "{size=+5}ARGH! YES!!! RIGHT ON THOSE TITS!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -383,7 +384,7 @@ label hg_ps_WearMyCum_Scene_2:
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
             m "That's it, all over you slut."
             call her_main("...","annoyed","down")
 
@@ -402,9 +403,9 @@ label hg_ps_WearMyCum_Scene_2:
 
             call nar(">Hermione bends down and place your cock in front of her face.")
             m "Get ready slut, here it comes!"
-            call her_head("...","scream","wide_stare")
+            call her_main("...","scream","wide_stare",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
-            call her_head("...","clench","down_raised")
+            call her_main("...","clench","down_raised")
             call nar(">You erupt onto her face, dousing her in your spunk.")
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -416,7 +417,7 @@ label hg_ps_WearMyCum_Scene_2:
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("..............","normal","worriedCl")
 
@@ -472,17 +473,13 @@ label hg_ps_WearMyCum_Scene_3:
     call her_main("I'll even do it for free if that would make you happier!","base","ahegao_raised")
     m "really?"
     m "Well let's get started then!"
+
     #Start jerk off chibis
     hide screen hermione_main
     hide screen bld1
     with d3
-    $ walk_xpos=500 #Animation of walking chibi. (From)
-    $ walk_xpos2=280 #Coordinates of it's movement. (To)
-    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01
-    pause.1
-    show screen blkfade
-    with Dissolve(1)
+
+    call her_walk_desk_blkfade
     pause.3
 
     hide screen genie
@@ -493,61 +490,56 @@ label hg_ps_WearMyCum_Scene_3:
     show screen g_c_u
     show screen desk_02
     hide screen blktone
-    hide screen hermione_walk_01
     hide screen blkfade
-    $ hermione_head_ypos = 235
+    with d3
+
+    call bld
     m "Gods, you're good at this, [hermione_name]!"
-    call her_head("Thank you... I've been thinking about what you asked me last time...","soft","ahegao")
+    call her_main("Thank you... I've been thinking about what you asked me last time...","soft","ahegao",ypos="head")
     m "Last time?"
-    call her_head("about why I do this... sell you these sort of favours.","upset","closed")
-    call her_head("At the start it was just to get points, so that \'gryffindor\' could win the house cup...","angry","wink")
-    call her_head("but lately...","base","down")
-    call her_head("...it’s been more than that... now I do it to make you happy, [genie_name].","base","glance")
-    call her_head("Because making you happy, makes me happy...","base","suspicious")
+    call her_main("about why I do this... sell you these sort of favours.","upset","closed")
+    call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...","angry","wink")
+    call her_main("but lately...","base","down")
+    call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].","base","glance")
+    call her_main("Because making you happy, makes me happy...","base","suspicious")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
-    call her_head("Oh! Of course, [genie_name]...","open","worriedCl")
-    call her_head("Do you need some extra encouragement?","open","closed")
+    call her_main("Oh! Of course, [genie_name]...","open","worriedCl")
+    call her_main("Do you need some extra encouragement?","open","closed")
     m "it would help..."
-    call her_head("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","base","down")
-    call her_head("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","grin","ahegao")
-    call her_head("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.”","grin","dead")
-    call her_head("not just A slut... a cumslut...","soft","ahegao")
-    call her_head("Your {image=textheart}cum{image=textheart}slut...","silly","ahegao")
+    call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","base","down")
+    call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","grin","ahegao")
+    call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.”","grin","dead")
+    call her_main("not just A slut... a cumslut...","soft","ahegao")
+    call her_main("Your {image=textheart}cum{image=textheart}slut...","silly","ahegao")
     g9 "That did it slut!"
     g4 "HERE IT COMES!!!"
-    call her_head("Shoot it wherever you want [genie_name]...","open_wide_tongue","ahegao")
+    call her_main("Shoot it wherever you want [genie_name]...","open_wide_tongue","ahegao")
     menu:
         "\"take it on your tits!\"": # Cum on shirt front
             $ cum_location = 7
-            call her_head("Please cover my tits with your sticky cum! I need it, [genie_name]!","grin","ahegao")
+            call her_main("Please cover my tits with your sticky cum! I need it, [genie_name]!","grin","ahegao",ypos="head")
             ">Hermionely keeps jerking your cock, her eyes focused intently on it."
             g4 "Get ready whore, here i come!"
-            call her_head("...","silly","dead")
+            call her_main("...","silly","dead")
             ">Hermione leans forward, lining up her tits directly with your cock."
             g9 "{size=+5}ARGH! YES!!! RIGHT in between your TITS!{/size}"
-            show screen white
-            pause.1
-            hide screen white
-            pause.2
-            show screen white
-            pause .1
-            hide screen white
-            with hpunch
+
+            call cum_block
+
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
             $ uni_sperm = True
-            call her_main("{image=textheart}{image=textheart}{image=textheart}","base","down")
+
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","base","down",xpos="right",ypos="base")
             $ genie_chibi_xpos = 60 #-185 behind the desk.
             $ genie_chibi_ypos = 10
             $ g_c_u_pic = "on_shirt_cum_ani"
             hide screen blkfade
-            with d3
-            show screen ctc
             hide screen bld1
             with d3
-            pause
-            show screen bld1
-            with d3
+            call ctc
+
+            call bld
             m "That's it, all over you slut."
             call her_main("......","soft","ahegao")
             pause
@@ -560,18 +552,13 @@ label hg_ps_WearMyCum_Scene_3:
             $ cum_location = 8
             ">Hermione bends down and place your cock in front of her face."
             m "Get ready slut, here it comes!"
-            call her_head("Please give it to me! I need it, [genie_name]!","grin","ahegao")
+            call her_main("Please give it to me! I need it, [genie_name]!","grin","ahegao",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
-            call her_head("...","open_wide_tongue","ahegao")
+            call her_main("...","open_wide_tongue","ahegao")
             ">You erupt onto her face, dousing her in your thick spunk."
-            show screen white
-            pause.1
-            hide screen white
-            pause.2
-            show screen white
-            pause .1
-            hide screen white
-            with hpunch
+
+            call cum_block
+
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
             $ uni_sperm = True
@@ -579,42 +566,32 @@ label hg_ps_WearMyCum_Scene_3:
             $ genie_chibi_ypos = 10
             $ g_c_u_pic = "on_shirt_cum_ani"
             hide screen blkfade
-            with d3
-            show screen ctc
             hide screen bld1
             with d3
-            pause
-            show screen bld1
-            with d3
-            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao")
+            call ctc
+
+            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("me too...","normal","worriedCl")
-    show screen hermione_stand
-    hide screen chair_left
-    hide screen desk_02
-    show screen genie
-    hide screen g_c_u
-    $ her_head_ypos = her_head_tits
+
+    show screen blkfade
+    with d3
+
+    call gen_chibi("sit_behind_desk")
     hide screen blkfade
     with d5
+
     ">You tuck your cock back into your robe."
     m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
-    call her_main("of course [genie_name]...","soft","ahegao")
+    call her_main("of course [genie_name]...","soft","ahegao",xpos="right",ypos="base")
     call her_main("(I can't wait to see the look on peoples faces...)","grin","dead")
 
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen ctc
-    hide screen chair_left
-    hide screen desk_02
-    show screen genie
-    show screen bld1
-    $ hermione_chibi_xpos = 500 #Near the desk.
-    $ hermione_chibi_ypos = 250 #Default: 250
-    show screen hermione_blink #Hermione stands still.
-    pause.1
+    call her_chibi("stand","desk","base")
     hide screen blkfade
+    hide screen bld1
     with d3
 
     jump end_hg_pf

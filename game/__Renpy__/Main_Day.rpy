@@ -1,16 +1,26 @@
 
-###DAY STARTS HERE###<<<<<<<<<<<<<<<<<<<-----------------------------------------------------------------------------------###
-###========================================================================================================================###
+
+#Day Start.
+
 label day_start:
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY THEME
+    show screen blkfade
+
 #    $ renpy.set_style_preference("dialog", "Day")
 
+$ daytime = True #True when it is daytime. Turns False during nighttime.
+$ interface_color = "gold"
+
+$ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
+$ save_name = temp_name
+
+
+
 ### RESETING STUFF ###
+call room(hide_screens=True)
 
-
-call gen_chibi("hide")
-call her_chibi("hide")
-call sna_chibi("hide")
+call reset_day_flags
+call reset_day_and_night_flags
 
 $ chitchated_with_her = False
 $ chitchated_with_astoria = False
@@ -18,22 +28,16 @@ $ chitchated_with_susan = False
 $ chitchated_with_snape = False
 $ chitchated_with_tonks = False
 
-$ gifted    = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
-$ searched  = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
-$ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
-$ save_name = temp_name
 
 
 
 #Hermione Daily Flags.
-$ hermione_busy = False
+call reset_hermione
+$ gifted    = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
 $ hermione_door_event_happened = False
-call reset_hermione_main
 $ flip = False
 $ no_blinking   = False #When True - blinking animation is not displayed.
-$ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ uni_sperm     = False
-$ hermione_main_zorder = 5 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
+$ hermione_busy = False
 
 if hermione_expand_breasts_counter != 0:
     $ hermione_expand_breasts_counter -= 1
@@ -45,26 +49,27 @@ if hermione_expand_ass_counter != 0:
 else:
     $ hermione_expand_ass = False
 
-
 #Luna Daily Flags.
-$ luna_busy = False
+call reset_luna
 $ days_to_luna-= 1
+$ luna_busy = False
 
 #Astoria Daily Flags.
+call update_astoria
 $ astoria_busy = False
 
 #Susan Daily Flags.
+call update_susan
 $ susan_busy = False
 if susan_imperio_counter > 0:
     $ susan_imperio_counter -= 1            #Removes 1 at each new day.
     $ susan_imperio_influence = True
     if susan_imperio_counter <= 0:
         $ susan_imperio_influence = False
-        $ reset_susans_wardrobe = True
-        call susan_init
-        $ reset_susans_wardrobe = False
+        call reset_susan_clothing
 
 #Cho Daily Flags.
+call update_cho
 $ cho_busy = False
 if cho_known:
     $ days_since_cho += 1
@@ -72,30 +77,24 @@ if cho_quidd:
     $ days_since_quidd += 1
 
 #Tonks Daily Flags.
+call update_tonks
 $ tonks_busy = False
 
 #Snape Daily Flags.
+call update_snape
 $ snape_busy = False
 
+#Genie Reset.
+call update_genie
 
 
-$ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
-
-stop bg_sounds #Stops playing the fire SFX.
-stop weather #Stops playing the rain SFX.
-
-hide screen notes #A bunch of notes poping out with a "win" sound effect.
-hide screen phoenix_food
-hide screen done_reading
-hide screen done_reading_near_fire
-hide screen fireplace_glow
-hide screen bld1
-hide screen blktone
-hide screen blkfade
 
 
-if whoring >= 12 and not touched_by_boy and not force_unlock_pub_favors: #Turns true if sent Hermione to get touched by a boy at least once.
-    $ lock_public_favors = True #Turns True if reached whoring level 05 while public event "Touched by boy" never attempted. Locks public events.
+
+
+
+if her_whoring >= 12 and not touched_by_boy and not force_unlock_pub_favors: #Turns true if sent Hermione to get touched by a boy at least once.
+    $ lock_public_favors = True #Turns True if reached her_whoring level 05 while public event "Touched by boy" never attempted. Locks public events.
 else:
     $ lock_public_favors = False
 
@@ -138,15 +137,8 @@ else: #Normal (2) & hardcore (3) difficulty
 
 
 scene black
-hide screen main_room
-hide screen weather
-
-$ daytime = True #True when it is daytime. Turns False during nighttime.
-$ interface_color = "gold"
 
 
-$ fire_in_fireplace = False
-hide screen fireplace_fire
 
 
 ### DAILY COUNTERS ###
@@ -155,11 +147,11 @@ $ days_without_an_event +=1
 if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
     $ day_of_week = 0
     if finished_report >= 1:
-        $ got_paycheck = True #When TRUE the paycheck is in the mail. Can't do paper work.
-        $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
-        #$ got_mail = True comented out because being replaced with $ letters += 1
+        $ letter_paperwork_report_OBJ.mailLetter()
 
 $ day_of_week += 1
+
+$ day +=1
 
 ### MOOD ###
 if game_difficulty <= 1:   # Easy difficulty
@@ -182,52 +174,27 @@ if cho_mad < 0:
 
 
 
+### WEATHER
+stop bg_sounds #Stops playing the fire SFX.
+stop weather #Stops playing the rain SFX.
+if day != 1:
+    $ weather_gen = renpy.random.randint(1, 6)
+$ show_weather()
+
+
+
+# Mail
 if deliveryQ.got_mail():
     $ package_is_here = True
 
+if day >= 2 and not letter_from_hermione_B_OBJ.read:
+    $ letter_from_hermione_B_OBJ.mailLetter()
 
+if day >= 12 and not letter_paperwork_unlock_OBJ.read:
+    $ letter_paperwork_unlock_OBJ.mailLetter()
 
-$ raining = False #No rain before the weather has been chosen at the beginning of every day.
-hide screen new_window #Hiding clear sky bg.
-
-### WEATHER
-$ weather_gen = renpy.random.randint(1, 6)
-$ show_weather()
-show screen weather
-
-hide screen candlefire
-
-hide screen chair_left
-hide screen chair_right
-hide screen fireplace
-hide screen genie
-hide screen owl
-hide screen owl_02
-hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
-hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
-if package_is_here:
-    hide screen package
-
-show screen main_room
-show screen chair_right
-show screen fireplace
-
-show screen genie
-
-
-### DAY MAIL ###
-if day == 2:
-    $ letter_from_hermione_02 = True #Turns true when you get second letter from Hermione.
-    $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
-
-if day == 12: # LETTER THAT UNLOCKS PAPERWORK BUTTON.
-    $ work_unlock = True # Send a letter that will unlock an ability to write reports.
-    $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
-
-#Astoria intro.
-if day >= 25 and whoring >= 9 and not ministry_letter_received:
-    $ ministry_letter = True
-    $ letters += 1 #Displays Owl
+if day >= 25 and her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
+    $ letter_curse_complaint_OBJ.mailLetter()
 
 if day >= 26 and not deck_unlocked:    
     $ deck_mail_send = True
@@ -236,20 +203,15 @@ if day >= 26 and not deck_unlocked:
 if outfit_order_placed and not outfit_ready:
     call outfit_purchase_check
 
-if package_is_here:
-    play sound "sounds/owl.mp3"  #Quiet...
-    show screen package
+if package_is_here or letter_queue_list != []:
+    play sound "sounds/owl.mp3"
 
-if got_mail or mail_from_her or letters >= 1:
-    play sound "sounds/owl.mp3"  #Quiet...
-    show screen owl
 
-hide screen points
-show screen points
 
+call room("main_room", hide_screens=False) #Screens already get hidden above.
+
+hide screen blkfade
 with fade
-
-$ day +=1
 
 call points_changes #Makes house points changes.
 
@@ -291,36 +253,36 @@ if hermione_finds_astoria and days_without_an_event >= 2 and not astoria_unlocke
     jump astoria_captured_intro
 
 
-if whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+if her_whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
     call want_to_rule #Returns
 
-if whoring >= 15 and event_chairman_happened and days_without_an_event >= 2 and not snape_against_chairman_hap: # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+if her_whoring >= 15 and event_chairman_happened and days_without_an_event >= 2 and not snape_against_chairman_hap: # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
     jump against_the_rule #No return.
 
-if whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap and not have_no_dress_hap: #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+if her_whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap and not have_no_dress_hap: #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     call crying_about_dress #Returns
 
-if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+if her_whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
     call sorry_about_hesterics #Returns
 
 
 
 #Luna events.
-if whoring >= 21 and not hat_known:
+if her_whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
-if luna_reverted and luna_corruption == -2 and days_to_luna <= 0:
+if lun_reverted and lun_corruption == -2 and days_to_luna <= 0:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_1 #Sets luna_corruption to -1, returns next night.
+    jump luna_reverted_greeting_1 #Sets lun_corruption to -1, returns next night.
 
-if luna_reverted and luna_corruption >= 0 and days_to_luna <= 0:
-    if luna_reverted and luna_corruption == 0:
+if lun_reverted and lun_corruption >= 0 and days_to_luna <= 0:
+    if lun_reverted and lun_corruption == 0:
         $ days_without_an_event = 0
         jump luna_reverted_event_1
-    elif luna_reverted and luna_corruption == 1:
+    elif lun_reverted and lun_corruption == 1:
         $ days_without_an_event = 0
         jump luna_reverted_event_2
-    elif luna_reverted and luna_corruption == 2:
+    elif lun_reverted and lun_corruption == 2:
         $ days_without_an_event = 0
         jump luna_reverted_event_3
     else:
@@ -345,15 +307,16 @@ if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to labe
 
 
 
-if whoring == 11 and not touched_by_boy and not ignore_warning:
+if her_whoring == 11 and not touched_by_boy and not ignore_warning:
     call nar("!!! Attention !!!","start")
-    ">Increasing Hermione's whoring level any further without doing more public requests will lock your game to a specific ending."
-    ">This message will repeat until you increase her whoring level, or do a certain number of public requests!"
+    ">Increasing Hermione's Whoring level any further without doing more public requests will lock your game to a specific ending."
+    ">This message will repeat until you increase her Whoring level, or do a certain number of public requests!"
     call nar(">You should also save your game here.","end")
     menu:
         "-Understood-":
             pass
         "-Don't tell me what to do!-":
+            call nar(">This message will stop appearing. You're on your own!")
             $ ignore_warning = True
 
 
@@ -386,11 +349,6 @@ if skip_duel or skip_to_hermione:
             $ day = 14
         call event_14 #returns
 
-        $ work_unlock = True # Send a letter that will unlock the ability to write reports.
-        $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
-        play sound "sounds/owl.mp3"  #Quiet...
-        show screen owl
-
 ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
 if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
     call event_01 #Returns
@@ -408,9 +366,6 @@ label day_main_menu:
 $ menu_x = 0.5
 $ menu_y = 0.5
 
-if phoenix_is_feed:
-    show screen phoenix_food
-
 if day == 1 and daytime and bird_examined and desk_examined and cupboard_examined and door_examined and fireplace_examined:
     show screen bld1
     with d3
@@ -425,5 +380,4 @@ hide screen blktone
 call hide_characters
 with d1
 
-show screen animation_feather
 call screen main_room_menu

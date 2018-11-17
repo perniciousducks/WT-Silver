@@ -249,15 +249,15 @@ label shop_books:
     label shop_book_menu:
     python:
         books_menu_list = []
-        if toogle1_bool:
+        if toggle1_bool:
             books_menu_list.extend(Books_OBJ.read_books)
             books_menu_list.extend(Books_OBJ.write_books)
-        if toogle2_bool:
+        if toggle2_bool:
             books_menu_list.extend(Books_OBJ.fiction_books)
 
         books_menu_list = list(filter(lambda x: x.purchased==False, books_menu_list))
 
-    show screen generic_scroll_menu(books_menu_list, "Book Stock", toogle1="Educational Books", toogle2="Fiction Books" )
+    show screen generic_scroll_menu(books_menu_list, "Book Stock", toggle1="Educational Books", toggle2="Fiction Books" )
 
     $ _return = ui.interact()
 
@@ -270,10 +270,10 @@ label shop_books:
         $ currentpage = 0
         jump close_weasley_store
 
-    elif _return == "toogle1":
-        $ toogle1_bool = not toogle1_bool
-    elif _return == "toogle2":
-        $ toogle2_bool = not toogle2_bool
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
 
     elif _return == "inc":
         $ currentpage += 1

@@ -7,20 +7,11 @@ label __init_variables:
     #place save variables here
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
-    if not hasattr(renpy.store,'first_time_7th'): #important!
-        $ first_time_7th = True
-    if not hasattr(renpy.store,'pitch_open'): #important!
-        $ pitch_open = True
-    if not hasattr(renpy.store,'inn_intro'): #important!
-        $ inn_intro = False
-    if not hasattr(renpy.store,'attic_open'): #important!
-        $ attic_open = False
     if not hasattr(renpy.store,'tentacle_cosmetic'): #important!
         $ tentacle_cosmetic = False
 
     if not hasattr(renpy.store,'fawkes_intro_done'): #important!
         $ fawkes_intro_done = True
-
 
     ### Interface ###
     if not hasattr(renpy.store,'interface_color'):
@@ -34,19 +25,6 @@ label __init_variables:
     ### Gameplay ###
     if not hasattr(renpy.store,'ignore_warning'):
         $ ignore_warning = False #Warning message that tells you which ending you will get.
-
-    ### Cheats ###
-    if not hasattr(renpy.store,'cheats_active'): #important!
-        $ cheats_active = False
-    if not hasattr(renpy.store,'force_unlock_pub_favors'): #important!
-        $ force_unlock_pub_favors = False
-    if not hasattr(renpy.store,'skip_duel'): #important!
-        $ skip_duel = False
-    if not hasattr(renpy.store,'skip_to_hermione'): #important!
-        $ skip_to_hermione = False
-    if not hasattr(renpy.store,'next_day'): #important!
-        $ next_day = False
-
 
     if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'): #important!
         $ hg_pf_TheGamble_Flag = False
@@ -152,14 +130,19 @@ label __init_variables:
     call tonks_init
     call tonks_progress_init
 
+    #Map
+    call map_init
+
+    #Wardrobe
     call wardrobe_init
 
-    # Store Init
+    #Store
     call store_init
     call store_items_init
 
     call clothing_init
 
+    #Cheats
     call cheats_init
 
 

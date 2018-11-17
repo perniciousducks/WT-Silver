@@ -169,6 +169,17 @@ label cheats_init:
 
     #Update 1.34
     if not hasattr(renpy.store,'character_summon_list') or reset_persistants:
+        label reset_cheats_init:
+
+        $ cheats_active = False
+
+        $ next_day = False
+        $ skip_duel = False
+        $ skip_to_hermione = False
+
+        $ force_unlock_pub_favors = False
+
+        #Display Characters Screen
         $ character_choice = "hermione"
         $ summoned_character_list = []
 
@@ -184,6 +195,7 @@ label cheats_init:
 
         $ display_background = False
         $ custom_bg_image = "images/backgrounds/main_room_night.png"
+
 
     $ character_summon_list = []
     if hermione_unlocked:

@@ -19,7 +19,7 @@ label door:
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
     $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
 
-    call update_character_map_location
+    call update_character_map_locations
 
 
     #Screens

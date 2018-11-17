@@ -1,3 +1,30 @@
+
+
+label map_init:
+
+    if not hasattr(renpy.store,'her_map_location') or reset_persistants:
+        label reset_map_init:
+
+        $ map_unlocked = False
+
+        $ her_map_location = "library"
+        $ lun_map_location = "room_r"
+        $ ast_map_location = "room_s"
+        $ sus_map_location = "room_h"
+        $ cho_map_location = "training_grounds"
+
+        $ sna_map_location = "potions"
+        $ ton_map_location = "defense"
+
+        $ first_time_7th = True
+        $ pitch_open = True
+        $ inn_intro = False
+        $ attic_open = False
+
+    return
+
+
+
 label leave_main_room:
     hide screen main_room_menu
     hide screen main_room
@@ -97,47 +124,98 @@ screen map_screen:
     #    hotspot (227, 442, 55, 55) clicked Return("hermione_map_BJ")
 
 
-label update_character_map_location:
-    #her_random_number, gets defined once during the day and once during the nigh.
-    if her_whoring < 11:
-        if her_random_number == 1: #Library
-            $ hermione_map_xpos = 622
-            $ hermione_map_ypos = 118
-        elif her_random_number == 2: #Great Hall
-            $ hermione_map_xpos = 23
-            $ hermione_map_ypos = 370
-        else: #Gryff Room
-            $ hermione_map_xpos = 156
-            $ hermione_map_ypos = 269
-    else:
-        if lock_public_favors:
-            if her_random_number == 1: #Great Hall
-                $ hermione_map_xpos = 23
-                $ hermione_map_ypos = 370
-            elif her_random_number == 2: #Courtyard
-                $ hermione_map_xpos = 539
-                $ hermione_map_ypos = 263
+label set_her_map_location(location = ""):
+    #her_random_number (1-5), gets defined once during the day and once during the nigh.
+    if location != "":
+        if location == "library":
+            $ her_map_location = "library"
+        elif location in ["gryffindor_room","gryff_room","room_g"]:
+            $ her_map_location = "room_g"
+        elif location in ["slytherin_room","slyth_room","room_s"]:
+            $ her_map_location = "room_s"
+        elif location == "great_hall":
+            $ her_map_location = "great_hall"
+        elif location == "courtyard":
+            $ her_map_location = "courtyard"
+
+    else: #Random
+        if her_whoring < 11:
+            if her_random_number in [1,2]: #Library
+                $ her_map_location = "library"
+            elif her_random_number in [3]: #Great Hall
+                $ her_map_location = "great_hall"
             else: #Gryff Room
-                $ hermione_map_xpos = 156
-                $ hermione_map_ypos = 269
+                $ her_map_location = "room_g"
         else:
-            if her_random_number == 1: #Slytherin Room
-                $ hermione_map_xpos = 255
-                $ hermione_map_ypos = 156
-            elif her_random_number == 2: #Courtyard
-                $ hermione_map_xpos = 539
-                $ hermione_map_ypos = 263
-            else: #Gryff Room
-                $ hermione_map_xpos = 156
-                $ hermione_map_ypos = 269
+            if lock_public_favors:
+                if her_random_number == 1: #Great Hall
+                    $ her_map_location = "great_hall"
+                elif her_random_number == 2: #Courtyard
+                    $ her_map_location = "courtyard"
+                else: #Gryff Room
+                    $ her_map_location = "room_g"
+            else:
+                if her_random_number == 1: #Slytherin Room
+                    $ her_map_location = "room_s"
+                elif her_random_number == 2: #Courtyard
+                    $ her_map_location = "courtyard"
+                else: #Gryff Room
+                    $ her_map_location = "room_g"
+
+    call update_character_map_locations
+
+    return
+
+label set_cho_map_location(location = ""):
+    #cho_random_number (1-5), gets defined once during the day and once during the nigh.
+    if location != "":
+        if location == "training_grounds":
+            $ cho_map_location = "library"
+        elif location in ["ravenclaw_room","raven_room","room_r"]:
+            $ cho_map_location = "room_r"
+
+    else: #Random
+        if her_random_number in [1,2]: #Library
+            $ cho_map_location = "training_grounds"
+        else: #Ravenclaw Room
+            $ cho_map_location = "room_r"
+
+    call update_character_map_locations
+
+    return
+
+label update_character_map_locations:
+    if her_map_location == "library":
+        $ her_map_xpos = 622
+        $ her_map_ypos = 118
+    if her_map_location == "room_g":
+        $ her_map_xpos = 156
+        $ her_map_ypos = 269
+    if her_map_location == "room_s":
+        $ her_map_xpos = 255
+        $ her_map_ypos = 156
+    if her_map_location == "great_hall":
+        $ her_map_xpos = 27
+        $ her_map_ypos = 370
+    if her_map_location == "courtyard":
+        $ her_map_xpos = 539
+        $ her_map_ypos = 263
+
+    #Cho
+    if cho_map_location == "room_r":
+        $ cho_map_xpos = 406
+        $ cho_map_ypos = 339
+    if cho_map_location == "training_grounds":
+        $ cho_map_xpos = 691
+        $ cho_map_ypos = 65
 
     #Tonks
-    $ tonks_map_xpos = 427
-    $ tonks_map_ypos = 222
+    $ ton_map_xpos = 427
+    $ ton_map_ypos = 222
 
     #Snape
-    $ snape_map_xpos = 488
-    $ snape_map_ypos = 480
+    $ sna_map_xpos = 488
+    $ sna_map_ypos = 480
 
     return
 
@@ -150,18 +228,28 @@ screen map_screen_characters:
     #Hermione
     if hermione_unlocked:
         imagebutton:
-            xpos hermione_map_xpos +UI_xpos_offset
-            ypos hermione_map_ypos
+            xpos her_map_xpos +UI_xpos_offset
+            ypos her_map_ypos
             focus_mask True
             idle "interface/map/name_hermione.png"
             hover "interface/map/name_hermione_hover.png"
             action Return("hermione")
 
+    #Cho
+    if cho_unlocked:
+        imagebutton:
+            xpos cho_map_xpos +UI_xpos_offset
+            ypos cho_map_ypos
+            focus_mask True
+            idle "interface/map/name_cho.png"
+            hover "interface/map/name_cho_hover.png"
+            action Return("cho")
+
     #Snape
     if snape_unlocked:
         imagebutton:
-            xpos snape_map_xpos +UI_xpos_offset
-            ypos snape_map_ypos
+            xpos sna_map_xpos +UI_xpos_offset
+            ypos sna_map_ypos
             focus_mask True
             idle "interface/map/name_snape.png"
             hover "interface/map/name_snape_hover.png"
@@ -170,8 +258,8 @@ screen map_screen_characters:
     #Tonks
     if tonks_unlocked:
         imagebutton:
-            xpos tonks_map_xpos +UI_xpos_offset
-            ypos tonks_map_ypos
+            xpos ton_map_xpos +UI_xpos_offset
+            ypos ton_map_ypos
             focus_mask True
             idle "interface/map/name_tonks.png"
             hover "interface/map/name_tonks_hover.png"

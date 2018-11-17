@@ -79,7 +79,10 @@ label start_ht:
     $ potions = 0 #Amount of healing potions Genie has in stock.
 
     #Map
-    $ map_unlocked = False # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
+    call reset_map_init
+
+    #Cheats
+    call reset_cheats_init
 
     #Cupboard
     $ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.

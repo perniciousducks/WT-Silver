@@ -76,10 +76,10 @@ label __init_variables:
     return
 
 init python:
-    def blackTint(image):
+    def grayTint(image):
         return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))
 
-    def whiteTint(image):
+    def yellowTint(image):
         return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
 
     class generic_menu_item(object):

@@ -116,7 +116,7 @@ screen generic_character_select(character_list=[], menu_text="menu name", xposit
         $ row = i // 2
         $ col = i % 2
 
-        $ button_image = im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4) if character_list[i][1] == 1 else blackTint(im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4))
+        $ button_image = im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4) if character_list[i][1] == 1 else grayTint(im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4))
         imagebutton:
             xpos 38+(90*col)+xposition
             ypos 136+(92*row)+yposition
@@ -125,7 +125,7 @@ screen generic_character_select(character_list=[], menu_text="menu name", xposit
             anchor(0.5,0.5)
             focus_mask button_image
             idle button_image
-            hover im.FactorScale(whiteTint("interface/icons/head/head_"+str(character_list[i][0])+"_1.png"),0.4)
+            hover im.FactorScale(yellowTint("interface/icons/head/head_"+str(character_list[i][0])+"_1.png"),0.4)
             action Return(character_list[i][0])
 
 

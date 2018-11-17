@@ -18,6 +18,8 @@ $ save_name = temp_name
 ###RESET STUFF
 call room(hide_screens=True)
 
+call reset_day_and_night_flags
+
 # Hermione
 call reset_hermione
 $ no_blinking = False #When True - blinking animation is not displayed.

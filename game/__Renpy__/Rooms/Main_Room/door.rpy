@@ -9,6 +9,7 @@ label door:
                     jump examine_door
         jump day_main_menu
 
+    #Updates
     $ summon_list = []
     $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
     $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
@@ -18,6 +19,10 @@ label door:
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
     $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
 
+    call update_character_map_location
+
+
+    #Screens
     call play_sound("scroll")
     show screen door_menu
     hide screen points
@@ -133,7 +138,7 @@ screen door_menu:
     use close_button
     if map_unlocked:
         use map_screen
-        use generic_character_select(summon_list, "-Summon-", 812, 23) #Temp
+        use map_screen_characters
     else:
         use generic_character_select(summon_list, "-Summon-", 812, 23)
 

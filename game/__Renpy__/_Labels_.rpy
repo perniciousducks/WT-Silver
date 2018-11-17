@@ -146,6 +146,10 @@ label reset_day_flags:
 
     return
 
+label reset_day_and_night_flags:
+    $ her_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+
+    return
 
 
 label bld:

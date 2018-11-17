@@ -20,6 +20,7 @@ $ save_name = temp_name
 call room(hide_screens=True)
 
 call reset_day_flags
+call reset_day_and_night_flags
 
 $ chitchated_with_her = False
 $ chitchated_with_astoria = False

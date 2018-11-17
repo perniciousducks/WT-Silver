@@ -97,6 +97,87 @@ screen map_screen:
     #    hotspot (227, 442, 55, 55) clicked Return("hermione_map_BJ")
 
 
+label update_character_map_location:
+    #her_random_number, gets defined once during the day and once during the nigh.
+    if her_whoring < 11:
+        if her_random_number == 1: #Library
+            $ hermione_map_xpos = 625
+            $ hermione_map_ypos = 118
+        elif her_random_number == 2: #Great Hall
+            $ hermione_map_xpos = 26
+            $ hermione_map_ypos = 370
+        else: #Gryff Room
+            $ hermione_map_xpos = 159
+            $ hermione_map_ypos = 269
+    else:
+        if lock_public_favors:
+            if her_random_number == 1: #Great Hall
+                $ hermione_map_xpos = 26
+                $ hermione_map_ypos = 370
+            elif her_random_number == 2: #Courtyard
+                $ hermione_map_xpos = 542
+                $ hermione_map_ypos = 263
+            else: #Gryff Room
+                $ hermione_map_xpos = 159
+                $ hermione_map_ypos = 269
+        else:
+            if her_random_number == 1: #Slytherin Room
+                $ hermione_map_xpos = 258
+                $ hermione_map_ypos = 156
+            elif her_random_number == 2: #Courtyard
+                $ hermione_map_xpos = 542
+                $ hermione_map_ypos = 263
+            else: #Gryff Room
+                $ hermione_map_xpos = 159
+                $ hermione_map_ypos = 269
+
+    #Tonks
+    $ tonks_map_xpos = 428
+    $ tonks_map_ypos = 223
+
+    #Snape
+    $ snape_map_xpos = 489
+    $ snape_map_ypos = 481
+
+    return
+
+
+screen map_screen_characters:
+    zorder 5
+
+    $ UI_xpos_offset = 140
+
+    #Hermione
+    if hermione_unlocked:
+        imagebutton:
+            xpos hermione_map_xpos +UI_xpos_offset
+            ypos hermione_map_ypos
+            focus_mask True
+            idle "interface/map/name_hermione.png"
+            hover "interface/map/name_hermione.png"
+            action Return("hermione")
+
+    #Snape
+    if snape_unlocked:
+        imagebutton:
+            xpos snape_map_xpos +UI_xpos_offset
+            ypos snape_map_ypos
+            focus_mask True
+            idle "interface/map/name_snape.png"
+            hover "interface/map/name_snape.png"
+            action Return("snape")
+
+    #Tonks
+    if tonks_unlocked:
+        imagebutton:
+            xpos tonks_map_xpos +UI_xpos_offset
+            ypos tonks_map_ypos
+            focus_mask True
+            idle "interface/map/name_tonks.png"
+            hover "interface/map/name_tonks.png"
+            action Return("tonks")
+
+
 label floor_7th:
     if unlocked_7th == False:
         m"\"I don't have any reason to go there...\""

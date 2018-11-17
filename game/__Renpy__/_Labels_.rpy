@@ -288,6 +288,10 @@ label play_sound(sound=""):
 
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
+        
+    if sound in ["Genie_VS_Snape"]:
+        play audio [ "<silence .5>", 'sounds/Genie_VS_Snape.mp3' ]
+        #$ renpy.play('sounds/Genie_VS_Snape.mp3')
 
     return
 
@@ -327,10 +331,10 @@ label play_music(music=""):
         play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
     
     if music in ["boss_card_theme"]:
-        play music "music/Juhani_Junkala_Retro_Game_Music_Pack_Level_1_Normalized.mp3" fadein 1 fadeout 1
+        play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1
 
     if music in ["sad","grape_soda"]:
-        play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 1 fadeout 1
+        play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5
 
     return
 

@@ -8,9 +8,10 @@ label snape_first_duel:
     hide screen candlefire
     call sna_chibi("hide")
     call sna_main(remove=True)
-    
+
     call play_music("grape_soda")
     $ response_card = ""
+    
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
 
@@ -20,6 +21,7 @@ label snape_first_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
         if response_card == "AfterEnemy":
+            $ renpy.music.set_volume(volume=0.2, delay=0, channel='music')
             call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
             call sna_main(remove=True)
     
@@ -78,8 +80,21 @@ label snape_third_duel:
     hide screen genie
     hide screen candlefire
     call sna_main(remove=True)
-    call play_music("grape_soda")
+    
     $ response_card = ""
+    
+    call play_music("boss_card_theme")
+    call play_sound("Genie_VS_Snape")
+    show screen snape_vs_genie_screen
+    pause 1
+    show screen move_snape
+    pause 4
+    hide screen move_snape
+    hide screen snape_vs_genie_screen
+    show screen snape_vs_genie_smile
+    pause
+    hide screen snape_vs_genie_smile
+    
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
 
@@ -108,3 +123,19 @@ label snape_duel_lost:
 label snape_duel_cancel:
     sna "Cards not in your favour today? Maybe next time..."   
     jump return_office
+    
+screen snape_vs_genie_screen:
+    zorder 8
+    add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
+    add "images/cardgame/VS/genie_name_plate.png" at move_in(-300, 1)
+screen move_snape:
+    zorder 9
+    add "images/cardgame/VS/snape_name_plate.png" at move_in(300, 1)
+    
+screen snape_vs_genie_smile:
+    zorder 10
+    add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
+    add "images/cardgame/VS/genie_vs_snape_smile.png"
+    
+    
+    

@@ -45,6 +45,10 @@ label cardgame:
                 return "EndGame"
             call enemy_turn
             $ response_card = "AfterEnemy"
+            if (len(player_deck) == 0 or len(enemy_deck) == 0):
+                $ response_card = "EndGame"
+                hide screen card_battle
+                return "EndGame"
             return "NewTurn"
         else:
             $ response_card = "NewTurn"

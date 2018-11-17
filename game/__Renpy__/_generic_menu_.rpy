@@ -103,38 +103,44 @@ screen generic_scroll_item(menu_item, ypos=0):
         text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
 
 screen generic_character_select(character_list=[], menu_text="menu name", xposition=24, yposition=52):
+            
+    imagemap:
+        xpos xposition
+        ypos yposition
+        xsize 198
+        ysize 548
+        
+        ground "interface/stat_select/"+str(interface_color)+"/ground_character_screen_"+str(wardrobe_color)+".png"
+        hover "interface/stat_select/"+str(interface_color)+"/hover_character_screen_"+str(wardrobe_color)+".png"
+       
+        vbox:
+            xpos 11
+            ypos 31
+            xsize 173
+            ysize 41
+            text menu_text xalign 0.5 yalign 0.5  size 14
+        
+        for i in range(0,len(character_list)):
+            $ row = i // 2
+            $ col = i % 2
+            
+            $ button_image = im.FactorScale(get_head_icon(character_list[i][0]), 0.4) if character_list[i][1] == 1 else grayTint(im.FactorScale(get_head_icon(character_list[i][0]), 0.4))
 
-    add "interface/stat_select/"+str(interface_color)+"/ground_character_screen_"+str(wardrobe_color)+".png" xpos xposition ypos yposition
-    vbox:
-        xpos 11+xposition
-        ypos 31+yposition
-        xsize 173
-        ysize 41
-        text menu_text xalign 0.5 yalign 0.5  size 14
-
-    for i in range(0,len(character_list)):
-        $ row = i // 2
-        $ col = i % 2
-
-        $ button_image = im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4) if character_list[i][1] == 1 else grayTint(im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4))
-        imagebutton:
-            xpos 38+(90*col)+xposition
-            ypos 136+(92*row)+yposition
-            xsize 83
-            ysize 85
-            anchor(0.5,0.5)
-            focus_mask button_image
-            idle button_image
-            hover im.FactorScale(yellowTint("interface/icons/head/head_"+str(character_list[i][0])+"_1.png"),0.4)
-            action Return(character_list[i][0])
-
-
+            
+            
+            hotspot(13+(90*col), 87+(92*row), 83, 85) clicked Return(character_list[i][0])
+    
+            add button_image xpos (90*col) ypos 92+(92*row)
+    
 init python:
     toggle1_bool = True
     toggle2_bool = True
     toggle3_bool = True
     toggle4_bool = True
 
+    def get_head_icon(name):
+        return "interface/icons/head/head_"+str(name)+"_1.png"
+    
     def get_zoom(image, xsize, ysize):
         myDisplayable = im.Image(image)
         myRender = renpy.render(myDisplayable, 800, 600, 0, 0)

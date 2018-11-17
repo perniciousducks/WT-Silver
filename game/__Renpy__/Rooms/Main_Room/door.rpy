@@ -133,18 +133,9 @@ screen door_menu:
     use close_button
     if map_unlocked:
         use map_screen
-        use generic_character_select(summon_list, "-Summon-", 812, 23) #Temp
-    else:
-        use generic_character_select(summon_list, "-Summon-", 812, 23)
-
-
-
-
-
-
-
-
-
+    
+    use generic_character_select(summon_list, "-Summon-", 812, 23) #Temp
+    
 
 #Day 1 room interact quest.
 label examine_door:

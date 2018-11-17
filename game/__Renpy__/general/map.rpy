@@ -101,43 +101,43 @@ label update_character_map_location:
     #her_random_number, gets defined once during the day and once during the nigh.
     if her_whoring < 11:
         if her_random_number == 1: #Library
-            $ hermione_map_xpos = 625
+            $ hermione_map_xpos = 622
             $ hermione_map_ypos = 118
         elif her_random_number == 2: #Great Hall
-            $ hermione_map_xpos = 26
+            $ hermione_map_xpos = 23
             $ hermione_map_ypos = 370
         else: #Gryff Room
-            $ hermione_map_xpos = 159
+            $ hermione_map_xpos = 156
             $ hermione_map_ypos = 269
     else:
         if lock_public_favors:
             if her_random_number == 1: #Great Hall
-                $ hermione_map_xpos = 26
+                $ hermione_map_xpos = 23
                 $ hermione_map_ypos = 370
             elif her_random_number == 2: #Courtyard
-                $ hermione_map_xpos = 542
+                $ hermione_map_xpos = 539
                 $ hermione_map_ypos = 263
             else: #Gryff Room
-                $ hermione_map_xpos = 159
+                $ hermione_map_xpos = 156
                 $ hermione_map_ypos = 269
         else:
             if her_random_number == 1: #Slytherin Room
-                $ hermione_map_xpos = 258
+                $ hermione_map_xpos = 255
                 $ hermione_map_ypos = 156
             elif her_random_number == 2: #Courtyard
-                $ hermione_map_xpos = 542
+                $ hermione_map_xpos = 539
                 $ hermione_map_ypos = 263
             else: #Gryff Room
-                $ hermione_map_xpos = 159
+                $ hermione_map_xpos = 156
                 $ hermione_map_ypos = 269
 
     #Tonks
-    $ tonks_map_xpos = 428
-    $ tonks_map_ypos = 223
+    $ tonks_map_xpos = 427
+    $ tonks_map_ypos = 222
 
     #Snape
-    $ snape_map_xpos = 489
-    $ snape_map_ypos = 481
+    $ snape_map_xpos = 488
+    $ snape_map_ypos = 480
 
     return
 
@@ -154,7 +154,7 @@ screen map_screen_characters:
             ypos hermione_map_ypos
             focus_mask True
             idle "interface/map/name_hermione.png"
-            hover "interface/map/name_hermione.png"
+            hover "interface/map/name_hermione_hover.png"
             action Return("hermione")
 
     #Snape
@@ -164,7 +164,7 @@ screen map_screen_characters:
             ypos snape_map_ypos
             focus_mask True
             idle "interface/map/name_snape.png"
-            hover "interface/map/name_snape.png"
+            hover "interface/map/name_snape_hover.png"
             action Return("snape")
 
     #Tonks
@@ -174,7 +174,7 @@ screen map_screen_characters:
             ypos tonks_map_ypos
             focus_mask True
             idle "interface/map/name_tonks.png"
-            hover "interface/map/name_tonks.png"
+            hover "interface/map/name_tonks_hover.png"
             action Return("tonks")
 
 

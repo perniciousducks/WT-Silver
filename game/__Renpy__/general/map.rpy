@@ -57,6 +57,46 @@ screen map_screen:
         hover "interface/map/room_office_hover.png"
         action Return("main_room")
 
+
+
+    #Gryffindor
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_gryffindor_idle.png"
+        hover "interface/map/room_gryffindor_hover.png"
+        action Return("gryffindor_dormitories")
+
+    #Ravenclaw
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_ravenclaw_idle.png"
+        hover "interface/map/room_ravenclaw_hover.png"
+        action Return("ravenclaw_dormitories")
+
+    #Hufflepuff
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_hufflepuff_idle.png"
+        #hover "interface/map/room_hufflepuff_hover.png"
+        #action Return("hufflepuff_dormitories")
+
+    #Slytherin
+    imagebutton:
+        xpos 0+UI_xpos_offset
+        ypos 0
+        focus_mask True
+        idle "interface/map/room_slytherin_idle.png"
+        #hover "interface/map/room_slytherin_hover.png"
+        #action Return("slytherin_dormitories")
+
+
+
     #Weasley Store
     imagebutton:
         xpos 0+UI_xpos_offset
@@ -97,6 +137,8 @@ screen map_screen:
             hover "interface/map/room_ror_empty_hover.png"
         action Return("floor_7th")
 
+
+
     #Lake
     imagebutton:
         xpos 0+UI_xpos_offset
@@ -117,7 +159,7 @@ screen map_screen:
 
     # (X upper-left corner, Y upper-left corner, width, height).
     #hotspot (189, 218, 38, 20) clicked Return("map_attic") #attic
-    #hotspot (275, 449, 75, 15) clicked Return("map_dorms") #dorms
+    #hotspot (275, 449, 75, 15) clicked Return("gryffindor_dormitories") #dorms
 
     #Map Events
     #if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
@@ -404,9 +446,19 @@ label map_lake: #Label controlling what happens when you go to the lake
                 ">You search around the lake but find nothing of interest."
                 jump return_office
 
-label map_dorms: #Label controlling what happens when you go to the dorms
+
+
+label gryffindor_dormitories:
+    show screen blkfade
+    with d3
+    pause.8
+
+    show screen blktone
+    hide screen blkfade
+    with d5
+
     menu:
-        "-Search the area-":#Luna's Hair
+        "-Search the area-":#Cat Hair
             $ ran = renpy.random.random()
             if ran < 0.3:
                 ">You search around the dorms and manage to find a clump for bright orange fur."
@@ -419,7 +471,24 @@ label map_dorms: #Label controlling what happens when you go to the dorms
                         pass
                 ">Finding nothing else of interest you return to your office."
                 jump return_office
-            elif ran < 0.6:
+            else:
+                ">You search around the dorms but find nothing of interest."
+                jump return_office
+
+
+label ravenclaw_dormitories:
+    show screen blkfade
+    with d3
+    pause.8
+
+    show screen blktone
+    hide screen blkfade
+    with d5
+
+    menu:
+        "-Search the area-":#Luna's Hair
+            $ ran = renpy.random.random()
+            if ran < 0.3:
                 ">You search around the dorms and manage to find an comb with some hair in it."
                 m "This must be someones hair."
                 menu:
@@ -433,6 +502,8 @@ label map_dorms: #Label controlling what happens when you go to the dorms
             else:
                 ">You search around the dorms but find nothing of interest."
                 jump return_office
+
+
 
 label map_pitch: #Label controlling what happens when you go to the quidditch pitch
     if pitch_open:
@@ -505,17 +576,9 @@ label return_office:
     with d3
     #">You return to your office."
 
-    hide screen ccg
-    hide screen end_u_1
-    hide screen end_u_3
-    hide screen chair_left
-    hide screen desk
-    call her_chibi("hide")
-    call sna_chibi("hide")
-    call gen_chibi("hide")
-    show screen main_room
-    show screen genie
+    call room("main_room")
     hide screen blkback
+    hide screen blktone
 
     pause.5
     hide screen blkfade

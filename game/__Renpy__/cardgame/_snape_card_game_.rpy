@@ -6,6 +6,7 @@ label snape_first_duel:
     sna "Let's do this."
     hide screen genie
     hide screen candlefire
+    call sna_chibi("hide")
     call sna_main(remove=True)
     
     call play_music("grape_soda")

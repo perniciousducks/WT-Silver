@@ -143,12 +143,8 @@ label letter_curse_complaint:
 
 
 ### MAIL THAT UNLOCKS ABILITY TO WORK ###
-if deck_mail_send: # Send a letter that will unlock an ability to write reports
+label deck_mail_send: # Send a letter that will unlock an ability to write reports
     $ deck_unlocked = True # Send a letter that will unlock an ability to write reports
-    $ deck_mail_send = False
-    $ letters -= 1
-    hide screen owl
-    show screen owl_02
     $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.{/size}"
     show screen letter
     show screen ctc
@@ -214,7 +210,7 @@ if deck_mail_send: # Send a letter that will unlock an ability to write reports
     
     hide screen blktone8
     with d3
-    call screen main_room_menu
+    return
 
 
 
@@ -306,6 +302,11 @@ label __init_variables:
         $ letter_curse_complaint_OBJ = mail_letter_class()
     $ letter_curse_complaint_OBJ.text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
     $ letter_curse_complaint_OBJ.label = "letter_curse_complaint"
+    
+    if not hasattr(renpy.store,'letter_deck'):
+        $ letter_deck = mail_letter_class()
+    $ letter_deck.text = ""
+    $ letter_deck.label = "deck_mail_send"
 
     return
 

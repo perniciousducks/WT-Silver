@@ -11,6 +11,7 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
         $ snape_flip = -1
 
     if remove == True:
+        hide screen bld1
         pause 0.1
         return
 

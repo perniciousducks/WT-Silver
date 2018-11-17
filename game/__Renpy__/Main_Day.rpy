@@ -197,8 +197,7 @@ if day >= 25 and her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
     $ letter_curse_complaint_OBJ.mailLetter()
 
 if day >= 26 and not deck_unlocked:    
-    $ deck_mail_send = True
-    $ letters += 1 #Displays Owl
+    $ letter_deck.mailLetter()
     
 if outfit_order_placed and not outfit_ready:
     call outfit_purchase_check

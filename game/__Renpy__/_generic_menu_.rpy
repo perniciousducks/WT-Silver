@@ -1,4 +1,4 @@
-screen generic_scroll_menu(menu_items, title, toogle1="", toogle2="", toggle3="", toggle4=""):
+screen generic_scroll_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=""):
     $ item_shown=4
     zorder 5
 
@@ -31,29 +31,29 @@ screen generic_scroll_menu(menu_items, title, toogle1="", toogle2="", toggle3=""
         ground "interface/store/"+interface_color+"/items_panel.png"
         hover "interface/store/"+interface_color+"/items_panel_hover.png"
 
-        if toogle1 != "": #Top left
-            $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle1_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (325-150, 30, 150, 24) clicked Return("toogle1")
-            add toogle1_image xpos 325-150 ypos 30 zoom 0.8
-            text "{size=10}" + toogle1 + "{/size}" xpos 350-150 ypos 35
+        if toggle1 != "": #Top left
+            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle1_bool else "interface/general/"+interface_color+"/check_false.png"
+            hotspot (325-150, 30, 150, 24) clicked Return("toggle1")
+            add toggle1_image xpos 325-150 ypos 30 zoom 0.8
+            text "{size=10}" + toggle1 + "{/size}" xpos 350-150 ypos 35
 
-        if toogle2 != "": #Borrom left
-            $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle2_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (325-150, 30+20, 150, 24) clicked Return("toogle2")
-            add toogle1_image xpos 325-150 ypos 30+20 zoom 0.8
-            text "{size=10}" + toogle2 + "{/size}" xpos 350-150 ypos 35+20
+        if toggle2 != "": #Borrom left
+            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle2_bool else "interface/general/"+interface_color+"/check_false.png"
+            hotspot (325-150, 30+20, 150, 24) clicked Return("toggle2")
+            add toggle1_image xpos 325-150 ypos 30+20 zoom 0.8
+            text "{size=10}" + toggle2 + "{/size}" xpos 350-150 ypos 35+20
 
-        if toogle3 != "": #Top right
-            $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle3_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (325, 30, 150, 24) clicked Return("toogle3")
-            add toogle1_image xpos 325 ypos 30 zoom 0.8
-            text "{size=10}" + toogle2 + "{/size}" xpos 350 ypos 35
+        if toggle3 != "": #Top right
+            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle3_bool else "interface/general/"+interface_color+"/check_false.png"
+            hotspot (325, 30, 150, 24) clicked Return("toggle3")
+            add toggle1_image xpos 325 ypos 30 zoom 0.8
+            text "{size=10}" + toggle3 + "{/size}" xpos 350 ypos 35
 
-        if toogle4 != "": #Borrom right
-            $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle4_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (325, 30+20, 150, 24) clicked Return("toogle4")
-            add toogle1_image xpos 325 ypos 30+20 zoom 0.8
-            text "{size=10}" + toogle2 + "{/size}" xpos 350 ypos 35+20
+        if toggle4 != "": #Borrom right
+            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle4_bool else "interface/general/"+interface_color+"/check_false.png"
+            hotspot (325, 30+20, 150, 24) clicked Return("toggle4")
+            add toggle1_image xpos 325 ypos 30+20 zoom 0.8
+            text "{size=10}" + toggle4 + "{/size}" xpos 350 ypos 35+20
 
         hbox:
             xpos 5
@@ -118,8 +118,8 @@ screen generic_character_select(character_list=[], menu_text="menu name", xposit
 
         $ button_image = im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4) if character_list[i][1] == 1 else blackTint(im.FactorScale("interface/icons/head/head_"+str(character_list[i][0])+"_1.png", 0.4))
         imagebutton:
-            xpos -74+(90*col)+xposition
-            ypos 58+(92*row)+yposition
+            xpos 38+(90*col)+xposition
+            ypos 136+(92*row)+yposition
             xsize 83
             ysize 85
             anchor(0.5,0.5)
@@ -130,10 +130,10 @@ screen generic_character_select(character_list=[], menu_text="menu name", xposit
 
 
 init python:
-    toogle1_bool = True
-    toogle2_bool = True
-    toogle3_bool = True
-    toogle4_bool = True
+    toggle1_bool = True
+    toggle2_bool = True
+    toggle3_bool = True
+    toggle4_bool = True
 
     def get_zoom(image, xsize, ysize):
         myDisplayable = im.Image(image)

@@ -77,10 +77,10 @@ label __init_variables:
 
 init python:
     def blackTint(image):
-        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(0.1, 0.1, 0.1))
+        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))
 
     def whiteTint(image):
-        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))
+        return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
 
     class generic_menu_item(object):
         imagepath = "images/store/potions/potion_3.png"

@@ -156,11 +156,11 @@ label hg_titjob_1:
 
     #Hermione removes her top.
     $ hermione_wear_bra = False
-    call set_hermione_action("lift_top")
+    call set_her_action("lift_top")
     pause.5
 
     $ hermione_wear_top = False
-    call set_hermione_action("None")
+    call set_her_action("None")
     pause.5
 
     hide screen bld1
@@ -174,9 +174,9 @@ label hg_titjob_1:
     call gen_chibi("titjob","mid","base")
 
     if hermione_costume:
-        call h_action("lift_top")
+        call set_her_action("lift_top")
     else:
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
 
     if use_cgs:
         $ ccg_folder = "herm_boob"
@@ -486,11 +486,11 @@ label hg_titjob_3:
 
     #Hermione removes her top.
     $ hermione_wear_bra = False
-    call set_hermione_action("lift_top","skip_update")
+    call set_her_action("lift_top","skip_update")
     pause.5
 
     $ hermione_wear_top = False
-    call set_hermione_action("None")
+    call set_her_action("None")
     pause.5
 
     hide screen bld1
@@ -513,7 +513,7 @@ label hg_titjob_3:
         show screen ccg
         with d3
 
-    call h_action("lift_breasts","skip_update")
+    call set_her_action("lift_breasts","skip_update")
 
     stop music fadeout 3.0
     $ ccg1 = 20
@@ -817,7 +817,7 @@ label hg_titjob_3_cumming:
             call gen_chibi("stand","desk","base")
             call her_chibi("stand","mid","base")
 
-            call h_action("None")
+            call set_her_action("None")
 
             call hide_blkfade
             pause.5
@@ -884,7 +884,7 @@ label hg_titjob_3_cumming:
             call gen_chibi("stand","desk","base")
             call her_chibi("stand","mid","base")
 
-            call h_action("None")
+            call set_her_action("None")
 
             call hide_blkfade
             pause.5
@@ -935,7 +935,7 @@ label end_hg_titjob:
 
     hide screen hermione_main
 
-    call h_action("none","update")
+    call set_her_action("none","update")
 
     call gen_chibi("hide")
     hide screen g_c_c_u # Genie's sperm. Universal.

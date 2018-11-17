@@ -259,7 +259,7 @@ label equip_her_bra:
 
 
 
-            call set_h_bra(underwear_choice, underwear_color_choice)
+            call set_her_bra(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = 1
@@ -294,7 +294,7 @@ label equip_her_bra:
                 jump return_to_wardrobe
 
             #Success!
-            call set_h_bra(underwear_choice, underwear_color_choice)
+            call set_her_bra(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
             hide screen wardrobe
@@ -307,36 +307,31 @@ label equip_her_bra:
 label equip_lun_bra:
     call set_lun_bra(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Bra ###
 label equip_ast_bra:
     call set_ast_bra(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Bra ###
 label equip_sus_bra:
     call set_sus_bra(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Bra ###
 label equip_cho_bra:
     call set_cho_bra(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Bra ###
 label equip_ton_bra:
     call set_ton_bra(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -364,45 +359,39 @@ label equip_onepiece:
 
 ### Equip Hermione's OnePiece/Nighty ###
 label equip_her_onepiece:
-    call set_h_onepiece(underwear_choice)
+    call set_her_onepiece(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Luna's OnePiece/Nighty ###
 label equip_lun_onepiece:
     call set_lun_onepiece(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's OnePiece/Nighty ###
 label equip_ast_onepiece:
     call set_ast_onepiece(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's OnePiece/Nighty ###
 label equip_sus_onepiece:
     call set_sus_onepiece(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's OnePiece/Nighty ###
 label equip_cho_onepiece:
     call set_cho_onepiece(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's OnePiece/Nighty ###
 label equip_ton_onepiece:
     call set_ton_onepiece(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -630,7 +619,7 @@ label equip_her_panties:
 
 
 
-            call set_h_panties(underwear_choice, underwear_color_choice)
+            call set_her_panties(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = 1
@@ -665,7 +654,7 @@ label equip_her_panties:
                 jump return_to_wardrobe
 
             #Success!
-            call set_h_panties(underwear_choice, underwear_color_choice)
+            call set_her_panties(underwear_choice, underwear_color_choice)
 
             call her_main(xpos="wardrobe")
             hide screen wardrobe
@@ -676,36 +665,31 @@ label equip_her_panties:
 label equip_lun_panties:
     call set_lun_panties(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Panties ###
 label equip_ast_panties:
     call set_ast_panties(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Panties ###
 label equip_sus_panties:
     call set_sus_panties(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Panties ###
 label equip_cho_panties:
     call set_cho_panties(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Panties ###
 label equip_ton_panties:
     call set_ton_panties(underwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -733,42 +717,36 @@ label equip_garterbelt:
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
-    call set_h_garterbelt(underwear_choice, underwear_color_choice)
+    call set_her_garterbelt(underwear_choice, underwear_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Luna's Garterbelt ###
 label equip_lun_garterbelt:
     call set_lun_garterbelt(underwear_choice, underwear_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Garterbelt ###
 label equip_ast_garterbelt:
     call set_ast_garterbelt(underwear_choice, underwear_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
     call set_sus_garterbelt(underwear_choice, underwear_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Garterbelt ###
 label equip_cho_garterbelt:
     call set_cho_garterbelt(underwear_choice, underwear_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Garterbelt ###
 label equip_ton_garterbelt:
     call set_ton_garterbelt(underwear_choice, underwear_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

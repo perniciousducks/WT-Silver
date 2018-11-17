@@ -52,7 +52,7 @@ label hg_pf_NicePanties:
     #First and Second Event
     if her_whoring < 9:
         $ hermione_wear_panties = True
-        call h_action("lift_skirt")
+        call set_her_action("lift_skirt")
 
     #Third Event
     else:
@@ -165,7 +165,7 @@ label hg_show_panties_3:
     if not hermione_wear_panties:
         g4 "!!?"
 
-    call h_action("lift_skirt")
+    call set_her_action("lift_skirt")
 
     show screen blktone
     call her_main("","base","glance",trans="fade",xpos="mid",ypos="base")
@@ -228,7 +228,7 @@ label hg_show_panties_3:
                 call update_her_uniform
                 call update_chibi_uniform
                 call her_chibi("lift_skirt")
-                call set_hermione_action("lift_skirt")
+                call set_her_action("lift_skirt")
 
                 call her_main("","base","glance")
                 call ctc
@@ -265,7 +265,7 @@ label hg_show_panties_3:
                 call update_chibi_uniform
 
                 call her_chibi("lift_skirt")
-                call set_hermione_action("lift_skirt")
+                call set_her_action("lift_skirt")
 
                 call her_main("","base","glance")
                 call ctc

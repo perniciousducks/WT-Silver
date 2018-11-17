@@ -46,10 +46,9 @@ label cheats:
                     jump cheats_hermione
 
                 "-Toggle Breast Expansion-":
-                    if hermione_perm_expand or hermione_perm_expand_breasts or hermione_expand_breasts:
+                    if hermione_perm_expand_breasts or hermione_expand_breasts:
                         $ hermione_perm_expand_breasts = False
                         $ hermione_expand_breasts = False
-                        $ hermione_perm_expand = False
                         "Hermione's breasts shrink..."
                     else:
                         $ hermione_perm_expand_breasts = True

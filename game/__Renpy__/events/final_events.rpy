@@ -138,7 +138,7 @@ label want_to_rule:
                     pause.8
 
                     $ hermione_wear_bra = False
-                    call h_action("lift_top")
+                    call set_her_action("lift_top")
                     pause.5
 
                     show screen blktone
@@ -169,7 +169,7 @@ label want_to_rule:
                     with fade
                     call ctc
 
-                    call h_action("lift_skirt")
+                    call set_her_action("lift_skirt")
                     pause.5
 
                     show screen blktone
@@ -240,27 +240,27 @@ label want_to_rule:
                     pause.2
 
                     $ hermione_wear_bra = False
-                    call set_hermione_action("lift_top")
+                    call set_her_action("lift_top")
                     pause.5
 
                     $ hermione_wear_top = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.5
 
                     call nar(">One piece after another...")
 
                     $ hermione_wear_panties = True
-                    call set_hermione_action("lift_skirt")
+                    call set_her_action("lift_skirt")
                     pause.5
 
                     $ hermione_wear_bottom = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.5
 
                     call nar(">Vest, shirt, her skirt, and finally...")
 
                     $ hermione_wear_panties = False
-                    call set_hermione_action("covering")
+                    call set_her_action("covering")
                     pause.5
 
                     call nar(">The panties.")
@@ -271,9 +271,6 @@ label want_to_rule:
                     call ctc
                     her "*Sob!*"
                     m "Huh?"
-
-                    $ display_h_tears = True
-                    $ u_tears_pic = "characters/hermione/face/tears_01.png"
 
                     call her_main("Oh, please, don't mind me, sir.","open","baseL",)
                     call her_main("Just enjoy the... {w}the... {w}the view...","soft","squintL")
@@ -287,7 +284,7 @@ label want_to_rule:
                     call her_main("Please keep on looking at my naked body... *Sob!*","shock","wide",tears="messy")
 
                     call her_main("","angry","angry",cheeks="blush",tears="messy")
-                    call set_hermione_action("lift_breasts")
+                    call set_her_action("lift_breasts")
                     pause.2
 
                     g4 "(What the...?)"
@@ -305,7 +302,7 @@ label want_to_rule:
                     call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","open","ahegao_raised",cheeks="blush",tears="messy")
                     m "Ehm... right... Ok..."
                     m "Listen, I think this will do..."
-                    call set_hermione_action("pinch")
+                    call set_her_action("pinch")
                     call her_main("Are you sure, sir?","angry","angry",cheeks="blush",tears="messy")
                     her "Are you sure that you humiliated me enough, sir?"
                     m "...................."
@@ -361,8 +358,6 @@ label want_to_rule:
 
     $ hermione_busy = True
     $ days_without_an_event = 0
-
-    $ display_h_tears = False
 
     call music_block
 

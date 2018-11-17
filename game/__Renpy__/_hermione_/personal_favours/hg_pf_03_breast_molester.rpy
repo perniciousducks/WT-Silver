@@ -290,7 +290,7 @@ label hg_breast_molester_3:
     $ hermione_wear_top = False
     $ hermione_wear_bra = False
     show screen blktone
-    call h_action("lift_top")
+    call set_her_action("lift_top")
     call her_main(xpos="mid",ypos="base")
     call ctc
 
@@ -316,7 +316,7 @@ label hg_breast_molester_3:
 
                 hide screen blktone
                 show screen bld1
-                call set_hermione_action("none")
+                call set_her_action("none")
                 pause.5
 
                 call her_main("You are a mean and demented old man!","angry","worried",cheeks="blush",tears="soft")
@@ -582,9 +582,6 @@ label end_hg_breast_molester:
     hide screen bld1
     call hide_blkfade
 
-    if her_whoring < 6: #Adds points till 6.
-        $ her_whoring +=1
-
     if her_whoring < 17:
         $ gryffindor += current_payout
         m "The \"Gryffindor\" house gets [current_payout] points!"
@@ -612,6 +609,9 @@ label end_hg_breast_molester:
             call her_main("(Eh, who cares)","base","ahegao_raised",cheeks="blush",ypos="head")
         else:
             call her_main("(I'll just ask him about it next time...)","annoyed","angryL",ypos="head")
+
+    if her_whoring < 6: #Adds points till 6.
+        $ her_whoring +=1
 
     $ hg_pf_BreastMolester_OBJ.points += 1
 

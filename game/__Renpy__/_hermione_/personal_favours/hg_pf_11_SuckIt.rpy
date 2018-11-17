@@ -14,7 +14,7 @@ label hg_pf_SuckIt: #15+
     else:
         m "{size=-4}(Should I ask the girl to give me another blowjob?){/size}"
 
-    if hg_pf_TouchMe_OBJ.points < 1:
+    if hg_pf_SuckIt_OBJ.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -48,11 +48,11 @@ label hg_pf_SuckIt: #15+
         call her_main("Although, now when I say it out loud like this...","angry","down_raised")
         m "Too late! You already said \"yes\"!"
         call her_main("I know...","grin","worriedCl",emote="05")
-
         call her_walk_desk_blkfade
 
         call hg_blowjob_1 #First Blowjob.
 
+        $ hg_pf_SuckIt_OBJ.hearts_level = 1
         jump end_hg_blowjob
 
 
@@ -93,24 +93,26 @@ label hg_pf_SuckIt: #15+
         g4 "You nasty little girl! You must be punished!"
         g9 "I'll punish you with my cock!"
         call her_main("...............................","angry","worriedCl",emote="05")
-
         call blkfade #Needs to be active first!
 
         call hg_blowjob_1 #Same as first. Change to second.
 
+        $ hg_pf_SuckIt_OBJ.hearts_level = 2
         jump end_hg_blowjob
 
 
     #Third Event.
-    elif hg_pf_SuckIt_OBJ.points >= 2 and her_whoring < 21 or (hg_hidden_blowjob_character_list != hg_hidden_blowjob_seen_list):
+    elif hg_pf_SuckIt_OBJ.points >= 2 and her_whoring < 21:
         call play_music("playful_tension") # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course...","base","base",xpos="mid",ypos="base")
-
         call her_walk_desk_blkfade
 
-        call hg_blowjob_3 #Hidden Blowjob with Snape, Luna;
+        call update_unlocked_character_list
 
+        call hg_hidden_blowjob #Hidden Blowjob with Snape, Luna;
+
+        $ hg_pf_SuckIt_OBJ.hearts_level = 3
         jump end_hg_blowjob
 
 
@@ -119,10 +121,20 @@ label hg_pf_SuckIt: #15+
         call play_music("playful_tension") # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course [genie_name]...","base","ahegao_raised",xpos="mid",ypos="base")
-
         call her_walk_desk_blkfade
 
-        call hg_blowjob_4 #Daddy Roleplay, Worship Cock;
+        call update_unlocked_character_list
+
+        $ random_number = renpy.random.randint(1, 5)
+        if random_number in [1,2]:
+            call hg_hidden_blowjob
+
+        elif hg_hidden_blowjob_character_list != hg_hidden_blowjob_seen_list:
+            call hg_hidden_blowjob
+
+        else:
+            call hg_blowjob_4 #Daddy Roleplay, Worship Cock;
+            $ hg_pf_SuckIt_OBJ.hearts_level = 4
 
         jump end_hg_blowjob
 
@@ -415,88 +427,72 @@ label hg_blowjob_1: #Call label. Returns.
 
 
 
-### Third Blowjob ###
+### Hidden Blowjob ###
 
-label hg_blowjob_3: #Call label. Returns.
-        call play_music("playful_tension") #HERMIONE
-        hide screen genie
-        call her_chibi("hide")
-        show screen chair_left
-        call u_play_ani
-        hide screen bld1
-        hide screen blkfade
-        with fade
-        call ctc
+label hg_hidden_blowjob: #Call label. Returns.
+    call play_music("playful_tension") #HERMIONE
+    hide screen genie
+    call her_chibi("hide")
+    show screen chair_left
+    call u_play_ani
+    hide screen bld1
+    hide screen blkfade
+    with fade
+    call ctc
 
-        call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="head")
-        m "Yes, good girl..."
-        her "*Slurp!* *Gobble!* *Slurp!*"
+    call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="head")
+    m "Yes, good girl..."
+    her "*Slurp!* *Gobble!* *Slurp!*"
 
-        call play_sound("knocking") #Sound someone knocking on the door.
-        call nar("> *Knock-knock-knock!*")
-        her "{size=+7}!!!{/size}"
-        m "Hm?"
+    call play_sound("knocking") #Sound someone knocking on the door.
+    call nar("> *Knock-knock-knock!*")
+    her "{size=+7}!!!{/size}"
+    m "Hm?"
 
-        if daytime:
-            m "Who could that be?"
-        else:
-            m "Who could that be at this hour?"
+    if daytime:
+        m "Who could that be?"
+    else:
+        m "Who could that be at this hour?"
 
-        call u_pause_ani
+    call u_pause_ani
 
-        #Setting up characters.
-        $ character_choice = ""
-        $ hg_hidden_blowjob_character_list = ["snape"]
 
-        if luna_unlocked and lun_reverted:
-            $ hg_hidden_blowjob_character_list.append("luna")
-        #if astoria_unlocked:
-        #    $ hg_hidden_blowjob_character_list.append("astoria")
-        #if susan_unlocked:
-        #    $ hg_hidden_blowjob_character_list.append("susan")
-        #if cho_unlocked:
-        #    $ hg_hidden_blowjob_character_list.append("cho")
-        if tonks_unlocked:
-            $ hg_hidden_blowjob_character_list.append("tonks")
+    #Priority.
+    if "snape" in hg_hidden_blowjob_character_list and "snape" not in hg_hidden_blowjob_seen_list:
+        $ character_choice = "snape"
+    elif "luna" in hg_hidden_blowjob_character_list and "luna" not in hg_hidden_blowjob_seen_list:
+        $ character_choice = "luna"
+    #elif "astoria" in hg_hidden_blowjob_character_list and "astoria" not in hg_hidden_blowjob_seen_list:
+    #    $ hg_hidden_blowjob_seen_list.append("astoria")
+    #    $ character_choice = "astoria"
+    #elif "susan" in hg_hidden_blowjob_character_list and "susan" not in hg_hidden_blowjob_seen_list:
+    #    $ hg_hidden_blowjob_seen_list.append("susan")
+    #    $ character_choice = "susan"
+    #elif "cho" in hg_hidden_blowjob_character_list and "cho" not in hg_hidden_blowjob_seen_list:
+    #    $ hg_hidden_blowjob_seen_list.append("cho")
+    #    $ character_choice = "cho"
+    elif "tonks" in hg_hidden_blowjob_character_list and "tonks" not in hg_hidden_blowjob_seen_list:
+        $ character_choice = "tonks"
 
-        #Priority.
-        if "snape" in hg_hidden_blowjob_character_list and "snape" not in hg_hidden_blowjob_seen_list:
-            $ hg_hidden_blowjob_seen_list.append("snape")
-            $ character_choice = "snape"
-        elif "luna" in hg_hidden_blowjob_character_list and "luna" not in hg_hidden_blowjob_seen_list:
-            $ hg_hidden_blowjob_seen_list.append("luna")
-            $ character_choice = "luna"
-        #elif "astoria" in hg_hidden_blowjob_character_list and "astoria" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("astoria")
-        #    $ character_choice = "astoria"
-        #elif "susan" in hg_hidden_blowjob_character_list and "susan" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("susan")
-        #    $ character_choice = "susan"
-        #elif "cho" in hg_hidden_blowjob_character_list and "cho" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("cho")
-        #    $ character_choice = "cho"
-        elif "tonks" in hg_hidden_blowjob_character_list and "tonks" not in hg_hidden_blowjob_seen_list:
-            $ hg_hidden_blowjob_seen_list.append("tonks")
-            $ character_choice = "tonks"
+    #Random Pick.
+    else:
+        $ character_choice = renpy.random.choice(hg_hidden_blowjob_character_list)
 
-        #Random Pick.
-        else:
-            $ character_choice = renpy.random.choice(hg_hidden_blowjob_character_list)
 
-        #Calls Scene.
-        if character_choice == "snape":
-            call hg_hidden_blowjob_snape
+    #Calls Scene.
+    if character_choice == "snape":
+        call hg_hidden_blowjob_snape
 
-        if character_choice == "luna":
-            call hg_hidden_blowjob_luna
+    if character_choice == "luna":
+        call hg_hidden_blowjob_luna
 
-        if character_choice == "tonks":
-            call hg_hidden_blowjob_luna
+    if character_choice == "tonks":
+        call hg_hidden_blowjob_tonks
 
-        #Genie Cums.
-        call hg_hidden_blowjob_cumming
+    #Genie Cums.
+    call hg_hidden_blowjob_cumming
 
-        return
+    return
 
 
 
@@ -510,6 +506,8 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
     menu:
         m "..."
         "\"Please, come on in, Severus.\"":
+            if "snape" not in hg_hidden_blowjob_seen_list:
+                $ hg_hidden_blowjob_seen_list.append("snape")
             $ mad = 30
             stop music fadeout 1.0
             call her_main("([genie_name], no!)","angry","angry",emote="01",ypos="head")
@@ -606,6 +604,8 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
     menu:
         m "..."
         "\"Please, come on in, [luna_name].\"":
+            if "luna" not in hg_hidden_blowjob_seen_list:
+                $ hg_hidden_blowjob_seen_list.append("luna")
             $ mad += 30
             stop music fadeout 1.0
             call her_main("[genie_name], no! Why would you let-","angry","angry",emote="01",ypos="head")
@@ -622,47 +622,62 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
 
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
             g9 "Miss Lovegood! How can I help you?"
-            call lun_main("I have a message for you from Professor Sprout, [lun_genie_name].","open","base","base","R")
+            call lun_main("I have a message for you, [lun_genie_name],... from Professor Sprout.","open","base","base","R")
             m "Professor Sprout?"
             m "(Who was that again?)"
             call lun_main("Yes, she's sent me to inform you about the school's newest grow of Venomous Tentacula.","base","base","base","mid")
-            her "{size=-4}(Those things are horrible... *Slurp...?* *Gulp...?*){/size}"
+            m "(Venomous Tentacles?)"
+            her "{size=-4}(Those things are horrible... *Slurp...* *Gulp...*){/size}"
 
-            lun "They are still quite young. Very tempered."
-            lun "You really have to train them well."
-            call lun_main("But they finally started sucking!","base","base","base","mid")
-            m "Wait,... what?"
+            lun "Very feisty little plants, they are. And still quite young."
+            lun "They'll wither if you don't take care of them properly..."
+            m "So why tell me?"
+            call lun_main("They have just started sucking!","base","base","base","mid")
+            with hpunch
+            m "What?"
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
             call lun_main("Sucking, [lun_genie_name]!","base","base","base","mid")
-            call lun_main("They have started sucking like crazy!","base","base","base","mid")
+            call lun_main("It's so cute! They suck at each others tentacles with their little mouths!","base","base","base","mid")
+            m "(Plants with mouths?)"
             lun "Notmally they only do that shortly before they spread their spores."
             lun "Which means they are almost ready!"
             m "Ready? for what?"
             lun "Pollination!"
-            lun "That's then they wove thir tentacles into each other and shoot out their spores."
+            lun "That'swhen they wove thir tentacles into each other and shoot out their spores."
             m "(How nasty!)"
 
-            lun "You won't believe how hard it is to get them to that stage!"
-            lun "Getting them to suck is quite an achievement."
+            lun "You won't believe how hard it is to get them to that stage..."
+            lun "It's quite an achievement!"
 
-            m "Yes, I know what you are talking about!"
-            lun "You do?"
-            m "Yes. I've got one right here!"
-            lun "Can I see it, [lun_genie_name]?"
+            m "I'm more than familiar with them!"
+            lun "You are?"
+            g4 "Those young-{w=0.9} sucking- {w=0.2}.{w=0.2}.{w=0.2}.{w=0.2} UGH! {w=0.2} Troublemakers!"
+            g4 "Yes. I've got one right here!"
+            lun "Oh! can I see it, [lun_genie_name]?"
             m "I'm afraid not, [luna_name]."
-            g9 "It's a shy little thing."
-            m "I know everything about those devils..."
-            m "First they "
-            m "But now she's on her knees sucking like crazy!"
-            lun "They have knees? I didn't even know that!"
+            g9 "It's a shy little thing. You better not get any closer!"
+            lun "Aww... ok."
+            m "I know everything about those little devils..."
+            m "First she bitched and moaned about every tiny little thing I want to do to her..."
+            m "But now, she's down on her knees right in front of me..."
+            g4 "Sucking like crazy!"
+            lun "(So they not only have a head but also knees... I didn't even know that!)"
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
 
-            lun "Did it ever spit on you, [lun_genie_name]?"
-            m "What?"
-            lun "Professor Sprout said, if a Venomous Tentacula ever spits on you-"
-            lun "You should spit right back!"
+            lun "Just be careful, [lun_genie_name]. As you probably know, they like to spit... and bite..."
+            m "Truely?"
+            lun "Yes. If you aren't careful, they'll hit you with their saliva, or bite at your limbs!"
+            lun "Luckily, there is an easy way to make them stop such behaviour!"
+            m "I'm all ears..."
+            lun "They hate being spat on just as much as you, [lun_genie_name]. Maybe even more so!"
+            m "(Those are some weird fucking plants...)"
+            lun "Professor Sprout said, if a Venomous Tentacula ever acts up-"
+            lun "You should just spit on it and put it in its place!"
+            lun "Her words..."
             g9 "Like this?"
             call spit_on_her
 
-            g4 "Take that you nasty little plant."
+            g4 "Take that, you nasty little slu-... Uhh, plant."
             her "{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}"
             lun "That's right, [lun_genie_name]!"
             g4 "This one wants more spit!"
@@ -671,7 +686,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             lun "Professor Sprout has said, sometimes, a bit of tough love is the only thing that can make them bend!"
             m "She did?"
             g9 "Oh no, mine is fighting back!"
-            lun "Be careful, [lun_genie_name]! They can bite!"
+            lun "Be careful, [lun_genie_name]! Or she'll bite you!"
             g4 "Don't worry, this one's getting a beating!"
             call slap_her
             her "{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}"
@@ -682,9 +697,17 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             g4 "Want some more?"
             call slap_her
             call slap_her
+
             lun "You are so good at this!"
             lun "I need to tell Professor Sprout, she'll be overjoyed to hear about your training methods!"
+            m "Give her my thanks, [luna_name]. She's a smart lady, this Sprout!"
+            g9 "Full of great ideas!"
+            lun "I will, [lun_genie_name]."
 
+            if daytime:
+                lun "Have a nice day!"
+            else:
+                lun "Good night!"
 
             #Luna leaves.
             hide screen luna_main
@@ -696,8 +719,11 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             call lun_walk("mid","leave",3)
             pause.5
 
+            m "Well that wasn't too bad, was it?"
+            her "{size=-4}(............................. *Slurp...* *Slurp...* *Gulp...*){/size}"
             call blkfade
 
+            call u_play_ani
             call play_music("playful_tension") # SEX THEME.
             ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
 
@@ -729,6 +755,8 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
     menu:
         m "..."
         "\"Please, come on in, [tonks_name].\"":
+            if "tonks" not in hg_hidden_blowjob_seen_list:
+                $ hg_hidden_blowjob_seen_list.append("tonks")
             $ mad += 10
             stop music fadeout 1.0
             call her_main("[genie_name], no! Please she will know that-","angry","angry",emote="01",ypos="head")
@@ -748,10 +776,10 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             call u_play_ani
 
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Tonks! What can I do you for?"
+            g9 "Tonks! What can I do you for?"
             call ton_main("[ton_genie_name], I was wondering if we could-","open","base","base","R")
             call ton_main("(...)","open","base","base","R")
-            call ton_main("I' so sorry, am I interrupting something?","horny","base","base","R")
+            call ton_main("I'm so sorry, am I interrupting something?","horny","base","base","R")
             her "She's going to find out!!!"
             m "Nothing trastically..."
 
@@ -759,24 +787,25 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
                 "-Tell the truth-":
                     m "Just stuffing Miss Granger's cute little mouth..."
                     g9 "With my cock!"
+                    call u_pause_ani
 
                 "-Lie-":
                     m "Ehm... Just admiring...{w} the cupboard."
-                    ton "Like I'm going to believe that..."
-                    ton "Are you masturbating, [ton_genie_main]?"
-                    ton "Are you..."
-                    ton "Stroking your {w}hard, {w}magnifizent {w}cock?"
-                    her "{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}"
+                    call ton_main("Like I'm going to believe that...","open","base","base","R")
+                    call ton_main("Are you masturbating, [ton_genie_name]?","open","base","base","R")
+                    call ton_main("Are you stroking your hard, {w}magnifizent, {w}cock?","open","base","base","R")
                     with hpunch
+                    her "{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}"
+                    call u_pause_ani
                     her "size=-4}What??{/size}"
-                    ton "who was that?"
-                    ton "[ton_genie_main]?!"
-                    m "Uhm-... My belly?"
-                    ton "Sounded like somebody doesn't know how to throat a dick properly."
+                    call ton_main("who was that?","open","base","base","R")
+                    call ton_main("[ton_genie_name]?!","open","base","base","R")
+                    m "Uhm-{w} My belly?"
+                    call ton_main("Sounded like somebody doesn't know how to throat a dick properly.","open","base","base","R")
                     her "(Excuse me?!)"
                     m "Don't be mean, she's doing her best..."
-                    ton "So there is a girl behind you."
-                    ton "Who is it? Tell me!"
+                    call ton_main("So there is a girl behind you!","open","base","base","R")
+                    call ton_main("Who is it? Tell me!","open","base","base","R")
                     m "(...)"
                     m "It's Miss Granger."
 
@@ -791,106 +820,113 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
                 with hpunch
                 m "Ouch, I felt that..."
 
-            call ton_main("You are fucking her mouth? Right now???","horny","base","base","R")
+            call ton_main("And you are telling me...","horny","base","base","R")
+            call ton_main("You are fucking her mouth? {w}Right now???","horny","base","base","R")
 
-            call ton_main("Oh I've got to see this...","horny","base","base","R",xpos="mid",ypos="base",trans="move")
+            call ton_main("Oh I've got to see this...","horny","base","base","R",xpos="mid",ypos="base")
             g4 "Wait!"
             call ton_main("Hmm?","horny","base","base","R")
 
             m "You better not come any closer..."
             m "Or I fear she will bite me..."
-            m "Or worse,..."
-            m "She'll stop..."
+            g4 "Or worse,..."
+            m "She'll stop with the sucking..."
             her "(Damn right I will...)"
+            call u_play_ani
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
 
             call ton_main("Very well...","horny","base","base","R",xpos="right",ypos="base")
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
 
-            ton "Is that really Miss Hermione Granger back there?"
-            ton "That's so hard to believe."
-            ton "Or perhaps, you fucking with me, [ton_genie_name]..."
-            m " No, it's her..."
-            ton "No that's way too good to be true!"
-            ton "Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?"
+            call ton_main("Is that really, {w}Miss Hermione Granger,{w} back there?","open","base","base","R")
+            call ton_main("That's so hard to believe!","open","base","base","R")
+            call ton_main("Or perhaps, you are just fucking with me, [ton_genie_name]...","open","base","base","R")
+            m "No,... {w}it's her..."
+            call ton_main("That's too good to be true!","open","base","base","R")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?","open","base","base","R")
             m "(...)"
-            ton " I will reward you with 50 house points if you show yourself!"
+            call ton_main(" I will reward you with 50 house points if you show yourself!","open","base","base","R")
             with hpunch
-            m "What?!"
+            g4 "What?!"
+            call u_pause_ani
             her "(Oh wow, that's a lot of points!)"
-            m "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
-            m "Do you even realize how many days I have to spend with Snape to get even with Slytherin again, after this?"
-            ton "So what? The girl's clearly earned it."
-            ton "Sucking her teachers cock..."
-            ton "50 points could be yours, Miss granger!"
-            ton "You only have to stick your gorgeous head out and say hi to me, and of course..."
-            ton "I promise I won't tell anybody."
-            ton "It will be our little secret."
+            call u_play_ani
+            g4 "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
+            m "Do you even realise how many days I'll have to spend with Snape, of all people, to get even with Slytherin again, after this?"
+            call ton_main("So what? The girl has clearly earned it!","open","base","base","R")
+            call ton_main("Sucking her teachers cock...","open","base","base","R")
+            call ton_main("50 points could be yours, Miss granger!","open","base","base","R")
+            call ton_main("You only have to stick your gorgeous head out and say hi to me, and of course...","open","base","base","R")
+            call ton_main("I promise I won't tell anybody.","open","base","base","R")
+            call ton_main("It will be our little secret.","open","base","base","R")
             her "(...)"
             m "Do what you must, girl..."
             her "(...............)"
-            call her_main("","","",ypos="head_left")
-            ton "Oh my!"
-            her "He- Hello, Miss Tonks."
+            call u_pause_ani
 
-            ton "Miss Granger, what a plreasant surprise."
-            ton "Are you having a good time back there?"
-            ton "You little cock sucker?"
+            call ton_main("Oh my!","open","base","base","R")
+
+            $ hermione_flip = -1 #head will be on the left.
+            call her_main("He- Hello, Miss Tonks.","clench","worriedCl",ypos="head")
+
+            call ton_main("Miss Granger, what a plreasant surprise.","open","base","base","R")
+            call ton_main("Are you having a good time back there?","open","base","base","R")
+            call ton_main("You little cock sucker?","open","base","base","R")
             her "(........................)"
-            her "I suppose so..................."
-            ton "What a marvelous sight to take in!" #Need a better word than marvelous.
-            ton "I would love nothing more than to join you two right now."
-            g9 "You're more than welcome to suck my dick too!"
-            ton "I'm sorry, [ton_genie_name]."
-            ton "But sadly, I'm already pre-occupied..."
-            ton "Teaching our second-years how to cast a simple defection spell..."
-            ton "We are already two sessions behind my planned class shedule."
-            ton "Who said teaching would be easy, am I right?"
-            m "It's quite easy, actually."
-            ton "As headmaster maybe... All you do is molest some girls I reckon..."
-            m "That's not true!"
-            m "I also take care of this bird here..."
-            if phoenix_is_fed:
-                ton "Well at least she got something to eat..."
-            else:
-                ton "Seems like you're doing a poor job at that. She looks a bit sick..."
-                ton "When was the last time you fed her?"
-                m "(...)"
+            call her_main("I suppose so...................","disgust","down")
+            call ton_main("What a sight to see...","open","base","base","R")
+            call u_play_ani
 
-            ton "Anyways..."
-            ton "Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, I hereby reward the house gryffindor..."
-            ton "69 points!"
+            call ton_main("I'd love to join you back there, Miss Granger...","open","base","base","R")
+            call ton_main("Sucking your Headmaster's dick with you!","open","base","base","R")
+            her "{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            g9 "You can both have it!"
+            call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...","open","base","base","R")
+            call ton_main("Teaching our second-years how to cast a simple defection spell...","open","base","base","R")
+            call ton_main("We are already two sessions behind my planned class shedule.","open","base","base","R")
+            call ton_main("I came to you to get consulted about some material I had prepared for them.","open","base","base","R")
+            call ton_main("But since you have to take care of Miss Granger right now,...","open","base","base","R")
+            call ton_main("I guess that can wait.","open","base","base","R")
+            call ton_main("Who said teaching would be easy, am I right?","open","base","base","R")
+            m "It's quite easy, actually."
+            call ton_main("As headmaster maybe... All you do is molest any girl that finds her way in here, I reckon...","open","base","base","R")
+            m "Taking care of those girls is quite hard."
+            call ton_main("I can see how hard it is...","open","base","base","R")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call ton_main("Anyways...","open","base","base","R")
+            call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w}I hereby reward the house gryffindor...","open","base","base","R")
+            call u_pause_ani
+
+            call ton_main("69 points!","open","base","base","R")
             $ gryffindor += 69
 
             her "(69! That's even more than she agreed on!)"
             m "Didn't you say 50 earlier?"
-            ton "Yes, but 69 is so much better."
-            ton "Don't you think so too, Miss Granger?"
-            her "Uhm... Yes. Thank you, Miss Tonks."
-            m "Now get you mouth back on my cock, [hermione_name]!"
-            her "Of course, [genie_name]..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call ton_main("Yes, but 69 is so much better!","open","base","base","R")
+            call ton_main("Don't you think so too, Miss Granger?","open","base","base","R")
+            call her_main("Uhm... Yes. Thank you, Miss Tonks.")
+            m "Get you mouth back on my cock, [hermione_name]!"
+            call her_main("Of course, [genie_name]...")
+            call u_play_ani
 
-            m "Your mouth feels amazing, [hermione_name]!"
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("It really warms my heart, seeing","horny","base","base","R")
-            call ton_main("Both teachers and students of this school...","horny","base","base","R")
-            call ton_main("Still bonding...","horny","base","base","R")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("Feeling each others up...","horny","base","base","R")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("Kissing...","horny","base","base","R")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("Having sex!","horny","base","base","R")
-            her "{size=-4}(She did what! *Gulp...*){/size}"
-            call ton_main("Brings back memories...","horny","base","base","R")
-            her "(Has this favour trading always been a thing?)"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Sounds like your time here was just as fun as little'ol Hermione's..."
-            her "{size=-4}(How dare he... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call ton_main("I gotta go, [ton_genie_name].","open","base","base","R")
+            call ton_main("Wish I could watch you two a little longer...","open","base","base","R")
+            call ton_main("But I have to head back to my office.","open","base","base","R")
+            m "What a shame."
+            call ton_main("Make sure she swallows for me.","open","base","base","R")
+            g9 "Every last drop!"
 
+            if daytime:
+                call ton_main("See you later in class, you little slut!","open","base","base","R")
+            else:
+                call ton_main("Good night, Slut!","open","base","base","R")
+            call her_main("..........","silly","worriedCl")
 
-            #Luna leaves.
+            #Tonks leaves.
             hide screen tonks_main
             hide screen bld1
             with d3
@@ -899,6 +935,8 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
 
             #call ton_walk("mid","leave",3)
             pause.5
+
+            $ hermione_flip = 1 #Default
 
             call blkfade
 
@@ -910,29 +948,28 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
         "\"I am busy right now, [tonks_name].\"":
             call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
             ton "Busy?"
-            m ""
-            ton "Oh... well, I'll visit you later then."
+            ton "Could it be..."
+            ton "Is Snape with you?"
             if daytime:
-                pass
+                ton "Are you two having one of your silly little duels again?"
             else:
-                ton "Is Snape with you?"
                 ton "Don't be drinking the whole night..."
-                ton "Can't have him make a fool of himself in front of the students again."
+                ton "Can't have him make a fool out of himself again. Not in front of the students."
                 ton "He made such a mess last time..."
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
             m "He isn't here, actually. But I will let him know..."
             ton "So, are you with a student then, hmm?"
             her "{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}"
             ton "Who is she? Is it the blonde? Or..."
-            ton "You aren't shagging my cusin again, are you?"
+            ton "You aren't shagging my little cusin, are you?"
             her "{size=-4}(Her cusin? *Slurp...* *Slurp...* *Gulp...*){/size}"
-            her "{size=-4}(Does she mean Susan? *Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Non of your concern, Tonks!"
+            her "{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}"
+            m "That's non of your concern, Tonks!"
             m "You may leave now..."
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
             ton "I can help you jack off, if that's what you're-"
             g4 "I said, leave!"
-            ton "Ok, [ton_genie_name]"
+            ton "Ok, [ton_genie_name]."
             ton "*Giggle...*"
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
             m "I think she's gone..."
@@ -1583,18 +1620,6 @@ label end_hg_blowjob:
 
     if her_whoring < 18:
         $ her_whoring +=1
-
-    if hg_pf_SuckIt_OBJ.points == 0:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 1 #Event hearts level (0-4)
-
-    if hg_pf_SuckIt_OBJ.points == 1:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 2 #Event hearts level (0-4)
-
-    if hg_pf_SuckIt_OBJ.points >= 2:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 3 #Event hearts level (0-4)
-
-    if hg_pf_SuckIt_OBJ.points >= 2 and her_whoring > 21:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 4 #Event hearts level (0-4)
 
     $ hg_pf_SuckIt_OBJ.points += 1
 

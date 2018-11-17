@@ -34,7 +34,7 @@ label equip_her_makeup:
     if mad >= 1:
         jump equipping_failed
 
-    if makeup_choice in ["red_lipstick","pink_lipstick","turquoise_lipstick"]:
+    if makeup_choice in ["lipstick_red","lipstick_pink","turquoise_lipstick"]:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
 
@@ -127,7 +127,7 @@ label equip_her_makeup:
 
             pause.5
 
-            call set_h_makeup(makeup_choice)
+            call set_her_makeup(makeup_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -136,7 +136,7 @@ label equip_her_makeup:
         else:
 
             $ hide_transitions = True
-            call set_h_makeup(makeup_choice)
+            call set_her_makeup(makeup_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -167,7 +167,7 @@ label equip_her_makeup:
 
             pause.5
 
-            call set_h_makeup(makeup_choice) #Removes Item
+            call set_her_makeup(makeup_choice) #Removes Item
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -176,7 +176,7 @@ label equip_her_makeup:
         else:
 
             $ hide_transitions = True
-            call set_h_makeup(makeup_choice) #Removes Item
+            call set_her_makeup(makeup_choice) #Removes Item
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -328,11 +328,11 @@ label equip_her_head_accessory:
             pause.5
 
             if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_h_glasses(head_accessory_choice, glasses_color_choice)
+                call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
-                call set_h_ears(head_accessory_choice)
+                call set_her_ears(head_accessory_choice)
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
-                call set_h_hat(head_accessory_choice)
+                call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -342,10 +342,10 @@ label equip_her_head_accessory:
 
             $ hide_transitions = True
             if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_h_glasses(head_accessory_choice, glasses_color_choice)
+                call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 if her_whoring >= 11:
-                    call set_h_ears(head_accessory_choice)
+                    call set_her_ears(head_accessory_choice)
                 else:
                     ">She won't wear those ears just yet."
                     if cheats_active or game_difficulty <= 2:
@@ -353,7 +353,7 @@ label equip_her_head_accessory:
                     jump return_to_wardrobe
 
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
-                call set_h_hat(head_accessory_choice)
+                call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -401,11 +401,11 @@ label remove_head_accessory: #Remove/Toggle off
             pause.5
 
             if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_h_glasses(head_accessory_choice, glasses_color_choice)
+                call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
-                call set_h_ears(head_accessory_choice)
+                call set_her_ears(head_accessory_choice)
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
-                call set_h_hat(head_accessory_choice)
+                call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -415,11 +415,11 @@ label remove_head_accessory: #Remove/Toggle off
 
             $ hide_transitions = True
             if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_h_glasses(head_accessory_choice, glasses_color_choice)
+                call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
-                call set_h_ears(head_accessory_choice)
+                call set_her_ears(head_accessory_choice)
             if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
-                call set_h_hat(head_accessory_choice)
+                call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -436,8 +436,7 @@ label equip_lun_head_accessory:
     if head_accessory_choice in []: #Hat
         call set_lun_hat(head_accessory_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Accessory ###
 label equip_ast_head_accessory:
@@ -448,8 +447,7 @@ label equip_ast_head_accessory:
     if head_accessory_choice in ["boss_hat"]:
         call set_ast_hat(head_accessory_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Accessory ###
 label equip_sus_head_accessory:
@@ -460,8 +458,7 @@ label equip_sus_head_accessory:
     if head_accessory_choice in []:
         call set_sus_hat(head_accessory_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Accessory ###
 label equip_cho_head_accessory:
@@ -472,8 +469,7 @@ label equip_cho_head_accessory:
     if head_accessory_choice in []:
         call set_cho_hat(head_accessory_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Accessory ###
 label equip_ton_head_accessory:
@@ -484,5 +480,4 @@ label equip_ton_head_accessory:
     if head_accessory_choice in ["paper_bag_1","paper_bag_2","paper_bag_3"]:
         call set_ton_hat(head_accessory_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

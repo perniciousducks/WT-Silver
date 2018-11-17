@@ -118,7 +118,7 @@ label tonks_init:
         $ ton_panties                 = "blank"
         $ ton_panties_color           = "base"
 
-        $ tonks_onepiece            = "characters/tonks/clothes/onepieces/base/blank.png"
+        $ tonks_onepiece            = "characters/tonks/clothes/onepieces/blank.png"
         $ ton_onepiece                = "blank"
         $ ton_onepiece_color          = "base"
 
@@ -143,8 +143,8 @@ label tonks_init:
         $ ton_stockings               = "stockings_auror"
         $ ton_stockings_color         = "base"
 
-        $ tonks_robe                = "characters/tonks/clothes/robe/base/auror_coat.png"
-        $ tonks_robe_back           = "characters/tonks/clothes/robe/base/auror_coat_back.png"
+        $ tonks_robe                = "characters/tonks/clothes/robe/auror_coat.png"
+        $ tonks_robe_back           = "characters/tonks/clothes/robe/auror_coat_back.png"
         $ ton_robe                    = "auror_coat"
         $ ton_robe_color              = "base"
 

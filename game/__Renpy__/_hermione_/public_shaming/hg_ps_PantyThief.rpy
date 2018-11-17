@@ -360,7 +360,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                     m "Yes, yes..."
 
     label back_from_soaked:
-    if hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 9 and her_whoring <= 15 :
+    if hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 9 and her_whoring < 15 :
         m "You can go now."
         call her_main("What about my points?","scream","angryCl")
         m "You still want points after I just gave you a gift?"
@@ -373,7 +373,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         call her_main("Thank you, [genie_name]...","annoyed","suspicious")
         m "You can go now."
         her "Good night, [genie_name]."
-    elif hg_ps_PantyThief_SoakedPantiesFlag and her_whoring > 15:
+    elif hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 15:
         $ hg_ps_PantyThief_OBJ.hearts_level = 4 #Event hearts level (0-4)
         m "You can go now."
         call her_main("yes, [genie_name]","angry","down_raised")
@@ -392,7 +392,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         her "Good night, [genie_name]."
         #m "Yes, good night..."
 
-    if her_whoring <= 5:
+    if her_whoring < 6:
         $ her_whoring +=1
 
     $ hg_ps_PantyThief_OBJ.points += 1

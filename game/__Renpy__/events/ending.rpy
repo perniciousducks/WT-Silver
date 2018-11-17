@@ -22,21 +22,21 @@ label your_whore:
 
     #Hermione Clothes
     $ transparency             = 1 #Disabled
-    $ h_neckwear               = "00_blank"
+    $ h_neckwear               = "blank"
     $ hermione_body_accs_list  = []
-    $ h_gloves                 = "00_blank"
-    $ h_stockings              = "00_blank"
+    $ h_gloves                 = "blank"
+    $ h_stockings              = "blank"
     $ hermione_wear_robe       = False
     $ h_request_wear_robe      = False
 
-    $ h_ears                   = "00_blank"
+    $ h_ears                   = "blank"
     $ hermione_makeup_list     = []
-    $ h_glasses                = "00_blank"
+    $ h_glasses                = "blank"
     $ h_hat                    = "tiara"
     $ hermione_wear_hat        = True
     $ h_request_wear_hat       = True
 
-    call h_outfit_OBJ(hg_dress_yule_ball_OBJ) #Updates uniform.
+    call set_her_outfit(hg_dress_yule_ball_OBJ) #Updates uniform.
 
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).
@@ -3225,7 +3225,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     $ hermione_wear_hat = False
     $ h_hair_style = "A"
 
-    call h_outfit_OBJ(None) #Updates uniform.
+    call set_her_outfit(None) #Updates uniform.
     call reset_hermione
 
     hide screen end_u_1                                           #<---- SCREEN
@@ -3384,7 +3384,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         ### TITS ###
         hide screen hermione_main
         $ hermione_wear_bra = False
-        call h_action("lift_top")
+        call set_her_action("lift_top")
         call her_main("","annoyed","annoyed",xpos="mid",trans="fade")
         stop music
         call ctc
@@ -3394,13 +3394,13 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         call her_main("","annoyed","angry")
 
         $ hermione_wear_panties = False
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         call ctc
 
         with hpunch
         dum_[5] "{size=+7}GHT!!!{/size}"
         her "I am willing to do anything to get those points, sir!"
-        call h_action("")
+        call set_her_action("")
         with hpunch
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}","scream","angry",emote="01")
         hide screen hermione_main

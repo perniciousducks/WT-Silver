@@ -135,7 +135,7 @@ label luna_init:
         $ lun_panties                 = "panties_basic"
         $ lun_panties_color           = "base"
 
-        $ luna_onepiece            = "characters/luna/clothes/onepieces/base/blank.png"
+        $ luna_onepiece            = "characters/luna/clothes/onepieces/blank.png"
         $ lun_onepiece                = "blank"
         $ lun_onepiece_color          = "base"
 
@@ -160,7 +160,7 @@ label luna_init:
         $ lun_stockings               = "blank"
         $ lun_stockings_color         = "base"
 
-        $ luna_robe                = "characters/luna/clothes/robe/base/blank.png"
+        $ luna_robe                = "characters/luna/clothes/robe/blank.png"
         $ lun_robe                    = "blank"
         $ lun_robe_color              = "base"
 

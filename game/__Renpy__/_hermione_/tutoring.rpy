@@ -59,7 +59,7 @@ label l_tutoring:
         play sound sd_door
         pause.3
 
-        call h_action("hold_book")
+        call set_her_action("hold_book")
         call her_main("","base","base",xpos="mid",ypos="base")
 
         call hide_blkfade
@@ -123,7 +123,7 @@ label l_tutoring:
     if her_tutoring == 1:   # Whoring lvl 1
 
         hide screen hermione_main
-        call h_action("hold_book")
+        call set_her_action("hold_book")
 
         call her_main("","base","base",trans="fade")
         m "Miss Granger, time for your first lesson."
@@ -133,7 +133,7 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call h_action("none","update")
+        call set_her_action("none","update")
 
         g9 "{size=-2}(And soon you'll love cock!){/size}"
         $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
@@ -652,7 +652,7 @@ label l_tutoring:
         hide screen hermione_main
         call her_chibi("lift_top")
 
-        call h_action("lift_top")
+        call set_her_action("lift_top")
 
         hide screen hermione_main
         $ hermione_wear_top = False
@@ -731,7 +731,7 @@ label l_tutoring:
         call blkfade
         call ctc
 
-        call h_action("none","update")
+        call set_her_action("none","update")
 
         hide screen chair_left
         hide screen groping_naked_tits
@@ -822,11 +822,11 @@ label l_tutoring:
         g9 "Now take off your skirt."
         pause.8
 
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         call her_main("","base","baseL",cheeks="blush")
@@ -853,11 +853,11 @@ label l_tutoring:
             m "Now take them off."
 
             $ hermione_wear_panties = False
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
 
             call nar(">She slowly lowers her panties.")
 
-            call set_hermione_action("None")
+            call set_her_action("None")
 
             hide screen groping_06
             show screen no_groping_06
@@ -925,7 +925,7 @@ label l_tutoring:
         hide screen no_groping_01
         "You dismiss Hermione."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         call her_chibi("stand","desk","base")
         show screen genie
@@ -989,23 +989,23 @@ label l_tutoring:
             m "Take off your shirt and bra, I want to see your tits."
             pause.5
 
-            call set_hermione_action("lift_top")
+            call set_her_action("lift_top")
             pause.5
 
             $ hermione_wear_top = False
             $ hermione_wear_bra = False
-            call set_hermione_action("None")
+            call set_her_action("None")
             pause.5
 
         else:
             m "Take off your shirt, I want to see your tits."
             pause.5
 
-            call set_hermione_action("lift_top")
+            call set_her_action("lift_top")
             pause.5
 
             $ hermione_wear_top = False
-            call set_hermione_action("None")
+            call set_her_action("None")
             pause.5
 
         her "You love them don't you?"
@@ -1017,11 +1017,11 @@ label l_tutoring:
         m "Now remove your skirt!"
         pause.5
 
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         $ b_her_tears = True
@@ -1036,11 +1036,11 @@ label l_tutoring:
             her "Your wish is my command."
             pause.5
 
-            call set_hermione_action("pinch")
+            call set_her_action("pinch")
             pause.5
 
             $ hermione_wear_panties = False
-            call set_hermione_action("None")
+            call set_her_action("None")
             pause.5
 
             $ u_tears_pic = "characters/hermione/face/e_her_tears_02b.png"
@@ -1050,12 +1050,12 @@ label l_tutoring:
         else:
             call her_main("Touch her pussy like I'm touching mine now.","silly","ahegao_raised",cheeks="blush")
 
-        call set_hermione_action("pinch")
+        call set_her_action("pinch")
         pause.5
 
         call her_main("Caress it.","open_tongue","ahegao_raised",cheeks="blush")
 
-        call set_hermione_action("fingering")
+        call set_her_action("fingering")
         pause.2
 
         call her_main("Insert my fingers into her wet pussy.","open_tongue","ahegao_raised",cheeks="blush")
@@ -1088,7 +1088,7 @@ label l_tutoring:
 
         ">Hermione catches her breath and puts her clothes back on."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen her_naked
         call her_chibi("stand","desk","base")
@@ -1144,12 +1144,12 @@ label l_tutoring:
         m "You still have things to learn..."
         call her_main("What?! What are we waiting for then?","scream","closed",cheeks="blush")
 
-        call set_hermione_action("lift_top")
+        call set_her_action("lift_top")
         pause.2
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("None")
+        call set_her_action("None")
 
         ">She rips off her shirt and rushes to your desk."
 
@@ -1264,7 +1264,7 @@ label l_tutoring:
 
         ">After a while, she puts her shirt back on."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen no_groping_05_desk
         show screen genie
@@ -1333,12 +1333,12 @@ label l_tutoring:
         her "{size=-2}(Old pervert...){/size}"
         call her_main("{size=-2}({b}My{/b} old pervert){/size}","open","worriedCl",cheeks="blush")
 
-        call set_hermione_action("lift_top")
+        call set_her_action("lift_top")
         pause.5
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         call her_main("My tits are the best in all of Hogwarts!","silly","ahegao_raised",cheeks="blush")
@@ -1362,12 +1362,12 @@ label l_tutoring:
         call blktone
         call her_main("I'm glad you love it.","angry","worriedCl",cheeks="blush",xpos="mid",ypos="base")
 
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
         $ hermione_wear_panties = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         call her_main("Can we start now?","grin","angry",cheeks="blush")
@@ -1462,7 +1462,7 @@ label l_tutoring:
 
         ">She puts her shirt back on and rushes to the door."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen no_groping_05_desk
         call her_chibi("stand","door","base",flip=True)
@@ -1559,9 +1559,11 @@ label l_tutoring:
         pause.3
 
         ###MAKE HER WEAR JUST A ROBE
-        $ h_robe = "gryff_robe_gap"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
-        call h_action("naked") #Removes all clothes.
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_2_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_2_s.png"
+        call set_her_action("naked") #Removes all clothes.
         $ hermione_wear_robe = True
         call update_chibi_uniform
 
@@ -1581,8 +1583,10 @@ label l_tutoring:
         pause.2
 
         hide screen hermione_main
-        $ h_robe = "gryff_robe_gap_wide"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
         call her_main("","open","squint",cheeks="blush")
         call ctc
 
@@ -1592,8 +1596,10 @@ label l_tutoring:
         pause.2
 
         hide screen hermione_main
-        $ h_robe = "gryff_robe_off"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_open_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_open_s.png"
         call her_main("","base","closed",cheeks="blush",trans="d5")
         call ctc
 
@@ -1601,8 +1607,10 @@ label l_tutoring:
         g9 "Oh yes, definitely. Well done, my girl."
 
         hide screen hermione_main
-        $ h_robe = "gryff_robe_gap_wide"
-        $ hermione_robe = "characters/hermione/clothes/robe/base/"+str(h_robe)+".png"
+        if h_robe in gryffindor_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
+        elif h_robe in slytherin_robe_list:
+            $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
 
         call her_main("Alright then, can we start the lesson now?","smile","angry",cheeks="blush")
         m "Maybe, I don't know... do you like butterbeer?"
@@ -1754,7 +1762,7 @@ label l_tutoring:
 
         $ her_tutoring = 13
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         $ aftercum = False
         jump day_start
@@ -1766,7 +1774,7 @@ label l_tutoring:
         call blkfade
         pause 1
 
-        call h_action("hold_book")
+        call set_her_action("hold_book")
 
         play sound sd_door
         pause.3
@@ -1794,8 +1802,8 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call h_action("naked")
-        call h_action("hold_book")
+        call set_her_action("naked")
+        call set_her_action("hold_book")
 
         call blktone
         hide screen blkfade
@@ -1805,7 +1813,7 @@ label l_tutoring:
         m "Ok now, put your books down and bend over the desk, my little whore."
         pause.5
 
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.5
 
         hide screen hermione_main
@@ -1935,7 +1943,7 @@ label l_tutoring:
         ">You dismiss Hermione."
         ">She puts her clothes back on without haste."
 
-        call h_action("none","update") #Resets clothes.
+        call set_her_action("none","update") #Resets clothes.
 
         hide screen no_groping_laying_02
         pause 1
@@ -2012,70 +2020,70 @@ define sd_win2 = "sounds/win2.mp3"
 # Screens
 screen genie_and_hermione: #Genie sitting, Hermione stands right in front of him (behind the desk even).
     tag favor
-    add "images/rooms/main_room/genie_and_hermione_01.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/rooms/main_room/genie_and_hermione_01.png" at Position(xpos = -84, ypos = 10)
 
 screen groping_05:
     tag favor
-    add "groping_05" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05" at Position(xpos = -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_05b:
     tag favor
-    add "groping_05b" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05b" at Position(xpos = -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_05:
     tag favor
-    add "images/animation/grope_d_05.png" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_d_05.png" at Position(xpos = -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_05_desk:
     tag favor
-    add "images/animation/grope_d_06.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_d_06.png" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_06: #Facing Genie.
     tag favor
-    add "images/animation/grope_e_05.png" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_e_05.png" at Position(xpos = -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_06:
     tag favor
-    add "groping_06" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06" at Position(xpos = -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_06b:
     tag favor
-    add "groping_06b" at Position(xpos = table_position_x -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06b" at Position(xpos = -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_laying_01:
     tag favor
-    add "images/animation/grope_laying_01.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_laying_01.png" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_laying_02:
     tag favor
-    add "images/animation/grope_laying_b_01.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "images/animation/grope_laying_b_01.png" at Position(xpos = -84, ypos = 10)
 
 screen scr_her_fingering_naked(speed="normal"):
     tag favor
     if speed == "slow":
-        add "ani_her_fingering_slow_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_fingering_slow_naked" at Position(xpos = -84, ypos = 10)
     else:
-        add "ani_her_fingering_naked" at Position(xpos = table_position_x -84, ypos = 10)
-    add "ani_her_fingering_blinking" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_fingering_naked" at Position(xpos = -84, ypos = 10)
+    add "ani_her_fingering_blinking" at Position(xpos = -84, ypos = 10)
 
 screen scr_her_sex(speed="normal"):
     tag favor
     if speed == "slow":
-        add "ani_her_sex_slow_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_sex_slow_naked" at Position(xpos = -84, ypos = 10)
     elif speed == "normal":
-        add "ani_her_sex_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_sex_naked" at Position(xpos = -84, ypos = 10)
     elif speed == "fast":
-        add "ani_her_sex_fast_naked" at Position(xpos = table_position_x -84, ypos = 10)
+        add "ani_her_sex_fast_naked" at Position(xpos = -84, ypos = 10)
 
 screen scr_her_sex_cum_outside(blink=0):
     tag favor
-    add "ani_her_sex_cum_outside_naked" at Position(xpos = table_position_x -84, ypos = 10)
+    add "ani_her_sex_cum_outside_naked" at Position(xpos = -84, ypos = 10)
 
 image groping_06: #Genie groping Hermione under her skirt. Hermione is facing Genie.
     "images/animation/grope_e_01.png"

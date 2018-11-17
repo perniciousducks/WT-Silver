@@ -234,7 +234,6 @@ label slut_scene: #Locked to her being your slut
     hide screen ctc
     hide screen bld1
     $ hermione_zorder = 5
-    $ display_h_tears = False
 
     jump end_hg_pf #Hides screens, calls her_walk, resets and ends day.
     #she then comes back in the evening with a story about some people abusing her and some congratulating her
@@ -377,7 +376,6 @@ label whore_scene: #(locked behind the public her_whoring flag)
     hide screen hermione_main
     with d3
 
-    $ display_h_tears = False
     jump end_hg_pf
 
     #m "Also, come see me tonight after everyone has seen the new you. I want to hear what they say."
@@ -565,7 +563,6 @@ label slave_scene:
     hide screen hermione_main
     with d3
 
-    $ display_h_tears = False
     jump end_hg_pf
 
 
@@ -592,7 +589,7 @@ label good_girl_scene:
     call her_main("Thank you [genie_name].","base","glance")
     ">Hermione slowly lifts her top."
 
-    call set_hermione_action("lift_top")
+    call set_her_action("lift_top")
     call ctc
 
     call her_main("Do you like them [genie_name]","annoyed","base")
@@ -600,7 +597,7 @@ label good_girl_scene:
     call her_main("Thank you [genie_name], you're always so kind.","base","closed")
     ">She lowers her top."
 
-    call set_hermione_action("none")
+    call set_her_action("none")
     pause.5
 
     m "50 points to Gryffindor."
@@ -610,7 +607,6 @@ label good_girl_scene:
     hide screen hermione_main
     with d3
 
-    $ display_h_tears = False
     $ collar = 4
 
     jump end_hg_pf

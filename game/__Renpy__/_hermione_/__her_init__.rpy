@@ -17,11 +17,10 @@ label her_init:
         $ hermione_eyes             = "characters/hermione/face/eyes/brown/base.png"
         $ hermione_eyebrows         = "characters/hermione/face/brows/brown/base.png"
         $ h_eye_color               = "brown"
-        $ h_eye_shadow              = "00_blank"
+        $ h_eye_shadow              = "blank"
 
         $ hermione_cheeks           = "characters/hermione/face/extras/cheeks_blank.png"
         $ hermione_tears            = "characters/hermione/face/extras/tears_blank.png"
-        $ h_display_tears           = False
         $ hermione_extra            = "characters/hermione/face/extras/blank.png"
         $ hermione_emote            = "characters/emotes/blank.png"
 
@@ -38,7 +37,6 @@ label her_init:
         $ hermione_breasts          = "characters/hermione/body/breasts/breasts_nipfix.png"
         $ h_breasts                 = "breasts_nipfix"
 
-        $ hermione_perm_expand           = False
         $ hermione_perm_expand_breasts   = False
         $ hermione_perm_expand_ass       = False
 
@@ -71,35 +69,12 @@ label her_init:
         $ hermione_use_action    = False
 
         $ h_action_top           = ""
-        $ h_action_bra           = ""
         $ h_action_bottom        = ""
-        $ h_action_panties       = ""
-        $ h_action_gloves        = ""
 
-
-        $ hermione_action_left_arm  = "00_blank.png"
-        $ hermione_action_right_arm = "00_blank.png"
-        $ hermione_action_a         = "00_blank.png"
-        $ hermione_action_b         = "00_blank.png"
-
-        $ h_action_right_arm        = "00_blank.png"
-        $ h_action_left_arm         = "00_blank.png"
-        $ h_action_a                = "00_blank.png"
-        $ h_action_b                = "00_blank.png"
-
-        $ h_action_show_arms        = False
-        $ h_action_show_bra         = True
-        $ h_action_show_panties     = True
-        $ h_action_show_top         = True
-        $ h_action_show_skirt       = True
-
-        $ hermione_action_bra       = "characters/hermione/clothes/underwear/base/bra_base.png"
-        $ hermione_action_panties   = "characters/hermione/clothes/underwear/base/panties_base.png"
-        $ hermione_action_top       = "characters/hermione/clothes/tops/base/top_1_g.png"
-        $ hermione_action_skirt     = "characters/hermione/clothes/bottoms/base/skirt_1.png"
-
-        $ hermione_costume_action_a = "characters/hermione/clothes/custom/00_blank.png"
-
+        $ hermione_action_a         = "blank.png"
+        $ hermione_action_b         = "blank.png"
+        $ h_action_a                = "blank.png"
+        $ hermione_costume_action_a = "characters/hermione/clothes/custom/blank.png"
 
         $ u_sperm = "characters/hermione/face/auto_02.png"
         $ hermione_sperm = "characters/hermione/face/auto_02.png" #Not in use yet.
@@ -120,10 +95,6 @@ label her_init:
         $ hermione_chibi_run_f       = "ch_hem run_a_flip"
         $ hermione_chibi_fly         = "ch_hem fly_a"
         $ hermione_chibi_fly_f       = "ch_hem fly_a_flip"
-
-        $ her_chibi_dance_xpos       = 350 #Not in use
-        $ her_chibi_dance_ypos       = 180 #Not in use
-
 
         $ u_h_animation              = ""
         $ u_h_animation_paused       = ""
@@ -215,59 +186,59 @@ label her_init:
         $ h_panties                 = "panties_base"
         $ h_panties_color           = "base"
 
-        $ hermione_onepiece         = "characters/hermione/clothes/onepieces/base/00_blank.png"
-        $ h_onepiece                = "00_blank"
+        $ hermione_onepiece         = "characters/hermione/clothes/onepieces/blank.png"
+        $ h_onepiece                = "blank"
         $ h_onepiece_color          = "base"
 
-        $ hermione_garterbelt       = "characters/hermione/clothes/garterbelts/00_blank.png"
-        $ h_garterbelt              = "00_blank"
+        $ hermione_garterbelt       = "characters/hermione/clothes/garterbelts/blank.png"
+        $ h_garterbelt              = "blank"
         $ h_garterbelt_color        = "base"
 
 
         #Other Clothing
-        $ hermione_neckwear         = "characters/hermione/clothes/neckwear/00_blank.png"
-        $ h_neckwear                = "00_blank"
+        $ hermione_neckwear         = "characters/hermione/clothes/neckwear/blank.png"
+        $ h_neckwear                = "blank"
         $ h_neckwear_color          = "base"
 
         $ hermione_body_accs_list   = []
 
-        $ hermione_gloves           = "characters/hermione/clothes/gloves/00_blank.png"
-        $ h_gloves                  = "00_blank"
+        $ hermione_gloves           = "characters/hermione/clothes/gloves/blank.png"
+        $ h_gloves                  = "blank"
         $ h_gloves_color            = "base"
 
-        $ hermione_stockings        = "characters/hermione/clothes/stockings/00_blank.png"
-        $ h_stockings               = "00_blank"
+        $ hermione_stockings        = "characters/hermione/clothes/stockings/blank.png"
+        $ h_stockings               = "blank"
         $ h_stockings_color         = "base"
         $ temp_stockings            = h_stockings
 
-        $ hermione_robe             = "characters/hermione/clothes/robe/base/gryff_robe.png"
-        $ h_robe                    = "gryff_robe"
+        $ hermione_robe             = "characters/hermione/clothes/robe/robe_basic_g.png"
+        $ h_robe                    = "robe_basic_g"
         $ h_robe_color              = "base"
 
         #Accessories
         $ hermione_makeup_list      = []
 
-        $ hermione_hat              = "characters/hermione/accessories/hats/hair_A/00_blank.png"
-        $ h_hat                     = "00_blank"
+        $ hermione_hat              = "characters/hermione/accessories/hats/hair_A/blank.png"
+        $ h_hat                     = "blank"
         $ h_hat_color               = "base"
 
-        $ hermione_glasses          = "characters/hermione/accessories/glasses/00_blank.png"
-        $ h_glasses                 = "00_blank"
+        $ hermione_glasses          = "characters/hermione/accessories/glasses/blank.png"
+        $ h_glasses                 = "blank"
         $ h_glasses_color           = "base"
 
-        $ hermione_ears             = "characters/hermione/accessories/ears/00_blank.png"
-        $ h_ears                    = "00_blank"
+        $ hermione_ears             = "characters/hermione/accessories/ears/blank.png"
+        $ h_ears                    = "blank"
 
 
         #Miscellaneous
         $ hermione_wear_buttplug     = False
-        $ hermione_buttplug          = "characters/hermione/accessories/plugs/00_blank.png"
-        $ h_buttplug                 = "00_blank"
+        $ hermione_buttplug          = "characters/hermione/accessories/plugs/blank.png"
+        $ h_buttplug                 = "blank"
 
-        $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/00_blank.png"
-        $ h_pubic_hair               = "00_blank"
+        $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/blank.png"
+        $ h_pubic_hair               = "blank"
 
-        $ hermione_panties_overlay  = "characters/hermione/clothes/underwear/00_blank.png"
+        $ hermione_panties_overlay  = "characters/hermione/clothes/underwear/blank.png"
         $ hermione_ass_cum          = False
         $ hermione_squirt           = False
         $ hermione_futa             = False
@@ -277,20 +248,20 @@ label her_init:
 
 
         #Piercings
-        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_ear_piercing             = "00_blank"
+        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_ear_piercing             = "blank"
         $ h_ear_piercing_color       = "base"
 
-        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_nipple_piercing          = "00_blank"
+        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_nipple_piercing          = "blank"
         $ h_nipple_piercing_color    = "base"
 
-        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_belly_piercing           = "00_blank"
+        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_belly_piercing           = "blank"
         $ h_belly_piercing_color     = "base"
 
-        $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_intimate_piercing        = "00_blank"
+        $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_intimate_piercing        = "blank"
         $ h_intimate_piercing_color  = "base"
 
         #Tattoos
@@ -389,13 +360,15 @@ label her_clothing_lists_init: #Lists update at every game start!
     #One-pieces & Nighties
     $ h_onepieces_list              = ["onepiece_microdress",
                                        "onepiece_bunny",
-                                       "onepiece_swimsuit",
-                                       "onepiece_swimsuit_halterless",
+                                       "swimsuit_neckband",
+                                       "swimsuit_halterless",
                                        "onepiece_bikini_string",
                                        "swimsuit_sport_1",
                                        "swimsuit_sport_2",
                                        "swimsuit_sport_3",
                                        "swimsuit_sport_4",
+                                       "onepiece_netsuit_fancy",
+                                       "onepiece_netsuit",
                                       ]
 
     $ h_onepieces_nighties_list     = ["nighty_short",
@@ -423,6 +396,24 @@ label her_clothing_lists_init: #Lists update at every game start!
     $ belly_piercings_list          = ["belly_pearls",
                                       ]
     $ intimate_piercings_list       = [
+                                      ]
+
+    $ gryffindor_robe_list          = ["robe_1_g",
+                                       "robe_2_g",
+                                       "robe_3_g",
+                                       "robe_4_g",
+                                       "robe_basic_g",
+                                       "robe_open_g",
+                                       "robe_quidditch_g"
+                                      ]
+
+    $ slytherin_robe_list           = ["robe_1_s",
+                                       "robe_2_s",
+                                       "robe_3_s",
+                                       "robe_4_s",
+                                       "robe_basic_s",
+                                       "robe_open_s",
+                                       "robe_quidditch_s"
                                       ]
 
     $ h_mouth_list                  = ["angry",
@@ -552,7 +543,6 @@ label her_progress_init:
         $ hermione_is_waiting_02 = False #Turns True at the end of second special event with Snape. Triggers next visit from Hermione
 
         $ collar = 0
-        $ scene_number = 1
 
     #Buttplug Events
         $ buttplug_magic_known   = False

@@ -74,15 +74,15 @@ label return_to_wardrobe:
         if active_girl == "hermione":
             call her_main(xpos="wardrobe",ypos="base")
         if active_girl == "luna":
-            call lun_main(xpos="wardrobe",ypos="base",trans="fade")
+            call lun_main(xpos="wardrobe",ypos="base")
         if active_girl == "astoria":
             call ast_main(xpos="wardrobe",ypos="base")
         if active_girl == "susan":
             call sus_main(xpos="wardrobe",ypos="base")
         if active_girl == "cho":
-            call cho_main(xpos="wardrobe",ypos="base",trans="fade")
+            call cho_main(xpos="wardrobe",ypos="base")
         if active_girl == "tonks":
-            call ton_main(xpos="wardrobe",ypos="base",trans="fade")
+            call ton_main(xpos="wardrobe",ypos="base")
 
         call screen wardrobe
 
@@ -322,31 +322,31 @@ label wardrobe_change_her_action:
     hide screen hermione_main
 
     if wr_her_action == "none":
-        call h_action("none","update")
+        call set_her_action("none","update")
     if wr_her_action == "lift_top":
-        call h_action("lift_top")
+        call set_her_action("lift_top")
     if wr_her_action == "lift_skirt":
-        call h_action("lift_skirt")
+        call set_her_action("lift_skirt")
     if wr_her_action == "hold_book":
-        call h_action("hold_book")
+        call set_her_action("hold_book")
     if wr_her_action == "milk_breasts":
         $ milking = 1
-        call h_action("milk_breasts")
+        call set_her_action("milk_breasts")
 
     if wr_her_action == "lift_breasts":
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
     if wr_her_action == "hands_behind":
-        call h_action("hands_behind")
+        call set_her_action("hands_behind")
     if wr_her_action == "covering":
-        call h_action("covering")
+        call set_her_action("covering")
     if wr_her_action == "fingering":
-        call h_action("fingering")
+        call set_her_action("fingering")
     if wr_her_action == "pinch":
-        call h_action("pinch")
+        call set_her_action("pinch")
     if wr_her_action == "hands_cuffed":
-        call h_action("hands_cuffed")
+        call set_her_action("hands_cuffed")
     if wr_her_action == "naked":
-        call h_action("naked")
+        call set_her_action("naked")
 
     call her_main(xpos="wardrobe")
     call screen wardrobe
@@ -441,7 +441,7 @@ label her_bra_toggle:
 
 # One-Piece Toggle #
 label her_onepiece_toggle:
-    if h_onepiece == "00_blank":
+    if h_onepiece == "blank":
         hide screen wardrobe
         ">No item equipped."
         call screen wardrobe
@@ -500,7 +500,7 @@ label her_panties_toggle:
 
 # Garterbelt Toggle #
 label her_garterbelt_toggle:
-    if h_garterbelt == "00_blank":
+    if h_garterbelt == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -517,7 +517,7 @@ label her_garterbelt_toggle:
 ### Other Clothings ###
 # Neckwear Toggle #
 label her_neckwear_toggle:
-    if h_neckwear == "00_blank":
+    if h_neckwear == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -549,7 +549,7 @@ label her_body_accs_toggle:
 
 # Gloves Toggle #
 label her_gloves_toggle:
-    if h_gloves == "00_blank":
+    if h_gloves == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -565,7 +565,7 @@ label her_gloves_toggle:
 
 # Stockings Toggle #
 label her_stockings_toggle:
-    if h_stockings == "00_blank":
+    if h_stockings == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -617,7 +617,7 @@ label her_outfit_toggle:
 
 # Hat Toggle #
 label her_hat_toggle:
-    if h_hat == "00_blank":
+    if h_hat == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -633,7 +633,7 @@ label her_hat_toggle:
 
 # Glasses Toggle #
 label her_glasses_toggle:
-    if h_glasses == "00_blank":
+    if h_glasses == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -649,7 +649,7 @@ label her_glasses_toggle:
 
 # Ears Toggle #
 label her_ears_toggle:
-    if h_ears == "00_blank":
+    if h_ears == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -681,7 +681,7 @@ label her_makeup_toggle:
 
 # Piercings Toggle #
 label her_piercings_toggle:
-    if h_ear_piercing == "00_blank" and h_nipple_piercing == "00_blank" and h_belly_piercing == "00_blank" and h_intimate_piercing == "00_blank":
+    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_intimate_piercing == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -737,7 +737,7 @@ label her_tattoos_toggle:
 ## Piercings ##
 label equip_piercing:
     if active_girl == "hermione":
-        call set_h_piercing(piercing_choice, piercing_color_choice)
+        call set_her_piercing(piercing_choice, piercing_color_choice)
     if active_girl == "tonks":
         call set_ton_piercing(piercing_choice, piercing_color_choice)
 

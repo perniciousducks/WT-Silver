@@ -1,22 +1,24 @@
-screen generic_scroll_menu(menu_items, title, toogle1="", toogle2=""):
+screen generic_scroll_menu(menu_items, title, toogle1="", toogle2="", toggle3="", toggle4=""):
     $ item_shown=4
     zorder 5
 
     use close_button
 
-    if not currentpage <= 0:
-        imagebutton:
-            xpos 825
-            ypos 240
-            idle "interface/general/"+interface_color+"/button_arrow_up.png"
+
+    imagebutton:
+        xpos 825
+        ypos 240
+        idle "interface/general/"+interface_color+"/button_arrow_up.png"
+        if not currentpage <= 0:
             hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
             action Return("dec")
 
-    if currentpage < math.ceil((len(menu_items)-1)/item_shown):
-        imagebutton:
-            xpos 825
-            ypos 292
-            idle "interface/general/"+interface_color+"/button_arrow_down.png"
+
+    imagebutton:
+        xpos 825
+        ypos 292
+        idle "interface/general/"+interface_color+"/button_arrow_down.png"
+        if currentpage < math.ceil((len(menu_items)-1)/item_shown):
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
 
@@ -29,17 +31,29 @@ screen generic_scroll_menu(menu_items, title, toogle1="", toogle2=""):
         ground "interface/store/"+interface_color+"/items_panel.png"
         hover "interface/store/"+interface_color+"/items_panel_hover.png"
 
-        if not toogle1 == "":
+        if toogle1 != "": #Top left
             $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle1_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (325, 30, 150, 24) clicked Return("toogle1")
-            add toogle1_image xpos 325 ypos 30 zoom 0.8
-            text "{size=10}" + toogle1 + "{/size}" xpos 350 ypos 35
+            hotspot (325-150, 30, 150, 24) clicked Return("toogle1")
+            add toogle1_image xpos 325-150 ypos 30 zoom 0.8
+            text "{size=10}" + toogle1 + "{/size}" xpos 350-150 ypos 35
 
-        if not toogle2 == "":
+        if toogle2 != "": #Borrom left
             $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle2_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (325, 50, 150, 24) clicked Return("toogle2")
-            add toogle1_image xpos 325 ypos 50 zoom 0.8
-            text "{size=10}" + toogle2 + "{/size}" xpos 350 ypos 55
+            hotspot (325-150, 30+20, 150, 24) clicked Return("toogle2")
+            add toogle1_image xpos 325-150 ypos 30+20 zoom 0.8
+            text "{size=10}" + toogle2 + "{/size}" xpos 350-150 ypos 35+20
+
+        if toogle3 != "": #Top right
+            $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle3_bool else "interface/general/"+interface_color+"/check_false.png"
+            hotspot (325, 30, 150, 24) clicked Return("toogle3")
+            add toogle1_image xpos 325 ypos 30 zoom 0.8
+            text "{size=10}" + toogle2 + "{/size}" xpos 350 ypos 35
+
+        if toogle4 != "": #Borrom right
+            $ toogle1_image = "interface/general/"+interface_color+"/check_true.png" if toogle4_bool else "interface/general/"+interface_color+"/check_false.png"
+            hotspot (325, 30+20, 150, 24) clicked Return("toogle4")
+            add toogle1_image xpos 325 ypos 30+20 zoom 0.8
+            text "{size=10}" + toogle2 + "{/size}" xpos 350 ypos 35+20
 
         hbox:
             xpos 5
@@ -97,6 +111,7 @@ screen generic_character_select(character_list=[], menu_text="menu name", xposit
         xsize 173
         ysize 41
         text menu_text xalign 0.5 yalign 0.5  size 14
+
     for i in range(0,len(character_list)):
         $ row = i // 2
         $ col = i % 2
@@ -117,6 +132,8 @@ screen generic_character_select(character_list=[], menu_text="menu name", xposit
 init python:
     toogle1_bool = True
     toogle2_bool = True
+    toogle3_bool = True
+    toogle4_bool = True
 
     def get_zoom(image, xsize, ysize):
         myDisplayable = im.Image(image)

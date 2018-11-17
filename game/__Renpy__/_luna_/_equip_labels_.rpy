@@ -15,7 +15,7 @@ label update_lun_uniform:
 
     #Underwear
     $ luna_bra            = "characters/luna/clothes/underwear/base/"+str(lun_bra)+".png"
-    $ luna_onepiece       = "characters/luna/clothes/onepieces/base/"+str(lun_onepiece)+".png"
+    $ luna_onepiece       = "characters/luna/clothes/onepieces/"+str(lun_onepiece)+".png"
     $ luna_panties        = "characters/luna/clothes/underwear/base/"+str(lun_panties)+".png"
     $ luna_garterbelt     = "characters/luna/clothes/underwear/base/"+str(lun_garterbelt)+".png"
 
@@ -41,7 +41,6 @@ label set_lun_hair(hair=None,color=None):
         $ lun_hair_color   = color
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -58,7 +57,6 @@ label set_lun_hat(hat=""):
         $ lun_hat = hat
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -75,7 +73,6 @@ label set_lun_top(top=""):
         $ lun_top = top
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -95,7 +92,6 @@ label set_lun_bottom(bottom="", color=""):
         $ lun_bottom_color = color
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -115,7 +111,6 @@ label set_lun_bra(bra=""):
         $ lun_bra = bra
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -132,7 +127,6 @@ label set_lun_onepiece(onepiece=""):
         $ lun_onepiece = onepiece
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -152,7 +146,6 @@ label set_lun_panties(panties=""):
         $ lun_panties = panties
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -169,7 +162,6 @@ label set_lun_garterbelt(garter=""):
         $ lun_garterbelt = garter
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -186,7 +178,6 @@ label set_lun_neckwear(neck=""):
         $ lun_neckwear = neck
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -203,7 +194,6 @@ label set_lun_stockings(stockings=""):
         $ lun_stockings = stockings
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -220,7 +210,6 @@ label set_lun_robe(robe=""):
         $ lun_robe = robe
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -237,7 +226,6 @@ label set_lun_glasses(glasses=""):
         $ lun_glasses = glasses
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -254,7 +242,6 @@ label set_lun_ears(ears=""):
         $ lun_ears = ears
 
     call update_lun_uniform
-    show screen luna_main
 
     return
 
@@ -291,7 +278,6 @@ label luna_outfit(outfit):
 
     call load_luna_clothing_saves
     call update_lun_uniform
-    show screen luna_main
 
     return
 

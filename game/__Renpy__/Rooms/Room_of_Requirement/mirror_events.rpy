@@ -287,7 +287,7 @@ label a_bad_time_to_disrobe_part_2:
     show screen main_room
     show screen genie
     call h_unequip_temp_outfit()
-    call h_action("covering_uniform")
+    call set_her_action("covering_uniform")
     hide screen day_to_night
     with d3
 
@@ -373,7 +373,7 @@ label a_bad_time_to_disrobe_part_2:
     $ daytime = temp_time
     call play_standart_theme
     call reset_hermione
-    call h_action("none")
+    call set_her_action("none")
     jump enter_room_of_req
 
 label whose_points:
@@ -507,7 +507,7 @@ label whose_points:
     call lun_main("I see invisible creatures... but people don't belie... ","soft","annoyed","sad","down")
     hide screen luna_main
 
-    call h_action("lift_top")
+    call set_her_action("lift_top")
 
      # SEX THEME.
     call play_sound("scratch")
@@ -557,7 +557,7 @@ label whose_points:
         call play_music("night_theme")
 
     hide screen whose_points_screen
-    call h_action("none")
+    call set_her_action("none")
     call her_chibi(action="hide")
     hide screen hermione_main
     jump enter_room_of_req

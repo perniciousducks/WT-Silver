@@ -133,6 +133,7 @@ screen door_menu:
     use close_button
     if map_unlocked:
         use map_screen
+        use generic_character_select(summon_list, "-Summon-", 812, 23) #Temp
     else:
         use generic_character_select(summon_list, "-Summon-", 812, 23)
 

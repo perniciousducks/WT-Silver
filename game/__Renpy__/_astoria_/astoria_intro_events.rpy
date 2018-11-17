@@ -481,7 +481,7 @@ label tonks_intro_event: #occurs a day or two after the last event
     with d3
     pause.8
 
-    m "(I didn't even realize we had beds here, I've just been sleeping in this chair...)"
+    m "(I didn't even realise we had beds here, I've just been sleeping in this chair...)"
     m "(I really need to clean this thing...)"
     m "asd"
 

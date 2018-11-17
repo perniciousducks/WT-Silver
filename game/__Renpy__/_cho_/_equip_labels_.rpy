@@ -15,7 +15,7 @@ label update_cho_uniform:
 
     #Underwear
     $ cho_bra            = "characters/cho/clothes/underwear/base/"+str(c_bra)+".png"
-    $ cho_onepiece       = "characters/cho/clothes/onepieces/base/"+str(c_onepiece)+".png"
+    $ cho_onepiece       = "characters/cho/clothes/onepieces/"+str(c_onepiece)+".png"
     $ cho_panties        = "characters/cho/clothes/underwear/base/"+str(c_panties)+".png"
     $ cho_garterbelt     = "characters/cho/clothes/underwear/base/"+str(c_garterbelt)+".png"
 
@@ -39,7 +39,6 @@ label set_cho_hair(hair=None,color=None):
         $ c_hair_color   = color
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -56,7 +55,6 @@ label set_cho_hat(hat=""):
         $ c_hat = hat
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -73,7 +71,6 @@ label set_cho_top(top=""):
         $ c_top = top
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -90,7 +87,6 @@ label set_cho_bottom(bottom=""):
         $ c_bottom = bottom
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -107,7 +103,6 @@ label set_cho_bra(bra=""):
         $ c_bra = bra
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -124,7 +119,6 @@ label set_cho_onepiece(onepiece=""):
         $ c_onepiece = onepiece
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -141,7 +135,6 @@ label set_cho_panties(panties=""):
         $ c_panties = panties
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -158,7 +151,6 @@ label set_cho_garterbelt(garter=""):
         $ c_garterbelt = garter
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -175,7 +167,6 @@ label set_cho_neckwear(neck=""):
         $ c_neckwear = neck
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -192,7 +183,6 @@ label set_cho_stockings(stockings=""):
         $ c_stockings = stockings
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -209,7 +199,6 @@ label set_cho_robe(robe=""):
         $ c_robe = robe
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 

@@ -24,11 +24,12 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
     call her_main("Of course...","base","base")
     m "After I cum on you...."
 
-    if her_whoring < 10:
+    if her_whoring < 9:
         jump too_much
+
     elif her_whoring < 15:
         jump hg_ps_WearMyCum_Scene_1
-    elif her_whoring < 20:
+    elif her_whoring < 21:
         jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 2
     else:
         jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 3

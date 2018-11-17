@@ -106,7 +106,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Feel free to humiliate me!","angry","angry",tears="crying")
         ">Hermione angrly removes her skirt."
 
-        call h_action("strip")
+        call set_her_action("strip")
 
         call her_main("for trying to do what's right!","annoyed","annoyed",tears="crying")
         ">Hermione stands naked before you and Luna. Her face is contorted in what seems like an equal mix of rage and embarrassment."
@@ -382,7 +382,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call her_kneel("mmmm...{image=textheart}{image=textheart}{image=textheart}","grin","dead")
             ">She picks herself up from the floor gracefully. Getting dressed before turning to address you."
 
-        call h_action("none","update")
+        call set_her_action("none","update")
 
         call her_chibi("stand","mid","base")
         call update_her_uniform
@@ -639,7 +639,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ hermione_xpos = 590
 
 
-        call h_action("strip")
+        call set_her_action("strip")
         call update_her_uniform
 
         show screen hermione_main
@@ -868,7 +868,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         ">You stand up from your desk while hermione slowly strips and kneels in front of you."
 
-        call h_action("strip")
+        call set_her_action("strip")
 
         $ luna_r_arm = 2
         $ luna_flip = 1

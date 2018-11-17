@@ -59,7 +59,7 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
 
             else:
                 if hermione_flip == -1: #Flipped
-                    $ hermione_xpos = 620
+                    $ hermione_xpos = -70 #Left side of screen!
                 else:
                     $ hermione_xpos = 590
                 $ hermione_ypos = 230
@@ -142,7 +142,7 @@ label reset_hermione:
     $ sperm_on_tits    = False #Sperm on tits when Hermione pulls her shirt up.
 
     if hermione_action != "none":
-        call h_action("none","update")
+        call set_her_action("none","update")
 
     call update_hermione
 

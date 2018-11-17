@@ -9,18 +9,18 @@ label __init_variables:
     $ Copper_Book_OBJ.description = "This book contains various tips on speed reading. " + str(Copper_Book_OBJ.chapters) + " chapters."
     $ Copper_Book_OBJ.cost = 40
     $ Copper_Book_OBJ.imagepath = "images/store/books/1-8.png"
-    
+
     if not hasattr(renpy.store,'Bronze_Book_OBJ'): #important!
         $ Bronze_Book_OBJ = educational_book()
     $ Bronze_Book_OBJ.id = "Bronze_Book"
     $ Bronze_Book_OBJ.title = "\"Bronze book of spirit\""
-    $ Bronze_Book_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading." 
+    $ Bronze_Book_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading."
     $ Bronze_Book_OBJ.chapters = 4
     $ Bronze_Book_OBJ.unlocked = True
     $ Bronze_Book_OBJ.description = "This book contains various tips on speed reading. "  + str(Bronze_Book_OBJ.chapters) + " chapters."
     $ Bronze_Book_OBJ.cost = 60
     $ Bronze_Book_OBJ.imagepath = "images/store/books/1-8.png"
-    
+
     if not hasattr(renpy.store,'Silver_Book_OBJ'): #important!
         $ Silver_Book_OBJ = educational_book()
     $ Silver_Book_OBJ.id = "Silver_Book"
@@ -31,7 +31,7 @@ label __init_variables:
     $ Silver_Book_OBJ.effect = ">New skill unlocked: always complete an additional chapter when reading."
     $ Silver_Book_OBJ.cost = 80
     $ Silver_Book_OBJ.imagepath = "images/store/books/1-8.png"
-    
+
     if not hasattr(renpy.store,'Golden_Book_OBJ'): #important!
         $ Golden_Book_OBJ = educational_book()
     $ Golden_Book_OBJ.id = "Golden_Book"
@@ -42,7 +42,7 @@ label __init_variables:
     $ Golden_Book_OBJ.effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading."
     $ Golden_Book_OBJ.cost = 160
     $ Golden_Book_OBJ.imagepath = "images/store/books/1-8.png"
-        
+
     if not hasattr(renpy.store,'Speedwriting_Beginners_OBJ'): #important!
         $ Speedwriting_Beginners_OBJ = educational_book()
     $ Speedwriting_Beginners_OBJ.id = "Speedwriting_Beginners"
@@ -53,7 +53,7 @@ label __init_variables:
     $ Speedwriting_Beginners_OBJ.effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
     $ Speedwriting_Beginners_OBJ.cost = 90
     $ Speedwriting_Beginners_OBJ.imagepath = "images/store/books/1-8.png"
-    
+
     if not hasattr(renpy.store,'Speedwriting_Amateurs_OBJ'): #important!
         $ Speedwriting_Amateurs_OBJ = educational_book()
     $ Speedwriting_Amateurs_OBJ.id = "Speedwriting_Amateurs"
@@ -64,7 +64,7 @@ label __init_variables:
     $ Speedwriting_Amateurs_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
     $ Speedwriting_Amateurs_OBJ.cost = 110
     $ Speedwriting_Amateurs_OBJ.imagepath = "images/store/books/1-8.png"
-    
+
     if not hasattr(renpy.store,'Speedwriting_Advanced_OBJ'): #important!
         $ Speedwriting_Advanced_OBJ = educational_book()
     $ Speedwriting_Advanced_OBJ.id = "Speedwriting_Advanced"
@@ -75,7 +75,7 @@ label __init_variables:
     $ Speedwriting_Advanced_OBJ.effect = ">New skill unlocked: always complete an additional chapter when doing paperwork."
     $ Speedwriting_Advanced_OBJ.cost = 130
     $ Speedwriting_Advanced_OBJ.imagepath = "images/store/books/1-8.png"
-    
+
     if not hasattr(renpy.store,'Speedwriting_Experts_OBJ'): #important!
         $ Speedwriting_Experts_OBJ = educational_book()
     $ Speedwriting_Experts_OBJ.id = "Speedwriting_Experts"
@@ -86,8 +86,8 @@ label __init_variables:
     $ Speedwriting_Experts_OBJ.effect = ">You have become a true master of speedwriting and from now on you shall always complete two additional chapters when doing paperwork."
     $ Speedwriting_Experts_OBJ.cost = 150
     $ Speedwriting_Experts_OBJ.imagepath = "images/store/books/1-8.png"
-        
-    
+
+
     if not hasattr(renpy.store,'Galadriel_I_OBJ'): #important!
         $ Galadriel_I_OBJ = fiction_book()
     $ Galadriel_I_OBJ.id = "Galadriel_I"
@@ -98,7 +98,7 @@ label __init_variables:
     $ Galadriel_I_OBJ.unlocked = True
     $ Galadriel_I_OBJ.cost = 100
     $ Galadriel_I_OBJ.imagepath = "images/store/books/9.png"
-    
+
     if not hasattr(renpy.store,'Galadriel_II_OBJ'): #important!
         $ Galadriel_II_OBJ = fiction_book()
     $ Galadriel_II_OBJ.id = "Galadriel_II"
@@ -109,7 +109,7 @@ label __init_variables:
     $ Galadriel_II_OBJ.unlocked = True
     $ Galadriel_II_OBJ.cost = 200
     $ Galadriel_II_OBJ.imagepath = "images/store/books/10.png"
-    
+
     if not hasattr(renpy.store,'Armchairs_OBJ'): #important!
         $ Armchairs_OBJ = fiction_book()
     $ Armchairs_OBJ.id = "Armchairs"
@@ -120,7 +120,7 @@ label __init_variables:
     $ Armchairs_OBJ.unlocked = True
     $ Armchairs_OBJ.cost = 250
     $ Armchairs_OBJ.imagepath = "images/store/books/11.png"
-    
+
     if not hasattr(renpy.store,'Dear_Wifu_OBJ'): #important!
         $ Dear_Wifu_OBJ = fiction_book()
     $ Dear_Wifu_OBJ.id = "Dear_Wifu"
@@ -131,8 +131,8 @@ label __init_variables:
     $ Dear_Wifu_OBJ.unlocked = True
     $ Dear_Wifu_OBJ.cost = 300
     $ Dear_Wifu_OBJ.imagepath = "images/store/books/12.png"
-    
-    
+
+
     $ Galadriel_I_OBJ.chapter_description = [
         "Galadriel - a gentle and gracious elven princess is introduced into the story.",
         "Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story.",
@@ -175,7 +175,7 @@ label __init_variables:
         # Only now he realizes that the pregnant whore he fucked for hours is his daughter.
         "The man embraces his speechless child. Galadriel's eyes have a vacant look in them as her father's semen drips down her face...",
         "Galadriel screams in terror. To her surprise she finds herself back in the royal residence and in her own bed.",
-        "It takes the elven princess several minutes to realize that she was never pregnant. The entire adventure was nothing but a dream.",
+        "It takes the elven princess several minutes to realise that she was never pregnant. The entire adventure was nothing but a dream.",
         "Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis.",
         "{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}"
     ]
@@ -223,7 +223,7 @@ label __init_variables:
         Armchairs_OBJ,
         Dear_Wifu_OBJ
     ])
-    
+
     if not hasattr(renpy.store,'cheat_reading'): #important!
         $ cheat_reading = False
     if not hasattr(renpy.store,'books'): #important!
@@ -381,7 +381,7 @@ label reading_book:
         if raining:
             if not fire_in_fireplace:
                 ">The rain outside of the tower calms your mood and you feel like keeping on reading..."
-                ">You try to keep on reading but after a while you realize that the air in your chambers is too damp for your liking."
+                ">You try to keep on reading but after a while you realise that the air in your chambers is too damp for your liking."
             else:
                 ">The rain outside of your tower calms your mood and you feel like keeping on reading..."
                 call read_book
@@ -545,7 +545,7 @@ init python:
         effect = ""
         description = ""
         imagepath = ""
-        
+
         def __repr__(self):
             return self.id
         def getMenuText(self):
@@ -560,7 +560,7 @@ init python:
             else:
                 out_des = self.description
             return out_des
-            
+
         def get_buttom_right(self):
             return "Cost: " + str(self.cost)
 
@@ -571,4 +571,3 @@ init python:
         chapter_description = []
         def getChapterDesc(self):
            return self.chapter_description[self.progress-1] #"Chapter "+str(self.progress)+": "+
-           

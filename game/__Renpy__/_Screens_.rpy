@@ -81,7 +81,7 @@ $ width_offset = 140
 
 screen desk: #Desk only!
     add "images/rooms/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
-    zorder 1
+    zorder 2
 
 screen chair_left:
     add "images/rooms/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
@@ -243,6 +243,10 @@ screen blkfade:
     zorder 6
     add "interface/blackfade.png"
 
+screen whitefade:
+    zorder 6
+    add "interface/whitefade.png"
+
 screen blktone:
     tag blktone
     zorder 5 #Otherwise bird's food will be on top.
@@ -329,19 +333,10 @@ screen with_snape_animated:
 
 
 
-screen c_scene: #Custom Scenes
+screen c_scene: #Snape Classroom Scene
     tag gc
-    if scene_number == 1:
-        add "images/CG/scene_01.png" xpos 140 ypos 0
-    if scene_number == 2:
-        add "images/CG/scene_02.png" xpos 140 ypos 0
-    if scene_number == 3:
-        add "images/CG/scene_03.png" xpos 140 ypos 0
-    if scene_number == 4:
-        add "images/CG/scene_04.png" xpos 140 ypos 0
+    add "images/CG/scene_01.png" xpos 140 ypos 0
     zorder 4
-
-
 
 
 
@@ -361,15 +356,55 @@ screen s_head2: #Snape. Head.
     zorder 8
 
 
+label teleport(position=None):
+    if position == "genie":
+        $ teleport_xpos = genie_chibi_xpos+75
+        $ teleport_ypos = genie_chibi_ypos-15
+        $ teleport_zorder = 3
+    elif position == "hermione":
+        $ teleport_xpos = hermione_chibi_xpos+45
+        $ teleport_ypos = hermione_chibi_ypos-80
+        $ teleport_zorder = 3
+    elif position == "desk":
+        $ teleport_xpos = 320
+        $ teleport_ypos = 160
+        $ teleport_zorder = 1
+        show screen desk
 
 
+    $ renpy.play('sounds/magic4.ogg')
+    show screen whitefade
+    with d1
 
+    hide screen whitefade
+    with d1
 
+    show screen blkfade
+    with d1
 
+    hide screen blkfade
+    show screen heal_animation
+    with d3
 
+    #stop music fadeout 1
 
+    hide screen heal_animation
+    show screen teleport_animation
+    with d5
 
+    hide screen teleport_animation
+    with d5
+    pause 1
 
+    return
+
+screen teleport_animation:
+    add "teleport_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos+60 zoom 0.5
+    zorder teleport_zorder
+
+screen heal_animation:
+    add "heal_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos zoom 0.5
+    zorder teleport_zorder
 
 
 
@@ -527,15 +562,15 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         if image1 is not None:
             sc_cg_image_1 = "images/CG/sc34/"+str(scene)+"/A_"+str(image1)+".png"
         else:
-            sc_cg_image_1 = "00_blank.png"
+            sc_cg_image_1 = "blank.png"
         if image2 is not None:
             sc_cg_image_2 = "images/CG/sc34/"+str(scene)+"/B_"+str(image2)+".png"
         else:
-            sc_cg_image_2 = "00_blank.png"
+            sc_cg_image_2 = "blank.png"
         if image3 is not None:
             sc_cg_image_3 = "images/CG/sc34/"+str(scene)+"/C_"+str(image3)+".png"
         else:
-            sc_cg_image_3 = "00_blank.png"
+            sc_cg_image_3 = "blank.png"
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))

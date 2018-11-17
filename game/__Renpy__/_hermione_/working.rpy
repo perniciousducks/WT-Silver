@@ -45,7 +45,7 @@ label maid_responses:
     call her_walk("door","mid",2)
     pause.2
 
-    call h_outfit_OBJ(hg_outfit_maid_OBJ)
+    call set_her_outfit(hg_outfit_maid_OBJ)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
@@ -152,7 +152,7 @@ label barmaid_responses:
     call her_walk("door","mid",2)
     pause.2
 
-    call h_outfit_OBJ(hg_outfit_maid_OBJ)
+    call set_her_outfit(hg_outfit_maid_OBJ)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5

@@ -121,7 +121,7 @@ label hg_ps_Buttplug:
                 call her_main("it didn't work, It's just too bi-","angry","base")
                 stop music
 
-                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                 with hpunch
                 call her_main("{size=+5}!!!!{/size}","shock","wide")
@@ -183,7 +183,7 @@ label hg_ps_Buttplug:
             call her_main("well... here goes.","smile","baseL")
             ">Hermione lifts her skirt and sticks it in rather slowly."
 
-            call set_h_buttplug("plug_a_on") #Updates clothing and body.
+            call set_her_buttplug("plug_a_on") #Updates clothing and body.
 
             call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
             call her_main("i better head to class...","soft","squintL")
@@ -203,7 +203,7 @@ label hg_ps_Buttplug:
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
 
-            call set_h_buttplug("plug_a_on") #Updates clothing and body.
+            call set_her_buttplug("plug_a_on") #Updates clothing and body.
 
             call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
             call her_main("I will, [genie_name]. Thank you.","base","happyCl")
@@ -242,7 +242,7 @@ label hg_ps_Buttplug:
                 call her_main("Oh... right...","base","down")
                 ">Hermione lifts her skirt and pushes it in gently, taking her time."
 
-                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                 call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","grin","ahegao")
                 call her_main("i better... head to class... now...","open","baseL")
@@ -267,7 +267,7 @@ label hg_ps_Buttplug:
                 call her_main("well... here goes...","base","down")
                 ">Hermione turns around, lifts her skirt and pushes it in gently, taking her time."
 
-                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                 call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","grin","ahegao")
                 call her_main("i better... head to class... now...","soft","squintL")
@@ -286,7 +286,7 @@ label hg_ps_Buttplug:
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
 
-            call set_h_buttplug("plug_b_on") #Updates clothing and body.
+            call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
             call her_main("{image=textheart}ah{image=textheart}...","grin","ahegao")
             call her_main("Thank you [genie_name]!","open","baseL")
@@ -360,7 +360,7 @@ label hg_ps_Buttplug:
 
                     call play_sound("pop")
                     $ hermione_dribble = True
-                    call set_h_buttplug("plug_c_on") #Updates clothing and body.
+                    call set_her_buttplug("plug_c_on") #Updates clothing and body.
 
                     call her_main("","soft","ahegao",cheeks="blush")
                     call ctc
@@ -384,7 +384,7 @@ label hg_ps_Buttplug:
                     g9 "It just so happens that I do!"
                     call nar(">You hand her the buttplug.")
 
-                    call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                    call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                     call her_main("{image=textheart}ah{image=textheart}...","silly","ahegao")
                     call her_main("Thank you, [genie_name].","base","glance")
@@ -409,7 +409,7 @@ label hg_ps_Buttplug:
             call nar(">You hand her the buttplug.","start")
             call nar(">You watch it magically worm it's way inside her eager butt-hole.","end")
 
-            call set_h_buttplug("plug_c_on") #Updates clothing and body.
+            call set_her_buttplug("plug_c_on") #Updates clothing and body.
 
             call her_main("{image=textheart}ah{image=textheart}ah...","grin","ahegao")
             call her_main("Thank you, [genie_name]!","base","glance")
@@ -1027,6 +1027,6 @@ label hg_ps_Buttplug_complete:
     $ hg_ps_Buttplug_OBJ.complete = True
     $ hg_ps_Buttplug_OBJ.inProgress = False
 
-    call set_h_buttplug("remove")
+    call set_her_buttplug("remove")
 
     jump hg_pr_transition_block

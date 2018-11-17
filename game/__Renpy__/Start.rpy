@@ -347,11 +347,6 @@ $ finished_report = 0 #Shows amount of completed reports.
 $ job_lvl = 1 #Show how many reports you are allowed to complete per week.
 
 
-### default position of table ###
-$ table_position_x = 0 #used in tutoring. Could be removed when changed.
-$ table_position_y = 0
-
-
 ###Miscellaneous flags###
 $ hold_all_the_events_please = False #When TRUE all the story events will be put on hold.
 $ phoenix_is_fed = False #When True the graphic of bird food being displayed on top of the phoenix food can.
@@ -381,7 +376,6 @@ $ tentacle_cosmetic = False
 
 $ hermione_desperate_done = False
 $ gave_tinyminiskirt = False
-$ scene_number = 1
 $ addicted = False
 
 $ reset_persistants            = False
@@ -400,33 +394,7 @@ pause.1
 hide screen blkfade
 with d3
 
-$ renpy.play('sounds/magic4.ogg')
-scene white
-pause.02
-hide screen blkfade
-show magic5
-pause.05
-scene white
-pause.05
-pause.05
-scene white
-pause.05
-show whitefade at basicfade, center
-#show magic at basicfade, center
-#show magic2 at basicfade2, center
-show magic3 at basicfade3, center
-#show magic4 at basicfade4, center # OVAL
-hide magic
-hide magic2
-hide magic3
-hide magic4
-#hide whitefade
-show heal
-stop music fadeout 1
-pause 1
-hide whitefade
-with d3
-pause 1
+call teleport("desk")
 
 $ menu_x = 0.5
 $ menu_y = 0.5

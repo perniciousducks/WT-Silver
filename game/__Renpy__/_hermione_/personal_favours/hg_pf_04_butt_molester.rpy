@@ -1126,8 +1126,12 @@ label end_hg_butt_molester:
 
         call her_walk("mid","leave",2)
 
-    if her_whoring < 6: #Adds points till 6.
-        $ her_whoring +=1
+    if game_difficulty <= 2:
+        if her_whoring < 9: #Adds points till 9.
+            $ her_whoring +=1
+    else: #Hardcore
+        if her_whoring < 6: #Adds points till 6.
+            $ her_whoring +=1
 
     $ hg_pf_ButtMolester_OBJ.points += 1
 

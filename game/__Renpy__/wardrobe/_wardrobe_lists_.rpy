@@ -126,9 +126,9 @@ label update_wr_head_list:
 
         #Makeup
         if lipstick_red_ITEM.unlocked:
-            $ wr_makeup.append("red_lipstick")
+            $ wr_makeup.append("lipstick_red")
         if lipstick_pink_ITEM.unlocked:
-            $ wr_makeup.append("pink_lipstick")
+            $ wr_makeup.append("lipstick_pink")
         if freckles_makeup_ITEM.unlocked:
             $ wr_makeup.append("freckles")
         if fake_cum_makeup_ITEM.unlocked:
@@ -188,9 +188,10 @@ label update_wr_head_list:
 
         $ wr_hair.append("A")
 
-        $ wr_hats.append("paper_bag_1")
-        $ wr_hats.append("paper_bag_2")
-        $ wr_hats.append("paper_bag_3")
+        if game_difficulty >= 3:
+            $ wr_hats.append("paper_bag_1")
+            $ wr_hats.append("paper_bag_2")
+            $ wr_hats.append("paper_bag_3")
 
     return
 
@@ -566,23 +567,23 @@ label update_wr_other_clothings_list:
 
         #Robes
         if her_whoring >= 0:
-            $ wr_robes.append("gryff_robe_shirt_none")
-            $ wr_robes.append("gryff_robe_off")
+            $ wr_robes.append("robe_1_g")
+            $ wr_robes.append("robe_open_g")
         if her_whoring >= 3:
-            $ wr_robes.append("gryff_robe_gap_wide")
+            $ wr_robes.append("robe_3_g")
         if her_whoring >= 6:
-            $ wr_robes.append("gryff_robe_seethrough")
+            $ wr_robes.append("tobe_4_g")
         if her_whoring >= 9:
-            $ wr_robes.append("gryff_quidditch")
+            $ wr_robes.append("robe_quidditch_g")
 
         if her_whoring >= 10:
-            $ wr_robes.append("slyth_robe_shirt_none")
-            $ wr_robes.append("slyth_robe_off")
-            $ wr_robes.append("slyth_robe_gap_wide")
+            $ wr_robes.append("robe_1_s")
+            $ wr_robes.append("robe_open_s")
+            $ wr_robes.append("robe_3_s")
         if her_whoring >= 13:
-            $ wr_robes.append("slyth_robe_seethrough")
+            $ wr_robes.append("robe_4_s")
         if her_whoring >= 16:
-            $ wr_robes.append("slyth_quidditch")
+            $ wr_robes.append("robe_quidditch_s")
 
     if active_girl == "luna":
         if ll_cheer_r_ITEM.unlocked:
@@ -592,7 +593,7 @@ label update_wr_other_clothings_list:
         if ag_nighty_silk_ITEM.unlocked:
             $ wr_stockings.append("nighty_stockings")
 
-        $ wr_robes.append("slyth_1")
+        $ wr_robes.append("robe_1_s")
 
     if active_girl == "susan":
 
@@ -680,9 +681,12 @@ label update_wr_underwear_list:
             if her_whoring >= 14:
                 $ wr_onepieces.append("swimsuit_sport_4")
         $ wr_onepieces.append("swimsuit_halterless")
-        $ wr_onepieces.append("onepiece_swimsuit")
+        $ wr_onepieces.append("swimsuit_neckband")
         $ wr_onepieces.append("onepiece_bunny")
         $ wr_onepieces.append("onepiece_microdress")
+
+        $ wr_onepieces.append("onepiece_netsuit_fancy")
+        $ wr_onepieces.append("onepiece_netsuit")
 
         if hg_onepiece_sling_ITEM.unlocked:
             $ wr_onepieces.append("onepiece_bikini_string")

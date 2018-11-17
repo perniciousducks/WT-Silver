@@ -88,7 +88,7 @@ label equip_her_misc_item:
                 with d5
                 pause.2
 
-                call set_h_buttplug("plug_a_on") #Updates clothing and body.
+                call set_her_buttplug("plug_a_on") #Updates clothing and body.
 
                 jump return_to_wardrobe
 
@@ -103,7 +103,7 @@ label equip_her_misc_item:
                 with d5
                 pause.2
 
-                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                 jump return_to_wardrobe
 
@@ -123,7 +123,7 @@ label equip_her_misc_item:
                 with d5
                 pause.2
 
-                call set_h_buttplug("plug_c_on") #Updates clothing and body.
+                call set_her_buttplug("plug_c_on") #Updates clothing and body.
 
                 jump return_to_wardrobe
 
@@ -139,6 +139,6 @@ label equip_her_misc_item:
                 call play_sound("pop")
                 pause.2
 
-                call set_h_buttplug("remove") #Updates clothing and body.
+                call set_her_buttplug("remove") #Updates clothing and body.
 
                 jump return_to_wardrobe

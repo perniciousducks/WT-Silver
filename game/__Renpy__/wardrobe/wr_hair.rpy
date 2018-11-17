@@ -59,7 +59,7 @@ label change_her_hair:
 
                 pause.5
 
-                call set_her_hair_style(hair_style_choice)
+                call set_her_hair(style=hair_style_choice)
                 call compliment_her_hair_style
 
                 if hair_color_choice != h_hair_color:
@@ -77,7 +77,7 @@ label change_her_hair:
 
                 pause.5
 
-                call set_her_hair_style(hair_style_choice)
+                call set_her_hair(style=hair_style_choice)
                 call compliment_her_hair_style
 
                 if hair_color_choice != h_hair_color:
@@ -95,7 +95,7 @@ label change_her_hair:
 
                 pause.5
 
-                call set_her_hair_style(hair_style_choice)
+                call set_her_hair(style=hair_style_choice)
 
                 if hair_color_choice != h_hair_color:
                     m "There is something else I would like you to do, [hermione_name]..."
@@ -327,7 +327,7 @@ label change_her_hair:
 
             pause.5
 
-            call set_her_hair_color(hair_color_choice)
+            call set_her_hair(color=hair_color_choice)
 
 
             call her_main(xpos="wardrobe")
@@ -337,7 +337,7 @@ label change_her_hair:
         else:
 
             $ hide_transitions = True
-            call set_her_hair_style(hair_style_choice)
+            call set_her_hair(style=hair_style_choice)
             call her_main(xpos="wardrobe")
 
             if hair_color_choice == h_hair_color:
@@ -393,7 +393,7 @@ label change_her_hair:
                 pass
 
             $ hide_transitions = True
-            call set_her_hair_color(hair_color_choice)
+            call set_her_hair(color=hair_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 #
@@ -440,29 +440,24 @@ label compliment_her_hair_style:
 label change_lun_hair:
     call set_lun_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_ast_hair:
     call set_ast_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_sus_hair:
     call set_sus_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_cho_hair:
     call set_cho_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_ton_hair:
     call set_ton_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

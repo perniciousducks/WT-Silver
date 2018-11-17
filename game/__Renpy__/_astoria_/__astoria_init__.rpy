@@ -118,7 +118,7 @@ label astoria_init:
         $ ast_panties                 = "lace_panties"
         $ ast_panties_color           = "base"
 
-        $ astoria_onepiece            = "characters/astoria/clothes/onepieces/base/blank.png"
+        $ astoria_onepiece            = "characters/astoria/clothes/onepieces/blank.png"
         $ ast_onepiece                = "blank"
         $ ast_onepiece_color          = "base"
 
@@ -143,8 +143,8 @@ label astoria_init:
         $ ast_stockings               = "blank"
         $ ast_stockings_color         = "base"
 
-        $ astoria_robe                = "characters/astoria/clothes/robe/base/slyth_1.png"
-        $ ast_robe                    = "slyth_1"
+        $ astoria_robe                = "characters/astoria/clothes/robe/robe_1_s.png"
+        $ ast_robe                    = "robe_1_s"
         $ ast_robe_color              = "base"
 
 

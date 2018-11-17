@@ -159,8 +159,6 @@ label hg_pr_BlowjobClassmate_complete:
             hide screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3
 
-            $ display_h_tears = False
-
             $ hg_pr_BlowjobClassmate_OBJ.inProgress = False
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
@@ -188,7 +186,6 @@ label hg_pr_BlowjobClassmate_complete:
             stop music fadeout 1.0
             # HERMIONE ALL MESSED UP, WITH RUNNING MASCARA.
             $ u_tears_pic = "characters/hermione/face/tears_03.png"
-            $ display_h_tears = True
             $ aftersperm = True
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_08.png"
@@ -304,7 +301,6 @@ label hg_pr_BlowjobClassmate_complete:
     m "The \"Gryffindor\" house gets 65 points!"
     her "Thank you, [genie_name]."
 
-    $ display_h_tears = False
     $ aftersperm = False
     $ uni_sperm = False
 

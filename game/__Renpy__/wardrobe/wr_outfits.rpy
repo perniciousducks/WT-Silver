@@ -413,7 +413,7 @@ label equip_her_outfit:
             with d3
             pause.5
 
-            call h_outfit_OBJ(outfit_choice)
+            call set_her_outfit(outfit_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -423,7 +423,7 @@ label equip_her_outfit:
             $ hide_transitions = True
             hide screen hermione_main
 
-            call h_outfit_OBJ(outfit_choice)
+            call set_her_outfit(outfit_choice)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -444,7 +444,7 @@ label equip_her_outfit:
             with d3
             pause.5
 
-            call h_outfit_OBJ(None)
+            call set_her_outfit(None)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -454,7 +454,7 @@ label equip_her_outfit:
             $ hide_transitions = True
             hide screen hermione_main
 
-            call h_outfit_OBJ(None)
+            call set_her_outfit(None)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -467,15 +467,13 @@ label equip_lun_outfit:
 
         call lun_outfit(outfit_choice)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
     else: # Unequip
 
         call lun_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Astoria's Outfit ###
@@ -484,15 +482,13 @@ label equip_ast_outfit:
 
         call ast_outfit(outfit_choice)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
     else: # Unequip
 
         call ast_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Susan's Outfit ###
@@ -508,8 +504,7 @@ label equip_sus_outfit:
 
         call sus_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Cho's Outfit ###
@@ -525,8 +520,7 @@ label equip_cho_outfit:
 
         call cho_outfit(None)
 
-        call cho_main(xpos="wardrobe")
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Tonks's Outfit ###

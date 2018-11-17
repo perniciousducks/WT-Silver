@@ -270,10 +270,10 @@ label petting:
         #    hide screen genie
         #    show screen petting
         #    with d7
-        #    faw "You realize petting me wont make something happen every time don't you?"
+        #    faw "You realise petting me wont make something happen every time don't you?"
         #    m "..."
         #    m "How exactly are you talking to me right now?"
-        #    faw "Magic.  When are you going to learn to stop asking questions and realize the answer is always magic."
+        #    faw "Magic.  When are you going to learn to stop asking questions and realise the answer is always magic."
         #    m "I liked you a lot better when you were in that witch's body"
         #    hide screen petting
         #    hide screen blktone8

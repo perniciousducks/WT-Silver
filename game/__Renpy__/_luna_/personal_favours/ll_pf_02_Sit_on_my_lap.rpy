@@ -1288,35 +1288,35 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call lun_main("no...","base","seductive","sad","base", cheeks="blush")
         ">Luna slows down, but starts grinding her mound hard against your cock."
         call her_main("now why don't you too perverts just sit back and relax...","base","down")
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
         call her_main("while I give you something fun to look at ok?","grin","baseL")
         call lun_main("yes hermione...","base","base","sad","base", cheeks="blush")
         m "Yes..."
         call lun_main("mmmmm, he's so hard...","base","seductive","sad","down", cheeks="blush")
-        call h_action("pinch")
+        call set_her_action("pinch")
         call her_main("I can imagine","grin","dead")
         m "ugh..."
         call lun_main("he's probably going to cum soon...","base","mad","sad","R", cheeks="blush")
         m "probably..."
         call her_main("and what about you?","base","glance")
-        call h_action("covering")
+        call set_her_action("covering")
         call her_main("how do you feel?","base","down")
         call lun_main("so good...","base","seductive","sad","down", cheeks="blush")
         call lun_main("...","base","mad","sad","up", cheeks="blush")
         ">luna tilts her hips back, grinding as much of her sex against you as possible..."
         ">you swear you can feel her wetness seeping through your robe."
         m "ah..."
-        call h_action("pinch")
+        call set_her_action("pinch")
         call her_main("good...","open","baseL")
         call lun_main("ah...","base","angry","sad","up", cheeks="blush")
         ">Luna starts rubbing hard against your lap."
         m "{size=-2}(mmmm...){/size}"
         call lun_main("yes...","base","seductive","sad","up", cheeks="blush")
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
         call her_main("why don't you two see if you can cum together?","base","glance")
         g4 "{size=+4}agh... almost there...{/size}"
         call lun_main("m-me too...","base","seductive","sad","up", cheeks="blush")
-        call h_action("pinch")
+        call set_her_action("pinch")
         call her_main("cum for me you nasty perverts!","base","suspicious")
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
         call lun_main("ah...{image=textheart}{image=textheart}{image=textheart}","open","angry","sad","up", cheeks="blush")
@@ -1327,7 +1327,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
 
         g4 "Argh! YES!"
         call lun_main("ugh... amazing...","base","seductive","sad","up", cheeks="blush")
-        call h_action("covering")
+        call set_her_action("covering")
         call her_main("mmmm...","base","glance", cheeks="blush")
         call lun_main("...","base","seductive","sad","up", cheeks="blush")
         call lun_main("......","base","angry","sad","down", cheeks="blush")
@@ -1345,7 +1345,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         $ hermione_wear_top = True
         $ hermione_wear_bra = True
         call update_her_uniform
-        call h_action("none","update")
+        call set_her_action("none","update")
         call her_main("feel better you two?","base","glance")
         call lun_main("yes...","base","mad","sad","up", cheeks="blush")
         m "ah... you sluts..."

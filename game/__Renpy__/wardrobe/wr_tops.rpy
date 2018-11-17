@@ -39,7 +39,7 @@ label equip_her_top:
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
         menu:
             "-Make her get dressed-":
-                call h_action(None)
+                call set_her_action(None)
                 hide screen hermione_main
 
             "-nvm-":
@@ -755,7 +755,7 @@ label equip_her_top:
 
             pause.5
 
-            call set_h_top(top_choice,top_color_choice)
+            call set_her_top(top_choice,top_color_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -852,7 +852,7 @@ label equip_her_top:
 
             #Success!
             $ hide_transitions = True
-            call set_h_top(top_choice,top_color_choice)
+            call set_her_top(top_choice,top_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -862,33 +862,28 @@ label equip_her_top:
 label equip_lun_top:
     call set_lun_top(top_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Top ###
 label equip_ast_top:
     call set_ast_top(top_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Top ###
 label equip_sus_top:
     call set_sus_top(top_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Top ###
 label equip_cho_top:
     call set_cho_top(top_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Top ###
 label equip_ton_top:
     call set_ton_top(top_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

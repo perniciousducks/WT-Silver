@@ -251,7 +251,7 @@ label hg_pr_FlirtTeacher_complete:
 
                                     call her_main("Here....","disgust","down_raised",cheeks="blush",xpos="mid",ypos="base",trans="fade")
 
-                                    call set_hermione_action("lift_skirt")
+                                    call set_her_action("lift_skirt")
                                     pause.5
 
                                     m "Hm..."
@@ -266,7 +266,7 @@ label hg_pr_FlirtTeacher_complete:
                                     m "Ah, what do I care..."
                                     call her_main("............?","angry","annoyed",emote="01")
 
-                                    call set_hermione_action("none")
+                                    call set_her_action("none")
 
                                     call her_main("","angry","angry")
                                     call ctc

@@ -90,7 +90,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         hide screen hermione_main
         with d5
 
-        call h_action("lift_top")
+        call set_her_action("lift_top")
 
         call play_music("playful_tension") # SEX THEME.
 
@@ -168,7 +168,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             call bld
             m "Very good..."
             call play_music("playful_tension") # SEX THEME.
-            call h_action("lift_top")
+            call set_her_action("lift_top")
 
             hide screen bld1
             show screen blktone
@@ -213,7 +213,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             call bld
             m "Very good..."
 
-            call h_action("lift_top")
+            call set_her_action("lift_top")
             hide screen bld1
             show screen blktone
             call her_main("","base","closed",xpos="mid",trans="fade")
@@ -256,7 +256,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call blkfade
                 ">Hermione pulls away from you and covers up hastily."
 
-                call h_action("none","update")
+                call set_her_action("none","update")
                 call her_main("I think I'd better go...","angry","worriedCl",cheeks="blush",xpos="base",ypos="base")
 
                 #End Groping
@@ -315,7 +315,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 with d5
                 ">Hermione pulls away from you suddenly and covers up."
 
-                call h_action("none","update")
+                call set_her_action("none","update")
                 call her_main("You promised not to touch, [genie_name]...","annoyed","angryL",cheeks="blush")
                 m "It was hard to resist..."
 
@@ -410,7 +410,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 ">You let go of the girl's breasts..."
                 ">Hermione covers up..."
 
-                call h_action("none","update")
+                call set_her_action("none","update")
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
 
                 if her_whoring >= 17:
@@ -493,7 +493,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             her "............."
             pause.2
 
-            call set_hermione_action("none","update")
+            call set_her_action("none","update")
             pause.5
 
             call blkfade
@@ -555,7 +555,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         ">Hermione pulls away from you and covers up..."
                         g4 "Don't you dare to leave me in this state, [hermione_name]!"
 
-                        call h_action("none","update")
+                        call set_her_action("none","update")
                         call her_main("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious",cheeks="blush")
 
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
@@ -582,7 +582,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         call her_main("Ew! [genie_name]!","angry","suspicious",cheeks="blush")
                         call her_main("I'm leaving!","angry","suspicious",cheeks="blush")
-                        call h_action("none","update")
+                        call set_her_action("none","update")
 
                         call music_block
                         jump could_not_flirt
@@ -641,7 +641,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         g4 "I'd better stop now I suppose..."
                         call her_main("...............","angry","worriedCl",cheeks="blush")
                         ">Hermione covers up..."
-                        call h_action("none","update")
+                        call set_her_action("none","update")
                     "-Just start cumming-":
                         #call play_music("chipper_doodle") # HERMIONE'S THEME.
                         g4 "Argh! You whore!"
@@ -680,7 +680,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         hide screen hermione_main
                         call blkfade
 
-                        call h_action("none","update")
+                        call set_her_action("none","update")
                         $ sperm_on_tits = False
 
                         hide screen jerking_off_01
@@ -818,7 +818,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
                         $ sperm_on_tits = False
                         $ aftersperm = True
-                        call h_action("none","update")
+                        call set_her_action("none","update")
 
                         hide screen jerking_off_01
                         hide screen chair_left
@@ -872,7 +872,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call blkfade
 
                         $ sperm_on_tits = False
-                        call h_action("none","update") #This reloads all her clothing!
+                        call set_her_action("none","update") #This reloads all her clothing!
 
                         show screen genie
                         hide screen jerking_off_01
@@ -894,7 +894,7 @@ label end_hg_show_breasts:
     call blkfade
 
     $ sperm_on_tits = False
-    call h_action("none","update") #This reloads all her clothing!
+    call set_her_action("none","update") #This reloads all her clothing!
 
     hide screen jerking_off_01
     hide screen chair_left
@@ -928,10 +928,10 @@ label end_hg_show_breasts:
     else:
         her "I'd better go now then. It's getting pretty late..."
 
-    if her_whoring >= 6 and her_whoring <= 8:
+    if her_whoring >= 6 and her_whoring < 9:
         $ hg_pf_ShowThemToMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
 
-    if her_whoring >= 9 and her_whoring <= 11:
+    if her_whoring >= 9 and her_whoring < 12:
         $ hg_pf_ShowThemToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
 
     if her_whoring >= 12:
@@ -947,10 +947,10 @@ label end_hg_show_breasts:
 
         call her_walk("desk","door",3)
 
-        if her_whoring >= 6 and her_whoring <= 8:
+        if her_whoring >= 6 and her_whoring < 9:
             call her_main("(How humiliating... What have I become...?)","disgust","down_raised",cheeks="blush",ypos="head")
 
-        elif her_whoring >= 9 and her_whoring <= 11:
+        elif her_whoring >= 9 and her_whoring < 12:
             call her_main("........................","disgust","down_raised",cheeks="blush",ypos="head")
 
         elif her_whoring >= 12:

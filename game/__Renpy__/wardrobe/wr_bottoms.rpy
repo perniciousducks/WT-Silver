@@ -38,7 +38,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
         ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
         menu:
             "-Make her get dressed-":
-                call h_action("none","update")
+                call set_her_action("none","update")
                 hide screen hermione_main
 
             "-nvm-":
@@ -641,7 +641,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
 
             pause.5
 
-            call set_h_bottom(skirt_choice,bottom_color_choice)
+            call set_her_bottom(skirt_choice,bottom_color_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -768,7 +768,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                 pass
 
             $ hide_transitions = True
-            call set_h_bottom(skirt_choice,bottom_color_choice)
+            call set_her_bottom(skirt_choice,bottom_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -779,33 +779,28 @@ label equip_lun_bottom:
 
     call set_lun_bottom(skirt_choice, bottom_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Bottom ###
 label equip_ast_bottom:
     call set_ast_bottom(skirt_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Bottom ###
 label equip_sus_bottom:
     call set_sus_bottom(skirt_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Bottom ###
 label equip_cho_bottom:
     call set_cho_bottom(skirt_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Bottom ###
 label equip_ton_bottom:
     call set_ton_bottom(skirt_choice, bottom_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

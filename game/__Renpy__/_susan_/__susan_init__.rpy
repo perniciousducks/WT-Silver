@@ -131,7 +131,7 @@ label susan_init:
         $ sus_panties                 = "panties_base"
         $ sus_panties_color           = "base"
 
-        $ susan_onepiece            = "characters/susan/clothes/onepieces/base/blank.png"
+        $ susan_onepiece            = "characters/susan/clothes/onepieces/blank.png"
         $ sus_onepiece                = "blank"
         $ sus_onepiece_color          = "base"
 

@@ -2714,7 +2714,7 @@ label cho_favor_3_3:
                     call cho_main("(I'm such a whore...)","smile","base","base","mid")
                     m "That's good, you fucking whore."
                     call cho_main("(Yes!)","smile","base","base","mid")
-                    "Suddenly, you feel Cho's hands tightly grip your ass, and you realize that you haven't had to hold her down."
+                    "Suddenly, you feel Cho's hands tightly grip your ass, and you realise that you haven't had to hold her down."
                     "The crazed young witch desperately fucks her face against your cock."
                     "Your cock feels amazing, but you have other plans."
                     "You grab Cho's hands and push her down."

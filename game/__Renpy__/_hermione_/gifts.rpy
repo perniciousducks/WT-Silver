@@ -397,7 +397,7 @@ label give_her_gift(gift_id):
             call her_main("This is just insulting, [genie_name]...","angry","angry",cheeks="blush")
             call upset(10)
         if her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
-            call her_main("[genie_name], do you not realize how inappropriate it would be for me to accept a present like that?","open","annoyed",cheeks="blush")
+            call her_main("[genie_name], do you not realise how inappropriate it would be for me to accept a present like that?","open","annoyed",cheeks="blush")
             call her_main("And I would not even know what to do with them anyway...","open","baseL",cheeks="blush")
             call her_main("I mean these fluffy things are obviously handcuffs...","angry","down_raised")
             call her_main("But this ball... ehm...")

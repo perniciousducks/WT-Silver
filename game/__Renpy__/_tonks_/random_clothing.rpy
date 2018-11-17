@@ -210,7 +210,7 @@ label tonks_clothing_level:
             $ ton_clothing_level +=0
 
     #Stockings
-    if ton_wear_stockings:
+    if tonks_wear_stockings:
         if ton_stockings in ["stockings_auror"]:
             $ ton_clothing_level -=5
         else:

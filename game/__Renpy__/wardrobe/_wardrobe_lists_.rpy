@@ -572,7 +572,7 @@ label update_wr_other_clothings_list:
         if her_whoring >= 3:
             $ wr_robes.append("robe_3_g")
         if her_whoring >= 6:
-            $ wr_robes.append("tobe_4_g")
+            $ wr_robes.append("robe_4_g")
         if her_whoring >= 9:
             $ wr_robes.append("robe_quidditch_g")
 

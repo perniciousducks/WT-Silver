@@ -6,7 +6,7 @@
 label set_her_hair(style=None, color=None): #Not in use
     hide screen hermione_main
     if hair_style  != None:
-        $ h_hair_style = hair_style
+        $ h_hair_style = style
     if hair_color != None:
         $ h_hair_color = color
     call update_her_hair

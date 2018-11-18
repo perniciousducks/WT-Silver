@@ -137,16 +137,9 @@ label door:
 
 screen door_menu:
     zorder 8
-    add "images/backgrounds/desk.png"
+
     use close_button
-    if map_unlocked:
-        use map_screen
-        use map_screen_characters
-    else:
-        use generic_character_select(summon_list, "-Summon-", 812, 23)
-
-
-
+    use generic_character_select(summon_list, "-Summon-", 812, 23)
 
 
 

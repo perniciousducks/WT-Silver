@@ -30,7 +30,7 @@ label map_init:
 screen map_screen:
     zorder 4
 
-    $ UI_xpos_offset = 140
+    $ UI_xpos_offset = 180
 
     add "interface/map/map.png" xpos UI_xpos_offset ypos 0
 
@@ -257,7 +257,7 @@ label update_character_map_locations:
 screen map_screen_characters:
     zorder 5
 
-    $ UI_xpos_offset = 140
+    $ UI_xpos_offset = 180
 
     #Hermione
     if hermione_unlocked:

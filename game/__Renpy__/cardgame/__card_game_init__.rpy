@@ -189,16 +189,16 @@ init python:
     
            
     def update_table(new_card_x, new_card_y):
-        if  not new_card_y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue >= table_cards[x][y-1].buttomvalue:
+        if  not new_card_y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].buttomvalue:
             table_cards[x][y-1].playercard = table_cards[x][y].playercard
             
-        if not new_card_y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].buttomvalue >= table_cards[x][y+1].topvalue:
+        if not new_card_y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].buttomvalue > table_cards[x][y+1].topvalue:
             table_cards[x][y+1].playercard = table_cards[x][y].playercard
             
-        if  not new_card_x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue >= table_cards[x-1][y].rightvalue:
+        if  not new_card_x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue > table_cards[x-1][y].rightvalue:
             table_cards[x-1][y].playercard = table_cards[x][y].playercard
             
-        if not new_card_x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue >= table_cards[x+1][y].leftvalue:
+        if not new_card_x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue > table_cards[x+1][y].leftvalue:
             table_cards[x+1][y].playercard = table_cards[x][y].playercard
             
     def add_card_to_deck(title):

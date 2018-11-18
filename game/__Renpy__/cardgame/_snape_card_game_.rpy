@@ -21,9 +21,11 @@ label snape_first_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
         if response_card == "AfterEnemy":
-            $ renpy.music.set_volume(volume=0.2, delay=0, channel='music')
+            $ volume = _preferences.volumes['music']
+            $ _preferences.volumes['music'] *= .5
             call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
             call sna_main(remove=True)
+            $ _preferences.volumes['music'] = volume
     
     show screen blkfade
     if not check_winner():
@@ -57,8 +59,11 @@ label snape_second_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
         if response_card == "AfterEnemy":
+            $ volume = _preferences.volumes['music']
+            $ _preferences.volumes['music'] *= .5
             call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
             call sna_main(remove=True)
+            $ _preferences.volumes['music'] = volume
     
     show screen blkfade
     if not check_winner():
@@ -104,8 +109,11 @@ label snape_third_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
         if response_card == "AfterEnemy":
+            $ volume = _preferences.volumes['music']
+            $ _preferences.volumes['music'] *= .5
             call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
             call sna_main(remove=True)
+            $ _preferences.volumes['music'] = volume
     
     show screen blkfade
     if not check_winner():

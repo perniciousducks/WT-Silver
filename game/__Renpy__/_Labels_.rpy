@@ -14,6 +14,8 @@ label hide_all_screens:
 
     #CGs
     hide screen ccg
+    hide screen end_u_1
+    hide screen end_u_3
 
     #Main Room
     hide screen main_room

@@ -65,6 +65,9 @@ label feeding:
         else:
             pause .8
 
+        if phoenix_fed_counter == 3:
+            "Developer note:" ">Feeding the bird doesn't do anything in this version of the game (v1.34)."
+
     show screen genie
     hide screen feeding
     with d3

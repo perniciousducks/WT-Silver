@@ -12,6 +12,9 @@ label hide_all_screens:
     call sna_chibi("hide")
     call gen_chibi("hide")
 
+    #CGs
+    hide screen ccg
+
     #Main Room
     hide screen main_room
     hide screen weather

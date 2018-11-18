@@ -44,6 +44,9 @@ label door:
             call nar(">Hermione is already asleep.")
             jump night_main_menu
     elif _return == "hermione" and not hermione_busy:
+        if her_map_location == "forest":
+            jump hermione_map_BJ
+
         jump summon_hermione
 
 

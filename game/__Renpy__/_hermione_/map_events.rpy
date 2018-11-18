@@ -1,6 +1,8 @@
 label hermione_map_BJ:
     $ renpy.call('forest_BJ_'+str(forest_BJ_progress))
     $ hermione_busy = True
+    call set_her_map_location("gryffindor_room")
+
     jump return_office
 
 label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle

@@ -25,20 +25,6 @@ label map_init:
 
 
 
-label leave_main_room:
-    hide screen main_room_menu
-    hide screen main_room
-    hide screen chair_right
-    hide screen fireplace
-    hide screen candlefire
-    hide screen desk
-    hide screen phoenix_food
-    hide screen owl
-    hide screen genie
-    return
-
-
-
 ### Map Screen ###
 
 screen map_screen:
@@ -204,6 +190,9 @@ label set_her_map_location(location = ""):
                 else: #Gryff Room
                     $ her_map_location = "room_g"
 
+            if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy:
+                $ her_map_location = "forest"
+
     call update_character_map_locations
 
     return
@@ -242,6 +231,9 @@ label update_character_map_locations:
     if her_map_location == "courtyard":
         $ her_map_xpos = 539
         $ her_map_ypos = 263
+    if her_map_location == "forest":
+        $ her_map_xpos = 34
+        $ her_map_ypos = 28
 
     #Cho
     if cho_map_location == "room_r":
@@ -314,7 +306,7 @@ label floor_7th:
         jump door
     else:
         call blkfade
-        call leave_main_room
+        call room(hide_screens=True)
         show screen floor_7th_screen
 
 

@@ -205,24 +205,24 @@ label __init_variables:
 
 
     $ Books_OBJ = silver_book_lib()
-    $ Books_OBJ.read_books.extend([
+    $ Books_OBJ.read_books = [
         Copper_Book_OBJ,
         Bronze_Book_OBJ,
         Silver_Book_OBJ,
         Golden_Book_OBJ
-    ])
-    $ Books_OBJ.write_books.extend([
+    ]
+    $ Books_OBJ.write_books = [
         Speedwriting_Beginners_OBJ,
         Speedwriting_Amateurs_OBJ,
         Speedwriting_Advanced_OBJ,
         Speedwriting_Experts_OBJ
-    ])
-    $ Books_OBJ.fiction_books.extend([
+    ]
+    $ Books_OBJ.fiction_books = [
         Galadriel_I_OBJ,
         Galadriel_II_OBJ,
         Armchairs_OBJ,
         Dear_Wifu_OBJ
-    ])
+    ]
     
     if not hasattr(renpy.store,'cheat_reading'): #important!
         $ cheat_reading = False

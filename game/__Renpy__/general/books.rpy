@@ -283,33 +283,7 @@ label read_book_menu:
     jump read_book_menu
 
 
-label books_list: #Old, Replaced with List Menu
-    menu:
-        "-Educational books-":
-            label books_on_improvement:
-            $ books_menu_list = Books_OBJ.get_edu()
-        "-Fiction books-":
-            label fiction_books_menu:
-            $ books_menu_list = Books_OBJ.get_fic()
-        "-Never mind-":
-            jump desk
-    python:
-        books_menu = []
-        for book in books_menu_list:
-            if book.purchased:
-                if book.done:
-                    books_menu.append((book.getMenuTextDone(),book))
-                else:
-                    books_menu.append((book.getMenuText(),book))
-        books_menu.append(("-Never mind-", "nvm"))
-        BookOBJ = renpy.display_menu(books_menu)
-    if BookOBJ == "nvm":
-        jump books_list
-    else:
-        jump handle_book_selection
-
-
-label handle_book_selection:
+label handle_book_selection(BookOBJ):
     $ the_gift = BookOBJ.imagepath
     show screen gift
     with d3
@@ -327,12 +301,7 @@ label handle_book_selection:
                 jump check_book_order
             "-Never mind-":
                 hide screen gift
-    if BookOBJ in Books_OBJ.get_edu():
-        jump books_on_improvement
-    if BookOBJ in Books_OBJ.get_fic():
-        jump fiction_books_menu
-    else:
-        jump books_list
+    jump read_book_menu
 
 
 label check_book_order:

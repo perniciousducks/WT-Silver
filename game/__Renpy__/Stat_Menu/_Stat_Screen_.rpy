@@ -86,7 +86,7 @@ screen stat_menu(character=""):
 
     #Character Buttons.
 
-    use generic_character_select(unlocked_character_list, "-Character Select-")
+    use character_select_menu(unlocked_character_list, "-Character Select-")
 
     text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
 

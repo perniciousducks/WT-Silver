@@ -139,7 +139,7 @@ screen door_menu:
     zorder 8
 
     use close_button
-    use generic_character_select(summon_list, "-Summon-", 812, 23)
+    use character_select_menu(summon_list, "-Summon-", 812, 23)
 
 
 

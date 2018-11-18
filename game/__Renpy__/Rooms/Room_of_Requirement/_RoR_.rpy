@@ -75,12 +75,12 @@ label hide_room_req:
     return
     
 label mirror_menu:
-    show screen generic_scroll_menu(mr_evs_list, "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}")
+    show screen list_menu(mr_evs_list, "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}")
     $ _return = ui.interact()
     
-    hide screen generic_scroll_menu
+    hide screen list_menu
     
-    if isinstance(_return, generic_menu_item):
+    if isinstance(_return, list_menu_item_class):
         $ currentpage = 0
         $renpy.jump(_return.start_label)
     

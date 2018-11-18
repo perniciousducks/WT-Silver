@@ -22,7 +22,7 @@ init python:
         renpy.pause(speed)
         renpy.hide_screen("universal_walk")
 
-    class silver_scroll(generic_menu_item):
+    class silver_scroll(list_menu_item_class):
         id = 0
         title = ""
         imagepath = "images/store/31.png"
@@ -30,10 +30,10 @@ init python:
         comments = []
         unlocked = True
         purchased = False
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-            
+
         def get_description(self):
             return self.comments[renpy.random.randint(0, len(self.comments)-1)]
 

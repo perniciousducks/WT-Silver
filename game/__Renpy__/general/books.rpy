@@ -256,14 +256,14 @@ label read_book_menu:
 
         books_menu_list = list(filter(lambda x: (x.purchased==True and x.done==False), books_menu_list))
 
-    show screen generic_scroll_menu(books_menu_list, "Read Books", toggle1="Educat. Books", toggle2="Fiction Books" )
+    show screen list_menu(books_menu_list, "Read Books", toggle1="Educat. Books", toggle2="Fiction Books" )
     with d1
 
     $ _return = ui.interact()
 
-    hide screen generic_scroll_menu
+    hide screen list_menu
 
-    if isinstance(_return, generic_menu_item):
+    if isinstance(_return, list_menu_item_class):
         call handle_book_selection(_return)
 
     elif _return == "Close":
@@ -539,7 +539,7 @@ init python:
                     return book.done
             return None
 
-    class silver_book(generic_menu_item):
+    class silver_book(list_menu_item_class):
         id = ""
         cost = 0
         chapters = 0

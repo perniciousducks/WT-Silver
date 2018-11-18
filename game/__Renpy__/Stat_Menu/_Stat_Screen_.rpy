@@ -86,7 +86,7 @@ screen stat_menu(character=""):
 
     #Character Buttons.
 
-    use generic_character_select(unlocked_character_list, "-Character Select-")
+    use character_select_menu(unlocked_character_list, "-Character Select-")
 
     text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
 
@@ -179,7 +179,7 @@ screen genie_stat_menu:
                 use text_stat("- ", " times -", phoenix_fed_counter)
                 use text_stat("Bird petted:")
                 use text_stat("- ", " times -", phoenix_petted_counter)
-                use text_stat("You didn't feed your bird for ", " days...", (day - phoenix_petted_counter) )
+                use text_stat("You missed feeding your bird for ", " days...", (day - phoenix_petted_counter) )
 
         vbar value YScrollValue("vp")
 

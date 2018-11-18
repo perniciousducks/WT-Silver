@@ -203,10 +203,6 @@ label cupboard:
 
         "-Bugfix-":
             menu:
-                "-Reset Clothing-":
-                    call reset_susan_clothing
-                    call reset_tonks_clothing
-                    jump cupboard
                 "-Reset ALL Luna content-" if hat_known:
                     $ reset_luna_content = True
                     call luna_init
@@ -219,6 +215,17 @@ label cupboard:
 
         "-Display Characters-" if day != 1:
             jump summon_characters
+
+        #Temporary!
+        "-Doze off-" if daytime and day != 1:
+            jump night_start
+        "-Go to sleep-" if not daytime and day != 1:
+            jump day_start
+
+        #"-Jerk 0ff on Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress: #True when Hermione has no panties on.
+        #    jump jerk_off
+        "-Jerk Off-" if not day == 1:
+            jump jerk_off
 
         "-Never mind-":
             jump day_main_menu

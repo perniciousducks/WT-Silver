@@ -87,34 +87,8 @@ label __init_variables:
     return
 
 init python:
-    def grayTint(image):
-        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))
 
-    def yellowTint(image):
-        return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
-
-    class generic_menu_item(object):
-        imagepath = "images/store/potions/potion_3.png"
-        title = "This is the title"
-        description = ""
-        unlocked = False
-
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-
-        def get_image(self):
-            return self.imagepath
-
-        def get_title(self):
-            return self.title
-
-        def get_description(self):
-            return self.description
-
-        def get_buttom_right(self):
-            return ""
-
-    class mirror_stories(generic_menu_item):
+    class mirror_stories(list_menu_item_class):
         unlocked = False
         start_label = ""
         authors = []

@@ -1,15 +1,15 @@
-init python:    
-    class gift_item(generic_menu_item):
+init python:
+    class gift_item(list_menu_item_class):
         id = 0
         whoringNeeded = 0
         cost = 0
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+
         def costOf(self, number_of_item):
             return self.cost * number_of_item
-        
+
         def get_description(self):
             out_des = ""
             if len(self.description) > 90:
@@ -17,12 +17,12 @@ init python:
             else:
                 out_des = self.description
             return out_des
-        
+
         def get_buttom_right(self):
             return "Cost: " + str(self.cost)
-    
+
 label __init_variables:
-    
+
     if not hasattr(renpy.store,'Lollipop'): #important!
         $ Lollipop = gift_item()
     $ Lollipop.id = 0
@@ -31,8 +31,8 @@ label __init_variables:
     $ Lollipop.unlocked = True
     $ Lollipop.imagepath = "images/store/gifts/1.png"
     $ Lollipop.description = "A lollipop candy. An adult candy for kids or kids candy for adults?"
-    
-    
+
+
     if not hasattr(renpy.store,'Chocolate'): #important!
         $ Chocolate = gift_item()
     $ Chocolate.id = 1
@@ -41,7 +41,7 @@ label __init_variables:
     $ Chocolate.unlocked = True
     $ Chocolate.imagepath = "images/store/gifts/2.png"
     $ Chocolate.description = "The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries)."
-    
+
     if not hasattr(renpy.store,'PlushOwl'): #important!
         $ PlushOwl = gift_item()
     $ PlushOwl.id = 2
@@ -50,7 +50,7 @@ label __init_variables:
     $ PlushOwl.unlocked = True
     $ PlushOwl.imagepath = "images/store/gifts/3.png"
     $ PlushOwl.description = "a Toy owl stuffed with feathers of an actual owl. It's so cuddly!"
-    
+
     if not hasattr(renpy.store,'Butterbeer'): #important!
         $ Butterbeer = gift_item()
     $ Butterbeer.id = 3
@@ -60,7 +60,7 @@ label __init_variables:
     $ Butterbeer.unlocked = True
     $ Butterbeer.imagepath = "images/store/gifts/4.png"
     $ Butterbeer.description = "Girls can't resist this beverage's buttery texture. Therefore it's always in high demand among the boys. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}"
-    
+
     if not hasattr(renpy.store,'EducationalMagazines'): #important!
         $ EducationalMagazines = gift_item()
     $ EducationalMagazines.id = 4
@@ -69,7 +69,7 @@ label __init_variables:
     $ EducationalMagazines.title = "Educational magazines"
     $ EducationalMagazines.imagepath= "images/store/gifts/5.png"
     $ EducationalMagazines.description = "Educational magazines. \nthe Trusty companions of every social outcast."
-    
+
     if not hasattr(renpy.store,'GirlyMagazines'): #important!
         $ GirlyMagazines = gift_item()
     $ GirlyMagazines.id = 5
@@ -78,7 +78,7 @@ label __init_variables:
     $ GirlyMagazines.unlocked = True
     $ GirlyMagazines.imagepath= "images/store/gifts/6.png"
     $ GirlyMagazines.description = "Girly magazines. \nAll cool girls are reading these."
-    
+
     if not hasattr(renpy.store,'AdultMagazines'): #important!
         $ AdultMagazines = gift_item()
     $ AdultMagazines.id = 6
@@ -87,7 +87,7 @@ label __init_variables:
     $ AdultMagazines.unlocked = True
     $ AdultMagazines.imagepath= "images/store/gifts/7.png"
     $ AdultMagazines.description = "Your boyfriend is turning into a nice guy? \nYour husband won't abuse you anymore? \nAll you wanted to know about relationships, love and sex. Mostly about sex."
-    
+
     if not hasattr(renpy.store,'PornMagazines'): #important!
         $ PornMagazines = gift_item()
     $ PornMagazines.id = 7
@@ -97,7 +97,7 @@ label __init_variables:
     $ PornMagazines.unlocked = True
     $ PornMagazines.imagepath= "images/store/gifts/8.png"
     $ PornMagazines.description = "Give these to your girlfriend to test her, to your wife to shame her and to your daughter to avoid \"the talk\"."
-    
+
     if not hasattr(renpy.store,'ViktorKrumPoster'): #important!
         $ ViktorKrumPoster = gift_item()
     $ ViktorKrumPoster.id = 8
@@ -106,7 +106,7 @@ label __init_variables:
     $ ViktorKrumPoster.unlocked = True
     $ ViktorKrumPoster.imagepath= "images/store/gifts/9.png"
     $ ViktorKrumPoster.description = "A skilled Quidditch Seeker, Viktor has been selected to play for the Bulgarian National Quidditch team despite still going to school, and is widely regarded as one of the best players in the world."
-    
+
     if not hasattr(renpy.store,'SexyLingerie'): #important!
         $ SexyLingerie = gift_item()
     $ SexyLingerie.id = 9
@@ -115,7 +115,7 @@ label __init_variables:
     $ SexyLingerie.unlocked = True
     $ SexyLingerie.imagepath= "images/store/gifts/10.png"
     $ SexyLingerie.description = "Sexy lingerie \"Fairy Godmother\". Charm your wizard in bed or empress your sisters at a Sabbath."
-    
+
     if not hasattr(renpy.store,'PackOfCondoms'): #important!
         $ PackOfCondoms = gift_item()
     $ PackOfCondoms.id = 10
@@ -125,7 +125,7 @@ label __init_variables:
     $ PackOfCondoms.unlocked = True
     $ PackOfCondoms.imagepath= "images/store/gifts/11.png"
     $ PackOfCondoms.description = "\"Pink unicorn condoms\". \nUnleash the one-horned beast!\n{size=-4}May contain traces of actual unicorn saliva.{/size}"
-    
+
     if not hasattr(renpy.store,'Vibrator'): #important!
         $ Vibrator = gift_item()
     $ Vibrator.id = 11
@@ -135,7 +135,7 @@ label __init_variables:
     $ Vibrator.unlocked = True
     $ Vibrator.imagepath= "images/store/gifts/12.png"
     $ Vibrator.description = "A magnificent, magically enhanced vibrator made of vine wood, with a dragon heartstring core."
-    
+
     if not hasattr(renpy.store,'JarOfLube'): #important!
         $ JarOfLube = gift_item()
     $ JarOfLube.id = 12
@@ -144,7 +144,7 @@ label __init_variables:
     $ JarOfLube.unlocked = True
     $ JarOfLube.imagepath= "images/store/gifts/13.png"
     $ JarOfLube.description = "A Jar of anal lube, Buy this for your loved one - show that you care."
-    
+
     if not hasattr(renpy.store,'BallGagAndCuffs'): #important!
         $ BallGagAndCuffs = gift_item()
     $ BallGagAndCuffs.id = 13
@@ -153,7 +153,7 @@ label __init_variables:
     $ BallGagAndCuffs.unlocked = True
     $ BallGagAndCuffs.imagepath= "images/store/gifts/14.png"
     $ BallGagAndCuffs.description = "Ball gag and cuffs, Turn your soulmate into your cellmate."
-    
+
     if not hasattr(renpy.store,'AnalPlugs'): #important!
         $ AnalPlugs = gift_item()
     $ AnalPlugs.id = 14
@@ -163,7 +163,7 @@ label __init_variables:
     $ AnalPlugs.unlocked = True
     $ AnalPlugs.imagepath= "images/store/gifts/15.png"
     $ AnalPlugs.description = "Anal plugs decorated with actual tails. Sizes vary to satisfy expert practitioners and beginner alike."
-    
+
     if not hasattr(renpy.store,'ThestralStrapon'): #important!
         $ ThestralStrapon = gift_item()
     $ ThestralStrapon.id = 15
@@ -173,7 +173,7 @@ label __init_variables:
     $ ThestralStrapon.unlocked = True
     $ ThestralStrapon.imagepath= "images/store/gifts/16.png"
     $ ThestralStrapon.description = "Thestral strap-on.\nWhen you see it, you'll shit bricks."
-    
+
     if not hasattr(renpy.store,'SpeedStick2000'): #important!
         $ SpeedStick2000 = gift_item()
     $ SpeedStick2000.id = 16
@@ -182,7 +182,7 @@ label __init_variables:
     $ SpeedStick2000.unlocked = True
     $ SpeedStick2000.imagepath= "images/store/gifts/17.png"
     $ SpeedStick2000.description = "The \"Lady Speed Stick-2000\", an elegant way of transportation for passionate witches. The trademarked saddle guarantees full satisfaction. Get one for your witch and she won't use her boring old broom ever again!"
-    
+
     if not hasattr(renpy.store,'SexDollJoanne'): #important!
         $ SexDollJoanne = gift_item()
     $ SexDollJoanne.id = 17
@@ -191,7 +191,7 @@ label __init_variables:
     $ SexDollJoanne.unlocked = True
     $ SexDollJoanne.imagepath= "images/store/gifts/18.png"
     $ SexDollJoanne.description = "Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort."
-    
+
     if not hasattr(renpy.store,'AnalBeads'): #important!
         $ AnalBeads = gift_item()
     $ AnalBeads.id = 18
@@ -200,8 +200,8 @@ label __init_variables:
     $ AnalBeads.unlocked = True
     $ AnalBeads.imagepath= "images/store/gift_anal_beads.png"
     $ AnalBeads.description = "Anal beads engraved with a strange inscription \"Property of L.C.\"."
-    
-    
+
+
     $ gift_list = []
     $ gift_list.append(Lollipop)
     $ gift_list.append(Chocolate)
@@ -222,5 +222,5 @@ label __init_variables:
     $ gift_list.append(SpeedStick2000)
     #$ gift_list.append(SexDollJoanne)
     #$ gift_list.append(AnalBeads)
-    
+
     return

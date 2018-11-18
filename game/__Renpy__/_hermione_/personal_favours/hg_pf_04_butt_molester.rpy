@@ -1085,10 +1085,8 @@ label end_hg_butt_molester:
     hide screen blktone8
     hide screen ctc
     hide screen bld1
-    hide screen groping_01
-    hide screen groping_02
     call her_chibi("stand","mid","base")
-    show screen genie
+    call gen_chibi("sit_behind_desk")
 
     $ menu_x = 0.5 #Menu is moved to the left side.
     $ menu_y = 0.5 #Menu is moved to the left side.

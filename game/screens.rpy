@@ -170,16 +170,16 @@ screen nvl:
 
     use quick_menu
 
-##############################################################################
-# Main Menu
-#
+
+
 # Screen that's used to display the main menu, when Ren'Py first starts
 # http://www.renpy.org/doc/html/screen_special.html#main-menu
 
-screen main_menu:
 
-    # This ensures that any other menu screen is replaced.
+# Main Menu
+screen main_menu:
     tag menu
+    zorder 9
 
     # The background of the main menu.
     window:
@@ -189,7 +189,7 @@ screen main_menu:
     frame:
         style_group "mm"
         xalign .96
-        yalign .96
+        yalign .77
 
         has vbox
 
@@ -201,6 +201,26 @@ screen main_menu:
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Quit") action Quit(confirm=False)
 
+    frame:
+        style_group "mm"
+        xalign .96
+        yalign .96
+
+        has vbox
+
+        textbutton _("Support Akabur") action OpenURL("https://www.patreon.com/akabur")
+        textbutton _("Support Team Silver") action OpenURL("https://www.patreon.com/MoCoder")
+
+    imagebutton:
+        xpos 689
+        ypos 546
+        xalign 0.5
+        yalign 0.5
+        idle "logo/patreon.png"
+        hover "logo/patreon_hover.png"
+        action OpenURL("https://www.patreon.com/MoCoder")
+
+
 init -2:
 
     # Make all the main menu buttons be the same size.
@@ -209,10 +229,11 @@ init -2:
 
 
 
-#######################
 # Extras
-
 screen extras:
+    tag menu
+    zorder 9
+
     window:
         style "gm_root"
     frame:

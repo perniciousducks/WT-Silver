@@ -1195,7 +1195,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_onepieces[i])), Jump("equip_onepiece")]
-                    add "characters/"+str(active_girl)+"/clothes/onepieces/base/"+wr_onepieces[i]+".png" xpos 15+(90*col) ypos (47+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/onepieces/"+wr_onepieces[i]+".png" xpos 15+(90*col) ypos (47+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Garterbelts
             if wardrobe_underwear_category == 3:

@@ -183,55 +183,6 @@ screen weasley_store_menu:
     #hotspot (750+280, 550, 40, 40) clicked [Show("main_room_menu"),Jump("day_main_menu")] #Return Button
 
 
-
-label store_scrolls:
-    show screen weasley_store_menu
-
-    python:
-        scrolls_menu = list(filter(lambda x: x.purchased==False, sacred_scrolls))
-
-    show screen generic_scroll_menu(scrolls_menu, "Scroll Stock" )
-    $ _return = ui.interact()
-
-    hide screen generic_scroll_menu
-
-    if isinstance(_return, generic_menu_item):
-        $ the_gift = _return.imagepath # SACRED SCROLL.
-        show screen gift
-        with d3
-        dahr "A scroll containing sacred knowledge.\n(May also contain spoilers)."
-        menu:
-            "-Buy the scroll ([_return.cost] gold)-":
-                if gold >= _return.cost:
-                    $ gold -= _return.cost
-                    $ _return.purchased = True
-                    $ sscroll_[_return.id] = True # Turns TRUE if the scroll had been bought.
-                    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-                    ">A New scroll has been added to your sacred scrolls collection."
-                    hide screen gift
-                    with d3
-                    call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
-                else:
-                    call no_gold #Massage: m "I don't have enough gold".
-                    hide screen gift
-
-            "-Never mind-":
-                hide screen gift
-
-
-    elif _return == "Close":
-        $ currentpage = 0
-        jump close_weasley_store
-
-    elif _return == "inc":
-        $ currentpage += 1
-    elif _return == "dec":
-        $ currentpage += -1
-
-    jump store_scrolls
-
-
-
 label shop_books:
     show screen weasley_store_menu
 
@@ -254,17 +205,22 @@ label shop_books:
             books_menu_list.extend(Books_OBJ.write_books)
         if toggle2_bool:
             books_menu_list.extend(Books_OBJ.fiction_books)
+        if toggle3_bool:
+            books_menu_list.extend(sacred_scrolls)
 
         books_menu_list = list(filter(lambda x: x.purchased==False, books_menu_list))
 
-    show screen generic_scroll_menu(books_menu_list, "Book Stock", toggle1="Educational Books", toggle2="Fiction Books" )
+    show screen list_menu(books_menu_list, "Books & Scrolls", toggle1="Educat. Books", toggle2="Fiction Books" , toggle3="Scrolls" )
 
     $ _return = ui.interact()
 
-    hide screen generic_scroll_menu
+    hide screen list_menu
 
-    if isinstance(_return, generic_menu_item):
-        call purchase_book(_return)
+    if isinstance(_return, list_menu_item_class):
+        if _return in [Books_OBJ.read_books, Books_OBJ.write_books, Books_OBJ.fiction_books]:
+            call purchase_book(_return)
+        else:
+            call purchase_scroll(_return)
 
     elif _return == "Close":
         $ currentpage = 0
@@ -274,6 +230,8 @@ label shop_books:
         $ toggle1_bool = not toggle1_bool
     elif _return == "toggle2":
         $ toggle2_bool = not toggle2_bool
+    elif _return == "toggle3":
+        $ toggle3_bool = not toggle3_bool
 
     elif _return == "inc":
         $ currentpage += 1
@@ -301,6 +259,25 @@ label purchase_book(BookOBJ):
             hide screen gift
     return
 
+label purchase_scroll(BookOBJ):
+    $ the_gift = BookOBJ.imagepath # SACRED SCROLL.
+    show screen gift
+    with d3
+    ">A scroll containing sacred knowledge.\n(May also contain spoilers)."
+    menu:
+        "-Buy the scroll ([BookOBJ.cost] gold)-":
+            if gold >= BookOBJ.cost:
+                $ gold -= BookOBJ.cost
+                $ BookOBJ.purchased = True
+                $ sscroll_[BookOBJ.id] = True # Turns TRUE if the scroll had been bought.
+                ">A New scroll has been added to your sacred scrolls collection."
+                hide screen gift
+                with d3
+            else:
+                call no_gold #Massage: m "I don't have enough gold".
+        "-Never mind-":
+            hide screen gift
+    return
 
 label shop_potion_menu:
     show screen weasley_store_menu
@@ -354,12 +331,12 @@ label shop_potion_menu:
 label gifts_menu:
     show screen weasley_store_menu
 
-    show screen generic_scroll_menu(gift_list, "Gift Stock")
+    show screen list_menu(gift_list, "Gift Stock")
 
     $ _return = ui.interact()
 
-    hide screen generic_scroll_menu
-    if isinstance(_return, generic_menu_item):
+    hide screen list_menu
+    if isinstance(_return, list_menu_item_class):
         call object_gift_block(_return)
 
     elif _return == "Close":

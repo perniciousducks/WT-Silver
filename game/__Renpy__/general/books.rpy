@@ -242,33 +242,48 @@ label __init_variables:
     return
 
 
-label books_list:
-    menu:
-        "-Educational books-":
-            label books_on_improvement:
-            $ books_menu_list = Books_OBJ.get_edu()
-        "-Fiction books-":
-            label fiction_books_menu:
-            $ books_menu_list = Books_OBJ.get_fic()
-        "-Never mind-":
-            jump desk
+
+label read_book_menu:
+    hide screen desk_menu
+
     python:
-        books_menu = []
-        for book in books_menu_list:
-            if book.purchased:
-                if book.done:
-                    books_menu.append((book.getMenuTextDone(),book))
-                else:
-                    books_menu.append((book.getMenuText(),book))
-        books_menu.append(("-Never mind-", "nvm"))
-        BookOBJ = renpy.display_menu(books_menu)
-    if BookOBJ == "nvm":
-        jump books_list
-    else:
-        jump handle_book_selection
+        books_menu_list = []
+        if toggle1_bool:
+            books_menu_list.extend(Books_OBJ.read_books)
+            books_menu_list.extend(Books_OBJ.write_books)
+        if toggle2_bool:
+            books_menu_list.extend(Books_OBJ.fiction_books)
+
+        books_menu_list = list(filter(lambda x: (x.purchased==True and x.done==False), books_menu_list))
+
+    show screen list_menu(books_menu_list, "Read Books", toggle1="Educat. Books", toggle2="Fiction Books" )
+    with d1
+
+    $ _return = ui.interact()
+
+    hide screen list_menu
+
+    if isinstance(_return, list_menu_item_class):
+        call handle_book_selection(_return)
+
+    elif _return == "Close":
+        $ currentpage = 0
+        jump day_main_menu
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+
+    elif _return == "inc":
+        $ currentpage += 1
+    elif _return == "dec":
+        $ currentpage += -1
+
+    jump read_book_menu
 
 
-label handle_book_selection:
+label handle_book_selection(BookOBJ):
     $ the_gift = BookOBJ.imagepath
     show screen gift
     with d3
@@ -279,19 +294,10 @@ label handle_book_selection:
         else:
             ">You already finished this one."
         hide screen gift
+        jump read_book_menu
     else:
-        menu:
-            "-Read the book-":
-                hide screen gift
-                jump check_book_order
-            "-Never mind-":
-                hide screen gift
-    if BookOBJ in Books_OBJ.get_edu():
-        jump books_on_improvement
-    if BookOBJ in Books_OBJ.get_fic():
-        jump fiction_books_menu
-    else:
-        jump books_list
+        hide screen gift
+        jump check_book_order
 
 
 label check_book_order:
@@ -533,7 +539,7 @@ init python:
                     return book.done
             return None
 
-    class silver_book(generic_menu_item):
+    class silver_book(list_menu_item_class):
         id = ""
         cost = 0
         chapters = 0

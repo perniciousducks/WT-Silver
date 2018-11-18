@@ -218,6 +218,13 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
     hide screen genie_titjob_cum_in_mouth
     hide screen genie_titjob_cum_on_tits
 
+    hide screen groping_01
+    hide screen groping_02
+    hide screen no_groping_01
+    hide screen no_groping_02
+    hide screen groping_03
+    hide screen groping_naked_tits
+
     hide screen genie_groping
     hide screen blktone
     hide screen bld1

@@ -741,8 +741,7 @@ label equip_piercing:
     if active_girl == "tonks":
         call set_ton_piercing(piercing_choice, piercing_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -760,8 +759,7 @@ label equip_tattoo:
         $ h_request_wear_tattoos = True
         $ hermione_wear_tattoos = True
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -780,8 +778,7 @@ label wardrobe_fail(text=""):
 ## Gifts ##
 label wardrobe_give_gift:
     call give_her_gift(wardrobe_gift_item)
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ## Potions ## Not in use ## Move to Accessories
 label wardrobe_give_potion:

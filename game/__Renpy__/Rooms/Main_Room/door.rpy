@@ -19,7 +19,7 @@ label door:
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
     $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
 
-    call update_character_map_location
+    call update_character_map_locations
 
 
     #Screens
@@ -44,6 +44,9 @@ label door:
             call nar(">Hermione is already asleep.")
             jump night_main_menu
     elif _return == "hermione" and not hermione_busy:
+        if her_map_location == "forest":
+            jump hermione_map_BJ
+
         jump summon_hermione
 
 
@@ -134,16 +137,9 @@ label door:
 
 screen door_menu:
     zorder 8
-    add "images/backgrounds/desk.png"
+
     use close_button
-    if map_unlocked:
-        use map_screen
-        use map_screen_characters
-    else:
-        use generic_character_select(summon_list, "-Summon-", 812, 23)
-
-
-
+    use character_select_menu(summon_list, "-Summon-", 812, 23)
 
 
 

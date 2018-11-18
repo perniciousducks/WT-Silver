@@ -1,8 +1,8 @@
 label snape_first_duel:
     call setup_deck(snape_first_deck)
-    sna "you're not beating me again genie, I've practiced with the greatest Wizard cards player there is!"
-    m "Me?"
-    sna "I... no, of course not."
+    sna "A bit dusty but this should do!"
+    m "You, or the deck?"
+    sna "I... the deck, obviously."
     sna "Let's do this."
     hide screen genie
     hide screen candlefire
@@ -40,10 +40,10 @@ label snape_first_duel:
             
 label snape_second_duel:
     call setup_deck(snape_second_deck)
-    sna "you're not beating me again genie, I've practiced with the greatest Wizard cards player there is!"
-    m "Me?"
-    sna "I... no, of course not."
-    sna "Let's do this."
+    sna "That first one was just a warm up, there's no way you'll beat me this time!"
+    m "Time to get our decks out."
+    sna "...."
+    sna "Let's just play."
     hide screen genie
     hide screen candlefire
     call sna_main(remove=True)
@@ -78,7 +78,7 @@ label snape_second_duel:
     
 label snape_third_duel:
     call setup_deck(snape_third_deck)
-    sna "you're not beating me again genie, I've practiced with the greatest Wizard cards player there is!"
+    sna "you're not beating me again genie, I've practiced with one of the greatest Wizard cards player there is!"
     m "Me?"
     sna "I... no, of course not."
     sna "Let's do this."

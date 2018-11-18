@@ -242,9 +242,9 @@ screen snape_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(snape_support/1.5), "-Support-", sna_support_word, snape_support) #Max is 15
+                use stat_bar(int(sna_support/1.5), "-Support-", sna_support_word, sna_support) #Max is 15
 
-                use stat_bar(int(snape_friendship/10), "-Friendship-", sna_friendship_word, snape_friendship)   #max is 100.
+                use stat_bar(int(sna_friendship/10), "-Friendship-", sna_friendship_word, sna_friendship)   #max is 100.
 
                 use text_stat("Hung out with Snape:")
                 use text_stat("- ", " times -", snape_dates_counter)
@@ -390,9 +390,9 @@ screen tonks_stat_menu:
 
             vbox:
                 use stat_bar(int(69/6.9), "-Lust-", "", 69)
-                #use stat_bar(int(snape_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
-                #use stat_bar(int(snape_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
-                #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
+                #use stat_bar(int(ton_support/1.5), "-Support-", "", ton_support) #Number of Tonks events.
+                #use stat_bar(int(ton_friendship/10), "-Friendship-", "", ton_friendship)   #max is 100.
+                #use stat_bar(int(0/10), "-Reputation-", "", ton_reputation)
 
                 use text_stat("Hung out with...")
                 use text_stat("- Astoria: ", " times -", ton_astoria_date_counter)
@@ -424,9 +424,9 @@ label update_stats:
 
     #Snape
     $ sna_friendship_word_list = ["???", "College", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF","Bros"]
-    $ sna_friendship_word = sna_friendship_word_list[int(snape_friendship/10)]
+    $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
-    $ sna_support_word = sna_support_word_list[int(snape_support/1.5)]
+    $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
 
     return

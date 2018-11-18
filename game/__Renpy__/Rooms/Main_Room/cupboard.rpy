@@ -36,13 +36,13 @@ label cupboard:
                         python:
                             for i in gift_list:
                                 if gift_item_inv[i.id] > 0:
-                                    choices.append( ( ("-"+str(i.name)+"- ("+str(gift_item_inv[i.id])+")"), i) )
+                                    choices.append( ( ("-"+str(i.title)+"- ("+str(gift_item_inv[i.id])+")"), i) )
                         $ choices.append(("-Never mind-", "nvm"))
                         $ result = renpy.display_menu(choices)
                         if result == "nvm":
                             jump possessions
                         else:
-                            $ the_gift = result.image
+                            $ the_gift = result.imagepath
                             show screen gift
                             with d3
                             ">[result.description]"
@@ -236,9 +236,9 @@ label scrolls_menu:
     python:
         scrolls_menu = []
         for scroll in scrolls_range:
-            sc = sacred_scrolls[scroll]
+            sc = sacred_scrolls[scroll - 1]
             if sscroll_[sc.id]:
-                scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", scroll) )
+                scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.title)+"-", scroll) )
         scrolls_menu.append(("-Never mind-", "nvm"))
         result = renpy.display_menu(scrolls_menu)
 

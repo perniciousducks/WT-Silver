@@ -2,7 +2,7 @@ label tentacle_shop_scene:
     show screen shop_screen
     if tent_scroll:
         "You already own this scroll"
-        call screen shop_screen
+        call screen shop_screen_menu
     if her_whoring <= 15:
         m "What's in this scroll?"
         ger "Don't worry about it."

@@ -140,7 +140,7 @@ label susan_walk_end_loiter(dissolveTime = 3):
 screen susan_stand:
     tag susan_chibi
 
-    add susan_chibi_blink    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_stand    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
     add susan_chibi_shoes    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
     add susan_chibi_top      xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
     add susan_chibi_bottom   xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)

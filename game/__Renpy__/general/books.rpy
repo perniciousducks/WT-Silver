@@ -294,14 +294,10 @@ label handle_book_selection(BookOBJ):
         else:
             ">You already finished this one."
         hide screen gift
+        jump read_book_menu
     else:
-        menu:
-            "-Read the book-":
-                hide screen gift
-                jump check_book_order
-            "-Never mind-":
-                hide screen gift
-    jump read_book_menu
+        hide screen gift
+        jump check_book_order
 
 
 label check_book_order:

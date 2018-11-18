@@ -154,7 +154,7 @@ screen desk_menu:
         action Return("read_book_menu")
 
     imagebutton:
-        xpos -20
+        xpos -40
         ypos 260
         focus_mask True
         idle "interface/map/desk_letters_idle.png"

@@ -538,12 +538,12 @@ label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
     call cho_main("Could you please... not... do that...","open","base","sad","down")
     g4 "What? You want Hermione to keep commentating your games?"
     g4 "What about our strategies?"
-    call cho_main("We can still do that...","soft","base","raised","down")
+    call cho_main("We can still do them...","soft","base","raised","down")
     call cho_main("...","pout","base","raised","R")
     m "[cho_name], is there something you're not telling me?"
     call cho_main("Well...","soft","suspicious","raised","R")
     call cho_main("It's just that...","open","suspicious","sad","mid")
-    call cho_main("People are being a lot nicer to me since that game!","quiver","suspicious","sad","mid")
+    call cho_main("People have been a lot nicer to me since that game!","quiver","suspicious","sad","mid")
     call cho_main("All the gryffindors are inviting me to parties...","soft","base","raised","down")
     call cho_main("Most of the Slytherins have stopped being racist...","open","closed","angry","mid")
     call cho_main("And the hufflepuff team weren't even upset that i beat them!","open","base","raised","L")
@@ -561,7 +561,7 @@ label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
     g9 "That's probably what the crowd will be chanting..."
     call cho_main("Ugh...","quiver","angry","angry","mid")
     call cho_main("Fine...","pout","angry","angry","R")
-    call cho_main("But- I better win!","soft","angry","raised","mid")
+    call cho_main("But-{p} I better win!","soft","angry","raised","mid")
 
     call play_sound("door")
     hide screen cho_chang
@@ -571,7 +571,13 @@ label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
     jump end_cho_event
 
 
-label cho_quidd_3_1:
+label cho_quidd_3_1: #Comes in after the game with Gryffindor, complains about not needing to slut up anymore
+
+label cho_quidd_3_2: #Comes in after the loss with Slyterin, genie makes her accept the slutty role
+
+label cho_quidd_3_3: #Comes in after the win against hufflepuff, incredibly horny
+
+label cho_quidd_4_1: #Comes in after sexual win against gryffindor, super horny
 
 
 
@@ -584,7 +590,7 @@ label quidditch_game_1:
     show screen ccg
     hide screen blkfade
     with d3
-    her "{size+=5}-AND IT'S ANOTHER 10 POINTs FOR RAVENCLAW!{/size}"
+    her "{size+=5}-AND IT'S ANOTHER ten POINTs FOR RAVENCLAW!{/size}"
     her "{size+=5}I DON'T THINK ANY OF US EXPECTED THIS FROM THEM AFTER LAST YEARS PERFORMANCE!{/size}"
     ">You get rather caught up in the spectacle of brooms flying around at a blinding pace, hurling deadly balls at each other... "
     her "{size+=5}AND IT ALL SEEMS TO BE THANKS TO THEIR STAR SEEKER, CHO CHANG!{/size}"
@@ -615,3 +621,75 @@ label quidditch_game_1:
     show screen blkfade
     with d3
     jump day_main_menu
+
+label quidditch_game_2: #playing without robe or jumper
+    show screen blkfade
+    with d3
+    pause
+    $ ccg_folder = "herm_quidditch"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+    her "{size+=5}-Cho chang and her cute little butt almost have the snitch!{/size}"
+    her "Poor Harry can't seem to keep his eyes on it... If I didn't know better I'd say he's trying to sneak a peek!"
+    her "Not that I can blame him..."
+    ">the crowd gives a thunderous roar as hermione goes above and beyond her commentator duties. "
+    qcr "GO CHO GO! GO CHO GO!"
+    her "Her fingers are almost there..."
+    show screen blktone
+    with d3
+    mal "Didn't someone just score ten points?"
+    mal2 "Who cares... I just hope that snitch flies above us so I can see if Cho's wearing any panties..."
+    mal "..."
+    mal "I bet you five sickles she's not!"
+    mal2 "You're on!"
+    hide screen blktone 
+    with d3
+    her "Harry and cho have disappeared into the bannisters after the snitch!"
+    her "Not the first time from what I've heard..."
+    her "now they're both out- And it looks like-"
+    her "Yes, Cho Chang has it! She has the snitch!"
+    her "{size+=10}RAVENCLAW WIN! RAVENCLAW WIN!{/size}"
+    show screen blkfade
+    with d3
+    jump day_main_menu
+
+
+label quidditch_game_3: #Loss against Slytherin, cements the need to slut up in Cho's mind
+    show screen blkfade
+    with d3
+    pause
+    $ ccg_folder = "herm_quidditch"
+    $ ccg("e6","b3","m1")
+    show screen ccg
+    hide screen blkfade
+    with d3
+
+
+label quidditch_game_4:
+
+label quidditch_game_5:
+
+label quidditch_game_6:
+
+label quidditch_game_7:
+
+label quidditch_game_8:
+
+label quidditch_game_9:
+
+label quidditch_game_10:
+
+label quidditch_game_11:
+
+label quidditch_game_12:
+
+label quidditch_game_12:
+
+label quidditch_game_12:
+
+label quidditch_game_12:
+
+label quidditch_game_16:
+

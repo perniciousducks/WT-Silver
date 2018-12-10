@@ -158,6 +158,7 @@ init python:
     ann  = Character('The Announcer', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     cr1  = Character('Somebody from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     cr2  = Character('Another voice from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    qcr  = Character('Quidditch Crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
     l    = Character('Lola', color="#402313", window_right_padding=270, show_two_window=True, ctc="ctc3", ctc_position="fixed")
     dahr = Character(None, color="#402313", window_left_padding=270, show_side_image=Image("images/store/dahr.png", xalign=0.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc4", ctc_position="fixed")

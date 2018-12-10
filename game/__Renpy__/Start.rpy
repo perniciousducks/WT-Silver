@@ -27,11 +27,6 @@ label start_ht:
 
     $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
 
-    $ p_level_04_active = False #When turns TRUE public favors of level 04 become available.
-    $ p_level_05_active = False #When turns TRUE public favors of level 05 become available.
-    $ p_level_06_active = False #When turns TRUE public favors of level 06 become available.
-    $ p_level_07_active = False #When turns TRUE public favors of level 07 become available.
-
     $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. "Lazy Akabur bug". Turns FALSE after that.
     $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
     $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
@@ -79,21 +74,19 @@ label start_ht:
     $ potions = 0 #Amount of healing potions Genie has in stock.
 
     #Map
-    $ map_unlocked = False # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
+    call reset_map_init
+
+    #Cheats
+    call reset_cheats_init
 
     #Cupboard
     $ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
     $ wine = 0 # Dumbledore's wine you find in the cupboard and use for "Snape dates".
 
-    #Scrolls
-    $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
-
     #Books
-    $ dear_waifu_completed_once = False # Turns TRUE when complete the book for the first time with any ending. Makes sure you get +1 imagination only once.
-    $ found_dahrs_ticket_once = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
+    $ found_voucher = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
 
     #Clothing
-    $ vouchers = 0 #Shows the amount of DAHR's vouchers in your possession.
     $ gave_miniskirt = False #Turns True when Hermione has the miniskirt.
     $ gave_the_dress = False #Turns True when Hermione has the dress.
 
@@ -115,99 +108,6 @@ label start_ht:
     $ menu_x = 0.5
     $ menu_y = 0.75
 
-    if persistent.game_complete: # Offer for game+
-        menu:
-            "NEW GAME +" ">Would you like to carry over your gold and possessions from your previous playthrough?"
-            "\"Yes, please.\"":
-                # Code needed here for adding persistant items across games
-                $ gold = gold + persistent.gold
-                ">[persistent.gold] gold has been added to your founds."
-
-                #if persistent.lolipop >= 1:
-                #    $ candy = candy + persistent.lolipop # LOLIPOP.
-                #    ">[persistent.lolipop] pieces of candy have been added to your possessions."
-
-                #if persistent.choco >= 1:
-                #    $ chocloate = chocolate + persistent.choco # CHOCOLATE.
-                #    ">[persistent.choco] bars of chocolate have been added to your possessions."
-
-                #if persistent.owl >= 1:
-                #    $ owl = owl + persistent.owl # PLUSH OWL.
-                #    ">[persistent.owl] plush owls have been added to your possessions."
-
-                #if persistent.beer >= 1:
-                #    $ beer = beer + persistent.beer # Beer.
-                #    ">[persistent.beer] bottles of butterbeer have been added to your possessions."
-
-                #if persistent.edu_mag >= 1:
-                #    $ edu_mag = edu_mag + persistent.edu_mag # edu_mag.
-                #    ">[persistent.edu_mag] issues of Educational magazines have been added to your possessions."
-
-                #if persistent.girl_mag >= 1:
-                #    $ girl_mag = girl_mag + persistent.girl_mag # girl_mag.
-                #    ">[persistent.girl_mag] issues of girly magazines have been added to your possessions."
-
-                #if persistent.adult_mag >= 1:
-                #    $ adult_mag = adult_mag + persistent.adult_mag # adult_mag.
-                #    ">[persistent.adult_mag] issues of adult magazines have been added to your possessions."
-
-                #if persistent.porn_mag >= 1:
-                #    $ porn_mag = porn_mag + persistent.porn_mag # porn_mag.
-                #    ">[persistent.porn_mag] issues of porn magazines have been added to your possessions."
-
-                #if persistent.krum >= 1:
-                #    $ krum = krum + persistent.krum # VIKTOR KRUM POSTER.
-                #    ">[persistent.krum] posters of Viktor Krum have been added to your possessions."
-
-                #if persistent.lin >= 1:
-                #    $ lingerie = lingerie + persistent.lin # lin.
-                #    ">[persistent.lin] packs of sexy lingerie have been added to your possessions."
-
-                #if persistent.con >= 1:
-                #    $ condoms = condoms + persistent.con # CONDOMS.
-                #    ">[persistent.con] packs of condoms have been added to your possessions."
-
-                #if persistent.vib >= 1:
-                #    $ vibrator = vibrator + persistent.vib # VIBRATOR.
-                #    ">[persistent.vib] vibrators have been added to your possessions."
-
-                #if persistent.lube >= 1:
-                #    $ anal_lube = anal_lube + persistent.lube # ANAL LUBRICANT.
-                #    ">[persistent.lube] jars of anal lubricant have been added to your possessions."
-
-                #if persistent.gag >= 1:
-                #    $ ballgag = ballgag + persistent.gag # BALLGAG.
-                #    ">[persistent.gag] pairs of ball gags and handcuffs have been added to your possessions."
-
-                #if persistent.anal_plugs >= 1:
-                #    $ anal_plugs = anal_plugs + persistent.anal_plugs # ANAL PLUG.
-                #    ">[persistent.anal_plugs] assortments of anal plugs have been added to your possessions."
-
-                #if persistent.strap >= 1:
-                #    $ strap_on = strap_on + persistent.strap # STRAP-ON.
-                #    ">[persistent.strap] Thestral Strap-ons have been added to your possessions."
-
-                #if persistent.broom >= 1:
-                #    $ broom = broom + persistent.broom # BROOM.
-                #    ">[persistent.broom] \"Lady Speed Stick-2000\" brooms have been added to your possessions."
-
-                #if persistent.doll >= 1:
-                #    $ sex_doll = sex_doll + persistent.doll # SEXDOLL.
-                #    ">[persistent.doll] \"Joanne\" sex dolls have been added to your possessions."
-
-                if persistent.wine >= 1:
-                    $ wine = wine + persistent.wine # WINE.
-                    ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
-
-                if persistent.ss_ is not None:
-                    $ sscroll_ = persistent.ss_
-                    $ tmp = len(persistent.ss_)
-                    ">[tmp] scrolls have been added to your possessions."
-
-
-            "\"No need.\"":
-                pass
-
     label choose_your_difficulty:
     menu:
         "Choose a difficutly."
@@ -219,7 +119,6 @@ label start_ht:
                 "-Choose this difficulty-":
                     ">Game set to easy!"
                     $ game_difficulty = 1
-                    $ hardcore_difficulty_active = False
                     $ cheat_reading = True
                 "-Choose something else-":
                     jump choose_your_difficulty
@@ -229,32 +128,53 @@ label start_ht:
                 "-Choose this difficulty-":
                     ">Game set to normal!"
                     $ game_difficulty = 2
-                    $ hardcore_difficulty_active = False
                     $ cheat_reading = False
                 "-Choose something else-":
                     jump choose_your_difficulty
-        #"-Play with hardcore difficulty-": #Not implemented yet.
-        #    ">Hardcore difficulty. You gold and Slythering-points gain has been lowered.\n>All hints and guides have been disabled."
-        #    ">Additional rewards and dialogue choices have been added.\n>Those will be removed when changing difficulty!"
-        #    menu:
-        #        ">Hardcore difficulty."
-        #        "-Choose this difficulty-":
-        #            ">Game set to hardcore!"
-        #            $ game_difficulty = 3
-        #            $ hardcore_difficulty_active = True #hardcore rewards #gets reset on difficulty change
-        #            $ cheat_reading = False
-        #        "-Choose something else-":
-        #            jump choose_your_difficulty
+        "-Play with hardcore difficulty-": #Not implemented yet.
+            ">Hardcore difficulty. Your gold and Slythering-points gain has been lowered.\n>All hints and guides have been disabled."
+            ">Additional rewards and dialogue choices have been added."
+            menu:
+                ">Hardcore difficulty."
+                "-Choose this difficulty-":
+                    ">Game set to hardcore!"
+                    $ game_difficulty = 3
+                    $ cheat_reading = False
+                "-Choose something else-":
+                    jump choose_your_difficulty
 
-    if not hardcore_difficulty_active:
+    if persistent.game_complete and game_difficulty <= 2: # Offer for game+
+        menu:
+            "NEW GAME +" ">Would you like to carry over your gold and possessions from your previous playthrough?"
+            "\"Yes, please.\"":
+                # Code needed here for adding persistant items across games
+                $ gold = gold + persistent.gold
+                ">[persistent.gold] gold has been added to your founds."
+
+                #python:
+                #    for i in persistant.gift_list:
+                #        gift_list[i].number = gift_list[i].number + persistant.gift_list[i].number
+                #        ">[persistant.gift_list[i].number] [persistant.gift_list[i].name] have been added to your possessions."
+
+                if persistent.wine >= 1:
+                    $ wine = wine + persistent.wine # WINE.
+                    ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
+
+                #python:
+                #    for i.unlocked in persistant.scroll_list:
+                #        scroll_list[i].unlocked = True
+                #        ">Your unlocked scrolls have been added to your possessions."
+
+            "\"No need.\"":
+                pass
+
+    if game_difficulty <= 2:
         menu:
             "ACTIVATE CHEATS" ">Cheats can be found in the cupboard menu."
             "-Activate Cheats-":
                 $ cheats_active = True
-                $ avogadro_law = True
             "-Disable Cheats-":
                 $ cheats_active = False
-                $ avogadro_law = False
 
     menu:
         "Use chibi animations or image sprites." ">This will only affect a couple of scenes.\n>This can be changed in the cupboard menu."
@@ -347,11 +267,6 @@ $ finished_report = 0 #Shows amount of completed reports.
 $ job_lvl = 1 #Show how many reports you are allowed to complete per week.
 
 
-### default position of table ###
-$ table_position_x = 0 #used in tutoring. Could be removed when changed.
-$ table_position_y = 0
-
-
 ###Miscellaneous flags###
 $ hold_all_the_events_please = False #When TRUE all the story events will be put on hold.
 $ phoenix_is_fed = False #When True the graphic of bird food being displayed on top of the phoenix food can.
@@ -381,7 +296,6 @@ $ tentacle_cosmetic = False
 
 $ hermione_desperate_done = False
 $ gave_tinyminiskirt = False
-$ scene_number = 1
 $ addicted = False
 
 $ reset_persistants            = False
@@ -400,33 +314,7 @@ pause.1
 hide screen blkfade
 with d3
 
-$ renpy.play('sounds/magic4.ogg')
-scene white
-pause.02
-hide screen blkfade
-show magic5
-pause.05
-scene white
-pause.05
-pause.05
-scene white
-pause.05
-show whitefade at basicfade, center
-#show magic at basicfade, center
-#show magic2 at basicfade2, center
-show magic3 at basicfade3, center
-#show magic4 at basicfade4, center # OVAL
-hide magic
-hide magic2
-hide magic3
-hide magic4
-#hide whitefade
-show heal
-stop music fadeout 1
-pause 1
-hide whitefade
-with d3
-pause 1
+call teleport("desk")
 
 $ menu_x = 0.5
 $ menu_y = 0.5

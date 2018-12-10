@@ -87,6 +87,14 @@ screen luna_uniform:
         add luna_bra xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the bra
     if luna_wear_panties:
         add luna_panties xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the panties
+
+    #One-Piece
+    if luna_wear_onepiece:
+        if luna_wear_top or luna_wear_bottom:
+            pass
+        else:
+            add luna_onepiece xpos luna_xpos ypos luna_ypos alpha lun_onepiece_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
+
     if luna_wear_bottom:
         add luna_bottom xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the skirt
     if luna_wear_top:

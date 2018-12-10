@@ -12,7 +12,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump silver_requests
+            jump hermione_requests_menu
     m "[hermione_name]?"
     call her_main("I am listening, [genie_name].",xpos="right",ypos="base")
     m "I will need your panties..."
@@ -23,7 +23,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     if hg_ps_PantyThief_OBJ.points == 0 and her_whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
 
-        $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_ps_PantyThief_OBJ.level = 1 #Event hearts level (0-3)
 
         call her_main("W-what?","open","worried")
         her "My... panties...?"
@@ -126,7 +126,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
 
         menu:
             "\"Put them on or lose the points!\"":
-                $ mad +=7
+                $ her_mood +=7
                 call her_main("What?","scream","wide_stare")
                 her "[genie_name], you are joking, right?"
                 m "I am not..."
@@ -277,7 +277,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         "\"How was your day, [hermione_name]?\"":
             if  her_whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
 
-                $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
+                $ hg_ps_PantyThief_OBJ.level = 1 #Event hearts level (0-3)
 
                 $ sc34CG(1, 10)
                 call her_main("Oh...","soft","base",xpos="base",ypos="base")
@@ -298,7 +298,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
 
             elif her_whoring >= 6 and her_whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
 
-                $ hg_ps_PantyThief_OBJ.hearts_level = 2 #Event hearts level (0-3)
+                $ hg_ps_PantyThief_OBJ.level = 2 #Event hearts level (0-3)
 
                 $ sc34CG(1, 5)
                 call her_main("Oh...","soft","base",xpos="base",ypos="base")
@@ -312,7 +312,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
 
                 menu:
                     "\"You little hypocrite!\"":
-                        $ mad +=5
+                        $ her_mood +=5
                         call her_main("[genie_name]?","open","base")
                         m "You sold your panties to me this morning..."
                         m "And a couple of hours later you already publicly condemned that exact behaviour..."
@@ -339,7 +339,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
 
             elif her_whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
 
-                $ hg_ps_PantyThief_OBJ.hearts_level = 3 #Event hearts level (0-3)
+                $ hg_ps_PantyThief_OBJ.level = 3 #Event hearts level (0-3)
 
                 $ sc34CG(1, 11)
                 call her_main("Another ordinary day at hogwarts...","open","closed",xpos="base",ypos="base")
@@ -360,7 +360,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                     m "Yes, yes..."
 
     label back_from_soaked:
-    if hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 9 and her_whoring <= 15 :
+    if hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 9 and her_whoring < 15 :
         m "You can go now."
         call her_main("What about my points?","scream","angryCl")
         m "You still want points after I just gave you a gift?"
@@ -373,8 +373,8 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         call her_main("Thank you, [genie_name]...","annoyed","suspicious")
         m "You can go now."
         her "Good night, [genie_name]."
-    elif hg_ps_PantyThief_SoakedPantiesFlag and her_whoring > 15:
-        $ hg_ps_PantyThief_OBJ.hearts_level = 4 #Event hearts level (0-4)
+    elif hg_ps_PantyThief_SoakedPantiesFlag and her_whoring >= 15:
+        $ hg_ps_PantyThief_OBJ.level = 4 #Event hearts level (0-4)
         m "You can go now."
         call her_main("yes, [genie_name]","angry","down_raised")
         m "After you say thank you. "
@@ -392,7 +392,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         her "Good night, [genie_name]."
         #m "Yes, good night..."
 
-    if her_whoring <= 5:
+    if her_whoring < 6:
         $ her_whoring +=1
 
     $ hg_ps_PantyThief_OBJ.points += 1

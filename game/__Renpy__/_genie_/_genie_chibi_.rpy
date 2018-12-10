@@ -16,25 +16,30 @@ screen g_c_c_u:
     zorder 4
 
 
-screen genie_walk: #Default Genie walk animation.
-    tag genie_chibi
-    add "genie_walk_ani" at genie_walk(walk_xpos, walk_xpos2) #Check __Init__.rpy for ypos
-    zorder 4
 
-screen genie_walk_f: #Default Genie walk animation.
-    tag genie_chibi
-    add "genie_walk_ani_f" at genie_walk(walk_xpos, walk_xpos2) #Check __Init__.rpy for ypos
-    zorder 4
+### SUSAN CHIBI SCREENS ###
 
-screen genie_stands:
+screen genie_stand:
     tag genie_chibi
-    add "characters/genie/chibis/standing.png" at Position(xpos=genie_chibi_xpos, ypos=genie_chibi_ypos)
-    zorder 3
 
-screen genie_stands_f: #Genie stands. Facing left.
+    add genie_chibi_stand xpos genie_chibi_xpos ypos genie_chibi_ypos xzoom genie_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder genie_chibi_zorder
+
+screen genie_walk:
     tag genie_chibi
-    add im.Flip("characters/genie/chibis/standing.png", horizontal=True) at Position(xpos=genie_chibi_xpos, ypos=genie_chibi_ypos)
-    zorder 3
+
+    add genie_chibi_walk at genie_walk(walk_xpos, walk_xpos2) xzoom genie_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder genie_chibi_zorder
+
+label update_gen_chibi:
+    $ genie_chibi_stand = "characters/genie/chibis/walk_01.png"
+    $ genie_chibi_walk = "genie_walk_ani"
+
+    return
+
+
 
 screen genie: #Sitting behind desk.
     tag genie_chibi
@@ -45,22 +50,22 @@ screen genie: #Sitting behind desk.
 screen rum_screen: #Rummaging through the cumpboard.
     tag genie_chibi
     add "images/rooms/main_room/cupboard_open.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=371, ypos=331, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=371, ypos=331, xanchor="center", yanchor="center")
     add "rum" xpos 160 ypos 110
     zorder 1
 
 screen feeding: #FEEDING THE PHOENIX.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
     add "feeding" xpos 410 ypos 75
     zorder 1
 
 screen petting: #PETTING THE PHOENIX.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
     add "petting" xpos 390 ypos 65
     zorder 1
 
@@ -77,29 +82,29 @@ screen paperwork: #GENIE DOING PAPERWORK BEHIND HIS DESK.
 
 screen reading_near_fire: #GENIE READING A BOOK BY THE FIRE.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add "reading_near_fire" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen reading: #GENIE READING A BOOK.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add "reading" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading: #DONE READING THE BOOK.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add im.Flip("images/animation/reading_07.png", horizontal=True) xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading_near_fire: #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add "images/animation/reading_07.png" xpos 290+140 ypos 205
 
     zorder 4 #Because otherwise the bird food would be on top.
@@ -192,11 +197,11 @@ screen genie_groping:
 
 
 
-label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_ypos), pic = "", flip=False):
-    hide screen genie_stands
-    hide screen genie_stands_f
+label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic = "", flip=False):
+    hide screen genie_stand
 
     hide screen g_c_u
+    hide screen genie
 
     $ secretly_jerking_off = False
     hide screen genie_jerking_off                #Jerking off sitting behind desk.
@@ -217,6 +222,13 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
     hide screen genie_titjob_cum_in_mouth
     hide screen genie_titjob_cum_on_tits
 
+    hide screen groping_01
+    hide screen groping_02
+    hide screen no_groping_01
+    hide screen no_groping_02
+    hide screen groping_03
+    hide screen groping_naked_tits
+
     hide screen genie_groping
     hide screen blktone
     hide screen bld1
@@ -228,15 +240,17 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
             $ genie_chibi_xpos = 420
         elif xpos == "door":
             $ genie_chibi_xpos = 750
+        elif xpos == "left":
+            $ genie_chibi_xpos = 100
         elif xpos == "behind_desk":
             $ genie_chibi_xpos = 230
-        elif xpos.isdigit():
+        else:
             $ genie_chibi_xpos = int(xpos)
 
     if ypos != genie_chibi_ypos:
         if ypos == "base" or ypos == "default":
             $ genie_chibi_ypos = 190
-        elif ypos.isdigit():
+        else:
             $ genie_chibi_ypos = int(ypos)
 
 
@@ -338,10 +352,12 @@ label gen_chibi(action = "", xpos=str(genie_chibi_xpos), ypos=str(genie_chibi_yp
         pause.5
 
     else:
-        if flip:
-            show screen genie_stands_f
+        if flip or genie_flip != 1: #Same variable that the main sprite is using. #1 == Default
+            $ genie_chibi_flip = -1
+            show screen genie_stand
         else:
-            show screen genie_stands
+            $ genie_chibi_flip = 1
+            show screen genie_stand
 
     return
 
@@ -352,10 +368,8 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
     with d3
 
     hide screen genie_walk
-    hide screen genie_walk_f
 
-    hide screen genie_stands
-    hide screen genie_stands_f
+    hide screen genie_stand
 
     if pos1 == "mid":
         $ walk_xpos = 500
@@ -370,6 +384,8 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
         $ walk_xpos2 = 500
     elif pos2 == "desk":
         $ walk_xpos2 = 440
+    elif pos2 == "left":
+        $ walk_xpos2 = 100
     elif pos2 == "door":
         $ walk_xpos2 = 750
     elif pos2 == "leave":
@@ -382,15 +398,17 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
     $ genie_speed = speed #Speed of walking animation. (lower = faster)
 
     if walk_xpos > walk_xpos2: #right to left (genie_walk)
-        show screen genie_walk_f #Genie's chibis are mirrored for whatever reason!
+        $ genie_chibi_flip = -1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( 1 )
+        show screen genie_walk
         $ tmp = genie_speed - redux_pause
         pause tmp
         $ genie_chibi_xpos = walk_xpos2
-        hide screen genie_walk_f
+        hide screen genie_walk
         if loiter:
-            show screen genie_stands_f
-    else: #left to right (genie_walk_f)
-        show screen genie_walk #Genie's chibis are mirrored for whatever reason! #Don't use flip here or he moonwalks!
+            show screen genie_stand
+    else: #left to right (genie_walk)
+        $ genie_chibi_flip = 1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( -1 )
+        show screen genie_walk
         $ tmp = genie_speed - redux_pause
         pause tmp
         $ genie_chibi_xpos = walk_xpos2
@@ -400,6 +418,6 @@ label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter 
             with d3
             pause.5
         if loiter:
-            show screen genie_stands
+            show screen genie_stand
 
     return

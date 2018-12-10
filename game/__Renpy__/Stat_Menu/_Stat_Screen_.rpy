@@ -2,7 +2,7 @@
 
 label open_stat_menu:
 
-    call update_unlocked_character_list
+    call update_stat_character_list
     call update_hermione
     call update_luna
     call update_astoria
@@ -15,67 +15,77 @@ label open_stat_menu:
     jump stat_screen_character
 
 
-label stat_screen_character:
+label update_stat_character_list:
+    $ stat_character_list = [["genie", 1]]
+    if snape_unlocked:
+        $ stat_character_list.append(["snape", 1])
+    if hermione_unlocked:
+        $ stat_character_list.append(["hermione", 1])
+    if luna_unlocked:
+        $ stat_character_list.append(["luna", 1])
+    if astoria_unlocked:
+        $ stat_character_list.append(["astoria", 1])
+    if susan_unlocked:
+        $ stat_character_list.append(["susan", 1])
+    if cho_unlocked:
+        $ stat_character_list.append(["cho", 1])
+    if tonks_unlocked:
+        $ stat_character_list.append(["tonks", 1])
 
+    return
+
+
+label stat_screen_character:
     call update_stats
     $ hide_transitions = True
 
     if charName == "hermione":
-        call set_her_face("random")
+        call set_her_face(change="all")
         call her_main(xpos="wardrobe",ypos="base")
-
         call screen stat_menu("hermione")
 
     elif charName == "luna":
         call lun_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("luna")
 
     elif charName == "astoria":
         call ast_main("","smile","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("astoria")
 
     elif charName == "susan":
         call sus_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("susan")
 
     elif charName == "cho":
         call cho_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("cho")
 
     elif charName == "genie":
         call gen_main(xpos="wardrobe",ypos="55",flip=True)
-
         call screen stat_menu("genie")
 
     elif charName == "snape":
         call sna_main("","snape_09",xpos="wardrobe",ypos="55")
-
         call screen stat_menu("snape")
 
     elif charName == "tonks":
         call ton_main("","base","base","base","mid",xpos="wardrobe",ypos="base")
-
         call screen stat_menu("tonks")
 
+    elif charName=="Close":
+        $charName ="genie"
+        jump close_stats_screen
 
+    show screen stat_menu(charName)
 
+    $ charName = _return
+    call hide_characters
+
+    jump stat_screen_character
 
 label close_stats_screen:
     hide screen stat_menu
-
-    hide screen hermione_stat_menu
-    hide screen luna_stat_menu
-    hide screen astoria_stat_menu
-    hide screen susan_stat_menu
-    hide screen cho_stat_menu
-
-    hide screen genie_stat_menu
-    hide screen snape_stat_menu
-    hide screen tonks_stat_menu
+    hide screen stat_content
 
     call hide_characters
     hide screen bld1
@@ -85,89 +95,52 @@ label close_stats_screen:
     jump day_main_menu
 
 
-
-label return_stats_screen:
-
-    hide screen hermione_stat_menu
-    hide screen luna_stat_menu
-    hide screen astoria_stat_menu
-    hide screen susan_stat_menu
-    hide screen cho_stat_menu
-
-    hide screen genie_stat_menu
-    hide screen snape_stat_menu
-    hide screen tonks_stat_menu
-
-    call hide_characters
-
-    jump stat_screen_character
-
-
-
-
 screen stat_menu(character=""):
     tag stat_menu
     zorder 4
 
-    imagemap:
-        cache False
+    add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
 
-        ground "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
-        hover "interface/stat_select/"+str(interface_color)+"/hover_stat_screen_"+str(wardrobe_color)+".png"
 
-        # Close Button
-        imagebutton:
-            xpos 1028
-            ypos 11
-            idle "interface/general/"+interface_color+"/button_close.png"
-            hover "interface/general/"+interface_color+"/button_close_hover.png"
-            action Jump("close_stats_screen")
+    use close_button
 
-        #Character Buttons.
-        text "-Character Select-" xpos 40 ypos 100 size 14
-        for i in range(0,len(unlocked_character_list)):
-            $ row = i // 2
-            $ col = i % 2
+    #Character Buttons.
 
-            #xpos 40 + ( 85 * (col))
-            #ypos 140 + ( 90 * (row))
+    use character_select_menu(stat_character_list, "-Character Select-")
 
-            hotspot ((35+(90*col)), (138+(92*row)), 83, 85) clicked [SetVariable("charName",unlocked_character_list[i]), Jump("return_stats_screen")]
-            add "interface/icons/head/head_"+str(unlocked_character_list[i])+"_1.png" xpos -84+(92*col) ypos 67+(92*row) zoom 0.4
+    text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
 
-        text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
+    if character == "genie":
+        use charecter_name("genie")
+        use genie_stat_menu
 
-        if character == "genie":
-            use charecter_name("genie")
-            use genie_stat_menu
+    if character == "snape":
+        use charecter_name("snape")
+        use snape_stat_menu
 
-        if character == "snape":
-            use charecter_name("snape")
-            use snape_stat_menu
+    if character == "hermione":
+        use charecter_name(hermione_name)
+        use hermione_stat_menu
 
-        if character == "hermione":
-            use charecter_name(hermione_name)
-            use hermione_stat_menu
+    if character == "luna":
+        use charecter_name(luna_name)
+        use luna_stat_menu
 
-        if character == "luna":
-            use charecter_name(luna_name)
-            use luna_stat_menu
+    if character == "astoria":
+        use charecter_name(astoria_name)
+        use astoria_stat_menu
 
-        if character == "astoria":
-            use charecter_name(astoria_name)
-            use astoria_stat_menu
+    if character == "susan":
+        use charecter_name(susan_name)
+        use susan_stat_menu
 
-        if character == "susan":
-            use charecter_name(susan_name)
-            use susan_stat_menu
+    if character == "cho":
+        use charecter_name(cho_name)
+        use cho_stat_menu
 
-        if character == "cho":
-            use charecter_name(cho_name)
-            use cho_stat_menu
-
-        if character == "tonks":
-            use charecter_name(tonks_name)
-            use tonks_stat_menu
+    if character == "tonks":
+        use charecter_name(tonks_name)
+        use tonks_stat_menu
 
 
 
@@ -210,7 +183,7 @@ screen charecter_name(name):
 ### Character Stats ###
 
 screen genie_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -219,21 +192,26 @@ screen genie_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(100/10), "-Lust-", "", 100)
-                use stat_bar(int(0/10), "-Sanity-", "", 0)
+                if not map_unlocked:
+                    use stat_bar(int(100/10), "-Lust-", "", 100) #Joke stat
+                    use stat_bar(int(0/10), "-Sanity-", "", 0) #Joke stat
+                else:
+                    use stat_bar(int(imagination +bdsm_imagination/1), "-Imagination-", "", imagination +bdsm_imagination) #Max 10
+                    use stat_bar(int(speed_writing/0.25), "-Speed Writing-", "", speed_writing) #Max 4
+                    use stat_bar(int(speed_reading/0.25), "-Speed Reading-", "", speed_reading) #Max 4
 
                 use text_stat("Bird fed:")
                 use text_stat("- ", " times -", phoenix_fed_counter)
                 use text_stat("Bird petted:")
                 use text_stat("- ", " times -", phoenix_petted_counter)
-                use text_stat("You didn't feed your bird for ", " days...", (day - phoenix_petted_counter) )
+                use text_stat("You missed feeding your bird for ", " days...", (day - phoenix_petted_counter) )
 
         vbar value YScrollValue("vp")
 
     zorder 8
 
 screen snape_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -247,9 +225,9 @@ screen snape_stat_menu:
                 use stat_bar(int(sna_friendship/10), "-Friendship-", sna_friendship_word, sna_friendship)   #max is 100.
 
                 use text_stat("Hung out with Snape:")
-                use text_stat("- ", " times -", snape_dates_counter)
+                use text_stat("- ", " times -", sna_dates_counter)
                 use text_stat("Enjoyed some wine with Snape:")
-                use text_stat("- ", " times -", snape_wine_counter)
+                use text_stat("- ", " times -", sna_wine_counter)
 
         vbar value YScrollValue("vp")
 
@@ -257,7 +235,7 @@ screen snape_stat_menu:
 
 
 screen hermione_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -274,14 +252,14 @@ screen hermione_stat_menu:
 
                 #Imagination 2:
                 use text_stat("You Jerked off in front of her:")
-                use text_stat("- ", " times -", jerked_off_in_front_of_her)
+                use text_stat("- ", " times -", her_jerk_off_counter)
                 use text_stat("You saw her panties:")
                 use text_stat("- ", " times -", hg_pf_NicePanties_OBJ.points)
 
                 #Imagination 2:
                 if imagination >= 2:
                     use text_stat("You admired her tits:")
-                    use text_stat("- ", " times -", (hg_pf_BreastMolester_OBJ.points + hg_pf_LetMeTouchThem_OBJ.points) )
+                    use text_stat("- ", " times -", hg_pf_BreastMolester_OBJ.points)
                     use text_stat("You admired her butt:")
                     use text_stat("- ", " times -", (hg_pf_ButtMolester_OBJ.points + hg_pf_ShowMeYourAss_OBJ.points) )
                 else:
@@ -324,7 +302,7 @@ screen hermione_stat_menu:
     zorder 8
 
 screen luna_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -333,16 +311,16 @@ screen luna_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(luna_corruption/2.4), "-Corruption-", "", luna_corruption)
-                use stat_bar(int(luna_dom/2.4), "-Dom points-", "", luna_dom)
-                use stat_bar(int(luna_sub/2.4), "-Sub points-", "", luna_sub)
+                use stat_bar(int(lun_corruption/2.4), "-Corruption-", "", lun_corruption)
+                use stat_bar(int(lun_dom/2.4), "-Dom points-", "", lun_dom)
+                use stat_bar(int(lun_sub/2.4), "-Sub points-", "", lun_sub)
 
         vbar value YScrollValue("vp")
 
     zorder 8
 
 screen astoria_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -351,16 +329,16 @@ screen astoria_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(astoria_spells[0]/0.4), "-Spells-", "", astoria_spells[0]) #Max is 4
-                use stat_bar(int(astoria_training_counter/0.9), "-Training-", "", astoria_training_counter) #Max is 9
-                use stat_bar(int(astoria_affection/0.3), "-Affection-", "", astoria_affection) #Max is 4
+                use stat_bar(int(ag_imperio_susan_OBJ.points/0.3), "-Spells-", "", ag_imperio_susan_OBJ.points) #Max is 4
+                use stat_bar(int(ast_training_counter/0.9), "-Training-", "", ast_training_counter) #Max is 9
+                use stat_bar(int(ast_affection/10), "-Affection-", "", ast_affection) #Max is 100
 
         vbar value YScrollValue("vp")
 
     zorder 8
 
 screen susan_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -370,7 +348,7 @@ screen susan_stat_menu:
 
             vbox:
                 use text_stat("Times Cursed:")
-                use text_stat("- ", " times -", susan_curse_counter)
+                use text_stat("- ", " times -", sus_curse_counter)
 
         vbar value YScrollValue("vp")
 
@@ -380,7 +358,7 @@ screen cho_stat_menu:
     zorder 8
 
 screen tonks_stat_menu:
-
+    tag stat_content
     side "c r":
         area (220, 150, 425, 420)
 
@@ -393,12 +371,13 @@ screen tonks_stat_menu:
                 #use stat_bar(int(ton_support/1.5), "-Support-", "", ton_support) #Number of Tonks events.
                 #use stat_bar(int(ton_friendship/10), "-Friendship-", "", ton_friendship)   #max is 100.
                 #use stat_bar(int(0/10), "-Reputation-", "", ton_reputation)
+                use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
-                use text_stat("Hung out with...")
-                use text_stat("- Astoria: ", " times -", ton_astoria_date_counter)
+                use text_stat("Hung out with Astoria:")
+                use text_stat("- ", " times -", ton_astoria_date_counter)
 
                 use text_stat("Tonks has sluttyfied:")
-                use text_stat("- ", "/5 outfits -", tonks_sluttyfied_clothing)
+                use text_stat("- ", "/5 outfits -", ton_clothing_upgrades)
 
         vbar value YScrollValue("vp")
 
@@ -422,11 +401,21 @@ label update_stats:
     else:
         $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
+    #Astoria
+    #call astoria_clothing_level
+    #$ ast_cuteness_word_list = ["Ugly Duckling", "Swot", "", "", "", "", "", "Cutypie", "", "", ""]
+    #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
+
     #Snape
-    $ sna_friendship_word_list = ["???", "College", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF","Bros"]
+    $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
     $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
     $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
+
+    #Tonks
+    call tonks_clothing_level
+    $ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
+    $ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
 
     return

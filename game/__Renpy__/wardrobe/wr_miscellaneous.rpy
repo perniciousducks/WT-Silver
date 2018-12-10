@@ -25,7 +25,7 @@ label equip_misc_item:
 
 label equip_her_misc_item:
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     else:
@@ -35,44 +35,79 @@ label equip_her_misc_item:
 
             $ hide_transitions = False #activates dissolve in her_main
 
-            if transparency == 1:
-                call her_main("You want me to make my clothes see through?","normal","worriedCl")
-                call her_main("Really, [genie_name]!","scream","angryCl")
-                m "Just a little bit."
-                call her_main("Fine...","open","suspicious")
-                call her_main("How much should I drink...","annoyed","worriedL")
+            call her_main("You want me to make my clothes see through?","normal","worriedCl")
+            m "Just a little bit."
+            call her_main("Fine...","open","suspicious")
+            call her_main("How much should I drink?","annoyed","worriedL")
 
-                menu:
-                    "-A little bit-":
-                        $ transparency_amount = 0.8
-                        call her_main("(at least This shouldn't be too noticable.","normal","worriedCl")
-                    "-A fair bit-" if her_whoring >= 20:
-                        $ transparency_amount = 0.5
-                        call her_main("(Hopefully it's not too bad","annoyed","worriedL")
-                    "-A lot-" if her_whoring >= 23:
-                        $ transparency_amount = 0.3
-                        call her_main("(...)","base","down")
-                    "-All of it-" if her_whoring == 24:
-                        $ transparency_amount = 0.1
-                        call her_main("...","grin","baseL")
+            label make_item_transparent:
 
-                call her_main("Alright then...","annoyed","down")
-                hide screen hermione_main
-                with d5
-                $ transparency = transparency_amount
+            menu:
+                "-Just a sip-":
+                    $ transparency = 0.9
+                    call her_main("(at least This shouldn't be too noticable.)","normal","worriedCl")
+                "-20 percent-" if her_whoring >= 15:
+                    $ transparency = 0.8
+                "-30 percent-" if her_whoring >= 15:
+                    $ transparency = 0.7
+                "-40 percent-" if her_whoring >= 15:
+                    $ transparency = 0.6
+                "-Half the bottle-" if her_whoring >= 18:
+                    $ transparency = 0.5
+                "-60 percent-" if her_whoring >= 21:
+                    $ transparency = 0.4
+                    call her_main("(...)","base","down")
+                "-70 percent-" if her_whoring >= 21:
+                    $ transparency = 0.3
+                    call her_main("(...)","base","down")
+                "-80 percent-" if her_whoring >= 21:
+                    $ transparency = 0.2
+                "-All of it-" if her_whoring >= 24:
+                    $ transparency = 0.1
+                    call her_main("(...)","grin","baseL")
+                "-remove it-":
+                    $ transparency = 1
+                "-That's enough-":
+                    jump return_to_wardrobe
 
-                call update_her_uniform #Updates clothing and body.
-
+            if her_whoring < 18:
+                call her_main("What do you want to change?","disgust","down_raised")
             else:
-                call her_main("You want me to wear new clothes?","annoyed","ahegao")
-                call her_main("Oh... alright then, [genie_name].","annoyed","down")
-                hide screen hermione_main
-                with d5
-                $ transparency = 1
+                call her_main("What would you like to change?","base","down")
 
-                call update_her_uniform #Updates clothing and body.
+            menu:
+                ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
+                "-top-" if hermione_wear_top:
+                    call set_her_transparency(top=transparency)
+                "-bottom" if hermione_wear_bottom:
+                    call set_her_transparency(bottom=transparency)
+                "-bra-" if hermione_wear_bra:
+                    call set_her_transparency(bra=transparency)
+                "-onepiece-" if hermione_wear_onepiece:
+                    call set_her_transparency(onepiece=transparency)
+                "-panties-" if hermione_wear_panties:
+                    call set_her_transparency(panties=transparency)
+                "-garterbelt-" if hermione_wear_garterbelt:
+                    call set_her_transparency(garterbelt=transparency)
+                "-gloves-" if hermione_wear_gloves:
+                    call set_her_transparency(gloves=transparency)
+                "-stockings-" if hermione_wear_stockings:
+                    call set_her_transparency(stockings=transparency)
+                "-robe-" if hermione_wear_robe:
+                    call set_her_transparency(robe=transparency)
+                "-outfit-" if hermione_wear_outfit:
+                    call set_her_transparency(outfit=transparency)
+                "-Never mind-":
+                    jump return_to_wardrobe
 
-            jump return_to_wardrobe
+            call her_main()
+            pause.8
+            call her_main("All done!",face="happy")
+            call her_main("Would you like me to drink a bit more?","base","glance")
+
+            jump make_item_transparent
+
+
 
         #Buttplugs
         if misc_item_choice in ["buttplug_small","buttplug_medium","buttplug_large"]:
@@ -88,7 +123,7 @@ label equip_her_misc_item:
                 with d5
                 pause.2
 
-                call set_h_buttplug("plug_a_on") #Updates clothing and body.
+                call set_her_buttplug("plug_a_on") #Updates clothing and body.
 
                 jump return_to_wardrobe
 
@@ -103,7 +138,7 @@ label equip_her_misc_item:
                 with d5
                 pause.2
 
-                call set_h_buttplug("plug_b_on") #Updates clothing and body.
+                call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                 jump return_to_wardrobe
 
@@ -123,7 +158,7 @@ label equip_her_misc_item:
                 with d5
                 pause.2
 
-                call set_h_buttplug("plug_c_on") #Updates clothing and body.
+                call set_her_buttplug("plug_c_on") #Updates clothing and body.
 
                 jump return_to_wardrobe
 
@@ -139,6 +174,113 @@ label equip_her_misc_item:
                 call play_sound("pop")
                 pause.2
 
-                call set_h_buttplug("remove") #Updates clothing and body.
+                call set_her_buttplug("remove") #Updates clothing and body.
 
                 jump return_to_wardrobe
+
+        #Gags
+        if misc_item_choice in ["item_ballgag_and_cuffs"]:
+            menu:
+                "Hardcore mode only" ">You can gag Hermione, but it won't prevent her from talking. There is no way around it."
+                "-Use Ball Gag-":
+                    $ item_choice = "gag"
+                "-Mouthpiece-":
+                    $ item_choice = "mouthpiece"
+                "-Mouthpiece Drooling-":
+                    $ item_choice = "mouthpiece_drool"
+                "-Remove Gag-":
+                    $ item_choice = "remove"
+
+            call set_her_gag(item_choice)
+
+            jump return_to_wardrobe
+
+label equip_ton_misc_item:
+
+    if misc_item_choice == "transparency":
+
+        $ hide_transitions = False #activates dissolve in her_main
+
+        call ton_main("You want to make my clothes see through?",mouth="open",face="horny")
+        m "Yes. Just drink this potion."
+        call ton_main("Why the hell not. This could be fun!",mouth="horny",pupils="down",face="horny")
+        call ton_main("How much do you want me to drink?",mouth="open",face="neutral")
+
+        label make_tonks_item_transparent:
+
+        menu:
+            "-Just a sip-":
+                $ transparency = 0.9
+                call ton_main("Only so little?",mouth="open",face="neutral")
+            "-20 percent-":
+                $ transparency = 0.8
+            "-30 percent-":
+                $ transparency = 0.7
+            "-40 percent-":
+                $ transparency = 0.6
+            "-Half the bottle-":
+                $ transparency = 0.5
+            "-60 percent-":
+                $ transparency = 0.4
+            "-70 percent-":
+                $ transparency = 0.3
+            "-80 percent-":
+                $ transparency = 0.2
+            "-All of it-":
+                $ transparency = 0.1
+                call ton_main("Of course.",face="horny")
+            "-remove it-":
+                $ transparency = 1
+            "-That's enough-":
+                jump return_to_wardrobe
+
+        call ton_main("What would you like to change?",face="horny")
+
+        menu:
+            ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
+            "-top-" if tonks_wear_top:
+                call set_ton_transparency(top=transparency)
+            "-bottom" if tonks_wear_bottom:
+                call set_ton_transparency(bottom=transparency)
+            "-bra-" if tonks_wear_bra:
+                call set_ton_transparency(bra=transparency)
+            "-onepiece-" if tonks_wear_onepiece:
+                call set_ton_transparency(onepiece=transparency)
+            "-panties-" if tonks_wear_panties:
+                call set_ton_transparency(panties=transparency)
+            "-garterbelt-" if tonks_wear_garterbelt:
+                call set_ton_transparency(garterbelt=transparency)
+            "-gloves-" if tonks_wear_gloves:
+                call set_ton_transparency(gloves=transparency)
+            "-stockings-" if tonks_wear_stockings:
+                call set_ton_transparency(stockings=transparency)
+            "-robe-" if tonks_wear_robe:
+                call set_ton_transparency(robe=transparency)
+            "-outfit-" if tonks_wear_outfit:
+                call set_ton_transparency(outfit=transparency)
+            "-Never mind-":
+                jump return_to_wardrobe
+
+        call ton_main()
+        pause.8
+        call ton_main("All done!",face="happy")
+        call ton_main("Would you like me to drink a bit more?",face="horny")
+
+        jump make_tonks_item_transparent
+
+    #Gags
+    if misc_item_choice in ["item_ballgag_and_cuffs"]:
+        menu:
+            "Hardcore mode only" ">You can gag Tonks, but it won't prevent her from talking. There is no way around it."
+            "-Use Ball Gag-":
+                $ item_choice = "gag"
+            #"-Mouthpiece-":
+            #    $ item_choice = "mouthpiece"
+            #"-Mouthpiece Drooling-":
+            #    $ item_choice = "mouthpiece_drool"
+            "-Remove Gag-":
+                $ item_choice = "remove"
+
+        call set_ton_gag(item_choice)
+
+        jump return_to_wardrobe

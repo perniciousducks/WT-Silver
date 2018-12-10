@@ -41,15 +41,25 @@ screen main_room_menu:
         action [Hide("main_room_menu"), Jump("door")]
 
 
-#    imagebutton: # CUPBOARD HAT
-#        xpos 120+140
-#        ypos 280
-#        focus_mask True
-#        xanchor "center"
-#        yanchor "center"
-#        idle "images/rooms/main_room/cupboard/idle_hat.png"
-#        hover "images/rooms/main_room/cupboard/hover_hat.png"
-#        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
+    if renpy.variant('android'):
+        imagemap:
+            xpos 260
+            ypos 280
+            xanchor "center"
+            yanchor "center"
+            ground "images/rooms/main_room/cupboard/idle_hat.png"
+            hover "images/rooms/main_room/cupboard/hover_hat.png"
+            hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
+    else:
+        imagebutton: # CUPBOARD HAT
+            xpos 260
+            ypos 280
+            focus_mask True
+            xanchor "center"
+            yanchor "center"
+            idle "images/rooms/main_room/cupboard/idle_hat.png"
+            hover "images/rooms/main_room/cupboard/hover_hat.png"
+            action [Hide("main_room_menu"), Jump("options_menu")]
 
     #Scrolls
     if renpy.variant('android'):
@@ -60,7 +70,7 @@ screen main_room_menu:
             yanchor "center"
             ground "images/rooms/main_room/cupboard/idle_scroll.png"
             hover "images/rooms/main_room/cupboard/hover_scroll.png"
-            hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("scrolls_menu")]
+            hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("read_scroll_menu")]
     else:
         imagebutton: # CUPBOARD SCROLL
             xpos 260
@@ -70,7 +80,7 @@ screen main_room_menu:
             yanchor "center"
             idle "images/rooms/main_room/cupboard/idle_scroll.png"
             hover "images/rooms/main_room/cupboard/hover_scroll.png"
-            action [Hide("main_room_menu"), Jump("scrolls_menu")]
+            action [Hide("main_room_menu"), Jump("read_scroll_menu")]
 
     #Cupboard
     if renpy.variant('android'):

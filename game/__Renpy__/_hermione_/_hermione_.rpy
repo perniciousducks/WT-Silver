@@ -2,7 +2,7 @@
 
 ### HERMIONE GRANGER ###
 
-label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
+label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen hermione_main
     hide screen hermione_face
 
@@ -59,7 +59,7 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
 
             else:
                 if hermione_flip == -1: #Flipped
-                    $ hermione_xpos = 620
+                    $ hermione_xpos = -70 #Left side of screen!
                 else:
                     $ hermione_xpos = 590
                 $ hermione_ypos = 230
@@ -67,6 +67,12 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
 
         else:
             $ hermione_ypos = int(ypos)
+
+    if face != None:
+        if mouth == None:
+            call set_her_face(mouth = face)
+        if eye == None:
+            call set_her_face(eyes = face)
 
     $ changeHermione(mouth, eye, cheeks, tears, extra, emote, hermione_xpos, hermione_ypos)
 
@@ -125,8 +131,7 @@ label update_hermione:
     $ use_hermione_head = False
 
     call update_her_uniform
-    call h_update_body
-    call h_update_hair
+    call update_her_body
 
     return
 
@@ -142,7 +147,7 @@ label reset_hermione:
     $ sperm_on_tits    = False #Sperm on tits when Hermione pulls her shirt up.
 
     if hermione_action != "none":
-        call h_action("none","update")
+        call set_her_action("none","update")
 
     call update_hermione
 
@@ -238,6 +243,16 @@ label load_hermione_clothing_saves:
         $ hermione_wear_tattoos      = True
     else:
         $ hermione_wear_tattoos      = False
+
+    if h_request_wear_mask:
+        $ hermione_wear_mask = True
+    else:
+        $ hermione_wear_mask = False
+
+    if h_request_wear_gag:
+        $ hermione_wear_gag = True
+    else:
+        $ hermione_wear_gag = False
 
     if h_request_wear_outfit:
         $ hermione_wear_outfit = True

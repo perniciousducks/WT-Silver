@@ -8,7 +8,7 @@ label use_potion:
 
 label use_hermione_potion:
     hide screen wardrobe
-    call her_main(xpos="right",ypos="base",trans="fade")
+    call her_main(xpos="base",ypos="base",trans="fade")
 
     if potion_choice == "polyjuice_potion":
         menu:
@@ -112,7 +112,7 @@ label use_hermione_potion:
 #Tonks
 label use_tonks_potion:
     hide screen wardrobe
-    call ton_main(xpos="right",ypos="base",trans="fade")
+    call ton_main(xpos="base",ypos="base",trans="fade")
 
     if potion_choice == "hair_growth_potion":
         menu:
@@ -128,6 +128,15 @@ label use_tonks_potion:
             "-Undo effects-" if ton_request_wear_pubic_hair:
                 $ potion_choice = None
                 jump equip_tonks_misc_item
+
+            "-Never mind-":
+                jump return_to_wardrobe
+
+    if potion_choice == "clothes_potion":
+        menu:
+            "-Permanent Clothing Transparency-" if potion_inv.has("p_transparency"):
+                $ misc_item_choice = "transparency"
+                jump equip_misc_item
 
             "-Never mind-":
                 jump return_to_wardrobe

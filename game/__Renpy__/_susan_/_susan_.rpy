@@ -2,7 +2,7 @@
 
 ### Susan Bones ###
 
-label sus_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
+label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen susan_main
 
     #Flip
@@ -56,7 +56,17 @@ label sus_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
         else:
             $ susan_ypos = int(ypos)
 
-    $ changeSusan(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
+    if face != None:
+        if mouth == None:
+            call set_sus_face(mouth = face)
+        if eye == None:
+            call set_sus_face(eyes = face)
+        if brows == None:
+            call set_sus_face(brows = face)
+        if pupils == None:
+            call set_sus_face(pupils = face)
+
+    $ changeSusan(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
 
     show screen susan_main
     show screen bld1
@@ -87,8 +97,8 @@ label update_susan:
 init python:
     def changeSusan(    mouth=None,
                         eye=None,
-                        eyebrow=None,
-                        pupil=None,
+                        brows=None,
+                        pupils=None,
                         cheeks=None,
                         tears=None,
                         extra=None,
@@ -111,10 +121,10 @@ init python:
         if eye is not None:
             susan_eye         = "characters/susan/face/eyes/"+eye+".png"
             susan_eye_bg      = "characters/susan/face/eyes/"+eye+"_bg.png"
-        if eyebrow is not None:
-            susan_eyebrow     = "characters/susan/face/brow/"+eyebrow+".png"
-        if pupil is not None:
-            susan_pupil       = "characters/susan/face/pupil/"+pupil+".png"
+        if brows is not None:
+            susan_eyebrow     = "characters/susan/face/brow/"+brows+".png"
+        if pupils is not None:
+            susan_pupil       = "characters/susan/face/pupil/"+pupils+".png"
         if cheeks is not None:
             susan_cheeks      = "characters/susan/face/extras/"+cheeks+".png"
         if tears is not None:

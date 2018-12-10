@@ -247,40 +247,6 @@ screen hermione_chibi_dance:
     zorder hermione_chibi_zorder
 
 
-screen clothed_dance: #Hermione stands still.
-    tag hermione_chibi
-    add "clothed_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    zorder hermione_chibi_zorder
-screen clothed_dance_pause: #Hermione stands still.
-    tag hermione_chibi
-    add "ch_hem blink_a" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    zorder hermione_chibi_zorder
-
-### NO VEST ###
-screen no_vest_dance: #Hermione stands still.
-    tag hermione_chibi
-    add "no_vest_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    zorder hermione_chibi_zorder
-
-### NO SHIRT ###
-screen no_shirt_dance: #Hermione stands still.
-    tag hermione_chibi
-    add "no_shirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    zorder hermione_chibi_zorder
-
-### NO BOTTOM/SKIRT ###
-screen no_skirt_dance: #Hermione stands still.
-    tag hermione_chibi
-    add "no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    zorder hermione_chibi_zorder
-
-### NAKED DANCE ###
-screen no_shirt_no_skirt_dance: #Hermione stands still.
-    tag hermione_chibi
-    add "no_shirt_no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
-    zorder hermione_chibi_zorder
-
-
 ### SIT NAKED ###
 screen hermione_chibi_sit_naked_A:
     tag hermione_chibi

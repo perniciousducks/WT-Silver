@@ -32,45 +32,39 @@ label equip_neckwear:
 
 ### Equip Hermione's Neckwear ###
 label equip_her_neckwear:
-    call set_h_neckwear(neckwear_choice)
+    call set_her_neckwear(neckwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Luna's Neckwear ###
 label equip_lun_neckwear:
     call set_lun_neckwear(neckwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Neckwear ###
 label equip_ast_neckwear:
     call set_ast_neckwear(neckwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Neckwear ###
 label equip_sus_neckwear:
     call set_sus_neckwear(neckwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Neckwear ###
 label equip_cho_neckwear:
     call set_cho_neckwear(neckwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Neckwear ###
 label equip_ton_neckwear:
     call set_ton_neckwear(neckwear_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -98,45 +92,39 @@ label equip_gloves:
 
 ### Equip Hermione's Gloves ###
 label equip_her_gloves:
-    call set_h_gloves(gloves_choice)
+    call set_her_gloves(gloves_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Luna's Gloves ###
 label equip_lun_gloves:
     call set_lun_gloves(gloves_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Gloves ###
 label equip_ast_gloves:
     call set_ast_gloves(gloves_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Gloves ###
 label equip_sus_gloves:
     call set_sus_gloves(gloves_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Gloves ###
 label equip_cho_gloves:
     call set_cho_gloves(gloves_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Gloves ###
 label equip_ton_gloves:
     call set_ton_gloves(gloves_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -165,7 +153,7 @@ label equip_body_accessory:
 ### Equip Hermione's Body Accessory ###
 label equip_her_body_accessory:
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     if body_accessory_choice not in hermione_body_accs_list:
@@ -218,7 +206,7 @@ label equip_her_body_accessory:
 
             pause.5
 
-            call set_h_body_accessory(body_accessory_choice)
+            call set_her_body_accessory(body_accessory_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -227,7 +215,7 @@ label equip_her_body_accessory:
         else:
 
             $ hide_transitions = True
-            call set_h_body_accessory(body_accessory_choice)
+            call set_her_body_accessory(body_accessory_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -258,7 +246,7 @@ label equip_her_body_accessory:
 
             pause.5
 
-            call set_h_body_accessory(body_accessory_choice) #Removes Item
+            call set_her_body_accessory(body_accessory_choice) #Removes Item
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -267,7 +255,7 @@ label equip_her_body_accessory:
         else:
 
             $ hide_transitions = True
-            call set_h_body_accessory(body_accessory_choice) #Removes Item
+            call set_her_body_accessory(body_accessory_choice) #Removes Item
             call her_main(xpos="wardrobe")
             call screen wardrobe
 #
@@ -302,45 +290,39 @@ label equip_her_stockings:
     if her_whoring < 11 and h_bottom in ["skirt_belted_mini","skirt_belted_micro"]:
         call nar(">You can't remove her pantyhose while wearing that skirt!")
     else:
-        call set_h_stockings(stockings_choice)
+        call set_her_stockings(stockings_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Luna's Stockings ###
 label equip_lun_stockings:
     call set_lun_stockings(stockings_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Stockings ###
 label equip_ast_stockings:
     call set_ast_stockings(stockings_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Stockings ###
 label equip_sus_stockings:
     call set_sus_stockings(stockings_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Stockings ###
 label equip_cho_stockings:
     call set_cho_stockings(stockings_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Stockings ###
 label equip_ton_stockings:
     call set_ton_stockings(stockings_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -368,42 +350,36 @@ label equip_robe:
 
 ### Equip Hermione's Robe ###
 label equip_her_robe:
-    call set_h_robe(robe_choice)
+    call set_her_robe(robe_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Luna's Robe ###
 label equip_lun_robe:
     call set_lun_robe(robe_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Astoria's Robe ###
 label equip_ast_robe:
     call set_ast_robe(robe_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Susan's Robe ###
 label equip_sus_robe:
     call set_sus_robe(robe_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Cho's Robe ###
 label equip_cho_robe:
     call set_cho_robe(robe_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ### Equip Tonks's Robe ###
 label equip_ton_robe:
     call set_ton_robe(robe_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

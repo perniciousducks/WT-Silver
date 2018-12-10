@@ -63,51 +63,8 @@ label summon_astoria:
             jump astoria_requests
 
         "-Use a Spell-" if spells_unlocked and not spells_locked:
-            label astoria_target_select:
-            menu:
-                ">Choose a target."
-                "-Susan-" if not susan_busy:
-                    jump curse_susan
-                "{color=#858585}-Susan-{/color}" if susan_busy:
-                    call nar(">Susan is unavailable.")
-                    jump astoria_target_select
-                "{color=#858585}-Hermione-{/color}": #Hermione?
-                    call nar(">This feature has not been added yet.")
-                    jump astoria_target_select
-                "-Never mind-":
-                    jump astoria_requests
+            jump astoria_curse_menu
 
-            label curse_susan:
-                menu:
-                    ">Choose your curse."
-                    "-Imperio-" if astoria_spells[0] >= 1:
-                        jump imperio_spell_1
-                    "-Imperio Tempus-" if astoria_spells[0] >= 2:
-                        jump imperio_spell_2
-                    "-IMPERIO MAXIMUS-" if astoria_spells[0] >= 3:
-                        jump imperio_spell_3
-                    "-Imperio Sluttify-" if susan_wardrobe_unlocked and not susan_imperio_influence:
-                        "Developer Note:" ">This is a temporary spell that will most likely get remove in the future.\n>It currently unlocks Susan's wardrobe for a short amount of time."
-                        jump susan_imperio
-                    "{color=#858585}-Imperio Sluttify-{/color}" if susan_wardrobe_unlocked and susan_imperio_influence:
-                        call nar(">Susan is still under the influence of this curse!")
-                        jump curse_susan
-
-                    "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
-                        call nar(">You haven't unlocked this spell yet.")
-                        jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 1:
-                        call nar(">You haven't unlocked this spell yet.")
-                        jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 2:
-                        call nar(">You haven't unlocked this spell yet.")
-                        jump astoria_target_select
-                    "{color=#858585}-Hidden-{/color}" if astoria_spells[0] < 3:
-                        call nar(">You haven't unlocked this spell yet.")
-                        jump astoria_target_select
-
-                    "-Back-":
-                        jump astoria_target_select
         "{color=#858585}-Use a Spell-{/color}" if tonks_unlocked and spells_locked:
             call nar(">You have recently used an unforgivable curse!\n>Tonks will want to have a word with you before you can use another.")
             jump astoria_requests
@@ -144,6 +101,65 @@ label summon_astoria:
             jump main_room
 
 
+
+label astoria_curse_menu:
+    python:
+        spell_menu = []
+
+        #Susan
+        for i in ag_susan_spells_list:
+            if i.points <= 0:
+                spell_menu.append( ("{color=#858585}-Hidden-{/color}","vague") )
+            elif i.points >= 1 and susan_busy:
+                spell_menu.append( ("{color=#858585}"+i.getMenuText()+"{/color}","busy") )
+            else:
+                spell_menu.append( (i.getMenuText(), i.start_label ) )
+
+        #Hermione
+        for i in ag_hermione_spells_list:
+            if i.points <= 0:
+                spell_menu.append( ("{color=#858585}-Hidden-{/color}","vague") )
+            elif i.points >= 1 and hermione_busy:
+                spell_menu.append( ("{color=#858585}"+i.getMenuText()+"{/color}","busy") )
+            else:
+                spell_menu.append( (i.getMenuText(), i.start_label ) )
+
+        #Tonks
+        for i in ag_tonks_spells_list:
+            if i.points <= 0:
+                spell_menu.append( ("{color=#858585}-Hidden-{/color}","vague") )
+            elif i.points >= 1 and tonks_busy:
+                spell_menu.append( ("{color=#858585}"+i.getMenuText()+"{/color}","busy") )
+            else:
+                spell_menu.append( (i.getMenuText(), i.start_label ) )
+
+        spell_menu.append( ("-Never mind-", "nvm") )
+
+        result = renpy.display_menu(spell_menu)
+
+    if result == "nvm":
+        jump astoria_requests
+    elif result == "vague":
+        call spell_not_known
+        jump astoria_curse_menu
+    elif result == "busy":
+        call person_is_busy
+        jump astoria_curse_menu
+    else:
+        $ renpy.jump(result)
+
+
+
+label spell_not_known:
+    m "We should check the book for new spells..."
+    return
+
+label person_is_busy:
+    if daytime:
+        m "Looks like she's taking classes right now."
+    else:
+        m "Seems like she's already asleep."
+    return
 
 label astoria_talk:
     menu:

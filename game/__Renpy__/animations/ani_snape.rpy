@@ -11,16 +11,6 @@ image snape_walk: #Default Snape walk animation.
     pause.18
     repeat
 
-image snape_walk_f: #Default Snape walk animation.
-    im.Flip("characters/snape/chibis/snape_02.png", horizontal=True)
-    pause.18
-    im.Flip("characters/snape/chibis/snape_03.png", horizontal=True)
-    pause.18
-    im.Flip("characters/snape/chibis/snape_02.png", horizontal=True)
-    pause.18
-    im.Flip("characters/snape/chibis/snape_05.png", horizontal=True)
-    pause.18
-    repeat
 
 ### HANGING WITH SNAPE ###
 image genie_toast_goblet: #Genie and Snape sitting in front of fireplace...

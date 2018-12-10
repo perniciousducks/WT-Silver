@@ -20,38 +20,38 @@ label update_wr_color_list:
 
     if active_girl in ["hermione"]:
 
-        $ wr_haircolor.append("1")
+        $ wr_haircolor.append("brown")
         if yellow_dye_ITEM.unlocked:
-            $ wr_haircolor.append("2")
+            $ wr_haircolor.append("blonde")
         if red_dye_ITEM.unlocked:
-            $ wr_haircolor.append("3")
+            $ wr_haircolor.append("red")
         if crimson_dye_ITEM.unlocked:
-            $ wr_haircolor.append("4")
+            $ wr_haircolor.append("crimson")
         if black_dye_ITEM.unlocked:
-            $ wr_haircolor.append("5")
+            $ wr_haircolor.append("black")
 
         if dark_green_dye_ITEM.unlocked:
-            $ wr_haircolor.append("6")
+            $ wr_haircolor.append("green")
         if dark_blue_dye_ITEM.unlocked:
-            $ wr_haircolor.append("7")
+            $ wr_haircolor.append("blue")
         if purple_dye_ITEM.unlocked:
-            $ wr_haircolor.append("8")
+            $ wr_haircolor.append("purple")
         if pink_dye_ITEM.unlocked:
-            $ wr_haircolor.append("9")
+            $ wr_haircolor.append("pink")
         if gray_dye_ITEM.unlocked:
-            $ wr_haircolor.append("10")
+            $ wr_haircolor.append("gray")
 
     if active_girl in ["tonks"]:
-        $ wr_haircolor.append("1")
-        $ wr_haircolor.append("2")
-        $ wr_haircolor.append("3")
-        $ wr_haircolor.append("4")
-        $ wr_haircolor.append("5")
-        $ wr_haircolor.append("6")
-        $ wr_haircolor.append("7")
-        $ wr_haircolor.append("8")
-        $ wr_haircolor.append("9")
-        $ wr_haircolor.append("10")
+        $ wr_haircolor.append("pink")
+        $ wr_haircolor.append("blonde")
+        $ wr_haircolor.append("red")
+        $ wr_haircolor.append("crimson")
+        $ wr_haircolor.append("black")
+        $ wr_haircolor.append("green")
+        $ wr_haircolor.append("blue")
+        $ wr_haircolor.append("purple")
+        $ wr_haircolor.append("brown")
+        $ wr_haircolor.append("gray")
 
 
     #House Color
@@ -118,17 +118,17 @@ label update_wr_head_list:
     if active_girl == "hermione":
 
         #Hair Style
-        $ wr_hair.append("A")
+        $ wr_hair.append("curly")
         if hg_outfit_maid_ITEM.unlocked or hg_lingerie_maid_ITEM.unlocked or hg_dress_yule_ball_ITEM.unlocked: #Updo Hair from Outfits/Sets
-            $ wr_hair.append("B")
+            $ wr_hair.append("updo")
         if hg_costume_elizabeth_ITEM.unlocked: #Elizabeth Hair from Outfit.
-            $ wr_hair.append("E")
+            $ wr_hair.append("bobcut")
 
         #Makeup
         if lipstick_red_ITEM.unlocked:
-            $ wr_makeup.append("red_lipstick")
+            $ wr_makeup.append("lipstick_red")
         if lipstick_pink_ITEM.unlocked:
-            $ wr_makeup.append("pink_lipstick")
+            $ wr_makeup.append("lipstick_pink")
         if freckles_makeup_ITEM.unlocked:
             $ wr_makeup.append("freckles")
         if fake_cum_makeup_ITEM.unlocked:
@@ -157,8 +157,8 @@ label update_wr_head_list:
     if active_girl == "luna":
 
         #Hair
-        $ wr_hair.append("A")
-        $ wr_hair.append("B")
+        $ wr_hair.append("curly")
+        $ wr_hair.append("playful")
 
         if luna_reverted:
             $ wr_glasses.append("spectrespecs")
@@ -166,11 +166,11 @@ label update_wr_head_list:
     if active_girl == "astoria":
 
         #Hair
-        $ wr_hair.append("A")
+        $ wr_hair.append("straight")
         if ag_costume_lazy_town_ITEM.unlocked or ag_costume_lazy_town_short_ITEM.unlocked:
-            $ wr_hair.append("L")
+            $ wr_hair.append("stephanie")
         if ag_boss_uniform_ITEM.unlocked:
-            $ wr_hair.append("N")
+            $ wr_hair.append("pigtails")
 
         #Hats
         if ag_boss_uniform_ITEM.unlocked:
@@ -178,15 +178,29 @@ label update_wr_head_list:
 
     if active_girl == "susan":
 
-        $ wr_hair.append("A")
+        $ wr_hair.append("braided")
 
     if active_girl == "cho":
 
-        $ wr_hair.append("A")
+        $ wr_hair.append("ponytail")
 
     if active_girl == "tonks":
 
-        $ wr_hair.append("A")
+        $ wr_hair.append("short")
+
+        $ wr_hats.append("hat_witch")
+        $ wr_hats.append("hat_maid")
+
+        if game_difficulty >= 3:
+            $ wr_hats.append("paper_bag_1")
+            $ wr_hats.append("paper_bag_2")
+            $ wr_hats.append("paper_bag_3")
+
+            $ wr_hats.append("gimp_mask_1")
+            $ wr_hats.append("gimp_mask_2")
+            $ wr_hats.append("gimp_mask_3")
+            $ wr_hats.append("gimp_mask_4")
+            $ wr_hats.append("gimp_mask_5")
 
     return
 
@@ -206,13 +220,20 @@ label update_wr_tops_list:
         #Uniform
         $ wr_tops_uniform.append("top_1_g")
         $ wr_tops_uniform.append("top_2_g")
-        if her_whoring < 11:
-            $ wr_tops_uniform.append("top_3_g")
+        $ wr_tops_uniform.append("top_3_g")
         $ wr_tops_uniform.append("top_4_g")
-        if her_whoring >= 11:
-            $ wr_tops_uniform.append("top_5_g")
+        $ wr_tops_uniform.append("top_5_g")
         $ wr_tops_uniform.append("top_6_g")
         $ wr_tops_uniform.append("top_7_g")
+
+        if her_whoring >= 15 and lock_public_favors == False:
+            $ wr_tops_uniform.append("top_1_s")
+            $ wr_tops_uniform.append("top_2_s")
+            $ wr_tops_uniform.append("top_3_s")
+            $ wr_tops_uniform.append("top_4_s")
+            $ wr_tops_uniform.append("top_5_s")
+            $ wr_tops_uniform.append("top_6_s")
+            $ wr_tops_uniform.append("top_7_s")
 
         #Cheerleader
         if hg_cheer_g_ITEM.unlocked:
@@ -260,8 +281,13 @@ label update_wr_tops_list:
     if active_girl == "luna":
 
         #Uniform
-        $ wr_tops_uniform.append("top_1")
-        $ wr_tops_uniform.append("top_2")
+        $ wr_tops_uniform.append("top_1_r")
+        $ wr_tops_uniform.append("top_2_r")
+        $ wr_tops_uniform.append("top_3_r")
+
+        if not luna_reverted:
+            $ wr_tops_uniform.append("top_1_s")
+            $ wr_tops_uniform.append("top_2_s")
 
         #Cheerleader
         if ll_cheer_r_ITEM.unlocked:
@@ -278,8 +304,6 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("top_2")
         $ wr_tops_uniform.append("top_3")
         $ wr_tops_uniform.append("top_4")
-        if ag_boss_uniform_ITEM.unlocked:
-            $ wr_tops_uniform.append("top_uniform_1")
 
     if active_girl == "susan":
 
@@ -405,10 +429,6 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_1")
         $ wr_bottoms_uniform.append("skirt_2")
 
-        #Pants
-        if ag_boss_uniform_ITEM.unlocked:
-            $ wr_bottoms_pants.append("pants_boss")
-
     if active_girl == "susan":
 
         #Uniform
@@ -465,8 +485,14 @@ label update_wr_other_clothings_list:
 
         #Neckwear
         $ wr_neckwears.append("tie_striped_g")
+        if hg_accs_wool_g_ITEM.unlocked and her_whoring >= 15 and lock_public_favors == False:
+            $ wr_neckwears.append("tie_striped_s")
+
         if hg_accs_wool_g_ITEM.unlocked:
             $ wr_neckwears.append("scarf_striped_g")
+        if hg_accs_wool_g_ITEM.unlocked and her_whoring >= 15 and lock_public_favors == False:
+            $ wr_neckwears.append("scarf_striped_s")
+
         if her_whoring >= 14:
             $ wr_neckwears.append("banner_g")
             $ wr_neckwears.append("banner_unicorn")
@@ -486,7 +512,6 @@ label update_wr_other_clothings_list:
 
         if hg_costume_yennefer_ITEM.unlocked:
             $ wr_neckwears.append("choker_leather")
-            $ wr_neckwears.append("scarf_silk")
         if her_dress_wearable:
             $ wr_neckwears.append("banner_miss_hogwarts")
         #$ wr_neckwears.append("neck_goggles") #sQuest reward
@@ -500,7 +525,7 @@ label update_wr_other_clothings_list:
         #Body Accessories
         if spew_badge_ITEM.unlocked:
             $ wr_body_accs.append("badge_SPEW")
-        if I_love_cum_badge_ITEM.unlocked:
+        if cum_badge_ITEM.unlocked:
             $ wr_body_accs.append("badge_I_love_cum")
         if her_whoring >= 24:
             $ wr_body_accs.append("belt_band_of_condoms")
@@ -526,8 +551,6 @@ label update_wr_other_clothings_list:
         #Stockings
         if hg_accs_wool_g_ITEM.unlocked:
             $ wr_stockings.append("stockings_striped_g")
-            #if her_whoring  >= 22 and "vibrators" in cs_existing_stock:
-            #    $ wr_stockings.append("stockings_striped_vibe") #Will be in accessories instead
         if her_whoring >= 8 and hg_cheer_g_ITEM.unlocked:
             $ wr_stockings.append("stockings_cheer_g")
         if her_whoring >= 11 and (hg_cheer_s_ITEM.unlocked or hg_cheer_r_ITEM.unlocked or hg_cheer_h_ITEM.unlocked):
@@ -540,8 +563,6 @@ label update_wr_other_clothings_list:
             $ wr_stockings.append("stockings_cheer_short_h")
             $ wr_stockings.append("stockings_cheer_short_r")
             $ wr_stockings.append("stockings_cheer_short_s")
-            #if her_whoring  >= 22 and "vibrators" in cs_existing_stock:
-            #    $ wr_stockings.append("stockings_cheer_vibe") #Will be in accessories instead
 
         if hg_muggle_cold_ITEM.unlocked:
             $ wr_stockings.append("stockings_pantyhose")
@@ -562,23 +583,23 @@ label update_wr_other_clothings_list:
 
         #Robes
         if her_whoring >= 0:
-            $ wr_robes.append("gryff_robe_shirt_none")
-            $ wr_robes.append("gryff_robe_off")
+            $ wr_robes.append("robe_1_g")
+            $ wr_robes.append("robe_open_g")
         if her_whoring >= 3:
-            $ wr_robes.append("gryff_robe_gap_wide")
+            $ wr_robes.append("robe_3_g")
         if her_whoring >= 6:
-            $ wr_robes.append("gryff_robe_seethrough")
+            $ wr_robes.append("robe_4_g")
         if her_whoring >= 9:
-            $ wr_robes.append("gryff_quidditch")
+            $ wr_robes.append("robe_quidditch_g")
 
         if her_whoring >= 10:
-            $ wr_robes.append("slyth_robe_shirt_none")
-            $ wr_robes.append("slyth_robe_off")
-            $ wr_robes.append("slyth_robe_gap_wide")
+            $ wr_robes.append("robe_1_s")
+            $ wr_robes.append("robe_open_s")
+            $ wr_robes.append("robe_3_s")
         if her_whoring >= 13:
-            $ wr_robes.append("slyth_robe_seethrough")
+            $ wr_robes.append("robe_4_s")
         if her_whoring >= 16:
-            $ wr_robes.append("slyth_quidditch")
+            $ wr_robes.append("robe_quidditch_s")
 
     if active_girl == "luna":
         if ll_cheer_r_ITEM.unlocked:
@@ -588,7 +609,7 @@ label update_wr_other_clothings_list:
         if ag_nighty_silk_ITEM.unlocked:
             $ wr_stockings.append("nighty_stockings")
 
-        $ wr_robes.append("slyth_1")
+        $ wr_robes.append("robe_1_s")
 
     if active_girl == "susan":
 
@@ -669,16 +690,20 @@ label update_wr_underwear_list:
             $ wr_panties.append("panties_fishnet_string")
 
         #One-Pieces & Nighties
-        if hg_onepiece_sport_swimsuit_ITEM.unlocked:
+        if hg_swimsuit_sport_ITEM.unlocked:
             $ wr_onepieces.append("swimsuit_sport_1")
             $ wr_onepieces.append("swimsuit_sport_2")
             $ wr_onepieces.append("swimsuit_sport_3")
             if her_whoring >= 14:
                 $ wr_onepieces.append("swimsuit_sport_4")
-        $ wr_onepieces.append("onepiece_swimsuit_halterless")
-        $ wr_onepieces.append("onepiece_swimsuit")
+        $ wr_onepieces.append("swimsuit_halterless")
+        $ wr_onepieces.append("swimsuit_neckband")
+
         $ wr_onepieces.append("onepiece_bunny")
         $ wr_onepieces.append("onepiece_microdress")
+
+        $ wr_onepieces.append("onepiece_netsuit_fancy")
+        $ wr_onepieces.append("onepiece_netsuit")
 
         if hg_onepiece_sling_ITEM.unlocked:
             $ wr_onepieces.append("onepiece_bikini_string")
@@ -703,6 +728,10 @@ label update_wr_underwear_list:
         $ wr_panties.append("panties_basic")
         if ll_lingerie_silk_ITEM.unlocked:
             $ wr_panties.append("panties_silk")
+
+        #One-Pieces
+        $ wr_onepieces.append("nighty_long")
+        $ wr_onepieces.append("nighty_long_translucent")
 
     if active_girl == "astoria":
 
@@ -752,6 +781,11 @@ label update_wr_underwear_list:
         #Panties
         $ wr_panties.append("panties_latex")
 
+        #One-Pieces
+        $ wr_onepieces.append("bikini_sling_1")
+        $ wr_onepieces.append("netsuit_1")
+        $ wr_onepieces.append("netsuit_2")
+
     return
 
 
@@ -765,69 +799,100 @@ label update_wr_outfits_list:
 
 
     if active_girl == "hermione":
+        python:
 
-        #Outfits
-        if hg_outfit_maid_ITEM.unlocked:
-            $ wr_outfits.append(hg_outfit_maid_OBJ)
-        if hg_outfit_christmas_ITEM.unlocked:
-            $ wr_outfits.append(hg_outfit_christmas_OBJ)
-        if hg_outfit_present_ITEM.unlocked:
-            $ wr_outfits.append(hg_outfit_present_OBJ)
-        if hg_outfit_japan_ITEM.unlocked:
-            $ wr_outfits.append(hg_outfit_japan_OBJ)
-
-        #Costumes
-        if hg_outfit_pirate_ITEM.unlocked:
-            $ wr_costumes.append(hg_outfit_pirate_OBJ)
-        if hg_costume_power_girl_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_power_girl_OBJ)
-        if hg_costume_ms_marvel_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_ms_marvel_OBJ)
-        if hg_costume_harley_quinn_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_harley_quinn_OBJ)
-        if hg_costume_lara_croft_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_lara_croft_OBJ)
-        if hg_costume_tifa_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_tifa_OBJ)
-        if hg_outfit_witch_ITEM.unlocked:
-            $ wr_costumes.append(hg_outfit_witch_OBJ)
-        if hg_costume_elizabeth_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_elizabeth_OBJ)
-        if hg_costume_yennefer_ITEM.unlocked:
-            $ wr_costumes.append(hg_costume_yennefer_OBJ)
-
-        #Dresses
-        if hg_dress_dancer_ITEM.unlocked:
-            $ wr_dresses.append(hg_dress_dancer_OBJ)
-        if hg_dress_yule_ball_ITEM.unlocked:
-            $ wr_dresses.append(hg_dress_yule_ball_OBJ)
+            #Outfits
+            for i in hermione_outfits_list:
+                if i.unlocked:
+                    wr_outfits.append(i)
+            #Costumes
+            for i in hermione_costumes_list:
+                if i.unlocked:
+                    wr_costumes.append(i)
+            #Dresses
+            for i in hermione_dresses_list:
+                if i.unlocked:
+                    wr_dresses.append(i)
 
     if active_girl == "luna":
-        pass
+        python:
+
+            #Outfits
+            for i in luna_outfits_list:
+                if i.unlocked:
+                    wr_outfits.append(i)
+            #Costumes
+            for i in luna_costumes_list:
+                if i.unlocked:
+                    wr_costumes.append(i)
+            #Dresses
+            for i in luna_dresses_list:
+                if i.unlocked:
+                    wr_dresses.append(i)
 
     if active_girl == "astoria":
-        #Costumes
-        if ag_costume_lazy_town_ITEM.unlocked:
-            $ wr_costumes.append(ag_costume_lazy_town_OBJ)
-        if ag_costume_lazy_town_short_ITEM.unlocked:
-            $ wr_costumes.append(ag_costume_lazy_town_short_OBJ)
-        #Dresses
-        if ag_dress_yule_ball_ITEM.unlocked:
-            $ wr_dresses.append(ag_dress_yule_ball_OBJ)
+        python:
+
+            #Outfits
+            for i in astoria_outfits_list:
+                if i.unlocked:
+                    wr_outfits.append(i)
+            #Costumes
+            for i in astoria_costumes_list:
+                if i.unlocked:
+                    wr_costumes.append(i)
+            #Dresses
+            for i in astoria_dresses_list:
+                if i.unlocked:
+                    wr_dresses.append(i)
 
     if active_girl == "susan":
-        pass
+        python:
+
+            #Outfits
+            for i in susan_outfits_list:
+                if i.unlocked:
+                    wr_outfits.append(i)
+            #Costumes
+            for i in susan_costumes_list:
+                if i.unlocked:
+                    wr_costumes.append(i)
+            #Dresses
+            for i in susan_dresses_list:
+                if i.unlocked:
+                    wr_dresses.append(i)
 
     if active_girl == "cho":
-        #Outfit
-        $ wr_outfits.append(cc_outfit_quidditch_OBJ)
+        python:
 
-        #Dresses
-        if cc_dress_traditional_ITEM.unlocked:
-            $ wr_dresses.append(cc_dress_traditional_OBJ)
+            #Outfits
+            for i in cho_outfits_list:
+                if i.unlocked:
+                    wr_outfits.append(i)
+            #Costumes
+            for i in cho_costumes_list:
+                if i.unlocked:
+                    wr_costumes.append(i)
+            #Dresses
+            for i in cho_dresses_list:
+                if i.unlocked:
+                    wr_dresses.append(i)
 
     if active_girl == "tonks":
-        pass
+        python:
+
+            #Outfits
+            for i in tonks_outfits_list:
+                if i.unlocked:
+                    wr_outfits.append(i)
+            #Costumes
+            for i in tonks_costumes_list:
+                if i.unlocked:
+                    wr_costumes.append(i)
+            #Dresses
+            for i in tonks_dresses_list:
+                if i.unlocked:
+                    wr_dresses.append(i)
 
     return
 
@@ -855,13 +920,15 @@ label update_wr_miscellaneous_list:
             $ wr_potions_list.append("clothes_potion")
 
         #Items #Butt-plugs, Gags, Brooms,...
-        if gift_item_inv[AnalPlugs.id] > 0:
+        if anal_plugs_ITEM.number > 0:
             if buttplug_1_worn: #Event happened.
                 $ wr_items_list.append("buttplug_small")
             if buttplug_2_worn: #Event happened.
                 $ wr_items_list.append("buttplug_medium")
             if buttplug_3_worn: #Event happened.
                 $ wr_items_list.append("buttplug_large")
+        if game_difficulty >= 3 and her_whoring >= 21 and ballgag_and_cuffs_ITEM.number > 0:
+            $ wr_items_list.append("item_ballgag_and_cuffs")
 
         #Piercings
         if her_whoring >= 5:
@@ -907,6 +974,11 @@ label update_wr_miscellaneous_list:
     #if active_girl == "astoria":
     if active_girl == "tonks":
         $ wr_potions_list.append("hair_growth_potion")
+        if potion_inv.has("p_transparency"):
+            $ wr_potions_list.append("clothes_potion")
+
+        if game_difficulty >= 3 and ballgag_and_cuffs_ITEM.number > 0:
+            $ wr_items_list.append("item_ballgag_and_cuffs")
 
         $ wr_piercings_list.append("ears_rings")
         $ wr_piercings_list.append("nipples_pearls")

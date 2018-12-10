@@ -65,7 +65,7 @@ label update_tip_of_the_day:
     $ guide_tip_text = ""
 
     #Gift Items Tip
-    if mad > 0: #Picks this first when she is mad.
+    if her_mood > 0: #Picks this first when she is mad.
 
         #Always relevant
         $ rndm_one_of_ten = renpy.random.randint(1, 10)

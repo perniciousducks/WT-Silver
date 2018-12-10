@@ -46,12 +46,11 @@ label sus_chibi(action = "", xpos=susan_chibi_xpos, ypos=susan_chibi_ypos, flip=
 
     else:
         if flip or susan_flip != 1: #Same variable that the main sprite is using. #1 == Default
-            $ susan_chibi_flip = 1
-            show screen susan_stand
-        else:
             $ susan_chibi_flip = -1
             show screen susan_stand
-        with d3
+        else:
+            $ susan_chibi_flip = 1
+            show screen susan_stand
 
     return
 

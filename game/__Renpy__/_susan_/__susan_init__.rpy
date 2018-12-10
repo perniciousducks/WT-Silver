@@ -54,10 +54,10 @@ label susan_init:
         $ susan_chibi_robe          = "characters/susan/chibis/blank.png"
 
         #Hair
-        $ susan_hair                = "characters/susan/body/hair/hair_A_1_base.png"
-        $ susan_hair_shadow         = "characters/susan/body/hair/hair_A_1_top.png"
-        $ sus_hair_style            = "A"
-        $ sus_hair_color            = 1
+        $ susan_hair                = "characters/susan/body/hair/braided_red_base.png"
+        $ susan_hair_shadow         = "characters/susan/body/hair/braided_red_top.png"
+        $ sus_hair_style            = "braided"
+        $ sus_hair_color            = "red"
 
         #Clothes
 
@@ -131,7 +131,7 @@ label susan_init:
         $ sus_panties                 = "panties_base"
         $ sus_panties_color           = "base"
 
-        $ susan_onepiece            = "characters/susan/clothes/onepieces/base/blank.png"
+        $ susan_onepiece            = "characters/susan/clothes/onepieces/blank.png"
         $ sus_onepiece                = "blank"
         $ sus_onepiece_color          = "base"
 
@@ -191,6 +191,9 @@ label susan_init:
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 
+
+    call susan_face_layers
+
     return
 
 
@@ -198,24 +201,26 @@ label susan_progress_init:
 
     if not hasattr(renpy.store,'susan_busy') or reset_persistants:
 
-        ##Favour stuff
-        $ susan_level = 0
+        #Stats
+        $ sus_whoring = 0
+        $ sus_mood = 0
 
-        $ susan_imperio_influence = False
-        $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
-
-        ##Flags
+        #Flags
         $ susan_busy = False
         $ susan_unlocked = False
         $ susan_wardrobe_unlocked = False
         $ chitchated_with_susan = False
 
-        ##Names
+        #Favour stuff
+        $ susan_imperio_influence = False
+        $ susan_imperio_counter = 0 #Maybe the higher Astoria's spell level gets, the longer this lasts?
+
+        #Names
         $ susan_name = "Miss Bones"
         $ sus_genie_name = "Sir"
 
-        #Stats
-        $ susan_curse_counter = 2 #She got cursed twice beforeyou unlock her. Poor girl...
+        #Stats Screen
+        $ sus_curse_counter = 2 #She got cursed twice beforeyou unlock her. Poor girl...
 
 
     return

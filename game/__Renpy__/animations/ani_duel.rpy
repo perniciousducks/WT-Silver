@@ -28,7 +28,17 @@ image smoke:
     "images/animation/smoke_04.png"
     pause.1
 
-image heal:
+image teleport_ani:
+    "magic/magic4.png"
+    pause.05
+    "magic/magic5.png"
+    pause.1
+    "magic/magic1.png"
+    pause.05
+    "magic/magic2.png"
+    pause.3
+
+image heal_ani:
     "magic/heal01.png"
     pause.06
     "magic/heal02.png"
@@ -615,7 +625,7 @@ image flower_appear:
     pause.1
     "images/animation/Flower4.png"
     pause.8
-    
+
 # image vanish_effect_bouquet:
     # "images/animation/BouquetPaf.png"
     # pause.1

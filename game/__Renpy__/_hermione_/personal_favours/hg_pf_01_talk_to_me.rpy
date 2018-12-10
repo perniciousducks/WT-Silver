@@ -16,7 +16,7 @@ label hg_pf_TalkToMe:
             "\"(Yes, let's do that.)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call play_music("chipper_doodle")
 
@@ -38,7 +38,7 @@ label hg_pf_TalkToMe:
     #First time event. #[0,1,2]
     if hg_pf_TalkToMe_OBJ.points == 0 and her_whoring <=5:
 
-        $ hg_pf_TalkToMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_TalkToMe_OBJ.level = 1 #Event hearts level (0-3)
 
         call her_main("Em... very well...","open","worried")
         call nar(">Hermione is feeling confused...")
@@ -52,7 +52,7 @@ label hg_pf_TalkToMe:
     if her_whoring >= 0 and  her_whoring <= 5:
         if her_whoring >= 3 and her_whoring <= 5:
 
-            $ hg_pf_TalkToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
+            $ hg_pf_TalkToMe_OBJ.level = 2 #Event hearts level (0-3)
 
         #call hg_talk_2
         call hg_talk_1
@@ -91,7 +91,7 @@ label hg_talk_1:
 
     menu:
         "-Jerk off while she is talking-":
-            $ jerked_off_in_front_of_her += 1
+            $ her_jerk_off_counter += 1
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
 
             hide screen hermione_main
@@ -162,7 +162,7 @@ label hg_talk_1:
 
 label hg_talk_3:
 
-    $ hg_pf_TalkToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
+    $ hg_pf_TalkToMe_OBJ.level = 3 #Event hearts level (0-3)
 
     call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
     her "Hm..."
@@ -179,7 +179,7 @@ label hg_talk_3:
 
     menu:
         "-Start jerking off-":
-            $ jerked_off_in_front_of_her += 1
+            $ her_jerk_off_counter += 1
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
 
             hide screen hermione_main
@@ -240,7 +240,7 @@ label hg_talk_3:
         call ctc
 
         if her_whoring <= 10:
-            $ mad = +7
+            $ her_mood = +7
             call her_main("I knew it! You were touching yourself, [genie_name]!","angry","angry")
             #show screen genie_jerking_sperm_02
             #with d3

@@ -18,8 +18,6 @@ label wardrobe_init:
         $ wardrobe_color_update = True
         $ wardrobe_color = "base"
 
-        $ wardrobe_hair_style = "A"
-        $ wardrobe_hair_color = 1
         $ wardrobe_gift_item = 0
         $ wardrobe_costume_selection = 0
         $ wardrobe_uniform_selection = ""
@@ -36,7 +34,7 @@ label wardrobe_init:
 
         #Wardrobe Color Select
         $ wr_background_color            = ["base","red","green","blue"]
-        $ wardrobe_hair_color            = "1"
+        $ wardrobe_hair_style            = "curly"
         $ wardrobe_head_color            = "base"
         $ wardrobe_uniform_color         = "base" #can be: base, red, greed, blue, or yellow.
         $ wardrobe_tops_color            = "base"
@@ -50,8 +48,6 @@ label wardrobe_init:
         $ icon_xpos_offset = 0
         $ icon_ypos_offset = 0
 
-    #1.4
-    if not hasattr(renpy.store,'wardrobe_load_custom_outfit') or reset_persistants:
         $ wardrobe_load_custom_outfit = True
 
     return

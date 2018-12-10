@@ -16,27 +16,28 @@ label your_whore:
     #Setting up Hermione's outfit.
 
     #Hermione Hair
-    $ h_hair_style = "B"
-    $ h_hair_color = 1
-    call update_her_hair
+    call set_her_hair(style="updo", color="brown")
 
     #Hermione Clothes
-    $ transparency             = 1 #Disabled
-    $ h_neckwear               = "00_blank"
-    $ hermione_body_accs_list  = []
-    $ h_gloves                 = "00_blank"
-    $ h_stockings              = "00_blank"
-    $ hermione_wear_robe       = False
-    $ h_request_wear_robe      = False
+    call reset_her_transparency
 
-    $ h_ears                   = "00_blank"
+    $ h_neckwear               = "blank"
+    $ hermione_body_accs_list  = []
+    $ h_gloves                 = "blank"
+    $ h_stockings              = "blank"
+    $ h_request_wear_robe      = False
+    $ h_request_wear_mask      = False
+    $ h_request_wear_gag       = False
+
+    $ h_ears                   = "blank"
     $ hermione_makeup_list     = []
-    $ h_glasses                = "00_blank"
+    $ h_glasses                = "blank"
     $ h_hat                    = "tiara"
-    $ hermione_wear_hat        = True
     $ h_request_wear_hat       = True
 
-    call h_outfit_OBJ(hg_dress_yule_ball_OBJ) #Updates uniform.
+    call update_her_uniform
+
+    call set_her_outfit(hg_dress_yule_ball_OBJ) #Updates uniform.
 
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).
@@ -3223,9 +3224,9 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
 
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False
-    $ h_hair_style = "A"
+    call set_her_hair(style="curly", color="brown")
 
-    call h_outfit_OBJ(None) #Updates uniform.
+    call set_her_outfit(None) #Updates uniform.
     call reset_hermione
 
     hide screen end_u_1                                           #<---- SCREEN
@@ -3384,7 +3385,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         ### TITS ###
         hide screen hermione_main
         $ hermione_wear_bra = False
-        call h_action("lift_top")
+        call set_her_action("lift_top")
         call her_main("","annoyed","annoyed",xpos="mid",trans="fade")
         stop music
         call ctc
@@ -3394,13 +3395,13 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         call her_main("","annoyed","angry")
 
         $ hermione_wear_panties = False
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         call ctc
 
         with hpunch
         dum_[5] "{size=+7}GHT!!!{/size}"
         her "I am willing to do anything to get those points, sir!"
-        call h_action("")
+        call set_her_action("")
         with hpunch
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}","scream","angry",emote="01")
         hide screen hermione_main
@@ -3427,10 +3428,6 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
 
     # SILVER Items
 
-    # gift item invintory
-    $ persistent.gift_item_inv = []
-    $ persistent.gift_item_inv = gift_item_inv
-
     # outfit invintory
     #$ persistent.outfit_inventory = []
     #$ persistent.outfit_inventory = outfit_inventory
@@ -3456,10 +3453,12 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     if gave_miniskirt: #Turns True when Hermione has the miniskirt.
         $ persistent.haveskirt = True # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
 
-
+    #Gift Items
+    python:
+        for i in gift_list:
+            persistant.gift_list[i].number = persistant.gift_list[i].number + gift_list[i].number
 
     ### SACRED SCROLLS ###
-    $ persistent.ss_ = sscroll_
 
 
     $ renpy.full_restart()

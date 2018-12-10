@@ -18,6 +18,8 @@ $ save_name = temp_name
 ###RESET STUFF
 call room(hide_screens=True)
 
+call reset_day_and_night_flags
+
 # Hermione
 call reset_hermione
 $ no_blinking = False #When True - blinking animation is not displayed.
@@ -113,13 +115,13 @@ if day == 4:
     jump event_05 #Before Duel #No return.
 if day == 5:
     jump event_07 #No return.
-if days_without_an_event == 1 and hermione_is_waiting_02 and not event11_happened:
+if days_without_an_event >= 1 and hermione_is_waiting_02 and not event11_happened:
     call event_11 #Returns
-if days_without_an_event == 1 and event11_happened and not event12_happened:
+if days_without_an_event >= 1 and event11_happened and not event12_happened:
     jump event_12 #No return.
-if days_without_an_event == 1 and event12_happened and not event13_happened:
+if days_without_an_event >= 1 and event12_happened and not event13_happened:
     jump event_13 #No return.
-if day >= 15 and day <=20 and not event15_happened:
+if day >= 15 and event13_happened and not event15_happened:
     call event_15 #Returns
 
 #Tonks intro.
@@ -145,9 +147,9 @@ if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
 if luna_known and not luna_unlocked:
     call hat_intro_3 #Returns
 
-if luna_reverted and luna_corruption == -1:
+if luna_reverted and lun_corruption == -1:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_2 #Sets luna_corruption to 0
+    jump luna_reverted_greeting_2 #Sets lun_corruption to 0
 
 #Hermione working return.
 if current_job == 1:
@@ -162,7 +164,8 @@ if current_job == 4:
 #Hermione Potions return.
 if cat_ears_potion_return:
     jump potion_scene_1_1_2
-if transparency < 1 and transparent_quest:
+if transparent_quest:
+    $ transparent_quest = False
     jump potion_scene_4_2
 if addicted == True:
     jump potion_scene_3_1_2

@@ -481,7 +481,7 @@ label tonks_intro_event: #occurs a day or two after the last event
     with d3
     pause.8
 
-    m "(I didn't even realize we had beds here, I've just been sleeping in this chair...)"
+    m "(I didn't even realise we had beds here, I've just been sleeping in this chair...)"
     m "(I really need to clean this thing...)"
     m "asd"
 
@@ -655,6 +655,10 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
 
     m "Come in."
     call play_sound("door")
+
+    call sus_walk("door","mid",2.5)
+    pause.8
+
     call sus_main("","upset","base","worried","mid",xpos="mid",ypos="base")
     call ctc
     with hpunch
@@ -844,9 +848,8 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     pause.8
 
     call play_sound("door")
-    hide screen susan_main
-    with d3
-    pause.2
+
+    call sus_walk("mid","leave",2.5)
 
     call play_music("hermione_theme")
     call ast_main("","grin","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
@@ -1176,6 +1179,7 @@ label astoria_book_intro: #Tell Astoria that you have a book of spells as well a
     $ tonks_busy = True
 
     $ astoria_tonks_event_in_progress = True
+    call set_ast_map_location("defense_classroom") #Update's Astoria's map location.
 
     call nar(">Astoria sprints out the door, giggling as she goes.")
 

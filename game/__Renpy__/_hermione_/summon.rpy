@@ -18,7 +18,7 @@ label summon_hermione:
     menu:
         "-Talk-":
             if not chitchated_with_her:
-                if mad <= 7:
+                if her_mood <= 7:
                     $ chitchated_with_her = True
                     call chit_chat
                     jump hermione_talk
@@ -29,18 +29,18 @@ label summon_hermione:
                 jump hermione_talk
 
         "-Tutoring-" if not daytime and her_tutoring < 14: #13 is last level.
-            if mad >=1 and mad < 3:
+            if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, maybe tomorrow..."
                 jump hermione_requests
-            elif mad >=3 and mad < 10:
+            elif her_mood >=3 and her_mood < 10:
                 her "I am not in the mood today..."
                 jump hermione_requests
-            elif mad >= 10 and mad < 20:
+            elif her_mood >= 10 and her_mood < 20:
                 her "Absolutely not, [genie_name]"
                 her "I {i}might{/i} consider it once you've said sorry"
                 jump hermione_requests
                 # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
-            elif mad >=20:
+            elif her_mood >=20:
                 her "After what you did, [genie_name]?"
                 her "I don't think so..."
                 jump hermione_requests
@@ -48,29 +48,29 @@ label summon_hermione:
                 jump l_tutoring_check
 
         "-Buy sexual favours-" if hermione_favors:
-            if mad >=1 and mad < 3:
+            if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
                 jump hermione_requests
-            elif mad >=  3 and mad < 10:
+            elif her_mood >=  3 and her_mood < 10:
                 her "I don't feel like it today..."
                 her "Maybe in a couple of days..."
                 jump hermione_requests
-            elif mad >= 10 and mad < 20:
+            elif her_mood >= 10 and her_mood < 20:
                 her "No thank you...."
                 jump hermione_requests
-            elif mad >= 20 and mad < 30:
+            elif her_mood >= 20 and her_mood < 30:
                 her "After what you did, [genie_name]?"
                 her "I don't think so..."
                 jump hermione_requests
-            elif mad >= 30 and mad < 40:
+            elif her_mood >= 30 and her_mood < 40:
                 her "You can't be serious!"
                 jump hermione_requests
-            elif mad >= 40:
+            elif her_mood >= 40:
                 her "Is this some twisted joke to you, sir?!"
                 her "After what you did I don't feel like doing this ever again!"
                 jump hermione_requests
             else:
-                jump silver_requests
+                jump hermione_requests_menu
 
         "-Wardrobe-":
             $ active_girl = "hermione"
@@ -94,16 +94,16 @@ label summon_hermione:
 
         "-Dismiss her-":
             if daytime:
-                if mad >=3 and mad < 7:
+                if her_mood >=3 and her_mood < 7:
                     her "..............................."
-                elif mad >=7:
+                elif her_mood >=7:
                     her "*Humph!*..."
                 else:
                     her "Oh, alright. I will go to classes then."
             else:
-                if mad >=3 and mad < 7:
+                if her_mood >=3 and her_mood < 7:
                     her "..............................."
-                elif mad >=7:
+                elif her_mood >=7:
                     her "Tch..."
                 else:
                     her "Oh, alright. I will go to bed then."
@@ -113,6 +113,98 @@ label summon_hermione:
             $ hermione_busy = True
 
             jump main_room
+
+
+
+label hermione_requests_menu:
+    if slytherin >= gryffindor or ravenclaw >= gryffindor or hufflepuff >= gryffindor:
+        show screen hermione_main
+
+        label silver_requests_root:
+        menu:
+            "-Personal favours-":
+                label not_now_pf:
+                python:
+                    pf_menu = []
+                    for i in hg_pf_list:
+                        if i.imagination_level > imagination:
+                            pf_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                        else:
+                            pf_menu.append((i.getMenuText(),i.start_label))
+                    pf_menu.append(("-Never mind-", "nvm"))
+                    result = renpy.display_menu(pf_menu)
+                if result == "nvm":
+                    jump silver_requests_root
+                elif result == "vague":
+                    call vague_idea
+                    jump not_now_pf
+                else:
+                    $ renpy.jump(result)
+
+            "{color=#858585}-Public requests-{/color}" if not daytime:
+                show screen blktone
+                with d3
+                ">Public requests are available during the daytime only."
+                hide screen blktone
+                with d3
+                jump silver_requests_root
+            "-Public requests-" if daytime:
+                if lock_public_favors:
+                    her "Em... [genie_name]..."
+                    her "I do not mind to keep selling you the favours..."
+                    her "But only as long as we keep them private..."
+                    jump silver_requests_root
+                else:
+                    label not_now_pr:
+                    python:
+                        pr_menu = []
+                        for i in hg_pr_list:
+                            if i.imagination_level > bdsm_imagination:
+                                pr_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                            else:
+                                pr_menu.append((i.getMenuText(),i.start_label))
+                        pr_menu.append(("-Never mind-", "nvm"))
+                        result = renpy.display_menu(pr_menu)
+                    if result == "nvm":
+                        jump silver_requests_root
+                    elif result == "vague":
+                        call vague_idea
+                        jump not_now_pr
+                    else:
+                        $ renpy.jump(result)
+
+            "{color=#858585}-Public Shaming-{/color}" if not daytime:
+                show screen blktone
+                with d3
+                ">Public Shaming events are available during the daytime only."
+                hide screen blktone
+                with d3
+                jump silver_requests_root
+            "-Public Shaming-"if daytime:
+                label not_now_ps:
+                python:
+                    ps_menu = []
+                    for i in hg_ps_list:
+                        if i.imagination_level > bdsm_imagination:
+                            ps_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                        else:
+                            ps_menu.append((i.getMenuText(),i.start_label))
+                    ps_menu.append(("-Never mind-", "nvm"))
+                    result = renpy.display_menu(ps_menu)
+                if result == "nvm":
+                    jump silver_requests_root
+                else:
+                    $ renpy.jump(result)
+
+            "-Never mind-":
+                jump hermione_requests
+
+
+    else:
+        show screen hermione_main
+        with d3
+        her "The Gryffindors are in the lead. I don't need to do this."
+        jump hermione_requests
 
 
 

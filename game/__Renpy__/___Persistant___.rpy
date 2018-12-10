@@ -7,49 +7,11 @@ label __init_variables:
     #place save variables here
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
-    if not hasattr(renpy.store,'first_time_7th'): #important!
-        $ first_time_7th = True
-    if not hasattr(renpy.store,'pitch_open'): #important!
-        $ pitch_open = True
-    if not hasattr(renpy.store,'inn_intro'): #important!
-        $ inn_intro = False
-    if not hasattr(renpy.store,'attic_open'): #important!
-        $ attic_open = False
     if not hasattr(renpy.store,'tentacle_cosmetic'): #important!
         $ tentacle_cosmetic = False
 
-
-
-
-    if not hasattr(renpy.store,'shaming'): #important!
-        $ shaming = 0
-    if not hasattr(renpy.store,'shaming_busy'): #important!
-        $ shaming_busy = False
-    if not hasattr(renpy.store,'shaming_01'): #important!
-        $ shaming_01 = False
-    if not hasattr(renpy.store,'shaming_02'): #important!
-        $ shaming_02 = False
-    if not hasattr(renpy.store,'shaming_03'): #important!
-        $ shaming_03 = False
-
-
-    if not hasattr(renpy.store,'heretic'): #important!
-        $ heretic = 0
-    if not hasattr(renpy.store,'heretic_01'): #important!
-        $ heretic_01 = False
-    if not hasattr(renpy.store,'heretic_02'): #important!
-        $ heretic_02 = False
-    if not hasattr(renpy.store,'heretic_03'): #important!
-        $ heretic_03 = False
-    if not hasattr(renpy.store,'heretic_busy'): #important!
-        $ heretic_busy = False
-
-
-    if not hasattr(renpy.store,'scene_number'): #important!
-        $ scene_number = 1
     if not hasattr(renpy.store,'fawkes_intro_done'): #important!
         $ fawkes_intro_done = True
-
 
     ### Interface ###
     if not hasattr(renpy.store,'interface_color'):
@@ -58,30 +20,11 @@ label __init_variables:
     ### Difficulty ###
     if not hasattr(renpy.store,'game_difficulty'):
         $ game_difficulty = 2                      # 2 = normal
-        $ hardcore_difficulty_active = False       # for hardcore play-through rewards
 
     ### Gameplay ###
     if not hasattr(renpy.store,'ignore_warning'):
         $ ignore_warning = False #Warning message that tells you which ending you will get.
 
-    ### Cheats ###
-    if not hasattr(renpy.store,'cheats_active'): #important!
-        $ cheats_active = False
-    if not hasattr(renpy.store,'force_unlock_pub_favors'): #important!
-        $ force_unlock_pub_favors = False
-    if not hasattr(renpy.store,'skip_duel'): #important!
-        $ skip_duel = False
-    if not hasattr(renpy.store,'skip_to_hermione'): #important!
-        $ skip_to_hermione = False
-    if not hasattr(renpy.store,'next_day'): #important!
-        $ next_day = False
-
-
-
-
-
-    if not hasattr(renpy.store,'pub_q_sex_teach'): #important!
-        $ pub_q_sex_teach = False
     if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'): #important!
         $ hg_pf_TheGamble_Flag = False
     if not hasattr(renpy.store,'hg_pf_TheGamble_FlagA'): #important!
@@ -91,11 +34,6 @@ label __init_variables:
     if not hasattr(renpy.store,'hg_pf_TheGamble_FlagC'): #important!
         $ hg_pf_TheGamble_FlagC = False
 
-
-
-    ###Tutoring fix
-    if not hasattr(renpy.store,'table_position_x'): #important!
-        $ table_position_x = 20
 
     ###MISC
     if not hasattr(renpy.store,'unlocked_7th'): #important!
@@ -191,33 +129,21 @@ label __init_variables:
     call tonks_init
     call tonks_progress_init
 
+    #Map
+    call map_init
+
+    #Wardrobe
     call wardrobe_init
 
-    # Store Init
+    #Store
     call store_init
     call store_items_init
 
-    call clothing_init
+    #Minigames & Mirror Stories
+    call dark_room_init
 
+    #Cheats
     call cheats_init
-
-    label update_unlocked_character_list:
-    $ unlocked_character_list = ["genie"]
-    if snape_unlocked:
-        $ unlocked_character_list.append("snape")
-    if hermione_unlocked:
-        $ unlocked_character_list.append("hermione")
-    if luna_unlocked:
-        $ unlocked_character_list.append("luna")
-    if astoria_unlocked:
-        $ unlocked_character_list.append("astoria")
-    if susan_unlocked:
-        $ unlocked_character_list.append("susan")
-    if cho_unlocked:
-        $ unlocked_character_list.append("cho")
-    if tonks_unlocked:
-        $ unlocked_character_list.append("tonks")
-
 
 
 

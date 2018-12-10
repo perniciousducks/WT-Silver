@@ -6,8 +6,12 @@ label update_ast_uniform:
     hide screen astoria_main
 
     #Hair
-    $ astoria_hair         = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_base.png"
-    $ astoria_hair_shadow  = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_top.png"
+    if ast_hair_style in ["stephanie"]:
+        $ astoria_hair         = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_base.png"
+        $ astoria_hair_shadow  = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_top.png"
+    else:
+        $ astoria_hair         = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_" +str(ast_hair_color)+ "_base.png"
+        $ astoria_hair_shadow  = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_" +str(ast_hair_color)+ "_top.png"
 
     #Top
     $ astoria_top            = "characters/astoria/clothes/tops/base/"+str(ast_top)+".png"
@@ -17,14 +21,14 @@ label update_ast_uniform:
 
     #Underwear
     $ astoria_bra            = "characters/astoria/clothes/underwear/base/"+str(ast_bra)+".png"
-    $ astoria_onepiece       = "characters/astoria/clothes/onepieces/base/"+str(ast_onepiece)+".png"
+    $ astoria_onepiece       = "characters/astoria/clothes/onepieces/"+str(ast_onepiece)+".png"
     $ astoria_panties        = "characters/astoria/clothes/underwear/base/"+str(ast_panties)+".png"
     $ astoria_garterbelt     = "characters/astoria/clothes/underwear/base/"+str(ast_garterbelt)+".png"
 
     $ astoria_neckwear       = "characters/astoria/clothes/neckwear/"+str(ast_neckwear)+".png"
     $ astoria_gloves         = "characters/astoria/clothes/gloves/"+str(ast_gloves)+".png"
     $ astoria_stockings      = "characters/astoria/clothes/stockings/"+str(ast_stockings)+".png"
-    $ astoria_robe           = "characters/astoria/clothes/robe/base/"+str(ast_robe)+".png"
+    $ astoria_robe           = "characters/astoria/clothes/robe/"+str(ast_robe)+".png"
 
     #Accessories
     $ astoria_hat            = "characters/astoria/accessories/hats/hair_"+str(ast_hair_style)+"/"+str(ast_hat)+".png"
@@ -41,7 +45,6 @@ label set_ast_hair(hair=None,color=None):
         $ ast_hair_color   = color
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -58,7 +61,6 @@ label set_ast_hat(hat=""):
         $ ast_hat = hat
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -75,7 +77,6 @@ label set_ast_top(top=""):
         $ ast_top = top
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -92,7 +93,6 @@ label set_ast_bottom(bottom=""):
         $ ast_bottom = bottom
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -105,7 +105,6 @@ label set_ast_bra(bra=""):
     $ ast_bra = bra
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -122,7 +121,6 @@ label set_ast_onepiece(onepiece=""):
         $ ast_onepiece = onepiece
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -135,7 +133,6 @@ label set_ast_panties(panties=""):
     $ ast_panties = panties
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -152,7 +149,6 @@ label set_ast_garterbelt(garter=""):
         $ ast_garterbelt = garter
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -169,7 +165,6 @@ label set_ast_neckwear(neck=""):
         $ ast_neckwear = neck
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -186,7 +181,6 @@ label set_ast_stockings(stockings=""):
         $ ast_stockings = stockings
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -203,7 +197,6 @@ label set_ast_robe(robe=""):
         $ ast_robe = robe
 
     call update_ast_uniform
-    show screen astoria_main
 
     return
 
@@ -234,14 +227,12 @@ label ast_outfit(outfit):
 
         if astoria_outfit_GLBL.hair_layer != "":
             $ ast_hair_style = astoria_outfit_GLBL.getHairLayers()
-            $ ast_hair_color = 1
         if astoria_outfit_GLBL.top_layers != []:
             $ ast_request_wear_hat = True
             $ ast_hat = astoria_outfit_GLBL.getTopLayers()
 
     call load_astoria_clothing_saves
     call update_ast_uniform
-    show screen astoria_main
 
     return
 

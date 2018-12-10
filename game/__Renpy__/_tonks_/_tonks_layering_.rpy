@@ -8,21 +8,26 @@ screen tonks_main:
     add tonks_boobs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
 
     ### FACE
+    if tonks_wear_mask == False:
+        add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     add tonks_eye_bg xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the eye white
     add tonks_pupil xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the pupil
     add tonks_eye xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the eye outline
-
     add tonks_eyebrow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the eyebrow
-    #add tonks_hair_shadow xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the hair shadow
-    if tonks_wear_pubic_hair:
-        add tonks_pubic_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
-    add tonks_mouth xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the mouth
+    if tonks_wear_gag:
+        add tonks_gag xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    else:
+        add tonks_mouth xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     add tonks_cheeks xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the extras
     add tonks_tears xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the extras
     add tonks_extra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the extras
+    if tonks_wear_pubic_hair:
+        add tonks_pubic_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     ### CLOTHES
+    if tonks_wear_mask:
+        add tonks_mask xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     #Uniform
     if not tonks_wear_outfit:
@@ -38,7 +43,10 @@ screen tonks_main:
     ### ACCESORIES LAYERS ###
 
     #Hair+
-    add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    if tonks_wear_mask or (tonks_wear_hat and ton_hat in ["paper_bag_1","paper_bag_2","paper_bag_3"] ): #No hair gets added.
+        pass
+    else:
+        add tonks_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     #Hat
     if tonks_wear_hat:
@@ -68,28 +76,32 @@ screen tonks_uniform:
 
     ### CLOTHES
     if tonks_wear_robe:
-        add tonks_robe_back xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat back
+        add tonks_robe_back xpos tonks_xpos ypos tonks_ypos alpha ton_robe_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat back
     if tonks_wear_bra and not (tonks_wear_robe or tonks_wear_top):
-        add tonks_bra xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the bra
+        add tonks_bra xpos tonks_xpos ypos tonks_ypos alpha ton_bra_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the bra
     if tonks_wear_panties:
-        add tonks_panties xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the panties
+        add tonks_panties xpos tonks_xpos ypos tonks_ypos alpha ton_panties_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the panties
     if tonks_wear_stockings:
-        add tonks_stockings xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the stockings
+        add tonks_stockings xpos tonks_xpos ypos tonks_ypos alpha ton_stockings_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    if tonks_wear_onepiece and not (tonks_wear_robe or tonks_wear_top):
+        add tonks_onepiece xpos tonks_xpos ypos tonks_ypos alpha ton_onepiece_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     if tonks_wear_top:
-        add tonks_top xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the top
+        add tonks_top xpos tonks_xpos ypos tonks_ypos alpha ton_top_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the top
     if tonks_wear_bottom and not tonks_wear_robe:
-        add tonks_bottom xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the skirt
+        add tonks_bottom xpos tonks_xpos ypos tonks_ypos alpha ton_bottom_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the skirt
 
     add tonks_l_hand  xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
+    if tonks_wear_mask:
+        add tonks_mask xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     if tonks_wear_accs:
         add tonks_accs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the accessory
     if tonks_wear_neckwear:
         add tonks_neckwear xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     if tonks_wear_robe:
-        add tonks_robe xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat
+        add tonks_robe xpos tonks_xpos ypos tonks_ypos alpha ton_robe_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat
     if tonks_wear_gloves:
-        add tonks_gloves xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_gloves xpos tonks_xpos ypos tonks_ypos alpha ton_gloves_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     ### ZORDER
     zorder tonks_zorder

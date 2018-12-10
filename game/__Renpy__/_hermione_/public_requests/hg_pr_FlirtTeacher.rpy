@@ -16,7 +16,7 @@ label hg_pr_FlirtTeacher:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 
@@ -109,7 +109,7 @@ label hg_pr_FlirtTeacher_complete:
                             call her_main("How unbecoming of a school headmaster!","scream","worriedCl")
                             m "You are dismissed, [hermione_name]."
                             call her_main("Tsk!","angry","angry",emote="01")
-                            $ mad += 18
+                            $ her_mood += 18
                             call music_block
 
                             $ hg_pr_FlirtTeacher_OBJ.inProgress = False
@@ -251,7 +251,7 @@ label hg_pr_FlirtTeacher_complete:
 
                                     call her_main("Here....","disgust","down_raised",cheeks="blush",xpos="mid",ypos="base",trans="fade")
 
-                                    call set_hermione_action("lift_skirt")
+                                    call set_her_action("lift_skirt")
                                     pause.5
 
                                     m "Hm..."
@@ -266,11 +266,11 @@ label hg_pr_FlirtTeacher_complete:
                                     m "Ah, what do I care..."
                                     call her_main("............?","angry","annoyed",emote="01")
 
-                                    call set_hermione_action("none")
+                                    call set_her_action("none")
 
                                     call her_main("","angry","angry")
                                     call ctc
-                                    $ mad += 18
+                                    $ her_mood += 18
 
                         "\"Fine... Here are your points.\"":
                             call her_main("Thank you for understanding, [genie_name].","base","happyCl")
@@ -300,7 +300,7 @@ label hg_pr_FlirtTeacher_complete:
                         "\"Just take your points and go!\"":
                             call her_main(".........................","normal","base")
                         "\"Favour failed! No points for you!\"":
-                            $ mad +=15
+                            $ her_mood +=15
                             call her_main("But [genie_name]?","normal","frown")
                             m "You are dismissed, [hermione_name]."
                             call her_main(".........................................","angry","angry")

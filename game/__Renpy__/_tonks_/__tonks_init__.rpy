@@ -34,11 +34,11 @@ label tonks_init:
         $ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Hair
-        $ tonks_hair                = "characters/tonks/body/hair/hair_A_1.png"
-        $ tonks_hair_shadow         = "characters/tonks/body/hair/hair_A_1.png"
-        $ ton_hair_style            = "A"
-        $ ton_hair_color            = 1
-        $ tonks_pubic_hair          = "characters/tonks/body/hair/pubes_arrow_1.png"
+        $ tonks_hair_shadow         = "characters/tonks/body/hair/_hair_shadow_.png"
+        $ tonks_hair                = "characters/tonks/body/hair/short_pink.png"
+        $ ton_hair_style            = "short"
+        $ ton_hair_color            = "pink"
+        $ tonks_pubic_hair          = "characters/tonks/body/hair/pubes_arrow_pink.png"
         $ ton_pubic_hair            = "arrow"
 
         #Clothes
@@ -67,6 +67,8 @@ label tonks_init:
         $ ton_request_wear_buttplug         = False
         $ ton_request_wear_piercings        = True
         $ ton_request_wear_tattoos          = False
+        $ ton_request_wear_mask             = False
+        $ ton_request_wear_gag              = False
 
         $ ton_request_wear_outfit           = False
 
@@ -94,6 +96,8 @@ label tonks_init:
         $ tonks_wear_pubic_hair        = False
         $ tonks_wear_piercings         = True
         $ tonks_wear_tattoos           = False
+        $ tonks_wear_mask              = False
+        $ tonks_wear_gag               = False
 
         $ tonks_wear_outfit            = False
 
@@ -118,7 +122,7 @@ label tonks_init:
         $ ton_panties                 = "blank"
         $ ton_panties_color           = "base"
 
-        $ tonks_onepiece            = "characters/tonks/clothes/onepieces/base/blank.png"
+        $ tonks_onepiece            = "characters/tonks/clothes/onepieces/blank.png"
         $ ton_onepiece                = "blank"
         $ ton_onepiece_color          = "base"
 
@@ -143,8 +147,8 @@ label tonks_init:
         $ ton_stockings               = "stockings_auror"
         $ ton_stockings_color         = "base"
 
-        $ tonks_robe                = "characters/tonks/clothes/robe/base/auror_coat.png"
-        $ tonks_robe_back           = "characters/tonks/clothes/robe/base/auror_coat_back.png"
+        $ tonks_robe                = "characters/tonks/clothes/robe/auror_coat.png"
+        $ tonks_robe_back           = "characters/tonks/clothes/robe/auror_coat_back.png"
         $ ton_robe                    = "auror_coat"
         $ ton_robe_color              = "base"
 
@@ -167,6 +171,14 @@ label tonks_init:
         $ ton_ear_piercing            = "ears_rings"
         $ ton_ear_piercing_color      = "base"
 
+        #Miscellaneous
+        $ tonks_buttplug            = "characters/tonks/accessories/plugs/blank.png"
+        $ ton_buttplug                = "blank"
+        $ tonks_mask                = "characters/tonks/accessories/masks/blank.png"
+        $ ton_mask                    = "blank"
+        $ tonks_gag                 = "characters/tonks/face/mouth/gag.png"
+        $ ton_gag                     = "gag"
+
         $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/base/blank.png"
         $ ton_nipple_piercing         = "blank"
         $ ton_nipple_piercing_color   = "base"
@@ -179,6 +191,7 @@ label tonks_init:
         $ ton_intimate_piercing       = "blank"
         $ ton_intimate_piercing_color = "base"
 
+        call reset_ton_transparency
 
         #Outfits
         $ tonks_outfit_GLBL = None
@@ -194,37 +207,55 @@ label tonks_init:
         $ tonks_aftersperm          = False
         $ tonks_clothes_cum         = "characters/tonks/face/cum/aftersperm.png"
 
+
+    call tonks_face_layers
+
     return
+
+label reset_ton_transparency:
+    $ ton_top_transp       = 1
+    $ ton_bottom_transp    = 1
+
+    $ ton_bra_transp       = 1
+    $ ton_onepiece_transp  = 1
+    $ ton_panties_transp   = 1
+    $ ton_garter_transp    = 1
+
+    $ ton_gloves_transp    = 1
+    $ ton_stockings_transp = 1
+    $ ton_robe_transp      = 1
+
+    $ ton_outfit_transp    = 1
+
+    return
+
+
 
 label tonks_progress_init:
 
-    if not hasattr(renpy.store,'tonks_level') or reset_persistants:
+    if not hasattr(renpy.store,'tonks_unlocked') or reset_persistants:
 
-        ##Favour stuff
-        $ tonks_level = 0
+        #Stats
+        $ ton_friendship = 0 #Max is 100.
+        $ ton_support = 0
+        $ ton_reputation = 0
+        $ ton_clothing_level = 100
 
-        ##Flags
+        #Flags
         $ tonks_busy = False
         $ tonks_unlocked = False
+        $ tonks_wardrobe_unlocked = False
         $ chitchated_with_tonks = False
+        $ tonks_strip_happened = False #Tonks random clothing event.
 
-        ##Names
+        #Names
         $ tonks_name = "Tonks"
         $ ton_genie_name = "Professor"
         $ ton_astoria_name = "Cutie"
 
-        $ tonks_strip_happened            = False #Tonks random clothing event.
-        $ tonks_naked                     = False
-
-        $ tonks_wardrobe_unlocked = False
-        $ tonks_sluttyfied_clothing = 0
-
-        #Stats
+        #Stat Screen
+        $ ton_clothing_upgrades = 0
         $ ton_astoria_date_counter = 0
         $ ton_hermione_date_counter = 0
-
-        $ ton_friendship = 0 #Max is 100.
-        $ ton_support = 0
-        $ ton_reputation = 0
 
     return

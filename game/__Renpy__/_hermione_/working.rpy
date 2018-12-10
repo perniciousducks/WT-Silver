@@ -18,21 +18,16 @@ label job_1:
     else:
         her "As you wish [genie_name]."
 
-    call set_hermione_outfit(hg_outfit_maid_OBJ)
+    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
+
+    call her_main("","base","base",xpos="right",ypos="base",trans="fade")
+    pause.8
 
     m "Off you go then..."
-    if her_whoring <= 6:
-        her "*Humph!*..."
-    elif her_whoring >=7 and her_whoring <= 15:
-        her "Yes, [genie_name]..."
-    else:
-        her "As you wish, [genie_name]."
-
-    hide screen hermione_main
-    with d3
-    pause.2
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 1
@@ -45,14 +40,14 @@ label maid_responses:
     call her_walk("door","mid",2)
     pause.2
 
-    call h_outfit_OBJ(hg_outfit_maid_OBJ)
+    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
 
     menu:
         "-Ask her how her day was-":
-            if day_random <= 2:
+            if day_random <= 4:
                 m "How was your day?"
                 her "It was as normal a day of cleaning rooms could be."
                 her "Although considering that I'm supposed to be in class during the day I guess it's not that normal."
@@ -60,10 +55,7 @@ label maid_responses:
                 m "Just think of how happy your friends will be when they win the house cup this year."
                 her "I suppose..."
                 m "10 points to Gryffindor"
-                her "Thank you [genie_name]"
-                $ gryffindor+= 10
-                $ gold += payment
-            elif day_random >= 3 and day_random <= 5:
+            elif day_random <= 8:
                 her "Do I really have to keep doing this?"
                 m "What do you mean [hermione_name]?"
                 her "It's so degrading. I have to clean other students rooms!"
@@ -77,40 +69,27 @@ label maid_responses:
                 m "I can, it's just not as enjoyable."
                 her "Hmmph. Can I at least get my points now?"
                 m "Certainly, 10 points to Gryffindor."
-                her "Thank you [genie_name]."
-                $ gryffindor+= 10
-                $ gold += payment
-            elif day_random >= 6 and day_random <= 8:
-                if her_whoring >= 15:
-                    her " "
-                else:
-                    "bla bla bla"
-            elif day_random >=9:
-                if her_whoring >= 15:
-                    "bla bla bla"
-                else:
-                    her "I think you need to start enforcing harsher punishment for sexual harrasment."
-                    her "Hmmph. Can I at least get my points now?"
-                    m "Certainly, 10 points to Gryffindor."
-                    her "Thank you [genie_name]."
-                    $ gryffindor+= 10
-                    $ gold += payment
+            else:
+                her "I think you need to start enforcing harsher punishment for sexual harrasment."
+                her "Hmmph. Can I at least get my points now?"
+                m "Certainly, 10 points to Gryffindor."
         "-Dismiss her-":
             her "Here's your payment."
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 20 points to Gryffindor."
-            her "Thank you [genie_name]."
-            $ gryffindor+= 20
-            $ gold += payment
 
-    hide screen hermione_main
-    with d3
-    pause.2
+    her "Thank you, [genie_name]."
+    ">You receive [payment] gold coins."
+    $ gryffindor+= 20
+    $ gold += payment
 
     call her_walk("mid","leave",2)
 
+    call h_unequip_temp_outfit()
+
     $ hermione_busy = True
     $ current_job = 0
+
     jump night_main_menu
 
 
@@ -125,21 +104,16 @@ label job_2:
     else:
         her "As you wish [genie_name]."
 
-    call set_hermione_outfit(hg_outfit_maid_OBJ)
+    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
+
+    call her_main("","base","base",xpos="right",ypos="base",trans="fade")
+    pause.8
 
     m "Off you go then..."
-    if her_whoring <= 6:
-        her "*Humph!*..."
-    elif her_whoring >=7 and her_whoring <= 15:
-        her "Yes, [genie_name]..."
-    else:
-        her "As you wish, [genie_name]."
-
-    hide screen hermione_main
-    with d3
-    pause.2
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 2
@@ -152,45 +126,31 @@ label barmaid_responses:
     call her_walk("door","mid",2)
     pause.2
 
-    call h_outfit_OBJ(hg_outfit_maid_OBJ)
+    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
 
     menu:
         "-Ask her how her day was-":
-            if day_random <= 2:
-                her "Fine."
-                m "Anything unusual happen?"
-                her "Not really, I just served people drinks."
-                m "Well in that case 10 points to Gryffindor."
-                her "Thank you [genie_name], here's your payment."
-                ">You receive [payment] gold coins."
-                her "Good night [genie_name]."
-                $ gryffindor+= 10
-                $ gold += payment
-            elif day_random >= 3 and day_random <= 5:
-                "bla bla bla"
-                jump hermione_requests
-            elif day_random >= 6 and day_random <= 8:
-                "bla bla bla"
-                jump hermione_requests
-            elif day_random >=9:
-                "bla bla bla"
-                jump hermione_requests
+            her "Fine."
+            m "Anything unusual happen?"
+            her "Not really, I just served people drinks."
+            m "Well in that case 10 points to Gryffindor."
+            her "Thank you, [genie_name], here's your payment."
         "-Dismiss her-":
             her "Here's your payment."
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 20 points to Gryffindor."
-            her "Thank you [genie_name]."
-            $ gryffindor+= 20
-            $ gold += payment
 
-    hide screen hermione_main
-    with d3
-    pause.2
+    her "Thank you, [genie_name]."
+    ">You receive [payment] gold coins."
+    $ gryffindor+= 20
+    $ gold += payment
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 0
@@ -203,55 +163,26 @@ label job_3:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
     if her_whoring <= 6:
         her "*Humph!*..."
-    elif her_whoring >=7 and her_whoring <= 15:
-        her "Yes [genie_name]..."
-    else:
-        her "As you wish [genie_name]."
-
-
-    # Setup Cheerleader Outfit.
-    hide screen hermione_main
-    with d3
-
-    $ h_request_wear_outfit = False
-    $ h_request_wear_top = True
-    $ h_request_wear_bottom = True
-    $ h_request_wear_stockings = True
-
-    if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
-        $ h_top = "top_cheer_sexy_g"
-        $ h_bottom = "skirt_cheer_sexy_g"
-        $ h_stockings = "stockings_cheer_short_g"
-    else: #Normal
-        $ h_top = "top_cheer_g"
-        $ h_bottom = "skirt_cheer_g"
-        $ h_stockings = "stockings_cheer_g"
-
-    $ h_top_color = "base"
-    $ h_bottom_color = "base"
-
-    call load_hermione_clothing_saves
-    call update_her_uniform
-    pause.8
-
-    show screen hermione_main
-    with d3
-    pause.5
-
-    g9 "You look great!"
-    m "Off you go then..."
-    if her_whoring <= 6:
-        her "*Humph!*..."
-    elif her_whoring >=7 and her_whoring <= 15:
+    elif her_whoring <= 15:
         her "Yes, [genie_name]..."
     else:
         her "As you wish, [genie_name]."
 
-    hide screen hermione_main
-    with d3
-    pause.2
+    if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
+        call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
+    else: #Normal
+        call h_equip_temp_outfit(hg_cheer_g_ITEM)
+
+    call her_main("","base","base",xpos="right",ypos="base",trans="fade")
+    pause.8
+
+    g9 "You look great!"
+    her "Thank you..."
+    m "Off you go then..."
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 3
@@ -263,6 +194,11 @@ label gryffindor_cheer_responses:
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
     pause.2
+
+    if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
+        call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
+    else: #Normal
+        call h_equip_temp_outfit(hg_cheer_g_ITEM)
 
     call her_main("","base","base",xpos="right",ypos="base")
     pause.5
@@ -281,9 +217,6 @@ label gryffindor_cheer_responses:
                 call her_main("Well here's the money, [genie_name].","base","base")
                 ">You receive [payment] gold coins."
                 m "Well done, [hermione_name], 20 points to Gryffindor."
-                call her_main("Thank you [genie_name].","base","happyCl")
-                $ gryffindor+= 20
-                $ gold += payment
             elif day_random >= 3 and day_random <= 5:
                 m "Hello, [hermione_name], how was your day?"
                 call her_main("Tiring. This cheering really is quite exhausting.","open","worried")
@@ -293,9 +226,6 @@ label gryffindor_cheer_responses:
                 call her_main("Of course, here you are [genie_name]","open","base")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                call her_main("Thank you [genie_name].","base","happyCl")
-                $ gryffindor+= 20
-                $ gold += payment
             elif day_random >= 6 and day_random <= 8:
                 m "Welcome back [hermione_name]."
                 call her_main("Hello [genie_name].","open","base")
@@ -309,9 +239,6 @@ label gryffindor_cheer_responses:
                 call her_main("Of course they did.","open","closed")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                call her_main("Thank you [genie_name].","base","happyCl")
-                $ gryffindor+= 20
-                $ gold += payment
             elif day_random >=9 and lock_public_favors == True or her_whoring <= 15:
                 m "You seem very chipper today."
                 call her_main("Of course I am, we won!","base","base")
@@ -325,12 +252,12 @@ label gryffindor_cheer_responses:
                 call her_main("Oh, right. Here you are.","soft","baseL")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                call her_main("Thank you [genie_name].","base","happyCl")
             else:
                 m "Welcome back [hermione_name], how was your day?"
                 call her_main("We won! We managed to beat Slytherin.","base","base")
                 m "That must have been very exhilarating. I'm sure your cheering gave the motivation to win."
                 call her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.","base","happyCl")
+
                 menu:
                     "-Reward?-":
                         m "What reward did you promise them?"
@@ -344,27 +271,24 @@ label gryffindor_cheer_responses:
                         m "That's not quite what I meant."
                         call her_main("Well I'm glad I did. I can't wait to rub it in Astoria's face tomorrow.","smile","baseL")
                         m "Well I'm glad you think it was worth it. Did they pay you?"
-
-                        her "Of course they did [genie_name], here you are."
                     "-Okay-":
                         m "I'm sure they were. Did they pay you?"
-                        her "Of course they did [genie_name], here you are."
-                ">You receive [payment] gold coins."
+
+                her "Of course they did [genie_name], here you are."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                her "Thank you [genie_name]."
+
         "-Dismiss her-":
             call her_main("Here's your payment [genie_name].","soft","baseL")
-            ">You receive [payment] gold coins."
             m "Well done [hermione_name], 20 points to Gryffindor."
-            call her_main("Thank you [genie_name].","base","happyCl")
-            $ gryffindor+= 20
-            $ gold += payment
 
-    hide screen hermione_main
-    with d3
-    pause.2
+    call her_main("Thank you, [genie_name].","base","happyCl")
+    ">You receive [payment] gold coins."
+    $ gryffindor+= 20
+    $ gold += payment
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 0
@@ -382,49 +306,21 @@ label job_4:
     else:
         her "As you wish, [genie_name]."
 
-    # Setup Cheerleader Outfit.
-    hide screen hermione_main
-    with d3
-
-    $ h_request_wear_outfit = False
-    $ h_request_wear_top = True
-    $ h_request_wear_bottom = True
-    $ h_request_wear_stockings = True
-
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
-        $ h_top = "top_cheer_sexy_s"
-        $ h_bottom = "skirt_cheer_sexy_s"
-        $ h_stockings = "stockings_cheer_short_s"
+        call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
-        $ h_top = "top_cheer_s"
-        $ h_bottom = "skirt_cheer_s"
-        $ h_stockings = "stockings_cheer_s"
+        call h_equip_temp_outfit(hg_cheer_s_ITEM)
 
-    $ h_top_color = "base"
-    $ h_bottom_color = "base"
-
-    call load_hermione_clothing_saves
-    call update_her_uniform
+    call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
-    show screen hermione_main
-    with d3
-    pause.5
-
     g4 "You look incredible!"
+    her "Thank you..."
     m "Off you go then..."
-    if her_whoring <= 6:
-        her "*Humph!*..."
-    elif her_whoring >=7 and her_whoring <= 15:
-        her "Yes, [genie_name]..."
-    else:
-        her "As you wish, [genie_name]."
-
-    hide screen hermione_main
-    with d3
-    pause.2
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 4
@@ -436,6 +332,11 @@ label slytherin_cheer_responses:
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
     pause.2
+
+    if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
+        call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
+    else: #Normal
+        call h_equip_temp_outfit(hg_cheer_s_ITEM)
 
     if day_random >=9 and lock_public_favors == False:
         $ uni_sperm = True
@@ -456,10 +357,6 @@ label slytherin_cheer_responses:
                 call her_main("It isn't but it's what they insisted I do.","annoyed","angryL")
                 m "Well it definitely sounds like you earned your points."
                 m "30 points to Gryffindor."
-                call her_main("Thank you [genie_name], here's your payment.","open","closed")
-                ">You receive [payment] gold coins."
-                $ gold += payment
-                $ gryffindor+= 30
             elif day_random >= 3 and day_random <= 5:
                 m "How was your day today [hermione_name]?"
                 call her_main("Uneventful. I completed my routine and then went back to my room.","open","suspicious")
@@ -469,10 +366,6 @@ label slytherin_cheer_responses:
                 call her_main("Yes.","open","angryCl")
                 m "Well, you earned your points."
                 m "30 points to Gryffindor."
-                call her_main("Thank you [genie_name], here's your payment.","open","closed")
-                ">You receive [payment] gold coins."
-                $ gold += payment
-                $ gryffindor+= 30
             elif day_random >= 6 and day_random <= 8:
                 m "Hello [hermione_name]."
                 call her_main("Hello [genie_name].","normal","base")
@@ -485,11 +378,7 @@ label slytherin_cheer_responses:
                 call her_main("I suppose your right [genie_name].","open","base")
                 m "Of course I am, now did they pay you?"
                 call her_main("Yes [genie_name].","base","base")
-                ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                call her_main("Thank you [genie_name].","base","happyCl")
-                $ gryffindor+= 20
-                $ gold += payment
             elif day_random >=9 and lock_public_favors == True:
                 call her_main("[genie_name], something must be done about these Slytherin boys.","open","angryCl")
                 call her_main("It's bad enough that I have to cheer for them but they are starting to become a little touchy.","annoyed","angryL")
@@ -504,12 +393,6 @@ label slytherin_cheer_responses:
                 m "{size=-5}I'm sure that'll show them.{/size}"
                 call her_main("What was that [genie_name]?","open","suspicious")
                 m "Nothing [hermione_name], I was just saying I'll speak to Professor Snape tonight."
-                call her_main("Thank you [genie_name], here's your payment.","annoyed","angryL")
-                ">You receive [payment] gold coins."
-                $ gold += payment
-                m "Well done [hermione_name], 30 points to Gryffindor."
-                call her_main("Thank you [genie_name].","open","closed")
-                $ gryffindor+= 30
             else:#Comes back with cum on her
                 m "What the hell happened to you?"
                 call her_main("I did my job [genie_name].","angry","down_raised")
@@ -525,20 +408,23 @@ label slytherin_cheer_responses:
                 m "Fine, but you aren't getting any points."
                 call her_main("Of course not [genie_name]. Will that be all?","base","base")
                 m "Yes, you can go now."
-                call her_main("Thank you [genie_name].","base","glance")
+                call her_main("Thank you, [genie_name].","base","glance")
+                jump end_her_working_no_payment
         "-Dismiss her-":
             call her_main("Here's your payment.","open","base")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 30 points to Gryffindor."
-            call her_main("Thank you [genie_name].","base","glance")
-            $ gryffindor+= 30
-            $ gold += payment
 
-    hide screen hermione_main
-    with d3
-    pause.2
+    call her_main("Thank you, [genie_name].","base","glance")
+    ">You receive [payment] gold coins."
+    $ gryffindor+= 30
+    $ gold += payment
+
+    label end_her_working_no_payment:
 
     call her_walk("mid","leave",2)
+
+    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 0

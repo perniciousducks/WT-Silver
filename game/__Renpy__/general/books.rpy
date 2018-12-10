@@ -1,139 +1,29 @@
 label __init_variables:
-    if not hasattr(renpy.store,'Copper_Book_OBJ'): #important!
-        $ Copper_Book_OBJ = educational_book()
-    $ Copper_Book_OBJ.id = "Copper_Book"
-    $ Copper_Book_OBJ.title = "\"Copper book of spirit\""
-    $ Copper_Book_OBJ.effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading."
-    $ Copper_Book_OBJ.chapters = 2
-    $ Copper_Book_OBJ.unlocked = True
-    $ Copper_Book_OBJ.description = "This book contains various tips on speed reading. " + str(Copper_Book_OBJ.chapters) + " chapters."
-    $ Copper_Book_OBJ.cost = 40
-    $ Copper_Book_OBJ.imagepath = "images/store/books/1-8.png"
-    
-    if not hasattr(renpy.store,'Bronze_Book_OBJ'): #important!
-        $ Bronze_Book_OBJ = educational_book()
-    $ Bronze_Book_OBJ.id = "Bronze_Book"
-    $ Bronze_Book_OBJ.title = "\"Bronze book of spirit\""
-    $ Bronze_Book_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading." 
-    $ Bronze_Book_OBJ.chapters = 4
-    $ Bronze_Book_OBJ.unlocked = True
-    $ Bronze_Book_OBJ.description = "This book contains various tips on speed reading. "  + str(Bronze_Book_OBJ.chapters) + " chapters."
-    $ Bronze_Book_OBJ.cost = 60
-    $ Bronze_Book_OBJ.imagepath = "images/store/books/1-8.png"
-    
-    if not hasattr(renpy.store,'Silver_Book_OBJ'): #important!
-        $ Silver_Book_OBJ = educational_book()
-    $ Silver_Book_OBJ.id = "Silver_Book"
-    $ Silver_Book_OBJ.title = "\"Silver book of spirit\""
-    $ Silver_Book_OBJ.chapters = 6
-    $ Silver_Book_OBJ.unlocked = True
-    $ Silver_Book_OBJ.description = "This book contains various tips on speed reading. " + str(Silver_Book_OBJ.chapters) + " chapters."
-    $ Silver_Book_OBJ.effect = ">New skill unlocked: always complete an additional chapter when reading."
-    $ Silver_Book_OBJ.cost = 80
-    $ Silver_Book_OBJ.imagepath = "images/store/books/1-8.png"
-    
-    if not hasattr(renpy.store,'Golden_Book_OBJ'): #important!
-        $ Golden_Book_OBJ = educational_book()
-    $ Golden_Book_OBJ.id = "Golden_Book"
-    $ Golden_Book_OBJ.title = "\"Golden book of spirit\""
-    $ Golden_Book_OBJ.chapters = 8
-    $ Golden_Book_OBJ.unlocked = True
-    $ Golden_Book_OBJ.description = "This book contains various tips on speed reading. " + str(Golden_Book_OBJ.chapters) + " chapters."
-    $ Golden_Book_OBJ.effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading."
-    $ Golden_Book_OBJ.cost = 160
-    $ Golden_Book_OBJ.imagepath = "images/store/books/1-8.png"
-        
-    if not hasattr(renpy.store,'Speedwriting_Beginners_OBJ'): #important!
-        $ Speedwriting_Beginners_OBJ = educational_book()
-    $ Speedwriting_Beginners_OBJ.id = "Speedwriting_Beginners"
-    $ Speedwriting_Beginners_OBJ.title = "\"Speedwriting for beginners\""
-    $ Speedwriting_Beginners_OBJ.chapters = 2
-    $ Speedwriting_Beginners_OBJ.unlocked = True
-    $ Speedwriting_Beginners_OBJ.description = "This book contains a bunch of very basic techniques used to improve one's ability to write quickly. " + str(Speedwriting_Beginners_OBJ.chapters) + " chapters."
-    $ Speedwriting_Beginners_OBJ.effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
-    $ Speedwriting_Beginners_OBJ.cost = 90
-    $ Speedwriting_Beginners_OBJ.imagepath = "images/store/books/1-8.png"
-    
-    if not hasattr(renpy.store,'Speedwriting_Amateurs_OBJ'): #important!
-        $ Speedwriting_Amateurs_OBJ = educational_book()
-    $ Speedwriting_Amateurs_OBJ.id = "Speedwriting_Amateurs"
-    $ Speedwriting_Amateurs_OBJ.title = "\"Speedwriting for amateurs\""
-    $ Speedwriting_Amateurs_OBJ.chapters = 4
-    $ Speedwriting_Amateurs_OBJ.unlocked = True
-    $ Speedwriting_Amateurs_OBJ.description = "This book contains intermediate techniques used to improve one's ability to write quickly. " + str(Speedwriting_Amateurs_OBJ.chapters) + " chapters."
-    $ Speedwriting_Amateurs_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
-    $ Speedwriting_Amateurs_OBJ.cost = 110
-    $ Speedwriting_Amateurs_OBJ.imagepath = "images/store/books/1-8.png"
-    
-    if not hasattr(renpy.store,'Speedwriting_Advanced_OBJ'): #important!
-        $ Speedwriting_Advanced_OBJ = educational_book()
-    $ Speedwriting_Advanced_OBJ.id = "Speedwriting_Advanced"
-    $ Speedwriting_Advanced_OBJ.title = "\"Speedwriting for advanced writers\""
-    $ Speedwriting_Advanced_OBJ.chapters = 6
-    $ Speedwriting_Advanced_OBJ.unlocked = True
-    $ Speedwriting_Advanced_OBJ.description = "This book contains advanced techniques used to improve one's ability to write quickly. " + str(Speedwriting_Advanced_OBJ.chapters) + " chapters."
-    $ Speedwriting_Advanced_OBJ.effect = ">New skill unlocked: always complete an additional chapter when doing paperwork."
-    $ Speedwriting_Advanced_OBJ.cost = 130
-    $ Speedwriting_Advanced_OBJ.imagepath = "images/store/books/1-8.png"
-    
-    if not hasattr(renpy.store,'Speedwriting_Experts_OBJ'): #important!
-        $ Speedwriting_Experts_OBJ = educational_book()
-    $ Speedwriting_Experts_OBJ.id = "Speedwriting_Experts"
-    $ Speedwriting_Experts_OBJ.title = "\"Speedwriting for experts\""
-    $ Speedwriting_Experts_OBJ.chapters = 8
-    $ Speedwriting_Experts_OBJ.unlocked = True
-    $ Speedwriting_Experts_OBJ.description = "This book contains expert techniques used to improve one's ability to read quickly. " + str(Speedwriting_Experts_OBJ.chapters) + " chapters."
-    $ Speedwriting_Experts_OBJ.effect = ">You have become a true master of speedwriting and from now on you shall always complete two additional chapters when doing paperwork."
-    $ Speedwriting_Experts_OBJ.cost = 150
-    $ Speedwriting_Experts_OBJ.imagepath = "images/store/books/1-8.png"
-        
-    
-    if not hasattr(renpy.store,'Galadriel_I_OBJ'): #important!
-        $ Galadriel_I_OBJ = fiction_book()
-    $ Galadriel_I_OBJ.id = "Galadriel_I"
-    $ Galadriel_I_OBJ.title = "\"The Tale of Galadriel. Book I.\""
-    $ Galadriel_I_OBJ.description = "This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? " + str(Galadriel_I_OBJ.chapters / 2) + " chapters."
-    $ Galadriel_I_OBJ.effect = ">Your imagination has improved."
-    $ Galadriel_I_OBJ.chapters = 20
-    $ Galadriel_I_OBJ.unlocked = True
-    $ Galadriel_I_OBJ.cost = 100
-    $ Galadriel_I_OBJ.imagepath = "images/store/books/9.png"
-    
-    if not hasattr(renpy.store,'Galadriel_II_OBJ'): #important!
-        $ Galadriel_II_OBJ = fiction_book()
-    $ Galadriel_II_OBJ.id = "Galadriel_II"
-    $ Galadriel_II_OBJ.title = "\"The Tale of Galadriel. Book II.\""
-    $ Galadriel_II_OBJ.description = "This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? "  + str(Galadriel_II_OBJ.chapters / 2) + " chapters."
-    $ Galadriel_II_OBJ.effect = ">Your imagination has improved."
-    $ Galadriel_II_OBJ.chapters = 20
-    $ Galadriel_II_OBJ.unlocked = True
-    $ Galadriel_II_OBJ.cost = 200
-    $ Galadriel_II_OBJ.imagepath = "images/store/books/10.png"
-    
-    if not hasattr(renpy.store,'Armchairs_OBJ'): #important!
-        $ Armchairs_OBJ = fiction_book()
-    $ Armchairs_OBJ.id = "Armchairs"
-    $ Armchairs_OBJ.title = "\"The game of Armchairs\""
-    $ Armchairs_OBJ.description = "An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. " + str(Armchairs_OBJ.chapters / 2) + " chapters."
-    $ Armchairs_OBJ.effect = ">Your imagination has improved."
-    $ Armchairs_OBJ.chapters = 20
-    $ Armchairs_OBJ.unlocked = True
-    $ Armchairs_OBJ.cost = 250
-    $ Armchairs_OBJ.imagepath = "images/store/books/11.png"
-    
-    if not hasattr(renpy.store,'Dear_Wifu_OBJ'): #important!
-        $ Dear_Wifu_OBJ = fiction_book()
-    $ Dear_Wifu_OBJ.id = "Dear_Wifu"
-    $ Dear_Wifu_OBJ.title = "\"My dear waifu\""
-    $ Dear_Wifu_OBJ.description = "{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? " + str(Dear_Wifu_OBJ.chapters) + " chapters."
-    $ Dear_Wifu_OBJ.effect = ">Your imagination has improved."
-    $ Dear_Wifu_OBJ.chapters = 20
-    $ Dear_Wifu_OBJ.unlocked = True
-    $ Dear_Wifu_OBJ.cost = 300
-    $ Dear_Wifu_OBJ.imagepath = "images/store/books/12.png"
-    
-    
-    $ Galadriel_I_OBJ.chapter_description = [
+
+
+    ### Book Items ###
+
+    if not hasattr(renpy.store,'Speedreading_1_ITEM'):
+        $ Speedreading_1_ITEM = book_class(id="Speedreading_1", name="\"Copper book of spirit\"",             cost=40,  type="book", image="book_general",     chapters=2,  description=">This book contains various tips on speed reading. 2 chapters.", effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading.")
+        $ Speedreading_2_ITEM = book_class(id="Speedreading_2", name="\"Bronze book of spirit\"",             cost=60,  type="book", image="book_general",     chapters=4,  description=">This book contains various tips on speed reading. 4 chapters.", effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading.")
+        $ Speedreading_3_ITEM = book_class(id="Speedreading_3", name="\"Silver book of spirit\"",             cost=80,  type="book", image="book_general",     chapters=6,  description=">This book contains various tips on speed reading. 6 chapters.", effect = ">New skill unlocked: always complete an additional chapter when reading.")
+        $ Speedreading_4_ITEM = book_class(id="Speedreading_4", name="\"Golden book of spirit\"",             cost=160, type="book", image="book_general",     chapters=8,  description=">This book contains various tips on speed reading. 8 chapters.", effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading.")
+
+        $ Speedwriting_1_ITEM = book_class(id="Speedwriting_1", name="\"Speedwriting for beginners\"",        cost=90,  type="book", image="book_general",     chapters=2,  description=">This book contains a bunch of very basic techniques used to improve one's ability to write quickly. 2 chapters.", effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork.")
+        $ Speedwriting_2_ITEM = book_class(id="Speedwriting_2", name="\"Speedwriting for amateurs\"",         cost=110, type="book", image="book_general",     chapters=4,  description=">This book contains intermediate techniques used to improve one's ability to write quickly. 4 chapters.", effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork.")
+        $ Speedwriting_3_ITEM = book_class(id="Speedwriting_3", name="\"Speedwriting for advanced writers\"", cost=130, type="book", image="book_general",     chapters=6,  description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.", effect = ">New skill unlocked: always complete an additional chapter when doing paperwork.")
+        $ Speedwriting_4_ITEM = book_class(id="Speedwriting_4", name="\"Speedwriting for experts\"",          cost=150, type="book", image="book_general",     chapters=8,  description=">This book contains expert techniques used to improve one's ability to read quickly. 8 chapters.", effect = ">You have become a true master of Speedwriting and from now on you shall always complete two additional chapters when doing paperwork.")
+
+        $ Galadriel_I_ITEM    = fiction_book(id="Galadriel_I",    name="\"The Tale of Galadriel. Book I.\"",    cost=100, type="book", image="book_galadriel_1", chapters=20, description=">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.", effect = ">Your imagination has improved.")
+        $ Galadriel_II_ITEM   = fiction_book(id="Galadriel_II",   name="\"The Tale of Galadriel. Book II.\"",   cost=200, type="book", image="book_galadriel_2", chapters=20, description=">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.", effect = ">Your imagination has improved.")
+        $ Armchairs_ITEM      = fiction_book(id="Armchairs",      name="\"A game of Armchairs\"",               cost=300, type="book", image="book_chairs",      chapters=20, description=">An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. 20 chapters.", effect = ">Your imagination has improved.")
+        $ Dear_Wifu_ITEM      = fiction_book(id="Dear_Wifu",      name="\"My dear waifu\"",                     cost=300, type="book", image="book_waifu",       chapters=20, description=">Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? 20 chapters.", effect = ">Your imagination has improved.")
+
+
+
+
+
+    $ Galadriel_I_ITEM.chapter_description = [
         "Galadriel - a gentle and gracious elven princess is introduced into the story.",
         "Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story.",
         "King Methis makes an announcement. His daughter, princess Galadriel is to be wed to chancellor Mofothelis.",
@@ -156,7 +46,7 @@ label __init_variables:
         "Suddenly and abruptly everything changes. Galadriel finds out that she is pregnant. -End of book one-"
     ]
 
-    $ Galadriel_II_OBJ.chapter_description = [
+    $ Galadriel_II_ITEM.chapter_description = [
         "Galadriel has been pregnant for several months now. To the princess' own surprise her popularity grows seemingly in direct correlation to the size of her belly.",
         "Although Galadriel maintains the appearance of an obedient whore, in truth she contemplates her escape from the brothel.",
         "The Elven Princess-Whore knows nothing of the life outside the of walls of the brothel. But it does not affect her determination to escape.",
@@ -175,12 +65,12 @@ label __init_variables:
         # Only now he realizes that the pregnant whore he fucked for hours is his daughter.
         "The man embraces his speechless child. Galadriel's eyes have a vacant look in them as her father's semen drips down her face...",
         "Galadriel screams in terror. To her surprise she finds herself back in the royal residence and in her own bed.",
-        "It takes the elven princess several minutes to realize that she was never pregnant. The entire adventure was nothing but a dream.",
+        "It takes the elven princess several minutes to realise that she was never pregnant. The entire adventure was nothing but a dream.",
         "Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis.",
         "{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}"
     ]
 
-    $ Armchairs_OBJ.chapter_description = [
+    $ Armchairs_ITEM.chapter_description = [
         "A family of noble northmen is introduced into the story.",
         "The royal family and the king are introduced into the story.",
         "Another family is introduced into the story.",
@@ -204,72 +94,81 @@ label __init_variables:
     ]
 
 
-    $ Books_OBJ = silver_book_lib()
-    $ Books_OBJ.read_books = [
-        Copper_Book_OBJ,
-        Bronze_Book_OBJ,
-        Silver_Book_OBJ,
-        Golden_Book_OBJ
+    $ book_list = silver_book_lib()
+    $ book_list.read_books = [
+        Speedreading_1_ITEM,
+        Speedreading_2_ITEM,
+        Speedreading_3_ITEM,
+        Speedreading_4_ITEM
     ]
-    $ Books_OBJ.write_books = [
-        Speedwriting_Beginners_OBJ,
-        Speedwriting_Amateurs_OBJ,
-        Speedwriting_Advanced_OBJ,
-        Speedwriting_Experts_OBJ
+    $ book_list.write_books = [
+        Speedwriting_1_ITEM,
+        Speedwriting_2_ITEM,
+        Speedwriting_3_ITEM,
+        Speedwriting_4_ITEM
     ]
-    $ Books_OBJ.fiction_books = [
-        Galadriel_I_OBJ,
-        Galadriel_II_OBJ,
-        Armchairs_OBJ,
-        Dear_Wifu_OBJ
+    $ book_list.fiction_books = [
+        Galadriel_I_ITEM,
+        Galadriel_II_ITEM,
+        Armchairs_ITEM,
+        Dear_Wifu_ITEM
     ]
-    
-    if not hasattr(renpy.store,'cheat_reading'): #important!
-        $ cheat_reading = False
+
+
     if not hasattr(renpy.store,'books'): #important!
         $ books = []
-
-    ### GENIE STATS ###============================
-    if not hasattr(renpy.store,'imagination'): #important!
-        $ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of her_whoring.
-    if not hasattr(renpy.store,'concentration'): #important!
-        $ concentration = 0 #+1 for every completed book on concentration. Pops up during paperwork.
-    if not hasattr(renpy.store,'speedwriting'): #important!
-        $ speedwriting = 0 #+1 for every completed book on speedwriting. Pops up during paperwork.
-    if not hasattr(renpy.store,'s_reading_lvl'): #important!
-        $ s_reading_lvl = 0
 
     return
 
 
-label books_list:
-    menu:
-        "-Educational books-":
-            label books_on_improvement:
-            $ books_menu_list = Books_OBJ.get_edu()
-        "-Fiction books-":
-            label fiction_books_menu:
-            $ books_menu_list = Books_OBJ.get_fic()
-        "-Never mind-":
-            jump desk
+
+label read_book_menu:
+    hide screen desk_menu
+
     python:
-        books_menu = []
-        for book in books_menu_list:
-            if book.purchased:
-                if book.done:
-                    books_menu.append((book.getMenuTextDone(),book))
-                else:
-                    books_menu.append((book.getMenuText(),book))
-        books_menu.append(("-Never mind-", "nvm"))
-        BookOBJ = renpy.display_menu(books_menu)
-    if BookOBJ == "nvm":
-        jump books_list
-    else:
-        jump handle_book_selection
+        item_list = []
+        if toggle1_bool:
+            item_list.extend(book_list.fiction_books)
+        if toggle2_bool:
+            item_list.extend(book_list.write_books)
+        if toggle4_bool:
+            item_list.extend(book_list.read_books)
+
+        item_list = list(filter(lambda x: (x.unlocked == True and x.done==False), item_list))
+
+    show screen list_menu(item_list, "Read Books", toggle1="Fiction Books", toggle2="Educat. Books", toggle4="Effic. Books")
+    with d1
+
+    $ _return = ui.interact()
+
+    hide screen list_menu
+
+    if isinstance(_return, item_class):
+        call handle_book_selection(_return)
+
+    elif _return == "Close":
+        $ current_page = 0
+        jump day_main_menu
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+    elif _return == "toggle3":
+        $ toggle3_bool = not toggle3_bool
+    elif _return == "toggle4":
+        $ toggle4_bool = not toggle4_bool
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump read_book_menu
 
 
-label handle_book_selection:
-    $ the_gift = BookOBJ.imagepath
+label handle_book_selection(BookOBJ):
+    $ the_gift = BookOBJ.get_image()
     show screen gift
     with d3
     "[BookOBJ.description]"
@@ -279,39 +178,30 @@ label handle_book_selection:
         else:
             ">You already finished this one."
         hide screen gift
+        jump read_book_menu
     else:
-        menu:
-            "-Read the book-":
-                hide screen gift
-                jump check_book_order
-            "-Never mind-":
-                hide screen gift
-    if BookOBJ in Books_OBJ.get_edu():
-        jump books_on_improvement
-    if BookOBJ in Books_OBJ.get_fic():
-        jump fiction_books_menu
-    else:
-        jump books_list
+        hide screen gift
+        jump check_book_order
 
 
 label check_book_order:
-    if BookOBJ in Books_OBJ.read_books:
-        if (BookOBJ.id == "Copper_Book") or (BookOBJ.id == "Bronze_Book" and Books_OBJ.isDone("Copper_Book")) or (BookOBJ.id == "Silver_Book" and Books_OBJ.isDone("Bronze_Book")) or (BookOBJ.id == "Golden_Book" and Books_OBJ.isDone("Silver_Book")):
+    if BookOBJ in book_list.read_books:
+        if (BookOBJ.id == "Speedreading_1") or (BookOBJ.id == "Speedreading_2" and book_list.isDone("Speedreading_1")) or (BookOBJ.id == "Speedreading_3" and book_list.isDone("Speedreading_2")) or (BookOBJ.id == "Speedreading_4" and book_list.isDone("Speedreading_3")):
             jump reading_book
 
-    if BookOBJ in Books_OBJ.write_books:
-       if (BookOBJ.id == "Speedwriting_Beginners") or (BookOBJ.id == "Speedwriting_Amateurs" and Books_OBJ.isDone("Speedwriting_Beginners")) or (BookOBJ.id == "Speedwriting_Advanced" and Books_OBJ.isDone("Speedwriting_Amateurs")) or (BookOBJ.id == "Speedwriting_Experts" and Books_OBJ.isDone("Speedwriting_Advanced")):
+    if BookOBJ in book_list.write_books:
+       if (BookOBJ.id == "Speedwriting_1") or (BookOBJ.id == "Speedwriting_2" and book_list.isDone("Speedwriting_1")) or (BookOBJ.id == "Speedwriting_3" and book_list.isDone("Speedwriting_2")) or (BookOBJ.id == "Speedwriting_4" and book_list.isDone("Speedwriting_3")):
             jump reading_book
 
-    if BookOBJ in Books_OBJ.fiction_books:
-        if (BookOBJ.id == "Galadriel_II" and Books_OBJ.isDone("Galadriel_I")):
+    if BookOBJ in book_list.fiction_books:
+        if (BookOBJ.id == "Galadriel_II" and book_list.isDone("Galadriel_I")):
             jump reading_book
         elif BookOBJ.id != "Galadriel_II":
             jump reading_book
 
     m "Reading books out of order won't do me any good."
 
-    jump books_list
+    jump read_book_menu
 
 
 label reading_book:
@@ -329,22 +219,22 @@ label reading_book:
         hide screen chair_right
         hide screen genie
         show screen reading_near_fire
-        with Dissolve(0.3)
+        with d3
     else:                   #Shows Genie reading a book near the window.
         hide screen chair_right
         hide screen genie
         show screen reading
-        with Dissolve(0.3)
+        with d3
 
     if raining:
-        ">You read a book called [BookOBJ.title], while listening to the sound of raindrops bombarding the roof of your tower."
+        ">You read a book called [BookOBJ.name], while listening to the sound of raindrops bombarding the roof of your tower."
     else:
-        ">You read a book called [BookOBJ.title]..."
+        ">You read a book called [BookOBJ.name]..."
 
     if cheat_reading:
-        if BookOBJ in Books_OBJ.get_edu():
+        if BookOBJ in book_list.get_edu():
             $ BookOBJ.progress = BookOBJ.chapters
-        elif BookOBJ in Books_OBJ.get_fic():
+        elif BookOBJ in book_list.get_fic():
             label cheat_reading_loop:
                 call read_chapter
                 if BookOBJ.progress < BookOBJ.chapters:
@@ -359,13 +249,13 @@ label reading_book:
         call book_speed_check
         $ speed_check = _return
         if speed_check >= 1:
-            if s_reading_lvl == 1:
+            if speed_reading == 1:
                 ">Implementing some tricks you picked up in the \"Speed reading for dummies\" book allows you to save time and keep on reading."
-            if s_reading_lvl == 2:
+            if speed_reading == 2:
                 ">Implementing speed reading techniques allows you to save time and keep on reading."
-            if s_reading_lvl == 3:
+            if speed_reading == 3:
                 ">Implementing speed reading techniques allows you to save time and keep on reading."
-            if s_reading_lvl > 3:
+            if speed_reading > 3:
                 ">Implementing advanced speed reading techniques lets you blaze through the book."
             call read_book
 
@@ -381,7 +271,7 @@ label reading_book:
         if raining:
             if not fire_in_fireplace:
                 ">The rain outside of the tower calms your mood and you feel like keeping on reading..."
-                ">You try to keep on reading but after a while you realize that the air in your chambers is too damp for your liking."
+                ">You try to keep on reading but after a while you realise that the air in your chambers is too damp for your liking."
             else:
                 ">The rain outside of your tower calms your mood and you feel like keeping on reading..."
                 call read_book
@@ -405,15 +295,15 @@ label reading_book:
 
 
 label book_speed_check:
-    if s_reading_lvl == 1: #33% chance
+    if speed_reading == 1: #33% chance
         if renpy.random.randint(1, 3) == 1: #Success.
             return 1
-    if s_reading_lvl == 2: #66% chance
+    if speed_reading == 2: #66% chance
         if renpy.random.randint(1, 3) > 1: #Success.
             return 1
-    if s_reading_lvl == 3: #100% chance
+    if speed_reading == 3: #100% chance
         return 1
-    if s_reading_lvl > 3: #Double 100% chance
+    if speed_reading > 3: #Double 100% chance
         return 2
     return 0
 
@@ -426,9 +316,9 @@ label read_book:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    if BookOBJ in Books_OBJ.get_edu():
+    if BookOBJ in book_list.get_edu():
         $ renpy.say(None,">You've completed \"chapter [BookOBJ.progress]\" of the book.")
-    if BookOBJ in Books_OBJ.get_fic():
+    if BookOBJ in book_list.get_fic():
         $ renpy.say(None,">You've completed \"chapter "+str(BookOBJ.progress/2)+"\" of the book.")
     if BookOBJ.progress >= BookOBJ.chapters:
         return "DONE" #this is here to indicate completeing a book without escapeing the call otherwise renpy would treat a jump or call as a recursive action
@@ -437,7 +327,7 @@ label read_book:
 
 label read_chapter:
     $ BookOBJ.progress += 1
-    if BookOBJ in Books_OBJ.get_fic():
+    if BookOBJ in book_list.get_fic():
         if BookOBJ.id == "Dear_Wifu":
             call waifu
         else:
@@ -459,26 +349,29 @@ label book_complete:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     show screen notes
     ">That was the last chapter, You finished the entire book."
+
     if BookOBJ.id == "Dear_Wifu":
         jump waifu_completed
-    if BookOBJ.id == "Armchairs":
+    elif BookOBJ.id == "Armchairs":
         g4 "What a pile of garbage! I hate the guy who wrote this crap!"
         m "Although all those rapes gave me a few ideas..."
+        $ bdsm_imagination += 1
+    else:
+        $ imagination += 1
+
+    if BookOBJ in book_list.read_books:
+        $ speed_reading += 1
+    if BookOBJ in book_list.write_books:
+        $ speed_writing += 1
+
+    $ BookOBJ.done = True
 
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
     "[BookOBJ.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
+    hide screen notes
 
-    if BookOBJ in Books_OBJ.fiction_books:
-        $ imagination += 1
-    if BookOBJ in Books_OBJ.read_books:
-        $ s_reading_lvl += 1
-    if BookOBJ in Books_OBJ.write_books:
-        $ speedwriting += 1
-        $ concentration += 1
-
-    $ BookOBJ.done = True
 
     if fire_in_fireplace:
         hide screen reading_near_fire
@@ -491,84 +384,72 @@ label book_complete:
         jump day_start
 
 
-init python:
-    class silver_book_lib(object):
-        read_books = []
-        write_books = []
-        fiction_books = []
+#Scrolls
 
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
+label read_scroll_menu:
+    hide screen desk_menu
 
-        def get_all(self):
-            all_books = []
-            all_books.extend(self.read_books)
-            all_books.extend(self.write_books)
-            all_books.extend(self.fiction_books)
-            return all_books
-        def get_edu(self):
-            edu_books = []
-            edu_books.extend(self.read_books)
-            edu_books.extend(self.write_books)
-            return edu_books
-        def get_fic(self):
-            return self.fiction_books
+    python:
+        item_list = []
+        if toggle1_bool:
+            item_list.extend(scroll_list_A)
+        if toggle2_bool:
+            item_list.extend(scroll_list_B)
+        if toggle3_bool:
+            item_list.extend(scroll_list_C) #Silver Scrolls.
+
+        item_list = list(filter(lambda x: x.unlocked == True , item_list))
+
+    show screen list_menu(item_list, "Scrolls", toggle1="Volume I", toggle2="Volume II", toggle3="Silver", toggle4="Comments")
+    with d1
+
+    $ _return = ui.interact()
+
+    hide screen list_menu
+
+    if isinstance(_return, item_class):
+        call read_scroll(_return)
+
+    elif _return == "Close":
+        $ current_page = 0
+        jump day_main_menu
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+    elif _return == "toggle3":
+        $ toggle3_bool = not toggle3_bool
+    elif _return == "toggle4":
+        $ toggle4_bool = not toggle4_bool
+        if toggle4_bool == True:
+            $ commentaries = True
+        else:
+            $ commentaries = False
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump read_scroll_menu
 
 
-        def purchase(self, id=""):
-            for book in self.get_all():
-                if book.id == id:
-                    book.purchased = True
+label read_scroll(scroll):
+    $ the_gift = "images/misc/extras/"+str(scroll.scroll_image)+".png"
+    show screen gift
+    with d3
 
-        def get_purchased(self):
-            purchased_books = []
-            for book in self.get_all():
-                if book.purchased:
-                    purchased_books.append(book)
-            return purchased_books
+    if commentaries:
+        python:
+            for comment in scroll.comments:
+                if scroll in scroll_list_C:
+                    renpy.say(sil,comment)
+                else:
+                    renpy.say(a1,comment)
+    call ctc
 
-        def isDone(self, id=""):
-            for book in self.get_all():
-                if book.id == id:
-                    return book.done
-            return None
+    hide screen gift
+    with d3
 
-    class silver_book(generic_menu_item):
-        id = ""
-        cost = 0
-        chapters = 0
-        progress = 0
-        done = False
-        purchased = False
-        title = ""
-        unlocked = True
-        effect = ""
-        description = ""
-        imagepath = ""
-        
-        def __repr__(self):
-            return self.id
-        def getMenuText(self):
-            return "-"+str(self.title)+"-"
-        def getMenuTextDone(self):
-            return "-"+str(self.title)+"-{image=check_08}"
-
-        def get_description(self):
-            out_des = ""
-            if len(self.description) > 90:
-                out_des = self.description[0:90] + "..."
-            else:
-                out_des = self.description
-            return out_des
-            
-        def get_buttom_right(self):
-            return "Cost: " + str(self.cost)
-
-    class educational_book(silver_book):
-        pass
-
-    class fiction_book(silver_book):
-        chapter_description = []
-        def getChapterDesc(self):
-           return self.chapter_description[self.progress-1] #"Chapter "+str(self.progress)+": "+
-           
+    jump read_scroll_menu

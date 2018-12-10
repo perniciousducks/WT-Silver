@@ -14,12 +14,12 @@ label hg_pf_SuckIt: #15+
     else:
         m "{size=-4}(Should I ask the girl to give me another blowjob?){/size}"
 
-    if hg_pf_TouchMe_OBJ.points < 1:
+    if hg_pf_SuckIt_OBJ.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call set_u_ani("blowjob_ani","hand_ani",0,10)
     $ mouth_full_of_cum = False
@@ -48,11 +48,11 @@ label hg_pf_SuckIt: #15+
         call her_main("Although, now when I say it out loud like this...","angry","down_raised")
         m "Too late! You already said \"yes\"!"
         call her_main("I know...","grin","worriedCl",emote="05")
-
         call her_walk_desk_blkfade
 
         call hg_blowjob_1 #First Blowjob.
 
+        $ hg_pf_SuckIt_OBJ.level = 1
         jump end_hg_blowjob
 
 
@@ -93,24 +93,26 @@ label hg_pf_SuckIt: #15+
         g4 "You nasty little girl! You must be punished!"
         g9 "I'll punish you with my cock!"
         call her_main("...............................","angry","worriedCl",emote="05")
-
         call blkfade #Needs to be active first!
 
         call hg_blowjob_1 #Same as first. Change to second.
 
+        $ hg_pf_SuckIt_OBJ.level = 2
         jump end_hg_blowjob
 
 
     #Third Event.
-    elif hg_pf_SuckIt_OBJ.points >= 2 and her_whoring < 21 or (hg_hidden_blowjob_character_list != hg_hidden_blowjob_seen_list):
+    elif hg_pf_SuckIt_OBJ.points >= 2 and her_whoring < 21:
         call play_music("playful_tension") # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course...","base","base",xpos="mid",ypos="base")
-
         call her_walk_desk_blkfade
 
-        call hg_blowjob_3 #Hidden Blowjob with Snape, Luna;
+        call update_hidden_bj_list
 
+        call hg_hidden_blowjob #Hidden Blowjob with Snape, Luna;
+
+        $ hg_pf_SuckIt_OBJ.level = 3
         jump end_hg_blowjob
 
 
@@ -119,753 +121,23 @@ label hg_pf_SuckIt: #15+
         call play_music("playful_tension") # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course [genie_name]...","base","ahegao_raised",xpos="mid",ypos="base")
-
         call her_walk_desk_blkfade
 
-        call hg_blowjob_4 #Daddy Roleplay, Worship Cock;
+        call update_hidden_bj_list
+
+        $ random_number = renpy.random.randint(1, 5)
+        if hg_hidden_bj_list != hg_hidden_bj_seen_list:
+            call hg_hidden_blowjob
+
+        elif random_number in [1,2]:
+            call hg_hidden_blowjob
+
+        else:
+            call hg_blowjob_4 #Daddy Roleplay, Worship Cock;
+            $ hg_pf_SuckIt_OBJ.level = 4
 
         jump end_hg_blowjob
 
-
-
-### Third Blowjob ###
-
-label hg_blowjob_3: #Call label. Returns.
-        call play_music("playful_tension") #HERMIONE
-        hide screen genie
-        call her_chibi("hide")
-        show screen chair_left
-        call u_play_ani
-        hide screen bld1
-        hide screen blkfade
-        with fade
-        call ctc
-
-        call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="head")
-        m "Yes, good girl..."
-        her "*Slurp!* *Gobble!* *Slurp!*"
-
-        call play_sound("knocking") #Sound someone knocking on the door.
-        call nar("> *Knock-knock-knock!*")
-        her "{size=+7}!!!{/size}"
-        m "Hm?"
-
-        if daytime:
-            m "Who could that be?"
-        else:
-            m "Who could that be at this hour?"
-
-        call u_pause_ani
-
-        #Setting up characters.
-        $ character_choice = ""
-        $ hg_hidden_blowjob_character_list = ["snape"]
-
-        if luna_unlocked:
-            $ hg_hidden_blowjob_character_list.append("luna")
-        #if astoria_unlocked:
-        #    $ hg_hidden_blowjob_character_list.append("astoria")
-        #if susan_unlocked:
-        #    $ hg_hidden_blowjob_character_list.append("susan")
-        #if cho_unlocked:
-        #    $ hg_hidden_blowjob_character_list.append("cho")
-        if tonks_unlocked:
-            $ hg_hidden_blowjob_character_list.append("tonks")
-
-        #Priority.
-        if "snape" in hg_hidden_blowjob_character_list and "snape" not in hg_hidden_blowjob_seen_list:
-            $ hg_hidden_blowjob_seen_list.append("snape")
-            $ character_choice = "snape"
-        elif "luna" in hg_hidden_blowjob_character_list and "luna" not in hg_hidden_blowjob_seen_list:
-            $ hg_hidden_blowjob_seen_list.append("luna")
-            $ character_choice = "luna"
-        #elif "astoria" in hg_hidden_blowjob_character_list and "astoria" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("astoria")
-        #    $ character_choice = "astoria"
-        #elif "susan" in hg_hidden_blowjob_character_list and "susan" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("susan")
-        #    $ character_choice = "susan"
-        #elif "cho" in hg_hidden_blowjob_character_list and "cho" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("cho")
-        #    $ character_choice = "cho"
-        #elif "tonks" in hg_hidden_blowjob_character_list and "tonks" not in hg_hidden_blowjob_seen_list:
-        #    $ hg_hidden_blowjob_seen_list.append("tonks")
-        #    $ character_choice = "tonks"
-
-        #Random Pick.
-        else:
-            $ character_choice = renpy.random.choice(hg_hidden_blowjob_character_list)
-
-        #Calls Scene.
-        if character_choice == "snape":
-            call hg_hidden_blowjob_snape
-
-
-        if character_choice == "luna":
-            call hg_hidden_blowjob_luna
-
-        #Genie Cums.
-        call hg_hidden_blowjob_cumming
-
-        return
-
-
-
-label hg_hidden_blowjob_snape: #Call label. Returns.
-    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
-    m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
-    sna "Albus? Are you there? I need to talk to you."
-    call her_main("(It's professor Snape!)","angry","base")
-    call her_main("([genie_name], please, send him away, I beg you!)")
-
-    menu:
-        m "..."
-        "\"Please, come on in, Severus.\"":
-            $ mad = 30
-            stop music fadeout 1.0
-            call her_main("([genie_name], no!)","angry","angry",emote="01",ypos="head")
-
-            call nar(">Hermione gives your balls a firm twist full of frustration.")
-            g4 "Ouch!"
-
-            call play_sound("door")
-            call sna_chibi("stand","door","base")
-            hide screen bld1
-            with d3
-            pause.8
-            call sna_walk("door","mid",4)
-            pause.2
-
-            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
-
-            call sna_head("Good, you are here.","snape_01",xpos="base",ypos="base")
-            call u_play_ani
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call sna_head("Listen, there is something I want to discuss...","snape_06")
-            call sna_head("Hm...?","snape_05")
-            call sna_head("Genie? Are you alright?")
-            her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
-            her "{size=-4}(No, please! I will die of shame!){/size}"
-            m "Yes, Severus, I am fine..."
-            her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
-            call sna_head("What are you... looking at?","snape_05")
-            m "Ehm... Just admiring...{w} the cupboard."
-            m "Please, continue..."
-            call sna_head("...............","snape_05")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Did you want to discuss something?"
-            call sna_head("Yes. That Hermione girl.","snape_06")
-            her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
-            m "Oh... What about her?"
-            call sna_head("You promised that you would take care of the little witch.","snape_04")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call sna_head("But she is still being a major pain in my arse!","snape_04")
-            call sna_head("Her tactics have changed...")
-            call sna_head("But the amount of grief she manages to bring me is the same...","snape_03")
-            m "I see... ah..."
-            call sna_head("I swear, that girl is driving me crazy!","snape_10")
-            g4 "Yeah, she is driving me crazy as well... ah..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call sna_head("Will you take care of this then?","snape_04")
-            m "Yes. She'll get what she deserves."
-            call sna_head("Good. That is all I wanted to hear.","snape_06")
-
-            if daytime:
-                m "Well, have a good day, Severus."
-                call sna_head("Yes, thank you.","snape_06")
-            else:
-                m "Good night, Severus."
-                call sna_head("Right...","snape_06")
-
-            call sna_chibi("stand","mid","base",flip=True)
-            hide screen bld1
-            with d3
-            pause.2
-            call sna_walk("mid","leave",3)
-            stop music fadeout 1.0
-            call ctc
-            call blkfade
-
-            call play_music("playful_tension") # SEX THEME.
-            ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
-            ">Seeing her being so confused and vulnerable and yet continuing to perform her task diligently pushes you over the edge."
-            g4 "(Here it comes!)"
-
-            return
-
-        "\"I am busy right now, Severus.\"":
-            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
-            sna "Busy? With what?"
-            sna "All you do is sit on you arse all day."
-            sna "I really need to talk to you about something."
-            m "I said I am busy, Severus."
-            m "Understood? I am \"busy\"!"
-            sna "Oh... You mean \"Busy\" busy? Gotcha!"
-            sna "Well, I'll talk to you later then."
-
-            return
-
-
-
-label hg_hidden_blowjob_luna: #Call label. Returns.
-    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
-    m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
-    lun "[l_genie_name]? Are you there? I need to talk to you."
-    call her_main("(It's Luna!)","angry","base")
-    call her_main("Please, [genie_name], send her away, I beg you!")
-
-    menu:
-        m "..."
-        "\"Please, come on in, [luna_name].\"":
-            $ mad += 10
-            stop music fadeout 1.0
-            call her_main("[genie_name], no! Why would you let-","angry","angry",emote="01",ypos="head")
-            m "Quiet, [hermione_name]! Unless you want to be noticed..."
-
-            #Luna comes in
-            call play_sound("door") #Sound of a door opening.
-
-            call lun_walk("door","mid",3)
-
-            call lun_main("Hello [l_genie_name].","base","base","base","mid")
-            $ g_c_u_pic = "blowjob_ani" # sucking
-            call u_play_ani
-
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call lun_main("Um, are you going to turn around, sir?","open","base","base","R")
-            m "I'm afraid I'm a bit preoccupied at the moment."
-            call lun_main("Doing what?.","base","base","base","mid")
-            her "{size=-4}(What? *Slurp...?* *Gulp...?*){/size}"
-
-            menu:
-                "-Tell the truth-":
-                    if collar == 0:
-                        $ collar = 5
-                    m "Miss Granger is helping relieve me as we speak."
-                    call lun_main("You mean that Hermione is behind your desk...","base","base","base","mid")
-                    call lun_main("Releiving you as we speak.","base","base","base","mid")
-                    call nar(">Hermione's face goes crimson with shame but she continues her efforts.")
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    m "Yes, that's correct."
-                    call lun_main("Well in that case I think I best be off. It seems that you're busy tending to other students.","base","base","base","mid")
-                    m "Thank you, [luna_name]"
-
-                    if daytime:
-                        m "Well, have a good day.."
-                        call lun_main("Yes, thank you. I know that you will...","base","base","base","mid")
-                    else:
-                        m "Good night, [luna_name]."
-                        call lun_main("Goodnight, [l_genie_name]..","base","base","base","mid")
-                        call lun_main("Goodnight hermione...","base","base","base","mid")
-
-                "-Lie-":
-                    m "Ehm... Just admiring...{w} the cupboard."
-                    m "Please continue..."
-                    call lun_main("...............","base","base","base","mid")
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    m "Did you want to discuss something?"
-                    call lun_main("Yes. These wrackspurts.","base","base","base","mid")
-                    her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
-                    m "Oh... What about them?"
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call lun_main("No matter what I do I can't seem to be rid of them!","base","base","base","mid")
-                    call lun_main("They only seem to be getting worse!","base","base","base","mid")
-                    m "I see... ah..."
-                    call lun_main("They're driving me crazy, I won't be able to cope much longer","base","base","base","mid")
-                    g4 "Yeah, they're driving me crazy as well... ah..."
-                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call lun_main("Will you take care of them then?","base","base","base","mid")
-                    m "Yes. I'll find a way to deal with these rapers soon."
-                    call lun_main("...Thank you [l_genie_name].","base","base","base","mid")
-
-                    if daytime:
-                        m "Well, have a good day, [luna_name]."
-                        call lun_main("Yes, thank you.","base","base","base","mid")
-                    else:
-                        m "Good night, [luna_name]."
-                        call lun_main("Goodnight, [l_genie_name]...","base","base","base","mid")
-
-            #Luna leaves.
-            hide screen luna_main
-            hide screen bld1
-            with d3
-
-            stop music fadeout 1.0
-
-            call lun_walk("mid","leave",3)
-            pause.5
-
-            call blkfade
-
-            call play_music("playful_tension") # SEX THEME.
-            ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
-
-            return
-
-        "\"I am busy right now, [luna_name].\"":
-            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
-            lun "Busy? How so?"
-            lun "Are you helping another student fight off the wrackspurts?"
-            m "Yes, that's exactly what I'm doing."
-            lun "Oh... well, I'll visit you later then."
-
-            return
-
-#Add scene with Astoria here.
-#Add scene with Susan here.
-#Add scene with Cho here.
-
-label hg_hidden_blowjob_tonks: #Call label. Returns.
-    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
-    m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
-    ton "[ton_genie_name]? Is it ok if I come in?"
-    call her_main("(It's Professor Tonks!)","angry","base")
-    call her_main("Please, [genie_name], don't let her in!")
-    call her_main("I don't want my teacher to see me like this!")
-
-    menu:
-        m "..."
-        "\"Please, come on in, [tonks_name].\"":
-            $ mad += 10
-            stop music fadeout 1.0
-            call her_main("[genie_name], no! Please she will know that-","angry","angry",emote="01",ypos="head")
-            m "Shhhhsh. Keep your voice down..."
-
-            #Tonks comes in
-            call play_sound("door") #Sound of a door opening.
-
-            #call ton_walk("door","mid",3)
-
-            if daytime:
-                call ton_main("Hello, [ton_genie_name].","base","base","base","mid",xpos="right",ypos="base")
-            else:
-                call ton_main("Good evening, [ton_genie_name].","base","base","base","mid",xpos="right",ypos="base")
-
-            $ g_c_u_pic = "blowjob_ani" # sucking
-            call u_play_ani
-
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Tonks! What can I do you for?"
-            call ton_main("[ton_genie_name], I was wondering if we could-","open","base","base","R")
-            call ton_main("(...)","open","base","base","R")
-            call ton_main("I' so sorry, am I interrupting something?","horny","base","base","R")
-            her "She's going to find out!!!"
-            m "Nothing trastically..."
-
-            menu:
-                "-Tell the truth-":
-                    m "Just stuffing Miss Granger's cute little mouth..."
-                    g9 "With my cock!"
-
-                "-Lie-":
-                    m "Ehm... Just admiring...{w} the cupboard."
-                    ton "Like I'm going to believe that..."
-                    ton "Are you masturbating, [ton_genie_main]?"
-                    ton "Are you..."
-                    ton "Stroking your {w}hard, {w}magnifizent {w}cock?"
-                    her "{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}"
-                    with hpunch
-                    her "size=-4}What??{/size}"
-                    ton "who was that?"
-                    ton "[ton_genie_main]?!"
-                    m "Uhm-... My belly?"
-                    ton "Sounded like somebody doesn't know how to throat a dick properly."
-                    her "(Excuse me?!)"
-                    m "Don't be mean, she's doing her best..."
-                    ton "So there is a girl behind you."
-                    ton "Who is it? Tell me!"
-                    m "(...)"
-                    m "It's Miss Granger."
-
-            call ton_main("Miss Granger?!","horny","base","base","R")
-
-            if lock_public_favors:
-                call ton_main("That cute little tease who always hangs out at the library, pretending to study?","horny","base","base","R")
-                her "(Pretending???)"
-            else:
-                call ton_main("That gryffindor slut? The one who always hangs around flirting with some slytherins?","horny","base","base","R")
-                her "(Gryffindor slut !!?)"
-                with hpunch
-                m "Ouch, I felt that..."
-
-            call ton_main("You are fucking her mouth? Right now???","horny","base","base","R")
-
-            call ton_main("Oh I've got to see this...","horny","base","base","R",xpos="mid",ypos="base",trans="move")
-            g4 "Wait!"
-            call ton_main("Hmm?","horny","base","base","R")
-
-            m "You better not come any closer..."
-            m "Or I fear she will bite me..."
-            m "Or worse,..."
-            m "She'll stop..."
-            her "(Damn right I will...)"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-
-            call ton_main("Very well...","horny","base","base","R",xpos="right",ypos="base")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-
-            ton "Is that really Miss Hermione Granger back there?"
-            ton "That's so hard to believe."
-            ton "Or perhaps, you fucking with me, [ton_genie_name]..."
-            m " No, it's her..."
-            ton "No that's way too good to be true!"
-            ton "Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?"
-            m "(...)"
-            ton " I will reward you with 50 house points if you show yourself!"
-            with hpunch
-            m "What?!"
-            her "(Oh wow, that's a lot of points!)"
-            m "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
-            m "Do you even realize how many days I have to spend with Snape to get even with Slytherin again, after this?"
-            ton "So what? The girl's clearly earned it."
-            ton "Sucking her teachers cock..."
-            ton "50 points could be yours, Miss granger!"
-            ton "You only have to stick your gorgeous head out and say hi to me, and of course..."
-            ton "I promise I won't tell anybody."
-            ton "It will be our little secret."
-            her "(...)"
-            m "Do what you must, girl..."
-            her "(...............)"
-            call her_main("","","",ypos="head_left")
-            ton "Oh my!"
-            her "He- Hello, Miss Tonks."
-
-            ton "Miss Granger, what a plreasant surprise."
-            ton "Are you having a good time back there?"
-            ton "You little cock sucker?"
-            her "(........................)"
-            her "I suppose so..................."
-            ton "What a marvelous sight to take in!" #Need a better word than marvelous.
-            ton "I would love nothing more than to join you two right now."
-            g9 "You're more than welcome to suck my dick too!"
-            ton "I'm sorry, [ton_genie_name]."
-            ton "But sadly, I'm already pre-occupied..."
-            ton "Teaching our second-years how to cast a simple defection spell..."
-            ton "We are already two sessions behind my planned class shedule."
-            ton "Who said teaching would be easy, am I right?"
-            m "It's quite easy, actually."
-            ton "As headmaster maybe... All you do is molest some girls I reckon..."
-            m "That's not true!"
-            m "I also take care of this bird here..."
-            if phoenix_is_fed:
-                ton "Well at least she got something to eat..."
-            else:
-                ton "Seems like you're doing a poor job at that. She looks a bit sick..."
-                ton "When was the last time you fed her?"
-                m "(...)"
-
-            ton "Anyways..."
-            ton "Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, I hereby reward the house gryffindor..."
-            ton "69 points!"
-            $ gryffindor += 69
-
-            her "(69! That's even more than she agreed on!)"
-            m "Didn't you say 50 earlier?"
-            ton "Yes, but 69 is so much better."
-            ton "Don't you think so too, Miss Granger?"
-            her "Uhm... Yes. Thank you, Miss Tonks."
-            m "Now get you mouth back on my cock, [hermione_name]!"
-            her "Of course, [genie_name]..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-
-            m "Your mouth feels amazing, [hermione_name]!"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("It really warms my heart, seeing","horny","base","base","R")
-            call ton_main("Both teachers and students of this school...","horny","base","base","R")
-            call ton_main("Still bonding...","horny","base","base","R")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("Feeling each others up...","horny","base","base","R")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("Kissing...","horny","base","base","R")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call ton_main("Having sex!","horny","base","base","R")
-            her "{size=-4}(She did what! *Gulp...*){/size}"
-            call ton_main("Brings back memories...","horny","base","base","R")
-            her "(Has this favour trading always been a thing?)"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Sounds like your time here was just as fun as little'ol Hermione's..."
-            her "{size=-4}(How dare he... *Slurp...* *Slurp...* *Gulp...*){/size}"
-
-
-            #Luna leaves.
-            hide screen tonks_main
-            hide screen bld1
-            with d3
-
-            stop music fadeout 1.0
-
-            #call ton_walk("mid","leave",3)
-            pause.5
-
-            call blkfade
-
-            call play_music("playful_tension") # SEX THEME.
-            ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
-
-            return
-
-        "\"I am busy right now, [tonks_name].\"":
-            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
-            ton "Busy?"
-            m ""
-            ton "Oh... well, I'll visit you later then."
-            if daytime:
-                pass
-            else:
-                ton "Is Snape with you?"
-                ton "Don't be drinking the whole night..."
-                ton "Can't have him make a fool of himself in front of the students again."
-                ton "He made such a mess last time..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "He isn't here, actually. But I will let him know..."
-            ton "So, are you with a student then, hmm?"
-            her "{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}"
-            ton "Who is she? Is it the blonde? Or..."
-            ton "You aren't shagging my cusin again, are you?"
-            her "{size=-4}(Her cusin? *Slurp...* *Slurp...* *Gulp...*){/size}"
-            her "{size=-4}(Does she mean Susan? *Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "Non of your concern, Tonks!"
-            m "You may leave now..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            ton "I can help you jack off, if that's what you're-"
-            g4 "I said, leave!"
-            ton "Ok, [ton_genie_name]"
-            ton "*Giggle...*"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            m "I think she's gone..."
-
-            return
-
-
-label hg_hidden_blowjob_cumming: #Call label. Returns.
-    call blkfade
-    her "*Slurp!* *Slurp!* *Gulp!*"
-    ">Hermione keeps sucking on your cock with a rather fierce determination."
-    ">Her technique is lacking but she makes up for it with the effort she puts it."
-    hide screen bld1
-    call hide_blkfade
-    call ctc
-
-    call bld
-    m "Yes... I love your eager, little mouth girl..."
-    her "*Gobble!* *Gobble!* *Gobble!*"
-    call u_pause_ani
-    call her_main("[genie_name]?","soft","ahegao",ypos="head")
-    m "Hm?"
-    call her_main("Are you going to cum on my face today?","soft","ahegao")
-    call her_main("Or do you plan to cum in my mouth?")
-
-    menu:
-        "\"I Plan to splatter your face with cum!\"":
-            call her_main("I see...","soft","ahegao",ypos="head")
-            m "Why do you ask?"
-            call her_main("Oh... I just read in a book that semen contains a lot of antioxidants...","grin","dead")
-            call her_main("It's good for the skin...")
-            m "Great. One facial coming up."
-            m "Back to work now."
-
-        "\"I Plan to fill your mouth with cum!\"":
-            call her_main("I see...","grin","dead",ypos="head")
-            m "Why do you ask?"
-            call her_main("Well, I am trying to watch my calorie-intake...","soft","ahegao")
-            call her_main("I just wonder how much calories your load contains, [genie_name].")
-            call her_main("Maybe I should skip my next meal...")
-            m "[hermione_name]."
-            call her_main("Yes?","soft","ahegao")
-            m "Dick back in the mouth."
-
-        "\"I don't plan so far ahead.\"":
-            call her_main("I see...","soft","ahegao",ypos="head")
-            m "Don't you like surprises?"
-            call her_main("Not really...","soft","ahegao")
-            call her_main("I rather enjoy planning ahead actually...")
-            m "Well some things in life are just unpredictable."
-            m "There is only one way to find out for sure."
-
-        "\"What would you like?\"":
-            call her_main("If it is all the same to you, [genie_name]...","soft","ahegao",ypos="head")
-            if generating_points == 1:
-                call her_main("I would like you to cum on my face, [genie_name].","grin","dead")
-                call her_main("I read that it's good for the skin.")
-            else:
-                call her_main("I would like you to cum in my mouth.","grin","dead")
-                call her_main("You usually cum so much so I think I will be able to just skip my next meal...")
-                call her_main("And do some homework instead.")
-            m "Well, we'll see about that."
-            m "Back to sucking now."
-
-    call u_play_ani
-    her "*Slurp!* *Slurp!* *Slurp!*"
-    m "Hm..."
-    m "You are getting better at this [hermione_name]."
-    her "*Slurp!* *Slurp!* *Gulp!*"
-    m "Ok, say something nasty now..."
-    her "*Slurp--?"
-    call u_pause_ani
-
-    if her_whoring < 21:
-        call her_main("uhm...","angry","down_raised",ypos="head")
-        call her_main("I eat cockroaches?","angry","base")
-        m "What the fuck?"
-        call her_main("T-they are pretty nasty, [genie_name]...","angry","base")
-        m "No, [hermione_name], I mean something dirty!"
-        m "And don't you dare to say \"mud\"!"
-        m "I mean dirty in a sexual way!"
-        call her_main("Oh... Ehm...","angry","down_raised")
-        m "Ah, never mind, the moment is gone..."
-        call her_main("Ehm... I'm sorry, [genie_name].","angry","base")
-        m "Yeah, whatever. Make it up to me by sucking my cock harder."
-        call her_main("Of course, [genie_name].","upset","closed")
-
-    else:
-        call her_main("I'm a slut, [genie_name].","base","suspicious",ypos="head")
-        call her_main("A slut for your cum.","base","glance")
-        m "That's it, [hermione_name]."
-        call her_main("It's all I can think about [genie_name].","base","down")
-        call her_main("Sucking your dirty old cock...")
-        m "Well you better get back to it then [hermione_name]"
-        call her_main("Thank you, [genie_name].","grin","dead")
-        m "You're welcome, cumslut."
-        call her_main("...","base","ahegao_raised")
-
-    call u_play_ani
-    her "*Slurp!* *Gulp!* *Slurp!*"
-    m "Yes, like this... Good..."
-    her "*Slurp!* *Slurp!* *Slurp!*"
-    m "You know what? I think we are almost there."
-    her "*Slurp!* *Slurp!* *Slurp!*"
-    m "Yes, definitely."
-    her "*Slurp!* *Gobble!* *Gobble!*"
-    m "Alright, [hermione_name], this is the final stretch."
-    g4 "Show me what you've got."
-    her "!!! *Gobble-goble-slurp-goble!* !!!"
-    g4 "Yes, like that!"
-    her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
-    g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
-    g4 "Ghr!!!"
-
-    menu:
-        g4 "!!!"
-        "-Cum in her mouth-":
-            g4 "Here it comes, [hermione_name]! get ready to swallow fast!"
-            her "!!!"
-            call ctc
-            call blkfade
-
-            call set_u_ani("cum_in_mouth_ani")
-            call u_play_ani
-            call cum_block
-            g4 "{size=+7}ARGH!{/size}"
-            g4 "Eat my cum, slut!"
-            her "*Gulp!-Gulp!-Gulp!*"
-            with hpunch
-            g4 "Yes! Down your fucking throat!"
-            her "*Gulp-gulp-gulp-gulp-gulp!*"
-            hide screen bld1
-            call hide_blkfade
-            stop music fadeout 1.0
-            call ctc
-
-            call bld
-            m "Well, I think that's it."
-            m "You can let go now..."
-            call u_pause_ani
-
-            call her_main("...........................","full_cum","dead",xpos="mid",ypos="base")
-            call her_main("................")
-            call her_main("........")
-            $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-            call her_main("*GULP!*","cum","worriedCl")
-            call her_main("Gua-ha...","open_wide_tongue","base")
-            m "You alright?"
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("Yes, [genie_name]...","grin","dead")
-            m "Going to skip your next meal?"
-            call her_main("I think so...","grin","dead")
-            call her_main("You always cum so much, [genie_name]...")
-            m "Heh... And who's fault is that??"
-            call her_main(".............","grin","dead") #Smile.
-            call her_main("Can I get paid now?")
-
-            if her_whoring >= 21:
-                if daytime:
-                    m "What, even after I just gave you lunch?"
-                else:
-                    m "What, even after I fed you dinner"
-                call her_main(".............","annoyed","suspicious") #Smile.
-                call her_main("Fine, I suppose this was worth a meal")
-
-            call ctc
-            call blkfade
-
-            return
-
-        "-Cum on her face-":
-            call blkfade
-
-            call u_pause_ani
-            g4 "Ready for your facial, [hermione_name]?"
-            call her_main("Yes [genie_name]!","grin","dead",ypos="head")
-            g4 "Here it comes then!"
-            hide screen bld1
-            call set_u_ani("cum_on_face_ani")
-            call u_play_ani
-            call hide_blkfade
-            call cum_block
-
-            call bld
-            g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?","shock","wide",ypos="head")
-            hide screen bld1
-            with d1
-            call ctc
-
-            call bld
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_07.png"
-            call her_main("[genie_name]...","shock","wide")
-            g4 "All over your fucking face!"
-            call her_main("Aaah!","grin","dead")
-            call set_u_ani("cum_on_face_blink_ani")
-
-            m "Well, I'm done."
-            call her_main("....................................","grin","dead")
-            m "I said it's over, [hermione_name]."
-            call her_main("Yes, I heard you [genie_name]...","grin","dead")
-            m "So... Aren't you going to clean up?"
-            call her_main("In a moment...","grin","dead")
-            call her_main("I'm giving my skin time to soak in the anti-oxidants...")
-            m "Hm... I find this quite hot..."
-            m "Take your time, [hermione_name]..."
-            call blkfade
-
-            stop music fadeout 1.0
-            ">A while later."
-            $ uni_sperm = True
-            $ aftersperm = True
-
-            call u_end_ani
-            call her_chibi("stand","desk","base")
-            call gen_chibi("sit_behind_desk")
-            hide screen bld1
-            hide screen blktone
-            call hide_blkfade
-            pause.5
-
-            call her_main("I take it you enjoyed yourself, [genie_name]?","angry","wink",xpos="mid",ypos="base")
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
-            m "Yes I did, [hermione_name]."
-            call her_main("Good, so Can I get paid now?","grin","dead")
-
-            if her_whoring >= 21:
-                m "What, even after I just gave you a salon treatment?"
-                m "Women pay a lot of money for a good facial."
-                call her_main(".............","annoyed","suspicious") #Smile.
-                call her_main("Fine, but my skin better look better tomorrow.")
-
-            call blkfade
-
-            return
 
 
 
@@ -1150,6 +422,780 @@ label hg_blowjob_1: #Call label. Returns.
             call blkfade
 
             $ aftersperm = True
+
+            return
+
+
+
+### Hidden Blowjob ###
+
+label hg_hidden_blowjob: #Call label. Returns.
+    call play_music("playful_tension") #HERMIONE
+    hide screen genie
+    call her_chibi("hide")
+    show screen chair_left
+    call u_play_ani
+    hide screen bld1
+    hide screen blkfade
+    with fade
+    call ctc
+
+    call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="head")
+    m "Yes, good girl..."
+    her "*Slurp!* *Gobble!* *Slurp!*"
+
+    call play_sound("knocking") #Sound someone knocking on the door.
+    call nar("> *Knock-knock-knock!*")
+    her "{size=+7}!!!{/size}"
+    m "Hm?"
+
+    if daytime:
+        m "Who could that be?"
+    else:
+        m "Who could that be at this hour?"
+
+    call u_pause_ani
+
+
+    #Priority.
+    if "snape" in hg_hidden_bj_list and "snape" not in hg_hidden_bj_seen_list:
+        $ character_choice = "snape"
+    elif "luna" in hg_hidden_bj_list and "luna" not in hg_hidden_bj_seen_list:
+        $ character_choice = "luna"
+    elif "tonks" in hg_hidden_bj_list and "tonks" not in hg_hidden_bj_seen_list:
+        $ character_choice = "tonks"
+
+    #Random Pick.
+    else:
+        $ character_choice = renpy.random.choice(hg_hidden_bj_list)
+
+
+    #Calls Scene.
+    if character_choice == "snape":
+        call hg_hidden_blowjob_snape
+
+    if character_choice == "luna":
+        call hg_hidden_blowjob_luna
+
+    if character_choice == "tonks":
+        call hg_hidden_blowjob_tonks
+
+    #Genie Cums.
+    call hg_hidden_blowjob_cumming
+
+    return
+
+
+
+label hg_hidden_blowjob_snape: #Call label. Returns.
+    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
+    m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
+    sna "Albus? Are you there? I need to talk to you."
+    call her_main("(It's professor Snape!)","angry","base")
+    call her_main("([genie_name], please, send him away, I beg you!)")
+
+    menu:
+        m "..."
+        "\"Please, come on in, Severus.\"":
+            if "snape" not in hg_hidden_bj_seen_list:
+                $ hg_hidden_bj_seen_list.append("snape")
+            $ her_mood = 30
+            stop music fadeout 1.0
+            call her_main("([genie_name], no!)","angry","angry",emote="01",ypos="head")
+
+            call nar(">Hermione gives your balls a firm twist full of frustration.")
+            g4 "Ouch!"
+
+            call play_sound("door")
+            call sna_chibi("stand","door","base")
+            hide screen bld1
+            with d3
+            pause.8
+            call sna_walk("door","mid",4)
+            pause.2
+
+            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+
+            call sna_head("Good, you are here.","snape_01",xpos="base",ypos="base")
+            call u_play_ani
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call sna_head("Listen, there is something I want to discuss...","snape_06")
+            call sna_head("Hm...?","snape_05")
+            call sna_head("Genie? Are you alright?")
+            her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
+            her "{size=-4}(No, please! I will die of shame!){/size}"
+            m "Yes, Severus, I am fine..."
+            her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
+            call sna_head("What are you... looking at?","snape_05")
+            m "Ehm... Just admiring...{w} the cupboard."
+            m "Please, continue..."
+            call sna_head("...............","snape_05")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            m "Did you want to discuss something?"
+            call sna_head("Yes. That Hermione girl.","snape_06")
+            her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
+            m "Oh... What about her?"
+            call sna_head("You promised that you would take care of the little witch.","snape_04")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call sna_head("But she is still being a major pain in my arse!","snape_04")
+            call sna_head("Her tactics have changed...")
+            call sna_head("But the amount of grief she manages to bring me is the same...","snape_03")
+            m "I see... ah..."
+            call sna_head("I swear, that girl is driving me crazy!","snape_10")
+            g4 "Yeah, she is driving me crazy as well... ah..."
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call sna_head("Will you take care of this then?","snape_04")
+            m "Yes. She'll get what she deserves."
+            call sna_head("Good. That is all I wanted to hear.","snape_06")
+
+            if daytime:
+                m "Well, have a good day, Severus."
+                call sna_head("Yes, thank you.","snape_06")
+            else:
+                m "Good night, Severus."
+                call sna_head("Right...","snape_06")
+
+            call sna_chibi("stand","mid","base",flip=True)
+            hide screen bld1
+            with d3
+            pause.2
+            call sna_walk("mid","leave",3)
+            stop music fadeout 1.0
+            call ctc
+            call blkfade
+
+            call play_music("playful_tension") # SEX THEME.
+            ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
+            ">Seeing her being so confused and vulnerable and yet continuing to perform her task diligently pushes you over the edge."
+            g4 "(Here it comes!)"
+
+            return
+
+        "\"I am busy right now, Severus.\"":
+            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
+            sna "Busy? With what?"
+            sna "All you do is sit on you arse all day."
+            sna "I really need to talk to you about something."
+            m "I said I am busy, Severus."
+            m "Understood? I am \"busy\"!"
+            sna "Oh... You mean \"Busy\" busy? Gotcha!"
+            sna "Well, I'll talk to you later then."
+
+            return
+
+
+
+label hg_hidden_blowjob_luna: #Call label. Returns.
+    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
+    m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
+    lun "[lun_genie_name]? Are you there? I need to talk to you."
+    call her_main("(It's Luna!)","disgust","wide")
+    call her_main("Please, [genie_name], send her away, I beg you!","shock","worriedCl")
+
+    menu:
+        m "..."
+        "\"Please, come on in, [luna_name].\"":
+            if "luna" not in hg_hidden_bj_seen_list:
+                $ hg_hidden_bj_seen_list.append("luna")
+            $ her_mood += 30
+            stop music fadeout 1.0
+            call her_main("[genie_name], no! Why would you let-","angry","angry",emote="01",ypos="head")
+            m "Quiet, [hermione_name]! Unless you want to be noticed..."
+
+            #Luna comes in
+            call play_sound("door") #Sound of a door opening.
+
+            call lun_walk("door","mid",3)
+
+            call lun_main("Hello, [lun_genie_name].","soft","base","base","down")
+            $ g_c_u_pic = "blowjob_ani" # sucking
+            call u_play_ani
+
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            g9 "Miss Lovegood! How can I help you?"
+            call lun_main("I have a message for you, [lun_genie_name],... from Professor Sprout.","open","base","base","R")
+            m "Professor Sprout?"
+            m "(Who was that again?)"
+            call lun_main("Yes, she's sent me to inform you about the school's latest yield of Venomous Tentacula.","open","base","raised","mid")
+            m "(Venomous Tentacles?)"
+            her "{size=-4}(Those things are nasty... *Slurp...* *Gulp...*){/size}"
+
+            lun "Very feisty little plants, they are. And still quite young."
+            lun "They'll wither if you don't take care of them properly..."
+            m "So why tell me?"
+            call lun_main("They have just started sucking!","smile_large","happyCl","raised","mid")
+            with hpunch
+            m "What?"
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call lun_main("Sucking, [lun_genie_name]!","base","seductive","base","mid")
+            call lun_main("It's so cute! They suck at each others tentacles with their little mouths!","soft","base","raised","up")
+            m "(Plants with mouths?)"
+            call lun_main("Normally they only do that shortly before they spread their spores.","open","base","base","R")
+            call lun_main("Which means they are almost ready!","grin","happyCl","raised","mid")
+            m "Ready? for what?"
+            call lun_main("Pollination!","soft","seductive","base","mid")
+            call lun_main("That's when they weave their tentacles into each other and shoot out their spores.","open_tongue","seductive","base","up")
+            m "(How nasty!)"
+
+            call lun_main("You won't believe how hard it is to get them to that stage...","pout","mad","mad","up")
+            call lun_main("It's quite an achievement!","base","base","base","mid")
+
+            m "I'm more than familiar with them!"
+            call lun_main("You are?","soft","wink","raised","mid")
+            g4 "Those young-{w=0.9} sucking- {w=0.2}.{w=0.2}.{w=0.2}.{w=0.2} UGH! {w=0.2} Troublemakers!"
+            g4 "Yes. I've got one right here!"
+            call lun_main("Oh! can I see it, [lun_genie_name]?","grin","wide","raised","mid")
+            m "I'm afraid not, [luna_name]."
+            g9 "It's such a shy little thing. You'd better not get any closer!"
+            call lun_main("Aww... ok.","pout","base","sad","down")
+            m "I know everything about those little devils..."
+            m "At first there was just bitching and moaning about every tiny little thing I wanted to do..."
+            m "But now, straight down on the knees... right in front of me."
+            g4 "Sucking like crazy!"
+            call lun_main("(So they do not only have a head but also knees... I didn't even know that!)","soft","base","raised","up")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call lun_main("Sprout told us to be careful, [lun_genie_name]. As you probably know, they like to spit... and bite...","soft","base","base","mid")
+            m "Truly?"
+            call lun_main("Yes. If you aren't careful, they'll hit you with their saliva, or bite at your limbs!","clench","annoyed","raised","down")
+            call lun_main("Luckily, there is an easy way to make them stop such behavior!","base","seductive","base","mid")
+            m "I'm all ears..."
+            call lun_main("They hate being spat on just as much as you, [lun_genie_name]. Maybe even more so!","soft","seductive","base","L")
+            m "(Those are some weird fucking plants...)"
+            call lun_main("She said that if a Venomous Tentacula ever acts up-","open","closed","raised","mid")
+            call lun_main("You should show dominance by spitting on it and put it in its place!","angry","angry","angry","down")
+            call lun_main("Her words...","pout","base","raised","R")
+            g9 "Like this?"
+            call spit_on_her
+
+            g4 "Take that, you nasty little slu-... Uhh, plant."
+            her "{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call lun_main("That's right, [lun_genie_name]!","grin","happyCl","raised","mid")
+            g4 "This one wants more spit!"
+            call spit_on_her
+            her "{size=-4}(Stop it! *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call lun_main("Professor Sprout said, sometimes, a bit of tough love is the only thing that can make them behave.","clench","angry","angry","down")
+            m "She did?"
+            g9 "Oh no, mine is fighting back!"
+            call lun_main("Be careful, [lun_genie_name]! Or she'll bite you!","clench","closed","sad","mid")
+            g4 "Don't worry, this one's getting a beating!"
+            call slap_her
+            her "{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call slap_her
+            call slap_her
+            g4 "Had enough, you narsty little thing?"
+            call slap_her
+            g4 "Want some more?"
+            call slap_her
+            call slap_her
+
+            call lun_main("You seem so well versed with plants!","grin","wide","raised","mid")
+            call lun_main("I need to tell Professor Sprout, she'll be overjoyed to hear about your training methods!","grin","happyCl","raised","mid")
+            m "Give her my thanks, [luna_name]. She's a smart lady, this Sprout!"
+            g9 "Full of great ideas!"
+            call lun_main("I will, [lun_genie_name].","smile","seductive","base","mid")
+
+            if daytime:
+                call lun_main("Have a nice day!","smile_large","happyCl","base","mid")
+            else:
+                call lun_main("Good night!","smile_large","happyCl","base","mid")
+
+            #Luna leaves.
+            hide screen luna_main
+            hide screen bld1
+            with d3
+
+            stop music fadeout 1.0
+
+            call lun_walk("mid","leave",3)
+            pause.5
+
+            m "Well that wasn't too bad, was it?"
+            her "{size=-4}(............................. *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call blkfade
+
+            call u_play_ani
+            call play_music("playful_tension") # SEX THEME.
+            ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
+
+            return
+
+        "\"I am busy right now, [luna_name].\"":
+            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
+            lun "Oh... well, I'll visit you later then, [lun_genie_name]."
+            if daytime:
+                lun "Have a good day!"
+            else:
+                lun "Have a good night!"
+            m "I definitely will, Miss Lovegood!"
+
+            return
+
+#Add scene with Astoria here.
+#Add scene with Susan here.
+#Add scene with Cho here.
+
+label hg_hidden_blowjob_tonks: #Call label. Returns.
+    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
+    m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
+    ton "[ton_genie_name]? Is it ok if I come in?"
+    call her_main("(It's Professor Tonks!)","clench","worriedCl")
+    call her_main("Please, [genie_name], don't let her in!","open","worried")
+    call her_main("I don't want my teacher to see me like this!","shock","down")
+
+    menu:
+        m "..."
+        "\"Please, come on in, [tonks_name].\"":
+            if "tonks" not in hg_hidden_bj_seen_list:
+                $ hg_hidden_bj_seen_list.append("tonks")
+            $ her_mood += 10
+            stop music fadeout 1.0
+            call her_main("[genie_name], no! Please she will know that-","angry","angry",emote="01",ypos="head")
+            m "Shhhhsh. Keep your voice down..."
+
+            #Tonks comes in
+            call play_sound("door") #Sound of a door opening.
+
+            #call ton_walk("door","mid",3)
+
+            if daytime:
+                call ton_main("Hello, [ton_genie_name].","base","base","base","mid",xpos="right",ypos="base")
+            else:
+                call ton_main("Good evening, [ton_genie_name].","base","base","base","mid",xpos="right",ypos="base")
+
+            $ g_c_u_pic = "blowjob_ani" # sucking
+            call u_play_ani
+
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            g9 "Tonks! What can I do for you?"
+            call ton_main("[ton_genie_name], I was wondering if we could-","open","base","raised","R")
+            call ton_main("(...)","base","base","base","mid")
+            call ton_main("Am I interrupting something?","horny","base","raised","down")
+            her "She's going to find out!!!"
+            m "Nothing drastically..."
+
+            menu:
+                "-Tell the truth-":
+                    m "Just stuffing Miss Granger's cute little mouth..."
+                    g9 "With my cock!"
+                    call u_pause_ani
+
+                "-Lie-":
+                    m "A... Just admiring...{w} the woodworks."
+                    call ton_main("Like I'm going to believe that...","open","base","base","mid")
+                    call ton_main("Are you masturbating, [ton_genie_name]?","horny","base","raised","mid")
+                    call ton_main("Are you stroking your hard, {w}magnificent, {w}cock?","open_wide_tongue","base","base","ahegao")
+                    with hpunch
+                    her "{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}"
+                    call u_pause_ani
+                    her "{size=-4}What??{/size}"
+                    call ton_main("who was that?","base","base","raised","mid")
+                    call ton_main("[ton_genie_name]?!","open","base","angry","mid")
+                    m "Uhm-{w} My belly?"
+                    call ton_main("Sounded like somebody doesn't know how to throat a dick properly...","open","base","base","R")
+                    her "(Excuse me?!)"
+                    m "Don't be mean, she's doing her best..."
+                    call ton_main("So there is a girl behind you!","horny","base","raised","down")
+                    call ton_main("Who is it? Tell me!","base","base","base","mid")
+                    m "(...)"
+                    m "It's Miss Granger."
+
+            call ton_main("Miss Granger?!","open","wide","wide","wide")
+
+            if lock_public_favors:
+                call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")
+                her "(Pretending???)"
+            else:
+                call ton_main("That Gryffindor slut? The one who always hangs around flirting with some Slytherins?","open","base","raised","mid")
+                her "(Gryffindor slut !!?)"
+                with hpunch
+                m "Ouch, I felt that..."
+
+            call ton_main("And you are telling me, you are fucking her mouth? {w}Right now???","open","base","worried","mid")
+
+            call ton_main("Oh I've got to see this...","horny","base","base","down")
+            call ton_main("","horny","base","base","down",xpos="mid",ypos="base",trans="move")
+            pause.2
+            g4 "Wait!"
+            call ton_main("Hmm?","horny","base","raised","mid")
+
+            m "You better not come any closer..."
+            m "Or I fear she will bite me..."
+            g4 "Or worse,..."
+            m "She'll stop with the sucking..."
+            her "(Damn right I will...)"
+            call u_play_ani
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call ton_main("Very well...","base","base","raised","R",xpos="right",ypos="base")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call ton_main("Is that really, {w}Miss Hermione Granger,{w} back there?","horny","base","base","mid")
+            call ton_main("That's so hard to believe!","open","base","raised","L")
+            call ton_main("Or perhaps, you are just fucking with me, [ton_genie_name]...","horny","base","angry","mid")
+            m "No,... {w}it's her..."
+            call ton_main("That's too good to be true!","base","base","base","ahegao")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?","horny","base","raised","down")
+            m "(...)"
+            call ton_main("I will reward you with 50 house points if you show yourself!","base","base","raised","down")
+            with hpunch
+            g4 "What?!"
+            call u_pause_ani
+            her "(Oh wow, that's a lot of points!)"
+            call u_play_ani
+            g4 "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
+            m "Do you even realise how many days I'll have to spend with Snape, of all people, to get even with Slytherin again, after this?"
+            call ton_main("So what? The girl has clearly earned it!","open","base","angry","mid")
+            call ton_main("Sucking her headmasters cock...","horny","base","angry","down")
+            call ton_main("50 points could be yours, Miss granger!","open","base","raised","down")
+            call ton_main("You only have to stick your gorgeous head out and say hi to me, and of course...","open","base","base","R")
+            call ton_main("I promise I won't tell anybody.","base","base","base","down")
+            call ton_main("It will be our little secret.","horny","base","angry","down")
+            her "(...)"
+            m "Do what you must, girl..."
+            her "(...............)"
+            call u_pause_ani
+
+            call ton_main("Oh my!","horny","base","base","down")
+
+            $ hermione_flip = -1 #head will be on the left.
+            call her_main("He- Hello, Miss Tonks.","clench","worriedCl",ypos="head")
+
+            call ton_main("Miss Granger, what a plreasant surprise.","base","base","raised","mid")
+            call ton_main("Are you having a good time back there?","open","base","base","down")
+            call ton_main("You nasty little cock sucker.","horny","base","raised","mid")
+            her "(........................)"
+            call her_main("I suppose so...................","disgust","down")
+            call ton_main("What a sight to see...","base","base","base","mid")
+            call u_play_ani
+
+            call ton_main("I'd love to join you back there, Miss Granger...","base","base","base","down")
+            call ton_main("Suck your Headmaster's dick with you!","horny","base","angry","mid")
+            her "{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            g9 "You can both have it!"
+            call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...","open","base","worried","R")
+            call ton_main("Teaching our second-years how to cast a simple deflection spell...","open","base","raised","down")
+            call ton_main("We are already two sessions behind my planned class schedule.","open","base","worried","mid")
+            call ton_main("I came to you to get consultation about some material I had prepared for them.","open","base","worried","down")
+            call ton_main("But since you have to take care of Miss Granger right now,...","base","base","raised","down")
+            call ton_main("I guess that can wait.","open","base","worried","R")
+            call ton_main("Who said teaching would be easy, am I right?","base","base","worried","ahegao")
+            m "It's quite easy, actually."
+            call ton_main("As a headmaster maybe... All you do is molest any girl that finds her way in here, I reckon...","horny","base","raised","down")
+            m "It can get quite hard, taking care of all those girls."
+            call ton_main("I can certainly see that...","horny","base","angry","mid")
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+
+            call ton_main("Anyway...","open","base","raised","R")
+            call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w}I hereby reward the house Gryffindor...","open","base","base","down")
+            call u_pause_ani
+
+            call ton_main("69 points!","horny","base","base","mid")
+            $ gryffindor += 69
+
+            her "(69! That's even more than she agreed on!)"
+            m "Didn't you say 50 earlier?"
+            call ton_main("Yes, but 69 is so much better!","horny","base","raised","mid")
+            call ton_main("Don't you think so too, Miss Granger?","base","base","angry","down")
+            call her_main("Uhm... Yes. Thank you, Miss Tonks.","disgust","worriedCl")
+            m "Less talking, more sucking, [hermione_name]!"
+            call her_main("Sorry, [genie_name]...","soft","ahegao")
+            call u_play_ani
+
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call ton_main("I'm going to have to go, [ton_genie_name].","open","base","worried","R")
+            call ton_main("Wish I could watch you two a little longer...","base","base","worried","mid")
+            call ton_main("But I have to head back to my office.","open","base","worried","L")
+            m "What a shame."
+            call ton_main("Make sure she swallows for me.","horny","base","base","mid")
+            g9 "Every last drop!"
+
+            if daytime:
+                call ton_main("See you in class, you little cutie!","horny","base","angry","down")
+            else:
+                call ton_main("Good night... slut!","horny","base","angry","down")
+            call her_main("..........","silly","worriedCl")
+
+            #Tonks leaves.
+            hide screen tonks_main
+            hide screen bld1
+            with d3
+
+            stop music fadeout 1.0
+
+            #call ton_walk("mid","leave",3)
+            pause.5
+
+            $ hermione_flip = 1 #Default
+
+            call blkfade
+
+            call play_music("playful_tension") # SEX THEME.
+            ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
+
+            return
+
+        "\"I am busy right now, [tonks_name].\"":
+            call her_main("(Thank you, [genie_name].)","soft","base",ypos="head")
+            ton "Busy?"
+            ton "Could it be..."
+            ton "Is Snape with you?"
+            if daytime:
+                ton "Are you two having one of your silly little duels again?"
+            else:
+                ton "Don't stay up drinking again..."
+                ton "We wouldn't want him making a fool of himself. Not in front of the students."
+                ton "He made such a mess last time..."
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            m "He isn't here, actually. But I will let him know..."
+            ton "So, are you with a student then, hmm?"
+            her "{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            ton "Who is she? Is it the blonde? Or..."
+            ton "You aren't shagging my little cousin, are you?"
+            her "{size=-4}(Her cusin? *Slurp...* *Slurp...* *Gulp...*){/size}"
+            her "{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}"
+            m "That's non of your concern, Tonks!"
+            m "You may leave now..."
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            ton "I can help you jack off, if that's what you're-"
+            g4 "I said, leave!"
+            ton "Okay, [ton_genie_name]."
+            ton "*Giggle...*"
+            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            m "I think she's gone..."
+
+            return
+
+
+label hg_hidden_blowjob_cumming: #Call label. Returns.
+    call blkfade
+    her "*Slurp!* *Slurp!* *Gulp!*"
+    ">Hermione keeps sucking on your cock with a rather fierce determination."
+    ">Her technique is lacking but she makes up for it with the effort she puts it."
+    hide screen bld1
+    call hide_blkfade
+    call ctc
+
+    call bld
+    m "Yes... I love your eager, little mouth girl..."
+    her "*Gobble!* *Gobble!* *Gobble!*"
+    call u_pause_ani
+    call her_main("[genie_name]?","soft","ahegao",ypos="head")
+    m "Hm?"
+    call her_main("Are you going to cum on my face today?","soft","ahegao")
+    call her_main("Or do you plan to cum in my mouth?")
+
+    menu:
+        "\"I Plan to splatter your face with cum!\"":
+            call her_main("I see...","soft","ahegao",ypos="head")
+            m "Why do you ask?"
+            call her_main("Oh... I just read in a book that semen contains a lot of antioxidants...","grin","dead")
+            call her_main("It's good for the skin...")
+            m "Great. One facial coming up."
+            m "Back to work now."
+
+        "\"I Plan to fill your mouth with cum!\"":
+            call her_main("I see...","grin","dead",ypos="head")
+            m "Why do you ask?"
+            call her_main("Well, I am trying to watch my calorie-intake...","soft","ahegao")
+            call her_main("I just wonder how much calories your load contains, [genie_name].")
+            call her_main("Maybe I should skip my next meal...")
+            m "[hermione_name]."
+            call her_main("Yes?","soft","ahegao")
+            m "Dick back in the mouth."
+
+        "\"I don't plan so far ahead.\"":
+            call her_main("I see...","soft","ahegao",ypos="head")
+            m "Don't you like surprises?"
+            call her_main("Not really...","soft","ahegao")
+            call her_main("I rather enjoy planning ahead actually...")
+            m "Well some things in life are just unpredictable."
+            m "There is only one way to find out for sure."
+
+        "\"What would you like?\"":
+            call her_main("If it is all the same to you, [genie_name]...","soft","ahegao",ypos="head")
+            if generating_points == 1:
+                call her_main("I would like you to cum on my face, [genie_name].","grin","dead")
+                call her_main("I read that it's good for the skin.")
+            else:
+                call her_main("I would like you to cum in my mouth.","grin","dead")
+                call her_main("You usually cum so much so I think I will be able to just skip my next meal...")
+                call her_main("And do some homework instead.")
+            m "Well, we'll see about that."
+            m "Back to sucking now."
+
+    call u_play_ani
+    her "*Slurp!* *Slurp!* *Slurp!*"
+    m "Hm..."
+    m "You are getting better at this [hermione_name]."
+    her "*Slurp!* *Slurp!* *Gulp!*"
+    m "Ok, say something nasty now..."
+    her "*Slurp--?"
+    call u_pause_ani
+
+    if her_whoring < 21:
+        call her_main("uhm...","angry","down_raised",ypos="head")
+        call her_main("I eat cockroaches?","angry","base")
+        m "What the fuck?"
+        call her_main("T-they are pretty nasty, [genie_name]...","angry","base")
+        m "No, [hermione_name], I mean something dirty!"
+        m "And don't you dare to say \"mud\"!"
+        m "I mean dirty in a sexual way!"
+        call her_main("Oh... Ehm...","angry","down_raised")
+        m "Ah, never mind, the moment is gone..."
+        call her_main("Ehm... I'm sorry, [genie_name].","angry","base")
+        m "Yeah, whatever. Make it up to me by sucking my cock harder."
+        call her_main("Of course, [genie_name].","upset","closed")
+
+    else:
+        call her_main("I'm a slut, [genie_name].","base","suspicious",ypos="head")
+        call her_main("A slut for your cum.","base","glance")
+        m "That's it, [hermione_name]."
+        call her_main("It's all I can think about [genie_name].","base","down")
+        call her_main("Sucking your dirty old cock...")
+        m "Well you better get back to it then [hermione_name]"
+        call her_main("Thank you, [genie_name].","grin","dead")
+        m "You're welcome, cumslut."
+        call her_main("...","base","ahegao_raised")
+
+    call u_play_ani
+    her "*Slurp!* *Gulp!* *Slurp!*"
+    m "Yes, like this... Good..."
+    her "*Slurp!* *Slurp!* *Slurp!*"
+    m "You know what? I think we are almost there."
+    her "*Slurp!* *Slurp!* *Slurp!*"
+    m "Yes, definitely."
+    her "*Slurp!* *Gobble!* *Gobble!*"
+    m "Alright, [hermione_name], this is the final stretch."
+    g4 "Show me what you've got."
+    her "!!! *Gobble-goble-slurp-goble!* !!!"
+    g4 "Yes, like that!"
+    her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+    g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
+    g4 "Ghr!!!"
+
+    menu:
+        g4 "!!!"
+        "-Cum in her mouth-":
+            g4 "Here it comes, [hermione_name]! get ready to swallow fast!"
+            her "!!!"
+            call ctc
+            call blkfade
+
+            call set_u_ani("cum_in_mouth_ani")
+            call u_play_ani
+            call cum_block
+            g4 "{size=+7}ARGH!{/size}"
+            g4 "Eat my cum, slut!"
+            her "*Gulp!-Gulp!-Gulp!*"
+            with hpunch
+            g4 "Yes! Down your fucking throat!"
+            her "*Gulp-gulp-gulp-gulp-gulp!*"
+            hide screen bld1
+            call hide_blkfade
+            stop music fadeout 1.0
+            call ctc
+
+            call bld
+            m "Well, I think that's it."
+            m "You can let go now..."
+            call u_pause_ani
+
+            call her_main("...........................","full_cum","dead",xpos="mid",ypos="base")
+            call her_main("................")
+            call her_main("........")
+            $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
+            call her_main("*GULP!*","cum","worriedCl")
+            call her_main("Gua-ha...","open_wide_tongue","base")
+            m "You alright?"
+            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call her_main("Yes, [genie_name]...","grin","dead")
+            m "Going to skip your next meal?"
+            call her_main("I think so...","grin","dead")
+            call her_main("You always cum so much, [genie_name]...")
+            m "Heh... And who's fault is that??"
+            call her_main(".............","grin","dead") #Smile.
+            call her_main("Can I get paid now?")
+
+            if her_whoring >= 21:
+                if daytime:
+                    m "What, even after I just gave you lunch?"
+                else:
+                    m "What, even after I fed you dinner"
+                call her_main(".............","annoyed","suspicious") #Smile.
+                call her_main("Fine, I suppose this was worth a meal")
+
+            call ctc
+            call blkfade
+
+            return
+
+        "-Cum on her face-":
+            call blkfade
+
+            call u_pause_ani
+            g4 "Ready for your facial, [hermione_name]?"
+            call her_main("Yes [genie_name]!","grin","dead",ypos="head")
+            g4 "Here it comes then!"
+            hide screen bld1
+            call set_u_ani("cum_on_face_ani")
+            call u_play_ani
+            call hide_blkfade
+            call cum_block
+
+            call bld
+            g4 "{size=+7}Whore!{/size}"
+            call her_main("!!?","shock","wide",ypos="head")
+            hide screen bld1
+            with d1
+            call ctc
+
+            call bld
+            $ uni_sperm = True
+            $ u_sperm = "characters/hermione/face/auto_07.png"
+            call her_main("[genie_name]...","shock","wide")
+            g4 "All over your fucking face!"
+            call her_main("Aaah!","grin","dead")
+            call set_u_ani("cum_on_face_blink_ani")
+
+            m "Well, I'm done."
+            call her_main("....................................","grin","dead")
+            m "I said it's over, [hermione_name]."
+            call her_main("Yes, I heard you [genie_name]...","grin","dead")
+            m "So... Aren't you going to clean up?"
+            call her_main("In a moment...","grin","dead")
+            call her_main("I'm giving my skin time to soak in the anti-oxidants...")
+            m "Hm... I find this quite hot..."
+            m "Take your time, [hermione_name]..."
+            call blkfade
+
+            stop music fadeout 1.0
+            ">A while later."
+            $ uni_sperm = True
+            $ aftersperm = True
+
+            call u_end_ani
+            call her_chibi("stand","desk","base")
+            call gen_chibi("sit_behind_desk")
+            hide screen bld1
+            hide screen blktone
+            call hide_blkfade
+            pause.5
+
+            call her_main("I take it you enjoyed yourself, [genie_name]?","angry","wink",xpos="mid",ypos="base")
+            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            m "Yes I did, [hermione_name]."
+            call her_main("Good, so Can I get paid now?","grin","dead")
+
+            if her_whoring >= 21:
+                m "What, even after I just gave you a salon treatment?"
+                m "Women pay a lot of money for a good facial."
+                call her_main(".............","annoyed","suspicious") #Smile.
+                call her_main("Fine, but my skin better look better tomorrow.")
+
+            call blkfade
 
             return
 
@@ -1540,7 +1586,7 @@ label hg_blowjob_4:
 
 label end_hg_blowjob:
 
-    $ gryffindor += current_payout #35
+    $ current_payout = 55
 
     hide screen hermione_main
     call blkfade
@@ -1555,9 +1601,9 @@ label end_hg_blowjob:
     pause.5
 
     call bld
-    if her_whoring < 21:
-        m "Yes, [hermione_name]. 55 points to \"Gryffindor\"."
-        $ gryffindor +=55
+    if her_whoring <= 24:
+        m "Yes, [hermione_name]. [current_payout] points to \"Gryffindor\"."
+        $ gryffindor += current_payout
 
     if mouth_full_of_cum:
         call her_main("...","full_cum","ahegao",cheeks="blush",tears="mascara",xpos="right",ypos="base")
@@ -1567,18 +1613,19 @@ label end_hg_blowjob:
     if her_whoring < 18:
         $ her_whoring +=1
 
-    if hg_pf_SuckIt_OBJ.points == 0:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 1 #Event hearts level (0-4)
-
-    if hg_pf_SuckIt_OBJ.points == 1:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 2 #Event hearts level (0-4)
-
-    if hg_pf_SuckIt_OBJ.points >= 2:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 3 #Event hearts level (0-4)
-
-    if hg_pf_SuckIt_OBJ.points >= 2 and her_whoring > 21:
-        $ hg_pf_SuckIt_OBJ.hearts_level = 4 #Event hearts level (0-4)
-
     $ hg_pf_SuckIt_OBJ.points += 1
 
     jump end_hg_pf #Hides screens. Hermione walks out. Resets Hermione.
+
+
+
+
+#Hidden Blowjob
+label update_hidden_bj_list:
+    $ hg_hidden_bj_list = ["snape"]
+    if luna_unlocked and luna_reverted:
+        $ hg_hidden_bj_list.append("luna")
+    if tonks_unlocked:
+        $ hg_hidden_bj_list.append("tonks")
+
+    return

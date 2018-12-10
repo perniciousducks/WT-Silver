@@ -239,7 +239,7 @@ image ch_hem blink_a_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_b:    #shirt 00.1
     "characters/hermione/chibis/walk/h_walk_b_01.png"
     pause.08
@@ -377,7 +377,7 @@ image ch_hem blink_c_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_d:    #shirt 01
     "characters/hermione/chibis/walk/h_walk_d_01.png"
     pause.08
@@ -446,7 +446,7 @@ image ch_hem blink_d_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_e:    #shirt 02
     "characters/hermione/chibis/walk/h_walk_e_01.png"
     pause.08
@@ -515,7 +515,7 @@ image ch_hem blink_e_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_f:    #shirt 03
     "characters/hermione/chibis/walk/h_walk_f_01.png"
     pause.08
@@ -584,7 +584,7 @@ image ch_hem blink_f_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_g:    #shirt 04
     "characters/hermione/chibis/walk/h_walk_g_01.png"
     pause.08
@@ -653,7 +653,7 @@ image ch_hem blink_g_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_h:    #shirt 05
     "characters/hermione/chibis/walk/h_walk_h_01.png"
     pause.08
@@ -722,7 +722,7 @@ image ch_hem blink_h_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_n:    #no shirt
     "characters/hermione/chibis/walk/h_walk_n_01.png"
     pause.08
@@ -791,7 +791,7 @@ image ch_hem blink_n_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_robe: #hermione walking in robe
     "characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause.08
@@ -860,7 +860,7 @@ image ch_hem blink_robe_blink_flip:
     im.Flip("characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause 3
     repeat
-    
+
 image ch_hem walk_robe_n: #hermione walking in robe naked
     "characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause.08
@@ -1005,7 +1005,7 @@ image ch_hem fly_a_flip:
     repeat
 
 ### HERMIONE FAVOR ANIMATIONS ###
-    
+
 ### HERMIONE GROPE BREASTS (w/ top) ###
 image ani_her_grope_breasts_top_a:
     "images/animation/molest_01.png"
@@ -1025,7 +1025,7 @@ image ani_her_grope_breasts_top_a:
     "images/animation/molest_08.png"
     pause.2
     repeat
-    
+
 ### HERMIONE DANCING ###
 image clothed_dance_ani:### HERMIONE DANCING FULLY CLOTHED ###
     "characters/hermione/chibis/dance/01_dancing_01.png"
@@ -1117,7 +1117,26 @@ image no_panties_dance_ani:### HERMIONE DANCING NO PANTIES###
     "characters/hermione/chibis/dance/07_dance_09.png"
     pause.1
     repeat
-    
+
+image hermione_stripper_dance:
+    "characters/hermione/chibis/dance/strip_01.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_02.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_03.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_04.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_05.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_06.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_07.png"
+    pause.15
+    "characters/hermione/chibis/dance/strip_08.png"
+    pause.15
+    repeat
+
 ## HERMIONE GROPE BREASTS (nude) ###
 image ani_her_grope_breasts_lift_top:
     "images/animation/tit_molester_naked_01.png"
@@ -1155,7 +1174,7 @@ image ani_her_grope_breasts_no_top:
     "images/animation/tit_molester_naked_00_08.png"
     pause.2
     repeat
-    
+
 ### HERMIONE HANDJOB ###
 image ani_her_handjob:
     "images/animation/12_handjob_01.png"
@@ -1865,7 +1884,7 @@ image ani_her_sex_cum_outside_blink_naked:
     "images/animation/22_cum_n_19.png"
     pause 2
     repeat
-    
+
 ### HERMIONE SEX CUM INSIDE###
 image ani_her_sex_cum_inside: #sex_cum_in_ani
     "images/animation/23_cum_01.png"
@@ -1999,7 +2018,7 @@ image ani_her_sex_cum_inside_blink_naked:
 
 ### TITJOB ANI ###
 
-image titjob_ani:    #titjob 
+image titjob_ani:    #titjob
     "characters/hermione/chibis/titjob/tj_sex_01.png"
     pause.3
     "characters/hermione/chibis/titjob/tj_sex_02.png"
@@ -2010,7 +2029,7 @@ image titjob_ani:    #titjob
     pause.3
     repeat
 
-image titjob_ani_pause:    #titjob 
+image titjob_ani_pause:    #titjob
     "characters/hermione/chibis/titjob/tj_cum_chest_01.png"
 
 image titjob_chest_ani:    #titjob cum on chest
@@ -2104,7 +2123,3 @@ image titjob_mouth_ani:    #titjob cum in mouth
     "characters/hermione/chibis/titjob/tj_cum_mouth_18.png"
     pause.2
     repeat
-
-
-
-

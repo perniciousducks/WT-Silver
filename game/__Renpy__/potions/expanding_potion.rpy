@@ -78,7 +78,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
             $ hermione_busy = True
 
-            call h_action("expand_breasts")
+            call set_her_action("expand_breasts")
 
             jump main_room
 
@@ -98,7 +98,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     pause .8
 
     hide screen hermione_main
-    call h_action("lift_top")
+    call set_her_action("lift_top")
     call her_chibi("hide")
     hide screen genie
     show screen groping_naked_tits
@@ -117,7 +117,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("...It feels like they're getting-","angry","down_raised")
     call ctc
 
-    call h_action("expand_breasts")
+    call set_her_action("expand_breasts")
     with vpunch
 
     call her_main("!!!","angry","wide")
@@ -220,11 +220,11 @@ label potion_scene_2_2: #ass expansion
     call her_main("It feels too sensitive... I have to take my skirt off","angry","wide") #changed so to too
 
     $ hermione_wear_panties = False
-    call set_hermione_action("lift_skirt")
+    call set_her_action("lift_skirt")
     pause.5
 
     $ hermione_wear_bottom = False
-    call set_hermione_action("none","skip_update")
+    call set_her_action("none","skip_update")
 
     call her_main("","silly","ahegao_intense",cheeks="blush")
     pause.8
@@ -235,7 +235,7 @@ label potion_scene_2_2: #ass expansion
     call her_main("Something is happening with my body, [genie_name]!","open","down_raised")
     call ctc
 
-    call set_hermione_action("expand_ass")
+    call set_her_action("expand_ass")
     with vpunch
 
     call her_main("","angry","down_raised")
@@ -352,7 +352,6 @@ label potion_scene_2_2: #ass expansion
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.","grin","dead")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
-            $ h_action_show_skirt = True
             call her_main("...","open","down")
 
         "-Hot dog her-" if her_whoring >= 17:

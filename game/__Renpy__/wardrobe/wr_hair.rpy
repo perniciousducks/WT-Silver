@@ -35,7 +35,7 @@ label change_her_hair:
     #    #">She's already wearing that!" #Remove line. Just for testing.
     #    jump return_to_wardrobe
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     else:
@@ -48,7 +48,7 @@ label change_her_hair:
 
 
             #Change Hair-Style
-            if hair_style_choice == "A" and h_hair_style != "A":
+            if hair_style_choice == "curly" and h_hair_style != "curly":
                 m "[hermione_name]..."
                 m "Could you wear your hair normal for me?"
                 call her_main("Of course, [genie_name].","soft","base")
@@ -59,14 +59,14 @@ label change_her_hair:
 
                 pause.5
 
-                call set_her_hair_style(hair_style_choice)
+                call set_her_hair(style=hair_style_choice)
                 call compliment_her_hair_style
 
                 if hair_color_choice != h_hair_color:
                     m "There is something else I would like you to do, [hermione_name]..."
                     call her_main("Of course, [genie_name].","base","base")
 
-            if hair_style_choice == "B" and h_hair_style != "B":
+            if hair_style_choice == "updo" and h_hair_style != "updo":
                 m "[hermione_name]..."
                 m "Could you tie your hair up for me?"
                 call her_main("Of course, [genie_name].","soft","base")
@@ -77,14 +77,14 @@ label change_her_hair:
 
                 pause.5
 
-                call set_her_hair_style(hair_style_choice)
+                call set_her_hair(style=hair_style_choice)
                 call compliment_her_hair_style
 
                 if hair_color_choice != h_hair_color:
                     m "There is something else I would like you to do, [hermione_name]..."
                     call her_main("Of course, [genie_name].","base","base")
 
-            if hair_style_choice == "E" and h_hair_style != "E":
+            if hair_style_choice == "bobcut" and h_hair_style != "bobcut":
                 m "[hermione_name]..."
                 m "Could you wear your hair short for me?"
                 call her_main("Of course, [genie_name].","soft","base")
@@ -95,7 +95,7 @@ label change_her_hair:
 
                 pause.5
 
-                call set_her_hair_style(hair_style_choice)
+                call set_her_hair(style=hair_style_choice)
 
                 if hair_color_choice != h_hair_color:
                     m "There is something else I would like you to do, [hermione_name]..."
@@ -109,7 +109,7 @@ label change_her_hair:
                     m "[hermione_name]..."
 
             #Brown #Done
-            if hair_color_choice == "1":
+            if hair_color_choice == "brown":
                 m "I want you to change your hair back to brown."
                 if her_whoring < 5:
                     call her_main("Gladly, [genie_name].","open","closed")
@@ -127,7 +127,7 @@ label change_her_hair:
                     call her_main("Fine, [genie_name]... {w=0.9}let me go change it.","base","baseL")
 
             #Blonde #Done
-            elif hair_color_choice == "2":
+            elif hair_color_choice == "blonde":
                 m "Would you dye your hair blonde for me?"
                 if her_whoring >= 5:
                     if her_whoring < 11:
@@ -152,7 +152,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #Red #Done
-            elif hair_color_choice == "3":
+            elif hair_color_choice == "red":
                 m "Would you dye your hair red for me?"
                 if her_whoring >= 5:
                     if her_whoring < 11:
@@ -188,7 +188,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #Crimson #Done
-            elif hair_color_choice == "4":
+            elif hair_color_choice == "crimson":
                 m "Would you dye your hair crimson for me?"
                 if her_whoring >= 8:
                     call her_main("It is a really nice colour, [genie_name].","soft","base")
@@ -202,7 +202,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #Black #Done
-            elif hair_color_choice == "5":
+            elif hair_color_choice == "black":
                 m "Would you dye your hair black for me?"
                 if her_whoring >= 8:
                     if her_whoring < 17:
@@ -223,7 +223,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #Green #Done
-            elif hair_color_choice == "6":
+            elif hair_color_choice == "green":
                 m "Would you dye your hair for me again?"
                 call her_main("Of course, [genie_name]. In which colour?","open","base")
                 g9 "Slytherin Green!"
@@ -254,7 +254,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #Blue #Done
-            elif hair_color_choice == "7":
+            elif hair_color_choice == "blue":
                 m "Would you dye your hair blue for me?"
                 if her_whoring >= 11:
                     call her_main("Sure, [genie_name].","soft","baseL")
@@ -275,7 +275,7 @@ label change_her_hair:
                         jump return_to_wardrobe
 
             #Purple #Done
-            elif hair_color_choice == "8":
+            elif hair_color_choice == "purple":
                 m "Would you dye your hair purple for me?"
                 if her_whoring >= 11:
                     call her_main("Sure, [genie_name].","soft","baseL")
@@ -290,7 +290,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #Pink #Done
-            elif hair_color_choice == "9":
+            elif hair_color_choice == "pink":
                 m "Would you dye your hair pink for me?"
                 if her_whoring >= 14:
                     call her_main("Of course, [genie_name]!","smile","glance")
@@ -309,7 +309,7 @@ label change_her_hair:
                     jump return_to_wardrobe
 
             #White #Done
-            elif hair_color_choice == "10":
+            elif hair_color_choice == "gray":
                 m "Dye your hair white for me."
                 if her_whoring >= 17:
                     call her_main("Alright, [genie_name].","smile","baseL")
@@ -327,7 +327,7 @@ label change_her_hair:
 
             pause.5
 
-            call set_her_hair_color(hair_color_choice)
+            call set_her_hair(color=hair_color_choice)
 
 
             call her_main(xpos="wardrobe")
@@ -337,63 +337,61 @@ label change_her_hair:
         else:
 
             $ hide_transitions = True
-            call set_her_hair_style(hair_style_choice)
+            call set_her_hair(style=hair_style_choice)
             call her_main(xpos="wardrobe")
 
             if hair_color_choice == h_hair_color:
                 call screen wardrobe
 
-            if hair_color_choice == "2" and her_whoring <= 5:
+            if hair_color_choice == "blonde" and her_whoring <= 5:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 2."
                 jump return_to_wardrobe
-            if hair_color_choice == "3" and her_whoring <= 5:
+            if hair_color_choice == "red" and her_whoring <= 5:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 2."
                 jump return_to_wardrobe
-            if hair_color_choice == "4" and her_whoring <= 8:
+            if hair_color_choice == "crimson" and her_whoring <= 8:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 8."
                 jump return_to_wardrobe
-            if hair_color_choice == "5" and her_whoring <= 8:
+            if hair_color_choice == "black" and her_whoring <= 8:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 8."
                 jump return_to_wardrobe
 
-            if hair_color_choice == "6" and her_whoring <= 11:
+            if hair_color_choice == "green" and her_whoring <= 11:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 11."
                 jump return_to_wardrobe
-            if hair_color_choice == "7" and her_whoring <= 11:
+            if hair_color_choice == "blue" and her_whoring <= 11:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 11."
                 jump return_to_wardrobe
-            if hair_color_choice == "8" and her_whoring <= 11:
+            if hair_color_choice == "purple" and her_whoring <= 11:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 11."
                 jump return_to_wardrobe
-            if hair_color_choice == "9" and her_whoring <= 14:
+            if hair_color_choice == "pink" and her_whoring <= 14:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 14."
                 jump return_to_wardrobe
-            if hair_color_choice == "10" and her_whoring <= 17:
+            if hair_color_choice == "gray" and her_whoring <= 17:
                 ">She won't wear that colour just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 17."
                 jump return_to_wardrobe
-            else:
-                pass
 
             $ hide_transitions = True
-            call set_her_hair_color(hair_color_choice)
+            call set_her_hair(color=hair_color_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 #
@@ -414,7 +412,7 @@ label compliment_her_hair_style:
         m "You look very lovely, [hermione_name]!"
         call her_main("Glad to hear that, [genie_name].","base","glance")
     else: #20+
-        if h_hair_style == "A":
+        if h_hair_style == "curly":
             call her_main("Do you like my long hair, [genie_name]?","base","glance")
             m "I do, [hermione_name]"
             call her_main("I prefer wearing my hair open like this.","open","closed")
@@ -440,29 +438,24 @@ label compliment_her_hair_style:
 label change_lun_hair:
     call set_lun_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_ast_hair:
     call set_ast_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_sus_hair:
     call set_sus_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_cho_hair:
     call set_cho_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 label change_ton_hair:
     call set_ton_hair(hair_style_choice, hair_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe

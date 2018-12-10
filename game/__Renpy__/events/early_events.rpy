@@ -259,8 +259,7 @@ label event_03:
 
     who2 "................."
 
-    hide screen snape_01_f
-    show screen snape_01 #Snape stands still.
+    call sna_chibi("stand","door","base",flip=False)
     with d3
     pause.2
 
@@ -274,15 +273,11 @@ label event_03:
     m "Got it."
 
     hide screen bld1
-    hide screen snape_01
-    show screen snape_01_f #Snape stands still.
+    call sna_chibi("stand","door","base",flip=True)
     with d3
     pause.2
 
-    call play_sound("door")
-    hide screen snape_01_f #Snape stands still.
-    with d3
-    pause.5
+    call sna_chibi("leave")
 
     jump day_start
 
@@ -403,8 +398,7 @@ label event_05:
     stop music fadeout 1.0
     who2 "........................"
 
-    hide screen snape_01
-    hide screen snape_01_f
+    call sna_chibi("leave")
     hide screen bld1
     hide screen snape_main
 
@@ -817,9 +811,7 @@ label event_07:
     call sna_head(".................","snape_06",xpos="base",ypos="base")
     call sna_head("\"Send those whores up, Severus!\" Ha-ha-ha..","snape_28")
 
-    call play_sound("door")
-    hide screen snape_01_f #Snape stands still. (Mirrored).
-    with d3
+    call sna_chibi("leave")
 
     m "Hm... "
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
@@ -946,7 +938,7 @@ label event_08:
 
     menu:
         "\"(I will jerk off a little while she talks.)\"":
-            $ jerked_off_in_front_of_her += 1
+            $ her_jerk_off_counter += 1
             $ jerk_off_session = True #Affects next conversation with Snape.
             $ d_flag_01 = True #If TRUE genie jerks off under the desk.
         "\"(No, that's stupid! I Need to behave!)\"":

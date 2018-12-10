@@ -48,19 +48,19 @@ label want_to_rule:
             menu:
                 m "..."
                 "\"Show me your tits first.\"":
-                    $ mad += 9
+                    $ her_mood += 9
                     $ d_flag_01 = True
                     pass
                 "\"Show me your pussy first.\"":
-                    $ mad += 9
+                    $ her_mood += 9
                     $ d_flag_02 = True
                     pass
                 "\"Strip naked for me first.\"":
-                    $ mad += 17
+                    $ her_mood += 17
                     $ d_flag_03 = True
                     pass
                 "\"You will have to sleep with me.\"" if not d_flag_04:
-                    $ mad += 17
+                    $ her_mood += 17
                     $ d_flag_04 = True
                     call her_main("I will have to... sleep...?","angry","wide")
                     call her_main("...................","angry","angry",cheeks="blush")
@@ -138,7 +138,7 @@ label want_to_rule:
                     pause.8
 
                     $ hermione_wear_bra = False
-                    call h_action("lift_top")
+                    call set_her_action("lift_top")
                     pause.5
 
                     show screen blktone
@@ -169,7 +169,7 @@ label want_to_rule:
                     with fade
                     call ctc
 
-                    call h_action("lift_skirt")
+                    call set_her_action("lift_skirt")
                     pause.5
 
                     show screen blktone
@@ -240,27 +240,27 @@ label want_to_rule:
                     pause.2
 
                     $ hermione_wear_bra = False
-                    call set_hermione_action("lift_top")
+                    call set_her_action("lift_top")
                     pause.5
 
                     $ hermione_wear_top = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.5
 
                     call nar(">One piece after another...")
 
                     $ hermione_wear_panties = True
-                    call set_hermione_action("lift_skirt")
+                    call set_her_action("lift_skirt")
                     pause.5
 
                     $ hermione_wear_bottom = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.5
 
                     call nar(">Vest, shirt, her skirt, and finally...")
 
                     $ hermione_wear_panties = False
-                    call set_hermione_action("covering")
+                    call set_her_action("covering")
                     pause.5
 
                     call nar(">The panties.")
@@ -271,9 +271,6 @@ label want_to_rule:
                     call ctc
                     her "*Sob!*"
                     m "Huh?"
-
-                    $ display_h_tears = True
-                    $ u_tears_pic = "characters/hermione/face/tears_01.png"
 
                     call her_main("Oh, please, don't mind me, sir.","open","baseL",)
                     call her_main("Just enjoy the... {w}the... {w}the view...","soft","squintL")
@@ -287,7 +284,7 @@ label want_to_rule:
                     call her_main("Please keep on looking at my naked body... *Sob!*","shock","wide",tears="messy")
 
                     call her_main("","angry","angry",cheeks="blush",tears="messy")
-                    call set_hermione_action("lift_breasts")
+                    call set_her_action("lift_breasts")
                     pause.2
 
                     g4 "(What the...?)"
@@ -305,7 +302,7 @@ label want_to_rule:
                     call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","open","ahegao_raised",cheeks="blush",tears="messy")
                     m "Ehm... right... Ok..."
                     m "Listen, I think this will do..."
-                    call set_hermione_action("pinch")
+                    call set_her_action("pinch")
                     call her_main("Are you sure, sir?","angry","angry",cheeks="blush",tears="messy")
                     her "Are you sure that you humiliated me enough, sir?"
                     m "...................."
@@ -361,8 +358,6 @@ label want_to_rule:
 
     $ hermione_busy = True
     $ days_without_an_event = 0
-
-    $ display_h_tears = False
 
     call music_block
 
@@ -448,7 +443,7 @@ label against_the_rule:
     call bld
     call nar("Professor Snape spends the day in your chamber, drinking the stress away.")
 
-    if not snape_friendship_maxed:# Turns TRUE when friendship with Snape been maxed out.
+    if not sna_friendship_maxed:# Turns TRUE when friendship with Snape been maxed out.
         call nar(">Your relationship with him has improved.")
         $ sna_friendship +=1
 
@@ -610,7 +605,7 @@ label start_end_events:
             g9 "Maybe we could..."
             call her_main("Have some fun?","soft","glance")
             g9 "You can read my mind, girl."
-            jump silver_requests
+            jump hermione_requests_menu
         "No.":
             jump hermione_talk
 
@@ -625,7 +620,7 @@ label giving_the_dress:
     stop music fadeout 1.0
     m "Here... This is for you..."
 
-    call give_reward(">You give the ball gown to Hermione...","images/store/01.png")
+    call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
 
     call her_main("Hm...? What is this?","base","base")
     call her_main("{size=+7}A DRESS?!{/size}","angry","wide")

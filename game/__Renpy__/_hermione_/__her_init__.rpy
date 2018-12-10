@@ -17,11 +17,10 @@ label her_init:
         $ hermione_eyes             = "characters/hermione/face/eyes/brown/base.png"
         $ hermione_eyebrows         = "characters/hermione/face/brows/brown/base.png"
         $ h_eye_color               = "brown"
-        $ h_eye_shadow              = "00_blank"
+        $ h_eye_shadow              = "blank"
 
         $ hermione_cheeks           = "characters/hermione/face/extras/cheeks_blank.png"
         $ hermione_tears            = "characters/hermione/face/extras/tears_blank.png"
-        $ h_display_tears           = False
         $ hermione_extra            = "characters/hermione/face/extras/blank.png"
         $ hermione_emote            = "characters/emotes/blank.png"
 
@@ -38,7 +37,6 @@ label her_init:
         $ hermione_breasts          = "characters/hermione/body/breasts/breasts_nipfix.png"
         $ h_breasts                 = "breasts_nipfix"
 
-        $ hermione_perm_expand           = False
         $ hermione_perm_expand_breasts   = False
         $ hermione_perm_expand_ass       = False
 
@@ -59,11 +57,11 @@ label her_init:
         $ hermione_legs             = "characters/hermione/body/legs/legs_1.png"
 
         #Hair
-        $ hermione_hair_a           = "characters/hermione/body/head/A_1.png"
-        $ hermione_hair_b           = "characters/hermione/body/head/A_1_2.png"
-        $ h_hair_style              = "A"
-        $ h_hair_color              = 1
-        $ h_can_color               = ["A","B"]
+        $ hermione_hair_base           = "characters/hermione/body/head/curly_brown.png"
+        $ hermione_hair_top           = "characters/hermione/body/head/curly_brown_top.png"
+        $ h_hair_style              = "curly"
+        $ h_hair_color              = "brown"
+        $ h_can_color               = ["curly","updo","bobcut"]
 
 
         #Actions/Posing
@@ -71,35 +69,12 @@ label her_init:
         $ hermione_use_action    = False
 
         $ h_action_top           = ""
-        $ h_action_bra           = ""
         $ h_action_bottom        = ""
-        $ h_action_panties       = ""
-        $ h_action_gloves        = ""
 
-
-        $ hermione_action_left_arm  = "00_blank.png"
-        $ hermione_action_right_arm = "00_blank.png"
-        $ hermione_action_a         = "00_blank.png"
-        $ hermione_action_b         = "00_blank.png"
-
-        $ h_action_right_arm        = "00_blank.png"
-        $ h_action_left_arm         = "00_blank.png"
-        $ h_action_a                = "00_blank.png"
-        $ h_action_b                = "00_blank.png"
-
-        $ h_action_show_arms        = False
-        $ h_action_show_bra         = True
-        $ h_action_show_panties     = True
-        $ h_action_show_top         = True
-        $ h_action_show_skirt       = True
-
-        $ hermione_action_bra       = "characters/hermione/clothes/underwear/base/bra_base.png"
-        $ hermione_action_panties   = "characters/hermione/clothes/underwear/base/panties_base.png"
-        $ hermione_action_top       = "characters/hermione/clothes/tops/base/top_1_g.png"
-        $ hermione_action_skirt     = "characters/hermione/clothes/bottoms/base/skirt_1.png"
-
-        $ hermione_costume_action_a = "characters/hermione/clothes/custom/00_blank.png"
-
+        $ hermione_action_a         = "blank.png"
+        $ hermione_action_b         = "blank.png"
+        $ h_action_a                = "blank.png"
+        $ hermione_costume_action_a = "characters/hermione/clothes/custom/blank.png"
 
         $ u_sperm = "characters/hermione/face/auto_02.png"
         $ hermione_sperm = "characters/hermione/face/auto_02.png" #Not in use yet.
@@ -120,10 +95,6 @@ label her_init:
         $ hermione_chibi_run_f       = "ch_hem run_a_flip"
         $ hermione_chibi_fly         = "ch_hem fly_a"
         $ hermione_chibi_fly_f       = "ch_hem fly_a_flip"
-
-        $ her_chibi_dance_xpos       = 350 #Not in use
-        $ her_chibi_dance_ypos       = 180 #Not in use
-
 
         $ u_h_animation              = ""
         $ u_h_animation_paused       = ""
@@ -163,8 +134,10 @@ label her_init:
         $ h_request_wear_buttplug         = False
         $ h_request_wear_piercings        = False
         $ h_request_wear_tattoos          = False
+        $ h_request_wear_mask             = False
+        $ h_request_wear_gag              = False
 
-        $ h_request_wear_outfit = False
+        $ h_request_wear_outfit           = False
 
 
         #Toggle
@@ -187,10 +160,14 @@ label her_init:
         $ hermione_wear_makeup            = False
         $ hermione_wear_body_accs         = False
         $ hermione_badges                 = False
+
+        $ hermione_wear_buttplug          = False
         $ hermione_wear_piercings         = False
         $ hermione_wear_tattoos           = False
+        $ hermione_wear_mask              = False
+        $ hermione_wear_gag               = False
 
-        $ hermione_wear_outfit = False
+        $ hermione_wear_outfit            = False
 
 
 
@@ -215,59 +192,58 @@ label her_init:
         $ h_panties                 = "panties_base"
         $ h_panties_color           = "base"
 
-        $ hermione_onepiece         = "characters/hermione/clothes/onepieces/base/00_blank.png"
-        $ h_onepiece                = "00_blank"
+        $ hermione_onepiece         = "characters/hermione/clothes/onepieces/blank.png"
+        $ h_onepiece                = "blank"
         $ h_onepiece_color          = "base"
 
-        $ hermione_garterbelt       = "characters/hermione/clothes/garterbelts/00_blank.png"
-        $ h_garterbelt              = "00_blank"
+        $ hermione_garterbelt       = "characters/hermione/clothes/garterbelts/blank.png"
+        $ h_garterbelt              = "blank"
         $ h_garterbelt_color        = "base"
 
 
         #Other Clothing
-        $ hermione_neckwear         = "characters/hermione/clothes/neckwear/00_blank.png"
-        $ h_neckwear                = "00_blank"
+        $ hermione_neckwear         = "characters/hermione/clothes/neckwear/blank.png"
+        $ h_neckwear                = "blank"
         $ h_neckwear_color          = "base"
 
         $ hermione_body_accs_list   = []
 
-        $ hermione_gloves           = "characters/hermione/clothes/gloves/00_blank.png"
-        $ h_gloves                  = "00_blank"
+        $ hermione_gloves           = "characters/hermione/clothes/gloves/blank.png"
+        $ h_gloves                  = "blank"
         $ h_gloves_color            = "base"
 
-        $ hermione_stockings        = "characters/hermione/clothes/stockings/00_blank.png"
-        $ h_stockings               = "00_blank"
+        $ hermione_stockings        = "characters/hermione/clothes/stockings/blank.png"
+        $ h_stockings               = "blank"
         $ h_stockings_color         = "base"
         $ temp_stockings            = h_stockings
 
-        $ hermione_robe             = "characters/hermione/clothes/robe/base/gryff_robe.png"
-        $ h_robe                    = "gryff_robe"
+        $ hermione_robe             = "characters/hermione/clothes/robe/robe_basic_g.png"
+        $ h_robe                    = "robe_basic_g"
         $ h_robe_color              = "base"
 
         #Accessories
         $ hermione_makeup_list      = []
 
-        $ hermione_hat              = "characters/hermione/accessories/hats/hair_A/00_blank.png"
-        $ h_hat                     = "00_blank"
+        $ hermione_hat              = "characters/hermione/accessories/hats/hair_curly/blank.png"
+        $ h_hat                     = "blank"
         $ h_hat_color               = "base"
 
-        $ hermione_glasses          = "characters/hermione/accessories/glasses/00_blank.png"
-        $ h_glasses                 = "00_blank"
+        $ hermione_glasses          = "characters/hermione/accessories/glasses/blank.png"
+        $ h_glasses                 = "blank"
         $ h_glasses_color           = "base"
 
-        $ hermione_ears             = "characters/hermione/accessories/ears/00_blank.png"
-        $ h_ears                    = "00_blank"
+        $ hermione_ears             = "characters/hermione/accessories/ears/blank.png"
+        $ h_ears                    = "blank"
 
 
         #Miscellaneous
-        $ hermione_wear_buttplug     = False
-        $ hermione_buttplug          = "characters/hermione/accessories/plugs/00_blank.png"
-        $ h_buttplug                 = "00_blank"
+        $ hermione_buttplug          = "characters/hermione/accessories/plugs/blank.png"
+        $ h_buttplug                 = "blank"
 
-        $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/00_blank.png"
-        $ h_pubic_hair               = "00_blank"
+        $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/blank.png"
+        $ h_pubic_hair               = "blank"
 
-        $ hermione_panties_overlay  = "characters/hermione/clothes/underwear/00_blank.png"
+        $ hermione_panties_overlay  = "characters/hermione/clothes/underwear/blank.png"
         $ hermione_ass_cum          = False
         $ hermione_squirt           = False
         $ hermione_futa             = False
@@ -277,27 +253,32 @@ label her_init:
 
 
         #Piercings
-        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_ear_piercing             = "00_blank"
+        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_ear_piercing             = "blank"
         $ h_ear_piercing_color       = "base"
 
-        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_nipple_piercing          = "00_blank"
+        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_nipple_piercing          = "blank"
         $ h_nipple_piercing_color    = "base"
 
-        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_belly_piercing           = "00_blank"
+        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_belly_piercing           = "blank"
         $ h_belly_piercing_color     = "base"
 
-        $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/00_blank.png"
-        $ h_intimate_piercing        = "00_blank"
+        $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/blank.png"
+        $ h_intimate_piercing        = "blank"
         $ h_intimate_piercing_color  = "base"
 
         #Tattoos
         $ hermione_tattoos_list      = []
         $ h_tattoos_color            = "base"
 
-        $ transparency               = 1
+        $ hermione_mask              = "characters/hermione/accessories/masks/blank.png"
+        $ h_mask                     = "blank"
+        $ hermione_gag               = "characters/hermione/face/mouth/nude/gag.png"
+        $ h_gag                      = "gag"
+
+        call reset_her_transparency
 
         #Outfits
         $ hermoine_outfit_GLBL = None
@@ -310,6 +291,24 @@ label her_init:
 
     return
 
+label reset_her_transparency:
+    $ transparency         = 1
+
+    $ her_top_transp       = 1
+    $ her_bottom_transp    = 1
+
+    $ her_bra_transp       = 1
+    $ her_onepiece_transp  = 1
+    $ her_panties_transp   = 1
+    $ her_garter_transp    = 1
+
+    $ her_gloves_transp    = 1
+    $ her_stockings_transp = 1
+    $ her_robe_transp      = 1
+
+    $ her_outfit_transp    = 1
+
+    return
 
 
 label her_clothing_lists_init: #Lists update at every game start!
@@ -317,7 +316,7 @@ label her_clothing_lists_init: #Lists update at every game start!
     #Tops
     $ h_top_nipfix_list             = ["onepiece_microdress",
                                        "top_fishnets",
-                                      ]
+                                       ]
 
     $ h_top_has_no_recolor_list     = ["leather_jacket_short_sleeves",
                                        "leather_jacket_short_sleeves_open",
@@ -329,11 +328,11 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_fishnets",
                                        ]
 
-    $ h_top_remove_bra_list         = ["top_1_g",
-                                       "top_2_g",
-                                       "top_3_g",
-                                       "top_4_g",
-                                       "top_6_g",
+    $ h_top_remove_bra_list         = ["top_1_g", "top_1_s",
+                                       "top_2_g", "top_2_s",
+                                       "top_3_g", "top_3_s",
+                                       "top_4_g", "top_4_s",
+                                       "top_6_g", "top_6_s",
                                        "top_cheer_sexy_g",
                                        "top_cheer_sexy_s",
                                        "top_cheer_sexy_r",
@@ -346,11 +345,11 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "normal_sweater",
                                        ]
 
-    $ h_lift_top_list               = ["top_1_g",
-                                       "top_2_g",
-                                       "top_3_g",
-                                       "top_4_g",
-                                       "top_6_g",
+    $ h_lift_top_list               = ["top_1_g", "top_1_s",
+                                       "top_2_g", "top_2_s",
+                                       "top_3_g", "top_3_s",
+                                       "top_4_g", "top_4_s",
+                                       "top_6_g", "top_6_s"
                                        "normal_pullover",
                                        "normal_pullover_sexy",
                                        "top_fishnets",
@@ -389,13 +388,15 @@ label her_clothing_lists_init: #Lists update at every game start!
     #One-pieces & Nighties
     $ h_onepieces_list              = ["onepiece_microdress",
                                        "onepiece_bunny",
-                                       "onepiece_swimsuit",
-                                       "onepiece_swimsuit_halterless",
+                                       "swimsuit_neckband",
+                                       "swimsuit_halterless",
                                        "onepiece_bikini_string",
                                        "swimsuit_sport_1",
                                        "swimsuit_sport_2",
                                        "swimsuit_sport_3",
                                        "swimsuit_sport_4",
+                                       "onepiece_netsuit_fancy",
+                                       "onepiece_netsuit",
                                       ]
 
     $ h_onepieces_nighties_list     = ["nighty_short",
@@ -425,108 +426,67 @@ label her_clothing_lists_init: #Lists update at every game start!
     $ intimate_piercings_list       = [
                                       ]
 
-    $ h_mouth_list                  = ["angry",
-                                       "annoyed",
-                                       "base",
-                                       "clench",
-                                       "crooked_smile",
-                                       "cum",
-                                       "disgust",
-                                       "full",
-                                       "full_cum",
-                                       "gag",
-                                       "grin",
-                                       "mad",
-                                       "mouthpiece",
-                                       "mouthpiece_drool",
-                                       "normal",
-                                       "open",
-                                       "open_tongue",
-                                       "open_wide_tongue",
-                                       "open_wide_tongue_cum",
-                                       "scream",
-                                       "shock",
-                                       "silly",
-                                       "smile",
-                                       "soft",
-                                       "upset"
-                                       ]
+    $ gryffindor_robe_list          = ["robe_1_g",
+                                       "robe_2_g",
+                                       "robe_3_g",
+                                       "robe_4_g",
+                                       "robe_basic_g",
+                                       "robe_open_g",
+                                       "robe_quidditch_g"
+                                      ]
 
-    $ h_eye_list                    = ["ahegao",
-                                       "ahegao_intense",
-                                       "ahegao_mad",
-                                       "ahegao_raised",
-                                       "ahegao_squint",
-                                       "ahegao_wide",
-                                       "angry",
-                                       "angryCl",
-                                       "angryL",
-                                       "annoyed",
-                                       "base",
-                                       "baseL",
-                                       "closed",
-                                       "concerned",
-                                       "dead",
-                                       "dead_mad",
-                                       "down",
-                                       "down_raised",
-                                       "frown",
-                                       "glance",
-                                       "glanceL",
-                                       "happy",
-                                       "happyCl",
-                                       "narrow",
-                                       "shocked",
-                                       "shocked_raised",
-                                       "silly",
-                                       "soft",
-                                       "squint",
-                                       "squintL",
-                                       "surprised",
-                                       "suspicious",
-                                       "wide",
-                                       "wide_stare",
-                                       "wideL",
-                                       "wink",
-                                       "worried",
-                                       "worriedCl",
-                                       "worriedL"
-                                       ]
+    $ slytherin_robe_list           = ["robe_1_s",
+                                       "robe_2_s",
+                                       "robe_3_s",
+                                       "robe_4_s",
+                                       "robe_basic_s",
+                                       "robe_open_s",
+                                       "robe_quidditch_s"
+                                      ]
+
+    call hermione_face_layers
+
     return
 
 
 
 label her_progress_init:
 
-    #Update 1.3
     if not hasattr(renpy.store,'her_whoring') or reset_persistants:
 
-        # Hermione levels
+        #Stats
         $ her_whoring = 0
         $ her_reputation = 0
         $ her_tutoring = 0
 
-        $ level = "00" #Hermione's her_whoring level. #Is this used anywhere ?!
+        $ her_mood = 0
+        $ forest_BJ_progress = 1
 
-        $ mad = 0
-
+        #Flags
         $ hermione_busy = False
         $ hermione_unlocked = False
         $ hermione_favors = False
         $ hermione_tutoring = False
 
-        $ genie_name = "sir"
-        $ hermione_name = "miss granger"
+        $ hermione_desperate_done = False
 
+        #Names
+        $ genie_name = "Sir"
+        $ hermione_name = "Miss Granger"
+
+        #Clothing Flags
         $ hermione_dribble = False
         $ dribble_equippable = False
         $ hermione_wetpanties = False
         $ wetpanties_equippable = False
 
-        $ hermione_desperate_done = False
+        #Stat Screen
+        $ her_jerk_off_counter = 0
 
-        #Personal Favour Vars.
-        $ jerked_off_in_front_of_her = 0
+
+
+        #Personal Requests
+        $ hg_hidden_bj_seen_list = []
 
         #Public Request Vars.
         $ hg_pr_SexWithClassmate_AltFlag = False
@@ -551,7 +511,6 @@ label her_progress_init:
         $ hermione_is_waiting_02 = False #Turns True at the end of second special event with Snape. Triggers next visit from Hermione
 
         $ collar = 0
-        $ scene_number = 1
 
     #Buttplug Events
         $ buttplug_magic_known   = False
@@ -566,22 +525,240 @@ label her_progress_init:
         $ hermione_door_event_happened = False
 
     #Rewards
-    if not hasattr(renpy.store,'autograph') or reset_persistants:
         $ autograph = False #Professor Lockhart's tattoo.
-
-
-    #Update 1.33b
-    if not hasattr(renpy.store,'forest_BJ_progress') or reset_persistants:
 
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
-        $ forest_BJ_progress = 1
 
-    #Update 1.34
-    if not hasattr(renpy.store,'hg_hidden_blowjob_character_list') or reset_persistants:
-        $ hg_hidden_blowjob_character_list = ["snape"]
-        $ hg_hidden_blowjob_seen_list = []
 
-    ### ADD MORE HERMIONE PERSISTANTS HERE. ADD "or reset_persistants" at the end so they will reset when creating a new game.
+    ### Hermione Favours ###
+
+    if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ'): #important!
+        $ hg_pf_TalkToMe_OBJ = personal_favor(
+            imagination_level = 1,
+            menu_text = "Talk to me",
+            start_label = "hg_pf_TalkToMe",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_NicePanties_OBJ'): #important!
+        $ hg_pf_NicePanties_OBJ = personal_favor(
+            imagination_level = 1,
+            menu_text = "Nice panties",
+            start_label = "hg_pf_NicePanties",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_BreastMolester_OBJ'): #important!
+        $ hg_pf_BreastMolester_OBJ = personal_favor(
+            imagination_level = 1,
+            menu_text = "Breast molester",
+            start_label = "hg_pf_BreastMolester",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_ButtMolester_OBJ'): #important!
+        $ hg_pf_ButtMolester_OBJ = personal_favor(
+            imagination_level = 1,
+            menu_text = "Butt molester",
+            start_label = "hg_pf_ButtMolester",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_ShowThemToMe_OBJ'): #important!
+        $ hg_pf_ShowThemToMe_OBJ = personal_favor(
+            imagination_level = 2,
+            menu_text = "Show them to me!",
+            start_label = "hg_pf_ShowThemToMe",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ'): #important!
+        $ hg_pf_DanceForMe_OBJ = personal_favor(
+            imagination_level = 2,
+            menu_text = "Dance for me!",
+            start_label = "hg_pf_DanceForMe",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_ShowMeYourAss_OBJ'): #important!
+        $ hg_pf_ShowMeYourAss_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Show me that ass!",
+            start_label = "hg_pf_ShowMeYourAss",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_TouchYourself_OBJ'): #important!
+        $ hg_pf_TouchYourself_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Touch Yourself!",
+            start_label = "hg_pf_TouchYourself",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_TouchMe_OBJ'): #important!
+        $ hg_pf_TouchMe_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Touch me!",
+            start_label = "hg_pf_TouchMe",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_SuckIt_OBJ'): #important!
+        $ hg_pf_SuckIt_OBJ = personal_favor(
+            imagination_level = 4,
+            menu_text = "Suck it!",
+            start_label = "hg_pf_SuckIt",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_TitJob_OBJ'): #important!
+        $ hg_pf_TitJob_OBJ = personal_favor(
+            imagination_level = 4,
+            menu_text = "Let me fuck them!",
+            start_label = "hg_pf_TitJob",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_LetsHaveSex_OBJ'): #important!
+        $ hg_pf_LetsHaveSex_OBJ = personal_favor(
+            imagination_level = 5,
+            menu_text = "Let's have sex!",
+            start_label = "hg_pf_LetsHaveSex",
+        )
+
+    if not hasattr(renpy.store,'hg_pf_TimeForAnal_OBJ'): #important!
+        $ hg_pf_TimeForAnal_OBJ = personal_favor(
+            imagination_level = 5,
+            menu_text = "Time for anal!",
+            start_label = "hg_pf_TimeForAnal",
+        )
+
+    if game_difficulty >= 3: #Hardcore
+        $ hg_pf_BreastMolester_OBJ.imagination_level = 2
+        $ hg_pf_ButtMolester_OBJ.imagination_level = 2
+        $ hg_pf_ShowThemToMe_OBJ.imagination_level = 3
+        $ hg_pf_DanceForMe_OBJ.imagination_level = 3
+        $ hg_pf_ShowMeYourAss_OBJ.imagination_level = 4
+        $ hg_pf_TouchYourself_OBJ.imagination_level = 4
+        $ hg_pf_TouchMe_OBJ.imagination_level = 5
+        $ hg_pf_SuckIt_OBJ.imagination_level = 6
+        $ hg_pf_TitJob_OBJ.imagination_level = 6
+        $ hg_pf_LetsHaveSex_OBJ.imagination_level = 7
+        $ hg_pf_TimeForAnal_OBJ.imagination_level = 8
+
+    $ hg_pf_list = []
+    $ hg_pf_list.append(hg_pf_TalkToMe_OBJ)
+    $ hg_pf_list.append(hg_pf_NicePanties_OBJ)
+    $ hg_pf_list.append(hg_pf_BreastMolester_OBJ)
+
+    $ hg_pf_list.append(hg_pf_ButtMolester_OBJ)
+    $ hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
+    $ hg_pf_list.append(hg_pf_DanceForMe_OBJ)
+
+    $ hg_pf_list.append(hg_pf_ShowMeYourAss_OBJ)
+    $ hg_pf_list.append(hg_pf_TouchYourself_OBJ)
+    $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
+
+    $ hg_pf_list.append(hg_pf_SuckIt_OBJ)
+    $ hg_pf_list.append(hg_pf_TitJob_OBJ)
+    $ hg_pf_list.append(hg_pf_LetsHaveSex_OBJ)
+    $ hg_pf_list.append(hg_pf_TimeForAnal_OBJ)
+
+
+
+    if not hasattr(renpy.store,'hg_pr_FlirtClassmate_OBJ'): #important!
+        $ hg_pr_FlirtClassmate_OBJ = public_request()
+    $ hg_pr_FlirtClassmate_OBJ.imagination_level = 1
+    $ hg_pr_FlirtClassmate_OBJ.menu_text = "She's a flirt"
+    $ hg_pr_FlirtClassmate_OBJ.start_label = "hg_pr_FlirtClassmate"
+    $ hg_pr_FlirtClassmate_OBJ.complete_label = "hg_pr_FlirtClassmate_complete"
+
+    if not hasattr(renpy.store,'hg_pr_FlirtTeacher_OBJ'): #important!
+        $ hg_pr_FlirtTeacher_OBJ = public_request()
+    $ hg_pr_FlirtTeacher_OBJ.imagination_level = 1
+    $ hg_pr_FlirtTeacher_OBJ.menu_text = "She's bait"
+    $ hg_pr_FlirtTeacher_OBJ.start_label = "hg_pr_FlirtTeacher"
+    $ hg_pr_FlirtTeacher_OBJ.complete_label = "hg_pr_FlirtTeacher_complete"
+
+    if not hasattr(renpy.store,'hg_pr_ClassmateTouchYou_OBJ'): #important!
+        $ hg_pr_ClassmateTouchYou_OBJ = public_request()
+    $ hg_pr_ClassmateTouchYou_OBJ.imagination_level = 1
+    $ hg_pr_ClassmateTouchYou_OBJ.menu_text = "Let a classmate molest you"
+    $ hg_pr_ClassmateTouchYou_OBJ.start_label = "hg_pr_ClassmateTouchYou"
+    $ hg_pr_ClassmateTouchYou_OBJ.complete_label = "hg_pr_ClassmateTouchYou_complete"
+
+    if not hasattr(renpy.store,'hg_pr_FlashClassmate_OBJ'): #important!
+        $ hg_pr_FlashClassmate_OBJ = public_request()
+    $ hg_pr_FlashClassmate_OBJ.imagination_level = 1
+    $ hg_pr_FlashClassmate_OBJ.menu_text = "Flash your tits to a classmate"
+    $ hg_pr_FlashClassmate_OBJ.start_label = "hg_pr_FlashClassmate"
+    $ hg_pr_FlashClassmate_OBJ.complete_label = "hg_pr_FlashClassmate_complete"
+
+    if not hasattr(renpy.store,'hg_pr_KissAGirl_OBJ'): #important!
+        $ hg_pr_KissAGirl_OBJ = public_request()
+    $ hg_pr_KissAGirl_OBJ.imagination_level = 2
+    $ hg_pr_KissAGirl_OBJ.menu_text = "Kiss a girl."
+    $ hg_pr_KissAGirl_OBJ.start_label = "hg_pr_KissAGirl"
+    $ hg_pr_KissAGirl_OBJ.complete_label = "hg_pr_KissAGirl_complete"
+
+    if not hasattr(renpy.store,'hg_pr_HandjobClassmate_OBJ'): #important!
+        $ hg_pr_HandjobClassmate_OBJ = public_request()
+    $ hg_pr_HandjobClassmate_OBJ.imagination_level = 2
+    $ hg_pr_HandjobClassmate_OBJ.menu_text = "Give a handjob to a classmate"
+    $ hg_pr_HandjobClassmate_OBJ.start_label = "hg_pr_HandjobClassmate"
+    $ hg_pr_HandjobClassmate_OBJ.complete_label = "hg_pr_HandjobClassmate_complete"
+
+    if not hasattr(renpy.store,'hg_pr_BlowjobClassmate_OBJ'): #important!
+        $ hg_pr_BlowjobClassmate_OBJ = public_request()
+    $ hg_pr_BlowjobClassmate_OBJ.imagination_level = 2
+    $ hg_pr_BlowjobClassmate_OBJ.menu_text = "Give a blowjob to a classmate"
+    $ hg_pr_BlowjobClassmate_OBJ.start_label = "hg_pr_BlowjobClassmate"
+    $ hg_pr_BlowjobClassmate_OBJ.complete_label = "hg_pr_BlowjobClassmate_complete"
+
+    if not hasattr(renpy.store,'hg_pr_SexWithClassmate_OBJ'): #important!
+        $ hg_pr_SexWithClassmate_OBJ = public_request()
+    $ hg_pr_SexWithClassmate_OBJ.imagination_level = 2
+    $ hg_pr_SexWithClassmate_OBJ.menu_text = "Have sex with a classmate"
+    $ hg_pr_SexWithClassmate_OBJ.start_label = "hg_pr_SexWithClassmate"
+    $ hg_pr_SexWithClassmate_OBJ.complete_label = "hg_pr_SexWithClassmate_complete"
+
+
+    $ hg_pr_list = []
+    $ hg_pr_list.append(hg_pr_FlirtClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_FlirtTeacher_OBJ)
+    $ hg_pr_list.append(hg_pr_ClassmateTouchYou_OBJ)
+    $ hg_pr_list.append(hg_pr_FlashClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_KissAGirl_OBJ)
+    $ hg_pr_list.append(hg_pr_HandjobClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_BlowjobClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_SexWithClassmate_OBJ)
+
+
+
+    if not hasattr(renpy.store,'hg_ps_PantyThief_OBJ'): #important!
+        $ hg_ps_PantyThief_OBJ = public_shaming()
+    $ hg_ps_PantyThief_OBJ.imagination_level = 1
+    $ hg_ps_PantyThief_OBJ.menu_text = "Panty Thief"
+    $ hg_ps_PantyThief_OBJ.start_label = "hg_ps_PantyThief"
+    $ hg_ps_PantyThief_OBJ.complete_label = "hg_ps_PantyThief_complete"
+
+    if not hasattr(renpy.store,'hg_ps_Buttplug_OBJ'): #important!
+        $ hg_ps_Buttplug_OBJ = public_shaming()
+    $ hg_ps_Buttplug_OBJ.imagination_level = 1
+    $ hg_ps_Buttplug_OBJ.menu_text = "Wear A Buttplug"
+    $ hg_ps_Buttplug_OBJ.start_label = "hg_ps_Buttplug"
+    $ hg_ps_Buttplug_OBJ.complete_label = "hg_ps_Buttplug_complete"
+
+    if not hasattr(renpy.store,'hg_ps_WearMyCum_OBJ'): #important!
+        $ hg_ps_WearMyCum_OBJ = public_shaming()
+    $ hg_ps_WearMyCum_OBJ.imagination_level = 2
+    $ hg_ps_WearMyCum_OBJ.menu_text = "Wear My Cum"
+    $ hg_ps_WearMyCum_OBJ.start_label = "hg_ps_WearMyCum"
+    $ hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_WearMyCum_complete"
+
+    if not hasattr(renpy.store,'hg_ps_WalkOfShame_OBJ'): #important!
+        $ hg_ps_WalkOfShame_OBJ = public_shaming()
+    $ hg_ps_WalkOfShame_OBJ.imagination_level = 2
+    $ hg_ps_WalkOfShame_OBJ.menu_text = "Walk Of Shame"
+    $ hg_ps_WalkOfShame_OBJ.start_label = "hg_ps_WalkOfShame"
+    $ hg_ps_WalkOfShame_OBJ.complete_label = "hg_ps_WalkOfShame_complete"
+
+
+    $ hg_ps_list = []
+    $ hg_ps_list.append(hg_ps_PantyThief_OBJ)
+    $ hg_ps_list.append(hg_ps_Buttplug_OBJ)
+    $ hg_ps_list.append(hg_ps_WearMyCum_OBJ)
+    #$ hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
 
     return

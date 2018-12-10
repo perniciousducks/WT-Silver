@@ -1,56 +1,44 @@
-label __init_variables:
-    if not hasattr(renpy.store,'gift_item_inv'): #important! Gift_Item.ID == Index in this array
-        $ gift_item_inv = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    if not hasattr(renpy.store,'shop_found'): #important!
-        $ shop_found = False
-    if not hasattr(renpy.store,'sscroll_'): #important!
-        $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
-    if not hasattr(renpy.store,'fiction_books_intro'): #important!
-        $ fiction_books_intro = False
 
-    if not hasattr(renpy.store,'sacred_scrolls'):
-        $ sacred_scrolls = [
-            silver_scroll(id=1 , title="The room",           cost=10,    comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."]),
-            silver_scroll(id=2 , title="The calendar",       cost=30,    comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realized how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."]),
-            silver_scroll(id=3 , title="The girl",           cost=40,    comments=["A couple of very early drawings of Hermione..."]),
-            silver_scroll(id=4 , title="Deeptroating",       cost=70,    comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."]),
-            silver_scroll(id=5 , title="Poster 01",          cost=80,    comments=["The game poster...","Hermione is Dahr's work. The rest is me..."]),
-            silver_scroll(id=6 , title="Poster 02",          cost=80,    comments=["Alternative game poster.","This one has never been released."]),
-            silver_scroll(id=7 , title="Chibi-dancing",      cost=90,    comments=["Some chibi closeups.","The one on the left never made it into the final game..."]),
-            silver_scroll(id=8 , title="Game items",         cost=50,    comments=["A banch of items that I ended up not using...","I blame dahr and his awesome artwork."]),
-            silver_scroll(id=9 , title="Panties no panties", cost=90,    comments=["The drawing of Hermione from the poster. (by Dahr)","I like one on the right with her panties still on."]),
-            silver_scroll(id=10, title="A lot of pegs",      cost=50,    comments=["Another ithing that never made it into the final game...","The idea here was that the more you level up Hermione the more pegs she would let you to put on her...","And the nipple chain was supposed to be worn to class under the uniform."]),
-            silver_scroll(id=11, title="House-elf brothel",  cost=110,   comments=["The house-elf brothel... Just another thing that never happened."]),
-            silver_scroll(id=12, title="Me and Lola",        cost=110,   comments=["A drawing featuring yours truly as a Durmstrung mage and Lola as a student...","The drawing itself is by Dahr of course."]),
-            silver_scroll(id=13, title="Hard training",      cost=100,   comments=["Another one of those side-quests that never happened...","This one was about--","No, I better not. Who knows, maybe we will get to adding those quests eventually."]),
-            silver_scroll(id=14, title="Wizard's Chess",     cost=80,    comments=["Another sub-quest...","This one involving the school's wizard chess club."]),
-            silver_scroll(id=15, title="Tutoring books",     cost=40,    comments=["There is more then one way for a pretty girl to carry her books around.","I thought it would be cool to change the way Hermione carries the books as she progresses with her training.","Since the whole tutoring arc got canceled I am showing it here..."]),
-            silver_scroll(id=16, title="Extra gifts 01",     cost=30,    comments=["A couple of items that didn't make it into the final game...","The one on the left is an actual live house-elf to give as a present.","The one on the right is a portrait of a pervy but wise wizard. Supposed to be helping with studying..."]),
-            silver_scroll(id=17, title="Extra gifts 02",     cost=30,    comments=["Few more items...","A newspaper, a bottle of perfume and a magical hat that says things you want to hear..."]),
-            silver_scroll(id=18, title="Fiction books",      cost=90,    comments=["The fiction books...","The top row are my sketches, the bottom row are finalized drawings by dahr."]),
-            silver_scroll(id=19, title="Singer whore",       cost=50,    comments=["A drawing of a famous singer.","Has no connection to this game and is here for no reason whatsoever."]),
-            silver_scroll(id=20, title="Casting",            cost=70,    comments=["It took me a while to come up with a proper look for Hermione...","Version \"A\" was my first attempt. And I liked it up until the moment when I started to hate it...","Version \"B\" was my second attempt. And it's good. But her confident and semi-aggressive facial features didn't fit the character well...","Version \"C\" is the one that got the role. The Hermione that we all grew to care for by now, I'm sure."]),
-            silver_scroll(id=21, title="Witch robe 01",      cost=90,    comments=["Sub-quests that never happened.","You are allowed to feel bad for rushing me.","If you did not rush me you are allowed to feel angry at people who did."]),
-            silver_scroll(id=22, title="Witch robe 02",      cost=90,    comments=["Hermione presenting her body to Genie...","This would have been a quite memorable scene..."]),
-            silver_scroll(id=23, title="Witch robe 03",      cost=150,   comments=["Didn't expect this one, did you?","In case you're wondering this is still Hermione."]),
-            silver_scroll(id=24, title="Witch robe 04",      cost=150,   comments=[".................................","Sub-quests of course..."]),
-            silver_scroll(id=25, title="The walk",           cost=100,   comments=["Another sub-quest...","We had a rather lengthy discussion with Dahr about this one...","I was sort of against it, but then Dahr sent me this picture and it made me shut up."]),
-            silver_scroll(id=26, title="Durmstrang",         cost=80,    comments=["One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs...","At first many of the sub-quests involved deciding on how to spend the Hogwarts budget...","Spend your money to finance the school quiddich team, or to hire new teachers and such..."]),
-            silver_scroll(id=27, title="Gag ball",           cost=200,   comments=["Isn't she adorable?"]),
-            silver_scroll(id=28, title="New clothes 01",     cost=150,   comments=["Another (rather lengthy) sub-quest..."]),
-            silver_scroll(id=29, title="New clothes 02",     cost=200,   comments=[".........."]),
-            silver_scroll(id=30, title="The gang",           cost=70,    comments=["One of the very early sketches related to the quiddich sub-quests..."])
-        ]
 
-    return
+screen weasley_store_room:
+    tag room_screen
 
-label shop_intro:
-    show screen shop_screen
-    if shop_found:
-        twi "Hello Professor! What would you like to buy?"
-        jump shop_menu
+    if daytime:
+        add "images/backgrounds/corridor.png" #Need day image.
     else:
-        $ shop_found = True
+        add "images/backgrounds/corridor.png"
+
+    zorder 0
+
+
+
+label open_weasley_store:
+    show screen blkfade
+    with d3
+
+    call room("weasley_store")
+    call gen_chibi("hide")
+
+    if store_intro_done:
+        call gen_chibi("stand","left","base")
+        call hide_blkfade
+    else:
+        call gen_chibi("hide")
+        call hide_blkfade
+        call gen_walk("0","left",1.4)
+    pause.2
+
+    call store_chit_chat
+
+    $ store_category = 0 # Reset Button
+
+    jump gift_shop_menu
+
+
+
+label store_chit_chat:
+    if not store_intro_done:
+        $ store_intro_done = True
         fre "Professor Dumbledore? What are you doing here? I thought you didn't leave your office anymore."
         ger "You're not here to shut us down are you?"
         m "Shut you down? What for?"
@@ -68,242 +56,133 @@ label shop_intro:
         m "Well do you sell anything else?"
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
-        jump shop_menu
-
-label shop_menu:
-    show screen shop_screen
-    call screen shop_screen_menu
-
-screen shop_screen_menu:
-    tag room_screen
-
-    zorder 4
-
-    if daytime:
-        add "interface/map/room_bg1.png" at Position(xpos=140)
     else:
-        add "interface/map/room_bg2.png" at Position(xpos=140)
+        twi "Hello Professor! What would you like to buy?"
 
-    imagemap:
-        ground "interface/map/shop_ground.png"
-        hover "interface/map/shop_hover.png"
-        # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (0, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
-        hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
-        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
-        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
-        hotspot (606+280, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
-        hotspot (750+280, 550, 40, 40) clicked [Show("main_room_menu"),Jump("day_main_menu")] #Return Button
-
-screen shop_screen:
-    tag room_screen
-
-    zorder 4
-
-    if daytime:
-        add "interface/map/room_bg1.png" at Position(xpos=140)
-    else:
-        add "interface/map/room_bg2.png" at Position(xpos=140)
-    
-    add "interface/map/shop_ground.png"        
-        
-label sscrolls:
-    jump store_scrolls
-label sscrolls2:
-    jump store_scrolls
-
-label store_scrolls:
-    python:
-        scrolls_menu = list(filter(lambda x: x.purchased==False, sacred_scrolls))
-        
-    show screen shop_screen
-    show screen generic_scroll_menu(scrolls_menu, "Scroll Stock" )
-    $ _return = ui.interact()
-    
-    hide screen generic_scroll_menu
-
-    if isinstance(_return, generic_menu_item):
-        $ the_gift = _return.imagepath # SACRED SCROLL.
-        show screen gift
-        with d3
-        dahr "A scroll containing sacred knowledge.\n(May also contain spoilers)."
-        menu:
-            "-Buy the scroll ([_return.cost] gold)-":
-                if gold >= _return.cost:
-                    $ gold -= _return.cost
-                    $ _return.purchased = True
-                    $ sscroll_[_return.id] = True # Turns TRUE if the scroll had been bought.
-                    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-                    ">A New scroll has been added to your sacred scrolls collection."
-                    hide screen gift
-                    with d3
-                    call thx_4_shoping2 #Massage that says "Thank you for shopping here!".                    
-                else:
-                    call no_gold #Massage: m "I don't have enough gold".
-                    hide screen gift
- 
-            "-Never mind-":
-                hide screen gift
-        
-        
-    elif _return == "Close":
-        $ currentpage = 0
-        jump shop_menu
-       
-    elif _return == "inc":
-        $ currentpage += 1
-    elif _return == "dec":
-        $ currentpage += -1
-           
-    jump store_scrolls
-        
-
-
-label shop_books:
-    show screen shop_screen
-    if not fiction_books_intro:
-        twi "These books are mostly light erotica..." 
-        ger "Some of the girls insisted that I order them in."
-        $ fiction_books_intro = True
-    else:
-        twi "What type of book would you like?"
-        
-    label shop_book_menu:
-    python:
-        books_menu_list = []
-        if toogle1_bool:
-            books_menu_list.extend(Books_OBJ.read_books)
-            books_menu_list.extend(Books_OBJ.write_books)
-        if toogle2_bool:
-            books_menu_list.extend(Books_OBJ.fiction_books)
-        
-        books_menu_list = list(filter(lambda x: x.purchased==False, books_menu_list))
-       
-    show screen shop_screen
-    show screen generic_scroll_menu(books_menu_list, "Book Stock", toogle1="Educational Books", toogle2="Fiction Books" )
-    
-    $ _return = ui.interact()
-    
-    hide screen generic_scroll_menu
-
-    if isinstance(_return, generic_menu_item):
-        call purchase_book(_return)
-        
-    elif _return == "Close":
-        $ currentpage = 0
-        jump shop_menu
-        
-    elif _return == "toogle1":
-        $ toogle1_bool = not toogle1_bool
-    elif _return == "toogle2":
-        $ toogle2_bool = not toogle2_bool
-        
-    elif _return == "inc":
-        $ currentpage += 1
-    elif _return == "dec":
-        $ currentpage += -1
-        
-    jump shop_book_menu
-    
-label purchase_book(BookOBJ):
-    $ the_gift = BookOBJ.imagepath
-    show screen gift
-    with d3
-    "[BookOBJ.description]"
-    menu:
-        "-Buy the book for [BookOBJ.cost] gold -":
-            if gold >= BookOBJ.cost:
-                $ gold -= BookOBJ.cost
-                $ BookOBJ.purchased = True
-                "Book [BookOBJ.title] has been added to your collection."
-                hide screen gift
-                with d3
-            else:
-                call no_gold #Massage: m "I don't have enough gold".
-        "-Never mind-":
-            hide screen gift
     return
 
 
-label shop_potion_menu:
-    show screen shop_screen
+
+label close_weasley_store:
+    hide screen weasley_store_menu
+    show screen blkfade
+    with d5
+
+    jump main_room
+
+
+
+screen weasley_store_menu:
+    tag store_menu
+    $ UI_xpos_offset = 100
+
+    zorder 4
+
+    # Close Button
+    imagebutton:
+        xpos 1028
+        ypos 11
+        idle "interface/general/"+interface_color+"/button_close.png"
+        hover "interface/general/"+interface_color+"/button_close_hover.png"
+        action Jump("close_weasley_store")
+
+    # Gifts Button
+    imagebutton:
+        xpos 725 +UI_xpos_offset
+        ypos 105
+        idle "interface/general/"+interface_color+"/button_select.png"
+        if store_category != 0: # Gifts
+            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            action [SetVariable("store_category",0), Jump("gift_shop_menu")]
+    if store_category == 0: # Gifts
+        text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 16
+    else:
+        text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 14
+
+    # Books Button & Scrolls + Tentacle Scroll
+    imagebutton:
+        xpos 725 +UI_xpos_offset
+        ypos 149
+        idle "interface/general/"+interface_color+"/button_select.png"
+        if store_category != 1: # Books
+            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            action [SetVariable("store_category",1), Jump("book_shop_menu")]
+    if store_category == 1: # Books
+        text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 16
+    else:
+        text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 14
+
+    # Potions
+    imagebutton:
+        xpos 725 +UI_xpos_offset
+        ypos 193
+        idle "interface/general/"+interface_color+"/button_select.png"
+        if store_category != 2:
+            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            action [SetVariable("store_category",2), Jump("shop_potion_menu")]
+    if store_category == 2:
+        text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 16
+    else:
+        text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 14
+
+
+
+
+#Gifts
+label gift_shop_menu:
+    show screen weasley_store_menu
+
     python:
-        potion_menu = []
-        potion_menu.append(("-Questions acquiring items-", "questions"))
-        for potion in potion_lib.getBuyable():
-            if her_whoring < potion.whoring_rec:
-                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","her_whoring"))
-            else:
-                potion_menu.append(("-"+potion.name+"-",potion))
-        potion_menu.append(("-Never mind-", "nvm"))
-        PotionOBJ = renpy.display_menu(potion_menu)
-    if isinstance(PotionOBJ, silver_potion):
-        python:
-            potion_menu = []
-            potion_menu.append(("-Buy the potion for "+str(PotionOBJ.cost)+" Gold-", PotionOBJ))
-            potion_menu.append(("-Never mind-", "nvm"))
-            choice = renpy.display_menu(potion_menu)
-        if isinstance(choice, silver_potion):
-            if gold > PotionOBJ.cost:
-                $ gold -= PotionOBJ.cost
-                $ potion_inv.add(PotionOBJ.id)
-                $ renpy.say(m, PotionOBJ.name+" aquired, although it's missing a key ingredient...")
-            else:
-                $ renpy.say(m, "I don't have enough gold.")
-        call screen shop_screen_menu
-    if PotionOBJ == "questions":
-        menu:
-            "-Knotgrass-":
-                m "Do you know where I can find \"Knotgrass\"?"
-                fre "You can sometimes find Knotgrass by the forbidden forest."
-            "-Root of Aconite-":
-                m "Do you know where I can find \"Root of Aconite\"?"
-                ger "Root of Aconite can be found down by the lake."
-            "-Wormwood-":
-                m "Do you know where I can find \"Wormwood\"?"
-                ger "Wormwood is sometimes found in the forbidden forest."
-            "-Niffler's Fancy-":
-                m "Do you know where I can find \"Niffler's Fancy\"?"
-                fre "Hmm... I think I heard that it's found by the lake."
-        jump shop_potion_menu
-    if PotionOBJ == "her_whoring":
-        call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
-    if PotionOBJ == "nvm":
-        pass
-    call screen shop_screen_menu
+        item_list = []
+        if toggle1_bool:
+            item_list.extend(candy_gift_list)
+        if toggle2_bool:
+            item_list.extend(drink_gift_list)
+        if toggle3_bool:
+            item_list.extend(mag_gift_list)
+        if toggle4_bool:
+            item_list.extend(toy_gift_list)
 
+        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
 
-label gifts_menu:
-    show screen shop_screen
+    show screen list_menu(item_list, "Gifts", toggle1="Candy", toggle2="Beverages", toggle3="Mags", toggle4="Toys" )
 
-    show screen generic_scroll_menu(gift_list, "Gift Stock")
-    
     $ _return = ui.interact()
-    
-    hide screen generic_scroll_menu
-    if isinstance(_return, generic_menu_item):
-        call object_gift_block(_return) 
-        
+
+    hide screen list_menu
+    if isinstance(_return, item_class):
+        call object_gift_block(_return)
+
     elif _return == "Close":
-        $ currentpage = 0
-        jump shop_menu
+        $ current_page = 0
+        jump close_weasley_store
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+    elif _return == "toggle3":
+        $ toggle3_bool = not toggle3_bool
+    elif _return == "toggle4":
+        $ toggle4_bool = not toggle4_bool
 
     elif _return == "inc":
-        $ currentpage += 1
+        $ current_page += 1
     elif _return == "dec":
-        $ currentpage += -1
-        
-    jump gifts_menu
-    
+        $ current_page += -1
+
+    jump gift_shop_menu
+
 label object_gift_block(item):
-    $ the_gift = item.imagepath
+    $ the_gift = item.get_image()
     show screen gift
     with d3
-    #$ tmp = item.description
-    dahr "[item.description]"
+
+    "[item.description]"
     $ cost2 = item.cost * 2
     $ cost3 = item.cost * 4
     $ cost4 = item.cost * 8
+
     menu:
         "-Buy 1 for ([item.cost] galleons)-":
             call object_purchase_item(item, 1)
@@ -327,74 +206,240 @@ label object_purchase_item(item, quantity):
             "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
                 $ gold -= 15
                 $ transit_time = 1
-                # $ next_day = True
             "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
                 pass
             "-no thanks-":
                 pass
         $ gold -= order_cost
-        $ deliveryQ.send(item,transit_time,quantity,'Gift')
-        # $ gift_order = item
-        # $ order_placed = True
+        $ deliveryQ.send(item, transit_time, quantity,'Gift')
         if transit_time ==  1:
-            dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
+            "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
         else:
-            dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
+            "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
         hide screen gift
         with d3
 
     else:
-        call no_gold #Massage: m "I don't have enough gold".
+        m "I don't have enough gold."
 
     return
 
 
 
+#Books & Scrolls
+label book_shop_menu:
+    show screen weasley_store_menu
 
-
-### ALREADY HAVE THIS BOOK
-label do_have_book:
-    show screen bld1
-    m "I already own this one."
-    hide screen bld1
-    hide screen gift
-    with d3
-    return
-
-### THANK YOU FOR shopping here.
-label thx_4_shoping:
-    # $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
-
-    if one_of_five ==  1:
-        dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
-        hide screen gift
+    if not book_store_intro_done:
+        hide screen weasley_store_menu
+        hide screen list_menu
         with d3
-        return
-    else:
-        dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [one_of_five] days."
-        hide screen gift
-        with d3
-        return
 
-### THANK YOU FOR shopping here. IMMEDIATE DELIVERY.
-label thx_4_shoping2:
-    dahr "Thank your for shopping at \"Dahr's oddities\"."
+        fre "These books are mostly light erotica..."
+        ger "Some of the girls insisted that I order them in."
+        $ book_store_intro_done = True
+        pause.5
+
+        jump book_shop_menu
+
+    python:
+        item_list = []
+        if toggle1_bool:
+            item_list.extend(book_list.fiction_books)
+        if toggle2_bool:
+            item_list.extend(book_list.read_books)
+            item_list.extend(book_list.write_books)
+        if toggle3_bool:
+            item_list.extend(forbidden_scroll_list)
+            item_list.extend(scroll_list_A)
+            item_list.extend(scroll_list_B)
+            item_list.extend(scroll_list_C)
+
+        item_list = list(filter(lambda x: x.unlocked==False, item_list))
+
+    show screen list_menu(item_list, "Books & Scrolls", toggle1="Fiction Books", toggle2="Educat. Books", toggle3="Scrolls" )
+
+    $ _return = ui.interact()
+
+    hide screen list_menu
+
+    if isinstance(_return, item_class):
+        if _return in [book_list.fiction_books, book_list.read_books, book_list.write_books]:
+            call purchase_book(_return)
+        else:
+            if _return in forbidden_scroll_list:
+                call purchase_forbidden_scroll(_return)
+            else:
+                call purchase_scroll(_return)
+
+    elif _return == "Close":
+        $ current_page = 0
+        jump close_weasley_store
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+    elif _return == "toggle3":
+        $ toggle3_bool = not toggle3_bool
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump book_shop_menu
+
+label purchase_book(item):
+    $ the_gift = item.get_image()
+    show screen gift
+    with d3
+    "[item.description]"
+    menu:
+        "-Buy the book for [item.cost] gold -":
+            if gold >= item.cost:
+                $ gold -= item.cost
+                $ item.unlocked = True
+                "Book [item.name] has been added to your collection."
+            else:
+                m "I don't have enough gold."
+        "-Never mind-":
+            pass
+
     hide screen gift
     with d3
+
     return
 
-### NOT ENOUGH GOLD ###
-label no_gold:
-    m "I don't have enough gold... This is depressing..."
+label purchase_forbidden_scroll(item):
+    hide screen weasley_store_menu
+    with d3
+
+    if her_whoring <= 15:
+        m "What's in this scroll?"
+        ger "Don't worry about it."
+        m "Why?"
+        ger "You're not ready for what's in this scroll."
+        m "Well that just makes me want it more."
+        ger "Too bad."
+        return
+
+    m "What's this scroll?"
+    fre "This is the recipe for a powerful and forbidden potion."
+    ger "Acquired completely legitimately I might add!"
+    m "What does it do?"
+    fre "It transforms you into any magical creature you desire."
+    m "Like what?"
+    fre "Anything you can secure a sample of."
+    ger "A powerful phoenix, a terrifying gorgon, a deadly basilisk or an awe inspiring dragon."
+    m "Not sure I'd really want to transform into any of those..."
+    ger "Well then perhaps there is a creature that would suit you and your \"Hobbies\"."
+    m "Such as?"
+    fre "There are rumors of a \"plant\" hidden somewhere on the school grounds"
+    m "A plant? Why would I want to be a plant?"
+    ger "This is no ordinary plant, it has fast and powerful limbs that are incredibly sensitive"
+    m "So it's a tentacle monster?"
+    ger "Pretty much. We're not sure where it lives however."
+    fre "No idea!"
+    ger "Certainly not in the attic!"
+    m "Ok, well how much is the scroll?"
+    ger "300 gold coins."
+    m "300! Why on earth is it so expensive?"
+    fre "Forbidden magic is quite a risky and expensive endeavor Professor, We'll sell it for no less than 300."
+
+    menu:
+        "-Buy the scroll ([item.cost] gold)":
+            if gold >= item.cost:
+                m "Fine, here's the money"
+                ger "Thank you very much"
+                $ the_gift = item.get_image() # SACRED SCROLL.
+                show screen gift
+                with d3
+
+                $ gold -= item.cost
+                $ item.unlocked = True
+                ">A New scroll has been added to your sacred scrolls collection."
+            else:
+                m "I don't have enough gold."
+        "-No thanks-":
+            m "No thanks, not right now"
+            fre "Perhaps later then"
+
     hide screen gift
     with d3
+
     return
 
-### ITEM IS OUT OF STOCK ###
-label out:
-    show screen bld1
+label purchase_scroll(item):
+    $ the_gift = item.get_image() # SACRED SCROLL.
+    show screen gift
     with d3
-    dahr "This item is currently out of stock."
-    hide screen bld1
+    ">A scroll containing sacred knowledge.\n(May also contain spoilers)."
+    menu:
+        "-Buy the scroll ([item.cost] gold)-":
+            if gold >= item.cost:
+                $ gold -= item.cost
+                $ item.unlocked = True
+                ">A New scroll has been added to your sacred scrolls collection."
+            else:
+                m "I don't have enough gold."
+        "-Never mind-":
+            pass
+
+    hide screen gift
     with d3
-    jump gifts_menu
+
+    return
+
+
+
+label shop_potion_menu:
+    hide screen weasley_store_menu
+    hide screen list_menu
+    with d3
+
+    python:
+        potion_menu = []
+        potion_menu.append(("-Questions acquiring items-", "questions"))
+        for potion in potion_lib.getBuyable():
+            if her_whoring < potion.whoring_rec:
+                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","her_whoring"))
+            else:
+                potion_menu.append(("-"+potion.name+"-",potion))
+        potion_menu.append(("-Never mind-", "nvm"))
+        PotionOBJ = renpy.display_menu(potion_menu)
+    if isinstance(PotionOBJ, silver_potion):
+        python:
+            potion_menu = []
+            potion_menu.append(("-Buy the potion for "+str(PotionOBJ.cost)+" Gold-", PotionOBJ))
+            potion_menu.append(("-Never mind-", "nvm"))
+            choice = renpy.display_menu(potion_menu)
+        if isinstance(choice, silver_potion):
+            if gold > PotionOBJ.cost:
+                $ gold -= PotionOBJ.cost
+                $ potion_inv.add(PotionOBJ.id)
+                $ renpy.say(m, PotionOBJ.name+" aquired, although it's missing a key ingredient...")
+            else:
+                $ renpy.say(m, "I don't have enough gold.")
+        jump shop_potion_menu
+    if PotionOBJ == "questions":
+        menu:
+            "-Knotgrass-":
+                m "Do you know where I can find \"Knotgrass\"?"
+                fre "You can sometimes find Knotgrass by the forbidden forest."
+            "-Root of Aconite-":
+                m "Do you know where I can find \"Root of Aconite\"?"
+                ger "Root of Aconite can be found down by the lake."
+            "-Wormwood-":
+                m "Do you know where I can find \"Wormwood\"?"
+                ger "Wormwood is sometimes found in the forbidden forest."
+            "-Niffler's Fancy-":
+                m "Do you know where I can find \"Niffler's Fancy\"?"
+                fre "Hmm... I think I heard that it's found by the lake."
+        jump shop_potion_menu
+    if PotionOBJ == "her_whoring":
+        "Hermione must be \"Trained\" more before you can purchase this."
+    if PotionOBJ == "nvm":
+        pass
+    $ store_category = 0
+    jump gift_shop_menu

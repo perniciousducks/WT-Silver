@@ -2,7 +2,7 @@
 
 ### Tonks ###
 
-label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
+label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen tonks_main
 
     #Flip
@@ -56,7 +56,17 @@ label ton_main(text="",mouth=None,eye=None, eyebrow=None, pupil=None, cheeks=Non
         else:
             $ tonks_ypos = int(ypos)
 
-    $ changeTonks(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
+    if face != None:
+        if mouth == None:
+            call set_ton_face(mouth = face)
+        if eye == None:
+            call set_ton_face(eyes = face)
+        if brows == None:
+            call set_ton_face(brows = face)
+        if pupils == None:
+            call set_ton_face(pupils = face)
+
+    $ changeTonks(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
 
     show screen tonks_main
     show screen bld1
@@ -122,8 +132,8 @@ label set_ton_astoria_name:
 init python:
     def changeTonks(    mouth=None,
                         eye=None,
-                        eyebrow=None,
-                        pupil=None,
+                        brows=None,
+                        pupils=None,
                         cheeks=None,
                         tears=None,
                         extra=None,
@@ -145,10 +155,10 @@ init python:
         if eye is not None:
             tonks_eye         = "characters/tonks/face/eyes/"+eye+".png"
             tonks_eye_bg      = "characters/tonks/face/eyes/_white_.png"
-        if eyebrow is not None:
-            tonks_eyebrow     = "characters/tonks/face/brow/"+eyebrow+".png"
-        if pupil is not None:
-            tonks_pupil       = "characters/tonks/face/pupil/"+pupil+".png"
+        if brows is not None:
+            tonks_eyebrow     = "characters/tonks/face/brow/"+brows+".png"
+        if pupils is not None:
+            tonks_pupil       = "characters/tonks/face/pupil/"+pupils+".png"
         if cheeks is not None:
             tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png"
         if tears is not None:

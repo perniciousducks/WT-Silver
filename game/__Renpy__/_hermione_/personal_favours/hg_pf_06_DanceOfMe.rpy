@@ -15,7 +15,7 @@ label hg_pf_DanceForMe:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ current_payout = 35 #Because will have option to pay extra.
 
@@ -33,7 +33,7 @@ label hg_pf_DanceForMe:
             call her_main("...dance for you, [genie_name]?","open","wink")
 
 
-        $ hg_pf_DanceForMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_DanceForMe_OBJ.level = 1 #Event hearts level (0-3)
 
         m "Yes... You think you could manage that?"
         call her_main("Ehm... I suppose so...","soft","baseL")
@@ -130,11 +130,11 @@ label hg_pf_DanceForMe:
                 pause.2
 
                 $ hermione_wear_panties = True
-                call set_hermione_action("lift_skirt")
+                call set_her_action("lift_skirt")
                 pause.5
 
                 $ hermione_wear_bottom = False
-                call set_hermione_action("None")
+                call set_her_action("None")
                 pause.5
 
 
@@ -164,11 +164,11 @@ label hg_pf_DanceForMe:
                 call nar(">Hermione takes off her shirt...")
                 pause.2
 
-                call set_hermione_action("lift_top")
+                call set_her_action("lift_top")
                 pause.5
 
                 $ hermione_wear_top = False
-                call set_hermione_action("None")
+                call set_her_action("None")
                 pause.5
 
                 call her_main("{size=-5}(I actually did it...){/size}","angry","worriedCl",cheeks="blush")
@@ -211,7 +211,7 @@ label hg_pf_DanceForMe:
 
         ">Hermione quickly puts her uniform back on..."
 
-        call h_action("None","update")
+        call set_her_action("None","update")
         call her_chibi("stand","desk","base")
 
         hide screen blkfade
@@ -232,14 +232,14 @@ label hg_pf_DanceForMe:
                 m "We'll see..."
                 call her_main("Tsk!","disgust","glance",tears="mascara")
 
-                $ mad += 35
+                $ her_mood += 35
 
                 jump could_not_flirt
 
 
     #Second Event
     if hg_pf_DanceForMe_OBJ.points == 1:
-        $ hg_pf_DanceForMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_DanceForMe_OBJ.level = 2 #Event hearts level (0-3)
 
         call bld
         m "[hermione_name], I need you to dance for me."
@@ -329,11 +329,11 @@ label hg_pf_DanceForMe:
                 pause.1
 
         $ hermione_wear_panties = True
-        call set_hermione_action("lift_skirt")
+        call set_her_action("lift_skirt")
         pause.5
 
         $ hermione_wear_bottom = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.2
 
         call nar(">Hermione sends her skirt flying across the room, just like she did with her vest a moment earlier...")
@@ -343,14 +343,14 @@ label hg_pf_DanceForMe:
         call her_main("My shirt?!!","disgust","glance")
 
         $ hermione_wear_bra = True
-        call set_hermione_action("lift_top")
+        call set_her_action("lift_top")
         pause.2
 
         call her_main("{size=+9}I don't need it!{/size}","scream","angry",emote="01")
         pause.2
 
         $ hermione_wear_top = False
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.2
 
         call nar(">Hermione's shirt suddenly hits the floor.")
@@ -362,7 +362,7 @@ label hg_pf_DanceForMe:
         call her_main("Do you enjoy this, [genie_name]?")
         call her_main("","angry","angry")
 
-        call set_hermione_action("lift_breasts")
+        call set_her_action("lift_breasts")
 
         call her_main("Shall I shake my breasts for you like one of those harlots?","scream","angryCl")
         m "Well---"
@@ -370,7 +370,7 @@ label hg_pf_DanceForMe:
         call her_main("This is completely {size=+7}acceptable!{/size}","scream","angry",emote="01")
         call her_main("","angry","angry")
 
-        call set_hermione_action("None")
+        call set_her_action("None")
         pause.2
 
         call nar(">Hermione is starting to shake her naked breasts rather clumsily...","start")
@@ -483,7 +483,7 @@ label hg_pf_DanceForMe:
 
         call sna_main("Listen, Genie. I've been thinki--","snape_01",xpos="base",ypos="base")
 
-        hide screen snape_01 #Chibi
+        hide screen snape_stand #Chibi
         show screen hermione_main
         with d3
 
@@ -496,7 +496,7 @@ label hg_pf_DanceForMe:
         call her_main("(Professor Snape???????!)","angry","wide")
         call sna_main("Miss Granger?","snape_12")
 
-        call h_action("covering")
+        call set_her_action("covering")
         show screen bld1
         call her_main("(No, no... This is not happening. Please...)","shock","worriedCl",cheeks="blush",trans="d5")
         call play_music("playful_tension") # SEX THEME.
@@ -508,7 +508,7 @@ label hg_pf_DanceForMe:
                 call sna_main("Yes... I can see that...","snape_13")
                 call her_main("{size=-7}(I want to die!){/size}","angry","worriedCl")
             "\"Severus! Please, come join us.\"":
-                $ mad += 20
+                $ her_mood += 20
                 #$ snape_invited_to_watch = True #Removed. Turns true on a new Snape event instead. (label special_date_with_snape_03)
                 call sna_main("Seriously?","snape_14")
                 call her_main("([genie_name], no, please.............................)","angry","worriedCl")
@@ -523,7 +523,7 @@ label hg_pf_DanceForMe:
         call her_main(".................................","angry","worriedCl")
 
         hide screen bld1
-        show screen snape_01
+        show screen snape_stand
         hide screen snape_main
         hide screen hermione_main
         with fade
@@ -555,7 +555,7 @@ label hg_pf_DanceForMe:
         $ hermione_wear_top = True
         $ hermione_wear_bottom = True
 
-        call h_action("none","update")
+        call set_her_action("none","update")
 
         call her_chibi("stand","mid","base",flip=True)
         pause.2
@@ -572,7 +572,7 @@ label hg_pf_DanceForMe:
 
     #Third Event.
     if hg_pf_DanceForMe_OBJ.points >= 2:
-        $ hg_pf_DanceForMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_DanceForMe_OBJ.level = 3 #Event hearts level (0-3)
 
         call blktone
 
@@ -603,7 +603,7 @@ label hg_pf_DanceForMe:
                         m "I want to prove that professor Snape is dirty, and I need your help."
                         call her_main("!!!","shock","wide")
                         m "Yes, I want to catch him in the act!"
-                        call her_main("[genie_name], I didn't realize...","open","worried")
+                        call her_main("[genie_name], I didn't realise...","open","worried")
                         call her_main("I see now...","base","base")
                         her "I am sorry for doubting you [genie_name]..."
                         m "No biggy. Now go find professor Snape and bring him here."
@@ -763,7 +763,7 @@ label hg_pf_DanceForMe:
                     menu:
                         m "..."
                         "\"[hermione_name], show some respect!\"":
-                            $ mad += 9
+                            $ her_mood += 9
                             call her_main("What?","annoyed","angry")
                             call her_main("But [genie_name]!")
                             m "Young lady, you {size=+4}will{/size} calm down now."
@@ -797,8 +797,9 @@ label hg_pf_DanceForMe:
                             m "The skirt, [hermione_name]!"
                             call her_main("......","annoyed","angryL")
                             call sna_main(".............","snape_13")
-                        "-HARDCORE-" if hardcore_difficulty_active: #Hardcore difficulty dialogue.
-                            $ mad += 18
+                        "-HARDCORE-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
+                            $ her_mood += 18
+                            $ sna_friendship -= 10
                             m "Both of you,..."
                             stop music
                             with hpunch
@@ -810,7 +811,7 @@ label hg_pf_DanceForMe:
                             call sna_main("(What did he just say to me?!)","snape_08")
                             g4 "Shut your stupid mouth or I will send you flying out that bloody window!"
                             g4 "That Bitch is already stripping for you, so what more do you want?!"
-                            call her_main("(B-Bi--","shock","wide")
+                            call her_main("(That B-Bi--","shock","wide")
                             g4 "And you,... stripper-whore!"
                             g4 "Do what you are payed for and start stripping already!!!"
                             call her_main("......","angry","angryCl",emote="01")
@@ -819,11 +820,11 @@ label hg_pf_DanceForMe:
                     pause.2
 
                     $ hermione_wear_panties = True
-                    call set_hermione_action("lift_skirt")
+                    call set_her_action("lift_skirt")
                     pause.5
 
                     $ hermione_wear_bottom = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.2
 
                     call nar(">Hermione swiftly takes off her \"Hogwarts\" skirt...")
@@ -886,11 +887,11 @@ label hg_pf_DanceForMe:
                     pause.2
 
                     $ hermione_wear_bra = False
-                    call set_hermione_action("lift_top")
+                    call set_her_action("lift_top")
                     pause.5
 
                     $ hermione_wear_top = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.2
 
                     call nar(">Then takes it off...")
@@ -992,7 +993,7 @@ label hg_pf_DanceForMe:
                                         pause.1
 
                                         $ hermione_wear_panties = False
-                                        call set_hermione_action("pinch")
+                                        call set_her_action("pinch")
                                         pause.5
 
                                         call nar(">Hermione bends over and slides her panties down.","start")
@@ -1007,7 +1008,7 @@ label hg_pf_DanceForMe:
                                         call sna_head("Now shake those B+ titties for me, you harlot!")
                                         call her_main(".......","angry","worriedCl")
 
-                                        call set_hermione_action("None")
+                                        call set_her_action("None")
                                         pause.5
 
                                         call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
@@ -1162,7 +1163,7 @@ label hg_pf_DanceForMe:
                                         menu:
                                             m "..."
                                             "\"Huh? What mission?\"":
-                                                $ mad += 7
+                                                $ her_mood += 7
                                                 call her_main("I only agreed to this so that you could catch professor Snape in the act, [genie_name]!","scream","worriedCl")
                                                 call her_main("So that we would have definite proof that he is \"dirty\"!","normal","worriedCl")
                                                 m "Oh, that mission..."
@@ -1238,7 +1239,7 @@ label hg_pf_DanceForMe:
                             pause.1
 
                             $ hermione_wear_panties = False
-                            call set_hermione_action("pinch")
+                            call set_her_action("pinch")
                             pause.5
 
                             call nar(">Hermione bends over and slides her panties down.","start")
@@ -1252,7 +1253,7 @@ label hg_pf_DanceForMe:
                             sna "Now shake those B+ titties for me, you harlot!"
                             call her_main(".......","angry","worriedCl")
 
-                            call set_hermione_action("None")
+                            call set_her_action("None")
                             pause.5
 
                             call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
@@ -1410,11 +1411,11 @@ label hg_pf_DanceForMe:
                     call nar(">Hermione is starting to sway her hips rather seductively...")
 
                     $ hermione_wear_panties = True
-                    call set_hermione_action("lift_skirt")
+                    call set_her_action("lift_skirt")
                     pause.5
 
                     $ hermione_wear_bottom = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.2
 
                     call nar(">While she slides her skirt down...")
@@ -1476,11 +1477,11 @@ label hg_pf_DanceForMe:
                     call nar(">Hermione undoes the last button of her shirt...")
 
                     $ hermione_wear_bra = False
-                    call set_hermione_action("lift_top")
+                    call set_her_action("lift_top")
                     pause.5
 
                     $ hermione_wear_top = False
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.2
 
                     call nar(">And takes it off somewhat gracefully...")
@@ -1497,9 +1498,6 @@ label hg_pf_DanceForMe:
                             call her_main("[genie_name]?!","open","wide",ypos="head")
                             m "It's alright, [hermione_name]. Don't mind me..."
 
-
-                            hide screen genie
-                            hide screen no_shirt_no_skirt_dance
                             show screen chair_left
                             call gen_chibi("jerking_off","behind_desk","base")
                             hide screen desk
@@ -1552,10 +1550,10 @@ label hg_pf_DanceForMe:
                                             call nar(">Hermione bends over slightly and slides her panties down...")
 
                                             $ hermione_wear_panties = False
-                                            call set_hermione_action("pinch")
+                                            call set_her_action("pinch")
                                             pause.5
 
-                                            call set_hermione_action("None")
+                                            call set_her_action("None")
                                             pause.2
 
                                         call nar(">You can see that she is doing her best to be graceful...","start")
@@ -1568,7 +1566,7 @@ label hg_pf_DanceForMe:
                                         call nar(">Suddenly Hermione breaks into a whole series of rather complex pirouettes...")
                                         m "{size=-4}(This looks quite impressive actually...){/size}"
 
-                                        call set_hermione_action("fingering")
+                                        call set_her_action("fingering")
                                         pause.5
 
                                         call nar(">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements...")
@@ -1579,7 +1577,7 @@ label hg_pf_DanceForMe:
                                         call nar(">You stroke your diamond-hard cock furiously.")
                                         call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","open","closed")
 
-                                        call set_hermione_action("None")
+                                        call set_her_action("None")
                                         pause.5
 
                                         call nar(">Hermione performs another set of movements that could be considered classy...","start")
@@ -1632,7 +1630,7 @@ label hg_pf_DanceForMe:
                                             m "You earned your points today."
                                             m "Now, just get dressed and leave before somebody discovers you like this."
                                             call her_main("*sob!*........................","shock","angryL",tears="messy")
-                                            $ mad += 30
+                                            $ her_mood += 30
                                             call blkfade
 
                                             $ uni_sperm = False #Sperm layer is not displayed.
@@ -1676,7 +1674,7 @@ label hg_pf_DanceForMe:
 
                                                     call her_main(".............","annoyed","angryL")
                                                     call her_main("I'll take it.","soft","angry")
-                                                    $ mad += 30
+                                                    $ her_mood += 30
                                                     $ current_payout = 36
                                                     hide screen bld1
                                                     call ctc
@@ -1696,7 +1694,7 @@ label hg_pf_DanceForMe:
 
                                                     call her_main("...............","annoyed","angryL")
                                                     call her_main("Well, alright... Better than nothing I suppose...","soft","angry")
-                                                    $ mad += 11
+                                                    $ her_mood += 11
                                                     hide screen bld1
                                                     call ctc
 
@@ -1751,7 +1749,7 @@ label hg_pf_DanceForMe:
                                                     menu:
                                                         m "..."
                                                         "\"Oh, no, you are still getting that.\"":
-                                                            $ mad += 30
+                                                            $ her_mood += 30
                                                             call her_main("How generous of you, [genie_name].","soft","angry")
                                                             hide screen bld1
                                                             call ctc
@@ -1772,7 +1770,7 @@ label hg_pf_DanceForMe:
                                                             call her_main("Oh, this is a new low even for you, [genie_name]!","soft","angry")
                                                             m "I said you are dismissed."
                                                             call her_main("*GROAN!*","clench","angry",emote="01")
-                                                            $ mad += 50
+                                                            $ her_mood += 50
                                                             hide screen bld1
                                                             call ctc
 
@@ -1838,10 +1836,10 @@ label hg_pf_DanceForMe:
                         call her_main("........","annoyed","closed")
 
                         $ hermione_wear_panties = False
-                        call set_hermione_action("pinch")
+                        call set_her_action("pinch")
                         pause.5
 
-                        call set_hermione_action("None")
+                        call set_her_action("None")
                         pause.2
 
                         call nar(">Hermione bends over slightly and slides her panties down...")
@@ -1855,7 +1853,7 @@ label hg_pf_DanceForMe:
                     call nar(">Suddenly Hermione breaks into a whole series of rather complex pirouettes...")
                     m "{size=-4}(This looks quite impressive actually...){/size}"
 
-                    call set_hermione_action("fingering")
+                    call set_her_action("fingering")
                     pause.5
 
                     call nar(">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements...")
@@ -1865,7 +1863,7 @@ label hg_pf_DanceForMe:
                     g9 "Oh, why would I care?"
                     call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","open","closed")
 
-                    call set_hermione_action("None")
+                    call set_her_action("None")
                     pause.5
 
                     call nar(">Hermione performs another set of movements that could be considered classy...","start")
@@ -1917,7 +1915,6 @@ label hg_pf_DanceForMe:
 
 label end_hg_dancing:
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    $ gryffindor += current_payout #35
 
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen s_c_c_u # Snape's sperm. Universal.
@@ -1926,12 +1923,13 @@ label end_hg_dancing:
     call her_chibi("stand","desk","base")
     call gen_chibi("sit_behind_desk")
 
-    call h_action("none","update")
+    call set_her_action("none","update")
 
     show screen bld1
     call hide_blkfade
 
-    m "Yes, [hermione_name]. [current_payout] to the \"Gryffindor\" house."
+    if her_whoring < 24:
+        m "Yes, [hermione_name]. [current_payout] to the \"Gryffindor\" house."
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="base",ypos="base")
 

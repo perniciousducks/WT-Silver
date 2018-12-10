@@ -2,7 +2,7 @@
 
 label snape_init:
 
-    if not hasattr(renpy.store,'snape_flip') or reset_persistants:
+    if not hasattr(renpy.store,'snape_chibi_flip') or reset_persistants:
         $ snape_xpos = 525
         $ snape_ypos = 0
         $ snape_zorder = 5
@@ -18,8 +18,11 @@ label snape_init:
         $ snape_chibi_xpos=610
         $ snape_chibi_ypos=210
         $ snape_speed = 2.0
+        $ snape_chibi_flip = 1
         $ snape_chibi_zorder = 2
 
+        $ snape_chibi_stand = "characters/snape/chibis/snape_stand.png"
+        $ snape_chibi_walk = "snape_walk"
 
     return
 
@@ -34,12 +37,12 @@ label snape_progress_init:
 
         $ sna_support = 0 #Controls how much points is awarded to SLYTHERIN daily.
         $ snape_events = 0 #Get's +1 point every time a special event with Snape happens.
-        $ snape_dates_counter = 0
+        $ sna_dates_counter = 0
         $ sna_friendship = 0 #Get's +1 after every evening spent is Snape's company.
-        $ snape_friendship_maxed = False
+        $ sna_friendship_maxed = False
 
         $ wine_intro_done = False
-        $ snape_wine_counter = 0
+        $ sna_wine_counter = 0
 
 
 

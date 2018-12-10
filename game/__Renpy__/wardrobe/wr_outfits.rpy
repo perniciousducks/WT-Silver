@@ -25,7 +25,7 @@ label equip_outfit:
 
 ### Equip Hermione's Outfit ###
 label equip_her_outfit:
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     if (outfit_choice != hermoine_outfit_GLBL) or (outfit_choice == hermoine_outfit_GLBL and not hermione_costume):
@@ -37,7 +37,7 @@ label equip_her_outfit:
             $ hermione_xpos = 665
 
             # Outfits
-            if outfit_choice == hg_outfit_maid_OBJ:
+            if outfit_choice == hg_outfit_maid_ITEM:
                 m "Do you know what a maid is?"
                 call her_main("Of course I know...","open","base")
                 call her_main("Wait, why would you ask me that?","normal","narrow")
@@ -64,7 +64,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_outfit_pirate_OBJ:
+            if outfit_choice == hg_outfit_pirate_ITEM:
                 m "Know anything about pirates [hermione_name]?"
                 call her_main( "They pillage and kill people.","open","base")
                 m "..."
@@ -90,7 +90,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 5."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_outfit_japan_OBJ:
+            if outfit_choice == hg_outfit_japan_ITEM:
                 m "Hogwarts isn't the only school with a dress code you know."
                 call her_main( "I know that, I'm a muggle born after all.","open","base")
                 m "Right, would you put this Japanese schoolgirl outfit on?"
@@ -107,7 +107,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 8."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_outfit_christmas_OBJ:
+            if outfit_choice == hg_outfit_christmas_ITEM:
                 m "You better watch out--"
                 m "You better not cry--"
                 call her_main("Sir?","open","wink")
@@ -129,7 +129,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_outfit_present_OBJ:
+            if outfit_choice == hg_outfit_present_ITEM:
                 if her_whoring >= 20: #Success
                     m "[hermione_name], did you know today is my birthday?"
                     call her_main("Oh really, [genie_name]? Your birthday?","base","glance")
@@ -192,20 +192,20 @@ label equip_her_outfit:
                     jump return_to_wardrobe
 
             # Costumes
-            if outfit_choice in [hg_costume_power_girl_OBJ,hg_costume_ms_marvel_OBJ]:
+            if outfit_choice in [hg_costume_power_girl_ITEM,hg_costume_ms_marvel_ITEM]:
                 m "Are there any heroines you know of?"
                 if her_whoring >= 11: #Success
                     call her_main("You mean like super-heroines?","open","wink")
                     m "Yep"
-                    if outfit_choice == hg_costume_power_girl_OBJ:
+                    if outfit_choice == hg_costume_power_girl_ITEM:
                         m "I've got this Power Girl outfit I would like you to wear..."
-                    if outfit_choice == hg_costume_ms_marvel_OBJ:
+                    if outfit_choice == hg_costume_ms_marvel_ITEM:
                         m "I have this outfit for you. It's Miss Marvel's!"
                     call nar(">You hand her the outfit.")
                     call her_main("Fine. I'll wear it.","soft","baseL")
                     m "You will?"
                     call her_main("Of course! I like her. She's a great role model for young girls, after all!","open","closed")
-                    if outfit_choice == hg_costume_power_girl_OBJ:
+                    if outfit_choice == hg_costume_power_girl_ITEM:
                         call her_main("Although... That cleavage on her is a bit much.","disgust","down")
                         g9 "But that's the best part!"
                         call her_main("Why doesn't that suprise me. That you would think so...","annoyed","angry")
@@ -229,7 +229,7 @@ label equip_her_outfit:
                     jump return_to_wardrobe
 
 
-            if outfit_choice == hg_costume_harley_quinn_OBJ:
+            if outfit_choice == hg_costume_harley_quinn_ITEM:
                 m "Know anything about Batman?"
                 call her_main( "Uh, do you mean like vampires?","soft","narrow")
                 m "No, he's a comic book character."
@@ -254,7 +254,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 14."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_costume_tifa_OBJ:
+            if outfit_choice == hg_costume_tifa_ITEM:
                 m "Do you know anything about video games [hermione_name]?"
                 call her_main( "I was usually too busy reading at home to have time for such things, why?", "soft","narrow")
                 m "I'd like you to put this Tifa outfit for me"
@@ -273,7 +273,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_costume_lara_croft_OBJ:
+            if outfit_choice == hg_costume_lara_croft_ITEM:
                 m "[hermione_name]..."
                 m "I'd like you to dress up."
                 call her_main("As what?","open","worriedL")
@@ -298,7 +298,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_outfit_witch_OBJ:
+            if outfit_choice == hg_outfit_witch_ITEM:
                 m "[hermione_name], have you ever heard about witches?"
                 call her_main("[genie_name]? I am a witch?","soft","narrow")
                 m "Oh right,..."
@@ -328,7 +328,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice in [hg_costume_elizabeth_OBJ,hg_costume_yennefer_OBJ]:
+            if outfit_choice in [hg_costume_elizabeth_ITEM,hg_costume_yennefer_ITEM]:
                 m "[hermione_name], I have a new outfit for you!"
                 call her_main("A new outfit? You mean as a gift?","open","wink")
                 m "Yes. It's a character from a video-ga--"
@@ -341,9 +341,9 @@ label equip_her_outfit:
                 call nar(">You hand her the outfit.")
                 if her_whoring >= 11: #Success
                     call her_main("It does look nice...","soft","down")
-                    if outfit_choice == hg_costume_elizabeth_OBJ:
+                    if outfit_choice == hg_costume_elizabeth_ITEM:
                         call her_main("(I really like her necklace...)","smile","down")
-                    if outfit_choice == hg_costume_yennefer_OBJ:
+                    if outfit_choice == hg_costume_yennefer_ITEM:
                         call her_main("(I really like her scarf...)","smile","down")
                     call her_main("Let me put it on real quick.","smile","glance")
                 else: #Fail
@@ -357,7 +357,7 @@ label equip_her_outfit:
                     jump return_to_wardrobe
 
             # Dresses
-            if outfit_choice == hg_dress_dancer_OBJ:
+            if outfit_choice == hg_dress_dancer_ITEM:
                 if her_whoring >= 11: #Success
                     m "Giuchie, Giuchie, ya-ya..."
                     call her_main("Da-Da","soft","glanceL")
@@ -384,7 +384,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_dress_yule_ball_OBJ:
+            if outfit_choice == hg_dress_yule_ball_ITEM:
                 if not have_no_dress_hap: # Dialogue for before she needs the dress.
                     m "Would you like to wear your new dress?"
                     call her_main("A dress? What would I need a dress for?","open","wink")
@@ -413,7 +413,7 @@ label equip_her_outfit:
             with d3
             pause.5
 
-            call h_outfit_OBJ(outfit_choice)
+            call set_her_outfit(outfit_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -423,7 +423,7 @@ label equip_her_outfit:
             $ hide_transitions = True
             hide screen hermione_main
 
-            call h_outfit_OBJ(outfit_choice)
+            call set_her_outfit(outfit_choice)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -444,7 +444,7 @@ label equip_her_outfit:
             with d3
             pause.5
 
-            call h_outfit_OBJ(None)
+            call set_her_outfit(None)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -454,7 +454,7 @@ label equip_her_outfit:
             $ hide_transitions = True
             hide screen hermione_main
 
-            call h_outfit_OBJ(None)
+            call set_her_outfit(None)
 
             call her_main(xpos="wardrobe")
             call screen wardrobe
@@ -467,15 +467,13 @@ label equip_lun_outfit:
 
         call lun_outfit(outfit_choice)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
     else: # Unequip
 
         call lun_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Astoria's Outfit ###
@@ -484,15 +482,13 @@ label equip_ast_outfit:
 
         call ast_outfit(outfit_choice)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
     else: # Unequip
 
         call ast_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Susan's Outfit ###
@@ -508,8 +504,7 @@ label equip_sus_outfit:
 
         call sus_outfit(None)
 
-        hide screen wardrobe
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Cho's Outfit ###
@@ -525,8 +520,7 @@ label equip_cho_outfit:
 
         call cho_outfit(None)
 
-        call cho_main(xpos="wardrobe")
-        call screen wardrobe
+        jump return_to_wardrobe
 
 
 ### Equip Tonks's Outfit ###

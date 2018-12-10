@@ -3,32 +3,40 @@
 ###EQUIPPING LABELS###
 
 #Hair equip.
-label set_her_hair(hair_style="A", color=1): #Not in use
+label set_her_hair(style="", color=""): #Not in use
     hide screen hermione_main
-    $ h_hair_style = hair_style
-    $ h_hair_color = color
-    call update_her_hair #Hermione_layering.rpy
-    show screen hermione_main
-    return
+    if style  != "":
+        $ h_hair_style = style
+    if color != "":
+        $ h_hair_color = color
 
-label set_her_hair_style(hair_style = "A"):
-    hide screen hermione_main
-    $ h_hair_style = hair_style
-    call update_her_hair #Hermione_layering.rpy
-    call update_her_uniform #updates cat ears
-    show screen hermione_main
-    return
+    #Hair
+    if h_hair_style in ["curly","updo","bobcut"]:
+        $ hermione_hair_base = "characters/hermione/body/head/" +str(h_hair_style)+ "_" +str(h_hair_color)+ ".png"
+        $ hermione_hair_top = "characters/hermione/body/head/" +str(h_hair_style)+ "_" +str(h_hair_color)+ "_top.png"
+    else:
+        $ hermione_hair_base = "characters/hermione/body/head/misc/" +str(h_hair_style)+ ".png"
+        $ hermione_hair_top = "characters/hermione/body/head/misc/" +str(h_hair_style)+ "_top.png"
 
-label set_her_hair_color(hair_color = 1):
-    hide screen hermione_main
-    $ h_hair_color = hair_color
-    call update_her_hair #Hermione_layering.rpy
-    call update_her_uniform #updates cat ears
-    show screen hermione_main
+    #Ears
+    if h_ears == "cat_ears":
+        if h_hair_style in ["curly","updo","bobcut"]:
+            $ hermione_ears = "characters/hermione/accessories/ears/hair_"+str(h_hair_style)+"/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+        else:
+            $ hermione_ears = "characters/hermione/accessories/ears/hair_curly/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+    else:
+        $ hermione_ears = "characters/hermione/accessories/ears/"+str(h_ears)+".png"
+
+    #Hat
+    if h_hair_style in ["curly","updo","bobcut"]:
+        $ hermione_hat = "characters/hermione/accessories/hats/hair_"+str(h_hair_style)+"/"+str(h_hat)+".png"
+    else:
+        $ hermione_hat = "characters/hermione/accessories/hats/hair_curly/"+str(h_hat)+".png"
+
     return
 
 #Makeup equip.
-label set_h_makeup(makeup = ""):
+label set_her_makeup(makeup = ""):
     hide screen hermione_main
     if makeup in hermione_makeup_list:
         $ hermione_makeup_list.remove(makeup)
@@ -42,11 +50,11 @@ label set_h_makeup(makeup = ""):
         $ h_request_wear_makeup = True
         $ hermione_wear_makeup = True
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Glasses equip.
-label set_h_glasses(glasses="", color=""):
+label set_her_glasses(glasses="", color=""):
     hide screen hermione_main
     if h_request_wear_glasses and (h_glasses == glasses and h_glasses_color == color):
         $ h_request_wear_glasses = False
@@ -57,11 +65,11 @@ label set_h_glasses(glasses="", color=""):
         $ h_glasses = glasses
         $ h_glasses_color = color
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Ears equip.
-label set_h_ears(ears=""):
+label set_her_ears(ears=""):
     hide screen hermione_main
     if h_request_wear_ears and h_ears == ears:
         $ h_request_wear_ears = False
@@ -71,13 +79,13 @@ label set_h_ears(ears=""):
         $ hermione_wear_ears = True
         $ h_ears = ears
         if h_ears == "elf_ears":
-            call set_her_hair_style("B")
+            call set_her_hair(style="updo")
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Hat equip.
-label set_h_hat(hat=""):
+label set_her_hat(hat=""):
     hide screen hermione_main
     if h_request_wear_hat and h_hat == hat:
         $ h_request_wear_hat = False
@@ -87,11 +95,11 @@ label set_h_hat(hat=""):
         $ hermione_wear_hat = True
         $ h_hat = hat
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Top equip.
-label set_h_top(top="", color=""):
+label set_her_top(top="", color=""):
     hide screen hermione_main
     $ h_request_wear_top = True
     $ hermione_wear_top = True
@@ -100,11 +108,11 @@ label set_h_top(top="", color=""):
     $ h_top = top
     $ h_top_color = color
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Bottom equip.
-label set_h_bottom(bottom="", color=""):
+label set_her_bottom(bottom="", color=""):
     hide screen hermione_main
     $ h_request_wear_bottom = True
     $ hermione_wear_bottom = True
@@ -113,11 +121,11 @@ label set_h_bottom(bottom="", color=""):
     $ h_bottom = bottom
     $ h_bottom_color = color
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Bra equip.
-label set_h_bra(bra="", color=""):
+label set_her_bra(bra="", color=""):
     hide screen hermione_main
     $ h_request_wear_bra = True
     $ hermione_wear_bra = True
@@ -127,11 +135,11 @@ label set_h_bra(bra="", color=""):
         $ h_bra = bra
         $ h_bra_color = color
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Onepiece equip.
-label set_h_onepiece(onepiece=""):
+label set_her_onepiece(onepiece=""):
     hide screen hermione_main
     if h_onepiece == onepiece and hermione_wear_onepiece: #Off toggle
         $ h_request_wear_onepiece = False
@@ -141,11 +149,11 @@ label set_h_onepiece(onepiece=""):
         $ hermione_wear_onepiece = True
         $ h_onepiece = onepiece
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Panties equip.
-label set_h_panties(panties="", color=""):
+label set_her_panties(panties="", color=""):
     hide screen hermione_main
     $ h_request_wear_panties = True
     $ hermione_wear_panties = True
@@ -155,11 +163,11 @@ label set_h_panties(panties="", color=""):
         $ h_panties = panties
         $ h_panties_color = color
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Garterbelt equip.
-label set_h_garterbelt(garterbelt="", color=""):
+label set_her_garterbelt(garterbelt="", color=""):
     hide screen hermione_main
     if h_garterbelt == garterbelt and hermione_wear_garterbelt:
         $ h_request_wear_garterbelt = False
@@ -170,11 +178,11 @@ label set_h_garterbelt(garterbelt="", color=""):
         $ h_garterbelt = garterbelt
         $ h_garterbelt_color = color
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Neackwear equip.
-label set_h_neckwear(neck=""):
+label set_her_neckwear(neck=""):
     hide screen hermione_main
     if h_neckwear == neck and hermione_wear_neckwear: #Off toggle
         $ h_request_wear_neckwear = False
@@ -184,11 +192,11 @@ label set_h_neckwear(neck=""):
         $ hermione_wear_neckwear = True
         $ h_neckwear = neck
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Body accs equip.
-label set_h_body_accessory(accessory=""):
+label set_her_body_accessory(accessory=""):
     if accessory in hermione_body_accs_list:
         $ hermione_body_accs_list.remove(accessory)
     else:
@@ -202,11 +210,11 @@ label set_h_body_accessory(accessory=""):
         $ hermione_wear_body_accs = True
     call update_chibi_uniform
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Gloves Equip.
-label set_h_gloves(gloves=""):
+label set_her_gloves(gloves=""):
     hide screen hermione_main
     if h_gloves == gloves and hermione_wear_gloves: #Off toggle
         $ h_request_wear_gloves = False
@@ -216,11 +224,11 @@ label set_h_gloves(gloves=""):
         $ hermione_wear_gloves = True
         $ h_gloves = gloves
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Stockings equip.
-label set_h_stockings(stockings=""):
+label set_her_stockings(stockings=""):
     hide screen hermione_main
     if h_stockings == stockings: #Off toggle
         $ h_request_wear_stockings = False
@@ -230,13 +238,13 @@ label set_h_stockings(stockings=""):
         $ hermione_wear_stockings = True
         $ h_stockings = stockings
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Robe equip.
-label set_h_robe(robe=""):
+label set_her_robe(robe=""):
     hide screen hermione_main
-    if h_robe == robe:
+    if h_robe == robe and hermione_wear_robe:
         $ h_request_wear_robe = False
         $ hermione_wear_robe = False
     else:
@@ -244,11 +252,11 @@ label set_h_robe(robe=""):
         $ hermione_wear_robe = True
         $ h_robe = robe
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 #Buttplug equip.
-label set_h_buttplug(buttplug=""):
+label set_her_buttplug(buttplug=""):
     hide screen hermione_main
     if buttplug == "None" or buttplug == "" or buttplug == "remove":
         $ h_request_wear_buttplug = False
@@ -258,34 +266,62 @@ label set_h_buttplug(buttplug=""):
         $ hermione_wear_buttplug = True
         $ h_buttplug = buttplug
     call update_her_uniform
-    show screen hermione_main
+
+    return
+
+#Mask equip.
+label set_her_mask(mask=""):
+    hide screen hermione_main
+    if mask == "None" or mask == "" or mask == "remove":
+        $ h_request_wear_mask = False
+        $ hermione_wear_mask = False
+    else:
+        $ h_request_wear_mask = True
+        $ hermione_wear_mask = True
+        $ h_mask = mask
+    call update_her_uniform
+
+    return
+
+#Gag equip.
+label set_her_gag(gag=""):
+    hide screen hermione_main
+    if gag == "None" or gag == "" or gag == "remove":
+        $ h_request_wear_gag = False
+        $ hermione_wear_gag = False
+    else:
+        $ h_request_wear_gag = True
+        $ hermione_wear_gag = True
+        $ h_gag = gag
+    call update_her_uniform
+
     return
 
 #Piercings equip.
-label set_h_piercing(piercing="", color=""):
+label set_her_piercing(piercing="", color=""):
     hide screen hermione_main
     if piercing in ear_piercings_list:
         if h_ear_piercing == piercing and h_ear_piercing_color == color:
-            $ h_ear_piercing = "00_blank"
+            $ h_ear_piercing = "blank"
         else:
             $ h_ear_piercing = piercing_choice
     if piercing in nipple_piercings_list:
         if h_nipple_piercing == piercing and h_nipple_piercing_color == color:
-            $ h_nipple_piercing = "00_blank"
+            $ h_nipple_piercing = "blank"
         else:
             $ h_nipple_piercing = piercing
     if piercing in belly_piercings_list:
         if h_belly_piercing == piercing and h_belly_piercing_color == color:
-            $ h_belly_piercing = "00_blank"
+            $ h_belly_piercing = "blank"
         else:
             $ h_belly_piercing = piercing
     if piercing in intimate_piercings_list:
         if h_belly_piercing == piercing and h_intimate_piercing_color == color:
-            $ h_belly_piercing = "00_blank"
+            $ h_belly_piercing = "blank"
         else:
             $ h_belly_piercing = piercing
 
-    if h_ear_piercing == "00_blank" and h_nipple_piercing == "00_blank" and h_belly_piercing == "00_blank" and h_intimate_piercing == "00_blank": #No piercings equipped.
+    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_intimate_piercing == "blank": #No piercings equipped.
         $ h_request_wear_piercings = False
         $ hermione_wear_piercings = False
     else:
@@ -293,7 +329,7 @@ label set_h_piercing(piercing="", color=""):
         $ hermione_wear_piercings = True
 
     call update_her_uniform
-    show screen hermione_main
+
     return
 
 ## Outfit Equips
@@ -301,19 +337,19 @@ label set_hermione_outfit(outfit): #This gets used outside the wardrobe.
     show screen blkfade
     hide screen hermione_main
     with d3
-    call h_outfit_OBJ(outfit)
+    call set_her_outfit(outfit)
     pause .5
     show screen hermione_main
     hide screen blkfade
     with d5
     return
 
-label h_outfit_OBJ(outfit):
+label set_her_outfit(outfit):
+    hide screen hermione_main
     if outfit == None:
         $ h_request_wear_outfit = False
         $ hermione_wear_outfit = False
         call update_her_uniform
-        call h_update_hair
     else:
         $ h_request_wear_outfit = True
         $ hermione_wear_outfit = True
@@ -323,53 +359,75 @@ label h_outfit_OBJ(outfit):
 
         $ hermoine_outfit_GLBL = outfit
 
-        if hermoine_outfit_GLBL.hair_layer != "":
-            $ h_hair_style = hermoine_outfit_GLBL.getHairLayers()
-            $ h_hair_color = 1
         if hermoine_outfit_GLBL.top_layers != []:
             $ h_request_wear_hat = True
             $ h_hat = hermoine_outfit_GLBL.getTopLayers()
+        if hermoine_outfit_GLBL.hair_layer != "":
+            call set_her_hair(style=hermoine_outfit_GLBL.getHairLayers() )
 
         call load_hermione_clothing_saves
         call update_her_uniform
-        call h_update_hair
 
     return
 
 label h_equip_temp_outfit(outfit):
-    if temp_outfit_GLBL == None:
-        $ temp_outfit_GLBL = hermoine_outfit_GLBL
-        $ temp_weir = h_request_wear_outfit
-        $ temp_costume = hermione_outfit
+    $ temp_outfit_GLBL = hermoine_outfit_GLBL  #Saves equipped outfit.
+    $ temp_wear_outfit = h_request_wear_outfit #Saves equip state.
+    $ temp_wear_top = h_request_wear_top       #Saves equip state.
 
-    call h_outfit_OBJ(outfit)
+    call set_her_outfit(outfit)
     return
 
 label h_unequip_temp_outfit():
     $ hermoine_outfit_GLBL = temp_outfit_GLBL
-    if temp_weir and  temp_costume:
-        call h_outfit_OBJ(temp_outfit_GLBL)
+    $ h_request_wear_outfit = temp_wear_outfit
+    $ h_request_wear_top = temp_wear_top
+
+    if h_request_wear_outfit:
+        call set_her_outfit(hermoine_outfit_GLBL)
     else:
-        call h_outfit_OBJ(None)
+        call set_her_outfit(None)
     $ temp_outfit_GLBL = None
     return
 
-
-#Hermione Action
-
-label set_hermione_action(action="", update=""):
+label set_her_transparency(top=None, bottom=None, bra=None, onepiece=None, panties=None, garterbelt=None, gloves=None, stockings=None, robe=None, outfit=None):
+    pause.5
     hide screen hermione_main
-    call h_action(action,update)
 
-    show screen hermione_main
-    with d3
+    if top != None:
+        $ her_top_transp = top
+    if bottom != None:
+        $ her_bottom_transp    = bottom
+
+    if bra != None:
+        $ her_bra_transp       = bra
+    if onepiece != None:
+        $ her_onepiece_transp  = onepiece
+    if panties != None:
+        $ her_panties_transp   = panties
+    if garterbelt != None:
+        $ her_garter_transp    = garterbelt
+
+    if gloves != None:
+        $ her_gloves_transp    = gloves
+    if stockings != None:
+        $ her_stockings_transp = stockings
+    if robe != None:
+        $ her_robe_transp      = robe
+
+    if outfit != None:
+        $ her_outfit_transp    = outfit
+
+    call update_her_body
 
     return
 
+#Hermione Action
 
-label h_action(action =  "", update=""):
+label set_her_action(action =  "", update=""):
+    hide screen hermione_main
 
-    if action == "" or action == "none" or action == "None" or action == 0:
+    if action == "" or action == "none" or action == "None" or action == None:
 
         $ hermione_action = "none"
         $ hermione_use_action = False
@@ -378,13 +436,11 @@ label h_action(action =  "", update=""):
         $ h_left_arm         = "left_1"
         $ h_action_top = ""
         $ h_action_bottom = ""
-        $ h_action_gloves = ""
 
-        $ h_action_a = "00_blank.png"
-        $ h_action_b = "00_blank.png"
-        $ hermione_action_a = "characters/hermione/body/arms/left/00_blank.png"
-        $ hermione_action_b = "characters/hermione/body/arms/left/00_blank.png"
-        $ hermione_costume_action_a = "characters/hermione/clothes/custom/00_blank.png"
+        $ h_action_a = "blank.png"
+        $ hermione_action_a = "characters/hermione/body/arms/left/blank.png"
+        $ hermione_action_b = "characters/hermione/body/arms/left/blank.png"
+        $ hermione_costume_action_a = "characters/hermione/clothes/custom/blank.png"
         $ milking           = 0
 
 
@@ -400,7 +456,7 @@ label h_action(action =  "", update=""):
                 $ h_action_a = hermoine_outfit_GLBL.getActionImage(action)
             else:
                 $ hermione_use_action = False
-                $ h_action_a = "00_blank.png"
+                $ h_action_a = "blank.png"
 
         else:
 
@@ -519,14 +575,6 @@ label h_action(action =  "", update=""):
                 $ hermione_wear_robe = False
 
 
-    call update_her_uniform #calls update_her_action, update_chibi_uniform, and h_update_body;
+    call update_her_uniform #calls update_her_action, update_chibi_uniform, and update_her_body;
 
-    return
-
-label set_h_action_vars:
-    $ hermione_action_right_arm = "characters/hermione/body/arms/right/"+str(h_action_right_arm)
-    $ hermione_action_left_arm = "characters/hermione/body/arms/left/"+(h_action_left_arm)
-    $ hermione_action_a = "characters/hermione/clothes/uniform/action/"+str(h_action_a)
-    $ hermione_action_b = "characters/hermione/clothes/uniform/action/"+str(h_action_b)
-    $ hermione_costume_action_a = "characters/hermione/clothes/custom/"+str(h_action_a)
     return

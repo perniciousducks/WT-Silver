@@ -143,6 +143,7 @@ init python:
     ### Other Characters ###
     s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
     nar = Character('Narrator ', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/misc/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
+    sil = Character('Team Silver', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/misc/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
 
     maf  = Character('Madam Mafkin', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/misc/mafkin/maf_1.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=270)
     abe  = Character('Aberforth', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
@@ -161,4 +162,3 @@ init python:
     qcr  = Character('Quidditch Crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
     l    = Character('Lola', color="#402313", window_right_padding=270, show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    dahr = Character(None, color="#402313", window_left_padding=270, show_side_image=Image("images/store/dahr.png", xalign=0.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc4", ctc_position="fixed")

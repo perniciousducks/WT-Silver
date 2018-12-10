@@ -4,8 +4,8 @@ label update_cho_uniform:
     hide screen cho_chang
 
     #Hair
-    $ cho_hair         = "characters/cho/body/hair/hair_"+str(c_hair_style)+"_"+str(c_hair_color)+"_base.png"
-    $ cho_hair_shadow  = "characters/cho/body/hair/hair_"+str(c_hair_style)+"_"+str(c_hair_color)+"_top.png"
+    $ cho_hair         = "characters/cho/body/hair/"+str(c_hair_style)+"_"+str(c_hair_color)+"_base.png"
+    $ cho_hair_shadow  = "characters/cho/body/hair/"+str(c_hair_style)+"_"+str(c_hair_color)+"_top.png"
 
     #Top
     $ cho_top            = "characters/cho/clothes/tops/base/"+str(c_top)+".png"
@@ -15,7 +15,7 @@ label update_cho_uniform:
 
     #Underwear
     $ cho_bra            = "characters/cho/clothes/underwear/base/"+str(c_bra)+".png"
-    $ cho_onepiece       = "characters/cho/clothes/onepieces/base/"+str(c_onepiece)+".png"
+    $ cho_onepiece       = "characters/cho/clothes/onepieces/"+str(c_onepiece)+".png"
     $ cho_panties        = "characters/cho/clothes/underwear/base/"+str(c_panties)+".png"
     $ cho_garterbelt     = "characters/cho/clothes/underwear/base/"+str(c_garterbelt)+".png"
 
@@ -39,7 +39,6 @@ label set_cho_hair(hair=None,color=None):
         $ c_hair_color   = color
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -56,7 +55,6 @@ label set_cho_hat(hat=""):
         $ c_hat = hat
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -73,7 +71,6 @@ label set_cho_top(top=""):
         $ c_top = top
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -90,7 +87,6 @@ label set_cho_bottom(bottom=""):
         $ c_bottom = bottom
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -107,7 +103,6 @@ label set_cho_bra(bra=""):
         $ c_bra = bra
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -124,7 +119,6 @@ label set_cho_onepiece(onepiece=""):
         $ c_onepiece = onepiece
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -141,7 +135,6 @@ label set_cho_panties(panties=""):
         $ c_panties = panties
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -158,7 +151,6 @@ label set_cho_garterbelt(garter=""):
         $ c_garterbelt = garter
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -175,7 +167,6 @@ label set_cho_neckwear(neck=""):
         $ c_neckwear = neck
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -192,7 +183,6 @@ label set_cho_stockings(stockings=""):
         $ c_stockings = stockings
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -209,7 +199,6 @@ label set_cho_robe(robe=""):
         $ c_robe = robe
 
     call update_cho_uniform
-    show screen cho_chang
 
     return
 
@@ -239,7 +228,6 @@ label cho_outfit(outfit):
 
         if cho_outfit_GLBL.hair_layer != "":
             $ c_hair_style = cho_outfit_GLBL.getHairLayers()
-            $ c_hair_color = 1
         if cho_outfit_GLBL.top_layers != []:
             $ cho_request_wear_hat = True
             $ c_hat = cho_outfit_GLBL.getTopLayers()
@@ -253,25 +241,25 @@ label cho_outfit(outfit):
 
 label update_cho_quidditch_outfit:
 
-    $ cc_outfit_quidditch_OBJ.outfit_layers = []
+    $ cc_outfit_quidditch_ITEM.outfit_layers = []
 
     if cho_quidd_points == 0:
-        $ cc_outfit_quidditch_OBJ.outfit_layers.append("quid_pants_long.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_pants_long.png")
     elif cho_quidd_points == 1:
-        $ cc_outfit_quidditch_OBJ.outfit_layers.append("skirt_1.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("skirt_1.png")
     elif cho_quidd_points == 2:
-        $ cc_outfit_quidditch_OBJ.outfit_layers.append("skirt_2.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("skirt_2.png")
     else:
-        $ cc_outfit_quidditch_OBJ.outfit_layers.append("skirt_3.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("skirt_3.png")
 
-    $ cc_outfit_quidditch_OBJ.outfit_layers.append("left_hand.png") #Hand Overlay #Important
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("left_hand.png") #Hand Overlay #Important
 
-    $ cc_outfit_quidditch_OBJ.outfit_layers.append("quid_sweater.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_sweater.png")
 
     if cho_quidd_points in [0,1,2,3, 5,6]: #Not 4 #Wears robe!
-        $ cc_outfit_quidditch_OBJ.outfit_layers.append("quid_robe.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_robe.png")
 
-    $ cc_outfit_quidditch_OBJ.outfit_layers.append("quid_gloves.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_gloves.png")
 
     return
 

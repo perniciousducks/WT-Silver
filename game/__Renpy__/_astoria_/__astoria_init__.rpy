@@ -35,10 +35,10 @@ label astoria_init:
         $ astoria_emote               = "characters/emotes/blank.png"
 
         #Hair
-        $ astoria_hair                = "characters/astoria/body/hair/hair_A_1_base.png"
-        $ astoria_hair_shadow         = "characters/astoria/body/hair/hair_A_1_top.png"
-        $ ast_hair_style              = "A"
-        $ ast_hair_color              = 1
+        $ astoria_hair                = "characters/astoria/body/hair/straight_blonde_base.png"
+        $ astoria_hair_shadow         = "characters/astoria/body/hair/straight_blonde_top.png"
+        $ ast_hair_style              = "straight"
+        $ ast_hair_color              = "blonde"
 
         $ changeAstoria("smile","base","base","mid","blank","blank","blank","blank")
 
@@ -118,7 +118,7 @@ label astoria_init:
         $ ast_panties                 = "lace_panties"
         $ ast_panties_color           = "base"
 
-        $ astoria_onepiece            = "characters/astoria/clothes/onepieces/base/blank.png"
+        $ astoria_onepiece            = "characters/astoria/clothes/onepieces/blank.png"
         $ ast_onepiece                = "blank"
         $ ast_onepiece_color          = "base"
 
@@ -143,15 +143,15 @@ label astoria_init:
         $ ast_stockings               = "blank"
         $ ast_stockings_color         = "base"
 
-        $ astoria_robe                = "characters/astoria/clothes/robe/base/slyth_1.png"
-        $ ast_robe                    = "slyth_1"
+        $ astoria_robe                = "characters/astoria/clothes/robe/robe_1_s.png"
+        $ ast_robe                    = "robe_1_s"
         $ ast_robe_color              = "base"
 
 
         #Accessories
         $ astoria_makeup_list         = []
 
-        $ astoria_hat                 = "characters/astoria/accessories/hats/hair_A/blank.png"
+        $ astoria_hat                 = "characters/astoria/accessories/hats/hair_straight/blank.png"
         $ ast_hat                     = "blank"
         $ ast_hat_color               = "base"
 
@@ -169,7 +169,10 @@ label astoria_init:
 
         #Outfits
         $ astoria_outfit_GLBL = None
-        $ astria_temp_outfit = None
+        $ astoria_temp_outfit = None
+
+
+    call astoria_face_layers
 
     return
 
@@ -178,15 +181,7 @@ label astoria_progress_init:
 
     if not hasattr(renpy.store,'astoria_name') or reset_persistants:
 
-        ##Favour stuff
-
-        ##Stats
-        $ astoria_spells = [0,0,0,0,0,0]
-        $ astoria_spell_progress = 0 #Training times required to unlock a spell. Resets to 0 after it.
-        $ astoria_affection      = 0 #Affection level with Tonks.
-        $ astoria_points         = 0 #Not in use.
-
-        ##Flags
+        #Flags
         $ astoria_busy = False
         $ astoria_unlocked = False
         $ astoria_wardrobe_unlocked = False
@@ -196,7 +191,18 @@ label astoria_progress_init:
         $ astoria_arrival_day = 30
         $ astoria_arrvial_whoring = 9
 
-        ##Events
+        #Names
+        $ astoria_name = "Miss Greengrass"
+        $ ast_genie_name = "Dumby"
+        $ ast_susan_name = "Cow"
+        $ ast_tonks_name = "Old Hag"
+
+        #Stats
+        $ ast_spell_progress = 0 #Training times required to unlock a spell. Resets to 0 after it.
+        $ ast_affection      = 0 #Affection level with Tonks.
+        $ ast_mood           = 0
+
+        #Events
         $ hermione_on_the_lookout  = False
         $ hermione_finds_astoria   = False
         $ snape_on_the_lookout     = False
@@ -207,9 +213,10 @@ label astoria_progress_init:
         $ astoria_book_intro_happened = False
         $ astoria_intro_completed  = False
 
-        ##Tonks events
+        #Tonks events
         $ spells_locked = False
         $ astoria_tonks_event_in_progress = False
+        $ astoria_tonks_intro_completed = False
         $ astoria_tonks_1_completed = False
         $ astoria_tonks_2_completed = False
         $ astoria_tonks_3_completed = False
@@ -217,15 +224,35 @@ label astoria_progress_init:
         $ astoria_tonks_5_completed = False
         $ astoria_tonks_6_completed = False
 
-        ##Names
-        $ astoria_name = "Miss Greengrass"
-        $ ast_genie_name = "Dumby"
-        $ ast_susan_name = "Cow"
-        $ ast_tonks_name = "Old Hag"
+        #Stat Screen
+        $ ast_training_counter = 0
 
-        #Stats
-        $ astoria_training_counter = 0
+    #Curses on Susan
+    if not hasattr(renpy.store,'ag_imperio_susan_OBJ'):
+        $ ag_imperio_susan_OBJ = personal_favor()
+    $ ag_imperio_susan_OBJ.menu_text   = "Imperio on Susan"
+    $ ag_imperio_susan_OBJ.start_label = "ag_imperio_susan"
 
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
+    $ ag_susan_spells_list = [
+        ag_imperio_susan_OBJ
+        ]
+
+    #Curses on Hermione
+    if not hasattr(renpy.store,'ag_imperio_hermione_OBJ'):
+        $ ag_imperio_hermione_OBJ = personal_favor()
+    $ ag_imperio_hermione_OBJ.menu_text   = "Imperio on Hermione"
+    $ ag_imperio_hermione_OBJ.start_label = "ag_imperio_hermione"
+
+    $ ag_hermione_spells_list = [
+        ]
+
+    #Curses on Tonks
+    if not hasattr(renpy.store,'ag_crucio_tonks_OBJ'):
+        $ ag_crucio_tonks_OBJ = personal_favor()
+    $ ag_crucio_tonks_OBJ.menu_text   = "Crucio on Tonks"
+    $ ag_crucio_tonks_OBJ.start_label = "ag_crucio_tonks"
+
+    $ ag_tonks_spells_list = [
+        ]
 
     return

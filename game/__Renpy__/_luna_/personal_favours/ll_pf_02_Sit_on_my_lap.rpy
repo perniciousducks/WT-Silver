@@ -3,17 +3,17 @@
 label luna_favour_2: ###SIT ON MY LAP #DONE
 
     m "{size=-4}(I'll just ask her to sit on my lap...){/size}"
-    if luna_corruption <= 3: #FIRST TIME
-        if luna_corruption <= 3:
-            $ luna_corruption += 1
+    if lun_corruption <= 3: #FIRST TIME
+        if lun_corruption <= 3:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Before we get started, Would you like a seat, [luna_name]?"
-        call lun_main("I would, but there's no chair [l_genie_name]...","normal","angry","raised","mid")
+        call lun_main("I would, but there's no chair [lun_genie_name]...","normal","angry","raised","mid")
         m "Well how about you come sit on my lap then?"
         call lun_main("...","upset","suspicious","angry","mid")
         m "Come on, it'll be just like santa claus."
         call lun_main("...","upset","suspicious","angry","R")
-        call lun_main("You better make this worth it [l_genie_name]...","upset","mad","angry","R")
+        call lun_main("You better make this worth it [lun_genie_name]...","upset","mad","angry","R")
         m "Don't worry, I'm sure you'll be very happy with your \'reward\'."
         call lun_main("...","upset","suspicious","angry","mid")
         show screen blkfade
@@ -28,9 +28,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         with d3
 
         menu:
-            "-Pull her onto your lap-" if luna_sub >= 2:
-                if luna_sub <= 3:
-                    $ luna_sub += 1
+            "-Pull her onto your lap-" if lun_sub >= 2:
+                if lun_sub <= 3:
+                    $ lun_sub += 1
                 $ luna_grope = True
                 call lun_main("...","upset","suspicious","angry","R")
                 call lun_main("Actually, I'm not sure if...","normal","mad","base","R")
@@ -72,7 +72,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                     "-Grab her waist-":
                         ">You take a hold of her waist."
                         call lun_main("!!!","clench","wide","base","mid")
-                        call lun_main("I don't think touching was part of the arrangement [l_genie_name]...","upset","angry","mad","R")
+                        call lun_main("I don't think touching was part of the arrangement [lun_genie_name]...","upset","angry","mad","R")
                         $ current_payout = 75
                         m "Don't worry [luna_name], you'll be compensated fairly."
                         ">You pull her hard against your crouch, rubbing your cock between her cheeks."
@@ -100,7 +100,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("But letting you do that...","normal","suspicious","mad","mid")
                         call lun_main("I simply refuse!","clench","mad","mad","R")
                         m "fine fine."
-                        call lun_main("Honestly [l_genie_name], who do you think I am?","normal","angry","angry","mid")
+                        call lun_main("Honestly [lun_genie_name], who do you think I am?","normal","angry","angry","mid")
                         call lun_main("I think I'd like to be paid now...","normal","angry","angry","R")
                     "-Grope her-" if luna_grope:
                         ">You start running your hands along the outside of her thighs, up to her waist and then over her belly."
@@ -139,12 +139,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("But letting you touch me there...","normal","mad","mad","R")
                         call lun_main("I won't do it!","upset","mad","angry","R")
                         m "alright fine."
-                        call lun_main("Honestly [l_genie_name], you really need to learn some self control.","disgust","mad","mad","mid")
+                        call lun_main("Honestly [lun_genie_name], you really need to learn some self control.","disgust","mad","mad","mid")
                         call lun_main("I think I'd like to be paid now...","upset","mad","angry","R")
 
 
 
-            "-Do nothing-" if luna_dom < 2:
+            "-Do nothing-" if lun_dom < 2:
                 call lun_main("...","normal","angry","angry","R")
                 call lun_main("......","upset","mad","angry","R")
                 call lun_main("I guess I'll start then...","normal","suspicious","angry","R")
@@ -156,7 +156,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("Alright, time's up!","normal","base","base","R")
                 ">Luna stands up from your lap"
                 m "What, you barely even sat down!"
-                call lun_main("*hmph* You should consider yourself lucky you got what you did [l_genie_name]!","upset","mad","angry","R")
+                call lun_main("*hmph* You should consider yourself lucky you got what you did [lun_genie_name]!","upset","mad","angry","R")
                 m "You could have at least moved around a little."
                 call lun_main("What? Who do you think I am? Some sort of harlot who'll let you grind yourself against them for as long as you want?","clench","suspicious","angry","R")
                 m "well I expected at least a few minutes."
@@ -165,7 +165,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "ah..."
                 call lun_main("pathetic...","upset","seductive","angry","R")
                 ">She starts rocking back and forward on your lap"
-                call lun_main("You really are disgusting [l_genie_name]...","soft","seductive","base","R")
+                call lun_main("You really are disgusting [lun_genie_name]...","soft","seductive","base","R")
                 m "mmmm"
                 call lun_main("begging your students for a lap dance...","upset","mad","mad","R")
                 m "yes, yes..."
@@ -175,7 +175,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 ">luna starts rolling her hips a little faster."
                 call lun_main("a lot extra...","upset","suspicious","mad","R")
                 m "of course [luna_name]..."
-                call lun_main("that's it [l_genie_name]. just enjoy it...","base","seductive","base","R")
+                call lun_main("that's it [lun_genie_name]. just enjoy it...","base","seductive","base","R")
                 m "mmm, just a little more..."
                 call lun_main("...","upset","mad","raised","down")
                 m "yes... almost..."
@@ -200,9 +200,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 120
 
 
-            "-Do nothing-" if luna_dom >= 2:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Do nothing-" if lun_dom >= 2:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 call lun_main("...","normal","angry","angry","mid")
                 call lun_main("......","upset","mad","angry","R")
                 call lun_main("I guess I'll start then...","normal","suspicious","angry","R")
@@ -213,8 +213,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("You're pathetic...","upset","seductive","angry","R")
                 call lun_main("THe worlds greatest wizard...","base","seductive","base","R")
                 call lun_main("More like the worlds greatest pervert.","upset","suspicious","angry","R")
-                if l_genie_name == "Old man":
-                    $ l_genie_name = "Pervert"
+                if lun_genie_name == "Old man":
+                    $ lun_genie_name = "Pervert"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
                 call lun_main("*hmph* You're not even ashamed are you?","soft","seductive","base","R")
@@ -246,13 +246,13 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_chibi("stand","desk","base")
                         hide screen blkfade
 
-                        call lun_main("I'd like to be paid now [l_genie_name]...","upset","mad","mad","mid",xpos="base",ypos="base")
+                        call lun_main("I'd like to be paid now [lun_genie_name]...","upset","mad","mad","mid",xpos="base",ypos="base")
                         $ current_payout = 100
                         m "Alright, alright. Here's your gold."
                         $ gold -= current_payout
                         $ luna_gold += current_payout
                         ">You hand Luna [current_payout] gold."
-                        call lun_main("Thank you, [l_genie_name].","normal","angry","angry","R")
+                        call lun_main("Thank you, [lun_genie_name].","normal","angry","angry","R")
                         ">Luna leaves your office."
 
                 m "Please..."
@@ -274,7 +274,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "of course [luna_name]..."
                 call lun_main("Good. just enjoy yourself then...","base","happyCl","base","R")
                 m "mmm, just a little more..."
-                call lun_main("...[l_genie_name]","normal","seductive","angry","R")
+                call lun_main("...[lun_genie_name]","normal","seductive","angry","R")
                 ">Luna starts rubbing hard against your lap."
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("come on...","base","suspicious","angry","mid")
@@ -305,7 +305,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_chibi("stand","desk","base")
                 hide screen blkfade
 
-                call lun_main("*hmph* You [l_genie_name]!","normal","suspicious","angry","mid",xpos="base",ypos="base")
+                call lun_main("*hmph* You [lun_genie_name]!","normal","suspicious","angry","mid",xpos="base",ypos="base")
                 m "You can hardly blame me for this."
                 call lun_main("What? You're the one who begged for it, of course it's your fault.","upset","angry","mad","R")
                 m "well you didn't have to be so good at it."
@@ -321,24 +321,24 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">You hand Luna [current_payout] gold."
         if current_payout <= 50:
             call lun_main("(only [current_payout]?) *hmph*","upset","mad","angry","R")
-            call lun_main("Thank you, [l_genie_name].","normal","suspicious","angry","R")
+            call lun_main("Thank you, [lun_genie_name].","normal","suspicious","angry","R")
         else:
-            call lun_main("Thank you, [l_genie_name].","base","seductive","base","R")
+            call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif luna_corruption <= 4: #SECOND TIME
-        if luna_corruption <= 4:
-            $ luna_corruption += 1
+    elif lun_corruption <= 4: #SECOND TIME
+        if lun_corruption <= 4:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Can I offer you another seat [luna_name]?"
-        if luna_sub > luna_dom:
+        if lun_sub > lun_dom:
             call lun_main("...","normal","base","sad","down")
-            call lun_main("Alright [l_genie_name]...","normal","base","sad","R")
+            call lun_main("Alright [lun_genie_name]...","normal","base","sad","R")
             m "Good girl."
             call lun_main("...","upset","base","sad","down")
         else:
             call lun_main("Fine...","normal","base","angry","R")
-            call lun_main("But I expect to be fairly compensated [l_genie_name]...","normal","angry","angry","mid")
+            call lun_main("But I expect to be fairly compensated [lun_genie_name]...","normal","angry","angry","mid")
             m "yes, yes..."
             call lun_main("...","normal","angry","angry","R")
         show screen blkfade
@@ -353,9 +353,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         with d3
 
         menu:
-            "-Ask her to remove her skirt first-" if luna_sub >= 2:
-                if luna_sub <= 3:
-                    $ luna_sub += 1
+            "-Ask her to remove her skirt first-" if lun_sub >= 2:
+                if lun_sub <= 3:
+                    $ lun_sub += 1
                 $ luna_grope = True
                 m "How about you take off your skirt before we start?"
                 call lun_main("!!!","normal","wide","sad","R")
@@ -377,12 +377,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("...","normal","suspicious","sad","down")
                 call lun_main("(this is so degrading)","clench","suspicious","sad","down")
                 m "Now take a seat..."
-                call lun_main("yes [l_genie_name]...","normal","suspicious","sad","R")
+                call lun_main("yes [lun_genie_name]...","normal","suspicious","sad","R")
                 ">Luna softly takes a seat on your lap."
                 call lun_main("...","upset","suspicious","sad","down")
                 jump luna_lap_dance_2
 
-            "-Tell her to sit down-" if luna_sub >= luna_dom:
+            "-Tell her to sit down-" if lun_sub >= lun_dom:
                 $ luna_grope = False
                 m "come on now..."
                 call lun_main("...","upset","mad","sad","R")
@@ -429,7 +429,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("How's this?","grin","seductive","sad","down")
                         ">She starts rocking back and forward on your lap"
                         m "mmmmm"
-                        call lun_main("You're so hard [l_genie_name]...","base","seductive","sad","down")
+                        call lun_main("You're so hard [lun_genie_name]...","base","seductive","sad","down")
                         m "mmmm"
                         call lun_main("are you almost there?","normal","seductive","sad","R")
                         m "yes..."
@@ -442,7 +442,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         m "keep going [luna_name]..."
                         call lun_main("........","base","closed","sad","R")
                         m "mmm, just a little more..."
-                        call lun_main("...[l_genie_name]...","normal","angry","sad","down")
+                        call lun_main("...[lun_genie_name]...","normal","angry","sad","down")
                         ">Luna starts grinding hard against your lap."
                         m "{size=-2}(mmmm...){/size}"
                         call lun_main("......","base","suspicious","sad","mid")
@@ -459,7 +459,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("...","upset","mad","sad","R")
                         call lun_main("......","normal","mad","sad","down")
                         call lun_main(".........","upset","seductive","sad","down")
-                        call lun_main("Are you finished now [l_genie_name]?","base","seductive","sad","R")
+                        call lun_main("Are you finished now [lun_genie_name]?","base","seductive","sad","R")
                         m "Almost... just stay there for a little longer..."
                         call lun_main("......","base","seductive","sad","R")
 
@@ -476,9 +476,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_chibi("stand","desk","base")
                         hide screen blkfade
 
-                        call lun_main("will that be all, [l_genie_name]?","normal","suspicious","sad","mid",xpos="base",ypos="base")
+                        call lun_main("will that be all, [lun_genie_name]?","normal","suspicious","sad","mid",xpos="base",ypos="base")
                         m "Yes, thank you, [luna_name]."
-                        call lun_main("You're welcome, [l_genie_name].","upset","angry","sad","R")
+                        call lun_main("You're welcome, [lun_genie_name].","upset","angry","sad","R")
                         call lun_main("Well I better be off to class then.","upset","mad","sad","mid")
                         m "Don't you want your payment first?"
                         call lun_main("Oh right...","base","seductive","sad","R")
@@ -494,7 +494,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         "You move your hands up to her waist"
                         call lun_main("......","clench","suspicious","sad","down")
                         m "gods you've got such a nice ass."
-                        call lun_main("t-thank you [l_genie_name]...","upset","happyCl","sad","R",tears="crying")
+                        call lun_main("t-thank you [lun_genie_name]...","upset","happyCl","sad","R",tears="crying")
                         ">You Start moving your hands slowly up over her smooth stomach."
                         call lun_main(".........","upset","suspicious","sad","R",tears="crying")
                         m "That's it [luna_name], just enjoy yourself..."
@@ -531,8 +531,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                                 call lun_main("I think I'd like to be paid now...","upset","mad","angry","R")
 
                             "-Hold her down-":
-                                if luna_sub <= 4:
-                                    $ luna_sub += 1
+                                if lun_sub <= 4:
+                                    $ lun_sub += 1
                                 call lun_main("Professor!","upset","wide","mad","mid")
                                 call lun_main("I'd like to leave now!","normal","mad","mad","R")
                                 m "just a bit longer [luna_name]..."
@@ -541,14 +541,14 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                                 call lun_main("I insist you let me go!","pout","wide","mad","R")
                                 m "If you leave now you can forget about hogwarts purchasing any more of your father's newspaper, [luna_name]."
                                 call lun_main("...","upset","suspicious","sad","down")
-                                call lun_main("you're despicable, [l_genie_name]...","upset","mad","angry","R",tears="soft")
+                                call lun_main("you're despicable, [lun_genie_name]...","upset","mad","angry","R",tears="soft")
                                 ">You give her tits a couple of firm squeezes..."
                                 call lun_main("ah{image=textheart}...","upset","angry","sad","down",tears="soft")
                                 call lun_main("this isn't right...","upset","angry","sad","R",tears="soft")
                                 m "I know, I know... But it's hard to resist..."
                                 call lun_main(".................","normal","seductive","sad","down",tears="soft")
                                 call lun_main("....................ah...{image=textheart}","soft","seductive","sad","down",tears="soft")
-                                call lun_main("[l_genie_name], you need to stop now...","upset","angry","sad","R",tears="soft")
+                                call lun_main("[lun_genie_name], you need to stop now...","upset","angry","sad","R",tears="soft")
                                 m "Just a bit longer..."
                                 call lun_main("please...","upset","angry","sad","down",tears="crying")
                                 m "mmmm, I suppose this will have to do..."
@@ -579,7 +579,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                                 call lun_main("can I please be paid now?","upset","mad","sad","down")
 
 
-            "-Do nothing-" if luna_sub <= luna_dom:
+            "-Do nothing-" if lun_sub <= lun_dom:
                 call lun_main("...","normal","angry","angry","mid")
                 call lun_main("......","upset","mad","angry","R")
                 call lun_main("I suppose I'll start then...","normal","suspicious","angry","R")
@@ -622,7 +622,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "of course [luna_name]..."
                 call lun_main("Good. just enjoy yourself then...","base","happyCl","base","R")
                 m "mmm, just a little more..."
-                call lun_main("...[l_genie_name]","base","seductive","angry","R")
+                call lun_main("...[lun_genie_name]","base","seductive","angry","R")
                 ">Luna starts rubbing hard against your lap."
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("come on...","base","suspicious","angry","mid")
@@ -653,7 +653,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_chibi("stand","desk","base")
                 hide screen blkfade
 
-                call lun_main("*hmph* You naughty [l_genie_name]!","normal","suspicious","angry","mid",xpos="base",ypos="base")
+                call lun_main("*hmph* You naughty [lun_genie_name]!","normal","suspicious","angry","mid",xpos="base",ypos="base")
                 m "You can hardly blame me for this."
                 call lun_main("What? You're the one who begged for it, of course it's your fault.","upset","angry","mad","R")
                 m "well you didn't have to be so good at it."
@@ -662,9 +662,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 200
 
 
-            "-Ask Nicely-" if luna_dom >= 2:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Ask Nicely-" if lun_dom >= 2:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 m "can you please sit on my lap [luna_name]?"
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("well seeing as how you asked so nicely...","base","suspicious","base","R")
@@ -675,8 +675,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("You're pathetic...","base","seductive","angry","R")
                 call lun_main("THe worlds greatest wizard...","base","seductive","base","R")
                 call lun_main("More like the worlds greatest pervert.","base","suspicious","angry","down")
-                if l_genie_name == "Old man":
-                    $ l_genie_name = "Pervert"
+                if lun_genie_name == "Old man":
+                    $ lun_genie_name = "Pervert"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
                 call lun_main("*hmph* You're not even ashamed are you?","soft","seductive","angry","down")
@@ -707,7 +707,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "of course [luna_name]..."
                 call lun_main("Good. just enjoy yourself then...","base","happyCl","angry","R")
                 m "mmm, just a little more..."
-                call lun_main("...[l_genie_name]","base","seductive","base","R")
+                call lun_main("...[lun_genie_name]","base","seductive","base","R")
                 ">Luna starts rubbing hard against your lap."
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("come on...","base","suspicious","angry","mid")
@@ -734,12 +734,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("Surely you don't want it to end already?","base","seductive","angry","R")
                 ">she pushes hard against your cock."
                 g11 "ah..."
-                call lun_main("That's it [l_genie_name], just keep enjoying yourself.","base","mad","angry","down")
+                call lun_main("That's it [lun_genie_name], just keep enjoying yourself.","base","mad","angry","down")
                 g11 "I can't, it's too sensitive..."
                 call lun_main("I don't see how that's my problem.","base","mad","sad","R")
                 ">She starts moving as fast as she can."
                 g11 "{size=-2}ahhh...{/size}"
-                call lun_main("come on [l_genie_name]...","base","suspicious","angry","R")
+                call lun_main("come on [lun_genie_name]...","base","suspicious","angry","R")
                 g11 "{size=+4}aghhh!{/size}"
                 call lun_main("shoot another filthy load...","base","suspicious","mad","R")
                 g4 "{size=+4}*Argh!* It's too much!{/size}"
@@ -764,7 +764,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_chibi("stand","desk","base")
                 hide screen blkfade
 
-                call lun_main("*hmph* You nasty old [l_genie_name]!","base","suspicious","angry","mid",xpos="base",ypos="base")
+                call lun_main("*hmph* You nasty old [lun_genie_name]!","base","suspicious","angry","mid",xpos="base",ypos="base")
                 m "ah..."
                 call lun_main("Enjoy yourself a little too much did we?","base","angry","mad","R")
                 m "That was too much, [luna_name]..."
@@ -773,7 +773,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 250
 
 
-        if luna_dom >= luna_sub:
+        if lun_dom >= lun_sub:
             m "Alright, alright. Here's your gold."
         else:
             m "Here's your payment [luna_name]."
@@ -782,24 +782,24 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">You hand Luna [current_payout] gold."
         if current_payout <= 50:
             call lun_main("(only [current_payout]?) *hmph*","upset","mad","angry","R")
-            call lun_main("Thank you, [l_genie_name].","normal","suspicious","angry","R")
+            call lun_main("Thank you, [lun_genie_name].","normal","suspicious","angry","R")
         else:
-            call lun_main("Thank you, [l_genie_name].","base","seductive","base","R")
+            call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif luna_corruption >= 5 and luna_corruption < 13: #THIRD TIME
-        if luna_corruption <= 5:
-            $ luna_corruption += 1
+    elif lun_corruption >= 5 and lun_corruption < 13: #THIRD TIME
+        if lun_corruption <= 5:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
         m "Can I offer you another seat [luna_name]?"
-        if luna_sub > luna_dom:
+        if lun_sub > lun_dom:
             call lun_main("...","normal","base","sad","down")
-            call lun_main("Alright [l_genie_name]...","normal","base","sad","R")
+            call lun_main("Alright [lun_genie_name]...","normal","base","sad","R")
             m "Good girl."
             call lun_main("...","upset","base","sad","down")
         else:
             call lun_main("Fine...","normal","base","angry","R")
-            call lun_main("But I expect to be fairly compensated [l_genie_name]...","normal","angry","angry","mid")
+            call lun_main("But I expect to be fairly compensated [lun_genie_name]...","normal","angry","angry","mid")
             m "yes, yes..."
             call lun_main("...","normal","angry","angry","R")
         show screen blkfade
@@ -814,13 +814,13 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         with d3
 
         menu:
-            "-Pull her onto your lap-" if luna_sub >= 3:
-                if luna_sub <= 4:
-                    $ luna_sub += 1
+            "-Pull her onto your lap-" if lun_sub >= 3:
+                if lun_sub <= 4:
+                    $ lun_sub += 1
                 $ luna_grope = True
                 ">You grab Luna by the waist and pull her hard onto your lap."
                 call lun_main("!!!","normal","wide","sad","R")
-                call lun_main("There's no need to be so forceful [l_genie_name]!","pout","angry","sad","R")
+                call lun_main("There's no need to be so forceful [lun_genie_name]!","pout","angry","sad","R")
                 m "Sorry, it's hard to help myself when I've got such an eager slut in front of me. You don't mind do you?"
                 call lun_main("...","base","suspicious","sad","down")
                 call lun_main("......","normal","seductive","sad","R")
@@ -831,14 +831,14 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("{size=-5}No... sir...{/size}","clench","suspicious","sad","down")
                 m "Good girl..."
                 ">You push your cock hard against her ass."
-                call lun_main("ah... thank you [l_genie_name]...","base","suspicious","sad","down")
+                call lun_main("ah... thank you [lun_genie_name]...","base","suspicious","sad","down")
                 call lun_main("...","upset","suspicious","sad","down")
                 jump luna_lap_dance_3
 
-            "-Tell her to sit down-" if luna_sub >= luna_dom:
+            "-Tell her to sit down-" if lun_sub >= lun_dom:
                 $ luna_grope = False
-                if luna_sub <= 3:
-                    $ luna_sub += 1
+                if lun_sub <= 3:
+                    $ lun_sub += 1
                 m "why don-"
                 ">Luna quickly sits down on your lap, wriggling around slightly until your cock rests between her cheeks."
                 call lun_main("(ah...{image=textheart})","base","mad","sad","down")
@@ -887,7 +887,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("How's this?","grin","seductive","sad","down")
                         ">She starts rocking back and forward on your lap"
                         m "mmmmm"
-                        call lun_main("You're so hard [l_genie_name]...","base","seductive","sad","down")
+                        call lun_main("You're so hard [lun_genie_name]...","base","seductive","sad","down")
                         m "mmmm"
                         call lun_main("are you almost there?","base","seductive","sad","R")
                         m "yes..."
@@ -900,7 +900,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         m "keep going [luna_name]..."
                         call lun_main("........","base","closed","sad","R")
                         m "mmm, just a little more..."
-                        call lun_main("...[l_genie_name]...","base","angry","sad","down")
+                        call lun_main("...[lun_genie_name]...","base","angry","sad","down")
                         ">Luna starts grinding hard against your lap."
                         m "{size=-2}(mmmm...){/size}"
                         call lun_main("......","base","suspicious","sad","mid")
@@ -917,7 +917,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("...","upset","mad","sad","R")
                         call lun_main("......","normal","mad","sad","down")
                         call lun_main(".........","upset","seductive","sad","down")
-                        call lun_main("Are you finished now, [l_genie_name]?","base","seductive","sad","R")
+                        call lun_main("Are you finished now, [lun_genie_name]?","base","seductive","sad","R")
                         m "Almost... just stay there for a little longer..."
                         call lun_main("ok......","base","seductive","sad","down")
 
@@ -933,9 +933,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_chibi("stand","desk","base")
                         hide screen blkfade
 
-                        call lun_main("will that be all, [l_genie_name]?","base","suspicious","sad","mid",xpos="base",ypos="base")
+                        call lun_main("will that be all, [lun_genie_name]?","base","suspicious","sad","mid",xpos="base",ypos="base")
                         m "Yes, thank you, [luna_name]."
-                        call lun_main("You're welcome, [l_genie_name].","upset","angry","sad","R")
+                        call lun_main("You're welcome, [lun_genie_name].","upset","angry","sad","R")
                         call lun_main("Well I better be off to class then.","upset","mad","sad","mid")
                         m "Don't you want your payment first?"
                         call lun_main("Oh right...","base","seductive","sad","R")
@@ -951,7 +951,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         "You move your hands to her knees, just at the edge of her skirt."
                         call lun_main("......","base","suspicious","sad","down")
                         m "gods you've got such nice legs."
-                        call lun_main("t-thank you [l_genie_name]...","normal","happyCl","sad","R",tears="soft")
+                        call lun_main("t-thank you [lun_genie_name]...","normal","happyCl","sad","R",tears="soft")
                         ">You Start slowly moving your hands back towards her waist, pulling up her skirt slightly as you go."
                         call lun_main(".........","upset","suspicious","sad","R",tears="soft")
                         m "That's it [luna_name], just enjoy yourself..."
@@ -961,25 +961,25 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("..........................","normal","wide","sad","R")
                         ">You start stroking the insides of her thighs, moving closer towards her sex each time."
                         call lun_main("!!!!","clench","wide","mad","mid")
-                        if luna_sub <= 4:
-                            $ luna_sub += 1
+                        if lun_sub <= 4:
+                            $ lun_sub += 1
                         call lun_main("Professor...","upset","wide","mad","mid",tears="soft")
                         call lun_main("please...","normal","mad","mad","R",tears="soft")
                         m "just a bit longer [luna_name]..."
                         ">You start grinding your hard cock between her ample cheeks."
                         call lun_main("...","upset","wide","sad","down",tears="soft")
-                        call lun_main("[l_genie_name]...","upset","mad","angry","R",tears="soft")
+                        call lun_main("[lun_genie_name]...","upset","mad","angry","R",tears="soft")
                         ">You start lightly running your the tips of your fingers up and down her thighs..."
                         call lun_main("ah{image=textheart}...","upset","angry","sad","down",tears="soft")
-                        call lun_main("[l_genie_name]... this isn't right...","upset","angry","sad","R",tears="crying")
+                        call lun_main("[lun_genie_name]... this isn't right...","upset","angry","sad","R",tears="crying")
                         m "you don't seem to mind..."
                         call lun_main("(I'll let him keep going for a little bit more...)","normal","seductive","sad","down",tears="crying")
                         call lun_main("(Then I'll make him stop).......ah...{image=textheart}","soft","seductive","sad","down",tears="crying")
-                        call lun_main("[l_genie_name], how much longer do you need?...","upset","angry","sad","R",tears="crying")
+                        call lun_main("[lun_genie_name], how much longer do you need?...","upset","angry","sad","R",tears="crying")
                         m "Just a bit longer..."
                         ">Luna keeps rubbing her ass against your sensitive cock."
                         m "ugh, that's it [luna_name]."
-                        call lun_main("p-please hurry, [l_genie_name]...","upset","suspicious","sad","R",tears="crying")
+                        call lun_main("p-please hurry, [lun_genie_name]...","upset","suspicious","sad","R",tears="crying")
                         m "Well I think I might know a way to speed this up."
                         call lun_main("really?","base","mad","sad","R",tears="crying")
                         call lun_main("what are-","soft","seductive","sad","R",tears="crying")
@@ -1019,11 +1019,11 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
 
                         call lun_main("*hmph*","base","suspicious","angry","mid",tears="crying",xpos="base",ypos="base")
                         m "ah... gods that was good"
-                        call lun_main("I think I'd like to leave now [l_genie_name]...","base","seductive","base","R",tears="soft")
+                        call lun_main("I think I'd like to leave now [lun_genie_name]...","base","seductive","base","R",tears="soft")
 
-            "-Ask Nicely-" if luna_dom >= luna_sub:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Ask Nicely-" if lun_dom >= lun_sub:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 m "can you please sit on my lap [luna_name]?"
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -1035,8 +1035,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("You're pathetic...","base","seductive","angry","R")
                 call lun_main("THe worlds greatest wizard...","base","seductive","base","R")
                 call lun_main("More like the worlds greatest pervert.","base","suspicious","angry","down")
-                if l_genie_name == "Old man":
-                    $ l_genie_name = "Pervert"
+                if lun_genie_name == "Old man":
+                    $ lun_genie_name = "Pervert"
                 ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
                 m "yes... that's it."
                 call lun_main("*hmph* You're not even ashamed are you?","soft","seductive","angry","down")
@@ -1067,7 +1067,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "of course [luna_name]..."
                 call lun_main("Good. just enjoy yourself then...","base","happyCl","angry","R")
                 m "mmm, just a little more..."
-                call lun_main("...[l_genie_name]","base","seductive","base","R")
+                call lun_main("...[lun_genie_name]","base","seductive","base","R")
                 ">Luna starts rubbing hard against your lap."
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("come on...","base","suspicious","angry","mid")
@@ -1094,12 +1094,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("Surely you don't want it to end already?","base","seductive","angry","R")
                 ">she pushes hard against your cock."
                 g11 "ah..."
-                call lun_main("That's it [l_genie_name], just keep enjoying yourself.","base","mad","angry","down")
+                call lun_main("That's it [lun_genie_name], just keep enjoying yourself.","base","mad","angry","down")
                 g11 "I can't, it's too sensitive..."
                 call lun_main("I don't see how that's my problem.","base","mad","sad","R")
                 ">She starts moving as fast as she can."
                 g11 "{size=-2}ahhh...{/size}"
-                call lun_main("come on [l_genie_name]...","base","suspicious","angry","R")
+                call lun_main("come on [lun_genie_name]...","base","suspicious","angry","R")
                 g11 "{size=+4}aghhh!{/size}"
                 call lun_main("shoot another filthy load...","base","suspicious","mad","R")
                 g4 "{size=+4}*Argh!* It's too much!{/size}"
@@ -1124,7 +1124,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_chibi("stand","desk","base")
                 hide screen blkfade
 
-                call lun_main("*hmph* You nasty old [l_genie_name]!","base","suspicious","angry","mid",xpos="base",ypos="base")
+                call lun_main("*hmph* You nasty old [lun_genie_name]!","base","suspicious","angry","mid",xpos="base",ypos="base")
                 m "ah..."
                 call lun_main("Enjoy yourself a little too much did we?","base","angry","mad","R")
                 m "That was too much [luna_name]..."
@@ -1133,9 +1133,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ current_payout = 250
 
 
-            "-Beg-" if luna_dom >= 3:
-                if luna_dom <= 3:
-                    $ luna_dom += 1
+            "-Beg-" if lun_dom >= 3:
+                if lun_dom <= 3:
+                    $ lun_dom += 1
                 m "can you please sit on my lap [luna_name]?"
                 call lun_main("...","base","seductive","base","R")
                 call lun_main("......","base","mad","angry","R")
@@ -1146,7 +1146,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "mmmm"
                 ">You start to feel yourself get hard against her ass"
                 call lun_main("...","base","seductive","angry","down")
-                call lun_main("that's it [l_genie_name]...","base","seductive","base","R")
+                call lun_main("that's it [lun_genie_name]...","base","seductive","base","R")
                 call lun_main("just sit back and enjoy yourself...","base","seductive","base","R")
                 call lun_main("enjoy the feeling of your disgusting old cock rub against me...","base","suspicious","angry","down")
                 ">Luna stands moving her hips backward and forwards..."
@@ -1173,7 +1173,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 call lun_main("well...","base","mad","angry","R")
                 ">luna starts rocking her hips forward and backwards, your cock pressed between her cheeks."
                 m "ah... 18?"
-                call lun_main("{size=-5}18?{/size} you don't sound so sure about that [l_genie_name]...","base","seductive","mad","down")
+                call lun_main("{size=-5}18?{/size} you don't sound so sure about that [lun_genie_name]...","base","seductive","mad","down")
                 m "..."
                 call lun_main("what if I'm 17?","base","suspicious","sad","R")
                 m "mmm..."
@@ -1203,13 +1203,13 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 $ luna_chibi_xpos = 500
                 hide screen blkfade
                 with d3
-                call lun_main("*hmph* You're such nasty old [l_genie_name]!","base","suspicious","angry","mid")
+                call lun_main("*hmph* You're such nasty old [lun_genie_name]!","base","suspicious","angry","mid")
                 call lun_main("But I suppose I don't mind, as long as I get my reward.","base","mad","angry","mid")
                 call lun_main("Speaking of which...","base","seductive","base","R")
                 $ current_payout = 250
 
 
-        if luna_dom >= luna_sub:
+        if lun_dom >= lun_sub:
             m "Alright, alright. Here's your gold."
         else:
             m "Here's your payment [luna_name]."
@@ -1218,9 +1218,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">You hand Luna [current_payout] gold."
         if current_payout <= 50:
             call lun_main("(only [current_payout]?) *hmph*","upset","mad","angry","R")
-            call lun_main("Thank you, [l_genie_name].","normal","suspicious","angry","R")
+            call lun_main("Thank you, [lun_genie_name].","normal","suspicious","angry","R")
         else:
-            call lun_main("Thank you, [l_genie_name].","base","seductive","base","R")
+            call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
     else: #Hermione involved
@@ -1288,35 +1288,35 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call lun_main("no...","base","seductive","sad","base", cheeks="blush")
         ">Luna slows down, but starts grinding her mound hard against your cock."
         call her_main("now why don't you too perverts just sit back and relax...","base","down")
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
         call her_main("while I give you something fun to look at ok?","grin","baseL")
         call lun_main("yes hermione...","base","base","sad","base", cheeks="blush")
         m "Yes..."
         call lun_main("mmmmm, he's so hard...","base","seductive","sad","down", cheeks="blush")
-        call h_action("pinch")
+        call set_her_action("pinch")
         call her_main("I can imagine","grin","dead")
         m "ugh..."
         call lun_main("he's probably going to cum soon...","base","mad","sad","R", cheeks="blush")
         m "probably..."
         call her_main("and what about you?","base","glance")
-        call h_action("covering")
+        call set_her_action("covering")
         call her_main("how do you feel?","base","down")
         call lun_main("so good...","base","seductive","sad","down", cheeks="blush")
         call lun_main("...","base","mad","sad","up", cheeks="blush")
         ">luna tilts her hips back, grinding as much of her sex against you as possible..."
         ">you swear you can feel her wetness seeping through your robe."
         m "ah..."
-        call h_action("pinch")
+        call set_her_action("pinch")
         call her_main("good...","open","baseL")
         call lun_main("ah...","base","angry","sad","up", cheeks="blush")
         ">Luna starts rubbing hard against your lap."
         m "{size=-2}(mmmm...){/size}"
         call lun_main("yes...","base","seductive","sad","up", cheeks="blush")
-        call h_action("lift_breasts")
+        call set_her_action("lift_breasts")
         call her_main("why don't you two see if you can cum together?","base","glance")
         g4 "{size=+4}agh... almost there...{/size}"
         call lun_main("m-me too...","base","seductive","sad","up", cheeks="blush")
-        call h_action("pinch")
+        call set_her_action("pinch")
         call her_main("cum for me you nasty perverts!","base","suspicious")
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
         call lun_main("ah...{image=textheart}{image=textheart}{image=textheart}","open","angry","sad","up", cheeks="blush")
@@ -1327,7 +1327,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
 
         g4 "Argh! YES!"
         call lun_main("ugh... amazing...","base","seductive","sad","up", cheeks="blush")
-        call h_action("covering")
+        call set_her_action("covering")
         call her_main("mmmm...","base","glance", cheeks="blush")
         call lun_main("...","base","seductive","sad","up", cheeks="blush")
         call lun_main("......","base","angry","sad","down", cheeks="blush")
@@ -1345,7 +1345,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         $ hermione_wear_top = True
         $ hermione_wear_bra = True
         call update_her_uniform
-        call h_action("none","update")
+        call set_her_action("none","update")
         call her_main("feel better you two?","base","glance")
         call lun_main("yes...","base","mad","sad","up", cheeks="blush")
         m "ah... you sluts..."

@@ -20,6 +20,7 @@ $ save_name = temp_name
 call room(hide_screens=True)
 
 call reset_day_flags
+call reset_day_and_night_flags
 
 $ chitchated_with_her = False
 $ chitchated_with_astoria = False
@@ -154,22 +155,22 @@ $ day +=1
 
 ### MOOD ###
 if game_difficulty <= 1:   # Easy difficulty
-    if mad >= 1:
-        $ mad -= 3
-    if cho_mad >= 1:
-        $ cho_mad -= 3
+    if her_mood >= 1:
+        $ her_mood -= 3
+    if cho_mood >= 1:
+        $ cho_mood -= 3
 elif game_difficulty == 2: # Normal difficulty
-    if mad >= 1:
-        $ mad -= 2
-    if cho_mad >= 1:
-        $ cho_mad -= 2
+    if her_mood >= 1:
+        $ her_mood -= 2
+    if cho_mood >= 1:
+        $ cho_mood -= 2
 else:                      # Hardcore # Gifting items is required!
     pass
 
-if mad < 0:
-    $ mad == 0
-if cho_mad < 0:
-    $ cho_mad == 0
+if her_mood < 0:
+    $ her_mood == 0
+if cho_mood < 0:
+    $ cho_mood == 0
 
 
 
@@ -194,9 +195,6 @@ if day >= 12 and not letter_paperwork_unlock_OBJ.read:
 
 if day >= 25 and her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
     $ letter_curse_complaint_OBJ.mailLetter()
-
-if outfit_order_placed and not outfit_ready:
-    call outfit_purchase_check
 
 if package_is_here or letter_queue_list != []:
     play sound "sounds/owl.mp3"
@@ -266,18 +264,18 @@ if her_whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_
 if her_whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
-if luna_reverted and luna_corruption == -2 and days_to_luna <= 0:
+if luna_reverted and lun_corruption == -2 and days_to_luna <= 0:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_1 #Sets luna_corruption to -1, returns next night.
+    jump luna_reverted_greeting_1 #Sets lun_corruption to -1, returns next night.
 
-if luna_reverted and luna_corruption >= 0 and days_to_luna <= 0:
-    if luna_reverted and luna_corruption == 0:
+if luna_reverted and lun_corruption >= 0 and days_to_luna <= 0:
+    if luna_reverted and lun_corruption == 0:
         $ days_without_an_event = 0
         jump luna_reverted_event_1
-    elif luna_reverted and luna_corruption == 1:
+    elif luna_reverted and lun_corruption == 1:
         $ days_without_an_event = 0
         jump luna_reverted_event_2
-    elif luna_reverted and luna_corruption == 2:
+    elif luna_reverted and lun_corruption == 2:
         $ days_without_an_event = 0
         jump luna_reverted_event_3
     else:

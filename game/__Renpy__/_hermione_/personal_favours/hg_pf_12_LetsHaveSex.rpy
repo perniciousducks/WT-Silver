@@ -13,7 +13,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
@@ -813,6 +813,7 @@ label end_hg_sex:
     hide screen hermione_main
     show screen blkfade
 
+    $ current_payout = 65
     $ face_on_cg = False
 
     hide screen ccg
@@ -828,22 +829,22 @@ label end_hg_sex:
 
     call bld
     stop music fadeout 4.0
-    if her_whoring < 24:
-        m "Yes, [hermione_name]. 65 points to the \"Gryffindor\" house."
-        $ gryffindor +=65
+    if her_whoring <= 24:
+        m "Yes, [hermione_name]. [current_payout] points to the \"Gryffindor\" house."
+        $ gryffindor += current_payout
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base",flip=False)
 
     if her_whoring < 21: #Adds points till 21.
         $ her_whoring +=1
 
     if hg_pf_LetsHaveSex_OBJ.points == 0:
-        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_LetsHaveSex_OBJ.level = 1 #Event hearts level (0-3)
 
     if hg_pf_LetsHaveSex_OBJ.points == 1:
-        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_LetsHaveSex_OBJ.level = 2 #Event hearts level (0-3)
 
     if hg_pf_LetsHaveSex_OBJ.points >= 2:
-        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_LetsHaveSex_OBJ.level = 3 #Event hearts level (0-3)
 
     $ hg_pf_LetsHaveSex_OBJ.points += 1
 

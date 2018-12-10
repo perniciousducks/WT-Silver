@@ -234,20 +234,35 @@ label __init_variables:
 
     return
 
+label potions_room:
+    show screen blkfade
+    with d3
 
+    call room("potions_room")
+    call gen_chibi("hide")
 
-label potion_menu:
+    if store_intro_done:
+        call gen_chibi("stand","left","base")
+        call hide_blkfade
+    else:
+        call gen_chibi("hide")
+        call hide_blkfade
+        call gen_walk("0","left",1.4)
+    pause.2
+    jump potions_menu
+
+label potions_menu:
     python:
-        potion_menu = []
+        items_menu = []
         for potion in potion_lib.getCraftable():
             if potion_inv.canCraft(potion):
-                potion_menu.append((potion.getCraftingMenu(),potion))
+                items_menu.append((potion.getCraftingMenu(),potion))
             else:
-                potion_menu.append((potion.getMissingIngMenu(),potion.ingredients))
-        potion_menu.append(("-Never mind-", "nvm"))
-        PotionOBJ = renpy.display_menu(potion_menu)
+                items_menu.append((potion.getMissingIngMenu(),potion.ingredients))
+        items_menu.append(("-Never mind-", "nvm"))
+        PotionOBJ = renpy.display_menu(items_menu)
     if PotionOBJ == "nvm":
-        jump cupboard
+        jump return_office
     elif isinstance(PotionOBJ, silver_potion):
         $ renpy.say( None, PotionOBJ.getMixingMsg() )
         if PotionOBJ.id == "p_cum_addiction":
@@ -281,7 +296,7 @@ label potion_menu:
         $ renpy.say(None, tmp_txt)
         #$ renpy.say(None,"You need {size=+5}{b}"+potion_lib.getName(PotionOBJ[0])+"{/b}{/size} and {size=+5}{b}"+potion_lib.getName(PotionOBJ[1])+"{/b}{/size} to craft this")
         hide screen blktone8
-    jump potion_menu
+    jump potions_menu
 
 
 init python:

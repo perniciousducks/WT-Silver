@@ -12,7 +12,7 @@ label summon_susan:
 
     call update_sus_uniform
 
-    call sus_walk("door","mid",2.5)
+    call sus_chibi("stand","mid","base")
 
     if one_of_ten < 4:
         if daytime:
@@ -40,7 +40,7 @@ label summon_susan:
             else:
                 jump susan_talk
 
-        "-Wardrobe-" if susan_wardrobe_unlocked and susan_imperio_influence:
+        "-Wardrobe-" if susan_wardrobe_unlocked:
             $ active_girl = "susan"
 
             call load_susan_clothing_saves
@@ -51,9 +51,9 @@ label summon_susan:
             $ hide_transitions = True
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
-        "{color=#858585}-Wardrobe-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
-            call nar(">Susan isn't willing to let you change her appearance!")
-            jump susan_requests
+        #"{color=#858585}-Wardrobe-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
+        #    call nar(">Susan isn't willing to let you change her appearance!")
+        #    jump susan_requests
         "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump susan_requests
@@ -65,8 +65,6 @@ label summon_susan:
                 call sus_main("Uhm... good night then, [sus_genie_name].","base","base","base","down")
 
             call play_sound("door")
-
-            call sus_walk("mid","leave",2.5)
 
             $ susan_busy = True
 

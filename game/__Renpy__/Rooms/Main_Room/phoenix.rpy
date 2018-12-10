@@ -6,7 +6,7 @@ label phoenix:
                 hide screen genie
                 #$ tt_xpos=270
                 #$ tt_ypos=90
-                #show screen genie_stands
+                #show screen genie_stand
                 call gen_chibi("stand","mid","base",flip=True)
                 show screen chair_left #Empty chair near the desk.
                 show screen desk
@@ -14,7 +14,7 @@ label phoenix:
                 m "Hm....."
                 m "Even this weird looking bird radiates magic..."
                 show screen genie
-                hide screen genie_stands
+                hide screen genie_stand
                 hide screen chair_left #Empty chair near the desk.
                 hide screen desk
                 with Dissolve(0.5)
@@ -64,6 +64,9 @@ label feeding:
             m "There you go..."
         else:
             pause .8
+
+        if phoenix_fed_counter == 3:
+            "Developer note:" ">Feeding the bird doesn't do anything in this version of the game (v1.34)."
 
     show screen genie
     hide screen feeding
@@ -270,10 +273,10 @@ label petting:
         #    hide screen genie
         #    show screen petting
         #    with d7
-        #    faw "You realize petting me wont make something happen every time don't you?"
+        #    faw "You realise petting me wont make something happen every time don't you?"
         #    m "..."
         #    m "How exactly are you talking to me right now?"
-        #    faw "Magic.  When are you going to learn to stop asking questions and realize the answer is always magic."
+        #    faw "Magic.  When are you going to learn to stop asking questions and realise the answer is always magic."
         #    m "I liked you a lot better when you were in that witch's body"
         #    hide screen petting
         #    hide screen blktone8

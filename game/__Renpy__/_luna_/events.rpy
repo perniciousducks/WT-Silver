@@ -3,13 +3,13 @@
 label luna_reversion_event: #DONE
 
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
-    if luna_corruption <= 10: #FIRST TIME
-        if luna_corruption <= 9:
-            $ luna_corruption += 1
+    if lun_corruption <= 10: #FIRST TIME
+        if lun_corruption <= 9:
+            $ lun_corruption += 1
         call play_music("chipper_doodle")
-        if luna_sub > luna_dom: #Sub intro
+        if lun_sub > lun_dom: #Sub intro
             m "[luna_name]..."
-            call lun_main("yes, [l_genie_name]...","normal","suspicious","sad","down")
+            call lun_main("yes, [lun_genie_name]...","normal","suspicious","sad","down")
             m "Do you know what a handjob is?"
             call lun_main("What?","upset","base","mad","mid")
             m "It's where you wrap your hand around-"
@@ -19,7 +19,7 @@ label luna_reversion_event: #DONE
 
         else: #Dom intro
             m "[luna_name]?"
-            call lun_main("yes, [l_genie_name]...","normal","base","angry","R")
+            call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
             m "Do you happen to know what a handjob is?"
             call lun_main("...","normal","angry","angry","mid")
             m "..."
@@ -28,20 +28,20 @@ label luna_reversion_event: #DONE
             call lun_main("Go on...","normal","angry","angry","R")
 
         menu:
-            "-Tell her to give you a handjob-" if luna_sub >= 7:
+            "-Tell her to give you a handjob-" if lun_sub >= 7:
                 $ current_payout = 80
-                if luna_sub <= 8:
-                    $ luna_sub += 1
+                if lun_sub <= 8:
+                    $ lun_sub += 1
                 $ luna_choice = 1
                 m "Well seeing as how you're familiar with the concept, how about a practical demonstration."
                 call lun_main("...","upset","suspicious","angry","R")
                 call lun_main("Really? You expect me to {size=+5}touch{/size} that filthy cock of yours?","upset","wide","raised","mid")
                 call lun_main("It's bad enough that I have to stand here while you touch yourself...","normal","mad","angry","mid")
-                call lun_main("But that's where I draw the line, [l_genie_name]!","upset","suspicious","mad","mid")
+                call lun_main("But that's where I draw the line, [lun_genie_name]!","upset","suspicious","mad","mid")
                 m "Hmmm...{p}, well alright then, I'm not going to force you into anything."
                 call lun_main("Thank you...","upset","suspicious","sad","R")
                 m "That will be all for today, [luna_name], you may leave now."
-                call lun_main("Alright, [l_genie_name]...","normal","suspicious","sad","mid")
+                call lun_main("Alright, [lun_genie_name]...","normal","suspicious","sad","mid")
                 call lun_main("(Good work finally standing up to him!)","base","happyCl","sad","R")
                 ">Luna turns around to leave your office."
                 m "Oh, one last thing..."
@@ -59,10 +59,10 @@ label luna_reversion_event: #DONE
                 m "Fantastic! Let me just stand up."
                 call lun_main("You're despicable...","upset","mad","angry","mid")
 
-            "-Ask for a handjob-" if luna_sub > luna_dom:
+            "-Ask for a handjob-" if lun_sub > lun_dom:
                 $ current_payout = 120
-                if luna_sub <= 8:
-                    $ luna_sub += 1
+                if lun_sub <= 8:
+                    $ lun_sub += 1
                 $ luna_choice = 2
                 m "Well seeing as how you're familiar with the concept..."
                 call lun_main("...","upset","angry","mad","mid")
@@ -77,10 +77,10 @@ label luna_reversion_event: #DONE
                 m "Fantastic! Let me just stand up."
                 call lun_main("*Hmmmph* Don't expect that you'll be cumming anywhere near me though!","upset","mad","mad","mid")
 
-            "-Ask for a handjob politely-" if luna_sub < luna_dom:
+            "-Ask for a handjob politely-" if lun_sub < lun_dom:
                 $ current_payout = 160
-                if luna_dom <= 8:
-                    $ luna_dom += 1
+                if lun_dom <= 8:
+                    $ lun_dom += 1
                 $ luna_choice = 3
                 m "Well seeing as how you're so skilled at everything you turn your hand towards..."
                 call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -98,10 +98,10 @@ label luna_reversion_event: #DONE
                 m "Fantastic! Let me just stand up."
                 call lun_main("(This couldn't get any easier)","base","mad","angry","R")
 
-            "-Beg for a handjob-" if luna_dom >= 7:
+            "-Beg for a handjob-" if lun_dom >= 7:
                 $ current_payout = 200
-                if luna_dom <= 8:
-                    $ luna_dom += 1
+                if lun_dom <= 8:
+                    $ lun_dom += 1
                 $ luna_choice = 4
                 m "Well if it's not too much trouble..."
                 call lun_main("Mhmmm...","upset","suspicious","angry","R")
@@ -172,7 +172,7 @@ label luna_revert_1: #Reversion event #DONE
     m "well, I expect you to start practicing from now on!"
     call lun_main("on what?","normal","angry","raised","mid")
     m "My cock, of course!"
-    call lun_main("[l_genie_name]!","clench","mad","angry","mid")
+    call lun_main("[lun_genie_name]!","clench","mad","angry","mid")
     m "I'm kidding, [luna_name]."
     call lun_main("oh...","soft","suspicious","sad","R")
     m "But I do expect you to improve..."
@@ -196,7 +196,7 @@ label luna_revert_1: #Reversion event #DONE
             $ luna_wear_top = False
 
             call lun_main("There...","normal","seductive","sad","mid")
-            call lun_main("Is that enough, [l_genie_name]?","upset","angry","angry","R")
+            call lun_main("Is that enough, [lun_genie_name]?","upset","angry","angry","R")
             m "Almost... hands back on the cock, [luna_name]..."
             call lun_main("...","base","seductive","sad","down")
             ">Luna slowly wraps her hands back around your cock and starts pumping."
@@ -206,7 +206,7 @@ label luna_revert_1: #Reversion event #DONE
             call lun_main("Like this?","base","angry","sad","stareL")
             ">Luna starts moving her hands up and down your cock a little faster."
             m "mmmm..."
-            call lun_main("Is this fast enough, [l_genie_name]?","base","seductive","sad","R")
+            call lun_main("Is this fast enough, [lun_genie_name]?","base","seductive","sad","R")
             m "Almost..."
             call lun_main("...","upset","suspicious","sad","down")
             ">She speeds up the pace."
@@ -229,7 +229,7 @@ label luna_revert_1: #Reversion event #DONE
     call lun_main("......","base","seductive","sad","R")
     if luna_choice == 1:
         g9 "Why don't you give those milky tits of yours a nice shake?"
-        call lun_main("[l_genie_name]...","base","seductive","base","R")
+        call lun_main("[lun_genie_name]...","base","seductive","base","R")
         call lun_main("(A little shake won't hurt...)","base","closed","base","down")
         ">Luna gently starts shaking her boobs as she jerks you off."
     else:
@@ -247,7 +247,7 @@ label luna_revert_1: #Reversion event #DONE
         "-On her face-":
             ">You place your hand on the top of Luna's head and slowly force it down to be level with your crouch."
             ">Her slender hands don't stop sliding up and down your length."
-            call lun_main("[l_genie_name]!!!","clench","wide","sad","mid")
+            call lun_main("[lun_genie_name]!!!","clench","wide","sad","mid")
             g9  "Shhh, [luna_name], I'm just giving you a closer look."
             call lun_main("...","normal","mad","sad","down")
             call lun_main("{size=-5}please sir...{/size}","upset","seductive","sad","R",tears="crying")
@@ -269,7 +269,7 @@ label luna_revert_1: #Reversion event #DONE
         "-On her shirt-":
             ">You place your hand on Luna's shoulder."
             ">Her slender hands don't stop sliding up and down your length."
-            call lun_main("[l_genie_name]...","clench","wide","sad","mid")
+            call lun_main("[lun_genie_name]...","clench","wide","sad","mid")
             g9  "Shhh [luna_name], just keep stroking."
             call lun_main("...","normal","mad","sad","down")
             call lun_main("{size=-5}please sir...{/size}","upset","seductive","sad","R",tears="crying")
@@ -290,11 +290,11 @@ label luna_revert_1: #Reversion event #DONE
 
     g9  "mmmm....."
     m "That hit the spot..."
-    call lun_main("[l_genie_name]!","disgust","mad","angry","mid")
+    call lun_main("[lun_genie_name]!","disgust","mad","angry","mid")
     call lun_main("How could you!","clench","angry","mad","mid")
     m "Ahh... that was fantastic, slut..."
     $ g_c_u_pic = "images/animation/06_groping_01.png"
-    call lun_main("[l_genie_name]!!!","open","angry","mad","mid")
+    call lun_main("[lun_genie_name]!!!","open","angry","mad","mid")
 
     #Hermione Enters.
     call play_sound("door") #Sound of a door opening.
@@ -469,7 +469,7 @@ label luna_revert_1: #Reversion event #DONE
 
     $ luna_reverted = True
     $ luna_wardrobe_unlocked = False
-    $ luna_corruption = -2 #Triggers new intro event.
+    $ lun_corruption = -2 #Triggers new intro event.
     $ days_to_luna = 3
 
     $ hermione_busy = True
@@ -519,7 +519,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     m "Yes, that's it..."
     call lun_main("(Men really are the worst)","upset","suspicious","mad","down")
     m "Mmmm, yes... just like that, [luna_name]..."
-    call lun_main("Is this good, [l_genie_name]?","soft","annoyed","sad","mid")
+    call lun_main("Is this good, [lun_genie_name]?","soft","annoyed","sad","mid")
     m "yes, yes, this is amazing..."
     call lun_main("good...","base","suspicious","sad","mid")
     call lun_main("but...","normal","suspicious","sad","R")
@@ -596,7 +596,7 @@ label luna_revert_2: #Non-Reversion event #DONE
         "-On her tits-":
             ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
 
-    call lun_main("[l_genie_name]!!!","clench","angry","mad","mid")
+    call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
     call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
     g9  "Ah, [luna_name], I'm almost there."
     call lun_main("Well...","upset","suspicious","mad","stareL")
@@ -627,11 +627,11 @@ label luna_revert_2: #Non-Reversion event #DONE
     $ g_c_u_pic = "images/animation/06_jerking_01.png"
     m "That hit the spot..."
     call lun_main("({image=textheart}{image=textheart}{image=textheart})","base","seductive","sad","stareL")
-    call lun_main("[l_genie_name]!","base","mad","mad","mid")
+    call lun_main("[lun_genie_name]!","base","mad","mad","mid")
     call lun_main("How could you! Cumming on your students {size=-10}pussy{/size}...","base","angry","angry","stareL")
     m "Ahh... that was fantastic slut..."
     $ g_c_u_pic = "images/animation/06_groping_01.png"
-    call lun_main("[l_genie_name]...","base","suspicious","angry","R")
+    call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
     #Hermione Enters.
     call play_sound("door") #Sound of a door opening.
@@ -673,7 +673,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     m "(It is?)"
     call lun_main("So she must have had a key...","pout","seductive","mad","down")
     m "..."
-    call lun_main("Why does she have a key, [l_genie_name]?","upset","suspicious","mad","mid")
+    call lun_main("Why does she have a key, [lun_genie_name]?","upset","suspicious","mad","mid")
     m "Ah... um..."
 
     menu:
@@ -764,7 +764,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     $ luna_flip = 1
     call lun_main("*Hmmmph*","upset","seductive","angry","R")
     ">Luna huffs, ignoring the question."
-    call lun_main("Honestly, [l_genie_name], I don't know what you see in her...","normal","angry","angry","mid")
+    call lun_main("Honestly, [lun_genie_name], I don't know what you see in her...","normal","angry","angry","mid")
     call ctc
 
     call lun_main("So, how should we punish her?","grin","seductive","base","R")
@@ -851,7 +851,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     hide screen hermione_kneel
     $ luna_l_arm = 3
     $ luna_xpos=635
-    $ hermione_head_ypos=390
+    $ hermione_ypos=390
     $ hermione_kneel_leg = True
     ">Luna thrusts her mound forward, grinding it under Hermione's nose and against her closed mouth."
     hide screen blkfade
@@ -925,7 +925,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             g9  "Gods yes!"
             call lun_main("mmmm {image=textheart}","base","seductive","base","down")
             ">You start fucking hermione in earnest."
-            call lun_main("so, [l_genie_name]...","base","seductive","base","down")
+            call lun_main("so, [lun_genie_name]...","base","seductive","base","down")
             call lun_main("How long has this been going on?","base","seductive","base","down")
             m "With miss granger? A while..."
             call lun_main("figures...","base","seductive","base","down")
@@ -1018,7 +1018,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             call her_kneel("...","open_wide_tongue","ahegao")
             call lun_main("She's much more tenable with her mouth full...","grin","mad","base","stareL")
             g9  "You're telling me!"
-            call lun_main("so how long has this been going on [l_genie_name]?","base","mad","angry","R")
+            call lun_main("so how long has this been going on [lun_genie_name]?","base","mad","angry","R")
             m "A while now..."
             call lun_main("That doesn't surprise me...","upset","seductive","base","stareL")
             call lun_main("I always figured Hermione was a repressed slut...","base","seductive","angry","stareL")
@@ -1031,7 +1031,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             call lun_main("desperate to sell her body...","grin","suspicious","angry","stareL")
             call lun_main("all for a few points...","base","seductive","base","stareL")
             m "Yes... keep going..."
-            call lun_main("Aww, Do you enjoy it when I degrade her, [l_genie_name]?","base","angry","sad","R")
+            call lun_main("Aww, Do you enjoy it when I degrade her, [lun_genie_name]?","base","angry","sad","R")
             g9  "Gods yes!"
             call lun_main("good...","base","seductive","angry","R")
             call lun_main("because I expect you to coat this slut in your \"enjoyment\"...","grin","angry","angry","stareL")
@@ -1048,7 +1048,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             call her_kneel("...","open_wide_tongue","ahegao")
             ">You start beating your meat with renewed determination!"
             call lun_main("you should be proud to take a thick load of cum from one of your teachers...","base","angry","sad","down")
-            call lun_main("speaking of which... are you ready [l_genie_name]?","base","seductive","angry","R")
+            call lun_main("speaking of which... are you ready [lun_genie_name]?","base","seductive","angry","R")
             g9  "Argh! by the nine gods yes!"
             call lun_main("then cum!","grin","suspicious","angry","R")
             hide screen luna_main
@@ -1117,7 +1117,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     with d3
     pause.5
 
-    call lun_main("I'm glad you enjoyed yourself, [l_genie_name]...","base","seductive","base","R",xpos="close",ypos="base")
+    call lun_main("I'm glad you enjoyed yourself, [lun_genie_name]...","base","seductive","base","R",xpos="close",ypos="base")
     call her_kneel("...","silly","dead")
     call lun_main("but How much would you say you enjoyed yourself?","base","angry","angry","mid")
     m "A lot..."
@@ -1128,7 +1128,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     m "Here's your payment, [luna_name]."
     $ gold -= 250
     $ luna_gold += 250
-    call lun_main("Thank you, [l_genie_name].","base","seductive","base","R")
+    call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
     call lun_main("Well, I best be off then. I'm late for class.","normal","seductive","angry","R")
     m "Aren't you going to fix up Hermione first?"
     call her_kneel("...","silly","ahegao")
@@ -1189,7 +1189,7 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     $ luna_flip = 1
     call lun_main("There...","normal","angry","angry","R")
-    call lun_main("Will that be all [l_genie_name]?","base","suspicious","angry","mid")
+    call lun_main("Will that be all [lun_genie_name]?","base","suspicious","angry","mid")
     m "That will do for now, [luna_name]."
     ">Luna turns to leave your office with Hermione still in a heap on the floor."
     call lun_main("See you next time...","base","suspicious","mad","mid")
@@ -1206,7 +1206,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("ugh...","disgust","down_raised")
     call her_main("(I could have sworn Luna was here...)","annoyed","worriedL")
     call her_main("(Wait, what was I doing here...)","annoyed","suspicious")
-    call luna_reset
+    call reset_luna
 
     $ luna_busy = True
     $ hermione_busy = True

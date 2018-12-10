@@ -290,7 +290,7 @@ label potion_scene_1_2: #Luna potion
         m "No, I'm serious. You should really see the look on your face."
 
     else:
-        call her_main("Not really. I realize there are other things I can excel in.","base","base")
+        call her_main("Not really. I realise there are other things I can excel in.","base","base")
         m "Like sucking cocks for house-points"
         call her_main("Professor!","scream","angryCl")
         m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."

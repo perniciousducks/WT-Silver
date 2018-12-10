@@ -16,7 +16,7 @@ label hg_pf_NicePanties:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ menu_x = 0.2 #Menu is moved to the left side.
 
@@ -52,15 +52,15 @@ label hg_pf_NicePanties:
     #First and Second Event
     if her_whoring < 9:
         $ hermione_wear_panties = True
-        call h_action("lift_skirt")
+        call set_her_action("lift_skirt")
 
     #Third Event
     else:
-        if hg_pf_NicePanties_OBJ.hearts_level == 2: #Before third event happens.
+        if hg_pf_NicePanties_OBJ.level == 2: #Before third event happens.
             $ h_request_wear_panties = False
             $ hermione_wear_panties = False
 
-        elif hg_pf_NicePanties_OBJ.hearts_level == 3: #Third event.
+        elif hg_pf_NicePanties_OBJ.level == 3: #Third event.
             if h_request_wear_panties:
                 $ hermione_wear_panties = True
             else:
@@ -87,7 +87,7 @@ label hg_pf_NicePanties:
 
 label hg_show_panties_1:
 
-    $ hg_pf_NicePanties_OBJ.hearts_level = 1 #Event hearts level (0-3)
+    $ hg_pf_NicePanties_OBJ.level = 1 #Event hearts level (0-3)
 
     pause.8
 
@@ -118,7 +118,7 @@ label hg_show_panties_1:
 
 label hg_show_panties_2:
 
-    $ hg_pf_NicePanties_OBJ.hearts_level = 2 #Event hearts level (0-3)
+    $ hg_pf_NicePanties_OBJ.level = 2 #Event hearts level (0-3)
 
     pause.8
 
@@ -156,7 +156,7 @@ label hg_show_panties_2:
 
 label hg_show_panties_3:
 
-    $ hg_pf_NicePanties_OBJ.hearts_level = 3 #Event hearts level (0-3)
+    $ hg_pf_NicePanties_OBJ.level = 3 #Event hearts level (0-3)
 
     call ctc
 
@@ -165,7 +165,7 @@ label hg_show_panties_3:
     if not hermione_wear_panties:
         g4 "!!?"
 
-    call h_action("lift_skirt")
+    call set_her_action("lift_skirt")
 
     show screen blktone
     call her_main("","base","glance",trans="fade",xpos="mid",ypos="base")
@@ -190,7 +190,7 @@ label hg_show_panties_3:
                         call her_main("Thank you, [genie_name]!","base","worriedCl")
                         call ctc
                     "\"Absolutely not!\"":
-                        $ mad +=5
+                        $ her_mood +=5
                         call her_main("Why not!?","scream","angryCl")
                         m "Sluts aren't paid"
                         m "That's what makes them sluts"
@@ -228,7 +228,7 @@ label hg_show_panties_3:
                 call update_her_uniform
                 call update_chibi_uniform
                 call her_chibi("lift_skirt")
-                call set_hermione_action("lift_skirt")
+                call set_her_action("lift_skirt")
 
                 call her_main("","base","glance")
                 call ctc
@@ -265,7 +265,7 @@ label hg_show_panties_3:
                 call update_chibi_uniform
 
                 call her_chibi("lift_skirt")
-                call set_hermione_action("lift_skirt")
+                call set_her_action("lift_skirt")
 
                 call her_main("","base","glance")
                 call ctc

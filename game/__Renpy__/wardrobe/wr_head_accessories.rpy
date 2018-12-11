@@ -34,15 +34,14 @@ label equip_her_makeup:
     if her_mood >= 1:
         jump equipping_failed
 
-    if makeup_choice in ["lipstick_red","lipstick_pink","turquoise_lipstick"]:
+    if makeup_choice in ["lipstick_red","lipstick_pink","lipstick_turquoise"]:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
 
         if makeup_choice != h_lipstick:
             $ hide_transitions = False #activates dissolve in her_main
 
-            call her_main("You want me to put on lipstick?","normal","worriedCl")
-            call her_main("Really, [genie_name]!","scream","angryCl")
+            call her_main("You want me to put on lipstick?","soft","base")
             m "Just a little bit."
 
             call her_main("Alright then...","base","glance")
@@ -51,8 +50,6 @@ label equip_her_makeup:
 
             $ h_lipstick = makeup_choice
 
-            call update_her_uniform #Updates clothing and body.
-
         else: #Nude
             call her_main("You want me to take the lipstick off?","annoyed","ahegao")
             call her_main("Alright then...","annoyed","down")
@@ -60,8 +57,6 @@ label equip_her_makeup:
             with d5
 
             $ h_lipstick = "nude"
-
-            call update_her_uniform #Updates clothing and body.
 
         jump return_to_wardrobe
 

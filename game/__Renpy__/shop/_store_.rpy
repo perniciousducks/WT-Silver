@@ -65,6 +65,7 @@ label store_chit_chat:
 
 label close_weasley_store:
     hide screen weasley_store_menu
+
     show screen blkfade
     with d5
 

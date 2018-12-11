@@ -617,6 +617,7 @@ label imperio_spell_3:
 
     hide screen astoria_main
     hide screen susan_main
+    call sus_chibi("hide")
     hide screen blktone
     call blkfade
 
@@ -766,6 +767,7 @@ label imperio_spell_3:
 
     call nar(">Susan slowly crawls out from under your desk...")
 
+    call sus_chibi("stand","desk","base")
     $ susan_face_covered = True
     hide screen blkfade
     call sus_main("","upset","narrow","worried","L",xpos="mid",ypos="base",trans="fade")
@@ -786,7 +788,7 @@ label imperio_spell_3:
     $ susan_face_covered = False
     call sus_main("I hope you two are happy...","upset","narrow","base","down")
 
-    call sus_walk("mid","leave",2)
+    call sus_walk("desk","leave",2)
 
     call nar(">She turns and runs out the door, tears streaming down her face.")
     call ast_main("ahahahahaha, that was incredible, dumby!","happy","wide","wide","mid")

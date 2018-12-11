@@ -698,7 +698,6 @@ label update_wr_underwear_list:
                 $ wr_onepieces.append("swimsuit_sport_4")
         $ wr_onepieces.append("swimsuit_halterless")
         $ wr_onepieces.append("swimsuit_neckband")
-
         $ wr_onepieces.append("onepiece_bunny")
         $ wr_onepieces.append("onepiece_microdress")
 

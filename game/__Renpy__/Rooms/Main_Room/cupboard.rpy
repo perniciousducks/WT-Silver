@@ -98,6 +98,17 @@ label options_menu:
 
         "-Bugfix-":
             menu:
+                "-Reset Everyone's Appearance-":
+                    call reset_hermione_base
+                    call reset_hermione_clothing
+                    call reset_luna_base
+                    call reset_luna_clothing
+                    call reset_astoria_clothing
+                    call reset_susan_clothing
+                    call reset_cho_clothing
+                    call reset_tonks_clothing
+                    ">Appearance of each girl set back to default."
+                    jump options_menu
                 "-Reset ALL Luna content-" if hat_known:
                     $ reset_luna_content = True
                     call luna_init
@@ -113,8 +124,6 @@ label options_menu:
 
         "-Never mind-":
             jump day_main_menu
-
-
 
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")

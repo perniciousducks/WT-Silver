@@ -523,8 +523,8 @@ label potion_scene_3_3_1: #Hypno potion
 
     if hermione_wear_bottom:
         call her_main("It really suuuuucks that I have to wear anything at all in this boring nunnery...","annoyed","ahegao")
-        call her_main("(I can still wear something shorter. Like a skirt...)","")
-        call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})","grin","happyCl")
+        call her_main("(Why can't I wear something shorter. A skirt, but...)")
+        call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})",face="horny")
 
         call set_her_action("lift_bottom")
         pause.5

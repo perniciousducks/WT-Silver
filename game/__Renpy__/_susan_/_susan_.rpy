@@ -107,7 +107,6 @@ init python:
         ### GLOBAL VARIABLES ###
         global susan_mouth
         global susan_eye
-        global susan_eye_bg
         global susan_eyebrow
         global susan_pupil
         global susan_cheeks
@@ -120,7 +119,6 @@ init python:
             susan_mouth       = "characters/susan/face/mouth/"+mouth+".png"
         if eye is not None:
             susan_eye         = "characters/susan/face/eyes/"+eye+".png"
-            susan_eye_bg      = "characters/susan/face/eyes/"+eye+"_bg.png"
         if brows is not None:
             susan_eyebrow     = "characters/susan/face/brow/"+brows+".png"
         if pupils is not None:

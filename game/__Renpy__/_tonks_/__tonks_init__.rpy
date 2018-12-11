@@ -31,7 +31,7 @@ label tonks_init:
         $ tonks_extra               = "characters/tonks/face/extras/blank.png"
         $ tonks_emote               = "characters/emotes/blank.png"
 
-        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
+        $ changeTonks("base","base","base","mid","blank","blank","blank","blank")
 
         #Hair
         $ tonks_hair_shadow         = "characters/tonks/body/hair/_hair_shadow_.png"

@@ -66,17 +66,17 @@ label reset_wardrobe_vars:
 label return_to_wardrobe:
     if not hide_transitions:
         if active_girl == "hermione":
-            call her_main(xpos="wardrobe",ypos="base",trans="fade")
+            call her_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "luna":
-            call lun_main(xpos="wardrobe",ypos="base",trans="fade")
+            call lun_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "astoria":
-            call ast_main(xpos="wardrobe",ypos="base",trans="fade")
+            call ast_main(face="neutral",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
-            call sus_main(xpos="wardrobe",ypos="base",trans="fade")
+            call sus_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "cho":
-            call cho_main(xpos="wardrobe",ypos="base",trans="fade")
+            call cho_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "tonks":
-            call ton_main(xpos="wardrobe",ypos="base",trans="fade")
+            call ton_main(face="horny",xpos="wardrobe",ypos="base",trans="fade")
 
         $ hide_transitions = True
         call screen wardrobe
@@ -85,17 +85,17 @@ label return_to_wardrobe:
         $ hide_transitions = True
 
         if active_girl == "hermione":
-            call her_main(xpos="wardrobe",ypos="base")
+            call her_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "luna":
-            call lun_main(xpos="wardrobe",ypos="base")
+            call lun_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "astoria":
-            call ast_main(xpos="wardrobe",ypos="base")
+            call ast_main(face="neutral",xpos="wardrobe",ypos="base")
         if active_girl == "susan":
-            call sus_main(xpos="wardrobe",ypos="base")
+            call sus_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "cho":
-            call cho_main(xpos="wardrobe",ypos="base")
+            call cho_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "tonks":
-            call ton_main(xpos="wardrobe",ypos="base")
+            call ton_main(face="horny",xpos="wardrobe",ypos="base")
 
         call screen wardrobe
 

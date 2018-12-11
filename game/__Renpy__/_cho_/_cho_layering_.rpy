@@ -10,7 +10,7 @@ screen cho_chang:
     add cho_hair xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### FACE
-    add cho_eyewhite xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) #Add the eye white
+    add cho_eye_bg xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) #Add the eye white
     add cho_pupil xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) #Add the pupil
     add cho_eye xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) #Add the eye outline
 

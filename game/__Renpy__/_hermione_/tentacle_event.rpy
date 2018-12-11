@@ -1,5 +1,4 @@
 
-
 label tentacle_scene_intro: #Public tentacle scene
     show screen blkfade
     spo "Today class, I have been requested by the Headmaster to teach you about a plant called Devil's Snare."

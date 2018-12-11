@@ -2,7 +2,6 @@
 
 label luna_init:
 
-    #Update 1.34
     if not hasattr(renpy.store,'luna_base') or reset_persistants or reset_luna_content:
         label reset_luna_base:
 

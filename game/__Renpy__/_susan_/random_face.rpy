@@ -60,7 +60,7 @@ label set_sus_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         if pupils in ["neutral"]:
             $ temp_pupils   = renpy.random.choice(["mid"])
         elif pupils in ["happy"]:
-            $ temp_pupils   = renpy.random.choice(["mid","down"])
+            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
         elif pupils in ["naughty","horny"]:
             $ temp_pupils   = renpy.random.choice(["L","R","down"])
         elif pupils in ["annoyed"]:

@@ -2,7 +2,7 @@
 
 label susan_init:
 
-    if not hasattr(renpy.store,'susan_wear_outfit') or reset_persistants:
+    if not hasattr(renpy.store,'susan_base') or reset_persistants:
         label reset_susan_clothing:
 
         #Body
@@ -22,7 +22,7 @@ label susan_init:
         $ sus_lipstick              = "nude"
 
         $ susan_eye                 = "characters/susan/face/eyes/base.png"
-        $ susan_eye_bg              = "characters/susan/face/eyes/base_bg.png"
+        $ susan_eye_bg            = "characters/susan/face/eyes/_white_.png"
         $ susan_pupil               = "characters/susan/face/pupil/mid.png"
         $ sus_eye_color             = "green"
 

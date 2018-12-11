@@ -368,9 +368,9 @@ screen tonks_stat_menu:
 
             vbox:
                 use stat_bar(int(69/6.9), "-Lust-", "", 69)
-                #use stat_bar(int(ton_support/1.5), "-Support-", "", ton_support) #Number of Tonks events.
-                #use stat_bar(int(ton_friendship/10), "-Friendship-", "", ton_friendship)   #max is 100.
-                #use stat_bar(int(0/10), "-Reputation-", "", ton_reputation)
+                #use stat_bar(int(sna_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
+                #use stat_bar(int(sna_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
+                #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
                 use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
                 use text_stat("Hung out with Astoria:")

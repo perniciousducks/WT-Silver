@@ -3453,12 +3453,37 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     if gave_miniskirt: #Turns True when Hermione has the miniskirt.
         $ persistent.haveskirt = True # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
 
-    #Gift Items
-    python:
-        for i in gift_list:
-            persistant.gift_list[i].number = persistant.gift_list[i].number + gift_list[i].number
+    #Persistant Items
+    #python:
+    #    for i in persistent.candy_gift_list:
+    #        persistent.candy_gift_list[i].number += candy_gift_list[i].number
+    #    for i in persistent.drink_gift_list:
+    #        persistent.drink_gift_list[i].number += drink_gift_list[i].number
+    #    for i in persistent.mag_gift_list:
+    #        persistent.mag_gift_list[i].number += mag_gift_list[i].number
+    #    for i in persistent.toy_gift_list:
+    #        persistent.toy_gift_list[i].number += toy_gift_list[i].number
 
-    ### SACRED SCROLLS ###
+    #    for i in accs_list:
+    #        if i.unlocked:
+    #            persistent.accs_list[i].unlocked = True
+    #    for i in misc_list:
+    #        if i.unlocked:
+    #            persistent.misc_list[i].unlocked = True
+    #    for i in dye_list:
+    #        if i.unlocked:
+    #            persistent.dye_list[i].unlocked = True
+
+    #    for i in scroll_list_A:
+    #        if i.unlocked:
+    #            persistent.scroll_list_A[i].unlocked = True
+    #    for i in scroll_list_B:
+    #        if i.unlocked:
+    #            persistent.scroll_list_B[i].unlocked = True
+    #    for i in scroll_list_C:
+    #        if i.unlocked:
+    #            persistent.scroll_list_C[i].unlocked = True
+
 
 
     $ renpy.full_restart()

@@ -2,7 +2,7 @@
 
 label store_items_init:
 
-    if not hasattr(renpy.store,'lollipop_ITEM'): #important!
+    if not hasattr(renpy.store,'lollipop_ITEM'):
         $ lollipop_ITEM          = item_class(id="lollipop", name="Lollipop Candy",              cost=20, type="candy", image="item_lollipop", description="A lollipop candy. An adult candy for kids or kids candy for adults?")
         $ chocolate_ITEM         = item_class(id="chocolate", name="Chocolate",                  cost=40, type="candy", image="item_chocolate", description="The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
         $ plush_owl_ITEM         = item_class(id="plush_owl", name="Plush owl",                  cost=35, type="toy", image="item_plush_owl", description="A Toy owl stuffed with feathers of an actual owl. It's so cuddly!")
@@ -43,10 +43,6 @@ label store_items_init:
     ]
 
     #sexy_lingerie_ITEM #sexy_stockings_ITEM
-
-    $ gift_list = [
-        candy_gift_list, drink_gift_list, mag_gift_list, toy_gift_list
-    ]
 
 
     ### Scroll Items ###
@@ -144,7 +140,7 @@ label store_items_init:
         ]
 
     # Dyes
-    if not hasattr(renpy.store,'brown_dye_ITEM'): # Brown
+    if not hasattr(renpy.store,'brown_dye_ITEM'):
         $ brown_dye_ITEM      = item_class(id="brown_dye", name="Mud-Blood Brown",    type="dye", items=["clothing dye","hair dye"], image="dye_brown",      cost=20,  description=">Basic shade of brown. Simple yet elegant!")
         $ yellow_dye_ITEM     = item_class(id="yellow_dye", name="Niffler's Gold",    type="dye", items=["clothing dye","hair dye"], image="dye_yellow",     cost=40,  description=">A very nice shade of yellow.")
         $ orange_dye_ITEM     = item_class(id="orange_dye", name="Butter Beer",       type="dye", items=["clothing dye"],            image="dye_orange",     cost=60,  description=">A very nice shade of orange.")
@@ -358,8 +354,6 @@ label store_items_init:
     #Those layers update on every game start.
 
     call update_outfit_layers
-
-
 
     return
 

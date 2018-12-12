@@ -110,13 +110,11 @@ label start_ht:
 
     label choose_your_difficulty:
     menu:
-        "Choose a difficutly."
         "-Play with easy difficulty-":
-            ">Increased gold and Slythering-points gain.\n>You will always find items or gold in your cupboard."
-            ">Hermione's bad-mood will decrease faster.\n>Books can be read in one go."
+            ">Increased gold and Slythering-points gain. You will also always find items or gold in your cupboard."
+            ">Hermione's bad-mood will decrease faster, and books can be read in one go."
             menu:
-                ">Easy difficulty."
-                "-Choose this difficulty-":
+                "-Confirm-":
                     ">Game set to easy!"
                     $ game_difficulty = 1
                     $ cheat_reading = True
@@ -124,19 +122,17 @@ label start_ht:
                     jump choose_your_difficulty
         "-Play with normal difficulty-":
             menu:
-                ">Normal difficulty."
-                "-Choose this difficulty-":
+                "-Confirm-":
                     ">Game set to normal!"
                     $ game_difficulty = 2
                     $ cheat_reading = False
                 "-Choose something else-":
                     jump choose_your_difficulty
-        "-Play with hardcore difficulty-": #Not implemented yet.
+        "-Play with hardcore difficulty-" if persistent.game_complete:
             ">Hardcore difficulty. Your gold and Slythering-points gain has been lowered.\n>All hints and guides have been disabled."
             ">Additional rewards and dialogue choices have been added."
             menu:
-                ">Hardcore difficulty."
-                "-Choose this difficulty-":
+                "-Confirm-":
                     ">Game set to hardcore!"
                     $ game_difficulty = 3
                     $ cheat_reading = False
@@ -146,38 +142,39 @@ label start_ht:
     if persistent.game_complete and game_difficulty <= 2: # Offer for game+
         menu:
             "NEW GAME +" ">Would you like to carry over your gold and possessions from your previous playthrough?"
-            "\"Yes, please.\"":
+            "-Yes please-":
                 # Code needed here for adding persistant items across games
                 $ gold = gold + persistent.gold
                 ">[persistent.gold] gold has been added to your founds."
 
-                #python:
-                #    for i in persistant.gift_list:
-                #        gift_list[i].number = gift_list[i].number + persistant.gift_list[i].number
-                #        ">[persistant.gift_list[i].number] [persistant.gift_list[i].name] have been added to your possessions."
+                #$ candy_gift_list = persistent.candy_gift_list
+                #$ drink_gift_list = persistent.drink_gift_list
+                #$ mag_gift_list   = persistent.mag_gift_list
+                #$ toy_gift_list   = persistent.toy_gift_list
+                #">All previously bought gift items have been added to your possessions."
 
                 if persistent.wine >= 1:
                     $ wine = wine + persistent.wine # WINE.
                     ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
 
-                #python:
-                #    for i.unlocked in persistant.scroll_list:
-                #        scroll_list[i].unlocked = True
-                #        ">Your unlocked scrolls have been added to your possessions."
+                #$ scroll_list_A = persistent.scroll_list_A
+                #$ scroll_list_B = persistent.scroll_list_B
+                #$ scroll_list_C = persistent.scroll_list_C
+                #">Your unlocked scrolls have been added to your possessions."
 
-            "\"No need.\"":
+            "-No need-":
                 pass
 
     if game_difficulty <= 2:
         menu:
-            "ACTIVATE CHEATS" ">Cheats can be found in the cupboard menu."
+            "ACTIVATE CHEATS" ">Cheats can be found by clicking on the hat above the cupboard."
             "-Activate Cheats-":
                 $ cheats_active = True
             "-Disable Cheats-":
                 $ cheats_active = False
 
     menu:
-        "Use chibi animations or image sprites." ">This will only affect a couple of scenes.\n>This can be changed in the cupboard menu."
+        "Use chibi animations or image sprites." ">This can be changed in the options menu. Click on the hat above the cupboard to open it."
         "-Use chibis-":
             $ use_cgs = False
         "-Use sprites-":
@@ -189,10 +186,10 @@ label start_ht:
             jump intro
         "-Skip the intro-":
             jump hp
-        "-Skip to after the duel-" if cheats_active:
+        "-Skip to after the duel-" if cheats_active or persistent.game_complete:
             $ skip_duel = True
             jump hp
-        "-Skip to Hermione-" if cheats_active:
+        "-Skip to Hermione-" if cheats_active or persistent.game_complete:
             $ skip_to_hermione = True
             jump hp
 
@@ -274,17 +271,13 @@ $ fire_in_fireplace = False #When True there is a fire going in the fireplace.
 $ fawkes_intro_done = False
 
 
-$ gifts12 = []
-
-
-
-
 #Event - Examine Room
 $ desk_examined = False #Turns True when you did examine you desk on day one.
 $ cupboard_examined = False
 $ bird_examined = False
 $ door_examined = False
 $ fireplace_examined = False
+
 
 #Map
 $ inn_intro = True

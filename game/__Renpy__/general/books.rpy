@@ -144,7 +144,8 @@ label read_book_menu:
     hide screen list_menu
 
     if isinstance(_return, item_class):
-        call handle_book_selection(_return)
+        $ book_choice = _return
+        jump handle_book_selection
 
     elif _return == "Close":
         $ current_page = 0
@@ -167,13 +168,13 @@ label read_book_menu:
     jump read_book_menu
 
 
-label handle_book_selection(BookOBJ):
-    $ the_gift = BookOBJ.get_image()
+label handle_book_selection:
+    $ the_gift = book_choice.get_image()
     show screen gift
     with d3
-    "[BookOBJ.description]"
-    if BookOBJ.done:
-        if BookOBJ.id == "Armchairs":
+    "[book_choice.description]"
+    if book_choice.done:
+        if book_choice.id == "Armchairs":
             m "Why would I want to do this to myself again?"
         else:
             ">You already finished this one."
@@ -185,18 +186,18 @@ label handle_book_selection(BookOBJ):
 
 
 label check_book_order:
-    if BookOBJ in book_list.read_books:
-        if (BookOBJ.id == "Speedreading_1") or (BookOBJ.id == "Speedreading_2" and book_list.isDone("Speedreading_1")) or (BookOBJ.id == "Speedreading_3" and book_list.isDone("Speedreading_2")) or (BookOBJ.id == "Speedreading_4" and book_list.isDone("Speedreading_3")):
+    if book_choice in book_list.read_books:
+        if (book_choice.id == "Speedreading_1") or (book_choice.id == "Speedreading_2" and book_list.isDone("Speedreading_1")) or (book_choice.id == "Speedreading_3" and book_list.isDone("Speedreading_2")) or (book_choice.id == "Speedreading_4" and book_list.isDone("Speedreading_3")):
             jump reading_book
 
-    if BookOBJ in book_list.write_books:
-       if (BookOBJ.id == "Speedwriting_1") or (BookOBJ.id == "Speedwriting_2" and book_list.isDone("Speedwriting_1")) or (BookOBJ.id == "Speedwriting_3" and book_list.isDone("Speedwriting_2")) or (BookOBJ.id == "Speedwriting_4" and book_list.isDone("Speedwriting_3")):
+    if book_choice in book_list.write_books:
+       if (book_choice.id == "Speedwriting_1") or (book_choice.id == "Speedwriting_2" and book_list.isDone("Speedwriting_1")) or (book_choice.id == "Speedwriting_3" and book_list.isDone("Speedwriting_2")) or (book_choice.id == "Speedwriting_4" and book_list.isDone("Speedwriting_3")):
             jump reading_book
 
-    if BookOBJ in book_list.fiction_books:
-        if (BookOBJ.id == "Galadriel_II" and book_list.isDone("Galadriel_I")):
+    if book_choice in book_list.fiction_books:
+        if (book_choice.id == "Galadriel_II" and book_list.isDone("Galadriel_I")):
             jump reading_book
-        elif BookOBJ.id != "Galadriel_II":
+        elif book_choice.id != "Galadriel_II":
             jump reading_book
 
     m "Reading books out of order won't do me any good."
@@ -227,17 +228,17 @@ label reading_book:
         with d3
 
     if raining:
-        ">You read a book called [BookOBJ.name], while listening to the sound of raindrops bombarding the roof of your tower."
+        ">You read a book called [book_choice.name], while listening to the sound of raindrops bombarding the roof of your tower."
     else:
-        ">You read a book called [BookOBJ.name]..."
+        ">You read a book called [book_choice.name]..."
 
     if cheat_reading:
-        if BookOBJ in book_list.get_edu():
-            $ BookOBJ.progress = BookOBJ.chapters
-        elif BookOBJ in book_list.get_fic():
+        if book_choice in book_list.get_edu():
+            $ book_choice.progress = book_choice.chapters
+        elif book_choice in book_list.get_fic():
             label cheat_reading_loop:
                 call read_chapter
-                if BookOBJ.progress < BookOBJ.chapters:
+                if book_choice.progress < book_choice.chapters:
                     jump cheat_reading_loop
         jump book_complete
     else:
@@ -310,32 +311,32 @@ label book_speed_check:
 
 
 label read_book:
-    if BookOBJ.progress >= BookOBJ.chapters:
+    if book_choice.progress >= book_choice.chapters:
         return "DONE" #prevents cases where book is done but read_book was called
     call read_chapter
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    if BookOBJ in book_list.get_edu():
-        $ renpy.say(None,">You've completed \"chapter [BookOBJ.progress]\" of the book.")
-    if BookOBJ in book_list.get_fic():
-        $ renpy.say(None,">You've completed \"chapter "+str(BookOBJ.progress/2)+"\" of the book.")
-    if BookOBJ.progress >= BookOBJ.chapters:
+    if book_choice in book_list.get_edu():
+        $ renpy.say(None,">You've completed \"chapter [book_choice.progress]\" of the book.")
+    if book_choice in book_list.get_fic():
+        $ renpy.say(None,">You've completed \"chapter "+str(book_choice.progress/2)+"\" of the book.")
+    if book_choice.progress >= book_choice.chapters:
         return "DONE" #this is here to indicate completeing a book without escapeing the call otherwise renpy would treat a jump or call as a recursive action
     return
 
 
 label read_chapter:
-    $ BookOBJ.progress += 1
-    if BookOBJ in book_list.get_fic():
-        if BookOBJ.id == "Dear_Wifu":
+    $ book_choice.progress += 1
+    if book_choice in book_list.get_fic():
+        if book_choice.id == "Dear_Wifu":
             call waifu
         else:
-            $tmp_desc = BookOBJ.getChapterDesc()
+            $tmp_desc = book_choice.getChapterDesc()
             "[tmp_desc]"
-            if BookOBJ.progress < BookOBJ.chapters:
-                $ BookOBJ.progress += 1
-                $tmp_desc = BookOBJ.getChapterDesc()
+            if book_choice.progress < book_choice.chapters:
+                $ book_choice.progress += 1
+                $tmp_desc = book_choice.getChapterDesc()
                 "[tmp_desc]"
     return
 
@@ -350,26 +351,26 @@ label book_complete:
     show screen notes
     ">That was the last chapter, You finished the entire book."
 
-    if BookOBJ.id == "Dear_Wifu":
+    if book_choice.id == "Dear_Wifu":
         jump waifu_completed
-    elif BookOBJ.id == "Armchairs":
+    elif book_choice.id == "Armchairs":
         g4 "What a pile of garbage! I hate the guy who wrote this crap!"
         m "Although all those rapes gave me a few ideas..."
         $ bdsm_imagination += 1
     else:
         $ imagination += 1
 
-    if BookOBJ in book_list.read_books:
+    if book_choice in book_list.read_books:
         $ speed_reading += 1
-    if BookOBJ in book_list.write_books:
+    if book_choice in book_list.write_books:
         $ speed_writing += 1
 
-    $ BookOBJ.done = True
+    $ book_choice.done = True
 
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    "[BookOBJ.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
+    "[book_choice.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
     hide screen notes
 
 

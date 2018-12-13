@@ -238,6 +238,8 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
             $ genie_chibi_xpos = 500
         elif xpos == "desk":
             $ genie_chibi_xpos = 420
+        elif xpos == "on_girl": #Girl has to stand at mid.
+            $ genie_chibi_xpos = 470
         elif xpos == "door":
             $ genie_chibi_xpos = 750
         elif xpos == "left":
@@ -250,6 +252,8 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
     if ypos != genie_chibi_ypos:
         if ypos == "base" or ypos == "default":
             $ genie_chibi_ypos = 190
+        elif ypos == "behind_desk":
+            $ genie_chibi_ypos = 200
         else:
             $ genie_chibi_ypos = int(ypos)
 
@@ -267,23 +271,13 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
         show screen g_c_u
 
     #Jerking off solo.
-    elif action == "jerking" or action == "jerking_off" or action == "cumming" or action == "hold_dick":
-
-        if xpos == "behind_desk":
-            $ genie_chibi_xpos = 230
-        if xpos == "on_girl":
-            $ genie_chibi_xpos = 470
-
-        if ypos == "behind_desk":
-            $ genie_chibi_ypos = +10
+    elif action in ["jerking","jerking_off","cumming","hold_dick"]:
 
         if action == "cumming":
             show screen genie_jerking_off_standing
             show screen genie_jerking_off_standing_cum
-
         elif action == "hold_dick":
             show screen genie_stands_holds_dick
-
         else:
             show screen genie_jerking_off_standing
 
@@ -309,7 +303,7 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
             show screen genie_jerking_off
 
     #Handjob with Hermione.
-    elif action == "handjob" or action == "handjob_pause" or action == "handjob_kiss" or action == "cumming_under_shirt" or action == "cumming_on_shirt" or action == "cumming_on_shirt_pause":
+    elif action in ["handjob","handjob_pause","handjob_kiss","cumming_under_shirt","cumming_on_shirt","cumming_on_shirt_pause"]:
 
         if action == "handjob":
             show screen genie_handjob
@@ -325,7 +319,7 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
             show screen genie_handjob_cum_under_shirt
 
     #Titjob
-    elif action == "titjob" or action == "titjob_pause" or action == "titjob_cum_in_mouth" or action == "titjob_cum_on_tits":
+    elif action in ["titjob","titjob_pause","titjob_cum_in_mouth","titjob_cum_on_tits"]:
 
         if action == "titjob":
             show screen genie_titjob

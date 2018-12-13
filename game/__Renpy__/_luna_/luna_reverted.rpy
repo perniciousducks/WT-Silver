@@ -1,27 +1,29 @@
 
 
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #DONE
+
     $ days_to_luna = 3
     $ lun_corruption = -1 #Triggers event during the evening.
 
+    #Reset Luna Model
+    call reset_luna_base
+    call reset_luna_clothing
+
+    $ lun_hair_style = "playful"
     $ luna_pupil_color = "blue"
     $ luna_l_arm = 1
     $ luna_r_arm = 2
 
-    $ lun_hair_style = "playful"
-
-    $ lun_request_wear_top = True
-    $ lun_request_wear_bottom = True
-    $ lun_request_wear_glasses = True
-    $ lun_request_wear_stockings = False
-    $ lun_top = "top_1_r"
-    $ lun_bottom = "skirt_1"
     $ lun_glasses = "spectrespecs"
 
     call reset_luna
 
     $ lun_genie_name = "Sir" #reset genie's name with Luna
     $ luna_name = "Miss Lovegood" #reset luna's name with genie
+
+
+
+    ### Start ###
 
     call play_sound("knocking")
     "*Knock* *Knock* *Knock*"

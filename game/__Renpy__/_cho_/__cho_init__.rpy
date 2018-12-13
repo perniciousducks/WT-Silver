@@ -18,7 +18,7 @@ label cho_init:
         #Face
         $ cho_mouth               = "characters/cho/face/mouth/base.png"
         $ cho_eye                 = "characters/cho/face/eyes/base.png"
-        $ cho_eye_bg            = "characters/cho/face/eyes/_white_.png"
+        $ cho_eye_bg              = "characters/cho/face/eyes/_white_.png"
         $ cho_eyebrow             = "characters/cho/face/brow/base.png"
         $ cho_pupil               = "characters/cho/face/pupil/mid.png"
 

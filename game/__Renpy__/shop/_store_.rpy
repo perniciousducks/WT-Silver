@@ -194,8 +194,10 @@ label object_gift_block(item):
         "-Buy 8 for ([cost4] galleons)-":
             call object_purchase_item(item, 8)
         "-Never mind-":
-            hide screen gift
             pass
+
+    hide screen gift
+    with d3
 
     return
 
@@ -217,11 +219,12 @@ label object_purchase_item(item, quantity):
             "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
         else:
             "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
-        hide screen gift
-        with d3
 
     else:
         m "I don't have enough gold."
+
+    hide screen gift
+    with d3
 
     return
 

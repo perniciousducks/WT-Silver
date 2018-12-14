@@ -25,7 +25,7 @@ label update_cho_uniform:
     $ cho_robe           = "characters/cho/clothes/robe/"+str(c_robe)+".png"
 
     #Accessories
-    $ cho_hat            = "characters/cho/accessories/hats/"+str(c_hat)+".png"
+    $ cho_hat            = "characters/cho/accessories/hats/hair_"+str(c_hair_style)+"/"+str(c_hat)+".png"
 
     return
 

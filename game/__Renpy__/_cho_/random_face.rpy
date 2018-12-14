@@ -62,7 +62,7 @@ label set_cho_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         elif pupils in ["happy"]:
             $ temp_pupils   = renpy.random.choice(["mid","L","R"])
         elif pupils in ["naughty","horny"]:
-            $ temp_pupils   = renpy.random.choice(["mid","L","R","down"])
+            $ temp_pupils   = renpy.random.choice(["mid","L","R","down","up"])
         elif pupils in ["annoyed"]:
             $ temp_pupils   = renpy.random.choice(["mid","L","R","down","downR"])
         elif pupils in ["disgusted"]:
@@ -125,7 +125,8 @@ label cho_face_layers:
     $ cho_pupil_layers  = ["down", "downR",
                            "L",
                            "mid",
-                           "R"
+                           "R",
+                           "up"
                            ]
 
     return

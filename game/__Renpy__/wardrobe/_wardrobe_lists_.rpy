@@ -184,6 +184,10 @@ label update_wr_head_list:
 
         $ wr_hair.append("ponytail")
 
+        $ wr_hats.append("hat_witch")
+        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
+            $ wr_hats.append("sailor_bow")
+
     if active_girl == "tonks":
 
         $ wr_hair.append("short")
@@ -320,6 +324,8 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("top_1")
         $ wr_tops_uniform.append("top_2")
         $ wr_tops_uniform.append("top_3")
+        $ wr_tops_uniform.append("top_4")
+        $ wr_tops_uniform.append("top_5")
 
         #Muggle
         $ wr_tops_normal.append("top_tanktop_1")
@@ -441,8 +447,15 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_1")
         $ wr_bottoms_uniform.append("skirt_2")
         $ wr_bottoms_uniform.append("skirt_3")
+        $ wr_bottoms_uniform.append("skirt_4")
+
+        $ wr_bottoms_uniform.append("skirt_1_low")
+        $ wr_bottoms_uniform.append("skirt_2_low")
+        $ wr_bottoms_uniform.append("skirt_3_low")
+        $ wr_bottoms_uniform.append("skirt_4_low")
 
         #Skirts
+        $ wr_bottoms_skirts.append("skirt_3_belted")
         if cc_party_slut_ITEM.unlocked:
             $ wr_bottoms_skirts.append("skirt_party")
 
@@ -619,6 +632,11 @@ label update_wr_other_clothings_list:
         $ wr_stockings.append("stockings_lace")
         $ wr_stockings.append("stockings_rose")
 
+    if active_girl == "cho":
+        $ wr_stockings.append("stockings")
+        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
+            $ wr_stockings.append("sailor_stockings_white")
+
     if active_girl == "tonks":
 
         #Neck
@@ -771,6 +789,8 @@ label update_wr_underwear_list:
 
         #Panties
         $ wr_panties.append("panties_sport")
+        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
+            $ wr_panties.append("panties_sailor")
 
     if active_girl == "tonks":
 

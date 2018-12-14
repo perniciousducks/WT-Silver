@@ -7,8 +7,13 @@ label cho_init:
 
         #Body
         $ cho_base                = "characters/cho/body/base/base_01.png"
-        $ cho_arms                = "characters/cho/body/arms/side_arms.png"
-        $ cho_l_hand              = "characters/cho/body/arms/left_hand.png"
+        $ cho_l_arm               = "characters/cho/body/arms/arm_down_l.png"
+        $ cho_r_arm               = "characters/cho/body/arms/arm_down_r.png"
+        $ cho_l_hand              = "characters/cho/body/arms/arm_down_l_overlay.png"
+        $ cho_breasts             = "characters/cho/body/breasts/breasts_bikini_tan.png"
+        $ cho_breasts_tan         = "characters/cho/body/breasts/breasts_sport_bra_tan.png"
+        $ cho_hips_tan            = "characters/cho/body/hips/hips_sport_bra_tan.png"
+
         $ cho_xpos                = 300
         $ cho_ypos                = 0
         $ cho_zorder              = 5

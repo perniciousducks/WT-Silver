@@ -317,17 +317,22 @@ label store_items_init:
 
 
     # Cho Outfits
-    if not hasattr(renpy.store,'cc_outfit_quidditch_ITEM'):
+    if not hasattr(renpy.store,'cc_sailor_blue_ITEM'):
         $ cc_outfit_quidditch_ITEM  = outfit_class(id="cc_outfit_quidditch", name="Quidditch Outfit",   type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True)
-        $ cc_dress_traditional_ITEM = outfit_class(id="cc_dress_traditional", name="Traditional Dress", type="outfit", items=["outfit"], cost=300, wait_time=4, image="outfits/cc_traditional_dress", description=">A traditional dress inspired by chinese culture.")
+        $ cc_dress_red_ITEM         = outfit_class(id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.")
+        $ cc_dress_silver_ITEM      = outfit_class(id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture.")
+        $ cc_dress_black_ITEM       = outfit_class(id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture.")
+
+        $ cc_sailor_blue_ITEM       = outfit_class(id="cc_sailor_blue", name="Blue Sailor Outfit", type="outfit", items=["outfit"], cost=100, wait_time=2, image="outfits/cc_sailor_blue", description=">Slutty sailor outfit. Blue variant")
+        $ cc_sailor_dark_blue_ITEM  = outfit_class(id="cc_sailor_dark_blue", name="Dark Blue Sailor Outfit", type="outfit", items=["outfit"], cost=100, wait_time=2, image="outfits/cc_sailor_dark_blue", description=">Slutty sailor outfit. Dark blue variant")
 
     $ cho_outfits_list=[
-        cc_outfit_quidditch_ITEM,
+        cc_outfit_quidditch_ITEM, cc_sailor_blue_ITEM, cc_sailor_dark_blue_ITEM
         ]
     $ cho_costumes_list=[
         ]
     $ cho_dresses_list=[
-        cc_dress_traditional_ITEM,
+        cc_dress_red_ITEM, cc_dress_silver_ITEM, cc_dress_black_ITEM
         ]
 
     # Cho Sets

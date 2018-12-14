@@ -633,7 +633,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/cat_ears.png" xpos -10+270 ypos 40 zoom 0.5
                 text "Ears" xpos 76+270 ypos 140+75 size 10
             #Hats
-            if active_girl in ["hermione","astoria","tonks"]:
+            if active_girl in ["hermione","astoria","cho","tonks"]:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_head_category",4),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/accessories/witch_hat.png" xpos -40+360 ypos 15 zoom 0.6/scaleratio
                 text "Hats" xpos 76+360 ypos 140+75 size 10

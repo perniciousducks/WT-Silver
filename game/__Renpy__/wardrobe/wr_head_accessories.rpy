@@ -461,7 +461,7 @@ label equip_cho_head_accessory:
         call set_cho_ears(head_accessory_choice)
     if head_accessory_choice in []:
         call set_cho_glasses(head_accessory_choice)
-    if head_accessory_choice in []:
+    if head_accessory_choice in ["hat_witch","sailor_bow"]:
         call set_cho_hat(head_accessory_choice)
 
     jump return_to_wardrobe

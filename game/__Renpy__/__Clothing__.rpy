@@ -92,9 +92,15 @@ label update_outfit_layers:
     $ cc_outfit_quidditch_ITEM.outfit_layers = []
     call update_cho_quidditch_outfit #Adds outfit layers.
 
-    $ cc_dress_traditional_ITEM.outfit_layers = ["traditional_dress.png"]
+    $ cc_dress_red_ITEM.outfit_layers = ["traditional_dress_red.png"]
+    $ cc_dress_silver_ITEM.outfit_layers = ["traditional_dress_silver.png"]
+    $ cc_dress_black_ITEM.outfit_layers = ["traditional_dress_black.png"]
 
+    $ cc_sailor_blue_ITEM.outfit_layers      = ["../underwear/yellow/panties_sailor.png","../stockings/sailor_stockings_white.png","../tops/blue/top_sailor.png","../bottoms/blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
+    $ cc_sailor_blue_ITEM.top_layers         = "sailor_bow"
 
+    $ cc_sailor_dark_blue_ITEM.outfit_layers = ["../underwear/blue/panties_sailor.png","../stockings/sailor_stockings_white.png","../tops/dark_blue/top_sailor.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
+    $ cc_sailor_dark_blue_ITEM.top_layers    = "sailor_bow"
 
     ### Event Outfits ###
 

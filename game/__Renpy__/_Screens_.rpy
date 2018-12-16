@@ -99,7 +99,7 @@ screen owl:
         add "images/rooms/main_room/owl_05.png" at Position(xpos=455, ypos=270, xanchor="center", yanchor="center")
 
 screen package:
-    add "images/rooms/main_room/owl_06.png" at Position(xpos=400, ypos=235, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/owl_06" +str(room_deco)+ ".png" at Position(xpos=400, ypos=235, xanchor="center", yanchor="center")
 
 
 

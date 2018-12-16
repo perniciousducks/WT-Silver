@@ -26,6 +26,15 @@ screen main_room:
 
     zorder 0
 
+screen main_room_deco:
+    if room_deco != "":
+        add "images/rooms/main_room/door" +str(room_deco)+ ".png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+        add "images/rooms/main_room/cupboard" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
+        add "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
+        add "images/rooms/main_room/fireplace" +str(room_deco)+ ".png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+    #The package & the cupboard pinup are added extra (imagebutton or on their own screen).
+
+    zorder 2
 
 ### Main Room Menu Screen ###
 screen main_room_menu:
@@ -39,27 +48,6 @@ screen main_room_menu:
         idle "images/rooms/main_room/door.png"
         hover "images/rooms/main_room/door_hover.png"
         action [Hide("main_room_menu"), Jump("door")]
-
-
-    if renpy.variant('android'):
-        imagemap:
-            xpos 260
-            ypos 280
-            xanchor "center"
-            yanchor "center"
-            ground "images/rooms/main_room/cupboard/idle_hat.png"
-            hover "images/rooms/main_room/cupboard/hover_hat.png"
-            hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
-    else:
-        imagebutton: # CUPBOARD HAT
-            xpos 260
-            ypos 280
-            focus_mask True
-            xanchor "center"
-            yanchor "center"
-            idle "images/rooms/main_room/cupboard/idle_hat.png"
-            hover "images/rooms/main_room/cupboard/hover_hat.png"
-            action [Hide("main_room_menu"), Jump("options_menu")]
 
     #Scrolls
     if renpy.variant('android'):
@@ -89,8 +77,8 @@ screen main_room_menu:
            ypos 280
            xanchor "center"
            yanchor "center"
-           ground "images/rooms/main_room/cupboard/idle_cabinet.png"
-           hover "images/rooms/main_room/cupboard/hover_cabinet.png"
+           ground "images/rooms/main_room/cupboard/cupboard_idle.png"
+           hover "images/rooms/main_room/cupboard/cupboard_hover.png"
            hotspot(73, 156, 72, 133) action [Hide("main_room_menu"), Jump("cupboard")]
     else:
         imagebutton:
@@ -99,10 +87,30 @@ screen main_room_menu:
             focus_mask True
             xanchor "center"
             yanchor "center"
-            idle "images/rooms/main_room/cupboard/idle_cabinet.png"
-            hover "images/rooms/main_room/cupboard/hover_cabinet.png"
+            idle "images/rooms/main_room/cupboard/cupboard_idle.png"
+            hover "images/rooms/main_room/cupboard/cupboard_hover.png"
             action [Hide("main_room_menu"), Jump("cupboard")]
 
+    #Hat
+    if renpy.variant('android'):
+        imagemap:
+            xpos 260
+            ypos 280
+            xanchor "center"
+            yanchor "center"
+            ground "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png"
+            hover "images/rooms/main_room/cupboard/hover_hat.png"
+            hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
+    else:
+        imagebutton:
+            xpos 260
+            ypos 280
+            focus_mask True
+            xanchor "center"
+            yanchor "center"
+            idle "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png"
+            hover "images/rooms/main_room/cupboard/hat_hover" +str(room_deco)+ ".png"
+            action [Hide("main_room_menu"), Jump("options_menu")]
 
 #    imagebutton: # CUPBOARD LEFT
 #        xpos 120+140
@@ -141,10 +149,8 @@ screen main_room_menu:
             ypos 235
             xanchor "center"
             yanchor "center"
-            idle "images/rooms/main_room/owl_06.png"
-            hover "images/rooms/main_room/owl_06_2.png"
-            #hovered [Show("gui_tooltip", my_picture="hoot", my_tt_xpos=250, my_tt_ypos=180) ]
-            #unhovered [Hide("gui_tooltip")]
+            idle "images/rooms/main_room/owl_06" +str(room_deco)+ ".png"
+            hover "images/rooms/main_room/owl_06_2" +str(room_deco)+ ".png"
             action [Hide("main_room_menu"), Hide("package"), Jump("get_package")]
 
     if letter_queue_list != []:
@@ -160,7 +166,7 @@ screen main_room_menu:
 
     #Genie
     if renpy.variant('android'):
-        imagemap: # GENIE
+        imagemap:
             xpos 370
             ypos 336
             xanchor "center"

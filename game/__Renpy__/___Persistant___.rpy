@@ -49,8 +49,10 @@ label __init_variables:
         $ phoenix_fed_counter = 0
         $ phoenix_petted_counter = 0
 
-
-
+    #Room Deco
+    if not hasattr(renpy.store,'room_deco'):
+        $ room_deco = ""
+        $ cupboard_deco = ""
 
     #HD RESCALE RATION
     if not hasattr(renpy.store,'genie_scaleratio'): #important!

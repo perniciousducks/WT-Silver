@@ -50,9 +50,10 @@ screen genie: #Sitting behind desk.
 screen rum_screen: #Rummaging through the cumpboard.
     tag genie_chibi
     add "images/rooms/main_room/cupboard_open.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center") #Pinup Girl
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=371, ypos=331, xanchor="center", yanchor="center")
-    add "rum" xpos 160 ypos 110
+    add "genie_rum_ani" xpos 160 ypos 110
     zorder 1
 
 screen feeding: #FEEDING THE PHOENIX.

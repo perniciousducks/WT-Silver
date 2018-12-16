@@ -46,8 +46,6 @@ label cupboard:
         "-Go to sleep-" if not daytime and day != 1:
             jump day_start
 
-        #"-Jerk 0ff on Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress: #True when Hermione has no panties on.
-        #    jump jerk_off
         "-Jerk Off-" if not day == 1:
             jump jerk_off
 
@@ -118,6 +116,34 @@ label options_menu:
                     jump options_menu
                 "-Never mind-":
                     jump options_menu
+
+        "-Decorate-" if day != 1:
+            label decorate_room_menu:
+            menu:
+                ">Decorate your place..."
+                "-Xmas decorations-":
+                    pause.5
+                    hide screen main_room_deco
+                    $ room_deco = "_deco_1"
+                    $ gen_outfit = "_santa"
+                    show screen main_room_deco
+                    with d9
+                    pause.5
+                "-Cupboard pinup girl-":
+                    $ cupboard_deco = "_deco_1"
+                    ">Pinup girl added! You'll see it when rummaging through the cupboard."
+                "-Remove deco-":
+                    pause.5
+                    hide screen main_room_deco
+                    $ room_deco = ""
+                    $ cupboard_deco = ""
+                    $ gen_outfit = ""
+                    show screen main_room_deco
+                    with d5
+                    pause.5
+                "-All done-":
+                    jump day_main_menu
+            jump decorate_room_menu
 
         "-Display Characters-" if day != 1:
             jump summon_characters

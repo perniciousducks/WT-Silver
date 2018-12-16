@@ -13,16 +13,16 @@ label start:
     $ init_variables()
     scene black
     jump select_start
- 
+
 label after_load:
     $ init_variables()
     return
- 
-    
+
+
 init:
-    
+
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF.
-    
+
     ### Disposable flags ###
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -35,18 +35,18 @@ init:
     $ d_flag_09 = False
 
     $ d_points = 0
-    
+
     ### MENU PLACEMENT ###
     $ menu_x = 0.5
     $ menu_y = 0.5
     $ who = Character('Female voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ whom = Character('Male voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ who2 = Character('???', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    
+
     $ aa = Character('AKABUR', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    
+
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
-    
+
     $ renpy.music.register_channel("bg_sounds", "sfx", True)
     $ renpy.music.register_channel("weather", "sfx", True)
 
@@ -82,7 +82,7 @@ init:
     $ black_magic = Fade(0.2, 0.0, 0.5, color='#7f3590')
     $ blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
-    
+
     # MUSIC / SOUNDS
     $ galm = "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3"
     $ JafarsHour = "music/JafarsHour.mp3"
@@ -98,8 +98,8 @@ init:
     $ title = "music/RollIntheLeaves.mp3"
     $ swat = "music/025SWAT.mp3"
     $ hemanmusic = "music/HeMan.mp3"
-    
-    
+
+
 ###TRANSITIONS###########
 define d1 = Dissolve(0.1)
 define d2 = Dissolve(0.2)
@@ -664,41 +664,6 @@ image sur:
     "characters/emotes/animated/sur6.png"
     pause.08
 
-
-#Genie
-image side mage = "characters/genie/mage.png"
-image side mage2 = "characters/genie/mage2.png"
-image side mage3 = "characters/genie/mage3.png"
-image side mage4 = "characters/genie/mage4.png"
-image side mage5 = "characters/genie/mage5.png"
-image side mage6 = "characters/genie/mage6.png"
-image side mage7 = "characters/genie/mage7.png"
-image side mage8 = "characters/genie/mage8.png"
-image side mage9 = "characters/genie/mage9.png"
-image side mage10 = "characters/genie/mage10.png"
-image side mage11 = "characters/genie/mage11.png"
-image side mage12 = "characters/genie/mage12.png"
-image side mage13 = "characters/genie/mage13.png"
-image side mage14 = "characters/genie/mage14.png"
-image side mage15 = "characters/genie/mage15.png"
-
-define s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
-define m = Character(None, window_left_padding=250, image="mage", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g = Character(None, window_left_padding=250, image="mage2", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g2 = Character(None, window_left_padding=250, image="mage3", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g4 = Character(None, window_left_padding=250, image="mage4", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g5 = Character(None, window_left_padding=250, image="mage5", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g6 = Character(None, window_left_padding=250, image="mage6", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g7 = Character(None, window_left_padding=250, image="mage7", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g8 = Character(None, window_left_padding=250, image="mage8", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g9 = Character(None, window_left_padding=250, image="mage9", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g10 = Character(None, window_left_padding=250, image="mage10", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g11 = Character(None, window_left_padding=250, image="mage11", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g12 = Character(None, window_left_padding=250, image="mage12", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g13 = Character(None, window_left_padding=250, image="mage13", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g14 = Character(None, window_left_padding=250, image="mage14", color="#402313", ctc="ctc3", ctc_position="fixed")
-define g15 = Character(None, window_left_padding=250, image="mage15", color="#402313", ctc="ctc3", ctc_position="fixed")
-
 #Akabur
 image side akaJew1 = "characters/misc/akabur/aka.png"
 image side akaJew2 = "characters/misc/akabur/aka2.png"
@@ -735,7 +700,7 @@ image whitefade = "interface/whitefade.png"
 image con1 = "interface/cont1.png"
 image blk50 = im.Alpha("interface/blackfade.png", 0.5)
 image blk50 = im.Alpha("interface/blackfade.png", 0.5)
-    
+
 image ctc3 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.995, ypos=0.995, xanchor=1.0, yanchor=1.0)
 image ctc4 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.99, ypos=0.995, xanchor=0.8, yanchor=1.0)
 image ctc7 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2)

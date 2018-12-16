@@ -71,7 +71,7 @@ label update_wr_color_list:
     #Cloth Color
     $ wr_clothcolor = []
 
-    if active_girl in ["hermione","luna","tonks"]:
+    if active_girl in ["hermione","luna","tonks","cho"]:
         if dark_blue_dye_ITEM.unlocked:
             $ wr_clothcolor.append("dark_blue")
         if dark_green_dye_ITEM.unlocked:
@@ -328,8 +328,8 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("top_5")
 
         #Muggle
-        $ wr_tops_normal.append("top_tanktop_1")
         if cc_muggle_hot_ITEM.unlocked:
+            $ wr_tops_normal.append("top_tanktop_1")
             $ wr_tops_normal.append("top_tanktop_2")
 
     if active_girl == "tonks":
@@ -444,20 +444,20 @@ label update_wr_bottoms_list:
     if active_girl == "cho":
 
         #Uniform
-        $ wr_bottoms_uniform.append("skirt_1")
         $ wr_bottoms_uniform.append("skirt_2")
         $ wr_bottoms_uniform.append("skirt_3")
         $ wr_bottoms_uniform.append("skirt_4")
 
-        $ wr_bottoms_uniform.append("skirt_1_low")
         $ wr_bottoms_uniform.append("skirt_2_low")
         $ wr_bottoms_uniform.append("skirt_3_low")
         $ wr_bottoms_uniform.append("skirt_4_low")
 
         #Skirts
-        $ wr_bottoms_skirts.append("skirt_3_belted")
-        if cc_party_slut_ITEM.unlocked:
-            $ wr_bottoms_skirts.append("skirt_party")
+        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
+            $ wr_bottoms_skirts.append("skirt_sailor")
+        #$ wr_bottoms_skirts.append("skirt_3_belted")
+        #if cc_party_slut_ITEM.unlocked:
+        #    $ wr_bottoms_skirts.append("skirt_party")
 
         #Pants
         $ wr_bottoms_pants.append("pants_sport_long")

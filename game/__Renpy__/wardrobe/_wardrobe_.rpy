@@ -750,7 +750,7 @@ screen wardrobe():
             #text "Misc." xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
-            if wardrobe_tops_category == 2 and active_girl in ["hermione"]: #Muggle clothing, all colors
+            if wardrobe_tops_category == 2 and active_girl in ["hermione","cho"]: #Muggle clothing, all colors
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_tops_color","base"), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 
@@ -852,7 +852,7 @@ screen wardrobe():
             #text "Misc." xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
-            if (wardrobe_bottoms_category in [0,2,3] and active_girl in ["hermione"]) or (wardrobe_bottoms_category in [0,2] and active_girl in ["luna","tonks"]): #Not available for cheerleader skirts!
+            if (wardrobe_bottoms_category in [0,2,3] and active_girl in ["hermione"]) or (wardrobe_bottoms_category in [0,2] and active_girl in ["luna","tonks","cho"]): #Not available for cheerleader skirts!
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_bottoms_color","base"), SetVariable("update_wr_colors",True), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 

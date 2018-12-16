@@ -884,7 +884,7 @@ label equip_sus_top:
 
 ### Equip Cho's Top ###
 label equip_cho_top:
-    call set_cho_top(top_choice)
+    call set_cho_top(top_choice, top_color_choice)
 
     jump return_to_wardrobe
 

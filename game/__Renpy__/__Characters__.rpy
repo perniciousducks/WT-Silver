@@ -159,5 +159,6 @@ init python:
     ann  = Character('The Announcer', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     cr1  = Character('Somebody from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     cr2  = Character('Another voice from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    qcr  = Character('Quidditch Crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
     l    = Character('Lola', color="#402313", window_right_padding=270, show_two_window=True, ctc="ctc3", ctc_position="fixed")

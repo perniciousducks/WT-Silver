@@ -795,7 +795,7 @@ label equip_sus_bottom:
 
 ### Equip Cho's Bottom ###
 label equip_cho_bottom:
-    call set_cho_bottom(skirt_choice)
+    call set_cho_bottom(skirt_choice, bottom_color_choice)
 
     jump return_to_wardrobe
 

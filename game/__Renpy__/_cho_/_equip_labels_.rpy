@@ -8,10 +8,10 @@ label update_cho_uniform:
     $ cho_hair_shadow  = "characters/cho/body/hair/"+str(c_hair_style)+"_"+str(c_hair_color)+"_top.png"
 
     #Top
-    $ cho_top            = "characters/cho/clothes/tops/base/"+str(c_top)+".png"
+    $ cho_top            = "characters/cho/clothes/tops/" +str(c_top_color)+ "/" +str(c_top)+ ".png"
 
     #Bottom
-    $ cho_bottom         = "characters/cho/clothes/bottoms/base/"+str(c_bottom)+".png"
+    $ cho_bottom         = "characters/cho/clothes/bottoms/" +str(c_bottom_color)+ "/"+str(c_bottom)+".png"
 
     #Underwear
     $ cho_bra            = "characters/cho/clothes/underwear/base/"+str(c_bra)+".png"
@@ -59,32 +59,34 @@ label set_cho_hat(hat=""):
     return
 
 #Top equip.
-label set_cho_top(top=""):
+label set_cho_top(top=", color="""):
     hide screen cho_chang
 
-    if cho_wear_top and c_top == top:
+    if cho_wear_top and c_top == top and c_top_color == color:
         $ cho_request_wear_top = False
         $ cho_wear_top = False
     else:
         $ cho_request_wear_top = True
         $ cho_wear_top = True
         $ c_top = top
+        $ c_top_color = color
 
     call update_cho_uniform
 
     return
 
 #Bottom equip.
-label set_cho_bottom(bottom=""):
+label set_cho_bottom(bottom="", color=""):
     hide screen cho_chang
 
-    if cho_wear_bottom and c_bottom == bottom:
+    if cho_wear_bottom and c_bottom == bottom and c_bottom_color == color:
         $ cho_request_wear_bottom = False
         $ cho_wear_bottom = False
     else:
         $ cho_request_wear_bottom = True
         $ cho_wear_bottom = True
         $ c_bottom = bottom
+        $ c_bottom_color = color
 
     call update_cho_uniform
 

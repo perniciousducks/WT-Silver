@@ -69,8 +69,8 @@ label update_outfit_layers:
 
 
     # Luna Outfits
-
-
+    $ ll_pyjama_ITEM.outfit_layers = ["pants_pyjama.png","top_pyjama.png"]
+    
     # Astoria Outfits
     $ ag_boss_uniform_ITEM.outfit_layers = ["uniform_pants.png","uniform_top.png"]
     $ ag_boss_uniform_ITEM.hair_layer = "pigtails"

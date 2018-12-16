@@ -97,7 +97,7 @@ label end_cho_event:
     hide screen cho_chang
     with d3
 
-    call cho_outfit(None)
+    call set_cho_outfit(None)
     call load_cho_clothing_saves #Resets Cho's clothing.
 
     #Add more cho screens to hide here.

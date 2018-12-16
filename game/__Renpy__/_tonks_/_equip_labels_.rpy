@@ -340,15 +340,6 @@ label set_ton_piercing(piercing="", color=""):
 ## Equip Outfit
 label set_ton_outfit(outfit):
     hide screen tonks_main
-    with d3
-    call ton_outfit(outfit)
-    pause .5
-    show screen tonks_main
-    with d5
-    return
-
-label ton_outfit(outfit):
-    hide screen tonks_main
 
     if outfit == None:
         $ ton_request_wear_outfit = False

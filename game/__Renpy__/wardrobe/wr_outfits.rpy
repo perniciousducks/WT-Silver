@@ -465,13 +465,13 @@ label equip_her_outfit:
 label equip_lun_outfit:
     if (outfit_choice != luna_outfit_GLBL) or (outfit_choice == luna_outfit_GLBL and not luna_wear_outfit):
 
-        call lun_outfit(outfit_choice)
+        call set_lun_outfit(outfit_choice)
 
         jump return_to_wardrobe
 
     else: # Unequip
 
-        call lun_outfit(None)
+        call set_lun_outfit(None)
 
         jump return_to_wardrobe
 
@@ -480,13 +480,13 @@ label equip_lun_outfit:
 label equip_ast_outfit:
     if (outfit_choice != astoria_outfit_GLBL) or (outfit_choice == astoria_outfit_GLBL and not astoria_wear_outfit):
 
-        call ast_outfit(outfit_choice)
+        call set_ast_outfit(outfit_choice)
 
         jump return_to_wardrobe
 
     else: # Unequip
 
-        call ast_outfit(None)
+        call set_ast_outfit(None)
 
         jump return_to_wardrobe
 
@@ -495,14 +495,14 @@ label equip_ast_outfit:
 label equip_sus_outfit:
     if (outfit_choice != susan_outfit_GLBL) or (outfit_choice == susan_outfit_GLBL and not susan_wear_outfit):
 
-        call sus_outfit(outfit_choice)
+        call set_sus_outfit(outfit_choice)
 
         hide screen wardrobe
         call screen wardrobe
 
     else: # Unequip
 
-        call sus_outfit(None)
+        call set_sus_outfit(None)
 
         jump return_to_wardrobe
 
@@ -511,14 +511,14 @@ label equip_sus_outfit:
 label equip_cho_outfit:
     if (outfit_choice != cho_outfit_GLBL) or (outfit_choice == cho_outfit_GLBL and not cho_wear_outfit):
 
-        call cho_outfit(outfit_choice)
+        call set_cho_outfit(outfit_choice)
 
         call cho_main(xpos="wardrobe")
         call screen wardrobe
 
     else: # Unequip
 
-        call cho_outfit(None)
+        call set_cho_outfit(None)
 
         jump return_to_wardrobe
 
@@ -527,14 +527,14 @@ label equip_cho_outfit:
 label equip_ton_outfit:
     if (outfit_choice != tonks_outfit_GLBL) or (outfit_choice == tonks_outfit_GLBL and not tonks_wear_outfit):
 
-        call ton_outfit(outfit_choice)
+        call set_ton_outfit(outfit_choice)
 
         call ton_main(xpos="wardrobe")
         call screen wardrobe
 
     else: # Unequip
 
-        call ton_outfit(None)
+        call set_ton_outfit(None)
 
         call ton_main(xpos="wardrobe")
         call screen wardrobe

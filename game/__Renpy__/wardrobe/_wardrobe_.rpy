@@ -735,7 +735,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_cheer.png" xpos 15+90 ypos 60+icon_ypos_offset zoom 0.35
                 text "Cheerleader" xpos 76+90 ypos 140+75 size 10
             #Muggle
-            if active_girl in ["hermione","luna","cho"]:
+            if active_girl in ["hermione","cho"]:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_tops_category",2),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_muggle.png" xpos 15+180 ypos 60 zoom 0.35
                 text "Muggle" xpos 76+180 ypos 140+75 size 10
@@ -842,7 +842,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms/bottoms_skirts.png" xpos 15+180 ypos 17 zoom 0.35
                 text "Skirts" xpos 76+180 ypos 140+75 size 10
             #Pants
-            if active_girl in ["hermione","luna","cho","tonks"]:
+            if active_girl in ["hermione","cho","tonks"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms/bottoms_pants.png" xpos 15+270 ypos 17 zoom 0.35
                 text "Pants" xpos 76+270 ypos 140+75 size 10

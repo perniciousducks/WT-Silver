@@ -208,15 +208,6 @@ label set_cho_robe(robe=""):
 ## Equip Outfit
 label set_cho_outfit(outfit):
     hide screen cho_chang
-    with d3
-    call cho_outfit(outfit)
-    pause .5
-    show screen cho_chang
-    with d5
-    return
-
-label cho_outfit(outfit):
-    hide screen cho_chang
 
     if outfit == None:
         $ cho_request_wear_outfit = False
@@ -240,21 +231,55 @@ label cho_outfit(outfit):
     return
 
 
+#Transparency
+label set_cho_transparency(top=None, bottom=None, bra=None, onepiece=None, panties=None, garterbelt=None, gloves=None, stockings=None, robe=None, outfit=None):
+    pause.5
+    hide screen cho_chang
+
+    if top != None:
+        $ cho_top_transp = top
+    if bottom != None:
+        $ cho_bottom_transp    = bottom
+
+    if bra != None:
+        $ cho_bra_transp       = bra
+    if onepiece != None:
+        $ cho_onepiece_transp  = onepiece
+    if panties != None:
+        $ cho_panties_transp   = panties
+    if garterbelt != None:
+        $ cho_garter_transp    = garterbelt
+
+    if gloves != None:
+        $ cho_gloves_transp    = gloves
+    if stockings != None:
+        $ cho_stockings_transp = stockings
+    if robe != None:
+        $ cho_robe_transp      = robe
+
+    if outfit != None:
+        $ cho_outfit_transp    = outfit
+
+    #call update_cho_body #Only need this when there is boobies clipping through!
+
+    return
+
+
 
 label update_cho_quidditch_outfit:
 
     $ cc_outfit_quidditch_ITEM.outfit_layers = []
 
     if cho_quidd_points == 0:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_pants_long.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/pants_yoga_long.png")
     elif cho_quidd_points == 1:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("skirt_1.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_2.png")
     elif cho_quidd_points == 2:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("skirt_2.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_3.png")
     else:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("skirt_3.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_4.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("left_hand.png") #Hand Overlay #Important
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../../body/arms/arm_down_l_overlay.png") #Hand Overlay #Important
 
     $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_sweater.png")
 

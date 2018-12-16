@@ -188,7 +188,7 @@ label luna_init:
 
     # Luna Lists
     $ luna_arms_up_list  = ["top_cheer_r",
-                            "top_pyjama"
+                            "ll_pyjama",
                             ]
 
     call luna_face_layers

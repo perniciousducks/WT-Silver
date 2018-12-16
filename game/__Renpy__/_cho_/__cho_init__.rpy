@@ -103,8 +103,8 @@ label cho_init:
         $ c_bra                   = "bra_sport"
         $ c_bra_color             = "base"
 
-        $ cho_bottom              = "characters/cho/clothes/bottoms/base/skirt_1.png"
-        $ c_bottom                = "skirt_1"
+        $ cho_bottom              = "characters/cho/clothes/bottoms/base/skirt_2.png"
+        $ c_bottom                = "skirt_2"
         $ c_bottom_color          = "base"
 
         $ cho_panties             = "characters/cho/clothes/underwear/base/panties_sport.png"
@@ -149,12 +149,31 @@ label cho_init:
 
         $ cho_accs                = "characters/cho/accessories/blank.png"
 
+        call reset_cho_transparency
+
         #Outfits
         $ cho_outfit_GLBL = None
         $ cho_temp_outfit = None
 
 
     call cho_face_layers
+
+    return
+
+label reset_cho_transparency:
+    $ cho_top_transp       = 1
+    $ cho_bottom_transp    = 1
+
+    $ cho_bra_transp       = 1
+    $ cho_onepiece_transp  = 1
+    $ cho_panties_transp   = 1
+    $ cho_garter_transp    = 1
+
+    $ cho_gloves_transp    = 1
+    $ cho_stockings_transp = 1
+    $ cho_robe_transp      = 1
+
+    $ cho_outfit_transp    = 1
 
     return
 

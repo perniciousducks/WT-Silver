@@ -3,8 +3,16 @@
 label use_potion:
     if active_girl == "hermione":
         jump use_hermione_potion
+    if active_girl == "luna":
+        jump use_luna_potion
+    if active_girl == "cho":
+        jump use_cho_potion
     if active_girl == "tonks":
         jump use_tonks_potion
+
+
+
+### Hermione ###
 
 label use_hermione_potion:
     hide screen wardrobe
@@ -109,7 +117,43 @@ label use_hermione_potion:
                 jump return_to_wardrobe
 
 
-#Tonks
+
+### Luna ###
+
+label use_luna_potion:
+    hide screen wardrobe
+    call lun_main(xpos="base",ypos="base",trans="fade")
+
+    if potion_choice == "clothes_potion":
+        menu:
+            "-Permanent Clothing Transparency-" if potion_inv.has("p_transparency"):
+                $ misc_item_choice = "transparency"
+                jump equip_misc_item
+
+            "-Never mind-":
+                jump return_to_wardrobe
+
+
+
+### Cho ###
+
+label use_cho_potion:
+    hide screen wardrobe
+    call cho_main(xpos="base",ypos="base",trans="fade")
+
+    if potion_choice == "clothes_potion":
+        menu:
+            "-Permanent Clothing Transparency-" if potion_inv.has("p_transparency"):
+                $ misc_item_choice = "transparency"
+                jump equip_misc_item
+
+            "-Never mind-":
+                jump return_to_wardrobe
+
+
+
+### Tonks ###
+
 label use_tonks_potion:
     hide screen wardrobe
     call ton_main(xpos="base",ypos="base",trans="fade")

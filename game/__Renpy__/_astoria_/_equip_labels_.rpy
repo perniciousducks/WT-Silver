@@ -204,15 +204,6 @@ label set_ast_robe(robe=""):
 ## Equip Outfit
 label set_ast_outfit(outfit):
     hide screen astoria_main
-    with d3
-    call ast_outfit(outfit)
-    pause .5
-    show screen astoria_main
-    with d5
-    return
-
-label ast_outfit(outfit):
-    hide screen astoria_main
 
     if outfit == None:
         $ ast_request_wear_outfit = False

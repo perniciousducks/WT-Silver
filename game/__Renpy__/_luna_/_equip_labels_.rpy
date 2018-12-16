@@ -250,15 +250,6 @@ label set_lun_ears(ears=""):
 ## Equip Outfit
 label set_lun_outfit(outfit):
     hide screen luna_main
-    with d3
-    call luna_outfit(outfit)
-    pause .5
-    show screen luna_main
-    with d5
-    return
-
-label luna_outfit(outfit):
-    hide screen luna_main
 
     if outfit == None:
         $ lun_request_wear_outfit = False
@@ -282,6 +273,39 @@ label luna_outfit(outfit):
 
     return
 
+
+#Transparency
+label set_lun_transparency(top=None, bottom=None, bra=None, onepiece=None, panties=None, garterbelt=None, gloves=None, stockings=None, robe=None, outfit=None):
+    pause.5
+    hide screen luna_main
+
+    if top != None:
+        $ lun_top_transp = top
+    if bottom != None:
+        $ lun_bottom_transp    = bottom
+
+    if bra != None:
+        $ lun_bra_transp       = bra
+    if onepiece != None:
+        $ lun_onepiece_transp  = onepiece
+    if panties != None:
+        $ lun_panties_transp   = panties
+    if garterbelt != None:
+        $ lun_garter_transp    = garterbelt
+
+    if gloves != None:
+        $ lun_gloves_transp    = gloves
+    if stockings != None:
+        $ lun_stockings_transp = stockings
+    if robe != None:
+        $ lun_robe_transp      = robe
+
+    if outfit != None:
+        $ lun_outfit_transp    = outfit
+
+    #call update_cho_body #Only need this when there is boobies clipping through!
+
+    return
 
 
 

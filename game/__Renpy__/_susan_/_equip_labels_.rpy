@@ -229,15 +229,6 @@ label set_sus_robe(robe=""):
 ## Equip Outfit
 label set_sus_outfit(outfit):
     hide screen susan_main
-    with d3
-    call sus_outfit(outfit)
-    pause .5
-    show screen susan_main
-    with d5
-    return
-
-label sus_outfit(outfit):
-    hide screen susan_main
 
     if outfit == None:
         $ sus_request_wear_outfit = False

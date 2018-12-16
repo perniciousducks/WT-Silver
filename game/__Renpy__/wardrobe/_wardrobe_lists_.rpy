@@ -298,8 +298,6 @@ label update_wr_tops_list:
             $ wr_tops_cheerleader.append("top_cheer_r")
 
         #Muggle
-        if ll_pyjama_ITEM.unlocked:
-            $ wr_tops_normal.append("top_pyjama")
 
     if active_girl == "astoria":
 
@@ -426,8 +424,6 @@ label update_wr_bottoms_list:
         $ wr_bottoms_skirts.append("skirt_3_low_belted")
 
         #Muggle
-        if ll_pyjama_ITEM.unlocked:
-            $ wr_bottoms_pants.append("pants_pyjama")
 
     if active_girl == "astoria":
 
@@ -988,9 +984,14 @@ label update_wr_miscellaneous_list:
             $ wr_tattoos_list.append("pubic/mudblood")
             $ wr_tattoos_list.append("pubic/punk_mudblood")
 
-    #if active_girl == "luna":
+    if active_girl == "luna":
+        if potion_inv.has("p_transparency"):
+            $ wr_potions_list.append("clothes_potion")
 
-    #if active_girl == "astoria":
+    if active_girl == "cho":
+        if potion_inv.has("p_transparency"):
+            $ wr_potions_list.append("clothes_potion")
+
     if active_girl == "tonks":
         $ wr_potions_list.append("hair_growth_potion")
         if potion_inv.has("p_transparency"):

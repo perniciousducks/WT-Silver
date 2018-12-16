@@ -59,7 +59,7 @@ label set_cho_hat(hat=""):
     return
 
 #Top equip.
-label set_cho_top(top=", color="""):
+label set_cho_top(top="", color=""):
     hide screen cho_chang
 
     if cho_wear_top and c_top == top and c_top_color == color:

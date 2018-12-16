@@ -336,7 +336,7 @@ label store_items_init:
         ]
 
     # Cho Sets
-    if not hasattr(renpy.store,'cc_muggle_party_OBJ'):
+    if not hasattr(renpy.store,'cc_muggle_hot_ITEM'):
         $ cc_muggle_hot_ITEM = item_class(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image="outfits/cc_muggle_hot", unlockable=True)
         $ cc_party_slut_ITEM = item_class(id="cc_party", name="Party Clothing",            type="set", items=["bra","skirt"],             image="outfits/cc_party", unlockable=True)
 

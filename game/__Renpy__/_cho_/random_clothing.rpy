@@ -26,7 +26,9 @@ label cho_random_clothing:
                 $ cho_wear_gloves      = False
                 $ cho_wear_stockings   = True
                 $ c_top = "top_tanktop_2"
+                $ c_top_color = "base"
                 $ c_bottom = "pants_jeans_short"
+                $ c_bottom_color = "base"
                 $ c_stockings = "stockings"
 
                 call update_cho_uniform

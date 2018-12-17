@@ -172,6 +172,23 @@ label set_cho_neckwear(neck=""):
 
     return
 
+
+#Gloves equip.
+label set_cho_gloves(gloves=""):
+    hide screen cho_chang
+
+    if cho_wear_gloves and c_gloves == gloves:
+        $ cho_request_wear_gloves = False
+        $ cho_wear_gloves = False
+    else:
+        $ cho_request_wear_gloves = True
+        $ cho_wear_gloves = True
+        $ c_gloves = gloves
+
+    call update_cho_uniform
+
+    return
+
 #Stockings equip.
 label set_cho_stockings(stockings=""):
     hide screen cho_chang

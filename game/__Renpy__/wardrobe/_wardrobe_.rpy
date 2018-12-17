@@ -934,7 +934,7 @@ screen wardrobe():
         if wardrobe_page == 4:
 
             #Neckwear
-            if active_girl in ["hermione","astoria","susan","tonks"]:
+            if active_girl in ["hermione","astoria","susan","cho","tonks"]:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",0),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/neckwear.png" xpos 15 ypos 60 zoom 0.35
                 text "Neckwear" xpos 76 ypos 140+75 size 10

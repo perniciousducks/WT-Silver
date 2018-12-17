@@ -642,9 +642,16 @@ label update_wr_other_clothings_list:
         $ wr_neckwears.append("goggles")
         $ wr_neckwears.append("choker_bow_tie")
 
+        if cho_quidd_points != 0:
+            $ wr_gloves.append("gloves_quidditch")
+
         $ wr_stockings.append("stockings")
         if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
             $ wr_stockings.append("sailor_stockings_white")
+
+        if cho_quidd_points != 0:
+            $ wr_robes.append("robe_quidditch_1")
+            $ wr_robes.append("robe_quidditch_2")
 
     if active_girl == "tonks":
 

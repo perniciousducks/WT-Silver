@@ -72,7 +72,9 @@ screen cho_uniform:
 
     if cho_wear_robe:
         add cho_robe xpos cho_xpos ypos cho_ypos alpha cho_robe_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
-    if cho_wear_gloves and c_gloves in ["quidditch"]: #On top of Quidditch robe.
+    if cho_wear_top and c_top in ["sweater_1"]:
+        add "characters/cho/clothes/tops/base/sweater_1_overlay.png" xpos cho_xpos ypos cho_ypos alpha cho_robe_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
+    if cho_wear_gloves and c_gloves in ["gloves_quidditch"]: #On top of Quidditch robe.
         add cho_gloves xpos cho_xpos ypos cho_ypos alpha cho_gloves_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### ZORDER

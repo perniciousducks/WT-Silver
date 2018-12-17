@@ -279,14 +279,14 @@ label update_cho_quidditch_outfit:
     else:
         $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_4.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../../body/arms/arm_down_l_overlay.png") #Hand Overlay #Important
-
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_sweater.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1.png")
 
     if cho_quidd_points in [0,1,2,3, 5,6]: #Not 4 #Wears robe!
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_robe.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../robe/robe_quidditch_1.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_gloves.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1_overlay.png") #Hand Overlay #Important
+
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../gloves/gloves_quidditch.png")
 
     return
 

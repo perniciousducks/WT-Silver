@@ -49,7 +49,8 @@ label equip_her_misc_item:
             menu:
                 "-Just a sip-":
                     $ transparency = 0.9
-                    call her_main("(at least This shouldn't be too noticable.)","normal","worriedCl")
+                    if wardrobe_chitchat_active:
+                        call her_main("(at least This shouldn't be too noticable.)","normal","worriedCl")
                 "-20 percent-" if her_whoring >= 15:
                     $ transparency = 0.8
                 "-30 percent-" if her_whoring >= 15:
@@ -60,24 +61,28 @@ label equip_her_misc_item:
                     $ transparency = 0.5
                 "-60 percent-" if her_whoring >= 21:
                     $ transparency = 0.4
-                    call her_main("(...)","base","down")
+                    if wardrobe_chitchat_active:
+                        call her_main("(...)","base","down")
                 "-70 percent-" if her_whoring >= 21:
                     $ transparency = 0.3
-                    call her_main("(...)","base","down")
+                    if wardrobe_chitchat_active:
+                        call her_main("(...)","base","down")
                 "-80 percent-" if her_whoring >= 21:
                     $ transparency = 0.2
                 "-All of it-" if her_whoring >= 24:
                     $ transparency = 0.1
-                    call her_main("(...)","grin","baseL")
+                    if wardrobe_chitchat_active:
+                        call her_main("(...)","grin","baseL")
                 "-remove it-":
                     $ transparency = 1
                 "-That's enough-":
                     jump return_to_wardrobe
 
-            if her_whoring < 18:
-                call her_main("What do you want to change?","disgust","down_raised")
-            else:
-                call her_main("What would you like to change?","base","down")
+            if wardrobe_chitchat_active:
+                if her_whoring < 18:
+                    call her_main("What do you want to change?","disgust","down_raised")
+                else:
+                    call her_main("What would you like to change?","base","down")
 
             menu:
                 ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
@@ -104,10 +109,13 @@ label equip_her_misc_item:
                 "-Never mind-":
                     jump return_to_wardrobe
 
-            call her_main()
-            pause.8
-            call her_main("All done!",face="happy")
-            call her_main("Would you like me to drink a bit more?","base","glance")
+            if wardrobe_chitchat_active:
+                call her_main()
+                pause.8
+                call her_main("All done!",face="happy")
+                call her_main("Would you like me to drink a bit more?","base","glance")
+            else:
+                call her_main(face="happy")
 
             jump make_item_transparent
 
@@ -219,7 +227,8 @@ label equip_lun_misc_item:
         menu:
             "-Just a sip-":
                 $ transparency = 0.9
-                call lun_main("Only so little?",mouth="annoyed",pupils="down",face="neutral")
+                if wardrobe_chitchat_active:
+                    call lun_main("Only so little?",mouth="upset",pupils="down",face="neutral")
             "-20 percent-":
                 $ transparency = 0.8
             "-30 percent-":
@@ -236,13 +245,15 @@ label equip_lun_misc_item:
                 $ transparency = 0.2
             "-All of it-":
                 $ transparency = 0.1
-                call lun_main("Sure, why not. This is fun!",mouth="grin",eye="closed",face="happy")
+                if wardrobe_chitchat_active:
+                    call lun_main("Sure, why not. This is fun!",mouth="grin",eye="closed",face="happy")
             "-remove it-":
                 $ transparency = 1
             "-That's enough-":
                 jump return_to_wardrobe
 
-        call lun_main("What would you like to change?",face="happy")
+        if wardrobe_chitchat_active:
+            call lun_main("What would you like to change?",face="happy")
 
         menu:
             ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
@@ -269,10 +280,13 @@ label equip_lun_misc_item:
             "-Never mind-":
                 jump return_to_wardrobe
 
-        call lun_main()
-        pause.8
-        call lun_main("All done!",mouth="grin",face="happy")
-        call lun_main("Would you like me to a bit drink more?",mouth="soft",face="neutral")
+        if wardrobe_chitchat_active:
+            call lun_main()
+            pause.8
+            call lun_main("All done!",mouth="grin",face="happy")
+            call lun_main("Would you like me to a bit drink more?",mouth="soft",face="neutral")
+        else:
+            call lun_main(face="neutral")
 
         jump make_lunas_item_transparent
 
@@ -379,7 +393,8 @@ label equip_ton_misc_item:
         menu:
             "-Just a sip-":
                 $ transparency = 0.9
-                call ton_main("Only so little?",mouth="open",face="neutral")
+                if wardrobe_chitchat_active:
+                    call ton_main("Only so little?",mouth="open",face="neutral")
             "-20 percent-":
                 $ transparency = 0.8
             "-30 percent-":
@@ -396,13 +411,15 @@ label equip_ton_misc_item:
                 $ transparency = 0.2
             "-All of it-":
                 $ transparency = 0.1
-                call ton_main("Of course.",face="horny")
+                if wardrobe_chitchat_active:
+                    call ton_main("Of course.",face="horny")
             "-remove it-":
                 $ transparency = 1
             "-That's enough-":
                 jump return_to_wardrobe
 
-        call ton_main("What would you like to change?",face="horny")
+        if wardrobe_chitchat_active:
+            call ton_main("What would you like to change?",face="horny")
 
         menu:
             ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
@@ -429,10 +446,13 @@ label equip_ton_misc_item:
             "-Never mind-":
                 jump return_to_wardrobe
 
-        call ton_main()
-        pause.8
-        call ton_main("All done!",face="happy")
-        call ton_main("Would you like me to drink a bit more?",face="horny")
+        if wardrobe_chitchat_active:
+            call ton_main()
+            pause.8
+            call ton_main("All done!",face="happy")
+            call ton_main("Would you like me to drink a bit more?",face="horny")
+        else:
+            call ton_main(face="happy")
 
         jump make_tonks_item_transparent
 

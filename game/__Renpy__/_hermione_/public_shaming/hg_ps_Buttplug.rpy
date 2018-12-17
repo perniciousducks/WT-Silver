@@ -17,7 +17,7 @@ label hg_ps_Buttplug:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
     else:
         m "{size=-4}(I feel like making her walk around with a buttplug again!){/size}"
 
@@ -324,15 +324,14 @@ label hg_ps_Buttplug:
             call her_main("Unless you have some sort of actual {i}lubricant{/i} in your possession, I don't think I'll be letting this thing anywhere near me...","open","angry")
 
             menu:
-                "-Use anal lube-" if gift_item_inv[12] >= 1:
-                    $ gift_item_inv[12] -= 1
+                "-Use anal lube-" if anal_lube_ITEM.number >= 1:
                     $ buttplug_3_worn = True
                     call play_music("playful_tension") # SEX THEME.
                     m "well it just so happens that I recently came across the solution to your problem."
                     call her_main("Which is?","disgust","wink")
                     m "Here."
 
-                    call give_reward(">You hand hermione the jar of anal lubricant.","images/store/gifts/13.png")
+                    call give_gift(">You hand hermione the jar of anal lubricant.",anal_lube_ITEM)
 
                     call her_main("!!!","clench","wide")
                     call her_main("I wasn't serious, [genie_name]!","scream","angry")
@@ -376,7 +375,7 @@ label hg_ps_Buttplug:
                     call her_main(".............","disgust","down",cheeks="blush")
                     call nar(">Hermione slowly leaves your office, barely able to walk in a straight line.")
 
-                "{color=#858585}-Use anal lube ?-{/color}" if gift_item_inv[12] <= 0:
+                "{color=#858585}-Use anal lube ?-{/color}" if anal_lube_ITEM.number <= 0:
                     call nar(">You do not have this item.")
                     m "afraid not..."
                     call her_main("well then i think I better be off to class then.","open","closed")

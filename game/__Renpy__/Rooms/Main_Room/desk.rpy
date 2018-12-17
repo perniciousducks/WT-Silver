@@ -11,13 +11,13 @@ label desk:
 
     #Updates
     $ summon_list = []
-    $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
     $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
+    $ summon_list.append(["luna", 0 if luna_busy else 1]) if luna_unlocked else 0
     $ summon_list.append(["astoria", 0 if astoria_busy else 1]) if astoria_unlocked else 0
-    $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
-    $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
-    $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
+    $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
+    $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
+    $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
 
     call update_character_map_locations
 
@@ -59,7 +59,7 @@ label desk:
             call nar(">Luna is already asleep.")
             jump night_main_menu
     elif luna_known and _return == "luna" and not luna_busy:
-        if not lun_reverted:
+        if not luna_reverted:
             call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
         else:
             call play_music("chipper_doodle") # LUNA'S THEME (placeholder probably)
@@ -101,7 +101,7 @@ label desk:
             jump night_main_menu
     elif _return == "cho" and not cho_busy:
         call play_music("chipper_doodle") # CHO'S THEME (placeholder probably)
-        jump cho_menu
+        jump summon_cho
 
 
     #Snape
@@ -169,10 +169,10 @@ screen desk_menu:
 label paperwork:
     if finished_report >= 6 and (letter_paperwork_report_OBJ not in letter_queue_list):
         m "I've completed six reports this week already."
-        jump desk_menu
+        jump desk
     elif letter_paperwork_report_OBJ in letter_queue_list:
         m "I need to get paid first."
-        jump desk_menu
+        jump desk
     else:
         pass
 
@@ -201,50 +201,25 @@ label paperwork:
 
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
 
-#   ### CONCENTRATION CHECK ###========================================================================
-#   if concentration == 1:
-#       $ concentraton_check = renpy.random.randint(1, 6) #Copper book.
-#       if concentraton_check == 1:
-#           call concentration_label
-#   if concentration == 2:
-#       $ concentraton_check = renpy.random.randint(1, 4) #Bronze book.
-#       if concentraton_check == 1:
-#           call concentration_label
-#   if concentration == 3:
-#       $ concentraton_check = renpy.random.randint(1, 2) #Silver book.
-#       if concentraton_check == 1:
-#           call concentration_label
-#   if concentration == 4:                                                               #Golden book.
-#       call concentration_label
-#    if concentration == 5:
-#        $ concentraton_check = renpy.random.randint(1, 2) #Platinum book.
-#        if concentraton_check == 1:
-#            call concentration_label
-#    if concentration == 6:
-#            call concentration_label
-    ###==============================================================================================
-
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
-
     ### SPEEDWRITING CHECK ###========================================================================
-    if speedwriting == 1:
+    if speed_writing == 1:
         $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for dummies.\"" # 1/10 chance
         if speedwriting_check == 1:
             call speedwriting_label
-    if speedwriting == 2:
+    if speed_writing == 2:
         $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for beginners.\"" # 1/8 chance of it to pop up.
         if speedwriting_check > 1:
             call speedwriting_label
-    if speedwriting == 3:
+    if speed_writing == 3:
             call speedwriting_label
-    if speedwriting >= 4:
+    if speed_writing >= 4:
             call speedwriting_label
             call concentration_label
-#    if speedwriting == 5:
+#    if speed_writing == 5:
 #        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for experts.\"" # 1/2 chance of it to pop up.
 #        if speedwriting_check == 1:
 #            call speedwriting_label
-#    if speedwriting == 6:
+#    if speed_writing == 6:
 #        call speedwriting_label #""\"Speedwriting for maniacs.\"" # 1 (sure) chance of it to pop up.
 
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
@@ -297,5 +272,5 @@ label speedwriting_label:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">You use your speedwriting skills.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+    ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
     return

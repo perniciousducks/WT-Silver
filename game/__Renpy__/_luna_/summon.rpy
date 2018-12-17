@@ -66,25 +66,25 @@ label luna_favour_menu:
     menu:
         "-Talk to me-" if not lun_reverted:
             jump luna_favour_1
-        "-Sit on my lap-" if lun_corruption >= 3 and not lun_reverted:
+        "-Sit on my lap-" if lun_corruption >= 3 and not luna_reverted:
             jump luna_favour_2
-        "-Strip for me-" if lun_corruption >= 5 and not lun_reverted:
+        "-Strip for me-" if lun_corruption >= 5 and not luna_reverted:
             jump luna_favour_3
-        "-Touch me-" if lun_corruption >= 9 and not lun_reverted:
+        "-Touch me-" if lun_corruption >= 9 and not luna_reverted:
             if lun_corruption == 9:
                 jump luna_reversion_event
             jump luna_favour_4
-        "-Touch me with Hermione-" if lun_corruption >= 11 and not lun_reverted:
+        "-Touch me with Hermione-" if lun_corruption >= 11 and not luna_reverted:
             jump luna_favour_5
-        "-Suck it-" if lun_corruption >= 14 and not lun_reverted:
+        "-Suck it-" if lun_corruption >= 14 and not luna_reverted:
             jump luna_favour_6
-        "-Sex-" if lun_corruption >= 17 and not lun_reverted:
+        "-Sex-" if lun_corruption >= 17 and not luna_reverted:
             jump luna_favour_7
 
         #Luna reverted.
         #"-Talk about Wrackspurts-": #Luna would describe the affects Wrackspurts (cum) had on her, their smell, taste,...
         #"-Wrackspurt infection-": #Luna will help you with your wrackspurts problem, by giving you a handjob.
-        "-Sucking out Wrackspurts-" if lun_corruption >= 3 and lun_reverted:
+        "-Sucking out Wrackspurts-" if lun_corruption >= 3 and luna_reverted:
             jump luna_blowjob_under_desk #Repeat of event.
 
         "-Never mind-":

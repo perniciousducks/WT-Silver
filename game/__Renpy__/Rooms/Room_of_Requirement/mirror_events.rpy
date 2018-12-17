@@ -2,7 +2,7 @@
 #Regex replace (call her_main\( "\1","base","base" \))
 
 label a_bad_time_to_disrobe:
-    call h_equip_temp_outfit(hg_standart_school_OBJ)
+    call h_equip_temp_outfit(hg_standart_school_ITEM)
     menu:
         "Part 1":
             jump a_bad_time_to_disrobe_part_1
@@ -10,23 +10,22 @@ label a_bad_time_to_disrobe:
             jump a_bad_time_to_disrobe_part_2
 
 label a_bad_time_to_disrobe_part_1:
-    call hide_room_req
-    show screen main_room
-    show screen genie
-    $ temp_time = daytime
-    $ daytime = True
+    call room("main_room")
     show screen blkfade
+    with d3
 
     nar "In this story the genie has found an invisibility cloak."
     nar "And with the cloak comes great opportunities"
     nar "Title: A bad time to disrobe."
 
+    call her_chibi("stand","desk")
+
     hide screen blkfade
     with d3
-    call her_chibi("stand","desk")
+
     m "Miss Granger. Have you ever been excited about the thought of being caught?"
 
-    call her_main( "Caught?","base","base" )
+    call her_main( "Caught?","base","base",xpos="right",ypos="base")
     call her_main( "In what way professor?","base","base" )
 
     m "Well, for today's favour I have a prop for you to use."
@@ -49,28 +48,25 @@ label a_bad_time_to_disrobe_part_1:
 
     m "25 points you said? sounds good to me."
 
-    call her_walk("desk","door", 2)
-    call her_main( "{size=7}You heard what I said...{/size}","annoyed","closed" )
+    call her_walk("desk","door", 2.5)
+    call her_main( "{size=7}You heard what I said...{/size}","annoyed","closed",ypos="head")
     call her_chibi("leave")
 
     g9 "\"Some of that bartering skill put to good use...\""
 
-
     show screen day_to_night
     with d3
-    hide screen main_room
-    hide screen genie
-    show screen candlefire
+
     nar "Later that evening. Hermione returns."
     $ daytime = False
-    show screen main_room
-    show screen genie
+    call her_chibi("stand","desk","base")
+
     hide screen day_to_night
     with d3
 
     g9 "I'll take that cloak back if you don't mind."
 
-    call her_main( "Certainly.","base","base" )
+    call her_main( "Certainly.","base","base",xpos="right",ypos="base")
 
     m "Now, spill the beans."
 
@@ -113,22 +109,19 @@ label a_bad_time_to_disrobe_part_1:
 
     show screen blkfade
     with d3
-    hide screen main_room
-    hide screen genie
-    hide screen candlefire
+
     show screen quistion_pop_up("Hermione will remember that")
     nar "Hermione returns the next morning, looking nervous but more determined than yesterday."
     $ daytime = True
-    show screen main_room
-    show screen genie
+
     hide screen quistion_pop_up
-    hide screen hermione_main
+    call her_chibi("stand","desk","base")
+
     hide screen blkfade
     with d3
 
 
-    call her_chibi("stand","desk","base")
-    call her_main( "I see that you have the cloak ready for me sir.","base","baseL" )
+    call her_main( "I see that you have the cloak ready for me sir.","base","baseL",xpos="right",ypos="base")
 
     m "Indeed, I'm expecting better from you today girl."
 
@@ -136,22 +129,19 @@ label a_bad_time_to_disrobe_part_1:
 
     m "I'll be the judge of that..."
 
-    hide screen main_room
-    hide screen genie
-    hide screen hermione_main
     show screen day_to_night
     with d3
+
     nar "Later that evening a distraught looking Hermione enters the office. "
     $ daytime = False
-    show screen main_room
-    show screen genie
-    show screen candlefire
-    call her_chibi("top_naked", "desk", "base")
-    call h_equip_temp_outfit(hg_standart_school_noshirt_OBJ)
+
+    call her_chibi("top_naked","desk","base")
+    call h_equip_temp_outfit(hg_standart_school_noshirt_ITEM)
+
     hide screen day_to_night
     with d3
 
-    call her_main( "...","upset","base", tears="mascara_soft")
+    call her_main( "...","upset","base", tears="mascara_soft",xpos="right",ypos="base")
 
     m "What happened? Where's your shirt?"
 
@@ -200,17 +190,16 @@ label a_bad_time_to_disrobe_part_1:
     g9 "35 points to Gryffindor!"
 
     call her_main( "Thank you professor....","grin","base", tears="mascara" )
-    call her_walk ("desk","door", 2)
-    call her_main( "\"He's right, they wouldn't recognize me if I didn't show my face...\"","base","base", cheeks="blush", tears="mascara" )
-    call her_main( "\"would they?\"","base","base", cheeks="blush", tears="mascara" )
+    call her_walk ("desk","door", 2.5)
+
+    call her_main( "\"He's right, they wouldn't recognize me if I didn't show my face...\"","base","base", cheeks="blush", tears="mascara",ypos="head")
+    call her_main( "\"would they?\"","base","base", cheeks="blush", tears="mascara",ypos="head")
+
     call her_chibi("leave")
     "The End."
 
-    hide screen genie
-    hide screen main_room
-    hide screen hermione_main
-    hide screen candlefire
-    call reset_hermione_main
+    call room(hide_screens=True)
+    call reset_hermione
     call h_unequip_temp_outfit
     jump enter_room_of_req
 
@@ -219,15 +208,14 @@ label a_bad_time_to_disrobe_part_2:
     $ temp_time = daytime
     $ daytime = True
     call play_standart_theme
-    call hide_room_req
-    show screen main_room
-    show screen genie
+
+    call room("main_room")
     call her_chibi("stand","desk")
     hide screen blkfade
     with d3
 
     m "Good afternoon miss Granger."
-    call her_main( "Good afternoon professor, what can I do for you today?","base","base" )
+    call her_main( "Good afternoon professor, what can I do for you today?","base","base",xpos="right",ypos="base")
     m "Glad you asked, I've got another task for you."
     call her_main( "And what task may that be professor.","soft","baseL" )
     m "Well miss Granger, I think somebody owes me a invisibility cloak."
@@ -278,29 +266,29 @@ label a_bad_time_to_disrobe_part_2:
     g9 "Great, you're doing a great service to your house and making an old man very happy."
     call her_main( "By getting your cloak back right?","base","worried" )
     m "Right..."
-    call her_walk("desk","door", 2)
-    call her_chibi("leave")
+
+    call her_walk("desk","leave", 2.5)
 
     show screen day_to_night
     with d3
-    hide screen main_room
-    hide screen genie
+
     nar "Later that evening"
     $ temp_time = daytime
     $ daytime = False
     call play_standart_theme
-    show screen main_room
-    show screen genie
-    show screen candlefire
+
     call h_unequip_temp_outfit()
+    $ hermione_wear_outfit = False #Otherwise the "action" won't show if she's wearing an outfit.
     call set_her_action("covering_uniform")
+    call her_chibi("stand","door","base")
+
     hide screen day_to_night
     with d3
 
-    call her_chibi("stand","door")
-    call her_walk("door","desk",2)
+    call her_walk("door","desk",2.5)
+    pause.5
 
-    call her_main( "...","normal","dead", cheeks="blush" )
+    call her_main( "...","normal","dead", cheeks="blush",xpos="right",ypos="base")
     m "Mission success?"
     call her_main( "...","normal","dead", cheeks="blush" )
     m "Miss Granger?"
@@ -363,20 +351,17 @@ label a_bad_time_to_disrobe_part_2:
     m "40 points to Gryffindor!"
     call her_main( "Thank you professor...","soft","soft" )
 
-    call her_walk("desk","door", 2)
+    call her_walk("desk","door", 2.5)
 
-    call her_main( "\"I'm glad I had time to clean the cloak before walking in here...\"","base","dead", cheeks="blush" )
-    call her_main( "\"That thing was massive...\"","normal","down" )
-    call her_main( "\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush" )
+    call her_main( "\"I'm glad I had time to clean the cloak before walking in here...\"","base","dead", cheeks="blush",ypos="head")
+    call her_main( "\"That thing was massive...\"","normal","down",ypos="head")
+    call her_main( "\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush",ypos="head")
 
     call her_chibi("leave")
 
     "The end"
 
-    hide screen genie
-    hide screen main_room
-    hide screen hermione_main
-    hide screen candlefire
+    call room(hide_screens=True)
     $ daytime = temp_time
     call play_standart_theme
     call reset_hermione
@@ -384,9 +369,10 @@ label a_bad_time_to_disrobe_part_2:
     jump enter_room_of_req
 
 label whose_points:
-    call hide_room_req
+    call room(hide_screens=True)
     show screen whose_points_screen
     show screen blkfade
+    with d3
     pause 0.3
     hide screen blkfade
     with d3
@@ -563,18 +549,15 @@ label whose_points:
     else:
         call play_music("night_theme")
 
-    hide screen whose_points_screen
+    call room(hide_screens=True)
     call set_her_action("none")
-    call her_chibi(action="hide")
-    hide screen hermione_main
     jump enter_room_of_req
 
 label genie_house_elf:
-    call hide_room_req
-    show screen main_room
-    show screen genie
-
     show screen blkfade
+    call room("main_room")
+    with d3
+
     pause 0.3
     hide screen blkfade
     with d3
@@ -683,21 +666,27 @@ label genie_house_elf:
     call helf_main(remove=True)
     "The end."
 
-    hide screen genie
-    hide screen main_room
+    call room(hide_screens=True)
     jump enter_room_of_req
 
 label a_spaced_out_conversation:
     $ temp_time = daytime
     $ daytime = False
 
+    call room("main_room")
+
+    hide screen genie
+    hide screen chair_right
     $ fire_in_fireplace = True
     show screen fireplace_fire
-    call hide_room_req
-    show screen main_room
+    show screen desk
     show screen with_snape_animated
-    call blkfade
-    call hide_blkfade
+
+    show screen blkfade
+    with d3
+    pause.3
+    hide screen blkfade
+    with d3
 
     nar "The flames flickered higher up the fireplace."
     nar "Licking in greedy hunger as if wanting taste the wine the two men sedately drank just out of the fire’s reach."
@@ -711,7 +700,7 @@ label a_spaced_out_conversation:
     nar "Sometimes, if the flames flickered just so, he almost appeared entirely different, as a burly, cowled man with a short curled beard."
     nar "They sat in front of the fire as they did on many nights and talked of worlds upon worlds. And of magic. The dark man was first to speak."
 
-    call sna_main( "So, let me try to understand this,","snape_05" )
+    call sna_main( "So, let me try to understand this,","snape_05",ypos="head")
 
     nar "Snape said slowly."
 
@@ -1025,10 +1014,12 @@ label a_spaced_out_conversation:
     "The End"
 
     $ daytime = temp_time
-    hide screen main_room
+    call room(hide_screens=True)
     $ fire_in_fireplace = False
     hide screen fireplace_fire
     hide screen with_snape_animated
+
+    call update_snape
     jump enter_room_of_req
     
 label forgotten_lets_have_sex:

@@ -55,29 +55,6 @@ screen letter:
 
 
 
-if outfit_ready: #Old
-    hide screen owl
-    $ letter_text = "{size=-7}From: Madam Mafkin\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore.\nThis is a reminder that you have an order ready for pickup at the clothes store\n\n{size=-3}Thank you for your busness,\n M.M.{/size}"
-    label letter_outfit:
-    show screen letter
-    show screen ctc
-    show screen bld1
-    with Dissolve(.3)
-    pause
-    menu:
-        "-Done reading-":
-            pass
-        "-Not yet-":
-            jump letter_outfit
-    $ letters -= 1
-    hide screen letter
-    hide screen ctc
-    hide screen bld1
-    with Dissolve(.3)
-    call screen main_room_menu
-
-
-
 ### Letter Attachment Call Labels ###
 
 # Hermione Granger Letters.
@@ -215,57 +192,47 @@ label deck_mail_send: # Send a letter that will unlock an ability to write repor
 
 
 label get_package:
+    show screen blktone
+
     python:
         for item in deliveryQ.get_mail():
-            if item.type == 'Gift':
-                gift = item.object
-                gift_item_inv[gift.id] += item.quantity
-                the_gift = gift.imagepath
-                renpy.show_screen("gift")
-                renpy.with_statement(Dissolve(0.3))
-                if item.quantity > 1:
-                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.title)+"'s")
-                else:
-                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.title))
-                renpy.hide_screen("gift")
-                renpy.with_statement(Dissolve(0.3))
-
             if item.type == 'Event_item':
                 pass
 
-            #if item.type in ["outfit","set"]:
-            #    if item.type == "outfit":
-            #        renpy.call(unlock_clothing(">Here is the outfit you requested.\nThank you for your busness,\n M.M.",item))
-            #    if item.type == "set":
-            #        renpy.call(unlock_clothing(">Here is the set you requested.\nThank you for your busness,\n M.M.",item))
-            #    renpy.call(received_outfit)
+            if item.type == 'outfit':
+                gift = item.object
+                gift.unlocked = True
+                outfit_is_worked_on = False
+                mannequin_preview = gift.get_image()
+
+                renpy.show_screen("clothing_unlock")
+                renpy.with_statement(Dissolve(0.3))
+
+                renpy.say(None,"You received a new outfit.")
+
+                renpy.hide_screen("clothing_unlock")
+                renpy.with_statement(Dissolve(0.3))
+
+            if item.type == 'Gift':
+                gift = item.object
+                gift.number += item.quantity
+                the_gift = gift.get_image()
+
+                renpy.show_screen("gift")
+                renpy.with_statement(Dissolve(0.3))
+                if item.quantity > 1:
+                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name)+"'s")
+                else:
+                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name))
+                renpy.hide_screen("gift")
+                renpy.with_statement(Dissolve(0.3))
+
+    hide screen blktone
+    with d3
 
     $ package_is_here = False
+
     call screen main_room_menu
-
-label mail_02: #Packages only. <=====================================================================### PACKAGES ###===================================================
-
-### ITEMS ###
-    if gift_order != None:
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-
-        $ gift_item_inv[gift_order.id] += order_quantity
-
-        $ the_gift = gift_order.image
-        show screen gift
-        with d3
-        $ tmp_str = "\""+gift_order.name
-        if order_quantity > 1:
-            $ tmp_str += "'s\""
-            ">([order_quantity]) [tmp_str] have been added to your possessions."
-        else:
-            $ tmp_str += "\""
-            ">([order_quantity]) [tmp_str] has been added to your possessions."
-        hide screen gift
-        with d3
-        $ gift_order = None
-        call screen main_room_menu
 
 
 

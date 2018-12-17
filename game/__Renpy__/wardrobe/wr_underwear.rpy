@@ -30,7 +30,7 @@ label equip_her_bra:
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
-    elif mad >= 1:
+    elif her_mood >= 1:
         jump equipping_failed
 
     else:
@@ -424,7 +424,7 @@ label equip_her_panties:
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
-    elif mad >= 1:
+    elif her_mood >= 1:
         jump equipping_failed
 
     else:

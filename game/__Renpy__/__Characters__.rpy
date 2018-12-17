@@ -79,31 +79,48 @@ label transition(trans=None):
 
 
 init python:
-    # Character tables
+    if not hasattr(renpy.store,'gen_outfit'):
+        gen_outfit = ""
 
-    ### GENIE ### (others are in scripts.rpy)
-    m = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
-    g4 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage4.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
-    g9 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage9.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+
+    ### Characters ###
+
+
+    #Genie
+    m = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage2.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g2 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage3.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g4 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage4" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g5 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage5.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g6 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage6.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g7 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage7.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g8 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage8.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g9 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage9" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g10 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage10.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g11 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage11.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g12 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage12.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g13 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage13.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g14 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage14.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g15 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage15.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
 
     ### House-Elf ###
     helf = Character("House-Elf", window_left_padding=250, show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
 
-    ### SNAPE HEAD ###
-    sna_ = [""] #Please don't use this screen! Use 'call sna_head' instead!
+    #Snape      #ToDo replace those screens with the normal head sprite positions.
+    sna_ = [""]
     for i in range(1,26):
         sna_.append("")
         sna_[i] = Character("Severus Snape", color="#402313", show_side_image=Image("characters/snape/head/head_" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
 
 
-    ### HERMIONE HEAD (OLD) ###
+    #Hermione   #ToDo Check if this can be removed.
     her_ = [""] #Please don't use this screen! Use 'call her_head' instead!
     for i in range(1,43):
         her_.append("")
         her_[i] = Character('[hermione_name]', color="#402313", window_left_padding=250, window_right_padding=270, show_side_image=Image("images/15_hermione_head/" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
 
 
-    ### DUMBLEDORE HEAD ###
+    #Dumbledore
     dum_ = [""]
     for i in range(1,6):
         dum_.append("")
@@ -143,6 +160,7 @@ init python:
     ### Other Characters ###
     s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
     nar = Character('Narrator ', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/misc/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
+    sil = Character('Team Silver', show_two_window=True, window_left_padding=250, show_side_image=Image("characters/misc/dumbledore/dum_narritor.png", xalign=0, yalign=1.0), color="#402313", ctc="ctc3", ctc_position="fixed")
 
     maf  = Character('Madam Mafkin', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("characters/misc/mafkin/maf_1.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=270)
     abe  = Character('Aberforth', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
@@ -158,6 +176,6 @@ init python:
     ann  = Character('The Announcer', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     cr1  = Character('Somebody from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     cr2  = Character('Another voice from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    qcr  = Character('Quidditch Crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
     l    = Character('Lola', color="#402313", window_right_padding=270, show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    dahr = Character(None, color="#402313", window_left_padding=270, show_side_image=Image("images/store/dahr.png", xalign=0.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc4", ctc_position="fixed")

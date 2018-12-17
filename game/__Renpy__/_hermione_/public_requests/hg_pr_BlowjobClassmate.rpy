@@ -23,10 +23,10 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
                     "\"(Yes, continue!)\"":
                         pass
                     "\"(No, return.)\"":
-                        jump silver_requests
+                        jump hermione_requests_menu
 
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 

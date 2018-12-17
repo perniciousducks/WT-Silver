@@ -77,7 +77,7 @@ label cho_favor_1_1:
             call cho_main("...","pout","suspicious","angry","R")
             m "..."
             m "(She didn't answer my question...)"
-            $ cho_mad += 5
+            $ cho_mood += 5
             jump cho_favor_1_1
 
 
@@ -151,7 +151,7 @@ label cho_favor_1_1:
                 call cho_main("...stupid...","angry","closed","angry","mid")
                 call cho_main("...fat...","angry","suspicious","angry","mid")
                 call cho_main("...cow, isn't she?","quiver","suspicious","angry","mid")
-                $ cho_mad = 0
+                $ cho_mood = 0
             "-I can't choose-":
                 m  "You're both hot."
                 call cho_main("I guess.","pout","suspicious","angry","downR")
@@ -160,7 +160,7 @@ label cho_favor_1_1:
                 call cho_main("What?","scream","wide","angry","mid")
                 m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
                 call cho_main("But she doesn't even do work-outs, [cho_genie_name]!","angry","suspicious","angry","downR")
-                $ cho_mad +=5
+                $ cho_mood +=5
 
         jump jerk_off_to_cho
 
@@ -305,7 +305,7 @@ label jerk_off_to_cho:
             call gen_chibi("jerking_off_behind_desk")
             pause.8
 
-            if cho_mad <= 0: #OK with it.
+            if cho_mood <= 0: #OK with it.
                 if cho_whoring in [0]:
                     call cho_main("(!!!)","angry","wide","raised","mid")
                     call cho_main("[cho_genie_name], are you...","horny","suspicious","sad","R")
@@ -508,7 +508,7 @@ label end_cho_favor:
 
     m "[current_payout] points to Ravenclaw!"
     $ ravenclaw += current_payout
-    $ cho_mad -= 10
+    $ cho_mood -= 10
 
     call cho_main("Thank you.","soft","base","base","mid")
 
@@ -571,7 +571,7 @@ label cho_favor_2:
                         m "I suppose you're ass will do for now, but I'm only paying you 40 house points."
                         call cho_main("my ass will do?!","scream","suspicious","angry","down")
                         call cho_main("i'll show you whose ass is better!","smile","suspicious","angry","down")
-                        $ cho_mad +5 #new variable cho_mad
+                        $ cho_mood +5 #new variable cho_mood
                         jump chofbm
                     "-Nothing-":
                         m "I could get Hermione to do it for absolutely nothing."
@@ -641,7 +641,7 @@ label chofbm:
                 ">You give Cho's ass an aggressive squeeze."
                 m "I'll tell you when it's enough."
                 call cho_main("Fine.","pout","shocked","angry","R")
-                $ cho_mad += 2
+                $ cho_mood += 2
                 ">Cho's ass feels smooth and warm under your touch. Nevertheless, you begin to savage the poor girls ass."
                 call cho_main("Ow.","upset","shocked","angry","mid")
                 call cho_main("Ow. ow. That hurts!","open","shocked","angry","mid")
@@ -704,7 +704,7 @@ label chofbm:
                             "-She earned 60-":
                                 m "Very well. That was more than we agreed to. 60 points to Ravenclaw."
                                 call cho_main("Thank you, sir.","upset","shocked","base","R")
-                                $ cho_mad += 5
+                                $ cho_mood += 5
                                 $ ravenclaw += 60
                                 jump chof2end
                             "\"That was a bit much. 80 points\"":
@@ -713,7 +713,7 @@ label chofbm:
                                 m "80 points to Ravenclaw."
                                 call cho_main("Really?","soft","suspicious","angry","down")
                                 call cho_main("Well, I suppose it wasn't that bad...","pout","suspicious","sad","downR")
-                                $ cho_mad +1
+                                $ cho_mood +1
                                 $ ravenclaw += 80
                                 jump chof2end
                             "\"(How dare she!) 0 points!\"":
@@ -723,7 +723,7 @@ label chofbm:
                                 call cho_main("That's not fair!","scream","wide","angry","mid")
                                 m "Well?"
                                 call cho_main("Fine!","upset","suspicious","angry","down")
-                                $ cho_mad +15
+                                $ cho_mood +15
                                 #Cho chibi returns to Dumbledore's desk.
                                 ">Cho returns to your desk."
                                 ">You catch a glimpse of her furious tears as she presents you her tender ass."
@@ -831,7 +831,7 @@ label chofbm:
                                         m "Very well. 50 house points. You drive a hard bargain, Miss Chong."
                                         call cho_main("MY name Is Chang. And yes, I do.","smile","base","base","mid")
                                         $ ravenclaw += 50
-                                        $ cho_mad +1
+                                        $ cho_mood +1
                                         ">Cho quickly pushes her panties off her hips, letting them fall to the ground before bending over your desk."
                                         jump chof2wl2
                                     "No.":
@@ -916,7 +916,7 @@ label chofbm:
                                 call cho_main("You {size=+2}completely{/size} covered me in your {size=+2}nasty{/size} {size=+3}old{/size} {size=+4}wizard cum!{/size}","smile","base","base","mid")
                                 call cho_main("i'm a complete mess, you jerk!","smile","base","base","mid")
                                 call cho_main("You owe me an extra 10 points!","smile","base","base","mid")
-                                $ cho_mad +=1
+                                $ cho_mood +=1
                                 menu:
                                     "Yes.":
                                         m "Yeah, sure. 10 more points to Ravenclaw."
@@ -936,7 +936,7 @@ label chofbm:
                                         m "Too bad."
                                         call cho_main("you're nothing but a dirty old wizard!","smile","base","base","mid")
                                         ">Cho grabs her panties from the floor and storms off leaving a trail of cum dripping to your door."
-                                        $ cho_mad +5
+                                        $ cho_mood +5
                                         jump chof2end
                             "Better not.":
                                 ">You stop at the last moment and put your cock away."
@@ -998,7 +998,7 @@ label chofbm:
                                         m "Too bad."
                                         call cho_main("you're nothing but a dirty old wizard!","smile","base","base","mid")
                                         ">Cho grabs her panties from the floor and storms off leaving a trail of cum dripping to your door."
-                                        $ cho_mad +5
+                                        $ cho_mood +5
                                         jump chof2end
                             "Warn Her.":
                                 m "I'm almost there!"
@@ -1097,7 +1097,7 @@ label chofbm:
                                 m "Very well. 50 house points. You drive a hard bargin, Miss Chong."
                                 call cho_main("MY name Is Chang. And yes, I do.","smile","base","base","mid")
                                 $ ravenclaw += 50
-                                $ cho_mad +1
+                                $ cho_mood +1
                                 ">Cho quickly pushes her ass against you."
                                 jump chof2hd
                             "No.":
@@ -1315,7 +1315,7 @@ label chofbm:
                                 m "Too bad."
                                 call cho_main("you're nothing but a dirty old wizard!","smile","base","base","mid")
                                 "Cho pulls her skirt down and storms off, leaving a trail of cum dripping to your door."
-                                $ cho_mad +5
+                                $ cho_mood +5
                                 jump chof2end
                     "Warn Her.":
                         m "I'm going to cum!"
@@ -1374,7 +1374,7 @@ label cho_favor_3:
                         call cho_main("Really?","smile","base","base","mid")
                         call cho_main("Really? 70 points?","smile","base","base","mid")
                         call cho_main("Okay.","smile","base","base","mid")
-                        $ cho_mad -= 1
+                        $ cho_mood -= 1
                         $ current_payout = 70
                         jump cho_favor_3_1
 
@@ -1407,7 +1407,7 @@ label cho_favor_3:
                         call cho_main("Really?","smile","base","base","mid")
                         call cho_main("Really? 70 points?","smile","base","base","mid")
                         call cho_main("Okay.","smile","base","base","mid")
-                        $ cho_mad -= 1
+                        $ cho_mood -= 1
                         $ current_payout = 70
                         jump cho_favor_3_1
 
@@ -1431,9 +1431,9 @@ label cho_favor_3:
                             "-No way-":
                                 m "No way, girl. You're not worth more than 40."
                                 call cho_main("Fine!","smile","base","base","mid")
-                                $ cho_mad += 10
+                                $ cho_mood += 10
                                 m "And try not to look so miserable about it."
-                                $ cho_mad += 10
+                                $ cho_mood += 10
                                 call cho_main("(Asshole.)","smile","base","base","mid")
                                 call cho_main("(how am i even supposed to do this?)","smile","base","base","mid")
                                 $ current_payout = 40
@@ -1442,8 +1442,8 @@ label cho_favor_3:
         m "I assume you're familar with the ancient Chinese art of 'SukiSuki'."
         call cho_main("What?","smile","base","base","mid")
         m "I want a blowjob."
-        if cho_mad >= 6:
-            jump cho_mad_blowjob
+        if cho_mood >= 6:
+            jump cho_mood_blowjob
         call cho_main("Okay. but i'm only doing this to help my House.","smile","base","base","mid")
         call cho_main("And i want [current_payout] points.","smile","base","base","mid")
         m "Yes, yes. Now get sucking."
@@ -1555,7 +1555,7 @@ label cho_favor_3_1:
                     m "Get out."
                     call cho_main("...","smile","base","base","mid")
                     call cho_main("...Fine!","smile","base","base","mid")
-                    $ cho_mad += 10
+                    $ cho_mood += 10
                     #Cho storms out.
                     m "Bitches..."
                     jump end_cho_event
@@ -1712,7 +1712,7 @@ label cho_favor_3_1:
                                     m "Get out."
                                     call cho_main("...","smile","base","base","mid")
                                     call cho_main("...Fine!","smile","base","base","mid")
-                                    $ cho_mad += 10
+                                    $ cho_mood += 10
                                     #Cho storms out.
                                     m "Bitches..."
                                     jump end_cho_event
@@ -1728,7 +1728,7 @@ label cho_favor_3_1:
             call cho_main("I' I' 'ood 'o'esser?(is this good, professor?)","smile","base","base","mid")
             "You gently carress Cho's warm cheek with the back of your hand."
             call cho_main("(Wow...that was nice.)","smile","base","base","mid")
-            $ cho_mad -= 1
+            $ cho_mood -= 1
             m "Yes, girl...that will do nicely."
             "You pull your throbbing cock out of your robes and stand over Cho."
             "The erotic sight causes pre-cum to ooze from the tip of your cock."
@@ -1896,7 +1896,7 @@ label cho_favor_3_1:
                                     m "Get out."
                                     call cho_main("...","smile","base","base","mid")
                                     call cho_main("...Fine!","smile","base","base","mid")
-                                    $ cho_mad += 10
+                                    $ cho_mood += 10
                                     #Cho storms out.
                                     m "Bitches..."
                                     jump end_cho_event
@@ -1904,8 +1904,8 @@ label cho_favor_3_1:
 label cho_favor_3_2:
 
         m "Ms. Chang, I'd like you to give me another blowjob."
-        if cho_mad > 10:
-            jump cho_mad_blowjob
+        if cho_mood > 10:
+            jump cho_mood_blowjob
 
         call cho_main("[current_payout] points.","smile","base","base","mid")
         m "Of course."
@@ -2111,7 +2111,7 @@ label cho_favor_3_2:
                                         m "Get out."
                                         call cho_main("...","smile","base","base","mid")
                                         call cho_main("...Fine!","smile","base","base","mid")
-                                        $ cho_mad += 10
+                                        $ cho_mood += 10
                                         #Cho storms out.
                                         m "Bitches..."
                                         jump end_cho_event
@@ -2284,7 +2284,7 @@ label cho_favor_3_2:
                                         m "Get out."
                                         call cho_main("...","smile","base","base","mid")
                                         call cho_main("...O-okay...","smile","base","base","mid")
-                                        $ cho_mad += 10
+                                        $ cho_mood += 10
                                         #Cho shuffles out.
                                         m "Bitches..."
                                         jump end_cho_event
@@ -2293,8 +2293,8 @@ label cho_favor_3_2:
 label cho_favor_3_3:
     m "Suck my cock."
 
-    if cho_mad > 10:
-        jump cho_mad_blowjob
+    if cho_mood > 10:
+        jump cho_mood_blowjob
 
     call cho_main("Okay!","smile","base","base","mid")
     m "Don't you want some points or something?"
@@ -2740,7 +2740,7 @@ label cho_favor_3_3:
                     jump end_cho_event
 
 
-label cho_mad_blowjob:
+label cho_mood_blowjob:
     call cho_main("I can't believe you, you old pervert.","smile","base","base","mid")
     call cho_main("Fine.","smile","base","base","mid")
     call cho_main("Fine. I'll do it.","smile","base","base","mid")
@@ -2768,7 +2768,7 @@ label cho_mad_blowjob:
     "She shakes the spit and pre-cum off her hand before glaring daggers at you."
     call cho_main("well? my house Points?","smile","base","base","mid")
     m "Fine. But you're only getting [points-5], you little bitch..."
-    $ cho_mad += 5
+    $ cho_mood += 5
     m "[points-5] to Ravenclaw."
     call cho_main("Jerk.","smile","base","base","mid")
     jump end_cho_event

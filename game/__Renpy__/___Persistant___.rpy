@@ -20,7 +20,6 @@ label __init_variables:
     ### Difficulty ###
     if not hasattr(renpy.store,'game_difficulty'):
         $ game_difficulty = 2                      # 2 = normal
-        $ hardcore_difficulty_active = False       # for hardcore play-through rewards
 
     ### Gameplay ###
     if not hasattr(renpy.store,'ignore_warning'):
@@ -50,8 +49,10 @@ label __init_variables:
         $ phoenix_fed_counter = 0
         $ phoenix_petted_counter = 0
 
-
-
+    #Room Deco
+    if not hasattr(renpy.store,'room_deco'):
+        $ room_deco = ""
+        $ cupboard_deco = ""
 
     #HD RESCALE RATION
     if not hasattr(renpy.store,'genie_scaleratio'): #important!
@@ -140,30 +141,12 @@ label __init_variables:
     call store_init
     call store_items_init
 
-    call clothing_init
+    #Minigames & Mirror Stories
+    call dark_room_init
 
     #Cheats
     call cheats_init
 
-
-
-    label update_unlocked_character_list:
-
-    $ unlocked_character_list = [["genie", 1]]
-    if snape_unlocked:
-        $ unlocked_character_list.append(["snape", 1])
-    if hermione_unlocked:
-        $ unlocked_character_list.append(["hermione", 1])
-    if luna_unlocked:
-        $ unlocked_character_list.append(["luna", 1])
-    if astoria_unlocked:
-        $ unlocked_character_list.append(["astoria", 1])
-    if susan_unlocked:
-        $ unlocked_character_list.append(["susan", 1])
-    if cho_unlocked:
-        $ unlocked_character_list.append(["cho", 1])
-    if tonks_unlocked:
-        $ unlocked_character_list.append(["tonks", 1])
 
     #Hidden Blowjob
     $ hg_hidden_blowjob_character_list = ["snape"]
@@ -177,8 +160,6 @@ label __init_variables:
     #    $ hg_hidden_blowjob_character_list.append("cho")
     if tonks_unlocked:
         $ hg_hidden_blowjob_character_list.append("tonks")
-
-
 
     ### Do not add anything after this line !!!
 

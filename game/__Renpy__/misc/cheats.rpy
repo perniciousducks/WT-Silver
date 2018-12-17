@@ -4,7 +4,7 @@ label cheats:
             label cheats_hermione:
             menu:
                 "-Reset Hermione's mood-":
-                    $ mad = 0
+                    $ her_mood = 0
                     ">Hermione is no longer mad at you."
                     jump cheats_hermione
                 "-Max Whoring-":
@@ -37,6 +37,12 @@ label cheats:
                 "-Unlock all purchasable outfits & sets-":
                     python:
                         for i in hermione_outfits_list:
+                            if not i.unlockable:
+                                i.unlocked = True
+                        for i in hermione_costumes_list:
+                            if not i.unlockable:
+                                i.unlocked = True
+                        for i in hermione_dresses_list:
                             if not i.unlockable:
                                 i.unlocked = True
                         for i in hermione_clothing_sets_list:
@@ -85,14 +91,14 @@ label cheats:
                     $ letter_curse_complaint_OBJ.mailLetter()
                     ">Letter sent."
                     jump cheats_astoria
-                "-Unlock all spells-":
+                "-Unlock first spell-":
                     $ ast_affection = 2
                     $ astoria_tonks_1_completed = True
                     $ astoria_tonks_2_completed = True
                     $ astoria_tonks_3_completed = True
 
-                    $ ast_spells[0] = 3
-                    ">All spells are now unlocked!"
+                    $ ag_imperio_susan_OBJ.points = 3
+                    ">Astoria can now use the first spell!"
                     jump cheats_astoria
                 "-never mind-":
                     jump cheats
@@ -101,7 +107,7 @@ label cheats:
             label cheats_cho:
             menu:
                 "-Reset Cho's mood-":
-                    $ cho_mad = 0
+                    $ cho_mood = 0
                     ">Cho is no longer mad at you."
                     jump cheats_cho
                 "-Reset ALL Cho content-":
@@ -117,7 +123,8 @@ label cheats:
             label cheats_books:
             menu:
                 "-Max Imagination":
-                    $ imagination = 5
+                    $ imagination = 8
+                    $ bdsm_imagination = 2
                     "Your imagination grows!"
                     jump cheats_books
                 "-Cheat Reading ([cheat_reading])-":
@@ -125,8 +132,8 @@ label cheats:
                     jump cheats_books
                 "-All Books-" if day >= 16:
                     python:
-                        for book in Books_OBJ.get_all():
-                            book.purchased = True
+                        for book in book_list.get_all():
+                            book.unlocked = True
                     "Obtained All Books."
                     jump cheats_books
                 "-never mind-":
@@ -144,6 +151,7 @@ label cheats:
 
         "-Solve the slider puzzle-" if found_puzzle_1 and not unlocked_7th:
             "There might be something of interest to you somewhere at the 7th floor."
+            $ found_puzzle_1 = False
             $ unlocked_7th = True
             jump open_pyzzle_box
 
@@ -172,6 +180,7 @@ label cheats_init:
         label reset_cheats_init:
 
         $ cheats_active = False
+        $ cheat_reading = False
 
         $ next_day = False
         $ skip_duel = False

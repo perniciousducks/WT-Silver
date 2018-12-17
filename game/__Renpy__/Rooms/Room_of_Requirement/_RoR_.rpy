@@ -7,17 +7,17 @@ screen room_of_requirement:
     add "images/rooms/main_room/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
     add "images/rooms/main_room/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
     zorder -1
-    
+
 screen room_of_requirement_menu:
     tag room_screen
-    
+
     imagebutton: # Mirror
         xpos 100
         ypos 180
         idle "images/rooms/room_of_requirement/mirror.png"
         hover "images/rooms/room_of_requirement/mirror_hover.png"
         action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
-    
+
     imagebutton: # DOOR
         xpos 758+140
         ypos 315
@@ -26,8 +26,8 @@ screen room_of_requirement_menu:
         yanchor "center"
         idle "images/rooms/main_room/door.png"
         hover "images/rooms/main_room/door_hover.png"
-        action [Jump("leave_room_req")]
-        
+        action [Jump("return_office")]
+
     imagebutton: # Cadle Fire left
         xpos 350
         ypos 200
@@ -37,7 +37,7 @@ screen room_of_requirement_menu:
         idle "images/rooms/main_room/candle.png"
         hover "images/rooms/main_room/candle.png"
         action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_2")]
-        
+
     imagebutton: # Cadle Fire Right
         xpos 700
         ypos 200
@@ -49,23 +49,19 @@ screen room_of_requirement_menu:
         action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_1")]
     zorder -1
 
-label turn_on_cadle_1:  
+label turn_on_cadle_1:
     if renpy.get_screen("candle_light_1") == None:
         show screen candle_light_1
     else:
         hide screen candle_light_1
     call screen room_of_requirement_menu
-        
-label turn_on_cadle_2:   
+
+label turn_on_cadle_2:
     if renpy.get_screen("candle_light_2") == None:
         show screen candle_light_2
     else:
         hide screen candle_light_2
     call screen room_of_requirement_menu
-    
-label leave_room_req: 
-    call hide_room_req
-    jump return_office
 
 label hide_room_req:
     hide screen room_of_requirement_menu
@@ -73,38 +69,39 @@ label hide_room_req:
     hide screen candle_light_1
     hide screen candle_light_2
     return
-    
+
 label mirror_menu:
     show screen list_menu(mr_evs_list, "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}")
+
     $ _return = ui.interact()
-    
+
     hide screen list_menu
-    
-    if isinstance(_return, list_menu_item_class):
-        $ currentpage = 0
+
+    if isinstance(_return, item_class):
+        $ current_page = 0
         $renpy.jump(_return.start_label)
-    
+
     if _return == "Close":
         call screen room_of_requirement_menu
 
     elif _return == "inc":
-        $ currentpage += currentpage+1
+        $ current_page += current_page+1
         jump mirror_menu
     elif _return == "dec":
-        $ currentpage += -1
+        $ current_page += -1
         jump mirror_menu
-                   
-            
+
+
 screen candle_light_1:
     add "candle_fire_01" xpos 590 ypos 85
-    
+
 screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
-    
+
 screen room_of_req_door:
-    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1) 
+    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
     zorder -1
-    
+
 screen floor_7th_door:
     add "images/rooms/room_of_requirement/front_door.png" xpos 420 ypos 105
     zorder -1
@@ -128,8 +125,8 @@ screen floor_7th_screen:
     add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
     add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
     zorder -1
-    
-#animation of flower for painting maybe?    
+
+#animation of flower for painting maybe?
 image flower_animation:
     "images/animation/Bouquet4.png"
     pause 30
@@ -155,10 +152,10 @@ image flower_animation:
     pause .2
     "images/animation/Bouquet4.png"
     repeat
-    
 
 
-    
+
+
 screen floor_7th_menu:
     imagebutton:
         xpos 420
@@ -167,37 +164,36 @@ screen floor_7th_menu:
         hover "images/rooms/room_of_requirement/front_door_hover.png"
         action [Jump("enter_room_of_req")]
     zorder -1
-    
+
 label enter_room_of_req:
-    call blkfade 
+    show screen blkfade
+    with d3
+
     call play_standart_theme
-    show screen room_of_requirement
-    hide screen floor_7th_door
-    hide screen room_of_req_door
-    hide screen floor_7th_screen
-    hide screen floor_7th_menu
-    hide screen candlefire
-    
+
+    call room("room_of_requirement")
+
     python:
         for i in mr_evs_list:
             i.checkLock()
-    
+
     if first_visit_req == False:
-        call gen_chibi(action = "", xpos = "door", ypos = "base", flip=True)
-        call hide_blkfade
         $ first_visit_req = True
+        call gen_chibi("stand","door","base",flip=True)
+        call hide_blkfade
+
         m"It's just an empty room....with a mirror?"
-        call gen_walk(pos1="door", pos2="200")
+        call gen_walk("door","200",2.7)
         m "...."
         whom "So you've found the mirror of Erised"
         m "Dumbledore!"
         m "*Cough* I mean...yes Severus, it is I... \"Dumbledore\""
-        call sna_chibi(xpos="door")
-        call gen_chibi(action = "", xpos = "200", ypos = "base")
+        call sna_chibi("stand","door","base")
+        call gen_chibi("stand","200","base")
         m "I'm so glad to be back..."
-        call sna_main(".....","snape_05") 
+        call sna_main(".....","snape_05")
         m "Worth a shot..."
-        call sna_main("I'm quite certain I told you to stay in your office... For how long have you been roaming the school grounds?", "snape_06")
+        call sna_main("I'm quite certain I told you to stay in your office... For how long have you been roaming the school grounds?","snape_06")
         m "This is the first time... hence why I was so lost."
         call sna_main(".....","snape_05")
         m "Only for the past week or so..."
@@ -205,14 +201,14 @@ label enter_room_of_req:
         m "Yeah pretty much since the moment I got here."
         call sna_main("*Sigh* Well, you've not been caught so I suppose it's okay as long as you don't make any weird requests or comments to other staff members.","snape_06")
         m "...."
-        call sna_main(".....","snape_03") 
+        call sna_main(".....","snape_03")
         m "I might have ordered a few oddities from Madam Mafkin..."
         call sna_main("Hahahah...That old hag?","snape_28")
         call sna_main("She's nuts, she can sew that's for damn sure but she'd never know nor care...do whatever you want with her. ", "snape_01")
         m "\"I'd rather not...\""
         call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
-        call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
+        call gen_chibi("stand","200","base",flip=True)
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
         call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_06")
         m "*Squints* Just seems like an old mirror to me, a bit dusty and cloudy thou...hold on a minute."
@@ -242,19 +238,19 @@ label enter_room_of_req:
         g4 "It's staying right where it is, I've been getting incredibly bored lately and might consider roaming the school a bit more...actually, I feel the urge to take a trip to the girls dormitory right now."
         call sna_main("Fine, it stays. Please don't... just remember that it will take time for it to reshape and create imagery so check back every now and then.", "snape_06")
         m "Noted... Out. Now."
-        
+
         hide screen snape_main
         hide screen snape_head
         hide screen bld1
-        call give_reward("You've unlocked the room of requirement", "images/store/06.png") 
-        call sna_chibi(action="hide")
-        call gen_chibi(action = "hide", xpos = "200", ypos = "base", flip=True)
-        
-        
-    call gen_chibi(action = "", xpos = "200", ypos = "base", flip=True)
-    call hide_blkfade    
+        call give_reward("You've unlocked the room of requirement","interface/icons/item_voucher.png")
+        call sna_chibi("hide")
+        call gen_chibi("hide")
+
+
+    call gen_chibi("stand","200","base",flip=True)
+    call hide_blkfade
     call screen room_of_requirement_menu
-    
+
 label play_standart_theme:
     if daytime:
         call play_music("day_theme")

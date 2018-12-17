@@ -11,13 +11,13 @@ label door:
 
     #Updates
     $ summon_list = []
-    $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
     $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
+    $ summon_list.append(["luna", 0 if luna_busy else 1]) if luna_unlocked else 0
     $ summon_list.append(["astoria", 0 if astoria_busy else 1]) if astoria_unlocked else 0
-    $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
-    $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
     $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
-    $ summon_list.append(["luna", 0 if susan_busy else 1]) if susan_unlocked or luna_known else 0
+    $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
+    $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
+    $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
 
     call update_character_map_locations
 
@@ -59,7 +59,7 @@ label door:
             call nar(">Luna is already asleep.")
             jump night_main_menu
     elif luna_known and _return == "luna" and not luna_busy:
-        if not lun_reverted:
+        if not luna_reverted:
             call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
         else:
             call play_music("chipper_doodle") # LUNA'S THEME (placeholder probably)
@@ -101,7 +101,7 @@ label door:
             jump night_main_menu
     elif _return == "cho" and not cho_busy:
         call play_music("chipper_doodle") # CHO'S THEME (placeholder probably)
-        jump cho_menu
+        jump summon_cho
 
 
     #Snape

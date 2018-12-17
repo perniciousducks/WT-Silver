@@ -2,7 +2,7 @@
 
 ### Cho Chang ###
 
-label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
+label cho_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen cho_chang
 
     #Flip
@@ -57,7 +57,17 @@ label cho_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
         else:
             $ cho_ypos = int(ypos)
 
-    $ changeCho(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
+    if face != None:
+        if mouth == None:
+            call set_cho_face(mouth = face)
+        if eye == None:
+            call set_cho_face(eyes = face)
+        if brows == None:
+            call set_cho_face(brows = face)
+        if pupils == None:
+            call set_cho_face(pupils = face)
+
+    $ changeCho(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
 
     show screen cho_chang
     show screen bld1
@@ -87,7 +97,7 @@ label end_cho_event:
     hide screen cho_chang
     with d3
 
-    call cho_outfit(None)
+    call set_cho_outfit(None)
     call load_cho_clothing_saves #Resets Cho's clothing.
 
     #Add more cho screens to hide here.
@@ -102,8 +112,8 @@ label end_cho_event:
 init python: ###Method Definition for new characters
     def changeCho(  mouth=None,
                     eye=None,
-                    eyebrow=None,
-                    pupil=None,
+                    brows=None,
+                    pupils=None,
                     cheeks=None,
                     tears=None,
                     extra=None,
@@ -124,10 +134,10 @@ init python: ###Method Definition for new characters
             cho_mouth         = "characters/cho/face/mouth/"+mouth+".png"
         if eye is not None:
             cho_eye           = "characters/cho/face/eyes/"+eye+".png"
-        if eyebrow is not None:
-            cho_eyebrow       = "characters/cho/face/brow/"+eyebrow+".png"
-        if pupil is not None:
-            cho_pupil         = "characters/cho/face/pupil/"+pupil+".png"
+        if brows is not None:
+            cho_eyebrow       = "characters/cho/face/brow/"+brows+".png"
+        if pupils is not None:
+            cho_pupil         = "characters/cho/face/pupil/"+pupils+".png"
         if cheeks is not None:
             cho_cheeks        = "characters/cho/face/extras/cheeks_"+cheeks+".png"
         if tears is not None:

@@ -88,7 +88,7 @@ label hermione_random_clothing:
                 call her_main("Yes, [genie_name]. I brought it with me from home. It's a bit too cold for just my normal uniform...","open","baseL")
                 call her_main("Do you like it?","soft","base")
                 g9 "I do, [hermione_name]. It's cute."
-                $ mad -= 10
+                $ her_mood -= 10
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_ITEM)
@@ -116,7 +116,7 @@ label hermione_random_clothing:
                 call her_main("Thank you, [genie_name]. I made some changes to the old one...","open","baseL")
                 call her_main("Do you like it?","soft","base")
                 g9 "Very much so, [hermione_name]. I love the breast window."
-                $ mad -= 10
+                $ her_mood -= 10
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
@@ -144,7 +144,7 @@ label hermione_random_clothing:
                 m "It's fine, [hermione_name]."
                 g9 "Besides, I wouldn't mind seeing you in jeans more often!"
                 call her_main("Thank you, [genie_name].","normal","baseL")
-                $ mad -= 10
+                $ her_mood -= 10
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_rainy_ITEM)
@@ -159,7 +159,7 @@ label hermione_random_clothing:
 
             call her_chibi("stand","mid","base")
 
-            if mad > 1:
+            if her_mood > 1:
                 call her_main("","annoyed","baseL",xpos="base",ypos="base")
             else:
                 call her_main("","base","base",xpos="base",ypos="base")
@@ -211,27 +211,27 @@ label hermione_random_clothing:
     call update_her_uniform
 
     #Hermione greeting.
-    if mad >= 1:
+    if her_mood >= 1:
 
-        call set_her_face("random")
+        call set_her_face(change="all")
         call her_main(xpos="base",ypos="base")
-        if mad >=1 and mad < 3:
+        if her_mood >=1 and her_mood < 3:
             ">Looks like Hermione is still a little upset with you..."
-        elif mad >=3 and mad < 10:
+        elif her_mood >=3 and her_mood < 10:
             ">Hermione is upset with you."
-        elif mad >=10 and mad < 20:
+        elif her_mood >=10 and her_mood < 20:
             ">Hermione is very upset with you."
-        elif mad >=20 and mad < 40:
-            ">Hermione is mad at you."
-        elif mad >=40 and mad < 50:
-            ">Hermione is very mad at you."
-        elif mad >=50 and mad < 60:
+        elif her_mood >=20 and her_mood < 40:
+            ">Hermione is her_mood at you."
+        elif her_mood >=40 and her_mood < 50:
+            ">Hermione is very her_mood at you."
+        elif her_mood >=50 and her_mood < 60:
             ">Hermione is furious at you."
-        elif mad >=60:
+        elif her_mood >=60:
             ">Hermione hates your guts."
 
     else: #Not mad.
-        call set_her_face("happy")
+        call set_her_face(change="all")
         if not hermione_door_event_happened:
             call her_main("Yes, [genie_name]?",xpos="base",ypos="base")
         else:

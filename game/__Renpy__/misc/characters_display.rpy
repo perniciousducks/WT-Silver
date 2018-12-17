@@ -122,16 +122,16 @@ label character_face_change:
         menu:
             "Change Hermione's face expression?"
             "-Mouth-":
-                call set_her_face("mouth")
+                call set_her_face(change="mouth")
                 jump summon_hermione_face_change
             "-Eyes-":
-                call set_her_face("eyes")
+                call set_her_face(change="eyes")
                 jump summon_hermione_face_change
             "-Cheeks-":
-                call set_her_face("cheeks")
+                call set_her_face(change="cheeks")
                 jump summon_hermione_face_change
             "-Tears-":
-                call set_her_face("tears")
+                call set_her_face(change="tears")
                 jump summon_hermione_face_change
             "-Keep it-":
                 pass
@@ -143,16 +143,16 @@ label character_face_change:
         menu:
             "Change Luna's face expression?"
             "-Mouth-":
-                call set_lun_face("mouth")
+                call set_lun_face(change="mouth")
                 jump summon_luna_face_change
             "-Eyes-":
-                call set_lun_face("eyes")
+                call set_lun_face(change="eyes")
                 jump summon_luna_face_change
             "-Eyebrows-":
-                call set_lun_face("eyebrows")
+                call set_lun_face(change="brows")
                 jump summon_luna_face_change
             "-Pupils-":
-                call set_lun_face("pupils")
+                call set_lun_face(change="pupils")
                 jump summon_luna_face_change
             "-Keep it-":
                 pass
@@ -164,16 +164,16 @@ label character_face_change:
         menu:
             "Change Astoria's face expression?"
             "-Mouth-":
-                call set_ast_face("mouth")
+                call set_ast_face(change="mouth")
                 jump summon_astoria_face_change
             "-Eyes-":
-                call set_ast_face("eyes")
+                call set_ast_face(change="eyes")
                 jump summon_astoria_face_change
             "-Eyebrows-":
-                call set_ast_face("eyebrows")
+                call set_ast_face(change="brows")
                 jump summon_astoria_face_change
             "-Pupils-":
-                call set_ast_face("pupils")
+                call set_ast_face(change="pupils")
                 jump summon_astoria_face_change
             "-Keep it-":
                 pass
@@ -185,16 +185,16 @@ label character_face_change:
         menu:
             "Change Susan's face expression?"
             "-Mouth-":
-                call set_sus_face("mouth")
+                call set_sus_face(change="mouth")
                 jump summon_susan_face_change
             "-Eyes-":
-                call set_sus_face("eyes")
+                call set_sus_face(change="eyes")
                 jump summon_susan_face_change
             "-Eyebrows-":
-                call set_sus_face("eyebrows")
+                call set_sus_face(change="brows")
                 jump summon_susan_face_change
             "-Pupils-":
-                call set_sus_face("pupils")
+                call set_sus_face(change="pupils")
                 jump summon_susan_face_change
             "-Keep it-":
                 pass
@@ -206,16 +206,16 @@ label character_face_change:
         menu:
             "Change Cho's face expression?"
             "-Mouth-":
-                call set_cho_face("mouth")
+                call set_cho_face(change="mouth")
                 jump summon_cho_face_change
             "-Eyes-":
-                call set_cho_face("eyes")
+                call set_cho_face(change="eyes")
                 jump summon_cho_face_change
             "-Eyebrows-":
-                call set_cho_face("eyebrows")
+                call set_cho_face(change="brows")
                 jump summon_cho_face_change
             "-Pupils-":
-                call set_cho_face("pupils")
+                call set_cho_face(change="pupils")
                 jump summon_cho_face_change
             "-Keep it-":
                 pass
@@ -233,16 +233,16 @@ label character_face_change:
         menu:
             "Change Tonks's face expression?"
             "-Mouth-":
-                call set_ton_face("mouth")
+                call set_ton_face(change="mouth")
                 jump summon_tonks_face_change
             "-Eyes-":
-                call set_ton_face("eyes")
+                call set_ton_face(change="eyes")
                 jump summon_tonks_face_change
             "-Eyebrows-":
-                call set_ton_face("eyebrows")
+                call set_ton_face(change="brows")
                 jump summon_tonks_face_change
             "-Pupils-":
-                call set_ton_face("pupils")
+                call set_ton_face(change="pupils")
                 jump summon_tonks_face_change
             "-Keep it-":
                 pass

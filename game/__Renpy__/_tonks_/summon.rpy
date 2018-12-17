@@ -75,6 +75,7 @@ label summon_tonks:
             $ tonks_busy = True
 
             $ astoria_tonks_event_in_progress = True
+            call set_ast_map_location("defense_classroom") #Update's Astoria's map location.
 
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu
@@ -127,7 +128,7 @@ label tonks_talk:
                 call ton_main("I could make some adjustments here...","base","base","raised","down")
                 call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")
                 call ton_main("There you go, [ton_genie_name], all done.","base","base","base","mid")
-                call unlock_clothing(text = "> A sexier variant of an outfit has been unlocked!", item = clothing_unlock)
+                call unlock_clothing(text = ">A sexier variant of an outfit has been unlocked!", item = clothing_unlock)
                 $ clothing_unlock.unlocked = True
                 $ clothing_unlock = None
                 g9 "Nice!"

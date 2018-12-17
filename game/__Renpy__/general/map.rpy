@@ -13,8 +13,8 @@ label map_init:
         $ sus_map_location = "room_h"
         $ cho_map_location = "training_grounds"
 
-        $ sna_map_location = "potions"
-        $ ton_map_location = "defense"
+        $ sna_map_location = "room_potions"
+        $ ton_map_location = "room_defense"
 
         $ first_time_7th = True
         $ pitch_open = True
@@ -99,7 +99,7 @@ screen map_screen:
         focus_mask True
         idle "interface/map/room_clothing_store_idle.png"
         hover "interface/map/room_clothing_store_hover.png"
-        action Return("clothes_store")
+        action Return("open_clothing_store")
 
     #Potions
     imagebutton:
@@ -107,21 +107,23 @@ screen map_screen:
         ypos 0
         focus_mask True
         idle "interface/map/room_potions_idle.png"
-        #hover "interface/map/room_potions_hover.png"
-        #action Return("potions_room")
+        if store_intro_done:
+            hover "interface/map/room_potions_hover.png"
+            action Return("potions_room")
 
     #Room of Requirement
-    imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
-        focus_mask True
-        if unlocked_7th:
-            idle "interface/map/room_ror_idle.png"
-            hover "interface/map/room_ror_hover.png"
-        else:
-            idle "interface/map/room_ror_empty_idle.png"
-            hover "interface/map/room_ror_empty_hover.png"
-        action Return("floor_7th")
+    if unlocked_7th:
+        imagebutton:
+            xpos 0+UI_xpos_offset
+            ypos 0
+            focus_mask True
+            if first_time_7th == False:
+                idle "interface/map/room_ror_idle.png"
+                hover "interface/map/room_ror_hover.png"
+            else:
+                idle "interface/map/room_ror_empty_idle.png"
+                hover "interface/map/room_ror_empty_hover.png"
+            action Return("floor_7th")
 
 
 
@@ -143,13 +145,7 @@ screen map_screen:
         hover "interface/map/room_north_courtyard_hover.png"
         action Return("map_forest")
 
-    # (X upper-left corner, Y upper-left corner, width, height).
     #hotspot (189, 218, 38, 20) clicked Return("map_attic") #attic
-    #hotspot (275, 449, 75, 15) clicked Return("gryffindor_dormitories") #dorms
-
-    #Map Events
-    #if her_whoring >= 21 and one_of_five in [1,2,3] and weather_gen < 5 and not daytime and not hermione_busy: #Increased change for event. Won't happen during the rain.
-    #    hotspot (227, 442, 55, 55) clicked Return("hermione_map_BJ")
 
 
 label set_her_map_location(location = ""):
@@ -197,16 +193,76 @@ label set_her_map_location(location = ""):
 
     return
 
+label set_lun_map_location(location = ""):
+    #lun_random_number (1-5), gets defined once during the day and once during the nigh.
+    if location != "":
+        if location == "greenhouse":
+            $ lun_map_location = "greenhouse"
+        elif location == "forest":
+            $ lun_map_location = "forest"
+        elif location in ["ravenclaw_room","raven_room","room_r"]:
+            $ lun_map_location = "room_r"
+
+    else: #Random
+        if lun_random_number in [1]:
+            $ lun_map_location = "greenhouse"
+        elif lun_random_number in [2,3]:
+            $ lun_map_location = "forest"
+        else: #Ravenclaw Room
+            $ lun_map_location = "room_r"
+
+    call update_character_map_locations
+
+    return
+
+label set_ast_map_location(location = ""):
+    #ast_random_number (1-5), gets defined once during the day and once during the nigh.
+    if location != "":
+        if location == "courtyard":
+            $ ast_map_location = "courtyard"
+        elif location in ["slytherin_room","slyth_room","room_s"]:
+            $ ast_map_location = "room_s"
+        elif location in ["defense_classroom"]:
+            $ ast_map_location = "defense"
+
+    else: #Random
+        if ast_random_number in [1,2]:
+            $ ast_map_location = "courtyard"
+        else: #Slytherin Room
+            $ ast_map_location = "room_s"
+
+    call update_character_map_locations
+
+    return
+
+label set_sus_map_location(location = ""):
+    #sus_random_number (1-5), gets defined once during the day and once during the nigh.
+    if location != "":
+        if location == "great_hall":
+            $ sus_map_location = "great_hall"
+        elif location in ["hufflepuff_room","huffl_room","room_h"]:
+            $ sus_map_location = "room_r"
+
+    else: #Random
+        if sus_random_number in [1,2]:
+            $ sus_map_location = "great_hall"
+        else: #Hufflepuff Room
+            $ sus_map_location = "room_h"
+
+    call update_character_map_locations
+
+    return
+
 label set_cho_map_location(location = ""):
     #cho_random_number (1-5), gets defined once during the day and once during the nigh.
     if location != "":
         if location == "training_grounds":
-            $ cho_map_location = "library"
+            $ cho_map_location = "training_grounds"
         elif location in ["ravenclaw_room","raven_room","room_r"]:
             $ cho_map_location = "room_r"
 
     else: #Random
-        if her_random_number in [1,2]: #Library
+        if cho_random_number in [1,2]:
             $ cho_map_location = "training_grounds"
         else: #Ravenclaw Room
             $ cho_map_location = "room_r"
@@ -223,8 +279,8 @@ label update_character_map_locations:
         $ her_map_xpos = 156
         $ her_map_ypos = 269
     if her_map_location == "room_s":
-        $ her_map_xpos = 255
-        $ her_map_ypos = 156
+        $ her_map_xpos = 279
+        $ her_map_ypos = 206
     if her_map_location == "great_hall":
         $ her_map_xpos = 27
         $ her_map_ypos = 370
@@ -235,13 +291,43 @@ label update_character_map_locations:
         $ her_map_xpos = 34
         $ her_map_ypos = 28
 
+    #Luna
+    if lun_map_location == "room_r":
+        $ lun_map_xpos = 416
+        $ lun_map_ypos = 335
+    if lun_map_location == "forest":
+        $ lun_map_xpos = 194
+        $ lun_map_ypos = 25
+    if lun_map_location == "greenhouse":
+        $ lun_map_xpos = 643
+        $ lun_map_ypos = 423
+
+    #Astoria
+    if ast_map_location == "room_s":
+        $ ast_map_xpos = 266
+        $ ast_map_ypos = 153
+    if ast_map_location == "courtyard":
+        $ ast_map_xpos = 507
+        $ ast_map_ypos = 333
+    if ast_map_location == "defense": #Event
+        $ ast_map_xpos = 414
+        $ ast_map_ypos = 241
+
+    #Susan
+    if sus_map_location == "room_h":
+        $ sus_map_xpos = 66
+        $ sus_map_ypos = 450
+    if sus_map_location == "great_hall":
+        $ sus_map_xpos = 90
+        $ sus_map_ypos = 322
+
     #Cho
     if cho_map_location == "room_r":
-        $ cho_map_xpos = 406
-        $ cho_map_ypos = 339
+        $ cho_map_xpos = 388
+        $ cho_map_ypos = 391
     if cho_map_location == "training_grounds":
-        $ cho_map_xpos = 691
-        $ cho_map_ypos = 65
+        $ cho_map_xpos = 690
+        $ cho_map_ypos = 68
 
     #Tonks
     $ ton_map_xpos = 427
@@ -268,6 +354,36 @@ screen map_screen_characters:
             idle "interface/map/name_hermione.png"
             hover "interface/map/name_hermione_hover.png"
             action Return("hermione")
+
+    #Luna
+    if luna_unlocked:
+        imagebutton:
+            xpos lun_map_xpos +UI_xpos_offset
+            ypos lun_map_ypos
+            focus_mask True
+            idle "interface/map/name_luna.png"
+            hover "interface/map/name_luna_hover.png"
+            action Return("luna")
+
+    #Astoria
+    if astoria_unlocked:
+        imagebutton:
+            xpos ast_map_xpos +UI_xpos_offset
+            ypos ast_map_ypos
+            focus_mask True
+            idle "interface/map/name_astoria.png"
+            hover "interface/map/name_astoria_hover.png"
+            action Return("astoria")
+
+    #Susan
+    if susan_unlocked:
+        imagebutton:
+            xpos sus_map_xpos +UI_xpos_offset
+            ypos sus_map_ypos
+            focus_mask True
+            idle "interface/map/name_susan.png"
+            hover "interface/map/name_susan_hover.png"
+            action Return("susan")
 
     #Cho
     if cho_unlocked:
@@ -316,36 +432,37 @@ label floor_7th:
             $ first_time_7th=False
             m"So... he was walking around here."
             call gen_chibi(action="hide")
-            call gen_walk(pos1="door", pos2="200")
+            call gen_walk("door","200",2.7)
             m"I can definitely sense a strong magical energy in this place..."
-            call gen_walk(pos1="200", pos2="door")
+            call gen_walk("200","door",2.7)
             m"Maybe if I...or I could..."
-            call gen_walk(pos1="door", pos2="100")
+            call gen_walk("door","120",2.7)
             g11"I could be in my office jacking off right now!!"
             show screen room_of_req_door
             pause 1
-            call gen_chibi(xpos="100", ypos="base")
+            call gen_chibi(xpos="120",ypos="base")
+            pause.8
             g9"Well... will you look at that"
             hide screen room_of_req_door
             show screen floor_7th_door
             call screen floor_7th_menu
         else:
-            call gen_chibi(xpos="100", ypos="base")
+            call gen_chibi(xpos="120", ypos="base")
             show screen floor_7th_door
             call hide_blkfade
             call screen floor_7th_menu
 
 label map_attic: #Label controlling what happens when you access the attic
-    if not attic_open:
+    if not sealed_scroll_ITEM.unlocked:
         ">You venture up to the attic but find that the door is locked."
         m "Damn, it's locked."
         m "Guess I'll have to ask Snape about a key."
-        jump return_office
-    if attic_open and tentacle_owned:
+        jump desk
+    if sealed_scroll_ITEM.unlocked and tentacle_owned:
         ">You venture up to the attic and find an angry tentacle plant."
         m "Better get out of here before the plant remembers that I'm the one that cut it."
         ">You quickly return to your office."
-        jump return_office
+        jump desk
     else: #Scene where genie has to take a sample of the devil's snare plant
         ">You find your way through the winding staircases to the attic door."
         m "Hmmmmm, it seems to be open."
@@ -356,15 +473,13 @@ label map_attic: #Label controlling what happens when you access the attic
         ">You cut a piece and leave."
         ">As you shut the door you hear the room erupt in a series of loud crashes."
         $ tentacle_owned = True
-        jump return_office
+        jump desk
 
 
 label map_forest: #Label controlling what happens when you go to the forest
     if daytime:
         m "I shouldn't be leaving the castle during the day. It's too risky..."
-        jump door
-    else:
-        pass
+        jump desk
 
     call outskirts_of_hogwarts
 
@@ -402,9 +517,8 @@ label map_forest: #Label controlling what happens when you go to the forest
 label map_lake: #Label controlling what happens when you go to the lake
     if daytime:
         m "I shouldn't be leaving the castle during the day. It's too risky..."
-        jump door
-    else:
-        pass
+        jump desk
+
     call outskirts_of_hogwarts
 
     m "Lets see what I can find out here..."

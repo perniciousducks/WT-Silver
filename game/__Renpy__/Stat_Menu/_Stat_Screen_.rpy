@@ -2,7 +2,7 @@
 
 label open_stat_menu:
 
-    call update_unlocked_character_list
+    call update_stat_character_list
     call update_hermione
     call update_luna
     call update_astoria
@@ -15,12 +15,32 @@ label open_stat_menu:
     jump stat_screen_character
 
 
+label update_stat_character_list:
+    $ stat_character_list = [["genie", 1]]
+    if snape_unlocked:
+        $ stat_character_list.append(["snape", 1])
+    if hermione_unlocked:
+        $ stat_character_list.append(["hermione", 1])
+    if luna_unlocked:
+        $ stat_character_list.append(["luna", 1])
+    if astoria_unlocked:
+        $ stat_character_list.append(["astoria", 1])
+    if susan_unlocked:
+        $ stat_character_list.append(["susan", 1])
+    if cho_unlocked:
+        $ stat_character_list.append(["cho", 1])
+    if tonks_unlocked:
+        $ stat_character_list.append(["tonks", 1])
+
+    return
+
+
 label stat_screen_character:
     call update_stats
     $ hide_transitions = True
 
     if charName == "hermione":
-        call set_her_face("random")
+        call set_her_face(change="all")
         call her_main(xpos="wardrobe",ypos="base")
         call screen stat_menu("hermione")
 
@@ -86,7 +106,7 @@ screen stat_menu(character=""):
 
     #Character Buttons.
 
-    use character_select_menu(unlocked_character_list, "-Character Select-")
+    use character_select_menu(stat_character_list, "-Character Select-")
 
     text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
 
@@ -172,8 +192,13 @@ screen genie_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(100/10), "-Lust-", "", 100)
-                use stat_bar(int(0/10), "-Sanity-", "", 0)
+                if not map_unlocked:
+                    use stat_bar(int(100/10), "-Lust-", "", 100) #Joke stat
+                    use stat_bar(int(0/10), "-Sanity-", "", 0) #Joke stat
+                else:
+                    use stat_bar(int(imagination +bdsm_imagination/1), "-Imagination-", "", imagination +bdsm_imagination) #Max 10
+                    use stat_bar(int(speed_writing/0.25), "-Speed Writing-", "", speed_writing) #Max 4
+                    use stat_bar(int(speed_reading/0.25), "-Speed Reading-", "", speed_reading) #Max 4
 
                 use text_stat("Bird fed:")
                 use text_stat("- ", " times -", phoenix_fed_counter)
@@ -304,9 +329,9 @@ screen astoria_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(ast_spells[0]/0.4), "-Spells-", "", ast_spells[0]) #Max is 4
+                use stat_bar(int(ag_imperio_susan_OBJ.points/0.3), "-Spells-", "", ag_imperio_susan_OBJ.points) #Max is 4
                 use stat_bar(int(ast_training_counter/0.9), "-Training-", "", ast_training_counter) #Max is 9
-                use stat_bar(int(ast_affection/0.3), "-Affection-", "", ast_affection) #Max is 4
+                use stat_bar(int(ast_affection/10), "-Affection-", "", ast_affection) #Max is 100
 
         vbar value YScrollValue("vp")
 
@@ -382,7 +407,7 @@ label update_stats:
     #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
 
     #Snape
-    $ sna_friendship_word_list = ["Unknown", "College", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
+    $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
     $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]

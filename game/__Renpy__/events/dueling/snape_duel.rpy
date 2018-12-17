@@ -285,23 +285,23 @@ label snapes_turn:
 
 
     else:
-        $ snape_blocking = False
-        #$ snape_decides = 3
-        $ snape_decides = renpy.random.randint(1, 3)
-
-        if snape_decides == 1: #ATTACK
+        if snape_blocking:
+            $ snape_blocking = False
             if blocking:
                 $ blocking = False
                 jump snape_attack_guard
             else:
                 jump snape_attack
-        elif snape_decides == 2: #BLOCK
+
+        $ snape_decides = renpy.random.randint(1, 2)
+
+        if snape_decides in [1]: #BLOCK
             $ snape_blocking = True
             $ duel_OBJ.snape = "defend"
             pause 1
             jump duel_main
 
-        elif snape_decides == 3:  #MAGIC. CASTS THE PICTOGRAM.
+        elif snape_decides in [2]:  #MAGIC. CASTS THE PICTOGRAM.
             $ duel_OBJ.snape = "hand"
             show image "images/dueling/snape/snape_casting_01.png" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
             $ duel_OBJ.show("snape_summon",690,250,4)
@@ -447,23 +447,25 @@ label snape_lost:
 label genie_lost:
     play music "music/Final Fantasy 7 Game Over Theme.mp3" fadein 1 fadeout 1
 
+    hide screen duel
+    hide screen hp_bar
+    $ end_u_1_pic =  "images/dueling/snape/game_over.jpg"
     show screen end_u_1
-    $ end_u_1_pic =  "01_hp/20_intro/game_over.jpg"
     with flashbulb
     with hpunch
-    show screen ctc
-    pause
-    hide screen ctc
+    call ctc
     menu:
         "-Try again-":
             stop music
             $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
             play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
             hide screen end_u_1
-            if rum_times == 2:
+            if rum_times == 1:
                 $ potions = 1
-            elif rum_times == 3:
+            if rum_times == 2:
                 $ potions = 2
+            elif rum_times == 3:
+                $ potions = 3
             else:
                 pass
             jump duel
@@ -501,7 +503,7 @@ init -1:
         pause.1
 
     image duel_table:
-        "images/rooms/main_room/09_table.png"
+        "images/rooms/main_room/desk_with_shadow.png"
 
     ### GENIE ###
     image ch_gen duel_01:

@@ -6,8 +6,8 @@ label update_sus_uniform:
     hide screen susan_main
 
     #Hair
-    $ susan_hair         = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_base.png"
-    $ susan_hair_shadow  = "characters/susan/body/hair/hair_"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_top.png"
+    $ susan_hair         = "characters/susan/body/hair/"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_base.png"
+    $ susan_hair_shadow  = "characters/susan/body/hair/"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_top.png"
 
     #Top
     $ susan_top            = "characters/susan/clothes/tops/base/"+str(sus_top)+".png"
@@ -229,15 +229,6 @@ label set_sus_robe(robe=""):
 ## Equip Outfit
 label set_sus_outfit(outfit):
     hide screen susan_main
-    with d3
-    call sus_outfit(outfit)
-    pause .5
-    show screen susan_main
-    with d5
-    return
-
-label sus_outfit(outfit):
-    hide screen susan_main
 
     if outfit == None:
         $ sus_request_wear_outfit = False
@@ -252,7 +243,6 @@ label sus_outfit(outfit):
 
         if susan_outfit_GLBL.hair_layer != "":
             $ sus_hair_style = susan_outfit_GLBL.getHairLayers()
-            $ sus_hair_color = 1
         if susan_outfit_GLBL.top_layers != []:
             $ sus_request_wear_hat = True
             $ sus_hat = susan_outfit_GLBL.getTopLayers()

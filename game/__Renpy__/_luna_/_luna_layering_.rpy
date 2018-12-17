@@ -9,14 +9,12 @@ screen luna_main:
     add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the base body
 
     #Arms
-    if luna_wear_top and lun_top in luna_arms_up_list: #Temporary. Needs a call label similar to "update_her_body"
+    if (luna_wear_top and lun_top in luna_arms_up_list) or (luna_wear_outfit and luna_outfit_GLBL.id in luna_arms_up_list): #Temporary. Needs a call label similar to "update_her_body"
         $ luna_l_arm = "2"
         $ luna_r_arm = "2"
-    elif luna_wear_top and lun_top not in luna_arms_up_list:
-        $ luna_l_arm = "1"
-        $ luna_r_arm = "1"
     else:
         pass
+
     add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the left arm
     add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the right arm
 
@@ -84,13 +82,21 @@ screen luna_uniform:
 
     ### CLOTHES
     if luna_wear_bra and not luna_wear_top:
-        add luna_bra xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the bra
+        add luna_bra xpos luna_xpos ypos luna_ypos alpha lun_bra_transp xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the bra
     if luna_wear_panties:
-        add luna_panties xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the panties
+        add luna_panties xpos luna_xpos ypos luna_ypos alpha lun_panties_transp xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the panties
+
+    #One-Piece
+    if luna_wear_onepiece:
+        if luna_wear_top or luna_wear_bottom:
+            pass
+        else:
+            add luna_onepiece xpos luna_xpos ypos luna_ypos alpha lun_onepiece_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
+
     if luna_wear_bottom:
-        add luna_bottom xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the skirt
+        add luna_bottom xpos luna_xpos ypos luna_ypos alpha lun_bottom_transp xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the skirt
     if luna_wear_top:
-        add luna_top xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the top
+        add luna_top xpos luna_xpos ypos luna_ypos alpha lun_top_transp xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the top
 
     ### ZORDER
     zorder luna_zorder
@@ -100,7 +106,7 @@ screen luna_outfit:
     tag luna_main
 
     for i in luna_outfit_GLBL.getOutfitLayers():
-        add "characters/luna/clothes/custom/"+i xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
+        add "characters/luna/clothes/custom/"+i xpos luna_xpos ypos luna_ypos alpha lun_outfit_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
 
     ### ZORDER
     zorder luna_zorder

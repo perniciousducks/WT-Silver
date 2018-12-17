@@ -4,8 +4,8 @@ label update_lun_uniform:
     hide screen luna_main
 
     #Hair
-    $ luna_hair         = "characters/luna/body/hair/hair_"+str(lun_hair_style)+"_"+str(lun_hair_color)+"_base.png"
-    $ luna_hair_shadow  = "characters/luna/body/hair/hair_"+str(lun_hair_style)+"_"+str(lun_hair_color)+"_top.png"
+    $ luna_hair         = "characters/luna/body/hair/"+str(lun_hair_style)+"_"+str(lun_hair_color)+"_base.png"
+    $ luna_hair_shadow  = "characters/luna/body/hair/"+str(lun_hair_style)+"_"+str(lun_hair_color)+"_top.png"
 
     #Top
     $ luna_top            = "characters/luna/clothes/tops/base/"+str(lun_top)+".png"
@@ -25,7 +25,7 @@ label update_lun_uniform:
     $ luna_robe           = "characters/luna/clothes/robe/"+str(lun_robe)+".png"
 
     #Accessories
-    $ luna_hat            = "characters/luna/accessories/hats/hair_A/"+str(lun_hat)+".png" #/hair_"+str(lun_hair_style)+"/
+    $ luna_hat            = "characters/luna/accessories/hats/hair_playful/"+str(lun_hat)+".png" #/hair_"+str(lun_hair_style)+"/
     $ luna_glasses        = "characters/luna/accessories/glasses/base/"+str(lun_glasses)+".png"
     $ luna_ears           = "characters/luna/accessories/ears/"+str(lun_ears)+".png"
 
@@ -88,8 +88,10 @@ label set_lun_bottom(bottom="", color=""):
             $ color = "base"
         $ lun_request_wear_bottom = True
         $ luna_wear_bottom = True
-        $ lun_bottom = bottom
-        $ lun_bottom_color = color
+        if bottom != "":
+            $ lun_bottom = bottom
+        if color != "":
+            $ lun_bottom_color = color
 
     call update_lun_uniform
 
@@ -248,15 +250,6 @@ label set_lun_ears(ears=""):
 ## Equip Outfit
 label set_lun_outfit(outfit):
     hide screen luna_main
-    with d3
-    call luna_outfit(outfit)
-    pause .5
-    show screen luna_main
-    with d5
-    return
-
-label luna_outfit(outfit):
-    hide screen luna_main
 
     if outfit == None:
         $ lun_request_wear_outfit = False
@@ -271,7 +264,6 @@ label luna_outfit(outfit):
 
         if luna_outfit_GLBL.hair_layer != "":
             $ lun_hair_style = luna_outfit_GLBL.getHairLayers()
-            $ lun_hair_color = 1
         if luna_outfit_GLBL.top_layers != []:
             $ lun_request_wear_hat = True
             $ lun_hat = luna_outfit_GLBL.getTopLayers()
@@ -281,6 +273,39 @@ label luna_outfit(outfit):
 
     return
 
+
+#Transparency
+label set_lun_transparency(top=None, bottom=None, bra=None, onepiece=None, panties=None, garterbelt=None, gloves=None, stockings=None, robe=None, outfit=None):
+    pause.5
+    hide screen luna_main
+
+    if top != None:
+        $ lun_top_transp = top
+    if bottom != None:
+        $ lun_bottom_transp    = bottom
+
+    if bra != None:
+        $ lun_bra_transp       = bra
+    if onepiece != None:
+        $ lun_onepiece_transp  = onepiece
+    if panties != None:
+        $ lun_panties_transp   = panties
+    if garterbelt != None:
+        $ lun_garter_transp    = garterbelt
+
+    if gloves != None:
+        $ lun_gloves_transp    = gloves
+    if stockings != None:
+        $ lun_stockings_transp = stockings
+    if robe != None:
+        $ lun_robe_transp      = robe
+
+    if outfit != None:
+        $ lun_outfit_transp    = outfit
+
+    #call update_cho_body #Only need this when there is boobies clipping through!
+
+    return
 
 
 

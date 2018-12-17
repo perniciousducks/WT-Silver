@@ -1,6 +1,6 @@
 
 
-label cho_menu:
+label summon_cho:
 
     call play_sound("door")
 
@@ -19,7 +19,7 @@ label cho_menu:
         #"-Talk-":
         #"-Training-": #For Quidditch events.
         "-Personal Favours-":
-            if cho_mad <= 0:
+            if cho_mood <= 0:
                 label cho_favor_menu:
                 menu:
                     "-Admire her body-":
@@ -39,7 +39,7 @@ label cho_menu:
 
         #"-Public Favours-":
         #    "To be done."
-        #    jump cho_menu
+        #    jump summon_cho
 
         "{color=#858585}-Hidden-{/color}" if not cho_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")

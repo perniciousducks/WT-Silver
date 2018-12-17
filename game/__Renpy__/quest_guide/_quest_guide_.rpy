@@ -1,13 +1,8 @@
 
 
 screen quest_completed:
-
     zorder 8
 
-    imagemap:
-        cache False
-        ground "images/store/00.png"
-        hover "images/store/00.png"
 
 screen guide: #Not in use anymore!
 

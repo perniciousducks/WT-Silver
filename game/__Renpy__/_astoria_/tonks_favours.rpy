@@ -6,21 +6,23 @@ label astoria_tonks_event: #send astoria to go see tonks
     $ astoria_tonks_event_in_progress = False
     $ ton_astoria_date_counter += 1 #For Stats
 
-    if astoria_tonks_3_completed and not astoria_wardrobe_unlocked: #Unlocks Astoria's Wardrobe.
-        jump astoria_tonks_wardrobe_unlock
+    if ast_affection < 100:
+        $ ast_affection += 1
 
-    if ast_affection <= 1 and not astoria_tonks_1_completed:
+    if ag_imperio_susan_OBJ.level == 0 and not astoria_tonks_intro_completed:
+        jump astoria_tonks_0
+    elif ag_imperio_susan_OBJ.level == 1 and not astoria_tonks_1_completed:
         jump astoria_tonks_1
-    elif ast_affection <= 2 and not astoria_tonks_2_completed:
+    elif ag_imperio_susan_OBJ.level == 2 and not astoria_tonks_2_completed:
         jump astoria_tonks_2
-    elif ast_affection <= 3 and not astoria_tonks_3_completed:
+    elif ag_imperio_susan_OBJ.level == 3 and not astoria_tonks_3_completed:
         jump astoria_tonks_3
     else: #Repeatable events.
         jump astoria_tonks_random
 
 
 ### TONKS EVENTS ###
-label astoria_tonks_1: #First time astoria sent to tonks.
+label astoria_tonks_0: #First time astoria sent to tonks.
     call play_music("fun")
     call play_sound("door")
     call ast_main("","smile","base","base","mid",xpos="right",ypos="base")
@@ -63,12 +65,12 @@ label astoria_tonks_1: #First time astoria sent to tonks.
         m "Why don't you come over here then and we can start reading over the first one."
         call ast_main("alright...","grin","base","base","mid")
 
-    $ astoria_tonks_1_completed = True
+    $ astoria_tonks_intro_completed = True
 
     jump astoria_requests
 
 
-label astoria_tonks_2:
+label astoria_tonks_1:
     call play_music("fun")
     call play_sound("door")
     call ast_main("","clench","angry","angry","mid",xpos="right",ypos="base")
@@ -120,12 +122,12 @@ label astoria_tonks_2:
     m "We can start reading one now if you want."
     call ast_main("Yay!","grin","happyCl","base","mid")
 
-    $ astoria_tonks_2_completed = True
+    $ astoria_tonks_1_completed = True
 
     jump astoria_requests
 
 
-label astoria_tonks_3:
+label astoria_tonks_2:
     call play_music("fun")
     call play_sound("door")
     call ast_main("","smile","base","base","mid",xpos="right",ypos="base")
@@ -155,12 +157,12 @@ label astoria_tonks_3:
     call ast_main("Well if you wanna get to that we have to learn the new spell first, [ast_genie_name]!","open","base","base","L")
     call ast_main("Speaking of which...","worried","base","base","R")
 
-    $ astoria_tonks_3_completed = True
+    $ astoria_tonks_2_completed = True
 
     jump astoria_requests
 
 
-label astoria_tonks_wardrobe_unlock:
+label astoria_tonks_3:
     #call play_music("fun")
     call play_sound("door")
     call ast_main("","upset","closed","base","mid",xpos="right",ypos="base")
@@ -188,6 +190,8 @@ label astoria_tonks_wardrobe_unlock:
     "Developer note:" ">Susan's wardrobe as well as Astoria's clothings will unlock with future events instead in later patches."
 
     "Developer note:" ">This marks the end of the current Astoria and Susan content! We hope you liked it!"
+
+    $ astoria_tonks_3_completed = True
 
     $ astoria_wardrobe_unlocked = True
     $ susan_wardrobe_unlocked = True

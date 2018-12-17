@@ -153,7 +153,7 @@ label equip_body_accessory:
 ### Equip Hermione's Body Accessory ###
 label equip_her_body_accessory:
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     if body_accessory_choice not in hermione_body_accs_list:

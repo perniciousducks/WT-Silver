@@ -6,8 +6,12 @@ label update_ast_uniform:
     hide screen astoria_main
 
     #Hair
-    $ astoria_hair         = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_base.png"
-    $ astoria_hair_shadow  = "characters/astoria/body/hair/hair_"+str(ast_hair_style)+"_"+str(ast_hair_color)+"_top.png"
+    if ast_hair_style in ["stephanie"]:
+        $ astoria_hair         = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_base.png"
+        $ astoria_hair_shadow  = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_top.png"
+    else:
+        $ astoria_hair         = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_" +str(ast_hair_color)+ "_base.png"
+        $ astoria_hair_shadow  = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_" +str(ast_hair_color)+ "_top.png"
 
     #Top
     $ astoria_top            = "characters/astoria/clothes/tops/base/"+str(ast_top)+".png"
@@ -200,15 +204,6 @@ label set_ast_robe(robe=""):
 ## Equip Outfit
 label set_ast_outfit(outfit):
     hide screen astoria_main
-    with d3
-    call ast_outfit(outfit)
-    pause .5
-    show screen astoria_main
-    with d5
-    return
-
-label ast_outfit(outfit):
-    hide screen astoria_main
 
     if outfit == None:
         $ ast_request_wear_outfit = False
@@ -223,7 +218,6 @@ label ast_outfit(outfit):
 
         if astoria_outfit_GLBL.hair_layer != "":
             $ ast_hair_style = astoria_outfit_GLBL.getHairLayers()
-            $ ast_hair_color = 1
         if astoria_outfit_GLBL.top_layers != []:
             $ ast_request_wear_hat = True
             $ ast_hat = astoria_outfit_GLBL.getTopLayers()

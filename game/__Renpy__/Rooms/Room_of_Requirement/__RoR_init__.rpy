@@ -9,7 +9,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_WPIIA'):
         $mr_ev_WPIIA = mirror_stories(
-                title = "Whose points is it anyway?",
+                name = "Whose points is it anyway?",
+                unlockable = True,
                 story_description = "Parody of the game show of \"whose points is it anyway?\"",
                 start_label = "whose_points",
                 authors = ["TeamSilver"],
@@ -20,7 +21,7 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_GHE'):
         $mr_ev_GHE = mirror_stories(
-                title = "The genie, the desk and the door",
+                name = "The genie, the desk and the door",
                 story_description = "The genie tries to figure out how people know when he calls for them.",
                 start_label = "genie_house_elf",
                 authors = ["TeamSilver"],
@@ -31,7 +32,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_ABTTD'):
         $mr_ev_ABTTD = mirror_stories(
-                title = "A bad time to disrobe",
+                name = "A bad time to disrobe",
+                unlockable = True,
                 story_description = "The genie gets a hold of a invisibility cloak and puts it to good use.",
                 start_label = "a_bad_time_to_disrobe",
                 authors = ["TeamSilver"],
@@ -42,7 +44,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_ASOC'):
         $mr_ev_ASOC = mirror_stories(
-                title = "A spaced out conversation",
+                name = "A spaced out conversation",
+                unlockable = True,
                 story_description = "The genie and Snape gets real for a little bit.",
                 start_label = "a_spaced_out_conversation",
                 authors = ["Ignatz"],
@@ -53,7 +56,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_ABAS'):
         $mr_ev_ABAS = mirror_stories(
-                title = "A Booty at sea",
+                name = "A Booty at sea",
+                unlockable = True,
                 story_description = "The genie imagine himself to be a great pirate and roleplays his most intimate times with Hermione.",
                 start_label = "anal_parit_event",
                 authors = ["TeamSilver"],
@@ -61,39 +65,33 @@ label __init_variables:
                 ach_desc = "Finish the \"Time for Anal\" Private favours.",
                 content_characters = ["hermione"]
             )
-      
-    if not hasattr(renpy.store,'mr_ev_FLHS'):
-        $mr_ev_FLHS = mirror_stories(
-                title = "Luna and Hermione Deleted Scene",
-                story_description = "A deleted scene with Luna and Hermione",
-                start_label = "forgotten_lets_have_sex",
+
+    if not hasattr(renpy.store,'mr_ev_ADR'):
+        $mr_ev_ADR = mirror_stories(
+                name = "A Dark Room",
+                story_description = "A minigame inspired by the textbased game \"A Dark Room\".",
+                start_label = "start_dark_room_game",
                 authors = ["TeamSilver"],
-                categories= [],
-                ach_desc = "Need to have seen all the scene of lets have sex",
-                content_characters = ["hermione", "luna"]
+                categories= ["minigame"],
+                ach_desc = "",
+                content_characters = []
             )
-            
+
     $ mr_evs_list = []
+    $ mr_evs_list.append(mr_ev_ADR)
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
     $ mr_evs_list.append(mr_ev_ABTTD)
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
-    $ mr_evs_list.append(mr_ev_FLHS)
-    
-    
-    $currentpage = 0
+
+    $current_page = 0
 
     return
 
 init python:
 
-    class mirror_stories(list_menu_item_class):
-        unlocked = False
-        start_label = ""
-        authors = []
-        title = ""
-        unlocked = False
+    class mirror_stories(item_class):
         start_label = ""
         authors = []
         categories = []
@@ -104,8 +102,8 @@ init python:
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
 
-        def get_title(self):
-            ret_str = "{size=12}\""+self.title+"\" by "
+        def get_name(self):
+            ret_str = "{size=12}\""+self.name+"\" by "
             for s in self.authors:
                 ret_str += s +", "
 
@@ -167,18 +165,18 @@ init python:
                 else:
                     unlocked = False
             self.unlocked = unlocked and self.unlock_check()
+            if self.unlocked:
+                self.unlockable = False #Makes you able to click on the item.
             return self.unlocked
 
-        #Make a elif with the title and the cretevia to unlock
+        #Make a elif with the name and the criteria to unlock
         #And if you dont make any then it will all ways be true
         def unlock_check(self):
-            if self.title == "A bad time to disrobe":
+            if self.name == "A bad time to disrobe":
                 return hg_pf_ShowThemToMe_OBJ.points > 0
-            elif self.title == "A spaced out conversation":
-                return snape_events > 6
-            elif self.title == "A Booty at sea":
-                return hg_pf_TimeForAnal_OBJ.points > 2 and hg_pirate_OBJ.unlocked
-            elif self.title == "Forgotten Lets have sex":
-                return hg_pf_LetsHaveSex_OBJ.points > 2
+            elif self.name == "A spaced out conversation":
+                return sna_friendship > 60
+            elif self.name == "A Booty at sea":
+                return hg_pf_TimeForAnal_OBJ.points > 2
             else:
                 return True

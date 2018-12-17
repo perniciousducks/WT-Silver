@@ -6,8 +6,8 @@ label update_ton_uniform:
     hide screen tonks_main
 
     #Hair
-    $ tonks_hair         = "characters/tonks/body/hair/hair_"+str(ton_hair_style)+"_"+str(ton_hair_color)+".png"
-    $ tonks_hair_shadow  = "characters/tonks/body/hair/hair_"+str(ton_hair_style)+"_"+str(ton_hair_color)+".png"
+    $ tonks_hair         = "characters/tonks/body/hair/"+str(ton_hair_style)+"_"+str(ton_hair_color)+".png"
+    $ tonks_hair_shadow  = "characters/tonks/body/hair/_hair_shadow_.png"
     $ tonks_pubic_hair   = "characters/tonks/body/hair/pubes_"+str(ton_pubic_hair)+"_"+str(ton_hair_color)+".png"
 
     #Top
@@ -30,6 +30,11 @@ label update_ton_uniform:
 
     #Accessories
     $ tonks_hat            = "characters/tonks/accessories/hats/hair_"+str(ton_hair_style)+"/"+str(ton_hat)+".png"
+
+    #Miscellaneous
+    $ tonks_buttplug            = "characters/tonks/accessories/plugs/"+str(ton_buttplug)+".png"
+    $ tonks_mask                = "characters/tonks/accessories/hats/hair_"+str(ton_hair_style)+"/"+str(ton_mask)+".png"
+    $ tonks_gag                 = "characters/tonks/face/mouth/"+str(ton_gag)+".png"
 
     #Piercings
     $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/"+str(ton_ear_piercing_color)+"/"+str(ton_ear_piercing)+".png"
@@ -269,6 +274,34 @@ label set_ton_robe(robe=""):
 
     return
 
+#Mask equip.
+label set_ton_mask(mask=""):
+    hide screen tonks_main
+    if tonks_wear_mask and ton_mask == mask:
+        $ ton_request_wear_mask = False
+        $ tonks_wear_mask = False
+    else:
+        $ ton_request_wear_mask = True
+        $ tonks_wear_mask = True
+        $ ton_mask = mask
+    call update_ton_uniform
+
+    return
+
+#Gag equip.
+label set_ton_gag(gag=""):
+    hide screen tonks_main
+    if gag == "None" or gag == "" or gag == "remove":
+        $ ton_request_wear_gag = False
+        $ tonks_wear_gag = False
+    else:
+        $ ton_request_wear_gag = True
+        $ tonks_wear_gag = True
+        $ ton_gag = gag
+    call update_ton_uniform
+
+    return
+
 #Piercings equip.
 label set_ton_piercing(piercing="", color=""):
     hide screen tonks_main
@@ -307,15 +340,6 @@ label set_ton_piercing(piercing="", color=""):
 ## Equip Outfit
 label set_ton_outfit(outfit):
     hide screen tonks_main
-    with d3
-    call ton_outfit(outfit)
-    pause .5
-    show screen tonks_main
-    with d5
-    return
-
-label ton_outfit(outfit):
-    hide screen tonks_main
 
     if outfit == None:
         $ ton_request_wear_outfit = False
@@ -330,7 +354,6 @@ label ton_outfit(outfit):
 
         if tonks_outfit_GLBL.hair_layer != "":
             $ ton_hair_style = tonks_outfit_GLBL.getHairLayers()
-            $ ton_hair_color = 1
         if tonks_outfit_GLBL.top_layers != []:
             $ ton_request_wear_hat = True
             $ ton_hat = tonks_outfit_GLBL.getTopLayers()
@@ -339,6 +362,41 @@ label ton_outfit(outfit):
     call update_ton_uniform
 
     return
+
+
+
+label set_ton_transparency(top=None, bottom=None, bra=None, onepiece=None, panties=None, garterbelt=None, gloves=None, stockings=None, robe=None, outfit=None):
+    pause.5
+    hide screen tonks_main
+
+    if top != None:
+        $ ton_top_transp = top
+    if bottom != None:
+        $ ton_bottom_transp    = bottom
+
+    if bra != None:
+        $ ton_bra_transp       = bra
+    if onepiece != None:
+        $ ton_onepiece_transp  = onepiece
+    if panties != None:
+        $ ton_panties_transp   = panties
+    if garterbelt != None:
+        $ ton_garter_transp    = garterbelt
+
+    if gloves != None:
+        $ ton_gloves_transp    = gloves
+    if stockings != None:
+        $ ton_stockings_transp = stockings
+    if robe != None:
+        $ ton_robe_transp      = robe
+
+    if outfit != None:
+        $ ton_outfit_transp    = outfit
+
+    call update_ton_body
+
+    return
+
 
 
 label set_tonks_action(action=""):
@@ -459,5 +517,20 @@ label load_tonks_clothing_saves:
         $ tonks_wear_tattoos      = True
     else:
         $ tonks_wear_tattoos      = False
+
+    if ton_request_wear_mask:
+        $ tonks_wear_mask         = True
+    else:
+        $ tonks_wear_mask         = False
+
+    if ton_request_wear_gag:
+        $ tonks_wear_gag          = True
+    else:
+        $ tonks_wear_gag          = False
+
+    if ton_request_wear_outfit:
+        $ tonks_wear_outfit       = True
+    else:
+        $ tonks_wear_outfit       = False
 
     return

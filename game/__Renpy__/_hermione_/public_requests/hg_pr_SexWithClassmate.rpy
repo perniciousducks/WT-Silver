@@ -16,7 +16,7 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 

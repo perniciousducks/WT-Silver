@@ -14,7 +14,7 @@ label hg_pf_TheGamble:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump silver_requests
+            jump hermione_requests_menu
 
     call play_music("chipper_doodle")
     show screen hermione_main
@@ -231,7 +231,7 @@ label hg_pf_TheGamble_complete:
         show screen fireplace
         show screen desk
 
-        hide screen snape_01 #Snape stands still.
+        hide snape_stand #Snape stands still.
         hide screen bld1
         hide screen snape_main
         with d3

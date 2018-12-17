@@ -16,25 +16,26 @@ label your_whore:
     #Setting up Hermione's outfit.
 
     #Hermione Hair
-    $ h_hair_style = "B"
-    $ h_hair_color = 1
-    call update_her_hair
+    call set_her_hair(style="updo", color="brown")
 
     #Hermione Clothes
-    $ transparency             = 1 #Disabled
+    call reset_her_transparency
+
     $ h_neckwear               = "blank"
     $ hermione_body_accs_list  = []
     $ h_gloves                 = "blank"
     $ h_stockings              = "blank"
-    $ hermione_wear_robe       = False
     $ h_request_wear_robe      = False
+    $ h_request_wear_mask      = False
+    $ h_request_wear_gag       = False
 
     $ h_ears                   = "blank"
     $ hermione_makeup_list     = []
     $ h_glasses                = "blank"
     $ h_hat                    = "tiara"
-    $ hermione_wear_hat        = True
     $ h_request_wear_hat       = True
+
+    call update_her_uniform
 
     call set_her_outfit(hg_dress_yule_ball_OBJ) #Updates uniform.
 
@@ -3223,7 +3224,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
 
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False
-    $ h_hair_style = "A"
+    call set_her_hair(style="curly", color="brown")
 
     call set_her_outfit(None) #Updates uniform.
     call reset_hermione
@@ -3427,10 +3428,6 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
 
     # SILVER Items
 
-    # gift item invintory
-    $ persistent.gift_item_inv = []
-    $ persistent.gift_item_inv = gift_item_inv
-
     # outfit invintory
     #$ persistent.outfit_inventory = []
     #$ persistent.outfit_inventory = outfit_inventory
@@ -3456,10 +3453,37 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     if gave_miniskirt: #Turns True when Hermione has the miniskirt.
         $ persistent.haveskirt = True # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
 
+    #Persistant Items
+    #python:
+    #    for i in persistent.candy_gift_list:
+    #        persistent.candy_gift_list[i].number += candy_gift_list[i].number
+    #    for i in persistent.drink_gift_list:
+    #        persistent.drink_gift_list[i].number += drink_gift_list[i].number
+    #    for i in persistent.mag_gift_list:
+    #        persistent.mag_gift_list[i].number += mag_gift_list[i].number
+    #    for i in persistent.toy_gift_list:
+    #        persistent.toy_gift_list[i].number += toy_gift_list[i].number
 
+    #    for i in accs_list:
+    #        if i.unlocked:
+    #            persistent.accs_list[i].unlocked = True
+    #    for i in misc_list:
+    #        if i.unlocked:
+    #            persistent.misc_list[i].unlocked = True
+    #    for i in dye_list:
+    #        if i.unlocked:
+    #            persistent.dye_list[i].unlocked = True
 
-    ### SACRED SCROLLS ###
-    $ persistent.ss_ = sscroll_
+    #    for i in scroll_list_A:
+    #        if i.unlocked:
+    #            persistent.scroll_list_A[i].unlocked = True
+    #    for i in scroll_list_B:
+    #        if i.unlocked:
+    #            persistent.scroll_list_B[i].unlocked = True
+    #    for i in scroll_list_C:
+    #        if i.unlocked:
+    #            persistent.scroll_list_C[i].unlocked = True
+
 
 
     $ renpy.full_restart()

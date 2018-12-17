@@ -4,29 +4,31 @@
 
 #List Menu #Customizable
 screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=""):
-    $ item_shown=4
+    $ items_shown=4
     zorder 5
 
+    #Close Button.
     use close_button
 
-
+    #Up Button.
     imagebutton:
         xpos 825
         ypos 240
         idle "interface/general/"+interface_color+"/button_arrow_up.png"
-        if not currentpage <= 0:
+        if not current_page <= 0:
             hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
             action Return("dec")
 
-
+    #Down Button.
     imagebutton:
         xpos 825
         ypos 292
         idle "interface/general/"+interface_color+"/button_arrow_down.png"
-        if currentpage < math.ceil((len(menu_items)-1)/item_shown):
+        if current_page < math.ceil((len(menu_items)-1)/items_shown):
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
 
+    #Main Store Window.
     imagemap:
         xsize 638
         ysize 544
@@ -67,11 +69,11 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
             ysize 41
             text title xalign 0.5 yalign 0.5 size 16 bold 0.2
 
-        for i in range(currentpage*item_shown, (currentpage*item_shown)+item_shown):
+        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
-                if menu_items[i].unlocked:
-                    hotspot (12, 86+90*(i-(currentpage*item_shown)), 540, 90) clicked Return(menu_items[i])
-                use list_menu_item(menu_items[i], 77+90*(i-(currentpage*item_shown)))
+                if menu_items[i].unlockable == False: #Unlockables are shown but aren't buyable/clickable
+                    hotspot (12, 86+90*(i-(current_page*items_shown)), 540, 90) clicked Return(menu_items[i])
+                use list_menu_item(menu_items[i], 77+90*(i-(current_page*items_shown)))
 
 
 screen list_menu_item(menu_item, ypos=0):
@@ -79,7 +81,7 @@ screen list_menu_item(menu_item, ypos=0):
         background #00000000
         xpos 12
         ypos ypos
-        xsize 535
+        xsize 530
         ysize 100
 
         $ image_zoom = get_zoom(menu_item.get_image(), 82, 81)
@@ -92,20 +94,119 @@ screen list_menu_item(menu_item, ypos=0):
             add menu_item.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
 
         vbox:
-            xpos 94
-            ypos 3
+            xpos 100
+            ypos 5
             xsize 440
             ysize 22
-            text menu_item.get_title() yalign 0.5
+            text menu_item.get_name() size 16 yalign 0.5
 
         vbox:
-            xpos 94
-            ypos 30
+            xpos 100
+            ypos 35
             xsize 430
             ysize 55
-            text menu_item.get_description()
+            text menu_item.get_description() size 12
 
         text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
+
+
+
+#Clothing Menu #Customizable
+screen clothing_menu(menu_items, character, preview):
+    $ items_shown=3
+    zorder 5
+
+    #Close Button.
+    use close_button
+
+    #Up Button.
+    imagebutton:
+        xpos 725
+        ypos 240
+        idle "interface/general/"+interface_color+"/button_arrow_up.png"
+        if not current_page <= 0:
+            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+            action Return("dec")
+
+    #Down Button.
+    imagebutton:
+        xpos 725
+        ypos 292
+        idle "interface/general/"+interface_color+"/button_arrow_down.png"
+        if current_page < math.ceil((len(menu_items)-1)/items_shown):
+            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+            action Return("inc")
+
+    #Left Button (Bottom right of screen).
+    imagebutton:
+        xpos 977
+        ypos 544
+        idle "interface/general/"+interface_color+"/button_arrow_left.png"
+        if character >= character_choice_list[1]:
+            hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
+            action Return("left")
+
+    #Right Button (Bottom right of screen).
+    imagebutton:
+        xpos 1029
+        ypos 544
+        idle "interface/general/"+interface_color+"/button_arrow_right.png"
+        if character < character_choice_list[-1]:
+            hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
+            action Return("right")
+
+    #Bag of Gold Icon
+    if preview != None:
+        imagebutton:
+            xpos 705
+            ypos 490
+            if gold >= preview.cost:
+                idle  "interface/general/gold_bag.png"
+                hover "interface/general/gold_bag_hover.png"
+            else:
+                idle  grayTint("interface/general/gold_bag.png")
+                hover grayTint("interface/general/gold_bag.png")
+            action Return("buy") #Buys whatever is currently previewed (item_choice)
+
+
+    #Main Store Window.
+    imagemap:
+        xpos 0
+        ypos 0
+
+        if preview == None:
+            ground "interface/store/"+str(interface_color)+"/clothing_panel_main.png"
+            hover "interface/store/"+str(interface_color)+"/clothing_panel_main_hover.png"
+        else:
+            ground "interface/store/"+str(interface_color)+"/clothing_panel_full.png"
+            hover "interface/store/"+str(interface_color)+"/clothing_panel_full_hover.png"
+
+            #Item Information Display Panel.
+            text preview.get_name() xpos 83 ypos 458 size 16
+            text preview.get_description() xpos 85 ypos 490 size 12
+            text preview.get_type() xpos 509 ypos 458 size 16
+
+            for i in range(0,len(preview.get_items() )):
+                $ row = i % 3
+                $ col = i % 2
+                text "+"+preview.get_items()[i] xpos 511+(80*col) ypos (490+(12*row)) size 12
+
+            text preview.get_wait_time() xpos 83 ypos 557 size 16
+            text preview.get_cost() xpos 509 ypos 557 size 16
+
+        #Mannequin Display Panels.
+        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+            if i < len(menu_items):
+                hotspot( 70+(227*(i-(current_page*items_shown))) , (107) , 175 , 284 ) clicked Return(menu_items[i])
+
+                add menu_items[i].get_image() xpos (-7+(227*(i-(current_page*items_shown)) )) ypos 30 zoom 0.6/scaleratio
+
+        #Large Mannequin Preview.
+        if preview != None:
+            add preview.get_image() xpos 600 ypos 0 zoom 1.0/scaleratio
+        else:
+            add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 1.0/scaleratio
+
 
 
 #Character Select Menu #Customizable
@@ -141,6 +242,10 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
 
 
 
+
+
+### Menu Init ###
+
 init -2 python:
 
     def grayTint(image):
@@ -148,28 +253,6 @@ init -2 python:
 
     def yellowTint(image):
         return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
-
-    class list_menu_item_class(object):
-        imagepath = "images/store/potions/potion_3.png"
-        title = "This is the title"
-        description = ""
-        unlocked = False
-
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-
-        def get_image(self):
-            return self.imagepath
-
-        def get_title(self):
-            return self.title
-
-        def get_description(self):
-            return self.description
-
-        def get_buttom_right(self):
-            return ""
-
 
     toggle1_bool = True
     toggle2_bool = True

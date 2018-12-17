@@ -16,7 +16,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 

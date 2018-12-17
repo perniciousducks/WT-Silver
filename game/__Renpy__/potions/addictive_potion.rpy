@@ -523,8 +523,8 @@ label potion_scene_3_3_1: #Hypno potion
 
     if hermione_wear_bottom:
         call her_main("It really suuuuucks that I have to wear anything at all in this boring nunnery...","annoyed","ahegao")
-        call her_main("(I can still wear something shorter. Like a skirt...)","")
-        call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})","grin","happyCl")
+        call her_main("(Why can't I wear something shorter. A skirt, but...)")
+        call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})",face="horny")
 
         call set_her_action("lift_bottom")
         pause.5
@@ -543,7 +543,7 @@ label potion_scene_3_3_1: #Hypno potion
     call nar("Hermione pulls out her wand and casts a spell...")
 
     #Setting up Bimbo clothes.
-    $ h_hair_color = 2 #Blonde
+    call set_her_hair(color="blonde")
     $ h_lipstick = "lipstick_pink"
 
     $ h_request_wear_top = True
@@ -569,7 +569,6 @@ label potion_scene_3_3_1: #Hypno potion
     $ h_stockings = "stockings_fishnets"
 
     call load_hermione_clothing_saves
-    call update_her_hair #Always update hair before the uniform! In case she wears cat-ears!
     call update_her_uniform
 
     pause.5
@@ -585,7 +584,7 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
             call her_main("Aaaaanyway...","open","baseL")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
-        "-Where is your badge, cumslut?!-" if I_love_cum_badge_ITEM.unlocked:
+        "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!","soft","wide")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
             call her_main("It's this one, isn't it...","soft","down")

@@ -179,7 +179,7 @@ screen nvl:
 # Main Menu
 screen main_menu:
     tag menu
-    zorder 9
+    zorder 5
 
     # The background of the main menu.
     window:
@@ -232,7 +232,7 @@ init -2:
 # Extras
 screen extras:
     tag menu
-    zorder 9
+    zorder 5
 
     window:
         style "gm_root"
@@ -374,20 +374,20 @@ screen file_picker:
 
 
 screen save:
-
-    # This ensures that any other menu screen is replaced.
     tag menu
 
     use navigation
     use file_picker
+
+    zorder 5
 
 screen load:
-
-    # This ensures that any other menu screen is replaced.
     tag menu
 
     use navigation
     use file_picker
+
+    zorder 5
 
 init -2:
     style file_picker_frame is menu_frame
@@ -404,7 +404,6 @@ init -2:
 # http://www.renpy.org/doc/html/screen_special.html#prefereces
 
 screen preferences:
-
     tag menu
 
     # Include the navigation.
@@ -514,6 +513,8 @@ screen preferences:
                             action Play("voice", config.sample_voice)
                             style "soundtest_button"
 
+    zorder 5
+
 init -2:
     style pref_frame:
         xfill True
@@ -574,6 +575,8 @@ screen yesno_prompt:
 
     # Right-click and escape answer "no".
     key "game_menu" action no_action
+
+    zorder 6
 
 init -2:
     style yesno_button:

@@ -16,7 +16,7 @@ label hg_pr_FlirtClassmate:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 
@@ -173,7 +173,7 @@ label hg_pr_FlirtClassmate_complete:
                         "\"Favour failed! No points of you!\"":
                             stop music fadeout 1.0
                             call her_main("You are not going to pay me, [genie_name]?","open","worried")
-                            $ mad +=15
+                            $ her_mood +=15
                             call her_main("But, you promised!","angry","base",tears="soft")
                             call her_main("................","mad","worriedCl",tears="soft_blink")
 
@@ -384,7 +384,7 @@ label hg_pr_FlirtClassmate_complete:
                             call her_main("","base","happyCl")
 
                         "\"Tell me now, or lose the points!\"":
-                            $ mad +=10
+                            $ her_mood +=10
                             call her_main("[genie_name], please, I don't want to discuss this with you, [genie_name].","disgust","glance")
                             m "No one is forcing you, [hermione_name]."
                             m "You are free to leave."

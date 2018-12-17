@@ -51,7 +51,6 @@ label sus_chibi(action = "", xpos=susan_chibi_xpos, ypos=susan_chibi_ypos, flip=
         else:
             $ susan_chibi_flip = 1
             show screen susan_stand
-        with d3
 
     return
 

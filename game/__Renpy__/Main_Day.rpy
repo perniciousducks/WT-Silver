@@ -195,10 +195,12 @@ if day >= 12 and not letter_paperwork_unlock_OBJ.read:
 
 if day >= 25 and her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
     $ letter_curse_complaint_OBJ.mailLetter()
-
+    
+if day >= 26 and not deck_unlocked:    
+    $ letter_deck.mailLetter()
+    
 if package_is_here or letter_queue_list != []:
     play sound "sounds/owl.mp3"
-
 
 
 call room("main_room", hide_screens=False) #Screens already get hidden above.

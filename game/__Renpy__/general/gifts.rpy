@@ -1,5 +1,5 @@
 init python:
-    class gift_item(list_menu_item_class):
+    class gift_item(item_class):
         id = 0
         whoringNeeded = 0
         cost = 0

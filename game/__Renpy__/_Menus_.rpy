@@ -248,6 +248,9 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
 
 init -2 python:
 
+    def whiteTint(image):
+        return im.MatrixColor( image, im.matrix.tint(1.1, 1.1, 1.1))
+
     def grayTint(image):
         return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))
 

@@ -22,7 +22,7 @@ init python:
         renpy.pause(speed)
         renpy.hide_screen("universal_walk")
 
-    class silver_scroll(list_menu_item_class):
+    class silver_scroll(item_class):
         id = 0
         title = ""
         imagepath = "images/store/31.png"

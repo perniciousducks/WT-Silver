@@ -183,7 +183,7 @@ label deck_mail_send: # Send a letter that will unlock an ability to write repor
     
     g9 "Hell yes I'm playing this..."
     
-    call give_reward(">You've unlocked Wizard cards.\nUse your desk to edit the deck.","images/store/dahr2.png")
+    call give_reward(">You've unlocked Wizard cards.\nUse your desk to edit the deck.","interface/icons/book_general.png")
     
     hide screen blktone8
     with d3

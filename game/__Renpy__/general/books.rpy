@@ -356,9 +356,11 @@ label book_complete:
     elif book_choice.id == "Armchairs":
         g4 "What a pile of garbage! I hate the guy who wrote this crap!"
         m "Although all those rapes gave me a few ideas..."
-        $ bdsm_imagination += 1
+        if imagination < 2: #Only goes to 2.
+            $ bdsm_imagination += 1
     else:
-        $ imagination += 1
+        if imagination < 8: #Only goes to 8.
+            $ imagination += 1
 
     if book_choice in book_list.read_books:
         $ speed_reading += 1
@@ -409,7 +411,8 @@ label read_scroll_menu:
     hide screen list_menu
 
     if isinstance(_return, item_class):
-        call read_scroll(_return)
+        $ scroll_choice = _return
+        jump read_scroll
 
     elif _return == "Close":
         $ current_page = 0
@@ -436,7 +439,8 @@ label read_scroll_menu:
     jump read_scroll_menu
 
 
-label read_scroll(scroll):
+label read_scroll:
+    $ scroll = scroll_choice
     $ the_gift = "images/misc/extras/"+str(scroll.scroll_image)+".png"
     show screen gift
     with d3

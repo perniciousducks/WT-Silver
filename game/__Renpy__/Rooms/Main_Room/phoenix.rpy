@@ -83,7 +83,7 @@ label petting:
     with d3
     pause 1
 
-    if fawkes_intro_done: #Not in use/game jet.
+    if fawkes_intro_done: #Not in use/game jet. #ToDo None of this works anymore. Needs to be updated/rewritten.
         $ ce_name = "phoenix"
         if day >= 20 and phoenix_petted_counter >= 10: # Counts how many times you have interacted with the bird.
             stop music fadeout 3.0
@@ -119,11 +119,10 @@ label petting:
                     her "I felt something calling me here."
                     m "Well come right on in then..."
                     call her_walk(610,400,2)
-                    show screen hermione_02
+                    #Chibi with robe
                     pause.5
                     show screen bld1
                     with d3
-                    show screen hermione_01
                     call her_main("Something... feels different...","open","worriedL",xpos=390,ypos=0)
                     ">She looks up at the bird you're petting and her eyes grow wide."
                     call her_main("Professor. Something's wrong.","angry","wide")
@@ -177,10 +176,9 @@ label petting:
                     m "So no original content?"
                     faw "Maverick's not an artist"
                     g4 "No shit"
-                    hide screen hermione_01
-                    $ hermione_SC.chibi.xpos=400
-                    $ hermione_SC.chibi.ypos=240
-                    show screen hermione_02_b
+                    $ hermione_chibi_xpos=400
+                    $ hermione_chibi_ypos=240
+                    #Chibi with robe
                     call ce_her_main("","fawkes_5")
                     show screen ctc
                     pause
@@ -208,8 +206,7 @@ label petting:
                     call ce_her_main("What's going on?!","hermione_3")
                     m "Hell if I know"
                     call ce_her_main("Why am I wearing this? What's happening? What-!")
-                    hide screen hermione_02
-                    hide screen hermione_02_b
+                    #Chibi with robe
                     hide screen custom_event_h
                     with d3
                     call her_walk(400,610,0.75)
@@ -305,7 +302,7 @@ label petting:
 
 
 ### TALKING ###
-label talkingfawkes:
+label talkingfawkes: #ToDo None of this works anymore. Needs to be updated/rewritten.
     $ ce_name = "phoenix"
     $ phoenix_petted_counter += 1
     hide screen genie
@@ -356,19 +353,14 @@ label talkingfawkes:
             g4 "What do you want? I'm busy!"
             her "{size=-2}Are you sure you want me to leave?{/size}"
             m "No no! Come on in!"
-            $ renpy.play('sounds/door.mp3')
-            $ walk_xpos=620
-            $ walk_xpos2=400
-            $ hermione_speed = 02.0
-            show screen hermione_chibi_robe
-            pause 2
-            hide screen hermione_chibi_robe
-            $ hermione_SC.chibi.xpos=400
-            $ hermione_SC.chibi.ypos=240
-            show screen hermione_02_b
-            $ tmp_robe = hermione_wear_robe
+
+            call play_sound("door")
+
             $ hermione_wear_robe = True
-            call her_main("Professor.  There was something... calling me here.","open","worriedL",xpos=390,ypos=0)
+            call update_her_uniform
+            call her_walk("620","400",2)
+
+            call her_main("Professor.  There was something... calling me here.","open","worriedL",xpos="390",ypos="base")
             g9 "And what was it calling you here for?"
             her "I'm not sure... Maybe I shouldn'tve come sir."
             m "No no, stay."
@@ -379,18 +371,14 @@ label talkingfawkes:
             $ walk_xpos=400
             $ walk_xpos2=610
             $ hermione_speed = 4
-            show screen hermione_chibi_robe_f
+            #Chibi with robe
             g4 "Stop her you damned bird!"
             faw "On it!"
             $ renpy.play('sounds/magic2.mp3')
             pause 1
             $ walk_xpos=620
             $ walk_xpos2=400
-            $ hermione_speed = 02.5
-            show screen hermione_chibi_robe
-            pause 2.5
-            hide screen hermione_chibi_robe
-            show screen hermione_02_b
+            #Chibi with robe
             call ce_her_main("...","h0a",xpos=390,ypos=0)
             her "Professor... I shouldn't be here."
             g9 "Oh no, you're right where you should be."
@@ -456,30 +444,30 @@ label talkingfawkes:
                     call ce_her_main("...","h_react1")
                     call ce_her_main("Professor?","h_react2")
                     her "Oh god.  What's happening?!"
-                    hide screen hermione_02_b
+                    #Chibi with robe
                     hide screen custom_event_h
                     with d3
                     $ walk_xpos=400
                     $ walk_xpos2=610
                     $ hermione_speed = 02.0
-                    show screen hermione_chibi_robe_f
+                    #Chibi with robe
                     pause 2
                     $ renpy.play('sounds/door.mp3')
-                    hide screen hermione_chibi_robe_f
+                    #Chibi with robe
                     g9 "Wonderful show."
                     faw "Wasn't it?"
                 "-Let her go into the hallway-":
                     g9 "Take her outside."
                     faw "As you wish."
-                    hide screen hermione_02_b
+                    #Chibi with robe
                     hide screen custom_event_h
                     with d3
                     $ walk_xpos=400
                     $ walk_xpos2=640
                     $ hermione_speed = 02.0
-                    show screen hermione_chibi_robe_f
+                    #Chibi with robe
                     $ renpy.play('sounds/door.mp3')
-                    hide screen hermione_chibi_robe_f
+                    #Chibi with robe
                     g9 "{size=-4}(Here we go!){/size}"
                     ">..."
                     g9 "{size=-4}(Any second now!){/size}"

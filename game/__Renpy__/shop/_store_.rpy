@@ -4,9 +4,9 @@ screen weasley_store_room:
     tag room_screen
 
     if daytime:
-        add "images/backgrounds/corridor.png" #Need day image.
+        add "images/rooms/weasley_store/store_day.png"
     else:
-        add "images/backgrounds/corridor.png"
+        add "images/rooms/weasley_store/store_night.png"
 
     zorder 0
 

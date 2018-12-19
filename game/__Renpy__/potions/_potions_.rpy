@@ -1,3 +1,20 @@
+
+
+### Potions Room ###
+
+screen potions_room:
+    tag room_screen
+
+    if daytime:
+        add "images/backgrounds/corridor.png" #Need day image.
+    else:
+        add "images/backgrounds/corridor.png"
+
+    zorder 0
+
+
+
+
 label __init_variables:
 
     if not hasattr(renpy.store,'potion_scene_11_progress'): #important!

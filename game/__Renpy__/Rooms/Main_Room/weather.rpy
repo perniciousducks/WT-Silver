@@ -32,7 +32,7 @@ init python:
         if weather_gen == 6:
             blizzard = True
             weather_animations.append("blizzard")
-            renpy.music.play("sounds/blizzard.mp3", "weather", fadeout=1.0, fadein=1.0)
+            renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
         if weather_gen == 5 or (weather_gen == 4 and lightning_gen == 1): # (Heavy clouds with chance of lightning)
             weather_animations.append("lightning")
         if weather_gen > 4 and not blizzard:

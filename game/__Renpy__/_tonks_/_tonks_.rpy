@@ -152,6 +152,13 @@ init python:
         ### FACE CONTROL
         if mouth is not None:
             tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png"
+            if ton_tongue_piercing != "blank":
+                if mouth in ["horny","open","open_wide_tongue"]:
+                    tonks_tongue_piercing = "characters/tonks/accessories/piercings/base/mouth/" +str(ton_tongue_piercing)+ "_" +str(mouth)+ ".png"
+                else:
+                    tonks_tongue_piercing = "blank.png"
+            else:
+                tonks_tongue_piercing = "blank.png"
         if eye is not None:
             tonks_eye         = "characters/tonks/face/eyes/"+eye+".png"
             tonks_eye_bg      = "characters/tonks/face/eyes/_white_.png"

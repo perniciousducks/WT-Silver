@@ -44,6 +44,12 @@ label hide_all_screens:
     #Weasley Store
     hide screen weasley_store_room
 
+    #Clothing Store
+    hide screen clothing_store_room
+
+    #Potions Room
+    hide screen potions_room
+
     #7th Floor
     hide screen floor_7th_door
     hide screen room_of_req_door
@@ -131,16 +137,16 @@ label room(room=None, hide_screens=True):
         show screen weasley_store_room
         show screen points
 
-    if room in ["potions_room","potions_room"]:
+    if room in ["potions_room","potions_classroom"]:
         $ current_room = "potions_classroom"
 
-        show screen weasley_store_room #Temporary
+        show screen potions_room
         show screen points
 
     if room in ["clothing_store", "clothe_store"]:
         $ current_room = "clothing_store"
 
-        show screen weasley_store_room #Temporary
+        show screen clothing_store_room
         show screen points
 
     if room in ["7th floor"]:

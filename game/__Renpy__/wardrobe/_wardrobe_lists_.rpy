@@ -1021,6 +1021,7 @@ label update_wr_miscellaneous_list:
             $ wr_items_list.append("item_ballgag_and_cuffs")
 
         $ wr_piercings_list.append("ears_rings")
+        $ wr_piercings_list.append("tongue_pearls")
         $ wr_piercings_list.append("nipples_pearls")
         $ wr_piercings_list.append("belly_pearls")
 

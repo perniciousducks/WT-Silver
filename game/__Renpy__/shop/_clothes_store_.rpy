@@ -2,6 +2,18 @@
 
 ### CLOTHING STORE ###
 
+screen clothing_store_room:
+    tag room_screen
+
+    if daytime:
+        add "images/backgrounds/corridor.png" #Need day image.
+    else:
+        add "images/backgrounds/corridor.png"
+
+    zorder 0
+
+
+
 label open_clothing_store:
     show screen blkfade
     with d3

@@ -37,13 +37,11 @@ label update_ton_uniform:
     $ tonks_gag                 = "characters/tonks/face/mouth/"+str(ton_gag)+".png"
 
     #Piercings
-    $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/"+str(ton_ear_piercing_color)+"/"+str(ton_ear_piercing)+".png"
-    if tonks_wear_top or tonks_wear_robe:
-        $ tonks_nipple_piercing = "characters/tonks/accessories/piercings/"+str(ton_nipple_piercing_color)+"/blank.png"
-    else:
-        $ tonks_nipple_piercing = "characters/tonks/accessories/piercings/"+str(ton_nipple_piercing_color)+"/"+str(ton_nipple_piercing)+".png"
-    $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/"+str(ton_belly_piercing_color)+"/"+str(ton_belly_piercing)+".png"
-    $ tonks_intimate_piercing   = "characters/tonks/accessories/piercings/"+str(ton_intimate_piercing_color)+"/"+str(ton_intimate_piercing)+".png"
+    # tonks_tongue_piercing gets defined at the same place as her mouth every time the mouth layer gets updated.
+    $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/" +str(ton_ear_piercing_color)+      "/" +str(ton_ear_piercing)+ ".png"
+    $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/" +str(ton_nipple_piercing_color)+   "/" +str(ton_nipple_piercing)+ ".png"
+    $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/" +str(ton_belly_piercing_color)+    "/" +str(ton_belly_piercing)+ ".png"
+    $ tonks_intimate_piercing   = "characters/tonks/accessories/piercings/" +str(ton_intimate_piercing_color)+ "/" +str(ton_intimate_piercing)+ ".png"
 
     call update_ton_body
 
@@ -310,6 +308,11 @@ label set_ton_piercing(piercing="", color=""):
             $ ton_ear_piercing = "blank"
         else:
             $ ton_ear_piercing = piercing_choice
+    if piercing in tongue_piercings_list:
+        if ton_tongue_piercing == piercing and ton_tongue_piercing_color == color:
+            $ ton_tongue_piercing = "blank"
+        else:
+            $ ton_tongue_piercing = piercing_choice
     if piercing in nipple_piercings_list:
         if ton_nipple_piercing == piercing and ton_nipple_piercing_color == color:
             $ ton_nipple_piercing = "blank"
@@ -326,7 +329,7 @@ label set_ton_piercing(piercing="", color=""):
         else:
             $ ton_belly_piercing = piercing
 
-    if ton_ear_piercing == "blank" and ton_nipple_piercing == "blank" and ton_belly_piercing == "blank" and ton_intimate_piercing == "blank": #No piercings equipped.
+    if ton_ear_piercing == "blank" and ton_tongue_piercing == "blank" and ton_nipple_piercing == "blank" and ton_belly_piercing == "blank" and ton_intimate_piercing == "blank": #No piercings equipped.
         $ ton_request_wear_piercings = False
     else:
         $ ton_request_wear_piercings = True

@@ -14,22 +14,22 @@ label l_tutoring_check:
     elif her_tutoring == 6 and her_whoring >= 11:
         jump l_tutoring
     elif her_tutoring == 7 and her_whoring >= 14:
-        if gift_item_inv[6] >= 1:# Adult magazines
+        if adult_mag_ITEM.number >= 1:# Adult magazines
             jump l_tutoring
         else:
             m "I need to buy adult magazines for this lesson."
     elif her_tutoring == 8 and her_whoring >= 17:
-        if gift_item_inv[7] >= 1:# Porn magazines
+        if porn_mag_ITEM.number >= 1:# Porn magazines
             jump l_tutoring
         else:
             m "I need to buy porn magazines for this lesson."
     elif her_tutoring == 9 and her_whoring >= 20:
-        if gift_item_inv[11] >= 1:# Vibrator
+        if vibrator_ITEM.number >= 1:# Vibrator
             jump l_tutoring
         else:
             m "I need to buy a vibrator for this lesson."
     elif her_tutoring == 10 and her_whoring >= 23:
-        if gift_item_inv[14] >= 1:# Anal plugs
+        if anal_plugs_ITEM.number >= 1:# Anal plugs
             jump l_tutoring
         else:
             m "I need to buy anal plugs for this lesson."
@@ -367,13 +367,11 @@ label l_tutoring:
         call her_main("They pulled up their shirts and caressed each others breasts.","open","worriedCl",cheeks="blush")
         call her_main("{size=-2}(Their beautiful and tempting breasts...){/size}","open","ahegao_raised",cheeks="blush")
         call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.","silly","ahegao_raised",cheeks="blush")
-        $ b_her_tears = True
         call her_main("{size=-2}(I can't believe I said that!){/size}","base","ahegao_raised",cheeks="blush",tears="sweat")
         call her_main("They were very excited, and I could see their panties become wet.","open","ahegao_raised",cheeks="blush")
         call her_main("Disgusting.","annoyed","ahegao_raised",cheeks="blush")
         if d_flag_01:
             g9 "{size=-2}(Yes... yes...){/size}"
-        $ b_her_tears = False
         call her_main("One of the girls went crazy and inserted her fingers into the other's \"thing\" and worked them furiously.","silly","worried",cheeks="blush",tears="soft")
         call her_main("Soon imitated by her girlfriend.","silly","ahegao_raised",cheeks="blush")
         call her_main("Those whores came so hard I'm sure they heard the screams on the other side of the grounds!","open_wide_tongue","ahegao_mad",cheeks="blush")
@@ -398,7 +396,7 @@ label l_tutoring:
 
             m "You enjoyed it too, so don't act all innocent."
 
-            $ mad = +7
+            $ her_mood = +7
             $ d_flag_01 = False
         else:
             m "You enjoyed it too."
@@ -416,9 +414,7 @@ label l_tutoring:
         call her_main("When I went to bed I noticed it, yes.","disgust","down_raised",cheeks="blush")
         call her_main("Apparently bad fluids are released from your body when you have faced such acts.","mad","wide",cheeks="blush")
         m "No, they aren't bad. It happens when you're excited."
-        $ b_her_tears = True
         call her_main("No way! I can control myself!","scream","worriedCl",cheeks="blush",tears="soft_blink")
-        $ b_her_tears = False
         call her_main("","angry","angry",cheeks="blush")
         m "No one can control their base desires."
         m "Consider this well, and enjoy your night, Miss Granger."
@@ -552,7 +548,6 @@ label l_tutoring:
         call her_main("...{w=0.2} Yes...{w=0.2} perhaps you're right.","base","concerned",cheeks="blush",tears="soft",tears="sweat")
         m "You have to let it go, Miss Granger, follow your instincts!"
         g9 "{size=-2}(Grab my cock and wank it savagely!){/size}"
-        $ b_her_tears = False
         call her_main("I'm not sure if...","open","concerned",cheeks="blush",tears="mascara")
         m "Enough procrastination, time for practice!"
         m "Come here."
@@ -656,6 +651,7 @@ label l_tutoring:
 
         hide screen hermione_main
         $ hermione_wear_top = False
+        call set_her_action("none")
 
         call her_main("Like that?","annoyed","angryL",cheeks="blush")
 
@@ -709,7 +705,6 @@ label l_tutoring:
         g9 "As you wish, princess."
         call her_main("","silly","ahegao_raised",cheeks="blush")
         call nar(">You suck her nipples with devotion.")
-        $ b_her_tears = True
         call her_main("Yes {image=textheart} like that.","silly","ahegao_raised",cheeks="blush",tears="sweat")
         call nar(">You start to chew on her nipples.")
         call her_main("Ah, noo, don't...","open_tongue","ahegao_raised",cheeks="blush")
@@ -722,7 +717,6 @@ label l_tutoring:
         else:
             ">You quickly move your hand toward her pussy and rub it furiously."
 
-        $ b_her_tears = False
         call her_main("Yes! {image=textheart}","angry","dead",cheeks="blush",tears="crying")
         her "I... I..."
         g9 "Came, my dear."
@@ -746,7 +740,7 @@ label l_tutoring:
         m "Sure."
         m "But before that I have a little present for you."
 
-        call give_reward(">You give an assortment of adult magazines to Hermione.","images/store/gifts/7.png")
+        call give_gift(">You give an assortment of adult magazines to Hermione.",adult_mag_ITEM)
 
         m "I hope this will help you in your studies."
         call her_main("Yes, certainly.","grin","closed",cheeks="blush",tears="mascara")
@@ -800,14 +794,14 @@ label l_tutoring:
         call her_walk_desk_blkfade
 
         $ hermione_wear_top = False
-        call h_update_body
+        call update_her_body
 
         if hermione_wear_bra:
             call her_main("...",ypos="head")
             m "And your bra..."
 
             $ hermione_wear_bra = False
-            call h_update_body
+            call update_her_body
 
         call her_main("........","annoyed","closed",cheeks="blush",ypos="head")
 
@@ -882,7 +876,6 @@ label l_tutoring:
         call her_main("Yesss {image=textheart}, I'll try to remember your teachings.","silly","ahegao_raised",cheeks="blush")
         call nar(">You increase the pace and feel her pussy tighten on your fingers.")
         m "Maybe a third finger?"
-        $ b_her_tears = True
         call her_main("Don't be so bold.","grin","angry",cheeks="blush",tears="soft")
         call nar(">Her whole body starts shaking as you increase your ramming.")
 
@@ -895,7 +888,6 @@ label l_tutoring:
         call her_main("I will I will...","open_wide_tongue","ahegao_mad",cheeks="blush")
         g9 "Time to get serious."
         call nar(">You force your soaked thumb into her butthole.")
-        $ b_her_tears = False
         call her_main("Haaaaa {image=textheart} yesss {image=textheart}.","open_wide_tongue","ahegao_mad",cheeks="blush")
         g9 "Lucky girl."
 
@@ -913,7 +905,7 @@ label l_tutoring:
         call her_main("\"Studies\", yes, that's right.","grin","glance",cheeks="blush",tears="mascara")
         m "And to aid your studies I have even more scientific materials."
 
-        call give_reward(">You give an assortment of porn magazines to Hermione.","images/store/gifts/8.png")
+        call give_gift(">You give an assortment of porn magazines to Hermione.",porn_mag_ITEM)
 
         call her_main("I promise to study them every night until I commit their lessons to memory!","grin","closed",cheeks="blush",tears="mascara")
         call her_main("Thank you and good night professor.","grin","glance",cheeks="blush",tears="mascara")
@@ -958,7 +950,7 @@ label l_tutoring:
         m ".........."
         call her_main("So what's my gift this time?","open","suspicious")
 
-        call give_reward(">You give the vibrator to Hermione","images/store/gifts/12.png")
+        call give_gift(">You give the vibrator to Hermione",vibrator_ITEM)
 
         call her_main("And I suppose you want me to test this in front of you?","open","closed")
         g9 "Of course."
@@ -1023,8 +1015,6 @@ label l_tutoring:
         $ hermione_wear_bottom = False
         call set_her_action("None")
         pause.5
-
-        $ b_her_tears = True
 
         call ctc
 
@@ -1095,7 +1085,6 @@ label l_tutoring:
         call gen_chibi("cum_on_desk")
         call hide_blkfade
 
-        $ b_her_tears = False
         #$ aftercum = True   # the aftercum skirt is a bit overkill IMO. Maybe reduce the height of the stains and add some dripping down the legs.
 
         call her_main("I hope you enjoyed it as much I did.","open","concerned",cheeks="blush",tears="mascara",xpos="right",ypos="base")
@@ -1198,8 +1187,6 @@ label l_tutoring:
         play sound sd_slap
         with hpunch
 
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_03d.png"
-        $ b_her_tears = True
         call her_main("More!!","open_tongue","ahegao_raised",cheeks="blush")
 
         play sound sd_boing1
@@ -1226,7 +1213,6 @@ label l_tutoring:
         g9 "Faster? No problem!"
         hide screen groping_05
         show screen groping_05b
-        $ b_her_tears = False
         call her_main("Aaah, you're killing me {image=textheart}.","angry","dead",cheeks="blush",tears="crying")
         call her_main("{size=-2}(And I love it){/size}","silly","worried",cheeks="blush",tears="soft")
         m "More fingers?"
@@ -1239,8 +1225,6 @@ label l_tutoring:
         her "Keep it up, I..."
         call her_main("Yessss {image=textheart}.","open_wide_tongue","ahegao_mad",cheeks="blush")
         m "I can keep this up as long as you please."
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_04.png"
-        $ b_her_tears = True
         call her_main("Yesss {image=textheart}, nooo I will die!","open_wide_tongue","ahegao_mad",cheeks="blush")
         g9 "In ecstasy."
         call her_main("Aahh not again {image=textheart}.","open_wide_tongue","ahegao_mad",cheeks="blush")
@@ -1320,7 +1304,7 @@ label l_tutoring:
         call her_main("And now I want more so where is my gift?!","annoyed","suspicious")
         m "There, there."
 
-        call give_reward(">You give the anal beads to Hermione","images/store/gift_anal_beads.png")
+        call give_gift(">You give the anal beads to Hermione",anal_beads_ITEM)
 
         call her_main("Oh! That's even better than a butt plug.","shock","wide",cheeks="blush")
         g9 "And they can be useful for your pussy too."
@@ -1384,11 +1368,8 @@ label l_tutoring:
         call nar(">You push another one inside with little resistance.")
         call her_main("Yess {image=textheart}, one more please.","open","ahegao_raised",cheeks="blush")
         call nar(">You feel the beads sink deeper when you push the third one inside.")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_01.png"
-        $ b_her_tears = True
         call her_main("Ohhh, they're... they're moving {image=textheart}.","grin","ahegao_mad",cheeks="blush")
         call nar(">The fourth takes some work before it pops in.")
-        $ b_her_tears = False
         call her_main("Ah {image=textheart} ah {image=textheart}.","silly","ahegao_raised",cheeks="blush")
         call nar(">You push the last one forcefully inside.")
         call her_main("Ahhhhh {image=textheart}, delightful.","open_tongue","ahegao_raised",cheeks="blush")
@@ -1401,13 +1382,9 @@ label l_tutoring:
         call her_main("Ahh... {image=textheart}{w=0.5} aah...{image=textheart}","silly","ahegao_raised",cheeks="blush")
         call her_main("W-What did I say...","grin","ahegao_mad",cheeks="blush")
         call nar(">You wiggle the finger inside.")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_03b.png"
-        $ b_her_tears = True
         call her_main("You never listen, old pervert.","grin","ahegao_mad",cheeks="blush")
         m "What can I say, I just know what's best for you, my little witch."
         call nar(">You pick up the pace.")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_03d.png"
-        $ b_her_tears = True
         call her_main("Yesss {image=textheart}.","grin","ahegao_mad",cheeks="blush")
         m "I thought you didn't want the finger?"
         g9 "In that case, one more finger."
@@ -1418,7 +1395,6 @@ label l_tutoring:
         call nar(">You finger her butthole fiercely.")
         hide screen groping_05
         show screen groping_05b
-        $ b_her_tears = False
         call her_main("Nooo... aahh {image=textheart}.","open","concerned",cheeks="blush",tears="mascara")
         m "Your pussy is getting neglected. We need to fix that!"
         call nar(">You start fingering her pussy with your other hand. She is panting heavily.")
@@ -1426,8 +1402,6 @@ label l_tutoring:
         call nar(">You suddenly pull out all the beads.")
         call her_main("Ahhhhhh!!","grin","dead",cheeks="blush",tears="messy")
         call nar(">And insert four fingers in her ass.")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_04.png"
-        $ b_her_tears = True
         call her_main("I'm cumming old bastard, I cumming!","silly","ahegao_raised",cheeks="blush")
         m "If you must..."
         call nar(">You continue to work her ass while you finger her pussy.")
@@ -1435,12 +1409,9 @@ label l_tutoring:
         call her_main("Cummm {image=textheart}{image=textheart}.","silly","worried",cheeks="blush",tears="soft")
         call her_main("Agaaain aaah {image=textheart}.","open_wide_tongue","ahegao_mad",cheeks="blush")
         g11 "Sorry my little anal whore but I'm starting to get tired."
-        $ b_her_tears = False
         call her_main("Don't you dare stop now!","scream","angry",cheeks="blush",tears="messy")
         call her_main("Just a little more pleassse {image=textheart}.","grin","dead",cheeks="blush",tears="messy")
         call her_main("Because I will...","grin","dead",cheeks="blush",tears="messy")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_04.png"
-        $ b_her_tears = True
         call her_main("Come again!!","open_wide_tongue","ahegao_mad",cheeks="blush")
         hide screen hermione_main
         call blkfade
@@ -1452,7 +1423,6 @@ label l_tutoring:
         call hide_blkfade
         pause.5
 
-        $ b_her_tears = False
         call her_main("*Pant* *pant*","open","concerned",cheeks="blush",tears="mascara")
         call her_main("I feel completely ravaged but happy.","grin","glance",cheeks="blush",tears="mascara")
         call her_main("Thank you professor, for letting me discover such great sensations.","grin","glance",cheeks="blush",tears="mascara")
@@ -1471,8 +1441,6 @@ label l_tutoring:
 
         m "Come back here, girl."
         g11 "I need your mouth, I can't hold it anymore."
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_03.png"
-        $ b_her_tears = True
         pause.5
 
         call her_chibi("stand","door","base")
@@ -1534,8 +1502,6 @@ label l_tutoring:
         call her_main(".........","annoyed","ahegao_raised",cheeks="blush")
         call her_main("Good night, professor.","annoyed","closed",cheeks="blush")
         call nar("You dismiss Hermione.")
-
-        $ b_her_tears = False
 
         call her_walk("desk","door",2.5)
 
@@ -1714,14 +1680,11 @@ label l_tutoring:
         call nar(">Most of the bottle is inside her now, leaving just enough to get a good grip.")
         m "Push the bottle, push it!"
         call nar(">Whenever she pushes it back you do the same in the other direction.")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_04.png"
-        $ b_her_tears = True
         call her_main("This is, this is, aaaah!!! {image=textheart}{image=textheart}","open_wide_tongue","ahegao_mad",cheeks="blush")
         call nar(">Her whole body convulses as she comes hard.")
         hide screen hermione_main
         call blkfade
 
-        $ b_her_tears = False
         hide screen scr_her_fingering_naked
         show screen no_groping_laying_02
         pause.3
@@ -1750,8 +1713,6 @@ label l_tutoring:
         call her_main("Thank you.","base","ahegao_raised",cheeks="blush")
         m "And next time bring your books, I'll help you with your revisions."
         call nar("You dismiss Hermione.")
-
-        $ b_her_tears = False
 
         call her_walk("desk","door",2.5)
 
@@ -1861,8 +1822,6 @@ label l_tutoring:
         call her_main("Don't make it a habit.","open","squint",cheeks="blush")
         m "......"
         call nar(">You pull out your cock and roughly shove it back inside.")
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_01.png"
-        $ b_her_tears = True
         with hpunch
         call her_main("Aaaaah {image=textheart}.","open","ahegao",cheeks="blush")
         call her_main("I love being sodomized savagely by my headmaster.","silly","ahegao_raised",cheeks="blush")
@@ -1873,7 +1832,6 @@ label l_tutoring:
         call nar(">You slap her buttcheek.")
         play sound sd_slap
         with hpunch
-        $ b_her_tears = False
         call her_main("And being punished for my sluttiness.","open","concerned",cheeks="blush",tears="mascara")
         play sound sd_slap
         with hpunch
@@ -1919,8 +1877,6 @@ label l_tutoring:
 
         call bld
         m "*sigh* that was, that was..."
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_03.png"
-        $ b_her_tears = True
         call her_main("Marvellous {image=textheart}.","smile","baseL")
         call her_main("I'm so glad you agreed to tutor me, professor...","silly","ahegao_raised",cheeks="blush")
         call her_main("Your lessons have changed my life so much!","smile","angry",cheeks="blush")
@@ -1947,8 +1903,6 @@ label l_tutoring:
 
         hide screen no_groping_laying_02
         pause 1
-
-        $ b_her_tears = False
 
         show screen genie
         call her_chibi("stand","desk","base")

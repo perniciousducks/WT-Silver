@@ -34,11 +34,24 @@ label reset_wardrobe_vars:
     $ wardrobe_load_custom_outfit = True  #False = save custom outfit.
 
     if active_girl == "hermione":
-        $ wardrobe_hair_color         = h_hair_color
+        $ wr_base_hair_style = "curly" #Throwaway variable. Doesn't get updated.
+        $ wr_base_hair_color = "brown" #Throwaway variable. Doesn't get updated.
+    elif active_girl == "luna":
+        $ wr_base_hair_style = "curly"
+        $ wr_base_hair_color = "blonde"
+    elif active_girl == "astoria":
+        $ wr_base_hair_style = "straight"
+        $ wr_base_hair_color = "blonde"
+    elif active_girl == "susan":
+        $ wr_base_hair_style = "braided"
+        $ wr_base_hair_color = "red"
+    elif active_girl == "cho":
+        $ wr_base_hair_style = "ponytail"
+        $ wr_base_hair_color = "blue"
     elif active_girl == "tonks":
-        $ wardrobe_hair_color         = ton_hair_color
-    else:
-        $ wardrobe_hair_color         = "1"
+        $ wr_base_hair_style = "short"
+        $ wr_base_hair_color = "pink"
+
     $ wardrobe_head_color             = "base"
     $ wardrobe_uniform_color          = "base"
     $ wardrobe_tops_color             = "base"
@@ -53,17 +66,17 @@ label reset_wardrobe_vars:
 label return_to_wardrobe:
     if not hide_transitions:
         if active_girl == "hermione":
-            call her_main(xpos="wardrobe",ypos="base",trans="fade")
+            call her_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "luna":
-            call lun_main(xpos="wardrobe",ypos="base",trans="fade")
+            call lun_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "astoria":
-            call ast_main(xpos="wardrobe",ypos="base",trans="fade")
+            call ast_main(face="neutral",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
-            call sus_main(xpos="wardrobe",ypos="base",trans="fade")
+            call sus_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "cho":
-            call cho_main(xpos="wardrobe",ypos="base",trans="fade")
+            call cho_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "tonks":
-            call ton_main(xpos="wardrobe",ypos="base",trans="fade")
+            call ton_main(face="horny",xpos="wardrobe",ypos="base",trans="fade")
 
         $ hide_transitions = True
         call screen wardrobe
@@ -72,17 +85,17 @@ label return_to_wardrobe:
         $ hide_transitions = True
 
         if active_girl == "hermione":
-            call her_main(xpos="wardrobe",ypos="base")
+            call her_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "luna":
-            call lun_main(xpos="wardrobe",ypos="base")
+            call lun_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "astoria":
-            call ast_main(xpos="wardrobe",ypos="base")
+            call ast_main(face="neutral",xpos="wardrobe",ypos="base")
         if active_girl == "susan":
-            call sus_main(xpos="wardrobe",ypos="base")
+            call sus_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "cho":
-            call cho_main(xpos="wardrobe",ypos="base")
+            call cho_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "tonks":
-            call ton_main(xpos="wardrobe",ypos="base")
+            call ton_main(face="horny",xpos="wardrobe",ypos="base")
 
         call screen wardrobe
 
@@ -293,7 +306,7 @@ label close_wardrobe:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     if active_girl == "hermione":
-        call set_her_face("random")
+        call set_her_face(change="all")
         call her_main(xpos="base",ypos="base") #reset hermione face and position to default
         jump hermione_requests
 
@@ -356,24 +369,24 @@ label wardrobe_change_her_action:
 ### Randomizing Her Face ###
 label touched_her_boobies:
     if her_whoring >= 0 and her_whoring < 11:
-        call set_her_face("annoyed")
+        call set_her_face(mouth="annoyed", eyes="annoyed")
     elif her_whoring >= 11 and her_whoring < 14:
-        call set_her_face("happy")
+        call set_her_face(mouth="happy", eyes="happy")
     else:
-        call set_her_face("naughty")
+        call set_her_face(mouth="naughty", eyes="naughty")
 
     call her_main(xpos="wardrobe")
     call screen wardrobe
 
 label touched_her_crotch:
     if her_whoring >= 0 and her_whoring < 5:
-        call set_her_face("angry")
+        call set_her_face(mouth="angry", eyes="angry")
     elif her_whoring >= 5 and her_whoring < 17:
-        call set_her_face("annoyed")
+        call set_her_face(mouth="annoyed", eyes="annoyed")
     elif her_whoring >= 17 and her_whoring < 20:
-        call set_her_face("happy")
+        call set_her_face(mouth="happy", eyes="happy")
     else:
-        call set_her_face("naughty")
+        call set_her_face(mouth="naughty", eyes="naughty")
 
     call her_main(xpos="wardrobe")
     call screen wardrobe
@@ -419,9 +432,9 @@ label her_bra_toggle:
         call update_her_uniform
 
         if her_whoring >= 11 and her_whoring < 15:
-            call set_her_face("annoyed")
+            call set_her_face(mouth="annoyed", eyes="annoyed")
         else: #21+
-            call set_her_face("naughty")
+            call set_her_face(mouth="naughty", eyes="naughty")
 
     else: #Toggle ON
         $ h_request_wear_bra = True
@@ -429,11 +442,11 @@ label her_bra_toggle:
         call update_her_uniform
 
         if her_whoring >= 11 and her_whoring < 15:
-            call set_her_face("annoyed")
+            call set_her_face(mouth="annoyed", eyes="annoyed")
         elif her_whoring >= 15 and her_whoring < 21:
-            call set_her_face("neutral")
+            call set_her_face(mouth="neutral", eyes="neutral")
         else: #21+
-            call set_her_face("happy")
+            call set_her_face(mouth="happy", eyes="happy")
 
     call her_main(xpos="wardrobe",ypos="base")
     hide screen wardrobe
@@ -478,9 +491,9 @@ label her_panties_toggle:
         call update_her_uniform
 
         if her_whoring < 15:
-            call set_her_face("annoyed")
+            call set_her_face(mouth="annoyed", eyes="annoyed")
         else: #21+
-            call set_her_face("naughty")
+            call set_her_face(mouth="naughty", eyes="naughty")
 
     else: #Toggle ON
         $ h_request_wear_panties = True
@@ -488,11 +501,11 @@ label her_panties_toggle:
         call update_her_uniform
 
         if her_whoring < 15:
-            call set_her_face("annoyed")
+            call set_her_face(mouth="annoyed", eyes="annoyed")
         elif her_whoring >= 15 and her_whoring < 21:
-            call set_her_face("neutral")
+            call set_her_face(mouth="neutral", eyes="neutral")
         else: #21+
-            call set_her_face("happy")
+            call set_her_face(mouth="happy", eyes="happy")
 
     call her_main(xpos="wardrobe",ypos="base")
     hide screen wardrobe
@@ -741,8 +754,7 @@ label equip_piercing:
     if active_girl == "tonks":
         call set_ton_piercing(piercing_choice, piercing_color_choice)
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -760,8 +772,7 @@ label equip_tattoo:
         $ h_request_wear_tattoos = True
         $ hermione_wear_tattoos = True
 
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 
 
@@ -780,8 +791,7 @@ label wardrobe_fail(text=""):
 ## Gifts ##
 label wardrobe_give_gift:
     call give_her_gift(wardrobe_gift_item)
-    hide screen wardrobe
-    call screen wardrobe
+    jump return_to_wardrobe
 
 ## Potions ## Not in use ## Move to Accessories
 label wardrobe_give_potion:

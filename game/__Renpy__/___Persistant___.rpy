@@ -7,20 +7,11 @@ label __init_variables:
     #place save variables here
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
-    if not hasattr(renpy.store,'first_time_7th'): #important!
-        $ first_time_7th = True
-    if not hasattr(renpy.store,'pitch_open'): #important!
-        $ pitch_open = True
-    if not hasattr(renpy.store,'inn_intro'): #important!
-        $ inn_intro = False
-    if not hasattr(renpy.store,'attic_open'): #important!
-        $ attic_open = False
     if not hasattr(renpy.store,'tentacle_cosmetic'): #important!
         $ tentacle_cosmetic = False
 
     if not hasattr(renpy.store,'fawkes_intro_done'): #important!
         $ fawkes_intro_done = True
-
 
     ### Interface ###
     if not hasattr(renpy.store,'interface_color'):
@@ -29,24 +20,10 @@ label __init_variables:
     ### Difficulty ###
     if not hasattr(renpy.store,'game_difficulty'):
         $ game_difficulty = 2                      # 2 = normal
-        $ hardcore_difficulty_active = False       # for hardcore play-through rewards
 
     ### Gameplay ###
     if not hasattr(renpy.store,'ignore_warning'):
         $ ignore_warning = False #Warning message that tells you which ending you will get.
-
-    ### Cheats ###
-    if not hasattr(renpy.store,'cheats_active'): #important!
-        $ cheats_active = False
-    if not hasattr(renpy.store,'force_unlock_pub_favors'): #important!
-        $ force_unlock_pub_favors = False
-    if not hasattr(renpy.store,'skip_duel'): #important!
-        $ skip_duel = False
-    if not hasattr(renpy.store,'skip_to_hermione'): #important!
-        $ skip_to_hermione = False
-    if not hasattr(renpy.store,'next_day'): #important!
-        $ next_day = False
-
 
     if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'): #important!
         $ hg_pf_TheGamble_Flag = False
@@ -72,8 +49,10 @@ label __init_variables:
         $ phoenix_fed_counter = 0
         $ phoenix_petted_counter = 0
 
-
-
+    #Room Deco
+    if not hasattr(renpy.store,'room_deco'):
+        $ room_deco = ""
+        $ cupboard_deco = ""
 
     #HD RESCALE RATION
     if not hasattr(renpy.store,'genie_scaleratio'): #important!
@@ -152,35 +131,22 @@ label __init_variables:
     call tonks_init
     call tonks_progress_init
 
+    #Map
+    call map_init
+
+    #Wardrobe
     call wardrobe_init
 
-    # Store Init
+    #Store
     call store_init
     call store_items_init
 
-    call clothing_init
+    #Minigames & Mirror Stories
+    call dark_room_init
 
+    #Cheats
     call cheats_init
 
-
-
-    label update_unlocked_character_list:
-
-    $ unlocked_character_list = [["genie", 1]]
-    if snape_unlocked:
-        $ unlocked_character_list.append(["snape", 1])
-    if hermione_unlocked:
-        $ unlocked_character_list.append(["hermione", 1])
-    if luna_unlocked:
-        $ unlocked_character_list.append(["luna", 1])
-    if astoria_unlocked:
-        $ unlocked_character_list.append(["astoria", 1])
-    if susan_unlocked:
-        $ unlocked_character_list.append(["susan", 1])
-    if cho_unlocked:
-        $ unlocked_character_list.append(["cho", 1])
-    if tonks_unlocked:
-        $ unlocked_character_list.append(["tonks", 1])
 
     #Hidden Blowjob
     $ hg_hidden_blowjob_character_list = ["snape"]
@@ -194,8 +160,6 @@ label __init_variables:
     #    $ hg_hidden_blowjob_character_list.append("cho")
     if tonks_unlocked:
         $ hg_hidden_blowjob_character_list.append("tonks")
-
-
 
     ### Do not add anything after this line !!!
 

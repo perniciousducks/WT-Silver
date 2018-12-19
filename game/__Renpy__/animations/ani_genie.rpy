@@ -26,7 +26,7 @@ image genie_walk_ani_f: #Default Genie walk animation.
     repeat
 
 ### Cupboard ###
-image rum:
+image genie_rum_ani:
     "images/animation/rum_01.png"
     pause.3
     "images/animation/rum_02.png"

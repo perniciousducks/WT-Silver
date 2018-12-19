@@ -4,7 +4,7 @@
 
 
 
-label susan_imperio:
+label susan_imperio: #Not being used anymore...
     call ast_main("Alright, [ast_genie_name].","smile","base","base","mid",xpos="base",ypos="base",trans="fade")
     call ast_main("I will bring the [ast_susan_name]!","grin","angry","angry","mid")
     call blkfade
@@ -56,12 +56,25 @@ label susan_imperio:
     $ susan_imperio_influence = True
     $ spells_locked = True
 
-    $ sus_curse_counter += 1 #For Stats
-
     call nar(">Susan is now under the influence of imperio.\n>The effect will last for 20 days.")
     jump astoria_requests
 
 
+label ag_imperio_susan:
+    if ag_imperio_susan_OBJ.points == 1: #Trained once.
+        jump imperio_spell_1
+    elif ag_imperio_susan_OBJ.points == 2: #Trained twice.
+        jump imperio_spell_2
+    elif ag_imperio_susan_OBJ.points == 3 and ag_imperio_susan_OBJ.level < 3: #Trained three times.
+        jump imperio_spell_3
+    elif ag_imperio_susan_OBJ.points == 3 and ag_imperio_susan_OBJ.level == 3: #Three hearts. Repeats events.
+        $ random_number = renpy.random.randint(1, 3)
+        if random_number in [1]:
+            jump imperio_spell_1
+        elif random_number in [2]:
+            jump imperio_spell_2
+        else:
+            jump imperio_spell_3
 
 
 label imperio_spell_1:
@@ -248,11 +261,12 @@ label imperio_spell_1:
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    $ sus_curse_counter += 1 #For Stats
-
-    if ast_affection < 1:
+    if ag_imperio_susan_OBJ.points == 1:
+        $ ag_imperio_susan_OBJ.level = 1
         $ ast_affection = 1
         $ ast_spell_progress = 0
+
+    $ sus_curse_counter += 1
 
     jump day_main_menu
 
@@ -479,11 +493,12 @@ label imperio_spell_2: #second level imperio spell #needs posing
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    $ sus_curse_counter += 1 #For Stats
-
-    if ast_affection < 2:
+    if ag_imperio_susan_OBJ.points == 2:
+        $ ag_imperio_susan_OBJ.level = 2
         $ ast_affection = 2
         $ ast_spell_progress = 0
+
+    $ sus_curse_counter += 1
 
     jump day_main_menu
 
@@ -602,6 +617,7 @@ label imperio_spell_3:
 
     hide screen astoria_main
     hide screen susan_main
+    call sus_chibi("hide")
     hide screen blktone
     call blkfade
 
@@ -751,6 +767,7 @@ label imperio_spell_3:
 
     call nar(">Susan slowly crawls out from under your desk...")
 
+    call sus_chibi("stand","desk","base")
     $ susan_face_covered = True
     hide screen blkfade
     call sus_main("","upset","narrow","worried","L",xpos="mid",ypos="base",trans="fade")
@@ -771,7 +788,7 @@ label imperio_spell_3:
     $ susan_face_covered = False
     call sus_main("I hope you two are happy...","upset","narrow","base","down")
 
-    call sus_walk("mid","leave",2)
+    call sus_walk("desk","leave",2)
 
     call nar(">She turns and runs out the door, tears streaming down her face.")
     call ast_main("ahahahahaha, that was incredible, dumby!","happy","wide","wide","mid")
@@ -806,11 +823,12 @@ label imperio_spell_3:
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    $ sus_curse_counter += 1 #For Stats
-
-    if ast_affection < 3:
+    if ag_imperio_susan_OBJ.points == 3:
+        $ ag_imperio_susan_OBJ.level = 3
         $ ast_affection = 3
         $ ast_spell_progress = 0
+
+    $ sus_curse_counter += 1
 
     jump day_main_menu
 

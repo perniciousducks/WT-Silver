@@ -6,7 +6,7 @@ label phoenix:
                 hide screen genie
                 #$ tt_xpos=270
                 #$ tt_ypos=90
-                #show screen genie_stands
+                #show screen genie_stand
                 call gen_chibi("stand","mid","base",flip=True)
                 show screen chair_left #Empty chair near the desk.
                 show screen desk
@@ -14,7 +14,7 @@ label phoenix:
                 m "Hm....."
                 m "Even this weird looking bird radiates magic..."
                 show screen genie
-                hide screen genie_stands
+                hide screen genie_stand
                 hide screen chair_left #Empty chair near the desk.
                 hide screen desk
                 with Dissolve(0.5)
@@ -64,6 +64,9 @@ label feeding:
             m "There you go..."
         else:
             pause .8
+
+        if phoenix_fed_counter == 3:
+            "Developer note:" ">Feeding the bird doesn't do anything in this version of the game (v1.34)."
 
     show screen genie
     hide screen feeding

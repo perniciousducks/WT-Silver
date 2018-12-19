@@ -48,19 +48,19 @@ label want_to_rule:
             menu:
                 m "..."
                 "\"Show me your tits first.\"":
-                    $ mad += 9
+                    $ her_mood += 9
                     $ d_flag_01 = True
                     pass
                 "\"Show me your pussy first.\"":
-                    $ mad += 9
+                    $ her_mood += 9
                     $ d_flag_02 = True
                     pass
                 "\"Strip naked for me first.\"":
-                    $ mad += 17
+                    $ her_mood += 17
                     $ d_flag_03 = True
                     pass
                 "\"You will have to sleep with me.\"" if not d_flag_04:
-                    $ mad += 17
+                    $ her_mood += 17
                     $ d_flag_04 = True
                     call her_main("I will have to... sleep...?","angry","wide")
                     call her_main("...................","angry","angry",cheeks="blush")
@@ -605,7 +605,7 @@ label start_end_events:
             g9 "Maybe we could..."
             call her_main("Have some fun?","soft","glance")
             g9 "You can read my mind, girl."
-            jump silver_requests
+            jump hermione_requests_menu
         "No.":
             jump hermione_talk
 
@@ -620,7 +620,7 @@ label giving_the_dress:
     stop music fadeout 1.0
     m "Here... This is for you..."
 
-    call give_reward(">You give the ball gown to Hermione...","images/store/01.png")
+    call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
 
     call her_main("Hm...? What is this?","base","base")
     call her_main("{size=+7}A DRESS?!{/size}","angry","wide")

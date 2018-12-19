@@ -2,7 +2,7 @@
 
 label equipping_failed:
 
-    if mad >= 1 and mad <=5:
+    if her_mood >= 1 and her_mood <=5:
         if wardrobe_chitchat_active:
             hide screen hermione_main
             with d3
@@ -30,7 +30,7 @@ label equipping_failed:
                     call her_main("Thank you, [genie_name].","soft","baseL")
                     m "Great, now I forgot what I wanted you to wear..."
                     $ gryffindor += 5
-                    $ mad = 0
+                    $ her_mood = 0
                 "-Don't give her the points-":
                     m "I don't think so, missy!"
                     call her_main("...","annoyed","frown")
@@ -46,18 +46,18 @@ label equipping_failed:
                 ">You can give Gryffindor points to better her mood."
                 "-5 points for Gryffindor!-":
                     $ gryffindor += 5
-                    $ mad = 0
+                    $ her_mood = 0
                     ">Hermione is no longer mad at you!"
-                    call set_her_face("happy")
+                    call set_her_face(mouth="happy", eyes="neutral")
                 "-Don't bother-":
-                    call set_her_face("angry")
+                    call set_her_face(mouth="angry", eyes="angry")
 
         $ hide_transitions = True
         call her_main(xpos="wardrobe")
         call screen wardrobe
 
 
-    if mad >= 6 and mad <=10:
+    if her_mood >= 6 and her_mood <=10:
         if wardrobe_chitchat_active:
             $ hide_transitions = False
             hide screen hermione_main
@@ -82,7 +82,7 @@ label equipping_failed:
                     call her_main("Thank you,[genie_name].","open","closed")
                     m "No poblem. Now put on... {w=0.9}what was it again?"
                     $ gryffindor += 15
-                    $ mad = 0
+                    $ her_mood = 0
                 "-Don't give her the points-":
                     m "I'm already giving you new clothing! Isn't that enough?"
                     call her_main("No it's not enough, [genie_name]!","open","closed")
@@ -101,18 +101,18 @@ label equipping_failed:
                 ">You can give Gryffindor points to better her mood."
                 "-15 points for Gryffindor!-":
                     $ gryffindor += 15
-                    $ mad = 0
+                    $ her_mood = 0
                     ">Hermione is no longer mad at you!"
-                    call set_her_face("happy")
+                    call set_her_face(mouth="happy", eyes="neutral")
                 "-Don't bother-":
-                    call set_her_face("angry")
+                    call set_her_face(mouth="angry", eyes="angry")
 
         $ hide_transitions = True
         call her_main(xpos="wardrobe")
         call screen wardrobe
 
 
-    if mad >= 11:
+    if her_mood >= 11:
         if wardrobe_chitchat_active:
             $ hide_transitions = False #activates dissolve in her_main
             hide screen hermione_main
@@ -129,7 +129,7 @@ label equipping_failed:
             hide screen hermione_main
             with d3
             ">Hermione is really mad at you! There is no point in trying to make her wear it!"
-            call set_her_face("angry")
+            call set_her_face(mouth="angry", eyes="angry")
 
 
         $ hide_transitions = True

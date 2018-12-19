@@ -47,7 +47,7 @@ label equip_her_top:
                 with d3
                 jump return_to_wardrobe
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     else:
@@ -63,7 +63,7 @@ label equip_her_top:
             ### Uniform ###
 
             #Uniform Top Vest and Tie #Done
-            if top_choice == "top_1_g":
+            if top_choice in ["top_1_g","top_1_s"]:
                 m "Would you wear your uniform top for me? All of it, vest and tie!"
                 if her_whoring < 8:
                     call her_main("Of course, [genie_name].","soft","baseL")
@@ -114,7 +114,7 @@ label equip_her_top:
                     call her_main("Ugh--Fine, let me change it real quick.","annoyed","baseL")
 
             #Uniform Top Tie only #Done
-            elif top_choice == "top_2_g":
+            elif top_choice in ["top_2_g","top_2_s"]:
                 m "Would you wear your uniform top for me? But leave the vest off."
                 if her_whoring >= 2:
                     if her_whoring < 5:
@@ -153,15 +153,24 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Top No Tie #Done
-            elif top_choice == "top_3_g":
+            elif top_choice in ["top_3_g","top_3_s"]:
                 m "Would you wear your uniform top for me? But remove the tie and the vest."
-                if her_whoring >= 5: #Gets removed at level 11.
-                    call her_main("You better appreciate this, [genie_name].","annoyed","annoyed")
-                    call her_main("Can't believe I'm willing to remove my precious Gryffindor tie for you...","angry","angry")
-                    m "It's only a tie, girl!"
-                    call her_main("No, it is not...","scream","worriedCl")
-                    call her_main("...","annoyed","worriedL")
-                    call her_main("Just let me go and change...","annoyed","base")
+                if her_whoring >= 5:
+                    if her_whoring < 11:
+                        call her_main("You better appreciate this, [genie_name].","annoyed","annoyed")
+                        call her_main("Can't believe I'm willing to remove my precious Gryffindor tie for you...","angry","angry")
+                        m "It's only a tie, girl!"
+                        call her_main("No, it is not...","scream","worriedCl")
+                        call her_main("...","annoyed","worriedL")
+                        call her_main("Just let me go and change...","annoyed","base")
+                    elif her_whoring < 15:
+                        call her_main("OK, [genie_name]","base","base")
+                    else:
+                        call her_main("My old school top? But it looks so plain...","annoyed","down_raised")
+                        call her_main("Do I really have to?","open","wink")
+                        m "You do."
+                        call her_main(".......","annoyed","down")
+                        call her_main("(How embarassing...)","annoyed","ahegao")
                 else:
                     call her_main("No thank you, [genie_name].","open","worriedL")
                     call her_main("No amount of points will ever convince me to remove my precious Gryffindor tie!","open","closed")
@@ -189,7 +198,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Top Cleavage #Done
-            elif top_choice == "top_4_g":
+            elif top_choice in ["top_4_g","top_4_s"]:
                 m "Would you wear your uniform top for me? Just the shirt..."
                 g9 "And unbutton some of those buttons! I want you to show some cleavage!"
                 if her_whoring >= 8:
@@ -239,7 +248,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Crop-Top #Done
-            elif top_choice == "top_5_g":
+            elif top_choice in ["top_5_g","top_5_s"]:
                 m "I want you to pull up the two ends of your school top and tie them together around your chest."
                 if her_whoring >= 11:
                     if her_whoring < 14:
@@ -252,8 +261,6 @@ label equip_her_top:
                         m "Yes, if you could do that."
                         call her_main("Of course, [genie_name].","grin","angry",cheeks="blush")
                         call her_main("I will just change right here, if you don't mind.","base","glance")
-                        #m "{w=0.5}.{w=0.5}.{w=0.5}.{w=1.0}!"
-                        # $ wardrobe_strip = True
                     else: #20+
                         call her_main("Of course, [genie_name].","soft","baseL") #soft, baseL
                         call her_main("I love wearing my top like this! It's so handy!","smile","happyCl",emote="06")
@@ -263,7 +270,6 @@ label equip_her_top:
                         call her_main("They too of course!","open","baseL",cheeks="blush")
                         call her_main("(But not as much, now that I think about it.)","annoyed","ahegao")
                         call her_main("Let me change my top for you real quick!","grin","baseL")
-                        # $ wardrobe_strip = True
                 else:
                     call her_main("This is just ridiculous!","angry","angry")
                     call her_main("I'm not walking around school wearing my shirt like that!","annoyed","suspicious")
@@ -273,7 +279,7 @@ label equip_her_top:
                     jump return_to_wardrobe
 
             #Uniform Top Vest with Cleavage #Done
-            elif top_choice == "top_6_g":
+            elif top_choice in ["top_6_g","top_6_s"]:
                 m "Would you wear your vest for me? Just the vest. Maybe your shirt beneath it. But don't think about closing any of those buttons!"
                 if her_whoring >= 8:
                     if her_whoring < 11:
@@ -304,7 +310,7 @@ label equip_her_top:
                         ">Try again at Whoring level 8."
                     jump return_to_wardrobe
 
-            elif top_choice == "top_7_g":
+            elif top_choice in ["top_7_g","top_7_s"]:
                 m "Could you wear your uniform top, but like this?"
                 if her_whoring >= 17:
                     if her_whoring < 14:
@@ -770,32 +776,32 @@ label equip_her_top:
             #    jump return_to_wardrobe
 
             #Uniform
-            if top_choice == "top_2_g" and her_whoring < 2: #no vest
+            if top_choice in ["top_2_g","top_2_s"] and her_whoring < 2: #no vest
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 2."
                 jump return_to_wardrobe
-            if top_choice == "top_3_g" and her_whoring < 5: #no tie
+            if top_choice in ["top_3_g","top_3_s"] and her_whoring < 5: #no tie
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 5."
                 jump return_to_wardrobe
-            if top_choice == "top_4_g" and her_whoring < 8: #cleavage
+            if top_choice in ["top_4_g","top_4_s"] and her_whoring < 8: #cleavage
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 8."
                 jump return_to_wardrobe
-            if top_choice == "top_5_g" and her_whoring < 11: #crop top
+            if top_choice in ["top_5_g","top_5_s"] and her_whoring < 11: #crop top
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 11."
                 jump return_to_wardrobe
-            if top_choice == "top_6_g" and her_whoring < 8: #vest w/cleavage
+            if top_choice in ["top_6_g","top_6_s"] and her_whoring < 8: #vest w/cleavage
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 8."
                 jump return_to_wardrobe
-            if top_choice == "top_7_g" and her_whoring < 17: #vest w/cleavage
+            if top_choice in ["top_7_g","top_7_s"] and her_whoring < 17: #vest w/cleavage
                 ">She won't wear that top just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 17."
@@ -878,7 +884,7 @@ label equip_sus_top:
 
 ### Equip Cho's Top ###
 label equip_cho_top:
-    call set_cho_top(top_choice)
+    call set_cho_top(top_choice, top_color_choice)
 
     jump return_to_wardrobe
 

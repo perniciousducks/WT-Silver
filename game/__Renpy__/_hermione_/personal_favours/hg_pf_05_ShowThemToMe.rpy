@@ -19,7 +19,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     if her_whoring < 6:
         jump too_much
@@ -216,7 +216,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             call set_her_action("lift_top")
             hide screen bld1
             show screen blktone
-            call her_main("","base","closed",xpos="mid",trans="fade")
+            call her_main("","base","closed",xpos="mid",ypos="base",trans="fade")
             call ctc
 
             her "...................................."
@@ -276,7 +276,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 m "You are dismissed, [hermione_name]..."
                 call her_main("Gr..................","angry","worriedCl",cheeks="blush")
                 call her_main("{size=-5}(Burn in hell, you wretched old---{/size}","angry","worriedCl",cheeks="blush")
-                $ mad += 22
+                $ her_mood += 22
                 call music_block
                 jump could_not_flirt
 
@@ -332,7 +332,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call her_main(".............","soft","baseL",cheeks="blush")
                 call her_main("Can I get paid now please?","angry","worriedCl",cheeks="blush",emote="05")
                 m "Sure..."
-                $ mad += 9
+                $ her_mood += 9
 
             #Event Also Succeeds
             elif her_whoring >= 12:
@@ -435,7 +435,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                     call her_main("Thank you [genie_name].","open","baseL",cheeks="blush")
                 else:
                     call her_main("Can I have my payment now?","base","ahegao_raised",cheeks="blush")
-                    $ mad +=7
+                    $ her_mood +=7
 
 
         "\"Keep promise. Admire visually.\"":
@@ -450,7 +450,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         ">You Look at the girl's tits for a while and then nod in approval..."
                         her "......................"
                     "-Shake your head in disapproval-":
-                        $ mad += 3
+                        $ her_mood += 3
                         ">You Look at the girl's tits for a while and then shake your head in disappointment..."
                         her ".....................?"
 
@@ -467,7 +467,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call her_main("...........","annoyed","base")
                         call her_main("You are being inappropriate, [genie_name].","annoyed","annoyed")
                     "\"Hm... I've seen better.\"":
-                        $ mad += 7
+                        $ her_mood += 7
                         her "Tsk..."
                         her "Are we done then?"
 
@@ -511,7 +511,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
 
             #First Time Event.
             if her_whoring >= 6 and her_whoring <= 8:
-                $ mad += 2
+                $ her_mood += 2
                 hide screen hermione_main
                 with d3
                 ">You take your cock out and start stroking it..."
@@ -561,17 +561,17 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
                         call her_main("You are a horrible person, [genie_name]...","angry","suspicious",cheeks="blush",tears="messy")
 
-                        $ mad += 30
+                        $ her_mood += 30
 
                         call music_block
                         jump could_not_flirt
 
                     "\"Alright, alright. That's enough for now.\"":
-                        $ mad +=9
+                        $ her_mood +=9
                         pass
 
                     "-Start jerking your cock faster-":
-                        $ mad += 35
+                        $ her_mood += 35
 
                         ">You start jerking your cock furiously!"
                         call her_main("No, [genie_name], stop!","scream","angry",cheeks="blush",emote="01")
@@ -696,7 +696,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         her "You gave me your word!"
                         hide screen hermione_main
                         with d3
-                        $ mad += 45
+                        $ her_mood += 45
 
 
             #Event three.
@@ -910,7 +910,7 @@ label end_hg_show_breasts:
     pause.5
 
     call bld
-    if her_whoring <= 16:
+    if her_whoring < 21:
         $ gryffindor +=current_payout
         m "The \"Gryffindor\" house gets [current_payout] points!"
 
@@ -929,13 +929,13 @@ label end_hg_show_breasts:
         her "I'd better go now then. It's getting pretty late..."
 
     if her_whoring >= 6 and her_whoring < 9:
-        $ hg_pf_ShowThemToMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_ShowThemToMe_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 9 and her_whoring < 12:
-        $ hg_pf_ShowThemToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_ShowThemToMe_OBJ.level = 2 #Event hearts level (0-3)
 
     if her_whoring >= 12:
-        $ hg_pf_ShowThemToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_ShowThemToMe_OBJ.level = 3 #Event hearts level (0-3)
 
 
     hide screen bld1

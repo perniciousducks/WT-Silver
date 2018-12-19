@@ -2,7 +2,7 @@
 
 label snape_init:
 
-    if not hasattr(renpy.store,'snape_flip') or reset_persistants:
+    if not hasattr(renpy.store,'snape_chibi_flip') or reset_persistants:
         $ snape_xpos = 525
         $ snape_ypos = 0
         $ snape_zorder = 5
@@ -18,8 +18,11 @@ label snape_init:
         $ snape_chibi_xpos=610
         $ snape_chibi_ypos=210
         $ snape_speed = 2.0
+        $ snape_chibi_flip = 1
         $ snape_chibi_zorder = 2
 
+        $ snape_chibi_stand = "characters/snape/chibis/snape_stand.png"
+        $ snape_chibi_walk = "snape_walk"
 
     return
 

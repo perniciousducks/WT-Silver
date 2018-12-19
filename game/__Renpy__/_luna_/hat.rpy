@@ -88,7 +88,7 @@ label hat_intro_2: #Bringing in Hermione
 
 
 label hat_intro_3: #Luna change scene #DONE
-    $ lun_hair_style = "A"
+    $ lun_hair_style = "playful"
     call update_lun_uniform
 
     call play_sound("knocking")
@@ -156,7 +156,7 @@ label hat_intro_3: #Luna change scene #DONE
     call lun_walk("mid","leave",2)
 
     $ luna_wear_accs = False
-    $ lun_hair_style = "B"
+    $ lun_hair_style = "curly"
 
     call nar(">You place the hat back on the cupboard")
     m "So what did you do to her personality?"

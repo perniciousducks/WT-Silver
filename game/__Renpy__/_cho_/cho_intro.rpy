@@ -166,7 +166,7 @@ label cho_intro:
             call slap_her
 
             call her_main("I'm never selling you another favor again!","angry","angry",cheeks="blush",tears="down")
-            $ mad += 15
+            $ her_mood += 15
 
         "-Stay out of it-":
             call her_main("Nothing! Get out!","angry","worriedCl",cheeks="blush")
@@ -179,7 +179,7 @@ label cho_intro:
             call her_main("I can't believe that just happened.","angry","worriedCl",cheeks="blush")
             call her_main("What kind of a person just barges into the headmaster's office with out knocking!","angry","angryCl",cheeks="blush")
             call her_main("This was all your fault!","annoyed","frown",cheeks="blush")
-            $ mad += 5
+            $ her_mood += 5
 
     show screen blkfade
     hide screen hermione_main
@@ -371,7 +371,7 @@ label cho_intro_2:
     pause.2
 
     $ cho_whoring = 0
-    $ cho_mad = 0
+    $ cho_mood = 0
     $ cho_unlocked = True
     call give_reward(">You've unlocked the ability to summon Cho Chang to your office, and buy favours from her.","interface/icons/head/head_cho_1.png")
 

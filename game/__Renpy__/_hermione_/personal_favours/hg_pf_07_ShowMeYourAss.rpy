@@ -19,7 +19,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ current_payout = 40 #Used when haggling about price of th favor.
 
@@ -76,7 +76,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                         call her_main("but you better keep your hands you yourself...","annoyed","angryL")
 
             "\"Fine, leave. I don't care...\"":
-                $ mad = +12
+                $ her_mood = +12
                 her "Tsk!"
                 call music_block
                 jump could_not_flirt
@@ -271,7 +271,7 @@ label hg_show_ass:
                 call her_main("{size=-5}(I guess letting him grab me isn't too bad...{/size}","angry","worriedCl",cheeks="blush")
                 call blkfade
 
-                $ mad += 7
+                $ her_mood += 7
 
                 return
 
@@ -279,7 +279,7 @@ label hg_show_ass:
             elif her_whoring < 18:
 
                 if current_payout < 100:
-                    $ mad += 3
+                    $ her_mood += 3
                     call her_main("I didn't agree to this, [genie_name]...","annoyed","angryL",cheeks="blush",ypos="head")
                 else:
                     call her_main("I know I agreed to this [genie_name]...","annoyed","angryL",cheeks="blush",ypos="head")
@@ -418,7 +418,7 @@ label hg_show_ass:
                     "-\"You're ass is alright...\"-":
                         ">You Look at her ass some more whilst making some disapproving tuts..."
                         call her_main(".....................","annoyed","frown",ypos="head")
-                        $ mad +=3
+                        $ her_mood +=3
 
             #Second Event
             elif her_whoring >= 15 and her_whoring < 18:
@@ -432,7 +432,7 @@ label hg_show_ass:
                         call her_main("(Maybe he should grab it next time...)","annoyed","annoyed")
 
                     "\"Hm... I've seen better.\"":
-                        $ mad += 9
+                        $ her_mood += 9
                         call her_main("Tsk...","clench","angry",ypos="head")
                         call her_main("well in that case Are we done?","open","annoyed")
 
@@ -454,7 +454,7 @@ label hg_show_ass:
 
             m "Alright, you can get dressed now [hermione_name]..."
 
-            if her_whoring < 15 or mad > 1:
+            if her_whoring < 15 or her_mood > 1:
                 call her_main(".............","annoyed","base")
             else:
                 call her_main(".............","base","closed")
@@ -484,7 +484,7 @@ label hg_show_ass:
 
             #First Event.
             if her_whoring >= 12 and her_whoring < 15:
-                $ mad += 2
+                $ her_mood += 2
 
                 show screen blktone
                 show screen hermione_ass
@@ -733,9 +733,9 @@ label hg_show_ass_cumming:
                 call blkfade
 
                 if her_whoring < 15:
-                    $ mad += 20
+                    $ her_mood += 20
                 else:
-                    $ mad += 10
+                    $ her_mood += 10
 
                 return
 
@@ -852,11 +852,11 @@ label end_hg_show_ass:
     hide screen blkfade
     call her_main(xpos="right",ypos="base",trans="fade")
 
-    if her_whoring < 18:
-        if her_whoring < 15:
+    if her_whoring < 24:
+        if her_whoring < 18:
             call her_main("Can I have my payment now?","base","ahegao_raised",cheeks="blush")
             if current_payout < 100:
-                $ mad +=7
+                $ her_mood +=7
 
         $ gryffindor +=current_payout
         m "The \"Gryffindor\" house gets [current_payout] points!"
@@ -874,16 +874,16 @@ label end_hg_show_ass:
     else:
         her "I'd better go now then. It's getting pretty late..."
 
-    $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 1 #Event hearts level (0-3)
+    $ hg_pf_ShowMeYourAss_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 12 and her_whoring < 15:
-        $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_ShowMeYourAss_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 15 and her_whoring < 18:
-        $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_ShowMeYourAss_OBJ.level = 2 #Event hearts level (0-3)
 
     if her_whoring >= 18:
-        $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_ShowMeYourAss_OBJ.level = 3 #Event hearts level (0-3)
 
 
     if her_whoring < 15:

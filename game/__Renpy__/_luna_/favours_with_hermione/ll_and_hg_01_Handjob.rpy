@@ -121,8 +121,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen hermione_main
         $ hermione_chibi_xpos = 40 #40 = Near Luna
         $ hermione_chibi_ypos = 60
-        $ h_c_u_pic = "characters/hermione/chibis/dance/08_sits.png"
-        $ hermione_head_xpos=590
+        $ h_c_u_pic = "characters/hermione/chibis/dance/sit_naked_blink.png"
+        $ hermione_xpos=590
         show screen h_c_u
         with d3
 
@@ -168,8 +168,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_r_arm = 3
         $ luna_flip = 1
         $ luna_xpos = 640
-        $ hermione_head_xpos = 590
-        $ hermione_head_ypos = 390
+        $ hermione_xpos = 590
+        $ hermione_ypos = 390
 
         hide screen genie_main
         $ genie_xpos = 550
@@ -546,8 +546,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen hermione_main
         $ hermione_chibi_xpos = 40 #40 = Near Luna
         $ hermione_chibi_ypos = 60
-        $ h_c_u_pic = "characters/hermione/chibis/dance/08_sits.png"
-        $ hermione_head_xpos=590
+        $ h_c_u_pic = "characters/hermione/chibis/dance/sit_naked_blink.png"
+        $ hermione_xpos=590
         show screen h_c_u
         with d3
 
@@ -564,8 +564,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_r_arm = 3
         $ luna_flip = 1
         $ luna_xpos = 640
-        $ hermione_head_xpos = 590
-        $ hermione_head_ypos = 390
+        $ hermione_xpos = 590
+        $ hermione_ypos = 390
         $ genie_xpos = 550
         show screen genie_main
 
@@ -873,8 +873,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_r_arm = 2
         $ luna_flip = 1
         $ luna_xpos = 640
-        $ hermione_head_xpos = 590
-        $ hermione_head_ypos = 390
+        $ hermione_xpos = 590
+        $ hermione_ypos = 390
         $ genie_xpos = 550
         $ genie_base = "characters/genie/base/hard.png"
 
@@ -996,8 +996,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         g4 "!!!"
         call her_kneel("mmm...","open_wide_tongue","ahegao")
         call lun_main("there we go...","base","seductive","sad","stareL")
-        $ hermione_head_xpos -= 10
-        $ hermione_head_ypos -= 5
+        $ hermione_xpos -= 10
+        $ hermione_ypos -= 5
         ">Hermione starts eagerly lapping at the head of your cock while luna starts furiously stroking your shaft."
         g4 "{size=+5}FUCK YES!!!{/size}"
         g4 "{size=+5}here it comes sluts!{/size}"
@@ -1005,8 +1005,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Luna continues stroking your cock at a blistering pace while hermione moves backwards slightly, leaving her mouth open and waiting."
         $ luna_xpos -= 55
         $ genie_xpos -= 55
-        $ hermione_head_xpos += 10
-        $ hermione_head_ypos += 5
+        $ hermione_xpos += 10
+        $ hermione_ypos += 5
         $ hermione_kneel_cock = False
 
         g4 "{size=+10}ARGHHH!!!!{/size}"

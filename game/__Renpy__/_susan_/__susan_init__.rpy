@@ -2,7 +2,7 @@
 
 label susan_init:
 
-    if not hasattr(renpy.store,'susan_wear_outfit') or reset_persistants:
+    if not hasattr(renpy.store,'susan_base') or reset_persistants:
         label reset_susan_clothing:
 
         #Body
@@ -22,7 +22,7 @@ label susan_init:
         $ sus_lipstick              = "nude"
 
         $ susan_eye                 = "characters/susan/face/eyes/base.png"
-        $ susan_eye_bg              = "characters/susan/face/eyes/base_bg.png"
+        $ susan_eye_bg            = "characters/susan/face/eyes/_white_.png"
         $ susan_pupil               = "characters/susan/face/pupil/mid.png"
         $ sus_eye_color             = "green"
 
@@ -54,10 +54,10 @@ label susan_init:
         $ susan_chibi_robe          = "characters/susan/chibis/blank.png"
 
         #Hair
-        $ susan_hair                = "characters/susan/body/hair/hair_A_1_base.png"
-        $ susan_hair_shadow         = "characters/susan/body/hair/hair_A_1_top.png"
-        $ sus_hair_style            = "A"
-        $ sus_hair_color            = 1
+        $ susan_hair                = "characters/susan/body/hair/braided_red_base.png"
+        $ susan_hair_shadow         = "characters/susan/body/hair/braided_red_top.png"
+        $ sus_hair_style            = "braided"
+        $ sus_hair_color            = "red"
 
         #Clothes
 
@@ -191,6 +191,9 @@ label susan_init:
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 
+
+    call susan_face_layers
+
     return
 
 
@@ -200,7 +203,7 @@ label susan_progress_init:
 
         #Stats
         $ sus_whoring = 0
-        $ sus_mad = 0
+        $ sus_mood = 0
 
         #Flags
         $ susan_busy = False

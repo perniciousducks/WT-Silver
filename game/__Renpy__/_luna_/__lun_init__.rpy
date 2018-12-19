@@ -2,7 +2,6 @@
 
 label luna_init:
 
-    #Update 1.34
     if not hasattr(renpy.store,'luna_base') or reset_persistants or reset_luna_content:
         label reset_luna_base:
 
@@ -17,10 +16,10 @@ label luna_init:
         $ use_luna_head          = False
 
         #Hair
-        $ luna_hair              = "characters/luna/body/hair/hair_A_1_base.png"
-        $ luna_hair_shadow       = "characters/luna/body/hair/hair_A_1_top.png"
-        $ lun_hair_style         = "A"
-        $ lun_hair_color         = 1
+        $ luna_hair              = "characters/luna/body/hair/playful_blonde_base.png"
+        $ luna_hair_shadow       = "characters/luna/body/hair/playful_blonde_top.png"
+        $ lun_hair_style         = "playful"
+        $ lun_hair_color         = "blonde"
 
         #Face
         $ luna_mouth             = "characters/luna/face/mouth/base.png"
@@ -117,8 +116,8 @@ label luna_init:
 
 
         #Top
-        $ luna_top                 = "characters/luna/clothes/tops/base/top_1.png"
-        $ lun_top                     = "top_1"
+        $ luna_top                 = "characters/luna/clothes/tops/base/top_1_r.png"
+        $ lun_top                     = "top_1_r"
         $ lun_top_color               = "base"
 
         #Bottom
@@ -168,7 +167,7 @@ label luna_init:
         #Accessories
         $ luna_makeup_list         = []
 
-        $ luna_hat                 = "characters/luna/accessories/hats/hair_A/blank.png"
+        $ luna_hat                 = "characters/luna/accessories/hats/hair_base/blank.png"
         $ lun_hat                     = "blank"
         $ lun_hat_color               = "base"
 
@@ -183,12 +182,35 @@ label luna_init:
         $ luna_outfit_GLBL = None
         $ luna_temp_outfit = None
 
+        call reset_lun_transparency
+
 
 
     # Luna Lists
     $ luna_arms_up_list  = ["top_cheer_r",
-                            "top_pyjama"
+                            "ll_pyjama",
                             ]
+
+    call luna_face_layers
+
+
+    return
+
+label reset_lun_transparency:
+
+    $ lun_top_transp       = 1
+    $ lun_bottom_transp    = 1
+
+    $ lun_bra_transp       = 1
+    $ lun_onepiece_transp  = 1
+    $ lun_panties_transp   = 1
+    $ lun_garter_transp    = 1
+
+    $ lun_gloves_transp    = 1
+    $ lun_stockings_transp = 1
+    $ lun_robe_transp      = 1
+
+    $ lun_outfit_transp    = 1
 
     return
 
@@ -201,7 +223,7 @@ label luna_progress_init:
 
         #Stats
         $ lun_whoring = 0
-        $ lun_mad = 0
+        $ lun_mood = 0
 
         $ luna_gold = 0
         $ lun_skirt_level = 1
@@ -220,8 +242,8 @@ label luna_progress_init:
         $ luna_wardrobe_unlocked = False
 
         $ luna_herm_talk = False
-        $ lun_reverted = False
-        $ lun_addicted = False
+        $ luna_reverted = False
+        $ luna_addicted = False
 
         $ days_to_luna = 0
 

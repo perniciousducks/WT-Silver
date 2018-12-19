@@ -4,6 +4,18 @@
 
 init -2:
 
+    python:
+
+        import math
+
+        def notNull(object):
+            if object == None or object == "":
+                return False
+            else:
+                return True
+
+
+
     $ config.autoreload = False
 
     transform fade_in(x, y, speed):
@@ -23,22 +35,29 @@ init -2:
         ypos y
         linear speed xpos x2 # linear
 
-    transform custom_walk_02(x,x2): #Same custom walk but for Hermione.
+    transform custom_walk(x,x2):
         xpos x
-        ypos 250
-        linear hermione_speed xpos x2 # linear
+        ypos 210
+        linear speed xpos x2 # linear
 
-    transform susan_walk(x,x2): #Same custom walk but for Hermione.
+
+
+    transform genie_walk(x,x2):
         xpos x
-        ypos 250
-        linear susan_speed xpos x2 # linear
+        ypos 190
+        linear genie_speed xpos x2 # linear
 
-    transform custom_walk(x,x2): # http://www.renpy.org/wiki/atl
+    transform snape_walk(x,x2):
         xpos x
         ypos 210
         linear snape_speed xpos x2 # linear
 
-    transform genie_walk(x,x2): #http://www.renpy.org/wiki/atl
+    transform custom_walk_02(x,x2):
         xpos x
-        ypos 190
-        linear snape_speed xpos x2 # linear
+        ypos 250
+        linear hermione_speed xpos x2 # linear
+
+    transform susan_walk(x,x2):
+        xpos x
+        ypos 250
+        linear susan_speed xpos x2 # linear

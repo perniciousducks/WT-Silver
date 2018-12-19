@@ -38,11 +38,11 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
             $ use_snape_head = True
             $ snape_scaleratio = 2 #Reset
 
-            if snape_flip == -1: #Flipped
-                $ snape_xpos = 620
+            if snape_flip == -1: #Flipped #Head is on the left side.
+                $ snape_xpos = -50
             else:
-                $ snape_xpos = 590
-            $ snape_ypos = 230
+                $ snape_xpos = 615
+            $ snape_ypos = 320
             $ snape_zorder = 8
         else:
             $ snape_ypos = int(ypos)
@@ -105,6 +105,7 @@ label update_snape:
 
     $ snape_flip = 1
     $ use_snape_head = False
+    call update_sna_chibi
 
     return
 

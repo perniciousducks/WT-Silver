@@ -6,9 +6,9 @@ screen susan_main:
     tag susan_main
 
     ### BASE IMAGE
+    add susan_hair xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio) #Add the hair base
     add susan_l_arm xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio) #Add the arms
     add susan_r_arm xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio) #Add the arms
-    add susan_hair xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio) #Add the hair base
     add susan_base xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio) #Add the base body
     add susan_boobs xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio) #Add the base body
 

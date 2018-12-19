@@ -6,6 +6,8 @@ init python:
         # (heavy clouds)        w_g > 3
         # (rain)                w_g > 4
         # (lighting)            w_g > 5 or (w_g = 4 and chance success)
+        # (snowy)               w_g > 3 (and chance success) (Cant be raining)
+        # (blizzard)            w_g > 6 
 
         ## Night ##
         # (clear sky)           w_g = 1
@@ -14,20 +16,33 @@ init python:
         # (heavy clouds)        w_g > 3
         # (rain)                w_g > 4
         # (rain and lighting)   w_g > 5 or (w_g = 4 and chance success)
+        # (blizzard)            w_g > 6
 
     def show_weather():
         global weather_animations
         global weather_gen
         global raining
+        global snowing
+        global blizzard
         raining = False
+        snowing = False
+        blizzard = False
         weather_animations = []
         lightning_gen = renpy.random.randint(1, 2)
-        if weather_gen > 5 or (weather_gen == 4 and lightning_gen == 1): # (Heavy colouds with chance of lightning)
+        if weather_gen == 6:
+            blizzard = True
+            weather_animations.append("blizzard")
+            renpy.music.play("sounds/blizzard.mp3", "weather", fadeout=1.0, fadein=1.0)
+        if weather_gen == 5 or (weather_gen == 4 and lightning_gen == 1): # (Heavy clouds with chance of lightning)
             weather_animations.append("lightning")
-        if weather_gen > 4:
+        if weather_gen > 4 and not blizzard:
             raining = True
             weather_animations.append("rain")
             renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
+        if weather_gen > 3 and lightning_gen == 2 and not (raining or blizzard):
+            snowing = True
+            weather_animations.append("snow")
+            
 
 init -2:
     transform cloud_move: #http://www.renpy.org/wiki/atl
@@ -84,6 +99,53 @@ image rain: #Rain.
     "images/rooms/main_room/weather/rain_03.png"
     pause.1
     repeat
+    
+image snow: #Snow.
+    "images/rooms/main_room/weather/snow_01.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_02.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_03.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_04.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_05.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_06.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_07.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_08.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_09.png"
+    pause.07
+    "images/rooms/main_room/weather/snow_10.png"
+    pause.07
+    repeat
+    
+image blizzard: #Blizzard.
+    "images/rooms/main_room/weather/blizzard_01.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_02.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_03.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_04.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_05.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_06.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_07.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_08.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_09.png"
+    pause.05
+    "images/rooms/main_room/weather/blizzard_10.png"
+    pause.05
+    repeat
+
 
 image lightning: #Lightening during rain behind the window.
     pause 20

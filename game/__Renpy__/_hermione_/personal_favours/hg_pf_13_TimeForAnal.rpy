@@ -13,7 +13,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
@@ -668,7 +668,7 @@ label end_hg_anal_sex:
     stop music fadeout 1.0
 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    $ gryffindor += current_payout #35
+    $ current_payout = 90
 
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ccg
@@ -677,9 +677,9 @@ label end_hg_anal_sex:
     call gen_chibi("sit_behind_desk")
     call hide_blkfade
 
-    if her_whoring < 24:
-        m "Yes, [hermione_name]. 90 points to \"Gryffindor\"."
-        $ gryffindor +=90
+    if her_whoring <= 24:
+        m "Yes, [hermione_name]. [current_payout] points to \"Gryffindor\"."
+        $ gryffindor += current_payout
 
     call her_main("Thank you, [genie_name]...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
 
@@ -687,13 +687,13 @@ label end_hg_anal_sex:
         $ her_whoring +=1
 
     if hg_pf_TimeForAnal_OBJ.points == 0:
-        $ hg_pf_TimeForAnal_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_TimeForAnal_OBJ.level = 1 #Event hearts level (0-3)
 
     if hg_pf_TimeForAnal_OBJ.points == 1:
-        $ hg_pf_TimeForAnal_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_TimeForAnal_OBJ.level = 2 #Event hearts level (0-3)
 
     if hg_pf_TimeForAnal_OBJ.points >= 2:
-        $ hg_pf_TimeForAnal_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_TimeForAnal_OBJ.level = 3 #Event hearts level (0-3)
 
     $ hg_pf_TimeForAnal_OBJ.points += 1
 

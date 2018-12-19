@@ -46,7 +46,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                 with d3
                 jump return_to_wardrobe
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
     else:
@@ -795,7 +795,7 @@ label equip_sus_bottom:
 
 ### Equip Cho's Bottom ###
 label equip_cho_bottom:
-    call set_cho_bottom(skirt_choice)
+    call set_cho_bottom(skirt_choice, bottom_color_choice)
 
     jump return_to_wardrobe
 

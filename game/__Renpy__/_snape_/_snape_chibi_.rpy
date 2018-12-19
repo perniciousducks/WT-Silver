@@ -12,26 +12,31 @@ screen s_c_c_u:
     zorder 3
 
 
-### SNAPE CHIBI
-screen snape_01: #Snape stands still near the door.
-    tag snape_chibi
-    add "characters/snape/chibis/snape_stand.png" at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos-40)
-    zorder 3
 
-screen snape_01_f: #Snape stands still near the door. (Mirrored).
-    tag snape_chibi
-    add im.Flip("characters/snape/chibis/snape_stand.png", horizontal=True) at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos-40)
-    zorder 3
+### SNAPE CHIBI SCREENS ###
 
-screen snape_walk: #Default Snape walk animation.
+screen snape_stand:
     tag snape_chibi
-    add "snape_walk" at custom_walk(walk_xpos, walk_xpos2)
-    zorder 4
 
-screen snape_walk_f: #Default Snape walk animation. (Mirrored).
+    add snape_chibi_stand xpos snape_chibi_xpos ypos snape_chibi_ypos xzoom snape_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder snape_chibi_zorder
+
+
+screen snape_walk:
     tag snape_chibi
-    add "snape_walk_f" at custom_walk(walk_xpos, walk_xpos2)
-    zorder 4
+
+    add snape_chibi_walk at snape_walk(walk_xpos, walk_xpos2) xzoom snape_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder snape_chibi_zorder
+
+
+label update_sna_chibi:
+    $ snape_chibi_stand = "characters/snape/chibis/snape_stand.png"
+    $ snape_chibi_walk = "snape_walk"
+    return
+
+
 
 screen snape_jerking_off:
     tag snape_chibi
@@ -51,8 +56,7 @@ screen snape_stands_holds_dick:
 
 
 label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_ypos), pic = "", flip=False):
-    hide screen snape_01
-    hide screen snape_01_f
+    hide screen snape_stand
 
     hide screen s_c_u
     hide screen snape_jerking_off
@@ -75,9 +79,7 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
 
     if ypos != snape_chibi_ypos:
         if ypos == "base" or ypos == "default":
-            $ snape_chibi_ypos = 250
-        elif ypos == "on_desk":
-            $ snape_chibi_ypos = 250
+            $ snape_chibi_ypos = 210
         elif ypos.isdigit():
             $ snape_chibi_ypos = int(ypos)
 
@@ -96,9 +98,9 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
             $ snape_chibi_xpos = 500
 
         if ypos == "base":
-            $ snape_chibi_ypos = 250
+            $ snape_chibi_ypos = 210
         else:
-            $ snape_chibi_ypos = 250
+            $ snape_chibi_ypos = 210
 
         if pic != "":
             $ s_c_u_pic = "characters/snape/chibis/"+str(pic)+".png"
@@ -125,25 +127,25 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
         pause.5
 
     else:
-        if flip:
-            show screen snape_01_f
+        if flip or snape_flip != 1: #Same variable that the main sprite is using. #1 == Default
+            $ snape_chibi_flip = -1
+            show screen snape_stand
         else:
-            show screen snape_01
+            $ snape_chibi_flip = 1
+            show screen snape_stand
 
     return
 
 
-label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter = True,redux_pause = 0):
+label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
     call hide_characters
     with d3
 
     hide screen snape_walk
-    hide screen snape_walk_f
 
-    hide screen snape_01
-    hide screen snape_01_f
+    hide screen snape_stand
 
     if pos1 == "mid":
         $ walk_xpos = 500
@@ -166,28 +168,30 @@ label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter 
     else:
         $ walk_xpos2 = pos2
 
-    $ snape_chibi_ypos = 250 #Works for walking chibi, doesn't for standing (needs 210 for standing?!)
+    $ snape_chibi_ypos = 210 #Works for walking chibi, doesn't for standing (needs 210 for standing?!)
     $ snape_speed = speed #Speed of walking animation. (lower = faster)
 
     if walk_xpos > walk_xpos2: #right to left (snape_walk)
+        $ snape_chibi_flip = 1
         show screen snape_walk
         $ tmp = snape_speed - redux_pause
         pause tmp
         $ snape_chibi_xpos = walk_xpos2
         hide screen snape_walk
         if loiter:
-            show screen snape_01
-    else: #left to right (snape_walk_f)
-        show screen snape_walk_f
+            show screen snape_stand
+    else: #left to right (snape_walk)
+        $ snape_chibi_flip = -1
+        show screen snape_walk
         $ tmp = snape_speed - redux_pause
         pause tmp
         $ snape_chibi_xpos = walk_xpos2
-        hide screen snape_walk_f
+        hide screen snape_walk
         if pos2 == "leave":
             call play_sound("door")
             with d3
             pause.5
         if loiter:
-            show screen snape_01_f
+            show screen snape_stand
 
     return

@@ -5,7 +5,7 @@ label luna_favour_4: ###Luna handjob #DONE
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
     if lun_corruption > 13:
         jump luna_handjob_hermione_call
-    if lun_addicted:
+    if luna_addicted:
         if lun_corruption <= 11:
             $ lun_corruption += 1
         call play_music("chipper_doodle")

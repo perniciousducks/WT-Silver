@@ -31,18 +31,17 @@ label equip_makeup:
 
 label equip_her_makeup:
 
-    if mad >= 1:
+    if her_mood >= 1:
         jump equipping_failed
 
-    if makeup_choice in ["lipstick_red","lipstick_pink","turquoise_lipstick"]:
+    if makeup_choice in ["lipstick_red","lipstick_pink","lipstick_turquoise"]:
         hide screen wardrobe
         call her_main(xpos="right",ypos="base",trans="fade")
 
         if makeup_choice != h_lipstick:
             $ hide_transitions = False #activates dissolve in her_main
 
-            call her_main("You want me to put on lipstick?","normal","worriedCl")
-            call her_main("Really, [genie_name]!","scream","angryCl")
+            call her_main("You want me to put on lipstick?","soft","base")
             m "Just a little bit."
 
             call her_main("Alright then...","base","glance")
@@ -51,8 +50,6 @@ label equip_her_makeup:
 
             $ h_lipstick = makeup_choice
 
-            call update_her_uniform #Updates clothing and body.
-
         else: #Nude
             call her_main("You want me to take the lipstick off?","annoyed","ahegao")
             call her_main("Alright then...","annoyed","down")
@@ -60,8 +57,6 @@ label equip_her_makeup:
             with d5
 
             $ h_lipstick = "nude"
-
-            call update_her_uniform #Updates clothing and body.
 
         jump return_to_wardrobe
 
@@ -213,7 +208,7 @@ label equip_her_head_accessory:
     if head_accessory_choice == h_glasses and glasses_color_choice == h_glasses_color or head_accessory_choice == h_ears or head_accessory_choice == h_hat:
         jump remove_head_accessory
 
-    elif mad >= 1:
+    elif her_mood >= 1:
         jump equipping_failed
 
     else:
@@ -287,7 +282,7 @@ label equip_her_head_accessory:
                 m "Could you wear these elf-ears for me?"
 
                 if her_whoring >= 11:
-                    if h_hair_style != "B":
+                    if h_hair_style != "updo":
                         call her_main("Elf-ears...?","soft","base")
                         call her_main("You wouldn't even be able to see them beneath all my hair...","open","closed")
                         m "You are right..."
@@ -466,7 +461,7 @@ label equip_cho_head_accessory:
         call set_cho_ears(head_accessory_choice)
     if head_accessory_choice in []:
         call set_cho_glasses(head_accessory_choice)
-    if head_accessory_choice in []:
+    if head_accessory_choice in ["hat_witch","sailor_bow"]:
         call set_cho_hat(head_accessory_choice)
 
     jump return_to_wardrobe
@@ -477,7 +472,9 @@ label equip_ton_head_accessory:
         call set_ton_ears(head_accessory_choice)
     if head_accessory_choice in []:
         call set_ton_glasses(head_accessory_choice)
-    if head_accessory_choice in ["paper_bag_1","paper_bag_2","paper_bag_3"]:
+    if head_accessory_choice in ["gimp_mask_1","gimp_mask_2","gimp_mask_3","gimp_mask_4","gimp_mask_5"]:
+        call set_ton_mask(head_accessory_choice)
+    if head_accessory_choice in ["hat_witch","hat_maid","paper_bag_1","paper_bag_2","paper_bag_3"]:
         call set_ton_hat(head_accessory_choice)
 
     jump return_to_wardrobe

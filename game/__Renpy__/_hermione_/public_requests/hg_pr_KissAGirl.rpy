@@ -16,7 +16,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 
@@ -125,7 +125,7 @@ label hg_pr_KissAGirl_complete:
             m ".............."
             m "You are not getting paid, you know that, right?"
             call her_main("I don't care...","scream","angryCl")
-            $ mad +=25
+            $ her_mood +=25
 
             $ hg_pr_KissAGirl_OBJ.inProgress = False
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
@@ -191,7 +191,7 @@ label hg_pr_KissAGirl_complete:
                     m "Too late for that, [hermione_name]."
                     m "You are dismissed."
                     call her_main("......","angry","base",tears="soft")
-                    $ mad +=25
+                    $ her_mood +=25
 
                     $ hg_pr_KissAGirl_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).

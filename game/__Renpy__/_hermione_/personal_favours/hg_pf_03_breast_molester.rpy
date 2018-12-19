@@ -16,7 +16,7 @@ label hg_pf_BreastMolester:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     if her_whoring < 3: #Hermione refuses.
         m "[hermione_name], would you mind if I play with your tits a little?"
@@ -33,7 +33,7 @@ label hg_pf_BreastMolester:
 
         call hg_breast_molester_1
 
-        $ hg_pf_BreastMolester_OBJ.hearts_level = 1
+        $ hg_pf_BreastMolester_OBJ.level = 1
         jump end_hg_breast_molester
 
     #Second Event
@@ -46,7 +46,7 @@ label hg_pf_BreastMolester:
 
         call hg_breast_molester_2
 
-        $ hg_pf_BreastMolester_OBJ.hearts_level = 2
+        $ hg_pf_BreastMolester_OBJ.level = 2
         jump end_hg_breast_molester
 
     #Third Event
@@ -75,17 +75,17 @@ label hg_pf_BreastMolester:
         her "Well, alright... You can touch them a little..."
         call her_walk_desk_blkfade
         $ current_payout = 35
+        $ favor_failed = False #Not yet failed.
 
         call hg_breast_molester_3
 
         if favor_failed: #fails when you slap her tits and her_whoring < 12
             $ favor_failed = False #Reset
             jump could_not_flirt
-        $ favor_failed = False #Reset
 
         call hg_breast_molester_3_grabbing
 
-        $ hg_pf_BreastMolester_OBJ.hearts_level = 3
+        $ hg_pf_BreastMolester_OBJ.level = 3
         jump end_hg_breast_molester
 
     if her_whoring >= 15:
@@ -99,7 +99,7 @@ label hg_pf_BreastMolester:
         call hg_breast_molester_3
         call hg_breast_molester_3_grabbing
 
-        $ hg_pf_BreastMolester_OBJ.hearts_level = 4
+        $ hg_pf_BreastMolester_OBJ.level = 4
         jump end_hg_breast_molester
 
 
@@ -306,7 +306,7 @@ label hg_breast_molester_3:
 
             if her_whoring >= 9 and her_whoring < 12:
 
-                $ mad += 20
+                $ her_mood += 20
                 call her_main("!!!","scream","wide",cheeks="blush")
                 call her_main("Ouch! It hurts! *SOB!*","angry","worried",cheeks="blush")
                 m "Did you like it though?"
@@ -582,11 +582,11 @@ label end_hg_breast_molester:
     hide screen bld1
     call hide_blkfade
 
-    if her_whoring < 17:
+    if her_whoring < 21:
         $ gryffindor += current_payout
         m "The \"Gryffindor\" house gets [current_payout] points!"
     else:
-        m "you may leave now, [hermione_name]."
+        m "You may leave now, [hermione_name]."
 
     call her_main("..................","annoyed","worriedL",xpos="base",ypos="base")
     her "Thank you, [genie_name]..."
@@ -600,15 +600,15 @@ label end_hg_breast_molester:
     hide screen hermione_main
     with d3
 
-    if her_whoring >= 17:
+    if her_whoring >= 21:
 
         call her_walk("desk","door",3)
 
         call her_main("(What about my points?)","disgust","down_raised",cheeks="blush",ypos="head")
-        if her_whoring >= 21:
-            call her_main("(Eh, who cares)","base","ahegao_raised",cheeks="blush",ypos="head")
-        else:
+        if her_whoring < 24:
             call her_main("(I'll just ask him about it next time...)","annoyed","angryL",ypos="head")
+        else:
+            call her_main("(Eh, who cares)","base","ahegao_raised",cheeks="blush",ypos="head")
 
     if her_whoring < 6: #Adds points till 6.
         $ her_whoring +=1

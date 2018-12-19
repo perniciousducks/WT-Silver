@@ -12,6 +12,7 @@ label setup_deck(opppent_deck):
     return
     
 label cardgame:
+    call room(hide_screens=True)
     show screen card_battle(player_deck,enemy_deck)
     $ _return = ui.interact()
 
@@ -78,28 +79,28 @@ label enemy_turn:
 screen card_battle(l_playerdeck, l_enemydeck):
     imagemap:
         ground "images/cardgame/card_table.png"
-        hover "images/cardgame/card_table_hover.png"
+        hover whiteTint("images/cardgame/card_table.png")
         
         for y in range(0,3):
             for x in range(0,3):
                 if table_cards[x][y] == None:
-                    hotspot (383+105*x, 60+124*y, 105, 124) clicked Return(str(x+y*3))
+                    hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
-                    use cardrender(table_cards[x][y], 383+105*x, 60+124*y)
+                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
-            use cardrender(l_playerdeck[i], 20,60+70*i, True)
+            use cardrender(l_playerdeck[i], 20,30+70*i, True)
     
     if not selectcard == -1:
-        use cardrender(l_playerdeck[selectcard], 60,60+70*selectcard)
+        use cardrender(l_playerdeck[selectcard], 60,30+70*selectcard)
         
     for i in range(0, len(l_enemydeck)):
-        use cardrender(l_enemydeck[i], 950,60+70*i)
+        use cardrender(l_enemydeck[i], 900,30+70*i)
         
     use close_button
         
-screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None):
+screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5):
     if return_value == None:
         $ return_value = card
     frame:
@@ -112,17 +113,16 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
 
         if interact:
             imagebutton:
-                idle card.get_card_image()
-                hover card.get_card_hover()
+                idle card.get_card_image(zoom=cardzoom)
+                hover card.get_card_hover(zoom=cardzoom)
                 action Return(return_value)
         else:
-            add card.get_card_image()
+            add card.get_card_image(zoom=cardzoom)
         
         if card.playercard:
             add playerboarder zoom cardzoom
         else:
             add enemyboarder zoom cardzoom
-        add "images/cardgame/dots.png" zoom cardzoom
         
         $ lefttext = "{size=18}"
         $ righttext = "{/size}"
@@ -130,22 +130,22 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None)
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.topvalue)+righttext xalign 0.5 yalign -0.05
+            text lefttext+str(card.topvalue)+righttext xalign 0.5 yalign 0.03
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.buttomvalue)+righttext xalign 0.5 yalign 1.05
+            text lefttext+str(card.buttomvalue)+righttext xalign 0.5 yalign 0.97
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.rightvalue)+righttext xalign 1.0 yalign 0.5
+            text lefttext+str(card.rightvalue)+righttext xalign 0.95 yalign 0.5
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.leftvalue)+righttext xalign 0.00 yalign 0.5
+            text lefttext+str(card.leftvalue)+righttext xalign 0.05 yalign 0.5
             
 screen start_deck:
     zorder 9

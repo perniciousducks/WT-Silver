@@ -14,7 +14,7 @@ label cupboard:
             m "A cupboard..."
             m "Maybe I should rummage through this one later..."
             show screen genie
-            hide screen genie_stands_f
+            hide screen genie_stand
             hide screen chair_left #Empty chair near the desk.
             hide screen desk
             with Dissolve(0.5)
@@ -26,235 +26,141 @@ label cupboard:
             call already_did #Message that says that you have searched the cupboard today already.
             jump cupboard
 
-        "-Your possessions-" if not day == 1:
-            label possessions:
-
+        "-Tentacle Scroll-" if tentacle_owned:
+            ">Should I use this scroll..."
             menu:
-                "-Gift Items-" if map_unlocked:
-                    label possessions_gift_items:
-                        $ choices = []
-                        python:
-                            for i in gift_list:
-                                if gift_item_inv[i.id] > 0:
-                                    choices.append( ( ("-"+str(i.name)+"- ("+str(gift_item_inv[i.id])+")"), i) )
-                        $ choices.append(("-Never mind-", "nvm"))
-                        $ result = renpy.display_menu(choices)
-                        if result == "nvm":
-                            jump possessions
-                        else:
-                            $ the_gift = result.image
-                            show screen gift
-                            with d3
-                            ">[result.description]"
-                            hide screen gift
-                            with d3
-                            jump possessions_gift_items
-
-                "-Potion Items-" if False:
-                    label possessions_potions:
-                    menu:
-                        "-Crafting Items-" if False:
-                            label possessions_potion_items:
-                            menu:
-                                "-Never mind-":
-                                    jump possessions_potions
-                        "-Potions-":
-                            label possessions_complete_potions:
-                            menu:
-                                "-Cum Addiction Potion-" if "Cum Addiction Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Ass Expansion Potion-" if "Ass Expansion Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Breast Expansion Potion-" if "Breast Expansion Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Cat Transformation Potion-" if "Cat Transformation Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Luna Transformation Potion-" if "Luna Transformation Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Lamia Transformation Potion-" if "Lamia Transformation Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Transparency Potion-" if "Transparency Potion" in p_inv:
-                                    jump possessions_complete_potions
-                                "-Never mind-":
-                                    jump possessions_potions
-                        "-Never mind-":
-                            jump possessions
-
-                "-Tentacle Scroll-" if tentacle_owned:
-                    ">Should I use this scroll..."
-                    menu:
-                        "\"(Yes, let's do it!)\"":
-                            jump tentacle_scene_intro
-                        "\"(Not right now.)\"":
-                            jump possessions
-                "-Tentacle Scroll-" if tent_scroll and not tentacle_owned:
-                    m "It's missing the key ingredient."
+                "\"(Yes, let's do it!)\"":
+                    jump tentacle_scene_intro
+                "\"(Not right now.)\"":
                     jump possessions
+        "-Tentacle Scroll-" if sealed_scroll_ITEM.unlocked and not tentacle_owned:
+            m "It's missing the key ingredient."
+            jump possessions
 
-                "-Dumbledor's Wine-([wine])" if wine >= 1:
-                    $ the_gift = "images/store/27.png" # WINE.
-                    show screen gift
-                    with d3
-                    ">A bottle of wine from professor dumbledore's personal stash..."
-                    hide screen gift
-                    with d3
-                    jump possessions
+        "Box with a puzzle on it" if found_puzzle_1 == True:
+            jump start_slide_puzzle
 
-                "-Unknown potion-([potions])" if  potions >= 1:
-                    $ the_gift = "images/store/32.png" # HEALING POTION.
-                    show screen gift
-                    with d3
-                    ">A potion of some sort..."
-                    hide screen gift
-                    with d3
-                    jump possessions
+        #Temporary!
+        "-Doze off-" if daytime and day != 1:
+            jump night_start
+        "-Go to sleep-" if not daytime and day != 1:
+            jump day_start
 
-                "Box with a puzzle on it" if found_puzzle_1 == True:
-                    jump start_slide_puzzle
+        "-Jerk Off-" if not day == 1:
+            jump jerk_off
 
-                "-Never mind-":
-                    jump cupboard
+        "-Never mind-":
+            jump day_main_menu
 
-        "-Potion crafting-" if store_intro_done:
-            jump potion_menu
+label options_menu:
+    menu:
+        "-Save and Load-":
+            call screen save()
+
+        "-Change Save Name-":
+            jump custom_save
 
         "-Options-":
             menu:
-                "-Save and Load-":
-                    call screen save()
-
-                "-Change Save Name-":
-                    jump custom_save
-
-                "-Change Game Difficulty-":
+                "-Change Game Difficulty-" if game_difficulty <= 2:
                     menu:
-                        "-Enable Easy Difficulty-":                                 #CHANGE IN 00_HT_Start, Start of game option.
-                            #if hardcore_difficulty_active:
-                            #    "Warning: This will permanently remove your hardcore difficulty rewards!"
-                            #    menu:
-                            #        "Do you want to continue?"
-                            #        "-Yes, change difficulty to easy-":
-                            #            menu:
-                            #                "Are you really sure?"
-                            #                "-Yes, change difficulty to easy-":
-                            #                    pass
-                            #                "-No, go back-":
-                            #                    jump day_main_menu
-                            #        "-No, go back-":
-                            #            jump day_main_menu
+                        "-Enable Easy Difficulty-":
                             $ game_difficulty = 1
                             $ cheat_reading = True
-                            $ hardcore_difficulty_active = False #removes hardcore rewards
                             "Game set to easy difficulty!"
-                            "Increased gold reward from reports and other sources!" #CHANGE IN 01_hp_main_day and 15_mail.
-                            "Rummaging through your cupboard is more rewarding!"    #CHANGE IN 11_cupboard, label rummaging.
-                            "Snape will be more generous with Slytherin-points!"    #CHANGE IN 06_points.
-                            "Hermione won't stay mad at you for as long!"           #CHANGE IN 01_hp_main_day.
+                            "Increased gold reward from reports and other sources!"
+                            "Rummaging through your cupboard is more rewarding!"
+                            "Snape will be more generous with Slytherin-points!"
+                            "Hermione won't stay mad at you for as long!"
                             jump day_main_menu
                         "-Enable Normal Difficulty-":
-                            #if hardcore_difficulty_active:
-                            #    "Warning: This will permanently remove your hardcore difficulty rewards!"
-                            #    menu:
-                            #        "Do you want to continue?"
-                            #        "-Yes, change difficulty to normal-":
-                            #            menu:
-                            #                "Are you really sure?"
-                            #                "-Yes, change difficulty to normal-":
-                            #                    pass
-                            #                "-No, go back-":
-                            #                    jump day_main_menu
-                            #        "-No, go back-":
-                            #            jump day_main_menu
                             $ game_difficulty = 2
                             $ cheat_reading = False
-                            $ hardcore_difficulty_active = False #removes hardcore rewards
                             "Game set to normal difficulty!"
                             jump day_main_menu
-                        #"-Enable Hardcore Difficulty-": #Original Game Difficulty
-                        #    "This will not add hardcore difficulty rewards!"
-                        #    "To get hardcore difficulty rewards you will need to start a new game in hardcore difficulty and stay in said difficulty!"
-                        #    $ game_difficulty = 3
-                        #    $ cheat_reading = False
-                        #    "Game set to hard difficulty!"
-                        #    jump day_main_menu
-                        #"-Cheat add hardcore difficulty rewards-":
-                        #    if hardcore_difficulty_active:
-                        #        ">Rewards are now disabled."
-                        #        $ hardcore_difficulty_active = False
-                        #    else:
-                        #        ">Rewards are now active."
-                        #        $ hardcore_difficulty_active = True
-                        #        jump day_main_menu
                         "-Back-":
                             jump day_main_menu
                 "-Replace Chibis with Sprites-" if not use_cgs:
                     ">The last two personal favours will use sprites now."
                     $ use_cgs = True
-                    jump cupboard
+                    jump options_menu
                 "-Replace Sprites with Chibis-" if use_cgs:
                     ">The last two personal favours will use chibi animations again."
                     $ use_cgs = False
-                    jump cupboard
+                    jump options_menu
                 "-Back-":
-                    jump cupboard
+                    jump options_menu
 
-        "-Cheats-" if cheats_active and day > 1:
+        "-Cheats-" if cheats_active and game_difficulty <= 2 and day > 1:
             jump cheats
 
         "-Bugfix-":
             menu:
-                "-Reset Clothing-":
+                "-Reset Everyone's Appearance-":
+                    call reset_hermione_base
+                    call reset_hermione_clothing
+                    call reset_luna_base
+                    call reset_luna_clothing
+                    call reset_astoria_clothing
                     call reset_susan_clothing
+                    call reset_cho_clothing
                     call reset_tonks_clothing
-                    jump cupboard
+                    ">Appearance of each girl set back to default."
+                    jump options_menu
                 "-Reset ALL Luna content-" if hat_known:
                     $ reset_luna_content = True
                     call luna_init
                     call luna_progress_init
                     $ reset_luna_content = False
                     ">Luna content reset!"
-                    jump cupboard
+                    jump options_menu
                 "-Never mind-":
-                    jump cupboard
+                    jump options_menu
+
+        "-Decorate-" if day != 1:
+            label decorate_room_menu:
+            menu:
+                ">Decorate your place..."
+                "-Xmas decorations-":
+                    pause.5
+                    hide screen main_room_deco
+                    $ room_deco = "_deco_1"
+                    $ gen_outfit = "_santa"
+                    show screen main_room_deco
+                    with d9
+                    pause.5
+                "-Cupboard pinup girl-":
+                    $ cupboard_deco = "_deco_1"
+                    ">Pinup girl added! You'll see it when rummaging through the cupboard."
+                "-Remove deco-":
+                    pause.5
+                    hide screen main_room_deco
+                    $ room_deco = ""
+                    $ cupboard_deco = ""
+                    $ gen_outfit = ""
+                    show screen main_room_deco
+                    with d5
+                    pause.5
+                "-All done-":
+                    jump day_main_menu
+            jump decorate_room_menu
 
         "-Display Characters-" if day != 1:
             jump summon_characters
 
+        #Temporary!
+        "-Doze off-" if daytime and day != 1:
+            jump night_start
+        "-Go to sleep-" if not daytime and day != 1:
+            jump day_start
+
+        #"-Jerk 0ff on Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress: #True when Hermione has no panties on.
+        #    jump jerk_off
+        "-Jerk Off-" if not day == 1:
+            jump jerk_off
+
         "-Never mind-":
             jump day_main_menu
-
-label scrolls_menu:
-    menu:
-        "-Sacred scrolls volume I-" if map_unlocked:
-            $ scrolls_range = range(1,16)
-        "-Sacred scrolls volume II-" if map_unlocked:
-            $ scrolls_range = range(16,31)
-        "-Never Mind-":
-            jump day_main_menu
-
-    label sc_col_men:
-    python:
-        scrolls_menu = []
-        for scroll in scrolls_range:
-            sc = sacred_scrolls[scroll]
-            if sscroll_[sc.id]:
-                scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", scroll) )
-        scrolls_menu.append(("-Never mind-", "nvm"))
-        result = renpy.display_menu(scrolls_menu)
-
-    if result == "nvm":
-        jump scrolls_menu
-    else:
-        $ the_gift = "images/misc/extras/"+str(result)+".png" # SACRED SCROLL
-        show screen gift
-        show screen ctc
-        with d3
-        pause
-        hide screen gift
-        hide screen ctc
-        with d3
-        jump sc_col_men
-
 
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
@@ -263,7 +169,9 @@ label custom_save:
         $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
     $ save_name = temp_name
     "Done."
-    jump cupboard
+    jump options_menu
+
+
 
 label rummaging:
 
@@ -279,9 +187,9 @@ label rummaging:
     ">You rummage through the cupboard for a while..."
 
     if day <= 4:
-        if rum_times == 2 or rum_times == 3:
+        if rum_times in [1,2,3]:
             $ potions += 1
-            call give_reward(">You found some sort of potion...","images/store/32.png")
+            call give_reward(">You found some sort of potion...","interface/icons/item_potion.png")
 
             show screen genie
             hide screen rum_screen
@@ -295,7 +203,7 @@ label rummaging:
 
     if rum_times >= 7 and not map_unlocked:
         $ map_unlocked = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
-        call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","images/store/31.png")
+        call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","interface/icons/item_scroll.png")
 
         show screen genie
         hide screen rum_screen
@@ -335,13 +243,13 @@ label rum_rewards:
 
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             if random_number in [1,2]:
-                call rum_block(Lollipop)
+                call rum_block(lollipop_ITEM)
             elif random_number in [3]:
-                call rum_block(PlushOwl)
+                call rum_block(plush_owl_ITEM)
             elif random_number in [4,5]:
-                call rum_block(Chocolate)
+                call rum_block(chocolate_ITEM)
             elif random_number in [6]:
-                call rum_block(SexyLingerie)
+                call rum_block(sexy_lingerie_ITEM)
             else:
                 if random_number <= 12:
                     call rum_block("gold1")
@@ -350,15 +258,15 @@ label rum_rewards:
 
         if her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             if random_number in [1,2]:
-                call rum_block(Lollipop)
+                call rum_block(lollipop_ITEM)
             elif random_number in [3]:
-                call rum_block(PornMagazines)
+                call rum_block(porn_mag_ITEM)
             elif random_number in [4]:
-                call rum_block(SexyLingerie)
+                call rum_block(sexy_lingerie_ITEM)
             elif random_number in [5]:
-                call rum_block(Chocolate)
+                call rum_block(chocolate_ITEM)
             elif random_number in [6]:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(krum_poster_ITEM)
             else:
                 if random_number <= 14:
                     call rum_block("gold2")
@@ -367,13 +275,13 @@ label rum_rewards:
 
         if her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             if random_number in [1]:
-                call rum_block(Vibrator)
+                call rum_block(vibrator_ITEM)
             elif random_number in [2,3]:
-                call rum_block(PackOfCondoms)
+                call rum_block(pink_condoms_ITEM)
             elif random_number in [4,5]:
-                call rum_block(Butterbeer)
+                call rum_block(butterbeer_ITEM)
             elif random_number in [6]:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(krum_poster_ITEM)
             else:
                 if random_number <= 16:
                     call rum_block("gold3")
@@ -382,17 +290,17 @@ label rum_rewards:
 
         if her_whoring >= 18: # Lv 7+
             if random_number in [1]:
-                call rum_block(SpeedStick2000)
+                call rum_block(broom_2000_ITEM)
             elif random_number in [2,3,4]:
-                call rum_block(Butterbeer)
+                call rum_block(butterbeer_ITEM)
             elif random_number in [5]:
-                call rum_block(Chocolate)
+                call rum_block(chocolate_ITEM)
             elif random_number in [6]:
-                call rum_block(ViktorKrumPoster)
+                call rum_block(krum_poster_ITEM)
             elif random_number in [7]:
-                call rum_block(AnalPlugs)
+                call rum_block(anal_plugs_ITEM)
             elif random_number in [8]:
-                call rum_block(ThestralStrapon)
+                call rum_block(testral_strapon_ITEM)
             else:
                 if random_number <= 18:
                     call rum_block("gold4")
@@ -402,28 +310,28 @@ label rum_rewards:
     else: # Hardcore difficulty. # Sex items only.
 
         if random_number in [1]:
-            call rum_block(PornMagazines)
+            call rum_block(porn_mag_ITEM)
         elif random_number in [2]:
-            call rum_block(Vibrator)
+            call rum_block(vibrator_ITEM)
         elif random_number in [3]:
-            call rum_block(SexyLingerie)
+            call rum_block(sexy_lingerie_ITEM)
         elif random_number in [4]:
-            call rum_block(PackOfCondoms)
+            call rum_block(pink_condoms_ITEM)
         elif random_number in [5]:
-            call rum_block(AnalPlugs) #Butt Plug
+            call rum_block(anal_plugs_ITEM) #Butt Plug
         elif random_number in [6]:
-            call rum_block(AnalBeads) #Snek
+            call rum_block(anal_beads_ITEM) #Snek
         elif random_number in [7]:
-            call rum_block(JarOfLube)
+            call rum_block(anal_lube_ITEM)
         elif random_number in [8]:
-            call rum_block(ThestralStrapon)
+            call rum_block(testral_strapon_ITEM)
         elif random_number in [9]:
-            call rum_block(BallGagAndCuffs)
+            call rum_block(ballgag_and_cuffs_ITEM)
         elif random_number in [10]:
-            call rum_block(SexDollJoanne)
+            call rum_block(sexdoll_ITEM)
         else:
             if her_whoring >= 21: # Lv 7+
-                call rum_block(Butterbeer)
+                call rum_block(butterbeer_ITEM)
             else:
                 call rum_block("wine")
 
@@ -438,28 +346,17 @@ label rum_rewards:
     else:
         jump night_main_menu
 
-label rum_block(item = None):
-    if isinstance(item, gift_item):
+label rum_block(item = ""):
+    if item == "wine":
         $ renpy.play('sounds/win2.mp3')   #Not loud.
-        $ gift_item_inv[item.id] += 1
-        $ the_gift = item.imagepath
+        $ wine += 1
+        $ the_gift = "interface/icons/item_wine.png" # WINE
         show screen gift
         with d3
-        ">You found [item.title]..."
-        ">[item.description]"
+        ">You found a bottle of wine from professor dumbledore's personal stash..."
         hide screen gift
         with d3
-    else:
-        if "wine" in item:
-            $ renpy.play('sounds/win2.mp3')   #Not loud.
-            $ wine += 1
-            $ the_gift = "images/store/27.png" # WINE
-            show screen gift
-            with d3
-            ">You found a bottle of wine from professor dumbledore's personal stash..."
-            hide screen gift
-            with d3
-        if "gold" in item:
+    elif item in ["gold1","gold2","gold3","gold4"]: #Gold
             if item == "gold1":
                 $ tmp_gold = gold1
             if item == "gold2":
@@ -469,13 +366,23 @@ label rum_block(item = None):
             if item == "gold4":
                 $ tmp_gold = gold4
             $ renpy.play('sounds/win2.mp3')   #Not loud.
-            $ the_gift = "images/store/28.png" # GOLD.
+            $ the_gift = "interface/icons/gold.png" # GOLD.
             show screen gift
             with d3
             ">You found [tmp_gold] gold..."
             $ gold += tmp_gold
             hide screen gift
             with d3
+    else:
+        $ renpy.play('sounds/win2.mp3')   #Not loud.
+        $ item.number += 1
+        $ the_gift = item.get_image()
+        show screen gift
+        with d3
+        ">You found [item.name]..."
+        ">[item.description]"
+        hide screen gift
+        with d3
     return
 
 

@@ -19,7 +19,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ current_payout = 45 #Used when haggling about price of th favor.
 
@@ -50,22 +50,22 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
 
 
-        $ hg_pf_TouchMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_TouchMe_OBJ.level = 1 #Event hearts level (0-3)
 
         label back_to_handjob_choices:
 
         menu:
             m "..."
             "\"You will get 15 house points.\"":
-                $ mad +=7
+                $ her_mood +=7
                 call her_main("For 15 house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].","annoyed","angryL")
                 her "I will not stoop as low as to sell handjobs for 15 house points."
                 her "That is just insulting, [genie_name]."
                 jump back_to_handjob_choices
 
             "\"you will get 45 house points.\"":
-                if mad > 7: #You could spam points into infinity with the choice above.
-                    $ mad = 7
+                if her_mood > 7: #You could spam points into infinity with the choice above.
+                    $ her_mood = 7
                 call her_main(".....","annoyed","angryL")
                 call her_main("45 house points...?","open","down")
                 her "This could put \"Gryffindor\" back in the lead..."
@@ -76,7 +76,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
             "\"you will get 100 house points.\"":
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
                 $ current_payout = 100 #Used when haggling about price of th favor.
-                $ mad = 0
+                $ her_mood = 0
                 call her_main("100 house points?!","scream","wide_stare")
                 her "This will definitely put \"Gryffindor\" in the lead!"
                 m "Is that a \"yes\" then?"
@@ -91,7 +91,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
     #Second Event.
     elif hg_pf_TouchMe_OBJ.points == 1:
-        $ hg_pf_TouchMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_TouchMe_OBJ.level = 2 #Event hearts level (0-3)
 
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
@@ -121,7 +121,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
     #Third Event.
     elif hg_pf_TouchMe_OBJ.points >= 2:
-        $ hg_pf_TouchMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_TouchMe_OBJ.level = 3 #Event hearts level (0-3)
 
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="mid",ypos="base")
@@ -525,7 +525,7 @@ label hg_handjob_1_cumming:
 
             if d_flag_01: #If TRUE Genie promised to warn her.
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
-                $ mad += 11
+                $ her_mood += 11
                 call her_main("You promised to give me a warning, [genie_name]!","angry","angry")
                 m "Oh, that's right... My bad."
                 call her_main("My uniform is ruined...","annoyed","angryL")
@@ -702,7 +702,7 @@ label hg_handjob_3:
     menu:
         m "..."
         "{size=-4}\"I fantasize about being raped by my father.\"{/size}":
-            $ mad += 11
+            $ her_mood += 11
             call her_main("I do not!","angry","angry")
             m "I know. Just say it."
             call her_main("My father? That's disgusting, [genie_name]!","angry","angry",emote="01")
@@ -1016,7 +1016,6 @@ label end_hg_handjob:
     call blkfade
 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    $ gryffindor += current_payout #35
 
     call set_her_action("none","update") #Resets clothing.
 
@@ -1037,8 +1036,9 @@ label end_hg_handjob:
     show screen bld1
     call her_main(trans="fade",xpos="right",ypos="base")
 
-    m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
-    $ gryffindor +=current_payout
+    if her_whoring < 24:
+        m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
+        $ gryffindor += current_payout
 
     call her_main("Thank you, [genie_name]...","soft","baseL")
 
@@ -1048,9 +1048,9 @@ label end_hg_handjob:
         $ her_whoring +=1
 
     if her_whoring >= 12 and her_whoring < 15:
-        $ hg_pf_TouchMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_TouchMe_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 15 and her_whoring < 18:
-        $ hg_pf_TouchMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_TouchMe_OBJ.level = 2 #Event hearts level (0-3)
 
     jump end_hg_pf

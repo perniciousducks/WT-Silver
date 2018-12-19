@@ -7,8 +7,13 @@ label cho_init:
 
         #Body
         $ cho_base                = "characters/cho/body/base/base_01.png"
-        $ cho_arms                = "characters/cho/body/arms/side_arms.png"
-        $ cho_l_hand              = "characters/cho/body/arms/left_hand.png"
+        $ cho_l_arm               = "characters/cho/body/arms/arm_down_l.png"
+        $ cho_r_arm               = "characters/cho/body/arms/arm_down_r.png"
+        $ cho_l_hand              = "characters/cho/body/arms/arm_down_l_overlay.png"
+        $ cho_breasts             = "characters/cho/body/breasts/breasts_bikini_tan.png"
+        $ cho_breasts_tan         = "characters/cho/body/breasts/breasts_sport_bra_tan.png"
+        $ cho_hips_tan            = "characters/cho/body/hips/hips_sport_bra_tan.png"
+
         $ cho_xpos                = 300
         $ cho_ypos                = 0
         $ cho_zorder              = 5
@@ -18,7 +23,7 @@ label cho_init:
         #Face
         $ cho_mouth               = "characters/cho/face/mouth/base.png"
         $ cho_eye                 = "characters/cho/face/eyes/base.png"
-        $ cho_eyewhite            = "characters/cho/face/eyes/_white_.png"
+        $ cho_eye_bg              = "characters/cho/face/eyes/_white_.png"
         $ cho_eyebrow             = "characters/cho/face/brow/base.png"
         $ cho_pupil               = "characters/cho/face/pupil/mid.png"
 
@@ -30,10 +35,10 @@ label cho_init:
         $ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Hair
-        $ cho_hair                = "characters/cho/body/hair/hair_A_1_base.png"
-        $ cho_hair_shadow         = "characters/cho/body/hair/hair_A_1_top.png"
-        $ c_hair_style            = "A"
-        $ c_hair_color            = 1
+        $ cho_hair                = "characters/cho/body/hair/ponytail_blue_base.png"
+        $ cho_hair_shadow         = "characters/cho/body/hair/ponytail_blue_top.png"
+        $ c_hair_style            = "ponytail"
+        $ c_hair_color            = "blue"
 
 
 
@@ -98,8 +103,8 @@ label cho_init:
         $ c_bra                   = "bra_sport"
         $ c_bra_color             = "base"
 
-        $ cho_bottom              = "characters/cho/clothes/bottoms/base/skirt_1.png"
-        $ c_bottom                = "skirt_1"
+        $ cho_bottom              = "characters/cho/clothes/bottoms/base/skirt_2.png"
+        $ c_bottom                = "skirt_2"
         $ c_bottom_color          = "base"
 
         $ cho_panties             = "characters/cho/clothes/underwear/base/panties_sport.png"
@@ -144,10 +149,31 @@ label cho_init:
 
         $ cho_accs                = "characters/cho/accessories/blank.png"
 
+        call reset_cho_transparency
+
         #Outfits
         $ cho_outfit_GLBL = None
         $ cho_temp_outfit = None
 
+
+    call cho_face_layers
+
+    return
+
+label reset_cho_transparency:
+    $ cho_top_transp       = 1
+    $ cho_bottom_transp    = 1
+
+    $ cho_bra_transp       = 1
+    $ cho_onepiece_transp  = 1
+    $ cho_panties_transp   = 1
+    $ cho_garter_transp    = 1
+
+    $ cho_gloves_transp    = 1
+    $ cho_stockings_transp = 1
+    $ cho_robe_transp      = 1
+
+    $ cho_outfit_transp    = 1
 
     return
 
@@ -158,7 +184,7 @@ label cho_progress_init:
 
         #Stats
         $ cho_whoring = 0
-        $ cho_mad = 0
+        $ cho_mood = 0
 
         #Flags
         $ cho_busy = False

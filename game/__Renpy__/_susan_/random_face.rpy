@@ -1,6 +1,6 @@
 
 
-label set_sus_face(face="random"):
+label set_sus_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
     hide screen susan_main
 
     $ temp_mouth    = None
@@ -12,54 +12,115 @@ label set_sus_face(face="random"):
     $ temp_extra    = None
     $ temp_emote    = None
 
-    if face != "random":
 
-        if face in ["neutral"]:
-            $ temp_mouth    = renpy.random.choice(["base","upset","worried"])
-            $ temp_eyes     = renpy.random.choice(["base","closed","wink"])
+    #Face emotions
+    if mouth != None:
+        if mouth in ["neutral"]:
+            $ temp_mouth    = renpy.random.choice(["base"])
+        elif mouth in ["happy"]:
+            $ temp_mouth    = renpy.random.choice(["base","grin"])
+        elif mouth in ["naughty","horny"]:
+            $ temp_mouth    = renpy.random.choice(["base"])
+        elif mouth in ["annoyed"]:
+            $ temp_mouth    = renpy.random.choice(["upset"])
+        elif mouth in ["disgusted"]:
+            $ temp_mouth    = renpy.random.choice(["open"])
+        elif mouth in ["angry"]:
+            $ temp_mouth    = renpy.random.choice(["upset"])
+
+    if eyes != None:
+        if eyes in ["neutral"]:
+            $ temp_eyes     = renpy.random.choice(["base","base","closed"])
+        elif eyes in ["happy"]:
+            $ temp_eyes     = renpy.random.choice(["base","eager"])
+        elif eyes in ["naughty","horny"]:
+            $ temp_eyes     = renpy.random.choice(["base","suspicious"])
+        elif eyes in ["annoyed"]:
+            $ temp_eyes     = renpy.random.choice(["base","narrow","suspicious"])
+        elif eyes in ["disgusted"]:
+            $ temp_eyes     = renpy.random.choice(["wide"])
+        elif eyes in ["angry"]:
+            $ temp_eyes     = renpy.random.choice(["suspicious"])
+
+    if brows != None:
+        if brows in ["neutral"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
-            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
-        elif face in ["happy"]:
-            $ temp_mouth    = renpy.random.choice(["base","worried"])
-            $ temp_eyes     = renpy.random.choice(["base","happyCl","wink"])
+        elif brows in ["happy"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
-            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
-        elif face in ["naughty","horny"]:
-            $ temp_mouth    = renpy.random.choice(["smile","upset","worried"])
-            $ temp_eyes     = renpy.random.choice(["base","closed","wink"])
-            $ temp_eyebrows = renpy.random.choice(["base","ahegao"])
-            $ temp_pupils   = renpy.random.choice(["mid","L","R","ahegao","down"])
-        elif face in ["annoyed"]:
-            $ temp_mouth    = renpy.random.choice(["disgust","upset","worried"])
-            $ temp_eyes     = renpy.random.choice(["base","closed","wink"])
-            $ temp_eyebrows = renpy.random.choice(["base","narrow"])
-            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
-        elif face in ["disgusted"]:
-            $ temp_mouth    = renpy.random.choice(["disgust","tongue_disgust","worried"])
-            $ temp_eyes     = renpy.random.choice(["base","baseL"])
+        elif brows in ["naughty","horny"]:
             $ temp_eyebrows = renpy.random.choice(["base","worried"])
-            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
-        elif face in ["angry"]:
-            $ temp_mouth    = renpy.random.choice(["clench","upset","scream"])
-            $ temp_eyes     = renpy.random.choice(["base","closed","wink"])
-            $ temp_eyebrows = renpy.random.choice(["base","angry"])
-            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
+        elif brows in ["annoyed"]:
+            $ temp_eyebrows = renpy.random.choice(["angry"])
+        elif brows in ["disgusted"]:
+            $ temp_eyebrows = renpy.random.choice(["worried"])
+        elif brows in ["angry"]:
+            $ temp_eyebrows = renpy.random.choice(["angry"])
 
-        elif face in ["mouth"]:
-            $ temp_mouth    = renpy.random.choice(["base","grin","open","open_tongue","open_wide","scream","upset"])
-        elif face in ["eyes"]:
-            $ temp_eyes     = renpy.random.choice(["base","closed","eager","narrow","suspicious","wide","worriedCl"])
-        elif face in ["eyebrows"]:
-            $ temp_eyebrows = renpy.random.choice(["angry","base","worried"])
-        elif face in ["pupils"]:
-            $ temp_pupils   = renpy.random.choice(["down","L","mid","R","up","wide"])
+    if pupils != None:
+        if pupils in ["neutral"]:
+            $ temp_pupils   = renpy.random.choice(["mid"])
+        elif pupils in ["happy"]:
+            $ temp_pupils   = renpy.random.choice(["mid","L","R"])
+        elif pupils in ["naughty","horny"]:
+            $ temp_pupils   = renpy.random.choice(["L","R","down"])
+        elif pupils in ["annoyed"]:
+            $ temp_pupils   = renpy.random.choice(["R","down"])
+        elif pupils in ["disgusted"]:
+            $ temp_pupils   = renpy.random.choice(["R","wide"])
+        elif pupils in ["angry"]:
+            $ temp_pupils   = renpy.random.choice(["mid"])
 
+
+    #Completely random (out of all available layers.)
+    if change in ["mouth"]:
+        $ temp_mouth    = renpy.random.choice(sus_mouth_layers)
+    elif change in ["eyes"]:
+        $ temp_eyes     = renpy.random.choice(sus_eye_layers)
+    elif change in ["brows"]:
+        $ temp_eyebrows = renpy.random.choice(sus_brow_layers)
+    elif change in ["pupils"]:
+        $ temp_pupils   = renpy.random.choice(sus_pupil_layers)
+
+    #Mood specific
+    elif change in ["all","random"]:
+        if sus_mood >= 1:
+            call set_sus_face(mouth="annoyed",eyes="annoyed",brows="annoyed",pupils="annoyed")
         else:
-            pass
+            call set_sus_face(mouth="happy",eyes="happy",brows="happy",pupils="happy")
 
-    else:
-        call set_sus_face("happy")
 
     $ changeSusan(temp_mouth, temp_eyes, temp_eyebrows, temp_pupils, temp_cheeks, temp_tears, temp_extra, temp_emote)
+
+    return
+
+label susan_face_layers:
+
+    $ sus_mouth_layers  = ["base",
+                           "grin",
+                           "open", "open_tongue", "open_wide",
+                           "scream",
+                           "upset"
+                           ]
+
+    $ sus_eye_layers    = ["base",
+                           "closed",
+                           "eager",
+                           "narrow", "suspicious",
+                           "wide",
+                           "worriedCl"
+                           ]
+
+    $ sus_brow_layers   = ["angry",
+                           "base",
+                           "worried"
+                           ]
+
+    $ sus_pupil_layers  = ["down",
+                           "L",
+                           "mid",
+                           "R",
+                           "up",
+                           "wide"
+                           ]
 
     return

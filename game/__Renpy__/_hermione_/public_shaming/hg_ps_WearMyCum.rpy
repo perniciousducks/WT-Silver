@@ -12,7 +12,7 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump silver_requests
+            jump hermione_requests_menu
 
     m "[hermione_name]?"
     call her_main("Yes, [genie_name].",xpos="right",ypos="base")
@@ -527,7 +527,7 @@ label hg_ps_WearMyCum_Scene_3:
             call cum_block
 
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-            $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+            $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
 
             call her_main("{image=textheart}{image=textheart}{image=textheart}","base","down",xpos="right",ypos="base")
@@ -543,7 +543,7 @@ label hg_ps_WearMyCum_Scene_3:
             m "That's it, all over you slut."
             call her_main("......","soft","ahegao")
             pause
-            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            #$ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
             call her_main("It's so warm...{image=textheart}","grin","dead")
             m "That it is."
             call her_main("If it's alright with you, I think I better head to class now...","base","down")
@@ -560,7 +560,7 @@ label hg_ps_WearMyCum_Scene_3:
             call cum_block
 
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-            $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+            $ u_sperm = "characters/hermione/face//auto_07.png"
             $ uni_sperm = True
             $ genie_chibi_xpos = 60 #-185 behind the desk.
             $ genie_chibi_ypos = 10
@@ -669,12 +669,12 @@ label hg_ps_WearMyCum_complete_1:
         menu:
             "\"50 Points to gryffindor!\"":
                 $ gryffindor += 50
-                $ mad += 5
+                $ her_mood += 5
                 call her_main("...","annoyed","annoyed",tears="mascara_soft")
                 m "Well [hermione_name], you may leave now."
                 call her_main("Hmmmphh...","angry","annoyed",emote="01",tears="mascara")
             "\"Tell me about your day.\"":
-                $ mad += 10
+                $ her_mood += 10
                 $ sc34CG(1, 8, 8)
                 call her_main("My day...","normal","worriedCl",tears="mascara_soft_blink",xpos="base",ypos="base")
                 call her_main("This was the worst day of my life!","scream","worriedCl",tears="mascara_soft_blink")
@@ -799,7 +799,7 @@ label hg_ps_WearMyCum_complete_2:
 
 label hg_ps_WearMyCum_complete_3:
     if cum_location == 7: #Cleavage
-        $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+        $ u_sperm = "characters/hermione/face/auto_06.png"
         $ uni_sperm = True
         ">Hermione returns to your office, her shirt still covered in cum."
         call her_main("...I did it [genie_name].","open","suspicious")
@@ -819,7 +819,7 @@ label hg_ps_WearMyCum_complete_3:
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].","grin","dead")
     else: #Cum on face
-        $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+        $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
         ">Hermione returns to your office."
         call her_main("I did it, [genie_name].","open","suspicious")

@@ -283,7 +283,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                                 with d3
 
                                 $ lun_top_level = 2
-                                call set_lun_top("top_2")
+                                call set_lun_top("top_2_r")
 
                                 call lun_main("...","normal","suspicious","sad","down")
                                 m "Why don't you keep you're shirt like that from now on..."

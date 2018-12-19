@@ -2,7 +2,7 @@
 
 ### Astoria Greengrass ###
 
-label ast_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
+label ast_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen astoria_main
 
     #Flip
@@ -56,7 +56,17 @@ label ast_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
         else:
             $ astoria_ypos = int(ypos)
 
-    $ changeAstoria(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
+    if face != None:
+        if mouth == None:
+            call set_ast_face(mouth = face)
+        if eye == None:
+            call set_ast_face(eyes = face)
+        if brows == None:
+            call set_ast_face(brows = face)
+        if pupils == None:
+            call set_ast_face(pupils = face)
+
+    $ changeAstoria(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
 
     show screen astoria_main
     show screen bld1
@@ -95,8 +105,8 @@ label set_ast_tonks_name:
 init python:
     def changeAstoria(  mouth=None,
                         eye=None,
-                        eyebrow=None,
-                        pupil=None,
+                        brows=None,
+                        pupils=None,
                         cheeks=None,
                         tears=None,
                         extra=None,
@@ -119,10 +129,10 @@ init python:
         if eye is not None:
             astoria_eye         = "characters/astoria/face/eyes/"+eye+".png"
             astoria_eye_bg      = "characters/astoria/face/eyes/"+eye+"_bg.png"
-        if eyebrow is not None:
-            astoria_eyebrow     = "characters/astoria/face/brow/"+eyebrow+".png"
-        if pupil is not None:
-            astoria_pupil       = "characters/astoria/face/pupil/"+pupil+".png"
+        if brows is not None:
+            astoria_eyebrow     = "characters/astoria/face/brow/"+brows+".png"
+        if pupils is not None:
+            astoria_pupil       = "characters/astoria/face/pupil/"+pupils+".png"
         if cheeks is not None:
             astoria_cheeks      = "characters/astoria/face/extras/cheeks_"+cheeks+".png"
         if tears is not None:

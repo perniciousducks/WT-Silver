@@ -18,7 +18,7 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     call bld
 
@@ -161,7 +161,7 @@ label hg_pr_HandjobClassmate_complete:
                     call her_main(".....","angry","base")
                     m "You are free to go, [hermione_name]."
                     call her_main(".........","annoyed","angryL")
-                    $ mad +=9
+                    $ her_mood +=9
 
                     $ hg_pr_HandjobClassmate_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
@@ -287,7 +287,7 @@ label hg_pr_HandjobClassmate_complete:
                     m "Well, I didn't force you to give him that promise, did I?"
                     call her_main("......","angry","base")
                     call her_main("This is just not fair!","scream","worriedCl")
-                    $ mad +=20
+                    $ her_mood +=20
 
                     $ hg_pr_HandjobClassmate_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
@@ -347,7 +347,7 @@ label hg_pr_HandjobClassmate_complete:
                     her "But you are wrong, [genie_name]."
                     call her_main("You of all people should understand that I take no pleasure in this...","angry","base",tears="soft")
                     call her_main("I just do what needs to be done...","normal","baseL",tears="soft")
-                    $ mad = 10
+                    $ her_mood = 10
 
             call her_main("[genie_name], can I just get paid now, please?","soft","baseL")
             m "Get paid? But you didn't tell me how it went yet?"
@@ -415,7 +415,7 @@ label hg_pr_HandjobClassmate_complete:
                     m "That's the plan And thanks to your hard work, [hermione_name]..."
                     m "All goes according to keik-... I mean, the plan..."
                     call her_main("Hm...","upset","closed")
-                    $ mad += 11
+                    $ her_mood += 11
 
     #Third level.
     elif her_whoring >= 21:

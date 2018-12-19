@@ -12,8 +12,14 @@ label hide_all_screens:
     call sna_chibi("hide")
     call gen_chibi("hide")
 
+    #CGs
+    hide screen ccg
+    hide screen end_u_1
+    hide screen end_u_3
+
     #Main Room
     hide screen main_room
+    hide screen main_room_deco
     hide screen weather
     hide screen new_window #Hiding clear sky bg.
 
@@ -35,8 +41,25 @@ label hide_all_screens:
     hide screen package
     hide screen owl
 
-    #Other Rooms
+    #Weasley Store
     hide screen weasley_store_room
+
+    #7th Floor
+    hide screen floor_7th_door
+    hide screen room_of_req_door
+    hide screen floor_7th_screen
+    hide screen floor_7th_menu
+
+    #Room of Requirement
+    hide screen room_of_requirement
+    hide screen room_of_requirement_menu
+    hide screen candle_light_1
+    hide screen candle_light_2
+    hide screen whose_points_screen
+
+    #A Dark Room (minigame)
+    hide screen dark_room
+    hide screen DRgame_blktone
 
     #General
     hide screen main_room_menu
@@ -81,9 +104,11 @@ label room(room=None, hide_screens=True):
 
         show screen weather
         show screen main_room
+        show screen main_room_deco
         show screen chair_right
         hide screen fireplace_fire
         if fire_in_fireplace:
+            play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
             show screen fireplace_fire
         show screen animation_feather
         hide screen phoenix_food
@@ -106,8 +131,25 @@ label room(room=None, hide_screens=True):
         show screen weasley_store_room
         show screen points
 
+    if room in ["potions_room","potions_room"]:
+        $ current_room = "potions_classroom"
+
+        show screen weasley_store_room #Temporary
+        show screen points
+
     if room in ["clothing_store", "clothe_store"]:
-        pass
+        $ current_room = "clothing_store"
+
+        show screen weasley_store_room #Temporary
+        show screen points
+
+    if room in ["7th floor"]:
+        show screen floor_7th_door
+        show screen room_of_req_door
+        show screen floor_7th_screen
+
+    if room in ["room_of_requirement","ror"]:
+        show screen room_of_requirement
 
     return
 
@@ -148,6 +190,19 @@ label reset_day_flags:
 
 label reset_day_and_night_flags:
     $ her_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+    call set_her_map_location()
+
+    $ lun_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+    call set_lun_map_location()
+
+    $ ast_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+    call set_ast_map_location()
+
+    $ sus_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+    call set_sus_map_location()
+
+    $ cho_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
+    call set_cho_map_location()
 
     return
 
@@ -288,10 +343,6 @@ label play_sound(sound=""):
 
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
-        
-    if sound in ["Genie_VS_Snape"]:
-        play audio [ "<silence .5>", 'sounds/Genie_VS_Snape.mp3' ]
-        #$ renpy.play('sounds/Genie_VS_Snape.mp3')
 
     return
 
@@ -363,7 +414,7 @@ label update_hints:
         $ hg_pf_BreastMolester_OBJ.progress_hint = False
 
     #Favour 4
-    if her_whoring >= 3 and her_whoring < 6 and game_difficulty <= 2:
+    if her_whoring >= 3 and her_whoring < 9 and game_difficulty <= 2:
         $ hg_pf_ButtMolester_OBJ.progress_hint = True
     elif her_whoring >= 9 and not cho_known:
         $ hg_pf_ButtMolester_OBJ.progress_hint = True
@@ -383,7 +434,7 @@ label update_hints:
         $ hg_pf_DanceForMe_OBJ.progress_hint = False
 
     #Favour 7
-    if her_whoring >= 9 and her_whoring < 12 and game_difficulty <= 2:
+    if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
         $ hg_pf_ShowMeYourAss_OBJ.progress_hint = True
     else:
         $ hg_pf_ShowMeYourAss_OBJ.progress_hint = False

@@ -1,9 +1,8 @@
+
+
 label anal_parit_event: #LV.8 (Whoring = 21 - 23)
-    call hide_room_req
-    show screen main_room
-    show screen genie
+    call room("main_room")
     show screen blkfade
-    hide screen hermione_main
     with d3
 
     $ menu_x = 0.5 #Menu is moved to the middle.
@@ -226,7 +225,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen ccg
                 $ face_on_cg = False
                 hide screen hermione_main
-                call update_her_hair
                 call her_chibi("hide")
                 hide screen genie
                 show screen chair_left
@@ -365,7 +363,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call blkfade
                 $ face_on_cg = False
                 hide screen hermione_main
-                call update_her_hair
 
                 call her_main("I apologize for saying that I hate you, captain...","base","baseL",cheeks="blush",tears="mascara",ypos="head")
                 call her_main("And your canon is not rusty...",cheeks="blush",tears="mascara")
@@ -410,7 +407,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call blkfade
                 $ face_on_cg = False
                 hide screen hermione_main
-                call update_her_hair
 
                 m "Well, I'm done... You can get off my ship now."
                 call her_main("Yes, captain...","silly","worried",cheeks="blush",tears="soft",ypos="head")
@@ -629,7 +625,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         #Ending
         $ face_on_cg = False
-        call update_her_hair
 
         m "Well, tis been intense..."
         call her_main("Ah-ha...{image=textheart} ah...{image=textheart}","grin","dead",cheeks="blush",tears="messy",ypos="head")

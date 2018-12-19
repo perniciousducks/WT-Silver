@@ -15,7 +15,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ current_payout = 40 #Used when haggling about price of the favor.
 
@@ -60,7 +60,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             "\"you will get 80 house points!\"":
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
                 $ current_payout = 80 #Used when haggling about price of th favor.
-                $ mad = 0
+                $ her_mood = 0
                 call her_main("80 house points?!","scream","wide_stare")
                 m "Is that enough?"
                 call her_main("Of course [genie_name]!","smile","happyCl")
@@ -79,7 +79,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         call hg_masturbate_1
         call hg_masturbate_1_cumming
 
-        $ hg_pf_TouchYourself_OBJ.hearts_level = 1
+        $ hg_pf_TouchYourself_OBJ.level = 1
         jump end_hg_masturbate
 
     #Second time event.
@@ -115,7 +115,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
 
         call hg_masturbate_2_cumming
 
-        $ hg_pf_TouchYourself_OBJ.hearts_level = 2
+        $ hg_pf_TouchYourself_OBJ.level = 2
         jump end_hg_masturbate
 
     #Third time event.
@@ -134,7 +134,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
         call hg_masturbate_3
         call hg_masturbate_3_cumming
 
-        $ hg_pf_TouchYourself_OBJ.hearts_level = 3
+        $ hg_pf_TouchYourself_OBJ.level = 3
         jump end_hg_masturbate
 
 
@@ -363,7 +363,7 @@ label hg_masturbate_1_cumming:
             call nar(">Hermione wipes the tears from her eyes.")
             call her_main("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry",cheeks="blush")
 
-            $ mad += 15
+            $ her_mood += 15
 
             return
 
@@ -705,7 +705,6 @@ label end_hg_masturbate:
     call set_her_action("none","update") #Resets clothes.
 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    $ gryffindor += current_payout #35
 
     hide screen g_c_c_u # Genie's sperm. Universal.
     call her_chibi("stand","desk","base")
@@ -730,12 +729,12 @@ label end_hg_masturbate:
     $ hg_pf_TouchYourself_OBJ.points += 1
 
     if hg_pf_TouchYourself_OBJ.points == 1:
-        $ hg_pf_TouchYourself_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_TouchYourself_OBJ.level = 1 #Event hearts level (0-3)
 
     if hg_pf_TouchYourself_OBJ.points == 2:
-        $ hg_pf_TouchYourself_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_TouchYourself_OBJ.level = 2 #Event hearts level (0-3)
 
     if hg_pf_TouchYourself_OBJ.points == 3:
-        $ hg_pf_TouchYourself_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_TouchYourself_OBJ.level = 3 #Event hearts level (0-3)
 
     jump end_hg_pf  #Resets screens. Hermione walks out. Resets Hermione.

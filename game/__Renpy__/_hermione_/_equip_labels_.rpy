@@ -3,13 +3,35 @@
 ###EQUIPPING LABELS###
 
 #Hair equip.
-label set_her_hair(style=None, color=None): #Not in use
+label set_her_hair(style="", color=""): #Not in use
     hide screen hermione_main
-    if hair_style  != None:
-        $ h_hair_style = hair_style
-    if hair_color != None:
+    if style  != "":
+        $ h_hair_style = style
+    if color != "":
         $ h_hair_color = color
-    call update_her_hair
+
+    #Hair
+    if h_hair_style in ["curly","updo","bobcut"]:
+        $ hermione_hair_base = "characters/hermione/body/head/" +str(h_hair_style)+ "_" +str(h_hair_color)+ ".png"
+        $ hermione_hair_top = "characters/hermione/body/head/" +str(h_hair_style)+ "_" +str(h_hair_color)+ "_top.png"
+    else:
+        $ hermione_hair_base = "characters/hermione/body/head/misc/" +str(h_hair_style)+ ".png"
+        $ hermione_hair_top = "characters/hermione/body/head/misc/" +str(h_hair_style)+ "_top.png"
+
+    #Ears
+    if h_ears == "cat_ears":
+        if h_hair_style in ["curly","updo","bobcut"]:
+            $ hermione_ears = "characters/hermione/accessories/ears/hair_"+str(h_hair_style)+"/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+        else:
+            $ hermione_ears = "characters/hermione/accessories/ears/hair_curly/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+    else:
+        $ hermione_ears = "characters/hermione/accessories/ears/"+str(h_ears)+".png"
+
+    #Hat
+    if h_hair_style in ["curly","updo","bobcut"]:
+        $ hermione_hat = "characters/hermione/accessories/hats/hair_"+str(h_hair_style)+"/"+str(h_hat)+".png"
+    else:
+        $ hermione_hat = "characters/hermione/accessories/hats/hair_curly/"+str(h_hat)+".png"
 
     return
 
@@ -57,7 +79,7 @@ label set_her_ears(ears=""):
         $ hermione_wear_ears = True
         $ h_ears = ears
         if h_ears == "elf_ears":
-            call set_her_hair(style="B")
+            call set_her_hair(style="updo")
     call update_her_uniform
 
     return
@@ -247,6 +269,34 @@ label set_her_buttplug(buttplug=""):
 
     return
 
+#Mask equip.
+label set_her_mask(mask=""):
+    hide screen hermione_main
+    if mask == "None" or mask == "" or mask == "remove":
+        $ h_request_wear_mask = False
+        $ hermione_wear_mask = False
+    else:
+        $ h_request_wear_mask = True
+        $ hermione_wear_mask = True
+        $ h_mask = mask
+    call update_her_uniform
+
+    return
+
+#Gag equip.
+label set_her_gag(gag=""):
+    hide screen hermione_main
+    if gag == "None" or gag == "" or gag == "remove":
+        $ h_request_wear_gag = False
+        $ hermione_wear_gag = False
+    else:
+        $ h_request_wear_gag = True
+        $ hermione_wear_gag = True
+        $ h_gag = gag
+    call update_her_uniform
+
+    return
+
 #Piercings equip.
 label set_her_piercing(piercing="", color=""):
     hide screen hermione_main
@@ -295,11 +345,11 @@ label set_hermione_outfit(outfit): #This gets used outside the wardrobe.
     return
 
 label set_her_outfit(outfit):
+    hide screen hermione_main
     if outfit == None:
         $ h_request_wear_outfit = False
         $ hermione_wear_outfit = False
         call update_her_uniform
-        call update_her_hair
     else:
         $ h_request_wear_outfit = True
         $ hermione_wear_outfit = True
@@ -309,24 +359,21 @@ label set_her_outfit(outfit):
 
         $ hermoine_outfit_GLBL = outfit
 
-        if hermoine_outfit_GLBL.hair_layer != "":
-            $ h_hair_style = hermoine_outfit_GLBL.getHairLayers()
-            $ h_hair_color = 1
         if hermoine_outfit_GLBL.top_layers != []:
             $ h_request_wear_hat = True
             $ h_hat = hermoine_outfit_GLBL.getTopLayers()
+        if hermoine_outfit_GLBL.hair_layer != "":
+            call set_her_hair(style=hermoine_outfit_GLBL.getHairLayers() )
 
         call load_hermione_clothing_saves
         call update_her_uniform
-        call update_her_hair
 
     return
 
 label h_equip_temp_outfit(outfit):
-    if temp_outfit_GLBL == None:
-        $ temp_outfit_GLBL = hermoine_outfit_GLBL  #Saves equipped outfit.
-        $ temp_wear_outfit = h_request_wear_outfit #Saves equip state.
-        $ temp_wear_top = h_request_wear_top       #Saves equip state.
+    $ temp_outfit_GLBL = hermoine_outfit_GLBL  #Saves equipped outfit.
+    $ temp_wear_outfit = h_request_wear_outfit #Saves equip state.
+    $ temp_wear_top = h_request_wear_top       #Saves equip state.
 
     call set_her_outfit(outfit)
     return
@@ -344,13 +391,44 @@ label h_unequip_temp_outfit():
     $ temp_outfit_GLBL = None
     return
 
+label set_her_transparency(top=None, bottom=None, bra=None, onepiece=None, panties=None, garterbelt=None, gloves=None, stockings=None, robe=None, outfit=None):
+    pause.5
+    hide screen hermione_main
+
+    if top != None:
+        $ her_top_transp = top
+    if bottom != None:
+        $ her_bottom_transp    = bottom
+
+    if bra != None:
+        $ her_bra_transp       = bra
+    if onepiece != None:
+        $ her_onepiece_transp  = onepiece
+    if panties != None:
+        $ her_panties_transp   = panties
+    if garterbelt != None:
+        $ her_garter_transp    = garterbelt
+
+    if gloves != None:
+        $ her_gloves_transp    = gloves
+    if stockings != None:
+        $ her_stockings_transp = stockings
+    if robe != None:
+        $ her_robe_transp      = robe
+
+    if outfit != None:
+        $ her_outfit_transp    = outfit
+
+    call update_her_body
+
+    return
 
 #Hermione Action
 
 label set_her_action(action =  "", update=""):
     hide screen hermione_main
 
-    if action == "" or action == "none" or action == "None" or action == 0:
+    if action == "" or action == "none" or action == "None" or action == None:
 
         $ hermione_action = "none"
         $ hermione_use_action = False
@@ -498,6 +576,6 @@ label set_her_action(action =  "", update=""):
                 $ hermione_wear_robe = False
 
 
-    call update_her_uniform #calls update_her_action, update_chibi_uniform, and h_update_body;
+    call update_her_uniform #calls update_her_action, update_chibi_uniform, and update_her_body;
 
     return

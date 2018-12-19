@@ -80,11 +80,11 @@ $ width_offset = 140
 
 
 screen desk: #Desk only!
-    add "images/rooms/main_room/09_table.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
     zorder 2
 
 screen chair_left:
-    add "images/rooms/main_room/chair_left.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
 screen chair_right:
     add "images/rooms/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
     zorder 1
@@ -99,7 +99,7 @@ screen owl:
         add "images/rooms/main_room/owl_05.png" at Position(xpos=455, ypos=270, xanchor="center", yanchor="center")
 
 screen package:
-    add "images/rooms/main_room/owl_06.png" at Position(xpos=400, ypos=235, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/owl_06" +str(room_deco)+ ".png" at Position(xpos=400, ypos=235, xanchor="center", yanchor="center")
 
 
 
@@ -133,31 +133,31 @@ screen ctc:
 
 screen points: #House points screen.
     add "interface/points/TopUI_Bar.png" at Position(xpos=0+140, ypos=1)
-    hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
-        spacing 10 xpos 146+140 ypos 11#отступ для текста, если надо прямо в левом углу — убираем его
-        text "{size=-5}[slytherin]{/size}" #сумма текстом
-    hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
-        spacing 10 xpos 252+140 ypos 11#отступ для текста, если надо прямо в левом углу — убираем его
-        text "{size=-5}[gryffindor]{/size}" #сумма текстом
     hbox:
-        spacing 10 xpos 365+140 ypos 11
-        text "{size=-5}[hufflepuff]{/size}"
-    hbox:
-        spacing 10 xpos 37+140 ypos 11
+        spacing 10 xpos 177 ypos 11
         text "{size=-5}[ravenclaw]{/size}"
+    hbox:
+        spacing 10 xpos 286 ypos 11
+        text "{size=-5}[slytherin]{/size}"
+    hbox:
+        spacing 10 xpos 392 ypos 11
+        text "{size=-5}[gryffindor]{/size}"
+    hbox:
+        spacing 10 xpos 505 ypos 11
+        text "{size=-5}[hufflepuff]{/size}"
     hbox: ### DAYS COUNTER ###
-        spacing 10 xpos 475+140 ypos 10
+        spacing 10 xpos 615 ypos 10
         text "{size=-3}[day]{/size}"
-    hbox: ### DGOLD COUNTER ###
-        spacing 10 xpos 590+140 ypos 10
+    hbox: ### GOLD COUNTER ###
+        spacing 10 xpos 730 ypos 10
         text "{size=-4}[gold]{/size}"
     zorder 2
 
 
 screen gift:
-    zorder 6 #5
-    add "interface/frames/"+str(interface_color)+"/reward_background.png"
-    add the_gift at Position(xalign=0.5, yalign=0.5)
+    zorder 6
+    add "interface/frames/"+str(interface_color)+"/reward_background.png" at Position(xalign=0.5, yalign=0.547)
+    add the_gift xalign 0.5 yalign 0.5 zoom get_zoom(the_gift, 300,160)
 
 
 label give_reward(text="",gift=""):
@@ -171,7 +171,7 @@ label give_reward(text="",gift=""):
     if gift!="":
         $ the_gift = gift
     else:
-        $ the_gift = "images/store/01.png"
+        $ the_gift = "interface/icons/box_blue_2.png"
 
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
@@ -197,7 +197,7 @@ label give_reward(text="",gift=""):
 
 
 screen clothing_unlock:
-    zorder 6 #5
+    zorder 6
     add "interface/store/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
 
@@ -210,9 +210,9 @@ label unlock_clothing(text="",item=None):
     with d3
 
     if item != None:
-        $ mannequin_preview = item.getStoreImage()
+        $ mannequin_preview = item.get_image()
     else:
-        $ mannequin_preview = "images/store/01.png"
+        $ mannequin_preview = "interface/icons/outfits/mannequin_1.png"
 
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
@@ -284,18 +284,18 @@ screen snape_defends:
 ### DAMAGE ###
 
 screen minus_0:
-    add "minus_0" at Position(xpos=640+140, ypos=120)
+    add "minus_0" at Position(xpos=780, ypos=120)
 screen minus_50:
-    add "minus_50" at Position(xpos=640+140, ypos=120)
+    add "minus_50" at Position(xpos=780, ypos=120)
 screen minus_100:
-    add "minus_100" at Position(xpos=640+140, ypos=120)
+    add "minus_100" at Position(xpos=780, ypos=120)
 
 screen minus_300:
-    add "minus_300" at Position(xpos=640+140, ypos=120)
+    add "minus_300" at Position(xpos=780, ypos=120)
 screen minus_400:
-    add "minus_400" at Position(xpos=640+140, ypos=120)
+    add "minus_400" at Position(xpos=780, ypos=120)
 screen minus_500:
-    add "minus_500" at Position(xpos=640+140, ypos=120)
+    add "minus_500" at Position(xpos=780, ypos=120)
 
 
 #GENIE HEALTH LOSS
@@ -341,7 +341,7 @@ screen c_scene: #Snape Classroom Scene
 
 
 screen ch_hotdog:
-    add "ch_hem hotdog" xpos -210+140 ypos 10 #Desk sex ani.
+    add "ch_hem hotdog" xpos -70 ypos 10 #Desk sex ani.
     zorder 0
 
 
@@ -437,12 +437,12 @@ screen end_u_4:
 
 screen credits_chibi: # ONE CHIBI
     zorder 5
-    add dermo at Position(xpos=280+140, ypos=140)
+    add dermo at Position(xpos=420, ypos=140)
 
 
 screen credits_chibi2: # TWO CHIBIs
     zorder 5
-    add dermo at Position(xpos=150+140, ypos=140)
+    add dermo at Position(xpos=290, ypos=140)
 
 screen uni_cr: # UNIVERSAL CREDITS CHIBI
     zorder 5

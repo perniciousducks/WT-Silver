@@ -16,7 +16,7 @@ label hg_pf_ButtMolester:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     hide screen hermione_main
     with d3
@@ -29,7 +29,7 @@ label hg_pf_ButtMolester:
     #First time event
     if her_whoring >= 0 and her_whoring <= 5: #[3,4,5]
 
-        $ hg_pf_ButtMolester_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_ButtMolester_OBJ.level = 1 #Event hearts level (0-3)
 
         m "Come closer, child. Let me molest your butt a little."
         if her_whoring < 3:
@@ -57,7 +57,7 @@ label hg_pf_ButtMolester:
     #Second Event
     elif her_whoring >= 6 and her_whoring <= 15: #[6,7,8,9,10,11,12,13,14,15]
 
-        $ hg_pf_ButtMolester_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_ButtMolester_OBJ.level = 2 #Event hearts level (0-3)
 
         m "Come closer, [hermione_name]. Let me molest your butt a little."
         call her_main("If I must...","open","baseL",cheeks="blush",ypos="head")
@@ -69,7 +69,7 @@ label hg_pf_ButtMolester:
     #Third Event
     elif her_whoring >= 16:
 
-        $ hg_pf_ButtMolester_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_ButtMolester_OBJ.level = 3 #Event hearts level (0-3)
 
         hide screen bld1
         m "Come closer, [hermione_name]. Let me molest your butt a little."
@@ -170,7 +170,7 @@ label hg_butt_molester_1:
                                             jump hg_butt_molester_1_continue
 
                                         "\"You are not getting any points for this!\"":
-                                            $ mad += 20
+                                            $ her_mood += 20
                                             call her_main("Ha! See if I care, [genie_name]!","angry","angry",cheeks="blush")
                                             ### Takes place aftre you refuse to pay her the points.
                                             hide screen no_groping_02
@@ -187,7 +187,7 @@ label hg_butt_molester_1:
                                             jump end_hg_pf
 
                                         "\"I'm subtracting points from you then!\"":
-                                            $ mad += 30
+                                            $ her_mood += 30
                                             call her_main("You can't be serious!?","scream","wide",cheeks="blush")
                                             $ gryffindor -=10
                                             g4 "The \"Gryffindor\" house, minus 10 points!"
@@ -270,7 +270,7 @@ label hg_butt_molester_1:
                     call her_main(".....................","angry","worriedCl",cheeks="blush")
 
                 "\"Open your eyes, or lose the points!\"":
-                    $ mad += 7
+                    $ her_mood += 7
                     call her_main("Tsk! {size=-5}(You perverted old--{/size}","angry","worriedCl",cheeks="blush")
                     m "Did you say something, [hermione_name]?"
                     call her_main("It's nothing, [genie_name].","angry","angry")
@@ -429,14 +429,14 @@ label screams_of_rapings:
             m "Why would you want that? I already paid you!"
             call her_main("Oh... right...","angry","base",cheeks="blush",tears="mascara")
             call her_main("But I hate you! I hate you [genie_name]!","scream","angryCl",cheeks="blush",tears="mascara")
-            $ mad +=30
+            $ her_mood +=30
 
         "\"You're bluffing, [hermione_name]!\"":
             call her_main("No, I'm not! I'm gonna do it!","scream","worriedCl",cheeks="blush",tears="messy",ypos="head")
             g4 "By all means, go ahead..."
             g4 "There was no rape!"
             call her_main("I hate you, [genie_name]!","scream","worriedCl",cheeks="blush",tears="messy")
-            $ mad +=50
+            $ her_mood +=50
 
     hide screen hermione_main
     show screen genie
@@ -601,7 +601,7 @@ label hg_butt_molester_2:
                     jump end_hg_butt_molester
 
                 "\"Open your eyes, or you'll lose the points!\"":
-                    $ mad += 20
+                    $ her_mood += 20
                     call her_main("Tsk! {size=-5}(You perverted old--{/size}","angry","worriedCl",cheeks="blush",ypos="head")
                     m "Did you say something, [hermione_name]?"
                     call her_main("It's nothing, [genie_name].","angry","angry")
@@ -1085,21 +1085,19 @@ label end_hg_butt_molester:
     hide screen blktone8
     hide screen ctc
     hide screen bld1
-    hide screen groping_01
-    hide screen groping_02
     call her_chibi("stand","mid","base")
-    show screen genie
+    call gen_chibi("sit_behind_desk")
 
     $ menu_x = 0.5 #Menu is moved to the left side.
     $ menu_y = 0.5 #Menu is moved to the left side.
 
     call hide_blkfade
 
-    if her_whoring <= 13:
+    if her_whoring < 21:
         $ gryffindor +=15
         m "The \"Gryffindors\" get 15 points!"
     else:
-        m "well done, [hermione_name]."
+        m "Well done, [hermione_name]."
 
     call her_main("..................","grin","glance",cheeks="blush",tears="mascara",xpos="base",ypos="base")
     her "Thank you [genie_name]..."
@@ -1126,12 +1124,8 @@ label end_hg_butt_molester:
 
         call her_walk("mid","leave",2)
 
-    if game_difficulty <= 2:
-        if her_whoring < 9: #Adds points till 9.
-            $ her_whoring +=1
-    else: #Hardcore
-        if her_whoring < 6: #Adds points till 6.
-            $ her_whoring +=1
+    if her_whoring < 9: #Adds points till 9.
+        $ her_whoring +=1
 
     $ hg_pf_ButtMolester_OBJ.points += 1
 

@@ -243,7 +243,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     show screen desk
     show screen with_snape_animated
 
-    hide screen snape_01 #Snape stands still.
+    hide screen snape_stand #Snape stands still.
     hide screen bld1
     hide screen snape_main
     with d3
@@ -326,13 +326,15 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         $ sna_friendship_maxed = True
 
     else:
-
         show screen bld1
         with d3
-        $ renpy.play('sounds/win_04.mp3')   #Not loud.
-        show screen notes
-        ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him has improved."
-        hide screen notes
+        if game_difficulty <= 2:
+            $ renpy.play('sounds/win_04.mp3')   #Not loud.
+            show screen notes
+            ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him has improved."
+            hide screen notes
+        else:
+            ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him hasn't improved much."
         hide screen bld1
         with d3
 
@@ -342,9 +344,11 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         if game_difficulty < 2: #Easy & Normal
             $ sna_friendship += 3
         elif game_difficulty == 2:
-            $ sna_friendship += 2
+            $ sna_friendship += 1
         else:
-            $ sna_friendship += renpy.random.randint(0, 1) #Hardcore. Wine is required.
+            $ sna_friendship += 0
+        if sna_friendship > 100:
+            $ sna_friendship = 100
 
     jump day_start
 
@@ -643,126 +647,13 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 
 
 
-
-####Snape bonus###
-#label snape_bonus:
-#    if snape_events == 1:
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=3
-#            "Slytherin got +3 points as a Snape-Bonus."
-
-#    if snape_events == 2:#WEEK No.2
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=7
-#            "Slytherin got +7 points as a Snape-Bonus."
-
-#    if snape_events == 3:#WEEK No.3
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=10
-#            "Slytherin got +10 points as a Snape-Bonus."
-
-#    if snape_events == 4:#WEEK No.4
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=12
-#            "Slytherin got +12 points as a Snape-Bonus."
-
-#    if snape_events == 5:#WEEK No.5
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=16
-#            "Slytherin got +16 points as a Snape-Bonus."
-
-#    if snape_events == 6:#WEEK No.6
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=22
-#            "Slytherin got +22 points as a Snape-Bonus."
-
-#    if snape_events == 7:#WEEK No.7
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=26
-#            "Slytherin got +26 points as a Snape-Bonus."
-
-#    if snape_events == 8:#WEEK No.8
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=32
-#            "Slytherin got +32 points as a Snape-Bonus."
-
-#    if snape_events == 9:#WEEK No.9
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=36
-#            "Slytherin got +36 points as a Snape-Bonus."
-
-#    if snape_events == 10:#WEEK No.10
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=43
-#            "Slytherin got +43 points as a Snape-Bonus."
-
-#    if snape_events == 11:#WEEK No.11
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=46
-#            "Slytherin got +46 points as a Snape-Bonus."
-
-#    if snape_events == 12:#WEEK No.12
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=50
-#            "Slytherin got +50 points as a Snape-Bonus."
-
-#    if snape_events == 13:#WEEK No.13
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=56
-#            "Slytherin got +56 points as a Snape-Bonus."
-
-#    if snape_events == 14:#WEEK No.14
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=61
-#            "Slytherin got +61 points as a Snape-Bonus."
-
-#    if snape_events == 15:#WEEK No.15
-#        if generating_snape_bonus == 1:
-#            pass
-#        elif generating_snape_bonus == 2:
-#            $ slytherin +=66
-#            "Slytherin got +66 points as a Snape-Bonus."
-
-#return
-
-
-
-
 ####################################
 label wine_intro:
     m "Look what I've got!"
     call sna_head("Hm..?","snape_05")
     call sna_head("Let me see...")
     pause.1
-    $ the_gift = "images/store/27.png" # WINE.
+    $ the_gift = "interface/icons/item_wine.png" # WINE.
     show screen gift
     with d3
     ">You hand over the bottle you found in the cupboard to professor Snape..."
@@ -790,7 +681,7 @@ label drink_wine:
     m "Look what I've got!"
     hide screen s_head2
     pause.1
-    $ the_gift = "images/store/27.png" # WINE.
+    $ the_gift = "interface/icons/item_wine.png" # WINE.
     show screen gift
     with d3
     ">You hand over the bottle you fond in the cupboard to professor Snape..."
@@ -826,9 +717,9 @@ label drink_wine:
         if game_difficulty < 2:      #Easy difficulty
             $ sna_friendship += 2
         elif game_difficulty == 2:   #Normal
-            $ sna_friendship += 3
+            $ sna_friendship += 2
         else:                        #Hardcore, larger wine bonus.
-            $ sna_friendship += 6
+            $ sna_friendship += 3
 
     return
 

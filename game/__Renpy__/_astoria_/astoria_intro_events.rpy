@@ -1179,6 +1179,7 @@ label astoria_book_intro: #Tell Astoria that you have a book of spells as well a
     $ tonks_busy = True
 
     $ astoria_tonks_event_in_progress = True
+    call set_ast_map_location("defense_classroom") #Update's Astoria's map location.
 
     call nar(">Astoria sprints out the door, giggling as she goes.")
 

@@ -15,7 +15,7 @@ label hg_pf_DanceForMe:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ current_payout = 35 #Because will have option to pay extra.
 
@@ -33,7 +33,7 @@ label hg_pf_DanceForMe:
             call her_main("...dance for you, [genie_name]?","open","wink")
 
 
-        $ hg_pf_DanceForMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        $ hg_pf_DanceForMe_OBJ.level = 1 #Event hearts level (0-3)
 
         m "Yes... You think you could manage that?"
         call her_main("Ehm... I suppose so...","soft","baseL")
@@ -232,14 +232,14 @@ label hg_pf_DanceForMe:
                 m "We'll see..."
                 call her_main("Tsk!","disgust","glance",tears="mascara")
 
-                $ mad += 35
+                $ her_mood += 35
 
                 jump could_not_flirt
 
 
     #Second Event
     if hg_pf_DanceForMe_OBJ.points == 1:
-        $ hg_pf_DanceForMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
+        $ hg_pf_DanceForMe_OBJ.level = 2 #Event hearts level (0-3)
 
         call bld
         m "[hermione_name], I need you to dance for me."
@@ -483,7 +483,7 @@ label hg_pf_DanceForMe:
 
         call sna_main("Listen, Genie. I've been thinki--","snape_01",xpos="base",ypos="base")
 
-        hide screen snape_01 #Chibi
+        hide screen snape_stand #Chibi
         show screen hermione_main
         with d3
 
@@ -508,7 +508,7 @@ label hg_pf_DanceForMe:
                 call sna_main("Yes... I can see that...","snape_13")
                 call her_main("{size=-7}(I want to die!){/size}","angry","worriedCl")
             "\"Severus! Please, come join us.\"":
-                $ mad += 20
+                $ her_mood += 20
                 #$ snape_invited_to_watch = True #Removed. Turns true on a new Snape event instead. (label special_date_with_snape_03)
                 call sna_main("Seriously?","snape_14")
                 call her_main("([genie_name], no, please.............................)","angry","worriedCl")
@@ -523,7 +523,7 @@ label hg_pf_DanceForMe:
         call her_main(".................................","angry","worriedCl")
 
         hide screen bld1
-        show screen snape_01
+        show screen snape_stand
         hide screen snape_main
         hide screen hermione_main
         with fade
@@ -572,7 +572,7 @@ label hg_pf_DanceForMe:
 
     #Third Event.
     if hg_pf_DanceForMe_OBJ.points >= 2:
-        $ hg_pf_DanceForMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_DanceForMe_OBJ.level = 3 #Event hearts level (0-3)
 
         call blktone
 
@@ -763,7 +763,7 @@ label hg_pf_DanceForMe:
                     menu:
                         m "..."
                         "\"[hermione_name], show some respect!\"":
-                            $ mad += 9
+                            $ her_mood += 9
                             call her_main("What?","annoyed","angry")
                             call her_main("But [genie_name]!")
                             m "Young lady, you {size=+4}will{/size} calm down now."
@@ -797,8 +797,9 @@ label hg_pf_DanceForMe:
                             m "The skirt, [hermione_name]!"
                             call her_main("......","annoyed","angryL")
                             call sna_main(".............","snape_13")
-                        "-HARDCORE-" if hardcore_difficulty_active: #Hardcore difficulty dialogue.
-                            $ mad += 18
+                        "-HARDCORE-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
+                            $ her_mood += 18
+                            $ sna_friendship -= 10
                             m "Both of you,..."
                             stop music
                             with hpunch
@@ -810,7 +811,7 @@ label hg_pf_DanceForMe:
                             call sna_main("(What did he just say to me?!)","snape_08")
                             g4 "Shut your stupid mouth or I will send you flying out that bloody window!"
                             g4 "That Bitch is already stripping for you, so what more do you want?!"
-                            call her_main("(B-Bi--","shock","wide")
+                            call her_main("(That B-Bi--","shock","wide")
                             g4 "And you,... stripper-whore!"
                             g4 "Do what you are payed for and start stripping already!!!"
                             call her_main("......","angry","angryCl",emote="01")
@@ -1162,7 +1163,7 @@ label hg_pf_DanceForMe:
                                         menu:
                                             m "..."
                                             "\"Huh? What mission?\"":
-                                                $ mad += 7
+                                                $ her_mood += 7
                                                 call her_main("I only agreed to this so that you could catch professor Snape in the act, [genie_name]!","scream","worriedCl")
                                                 call her_main("So that we would have definite proof that he is \"dirty\"!","normal","worriedCl")
                                                 m "Oh, that mission..."
@@ -1629,7 +1630,7 @@ label hg_pf_DanceForMe:
                                             m "You earned your points today."
                                             m "Now, just get dressed and leave before somebody discovers you like this."
                                             call her_main("*sob!*........................","shock","angryL",tears="messy")
-                                            $ mad += 30
+                                            $ her_mood += 30
                                             call blkfade
 
                                             $ uni_sperm = False #Sperm layer is not displayed.
@@ -1673,7 +1674,7 @@ label hg_pf_DanceForMe:
 
                                                     call her_main(".............","annoyed","angryL")
                                                     call her_main("I'll take it.","soft","angry")
-                                                    $ mad += 30
+                                                    $ her_mood += 30
                                                     $ current_payout = 36
                                                     hide screen bld1
                                                     call ctc
@@ -1693,7 +1694,7 @@ label hg_pf_DanceForMe:
 
                                                     call her_main("...............","annoyed","angryL")
                                                     call her_main("Well, alright... Better than nothing I suppose...","soft","angry")
-                                                    $ mad += 11
+                                                    $ her_mood += 11
                                                     hide screen bld1
                                                     call ctc
 
@@ -1748,7 +1749,7 @@ label hg_pf_DanceForMe:
                                                     menu:
                                                         m "..."
                                                         "\"Oh, no, you are still getting that.\"":
-                                                            $ mad += 30
+                                                            $ her_mood += 30
                                                             call her_main("How generous of you, [genie_name].","soft","angry")
                                                             hide screen bld1
                                                             call ctc
@@ -1769,7 +1770,7 @@ label hg_pf_DanceForMe:
                                                             call her_main("Oh, this is a new low even for you, [genie_name]!","soft","angry")
                                                             m "I said you are dismissed."
                                                             call her_main("*GROAN!*","clench","angry",emote="01")
-                                                            $ mad += 50
+                                                            $ her_mood += 50
                                                             hide screen bld1
                                                             call ctc
 
@@ -1914,7 +1915,6 @@ label hg_pf_DanceForMe:
 
 label end_hg_dancing:
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    $ gryffindor += current_payout #35
 
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen s_c_c_u # Snape's sperm. Universal.
@@ -1928,7 +1928,8 @@ label end_hg_dancing:
     show screen bld1
     call hide_blkfade
 
-    m "Yes, [hermione_name]. [current_payout] to the \"Gryffindor\" house."
+    if her_whoring < 24:
+        m "Yes, [hermione_name]. [current_payout] to the \"Gryffindor\" house."
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="base",ypos="base")
 

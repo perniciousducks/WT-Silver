@@ -4,9 +4,9 @@ screen astoria_main:
     tag astoria_main
 
     ### BASE IMAGE
+    add astoria_hair xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)#Add the hair base
     add astoria_l_arm xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)#Add the arms
     add astoria_r_arm xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)#Add the arms
-    add astoria_hair xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)#Add the hair base
     add astoria_base xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)#Add the base body
 
     ### FACE

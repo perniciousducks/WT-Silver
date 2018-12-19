@@ -2,7 +2,7 @@
 
 ### Luna Lovegood ###
 
-label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, flip=None, trans=None):
+label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
     hide screen luna_main
 
     #Flip
@@ -57,7 +57,18 @@ label lun_main(text="", mouth=None, eye=None, eyebrow=None, pupil=None, cheeks=N
             $ luna_ypos = int(ypos)
 
     call update_luna_chibi_uniform
-    $ changeLuna(mouth, eye, eyebrow, pupil, cheeks, tears, extra, emote)
+
+    if face != None:
+        if mouth == None:
+            call set_lun_face(mouth = face)
+        if eye == None:
+            call set_lun_face(eyes = face)
+        if brows == None:
+            call set_lun_face(brows = face)
+        if pupils == None:
+            call set_lun_face(pupils = face)
+
+    $ changeLuna(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
 
     show screen luna_main
     show screen bld1
@@ -102,6 +113,8 @@ label luna_away:
 label update_luna:
     $ luna_flip = 1
     $ use_luna_head = False
+    $ luna_l_arm             = 1
+    $ luna_r_arm             = 1
 
     call update_lun_uniform
     call update_luna_chibi_uniform
@@ -146,8 +159,8 @@ label luna_no_money:
 init python: ###Method Definition for new characters
     def changeLuna( mouth=None,
                     eye=None,
-                    eyebrow=None,
-                    pupil=None,
+                    brows=None,
+                    pupils=None,
                     cheeks=None,
                     tears=None,
                     extra=None,
@@ -168,10 +181,10 @@ init python: ###Method Definition for new characters
             luna_mouth       = "characters/luna/face/mouth/"+str(mouth)+".png"
         if eye is not None:
             luna_eye         = "characters/luna/face/eyes/"+str(eye)+".png"
-        if eyebrow is not None:
-            luna_eyebrow     = "characters/luna/face/brow/"+str(eyebrow)+".png"
-        if pupil is not None:
-            luna_pupil       = "characters/luna/face/pupil/"+str(luna_pupil_color)+"/"+str(pupil)+".png"
+        if brows is not None:
+            luna_eyebrow     = "characters/luna/face/brow/"+str(brows)+".png"
+        if pupils is not None:
+            luna_pupil       = "characters/luna/face/pupil/"+str(luna_pupil_color)+"/"+str(pupils)+".png"
         if cheeks is not None:
             luna_cheeks      = "characters/luna/face/extras/cheeks_"+str(cheeks)+".png"
         if tears is not None:

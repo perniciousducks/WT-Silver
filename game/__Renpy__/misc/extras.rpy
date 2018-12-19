@@ -10,20 +10,6 @@ label gallery_ht:
         "-Music room-":
             jump music_room
 
-        "-Sacred scrolls volume I-":
-            $ scrolls_range = range(1,16)
-            jump ss_vol
-
-        "-Sacred scrolls volume II-":
-            $ scrolls_range = range(16,31)
-            jump ss_vol
-
-#        "-Gallery volume 02-":
-#            jump volumetwo
-
-#        "-Gallery volume 03-":
-#            jump volume_three
-
         "-Outskirts of Hogwarts-":
             jump out_hog
 
@@ -64,33 +50,6 @@ label gallery_ht:
             return
 
 
-label ss_vol:
-    python:
-        scrolls_menu = []
-        for scroll in scrolls_range:
-            sc = sacred_scrolls[scroll]
-            if persistent.ss_[sc.id]:
-                scrolls_menu.append( ("-S."+str(sc.id)+": "+str(sc.name)+"-", sc) )
-        scrolls_menu.append(("-Never mind-", "nvm"))
-        result = renpy.display_menu(scrolls_menu)
-
-    if result == "nvm":
-        jump after_cam
-    else:
-        $ the_gift = "images/misc/extras/"+str(result.id)+".png"
-        show screen gift
-        with d3
-        if commentaries:
-            python:
-                for comment in result.comments:
-                    renpy.say(a1,comment)
-        show screen ctc
-        pause
-        hide screen ctc
-        hide screen gift
-        with d3
-        pass
-        jump ss_vol
 
 
 

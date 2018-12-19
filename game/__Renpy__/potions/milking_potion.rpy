@@ -994,7 +994,7 @@ label potion_scene_11_1_2: #Milking potion part 1 night time
     call her_main("good...","open","suspicious")
     call her_main("but don't think I've forgiven you!","open","angryCl")
     call nar(">Hermione storms out in a huff.")
-    $ mad =+ 10
+    $ her_mood =+ 10
 
     call her_walk("desk","leave",2.5)
 

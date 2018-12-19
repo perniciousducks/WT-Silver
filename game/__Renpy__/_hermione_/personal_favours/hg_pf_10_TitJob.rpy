@@ -19,7 +19,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump silver_requests
+                jump hermione_requests_menu
 
     $ current_payout = 45 #Used when haggling about price of th favor.
 
@@ -56,14 +56,14 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         menu:
             m "..."
             "\"You will get 15 house points and I promise not to cum on you.\"":
-                $ mad +=7
+                $ her_mood +=7
                 call her_main("You expect me to give you a titjob for 15 points!","annoyed","angryL")
                 her "I don't know who you think I am but I am not going to do this for 15 measly points!"
                 call her_main("(Besides, I don't really mind being covered in his sticky load...)","annoyed","angryL")
                 jump back_to_titjob_choices
             "\"you will get 45 house points.\"":
-                if mad > 7: #You could spam points into infinity with the choice above.
-                    $ mad = 7
+                if her_mood > 7: #You could spam points into infinity with the choice above.
+                    $ her_mood = 7
                 call her_main(".....","annoyed","angryL")
                 call her_main("45 house points...?","open","down")
                 her "This could put \"Gryffindor\" back in the lead..."
@@ -73,7 +73,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
             "\"you will get 100 house points.\"":
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
                 $ current_payout = 100 #Used when haggling about price of th favor.
-                $ mad = 0
+                $ her_mood = 0
                 call her_main("100 house points?!","scream","wide_stare")
                 her "This will definitely put \"Gryffindor\" in the lead!"
                 m "SO that's a yes?"
@@ -332,7 +332,7 @@ label hg_titjob_1_cumming:
     menu:
         m "..."
         "-cum in her mouth-":
-            $ mad += 3
+            $ her_mood += 3
             g4 "Here it comes, [hermione_name]! You better be ready!"
             $ ccg1 = 13
             call her_main("What? already?!","shock","wide",ypos="head")
@@ -929,7 +929,6 @@ label hg_titjob_3_cumming:
 
 label end_hg_titjob:
 
-    $ gryffindor += current_payout #35
     hide screen ccg
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 
@@ -948,8 +947,9 @@ label end_hg_titjob:
     pause.5
 
     call bld
-    m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
-    $ gryffindor +=current_payout
+    if her_whoring < 24:
+        m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
+        $ gryffindor += current_payout
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
 
@@ -959,7 +959,7 @@ label end_hg_titjob:
     $ hg_pf_TitJob_OBJ.points += 1
 
     if hg_pf_TitJob_OBJ.points <= 3:
-        $ hg_pf_TitJob_OBJ.hearts_level = hg_pf_TitJob_OBJ.points
+        $ hg_pf_TitJob_OBJ.level = hg_pf_TitJob_OBJ.points
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 

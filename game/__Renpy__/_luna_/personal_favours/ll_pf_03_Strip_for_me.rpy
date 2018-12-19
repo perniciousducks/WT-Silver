@@ -988,7 +988,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen bld1
             with d3
 
-            if lun_addicted:
+            if luna_addicted:
                 call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
                 show screen genie_jerking_sperm_02
                 with d3

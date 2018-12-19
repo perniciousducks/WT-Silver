@@ -38,14 +38,14 @@ label potion_scene_4: #Transparent uniform
 
     $ hermione_busy = True
     if her_whoring <= 7:
-        $ transparency = 0.8
+        call set_her_transparency(top=0.8, bottom=0.9)
     elif her_whoring <= 13:
-        $ transparency = 0.6
+        call set_her_transparency(top=0.5, bottom=0.6)
     elif her_whoring <= 20:
-        $ transparency = 0.4
+        call set_her_transparency(top=0.3, bottom=0.4, bra=0.6, onepiece=0.6, panties=0.6)
     else:
-        $ transparency = 0.2
-    $ hermione_breasts = "characters/hermione/body/breasts/breasts_normal.png"
+        call set_her_transparency(top=0.2, bottom=0.2, bra=0.4, onepiece=0.4, panties=0.4)
+
     $ transparent_quest = True
     jump main_room
 
@@ -62,10 +62,8 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Now everyone knows what I look like naked!","mad","worriedCl",tears="soft_blink")
         m "Tell me about what happened."
         call her_main("Tell you about what happened? I'm never speaking to you again.","angry","base",tears="soft")
-        $ mad += 20
-        $ transparency = 1
-        # $ hermione_breasts = "characters/hermione/body/breasts/"+outfit.breast_layer+".png"
-        # This is bugged and causes a crash. Things don't go catistrophically wrong without this line, so I've edited it out until you can fix it.
+        $ her_mood += 20
+
     elif her_whoring <= 13: #Mildly aggravated
         call nar(">Hermione comes into your office quickly without knocking.")
         call her_main("Again?","angry","worriedCl",emote="05")
@@ -135,8 +133,8 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
     hide screen blktone
     hide screen ctc
     with d3
-    $ transparency = 1
-    call update_her_uniform
+    call reset_her_transparency
+    $ transparent_quest = False
 
     call her_walk("mid","leave",2)
 

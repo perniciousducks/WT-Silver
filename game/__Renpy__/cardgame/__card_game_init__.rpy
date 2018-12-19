@@ -2,6 +2,7 @@
 label __init_variables:
     python:
         selectcard = -1
+        selectenemycard = -1
         
         if not hasattr(renpy.store,'playercolor_r'):
             playercolor_r = 0.5

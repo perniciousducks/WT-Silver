@@ -20,13 +20,24 @@ label cardgame:
         $ selectcard = player_deck.index(_return)
         $ response_card = "NewTurn"
         return "NewTurn"
+    elif _return in enemy_deck:
+        $ selectenemycard = enemy_deck.index(_return)
+        $ response_card = "NewTurn"
+        return "NewTurn"
     
     elif _return == "Close":
         $ selectcard = -1
+        $ selectenemycard = -1
         hide screen card_battle
         $ response_card = "Close"
         return "Close"
-
+        
+    elif _return == "unselect":
+        $ selectcard = -1
+        $ selectenemycard = -1
+        $ response_card = "NewTurn"
+        return "NewTurn"
+        
     else:
         if not selectcard == -1:
             
@@ -75,17 +86,22 @@ label enemy_turn:
         table_cards[x][y].playercard = False
         update_table(x,y)
     return
-          
+       
+        
 screen card_battle(l_playerdeck, l_enemydeck):
+    
+    imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
+    
     imagemap:
         ground "images/cardgame/card_table.png"
-        
+        hover whiteTint("images/cardgame/card_table.png")
+
         for y in range(0,3):
             for x in range(0,3):
                 if table_cards[x][y] == None:
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
-                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
+                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375) 
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
@@ -95,7 +111,11 @@ screen card_battle(l_playerdeck, l_enemydeck):
         use cardrender(l_playerdeck[selectcard], 79,17+80*selectcard)
         
     for i in range(0, len(l_enemydeck)):
-        use cardrender(l_enemydeck[i], 898,17+80*i)
+        if not selectenemycard == i:
+            use cardrender(l_enemydeck[i], 900,30+70*i, True)
+            
+    if not selectenemycard == -1:
+        use cardrender(l_enemydeck[selectenemycard], 860,30+70*selectenemycard)
         
     use close_button
         

@@ -24,6 +24,7 @@ label a_christmas_tale:
     $ daytime = False #Night
     $ interface_color = "gray"
     $ room_deco = "_deco_1" #Xmas deco
+    $ genie_chibi_stand = "characters/misc/santa/santa_chibi.png"
 
     call room("main_room")
     hide screen genie
@@ -104,9 +105,9 @@ label a_christmas_tale:
 
     san_[1] "I don't know what you mean."
     nar "Said the large bearded man..."
-    san_[3] "I'm santa of course."
-    san_[3] "I bring presents...."
-    san_[3] "That's the plan!"
+    san_[2] "I'm santa of course."
+    san_[2] "I bring presents...."
+    san_[2] "That's the plan!"
     pause.8
 
     nar "After silence and confusion then Severus said..."
@@ -164,16 +165,19 @@ label a_christmas_tale:
     nar "The genie knocked again. The mutter, he hadn't heard."
     call sna_main("",face="snape_06")
     nar "Now Snape saying nothing, not even a word."
+    show screen snape_picture_frame
+    with d5
     nar "A picture we then see as it's our time to depart."
     call sna_main("",face="snape_23")
     nar "As sadness turned to joy in the cold teachers heart."
-    pause 1
+    call ctc
 
+    hide screen snape_picture_frame
     hide screen snape_main
     with d5
     pause.8
 
-    san_[3] "Happy Holidays."
+    san_[4] "Happy Holidays."
 
     show screen blkfade
     with d9
@@ -187,7 +191,9 @@ label a_christmas_tale:
         $ interface_color = "gold"
     else:
         $ interface_color = "gray"
+    call update_gen_chibi
 
+    #Unlock Xmas Deco
     $ unlocked_xmas_deco = True
 
     jump enter_room_of_req

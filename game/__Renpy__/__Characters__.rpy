@@ -128,7 +128,7 @@ init python:
 
     #Santa
     san_ = [""]
-    for i in range(1,5):
+    for i in range(1,7):
         san_.append("")
         san_[i] = Character("Santa", window_left_padding=250, color="#402313", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20, yalign=1.0), show_two_window=False, ctc="ctc3", ctc_position="fixed")
 

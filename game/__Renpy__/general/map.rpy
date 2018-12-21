@@ -430,19 +430,19 @@ label floor_7th:
             call gen_chibi(xpos="door", ypos="base", flip=True)
             call hide_blkfade
             $ first_time_7th=False
-            m"So... he was walking around here."
+            m "So... he was walking around here."
             call gen_chibi(action="hide")
             call gen_walk("door","200",2.7)
-            m"I can definitely sense a strong magical energy in this place..."
+            m "I can definitely sense a strong magical energy in this place..."
             call gen_walk("200","door",2.7)
-            m"Maybe if I...or I could..."
+            m "Maybe if I...or I could..."
             call gen_walk("door","120",2.7)
-            g11"I could be in my office jacking off right now!!"
+            g4 "I could be in my office jacking off right now!!"
             show screen room_of_req_door
             pause 1
             call gen_chibi(xpos="120",ypos="base")
             pause.8
-            g9"Well... will you look at that"
+            g9 "Well... will you look at that"
             hide screen room_of_req_door
             show screen floor_7th_door
             call screen floor_7th_menu

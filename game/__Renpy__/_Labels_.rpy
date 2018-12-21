@@ -23,6 +23,7 @@ label hide_all_screens:
     hide screen weather
     hide screen new_window #Hiding clear sky bg.
 
+    hide screen desk
     hide screen chair_left
     hide screen chair_right
 
@@ -76,7 +77,8 @@ label hide_all_screens:
     hide screen blktone
     hide screen bld1
 
-
+    #Sounds
+    stop bg_sounds #Stops playing the fire SFX.
 
     return
 
@@ -390,6 +392,9 @@ label play_music(music=""):
 
     if music in ["sad","grape_soda"]:
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 1 fadeout 1
+
+    if music in ["anguish"]:
+        play music "music/Anguish.mp3" fadein 1 fadeout 1
 
     return
 

@@ -244,7 +244,8 @@ init python:
                 self.queue.remove(i)
             return delivery
 
-    deliveryQ = deliveryQueue()
+    if not hasattr(renpy.store,'deliveryQ'):
+        deliveryQ = deliveryQueue()
 
     class mail_letter_class(object):
         mailed = False

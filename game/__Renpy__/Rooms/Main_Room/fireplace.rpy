@@ -16,7 +16,7 @@ label fireplace:
                 with Dissolve(0.5)
         jump day_main_menu
 
-    if not daytime and (1 < weather_gen < 4) and (puzzle_random == 0) and (found_puzzle_1 == False):
+    if not daytime and (1 < weather_gen < 4) and (found_puzzle_1 == False):
         menu:
             "Search fireplace":
                 m "(Hmm, there's something glimmering in the fireplace.)"
@@ -27,14 +27,6 @@ label fireplace:
                 hide screen fireplace_glow
                 $ found_puzzle_1 = True
 
-            "Turn fire off/on":
-                if fire_in_fireplace:
-                    $ fire_in_fireplace = False
-                    hide screen fireplace_fire
-                    stop bg_sounds #Stops playing the fire SFX.
-                else:
-                    $ fire_in_fireplace = True
-                    show screen fireplace_fire
     else:
         if fire_in_fireplace:
             $ fire_in_fireplace = False

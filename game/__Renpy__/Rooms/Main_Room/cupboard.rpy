@@ -121,7 +121,7 @@ label options_menu:
             label decorate_room_menu:
             menu:
                 ">Decorate your place..."
-                "-Xmas decorations-":
+                "-Xmas decorations-" if unlocked_xmas_deco:
                     pause.5
                     hide screen main_room_deco
                     $ room_deco = "_deco_1"

@@ -36,10 +36,11 @@ label __init_variables:
 
 
     ###MISC
-    if not hasattr(renpy.store,'unlocked_7th'): #important!
+    if not hasattr(renpy.store,'unlocked_xmas_deco'): #important!
         $ unlocked_7th = False
         $ found_puzzle_1 = False
         $ charName = "genie"
+        $ unlocked_xmas_deco = False
 
     #Phoenix
     if not hasattr(renpy.store,'phoenix_is_fed'):

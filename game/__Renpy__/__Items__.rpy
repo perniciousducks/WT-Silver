@@ -326,8 +326,8 @@ label store_items_init:
         $ cc_dress_silver_ITEM      = outfit_class(id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture.")
         $ cc_dress_black_ITEM       = outfit_class(id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture.")
 
-        $ cc_sailor_blue_ITEM       = outfit_class(id="cc_sailor_blue", name="Blue Sailor Outfit", type="outfit", items=["outfit"], cost=100, wait_time=2, image="outfits/cc_sailor_blue", description=">Slutty sailor outfit. Blue variant")
-        $ cc_sailor_dark_blue_ITEM  = outfit_class(id="cc_sailor_dark_blue", name="Dark Blue Sailor Outfit", type="outfit", items=["outfit"], cost=100, wait_time=2, image="outfits/cc_sailor_dark_blue", description=">Slutty sailor outfit. Dark blue variant")
+        $ cc_sailor_blue_ITEM       = outfit_class(id="cc_sailor_blue", name="Blue Sailor Outfit", type="outfit", items=["outfit","skirt","thong","stockings","hat"], cost=180, wait_time=2, image="outfits/cc_sailor_blue", description=">Slutty sailor outfit. Blue variant")
+        $ cc_sailor_dark_blue_ITEM  = outfit_class(id="cc_sailor_dark_blue", name="Dark Blue Sailor Outfit", type="outfit", items=["outfit","skirt","thong","stockings","hat"], cost=180, wait_time=2, image="outfits/cc_sailor_dark_blue", description=">Slutty sailor outfit. Dark blue variant")
 
     $ cho_outfits_list=[
         cc_outfit_quidditch_ITEM, cc_sailor_blue_ITEM, cc_sailor_dark_blue_ITEM

@@ -134,30 +134,30 @@ label clothing_shop_menu:
     python:
         item_list = []
         if character_choice == 1:
-            item_list.extend(hermione_clothing_sets_list)
             item_list.extend(hermione_outfits_list)
             item_list.extend(hermione_costumes_list)
             item_list.extend(hermione_dresses_list)
+            item_list.extend(hermione_clothing_sets_list)
         if character_choice == 2:
-            item_list.extend(luna_clothing_sets_list)
             item_list.extend(luna_outfits_list)
             item_list.extend(luna_costumes_list)
             item_list.extend(luna_dresses_list)
+            item_list.extend(luna_clothing_sets_list)
         if character_choice == 3:
-            item_list.extend(astoria_clothing_sets_list)
             item_list.extend(astoria_outfits_list)
             item_list.extend(astoria_costumes_list)
             item_list.extend(astoria_dresses_list)
+            item_list.extend(astoria_clothing_sets_list)
         if character_choice == 4:
-            item_list.extend(susan_clothing_sets_list)
             item_list.extend(susan_outfits_list)
             item_list.extend(susan_costumes_list)
             item_list.extend(susan_dresses_list)
+            item_list.extend(susan_clothing_sets_list)
         if character_choice == 5:
-            item_list.extend(cho_clothing_sets_list)
             item_list.extend(cho_outfits_list)
             item_list.extend(cho_costumes_list)
             item_list.extend(cho_dresses_list)
+            item_list.extend(cho_clothing_sets_list)
 
         item_list = list(filter(lambda x: (x.unlocked==False and x.unlockable==False), item_list))
 

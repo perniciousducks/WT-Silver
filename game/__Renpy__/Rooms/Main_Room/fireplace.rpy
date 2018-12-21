@@ -16,7 +16,7 @@ label fireplace:
                 with Dissolve(0.5)
         jump day_main_menu
 
-    if not daytime and (1 < weather_gen < 4) and (found_puzzle_1 == False):
+    if not daytime and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
         menu:
             "Search fireplace":
                 m "(Hmm, there's something glimmering in the fireplace.)"

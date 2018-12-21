@@ -20,14 +20,7 @@ label snape_first_duel:
         if response_card == "Close":
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
-        if response_card == "AfterEnemy":
-            $ volume = _preferences.volumes['music']
-            $ _preferences.volumes['music'] *= .5
-            call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
-            call sna_main(remove=True)
-            $ _preferences.volumes['music'] = volume
     
-    show screen blkfade
     if not check_winner():
         jump snape_duel_lost
         
@@ -58,14 +51,7 @@ label snape_second_duel:
         if response_card == "Close":
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
-        if response_card == "AfterEnemy":
-            $ volume = _preferences.volumes['music']
-            $ _preferences.volumes['music'] *= .5
-            call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
-            call sna_main(remove=True)
-            $ _preferences.volumes['music'] = volume
     
-    show screen blkfade
     if not check_winner():
         jump snape_duel_lost
             
@@ -111,11 +97,12 @@ label snape_third_duel:
         if response_card == "AfterEnemy":
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
+            # Prevents volume to change again when using rollback
+            $ renpy.block_rollback()
             call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
             call sna_main(remove=True)
             $ _preferences.volumes['music'] = volume
     
-    show screen blkfade
     if not check_winner():
         jump snape_duel_lost
             
@@ -125,6 +112,8 @@ label snape_third_duel:
     jump return_office
     
 label snape_duel_lost:
+    show screen blkfade 
+    with dissolve
     "You lost"
     jump return_office
     

@@ -3,14 +3,16 @@ label __init_variables:
     python:
         selectcard = -1
         selectenemycard = -1
+        currentpage = 0
         
-        #if not hasattr(renpy.store,'playercolor_r'):
-        playercolor_r = 51.0/255.0
-        playercolor_g = 92.0/255.0
-        playercolor_b = 147.0/255.0
-        enemycolor_r = 116.0/255.0
-        enemycolor_g = 0
-        enemycolor_b = 0
+        if not hasattr(renpy.store,'playercolor_r'):
+            playercolor_r = 51.0/255.0
+            playercolor_g = 92.0/255.0
+            playercolor_b = 147.0/255.0
+            enemycolor_r = 116.0/255.0
+            enemycolor_g = 0
+            enemycolor_b = 0
+            playercard_level = 1
         
         table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
         
@@ -20,44 +22,51 @@ label __init_variables:
         playerborder = playerTint("images/cardgame/border.png")
         enemyborder = enemyTint("images/cardgame/border.png")
         
-        genie = card_new( imagepath="images/cardgame/t1/genie/genie_v1.png",
+        genie = card_new( imagepath="images/cardgame/t1/special/genie_v1.png",
+                                    topvalue = 5,
+                                    bottomvalue = 5,
+                                    rightvalue = 5,
+                                    leftvalue = 5,
+                                    title="Genie")
+                                    
+        snape = card_new( imagepath="images/cardgame/t1/special/snape_v1.png",
+                                    topvalue = 5,
+                                    bottomvalue = 5,
+                                    rightvalue = 5,
+                                    leftvalue = 5,
+                                    title="Snape")
+                                    
+        her_schoolgirl = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v%s.png" % str(playercard_level),
+                                    topvalue = 4,
+                                    bottomvalue = 3,
+                                    rightvalue = 2,
+                                    leftvalue = 1,
+                                    title="Hermione Granger (schoolgirl)")
+                                    
+        sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(playercard_level),
                                     topvalue = 3,
-                                    bottomvalue = 3,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Genie 1")
+                                    bottomvalue = 4,
+                                    rightvalue = 1,
+                                    leftvalue = 2,
+                                    title="Susan Bones (schoolgirl)")
                                     
-        h_t1_schoolgirl = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Schoolgirl 1")
+        cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_schoolgirl_v%s.png" % str(playercard_level),
+                                    topvalue = 3,
+                                    bottomvalue = 1,
+                                    rightvalue = 2,
+                                    leftvalue = 4,
+                                    title="Cho Chang (schoolgirl)")
                                     
-        h_t1_schoolgirl2 = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v2.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Schoolgirl 2")
-                                    
-        h_t1_schoolgirl3 = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v3.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Schoolgirl 3")
-                                    
-        h_t1_schoolgirl4 = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v4.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Schoolgirl 4")
+        lun_schoolgirl = card_new( imagepath="images/cardgame/t1/luna/lun_schoolgirl_v%s.png" % str(playercard_level),
+                                    topvalue = 3,
+                                    bottomvalue = 1,
+                                    rightvalue = 2,
+                                    leftvalue = 4,
+                                    title="Luna Lovegood (schoolgirl)")
         
      
         #if not hasattr(renpy.store,'unlocked_cards'):
-        unlocked_cards = [genie, h_t1_schoolgirl, h_t1_schoolgirl2, h_t1_schoolgirl3, h_t1_schoolgirl4]
+        unlocked_cards = [genie, her_schoolgirl, sus_schoolgirl, cho_schoolgirl, lun_schoolgirl]
             
         if not hasattr(renpy.store,'deck_unlocked'):
             deck_unlocked = False
@@ -72,10 +81,10 @@ label __init_variables:
             snape_let_duel_first = True
         
         #if not hasattr(renpy.store,'playerdeck'):
-        playerdeck = [genie, h_t1_schoolgirl, h_t1_schoolgirl2, h_t1_schoolgirl3, h_t1_schoolgirl4]
+        playerdeck = [genie, her_schoolgirl, sus_schoolgirl, cho_schoolgirl, lun_schoolgirl]
         
         #if not hasattr(renpy.store,'snape_first_deck'):
-        snape_first_deck = [genie.clone(), genie.clone(), genie.clone(), genie.clone(), genie.clone()]
+        snape_first_deck = [snape, her_schoolgirl, her_schoolgirl, her_schoolgirl, her_schoolgirl]
         snape_second_deck = [genie.clone(), genie.clone(), genie.clone(), genie.clone(), genie.clone()]
         snape_third_deck = [genie.clone(), genie.clone(), genie.clone(), genie.clone(), genie.clone()]
 
@@ -154,7 +163,7 @@ init python:
                      
     class card_new(object):
         playercard = True
-        textcolor = "{color=#8f939b}"
+        textcolor = "{color=#ffffff}"
         copies = 0
         description = "She will cheer for you all the way up the wand"
         title = "Cheerleader BaseCard"
@@ -177,6 +186,8 @@ init python:
             return self.textcolor+self.title+"{/color}"
         def get_amount(self):
             return self.textcolor+"amount: " + str(self.copies)+"{/color}"
+        def get_totalvalue(self):
+            return self.textcolor+str(self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue)+"{/color}"
         def get_description(self):
             return self.textcolor+self.description+"{/color}"
             

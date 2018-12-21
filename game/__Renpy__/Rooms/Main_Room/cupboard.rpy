@@ -48,6 +48,9 @@ label cupboard:
 
         "-Jerk Off-" if not day == 1:
             jump jerk_off
+            
+        "-Deck builder-" if day > 26 and deck_unlocked:
+            jump deck_builder
 
         "-Never mind-":
             jump day_main_menu

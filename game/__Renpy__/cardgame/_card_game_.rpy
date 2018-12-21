@@ -14,6 +14,8 @@ label setup_deck(opppent_deck):
 label cardgame:
     call room(hide_screens=True)
     show screen card_battle(player_deck,enemy_deck)
+    #Disallow rollback cheating
+    $ renpy.block_rollback()
     $ _return = ui.interact()
 
     if _return in player_deck:
@@ -94,7 +96,6 @@ screen card_battle(l_playerdeck, l_enemydeck):
     
     imagemap:
         ground "images/cardgame/card_table.png"
-        hover whiteTint("images/cardgame/card_table.png")
 
         for y in range(0,3):
             for x in range(0,3):
@@ -105,17 +106,17 @@ screen card_battle(l_playerdeck, l_enemydeck):
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
-            use cardrender(l_playerdeck[i], 19,17+80*i, True)
+            use cardrender(l_playerdeck[i], 18,17+80*i, True)
     
     if not selectcard == -1:
-        use cardrender(l_playerdeck[selectcard], 79,17+80*selectcard)
+        use cardrender(l_playerdeck[selectcard], 54,17+80*selectcard)
         
     for i in range(0, len(l_enemydeck)):
         if not selectenemycard == i:
-            use cardrender(l_enemydeck[i], 900,30+70*i, True)
+            use cardrender(l_enemydeck[i], 898,17+80*i, True)
             
     if not selectenemycard == -1:
-        use cardrender(l_enemydeck[selectenemycard], 860,30+70*selectenemycard)
+        use cardrender(l_enemydeck[selectenemycard], 860,17+80*selectenemycard)
         
     use close_button
         
@@ -146,6 +147,11 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
         $ lefttext = "{color=#ffffff}"
         $ righttext = "{/color}"
         
+        if cardzoom >= 0.5:
+            $ sizetext = 14
+        else:
+            $ sizetext = 10
+        
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
@@ -154,7 +160,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.bottomvalue)+righttext xalign 0.5 yalign 0.97 size 18
+            text lefttext+str(card.bottomvalue)+righttext xalign 0.5 yalign 0.985 size 18
         
         hbox:
             xsize card_width*cardzoom
@@ -165,8 +171,19 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
             xsize card_width*cardzoom
             ysize card_height*cardzoom
             text lefttext+str(card.leftvalue)+righttext xalign 0.05 yalign 0.5 size 18
+        
+        #Total Value
+        hbox:
+            xsize card_width*cardzoom
+            ysize card_height*cardzoom
+            # Set horizontal offset for single digit value
+            # I have no idea why the fuck it has to be >= 25 but its the only value that works.
+            if len(str(card.get_totalvalue())) >= 25:
+                text lefttext+str(card.get_totalvalue())+righttext xalign 0.15 yalign 0.1 size sizetext
+            else:
+                text lefttext+str(card.get_totalvalue())+righttext xalign 0.15 yalign 0.1 size sizetext xoffset 5
             
 screen start_deck:
     zorder 9
     for i in range(0, len(playerdeck)):
-        use cardrender(playerdeck[i],250+140*i,200, interact=False)
+        use cardrender(playerdeck[i],160+160*i,200, interact=False)

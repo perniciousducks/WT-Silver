@@ -1,4 +1,5 @@
 label deck_builder:
+    call room(hide_screens=True)
     show screen deck_builder_screen()
     $ _return = ui.interact()
 
@@ -34,38 +35,48 @@ screen deck_builder_screen:
  
     for i in range(0, card_shown):
         if not selectcard == (currentpage*card_shown)+i:
-            use cardrender(unlocked_cards[i], 20,60+70*i, True)
+            use cardrender(unlocked_cards[i], 18,17+80*i, True)
     
     if not selectcard == -1:
-        use cardrender(unlocked_cards[selectcard], 60,60+70*selectcard-(currentpage*card_shown))
-        add im.Scale(unlocked_cards[selectcard].imagepath, card_width*0.25, card_height*0.25) xpos 805 ypos 63
+        use cardrender(unlocked_cards[selectcard], 54,17+80*i*selectcard-(currentpage*card_shown))
+        add im.Scale(unlocked_cards[selectcard].imagepath, card_width*0.5, card_height*0.5) xpos 885 ypos 316
     
     for i in range(0,5):
         # Need to get the amount this way since renpy dont save the pointer so after you load a game the card in the playerdeck is not the same as in unlocked_cards anymore
         if not selectcard == -1 and unlocked_cards[selectcard].copies > 0:
-            use cardrender(playerdeck[i], 193+115*i,60, True, return_value=i) 
+            use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 
         else:
-            use cardrender(playerdeck[i], 193+115*i,60, False, return_value=i) 
-            
+            use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 
+        
+        #$ lefttext = "{color=#ffffff}"
+        #$ righttext = "{/color}"
+        
         vbox:
-            xpos 258
-            ypos 252
-            xsize 170
+            xpos 560
+            ypos 320
+            xsize 340
             ysize 33
-            text unlocked_cards[selectcard].get_title() xalign 0.5 yalign 0.5
+            text unlocked_cards[selectcard].get_title() xalign 0 yalign 0.5 size 22
             
         vbox:
-            xpos 645
-            ypos 252
+            xpos 760
+            ypos 520
             xsize 112
             ysize 33
-            text unlocked_cards[selectcard].get_amount() xalign 0.5 yalign 0.5
+            text unlocked_cards[selectcard].get_amount() xalign 1 yalign 0.5
             
         vbox:
-            xpos 262
-            ypos 310
-            xsize 490
-            ysize 160
+            xpos 560
+            ypos 520
+            xsize 112
+            ysize 33
+            text "{color=#ffffff}Value:{/color}"+unlocked_cards[selectcard].get_totalvalue() xalign 0 yalign 0.5
+            
+        vbox:
+            xpos 560
+            ypos 350
+            xsize 300
+            ysize 500
             text unlocked_cards[selectcard].get_description()
     
     if not currentpage <= 0:
@@ -85,35 +96,41 @@ screen deck_builder_screen:
             action Return("inc")
             
     hbox:
-        xpos 805
-        ypos 380
-        xsize 260
+        xpos 1020
+        ypos 296
+        xsize 40
         ysize 40
-        add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b), xsize = 40) 
-        textbutton "{color=#8f939b}"+"Player border color"+"{/color}" action Jump("playercolor_change") background "#ffffff00"
-        
-    hbox:
-        xpos 805
-        ypos 430
-        xsize 260
-        ysize 40
-        add Solid(get_hex_string(enemycolor_r, enemycolor_g, enemycolor_b), xsize = 40) 
-        textbutton "{color=#8f939b}"+"Enemy border color"+"{/color}" action Jump("enemycolor_change") background "#ffffff00"
+        button action Jump("color_change") background "#ffffff00"
+        #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
   
     use close_button
 
-label playercolor_change:
-    "The color is rgb and is from 0 to 255"
-    $ playercolor_r = float(renpy.input("Red"))/255
-    $ playercolor_g = float(renpy.input("Green"))/255
-    $ playercolor_b = float(renpy.input("Blue"))/255
-    $ playerboarder = playerTint("images/cardgame/sides.png")
-    jump deck_builder
-    
-label enemycolor_change:
-    "The color is rgb and is from 0 to 255"
-    $ enemycolor_r = float(renpy.input("Red"))/255
-    $ enemycolor_g = float(renpy.input("Green"))/255
-    $ enemycolor_b = float(renpy.input("Blue"))/255
-    $ enemyboarder = enemyTint("images/cardgame/sides.png")
+label color_change:
+    menu:
+        "-Change player color-":
+            "Enter the color in RGB format (0 to 255)"
+            $ playercolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
+            $ playercolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
+            $ playercolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
+            $ playerborder = playerTint("images/cardgame/border.png")
+            pass
+        "-Change enemy color-":
+            "Enter the color in RGB format (0 to 255)"
+            $ enemycolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
+            $ enemycolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
+            $ enemycolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
+            $ enemyborder = enemyTint("images/cardgame/border.png")
+            pass
+        "-Reset-":
+            $ playercolor_r = 51.0/255.0
+            $ playercolor_g = 92.0/255.0
+            $ playercolor_b = 147.0/255.0
+            $ enemycolor_r = 116.0/255.0
+            $ enemycolor_g = 0
+            $ enemycolor_b = 0
+            $ playerborder = playerTint("images/cardgame/border.png")
+            $ enemyborder = enemyTint("images/cardgame/border.png")
+            pass
+        "-Exit-":
+            pass
     jump deck_builder

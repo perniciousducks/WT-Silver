@@ -185,8 +185,12 @@ label update_wr_head_list:
         $ wr_hair.append("ponytail")
 
         $ wr_hats.append("hat_witch")
-        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
-            $ wr_hats.append("sailor_bow")
+        if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
+            $ wr_hats.append("bow_sailor_blue")
+            $ wr_hats.append("bow_sailor_dark_blue")
+            $ wr_hats.append("bow_sailor_green")
+            $ wr_hats.append("bow_sailor_red")
+            $ wr_hats.append("bow_sailor_yellow")
 
     if active_girl == "tonks":
 
@@ -333,6 +337,10 @@ label update_wr_tops_list:
         if cc_muggle_hot_ITEM.unlocked:
             $ wr_tops_normal.append("top_tanktop_1")
             $ wr_tops_normal.append("top_tanktop_2")
+        if cc_outfit_sailor_white_ITEM.unlocked:
+            $ wr_tops_normal.append("top_sailor_1")
+        if cc_outfit_sailor_black_ITEM.unlocked:
+            $ wr_tops_normal.append("top_sailor_2")
 
     if active_girl == "tonks":
 
@@ -453,14 +461,14 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_4_low")
 
         #Skirts
-        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
+        if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
             $ wr_bottoms_skirts.append("skirt_sailor")
         #$ wr_bottoms_skirts.append("skirt_3_belted")
         #if cc_party_slut_ITEM.unlocked:
         #    $ wr_bottoms_skirts.append("skirt_party")
 
         #Pants
-        #$ wr_bottoms_pants.append("pants_sport_long")
+        $ wr_bottoms_pants.append("pants_sport_long")
         if cho_quidd_points != 0:
             $ wr_bottoms_pants.append("pants_yoga_long")
             $ wr_bottoms_pants.append("pants_yoga_short")
@@ -646,8 +654,10 @@ label update_wr_other_clothings_list:
             $ wr_gloves.append("gloves_quidditch")
 
         $ wr_stockings.append("stockings")
-        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
-            $ wr_stockings.append("sailor_stockings_white")
+        if cc_outfit_sailor_white_ITEM.unlocked:
+            $ wr_stockings.append("stockings_sailor_1")
+        if cc_outfit_sailor_black_ITEM.unlocked:
+            $ wr_stockings.append("stockings_sailor_2")
 
         if cho_quidd_points != 0:
             $ wr_robes.append("robe_quidditch_1")
@@ -804,9 +814,10 @@ label update_wr_underwear_list:
         $ wr_bras.append("bra_sport")
 
         #Panties
-        $ wr_panties.append("panties_sport")
-        if cc_sailor_blue_ITEM.unlocked or cc_sailor_dark_blue_ITEM.unlocked:
-            $ wr_panties.append("panties_sailor")
+        $ wr_panties.append("panties_sport_1")
+        $ wr_panties.append("panties_sport_2")
+        if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
+            $ wr_panties.append("panties_sailor_1")
 
     if active_girl == "tonks":
 

@@ -14,9 +14,9 @@ label update_cho_uniform:
     $ cho_bottom         = "characters/cho/clothes/bottoms/" +str(c_bottom_color)+ "/"+str(c_bottom)+".png"
 
     #Underwear
-    $ cho_bra            = "characters/cho/clothes/underwear/base/"+str(c_bra)+".png"
+    $ cho_bra            = "characters/cho/clothes/underwear/" +str(c_bra_color)+ "/"+str(c_bra)+".png"
     $ cho_onepiece       = "characters/cho/clothes/onepieces/"+str(c_onepiece)+".png"
-    $ cho_panties        = "characters/cho/clothes/underwear/base/"+str(c_panties)+".png"
+    $ cho_panties        = "characters/cho/clothes/underwear/" +str(c_panties_color)+ "/"+str(c_panties)+".png"
     $ cho_garterbelt     = "characters/cho/clothes/underwear/base/"+str(c_garterbelt)+".png"
 
     $ cho_neckwear       = "characters/cho/clothes/neckwear/"+str(c_neckwear)+".png"
@@ -93,16 +93,17 @@ label set_cho_bottom(bottom="", color=""):
     return
 
 #Bra equip.
-label set_cho_bra(bra=""):
+label set_cho_bra(bra="", color=""):
     hide screen cho_chang
 
-    if cho_wear_bra and c_bra == bra:
+    if cho_wear_bra and c_bra == bra and c_bra_color == color:
         $ cho_request_wear_bra = False
         $ cho_wear_bra = False
     else:
         $ cho_request_wear_bra = True
         $ cho_wear_bra = True
         $ c_bra = bra
+        $ c_bra_color = color
 
     call update_cho_uniform
 
@@ -125,16 +126,17 @@ label set_cho_onepiece(onepiece=""):
     return
 
 #Panties equip.
-label set_cho_panties(panties=""):
+label set_cho_panties(panties="", color=""):
     hide screen cho_chang
 
-    if cho_wear_panties and c_panties == panties:
+    if cho_wear_panties and c_panties == panties and c_panties_color == color:
         $ cho_request_wear_panties = False
         $ cho_wear_panties = False
     else:
         $ cho_request_wear_panties = True
         $ cho_wear_panties = True
         $ c_panties = panties
+        $ c_panties_color = color
 
     call update_cho_uniform
 

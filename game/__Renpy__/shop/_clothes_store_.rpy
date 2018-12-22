@@ -278,7 +278,7 @@ label purchase_outfit(item):
     hide screen clothing_menu
     with d3
 
-    if outfit_is_worked_on:
+    if clothing_mail_timer != 0:
         maf "I'm sorry luv, but I'm still quite busy working on your item."
         maf "Come back once you got my package."
         return
@@ -452,10 +452,11 @@ label purchase_outfit(item):
 
 
     # Purchase Outfit
-    $ outfit_is_worked_on = True
+    $ clothing_mail_item = item
+    $ clothing_mail_timer = item.wait_time
+
     $ item.unlockable = True #Hides it from the store menu.
     $ gold -= item.cost
-    $ deliveryQ.send(item, item.wait_time, item.number, 'outfit')
 
     m "Here is your gold."
     maf "Thanks you.\nI'll start working on it right away, Professor!"

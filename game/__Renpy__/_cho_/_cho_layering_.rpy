@@ -6,7 +6,7 @@ screen cho_chang:
     ### BASE IMAGE
     add cho_r_arm       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_base        xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
-    if c_panties == "panties_sport":
+    if c_panties in ["panties_sport_1","panties_sport_2"]:
         add cho_hips_tan     xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_breasts     xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     if c_bra == "bra_sport":

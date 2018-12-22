@@ -34,21 +34,17 @@ label cheats:
                     ">Public favours unlocked!"
                     jump cheats_hermione
 
-                "-Unlock all purchasable outfits & sets-":
+                "-Unlock all outfits & sets-":
                     python:
                         for i in hermione_outfits_list:
-                            if not i.unlockable:
-                                i.unlocked = True
+                            i.unlocked = True
                         for i in hermione_costumes_list:
-                            if not i.unlockable:
-                                i.unlocked = True
+                            i.unlocked = True
                         for i in hermione_dresses_list:
-                            if not i.unlockable:
-                                i.unlocked = True
+                            i.unlocked = True
                         for i in hermione_clothing_sets_list:
-                            if not i.unlockable:
-                                i.unlocked = True
-                    ">All of Hermione's purchasable outfits and clothing sets have been unlocked."
+                            i.unlocked = True
+                    ">All of Hermione's outfits and clothing sets have been unlocked."
                     jump cheats_hermione
 
                 "-Toggle Breast Expansion-":
@@ -75,6 +71,19 @@ label cheats:
         "-Luna Cheats-":
             label cheats_luna:
             menu:
+                "-Unlock all outfits & sets-":
+                    python:
+                        for i in luna_outfits_list:
+                            i.unlocked = True
+                        for i in luna_costumes_list:
+                            i.unlocked = True
+                        for i in luna_dresses_list:
+                            i.unlocked = True
+                        for i in luna_clothing_sets_list:
+                            i.unlocked = True
+                    ">All of Luna's outfits and clothing sets have been unlocked."
+                    jump cheats_luna
+
                 "-Reset ALL Luna content-":
                     $ reset_luna_content = True
                     call luna_progress_init
@@ -87,6 +96,19 @@ label cheats:
         "-Astoria & Susan Cheats-":
             label cheats_astoria:
             menu:
+                "-Unlock all outfits & sets-":
+                    python:
+                        for i in astoria_outfits_list:
+                            i.unlocked = True
+                        for i in astoria_costumes_list:
+                            i.unlocked = True
+                        for i in astoria_dresses_list:
+                            i.unlocked = True
+                        for i in astoria_clothing_sets_list:
+                            i.unlocked = True
+                    ">All of Astoria's outfits and clothing sets have been unlocked."
+                    jump cheats_astoria
+
                 "-Mail ministry letter-":
                     $ letter_curse_complaint_OBJ.mailLetter()
                     ">Letter sent."
@@ -109,6 +131,18 @@ label cheats:
                 "-Reset Cho's mood-":
                     $ cho_mood = 0
                     ">Cho is no longer mad at you."
+                    jump cheats_cho
+                "-Unlock all outfits & sets-":
+                    python:
+                        for i in cho_outfits_list:
+                            i.unlocked = True
+                        for i in cho_costumes_list:
+                            i.unlocked = True
+                        for i in cho_dresses_list:
+                            i.unlocked = True
+                        for i in cho_clothing_sets_list:
+                            i.unlocked = True
+                    ">All of Cho's outfits and clothing sets have been unlocked."
                     jump cheats_cho
                 "-Reset ALL Cho content-":
                     $ reset_cho_content = True

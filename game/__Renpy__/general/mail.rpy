@@ -124,24 +124,19 @@ label letter_curse_complaint:
 label get_package:
     show screen blktone
 
+
+    if clothing_mail_item != None:
+        if clothing_mail_timer == 1:
+
+            call unlock_clothing("You received a new outfit.",clothing_mail_item)
+
+            $ clothing_mail_item = None
+            $ clothing_mail_timer = 0
+
     python:
         for item in deliveryQ.get_mail():
             if item.type == 'Event_item':
                 pass
-
-            if item.type == 'outfit':
-                gift = item.object
-                gift.unlocked = True
-                outfit_is_worked_on = False
-                mannequin_preview = gift.get_image()
-
-                renpy.show_screen("clothing_unlock")
-                renpy.with_statement(Dissolve(0.3))
-
-                renpy.say(None,"You received a new outfit.")
-
-                renpy.hide_screen("clothing_unlock")
-                renpy.with_statement(Dissolve(0.3))
 
             if item.type == 'Gift':
                 gift = item.object

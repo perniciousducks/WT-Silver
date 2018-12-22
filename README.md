@@ -21,16 +21,16 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 
 
 ## Current Team
-- **Mo**:		        Writing, coding and mod compilation
-- **Mad Merlin**:		Coding, UI overhaul, wardrobe stuff, some writing.
-- **Soggy**:        Our main Artist. You can support him [here](https://www.patreon.com/SoggyIllustrations).
-- **STG Anon**:		  Coding
-- **Asease1**:		  Coding
-- **Johnny**:		    Writing
-- **Booom313**:		  Mobile port for Android. You can support him [here](https://www.patreon.com/booom313/).
-- **Sandmaster**:   Assitant Management, Networking, and moderation.
-- **Magik**:        Networking, Management, and Administration.
-- **Pinguino**:     Support, QA, being a Penguin.
+- **Mo**:		            Writing, coding and mod compilation
+- **Mad Merlin**:		    Coding, UI overhaul, wardrobe stuff, some writing.
+- **Soggy**:            Main Artist. You can support them [here](https://www.patreon.com/SoggyIllustrations).
+- **DostojevskijSTG**:  Artist
+- **LoafyLemon**:       Artist
+- **Johnny**:		        Writing
+- **Asease1**:		      Coding
+- **STG Anon**:		      Coding
+- **Booom313**:		      Mobile port for Android. You can support them [here](https://www.patreon.com/booom313/).
+- **Magik**:            Networking, Management, and Administration.
 
 
 ## Additional Credits (In no particular order):
@@ -44,7 +44,7 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 - **Maverick**:		  Miscellaneous
 - **Cleanzo**:		  Coding (Helped with the python methods.)
 - **Techy**:		    Outfit
-- **Akabur**:		    Creater of Witch Trainer and other awesome games! You can support him [here](https://www.patreon.com/akabur). 
+- **Akabur**:		    Creater of Witch Trainer and other awesome games! You can support them [here](https://www.patreon.com/akabur). 
 - *(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)*
 
 ## More Info:

@@ -320,17 +320,17 @@ label store_items_init:
 
 
     # Cho Outfits
-    if not hasattr(renpy.store,'cc_sailor_blue_ITEM'):
+    if not hasattr(renpy.store,'cc_outfit_sailor_white_ITEM'):
         $ cc_outfit_quidditch_ITEM  = outfit_class(id="cc_outfit_quidditch", name="Quidditch Outfit",   type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True)
         $ cc_dress_red_ITEM         = outfit_class(id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.")
         $ cc_dress_silver_ITEM      = outfit_class(id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture.")
         $ cc_dress_black_ITEM       = outfit_class(id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture.")
 
-        $ cc_sailor_blue_ITEM       = outfit_class(id="cc_sailor_blue", name="Blue Sailor Outfit", type="outfit", items=["outfit","skirt","thong","stockings","hat"], cost=180, wait_time=2, image="outfits/cc_sailor_blue", description=">Slutty sailor outfit. Blue variant")
-        $ cc_sailor_dark_blue_ITEM  = outfit_class(id="cc_sailor_dark_blue", name="Dark Blue Sailor Outfit", type="outfit", items=["outfit","skirt","thong","stockings","hat"], cost=180, wait_time=2, image="outfits/cc_sailor_dark_blue", description=">Slutty sailor outfit. Dark blue variant")
+        $ cc_outfit_sailor_white_ITEM       = outfit_class(id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
+        $ cc_outfit_sailor_black_ITEM       = outfit_class(id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
 
     $ cho_outfits_list=[
-        cc_outfit_quidditch_ITEM, cc_sailor_blue_ITEM, cc_sailor_dark_blue_ITEM
+        cc_outfit_quidditch_ITEM, cc_outfit_sailor_white_ITEM, cc_outfit_sailor_black_ITEM
         ]
     $ cho_costumes_list=[
         ]

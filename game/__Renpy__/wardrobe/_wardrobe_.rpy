@@ -1146,7 +1146,7 @@ screen wardrobe():
                 text "Stockings" xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
-            if active_girl in ["hermione"] and wardrobe_underwear_category in [0,1,3]: #Not for onepieces yet. Not for stockings.
+            if active_girl in ["hermione","cho"] and wardrobe_underwear_category in [0,1,3]: #Not for onepieces yet. Not for stockings.
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_underwear_color","base"), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 

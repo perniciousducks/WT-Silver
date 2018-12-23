@@ -1,6 +1,6 @@
 label deck_builder:
-    call room(hide_screens=True)
-    show screen deck_builder_screen()
+    hide screen main_room_menu
+    show screen deck_builder_screen
     $ _return = ui.interact()
 
     if _return in unlocked_cards:
@@ -10,12 +10,12 @@ label deck_builder:
     elif _return == "Close":
         $ selectcard = -1
         hide screen deck_builder_screen
-        jump return_office
+        jump day_main_menu
     elif _return == "inc":
-        $ currentpage += currentpage+1
+        $ currentpage += 1
         jump deck_builder
     elif _return == "dec":
-        $ currentpage += -1
+        $ currentpage -= 1
         jump deck_builder
     else:
         if not selectcard == -1:
@@ -30,6 +30,7 @@ label deck_builder:
             jump deck_builder
 
 screen deck_builder_screen:
+    zorder 8
     $ card_shown=5
     add "images/cardgame/deck_builder.png"
  
@@ -94,7 +95,16 @@ screen deck_builder_screen:
             idle "interface/general/"+interface_color+"/button_arrow_down.png"
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
-            
+    
+    #Exit button
+    imagebutton:
+        xpos 274
+        ypos 502
+        idle "images/cardgame/button.png"
+        hover "images/cardgame/button_hover.png"
+        action Return("Close")
+    
+    #Easter egg    
     hbox:
         xpos 1020
         ypos 296

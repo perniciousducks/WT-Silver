@@ -217,6 +217,23 @@ label rummaging:
             jump night_start
         else:
             jump day_start
+            
+    #Dumbledore card      !!Needs fixing!!
+    #if day >= 26 and deck_unlocked:
+    #    $ unlocked_cards += [dumbledore]
+    #    #show screen cardrender(dumbledore, 400,200, interact=False)
+         #pause
+    #    call give_reward(">You found a Dumbledore wizard card...","interface/icons/cards.png")
+
+    #    show screen genie
+    #    hide screen rum_screen
+    #    hide screen bld1
+    #    with d3
+    #
+    #    if daytime:
+    #         jump night_start
+    #    else:
+    #         jump day_start
 
     # Item Reward.
     $ random_number = renpy.random.randint(1, 5)

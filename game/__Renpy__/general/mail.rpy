@@ -114,82 +114,33 @@ label letter_curse_complaint:
 
     return
 
+### Mail about cardgame ###
+label deck_mail_send:
+    $ deck_unlocked = True
 
-
-
-
-
-### MAIL THAT UNLOCKS ABILITY TO WORK ###
-label deck_mail_send: # Send a letter that will unlock an ability to write reports
-    $ deck_unlocked = True # Send a letter that will unlock an ability to write reports
-    $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.{/size}"
-    show screen letter
-    show screen ctc
-    show screen bld1
-    with Dissolve(.3)
-    pause
-
-    hide screen letter
-    hide screen ctc
-    hide screen bld1
-    with Dissolve(.3)
-    
-    m "Wizard cards, what the hell is this..."
-
-    $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.\n\nWizard cards is a collectable card game...{/size}"
-    show screen letter
-    show screen ctc
-    show screen bld1
-    with Dissolve(.3)
-    pause
-
-    hide screen letter
-    hide screen ctc
-    hide screen bld1
-    with Dissolve(.3)
-    
-    
-    m "\"I'm not.\""
-    $ letter_text = "{size=-7}Welcome to Wizard Cards, the collectible card game everyone enjoys.\n\nWizard cards is a collectable card game... \n\nEvery card has an enchantment so that it will display something of your own favorite interest.\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a free booster, we don't even know what it is!{/size}"
-    show screen letter
-    show screen ctc
-    show screen bld1
-    with Dissolve(.3)
-    pause
-
-    hide screen letter
-    hide screen ctc
-    hide screen bld1
-    with Dissolve(.3)
-
-    m "Sounds like a scam to me..."
-    
-    
-    
+    m "That last bit just sounds like scam to me..."
     m "..."
-    m "I guess I'll have a look at the booster at least..."
-
-    "Opens booster and sees the cards"
-    show screen bld1
-    with Dissolve(.3)
+    m "I guess I'll have a look at the starter pack at least..."
+    "Opens starter pack and sees the cards"
+    show screen blktone
     show screen start_deck
-    
+    with Dissolve(.3)
     pause
-    
     hide screen start_deck
-    hide screen ctc
-    hide screen bld1
+    hide screen blktone
     with Dissolve(.3)
     
     g9 "Hell yes I'm playing this..."
-    
-    call give_reward(">You've unlocked Wizard cards.\nUse your desk to edit the deck.","interface/icons/book_general.png")
-    
-    hide screen blktone8
-    with d3
+    call give_reward(">You've unlocked Wizard cards.\nUse the deckbuilder in your cupboard to learn the rules and edit your deck.","interface/icons/cards.png")
+
     return
-
-
+    
+### Twins card store unlocked ###
+label cards_store_mail_send:
+    $ twins_cards_stocked = True
+    
+    m "Great, time to buy some cards."
+    return
 
 label get_package:
     show screen blktone
@@ -272,8 +223,13 @@ label __init_variables:
     
     if not hasattr(renpy.store,'letter_deck'):
         $ letter_deck = mail_letter_class()
-    $ letter_deck.text = ""
+    $ letter_deck.text = "{size=-3}Sir Albus Dumbledore{/size}\n\n{size=-7}We would like to present to you great opportunity to become a Wizard Cards champion. We've included a starter pack to our card game in the hopes that you will consider any of our resellers to stock our cards for your students to purchase and play.\n\nHere's a little bit of information about our cards:\nEvery Wizard card has an enchantment that will personalize its look just for you and show something of your own favorite interest.\n\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a started pack, we don't even know what it is!{/size}\n\n{space=110}{size=-5}Wizard cards inc{/size}"
     $ letter_deck.label = "deck_mail_send"
+    
+    if not hasattr(renpy.store,'letter_cards_store'):
+        $ letter_cards_store = mail_letter_class()
+    $ letter_cards_store.text = "{size=-7}Weasley's Wizard Wheezes shop emporium is now officially partnering with Wizard cards.\nCheck out the notice board at our shop to find a list of challengers at your skill level.{/size}"
+    $ letter_cards_store.label = "cards_store_mail_send"
 
     return
 

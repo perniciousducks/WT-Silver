@@ -92,6 +92,52 @@ label summon_hermione:
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
         #    jump your_whore
 
+        "-Let's Duel-" if snape_second_win:
+            if her_know_cards == False:
+                m "[hermione_name]..."
+                her "Yes, [genie_name]?"
+                m "Are you familiar with Wizard Cards?"
+                her "I've heard of it... it used to be a popular card game a decade or so ago."
+                m "So, would you like to play it?"
+                her "Do they even make the cards still? I don't think there's anyone in Hogsmeade stocking them."
+                her "So I wouldn't be able to play against you unless Fred and Geo..."
+                m "Unless... who now?"
+                her "(Hermione...learn to keep your mouth shut.)"
+                m "[hermione_name]..."
+                her "I'm sorry sir, I should have told you..."
+                her "Fred and George have a secret shop set up in the school."
+                m "I see..."
+                her "Please don't tell them I told you." 
+                m "So you say they might have some cards?"
+                her "Wha...yes, maybe."
+                her "You're not going to shut them down?"
+                m "Why should I? It's a free market is it not?"
+                m "A little bit of competition with Hoemead is good for consumers."
+                her "But... I mean, yes of course." 
+                m "So you'll play if they stock some cards?"
+                her "I mean..."
+                m "If they don't get shut down I mean."
+                her "Oh, yes of course I'll play."
+                her "Was there anything else you wanted to do?"
+                $ her_know_cards = True
+                jump hermione_requests
+            elif her_know_cards and twins_know_cards == False:
+                m "(I should talk to Fred and George about wizard cards first.)"
+                jump hermione_requests
+            elif her_know_cards and twins_know_cards and not twins_cards_stocked:
+                m "(I have to convince Fred and George to start stocking up cards in their shop first.)"
+            else:
+                label hermione_duel_menu:
+                menu:
+                    "-First duel-":
+                        jump hermione_first_duel
+                    "-WIP-":
+                        "To be done."
+                        jump hermione_duel_menu
+                    "-WIP-":
+                        "To be done."
+                        jump hermione_duel_menu
+        
         "-Dismiss her-":
             if daytime:
                 if her_mood >=3 and her_mood < 7:

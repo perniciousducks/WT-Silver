@@ -149,7 +149,7 @@ label summon_snape:
                 "\"Never mind.\"":
                     jump snape_ready
         "-Let's Duel-" if deck_unlocked:
-            if snape_let_duel_first:
+            if snape_know_cards == False:
                 m "Wizard Cards."
                 call sna_main( "What about them?","snape_05") 
                 m "You got any?"
@@ -163,7 +163,7 @@ label summon_snape:
                 call sna_main( "What do you mean? there's no prizes in Wizard Cards...","snape_01") 
                 m "What..."
                 m "No wonder this game never took off..."
-                m "How about this, I beat you three times and you'll give me \[Items\]."
+                m "How about this, I beat you three times and you'll give me \"something\"."
                 call sna_main( "And if I win?","snape_05") 
                 m "Isn't keeping me entertained in this office good enough?"
                 m "I thought our friend... partnership meant more to you than prizes."
@@ -171,18 +171,18 @@ label summon_snape:
                 call sna_main( "Fine, you'll get your \[Items\].","snape_06") 
                 call sna_main( "If you beat me that is...","snape_28")  
                 m "Now we're talking."
-                $ snape_let_duel_first = False
+                $ snape_know_cards = True
             label snape_duel_menu:
             menu:
                 "-First Duel-":
                     jump snape_first_duel
-                "-Second Duel-" if beat_snape_ones:
+                "-Second Duel-" if snape_first_win:
                     jump snape_second_duel
-                "{color=#858585}-You need to beat the first duel-{/color}" if not beat_snape_ones:
+                "{color=#858585}-You need to beat the first duel-{/color}" if not snape_first_win:
                     jump snape_duel_menu
-                "-Third Duel-" if beat_snape_twice:
+                "-Challenge-" if snape_second_win:
                     jump snape_third_duel
-                "{color=#858585}-You need to beat the second duel-{/color}" if not beat_snape_twice:
+                "{color=#858585}-You need to beat the second duel-{/color}" if not snape_second_win:
                     jump snape_duel_menu
                 "-Never mind-":
                     jump snape_ready

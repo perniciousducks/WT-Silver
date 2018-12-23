@@ -56,8 +56,55 @@ label store_chit_chat:
         m "Well do you sell anything else?"
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
+    elif deck_unlocked and her_know_cards and not twins_know_cards:
+        m "Hello boys."
+        twi "Good day professor\nDumbledore, sir."
+        m "I'm looking to acquire some Wizard cards."
+        fre "Wizard cards....*spit*"
+        ger "Why would you want any of those?"
+        m "What does one do with playing cards... play the game of course."
+        fre "Well, we got some of our own to see if it was worth stocking them, but none for sale."
+        ger "The profit margin was way to low... something about import tax."
+        ger "We would have to sell a lot of them to make good profit."
+        m "I see... so there's no way you'd stock them?"
+        fre "Wizard cards hasn't been popular in ages..."
+        ger "It does have potential though, not everyone at Hogwarts is going to be into dueling... or chess."
+        fre "How about this... we did acquire a set of cards to try the game out."
+        m "So..."
+        ger "If you beat us we'll do a trial run and stock some cards for the students."
+        twi "(There's no way this\nold man would beat us.)"
+        $ twins_know_cards = True
+        jump twins_duel_menu
     else:
-        twi "Hello Professor! What would you like to buy?"
+        twi "Hello Professor! Came here to buy?"
+        if twins_know_cards:
+            twi "Or duel?"
+            menu:
+                "-Buy something-":
+                    pass
+                "-Let's duel-":
+                    label twins_duel_menu:
+                    menu:
+                        "-First Duel-":
+                            jump twins_first_duel
+                        "-Second Duel-" if twins_first_win:
+                            if not twins_cards_stocked:
+                                m "(I need to wait for an owl from them before I can duel them again)"
+                                jump twins_duel_menu
+                                
+                            jump twins_second_duel
+                        "{color=#858585}-You need to beat the first duel-{/color}" if not twins_first_win:
+                            jump twins_duel_menu
+                        "-WIP-":
+                            "To be done."
+                            jump twins_duel_menu
+                        #"-Challenge-" if twins_second_win:
+                        #    jump twins_third_duel
+                        #"{color=#858585}-You need to beat the second duel-{/color}" if not twins_second_win:
+                        #    jump twins_duel_menu
+                        "-Never mind-":
+                            twi "Your loss professor."
+                            pass
 
     return
 

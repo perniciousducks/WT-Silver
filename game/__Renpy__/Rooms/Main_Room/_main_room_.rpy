@@ -33,6 +33,10 @@ screen main_room_deco:
         add "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
         add "images/rooms/main_room/fireplace" +str(room_deco)+ ".png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
     #The package & the cupboard pinup are added extra (imagebutton or on their own screen).
+    
+    #Fireplace puzzlebox glow fix
+    if not daytime and day >= 14 and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
+            add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
 
     zorder 2
 

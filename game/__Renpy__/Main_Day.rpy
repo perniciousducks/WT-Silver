@@ -189,7 +189,9 @@ if deliveryQ.got_mail():
 
 if clothing_mail_item != None:
     $ clothing_mail_timer -= 1
-    $ package_is_here = True
+    
+    if clothing_mail_timer <= 1:
+        $ package_is_here = True
 
 if day >= 2 and not letter_from_hermione_B_OBJ.read:
     $ letter_from_hermione_B_OBJ.mailLetter()

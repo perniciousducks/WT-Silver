@@ -127,13 +127,13 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     menu: #Will add titfuck here
         #"-Suck her nipples-":
             #"asd"
-        "-Titfuck her-":
-            m "Well come here then!"
-            hide screen hermione_main
-            call blkfade
+        #"-Titfuck her-":
+        #    m "Well come here then!"
+        #    hide screen hermione_main
+        #    call blkfade
 
-            hide screen groping_naked_tits
-            jump start_titfuck
+        #    hide screen groping_naked_tits
+        #   jump start_titfuck
         "-Play with her nipples-":
             pass
 

@@ -10,9 +10,6 @@ label __init_variables:
     if not hasattr(renpy.store,'tentacle_cosmetic'): #important!
         $ tentacle_cosmetic = False
 
-    if not hasattr(renpy.store,'fawkes_intro_done'): #important!
-        $ fawkes_intro_done = True
-
     ### Interface ###
     if not hasattr(renpy.store,'interface_color'):
         $ interface_color = "gold"

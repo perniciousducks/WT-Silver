@@ -459,7 +459,7 @@ label purchase_outfit(item):
     $ gold -= item.cost
 
     m "Here is your gold."
-    maf "Thanks you.\nI'll start working on it right away, Professor!"
+    maf "Thank you.\nI'll start working on it right away, Professor!"
     if item.wait_time == 1:
         maf "You can expect a package with the outfit by tomorrow."
     else:

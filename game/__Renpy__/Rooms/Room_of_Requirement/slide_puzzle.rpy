@@ -26,14 +26,14 @@ label start_slide_puzzle:
 
 label update_puzzle_slide:
     show screen puzzle_board
-    $ move = ui.interact()
+    $ p_move = ui.interact()
     hide screen puzzle_board
 
-    if int(move) == -1:
+    if int(p_move) == -1:
         jump cupboard
 
-    $xposS = int(move/4)
-    $yposS = int(move%4)
+    $xposS = int(p_move/4)
+    $yposS = int(p_move%4)
     $xposE = int(emptyposition/4)
     $yposE = int(emptyposition%4)
     $ puzzle_tries = puzzle_tries + 1
@@ -41,9 +41,9 @@ label update_puzzle_slide:
     if (((xposS == xposE-1 or xposS == xposE+1) and yposS == yposE) or ((yposS == yposE-1 or yposS == yposE+1) and xposS == xposE)):
         $imagepuzzle[xposE][yposE] = imagepuzzle[xposS][yposS]
         $imagepuzzle[xposS][yposS] = "empty"
-        $ emptyposition = move
+        $ emptyposition = p_move
 
-    if move == -2:
+    if p_move == -2:
         jump open_pyzzle_box
 
     python:
@@ -59,10 +59,10 @@ label open_pyzzle_box:
     if unlocked_7th == True:
         m "Empty... I don't know what I expected."
         jump cupboard
-    if move == -2:
+    if p_move == -2:
         m "Fuck it... {size=18}*Smash*{/size}"
         m "A broken bottle..."
-        m "Oh well, to late now and continue with Wait a minute there's some sort of notebook"
+        m "Oh well, too late now. Back to my usual-"
     elif unlocked_7th == False:
         m "Finally... "
         m "Sweet, phoenix tears! Down the hatch we go."

@@ -61,7 +61,7 @@ label transition(trans=None):
         elif trans == "vpunch":
             with vpunch
         elif trans == "move":
-            with move(1.0)
+            with move
 
         #Skip Transitions
         elif trans in ["None","none","skip"]:

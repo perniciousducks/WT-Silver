@@ -75,7 +75,7 @@ $ show_weather()
 $ puzzle_random = renpy.random.randint(0, 2)
 
 #Fireplace
-if day > 25 and(1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
+if day >= 25 and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
     show screen fireplace_glow
 
 #Mail

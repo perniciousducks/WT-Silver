@@ -32,7 +32,7 @@ label a_christmas_tale:
     show screen desk
     show screen fireplace_fire
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    show screen main_room_deco
+    show screen main_room_overlay
 
     hide screen blkfade
     with d3

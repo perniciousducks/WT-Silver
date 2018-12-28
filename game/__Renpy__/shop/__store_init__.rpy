@@ -19,4 +19,7 @@ label store_init:
         $ book_store_intro_done = False
         $ clothing_store_intro_done = False
 
+    if not hasattr(renpy.store,'store_menu') or reset_persistants:
+        $ store_menu = False #Displays item's gold value.
+
     return

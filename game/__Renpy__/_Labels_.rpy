@@ -19,7 +19,7 @@ label hide_all_screens:
 
     #Main Room
     hide screen main_room
-    hide screen main_room_deco
+    hide screen main_room_overlay
     hide screen weather
     hide screen new_window #Hiding clear sky bg.
 
@@ -112,7 +112,7 @@ label room(room=None, hide_screens=True):
 
         show screen weather
         show screen main_room
-        show screen main_room_deco
+        show screen main_room_overlay
         show screen chair_right
         hide screen fireplace_fire
         if fire_in_fireplace:

@@ -71,13 +71,6 @@ $ show_weather()
 
 
 
-#Puzzle
-$ puzzle_random = renpy.random.randint(0, 2)
-
-#Fireplace
-if day >= 25 and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
-    show screen fireplace_glow
-
 #Mail
 if day >= 1 and not letter_from_hermione_A_OBJ.read:
     $ letter_from_hermione_A_OBJ.mailLetter()

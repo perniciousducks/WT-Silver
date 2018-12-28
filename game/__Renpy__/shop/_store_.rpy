@@ -31,6 +31,7 @@ label open_weasley_store:
     call store_chit_chat
 
     $ store_category = 0 # Reset Button
+    $ store_menu = True #Displays item's gold value.
 
     jump gift_shop_menu
 
@@ -68,6 +69,8 @@ label close_weasley_store:
 
     show screen blkfade
     with d5
+
+    $ store_menu = False #Displays item's gold value.
 
     jump main_room
 

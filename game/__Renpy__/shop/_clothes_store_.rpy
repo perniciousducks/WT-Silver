@@ -32,6 +32,7 @@ label open_clothing_store:
     $ current_page = 0
     $ character_choice = 1 #Hermione
     $ character_choice_list = [1,2,3,4,5]
+    $ store_menu = True #Displays item's gold value.
 
     show screen clothing_store_menu
 
@@ -75,6 +76,8 @@ label close_clothing_store:
 
     m "That's all for today, thank you."
     maf "You're welcome, sir. Come back any time."
+
+    $ store_menu = False #Displays item's gold value.
 
     jump return_office
 

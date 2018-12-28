@@ -402,7 +402,7 @@ init -2 python:
                 return self.imagepath
 
         def get_cost(self):
-            return "Cost: "+str(self.cost)+" gold"
+            return ""+str(self.cost)+" gold"
 
         def get_wait_time(self):
             if self.wait_time == 1:

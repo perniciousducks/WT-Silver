@@ -117,7 +117,7 @@ label cheats:
                     $ ast_affection = 2
                     $ astoria_tonks_1_completed = True
                     $ astoria_tonks_2_completed = True
-                    $ astoria_tonks_3_completed = True
+
 
                     $ ag_imperio_susan_OBJ.points = 3
                     ">Astoria can now use the first spell!"

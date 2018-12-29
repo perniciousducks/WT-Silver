@@ -1,9 +1,9 @@
 label snape_first_duel:
     call setup_deck(snape_first_deck)
-    sna "A bit dusty but this should do!"
+    call sna_main( "A bit dusty but this should do!","snape_03")
     m "You, or the deck?"
-    sna "I... the deck, obviously."
-    sna "Let's do this."
+    call sna_main( "I... the deck, obviously.","snape_14")
+    call sna_main( "Let's do this.","snape_17")
 
     call play_music("grape_soda")
     $ response_card = ""
@@ -22,8 +22,8 @@ label snape_first_duel:
     
     hide screen blkfade
     stop music fadeout 1
-    call sna_main( "I feel like I should have gone over the rules a bit more before trying this game again.","snape_05")
-    call sna_main(  "Well played though.","snape_05")
+    call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
+    call sna_main(  "Well played though.","snape_04")
     $ snape_first_win = True
     call play_sound("door")
     call sna_chibi("hide")
@@ -33,10 +33,10 @@ label snape_first_duel:
             
 label snape_second_duel:
     call setup_deck(snape_second_deck)
-    sna "That first one was just a warm up, there's no way you'll beat me this time!"
-    m "Time to get our decks out."
-    sna "...."
-    sna "Let's just play."
+    call sna_main( "That first one was just a warm up, there's no way you'll beat me this time!","snape_16")
+    g9 "Time to get our decks out."
+    call sna_main( "....","snape_25")
+    call sna_main( "Let's just play.","snape_04")
 
     call play_music("grape_soda")
     $ response_card = ""
@@ -64,7 +64,7 @@ label snape_second_duel:
     $ snape_busy = True
     
     if not her_know_cards:
-        m "This is awesome, I wonder if Hermione would want to play against me."
+        g9 "This is awesome, I wonder if Hermione would want to play against me..."
  
     jump main_room
     
@@ -74,15 +74,15 @@ label snape_third_duel:
         jump snape_duel_menu
         
     call setup_deck(snape_third_deck)
-    sna "you're not beating me again genie, I've practiced with one of the greatest Wizard cards player there is!"
+    call sna_main( "You're not beating me again genie, I've practiced with one of the greatest Wizard cards player there is!","snape_10")
     m "Me?"
-    sna "I... no, of course not."
-    sna "Let's do this."
+    call sna_main( "I... no, of course not.","snape_14")
+    call sna_main( "Let's do this...","snape_02")
     
     $ response_card = ""
     
     call play_music("boss_card_theme")
-    call play_sound("Genie_VS_Snape")
+    play sound "sounds/Genie_VS_Snape.mp3"
     show screen snape_vs_genie_screen
     pause 1
     show screen move_snape

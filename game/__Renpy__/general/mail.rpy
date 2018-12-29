@@ -139,7 +139,7 @@ label deck_mail_send:
 label cards_store_mail_send:
     $ twins_cards_stocked = True
     
-    m "Great, time to buy some cards."
+    m "Great, let's see how they're doing."
     return
 
 label get_package:

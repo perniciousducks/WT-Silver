@@ -150,27 +150,27 @@ label summon_snape:
                     jump snape_ready
         "-Let's Duel-" if deck_unlocked:
             if snape_know_cards == False:
-                m "Wizard Cards."
+                m "Ever heard of Wizard Cards?"
                 call sna_main( "What about them?","snape_05") 
-                m "You got any?"
+                g9 "Do you have any?"
                 call sna_main( "I do, I collected some when I was younger... never played though.","snape_09") 
                 m "Why not?"
                 call sna_main( "Didn't really have anyone to play with so I stopped buying them.","snape_06") 
-                m "You want to?"
+                m "Up for a game or two?"
                 call sna_main( "...", "snape_03") 
                 call sna_main( "Why not...", "snape_02") 
                 m "What do I get if I win?"
-                call sna_main( "What do you mean? there's no prizes in Wizard Cards...","snape_01") 
-                m "What..."
+                call sna_main( "What do you mean? There never used to be prizes in Wizard Cards...","snape_01") 
+                g4 "What..."
                 m "No wonder this game never took off..."
-                m "How about this, I beat you three times and you'll give me \"something\"."
-                call sna_main( "And if I win?","snape_05") 
-                m "Isn't keeping me entertained in this office good enough?"
-                m "I thought our friend... partnership meant more to you than prizes."
+                m "Let's just play a few practice runs for now then."
+                call sna_main( "And after that?","snape_05") 
+                m "..."
+                m "After that we'll think about prizes."
                 call sna_main( "...","snape_01") 
-                call sna_main( "Fine, you'll get your \[Items\].","snape_06") 
-                call sna_main( "If you beat me that is...","snape_28")  
-                m "Now we're talking."
+                call sna_main( "Fine, I'm confident enough to beat a newbie.","snape_06") 
+                call sna_main( "But first a bit of practice...","snape_02")  
+                g9 "Let's play."
                 $ snape_know_cards = True
             label snape_duel_menu:
             menu:

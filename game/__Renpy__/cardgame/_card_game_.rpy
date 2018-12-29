@@ -91,7 +91,7 @@ label enemy_turn:
        
         
 screen card_battle(l_playerdeck, l_enemydeck):
-    zorder 8
+    zorder 5
     imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
     
     imagemap:

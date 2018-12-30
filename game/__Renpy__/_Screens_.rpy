@@ -519,6 +519,7 @@ screen close_button(offsetx = 0, offsety = 0, close_var=lambda : "Close"):
             idle "interface/general/"+interface_color+"/button_close.png"
             hover "interface/general/"+interface_color+"/button_close_hover.png"
             action Return(close_var())
+            keysym "K_ESCAPE"
 
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE

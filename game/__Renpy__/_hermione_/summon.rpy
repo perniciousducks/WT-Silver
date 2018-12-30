@@ -92,6 +92,54 @@ label summon_hermione:
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
         #    jump your_whore
 
+        "-Let's Duel-" if snape_second_win:
+            if her_know_cards == False:
+                m "[hermione_name]..."
+                call her_main( "Yes, [genie_name]?","base","base")
+                m "Are you familiar with Wizard Cards?"
+                call her_main( "I've heard of it... it used to be a popular card game a decade or so ago.","annoyed","squint")
+                g9 "So, would you like to play it?"
+                call her_main( "Do they even make the cards still? I don't think there's anyone in Hogsmeade stocking them.","normal","suspicious")
+                call her_main( "So I wouldn't be able to play against you...","base","base")
+                call her_main( "Unless Fred and Geo...","clench","wide")
+                m "Unless... who now?"
+                call her_main( "\"Hermione... learn to keep your mouth shut.\"","mad","wideL")
+                m "[hermione_name]..."
+                call her_main( "I'm sorry sir, I should have told you...","open","worried")
+                call her_main( "Fred and George have a secret shop set up in the school.","normal","worriedL")
+                m "I see..."
+                call her_main( "Please don't tell them I told you.","open","worriedCl") 
+                m "So you say they might have some cards?"
+                call her_main( "Wha... yes, maybe.","base","soft")
+                call her_main( "You're not going to shut them down?","angry","suspicious")
+                m "Why should I? It's a free market is it not?"
+                g9 "A little bit of competition with Hoemead is good for consumers."
+                call her_main( "But... I mean, yes of course.","annoyed","worried")
+                m "So you'll play if they stock some cards?"
+                call her_main( "I mean...","soft","down_raised")
+                m "If they don't get shut down I mean."
+                call her_main( "Oh, yes of course I'll play.","shock","wide")
+                call her_main( "...","soft","surprised")
+                call her_main( "Anything else you needed or am I free to go?","base","worried")
+                $ her_know_cards = True
+                jump hermione_requests
+            elif her_know_cards and twins_know_cards == False:
+                m "(I should talk to Fred and George about wizard cards first.)"
+                jump hermione_requests
+            elif her_know_cards and twins_know_cards and not twins_cards_stocked:
+                m "(I have to convince Fred and George to start stocking up cards in their shop first.)"
+            else:
+                label hermione_duel_menu:
+                menu:
+                    "-First duel-":
+                        jump hermione_first_duel
+                    "-WIP-":
+                        "To be done."
+                        jump hermione_duel_menu
+                    "-WIP-":
+                        "To be done."
+                        jump hermione_duel_menu
+        
         "-Dismiss her-":
             if daytime:
                 if her_mood >=3 and her_mood < 7:

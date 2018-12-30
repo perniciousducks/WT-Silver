@@ -168,9 +168,9 @@ else:                      # Hardcore # Gifting items is required!
     pass
 
 if her_mood < 0:
-    $ her_mood == 0
+    $ her_mood = 0
 if cho_mood < 0:
-    $ cho_mood == 0
+    $ cho_mood = 0
 
 
 
@@ -204,6 +204,9 @@ if day >= 25 and her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
     
 if day >= 26 and not deck_unlocked:    
     $ letter_deck.mailLetter()
+    
+if day >= twins_cards_delay and deck_unlocked and twins_first_win and not twins_cards_stocked:
+    $ letter_cards_store.mailLetter()
     
 if package_is_here or letter_queue_list != []:
     play sound "sounds/owl.mp3"

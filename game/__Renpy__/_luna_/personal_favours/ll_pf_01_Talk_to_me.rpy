@@ -594,14 +594,17 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "done!"
 
         ">you quickly summon hermione up to your office."
-        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+        call play_sound("door")
+        call her_chibi("stand","desk","base")
+        hide screen luna_main
         $ luna_flip = -1
         $ luna_r_arm = 2
         $ luna_xpos = 390
+        show screen luna_main
+        with d5
+
         call update_her_uniform
-        call ctc
+        pause.8
 
         call her_main("hello Professor!","base","happyCl")
         call her_main("hi luna! what's he want now? another blowjob.","grin","baseL")

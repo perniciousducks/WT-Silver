@@ -11,7 +11,7 @@ label __init_variables:
 
         $ Speedwriting_1_ITEM = book_class(id="Speedwriting_1", name="\"Speedwriting for beginners\"",        cost=90,  type="book", image="book_general",     chapters=2,  description=">This book contains a bunch of very basic techniques used to improve one's ability to write quickly. 2 chapters.", effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork.")
         $ Speedwriting_2_ITEM = book_class(id="Speedwriting_2", name="\"Speedwriting for amateurs\"",         cost=110, type="book", image="book_general",     chapters=4,  description=">This book contains intermediate techniques used to improve one's ability to write quickly. 4 chapters.", effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork.")
-        $ Speedwriting_3_ITEM = book_class(id="Speedwriting_3", name="\"Speedwriting for advanced writers\"", cost=130, type="book", image="book_general",     chapters=6,  description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.", effect = ">New skill unlocked: always complete an additional chapter when doing paperwork.")
+        $ Speedwriting_3_ITEM = book_class(id="Speedwriting_3", name="\"Speedwriting for advanced\"", cost=130, type="book", image="book_general",     chapters=6,  description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.", effect = ">New skill unlocked: always complete an additional chapter when doing paperwork.")
         $ Speedwriting_4_ITEM = book_class(id="Speedwriting_4", name="\"Speedwriting for experts\"",          cost=150, type="book", image="book_general",     chapters=8,  description=">This book contains expert techniques used to improve one's ability to read quickly. 8 chapters.", effect = ">You have become a true master of Speedwriting and from now on you shall always complete two additional chapters when doing paperwork.")
 
         $ Galadriel_I_ITEM    = fiction_book(id="Galadriel_I",    name="\"The Tale of Galadriel. Book I.\"",    cost=100, type="book", image="book_galadriel_1", chapters=20, description=">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.", effect = ">Your imagination has improved.")
@@ -356,9 +356,11 @@ label book_complete:
     elif book_choice.id == "Armchairs":
         g4 "What a pile of garbage! I hate the guy who wrote this crap!"
         m "Although all those rapes gave me a few ideas..."
-        $ bdsm_imagination += 1
+        if imagination < 2: #Only goes to 2.
+            $ bdsm_imagination += 1
     else:
-        $ imagination += 1
+        if imagination < 8: #Only goes to 8.
+            $ imagination += 1
 
     if book_choice in book_list.read_books:
         $ speed_reading += 1
@@ -409,7 +411,8 @@ label read_scroll_menu:
     hide screen list_menu
 
     if isinstance(_return, item_class):
-        call read_scroll(_return)
+        $ scroll_choice = _return
+        jump read_scroll
 
     elif _return == "Close":
         $ current_page = 0
@@ -436,7 +439,8 @@ label read_scroll_menu:
     jump read_scroll_menu
 
 
-label read_scroll(scroll):
+label read_scroll:
+    $ scroll = scroll_choice
     $ the_gift = "images/misc/extras/"+str(scroll.scroll_image)+".png"
     show screen gift
     with d3

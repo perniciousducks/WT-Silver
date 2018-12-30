@@ -25,7 +25,12 @@ screen tonks_main:
     if tonks_wear_pubic_hair:
         add tonks_pubic_hair xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
-    ### CLOTHES
+
+    ### CLOTHING ###
+
+    if tonks_wear_piercings:
+        add tonks_tongue_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_ear_piercing    xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     if tonks_wear_mask:
         add tonks_mask xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
@@ -69,8 +74,10 @@ screen tonks_uniform:
 
     ### Piercings
     if tonks_wear_piercings:
-        add tonks_ear_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
-        add tonks_nipple_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        if (tonks_wear_top and ton_top in ["top_corset_1"]) or (tonks_wear_robe and ton_robe in ["auror_coat"]):
+            pass
+        else:
+            add tonks_nipple_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
         add tonks_belly_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
         add tonks_intimate_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 

@@ -323,7 +323,7 @@ label equip_sus_bra:
 
 ### Equip Cho's Bra ###
 label equip_cho_bra:
-    call set_cho_bra(underwear_choice)
+    call set_cho_bra(underwear_choice, underwear_color_choice)
 
     jump return_to_wardrobe
 
@@ -681,7 +681,7 @@ label equip_sus_panties:
 
 ### Equip Cho's Panties ###
 label equip_cho_panties:
-    call set_cho_panties(underwear_choice)
+    call set_cho_panties(underwear_choice, underwear_color_choice)
 
     jump return_to_wardrobe
 

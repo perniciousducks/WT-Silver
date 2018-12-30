@@ -1,4 +1,6 @@
 
+
+#Main Room Screen
 screen main_room:
     if daytime:
         add "images/rooms/main_room/main_room_day.png"
@@ -26,13 +28,22 @@ screen main_room:
 
     zorder 0
 
-screen main_room_deco:
+
+
+#Main Room Overlay - (layer is on top of main_room_menu screen)
+screen main_room_overlay:
+
+    #Decorations
     if room_deco != "":
         add "images/rooms/main_room/door" +str(room_deco)+ ".png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
         add "images/rooms/main_room/cupboard" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
         add "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
         add "images/rooms/main_room/fireplace" +str(room_deco)+ ".png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
-    #The package & the cupboard pinup are added extra (imagebutton or on their own screen).
+        #The package & the cupboard pinup are added extra (imagebutton or on their own screen).
+
+    #Fireplace
+    if day >= 25 and not daytime and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
+        use fireplace_glow
 
     zorder 2
 

@@ -145,7 +145,24 @@ screen map_screen:
         hover "interface/map/room_north_courtyard_hover.png"
         action Return("map_forest")
 
-    #hotspot (189, 218, 38, 20) clicked Return("map_attic") #attic
+    #Attic
+    if sealed_scroll_ITEM.unlocked and not tentacle_owned: #Open, not visited yet
+        imagebutton:
+            xpos 0+UI_xpos_offset
+            ypos 0
+            focus_mask True
+            idle "interface/map/room_attic_closed_idle.png"
+            hover "interface/map/room_attic_closed_hover.png"
+            action Return("map_attic")
+
+    if sealed_scroll_ITEM.unlocked and tentacle_owned: #Open
+        imagebutton:
+            xpos 0+UI_xpos_offset
+            ypos 0
+            focus_mask True
+            idle "interface/map/room_attic_open_idle.png"
+            hover "interface/map/room_attic_open_hover.png"
+            action Return("map_attic")
 
 
 label set_her_map_location(location = ""):
@@ -425,24 +442,23 @@ label floor_7th:
         call room(hide_screens=True)
         show screen floor_7th_screen
 
-
         if unlocked_7th and first_time_7th:
             call gen_chibi(xpos="door", ypos="base", flip=True)
             call hide_blkfade
             $ first_time_7th=False
-            m"So... he was walking around here."
+            m "So... he was walking around here."
             call gen_chibi(action="hide")
             call gen_walk("door","200",2.7)
-            m"I can definitely sense a strong magical energy in this place..."
+            m "I can definitely sense a strong magical energy in this place..."
             call gen_walk("200","door",2.7)
-            m"Maybe if I...or I could..."
+            m "Maybe if I...or I could..."
             call gen_walk("door","120",2.7)
-            g11"I could be in my office jacking off right now!!"
+            g4 "I could be in my office jacking off right now!!"
             show screen room_of_req_door
             pause 1
             call gen_chibi(xpos="120",ypos="base")
             pause.8
-            g9"Well... will you look at that"
+            g9 "Well... will you look at that"
             hide screen room_of_req_door
             show screen floor_7th_door
             call screen floor_7th_menu
@@ -451,6 +467,7 @@ label floor_7th:
             show screen floor_7th_door
             call hide_blkfade
             call screen floor_7th_menu
+
 
 label map_attic: #Label controlling what happens when you access the attic
     if not sealed_scroll_ITEM.unlocked:

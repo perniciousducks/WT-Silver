@@ -100,6 +100,14 @@ screen list_menu_item(menu_item, ypos=0):
             ysize 22
             text menu_item.get_name() size 16 yalign 0.5
 
+        if store_menu: #Displays item's gold value.
+            vbox:
+                xpos 270
+                ypos 5
+                xsize 250
+                ysize 22
+                text menu_item.get_cost() size 16 xalign 1.0 yalign 0.5
+
         vbox:
             xpos 100
             ypos 35
@@ -192,7 +200,7 @@ screen clothing_menu(menu_items, character, preview):
                 text "+"+preview.get_items()[i] xpos 511+(80*col) ypos (490+(12*row)) size 12
 
             text preview.get_wait_time() xpos 83 ypos 557 size 16
-            text preview.get_cost() xpos 509 ypos 557 size 16
+            text "Gold: "+preview.get_cost() xpos 509 ypos 557 size 16
 
         #Mannequin Display Panels.
         for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):

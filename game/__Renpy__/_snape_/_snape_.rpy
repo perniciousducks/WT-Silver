@@ -119,6 +119,11 @@ screen snape_main:
 
     zorder snape_zorder
 
+screen snape_picture_frame:
+    add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+    zorder snape_zorder+1
+
+
 
 ### SNAPE HEAD
 screen snape_head:

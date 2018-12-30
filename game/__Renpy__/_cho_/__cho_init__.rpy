@@ -107,8 +107,8 @@ label cho_init:
         $ c_bottom                = "skirt_2"
         $ c_bottom_color          = "base"
 
-        $ cho_panties             = "characters/cho/clothes/underwear/base/panties_sport.png"
-        $ c_panties               = "panties_sport"
+        $ cho_panties             = "characters/cho/clothes/underwear/base/panties_sport_1.png"
+        $ c_panties               = "panties_sport_1"
         $ c_panties_color         = "base"
 
         $ cho_onepiece            = "characters/cho/clothes/onepiece/blank.png"

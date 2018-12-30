@@ -9,33 +9,20 @@ screen h_c_u:
     add h_c_u_pic at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
 
 
-
-
-screen hermione_blank_main:
-    tag hermione_main
-    zorder hermione_SC.zorder
-screen hermione_blank_head:
-    tag hermione_head
-    zorder 8
-screen hermione_blank_chibi:
-    tag hermione_chibi
-    zorder hermione_chibi_zorder
-
-
 screen hermione_walk:
     tag hermione_chibi
     add hermione_chibi_walk at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
-screen hermione_walk_f:  #Hermione walking animation. facing right. (Leaving tower).
+screen hermione_walk_f: #ToDo Remove this. Make the image flip in hermione_walk flip instead
     tag hermione_chibi
     add hermione_chibi_walk_f at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
 
-screen hermione_blink:   #Hermione stands still and blinks.
+screen hermione_blink:   #ToDo Remove this and use hermione_stand instead.
     tag hermione_chibi
     add hermione_chibi_blink at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
     zorder hermione_chibi_zorder
-screen hermione_blink_f: #Hermione stands still and blinks facing right. (Leaving tower).
+screen hermione_blink_f:  #ToDo Remove this and use hermione_stand instead.
     tag hermione_chibi
     add hermione_chibi_blink_f at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
     zorder hermione_chibi_zorder
@@ -44,80 +31,19 @@ screen hermione_stand:   #Hermione stands still
     tag hermione_chibi
     add hermione_chibi_stand at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
     zorder hermione_chibi_zorder
-screen hermione_stand_f: #Hermione stands still facing right. (Leaving tower).
+screen hermione_stand_f: #ToDo Remove this. Make the image flip in hermione_stand flip instead
     tag hermione_chibi
     add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
     zorder hermione_chibi_zorder
 
-screen hermione_stand_nude: #Hermione stands naked
-    tag hermione_chibi
-    add hermione_chibi_stand_nude at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
-screen hermione_stand_f_nude: #Hermione stands still facing right. (Leaving tower).
-    tag hermione_chibi
-    add im.Flip(hermione_chibi_stand_nude, horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
-
-screen hermione_01: #Hermione stands still.
-    tag hermione_chibi
-    add hermione_chibi_stand at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
-screen hermione_01_f: #Hermione stands still. (MIRRORED)
-    tag hermione_chibi
-    add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
-
-screen hermione_02: #Hermione stands still and blinks.
-    tag hermione_chibi
-    add hermione_chibi_blink at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
-
-screen hermione_walk_01:
-    tag hermione_chibi
-    add hermione_chibi_walk at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
-screen hermione_walk_01_f: #Hermione walking animation. facing right. (Leaving tower).
-    tag hermione_chibi
-    add hermione_chibi_walk_f at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
-
-screen hermione_run: #Hermione running. facing right. (Leaving tower).
+screen hermione_run:  #ToDo Remove this and use hermione_walk instead.
     tag hermione_chibi
     add hermione_chibi_run at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
-screen hermione_run_f: #Hermione running. facing right. (Leaving tower).
+screen hermione_run_f: #ToDo Remove this and use hermione_walk instead.
     tag hermione_chibi
     add hermione_chibi_run_f at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
-
-screen hermione_fly: #Hermione running. facing right. (Leaving tower).
-    tag hermione_chibi
-    add hermione_chibi_fly at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
-screen hermione_fly_f: #Hermione running. facing right. (Leaving tower).
-    tag hermione_chibi
-    add hermione_chibi_fly_f at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
-
-screen hermione_chibi_robe: #Hermione. Chibi. Walking. Wearing a robe.
-    tag hermione_chibi
-    if hermione_wear_top:
-        add "ch_hem walk_robe" at custom_walk_02(walk_xpos, walk_xpos2)
-    else:
-        add "ch_hem walk_robe_n" at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
-screen hermione_chibi_robe_f: #Hermione. Chibi. Walking. Wearing a robe.
-    tag hermione_chibi
-    if hermione_wear_top:
-        add "ch_hem walk_robe_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    else:
-        add "ch_hem walk_robe_n_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
-
-screen hermione_02_b: #Hermione stands still wearing a robe. #Not in use.
-    tag hermione_chibi
-    add "characters/hermione/chibis/walk/h_walk_robe_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-
 
 
 screen her_wand_slow:  # Hermione rubs wand slowly
@@ -491,8 +417,6 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
     hide screen hermione_walk_f
     hide screen hermione_run
     hide screen hermione_run_f
-    #hide screen hermione_fly #Screen and animation not yet added.
-    #hide screen hermione_fly_f
 
     hide screen hermione_blink
     hide screen hermione_blink_f
@@ -528,8 +452,6 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
 
     #Hermione walks
     if walk_xpos >= walk_xpos2: #right to left
-        #if action == "fly":
-            #show screen hermione_fly
         if action == "run":
             show screen hermione_run
         else:
@@ -537,15 +459,12 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
         $ tmp = speed - redux_pause
         pause tmp
         $ hermione_chibi_xpos = walk_xpos2
-        #hide screen hermione_fly
         hide screen hermione_run
         hide screen hermione_walk
         if loiter:
             show screen hermione_blink
 
     else: #left to right (flipped)
-        #if action == "fly":
-            #show screen hermione_fly_f
         if action == "run":
             show screen hermione_run_f
         else:
@@ -553,7 +472,6 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, acti
         $ tmp = speed - redux_pause
         pause tmp
         $ hermione_chibi_xpos = walk_xpos2
-        #hide screen hermione_fly_f
         hide screen hermione_run_f
         hide screen hermione_walk_f
         if pos2 == "leave":

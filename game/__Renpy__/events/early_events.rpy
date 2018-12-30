@@ -311,7 +311,7 @@ label event_05:
             who2 "What? B-but... Those kids..."
             call sna_main("","snape_06")
             who2 "Well, perhaps you are right..."
-        "{size=-2}\"That owl is fetching may mail, man!\"{/size}":
+        "{size=-2}\"That owl is fetching my mail, man!\"{/size}":
             who2 "An owl? What about it?"
             call sna_main("","snape_25")
             who2 "That's not what I mean..."

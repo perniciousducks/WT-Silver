@@ -222,7 +222,8 @@ label epilogue:
 label waifu_completed:
     if not waifu_completed_once:
         $ waifu_completed_once = True
-        $ imagination += 1
+        if imagination < 8: #Only goes to 8.
+            $ imagination += 1
         $ renpy.play('sounds/win_04.mp3')   #Not loud.
         hide screen notes
         show screen notes
@@ -237,14 +238,16 @@ label waifu_completed:
 
         $ found_voucher = True
         $ Dear_Wifu_ITEM.done = True
-        $ imagination += 1 #Max
+        if imagination < 8: #Only goes to 8.
+            $ imagination += 1
 
     elif shea >= 8:
         if not complited_shea: #Finished with Shea for the first time.
             m "Not bad. I really grew to care about that Shea girl..."
             g9 "Well, her and her anal virginity..."
             $ complited_shea = True
-            $ imagination += 1
+            if imagination < 8: #Only goes to 8.
+                $ imagination += 1
         else: #Finished with Shea for the second time.
             m "So I ended up with Shea again, huh?"
             m "Hm... Maybe I should try and make different choices next time...?"
@@ -252,7 +255,8 @@ label waifu_completed:
         if not complited_stevens: #Finished with Ms.Stevens for the first time.
             m "Not bad, not bad. That Ms. Stevens Lady turned out to be one dirty slut..."
             $ complited_stevens = True
-            $ imagination += 1
+            if imagination < 8: #Only goes to 8.
+                $ imagination += 1
         else: #Finished with Shea for the second time.
             m "So I ended up with Ms.Stevens again?"
             m "Hm... Maybe I should try and make different choices next time...?"
@@ -260,7 +264,8 @@ label waifu_completed:
         if not complited_leena: #Finished with Leena for the first time.
             g9 "Sweet! I love happy endings!"
             $ complited_leena = True
-            $ imagination += 1
+            if imagination < 8: #Only goes to 8.
+                $ imagination += 1
         else: #Finished with Shea for the second time.
             m "So I ended up with that blond chick again?"
             m "Hm... Maybe I should try and make different choices next time...?"

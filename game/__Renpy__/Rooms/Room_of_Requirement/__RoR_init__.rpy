@@ -8,7 +8,7 @@ label __init_variables:
         $ first_visit_req = False
 
     if not hasattr(renpy.store,'mr_ev_WPIIA'):
-        $mr_ev_WPIIA = mirror_stories(
+        $ mr_ev_WPIIA = mirror_stories(
                 name = "Whose points is it anyway?",
                 unlockable = True,
                 story_description = "Parody of the game show of \"whose points is it anyway?\"",
@@ -20,7 +20,7 @@ label __init_variables:
             )
 
     if not hasattr(renpy.store,'mr_ev_GHE'):
-        $mr_ev_GHE = mirror_stories(
+        $ mr_ev_GHE = mirror_stories(
                 name = "The genie, the desk and the door",
                 story_description = "The genie tries to figure out how people know when he calls for them.",
                 start_label = "genie_house_elf",
@@ -31,7 +31,7 @@ label __init_variables:
             )
 
     if not hasattr(renpy.store,'mr_ev_ABTTD'):
-        $mr_ev_ABTTD = mirror_stories(
+        $ mr_ev_ABTTD = mirror_stories(
                 name = "A bad time to disrobe",
                 unlockable = True,
                 story_description = "The genie gets a hold of a invisibility cloak and puts it to good use.",
@@ -43,7 +43,7 @@ label __init_variables:
             )
 
     if not hasattr(renpy.store,'mr_ev_ASOC'):
-        $mr_ev_ASOC = mirror_stories(
+        $ mr_ev_ASOC = mirror_stories(
                 name = "A spaced out conversation",
                 unlockable = True,
                 story_description = "The genie and Snape gets real for a little bit.",
@@ -55,7 +55,7 @@ label __init_variables:
             )
 
     if not hasattr(renpy.store,'mr_ev_ABAS'):
-        $mr_ev_ABAS = mirror_stories(
+        $ mr_ev_ABAS = mirror_stories(
                 name = "A Booty at sea",
                 unlockable = True,
                 story_description = "The genie imagine himself to be a great pirate and roleplays his most intimate times with Hermione.",
@@ -67,7 +67,7 @@ label __init_variables:
             )
 
     if not hasattr(renpy.store,'mr_ev_ADR'):
-        $mr_ev_ADR = mirror_stories(
+        $ mr_ev_ADR = mirror_stories(
                 name = "A Dark Room",
                 story_description = "A minigame inspired by the textbased game \"A Dark Room\".",
                 start_label = "start_dark_room_game",
@@ -77,7 +77,19 @@ label __init_variables:
                 content_characters = []
             )
 
+    if not hasattr(renpy.store,'mr_ev_AXmasTale'):
+        $ mr_ev_AXmasTale = mirror_stories(
+                name = "A Christmas Tale",
+                story_description = "A surprise visit.",
+                start_label = "a_christmas_tale",
+                authors = ["TeamSilver"],
+                categories= [],
+                ach_desc = "",
+                content_characters = []
+            )
+
     $ mr_evs_list = []
+    $ mr_evs_list.append(mr_ev_AXmasTale)
     $ mr_evs_list.append(mr_ev_ADR)
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)

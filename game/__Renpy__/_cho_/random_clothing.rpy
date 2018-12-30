@@ -18,7 +18,7 @@ label cho_random_clothing:
     else:
         if daytime and random_number in [1,2,3,4,5]: #50% chance:
 
-            if not cc_muggle_hot_ITEM.unlocked and cho_quidd_points >= 3:
+            if not cho_wardrobe_unlocked and cho_quidd_points >= 3:
                 $ cc_muggle_hot_ITEM.unlocked = True
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 

@@ -37,7 +37,7 @@ label cupboard:
             m "It's missing the key ingredient."
             jump possessions
 
-        "Box with a puzzle on it" if found_puzzle_1 == True:
+        "Box with a puzzle on it" if found_puzzle_1 == True and unlocked_7th == False:
             jump start_slide_puzzle
 
         #Temporary!
@@ -124,12 +124,12 @@ label options_menu:
             label decorate_room_menu:
             menu:
                 ">Decorate your place..."
-                "-Xmas decorations-":
+                "-Xmas decorations-" if unlocked_xmas_deco:
                     pause.5
-                    hide screen main_room_deco
+                    hide screen main_room_overlay
                     $ room_deco = "_deco_1"
                     $ gen_outfit = "_santa"
-                    show screen main_room_deco
+                    show screen main_room_overlay
                     with d9
                     pause.5
                 "-Cupboard pinup girl-":
@@ -137,11 +137,11 @@ label options_menu:
                     ">Pinup girl added! You'll see it when rummaging through the cupboard."
                 "-Remove deco-":
                     pause.5
-                    hide screen main_room_deco
+                    hide screen main_room_overlay
                     $ room_deco = ""
                     $ cupboard_deco = ""
                     $ gen_outfit = ""
-                    show screen main_room_deco
+                    show screen main_room_overlay
                     with d5
                     pause.5
                 "-All done-":

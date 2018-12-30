@@ -6,9 +6,11 @@ screen cho_chang:
     ### BASE IMAGE
     add cho_r_arm       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_base        xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
-    add cho_hips_tan    xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+    if c_panties in ["panties_sport_1","panties_sport_2"]:
+        add cho_hips_tan     xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_breasts     xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
-    add cho_breasts_tan xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+    if c_bra == "bra_sport":
+        add cho_breasts_tan  xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_l_arm       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_hair        xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
@@ -72,7 +74,9 @@ screen cho_uniform:
 
     if cho_wear_robe:
         add cho_robe xpos cho_xpos ypos cho_ypos alpha cho_robe_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
-    if cho_wear_gloves and c_gloves in ["quidditch"]: #On top of Quidditch robe.
+    if cho_wear_top and c_top in ["sweater_1"]:
+        add "characters/cho/clothes/tops/base/sweater_1_overlay.png" xpos cho_xpos ypos cho_ypos alpha cho_robe_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
+    if cho_wear_gloves and c_gloves in ["gloves_quidditch"]: #On top of Quidditch robe.
         add cho_gloves xpos cho_xpos ypos cho_ypos alpha cho_gloves_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### ZORDER

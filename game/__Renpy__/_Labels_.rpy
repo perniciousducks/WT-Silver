@@ -19,10 +19,11 @@ label hide_all_screens:
 
     #Main Room
     hide screen main_room
-    hide screen main_room_deco
+    hide screen main_room_overlay
     hide screen weather
     hide screen new_window #Hiding clear sky bg.
 
+    hide screen desk
     hide screen chair_left
     hide screen chair_right
 
@@ -43,6 +44,12 @@ label hide_all_screens:
 
     #Weasley Store
     hide screen weasley_store_room
+
+    #Clothing Store
+    hide screen clothing_store_room
+
+    #Potions Room
+    hide screen potions_room
 
     #7th Floor
     hide screen floor_7th_door
@@ -70,7 +77,8 @@ label hide_all_screens:
     hide screen blktone
     hide screen bld1
 
-
+    #Sounds
+    stop bg_sounds #Stops playing the fire SFX.
 
     return
 
@@ -104,7 +112,7 @@ label room(room=None, hide_screens=True):
 
         show screen weather
         show screen main_room
-        show screen main_room_deco
+        show screen main_room_overlay
         show screen chair_right
         hide screen fireplace_fire
         if fire_in_fireplace:
@@ -131,16 +139,16 @@ label room(room=None, hide_screens=True):
         show screen weasley_store_room
         show screen points
 
-    if room in ["potions_room","potions_room"]:
+    if room in ["potions_room","potions_classroom"]:
         $ current_room = "potions_classroom"
 
-        show screen weasley_store_room #Temporary
+        show screen potions_room
         show screen points
 
     if room in ["clothing_store", "clothe_store"]:
         $ current_room = "clothing_store"
 
-        show screen weasley_store_room #Temporary
+        show screen clothing_store_room
         show screen points
 
     if room in ["7th floor"]:
@@ -386,6 +394,9 @@ label play_music(music=""):
 
     if music in ["sad","grape_soda"]:
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5
+
+    if music in ["anguish"]:
+        play music "music/Anguish.mp3" fadein 1 fadeout 1
 
     return
 

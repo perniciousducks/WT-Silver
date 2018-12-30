@@ -72,7 +72,8 @@ screen fireplace_fire: #Used to display fire without the fireplace.
     zorder 2
 
 screen fireplace_glow:
-    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.15
+    tag fireplace_glow
+    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
     zorder 3
 
 $ width_offset = 140

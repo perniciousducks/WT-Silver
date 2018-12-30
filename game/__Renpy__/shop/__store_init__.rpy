@@ -1,7 +1,7 @@
 label store_init:
 
     #Update 1.3
-    if not hasattr(renpy.store,'clothing_store_intro_done') or reset_persistants:
+    if not hasattr(renpy.store,'clothing_mail_item') or reset_persistants:
 
         #Shop
         $ order_placed = False #TRUE when and order has been placed on an item.
@@ -12,9 +12,14 @@ label store_init:
 
         $ tentacle_owned = False #Quest item. Not the scroll you buy from the store.
 
-        $ outfit_is_worked_on = False
+        $ clothing_mail_item = None
+        $ clothing_mail_timer = 0
+
         $ store_intro_done = False
         $ book_store_intro_done = False
         $ clothing_store_intro_done = False
+
+    if not hasattr(renpy.store,'store_menu') or reset_persistants:
+        $ store_menu = False #Displays item's gold value.
 
     return

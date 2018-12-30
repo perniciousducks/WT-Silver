@@ -70,7 +70,7 @@ label update_outfit_layers:
 
     # Luna Outfits
     $ ll_pyjama_ITEM.outfit_layers = ["pants_pyjama.png","top_pyjama.png"]
-    
+
     # Astoria Outfits
     $ ag_boss_uniform_ITEM.outfit_layers = ["uniform_pants.png","uniform_top.png"]
     $ ag_boss_uniform_ITEM.hair_layer = "pigtails"
@@ -96,11 +96,11 @@ label update_outfit_layers:
     $ cc_dress_silver_ITEM.outfit_layers = ["traditional_dress_silver.png"]
     $ cc_dress_black_ITEM.outfit_layers = ["traditional_dress_black.png"]
 
-    $ cc_sailor_blue_ITEM.outfit_layers      = ["../underwear/yellow/panties_sailor.png","../stockings/sailor_stockings_white.png","../tops/blue/top_sailor.png","../bottoms/blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
-    $ cc_sailor_blue_ITEM.top_layers         = "sailor_bow"
+    $ cc_outfit_sailor_white_ITEM.outfit_layers      = ["../underwear/yellow/panties_sailor_1.png","../stockings/stockings_sailor_1.png","../tops/base/top_sailor_1.png","../bottoms/blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
+    $ cc_outfit_sailor_white_ITEM.top_layers         = "bow_sailor_yellow"
 
-    $ cc_sailor_dark_blue_ITEM.outfit_layers = ["../underwear/blue/panties_sailor.png","../stockings/sailor_stockings_white.png","../tops/dark_blue/top_sailor.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
-    $ cc_sailor_dark_blue_ITEM.top_layers    = "sailor_bow"
+    $ cc_outfit_sailor_black_ITEM.outfit_layers      = ["../underwear/red/panties_sailor_1.png","../stockings/stockings_sailor_2.png","../tops/base/top_sailor_2.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
+    $ cc_outfit_sailor_black_ITEM.top_layers         = "bow_sailor_red"
 
     ### Event Outfits ###
 

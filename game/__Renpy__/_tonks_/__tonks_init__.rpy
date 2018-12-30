@@ -167,10 +167,6 @@ label tonks_init:
         $ tonks_ears                = "characters/tonks/accessories/ears/blank.png"
         $ ton_ears                    = "blank"
 
-        $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/base/ears_rings.png"
-        $ ton_ear_piercing            = "ears_rings"
-        $ ton_ear_piercing_color      = "base"
-
         #Miscellaneous
         $ tonks_buttplug            = "characters/tonks/accessories/plugs/blank.png"
         $ ton_buttplug                = "blank"
@@ -179,12 +175,21 @@ label tonks_init:
         $ tonks_gag                 = "characters/tonks/face/mouth/gag.png"
         $ ton_gag                     = "gag"
 
-        $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/base/blank.png"
-        $ ton_nipple_piercing         = "blank"
+        #Piercings
+        $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/base/ears_rings.png"
+        $ ton_ear_piercing            = "ears_rings"
+        $ ton_ear_piercing_color      = "base"
+
+        $ tonks_tongue_piercing     = "characters/tonks/accessories/piercings/base/blank.png"
+        $ ton_tongue_piercing         = "tongue_pearls"
+        $ ton_tongue_piercing_color   = "base"
+
+        $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/base/nipples_pearls.png"
+        $ ton_nipple_piercing         = "nipples_pearls"
         $ ton_nipple_piercing_color   = "base"
 
-        $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/base/blank.png"
-        $ ton_belly_piercing          = "blank"
+        $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/base/belly_pearls.png"
+        $ ton_belly_piercing          = "belly_pearls"
         $ ton_belly_piercing_color    = "base"
 
         $ tonks_intimate_piercing   = "characters/tonks/accessories/piercings/base/blank.png"

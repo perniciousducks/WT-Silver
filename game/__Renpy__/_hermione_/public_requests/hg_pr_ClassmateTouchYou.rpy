@@ -49,7 +49,7 @@ label hg_pr_ClassmateTouchYou:
         call her_main("!!!","normal","base")
         call her_main("What kind of demented parent would have such a talk with their child?","angry","angry")
         m "I bet Akabur would."
-        call her_main("I beg your parodon, [genie_name]?","annoyed","suspicious")
+        call her_main("I beg your pardon, [genie_name]?","annoyed","suspicious")
         m "*Khem!* I said, a responsible and caring one!"
         m "Well, in any case. That is your task for today, [hermione_name]."
         m "Find a way to persuade one of your classmates to fondle you a little..."

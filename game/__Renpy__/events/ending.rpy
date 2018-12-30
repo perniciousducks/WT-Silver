@@ -37,7 +37,7 @@ label your_whore:
 
     call update_her_uniform
 
-    call set_her_outfit(hg_dress_yule_ball_OBJ) #Updates uniform.
+    call set_her_outfit(hg_dress_yule_ball_ITEM) #Updates uniform.
 
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).

@@ -1248,9 +1248,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">You start to feel yourself get hard against her ass"
         call lun_main("go on... bring her up here...","upset","mad","angry","R")
         ">you summon hermione up to your office."
-        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+        call play_sound("door")
+        call her_chibi("stand","desk","base")
+
         call update_her_uniform
         call ctc
 

@@ -753,6 +753,8 @@ label equip_piercing:
         call set_her_piercing(piercing_choice, piercing_color_choice)
     if active_girl == "tonks":
         call set_ton_piercing(piercing_choice, piercing_color_choice)
+        call ton_main(mouth="open_wide_tongue", face="horny",xpos="wardrobe",ypos="base")
+        call ctc
 
     jump return_to_wardrobe
 

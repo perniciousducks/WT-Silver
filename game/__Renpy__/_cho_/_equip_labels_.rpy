@@ -14,9 +14,9 @@ label update_cho_uniform:
     $ cho_bottom         = "characters/cho/clothes/bottoms/" +str(c_bottom_color)+ "/"+str(c_bottom)+".png"
 
     #Underwear
-    $ cho_bra            = "characters/cho/clothes/underwear/base/"+str(c_bra)+".png"
+    $ cho_bra            = "characters/cho/clothes/underwear/" +str(c_bra_color)+ "/"+str(c_bra)+".png"
     $ cho_onepiece       = "characters/cho/clothes/onepieces/"+str(c_onepiece)+".png"
-    $ cho_panties        = "characters/cho/clothes/underwear/base/"+str(c_panties)+".png"
+    $ cho_panties        = "characters/cho/clothes/underwear/" +str(c_panties_color)+ "/"+str(c_panties)+".png"
     $ cho_garterbelt     = "characters/cho/clothes/underwear/base/"+str(c_garterbelt)+".png"
 
     $ cho_neckwear       = "characters/cho/clothes/neckwear/"+str(c_neckwear)+".png"
@@ -93,16 +93,17 @@ label set_cho_bottom(bottom="", color=""):
     return
 
 #Bra equip.
-label set_cho_bra(bra=""):
+label set_cho_bra(bra="", color=""):
     hide screen cho_chang
 
-    if cho_wear_bra and c_bra == bra:
+    if cho_wear_bra and c_bra == bra and c_bra_color == color:
         $ cho_request_wear_bra = False
         $ cho_wear_bra = False
     else:
         $ cho_request_wear_bra = True
         $ cho_wear_bra = True
         $ c_bra = bra
+        $ c_bra_color = color
 
     call update_cho_uniform
 
@@ -125,16 +126,17 @@ label set_cho_onepiece(onepiece=""):
     return
 
 #Panties equip.
-label set_cho_panties(panties=""):
+label set_cho_panties(panties="", color=""):
     hide screen cho_chang
 
-    if cho_wear_panties and c_panties == panties:
+    if cho_wear_panties and c_panties == panties and c_panties_color == color:
         $ cho_request_wear_panties = False
         $ cho_wear_panties = False
     else:
         $ cho_request_wear_panties = True
         $ cho_wear_panties = True
         $ c_panties = panties
+        $ c_panties_color = color
 
     call update_cho_uniform
 
@@ -167,6 +169,23 @@ label set_cho_neckwear(neck=""):
         $ cho_request_wear_neckwear = True
         $ cho_wear_neckwear = True
         $ c_neckwear = neck
+
+    call update_cho_uniform
+
+    return
+
+
+#Gloves equip.
+label set_cho_gloves(gloves=""):
+    hide screen cho_chang
+
+    if cho_wear_gloves and c_gloves == gloves:
+        $ cho_request_wear_gloves = False
+        $ cho_wear_gloves = False
+    else:
+        $ cho_request_wear_gloves = True
+        $ cho_wear_gloves = True
+        $ c_gloves = gloves
 
     call update_cho_uniform
 
@@ -279,14 +298,14 @@ label update_cho_quidditch_outfit:
     else:
         $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_4.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../../body/arms/arm_down_l_overlay.png") #Hand Overlay #Important
-
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_sweater.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1.png")
 
     if cho_quidd_points in [0,1,2,3, 5,6]: #Not 4 #Wears robe!
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_robe.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../robe/robe_quidditch_1.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("quid_gloves.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1_overlay.png") #Hand Overlay #Important
+
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../gloves/gloves_quidditch.png")
 
     return
 

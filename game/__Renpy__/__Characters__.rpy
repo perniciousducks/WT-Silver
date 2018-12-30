@@ -61,7 +61,7 @@ label transition(trans=None):
         elif trans == "vpunch":
             with vpunch
         elif trans == "move":
-            with move(1.0)
+            with move
 
         #Skip Transitions
         elif trans in ["None","none","skip"]:
@@ -88,20 +88,20 @@ init python:
 
     #Genie
     m = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
-    g = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage2.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g2 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage3.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage2.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g2 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage3.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     g4 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage4" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
-    g5 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage5.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g6 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage6.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g7 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage7.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g8 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage8.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g5 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage5.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g6 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage6.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g7 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage7.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g8 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage8.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     g9 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage9" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
-    g10 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage10.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g11 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage11.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g12 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage12.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g13 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage13.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g14 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage14.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
-    g15 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage15.png"), color="#402313", ctc="ctc3", ctc_position="fixed")
+    g10 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage10.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g11 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage11.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g12 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage12.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g13 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage13.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g14 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage14.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
+    g15 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage15.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
 
     ### House-Elf ###
     helf = Character("House-Elf", window_left_padding=250, show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
@@ -126,6 +126,11 @@ init python:
         dum_.append("")
         dum_[i] = Character(None, window_left_padding=250, color="#402313", show_side_image=Image("characters/misc/dumbledore/dum_"+str(i)+".png", xpos=20, yalign=1.0), show_two_window=False, ctc="ctc3", ctc_position="fixed")
 
+    #Santa
+    san_ = [""]
+    for i in range(1,7):
+        san_.append("")
+        san_[i] = Character("Santa", window_left_padding=250, color="#402313", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20, yalign=1.0), show_two_window=False, ctc="ctc3", ctc_position="fixed")
 
 
     ### STUDENTS ###

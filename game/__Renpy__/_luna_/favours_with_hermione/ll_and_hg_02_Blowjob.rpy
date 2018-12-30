@@ -24,13 +24,16 @@ label luna_favour_6: #luna and hermione blowjob #DONE
 
         ">You summon hermione to your office."
         call play_sound("door") #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+        call her_chibi("stand","desk","base")
+        hide screen luna_main
         $ luna_flip = -1
         $ luna_r_arm = 2
         $ luna_xpos = 390
+        show screen luna_main
+        with d5
+
         call update_her_uniform
-        call ctc
+        pause.8
 
         call her_main("hello Professor...","base","closed")
         call her_main("oh, hi luna! what's he got you up here for today? Another handjob?","base","suspicious")
@@ -325,14 +328,17 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("good...","base","seductive","angry","mid")
 
         ">You summon hermione to your office."
-        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+        call play_sound("door")
+        call her_chibi("stand","desk","base")
+        hide screen luna_main
         $ luna_flip = -1
         $ luna_r_arm = 2
         $ luna_xpos = 390
+        show screen luna_main
+        with d5
+
         call update_her_uniform
-        call ctc
+        pause.8
 
         call her_main("hello Professor!","base","closed")
         call her_main("hey luna! what does he want this time? Another blowjob?","base","suspicious")
@@ -620,14 +626,17 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "if you insist..."
 
         ">You summon hermione to your office."
-        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        $ hermione_SC.chibi.xpos = 600 #Near the desk.
-        show screen hermione_blink #Hermione stands still.
+        call play_sound("door")
+        call her_chibi("stand","desk","base")
+        hide screen luna_main
         $ luna_flip = -1
         $ luna_r_arm = 2
         $ luna_xpos = 390
+        show screen luna_main
+        with d5
+
         call update_her_uniform
-        call ctc
+        pause.8
 
         call her_main("hello Professor!","base","closed")
         call her_main("hey luna! another blowjob?","base","suspicious")

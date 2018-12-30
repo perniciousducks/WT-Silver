@@ -934,7 +934,7 @@ screen wardrobe():
         if wardrobe_page == 4:
 
             #Neckwear
-            if active_girl in ["hermione","astoria","susan","tonks"]:
+            if active_girl in ["hermione","astoria","susan","cho","tonks"]:
                 hotspot (75, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",0),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/neckwear.png" xpos 15 ypos 60 zoom 0.35
                 text "Neckwear" xpos 76 ypos 140+75 size 10
@@ -1146,7 +1146,7 @@ screen wardrobe():
                 text "Stockings" xpos 76+360 ypos 140+75 size 10
 
             #Color Palette
-            if active_girl in ["hermione"] and wardrobe_underwear_category in [0,1,3]: #Not for onepieces yet. Not for stockings.
+            if active_girl in ["hermione","cho"] and wardrobe_underwear_category in [0,1,3]: #Not for onepieces yet. Not for stockings.
                 hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_underwear_color","base"), Jump("wardrobe_update")]
                 add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
 

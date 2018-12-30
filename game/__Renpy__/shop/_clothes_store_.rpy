@@ -2,6 +2,18 @@
 
 ### CLOTHING STORE ###
 
+screen clothing_store_room:
+    tag room_screen
+
+    if daytime:
+        add "images/backgrounds/corridor.png" #Need day image.
+    else:
+        add "images/backgrounds/corridor.png"
+
+    zorder 0
+
+
+
 label open_clothing_store:
     show screen blkfade
     with d3
@@ -20,6 +32,7 @@ label open_clothing_store:
     $ current_page = 0
     $ character_choice = 1 #Hermione
     $ character_choice_list = [1,2,3,4,5]
+    $ store_menu = True #Displays item's gold value.
 
     show screen clothing_store_menu
 
@@ -63,6 +76,8 @@ label close_clothing_store:
 
     m "That's all for today, thank you."
     maf "You're welcome, sir. Come back any time."
+
+    $ store_menu = False #Displays item's gold value.
 
     jump return_office
 
@@ -122,30 +137,30 @@ label clothing_shop_menu:
     python:
         item_list = []
         if character_choice == 1:
-            item_list.extend(hermione_clothing_sets_list)
             item_list.extend(hermione_outfits_list)
             item_list.extend(hermione_costumes_list)
             item_list.extend(hermione_dresses_list)
+            item_list.extend(hermione_clothing_sets_list)
         if character_choice == 2:
-            item_list.extend(luna_clothing_sets_list)
             item_list.extend(luna_outfits_list)
             item_list.extend(luna_costumes_list)
             item_list.extend(luna_dresses_list)
+            item_list.extend(luna_clothing_sets_list)
         if character_choice == 3:
-            item_list.extend(astoria_clothing_sets_list)
             item_list.extend(astoria_outfits_list)
             item_list.extend(astoria_costumes_list)
             item_list.extend(astoria_dresses_list)
+            item_list.extend(astoria_clothing_sets_list)
         if character_choice == 4:
-            item_list.extend(susan_clothing_sets_list)
             item_list.extend(susan_outfits_list)
             item_list.extend(susan_costumes_list)
             item_list.extend(susan_dresses_list)
+            item_list.extend(susan_clothing_sets_list)
         if character_choice == 5:
-            item_list.extend(cho_clothing_sets_list)
             item_list.extend(cho_outfits_list)
             item_list.extend(cho_costumes_list)
             item_list.extend(cho_dresses_list)
+            item_list.extend(cho_clothing_sets_list)
 
         item_list = list(filter(lambda x: (x.unlocked==False and x.unlockable==False), item_list))
 
@@ -266,7 +281,7 @@ label purchase_outfit(item):
     hide screen clothing_menu
     with d3
 
-    if outfit_is_worked_on:
+    if clothing_mail_timer != 0:
         maf "I'm sorry luv, but I'm still quite busy working on your item."
         maf "Come back once you got my package."
         return
@@ -440,13 +455,14 @@ label purchase_outfit(item):
 
 
     # Purchase Outfit
-    $ outfit_is_worked_on = True
+    $ clothing_mail_item = item
+    $ clothing_mail_timer = item.wait_time
+
     $ item.unlockable = True #Hides it from the store menu.
     $ gold -= item.cost
-    $ deliveryQ.send(item, item.wait_time, item.number, 'outfit')
 
     m "Here is your gold."
-    maf "Thanks you.\nI'll start working on it right away, Professor!"
+    maf "Thank you.\nI'll start working on it right away, Professor!"
     if item.wait_time == 1:
         maf "You can expect a package with the outfit by tomorrow."
     else:

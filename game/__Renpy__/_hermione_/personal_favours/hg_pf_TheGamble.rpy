@@ -262,7 +262,6 @@ label hg_pf_TheGamble_complete:
         # $ walk_xpos2=400 #Coordinates of it's movement. (To)
         # $ hermione_speed = 2.1 #The speed of moving the walking animation across the screen.
         # call play_sound("door") #Sound of a door opening.
-        # show screen hermione_walk_01
         # with d4
         # pause 2.1
         # $ hermione_chibi_xpos = 500 #Near the desk.

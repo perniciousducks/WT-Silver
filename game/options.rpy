@@ -18,13 +18,13 @@ init -1 python hide:v
     config.developer =True
 
     ## These control the width and height of the screen.
-    
+
     # 16:9 = 1080x600
     # 2:4  = 800x600
-    
+
     config.screen_width = 1080 #800
     config.screen_height = 600 #600
-    
+
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
@@ -33,7 +33,7 @@ init -1 python hide:v
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "WT Silver"
-    config.version = "1.33c"
+    config.version = "1.34"
 
     #########################################
     # Themes
@@ -163,11 +163,11 @@ init -1 python hide:v
     ## The default size of text.
     style.default.size = 18
     style.default.color = "#402313"
-    
+
     #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "font", "interface/CREABBB.TTF")
     #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "size", 18)
     #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "color", "#402313")
-    
+
     #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "font", "interface/CREABBB.TTF")
     #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "size", 18)
     #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "color", "#211109")
@@ -232,7 +232,7 @@ init -1 python hide:v
 
     ## Used when exiting the game menu to the game.
     config.exit_transition = None
-    
+
     config.quit_action = Quit(False)
 
     ## Used between screens of the game menu.
@@ -356,7 +356,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "WT_Silver_1.33c"
+    build.directory_name = "WT_Silver_1.34b"
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,

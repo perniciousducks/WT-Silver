@@ -159,10 +159,4 @@ label __init_variables:
     if tonks_unlocked:
         $ hg_hidden_blowjob_character_list.append("tonks")
 
-    ### Do not add anything after this line !!!
-
-
-    #Update or Reset Persistants
-    call update_persistants # Reset/update old vars for a specific update here! To make it compatible with older saves/prevent crashes!
-
     return

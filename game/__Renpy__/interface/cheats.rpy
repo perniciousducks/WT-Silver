@@ -208,7 +208,7 @@ label cheats:
 label cheats_init:
 
     #Update 1.34
-    if not hasattr(renpy.store,'character_summon_list') or reset_persistants:
+    if not hasattr(renpy.store,'cheats_active') or reset_persistants:
         label reset_cheats_init:
 
         $ cheats_active = False
@@ -237,22 +237,22 @@ label cheats_init:
         $ display_background = False
         $ custom_bg_image = "images/backgrounds/main_room_night.png"
 
-
-    $ character_summon_list = []
-    if hermione_unlocked:
-        $ character_summon_list.append("hermione")
-    if luna_unlocked:
-        $ character_summon_list.append("luna")
-    if astoria_unlocked:
-        $ character_summon_list.append("astoria")
-    if susan_unlocked:
-        $ character_summon_list.append("susan")
-    if cho_unlocked:
-        $ character_summon_list.append("cho")
-    $ character_summon_list.append("genie")
-    $ character_summon_list.append("snape")
-    if tonks_unlocked:
-        $ character_summon_list.append("tonks")
-    $ character_summon_list.append("bg")
+    label update_display_characters_summon_list:
+        $ character_summon_list = []
+        if hermione_unlocked:
+            $ character_summon_list.append("hermione")
+        if luna_unlocked:
+            $ character_summon_list.append("luna")
+        if astoria_unlocked:
+            $ character_summon_list.append("astoria")
+        if susan_unlocked:
+            $ character_summon_list.append("susan")
+        if cho_unlocked:
+            $ character_summon_list.append("cho")
+        $ character_summon_list.append("genie")
+        $ character_summon_list.append("snape")
+        if tonks_unlocked:
+            $ character_summon_list.append("tonks")
+        $ character_summon_list.append("bg")
 
     return

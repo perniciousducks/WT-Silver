@@ -48,7 +48,7 @@ label cupboard:
 
         "-Jerk Off-" if not day == 1:
             jump jerk_off
-            
+
         "-Deck builder-" if day > 26 and deck_unlocked:
             jump deck_builder
 
@@ -124,11 +124,16 @@ label options_menu:
             label decorate_room_menu:
             menu:
                 ">Decorate your place..."
-                "-Xmas decorations-" if unlocked_xmas_deco:
+                "-Xmas decorations-":# if unlocked_xmas_deco:
                     pause.5
                     hide screen main_room_overlay
-                    $ room_deco = "_deco_1"
-                    $ gen_outfit = "_santa"
+                    $ package_OBJ.room_image = "package_idle_xmas"
+                    $ package_OBJ.idle_image = "package_idle_xmas"
+                    $ package_OBJ.hover_image = "package_hover_xmas"
+                    if xmas_fireplace_deco_ITEM not in deco_overlay_list: # TODO: This doesn't work :(
+                        $ deco_overlay_list.append(xmas_fireplace_deco_ITEM)
+                    else:
+                        $ deco_overlay_list.remove(xmas_fireplace_deco_ITEM)
                     show screen main_room_overlay
                     with d9
                     pause.5
@@ -138,9 +143,10 @@ label options_menu:
                 "-Remove deco-":
                     pause.5
                     hide screen main_room_overlay
-                    $ room_deco = ""
+                    $ package_OBJ.room_image = "package_idle"
+                    $ package_OBJ.idle_image = "package_idle"
+                    $ package_OBJ.hover_image = "package_hover"
                     $ cupboard_deco = ""
-                    $ gen_outfit = ""
                     show screen main_room_overlay
                     with d5
                     pause.5
@@ -217,7 +223,7 @@ label rummaging:
             jump night_start
         else:
             jump day_start
-            
+
     #Dumbledore card      !!Needs fixing!!
     #if day >= 26 and deck_unlocked:
     #    $ unlocked_cards += [dumbledore]

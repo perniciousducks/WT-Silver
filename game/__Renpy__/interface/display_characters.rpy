@@ -1,6 +1,7 @@
 
 
 label summon_characters:
+    call update_display_characters_summon_list
 
     $ hide_transitions = True # Hides transitions.
 
@@ -349,7 +350,7 @@ label custom_bg(bg=""):
     hide screen custom_background
 
     if bg != "":
-        $ custom_bg_image = "images/backgrounds/"+str(bg)+".png"
+        $ custom_bg_image = "images/rooms/_bg_/"+str(bg)+".png"
 
     show screen custom_background
     with d3

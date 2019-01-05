@@ -97,6 +97,9 @@ label __init_variables:
         $ reset_luna_content = False
         $ reset_cho_content = False
 
+    #Rooms
+    call room_objects_init
+
     #Genie Init
     call genie_init
 

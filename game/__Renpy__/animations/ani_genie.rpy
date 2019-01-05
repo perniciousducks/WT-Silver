@@ -263,34 +263,34 @@ image feeding: #FEEDING THE PHOENIX.
     "images/animation/feeding_01.png"
 
 image petting: #PETTING THE PHOENIX.
-    "images/animation/petting_01.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
     pause 1
-    "images/animation/petting_02.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"
     pause.1
-    "images/animation/petting_03.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_03.png"
     pause.1
-    "images/animation/petting_04.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_04.png"
     pause.1
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.1
-    "images/animation/petting_06.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
     pause.2
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.2
-    "images/animation/petting_06.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
     pause.2
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.2
-    "images/animation/petting_06.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
     pause.2
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.2
-    "images/animation/petting_04.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_04.png"
     pause.1
-    "images/animation/petting_03.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_03.png"
     pause.1
-    "images/animation/petting_02.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"
     pause.1
-    "images/animation/petting_01.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
     pause 3
     repeat

@@ -49,8 +49,8 @@ screen genie: #Sitting behind desk.
 
 screen rum_screen: #Rummaging through the cumpboard.
     tag genie_chibi
-    add "images/rooms/main_room/cupboard_open.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center") #Pinup Girl
+    add "images/rooms/_objects_/cupboard/cupboard_open.png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center") #Pinup Girl
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=371, ypos=331, xanchor="center", yanchor="center")
     add "genie_rum_ani" xpos 160 ypos 110
@@ -60,14 +60,14 @@ screen feeding: #FEEDING THE PHOENIX.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
-    add "feeding" xpos 410 ypos 75
+    add "feeding" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
     zorder 1
 
 screen petting: #PETTING THE PHOENIX.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
-    add "petting" xpos 390 ypos 65
+    add "petting" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 390 ypos 65
     zorder 1
 
 screen sad_phoenix: #SAD SMILEY THAT SHOWS WHEN YOU PET THE BIRD.

@@ -1,10 +1,4 @@
 
-screen room_back:
-    if daytime:
-        add "interface/map/room_bg1.png"
-    else:
-        add "interface/map/room_bg2.png"
-    zorder 0
 
 screen cg: #Used in tentacle event.
     tag cg_screen
@@ -26,10 +20,6 @@ screen ccg:
 screen gui_tooltip:
     add my_picture xpos my_tt_xpos ypos my_tt_ypos
     zorder 3
-
-screen animation_feather: #Falling feather animation
-    add "feather" xpos 360+140 ypos 140
-    zorder 2
 
 screen notes: #A bunch of notes poping out with a "win" sound effect.
     add "notes" xpos 320+140 ypos 330
@@ -55,20 +45,24 @@ screen G_Flowers_out:  #  Genie flowers vanish
 
 
 
+screen animation_feather: #Falling feather animation
+    add "feather" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos+36 xanchor 0.5 yanchor 0.5
+    zorder 2
+
 screen phoenix_food: #Phoenix's food.
     tag phoenix_food
-    add "images/rooms/main_room/06_phoenix_food.png" xpos 490 ypos 49
+    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
     zorder 2
 
 
 screen fireplace: #Used to display a fireplace in a different room. Not needed for main room. Included in screen "main_room".
     tag fireplace
-    add "images/rooms/main_room/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+    add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5
     zorder 1
 
 screen fireplace_fire: #Used to display fire without the fireplace.
     tag fireplace_fire
-    add "fireplace_fire" xpos 576 ypos 141 #xpos 576 ypos 141
+    add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5 #xpos 576 ypos 141
     zorder 2
 
 screen fireplace_glow:
@@ -95,12 +89,12 @@ screen owl:
     tag owl
 
     if letter_queue_list != []: #Owl with letter.
-        add "images/rooms/main_room/owl_01.png" at Position(xpos=455, ypos=270, xanchor="center", yanchor="center")
+        add owl_OBJ.get_idle_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 0.5
     else:
-        add "images/rooms/main_room/owl_05.png" at Position(xpos=455, ypos=270, xanchor="center", yanchor="center")
+        add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 screen package:
-    add "images/rooms/main_room/owl_06" +str(room_deco)+ ".png" at Position(xpos=400, ypos=235, xanchor="center", yanchor="center")
+    add package_OBJ.get_room_image() xpos package_OBJ.xpos ypos package_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 
 

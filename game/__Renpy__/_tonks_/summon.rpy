@@ -96,6 +96,62 @@ label summon_tonks:
             call nar(">You haven't unlocked this feature yet.")
             jump tonks_requests
 
+        "-Gifts-":
+            $ current_category = None
+            label tonks_gift_menu:
+                python:
+
+                    category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
+                    category_list.append("item_lollipop")
+                    category_list.append("item_mag_porn")
+                    category_list.append("item_wine") #Add firewhiskey!
+                    category_list.append("item_ballgag_and_cuffs")
+                    category_list.append("box_blue_5")
+
+                    if current_category == None:
+                        current_category = category_list[0]
+                        category_choice = category_list[0]
+
+                    item_list = []
+                    if current_category == "item_lollipop":
+                        item_list.extend(candy_gift_list)
+                    if current_category == "item_mag_porn":
+                        item_list.extend(mag_gift_list)
+                    if current_category == "item_wine":
+                        item_list.extend(drink_gift_list)
+                    if current_category == "item_ballgag_and_cuffs":
+                        item_list.extend(toy_gift_list)
+                    if current_category == "box_blue_5":
+                        item_list.extend(toy_gift_list)
+
+                    #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+                show screen icon_menu(item_list, category_list, "Gifts & Quest Items", xpos=257, ypos=50)
+
+                $ _return = ui.interact()
+
+                hide screen icon_menu
+                if category_choice != current_category:
+                    $ current_category = _return
+
+                elif isinstance(_return, item_class):
+                    call give_ton_gift(_return)
+                    jump tonks_requests
+
+                elif _return == "Close":
+                    $ current_page = 0
+                    $ category_choice = None
+                    hide screen icon_menu
+                    with d3
+
+                    jump tonks_requests
+
+                elif _return == "inc":
+                    $ current_page += 1
+                elif _return == "dec":
+                    $ current_page += -1
+
+                jump tonks_gift_menu
+
         "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)

@@ -50,6 +50,65 @@ label summon_luna:
             call lun_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
+        "-Gifts-":
+            $ current_category = None
+            label luna_gift_menu:
+                python:
+
+                    category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
+                    category_list.append("item_lollipop")
+                    category_list.append("item_mag_adult")
+                    category_list.append("item_butterbeer")
+                    category_list.append("item_plush_owl")
+                    category_list.append("box_brown_3")
+
+                    if current_category == None:
+                        current_category = category_list[0]
+                        category_choice = category_list[0]
+
+                    item_list = []
+                    if current_category == "item_lollipop":
+                        item_list.extend(candy_gift_list)
+                    if current_category == "item_mag_adult":
+                        item_list.extend(mag_gift_list)
+                    if current_category == "item_butterbeer":
+                        item_list.extend(drink_gift_list)
+                    if current_category == "item_plush_owl":
+                        item_list.extend(toy_gift_list)
+                    if current_category == "box_brown_3":
+                        item_list.extend(toy_gift_list)
+
+                    #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+                show screen icon_menu(item_list, category_list, "Gifts & Quest Items", xpos=257, ypos=50)
+
+                $ _return = ui.interact()
+
+                hide screen icon_menu
+                if category_choice != current_category:
+                    $ current_category = _return
+
+                elif isinstance(_return, item_class):
+                    call give_lun_gift(_return)
+                    if lun_mood == 0:
+                        jump luna_gift_menu
+                    else:
+                        jump luna_requests
+
+                elif _return == "Close":
+                    $ current_page = 0
+                    $ category_choice = None
+                    hide screen icon_menu
+                    with d3
+
+                    jump luna_requests
+
+                elif _return == "inc":
+                    $ current_page += 1
+                elif _return == "dec":
+                    $ current_page += -1
+
+                jump luna_gift_menu
+
         "-Never mind-":
 
             #ADD Luna says goodbye.

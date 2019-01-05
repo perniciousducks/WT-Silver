@@ -1,46 +1,6 @@
 
 
-label happy(sub_mad = 0):
-    hide screen hermione_main
-    with d3
-    $ her_mood -= sub_mad
-    if her_mood <= 0:
-        $ her_mood = 0
-    if her_mood == 0:
-        ">Hermione's mood has improved...\n>Hermione is {size=+5}not upset{/size} with you..."
-    else:
-        ">Hermione's mood has improved...\n>Hermione is {size=+5}still upset{/size} with you..."
-    return
-
-label no_change:
-    hide screen hermione_main
-    with d3
-    ">Hermione's mood didn't change much..."
-    return
-
-label upset(add_mad):
-    hide screen hermione_main
-    with d3
-    $ her_mood += add_mad
-    ">Hermione's mood worsened...\n>Hermione is {size=+5}upset{/size} with you..."
-    return
-
-label her_gift_menu: # Not in use anymore.
-    python:
-        choices = []
-        for i in gift_list:
-            if gift_item_inv[i.id] > 0:
-                choices.append( ( ("-"+str(i.name)+"- ("+str(gift_item_inv[i.id])+")"), i) )
-
-        choices.append(("-Never mind-", "nvm"))
-        result = renpy.display_menu(choices)
-
-    if result == "nvm":
-        jump day_time_requests
-    else:
-        call give_her_gift(result)
-
-
+#Hermione Gift Responses
 
 label give_her_gift(gift_item):
     hide screen hermione_main
@@ -553,6 +513,8 @@ label give_her_gift(gift_item):
 
     return
 
+
+
 label give_gift(text = "", gift = ""):
     hide screen hermione_main
     with d3
@@ -564,4 +526,31 @@ label give_gift(text = "", gift = ""):
     with d3
     $ gift.number -= 1
 
+    return
+
+
+
+label happy(sub_mad = 0):
+    hide screen hermione_main
+    with d3
+    $ her_mood -= sub_mad
+    if her_mood <= 0:
+        $ her_mood = 0
+    if her_mood == 0:
+        ">Hermione's mood has improved...\n>Hermione is {size=+5}not upset{/size} with you..."
+    else:
+        ">Hermione's mood has improved...\n>Hermione is {size=+5}still upset{/size} with you..."
+    return
+
+label no_change:
+    hide screen hermione_main
+    with d3
+    ">Hermione's mood didn't change much..."
+    return
+
+label upset(add_mad):
+    hide screen hermione_main
+    with d3
+    $ her_mood += add_mad
+    ">Hermione's mood worsened...\n>Hermione is {size=+5}upset{/size} with you..."
     return

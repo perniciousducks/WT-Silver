@@ -45,7 +45,7 @@ label her_gift_menu: # Not in use anymore.
 label give_her_gift(gift_item):
     hide screen hermione_main
     with d5
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    call her_main(xpos="mid",ypos="base",trans="d5")
 
     if gift_item == lollipop_ITEM:#candy
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
@@ -547,9 +547,10 @@ label give_her_gift(gift_item):
             call her_main("Thank you, [genie_name].","base","baseL",cheeks="blush")
             call happy(30)
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-    show screen hermione_main
-    with d3
+    hide screen hermione_main
+    with d5
+    call her_main(xpos="base",ypos="base",trans="d5")
+
     return
 
 label give_gift(text = "", gift = ""):

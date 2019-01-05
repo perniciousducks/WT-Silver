@@ -7,10 +7,10 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
     $ items_shown=4
     zorder 5
 
-    #Close Button.
+    #Close Button
     use close_button
 
-    #Up Button.
+    #Up Button
     imagebutton:
         xpos 825
         ypos 240
@@ -19,7 +19,7 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
             hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
             action Return("dec")
 
-    #Down Button.
+    #Down Button
     imagebutton:
         xpos 825
         ypos 292
@@ -28,7 +28,7 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
 
-    #Main Store Window.
+    #Main Window
     imagemap:
         xsize 638
         ysize 544
@@ -38,6 +38,15 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
         ground "interface/store/"+interface_color+"/items_panel.png"
         hover "interface/store/"+interface_color+"/items_panel_hover.png"
 
+        #Header
+        hbox:
+            xpos 11
+            ypos 30
+            xsize 265
+            ysize 45
+            text title xalign 0.5 yalign 0.5 size 16 bold 0.2
+
+        #Toggles
         if toggle1 != "": #Top left
             $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle1_bool else "interface/general/"+interface_color+"/check_false.png"
             hotspot (319, 31, 115, 22) clicked Return("toggle1")
@@ -62,13 +71,7 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
             add toggle1_image xpos 322+115 ypos 30+22 zoom 0.8
             text "{size=10}" + toggle4 + "{/size}" xpos 342+115 ypos 35+20
 
-        hbox:
-            xpos 5
-            ypos 30
-            xsize 300
-            ysize 41
-            text title xalign 0.5 yalign 0.5 size 16 bold 0.2
-
+        #Items
         for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
                 if menu_items[i].unlockable == False: #Unlockables are shown but aren't buyable/clickable
@@ -117,6 +120,91 @@ screen list_menu_item(menu_item, ypos=0):
 
         text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
 
+
+
+#Icon Menu #Customizable
+screen icon_menu(menu_items, categories, title, xpos, ypos):
+    $ items_shown=20
+    $ UI_xpos_offset = xpos
+    $ UI_ypos_offset = ypos
+    zorder 5
+
+    #Close Button
+    use close_button
+
+    #Up Button
+    imagebutton:
+        xpos UI_xpos_offset +480
+        ypos UI_ypos_offset +175
+        idle "interface/general/"+interface_color+"/button_arrow_up.png"
+        if not current_page <= 0:
+            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+            action Return("dec")
+
+    #Down Button
+    imagebutton:
+        xpos UI_xpos_offset +480
+        ypos UI_ypos_offset +175 +52
+        idle "interface/general/"+interface_color+"/button_arrow_down.png"
+        if current_page < math.ceil((len(menu_items)-1)/items_shown):
+            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+            action Return("inc")
+
+    #Main Window
+    imagemap:
+        xpos UI_xpos_offset
+        ypos UI_ypos_offset
+        xsize 467 #width of ground/hover image.
+        ysize 548 #height of ground/hover image.
+
+        ground "interface/store/"+interface_color+"/icons_panel.png"
+        hover "interface/store/"+interface_color+"/icons_panel_hover.png"
+
+        #Header
+        hbox:
+            xpos 11
+            ypos 30
+            xsize 265
+            ysize 45
+            text title xalign 0.5 yalign 0.5 size 16 bold 0.2
+
+        #Categories
+        for i in range(0,len(categories)): #Max 5 items!
+            hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
+            add "interface/icons/" +str(categories[i])+ ".png" xpos 0+(90*i) ypos 70 zoom 0.35
+
+        #Items
+        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+            if i < len(menu_items):
+                $ row = i // 5
+                $ col = i % 5
+                if menu_items[i].number > 0 or menu_items[i].unlocked == True:
+                    hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
+                text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row)
+                use icon_menu_item(menu_items[i], 5+90*(col-(current_page*items_shown)), 175+90*(row-(current_page*items_shown)))
+
+
+screen icon_menu_item(menu_item, xpos=0, ypos=0):
+    frame:
+        background #00000000
+        xpos xpos
+        ypos ypos
+        xsize 90
+        ysize 92
+
+        $ image_zoom = get_zoom(menu_item.get_image(), 82, 81)
+
+        vbox:
+            xpos 0
+            ypos 1
+            xsize 82
+            ysize 81
+            if menu_item.number > 0 or menu_item.unlocked == True:
+                add menu_item.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
+            else:
+                add grayTint(menu_item.get_image() ) xalign 0.5 yalign 0.5 zoom image_zoom
+
+            #text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row) #Should we move this here?
 
 
 #Clothing Menu #Customizable

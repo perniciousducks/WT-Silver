@@ -160,7 +160,7 @@ label update_wr_head_list:
         $ wr_hair.append("curly")
         $ wr_hair.append("playful")
 
-        if lun_reverted:
+        if luna_reverted:
             $ wr_glasses.append("spectrespecs")
 
     if active_girl == "astoria":
@@ -469,8 +469,8 @@ label update_wr_bottoms_list:
         if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
             $ wr_bottoms_skirts.append("skirt_sailor")
         #$ wr_bottoms_skirts.append("skirt_3_belted")
-        #if cc_party_slut_ITEM.unlocked:
-        #    $ wr_bottoms_skirts.append("skirt_party")
+        if cc_party_slut_ITEM.unlocked:
+            $ wr_bottoms_skirts.append("skirt_party")
 
         #Pants
         $ wr_bottoms_pants.append("pants_sport_long")
@@ -817,6 +817,8 @@ label update_wr_underwear_list:
 
         #Bras
         $ wr_bras.append("bra_sport")
+        if cc_party_slut_ITEM.unlocked:
+            $ wr_bras.append("bra_party")
 
         #Panties
         $ wr_panties.append("panties_sport_1")

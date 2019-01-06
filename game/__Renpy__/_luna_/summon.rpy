@@ -28,7 +28,7 @@ label summon_luna:
             jump luna_requests
 
         "-favours-":
-            if gold <= 0 and not lun_reverted:
+            if gold <= 0 and not luna_reverted:
                 m "I don't have any gold..."
                 jump luna_requests
             jump luna_favour_menu
@@ -123,7 +123,7 @@ label summon_luna:
 
 label luna_favour_menu:
     menu:
-        "-Talk to me-" if not lun_reverted:
+        "-Talk to me-" if not luna_reverted:
             jump luna_favour_1
         "-Sit on my lap-" if lun_corruption >= 3 and not luna_reverted:
             jump luna_favour_2

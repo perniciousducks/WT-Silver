@@ -467,7 +467,7 @@ label luna_revert_1: #Reversion event #DONE
     m "Don't you want to stay a little longer?"
     call her_main("I don't think so, sir...","disgust","glance")
 
-    $ lun_reverted = True
+    $ luna_reverted = True
     $ luna_wardrobe_unlocked = False
     $ lun_corruption = -2 #Triggers new intro event.
     $ days_to_luna = 3

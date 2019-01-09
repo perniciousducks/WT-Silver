@@ -206,7 +206,8 @@ label cho_progress_init:
 
         $ first_cho_favor_done = False
 
-
+    if not hasattr(renpy.store,'gave_cho_gift') or reset_persistants:
+        $ gave_cho_gift      = False
 
 
 

@@ -56,7 +56,7 @@ label summon_cho:
             call cho_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
-        "-Gifts-":
+        "-Gifts-" if not gave_cho_gift:
             $ current_category = None
             label cho_gift_menu:
                 python:
@@ -66,7 +66,7 @@ label summon_cho:
                     category_list.append("item_mag_porn")
                     category_list.append("item_butterbeer")
                     category_list.append("item_broom")
-                    category_list.append("box_brown_1")
+                    #category_list.append("box_brown_1")
 
                     if current_category == None:
                         current_category = category_list[0]
@@ -95,7 +95,7 @@ label summon_cho:
 
                 elif isinstance(_return, item_class):
                     call give_cho_gift(_return)
-                    if cho_mood == 0:
+                    if cho_mood != 0:
                         jump cho_gift_menu
                     else:
                         jump cho_requests
@@ -114,6 +114,9 @@ label summon_cho:
                     $ current_page += -1
 
                 jump cho_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_cho_gift:
+            m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump cho_requests
 
         "-Dismiss Her-":
             call cho_main("Good bye, [cho_genie_name].","smile","base","base","R")

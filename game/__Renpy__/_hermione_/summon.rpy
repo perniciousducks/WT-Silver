@@ -140,7 +140,7 @@ label summon_hermione:
                         "To be done."
                         jump hermione_duel_menu
 
-        "-Gifts-":
+        "-Gifts-" if not gave_hermione_gift:
             $ current_category = None
             label hermione_gift_menu:
                 python:
@@ -179,10 +179,10 @@ label summon_hermione:
 
                 elif isinstance(_return, item_class):
                     call give_her_gift(_return)
-                    if her_mood == 0:
-                        jump hermione_requests
-                    else:
+                    if her_mood != 0:
                         jump hermione_gift_menu
+                    else:
+                        jump hermione_requests
 
                 elif _return == "Close":
                     $ current_page = 0
@@ -198,6 +198,9 @@ label summon_hermione:
                     $ current_page += -1
 
                 jump hermione_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_hermione_gift:
+            m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump hermione_requests
 
         "-Dismiss her-":
             if daytime:

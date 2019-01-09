@@ -21,7 +21,7 @@ label summon_luna:
 
     $ hide_transitions = False
     $ luna_busy = True
-
+    $ gave_luna_gift = True #Remove when adding gift texts!
     menu:
         "-Chit Chat-":
             call luna_chitchat
@@ -50,7 +50,7 @@ label summon_luna:
             call lun_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
-        "-Gifts-":
+        "-Gifts-" if not gave_luna_gift:
             $ current_category = None
             label luna_gift_menu:
                 python:
@@ -60,7 +60,7 @@ label summon_luna:
                     category_list.append("item_mag_adult")
                     category_list.append("item_butterbeer")
                     category_list.append("item_plush_owl")
-                    category_list.append("box_brown_3")
+                    #category_list.append("box_brown_3")
 
                     if current_category == None:
                         current_category = category_list[0]
@@ -89,7 +89,7 @@ label summon_luna:
 
                 elif isinstance(_return, item_class):
                     call give_lun_gift(_return)
-                    if lun_mood == 0:
+                    if lun_mood != 0:
                         jump luna_gift_menu
                     else:
                         jump luna_requests
@@ -108,6 +108,10 @@ label summon_luna:
                     $ current_page += -1
 
                 jump luna_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_luna_gift:
+            "Not yet added. WIP!"
+            #m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump luna_requests
 
         "-Never mind-":
 

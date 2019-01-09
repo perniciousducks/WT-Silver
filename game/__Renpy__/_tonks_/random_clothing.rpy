@@ -4,7 +4,7 @@
 label tonks_random_clothing:
 
     $ random_number = renpy.random.randint(1, 20)
-    if random_number in [1,2,3,4,5] and tonks_wear_top and ast_affection >= 2: #Naked
+    if random_number in [1,2,3,4,5,7] and tonks_wear_top and ast_affection >= 2 and ton_friendship >= 5: #Naked
         if not tonks_strip_happened: #First time.
             $ tonks_strip_happened = True
 

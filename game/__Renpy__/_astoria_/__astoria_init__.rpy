@@ -227,6 +227,11 @@ label astoria_progress_init:
         #Stat Screen
         $ ast_training_counter = 0
 
+    if not hasattr(renpy.store,'gave_astoria_gift') or reset_persistants:
+        $ gave_astoria_gift = False
+
+
+
     #Curses on Susan
     if not hasattr(renpy.store,'ag_imperio_susan_OBJ'):
         $ ag_imperio_susan_OBJ = personal_favor()

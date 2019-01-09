@@ -154,6 +154,7 @@ label luna_revert_1: #Reversion event #DONE
     $ luna_xpos = 390
     hide screen genie_main
     $ genie_xpos = 300
+    $ genie_ypos = 0
     $ genie_base = "characters/genie/base/hard.png"
     call gen_main("!!!","grin")
 
@@ -507,6 +508,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     $ luna_xpos = 390
     hide screen genie_main
     $ genie_xpos = 300
+    $ genie_ypos = 0
     $ genie_base = "characters/genie/base/hard.png"
     call gen_main("!!!","grin")
     call lun_main("*Hmmph* At least it isn't small...","base","seductive","angry","stareL")
@@ -1011,6 +1013,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             call her_kneel("...","open_wide_tongue","down_raised")
 
             $ genie_xpos = 450
+            $ genie_ypos = 0
             show screen genie_main
             m "Yes... that's it slut."
             call lun_main("Mmmm, I can see what you like about her...","base","seductive","base","stareL")
@@ -1077,6 +1080,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             $ u_sperm = "characters/hermione/face/auto_16.png"
             $ luna_xpos = 550
             $ genie_xpos = 140 #Covering the area with the desk.
+            $ genie_ypos = 0
             $ luna_l_arm = 1
             $ hermione_kneel_leg = False
             call gen_chibi("hold_dick")

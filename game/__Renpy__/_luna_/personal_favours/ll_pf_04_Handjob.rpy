@@ -43,6 +43,7 @@ label luna_favour_4: ###Luna handjob #DONE
         ">She takes a firm hold of it with her right hand"
         $ luna_r_arm = 3
         $ genie_xpos = 300
+        $ genie_ypos = 0
         $ luna_xpos = 390
         $ genie_base = "characters/genie/base/open.png"
         call gen_main("!!!","grin")
@@ -370,6 +371,7 @@ label luna_favour_4: ###Luna handjob #DONE
             ">She takes a firm hold of it with her right hand"
             $ luna_r_arm = 3
             $ genie_xpos = 300
+            $ genie_ypos = 0
             $ luna_xpos = 390
             $ genie_base = "characters/genie/base/hard.png"
             call gen_main("!!!","grin")
@@ -586,6 +588,7 @@ label luna_favour_4: ###Luna handjob #DONE
             ">She takes a firm hold of it with her right hand"
             $ luna_r_arm = 3
             $ genie_xpos = 300
+            $ genie_ypos = 0
             $ luna_xpos = 390
             $ genie_base = "characters/genie/base/hard.png"
             call gen_main("!!!","grin")

@@ -222,5 +222,7 @@ label susan_progress_init:
         #Stats Screen
         $ sus_curse_counter = 2 #She got cursed twice beforeyou unlock her. Poor girl...
 
+    if not hasattr(renpy.store,'gave_susan_gift') or reset_persistants:
+        $ gave_susan_gift    = False
 
     return

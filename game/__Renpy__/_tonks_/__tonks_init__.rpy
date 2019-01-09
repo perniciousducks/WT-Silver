@@ -263,4 +263,7 @@ label tonks_progress_init:
         $ ton_astoria_date_counter = 0
         $ ton_hermione_date_counter = 0
 
+    if not hasattr(renpy.store,'gave_tonks_gift') or reset_persistants:
+        $ gave_tonks_gift    = False
+
     return

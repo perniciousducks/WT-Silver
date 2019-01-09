@@ -96,7 +96,7 @@ label summon_tonks:
             call nar(">You haven't unlocked this feature yet.")
             jump tonks_requests
 
-        "-Gifts-":
+        "-Gifts-" if not gave_tonks_gift:
             $ current_category = None
             label tonks_gift_menu:
                 python:
@@ -106,7 +106,7 @@ label summon_tonks:
                     category_list.append("item_mag_porn")
                     category_list.append("item_wine") #Add firewhiskey!
                     category_list.append("item_ballgag_and_cuffs")
-                    category_list.append("box_blue_5")
+                    #category_list.append("box_blue_5")
 
                     if current_category == None:
                         current_category = category_list[0]
@@ -151,6 +151,9 @@ label summon_tonks:
                     $ current_page += -1
 
                 jump tonks_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_tonks_gift:
+            m "I already gave her a gift today."
+            jump tonks_requests
 
         "-Never mind-":
             stop music fadeout 1.0

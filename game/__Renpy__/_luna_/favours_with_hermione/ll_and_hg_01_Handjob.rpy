@@ -173,6 +173,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         hide screen genie_main
         $ genie_xpos = 550
+        $ genie_ypos = 0
         $ genie_base = "characters/genie/base/open.png"
         call gen_main("!!!","grin")
         call lun_main("Just admit it...","base","mad","sad","stareL")
@@ -567,6 +568,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ hermione_xpos = 590
         $ hermione_ypos = 390
         $ genie_xpos = 550
+        $ genie_ypos = 0
         show screen genie_main
 
         $ luna_wear_top = False
@@ -876,6 +878,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ hermione_xpos = 590
         $ hermione_ypos = 390
         $ genie_xpos = 550
+        $ genie_ypos = 0
         $ genie_base = "characters/genie/base/hard.png"
 
         call her_chibi("sit_naked","mid","base")

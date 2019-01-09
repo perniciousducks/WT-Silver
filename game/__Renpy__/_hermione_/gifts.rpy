@@ -7,6 +7,8 @@ label give_her_gift(gift_item):
     with d5
     call her_main(xpos="mid",ypos="base",trans="d5")
 
+    $ gave_hermione_gift = True
+
     if gift_item == lollipop_ITEM:#candy
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A lollipop?","base","base")

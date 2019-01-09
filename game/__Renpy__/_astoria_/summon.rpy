@@ -88,7 +88,7 @@ label summon_astoria:
             call ast_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
-        "-Gifts-":
+        "-Gifts-" if not gave_astoria_gift:
             $ current_category = None
             label astoria_gift_menu:
                 python:
@@ -98,7 +98,7 @@ label summon_astoria:
                     category_list.append("item_mag_girls")
                     category_list.append("item_butterbeer")
                     category_list.append("item_anal_lube")
-                    category_list.append("box_blue_3")
+                    #category_list.append("box_blue_3")
 
                     if current_category == None:
                         current_category = category_list[0]
@@ -127,10 +127,7 @@ label summon_astoria:
 
                 elif isinstance(_return, item_class):
                     call give_ast_gift(_return)
-                    if ast_mood == 0:
-                        jump astoria_gift_menu
-                    else:
-                        jump astoria_requests
+                    jump astoria_requests
 
                 elif _return == "Close":
                     $ current_page = 0
@@ -146,6 +143,9 @@ label summon_astoria:
                     $ current_page += -1
 
                 jump astoria_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_astoria_gift:
+            m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump astoria_requests
 
         "-Dismiss her-":
             if daytime:

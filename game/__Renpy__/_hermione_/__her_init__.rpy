@@ -532,6 +532,9 @@ label her_progress_init:
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
 
+    if not hasattr(renpy.store,'gave_hermione_gift') or reset_persistants:
+        $ gave_hermione_gift = False
+
 
     ### Hermione Favours ###
 

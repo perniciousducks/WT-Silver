@@ -31,7 +31,7 @@ label summon_susan:
 
     $ hide_transitions = False
     $ susan_busy = True
-
+    $ gave_susan_gift = True #Remove when adding gift texts!
     menu:
         "-Talk-":
             if not chitchated_with_susan:
@@ -58,7 +58,7 @@ label summon_susan:
             call nar(">You haven't unlocked this feature yet.")
             jump susan_requests
 
-        "-Gifts-":
+        "-Gifts-" if not gave_susan_gift:
             $ current_category = None
             label susan_gift_menu:
                 python:
@@ -68,7 +68,7 @@ label summon_susan:
                     category_list.append("item_mag_adult")
                     category_list.append("item_butterbeer")
                     category_list.append("item_plush_owl")
-                    category_list.append("box_red_1")
+                    #category_list.append("box_red_1")
 
                     if current_category == None:
                         current_category = category_list[0]
@@ -97,7 +97,7 @@ label summon_susan:
 
                 elif isinstance(_return, item_class):
                     call give_sus_gift(_return)
-                    if sus_mood == 0:
+                    if sus_mood != 0:
                         jump susan_gift_menu
                     else:
                         jump susan_requests
@@ -116,6 +116,10 @@ label summon_susan:
                     $ current_page += -1
 
                 jump susan_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_susan_gift:
+            "Not yet added. WIP!"
+            #m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump susan_requests
 
         "-Dismiss her-":
             if daytime:

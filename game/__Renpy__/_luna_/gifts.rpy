@@ -8,24 +8,32 @@ label give_lun_gift(gift_item):
     call lun_main(xpos="mid",ypos="base",trans="d5")
 
     if gift_item == lollipop_ITEM:
-        call give_gift(">You give the lollipop to Luna...",gift_item)
-        #Add text
+        lun "A lollipop?"
+        call give_gift(">You give the lollipop to Luna...", gift_item)
+        lun "My father always believed that you should always have something sugary around in case any baby unicorns come to visit."
+        lun "Thank you, [lun_genie_name]."
 
     if gift_item == chocolate_ITEM:
-        call give_gift(">You give the chocolate to Luna...",gift_item)
-        #Add text
+        lun "Chocolate?"
+        call give_gift(">You give the chocolate to Luna...", gift_item)
+        lan "Aaah, I heard these helps with dementia... Or was it Dementors?"
 
     if gift_item == plush_owl_ITEM:
-        call give_gift(">You give the plush owl to Luna...",gift_item)
-        #Add text
+        lun "A plush owl?"
+        call give_gift(">You give the owl plushie to Luna...", gift_item)
+        lun "I love owls... Always had a few around me growing up, delivering the newspaper my father publishes."
 
     if gift_item == butterbeer_ITEM:
-        call give_gift(">You give the butterbeer to Luna...",gift_item)
-        #Add text
+        lun "Butterbeer?"
+        call give_gift(">You give the bottle to Luna...", gift_item)
+        lun "How did you know? I didn't wear my cork necklace today."
+        lun "Thank you, [lun_genie_name]."
 
     if gift_item == science_mag_ITEM:
-        call give_gift(">You give the educational magazine to Luna...",gift_item)
-        #Add text
+        lun "Magical creatures weekly?"
+        call give_gift(">You give an assortment of educational magazines to Luna...", gift_item)
+        lun "Thestrals and their link with death..."
+        lun "Interesting..."
 
     if gift_item == girls_mag_ITEM:
         call give_gift(">You give the girls magazine to Luna...",gift_item)

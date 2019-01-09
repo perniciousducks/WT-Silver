@@ -251,4 +251,7 @@ label luna_progress_init:
         $ lun_genie_name = "Old man"
         $ luna_name = "Miss Lovegood"
 
+    if not hasattr(renpy.store,'gave_luna_gift') or reset_persistants:
+        $ gave_luna_gift     = False
+
     return

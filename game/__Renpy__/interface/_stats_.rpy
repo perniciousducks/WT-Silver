@@ -368,8 +368,8 @@ screen tonks_stat_menu:
 
             vbox:
                 use stat_bar(int(69/6.9), "-Lust-", "", 69)
-                #use stat_bar(int(sna_support/1.5), "-Support-", "", tonks_support) #Number of Tonks events.
-                #use stat_bar(int(sna_friendship/10), "-Friendship-", "", tonks_friendship)   #max is 100.
+                #use stat_bar(int(ton_support/1.5), "-Support-", "", ton_support) #Number of Tonks events.
+                use stat_bar(int(ton_friendship/10), "-Friendship-", ton_friendship_word, ton_friendship)   #max is 100.
                 #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
                 use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
@@ -406,6 +406,7 @@ label update_stats:
     #$ ast_cuteness_word_list = ["Ugly Duckling", "Swot", "", "", "", "", "", "Cutypie", "", "", ""]
     #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
 
+
     #Snape
     $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
     $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
@@ -413,7 +414,11 @@ label update_stats:
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
     $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
 
+
     #Tonks
+    $ ton_friendship_word_list = ["Unknown", "inferior", "employee", "advisor", "trusted advisor", "Acquaintance", "friend", "Girlfriend", "Partner in crime", "Bonnie & Clyde", "Master & Slave"]
+    $ ton_friendship_word = ton_friendship_word_list[int(ton_friendship/10)]
+
     call tonks_clothing_level
     $ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
     $ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]

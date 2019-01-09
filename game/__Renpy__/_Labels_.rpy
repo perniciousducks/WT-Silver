@@ -194,6 +194,14 @@ label reset_day_flags:
     $ phoenix_is_petted = False
     $ searched  = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
 
+    #Gifting reset
+    $ gave_hermione_gift = False
+    $ gave_luna_gift     = False
+    $ gave_astoria_gift  = False
+    $ gave_susan_gift    = False
+    $ gave_cho_gift      = False
+    $ gave_tonks_gift    = False
+
     return
 
 label reset_day_and_night_flags:
@@ -388,7 +396,7 @@ label play_music(music=""):
 
     if music in ["boss_theme"]:
         play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
-    
+
     if music in ["boss_card_theme"]:
         play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1
 

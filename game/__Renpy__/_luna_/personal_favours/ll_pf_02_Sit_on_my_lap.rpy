@@ -1003,7 +1003,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call cum_block
 
                         g4 "Argh!"
-                        call lun_main(".....","mad","down","base","sad",tears="crying")
+                        call lun_main(".....","mad","down","base","down",tears="crying")
 
                         show screen blkfade
                         hide screen luna_main

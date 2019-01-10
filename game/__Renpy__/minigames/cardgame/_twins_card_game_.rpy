@@ -18,6 +18,7 @@ label twins_first_duel:
     
     hide screen blkfade
     stop music fadeout 1
+    
     if not twins_first_win:
         twi "No way!"
         ger "You must've been cheating."
@@ -43,10 +44,24 @@ label twins_first_duel:
     jump main_room
     
 label twins_second_duel:
-    call setup_deck(twins_first_deck)
+    if twins_cards_stocked == False:
+        m "(I need to wait for an owl from them before we can duel again)"
+        jump twins_duel_menu
+                                
+    fre "Good luck."
+    ger "You'll need it."
 
-    call play_music("grape_soda")
+    call setup_deck(twins_second_deck)
     $ response_card = ""
+    
+    play music "music/vs_twins.ogg" fadein 1.0
+    play sound "sounds/Genie_VS_Twins.mp3"
+    show screen genie_vs_twins
+    pause 1
+    show screen move_twins
+    pause 4
+    hide screen move_twins
+    hide screen genie_vs_twins
     
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
@@ -56,6 +71,19 @@ label twins_second_duel:
         if response_card == "Close":
             jump twins_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
+        if response_card == "AfterEnemy":
+            $ volume = _preferences.volumes['music']
+            $ _preferences.volumes['music'] *= .5
+            # Prevents volume to change again when using rollback
+            $ renpy.block_rollback()
+            $ rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
+            #$ rnd_twin = renpy.random.choice = [fre, goe]
+            
+            if renpy.random.randint(0, 1) == 0:
+                fre "[rnd_text!t]"
+            else:
+                ger "[rnd_text!t]"
+            $ _preferences.volumes['music'] = volume
     
     if not check_winner():
         jump twins_duel_lost
@@ -63,8 +91,15 @@ label twins_second_duel:
     hide screen blkfade
     stop music fadeout 1
     if not twins_second_win:
-        twi "No way!"
-        ger "You must've been cheating."
+        twi "I feel like we should have foreseen this."
+        ger "I blame Trelawney on this, she said that luck would be on our side today..."
+        fre "Well, a promise is a promise. Here's your reward..."
+        #
+        #
+        #Weekly Shop Profits
+        #Token
+        #Card
+        #
         $ twins_second_win = True
         pass
     else:
@@ -104,3 +139,11 @@ label twins_duel_cancel:
     "You return to your office."
     
     jump main_room
+    
+screen genie_vs_twins:
+    zorder 8
+    add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
+    add "images/cardgame/VS/genie_01.png" at move_in(-300, 3)
+screen move_twins:
+    zorder 8
+    add "images/cardgame/VS/snape_01.png" at move_in(300, 1)

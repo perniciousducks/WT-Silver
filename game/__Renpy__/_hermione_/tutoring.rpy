@@ -396,7 +396,7 @@ label l_tutoring:
 
             m "You enjoyed it too, so don't act all innocent."
 
-            $ her_mood = +7
+            $ her_mood += 7
             $ d_flag_01 = False
         else:
             m "You enjoyed it too."

@@ -111,7 +111,7 @@ label start_ht:
     label choose_your_difficulty:
     menu:
         "-Play with easy difficulty-":
-            ">Increased gold and Slythering-points gain. You will also always find items or gold in your cupboard."
+            ">Increased gold and Slytherin-points gain. You will also always find items or gold in your cupboard."
             ">Hermione's bad-mood will decrease faster, and books can be read in one go."
             menu:
                 "-Confirm-":
@@ -129,7 +129,7 @@ label start_ht:
                 "-Choose something else-":
                     jump choose_your_difficulty
         "-Play with hardcore difficulty-" if persistent.game_complete:
-            ">Hardcore difficulty. Your gold and Slythering-points gain has been lowered.\n>All hints and guides have been disabled."
+            ">Hardcore difficulty. Your gold and Slytherin-points gain has been lowered.\n>All hints and guides have been disabled."
             ">Additional rewards and dialogue choices have been added."
             menu:
                 "-Confirm-":

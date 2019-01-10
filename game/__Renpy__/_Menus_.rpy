@@ -369,6 +369,11 @@ init -2 python:
         y = sizes[1]
 
         if x > y:
+            if y > ysize:
+                return ysize / y
+
             return xsize / x
         else:
+            if x > xsize:
+                return xsize / x
             return ysize / y

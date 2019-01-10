@@ -705,7 +705,7 @@ label whose_points:
     hide screen hermione_main
     call play_music("playful_tension")
 
-    call lun_main("That's cheating, I didnt even get to finish! ","scream","mad","angry","mid")
+    call lun_main("That's cheating, I didn't even get to finish! ","scream","mad","angry","mid")
     hide screen luna_main
 
     m "Well, that's all for this episode of whose points is it anyway."
@@ -1213,7 +1213,7 @@ label a_spaced_out_conversation:
 
     call update_snape
     jump enter_room_of_req
-    
+
 label forgotten_lets_have_sex:
     call hide_room_req
     show screen main_room
@@ -1429,7 +1429,7 @@ label forgotten_lets_have_sex:
     call her_head("It doesn't matter...","soft","ahegao")
     call her_head("{size=-7}You can lick it off later...{/size}","soft","ahegao")
     hide screen luna
-    
+
     $ face_on_cg = True
     call h_update_hair
 
@@ -1455,7 +1455,7 @@ label forgotten_lets_have_sex:
     stop music fadeout 4.0
 
     $ hg_pf_LetsHaveSex_OBJ.points += 1
-    
+
     hide screen luna
     hide screen luna_chibi
     call her_chibi("leave")

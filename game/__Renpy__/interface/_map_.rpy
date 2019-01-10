@@ -30,14 +30,15 @@ label map_init:
 screen map_screen:
     zorder 4
 
-    $ UI_xpos_offset = 180
+    $ UI_xpos_offset = 195
+    $ UI_ypos_offset = 105
 
-    add "interface/map/map.png" xpos UI_xpos_offset ypos 0
+    add "interface/map/map.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom (0.8/scaleratio) #Scaled to 672x480
 
     #Office
     imagebutton:
         xpos 0 +UI_xpos_offset
-        ypos 0
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_office_idle.png"
         hover "interface/map/room_office_hover.png"
@@ -47,8 +48,8 @@ screen map_screen:
 
     #Gryffindor
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_gryffindor_idle.png"
         hover "interface/map/room_gryffindor_hover.png"
@@ -56,8 +57,8 @@ screen map_screen:
 
     #Ravenclaw
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_ravenclaw_idle.png"
         hover "interface/map/room_ravenclaw_hover.png"
@@ -65,8 +66,8 @@ screen map_screen:
 
     #Hufflepuff
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_hufflepuff_idle.png"
         #hover "interface/map/room_hufflepuff_hover.png"
@@ -74,8 +75,8 @@ screen map_screen:
 
     #Slytherin
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_slytherin_idle.png"
         #hover "interface/map/room_slytherin_hover.png"
@@ -85,8 +86,8 @@ screen map_screen:
 
     #Weasley Store
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_weasley_store_idle.png"
         hover "interface/map/room_weasley_store_hover.png"
@@ -94,8 +95,8 @@ screen map_screen:
 
     #Clothing Store
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_clothing_store_idle.png"
         hover "interface/map/room_clothing_store_hover.png"
@@ -103,8 +104,8 @@ screen map_screen:
 
     #Potions
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_potions_idle.png"
         if store_intro_done:
@@ -114,8 +115,8 @@ screen map_screen:
     #Room of Requirement
     if unlocked_7th:
         imagebutton:
-            xpos 0+UI_xpos_offset
-            ypos 0
+            xpos 0 +UI_xpos_offset
+            ypos 0 +UI_ypos_offset
             focus_mask True
             if first_time_7th == False:
                 idle "interface/map/room_ror_idle.png"
@@ -129,8 +130,8 @@ screen map_screen:
 
     #Lake
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_boat_house_idle.png"
         hover "interface/map/room_boat_house_hover.png"
@@ -138,8 +139,8 @@ screen map_screen:
 
     #Forest (Temporary until we have a map for the nothern section!)
     imagebutton:
-        xpos 0+UI_xpos_offset
-        ypos 0
+        xpos 0 +UI_xpos_offset
+        ypos 0 +UI_ypos_offset
         focus_mask True
         idle "interface/map/room_north_courtyard_idle.png"
         hover "interface/map/room_north_courtyard_hover.png"
@@ -148,8 +149,8 @@ screen map_screen:
     #Attic
     if sealed_scroll_ITEM.unlocked and not tentacle_owned: #Open, not visited yet
         imagebutton:
-            xpos 0+UI_xpos_offset
-            ypos 0
+            xpos 0 +UI_xpos_offset
+            ypos 0 +UI_ypos_offset
             focus_mask True
             idle "interface/map/room_attic_closed_idle.png"
             hover "interface/map/room_attic_closed_hover.png"
@@ -157,12 +158,16 @@ screen map_screen:
 
     if sealed_scroll_ITEM.unlocked and tentacle_owned: #Open
         imagebutton:
-            xpos 0+UI_xpos_offset
-            ypos 0
+            xpos 0 +UI_xpos_offset
+            ypos 0 +UI_ypos_offset
             focus_mask True
             idle "interface/map/room_attic_open_idle.png"
             hover "interface/map/room_attic_open_hover.png"
             action Return("map_attic")
+
+    #Vertical map lines overlay
+    add "interface/map/map_lines_vert.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom (0.8/scaleratio)
+
 
 
 label set_her_map_location(location = ""):

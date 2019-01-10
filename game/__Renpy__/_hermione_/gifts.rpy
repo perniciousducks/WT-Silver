@@ -1,6 +1,17 @@
 
 
 #Hermione Gift Responses
+label give_her_quest_item: #(quest_item)
+
+    $ gave_hermione_gift = True
+
+    if quest_item == sealed_scroll_ITEM:
+        jump tentacle_scene_intro
+
+
+
+
+
 
 label give_her_gift(gift_item):
     hide screen hermione_main

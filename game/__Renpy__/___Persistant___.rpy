@@ -35,7 +35,6 @@ label __init_variables:
     ###MISC
     if not hasattr(renpy.store,'unlocked_xmas_deco'): #important!
         $ unlocked_7th = False
-        $ found_puzzle_1 = False
         $ charName = "genie"
         $ unlocked_xmas_deco = False
 
@@ -66,7 +65,7 @@ label __init_variables:
         $ susan_scaleratio = 2
         $ cho_scaleratio = 2
 
-    ###CGs
+    #CGs
     if not hasattr(renpy.store,'ccg_folder'): #important!
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
@@ -138,9 +137,10 @@ label __init_variables:
     #Wardrobe
     call wardrobe_init
 
-    #Store
+    #Items
     call store_init
     call store_items_init
+    call quest_items_init
 
     #Minigames & Mirror Stories
     call dark_room_init

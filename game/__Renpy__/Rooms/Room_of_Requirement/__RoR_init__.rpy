@@ -68,8 +68,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_ADR'):
         $ mr_ev_ADR = mirror_stories(
-                name = "A Dark Room",
-                story_description = "A minigame inspired by the textbased game \"A Dark Room\".",
+                name = "A Dark Room (Incomplete)",
+                story_description = "A minigame inspired by the textbased game \"A Dark Room\".\n>WIP! It is currently incomplete but in a playable state.",
                 start_label = "start_dark_room_game",
                 authors = ["TeamSilver"],
                 categories= ["minigame"],
@@ -90,12 +90,12 @@ label __init_variables:
 
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_AXmasTale)
-    $ mr_evs_list.append(mr_ev_ADR)
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
     $ mr_evs_list.append(mr_ev_ABTTD)
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
+    $ mr_evs_list.append(mr_ev_ADR)
 
     $current_page = 0
 

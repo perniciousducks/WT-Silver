@@ -31,7 +31,8 @@ label job_1:
 
     $ hermione_busy = True
     $ current_job = 1
-    jump day_resume
+
+    jump main_room
 
 label maid_responses:
     $ payment = renpy.random.randint(10, 25)
@@ -117,7 +118,8 @@ label job_2:
 
     $ hermione_busy = True
     $ current_job = 2
-    jump day_resume
+
+    jump main_room
 
 label barmaid_responses:
     $ payment = renpy.random.randint(20, 50)
@@ -186,7 +188,8 @@ label job_3:
 
     $ hermione_busy = True
     $ current_job = 3
-    jump day_resume
+
+    jump main_room
 
 label gryffindor_cheer_responses:
     $ payment = renpy.random.randint(40, 80)
@@ -324,7 +327,8 @@ label job_4:
 
     $ hermione_busy = True
     $ current_job = 4
-    jump day_resume
+
+    jump main_room
 
 label slytherin_cheer_responses:
     $ payment = renpy.random.randint(50, 100)

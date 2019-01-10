@@ -47,7 +47,7 @@ label store_items_init:
 
     ### Scroll Items ###
     if not hasattr(renpy.store,'sealed_scroll_ITEM'):
-        $ sealed_scroll_ITEM = scroll_class(id="sealed_scroll",   name="Forbidden Scroll",  cost=300,   type="scroll", image="item_scroll_sealed", description=">")
+        $ sealed_scroll_ITEM = scroll_class(id="sealed_scroll",   name="Forbidden Scroll",  cost=300,   type="scroll", image="item_scroll_sealed", description=">Quest Item!")
         $ scroll_1_ITEM = scroll_class(id="scroll_1",   name="The room",           cost=1,   type="scroll", image="item_scroll", scroll_image="1", comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."])
         $ scroll_2_ITEM = scroll_class(id="scroll_2",   name="The calendar",       cost=2,   type="scroll", image="item_scroll", scroll_image="2", comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realized how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."])
         $ scroll_3_ITEM = scroll_class(id="scroll_3",   name="The girl",           cost=10,  type="scroll", image="item_scroll", scroll_image="3", comments=["A couple of very early drawings of Hermione..."])
@@ -161,6 +161,11 @@ label store_items_init:
         green_dye_ITEM, dark_green_dye_ITEM, blue_dye_ITEM, dark_blue_dye_ITEM, purple_dye_ITEM,
         pink_dye_ITEM, gray_dye_ITEM, black_dye_ITEM, white_dye_ITEM,
         ]
+
+    #Quest Items
+    if not hasattr(renpy.store,'puzzle_box_ITEM'):
+        $ puzzle_box_ITEM = item_class(id="puzzle_box",   name="Puzzle Box",  type="quest item", image="icon_puzzle", description=">Quest Item!")
+
 
     #Hermione Outfits.
     if not hasattr(renpy.store,'hg_outfit_maid_ITEM'):

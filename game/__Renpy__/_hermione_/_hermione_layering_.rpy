@@ -649,6 +649,7 @@ label update_her_body:
     $ hermione_breasts = "characters/hermione/body/breasts/"+str(h_breasts)+".png"
 
     $ hermione_left_arm = "characters/hermione/body/arms/left/"+str(h_left_arm)+".png"
+    $ hermione_right_arm = "characters/hermione/body/arms/right/"+str(h_right_arm)+".png"
 
     #Hermione Ass
     if hermione_perm_expand_ass or hermione_expand_ass: #Expanded Ass

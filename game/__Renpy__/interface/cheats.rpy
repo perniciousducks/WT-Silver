@@ -183,7 +183,7 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Solve the slider puzzle-" if found_puzzle_1 and not unlocked_7th:
+        "-Solve the slider puzzle-" if sealed_scroll_ITEM.unlocked == True and unlocked_7th == False:
             $ unlocked_7th = True
             jump open_pyzzle_box
 

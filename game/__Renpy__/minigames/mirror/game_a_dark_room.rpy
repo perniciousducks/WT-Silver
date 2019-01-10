@@ -19,11 +19,25 @@ label start_dark_room_game:
 
     pause 2
 
+    label dark_room_game_start_menu:
     menu:
         "-Start a new Game-":
             call reset_dark_room_init
             jump dark_room_main
         "-Continue-" if DRgame.day > 1 and not DRgame.game_over:
+            jump dark_room_load_save
+        "-Get coin rewards-" if DRgame.day > 1 and not DRgame.game_over:
+            ">You'll get gold for each day you have survived in the game.\n>This will delete your current Save!"
+            menu:
+                "Would you like to delete your save and get gold coins for it?"
+                "-Yes-":
+                    $ current_payout = DRgame.day*2
+                    $ gold += current_payout
+                    ">You have received [current_payout] gold.\n>Thank you for playing \"A Dark Room\"."
+                    call reset_dark_room_init
+                    jump dark_room_game_start_menu
+                "-No-":
+                    jump dark_room_game_start_menu
             jump dark_room_load_save
         "-Never mind-":
             jump enter_room_of_req
@@ -506,10 +520,10 @@ label DRgame_random_event:
 
 
 screen dark_room:
-    add "images/rooms/main_room/main_room_night.png"
+    add "images/rooms/_bg_/main_room_night.png"
 
-    add "images/rooms/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/doors/door_idle.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/fireplace/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
     if read_book:
         if DRgame.fire == 0:
             add "reading" xpos 350 ypos 205
@@ -541,8 +555,8 @@ screen DRgame_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/door.png"
-        hover "images/rooms/main_room/door_hover.png"
+        idle "images/rooms/_objects_/doors/door_idle.png"
+        hover "images/rooms/_objects_/doors/door_hover.png"
         action [Hide("DRgame_menu"), Jump("DRgame_door")]
 
     #Fireplace
@@ -552,8 +566,8 @@ screen DRgame_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/fireplace.png"
-        hover "images/rooms/main_room/fireplace_hover.png"
+        idle "images/rooms/_objects_/fireplace/fireplace_idle.png"
+        hover "images/rooms/_objects_/fireplace/fireplace_hover.png"
         action [Hide("DRgame_menu"), Jump("DRgame_fireplace")]
 
     #Chair left chair_left

@@ -123,7 +123,7 @@ label update_outfit_layers:
     if not hasattr(renpy.store,'hg_standart_school_ITEM'):
         $ hg_standart_school_ITEM = outfit_class()
     $ hg_standart_school_ITEM.id = "hg_standart_school"
-    $ hg_standart_school_ITEM.outfit_layers = ["../bottoms/base/skirt_2.png", "../tops/base/top_1.png"]
+    $ hg_standart_school_ITEM.outfit_layers = ["../bottoms/base/skirt_2.png", "../tops/base/top_1_g.png"]
     $ hg_standart_school_ITEM.breast_layer = "breasts_nipfix"
 
     if not hasattr(renpy.store,'hg_standart_school_noshirt_ITEM'):

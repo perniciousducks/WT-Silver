@@ -141,6 +141,7 @@ label summon_hermione:
                         jump hermione_duel_menu
 
         "-Gifts-" if not gave_hermione_gift:
+            call update_quest_items
             $ current_category = None
             label hermione_gift_menu:
                 python:
@@ -166,7 +167,7 @@ label summon_hermione:
                     if current_category == "item_plush_owl":
                         item_list.extend(toy_gift_list)
                     if current_category == "box_blue_1":
-                        item_list.extend(toy_gift_list)
+                        item_list.extend(her_quest_items_list)
 
                     #item_list = list(filter(lambda x: x.unlocked==False, item_list))
                 show screen icon_menu(item_list, category_list, "Gifts & Quest Items", xpos=257, ypos=50)
@@ -178,7 +179,17 @@ label summon_hermione:
                     $ current_category = _return
 
                 elif isinstance(_return, item_class):
-                    call give_her_gift(_return)
+                    if _return in her_quest_items_list:
+                        menu:
+                            "Do you really want to use this quest item?"
+                            "\"(Yes, let's do it!)\"":
+                                $ quest_item = _return
+                                jump give_her_quest_item
+                            "\"(Not right now.)\"":
+                                jump hermione_gift_menu
+                    else:
+                        call give_her_gift(_return)
+
                     if her_mood != 0:
                         jump hermione_gift_menu
                     else:

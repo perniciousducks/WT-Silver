@@ -1,6 +1,18 @@
 
 label tentacle_scene_intro: #Public tentacle scene
+    call play_music("playful")
+    call play_sound("door")
+
+    hide screen hermione_main
     show screen blkfade
+    with d9
+
+    pause 2
+
+    centered "{size=+7}{color=#cbcbcb}Herbology{/color}{/size}"
+
+    pause 2
+
     spo "Today class, I have been requested by the Headmaster to teach you about a plant called Devil's Snare."
     spo "This is an incredibly dangerous plant, known to constrict and kill it's prey with it's fast and powerful tendrils."
     spo "They are found naturally in caves and swamps as they like dark and damp places and hate sunlight."
@@ -51,63 +63,70 @@ label tentacle_scene_intro: #Public tentacle scene
     ">You move a tentacle with a mouth on the end of it to her right breast and latch onto it."
     her "Please, I'm not going to be able to stay still if this keeps going"
     ">The three tentacles at the entrance of her vagina suddenly thrust into her"
+
     $ tentacle_cosmetic = True
+
     if lock_public_favors == False:
         jump tentacle_1
     jump tentacle_2
 
 
 label tentacle_1: #Public tentacle scene
+    call play_music("hermione_theme")
+    pause.8
+
     $ cg("images/CG/p1.png")
     hide screen blkfade
-    with d3
+    with d9
+    call ctc
+
     her "What on earth is going on?"
     ">You start pumping the tentacles in her vagina slowly"
     $ cg("images/CG/p2.png")
     her "Oh..."
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
-    m "Enjoying yourself slut?"
+    gen "Enjoying yourself slut?"
     her "Professor!"
     spo "Just relax dear. I'm sure it'll let you go soon."
-    m "That's right, do as your dear Professor says, just relax."
+    gen "That's right, do as your dear Professor says, just relax."
     her "How am I supposed to relax?!"
-    m "Well if you're not going to relax, at least try to enjoy it..."
+    gen "Well if you're not going to relax, at least try to enjoy it..."
     ">You start rotating the tentacles in her vagina."
     $ cg("images/CG/p3.png")
     her "..."
     spo "What's wrong Miss Granger?"
     her "It's nothing... it's just very uncomfortable..."
-    m "Are you sure you're uncomfortable? Judging by how wet you are I'd say that you're the opposite."
-    m "Someone might even think that you were enjoying this."
+    gen "Are you sure you're uncomfortable? Judging by how wet you are I'd say that you're the opposite."
+    gen "Someone might even think that you were enjoying this."
     her "They wouldn't..."
     mal "Who's she talking to?"
     mal2 "I've got no idea."
-    m "Are you sure? Do you think you'll be able to stifle every moan?"
+    gen "Are you sure? Do you think you'll be able to stifle every moan?"
     ">You push deeply into her with the 3 tentacles."
     her "!!!"
     $ cg("images/CG/p4.png")
-    m "Do you think you'll be able to stop your hips from bucking?"
+    gen "Do you think you'll be able to stop your hips from bucking?"
     ">You give her another powerful thrust."
     her "{size=-6}mmmm{/size}"
-    m "Do you really think that you'll be able to stop yourself from begging me for more?"
+    gen "Do you really think that you'll be able to stop yourself from begging me for more?"
     ">You increase the speed of the tentacles"
     her "{size=-3}mmmmmmm{/size}"
-    m "I don't think you will. In fact I know that you won't."
-    m "Because I know what you are. A slut."
-    m "A slut who can only think about getting off when she's being fucked by a monster in front of her classmates."
+    gen "I don't think you will. In fact I know that you won't."
+    gen "Because I know what you are. A slut."
+    gen "A slut who can only think about getting off when she's being fucked by a monster in front of her classmates."
     ">You stop moving the tentacles."
-    m "Now tell them what you are."
+    gen "Now tell them what you are."
     her "W-w-what? No please, just don't stop."
-    m "Tell them what you are and I'll keep going."
+    gen "Tell them what you are and I'll keep going."
     her "I can't... Just keep going..."
-    m "Say it."
+    gen "Say it."
     her "{size=-3}I'm a slut.{/size}"
     ">You start rotating the tentacles in her vagina ever so slowly."
-    m "What was that? I don't think that they heard you. Why don't you say it once more, with feeling."
+    gen "What was that? I don't think that they heard you. Why don't you say it once more, with feeling."
     her "I'm a slut!"
     ">You begin fiercely fucking her vagina."
     her "Yes, yes, I'm a fucking slut. Fuck me harder."
-    m "See that wasn't so hard now was it. How about I give you a little reward."
+    gen "See that wasn't so hard now was it. How about I give you a little reward."
     her "Wha-"
     $ cg("images/CG/p5.png")
     ">You thrust a ribbed tentacle deeply into her asshole in one motion."
@@ -120,11 +139,11 @@ label tentacle_1: #Public tentacle scene
     ">This only spurs you on to fuck her harder."
     her "Please... no more... I'll faint..."
     ">You start to feel a strange energy flowing through the vines, moving towards the tips."
-    m "This is it girl, get ready."
+    gen "This is it girl, get ready."
     her "...ready?..."
     $ cg("images/CG/p7.png")
     ">With one final surge you release the pent up energy in a surge of white sap all over her."
-    m "Oh gods, it's like each vine is cumming. This is amazing..."
+    gen "Oh gods, it's like each vine is cumming. This is amazing..."
     ">The sensations proved to much for hermione and she faints, going limp in your tentacles."
     mal "What a slut..."
     fem "I told you so."
@@ -136,10 +155,16 @@ label tentacle_1: #Public tentacle scene
     spo "Quickly, someone take her to the hospital."
     mal "Should we cover her up?"
     spo "Oh yes, I suppose you should."
-    $ tentacle_cosmetic = False
+
     hide screen cg
+    show screen blkfade
+    with d9
+    pause.8
+
+    $ tentacle_cosmetic = False
     $ hermione_busy = True
-    jump day_resume
+
+    jump main_room
 
     #enter vagina
     #put flower to ear
@@ -150,51 +175,56 @@ label tentacle_1: #Public tentacle scene
     #have her talk about how enjoyable it is
 
 label tentacle_2: #Enjoyable tentacle scene
+    call play_music("hermione_theme")
+    pause.8
+
     $ cg("images/CG/p1.png")
     hide screen blkfade
-    with d3
+    with d9
+    call ctc
+
     her "What the hell kind of plant is this?"
     ">You start pumping the tentacles in her vagina slowly"
     her "Oh..."
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
-    m "Enjoying yourself [hermione_name]?"
+    gen "Enjoying yourself [hermione_name]?"
     her "Profes-"
     $ cg("images/CG/e2.png")
     ">You quickly force another flowered tentacle into her mouth"
-    m "Now, now [hermione_name], you don't want anyone to find out that how you've been earning so many points now do you?"
+    gen "Now, now [hermione_name], you don't want anyone to find out that how you've been earning so many points now do you?"
     her "mmmmmoo"
-    m "Well then just do what Miss Sprout says and stay still."
-    m "Just act like this is some horrible accident, that you are just a victim."
-    m "Instead of the slut that you really are..."
+    gen "Well then just do what Miss Sprout says and stay still."
+    gen "Just act like this is some horrible accident, that you are just a victim."
+    gen "Instead of the slut that you really are..."
     ">You start to rotate the tentacles in her vagina."
-    m "mmmmmm"
+    gen "mmmmmm"
     mal "Wow, I think she's starting to enjoy it."
     fem "Hermione? No way she's probably just trying to scream."
     mal2 "I don't know, she doesn't look like she hates it"
     ">You increase the speed of the tentacles in her vagina."
-    m "Hear that [hermione_name]? Your classmates are starting to realise what a whore you really are."
+    gen "Hear that [hermione_name]? Your classmates are starting to realise what a whore you really are."
     her "mmmoo mmmeey mmnnttt"
-    m "What's that? Faster?"
+    gen "What's that? Faster?"
     $ cg("images/CG/e3.png")
     ">You begin fucking Hermione in earnest"
     her "mmmmm..."
     "The sensation of fucking Hermione in two different holes is almost overwhelming"
-    m "I bet you are loving every second of this..."
-    m "Being fucked in front of your class mates."
-    m "Trying to pretend that you hate it."
+    gen "I bet you are loving every second of this..."
+    gen "Being fucked in front of your class mates."
+    gen "Trying to pretend that you hate it."
     ">You move a ridged tentacle towards her ass"
     her "mm eehh oorr mmmnooo!"
     $ cg("images/CG/e4.png")
     ">You enter her tight ass. The feeling of being in every hole at once is incredible."
     her "mmmmmmmm"
     ">Hermione barely manages a groan. She is being overwhelmed by the shear amount of pleasure that she is receiving."
-    m "Admit it. You're loving this aren't you."
-    m "Being made to cum in front of you classmates like the slut you are."
-    m "Go on say it. Tell me what you are."
+    gen "Admit it. You're loving this aren't you."
+    gen "Being made to cum in front of you classmates like the slut you are."
+    gen "Go on say it. Tell me what you are."
     her "hmmm aaaaa hhhhhhuuuttt"
-    m "What was that I couldn't quite make it out over the sound of you sucking dick."
+    gen "What was that I couldn't quite make it out over the sound of you sucking dick."
     her "hmmm aaaaa hhhhhhuuuttt!"
-    m "One last time. Say it like you mean it."
+    gen "One last time. Say it like you mean it."
     $ cg("images/CG/e5.png")
     ">As she goes to exhale you quickly remove the tentacle from her mouth."
     her "{size=+5}I'm a slut!{/size}"
@@ -202,7 +232,7 @@ label tentacle_2: #Enjoyable tentacle scene
     her "I-I'm cumming... Profes-"
     $ cg("images/CG/e6.png")
     ">You quickly reinsert the tentacle into her mouth, silencing her."
-    m "Good girl. Time for your reward."
+    gen "Good girl. Time for your reward."
     ">You quicken the pace as she convulses beneath you."
     $ cg("images/CG/e7.png")
     ">You explode from sap from nearly every vine. Exploding onto her head and into each of her holes."
@@ -213,10 +243,16 @@ label tentacle_2: #Enjoyable tentacle scene
     spo "Miss Granger are you okay?"
     her "..."
     spo "Quickly, someone take her to the hospital, and cover her up."
-    $ tentacle_cosmetic = False
+
     hide screen cg
+    show screen blkfade
+    with d9
+    pause.8
+
+    $ tentacle_cosmetic = False
     $ hermione_busy = True
-    jump day_resume
+
+    jump main_room
 
 
 

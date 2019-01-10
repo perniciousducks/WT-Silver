@@ -697,28 +697,7 @@ label return_office:
     call hide_characters
     show screen blkfade
     with d3
-    #">You return to your office."
 
-    call room("main_room")
-    hide screen blkback
-    hide screen blktone
+    pause.8
 
-    pause.5
-    hide screen blkfade
-    with d5
-
-
-    $ menu_x = 0.5
-    $ menu_y = 0.5
-
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
-
-    pause.5
-
-    if daytime:
-        jump day_resume
-    else:
-        jump night_resume
+    jump main_room

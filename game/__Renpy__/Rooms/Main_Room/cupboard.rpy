@@ -26,20 +26,6 @@ label cupboard:
             call already_did #Message that says that you have searched the cupboard today already.
             jump cupboard
 
-        "-Tentacle Scroll-" if tentacle_owned:
-            ">Should I use this scroll..."
-            menu:
-                "\"(Yes, let's do it!)\"":
-                    jump tentacle_scene_intro
-                "\"(Not right now.)\"":
-                    jump possessions
-        "-Tentacle Scroll-" if sealed_scroll_ITEM.unlocked and not tentacle_owned:
-            m "It's missing the key ingredient."
-            jump possessions
-
-        "Box with a puzzle on it" if found_puzzle_1 == True and unlocked_7th == False:
-            jump start_slide_puzzle
-
         #Temporary!
         "-Doze off-" if daytime and day != 1:
             jump night_start

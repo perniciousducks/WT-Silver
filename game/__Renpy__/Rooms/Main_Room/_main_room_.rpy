@@ -38,7 +38,7 @@ screen main_room_overlay:
         add i.get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
 
     #Fireplace
-    if day >= 25 and not daytime and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
+    if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
         use fireplace_glow
 
     zorder 3#2
@@ -229,5 +229,15 @@ screen main_room_menu:
         hover "interface/points/Stats_Button_Hover.png"
         action [Hide("main_room_menu"), Jump("open_stat_menu")]
 
+
+    #Inventory
+    imagebutton:
+        xpos 830+77
+        ypos 16
+        xanchor "center"
+        yanchor "center"
+        idle "interface/points/Inventory_Button.png"
+        hover "interface/points/Inventory_Button_Hover.png"
+        action [Hide("main_room_menu"), Jump("open_inventory_menu")]
 
     zorder 1

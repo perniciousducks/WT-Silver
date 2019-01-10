@@ -204,7 +204,7 @@ screen desk_menu:
             action Return("paperwork")
 
     #Cards
-    if deck_unlocked: #Or letter_deck.read #Day 27+
+    if deck_unlocked: #Or letter_deck.read #Day 26+
         imagebutton:
             #xpos -40
             #ypos 260

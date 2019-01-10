@@ -128,9 +128,10 @@ label summon_hermione:
                 jump hermione_requests
             elif her_know_cards and twins_know_cards and not twins_cards_stocked:
                 m "(I have to convince Fred and George to start stocking up cards in their shop first.)"
+                jump hermione_requests
             elif twins_cards_stocked_talk and not her_cards_stocked_talk:
                 m "Hello again [hermione_name]."
-                her "Hello [Genie_name]."
+                her "Hello [genie_name]."
                 m "I wanted to thank you for mentioning the Weasley shop."
                 her "You're not shutting them down are you?"
                 m "Of course not, where else am I supposed to get my supplies from?"
@@ -143,6 +144,8 @@ label summon_hermione:
                 m "So, how about a little vaguer then?"
                 her "What kind of vaguer are we talking about? I've only recently started playing."
                 m "Don't worry, we'll play a few practice runs and when you're ready and I beat you then I'll get your token and..."
+                $ her_cards_stocked_talk = True
+                jump hermione_duel_menu
             else:
                 label hermione_duel_menu:
                 menu:

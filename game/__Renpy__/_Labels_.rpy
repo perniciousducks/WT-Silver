@@ -359,6 +359,9 @@ label play_sound(sound=""):
 
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
+        
+    if sound in ["spit"]:
+        $ renpy.play('sounds/spit.mp3')
 
     return
 

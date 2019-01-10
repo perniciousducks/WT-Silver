@@ -6,9 +6,9 @@ screen clothing_store_room:
     tag room_screen
 
     if daytime:
-        add "images/backgrounds/corridor.png" #Need day image.
+        add "images/rooms/_bg_/corridor.png" #Need day image.
     else:
-        add "images/backgrounds/corridor.png"
+        add "images/rooms/_bg_/corridor.png"
 
     zorder 0
 

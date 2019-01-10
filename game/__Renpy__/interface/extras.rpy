@@ -994,7 +994,7 @@ label end02_03:
     label intro:
 
         stop music fadeout 1
-        hide image "images/backgrounds/castle.png"
+        hide image "images/rooms/_bg_/castle.png"
         show screen blkfade
         with d7
         pause 1

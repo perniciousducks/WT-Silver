@@ -138,7 +138,7 @@ label desk:
 screen desk_menu:
     zorder 8
 
-    add "images/backgrounds/desk.png"
+    add "images/rooms/_bg_/desk.png"
     use close_button
 
     if map_unlocked:

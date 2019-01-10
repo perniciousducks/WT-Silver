@@ -100,7 +100,7 @@ label start_ht:
     pause 1
 
     hide screen blkfade
-    show image "images/backgrounds/castle.png"
+    show image "images/rooms/_bg_/castle.png"
     with d9
     pause 3
 
@@ -201,7 +201,7 @@ label start_ht:
 label hp:
 
     stop music fadeout 1
-    hide image "images/backgrounds/castle.png"
+    hide image "images/rooms/_bg_/castle.png"
     show screen blkfade
     with d7
     pause 1.2

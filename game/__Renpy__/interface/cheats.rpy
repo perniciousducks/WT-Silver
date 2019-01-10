@@ -183,7 +183,7 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Solve the slider puzzle-" if sealed_scroll_ITEM.unlocked == True and unlocked_7th == False:
+        "-Solve the slider puzzle-" if puzzle_box_ITEM.unlocked == True and unlocked_7th == False:
             $ unlocked_7th = True
             jump open_pyzzle_box
 
@@ -235,7 +235,7 @@ label cheats_init:
         $ display_character_tonks = False
 
         $ display_background = False
-        $ custom_bg_image = "images/backgrounds/main_room_night.png"
+        $ custom_bg_image = "images/rooms/_bg_/main_room_night.png"
 
     label update_display_characters_summon_list:
         $ character_summon_list = []

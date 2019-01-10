@@ -340,7 +340,7 @@ label pick_custom_background:
             hide screen blktone
             with d3
         "-Custom-":
-            $ temp_name = renpy.input("(Please enter the image name of your image located in \"images/backgrounds/*****.png\"\nThe image resolution should be 1080 x 600.\nDo not add a .png at the end!)")
+            $ temp_name = renpy.input("(Please enter the image name of your image located in \"images/rooms/_bg_/*****.png\"\nThe image resolution should be 1080 x 600.\nDo not add a .png at the end!)")
             $ temp_name = temp_name.strip()
             call custom_bg(temp_name)
 

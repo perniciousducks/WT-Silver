@@ -128,18 +128,31 @@ label summon_hermione:
                 jump hermione_requests
             elif her_know_cards and twins_know_cards and not twins_cards_stocked:
                 m "(I have to convince Fred and George to start stocking up cards in their shop first.)"
+            elif twins_cards_stocked_talk and not her_cards_stocked_talk:
+                m "Hello again [hermione_name]."
+                her "Hello [Genie_name]."
+                m "I wanted to thank you for mentioning the Weasley shop."
+                her "You're not shutting them down are you?"
+                m "Of course not, where else am I supposed to get my supplies from?"
+                her "...yes, where."
+                m "In fact, I noticed that you were on the list."
+                her "What list? Have I done something wrong?"
+                m "The tier list for the card-game of course."
+                her "Ah, yes...I thought I'd go in there to see if they were still open and I didn't get a chance to ask before I was out of there with 5 boosters and a bunch of other things."
+                m "(Sounds like even I could learn some bartering tricks from those two.)"
+                m "So, how about a little vaguer then?"
+                her "What kind of vaguer are we talking about? I've only recently started playing."
+                m "Don't worry, we'll play a few practice runs and when you're ready and I beat you then I'll get your token and..."
             else:
                 label hermione_duel_menu:
                 menu:
                     "-First duel-":
                         jump hermione_first_duel
-                    "-WIP-":
-                        "To be done."
-                        jump hermione_duel_menu
-                    "-WIP-":
-                        "To be done."
-                        jump hermione_duel_menu
-
+                    "-Second duel-":
+                        jump hermione_second_duel
+                    "-Challenge-":
+                        jump hermione_third_duel
+        
         "-Gifts-" if not gave_hermione_gift:
             call update_quest_items
             $ current_category = None

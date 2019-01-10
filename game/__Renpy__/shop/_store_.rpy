@@ -61,6 +61,7 @@ label store_chit_chat:
         m "Hello boys."
         twi "Good day professor\nDumbledore, sir."
         m "I'm looking to acquire some Wizard cards."
+        call play_sound("spit")
         fre "Wizard cards....*spit*"
         ger "Why would you want any of those?"
         m "What does one do with playing cards... play the game of course."
@@ -73,8 +74,41 @@ label store_chit_chat:
         fre "How about this... we did acquire a set of cards to try the game out."
         m "So..."
         ger "If you beat us we'll do a trial run and stock some cards for the students."
-        twi "(There's no way this\nold man would beat us.)"
+        twi "\"There's no way this\nold man would ever beat us.\""
         $ twins_know_cards = True
+        jump twins_duel_menu
+    elif twins_cards_stocked and not twins_second_win and not twins_cards_stocked_talk:
+        m "Well, well. Looking good as always boys!"
+        twi "..."
+        m "Not in that way, don't you worry. How are things going?"
+        ger "Ah, yes... you were right sir, we've seemed to have struck gold with Wizard Cards."
+        m "Glad to hear it."
+        fre "In fact, we've sold out on our first batch."
+        m "What, where am I supposed to get my cards then?"
+        ger "Surely a professional like you would only need to win your cards?"
+        m "Oh... yes of course, a professional like me..."
+        fre "Anyway, we've gone ahead and put up a official unofficial tier system ladder."
+        m "Unofficial official you say?"
+        ger "Yes, as we mentioned... there isn't really any official tournament rules." 
+        fre "We've sort of kept it that way in that we'll let the people playing set their own vaguers and challenges to climb the ladder."
+        ger "Once the agreed upon winning conditions is reached the winner will receive a token and any what ever else you decide on."
+        fre "3 tokens lets you climb to the next tier."
+        ger "Which lets you challenge even higher skilled players."
+        m "And by skilled you mean players with better cards?"
+        fre "Something like that."
+        m "I see..."
+        m "How do I know which players are currently in my tier?"
+        fre "Ah yes, there's a notice board behind us. You should see some people that you know on it."
+        ger "Snape was in here earlier to pick up some tokens."
+        m "Snape was in here, he doesn't disapprove of your business?"
+        fre "He was using a polyjuice potion to disguise himself as a student."
+        ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
+        fre "Tell you what, lets set a vaguer right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
+        ger "Beat us again and we'll give you a small weekly percentage from our store profits."
+        m "This all sounds a bit out of character for you guys."
+        fre "Let's call it an insurance so that we can continue our business."
+        ger "There's no way you'll beat us again anyway."
+        $ twins_cards_stocked_talk = True
         jump twins_duel_menu
     else:
         twi "Hello Professor! Came here to buy?"
@@ -88,25 +122,13 @@ label store_chit_chat:
                     menu:
                         "-First Duel-":
                             jump twins_first_duel
-                        "-Second Duel-" if twins_first_win:
-                            if not twins_cards_stocked:
-                                m "(I need to wait for an owl from them before I can duel them again)"
-                                jump twins_duel_menu
-                                
+                        "-Challenge-" if twins_first_win:                                
                             jump twins_second_duel
                         "{color=#858585}-You need to beat the first duel-{/color}" if not twins_first_win:
                             jump twins_duel_menu
-                        "-WIP-":
-                            "To be done."
-                            jump twins_duel_menu
-                        #"-Challenge-" if twins_second_win:
-                        #    jump twins_third_duel
-                        #"{color=#858585}-You need to beat the second duel-{/color}" if not twins_second_win:
-                        #    jump twins_duel_menu
                         "-Never mind-":
                             twi "Your loss professor."
                             pass
-
     return
 
 

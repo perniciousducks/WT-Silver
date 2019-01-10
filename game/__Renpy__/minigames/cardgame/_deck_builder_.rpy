@@ -13,17 +13,24 @@ label deck_builder:
         jump day_main_menu
     elif _return == "inc":
         $ currentpage += 1
+        $ selectcard = -1
         jump deck_builder
     elif _return == "dec":
         $ currentpage -= 1
+        $ selectcard = -1
+        jump deck_builder
+    elif _return == "unselect":
+        $ selectcard = -1
         jump deck_builder
     else:
         if not selectcard == -1:
             python:
-                unlocked_cards[selectcard].copies += -1
-                add_card_to_deck(playerdeck[int(_return)].title)
-                playerdeck[int(_return)] = unlocked_cards[selectcard]
-                selectcard = -1
+                if unlocked_cards[selectcard].copies > -1:
+                    unlocked_cards[selectcard].copies -= 1
+                    add_card_to_deck(playerdeck[int(_return)].title)
+                    playerdeck[int(_return)] = unlocked_cards[selectcard]
+                    selectcard = -1
+                    pass
             jump deck_builder
             
         else:
@@ -32,25 +39,15 @@ label deck_builder:
 screen deck_builder_screen:
     zorder 8
     $ card_shown=5
-    add "images/cardgame/deck_builder.png"
- 
-    for i in range(0, card_shown):
-        if not selectcard == (currentpage*card_shown)+i:
-            use cardrender(unlocked_cards[i], 18,17+80*i, True)
+    imagebutton idle "images/cardgame/deck_builder.png" action Return("unselect")
+
+    for i in range(0, clamp(card_shown, 0, (len(unlocked_cards))-(card_shown*currentpage))):
+        #if not selectcard == i+(currentpage*card_shown):
+        use cardrender(unlocked_cards[clamp(i+(currentpage*card_shown), 0, len(unlocked_cards))], 18,17+80*i, True)
     
     if not selectcard == -1:
-        use cardrender(unlocked_cards[selectcard], 54,17+80*i*selectcard-(currentpage*card_shown))
+        #use cardrender(unlocked_cards[selectcard], 54,17+80*selectcard-(card_shown*currentpage))
         add im.Scale(unlocked_cards[selectcard].imagepath, card_width*0.5, card_height*0.5) xpos 885 ypos 316
-    
-    for i in range(0,5):
-        # Need to get the amount this way since renpy dont save the pointer so after you load a game the card in the playerdeck is not the same as in unlocked_cards anymore
-        if not selectcard == -1 and unlocked_cards[selectcard].copies > 0:
-            use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 
-        else:
-            use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 
-        
-        #$ lefttext = "{color=#ffffff}"
-        #$ righttext = "{/color}"
         
         vbox:
             xpos 560
@@ -79,6 +76,16 @@ screen deck_builder_screen:
             xsize 300
             ysize 500
             text unlocked_cards[selectcard].get_description()
+    
+    for i in range(0,5):
+        # Need to get the amount this way since renpy dont save the pointer so after you load a game the card in the playerdeck is not the same as in unlocked_cards anymore
+        if not selectcard == -1 and unlocked_cards[selectcard].copies > 0:
+            use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 
+        else:
+            use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 
+        
+        #$ lefttext = "{color=#ffffff}"
+        #$ righttext = "{/color}"
     
     if not currentpage <= 0:
         imagebutton:

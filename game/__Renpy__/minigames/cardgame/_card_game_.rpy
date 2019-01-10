@@ -14,6 +14,7 @@ label setup_deck(opppent_deck):
 label cardgame:
     hide screen main_room_menu
     show screen card_battle(player_deck,enemy_deck)
+    $ renpy.music.stop("weather")
     #Disallow rollback cheating
     $ renpy.block_rollback()
     $ _return = ui.interact()
@@ -42,7 +43,7 @@ label cardgame:
         
     else:
         if not selectcard == -1:
-            
+            play sound "sounds/card.mp3"
             $ y = int(math.floor(int(_return)/3))
             $ x = int(_return)-(y*3)
             
@@ -52,12 +53,14 @@ label cardgame:
             $ selectcard = -1
             $ update_table(x,y)
             
-            pause
+            pause 0.7
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
                 hide screen card_battle
                 return "EndGame"
+                
             call enemy_turn
+            play sound "sounds/card.mp3"
             $ response_card = "AfterEnemy"
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
@@ -102,7 +105,7 @@ screen card_battle(l_playerdeck, l_enemydeck):
                 if table_cards[x][y] == None:
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
-                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375) 
+                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
@@ -129,7 +132,6 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
         xsize card_width*cardzoom
         ysize card_height*cardzoom
         background #00000000
-
 
         if interact:
             imagebutton:
@@ -185,5 +187,6 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
             
 screen start_deck:
     zorder 9
-    for i in range(0, len(playerdeck)):
-        use cardrender(playerdeck[i],160+160*i,200, interact=False)
+
+    for i in range(0, 8):
+        use cardrender(unlocked_cards[i],40+125*i,200, interact=False, cardzoom=0.375)

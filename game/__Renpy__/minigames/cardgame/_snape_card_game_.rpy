@@ -73,25 +73,43 @@ label snape_third_duel:
         m "(I should probably see if Hermione is interested and practice some more before challenging Snape.)"
         jump snape_duel_menu
         
+    if twins_cards_stocked_talk == False:
+        m "(I should wait for an owl from Fred and George and train with Hermione first.)"
+        jump snape_duel_menu
+        
     call setup_deck(snape_third_deck)
-    call sna_main( "You're not beating me again genie, I've practiced with one of the greatest Wizard cards player there is!","snape_10")
+    m "So, how about that prize?"
+    call sna_main( "Again with the prize...","snape_02")
+    m "I'm bored okay... and I like prizes..."
+    call sna_main( "Fine, I challenge you!!","snape_02")
+    m "..."
+    call sna_main( "You don't say it like that anymore?","snape_02")
+    m "No, that's lame."
+    call sna_main( "You're not going to beat me again genie, I've practiced with the greatest Wizard cards player there is!","snape_02")
     m "Me?"
-    call sna_main( "I... no, of course not.","snape_14")
-    call sna_main( "Let's do this...","snape_02")
+    call sna_main( "I... no, of course not.","snape_02")
+    call sna_main( "Let's do this.","snape_02")
+    call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and my Tier 1 token.","snape_02")
+    m "Bring it."
     
     $ response_card = ""
     
     call play_music("boss_card_theme")
     play sound "sounds/Genie_VS_Snape.mp3"
-    show screen snape_vs_genie_screen
+    show screen genie_vs_snape
+    show screen move_genie
+    pause 1
+    show screen versus
     pause 1
     show screen move_snape
-    pause 4
+    pause 2.5
+    hide screen move_genie
     hide screen move_snape
-    hide screen snape_vs_genie_screen
-    show screen snape_vs_genie_smile
+    show screen genie_vs_snape_smile
     pause
-    hide screen snape_vs_genie_smile
+    hide screen versus
+    hide screen genie_vs_snape
+    hide screen genie_vs_snape_smile
     
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
@@ -104,9 +122,11 @@ label snape_third_duel:
         if response_card == "AfterEnemy":
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
+            $ s_punch = renpy.random.randint(1, 4)
+            play sound "sounds/card_punch%s.mp3" % s_punch
             # Prevents volume to change again when using rollback
             $ renpy.block_rollback()
-            call sna_main( (snape_speach_card[renpy.random.randint(0,len(snape_speach_card)-1)]),"snape_05")
+            call sna_main( (snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)]),"snape_05")
             call sna_main(remove=True)
             $ _preferences.volumes['music'] = volume
     
@@ -116,15 +136,16 @@ label snape_third_duel:
     #Won third match
     stop music fadeout 1
     hide screen blkfade
-    call sna_main( "Impossible! I was sure I'd have you this time...","snape_05")
-    call sna_main( "Well, a deal is a deal...","snape_05")
-    $ snape_third_win = True
-    #[You've unlocked x Item]
-    #
-    #
-    #
-    #
-    #
+    
+    if snape_third_win == False:
+        call sna_main( "Impossible, what's wrong with these cards...","snape_05")
+        m "They're old, that's what."
+        m "Now to the prize..."
+        call sna_main( "Fine, here's your token and one of my precious cards....","snape_05")
+        call sna_main( "\"You were a good card my boy. But it's time to grow up.\"","snape_05")
+        $ unlocked_cards += [snape]
+        $ snape_third_win = True
+        
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
@@ -155,7 +176,6 @@ label snape_duel_cancel:
     show screen blkfade 
     with dissolve
     stop music fadeout 1
-    #jump return_office
     hide screen blkfade
     with dissolve
     sna "Cards not in your favour today? Maybe next time..."
@@ -165,15 +185,21 @@ label snape_duel_cancel:
     
     jump main_room
     
-screen snape_vs_genie_screen:
+screen genie_vs_snape:
     zorder 8
     add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
-    add "images/cardgame/VS/genie_name_plate.png" at move_in(-300, 1)
+screen move_genie:
+    zorder 8
+    add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
+screen versus:
+    zorder 8
+    add "images/cardgame/VS/vs.png"
 screen move_snape:
-    zorder 9
-    add "images/cardgame/VS/snape_name_plate.png" at move_in(300, 1)
+    zorder 8
+    add "images/cardgame/VS/snape_01.png" at move_in(300, 0.5)
     
-screen snape_vs_genie_smile:
-    zorder 10
-    add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
-    add "images/cardgame/VS/genie_vs_snape_smile.png"
+screen genie_vs_snape_smile:
+    zorder 8
+    add "images/cardgame/VS/genie_02.png"
+    add "images/cardgame/VS/snape_02.png"
+    text "Click to continue" xalign 0.5 yalign 1.0

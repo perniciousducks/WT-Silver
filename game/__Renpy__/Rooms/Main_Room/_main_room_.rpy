@@ -80,13 +80,14 @@ screen main_room_menu:
     #Cupboard
     if renpy.variant('android'):
         imagemap:
-           xpos cupboard_OBJ.xpos
-           ypos cupboard_OBJ.ypos
-           xanchor "center"
-           yanchor "center"
-           ground cupboard_OBJ.get_idle_image()
-           hover cupboard_OBJ.get_hover_image()
-           hotspot(73, 156, 72, 133) action [Hide("main_room_menu"), Jump("cupboard")]
+            xpos cupboard_OBJ.xpos
+            ypos cupboard_OBJ.ypos
+            xanchor "center"
+            yanchor "center"
+            ground cupboard_OBJ.get_idle_image()
+            if not searched:
+                hover cupboard_OBJ.get_hover_image()
+                hotspot(73, 156, 72, 133) action [Hide("main_room_menu"), Jump("cupboard")]
     else:
         imagebutton:
             xpos cupboard_OBJ.xpos
@@ -95,8 +96,9 @@ screen main_room_menu:
             xanchor "center"
             yanchor "center"
             idle cupboard_OBJ.get_idle_image()
-            hover cupboard_OBJ.get_hover_image()
-            action [Hide("main_room_menu"), Jump("cupboard")]
+            if not searched:
+                hover cupboard_OBJ.get_hover_image()
+                action [Hide("main_room_menu"), Jump("cupboard")]
 
     #Hat
     if renpy.variant('android'):

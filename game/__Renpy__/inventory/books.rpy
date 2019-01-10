@@ -124,6 +124,7 @@ label __init_variables:
 
 label read_book_menu:
     hide screen desk_menu
+    show screen desk_empty
 
     python:
         item_list = []
@@ -145,10 +146,12 @@ label read_book_menu:
 
     if isinstance(_return, item_class):
         $ book_choice = _return
+        hide screen desk_empty
         jump handle_book_selection
 
     elif _return == "Close":
         $ current_page = 0
+        hide screen desk_empty
         jump day_main_menu
 
     elif _return == "toggle1":

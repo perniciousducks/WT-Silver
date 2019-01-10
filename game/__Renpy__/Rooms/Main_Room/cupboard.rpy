@@ -4,6 +4,7 @@ label cupboard:
     menu:
         "-Examine the cupboard-" if not cupboard_examined:
             $ cupboard_examined = True
+            $ searched = True
             show screen chair_left #Empty chair near the desk.
             hide screen genie
             call gen_chibi("stand","behind_desk","base",flip=True)
@@ -20,26 +21,10 @@ label cupboard:
             with Dissolve(0.5)
             jump day_main_menu
 
-        "-Rummage through the cupboard-" if not searched and not day == 1:
-            jump rummaging
-        "{color=#858585}-Rummage through the cupboard-{/color}" if searched and not day == 1:
-            call already_did #Message that says that you have searched the cupboard today already.
-            jump cupboard
+    if day > 1:
+        jump rummaging
 
-        #Temporary!
-        "-Doze off-" if daytime and day != 1:
-            jump night_start
-        "-Go to sleep-" if not daytime and day != 1:
-            jump day_start
 
-        "-Jerk Off-" if not day == 1:
-            jump jerk_off
-
-        "-Deck builder-" if day > 26 and deck_unlocked:
-            jump deck_builder
-
-        "-Never mind-":
-            jump day_main_menu
 
 label options_menu:
     menu:

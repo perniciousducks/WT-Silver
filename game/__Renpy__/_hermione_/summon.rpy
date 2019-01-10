@@ -36,8 +36,8 @@ label summon_hermione:
                 her "I am not in the mood today..."
                 jump hermione_requests
             elif her_mood >= 10 and her_mood < 20:
-                her "Absolutely not, [genie_name]"
-                her "I {i}might{/i} consider it once you've said sorry"
+                her "Absolutely not, [genie_name]."
+                her "I {i}might{/i} consider it once you've said sorry..."
                 jump hermione_requests
                 # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
             elif her_mood >=20:
@@ -152,7 +152,7 @@ label summon_hermione:
                         jump hermione_second_duel
                     "-Challenge-":
                         jump hermione_third_duel
-        
+
         "-Gifts-" if not gave_hermione_gift:
             call update_quest_items
             $ current_category = None

@@ -134,34 +134,99 @@ label desk:
     $ renpy.jump(_return)
 
 
+screen desk_empty:
+    tag desk_interface
+
+    zorder 5
+
+    add "interface/desk/_bg_.png"
+    add "interface/desk/_hands_.png"
+    if not daytime:
+        add "interface/desk/_night_overlay_.png"
 
 screen desk_menu:
-    zorder 8
+    tag desk_interface
 
-    add "images/rooms/_bg_/desk.png"
-    use close_button
+    zorder 5
 
-    if map_unlocked:
-        use map_screen
-        use map_screen_characters
+    #Background
+    add "interface/desk/_bg_.png"
+    add "interface/desk/_hands_.png"
 
+    #if map_unlocked:
+    #    use map_screen
+    #    use map_screen_characters
+
+    use crystal_ball
+
+    #Day/Night Clock
+    add "interface/desk/watch.png"
     imagebutton:
-        xpos -5
-        ypos 100
+        xpos 0
+        ypos 0
         focus_mask True
-        idle "interface/map/desk_book_idle.png"
-        hover "interface/map/desk_book_hover.png"
-        action Return("read_book_menu")
+        idle "interface/desk/watch.png"
+        hover "interface/desk/watch_hover.png"
+        if daytime:
+            action Return("night_start") #Skip to night
+        else:
+            action Return("day_start") #Skip to next day
 
+    #Book
+    if store_intro_done:
+        add "interface/desk/book.png"
+        imagebutton:
+            #xpos -5
+            #ypos 100
+            focus_mask True
+            idle "interface/desk/book.png"
+            hover "interface/desk/book_hover.png"
+            action Return("read_book_menu")
+
+    #Tissue Box
+    add "interface/desk/tissues.png"
     imagebutton:
-        xpos -40
-        ypos 260
+        xpos 0
+        ypos 0
         focus_mask True
-        idle "interface/map/desk_letters_idle.png"
-        if letter_paperwork_unlock_OBJ.read: #Work unlocked
-            hover "interface/map/desk_letters_hover.png"
+        idle "interface/desk/tissues.png"
+        hover "interface/desk/tissues_hover.png"
+        action Return("jerk_off")
+
+    #Work
+    if letter_paperwork_unlock_OBJ.read:
+        imagebutton:
+            xpos 0
+            ypos 0
+            focus_mask True
+            idle "interface/desk/work.png"
+            hover "interface/desk/work_hover.png"
             action Return("paperwork")
 
+    #Cards
+    if deck_unlocked: #Or letter_deck.read #Day 27+
+        imagebutton:
+            #xpos -40
+            #ypos 260
+            focus_mask True
+            idle "interface/desk/cards.png"
+            hover "interface/desk/cards_hover.png"
+            action Return("deck_builder")
+
+    #Night Overlay
+    if not daytime:
+        add "interface/desk/_night_overlay_.png"
+
+    use close_button #Temporary
+
+
+screen crystal_ball:
+    tag desk_interface
+
+    zorder 8
+
+    add "interface/desk/crystal_ball.png"
+    #add "interface/desk/crystal_ball" +str(image)+ ".png" #Can be used for the hover images (work, book,...)
 
 
 

@@ -73,15 +73,20 @@ label stat_screen_character:
         call screen stat_menu("tonks")
 
     elif charName=="Close":
-        $charName ="genie"
         jump close_stats_screen
 
     show screen stat_menu(charName)
 
-    $ charName = _return
+    if _return == "Close":
+        jump close_stats_screen
+    else:
+        $ charName = _return
+
     call hide_characters
 
     jump stat_screen_character
+
+
 
 label close_stats_screen:
     hide screen stat_menu
@@ -108,7 +113,7 @@ screen stat_menu(character=""):
 
     use character_select_menu(stat_character_list, "-Character Select-")
 
-    text "- Character Stats- " xalign 0.5 xpos 433 ypos 118 size 30
+    text "- Character Stats -" xalign 0.5 xpos 433 ypos 118 size 30
 
     if character == "genie":
         use charecter_name("genie")
@@ -250,6 +255,8 @@ screen hermione_stat_menu:
 
                 use stat_bar(int(her_tutoring/1.4), "-Tutoring-" , her_tutoring_word, her_tutoring) #Max 14
 
+                use stat_bar(int(10-her_mood/1.0), "-Mood-" , her_mood_word, her_mood) #Max 14
+
                 #Imagination 2:
                 use text_stat("You Jerked off in front of her:")
                 use text_stat("- ", " times -", her_jerk_off_counter)
@@ -369,7 +376,7 @@ screen tonks_stat_menu:
             vbox:
                 use stat_bar(int(69/6.9), "-Lust-", "", 69)
                 #use stat_bar(int(ton_support/1.5), "-Support-", "", ton_support) #Number of Tonks events.
-                use stat_bar(int(ton_friendship/10), "-Friendship-", ton_friendship_word, ton_friendship)   #max is 100.
+                use stat_bar(int(ton_friendship/10), "-Relationship-", ton_friendship_word, ton_friendship)   #max is 100.
                 #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
                 use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
@@ -400,6 +407,12 @@ label update_stats:
         $ her_reputation_word = "- Locked Off -"
     else:
         $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
+
+    $ her_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    if her_mood >= 0 and her_mood <= 10:
+        $ her_mood_word = her_mood_word_list[int(her_mood/1.0)]
+    else:
+        $ her_mood_word = "Very Angry"
 
     #Astoria
     #call astoria_clothing_level

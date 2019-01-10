@@ -30,7 +30,7 @@ label update_puzzle_slide:
     hide screen puzzle_board
 
     if int(p_move) == -1:
-        jump cupboard
+        jump main_room
 
     $xposS = int(p_move/4)
     $yposS = int(p_move%4)
@@ -58,7 +58,7 @@ label update_puzzle_slide:
 label open_pyzzle_box:
     if unlocked_7th == True:
         m "Empty... I don't know what I expected."
-        jump cupboard
+        jump main_room
     if p_move == -2:
         m "Fuck it... {size=18}*Smash*{/size}"
         m "A broken bottle..."
@@ -95,7 +95,7 @@ label open_pyzzle_box:
     with Dissolve(0.3)
     call give_reward("You've unlocked something on the 7th floor","/interface/icons/head/head_genie_question_mark.png")
     $ unlocked_7th = True
-    jump cupboard
+    jump main_room
 
 screen puzzle_board:
 

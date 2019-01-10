@@ -2,8 +2,7 @@ label setup_deck(opppent_deck):
     python:
         player_deck = []
         for card in playerdeck:
-            card.playercard = True
-            player_deck.append(card)
+            player_deck.append(card.clone())
         enemy_deck = []
         for card in opppent_deck:
             card.playercard = False

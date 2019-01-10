@@ -120,8 +120,23 @@ label deck_mail_send:
 
     m "That last bit just sounds like scam to me..."
     m "..."
-    m "I guess I'll have a look at the starter pack at least..."
+    m "I guess I'll have a look at the starter pack at least..."    
     "Opens starter pack and sees the cards"
+    
+    #Randomize starter pack (Hardcore difficulty gets randomized at the start of the game)
+    if game_difficulty <= 2:
+        python:
+            card_rand_realm = random.choice([iris, jasmine, azalea])
+            card_rand_girl = random.choice([her_schoolgirl, sus_schoolgirl, cho_schoolgirl, lun_schoolgirl])
+            card_rand_item1 = random.choice([item_desk, item_bird])
+            card_rand_item2 = random.choice([item_beads, item_dildo, item_doll, item_condoms, item_plugs])
+            card_rand_item3 = random.choice([item_barbell, item_lingerie, item_stockings, item_badge, item_bdsm, item_lipstick])
+            card_rand_item4 = random.choice([item_bookchairs, item_bookgala, item_bookgala2, item_bookwaifu, item_hat])
+            card_rand_item5 = random.choice([item_eromag, item_pornmag, item_girlmag, item_scroll, item_wine, item_sweets])
+        
+            unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
+            playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
+    
     show screen blktone
     show screen start_deck
     with Dissolve(.3)

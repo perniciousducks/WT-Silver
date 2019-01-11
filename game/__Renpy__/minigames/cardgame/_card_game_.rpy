@@ -115,10 +115,10 @@ screen card_battle(l_playerdeck, l_enemydeck):
         use cardrender(l_playerdeck[selectcard], 54,17+80*selectcard)
         
     for i in range(0, len(l_enemydeck)):
-        if not selectenemycard == i:
+        if not selectenemycard == i and selectenemycard < len(l_enemydeck):
             use cardrender(l_enemydeck[i], 898,17+80*i, True)
             
-    if not selectenemycard == -1:
+    if not selectenemycard == -1 and selectenemycard < len(l_enemydeck):
         use cardrender(l_enemydeck[selectenemycard], 860,17+80*selectenemycard)
         
     use close_button

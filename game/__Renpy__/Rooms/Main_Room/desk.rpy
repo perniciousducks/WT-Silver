@@ -151,11 +151,12 @@ screen desk_menu:
 
     #Background
     add "interface/desk/_bg_.png"
-    add "interface/desk/_hands_.png"
 
-    #if map_unlocked:
-    #    use map_screen
-    #    use map_screen_characters
+    if map_unlocked:
+        use map_screen
+        use map_screen_characters
+
+    add "interface/desk/_hands_.png"
 
     use crystal_ball
 

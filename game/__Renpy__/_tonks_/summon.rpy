@@ -40,7 +40,7 @@ label summon_tonks:
             pause.5
             hide screen blkfade
             call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
-            if tonks_wear_top == False or tonks_wear_bottom == False: #Half or completely naked.
+            if tonks_wear_robe == False and tonks_wear_top == False: #Half or completely naked.
                 call ast_main("He--","worried","closed","base","mid")
                 call ast_main("[ast_tonks_name]?!","open","wide","wide","R",trans="hpunch")
                 call ast_main("[ast_genie_name], why is she naked?","scream","closed","worried","mid",trans="hpunch")
@@ -200,7 +200,7 @@ label tonks_talk:
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
 
-        "-Get naked!-" if tonks_strip_happened and (tonks_wear_top or tonks_wear_bottom):
+        "-Get naked!-" if tonks_strip_happened and (tonks_wear_top or tonks_wear_bottom or tonks_wear_robe):
             m "Get naked, [tonks_name]!"
             call ton_main("Of course, [ton_genie_name].","horny","base","base","ahegao")
             hide screen tonks_main
@@ -217,7 +217,7 @@ label tonks_talk:
             call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
-        "-Get dressed-" if tonks_strip_happened and not (tonks_wear_top or tonks_wear_bottom):
+        "-Get dressed-" if tonks_strip_happened and not (tonks_wear_top or tonks_wear_bottom or tonks_wear_robe):
             m "Put on some clothes, would you..."
             m "This is a school, after all."
             call ton_main("Of course, [ton_genie_name].","base","base","base","mid")

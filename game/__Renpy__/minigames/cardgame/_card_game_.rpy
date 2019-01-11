@@ -97,6 +97,10 @@ screen card_battle(l_playerdeck, l_enemydeck):
     zorder 5
     imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
     
+    #fix card error when you select the last card
+    if not selectenemycard < len(l_enemydeck):
+        $ selectenemycard = -1
+        
     imagemap:
         ground "images/cardgame/card_table.png"
 
@@ -115,10 +119,10 @@ screen card_battle(l_playerdeck, l_enemydeck):
         use cardrender(l_playerdeck[selectcard], 54,17+80*selectcard)
         
     for i in range(0, len(l_enemydeck)):
-        if not selectenemycard == i and selectenemycard < len(l_enemydeck):
+        if not selectenemycard == i:
             use cardrender(l_enemydeck[i], 898,17+80*i, True)
             
-    if not selectenemycard == -1 and selectenemycard < len(l_enemydeck):
+    if not selectenemycard == -1:
         use cardrender(l_enemydeck[selectenemycard], 860,17+80*selectenemycard)
         
     use close_button

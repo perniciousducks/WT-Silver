@@ -45,6 +45,9 @@ screen main_room_overlay:
 
 ### Main Room Menu Screen ###
 screen main_room_menu:
+    #Hotkeys
+    use hotkeys_main
+    
     tag room_screen
     imagebutton: # DOOR
         xpos door_OBJ.xpos

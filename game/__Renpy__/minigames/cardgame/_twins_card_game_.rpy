@@ -23,15 +23,15 @@ label twins_first_duel:
         twi "No way!"
         ger "You must've been cheating."
         m "It's all in the cards boys."
-        ger "I can see that... perhaps it's worth stocking some after all."
-        fre "Indeed, if the cards you have play such a big role..."
-        ger "You'd have to buy more and more for even a chance at winning..."
+        ger "We can see that... perhaps it's worth stocking some after all."
+        fre "Indeed, if what cards you have play such a big role..."
+        ger "People would have to buy more and more for any chance to win..."
         fre "And we..."
         twi "We'll be rich!"
         m "So you'll stock some?"
         ger "Absolutely! We'll send you and owl when it's ready and if they sell well we'll play you again."
         twi "And we'll win next time!"
-        m "We'll see about that, can't have students going around showing up to their headmaster can I..."
+        m "We'll see about that, I can't have students going around showing up to their headmaster can I..."
         $ twins_first_win = True
         $ twins_cards_delay = twins_cards_delay+day
         pass

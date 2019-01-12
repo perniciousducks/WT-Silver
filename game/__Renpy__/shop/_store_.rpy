@@ -92,7 +92,7 @@ label store_chit_chat:
         ger "Yes, as we mentioned... there isn't really any official tournament rules." 
         fre "We've sort of kept it that way in that we'll let the people playing set their own vaguers and challenges to climb the ladder."
         ger "Once the agreed upon winning conditions is reached the winner will receive a token and any what ever else you decide on."
-        fre "3 tokens lets you climb to the next tier."
+        fre "3 challenges won lets you climb to the next tier."
         ger "Which lets you challenge even higher skilled players."
         m "And by skilled you mean players with better cards?"
         fre "Something like that."

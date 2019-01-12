@@ -1,4 +1,4 @@
-﻿# This file is in the public domain. Feel free to modify it as a basis
+# This file is in the public domain. Feel free to modify it as a basis
 # for your own screens.
 
 ##############################################################################
@@ -6,32 +6,55 @@
 #
 # Screen that's used to display adv-mode dialogue.
 # http://www.renpy.org/doc/html/screen_special.html#say
+    
 screen say:
     zorder 6 #Otherwise the character sprite would be obscuring it.
+
+    #Hotkeys
+    use hotkeys_say
 
     # Defaults for side_image and two_window
     default side_image = None
     default two_window = False
+    
+    #Add "hidden" window
+    if hkey_chat_hidden:
+        window:
+            xalign 0.5
+            yalign 1.0
+            style "say_who_window"
+            text "Hidden" xalign 0.5 yalign 0.5
+        #Add fullscreen CTC button
+        button:
+            action SetVariable("hkey_chat_hidden", False)
+            style "empty"
 
     # Decide if we want to use the one-window or two-window variant.
     if not two_window:
-
         # The one window variant.
-        window:
-            id "window"
+        vbox:
+            if hkey_chat_hidden:
+                ypos 1000
+                
+            style "say_two_window_vbox"
+            window:
+                id "window"
 
-            has vbox:
-                style "say_vbox"
+                has vbox:
+                    style "say_vbox"
 
-            if who:
-                text who id "who"
+                if who:
+                    text who id "who"
 
-            text what id "what"
+                text what id "what"
 
     else:
-
         # The two window variant.
         vbox:
+            #Its the easiest way to hide the chat window without breaking the game, really
+            if hkey_chat_hidden:
+                ypos 1000
+                
             style "say_two_window_vbox"
 
             if who:
@@ -57,7 +80,6 @@ screen say:
 
     # Use the quick menu.
     use quick_menu
-
 
 ##############################################################################
 # Choice
@@ -335,7 +357,7 @@ screen file_picker:
             textbutton _("Quick"):
                 action FilePage("quick")
 
-            for i in range(1, 9):
+            for i in range(1, 11):
                 textbutton str(i):
                     action FilePage(i)
 
@@ -367,11 +389,19 @@ screen file_picker:
                     $ file_name = FileSlotName(i, columns * rows)
                     $ file_time = FileTime(i, empty=_("Empty Slot."))
                     $ save_name = FileSaveName(i)
-
-                    text "[file_name]. [file_time!t]\n[save_name!t]"
-
-                    key "save_delete" action FileDelete(i)
-
+                    
+                    if save_name != "":
+                        textbutton _("X"):
+                            yalign 0.5
+                            xpos 235
+                            yfill True
+                            ymaximum 50
+                            action FileDelete(i, persistent.delwarning)
+                        text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5
+                    else:
+                        text "[file_name]. [file_time!t]" xoffset 1
+                        
+                    key "save_delete" action FileDelete(i, persistent.delwarning)
 
 screen save:
     tag menu
@@ -444,6 +474,22 @@ screen preferences:
                 has vbox
 
                 textbutton _("Joystick...") action Preference("joystick")
+                
+            frame:
+                style_group "pref"
+                has vbox
+                
+                label _("Other")
+                text _("Save Deletion warning")
+                textbutton "Yes" action SetField(persistent, 'delwarning', True)
+                textbutton "No" action SetField(persistent, 'delwarning', False)
+                text _("Custom cursor")
+                textbutton _("Yes") action [SetField(persistent, 'customcursor', True), SetVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] })]
+                textbutton _("No") action [SetField(persistent, 'customcursor', False), SetVariable("config.mouse", None)]
+                text _("Autosaving")
+                textbutton "Yes" action [SetField(persistent, 'autosave', True), SetVariable("config.has_autosave", True), SetVariable("config.autosave_on_choice", True)]
+                textbutton "No" action [SetField(persistent, 'autosave', False), SetVariable("config.has_autosave", False), SetVariable("config.autosave_on_choice", False)]
+                #textbutton _("[delwarning!t]") action ToggleVariable("delwarning", True, False)
 
 
         vbox:
@@ -512,7 +558,19 @@ screen preferences:
                         textbutton _("Test"):
                             action Play("voice", config.sample_voice)
                             style "soundtest_button"
+            #Hotkeys
+            frame:
+                style_group "pref"
+                has vbox
 
+                label _("Hotkeys")
+                textbutton _("Map - [hkey_map]") action None
+                textbutton _("Work - [hkey_work]") action None
+                textbutton _("Books - [hkey_book]") action None
+                textbutton _("Stats - [hkey_stats]") action None
+                textbutton _("Inventory - [hkey_inventory]") action None
+                textbutton _("Sleep - [hkey_sleep]") action None
+                textbutton _("Jerk off - [hkey_fap]") action None
     zorder 5
 
 init -2:

@@ -104,8 +104,8 @@ label store_chit_chat:
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
         fre "Tell you what, lets set a vaguer right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
-        ger "Beat us again and we'll give you a small weekly percentage from our store profits."
-        m "This all sounds a bit out of character for you guys."
+        ger "Beat us again and we'll give you our token."
+        m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."
         ger "There's no way you'll beat us again anyway."
         $ twins_cards_stocked_talk = True

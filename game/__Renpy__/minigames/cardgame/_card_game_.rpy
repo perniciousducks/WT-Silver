@@ -96,6 +96,10 @@ screen card_battle(l_playerdeck, l_enemydeck):
     zorder 5
     imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
     
+    #fix card error when you select the last card
+    if not selectenemycard < len(l_enemydeck):
+        $ selectenemycard = -1
+        
     imagemap:
         ground "images/cardgame/card_table.png"
 

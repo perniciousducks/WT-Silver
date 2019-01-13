@@ -19,14 +19,14 @@ label hermione_first_duel:
     hide screen blkfade
     stop music fadeout 1
     if not her_first_win:
-        her "Well, that's interesting. I was sure that my deck would've been balanced enough..."
-        m "It's just a practice round, I'm sure you'll do better next time."
-        her "Your smile says otherwise."
+        call her_main( "Well, that's interesting. I was sure that my deck would've been balanced enough...","angry","angryCl")
+        g9 "It's just a practice round, I'm sure you'll do better next time."
+        call her_main( "Your smile says otherwise.","mad","angryL") 
         m "..."
         $ her_first_win = True
         pass
     else:
-        her "This game is stupid!"
+        call her_main( "This game is stupid!","angry","angryCl")
         pass
         
     jump main_room
@@ -52,25 +52,25 @@ label hermione_second_duel:
     hide screen blkfade
     stop music fadeout 1
     if not her_second_win:
-        her "I got 5 boosters, how isn't that enough to build a better deck than yours?"
+        call her_main( "I got 5 boosters, how isn't that enough to build a better deck than yours?","mad","annoyed")
         m "It's more important where you place those cards..."
-        her "I know what I'm doing...."
-        m "So, do you want to take a break?"
-        her "No, I'm ready..."
+        call her_main( "I know what I'm doing....","open","angryCl")
+        g9 "So, do you want to take a break?"
+        call her_main( "No, I'm ready...","soft","concerned")
         m "You sure?"
-        her "I said I'm ready."
+        call her_main( "I said I'm ready.","clench","hateful")
         $ her_second_win = True
         pass
     else:
-        her "This game is stupid!"
+        call her_main( "This game is stupid!","angry","angryCl")
         pass
         
     jump main_room
     
 label hermione_third_duel:
-    her "I'll make my house proud, you'll see."
-    her "Wait, I should probably have asked for point for this."
-    m "To late, here we go."
+    call her_main( "I'll make my house proud, you'll see.","grin","happy")
+    call her_main( "Wait, I should have asked for point for this.","shock","shocked")
+    g9 "To late, here we go."
     
     call setup_deck(her_third_deck)
     
@@ -125,13 +125,13 @@ label hermione_third_duel:
     hide screen blkfade
     
     if her_third_win == False:
-        her "Nooo, how's this even possible?" 
-        her "I'm supposed to be the smartest girl in my year..."
-        m "Looks like Wisdom beats intelligence..."
-        her "You don't have to patronize me, I'll get you next time. You'll see."
-        m "You seem to have forgotten something..."
-        her "Fine..."
-        her "Here..."
+        call her_main( "Nooo, how's this even possible?","clench","shocked") 
+        call her_main( "I'm supposed to be the smartest girl in my year...","mad","surprised")
+        g9 "Looks like Wisdom beats intelligence..."
+        call her_main( "You don't have to patronize me, I'll get you next time. You'll see.","upset","suspicious")
+        g9 "You seem to have forgotten something..."
+        call her_main( "Fine...","angry","glance")
+        call her_main( "Here...","mad","glanceL")
         $ her_third_win = True
         
     call play_sound("door")

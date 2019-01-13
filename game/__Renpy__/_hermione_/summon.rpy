@@ -131,21 +131,20 @@ label summon_hermione:
                 jump hermione_requests
             elif twins_cards_stocked_talk and not her_cards_stocked_talk:
                 m "Hello again [hermione_name]."
-                her "Hello [genie_name]."
+                call her_main( "Hello [genie_name].","base","base")
                 m "I wanted to thank you for mentioning the Weasley shop."
-                her "You're not shutting them down are you?"
+                call her_main( "You're not shutting them down are you?","soft","down")
                 m "Of course not, where else am I supposed to get my supplies from?"
-                her "...yes, where."
-                m "In fact, I noticed that you were on the list."
-                her "What list? Have I done something wrong?"
+                call her_main( "Oh, yes... where.","normal","down_raised")
+                g9 "In fact, I noticed that you were on the list."
+                call her_main( "What list? Have I done something wrong?","soft","worried")
                 m "The tier list for the card-game of course."
-                her "Ah, yes...I thought I'd go in there to see if they were still open and I didn't get a chance to ask before I was out of there with 5 boosters and a bunch of other things."
-                m "(Sounds like even I could learn some bartering tricks from those two.)"
+                call her_main( "Ah, yes...","normal","soft")
+                call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
+                g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
                 m "So, how about a little vaguer then?"
-                her "What kind of vaguer are we talking about? I've only recently started playing."
-                m "Don't worry, we'll play a few practice runs and when you're ready and I beat you then I'll get your token and..."
-                $ her_cards_stocked_talk = True
-                jump hermione_duel_menu
+                call her_main( "What kind of vaguer are we talking about? I've only recently started playing.","base","glance")
+                m "Don't worry, we'll play a few practice runs, when you're ready I'll play you for your token..."
             else:
                 label hermione_duel_menu:
                 menu:

@@ -43,7 +43,7 @@ screen map_screen():
     
     add "map_unfold" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale#Scaled to 588x420
     use map_buttons
-    #use mouse_positions #Shows XY position of the mouse on the screen, updated every click you make
+    #use mouse_positions #Shows XY position of the mouse on the screen, updated per click
 
 screen mouse_positions():
     zorder 1
@@ -74,6 +74,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_office_idle.png"
         hover "interface/map/room_office_hover.png"
+        hovered SetVariable("ball_hint", "office")
+        unhovered SetVariable("ball_hint", None)
         action Return("main_room")
 
     #Gryffindor
@@ -83,6 +85,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_gryffindor_idle.png"
         hover "interface/map/room_gryffindor_hover.png"
+        hovered SetVariable("ball_hint", "dorm_gryffindor")
+        unhovered SetVariable("ball_hint", None)
         action Return("gryffindor_dormitories")
 
     #Ravenclaw
@@ -92,6 +96,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_ravenclaw_idle.png"
         hover "interface/map/room_ravenclaw_hover.png"
+        hovered SetVariable("ball_hint", "dorm_ravenclaw")
+        unhovered SetVariable("ball_hint", None)
         action Return("ravenclaw_dormitories")
 
     #Hufflepuff
@@ -100,6 +106,8 @@ screen map_buttons:
         ypos UI_ypos_offset
         focus_mask True
         idle "interface/map/room_hufflepuff_idle.png"
+        #hovered SetVariable("ball_hint", "dork_hufflepuff")
+        #unhovered SetVariable("ball_hint", None)
         #hover "interface/map/room_hufflepuff_hover.png"
         #action Return("hufflepuff_dormitories")
 
@@ -109,6 +117,8 @@ screen map_buttons:
         ypos UI_ypos_offset
         focus_mask True
         idle "interface/map/room_slytherin_idle.png"
+        #hovered SetVariable("ball_hint", "dorm_slytherin")
+        #unhovered SetVariable("ball_hint", None)
         #hover "interface/map/room_slytherin_hover.png"
         #action Return("slytherin_dormitories")
 
@@ -119,6 +129,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_weasley_store_idle.png"
         hover "interface/map/room_weasley_store_hover.png"
+        hovered SetVariable("ball_hint", "weasley_store")
+        unhovered SetVariable("ball_hint", None)
         action Return("open_weasley_store")
 
     #Clothing Store
@@ -128,6 +140,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_clothing_store_idle.png"
         hover "interface/map/room_clothing_store_hover.png"
+        hovered SetVariable("ball_hint", "clothing_store")
+        unhovered SetVariable("ball_hint", None)
         action Return("open_clothing_store")
 
     #Potions
@@ -136,8 +150,10 @@ screen map_buttons:
         ypos UI_ypos_offset
         focus_mask True
         idle "interface/map/room_potions_idle.png"
+        unhovered SetVariable("ball_hint", None)
         if store_intro_done:
             hover "interface/map/room_potions_hover.png"
+            hovered SetVariable("ball_hint", "potions")
             action Return("potions_room")
 
     #Room of Requirement
@@ -146,12 +162,15 @@ screen map_buttons:
             xpos UI_xpos_offset
             ypos UI_ypos_offset
             focus_mask True
+            unhovered SetVariable("ball_hint", None)
             if first_time_7th == False:
                 idle "interface/map/room_ror_idle.png"
                 hover "interface/map/room_ror_hover.png"
+                hovered SetVariable("ball_hint", "room_of_req")
             else:
                 idle "interface/map/room_ror_empty_idle.png"
                 hover "interface/map/room_ror_empty_hover.png"
+                hovered SetVariable("ball_hint", "room_of_req")
             action Return("floor_7th")
 
     #Lake
@@ -161,6 +180,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_boat_house_idle.png"
         hover "interface/map/room_boat_house_hover.png"
+        hovered SetVariable("ball_hint", "lake")
+        unhovered SetVariable("ball_hint", None)
         action Return("map_lake")
 
     #Forest (Temporary until we have a map for the nothern section!)
@@ -170,6 +191,8 @@ screen map_buttons:
         focus_mask True
         idle "interface/map/room_north_courtyard_idle.png"
         hover "interface/map/room_north_courtyard_hover.png"
+        hovered SetVariable("ball_hint", "forest")
+        unhovered SetVariable("ball_hint", None)
         action Return("map_forest")
 
     #Attic
@@ -180,6 +203,8 @@ screen map_buttons:
             focus_mask True
             idle "interface/map/room_attic_closed_idle.png"
             hover "interface/map/room_attic_closed_hover.png"
+            hovered SetVariable("ball_hint", "attic")
+            unhovered SetVariable("ball_hint", None)
             action Return("map_attic")
 
     if sealed_scroll_ITEM.unlocked and tentacle_owned: #Open
@@ -189,6 +214,8 @@ screen map_buttons:
             focus_mask True
             idle "interface/map/room_attic_open_idle.png"
             hover "interface/map/room_attic_open_hover.png"
+            hovered SetVariable("ball_hint", "attic")
+            unhovered SetVariable("ball_hint", None)
             action Return("map_attic")
             
     add "interface/map/map_lines_vert.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale at animate#Add vertical lines overlay
@@ -322,7 +349,7 @@ label update_character_map_locations:
         $ her_map_ypos = 220
     if her_map_location == "room_g":
         $ her_map_xpos = 350
-        $ her_map_ypos = 350
+        $ her_map_ypos = 320
     if her_map_location == "room_s":
         $ her_map_xpos = 430
         $ her_map_ypos = 270
@@ -399,6 +426,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_hermione.png"
             hover "interface/map/name_hermione_hover.png"
+            hovered SetVariable("ball_hint", "summon_hermione")
+            unhovered SetVariable("ball_hint", None)
             action Return("hermione")
 
     #Luna
@@ -409,6 +438,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_luna.png"
             hover "interface/map/name_luna_hover.png"
+            hovered SetVariable("ball_hint", "summon_luna")
+            unhovered SetVariable("ball_hint", None)
             action Return("luna")
 
     #Astoria
@@ -419,6 +450,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_astoria.png"
             hover "interface/map/name_astoria_hover.png"
+            hovered SetVariable("ball_hint", "summon_astoria")
+            unhovered SetVariable("ball_hint", None)
             action Return("astoria")
 
     #Susan
@@ -429,6 +462,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_susan.png"
             hover "interface/map/name_susan_hover.png"
+            hovered SetVariable("ball_hint", "summon_susan")
+            unhovered SetVariable("ball_hint", None)
             action Return("susan")
 
     #Cho
@@ -439,6 +474,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_cho.png"
             hover "interface/map/name_cho_hover.png"
+            hovered SetVariable("ball_hint", "summon_cho")
+            unhovered SetVariable("ball_hint", None)
             action Return("cho")
 
     #Snape
@@ -449,6 +486,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_snape.png"
             hover "interface/map/name_snape_hover.png"
+            hovered SetVariable("ball_hint", "summon_snape")
+            unhovered SetVariable("ball_hint", None)
             action Return("snape")
 
     #Tonks
@@ -459,6 +498,8 @@ screen map_screen_characters():
             focus_mask None
             idle "interface/map/name_tonks.png"
             hover "interface/map/name_tonks_hover.png"
+            hovered SetVariable("ball_hint", "summon_tonks")
+            unhovered SetVariable("ball_hint", None)
             action Return("tonks")
 
 

@@ -8,6 +8,9 @@ label desk:
                     $ desk_examined = True
                     m "A desk of some sort..."
         jump day_main_menu
+        
+    #Define hints variable
+    $ ball_hint = None
 
     #Updates
     $ summon_list = []
@@ -139,7 +142,7 @@ screen desk_empty:
 
     zorder 5
 
-    add "interface/desk/_bg_.png"
+    #add "interface/desk/_bg_.png"
     add "interface/desk/_hands_.png"
     if not daytime:
         add "interface/desk/_night_overlay_.png"
@@ -156,22 +159,10 @@ screen desk_menu:
         use map_screen
         use map_screen_characters
 
-    add "interface/desk/_hands_.png"
+    add "interface/desk/_hands_.png" xpos 0 ypos -30
 
     use crystal_ball
-
-    #Day/Night Clock
-    add "interface/desk/watch.png"
-    imagebutton:
-        xpos 0
-        ypos 0
-        focus_mask True
-        idle "interface/desk/watch.png"
-        hover "interface/desk/watch_hover.png"
-        if daytime:
-            action Return("night_start") #Skip to night
-        else:
-            action Return("day_start") #Skip to next day
+    use watch
 
     #Book
     if store_intro_done:
@@ -182,6 +173,8 @@ screen desk_menu:
             focus_mask True
             idle "interface/desk/book.png"
             hover "interface/desk/book_hover.png"
+            hovered SetVariable("ball_hint", "book")
+            unhovered SetVariable("ball_hint", None)
             action Return("read_book_menu")
 
     #Tissue Box
@@ -192,6 +185,8 @@ screen desk_menu:
         focus_mask True
         idle "interface/desk/tissues.png"
         hover "interface/desk/tissues_hover.png"
+        hovered SetVariable("ball_hint", "jerk_off")
+        unhovered SetVariable("ball_hint", None)
         action Return("jerk_off")
 
     #Work
@@ -202,6 +197,8 @@ screen desk_menu:
             focus_mask True
             idle "interface/desk/work.png"
             hover "interface/desk/work_hover.png"
+            hovered SetVariable("ball_hint", "work")
+            unhovered SetVariable("ball_hint", None)
             action Return("paperwork")
 
     #Cards
@@ -212,7 +209,21 @@ screen desk_menu:
             focus_mask True
             idle "interface/desk/cards.png"
             hover "interface/desk/cards_hover.png"
+            hovered SetVariable("ball_hint", "cards")
+            unhovered SetVariable("ball_hint", None)
             action Return("deck_builder")
+            
+    #exit
+    imagebutton:
+        xanchor 0.5
+        yanchor 1.0
+        xpos 510
+        ypos 600
+        idle "interface/desk/exit_mask.png"
+        hover "interface/desk/exit.png"
+        hovered SetVariable("ball_hint", "exit")
+        unhovered SetVariable("ball_hint", None)
+        action Return("Close")
 
     #Night Overlay
     if not daytime:
@@ -227,7 +238,46 @@ screen crystal_ball:
     zorder 8
 
     add "interface/desk/crystal_ball.png"
-    #add "interface/desk/crystal_ball" +str(image)+ ".png" #Can be used for the hover images (work, book,...)
+    if not ball_hint == None:
+        add "interface/desk/hints/glow.png" xpos 308 
+        add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 393 xanchor 0.5
+        
+screen watch:
+    #Day/Night Clock
+    add "interface/desk/watch.png"
+    imagebutton:
+        xpos 0
+        ypos 0
+        focus_mask True
+        idle "interface/desk/watch.png"
+        hover "interface/desk/watch_hover.png"
+        unhovered SetVariable("ball_hint", None)
+        if daytime:
+            hovered SetVariable("ball_hint", "doze_off")
+            action Return("night_start") #Skip to night
+        else:
+            hovered SetVariable("ball_hint", "sleep")
+            action Return("day_start") #Skip to next day
+            
+    $ watch_x = 670
+    $ watch_y = 35
+            
+    if raining:
+        add "interface/desk/watch/rain.png" xpos watch_x ypos watch_y
+    elif snowing or blizzard:
+        add "interface/desk/watch/snow.png" xpos watch_x ypos watch_y
+    elif storm:
+        add "interface/desk/watch/storm.png" xpos watch_x ypos watch_y
+    else:
+        if daytime:
+            add "interface/desk/watch/sun.png" xpos watch_x ypos watch_y
+        else:
+            add "interface/desk/watch/moon.png" xpos watch_x ypos watch_y
+            
+    if daytime:
+        add "interface/desk/watch/day.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
+    else:
+        add "interface/desk/watch/night.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
 
 
 

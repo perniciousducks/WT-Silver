@@ -24,9 +24,11 @@ init python:
         global raining
         global snowing
         global blizzard
+        global storm
         raining = False
         snowing = False
         blizzard = False
+        storm = False
         weather_animations = []
         lightning_gen = renpy.random.randint(1, 2)
         if weather_gen == 6:
@@ -34,6 +36,7 @@ init python:
             weather_animations.append("blizzard")
             renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
         if weather_gen == 5 or (weather_gen == 4 and lightning_gen == 1): # (Heavy clouds with chance of lightning)
+            storm = True
             weather_animations.append("lightning")
         if weather_gen > 4 and not blizzard:
             raining = True

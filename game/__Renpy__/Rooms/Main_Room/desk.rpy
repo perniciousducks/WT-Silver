@@ -1,6 +1,6 @@
 label desk:
     hide screen main_room_menu
-
+    
     if day == 1:
         if not desk_examined:
             menu:

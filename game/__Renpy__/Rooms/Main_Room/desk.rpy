@@ -28,13 +28,11 @@ label desk:
     #Screens
     call play_sound("scroll")
     show screen desk_menu
-    hide screen points
     with d1
 
     $_return = ui.interact()
 
     hide screen desk_menu
-    show screen points
     #Do NOT add a transition here!
 
 

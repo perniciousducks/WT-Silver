@@ -225,24 +225,24 @@ screen main_room_menu:
         action [Hide("main_room_menu"), Jump("fireplace")]
 
     #Stats
-    imagebutton:
-        xpos 830
-        ypos 16
-        xanchor "center"
-        yanchor "center"
-        idle "interface/points/Stats_Button.png"
-        hover "interface/points/Stats_Button_Hover.png"
-        action [Hide("main_room_menu"), Jump("open_stat_menu")]
+    #imagebutton:
+    #    xpos 830
+    #    ypos 16
+    #    xanchor "center"
+    #    yanchor "center"
+    #    idle "interface/points/Stats_Button.png"
+    #    hover "interface/points/Stats_Button_Hover.png"
+    #    action [Hide("main_room_menu"), Jump("open_stat_menu")]
 
 
     #Inventory
-    imagebutton:
-        xpos 830+77
-        ypos 16
-        xanchor "center"
-        yanchor "center"
-        idle "interface/points/Inventory_Button.png"
-        hover "interface/points/Inventory_Button_Hover.png"
-        action [Hide("main_room_menu"), Jump("open_inventory_menu")]
+    #imagebutton:
+    #    xpos 830+77
+    #    ypos 16
+    #    xanchor "center"
+    #    yanchor "center"
+    #    idle "interface/points/Inventory_Button.png"
+    #    hover "interface/points/Inventory_Button_Hover.png"
+    #    action [Hide("main_room_menu"), Jump("open_inventory_menu")]
 
     zorder 1

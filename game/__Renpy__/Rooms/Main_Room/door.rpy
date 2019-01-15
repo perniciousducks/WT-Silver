@@ -25,13 +25,11 @@ label door:
     #Screens
     call play_sound("scroll")
     show screen door_menu
-    hide screen points
     with d1
 
     $_return = ui.interact()
 
     hide screen door_menu
-    show screen points
     #Do NOT add a transition here!
 
 

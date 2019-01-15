@@ -2,7 +2,7 @@
 
 ### Slytherin Points ###
 
-label slyterin_points: #points_changes: # SLYTHERIN POINTS AWARDING
+label slytherin_points: #points_changes: # SLYTHERIN POINTS AWARDING
     if generating_points == 1 and game_difficulty >= 1: # NO POINTS FOR SLYTHERIN ON THIS DAY.
             pass
     else: # POINTS WILL BE AWARDED

@@ -128,7 +128,8 @@ label room(room=None, hide_screens=True):
         hide screen package
         if package_is_here:
             show screen package
-
+        
+        call house_points
         show screen points
 
         call gen_chibi("sit_behind_desk")
@@ -137,19 +138,16 @@ label room(room=None, hide_screens=True):
         $ current_room = "weasley_store"
 
         show screen weasley_store_room
-        show screen points
 
     if room in ["potions_room","potions_classroom"]:
         $ current_room = "potions_classroom"
 
         show screen potions_room
-        show screen points
 
     if room in ["clothing_store", "clothe_store"]:
         $ current_room = "clothing_store"
 
         show screen clothing_store_room
-        show screen points
 
     if room in ["7th floor"]:
         show screen floor_7th_door

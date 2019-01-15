@@ -71,7 +71,7 @@ label use_your_quest_item: #(quest_item)
             m "It's missing the key ingredient."
 
     if quest_item == puzzle_box_ITEM:
-        if sealed_scroll_ITEM.unlocked and unlocked_7th == False:
+        if unlocked_7th == False:
             jump start_slide_puzzle
 
     jump day_main_menu

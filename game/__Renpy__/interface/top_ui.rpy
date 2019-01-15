@@ -5,6 +5,12 @@ label house_points:
     $ total_points = slytherin+gryffindor+ravenclaw+hufflepuff
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
+    if daytime:
+        $ daygold_colour = "{color=#000}"
+        $ daygold_outline = [ (1, "#e4ba70", 0, 0) ]
+    else:
+        $ daygold_colour = "{color=#FFF}"
+        $ daygold_outline = [ (1, "#000", 0, 0) ]
     
     # Set value to our displayable variable
     $ slytherin_points = slytherin
@@ -12,7 +18,7 @@ label house_points:
     $ ravenclaw_points = ravenclaw
     $ hufflepuff_points = hufflepuff
     
-    #If points variable value exceedes one thousand make it a decimal number instead
+    #If points variable value exceedes one thousand make it a decimal number instead and round to x.x
     #Remember, "slytherin_points" is a string! If you need points integer use i.e. "slytherin" variable instead.
     if slytherin >= 1000:
         $ slytherin_points = str(round(slytherin/1000.0, 1))+"{size=-2}k{/size}"
@@ -40,12 +46,12 @@ label house_points:
     
     return
 
-screen ui_top_bar:
+screen ui_top_bar():
     tag ui
     zorder 2
     add "interface/topbar/"+str(interface_color)+"/bar.png"
-    use ui_points
     use ui_stats
+    use ui_points
     
     #Debug
     if config.debug:
@@ -53,7 +59,7 @@ screen ui_top_bar:
             xpos 10 ypos 40
             text "{size=-5}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\n[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]{/color}{/size}"
     
-screen ui_points:
+screen ui_points():
     #Slytherin
     imagebutton:
         xanchor 0.5
@@ -163,12 +169,27 @@ screen ui_points:
         unhovered SetVariable("toggle_points", False)
         action ToggleVariable("persistent.toggle_points", True, False)
         
+init python:
+    def ui_dragged(drags):
+        drags[0].y = 10
+        return
+        
 screen ui_stats:
-    add "interface/topbar/"+str(interface_color)+"/stats.png" xpos 660
-    
-    hbox: ### DAYS COUNTER ###
-        spacing 5 xpos 690 ypos 10
-        text "{size=-5}{color=#FFF}[day]{/color}{/size}" outlines points_outline
-    hbox: ### GOLD COUNTER ###
-        spacing 5 xpos 830 ypos 10
-        text "{size=-5}{color=#FFF}[gold]{/color}{/size}" outlines points_outline
+    drag:
+        drag_name "ui_stats"
+        #drag_handle (0, 0, 50, 50)
+        draggable True
+        activated ui_dragged
+        frame:
+            style "empty"
+            xsize 217
+            ysize 26
+            #background #00000000
+            add "interface/topbar/"+str(interface_color)+"/stats.png" xalign 0.5 yalign 1.0
+
+            hbox: ### DAYS COUNTER ###
+                xpos 40 ypos 11 #xalign 0.5 
+                text "{size=-6}[daygold_colour][day]{/color}{/size}" outlines daygold_outline
+            hbox: ### GOLD COUNTER ###
+                xpos 140 ypos 11 #xalign 0.5
+                text "{size=-6}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline

@@ -218,6 +218,7 @@ hide screen blkfade
 with fade
 
 call points_changes #Makes house points changes.
+call house_points
 
 
 

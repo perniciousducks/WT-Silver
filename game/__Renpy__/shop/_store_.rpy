@@ -18,6 +18,8 @@ label open_weasley_store:
 
     call room("weasley_store")
     call gen_chibi("hide")
+    
+    call play_music("weasley_store")
 
     if store_intro_done:
         call gen_chibi("stand","left","base")
@@ -27,6 +29,8 @@ label open_weasley_store:
         call hide_blkfade
         call gen_walk("0","left",1.4)
     pause.2
+    
+    $ renpy.block_rollback()
 
     call store_chit_chat
 
@@ -104,8 +108,8 @@ label store_chit_chat:
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
         fre "Tell you what, lets set a vaguer right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
-        ger "Beat us again and we'll give you a small weekly percentage from our store profits."
-        m "This all sounds a bit out of character for you guys."
+        ger "Beat us again and we'll give you our token."
+        m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."
         ger "There's no way you'll beat us again anyway."
         $ twins_cards_stocked_talk = True
@@ -135,7 +139,7 @@ label store_chit_chat:
 
 label close_weasley_store:
     hide screen weasley_store_menu
-
+    hide screen gift
     show screen blkfade
     with d5
 

@@ -23,13 +23,13 @@ label twins_first_duel:
         twi "No way!"
         ger "You must've been cheating."
         m "It's all in the cards boys."
-        ger "We can see that... perhaps it's worth stocking some after all."
-        fre "Indeed, if what cards you have play such a big role..."
-        ger "People would have to buy more and more for any chance to win..."
+        ger "I can see that... perhaps it's worth stocking some after all."
+        fre "Indeed, if the cards you have play such a big role..."
+        ger "You'd have to buy more and more for any chance to win."
         fre "And we..."
         twi "We'll be rich!"
         m "So you'll stock some?"
-        ger "Absolutely! We'll send you and owl when it's ready and if they sell well we'll play you again."
+        ger "Absolutely! We'll send you an owl when it's ready and if they sell well we'll play you again."
         twi "And we'll win next time!"
         m "We'll see about that, I can't have students going around showing up to their headmaster can I..."
         $ twins_first_win = True
@@ -91,7 +91,7 @@ label twins_second_duel:
     hide screen blkfade
     stop music fadeout 1
     if not twins_second_win:
-        twi "I feel like we should have foreseen this."
+        fre "I feel like we should have foreseen this."
         ger "I blame Trelawney on this, she said that luck would be on our side today..."
         fre "Well, a promise is a promise. Here's your reward..."
         #
@@ -123,7 +123,7 @@ label twins_duel_lost:
             jump twins_duel_menu
         "-Be a loser-":
             pass
-    twi "Cards not in your favour professor? Maybe next time..."
+    ger "Cards not in your favour professor? Maybe next time..."
     "You return to your office."
     
     jump main_room
@@ -135,7 +135,7 @@ label twins_duel_cancel:
     #jump return_office
     hide screen blkfade
     with dissolve
-    twi "Cards not in your favour professor? Maybe next time..."
+    ger "Cards not in your favour professor? Maybe next time..."
     "You return to your office."
     
     jump main_room

@@ -19,10 +19,14 @@ label open_clothing_store:
     with d3
 
     call room("clothing_store")
+    
+    call play_music("clothing_store")
 
     hide screen blkfade
     with d3
     pause.2
+    
+    $ renpy.block_rollback()
 
     call clothing_store_chitchat
 

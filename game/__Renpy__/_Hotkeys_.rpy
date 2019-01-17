@@ -8,11 +8,16 @@ init:
     $ config.keymap['toggle_fullscreen'].remove('f')
     $ config.keymap['reload_game'].remove('R')
     $ config.keymap['reload_game'].append('shift_R')
+    $ config.keymap['console'].append('K_BACKQUOTE')
 
 # Initialize hotkey variables and functions
 init -2 python:                
     def custom_menu(items, **kwargs):
         return renpy.display_menu(items, interact=True, screen='custom_menu')
+        
+    def debug():
+        config.debug ^= True
+        return "Debug = %s" % config.debug
         
     ##############################################################################
     #Hotkeys list

@@ -128,7 +128,8 @@ label room(room=None, hide_screens=True):
         hide screen package
         if package_is_here:
             show screen package
-
+        
+        call house_points
         show screen points
 
         call gen_chibi("sit_behind_desk")
@@ -137,19 +138,16 @@ label room(room=None, hide_screens=True):
         $ current_room = "weasley_store"
 
         show screen weasley_store_room
-        show screen points
 
     if room in ["potions_room","potions_classroom"]:
         $ current_room = "potions_classroom"
 
         show screen potions_room
-        show screen points
 
     if room in ["clothing_store", "clothe_store"]:
         $ current_room = "clothing_store"
 
         show screen clothing_store_room
-        show screen points
 
     if room in ["7th floor"]:
         show screen floor_7th_door
@@ -165,6 +163,18 @@ label room(room=None, hide_screens=True):
 
 label main_room:
     show screen blkfade
+    
+    #Predict and cache all often used images for the room
+    $ renpy.start_predict("interface/desk/*.*")
+    $ renpy.start_predict("interface/map/*.*")
+    $ renpy.start_predict("interface/icons/*.*")
+    $ renpy.start_predict("interface/frames/*.*")
+    $ renpy.start_predict("images/rooms/_objects_/*.*")
+    $ renpy.start_predict("images/rooms/_weather_/*.*")
+    $ renpy.start_predict("images/animation/working_*.*")
+    $ renpy.start_predict("images/animation/rum_*.*")
+    $ renpy.start_predict("images/animation/reading_*.*")
+    $ renpy.start_predict("images/animation/jerking_off_*.*")
 
     call room("main_room")
 
@@ -372,6 +382,12 @@ label play_music(music=""):
 
     if music in ["hedwigs_theme"]:
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1
+        
+    if music in ["weasley_store"]:
+        play music "music/weasley_store.mp3" fadein 1 fadeout 1 #Loop
+        
+    if music in ["clothing_store"]:
+        play music "music/clothing_store.mp3" fadein 1 fadeout 1 #Loop
 
     if music in ["dark_fog","snape_theme"]:
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1

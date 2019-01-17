@@ -127,26 +127,7 @@ screen ctc:
     zorder 9
 
 screen points: #House points screen.
-    add "interface/points/TopUI_Bar.png" at Position(xpos=0+140, ypos=1)
-    hbox:
-        spacing 10 xpos 177 ypos 11
-        text "{size=-5}[ravenclaw]{/size}"
-    hbox:
-        spacing 10 xpos 286 ypos 11
-        text "{size=-5}[slytherin]{/size}"
-    hbox:
-        spacing 10 xpos 392 ypos 11
-        text "{size=-5}[gryffindor]{/size}"
-    hbox:
-        spacing 10 xpos 505 ypos 11
-        text "{size=-5}[hufflepuff]{/size}"
-    hbox: ### DAYS COUNTER ###
-        spacing 10 xpos 615 ypos 10
-        text "{size=-3}[day]{/size}"
-    hbox: ### GOLD COUNTER ###
-        spacing 10 xpos 730 ypos 10
-        text "{size=-4}[gold]{/size}"
-    zorder 2
+    use ui_top_bar
 
 
 screen gift:

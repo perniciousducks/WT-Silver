@@ -146,7 +146,7 @@ label deck_mail_send:
     with Dissolve(.3)
     
     g9 "Hell yes I'm playing this..."
-    call give_reward(">You've unlocked Wizard cards.\nUse the deckbuilder in your cupboard to learn the rules and edit your deck.","interface/icons/cards.png")
+    call give_reward(">You've unlocked Wizard cards.\nUse the deckbuilder from your desk to learn the rules and edit your deck.","interface/icons/cards.png")
 
     return
     

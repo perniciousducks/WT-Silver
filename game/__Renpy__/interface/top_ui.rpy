@@ -1,8 +1,23 @@
+init python:
+    def ui_dropped(drags, drops):
+        drags[0].snap(drags[0].target_x, 0)
+        return
+        
+    def text_points(points):
+        if points < 1000:
+            return str(points)
+        else:
+            return  str(round(points/1000.0, 1))+"{size=-2}k{/size}"
+
 label house_points:
-    # Hover temp variable
+    # Debug
+    if config.debug:
+        $ total_points = slytherin+gryffindor+ravenclaw+hufflepuff
+    
+    # Hover temp variable and UI lock
+    $ toggle_ui_lock = True
     $ toggle_points = False
-    #Sum all house points
-    $ total_points = slytherin+gryffindor+ravenclaw+hufflepuff
+    
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
     if daytime:
@@ -12,25 +27,12 @@ label house_points:
         $ daygold_colour = "{color=#FFF}"
         $ daygold_outline = [ (1, "#000", 0, 0) ]
     
-    # Set value to our displayable variable
-    $ slytherin_points = slytherin
-    $ gryffindor_points = gryffindor
-    $ ravenclaw_points = ravenclaw
-    $ hufflepuff_points = hufflepuff
-    
     #If points variable value exceedes one thousand make it a decimal number instead and round to x.x
     #Remember, "slytherin_points" is a string! If you need points integer use i.e. "slytherin" variable instead.
-    if slytherin >= 1000:
-        $ slytherin_points = str(round(slytherin/1000.0, 1))+"{size=-2}k{/size}"
-    
-    if gryffindor >= 1000:
-        $ gryffindor_points = str(round(gryffindor/1000.0, 1))+"{size=-2}k{/size}"
-        
-    if ravenclaw >= 1000:
-        $ ravenclaw_points = str(round(ravenclaw/1000.0, 1))+"{size=-2}k{/size}"
-        
-    if hufflepuff >= 1000:
-        $ hufflepuff_points = str(round(hufflepuff/1000.0, 1))+"{size=-2}k{/size}"
+    $ slytherin_points = text_points(slytherin)
+    $ gryffindor_points = text_points(gryffindor)
+    $ ravenclaw_points = text_points(ravenclaw)
+    $ hufflepuff_points = text_points(hufflepuff)
         
     #Check who's in the lead
     $ housepoints = [slytherin, gryffindor, ravenclaw, hufflepuff]
@@ -57,139 +59,73 @@ screen ui_top_bar():
     if config.debug:
         hbox:
             xpos 10 ypos 40
-            text "{size=-5}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\n[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]{/color}{/size}"
+            text "{size=-5}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
     
 screen ui_points():
-    #Slytherin
-    imagebutton:
+    drag:
+        drag_name "ui_points"
+        draggable not toggle_ui_lock
+        dragged ui_dropped
+        drag_handle(0, 0, 1.0, 1.0)
+        xpos 540 ypos 0
         xanchor 0.5
-        xpos 540
-        ypos 0
-        if not persistent.toggle_points and not toggle_points: 
-            yanchor housepoints_y[slytherin_place]
-            idle "interface/topbar/slytherin.png"
-        else: 
-            yanchor 0
-            idle "interface/topbar/slytherin_empty.png"
-        action NullAction()
-        
-    #Gryffindor    
-    imagebutton:
-        xanchor 0.5
-        xpos 540
-        ypos 0
-        if not persistent.toggle_points and not toggle_points: 
-            yanchor housepoints_y[gryffindor_place]
-            idle "interface/topbar/gryffindor.png"
-        else: 
-            yanchor 0
-            idle "interface/topbar/gryffindor_empty.png"
-        action NullAction()
-        
-    #Ravenclaw    
-    imagebutton:
-        xanchor 0.5
-        xpos 540
-        ypos 0
-        if not persistent.toggle_points and not toggle_points: 
-            yanchor housepoints_y[ravenclaw_place]
-            idle "interface/topbar/ravenclaw.png"
-        else: 
-            yanchor 0
-            idle "interface/topbar/ravenclaw_empty.png"
-        action NullAction()
-        
-    #Hufflepuff    
-    imagebutton:
-        xanchor 0.5
-        xpos 540
-        ypos 0
-        if not persistent.toggle_points and not toggle_points: 
-            yanchor housepoints_y[hufflepuff_place]
-            idle "interface/topbar/hufflepuff.png"
-        else: 
-            yanchor 0
-            idle "interface/topbar/hufflepuff_empty.png"
-        action NullAction()
-    
-    #If hovered or toggled variable
-    if persistent.toggle_points or toggle_points:
-        #Show raw points
-        hbox:
+        frame:
+            style "empty"
+            xsize 162
+            ysize 64
             xanchor 0.5
-            xpos 480
-            ypos 30
-            text "{size=-7}{color=#FFF}[slytherin_points]{/color}{/size}" outlines points_outline xalign 0.5 xanchor 0.5
-        hbox:
-            xanchor 0.5
-            xpos 520
-            ypos 30
-            text "{size=-7}{color=#FFF}[gryffindor_points]{/color}{/size}" outlines points_outline xalign 0.5 xanchor 0.5
-        hbox:
-            xanchor 0.5
-            xpos 560
-            ypos 30
-            text "{size=-7}{color=#FFF}[ravenclaw_points]{/color}{/size}" outlines points_outline xalign 0.5 xanchor 0.5
-        hbox:
-            xanchor 0.5
-            xpos 601
-            ypos 30
-            text "{size=-7}{color=#FFF}[hufflepuff_points]{/color}{/size}" outlines points_outline xalign 0.5 xanchor 0.5
-        
-        #Show placement number
-        hbox:
-            xanchor 0.5
-            xpos 480
-            ypos 10
-            text "{size=-2}{color=#FFF}[slytherin_place]{/color}{/size}" outlines points_outline
-        hbox:
-            xanchor 0.5
-            xpos 520
-            ypos 10
-            text "{size=-2}{color=#FFF}[gryffindor_place]{/color}{/size}" outlines points_outline
-        hbox:
-            xanchor 0.5
-            xpos 560
-            ypos 10
-            text "{size=-2}{color=#FFF}[ravenclaw_place]{/color}{/size}" outlines points_outline
-        hbox:
-            xanchor 0.5
-            xpos 600
-            ypos 10
-            text "{size=-2}{color=#FFF}[hufflepuff_place]{/color}{/size}" outlines points_outline
             
-    #Clickable area    
+            if not persistent.toggle_points and not toggle_points:
+                add "interface/topbar/slytherin.png" yanchor housepoints_y[slytherin_place]
+                add "interface/topbar/gryffindor.png" yanchor housepoints_y[gryffindor_place]
+                add "interface/topbar/ravenclaw.png" yanchor housepoints_y[ravenclaw_place]
+                add "interface/topbar/hufflepuff.png" yanchor housepoints_y[hufflepuff_place]
+            else:
+                # Add empty banners
+                add "interface/topbar/slytherin_empty.png" yanchor 0
+                add "interface/topbar/gryffindor_empty.png" yanchor 0
+                add "interface/topbar/ravenclaw_empty.png" yanchor 0
+                add "interface/topbar/hufflepuff_empty.png" yanchor 0
+                # Show points
+                text "{size=-7}{color=#FFF}[slytherin_points]{/color}{/size}" outlines points_outline xpos 17 ypos 30 xanchor 0.5
+                text "{size=-7}{color=#FFF}[gryffindor_points]{/color}{/size}" outlines points_outline xpos 58 ypos 30 xanchor 0.5
+                text "{size=-7}{color=#FFF}[ravenclaw_points]{/color}{/size}" outlines points_outline xpos 98 ypos 30 xanchor 0.5
+                text "{size=-7}{color=#FFF}[hufflepuff_points]{/color}{/size}" outlines points_outline xpos 139 ypos 30 xanchor 0.5
+                # Show placement number
+                text "{size=-2}{color=#FFF}[slytherin_place]{/color}{/size}" outlines points_outline xpos 17 ypos 10 xanchor 0.5
+                text "{size=-2}{color=#FFF}[gryffindor_place]{/color}{/size}" outlines points_outline xpos 58 ypos 10 xanchor 0.5
+                text "{size=-2}{color=#FFF}[ravenclaw_place]{/color}{/size}" outlines points_outline xpos 98 ypos 10 xanchor 0.5
+                text "{size=-2}{color=#FFF}[hufflepuff_place]{/color}{/size}" outlines points_outline xpos 139 ypos 10 xanchor 0.5
+            
+            if toggle_ui_lock:  
+                imagebutton:
+                    idle "interface/topbar/hover_zone.png"
+                    hovered SetVariable("toggle_points", True)
+                    unhovered SetVariable("toggle_points", False)
+                    action ToggleVariable("persistent.toggle_points", True, False)
+                    activate_sound "sounds/click3.mp3"
+
+    # Toggle UI lock button
     imagebutton:
-        xanchor 0.5
-        yanchor 0
-        xpos 540
-        ypos 0
-        idle "interface/topbar/hover_zone.png"
-        hovered SetVariable("toggle_points", True)
-        unhovered SetVariable("toggle_points", False)
-        action ToggleVariable("persistent.toggle_points", True, False)
-        
-init python:
-    def ui_dragged(drags):
-        drags[0].y = 10
-        return
-        
+        xpos 1047
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
+        action ToggleVariable("toggle_ui_lock", False, True)
+        activate_sound "sounds/click3.mp3"
+
 screen ui_stats:
     drag:
         drag_name "ui_stats"
-        #drag_handle (0, 0, 50, 50)
-        draggable True
-        activated ui_dragged
+        draggable not toggle_ui_lock
+        dragged ui_dropped
         frame:
             style "empty"
             xsize 217
             ysize 26
-            #background #00000000
             add "interface/topbar/"+str(interface_color)+"/stats.png" xalign 0.5 yalign 1.0
 
-            hbox: ### DAYS COUNTER ###
-                xpos 40 ypos 11 #xalign 0.5 
+            hbox:
+                xpos 40 ypos 11
                 text "{size=-6}[daygold_colour][day]{/color}{/size}" outlines daygold_outline
-            hbox: ### GOLD COUNTER ###
-                xpos 140 ypos 11 #xalign 0.5
+            hbox:
+                xpos 140 ypos 11
                 text "{size=-6}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline

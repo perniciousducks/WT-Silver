@@ -13,8 +13,6 @@ label map_init:
     $ UI_xpos_offset = 230
     $ UI_ypos_offset = 150
     
-    $ map_animated = False
-    
     if not hasattr(renpy.store,'her_map_location') or reset_persistants:
         label reset_map_init:
 
@@ -163,15 +161,16 @@ screen map_buttons:
             ypos UI_ypos_offset
             focus_mask True
             unhovered SetVariable("ball_hint", None)
-            if first_time_7th == False:
-                idle "interface/map/room_ror_idle.png"
-                hover "interface/map/room_ror_hover.png"
-                hovered SetVariable("ball_hint", "room_of_req")
-            else:
+            if first_time_7th == True:
                 idle "interface/map/room_ror_empty_idle.png"
                 hover "interface/map/room_ror_empty_hover.png"
                 hovered SetVariable("ball_hint", "room_of_req")
-            action Return("floor_7th")
+                action Return("floor_7th")
+            else:    
+                idle "interface/map/room_ror_idle.png"
+                hover "interface/map/room_ror_hover.png"
+                hovered SetVariable("ball_hint", "room_of_req")
+                action Return("floor_7th")
 
     #Lake
     imagebutton at animate:
@@ -349,7 +348,7 @@ label update_character_map_locations:
         $ her_map_ypos = 220
     if her_map_location == "room_g":
         $ her_map_xpos = 350
-        $ her_map_ypos = 320
+        $ her_map_ypos = 330
     if her_map_location == "room_s":
         $ her_map_xpos = 430
         $ her_map_ypos = 270
@@ -506,7 +505,7 @@ screen map_screen_characters():
 label floor_7th:
     if unlocked_7th == False:
         m"\"I don't have any reason to go there...\""
-        jump door
+        jump desk
     else:
         call blkfade
         call room(hide_screens=True)

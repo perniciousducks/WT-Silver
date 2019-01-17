@@ -65,6 +65,7 @@ label open_pyzzle_box:
         m "Oh well, too late now. Back to my usual-"
     elif unlocked_7th == False:
         m "Finally... "
+        m "What is this?"
         m "Sweet, phoenix tears! Down the hatch we go."
         $renpy.play("sounds/pop03.mp3")
         $renpy.play("sounds/gulp.mp3")
@@ -93,7 +94,7 @@ label open_pyzzle_box:
     show screen genie
     hide screen reading
     with Dissolve(0.3)
-    call give_reward("You've unlocked something on the 7th floor","/interface/icons/head/head_genie_question_mark.png")
+    call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/interface/icons/head/head_genie_question_mark.png")
     $ unlocked_7th = True
     jump main_room
 

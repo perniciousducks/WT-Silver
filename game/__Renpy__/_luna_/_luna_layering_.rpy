@@ -6,7 +6,7 @@ screen luna_main:
     tag luna_main
 
     ### BASE IMAGE
-    add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the base body
+    add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
 
     #Arms
     if (luna_wear_top and lun_top in luna_arms_up_list) or (luna_wear_outfit and luna_outfit_GLBL.id in luna_arms_up_list): #Temporary. Needs a call label similar to "update_her_body"
@@ -16,6 +16,7 @@ screen luna_main:
         pass
 
     add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the left arm
+    add luna_breasts xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
     add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the right arm
 
     ### FACE

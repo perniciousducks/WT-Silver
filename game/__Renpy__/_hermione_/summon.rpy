@@ -145,15 +145,22 @@ label summon_hermione:
                 m "So, how about a little vaguer then?"
                 call her_main( "What kind of vaguer are we talking about? I've only recently started playing.","base","glance")
                 m "Don't worry, we'll play a few practice runs, when you're ready I'll play you for your token..."
+                jump hermione_duel_menu
             else:
                 label hermione_duel_menu:
                 menu:
-                    "-First duel-":
+                    "-First Duel-":
                         jump hermione_first_duel
-                    "-Second duel-":
+                    "-Second Duel-" if her_first_win:
                         jump hermione_second_duel
-                    "-Challenge-":
+                    "{color=#858585}-You need to beat the first duel-{/color}" if not her_first_win:
+                        jump hermione_duel_menu
+                    "-Challenge-" if her_second_win:
                         jump hermione_third_duel
+                    "{color=#858585}-You need to beat the second duel-{/color}" if not her_second_win:
+                        jump hermione_duel_menu
+                    "-Never mind-":
+                        jump hermione_requests
 
         "-Gifts-" if not gave_hermione_gift:
             call update_quest_items

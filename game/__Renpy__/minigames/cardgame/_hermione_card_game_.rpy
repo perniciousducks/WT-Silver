@@ -145,7 +145,10 @@ label hermione_third_duel:
 label her_duel_lost:
     show screen blkfade 
     with dissolve
-    "You "+check_winner()
+    if check_winner() == "lost":
+        "You lost"
+    else:
+        "It was a draw"
     stop music fadeout 1
     #jump return_office
     hide screen blkfade

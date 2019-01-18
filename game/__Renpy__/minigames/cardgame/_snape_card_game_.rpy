@@ -143,8 +143,9 @@ label snape_third_duel:
         m "Now to the prize..."
         call sna_main( "Fine, here's your token and one of my precious cards....","snape_05")
         call sna_main( "\"You were a good card my boy. But it's time to grow up.\"","snape_05")
-        $ unlocked_cards += [snape]
         $ snape_third_win = True
+        $ unlocked_cards += [snape]
+        call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.png")
         
     call play_sound("door")
     call sna_chibi("hide")

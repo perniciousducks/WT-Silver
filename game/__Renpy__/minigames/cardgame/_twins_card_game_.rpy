@@ -94,12 +94,9 @@ label twins_second_duel:
         fre "I feel like we should have foreseen this."
         ger "I blame Trelawney on this, she said that luck would be on our side today..."
         fre "Well, a promise is a promise. Here's your reward..."
-        #
-        #
-        #Weekly Shop Profits
-        #Token
-        #Card
-        #
+        $ card_rand_twins = renpy.random.choice(['fred', 'george'])
+        $ unlocked_cards += [eval(card_rand_twins)]
+        call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins))
         $ twins_second_win = True
         pass
     else:

@@ -145,6 +145,7 @@ label summon_hermione:
                 m "So, how about a little vaguer then?"
                 call her_main( "What kind of vaguer are we talking about? I've only recently started playing.","base","glance")
                 m "Don't worry, we'll play a few practice runs, when you're ready I'll play you for your token..."
+                $ her_cards_stocked_talk = True
                 jump hermione_duel_menu
             else:
                 label hermione_duel_menu:

@@ -13,9 +13,8 @@ label setup_deck(opppent_deck):
 label cardgame:
     hide screen main_room_menu
     show screen card_battle(player_deck,enemy_deck)
-    $ renpy.music.stop("weather")
-    #Disallow rollback cheating
-    $ renpy.block_rollback()
+    $ renpy.music.stop("weather") #Stop playing weather SFX
+    $ renpy.block_rollback() #Disallow rollback cheating
     $ _return = ui.interact()
 
     if _return in player_deck:
@@ -52,10 +51,20 @@ label cardgame:
             $ selectcard = -1
             $ update_table(x,y)
             
-            pause 0.7
+            pause 0.7 # Autoplay enemy card
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
+                if check_winner():
+                    show screen card_win
+                    play sound "sounds/card_win.mp3" #Fanfare
+                pause 2 # Pause before end
+                hide screen card_win
                 hide screen card_battle
+                # Replay weather SFX
+                if raining:
+                    $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
+                if blizzard:
+                    $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
                 return "EndGame"
                 
             call enemy_turn
@@ -63,7 +72,17 @@ label cardgame:
             $ response_card = "AfterEnemy"
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
+                if check_winner():
+                    show screen card_win
+                    play sound "sounds/card_win.mp3" #Fanfare
+                pause 2 # Pause before end
+                hide screen card_win
                 hide screen card_battle
+                # Replay weather SFX
+                if raining:
+                    $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
+                if blizzard:
+                    $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
                 return "EndGame"
             return "NewTurn"
         else:
@@ -191,5 +210,10 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
 screen start_deck:
     zorder 9
 
-    for i in range(0, 8):
+    for i in range(0, len(unlocked_cards)):
         use cardrender(unlocked_cards[i],40+125*i,200, interact=False, cardzoom=0.375)
+        
+screen card_win:
+    zorder 9
+
+    text "{color=#FFF}{size=+40}You win{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (1, "#000", 0, 0) ]

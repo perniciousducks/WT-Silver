@@ -55,8 +55,8 @@ label cardgame:
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
                 if check_winner():
-                    show screen card_win
-                    play sound "sounds/card_win.mp3" #Fanfare
+                    show screen card_end_message("You win!")
+                    play sound "sounds/card_win.ogg" #Fanfare
                 pause 2 # Pause before end
                 hide screen card_win
                 hide screen card_battle
@@ -73,8 +73,8 @@ label cardgame:
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
                 if check_winner():
-                    show screen card_win
-                    play sound "sounds/card_win.mp3" #Fanfare
+                    show screen card_end_message("You win!")
+                    play sound "sounds/card_win.ogg" #Fanfare
                 pause 2 # Pause before end
                 hide screen card_win
                 hide screen card_battle
@@ -213,7 +213,7 @@ screen start_deck:
     for i in range(0, len(unlocked_cards)):
         use cardrender(unlocked_cards[i],40+125*i,200, interact=False, cardzoom=0.375)
         
-screen card_win:
+screen card_end_message(message):
     zorder 9
 
-    text "{color=#FFF}{size=+40}You win{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (1, "#000", 0, 0) ]
+    text "{color=#FFF}{size=+40}[message]{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (1, "#000", 0, 0) ]

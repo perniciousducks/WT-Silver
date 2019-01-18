@@ -482,7 +482,7 @@ label __init_variables:
             playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
             # Temp fix
             for i in range(0,5):
-                unlocked_cards[i].copies -= 1
+                unlocked_cards[i].copies = 0
         
         if not hasattr(renpy.store,'snape_first_deck'):
             snape_first_deck = [snape.clone(), item_potions.clone(), item_elf.clone(), item_wine.clone(), item_lipstick.clone()]

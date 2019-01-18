@@ -529,7 +529,7 @@ init python:
         
         return (x,y)
         
-    def get_hex_string(red, green, blue):
+    def get_hex_string(red, green, blue, alpha=1.0):
         red = str(hex( int( math.ceil( red*255))))[2:]
         if not len(red) == 2:
             red = "0"+red
@@ -539,7 +539,11 @@ init python:
         blue = str(hex(int(math.ceil( blue * 255))))[2:]
         if not len(blue) == 2:
             blue = "0"+blue
-        return "#" + red + green + blue
+        alpha = str(hex(int(math.ceil( alpha * 255))))[2:]
+        if not len(alpha) == 2:
+            alpha = "0"+alpha    
+        
+        return "#" + red + green + blue + alpha
     
     def get_width(image):   
         return get_image_size(image)[0]

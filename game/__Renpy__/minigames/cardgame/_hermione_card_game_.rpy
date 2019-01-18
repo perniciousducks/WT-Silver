@@ -13,9 +13,7 @@ label hermione_first_duel:
             jump her_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if check_winner() == "loser":
-        jump her_duel_lost
-    elif check_winner() == "draw":
+    if not check_winner() == "winner":
         jump her_duel_lost
         
     hide screen blkfade
@@ -48,7 +46,7 @@ label hermione_second_duel:
             jump her_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if not check_winner():
+    if not check_winner() == "winner":
         jump her_duel_lost
     
     hide screen blkfade
@@ -120,7 +118,7 @@ label hermione_third_duel:
             hide screen hermione_main
             $ _preferences.volumes['music'] = volume
     
-    if not check_winner():
+    if not check_winner() == "winner":
         jump her_duel_lost
     
     #Won third match
@@ -147,7 +145,7 @@ label hermione_third_duel:
 label her_duel_lost:
     show screen blkfade 
     with dissolve
-    "You lost"
+    "You "+check_winner()
     stop music fadeout 1
     #jump return_office
     hide screen blkfade

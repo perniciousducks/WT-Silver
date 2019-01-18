@@ -564,7 +564,7 @@ init python:
             for x in range(0,3):
                 if table_cards[x][y].playercard:
                     playerpoints += 1
-        return "winner" if playerpoints > 5 else "draw" if playerpoints == 5 else "loser
+        return "winner" if playerpoints > 5 else "drawed" if playerpoints == 5 else "lost
     
            
     def update_table(new_card_x, new_card_y):

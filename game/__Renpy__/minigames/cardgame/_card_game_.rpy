@@ -6,7 +6,7 @@ label setup_deck(opppent_deck):
         enemy_deck = []
         for card in opppent_deck:
             card.playercard = False
-            enemy_deck.append(card)
+            enemy_deck.append(card.clone())
         reset_table_cards()
     return
     
@@ -54,7 +54,7 @@ label cardgame:
             pause 0.7 # Autoplay enemy card
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
-                if check_winner():
+                if check_winner() == "winner":
                     show screen card_end_message("You win!")
                     play sound "sounds/card_win.ogg" #Fanfare
                 pause 2 # Pause before end
@@ -72,7 +72,7 @@ label cardgame:
             $ response_card = "AfterEnemy"
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
-                if check_winner():
+                if check_winner() == "winner":
                     show screen card_end_message("You win!")
                     play sound "sounds/card_win.ogg" #Fanfare
                 pause 2 # Pause before end

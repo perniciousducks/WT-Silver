@@ -13,9 +13,11 @@ label hermione_first_duel:
             jump her_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if not check_winner():
+    if check_winner() == "loser":
         jump her_duel_lost
-    
+    elif check_winner() == "draw":
+        jump her_duel_lost
+        
     hide screen blkfade
     stop music fadeout 1
     if not her_first_win:

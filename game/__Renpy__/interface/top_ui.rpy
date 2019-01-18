@@ -1,6 +1,6 @@
 init python:
     def ui_dropped(drags, drops):
-        drags[0].snap(drags[0].target_x, 0)
+        drags[0].snap(clamp(drags[0].target_x, 20, 744), 0)
         return
         
     def text_points(points):
@@ -8,15 +8,22 @@ init python:
             return str(points)
         else:
             return  str(round(points/1000.0, 1))+"{size=-2}k{/size}"
+            
+    def image_hover(image):
+        return im.MatrixColor(image, im.matrix.brightness(0.2))
+        
+    def image_alpha(image):
+        return im.MatrixColor(image, im.matrix.opacity(0.1))
 
 label house_points:
     # Debug
     if config.debug:
         $ total_points = slytherin+gryffindor+ravenclaw+hufflepuff
     
-    # Hover temp variable and UI lock
+    # Temp variables
     $ toggle_ui_lock = True
     $ toggle_points = False
+    $ toggle_menu = False
     
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
@@ -51,9 +58,48 @@ label house_points:
 screen ui_top_bar():
     tag ui
     zorder 2
+    
+    if toggle_menu:
+        use ui_menu
+        
     add "interface/topbar/"+str(interface_color)+"/bar.png"
     use ui_stats
     use ui_points
+    
+    # Menu button
+    imagebutton:
+        xpos 0
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
+        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
+        if renpy.get_screen("main_room_menu"):
+            action [ToggleVariable("toggle_menu", True, False), Hide("main_room_menu")]
+        else:
+            action [ToggleVariable("toggle_menu", True, False), Show("main_room_menu")]
+        activate_sound "sounds/click3.mp3"
+        
+    # Stats button
+    imagebutton:
+        xpos 948
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
+        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
+        action [Hide("main_room_menu"), Jump("open_stat_menu")]
+        activate_sound "sounds/click3.mp3"
+        
+    # Inventory button
+    imagebutton:
+        xpos 981
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
+        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
+        action Jump("open_inventory_menu")
+        activate_sound "sounds/click3.mp3"
+        
+    # Toggle UI lock button
+    imagebutton:
+        xpos 1047
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
+        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
+        action ToggleVariable("toggle_ui_lock", False, True)
+        activate_sound "sounds/click3.mp3"
     
     #Debug
     if config.debug:
@@ -105,18 +151,12 @@ screen ui_points():
                     action ToggleVariable("persistent.toggle_points", True, False)
                     activate_sound "sounds/click3.mp3"
 
-    # Toggle UI lock button
-    imagebutton:
-        xpos 1047
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
-        action ToggleVariable("toggle_ui_lock", False, True)
-        activate_sound "sounds/click3.mp3"
-
-screen ui_stats:
+screen ui_stats():
     drag:
         drag_name "ui_stats"
         draggable not toggle_ui_lock
         dragged ui_dropped
+        xpos 20
         frame:
             style "empty"
             xsize 217
@@ -129,3 +169,25 @@ screen ui_stats:
             hbox:
                 xpos 140 ypos 11
                 text "{size=-6}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline
+                
+screen ui_menu():
+    button:
+        action [SetVariable("toggle_menu", False), Show("main_room_menu")]
+        style "empty"
+    button:
+        ypos 34
+        xsize 102
+        ysize 204
+        action NullAction()
+        style "empty"
+    frame:
+        ypos 34
+        style "empty"
+        add "interface/topbar/"+str(interface_color)+"/menu.png"
+        vbox:
+            ypos 30
+            textbutton "Menu 1" action NullAction() background #000
+            textbutton "Menu 2" action NullAction() background #000
+            textbutton "Menu 3" action NullAction() background #000
+            textbutton "Menu 4" action NullAction() background #000
+            textbutton "Menu 5" action NullAction() background #000

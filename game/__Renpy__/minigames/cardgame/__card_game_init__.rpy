@@ -61,7 +61,7 @@ label __init_variables:
                                     description = "Some old dude, you have no idea who this is.")
                                     
         fred = card_new( imagepath="images/cardgame/t1/special/fred_v1.png",
-                                    topvalue = 2,
+                                    topvalue = 3,
                                     bottomvalue = 2,
                                     rightvalue = 4,
                                     leftvalue = 1,
@@ -70,7 +70,7 @@ label __init_variables:
                                     
         george = card_new( imagepath="images/cardgame/t1/special/george_v1.png",
                                     topvalue = 2,
-                                    bottomvalue = 2,
+                                    bottomvalue = 3,
                                     rightvalue = 1,
                                     leftvalue = 4,
                                     title="George Weasley",
@@ -168,6 +168,14 @@ label __init_variables:
                                     title="Hermione Granger (schoolgirl)",
                                     description = "The Granger girl wearing her normal school uniform.")
                                     
+        her_librarian = card_new( imagepath="images/cardgame/t1/hermione/her_librarian_v%s.png" % str(geniecard_level),
+                                    topvalue = 5,
+                                    bottomvalue = 2,
+                                    rightvalue = 1,
+                                    leftvalue = 4,
+                                    title="Hermione Granger (librarian)",
+                                    description = "The Granger girl clutching a real page turner")
+                                    
         sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(geniecard_level),
                                     topvalue = 3,
                                     bottomvalue = 4,
@@ -195,9 +203,9 @@ label __init_variables:
         #Item cards
         
         item_badge = card_new( imagepath="images/cardgame/t1/other/badge_v1.png",
-                                    topvalue = 1,
+                                    topvalue = 3,
                                     bottomvalue = 1,
-                                    rightvalue = 3,
+                                    rightvalue = 1,
                                     leftvalue = 3,
                                     title="SPEW Badge",
                                     description="The S.P.E.W Badge, I think it might stand for Sluts for the Pleasuring of Excited Wizards...")
@@ -219,8 +227,8 @@ label __init_variables:
                                     description="Some beads, I'm sure you already know where these go... Hogwarts express to brown town.")
                                     
         item_bird = card_new( imagepath="images/cardgame/t1/other/bird_v1.png",
-                                    topvalue = 5,
-                                    bottomvalue = 1,
+                                    topvalue = 4,
+                                    bottomvalue = 3,
                                     rightvalue = 1,
                                     leftvalue = 1,
                                     title="Phoenix",
@@ -283,10 +291,10 @@ label __init_variables:
                                     description="Some condoms, I don't need them.")
                                     
         item_desk = card_new( imagepath="images/cardgame/t1/other/desk_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 2,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
+                                    topvalue = 3,
+                                    bottomvalue = 3,
+                                    rightvalue = 3,
+                                    leftvalue = 1,
                                     title="Office desk",
                                     description="My desk, with an underside way more glazed than before I arrived.")
                                     
@@ -308,7 +316,7 @@ label __init_variables:
                                     
         item_elf = card_new( imagepath="images/cardgame/t1/other/elf_v1.png",
                                     topvalue = 3,
-                                    bottomvalue = 2,
+                                    bottomvalue = 3,
                                     rightvalue = 2,
                                     leftvalue = 2,
                                     title="House-Elf",
@@ -432,7 +440,7 @@ label __init_variables:
                                     rightvalue = 1,
                                     leftvalue = 2,
                                     title="Bottle of wine",
-                                    description="That wine I keep finding in this cupboard. Not sure if the wine is magic or the cupboard.")
+                                    description="That wine I keep finding in this cupboard. Not sure if the wine is magically infused or the cupboard.")
             
         if not hasattr(renpy.store,'deck_unlocked'):
             deck_unlocked = False
@@ -472,6 +480,9 @@ label __init_variables:
             card_rand_item5 = renpy.random.choice([item_eromag, item_pornmag, item_girlmag, item_scroll, item_sweets])
             unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
+            # Temp fix
+            for i in range(0,5):
+                unlocked_cards[i].copies -= 1
         
         if not hasattr(renpy.store,'snape_first_deck'):
             snape_first_deck = [snape.clone(), item_potions.clone(), item_elf.clone(), item_wine.clone(), item_lipstick.clone()]
@@ -485,7 +496,7 @@ label __init_variables:
         if not hasattr(renpy.store,'her_first_deck'):
             her_first_deck = [her_schoolgirl.clone(), item_girlmag.clone(), item_bookgala.clone(), item_bookgala2.clone(), item_bookchairs.clone()]
             her_second_deck = [her_schoolgirl.clone(), item_eromag.clone(), item_bookgala.clone(), item_bookgala2.clone(), item_bookchairs.clone()]
-            her_third_deck = [her_schoolgirl.clone(), item_pornmag.clone(), item_bookgala.clone(), item_bookgala2.clone(), item_bookchairs.clone()]
+            her_third_deck = [her_librarian.clone(), item_pornmag.clone(), item_bookgala.clone(), item_bookgala2.clone(), item_bookchairs.clone()]
 
         card_non_spec_char = [ "I see you've been practicing... so have I!", "You've activated my trap card... wait... it's in my other deck!", "You think you're so good, but this school has never seen a player of the likes of me! In this particular office...", "Aha, you've walked right into my trap. Take this!", "You'll never beat me! I will give you the reward though... in your dreams!", "Thats impossible... that card is legendary... wait, it doesn't have a shimmering effect, never mind.", "I was sure my cards used to be good...", "Wait, you've got that card... I've been such a fool! This is a witchmasters deck!", "We're playing reverse rules right? Lowest amount of cards win?", "If only slight of hand was taught at Hogwarts...", "Wait, this can't be right. I must have put my good cards in my other robes.", "You should be happy that they banned one of the cards that came in a cereal box promotion... that one was overpowered.", "This one's a board sweeper!", "I'll just burn this card... oh yeah, I got better cards coming.", "This is a control deck. I'll win in the end don't you worry.", "Maybe I should have made less of a filler deck... I'll get you in the end.", "Your loss is inevitable. It's all in the heart of the cards.", "Have you been Netdecking? Did those damn spiders in the forest tell you what cards to play?", "I've been metagaming the crap out of you... I know exactly what cards you're going to play...except for that last one.", "Oh, it's my turn? I was just thinking about how I'm going to celebrate after your inevitable loss.", "I've been slowrolling you this whole time. My last card is a mega ultimate legendary.", "What kind of deck is this... don't you even care about synergy?", "I see what kind of player you are now... perhaps a more offensive approach is in order.", "I was born to play card games... you merely adopted your liking of them.", "Hahah, you don't even know that I have a card with powers that has been locked away for centuries... unfortunately I lost the key...", "Prepare for a total wipe... your tears when I beat you that is.", "You want to know what's shown on my cards? What do I like the most? Winning, which is why this card is going to guarantee my victory.", "Life is like a game of Wizard Cards. If you don't win... you lose.", "Quitters never win, winners never quit, but those who never win and never quit are idiots... I'm not sure which I am.", "Go fish...", "Do you have any spells to make you better at Wizard Cards? Didn't think so...", "You can smell the roses as much as you want, while I smell the aroma of victory", "Do you see any stars yet, because you're getting beaten pretty badly.", "Well, your performance in this round is certainly a divine comedy.", "The forecast today is calling for my victory, so I'm not worried.", "Are you out of juice already?", "Couldn't you see from your own fortune that you're bound to lose?", "Looks like you fell right into your own trap... now look at this!! KAPOW", "I don't need luck potion to beat you. That's how confident I am in my deck.", "I know my deck like the back of my hand... wait, when did that mole get there?", "Fool, you'll soon see my finishing move... but before that, UNO!", "I'm so confident in my card collection I just shuffled and picked some at random before this game.", "Great cards doesn’t ensure a win. Right moves do.", "The game balance of this game has been broken for centuries... and I have the winning cards.", "The ministry of magic considered banning this game as they thought it all mattered what cards you had... something about gambling for children.", "If I said that I picked my cards blindfolded would you believe me? Yes, they're all that good.", "I tried to use transfiguration on one of my cards but it burnt up instead... I probably wasn't the first one who tried that.", "Wait! Isn't that card banned? No, the stats aren't the same...phew", "Why does that card of yours look so sticky?", "Oh nice a shiny... wait, why has it stuck to the board?", "That's nowhere near the best move you could've done. Check this out!", "Even a troll would play better than you at this point... no offense.", "Some people are half blood and some pure blood. But I'm purely a Card playing genius.", "That must be a new card. Why haven't I seen that one before?", "Wait, my numbers must have changed. Did you put a spell on my cards?", "Hit me... I mean, give me another card.", "Ah, that one. To bad I have the perfect counter.", "So, when do I get to draw a card again?", "Someone replaced one of my cards with a joker... I bet it was peeves.", "I was told that face cards was the best ones to get... but they were talking about poker.", "By Merlins beard, where did you get that card?", "Next time you should let me use the cards I drew. Their numbers are a lot better than these ones."]
         
@@ -576,7 +587,7 @@ init python:
         copies = 0
         description = "Description"
         title = "Title"
-        imagepath = "images/cardgame/h_lewd_cheer.png"
+        imagepath = "images/cardgame/card.png"
         
         topvalue = 0
         bottomvalue = 1

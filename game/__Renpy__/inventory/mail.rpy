@@ -121,7 +121,7 @@ label deck_mail_send:
     m "That last bit just sounds like scam to me..."
     m "..."
     m "I guess I'll have a look at the starter pack at least..."    
-    "Opens starter pack and sees the cards"
+    nar "Genie opens starter pack and looks at the cards."
     
     #Randomize starter pack (Hardcore difficulty gets randomized at the start of the game)
     if game_difficulty <= 2:
@@ -136,6 +136,9 @@ label deck_mail_send:
         
             unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
+            # Temp fix
+            for i in range(0,5):
+                unlocked_cards[i].copies -= 1
     
     show screen blktone
     show screen start_deck
@@ -146,7 +149,7 @@ label deck_mail_send:
     with Dissolve(.3)
     
     g9 "Hell yes I'm playing this..."
-    call give_reward(">You've unlocked Wizard cards.\nUse the deckbuilder from your desk to learn the rules and edit your deck.","interface/icons/cards.png")
+    call give_reward(">You've unlocked Wizard cards.\nUse the deckbuilder available on your desk to learn the rules and edit your deck.","interface/icons/cards.png")
 
     return
     

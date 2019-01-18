@@ -21,7 +21,7 @@ label hermione_first_duel:
     if not her_first_win:
         call her_main( "Well, that's interesting. I was sure that my deck would've been balanced enough...","angry","angryCl")
         g9 "It's just a practice round, I'm sure you'll do better next time."
-        call her_main( "Your smile says otherwise.","mad","angryL") 
+        call her_main( "Your smile says otherwise.","mad","angryL")
         m "..."
         $ her_first_win = True
         pass
@@ -58,8 +58,9 @@ label hermione_second_duel:
         g9 "So, do you want to take a break?"
         call her_main( "No, I'm ready...","soft","concerned")
         m "You sure?"
-        call her_main( "I said I'm ready.","clench","hateful")
+        call her_main( "I said I'm ready.","clench","hateful")        
         $ her_second_win = True
+        jump hermione_duel_menu
         pass
     else:
         call her_main( "This game is stupid!","angry","angryCl")
@@ -132,6 +133,8 @@ label hermione_third_duel:
         g9 "You seem to have forgotten something..."
         call her_main( "Fine...","angry","glance")
         call her_main( "Here...","mad","glanceL")
+        $ unlocked_cards += [her_librarian]
+        call give_reward("You have received a card!", "images/cardgame/t1/hermione/her_librarian_v1.png")
         $ her_third_win = True
         
     call play_sound("door")

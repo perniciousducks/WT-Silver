@@ -620,7 +620,7 @@ init python:
             return self.textcolor+self.description+"{/color}"
             
         def clone(self):
-            return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue)
+            return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue, playercard = self.playercard)
                     
         def getAIScore(self, table_of_cards):
             high_score = 0

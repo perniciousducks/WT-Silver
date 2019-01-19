@@ -26,6 +26,7 @@ screen color_map(color, cursor):
         text "Blue : " + str(int(color[2])) xpos 360 ypos 95
         text "Alpha: " + str(int(color[3])) xpos 360 ypos 130
         
+        textbutton "Apply" xalign 0.9 yalign 0.9 clicked Return("finish")
         
         
         add Solid(get_hex_string(color[0]/255.0,color[1]/255.0,color[2]/255.0,color[3]/255.0)) xpos 360 ypos 165 zoom 0.1
@@ -40,7 +41,7 @@ init python:
     def color_picker(color = [255.0, 255.0, 0.0, 255.0]):
         global color_scale
         global UI_color_bar
-        
+        original_color = [color[0],color[1],color[2],color[3]]
         choicen_scale = [125.0,125.0]
         cursor_position = [175, 125]
         while True:
@@ -52,12 +53,16 @@ init python:
 
             #Needed for screen scaling
             screen_height = renpy.get_physical_size()[1]
-            scaling_modifier = (float(screen_height)/float(config.screen_height))
+            screen_width = renpy.get_physical_size()[0]
+            if screen_width*5 > screen_height*9:
+                scaling_modifier = (float(screen_height)/float(config.screen_height))
+            else:
+                scaling_modifier = (float((screen_width*5)/9)/float(config.screen_height))
             x, y = pygame.mouse.get_pos()
             
             
             if _return == "Close":
-                return [1.0,1.0,1.0,1.0]
+                return original_color
             elif _return == "main_color":
                 cursor_position = [x /scaling_modifier, y/ scaling_modifier]
                 x -= 175.0 * scaling_modifier
@@ -67,8 +72,7 @@ init python:
                 color = color_scale.get_main_color(choicen_scale[0],choicen_scale[1])
             elif _return == "color_bar":
                 y -= 125.0 * scaling_modifier
-                ypos_to_color = float(y)/ scaling_modifier
-                #return (ypos_to_color, screen_height, UI_color_bar.h, scaling_modifier)
+                ypos_to_color = float(y) / scaling_modifier
                 
                 renpy.free_memory()
                 new_color = UI_color_bar.get_color(ypos_to_color)
@@ -77,7 +81,7 @@ init python:
 
                 renpy.restart_interaction()
             elif _return == "finish":
-                return color_scale
+                return color
                 
     
     class color_bar(im.ImageBase):
@@ -166,7 +170,8 @@ init python:
         def set_color(self, color):
             self.color = color
             
-            
+        
+        
         def get_main_color(self, x, y):
             new_color = [self.color[0],self.color[1],self.color[2], self.color[3]]
             

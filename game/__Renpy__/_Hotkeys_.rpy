@@ -32,6 +32,7 @@ init -2 python:
     hkey_inventory = "i"
     hkey_sleep = "s"
     hkey_fap = "f"
+    hkey_ui_lock = "L"
     
     hkey_hide = "h" 
     hkey_mhide = "mouseup_2"
@@ -59,6 +60,8 @@ screen hotkeys_main:
         key hkey_sleep action Jump("night_start") #Skip to night
     else:
         key hkey_sleep action Jump("day_start") #Skip to next day
+        
+    key hkey_ui_lock action ToggleVariable("toggle_ui_lock", False, True)
 
 #Add hotkeys to say screen (screens.rpy)
 screen hotkeys_say:

@@ -1002,21 +1002,21 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_cum = 12
                 ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
                 call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","empty")
-                call lun_main("mmmm{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("mmmm{image=textheart}{image=textheart}","base","seductive","sad","stareL")
                 ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
                 $ luna_cum = 13
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","stareL")
                 call ctc
 
                 $ luna_cum = 14
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","stareL")
                 $ luna_cum = 15
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","stareL")
                 $ luna_wear_cum = False
-                call lun_main("ah...","base","seductive","sad","mid")
+                call lun_main("ah...","base","seductive","sad","stareL")
                 call lun_main("amazing...","base","seductive","sad","L")
                 hide screen luna_main
                 with d3
@@ -1034,7 +1034,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 g4 "That was... incredible!"
-                call lun_main("I'm glad you enjoyed yourself...","base","base","base","mid")
+                call lun_main("I'm glad you enjoyed yourself...","base","base","base","stareL")
                 m "we need to do this again!"
                 call lun_main("mmmm... but before that, I think we need to discuss payment for this time...","base","seductive","angry","R")
                 $ current_payout = 100

@@ -816,13 +816,11 @@ label update_wr_underwear_list:
     if active_girl == "cho":
 
         #Bras
-        $ wr_bras.append("bra_base_1")
         $ wr_bras.append("bra_sport")
         if cc_party_slut_ITEM.unlocked:
             $ wr_bras.append("bra_party")
 
         #Panties
-        $ wr_panties.append("panties_base_1")
         $ wr_panties.append("panties_sport_1")
         $ wr_panties.append("panties_sport_2")
         if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:

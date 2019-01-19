@@ -10,7 +10,7 @@ init python:
             return  str(round(points/1000.0, 1))+"{size=-2}k{/size}"
             
     def image_hover(image):
-        return im.MatrixColor(image, im.matrix.brightness(0.2))
+        return im.MatrixColor(image, im.matrix.brightness(0.12))
         
     def image_alpha(image):
         return im.MatrixColor(image, im.matrix.opacity(0.1))
@@ -79,7 +79,7 @@ screen ui_top_bar():
         
     # Stats button
     imagebutton:
-        xpos 948
+        xpos 943
         idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
         hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
         action [Hide("main_room_menu"), Jump("open_stat_menu")]
@@ -87,19 +87,38 @@ screen ui_top_bar():
         
     # Inventory button
     imagebutton:
-        xpos 981
+        xpos 976
         idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
         hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
         action Jump("open_inventory_menu")
         activate_sound "sounds/click3.mp3"
         
-    # Toggle UI lock button
+    # Work button
+    imagebutton:
+        xpos 1009
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
+        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
+        action Jump("paperwork")
+        activate_sound "sounds/click3.mp3"
+        
+    # Sleep button
     imagebutton:
         xpos 1047
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
-        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
-        action ToggleVariable("toggle_ui_lock", False, True)
+        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png"
+        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
+        if daytime:
+            action Jump("night_start")
+        else:
+            action Jump("day_start")
         activate_sound "sounds/click3.mp3"
+        
+    ## Toggle UI lock button
+    #imagebutton:
+    #    xpos 1047
+    #    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
+    #    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
+    #    action ToggleVariable("toggle_ui_lock", False, True)
+    #    activate_sound "sounds/click3.mp3"
     
     #Debug
     if config.debug:

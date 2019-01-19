@@ -54,12 +54,17 @@ label cardgame:
             pause 0.7 # Autoplay enemy card
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
-                if check_winner() == "winner":
+                if check_winner() == "win":
                     show screen card_end_message("You win!")
                     play sound "sounds/card_win.ogg" #Fanfare
-                pause 2 # Pause before end
-                hide screen card_win
-                hide screen card_battle
+                elif check_winner() == "draw":
+                    show screen card_end_message("Draw")
+                else:
+                    show screen card_end_message("You lost...")
+                pause 3 # Pause before end
+                hide screen card_end_message
+                hide screen card_battle 
+                with dissolve
                 # Replay weather SFX
                 if raining:
                     $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
@@ -72,12 +77,17 @@ label cardgame:
             $ response_card = "AfterEnemy"
             if (len(player_deck) == 0 or len(enemy_deck) == 0):
                 $ response_card = "EndGame"
-                if check_winner() == "winner":
+                if check_winner() == "win":
                     show screen card_end_message("You win!")
                     play sound "sounds/card_win.ogg" #Fanfare
-                pause 2 # Pause before end
-                hide screen card_win
-                hide screen card_battle
+                elif check_winner() == "draw":
+                    show screen card_end_message("Draw")
+                else:
+                    show screen card_end_message("You lost...")
+                pause 3 # Pause before end
+                hide screen card_end_message
+                hide screen card_battle 
+                with dissolve
                 # Replay weather SFX
                 if raining:
                     $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
@@ -145,7 +155,7 @@ screen card_battle(l_playerdeck, l_enemydeck):
         
     use close_button
         
-screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5):
+screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5, color=True):
     if return_value == None:
         $ return_value = card
     frame:
@@ -157,11 +167,18 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
 
         if interact:
             imagebutton:
-                idle card.get_card_image(zoom=cardzoom)
-                hover card.get_card_hover(zoom=cardzoom)
+                if not color and card.copies <= -1:
+                    idle grayTint(card.get_card_image(zoom=cardzoom))
+                    hover grayTint(card.get_card_hover(zoom=cardzoom))
+                else:
+                    idle card.get_card_image(zoom=cardzoom)
+                    hover card.get_card_hover(zoom=cardzoom)
                 action Return(return_value)
         else:
-            add card.get_card_image(zoom=cardzoom)
+            if not color:
+                add grayTint(card.get_card_image(zoom=cardzoom))
+            else:
+                add card.get_card_image(zoom=cardzoom)
         
         if card.playercard:
             add playerborder zoom cardzoom
@@ -216,4 +233,4 @@ screen start_deck:
 screen card_end_message(message):
     zorder 9
 
-    text "{color=#FFF}{size=+40}[message]{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (1, "#000", 0, 0) ]
+    text "{color=#FFF}{size=+40}[message]{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (5, "#000", 0, 0) ]

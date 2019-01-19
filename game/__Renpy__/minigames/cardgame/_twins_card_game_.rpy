@@ -13,7 +13,7 @@ label twins_first_duel:
             jump twins_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump twins_duel_lost
     
     hide screen blkfade
@@ -85,7 +85,7 @@ label twins_second_duel:
                 ger "[rnd_text!t]"
             $ _preferences.volumes['music'] = volume
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump twins_duel_lost
     
     hide screen blkfade
@@ -108,16 +108,8 @@ label twins_second_duel:
     jump main_room
     
 label twins_duel_lost:
-    show screen blkfade 
-    with dissolve
-    if check_winner() == "lost":
-        "You lost"
-    else:
-        "It was a draw"
     stop music fadeout 1
-    #jump return_office
-    hide screen blkfade
-    with dissolve
+
     menu:
         "-Rematch-":
             jump twins_duel_menu

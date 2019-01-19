@@ -42,12 +42,11 @@ screen deck_builder_screen:
     imagebutton idle "images/cardgame/deck_builder.png" action Return("unselect")
 
     for i in range(0, clamp(card_shown, 0, (len(unlocked_cards))-(card_shown*currentpage))):
-        #if not selectcard == i+(currentpage*card_shown):
-        use cardrender(unlocked_cards[clamp(i+(currentpage*card_shown), 0, len(unlocked_cards))], 18,17+80*i, True)
-    
+            use cardrender(unlocked_cards[clamp(i+(currentpage*card_shown), 0, len(unlocked_cards))], 18,17+80*i, True, color=False)
+            
     if not selectcard == -1:
-        #use cardrender(unlocked_cards[selectcard], 54,17+80*selectcard-(card_shown*currentpage))
-        add im.Scale(unlocked_cards[selectcard].imagepath, card_width*0.5, card_height*0.5) xpos 885 ypos 316
+        use cardrender(unlocked_cards[selectcard], 885,316)
+        #add im.Scale(unlocked_cards[selectcard].imagepath, card_width*0.5, card_height*0.5) xpos 885 ypos 316
         
         vbox:
             xpos 560

@@ -480,9 +480,9 @@ label __init_variables:
             card_rand_item5 = renpy.random.choice([item_eromag, item_pornmag, item_girlmag, item_scroll, item_sweets])
             unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
-            # Temp fix
+            # Delete copies of playerdeck cards
             for i in range(0,5):
-                unlocked_cards[i].copies = 0
+                playerdeck[i].copies = 0
         
         if not hasattr(renpy.store,'snape_first_deck'):
             snape_first_deck = [snape.clone(), item_potions.clone(), item_elf.clone(), item_wine.clone(), item_lipstick.clone()]
@@ -511,7 +511,6 @@ init python:
     #For card randomization
     import random
     
-    #Renpy pls..
     def clamp(n, smallest, largest): 
         return max(smallest, min(n, largest))
     
@@ -519,6 +518,8 @@ init python:
         return im.MatrixColor( image, im.matrix.tint(playercolor_r, playercolor_g, playercolor_b))
     def enemyTint(image):
         return im.MatrixColor( image, im.matrix.tint(enemycolor_r, enemycolor_g, enemycolor_b))
+    def grayTint(image):
+        return im.MatrixColor( image, im.matrix.desaturate())
       
     def get_image_size(image):
         myDisplayable = im.Image(image)
@@ -565,11 +566,11 @@ init python:
                 if table_cards[x][y].playercard:
                     playerpoints += 1
         if playerpoints > 5:        
-            return "winner" 
+            return "win" 
         elif playerpoints == 5:
-            return "drawed" 
+            return "draw" 
         else:
-            return "lost"
+            return "loss"
            
     def update_table(new_card_x, new_card_y):
         if  not new_card_y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].bottomvalue:
@@ -604,12 +605,12 @@ init python:
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+            
         def get_card_image(self, zoom=0.5):
             return im.Scale(self.imagepath, card_width*zoom, card_height*zoom)
         def get_card_hover(self, zoom=0.5):
             return im.MatrixColor(im.Scale(self.imagepath, card_width*zoom, card_height*zoom),im.matrix.brightness(0.12))
-            
+
         def get_title(self):
             return self.textcolor+self.title+"{/color}"
         def get_amount(self):

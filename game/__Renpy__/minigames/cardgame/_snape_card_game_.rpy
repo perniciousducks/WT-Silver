@@ -17,9 +17,7 @@ label snape_first_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if check_winner() == "loser":
-        jump snape_duel_lost
-    elif check_winner() == "draw":
+    if not check_winner() == "win":
         jump snape_duel_lost
 
     
@@ -52,9 +50,7 @@ label snape_second_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if check_winner() == "loser":
-        jump snape_duel_lost
-    elif check_winner() == "draw":
+    if not check_winner() == "win":
         jump snape_duel_lost
     
     hide screen blkfade
@@ -135,7 +131,7 @@ label snape_third_duel:
             call sna_main(remove=True)
             $ _preferences.volumes['music'] = volume
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump snape_duel_lost
     
     #Won third match
@@ -159,16 +155,8 @@ label snape_third_duel:
     jump main_room
     
 label snape_duel_lost:
-    show screen blkfade 
-    with dissolve
-    if check_winner() == "lost":
-        "You lost"
-    else:
-        "It was a draw"
     stop music fadeout 1
-    #jump return_office
-    hide screen blkfade
-    with dissolve
+
     menu:
         "-Rematch-":
             jump snape_duel_menu

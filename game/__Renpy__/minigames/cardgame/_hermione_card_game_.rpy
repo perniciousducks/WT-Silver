@@ -13,7 +13,7 @@ label hermione_first_duel:
             jump her_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump her_duel_lost
         
     hide screen blkfade
@@ -46,7 +46,7 @@ label hermione_second_duel:
             jump her_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump her_duel_lost
     
     hide screen blkfade
@@ -109,16 +109,12 @@ label hermione_third_duel:
             $ _preferences.volumes['music'] *= .5
             # Prevents volume to change again when using rollback
             $ renpy.block_rollback()
-            #
-            #
-            #
-            # BUGGED
             $ her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
             call her_main ("[her_speech!t]", "base", "base")
             hide screen hermione_main
             $ _preferences.volumes['music'] = volume
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump her_duel_lost
     
     #Won third match
@@ -143,16 +139,8 @@ label hermione_third_duel:
     jump main_room
     
 label her_duel_lost:
-    show screen blkfade 
-    with dissolve
-    if check_winner() == "lost":
-        "You lost"
-    else:
-        "It was a draw"
     stop music fadeout 1
-    #jump return_office
-    hide screen blkfade
-    with dissolve
+
     menu:
         "-Rematch-":
             jump hermione_duel_menu

@@ -349,7 +349,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_2_g", "top_2_s",
                                        "top_3_g", "top_3_s",
                                        "top_4_g", "top_4_s",
-                                       "top_6_g", "top_6_s"
+                                       "top_6_g", "top_6_s",
                                        "normal_pullover",
                                        "normal_pullover_sexy",
                                        "top_fishnets",

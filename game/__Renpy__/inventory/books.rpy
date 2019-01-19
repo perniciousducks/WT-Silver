@@ -359,16 +359,15 @@ label book_complete:
     elif book_choice.id == "Armchairs":
         g4 "What a pile of garbage! I hate the guy who wrote this crap!"
         m "Although all those rapes gave me a few ideas..."
-        if imagination < 2: #Only goes to 2.
+        if bdsm_imagination < 2: #Only goes to 2.
             $ bdsm_imagination += 1
+    elif book_choice in book_list.read_books:
+        $ speed_reading += 1
+    elif book_choice in book_list.write_books:
+        $ speed_writing += 1
     else:
         if imagination < 8: #Only goes to 8.
             $ imagination += 1
-
-    if book_choice in book_list.read_books:
-        $ speed_reading += 1
-    if book_choice in book_list.write_books:
-        $ speed_writing += 1
 
     $ book_choice.done = True
 

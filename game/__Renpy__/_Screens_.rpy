@@ -46,7 +46,7 @@ screen G_Flowers_out:  #  Genie flowers vanish
 
 
 screen animation_feather: #Falling feather animation
-    add "feather" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos+36 xanchor 0.5 yanchor 0.5
+    add "feather" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
     zorder 2
 
 screen phoenix_food: #Phoenix's food.
@@ -138,8 +138,8 @@ screen gift:
         yalign 0.547
         xsize 313
         ysize 186
-        
-        add the_gift xalign 0.5 yalign 0.5 zoom get_zoom(the_gift, 300,160) 
+
+        add the_gift xalign 0.5 yalign 0.5 zoom get_zoom(the_gift, 300,160)
 
 
 label give_reward(text="",gift=""):

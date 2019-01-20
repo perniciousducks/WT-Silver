@@ -60,7 +60,7 @@ screen feeding: #FEEDING THE PHOENIX.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
-    add "feeding" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
+    add "grab_high" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
     zorder 1
 
 screen petting: #PETTING THE PHOENIX.

@@ -1,6 +1,6 @@
 label desk:
     hide screen main_room_menu
-    
+
     if day == 1:
         if not desk_examined:
             menu:
@@ -8,7 +8,7 @@ label desk:
                     $ desk_examined = True
                     m "A desk of some sort..."
         jump day_main_menu
-        
+
     #Define hints variable
     $ ball_hint = None
 
@@ -210,7 +210,7 @@ screen desk_menu:
             hovered SetVariable("ball_hint", "cards")
             unhovered SetVariable("ball_hint", None)
             action Return("deck_builder")
-            
+
     #exit
     imagebutton:
         xanchor 0.5
@@ -237,9 +237,9 @@ screen crystal_ball:
 
     add "interface/desk/crystal_ball.png"
     if not ball_hint == None:
-        add "interface/desk/hints/glow.png" xpos 308 
+        add "interface/desk/hints/glow.png" xpos 308
         add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 393 xanchor 0.5
-        
+
 screen watch:
     #Day/Night Clock
     add "interface/desk/watch.png"
@@ -256,10 +256,10 @@ screen watch:
         else:
             hovered SetVariable("ball_hint", "sleep")
             action Return("day_start") #Skip to next day
-            
+
     $ watch_x = 670
     $ watch_y = 35
-            
+
     if raining:
         add "interface/desk/watch/rain.png" xpos watch_x ypos watch_y
     elif snowing or blizzard:
@@ -271,7 +271,7 @@ screen watch:
             add "interface/desk/watch/sun.png" xpos watch_x ypos watch_y
         else:
             add "interface/desk/watch/moon.png" xpos watch_x ypos watch_y
-            
+
     if daytime:
         add "interface/desk/watch/day.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
     else:
@@ -328,7 +328,10 @@ label paperwork:
             call speedwriting_label
     if speed_writing >= 4:
             call speedwriting_label
+            call report_chapters_check #Checks whether or not the completed chapter was the final one.
+
             call concentration_label
+
 #    if speed_writing == 5:
 #        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for experts.\"" # 1/2 chance of it to pop up.
 #        if speedwriting_check == 1:
@@ -349,42 +352,53 @@ label paperwork:
     else:
         jump day_start
 
-###
+
+
+#Completed one chapter
 label report_chapters_check:
     if report_chapters >= 4:
         ">You've completed a report."
         $ report_chapters = 0
         $ finished_report += 1
+
     return
-### FULL MOON BONUS ###
+
+#Full moon bonus
 label f_moon_bonus:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     $ report_chapters += 1
     ">The Full moon makes you feel more productive.\n>You finished [report_chapters] chapters so far."
+
     return
-###
+
+#Finished a chapter
 label finished_working_chapter:
     $ report_chapters += 1
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     ">You finished [report_chapters] chapters so far."
+
     return
-### CONCENTRATION
+
+#Concentration
 label concentration_label:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     $ report_chapters += 1
     ">You maintain perfect concentration during your work.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+
     return
-### SPEEDWRITING
+
+#Speed writing
 label speedwriting_label:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     $ report_chapters += 1
     ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+
     return

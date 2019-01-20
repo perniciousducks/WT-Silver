@@ -307,6 +307,10 @@ label update_wr_tops_list:
             $ wr_tops_cheerleader.append("top_cheer_r")
 
         #Muggle
+        if ll_quirky_muggle_ITEM.unlocked:
+            $ wr_tops_normal.append("top_muggle_1")
+            $ wr_tops_normal.append("top_muggle_2")
+            $ wr_tops_normal.append("top_muggle_3")
 
     if active_girl == "astoria":
 
@@ -440,7 +444,8 @@ label update_wr_bottoms_list:
         $ wr_bottoms_skirts.append("skirt_3_belted")
         $ wr_bottoms_skirts.append("skirt_3_low_belted")
 
-        #Muggle
+        if ll_quirky_muggle_ITEM.unlocked:
+            $ wr_bottoms_skirts.append("skirt_muggle_1")
 
     if active_girl == "astoria":
 
@@ -630,6 +635,9 @@ label update_wr_other_clothings_list:
     if active_girl == "luna":
         if ll_cheer_r_ITEM.unlocked:
             $ wr_stockings.append("stockings_cheer_r")
+
+        if ll_quirky_muggle_ITEM.unlocked:
+            $ wr_stockings.append("stockings_muggle_1")
 
     if active_girl == "astoria":
         if ag_nighty_silk_ITEM.unlocked:

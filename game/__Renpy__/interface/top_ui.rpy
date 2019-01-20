@@ -1,6 +1,6 @@
 init python:
     def ui_dropped(drags, drops):
-        drags[0].snap(clamp(drags[0].target_x, 20, 744), 0)
+        drags[0].snap(clamp(drags[0].target_x, 20, 740), 0)
         return
         
     def text_points(points):
@@ -175,7 +175,7 @@ screen ui_stats():
         drag_name "ui_stats"
         draggable not toggle_ui_lock
         dragged ui_dropped
-        xpos 20
+        xpos 200
         frame:
             style "empty"
             xsize 217

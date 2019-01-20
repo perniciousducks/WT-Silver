@@ -6,7 +6,12 @@ label deck_builder:
     if _return in unlocked_cards:
         $ selectcard = unlocked_cards.index(_return)
         jump deck_builder
-    
+    elif _return == "gallery":
+        hide screen deck_builder_screen
+        show screen deck_builder_gallery
+    elif _return == "back":
+        hide screen deck_builder_gallery
+        show screen deck_builder_screen
     elif _return == "Close":
         $ selectcard = -1
         hide screen deck_builder_screen
@@ -102,6 +107,14 @@ screen deck_builder_screen:
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
             action Return("inc")
     
+    #Gallery button
+    imagebutton:
+        xpos 274
+        ypos 302
+        idle "images/cardgame/button.png"
+        hover "images/cardgame/button_hover.png"
+        action [Show("deck_builder_gallery"), Hide("deck_builder_screen")]
+        
     #Exit button
     imagebutton:
         xpos 274
@@ -110,43 +123,67 @@ screen deck_builder_screen:
         hover "images/cardgame/button_hover.png"
         action Return("Close")
     
-    #Easter egg    
-    hbox:
-        xpos 1020
-        ypos 296
-        xsize 40
-        ysize 40
-        button action Jump("color_change") background "#ffffff00"
-        #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
+    ##Easter egg    
+    #hbox:
+    #    xpos 1020
+    #    ypos 296
+    #    xsize 40
+    #    ysize 40
+    #    button action Jump("color_change") background "#ffffff00"
+    #    #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
   
     use close_button
+    
+screen deck_builder_gallery:
+    zorder 8
+    imagebutton idle "interface/desk/_bg_.png" action NullAction()
+    
+    text "{size=+15}Gallery{/size}" ypos 15 xalign 0.5
+    
+    for i in range(0, len(cards_all)):
+        if i <= 12:
+            use cardrender(cards_all[i], 18+80*i,67, False, cardzoom=0.25, gallery=True)
+        elif i > 12 and i < 26:
+            use cardrender(cards_all[i], 18+80*(i-13),189, False, cardzoom=0.25, gallery=True)
+        elif i > 25 and i < 39:
+            use cardrender(cards_all[i], 18+80*(i-26),312, False, cardzoom=0.25, gallery=True)
+        elif i > 38 and i < len(cards_all):
+            use cardrender(cards_all[i], 18+80*(i-39),434, False, cardzoom=0.25, gallery=True)
+        
+    #Back button
+    imagebutton:
+        xpos 900
+        ypos 480
+        idle "images/cardgame/button.png"
+        hover "images/cardgame/button_hover.png"
+        action [Show("deck_builder_screen"), Hide("deck_builder_gallery")]
 
-label color_change:
-    menu:
-        "-Change player color-":
-            "Enter the color in RGB format (0 to 255)"
-            $ playercolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
-            $ playercolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
-            $ playercolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
-            $ playerborder = playerTint("images/cardgame/border.png")
-            pass
-        "-Change enemy color-":
-            "Enter the color in RGB format (0 to 255)"
-            $ enemycolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
-            $ enemycolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
-            $ enemycolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
-            $ enemyborder = enemyTint("images/cardgame/border.png")
-            pass
-        "-Reset-":
-            $ playercolor_r = 51.0/255.0
-            $ playercolor_g = 92.0/255.0
-            $ playercolor_b = 147.0/255.0
-            $ enemycolor_r = 116.0/255.0
-            $ enemycolor_g = 0
-            $ enemycolor_b = 0
-            $ playerborder = playerTint("images/cardgame/border.png")
-            $ enemyborder = enemyTint("images/cardgame/border.png")
-            pass
-        "-Exit-":
-            pass
-    jump deck_builder
+#label color_change:
+#    menu:
+#        "-Change player color-":
+#            "Enter the color in RGB format (0 to 255)"
+#            $ playercolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
+#            $ playercolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
+#            $ playercolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
+#            $ playerborder = playerTint("images/cardgame/border.png")
+#            pass
+#        "-Change enemy color-":
+#            "Enter the color in RGB format (0 to 255)"
+#            $ enemycolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
+#            $ enemycolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
+#            $ enemycolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
+#            $ enemyborder = enemyTint("images/cardgame/border.png")
+#            pass
+#        "-Reset-":
+#            $ playercolor_r = 51.0/255.0
+#            $ playercolor_g = 92.0/255.0
+#            $ playercolor_b = 147.0/255.0
+#            $ enemycolor_r = 116.0/255.0
+#            $ enemycolor_g = 0
+#            $ enemycolor_b = 0
+#            $ playerborder = playerTint("images/cardgame/border.png")
+#            $ enemyborder = enemyTint("images/cardgame/border.png")
+#            pass
+#        "-Exit-":
+#            pass
+#    jump deck_builder

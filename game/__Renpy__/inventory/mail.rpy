@@ -121,7 +121,6 @@ label deck_mail_send:
     m "That last bit just sounds like scam to me..."
     m "..."
     m "I guess I'll have a look at the starter pack at least..."    
-    nar "Genie opens starter pack and looks at the cards."
     
     #Randomize starter pack (Hardcore difficulty gets randomized at the start of the game)
     if game_difficulty <= 2:

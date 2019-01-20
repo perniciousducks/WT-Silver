@@ -155,7 +155,7 @@ screen card_battle(l_playerdeck, l_enemydeck):
         
     use close_button
         
-screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5, color=True):
+screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5, color=True, gallery=False):
     if return_value == None:
         $ return_value = card
     frame:
@@ -167,7 +167,10 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
 
         if interact:
             imagebutton:
-                if not color and card.copies <= -1:
+                if not color and not gallery and card.copies <= -1:
+                    idle grayTint(card.get_card_image(zoom=cardzoom))
+                    hover grayTint(card.get_card_hover(zoom=cardzoom))
+                elif gallery and not card_exist(unlocked_cards, card):
                     idle grayTint(card.get_card_image(zoom=cardzoom))
                     hover grayTint(card.get_card_hover(zoom=cardzoom))
                 else:
@@ -175,12 +178,16 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
                     hover card.get_card_hover(zoom=cardzoom)
                 action Return(return_value)
         else:
-            if not color:
+            if not color and not gallery:
+                add grayTint(card.get_card_image(zoom=cardzoom))
+            elif gallery and not card_exist(unlocked_cards, card):
                 add grayTint(card.get_card_image(zoom=cardzoom))
             else:
                 add card.get_card_image(zoom=cardzoom)
         
-        if card.playercard:
+        if gallery and not card_exist(unlocked_cards, card):
+            add grayTint(playerborder) zoom cardzoom
+        elif card.playercard:
             add playerborder zoom cardzoom
         else:
             add enemyborder zoom cardzoom
@@ -190,28 +197,30 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
         
         if cardzoom >= 0.5:
             $ sizetext = 14
+            $ sizevalues = 18
         else:
             $ sizetext = 10
+            $ sizevalues = 12
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.topvalue)+righttext xalign 0.5 yalign 0.03 size 18
+            text lefttext+str(card.topvalue)+righttext xalign 0.5 yalign 0.03 size sizevalues
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.bottomvalue)+righttext xalign 0.5 yalign 0.985 size 18
+            text lefttext+str(card.bottomvalue)+righttext xalign 0.5 yalign 0.985 size sizevalues
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.rightvalue)+righttext xalign 0.95 yalign 0.5 size 18
+            text lefttext+str(card.rightvalue)+righttext xalign 0.95 yalign 0.5 size sizevalues
         
         hbox:
             xsize card_width*cardzoom
             ysize card_height*cardzoom
-            text lefttext+str(card.leftvalue)+righttext xalign 0.05 yalign 0.5 size 18
+            text lefttext+str(card.leftvalue)+righttext xalign 0.05 yalign 0.5 size sizevalues
         
         #Total Value
         hbox:

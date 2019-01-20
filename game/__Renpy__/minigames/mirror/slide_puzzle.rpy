@@ -96,6 +96,10 @@ label open_pyzzle_box:
     with Dissolve(0.3)
     call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/interface/icons/head/head_genie_question_mark.png")
     $ unlocked_7th = True
+    if deck_unlocked:
+        m "What's this?"
+        call give_reward("You have found a card on the bottom of the box!", "images/cardgame/t1/other/elf_v1.png")
+    $ unlocked_cards += [item_elf]
     jump main_room
 
 screen puzzle_board:

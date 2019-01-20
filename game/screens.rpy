@@ -206,12 +206,15 @@ screen main_menu:
     # The background of the main menu.
     window:
         style "mm_root"
+    
+    # Version display
+    text "{color=#fff}{size=-4}%s{/size}{/color}" % config.version xpos 1020 ypos 250 outlines [ (1, "#000", 0, 0) ]
 
     # The main menu buttons.
     frame:
         style_group "mm"
         xalign .96
-        yalign .77
+        yalign .75
 
         has vbox
 
@@ -226,21 +229,33 @@ screen main_menu:
     frame:
         style_group "mm"
         xalign .96
-        yalign .96
+        yalign .86
 
         has vbox
 
-        textbutton _("Support Akabur") action OpenURL("https://www.patreon.com/akabur")
-        textbutton _("Support Team Silver") action OpenURL("https://www.patreon.com/MoCoder")
-
+        textbutton _("Credits") action Jump("credits")
+        
     imagebutton:
-        xpos 689
-        ypos 546
+        xpos 910
+        ypos 560
         xalign 0.5
         yalign 0.5
         idle "logo/patreon.png"
         hover "logo/patreon_hover.png"
-        action OpenURL("https://www.patreon.com/MoCoder")
+        action OpenURL("https://www.patreon.com/SilverStudioGames")
+        
+    imagebutton:
+        xpos 660
+        ypos 562
+        xalign 0.5
+        yalign 0.5
+        idle "logo/discord.png"
+        hover "logo/discord_hover.png"
+        action OpenURL("https://discord.gg/7PD57yt")
+    
+    #New info
+    add "logo/arrow.png" xpos 760 ypos 500
+    text "{color=#b20000}{size=+10}NEW\nPATREON!{/size}{/color}" xpos 700 ypos 445 outlines [ (3, "#000", 0, 0) ]
 
 
 init -2:
@@ -657,7 +672,7 @@ screen quick_menu:
         style_group "quick"
 
         xalign 1.0
-        yalign 0.0
+        yalign 0.1
 
         #textbutton _("Back") action Rollback()
         #textbutton _("Save") action ShowMenu('save')

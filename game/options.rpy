@@ -24,6 +24,7 @@ init -1 python hide:v
         persistent.delwarning = True
         persistent.customcursor = True
         persistent.autosave = False
+        persistent.ui_hint = True
     
     #Load custom preference options
     if persistent.customcursor:

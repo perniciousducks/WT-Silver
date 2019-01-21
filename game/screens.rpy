@@ -504,6 +504,9 @@ screen preferences:
                 text _("Autosaving")
                 textbutton "Yes" action [SetField(persistent, 'autosave', True), SetVariable("config.has_autosave", True), SetVariable("config.autosave_on_choice", True)]
                 textbutton "No" action [SetField(persistent, 'autosave', False), SetVariable("config.has_autosave", False), SetVariable("config.autosave_on_choice", False)]
+                text _("Interface Hints")
+                textbutton "Yes" action SetField(persistent, 'ui_hint', True)
+                textbutton "No" action SetField(persistent, 'ui_hint', False)
                 #textbutton _("[delwarning!t]") action ToggleVariable("delwarning", True, False)
 
 

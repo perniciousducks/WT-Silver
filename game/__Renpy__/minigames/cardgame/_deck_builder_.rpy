@@ -1,6 +1,7 @@
 label deck_builder:
     hide screen main_room_menu
     show screen deck_builder_screen
+    $ renpy.block_rollback()
     $ _return = ui.interact()
 
     if _return in unlocked_cards:
@@ -216,7 +217,7 @@ label deck_builder_guide:
     # Sides guide
     $ deck_guide_zone = "player_zone"
     "\"This is your deck.\""
-    "\"You can have maximum of a five cards in your active deck.\""
+    "\"You can have a maximum of five cards in your active deck.\""
     $ deck_guide_zone = "enemy_zone"
     "\"This is your opponents deck.\""
     "\"Your opponents deck is also limited to five cards.\""
@@ -277,6 +278,7 @@ label deck_builder_guide:
         m "\"Seems simple enough....\""
         g4 "\"Wait... who the fuck do I play against?\""
         g9 "\"Maybe I should ask my good ole pal Snape if he has any cards...\""
+        m "..."
         m "\"*Shudders*\""
         m "\"Well... might as well...\""
     

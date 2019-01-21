@@ -69,6 +69,7 @@ label options_menu:
             jump cheats
 
         "-Bugfix-":
+            label bugfix_menu:
             menu:
                 "-Reset Everyone's Appearance-":
                     call reset_hermione_base

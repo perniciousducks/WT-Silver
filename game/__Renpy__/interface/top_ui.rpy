@@ -13,7 +13,7 @@ init python:
         return im.MatrixColor(image, im.matrix.brightness(0.12))
         
     def image_alpha(image):
-        return im.MatrixColor(image, im.matrix.opacity(0.1))
+        return im.MatrixColor(image, im.matrix.opacity(0.5))
 
 label house_points:
     # Debug
@@ -71,14 +71,18 @@ screen ui_top_bar():
     imagebutton:
         xpos 0
         idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
-        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-        hovered SetVariable("ui_hint", "Open menu")
-        unhovered SetVariable("ui_hint", "")
         if renpy.get_screen("main_room_menu"):
-            action [ToggleVariable("toggle_menu", True, False), Hide("main_room_menu")]
-        else:
-            action [ToggleVariable("toggle_menu", True, False), Show("main_room_menu")]
-        activate_sound "sounds/click3.mp3"
+            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
+            hovered SetVariable("ui_hint", "Open menu")
+            unhovered SetVariable("ui_hint", "")
+            action [Hide("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
+            activate_sound "sounds/click3.mp3"
+        elif not renpy.get_screen("main_room_menu") and toggle_menu:
+            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
+            hovered SetVariable("ui_hint", "Close menu")
+            unhovered SetVariable("ui_hint", "")
+            action [Show("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
+            activate_sound "sounds/click3.mp3"
         
     # Stats button
     imagebutton:
@@ -86,7 +90,7 @@ screen ui_top_bar():
         idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
         if renpy.get_screen("main_room_menu"):
             hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
-            hovered SetVariable("ui_hint", "Statistics")
+            hovered SetVariable("ui_hint", "Statistics (c)")
             unhovered SetVariable("ui_hint", "")
             action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("open_stat_menu")]
             activate_sound "sounds/click3.mp3"
@@ -97,7 +101,7 @@ screen ui_top_bar():
         idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
         if renpy.get_screen("main_room_menu"):
             hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
-            hovered SetVariable("ui_hint", "Inventory")
+            hovered SetVariable("ui_hint", "Inventory (i)")
             unhovered SetVariable("ui_hint", "")
             action [SetVariable("ui_hint", ""), Jump("open_inventory_menu")]
             activate_sound "sounds/click3.mp3"
@@ -108,7 +112,7 @@ screen ui_top_bar():
         idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
         if renpy.get_screen("main_room_menu"):
             hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
-            hovered SetVariable("ui_hint", "Work")
+            hovered SetVariable("ui_hint", "Work (w)")
             unhovered SetVariable("ui_hint", "")
             action [SetVariable("ui_hint", ""), Jump("paperwork")]
             activate_sound "sounds/click3.mp3"
@@ -121,10 +125,10 @@ screen ui_top_bar():
             hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
             if daytime:
                 action Jump("night_start")
-                hovered SetVariable("ui_hint", "Doze Off")
+                hovered SetVariable("ui_hint", "Doze Off (s)")
             else:
                 action Jump("day_start")
-                hovered SetVariable("ui_hint", "Sleep")
+                hovered SetVariable("ui_hint", "Sleep (s)")
             unhovered SetVariable("ui_hint", "")
             activate_sound "sounds/click3.mp3"
         
@@ -212,9 +216,11 @@ screen ui_stats():
                 
 screen ui_menu():
     tag ui
+    
     button:
-        action [SetVariable("toggle_menu", False), Show("main_room_menu")]
         style "empty"
+        action [SetVariable("toggle_menu", False), Show("main_room_menu")]
+        keysym "game_menu"
     button:
         ypos 34
         xsize 102
@@ -222,13 +228,48 @@ screen ui_menu():
         action NullAction()
         style "empty"
     frame:
-        ypos 34
         style "empty"
+        ypos 34
         add "interface/topbar/"+str(interface_color)+"/menu.png"
         vbox:
-            ypos 30
-            textbutton "Menu 1" action NullAction() background #000
-            textbutton "Menu 2" action NullAction() background #000
-            textbutton "Menu 3" action NullAction() background #000
-            textbutton "Menu 4" action NullAction() background #000
-            textbutton "Menu 5" action NullAction() background #000
+            style_group "mm" 
+            ypos 20
+            xpos -5
+            textbutton "Save" action ShowMenu("save") background #000
+            textbutton "Load" action ShowMenu("load") background #000
+            text "" # space
+            if cheats_active and game_difficulty <= 2 and day > 1:
+                textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background #000
+            if day != 1:
+                textbutton "{size=-6}Decorate{/size}" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background #000
+        
+        hbox:
+            xpos 50
+            ypos 185
+            spacing 5
+            yanchor 0.5
+            xanchor 0.5
+            #Discord
+            imagebutton:
+                idle image_alpha("interface/topbar/icon_discord.png")
+                hover "interface/topbar/icon_discord.png"
+                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverGamesStudios{/size} discord")]
+                unhovered [SetVariable("ui_hint", "")]
+                action OpenURL("https://discord.gg/7PD57yt")
+                activate_sound "sounds/click3.mp3"
+            #Patreon
+            imagebutton:
+                idle image_alpha("interface/topbar/icon_patreon.png")
+                hover "interface/topbar/icon_patreon.png"
+                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverGamesStudios{/size} patreon")]
+                unhovered [SetVariable("ui_hint", "")]
+                action OpenURL("https://www.patreon.com/SilverStudioGames")
+                activate_sound "sounds/click3.mp3"
+            #Bugfixes
+            imagebutton:
+                idle image_alpha("interface/topbar/icon_bug.png")
+                hover "interface/topbar/icon_bug.png"
+                hovered [SetVariable("ui_hint", "Open bugfix menu")]
+                unhovered [SetVariable("ui_hint", "")]
+                action [SetVariable("toggle_menu", False), SetVariable("ui_hint", ""), Jump("bugfix_menu")]
+                activate_sound "sounds/click3.mp3"

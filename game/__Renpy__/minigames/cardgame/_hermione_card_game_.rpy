@@ -107,6 +107,8 @@ label hermione_third_duel:
         if response_card == "AfterEnemy":
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
+            $ s_punch = renpy.random.randint(1, 4)
+            play sound "sounds/card_punch%s.mp3" % s_punch
             # Prevents volume to change again when using rollback
             $ renpy.block_rollback()
             $ her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]

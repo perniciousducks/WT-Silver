@@ -148,7 +148,7 @@ label summon_snape:
 
                 "\"Never mind.\"":
                     jump snape_ready
-        "-Let's Duel-" if deck_unlocked:
+        "-Let's Duel- {image=interface/cards.png}" if deck_unlocked:
             if snape_know_cards == False:
                 m "Ever heard of Wizard Cards?"
                 call sna_main( "What about them?","snape_05") 

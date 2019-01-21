@@ -206,6 +206,7 @@ label deck_builder_guide:
     $ deck_guide_page = 0
     $ deck_guide_zone = ""
     $ deck_guide_helper = ""
+    call play_music("grape_soda")
     show screen deck_builder_tutorial
     with dissolve
     
@@ -217,8 +218,8 @@ label deck_builder_guide:
     "\"This is your deck.\""
     "\"You can have maximum of a five cards in your active deck.\""
     $ deck_guide_zone = "enemy_zone"
-    "\"This is enemy deck.\""
-    "\"Enemy deck is also limited to five cards.\""
+    "\"This is your opponents deck.\""
+    "\"Your opponents deck is also limited to five cards.\""
     
     # Inspection guide
     $ deck_guide_zone = ""
@@ -264,23 +265,29 @@ label deck_builder_guide:
     $ deck_guide_zone = "fight_zone"
     $ deck_guide_helper = "fight_guide"
     $ deck_guide_page = 4
-    "\"Once a card is placed, it can be taken by the other player by placing a card with a number higher than the side of the card facing that number.\""
+    "\"Once a card is played, it can be taken by the other player when they place a card with a number higher than the side of the card facing that number.\""
     $ deck_guide_helper = "border_guide"
     "\"When a card is taken its border changes colour.\""
     $ deck_guide_zone = ""
     $ deck_guide_helper = ""
     $ deck_guide_page = 5
-    "\"Claim as many enemy cards as you can to win the game.\""
+    "\"The player with the most cards of their colour by the end wins the game.\""
     
-    m "\"Seems simple enough....\""
-    g4 "\"Wait... who the fuck do I play against?\""
-    g9 "\"Maybe I should ask my good ole pal Snape if he has any cards...\""
-    m "\"*Shudders*\""
-    m "\"Well... might as well...\""
+    if not snape_know_cards:
+        m "\"Seems simple enough....\""
+        g4 "\"Wait... who the fuck do I play against?\""
+        g9 "\"Maybe I should ask my good ole pal Snape if he has any cards...\""
+        m "\"*Shudders*\""
+        m "\"Well... might as well...\""
     
     #$ _return = ui.interact()
     
     #if _return == "back":
+    if daytime:
+        call play_music("day_theme")
+    else:
+        call play_music("night_theme")
+    
     hide screen deck_builder_tutorial
     jump deck_builder
 

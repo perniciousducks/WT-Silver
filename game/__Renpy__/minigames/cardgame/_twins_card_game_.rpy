@@ -55,12 +55,18 @@ label twins_second_duel:
     $ response_card = ""
     
     play music "music/vs_twins.ogg" fadein 1.0
-    play sound "sounds/Genie_VS_Twins.mp3"
+    play sound "sounds/Genie_VS_Twins_Teleport.mp3"
     show screen genie_vs_twins
+    show screen move_genie
     pause 1
     show screen move_twins
-    pause 4
+    pause 3.5
     hide screen move_twins
+    hide screen move_genie
+    show screen genie_vs_twins_smile
+    with flash
+    pause
+    hide screen genie_vs_twins_smile
     hide screen genie_vs_twins
     
     if renpy.random.randint(0,1) == 0:
@@ -74,6 +80,8 @@ label twins_second_duel:
         if response_card == "AfterEnemy":
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
+            $ s_punch = renpy.random.randint(1, 4)
+            play sound "sounds/card_punch%s.mp3" % s_punch
             # Prevents volume to change again when using rollback
             $ renpy.block_rollback()
             $ rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
@@ -135,7 +143,15 @@ label twins_duel_cancel:
 screen genie_vs_twins:
     zorder 8
     add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
-    add "images/cardgame/VS/genie_01.png" at move_in(-300, 3)
+screen move_genie:
+    zorder 8
+    add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
 screen move_twins:
     zorder 8
-    add "images/cardgame/VS/snape_01.png" at move_in(300, 1)
+    add "images/cardgame/VS/twins_01.png" at move_in(300, 1)
+    
+screen genie_vs_twins_smile:
+    zorder 8
+    add "images/cardgame/VS/genie_04.png"
+    add "images/cardgame/VS/twins_02.png"
+    text "Click to continue" xalign 0.5 yalign 1.0

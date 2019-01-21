@@ -121,7 +121,7 @@ label store_chit_chat:
             menu:
                 "-Buy something-":
                     pass
-                "-Let's duel-":
+                "-Let's duel- {image=interface/cards.png}":
                     label twins_duel_menu:
                     menu:
                         "-First Duel-":

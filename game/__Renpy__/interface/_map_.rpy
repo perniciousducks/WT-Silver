@@ -2,17 +2,17 @@ init python:
     def image_scale(image, zoom=0.5, alpha=1.0):
         #return im.Scale(image, math.ceil(get_width(image)*zoom), math.ceil(get_height(image)*zoom))
         return im.Alpha(im.FactorScale(image, zoom, bilinear=True), alpha)
-        
+
 transform animate:
     alpha 0 # set the value to zero in the start
     time 1.5
     linear 1 alpha 1 # go from zero to 1 in one second
-        
+
 label map_init:
     $ map_scale = 0.7/scaleratio
     $ UI_xpos_offset = 230
     $ UI_ypos_offset = 150
-    
+
     if not hasattr(renpy.store,'her_map_location') or reset_persistants:
         label reset_map_init:
 
@@ -38,7 +38,7 @@ label map_init:
 screen map_screen():
     tag map
     zorder 4
-    
+
     add "map_unfold" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale#Scaled to 588x420
     use map_buttons
     #use mouse_positions #Shows XY position of the mouse on the screen, updated per click
@@ -46,7 +46,7 @@ screen map_screen():
 screen mouse_positions():
     zorder 1
     text str(renpy.get_mouse_pos())
-    
+
     button:
         xpos 0
         ypos 0
@@ -61,7 +61,7 @@ image map_unfold:
     "interface/map/anim/map_01.png" with Dissolve(0.5)
     pause.5
     "interface/map/map.png" with Dissolve(0.5)
-    
+
 screen map_buttons:
     tag map
     zorder 4
@@ -166,7 +166,7 @@ screen map_buttons:
                 hover "interface/map/room_ror_empty_hover.png"
                 hovered SetVariable("ball_hint", "room_of_req")
                 action Return("floor_7th")
-            else:    
+            else:
                 idle "interface/map/room_ror_idle.png"
                 hover "interface/map/room_ror_hover.png"
                 hovered SetVariable("ball_hint", "room_of_req")
@@ -216,7 +216,7 @@ screen map_buttons:
             hovered SetVariable("ball_hint", "attic")
             unhovered SetVariable("ball_hint", None)
             action Return("map_attic")
-            
+
     add "interface/map/map_lines_vert.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale at animate#Add vertical lines overlay
 
 label set_her_map_location(location = ""):
@@ -746,8 +746,6 @@ label outskirts_of_hogwarts:
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
-
-    show screen blkback # Hide room
 
     $ end_u_1_pic =  "images/yule_ball/171.png"
     show screen end_u_1

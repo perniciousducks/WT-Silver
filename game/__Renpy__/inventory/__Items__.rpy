@@ -273,13 +273,15 @@ label store_items_init:
     $ luna_dresses_list=[
         ]
 
-    # Luna Sets
+    # Luna Sets #ll_quirky_muggle_ITEM
     if not hasattr(renpy.store,'ll_cheer_r_ITEM'):
         $ ll_cheer_r_ITEM       = item_class(id="ll_cheer_r", name="Ravenclaw Cheerleader", type="set", items=["top","bottom","stockings"], cost=80, wait_time=2, image="outfits/ll_cheer_r", description=">The Ravenclaw version of the Cheerleader attire.")
         $ ll_lingerie_silk_ITEM = item_class(id="ll_lingerie_silk", name="Silk Lingerie",   type="set", items=["bra","panties"],            cost=80, wait_time=1, image="outfits/ll_lingerie_silk", description=">A smooth and comfortable silk bra and panty set.")
+    if not hasattr(renpy.store,'ll_quirky_muggle_ITEM'):
+        $ ll_quirky_muggle_ITEM = item_class(id="ll_quirky_muggle", name="Quirky Muggle", type="set", items=["top","bottom","stockings"], image="outfits/ll_muggle_1", unlockable=True)
 
     $ luna_clothing_sets_list=[
-        ll_cheer_r_ITEM, ll_lingerie_silk_ITEM,
+        ll_cheer_r_ITEM, ll_lingerie_silk_ITEM, ll_quirky_muggle_ITEM,
         ]
 
 

@@ -38,6 +38,7 @@ label summon_luna:
         #    jump luna_requests
         "-Wardrobe-": # if luna_wardrobe_unlocked:
             $ active_girl = "luna"
+            $ ll_quirky_muggle_ITEM.unlocked = True #Temporary unlock. Will be a random clothing event eventually.
 
             call load_luna_clothing_saves
 

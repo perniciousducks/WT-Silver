@@ -26,7 +26,7 @@ label room_objects_init:
             room_image="phoenix_01",      room_image_path="images/rooms/_objects_/phoenix/",
             idle_image="pho_01",          idle_image_path="",
             hover_image="phoenix_hover",  hover_image_path="images/rooms/_objects_/phoenix/",
-            xpos=540, ypos=225)
+            xpos=557, ypos=272)
         $ door_OBJ = room_object_class(type="door",
             room_image="door_idle",      room_image_path="images/rooms/_objects_/doors/",
             idle_image="door_idle",      idle_image_path="images/rooms/_objects_/doors/",

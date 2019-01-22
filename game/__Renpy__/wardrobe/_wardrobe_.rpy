@@ -939,7 +939,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/other_clothings/neckwear.png" xpos 15 ypos 60 zoom 0.35
                 text "Neckwear" xpos 76 ypos 140+75 size 10
             #Body Accessories
-            if active_girl in ["hermione"]:
+            if active_girl in ["hermione","cho"]:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_stockings_category",1),Show("wardrobe")]
                 add "interface/icons/badge_spew.png" xpos 72+90 ypos 128 zoom 0.30
                 text "Body Accs." xpos 76+90 ypos 140+75 size 10
@@ -1229,7 +1229,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/maid.png" xpos 77 ypos 139 zoom 0.31/scaleratio
                 text "Outfits" xpos 76 ypos 140+75 size 10
             #Costumes
-            if active_girl in ["hermione","astoria","susan"]:
+            if active_girl in ["hermione","astoria","susan","cho"]:
                 hotspot (75+90, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",1),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/outfits/witch.png" xpos 77+90 ypos 139 zoom 0.31/scaleratio
                 text "Costumes" xpos 76+90 ypos 140+75 size 10

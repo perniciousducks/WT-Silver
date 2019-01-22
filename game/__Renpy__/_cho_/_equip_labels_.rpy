@@ -174,6 +174,22 @@ label set_cho_neckwear(neck=""):
 
     return
 
+#Body accs equip.
+label set_cho_body_accessory(accessory=""):
+    if accessory in cho_body_accs_list:
+        $ cho_body_accs_list.remove(accessory)
+    else:
+        $ cho_body_accs_list.append(accessory)
+
+    if cho_body_accs_list == []:
+        $ cho_request_wear_body_accs = False
+        $ cho_wear_body_accs = False
+    else:
+        $ cho_request_wear_body_accs = True
+        $ cho_wear_body_accs = True
+    call update_cho_uniform
+
+    return
 
 #Gloves equip.
 label set_cho_gloves(gloves=""):
@@ -350,9 +366,14 @@ label load_cho_clothing_saves:
         $ cho_wear_neckwear     = False
 
     if cho_request_wear_accs:
-        $ cho_wear_accs    = True
+        $ cho_wear_accs         = True
     else:
-        $ cho_wear_accs    = False
+        $ cho_wear_accs         = False
+
+    if cho_request_wear_body_accs:
+        $ cho_wear_body_accs    = True
+    else:
+        $ cho_wear_body_accs    = False
 
     if cho_request_wear_gloves:
         $ cho_wear_gloves       = True

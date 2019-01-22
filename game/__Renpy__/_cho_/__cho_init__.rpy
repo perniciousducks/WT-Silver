@@ -2,7 +2,7 @@
 
 label cho_init:
 
-    if not hasattr(renpy.store,'cho_base') or reset_persistants:
+    if not hasattr(renpy.store,'cho_body_accs_list') or reset_persistants:
         label reset_cho_clothing:
 
         #Body
@@ -52,6 +52,7 @@ label cho_init:
         $ cho_request_wear_garterbelt       = False
 
         $ cho_request_wear_neckwear         = False
+        $ cho_request_wear_body_accs        = False
         $ cho_request_wear_gloves           = False
         $ cho_request_wear_stockings        = False
         $ cho_request_wear_robe             = False
@@ -78,6 +79,7 @@ label cho_init:
         $ cho_wear_garterbelt        = False
 
         $ cho_wear_neckwear          = False
+        $ cho_wear_body_accs         = False
         $ cho_wear_gloves            = False
         $ cho_wear_stockings         = False
         $ cho_wear_robe              = False
@@ -147,7 +149,7 @@ label cho_init:
         $ cho_ears                = "characters/cho/accessories/ears/blank.png"
         $ c_ears                  = "blank"
 
-        $ cho_accs                = "characters/cho/accessories/blank.png"
+        $ cho_body_accs_list      = []
 
         call reset_cho_transparency
 

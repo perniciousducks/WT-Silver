@@ -102,6 +102,9 @@ label update_outfit_layers:
     $ cc_outfit_sailor_black_ITEM.outfit_layers      = ["../underwear/red/panties_sailor_1.png","../stockings/stockings_sailor_2.png","../tops/base/top_sailor_2.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
     $ cc_outfit_sailor_black_ITEM.top_layers         = "bow_sailor_red"
 
+    $ cc_costume_misty_ITEM.outfit_layers      = ["../tops/base/top_shirt_1.png","../bottoms/base/pants_short_1.png","../../body/arms/arm_down_l_overlay.png","../../accessories/body_accs/suspenders_1.png"]
+
+
     ### Event Outfits ###
 
     #Does not have a store item!

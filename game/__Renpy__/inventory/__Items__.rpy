@@ -326,7 +326,7 @@ label store_items_init:
         ]
 
 
-    # Cho Outfits cc_costume_misty_ITEM
+    # Cho Outfits
     if not hasattr(renpy.store,'cc_outfit_sailor_white_ITEM'):
         $ cc_outfit_quidditch_ITEM  = outfit_class(id="cc_outfit_quidditch", name="Quidditch Outfit",   type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True)
         $ cc_dress_red_ITEM         = outfit_class(id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.")
@@ -337,7 +337,7 @@ label store_items_init:
         $ cc_outfit_sailor_black_ITEM       = outfit_class(id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
 
     if not hasattr(renpy.store,'cc_costume_misty_ITEM'):
-        $ cc_costume_misty_ITEM     = outfit_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best.\n To train them is your cause!")
+        $ cc_costume_misty_ITEM     = outfit_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!")
 
     $ cho_outfits_list=[
         cc_outfit_quidditch_ITEM, cc_outfit_sailor_white_ITEM, cc_outfit_sailor_black_ITEM
@@ -354,8 +354,11 @@ label store_items_init:
         $ cc_muggle_hot_ITEM = item_class(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image="outfits/cc_muggle_hot", unlockable=True)
         $ cc_party_slut_ITEM = item_class(id="cc_party", name="Party Clothing",            type="set", items=["bra","skirt"],             image="outfits/cc_party", unlockable=True)
 
+    if not hasattr(renpy.store,'cc_bikini_micro_ITEM'):
+        $ cc_bikini_micro_ITEM = item_class(id="cc_bikini_micro", name="Micro Bikini",     type="set", items=["bra","panties"],           image="outfits/cc_bikini_micro", cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
+
     $ cho_clothing_sets_list=[
-        cc_muggle_hot_ITEM, cc_party_slut_ITEM,
+        cc_muggle_hot_ITEM, cc_party_slut_ITEM, cc_bikini_micro_ITEM,
         ]
 
 

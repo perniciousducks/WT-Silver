@@ -809,9 +809,6 @@ label update_wr_underwear_list:
         if ag_lingerie_lewd_ITEM.unlocked:
             $ wr_bras.append("lewd_bra")
 
-        if ag_nighty_silk_ITEM.unlocked:
-            $ wr_onepieces.append("nighty")
-
         #Panties
         $ wr_panties.append("clear_panties")
         if ag_lingerie_lace_ITEM.unlocked:
@@ -821,16 +818,24 @@ label update_wr_underwear_list:
         if ag_nighty_silk_ITEM.unlocked:
             $ wr_panties.append("nighty_panties")
 
+        #One-Pieces
+        if ag_nighty_silk_ITEM.unlocked:
+            $ wr_onepieces.append("nighty")
+
     if active_girl == "susan":
+
+        #Bras
         $ wr_bras.append("bra_base")
         $ wr_bras.append("bra_lace")
         $ wr_bras.append("bra_chain")
 
-        $ wr_onepieces.append("sling_1")
-        $ wr_onepieces.append("sling_2")
-
+        #Panties
         $ wr_panties.append("panties_base")
         $ wr_panties.append("panties_lace")
+
+        #One-Pieces
+        $ wr_onepieces.append("sling_1")
+        $ wr_onepieces.append("sling_2")
 
     if active_girl == "cho":
 
@@ -839,15 +844,21 @@ label update_wr_underwear_list:
         $ wr_bras.append("bra_sport")
         if cc_party_slut_ITEM.unlocked:
             $ wr_bras.append("bra_party")
-        if cc_costume_misty_ITEM.unlocked:
+        if cc_bikini_micro_ITEM.unlocked:
             $ wr_bras.append("bra_bikini_1")
 
         #Panties
         $ wr_panties.append("panties_base_1")
         $ wr_panties.append("panties_sport_1")
         $ wr_panties.append("panties_sport_2")
+        if cc_bikini_micro_ITEM.unlocked:
+            $ wr_panties.append("panties_bikini_1")
         if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
-            $ wr_panties.append("panties_sailor_1")
+            $ wr_panties.append("panties_bikini_2")
+
+        #One-Pieces
+
+        #Garterbelts
 
     if active_girl == "tonks":
 

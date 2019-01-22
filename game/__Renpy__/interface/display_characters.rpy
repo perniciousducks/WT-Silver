@@ -4,6 +4,7 @@ label summon_characters:
     call update_display_characters_summon_list
 
     $ hide_transitions = True # Hides transitions.
+    $ bg_transp = 1.0
 
     call screen summon_characters
 
@@ -263,7 +264,12 @@ label move_character:
         call screen summon_characters
 
     $ menu_x = 0.5
-    $ menu_y = 0.75
+    $ menu_y = 0.5
+
+    hide screen custom_background
+    $ bg_transp = 0.3
+    show screen custom_background
+    with d5
 
     $ temp_name = renpy.input("(Please enter the X position for the sprite. This should be a number between 0 and 600)")
     $ temp_name = temp_name.strip()
@@ -313,12 +319,21 @@ label move_character:
         call ton_main(xpos=temp_xpos,ypos=temp_ypos)
 
     hide screen bld1
+    if bg_transp != 1.0:
+        hide screen custom_background
+        $ bg_transp = 1.0
+        show screen custom_background
+        with d5
 
     call screen summon_characters
 
 
 
 label pick_custom_background:
+
+    $ menu_x = 0.5
+    $ menu_y = 0.5
+
     menu:
         ">Change background image."
         "-Room Day-":
@@ -333,12 +348,22 @@ label pick_custom_background:
             call custom_bg("forest")
         "-Castle-":
             call custom_bg("castle")
-        "-Add Blacktone-":
-            show screen blktone
-            with d3
-        "-Remove Blacktone-":
-            hide screen blktone
-            with d3
+        "-Color-":
+            menu:
+                "-Black-":
+                    call custom_bg("color/black")
+                "-Gray-":
+                    call custom_bg("color/gray")
+                "-White-":
+                    call custom_bg("color/white")
+                "-Blue-":
+                    call custom_bg("color/blue")
+                "-Green-":
+                    call custom_bg("color/green")
+                "-Pink-":
+                    call custom_bg("color/pink")
+                "-Purple-":
+                    call custom_bg("color/purple")
         "-Custom-":
             $ temp_name = renpy.input("(Please enter the image name of your image located in \"images/rooms/_bg_/*****.png\"\nThe image resolution should be 1080 x 600.\nDo not add a .png at the end!)")
             $ temp_name = temp_name.strip()
@@ -360,7 +385,7 @@ label custom_bg(bg=""):
 screen custom_background():
     tag custom_background
 
-    add custom_bg_image
+    add custom_bg_image alpha bg_transp
 
     zorder 3
 

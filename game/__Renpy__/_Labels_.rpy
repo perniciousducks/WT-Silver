@@ -128,7 +128,7 @@ label room(room=None, hide_screens=True):
         hide screen package
         if package_is_here:
             show screen package
-        
+
         call house_points
         show screen points
 
@@ -163,7 +163,7 @@ label room(room=None, hide_screens=True):
 
 label main_room:
     show screen blkfade
-    
+
     #Predict and cache all often used images for the room
     $ renpy.start_predict("interface/desk/*.*")
     $ renpy.start_predict("interface/map/*.*")
@@ -369,7 +369,7 @@ label play_sound(sound=""):
 
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
-        
+
     if sound in ["spit"]:
         $ renpy.play('sounds/spit.mp3')
 
@@ -382,10 +382,10 @@ label play_music(music=""):
 
     if music in ["hedwigs_theme"]:
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1
-        
+
     if music in ["weasley_store"]:
         play music "music/weasley_store.mp3" fadein 1 fadeout 1 #Loop
-        
+
     if music in ["clothing_store"]:
         play music "music/clothing_store.mp3" fadein 1 fadeout 1 #Loop
 
@@ -424,6 +424,9 @@ label play_music(music=""):
 
     if music in ["anguish"]:
         play music "music/Anguish.mp3" fadein 1 fadeout 1
+
+    if music in ["my_immortal"]:
+        play music "music/Spring_In_My_Step.mp3" fadein 0.2 fadeout 0.2
 
     return
 

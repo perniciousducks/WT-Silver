@@ -61,6 +61,12 @@ label reset_wardrobe_vars:
     $ wardrobe_underwear_color        = "base"
     $ wardrobe_outfits_color          = "base"
 
+    #Music
+    if play_wardrobe_music:
+        if not wardrobe_music_active:
+            $ wardrobe_music_active = True
+            call play_music("my_immortal")
+
     return
 
 label return_to_wardrobe:
@@ -149,6 +155,16 @@ label wardrobe_update:
         $ wardrobe_page = 7
     if wardrobe_page != 8 and wardrobe_page_choice == 8: #gifts
         $ wardrobe_page = 8
+
+    #Music
+    if play_wardrobe_music:
+        if not wardrobe_music_active:
+            $ wardrobe_music_active = True
+            call play_music("my_immortal")
+    else:
+        if wardrobe_music_active:
+            $ wardrobe_music_active = False
+            call music_block
 
     #Sound Effects
     if add_wardrobe_sound: #False by default. Only happens on a "wardrobe_page" change.
@@ -304,6 +320,10 @@ label hide_wardrobe:
 
 label close_wardrobe:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
+    #Music
+    if wardrobe_music_active:
+        $ wardrobe_music_active = False
+        call music_block
 
     if active_girl == "hermione":
         call set_her_face(change="all")

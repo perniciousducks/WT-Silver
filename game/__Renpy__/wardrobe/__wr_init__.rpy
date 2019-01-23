@@ -2,7 +2,7 @@
 
 label wardrobe_init:
 
-    if not hasattr(renpy.store,'icon_xpos_offset') or reset_persistants:
+    if not hasattr(renpy.store,'wardrobe_music') or reset_persistants:
 
         $ hide_transitions = False
         $ active_girl = "hermione"
@@ -10,10 +10,13 @@ label wardrobe_init:
         $ wardrobe_page = 0
         $ wardrobe_page_choice = 0
         $ wardrobe_toggle_page = 0
-        $ add_wardrobe_sound = False
-        $ wr_her_action = "none"
-
         $ wardrobe_chitchat_active = True
+
+        $ play_wardrobe_music = False
+        $ wardrobe_music_active = False
+        $ add_wardrobe_sound = False
+
+        $ wr_her_action = "none"
 
         $ wardrobe_color_update = True
         $ wardrobe_color = "base"

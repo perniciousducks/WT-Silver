@@ -185,10 +185,10 @@ label __init_variables:
                                     description = "Miss Bones, barely contained within her school uniform.")
                                     
         cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_schoolgirl_v%s.png" % str(geniecard_level),
-                                    topvalue = 3,
-                                    bottomvalue = 1,
-                                    rightvalue = 2,
-                                    leftvalue = 4,
+                                    topvalue = 2,
+                                    bottomvalue = 4,
+                                    rightvalue = 3,
+                                    leftvalue = 1,
                                     title="Cho Chang (schoolgirl)",
                                     description = "Miss Chang, sporting her school uniform.")
                                     
@@ -480,9 +480,18 @@ label __init_variables:
             card_rand_item5 = renpy.random.choice([item_eromag, item_pornmag, item_girlmag, item_scroll, item_sweets])
             unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
-            # Temp fix
+            # Delete copies of playerdeck cards
             for i in range(0,5):
-                unlocked_cards[i].copies = 0
+                playerdeck[i].copies = 0
+                
+        cards_realm = [genie, iris, jasmine, azalea, dahlia, maslab, aladdin, lilly, rasul, jafar]
+        cards_hogwarts = [her_schoolgirl, her_librarian, lun_schoolgirl, sus_schoolgirl, cho_schoolgirl, fred, george, snape, dumbledore]
+        cards_other = [santa]
+        cards_items = [item_badge, item_barbell, item_beads, item_bird, item_bookchairs, item_bookgala, item_bookgala2, item_bookwaifu, item_broom, item_bdsm, item_condoms, item_desk, item_dildo, item_doll, item_elf, item_eromag, item_girlmag, item_hat, item_lingerie, item_lipstick, item_lube, item_owl, item_plugs, item_pornmag, item_potions, item_scroll, item_stockings, item_strapon, item_sweets, item_wine]
+        cards_all = cards_realm
+        cards_all += cards_hogwarts
+        cards_all += cards_other
+        cards_all += cards_items
         
         if not hasattr(renpy.store,'snape_first_deck'):
             snape_first_deck = [snape.clone(), item_potions.clone(), item_elf.clone(), item_wine.clone(), item_lipstick.clone()]
@@ -490,7 +499,7 @@ label __init_variables:
             snape_third_deck = [snape.clone(), item_potions.clone(), item_elf.clone(), item_elf.clone(), item_elf.clone()]
             
         if not hasattr(renpy.store,'twins_first_deck'):
-            twins_first_deck = [fred.clone(), item_sweets.clone(), item_bookwaifu.clone(), item_sweets.clone(), item_condoms.clone()]
+            twins_first_deck = [fred.clone(), item_sweets.clone(), item_beads.clone(), item_sweets.clone(), item_condoms.clone()]
             twins_second_deck = [george.clone(), fred.clone(), item_doll.clone(), item_sweets.clone(), item_broom.clone()]
             
         if not hasattr(renpy.store,'her_first_deck'):
@@ -511,14 +520,21 @@ init python:
     #For card randomization
     import random
     
-    #Renpy pls..
     def clamp(n, smallest, largest): 
         return max(smallest, min(n, largest))
+        
+    def card_exist(unlockedlist, cardobj):
+        for elm in unlockedlist:
+                if cardobj.title == elm.title:
+                    return True
+        return False
     
     def playerTint(image):
         return im.MatrixColor( image, im.matrix.tint(playercolor_r, playercolor_g, playercolor_b))
     def enemyTint(image):
         return im.MatrixColor( image, im.matrix.tint(enemycolor_r, enemycolor_g, enemycolor_b))
+    def grayTint(image):
+        return im.MatrixColor( image, im.matrix.desaturate())
       
     def get_image_size(image):
         myDisplayable = im.Image(image)
@@ -565,11 +581,11 @@ init python:
                 if table_cards[x][y].playercard:
                     playerpoints += 1
         if playerpoints > 5:        
-            return "winner" 
+            return "win" 
         elif playerpoints == 5:
-            return "drawed" 
+            return "draw" 
         else:
-            return "lost"
+            return "loss"
            
     def update_table(new_card_x, new_card_y):
         if  not new_card_y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].bottomvalue:
@@ -604,12 +620,12 @@ init python:
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-        
+            
         def get_card_image(self, zoom=0.5):
             return im.Scale(self.imagepath, card_width*zoom, card_height*zoom)
         def get_card_hover(self, zoom=0.5):
             return im.MatrixColor(im.Scale(self.imagepath, card_width*zoom, card_height*zoom),im.matrix.brightness(0.12))
-            
+
         def get_title(self):
             return self.textcolor+self.title+"{/color}"
         def get_amount(self):

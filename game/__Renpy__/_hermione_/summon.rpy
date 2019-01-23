@@ -92,7 +92,7 @@ label summon_hermione:
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
         #    jump your_whore
 
-        "-Let's Duel-" if snape_second_win:
+        "-Let's Duel- {image=interface/cards.png}" if snape_second_win:
             if her_know_cards == False:
                 m "[hermione_name]..."
                 call her_main( "Yes, [genie_name]?","base","base")

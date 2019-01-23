@@ -24,6 +24,7 @@ init -2:
         ypos y
         linear speed alpha 1
         
+    define flash = Fade(0.1, 0.0, 0.5, color="#fff")    
         
     transform move_in(x, speed):
         xpos x

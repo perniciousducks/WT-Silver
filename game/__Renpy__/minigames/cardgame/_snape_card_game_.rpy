@@ -17,9 +17,7 @@ label snape_first_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if check_winner() == "loser":
-        jump snape_duel_lost
-    elif check_winner() == "draw":
+    if not check_winner() == "win":
         jump snape_duel_lost
 
     
@@ -52,16 +50,14 @@ label snape_second_duel:
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
     
-    if check_winner() == "loser":
-        jump snape_duel_lost
-    elif check_winner() == "draw":
+    if not check_winner() == "win":
         jump snape_duel_lost
     
     hide screen blkfade
     stop music fadeout 1
-    call sna_main( "Not again... I swear these cards used to be good when I bought them.","snape_05")
-    call sna_main( "They must've made them obsolete to get you to buy more.","snape_05")
-    call sna_main( "So deliciously mischievous.","snape_05")
+    call sna_main( "Not again... I swear these cards used to be good when I bought them.","snape_07")
+    call sna_main( "They must've made them obsolete to get you to buy more.","snape_04")
+    call sna_main( "So deliciously mischievous.","snape_02")
     call sna_main(remove=True)
     $ snape_second_win = True
     call play_sound("door")
@@ -84,17 +80,17 @@ label snape_third_duel:
         
     call setup_deck(snape_third_deck)
     m "So, how about that prize?"
-    call sna_main( "Again with the prize...","snape_02")
+    call sna_main( "Again with the prize...","snape_01")
     m "I'm bored okay... and I like prizes..."
-    call sna_main( "Fine, I challenge you!!","snape_02")
+    call sna_main( "Fine, I challenge you!!","snape_10")
     m "..."
-    call sna_main( "You don't say it like that anymore?","snape_02")
+    call sna_main( "You don't say it like that anymore?","snape_05")
     m "No, that's lame."
     call sna_main( "You're not going to beat me again genie, I've practiced with the greatest Wizard cards player there is!","snape_02")
     m "Me?"
-    call sna_main( "I... no, of course not.","snape_02")
-    call sna_main( "Let's do this.","snape_02")
-    call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and my Tier 1 token.","snape_02")
+    call sna_main( "I... no, of course not.","snape_14")
+    call sna_main( "Let's do this.","snape_17")
+    call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and my Tier 1 token.","snape_18")
     m "Bring it."
     
     $ response_card = ""
@@ -135,7 +131,7 @@ label snape_third_duel:
             call sna_main(remove=True)
             $ _preferences.volumes['music'] = volume
     
-    if not check_winner() == "winner":
+    if not check_winner() == "win":
         jump snape_duel_lost
     
     #Won third match
@@ -159,16 +155,8 @@ label snape_third_duel:
     jump main_room
     
 label snape_duel_lost:
-    show screen blkfade 
-    with dissolve
-    if check_winner() == "lost":
-        "You lost"
-    else:
-        "It was a draw"
     stop music fadeout 1
-    #jump return_office
-    hide screen blkfade
-    with dissolve
+
     menu:
         "-Rematch-":
             jump snape_duel_menu

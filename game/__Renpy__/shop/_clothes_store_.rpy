@@ -9,6 +9,8 @@ screen clothing_store_room:
         add "images/rooms/_bg_/corridor.png" #Need day image.
     else:
         add "images/rooms/_bg_/corridor.png"
+        
+    use ui_top_bar
 
     zorder 0
 

@@ -260,10 +260,10 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     m "That's to be expected. Keep going."
     call lun_main("ah... yes sir...","normal","happyCl","sad","R")
     g4 "..."
-    call lun_main("ah... is this how it should be done?","pout","base","sad","mid")
+    call lun_main("ah... is this how it should be done?","pout","base","sad","stareL")
     m "As long as it's feeling good I'm sure it's working. If you keep this up I'm sure you'll be rid of those nasty wickerspoons."
     call lun_main("that's nice...","base","closed","sad","R")
-    call lun_main("...","normal","base","sad","mid")
+    call lun_main("...","normal","base","sad","stareL")
     call lun_main("are you sure this will work, sir?","soft","seductive","sad","mid")
     m "Of course I am! Do you dare doubt the powerful Dumbelldoor?"
     call lun_main("certainly not, sir...","normal","wide","sad","R")
@@ -273,7 +273,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     call lun_main("do you remember how I said the wickerspats were like a nasty itch, sir?","normal","seductive","sad","R")
     m "I do."
     call lun_main("well... as nice as this massage feels...","normal","seductive","sad","down")
-    call lun_main("it's not really scratching that itch sir...","pout","angry","sad","mid")
+    call lun_main("it's not really scratching that itch sir...","pout","angry","sad","stareL")
     call lun_main("... {p}am I doing it wrong, sir?","normal","seductive","sad","mid")
     m "Certainly not, but this is worse than I feared."
     call lun_main("really?","normal","wide","sad","mid")
@@ -327,14 +327,14 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     call lun_main("mmmm...","base","happyCl","angry","mid")
     call lun_main("ah...","grin","happyCl","angry","mid")
     call lun_main("a-ah...","base","seductive","sad","down")
-    call lun_main("yes...","base","seductive","angry","mid")
+    call lun_main("yes...","base","seductive","angry","stareL")
     m "(I think this is it!)"
     call lun_main("Ah... ah...{image=textheart}","grin","seductive","sad","R")
     call lun_main("{size=+4}mmm... yes...{image=textheart}{/size}","base","seductive","sad","down")
-    call lun_main("{size=+8}ah... ah...{/size}","grin","seductive","sad","mid")
+    call lun_main("{size=+8}ah... ah...{/size}","grin","seductive","sad","stareL")
     call lun_main("!!!","grin","wide","base","empty")
     call nar(">There's a blur of movement under Luna's skirt.")
-    call lun_main("ah! I think they're attacking me, sir!","base","wide","sad","mid")
+    call lun_main("ah! I think they're attacking me, sir!","base","wide","sad","stareL")
     call lun_main("!!!","base","base","sad","empty")
     m "Is everything OK?"
     call lun_main("Ah... yes sir...{image=textheart}","normal","seductive","sad","R")
@@ -417,7 +417,7 @@ label luna_cum_addict_event:
     call lun_main("{size=+12}incredible!!!{/size}","base","wide","sad","empty")
     m "..."
     m "What?"
-    call lun_main("my god!!! there's so much magical energy in it!","base","wide","sad","mid")
+    call lun_main("my god!!! there's so much magical energy in it!","base","wide","sad","stareL")
     call lun_main("I've never sensed anything this powerful before!","base","wide","sad","down")
     m "Ah yes, well I am the great fumblemore!"
     call lun_main("...","pout","angry","angry","mid")
@@ -433,23 +433,23 @@ label luna_cum_addict_event:
     $ luna_cum = 12
     ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
     call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","seductive","sad","empty")
-    call lun_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}","base","happyCl","sad","mid")
+    call lun_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}","base","happyCl","sad","stareL")
     call lun_main("can I have the rest? Please sir?","base","wide","sad","mid")
     m "Sure..."
     ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
     $ luna_cum = 13
     call lun_main("...","full","seductive","sad","empty")
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","stareL")
     pause
     $ luna_cum = 14
     call lun_main("...","full","seductive","sad","empty")
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","stareL")
     $ luna_cum = 15
     call lun_main("...","full","seductive","sad","empty")
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","stareL")
     $ luna_wear_cum = False
-    call lun_main("ah...","base","happyCl","sad","mid")
-    call lun_main("amazing...","base","seductive","sad","mid")
+    call lun_main("ah...","base","happyCl","sad","stareL")
+    call lun_main("amazing...","base","seductive","sad","stareL")
     m "Enjoy yourself did we?"
     call lun_main("How could I not?","pout","angry","angry","R")
     m "(What is going on here? SHe seems all bitchy again...)"
@@ -527,11 +527,11 @@ label luna_reverted_event_1: #Masturbate for genie again. #DONE
     call lun_main("I think Those slimy wrackspurts have infested the commonroom...","base","seductive","sad","down")
     m "That's quite possible..."
     call lun_main("ah... ah...","normal","happyCl","sad","R")
-    call lun_main("but getting rid of them... feels... so... good...","pout","base","sad","mid")
-    call lun_main("I'm almost glad I've got them...","pout","base","sad","mid")
+    call lun_main("but getting rid of them... feels... so... good...","pout","base","sad","stareL")
+    call lun_main("I'm almost glad I've got them...","pout","base","sad","stareL")
     m "The positive feelings you have are your body reacting to the wickerspats being expelled from your body."
     call lun_main("really?","base","closed","sad","R")
-    call lun_main("ah...","normal","base","sad","mid")
+    call lun_main("ah...","normal","base","sad","stareL")
     call lun_main("I must... ah... be expelling a lot then...","soft","seductive","sad","mid")
     call lun_main("in fact...","normal","wide","sad","R")
     call lun_main("ah...","normal","seductive","sad","down")
@@ -539,7 +539,7 @@ label luna_reverted_event_1: #Masturbate for genie again. #DONE
     call lun_main("Mmmm, it's just like... last time...","normal","seductive","sad","R")
     m "Oh, are you cumming already?"
     call lun_main("cumming?","normal","seductive","sad","down")
-    call lun_main("what's? ah...{image=textheart}","pout","angry","sad","mid")
+    call lun_main("what's? ah...{image=textheart}","pout","angry","sad","stareL")
     call lun_main("Cumming?{image=textheart}","normal","seductive","sad","mid")
     call lun_main("Ah... I'm cumming...{image=textheart}{image=textheart}","normal","wide","sad","mid")
     m "Mmmmm that's it girl..."
@@ -591,14 +591,14 @@ label luna_reverted_event_1: #Masturbate for genie again. #DONE
     call lun_main("mmmm...","base","happyCl","angry","mid")
     call lun_main("ah...","grin","happyCl","angry","mid")
     call lun_main("a-ah...","base","seductive","sad","down")
-    call lun_main("yes...","base","seductive","angry","mid")
+    call lun_main("yes...","base","seductive","angry","stareL")
     m "(I think this is it!)"
     call lun_main("Ah... ah...{image=textheart}","grin","seductive","sad","R")
     call lun_main("{size=+4}mmm... yes...{image=textheart}{/size}","base","seductive","sad","down")
-    call lun_main("{size=+8}ah... oh... frickity!!!{/size}","grin","seductive","sad","mid")
+    call lun_main("{size=+8}ah... oh... frickity!!!{/size}","grin","seductive","sad","stareL")
     call lun_main("!!!","grin","wide","sad","mid")
     call nar(">THere's a blur of movement under Luna's skirt.")
-    call lun_main("ah! thank you, [lun_genie_name]!","base","wide","sad","mid")
+    call lun_main("ah! thank you, [lun_genie_name]!","base","wide","sad","stareL")
     call lun_main("!!!","base","wide","sad","mid")
     m "Is everything OK?"
     call lun_main("Ah... yes{image=textheart} thank you{image=textheart} [lun_genie_name]...{image=textheart}","normal","seductive","sad","R")
@@ -650,14 +650,14 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     call nar(">Luna quickly puts her hand down her skirt, not even waiting on your reply...")
     call lun_main("ah... I'm sorry [lun_genie_name]... I just... needed... this...{image=textheart}","base","seductive","sad","up")
     m "You seem relieved..."
-    call lun_main("ah... {image=textheart} yes...","base","wide","sad","mid")
+    call lun_main("ah... {image=textheart} yes...","base","wide","sad","stareL")
     call lun_main("these visits are starting to become all I can think about...","base","seductive","sad","down")
     m "Hmmm... Do you think that's a bad thing?"
     call lun_main("ah... of course not!","normal","happyCl","sad","R")
-    call lun_main("it just... means that it's working...","pout","base","sad","mid")
-    call lun_main("if only I could spend all day up here...","base","base","sad","mid")
+    call lun_main("it just... means that it's working...","pout","base","sad","stareL")
+    call lun_main("if only I could spend all day up here...","base","base","sad","stareL")
     m "Do you think a full day of treatment would get rid of them?"
-    call lun_main("ah...","base","base","sad","mid")
+    call lun_main("ah...","base","base","sad","stareL")
     call lun_main("probably not...","soft","seductive","sad","mid")
     call lun_main("but...","base","wide","sad","R")
     call lun_main("ah...","base","seductive","sad","down")
@@ -665,7 +665,7 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
     call lun_main("nice...{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","R")
     m "Speaking of feeling nice..."
     call lun_main("Ah... I think I'm... cumming [lun_genie_name]...","open_tongue","seductive","sad","down")
-    call lun_main("ah...{image=textheart}","base","seductive","sad","mid")
+    call lun_main("ah...{image=textheart}","base","seductive","sad","stareL")
     call lun_main("mmmmm{image=textheart}","base","seductive","sad","mid")
     call lun_main("Ah... I'm cumming...{image=textheart}{image=textheart}","base","wide","sad","up")
     m "Mmmmm that's it girl..."
@@ -681,16 +681,16 @@ label luna_reverted_event_2: #Masturbate for Genie and then Genie cum on Luna's 
             jump luna_masturbate_again
 
     m "Truth be told they've been starting to affect me as well..."
-    call lun_main("What? They got you too?","base","angry","sad","mid")
+    call lun_main("What? They got you too?","base","angry","sad","stareL")
     m "I was afraid this might happen with you dispelling all of your personal wrackspurts into this room..."
     m "This is why I didn't want you doing this outside the office..."
-    call lun_main("It could have been a disaster [lun_genie_name]...","base","angry","sad","mid")
+    call lun_main("It could have been a disaster [lun_genie_name]...","base","angry","sad","stareL")
     call lun_main("But will you be alright?","soft","wink","raised","mid")
     m "Oh don't worry about me, I'm a {i}master{/i} when it comes to this..."
     call lun_main("Of course... These are your techniques after all...","base","happyCl","sad","mid")
     call lun_main("Would it...","base","seductive","sad","R")
     call lun_main("Would it be OK if I watched [lun_genie_name]?","base","annoyed","sad","mid")
-    call lun_main("Just as a way to improve my own technique!","base","wink","base","mid")
+    call lun_main("Just as a way to improve my own technique!","base","wink","base","stareL")
     m "Mmmm, I see nothing wrong with it..."
     m "Here, I'll come give you a {b}nice{/b} view..."
     show screen blkfade
@@ -865,7 +865,7 @@ label luna_reverted_event_3: #Luna gentle BJ where she just happily sucks and li
     call lun_main("Not exactly...","soft","seductive","sad","down")
     m "Oh... Something else I can help you with then?"
     call lun_main("Well... I was just walking past when I remembered how those nasty wrackspurts affected you the other day...","open","base","sad","R")
-    call lun_main("They aren't by any chance bothering you at the moment are they [lun_genie_name]?","base","wink","sad","mid")
+    call lun_main("They aren't by any chance bothering you at the moment are they [lun_genie_name]?","base","wink","sad","stareL")
     m "Now that you mention it, they have been giving me a little trouble..."
     m "But I'm much too tired to relieve them myself... I'm such an old man you see..."
     call lun_main("Really? But you look...","soft","wide","sad","mid")

@@ -57,7 +57,9 @@ screen main_room_menu:
         yanchor "center"
         idle door_OBJ.get_idle_image()
         hover door_OBJ.get_hover_image()
-        action [Hide("main_room_menu"), Jump("door")]
+        hovered SetVariable("ui_hint", "Summon")
+        unhovered SetVariable("ui_hint", "")
+        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("door")]
 
     #Scrolls
     if renpy.variant('android'):
@@ -78,7 +80,9 @@ screen main_room_menu:
             yanchor "center"
             idle cupboard_top_OBJ.get_idle_image()
             hover cupboard_top_OBJ.get_hover_image()
-            action [Hide("main_room_menu"), Jump("read_scroll_menu")]
+            hovered SetVariable("ui_hint", "Scrolls")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_scroll_menu")]
 
     #Cupboard
     if renpy.variant('android'):
@@ -101,7 +105,9 @@ screen main_room_menu:
             idle cupboard_OBJ.get_idle_image()
             if not searched:
                 hover cupboard_OBJ.get_hover_image()
-                action [Hide("main_room_menu"), Jump("cupboard")]
+                hovered SetVariable("ui_hint", "Rummage")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("cupboard")]
 
     #Hat
     if renpy.variant('android'):
@@ -122,7 +128,9 @@ screen main_room_menu:
             yanchor "center"
             idle hat_OBJ.get_idle_image()
             hover hat_OBJ.get_hover_image()
-            action [Hide("main_room_menu"), Jump("options_menu")]
+            hovered SetVariable("ui_hint", "Hat")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("options_menu")]
 
 #    imagebutton: # CUPBOARD LEFT
 #        xpos 120+140
@@ -163,7 +171,9 @@ screen main_room_menu:
             yanchor "center"
             idle package_OBJ.get_idle_image()
             hover package_OBJ.get_hover_image()
-            action [Hide("main_room_menu"), Hide("package"), Jump("get_package")]
+            hovered SetVariable("ui_hint", "Open package")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Hide("package"), Jump("get_package")]
 
     if letter_queue_list != []:
         imagebutton:
@@ -174,7 +184,9 @@ screen main_room_menu:
             yanchor "center"
             idle owl_OBJ.get_idle_image()
             hover owl_OBJ.get_hover_image()
-            action [Hide("main_room_menu"), Jump("read_letter")]
+            hovered SetVariable("ui_hint", "Check mail")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_letter")]
 
     #Genie
     if renpy.variant('android'):
@@ -197,9 +209,9 @@ screen main_room_menu:
             yanchor "center"
             idle "newanimation"
             hover "images/rooms/main_room/11_genie_02.png"
-            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ]
-            unhovered [Hide("gui_tooltip")]
-            action [Hide("main_room_menu"), Jump("desk")]
+            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210), SetVariable("ui_hint", "Open desk menu") ]
+            unhovered [Hide("gui_tooltip"), SetVariable("ui_hint", "")]
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("desk")]
 
     #Phoenix
     imagebutton:
@@ -211,7 +223,9 @@ screen main_room_menu:
         idle phoenix_OBJ.get_idle_image()
         if not phoenix_is_petted:
             hover phoenix_OBJ.get_hover_image()
-            action [Hide("main_room_menu"), Jump("phoenix")]
+            hovered SetVariable("ui_hint", "Feed/Pet")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("phoenix")]
 
     #Fireplace
     imagebutton:
@@ -222,8 +236,13 @@ screen main_room_menu:
         yanchor "center"
         idle fireplace_OBJ.get_idle_image()
         hover fireplace_OBJ.get_hover_image()
-        action [Hide("main_room_menu"), Jump("fireplace")]
+        hovered SetVariable("ui_hint", "Light fire")
+        unhovered SetVariable("ui_hint", "")
+        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("fireplace")]
 
+    # Old buttons
+    #
+    #
     #Stats
     #imagebutton:
     #    xpos 830

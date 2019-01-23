@@ -23,7 +23,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("So what's he want from us today?","smile","glance")
     call her_main("Another blowjob?","grin","baseL")
     call lun_main("He hasn't even asked yet.","base","seductive","sad","R")
-    call lun_main("I wanted you to be here for it.","base","suspicious","sad","mid")
+    call lun_main("I wanted you to be here for it.","base","suspicious","sad","stareL")
     call her_main("you mean...","shock","happy")
     call her_main("Awww that's so sweet Luna.","grin","soft")
     call her_main("You better ask her nicely sir!","mad","narrow")

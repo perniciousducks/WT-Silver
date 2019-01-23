@@ -24,6 +24,7 @@ init -1 python hide:v
         persistent.delwarning = True
         persistent.customcursor = True
         persistent.autosave = False
+        persistent.ui_hint = True
     
     #Load custom preference options
     if persistent.customcursor:
@@ -58,7 +59,7 @@ init -1 python hide:v
     # with tracebacks and other debugging logs.
     
     config.name = "WT Silver"
-    config.version = "1.34b"
+    config.version = "1.35a"
     
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.

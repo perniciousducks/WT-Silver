@@ -148,7 +148,7 @@ label summon_snape:
 
                 "\"Never mind.\"":
                     jump snape_ready
-        "-Let's Duel-" if deck_unlocked:
+        "-Let's Duel- {image=interface/cards.png}" if deck_unlocked:
             if snape_know_cards == False:
                 m "Ever heard of Wizard Cards?"
                 call sna_main( "What about them?","snape_05") 
@@ -163,12 +163,12 @@ label summon_snape:
                 call sna_main( "What do you mean? There never used to be prizes in Wizard Cards...","snape_01") 
                 g4 "What..."
                 m "No wonder this game never took off..."
-                m "Let's just play a few practice runs for now then."
-                call sna_main( "And after that?","snape_05") 
+                m "Let's just play a few practice rounds for now then."
+                call sna_main( "And then?","snape_05") 
                 m "..."
-                m "After that we'll think about prizes."
+                m "And then we'll think about prizes."
                 call sna_main( "...","snape_01") 
-                call sna_main( "Fine, I'm confident enough to beat a newbie.","snape_06") 
+                call sna_main( "Fine, I'm confident enough to beat a beginner.","snape_06") 
                 call sna_main( "But first a bit of practice...","snape_02")  
                 g9 "Let's play."
                 $ snape_know_cards = True

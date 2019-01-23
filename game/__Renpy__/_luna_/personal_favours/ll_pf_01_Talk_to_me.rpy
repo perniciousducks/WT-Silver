@@ -654,7 +654,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("...","normal","wide","sad","R", cheeks="blush")
         m "{size=-2}(mmmm...){/size}"
         call her_main("it was going well when all of a sudden a few second years came into the common room...","angry","wink")
-        call lun_main("you said it was going to be empty!","normal","wide","sad","mid", cheeks="blush")
+        call lun_main("you said it was going to be empty!","normal","wide","sad","stareL", cheeks="blush")
         call her_main("it was incredible sir... she swallowed the whole thing...","base","down")
         g4 "{size=+4}(agh...){/size}"
         g4 "{size=+4}yes...{/size}"

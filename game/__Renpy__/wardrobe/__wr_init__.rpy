@@ -2,7 +2,7 @@
 
 label wardrobe_init:
 
-    if not hasattr(renpy.store,'wardrobe_music') or reset_persistants:
+    if not hasattr(renpy.store,'play_wardrobe_music') or reset_persistants:
 
         $ hide_transitions = False
         $ active_girl = "hermione"

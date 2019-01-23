@@ -477,6 +477,7 @@ label update_her_action:
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
         $ hermione_wear_bottom = False
+        $ hermione_wear_garterbelt = False
         $ hermione_wear_panties = False
 
         if hermione_action == "hands_behind":

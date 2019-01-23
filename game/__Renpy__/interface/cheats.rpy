@@ -192,6 +192,7 @@ label cheats:
 
         "-Add Slytherin Points-":
             $ slytherin += 200
+            call house_points
             "200 points to Slytherin!"
             jump cheats
 

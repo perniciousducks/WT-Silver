@@ -39,7 +39,7 @@ label room_objects_init:
             room_image="candle",  room_image_path="images/rooms/_objects_/candles/",
             xpos=350, ypos=160)
         $ candle_right_OBJ = room_object_class(type="candle",
-            room_image="candleM", room_image_path="images/rooms/_objects_/candles/",
+            room_image="candle", room_image_path="images/rooms/_objects_/candles/",
             xpos=833, ypos=225)
 
         $ owl_OBJ = room_object_class(type="mail",

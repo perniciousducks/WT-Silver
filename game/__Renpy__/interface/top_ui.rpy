@@ -67,87 +67,89 @@ screen ui_top_bar():
     use ui_stats
     use ui_points
     
-    # Menu button
-    imagebutton:
-        xpos 0
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
-        if renpy.get_screen("main_room_menu"):
-            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-            hovered SetVariable("ui_hint", "Open menu")
-            unhovered SetVariable("ui_hint", "")
-            action [Hide("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
-            activate_sound "sounds/click3.mp3"
-        elif not renpy.get_screen("main_room_menu") and toggle_menu:
-            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-            hovered SetVariable("ui_hint", "Close menu")
-            unhovered SetVariable("ui_hint", "")
-            action [Show("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
-            activate_sound "sounds/click3.mp3"
+    # Don't display button in the shops
+    if not renpy.get_screen("clothing_store_room") and not renpy.get_screen("weasley_store_room"):
+        # Menu button
+        imagebutton:
+            xpos 0
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
+            if renpy.get_screen("main_room_menu"):
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
+                hovered SetVariable("ui_hint", "Open menu")
+                unhovered SetVariable("ui_hint", "")
+                action [Hide("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
+                activate_sound "sounds/click3.mp3"
+            elif not renpy.get_screen("main_room_menu") and toggle_menu:
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
+                hovered SetVariable("ui_hint", "Close menu")
+                unhovered SetVariable("ui_hint", "")
+                action [Show("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
+                activate_sound "sounds/click3.mp3"
         
-    # Stats button
-    imagebutton:
-        xpos 943
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
-        if renpy.get_screen("main_room_menu"):
-            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
-            hovered SetVariable("ui_hint", "Statistics (c)")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("open_stat_menu")]
-            activate_sound "sounds/click3.mp3"
+        # Stats button
+        imagebutton:
+            xpos 943
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
+            if renpy.get_screen("main_room_menu"):
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
+                hovered SetVariable("ui_hint", "Statistics (c)")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("open_stat_menu")]
+                activate_sound "sounds/click3.mp3"
         
-    # Inventory button
-    imagebutton:
-        xpos 976
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
-        if renpy.get_screen("main_room_menu"):
-            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
-            hovered SetVariable("ui_hint", "Inventory (i)")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Jump("open_inventory_menu")]
-            activate_sound "sounds/click3.mp3"
+        # Inventory button
+        imagebutton:
+            xpos 976
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
+            if renpy.get_screen("main_room_menu"):
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
+                hovered SetVariable("ui_hint", "Inventory (i)")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Jump("open_inventory_menu")]
+                activate_sound "sounds/click3.mp3"
         
-    # Work button
-    imagebutton:
-        xpos 1009
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
-        if renpy.get_screen("main_room_menu"):
-            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
-            hovered SetVariable("ui_hint", "Work (w)")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Jump("paperwork")]
-            activate_sound "sounds/click3.mp3"
+        # Work button
+        imagebutton:
+            xpos 1009
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
+            if renpy.get_screen("main_room_menu"):
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
+                hovered SetVariable("ui_hint", "Work (w)")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Jump("paperwork")]
+                activate_sound "sounds/click3.mp3"
         
-    # Sleep button
-    imagebutton:
-        xpos 1047
-        idle "interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png"
-        if renpy.get_screen("main_room_menu"):
-            hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
-            if daytime:
-                action Jump("night_start")
-                hovered SetVariable("ui_hint", "Doze Off (s)")
-            else:
-                action Jump("day_start")
-                hovered SetVariable("ui_hint", "Sleep (s)")
-            unhovered SetVariable("ui_hint", "")
-            activate_sound "sounds/click3.mp3"
+        # Sleep button
+        imagebutton:
+            xpos 1047
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png"
+            if renpy.get_screen("main_room_menu"):
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
+                if daytime:
+                    action Jump("night_start")
+                    hovered SetVariable("ui_hint", "Doze Off (s)")
+                else:
+                    action Jump("day_start")
+                    hovered SetVariable("ui_hint", "Sleep (s)")
+                unhovered SetVariable("ui_hint", "")
+                activate_sound "sounds/click3.mp3"
         
-    ## Toggle UI lock button
-    #imagebutton:
-    #    xpos 1047
-    #    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
-    #    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
-    #    action ToggleVariable("toggle_ui_lock", False, True)
-    #    activate_sound "sounds/click3.mp3"
+        ## Toggle UI lock button
+        #imagebutton:
+        #    xpos 1047
+        #    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
+        #    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
+        #    action ToggleVariable("toggle_ui_lock", False, True)
+        #    activate_sound "sounds/click3.mp3"
     
-    #Debug
-    if config.debug:
-        hbox:
-            xpos 10 ypos 40
-            text "{size=-5}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
+        #Debug
+        if config.debug:
+            hbox:
+                xpos 10 ypos 40
+                text "{size=-5}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
             
-    if not ui_hint == "" and persistent.ui_hint:
-        text "{color=#FFF}{size=+4}[ui_hint]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
+        if not ui_hint == "" and persistent.ui_hint:
+            text "{color=#FFF}{size=+4}[ui_hint]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
     
 screen ui_points():
     tag ui

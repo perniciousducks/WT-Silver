@@ -7,6 +7,8 @@ screen weasley_store_room:
         add "images/rooms/weasley_store/store_day.png"
     else:
         add "images/rooms/weasley_store/store_night.png"
+        
+    use ui_top_bar
 
     zorder 0
 

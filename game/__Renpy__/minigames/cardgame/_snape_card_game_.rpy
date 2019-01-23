@@ -56,7 +56,7 @@ label snape_second_duel:
     hide screen blkfade
     stop music fadeout 1
     call sna_main( "Not again... I swear these cards used to be good when I bought them.","snape_07")
-    call sna_main( "They must've made them obsolete to get you to buy more.","snape_03")
+    call sna_main( "They must've made them obsolete to get you to buy more.","snape_04")
     call sna_main( "So deliciously mischievous.","snape_02")
     call sna_main(remove=True)
     $ snape_second_win = True

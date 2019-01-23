@@ -46,7 +46,7 @@ transform credits_scroll:
     subpixel True
     ypos absolute(20)
     time 2.0
-    linear credits_duration-7 ypos absolute(-310)
+    linear credits_duration-7 ypos absolute(-330)
     
 screen credits_screen():
     tag credits

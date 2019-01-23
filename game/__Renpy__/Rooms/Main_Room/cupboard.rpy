@@ -128,19 +128,9 @@ label options_menu:
         "-Display Characters-" if day != 1:
             jump summon_characters
 
-        #Temporary!
-        "-Doze off-" if daytime and day != 1:
-            jump night_start
-        "-Go to sleep-" if not daytime and day != 1:
-            jump day_start
-
-        #"-Jerk 0ff on Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress: #True when Hermione has no panties on.
-        #    jump jerk_off
-        "-Jerk Off-" if not day == 1:
-            jump jerk_off
-
         "-Never mind-":
             jump day_main_menu
+
 
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
@@ -197,11 +187,11 @@ label rummaging:
 
     # Item Reward.
     $ random_number = renpy.random.randint(1, 5)
-    
+
     if day >= 26 and deck_unlocked and random_number in [5] and not dumbledore in unlocked_cards:
         call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.png")
         $ unlocked_cards += [dumbledore]
-        
+
         show screen genie
         hide screen rum_screen
         hide screen bld1

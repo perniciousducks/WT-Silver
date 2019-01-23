@@ -336,10 +336,6 @@ label pick_custom_background:
 
     menu:
         ">Change background image."
-        "-Room Day-":
-            call custom_bg("main_room_day")
-        "-Room Night-":
-            call custom_bg("main_room_night")
         "-Corridor-":
             call custom_bg("corridor")
         "-Wall-":

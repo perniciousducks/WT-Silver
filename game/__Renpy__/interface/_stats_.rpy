@@ -107,7 +107,7 @@ screen stat_menu(character=""):
     add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
 
 
-    use close_button
+    use top_bar_close_button
 
     #Character Buttons.
 

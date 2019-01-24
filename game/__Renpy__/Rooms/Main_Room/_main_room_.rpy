@@ -47,7 +47,7 @@ screen main_room_overlay:
 screen main_room_menu:
     #Hotkeys
     use hotkeys_main
-    
+
     tag room_screen
     imagebutton: # DOOR
         xpos door_OBJ.xpos
@@ -69,8 +69,9 @@ screen main_room_menu:
             xanchor "center"
             yanchor "center"
             ground cupboard_top_OBJ.get_idle_image()
-            hover cupboard_top_OBJ.get_hover_image()
-            hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("read_scroll_menu")]
+            if store_intro_done:
+                hover cupboard_top_OBJ.get_hover_image()
+                hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("read_scroll_menu")]
     else:
         imagebutton: # CUPBOARD SCROLL
             xpos cupboard_top_OBJ.xpos
@@ -79,10 +80,11 @@ screen main_room_menu:
             xanchor "center"
             yanchor "center"
             idle cupboard_top_OBJ.get_idle_image()
-            hover cupboard_top_OBJ.get_hover_image()
-            hovered SetVariable("ui_hint", "Scrolls")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_scroll_menu")]
+            if store_intro_done:
+                hover cupboard_top_OBJ.get_hover_image()
+                hovered SetVariable("ui_hint", "Scrolls")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_scroll_menu")]
 
     #Cupboard
     if renpy.variant('android'):
@@ -110,27 +112,27 @@ screen main_room_menu:
                 action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("cupboard")]
 
     #Hat
-    if renpy.variant('android'):
-        imagemap:
-            xpos hat_OBJ.xpos
-            ypos hat_OBJ.ypos
-            xanchor "center"
-            yanchor "center"
-            ground hat_OBJ.get_idle_image()
-            hover hat_OBJ.get_hover_image()
-            hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
-    else:
-        imagebutton:
-            xpos hat_OBJ.xpos
-            ypos hat_OBJ.ypos
-            focus_mask True
-            xanchor "center"
-            yanchor "center"
-            idle hat_OBJ.get_idle_image()
-            hover hat_OBJ.get_hover_image()
-            hovered SetVariable("ui_hint", "Hat")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("options_menu")]
+    #if renpy.variant('android'):
+    #    imagemap:
+    #        xpos hat_OBJ.xpos
+    #        ypos hat_OBJ.ypos
+    #        xanchor "center"
+    #        yanchor "center"
+    #        ground hat_OBJ.get_idle_image()
+    #        hover hat_OBJ.get_hover_image()
+    #        hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
+    #else:
+    #    imagebutton:
+    #        xpos hat_OBJ.xpos
+    #        ypos hat_OBJ.ypos
+    #        focus_mask True
+    #        xanchor "center"
+    #        yanchor "center"
+    #        idle hat_OBJ.get_idle_image()
+    #        hover hat_OBJ.get_hover_image()
+    #        hovered SetVariable("ui_hint", "Hat")
+    #        unhovered SetVariable("ui_hint", "")
+    #        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("options_menu")]
 
 #    imagebutton: # CUPBOARD LEFT
 #        xpos 120+140

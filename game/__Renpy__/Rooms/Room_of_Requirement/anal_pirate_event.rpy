@@ -39,7 +39,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         hide screen hermione_main
 
         label lucky_anal_guess:
-        call h_equip_temp_outfit(hg_outfit_pirate_OBJ)
+        call h_equip_temp_outfit(hg_outfit_pirate_ITEM)
         call blkfade
         call hide_blkfade
 
@@ -443,7 +443,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         g9 "Raise anchor, you little tart!"
 
         hide screen hermione_main
-        call h_equip_temp_outfit(hg_outfit_pirate_OBJ)
+        call h_equip_temp_outfit(hg_outfit_pirate_ITEM)
         call blkfade
 
         stop music fadeout 1.0
@@ -661,7 +661,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     if not hg_outfit_pirate_ITEM.unlocked:
         call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
-        
+
     if deck_unlocked:
         call give_reward("You have found a special card in your.. pocket!", "images/cardgame/t1/genie_realm/maslab_v1.png")
     $ unlocked_cards += [maslab]

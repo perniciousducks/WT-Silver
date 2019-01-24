@@ -94,7 +94,7 @@ screen luna_uniform:
             add luna_onepiece xpos luna_xpos ypos luna_ypos alpha lun_onepiece_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
 
     if luna_wear_stockings:
-        add luna_stockings xpos luna_xpos ypos luna_ypos alpha lun_bottom_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
+        add luna_stockings xpos luna_xpos ypos luna_ypos alpha lun_stockings_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
     if luna_wear_bottom:
         add luna_bottom xpos luna_xpos ypos luna_ypos alpha lun_bottom_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
     if luna_wear_top:

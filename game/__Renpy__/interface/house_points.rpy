@@ -1,26 +1,26 @@
-label add_house_points(house, points):
-    show screen adding_house_points(points, house)
-    with Dissolve(0.5)
-    if house == "r":
-        $ ravenclaw += int(points)
-    if house == "s":
-        $ slytherin += int(points)
-    if house == "g":
-        $ gryffindor += int(points)
-    if house == "h":
-        $ hufflepuff += int(points)
-    hide screen adding_house_points
-    with Dissolve(0.5)
-    return
-    
+#label add_house_points(house, points):
+#    show screen adding_house_points(points, house)
+#    with Dissolve(0.5)
+#    if house == "r":
+#        $ ravenclaw += int(points)
+#    if house == "s":
+#        $ slytherin += int(points)
+#    if house == "g":
+#        $ gryffindor += int(points)
+#    if house == "h":
+#        $ hufflepuff += int(points)
+#    hide screen adding_house_points
+#    with Dissolve(0.5)
+#    return
+
 #label points_animation:
     #show screen all_house_points
     #with Dissolve(0.5)
     #pause 0.75
     #hide screen all_house_points
     #with Dissolve(0.5)
-    #return    
-    
+    #return
+
 #screen all_house_points:
     #$ house_pos = {"r":175,"s":286,"g":393,"h":502}
     #add "interface/points/TopUI_Bar_Overlay.png" at Position(xpos=140, ypos=1)
@@ -96,7 +96,7 @@ label points_changes:
     elif generating_points_ravenclaw == 10:
         $ ravenclaw += 13
         $ ravenclaw_p_gain = "+13"
-        
+
     call slytherin_points
-    
+
     return

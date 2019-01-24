@@ -1,30 +1,24 @@
 label cheats:
     menu:
-        "-Hermione Cheats-":
+        "-Hermione Cheats-" if hermione_unlocked:
             label cheats_hermione:
             menu:
-                "-Reset Hermione's mood-":
+                "-Reset Hermione's mood-" if her_mood != 0:
                     $ her_mood = 0
                     ">Hermione is no longer mad at you."
                     jump cheats_hermione
-                "-Max Whoring-":
+                "-Max Whoring-" if her_whoring < 24:
                     $ her_whoring = 24
                     ">Hermione is now a giant slut."
                     jump cheats_hermione
 
-                "-Increase Whoring-":
-                    if her_whoring >= 24:
-                        ">Hermione's Whoring is at the max level and can't be increased any further!"
-                    else:
-                        $ her_whoring += 1
-                        ">Hermione became more depraved..."
+                "-Increase Whoring-" if her_whoring < 24:
+                    $ her_whoring += 1
+                    ">Hermione became more depraved..."
                     jump cheats_hermione
-                "-Decrease Whoring-":
-                    if her_whoring <= 0:
-                        "Hermione's Whoring can't be decreased any further!"
-                    else:
-                        $ her_whoring -= 1
-                        "Hermione recovered some of her dignity"
+                "-Decrease Whoring-" if her_whoring > 0:
+                    $ her_whoring += -1
+                    "Hermione recovered some of her dignity"
                     jump cheats_hermione
 
                 "-Unlock public favours-":
@@ -68,7 +62,7 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Luna Cheats-":
+        "-Luna Cheats-" if luna_unlocked:
             label cheats_luna:
             menu:
                 "-Unlock all outfits & sets-":
@@ -93,7 +87,11 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Astoria & Susan Cheats-":
+        "-Mail ministry letter-" if her_whoring >= 2 and not letter_curse_complaint_OBJ.read:
+            $ letter_curse_complaint_OBJ.mailLetter()
+            ">Letter sent."
+            jump cheats
+        "-Astoria & Susan Cheats-" if astoria_unlocked:
             label cheats_astoria:
             menu:
                 "-Unlock all outfits & sets-":
@@ -109,15 +107,10 @@ label cheats:
                     ">All of Astoria's outfits and clothing sets have been unlocked."
                     jump cheats_astoria
 
-                "-Mail ministry letter-":
-                    $ letter_curse_complaint_OBJ.mailLetter()
-                    ">Letter sent."
-                    jump cheats_astoria
                 "-Unlock first spell-":
                     $ ast_affection = 2
                     $ astoria_tonks_1_completed = True
                     $ astoria_tonks_2_completed = True
-
 
                     $ ag_imperio_susan_OBJ.points = 3
                     ">Astoria can now use the first spell!"
@@ -125,12 +118,17 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Cho Cheats-":
+        "-Cho Cheats-" if cho_unlocked:
             label cheats_cho:
             menu:
                 "-Reset Cho's mood-":
                     $ cho_mood = 0
                     ">Cho is no longer mad at you."
+                    jump cheats_cho
+                "-Unlock Wardrobe-":
+                    $ cho_wardrobe_unlocked = True
+                    $ cc_muggle_hot_ITEM.unlocked = True
+                    ">Cho's wardrobe is now accessible."
                     jump cheats_cho
                 "-Unlock all outfits & sets-":
                     python:
@@ -153,7 +151,7 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Book Cheats-":
+        "-Book Cheats-" if store_intro_done:
             label cheats_books:
             menu:
                 "-Max Imagination":
@@ -194,6 +192,7 @@ label cheats:
 
         "-Add Slytherin Points-":
             $ slytherin += 200
+            call house_points
             "200 points to Slytherin!"
             jump cheats
 

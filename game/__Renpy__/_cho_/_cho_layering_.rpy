@@ -63,8 +63,10 @@ screen cho_uniform:
         add cho_bottom xpos cho_xpos ypos cho_ypos alpha cho_bottom_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the skirt/pants
     if cho_wear_top:
         add cho_top xpos cho_xpos ypos cho_ypos alpha cho_top_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the top
-    if cho_wear_accs:
-        add cho_accs xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the accessory
+
+    #Badges & Belts
+    if cho_wear_body_accs:
+        use cho_body_accs
 
     add cho_l_hand xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the left hand
     if cho_wear_gloves:
@@ -89,4 +91,10 @@ screen cho_outfit:
         add "characters/cho/clothes/custom/"+i xpos cho_xpos ypos cho_ypos alpha cho_outfit_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### ZORDER
+    zorder cho_zorder
+
+#Body Accessories
+screen cho_body_accs:
+    for i in range(0,len(cho_body_accs_list)):
+        add "characters/cho/accessories/body_accs/"+str(cho_body_accs_list[i])+".png" xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     zorder cho_zorder

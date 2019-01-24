@@ -38,7 +38,7 @@ label store_items_init:
     ]
 
     $ toy_gift_list = [
-        plush_owl_ITEM, pink_condoms_ITEM, vibrator_ITEM, anal_lube_ITEM, ballgag_and_cuffs_ITEM,
+        plush_owl_ITEM, pink_condoms_ITEM, sexy_lingerie_ITEM, vibrator_ITEM, anal_lube_ITEM, ballgag_and_cuffs_ITEM,
         anal_plugs_ITEM, testral_strapon_ITEM, broom_2000_ITEM, sexdoll_ITEM, anal_beads_ITEM,
     ]
 
@@ -273,7 +273,7 @@ label store_items_init:
     $ luna_dresses_list=[
         ]
 
-    # Luna Sets #ll_quirky_muggle_ITEM
+    # Luna Sets
     if not hasattr(renpy.store,'ll_cheer_r_ITEM'):
         $ ll_cheer_r_ITEM       = item_class(id="ll_cheer_r", name="Ravenclaw Cheerleader", type="set", items=["top","bottom","stockings"], cost=80, wait_time=2, image="outfits/ll_cheer_r", description=">The Ravenclaw version of the Cheerleader attire.")
         $ ll_lingerie_silk_ITEM = item_class(id="ll_lingerie_silk", name="Silk Lingerie",   type="set", items=["bra","panties"],            cost=80, wait_time=1, image="outfits/ll_lingerie_silk", description=">A smooth and comfortable silk bra and panty set.")
@@ -336,10 +336,14 @@ label store_items_init:
         $ cc_outfit_sailor_white_ITEM       = outfit_class(id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
         $ cc_outfit_sailor_black_ITEM       = outfit_class(id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
 
+    if not hasattr(renpy.store,'cc_costume_misty_ITEM'):
+        $ cc_costume_misty_ITEM     = outfit_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!")
+
     $ cho_outfits_list=[
         cc_outfit_quidditch_ITEM, cc_outfit_sailor_white_ITEM, cc_outfit_sailor_black_ITEM
         ]
     $ cho_costumes_list=[
+        cc_costume_misty_ITEM
         ]
     $ cho_dresses_list=[
         cc_dress_red_ITEM, cc_dress_silver_ITEM, cc_dress_black_ITEM
@@ -350,8 +354,11 @@ label store_items_init:
         $ cc_muggle_hot_ITEM = item_class(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image="outfits/cc_muggle_hot", unlockable=True)
         $ cc_party_slut_ITEM = item_class(id="cc_party", name="Party Clothing",            type="set", items=["bra","skirt"],             image="outfits/cc_party", unlockable=True)
 
+    if not hasattr(renpy.store,'cc_bikini_micro_ITEM'):
+        $ cc_bikini_micro_ITEM = item_class(id="cc_bikini_micro", name="Micro Bikini",     type="set", items=["bra","panties"],           image="outfits/cc_bikini_micro", cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
+
     $ cho_clothing_sets_list=[
-        cc_muggle_hot_ITEM, cc_party_slut_ITEM,
+        cc_muggle_hot_ITEM, cc_party_slut_ITEM, cc_bikini_micro_ITEM,
         ]
 
 

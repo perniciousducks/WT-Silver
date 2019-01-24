@@ -2,7 +2,7 @@
 
 label cho_init:
 
-    if not hasattr(renpy.store,'cho_base') or reset_persistants:
+    if not hasattr(renpy.store,'cho_body_accs_list') or reset_persistants:
         label reset_cho_clothing:
 
         #Body
@@ -52,11 +52,12 @@ label cho_init:
         $ cho_request_wear_garterbelt       = False
 
         $ cho_request_wear_neckwear         = False
+        $ cho_request_wear_body_accs        = False
         $ cho_request_wear_gloves           = False
         $ cho_request_wear_stockings        = False
         $ cho_request_wear_robe             = False
 
-        $ cho_request_wear_hat              = False
+        $ cho_request_wear_hat              = True
         $ cho_request_wear_glasses          = False
         $ cho_request_wear_ears             = False
         $ cho_request_wear_makeup           = False
@@ -78,11 +79,12 @@ label cho_init:
         $ cho_wear_garterbelt        = False
 
         $ cho_wear_neckwear          = False
+        $ cho_wear_body_accs         = False
         $ cho_wear_gloves            = False
         $ cho_wear_stockings         = False
         $ cho_wear_robe              = False
 
-        $ cho_wear_hat               = False
+        $ cho_wear_hat               = True
         $ cho_wear_glasses           = False
         $ cho_wear_ears              = False
         $ cho_wear_makeup            = False
@@ -136,8 +138,8 @@ label cho_init:
         $ c_robe_color            = "base"
 
         #Accessories
-        $ cho_hat                 = "characters/cho/accessories/hats/blank.png"
-        $ c_hat                   = "blank"
+        $ cho_hat                 = "characters/cho/accessories/hats/snitch.png"
+        $ c_hat                   = "snitch"
         $ c_hat_color             = "base"
 
         $ cho_glasses             = "characters/cho/accessories/glasses/blank.png"
@@ -147,7 +149,7 @@ label cho_init:
         $ cho_ears                = "characters/cho/accessories/ears/blank.png"
         $ c_ears                  = "blank"
 
-        $ cho_accs                = "characters/cho/accessories/blank.png"
+        $ cho_body_accs_list      = []
 
         call reset_cho_transparency
 

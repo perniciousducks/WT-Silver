@@ -32,8 +32,14 @@ label __init_variables:
         $ hg_pf_TheGamble_FlagC = False
 
 
-    ###MISC
-    if not hasattr(renpy.store,'unlocked_xmas_deco'): #important!
+    #Misc
+    if not hasattr(renpy.store,'change_xpos'):
+        #For UI help,temporary add them to your UI element and use the console to quickly get it into place.
+        #Then replace the variables with the number you ended up with.
+        $ change_xpos = 0
+        $ change_ypos = 0
+
+    if not hasattr(renpy.store,'unlocked_xmas_deco'):
         $ unlocked_7th = False
         $ charName = "genie"
         $ unlocked_xmas_deco = False

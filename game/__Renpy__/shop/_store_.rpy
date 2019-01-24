@@ -7,7 +7,7 @@ screen weasley_store_room:
         add "images/rooms/weasley_store/store_day.png"
     else:
         add "images/rooms/weasley_store/store_night.png"
-        
+
     use ui_top_bar
 
     zorder 0
@@ -20,7 +20,7 @@ label open_weasley_store:
 
     call room("weasley_store")
     call gen_chibi("hide")
-    
+
     call play_music("weasley_store")
 
     if store_intro_done:
@@ -31,7 +31,7 @@ label open_weasley_store:
         call hide_blkfade
         call gen_walk("0","left",1.4)
     pause.2
-    
+
     $ renpy.block_rollback()
 
     call store_chit_chat
@@ -95,7 +95,7 @@ label store_chit_chat:
         m "Oh... yes of course, a professional like me..."
         fre "Anyway, we've gone ahead and put up a official unofficial tier system ladder."
         m "Unofficial... Official, you say?"
-        ger "Yes, as we mentioned... there isn't really any official tournament rules." 
+        ger "Yes, as we mentioned... there isn't really any official tournament rules."
         fre "We've sort of kept it that way in that we'll let the people playing set their own vaguers and challenges to climb the ladder."
         ger "Once the agreed upon winning conditions is reached the winner will receive a token and what ever else you decide on."
         fre "3 challenges won will let you climb to the next tier."
@@ -128,7 +128,7 @@ label store_chit_chat:
                     menu:
                         "-First Duel-":
                             jump twins_first_duel
-                        "-Challenge-" if twins_first_win:                                
+                        "-Challenge-" if twins_first_win:
                             jump twins_second_duel
                         "{color=#858585}-You need to beat the first duel-{/color}" if not twins_first_win:
                             jump twins_duel_menu
@@ -158,12 +158,7 @@ screen weasley_store_menu:
     zorder 4
 
     # Close Button
-    imagebutton:
-        xpos 1028
-        ypos 11
-        idle "interface/general/"+interface_color+"/button_close.png"
-        hover "interface/general/"+interface_color+"/button_close_hover.png"
-        action Jump("close_weasley_store")
+    use top_bar_close_button
 
     # Gifts Button
     imagebutton:

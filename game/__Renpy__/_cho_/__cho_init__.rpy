@@ -57,7 +57,7 @@ label cho_init:
         $ cho_request_wear_stockings        = False
         $ cho_request_wear_robe             = False
 
-        $ cho_request_wear_hat              = False
+        $ cho_request_wear_hat              = True
         $ cho_request_wear_glasses          = False
         $ cho_request_wear_ears             = False
         $ cho_request_wear_makeup           = False
@@ -84,7 +84,7 @@ label cho_init:
         $ cho_wear_stockings         = False
         $ cho_wear_robe              = False
 
-        $ cho_wear_hat               = False
+        $ cho_wear_hat               = True
         $ cho_wear_glasses           = False
         $ cho_wear_ears              = False
         $ cho_wear_makeup            = False
@@ -138,8 +138,8 @@ label cho_init:
         $ c_robe_color            = "base"
 
         #Accessories
-        $ cho_hat                 = "characters/cho/accessories/hats/blank.png"
-        $ c_hat                   = "blank"
+        $ cho_hat                 = "characters/cho/accessories/hats/snitch.png"
+        $ c_hat                   = "snitch"
         $ c_hat_color             = "base"
 
         $ cho_glasses             = "characters/cho/accessories/glasses/blank.png"

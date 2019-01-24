@@ -38,7 +38,7 @@ label store_items_init:
     ]
 
     $ toy_gift_list = [
-        plush_owl_ITEM, pink_condoms_ITEM, vibrator_ITEM, anal_lube_ITEM, ballgag_and_cuffs_ITEM,
+        plush_owl_ITEM, pink_condoms_ITEM, sexy_lingerie_ITEM, vibrator_ITEM, anal_lube_ITEM, ballgag_and_cuffs_ITEM,
         anal_plugs_ITEM, testral_strapon_ITEM, broom_2000_ITEM, sexdoll_ITEM, anal_beads_ITEM,
     ]
 

@@ -2,6 +2,17 @@
 
 ### Universal Menus ###
 
+#Close Button
+screen close_button(offsetx = 0, offsety = 0, close_var=lambda : "Close"):
+    imagebutton:
+            xpos 1028-offsetx
+            ypos 11-offsety
+            idle "interface/general/"+interface_color+"/button_close.png"
+            hover "interface/general/"+interface_color+"/button_close_hover.png"
+            action Return(close_var())
+            keysym "game_menu"
+
+
 #List Menu #Customizable
 screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=""):
     $ items_shown=4

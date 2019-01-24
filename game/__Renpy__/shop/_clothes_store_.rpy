@@ -9,7 +9,7 @@ screen clothing_store_room:
         add "images/rooms/_bg_/corridor.png" #Need day image.
     else:
         add "images/rooms/_bg_/corridor.png"
-        
+
     use ui_top_bar
 
     zorder 0
@@ -21,13 +21,13 @@ label open_clothing_store:
     with d3
 
     call room("clothing_store")
-    
+
     call play_music("clothing_store")
 
     hide screen blkfade
     with d3
     pause.2
-    
+
     $ renpy.block_rollback()
 
     call clothing_store_chitchat
@@ -99,12 +99,7 @@ screen clothing_store_menu:
     zorder 4
 
     # Close Button
-    imagebutton:
-        xpos 1028
-        ypos 11
-        idle "interface/general/"+interface_color+"/button_close.png"
-        hover "interface/general/"+interface_color+"/button_close_hover.png"
-        action Jump("close_clothing_store")
+    use top_bar_close_button
 
     # Outfits Button
     imagebutton:

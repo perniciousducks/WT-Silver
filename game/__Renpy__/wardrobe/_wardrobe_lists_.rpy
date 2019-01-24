@@ -185,6 +185,7 @@ label update_wr_head_list:
         $ wr_hair.append("ponytail")
 
         $ wr_hats.append("hat_witch")
+        $ wr_hats.append("snitch")
         if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
             $ wr_hats.append("bow_sailor_blue")
             $ wr_hats.append("bow_sailor_dark_blue")

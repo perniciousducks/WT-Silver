@@ -143,14 +143,14 @@ screen deck_builder_screen():
         action Return("Close")
         keysym "game_menu"
     
-    ##Easter egg    
-    #hbox:
-    #    xpos 1020
-    #    ypos 296
-    #    xsize 40
-    #    ysize 40
-    #    button action Jump("color_change") background "#ffffff00"
-    #    #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
+    #Easter egg    
+    hbox:
+        xpos 1020
+        ypos 296
+        xsize 40
+        ysize 40
+        button action Jump("color_change") background "#ffffff"
+        #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
   
     #use close_button
     
@@ -179,15 +179,18 @@ screen deck_builder_gallery():
         action [Show("deck_builder_screen"), Hide("deck_builder_gallery")]
         keysym "game_menu"
 
-#label color_change:
-#    menu:
-#        "-Change player color-":
-#            "Enter the color in RGB format (0 to 255)"
-#            $ playercolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
-#            $ playercolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
-#            $ playercolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
-#            $ playerborder = playerTint("images/cardgame/border.png")
-#            pass
+label color_change:
+    $ color_rgb = color_picker()
+    
+    $ playercolor_r = color_rgb[0]
+    $ playercolor_g = color_rgb[1]
+    $ playercolor_b = color_rgb[2]
+    $ playerborder = playerTint("images/cardgame/border.png")
+    
+    jump deck_builder
+
+    
+# old code#####
 #        "-Change enemy color-":
 #            "Enter the color in RGB format (0 to 255)"
 #            $ enemycolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
@@ -207,7 +210,6 @@ screen deck_builder_gallery():
 #            pass
 #        "-Exit-":
 #            pass
-#    jump deck_builder
 
 label deck_builder_guide:
     $ deck_guide_page = 0

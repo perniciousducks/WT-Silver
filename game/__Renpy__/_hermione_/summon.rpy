@@ -342,12 +342,60 @@ label hermione_requests_menu:
 
             "-Never mind-":
                 jump hermione_requests
-
-
     else:
         show screen hermione_main
         with d3
-        her "The Gryffindors are in the lead. I don't need to do this."
+        if hermione_favors_convinced:
+            call her_main("But we're in the lead already....","base","soft")
+            if her_whoring >=22 and hermione_favors_convinced == 2:
+                call her_main("But I'll do anything for you, [genie_name]...","smile","squint")
+                jump silver_requests_root
+            elif her_whoring >=20 and hermione_favors_convinced == 2:
+                call her_main("I guess you do have a way with words,[genie_name]... I'll do it.","soft","wink")
+                jump silver_requests_root
+            elif her_whoring >=18: 
+                call her_main("I have told you before, [genie_name], it was just a one time thing....","open","squint")
+                m "What about tomorrow though?"
+                call her_main ("What about tomorrow?","base","squint")
+                g9 "I made a graph detailing the current daily average points Slytherin gain... doesn't look that great."
+                m "Just think about it."
+                jump hermione_favors_convinced_check
+        else:
+            her "The Gryffindors are in the lead. I don't need to do this."
+            if her_whoring >= 15:
+                menu:
+                    "-Change her mind-":
+                        m "Are you sure it's not within your house best interests?"
+                        call her_main("What do you mean?","base","squint")
+                        g9 "Think about the future..."
+                        label hermione_favors_convinced_check:
+                        if her_whoring >=22:
+                            m "If you do it now it could secu-..."
+                            call her_main("I'll do it!","smile","squintL")
+                            m "Just like that?!"
+                            call her_main("Yes... just like that.","smile","closed")
+                            g9 "That's my [hermione_name] right there!"
+                            $ hermione_favors_convinced = 2
+                            jump silver_requests_root
+                        
+                        m "If you do it, you could secure the win for you household you know..."
+                
+                        if her_whoring >=20:
+                            call her_main("You really know how to talk me through, [genie_name].","soft","down")
+                            call her_main("Okay I agree.","open","down_raised")
+                            $ hermione_favors_convinced = 2
+                            jump silver_requests_root
+                        elif her_whoring >=18 and not hermione_favors_convinced == 1:
+                            call her_main("I guess you're right...","open","happy")
+                            call her_main("I'll do it... but just this once okay?","grin","happyCl")
+                            $ hermione_favors_convinced = 1
+                            jump silver_requests_root
+                        else:
+                            call her_main("I could...","soft","glance")
+                            call her_main("But I don't want to.","normal","closed")
+                            jump hermione_requests
+                    "-Forget it-":
+                        pass
         jump hermione_requests
 
 

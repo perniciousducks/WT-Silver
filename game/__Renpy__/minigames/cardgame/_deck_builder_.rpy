@@ -96,21 +96,27 @@ screen deck_builder_screen():
         #$ lefttext = "{color=#ffffff}"
         #$ righttext = "{/color}"
     
-    if not currentpage <= 0:
-        imagebutton:
-            xpos 200
-            ypos 350
-            idle "images/cardgame/scrollup.png"
+    
+    imagebutton:
+        xpos 200
+        ypos 380
+        idle "images/cardgame/scrollup.png"
+        if not currentpage <= 0:
             hover "images/cardgame/scrollup_hover.png"
             action Return("dec")
-            
-    if currentpage < math.ceil((len(unlocked_cards)-1)/card_shown):
-        imagebutton:
-            xpos 200
-            ypos 400
-            idle "images/cardgame/scrolldown.png"
+
+    imagebutton:
+        xpos 200
+        ypos 430
+        idle "images/cardgame/scrolldown.png"
+        if currentpage < math.ceil((len(unlocked_cards)-1)/card_shown):
             hover "images/cardgame/scrolldown_hover.png"
             action Return("inc")
+            
+    #Page info
+    $ str_currentpage = currentpage+1
+    $ str_currentpage_max = int(math.ceil((len(unlocked_cards)-1)/card_shown)+1.0)
+    text "{color=#FFFFFF}{size=-5}Page [str_currentpage]/[str_currentpage_max]{/size}{/color}" xpos 215 ypos 360 text_align 0.5 xalign 0.5
     
     #Gallery button
     imagebutton:
@@ -153,7 +159,7 @@ screen deck_builder_gallery():
     imagebutton idle "interface/desk/_bg_.png" action NullAction()
     
     text "{size=+15}Gallery{/size}" ypos 15 xalign 0.5
-    
+
     for i in range(0, len(cards_all)):
         if i <= 12:
             use cardrender(cards_all[i], 18+80*i,67, False, cardzoom=0.25, gallery=True)
@@ -221,7 +227,7 @@ label deck_builder_guide:
     $ deck_guide_zone = "enemy_zone"
     "\"This is your opponents deck.\""
     "\"Your opponents deck is also limited to five cards.\""
-    
+
     # Inspection guide
     $ deck_guide_zone = ""
     $ deck_guide_page = 1

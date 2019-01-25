@@ -62,22 +62,25 @@ init python:
             #Needed for screen scaling
             screen_height = renpy.get_physical_size()[1]
             screen_width = renpy.get_physical_size()[0]
+            x, y = pygame.mouse.get_pos()
             if screen_width*5 > screen_height*9:
+                x -= (screen_width-float((screen_height*9.0)/5.0))/2
                 scaling_modifier = (float(screen_height)/float(config.screen_height))
             else:
-                scaling_modifier = (float((screen_width*5)/9)/float(config.screen_height))
-            x, y = pygame.mouse.get_pos()
+                y -= (screen_height-float((screen_width*5.0)/9.0))/2
+                scaling_modifier = (float((screen_width*5.0)/9.0)/float(config.screen_height))
+            
             
             
             if _return == "Close":
                 return original_color
             elif _return == "main_color":
-                cursor_position = [x /scaling_modifier, y/ scaling_modifier]
-                x -= 175.0 * scaling_modifier
-                y -= 125.0 * scaling_modifier
-                choicen_scale = [x /scaling_modifier,y /scaling_modifier]
-                #return [cursor_position]
-                color = UI_color_scale.get_main_color(choicen_scale[0],choicen_scale[1])
+                cursor_position = [x/scaling_modifier, y/scaling_modifier]
+                #return [x, y, scaling_modifier, cursor_position]
+                x = (x-175.0 * scaling_modifier)/scaling_modifier
+                y = (y-125.0 * scaling_modifier) /scaling_modifier
+                #return [x, y, scaling_modifier, cursor_position]
+                color = UI_color_scale.get_main_color( x ,y)
             elif _return == "color_bar":
                 y -= 125.0 * scaling_modifier
                 ypos_to_color = float(y) / scaling_modifier

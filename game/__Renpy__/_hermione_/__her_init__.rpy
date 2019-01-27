@@ -471,6 +471,7 @@ label her_progress_init:
         $ hermione_tutoring = False
 
         $ hermione_desperate_done = False
+        $ hermione_favors_convinced = 0
 
         #Names
         $ genie_name = "Sir"

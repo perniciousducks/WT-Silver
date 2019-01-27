@@ -1143,7 +1143,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops/tops_onepiece.png" xpos 15+180 ypos 47+icon_ypos_offset zoom 0.35
                 text "One-Pieces" xpos 76+180 ypos 140+75 size 10
             #Garterbelts
-            if active_girl in ["hermione"]:
+            if active_girl in ["hermione","cho"]:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/underwear/underwear_garterbelt.png" xpos 15+270 ypos 17 zoom 0.35
                 text "Garterbelts" xpos 76+270 ypos 140+75 size 10

@@ -165,7 +165,7 @@ label __init_variables:
                                     bottomvalue = 3,
                                     rightvalue = 2,
                                     leftvalue = 1,
-                                    title="Hermione Granger (schoolgirl)",
+                                    title="Hermione Granger",
                                     description = "The Granger girl wearing her normal school uniform.")
                                     
         her_librarian = card_new( imagepath="images/cardgame/t1/hermione/her_librarian_v%s.png" % str(geniecard_level),
@@ -173,7 +173,7 @@ label __init_variables:
                                     bottomvalue = 2,
                                     rightvalue = 1,
                                     leftvalue = 4,
-                                    title="Hermione Granger (librarian)",
+                                    title="Hermione Granger",
                                     description = "The Granger girl clutching a real page turner")
                                     
         sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(geniecard_level),
@@ -181,7 +181,7 @@ label __init_variables:
                                     bottomvalue = 4,
                                     rightvalue = 1,
                                     leftvalue = 2,
-                                    title="Susan Bones (schoolgirl)",
+                                    title="Susan Bones",
                                     description = "Miss Bones, barely contained within her school uniform.")
                                     
         cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_schoolgirl_v%s.png" % str(geniecard_level),
@@ -189,7 +189,7 @@ label __init_variables:
                                     bottomvalue = 4,
                                     rightvalue = 3,
                                     leftvalue = 1,
-                                    title="Cho Chang (schoolgirl)",
+                                    title="Cho Chang",
                                     description = "Miss Chang, sporting her school uniform.")
                                     
         lun_schoolgirl = card_new( imagepath="images/cardgame/t1/luna/lun_schoolgirl_v%s.png" % str(geniecard_level),
@@ -197,7 +197,7 @@ label __init_variables:
                                     bottomvalue = 2,
                                     rightvalue = 4,
                                     leftvalue = 3,
-                                    title="Luna Lovegood (schoolgirl)",
+                                    title="Luna Lovegood",
                                     description = "Miss Lovegood, wearing her normal school uniform.")
                                     
         #Item cards

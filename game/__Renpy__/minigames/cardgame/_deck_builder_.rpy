@@ -55,7 +55,7 @@ screen deck_builder_screen():
             use cardrender(unlocked_cards[clamp(i+(currentpage*card_shown), 0, len(unlocked_cards))], 18,17+80*i, True, color=False)
             
     if not selectcard == -1:
-        use cardrender(unlocked_cards[selectcard], 885,316)
+        use cardrender(unlocked_cards[selectcard], 885, 316)
         #add im.Scale(unlocked_cards[selectcard].imagepath, card_width*0.5, card_height*0.5) xpos 885 ypos 316
         
         vbox:
@@ -112,12 +112,12 @@ screen deck_builder_screen():
         if currentpage < math.ceil((len(unlocked_cards)-1)/card_shown):
             hover "images/cardgame/scrolldown_hover.png"
             action Return("inc")
-            
+          
     #Page info
     $ str_currentpage = currentpage+1
     $ str_currentpage_max = int(math.ceil((len(unlocked_cards)-1)/card_shown)+1.0)
     text "{color=#FFFFFF}{size=-5}Page [str_currentpage]/[str_currentpage_max]{/size}{/color}" xpos 215 ypos 360 text_align 0.5 xalign 0.5
-    
+
     #Gallery button
     imagebutton:
         xpos 274
@@ -149,7 +149,7 @@ screen deck_builder_screen():
         ypos 296
         xsize 40
         ysize 40
-        button action Jump("color_change") background "#ffffff"
+        button action Jump("color_change") background "#ffffff00"
         #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
   
     #use close_button
@@ -180,15 +180,23 @@ screen deck_builder_gallery():
         keysym "game_menu"
 
 label color_change:
-    $ color_rgb = color_picker()
+    show screen overlay_color_picker
     
-    $ playercolor_r = color_rgb[0]
-    $ playercolor_g = color_rgb[1]
-    $ playercolor_b = color_rgb[2]
+    $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "Player border")
+    
+    $ playercolor_r = color_rgb[0]/255.0
+    $ playercolor_g = color_rgb[1]/255.0
+    $ playercolor_b = color_rgb[2]/255.0
     $ playerborder = playerTint("images/cardgame/border.png")
     
+    $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "Enemy border")
+    
+    $ enemycolor_r = color_rgb[0]/255.0
+    $ enemycolor_g = color_rgb[1]/255.0
+    $ enemycolor_b = color_rgb[2]/255.0
+    $ enemyborder = enemyTint("images/cardgame/border.png")
+    
     jump deck_builder
-
     
 # old code#####
 #        "-Change enemy color-":
@@ -218,7 +226,7 @@ label deck_builder_guide:
     call play_music("grape_soda")
     show screen deck_builder_tutorial
     with dissolve
-    
+
     "\"The goal of Wizard cards is to own the most cards on the playing field until all 9 slots are filled.\""
     "\"To win the game you have to pay attention to your deck but also enemy deck.\""
     

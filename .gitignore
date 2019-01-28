@@ -226,3 +226,5 @@ pip-log.txt
 game/saves/
 game/cache/
 game/__Renpy__/_hermione_/outfits.rpy
+
+\.android\.json

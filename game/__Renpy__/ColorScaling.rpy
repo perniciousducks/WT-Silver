@@ -1,6 +1,12 @@
-screen color_map(color, cursor):
+screen color_map(color, cursor, alpha=True, title=""):
     zorder 9
     
+    button:
+        xsize 1080
+        ysize 600
+        action NullAction()
+        style "empty"
+        
     frame:
         xsize 600
         ysize 350
@@ -20,17 +26,20 @@ screen color_map(color, cursor):
             xpos 290
             idle im.Scale( UI_color_bar, 30,255, False)
             clicked Return("color_bar")
-            
-        imagebutton:
-            ypos 290
-            xpos 25
-            idle im.Scale(UI_alpha_bar, 255, 30, False)
-            clicked Return("alpha_bar")
+        
+        if alpha:
+            imagebutton:
+                ypos 290
+                xpos 25
+                idle im.Scale(UI_alpha_bar, 255, 30, False)
+                clicked Return("alpha_bar")
+            text "Alpha: " + str(int(color[3])) xpos 360 ypos 130
             
         text "Red  : " + str(int(color[0])) xpos 360 ypos 25
         text "Green: " + str(int(color[1])) xpos 360 ypos 60
         text "Blue : " + str(int(color[2])) xpos 360 ypos 95
-        text "Alpha: " + str(int(color[3])) xpos 360 ypos 130
+
+        text title xalign 0.5 text_align 0.5
         
         textbutton "Apply" xalign 0.9 yalign 0.9 clicked Return("finish")
         
@@ -46,14 +55,14 @@ init python:
     import pygame
     import _renpy
     
-    def color_picker(color = [255.0, 255.0, 0.0, 255.0]):
+    def color_picker(color = [255.0, 255.0, 0.0, 255.0], alpha = True, title=""):
         global color_scale
         global UI_color_bar
         original_color = [color[0],color[1],color[2],color[3]]
         choicen_scale = [125.0,125.0]
         cursor_position = [175, 125]
         while True:
-            renpy.show_screen("color_map", color, cursor_position)
+            renpy.show_screen("color_map", color, cursor_position, alpha, title)
 
             _return = ui.interact()
 
@@ -62,28 +71,27 @@ init python:
             #Needed for screen scaling
             screen_height = renpy.get_physical_size()[1]
             screen_width = renpy.get_physical_size()[0]
-            x, y = pygame.mouse.get_pos()
-            if screen_width*5 > screen_height*9:
-                x -= (screen_width-float((screen_height*9.0)/5.0))/2
-                scaling_modifier = (float(screen_height)/float(config.screen_height))
-            else:
-                y -= (screen_height-float((screen_width*5.0)/9.0))/2
-                scaling_modifier = (float((screen_width*5.0)/9.0)/float(config.screen_height))
+            x, y = renpy.get_mouse_pos() #pygame.mouse.get_pos()
+            #if screen_width*5 > screen_height*9:
+            #    x -= (screen_width-float((screen_height*9.0)/5.0))/2
+            #    scaling_modifier = (float(screen_height)/float(config.screen_height))
+            #else:
+            #    y -= (screen_height-float((screen_width*5.0)/9.0))/2
+            #scaling_modifier = (float((screen_width*5.0)/9.0)/float(config.screen_height))
+            #scaling_modifier = 1
             
             
             
             if _return == "Close":
                 return original_color
             elif _return == "main_color":
-                cursor_position = [x/scaling_modifier, y/scaling_modifier]
-                #return [x, y, scaling_modifier, cursor_position]
-                x = (x-175.0 * scaling_modifier)/scaling_modifier
-                y = (y-125.0 * scaling_modifier) /scaling_modifier
-                #return [x, y, scaling_modifier, cursor_position]
+                cursor_position = [x, y]
+                x = x-175.0
+                y = y-125.0
                 color = UI_color_scale.get_main_color( x ,y)
             elif _return == "color_bar":
-                y -= 125.0 * scaling_modifier
-                ypos_to_color = float(y) / scaling_modifier
+                y -= 125.0
+                ypos_to_color = float(y)
                 
                 renpy.free_memory()
                 new_color = UI_color_bar.get_color(ypos_to_color)
@@ -92,8 +100,8 @@ init python:
 
                 renpy.restart_interaction()
             elif _return == "alpha_bar":
-                x -= 175.0 * scaling_modifier
-                alpha = 255 - (x /scaling_modifier)
+                x -= 175.0
+                alpha = 255 - x
                 color[3] = 0 if alpha < 0 else alpha
                 
             elif _return == "finish":
@@ -208,9 +216,9 @@ init python:
         def get_main_color(self, x, y):
             new_color = [self.color[0],self.color[1],self.color[2], self.color[3]]
             
-            for apply_x in range(3):
+            for apply_x in xrange(3):
                 new_color[apply_x] += (255-new_color[apply_x])*(float(x)/255.0)
-            for apply_y in range(3):
+            for apply_y in xrange(3):
                 new_color[apply_y] -= new_color[apply_y]*(float(y)/255.0)
                 new_color[apply_y] = clamp(new_color[apply_y], 0, 255)
 
@@ -259,7 +267,7 @@ init python:
         
         height_six = 255.0/6.0
         
-        for y in range(height):
+        for y in xrange(height):
             new_color = [0.0,0.0,0.0,255.0]
 
             if y < 255/6:
@@ -299,7 +307,7 @@ init python:
         height = 1
         new_surface = renpy.display.pgrender.surface_unscaled((width, height), src)    
             
-        for x in range(width):
+        for x in xrange(width):
             new_color = [255.0,255.0,255.0, 255.0-x]
 
             new_surface.set_at((x,0), new_color)
@@ -313,8 +321,8 @@ init python:
         height = 255
         new_surface = renpy.display.pgrender.surface_unscaled((width, height), src)     
 
-        for y in range(height):
-            for x in range(width):
+        for y in xrange(height):
+            for x in xrange(width):
                 new_color = [0.0,0.0,0.0,255.0]
 
                 new_color[0] = color[0]
@@ -324,7 +332,7 @@ init python:
                 x_scaling = (float(x)/float(width))
                 y_scaling = (float(y)/float(height)) 
                 
-                for j in range(3):
+                for j in xrange(3):
                     new_color[j] += (255-new_color[j]) * x_scaling
                     new_color[j] -= new_color[j] * y_scaling
                     new_color[j] = 0 if new_color[j] < 0 else new_color[j]
@@ -367,8 +375,8 @@ init python:
             ny = iheight / (srcheight - 1.0)
             
             
-            for y in range(iheight):
-                for x in range(iwidth):
+            for y in xrange(iheight):
+                for x in xrange(iwidth):
                     i = int(x / nx)
                     j = int(y / ny)
                     
@@ -383,7 +391,7 @@ init python:
                     cornor4 = src.get_at((i+1,j+1))
                     new_color = cornor1
                     
-                    for p in range(4):
+                    for p in xrange(4):
                         summing = float(cornor1[p]) * point2[0] * point2[1]
                         summing += float(cornor2[p]) * point1[0] * point2[1]
                         summing += float(cornor3[p]) * point2[0] * point1[1]

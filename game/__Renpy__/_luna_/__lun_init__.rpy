@@ -2,11 +2,12 @@
 
 label luna_init:
 
-    if not hasattr(renpy.store,'luna_base') or reset_persistants or reset_luna_content:
+    if not hasattr(renpy.store,'luna_breasts') or reset_persistants or reset_luna_content:
         label reset_luna_base:
 
         #Body
         $ luna_base              = "characters/luna/body/base/base_01.png"
+        $ luna_breasts           = "characters/luna/body/breasts/breasts_normal.png"
         $ luna_l_arm             = 1
         $ luna_r_arm             = 1
         $ luna_xpos              = 640

@@ -178,10 +178,11 @@ label a_christmas_tale:
     pause.8
 
     san_[4] "Happy Holidays."
-
-    if deck_unlocked:
-        call give_reward("You have received a special card as a gift!", "images/cardgame/t1/special/santa_v1.png")
-    $ unlocked_cards += [santa]
+    
+    if not card_exist(unlocked_cards, santa):
+        if deck_unlocked:
+            call give_reward("You have received a special card as a gift!", "images/cardgame/t1/special/santa_v1.png")
+        $ unlocked_cards += [santa]
 
     show screen blkfade
     with d9

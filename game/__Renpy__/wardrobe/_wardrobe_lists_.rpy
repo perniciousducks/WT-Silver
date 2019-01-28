@@ -852,6 +852,7 @@ label update_wr_underwear_list:
     if active_girl == "cho":
 
         #Bras
+        $ wr_bras.append("bra_base_1")
         $ wr_bras.append("bra_sport")
         if cc_lingerie_lace_ITEM.unlocked:
             $ wr_bras.append("bra_lace_1")
@@ -862,6 +863,7 @@ label update_wr_underwear_list:
             $ wr_bras.append("bra_bikini_1")
 
         #Panties
+        $ wr_panties.append("panties_base_1")
         $ wr_panties.append("panties_sport_1")
         $ wr_panties.append("panties_sport_2")
         if cc_lingerie_lace_ITEM.unlocked:

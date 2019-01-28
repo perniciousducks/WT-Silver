@@ -29,7 +29,29 @@ label update_lun_uniform:
     $ luna_glasses        = "characters/luna/accessories/glasses/base/"+str(lun_glasses)+".png"
     $ luna_ears           = "characters/luna/accessories/ears/"+str(lun_ears)+".png"
 
+    call update_luna_body
+
     return
+
+
+label update_luna_body:
+    hide screen luna_main
+
+    if luna_wear_top:
+        if lun_top in [""]:
+            $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
+        else:
+            $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
+    elif luna_wear_bra:
+        if lun_bra in [""]:
+            $ luna_breasts               = "characters/luna/body/breasts/breasts_normal.png"
+        else:
+            $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
+    else:
+        $ luna_breasts                   = "characters/luna/body/breasts/breasts_normal.png"
+
+    return
+
 
 #Hair equip.
 label set_lun_hair(hair=None,color=None):

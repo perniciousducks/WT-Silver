@@ -79,7 +79,7 @@ screen tonks_uniform:
         else:
             add tonks_nipple_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
         add tonks_belly_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
-        add tonks_intimate_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_genital_piercing xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     ### CLOTHES
     if tonks_wear_robe:

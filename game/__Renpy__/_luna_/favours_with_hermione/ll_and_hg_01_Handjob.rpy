@@ -277,7 +277,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_flip = -1
         $ luna_xpos = 300
 
-        if lun_addicted == True:
+        if luna_addicted == True:
             call lun_main("well it's not over yet...","base","seductive","sad","R")
             call her_kneel("...what?","mad","wide",cheeks="blush")
             call her_kneel("why?","open","baseL",cheeks="blush")
@@ -392,7 +392,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("[genie_name], what on earth was that all about?!","scream","angryCl")
         call her_main("Why on earth was Luna in here?","annoyed","angryL")
         call her_main("how on earth does she know about me selling favours?","angry","angry")
-        if lun_addicted == True:
+        if luna_addicted == True:
             call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?","angry","angry",emote="01")
         m "I can explain everything..."
         call her_main("Please do...","annoyed","annoyed")
@@ -419,7 +419,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Oh um..."
         m "Well that sort of just happened during my evaluation..."
         m "She wanted to help her fathers magazine anyway possible, and one thing led to another..."
-        if lun_addicted == True:
+        if luna_addicted == True:
             call her_main("what about the her loving the taste of your sperm?","angry","suspicious",cheeks="blush")
             m "Honestly I'm not really sure about that."
             m "I think that's just her being weird..."

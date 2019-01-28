@@ -138,7 +138,7 @@ label cho_init:
         $ c_robe_color            = "base"
 
         #Accessories
-        $ cho_hat                 = "characters/cho/accessories/hats/snitch.png"
+        $ cho_hat                 = "characters/cho/accessories/hats/hair_ponytail/snitch.png"
         $ c_hat                   = "snitch"
         $ c_hat_color             = "base"
 

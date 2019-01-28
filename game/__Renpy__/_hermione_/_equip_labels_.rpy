@@ -298,30 +298,30 @@ label set_her_gag(gag=""):
     return
 
 #Piercings equip.
-label set_her_piercing(piercing="", color=""):
+label set_her_piercing(piercing="", color=""): # color not supported anymore.
     hide screen hermione_main
     if piercing in ear_piercings_list:
-        if h_ear_piercing == piercing and h_ear_piercing_color == color:
+        if h_ear_piercing == piercing: # and h_ear_piercing_color == color:
             $ h_ear_piercing = "blank"
         else:
             $ h_ear_piercing = piercing_choice
     if piercing in nipple_piercings_list:
-        if h_nipple_piercing == piercing and h_nipple_piercing_color == color:
+        if h_nipple_piercing == piercing: # and h_nipple_piercing_color == color:
             $ h_nipple_piercing = "blank"
         else:
             $ h_nipple_piercing = piercing
     if piercing in belly_piercings_list:
-        if h_belly_piercing == piercing and h_belly_piercing_color == color:
+        if h_belly_piercing == piercing: # and h_belly_piercing_color == color:
             $ h_belly_piercing = "blank"
         else:
             $ h_belly_piercing = piercing
-    if piercing in intimate_piercings_list:
-        if h_belly_piercing == piercing and h_intimate_piercing_color == color:
+    if piercing in genital_piercings_list:
+        if h_belly_piercing == piercing: # and h_genital_piercing_color == color:
             $ h_belly_piercing = "blank"
         else:
             $ h_belly_piercing = piercing
 
-    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_intimate_piercing == "blank": #No piercings equipped.
+    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_genital_piercing == "blank": #No piercings equipped.
         $ h_request_wear_piercings = False
         $ hermione_wear_piercings = False
     else:

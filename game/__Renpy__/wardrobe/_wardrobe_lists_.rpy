@@ -885,6 +885,7 @@ label update_wr_underwear_list:
         $ wr_bras.append("bra_tape")
 
         #Panties
+        $ wr_panties.append("panties_base")
         $ wr_panties.append("panties_latex")
 
         #One-Pieces

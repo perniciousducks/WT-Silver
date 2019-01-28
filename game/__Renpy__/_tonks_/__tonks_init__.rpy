@@ -8,9 +8,14 @@ label tonks_init:
         #Body
         $ tonks_base                = "characters/tonks/body/base/base_01.png"
         $ tonks_boobs               = "characters/tonks/body/base/boobs_0.png"
+
         $ tonks_l_arm               = "characters/tonks/body/arms/l_arm_hips.png"
-        $ tonks_l_hand              = "characters/tonks/body/arms/l_hand_hips.png"
-        $ tonks_r_arm               = "characters/tonks/body/arms/r_arm_up.png"
+        $ tonks_l_arm_overlay       = "characters/tonks/body/arms/l_arm_hips_overlay.png"
+        $ tonks_r_arm               = "characters/tonks/body/arms/r_arm_hips.png"
+        $ tonks_r_arm_overlay       = "characters/tonks/body/arms/r_arm_hips_overlay.png"
+        $ tonks_pose                = None # None when right arm is on hips.
+        $ tonks_arm_pose            = ""   # Empty when right arm is on hips.
+
         $ tonks_xpos                = 600
         $ tonks_ypos                = 0
         $ tonks_zorder              = 5
@@ -118,8 +123,8 @@ label tonks_init:
         $ ton_bra                     = "blank"
         $ ton_bra_color               = "base"
 
-        $ tonks_panties             = "characters/tonks/clothes/underwear/base/blank.png"
-        $ ton_panties                 = "blank"
+        $ tonks_panties             = "characters/tonks/clothes/underwear/base/panties_base.png"
+        $ ton_panties                 = "panties_base"
         $ ton_panties_color           = "base"
 
         $ tonks_onepiece            = "characters/tonks/clothes/onepieces/blank.png"

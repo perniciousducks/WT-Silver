@@ -226,7 +226,7 @@ label equip_tonks_misc_item:
         $ tonks_wear_top = False
         $ tonks_wear_bottom = False
         $ tonks_wear_robe = False
-        call update_ton_body
+        call update_tonks_body
         show screen tonks_main
         with d3
         pause.8
@@ -247,7 +247,7 @@ label equip_tonks_misc_item:
         $ tonks_wear_top = False
         $ tonks_wear_bottom = False
         $ tonks_wear_robe = False
-        call update_ton_body
+        call update_tonks_body
         show screen tonks_main
         with d3
         pause.8

@@ -306,7 +306,7 @@ label wr_ton_clothing_reset:
         $ tonks_wear_top = False
         $ tonks_wear_bottom = False
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 

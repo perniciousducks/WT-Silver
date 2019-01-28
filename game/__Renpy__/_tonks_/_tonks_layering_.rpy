@@ -97,7 +97,7 @@ screen tonks_uniform:
     if tonks_wear_bottom and not tonks_wear_robe:
         add tonks_bottom xpos tonks_xpos ypos tonks_ypos alpha ton_bottom_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the skirt
 
-    add tonks_l_hand  xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+    add tonks_l_arm_overlay  xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     if tonks_wear_mask:
         add tonks_mask xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
@@ -107,6 +107,9 @@ screen tonks_uniform:
         add tonks_neckwear xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     if tonks_wear_robe:
         add tonks_robe xpos tonks_xpos ypos tonks_ypos alpha ton_robe_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the coat
+
+    add tonks_r_arm_overlay  xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+
     if tonks_wear_gloves:
         add tonks_gloves xpos tonks_xpos ypos tonks_ypos alpha ton_gloves_transp xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 

@@ -2,39 +2,41 @@
 
 #tonks EQUIP
 
-label update_ton_uniform:
+label update_tonks_uniform:
     hide screen tonks_main
 
+    call update_tonks_pose
+
     #Hair
-    $ tonks_hair         = "characters/tonks/body/hair/"+str(ton_hair_style)+"_"+str(ton_hair_color)+".png"
+    $ tonks_hair         = "characters/tonks/body/hair/" +str(ton_hair_style)+ "_" +str(ton_hair_color)+ ".png"
     $ tonks_hair_shadow  = "characters/tonks/body/hair/_hair_shadow_.png"
-    $ tonks_pubic_hair   = "characters/tonks/body/hair/pubes_"+str(ton_pubic_hair)+"_"+str(ton_hair_color)+".png"
+    $ tonks_pubic_hair   = "characters/tonks/body/hair/pubes_" +str(ton_pubic_hair)+ "_" +str(ton_hair_color)+ ".png"
 
     #Top
-    $ tonks_top            = "characters/tonks/clothes/tops/base/"+str(ton_top)+".png"
+    $ tonks_top            = "characters/tonks/clothes/tops/base/" +str(ton_top)+ ".png"
 
     #Bottom
-    $ tonks_bottom         = "characters/tonks/clothes/bottoms/"+str(ton_bottom_color)+"/"+str(ton_bottom)+".png"
+    $ tonks_bottom         = "characters/tonks/clothes/bottoms/" +str(ton_bottom_color)+ "/" +str(ton_bottom)+ ".png"
 
     #Underwear
-    $ tonks_bra            = "characters/tonks/clothes/underwear/base/"+str(ton_bra)+".png"
-    $ tonks_onepiece       = "characters/tonks/clothes/onepieces/"+str(ton_onepiece)+".png"
-    $ tonks_panties        = "characters/tonks/clothes/underwear/base/"+str(ton_panties)+".png"
-    $ tonks_garterbelt     = "characters/tonks/clothes/underwear/base/"+str(ton_garterbelt)+".png"
+    $ tonks_bra            = "characters/tonks/clothes/underwear/base/" +str(ton_bra)+ ".png"
+    $ tonks_onepiece       = "characters/tonks/clothes/onepieces/" +str(ton_onepiece)+ ".png"
+    $ tonks_panties        = "characters/tonks/clothes/underwear/base/" +str(ton_panties)+ ".png"
+    $ tonks_garterbelt     = "characters/tonks/clothes/underwear/base/" +str(ton_garterbelt)+ ".png"
 
-    $ tonks_neckwear       = "characters/tonks/clothes/neckwear/"+str(ton_neckwear)+".png"
-    $ tonks_gloves         = "characters/tonks/clothes/gloves/"+str(ton_gloves)+".png"
-    $ tonks_stockings      = "characters/tonks/clothes/stockings/"+str(ton_stockings)+".png"
-    $ tonks_robe           = "characters/tonks/clothes/robe/"+str(ton_robe)+".png"
-    $ tonks_robe_back      = "characters/tonks/clothes/robe/"+str(ton_robe)+"_back.png"
+    $ tonks_neckwear       = "characters/tonks/clothes/neckwear/" +str(ton_neckwear)+ ".png"
+    $ tonks_gloves         = "characters/tonks/clothes/gloves/" +str(ton_gloves)+ ".png"
+    $ tonks_stockings      = "characters/tonks/clothes/stockings/" +str(ton_stockings)+ ".png"
+    $ tonks_robe           = "characters/tonks/clothes/robe/" +str(tonks_arm_pose)+ "" +str(ton_robe)+ ".png"
+    $ tonks_robe_back      = "characters/tonks/clothes/robe/" +str(ton_robe)+ "_back.png"
 
     #Accessories
-    $ tonks_hat            = "characters/tonks/accessories/hats/hair_"+str(ton_hair_style)+"/"+str(ton_hat)+".png"
+    $ tonks_hat            = "characters/tonks/accessories/hats/hair_" +str(ton_hair_style)+ "/" +str(ton_hat)+ ".png"
 
     #Miscellaneous
-    $ tonks_buttplug            = "characters/tonks/accessories/plugs/"+str(ton_buttplug)+".png"
-    $ tonks_mask                = "characters/tonks/accessories/hats/hair_"+str(ton_hair_style)+"/"+str(ton_mask)+".png"
-    $ tonks_gag                 = "characters/tonks/face/mouth/"+str(ton_gag)+".png"
+    $ tonks_buttplug            = "characters/tonks/accessories/plugs/" +str(ton_buttplug)+ ".png"
+    $ tonks_mask                = "characters/tonks/accessories/hats/hair_" +str(ton_hair_style)+ "/" +str(ton_mask)+ ".png"
+    $ tonks_gag                 = "characters/tonks/face/mouth/" +str(ton_gag)+ ".png"
 
     #Piercings
     # tonks_tongue_piercing gets defined at the same place as her mouth every time the mouth layer gets updated.
@@ -43,12 +45,40 @@ label update_ton_uniform:
     $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/" +str(ton_belly_piercing)+ ".png"
     $ tonks_genital_piercing    = "characters/tonks/accessories/piercings/" +str(ton_genital_piercing)+ ".png"
 
-    call update_ton_body
+    call update_tonks_body
 
     return
 
+label set_tonks_pose(pose=None):
+    hide screen tonks_main
 
-label update_ton_body:
+    if pose in ["arm_up","arms_up"]:
+        $ tonks_pose = "arm_up"
+    else: # No pose. Both hands on hips.
+        $ tonks_pose = ""
+
+    call update_tonks_uniform
+
+    return
+
+label update_tonks_pose:
+
+    if tonks_pose == "arm_up":
+        $ tonks_arm_pose            = "arm_up/"
+        $ tonks_l_arm               = "characters/tonks/body/arms/l_arm_hips.png"
+        $ tonks_l_arm_overlay           = "characters/tonks/body/arms/l_arm_hips_overlay.png"
+        $ tonks_r_arm               = "characters/tonks/body/arms/r_arm_up.png"
+        $ tonks_r_arm_overlay           = "characters/tonks/body/arms/blank.png"
+    else: # None
+        $ tonks_arm_pose            = ""
+        $ tonks_l_arm               = "characters/tonks/body/arms/l_arm_hips.png"
+        $ tonks_l_arm_overlay           = "characters/tonks/body/arms/l_arm_hips_overlay.png"
+        $ tonks_r_arm               = "characters/tonks/body/arms/r_arm_hips.png"
+        $ tonks_r_arm_overlay           = "characters/tonks/body/arms/r_arm_hips_overlay.png"
+
+    return
+
+label update_tonks_body:
     hide screen tonks_main
 
     if tonks_wear_robe:# or tonks_wear_top or tonks_wear_bra:
@@ -73,7 +103,7 @@ label set_ton_hair(hair=None,color=None):
     if color != None:
         $ ton_hair_color   = color
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -88,7 +118,7 @@ label set_ton_pubic_hair(pubes=None):
         $ tonks_wear_pubic_hair = True
         $ ton_pubic_hair = pubes
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -105,7 +135,7 @@ label set_ton_hat(hat=""):
         $ tonks_wear_hat = True
         $ ton_hat = hat
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -121,7 +151,7 @@ label set_ton_top(top=""):
         $ tonks_wear_top = True
         $ ton_top = top
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -140,7 +170,7 @@ label set_ton_bottom(bottom="", color=""):
         $ ton_bottom = bottom
         $ ton_bottom_color = color
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -156,7 +186,7 @@ label set_ton_bra(bra=""):
         $ tonks_wear_bra = True
         $ ton_bra = bra
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -172,7 +202,7 @@ label set_ton_onepiece(onepiece=""):
         $ tonks_wear_onepiece = True
         $ ton_onepiece = onepiece
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -188,7 +218,7 @@ label set_ton_panties(panties=""):
         $ tonks_wear_panties = True
         $ ton_panties = panties
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -204,7 +234,7 @@ label set_ton_garterbelt(garter=""):
         $ tonks_wear_garterbelt = True
         $ ton_garterbelt = garter
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -220,7 +250,7 @@ label set_ton_neckwear(neck=""):
         $ tonks_wear_neckwear = True
         $ ton_neckwear = neck
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -236,7 +266,7 @@ label set_ton_gloves(gloves=""):
         $ tonks_wear_gloves = True
         $ ton_gloves = gloves
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -252,7 +282,7 @@ label set_ton_stockings(stockings=""):
         $ tonks_wear_stockings = True
         $ ton_stockings = stockings
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -268,7 +298,7 @@ label set_ton_robe(robe=""):
         $ tonks_wear_robe = True
         $ ton_robe = robe
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -282,7 +312,7 @@ label set_ton_mask(mask=""):
         $ ton_request_wear_mask = True
         $ tonks_wear_mask = True
         $ ton_mask = mask
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -296,7 +326,7 @@ label set_ton_gag(gag=""):
         $ ton_request_wear_gag = True
         $ tonks_wear_gag = True
         $ ton_gag = gag
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -334,7 +364,7 @@ label set_ton_piercing(piercing="", color=""): # color not supported anymore.
     else:
         $ ton_request_wear_piercings = True
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -362,7 +392,7 @@ label set_ton_outfit(outfit):
             $ ton_hat = tonks_outfit_GLBL.getTopLayers()
 
     call load_tonks_clothing_saves
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -396,7 +426,7 @@ label set_ton_transparency(top=None, bottom=None, bra=None, onepiece=None, panti
     if outfit != None:
         $ ton_outfit_transp    = outfit
 
-    call update_ton_body
+    call update_tonks_body
 
     return
 
@@ -426,7 +456,7 @@ label set_tonks_action(action=""):
         $ ton_request_wear_accs = False
 
     call load_tonks_clothing_saves
-    call update_ton_body
+    call update_tonks_body
 
     return
 

@@ -147,9 +147,9 @@ label update_wr_head_list:
             $ wr_ears.append("elf_ears")
 
         #Hats
-        if hg_outfit_maid_ITEM.unlocked:
-            $ wr_hats.append("witch_hat")
         if hg_outfit_witch_ITEM.unlocked:
+            $ wr_hats.append("witch_hat")
+        if hg_outfit_maid_ITEM.unlocked:
             $ wr_hats.append("maid_hat")
         if hg_dress_yule_ball_ITEM.unlocked:
             $ wr_hats.append("tiara")
@@ -668,9 +668,9 @@ label update_wr_other_clothings_list:
         $ wr_neckwears.append("goggles")
         $ wr_neckwears.append("choker_bow_tie")
         if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_neckwears.append("white/choker_lace_1")
-            $ wr_neckwears.append("gray/choker_lace_1")
-            $ wr_neckwears.append("black/choker_lace_1")
+            $ wr_neckwears.append("choker_lace_white")
+            $ wr_neckwears.append("choker_lace_gray")
+            $ wr_neckwears.append("choker_lace_black")
 
         #Body Accessories
         if cc_costume_misty_ITEM.unlocked:
@@ -683,16 +683,10 @@ label update_wr_other_clothings_list:
         #Stockings
         $ wr_stockings.append("stockings")
         if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_stockings.append("white/stockings_lace_1")
-            $ wr_stockings.append("white/stockings_lace_2")
-            $ wr_stockings.append("gray/stockings_lace_1")
-            $ wr_stockings.append("gray/stockings_lace_2")
-            $ wr_stockings.append("black/stockings_lace_1")
-            $ wr_stockings.append("black/stockings_lace_2")
+            $ wr_stockings.append("stockings_lace_1")
+            $ wr_stockings.append("stockings_lace_2")
         if cc_outfit_sailor_white_ITEM.unlocked:
             $ wr_stockings.append("stockings_sailor_1")
-        if cc_outfit_sailor_black_ITEM.unlocked:
-            $ wr_stockings.append("stockings_sailor_2")
 
         #Robes
         if cho_quidd_points != 0:

@@ -21,7 +21,7 @@ label update_cho_uniform:
 
     $ cho_neckwear       = "characters/cho/clothes/neckwear/" +str(c_neckwear)+ ".png"
     $ cho_gloves         = "characters/cho/clothes/gloves/" +str(c_gloves)+ ".png"
-    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings)+ ".png"
+    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings_color)+ "/" +str(c_stockings)+ ".png"
     $ cho_robe           = "characters/cho/clothes/robe/" +str(c_robe)+ ".png"
 
     #Accessories
@@ -209,16 +209,17 @@ label set_cho_gloves(gloves=""):
     return
 
 #Stockings equip.
-label set_cho_stockings(stockings=""):
+label set_cho_stockings(stockings="", color=""):
     hide screen cho_chang
 
-    if cho_wear_stockings and c_stockings == stockings:
+    if cho_wear_stockings and c_stockings == stockings and c_stockings_color == color:
         $ cho_request_wear_stockings = False
         $ cho_wear_stockings = False
     else:
         $ cho_request_wear_stockings = True
         $ cho_wear_stockings = True
         $ c_stockings = stockings
+        $ c_stockings_color = color
 
     call update_cho_uniform
 

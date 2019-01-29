@@ -129,7 +129,7 @@ label cho_init:
         $ c_gloves                = "blank"
         $ c_gloves_color          = "base"
 
-        $ cho_stockings           = "characters/cho/clothes/stockings/stockings.png"
+        $ cho_stockings           = "characters/cho/clothes/stockings/base/stockings.png"
         $ c_stockings             = "blank"
         $ c_stockings_color       = "base"
 

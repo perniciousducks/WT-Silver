@@ -967,6 +967,18 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/robes.png" xpos 75+360 ypos 139 zoom 0.2
                 #text "Robes" xalign 0.5 xpos 115+360 ypos 140+75 size 10
 
+            #Color Palette
+            if (wardrobe_stockings_category in [3] and active_girl in ["cho"]):
+                hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_stockings_color","base"), SetVariable("update_wr_colors",True), Jump("wardrobe_update")]
+                add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
+
+                for i in range(0,len(wr_clothcolor)):
+                    $ row = i // 7
+                    $ col = i % 7
+
+                    hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_stockings_color",wr_clothcolor[i]), Jump("wardrobe_update")]
+                    add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
+
 
             #Neckwear
             if wardrobe_stockings_category == 0:
@@ -1013,8 +1025,11 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("stockings_choice",wr_stockings[i]), Jump("equip_stockings")]
-                    add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("stockings_color_choice",wardrobe_stockings_color), SetVariable("stockings_choice",wr_stockings[i]), Jump("equip_stockings")]
+                    if active_girl in ["cho"]:
+                        add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wardrobe_stockings_color)+"/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
+                    else: # No color variants
+                        add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
 
             #Robes
             if wardrobe_stockings_category == 4:

@@ -56,6 +56,7 @@ label reset_wardrobe_vars:
     $ wardrobe_uniform_color          = "base"
     $ wardrobe_tops_color             = "base"
     $ wardrobe_bottoms_color          = "base"
+    $ wardrobe_stockings_color        = "base"
     $ wardrobe_other_clothings_color  = "base"
     $ wardrobe_accessories_color      = "base"
     $ wardrobe_underwear_color        = "base"

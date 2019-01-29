@@ -926,12 +926,13 @@ label prev_at_hogwarts:
 
     pause 2
 
+    call play_music("day_theme")
     hide screen blkfade
     with d9
     call ctc
 
     call play_sound("knocking")
-    pause.5
+    pause.8
 
     dum_[3] "Please, come in..."
     pause.2

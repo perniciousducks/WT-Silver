@@ -125,7 +125,7 @@ label cheats:
                     $ cho_mood = 0
                     ">Cho is no longer mad at you."
                     jump cheats_cho
-                "-Unlock Wardrobe-":
+                "-Unlock Wardrobe-" if not cho_wardrobe_unlocked:
                     $ cho_wardrobe_unlocked = True
                     $ cc_muggle_hot_ITEM.unlocked = True
                     ">Cho's wardrobe is now accessible."

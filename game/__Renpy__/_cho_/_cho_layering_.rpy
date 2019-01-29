@@ -19,10 +19,11 @@ screen cho_chang:
     add cho_pupil       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_eye         xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
+    add cho_hair        xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) #Skin Shadow
+
     add cho_eyebrow     xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_mouth       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
-    add cho_hair        xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_tears       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### CLOTHING LAYERS ###
@@ -54,21 +55,23 @@ screen cho_uniform:
 
     ### CLOTHES
     if cho_wear_bra:
-        add cho_bra xpos cho_xpos ypos cho_ypos alpha cho_bra_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the bra
-    if cho_wear_panties:
-        add cho_panties xpos cho_xpos ypos cho_ypos alpha cho_panties_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the panties
+        add cho_bra xpos cho_xpos ypos cho_ypos alpha cho_bra_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
     if cho_wear_stockings:
-        add cho_stockings xpos cho_xpos ypos cho_ypos alpha cho_stockings_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the stockings
+        add cho_stockings xpos cho_xpos ypos cho_ypos alpha cho_stockings_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
+    if cho_wear_garterbelt:
+        add cho_garterbelt xpos cho_xpos ypos cho_ypos alpha cho_panties_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
+    if cho_wear_panties:
+        add cho_panties xpos cho_xpos ypos cho_ypos alpha cho_panties_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
     if cho_wear_bottom:
-        add cho_bottom xpos cho_xpos ypos cho_ypos alpha cho_bottom_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the skirt/pants
+        add cho_bottom xpos cho_xpos ypos cho_ypos alpha cho_bottom_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
     if cho_wear_top:
-        add cho_top xpos cho_xpos ypos cho_ypos alpha cho_top_transp xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the top
+        add cho_top xpos cho_xpos ypos cho_ypos alpha cho_top_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     #Badges & Belts
     if cho_wear_body_accs:
         use cho_body_accs
 
-    add cho_l_hand xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) # Add the left hand
+    add cho_l_hand xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     if cho_wear_gloves:
         add cho_gloves xpos cho_xpos ypos cho_ypos alpha cho_gloves_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
     if cho_wear_neckwear:

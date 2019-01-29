@@ -667,6 +667,10 @@ label update_wr_other_clothings_list:
         $ wr_neckwears.append("collar_bondage")
         $ wr_neckwears.append("goggles")
         $ wr_neckwears.append("choker_bow_tie")
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_neckwears.append("white/choker_lace_1")
+            $ wr_neckwears.append("gray/choker_lace_1")
+            $ wr_neckwears.append("black/choker_lace_1")
 
         #Body Accessories
         if cc_costume_misty_ITEM.unlocked:
@@ -678,6 +682,13 @@ label update_wr_other_clothings_list:
 
         #Stockings
         $ wr_stockings.append("stockings")
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_stockings.append("white/stockings_lace_1")
+            $ wr_stockings.append("white/stockings_lace_2")
+            $ wr_stockings.append("gray/stockings_lace_1")
+            $ wr_stockings.append("gray/stockings_lace_2")
+            $ wr_stockings.append("black/stockings_lace_1")
+            $ wr_stockings.append("black/stockings_lace_2")
         if cc_outfit_sailor_white_ITEM.unlocked:
             $ wr_stockings.append("stockings_sailor_1")
         if cc_outfit_sailor_black_ITEM.unlocked:
@@ -843,6 +854,9 @@ label update_wr_underwear_list:
         #Bras
         $ wr_bras.append("bra_base_1")
         $ wr_bras.append("bra_sport")
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_bras.append("bra_lace_1")
+            $ wr_bras.append("bra_lace_2")
         if cc_party_slut_ITEM.unlocked:
             $ wr_bras.append("bra_party")
         if cc_bikini_micro_ITEM.unlocked:
@@ -852,6 +866,9 @@ label update_wr_underwear_list:
         $ wr_panties.append("panties_base_1")
         $ wr_panties.append("panties_sport_1")
         $ wr_panties.append("panties_sport_2")
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_panties.append("panties_lace_1")
+            $ wr_panties.append("panties_lace_2")
         if cc_bikini_micro_ITEM.unlocked:
             $ wr_panties.append("panties_bikini_1")
         if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
@@ -860,6 +877,9 @@ label update_wr_underwear_list:
         #One-Pieces
 
         #Garterbelts
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_garterbelts.append("garter_lace_1")
+            $ wr_garterbelts.append("garter_lace_2")
 
     if active_girl == "tonks":
 
@@ -867,6 +887,7 @@ label update_wr_underwear_list:
         $ wr_bras.append("bra_tape")
 
         #Panties
+        $ wr_panties.append("panties_base")
         $ wr_panties.append("panties_latex")
 
         #One-Pieces

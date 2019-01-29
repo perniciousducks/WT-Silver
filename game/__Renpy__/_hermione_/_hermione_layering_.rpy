@@ -66,7 +66,7 @@ screen hermione_main:
         add hermione_ear_piercing xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
         add hermione_nipple_piercing xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
         add hermione_belly_piercing xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
-        add hermione_intimate_piercing xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+        add hermione_genital_piercing xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
     ### CLOTHING LAYERS ###
 
@@ -314,13 +314,13 @@ label update_her_uniform:
     $ hermione_gag                 = "characters/hermione/face/mouth/"+str(h_lipstick)+"/"+str(h_gag)+".png"
 
     #Piercings
-    $ hermione_ear_piercing        = "characters/hermione/accessories/piercings/"+str(h_ear_piercing_color)+"/"+str(h_ear_piercing)+".png"
+    $ hermione_ear_piercing        = "characters/hermione/accessories/piercings/"+str(h_ear_piercing)+".png"
     if hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
-        $ hermione_nipple_piercing = "characters/hermione/accessories/piercings/"+str(h_nipple_piercing_color)+"/large_breasts/"+str(h_nipple_piercing)+".png"
+        $ hermione_nipple_piercing = "characters/hermione/accessories/piercings/large_breasts/"+str(h_nipple_piercing)+".png"
     else:
-        $ hermione_nipple_piercing = "characters/hermione/accessories/piercings/"+str(h_nipple_piercing_color)+"/"+str(h_nipple_piercing)+".png"
-    $ hermione_belly_piercing      = "characters/hermione/accessories/piercings/"+str(h_belly_piercing_color)+"/"+str(h_belly_piercing)+".png"
-    $ hermione_intimate_piercing   = "characters/hermione/accessories/piercings/"+str(h_intimate_piercing_color)+"/"+str(h_intimate_piercing)+".png"
+        $ hermione_nipple_piercing = "characters/hermione/accessories/piercings/"+str(h_nipple_piercing)+".png"
+    $ hermione_belly_piercing      = "characters/hermione/accessories/piercings/"+str(h_belly_piercing)+".png"
+    $ hermione_genital_piercing    = "characters/hermione/accessories/piercings/"+str(h_genital_piercing)+".png"
 
 
     #Costume Action/Pose

@@ -253,21 +253,21 @@ label her_init:
 
 
         #Piercings
-        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/blank.png"
+        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/blank.png"
         $ h_ear_piercing             = "blank"
         $ h_ear_piercing_color       = "base"
 
-        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/blank.png"
+        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/blank.png"
         $ h_nipple_piercing          = "blank"
         $ h_nipple_piercing_color    = "base"
 
-        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/blank.png"
+        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/blank.png"
         $ h_belly_piercing           = "blank"
         $ h_belly_piercing_color     = "base"
 
-        $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/blank.png"
-        $ h_intimate_piercing        = "blank"
-        $ h_intimate_piercing_color  = "base"
+        $ hermione_genital_piercing  = "characters/hermione/accessories/piercings/blank.png"
+        $ h_genital_piercing         = "blank"
+        $ h_genital_piercing_color   = "base"
 
         #Tattoos
         $ hermione_tattoos_list      = []
@@ -425,7 +425,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                       ]
     $ belly_piercings_list          = ["belly_pearls",
                                       ]
-    $ intimate_piercings_list       = [
+    $ genital_piercings_list        = [
                                       ]
 
     $ gryffindor_robe_list          = ["robe_1_g",

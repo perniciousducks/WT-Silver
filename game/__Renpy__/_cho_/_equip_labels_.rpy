@@ -4,8 +4,8 @@ label update_cho_uniform:
     hide screen cho_chang
 
     #Hair
-    $ cho_hair         = "characters/cho/body/hair/"+str(c_hair_style)+"_"+str(c_hair_color)+"_base.png"
-    $ cho_hair_shadow  = "characters/cho/body/hair/"+str(c_hair_style)+"_"+str(c_hair_color)+"_top.png"
+    $ cho_hair         = "characters/cho/body/hair/" +str(c_hair_style)+ "_" +str(c_hair_color)+ "_base.png"
+    $ cho_hair_shadow  = "characters/cho/body/hair/" +str(c_hair_style)+ "_" +str(c_hair_color)+ "_top.png"
 
     #Top
     $ cho_top            = "characters/cho/clothes/tops/" +str(c_top_color)+ "/" +str(c_top)+ ".png"
@@ -14,18 +14,18 @@ label update_cho_uniform:
     $ cho_bottom         = "characters/cho/clothes/bottoms/" +str(c_bottom_color)+ "/"+str(c_bottom)+".png"
 
     #Underwear
-    $ cho_bra            = "characters/cho/clothes/underwear/" +str(c_bra_color)+ "/"+str(c_bra)+".png"
-    $ cho_onepiece       = "characters/cho/clothes/onepieces/"+str(c_onepiece)+".png"
-    $ cho_panties        = "characters/cho/clothes/underwear/" +str(c_panties_color)+ "/"+str(c_panties)+".png"
-    $ cho_garterbelt     = "characters/cho/clothes/underwear/base/"+str(c_garterbelt)+".png"
+    $ cho_bra            = "characters/cho/clothes/underwear/" +str(c_bra_color)+ "/" +str(c_bra)+ ".png"
+    $ cho_onepiece       = "characters/cho/clothes/onepieces/" +str(c_onepiece)+ ".png"
+    $ cho_panties        = "characters/cho/clothes/underwear/" +str(c_panties_color)+ "/" +str(c_panties)+ ".png"
+    $ cho_garterbelt     = "characters/cho/clothes/underwear/" +str(c_garterbelt_color)+ "/" +str(c_garterbelt)+ ".png"
 
-    $ cho_neckwear       = "characters/cho/clothes/neckwear/"+str(c_neckwear)+".png"
-    $ cho_gloves         = "characters/cho/clothes/gloves/"+str(c_gloves)+".png"
-    $ cho_stockings      = "characters/cho/clothes/stockings/"+str(c_stockings)+".png"
-    $ cho_robe           = "characters/cho/clothes/robe/"+str(c_robe)+".png"
+    $ cho_neckwear       = "characters/cho/clothes/neckwear/" +str(c_neckwear)+ ".png"
+    $ cho_gloves         = "characters/cho/clothes/gloves/" +str(c_gloves)+ ".png"
+    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings)+ ".png"
+    $ cho_robe           = "characters/cho/clothes/robe/" +str(c_robe)+ ".png"
 
     #Accessories
-    $ cho_hat            = "characters/cho/accessories/hats/hair_"+str(c_hair_style)+"/"+str(c_hat)+".png"
+    $ cho_hat            = "characters/cho/accessories/hats/hair_" +str(c_hair_style)+ "/" +str(c_hat)+ ".png"
 
     return
 
@@ -143,16 +143,17 @@ label set_cho_panties(panties="", color=""):
     return
 
 #Garterbelt equip.
-label set_cho_garterbelt(garter=""):
+label set_cho_garterbelt(garter="", color=""):
     hide screen cho_chang
 
-    if cho_wear_garterbelt and c_garterbelt == garter:
+    if cho_wear_garterbelt and c_garterbelt == garter and c_garterbelt_color == color:
         $ cho_request_wear_garterbelt = False
         $ cho_wear_garterbelt = False
     else:
         $ cho_request_wear_garterbelt = True
         $ cho_wear_garterbelt = True
         $ c_garterbelt = garter
+        $ c_garterbelt_color = color
 
     call update_cho_uniform
 

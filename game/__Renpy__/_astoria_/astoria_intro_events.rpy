@@ -341,7 +341,7 @@ label tonks_intro_event: #occurs a day or two after the last event
     $ ton_request_wear_robe = True
     $ ton_robe = "auror_coat"
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     call play_sound("door")
     call ton_main("","base","base","base","mid",xpos="right",ypos="base")

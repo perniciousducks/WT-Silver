@@ -86,7 +86,7 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
 label update_tonks_tongue_piercing(mouth=None):
     if mouth != None:
         if mouth in ["open","horny","open_wide_tongue"]: #Tongue is visible.
-            $ tonks_tongue_piercing = "characters/tonks/accessories/piercings/base/mouth/" +str(ton_tongue_piercing)+ "_" +str(mouth)+ ".png"
+            $ tonks_tongue_piercing = "characters/tonks/accessories/piercings/mouth/" +str(ton_tongue_piercing)+ "_" +str(mouth)+ ".png"
         else:
             $ tonks_tongue_piercing = "blank.png"
     if ton_tongue_piercing == "blank":

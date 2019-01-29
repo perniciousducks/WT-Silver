@@ -354,11 +354,12 @@ label store_items_init:
         $ cc_muggle_hot_ITEM = item_class(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image="outfits/cc_muggle_hot", unlockable=True)
         $ cc_party_slut_ITEM = item_class(id="cc_party", name="Party Clothing",            type="set", items=["bra","skirt"],             image="outfits/cc_party", unlockable=True)
 
-    if not hasattr(renpy.store,'cc_bikini_micro_ITEM'):
-        $ cc_bikini_micro_ITEM = item_class(id="cc_bikini_micro", name="Micro Bikini",     type="set", items=["bra","panties"],           image="outfits/cc_bikini_micro", cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
+    if not hasattr(renpy.store,'cc_lingerie_lace_ITEM'):
+        $ cc_lingerie_lace_ITEM  = item_class(id="cc_lingerie_lace", name="Lace Lingerie", type="set", items=["bra","panties","garter","stockings","choker","earrings"], image="outfits/cc_lingerie_lace", cost=500, wait_time=5, description=">This lingerie set turns even the toughest tomboy\n into a cute and sexy princess!")
+        $ cc_bikini_micro_ITEM   = item_class(id="cc_bikini_micro", name="Micro Bikini",   type="set", items=["bra","panties"],                                          image="outfits/cc_bikini_micro", cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
 
     $ cho_clothing_sets_list=[
-        cc_muggle_hot_ITEM, cc_party_slut_ITEM, cc_bikini_micro_ITEM,
+        cc_muggle_hot_ITEM, cc_party_slut_ITEM, cc_lingerie_lace_ITEM, cc_bikini_micro_ITEM,
         ]
 
 

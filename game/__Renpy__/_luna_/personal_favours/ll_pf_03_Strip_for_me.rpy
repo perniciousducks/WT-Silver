@@ -970,7 +970,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             $ g_c_c_u_pic = "genie_cum_03"
             show screen g_c_c_u
             $ luna_wear_cum = True
-            if lun_addicted:
+            if luna_addicted:
                 $ luna_cum = 11
             else:
                 $ luna_cum = 5

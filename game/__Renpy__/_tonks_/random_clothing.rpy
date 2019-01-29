@@ -132,7 +132,7 @@ label tonks_random_clothing:
             $ ton_request_wear_coat = False
 
         call load_tonks_clothing_saves
-        call update_ton_body
+        call update_tonks_body
         call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
 
     return

@@ -33,11 +33,12 @@ label __init_variables:
 
 
     #Misc
-    if not hasattr(renpy.store,'change_xpos'):
+    if not hasattr(renpy.store,'nscale'):
         #For UI help,temporary add them to your UI element and use the console to quickly get it into place.
         #Then replace the variables with the number you ended up with.
-        $ change_xpos = 0
-        $ change_ypos = 0
+        $ nxpos = 0
+        $ nypos = 0
+        $ nscale = 0.5
 
     if not hasattr(renpy.store,'unlocked_xmas_deco'):
         $ unlocked_7th = False

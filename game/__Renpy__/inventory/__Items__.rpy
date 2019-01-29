@@ -263,12 +263,17 @@ label store_items_init:
 
     # Luna Outfits
     if not hasattr(renpy.store,'ll_pyjama_ITEM'):
-        $ ll_pyjama_ITEM = outfit_class(id="ll_pyjama", name="Pyjama",          type="outfit", items=["outfit"],  cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.")
+        $ ll_pyjama_ITEM           = outfit_class(id="ll_pyjama", name="Pyjama",          type="outfit", items=["outfit"],  cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.")
+    if not hasattr(renpy.store,'ll_stewardess_ITEM'):
+        $ ll_stewardess_ITEM       = outfit_class(id="ll_stewardess",       name="Stewardess Outfit",         type="outfit", items=["outfit","hat","neckless","thong"], cost=80, wait_time=2, image="outfits/ll_stewardess", description=">For immediate access into the mile-high club!")
+        $ ll_stewardess_short_ITEM = outfit_class(id="ll_stewardess_short", name="Short Stewardess Outfit",   type="outfit", items=["outfit","hat","neckless","thong"], image="outfits/ll_stewardess_short",  unlockable=True)
 
     $ luna_outfits_list=[
         ll_pyjama_ITEM,
         ]
     $ luna_costumes_list=[
+        ll_stewardess_ITEM,
+        ll_stewardess_short_ITEM,
         ]
     $ luna_dresses_list=[
         ]

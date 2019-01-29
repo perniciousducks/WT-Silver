@@ -641,7 +641,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/ears.png" xpos 75+270 ypos 139 zoom 0.2
                 #text "Ears" xalign 0.5 xpos 115+270 ypos 140+75 size 10
             #Hats
-            if active_girl in ["hermione","astoria","cho","tonks"]:
+            if active_girl in ["hermione","luna","astoria","cho","tonks"]:
                 hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_head_category",4),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/hats.png" xpos 75+360 ypos 139 zoom 0.2
                 #text "Hats" xalign 0.5 xpos 115+360 ypos 140+75 size 10
@@ -942,7 +942,7 @@ screen wardrobe():
         if wardrobe_page == 4:
 
             #Neckwear
-            if active_girl in ["hermione","astoria","susan","cho","tonks"]:
+            if active_girl in ["hermione","luna","astoria","susan","cho","tonks"]:
                 hotspot (75, 139, 83, 85) clicked [SetVariable("wardrobe_stockings_category",0),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/neck.png" xpos 75 ypos 139 zoom 0.2
                 #text "Neckwear" xalign 0.5 xpos 115 ypos 140+75 size 10
@@ -1243,7 +1243,7 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/outfits_1.png" xpos 75 ypos 139 zoom 0.2
                 #text "Outfits" xalign 0.5 xpos 115 ypos 140+75 size 10
             #Costumes
-            if active_girl in ["hermione","astoria","susan","cho"]:
+            if active_girl in ["hermione","luna","astoria","susan","cho"]:
                 hotspot (75+90, 139, 83, 85) clicked [SetVariable("wardrobe_outfits_category",1),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/outfits_2.png" xpos 75+90 ypos 139 zoom 0.2
                 #text "Costumes" xalign 0.5 xpos 115+90 ypos 140+75 size 10

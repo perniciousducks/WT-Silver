@@ -4,30 +4,30 @@ label update_lun_uniform:
     hide screen luna_main
 
     #Hair
-    $ luna_hair         = "characters/luna/body/hair/"+str(lun_hair_style)+"_"+str(lun_hair_color)+"_base.png"
-    $ luna_hair_shadow  = "characters/luna/body/hair/"+str(lun_hair_style)+"_"+str(lun_hair_color)+"_top.png"
+    $ luna_hair         = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_base.png"
+    $ luna_hair_shadow  = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_top.png"
 
     #Top
-    $ luna_top            = "characters/luna/clothes/tops/base/"+str(lun_top)+".png"
+    $ luna_top            = "characters/luna/clothes/tops/base/" +str(lun_top)+ ".png"
 
     #Bottom
-    $ luna_bottom         = "characters/luna/clothes/bottoms/"+str(lun_bottom_color)+"/"+str(lun_bottom)+".png"
+    $ luna_bottom         = "characters/luna/clothes/bottoms/" +str(lun_bottom_color)+ "/" +str(lun_bottom)+ ".png"
 
     #Underwear
-    $ luna_bra            = "characters/luna/clothes/underwear/base/"+str(lun_bra)+".png"
-    $ luna_onepiece       = "characters/luna/clothes/onepieces/"+str(lun_onepiece)+".png"
-    $ luna_panties        = "characters/luna/clothes/underwear/base/"+str(lun_panties)+".png"
-    $ luna_garterbelt     = "characters/luna/clothes/underwear/base/"+str(lun_garterbelt)+".png"
+    $ luna_bra            = "characters/luna/clothes/underwear/base/" +str(lun_bra)+ ".png"
+    $ luna_onepiece       = "characters/luna/clothes/onepieces/" +str(lun_onepiece)+ ".png"
+    $ luna_panties        = "characters/luna/clothes/underwear/base/" +str(lun_panties)+ ".png"
+    $ luna_garterbelt     = "characters/luna/clothes/underwear/base/" +str(lun_garterbelt)+ ".png"
 
-    $ luna_neckwear       = "characters/luna/clothes/neckwear/"+str(lun_neckwear)+".png"
-    $ luna_gloves         = "characters/luna/clothes/gloves/"+str(lun_gloves)+".png"
-    $ luna_stockings      = "characters/luna/clothes/stockings/"+str(lun_stockings)+".png"
-    $ luna_robe           = "characters/luna/clothes/robe/"+str(lun_robe)+".png"
+    $ luna_neckwear       = "characters/luna/clothes/neckwear/" +str(lun_neckwear)+ ".png"
+    $ luna_gloves         = "characters/luna/clothes/gloves/" +str(lun_gloves)+ ".png"
+    $ luna_stockings      = "characters/luna/clothes/stockings/" +str(lun_stockings)+ ".png"
+    $ luna_robe           = "characters/luna/clothes/robe/" +str(lun_robe)+ ".png"
 
     #Accessories
-    $ luna_hat            = "characters/luna/accessories/hats/hair_playful/"+str(lun_hat)+".png" #/hair_"+str(lun_hair_style)+"/
-    $ luna_glasses        = "characters/luna/accessories/glasses/base/"+str(lun_glasses)+".png"
-    $ luna_ears           = "characters/luna/accessories/ears/"+str(lun_ears)+".png"
+    $ luna_hat            = "characters/luna/accessories/hats/hair_" +str(lun_hair_style)+ "/" +str(lun_hat)+ ".png" #/hair_"+str(lun_hair_style)+"/
+    $ luna_glasses        = "characters/luna/accessories/glasses/base/" +str(lun_glasses)+ ".png"
+    $ luna_ears           = "characters/luna/accessories/ears/" +str(lun_ears)+ ".png"
 
     call update_luna_body
 
@@ -124,7 +124,7 @@ label set_lun_bra(bra=""):
     hide screen luna_main
 
     if luna_wear_bra and lun_bra == bra:
-        if lun_corruption > 8:
+        if lun_corruption > 0:
             $ lun_request_wear_bra = False
             $ luna_wear_bra = False
         else:
@@ -159,7 +159,7 @@ label set_lun_panties(panties=""):
     hide screen luna_main
 
     if luna_wear_panties and lun_panties == panties:
-        if lun_corruption > 8:
+        if lun_corruption > 0:
             $ lun_request_wear_panties = False
             $ luna_wear_panties = False
         else:

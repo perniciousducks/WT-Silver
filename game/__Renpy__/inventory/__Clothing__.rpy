@@ -71,6 +71,12 @@ label update_outfit_layers:
     # Luna Outfits
     $ ll_pyjama_ITEM.outfit_layers = ["pants_pyjama.png","top_pyjama.png"]
 
+    $ ll_stewardess_ITEM.outfit_layers       = ["../underwear/base/panties_thong_1.png","stewardess.png","../neckwear/cloth_tie.png"]
+    $ ll_stewardess_ITEM.top_layers          = "hat_stewardess"
+
+    $ ll_stewardess_short_ITEM.outfit_layers = ["../underwear/base/panties_thong_2.png","stewardess_short.png","../neckwear/cloth_tie.png"]
+    $ ll_stewardess_short_ITEM.top_layers    = "hat_stewardess"
+
     # Astoria Outfits
     $ ag_boss_uniform_ITEM.outfit_layers = ["uniform_pants.png","uniform_top.png"]
     $ ag_boss_uniform_ITEM.hair_layer = "pigtails"

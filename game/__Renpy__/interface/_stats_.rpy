@@ -384,7 +384,7 @@ screen tonks_stat_menu:
                 use text_stat("- ", " times -", ton_astoria_date_counter)
 
                 use text_stat("Tonks has sluttyfied:")
-                use text_stat("- ", "/5 outfits -", ton_clothing_upgrades)
+                use text_stat("- ", "/6 outfits -", ton_clothing_upgrades)
 
         vbar value YScrollValue("vp")
 

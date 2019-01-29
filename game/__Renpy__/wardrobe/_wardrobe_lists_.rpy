@@ -163,6 +163,10 @@ label update_wr_head_list:
         if luna_reverted:
             $ wr_glasses.append("spectrespecs")
 
+        #Hats
+        if ll_stewardess_ITEM.unlocked or ll_stewardess_short_ITEM.unlocked:
+            $ wr_hats.append("hat_stewardess")
+
     if active_girl == "astoria":
 
         #Hair
@@ -638,6 +642,12 @@ label update_wr_other_clothings_list:
             $ wr_robes.append("robe_quidditch_s")
 
     if active_girl == "luna":
+
+        #Neck
+        if ll_stewardess_ITEM.unlocked or ll_stewardess_short_ITEM.unlocked:
+            $ wr_neckwears.append("cloth_tie")
+
+        #Stockings
         if ll_cheer_r_ITEM.unlocked:
             $ wr_stockings.append("stockings_cheer_r")
 
@@ -801,6 +811,10 @@ label update_wr_underwear_list:
         $ wr_panties.append("panties_basic")
         if ll_lingerie_silk_ITEM.unlocked:
             $ wr_panties.append("panties_silk")
+        if ll_stewardess_ITEM.unlocked:
+            $ wr_panties.append("panties_thong_1")
+        if ll_stewardess_short_ITEM.unlocked:
+            $ wr_panties.append("panties_thong_2")
 
         #One-Pieces
         $ wr_onepieces.append("nighty_long")

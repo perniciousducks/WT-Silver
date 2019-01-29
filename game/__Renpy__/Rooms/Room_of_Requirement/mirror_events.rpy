@@ -990,7 +990,9 @@ label prev_at_hogwarts:
     pause.2
     call sna_walk("mid","leave",2.5)
 
-    dum_[2] "\"I don't think I'll ever understa...\""
+    call play_music("stop")
+
+    dum_[2] "\"I don't think I'll ever understa-\""
 
     hide screen dumbledore
     show screen genie

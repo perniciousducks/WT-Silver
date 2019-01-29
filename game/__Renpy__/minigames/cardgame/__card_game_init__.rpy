@@ -16,6 +16,7 @@ label __init_variables:
             geniecard_level = 1
             geniecard_tokens = 0
             geniecard_challenges = 0
+            cardgame_eoc = False # End of content flag
         
         table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
         

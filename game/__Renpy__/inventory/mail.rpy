@@ -158,6 +158,22 @@ label cards_store_mail_send:
     
     m "Great, let's see how they're doing."
     return
+    
+### Cardgame End of Content letter ###
+label cardgame_eoc_mail_send:
+    $ cardgame_eoc = True
+    
+    g9 "Sweet..."
+    g9 "Fucking love prizes."
+    
+    #call unlock_clothing(text="You received a.. new outfit?",item=clothing_mail_item)
+    
+    g9 "Sweet..."
+    g9 "Fucking love prizes."
+    g4 "Wait, this is a womans outfit!"
+    m "Wait... it's a womans outfit..."
+    g9 "Might have to try and convice miss Granger put this one on..."
+    return
 
 label get_package:
     show screen blktone
@@ -240,6 +256,11 @@ label __init_variables:
         $ letter_cards_store = mail_letter_class()
     $ letter_cards_store.text = "{size=-7}Weasley's Wizard Wheezes shop emporium is now officially partnering with Wizard cards.\nCheck out the notice board at our shop to find a list of challengers at your skill level.{/size}"
     $ letter_cards_store.label = "cards_store_mail_send"
+    
+    if not hasattr(renpy.store,'letter_cardgame_eoc'):
+        $ letter_cardgame_eoc = mail_letter_class()
+    $ letter_cardgame_eoc.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beat your first 3 challenges in Wizard Cards. We're currently undergoing some renovations so that in the future you'll be able to trade in those hard earned tokens for rewards. When the renovations are finished can look forward to even more challengers to play against and even more rewards. How cool is that?{/size}"
+    $ letter_cardgame_eoc.label = "cardgame_eoc_mail_send"
 
     return
 

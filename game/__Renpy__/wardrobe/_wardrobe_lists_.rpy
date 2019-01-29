@@ -1079,6 +1079,9 @@ label update_wr_miscellaneous_list:
     if active_girl == "cho":
         if potion_inv.has("p_transparency"):
             $ wr_potions_list.append("clothes_potion")
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_piercings_list.append("ears_feather_white")
+            $ wr_piercings_list.append("ears_feather_black")
 
     if active_girl == "tonks":
         $ wr_potions_list.append("hair_growth_potion")

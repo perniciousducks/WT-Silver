@@ -418,6 +418,8 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "ears_pearls",
                                        "ears_straight",
                                        "ears_rings",
+                                       "ears_feather_white",
+                                       "ears_feather_black",
                                       ]
     $ tongue_piercings_list         = ["tongue_pearls",
                                       ]

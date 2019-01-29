@@ -331,30 +331,30 @@ label set_ton_gag(gag=""):
     return
 
 #Piercings equip.
-label set_ton_piercing(piercing="", color=""): # color not supported anymore.
+label set_ton_piercing(piercing=""):
     hide screen tonks_main
     if piercing in ear_piercings_list:
-        if ton_ear_piercing == piercing: # and ton_ear_piercing_color == color:
+        if ton_ear_piercing == piercing:
             $ ton_ear_piercing = "blank"
         else:
             $ ton_ear_piercing = piercing_choice
     if piercing in tongue_piercings_list:
-        if ton_tongue_piercing == piercing: # and ton_tongue_piercing_color == color:
+        if ton_tongue_piercing == piercing:
             $ ton_tongue_piercing = "blank"
         else:
             $ ton_tongue_piercing = piercing_choice
     if piercing in nipple_piercings_list:
-        if ton_nipple_piercing == piercing: # and ton_nipple_piercing_color == color:
+        if ton_nipple_piercing == piercing:
             $ ton_nipple_piercing = "blank"
         else:
             $ ton_nipple_piercing = piercing
     if piercing in belly_piercings_list:
-        if ton_belly_piercing == piercing: # and ton_belly_piercing_color == color:
+        if ton_belly_piercing == piercing:
             $ ton_belly_piercing = "blank"
         else:
             $ ton_belly_piercing = piercing
     if piercing in genital_piercings_list:
-        if ton_belly_piercing == piercing: # and ton_genital_piercing_color == color:
+        if ton_belly_piercing == piercing:
             $ ton_belly_piercing = "blank"
         else:
             $ ton_belly_piercing = piercing

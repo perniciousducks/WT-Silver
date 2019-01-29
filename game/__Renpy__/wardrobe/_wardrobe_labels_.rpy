@@ -56,6 +56,7 @@ label reset_wardrobe_vars:
     $ wardrobe_uniform_color          = "base"
     $ wardrobe_tops_color             = "base"
     $ wardrobe_bottoms_color          = "base"
+    $ wardrobe_stockings_color        = "base"
     $ wardrobe_other_clothings_color  = "base"
     $ wardrobe_accessories_color      = "base"
     $ wardrobe_underwear_color        = "base"
@@ -770,9 +771,11 @@ label her_tattoos_toggle:
 ## Piercings ##
 label equip_piercing:
     if active_girl == "hermione":
-        call set_her_piercing(piercing_choice, piercing_color_choice)
+        call set_her_piercing(piercing_choice)
+    if active_girl == "cho":
+        call set_cho_piercing(piercing_choice)
     if active_girl == "tonks":
-        call set_ton_piercing(piercing_choice, piercing_color_choice)
+        call set_ton_piercing(piercing_choice)
         call ton_main(mouth="open_wide_tongue", face="horny",xpos="wardrobe",ypos="base")
         call ctc
 

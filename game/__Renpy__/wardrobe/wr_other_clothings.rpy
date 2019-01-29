@@ -326,7 +326,7 @@ label equip_sus_stockings:
 
 ### Equip Cho's Stockings ###
 label equip_cho_stockings:
-    call set_cho_stockings(stockings_choice)
+    call set_cho_stockings(stockings_choice, stockings_color_choice)
 
     jump return_to_wardrobe
 

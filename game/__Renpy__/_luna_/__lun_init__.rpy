@@ -168,7 +168,7 @@ label luna_init:
         #Accessories
         $ luna_makeup_list         = []
 
-        $ luna_hat                 = "characters/luna/accessories/hats/hair_base/blank.png"
+        $ luna_hat                 = "characters/luna/accessories/hats/hair_playful/blank.png"
         $ lun_hat                     = "blank"
         $ lun_hat_color               = "base"
 

@@ -428,7 +428,7 @@ label equip_lun_head_accessory:
         call set_lun_ears(head_accessory_choice)
     if head_accessory_choice in ["spectrespecs"]: #Glasses
         call set_lun_glasses(head_accessory_choice)
-    if head_accessory_choice in []: #Hat
+    if head_accessory_choice in ["hat_stewardess"]: #Hat
         call set_lun_hat(head_accessory_choice)
 
     jump return_to_wardrobe

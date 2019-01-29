@@ -222,9 +222,9 @@ label hermione_random_clothing:
         elif her_mood >=10 and her_mood < 20:
             ">Hermione is very upset with you."
         elif her_mood >=20 and her_mood < 40:
-            ">Hermione is her_mood at you."
+            ">Hermione is mad at you."
         elif her_mood >=40 and her_mood < 50:
-            ">Hermione is very her_mood at you."
+            ">Hermione is very mad at you."
         elif her_mood >=50 and her_mood < 60:
             ">Hermione is furious at you."
         elif her_mood >=60:

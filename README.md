@@ -30,7 +30,7 @@ Our official [Witch Trainer: Silver Patreon](https://www.patreon.com/MoCoder) pa
 - **Asease1**:		      Coding
 - **STG Anon**:		      Coding
 - **Booom313**:		      Mobile port for Android. You can support them [here](https://www.patreon.com/booom313/).
-- **Magik**:            Networking, Management, and Administration.
+- **Dr. Lupin**:        Networking, Management, and Administration.
 
 
 ## Additional Credits (In no particular order):

@@ -21,11 +21,22 @@ label update_cho_uniform:
 
     $ cho_neckwear       = "characters/cho/clothes/neckwear/" +str(c_neckwear)+ ".png"
     $ cho_gloves         = "characters/cho/clothes/gloves/" +str(c_gloves)+ ".png"
-    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings)+ ".png"
+    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings_color)+ "/" +str(c_stockings)+ ".png"
     $ cho_robe           = "characters/cho/clothes/robe/" +str(c_robe)+ ".png"
 
     #Accessories
     $ cho_hat            = "characters/cho/accessories/hats/hair_" +str(c_hair_style)+ "/" +str(c_hat)+ ".png"
+
+    #Miscellaneous
+    $ cho_buttplug            = "characters/cho/accessories/plugs/" +str(c_buttplug)+ ".png"
+    #$ cho_gag                 = "characters/cho/face/mouth/" +str(c_gag)+ ".png"
+
+    #Piercings
+    # cho_tongue_piercing gets defined at the same place as her mouth every time the mouth layer gets updated. # NOT SUPPORTED YET!
+    $ cho_ear_piercing        = "characters/cho/accessories/piercings/" +str(c_ear_piercing)+ ".png"
+    $ cho_nipple_piercing     = "characters/cho/accessories/piercings/" +str(c_nipple_piercing)+ ".png"
+    $ cho_belly_piercing      = "characters/cho/accessories/piercings/" +str(c_belly_piercing)+ ".png"
+    $ cho_genital_piercing    = "characters/cho/accessories/piercings/" +str(c_genital_piercing)+ ".png"
 
     return
 
@@ -209,16 +220,17 @@ label set_cho_gloves(gloves=""):
     return
 
 #Stockings equip.
-label set_cho_stockings(stockings=""):
+label set_cho_stockings(stockings="", color=""):
     hide screen cho_chang
 
-    if cho_wear_stockings and c_stockings == stockings:
+    if cho_wear_stockings and c_stockings == stockings and c_stockings_color == color:
         $ cho_request_wear_stockings = False
         $ cho_wear_stockings = False
     else:
         $ cho_request_wear_stockings = True
         $ cho_wear_stockings = True
         $ c_stockings = stockings
+        $ c_stockings_color = color
 
     call update_cho_uniform
 
@@ -239,6 +251,59 @@ label set_cho_robe(robe=""):
     call update_cho_uniform
 
     return
+
+#Gag equip.
+label set_cho_gag(gag=""):
+    hide screen cho_chang
+    if gag == "None" or gag == "" or gag == "remove":
+        $ cho_request_wear_gag = False
+        $ cho_wear_gag = False
+    else:
+        $ cho_request_wear_gag = True
+        $ cho_wear_gag = True
+        $ c_gag = gag
+    call update_cho_uniform
+
+    return
+
+#Piercings equip.
+label set_cho_piercing(piercing=""):
+    hide screen cho_chang
+    if piercing in ear_piercings_list:
+        if c_ear_piercing == piercing:
+            $ c_ear_piercing = "blank"
+        else:
+            $ c_ear_piercing = piercing_choice
+    if piercing in tongue_piercings_list:
+        if c_tongue_piercing == piercing:
+            $ c_tongue_piercing = "blank"
+        else:
+            $ c_tongue_piercing = piercing_choice
+    if piercing in nipple_piercings_list:
+        if c_nipple_piercing == piercing:
+            $ c_nipple_piercing = "blank"
+        else:
+            $ c_nipple_piercing = piercing
+    if piercing in belly_piercings_list:
+        if c_belly_piercing == piercing:
+            $ c_belly_piercing = "blank"
+        else:
+            $ c_belly_piercing = piercing
+    if piercing in genital_piercings_list:
+        if c_belly_piercing == piercing:
+            $ c_belly_piercing = "blank"
+        else:
+            $ c_belly_piercing = piercing
+
+    if c_ear_piercing == "blank" and c_tongue_piercing == "blank" and c_nipple_piercing == "blank" and c_belly_piercing == "blank" and c_genital_piercing == "blank": #No piercings equipped.
+        $ cho_request_wear_piercings = False
+    else:
+        $ cho_request_wear_piercings = True
+
+    call update_cho_uniform
+
+    return
+
 
 
 ## Equip Outfit

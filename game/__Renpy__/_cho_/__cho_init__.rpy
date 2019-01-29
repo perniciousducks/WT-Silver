@@ -66,6 +66,8 @@ label cho_init:
         $ cho_request_wear_buttplug         = False
         $ cho_request_wear_piercings        = False
         $ cho_request_wear_tattoos          = False
+        $ cho_request_wear_mask             = False
+        $ cho_request_wear_gag              = False
 
         $ cho_request_wear_outfit           = False
 
@@ -89,8 +91,12 @@ label cho_init:
         $ cho_wear_ears              = False
         $ cho_wear_makeup            = False
         $ cho_wear_accs              = False
+
+        $ cho_wear_buttplug          = False
         $ cho_wear_piercings         = False
         $ cho_wear_tattoos           = False
+        $ cho_wear_mask              = False
+        $ cho_wear_gag               = False
 
         $ cho_wear_outfit            = False
 
@@ -129,7 +135,7 @@ label cho_init:
         $ c_gloves                = "blank"
         $ c_gloves_color          = "base"
 
-        $ cho_stockings           = "characters/cho/clothes/stockings/stockings.png"
+        $ cho_stockings           = "characters/cho/clothes/stockings/base/stockings.png"
         $ c_stockings             = "blank"
         $ c_stockings_color       = "base"
 
@@ -150,6 +156,33 @@ label cho_init:
         $ c_ears                  = "blank"
 
         $ cho_body_accs_list      = []
+
+        #Miscellaneous
+        $ cho_buttplug            = "characters/cho/accessories/plugs/blank.png"
+        $ c_buttplug                = "blank"
+        $ cho_gag                 = "characters/cho/face/mouth/gag.png"
+        $ c_gag                     = "gag"
+
+        #Piercings
+        $ cho_ear_piercing        = "characters/cho/accessories/piercings/blank.png"
+        $ c_ear_piercing            = "blank"
+        $ c_ear_piercing_color      = "base"
+
+        $ cho_tongue_piercing     = "characters/cho/accessories/piercings/blank.png"
+        $ c_tongue_piercing         = "blank"
+        $ c_tongue_piercing_color   = "base"
+
+        $ cho_nipple_piercing     = "characters/cho/accessories/piercings/blank.png"
+        $ c_nipple_piercing         = "blank"
+        $ c_nipple_piercing_color   = "base"
+
+        $ cho_belly_piercing      = "characters/cho/accessories/piercings/blank.png"
+        $ c_belly_piercing          = "blank"
+        $ c_belly_piercing_color    = "base"
+
+        $ cho_genital_piercing    = "characters/cho/accessories/piercings/blank.png"
+        $ c_genital_piercing        = "blank"
+        $ c_genital_piercing_color  = "base"
 
         call reset_cho_transparency
 

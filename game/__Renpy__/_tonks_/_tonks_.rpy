@@ -114,6 +114,9 @@ label check_tonks_clothing_upgrades:
     if hg_cheer_h_ITEM.unlocked and not hg_cheer_h_sexy_ITEM.unlocked:
         $ upgradable_clothing.append(hg_cheer_h_sexy_ITEM)
 
+    if ll_stewardess_ITEM.unlocked and not ll_stewardess_short_ITEM.unlocked:
+        $ upgradable_clothing.append(ll_stewardess_short_ITEM)
+
     if ag_costume_lazy_town_ITEM.unlocked and not ag_costume_lazy_town_short_ITEM.unlocked:
         $ upgradable_clothing.append(ag_costume_lazy_town_short_ITEM)
 

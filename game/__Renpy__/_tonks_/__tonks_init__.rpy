@@ -99,6 +99,7 @@ label tonks_init:
         $ tonks_badges                 = False
 
         $ tonks_wear_pubic_hair        = False
+        $ tonks_wear_buttplug          = False
         $ tonks_wear_piercings         = True
         $ tonks_wear_tattoos           = False
         $ tonks_wear_mask              = False

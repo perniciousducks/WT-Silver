@@ -3,6 +3,13 @@
 screen cho_chang:
     tag cho_main
 
+    #Behind body
+    if cho_wear_buttplug:
+        add cho_buttplug xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+    #if cho_wear_ears:
+    #    if c_ears == "cat_ears":
+    #        add "characters/cho/accessories/ears/"+str(c_ears)+"_tail_"+str(c_hair_color)+".png" xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+
     ### BASE IMAGE
     add cho_r_arm       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     add cho_base        xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
@@ -42,6 +49,11 @@ screen cho_chang:
     ### OTHER
     add cho_hair_shadow xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
+    #Ear Piercing
+    if cho_wear_piercings:
+        #add cho_tongue_piercing xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add cho_ear_piercing    xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+
     #Hat
     if cho_wear_hat:
         add cho_hat xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
@@ -52,6 +64,15 @@ screen cho_chang:
 
 screen cho_uniform:
     tag cho_main
+
+    ### Piercings
+    if cho_wear_piercings:
+        if (cho_wear_top and c_top in [""]) or (cho_wear_robe and c_robe in [""]):
+            pass
+        else:
+            add cho_nipple_piercing xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add cho_belly_piercing xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add cho_genital_piercing xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### CLOTHES
     if cho_wear_bra:

@@ -298,25 +298,25 @@ label set_her_gag(gag=""):
     return
 
 #Piercings equip.
-label set_her_piercing(piercing="", color=""): # color not supported anymore.
+label set_her_piercing(piercing=""):
     hide screen hermione_main
     if piercing in ear_piercings_list:
-        if h_ear_piercing == piercing: # and h_ear_piercing_color == color:
+        if h_ear_piercing == piercing:
             $ h_ear_piercing = "blank"
         else:
             $ h_ear_piercing = piercing_choice
     if piercing in nipple_piercings_list:
-        if h_nipple_piercing == piercing: # and h_nipple_piercing_color == color:
+        if h_nipple_piercing == piercing:
             $ h_nipple_piercing = "blank"
         else:
             $ h_nipple_piercing = piercing
     if piercing in belly_piercings_list:
-        if h_belly_piercing == piercing: # and h_belly_piercing_color == color:
+        if h_belly_piercing == piercing:
             $ h_belly_piercing = "blank"
         else:
             $ h_belly_piercing = piercing
     if piercing in genital_piercings_list:
-        if h_belly_piercing == piercing: # and h_genital_piercing_color == color:
+        if h_belly_piercing == piercing:
             $ h_belly_piercing = "blank"
         else:
             $ h_belly_piercing = piercing

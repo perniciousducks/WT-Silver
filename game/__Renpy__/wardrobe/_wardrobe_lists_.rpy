@@ -147,9 +147,9 @@ label update_wr_head_list:
             $ wr_ears.append("elf_ears")
 
         #Hats
-        if hg_outfit_maid_ITEM.unlocked:
-            $ wr_hats.append("witch_hat")
         if hg_outfit_witch_ITEM.unlocked:
+            $ wr_hats.append("witch_hat")
+        if hg_outfit_maid_ITEM.unlocked:
             $ wr_hats.append("maid_hat")
         if hg_dress_yule_ball_ITEM.unlocked:
             $ wr_hats.append("tiara")
@@ -162,6 +162,10 @@ label update_wr_head_list:
 
         if luna_reverted:
             $ wr_glasses.append("spectrespecs")
+
+        #Hats
+        if ll_stewardess_ITEM.unlocked or ll_stewardess_short_ITEM.unlocked:
+            $ wr_hats.append("hat_stewardess")
 
     if active_girl == "astoria":
 
@@ -638,6 +642,12 @@ label update_wr_other_clothings_list:
             $ wr_robes.append("robe_quidditch_s")
 
     if active_girl == "luna":
+
+        #Neck
+        if ll_stewardess_ITEM.unlocked or ll_stewardess_short_ITEM.unlocked:
+            $ wr_neckwears.append("cloth_tie")
+
+        #Stockings
         if ll_cheer_r_ITEM.unlocked:
             $ wr_stockings.append("stockings_cheer_r")
 
@@ -668,9 +678,9 @@ label update_wr_other_clothings_list:
         $ wr_neckwears.append("goggles")
         $ wr_neckwears.append("choker_bow_tie")
         if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_neckwears.append("white/choker_lace_1")
-            $ wr_neckwears.append("gray/choker_lace_1")
-            $ wr_neckwears.append("black/choker_lace_1")
+            $ wr_neckwears.append("choker_lace_white")
+            $ wr_neckwears.append("choker_lace_gray")
+            $ wr_neckwears.append("choker_lace_black")
 
         #Body Accessories
         if cc_costume_misty_ITEM.unlocked:
@@ -683,16 +693,10 @@ label update_wr_other_clothings_list:
         #Stockings
         $ wr_stockings.append("stockings")
         if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_stockings.append("white/stockings_lace_1")
-            $ wr_stockings.append("white/stockings_lace_2")
-            $ wr_stockings.append("gray/stockings_lace_1")
-            $ wr_stockings.append("gray/stockings_lace_2")
-            $ wr_stockings.append("black/stockings_lace_1")
-            $ wr_stockings.append("black/stockings_lace_2")
+            $ wr_stockings.append("stockings_lace_1")
+            $ wr_stockings.append("stockings_lace_2")
         if cc_outfit_sailor_white_ITEM.unlocked:
             $ wr_stockings.append("stockings_sailor_1")
-        if cc_outfit_sailor_black_ITEM.unlocked:
-            $ wr_stockings.append("stockings_sailor_2")
 
         #Robes
         if cho_quidd_points != 0:
@@ -807,6 +811,10 @@ label update_wr_underwear_list:
         $ wr_panties.append("panties_basic")
         if ll_lingerie_silk_ITEM.unlocked:
             $ wr_panties.append("panties_silk")
+        if ll_stewardess_ITEM.unlocked:
+            $ wr_panties.append("panties_thong_1")
+        if ll_stewardess_short_ITEM.unlocked:
+            $ wr_panties.append("panties_thong_2")
 
         #One-Pieces
         $ wr_onepieces.append("nighty_long")
@@ -1085,6 +1093,9 @@ label update_wr_miscellaneous_list:
     if active_girl == "cho":
         if potion_inv.has("p_transparency"):
             $ wr_potions_list.append("clothes_potion")
+        if cc_lingerie_lace_ITEM.unlocked:
+            $ wr_piercings_list.append("ears_feather_white")
+            $ wr_piercings_list.append("ears_feather_black")
 
     if active_girl == "tonks":
         $ wr_potions_list.append("hair_growth_potion")

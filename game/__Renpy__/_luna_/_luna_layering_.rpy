@@ -100,6 +100,8 @@ screen luna_uniform:
         add luna_bottom xpos luna_xpos ypos luna_ypos alpha lun_bottom_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
     if luna_wear_top:
         add luna_top xpos luna_xpos ypos luna_ypos alpha lun_top_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
+    if luna_wear_neckwear:
+        add luna_neckwear xpos luna_xpos ypos luna_ypos alpha lun_top_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
 
     ### ZORDER
     zorder luna_zorder

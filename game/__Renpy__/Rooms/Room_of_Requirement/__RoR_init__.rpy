@@ -89,9 +89,10 @@ label __init_variables:
             )
 
     if not hasattr(renpy.store,'mr_ev_PaH'):
+        #Story Unlock requirements: Finish the first 3 Wizard Cards challenges.
         $ mr_ev_PaH = mirror_stories(
                 name = "Previously at Hogwarts",
-                story_description = "",
+                story_description = "Snape tries to find a solution to stifle his anger and finds himself yet again in the Headmasters office.",
                 start_label = "prev_at_hogwarts",
                 authors = ["TeamSilver"],
                 categories= [],

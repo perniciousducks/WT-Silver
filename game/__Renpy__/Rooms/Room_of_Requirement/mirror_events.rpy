@@ -934,6 +934,7 @@ label prev_at_hogwarts:
     pause.5
 
     dum_[3] "Please, come in..."
+    pause.2
     call play_sound("door")
     call sna_walk("door","mid",2.5)
     pause.5
@@ -982,7 +983,9 @@ label prev_at_hogwarts:
     with d3
     pause.2
 
+    call sna_chibi("hide")
     call sna_chibi("stand","mid","base",flip=True)
+    with d3
     pause.2
     call sna_walk("mid","leave",2.5)
 
@@ -996,6 +999,7 @@ label prev_at_hogwarts:
     call bld
     m "..................?"
     m "Your majesty?"
+    pause.2
 
     show screen blkfade
     with d9

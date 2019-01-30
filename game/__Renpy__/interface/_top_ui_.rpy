@@ -380,34 +380,72 @@ label custom_save:
 
 
 label decorate_room_menu:
-            menu:
-                ">Decorate your place..."
-                "-Xmas decorations-":# if unlocked_xmas_deco:
-                    pause.5
-                    hide screen main_room_overlay
-                    $ package_OBJ.room_image = "package_idle_xmas"
-                    $ package_OBJ.idle_image = "package_idle_xmas"
-                    $ package_OBJ.hover_image = "package_hover_xmas"
-                    if xmas_fireplace_deco_ITEM not in deco_overlay_list: # TODO: This doesn't work :(
-                        $ deco_overlay_list.append(xmas_fireplace_deco_ITEM)
-                    else:
-                        $ deco_overlay_list.remove(xmas_fireplace_deco_ITEM)
-                    show screen main_room_overlay
-                    with d9
-                    pause.5
-                "-Cupboard pinup girl-":
-                    $ cupboard_deco = "_deco_1"
-                    ">Pinup girl added! You'll see it when rummaging through the cupboard."
-                "-Remove deco-":
-                    pause.5
-                    hide screen main_room_overlay
-                    $ package_OBJ.room_image = "package_idle"
-                    $ package_OBJ.idle_image = "package_idle"
-                    $ package_OBJ.hover_image = "package_hover"
-                    $ cupboard_deco = ""
-                    show screen main_room_overlay
-                    with d5
-                    pause.5
-                "-All done-":
-                    jump day_main_menu
-            jump decorate_room_menu
+    $ current_category = None
+
+    label deco_menu:
+    call update_deco_items
+
+    python:
+
+        category_list = []
+        # Use the category item's name for the button images inside the 'interface/topbar/buttons/color/' folder.
+        category_list.append("deco_wall")
+        category_list.append("deco_fireplace")
+        category_list.append("deco_cupboard")
+
+        if current_category == None:
+            current_category = category_list[0]
+            category_choice = category_list[0]
+
+        item_list = []
+        if current_category == "deco_wall":
+            item_list.extend(wall_deco_list)
+            item_list.extend(toy_gift_list) # For Testing
+        if current_category == "deco_fireplace":
+            item_list.extend(fireplace_deco_list)
+            item_list.extend(candy_gift_list) # For Testing
+        if current_category == "deco_cupboard":
+            item_list.extend(cupboard_deco_list)
+
+        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+    show screen bottom_menu(item_list, category_list, "Decorate", xpos=0, ypos=475)
+
+    $ _return = ui.interact()
+
+    hide screen bottom_menu
+    if category_choice != current_category: # Updates categories.
+        $ current_category = _return
+
+    elif isinstance(_return, item_class):
+        if _return.number > 0 or _return.unlocked:
+            call use_deco_item(_return)
+        else:
+            "You haven't unlocked this decoration yet."
+            jump deco_menu
+
+
+    elif _return == "Close":
+        $ current_page = 0
+        $ category_choice = None
+        hide screen bottom_menu
+        with d3
+
+        jump day_main_menu
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump deco_menu
+
+label update_deco_items:
+    $ wall_deco_list = [] #Add deco objects to the list here.
+    $ fireplace_deco_list = []
+    $ cupboard_deco_list = []
+
+    return
+
+label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove it when 'item' is currently displayed as a deco.
+
+    return

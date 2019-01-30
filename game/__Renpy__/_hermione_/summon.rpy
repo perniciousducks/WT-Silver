@@ -204,7 +204,7 @@ label summon_hermione:
                 elif isinstance(_return, item_class):
                     if _return in her_quest_items_list:
                         menu:
-                            "Do you really want to use this quest item?"
+                            "Would you like to use this quest item?"
                             "\"(Yes, let's do it!)\"":
                                 $ quest_item = _return
                                 jump give_her_quest_item
@@ -353,7 +353,7 @@ label hermione_requests_menu:
             elif her_whoring >=20 and hermione_favors_convinced == 2:
                 call her_main("I guess you do have a way with words,[genie_name]... I'll do it.","soft","wink")
                 jump silver_requests_root
-            elif her_whoring >=18: 
+            elif her_whoring >=18:
                 call her_main("I have told you before, [genie_name], it was just a one time thing....","open","squint")
                 m "What about tomorrow though?"
                 call her_main ("What about tomorrow?","base","squint")
@@ -377,9 +377,9 @@ label hermione_requests_menu:
                             g9 "That's my [hermione_name] right there!"
                             $ hermione_favors_convinced = 2
                             jump silver_requests_root
-                        
+
                         m "If you do it, you could secure the win for you household you know..."
-                
+
                         if her_whoring >=20:
                             call her_main("You really know how to talk me through, [genie_name].","soft","down")
                             call her_main("Okay I agree.","open","down_raised")
@@ -639,7 +639,7 @@ label hermione_change:
         if her_whoring >=1 and her_whoring < 3:
             call her_main("This girl thing again?","annoyed","squint")
             call her_main("*sigh*...","soft","squintL")
-        elif her_whoring >=3:    
+        elif her_whoring >=3:
             call her_main("Fine... I don't mind.","soft","baseL")
     elif temp_name == "Nerd":
         if her_whoring >=3 and her_whoring < 5:
@@ -877,7 +877,7 @@ label hermione_change:
                     call her_main("Thank you, [genie_name].", "normal","closed", tears="mascara")
                     call her_main("I can do it, I know I can.", "base","concerned", tears="mascara")
                     $ her_mood = 0
-                "-Tell her she deserves it-": 
+                "-Tell her she deserves it-":
                     g4 "You deserve to be called a slut, a whore and a mudblood... just look at you."
                     call her_main("...", "scream","worriedCl", tears="mascara_soft_blink")
                     call her_main("", "disgust","worriedCl", tears="mascara_soft")

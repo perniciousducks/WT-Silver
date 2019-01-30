@@ -1,14 +1,6 @@
-###COLLAR SCENES
-label start_collar_event:
-    hide screen wardrobe
-    "Are you sure you wish to start this event?"
-    menu:
-        "Yes!":
-            $ collar = 5
-        "No.":
-            pass
-    call screen wardrobe
 
+
+# Collar Event
 
 label collar_scene:
 

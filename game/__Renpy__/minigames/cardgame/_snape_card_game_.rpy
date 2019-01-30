@@ -29,6 +29,8 @@ label snape_first_duel:
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
+    
+    $ geniecard_tokens += 1
         
     jump main_room
             
@@ -66,6 +68,8 @@ label snape_second_duel:
     
     if not her_know_cards:
         g9 "This is awesome, I wonder if Hermione would want to play against me..."
+        
+    $ geniecard_tokens += 1
  
     jump main_room
     
@@ -147,6 +151,9 @@ label snape_third_duel:
         $ snape_third_win = True
         $ unlocked_cards += [snape]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.png")
+        $ geniecard_tokens += 3
+    else:
+        $ geniecard_tokens += 1
         
     call play_sound("door")
     call sna_chibi("hide")

@@ -1,68 +1,64 @@
 
 
 label open_inventory_menu:
-    call update_quest_items
     $ current_category = None
+
     label inventory_menu:
-        python:
+    call update_quest_items
 
-            category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
-            category_list.append("item_chocolate")  #Gifts
-            #category_list.append("item_potion")    #Potions
-            #category_list.append("cards") #Cards
-            #category_list.append("gold")  #Gold
-            category_list.append("box_blue_1") #Quest_items
+    python:
 
-            if current_category == None:
-                current_category = category_list[0]
-                category_choice = category_list[0]
+        category_list = []
+        category_list.append("ui_gifts")  #Gifts
+        category_list.append("ui_quest_items") #Quest_items
 
-            item_list = []
-            if current_category == "item_chocolate":
-                item_list.extend(candy_gift_list)
-                item_list.extend(mag_gift_list)
-                item_list.extend(drink_gift_list)
-                item_list.extend(toy_gift_list)
-            if current_category == "item_potion":
-                item_list.extend(candy_gift_list) #Add a list with potion items. New potion items need to be created first! Replace the old ones.
-            if current_category == "gold":
-                item_list.extend(candy_gift_list) #ADD right list.
-            if current_category == "cards":
-                item_list.extend(candy_gift_list) #ADD right list.
-            if current_category == "box_blue_1":
-                item_list.extend(gen_quest_items_list)
+        if current_category == None:
+            menu_title = "Gift Items"
+            current_category = category_list[0]
+            category_choice = category_list[0]
 
-            #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-        show screen icon_menu(item_list, category_list, "Inventory", xpos=492, ypos=50)
+        item_list = []
+        if current_category == "ui_gifts":
+            menu_title = "Gift Items"
+            item_list.extend(candy_gift_list)
+            item_list.extend(mag_gift_list)
+            item_list.extend(drink_gift_list)
+            item_list.extend(toy_gift_list)
+        if current_category == "ui_quest_items":
+            menu_title = "Quest Items"
+            item_list.extend(gen_quest_items_list)
 
-        $ _return = ui.interact()
+        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
 
-        hide screen icon_menu
-        if category_choice != current_category:
-            $ current_category = _return
+    $ _return = ui.interact()
 
-        elif isinstance(_return, item_class):
-            if _return in gen_quest_items_list:
-                $ quest_item = _return
-                jump use_your_quest_item
-            else:
-                call item_description(_return)
-                jump inventory_menu
+    hide screen bottom_menu
+    if category_choice != current_category:
+        $ current_category = _return
 
-        elif _return == "Close":
-            $ current_page = 0
-            $ category_choice = None
-            hide screen icon_menu
-            with d3
+    elif isinstance(_return, item_class):
+        if _return in gen_quest_items_list:
+            $ quest_item = _return
+            jump use_your_quest_item
+        else:
+            call item_description(_return)
+            jump inventory_menu
 
-            jump day_main_menu
+    elif _return == "Close":
+        $ current_page = 0
+        $ category_choice = None
+        hide screen bottom_menu
+        with d3
 
-        elif _return == "inc":
-            $ current_page += 1
-        elif _return == "dec":
-            $ current_page += -1
+        jump day_main_menu
 
-        jump inventory_menu
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump inventory_menu
 
 label use_your_quest_item: #(quest_item)
 

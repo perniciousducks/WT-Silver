@@ -152,7 +152,7 @@ screen wardrobe():
         #Gifts
         if wardrobe_page == 8:
             hotspot (987, 452, 84, 93) clicked [SetVariable("wardrobe_page_choice",0),SetVariable("add_wardrobe_sound",True), Jump("wardrobe_update")] #return to default
-            text "Gifts & Quest Items" xalign 0.5 xpos 208 ypos 96 size 18
+            text "Gifts" xalign 0.5 xpos 208 ypos 96 size 18
         else:
             hotspot (987, 452, 40, 93) clicked [SetVariable("wardrobe_page_choice",8),SetVariable("add_wardrobe_sound",True), Jump("wardrobe_update")] #default
 
@@ -1449,21 +1449,21 @@ screen wardrobe():
                         text str(toy_gift_list[i].number) xpos 75+(90*col) ypos (210+92+(92*row))
 
             #Quest Items
-            if wardrobe_gifts_category == 4:
-                hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
-                add "interface/icons/box_red_2.png" xpos 72+360 ypos 128 zoom 0.30
-                #text "Quest Items" xalign 0.5 xpos 115+360 ypos 140+75 size 10
+            #if wardrobe_gifts_category == 4:
+            #    hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_gifts_category",0),Show("wardrobe")]
+            #    add "interface/icons/box_red_2.png" xpos 72+360 ypos 128 zoom 0.30
+            #    #text "Quest Items" xalign 0.5 xpos 115+360 ypos 140+75 size 10
 
 
-                if active_girl == "hermione":
+            #    if active_girl == "hermione":
 
-                    #Collar Event
-                    if collar == 0 and her_whoring >= 24:
-                        hotspot (75, 140+92, 83, 85) clicked [Jump("start_collar_event")]
-                        add "characters/hermione/accessories/collars/collar_0.png" xpos -40 ypos 55+92 zoom 0.5/scaleratio
-                        text "Collar Event" xalign 0.5 xpos 115 ypos 140+75+92 size 10
-                    else:
-                        add "characters/hermione/accessories/collars/collar_5.png" xpos -40 ypos 55+92 zoom 0.5/scaleratio
+            #        #Collar Event
+            #        if collar == 0 and her_whoring >= 24:
+            #            hotspot (75, 140+92, 83, 85) clicked [Jump("start_collar_event")]
+            #            add "interface/icons/icon_collar.png" xpos 72 ypos 128+92 zoom 0.30
+            #            text "Collar Event" xalign 0.5 xpos 115 ypos 140+75+92 size 10
+            #        else:
+            #            add add grayTint("interface/icons/icon_collar.png") xpos 72 ypos 128+92 zoom 0.30
 
 
 # ADD wardrobe page for stats here!

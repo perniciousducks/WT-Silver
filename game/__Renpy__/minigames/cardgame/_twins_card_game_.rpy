@@ -40,7 +40,10 @@ label twins_first_duel:
         m "Tough luck boys."
         pass
     
-    "You return to your office."    
+    "You return to your office."   
+
+    $ geniecard_tokens += 1
+    
     jump main_room
     
 label twins_second_duel:
@@ -106,11 +109,11 @@ label twins_second_duel:
         $ unlocked_cards += [eval(card_rand_twins)]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins))
         $ twins_second_win = True
-        pass
+        $ geniecard_tokens += 3
     else:
         twi "Not again.."
         m "Tough luck boys."
-        pass
+        $ geniecard_tokens += 1
     
     "You return to your office."    
     jump main_room
@@ -123,6 +126,7 @@ label twins_duel_lost:
             jump twins_duel_menu
         "-Be a loser-":
             pass
+            
     ger "Cards not in your favour professor? Maybe next time..."
     "You return to your office."
     

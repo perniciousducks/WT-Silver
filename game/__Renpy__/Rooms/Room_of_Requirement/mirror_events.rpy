@@ -178,7 +178,7 @@ label a_christmas_tale:
     pause.8
 
     san_[4] "Happy Holidays."
-    
+
     if not card_exist(unlocked_cards, santa):
         if deck_unlocked:
             call give_reward("You have received a special card as a gift!", "images/cardgame/t1/special/santa_v1.png")
@@ -890,6 +890,136 @@ label genie_house_elf:
 
     call room(hide_screens=True)
     jump enter_room_of_req
+
+
+
+#Title: Previously, at Hogwarts.
+label prev_at_hogwarts:
+    #Story Unlock requirements: Finish the first 3 Wizard Cards challenges.
+
+    #Temporarily stored vars
+    $ temp_date = day
+    $ temp_gold = gold
+    $ temp_day = daytime
+    $ temp_color = interface_color
+    $ temp_weather = weather_gen
+
+    stop weather
+    call play_music("stop")
+    show screen blkfade
+    with d9
+
+    $ day = 1
+    $ gold = 0
+    $ daytime = True
+    $ interface_color = "gold"
+    $ weather_gen = 1
+    $ show_weather()
+
+    call room("main_room") # Hides all screens too.
+    call gen_chibi("hide")
+    show screen dumbledore
+
+    pause 2
+
+    centered "{size=+7}{color=#cbcbcb}Previously, at Hogwarts{w} school of Witchcraft and Wizardry...{/color}{/size}"
+
+    pause 2
+
+    call play_music("day_theme")
+    hide screen blkfade
+    with d9
+    call ctc
+
+    call play_sound("knocking")
+    pause.8
+
+    dum_[3] "Please, come in..."
+    pause.2
+    call play_sound("door")
+    call sna_walk("door","mid",2.5)
+    pause.5
+
+    dum_[1] "Ah, Severus..."
+    call sna_main("You called, sir?","snape_01",xpos="base",ypos="base")
+    dum_[2] "Indeed, I wanted to talk to you about last night."
+    call sna_main("Last night, sir?","snape_03")
+    dum_[1] "Yes, last night... Don't think that I had forgotten already..."
+    call sna_main("...","snape_04")
+    call sna_main("I might have had a few. I hope I didn't say something inappropriate...","snape_05")
+    dum_[2] "Quite... Do you remember why I hired you, Severus?"
+    call sna_main("For my excellent potion making skills?","snape_25")
+    dum_[1] "For your excellent potion making skills..."
+    dum_[5] "{size=-6}And your piercing black eyes...{/size}"
+    call sna_main("What?","snape_05")
+    dum_[4] "What?"
+    dum_[2] "I said, you're fierce and wise."
+    call sna_main("...","snape_05")
+    call sna_main("Why did you call me here again?","snape_03")
+    dum_[1] "Ah yes, my apologies.... I got distracted."
+    dum_[2] "How much do you remember from our previous discussion?"
+    call sna_main("Not a lot... it's all a bit of a haze...","snape_04")
+    dum_[1] "..."
+    call sna_main("I think I mentioned a students spilling some flobberworm mucus down themselves which halted the whole lesson...","snape_01")
+    call sna_main("And that Potter boy...","snape_08")
+    dum_[3] "There it is..."
+    call sna_main("The Potter boy?","snape_25")
+    dum_[1] "Yes, I've noticed you've been quite stressed lately about this... Potter situation of yours for the lack of a better term."
+    call sna_main("And your point?","snape_09")
+    dum_[2] "Ah yes... my point."
+    dum_[1] "Where was I again..."
+    dum_[2] "Ah yes, your stress situation..."
+    call sna_main("\"You're not really helping old man...\"","snape_08")
+    dum_[1] "Have you tried a draught of piece?"
+    call sna_main("What?","snape_03")
+    dum_[2] "A draught of piece, it's a potion you know..."
+    call sna_main("Are you joking with me right now?","snape_04")
+    dum_[1] "I'm being quite serious... stress can be quite taxing on your body."
+    call sna_main("I...","snape_01")
+    call sna_main("I need a moment... I'll talk to you later Albus.","snape_06")
+    dum_[1] "I thought we were getting somewhere..."
+    call sna_main("...","snape_01")
+    hide screen snape_main
+    hide screen bld1
+    with d3
+    pause.2
+
+    call sna_chibi("hide")
+    call sna_chibi("stand","mid","base",flip=True)
+    with d3
+    pause.2
+    call sna_walk("mid","leave",2.5)
+
+    call play_music("stop")
+
+    dum_[2] "\"I don't think I'll ever understa-\""
+
+    hide screen dumbledore
+    show screen genie
+    call teleport("desk")
+
+    pause.8
+    call bld
+    m "..................?"
+    m "Your majesty?"
+    pause.2
+
+    show screen blkfade
+    with d9
+    pause.8
+
+    # Reset vars.
+    $ day = temp_date
+    $ gold = temp_gold
+    $ daytime = temp_day
+    $ interface_color = temp_color
+    $ weather_gen = temp_weather
+    $ show_weather()
+
+    call room(hide_screens=True)
+    jump enter_room_of_req
+
+
 
 label a_spaced_out_conversation:
     $ temp_time = daytime

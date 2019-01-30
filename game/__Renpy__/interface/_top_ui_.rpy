@@ -270,7 +270,7 @@ screen ui_menu():
             imagebutton:
                 idle image_alpha("interface/topbar/icon_discord.png")
                 hover "interface/topbar/icon_discord.png"
-                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverGamesStudios{/size} discord")]
+                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverStudioGames{/size} discord")]
                 unhovered [SetVariable("ui_hint", "")]
                 action OpenURL("https://discord.gg/7PD57yt")
                 activate_sound "sounds/click3.mp3"
@@ -278,7 +278,7 @@ screen ui_menu():
             imagebutton:
                 idle image_alpha("interface/topbar/icon_patreon.png")
                 hover "interface/topbar/icon_patreon.png"
-                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverGamesStudios{/size} patreon")]
+                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverStudioGames{/size} patreon")]
                 unhovered [SetVariable("ui_hint", "")]
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
                 activate_sound "sounds/click3.mp3"
@@ -380,75 +380,112 @@ label custom_save:
 
 
 label decorate_room_menu:
-            menu:
-                ">Decorate your place..."
-                "-Posters-":
-                    label posters_menu:
-                    menu:
-                        "Agrabah":
-                            $ poster_OBJ.room_image = "agrabah"
-                        "Wanted":
-                            $ poster_OBJ.room_image = "wanted"
-                        "Hogwarts Harlots":
-                            $ poster_OBJ.room_image = "harlots"
-                        "Naked Hermione":
-                            $ poster_OBJ.room_image = "hermione"
-                        "Stripper":
-                            $ poster_OBJ.room_image = "stripper"
-                        "Gryffindor":
-                            $ poster_OBJ.room_image = "gryffindor"
-                        "Slytherin":
-                            $ poster_OBJ.room_image = "slytherin"
-                        "Hufflepuff":
-                            $ poster_OBJ.room_image = "hufflepuff"
-                        "Ravenclaw":
-                            $ poster_OBJ.room_image = "ravenclaw"
-                        "None":
-                            $ poster_OBJ.room_image = ""
-                        "-Done-":
-                            jump decorate_room_menu
-                    $ poster_OBJ.xpos = 332
-                    $ poster_OBJ.ypos = 260
-                    jump posters_menu
-                "-Trophies-":
-                    label trophies_menu:
-                    menu:
-                        "Deer Head":
-                            $ trophy_OBJ.room_image = "deer"
-                        "None":
-                            $ trophy_OBJ.room_image = ""
-                        "-Done-":
-                            jump decorate_room_menu
-                    $ trophy_OBJ.xpos = 690
-                    $ trophy_OBJ.ypos = 150
-                    jump trophies_menu
-                "-Xmas decorations-":# if unlocked_xmas_deco:
-                    pause.5
-                    hide screen main_room_overlay
-                    $ package_OBJ.room_image = "package_idle_xmas"
-                    $ package_OBJ.idle_image = "package_idle_xmas"
-                    $ package_OBJ.hover_image = "package_hover_xmas"
-                    if xmas_fireplace_deco_ITEM not in deco_overlay_list: # TODO: This doesn't work :(
-                        $ deco_overlay_list.append(xmas_fireplace_deco_ITEM)
-                    else:
-                        $ deco_overlay_list.remove(xmas_fireplace_deco_ITEM)
-                    show screen main_room_overlay
-                    with d9
-                    pause.5
-                "-Cupboard pinup girl-":
-                    $ cupboard_deco = "_deco_1"
-                    ">Pinup girl added! You'll see it when rummaging through the cupboard."
-                "-Remove deco-":
-                    pause.5
-                    hide screen main_room_overlay
-                    $ package_OBJ.room_image = "package_idle"
-                    $ package_OBJ.idle_image = "package_idle"
-                    $ package_OBJ.hover_image = "package_hover"
-                    $ cupboard_deco = ""
-                    $ poster_OBJ.room_image = ""
-                    show screen main_room_overlay
-                    with d5
-                    pause.5
-                "-All done-":
-                    jump day_main_menu
-            jump decorate_room_menu
+    $ current_category = None
+
+    label deco_menu:
+    call update_deco_items
+
+    python:
+
+        category_list = []
+        # Use the category item's name for the button images inside the 'interface/topbar/buttons/color/' folder.
+        category_list.append("deco_wall")
+        category_list.append("deco_fireplace")
+        category_list.append("deco_cupboard")
+
+        if current_category == None:
+            menu_title = "Wall Deco"
+            current_category = category_list[0]
+            category_choice = category_list[0]
+
+        item_list = []
+        if current_category == "deco_wall":
+            menu_title = "Posters"
+            item_list.extend(wall_deco_list)
+        if current_category == "deco_fireplace":
+            menu_title = "Trophies"
+            item_list.extend(fireplace_deco_list)
+        if current_category == "deco_cupboard":
+            menu_title = "Miscellaneous"
+            item_list.extend(cupboard_deco_list)
+
+        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+
+    $ _return = ui.interact()
+
+    hide screen bottom_menu
+    if category_choice != current_category: # Updates categories.
+        $ current_category = _return
+    elif isinstance(_return, item_class):
+        if _return.number > 0 or _return.unlocked:
+            call use_deco_item(_return)
+        else:
+            "You haven't unlocked this decoration yet."
+            jump deco_menu
+
+
+    elif _return == "Close":
+        $ current_page = 0
+        $ category_choice = None
+        hide screen bottom_menu
+        with d3
+
+        jump day_main_menu
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump deco_menu
+
+
+# List with deco objects
+## Same lists get used in the Weasley store.
+## Add any deco objects to the lists here.
+label update_deco_items:
+    if not hasattr(renpy.store,'poster_agrabah_ITEM'):
+        #Posters
+        $ poster_agrabah_ITEM = item_class(id="agrabah", name="Agrabah Poster", cost=2, type="poster", image="posters/agrabah", description="A remnant of a distant land and memories about different times. A reminder for when you just want to ponder about what could've been.")
+        $ poster_gryffindor_ITEM = item_class(id="gryffindor", name="Gryffindor Poster", cost=2, type="poster", image="posters/gryffindor", description="Make your stance that you support the house of Gryffindor with this themed poster.")
+        $ poster_hufflepuff_ITEM = item_class(id="hufflepuff", name="Hufflepuff Poster", cost=2, type="poster", image="posters/hufflepuff", description="Make your stance that you support the house of Hufflepuff with this themed poster.")
+        $ poster_ravenclaw_ITEM = item_class(id="ravenclaw", name="Ravenclaw Poster", cost=2, type="poster", image="posters/ravenclaw", description="Make your stance that you support the house of Ravenclaw with this themed poster.")
+        $ poster_slytherin_ITEM = item_class(id="slytherin", name="Slytherin Poster", cost=2, type="poster", image="posters/slytherin", description="Make your stance that you support the house of Slytherin with this themed poster.")
+        $ poster_hermione_ITEM = item_class(id="hermione", name="Hermione Chibi Poster", cost=2, type="poster", image="posters/hermione", description="A little lewdness for the office, don't worry. With a special illusion charm no one but you will notice a thing....")
+        $ poster_harlots_ITEM = item_class(id="harlots", name="Hogwarts Harlots Poster", cost=2, type="poster", image="posters/harlots", description="Hermione showing off her true colours at last with this special poster... illusion charm included...")
+        $ poster_stripper_ITEM = item_class(id="stripper", name="Stripper Poster", cost=2, type="poster", image="posters/stripper", description="Hermione showing off how to work the pole... illusion charm included...")
+        $ poster_wanted_ITEM = item_class(id="wanted", name="Wanted Poster", cost=2, type="poster", image="posters/wanted", description="A Wild West styled Wanted poster depicting our dear headmaster...")
+        #Trophies
+        $ trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3, type="trophy", image="trophies/stag", description="A perfect decoration over your mantelpiece to add a sense of masculinity to the office.")
+        #Pinups
+        $ pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
+        
+        $ wall_deco_list = [poster_agrabah_ITEM, poster_gryffindor_ITEM, poster_hufflepuff_ITEM, poster_ravenclaw_ITEM, poster_slytherin_ITEM, poster_hermione_ITEM, poster_harlots_ITEM, poster_stripper_ITEM, poster_wanted_ITEM]
+        $ fireplace_deco_list = [trophy_stag_ITEM]
+        $ cupboard_deco_list = [pinup_girl_ITEM]
+    
+    # Outfits
+    if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.
+        $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
+        $ hermione_outfits_list.append(hg_gamble_slut_ITEM)
+    return
+
+label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove it when 'item' is currently displayed as a deco.
+    
+    if item.type == "poster":
+        if poster_OBJ.room_image == item.id:
+            $ poster_OBJ.room_image = ""
+        else:
+            $ poster_OBJ.room_image = item.id
+    elif item.type == "trophy":
+        if trophy_OBJ.room_image == item.id:
+            $ trophy_OBJ.room_image = ""
+        else:
+            $ trophy_OBJ.room_image = item.id
+    elif item.type == "pinup":
+        if trophy_OBJ.room_image == item.id:
+            $ cupboard_deco = ""
+        else:
+            $ cupboard_deco = item.id
+    return

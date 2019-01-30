@@ -8,7 +8,11 @@ label give_her_quest_item: #(quest_item)
     if quest_item == sealed_scroll_ITEM:
         jump tentacle_scene_intro
 
-
+    if quest_item == collar_quest_ITEM:
+        ">This Quest is now active!\nIt will start the next morning."
+        $ collar = 5
+        call update_quest_items
+        jump hermione_gift_menu
 
 
 

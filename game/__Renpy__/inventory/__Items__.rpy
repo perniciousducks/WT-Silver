@@ -165,6 +165,8 @@ label store_items_init:
     #Quest Items
     if not hasattr(renpy.store,'puzzle_box_ITEM'):
         $ puzzle_box_ITEM = item_class(id="puzzle_box",   name="Puzzle Box",  type="quest item", image="icon_puzzle", description=">Quest Item!")
+    if not hasattr(renpy.store,'collar_quest_ITEM'):
+        $ collar_quest_ITEM = item_class(id="collar_quest",   name="Collar",  type="quest item", image="icon_collar", description=">Quest Item!")
 
 
     #Hermione Outfits.
@@ -420,9 +422,16 @@ init -2 python:
                 return self.imagepath
             else:
                 return self.imagepath
-
+                
+        # Need to simplify this
         def get_cost(self):
-            return ""+str(self.cost)+" gold"
+            if self.type == "poster" or self.type == "trophy":
+                if self.cost == 1:
+                    return ""+str(self.cost)+" token"
+                else:
+                    return ""+str(self.cost)+" tokens"
+            else:
+                return ""+str(self.cost)+" gold"
 
         def get_wait_time(self):
             if self.wait_time == 1:

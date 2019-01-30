@@ -10,7 +10,7 @@
 init -1 python hide:v
 
     config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.
-    
+
     config.gl_enable = True # Enable openGL acceleration
     config.load_before_transition = True #Preload assets (images, sounds etc.) before transition
     #config.missing_image_callback = LABEL #This function can be used to display the default image in case of missing file
@@ -18,20 +18,20 @@ init -1 python hide:v
     config.sound_sample_rate = 48000 #Force bitrate to default gaming rate 48k
     config.cache_surfaces = False #Cache often used images to RAM
     config.nearest_neighbor = False #Disable pixel art filtering
-    
+
     #Set default persistent values
     if persistent.delwarning == None:
         persistent.delwarning = True
         persistent.customcursor = True
         persistent.autosave = False
         persistent.ui_hint = True
-    
+
     #Load custom preference options
     if persistent.customcursor:
         config.mouse = { 'default' : [ ('interface/cursor.png', 0, 0)] } # Set custom pointer
     else:
         config.mouse = None
-        
+
     if persistent.autosave: #True if true, false otherwise, still saves upon exit no matter what
         config.has_autosave = True
         config.autosave_on_choice = True
@@ -39,7 +39,7 @@ init -1 python hide:v
         config.has_autosave = False
         config.autosave_on_choice = False
     config.autosave_on_quit = True
-        
+
     ## Should we enable the use of developer tools? This should be
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
@@ -54,13 +54,13 @@ init -1 python hide:v
 
     config.screen_width = 1080 #800
     config.screen_height = 600 #600
-    
+
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
-    
+
     config.name = "WT Silver"
-    config.version = "1.35a"
-    
+    config.version = "1.35"
+
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 

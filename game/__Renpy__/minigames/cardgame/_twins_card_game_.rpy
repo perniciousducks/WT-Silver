@@ -3,7 +3,7 @@ label twins_first_duel:
 
     call play_music("grape_soda")
     $ response_card = ""
-    
+
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
 
@@ -12,13 +12,13 @@ label twins_first_duel:
         if response_card == "Close":
             jump twins_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
-    
+
     if not check_winner() == "win":
         jump twins_duel_lost
-    
+
     hide screen blkfade
     stop music fadeout 1
-    
+
     if not twins_first_win:
         twi "No way!"
         ger "You must've been cheating."
@@ -39,24 +39,24 @@ label twins_first_duel:
         twi "Not again.."
         m "Tough luck boys."
         pass
-    
-    "You return to your office."   
+
+    "You return to your office."
 
     $ geniecard_tokens += 1
-    
+
     jump main_room
-    
+
 label twins_second_duel:
     if twins_cards_stocked == False:
         m "(I need to wait for an owl from them before we can duel again)"
         jump twins_duel_menu
-                                
+
     fre "Good luck."
     ger "You'll need it."
 
     call setup_deck(twins_second_deck)
     $ response_card = ""
-    
+
     play music "music/vs_twins.ogg" fadein 1.0
     play sound "sounds/Genie_VS_Twins_Teleport.mp3"
     show screen genie_vs_twins
@@ -71,7 +71,7 @@ label twins_second_duel:
     pause
     hide screen genie_vs_twins_smile
     hide screen genie_vs_twins
-    
+
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
 
@@ -89,16 +89,16 @@ label twins_second_duel:
             $ renpy.block_rollback()
             $ rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
             #$ rnd_twin = renpy.random.choice = [fre, goe]
-            
+
             if renpy.random.randint(0, 1) == 0:
                 fre "[rnd_text!t]"
             else:
                 ger "[rnd_text!t]"
             $ _preferences.volumes['music'] = volume
-    
+
     if not check_winner() == "win":
         jump twins_duel_lost
-    
+
     hide screen blkfade
     stop music fadeout 1
     if not twins_second_win:
@@ -106,6 +106,7 @@ label twins_second_duel:
         ger "I blame Trelawney on this, she said that luck would be on our side today..."
         fre "Well, a promise is a promise. Here's your reward..."
         ger "And we also heard about your wins against Snape so here's some extra tokens."
+        fre "Make sure to come back and spend those tokens in our tokenshop."
         $ card_rand_twins = renpy.random.choice(['fred', 'george'])
         $ unlocked_cards += [eval(card_rand_twins)]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins))
@@ -115,10 +116,10 @@ label twins_second_duel:
         twi "Not again.."
         m "Tough luck boys."
         $ geniecard_tokens += 1
-    
-    "You return to your office."    
+
+    "You return to your office."
     jump main_room
-    
+
 label twins_duel_lost:
     stop music fadeout 1
 
@@ -127,14 +128,14 @@ label twins_duel_lost:
             jump twins_duel_menu
         "-Be a loser-":
             pass
-            
+
     ger "Cards not in your favour professor? Maybe next time..."
     "You return to your office."
-    
+
     jump main_room
-    
+
 label twins_duel_cancel:
-    show screen blkfade 
+    show screen blkfade
     with dissolve
     stop music fadeout 1
     #jump return_office
@@ -142,9 +143,9 @@ label twins_duel_cancel:
     with dissolve
     ger "Cards not in your favour professor? Maybe next time..."
     "You return to your office."
-    
+
     jump main_room
-    
+
 screen genie_vs_twins:
     zorder 8
     add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
@@ -154,7 +155,7 @@ screen move_genie:
 screen move_twins:
     zorder 8
     add "images/cardgame/VS/twins_01.png" at move_in(300, 1)
-    
+
 screen genie_vs_twins_smile:
     zorder 8
     add "images/cardgame/VS/genie_04.png"

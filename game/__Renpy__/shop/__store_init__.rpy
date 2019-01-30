@@ -1,9 +1,10 @@
 label store_init:
 
     #Update 1.3
-    if not hasattr(renpy.store,'clothing_mail_item') or reset_persistants:
+    if not hasattr(renpy.store,'store_category') or reset_persistants:
 
         #Shop
+        $ store_category = 0
         $ order_placed = False #TRUE when and order has been placed on an item.
         $ days_in_delivery = 0 # +1 day, every day since the orer has been made (when order_placed = True).
         $ days_in_delivery2 = 0 # +1 day, every day since the orer has been made (when order_placed = True).
@@ -19,7 +20,6 @@ label store_init:
         $ book_store_intro_done = False
         $ clothing_store_intro_done = False
 
-    if not hasattr(renpy.store,'store_menu') or reset_persistants:
         $ store_menu = False #Displays item's gold value.
 
     return

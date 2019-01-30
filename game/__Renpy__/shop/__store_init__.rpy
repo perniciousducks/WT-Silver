@@ -19,7 +19,6 @@ label store_init:
         $ store_intro_done = False
         $ book_store_intro_done = False
         $ clothing_store_intro_done = False
-        $ store_category = 0
 
         $ store_menu = False #Displays item's gold value.
 

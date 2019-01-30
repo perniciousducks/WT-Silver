@@ -443,8 +443,12 @@ label decorate_room_menu:
 
     jump deco_menu
 
+
+# List with deco objects
+## Same lists get used in the Weasley store.
+## Add any deco objects to the lists here.
 label update_deco_items:
-    $ wall_deco_list = [] #Add deco objects to the list here.
+    $ wall_deco_list = []
     $ fireplace_deco_list = []
     $ cupboard_deco_list = []
 

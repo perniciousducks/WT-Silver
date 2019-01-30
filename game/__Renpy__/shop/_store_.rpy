@@ -176,7 +176,7 @@ screen weasley_store_menu:
     # Books Button & Scrolls + Tentacle Scroll
     imagebutton:
         xpos 725 +UI_xpos_offset
-        ypos 149
+        ypos 105+44
         idle "interface/general/"+interface_color+"/button_select.png"
         if store_category != 1: # Books
             hover "interface/general/"+interface_color+"/button_select_hover.png"
@@ -189,7 +189,7 @@ screen weasley_store_menu:
     # Potions
     imagebutton:
         xpos 725 +UI_xpos_offset
-        ypos 193
+        ypos 105+88
         idle "interface/general/"+interface_color+"/button_select.png"
         if store_category != 2:
             hover "interface/general/"+interface_color+"/button_select_hover.png"
@@ -199,6 +199,19 @@ screen weasley_store_menu:
     else:
         text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 14
 
+    # Token Shop
+    if twins_cards_stocked:
+        imagebutton:
+                xpos 725+95 +UI_xpos_offset
+                ypos 105
+                idle "interface/general/"+interface_color+"/button_select.png"
+                if store_category != 3:
+                    hover "interface/general/"+interface_color+"/button_select_hover.png"
+                    action [SetVariable("store_category",3), Jump("token_shop_menu")]
+        if store_category == 3:
+            text "Tokens" xalign 0.5 yalign 0.5 xpos 767+95 +UI_xpos_offset ypos 121 size 16
+        else:
+            text "Tokens" xalign 0.5 yalign 0.5 xpos 767+95 +UI_xpos_offset ypos 121 size 14
 
 
 
@@ -520,3 +533,74 @@ label shop_potion_menu:
         pass
     $ store_category = 0
     jump gift_shop_menu
+
+
+
+
+# Token Shop
+label token_shop_menu:
+    show screen weasley_store_menu
+
+    call update_deco_items
+
+    python:
+        item_list = []
+        if toggle1_bool:
+            item_list.extend(wall_deco_list)
+        if toggle2_bool:
+            item_list.extend(fireplace_deco_list)
+            item_list.extend(cupboard_deco_list)
+        if toggle3_bool:
+            item_list.extend(cupboard_deco_list) # Replace list
+
+        item_list = list(filter(lambda x: x.unlocked==False, item_list))
+
+    show screen list_menu(item_list, "Token Shop", toggle1="Wall Deco", toggle2="Room Deco", toggle3="Misc.")
+
+    $ _return = ui.interact()
+
+    hide screen list_menu
+
+    if isinstance(_return, item_class):
+        call purchase_deco(_return)
+
+    elif _return == "Close":
+        $ current_page = 0
+        jump close_weasley_store
+
+    elif _return == "toggle1":
+        $ toggle1_bool = not toggle1_bool
+    elif _return == "toggle2":
+        $ toggle2_bool = not toggle2_bool
+    elif _return == "toggle3":
+        $ toggle3_bool = not toggle3_bool
+    elif _return == "toggle4":
+        $ toggle4_bool = not toggle4_bool
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump token_shop_menu
+
+label purchase_deco(item):
+    $ the_gift = item.get_image()
+    show screen gift
+    with d3
+    "[item.description]"
+    menu:
+        "-Buy this decoration for [item.cost] coins -":
+            if gold >= item.cost:     # Replace gold with coins
+                $ gold -= item.cost
+                $ item.unlocked = True
+                "A [item.name] deco item has been added to your decoration menu."
+            else:
+                m "I don't have enough coins."
+        "-Never mind-":
+            pass
+
+    hide screen gift
+    with d3
+
+    return

@@ -321,7 +321,7 @@ label potion_scene_1_2: #Luna potion
     call nar(">Hermione grabs a lock of her hair")
     $ changeLuna("pout","base","base","crossed")
     her "Definitely a blonde, though she could absolutely use a comb"
-    $ changeLuna("base","base","base","nose")
+    $ changeLuna("base","base","base","crossed")
     call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.")
     $ changeLuna("base","wide","angry","mid")
     her "..."

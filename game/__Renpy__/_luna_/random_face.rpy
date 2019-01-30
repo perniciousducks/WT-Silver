@@ -137,7 +137,6 @@ label luna_face_layers:
                           "empty",
                           "L",
                           "mid",
-                          "nose",
                           "R",
                           "up"
                           ]

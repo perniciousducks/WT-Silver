@@ -259,7 +259,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'letter_cardgame_eoc'):
         $ letter_cardgame_eoc = mail_letter_class()
-    $ letter_cardgame_eoc.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beat your first 3 challenges in Wizard Cards. We're currently undergoing some renovations so that in the future you'll be able to trade in those hard earned tokens for rewards. When the renovations are finished can look forward to even more challengers to play against and even more rewards. How cool is that?{/size}"
+    $ letter_cardgame_eoc.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beaten your first 3 challenges of Wizard Cards.\nWe're currently working on expanding our business and are recruiting even more challengers so that in the future you'll be able to challenge even more people.\nIn the meanwhile, you'll be able to earn even more tokens by challenging someone again to complete your collection of items.\nThis time you'll only get one token per win but it should be a breeze for such a skilled player as you.\n\nYours truly,\nWeasley's Wizard Wheeze's and Team Silver{/size}"
     $ letter_cardgame_eoc.label = "cardgame_eoc_mail_send"
 
     return

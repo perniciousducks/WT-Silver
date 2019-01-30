@@ -178,7 +178,7 @@ label store_items_init:
         $ hg_outfit_japan_ITEM     = outfit_class(id="hg_outfit_japan", name="Japanese Schoolgirl", type="outfit", items=["outfit"],       cost=125, wait_time=2, image="outfits/hg_japan", description=">A schoolgirl outfit traditionally worn in Japan.")
         $ hg_outfit_witch_ITEM     = outfit_class(id="hg_outfit_witch", name="Witch outfit",        type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
         $ hg_outfit_egypt_ITEM     = outfit_class(id="hg_outfit_egypt", name="Egyptian Goddess",    type="outfit", image="outfits/hg_egypt", unlockable=True)
-        $ hg_gamble_slut_ITEM      = outfit_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
+        $ hg_gamble_slut_ITEM      = outfit_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit_token", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
 
     #Hermione Costumes.
     if not hasattr(renpy.store,'hg_costume_power_girl_ITEM'):
@@ -429,7 +429,7 @@ init -2 python:
                 
         # Need to simplify this
         def get_cost(self):
-            if self.type == "poster" or self.type == "trophy":
+            if self.type == "poster" or self.type == "trophy" or self.type == "outfit_token":
                 if self.cost == 1:
                     return ""+str(self.cost)+" token"
                 else:

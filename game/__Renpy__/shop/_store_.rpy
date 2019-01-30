@@ -97,7 +97,8 @@ label store_chit_chat:
         m "Unofficial... Official, you say?"
         ger "Yes, as we mentioned... there isn't really any official tournament rules."
         fre "We've sort of kept it that way in that we'll let the people playing set their own vaguers and challenges to climb the ladder."
-        ger "Once the agreed upon winning conditions is reached the winner will receive a token and what ever else you decide on."
+        fre "Any normal game would make you one token richer and a once the agreed upon winning conditions for a challenge is reached it would give you 3 tokens"
+        ger "And whatever other forfeit your opponent might have added."
         fre "3 challenges won will let you climb to the next tier."
         ger "Which lets you challenge even higher skilled players."
         m "And by skilled you mean players with better cards?"
@@ -110,7 +111,7 @@ label store_chit_chat:
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
         fre "Tell you what, lets set a vaguer right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
-        ger "Beat us again and we'll give you our token."
+        ger "Beat us again and we'll give you 3 tokens."
         m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."
         ger "There's no way you'll beat us again anyway."
@@ -551,7 +552,7 @@ label token_shop_menu:
             item_list.extend(fireplace_deco_list)
             item_list.extend(cupboard_deco_list)
         if toggle3_bool:
-            item_list.extend(hg_gamble_slut_ITEM) # Replace list
+            item_list.extend([hg_gamble_slut_ITEM]) # Replace list
 
         item_list = list(filter(lambda x: x.unlocked==False, item_list))
 
@@ -589,12 +590,17 @@ label purchase_deco(item):
     show screen gift
     with d3
     "[item.description]"
+    
+    if item.type == "outfit_token":
+        $ item_token_str = "outfit"
+    else:
+        $ item_token_str = item.type
     menu:
-        "-Buy this decoration for [item.cost] tokens -":
+        "-Buy this [item_token_str] for [item.cost] tokens -":
             if geniecard_tokens >= item.cost:     # Replace gold with coins
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
-                "A [item.name] deco item has been added to your decoration menu."
+                "A [item.name] [item_token_str] item has been added to your decoration menu."
             else:
                 m "I don't have enough tokens."
         "-Never mind-":

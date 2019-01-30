@@ -105,6 +105,7 @@ label twins_second_duel:
         fre "I feel like we should have foreseen this."
         ger "I blame Trelawney on this, she said that luck would be on our side today..."
         fre "Well, a promise is a promise. Here's your reward..."
+        ger "And we also heard about your wins against Snape so here's some extra tokens."
         $ card_rand_twins = renpy.random.choice(['fred', 'george'])
         $ unlocked_cards += [eval(card_rand_twins)]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins))

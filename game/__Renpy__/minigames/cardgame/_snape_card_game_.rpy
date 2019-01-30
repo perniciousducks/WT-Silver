@@ -146,7 +146,7 @@ label snape_third_duel:
         call sna_main( "Impossible, what's wrong with these cards...","snape_05")
         m "They're old, that's what."
         m "Now to the prize..."
-        call sna_main( "Fine, here's your token and one of my precious cards....","snape_05")
+        call sna_main( "Fine, here's your tokens and one of my precious cards....","snape_05")
         call sna_main( "\"You were a good card my boy. But it's time to grow up.\"","snape_05")
         $ snape_third_win = True
         $ unlocked_cards += [snape]

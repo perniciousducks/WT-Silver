@@ -220,14 +220,23 @@ screen ui_stats():
             style "empty"
             xsize 217
             ysize 26
-            add "interface/topbar/"+str(interface_color)+"/stats.png" xalign 0.5 yalign 1.0
 
+            add "interface/topbar/"+str(interface_color)+"/stats.png" xalign 0.5 yalign 1.0
+            
+            # Add overlay token icon if needed
+            if renpy.get_screen("weasley_store_room") and store_category == 3:
+                add "interface/topbar/icon_token.png" ypos 8 xpos 118
+                
             hbox:
                 xpos 40 ypos 11
                 text "{size=-6}[daygold_colour][day]{/color}{/size}" outlines daygold_outline
             hbox:
                 xpos 140 ypos 11
-                text "{size=-6}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline
+                # Display tokens in token shop
+                if renpy.get_screen("weasley_store_room") and store_category == 3:
+                    text "{size=-6}[daygold_colour][geniecard_tokens]{/color}{/size}" outlines daygold_outline
+                else:
+                    text "{size=-6}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline
 
 screen ui_menu():
     tag ui

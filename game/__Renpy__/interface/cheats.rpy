@@ -77,6 +77,17 @@ label cheats:
                             i.unlocked = True
                     ">All of Luna's outfits and clothing sets have been unlocked."
                     jump cheats_luna
+                    
+                "-Sub Luna-":
+                    $ lun_sub = 8
+                    $ luna_corruption = 10
+                    "Set to Sub Luna"
+                    jump cheats_luna
+                "-Dom Luna-":
+                    $ lun_dom = 8
+                    $ luna_corruption = 10
+                    "Set to Dom Luna"
+                    jump cheats_luna
 
                 "-Reset ALL Luna content-":
                     $ reset_luna_content = True

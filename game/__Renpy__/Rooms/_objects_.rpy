@@ -32,9 +32,9 @@ label room_objects_init:
             idle_image="door_idle",      idle_image_path="images/rooms/_objects_/doors/",
             hover_image="door_hover",    hover_image_path="images/rooms/_objects_/doors/",
             xpos=898, ypos=315)
-
-        #$ carpet_OBJ       = room_object_class(type="carpet",    room_image="", xpos=0, ypos=0)
-
+        
+        #$ carpet_OBJ       = room_object_class(type="carpet", room_image="", xpos=0, ypos=0)
+        
         $ candle_left_OBJ = room_object_class(type="candle",
             room_image="candle",  room_image_path="images/rooms/_objects_/candles/",
             xpos=350, ypos=160)
@@ -61,5 +61,10 @@ label room_objects_init:
 
         $ xmas_fireplace_deco_ITEM = room_object_class(type="fireplace", image="deco/fireplace_xmas", unlockable=True,
             room_image="fireplace_deco_xmas", room_image_path="images/rooms/_objects_/fireplace/")
+            
+        # New Decorations
+        $ poster_OBJ = room_object_class(type="poster", room_image="", room_image_path="images/rooms/_objects_/posters/", xpos=332, ypos=260)
+        $ trophy_OBJ = room_object_class(type="trophy", room_image="", room_image_path="images/rooms/_objects_/trophies/", xpos=690, ypos=150)
+        #
 
     return

@@ -382,6 +382,46 @@ label custom_save:
 label decorate_room_menu:
             menu:
                 ">Decorate your place..."
+                "-Posters-":
+                    label posters_menu:
+                    menu:
+                        "Agrabah":
+                            $ poster_OBJ.room_image = "agrabah"
+                        "Wanted":
+                            $ poster_OBJ.room_image = "wanted"
+                        "Hogwarts Harlots":
+                            $ poster_OBJ.room_image = "harlots"
+                        "Naked Hermione":
+                            $ poster_OBJ.room_image = "hermione"
+                        "Stripper":
+                            $ poster_OBJ.room_image = "stripper"
+                        "Gryffindor":
+                            $ poster_OBJ.room_image = "gryffindor"
+                        "Slytherin":
+                            $ poster_OBJ.room_image = "slytherin"
+                        "Hufflepuff":
+                            $ poster_OBJ.room_image = "hufflepuff"
+                        "Ravenclaw":
+                            $ poster_OBJ.room_image = "ravenclaw"
+                        "None":
+                            $ poster_OBJ.room_image = ""
+                        "-Done-":
+                            jump decorate_room_menu
+                    $ poster_OBJ.xpos = 332
+                    $ poster_OBJ.ypos = 260
+                    jump posters_menu
+                "-Trophies-":
+                    label trophies_menu:
+                    menu:
+                        "Deer Head":
+                            $ trophy_OBJ.room_image = "deer"
+                        "None":
+                            $ trophy_OBJ.room_image = ""
+                        "-Done-":
+                            jump decorate_room_menu
+                    $ trophy_OBJ.xpos = 690
+                    $ trophy_OBJ.ypos = 150
+                    jump trophies_menu
                 "-Xmas decorations-":# if unlocked_xmas_deco:
                     pause.5
                     hide screen main_room_overlay
@@ -405,6 +445,7 @@ label decorate_room_menu:
                     $ package_OBJ.idle_image = "package_idle"
                     $ package_OBJ.hover_image = "package_hover"
                     $ cupboard_deco = ""
+                    $ poster_OBJ.room_image = ""
                     show screen main_room_overlay
                     with d5
                     pause.5

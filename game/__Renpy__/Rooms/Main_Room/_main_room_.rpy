@@ -6,6 +6,13 @@ screen main_room:
         add "images/rooms/_bg_/main_room_day.png"
     else:
         add "images/rooms/_bg_/main_room_night.png"
+        
+    #Posters
+    if poster_OBJ.room_image:
+        add poster_OBJ.get_room_image() xpos poster_OBJ.xpos ypos poster_OBJ.ypos xanchor 0.5 yanchor 0.5
+        
+    if trophy_OBJ.room_image:
+        add trophy_OBJ.get_room_image() xpos trophy_OBJ.xpos ypos trophy_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Door
     add door_OBJ.get_room_image() xpos door_OBJ.xpos ypos door_OBJ.ypos xanchor 0.5 yanchor 0.5

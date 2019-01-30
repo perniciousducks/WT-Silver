@@ -970,9 +970,9 @@ label prev_at_hogwarts:
     dum_[1] "Where was I again..."
     dum_[2] "Ah yes, your stress situation..."
     call sna_main("\"You're not really helping old man...\"","snape_08")
-    dum_[1] "Have you tried a draught of piece?"
+    dum_[1] "Have you tried a draught of peace?"
     call sna_main("What?","snape_03")
-    dum_[2] "A draught of piece, it's a potion you know..."
+    dum_[2] "A draught of peace, it's a potion you know..."
     call sna_main("Are you joking with me right now?","snape_04")
     dum_[1] "I'm being quite serious... stress can be quite taxing on your body."
     call sna_main("I...","snape_01")

@@ -87,6 +87,7 @@ init python:
 
 
     #Genie
+    gen = Character('   Genie   ', color="#402313", window_left_padding=250, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
     m = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     g = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage2.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")
     g2 = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage3.png", xpos=20, yalign=1.0), show_two_window=False, color="#402313", ctc="ctc3", ctc_position="fixed")

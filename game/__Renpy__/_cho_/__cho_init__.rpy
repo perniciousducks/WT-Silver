@@ -2,7 +2,7 @@
 
 label cho_init:
 
-    if not hasattr(renpy.store,'cho_base') or reset_persistants:
+    if not hasattr(renpy.store,'cho_body_accs_list') or reset_persistants:
         label reset_cho_clothing:
 
         #Body
@@ -52,11 +52,12 @@ label cho_init:
         $ cho_request_wear_garterbelt       = False
 
         $ cho_request_wear_neckwear         = False
+        $ cho_request_wear_body_accs        = False
         $ cho_request_wear_gloves           = False
         $ cho_request_wear_stockings        = False
         $ cho_request_wear_robe             = False
 
-        $ cho_request_wear_hat              = False
+        $ cho_request_wear_hat              = True
         $ cho_request_wear_glasses          = False
         $ cho_request_wear_ears             = False
         $ cho_request_wear_makeup           = False
@@ -65,6 +66,8 @@ label cho_init:
         $ cho_request_wear_buttplug         = False
         $ cho_request_wear_piercings        = False
         $ cho_request_wear_tattoos          = False
+        $ cho_request_wear_mask             = False
+        $ cho_request_wear_gag              = False
 
         $ cho_request_wear_outfit           = False
 
@@ -78,17 +81,22 @@ label cho_init:
         $ cho_wear_garterbelt        = False
 
         $ cho_wear_neckwear          = False
+        $ cho_wear_body_accs         = False
         $ cho_wear_gloves            = False
         $ cho_wear_stockings         = False
         $ cho_wear_robe              = False
 
-        $ cho_wear_hat               = False
+        $ cho_wear_hat               = True
         $ cho_wear_glasses           = False
         $ cho_wear_ears              = False
         $ cho_wear_makeup            = False
         $ cho_wear_accs              = False
+
+        $ cho_wear_buttplug          = False
         $ cho_wear_piercings         = False
         $ cho_wear_tattoos           = False
+        $ cho_wear_mask              = False
+        $ cho_wear_gag               = False
 
         $ cho_wear_outfit            = False
 
@@ -127,7 +135,7 @@ label cho_init:
         $ c_gloves                = "blank"
         $ c_gloves_color          = "base"
 
-        $ cho_stockings           = "characters/cho/clothes/stockings/stockings.png"
+        $ cho_stockings           = "characters/cho/clothes/stockings/base/stockings.png"
         $ c_stockings             = "blank"
         $ c_stockings_color       = "base"
 
@@ -136,8 +144,8 @@ label cho_init:
         $ c_robe_color            = "base"
 
         #Accessories
-        $ cho_hat                 = "characters/cho/accessories/hats/blank.png"
-        $ c_hat                   = "blank"
+        $ cho_hat                 = "characters/cho/accessories/hats/hair_ponytail/snitch.png"
+        $ c_hat                   = "snitch"
         $ c_hat_color             = "base"
 
         $ cho_glasses             = "characters/cho/accessories/glasses/blank.png"
@@ -147,7 +155,34 @@ label cho_init:
         $ cho_ears                = "characters/cho/accessories/ears/blank.png"
         $ c_ears                  = "blank"
 
-        $ cho_accs                = "characters/cho/accessories/blank.png"
+        $ cho_body_accs_list      = []
+
+        #Miscellaneous
+        $ cho_buttplug            = "characters/cho/accessories/plugs/blank.png"
+        $ c_buttplug                = "blank"
+        $ cho_gag                 = "characters/cho/face/mouth/gag.png"
+        $ c_gag                     = "gag"
+
+        #Piercings
+        $ cho_ear_piercing        = "characters/cho/accessories/piercings/blank.png"
+        $ c_ear_piercing            = "blank"
+        $ c_ear_piercing_color      = "base"
+
+        $ cho_tongue_piercing     = "characters/cho/accessories/piercings/blank.png"
+        $ c_tongue_piercing         = "blank"
+        $ c_tongue_piercing_color   = "base"
+
+        $ cho_nipple_piercing     = "characters/cho/accessories/piercings/blank.png"
+        $ c_nipple_piercing         = "blank"
+        $ c_nipple_piercing_color   = "base"
+
+        $ cho_belly_piercing      = "characters/cho/accessories/piercings/blank.png"
+        $ c_belly_piercing          = "blank"
+        $ c_belly_piercing_color    = "base"
+
+        $ cho_genital_piercing    = "characters/cho/accessories/piercings/blank.png"
+        $ c_genital_piercing        = "blank"
+        $ c_genital_piercing_color  = "base"
 
         call reset_cho_transparency
 
@@ -206,7 +241,8 @@ label cho_progress_init:
 
         $ first_cho_favor_done = False
 
-
+    if not hasattr(renpy.store,'gave_cho_gift') or reset_persistants:
+        $ gave_cho_gift      = False
 
 
 

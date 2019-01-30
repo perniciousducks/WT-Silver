@@ -27,17 +27,17 @@ image genie_walk_ani_f: #Default Genie walk animation.
 
 ### Cupboard ###
 image genie_rum_ani:
-    "images/animation/rum_01.png"
+    "characters/genie/chibis/rummage/rum_01.png"
     pause.3
-    "images/animation/rum_02.png"
+    "characters/genie/chibis/rummage/rum_02.png"
     pause.3
-    "images/animation/rum_03.png"
+    "characters/genie/chibis/rummage/rum_03.png"
     pause.3
-    "images/animation/rum_04.png"
+    "characters/genie/chibis/rummage/rum_04.png"
     pause 1
-    "images/animation/rum_03.png"
+    "characters/genie/chibis/rummage/rum_03.png"
     pause.3
-    "images/animation/rum_02.png"
+    "characters/genie/chibis/rummage/rum_02.png"
     pause.3
     repeat
 
@@ -244,53 +244,66 @@ image genie_cum_03: #Genie cuming on Hermione after she is done striping.
     pause.5
     repeat
 
-### Phoenix ###
-image feeding: #FEEDING THE PHOENIX.
-    "images/animation/feeding_01.png"
+image grab_mid:
+    "characters/genie/chibis/grab/grab_01.png"
     pause.5
-    "images/animation/feeding_02.png"
+    "characters/genie/chibis/grab/grab_02.png"
     pause.1
-    "images/animation/feeding_03.png"
+    "characters/genie/chibis/grab/grab_03.png"
+    pause.7
+    "characters/genie/chibis/grab/grab_02.png"
     pause.1
-    "images/animation/feeding_04.png"
-    pause.1
-    "images/animation/feeding_05.png"
-    pause.5
-    "images/animation/feeding_03.png"
-    pause.1
-    "images/animation/feeding_02.png"
-    pause.1
-    "images/animation/feeding_01.png"
+    "characters/genie/chibis/grab/grab_01.png"
 
+image grab_high:
+    "characters/genie/chibis/grab/grab_01.png"
+    pause.5
+    "characters/genie/chibis/grab/grab_02.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_03.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_04.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_05.png"
+    pause.5
+    "characters/genie/chibis/grab/grab_03.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_02.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_01.png"
+
+
+
+### Phoenix ###
 image petting: #PETTING THE PHOENIX.
-    "images/animation/petting_01.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
     pause 1
-    "images/animation/petting_02.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"
     pause.1
-    "images/animation/petting_03.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_03.png"
     pause.1
-    "images/animation/petting_04.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_04.png"
     pause.1
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.1
-    "images/animation/petting_06.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
     pause.2
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.2
-    "images/animation/petting_06.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
     pause.2
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.2
-    "images/animation/petting_06.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
     pause.2
-    "images/animation/petting_05.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
     pause.2
-    "images/animation/petting_04.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_04.png"
     pause.1
-    "images/animation/petting_03.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_03.png"
     pause.1
-    "images/animation/petting_02.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"
     pause.1
-    "images/animation/petting_01.png"
+    "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
     pause 3
     repeat

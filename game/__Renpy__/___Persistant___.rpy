@@ -32,10 +32,16 @@ label __init_variables:
         $ hg_pf_TheGamble_FlagC = False
 
 
-    ###MISC
-    if not hasattr(renpy.store,'unlocked_xmas_deco'): #important!
+    #Misc
+    if not hasattr(renpy.store,'nscale'):
+        #For UI help,temporary add them to your UI element and use the console to quickly get it into place.
+        #Then replace the variables with the number you ended up with.
+        $ nxpos = 0
+        $ nypos = 0
+        $ nscale = 0.5
+
+    if not hasattr(renpy.store,'unlocked_xmas_deco'):
         $ unlocked_7th = False
-        $ found_puzzle_1 = False
         $ charName = "genie"
         $ unlocked_xmas_deco = False
 
@@ -66,7 +72,7 @@ label __init_variables:
         $ susan_scaleratio = 2
         $ cho_scaleratio = 2
 
-    ###CGs
+    #CGs
     if not hasattr(renpy.store,'ccg_folder'): #important!
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
@@ -96,6 +102,9 @@ label __init_variables:
     if not hasattr(renpy.store,'reset_cho_content'):
         $ reset_luna_content = False
         $ reset_cho_content = False
+
+    #Rooms
+    call room_objects_init
 
     #Genie Init
     call genie_init
@@ -135,9 +144,10 @@ label __init_variables:
     #Wardrobe
     call wardrobe_init
 
-    #Store
+    #Items
     call store_init
     call store_items_init
+    call quest_items_init
 
     #Minigames & Mirror Stories
     call dark_room_init
@@ -146,11 +156,17 @@ label __init_variables:
     call cheats_init
 
 
-
-    ### Do not add anything after this line !!!
-
-
-    #Update or Reset Persistants
-    call update_persistants # Reset/update old vars for a specific update here! To make it compatible with older saves/prevent crashes!
+    #Hidden Blowjob
+    $ hg_hidden_blowjob_character_list = ["snape"]
+    if luna_unlocked and luna_reverted:
+        $ hg_hidden_blowjob_character_list.append("luna")
+    #if astoria_unlocked:
+    #    $ hg_hidden_blowjob_character_list.append("astoria")
+    #if susan_unlocked:
+    #    $ hg_hidden_blowjob_character_list.append("susan")
+    #if cho_unlocked:
+    #    $ hg_hidden_blowjob_character_list.append("cho")
+    if tonks_unlocked:
+        $ hg_hidden_blowjob_character_list.append("tonks")
 
     return

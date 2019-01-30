@@ -253,21 +253,21 @@ label her_init:
 
 
         #Piercings
-        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/base/blank.png"
+        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/blank.png"
         $ h_ear_piercing             = "blank"
         $ h_ear_piercing_color       = "base"
 
-        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/base/blank.png"
+        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/blank.png"
         $ h_nipple_piercing          = "blank"
         $ h_nipple_piercing_color    = "base"
 
-        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/base/blank.png"
+        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/blank.png"
         $ h_belly_piercing           = "blank"
         $ h_belly_piercing_color     = "base"
 
-        $ hermione_intimate_piercing = "characters/hermione/accessories/piercings/base/blank.png"
-        $ h_intimate_piercing        = "blank"
-        $ h_intimate_piercing_color  = "base"
+        $ hermione_genital_piercing  = "characters/hermione/accessories/piercings/blank.png"
+        $ h_genital_piercing         = "blank"
+        $ h_genital_piercing_color   = "base"
 
         #Tattoos
         $ hermione_tattoos_list      = []
@@ -349,7 +349,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_2_g", "top_2_s",
                                        "top_3_g", "top_3_s",
                                        "top_4_g", "top_4_s",
-                                       "top_6_g", "top_6_s"
+                                       "top_6_g", "top_6_s",
                                        "normal_pullover",
                                        "normal_pullover_sexy",
                                        "top_fishnets",
@@ -418,14 +418,18 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "ears_pearls",
                                        "ears_straight",
                                        "ears_rings",
+                                       "ears_gambler",
+                                       "ears_feather_white",
+                                       "ears_feather_black",
                                       ]
     $ tongue_piercings_list         = ["tongue_pearls",
                                       ]
     $ nipple_piercings_list         = ["nipples_pearls",
                                       ]
     $ belly_piercings_list          = ["belly_pearls",
+                                       "belly_gambler",
                                       ]
-    $ intimate_piercings_list       = [
+    $ genital_piercings_list        = [
                                       ]
 
     $ gryffindor_robe_list          = ["robe_1_g",
@@ -471,6 +475,7 @@ label her_progress_init:
         $ hermione_tutoring = False
 
         $ hermione_desperate_done = False
+        $ hermione_favors_convinced = 0
 
         #Names
         $ genie_name = "Sir"
@@ -531,6 +536,9 @@ label her_progress_init:
 
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
+
+    if not hasattr(renpy.store,'gave_hermione_gift') or reset_persistants:
+        $ gave_hermione_gift = False
 
 
     ### Hermione Favours ###

@@ -68,8 +68,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'mr_ev_ADR'):
         $ mr_ev_ADR = mirror_stories(
-                name = "A Dark Room",
-                story_description = "A minigame inspired by the textbased game \"A Dark Room\".",
+                name = "A Dark Room (Incomplete)",
+                story_description = "A minigame inspired by the textbased game \"A Dark Room\".\n>WIP! It is currently incomplete but in a playable state.",
                 start_label = "start_dark_room_game",
                 authors = ["TeamSilver"],
                 categories= ["minigame"],
@@ -88,14 +88,27 @@ label __init_variables:
                 content_characters = []
             )
 
+    if not hasattr(renpy.store,'mr_ev_PaH'):
+        #Story Unlock requirements: Finish the first 3 Wizard Cards challenges.
+        $ mr_ev_PaH = mirror_stories(
+                name = "Previously at Hogwarts",
+                story_description = "Snape tries to find a solution to stifle his anger and finds himself yet again in the Headmasters office.",
+                start_label = "prev_at_hogwarts",
+                authors = ["TeamSilver"],
+                categories= [],
+                ach_desc = "",
+                content_characters = []
+            )
+
     $ mr_evs_list = []
+    $ mr_evs_list.append(mr_ev_PaH)
     $ mr_evs_list.append(mr_ev_AXmasTale)
-    $ mr_evs_list.append(mr_ev_ADR)
     $ mr_evs_list.append(mr_ev_WPIIA)
     $ mr_evs_list.append(mr_ev_GHE)
     $ mr_evs_list.append(mr_ev_ABTTD)
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
+    $ mr_evs_list.append(mr_ev_ADR)
 
     $current_page = 0
 

@@ -456,12 +456,7 @@ label screams_of_rapings:
 
     $ hermione_busy = True
 
-    if daytime:
-        call play_music("day_theme")
-        jump day_resume
-    else:
-        call play_music("night_theme")
-        jump night_resume
+    jump main_room
 
 
 

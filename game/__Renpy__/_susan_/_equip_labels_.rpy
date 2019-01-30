@@ -30,11 +30,12 @@ label update_sus_uniform:
     $ susan_hat            = "characters/susan/accessories/hats/"+str(sus_hat)+".png"
 
     call update_susan_chibi_uniform
-    call update_sus_body
+    call update_susan_body
 
     return
 
-label update_sus_body:
+
+label update_susan_body:
     hide screen susan_main
 
     if susan_wear_top:
@@ -46,11 +47,12 @@ label update_sus_body:
         if sus_bra in ["bra_chain"]:
             $ susan_boobs               = "characters/susan/body/base/boobs_base.png"
         else:
-                $ susan_boobs           = "characters/susan/body/base/boobs_pressed.png"
+            $ susan_boobs               = "characters/susan/body/base/boobs_pressed.png"
     else:
         $ susan_boobs                   = "characters/susan/body/base/boobs_base.png"
 
     return
+
 
 #Hair equip.
 label set_sus_hair(hair=None,color=None):

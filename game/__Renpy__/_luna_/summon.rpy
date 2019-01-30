@@ -21,7 +21,7 @@ label summon_luna:
 
     $ hide_transitions = False
     $ luna_busy = True
-
+    $ gave_luna_gift = True #Remove when adding gift texts!
     menu:
         "-Chit Chat-":
             call luna_chitchat
@@ -38,6 +38,7 @@ label summon_luna:
         #    jump luna_requests
         "-Wardrobe-": # if luna_wardrobe_unlocked:
             $ active_girl = "luna"
+            $ ll_quirky_muggle_ITEM.unlocked = True #Temporary unlock. Will be a random clothing event eventually.
 
             call load_luna_clothing_saves
 
@@ -49,6 +50,72 @@ label summon_luna:
             $ hide_transitions = True
             call lun_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
+
+        "-Gifts-" if not gave_luna_gift:
+            $ current_category = None
+
+            label luna_gift_menu:
+
+            python:
+
+                category_list = []
+                category_list.append("ui_gifts")
+                #category_list.append("ui_quest_items")
+
+                if current_category == None:
+                    current_category = category_list[0]
+                    category_choice = category_list[0]
+
+                item_list = []
+                if current_category == "ui_gifts":
+                    menu_title = "Gift Items"
+                    item_list.extend(candy_gift_list)
+                    item_list.extend(mag_gift_list)
+                    item_list.extend(drink_gift_list)
+                    item_list.extend(toy_gift_list)
+                if current_category == "ui_quest_items":
+                    menu_title = "Quest Items"
+                    item_list.extend(toy_gift_list)
+
+                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+
+            $ _return = ui.interact()
+
+            hide screen bottom_menu
+            if category_choice != current_category:
+                $ current_category = _return
+
+            elif isinstance(_return, item_class):
+                if _return.number > 0:
+                    call give_lun_gift(_return)
+                else:
+                    ">You don't own this item."
+                    jump luna_gift_menu
+
+                if lun_mood != 0:
+                    jump luna_gift_menu
+                else:
+                    jump luna_requests
+
+            elif _return == "Close":
+                $ current_page = 0
+                $ category_choice = None
+                hide screen bottom_menu
+                with d3
+
+                jump luna_requests
+
+            elif _return == "inc":
+                $ current_page += 1
+            elif _return == "dec":
+                $ current_page += -1
+
+            jump luna_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_luna_gift:
+            "Not yet added. WIP!"
+            #m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump luna_requests
 
         "-Never mind-":
 

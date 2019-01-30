@@ -11,29 +11,60 @@ init -1 python hide:v
 
     config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.
 
+    config.gl_enable = True # Enable openGL acceleration
+    config.load_before_transition = True #Preload assets (images, sounds etc.) before transition
+    #config.missing_image_callback = LABEL #This function can be used to display the default image in case of missing file
+    #config.missing_label_callback = LABEL #This function can be used to default the player to main room in case of missing label
+    config.sound_sample_rate = 48000 #Force bitrate to default gaming rate 48k
+    config.cache_surfaces = False #Cache often used images to RAM
+    config.nearest_neighbor = False #Disable pixel art filtering
+
+    #Set default persistent values
+    if persistent.delwarning == None:
+        persistent.delwarning = True
+        persistent.customcursor = True
+        persistent.autosave = False
+        persistent.ui_hint = True
+
+    #Load custom preference options
+    if persistent.customcursor:
+        config.mouse = { 'default' : [ ('interface/cursor.png', 0, 0)] } # Set custom pointer
+    else:
+        config.mouse = None
+
+    if persistent.autosave: #True if true, false otherwise, still saves upon exit no matter what
+        config.has_autosave = True
+        config.autosave_on_choice = True
+    else:
+        config.has_autosave = False
+        config.autosave_on_choice = False
+    config.autosave_on_quit = True
+
     ## Should we enable the use of developer tools? This should be
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer =True
+    config.developer = "auto" # Will detect if you're using Renpy launcher, if not it will turn off the console
+    config.debug = False # Use ONLY for testing, disable before release
 
     ## These control the width and height of the screen.
 
     # 16:9 = 1080x600
-    # 2:4  = 800x600
+    # 4:3  = 800x600
 
     config.screen_width = 1080 #800
     config.screen_height = 600 #600
 
+    # These control the name and version of the game, that are reported
+    # with tracebacks and other debugging logs.
+
+    config.name = "WT Silver"
+    config.version = "1.35"
+
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Witch Trainer (Silver)"
-
-    # These control the name and version of the game, that are reported
-    # with tracebacks and other debugging logs.
-    config.name = "WT Silver"
-    config.version = "1.34"
+    config.window_title = u"Witch Trainer (Silver) %s" % config.version
 
     #########################################
     # Themes
@@ -356,7 +387,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "WT_Silver_1.34b"
+    build.directory_name = "WT_Silver_%s" % config.version
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,

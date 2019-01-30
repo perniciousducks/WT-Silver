@@ -419,7 +419,7 @@ label hg_breast_molester_3_grabbing:
         m "I see..."
         m "So, you're more like a prostitute then..."
         call her_main("[genie_name]!","angry","wide")
-        call her_main("Prostitutes are getting paid to have sex with men...","angry","wide")
+        call her_main("Prostitutes are paid to have sex with men...","angry","wide")
         call her_main("I'd never do something like that!","upset","closed")
 
         call nar(">You squeeze one of the girl's tits tightly and give the other a couple of firm tugs.")

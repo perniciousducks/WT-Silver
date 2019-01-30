@@ -25,13 +25,11 @@ label door:
     #Screens
     call play_sound("scroll")
     show screen door_menu
-    hide screen points
     with d1
 
     $_return = ui.interact()
 
     hide screen door_menu
-    show screen points
     #Do NOT add a transition here!
 
 
@@ -138,8 +136,8 @@ label door:
 screen door_menu:
     zorder 8
 
-    use close_button
-    use character_select_menu(summon_list, "-Summon-", 812, 23)
+    use top_bar_close_button
+    use character_select_menu(summon_list, "-Summon-", 812, 40)
 
 
 

@@ -40,7 +40,7 @@ label summon_tonks:
             pause.5
             hide screen blkfade
             call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
-            if tonks_wear_top == False or tonks_wear_bottom == False: #Half or completely naked.
+            if tonks_wear_robe == False and tonks_wear_top == False: #Half or completely naked.
                 call ast_main("He--","worried","closed","base","mid")
                 call ast_main("[ast_tonks_name]?!","open","wide","wide","R",trans="hpunch")
                 call ast_main("[ast_genie_name], why is she naked?","scream","closed","worried","mid",trans="hpunch")
@@ -96,6 +96,67 @@ label summon_tonks:
             call nar(">You haven't unlocked this feature yet.")
             jump tonks_requests
 
+        "-Gifts-" if not gave_tonks_gift:
+            $ current_category = None
+
+            label tonks_gift_menu:
+
+            python:
+
+                category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
+                category_list.append("ui_gifts")
+                #category_list.append("ui_quest_items")
+
+                if current_category == None:
+                    current_category = category_list[0]
+                    category_choice = category_list[0]
+
+                item_list = []
+                if current_category == "ui_gifts":
+                    menu_title = "Gift Items"
+                    item_list.extend(candy_gift_list)
+                    item_list.extend(mag_gift_list)
+                    item_list.extend(drink_gift_list)
+                    item_list.extend(toy_gift_list)
+                if current_category == "ui_quest_items":
+                    menu_title = "Quest Items"
+                    item_list.extend(toy_gift_list)
+
+                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+
+            $ _return = ui.interact()
+
+            hide screen bottom_menu
+            if category_choice != current_category:
+                $ current_category = _return
+
+            elif isinstance(_return, item_class):
+                if _return.number > 0:
+                    call give_ton_gift(_return)
+                    jump tonks_requests
+                else:
+                    ">You don't own this item."
+                    jump tonks_gift_menu
+
+            elif _return == "Close":
+                $ current_page = 0
+                $ category_choice = None
+                hide screen bottom_menu
+                with d3
+
+                jump tonks_requests
+
+            elif _return == "inc":
+                $ current_page += 1
+            elif _return == "dec":
+                $ current_page += -1
+
+            jump tonks_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_tonks_gift:
+            m "I already gave her a gift today."
+            jump tonks_requests
+
         "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -141,7 +202,7 @@ label tonks_talk:
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
 
-        "-Get naked!-" if tonks_strip_happened and (tonks_wear_top or tonks_wear_bottom):
+        "-Get naked!-" if tonks_strip_happened and (tonks_wear_top or tonks_wear_bottom or tonks_wear_robe):
             m "Get naked, [tonks_name]!"
             call ton_main("Of course, [ton_genie_name].","horny","base","base","ahegao")
             hide screen tonks_main
@@ -158,7 +219,7 @@ label tonks_talk:
             call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
-        "-Get dressed-" if tonks_strip_happened and not (tonks_wear_top or tonks_wear_bottom):
+        "-Get dressed-" if tonks_strip_happened and not (tonks_wear_top or tonks_wear_bottom or tonks_wear_robe):
             m "Put on some clothes, would you..."
             m "This is a school, after all."
             call ton_main("Of course, [ton_genie_name].","base","base","base","mid")

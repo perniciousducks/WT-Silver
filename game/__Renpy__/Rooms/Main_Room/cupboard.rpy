@@ -4,6 +4,7 @@ label cupboard:
     menu:
         "-Examine the cupboard-" if not cupboard_examined:
             $ cupboard_examined = True
+            $ searched = True
             show screen chair_left #Empty chair near the desk.
             hide screen genie
             call gen_chibi("stand","behind_desk","base",flip=True)
@@ -20,145 +21,8 @@ label cupboard:
             with Dissolve(0.5)
             jump day_main_menu
 
-        "-Rummage through the cupboard-" if not searched and not day == 1:
-            jump rummaging
-        "{color=#858585}-Rummage through the cupboard-{/color}" if searched and not day == 1:
-            call already_did #Message that says that you have searched the cupboard today already.
-            jump cupboard
-
-        "-Tentacle Scroll-" if tentacle_owned:
-            ">Should I use this scroll..."
-            menu:
-                "\"(Yes, let's do it!)\"":
-                    jump tentacle_scene_intro
-                "\"(Not right now.)\"":
-                    jump possessions
-        "-Tentacle Scroll-" if sealed_scroll_ITEM.unlocked and not tentacle_owned:
-            m "It's missing the key ingredient."
-            jump possessions
-
-        "Box with a puzzle on it" if found_puzzle_1 == True and unlocked_7th == False:
-            jump start_slide_puzzle
-
-        #Temporary!
-        "-Doze off-" if daytime and day != 1:
-            jump night_start
-        "-Go to sleep-" if not daytime and day != 1:
-            jump day_start
-
-        "-Jerk Off-" if not day == 1:
-            jump jerk_off
-
-        "-Never mind-":
-            jump day_main_menu
-
-label options_menu:
-    menu:
-        "-Save and Load-":
-            call screen save()
-
-        "-Change Save Name-":
-            jump custom_save
-
-        "-Options-":
-            menu:
-                "-Change Game Difficulty-" if game_difficulty <= 2:
-                    menu:
-                        "-Enable Easy Difficulty-":
-                            $ game_difficulty = 1
-                            $ cheat_reading = True
-                            "Game set to easy difficulty!"
-                            "Increased gold reward from reports and other sources!"
-                            "Rummaging through your cupboard is more rewarding!"
-                            "Snape will be more generous with Slytherin-points!"
-                            "Hermione won't stay mad at you for as long!"
-                            jump day_main_menu
-                        "-Enable Normal Difficulty-":
-                            $ game_difficulty = 2
-                            $ cheat_reading = False
-                            "Game set to normal difficulty!"
-                            jump day_main_menu
-                        "-Back-":
-                            jump day_main_menu
-                "-Replace Chibis with Sprites-" if not use_cgs:
-                    ">The last two personal favours will use sprites now."
-                    $ use_cgs = True
-                    jump options_menu
-                "-Replace Sprites with Chibis-" if use_cgs:
-                    ">The last two personal favours will use chibi animations again."
-                    $ use_cgs = False
-                    jump options_menu
-                "-Back-":
-                    jump options_menu
-
-        "-Cheats-" if cheats_active and game_difficulty <= 2 and day > 1:
-            jump cheats
-
-        "-Bugfix-":
-            menu:
-                "-Reset Everyone's Appearance-":
-                    call reset_hermione_base
-                    call reset_hermione_clothing
-                    call reset_luna_base
-                    call reset_luna_clothing
-                    call reset_astoria_clothing
-                    call reset_susan_clothing
-                    call reset_cho_clothing
-                    call reset_tonks_clothing
-                    ">Appearance of each girl set back to default."
-                    jump options_menu
-                "-Reset ALL Luna content-" if hat_known:
-                    $ reset_luna_content = True
-                    call luna_init
-                    call luna_progress_init
-                    $ reset_luna_content = False
-                    ">Luna content reset!"
-                    jump options_menu
-                "-Never mind-":
-                    jump options_menu
-
-        "-Decorate-" if day != 1:
-            label decorate_room_menu:
-            menu:
-                ">Decorate your place..."
-                "-Xmas decorations-" if unlocked_xmas_deco:
-                    pause.5
-                    hide screen main_room_overlay
-                    $ room_deco = "_deco_1"
-                    $ gen_outfit = "_santa"
-                    show screen main_room_overlay
-                    with d9
-                    pause.5
-                "-Cupboard pinup girl-":
-                    $ cupboard_deco = "_deco_1"
-                    ">Pinup girl added! You'll see it when rummaging through the cupboard."
-                "-Remove deco-":
-                    pause.5
-                    hide screen main_room_overlay
-                    $ room_deco = ""
-                    $ cupboard_deco = ""
-                    $ gen_outfit = ""
-                    show screen main_room_overlay
-                    with d5
-                    pause.5
-                "-All done-":
-                    jump day_main_menu
-            jump decorate_room_menu
-
-        "-Display Characters-" if day != 1:
-            jump summon_characters
-
-        "-Never mind-":
-            jump day_main_menu
-
-label custom_save:
-    $ temp_name = renpy.input("(Please enter the save name.)")
-    $ temp_name = temp_name.strip()
-    if temp_name == "":
-        $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
-    $ save_name = temp_name
-    "Done."
-    jump options_menu
+    if day > 1:
+        jump rummaging
 
 
 
@@ -206,6 +70,20 @@ label rummaging:
 
     # Item Reward.
     $ random_number = renpy.random.randint(1, 5)
+
+    if day >= 26 and deck_unlocked and random_number in [5] and not dumbledore in unlocked_cards:
+        call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.png")
+        $ unlocked_cards += [dumbledore]
+
+        show screen genie
+        hide screen rum_screen
+        hide screen bld1
+        with d3
+
+        if daytime:
+            jump night_start
+        else:
+            jump day_start
 
     if game_difficulty >= 2:               #Normal and hardcore difficulty
         if random_number in [1,2,3,4]: # Found something. 80% chance.

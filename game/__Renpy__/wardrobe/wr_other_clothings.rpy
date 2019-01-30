@@ -220,7 +220,7 @@ label equip_her_body_accessory:
             call screen wardrobe
 
 
-    else: #Remove makeup
+    else:
 
         if wardrobe_chitchat_active:
             hide screen hermione_main
@@ -258,10 +258,22 @@ label equip_her_body_accessory:
             call set_her_body_accessory(body_accessory_choice) #Removes Item
             call her_main(xpos="wardrobe")
             call screen wardrobe
-#
+
 
 #Add Luna Body Accessory Texts
 #Add Astoria Body Accessory Texts
+
+label equip_cho_body_accessory:
+
+    if body_accessory_choice not in cho_body_accs_list:
+        call set_cho_body_accessory(body_accessory_choice)
+        call cho_main(xpos="wardrobe")
+        call screen wardrobe
+
+    else:
+        call set_cho_body_accessory(body_accessory_choice) #Removes Item
+        call cho_main(xpos="wardrobe")
+        call screen wardrobe
 
 ### Stockings Equip ###
 label equip_stockings:
@@ -314,7 +326,7 @@ label equip_sus_stockings:
 
 ### Equip Cho's Stockings ###
 label equip_cho_stockings:
-    call set_cho_stockings(stockings_choice)
+    call set_cho_stockings(stockings_choice, stockings_color_choice)
 
     jump return_to_wardrobe
 

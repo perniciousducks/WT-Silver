@@ -86,7 +86,7 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
 label update_tonks_tongue_piercing(mouth=None):
     if mouth != None:
         if mouth in ["open","horny","open_wide_tongue"]: #Tongue is visible.
-            $ tonks_tongue_piercing = "characters/tonks/accessories/piercings/base/mouth/" +str(ton_tongue_piercing)+ "_" +str(mouth)+ ".png"
+            $ tonks_tongue_piercing = "characters/tonks/accessories/piercings/mouth/" +str(ton_tongue_piercing)+ "_" +str(mouth)+ ".png"
         else:
             $ tonks_tongue_piercing = "blank.png"
     if ton_tongue_piercing == "blank":
@@ -113,6 +113,9 @@ label check_tonks_clothing_upgrades:
         $ upgradable_clothing.append(hg_cheer_r_sexy_ITEM)
     if hg_cheer_h_ITEM.unlocked and not hg_cheer_h_sexy_ITEM.unlocked:
         $ upgradable_clothing.append(hg_cheer_h_sexy_ITEM)
+
+    if ll_stewardess_ITEM.unlocked and not ll_stewardess_short_ITEM.unlocked:
+        $ upgradable_clothing.append(ll_stewardess_short_ITEM)
 
     if ag_costume_lazy_town_ITEM.unlocked and not ag_costume_lazy_town_short_ITEM.unlocked:
         $ upgradable_clothing.append(ag_costume_lazy_town_short_ITEM)

@@ -56,6 +56,71 @@ label summon_cho:
             call cho_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
+        "-Gifts-" if not gave_cho_gift:
+            $ current_category = None
+
+            label cho_gift_menu:
+
+            python:
+
+                category_list = []
+                category_list.append("ui_gifts")
+                #category_list.append("ui_quest_items")
+
+                if current_category == None:
+                    current_category = category_list[0]
+                    category_choice = category_list[0]
+
+                item_list = []
+                if current_category == "ui_gifts":
+                    menu_title = "Gift Items"
+                    item_list.extend(candy_gift_list)
+                    item_list.extend(mag_gift_list)
+                    item_list.extend(drink_gift_list)
+                    item_list.extend(toy_gift_list)
+                if current_category == "ui_quest_items":
+                    menu_title = "Quest Items"
+                    item_list.extend(toy_gift_list)
+
+                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+
+            $ _return = ui.interact()
+
+            hide screen bottom_menu
+            if category_choice != current_category:
+                $ current_category = _return
+
+            elif isinstance(_return, item_class):
+                if _return.number > 0:
+                    call give_cho_gift(_return)
+                else:
+                    ">You don't own this item."
+                    jump cho_gift_menu
+
+                if cho_mood != 0:
+                    jump cho_gift_menu
+                else:
+                    jump cho_requests
+
+            elif _return == "Close":
+                $ current_page = 0
+                $ category_choice = None
+                hide screen bottom_menu
+                with d3
+
+                jump cho_requests
+
+            elif _return == "inc":
+                $ current_page += 1
+            elif _return == "dec":
+                $ current_page += -1
+
+            jump cho_gift_menu
+        "{color=#858585}-Gifts-{/color}" if gave_cho_gift:
+            m "I already gave her a gift today. Don't want to spoil her too much..."
+            jump cho_requests
+
         "-Dismiss Her-":
             call cho_main("Good bye, [cho_genie_name].","smile","base","base","R")
 

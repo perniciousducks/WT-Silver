@@ -2,11 +2,12 @@
 
 label luna_init:
 
-    if not hasattr(renpy.store,'luna_base') or reset_persistants or reset_luna_content:
+    if not hasattr(renpy.store,'luna_breasts') or reset_persistants or reset_luna_content:
         label reset_luna_base:
 
         #Body
         $ luna_base              = "characters/luna/body/base/base_01.png"
+        $ luna_breasts           = "characters/luna/body/breasts/breasts_normal.png"
         $ luna_l_arm             = 1
         $ luna_r_arm             = 1
         $ luna_xpos              = 640
@@ -167,7 +168,7 @@ label luna_init:
         #Accessories
         $ luna_makeup_list         = []
 
-        $ luna_hat                 = "characters/luna/accessories/hats/hair_base/blank.png"
+        $ luna_hat                 = "characters/luna/accessories/hats/hair_playful/blank.png"
         $ lun_hat                     = "blank"
         $ lun_hat_color               = "base"
 
@@ -250,5 +251,8 @@ label luna_progress_init:
         #Names
         $ lun_genie_name = "Old man"
         $ luna_name = "Miss Lovegood"
+
+    if not hasattr(renpy.store,'gave_luna_gift') or reset_persistants:
+        $ gave_luna_gift     = False
 
     return

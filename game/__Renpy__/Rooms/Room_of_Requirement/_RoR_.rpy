@@ -2,10 +2,11 @@
 
 screen room_of_requirement:
     add "images/rooms/room_of_requirement/empty_room.png"
-    add "images/rooms/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/doors/door_idle.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
-    add "images/rooms/main_room/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/candles/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
+
+    add "images/rooms/_objects_/candles/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
     zorder -1
 
 screen room_of_requirement_menu:
@@ -24,8 +25,8 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/door.png"
-        hover "images/rooms/main_room/door_hover.png"
+        idle "images/rooms/_objects_/doors/door_idle.png"
+        hover "images/rooms/_objects_/doors/door_hover.png"
         action [Jump("return_office")]
 
     imagebutton: # Cadle Fire left
@@ -34,8 +35,8 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/candle.png"
-        hover "images/rooms/main_room/candle.png"
+        idle "images/rooms/_objects_/candles/candle.png"
+        hover "images/rooms/_objects_/candles/candle.png"
         action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_2")]
 
     imagebutton: # Cadle Fire Right
@@ -44,8 +45,8 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/candleM.png"
-        hover "images/rooms/main_room/candleM.png"
+        idle "images/rooms/_objects_/candles/candleM.png"
+        hover "images/rooms/_objects_/candles/candleM.png"
         action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_1")]
     zorder -1
 
@@ -71,7 +72,7 @@ label hide_room_req:
     return
 
 label mirror_menu:
-    show screen list_menu(mr_evs_list, "The Unlockable Stories \n {size=12}Short stories written for and by the Witch Trainer community. {/size}")
+    show screen list_menu(mr_evs_list, "Mirror Stories\n{size=9}Short stories written by the Witch Trainer community.{/size}")
 
     $ _return = ui.interact()
 
@@ -99,31 +100,31 @@ screen candle_light_2:
     add "candle_fire_02" xpos 240 ypos 85
 
 screen room_of_req_door:
-    add "images/rooms/room_of_requirement/front_door.png" at fade_in(420, 105, 1)
+    add "images/rooms/_objects_/doors/front_door.png" at fade_in(420, 105, 1)
     zorder -1
 
 screen floor_7th_door:
-    add "images/rooms/room_of_requirement/front_door.png" xpos 420 ypos 105
+    add "images/rooms/_objects_/doors/front_door.png" xpos 420 ypos 105
     zorder -1
 
 screen floor_7th_screen:
     add "images/rooms/room_of_requirement/corridor_edit.png"
     #add "images/rooms/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
     #add "flower_animation" xpos 830 ypos 160 zoom 0.60
-    add "images/rooms/main_room/candle.png" xpos 0 ypos 95
+    add "images/rooms/_objects_/candles/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
-    #add "images/rooms/main_room/candle.png" xpos 300 ypos 95
+    #add "images/rooms/_objects_/candles/candle.png" xpos 300 ypos 95
     #add "candle_fire_01" xpos 300 ypos 95
-    #add "images/rooms/main_room/candle.png" xpos 600 ypos 95
+    #add "images/rooms/_objects_/candles/candle.png" xpos 600 ypos 95
     #add "candle_fire_02" xpos 600 ypos 95
-    add "images/rooms/main_room/candleM.png" xpos 900 ypos 95
+    add "images/rooms/_objects_/candles/candleM.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 800 ypos 105
+    add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 800 ypos 105
     add "fireplace_fire" xpos 575 ypos 60
-    add "images/rooms/room_of_requirement/owlbasin.png" xpos 660 ypos 255 zoom 0.3
+    add "images/rooms/_objects_/deco/owlbasin.png" xpos 660 ypos 255 zoom 0.3
     add "fireplace_fire" xpos 265 ypos 60
-    add "images/rooms/room_of_requirement/owlbasin.png" xpos 350 ypos 255 zoom 0.3
-    add "images/rooms/room_of_requirement/hogwarts_banner.png" xpos 200 ypos 105
+    add "images/rooms/_objects_/deco/owlbasin.png" xpos 350 ypos 255 zoom 0.3
+    add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 200 ypos 105
     zorder -1
 
 #animation of flower for painting maybe?
@@ -160,8 +161,8 @@ screen floor_7th_menu:
     imagebutton:
         xpos 420
         ypos 105
-        idle "images/rooms/room_of_requirement/front_door.png"
-        hover "images/rooms/room_of_requirement/front_door_hover.png"
+        idle "images/rooms/_objects_/doors/front_door.png"
+        hover "images/rooms/_objects_/doors/front_door_hover.png"
         action [Jump("enter_room_of_req")]
     zorder -1
 

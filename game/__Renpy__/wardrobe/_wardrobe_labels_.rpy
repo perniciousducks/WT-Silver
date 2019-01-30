@@ -56,10 +56,17 @@ label reset_wardrobe_vars:
     $ wardrobe_uniform_color          = "base"
     $ wardrobe_tops_color             = "base"
     $ wardrobe_bottoms_color          = "base"
+    $ wardrobe_stockings_color        = "base"
     $ wardrobe_other_clothings_color  = "base"
     $ wardrobe_accessories_color      = "base"
     $ wardrobe_underwear_color        = "base"
     $ wardrobe_outfits_color          = "base"
+
+    #Music
+    if play_wardrobe_music:
+        if not wardrobe_music_active:
+            $ wardrobe_music_active = True
+            call play_music("my_immortal")
 
     return
 
@@ -149,6 +156,16 @@ label wardrobe_update:
         $ wardrobe_page = 7
     if wardrobe_page != 8 and wardrobe_page_choice == 8: #gifts
         $ wardrobe_page = 8
+
+    #Music
+    if play_wardrobe_music:
+        if not wardrobe_music_active:
+            $ wardrobe_music_active = True
+            call play_music("my_immortal")
+    else:
+        if wardrobe_music_active:
+            $ wardrobe_music_active = False
+            call music_block
 
     #Sound Effects
     if add_wardrobe_sound: #False by default. Only happens on a "wardrobe_page" change.
@@ -290,7 +307,7 @@ label wr_ton_clothing_reset:
         $ tonks_wear_top = False
         $ tonks_wear_bottom = False
 
-    call update_ton_uniform
+    call update_tonks_uniform
 
     return
 
@@ -304,6 +321,10 @@ label hide_wardrobe:
 
 label close_wardrobe:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
+    #Music
+    if wardrobe_music_active:
+        $ wardrobe_music_active = False
+        call music_block
 
     if active_girl == "hermione":
         call set_her_face(change="all")
@@ -694,7 +715,7 @@ label her_makeup_toggle:
 
 # Piercings Toggle #
 label her_piercings_toggle:
-    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_intimate_piercing == "blank":
+    if h_ear_piercing == "blank" and h_nipple_piercing == "blank" and h_belly_piercing == "blank" and h_genital_piercing == "blank":
         ">No item equipped."
         call screen wardrobe
     hide screen hermione_main
@@ -750,9 +771,11 @@ label her_tattoos_toggle:
 ## Piercings ##
 label equip_piercing:
     if active_girl == "hermione":
-        call set_her_piercing(piercing_choice, piercing_color_choice)
+        call set_her_piercing(piercing_choice)
+    if active_girl == "cho":
+        call set_cho_piercing(piercing_choice)
     if active_girl == "tonks":
-        call set_ton_piercing(piercing_choice, piercing_color_choice)
+        call set_ton_piercing(piercing_choice)
         call ton_main(mouth="open_wide_tongue", face="horny",xpos="wardrobe",ypos="base")
         call ctc
 

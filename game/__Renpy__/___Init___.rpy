@@ -23,6 +23,13 @@ init -2:
         xpos x
         ypos y
         linear speed alpha 1
+        
+    define flash = Fade(0.1, 0.0, 0.5, color="#fff")    
+        
+    transform move_in(x, speed):
+        xpos x
+        linear speed xpos 0
+        pause speed
 
     transform universal_chibi_walk(x,x2,speed,y): #Universal transform for all chibis
         xpos x

@@ -3,125 +3,143 @@
 #Main Room Screen
 screen main_room:
     if daytime:
-        add "images/rooms/main_room/main_room_day.png"
+        add "images/rooms/_bg_/main_room_day.png"
     else:
-        add "images/rooms/main_room/main_room_night.png"
+        add "images/rooms/_bg_/main_room_night.png"
+        
+    #Posters
+    if poster_OBJ.room_image:
+        add poster_OBJ.get_room_image() xpos poster_OBJ.xpos ypos poster_OBJ.ypos xanchor 0.5 yanchor 0.5
+        
+    if trophy_OBJ.room_image:
+        add trophy_OBJ.get_room_image() xpos trophy_OBJ.xpos ypos trophy_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Door
-    add "images/rooms/main_room/door.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add door_OBJ.get_room_image() xpos door_OBJ.xpos ypos door_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Cupboard
-    add "images/rooms/main_room/cupboard_w_shadow.png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
+    add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Fireplace #Fire gets added separately
-    add "images/rooms/main_room/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
+    add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Candles
-    add "images/rooms/main_room/candle.png" at Position(xpos=350, ypos=160, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/candle.png" at Position(xpos=833, ypos=225, xanchor="center", yanchor="center")
+    add candle_left_OBJ.get_room_image() xpos candle_left_OBJ.xpos ypos candle_left_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add candle_right_OBJ.get_room_image() xpos candle_right_OBJ.xpos ypos candle_right_OBJ.ypos xanchor 0.5 yanchor 0.5
     if not daytime:
-        add "candle_fire_01" xpos 240 ypos 43
-        add "candle_fire_02" xpos 723 ypos 108
+        add "candle_fire_01" xpos candle_left_OBJ.xpos-110 ypos candle_left_OBJ.ypos-117
+        add "candle_fire_02" xpos candle_right_OBJ.xpos-110 ypos candle_right_OBJ.ypos-117
 
-    #Phoenix #Food & Feather gets added separately.
-    add "images/rooms/main_room/phoenix.png" at Position(xpos=540, ypos=225, xanchor="center", yanchor="center")
+    #Phoenix Food & Feather gets added separately.
+    add phoenix_OBJ.get_room_image() xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     zorder 0
 
 
-
 #Main Room Overlay - (layer is on top of main_room_menu screen)
 screen main_room_overlay:
+    tag room_overlay_screen
 
     #Decorations
-    if room_deco != "":
-        add "images/rooms/main_room/door" +str(room_deco)+ ".png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
-        add "images/rooms/main_room/cupboard" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
-        add "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png" at Position(xpos=260, ypos=280, xanchor="center", yanchor="center")
-        add "images/rooms/main_room/fireplace" +str(room_deco)+ ".png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
-        #The package & the cupboard pinup are added extra (imagebutton or on their own screen).
+    for i in deco_overlay_list:
+        add i.get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
 
     #Fireplace
-    if day >= 25 and not daytime and (1 < weather_gen < 4) and (found_puzzle_1 == False and unlocked_7th == False):
+    if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
         use fireplace_glow
 
-    zorder 2
+    zorder 3#2
 
 ### Main Room Menu Screen ###
 screen main_room_menu:
+    #Hotkeys
+    use hotkeys_main
+
     tag room_screen
     imagebutton: # DOOR
-        xpos 898
-        ypos 315
+        xpos door_OBJ.xpos
+        ypos door_OBJ.ypos
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/door.png"
-        hover "images/rooms/main_room/door_hover.png"
-        action [Hide("main_room_menu"), Jump("door")]
+        idle door_OBJ.get_idle_image()
+        hover door_OBJ.get_hover_image()
+        hovered SetVariable("ui_hint", "Summon")
+        unhovered SetVariable("ui_hint", "")
+        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("door")]
 
     #Scrolls
     if renpy.variant('android'):
         imagemap:
-            xpos 260
-            ypos 280
+            xpos cupboard_top_OBJ.xpos
+            ypos cupboard_top_OBJ.ypos
             xanchor "center"
             yanchor "center"
-            ground "images/rooms/main_room/cupboard/idle_scroll.png"
-            hover "images/rooms/main_room/cupboard/hover_scroll.png"
-            hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("read_scroll_menu")]
+            ground cupboard_top_OBJ.get_idle_image()
+            if store_intro_done:
+                hover cupboard_top_OBJ.get_hover_image()
+                hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("read_scroll_menu")]
     else:
         imagebutton: # CUPBOARD SCROLL
-            xpos 260
-            ypos 280
+            xpos cupboard_top_OBJ.xpos
+            ypos cupboard_top_OBJ.ypos
             focus_mask True
             xanchor "center"
             yanchor "center"
-            idle "images/rooms/main_room/cupboard/idle_scroll.png"
-            hover "images/rooms/main_room/cupboard/hover_scroll.png"
-            action [Hide("main_room_menu"), Jump("read_scroll_menu")]
+            idle cupboard_top_OBJ.get_idle_image()
+            if store_intro_done:
+                hover cupboard_top_OBJ.get_hover_image()
+                hovered SetVariable("ui_hint", "Scrolls")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_scroll_menu")]
 
     #Cupboard
     if renpy.variant('android'):
         imagemap:
-           xpos 260
-           ypos 280
-           xanchor "center"
-           yanchor "center"
-           ground "images/rooms/main_room/cupboard/cupboard_idle.png"
-           hover "images/rooms/main_room/cupboard/cupboard_hover.png"
-           hotspot(73, 156, 72, 133) action [Hide("main_room_menu"), Jump("cupboard")]
+            xpos cupboard_OBJ.xpos
+            ypos cupboard_OBJ.ypos
+            xanchor "center"
+            yanchor "center"
+            ground cupboard_OBJ.get_idle_image()
+            if not searched:
+                hover cupboard_OBJ.get_hover_image()
+                hotspot(73, 156, 72, 133) action [Hide("main_room_menu"), Jump("cupboard")]
     else:
         imagebutton:
-            xpos 260
-            ypos 280
+            xpos cupboard_OBJ.xpos
+            ypos cupboard_OBJ.ypos
             focus_mask True
             xanchor "center"
             yanchor "center"
-            idle "images/rooms/main_room/cupboard/cupboard_idle.png"
-            hover "images/rooms/main_room/cupboard/cupboard_hover.png"
-            action [Hide("main_room_menu"), Jump("cupboard")]
+            idle cupboard_OBJ.get_idle_image()
+            if not searched:
+                hover cupboard_OBJ.get_hover_image()
+                hovered SetVariable("ui_hint", "Rummage")
+                unhovered SetVariable("ui_hint", "")
+                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("cupboard")]
 
     #Hat
-    if renpy.variant('android'):
-        imagemap:
-            xpos 260
-            ypos 280
-            xanchor "center"
-            yanchor "center"
-            ground "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png"
-            hover "images/rooms/main_room/cupboard/hover_hat.png"
-            hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
-    else:
-        imagebutton:
-            xpos 260
-            ypos 280
-            focus_mask True
-            xanchor "center"
-            yanchor "center"
-            idle "images/rooms/main_room/cupboard/hat_idle" +str(room_deco)+ ".png"
-            hover "images/rooms/main_room/cupboard/hat_hover" +str(room_deco)+ ".png"
-            action [Hide("main_room_menu"), Jump("options_menu")]
+    #if renpy.variant('android'):
+    #    imagemap:
+    #        xpos hat_OBJ.xpos
+    #        ypos hat_OBJ.ypos
+    #        xanchor "center"
+    #        yanchor "center"
+    #        ground hat_OBJ.get_idle_image()
+    #        hover hat_OBJ.get_hover_image()
+    #        hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
+    #else:
+    #    imagebutton:
+    #        xpos hat_OBJ.xpos
+    #        ypos hat_OBJ.ypos
+    #        focus_mask True
+    #        xanchor "center"
+    #        yanchor "center"
+    #        idle hat_OBJ.get_idle_image()
+    #        hover hat_OBJ.get_hover_image()
+    #        hovered SetVariable("ui_hint", "Hat")
+    #        unhovered SetVariable("ui_hint", "")
+    #        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("options_menu")]
 
 #    imagebutton: # CUPBOARD LEFT
 #        xpos 120+140
@@ -156,24 +174,28 @@ screen main_room_menu:
     #Mail
     if package_is_here:
         imagebutton: # THE PACKAGE
-            xpos 400
-            ypos 235
+            xpos package_OBJ.xpos
+            ypos package_OBJ.ypos
             xanchor "center"
             yanchor "center"
-            idle "images/rooms/main_room/owl_06" +str(room_deco)+ ".png"
-            hover "images/rooms/main_room/owl_06_2" +str(room_deco)+ ".png"
-            action [Hide("main_room_menu"), Hide("package"), Jump("get_package")]
+            idle package_OBJ.get_idle_image()
+            hover package_OBJ.get_hover_image()
+            hovered SetVariable("ui_hint", "Open package")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Hide("package"), Jump("get_package")]
 
     if letter_queue_list != []:
         imagebutton:
-            xpos 455
-            ypos 270
+            xpos owl_OBJ.xpos
+            ypos owl_OBJ.ypos
             focus_mask True
             xanchor "center"
             yanchor "center"
-            idle "owl_with_letter_blink"
-            hover "images/rooms/main_room/owl_04.png"
-            action [Hide("main_room_menu"), Jump("read_letter")]
+            idle owl_OBJ.get_idle_image()
+            hover owl_OBJ.get_hover_image()
+            hovered SetVariable("ui_hint", "Check mail")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_letter")]
 
     #Genie
     if renpy.variant('android'):
@@ -196,42 +218,59 @@ screen main_room_menu:
             yanchor "center"
             idle "newanimation"
             hover "images/rooms/main_room/11_genie_02.png"
-            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ]
-            unhovered [Hide("gui_tooltip")]
-            action [Hide("main_room_menu"), Jump("desk")]
+            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210), SetVariable("ui_hint", "Open desk menu") ]
+            unhovered [Hide("gui_tooltip"), SetVariable("ui_hint", "")]
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("desk")]
 
     #Phoenix
     imagebutton:
-        xpos 540
-        ypos 225
+        xpos phoenix_OBJ.xpos
+        ypos phoenix_OBJ.ypos
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "pho_01"
+        idle phoenix_OBJ.get_idle_image()
         if not phoenix_is_petted:
-            hover "images/rooms/main_room/phoenix_hover.png"
-            action [Hide("main_room_menu"), Jump("phoenix")]
+            hover phoenix_OBJ.get_hover_image()
+            hovered SetVariable("ui_hint", "Feed/Pet")
+            unhovered SetVariable("ui_hint", "")
+            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("phoenix")]
 
     #Fireplace
     imagebutton:
-        xpos 693
-        ypos 277
+        xpos fireplace_OBJ.xpos
+        ypos fireplace_OBJ.ypos
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/main_room/fireplace.png"
-        hover "images/rooms/main_room/fireplace_hover.png"
-        action [Hide("main_room_menu"), Jump("fireplace")]
+        idle fireplace_OBJ.get_idle_image()
+        hover fireplace_OBJ.get_hover_image()
+        hovered SetVariable("ui_hint", "Light fire")
+        unhovered SetVariable("ui_hint", "")
+        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("fireplace")]
 
+    # Old buttons
+    #
+    #
     #Stats
-    imagebutton:
-        xpos 830
-        ypos 16
-        xanchor "center"
-        yanchor "center"
-        idle "interface/points/Stats_Button.png"
-        hover "interface/points/Stats_Button_Hover.png"
-        action [Hide("main_room_menu"), Jump("open_stat_menu")]
+    #imagebutton:
+    #    xpos 830
+    #    ypos 16
+    #    xanchor "center"
+    #    yanchor "center"
+    #    idle "interface/points/Stats_Button.png"
+    #    hover "interface/points/Stats_Button_Hover.png"
+    #    action [Hide("main_room_menu"), Jump("open_stat_menu")]
 
+
+    #Inventory
+    #imagebutton:
+    #    xpos 830+77
+    #    ypos 16
+    #    xanchor "center"
+    #    yanchor "center"
+    #    idle "interface/points/Inventory_Button.png"
+    #    hover "interface/points/Inventory_Button_Hover.png"
+    #    action [Hide("main_room_menu"), Jump("open_inventory_menu")]
 
     zorder 1

@@ -8,9 +8,14 @@ label tonks_init:
         #Body
         $ tonks_base                = "characters/tonks/body/base/base_01.png"
         $ tonks_boobs               = "characters/tonks/body/base/boobs_0.png"
+
         $ tonks_l_arm               = "characters/tonks/body/arms/l_arm_hips.png"
-        $ tonks_l_hand              = "characters/tonks/body/arms/l_hand_hips.png"
-        $ tonks_r_arm               = "characters/tonks/body/arms/r_arm_up.png"
+        $ tonks_l_arm_overlay       = "characters/tonks/body/arms/l_arm_hips_overlay.png"
+        $ tonks_r_arm               = "characters/tonks/body/arms/r_arm_hips.png"
+        $ tonks_r_arm_overlay       = "characters/tonks/body/arms/r_arm_hips_overlay.png"
+        $ tonks_pose                = None # None when right arm is on hips.
+        $ tonks_arm_pose            = ""   # Empty when right arm is on hips.
+
         $ tonks_xpos                = 600
         $ tonks_ypos                = 0
         $ tonks_zorder              = 5
@@ -94,6 +99,7 @@ label tonks_init:
         $ tonks_badges                 = False
 
         $ tonks_wear_pubic_hair        = False
+        $ tonks_wear_buttplug          = False
         $ tonks_wear_piercings         = True
         $ tonks_wear_tattoos           = False
         $ tonks_wear_mask              = False
@@ -118,8 +124,8 @@ label tonks_init:
         $ ton_bra                     = "blank"
         $ ton_bra_color               = "base"
 
-        $ tonks_panties             = "characters/tonks/clothes/underwear/base/blank.png"
-        $ ton_panties                 = "blank"
+        $ tonks_panties             = "characters/tonks/clothes/underwear/base/panties_base.png"
+        $ ton_panties                 = "panties_base"
         $ ton_panties_color           = "base"
 
         $ tonks_onepiece            = "characters/tonks/clothes/onepieces/blank.png"
@@ -176,25 +182,25 @@ label tonks_init:
         $ ton_gag                     = "gag"
 
         #Piercings
-        $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/base/ears_rings.png"
+        $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/ears_rings.png"
         $ ton_ear_piercing            = "ears_rings"
         $ ton_ear_piercing_color      = "base"
 
-        $ tonks_tongue_piercing     = "characters/tonks/accessories/piercings/base/blank.png"
+        $ tonks_tongue_piercing     = "characters/tonks/accessories/piercings/blank.png"
         $ ton_tongue_piercing         = "tongue_pearls"
         $ ton_tongue_piercing_color   = "base"
 
-        $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/base/nipples_pearls.png"
+        $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/nipples_pearls.png"
         $ ton_nipple_piercing         = "nipples_pearls"
         $ ton_nipple_piercing_color   = "base"
 
-        $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/base/belly_pearls.png"
+        $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/belly_pearls.png"
         $ ton_belly_piercing          = "belly_pearls"
         $ ton_belly_piercing_color    = "base"
 
-        $ tonks_intimate_piercing   = "characters/tonks/accessories/piercings/base/blank.png"
-        $ ton_intimate_piercing       = "blank"
-        $ ton_intimate_piercing_color = "base"
+        $ tonks_genital_piercing    = "characters/tonks/accessories/piercings/blank.png"
+        $ ton_genital_piercing        = "blank"
+        $ ton_genital_piercing_color  = "base"
 
         call reset_ton_transparency
 
@@ -262,5 +268,8 @@ label tonks_progress_init:
         $ ton_clothing_upgrades = 0
         $ ton_astoria_date_counter = 0
         $ ton_hermione_date_counter = 0
+
+    if not hasattr(renpy.store,'gave_tonks_gift') or reset_persistants:
+        $ gave_tonks_gift    = False
 
     return

@@ -20,11 +20,17 @@ label cho_random_clothing:
 
             if not cho_wardrobe_unlocked and cho_quidd_points >= 3:
                 $ cc_muggle_hot_ITEM.unlocked = True
-                $ hermione_door_event_happened = True #Hermione won't greet you again.
 
+                $ cho_request_wear_bra        = False
+                $ cho_request_wear_panties    = False
+                $ cho_request_wear_stockings  = True
+
+                $ cho_wear_bra         = False
+                $ cho_wear_panties     = False
+                $ cho_wear_stockings   = True
                 $ cho_wear_neckwear    = False
                 $ cho_wear_gloves      = False
-                $ cho_wear_stockings   = True
+                $ cho_wear_robe        = False
                 $ c_top = "top_tanktop_2"
                 $ c_top_color = "base"
                 $ c_bottom = "pants_jeans_short"
@@ -62,7 +68,62 @@ label cho_random_clothing:
                 call cho_main(xpos="base",ypos="base") #Resets menu xpos.
 
                 return
+            pass
 
+        if daytime and random_number in [6,7,8,9,10]:
+
+            if not cc_party_slut_ITEM.unlocked:
+                $ cc_party_slut_ITEM.unlocked = True
+
+                $ cho_request_wear_top       = False
+                $ cho_request_wear_bra       = True
+                $ cho_request_wear_bottom    = True
+                $ cho_request_wear_panties   = False
+
+                $ cho_wear_top         = False
+                $ cho_wear_bra         = True
+                $ cho_wear_bottom      = True
+                $ cho_wear_panties     = False
+                $ cho_wear_neckwear    = False
+                $ cho_wear_gloves      = False
+                $ cho_wear_stockings   = False
+                $ cho_wear_robe        = False
+                $ c_bra = "bra_party"
+                $ c_bra_color = "base"
+                $ c_bottom = "skirt_party"
+                $ c_bottom_color = "base"
+
+                call update_cho_uniform
+                #call cho_chibi("stand","mid","base")
+
+                pause.2
+                call cho_main("","base","base","base","mid",xpos="mid",ypos="base")
+                call ctc
+
+                g9 "Wow girl, the hell are you wearing?"
+                call cho_main("It's my party outfit...","soft","base","raised","down")
+                m "(...)"
+                call cho_main("Is it too much?","quiver","wink","raised","mid")
+                m "Too much? Are you really asking me that?"
+                m "If I'm truely honest with you-"
+                g4 "Your body, in an outfit like that,..."
+                g4 "Makes me want to whip out my cock and jerk off like a mad-man! You little slut!"
+                call cho_main("Oh...","horny","base","raised","down")
+                call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...","soft","base","sad","R")
+                call cho_main("I'm glad to see it working.","smile","suspicious","base","mid")
+                call cho_main("Jerk off any time you want, [cho_genie_name]!","horny","suspicious","angry","mid")
+                g4 "Hngggh-!!!"
+                hide screen cho_chang
+                with d3
+                call cho_main(xpos="base",ypos="base")
+
+
+                #Unlocks rewards.
+                call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_party_slut_ITEM)
+
+                call cho_main(xpos="base",ypos="base",face="horny") #Resets menu xpos.
+
+                return
             pass
 
     call load_cho_clothing_saves

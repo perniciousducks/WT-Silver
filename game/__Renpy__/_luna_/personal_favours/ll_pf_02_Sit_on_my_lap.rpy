@@ -1003,7 +1003,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call cum_block
 
                         g4 "Argh!"
-                        call lun_main(".....","mad","down","base","sad",tears="crying")
+                        call lun_main(".....","mad","down","base","down",tears="crying")
 
                         show screen blkfade
                         hide screen luna_main
@@ -1268,7 +1268,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         m "ah... yes..."
         call her_main("probably...","base","down")
         call her_main("but are you sure it's just him who wants a show?","base","suspicious")
-        call lun_main("what?","open","wide","sad","base", cheeks="blush")
+        call lun_main("what?","open","wide","sad","mid", cheeks="blush")
         ">Luna starts grinding even faster."
         call lun_main("what are you talking about?","normal","wide","sad","down", cheeks="blush")
         call her_main("from the looks of it you don't need any help cranking a nice big load out of [genie_name]...","open","down")
@@ -1279,18 +1279,18 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call lun_main("...","normal","mad","sad","R", cheeks="blush")
         call lun_main("Fine...","upset","mad","sad","down", cheeks="blush")
         call her_main("say it...","base","suspicious")
-        call lun_main("I want to look at your boobs alright!","open","happyCl","sad","base", cheeks="blush")
+        call lun_main("I want to look at your boobs alright!","open","happyCl","sad","mid", cheeks="blush")
         ">hermione quickly removes her top and bra."
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
         call update_her_uniform
         call her_main("see, that's not so hard now is it?","base","suspicious")
-        call lun_main("no...","base","seductive","sad","base", cheeks="blush")
+        call lun_main("no...","base","seductive","sad","mid", cheeks="blush")
         ">Luna slows down, but starts grinding her mound hard against your cock."
         call her_main("now why don't you too perverts just sit back and relax...","base","down")
         call set_her_action("lift_breasts")
         call her_main("while I give you something fun to look at ok?","grin","baseL")
-        call lun_main("yes hermione...","base","base","sad","base", cheeks="blush")
+        call lun_main("yes hermione...","base","base","sad","mid", cheeks="blush")
         m "Yes..."
         call lun_main("mmmmm, he's so hard...","base","seductive","sad","down", cheeks="blush")
         call set_her_action("pinch")

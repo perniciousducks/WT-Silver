@@ -68,7 +68,7 @@ label set_lun_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         elif pupils in ["disgusted"]:
             $ temp_pupils   = renpy.random.choice(["mid","L","R","down"])
         elif pupils in ["angry"]:
-            $ temp_pupils   = renpy.random.choice(["mid","stareL"])
+            $ temp_pupils   = renpy.random.choice(["mid"])
 
 
     #Completely random (out of all available layers.)
@@ -107,6 +107,7 @@ label luna_face_layers:
                            "open",   "open_tongue", "open_wide_tongue",
                            "pout",
                            "scream",
+                           "shocked",
                            "silly",
                            "smile",  "smile_large",
                            "soft",
@@ -136,9 +137,7 @@ label luna_face_layers:
                           "empty",
                           "L",
                           "mid",
-                          "nose",
                           "R",
-                          "stareL",
                           "up"
                           ]
 

@@ -1,6 +1,6 @@
 label desk:
     hide screen main_room_menu
-
+    
     if day == 1:
         if not desk_examined:
             menu:
@@ -8,6 +8,9 @@ label desk:
                     $ desk_examined = True
                     m "A desk of some sort..."
         jump day_main_menu
+
+    #Define hints variable
+    $ ball_hint = None
 
     #Updates
     $ summon_list = []
@@ -25,13 +28,11 @@ label desk:
     #Screens
     call play_sound("scroll")
     show screen desk_menu
-    hide screen points
     with d1
 
     $_return = ui.interact()
 
     hide screen desk_menu
-    show screen points
     #Do NOT add a transition here!
 
 
@@ -134,34 +135,147 @@ label desk:
     $ renpy.jump(_return)
 
 
+screen desk_empty:
+    tag desk_interface
+
+    zorder 5
+
+    #add "interface/desk/_bg_.png"
+    add "interface/desk/_hands_.png"
+    if not daytime:
+        add "interface/desk/_night_overlay_.png"
 
 screen desk_menu:
-    zorder 8
+    tag desk_interface
 
-    add "images/backgrounds/desk.png"
-    use close_button
+    zorder 5
+
+    #Background
+    add "interface/desk/_bg_.png"
 
     if map_unlocked:
         use map_screen
         use map_screen_characters
 
-    imagebutton:
-        xpos -5
-        ypos 100
-        focus_mask True
-        idle "interface/map/desk_book_idle.png"
-        hover "interface/map/desk_book_hover.png"
-        action Return("read_book_menu")
+    add "interface/desk/_hands_.png" xpos 0 ypos -30
 
+    use crystal_ball
+    use watch
+
+    #Book
+    if store_intro_done:
+        add "interface/desk/book.png"
+        imagebutton:
+            #xpos -5
+            #ypos 100
+            focus_mask True
+            idle "interface/desk/book.png"
+            hover "interface/desk/book_hover.png"
+            hovered SetVariable("ball_hint", "book")
+            unhovered SetVariable("ball_hint", None)
+            action Return("read_book_menu")
+
+    #Tissue Box
+    add "interface/desk/tissues.png"
     imagebutton:
-        xpos -40
-        ypos 260
+        xpos 0
+        ypos 0
         focus_mask True
-        idle "interface/map/desk_letters_idle.png"
-        if letter_paperwork_unlock_OBJ.read: #Work unlocked
-            hover "interface/map/desk_letters_hover.png"
+        idle "interface/desk/tissues.png"
+        hover "interface/desk/tissues_hover.png"
+        hovered SetVariable("ball_hint", "jerk_off")
+        unhovered SetVariable("ball_hint", None)
+        action Return("jerk_off")
+
+    #Work
+    if letter_paperwork_unlock_OBJ.read:
+        imagebutton:
+            xpos 0
+            ypos 0
+            focus_mask True
+            idle "interface/desk/work.png"
+            hover "interface/desk/work_hover.png"
+            hovered SetVariable("ball_hint", "work")
+            unhovered SetVariable("ball_hint", None)
             action Return("paperwork")
 
+    #Cards
+    if deck_unlocked: #Or letter_deck.read #Day 26+
+        imagebutton:
+            #xpos -40
+            #ypos 260
+            focus_mask True
+            idle "interface/desk/cards.png"
+            hover "interface/desk/cards_hover.png"
+            hovered SetVariable("ball_hint", "cards")
+            unhovered SetVariable("ball_hint", None)
+            action Return("deck_builder")
+
+    #exit
+    imagebutton:
+        xanchor 0.5
+        yanchor 1.0
+        xpos 510
+        ypos 600
+        idle "interface/desk/exit_mask.png"
+        hover "interface/desk/exit.png"
+        hovered SetVariable("ball_hint", "exit")
+        unhovered SetVariable("ball_hint", None)
+        action Return("Close")
+
+    #Night Overlay
+    if not daytime:
+        add "interface/desk/_night_overlay_.png"
+
+    use close_button #Temporary
+
+
+screen crystal_ball:
+    tag desk_interface
+
+    zorder 8
+
+    add "interface/desk/crystal_ball.png"
+    if not ball_hint == None:
+        add "interface/desk/hints/glow.png" xpos 308
+        add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 393 xanchor 0.5
+
+screen watch:
+    #Day/Night Clock
+    add "interface/desk/watch.png"
+    imagebutton:
+        xpos 0
+        ypos 0
+        focus_mask True
+        idle "interface/desk/watch.png"
+        hover "interface/desk/watch_hover.png"
+        unhovered SetVariable("ball_hint", None)
+        if daytime:
+            hovered SetVariable("ball_hint", "doze_off")
+            action Return("night_start") #Skip to night
+        else:
+            hovered SetVariable("ball_hint", "sleep")
+            action Return("day_start") #Skip to next day
+
+    $ watch_x = 670
+    $ watch_y = 35
+
+    if raining:
+        add "interface/desk/watch/rain.png" xpos watch_x ypos watch_y
+    elif snowing or blizzard:
+        add "interface/desk/watch/snow.png" xpos watch_x ypos watch_y
+    elif storm:
+        add "interface/desk/watch/storm.png" xpos watch_x ypos watch_y
+    else:
+        if daytime:
+            add "interface/desk/watch/sun.png" xpos watch_x ypos watch_y
+        else:
+            add "interface/desk/watch/moon.png" xpos watch_x ypos watch_y
+
+    if daytime:
+        add "interface/desk/watch/day.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
+    else:
+        add "interface/desk/watch/night.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
 
 
 
@@ -214,7 +328,10 @@ label paperwork:
             call speedwriting_label
     if speed_writing >= 4:
             call speedwriting_label
+            call report_chapters_check #Checks whether or not the completed chapter was the final one.
+
             call concentration_label
+
 #    if speed_writing == 5:
 #        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for experts.\"" # 1/2 chance of it to pop up.
 #        if speedwriting_check == 1:
@@ -235,42 +352,53 @@ label paperwork:
     else:
         jump day_start
 
-###
+
+
+#Completed one chapter
 label report_chapters_check:
     if report_chapters >= 4:
         ">You've completed a report."
         $ report_chapters = 0
         $ finished_report += 1
+
     return
-### FULL MOON BONUS ###
+
+#Full moon bonus
 label f_moon_bonus:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     $ report_chapters += 1
     ">The Full moon makes you feel more productive.\n>You finished [report_chapters] chapters so far."
+
     return
-###
+
+#Finished a chapter
 label finished_working_chapter:
     $ report_chapters += 1
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     ">You finished [report_chapters] chapters so far."
+
     return
-### CONCENTRATION
+
+#Concentration
 label concentration_label:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     $ report_chapters += 1
     ">You maintain perfect concentration during your work.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+
     return
-### SPEEDWRITING
+
+#Speed writing
 label speedwriting_label:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
     $ report_chapters += 1
     ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+
     return

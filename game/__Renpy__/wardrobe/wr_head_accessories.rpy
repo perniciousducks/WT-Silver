@@ -326,7 +326,7 @@ label equip_her_head_accessory:
                 call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
-            if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
+            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -347,7 +347,7 @@ label equip_her_head_accessory:
                         ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
+            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -399,7 +399,7 @@ label remove_head_accessory: #Remove/Toggle off
                 call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
-            if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
+            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -413,7 +413,7 @@ label remove_head_accessory: #Remove/Toggle off
                 call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
-            if head_accessory_choice in ["maid_hat","witch_hat","tiara"]:
+            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -428,7 +428,7 @@ label equip_lun_head_accessory:
         call set_lun_ears(head_accessory_choice)
     if head_accessory_choice in ["spectrespecs"]: #Glasses
         call set_lun_glasses(head_accessory_choice)
-    if head_accessory_choice in []: #Hat
+    if head_accessory_choice in ["hat_stewardess"]: #Hat
         call set_lun_hat(head_accessory_choice)
 
     jump return_to_wardrobe
@@ -461,7 +461,7 @@ label equip_cho_head_accessory:
         call set_cho_ears(head_accessory_choice)
     if head_accessory_choice in []:
         call set_cho_glasses(head_accessory_choice)
-    if head_accessory_choice in ["hat_witch","bow_sailor_yellow","bow_sailor_blue","bow_sailor_dark_blue","bow_sailor_green","bow_sailor_red"]:
+    if head_accessory_choice in ["hat_witch","snitch","bow_sailor_yellow","bow_sailor_blue","bow_sailor_dark_blue","bow_sailor_green","bow_sailor_red"]:
         call set_cho_hat(head_accessory_choice)
 
     jump return_to_wardrobe

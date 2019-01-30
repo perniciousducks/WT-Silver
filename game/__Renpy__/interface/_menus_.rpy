@@ -215,10 +215,70 @@ screen icon_menu_item(menu_item, xpos=0, ypos=0):
             else:
                 add grayTint(menu_item.get_image() ) xalign 0.5 yalign 0.5 zoom image_zoom
 
-            #text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row) #Should we move this here?
+            if menu_item.number > 0:
+                text "{color=#ffffff}" +str(menu_item.number)+ "{/color}" xalign 0.5 xpos 15 ypos -80
 
 
-#Clothing Menu #Customizable
+
+# Bottom Menu #Customizable
+screen bottom_menu(menu_items, categories, title, xpos, ypos):
+    $ items_shown= 9
+    $ UI_xpos_offset = xpos
+    $ UI_ypos_offset = ypos
+    zorder 5
+
+    #Close Button
+    use top_bar_close_button
+
+    #Main Window
+    imagemap:
+        xpos UI_xpos_offset
+        ypos UI_ypos_offset
+        xsize 1080 #width of ground/hover image.
+        ysize 548 #height of ground/hover image.
+
+        ground "interface/store/" +interface_color+ "/bottom_panel.png"
+        hover "interface/store/"  +interface_color+ "/bottom_panel_hover.png"
+
+
+        #Menu Name
+        add "interface/general/" +interface_color+ "/button_wide.png" xpos 130 ypos 0
+        text title xalign 0.5 yalign 0.5 xpos 130+70 ypos 0+18 size 12
+
+        #Categories
+        for i in range(0,len(categories)):
+            hotspot (300+(33*i), 0, 33, 34) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
+            add "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png" xpos 300+(33*i) ypos 0
+
+        #Items
+        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+            if i < len(menu_items):
+                $ col = i % 5
+                $ row = i % 1
+                hotspot ( 140+(90*(i-(current_page*items_shown))), 34, 83, 85) clicked Return(menu_items[i])
+                use icon_menu_item(menu_items[i], 135+(90*(i-(current_page*items_shown))), 34 )
+
+    #Left Button
+    imagebutton:
+        xpos UI_xpos_offset +80
+        ypos UI_ypos_offset +50
+        idle "interface/general/"+interface_color+"/button_arrow_left.png"
+        if not current_page <= 0:
+            hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
+            action Return("dec")
+
+    #Right Button
+    imagebutton:
+        xpos UI_xpos_offset +80 +880
+        ypos UI_ypos_offset +50
+        idle "interface/general/"+interface_color+"/button_arrow_right.png"
+        if current_page < math.ceil((len(menu_items)-1)/items_shown):
+            hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
+            action Return("inc")
+
+
+
+# Clothing Menu #Customizable
 screen clothing_menu(menu_items, character, preview):
     $ items_shown=3
     zorder 5
@@ -313,64 +373,6 @@ screen clothing_menu(menu_items, character, preview):
             add preview.get_image() xpos 600 ypos 0 zoom 1.0/scaleratio
         else:
             add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 1.0/scaleratio
-
-
-
-#Icon Menu #Customizable
-screen bottom_menu(menu_items, categories, title, xpos, ypos):
-    $ items_shown= 9
-    $ UI_xpos_offset = xpos
-    $ UI_ypos_offset = ypos
-    zorder 5
-
-    #Close Button
-    use top_bar_close_button
-
-    #Main Window
-    imagemap:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        xsize 1080 #width of ground/hover image.
-        ysize 548 #height of ground/hover image.
-
-        ground "interface/store/" +interface_color+ "/bottom_panel.png"
-        hover "interface/store/"  +interface_color+ "/bottom_panel_hover.png"
-
-
-        #Menu Name
-        add "interface/general/" +interface_color+ "/button_select.png" xpos 130 ypos 0
-        text title xalign 0.5 yalign 0.5 xpos 130+42 ypos 0+18 size 12
-
-        #Categories
-        for i in range(0,len(categories)):
-            hotspot (260+(33*i), 0, 33, 34) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
-            add "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png" xpos 260+(33*i) ypos 0
-
-        #Items
-        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
-            if i < len(menu_items):
-                $ col = i % 5
-                $ row = i % 1
-                hotspot ( 130+(90*(i-(current_page*items_shown))), 34, 83, 85) clicked Return(menu_items[i])
-                use icon_menu_item(menu_items[i], 125+(90*(i-(current_page*items_shown))), 34 )
-
-    #Left Button
-    imagebutton:
-        xpos UI_xpos_offset +80
-        ypos UI_ypos_offset +50
-        idle "interface/general/"+interface_color+"/button_arrow_left.png"
-        if not current_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
-            action Return("dec")
-
-    #Right Button
-    imagebutton:
-        xpos UI_xpos_offset +80 +880
-        ypos UI_ypos_offset +50
-        idle "interface/general/"+interface_color+"/button_arrow_right.png"
-        if current_page < math.ceil((len(menu_items)-1)/items_shown):
-            hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
-            action Return("inc")
 
 
 

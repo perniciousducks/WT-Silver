@@ -164,74 +164,75 @@ label summon_hermione:
                         jump hermione_requests
 
         "-Gifts-" if not gave_hermione_gift:
-            call update_quest_items
             $ current_category = None
+
             label hermione_gift_menu:
-                python:
+            call update_quest_items
 
-                    category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
-                    category_list.append("item_chocolate")
-                    category_list.append("item_mag_adult")
-                    category_list.append("item_butterbeer")
-                    category_list.append("item_plush_owl")
-                    category_list.append("box_blue_1")
+            python:
 
-                    if current_category == None:
-                        current_category = category_list[0]
-                        category_choice = category_list[0]
+                category_list = []
+                category_list.append("ui_gifts")
+                category_list.append("ui_quest_items")
 
-                    item_list = []
-                    if current_category == "item_chocolate":
-                        item_list.extend(candy_gift_list)
-                    if current_category == "item_mag_adult":
-                        item_list.extend(mag_gift_list)
-                    if current_category == "item_butterbeer":
-                        item_list.extend(drink_gift_list)
-                    if current_category == "item_plush_owl":
-                        item_list.extend(toy_gift_list)
-                    if current_category == "box_blue_1":
-                        item_list.extend(her_quest_items_list)
+                if current_category == None:
+                    current_category = category_list[0]
+                    category_choice = category_list[0]
 
-                    #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-                show screen icon_menu(item_list, category_list, "Gifts & Quest Items", xpos=257, ypos=50)
+                item_list = []
+                if current_category == "ui_gifts":
+                    menu_title = "Gift Items"
+                    item_list.extend(candy_gift_list)
+                    item_list.extend(mag_gift_list)
+                    item_list.extend(drink_gift_list)
+                    item_list.extend(toy_gift_list)
+                if current_category == "ui_quest_items":
+                    menu_title = "Quest Items"
+                    item_list.extend(her_quest_items_list)
 
-                $ _return = ui.interact()
+                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
 
-                hide screen icon_menu
-                if category_choice != current_category:
-                    $ current_category = _return
+            $ _return = ui.interact()
 
-                elif isinstance(_return, item_class):
-                    if _return in her_quest_items_list:
-                        menu:
-                            "Would you like to use this quest item?"
-                            "\"(Yes, let's do it!)\"":
-                                $ quest_item = _return
-                                jump give_her_quest_item
-                            "\"(Not right now.)\"":
-                                jump hermione_gift_menu
-                    else:
-                        call give_her_gift(_return)
+            hide screen bottom_menu
+            if category_choice != current_category:
+                $ current_category = _return
 
-                    if her_mood != 0:
-                        jump hermione_gift_menu
-                    else:
-                        jump hermione_requests
+            elif isinstance(_return, item_class):
+                if _return in her_quest_items_list:
+                    menu:
+                        "Would you like to use this quest item?"
+                        "\"(Yes, let's do it!)\"":
+                            $ quest_item = _return
+                            jump give_her_quest_item
+                        "\"(Not right now.)\"":
+                            jump hermione_gift_menu
+                elif _return.number > 0:
+                    call give_her_gift(_return)
+                else:
+                    ">You don't own this item."
+                    jump hermione_gift_menu
 
-                elif _return == "Close":
-                    $ current_page = 0
-                    $ category_choice = None
-                    hide screen icon_menu
-                    with d3
-
+                if her_mood != 0:
+                    jump hermione_gift_menu
+                else:
                     jump hermione_requests
 
-                elif _return == "inc":
-                    $ current_page += 1
-                elif _return == "dec":
-                    $ current_page += -1
+            elif _return == "Close":
+                $ current_page = 0
+                $ category_choice = None
+                hide screen bottom_menu
+                with d3
 
-                jump hermione_gift_menu
+                jump hermione_requests
+
+            elif _return == "inc":
+                $ current_page += 1
+            elif _return == "dec":
+                $ current_page += -1
+
+            jump hermione_gift_menu
         "{color=#858585}-Gifts-{/color}" if gave_hermione_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump hermione_requests

@@ -53,62 +53,65 @@ label summon_luna:
 
         "-Gifts-" if not gave_luna_gift:
             $ current_category = None
+
             label luna_gift_menu:
-                python:
 
-                    category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
-                    category_list.append("item_lollipop")
-                    category_list.append("item_mag_adult")
-                    category_list.append("item_butterbeer")
-                    category_list.append("item_plush_owl")
-                    #category_list.append("box_brown_3")
+            python:
 
-                    if current_category == None:
-                        current_category = category_list[0]
-                        category_choice = category_list[0]
+                category_list = []
+                category_list.append("ui_gifts")
+                #category_list.append("ui_quest_items")
 
-                    item_list = []
-                    if current_category == "item_lollipop":
-                        item_list.extend(candy_gift_list)
-                    if current_category == "item_mag_adult":
-                        item_list.extend(mag_gift_list)
-                    if current_category == "item_butterbeer":
-                        item_list.extend(drink_gift_list)
-                    if current_category == "item_plush_owl":
-                        item_list.extend(toy_gift_list)
-                    if current_category == "box_brown_3":
-                        item_list.extend(toy_gift_list)
+                if current_category == None:
+                    current_category = category_list[0]
+                    category_choice = category_list[0]
 
-                    #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-                show screen icon_menu(item_list, category_list, "Gifts & Quest Items", xpos=257, ypos=50)
+                item_list = []
+                if current_category == "ui_gifts":
+                    menu_title = "Gift Items"
+                    item_list.extend(candy_gift_list)
+                    item_list.extend(mag_gift_list)
+                    item_list.extend(drink_gift_list)
+                    item_list.extend(toy_gift_list)
+                if current_category == "ui_quest_items":
+                    menu_title = "Quest Items"
+                    item_list.extend(toy_gift_list)
 
-                $ _return = ui.interact()
+                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
 
-                hide screen icon_menu
-                if category_choice != current_category:
-                    $ current_category = _return
+            $ _return = ui.interact()
 
-                elif isinstance(_return, item_class):
+            hide screen bottom_menu
+            if category_choice != current_category:
+                $ current_category = _return
+
+            elif isinstance(_return, item_class):
+                if _return.number > 0:
                     call give_lun_gift(_return)
-                    if lun_mood != 0:
-                        jump luna_gift_menu
-                    else:
-                        jump luna_requests
+                else:
+                    ">You don't own this item."
+                    jump luna_gift_menu
 
-                elif _return == "Close":
-                    $ current_page = 0
-                    $ category_choice = None
-                    hide screen icon_menu
-                    with d3
-
+                if lun_mood != 0:
+                    jump luna_gift_menu
+                else:
                     jump luna_requests
 
-                elif _return == "inc":
-                    $ current_page += 1
-                elif _return == "dec":
-                    $ current_page += -1
+            elif _return == "Close":
+                $ current_page = 0
+                $ category_choice = None
+                hide screen bottom_menu
+                with d3
 
-                jump luna_gift_menu
+                jump luna_requests
+
+            elif _return == "inc":
+                $ current_page += 1
+            elif _return == "dec":
+                $ current_page += -1
+
+            jump luna_gift_menu
         "{color=#858585}-Gifts-{/color}" if gave_luna_gift:
             "Not yet added. WIP!"
             #m "I already gave her a gift today. Don't want to spoil her too much..."

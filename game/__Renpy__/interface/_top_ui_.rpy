@@ -394,21 +394,25 @@ label decorate_room_menu:
         category_list.append("deco_cupboard")
 
         if current_category == None:
+            menu_title = "Wall Deco"
             current_category = category_list[0]
             category_choice = category_list[0]
 
         item_list = []
         if current_category == "deco_wall":
+            menu_title = "Wall Deco"
             item_list.extend(wall_deco_list)
             item_list.extend(toy_gift_list) # For Testing
         if current_category == "deco_fireplace":
+            menu_title = "Fireplace Deco"
             item_list.extend(fireplace_deco_list)
             item_list.extend(candy_gift_list) # For Testing
         if current_category == "deco_cupboard":
+            menu_title = "Cupboard Deco"
             item_list.extend(cupboard_deco_list)
 
         #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-    show screen bottom_menu(item_list, category_list, "Decorate", xpos=0, ypos=475)
+    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
 
     $ _return = ui.interact()
 

@@ -69,11 +69,6 @@ screen fireplace_glow:
     tag fireplace_glow
     add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
     zorder 3
-    
-screen poster:
-    tag poster
-    zorder 1
-    add poster_OBJ.get_room_image() xpos poster_OBJ.xpos ypos poster_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 $ width_offset = 140
 

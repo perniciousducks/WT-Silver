@@ -418,6 +418,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "ears_pearls",
                                        "ears_straight",
                                        "ears_rings",
+                                       "ears_gambler",
                                        "ears_feather_white",
                                        "ears_feather_black",
                                       ]
@@ -426,6 +427,7 @@ label her_clothing_lists_init: #Lists update at every game start!
     $ nipple_piercings_list         = ["nipples_pearls",
                                       ]
     $ belly_piercings_list          = ["belly_pearls",
+                                       "belly_gambler",
                                       ]
     $ genital_piercings_list        = [
                                       ]

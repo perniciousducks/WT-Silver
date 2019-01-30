@@ -191,6 +191,33 @@ label equip_her_outfit:
                         ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
+            if outfit_choice == hg_gamble_slut_ITEM:
+                m "You know that card game that we've been playing?"
+                call her_main("Wizard Cards?","open","base")
+                call her_main("Yes... What about it?","normal","narrow")
+                g9 "So, apparently since I've been so successful at it... I've received this outfit from trading in those tokens."
+                if her_whoring >= 11: #Success
+                    call her_main("Hmm, a bit tight it seems. The hat is cute though.","open","wink")
+                    g9 "So you'll wear it?"
+                    call her_main("...","normal","down")
+                    call her_main("Fine...","open","baseL")
+                    call her_main("You did beat me fair and square...","open","wink")
+                    m "Great, perhaps you'll win next rematch..."
+                    call her_main("Perhaps...","smile","base")
+                else: #Fail
+                    call her_main("And what? [genie_name] You're expecting me to just wear this thing because you've won it?","open","base")
+                    call her_main("(Does he think he can play me like he plays cards?)","annoyed","angryL")
+                    call her_main("Now, if you excuse me I have more important things to do...","open","closed")
+                    call her_main("Unless you needed anything else?","soft","baseL")
+                    m "..."
+                    g9 "But, I won... fair and square."
+                    call her_main("You may be a winner, [genie_name] but you have yet to learn how to play your cards right with me.","open","closed")
+                    call her_main("Card master...","crooked_smile","wink")
+                    m "(Damn it...)"
+                    if cheats_active or game_difficulty <= 2:
+                        ">Try again at Whoring level 11."
+                    jump return_to_wardrobe
+
             # Costumes
             if outfit_choice in [hg_costume_power_girl_ITEM,hg_costume_ms_marvel_ITEM]:
                 m "Are there any heroines you know of?"

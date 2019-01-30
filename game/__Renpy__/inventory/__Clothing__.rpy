@@ -30,6 +30,9 @@ label update_outfit_layers:
     $ hg_outfit_egypt_ITEM.outfit_layers = ["egyptian_top.png","egyptian_bottom.png","egyptian_shackles.png"]
     $ hg_outfit_egypt_ITEM.breast_layer = "breasts_normal"
 
+    $ hg_gamble_slut_ITEM.outfit_layers = ["gambler_cards_1.png","gambler_cards_2.png","gambler_outfit.png","../stockings/stockings_gambler_1.png","../gloves/gloves_cuffs_1.png","../neckwear/choker_bow_tie_1.png","../../accessories/piercings/ears_gambler.png","../../accessories/piercings/belly_gambler.png"]
+    $ hg_gamble_slut_ITEM.top_layers    = "hat_gambler"
+    $ hg_gamble_slut_ITEM.breast_layer = "breasts_normal"
 
     #Hermione Costumes.
     $ hg_costume_power_girl_ITEM.outfit_layers = ["power_cape.png","power_top.png","power_cape_top.png","power_gloves.png","power_belt.png"]

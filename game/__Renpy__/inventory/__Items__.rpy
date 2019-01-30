@@ -178,6 +178,7 @@ label store_items_init:
         $ hg_outfit_japan_ITEM     = outfit_class(id="hg_outfit_japan", name="Japanese Schoolgirl", type="outfit", items=["outfit"],       cost=125, wait_time=2, image="outfits/hg_japan", description=">A schoolgirl outfit traditionally worn in Japan.")
         $ hg_outfit_witch_ITEM     = outfit_class(id="hg_outfit_witch", name="Witch outfit",        type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
         $ hg_outfit_egypt_ITEM     = outfit_class(id="hg_outfit_egypt", name="Egyptian Goddess",    type="outfit", image="outfits/hg_egypt", unlockable=True)
+        $ hg_gamble_slut_ITEM      = outfit_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
 
     #Hermione Costumes.
     if not hasattr(renpy.store,'hg_costume_power_girl_ITEM'):
@@ -198,6 +199,9 @@ label store_items_init:
         hg_outfit_maid_ITEM, hg_outfit_pirate_ITEM, hg_outfit_christmas_ITEM, hg_outfit_present_ITEM,
         hg_outfit_japan_ITEM, hg_outfit_witch_ITEM, hg_outfit_egypt_ITEM,
         ]
+    if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.
+        $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
+        $ hermione_outfits_list.append(hg_gamble_slut_ITEM)
 
     $ hermione_costumes_list = [
         hg_costume_power_girl_ITEM, hg_costume_ms_marvel_ITEM, hg_costume_harley_quinn_ITEM, hg_costume_lara_croft_ITEM,

@@ -149,6 +149,8 @@ label update_wr_head_list:
         #Hats
         if hg_outfit_witch_ITEM.unlocked:
             $ wr_hats.append("witch_hat")
+        if hg_gamble_slut_ITEM.unlocked:
+            $ wr_hats.append("hat_gambler")
         if hg_outfit_maid_ITEM.unlocked:
             $ wr_hats.append("maid_hat")
         if hg_dress_yule_ball_ITEM.unlocked:
@@ -1052,10 +1054,16 @@ label update_wr_miscellaneous_list:
             $ wr_piercings_list.append("ears_hearts_large")
             $ wr_piercings_list.append("ears_hearts")
             $ wr_piercings_list.append("ears_pearls")
+            if hg_gamble_slut_ITEM.unlocked:
+                $ wr_piercings_list.append("ears_gambler")
 
         if her_whoring >= 23:
             $ wr_piercings_list.append("nipples_pearls")
             $ wr_piercings_list.append("belly_pearls")
+
+        if her_whoring >= 11:
+            if hg_gamble_slut_ITEM.unlocked:
+                $ wr_piercings_list.append("belly_gambler")
 
         #Tattoos
         if autograph: #Unlocked after flirting with Professor Lockheart.

@@ -7,7 +7,7 @@ label snape_first_duel:
 
     call play_music("grape_soda")
     $ response_card = ""
-    
+
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
 
@@ -16,11 +16,11 @@ label snape_first_duel:
         if response_card == "Close":
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
-    
+
     if not check_winner() == "win":
         jump snape_duel_lost
 
-    
+
     hide screen blkfade
     stop music fadeout 1
     call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
@@ -29,11 +29,11 @@ label snape_first_duel:
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
-    
+
     $ geniecard_tokens += 1
-        
+
     jump main_room
-            
+
 label snape_second_duel:
     call setup_deck(snape_second_deck)
     call sna_main( "That first one was just a warm up, there's no way you'll beat me this time!","snape_16")
@@ -51,10 +51,10 @@ label snape_second_duel:
         if response_card == "Close":
             jump snape_duel_cancel
         #Should be a better way but renpy dont have break for while loops-_-
-    
+
     if not check_winner() == "win":
         jump snape_duel_lost
-    
+
     hide screen blkfade
     stop music fadeout 1
     call sna_main( "Not again... I swear these cards used to be good when I bought them.","snape_07")
@@ -65,23 +65,23 @@ label snape_second_duel:
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
-    
+
     if not her_know_cards:
         g9 "This is awesome, I wonder if Hermione would want to play against me..."
-        
+
     $ geniecard_tokens += 1
- 
+
     jump main_room
-    
+
 label snape_third_duel:
     if her_know_cards == False:
         m "(I should probably see if Hermione is interested and practice some more before challenging Snape.)"
         jump snape_duel_menu
-        
+
     if twins_cards_stocked_talk == False:
         m "(I should wait for an owl from Fred and George and train with Hermione first.)"
         jump snape_duel_menu
-        
+
     call setup_deck(snape_third_deck)
     m "So, how about that prize?"
     call sna_main( "Again with the prize...","snape_01")
@@ -94,11 +94,11 @@ label snape_third_duel:
     m "Me?"
     call sna_main( "I... no, of course not.","snape_14")
     call sna_main( "Let's do this.","snape_17")
-    call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and my Tier 1 token.","snape_18")
+    call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and 3 tokens.","snape_18")
     m "Bring it."
-    
+
     $ response_card = ""
-    
+
     call play_music("boss_card_theme")
     play sound "sounds/Genie_VS_Snape.mp3"
     show screen genie_vs_snape
@@ -115,7 +115,7 @@ label snape_third_duel:
     hide screen versus
     hide screen genie_vs_snape
     hide screen genie_vs_snape_smile
-    
+
     if renpy.random.randint(0,1) == 0:
         call enemy_turn
 
@@ -134,14 +134,14 @@ label snape_third_duel:
             call sna_main( (snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)]),"snape_05")
             call sna_main(remove=True)
             $ _preferences.volumes['music'] = volume
-    
+
     if not check_winner() == "win":
         jump snape_duel_lost
-    
+
     #Won third match
     stop music fadeout 1
     hide screen blkfade
-    
+
     if snape_third_win == False:
         call sna_main( "Impossible, what's wrong with these cards...","snape_05")
         m "They're old, that's what."
@@ -154,13 +154,13 @@ label snape_third_duel:
         $ geniecard_tokens += 3
     else:
         $ geniecard_tokens += 1
-        
+
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
-    
+
     jump main_room
-    
+
 label snape_duel_lost:
     stop music fadeout 1
 
@@ -173,11 +173,11 @@ label snape_duel_lost:
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
-    
+
     jump main_room
-    
+
 label snape_duel_cancel:
-    show screen blkfade 
+    show screen blkfade
     with dissolve
     stop music fadeout 1
     hide screen blkfade
@@ -186,9 +186,9 @@ label snape_duel_cancel:
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
-    
+
     jump main_room
-    
+
 screen genie_vs_snape:
     zorder 8
     add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
@@ -201,7 +201,7 @@ screen versus:
 screen move_snape:
     zorder 8
     add "images/cardgame/VS/snape_01.png" at move_in(300, 0.5)
-    
+
 screen genie_vs_snape_smile:
     zorder 8
     add "images/cardgame/VS/genie_02.png"

@@ -120,8 +120,8 @@ label deck_mail_send:
 
     m "That last bit just sounds like scam to me..."
     m "..."
-    m "I guess I'll have a look at the starter pack at least..."    
-    
+    m "I guess I'll have a look at the starter pack at least..."
+
     #Randomize starter pack (Hardcore difficulty gets randomized at the start of the game)
     if game_difficulty <= 2:
         python:
@@ -132,13 +132,13 @@ label deck_mail_send:
             card_rand_item3 = random.choice([item_barbell, item_lingerie, item_stockings, item_badge, item_bdsm, item_lipstick])
             card_rand_item4 = random.choice([item_bookchairs, item_bookgala, item_bookgala2, item_bookwaifu, item_hat])
             card_rand_item5 = random.choice([item_eromag, item_pornmag, item_girlmag, item_scroll, item_wine, item_sweets])
-        
+
             unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
             # Delete copies of playerdeck cards
             for i in range(0,5):
                 playerdeck[i].copies -= 1
-    
+
     show screen blktone
     show screen start_deck
     with Dissolve(.3)
@@ -146,33 +146,26 @@ label deck_mail_send:
     hide screen start_deck
     hide screen blktone
     with Dissolve(.3)
-    
+
     g9 "Hell yes I'm playing this..."
     call give_reward(">You've unlocked Wizard cards.\nUse the deckbuilder available on your desk to learn the rules and edit your deck.","interface/icons/cards.png")
 
     return
-    
+
 ### Twins card store unlocked ###
 label cards_store_mail_send:
     $ twins_cards_stocked = True
-    
+
     m "Great, let's see how they're doing."
     return
-    
+
 ### Cardgame End of Content letter ###
 label cardgame_eoc_mail_send:
     $ cardgame_eoc = True
-    
+
     g9 "Sweet..."
     g9 "Fucking love prizes."
-    
-    #call unlock_clothing(text="You received a.. new outfit?",item=clothing_mail_item)
-    
-    g9 "Sweet..."
-    g9 "Fucking love prizes."
-    g4 "Wait, this is a womans outfit!"
-    m "Wait... it's a womans outfit..."
-    g9 "Might have to try and convice miss Granger put this one on..."
+
     return
 
 label get_package:
@@ -246,17 +239,17 @@ label __init_variables:
         $ letter_curse_complaint_OBJ = mail_letter_class()
     $ letter_curse_complaint_OBJ.text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
     $ letter_curse_complaint_OBJ.label = "letter_curse_complaint"
-    
+
     if not hasattr(renpy.store,'letter_deck'):
         $ letter_deck = mail_letter_class()
     $ letter_deck.text = "{size=-3}Sir Albus Dumbledore{/size}\n\n{size=-7}We would like to present to you great opportunity to become a Wizard Cards champion. We've included a starter pack to our card game in the hopes that you will consider any of our resellers to stock our cards for your students to purchase and play.\n\nHere's a little bit of information about our cards:\nEvery Wizard card has an enchantment that will personalize its look just for you and show something of your own favorite interest.\n\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a started pack, we don't even know what it is!{/size}\n\n{space=110}{size=-5}Wizard cards inc{/size}"
     $ letter_deck.label = "deck_mail_send"
-    
+
     if not hasattr(renpy.store,'letter_cards_store'):
         $ letter_cards_store = mail_letter_class()
     $ letter_cards_store.text = "{size=-7}Weasley's Wizard Wheezes shop emporium is now officially partnering with Wizard cards.\nCheck out the notice board at our shop to find a list of challengers at your skill level.{/size}"
     $ letter_cards_store.label = "cards_store_mail_send"
-    
+
     if not hasattr(renpy.store,'letter_cardgame_eoc'):
         $ letter_cardgame_eoc = mail_letter_class()
     $ letter_cardgame_eoc.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beaten your first 3 challenges of Wizard Cards.\nWe're currently working on expanding our business and are recruiting even more challengers so that in the future you'll be able to challenge even more people.\nIn the meanwhile, you'll be able to earn even more tokens by challenging someone again to complete your collection of items.\nThis time you'll only get one token per win but it should be a breeze for such a skilled player as you.\n\nYours truly,\nWeasley's Wizard Wheeze's and Team Silver{/size}"

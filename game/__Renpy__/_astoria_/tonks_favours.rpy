@@ -207,12 +207,22 @@ label astoria_tonks_3:
     call ast_main(xpos="wardrobe",ypos="base")
     call screen wardrobe
 
+#Tonks gives Astoria a shorter skirt
 label astoria_tonks_4:
+    #call play_music("fun")
+    call play_sound("door")
+    call ast_main("","upset","closed","base","mid",xpos="right",ypos="base")
+    pause.5
 
+    call nar(">Astoria walks into your office in a new skirt, her eyes nervously looking to the side.")
+
+    m "Welcome back, [astoria_name]. How was--"
+
+#Tonks spanks Astoria for sending Susan home covered in cum
 label astoria_tonks_5:
 
+#Tonks spends the whole time rubbing Astoria's butt
 label astoria_tonks_6:
-
 
 
 

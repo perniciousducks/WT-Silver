@@ -142,9 +142,9 @@ label summon_hermione:
                 call her_main( "Ah, yes...","normal","soft")
                 call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
                 g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
-                m "So, how about a little vaguer then?"
-                call her_main( "What kind of vaguer are we talking about? I've only recently started playing.","base","glance")
-                m "Don't worry, we'll play a few practice runs, when you're ready I'll play you for your token..."
+                m "So, how about a little wager then?"
+                call her_main( "What kind of wager are we talking about? I've only recently started playing.","base","glance")
+                m "Don't worry, we'll play a few practice rounds, when you're ready we'll play the real challenge..."
                 $ her_cards_stocked_talk = True
                 jump hermione_duel_menu
             else:
@@ -354,7 +354,7 @@ label hermione_requests_menu:
             elif her_whoring >=18 and hermione_favors_convinced == 2:
                 call her_main("I guess you do have a way with words,[genie_name]... I'll do it.","soft","wink")
                 jump silver_requests_root
-            elif her_whoring >=16: 
+            elif her_whoring >=16:
                 call her_main("I have told you before, [genie_name], it was just a one time thing....","open","squint")
                 m "What about tomorrow though?"
                 call her_main ("What about tomorrow?","base","squint")
@@ -380,7 +380,7 @@ label hermione_requests_menu:
                             jump silver_requests_root
 
                         m "If you do it, you could secure the win for you household you know..."
-                
+
                         if her_whoring >=18:
                             call her_main("You really know how to talk me through, [genie_name].","soft","down")
                             call her_main("Okay I agree.","open","down_raised")

@@ -546,17 +546,17 @@ label token_shop_menu:
 
     python:
         item_list = []
+        
         if toggle1_bool:
-            item_list.extend(wall_deco_list)
+            item_list.extend([hg_gamble_slut_ITEM])
         if toggle2_bool:
             item_list.extend(fireplace_deco_list)
             item_list.extend(cupboard_deco_list)
-        if toggle3_bool:
-            item_list.extend([hg_gamble_slut_ITEM]) # Replace list
+            item_list.extend(wall_deco_list)
 
         item_list = list(filter(lambda x: x.unlocked==False, item_list))
-
-    show screen list_menu(item_list, "Token Shop", toggle1="Wall Deco", toggle2="Room Deco", toggle3="Misc.")
+        
+    show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations")
 
     $ _return = ui.interact()
 
@@ -592,18 +592,17 @@ label purchase_deco(item):
     "[item.description]"
 
     if item.type == "outfit_token":
-        $ item_token_str = "outfit"
+        $ item_token_str = "A new \"%s\" outfit has been added to Hermiones' wardrobe." % item.name
+        $ item_token_type = " outfit"
     else:
-        $ item_token_str = item.type
+        $ item_token_str = "%s has been added to your decoration menu." % item.type
+        $ item_token_type = ""
     menu:
-        "-Buy this [item_token_str] for [item.cost] tokens -":
-            if geniecard_tokens >= item.cost:     # Replace gold with coins
+        "-Buy [item.name][item_token_type] for [item.cost] tokens -":
+            if geniecard_tokens >= item.cost:
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
-                if item in [hg_gamble_slut_ITEM]: # Outfits
-                    "A new [item.name] outfit has been added to her wardrobe."
-                else:
-                    "A [item.name] [item_token_str] item has been added to your decoration menu."
+                "[item_token_str]"
             else:
                 m "I don't have enough tokens."
         "-Never mind-":

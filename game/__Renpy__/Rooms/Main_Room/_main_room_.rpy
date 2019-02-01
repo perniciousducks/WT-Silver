@@ -43,10 +43,22 @@ screen main_room_overlay:
     #Decorations
     for i in deco_overlay_list:
         add i.get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
+    
+    # Phoenix deco
+    if phoenix_deco_OBJ.room_image:
+        add phoenix_deco_OBJ.get_room_image() xpos phoenix_deco_OBJ.xpos ypos phoenix_deco_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
 
     #Fireplace
     if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
         use fireplace_glow
+        
+    # Fireplace deco
+    if fireplace_deco_OBJ.room_image:
+        add fireplace_deco_OBJ.get_room_image() xpos fireplace_deco_OBJ.xpos ypos fireplace_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
+        
+    # Owl deco
+    if owl_deco_OBJ.room_image and renpy.get_screen("owl"):
+        add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     zorder 3#2
 

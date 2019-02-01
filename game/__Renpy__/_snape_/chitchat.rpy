@@ -13,8 +13,12 @@ label snape_chitchat:
             call sna_main("Do You think you can break the girl?","snape_25") 
         
         elif one_of_ten == 2:
-            call sna_main("Don't you just hate this wretched sunny weather?","snape_01") 
-            call sna_main("I wish it would rain every day.","snape_06") 
+            if raining or blizzard:
+                call sna_main("Isn't the weather lovely today?","snape_02") 
+                call sna_main("I wish it would stay like that forever.","snape_06") 
+            else:
+                call sna_main("Don't you just hate this wretched sunny weather?","snape_01") 
+                call sna_main("I wish it would rain every day.","snape_06") 
             
         elif one_of_ten == 3:
             call sna_main("I am feeling rather doubtful about our whole plan again...","snape_06") 

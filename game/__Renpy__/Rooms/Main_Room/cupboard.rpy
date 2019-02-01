@@ -64,9 +64,9 @@ label rummaging:
         with d3
 
         if daytime:
-            jump night_start
+            jump day_main_menu
         else:
-            jump day_start
+            jump night_main_menu
 
     # Item Reward.
     $ random_number = renpy.random.randint(1, 5)
@@ -79,11 +79,11 @@ label rummaging:
         hide screen rum_screen
         hide screen bld1
         with d3
-
+        
         if daytime:
-            jump night_start
+            jump day_main_menu
         else:
-            jump day_start
+            jump night_main_menu
 
     if game_difficulty >= 2:               #Normal and hardcore difficulty
         if random_number in [1,2,3,4]: # Found something. 80% chance.
@@ -95,11 +95,6 @@ label rummaging:
 
             hide screen bld1
             with d3
-
-            if daytime:
-                jump day_main_menu
-            else:
-                jump night_main_menu
     else:                                  #Easy difficulty
         jump rum_rewards
 

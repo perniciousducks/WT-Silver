@@ -217,11 +217,15 @@ screen icon_menu_item(menu_item, xpos=0, ypos=0):
 
             if menu_item.number > 0:
                 text "{color=#ffffff}" +str(menu_item.number)+ "{/color}" xalign 0.5 xpos 15 ypos -80
+                
+            if menu_item.active:
+                #text "{color=#ffffff}Active{/color}" xalign 0.5 ypos -20
+                add "interface/topbar/icon_check.png" xalign 0.95 ypos -40
 
 
 
 # Bottom Menu #Customizable
-screen bottom_menu(menu_items, categories, title, xpos, ypos):
+screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, func_btn_ico="ui_empty"):
     $ items_shown= 9
     $ UI_xpos_offset = xpos
     $ UI_ypos_offset = ypos
@@ -257,6 +261,14 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos):
                 idle "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png"
                 hover image_hover("interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png")
                 action [SetVariable("category_choice",categories[i]), Return(categories[i])]
+                
+        if func_btn:    
+            imagebutton:
+                xpos 300+(33*(len(categories)+1))
+                ypos 0
+                idle "interface/topbar/buttons/"+interface_color+"/"+func_btn_ico+".png"
+                hover image_hover("interface/topbar/buttons/"+interface_color+"/"+func_btn_ico+".png")
+                action Return("func")
 
         #Items
         for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):

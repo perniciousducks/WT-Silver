@@ -15,9 +15,37 @@ label summon_snape:
 
         "-Talk-":
             if not chitchated_with_snape:
-                $ chitchated_with_snape = True
                 call snape_chitchat
-            jump snape_talk
+                
+            if (letter_curse_complaint_OBJ.read and not astoria_unlocked) or ((third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook):
+                menu:    
+                    "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
+                        #You tell Snape about the curses.
+                        if hermione_on_the_lookout: #Already talked to Hermione.
+                            $ hermione_finds_astoria = True
+                            $ days_without_an_event = 0 #So the event won't happen right after.
+                        if snape_on_the_lookout:
+                            call sna_main("I'm still on the lookout, Genie.","snape_01")
+                            call sna_main("If I find the little maggot that casts those spells,...","snape_10")
+                            call sna_main("I will crush his bones!","snape_16")
+                            jump snape_ready
+                        $ snape_busy = True
+                        $ snape_on_the_lookout = True
+                        jump letter_intro_snape
+
+                    "-Ask for a spellbook-" if (third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook:
+                        $ snape_gave_spellbook = True
+                        jump snape_book_intro
+                        
+                    "-Never mind":
+                        jump snape_ready
+            else:
+                if chitchated_with_snape:
+                    ">You have already talked with Snape today."
+                pass
+                
+            $ chitchated_with_snape = True            
+            jump snape_ready
 
         "-Let's hang-" if not daytime and not sna_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
@@ -201,33 +229,6 @@ label summon_snape:
             $ snape_busy = True
 
             jump main_room
-
-
-
-label snape_talk:
-    menu:
-        "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
-            #You tell Snape about the curses.
-            if hermione_on_the_lookout: #Already talked to Hermione.
-                $ hermione_finds_astoria = True
-                $ days_without_an_event = 0 #So the event won't happen right after.
-            if snape_on_the_lookout:
-                call sna_main("I'm still on the lookout, Genie.","snape_01")
-                call sna_main("If I find the little maggot that casts those spells,...","snape_10")
-                call sna_main("I will crush his bones!","snape_16")
-                jump snape_talk
-            $ snape_busy = True
-            $ snape_on_the_lookout = True
-            jump letter_intro_snape
-
-        "-Ask for a spellbook-" if third_curse_got_cast or spells_unlocked and not snape_gave_spellbook:
-                $ snape_gave_spellbook = True
-                jump snape_book_intro
-
-        "-Never mind":
-            jump snape_ready
-
-
 
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...

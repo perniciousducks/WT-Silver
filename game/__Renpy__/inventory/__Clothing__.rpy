@@ -105,10 +105,10 @@ label update_outfit_layers:
     $ cc_dress_silver_ITEM.outfit_layers = ["traditional_dress_silver.png"]
     $ cc_dress_black_ITEM.outfit_layers = ["traditional_dress_black.png"]
 
-    $ cc_outfit_sailor_white_ITEM.outfit_layers      = ["../underwear/yellow/panties_bikini_2.png","../stockings/stockings_sailor_1.png","../tops/base/top_sailor_1.png","../bottoms/blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
+    $ cc_outfit_sailor_white_ITEM.outfit_layers      = ["../underwear/yellow/panties_bikini_2.png","../stockings/white/stockings_sailor_1.png","../tops/base/top_sailor_1.png","../bottoms/blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
     $ cc_outfit_sailor_white_ITEM.top_layers         = "bow_sailor_yellow"
 
-    $ cc_outfit_sailor_black_ITEM.outfit_layers      = ["../underwear/red/panties_bikini_2.png","../stockings/stockings_sailor_2.png","../tops/base/top_sailor_2.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
+    $ cc_outfit_sailor_black_ITEM.outfit_layers      = ["../underwear/red/panties_bikini_2.png","../stockings/black/stockings_sailor_2.png","../tops/base/top_sailor_2.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
     $ cc_outfit_sailor_black_ITEM.top_layers         = "bow_sailor_red"
 
     $ cc_costume_misty_ITEM.outfit_layers      = ["../tops/base/top_shirt_1.png","../bottoms/base/pants_short_1.png","../../body/arms/arm_down_l_overlay.png","../../accessories/body_accs/suspenders_1.png"]

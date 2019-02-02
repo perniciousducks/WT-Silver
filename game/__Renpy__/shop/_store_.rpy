@@ -96,8 +96,8 @@ label store_chit_chat:
         fre "Anyway, we've gone ahead and put up a official unofficial tier system ladder."
         m "Unofficial... Official, you say?"
         ger "Yes, as we mentioned... there isn't really any official tournament rules."
-        fre "We've sort of kept it that way in that we'll let the people playing set their own vaguers and challenges to climb the ladder."
-        fre "Any normal game would make you one token richer and a once the agreed upon winning conditions for a challenge is reached it would give you 3 tokens"
+        fre "We've sort of kept it that way in that we'll let the people playing set their own wagers and challenges to climb the ladder."
+        fre "Any normal game will make you one token richer and once the agreed upon winning conditions for a challenge is reached you'll get 3 tokens."
         ger "And whatever other forfeit your opponent might have added."
         fre "3 challenges won will let you climb to the next tier."
         ger "Which lets you challenge even higher skilled players."
@@ -110,7 +110,7 @@ label store_chit_chat:
         m "Snape was in here, he doesn't disapprove of your business?"
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
-        fre "Tell you what, lets set a vaguer right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
+        fre "Tell you what, lets set a wager right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
         ger "Beat us again and we'll give you 3 tokens."
         m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."
@@ -590,7 +590,7 @@ label purchase_deco(item):
     show screen gift
     with d3
     "[item.description]"
-    
+
     if item.type == "outfit_token":
         $ item_token_str = "outfit"
     else:
@@ -600,7 +600,10 @@ label purchase_deco(item):
             if geniecard_tokens >= item.cost:     # Replace gold with coins
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
-                "A [item.name] [item_token_str] item has been added to your decoration menu."
+                if item in [hg_gamble_slut_ITEM]: # Outfits
+                    "A new [item.name] outfit has been added to her wardrobe."
+                else:
+                    "A [item.name] [item_token_str] item has been added to your decoration menu."
             else:
                 m "I don't have enough tokens."
         "-Never mind-":

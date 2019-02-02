@@ -96,8 +96,8 @@ label store_chit_chat:
         fre "Anyway, we've gone ahead and put up a official unofficial tier system ladder."
         m "Unofficial... Official, you say?"
         ger "Yes, as we mentioned... there isn't really any official tournament rules."
-        fre "We've sort of kept it that way in that we'll let the people playing set their own vaguers and challenges to climb the ladder."
-        fre "Any normal game would make you one token richer and a once the agreed upon winning conditions for a challenge is reached it would give you 3 tokens"
+        fre "We've sort of kept it that way in that we'll let the people playing set their own wagers and challenges to climb the ladder."
+        fre "Any normal game will make you one token richer and once the agreed upon winning conditions for a challenge is reached you'll get 3 tokens."
         ger "And whatever other forfeit your opponent might have added."
         fre "3 challenges won will let you climb to the next tier."
         ger "Which lets you challenge even higher skilled players."
@@ -110,7 +110,7 @@ label store_chit_chat:
         m "Snape was in here, he doesn't disapprove of your business?"
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
-        fre "Tell you what, lets set a vaguer right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
+        fre "Tell you what, lets set a wager right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
         ger "Beat us again and we'll give you 3 tokens."
         m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."
@@ -546,17 +546,17 @@ label token_shop_menu:
 
     python:
         item_list = []
+        
         if toggle1_bool:
-            item_list.extend(wall_deco_list)
+            item_list.extend([hg_gamble_slut_ITEM])
         if toggle2_bool:
             item_list.extend(fireplace_deco_list)
             item_list.extend(cupboard_deco_list)
-        if toggle3_bool:
-            item_list.extend([hg_gamble_slut_ITEM]) # Replace list
+            item_list.extend(wall_deco_list)
 
         item_list = list(filter(lambda x: x.unlocked==False, item_list))
-
-    show screen list_menu(item_list, "Token Shop", toggle1="Wall Deco", toggle2="Room Deco", toggle3="Misc.")
+        
+    show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations")
 
     $ _return = ui.interact()
 
@@ -590,17 +590,19 @@ label purchase_deco(item):
     show screen gift
     with d3
     "[item.description]"
-    
+
     if item.type == "outfit_token":
-        $ item_token_str = "outfit"
+        $ item_token_str = "A new \"%s\" outfit has been added to Hermiones' wardrobe." % item.name
+        $ item_token_type = " outfit"
     else:
-        $ item_token_str = item.type
+        $ item_token_str = "%s has been added to your decoration menu." % item.type
+        $ item_token_type = ""
     menu:
-        "-Buy this [item_token_str] for [item.cost] tokens -":
-            if geniecard_tokens >= item.cost:     # Replace gold with coins
+        "-Buy [item.name][item_token_type] for [item.cost] tokens -":
+            if geniecard_tokens >= item.cost:
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
-                "A [item.name] [item_token_str] item has been added to your decoration menu."
+                "[item_token_str]"
             else:
                 m "I don't have enough tokens."
         "-Never mind-":

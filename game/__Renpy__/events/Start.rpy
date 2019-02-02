@@ -167,14 +167,14 @@ label start_ht:
 
     if game_difficulty <= 2:
         menu:
-            "ACTIVATE CHEATS" ">Cheats can be found by clicking on the hat above the cupboard."
+            "ACTIVATE CHEATS" ">Cheats can be found in the options menu at the top left of the screen."
             "-Activate Cheats-":
                 $ cheats_active = True
             "-Disable Cheats-":
                 $ cheats_active = False
 
     menu:
-        "Use chibi animations or image sprites." ">This can be changed in the options menu. Click on the hat above the cupboard to open it."
+        "Use chibi animations or image sprites." ">This can be changed in the options menu at the top left of the screen."
         "-Use chibis-":
             $ use_cgs = False
         "-Use sprites-":

@@ -64,14 +64,14 @@ label rummaging:
         with d3
 
         if daytime:
-            jump night_start
+            jump day_main_menu
         else:
-            jump day_start
+            jump night_main_menu
 
     # Item Reward.
     $ random_number = renpy.random.randint(1, 5)
 
-    if day >= 26 and deck_unlocked and random_number in [5] and not dumbledore in unlocked_cards:
+    if day >= 26 and deck_unlocked and random_number in [5] and not card_exist(unlocked_cards,dumbledore) :
         call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.png")
         $ unlocked_cards += [dumbledore]
 
@@ -81,9 +81,9 @@ label rummaging:
         with d3
 
         if daytime:
-            jump night_start
+            jump day_main_menu
         else:
-            jump day_start
+            jump night_main_menu
 
     if game_difficulty >= 2:               #Normal and hardcore difficulty
         if random_number in [1,2,3,4]: # Found something. 80% chance.
@@ -95,11 +95,6 @@ label rummaging:
 
             hide screen bld1
             with d3
-
-            if daytime:
-                jump day_main_menu
-            else:
-                jump night_main_menu
     else:                                  #Easy difficulty
         jump rum_rewards
 

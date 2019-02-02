@@ -413,6 +413,9 @@ init -2 python:
         cost = 0
         wait_time = 1
         description = ""
+        
+        #Used in decorations
+        active = False # Check if decoration is used or not
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)

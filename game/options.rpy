@@ -22,7 +22,7 @@ init -1 python hide:v
     #Set default persistent values
     if persistent.delwarning == None:
         persistent.delwarning = True
-        persistent.customcursor = True
+        persistent.customcursor = False
         persistent.autosave = False
         persistent.ui_hint = True
 

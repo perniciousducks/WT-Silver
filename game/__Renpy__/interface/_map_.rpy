@@ -5,7 +5,7 @@ init python:
 
 transform animate:
     alpha 0 # set the value to zero in the start
-    time 1.5
+    time map_ani_time #1.5
     linear 1 alpha 1 # go from zero to 1 in one second
 
 label map_init:
@@ -13,7 +13,7 @@ label map_init:
     $ UI_xpos_offset = 230
     $ UI_ypos_offset = 150
 
-    if not hasattr(renpy.store,'her_map_location') or reset_persistants:
+    if not hasattr(renpy.store,'map_ani_time') or reset_persistants:
         label reset_map_init:
 
         $ map_unlocked = False
@@ -32,6 +32,8 @@ label map_init:
         $ inn_intro = False
         $ attic_open = False
 
+        $ map_ani_time = 1.5
+
     return
 
 ### Map Screen ###
@@ -39,7 +41,10 @@ screen map_screen():
     tag map
     zorder 4
 
-    add "map_unfold" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale#Scaled to 588x420
+    if map_ani_time != 0:
+        add "map_unfold" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale#Scaled to 588x420
+    else:
+        add "interface/map/map.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale#Scaled to 588x420
     use map_buttons
     #use mouse_positions #Shows XY position of the mouse on the screen, updated per click
 
@@ -216,6 +221,25 @@ screen map_buttons:
             hovered SetVariable("ball_hint", "attic")
             unhovered SetVariable("ball_hint", None)
             action Return("map_attic")
+
+    # Map animation toggle
+    text "Animation" xpos 630+21 ypos 530+10 size 10 at animate
+    imagebutton at animate:
+        xpos 630
+        ypos 530
+        if map_ani_time != 0:
+            idle "interface/general/"+str(interface_color)+"/check_true_hidden.png"
+            hover "interface/general/"+str(interface_color)+"/check_false.png"
+            hovered SetVariable("ball_hint", None)
+            unhovered SetVariable("ball_hint", None)
+            action SetVariable("map_ani_time", 0)
+        else:
+            idle "interface/general/"+str(interface_color)+"/check_false_hidden.png"
+            hover "interface/general/"+str(interface_color)+"/check_true.png"
+            hovered SetVariable("ball_hint", None)
+            unhovered SetVariable("ball_hint", None)
+            action SetVariable("map_ani_time", 1.5)
+
 
     add "interface/map/map_lines_vert.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale at animate#Add vertical lines overlay
 

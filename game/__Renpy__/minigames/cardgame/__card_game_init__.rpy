@@ -3,6 +3,12 @@ label __init_variables:
         selectcard = -1
         selectenemycard = -1
         currentpage = 0
+        #Shown Cards is a interger for how many cards should be hidden
+        #Sudden Death is where when there is draw then a new round will begin
+        #Where you take all card of you color up in you hand
+        #Reverse is where the take over is reverse so instead of > it is <
+        # Rules(Shown Cards, Sudden Death, Reverse, Swap)
+        standart_rules = [3, True, True]
         
         if not hasattr(renpy.store,'playercolor_r'):
             playercolor_r = 51.0/255.0
@@ -569,12 +575,15 @@ init python:
         return get_image_size(image)[1]    
     
     def reset_table_cards():
+        global table_cards
+        
         for y in range(0,3):
             for x in range(0,3):
                 table_cards[x][y] = None
         return
         
-    def check_winner():
+    def check_winner(player_deck):
+        global table_cards
         playerpoints = len(player_deck)
 
         for y in range(0,3):
@@ -588,18 +597,32 @@ init python:
         else:
             return "loss"
            
-    def update_table(new_card_x, new_card_y):
-        if  not new_card_y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].bottomvalue:
-            table_cards[x][y-1].playercard = table_cards[x][y].playercard
-            
-        if not new_card_y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue > table_cards[x][y+1].topvalue:
-            table_cards[x][y+1].playercard = table_cards[x][y].playercard
-            
-        if  not new_card_x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue > table_cards[x-1][y].rightvalue:
-            table_cards[x-1][y].playercard = table_cards[x][y].playercard
-            
-        if not new_card_x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue > table_cards[x+1][y].leftvalue:
-            table_cards[x+1][y].playercard = table_cards[x][y].playercard
+    def update_table(x, y, reverse):
+        global table_cards
+        if reverse:
+            if  not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue < table_cards[x][y-1].bottomvalue:
+                table_cards[x][y-1].playercard = table_cards[x][y].playercard
+                
+            if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue < table_cards[x][y+1].topvalue:
+                table_cards[x][y+1].playercard = table_cards[x][y].playercard
+                
+            if  not x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue < table_cards[x-1][y].rightvalue:
+                table_cards[x-1][y].playercard = table_cards[x][y].playercard
+                
+            if not x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue < table_cards[x+1][y].leftvalue:
+                table_cards[x+1][y].playercard = table_cards[x][y].playercard
+        else:
+            if  not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].bottomvalue:
+                table_cards[x][y-1].playercard = table_cards[x][y].playercard
+                
+            if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue > table_cards[x][y+1].topvalue:
+                table_cards[x][y+1].playercard = table_cards[x][y].playercard
+                
+            if  not x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue > table_cards[x-1][y].rightvalue:
+                table_cards[x-1][y].playercard = table_cards[x][y].playercard
+                
+            if not x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue > table_cards[x+1][y].leftvalue:
+                table_cards[x+1][y].playercard = table_cards[x][y].playercard
             
     def add_card_to_deck(title):
             for card in unlocked_cards:
@@ -613,6 +636,7 @@ init python:
         description = "Description"
         title = "Title"
         imagepath = "images/cardgame/card.png"
+        backside = "images/cardgame/t1/backside/gryffindor.png"
         
         topvalue = 0
         bottomvalue = 1
@@ -626,6 +650,11 @@ init python:
             return im.Scale(self.imagepath, card_width*zoom, card_height*zoom)
         def get_card_hover(self, zoom=0.5):
             return im.MatrixColor(im.Scale(self.imagepath, card_width*zoom, card_height*zoom),im.matrix.brightness(0.12))
+        
+        def get_back_image(self, zoom=0.5):
+            return im.Scale(self.backside, card_width*zoom, card_height*zoom)
+        def get_back_hover(self, zoom=0.5):
+            return im.MatrixColor(im.Scale(self.backside, card_width*zoom, card_height*zoom),im.matrix.brightness(0.12))
 
         def get_title(self):
             return self.textcolor+self.title+"{/color}"
@@ -639,7 +668,7 @@ init python:
         def clone(self):
             return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue, playercard = self.playercard)
                     
-        def getAIScore(self, table_of_cards):
+        def getAIScore(self, table_of_cards, reverse):
             high_score = 0
             position = 0
             wallscore = 2
@@ -648,29 +677,32 @@ init python:
                 for x in range(0,3):
                     score = 0
                     if table_cards[x][y] == None:
-                        if  not y == 0:
-                            if not table_cards[x][y-1] == None and self.topvalue > table_cards[x][y-1].bottomvalue:
+                        if  not y == 0 and not table_cards[x][y-1] == None:
+                            if self.topvalue > table_cards[x][y-1].bottomvalue:
                                 score += getcardscore
                             else:
                                 score += self.topvalue
                         else:
                             score += wallscore
-                        if not y == 2:
-                            if not table_cards[x][y+1] == None and self.bottomvalue > table_cards[x][y+1].topvalue:
+                            
+                        if not y == 2 and not table_cards[x][y+1] == None:
+                            if  self.bottomvalue > table_cards[x][y+1].topvalue:
                                 score += getcardscore
                             else:
                                 score += self.bottomvalue
                         else:
                             score += wallscore
-                        if  not x == 0:
-                            if not table_cards[x-1][y] == None and self.leftvalue > table_cards[x-1][y].rightvalue:
+                            
+                        if  not x == 0 and not table_cards[x-1][y] == None:
+                            if self.leftvalue > table_cards[x-1][y].rightvalue:
                                 score += getcardscore
                             else:
                                 score += self.leftvalue
                         else:
                             score += wallscore
-                        if not x == 2:
-                            if not table_cards[x+1][y] == None and self.rightvalue > table_cards[x+1][y].leftvalue:
+                            
+                        if not x == 2 and not table_cards[x+1][y] == None:
+                            if self.rightvalue > table_cards[x+1][y].leftvalue:
                                 score += getcardscore
                             else:
                                 score += self.rightvalue
@@ -680,4 +712,6 @@ init python:
                         if score > high_score:
                             high_score = score
                             position = x + y * 3
+                            
+                            
             return [high_score, position]

@@ -1,19 +1,12 @@
 label hermione_first_duel:
-    call setup_deck(her_first_deck)
-
     call play_music("grape_soda")
-    $ response_card = ""
     
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump her_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-    
-    if not check_winner() == "win":
+    $ duel_response = start_duel(her_first_deck)
+          
+    if duel_response == "Close":
+        jump her_duel_cancel
+        
+    elif not duel_response == "win":
         jump her_duel_lost
         
     hide screen blkfade
@@ -34,21 +27,14 @@ label hermione_first_duel:
     jump main_room
     
 label hermione_second_duel:
-    call setup_deck(her_second_deck)
-
     call play_music("grape_soda")
-    $ response_card = ""
     
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump her_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-    
-    if not check_winner() == "win":
+    $duel_response = start_duel(her_second_deck)
+          
+    if duel_response == "Close":
+        jump her_duel_cancel
+        
+    elif not duel_response == "win":
         jump her_duel_lost
     
     hide screen blkfade
@@ -76,11 +62,7 @@ label hermione_third_duel:
     call her_main( "I'll make my house proud, you'll see.","grin","happy")
     call her_main( "Wait, I should have asked for point for this.","shock","shocked")
     g9 "To late, here we go."
-    
-    call setup_deck(her_third_deck)
-    
-    $ response_card = ""
-    
+
     call play_music("boss_card_theme")
     play sound "sounds/Genie_VS_Hermione4.mp3"
     show screen genie_vs_hermione
@@ -100,27 +82,13 @@ label hermione_third_duel:
     hide screen genie_vs_hermione
     hide screen genie_vs_hermione_smile
     play music "music/vs_hermione.mp3"
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump her_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-        if response_card == "AfterEnemy":
-            $ volume = _preferences.volumes['music']
-            $ _preferences.volumes['music'] *= .5
-            $ s_punch = renpy.random.randint(1, 4)
-            play sound "sounds/card_punch%s.mp3" % s_punch
-            # Prevents volume to change again when using rollback
-            $ renpy.block_rollback()
-            $ her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
-            call her_main ("[her_speech!t]", "base", "base")
-            hide screen hermione_main
-            $ _preferences.volumes['music'] = volume
     
-    if not check_winner() == "win":
+    $duel_response = start_duel(her_third_deck, "her_after")
+          
+    if duel_response == "Close":
+        jump her_duel_cancel
+        
+    elif not duel_response == "win":
         jump her_duel_lost
     
     #Won third match
@@ -146,6 +114,19 @@ label hermione_third_duel:
     $ hermione_busy = True
     
     jump main_room
+    
+label her_after:
+    $ volume = _preferences.volumes['music']
+    $ _preferences.volumes['music'] *= .5
+    $ s_punch = renpy.random.randint(1, 4)
+    play sound "sounds/card_punch%s.mp3" % s_punch
+    # Prevents volume to change again when using rollback
+    $ renpy.block_rollback()
+    $ her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
+    call her_main ("[her_speech!t]", "base", "base")
+    hide screen hermione_main
+    $ _preferences.volumes['music'] = volume   
+    return
     
 label her_duel_lost:
     stop music fadeout 1

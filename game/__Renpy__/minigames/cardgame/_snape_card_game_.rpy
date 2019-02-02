@@ -1,23 +1,17 @@
 label snape_first_duel:
-    call setup_deck(snape_first_deck)
     call sna_main( "A bit dusty but this should do!","snape_03")
     m "You, or the deck?"
     call sna_main( "I... the deck, obviously.","snape_14")
     call sna_main( "Let's do this.","snape_17")
 
     call play_music("grape_soda")
-    $ response_card = ""
-    
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
 
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump snape_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-    
-    if not check_winner() == "win":
+    $ duel_response = start_duel(snape_first_deck)
+          
+    if duel_response == "Close":
+        jump snape_duel_cancel
+        
+    elif not duel_response == "win":
         jump snape_duel_lost
 
     
@@ -35,24 +29,19 @@ label snape_first_duel:
     jump main_room
             
 label snape_second_duel:
-    call setup_deck(snape_second_deck)
     call sna_main( "That first one was just a warm up, there's no way you'll beat me this time!","snape_16")
     g9 "Time to get our decks out."
     call sna_main( "....","snape_25")
     call sna_main( "Let's just play.","snape_04")
 
     call play_music("grape_soda")
-    $ response_card = ""
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump snape_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
     
-    if not check_winner() == "win":
+    $ duel_response = start_duel(snape_second_deck)
+          
+    if duel_response == "Close":
+        jump snape_duel_cancel
+        
+    elif not duel_response == "win":
         jump snape_duel_lost
     
     hide screen blkfade
@@ -97,8 +86,6 @@ label snape_third_duel:
     call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and my Tier 1 token.","snape_18")
     m "Bring it."
     
-    $ response_card = ""
-    
     call play_music("boss_card_theme")
     play sound "sounds/Genie_VS_Snape.mp3"
     show screen genie_vs_snape
@@ -116,26 +103,12 @@ label snape_third_duel:
     hide screen genie_vs_snape
     hide screen genie_vs_snape_smile
     
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump snape_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-        if response_card == "AfterEnemy":
-            $ volume = _preferences.volumes['music']
-            $ _preferences.volumes['music'] *= .5
-            $ s_punch = renpy.random.randint(1, 4)
-            play sound "sounds/card_punch%s.mp3" % s_punch
-            # Prevents volume to change again when using rollback
-            $ renpy.block_rollback()
-            call sna_main( (snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)]),"snape_05")
-            call sna_main(remove=True)
-            $ _preferences.volumes['music'] = volume
-    
-    if not check_winner() == "win":
+    $ duel_response = start_duel(snape_third_deck, "snape_after")
+          
+    if duel_response == "Close":
+        jump snape_duel_cancel
+        
+    elif not duel_response == "win":
         jump snape_duel_lost
     
     #Won third match
@@ -160,6 +133,17 @@ label snape_third_duel:
     $ snape_busy = True
     
     jump main_room
+label snape_after:
+    $ volume = _preferences.volumes['music']
+    $ _preferences.volumes['music'] *= .5
+    $ s_punch = renpy.random.randint(1, 4)
+    play sound "sounds/card_punch%s.mp3" % s_punch
+    # Prevents volume to change again when using rollback
+    $ renpy.block_rollback()
+    call sna_main( (snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)]),"snape_05")
+    call sna_main(remove=True)
+    $ _preferences.volumes['music'] = volume
+    return
     
 label snape_duel_lost:
     stop music fadeout 1

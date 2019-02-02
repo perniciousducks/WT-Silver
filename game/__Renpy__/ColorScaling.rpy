@@ -56,7 +56,6 @@ init python:
     import _renpy
     
     def color_picker(color = [255.0, 255.0, 0.0, 255.0], alpha = True, title=""):
-        global color_scale
         global UI_color_bar
         original_color = [color[0],color[1],color[2],color[3]]
         choicen_scale = [125.0,125.0]

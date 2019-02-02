@@ -1,19 +1,11 @@
 label twins_first_duel:
-    call setup_deck(twins_first_deck)
-
     call play_music("grape_soda")
-    $ response_card = ""
 
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump twins_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-
-    if not check_winner() == "win":
+    $ duel_response = start_duel(twins_first_deck)    
+        
+    if duel_response == "Close":
+        jump twins_duel_cancel
+    elif not duel_response == "win":
         jump twins_duel_lost
 
     hide screen blkfade
@@ -72,31 +64,12 @@ label twins_second_duel:
     hide screen genie_vs_twins_smile
     hide screen genie_vs_twins
 
-    if renpy.random.randint(0,1) == 0:
-        call enemy_turn
-
-    while response_card != "EndGame":
-        call cardgame
-        if response_card == "Close":
-            jump twins_duel_cancel
-        #Should be a better way but renpy dont have break for while loops-_-
-        if response_card == "AfterEnemy":
-            $ volume = _preferences.volumes['music']
-            $ _preferences.volumes['music'] *= .5
-            $ s_punch = renpy.random.randint(1, 4)
-            play sound "sounds/card_punch%s.mp3" % s_punch
-            # Prevents volume to change again when using rollback
-            $ renpy.block_rollback()
-            $ rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
-            #$ rnd_twin = renpy.random.choice = [fre, goe]
-
-            if renpy.random.randint(0, 1) == 0:
-                fre "[rnd_text!t]"
-            else:
-                ger "[rnd_text!t]"
-            $ _preferences.volumes['music'] = volume
-
-    if not check_winner() == "win":
+    $ duel_response = start_duel(twins_second_deck, "twins_after")    
+        
+    if duel_response == "Close":
+        jump twins_duel_cancel
+        
+    elif  not duel_response == "win":
         jump twins_duel_lost
 
     hide screen blkfade
@@ -119,7 +92,23 @@ label twins_second_duel:
 
     "You return to your office."
     jump main_room
+label twins_after:
+    $ volume = _preferences.volumes['music']
+    $ _preferences.volumes['music'] *= .5
+    $ s_punch = renpy.random.randint(1, 4)
+    play sound "sounds/card_punch%s.mp3" % s_punch
+    # Prevents volume to change again when using rollback
+    $ renpy.block_rollback()
+    $ rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
+    #$ rnd_twin = renpy.random.choice = [fre, goe]
 
+    if renpy.random.randint(0, 1) == 0:
+        fre "[rnd_text!t]"
+    else:
+        ger "[rnd_text!t]"
+    $ _preferences.volumes['music'] = volume
+    return
+    
 label twins_duel_lost:
     stop music fadeout 1
 

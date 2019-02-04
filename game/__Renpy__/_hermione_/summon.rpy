@@ -72,7 +72,7 @@ label summon_hermione:
             else:
                 jump hermione_requests_menu
 
-        "-Wardrobe-":
+        "-Wardrobe-" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
             $ active_girl = "hermione"
 
             call load_hermione_clothing_saves

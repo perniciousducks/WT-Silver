@@ -537,9 +537,10 @@ label her_progress_init:
         $ cat_ears_potion_return = False
         $ her_dress_wearable = False
 
-    if not hasattr(renpy.store,'gave_hermione_gift') or reset_persistants:
+    if not hasattr(renpy.store,'hermione_wardrobe_unlocked') or reset_persistants:
         $ gave_hermione_gift = False
-
+        $ hermione_wardrobe_unlocked = False
+        call reset_hermione_clothing # Makes sure she's wearing her default clothing before doing the first tutoring events unlocking the wardrobe.
 
     ### Hermione Favours ###
 

@@ -71,7 +71,7 @@ label rummaging:
     # Item Reward.
     $ random_number = renpy.random.randint(1, 5)
 
-    if day >= 26 and deck_unlocked and random_number in [5] and not dumbledore in unlocked_cards:
+    if day >= 26 and deck_unlocked and random_number in [5] and not card_exist(unlocked_cards,dumbledore) :
         call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.png")
         $ unlocked_cards += [dumbledore]
 

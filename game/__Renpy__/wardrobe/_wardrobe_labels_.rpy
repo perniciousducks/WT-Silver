@@ -33,9 +33,30 @@ label reset_wardrobe_vars:
     $ wardrobe_gifts_category = 0         #default page
     $ wardrobe_load_custom_outfit = True  #False = save custom outfit.
 
+    $ wr_action_list = []
+
     if active_girl == "hermione":
+        $ wr_action_list = ["no pose"]
+        if her_whoring >= 9:
+            $ wr_action_list.append("lift top")
+        if her_whoring >= 6:
+            $ wr_action_list.append("lift bottom")
+        if her_whoring >= 11:
+            $ wr_action_list.append("covering")
+        if her_whoring >= 14:
+            $ wr_action_list.append("presenting")
+            $ wr_action_list.append("behind")
+        if her_whoring >= 17:
+            $ wr_action_list.append("fingering")
+            $ wr_action_list.append("pinching")
+        if her_whoring >= 20:
+            $ wr_action_list.append("cuffed")
+        if her_whoring >= 14:
+            $ wr_action_list.append("strip")
+
         $ wr_base_hair_style = "curly" #Throwaway variable. Doesn't get updated.
         $ wr_base_hair_color = "brown" #Throwaway variable. Doesn't get updated.
+
     elif active_girl == "luna":
         $ wr_base_hair_style = "curly"
         $ wr_base_hair_color = "blonde"
@@ -355,31 +376,25 @@ label close_wardrobe:
 label wardrobe_change_her_action:
     hide screen hermione_main
 
-    if wr_her_action == "none":
+    if wr_her_action == "no pose":
         call set_her_action("none","update")
-    if wr_her_action == "lift_top":
+    if wr_her_action == "lift top":
         call set_her_action("lift_top")
-    if wr_her_action == "lift_skirt":
+    if wr_her_action == "lift bottom":
         call set_her_action("lift_skirt")
-    if wr_her_action == "hold_book":
-        call set_her_action("hold_book")
-    if wr_her_action == "milk_breasts":
-        $ milking = 1
-        call set_her_action("milk_breasts")
-
-    if wr_her_action == "lift_breasts":
+    if wr_her_action == "presenting":
         call set_her_action("lift_breasts")
-    if wr_her_action == "hands_behind":
+    if wr_her_action == "behind":
         call set_her_action("hands_behind")
     if wr_her_action == "covering":
         call set_her_action("covering")
     if wr_her_action == "fingering":
         call set_her_action("fingering")
-    if wr_her_action == "pinch":
+    if wr_her_action == "pinching":
         call set_her_action("pinch")
-    if wr_her_action == "hands_cuffed":
+    if wr_her_action == "cuffed":
         call set_her_action("hands_cuffed")
-    if wr_her_action == "naked":
+    if wr_her_action == "strip":
         call set_her_action("naked")
 
     call her_main(xpos="wardrobe")

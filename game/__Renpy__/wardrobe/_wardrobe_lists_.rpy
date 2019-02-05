@@ -147,12 +147,12 @@ label update_wr_head_list:
             $ wr_ears.append("elf_ears")
 
         #Hats
-        if hg_outfit_witch_ITEM.unlocked:
-            $ wr_hats.append("witch_hat")
+        if hg_witch_ITEM.unlocked:
+            $ wr_hats.append("hat_witch")
         if hg_gamble_slut_ITEM.unlocked:
             $ wr_hats.append("hat_gambler")
         if hg_outfit_maid_ITEM.unlocked:
-            $ wr_hats.append("maid_hat")
+            $ wr_hats.append("hat_maid")
         if hg_dress_yule_ball_ITEM.unlocked:
             $ wr_hats.append("tiara")
 
@@ -585,7 +585,7 @@ label update_wr_other_clothings_list:
         if hg_outfit_maid_ITEM.unlocked or hg_lingerie_maid_ITEM.unlocked:
             $ wr_gloves.append("gloves_french_maid")
         if her_whoring >= 13 and hg_costume_lara_croft_ITEM.unlocked:
-            $ wr_gloves.append("gloves_leather_short")
+            $ wr_gloves.append("gloves_leather_2")
         if her_whoring >= 22 and hg_costume_harley_quinn_ITEM.unlocked:
             $ wr_gloves.append("gloves_leather")
         #$ wr_gloves.append("gloves_egyptian") #ADD Egypt Outfit
@@ -615,7 +615,7 @@ label update_wr_other_clothings_list:
         if hg_lingerie_latex_ITEM.unlocked:
             $ wr_stockings.append("stockings_latex")
         if hg_costume_yennefer_ITEM.unlocked:
-            $ wr_stockings.append("stockings_silk_flowers")
+            $ wr_stockings.append("stockings_silk_1")
 
         if hg_outfit_maid_ITEM.unlocked or hg_lingerie_silk_ITEM.unlocked:
             $ wr_stockings.append("stockings_lace")

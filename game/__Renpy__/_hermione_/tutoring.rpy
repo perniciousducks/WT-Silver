@@ -48,28 +48,21 @@ label l_tutoring:
     $ d_flag_01 = False
 
     if her_tutoring == 0:   # Whoring lvl 0
-
-        call her_main("Of course, sir.","open","base")
-        her "I'll go get my books then."
-
-        hide screen hermione_main
-        play sound sd_door
-        call blkfade
-
-        play sound sd_door
-        pause.3
-
-        call set_her_action("hold_book")
-        call her_main("","base","base",xpos="mid",ypos="base")
-
-        call hide_blkfade
-
-        call ctc
-
-        call her_main("Again, thank you for doing this for me, sir...","open","base",xpos="base",ypos="base")
+        call her_main("Again, thank you for doing this for me, sir...","open","base",xpos="base",ypos="base",trans="fade")
+        call her_main("Shall I go and fetch my books?","open","suspicious")
+        m "What?"
+        call her_main("My Books, [genie_name]. I need to study them more for my tests.","soft","baseL")
+        call her_main("All the knowledge I need is in those books!","annoyed","angryL")
+        m "Books can't teach you everything, girl... Some knowlege only comes with practice and experience!"
+        m "(I'm really just going to make this shit up as I go, ain't I?)"
+        call her_main("Maybe... I mean, you're not chosen as the head of Hogwarts by chance.","annoyed","suspicious")
+        m "Sometimes you seem to forget that, Miss Granger."
+        call her_main("That sounded like something professor Snape would say...","open","suspicious")
+        call her_main(".........","annoyed","suspicious")
+        call her_main("Sorry about that, he thinks he's always right and it annoys me.","smile","happyCl")
         m "..........."
         call her_main("Sir?","soft","baseL")
-        m "It's time to talk about your future, child."
+        g4 "It's time to talk about your future, child."
         stop music fadeout 1.0
         call her_main("I'm not a child anymore, professor!","normal","frown")
         m "In a way you're right, but..."
@@ -121,28 +114,10 @@ label l_tutoring:
         jump day_start
 
     if her_tutoring == 1:   # Whoring lvl 1
-
-        hide screen hermione_main
-        call set_her_action("hold_book")
-
-        call her_main("","base","base",trans="fade")
+        call her_main("","base","base",xpos="base",ypos="base",trans="fade")
         m "Miss Granger, time for your first lesson."
         call her_main("Yes, professor.","soft","baseL")
-        m "You've brought your books again, I don't think we'll need them for the moment."
-        call her_main("Too bad, I love books.","normal","base")
-        hide screen hermione_main
-        with d3
-
-        call set_her_action("none","update")
-
-        g9 "{size=-2}(And soon you'll love cock!){/size}"
-        $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
-
-        call her_main("Yes?","soft","baseL")
-        m "It's nothing, I was just thinking about our next lesson."
-        call her_main("{size=-2}(The elderly...){/size}","angry","angry")
-        m "............."
-        m "Anyway, have you thought about what we discussed?"
+        m "Have you thought about what we discussed?"
         call her_main("Not really, I'm not sure what you mean by \"emotions\".","normal","base")
         g9 "{size=-2}(You'll learn soon enough, girl.){/size}"
         m "For example, what was your state of mind when you heard those rumours about the Slytherin girls?"
@@ -185,18 +160,6 @@ label l_tutoring:
         jump day_start
 
     elif her_tutoring == 2:   # Whoring lvl 2
-        m "Good, you didn't bring your books this time."
-        call her_main("Not that I agree with it. All the knowledge I need is in those books.","annoyed","angryL")
-        m "Books can't teach you everything, some knowlege only comes with practice and experience!"
-        call her_main("Maybe... I mean, you're not chosen as the head of Hogwarts by chance.","annoyed","suspicious")
-        m "Sometimes you seem to forget that, Miss Granger."
-        call her_main("That sounded like something professor Snape would say...","open","suspicious")
-        call her_main(".........","annoyed","suspicious")
-        call her_main("Sorry about that, he thinks he's always right and it annoys me.","smile","happyCl")
-        m "Not unlike you, miss Granger..."
-        call her_main("I suppose you have a point...","annoyed","angryL",cheeks="blush")
-        m "From now on I hope it's clear."
-        call her_main("Yes, professor Dumbledore.","disgust","down_raised",cheeks="blush")
         m "So, have you thought about emotions and their usefulness in the practice of magic?"
         call her_main("Yes, first I tried to cast a spell while thinking of the behavior of those Slytherin girls.","open","closed")
         call her_main("It made me so angry and confused that I lost my focus and failed miserably.","annoyed","base")

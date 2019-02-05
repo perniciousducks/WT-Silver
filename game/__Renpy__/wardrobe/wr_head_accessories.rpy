@@ -326,7 +326,7 @@ label equip_her_head_accessory:
                 call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
-            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
+            if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -347,7 +347,7 @@ label equip_her_head_accessory:
                         ">Try again at Whoring level 11."
                     jump return_to_wardrobe
 
-            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
+            if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -399,7 +399,7 @@ label remove_head_accessory: #Remove/Toggle off
                 call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
-            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
+            if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")
@@ -413,7 +413,7 @@ label remove_head_accessory: #Remove/Toggle off
                 call set_her_glasses(head_accessory_choice, glasses_color_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
-            if head_accessory_choice in ["maid_hat","witch_hat","hat_gambler","tiara"]:
+            if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:
                 call set_her_hat(head_accessory_choice)
 
             call her_main(xpos="wardrobe")

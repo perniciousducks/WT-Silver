@@ -236,9 +236,9 @@ screen wardorobe_menu(character, category, toggle, xpos, ypos):
     # Main Window
     add "interface/wardrobe/bg/" +str(bg_color)+ "_right.png" xpos ui_xpos+105 ypos ui_ypos+20
     if category == None:
-        add "interface/wardrobe/" +str(interface_color)+ "/icons_" +str(character)+ ".png" xpos ui_xpos+13 ypos ui_ypos+80 zoom 0.5
+        add "interface/wardrobe/test/" +str(interface_color)+ "/icons_" +str(character)+ ".png" xpos ui_xpos+13 ypos ui_ypos+80 zoom 0.5
     else:
-        add "interface/wardrobe/" +str(interface_color)+ "/icons_" +str(character)+ "_" +str(category)+ ".png" xpos ui_xpos+13 ypos ui_ypos+80 zoom 0.5
+        add "interface/wardrobe/test/" +str(interface_color)+ "/icons_" +str(character)+ "_" +str(category)+ ".png" xpos ui_xpos+13 ypos ui_ypos+80 zoom 0.5
 
     imagemap:
         xpos ui_xpos

@@ -29,10 +29,10 @@ label hermione_random_clothing:
         m "Brought them for what?"
         call her_main("My tutoring lessons...","soft","suspicious")
         call her_main("I hope you're still planning to lecture me, [genie_name].","annoyed","base")
-        m "Oh, I'll lecture you alright."
+        g9 "Oh, I'll give you a lecture for sure."
         g9 "But we'll do it my way!"
-        m "You won't need them."
-        call her_main("I won't?","normal","worried")
+        m "But we're going to have to do it my way. There's no need for those books."
+        call her_main("No need?","normal","worried")
         m "No."
         call her_main("Too bad, I love books.","annoyed","down")
         hide screen hermione_main
@@ -54,11 +54,10 @@ label hermione_random_clothing:
         pause.2
 
         call her_main("Yes?","soft","base",trans="d5")
-        m "Nothing... I didn't say anything..."
+        m "I didn't say anything..."
         call her_main("If you say so, [genie_name].","open","baseL")
-        call her_main("Is it ok if we start right away with the lessons?","soft","base")
-        m "Well..."
-        m "Here goes nothing..."
+        call her_main("Is it ok if we could start right away with the lessons?","soft","base")
+        m "Well... Of course..."
 
         call her_main("","base","base",xpos="base",ypos="base",trans="fade")
 

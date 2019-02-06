@@ -17,11 +17,13 @@ label cho_wardrobe_test: # WIP
     $ category_choice = None
     #$ category_choice = None
     $ current_group = "1"
-    $ char_name = cho_name
-    $ bg_color = "gray" # Temporarily
+    $ char_name = "cho"
+    $ char_nickname = cho_name
     $ hide_transitions = True
 
     label cho_wardrobe_test_menu:
+
+    $ bg_color = cho_bg_color
 
     call update_cho_wardrobe_items(current_category, current_group) # Updates 'item_list'
     call cho_main(xpos="wardrobe",ypos="base")
@@ -47,10 +49,10 @@ label cho_wardrobe_test: # WIP
 
         #item_list = list(filter(lambda x: x.unlocked==False, item_list))
 
-    show screen wardorobe_menu(char_name, current_category, xpos=550, ypos=50)
+    show screen wardorobe_menu(char_nickname, char_name, current_category, xpos=550, ypos=50)
 
-    #if current_category != None:
-    #    show screen wardorobe_item_menu(item_list, current_category, current_group, menu_title, xpos=nxpos, ypos=nypos)
+    if current_category != None:
+        show screen wardorobe_item_menu(item_list, char_name, current_category, current_group, menu_title, xpos=20, ypos=50)
 
     $ _return = ui.interact()
 
@@ -60,7 +62,17 @@ label cho_wardrobe_test: # WIP
     if isinstance(_return, item_class):
         call equip_cho_item(_return)
 
+
+    elif _return == "open_category":
+        $ renpy.play('sounds/scroll.mp3') #opening wardrobe page
+    elif _return == "close_category":
+        $ renpy.play('sounds/door2.mp3') #closing wardrobe page
+
+    elif _return == "change_bg_color":
+        $ cho_bg_color = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "wardrobe color")
+
     elif _return == "Close":
+        $ renpy.play('sounds/door2.mp3') #closing wardrobe page
         $ current_page = 0
         $ hide_transitions = False
         call cho_main(xpos="base",ypos="base")
@@ -75,8 +87,8 @@ label cho_wardrobe_test: # WIP
     jump cho_wardrobe_test_menu
 
 
-# Right Wardrobe Menu # Not working yet
-screen wardorobe_menu(character, category, xpos, ypos):
+# Right Wardrobe Menu
+screen wardorobe_menu(nickname, character, category, xpos, ypos):
     $ ui_xpos = xpos
     $ ui_ypos = ypos
     zorder 4
@@ -84,8 +96,8 @@ screen wardorobe_menu(character, category, xpos, ypos):
     # Close Button
     use top_bar_close_button
 
-    # Main Window
-    add "interface/wardrobe/bg/" +str(bg_color)+ "_right.png" xpos ui_xpos+100 ypos ui_ypos
+    # Main Window im.MatrixColor( image, im.matrix.tint(red, green, blue))
+    add im.MatrixColor( "interface/wardrobe/bg/wr_bg_right.png", im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) xpos ui_xpos+100 ypos ui_ypos
     if category == None:
         add "interface/wardrobe/test/" +str(interface_color)+ "/icons_" +str(character)+ ".png" xpos ui_xpos+13 ypos ui_ypos+80 zoom 0.5
     else:
@@ -102,17 +114,15 @@ screen wardorobe_menu(character, category, xpos, ypos):
 
         for i in range(0,4): # Left side.
             if category == wardrobe_categories[i]:
-                hotspot (15 , 82 +(110*i) , 85 , 93) clicked SetVariable("category_choice",None), Return()
+                hotspot (15 , 82 +(110*i) , 85 , 93) clicked SetVariable("category_choice",None), Return("close_category")
             else:
-                hotspot (15+48 , 82 +(110*i) , 37 , 93) clicked SetVariable("category_choice",wardrobe_categories[i]), Return()
+                hotspot (15+48 , 82 +(110*i) , 37 , 93) clicked SetVariable("category_choice",wardrobe_categories[i]), Return("open_category")
 
         for i in range(4,8): # Right side.
             if category == wardrobe_categories[i]:
-                hotspot (15 +425 , 82 +(110*(i-4)) , 84 , 93) clicked SetVariable("category_choice",None), Return()
+                hotspot (15 +425 , 82 +(110*(i-4)) , 84 , 93) clicked SetVariable("category_choice",None), Return("close_category")
             else:
-                hotspot (15 +425 , 82 +(110*(i-4)) , 40 , 93) clicked SetVariable("category_choice",wardrobe_categories[i]), Return()
-
-
+                hotspot (15 +425 , 82 +(110*(i-4)) , 40 , 93) clicked SetVariable("category_choice",wardrobe_categories[i]), Return("open_category")
 
         # Character Name
         add "interface/general/"+str(interface_color)+"/button_wide.png" xpos 200 ypos -4
@@ -121,30 +131,32 @@ screen wardorobe_menu(character, category, xpos, ypos):
             ypos -4
             xsize 140
             ysize 34
-            text character xalign 0.5 yalign 0.5 size 16 bold 0.2
+            text nickname xalign 0.5 yalign 0.5 size 16 bold 0.2
 
-        #Categories
-        #for i in range(0,len(categories)): #Max 5 items!
-        #    hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
-        #    add "interface/icons/" +str(categories[i])+ ".png" xpos 0+(90*i) ypos 70 zoom 0.35
+        # BG color
+        hotspot (340, 60, 18, 18) clicked Return("change_bg_color")
+        add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 340 ypos 60-5
+        text "bg color" xpos 340+21 ypos 60+4 size 10
 
-        #Items
-        #for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
-        #    if i < len(menu_items):
-        #        $ row = i // 5
-        #        $ col = i % 5
-        #        if menu_items[i].number > 0 or menu_items[i].unlocked == True:
-        #            hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
-        #        text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row)
-        #        use icon_menu_item(menu_items[i], 5+90*(col-(current_page*items_shown)), 175+90*(row-(current_page*items_shown)))
+        #Wardrobe music
+        #if play_wardrobe_music:
+        #    hotspot (900,150+410,18,18) clicked [SetVariable("play_wardrobe_music",False), Jump("wardrobe_update")]
+        #    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 900 ypos 145+410
+        #else:
+        #    hotspot (900,150+410,18,18) clicked [SetVariable("play_wardrobe_music",True), Jump("wardrobe_update")]
+        #    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 900 ypos 145+410
+        #text "Music" xpos 900+21 ypos 154+410 size 10
 
 
 # Left Wardrobe Menu # Not working yet
-screen wardorobe_item_menu(menu_items, categories, character, title, xpos, ypos):
+screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos, ypos):
     $ items_shown = 20
     $ ui_xpos = xpos
     $ ui_ypos = ypos
-    zorder 5
+    zorder 4
+
+    # Close Button
+    use top_bar_close_button
 
     #Up Button
     imagebutton:
@@ -174,7 +186,7 @@ screen wardorobe_item_menu(menu_items, categories, character, title, xpos, ypos)
         ground "interface/store/"+interface_color+"/icons_panel.png"
         hover "interface/store/"+interface_color+"/icons_panel_hover.png"
 
-        #Header
+        # Header
         hbox:
             xpos 11
             ypos 30
@@ -182,20 +194,20 @@ screen wardorobe_item_menu(menu_items, categories, character, title, xpos, ypos)
             ysize 45
             text title xalign 0.5 yalign 0.5 size 16 bold 0.2
 
-        #Categories
-        for i in range(0,len(categories)): #Max 5 items!
-            hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
-            add "interface/icons/" +str(categories[i])+ ".png" xpos 0+(90*i) ypos 70 zoom 0.35
+        # Groups
+        for i in range(0,len(groups)): #Max 5 items!
+            hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("group_choice",groups[i]), Return()
+            add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xpos 5+(90*i) ypos 86 zoom 0.2
 
         #Items
-        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
-            if i < len(menu_items):
-                $ row = i // 5
-                $ col = i % 5
-                if menu_items[i].number > 0 or menu_items[i].unlocked == True:
-                    hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
-                text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row)
-                use icon_menu_item(menu_items[i], 5+90*(col-(current_page*items_shown)), 175+90*(row-(current_page*items_shown)))
+        #for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+        #    if i < len(menu_items):
+        #        $ row = i // 5
+        #        $ col = i % 5
+        #        if menu_items[i].number > 0 or menu_items[i].unlocked == True:
+        #            hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
+        #        text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row)
+        #        use icon_menu_item(menu_items[i], 5+90*(col-(current_page*items_shown)), 175+90*(row-(current_page*items_shown)))
 
 
 

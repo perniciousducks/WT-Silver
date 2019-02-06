@@ -2,7 +2,7 @@
 
 label wardrobe_init:
 
-    if not hasattr(renpy.store,'play_wardrobe_music') or reset_persistants:
+    if not hasattr(renpy.store,'cho_bg_color') or reset_persistants:
 
         $ hide_transitions = False
         $ active_girl = "hermione"
@@ -52,5 +52,8 @@ label wardrobe_init:
         $ icon_ypos_offset = 0
 
         $ wardrobe_load_custom_outfit = True
+
+        $ cho_bg_color = [82,150,248,255]
+        $ luna_bg_color = [82,150,248,255]
 
     return

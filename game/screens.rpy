@@ -706,3 +706,22 @@ init -2:
     # turned off by default.
     #config.default_afm_time = 10
     #config.default_afm_enable = False
+    
+screen input:
+    tag input
+    zorder 15 #Always on top
+    
+    button:
+        xsize 1080
+        ysize 600
+        action NullAction()
+        style "empty"
+        
+    window:
+        id "window"
+        
+        has vbox:
+            style "say_vbox"
+        
+        text prompt
+        input id "input"

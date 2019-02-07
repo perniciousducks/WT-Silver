@@ -208,8 +208,8 @@ if day >= 26 and not deck_unlocked:
 if day >= twins_cards_delay and deck_unlocked and twins_first_win and not twins_cards_stocked:
     $ letter_cards_store.mailLetter()
     
-if not cardgame_eoc and snape_third_win and her_third_win and twins_second_win:
-    $ letter_cardgame_eoc.mailLetter()
+if geniecard_level < 2 and snape_third_win and her_third_win and twins_second_win:
+    $ letter_cardgame_t2.mailLetter()
     
 if package_is_here or letter_queue_list != []:
     play sound "sounds/owl.mp3"

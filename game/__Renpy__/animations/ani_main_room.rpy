@@ -182,3 +182,17 @@ image owl_with_letter_blink:
     "images/rooms/_objects_/mail/owl_01.png"
     pause 7
     repeat
+    
+#Black owl
+image owl_with_letter_blink_black:
+    "images/rooms/_objects_/mail/owl_01_black.png"
+    pause.1
+    "images/rooms/_objects_/mail/owl_02_black.png"
+    pause.1
+    "images/rooms/_objects_/mail/owl_03_black.png"
+    pause.15
+    "images/rooms/_objects_/mail/owl_02_black.png"
+    pause.1
+    "images/rooms/_objects_/mail/owl_01_black.png"
+    pause 7
+    repeat

@@ -160,11 +160,12 @@ label cards_store_mail_send:
     return
 
 ### Cardgame End of Content letter ###
-label cardgame_eoc_mail_send:
-    $ cardgame_eoc = True
+label cardgame_t2_mail_send:
+    #$ cardgame_eoc = True
 
     g9 "Sweet..."
     g9 "Fucking love prizes."
+    $ geniecard_level = 2
 
     return
 
@@ -250,10 +251,10 @@ label __init_variables:
     $ letter_cards_store.text = "{size=-7}Weasley's Wizard Wheezes shop emporium is now officially partnering with Wizard cards.\nCheck out the notice board at our shop to find a list of challengers at your skill level.{/size}"
     $ letter_cards_store.label = "cards_store_mail_send"
 
-    if not hasattr(renpy.store,'letter_cardgame_eoc'):
-        $ letter_cardgame_eoc = mail_letter_class()
-    $ letter_cardgame_eoc.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beaten your first 3 challenges of Wizard Cards.\nWe're currently working on expanding our business and are recruiting even more challengers so that in the future you'll be able to challenge even more people.\nIn the meanwhile, you'll be able to earn even more tokens by challenging someone again to complete your collection of items.\nThis time you'll only get one token per win but it should be a breeze for such a skilled player as you.\n\nYours truly,\nWeasley's Wizard Wheeze's and Team Silver{/size}"
-    $ letter_cardgame_eoc.label = "cardgame_eoc_mail_send"
+    if not hasattr(renpy.store,'letter_cardgame_t2'):
+        $ letter_cardgame_t2 = mail_letter_class()
+    $ letter_cardgame_t2.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beaten your first 3 challenges of Wizard Cards.\nWe're currently working on expanding our business and are recruiting even more challengers so that in the future you'll be able to challenge even more people.\nIn the meanwhile, you'll be able to earn even more tokens by challenging someone again to complete your collection of items.\nThis time you'll only get one token per win but it should be a breeze for such a skilled player as you.\n\nYours truly,\nWeasley's Wizard Wheeze's and Team Silver{/size}"
+    $ letter_cardgame_t2.label = "cardgame_t2_mail_send"
 
     return
 

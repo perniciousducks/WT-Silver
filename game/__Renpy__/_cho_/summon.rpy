@@ -4,7 +4,8 @@ label summon_cho:
 
     call play_sound("door")
 
-    #ADD Cho chibi here.
+    call cho_chibi("stand","mid","base")
+    call ctc
     call cho_random_clothing
 
     label cho_requests:

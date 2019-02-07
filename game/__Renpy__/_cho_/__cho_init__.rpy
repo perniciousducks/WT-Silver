@@ -34,6 +34,24 @@ label cho_init:
 
         $ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
+        #Chibi
+        $ cho_chibi_xpos          = 500
+        $ cho_chibi_ypos          = 250
+        $ cho_chibi_xpos_name     = "base" #Memory of chibi position.
+        $ cho_chibi_ypos_name     = "base" #Memory of chibi position.
+        $ cho_chibi_flip          = 1
+        $ cho_chibi_zorder        = 3
+
+        $ cho_chibi_stand         = "ch_cho blink"
+        $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
+
+        $ cho_chibi_walk          = "ch_cho walk"
+        $ cho_chibi_walk_shoes    = "ch_cho walk_shoes"
+
+        $ cho_chibi_top           = "characters/cho/chibis/cc_cloth_shirt_r.png"
+        $ cho_chibi_bottom        = "characters/cho/chibis/cc_cloth_skirt.png"
+        $ cho_chibi_robe          = "characters/cho/chibis/blank.png"
+
         #Hair
         $ cho_hair                = "characters/cho/body/hair/ponytail_blue_base.png"
         $ cho_hair_shadow         = "characters/cho/body/hair/ponytail_blue_top.png"

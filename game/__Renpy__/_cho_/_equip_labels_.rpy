@@ -38,6 +38,8 @@ label update_cho_uniform:
     $ cho_belly_piercing      = "characters/cho/accessories/piercings/" +str(c_belly_piercing)+ ".png"
     $ cho_genital_piercing    = "characters/cho/accessories/piercings/" +str(c_genital_piercing)+ ".png"
 
+    call update_cho_chibi_uniform
+
     return
 
 #Hair equip.

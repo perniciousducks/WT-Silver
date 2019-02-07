@@ -30,8 +30,7 @@ label hermione_random_clothing:
         call her_main("My tutoring lessons...","soft","suspicious")
         call her_main("I hope you're still planning to lecture me, [genie_name].","annoyed","base")
         g9 "Oh, I'll give you a lecture for sure."
-        g9 "But we'll do it my way!"
-        m "But we're going to have to do it my way. There's no need for those books."
+        m "But we're going to have to do it my way.{w}\nThere's no need for those books."
         call her_main("No need?","normal","worried")
         m "No."
         call her_main("Too bad, I love books.","annoyed","down")

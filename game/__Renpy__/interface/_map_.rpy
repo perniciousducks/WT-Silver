@@ -72,9 +72,8 @@ screen map_buttons:
     zorder 4
     #Office
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +112
+        ypos UI_ypos_offset +234
         idle "interface/map/room_office_idle.png"
         hover "interface/map/room_office_hover.png"
         hovered SetVariable("ball_hint", "office")
@@ -83,9 +82,8 @@ screen map_buttons:
 
     #Gryffindor
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +148
+        ypos UI_ypos_offset +214
         idle "interface/map/room_gryffindor_idle.png"
         hover "interface/map/room_gryffindor_hover.png"
         hovered SetVariable("ball_hint", "dorm_gryffindor")
@@ -94,9 +92,8 @@ screen map_buttons:
 
     #Ravenclaw
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +286
+        ypos UI_ypos_offset +256
         idle "interface/map/room_ravenclaw_idle.png"
         hover "interface/map/room_ravenclaw_hover.png"
         hovered SetVariable("ball_hint", "dorm_ravenclaw")
@@ -105,31 +102,28 @@ screen map_buttons:
 
     #Hufflepuff
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +76
+        ypos UI_ypos_offset +295
         idle "interface/map/room_hufflepuff_idle.png"
-        #hovered SetVariable("ball_hint", "dork_hufflepuff")
+        #hovered SetVariable("ball_hint", "dorm_hufflepuff")
         #unhovered SetVariable("ball_hint", None)
         #hover "interface/map/room_hufflepuff_hover.png"
         #action Return("hufflepuff_dormitories")
 
     #Slytherin
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +214
+        ypos UI_ypos_offset +136
         idle "interface/map/room_slytherin_idle.png"
-        #hovered SetVariable("ball_hint", "dorm_slytherin")
-        #unhovered SetVariable("ball_hint", None)
-        #hover "interface/map/room_slytherin_hover.png"
-        #action Return("slytherin_dormitories")
+        hovered SetVariable("ball_hint", "dorm_slytherin")
+        unhovered SetVariable("ball_hint", None)
+        hover "interface/map/room_slytherin_hover.png"
+        action Return("slytherin_dormitories")
 
     #Weasley Store
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +246
+        ypos UI_ypos_offset +231
         idle "interface/map/room_weasley_store_idle.png"
         hover "interface/map/room_weasley_store_hover.png"
         hovered SetVariable("ball_hint", "weasley_store")
@@ -138,9 +132,8 @@ screen map_buttons:
 
     #Clothing Store
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +462
+        ypos UI_ypos_offset +231
         idle "interface/map/room_clothing_store_idle.png"
         hover "interface/map/room_clothing_store_hover.png"
         hovered SetVariable("ball_hint", "clothing_store")
@@ -149,9 +142,8 @@ screen map_buttons:
 
     #Potions
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +314
+        ypos UI_ypos_offset +331
         idle "interface/map/room_potions_idle.png"
         unhovered SetVariable("ball_hint", None)
         if store_intro_done:
@@ -162,9 +154,8 @@ screen map_buttons:
     #Room of Requirement
     if unlocked_7th:
         imagebutton at animate:
-            xpos UI_xpos_offset
-            ypos UI_ypos_offset
-            focus_mask True
+            xpos UI_xpos_offset +116
+            ypos UI_ypos_offset +160
             unhovered SetVariable("ball_hint", None)
             if first_time_7th == True:
                 idle "interface/map/room_ror_empty_idle.png"
@@ -179,20 +170,18 @@ screen map_buttons:
 
     #Lake
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +131
+        ypos UI_ypos_offset +367
         idle "interface/map/room_boat_house_idle.png"
         hover "interface/map/room_boat_house_hover.png"
         hovered SetVariable("ball_hint", "lake")
         unhovered SetVariable("ball_hint", None)
         action Return("map_lake")
 
-    #Forest (Temporary until we have a map for the nothern section!)
+    #Forest
     imagebutton at animate:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        focus_mask True
+        xpos UI_xpos_offset +103
+        ypos UI_ypos_offset +12
         idle "interface/map/room_north_courtyard_idle.png"
         hover "interface/map/room_north_courtyard_hover.png"
         hovered SetVariable("ball_hint", "forest")
@@ -202,9 +191,8 @@ screen map_buttons:
     #Attic
     if sealed_scroll_ITEM.unlocked and not tentacle_owned: #Open, not visited yet
         imagebutton at animate:
-            xpos UI_xpos_offset
-            ypos UI_ypos_offset
-            focus_mask True
+            xpos UI_xpos_offset +340
+            ypos UI_ypos_offset +226
             idle "interface/map/room_attic_closed_idle.png"
             hover "interface/map/room_attic_closed_hover.png"
             hovered SetVariable("ball_hint", "attic")
@@ -213,9 +201,8 @@ screen map_buttons:
 
     if sealed_scroll_ITEM.unlocked and tentacle_owned: #Open
         imagebutton at animate:
-            xpos UI_xpos_offset
-            ypos UI_ypos_offset
-            focus_mask True
+            xpos UI_xpos_offset +340
+            ypos UI_ypos_offset +226
             idle "interface/map/room_attic_open_idle.png"
             hover "interface/map/room_attic_open_hover.png"
             hovered SetVariable("ball_hint", "attic")
@@ -368,69 +355,69 @@ label set_cho_map_location(location = ""):
 
 label update_character_map_locations:
     if her_map_location == "library":
-        $ her_map_xpos = 650
-        $ her_map_ypos = 220
+        $ her_map_xpos = 685
+        $ her_map_ypos = 94
     if her_map_location == "room_g":
-        $ her_map_xpos = 350
-        $ her_map_ypos = 330
+        $ her_map_xpos = 340
+        $ her_map_ypos = 212
     if her_map_location == "room_s":
-        $ her_map_xpos = 430
-        $ her_map_ypos = 270
+        $ her_map_xpos = 440
+        $ her_map_ypos = 184
     if her_map_location == "great_hall":
-        $ her_map_xpos = 260
-        $ her_map_ypos = 390
+        $ her_map_xpos = 300
+        $ her_map_ypos = 240
     if her_map_location == "courtyard":
-        $ her_map_xpos = 600
-        $ her_map_ypos = 390
+        $ her_map_xpos = 674
+        $ her_map_ypos = 216
     if her_map_location == "forest":
-        $ her_map_xpos = 380
-        $ her_map_ypos = 200
+        $ her_map_xpos = 290
+        $ her_map_ypos = 40
 
     #Luna
     if lun_map_location == "room_r":
-        $ lun_map_xpos = 510
-        $ lun_map_ypos = 380
+        $ lun_map_xpos = 536
+        $ lun_map_ypos = 242
     if lun_map_location == "forest":
-        $ lun_map_xpos = 440
-        $ lun_map_ypos = 200
+        $ lun_map_xpos = 430
+        $ lun_map_ypos = 50
     if lun_map_location == "greenhouse":
-        $ lun_map_xpos = 670
-        $ lun_map_ypos = 490
+        $ lun_map_xpos = 680
+        $ lun_map_ypos = 320
 
     #Astoria
     if ast_map_location == "room_s":
-        $ ast_map_xpos = 430
-        $ ast_map_ypos = 230
+        $ ast_map_xpos = 476
+        $ ast_map_ypos = 118
     if ast_map_location == "courtyard":
-        $ ast_map_xpos = 600
-        $ ast_map_ypos = 340
+        $ ast_map_xpos = 634
+        $ ast_map_ypos = 254
     if ast_map_location == "defense": #Event
         $ ast_map_xpos = 530
-        $ ast_map_ypos = 340
+        $ ast_map_ypos = 190
 
     #Susan
     if sus_map_location == "room_h":
-        $ sus_map_xpos = 300
-        $ sus_map_ypos = 460
+        $ sus_map_xpos = 360
+        $ sus_map_ypos = 320
     if sus_map_location == "great_hall":
-        $ sus_map_xpos = 260
-        $ sus_map_ypos = 340
+        $ sus_map_xpos = 300
+        $ sus_map_ypos = 280
 
     #Cho
     if cho_map_location == "room_r":
-        $ cho_map_xpos = 510
-        $ cho_map_ypos = 330
+        $ cho_map_xpos = 494
+        $ cho_map_ypos = 276
     if cho_map_location == "training_grounds":
-        $ cho_map_xpos = 630
-        $ cho_map_ypos = 250
+        $ cho_map_xpos = 750
+        $ cho_map_ypos = 50
 
     #Tonks
-    $ ton_map_xpos = 430
-    $ ton_map_ypos = 370
+    $ ton_map_xpos = 548
+    $ ton_map_ypos = 156
 
     #Snape
-    $ sna_map_xpos = 545
-    $ sna_map_ypos = 460
+    $ sna_map_xpos = 598
+    $ sna_map_ypos = 348
 
     return
 
@@ -444,9 +431,10 @@ screen map_screen_characters():
     #Hermione
     if hermione_unlocked:
         imagebutton at animate:
-            xpos her_map_xpos +UI_xpos_offset
-            ypos her_map_ypos
-            focus_mask None
+            xpos +UI_xpos_offset +her_map_xpos
+            ypos +UI_ypos_offset +her_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_hermione.png"
             hover "interface/map/name_hermione_hover.png"
             hovered SetVariable("ball_hint", "summon_hermione")
@@ -456,9 +444,10 @@ screen map_screen_characters():
     #Luna
     if luna_unlocked:
         imagebutton at animate:
-            xpos lun_map_xpos +UI_xpos_offset
-            ypos lun_map_ypos
-            focus_mask None
+            xpos UI_xpos_offset+ lun_map_xpos
+            ypos UI_ypos_offset+ lun_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_luna.png"
             hover "interface/map/name_luna_hover.png"
             hovered SetVariable("ball_hint", "summon_luna")
@@ -468,9 +457,10 @@ screen map_screen_characters():
     #Astoria
     if astoria_unlocked:
         imagebutton at animate:
-            xpos ast_map_xpos +UI_xpos_offset
-            ypos ast_map_ypos
-            focus_mask None
+            xpos UI_xpos_offset +ast_map_xpos
+            ypos UI_ypos_offset +ast_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_astoria.png"
             hover "interface/map/name_astoria_hover.png"
             hovered SetVariable("ball_hint", "summon_astoria")
@@ -480,9 +470,10 @@ screen map_screen_characters():
     #Susan
     if susan_unlocked:
         imagebutton at animate:
-            xpos sus_map_xpos +UI_xpos_offset
-            ypos sus_map_ypos
-            focus_mask None
+            xpos UI_xpos_offset +sus_map_xpos
+            ypos UI_ypos_offset +sus_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_susan.png"
             hover "interface/map/name_susan_hover.png"
             hovered SetVariable("ball_hint", "summon_susan")
@@ -492,9 +483,10 @@ screen map_screen_characters():
     #Cho
     if cho_unlocked:
         imagebutton at animate:
-            xpos cho_map_xpos +UI_xpos_offset
-            ypos cho_map_ypos
-            focus_mask None
+            xpos UI_xpos_offset +cho_map_xpos
+            ypos UI_ypos_offset +cho_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_cho.png"
             hover "interface/map/name_cho_hover.png"
             hovered SetVariable("ball_hint", "summon_cho")
@@ -504,9 +496,10 @@ screen map_screen_characters():
     #Snape
     if snape_unlocked:
         imagebutton at animate:
-            xpos sna_map_xpos +UI_xpos_offset
-            ypos sna_map_ypos
-            focus_mask None
+            xpos UI_xpos_offset +sna_map_xpos
+            ypos UI_ypos_offset +sna_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_snape.png"
             hover "interface/map/name_snape_hover.png"
             hovered SetVariable("ball_hint", "summon_snape")
@@ -516,9 +509,10 @@ screen map_screen_characters():
     #Tonks
     if tonks_unlocked:
         imagebutton at animate:
-            xpos ton_map_xpos +UI_xpos_offset
-            ypos ton_map_ypos
-            focus_mask None
+            xpos UI_xpos_offset +ton_map_xpos
+            ypos UI_ypos_offset +ton_map_ypos
+            xalign 0.5
+            yalign 0.5
             idle "interface/map/name_tonks.png"
             hover "interface/map/name_tonks_hover.png"
             hovered SetVariable("ball_hint", "summon_tonks")
@@ -768,6 +762,8 @@ label outskirts_of_hogwarts:
     stop music fadeout 1.0
 
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
+
+    call room(hide_screens=True)
 
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
 

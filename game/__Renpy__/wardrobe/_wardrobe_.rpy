@@ -1154,7 +1154,7 @@ screen wardrobe():
             #        if index < len(hg_purchased_swimsuits):
 
             #            hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("outfit_choice",hg_purchased_swimsuits[index]), Jump("equip_outfit")]
-            #            add "images/store/cs_gui/"+wr_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
+            #            add "images/panels/cs_gui/"+wr_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
             #            $ index = index+1
 
             #Custom Saves

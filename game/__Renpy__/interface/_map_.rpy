@@ -763,6 +763,8 @@ label outskirts_of_hogwarts:
 
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
+    call room(hide_screens=True)
+
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
 
     $ end_u_1_pic =  "images/yule_ball/171.png"

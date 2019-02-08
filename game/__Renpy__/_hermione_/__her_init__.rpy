@@ -224,20 +224,20 @@ label her_init:
         #Accessories
         $ hermione_makeup_list      = []
 
-        $ hermione_hat              = "characters/hermione/accessories/hats/hair_curly/blank.png"
+        $ hermione_hat              = "characters/hermione/clothes/hats/hair_curly/blank.png"
         $ h_hat                     = "blank"
         $ h_hat_color               = "base"
 
-        $ hermione_glasses          = "characters/hermione/accessories/glasses/blank.png"
+        $ hermione_glasses          = "characters/hermione/clothes/glasses/blank.png"
         $ h_glasses                 = "blank"
         $ h_glasses_color           = "base"
 
-        $ hermione_ears             = "characters/hermione/accessories/ears/blank.png"
+        $ hermione_ears             = "characters/hermione/clothes/ears/blank.png"
         $ h_ears                    = "blank"
 
 
         #Miscellaneous
-        $ hermione_buttplug          = "characters/hermione/accessories/plugs/blank.png"
+        $ hermione_buttplug          = "characters/hermione/clothes/plugs/blank.png"
         $ h_buttplug                 = "blank"
 
         $ hermione_pubic_hair        = "characters/hermione/body/pubic_hair/blank.png"
@@ -253,19 +253,19 @@ label her_init:
 
 
         #Piercings
-        $ hermione_ear_piercing      = "characters/hermione/accessories/piercings/blank.png"
+        $ hermione_ear_piercing      = "characters/hermione/clothes/piercings/blank.png"
         $ h_ear_piercing             = "blank"
         $ h_ear_piercing_color       = "base"
 
-        $ hermione_nipple_piercing   = "characters/hermione/accessories/piercings/blank.png"
+        $ hermione_nipple_piercing   = "characters/hermione/clothes/piercings/blank.png"
         $ h_nipple_piercing          = "blank"
         $ h_nipple_piercing_color    = "base"
 
-        $ hermione_belly_piercing    = "characters/hermione/accessories/piercings/blank.png"
+        $ hermione_belly_piercing    = "characters/hermione/clothes/piercings/blank.png"
         $ h_belly_piercing           = "blank"
         $ h_belly_piercing_color     = "base"
 
-        $ hermione_genital_piercing  = "characters/hermione/accessories/piercings/blank.png"
+        $ hermione_genital_piercing  = "characters/hermione/clothes/piercings/blank.png"
         $ h_genital_piercing         = "blank"
         $ h_genital_piercing_color   = "base"
 
@@ -273,7 +273,7 @@ label her_init:
         $ hermione_tattoos_list      = []
         $ h_tattoos_color            = "base"
 
-        $ hermione_mask              = "characters/hermione/accessories/masks/blank.png"
+        $ hermione_mask              = "characters/hermione/clothes/hats/blank.png"
         $ h_mask                     = "blank"
         $ hermione_gag               = "characters/hermione/face/mouth/nude/gag.png"
         $ h_gag                      = "gag"

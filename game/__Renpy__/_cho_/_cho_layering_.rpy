@@ -8,7 +8,7 @@ screen cho_chang:
         add cho_buttplug xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     #if cho_wear_ears:
     #    if c_ears == "cat_ears":
-    #        add "characters/cho/accessories/ears/"+str(c_ears)+"_tail_"+str(c_hair_color)+".png" xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+    #        add "characters/cho/clothes/ears/"+str(c_ears)+"_tail_"+str(c_hair_color)+".png" xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### BASE IMAGE
     add cho_r_arm       xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
@@ -120,5 +120,5 @@ screen cho_outfit:
 #Body Accessories
 screen cho_body_accs:
     for i in range(0,len(cho_body_accs_list)):
-        add "characters/cho/accessories/body_accs/"+str(cho_body_accs_list[i])+".png" xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add "characters/cho/clothes/accs/"+str(cho_body_accs_list[i])+".png" xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     zorder cho_zorder

@@ -21,17 +21,17 @@ label set_her_hair(style="", color=""): #Not in use
     #Ears
     if h_ears == "cat_ears":
         if h_hair_style in ["curly","updo","bobcut"]:
-            $ hermione_ears = "characters/hermione/accessories/ears/hair_"+str(h_hair_style)+"/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+            $ hermione_ears = "characters/hermione/clothes/ears/hair_"+str(h_hair_style)+"/"+str(h_ears)+"_"+str(h_hair_color)+".png"
         else:
-            $ hermione_ears = "characters/hermione/accessories/ears/hair_curly/"+str(h_ears)+"_"+str(h_hair_color)+".png"
+            $ hermione_ears = "characters/hermione/clothes/ears/hair_curly/"+str(h_ears)+"_"+str(h_hair_color)+".png"
     else:
-        $ hermione_ears = "characters/hermione/accessories/ears/"+str(h_ears)+".png"
+        $ hermione_ears = "characters/hermione/clothes/ears/"+str(h_ears)+".png"
 
     #Hat
     if h_hair_style in ["curly","updo","bobcut"]:
-        $ hermione_hat = "characters/hermione/accessories/hats/hair_"+str(h_hair_style)+"/"+str(h_hat)+".png"
+        $ hermione_hat = "characters/hermione/clothes/hats/hair_"+str(h_hair_style)+"/"+str(h_hat)+".png"
     else:
-        $ hermione_hat = "characters/hermione/accessories/hats/hair_curly/"+str(h_hat)+".png"
+        $ hermione_hat = "characters/hermione/clothes/hats/hair_curly/"+str(h_hat)+".png"
 
     return
 
@@ -54,16 +54,15 @@ label set_her_makeup(makeup = ""):
     return
 
 #Glasses equip.
-label set_her_glasses(glasses="", color=""):
+label set_her_glasses(glasses=""):
     hide screen hermione_main
-    if h_request_wear_glasses and (h_glasses == glasses and h_glasses_color == color):
+    if h_request_wear_glasses and h_glasses == glasses:
         $ h_request_wear_glasses = False
         $ hermione_wear_glasses = False
     else:
         $ h_request_wear_glasses = True
         $ hermione_wear_glasses = True
         $ h_glasses = glasses
-        $ h_glasses_color = color
     call update_her_uniform
 
     return

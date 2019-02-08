@@ -25,9 +25,9 @@ label update_lun_uniform:
     $ luna_robe           = "characters/luna/clothes/robe/" +str(lun_robe)+ ".png"
 
     #Accessories
-    $ luna_hat            = "characters/luna/accessories/hats/hair_" +str(lun_hair_style)+ "/" +str(lun_hat)+ ".png" #/hair_"+str(lun_hair_style)+"/
-    $ luna_glasses        = "characters/luna/accessories/glasses/base/" +str(lun_glasses)+ ".png"
-    $ luna_ears           = "characters/luna/accessories/ears/" +str(lun_ears)+ ".png"
+    $ luna_hat            = "characters/luna/clothes/hats/hair_" +str(lun_hair_style)+ "/" +str(lun_hat)+ ".png" #/hair_"+str(lun_hair_style)+"/
+    $ luna_glasses        = "characters/luna/clothes/glasses/" +str(lun_glasses)+ ".png"
+    $ luna_ears           = "characters/luna/clothes/ears/" +str(lun_ears)+ ".png"
 
     call update_luna_body
 

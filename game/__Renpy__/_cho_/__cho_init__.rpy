@@ -162,43 +162,43 @@ label cho_init:
         $ c_robe_color            = "base"
 
         #Accessories
-        $ cho_hat                 = "characters/cho/accessories/hats/hair_ponytail/snitch.png"
+        $ cho_hat                 = "characters/cho/clothes/hats/hair_ponytail/snitch.png"
         $ c_hat                   = "snitch"
         $ c_hat_color             = "base"
 
-        $ cho_glasses             = "characters/cho/accessories/glasses/blank.png"
+        $ cho_glasses             = "characters/cho/clothes/glasses/blank.png"
         $ c_glasses               = "blank"
         $ c_glasses_color         = "base"
 
-        $ cho_ears                = "characters/cho/accessories/ears/blank.png"
+        $ cho_ears                = "characters/cho/clothes/ears/blank.png"
         $ c_ears                  = "blank"
 
         $ cho_body_accs_list      = []
 
         #Miscellaneous
-        $ cho_buttplug            = "characters/cho/accessories/plugs/blank.png"
+        $ cho_buttplug            = "characters/cho/clothes/plugs/blank.png"
         $ c_buttplug                = "blank"
         $ cho_gag                 = "characters/cho/face/mouth/gag.png"
         $ c_gag                     = "gag"
 
         #Piercings
-        $ cho_ear_piercing        = "characters/cho/accessories/piercings/blank.png"
+        $ cho_ear_piercing        = "characters/cho/clothes/piercings/blank.png"
         $ c_ear_piercing            = "blank"
         $ c_ear_piercing_color      = "base"
 
-        $ cho_tongue_piercing     = "characters/cho/accessories/piercings/blank.png"
+        $ cho_tongue_piercing     = "characters/cho/clothes/piercings/blank.png"
         $ c_tongue_piercing         = "blank"
         $ c_tongue_piercing_color   = "base"
 
-        $ cho_nipple_piercing     = "characters/cho/accessories/piercings/blank.png"
+        $ cho_nipple_piercing     = "characters/cho/clothes/piercings/blank.png"
         $ c_nipple_piercing         = "blank"
         $ c_nipple_piercing_color   = "base"
 
-        $ cho_belly_piercing      = "characters/cho/accessories/piercings/blank.png"
+        $ cho_belly_piercing      = "characters/cho/clothes/piercings/blank.png"
         $ c_belly_piercing          = "blank"
         $ c_belly_piercing_color    = "base"
 
-        $ cho_genital_piercing    = "characters/cho/accessories/piercings/blank.png"
+        $ cho_genital_piercing    = "characters/cho/clothes/piercings/blank.png"
         $ c_genital_piercing        = "blank"
         $ c_genital_piercing_color  = "base"
 

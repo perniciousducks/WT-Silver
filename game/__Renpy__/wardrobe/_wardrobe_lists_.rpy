@@ -136,9 +136,9 @@ label update_wr_head_list:
 
         #Glasses
         if reading_glasses_ITEM.unlocked:
-            $ wr_glasses.append("reading_glasses")
+            $ wr_glasses.append("reading_glasses_black")
         if vintage_glasses_ITEM.unlocked:
-            $ wr_glasses.append("vintage_glasses")
+            $ wr_glasses.append("vintage_glasses_black")
 
         #Ears
         if cat_ears_ITEM.unlocked:

@@ -25,18 +25,18 @@ label update_cho_uniform:
     $ cho_robe           = "characters/cho/clothes/robe/" +str(c_robe)+ ".png"
 
     #Accessories
-    $ cho_hat            = "characters/cho/accessories/hats/hair_" +str(c_hair_style)+ "/" +str(c_hat)+ ".png"
+    $ cho_hat            = "characters/cho/clothes/hats/hair_" +str(c_hair_style)+ "/" +str(c_hat)+ ".png"
 
     #Miscellaneous
-    $ cho_buttplug            = "characters/cho/accessories/plugs/" +str(c_buttplug)+ ".png"
+    $ cho_buttplug            = "characters/cho/clothes/plugs/" +str(c_buttplug)+ ".png"
     #$ cho_gag                 = "characters/cho/face/mouth/" +str(c_gag)+ ".png"
 
     #Piercings
     # cho_tongue_piercing gets defined at the same place as her mouth every time the mouth layer gets updated. # NOT SUPPORTED YET!
-    $ cho_ear_piercing        = "characters/cho/accessories/piercings/" +str(c_ear_piercing)+ ".png"
-    $ cho_nipple_piercing     = "characters/cho/accessories/piercings/" +str(c_nipple_piercing)+ ".png"
-    $ cho_belly_piercing      = "characters/cho/accessories/piercings/" +str(c_belly_piercing)+ ".png"
-    $ cho_genital_piercing    = "characters/cho/accessories/piercings/" +str(c_genital_piercing)+ ".png"
+    $ cho_ear_piercing        = "characters/cho/clothes/piercings/" +str(c_ear_piercing)+ ".png"
+    $ cho_nipple_piercing     = "characters/cho/clothes/piercings/" +str(c_nipple_piercing)+ ".png"
+    $ cho_belly_piercing      = "characters/cho/clothes/piercings/" +str(c_belly_piercing)+ ".png"
+    $ cho_genital_piercing    = "characters/cho/clothes/piercings/" +str(c_genital_piercing)+ ".png"
 
     call update_cho_chibi_uniform
 

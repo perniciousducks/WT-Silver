@@ -652,9 +652,11 @@ label update_wr_other_clothings_list:
         #Stockings
         if ll_cheer_r_ITEM.unlocked:
             $ wr_stockings.append("stockings_cheer_r")
-
         if ll_quirky_muggle_ITEM.unlocked:
             $ wr_stockings.append("stockings_muggle_1")
+        if ll_dress_orange_ITEM.unlocked:
+            $ wr_stockings.append("leggings_1")
+            $ wr_stockings.append("leggings_2")
 
     if active_girl == "astoria":
         if ag_nighty_silk_ITEM.unlocked:

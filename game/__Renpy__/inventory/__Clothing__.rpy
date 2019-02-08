@@ -84,6 +84,9 @@ label update_outfit_layers:
     $ ll_stewardess_short_ITEM.outfit_layers = ["../underwear/base/panties_thong_2.png","stewardess_short.png","../neckwear/cloth_tie.png"]
     $ ll_stewardess_short_ITEM.top_layers    = "hat_stewardess"
 
+    $ ll_dress_orange_ITEM.outfit_layers     = ["../stockings/leggings_1.png","ball_dress_1.png","../piercings/ears_starts_1.png"]
+
+
     # Astoria Outfits
     $ ag_boss_uniform_ITEM.outfit_layers = ["uniform_pants.png","uniform_top.png"]
     $ ag_boss_uniform_ITEM.hair_layer    = "pigtails"

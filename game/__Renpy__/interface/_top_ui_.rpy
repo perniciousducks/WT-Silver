@@ -30,10 +30,10 @@ label house_points:
     $ points_outline = [ (1, "#000", 0, 0) ]
     if daytime:
         $ daygold_colour = "{color=#000}"
-        $ daygold_outline = [ (1, "#e4ba70", 0, 0) ]
+        $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
     else:
         $ daygold_colour = "{color=#FFF}"
-        $ daygold_outline = [ (1, "#000", 0, 0) ]
+        $ daygold_outline = [ (1, "#00000080", 0, 0) ]
 
     #If points variable value exceedes one thousand make it a decimal number instead and round to x.x
     #Remember, "slytherin_points" is a string! If you need points integer use i.e. "slytherin" variable instead.

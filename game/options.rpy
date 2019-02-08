@@ -192,7 +192,7 @@ init -1 python hide:v
     style.default.font = "interface/CREABBB.TTF"
 
     ## The default size of text.
-    style.default.size = 18
+    style.default.size = 16
     style.default.color = "#402313"
 
     #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "font", "interface/CREABBB.TTF")
@@ -437,3 +437,6 @@ init python:
     config.window_icon = "interface/icon.png"
 
     config.hard_rollback_limit = 100
+    
+    # Override Styles
+    style.input.color = "#5c321b"

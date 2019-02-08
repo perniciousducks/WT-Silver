@@ -181,14 +181,14 @@ screen deck_builder_gallery():
 
 label color_change:
     
-    $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "Player border")
+    $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], [playercolor_r*255, playercolor_g*255, playercolor_b*255], False, "Player border")
     
     $ playercolor_r = color_rgb[0]/255.0
     $ playercolor_g = color_rgb[1]/255.0
     $ playercolor_b = color_rgb[2]/255.0
     $ playerborder = playerTint("images/cardgame/border.png")
     
-    $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "Enemy border")
+    $ color_rgb = color_picker([enemycolor_r*255, enemycolor_g*255, enemycolor_b*255, 255], [enemycolor_r*255, enemycolor_g*255, enemycolor_b*255], False, "Enemy border")
     
     $ enemycolor_r = color_rgb[0]/255.0
     $ enemycolor_g = color_rgb[1]/255.0
@@ -196,27 +196,6 @@ label color_change:
     $ enemyborder = enemyTint("images/cardgame/border.png")
     
     jump deck_builder
-    
-# old code#####
-#        "-Change enemy color-":
-#            "Enter the color in RGB format (0 to 255)"
-#            $ enemycolor_r = renpy.input("Red", "", "0123456789", length=3)/255.0
-#            $ enemycolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
-#            $ enemycolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
-#            $ enemyborder = enemyTint("images/cardgame/border.png")
-#            pass
-#        "-Reset-":
-#            $ playercolor_r = 51.0/255.0
-#            $ playercolor_g = 92.0/255.0
-#            $ playercolor_b = 147.0/255.0
-#            $ enemycolor_r = 116.0/255.0
-#            $ enemycolor_g = 0
-#            $ enemycolor_b = 0
-#            $ playerborder = playerTint("images/cardgame/border.png")
-#            $ enemyborder = enemyTint("images/cardgame/border.png")
-#            pass
-#        "-Exit-":
-#            pass
 
 label deck_builder_guide:
     $ deck_guide_page = 0

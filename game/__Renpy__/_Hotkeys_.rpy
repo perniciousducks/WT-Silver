@@ -19,6 +19,8 @@ init -2 python:
         config.debug ^= True
         return "Debug = %s" % config.debug
         
+    style.button['daybutton'].background = "#ebc275"
+        
     ##############################################################################
     #Hotkeys list
     #
@@ -67,9 +69,72 @@ screen hotkeys_main:
 screen hotkeys_say:
     key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)
     key hkey_mhide action ToggleVariable("hkey_chat_hidden", False, True)
+    
+init:
+    # define our styles
+    style menu_choice_daybutton:
+        background "#ac8d5aE6"
+        hover_background "#97681f"
+        insensitive_background "#d1a02eB3"
+        xminimum int(config.screen_width * 0.5)
+        xmaximum int(config.screen_width * 0.5)
+        activate_sound "sounds/click3.mp3"
+        
+    style menu_choice_nightbutton:
+        background "#5d5151E6"
+        hover_background "#897e75"
+        insensitive_background "#9e8449"
+        xminimum int(config.screen_width * 0.5)
+        xmaximum int(config.screen_width * 0.5)
+        activate_sound "sounds/click3.mp3"
+        
+    style menu_choice_day:
+        size 18
+        xalign 0.5
+        color "#f9d592"
+        hover_color "#ffffff"
+        insensitive_color "#444"
+        outlines [ (1, "#00000080", 1, 0) ]
+        
+    style menu_choice_night:
+        size 18
+        xalign 0.5
+        color "#9b8d84"
+        hover_color "#ffffff"
+        insensitive_color "#444"
+        outlines [ (1, "#00000080", 1, 0) ]
+        
+    style say_who_window:
+        #size 14
+        #xminimum 200
+        #yminimum 34
+        #xfill False
+        xpos 235
+        #text_align 0.5
+    
+    style say_who_window_day:
+        #size 14
+        #xminimum 200
+        #yminimum 34
+        background "interface/frames/gold/namebox.png"
+        #xfill False
+        xpos 235
+        text_align 0.5
+        
+    style say_who_window_night:
+        #size 14
+        #xminimum 200
+        #yminimum 34
+        background "interface/frames/gray/namebox.png"
+        xfill False
+        xpos 235
+        text_align 0.5
+        
+    style say_two_window_vbox:
+        yalign 1.0
 
-#Custom legacy menu w/ hotkeys    
-screen custom_menu(items):
+#Custom menu w/ hotkeys    
+screen custom_menu(items, hotkeys=True):
     zorder 7
     
     add "interface/bld.png"
@@ -93,14 +158,23 @@ screen custom_menu(items):
 
                     button:
                         action action
-                        style "menu_choice_button"
+                        if daytime:
+                            style "menu_choice_daybutton"
+                        else:
+                            style "menu_choice_nightbutton"
                         
                         #Dont add a number if choice number is higher than number of available hotkeys
                         #Add a SHIFT modifier maybe?
                         if hkey < 10:
-                            text "[hkey]. " + caption style "menu_choice"
+                            if daytime:
+                                text "[hkey]. " + caption style "menu_choice_day"
+                            else:
+                                text "[hkey]. " + caption style "menu_choice_night"
                         else:
-                            text caption style "menu_choice"
+                            if daytime:
+                                text caption style "menu_choice_day"
+                            else:
+                                text caption style "menu_choice_night"
                         
                     #Dont add a hotkey if choice number is higher than number of available hotkeys
                     #Add a SHIFT modifier maybe?
@@ -110,4 +184,7 @@ screen custom_menu(items):
                         
 
                 else:
-                    text caption style "menu_caption"
+                    if daytime:
+                        text caption style "menu_choice_day"
+                    else:
+                        text caption style "menu_choice_night"

@@ -44,9 +44,12 @@ screen say:
                     style "say_vbox"
 
                 if who:
-                    text who id "who"
-
-                text what id "what"
+                    text who id "who" color "#dcdada" outlines [ (1, "#00000080", 1, 0) ]
+                
+                if daytime:
+                    text what id "what" color "#f4e5cd" outlines [ (1, "#00000080", 1, 0) ]
+                else:
+                    text what id "what" color "#dcdada" outlines [ (1, "#00000080", 1, 0) ]
 
     else:
         # The two window variant.
@@ -59,18 +62,24 @@ screen say:
 
             if who:
                 window:
-                    style "say_who_window"
-
-                    text who:
-                        id "who"
+                    
+                    if daytime:
+                        style "say_who_window_day"
+                        text who id "who" color "#dcdada" outlines [ (1, "#00000080", 1, 0) ] xpos 62 ypos -7 text_align 0.5 xalign 0.5 size 16 bold False
+                    else:
+                        style "say_who_window_night"
+                        text who id "who" color "#dcdada" outlines [ (1, "#00000080", 1, 0) ] xpos 62 ypos -7 text_align 0.5 xalign 0.5 size 16 bold False
 
             window:
                 id "window"
 
                 has vbox:
                     style "say_vbox"
-
-                text what id "what"
+                
+                if daytime:
+                    text what id "what" color "#f4e5cd" outlines [ (1, "#00000080", 1, 0) ]
+                else:
+                    text what id "what" color "#dcdada" outlines [ (1, "#00000080", 1, 0) ]
 
     # If there's a side image, display it above the text.
     if side_image:
@@ -130,15 +139,24 @@ init -2:
 #
 # Screen that's used to display renpy.input()
 # http://www.renpy.org/doc/html/screen_special.html#input
-
+    
 screen input:
-
-    window style "input_window":
+    tag input
+    zorder 15 #Always on top
+    
+    button:
+        xsize 1080
+        ysize 600
+        action NullAction()
+        style "empty"
+        
+    window style "input_window":      
         has vbox
-
+            #style "say_vbox"
+        
         text prompt style "input_prompt"
         input id "input" style "input_text"
-
+        
     use quick_menu
 
 ##############################################################################
@@ -706,22 +724,3 @@ init -2:
     # turned off by default.
     #config.default_afm_time = 10
     #config.default_afm_enable = False
-    
-screen input:
-    tag input
-    zorder 15 #Always on top
-    
-    button:
-        xsize 1080
-        ysize 600
-        action NullAction()
-        style "empty"
-        
-    window:
-        id "window"
-        
-        has vbox:
-            style "say_vbox"
-        
-        text prompt
-        input id "input"

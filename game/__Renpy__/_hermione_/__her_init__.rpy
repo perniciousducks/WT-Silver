@@ -390,7 +390,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "onepiece_bunny",
                                        "swimsuit_neckband",
                                        "swimsuit_halterless",
-                                       "onepiece_bikini_string",
+                                       "onepiece_bikini_1",
                                        "swimsuit_sport_1",
                                        "swimsuit_sport_2",
                                        "swimsuit_sport_3",

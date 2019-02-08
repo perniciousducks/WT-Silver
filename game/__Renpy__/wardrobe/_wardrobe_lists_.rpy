@@ -791,7 +791,7 @@ label update_wr_underwear_list:
         $ wr_onepieces.append("onepiece_netsuit")
 
         if hg_onepiece_sling_ITEM.unlocked:
-            $ wr_onepieces.append("onepiece_bikini_string")
+            $ wr_onepieces.append("onepiece_bikini_1")
         if hg_nighty_silk_ITEM.unlocked:
             $ wr_onepieces.append("nighty_short")
         if hg_nightgown_ITEM.unlocked:

@@ -15,6 +15,7 @@ label cho_wardrobe_test: # WIP
 
     # Reset
     $ current_page = 0
+    $ current_group = "1"
     $ category_choice = None
     $ char_name = "cho"
     $ char_nickname = cho_name
@@ -159,26 +160,28 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
     # Close Button
     use top_bar_close_button
 
-    #Up Button
-    imagebutton:
-        xpos ui_xpos +480
-        ypos ui_ypos +190
-        idle "interface/general/"+interface_color+"/button_arrow_up.png"
-        if not current_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
-            action Return("dec")
+    # Buttons
+    if len(menu_items) > 20:
+        # Up Button
+        imagebutton:
+            xpos ui_xpos +480
+            ypos ui_ypos +190
+            idle "interface/general/"+interface_color+"/button_arrow_up.png"
+            if not current_page <= 0:
+                hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+                action Return("dec")
 
-    #Down Button
-    imagebutton:
-        xpos ui_xpos +480
-        ypos ui_ypos +190 +55
-        idle "interface/general/"+interface_color+"/button_arrow_down.png"
-        if current_page < math.ceil((len(menu_items)-1)/items_shown):
-            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
-            action Return("inc")
+        # Down Button
+        imagebutton:
+            xpos ui_xpos +480
+            ypos ui_ypos +190 +55
+            idle "interface/general/"+interface_color+"/button_arrow_down.png"
+            if current_page < math.ceil((len(menu_items)-1)/items_shown):
+                hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+                action Return("inc")
 
 
-    #Main Window
+    # Main Window
     add im.MatrixColor( "interface/panels/bg/icon_panel.png", im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) xpos ui_xpos ypos ui_ypos
     imagemap:
         xpos ui_xpos
@@ -200,12 +203,12 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
         # Groups
         for i in range(0,len(groups)): #Max 5 items!
             hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("group_choice",groups[i]), Return()
-            add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xpos 5+(90*i) ypos 86 zoom 0.2
+            add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xalign 0.5 xpos 50+(90*i) yalign 0.5 ypos 129 zoom 0.2
 
-        #Items
+        # Items
         for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
-                $ row = i // 5
+                $ row = (i // 4) % 4
                 $ col = i % 5
                 hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
                 add wr_items_path +str(menu_items[i])+ ".png" xalign 0.5 xpos item_xpos +90*(col-(current_page*items_shown)) ypos item_ypos +90*(row-(current_page*items_shown)) zoom item_scaling
@@ -213,7 +216,7 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
 
 
 
-label update_cho_wardrobe_items(character, category, group, color="base"):
+label update_cho_wardrobe_items(character, category, group):
 python:
 
     item_list = []
@@ -221,11 +224,16 @@ python:
     toggle_list = []
     use_wr_color = False
 
+    item_xpos = 40
+    item_scaling = 0.2
+
     if category == "head":
         group_list = ["1","2","3"]
         if group == "1":
+            item_xpos = 40
+            item_ypos = 130
             item_list.append("ponytail_blue")
-        wr_items_path = "characters/" +str(character)+ "/clothes/tops/" +str(item_color)+ "/"
+            wr_items_path = "characters/" +str(character)+ "/body/head/"
 
     if category == "tops":
         group_list = ["1","3"]
@@ -264,7 +272,7 @@ python:
             item_list.append("top_tanktop_1")
             item_list.append("top_tanktop_2")
             item_list.append("top_shirt_1")
-        wr_items_path = "characters/" +str(character)+ "/clothes/tops/" +str(color)+ "/"
+        wr_items_path = "characters/" +str(character)+ "/clothes/tops/base/"
 
     if category == "bottoms":
         group_list = ["1","4"]
@@ -288,7 +296,7 @@ python:
             item_list.append("pants_yoga_short")
             item_list.append("pants_jeans_short")
             item_list.append("pants_short_1")
-        wr_items_path = "characters/" +str(character)+ "/clothes/bottoms/" +str(color)+ "/"
+        wr_items_path = "characters/" +str(character)+ "/clothes/bottoms/base/"
 
 
 return

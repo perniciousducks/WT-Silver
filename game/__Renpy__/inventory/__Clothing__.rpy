@@ -61,7 +61,7 @@ label update_outfit_layers:
     $ hg_costume_elizabeth_ITEM.breast_layer  = "breasts_normal_pressed"
     $ hg_costume_elizabeth_ITEM.hair_layer    = "bobcut"
 
-    $ hg_costume_yennefer_ITEM.outfit_layers = ["../stockings/stockings_silk_1.png","../bottoms/base/pants_silk_1.png","../bottoms/base/skirt_leather_1.png","../tops/base/top_leather_1.png","../gloves/gloves_leather_1.png","../neckwear/choker_leather.png","../neckwear/scarf_silk.png","../clothes/accs/belt_leather.png"]
+    $ hg_costume_yennefer_ITEM.outfit_layers = ["../stockings/stockings_silk_1.png","../bottoms/base/pants_silk_1.png","../bottoms/base/skirt_leather_1.png","../tops/base/top_leather_1.png","../gloves/gloves_leather_1.png","../neckwear/choker_leather.png","../neckwear/scarf_silk.png","../accs/belt_leather.png"]
     $ hg_costume_yennefer_ITEM.breast_layer  = "breasts_normal"
 
 
@@ -115,7 +115,7 @@ label update_outfit_layers:
     $ cc_outfit_sailor_black_ITEM.outfit_layers      = ["../underwear/red/panties_bikini_2.png","../stockings/black/stockings_sailor_2.png","../tops/base/top_sailor_2.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
     $ cc_outfit_sailor_black_ITEM.top_layers         = "bow_sailor_red"
 
-    $ cc_costume_misty_ITEM.outfit_layers      = ["../tops/base/top_shirt_1.png","../bottoms/base/pants_short_1.png","../../body/arms/arm_down_l_overlay.png","../clothes/accs/suspenders_1.png"]
+    $ cc_costume_misty_ITEM.outfit_layers      = ["../tops/base/top_shirt_1.png","../bottoms/base/pants_short_1.png","../../body/arms/arm_down_l_overlay.png","../accs/suspenders_1.png"]
 
 
     ### Event Outfits ###

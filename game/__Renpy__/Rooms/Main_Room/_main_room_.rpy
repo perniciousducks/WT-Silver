@@ -210,16 +210,15 @@ screen main_room_menu:
 
     #Genie
     if renpy.variant('android'):
+        add "newanimation" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
         imagemap:
-            xpos 370
-            ypos 336
-            xanchor "center"
-            yanchor "center"
-            ground "newanimation"
-            hover "images/rooms/main_room/11_genie_02.png"
-            hotspot(49, 28, 188, 219) hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ]
-            hotspot(49, 28, 188, 219) unhovered [Hide("gui_tooltip")]
-            hotspot(49, 28, 188, 219) action [Hide("main_room_menu"), Jump("desk")]
+            xpos 384
+            ypos 370
+            xanchor 0.5
+            yanchor 0.5
+            ground "images/rooms/main_room/desk_small_border.png"
+            hover yellowTint("images/rooms/main_room/desk_small_border.png")
+            hotspot(0, 10, 128, 160) action [Hide("main_room_menu"), Jump("desk")]
     else:
         imagebutton:
             xpos 370

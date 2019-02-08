@@ -46,8 +46,8 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
         xalign 0.5
         yalign 0.5
 
-        ground "interface/store/"+interface_color+"/items_panel.png"
-        hover "interface/store/"+interface_color+"/items_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/items_panel.png"
+        hover "interface/panels/"+interface_color+"/items_panel_hover.png"
 
         #Header
         hbox:
@@ -134,10 +134,10 @@ screen list_menu_item(menu_item, ypos=0):
 
 
 #Icon Menu #Customizable
-screen icon_menu(menu_items, categories, title, xpos, ypos):
-    $ items_shown=20
-    $ UI_xpos_offset = xpos
-    $ UI_ypos_offset = ypos
+screen icon_menu(menu_items, categories, character, title, xpos, ypos):
+    $ items_shown = 20
+    $ ui_xpos = xpos
+    $ ui_ypos = ypos
     zorder 5
 
     #Close Button
@@ -145,8 +145,8 @@ screen icon_menu(menu_items, categories, title, xpos, ypos):
 
     #Up Button
     imagebutton:
-        xpos UI_xpos_offset +480
-        ypos UI_ypos_offset +175
+        xpos ui_xpos +480
+        ypos ui_ypos +175
         idle "interface/general/"+interface_color+"/button_arrow_up.png"
         if not current_page <= 0:
             hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
@@ -154,8 +154,8 @@ screen icon_menu(menu_items, categories, title, xpos, ypos):
 
     #Down Button
     imagebutton:
-        xpos UI_xpos_offset +480
-        ypos UI_ypos_offset +175 +52
+        xpos ui_xpos +480
+        ypos ui_ypos +175 +52
         idle "interface/general/"+interface_color+"/button_arrow_down.png"
         if current_page < math.ceil((len(menu_items)-1)/items_shown):
             hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
@@ -163,13 +163,13 @@ screen icon_menu(menu_items, categories, title, xpos, ypos):
 
     #Main Window
     imagemap:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
+        xpos ui_xpos
+        ypos ui_ypos
         xsize 467 #width of ground/hover image.
         ysize 548 #height of ground/hover image.
 
-        ground "interface/store/"+interface_color+"/icons_panel.png"
-        hover "interface/store/"+interface_color+"/icons_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/icon_panel.png"
+        hover "interface/panels/"+interface_color+"/icon_panel_hover.png"
 
         #Header
         hbox:
@@ -217,10 +217,11 @@ screen icon_menu_item(menu_item, xpos=0, ypos=0):
 
             if menu_item.number > 0:
                 text "{color=#ffffff}" +str(menu_item.number)+ "{/color}" xalign 0.5 xpos 15 ypos -80
-                
+
             if menu_item.active:
                 #text "{color=#ffffff}Active{/color}" xalign 0.5 ypos -20
                 add "interface/topbar/icon_check.png" xalign 0.95 ypos -40
+
 
 
 
@@ -241,8 +242,8 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
         xsize 1080 #width of ground/hover image.
         ysize 548 #height of ground/hover image.
 
-        ground "interface/store/" +interface_color+ "/bottom_panel.png"
-        hover "interface/store/"  +interface_color+ "/bottom_panel_hover.png"
+        ground "interface/panels/" +interface_color+ "/bottom_panel.png"
+        hover "interface/panels/"  +interface_color+ "/bottom_panel_hover.png"
 
 
         #Menu Name
@@ -253,7 +254,7 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
         for i in range(0,len(categories)):
             #hotspot (300+(33*i), 0, 33, 34) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
             #add "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png" xpos 300+(33*i) ypos 0
-            
+
             # Use imagebutton instead of hotspot to make use of imagehover() tint function
             imagebutton:
                 xpos 300+(33*i)
@@ -261,8 +262,8 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
                 idle "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png"
                 hover image_hover("interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png")
                 action [SetVariable("category_choice",categories[i]), Return(categories[i])]
-                
-        if func_btn:    
+
+        if func_btn:
             imagebutton:
                 xpos 300+(33*(len(categories)+1))
                 ypos 0
@@ -362,11 +363,11 @@ screen clothing_menu(menu_items, character, preview):
         ypos 0
 
         if preview == None:
-            ground "interface/store/"+str(interface_color)+"/clothing_panel_main.png"
-            hover "interface/store/"+str(interface_color)+"/clothing_panel_main_hover.png"
+            ground "interface/panels/"+str(interface_color)+"/clothing_panel_main.png"
+            hover "interface/panels/"+str(interface_color)+"/clothing_panel_main_hover.png"
         else:
-            ground "interface/store/"+str(interface_color)+"/clothing_panel_full.png"
-            hover "interface/store/"+str(interface_color)+"/clothing_panel_full_hover.png"
+            ground "interface/panels/"+str(interface_color)+"/clothing_panel_full.png"
+            hover "interface/panels/"+str(interface_color)+"/clothing_panel_full_hover.png"
 
             #Item Information Display Panel.
             text preview.get_name() xpos 83 ypos 458 size 16

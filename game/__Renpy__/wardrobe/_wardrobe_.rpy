@@ -431,178 +431,14 @@ screen wardrobe():
         #Change Pose/Action
         if wardrobe_toggle_page == 3:
 
-            ## No Pose ##
-            hotspot (667,120,18,18) clicked [SetVariable("wr_her_action","none"), Jump("wardrobe_change_her_action")]
-            if hermione_action == "none":
-                add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115 #ypos-5 of hotspot ypos #2nd row Ypos+25
-            else:
-                add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115
-            text "No Pose" xpos 688 ypos 124 size 10
+            for i in range(0,len(wr_action_list)):
+                hotspot (667,120+(25*i),18,18) clicked [SetVariable("wr_her_action",wr_action_list[i]), Jump("wardrobe_change_her_action")]
+                if wr_her_action == wr_action_list[i]:
+                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+(25*i) #ypos-5 of hotspot ypos #2nd row Ypos+25
+                else:
+                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+(25*i)
+                text wr_action_list[i] xpos 688 ypos 124+(25*i) size 10
 
-            ## Hold Book ##
-            if her_tutoring >= 1:
-                hotspot (667,120+25,18,18) clicked [SetVariable("wr_her_action","hold_book"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "hold_book":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+25 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+25
-                text "Hold Book" xpos 688 ypos 124+25 size 10
-            else:
-                if hermione_action == "hold_book":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+25 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+25 #grayed out
-                text "{color=#858585}Hold Book{/color}" xpos 688 ypos 124+25 size 10          #grayed out
-
-            ## Lift Top ##
-            if her_whoring >= 9:
-                hotspot (667,120+50,18,18) clicked [SetVariable("wr_her_action","lift_top"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "lift_top":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+50 #ypos-5 of hotspot ypos #2nd row Ypos+25
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+50
-                text "Lift Top" xpos 688 ypos 124+50 size 10
-            else:
-                if hermione_action == "lift_top":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+50 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+50 #grayed out
-                text "{color=#858585}Lift Top{/color}" xpos 688 ypos 124+50 size 10            #grayed out
-
-            ## Lift Bottom ##
-            if her_whoring >= 6:
-                hotspot (667,120+75,18,18) clicked [SetVariable("wr_her_action","lift_skirt"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "lift_skirt":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+75 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+75
-                text "Lift Bottom" xpos 688 ypos 124+75 size 10
-            else:
-                if hermione_action == "lift_skirt":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+75 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+75 #grayed out
-                text "{color=#858585}Lift Bottom{/color}" xpos 688 ypos 124+75 size 10          #grayed out
-
-            ### FREE SPACE ###
-            #if her_whoring >= 20:
-            #    hotspot (667,120+100,18,18) clicked [SetVariable("wr_her_action","milk_breasts"), Jump("wardrobe_change_her_action")]
-            #    if hermione_action == "milk_breasts":
-            #        add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+100 #ypos-5 of hotspot ypos
-            #    else:
-            #        add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+100
-            #    text "Milk Breasts" xpos 688 ypos 124+100 size 10
-            #else:
-            #    if hermione_action == "milk_breasts":
-            #        add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+100 #grayed out
-            #    else:
-            #        add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+100 #grayed out
-            #    text "{color=#858585}Milk Breasts{/color}" xpos 688 ypos 124+100 size 10          #grayed out
-
-            ## Lift Breasts ##
-            if her_whoring >= 14:
-                hotspot (667,120+125,18,18) clicked [SetVariable("wr_her_action","lift_breasts"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "lift_breasts":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+125 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+125
-                text "Lift Breasts" xpos 688 ypos 124+125 size 10
-            else:
-                if hermione_action == "lift_breasts":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+125 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+125 #grayed out
-                text "{color=#858585}Lift Breasts{/color}" xpos 688 ypos 124+125 size 10          #grayed out
-
-            ## Hands Behind ##
-            if her_whoring >= 14:
-                hotspot (667,120+150,18,18) clicked [SetVariable("wr_her_action","hands_behind"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "hands_behind":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+150 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+150
-                text "Behind" xpos 688 ypos 124+150 size 10
-            else:
-                if hermione_action == "hands_behind":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+150 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+150 #grayed out
-                text "{color=#858585}Behind{/color}" xpos 688 ypos 124+150 size 10          #grayed out
-
-            ## Covering ##
-            if her_whoring >= 11:
-                hotspot (667,120+175,18,18) clicked [SetVariable("wr_her_action","covering"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "covering":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+175 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+175
-                text "Covering" xpos 688 ypos 124+175 size 10
-            else:
-                if hermione_action == "covering":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+175 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+175 #grayed out
-                text "{color=#858585}Covering{/color}" xpos 688 ypos 124+175 size 10          #grayed out
-
-            ## Fingering ##
-            if her_whoring >= 17:
-                hotspot (667,120+200,18,18) clicked [SetVariable("wr_her_action","fingering"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "fingering":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+200 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+200
-                text "Fingering" xpos 688 ypos 124+200 size 10
-            else:
-                if hermione_action == "fingering":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+200 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+200 #grayed out
-                text "{color=#858585}Fingering{/color}" xpos 688 ypos 124+200 size 10          #grayed out
-
-            ## Pinch ##
-            if her_whoring >= 17:
-                hotspot (667,120+225,18,18) clicked [SetVariable("wr_her_action","pinch"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "pinch":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+225 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+225
-                text "Pinch" xpos 688 ypos 124+225 size 10
-            else:
-                if hermione_action == "pinch":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+225 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+225 #grayed out
-                text "{color=#858585}Pinch{/color}" xpos 688 ypos 124+225 size 10          #grayed out
-
-            ## Hands Cuffed ##
-            if her_whoring >= 20:
-                hotspot (667,120+250,18,18) clicked [SetVariable("wr_her_action","hands_cuffed"), Jump("wardrobe_change_her_action")]
-                if hermione_action == "hands_cuffed":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667 ypos 115+250 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667 ypos 115+250
-                text "Cuffed" xpos 688 ypos 124+250 size 10
-            else:
-                if hermione_action == "hands_cuffed":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667 ypos 115+250 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667 ypos 115+250 #grayed out
-                text "{color=#858585}Cuffed{/color}" xpos 688 ypos 124+250 size 10          #grayed out
-
-            ## Strip Naked ##
-            if her_whoring >= 11:
-                hotspot (667+5,120+275,18,18) clicked [SetVariable("wr_her_action","naked"), Jump("wardrobe_change_her_action")]
-                if wr_her_action == "naked":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true.png" xpos 667+5 ypos 115+275 #ypos-5 of hotspot ypos
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false.png" xpos 667+5 ypos 115+275
-                text "Strip" xpos 688+5 ypos 124+275 size 10
-            else:
-                if wr_her_action == "naked":
-                    add "interface/wardrobe/"+str(interface_color)+"/check_true_hidden.png" xpos 667+5 ypos 115+275 #grayed out
-                else:
-                    add "interface/wardrobe/"+str(interface_color)+"/check_false_hidden.png" xpos 667+5 ypos 115+275 #grayed out
-                text "{color=#858585}Strip{/color}" xpos 688+5 ypos 124+275 size 10          #grayed out
 
         #Temporary. Disables toggles for Luna, Astoria, Susan, Cho, & Tonks.
         if wardrobe_toggle_page == 4:
@@ -1318,7 +1154,7 @@ screen wardrobe():
             #        if index < len(hg_purchased_swimsuits):
 
             #            hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("outfit_choice",hg_purchased_swimsuits[index]), Jump("equip_outfit")]
-            #            add "images/store/cs_gui/"+wr_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
+            #            add "images/panels/cs_gui/"+wr_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+92+(92*row) zoom 0.18
             #            $ index = index+1
 
             #Custom Saves

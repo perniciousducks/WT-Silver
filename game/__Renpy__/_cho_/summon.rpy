@@ -4,7 +4,8 @@ label summon_cho:
 
     call play_sound("door")
 
-    #ADD Cho chibi here.
+    call cho_chibi("stand","mid","base")
+    call ctc
     call cho_random_clothing
 
     label cho_requests:
@@ -17,7 +18,8 @@ label summon_cho:
 
     menu:
         #"-Talk-":
-        #"-Training-": #For Quidditch events.
+        "-Training-": #For Quidditch events.
+            jump cho_training_menu
         "-Personal Favours-":
             if cho_mood <= 0:
                 label cho_favor_menu:
@@ -129,3 +131,15 @@ label summon_cho:
             $ cho_busy = True
 
             jump main_room
+
+
+
+label cho_training_menu:
+    menu:
+        "-Change outfit-":
+            jump cho_wardrobe_test
+            #jump cho_quidditch_outfit
+        #"-Discuss tactics-":
+        #    jump cho_tactics
+        "-Go back-":
+            jump cho_requests

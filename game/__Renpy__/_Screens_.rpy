@@ -178,7 +178,7 @@ label give_reward(text="",gift=""):
 
 screen clothing_unlock:
     zorder 6
-    add "interface/store/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
+    add "interface/panels/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
 
 label unlock_clothing(text="",item=None):

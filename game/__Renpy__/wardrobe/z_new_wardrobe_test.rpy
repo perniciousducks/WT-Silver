@@ -203,17 +203,30 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
         # Groups
         for i in range(0,len(groups)): #Max 5 items!
             hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("group_choice",groups[i]), Return()
-            add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xalign 0.5 xpos 50+(90*i) yalign 0.5 ypos 129 zoom 0.2
+            add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xanchor 0.5 xpos 50+(90*i) yanchor 0.5 ypos 129 zoom 0.2
+
+        if use_wr_color:
+            hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_tops_color","base"), Jump("wardrobe_update")]
+            add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
+            for i in range(0,len(color_list)):
+                $ row = i // 7
+                $ col = i % 7
+
+                hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_tops_color",wr_clothcolor[i]), Jump("wardrobe_update")]
+                add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
 
         # Items
         for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
-                $ row = (i // 4) % 4
+                $ row = (i // 5) % 4
                 $ col = i % 5
-                hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
-                add wr_items_path +str(menu_items[i])+ ".png" xalign 0.5 xpos item_xpos +90*(col-(current_page*items_shown)) ypos item_ypos +90*(row-(current_page*items_shown)) zoom item_scaling
-
-
+                hotspot ( (12+(90*col)), (87+92+(92*row)), 83, 85) clicked Return(menu_items[i])
+                add wr_items_path +str(menu_items[i])+ ".png" xalign 0.5 xpos item_xpos +90*(col) ypos item_ypos +90*(row) zoom item_scaling
+        #for i in range(0, clamp(items_shown, 0, (len(menu_items)-(items_shown*current_page)))):
+        #    $ row = (i // 5) % 4
+        #    $ col = i % 5
+        #    add wr_items_path+str(menu_items[clamp(i+(current_page*items_shown), 0, len(menu_items))])+".png" xalign 0.5 xpos item_xpos+90*col ypos item_ypos+90*row zoom item_scaling
+        #    hotspot (  12+(90*col), 87+92+(92*row), 83, 85) clicked Return(menu_items[clamp(i+(current_page*items_shown), 0, len(menu_items))])
 
 
 label update_cho_wardrobe_items(character, category, group):
@@ -222,6 +235,7 @@ python:
     item_list = []
     group_list = ["1"]
     toggle_list = []
+    color_list = []
     use_wr_color = False
 
     item_xpos = 40
@@ -232,6 +246,11 @@ python:
         if group == "1":
             item_xpos = 40
             item_ypos = 130
+
+            # Hair color
+            color_list = []
+
+            #Items
             item_list.append("ponytail_blue")
             wr_items_path = "characters/" +str(character)+ "/body/head/"
 
@@ -250,23 +269,6 @@ python:
             item_list.append("top_5")
             item_list.append("sweater_1")
             item_list.append("sweater_2")
-            item_list.append("top_1")
-            item_list.append("top_2")
-            item_list.append("top_3")
-            item_list.append("top_4")
-            item_list.append("top_5")
-            item_list.append("top_1")
-            item_list.append("top_2")
-            item_list.append("top_3")
-            item_list.append("top_4")
-            item_list.append("top_5")
-            item_list.append("top_1")
-            item_list.append("top_2")
-            item_list.append("sweater_1")
-            item_list.append("sweater_2")
-            item_list.append("top_5")
-            item_list.append("top_1")
-            item_list.append("top_2")
         if group == "3":
             use_wr_color = True
             item_list.append("top_tanktop_1")
@@ -297,6 +299,5 @@ python:
             item_list.append("pants_jeans_short")
             item_list.append("pants_short_1")
         wr_items_path = "characters/" +str(character)+ "/clothes/bottoms/base/"
-
 
 return

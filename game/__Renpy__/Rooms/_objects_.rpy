@@ -65,6 +65,10 @@ label room_objects_init:
         # New Decorations
         $ poster_OBJ = room_object_class(type="poster", room_image="", room_image_path="images/rooms/_objects_/posters/", xpos=332, ypos=260)
         $ trophy_OBJ = room_object_class(type="trophy", room_image="", room_image_path="images/rooms/_objects_/trophies/", xpos=690, ypos=150)
+        # Phoenix hat
+        $ phoenix_deco_OBJ = room_object_class(type="phoenix_deco", room_image="", room_image_path="images/rooms/_objects_/phoenix/", xpos=phoenix_OBJ.xpos, ypos=phoenix_OBJ.ypos-42)
+        $ fireplace_deco_OBJ = room_object_class(type="fireplace_deco", room_image="", room_image_path="images/rooms/_objects_/fireplace/", xpos=fireplace_OBJ.xpos, ypos=fireplace_OBJ.ypos)
+        $ owl_deco_OBJ = room_object_class(type="owl_deco", room_image="", room_image_path="images/rooms/_objects_/mail/", xpos=owl_OBJ.xpos, ypos=owl_OBJ.ypos)
         #
 
     return

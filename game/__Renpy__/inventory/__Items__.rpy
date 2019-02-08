@@ -176,9 +176,12 @@ label store_items_init:
         $ hg_outfit_christmas_ITEM = outfit_class(id="hg_outfit_christmas", name="Christmas Girl",  type="outfit", items=["outfit"],       cost=50, wait_time=2, image="outfits/hg_christmas", description=">A christmas themed outfit complete with tightly wrapped\n snowglobes.")
         $ hg_outfit_present_ITEM   = outfit_class(id="hg_outfit_present", name="Present",           type="outfit", items=["outfit"],       cost=35, wait_time=1, image="outfits/hg_present", description=">A tightly wrapped gift, scissors not included.")
         $ hg_outfit_japan_ITEM     = outfit_class(id="hg_outfit_japan", name="Japanese Schoolgirl", type="outfit", items=["outfit"],       cost=125, wait_time=2, image="outfits/hg_japan", description=">A schoolgirl outfit traditionally worn in Japan.")
-        $ hg_outfit_witch_ITEM     = outfit_class(id="hg_outfit_witch", name="Witch outfit",        type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
         $ hg_outfit_egypt_ITEM     = outfit_class(id="hg_outfit_egypt", name="Egyptian Goddess",    type="outfit", image="outfits/hg_egypt", unlockable=True)
         $ hg_gamble_slut_ITEM      = outfit_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit_token", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
+
+    if not hasattr(renpy.store,'hg_witch_ITEM'):
+        $ hg_witch_ITEM        = outfit_class(id="hg_witch", name="Witch Outfit",      type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
+        $ hg_witch_skimpy_ITEM = outfit_class(id="hg_witch_skimpy", name="Sexy Witch", type="outfit", items=["outfit","hat"], unlockable=True,       image="outfits/hg_witch_skimpy")
 
     #Hermione Costumes.
     if not hasattr(renpy.store,'hg_costume_power_girl_ITEM'):
@@ -197,7 +200,7 @@ label store_items_init:
 
     $ hermione_outfits_list=[
         hg_outfit_maid_ITEM, hg_outfit_pirate_ITEM, hg_outfit_christmas_ITEM, hg_outfit_present_ITEM,
-        hg_outfit_japan_ITEM, hg_outfit_witch_ITEM, hg_outfit_egypt_ITEM,
+        hg_outfit_japan_ITEM, hg_witch_ITEM, hg_witch_skimpy_ITEM, hg_outfit_egypt_ITEM,
         ]
     if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.
         $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
@@ -413,6 +416,12 @@ init -2 python:
         cost = 0
         wait_time = 1
         description = ""
+        
+        #Used in decorations
+        active = False # Check if decoration is used or not
+
+        #Used in decorations
+        active = False # Check if decoration is used or not
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
@@ -426,7 +435,7 @@ init -2 python:
                 return self.imagepath
             else:
                 return self.imagepath
-                
+
         # Need to simplify this
         def get_cost(self):
             if self.type == "poster" or self.type == "trophy" or self.type == "outfit_token":

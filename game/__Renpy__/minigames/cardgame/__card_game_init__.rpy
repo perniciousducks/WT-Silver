@@ -21,7 +21,6 @@ label __init_variables:
         if not hasattr(renpy.store, 'geniecard_level'):
             geniecard_level = 1
             geniecard_tokens = 0
-            geniecard_challenges = 0
             cardgame_eoc = False # End of content flag
         
         table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
@@ -461,6 +460,7 @@ label __init_variables:
             snape_first_win = False
             snape_second_win = False
             snape_third_win = False
+            snape_wager_talk = False
 
         if not hasattr(renpy.store, 'her_know_cards'):
             her_know_cards = False

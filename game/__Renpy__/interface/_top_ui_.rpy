@@ -417,9 +417,10 @@ label decorate_room_menu:
         if current_category == "deco_cupboard":
             menu_title = "Miscellaneous"
             item_list.extend(cupboard_deco_list)
+            item_list.extend(misc_deco_list)
 
         #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475, func_btn=True, func_btn_ico="ui_delete")
 
     $ _return = ui.interact()
 
@@ -441,7 +442,32 @@ label decorate_room_menu:
         with d3
 
         jump day_main_menu
-
+    elif _return == "func":
+        menu:
+            "> Remove all decorations?"
+            "Yes":
+                # Loop through all decorations and deactivate them
+                python:
+                    for i in xrange(0, len(wall_deco_list)):
+                        wall_deco_list[i].active = False
+                    for i in xrange(0, len(fireplace_deco_list)):
+                        fireplace_deco_list[i].active = False
+                    for i in xrange(0, len(cupboard_deco_list)):
+                        cupboard_deco_list[i].active = False
+                    for i in xrange(0, len(misc_deco_list)):
+                        misc_deco_list[i].active = False
+                
+                $ poster_OBJ.room_image = ""
+                $ trophy_OBJ.room_image = ""
+                $ cupboard_deco = ""
+                $ phoenix_deco_OBJ.room_image = ""
+                $ fireplace_deco_OBJ.room_image = ""
+                $ owl_deco_OBJ.room_image = ""
+                $ owl_OBJ.room_image = "owl_idle"
+                $ owl_OBJ.idle_image = "owl_with_letter_blink"
+                $ owl_OBJ.hover_image = "owl_hover"
+            "No":
+                jump deco_menu
     elif _return == "inc":
         $ current_page += 1
     elif _return == "dec":
@@ -454,7 +480,7 @@ label decorate_room_menu:
 ## Same lists get used in the Weasley store.
 ## Add any deco objects to the lists here.
 label update_deco_items:
-    if not hasattr(renpy.store,'poster_agrabah_ITEM'):
+    if not hasattr(renpy.store,'poster_agrabah_ITEM') or reset_persistants:
         #Posters
         $ poster_agrabah_ITEM = item_class(id="agrabah", name="Agrabah Poster", cost=2, type="poster", image="posters/agrabah", description="A remnant of a distant land and memories about different times. A reminder for when you just want to ponder about what could've been.")
         $ poster_gryffindor_ITEM = item_class(id="gryffindor", name="Gryffindor Poster", cost=2, type="poster", image="posters/gryffindor", description="Make your stance that you support the house of Gryffindor with this themed poster.")
@@ -467,12 +493,20 @@ label update_deco_items:
         $ poster_wanted_ITEM = item_class(id="wanted", name="Wanted Poster", cost=2, type="poster", image="posters/wanted", description="A Wild West styled Wanted poster depicting our dear headmaster...")
         #Trophies
         $ trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3, type="trophy", image="trophies/stag", description="A perfect decoration over your mantelpiece to add a sense of masculinity to the office.")
-        #Pinups
+        $ trophy_crest_ITEM = item_class(id="crest", name="Hogwarts Crest", cost=5, type="trophy", image="trophies/crest", description="A perfect decoration for a headmaster.")
+        #Pinups & Misc
         $ pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
+        # HATS HATS HATS HATS HATS HYPE
+        $ owl_hat_ITEM = item_class(id="owl_hat", name="Owl Hat", cost=0, type="owl", imagepath="interface/icons/misc/owl_hat.png", unlocked=True)
+        $ phoenix_hat_ITEM = item_class(id="phoenix_hat", name="Phoenix Hat", cost=0, type="phoenix", imagepath="interface/icons/misc/phoenix_hat.png", unlocked=True)
+        $ fireplace_hat_ITEM = item_class(id="fireplace_hat", name="Skull Hat", cost=0, type="fireplace", imagepath="interface/icons/misc/fireplace_hat.png", unlocked=True)
+        
+        $ owl_black_ITEM = item_class(id="owl_idle_black", name="Black Owl", cost=4, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
         
         $ wall_deco_list = [poster_agrabah_ITEM, poster_gryffindor_ITEM, poster_hufflepuff_ITEM, poster_ravenclaw_ITEM, poster_slytherin_ITEM, poster_hermione_ITEM, poster_harlots_ITEM, poster_stripper_ITEM, poster_wanted_ITEM]
-        $ fireplace_deco_list = [trophy_stag_ITEM]
+        $ fireplace_deco_list = [trophy_crest_ITEM, trophy_stag_ITEM]
         $ cupboard_deco_list = [pinup_girl_ITEM]
+        $ misc_deco_list = [phoenix_hat_ITEM, owl_hat_ITEM, fireplace_hat_ITEM, owl_black_ITEM]
     
     # Outfits
     if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.
@@ -481,20 +515,64 @@ label update_deco_items:
     return
 
 label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove it when 'item' is currently displayed as a deco.
-    
     if item.type == "poster":
+        # Loop through all posters and deactivate them
+        python:
+            for i in xrange(0, len(wall_deco_list)):
+                wall_deco_list[i].active = False
+        
         if poster_OBJ.room_image == item.id:
             $ poster_OBJ.room_image = ""
         else:
             $ poster_OBJ.room_image = item.id
+            $ item.active = True
     elif item.type == "trophy":
+        python:
+            for i in xrange(0, len(fireplace_deco_list)):
+                fireplace_deco_list[i].active = False
+                
         if trophy_OBJ.room_image == item.id:
             $ trophy_OBJ.room_image = ""
         else:
             $ trophy_OBJ.room_image = item.id
+            $ item.active = True
     elif item.type == "pinup":
-        if trophy_OBJ.room_image == item.id:
+        if cupboard_deco == item.id:
             $ cupboard_deco = ""
+            $ item.active = False
         else:
             $ cupboard_deco = item.id
+            $ item.active = True
+    elif item.type == "phoenix":
+        if phoenix_deco_OBJ.room_image == item.id:
+            $ phoenix_deco_OBJ.room_image = ""
+            $ item.active = False
+        else:
+            $ phoenix_deco_OBJ.room_image = item.id
+            $ item.active = True
+    elif item.type == "fireplace":
+        if fireplace_deco_OBJ.room_image == item.id:
+            $ fireplace_deco_OBJ.room_image = ""
+            $ item.active = False
+        else:
+            $ fireplace_deco_OBJ.room_image = item.id
+            $ item.active = True
+    elif item.type == "owl":
+        if owl_deco_OBJ.room_image == item.id:
+            $ owl_deco_OBJ.room_image = ""
+            $ item.active = False
+        else:
+            $ owl_deco_OBJ.room_image = item.id
+            $ item.active = True
+    elif item.type == "mail":
+        if owl_OBJ.room_image == item.id:
+            $ owl_OBJ.room_image = "owl_idle"
+            $ owl_OBJ.idle_image = "owl_with_letter_blink"
+            $ owl_OBJ.hover_image = "owl_hover"
+            $ item.active = False
+        else:
+            $ owl_OBJ.room_image = item.id
+            $ owl_OBJ.idle_image = "owl_with_letter_blink_black"
+            $ owl_OBJ.hover_image = "owl_hover_black"
+            $ item.active = True
     return

@@ -11,6 +11,58 @@ label hermione_random_clothing:
 
     $ random_number = renpy.random.randint(1, 10)
 
+    if not hermione_wardrobe_unlocked:
+        $ hermione_wardrobe_unlocked = True
+
+        call set_her_action("hold_book") # This will only be used once in the game, here.
+        call her_walk("door","mid",2.7)
+        pause.2
+
+        call her_main("","base","base",xpos="mid",ypos="base")
+        call ctc
+
+        m "(...)"
+        call her_main("Is anything wrong, [genie_name]?","soft","base")
+        g4 "Why are you holding all those... \"things\"?"
+        call her_main("My books?","open","down")
+        call her_main("I wasn't sure which ones I'd need, so I brought all of them!","grin","happyCl")
+        m "Brought them for what?"
+        call her_main("My tutoring lessons...","soft","suspicious")
+        call her_main("I hope you're still planning to lecture me, [genie_name].","annoyed","base")
+        g9 "Oh, I'll give you a lecture for sure."
+        g9 "But we'll do it my way!"
+        m "But we're going to have to do it my way. There's no need for those books."
+        call her_main("No need?","normal","worried")
+        m "No."
+        call her_main("Too bad, I love books.","annoyed","down")
+        hide screen hermione_main
+        with d5
+        pause.2
+
+        call her_chibi("stand","mid","base",flip=True)
+        with d5
+        pause.5
+
+        call set_her_action("none","update")
+
+        g9 "{size=-2}And soon you'll love cock!{/size}"
+        $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
+        pause.2
+
+        call her_chibi("stand","mid","base",flip=False)
+        with d5
+        pause.2
+
+        call her_main("Yes?","soft","base",trans="d5")
+        m "I didn't say anything..."
+        call her_main("If you say so, [genie_name].","open","baseL")
+        call her_main("Is it ok if we could start right away with the lessons?","soft","base")
+        m "Well... Of course..."
+
+        call her_main("","base","base",xpos="base",ypos="base",trans="fade")
+
+        return
+
     # Rainy and Thundery Weather.
     if weather_gen >= 5:
 

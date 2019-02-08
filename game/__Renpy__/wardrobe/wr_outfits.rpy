@@ -325,7 +325,7 @@ label equip_her_outfit:
                         ">Try again at Whoring level 17."
                     jump return_to_wardrobe
 
-            if outfit_choice == hg_outfit_witch_ITEM:
+            if outfit_choice in [hg_witch_ITEM,hg_witch_skimpy_ITEM]:
                 m "[hermione_name], have you ever heard about witches?"
                 call her_main("[genie_name]? I am a witch?","soft","narrow")
                 m "Oh right,..."
@@ -337,14 +337,18 @@ label equip_her_outfit:
                     m "Here it is."
                     call nar(">You hand her the outfit.")
                     call her_main("It looks really old-fashioned...","disgust","down")
-                    call her_main("And why is there a hole down there?","disgust","narrow")
-                    g9 "It's great, isn't it!"
-                    call her_main("No it isn't! Do you really expect me to show of my pussy like that, to everyone?","angry","angry")
-                    m "Well, only to me..."
-                    m "I believe you can cover it up with a spell or something..."
-                    call her_main("Oh...","annoyed","down")
-                    call her_main("You should have told me that first!","annoyed","annoyed")
-                    g9 "Yeah yeah... Now put on the dress, my little witch!"
+                    if outfit_choice == hg_witch_skimpy_ITEM:
+                        call her_main("And why is there a hole down there?","disgust","narrow")
+                        g9 "It's great, isn't it!"
+                        call her_main("No it isn't! Do you really expect me to show of my pussy like that, to everyone?","angry","angry")
+                        m "Well, only to me..."
+                        m "I believe you can cover it up with a spell or something..."
+                        call her_main("Oh...","annoyed","down")
+                        call her_main("You should have told me that first!","annoyed","annoyed")
+                    else:
+                        g9 "It's great, isn't it!"
+                        call her_main("Not really...","annoyed","down")
+                    g9 "Just put it on, my little witch."
                     call her_main("Fine... Give me a minute...","smile","baseL")
                 else: #Fail
                     call her_main("Capes are silly, [genie_name].","open","closed")

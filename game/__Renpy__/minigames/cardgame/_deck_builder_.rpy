@@ -180,7 +180,6 @@ screen deck_builder_gallery():
         keysym "game_menu"
 
 label color_change:
-    show screen overlay_color_picker
     
     $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "Player border")
     
@@ -201,7 +200,7 @@ label color_change:
 # old code#####
 #        "-Change enemy color-":
 #            "Enter the color in RGB format (0 to 255)"
-#            $ enemycolor_r = float(renpy.input("Red", "", "0123456789", length=3))/255
+#            $ enemycolor_r = renpy.input("Red", "", "0123456789", length=3)/255.0
 #            $ enemycolor_g = float(renpy.input("Green", "", "0123456789", length=3))/255
 #            $ enemycolor_b = float(renpy.input("Blue", "", "0123456789", length=3))/255
 #            $ enemyborder = enemyTint("images/cardgame/border.png")

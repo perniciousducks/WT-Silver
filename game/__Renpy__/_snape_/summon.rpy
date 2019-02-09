@@ -7,6 +7,9 @@ label summon_snape:
     call sna_chibi("stand","mid","base")
 
     call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base")
+    
+    $ menu_x = 0.25
+    $ menu_y = 0.5
 
     label snape_ready:
         pass

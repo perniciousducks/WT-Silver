@@ -9,7 +9,7 @@ label summon_hermione:
 
     label hermione_requests:
 
-    $ menu_x = 0.1
+    $ menu_x = 0.25
     $ menu_y = 0.5
 
     $ hide_transitions = False

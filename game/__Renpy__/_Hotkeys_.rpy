@@ -103,31 +103,21 @@ init:
         hover_color "#ffffff"
         insensitive_color "#444"
         outlines [ (1, "#00000080", 1, 0) ]
-        
-    style say_who_window:
-        #size 14
-        #xminimum 200
-        #yminimum 34
-        #xfill False
-        xpos 235
-        #text_align 0.5
     
     style say_who_window_day:
-        #size 14
-        #xminimum 200
-        #yminimum 34
+        xsize 164
+        ysize 32
         background "interface/frames/gold/namebox.png"
-        #xfill False
         xpos 235
+        ypos 48
         text_align 0.5
         
     style say_who_window_night:
-        #size 14
-        #xminimum 200
-        #yminimum 34
+        xsize 164
+        ysize 32
         background "interface/frames/gray/namebox.png"
-        xfill False
         xpos 235
+        ypos 48
         text_align 0.5
         
     style say_two_window_vbox:

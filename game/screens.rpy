@@ -49,11 +49,11 @@ screen say:
                 
                 if daytime:
                     if who:
-                        text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
+                        text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False
                     text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
                 else:
                     if who:
-                        text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
+                        text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False
                     text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
 
     else:

@@ -71,8 +71,8 @@ label cho_wardrobe_test: # WIP
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     elif _return == "change_bg_color":
-        $ cho_bg_color = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], [255, 255, 255], False, "wardrobe color")
-
+        $ cho_bg_color = color_picker(cho_bg_color, False, "wardrobe color")
+        
     elif _return == "Close":
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
         $ current_page = 0

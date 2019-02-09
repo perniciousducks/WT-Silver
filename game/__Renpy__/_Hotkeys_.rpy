@@ -19,7 +19,7 @@ init -2 python:
         config.debug ^= True
         return "Debug = %s" % config.debug
         
-    style.button['daybutton'].background = "#ebc275"
+    #style.button['daybutton'].background = "#ebc275"
         
     ##############################################################################
     #Hotkeys list
@@ -124,10 +124,12 @@ init:
         yalign 1.0
 
 #Custom menu w/ hotkeys    
-screen custom_menu(items, hotkeys=True):
-    zorder 7
+screen custom_menu(items):
+    zorder 5
     
-    add "interface/bld.png"
+    # Dont add the fade if character or saybox is present (They have its own triggers for fading)
+    if not renpy.get_screen("say") and not renpy.get_screen("hermione_main") and not renpy.get_screen("cho_chang") and not renpy.get_screen("luna_main") and not renpy.get_screen("snape_main") and not renpy.get_screen("astoria_main") and not renpy.get_screen("tonks_main") and not renpy.get_screen("susan_main"):
+        add "interface/bld.png" at fadeInOut
     window:
         style "menu_window"
         xalign menu_x

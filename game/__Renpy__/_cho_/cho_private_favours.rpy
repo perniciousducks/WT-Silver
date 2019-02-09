@@ -337,7 +337,7 @@ label jerk_off_to_cho:
                             call ctc
 
                             call cho_main("[cho_genie_name], how much longer are you going to-","horny","suspicious","sad","downR")
-                            g4 "Here is comes!"
+                            g4 "Here it comes!"
                             call cum_block
                             call gen_chibi("cumming_behind_desk")
                             call cum_block

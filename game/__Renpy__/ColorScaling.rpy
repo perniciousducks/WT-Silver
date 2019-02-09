@@ -74,7 +74,7 @@ init python:
         image = im.MatrixColor( image, im.matrix.tint((palette_color[0]/255.0), (palette_color[1]/255.0), (palette_color[2]/255.0)))
         return image
 
-    def color_picker(color = [255.0, 255.0, 0.0, 255.0], palette_color = [255.0, 255.0, 0.0], alpha = True, title="", pos_xy=[240, 130], offset=25):
+    def color_picker(color = [255.0, 255.0, 0.0, 255.0], alpha = True, title="", pos_xy=[240, 130], offset=25):
         global color_scale
         global UI_color_bar
         original_color = [color[0],color[1],color[2],color[3]]

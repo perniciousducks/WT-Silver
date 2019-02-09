@@ -79,10 +79,15 @@ init python:
         global UI_color_bar
         original_color = [color[0],color[1],color[2],color[3]]
         choicen_scale = [125.0,125.0]
-        cursor_position = [pos_xy[0]+offset+128, pos_xy[1]+offset+128]
-        cursor_horizontal = pos_xy[0]-220
-        cursor_vertical = pos_xy[1]+31
+        n_alpha = 255
         while True:
+            cursor_tuple = RGB_to_HSV(float(color[0]),float((color[1])),float((color[2])))
+            palette_color = HSV_to_RGB(360 - cursor_tuple[0], 1.0, 1.0)
+            UI_color_scale.set_color((palette_color[0], palette_color[1], palette_color[2], n_alpha))
+            cursor_position = [((1.0-cursor_tuple[1])*255.0)+offset+pos_xy[0], (1.0-cursor_tuple[2])*255.0+offset+pos_xy[1]]
+            cursor_horizontal = n_alpha+pos_xy[0]+offset
+            cursor_vertical = ((1-(cursor_tuple[0]/360.0))*255.0)+pos_xy[1]+offset
+            
             renpy.show_screen("color_map", color, palette_color, cursor_position, cursor_horizontal, cursor_vertical, alpha, title, pos_xy)
 
             _return = ui.interact()
@@ -100,32 +105,26 @@ init python:
             #    y -= (screen_height-float((screen_width*5.0)/9.0))/2
             #scaling_modifier = (float((screen_width*5.0)/9.0)/float(config.screen_height))
             #scaling_modifier = 1
-            
-            
+             
+            x = x-float(pos_xy[0]+offset)
+            y = y-float(pos_xy[1]+offset)
             
             if _return == "Close":
                 return original_color
             elif _return == "main_color":
-                cursor_position = [x, y]
-                x = x-float(pos_xy[0]+offset)
-                y = y-float(pos_xy[1]+offset)
                 color = UI_color_scale.get_main_color( x ,y)
+                
             elif _return == "color_bar":
-                y -= float(pos_xy[1]+offset)
                 ypos_to_color = float(y)
                 
-                new_color = UI_color_bar.get_color(ypos_to_color)
-                UI_color_scale.set_color(new_color)
-                color = UI_color_scale.get_main_color(choicen_scale[0], choicen_scale[1])
-                palette_color = UI_color_bar.get_color(ypos_to_color)
-                cursor_vertical = renpy.get_mouse_pos()[1]
-                cursor_position = [pos_xy[0]+offset+128, pos_xy[1]+offset+128] # Reset main cursor position to the middle
+                color = UI_color_bar.get_color(ypos_to_color)
+                UI_color_scale.set_color(color)
+                color = UI_color_scale.get_main_color(cursor_position[0]-(+offset+pos_xy[0]), cursor_position[1]-(+offset+pos_xy[1]))
+                
                 #renpy.free_memory() # Not needed anymore, saved just in case
             elif _return == "alpha_bar":
-                x -= float(pos_xy[0]+offset)
                 n_alpha = 255 - (x) # Weird behavior, cant set 255 manually by clicking on the bar
                 color[3] = 0 if n_alpha < 0 else n_alpha
-                cursor_horizontal = x+20.0
             elif _return == "input_red":
                 color[0] = clamp(int(renpy.input("Red", "255", "0123456789", length=3)), 0, 255)
             elif _return == "input_green":
@@ -373,7 +372,106 @@ init python:
         renpy.restart_interaction()
 
         return src 
+    
+    def RGB_to_HSV(r, g, b):
+        d_delta = 0.0
+        v_min = 0.0
+        h = 0.0
+        s = 0.0
+        v = 0.0
+
+        v_min = min(min(r, g), b)
+        v = max(max(r, g), b)
         
+        d_delta = v - v_min;
+
+        if v == 0.0:
+            s = 0
+        else:
+            s = d_delta / v
+
+        if s == 0.0:
+            h = 360
+        else:
+        
+            if r == v:
+                h = (g - b) / d_delta
+            elif g == v:
+                h = 2 + (b - r) / d_delta
+            elif b == v:
+                h = 4 + (r - g) / d_delta
+
+            h *= 60
+            if h <= 0.0:
+                h += 360
+        
+
+        return (360 - h, s, v / 255)
+    
+    def HSV_to_RGB(h,s,v):
+        r = 0
+        g = 0
+        b = 0
+
+        if s == 0:
+            r = v
+            g = v
+            b = v
+
+        else:
+            i = 0
+            
+            f = 0.0
+            p = 0.0
+            q = 0.0
+            t = 0.0
+
+
+            if h == 360:
+                h = 0
+            else:
+                h = h / 60
+
+            i = int(h)
+            f = h - i
+
+            p = v * (1.0 - s)
+            q = v * (1.0 - (s * f))
+            t = v * (1.0 - (s * (1.0 - f)))
+
+            if i == 0:
+                r = v
+                g = t
+                b = p
+
+            elif i == 1:
+                r = q
+                g = v
+                b = p
+
+            elif i == 2:
+                r = p
+                g = v
+                b = t
+
+            elif i == 3:
+                r = p
+                g = q
+                b = v
+
+            elif i == 4:
+                r = t
+                g = p
+                b = v
+
+            else:
+                r = v
+                g = p
+                b = q
+
+        return (float(r)*255, float(g)*255, float(b)*255)
+
+    
     def bilear_scale(src, size, dest=None):
         """
         This scales src up or down to size. This uses both the pixellate

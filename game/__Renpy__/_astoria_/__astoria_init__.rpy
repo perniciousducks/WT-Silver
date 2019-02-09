@@ -133,7 +133,6 @@ label astoria_init:
         $ ast_neckwear_color          = "base"
 
         $ astoria_accs_list           = []
-        $ astoria_accs                = "characters/astoria/accessories/blank.png"
 
         $ astoria_gloves              = "characters/astoria/clothes/gloves/blank.png"
         $ ast_gloves                  = "blank"
@@ -151,15 +150,15 @@ label astoria_init:
         #Accessories
         $ astoria_makeup_list         = []
 
-        $ astoria_hat                 = "characters/astoria/accessories/hats/hair_straight/blank.png"
+        $ astoria_hat                 = "characters/astoria/clothes/hats/hair_straight/blank.png"
         $ ast_hat                     = "blank"
         $ ast_hat_color               = "base"
 
-        $ astoria_glasses             = "characters/astoria/accessories/glasses/blank.png"
+        $ astoria_glasses             = "characters/astoria/clothes/glasses/blank.png"
         $ ast_glasses                 = "blank"
         $ ast_glasses_color           = "base"
 
-        $ astoria_ears                = "characters/astoria/accessories/ears/blank.png"
+        $ astoria_ears                = "characters/astoria/clothes/ears/blank.png"
         $ ast_ears                    = "blank"
 
 

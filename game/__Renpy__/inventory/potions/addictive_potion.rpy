@@ -487,8 +487,10 @@ label potion_scene_3_3_1: #Hypno potion
     menu:
         "-You love being covered in my cum-":
             pass
-    $ hermione_badge = "characters/hermione/accessories/badges/cum_badge.png"
-    $ hermione_badges = True
+
+    $ cum_badge_ITEM.unlocked = True
+    call set_her_body_accessory("badge_I_love_cum")
+
     call her_main("I love being covered in your cum...","soft","dead")
     menu:
         "-Your breasts are incredibly sensitive to pleasure-":

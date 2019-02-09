@@ -89,12 +89,12 @@ screen owl:
     tag owl
 
     if letter_queue_list != []: #Owl with letter.
-        add owl_OBJ.get_idle_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 0.5
+        add owl_OBJ.get_idle_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
     else:
-        add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 0.5
+        add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
 
 screen package:
-    add package_OBJ.get_room_image() xpos package_OBJ.xpos ypos package_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add package_OBJ.get_room_image() xpos package_OBJ.xpos ypos package_OBJ.ypos xanchor 0.5 yanchor 1.0
 
 screen dumbledore: # DUMBLEDORE AND HIS DESK.
     tag chibi_genie
@@ -178,7 +178,7 @@ label give_reward(text="",gift=""):
 
 screen clothing_unlock:
     zorder 6
-    add "interface/store/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
+    add "interface/panels/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
 
 label unlock_clothing(text="",item=None):

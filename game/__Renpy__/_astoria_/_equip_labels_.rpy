@@ -31,7 +31,7 @@ label update_ast_uniform:
     $ astoria_robe           = "characters/astoria/clothes/robe/"+str(ast_robe)+".png"
 
     #Accessories
-    $ astoria_hat            = "characters/astoria/accessories/hats/hair_"+str(ast_hair_style)+"/"+str(ast_hat)+".png"
+    $ astoria_hat            = "characters/astoria/clothes/hats/hair_"+str(ast_hair_style)+"/"+str(ast_hat)+".png"
 
     return
 

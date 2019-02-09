@@ -46,8 +46,8 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
         xalign 0.5
         yalign 0.5
 
-        ground "interface/store/"+interface_color+"/items_panel.png"
-        hover "interface/store/"+interface_color+"/items_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/items_panel.png"
+        hover "interface/panels/"+interface_color+"/items_panel_hover.png"
 
         #Header
         hbox:
@@ -168,8 +168,8 @@ screen icon_menu(menu_items, categories, character, title, xpos, ypos):
         xsize 467 #width of ground/hover image.
         ysize 548 #height of ground/hover image.
 
-        ground "interface/store/"+interface_color+"/icons_panel.png"
-        hover "interface/store/"+interface_color+"/icons_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/icon_panel.png"
+        hover "interface/panels/"+interface_color+"/icon_panel_hover.png"
 
         #Header
         hbox:
@@ -242,8 +242,8 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
         xsize 1080 #width of ground/hover image.
         ysize 548 #height of ground/hover image.
 
-        ground "interface/store/" +interface_color+ "/bottom_panel.png"
-        hover "interface/store/"  +interface_color+ "/bottom_panel_hover.png"
+        ground "interface/panels/" +interface_color+ "/bottom_panel.png"
+        hover "interface/panels/"  +interface_color+ "/bottom_panel_hover.png"
 
 
         #Menu Name
@@ -363,11 +363,11 @@ screen clothing_menu(menu_items, character, preview):
         ypos 0
 
         if preview == None:
-            ground "interface/store/"+str(interface_color)+"/clothing_panel_main.png"
-            hover "interface/store/"+str(interface_color)+"/clothing_panel_main_hover.png"
+            ground "interface/panels/"+str(interface_color)+"/clothing_panel_main.png"
+            hover "interface/panels/"+str(interface_color)+"/clothing_panel_main_hover.png"
         else:
-            ground "interface/store/"+str(interface_color)+"/clothing_panel_full.png"
-            hover "interface/store/"+str(interface_color)+"/clothing_panel_full_hover.png"
+            ground "interface/panels/"+str(interface_color)+"/clothing_panel_full.png"
+            hover "interface/panels/"+str(interface_color)+"/clothing_panel_full_hover.png"
 
             #Item Information Display Panel.
             text preview.get_name() xpos 83 ypos 458 size 16

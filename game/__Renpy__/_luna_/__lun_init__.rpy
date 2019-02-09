@@ -150,7 +150,6 @@ label luna_init:
         $ lun_neckwear_color          = "base"
 
         $ luna_accs_list           = []
-        $ luna_accs                = "characters/luna/accessories/blank.png"
 
         $ luna_gloves              = "characters/luna/clothes/gloves/blank.png"
         $ lun_gloves                  = "blank"
@@ -168,15 +167,15 @@ label luna_init:
         #Accessories
         $ luna_makeup_list         = []
 
-        $ luna_hat                 = "characters/luna/accessories/hats/hair_playful/blank.png"
+        $ luna_hat                 = "characters/luna/clothes/hats/hair_playful/blank.png"
         $ lun_hat                     = "blank"
         $ lun_hat_color               = "base"
 
-        $ luna_glasses             = "characters/luna/accessories/glasses/base/blank.png"
+        $ luna_glasses             = "characters/luna/clothes/glasses/blank.png"
         $ lun_glasses                 = "blank"
         $ lun_glasses_color           = "base"
 
-        $ luna_ears                = "characters/luna/accessories/ears/blank.png"
+        $ luna_ears                = "characters/luna/clothes/ears/blank.png"
         $ lun_ears                    = "blank"
 
         #Outfits

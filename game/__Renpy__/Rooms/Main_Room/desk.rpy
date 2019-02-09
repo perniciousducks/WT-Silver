@@ -1,6 +1,6 @@
 label desk:
     hide screen main_room_menu
-    
+
     if day == 1:
         if not desk_examined:
             menu:
@@ -164,11 +164,11 @@ screen desk_menu:
 
     #Book
     if store_intro_done:
-        add "interface/desk/book.png"
+        add "interface/desk/book.png" xalign 1.0 xpos 1080 ypos 0
         imagebutton:
-            #xpos -5
-            #ypos 100
-            focus_mask True
+            xpos 1080
+            ypos 0
+            xalign 1.0
             idle "interface/desk/book.png"
             hover "interface/desk/book_hover.png"
             hovered SetVariable("ball_hint", "book")
@@ -176,11 +176,11 @@ screen desk_menu:
             action Return("read_book_menu")
 
     #Tissue Box
-    add "interface/desk/tissues.png"
+    add "interface/desk/tissues.png" xalign 1.0 xpos 1080 ypos 320
     imagebutton:
-        xpos 0
-        ypos 0
-        focus_mask True
+        xpos 1080
+        ypos 320
+        xalign 1.0
         idle "interface/desk/tissues.png"
         hover "interface/desk/tissues_hover.png"
         hovered SetVariable("ball_hint", "jerk_off")
@@ -190,9 +190,9 @@ screen desk_menu:
     #Work
     if letter_paperwork_unlock_OBJ.read:
         imagebutton:
-            xpos 0
+            xpos -10
             ypos 0
-            focus_mask True
+            xalign 0.0
             idle "interface/desk/work.png"
             hover "interface/desk/work_hover.png"
             hovered SetVariable("ball_hint", "work")
@@ -202,9 +202,10 @@ screen desk_menu:
     #Cards
     if deck_unlocked: #Or letter_deck.read #Day 26+
         imagebutton:
-            #xpos -40
-            #ypos 260
-            focus_mask True
+            xpos 0
+            ypos 600
+            xalign 0.0
+            yalign 1.0
             idle "interface/desk/cards.png"
             hover "interface/desk/cards_hover.png"
             hovered SetVariable("ball_hint", "cards")
@@ -235,18 +236,17 @@ screen crystal_ball:
 
     zorder 8
 
-    add "interface/desk/crystal_ball.png"
+    add "interface/desk/crystal_ball.png" xpos 268 ypos 0
     if not ball_hint == None:
-        add "interface/desk/hints/glow.png" xpos 308
-        add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 393 xanchor 0.5
+        add "interface/desk/hints/glow.png" xpos 268+40
+        add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 268+125 xanchor 0.5
 
 screen watch:
     #Day/Night Clock
-    add "interface/desk/watch.png"
+    add "interface/desk/watch.png" xpos 603 ypos 0
     imagebutton:
-        xpos 0
+        xpos 603
         ypos 0
-        focus_mask True
         idle "interface/desk/watch.png"
         hover "interface/desk/watch_hover.png"
         unhovered SetVariable("ball_hint", None)
@@ -257,7 +257,7 @@ screen watch:
             hovered SetVariable("ball_hint", "sleep")
             action Return("day_start") #Skip to next day
 
-    $ watch_x = 670
+    $ watch_x = 603 +67
     $ watch_y = 35
 
     if raining:

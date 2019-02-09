@@ -6,11 +6,11 @@ screen main_room:
         add "images/rooms/_bg_/main_room_day.png"
     else:
         add "images/rooms/_bg_/main_room_night.png"
-        
+
     #Posters
     if poster_OBJ.room_image:
         add poster_OBJ.get_room_image() xpos poster_OBJ.xpos ypos poster_OBJ.ypos xanchor 0.5 yanchor 0.5
-        
+
     if trophy_OBJ.room_image:
         add trophy_OBJ.get_room_image() xpos trophy_OBJ.xpos ypos trophy_OBJ.ypos xanchor 0.5 yanchor 0.5
 
@@ -41,9 +41,9 @@ screen main_room_overlay:
     tag room_overlay_screen
 
     #Decorations
-    for i in deco_overlay_list:
-        add i.get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
-    
+    #for i in deco_overlay_list:
+    #    add deco_overlay_list[i].get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
+
     # Phoenix deco
     if phoenix_deco_OBJ.room_image:
         add phoenix_deco_OBJ.get_room_image() xpos phoenix_deco_OBJ.xpos ypos phoenix_deco_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
@@ -51,14 +51,14 @@ screen main_room_overlay:
     #Fireplace
     if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
         use fireplace_glow
-        
+
     # Fireplace deco
     if fireplace_deco_OBJ.room_image:
         add fireplace_deco_OBJ.get_room_image() xpos fireplace_deco_OBJ.xpos ypos fireplace_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
-        
+
     # Owl deco
     if owl_deco_OBJ.room_image and renpy.get_screen("owl"):
-        add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
+        add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
 
     zorder 3#2
 
@@ -188,8 +188,8 @@ screen main_room_menu:
         imagebutton: # THE PACKAGE
             xpos package_OBJ.xpos
             ypos package_OBJ.ypos
-            xanchor "center"
-            yanchor "center"
+            xanchor 0.5
+            yanchor 1.0
             idle package_OBJ.get_idle_image()
             hover package_OBJ.get_hover_image()
             hovered SetVariable("ui_hint", "Open package")
@@ -200,9 +200,8 @@ screen main_room_menu:
         imagebutton:
             xpos owl_OBJ.xpos
             ypos owl_OBJ.ypos
-            focus_mask True
-            xanchor "center"
-            yanchor "center"
+            xanchor 0.5
+            yanchor 1.0
             idle owl_OBJ.get_idle_image()
             hover owl_OBJ.get_hover_image()
             hovered SetVariable("ui_hint", "Check mail")
@@ -211,16 +210,15 @@ screen main_room_menu:
 
     #Genie
     if renpy.variant('android'):
+        add "newanimation" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
         imagemap:
-            xpos 370
-            ypos 336
-            xanchor "center"
-            yanchor "center"
-            ground "newanimation"
-            hover "images/rooms/main_room/11_genie_02.png"
-            hotspot(49, 28, 188, 219) hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210) ]
-            hotspot(49, 28, 188, 219) unhovered [Hide("gui_tooltip")]
-            hotspot(49, 28, 188, 219) action [Hide("main_room_menu"), Jump("desk")]
+            xpos 384
+            ypos 370
+            xanchor 0.5
+            yanchor 0.5
+            ground "images/rooms/main_room/desk_small_border.png"
+            hover yellowTint("images/rooms/main_room/desk_small_border.png")
+            hotspot(0, 10, 128, 160) action [Hide("main_room_menu"), Jump("desk")]
     else:
         imagebutton:
             xpos 370

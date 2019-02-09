@@ -5,6 +5,7 @@ label summon_characters:
 
     $ hide_transitions = True # Hides transitions.
     $ bg_transp = 1.0
+    $ color_background = False
 
     call screen summon_characters
 
@@ -344,22 +345,14 @@ label pick_custom_background:
             call custom_bg("forest")
         "-Castle-":
             call custom_bg("castle")
-        "-Color-":
-            menu:
-                "-Black-":
-                    call custom_bg("color/black")
-                "-Gray-":
-                    call custom_bg("color/gray")
-                "-White-":
-                    call custom_bg("color/white")
-                "-Blue-":
-                    call custom_bg("color/blue")
-                "-Green-":
-                    call custom_bg("color/green")
-                "-Pink-":
-                    call custom_bg("color/pink")
-                "-Purple-":
-                    call custom_bg("color/purple")
+        "-Use Color BG-" if not color_background:
+            $ bg_color = None
+            $ bg_color = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "wardrobe color")
+            call custom_bg("white")
+            $ color_background = True
+        "-Remove Color BG-" if color_background:
+            $ color_background = False
+
         "-Custom-":
             $ temp_name = renpy.input("(Please enter the image name of your image located in \"images/rooms/_bg_/*****.png\"\nThe image resolution should be 1080 x 600.\nDo not add a .png at the end!)")
             $ temp_name = temp_name.strip()
@@ -381,7 +374,10 @@ label custom_bg(bg=""):
 screen custom_background():
     tag custom_background
 
-    add custom_bg_image alpha bg_transp
+    if color_background:
+        add im.MatrixColor( custom_bg_image, im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) alpha bg_transp
+    else:
+        add custom_bg_image alpha bg_transp
 
     zorder 3
 

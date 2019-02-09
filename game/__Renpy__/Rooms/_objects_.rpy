@@ -32,9 +32,9 @@ label room_objects_init:
             idle_image="door_idle",      idle_image_path="images/rooms/_objects_/doors/",
             hover_image="door_hover",    hover_image_path="images/rooms/_objects_/doors/",
             xpos=898, ypos=315)
-        
+
         #$ carpet_OBJ       = room_object_class(type="carpet", room_image="", xpos=0, ypos=0)
-        
+
         $ candle_left_OBJ = room_object_class(type="candle",
             room_image="candle",  room_image_path="images/rooms/_objects_/candles/",
             xpos=350, ypos=160)
@@ -46,13 +46,13 @@ label room_objects_init:
             room_image="owl_idle",              room_image_path="images/rooms/_objects_/mail/",
             idle_image="owl_with_letter_blink", idle_image_path="",
             hover_image="owl_hover",            hover_image_path="images/rooms/_objects_/mail/",
-            xpos=455, ypos=270)
+            xpos=455, ypos=289)
 
         $ package_OBJ = room_object_class(type="mail",
             room_image="package_idle",      room_image_path="images/rooms/_objects_/mail/",
             idle_image="package_idle",      idle_image_path="images/rooms/_objects_/mail/",
             hover_image="package_hover",    hover_image_path="images/rooms/_objects_/mail/",
-            xpos=400, ypos=235)
+            xpos=402, ypos=290)
 
     if not hasattr(renpy.store,'deco_list'):
 
@@ -61,7 +61,7 @@ label room_objects_init:
 
         $ xmas_fireplace_deco_ITEM = room_object_class(type="fireplace", image="deco/fireplace_xmas", unlockable=True,
             room_image="fireplace_deco_xmas", room_image_path="images/rooms/_objects_/fireplace/")
-            
+
         # New Decorations
         $ poster_OBJ = room_object_class(type="poster", room_image="", room_image_path="images/rooms/_objects_/posters/", xpos=332, ypos=260)
         $ trophy_OBJ = room_object_class(type="trophy", room_image="", room_image_path="images/rooms/_objects_/trophies/", xpos=690, ypos=150)

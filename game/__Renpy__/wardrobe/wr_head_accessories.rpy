@@ -205,7 +205,7 @@ label equip_head_accessory:
 
 label equip_her_head_accessory:
 
-    if head_accessory_choice == h_glasses and glasses_color_choice == h_glasses_color or head_accessory_choice == h_ears or head_accessory_choice == h_hat:
+    if head_accessory_choice == h_glasses or head_accessory_choice == h_ears or head_accessory_choice == h_hat:
         jump remove_head_accessory
 
     elif her_mood >= 1:
@@ -222,7 +222,7 @@ label equip_her_head_accessory:
             m "[hermione_name]..."
 
             #Reading Glasses
-            if head_accessory_choice == "reading_glasses":
+            if head_accessory_choice == "reading_glasses_black":
                 m "Could you wear those reading glasses for me?"
 
                 if her_whoring < 11:
@@ -236,7 +236,7 @@ label equip_her_head_accessory:
                     call her_main("I will wear them for you.","base","glance")
 
             #Vintage Glasses
-            if head_accessory_choice == "vintage_glasses":
+            if head_accessory_choice == "vintage_glasses_black":
                 m "Could you wear these vintage glasses for me?"
 
                 if her_whoring < 11:
@@ -322,8 +322,8 @@ label equip_her_head_accessory:
 
             pause.5
 
-            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_her_glasses(head_accessory_choice, glasses_color_choice)
+            if head_accessory_choice in ["reading_glasses_black","vintage_glasses_black"]:
+                call set_her_glasses(head_accessory_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
             if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:
@@ -336,8 +336,8 @@ label equip_her_head_accessory:
         else:
 
             $ hide_transitions = True
-            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_her_glasses(head_accessory_choice, glasses_color_choice)
+            if head_accessory_choice in ["reading_glasses_black","vintage_glasses_black"]:
+                call set_her_glasses(head_accessory_choice,)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 if her_whoring >= 11:
                     call set_her_ears(head_accessory_choice)
@@ -366,12 +366,12 @@ label remove_head_accessory: #Remove/Toggle off
             m "[hermione_name]..."
 
             #Reading Glasses
-            if head_accessory_choice == "reading_glasses":
+            if head_accessory_choice == "reading_glasses_black":
                 m "Could you take off those reading glasses?"
                 call her_main("Sure. Let me take them off.","base","base")
 
             #Vintage Glasses
-            if head_accessory_choice == "vintage_glasses":
+            if head_accessory_choice == "vintage_glasses_black":
                 m "Could you take off those glasses again?"
                 call her_main("Alright. I will take them off.","base","base")
 
@@ -395,8 +395,8 @@ label remove_head_accessory: #Remove/Toggle off
 
             pause.5
 
-            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_her_glasses(head_accessory_choice, glasses_color_choice)
+            if head_accessory_choice in ["reading_glasses_black","vintage_glasses_black"]:
+                call set_her_glasses(head_accessory_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
             if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:
@@ -409,8 +409,8 @@ label remove_head_accessory: #Remove/Toggle off
         else:
 
             $ hide_transitions = True
-            if head_accessory_choice in ["reading_glasses","vintage_glasses"]:
-                call set_her_glasses(head_accessory_choice, glasses_color_choice)
+            if head_accessory_choice in ["reading_glasses_black","vintage_glasses_black"]:
+                call set_her_glasses(head_accessory_choice)
             if head_accessory_choice in ["cat_ears","elf_ears"]:
                 call set_her_ears(head_accessory_choice)
             if head_accessory_choice in ["hat_maid","hat_witch","hat_gambler","tiara"]:

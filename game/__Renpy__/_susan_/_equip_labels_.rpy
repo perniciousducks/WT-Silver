@@ -27,7 +27,7 @@ label update_sus_uniform:
     $ susan_robe           = "characters/susan/clothes/robe/"+str(sus_robe)+".png"
 
     #Accessories
-    $ susan_hat            = "characters/susan/accessories/hats/"+str(sus_hat)+".png"
+    $ susan_hat            = "characters/susan/clothes/hats/"+str(sus_hat)+".png"
 
     call update_susan_chibi_uniform
     call update_susan_body

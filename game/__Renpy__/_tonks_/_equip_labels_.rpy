@@ -31,19 +31,19 @@ label update_tonks_uniform:
     $ tonks_robe_back      = "characters/tonks/clothes/robe/" +str(ton_robe)+ "_back.png"
 
     #Accessories
-    $ tonks_hat            = "characters/tonks/accessories/hats/hair_" +str(ton_hair_style)+ "/" +str(ton_hat)+ ".png"
+    $ tonks_hat            = "characters/tonks/clothes/hats/hair_" +str(ton_hair_style)+ "/" +str(ton_hat)+ ".png"
 
     #Miscellaneous
-    $ tonks_buttplug            = "characters/tonks/accessories/plugs/" +str(ton_buttplug)+ ".png"
-    $ tonks_mask                = "characters/tonks/accessories/hats/hair_" +str(ton_hair_style)+ "/" +str(ton_mask)+ ".png"
+    $ tonks_buttplug            = "characters/tonks/clothes/plugs/" +str(ton_buttplug)+ ".png"
+    $ tonks_mask                = "characters/tonks/clothes/hats/hair_" +str(ton_hair_style)+ "/" +str(ton_mask)+ ".png"
     $ tonks_gag                 = "characters/tonks/face/mouth/" +str(ton_gag)+ ".png"
 
     #Piercings
     # tonks_tongue_piercing gets defined at the same place as her mouth every time the mouth layer gets updated.
-    $ tonks_ear_piercing        = "characters/tonks/accessories/piercings/" +str(ton_ear_piercing)+ ".png"
-    $ tonks_nipple_piercing     = "characters/tonks/accessories/piercings/" +str(ton_nipple_piercing)+ ".png"
-    $ tonks_belly_piercing      = "characters/tonks/accessories/piercings/" +str(ton_belly_piercing)+ ".png"
-    $ tonks_genital_piercing    = "characters/tonks/accessories/piercings/" +str(ton_genital_piercing)+ ".png"
+    $ tonks_ear_piercing        = "characters/tonks/clothes/piercings/" +str(ton_ear_piercing)+ ".png"
+    $ tonks_nipple_piercing     = "characters/tonks/clothes/piercings/" +str(ton_nipple_piercing)+ ".png"
+    $ tonks_belly_piercing      = "characters/tonks/clothes/piercings/" +str(ton_belly_piercing)+ ".png"
+    $ tonks_genital_piercing    = "characters/tonks/clothes/piercings/" +str(ton_genital_piercing)+ ".png"
 
     call update_tonks_body
 

@@ -34,7 +34,7 @@ label update_outfit_layers:
     $ hg_outfit_egypt_ITEM.outfit_layers = ["egyptian_top.png","egyptian_bottom.png","egyptian_shackles.png"]
     $ hg_outfit_egypt_ITEM.breast_layer  = "breasts_normal"
 
-    $ hg_gamble_slut_ITEM.outfit_layers = ["gambler_cards_1.png","gambler_cards_2.png","gambler_outfit.png","../stockings/stockings_gambler_1.png","../gloves/gloves_cuffs_1.png","../neckwear/choker_bow_tie_1.png","../../accessories/piercings/ears_gambler.png","../../accessories/piercings/belly_gambler.png"]
+    $ hg_gamble_slut_ITEM.outfit_layers = ["gambler_cards_1.png","gambler_cards_2.png","gambler_outfit.png","../stockings/stockings_gambler_1.png","../gloves/gloves_cuffs_1.png","../neckwear/choker_bow_tie_1.png","../../clothes/piercings/ears_gambler.png","../../clothes/piercings/belly_gambler.png"]
     $ hg_gamble_slut_ITEM.top_layers    = "hat_gambler"
     $ hg_gamble_slut_ITEM.breast_layer  = "breasts_normal"
 
@@ -61,7 +61,7 @@ label update_outfit_layers:
     $ hg_costume_elizabeth_ITEM.breast_layer  = "breasts_normal_pressed"
     $ hg_costume_elizabeth_ITEM.hair_layer    = "bobcut"
 
-    $ hg_costume_yennefer_ITEM.outfit_layers = ["../stockings/stockings_silk_1.png","../bottoms/base/pants_silk_1.png","../bottoms/base/skirt_leather_1.png","../tops/base/top_leather_1.png","../gloves/gloves_leather_1.png","../neckwear/choker_leather.png","../neckwear/scarf_silk.png","../../accessories/body_accs/belt_leather.png"]
+    $ hg_costume_yennefer_ITEM.outfit_layers = ["../stockings/stockings_silk_1.png","../bottoms/base/pants_silk_1.png","../bottoms/base/skirt_leather_1.png","../tops/base/top_leather_1.png","../gloves/gloves_leather_1.png","../neckwear/choker_leather.png","../neckwear/scarf_silk.png","../accs/belt_leather.png"]
     $ hg_costume_yennefer_ITEM.breast_layer  = "breasts_normal"
 
 
@@ -83,6 +83,9 @@ label update_outfit_layers:
 
     $ ll_stewardess_short_ITEM.outfit_layers = ["../underwear/base/panties_thong_2.png","stewardess_short.png","../neckwear/cloth_tie.png"]
     $ ll_stewardess_short_ITEM.top_layers    = "hat_stewardess"
+
+    $ ll_dress_orange_ITEM.outfit_layers     = ["../stockings/leggings_1.png","ball_dress_1.png","../piercings/ears_starts_1.png"]
+
 
     # Astoria Outfits
     $ ag_boss_uniform_ITEM.outfit_layers = ["uniform_pants.png","uniform_top.png"]
@@ -115,7 +118,7 @@ label update_outfit_layers:
     $ cc_outfit_sailor_black_ITEM.outfit_layers      = ["../underwear/red/panties_bikini_2.png","../stockings/black/stockings_sailor_2.png","../tops/base/top_sailor_2.png","../bottoms/dark_blue/skirt_sailor.png","../../body/arms/arm_down_l_overlay.png"]
     $ cc_outfit_sailor_black_ITEM.top_layers         = "bow_sailor_red"
 
-    $ cc_costume_misty_ITEM.outfit_layers      = ["../tops/base/top_shirt_1.png","../bottoms/base/pants_short_1.png","../../body/arms/arm_down_l_overlay.png","../../accessories/body_accs/suspenders_1.png"]
+    $ cc_costume_misty_ITEM.outfit_layers      = ["../tops/base/top_shirt_1.png","../bottoms/base/pants_short_1.png","../../body/arms/arm_down_l_overlay.png","../accs/suspenders_1.png"]
 
 
     ### Event Outfits ###

@@ -136,9 +136,9 @@ label update_wr_head_list:
 
         #Glasses
         if reading_glasses_ITEM.unlocked:
-            $ wr_glasses.append("reading_glasses")
+            $ wr_glasses.append("reading_glasses_black")
         if vintage_glasses_ITEM.unlocked:
-            $ wr_glasses.append("vintage_glasses")
+            $ wr_glasses.append("vintage_glasses_black")
 
         #Ears
         if cat_ears_ITEM.unlocked:
@@ -652,9 +652,11 @@ label update_wr_other_clothings_list:
         #Stockings
         if ll_cheer_r_ITEM.unlocked:
             $ wr_stockings.append("stockings_cheer_r")
-
         if ll_quirky_muggle_ITEM.unlocked:
             $ wr_stockings.append("stockings_muggle_1")
+        if ll_dress_orange_ITEM.unlocked:
+            $ wr_stockings.append("leggings_1")
+            $ wr_stockings.append("leggings_2")
 
     if active_girl == "astoria":
         if ag_nighty_silk_ITEM.unlocked:
@@ -791,7 +793,7 @@ label update_wr_underwear_list:
         $ wr_onepieces.append("onepiece_netsuit")
 
         if hg_onepiece_sling_ITEM.unlocked:
-            $ wr_onepieces.append("onepiece_bikini_string")
+            $ wr_onepieces.append("onepiece_bikini_1")
         if hg_nighty_silk_ITEM.unlocked:
             $ wr_onepieces.append("nighty_short")
         if hg_nightgown_ITEM.unlocked:

@@ -146,7 +146,6 @@ label susan_init:
         $ sus_neckwear_color          = "base"
 
         $ susan_accs_list           = []
-        $ susan_accs                = "characters/susan/accessories/blank.png"
 
         $ susan_gloves              = "characters/susan/clothes/gloves/blank.png"
         $ sus_gloves                  = "blank"
@@ -164,15 +163,15 @@ label susan_init:
         #Accessories
         $ susan_makeup_list         = []
 
-        $ susan_hat                 = "characters/susan/accessories/hats/blank.png"
+        $ susan_hat                 = "characters/susan/clothes/hats/blank.png"
         $ sus_hat                     = "blank"
         $ sus_hat_color               = "base"
 
-        $ susan_glasses             = "characters/susan/accessories/glasses/blank.png"
+        $ susan_glasses             = "characters/susan/clothes/glasses/blank.png"
         $ sus_glasses                 = "blank"
         $ sus_glasses_color           = "base"
 
-        $ susan_ears                = "characters/susan/accessories/ears/blank.png"
+        $ susan_ears                = "characters/susan/clothes/ears/blank.png"
         $ sus_ears                    = "blank"
 
         #Outfits

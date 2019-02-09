@@ -205,8 +205,8 @@ label hp:
     with d7
     pause 1.2
 
-
-$ interface_color = "gold"
+if not persistent.nightmode:
+    $ interface_color = "gold"
 $ daytime = True
 $ day = 0
 

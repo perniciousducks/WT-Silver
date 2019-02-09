@@ -22,7 +22,7 @@ screen say:
         window:
             xalign 0.5
             yalign 1.0
-            if daytime:
+            if daytime and not persistent.nightmode:
                 style "say_who_window_day"
                 text "Hidden" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
             else:
@@ -47,7 +47,7 @@ screen say:
                 has vbox:
                     style "say_vbox"
                 
-                if daytime:
+                if daytime and not persistent.nightmode:
                     if who:
                         text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False
                     text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
@@ -67,7 +67,7 @@ screen say:
 
             if who:
                 window:
-                    if daytime:
+                    if daytime and not persistent.nightmode:
                         style "say_who_window_day"
                         text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
                     else:
@@ -80,7 +80,7 @@ screen say:
                 has vbox:
                     style "say_vbox"
                 
-                if daytime:
+                if daytime and not persistent.nightmode:
                     text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
                 else:
                     text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
@@ -510,11 +510,20 @@ screen preferences:
             frame:
                 style_group "pref"
                 has vbox
+                
+                label _("Interface")
+                textbutton "Tooltips" action ToggleVariable("persistent.ui_hint", True, False)
+                textbutton _("Nightmode") action ToggleVariable("persistent.nightmode", True, False)
+                textbutton _("Custom Cursor") action [ToggleVariable("persistent.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
+            frame:
+                style_group "pref"
+                has vbox
 
                 label _("Saybox")
-                textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Call("saybox_color")
+                if not persistent.nightmode:
+                    textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Call("saybox_color")
                 textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Call("saybox_color", False)
-                textbutton _("Outline") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
+                textbutton _("Shadow") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("persistent.text_color_day", "#402313"), SetVariable("persistent.text_color_night", "#402313"), SetVariable("persistent.text_outline", "#00000000")]
             
             # Joystick settings aren't needed, I dont think anyone plays WT with it.
@@ -533,12 +542,13 @@ screen preferences:
                 label _("Skip")
                 textbutton _("Seen Messages") action Preference("skip", "seen")
                 textbutton _("All Messages") action Preference("skip", "all")
+            
+            # Obsolete, you can click skip button on the saybox instead
+            #frame:
+            #    style_group "pref"
+            #    has vbox
 
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Begin Skipping") action Skip()
+            #   textbutton _("Begin Skipping") action Skip()
 
             frame:
                 style_group "pref"
@@ -595,20 +605,9 @@ screen preferences:
                 style_group "pref"
                 has vbox
                 
-                label _("Other")
-                text _("Save Deletion warning")
-                textbutton "Yes" action SetField(persistent, 'delwarning', True)
-                textbutton "No" action SetField(persistent, 'delwarning', False)
-                text _("Custom cursor")
-                textbutton _("Yes") action [SetField(persistent, 'customcursor', True), SetVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] })]
-                textbutton _("No") action [SetField(persistent, 'customcursor', False), SetVariable("config.mouse", None)]
-                text _("Autosaving")
-                textbutton "Yes" action [SetField(persistent, 'autosave', True), SetVariable("config.has_autosave", True), SetVariable("config.autosave_on_choice", True)]
-                textbutton "No" action [SetField(persistent, 'autosave', False), SetVariable("config.has_autosave", False), SetVariable("config.autosave_on_choice", False)]
-                text _("Interface Hints")
-                textbutton "Yes" action SetField(persistent, 'ui_hint', True)
-                textbutton "No" action SetField(persistent, 'ui_hint', False)
-                #textbutton _("[delwarning!t]") action ToggleVariable("delwarning", True, False)
+                label _("Saving&Loading")
+                textbutton _("Autosave") action [ToggleVariable("persistent.autosave", True, False), ToggleVariable("config.has_autosave", True, False), ToggleVariable("config.autosave_on_choice", True, False)]
+                textbutton _("Save Del. Warning") action ToggleVariable("persistent.delwarning", True, False)
         vbox:#Hotkeys
             frame:
                 style_group "pref"

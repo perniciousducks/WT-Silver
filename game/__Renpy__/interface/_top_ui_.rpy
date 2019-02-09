@@ -28,7 +28,7 @@ label house_points:
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
-    if daytime:
+    if daytime and not persistent.nightmode:
         $ daygold_colour = "{color=#000}"
         $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
     else:

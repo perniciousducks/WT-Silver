@@ -249,7 +249,7 @@ label hermione_random_clothing:
                     call her_main("But the weather is just too hot today.","base","baseL")
                     g9 "You should wear this more often!"
                 else:
-                    call her_main("Thanky you, [genie_name].","base","glance")
+                    call her_main("Thank you, [genie_name].","base","glance")
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_hot_ITEM)

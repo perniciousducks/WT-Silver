@@ -151,7 +151,7 @@ screen custom_menu(items):
 
                     button:
                         action action
-                        if daytime:
+                        if daytime and not persistent.nightmode:
                             style "menu_choice_daybutton"
                         else:
                             style "menu_choice_nightbutton"
@@ -159,12 +159,12 @@ screen custom_menu(items):
                         #Dont add a number if choice number is higher than number of available hotkeys
                         #Add a SHIFT modifier maybe?
                         if hkey < 10:
-                            if daytime:
+                            if daytime and not persistent.nightmode:
                                 text "[hkey]. " + caption style "menu_choice_day"
                             else:
                                 text "[hkey]. " + caption style "menu_choice_night"
                         else:
-                            if daytime:
+                            if daytime and not persistent.nightmode:
                                 text caption style "menu_choice_day"
                             else:
                                 text caption style "menu_choice_night"

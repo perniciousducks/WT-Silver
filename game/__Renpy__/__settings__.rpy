@@ -4,6 +4,7 @@ init:
         $ persistent.text_color_day = "#402313"
         $ persistent.text_color_night = "#402313"
         $ persistent.text_outline = "#00000000"
+        $ persistent.nightmode = False
 
 label saybox_color(day=True):
     if day:

@@ -160,16 +160,82 @@ label snape_third_duel:
     $ snape_busy = True
 
     jump main_room
+    
+label snape_random_duel:
+    call play_music("grape_soda")
+    $ response_card = ""
+
+    if renpy.random.randint(0,1) == 0:
+        call enemy_turn
+
+    while response_card != "EndGame":
+        call cardgame
+        if response_card == "Close":
+            $ wine -= 1
+            jump snape_duel_cancel
+        #Should be a better way but renpy dont have break for while loops-_-
+
+    if not check_winner() == "win":
+        $ wine -= 1
+        jump snape_duel_lost
+
+    hide screen blkfade
+    stop music fadeout 1
+    call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
+    call sna_main(  "Well played though.","snape_04")
+    call play_sound("door")
+    call sna_chibi("hide")
+    $ snape_busy = True
+    #
+    #
+    # Random ingredient or a potion
+    #
+    #
+    $ geniecard_tokens += 1
+
+    jump main_room
 
 label snape_duel_lost:
+    hide screen blkfade
     stop music fadeout 1
 
     menu:
         "-Rematch-":
-            jump snape_duel_menu
+            if geniecard_level == 1:
+                jump snape_duel_menu
+            else:
+                m "I demand a rematch!"
+                if wine < 1:
+                    sna "Seems like you lost all of your bottles, maybe next time."
+                    g4 "...You evil creature..."
+                    pass
+                else:
+                    sna "Fine."
+                    sna "More wine for me!"
+                    jump snape_random_duel
         "-Be a loser-":
             pass
-    sna "Cards not in your favour today? Maybe next time..."
+            
+    if geniecard_level == 1:
+        sna "Cards not in your favour today? Maybe next time..."
+    else: # Rub it in
+        $ rndm_one_of_three = renpy.random.randint(1, 3)
+        if rndm_one_of_three == 1:
+            sna "Thanks for the bottle... Genie"
+            g4 "...."
+        elif rndm_one_of_three == 2:
+            m "..."
+            m "Good game..."
+            sna "Forgetting something?"
+            m "Fine, here's your bottle..."
+        else:
+            sna "HA!"
+            sna "I mean... good game."
+            m "You're allowed to show enthusiasm you know..."
+            sna "I know, but it's bad for my image..."
+            m "..."
+            m "Whatever, here's your bottle."
+            
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True
@@ -182,7 +248,16 @@ label snape_duel_cancel:
     stop music fadeout 1
     hide screen blkfade
     with dissolve
-    sna "Cards not in your favour today? Maybe next time..."
+    
+    if geniecard_level == 1:
+        sna "Cards not in your favour today? Maybe next time..."
+    else:
+        sna "In that case, it's a forfeit."
+        sna "I'll take that wine now."
+        m "Wait a minute..."
+        sna "I don't make the rules, I just play by them."
+        m "Fine..."
+            
     call play_sound("door")
     call sna_chibi("hide")
     $ snape_busy = True

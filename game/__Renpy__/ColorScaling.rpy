@@ -1,4 +1,5 @@
-screen color_map(color, cursor, alpha=True, title=""):
+screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, title="", pos_xy=[240, 130]):
+    tag color_picker
     zorder 9
     
     button:
@@ -6,14 +7,21 @@ screen color_map(color, cursor, alpha=True, title=""):
         ysize 600
         action NullAction()
         style "empty"
+    
+    if daytime:
+        frame background "#e9ca7f" xsize 600 ysize 350 xpos 240 ypos 130
+    else:
+        frame background "#7c716a" xsize 600 ysize 350 xpos 240 ypos 130
+        
+    add "interface/color_palete/"+str(interface_color)+"/frame.png" xpos 236 ypos 126
         
     frame:
         xsize 600
         ysize 350
-        xpos 150
-        ypos 100
+        xpos pos_xy[0]
+        ypos pos_xy[1]
         #style "empty"
-        background "#19458ce0"
+        background "#00000000"
 
         imagebutton:
             ypos 25
@@ -28,41 +36,54 @@ screen color_map(color, cursor, alpha=True, title=""):
             clicked Return("color_bar")
         
         if alpha:
+            add "interface/color_palete/"+str(interface_color)+"/alpha.png" xpos 22 ypos 287
             imagebutton:
                 ypos 290
                 xpos 25
                 idle im.Scale(UI_alpha_bar, 255, 30, False)
                 clicked Return("alpha_bar")
-            text "Alpha: " + str(int(color[3])) xpos 360 ypos 130
+            add "interface/color_palete/"+str(interface_color)+"/cursor_v.png" xpos int(cursor_h) ypos 290 xanchor 0.5
+            textbutton "Alpha: " + str(int(color[3])) xpos 360 ypos 130 clicked Return("input_alpha")
             
-        text "Red  : " + str(int(color[0])) xpos 360 ypos 25
-        text "Green: " + str(int(color[1])) xpos 360 ypos 60
-        text "Blue : " + str(int(color[2])) xpos 360 ypos 95
+        textbutton "Red: " + str(int(color[0])) xpos 360 ypos 25 clicked Return("input_red")
+        textbutton "Green: " + str(int(color[1])) xpos 360 ypos 60 clicked Return("input_green")
+        textbutton "Blue: " + str(int(color[2])) xpos 360 ypos 95 clicked Return("input_blue")
 
         text title xalign 0.5 text_align 0.5
         
-        textbutton "Apply" xalign 0.9 yalign 0.9 clicked Return("finish")
+        textbutton "Apply" xalign 1.0 yalign 1.0 clicked Return("finish")
         
+        # Add gradient based colour picker
+        frame background "#fff" xsize 255 ysize 255 xpos 25 ypos 25
+        add paletteTint("interface/color_palete/color_palete.png", [palette_color[0], palette_color[1], palette_color[2]]) xpos 25 ypos 25
+        add "interface/color_palete/color_paleteW.png" xpos 25 ypos 25
+        # Add frame including selected colour
+        frame background get_hex_string(color[0]/255.0,color[1]/255.0,color[2]/255.0,color[3]/255.0) xsize 100 ysize 100 xpos 360 ypos 180
         
-        add Solid(get_hex_string(color[0]/255.0,color[1]/255.0,color[2]/255.0,color[3]/255.0)) xpos 360 ypos 165 zoom 0.1
-    
     use close_button
     
     #Cursor
-    add "interface/check_01_grey.png" xpos int(cursor[0]-11) ypos int(cursor[1]-12)
+    add "interface/color_palete/"+str(interface_color)+"/cursor_sq.png" xpos int(cursor[0]) ypos int(cursor[1]) xanchor 0.5 yanchor 0.5
+    add "interface/color_palete/"+str(interface_color)+"/cursor_h.png" xpos pos_xy[0]+296 ypos int(cursor_v) yanchor 0.5
     
 init python:
     import pygame
     import _renpy
     
-    def color_picker(color = [255.0, 255.0, 0.0, 255.0], alpha = True, title=""):
+    def paletteTint(image, palette_color):
+        image = im.MatrixColor( image, im.matrix.tint((palette_color[0]/255.0), (palette_color[1]/255.0), (palette_color[2]/255.0)))
+        return image
+
+    def color_picker(color = [255.0, 255.0, 0.0, 255.0], palette_color = [255.0, 255.0, 0.0], alpha = True, title="", pos_xy=[240, 130], offset=25):
         global color_scale
         global UI_color_bar
         original_color = [color[0],color[1],color[2],color[3]]
         choicen_scale = [125.0,125.0]
-        cursor_position = [175, 125]
+        cursor_position = [pos_xy[0]+offset+128, pos_xy[1]+offset+128]
+        cursor_horizontal = pos_xy[0]-220
+        cursor_vertical = pos_xy[1]+31
         while True:
-            renpy.show_screen("color_map", color, cursor_position, alpha, title)
+            renpy.show_screen("color_map", color, palette_color, cursor_position, cursor_horizontal, cursor_vertical, alpha, title, pos_xy)
 
             _return = ui.interact()
 
@@ -86,24 +107,33 @@ init python:
                 return original_color
             elif _return == "main_color":
                 cursor_position = [x, y]
-                x = x-175.0
-                y = y-125.0
+                x = x-float(pos_xy[0]+offset)
+                y = y-float(pos_xy[1]+offset)
                 color = UI_color_scale.get_main_color( x ,y)
             elif _return == "color_bar":
-                y -= 125.0
+                y -= float(pos_xy[1]+offset)
                 ypos_to_color = float(y)
                 
-                renpy.free_memory()
                 new_color = UI_color_bar.get_color(ypos_to_color)
                 UI_color_scale.set_color(new_color)
                 color = UI_color_scale.get_main_color(choicen_scale[0], choicen_scale[1])
-
-                renpy.restart_interaction()
+                palette_color = UI_color_bar.get_color(ypos_to_color)
+                cursor_vertical = renpy.get_mouse_pos()[1]
+                cursor_position = [pos_xy[0]+offset+128, pos_xy[1]+offset+128] # Reset main cursor position to the middle
+                #renpy.free_memory() # Not needed anymore, saved just in case
             elif _return == "alpha_bar":
-                x -= 175.0
-                alpha = 255 - x
-                color[3] = 0 if alpha < 0 else alpha
-                
+                x -= float(pos_xy[0]+offset)
+                n_alpha = 255 - (x) # Weird behavior, cant set 255 manually by clicking on the bar
+                color[3] = 0 if n_alpha < 0 else n_alpha
+                cursor_horizontal = x+20.0
+            elif _return == "input_red":
+                color[0] = clamp(int(renpy.input("Red", "255", "0123456789", length=3)), 0, 255)
+            elif _return == "input_green":
+                color[1] = clamp(int(renpy.input("Green", "255", "0123456789", length=3)), 0, 255)
+            elif _return == "input_blue":
+                color[2] = clamp(int(renpy.input("Blue", "255", "0123456789", length=3)), 0, 255)
+            elif _return == "input_alpha":
+                color[3] = clamp(int(renpy.input("Alpha", "255", "0123456789", length=3)), 0, 255)
             elif _return == "finish":
                 return color
                 
@@ -157,12 +187,12 @@ init python:
             new_color[0] = 255.0 if new_color[0] > 255 else new_color[0]
             new_color[1] = 255.0 if new_color[1] > 255 else new_color[1]
             new_color[2] = 255.0 if new_color[2] > 255 else new_color[2]
-            
+
             return new_color
             
     class o_alpha_bar(im.ImageBase):
         def __init__(self, **properties):
-            im = Image("interface/color_palete/color_bar.png")
+            im = Image("interface/color_palete/alpha_bar.png")
             super(o_alpha_bar, self).__init__(im, 255, 1, **properties)
 
             self.image = im
@@ -340,6 +370,7 @@ init python:
                 new_surface.set_at((x,y), new_color)
                 
         src = new_surface
+        renpy.restart_interaction()
 
         return src 
         
@@ -411,7 +442,6 @@ init python:
                              0, 1.0 * iheight / height,
                              precise=1,
                              )
-
         return dest    
         
     UI_color_scale =  o_color_scale()

@@ -602,10 +602,7 @@ label purchase_deco(item):
             if geniecard_tokens >= item.cost:
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
-                if item in [hg_gamble_slut_ITEM]: # Outfits
-                    "A new [item.name] outfit has been added to her wardrobe."
-                else:
-                    "A [item.name] [item_token_str] item has been added to your decoration menu."
+                "[item_token_str]"
             else:
                 m "I don't have enough tokens."
         "-Never mind-":

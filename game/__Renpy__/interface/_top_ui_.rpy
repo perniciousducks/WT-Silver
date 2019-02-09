@@ -30,10 +30,10 @@ label house_points:
     $ points_outline = [ (1, "#000", 0, 0) ]
     if daytime:
         $ daygold_colour = "{color=#000}"
-        $ daygold_outline = [ (1, "#e4ba70", 0, 0) ]
+        $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
     else:
         $ daygold_colour = "{color=#FFF}"
-        $ daygold_outline = [ (1, "#000", 0, 0) ]
+        $ daygold_outline = [ (1, "#00000080", 0, 0) ]
 
     #If points variable value exceedes one thousand make it a decimal number instead and round to x.x
     #Remember, "slytherin_points" is a string! If you need points integer use i.e. "slytherin" variable instead.
@@ -463,6 +463,9 @@ label decorate_room_menu:
                 $ phoenix_deco_OBJ.room_image = ""
                 $ fireplace_deco_OBJ.room_image = ""
                 $ owl_deco_OBJ.room_image = ""
+                $ owl_OBJ.room_image = "owl_idle"
+                $ owl_OBJ.idle_image = "owl_with_letter_blink"
+                $ owl_OBJ.hover_image = "owl_hover"
             "No":
                 jump deco_menu
     elif _return == "inc":
@@ -490,6 +493,7 @@ label update_deco_items:
         $ poster_wanted_ITEM = item_class(id="wanted", name="Wanted Poster", cost=2, type="poster", image="posters/wanted", description="A Wild West styled Wanted poster depicting our dear headmaster...")
         #Trophies
         $ trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3, type="trophy", image="trophies/stag", description="A perfect decoration over your mantelpiece to add a sense of masculinity to the office.")
+        $ trophy_crest_ITEM = item_class(id="crest", name="Hogwarts Crest", cost=5, type="trophy", image="trophies/crest", description="A perfect decoration for a headmaster.")
         #Pinups & Misc
         $ pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
         # HATS HATS HATS HATS HATS HYPE
@@ -497,10 +501,12 @@ label update_deco_items:
         $ phoenix_hat_ITEM = item_class(id="phoenix_hat", name="Phoenix Hat", cost=0, type="phoenix", imagepath="interface/icons/misc/phoenix_hat.png", unlocked=True)
         $ fireplace_hat_ITEM = item_class(id="fireplace_hat", name="Skull Hat", cost=0, type="fireplace", imagepath="interface/icons/misc/fireplace_hat.png", unlocked=True)
         
+        $ owl_black_ITEM = item_class(id="owl_idle_black", name="Black Owl", cost=4, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
+        
         $ wall_deco_list = [poster_agrabah_ITEM, poster_gryffindor_ITEM, poster_hufflepuff_ITEM, poster_ravenclaw_ITEM, poster_slytherin_ITEM, poster_hermione_ITEM, poster_harlots_ITEM, poster_stripper_ITEM, poster_wanted_ITEM]
-        $ fireplace_deco_list = [trophy_stag_ITEM]
+        $ fireplace_deco_list = [trophy_crest_ITEM, trophy_stag_ITEM]
         $ cupboard_deco_list = [pinup_girl_ITEM]
-        $ misc_deco_list = [phoenix_hat_ITEM, owl_hat_ITEM, fireplace_hat_ITEM]
+        $ misc_deco_list = [phoenix_hat_ITEM, owl_hat_ITEM, fireplace_hat_ITEM, owl_black_ITEM]
     
     # Outfits
     if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.
@@ -521,9 +527,12 @@ label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove 
             $ poster_OBJ.room_image = item.id
             $ item.active = True
     elif item.type == "trophy":
+        python:
+            for i in xrange(0, len(fireplace_deco_list)):
+                fireplace_deco_list[i].active = False
+                
         if trophy_OBJ.room_image == item.id:
             $ trophy_OBJ.room_image = ""
-            $ item.active = False
         else:
             $ trophy_OBJ.room_image = item.id
             $ item.active = True
@@ -554,5 +563,16 @@ label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove 
             $ item.active = False
         else:
             $ owl_deco_OBJ.room_image = item.id
+            $ item.active = True
+    elif item.type == "mail":
+        if owl_OBJ.room_image == item.id:
+            $ owl_OBJ.room_image = "owl_idle"
+            $ owl_OBJ.idle_image = "owl_with_letter_blink"
+            $ owl_OBJ.hover_image = "owl_hover"
+            $ item.active = False
+        else:
+            $ owl_OBJ.room_image = item.id
+            $ owl_OBJ.idle_image = "owl_with_letter_blink_black"
+            $ owl_OBJ.hover_image = "owl_hover_black"
             $ item.active = True
     return

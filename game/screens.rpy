@@ -22,8 +22,12 @@ screen say:
         window:
             xalign 0.5
             yalign 1.0
-            style "say_who_window"
-            text "Hidden" xalign 0.5 yalign 0.5
+            if daytime:
+                style "say_who_window_day"
+                text "Hidden" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+            else:
+                style "say_who_window_night"
+                text "Hidden" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
         #Add fullscreen CTC button
         button:
             action SetVariable("hkey_chat_hidden", False)
@@ -42,11 +46,15 @@ screen say:
 
                 has vbox:
                     style "say_vbox"
-
-                if who:
-                    text who id "who"
-
-                text what id "what"
+                
+                if daytime:
+                    if who:
+                        text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
+                    text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
+                else:
+                    if who:
+                        text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
+                    text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
 
     else:
         # The two window variant.
@@ -59,18 +67,23 @@ screen say:
 
             if who:
                 window:
-                    style "say_who_window"
-
-                    text who:
-                        id "who"
+                    if daytime:
+                        style "say_who_window_day"
+                        text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+                    else:
+                        style "say_who_window_night"
+                        text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
 
             window:
                 id "window"
 
                 has vbox:
                     style "say_vbox"
-
-                text what id "what"
+                
+                if daytime:
+                    text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
+                else:
+                    text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
 
     # If there's a side image, display it above the text.
     if side_image:
@@ -79,7 +92,8 @@ screen say:
         add SideImage() xalign 0.0 yalign 1.0
 
     # Use the quick menu.
-    use quick_menu
+    if not hkey_chat_hidden:
+        use quick_menu
 
 ##############################################################################
 # Choice
@@ -130,15 +144,24 @@ init -2:
 #
 # Screen that's used to display renpy.input()
 # http://www.renpy.org/doc/html/screen_special.html#input
-
+    
 screen input:
-
-    window style "input_window":
+    tag input
+    zorder 15 #Always on top
+    
+    button:
+        xsize 1080
+        ysize 600
+        action NullAction()
+        style "empty"
+        
+    window style "input_window":      
         has vbox
-
+            #style "say_vbox"
+        
         text prompt style "input_prompt"
         input id "input" style "input_text"
-
+        
     use quick_menu
 
 ##############################################################################
@@ -454,8 +477,8 @@ screen preferences:
     # Include the navigation.
     use navigation
 
-    # Put the navigation columns in a three-wide grid.
-    grid 3 1:
+    # Put the navigation columns in a four-wide grid.
+    grid 4 1:
         style_group "prefs"
         xfill True
 
@@ -483,31 +506,23 @@ screen preferences:
 
                 label _("Text Speed")
                 bar value Preference("text speed")
-
+            ####
             frame:
                 style_group "pref"
                 has vbox
 
-                textbutton _("Joystick...") action Preference("joystick")
-                
-            frame:
-                style_group "pref"
-                has vbox
-                
-                label _("Other")
-                text _("Save Deletion warning")
-                textbutton "Yes" action SetField(persistent, 'delwarning', True)
-                textbutton "No" action SetField(persistent, 'delwarning', False)
-                text _("Custom cursor")
-                textbutton _("Yes") action [SetField(persistent, 'customcursor', True), SetVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] })]
-                textbutton _("No") action [SetField(persistent, 'customcursor', False), SetVariable("config.mouse", None)]
-                text _("Autosaving")
-                textbutton "Yes" action [SetField(persistent, 'autosave', True), SetVariable("config.has_autosave", True), SetVariable("config.autosave_on_choice", True)]
-                textbutton "No" action [SetField(persistent, 'autosave', False), SetVariable("config.has_autosave", False), SetVariable("config.autosave_on_choice", False)]
-                text _("Interface Hints")
-                textbutton "Yes" action SetField(persistent, 'ui_hint', True)
-                textbutton "No" action SetField(persistent, 'ui_hint', False)
-                #textbutton _("[delwarning!t]") action ToggleVariable("delwarning", True, False)
+                label _("Saybox")
+                textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Call("saybox_color")
+                textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Call("saybox_color", False)
+                textbutton _("Outline") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
+                textbutton _("Default") action [SetVariable("persistent.text_color_day", "#402313"), SetVariable("persistent.text_color_night", "#402313"), SetVariable("persistent.text_outline", "#00000000")]
+            
+            # Joystick settings aren't needed, I dont think anyone plays WT with it.
+            #frame:
+                #style_group "pref"
+                #has vbox
+
+                #textbutton _("Joystick...") action Preference("joystick")
 
 
         vbox:
@@ -576,7 +591,25 @@ screen preferences:
                         textbutton _("Test"):
                             action Play("voice", config.sample_voice)
                             style "soundtest_button"
-            #Hotkeys
+            frame:
+                style_group "pref"
+                has vbox
+                
+                label _("Other")
+                text _("Save Deletion warning")
+                textbutton "Yes" action SetField(persistent, 'delwarning', True)
+                textbutton "No" action SetField(persistent, 'delwarning', False)
+                text _("Custom cursor")
+                textbutton _("Yes") action [SetField(persistent, 'customcursor', True), SetVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] })]
+                textbutton _("No") action [SetField(persistent, 'customcursor', False), SetVariable("config.mouse", None)]
+                text _("Autosaving")
+                textbutton "Yes" action [SetField(persistent, 'autosave', True), SetVariable("config.has_autosave", True), SetVariable("config.autosave_on_choice", True)]
+                textbutton "No" action [SetField(persistent, 'autosave', False), SetVariable("config.has_autosave", False), SetVariable("config.autosave_on_choice", False)]
+                text _("Interface Hints")
+                textbutton "Yes" action SetField(persistent, 'ui_hint', True)
+                textbutton "No" action SetField(persistent, 'ui_hint', False)
+                #textbutton _("[delwarning!t]") action ToggleVariable("delwarning", True, False)
+        vbox:#Hotkeys
             frame:
                 style_group "pref"
                 has vbox
@@ -674,27 +707,29 @@ screen quick_menu:
     hbox:
         style_group "quick"
 
-        xalign 1.0
-        yalign 0.1
+        xpos 845
+        ypos 489
+        xanchor 1.0
 
         #textbutton _("Back") action Rollback()
         #textbutton _("Save") action ShowMenu('save')
-        #textbutton _("Q.Save") action QuickSave()
-        #textbutton _("Q.Load") action QuickLoad()
-        textbutton _("Skip") action Skip()
+        textbutton _("Q.Save") action QuickSave() activate_sound "sounds/click3.mp3"
+        textbutton _("Q.Load") action QuickLoad() activate_sound "sounds/click3.mp3"
+        textbutton _("Skip") action Skip() activate_sound "sounds/click3.mp3"
         #textbutton _("F.Skip") action Skip(fast=True, confirm=True)
-        textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Prefs") action ShowMenu('preferences')
+        textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
+        textbutton _("Prefs") action ShowMenu('preferences') activate_sound "sounds/click3.mp3"
 
 init -2:
     style quick_button:
         is default
         background None
-        xpadding 4
+        xpadding 8
+        ypadding 8
 
     style quick_button_text:
         is default
-        size 12
+        size 10
         idle_color "#8888"
         hover_color "#ccc"
         selected_idle_color "#cc08"

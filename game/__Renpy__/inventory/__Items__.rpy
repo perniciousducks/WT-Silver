@@ -419,6 +419,9 @@ init -2 python:
         cost = 0
         wait_time = 1
         description = ""
+        
+        #Used in decorations
+        active = False # Check if decoration is used or not
 
         #Used in decorations
         active = False # Check if decoration is used or not

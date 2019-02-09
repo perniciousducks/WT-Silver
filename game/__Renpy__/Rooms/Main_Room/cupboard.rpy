@@ -79,7 +79,7 @@ label rummaging:
         hide screen rum_screen
         hide screen bld1
         with d3
-
+        
         if daytime:
             jump day_main_menu
         else:

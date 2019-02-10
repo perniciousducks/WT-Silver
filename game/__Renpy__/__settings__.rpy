@@ -2,7 +2,7 @@ init:
     # Set defaults
     if persistent.text_color_day == None:
         $ persistent.text_color_day = "#402313"
-        $ persistent.text_color_night = "#402313"
+        $ persistent.text_color_night = "#341c0f"
         $ persistent.text_outline = "#00000000"
         $ persistent.nightmode = False
 

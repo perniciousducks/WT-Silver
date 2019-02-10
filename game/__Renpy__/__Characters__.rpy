@@ -76,16 +76,15 @@ label transition(trans=None):
 
     return
 
-
-
 init python:
     if not hasattr(renpy.store,'gen_outfit'):
         gen_outfit = ""
 
-
     ### Characters ###
-
-
+    # Name has to be left empty "" otherwise quickmenu will be shown
+    centered = Character("", what_style="centered_text", window_style="centered_window")
+    vcentered = Character("", what_style="centered_vtext", window_style="centered_window")
+    
     #Genie
     gen = Character('   Genie   ', window_left_padding=250, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
     m = Character(None, window_left_padding=250, show_side_image=Image("characters/genie/mage" +str(gen_outfit)+ ".png", xpos=20, yalign=1.0), show_two_window=False, ctc="ctc3", ctc_position="fixed")

@@ -810,7 +810,7 @@ label event_07:
 
     call sna_head(".................","snape_06",xpos="base",ypos="base")
     call sna_head("\"Send those whores up, Severus!\" Ha-ha-ha..","snape_28")
-
+    $ renpy.play('sounds/door.mp3')
     call sna_chibi("leave")
 
     m "Hm... "

@@ -121,19 +121,19 @@ label cho_init:
 
 
         #Clothes
-        $ cho_top                 = "characters/cho/clothes/tops/base/top_1.png"
+        $ cho_top                 = "characters/cho/clothes/tops/top_1.png"
         $ c_top                   = "top_1"
         $ c_top_color             = "base"
 
-        $ cho_bra                 = "characters/cho/clothes/underwear/base/bra_sport.png"
+        $ cho_bra                 = "characters/cho/clothes/bras/bra_sport.png"
         $ c_bra                   = "bra_sport"
         $ c_bra_color             = "base"
 
-        $ cho_bottom              = "characters/cho/clothes/bottoms/base/skirt_2.png"
+        $ cho_bottom              = "characters/cho/clothes/bottoms/skirt_2.png"
         $ c_bottom                = "skirt_2"
         $ c_bottom_color          = "base"
 
-        $ cho_panties             = "characters/cho/clothes/underwear/base/panties_sport_1.png"
+        $ cho_panties             = "characters/cho/clothes/panties/panties_sport_1.png"
         $ c_panties               = "panties_sport_1"
         $ c_panties_color         = "base"
 
@@ -141,7 +141,7 @@ label cho_init:
         $ c_onepiece              = "blank"
         $ c_onepiece_color        = "base"
 
-        $ cho_garterbelt          = "characters/cho/clothes/underwear/blank.png"
+        $ cho_garterbelt          = "characters/cho/clothes/garterbelts/blank.png"
         $ c_garterbelt            = "blank"
         $ c_garterbelt_color      = "base"
 
@@ -153,7 +153,7 @@ label cho_init:
         $ c_gloves                = "blank"
         $ c_gloves_color          = "base"
 
-        $ cho_stockings           = "characters/cho/clothes/stockings/base/stockings.png"
+        $ cho_stockings           = "characters/cho/clothes/stockings/stockings.png"
         $ c_stockings             = "blank"
         $ c_stockings_color       = "base"
 

@@ -112,7 +112,7 @@ screen cho_outfit:
     tag cho_main
 
     for i in cho_outfit_GLBL.getOutfitLayers():
-        add "characters/cho/clothes/custom/"+i xpos cho_xpos ypos cho_ypos alpha cho_outfit_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add "characters/cho/clothes/"+i+".png" xpos cho_xpos ypos cho_ypos alpha cho_outfit_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
 
     ### ZORDER
     zorder cho_zorder

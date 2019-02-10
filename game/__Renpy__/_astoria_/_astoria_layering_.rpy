@@ -85,7 +85,7 @@ screen astoria_outfit:
     tag astoria_main
 
     for i in astoria_outfit_GLBL.getOutfitLayers():
-        add "characters/astoria/clothes/custom/"+i xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
+        add "characters/astoria/clothes/"+i+".png" xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
 
     ### ZORDER
     zorder astoria_zorder

@@ -489,7 +489,7 @@ label potion_scene_3_3_1: #Hypno potion
             pass
 
     $ cum_badge_ITEM.unlocked = True
-    call set_her_body_accessory("badge_I_love_cum")
+    call set_her_body_accessory("badge_cum")
 
     call her_main("I love being covered in your cum...","soft","dead")
     menu:
@@ -594,7 +594,7 @@ label potion_scene_3_3_1: #Hypno potion
 
             $ h_request_wear_body_accs = True
             $ hermione_body_accs_list = []
-            $ hermione_body_accs_list.append("badge_I_love_cum")
+            $ hermione_body_accs_list.append("badge_cum")
 
             call load_hermione_clothing_saves
             call update_her_uniform

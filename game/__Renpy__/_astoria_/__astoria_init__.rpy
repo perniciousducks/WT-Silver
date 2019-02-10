@@ -100,21 +100,21 @@ label astoria_init:
 
 
         #Top
-        $ astoria_top                 = "characters/astoria/clothes/tops/base/top_1.png"
+        $ astoria_top                 = "characters/astoria/clothes/tops/top_1.png"
         $ ast_top                     = "top_1"
         $ ast_top_color               = "base"
 
         #Bottom
-        $ astoria_bottom               = "characters/astoria/clothes/bottoms/base/skirt_1.png"
+        $ astoria_bottom               = "characters/astoria/clothes/bottoms/skirt_1.png"
         $ ast_bottom                   = "skirt_1"
         $ ast_bottom_color             = "base"
 
         #Underwear
-        $ astoria_bra                 = "characters/astoria/clothes/underwear/base/lace_bra.png"
+        $ astoria_bra                 = "characters/astoria/clothes/bras/lace_bra.png"
         $ ast_bra                     = "lace_bra"
         $ ast_bra_color               = "base"
 
-        $ astoria_panties             = "characters/astoria/clothes/underwear/base/lace_panties.png"
+        $ astoria_panties             = "characters/astoria/clothes/panties/lace_panties.png"
         $ ast_panties                 = "lace_panties"
         $ ast_panties_color           = "base"
 
@@ -122,7 +122,7 @@ label astoria_init:
         $ ast_onepiece                = "blank"
         $ ast_onepiece_color          = "base"
 
-        $ astoria_garterbelt          = "characters/astoria/clothes/underwear/base/blank.png"
+        $ astoria_garterbelt          = "characters/astoria/clothes/garterbelts/blank.png"
         $ ast_garterbelt              = "blank"
         $ ast_garterbelt_color        = "base"
 

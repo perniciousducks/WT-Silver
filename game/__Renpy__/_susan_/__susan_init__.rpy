@@ -7,7 +7,7 @@ label susan_init:
 
         #Body
         $ susan_base                = "characters/susan/body/base/base_01.png"
-        $ susan_boobs               = "characters/susan/body/base/boobs_nipfix.png"
+        $ susan_breasts               = "characters/susan/body/base/boobs_nipfix.png"
         $ susan_l_arm               = "characters/susan/body/arms/l_arm_back.png"
         $ susan_r_arm               = "characters/susan/body/arms/r_arm_thigh.png"
         $ susan_xpos                = 300
@@ -113,21 +113,21 @@ label susan_init:
         $ susan_wear_outfit            = False
 
         #Top
-        $ susan_top                 = "characters/susan/clothes/tops/base/top_1.png"
+        $ susan_top                 = "characters/susan/clothes/tops/top_1.png"
         $ sus_top                     = "top_1"
         $ sus_top_color               = "base"
 
         #Bottom
-        $ susan_bottom              = "characters/susan/clothes/bottoms/base/skirt_1.png"
+        $ susan_bottom              = "characters/susan/clothes/bottoms/skirt_1.png"
         $ sus_bottom                  = "skirt_1"
         $ sus_bottom_color            = "base"
 
         #Underwear
-        $ susan_bra                 = "characters/susan/clothes/underwear/base/bra_base.png"
+        $ susan_bra                 = "characters/susan/clothes/bras/bra_base.png"
         $ sus_bra                     = "bra_base"
         $ sus_bra_color               = "base"
 
-        $ susan_panties             = "characters/susan/clothes/underwear/base/panties_base.png"
+        $ susan_panties             = "characters/susan/clothes/panties/panties_base.png"
         $ sus_panties                 = "panties_base"
         $ sus_panties_color           = "base"
 
@@ -135,7 +135,7 @@ label susan_init:
         $ sus_onepiece                = "blank"
         $ sus_onepiece_color          = "base"
 
-        $ susan_garterbelt          = "characters/susan/clothes/underwear/base/blank.png"
+        $ susan_garterbelt          = "characters/susan/clothes/garterbelts/blank.png"
         $ sus_garterbelt              = "blank"
         $ sus_garterbelt_color        = "base"
 

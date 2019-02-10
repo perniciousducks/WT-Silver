@@ -117,21 +117,21 @@ label luna_init:
 
 
         #Top
-        $ luna_top                 = "characters/luna/clothes/tops/base/top_1_r.png"
+        $ luna_top                 = "characters/luna/clothes/tops/top_1_r.png"
         $ lun_top                     = "top_1_r"
         $ lun_top_color               = "base"
 
         #Bottom
-        $ luna_bottom              = "characters/luna/clothes/bottoms/base/skirt_1.png"
+        $ luna_bottom              = "characters/luna/clothes/bottoms/skirt_1.png"
         $ lun_bottom                  = "skirt_1"
         $ lun_bottom_color            = "base"
 
         #Underwear
-        $ luna_bra                 = "characters/luna/clothes/underwear/base/bra_basic.png"
+        $ luna_bra                 = "characters/luna/clothes/bras/bra_basic.png"
         $ lun_bra                     = "bra_basic"
         $ lun_bra_color               = "base"
 
-        $ luna_panties             = "characters/luna/clothes/underwear/base/panties_basic.png"
+        $ luna_panties             = "characters/luna/clothes/panties/panties_basic.png"
         $ lun_panties                 = "panties_basic"
         $ lun_panties_color           = "base"
 
@@ -139,7 +139,7 @@ label luna_init:
         $ lun_onepiece                = "blank"
         $ lun_onepiece_color          = "base"
 
-        $ luna_garterbelt          = "characters/luna/clothes/underwear/base/blank.png"
+        $ luna_garterbelt          = "characters/luna/clothes/garterbelts/blank.png"
         $ lun_garterbelt              = "blank"
         $ lun_garterbelt_color        = "base"
 

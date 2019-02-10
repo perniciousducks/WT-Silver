@@ -5,6 +5,7 @@ label summon_characters:
 
     $ hide_transitions = True # Hides transitions.
     $ bg_transp = 1.0
+    $ bg_color = None
     $ color_background = False
 
     call screen summon_characters
@@ -345,12 +346,14 @@ label pick_custom_background:
             call custom_bg("forest")
         "-Castle-":
             call custom_bg("castle")
-        "-Use Color BG-" if not color_background:
-            $ bg_color = None
-            $ bg_color = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], False, "wardrobe color")
+        "-White-":
             call custom_bg("white")
+        "-Change BG Color-":
+            $ cho_bg_color = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], [255, 255, 255], False, "background color")
             $ color_background = True
-        "-Remove Color BG-" if color_background:
+        "-Add BG Color-" if bg_color != None:
+            $ color_background = True
+        "-Remove BG Color-" if color_background:
             $ color_background = False
 
         "-Custom-":

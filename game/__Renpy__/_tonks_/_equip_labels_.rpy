@@ -13,16 +13,16 @@ label update_tonks_uniform:
     $ tonks_pubic_hair   = "characters/tonks/body/hair/pubes_" +str(ton_pubic_hair)+ "_" +str(ton_hair_color)+ ".png"
 
     #Top
-    $ tonks_top            = "characters/tonks/clothes/tops/base/" +str(ton_top)+ ".png"
+    $ tonks_top            = "characters/tonks/clothes/tops/" +str(ton_top)+ ".png"
 
     #Bottom
-    $ tonks_bottom         = "characters/tonks/clothes/bottoms/" +str(ton_bottom_color)+ "/" +str(ton_bottom)+ ".png"
+    $ tonks_bottom         = "characters/tonks/clothes/bottoms/" +str(ton_bottom)+ ".png"
 
     #Underwear
-    $ tonks_bra            = "characters/tonks/clothes/underwear/base/" +str(ton_bra)+ ".png"
+    $ tonks_bra            = "characters/tonks/clothes/bras/" +str(ton_bra)+ ".png"
     $ tonks_onepiece       = "characters/tonks/clothes/onepieces/" +str(ton_onepiece)+ ".png"
-    $ tonks_panties        = "characters/tonks/clothes/underwear/base/" +str(ton_panties)+ ".png"
-    $ tonks_garterbelt     = "characters/tonks/clothes/underwear/base/" +str(ton_garterbelt)+ ".png"
+    $ tonks_panties        = "characters/tonks/clothes/panties/" +str(ton_panties)+ ".png"
+    $ tonks_garterbelt     = "characters/tonks/clothes/garterbelts/" +str(ton_garterbelt)+ ".png"
 
     $ tonks_neckwear       = "characters/tonks/clothes/neckwear/" +str(ton_neckwear)+ ".png"
     $ tonks_gloves         = "characters/tonks/clothes/gloves/" +str(ton_gloves)+ ".png"
@@ -82,14 +82,14 @@ label update_tonks_body:
     hide screen tonks_main
 
     if tonks_wear_robe:# or tonks_wear_top or tonks_wear_bra:
-        $ tonks_boobs = "characters/tonks/body/base/boobs_0.png"
+        $ tonks_breasts = "characters/tonks/body/base/boobs_0.png"
     else:
         if tonks_wear_top and ton_top in ["top_corset_1"]:
-            $ tonks_boobs = "characters/tonks/body/base/boobs_0.png" #pressed boobs
+            $ tonks_breasts = "characters/tonks/body/base/boobs_0.png" #pressed boobs
         elif tonks_wear_top:
-            $ tonks_boobs = "characters/tonks/body/base/boobs_2.png"
+            $ tonks_breasts = "characters/tonks/body/base/boobs_2.png"
         else:
-            $ tonks_boobs = "characters/tonks/body/base/boobs_1.png"
+            $ tonks_breasts = "characters/tonks/body/base/boobs_1.png"
 
     return
 

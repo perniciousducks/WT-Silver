@@ -76,8 +76,8 @@ label hermione_random_clothing:
                 $ hermione_wear_gloves      = True
                 $ hermione_wear_stockings   = True
                 $ h_neckwear = "scarf_striped_g"
-                $ h_gloves = "gloves_wool_short_g"
-                $ h_stockings = "stockings_striped_g"
+                $ h_gloves = "gloves_wool_1"
+                $ h_stockings = "stockings_striped_1"
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
@@ -125,8 +125,7 @@ label hermione_random_clothing:
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
                 $ hermione_wear_stockings = True
-                $ h_top = "normal_pullover"
-                $ h_bottom = "skirt_belted_mini"
+                $ h_top = "top_pullover_1"
                 $ h_stockings = "stockings_pantyhose"
 
                 call update_her_uniform
@@ -153,8 +152,7 @@ label hermione_random_clothing:
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
                 $ hermione_wear_stockings   = True
-                $ h_top = "normal_pullover_sexy"
-                $ h_bottom = "skirt_belted_micro"
+                $ h_top = "top_pullover_2"
                 $ h_stockings = "stockings_pantyhose"
 
                 call update_her_uniform
@@ -179,7 +177,7 @@ label hermione_random_clothing:
                 $ aftersperm = True
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
-                $ h_top = "normal_sweater"
+                $ h_top = "top_sweater_1"
                 $ h_bottom = "pants_jeans_long"
 
                 call update_her_uniform
@@ -229,7 +227,7 @@ label hermione_random_clothing:
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
                 $ hermione_wear_stockings   = True
-                $ h_top = "normal_waitress_top"
+                $ h_top = "top_frilled_1"
                 $ h_bottom = "pants_jeans_short"
                 $ h_stockings = "stockings_cute"
 

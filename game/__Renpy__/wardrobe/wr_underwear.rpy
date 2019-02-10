@@ -225,7 +225,7 @@ label equip_her_bra:
                         ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
-            elif underwear_choice in ["top_fishnets"]:
+            elif underwear_choice in ["top_fishnets_1"]:
                 g9 "I've got something for you! Try it out!"
                 if her_whoring >= 20: #Success
                     call her_main("Wow. Fishnets?","smile","down")
@@ -287,7 +287,7 @@ label equip_her_bra:
                     ">Try again at Whoring level 17."
                 jump return_to_wardrobe
 
-            if her_whoring < 20 and underwear_choice in ["bra_french_maid","bra_tape","top_fishnets"]:
+            if her_whoring < 20 and underwear_choice in ["bra_french_maid","bra_tape","top_fishnets_1"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 20."

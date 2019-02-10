@@ -578,3 +578,112 @@ label set_her_action(action =  "", update=""):
     call update_her_uniform #calls update_her_action, update_chibi_uniform, and update_her_body;
 
     return
+
+
+
+label load_hermione_clothing_saves:
+
+    #Uniform & Underwear
+    if h_request_wear_top:
+        $ hermione_wear_top          = True
+    else:
+        $ hermione_wear_top          = False
+
+    if h_request_wear_onepiece:
+        $ hermione_wear_onepiece     = True
+    else:
+        $ hermione_wear_onepiece     = False
+
+    if h_request_wear_bra:
+        $ hermione_wear_bra          = True
+    else:
+        $ hermione_wear_bra          = False
+
+    if h_request_wear_bottom:
+        $ hermione_wear_bottom       = True
+    else:
+        $ hermione_wear_bottom       = False
+
+    if h_request_wear_panties:
+        $ hermione_wear_panties      = True
+    else:
+        $ hermione_wear_panties      = False
+
+    if h_request_wear_garterbelt:
+        $ hermione_wear_garterbelt   = True
+    else:
+        $ hermione_wear_garterbelt   = False
+
+    #Other Clothing
+    if h_request_wear_neckwear:
+        $ hermione_wear_neckwear     = True
+    else:
+        $ hermione_wear_neckwear     = False
+
+    if h_request_wear_body_accs:
+        $ hermione_wear_body_accs    = True
+    else:
+        $ hermione_wear_body_accs    = False
+
+    if h_request_wear_gloves:
+        $ hermione_wear_gloves       = True
+    else:
+        $ hermione_wear_gloves       = False
+
+    if h_request_wear_stockings:
+        $ hermione_wear_stockings    = True
+    else:
+        $ hermione_wear_stockings    = False
+
+    if h_request_wear_robe:
+        $ hermione_wear_robe         = True
+    else:
+        $ hermione_wear_robe         = False
+
+    #Head Accessories
+    if h_request_wear_hat:
+        $ hermione_wear_hat          = True
+    else:
+        $ hermione_wear_hat          = False
+
+    if h_request_wear_glasses:
+        $ hermione_wear_glasses      = True
+    else:
+        $ hermione_wear_glasses      = False
+
+    if h_request_wear_ears:
+        $ hermione_wear_ears         = True
+    else:
+        $ hermione_wear_ears         = False
+
+    if h_request_wear_makeup:
+        $ hermione_wear_makeup       = True
+    else:
+        $ hermione_wear_makeup       = False
+
+    if h_request_wear_piercings:
+        $ hermione_wear_piercings    = True
+    else:
+        $ hermione_wear_piercings    = False
+
+    if h_request_wear_tattoos:
+        $ hermione_wear_tattoos      = True
+    else:
+        $ hermione_wear_tattoos      = False
+
+    if h_request_wear_mask:
+        $ hermione_wear_mask = True
+    else:
+        $ hermione_wear_mask = False
+
+    if h_request_wear_gag:
+        $ hermione_wear_gag = True
+    else:
+        $ hermione_wear_gag = False
+
+    if h_request_wear_outfit:
+        $ hermione_wear_outfit = True
+    else:
+        $ hermione_wear_outfit = False
+
+    return

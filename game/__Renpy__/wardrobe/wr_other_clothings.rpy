@@ -167,14 +167,14 @@ label equip_her_body_accessory:
             m "[hermione_name]..."
 
             #S.P.E.W Badge
-            if body_accessory_choice == "badge_SPEW":
+            if body_accessory_choice == "badge_spew":
                 m "Would you wear this badge for me?"
                 if her_whoring >= 0:
                     call her_main("A S.P.E.W. badge?","base","base")
                     call her_main("I'll wear this with pride [genie_name].","open","closed")
 
             #I <3 Cum Badge
-            if body_accessory_choice == "badge_I_love_cum":
+            if body_accessory_choice == "badge_cum":
                 m "Would you wear this badge for me?"
 
                 if her_whoring >= 20:
@@ -232,12 +232,12 @@ label equip_her_body_accessory:
             m "[hermione_name]..."
 
             #S.P.E.W Basge
-            if body_accessory_choice == "badge_SPEW":
+            if body_accessory_choice == "badge_spew":
                 m "Could you remove that Spew badge again?"
                 call her_main("Alright. Let me take it off.","annoyed","down")
 
             #I <3 Cum Badge
-            if body_accessory_choice == "badge_I_love_cum":
+            if body_accessory_choice == "badge_cum":
                 m "Could you remove that Cum badge again?"
                 call her_main("Alright. Let me take it off.","annoyed","down")
 
@@ -299,10 +299,7 @@ label equip_stockings:
 
 ### Equip Hermione's Stockings ###
 label equip_her_stockings:
-    if her_whoring < 11 and h_bottom in ["skirt_belted_mini","skirt_belted_micro"]:
-        call nar(">You can't remove her pantyhose while wearing that skirt!")
-    else:
-        call set_her_stockings(stockings_choice)
+    call set_her_stockings(stockings_choice)
 
     jump return_to_wardrobe
 

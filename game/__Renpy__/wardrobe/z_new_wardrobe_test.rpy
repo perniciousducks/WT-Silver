@@ -72,7 +72,7 @@ label cho_wardrobe_test: # WIP
 
     elif _return == "change_bg_color":
         $ cho_bg_color = color_picker(cho_bg_color, False, "wardrobe color")
-        
+
     elif _return == "Close":
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
         $ current_page = 0
@@ -289,7 +289,6 @@ python:
             item_list.append("skirt_2_low")
             item_list.append("skirt_3")
             item_list.append("skirt_3_low")
-            item_list.append("skirt_3_belted")
             item_list.append("skirt_4")
             item_list.append("skirt_4_low")
         if group == "4":

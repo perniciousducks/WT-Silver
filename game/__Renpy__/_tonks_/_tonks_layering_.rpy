@@ -5,7 +5,7 @@ screen tonks_main:
     add tonks_base xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
     add tonks_l_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the arms
     add tonks_r_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the arms
-    add tonks_boobs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
+    add tonks_breasts xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
 
     ### FACE
     if tonks_wear_mask == False:
@@ -121,7 +121,7 @@ screen tonks_outfit:
     tag tonks_main
 
     for i in tonks_outfit_GLBL.getOutfitLayers():
-        add "characters/tonks/clothes/custom/"+i xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add "characters/tonks/clothes/"+i+".png" xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
 
     ### ZORDER
     zorder tonks_zorder

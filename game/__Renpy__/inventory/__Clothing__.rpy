@@ -27,7 +27,7 @@ label update_outfit_layers:
     $ hg_witch_ITEM.breast_layer  = "breasts_normal"
     $ hg_witch_ITEM.top_layers    = "hat_witch"
 
-    $ hg_witch_skimpy_ITEM.outfit_layers = ["robe/robe_witch_back","stockings/stockings_witch_1","onepieces/onepiece_witch_2","robe/robe_witch"]
+    $ hg_witch_skimpy_ITEM.outfit_layers = ["robe/robe_witch_back","stockings/stockings_striped_2","onepieces/onepiece_witch_2","robe/robe_witch"]
     $ hg_witch_skimpy_ITEM.breast_layer  = "breasts_normal"
     $ hg_witch_skimpy_ITEM.top_layers    = "hat_witch"
 

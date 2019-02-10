@@ -396,7 +396,7 @@ label update_wr_bottoms_list:
         $ wr_bottoms_uniform.append("skirt_1_low")
         $ wr_bottoms_uniform.append("skirt_2_low")
         $ wr_bottoms_uniform.append("skirt_3_low")
-        $ wr_bottoms_uniform.append("skirt_4_low") #micro skirt
+        $ wr_bottoms_uniform.append("skirt_4_low")
 
         #Cheerleader
         if hg_cheer_g_ITEM.unlocked:
@@ -562,12 +562,10 @@ label update_wr_other_clothings_list:
         #Gloves
         if hg_accs_wool_g_ITEM.unlocked:
             $ wr_gloves.append("gloves_wool_1")
-        if hg_outfit_christmas_ITEM.unlocked:
-            $ wr_gloves.append("gloves_wool_short_xmas")
         if her_whoring >= 10:
             $ wr_gloves.append("gloves_lace_1")
         if hg_lingerie_latex_ITEM.unlocked:
-            $ wr_gloves.append("gloves_latex")
+            $ wr_gloves.append("gloves_latex_1")
 
         if hg_outfit_maid_ITEM.unlocked or hg_lingerie_maid_ITEM.unlocked:
             $ wr_gloves.append("gloves_maid")
@@ -575,7 +573,6 @@ label update_wr_other_clothings_list:
             $ wr_gloves.append("gloves_leather_2")
         if her_whoring >= 22 and hg_costume_harley_quinn_ITEM.unlocked:
             $ wr_gloves.append("gloves_leather_1")
-        #$ wr_gloves.append("gloves_egyptian") #ADD Egypt Outfit
 
         #Stockings
         if hg_accs_wool_g_ITEM.unlocked:

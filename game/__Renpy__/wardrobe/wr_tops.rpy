@@ -26,26 +26,10 @@ label equip_top:
 
 label equip_her_top:
 
-    if top_choice == h_top and top_color_choice == h_top_color:
+    if top_choice == h_top:
         $ hide_transitions = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
-
-    if hermione_action == "hands_behind" or hermione_action == "covering" or hermione_action == "fingering" or hermione_action == "covering_top" or hermione_action == "pinch" or hermione_action == "hands_cuffed" or hermione_action == "milk_breasts":
-
-        $ hide_transitions = True
-        hide screen hermione_main
-        with d3
-        ">Hermione is currently posing,... naked.\nWould you like her to get dressed?"
-        menu:
-            "-Make her get dressed-":
-                call set_her_action(None)
-                hide screen hermione_main
-
-            "-nvm-":
-                show screen hermione_main
-                with d3
-                jump return_to_wardrobe
 
     if her_mood >= 1:
         jump equipping_failed
@@ -761,7 +745,7 @@ label equip_her_top:
 
             pause.5
 
-            call set_her_top(top_choice,top_color_choice)
+            call set_her_top(top_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -858,7 +842,7 @@ label equip_her_top:
 
             #Success!
             $ hide_transitions = True
-            call set_her_top(top_choice,top_color_choice)
+            call set_her_top(top_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -884,7 +868,7 @@ label equip_sus_top:
 
 ### Equip Cho's Top ###
 label equip_cho_top:
-    call set_cho_top(top_choice, top_color_choice)
+    call set_cho_top(top_choice)
 
     jump return_to_wardrobe
 

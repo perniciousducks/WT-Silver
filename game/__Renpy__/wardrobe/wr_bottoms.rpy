@@ -25,7 +25,7 @@ label equip_bottom:
 
 label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"text\"
 
-    if skirt_choice == h_bottom and bottom_color_choice == h_bottom_color:
+    if skirt_choice == h_bottom:
         $ hide_transitions = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
@@ -567,7 +567,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
 
             pause.5
 
-            call set_her_bottom(skirt_choice,bottom_color_choice)
+            call set_her_bottom(skirt_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = True
@@ -604,7 +604,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                 jump return_to_wardrobe
 
             if skirt_choice == "uni_top_cheer" and her_whoring < 5:
-                if (bottom_color_choice == "green" or bottom_color_choice == "dark_green" or bottom_color_choice == "blue" or bottom_color_choice == "dark_blue" or bottom_color_choice == "yellow"):
+                if (h_bottom_color == "green" or h_bottom_color == "dark_green" or h_bottom_color == "blue" or h_bottom_color == "dark_blue" or h_bottom_color == "yellow"):
                     if her_whoring < 11:
                         ">She won't wear that skirt just yet."
                         if cheats_active or game_difficulty <= 2:
@@ -617,7 +617,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                     jump return_to_wardrobe
 
             if skirt_choice == "uni_top_cheer_skimpy" and her_whoring < 8:
-                if (bottom_color_choice == "green" or bottom_color_choice == "dark_green" or bottom_color_choice == "blue" or bottom_color_choice == "dark_blue" or bottom_color_choice == "yellow"):
+                if (h_bottom_color == "green" or h_bottom_color == "dark_green" or h_bottom_color == "blue" or h_bottom_color == "dark_blue" or h_bottom_color == "yellow"):
                     if her_whoring < 11:
                         ">She won't wear that skirt just yet."
                         if cheats_active or game_difficulty <= 2:
@@ -676,7 +676,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                 pass
 
             $ hide_transitions = True
-            call set_her_bottom(skirt_choice,bottom_color_choice)
+            call set_her_bottom(skirt_choice)
             call her_main(xpos="wardrobe")
             call screen wardrobe
 
@@ -685,7 +685,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
 ### Equip Luna's Bottom ###
 label equip_lun_bottom:
 
-    call set_lun_bottom(skirt_choice, bottom_color_choice)
+    call set_lun_bottom(skirt_choice)
 
     jump return_to_wardrobe
 
@@ -703,12 +703,12 @@ label equip_sus_bottom:
 
 ### Equip Cho's Bottom ###
 label equip_cho_bottom:
-    call set_cho_bottom(skirt_choice, bottom_color_choice)
+    call set_cho_bottom(skirt_choice)
 
     jump return_to_wardrobe
 
 ### Equip Tonks's Bottom ###
 label equip_ton_bottom:
-    call set_ton_bottom(skirt_choice, bottom_color_choice)
+    call set_ton_bottom(skirt_choice)
 
     jump return_to_wardrobe

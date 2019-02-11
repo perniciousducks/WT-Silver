@@ -63,7 +63,7 @@ label letter_intro_hermione:
         "(...)"
         "-just tell her to find the student-":
             m "Whatever..."
-            m "just find them so we can send them to Akabur..."
+            m "just find them so we can send them to Azerbaijan..."
             call her_main("Azkaban, sir...","open","wink")
             m "Just go!"
         "-Tell her you're not going to send them to Azkaban-":

@@ -3052,6 +3052,7 @@ label your_whore:
     with d7                                                                       #<---- SCREEN
     call ctc
 
+label test_credits:
     show screen blktone
     with d7
 
@@ -3092,6 +3093,7 @@ label your_whore:
 
     show screen credits_chibi
     centered "{cps=20}{size=+5}{color=#ea91b0}-Witch Trainer-{/color}{/size}\n\n
+    {size=+5}{color=#cbcbcb}(The following credits are the creators of the orignal game, Witch Trainer,\nand did not take part in creating,\nor are affiliated in any way with the Silver mod.){/color}{/size}\n\n
     {color=#e5e297}-\{Written and directed by\}-{/color}\n{size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n
     {color=#e5e297}-\{Head programmer\}-{/color}\n {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n
     {color=#e5e297}-\{Artwork by\}-{/color}\n   {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n
@@ -3418,8 +3420,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         pause 1
 
     $ renpy.play('sounds/win2.mp3')   #Not loud.
-    centered "{size=+7}{color=#cbcbcb}-\{Thank you for playing!\}-{/color}{/size}\n\n
-              {size=+1}{color=#cbcbcb}-AKABUR 2014-{/color}{/size}"
+    centered "{size=+7}{color=#cbcbcb}-\{Thank you for playing!\}-{/color}{/size}\n\n"
 
     pause 2
 

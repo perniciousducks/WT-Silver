@@ -430,64 +430,6 @@ label hg_pr_KissAGirl_complete:
             else:
                 jump snowballing
 
-            $ lazy_aka_not_yet = False #Makes sure this event only takes place once.
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
-            m "[hermione_name], did you complete your task?"
-            show screen blktone
-            with d3
-            call her_main("Yes I did, [genie_name].","base","base",xpos="right",ypos="base")
-            m "Splendid. Tell me more."
-            show screen blktone
-            with d3
-            call her_main("Of course.","smile","glance")
-            her "I decided to go for a different approach today..."
-            stop music
-            call her_main("I figured that iffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","open","base",xpos=500)
-            m "Huh?"
-            hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-            her "If I coulddddddddddddddddddd"
-            pause
-            pause
-            pause
-            with hpunch
-            g4 "{size=+5}Goddammit!!!{/size}"
-            g4 "{size=+5}AKABUR?!!!{/size}"
-            a4 "Huh...? WHAT?!! What do you want from me?"
-            a4 "There is no release date set! Stop asking me!"
-            g4 "What are you talking about?"
-            a5 "I mean, I'm not sleeping..."
-            a7 "*Yawn*..."
-            a5 "................"
-            m "So Is Hermione going to stutter from now on? Is that what this is?"
-            pause
-            pause
-            g4 "Are you still there?"
-            a1 "I'm not sleeping..."
-            a5 "Just resting my eyes..."
-            g4 "Dammit, man."
-            g4 "Just go catch up on some sleep before you ruin the whole thing."
-            m "Get some shuteye and then finish this event properly."
-            a1 "I can't..."
-            a1 "I want this game to be released as soon as possible..."
-            a1 "No, scratch that. I want it to be released sooner than possible..."
-            a1 "People trust me... and..."
-            a7 "*yawn*..."
-            a1 "And...."
-            pause
-            pause
-            m "Akabur?"
-            m "Dude?"
-            pause
-            pause
-            m "*Sigh*...well, we could let this one event slide I suppose."
-            m "Just this once though..."
-            m "And Hermione's \"perversion\" level did increase..."
-            m "So there is no need for save-scumming..."
-            aa "Zzzz....zzz....."
-            aa "Zzz.... Lola? no... Put your tits away I said... Zzzz....."
-            aa "Zzz.... And don't call me that.... Zzz...."
-            m "*Sigh...* That's just sad..."
-
     $ gryffindor +=45
     m "The \"Gryffindor\" house gets 45 points!"
     her "Thank you, [genie_name]."

@@ -180,31 +180,26 @@ label start_ht:
         "-Use sprites-":
             $ use_cgs = True
 
-    menu:
-        ">Would you like to skip the intro?"
-        "-Play the intro-":
-            jump intro
-        "-Skip the intro-":
-            jump hp
-        "-Skip to after the duel-" if cheats_active or persistent.game_complete:
-            $ skip_duel = True
-            jump hp
-        "-Skip to Hermione-" if cheats_active or persistent.game_complete:
-            $ skip_to_hermione = True
-            jump hp
+    if cheats_active or persistent.game_complete:
+        menu:
+            ">Would you like to skip early sections of the game?"
+            "-No, play the intro-":
+                pass
+            "-Skip to after the duel-" if cheats_active or persistent.game_complete:
+                $ skip_duel = True
+            "-Skip to Hermione-" if cheats_active or persistent.game_complete:
+                $ skip_to_hermione = True
 
 
 
 
 ### GAME STARTS HERE ###
 
-label hp:
-
-    stop music fadeout 1
-    hide image "images/rooms/_bg_/castle.png"
-    show screen blkfade
-    with d7
-    pause 1.2
+stop music fadeout 1
+hide image "images/rooms/_bg_/castle.png"
+show screen blkfade
+with d7
+pause 1.2
 
 
 $ interface_color = "gold"

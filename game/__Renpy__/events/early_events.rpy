@@ -171,7 +171,6 @@ label event_00:
     m "........."
     m "So basically, I'm a genie disguised as a human, who is in turn disguised as another human..."
     m "No, that's not stupid at all..."
-    #a4 "Shut it! Nobody understands a true genius."
 
     $ days_without_an_event = 0
 

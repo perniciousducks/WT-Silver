@@ -3290,9 +3290,9 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         dum_[2] "I beg your pardon?"                                                                                                # SNAPE
         call sna_main("Who rules?","snape_26")
         dum_[2] "...who rules what?"                                                                                               # SNAPE
-        sna "A...?"
-        dum_[2] "A?"                                                                                             # SNAPE
-        call sna_main("Aka-a....?","snape_27")
+        sna "R...?"
+        dum_[2] "R?"                                                                                             # SNAPE
+        call sna_main("Robin....?","snape_27")
         dum_[2] "You don't make any sense, Severus."                                                                                             # SNAPE
         call sna_main("Ah, bloody hell...................","snape_29")
         pause.5

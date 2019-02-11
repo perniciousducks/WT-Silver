@@ -600,29 +600,45 @@ init python:
     def update_table(x, y, reverse):
         global table_cards
         if reverse:
-            if  not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue < table_cards[x][y-1].bottomvalue:
-                table_cards[x][y-1].playercard = table_cards[x][y].playercard
-                
-            if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue < table_cards[x][y+1].topvalue:
-                table_cards[x][y+1].playercard = table_cards[x][y].playercard
-                
-            if  not x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue < table_cards[x-1][y].rightvalue:
-                table_cards[x-1][y].playercard = table_cards[x][y].playercard
-                
-            if not x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue < table_cards[x+1][y].leftvalue:
-                table_cards[x+1][y].playercard = table_cards[x][y].playercard
+            take_over = lambda a b : a > b
         else:
-            if  not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].bottomvalue:
-                table_cards[x][y-1].playercard = table_cards[x][y].playercard
+            take_over = lambda a b : a < b
+        
+
+        if  not y == 0 and not table_cards[x][y-1] == None and take_over(table_cards[x][y].topvalue, table_cards[x][y-1].bottomvalue):
+            
+            
+        if not y == 2 and not table_cards[x][y+1] == None and take_over(table_cards[x][y].bottomvalue, table_cards[x][y+1].topvalue):
+            table_cards[x][y+1].playercard = table_cards[x][y].playercard
+            
+        if  not x == 0 and not table_cards[x-1][y] == None and take_over(table_cards[x][y].leftvalue, table_cards[x-1][y].rightvalue):
+            table_cards[x-1][y].playercard = table_cards[x][y].playercard
+            
+        if not x == 2 and not table_cards[x+1][y] == None and take_over(table_cards[x][y].rightvalue, table_cards[x+1][y].leftvalue):
+            table_cards[x+1][y].playercard = table_cards[x][y].playercard
+        
+        if dobelt:
+            dobelt_found = []
+            if  not y == 0 and not table_cards[x][y-1] == None:
+                if self.topvalue == table_cards[x][y-1].bottomvalue:
+                    dobelt_found.append([x,y-1])
+
+            if not y == 2 and not table_cards[x][y+1] == None:
+                if self.bottomvalue == table_cards[x][y+1].topvalue:
+                    dobelt_found.append([x,y+1])
                 
-            if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue > table_cards[x][y+1].topvalue:
-                table_cards[x][y+1].playercard = table_cards[x][y].playercard
+            if  not x == 0 and not table_cards[x-1][y] == None:
+                if self.leftvalue == table_cards[x-1][y].rightvalue:
+                    dobelt_found.append([x-1,y])
+
                 
-            if  not x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue > table_cards[x-1][y].rightvalue:
-                table_cards[x-1][y].playercard = table_cards[x][y].playercard
-                
-            if not x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue > table_cards[x+1][y].leftvalue:
-                table_cards[x+1][y].playercard = table_cards[x][y].playercard
+            if not x == 2 and not table_cards[x+1][y] == None:
+                if self.rightvalue == table_cards[x+1][y].leftvalue:
+                    dobelt_found.append([x+1,y])
+                    
+            if len(dobelt_found) > 1:
+                for card in dobelt_found:
+                    table_cards[card[0]][card[0]].playercard = table_cards[x][y].playercard
             
     def add_card_to_deck(title):
             for card in unlocked_cards:
@@ -668,46 +684,77 @@ init python:
         def clone(self):
             return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue, playercard = self.playercard)
                     
-        def getAIScore(self, table_of_cards, reverse):
+        def getAIScore(self, table_of_cards, reverse, dobelt):
             high_score = 0
             position = 0
             wallscore = 2
             getcardscore = 9
+            if reverse:
+                score_func = lambda a : 10 - a
+                take_over = lambda a b : a > b
+            else:
+                score_func = lambda a : a
+                take_over = lambda a b : a < b
+                
             for y in range(0,3):
                 for x in range(0,3):
                     score = 0
                     if table_cards[x][y] == None:
-                        if  not y == 0 and not table_cards[x][y-1] == None:
-                            if self.topvalue > table_cards[x][y-1].bottomvalue:
+                        if  not y == 0 and not table_cards[x][y-1] == None and not table_cards[x][y-1].playercard:
+                            if take_over(self.topvalue, table_cards[x][y-1].bottomvalue):
                                 score += getcardscore
                             else:
-                                score += self.topvalue
+                                score += score_func(self.topvalue)
                         else:
                             score += wallscore
                             
-                        if not y == 2 and not table_cards[x][y+1] == None:
-                            if  self.bottomvalue > table_cards[x][y+1].topvalue:
+                        if not y == 2 and not table_cards[x][y+1] == None and not table_cards[x][y+1].playercard:
+                            if take_over(self.bottomvalue, table_cards[x][y+1].topvalue):
                                 score += getcardscore
                             else:
-                                score += self.bottomvalue
+                                score += score_func(self.bottomvalue)
                         else:
                             score += wallscore
                             
-                        if  not x == 0 and not table_cards[x-1][y] == None:
-                            if self.leftvalue > table_cards[x-1][y].rightvalue:
+                        if  not x == 0 and not table_cards[x-1][y] == Noneand not table_cards[x+1][y].playercard:
+                            if take_over(self.leftvalue, table_cards[x-1][y].rightvalue):
                                 score += getcardscore
                             else:
-                                score += self.leftvalue
+                                score += score_func(self.leftvalue)
                         else:
                             score += wallscore
                             
-                        if not x == 2 and not table_cards[x+1][y] == None:
-                            if self.rightvalue > table_cards[x+1][y].leftvalue:
+                        if not x == 2 and not table_cards[x+1][y] == Noneand not table_cards[x-1][y].playercard:
+                            if take_over(self.rightvalue, table_cards[x+1][y].leftvalue):
                                 score += getcardscore
                             else:
-                                score += self.rightvalue
+                                score += score_func(self.rightvalue)
                         else:
                             score += wallscore
+                            
+                        if dobelt:
+                            dobelt_found = []
+                            if  not y == 0 and not table_cards[x][y-1] == None:
+                                if self.topvalue == table_cards[x][y-1].bottomvalue:
+                                    dobelt_found.append([x,y-1])
+     
+                            if not y == 2 and not table_cards[x][y+1] == None:
+                                if self.bottomvalue == table_cards[x][y+1].topvalue:
+                                    dobelt_found.append([x,y+1])
+                                
+                            if  not x == 0 and not table_cards[x-1][y] == None:
+                                if self.leftvalue == table_cards[x-1][y].rightvalue:
+                                    dobelt_found.append([x-1,y])
+
+                                
+                            if not x == 2 and not table_cards[x+1][y] == None:
+                                if self.rightvalue == table_cards[x+1][y].leftvalue:
+                                    dobelt_found.append([x+1,y])
+                                    
+                            if len(dobelt_found) > 1:
+                                for card in dobelt_found:
+                                    if not card.playercard:
+                                        high_score += getcardscore
                             
                         if score > high_score:
                             high_score = score

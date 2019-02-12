@@ -664,24 +664,6 @@ image sur:
     "characters/emotes/animated/sur6.png"
     pause.08
 
-#Akabur
-image side akaJew1 = "characters/misc/akabur/aka.png"
-image side akaJew2 = "characters/misc/akabur/aka2.png"
-image side akaJew3 = "characters/misc/akabur/aka3.png"
-image side akaJew4 = "characters/misc/akabur/aka4.png"
-image side akaJew5 = "characters/misc/akabur/aka5.png"
-image side akaJew6 = "characters/misc/akabur/aka6.png"
-image side akaJew7 = "characters/misc/akabur/aka7.png"
-
-define a1 = Character(None, window_left_padding=250, image="akaJew1", color="#402313", ctc="ctc3", ctc_position="fixed")
-define a2 = Character(None, window_left_padding=250, image="akaJew2", color="#402313", ctc="ctc3", ctc_position="fixed")
-define a3 = Character(None, window_left_padding=250, image="akaJew3", color="#402313", ctc="ctc3", ctc_position="fixed")
-define a4 = Character(None, window_left_padding=290, image="akaJew4", color="#402313", ctc="ctc3", ctc_position="fixed")
-define a5 = Character(None, window_left_padding=250, image="akaJew5", color="#402313", ctc="ctc3", ctc_position="fixed")
-define a6 = Character(None, window_left_padding=250, image="akaJew6", color="#402313", ctc="ctc3", ctc_position="fixed")
-define a7 = Character(None, window_left_padding=250, image="akaJew7", color="#402313", ctc="ctc3", ctc_position="fixed")
-
-
 ######
 image magic = "magic/magic1.png"
 image magic2 = "magic/magic2.png"
@@ -788,18 +770,18 @@ label masterstart2:
 
 
 label splashscreen:
-    $ renpy.pause(0)
-    scene black
-    with Pause(0.9)
+    #$ renpy.pause(0)
+    #scene black
+    #with Pause(0.9)
     #$ renpy.play('sounds/arcade.wav')
-    show image "images/misc/intro/logo.jpg"
-    pause 2
-    with dissolve
-    with Pause(2.0)
+    #show image "images/misc/intro/logo.jpg"
+    #pause 2
+    #with dissolve
+    #with Pause(2.0)
 
-    scene black
-    with dissolve
-    with Pause(1.0)
+    #scene black
+    #with dissolve
+    #with Pause(1.0)
 
     return
 

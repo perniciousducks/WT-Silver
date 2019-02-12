@@ -115,10 +115,10 @@ screen map_buttons:
         xpos UI_xpos_offset +214
         ypos UI_ypos_offset +136
         idle "interface/map/room_slytherin_idle.png"
-        hovered SetVariable("ball_hint", "dorm_slytherin")
-        unhovered SetVariable("ball_hint", None)
-        hover "interface/map/room_slytherin_hover.png"
-        action Return("slytherin_dormitories")
+        #hovered SetVariable("ball_hint", "dorm_slytherin")
+        #unhovered SetVariable("ball_hint", None)
+        #hover "interface/map/room_slytherin_hover.png"
+        #action Return("slytherin_dormitories")
 
     #Weasley Store
     imagebutton at animate:

@@ -27,7 +27,7 @@ label start_ht:
 
     $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
 
-    $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. "Lazy Akabur bug". Turns FALSE after that.
+    $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. Turns FALSE after that.
     $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
     $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
     $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
@@ -179,35 +179,30 @@ label start_ht:
         "-Use sprites-":
             $ use_cgs = True
 
-    menu:
-        ">Would you like to skip the intro?"
-        "-Play the intro-":
-            jump intro
-        "-Skip the intro-":
-            jump hp
-        "-Skip to after the duel-" if cheats_active or persistent.game_complete:
-            $ skip_duel = True
-            jump hp
-        "-Skip to Hermione-" if cheats_active or persistent.game_complete:
-            $ skip_to_hermione = True
-            jump hp
+    if cheats_active or persistent.game_complete:
+        menu:
+            ">Would you like to skip early sections of the game?"
+            "-No, play the intro-":
+                pass
+            "-Skip to after the duel-" if cheats_active or persistent.game_complete:
+                $ skip_duel = True
+            "-Skip to Hermione-" if cheats_active or persistent.game_complete:
+                $ skip_to_hermione = True
 
 
 
 
 ### GAME STARTS HERE ###
 
-label hp:
-    
-    stop music fadeout 1
-    hide image "images/rooms/_bg_/castle.png"
-    show screen blkfade
-    with d7
-    pause 1.2
+stop music fadeout 1
+hide image "images/rooms/_bg_/castle.png"
+show screen blkfade
+with d7
+pause 1.2
+
 
 if not persistent.nightmode:
     $ interface_color = "gold"
-$ daytime = True
 $ day = 0
 
 

@@ -5,9 +5,9 @@
 label __init_variables:
 
     #place save variables here
-    if not hasattr(renpy.store,'addicted'): #important!
+    if not hasattr(renpy.store,'addicted'):
         $ addicted = False
-    if not hasattr(renpy.store,'tentacle_cosmetic'): #important!
+    if not hasattr(renpy.store,'tentacle_cosmetic'):
         $ tentacle_cosmetic = False
 
     ### Interface ###
@@ -22,13 +22,10 @@ label __init_variables:
     if not hasattr(renpy.store,'ignore_warning'):
         $ ignore_warning = False #Warning message that tells you which ending you will get.
 
-    if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'): #important!
+    if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'):
         $ hg_pf_TheGamble_Flag = False
-    if not hasattr(renpy.store,'hg_pf_TheGamble_FlagA'): #important!
         $ hg_pf_TheGamble_FlagA = False
-    if not hasattr(renpy.store,'hg_pf_TheGamble_FlagB'): #important!
         $ hg_pf_TheGamble_FlagB = False
-    if not hasattr(renpy.store,'hg_pf_TheGamble_FlagC'): #important!
         $ hg_pf_TheGamble_FlagC = False
 
 
@@ -59,7 +56,7 @@ label __init_variables:
         $ cupboard_deco = ""
 
     #HD RESCALE RATION
-    if not hasattr(renpy.store,'genie_scaleratio'): #important!
+    if not hasattr(renpy.store,'genie_scaleratio'):
         $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
 
         $ genie_scaleratio = 2 #Scaleratio of each character can be changed to be used in custom "CG" scenes. Made larger, more zoomed in,...
@@ -73,14 +70,13 @@ label __init_variables:
         $ cho_scaleratio = 2
 
     #CGs
-    if not hasattr(renpy.store,'ccg_folder'): #important!
+    if not hasattr(renpy.store,'ccg_folder'):
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
         $ ccg2 = 1
         $ ccg3 = "gene"
 
-    #SC34 update 2 stuff, thanks akabur.
-    if not hasattr(renpy.store,'sc_cg_base'): #important!
+    if not hasattr(renpy.store,'sc_cg_base'):
         $ sc_cg_base = "images/CG/sc34/1/base_1.png"
         $ sc_cg_image_1 = "images/CG/sc34/1/A_1.png"
         $ sc_cg_image_2 = "images/CG/sc34/2/B_1.png"
@@ -89,7 +85,7 @@ label __init_variables:
         $ sccgypos = 50
 
     #Using images instead of chibis.
-    if not hasattr(renpy.store,'face_on_cg'): #important!
+    if not hasattr(renpy.store,'face_on_cg'):
         $ face_on_cg = False #"call her_main(,ypos="head")" will use screen "her_face". Face gets positioned automatically.
         $ use_cgs = False
 

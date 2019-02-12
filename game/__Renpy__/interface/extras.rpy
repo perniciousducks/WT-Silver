@@ -4,7 +4,6 @@ label gallery_ht:
     with flashbb
 
 
-    #a1 "Welcome to the \"Hermione Trainer\" gallery. Here you can have a look at some of the production artwork."
     label after_cam:
     menu:
         "-Music room-":
@@ -989,49 +988,6 @@ label end02_03:
 
 
 
-
-    ### INTRO ###
-    label intro:
-
-        stop music fadeout 1
-        hide image "images/rooms/_bg_/castle.png"
-        show screen blkfade
-        with d7
-        pause 1
-
-        play music "music/TheKiss.mp3" fadein 1 fadeout 1
-
-        centered "{size=+7}{color=#cbcbcb}Previously in AKABUR's \"MAGIC SHOP\"...{/color}{/size}"
-
-        hide screen blkfade
-        show intro_01 with flashbb # WHITE FLASH.
-        pause
-        hide intro_01
-        show intro_02
-        with flashbulb # WHITE FLASH.
-        pause
-        hide intro_02
-        show intro_03
-        with flashbulb # WHITE FLASH.
-        pause
-        hide intro_03
-        show intro_04
-        with flashbulb # WHITE FLASH.
-        pause
-        hide intro_04
-        show intro_05
-        with flashbulb # WHITE FLASH.
-        pause
-        hide intro_05
-        show intro_06
-        with hpunch
-        pause
-        hide intro_06
-        with flashbulb # WHITE FLASH.
-
-        centered "{size=+7}{color=#cbcbcb}And now Akabur's \"Witch Trainer\"...{/color}{/size}"
-
-        jump hp
 
 
 init -2:

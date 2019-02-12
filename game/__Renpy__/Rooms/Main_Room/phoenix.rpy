@@ -25,6 +25,8 @@ label phoenix:
         menu:
             "Testing Card Game":
                 jump test_card_game
+            "Testing clothes":
+                jump color_cloth_test
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1

@@ -62,10 +62,31 @@ label cho_wardrobe_test: # WIP
     hide screen wardorobe_menu
     hide screen wardorobe_item_menu
 
+
+
+    # Wardrobe Item Menu (left side)
+
+    # Items
     if isinstance(_return, item_class):
         call equip_cho_item(_return)
 
+    # Item Buttons
+    elif _return == "change_item_position":
+        pass
+    elif _return == "change_item_color":
+        # Open color picker for the currently equipped item here.
+        # Use the variable 'type_choice' that is set in the wardrobe to change the color on the same 'type' of clothing.
+        pass
 
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+
+    # Wardrobe Main Menu (right side)
+
+    # Buttons
     elif _return == "open_category":
         $ renpy.play('sounds/scroll.mp3') #opening wardrobe page
     elif _return == "close_category":
@@ -84,11 +105,6 @@ label cho_wardrobe_test: # WIP
         call cho_main(xpos="base",ypos="base")
 
         jump cho_requests
-
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
 
     jump cho_wardrobe_test_menu
 
@@ -213,15 +229,7 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
             hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("group_choice",groups[i]), Return()
             add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xanchor 0.5 xpos 50+(90*i) yanchor 0.5 ypos 129 zoom 0.2
 
-        #if use_wr_color:
-        #    hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_tops_color","base"), Jump("wardrobe_update")]
-        #    add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
-        #    for i in range(0,len(color_list)):
-        #        $ row = i // 7
-        #        $ col = i % 7
 
-        #        hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_tops_color",wr_clothcolor[i]), Jump("wardrobe_update")]
-        #        add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
 
         # Items
         for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
@@ -237,14 +245,31 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
         #    hotspot (  12+(90*col), 87+92+(92*row), 83, 85) clicked Return(menu_items[clamp(i+(current_page*items_shown), 0, len(menu_items))])
 
 
+
+        # Buttons For Item Options
+        # (bar total size: xpos 281, ypos 30, xsize 175, ysize 45)
+
+        # Item Position
+        hotspot (281, 30, 175, 22) clicked Return("change_item_position")
+        text "{color=#ffffff}-Position-{/color}" xalign 0.5 xpos 281+87 yalign 0.5 ypos 30+11 size 12
+
+        # Item Color
+        if use_wr_color:
+            hotspot (281, 30+22, 175, 23) clicked Return("change_item_color")
+            text "{color=#ffffff}-Colour-{/color}" xalign 0.5 xpos 281+87 yalign 0.5 ypos 30+22+11 size 12
+
+
+
 label update_cho_wardrobe_items(character, category, group):
 python:
 
     item_list = []
-    group_list = ["1"]
+    if group not in group_list:
+        group = "1"
     toggle_list = []
     color_list = []
     use_wr_color = False
+    type_choice = None
 
     item_xpos = 40
     item_scaling = 0.2
@@ -252,6 +277,7 @@ python:
     if category == "head":
         group_list = ["1","2","3"]
         if group == "1":
+            type_choice = "hair"
             item_xpos = 40
             item_ypos = 130
 
@@ -267,7 +293,9 @@ python:
         item_xpos = 40
         item_ypos = 75
         item_scaling = 0.2
+        use_wr_color = True
 
+        type_choice = "tops"
         item_list = []
         if group == "1":
             item_list.append("top_school_1")
@@ -277,7 +305,6 @@ python:
             item_list.append("top_school_5")
             item_list.append("top_sweater_1")
         if group == "3":
-            use_wr_color = True
             item_list.append("top_tanktop_1")
             item_list.append("top_tanktop_2")
             item_list.append("top_shirt_1")
@@ -288,10 +315,11 @@ python:
         item_xpos = 40
         item_ypos = 25
         item_scaling = 0.2
+        use_wr_color = True
 
+        type_choice = "bottoms"
         item_list = []
         if group == "1":
-            use_wr_color = True
             item_list.append("skirt_2")
             item_list.append("skirt_2_low")
             item_list.append("skirt_3")

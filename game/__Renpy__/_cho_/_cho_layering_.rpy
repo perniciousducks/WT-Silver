@@ -36,8 +36,10 @@ screen cho_chang:
     ### CLOTHING LAYERS ###
 
     #Uniform
-    if not cho_wear_outfit:
+    if not cho_wear_outfit and not test_clothing_colors:
         use cho_uniform
+    elif not cho_wear_outfit:
+        use cho_uniform_test
 
     #Outfit
     if cho_wear_outfit:

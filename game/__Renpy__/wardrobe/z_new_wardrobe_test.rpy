@@ -17,6 +17,8 @@ label cho_wardrobe_test: # WIP
     $ test_clothing_colors = True # Encnables test screen for Cho's clothing.
     $ current_page = 0
     $ current_group = "1"
+    $ layer_list = [] # Used to show how many layers the item you culorize has.
+    $ layer_choice = 0
     $ category_choice = None
     $ char_name = "cho"
     $ char_nickname = cho_name
@@ -61,6 +63,7 @@ label cho_wardrobe_test: # WIP
 
     hide screen wardorobe_menu
     hide screen wardorobe_item_menu
+    hide screen wardorobe_custom_menu
 
 
 
@@ -73,10 +76,13 @@ label cho_wardrobe_test: # WIP
     # Item Buttons
     elif _return == "change_item_position":
         pass
+
     elif _return == "change_item_color":
-        # Open color picker for the currently equipped item here.
-        # Use the variable 'type_choice' that is set in the wardrobe to change the color on the same 'type' of clothing.
-        pass
+        # Open color picker for the last equipped item here.
+        $ item_choice = t_cho_top_mid # For testing.
+        show screen wardorobe_custom_menu("colorize", item_choice, "Colorize", xpos=20, ypos=50)
+        $ item_choice.set_color(layer_choice)
+        hide screen wardorobe_custom_menu
 
     elif _return == "inc":
         $ current_page += 1
@@ -93,9 +99,9 @@ label cho_wardrobe_test: # WIP
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     elif _return == "change_bg_color":
-        show screen wardorobe_menu(char_nickname, char_name, current_category, xpos=550, ypos=50)
+        show screen wardorobe_custom_menu("colorize", item, "Colorize", xpos=550, ypos=50)
         $ cho_bg_color = color_picker(cho_bg_color, False, "wardrobe color", pos_xy=[100, 130])
-        hide screen wardorobe_menu
+        hide screen wardorobe_custom_menu
 
     elif _return == "Close":
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
@@ -174,7 +180,7 @@ screen wardorobe_menu(nickname, character, category, xpos, ypos):
         #text "Music" xpos 900+21 ypos 154+410 size 10
 
 
-# Left Wardrobe Menu # Not working yet
+# Left Wardrobe Menu
 screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos, ypos):
     $ items_shown = 20
     $ ui_xpos = xpos
@@ -213,8 +219,8 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
         xsize 467 #width of ground/hover image.
         ysize 548 #height of ground/hover image.
 
-        ground "interface/panels/"+interface_color+"/icon_panel.png"
-        hover "interface/panels/"+interface_color+"/icon_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/icon_panel_1.png"
+        hover "interface/panels/"+interface_color+"/icon_panel_1_hover.png"
 
         # Header
         hbox:
@@ -257,6 +263,46 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
         if use_wr_color:
             hotspot (281, 30+22, 175, 23) clicked Return("change_item_color")
             text "{color=#ffffff}-Colour-{/color}" xalign 0.5 xpos 281+87 yalign 0.5 ypos 30+22+11 size 12
+
+
+
+# Left Wardrobe Menu For Item Customization
+screen wardorobe_custom_menu(category, item, title, xpos, ypos):
+    $ ui_xpos = xpos
+    $ ui_ypos = ypos
+    zorder 4
+
+    # Close Button
+    use top_bar_close_button
+
+    # Main Window
+    add im.MatrixColor( "interface/panels/bg/icon_panel.png", im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) xpos ui_xpos ypos ui_ypos
+    imagemap:
+        xpos ui_xpos
+        ypos ui_ypos
+        xsize 467 #width of ground/hover image.
+        ysize 548 #height of ground/hover image.
+
+        ground "interface/panels/"+interface_color+"/icon_panel_3.png"
+        hover "interface/panels/"+interface_color+"/icon_panel_3_hover.png"
+
+        # Header
+        hbox:
+            xpos 11
+            ypos 30
+            xsize 265
+            ysize 45
+            text title xalign 0.5 yalign 0.5 size 16 bold 0.2
+
+        if category == "colorize":
+            for i in range(0,item.layers): # Number of layers/customization options the clothing item has.
+                hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("layer_choice",i), Return("change_item_color")
+                text "Layer " +str(i) xalign 0.5 xpos nxpos yalign 0.5 ypos nypos
+
+
+
+
+
 
 
 

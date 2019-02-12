@@ -86,9 +86,8 @@ label cho_wardrobe_test: # WIP
 
         $ _return = ui.interact()
 
-        hide screen wardorobe_custom_menu
-
         if _return == "Close":
+            hide screen wardorobe_custom_menu
             jump cho_wardrobe_test_menu
 
         $ item_choice.set_color(_return)

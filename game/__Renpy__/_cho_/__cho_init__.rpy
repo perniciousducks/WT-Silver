@@ -121,20 +121,20 @@ label cho_init:
 
 
         #Clothes
-        $ cho_top                 = "characters/cho/clothes/tops/top_1.png"
-        $ c_top                   = "top_1"
+        $ cho_top                 = "characters/cho/clothes/tops/top_school_1.png"
+        $ c_top                   = "top_school_1"
         $ c_top_color             = "base"
 
-        $ cho_bra                 = "characters/cho/clothes/bras/bra_sport.png"
-        $ c_bra                   = "bra_sport"
+        $ cho_bra                 = "characters/cho/clothes/bras/sport_bra_1.png"
+        $ c_bra                   = "sport_bra_1"
         $ c_bra_color             = "base"
 
         $ cho_bottom              = "characters/cho/clothes/bottoms/skirt_2.png"
         $ c_bottom                = "skirt_2"
         $ c_bottom_color          = "base"
 
-        $ cho_panties             = "characters/cho/clothes/panties/panties_sport_1.png"
-        $ c_panties               = "panties_sport_1"
+        $ cho_panties             = "characters/cho/clothes/panties/sport_panties_1.png"
+        $ c_panties               = "sport_panties_1"
         $ c_panties_color         = "base"
 
         $ cho_onepiece            = "characters/cho/clothes/onepiece/blank.png"

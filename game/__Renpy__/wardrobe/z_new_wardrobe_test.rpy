@@ -78,11 +78,22 @@ label cho_wardrobe_test: # WIP
         pass
 
     elif _return == "change_item_color":
+        label color_test_menu:
+
         # Open color picker for the last equipped item here.
         $ item_choice = t_cho_top_mid # For testing.
         show screen wardorobe_custom_menu("colorize", item_choice, "Colorize", xpos=20, ypos=50)
-        $ item_choice.set_color(layer_choice)
+
+        $ _return = ui.interact()
+
         hide screen wardorobe_custom_menu
+
+        if _return == "Close":
+            jump cho_wardrobe_test_menu
+
+        $ item_choice.set_color(_return)
+
+        jump color_test_menu
 
     elif _return == "inc":
         $ current_page += 1
@@ -296,8 +307,8 @@ screen wardorobe_custom_menu(category, item, title, xpos, ypos):
 
         if category == "colorize":
             for i in range(0,item.layers): # Number of layers/customization options the clothing item has.
-                hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("layer_choice",i), Return("change_item_color")
-                text "Layer " +str(i) xalign 0.5 xpos nxpos yalign 0.5 ypos nypos
+                hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("layer_choice",i), Return()
+                text "Layer " +str(i) xalign 0.5 xpos 55+(90*i) yalign 0.5 ypos 160
 
 
 

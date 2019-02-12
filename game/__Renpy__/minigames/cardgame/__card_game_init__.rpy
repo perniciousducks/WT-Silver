@@ -568,6 +568,9 @@ init python:
         
         return "#" + red + green + blue + alpha
         
+    def get_hex_string_tuple(color):
+        return get_hex_string(color[0], color[1], color[2], color[3])
+        
     def get_rgb_tuple(hex):
         hex = hex.lstrip('#')
         hex_len = len(hex)

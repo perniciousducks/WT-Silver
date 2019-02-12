@@ -71,7 +71,9 @@ label cho_wardrobe_test: # WIP
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     elif _return == "change_bg_color":
-        $ cho_bg_color = color_picker(cho_bg_color, False, "wardrobe color")
+        show screen wardorobe_menu(char_nickname, char_name, current_category, xpos=550, ypos=50)
+        $ cho_bg_color = color_picker(cho_bg_color, False, "wardrobe color", pos_xy=[100, 130])
+        hide screen wardorobe_menu
 
     elif _return == "Close":
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
@@ -99,7 +101,11 @@ screen wardorobe_menu(nickname, character, category, xpos, ypos):
     use top_bar_close_button
 
     # Main Window im.MatrixColor( image, im.matrix.tint(red, green, blue))
-    add im.MatrixColor( "interface/panels/bg/wardrobe_panel.png", im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) xpos ui_xpos+100 ypos ui_ypos
+    if color_preview == None:
+        add im.MatrixColor( "interface/panels/bg/wardrobe_panel.png", im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) xpos ui_xpos+100 ypos ui_ypos
+    else:
+        add im.MatrixColor( "interface/panels/bg/wardrobe_panel.png", im.matrix.tint(color_preview[0]/255.0, color_preview[1]/255.0, color_preview[2]/255.0)) xpos ui_xpos+100 ypos ui_ypos
+        
     if category == None:
         add "interface/wardrobe/test/" +str(interface_color)+ "/icons_" +str(character)+ ".png" xpos ui_xpos+13 ypos ui_ypos+80 zoom 0.5
     else:

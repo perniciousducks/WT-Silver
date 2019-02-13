@@ -70,6 +70,8 @@ label color_cloth_test:
         show screen cloth_test()
         $ cho_top_school_CLOTH.set_color(_return[1])
         hide screen cloth_test
+    elif _return == "reset":
+        $ cho_top_school_CLOTH.reset_color()
 
     jump color_cloth_test
 
@@ -98,6 +100,7 @@ screen cloth_test:
         textbutton "Channel 2" action Return(["change_color", 1])
         textbutton "Channel 3" action Return(["change_color", 2])
         textbutton "Channel 4" action Return(["change_color", 3])
+        textbutton "Default" action Return("reset")
 
 #label change_color(layer):
     #$ cho_top_school_CLOTH.set_color(layer)
@@ -184,9 +187,9 @@ init:
     $ t_cho_bra      = cloth_class(char="cho", type="bras",    id="sport_bra_1", layers=3)
     $ t_cho_panties  = cloth_class(char="cho", type="panties", id="sport_panties_1", layers=3)
 
-    $ cho_top_school_CLOTH = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, name="School top", desc="description") # Keep the 'type' plural please.
+    $ cho_top_school_CLOTH = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[200, 100, 100, 255], [100, 200, 100, 255], [100, 100, 200, 255], [150, 50, 150, 255]], name="School top", desc="description") # Keep the 'type' plural please.
     #$ cho_top_school2_CLOTH = cloth_class(char="cho", type="top", id="school2", layers=4, name="School top", desc="description")
-
+    
 init -5 python:
     class cloth_class(object):
         char = "MISSING" # astoria, cho, hermione, luna, susan, tonks
@@ -194,6 +197,8 @@ init -5 python:
         id = "MISSING"
         layers = 4
         color = []
+        color_default = []
+        skinlayer = "characters/dummy.png"
 
         name = "NONE"
         desc = ""
@@ -202,9 +207,18 @@ init -5 python:
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-            self.imagepath = "characters/"+str(self.char)+"/clothes/"+str(self.type)+"/"
-            for i in xrange(0, self.layers):
-                self.color.append([100, 150, 200, 255])
+            self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"
+                
+            if len(self.color) < self.layers:
+                for i in xrange(len(self.color), self.layers):
+                    self.color.append([255, 255, 255, 255])
+                    
+            self.color_default = [] # DO NOT DELETE !!!
+            for i in xrange(0, len(self.color)):
+                self.color_default.append(self.color[i])
+  
+            if renpy.exists(self.imagepath+self.id+"/skin.png"):
+                self.skinlayer = self.imagepath+self.id+"/skin.png"
 
         def get_character(self):
             return self.char
@@ -217,7 +231,7 @@ init -5 python:
 
         def get_layers(self):
             return self.layers
-            #im.matrix.desaturate()*
+
         def get_matrixcolor(self, layer):
             return im.matrix.tint(self.color[layer][0]/255.0, self.color[layer][1]/255.0, self.color[layer][2]/255.0)
 
@@ -229,6 +243,10 @@ init -5 python:
 
         def set_color(self, layer):
             self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer), pos_xy=[50, 130])
+            
+        def reset_color(self):
+            for i in xrange(0, len(self.color)):
+                self.color[i] = self.color_default[i]
 
         def get_name(self):
             return self.name
@@ -240,36 +258,14 @@ init -5 python:
             return self.imagepath
 
         def get_imagelayer(self, layer):
-            # Appears as (example):
-            # characters/cho/bottoms/ (skirt_school_1) / (1) .png
-            return self.imagepath+str(self.id)+"/"+str(layer)+".png"
-
+            return self.imagepath+self.id+"/"+str(layer)+".png"
+                    
         def get_image(self):
-            if self.layers == 1:
-                return im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0))
-            elif self.layers == 2:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)))
-            elif self.layers == 3:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(2)), self.get_matrixcolor(2)))
-            elif self.layers == 4:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(2)), self.get_matrixcolor(2)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(3)), self.get_matrixcolor(3)))
-            elif self.layers == 5:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(2)), self.get_matrixcolor(2)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(3)), self.get_matrixcolor(3)),
-                    (0, 0), self.get_imagelayer(4))
+            self.sprite = Image(self.skinlayer)
+
+            for i in xrange(0, self.layers):
+                    self.sprite = Composite(
+                           (1010, 1200),
+                           (0,0), self.sprite,
+                           (0,0), im.MatrixColor(str(self.get_imagelayer(i)), self.get_matrixcolor(i)))
+            return self.sprite

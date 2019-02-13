@@ -308,8 +308,8 @@ screen wardorobe_custom_menu(category, item, title, xpos, ypos):
             text title xalign 0.5 yalign 0.5 size 16 bold 0.2
 
         if category == "colorize":
-            for i in range(0,item.layers): # Number of layers/customization options the clothing item has.
-                hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("layer_choice",i), Return()
+            for i in range(0,item.layers-1): # Number of layers/customization options the clothing item has.
+                hotspot (12+(90*i), 87, 83, 85) clicked Return(i)
                 text "Layer " +str(i) xalign 0.5 xpos 55+(90*i) yalign 0.5 ypos 160
 
 

@@ -28,12 +28,12 @@ init python:
         ## Random check to see who start ##
         coin_flip = renpy.random.randint(0,1)
         if coin_flip == 0:
-            enemy_turn(enemy_deck, backside_list, rules[2])
+            enemy_turn(enemy_deck, backside_list, rules[2], rules[3])
 
         ## Game Loop ##
         response_card = ""
         while not(response_card == "win" or response_card == "loss"):
-            response_card = cardgame(enemy_deck, player_deck, backside_list, rules[2])
+            response_card = cardgame(enemy_deck, player_deck, backside_list, rules[2], rules[3])
             if response_card == "AfterEnemy" and not after_enemy == "":
                 renpy.Call(after_enemy)
             elif response_card == "Close":
@@ -61,7 +61,7 @@ init python:
         return response_card
     
     
-    def cardgame(enemy_deck, player_deck, shown_backside, reverse):
+    def cardgame(enemy_deck, player_deck, shown_backside, reverse, dobelt_number):
         global selectcard
         global selectenemycard
         global table_cards
@@ -102,7 +102,7 @@ init python:
                 del player_deck[selectcard]
                 selectcard = -1
                 selectenemycard = -1
-                update_table(x,y,reverse)
+                update_table(x,y,reverse, dobelt_number)
                 
                 renpy.pause(0.7) # Autoplay enemy card
                 if (len(player_deck) == 0 or len(enemy_deck) == 0):
@@ -125,7 +125,7 @@ init python:
                         renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
                     return response_card
                     
-                enemy_turn(enemy_deck, shown_backside, reverse)
+                enemy_turn(enemy_deck, shown_backside, reverse, dobelt_number)
                 renpy.sound.play("sounds/card.mp3")
                 if (len(player_deck) == 0 or len(enemy_deck) == 0):
                     response_card = check_winner(player_deck)
@@ -150,14 +150,14 @@ init python:
             else:
                 return "NewTurn"
         
-    def enemy_turn(enemy_deck, shown_backside, reverse):
+    def enemy_turn(enemy_deck, shown_backside, reverse, dobelt_number):
         global table_cards
         high_score = 0
         high_score_card = None
         high_score_pos = 0
         
         for card in enemy_deck:
-            tuple_my = card.getAIScore(table_cards)
+            tuple_my = card.getAIScore(table_cards, reverse, dobelt_number)
             if tuple_my[0] > high_score:
                 high_score = tuple_my[0]
                 high_score_pos = tuple_my[1]
@@ -169,7 +169,7 @@ init python:
         del enemy_deck[enemy_deck.index(high_score_card)]
         table_cards[x][y] = high_score_card        
         table_cards[x][y].playercard = False
-        update_table(x,y, reverse)
+        update_table(x,y, reverse, dobelt_number)
         
         return
        

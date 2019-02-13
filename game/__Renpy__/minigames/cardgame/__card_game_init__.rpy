@@ -4,11 +4,15 @@ label __init_variables:
         selectenemycard = -1
         currentpage = 0
         #Shown Cards is a interger for how many cards should be hidden
+        #
         #Sudden Death is where when there is draw then a new round will begin
         #Where you take all card of you color up in you hand
+        #
         #Reverse is where the take over is reverse so instead of > it is <
-        # Rules(Shown Cards, Sudden Death, Reverse, Swap)
-        standart_rules = [3, True, True]
+        #
+        #Dobelt_number
+        # Rules(Shown Cards, Sudden Death, Reverse, Dobelt_number)
+        standart_rules = [3, True, True, True]
         
         if not hasattr(renpy.store,'playercolor_r'):
             playercolor_r = 51.0/255.0
@@ -607,48 +611,48 @@ init python:
         else:
             return "loss"
            
-    def update_table(x, y, reverse):
+    def update_table(x, y, reverse, dobelt_number):
         global table_cards
         if reverse:
-            take_over = lambda a b : a > b
+            take_over = lambda a, b : a < b
         else:
-            take_over = lambda a b : a < b
+            take_over = lambda a, b : a > b
         
 
-        if  not y == 0 and not table_cards[x][y-1] == None and take_over(table_cards[x][y].topvalue, table_cards[x][y-1].bottomvalue):
-            
+        if not y == 0 and not table_cards[x][y-1] == None and take_over(table_cards[x][y].topvalue, table_cards[x][y-1].bottomvalue):
+            table_cards[x][y-1].playercard = table_cards[x][y].playercard
             
         if not y == 2 and not table_cards[x][y+1] == None and take_over(table_cards[x][y].bottomvalue, table_cards[x][y+1].topvalue):
             table_cards[x][y+1].playercard = table_cards[x][y].playercard
             
-        if  not x == 0 and not table_cards[x-1][y] == None and take_over(table_cards[x][y].leftvalue, table_cards[x-1][y].rightvalue):
+        if not x == 0 and not table_cards[x-1][y] == None and take_over(table_cards[x][y].leftvalue, table_cards[x-1][y].rightvalue):
             table_cards[x-1][y].playercard = table_cards[x][y].playercard
             
         if not x == 2 and not table_cards[x+1][y] == None and take_over(table_cards[x][y].rightvalue, table_cards[x+1][y].leftvalue):
             table_cards[x+1][y].playercard = table_cards[x][y].playercard
         
-        if dobelt:
+        if dobelt_number:
             dobelt_found = []
-            if  not y == 0 and not table_cards[x][y-1] == None:
-                if self.topvalue == table_cards[x][y-1].bottomvalue:
+            if not y == 0 and not table_cards[x][y-1] == None:
+                if table_cards[x][y].topvalue == table_cards[x][y-1].bottomvalue:
                     dobelt_found.append([x,y-1])
 
             if not y == 2 and not table_cards[x][y+1] == None:
-                if self.bottomvalue == table_cards[x][y+1].topvalue:
+                if table_cards[x][y].bottomvalue == table_cards[x][y+1].topvalue:
                     dobelt_found.append([x,y+1])
                 
-            if  not x == 0 and not table_cards[x-1][y] == None:
-                if self.leftvalue == table_cards[x-1][y].rightvalue:
+            if not x == 0 and not table_cards[x-1][y] == None:
+                if table_cards[x][y].leftvalue == table_cards[x-1][y].rightvalue:
                     dobelt_found.append([x-1,y])
 
                 
             if not x == 2 and not table_cards[x+1][y] == None:
-                if self.rightvalue == table_cards[x+1][y].leftvalue:
+                if table_cards[x][y].rightvalue == table_cards[x+1][y].leftvalue:
                     dobelt_found.append([x+1,y])
                     
             if len(dobelt_found) > 1:
                 for card in dobelt_found:
-                    table_cards[card[0]][card[0]].playercard = table_cards[x][y].playercard
+                    table_cards[card[0]][card[1]].playercard = table_cards[x][y].playercard
             
     def add_card_to_deck(title):
             for card in unlocked_cards:
@@ -694,23 +698,23 @@ init python:
         def clone(self):
             return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue, playercard = self.playercard)
                     
-        def getAIScore(self, table_of_cards, reverse, dobelt):
+        def getAIScore(self, table_of_cards, reverse, dobelt_number):
             high_score = 0
             position = 0
-            wallscore = 2
-            getcardscore = 9
+            wallscore = 3
+            getcardscore = 12
             if reverse:
                 score_func = lambda a : 10 - a
-                take_over = lambda a b : a > b
+                take_over = lambda a, b : a > b
             else:
                 score_func = lambda a : a
-                take_over = lambda a b : a < b
+                take_over = lambda a, b : a < b
                 
             for y in range(0,3):
                 for x in range(0,3):
                     score = 0
                     if table_cards[x][y] == None:
-                        if  not y == 0 and not table_cards[x][y-1] == None and not table_cards[x][y-1].playercard:
+                        if not y == 0 and not table_cards[x][y-1] == None and not table_cards[x][y-1].playercard:
                             if take_over(self.topvalue, table_cards[x][y-1].bottomvalue):
                                 score += getcardscore
                             else:
@@ -726,7 +730,7 @@ init python:
                         else:
                             score += wallscore
                             
-                        if  not x == 0 and not table_cards[x-1][y] == Noneand not table_cards[x+1][y].playercard:
+                        if not x == 0 and not table_cards[x-1][y] == None and not table_cards[x-1][y].playercard:
                             if take_over(self.leftvalue, table_cards[x-1][y].rightvalue):
                                 score += getcardscore
                             else:
@@ -734,7 +738,7 @@ init python:
                         else:
                             score += wallscore
                             
-                        if not x == 2 and not table_cards[x+1][y] == Noneand not table_cards[x-1][y].playercard:
+                        if not x == 2 and not table_cards[x+1][y] == None and not table_cards[x+1][y].playercard:
                             if take_over(self.rightvalue, table_cards[x+1][y].leftvalue):
                                 score += getcardscore
                             else:
@@ -742,24 +746,24 @@ init python:
                         else:
                             score += wallscore
                             
-                        if dobelt:
+                        if dobelt_number:
                             dobelt_found = []
-                            if  not y == 0 and not table_cards[x][y-1] == None:
+                            if not y == 0 and not table_cards[x][y-1] == None:
                                 if self.topvalue == table_cards[x][y-1].bottomvalue:
-                                    dobelt_found.append([x,y-1])
+                                    dobelt_found.append(table_cards[x][y-1])
      
                             if not y == 2 and not table_cards[x][y+1] == None:
                                 if self.bottomvalue == table_cards[x][y+1].topvalue:
-                                    dobelt_found.append([x,y+1])
+                                    dobelt_found.append(table_cards[x][y+1])
                                 
-                            if  not x == 0 and not table_cards[x-1][y] == None:
+                            if not x == 0 and not table_cards[x-1][y] == None:
                                 if self.leftvalue == table_cards[x-1][y].rightvalue:
-                                    dobelt_found.append([x-1,y])
+                                    dobelt_found.append(table_cards[x-1][y])
 
                                 
                             if not x == 2 and not table_cards[x+1][y] == None:
                                 if self.rightvalue == table_cards[x+1][y].leftvalue:
-                                    dobelt_found.append([x+1,y])
+                                    dobelt_found.append(table_cards[x+1][y])
                                     
                             if len(dobelt_found) > 1:
                                 for card in dobelt_found:

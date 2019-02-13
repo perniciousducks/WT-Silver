@@ -28,7 +28,7 @@ label house_points:
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
-    if daytime:
+    if daytime and not persistent.nightmode:
         $ daygold_colour = "{color=#000}"
         $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
     else:
@@ -159,7 +159,7 @@ screen ui_top_bar():
         if config.debug:
             hbox:
                 xpos 10 ypos 40
-                text "{size=-5}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
+                text "{size=-3}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
 
         if not ui_hint == "" and persistent.ui_hint:
             text "{color=#FFF}{size=+4}[ui_hint]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
@@ -191,15 +191,15 @@ screen ui_points():
                 add "interface/topbar/ravenclaw_empty.png" yanchor 0
                 add "interface/topbar/hufflepuff_empty.png" yanchor 0
                 # Show points
-                text "{size=-7}{color=#FFF}[slytherin_points]{/color}{/size}" outlines points_outline xpos 17 ypos 30 xanchor 0.5
-                text "{size=-7}{color=#FFF}[gryffindor_points]{/color}{/size}" outlines points_outline xpos 58 ypos 30 xanchor 0.5
-                text "{size=-7}{color=#FFF}[ravenclaw_points]{/color}{/size}" outlines points_outline xpos 98 ypos 30 xanchor 0.5
-                text "{size=-7}{color=#FFF}[hufflepuff_points]{/color}{/size}" outlines points_outline xpos 139 ypos 30 xanchor 0.5
+                text "{size=-5}{color=#FFF}[slytherin_points]{/color}{/size}" outlines points_outline xpos 17 ypos 30 xanchor 0.5
+                text "{size=-5}{color=#FFF}[gryffindor_points]{/color}{/size}" outlines points_outline xpos 58 ypos 30 xanchor 0.5
+                text "{size=-5}{color=#FFF}[ravenclaw_points]{/color}{/size}" outlines points_outline xpos 98 ypos 30 xanchor 0.5
+                text "{size=-5}{color=#FFF}[hufflepuff_points]{/color}{/size}" outlines points_outline xpos 139 ypos 30 xanchor 0.5
                 # Show placement number
-                text "{size=-2}{color=#FFF}[slytherin_place]{/color}{/size}" outlines points_outline xpos 17 ypos 10 xanchor 0.5
-                text "{size=-2}{color=#FFF}[gryffindor_place]{/color}{/size}" outlines points_outline xpos 58 ypos 10 xanchor 0.5
-                text "{size=-2}{color=#FFF}[ravenclaw_place]{/color}{/size}" outlines points_outline xpos 98 ypos 10 xanchor 0.5
-                text "{size=-2}{color=#FFF}[hufflepuff_place]{/color}{/size}" outlines points_outline xpos 139 ypos 10 xanchor 0.5
+                text "{size=16}{color=#FFF}[slytherin_place]{/color}{/size}" outlines points_outline xpos 17 ypos 10 xanchor 0.5
+                text "{size=16}{color=#FFF}[gryffindor_place]{/color}{/size}" outlines points_outline xpos 58 ypos 10 xanchor 0.5
+                text "{size=16}{color=#FFF}[ravenclaw_place]{/color}{/size}" outlines points_outline xpos 98 ypos 10 xanchor 0.5
+                text "{size=16}{color=#FFF}[hufflepuff_place]{/color}{/size}" outlines points_outline xpos 139 ypos 10 xanchor 0.5
 
             if toggle_ui_lock and renpy.get_screen("main_room_menu"):
                 imagebutton:
@@ -229,14 +229,14 @@ screen ui_stats():
                 
             hbox:
                 xpos 40 ypos 11
-                text "{size=-6}[daygold_colour][day]{/color}{/size}" outlines daygold_outline
+                text "{size=-4}[daygold_colour][day]{/color}{/size}" outlines daygold_outline
             hbox:
                 xpos 140 ypos 11
                 # Display tokens in token shop
                 if renpy.get_screen("weasley_store_room") and store_category == 3:
-                    text "{size=-6}[daygold_colour][geniecard_tokens]{/color}{/size}" outlines daygold_outline
+                    text "{size=-4}[daygold_colour][geniecard_tokens]{/color}{/size}" outlines daygold_outline
                 else:
-                    text "{size=-6}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline
+                    text "{size=-4}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline
 
 screen ui_menu():
     tag ui

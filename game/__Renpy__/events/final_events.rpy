@@ -787,10 +787,10 @@ label good_bye_snape:
     call sna_head("A password?","snape_05")
     m "Yes... just ask me tomorrow: \"Who rules?\"."
     call sna_head("\"Who rules?\"","snape_01")
-    g9 "\"Akabur rules!\""
-    call sna_head("Akuba... ehm... What does it mean?","snape_05")
-    m "Just a phrase that you will only be able to hear from the real me..."
-    call sna_head("I understand...","snape_02")
+    g9 "\"Robin Williams!\""
+    call sna_head("Robin Wil-... ehm... I'm sorry, who?","snape_05")
+    m "You didn't see \"flubber\"?\nGreat movie. Just came out."
+    call sna_head("Can't say that I have...","snape_02")
     call sna_head("Alright then...","snape_06")
     call sna_head("Have a save trip home...")
     hide screen s_head2
@@ -1025,34 +1025,7 @@ label good_bye_snape:
         centered "{size=+7}{color=#cbcbcb}Congratulations on completing the game!{/color}{/size}\n\n
                   {size=+5}{color=#cbcbcb}This is ending \"00\" out of \"02\".{/color}{/size}"
 
-        centered "{size=+7}{color=#cbcbcb}Thank you for playing!{/color}{/size}\n\n
-                  {size=+5}{color=#cbcbcb}AKABUR 2014{/color}{/size}"
-
-
-        #play music "music/Real Talk by Brix.MP3" fadein 1 fadeout 1
-        #play music "music/03_2_Voicemail Freestyle Mike Wiebe.mp3" fadein 3 fadeout 1
-        #scene image "08_ending/e05.png" with Dissolve(2)
-        # show akaani with d5
-
-
-        centered "{cps=20}{size=+5}{color=#ea91b0}-Hermione Trainer-{/color}{/size}\n\n
-        {size=+5}{color=#e5e297}-Producer-{/color}{/size}\n{color=#cbcbcb}AKABUR{/color}\n\n
-        {size=+5}{color=#e5e297}-Head programmer-{/color}{/size}\n     {color=#cbcbcb}AKABUR{/color}\n\n
-        {size=+5}{color=#e5e297}-Writer-{/color}{/size}\n     {color=#cbcbcb}AKABUR{/color}\n\n
-        {size=+5}{color=#e5e297}-Artwork-{/color}{/size}\n     {color=#cbcbcb}AKABUR{/color}\n\n
-        {size=+5}{color=#e5e297}-Additional Artwork-{/color}{/size}\n     {color=#cbcbcb}DAHR{/color}\n\n
-        {size=+5}{color=#e5e297}-Sound Effects-{/color}{/size}\n    {color=#cbcbcb}http://www.freesound.org/{/color}\n\n"
-    #    {size=+5}{color=#e5e297}-MUSIC-{/color}{/size}\n\n
-
-    #    {color=#e5e297}(From \"NEWGROUNDS\")\n
-    #    {color=#e5e297}\"Eastern Journey\" {/color}{color=#cbcbcb}by Pike270.{/color}\n
-    #    {color=#e5e297}\"Grape Soda Is Fucking Raw\"{/color} {color=#cbcbcb}by jrayteam6.{/color}\n
-    #    {color=#e5e297}\"The Eastern Wind\"{/color} {color=#cbcbcb}by roensb.{/color}\n
-    #    {color=#e5e297}\"Silly Cat\" {/color}{color=#cbcbcb}by Maverlyn.{/color}\n
-    #    {color=#e5e297}\"Kabul Flight\" {/color}{color=#cbcbcb}by Jumpstart.{/color}\n
-    #    {color=#e5e297}\"Sleep Walking\" {/color}{color=#cbcbcb}by hektikmusic.{/color}{/cps}"
-        #nvl clear
-    #    hide akaani
+        centered "{size=+7}{color=#cbcbcb}Thank you for playing!{/color}{/size}\n\n"
 
         $ renpy.play('sounds/scratch.wav')
         stop music

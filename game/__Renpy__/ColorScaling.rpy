@@ -9,11 +9,11 @@ screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, t
         style "empty"
     
     if daytime:
-        frame background "#e9ca7f" xsize 600 ysize 350 xpos 240 ypos 130
+        frame background "#e9ca7f" xsize 600 ysize 350 xpos pos_xy[0] ypos pos_xy[1]
     else:
-        frame background "#7c716a" xsize 600 ysize 350 xpos 240 ypos 130
+        frame background "#7c716a" xsize 600 ysize 350 xpos pos_xy[0] ypos pos_xy[1]
         
-    add "interface/color_palete/"+str(interface_color)+"/frame.png" xpos 236 ypos 126
+    add "interface/color_palete/"+str(interface_color)+"/frame.png" xpos pos_xy[0]-4 ypos pos_xy[1]-4
         
     frame:
         xsize 600
@@ -65,18 +65,21 @@ screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, t
     #Cursor
     add "interface/color_palete/"+str(interface_color)+"/cursor_sq.png" xpos int(cursor[0]) ypos int(cursor[1]) xanchor 0.5 yanchor 0.5
     add "interface/color_palete/"+str(interface_color)+"/cursor_h.png" xpos pos_xy[0]+296 ypos int(cursor_v) yanchor 0.5
-    
+
 init python:
     import pygame
     import _renpy
+    
+    color_preview = None
     
     def paletteTint(image, palette_color):
         image = im.MatrixColor( image, im.matrix.tint((palette_color[0]/255.0), (palette_color[1]/255.0), (palette_color[2]/255.0)))
         return image
 
-    def color_picker(color = [255.0, 255.0, 0.0, 255.0], palette_color = [255.0, 255.0, 0.0], alpha = True, title="", pos_xy=[240, 130], offset=25):
+    def color_picker(color = [255.0, 255.0, 0.0, 255.0], alpha = True, title="", pos_xy=[240, 130], offset=25):
         global color_scale
         global UI_color_bar
+        global color_preview
         original_color = [color[0],color[1],color[2],color[3]]
         choicen_scale = [125.0,125.0]
         n_alpha = 255
@@ -87,6 +90,7 @@ init python:
             cursor_position = [((1.0-cursor_tuple[1])*255.0)+offset+pos_xy[0], (1.0-cursor_tuple[2])*255.0+offset+pos_xy[1]]
             cursor_horizontal = n_alpha+pos_xy[0]+offset
             cursor_vertical = ((1-(cursor_tuple[0]/360.0))*255.0)+pos_xy[1]+offset
+            color_preview = color
             
             renpy.show_screen("color_map", color, palette_color, cursor_position, cursor_horizontal, cursor_vertical, alpha, title, pos_xy)
 
@@ -110,6 +114,7 @@ init python:
             y = y-float(pos_xy[1]+offset)
             
             if _return == "Close":
+                color_preview = None
                 return original_color
             elif _return == "main_color":
                 color = UI_color_scale.get_main_color( x ,y)
@@ -134,6 +139,7 @@ init python:
             elif _return == "input_alpha":
                 color[3] = clamp(int(renpy.input("Alpha", "255", "0123456789", length=3)), 0, 255)
             elif _return == "finish":
+                color_preview = None
                 return color
                 
     

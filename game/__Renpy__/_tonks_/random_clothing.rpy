@@ -186,7 +186,7 @@ label tonks_clothing_level:
         elif ton_bottom in ["skirt_1"]:
             $ ton_clothing_level +=30
         else:
-            if ton_bottom in ["skirt_3","skirt_3_belted"]: #Panties visible
+            if ton_bottom in ["skirt_3"]: #Panties visible
                 $ ton_clothing_level -=5
             else:
                 $ ton_clothing_level -=10

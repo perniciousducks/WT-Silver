@@ -8,16 +8,16 @@ label update_lun_uniform:
     $ luna_hair_shadow  = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_top.png"
 
     #Top
-    $ luna_top            = "characters/luna/clothes/tops/base/" +str(lun_top)+ ".png"
+    $ luna_top            = "characters/luna/clothes/tops/" +str(lun_top)+ ".png"
 
     #Bottom
-    $ luna_bottom         = "characters/luna/clothes/bottoms/" +str(lun_bottom_color)+ "/" +str(lun_bottom)+ ".png"
+    $ luna_bottom         = "characters/luna/clothes/bottoms/" +str(lun_bottom)+ ".png"
 
     #Underwear
-    $ luna_bra            = "characters/luna/clothes/underwear/base/" +str(lun_bra)+ ".png"
+    $ luna_bra            = "characters/luna/clothes/bras/" +str(lun_bra)+ ".png"
     $ luna_onepiece       = "characters/luna/clothes/onepieces/" +str(lun_onepiece)+ ".png"
-    $ luna_panties        = "characters/luna/clothes/underwear/base/" +str(lun_panties)+ ".png"
-    $ luna_garterbelt     = "characters/luna/clothes/underwear/base/" +str(lun_garterbelt)+ ".png"
+    $ luna_panties        = "characters/luna/clothes/panties/" +str(lun_panties)+ ".png"
+    $ luna_garterbelt     = "characters/luna/clothes/garterbelts/" +str(lun_garterbelt)+ ".png"
 
     $ luna_neckwear       = "characters/luna/clothes/neckwear/" +str(lun_neckwear)+ ".png"
     $ luna_gloves         = "characters/luna/clothes/gloves/" +str(lun_gloves)+ ".png"

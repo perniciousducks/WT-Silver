@@ -491,19 +491,6 @@ screen wardrobe():
                     hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wr_base_hair_color",wr_haircolor[i]), Jump("wardrobe_update")]
                     add "interface/wardrobe/icons/colors/"+wr_haircolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
 
-            #Color Palette
-            if wardrobe_head_category == 2 and active_girl in ["hermione"]: #Glasses
-                hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_head_color","base"), Jump("wardrobe_update")]
-                add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
-
-                for i in range(0,len(wr_clothcolor)):
-                    $ row = i // 7
-                    $ col = i % 7
-
-                    hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_head_color",wr_clothcolor[i]), Jump("wardrobe_update")]
-                    add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
-
-
             #Hair-Style and Hair-Color
             if wardrobe_head_category == 0:
                 hotspot (75, 139, 83, 85) clicked [SetVariable("wardrobe_head_category",0),Show("wardrobe")]
@@ -588,22 +575,6 @@ screen wardrobe():
                 hotspot (75+270, 139, 83, 85) clicked [SetVariable("wardrobe_tops_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/tops_4.png" xpos 75+270 ypos 139 zoom 0.2
                 #text "Wicked" xalign 0.5 xpos 115+270 ypos 140+75 size 10
-            #Misc
-            #hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_tops_category",4),Show("wardrobe")]
-            #add "interface/wardrobe/icons/"+str(active_girl)+"/tops_5.png" xpos 75+360 ypos 139 zoom 0.2
-            #text "Misc." xalign 0.5 xpos 115+360 ypos 140+75 size 10
-
-            #Color Palette
-            if wardrobe_tops_category == 2 and active_girl in ["hermione","cho"]: #Muggle clothing, all colors
-                hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_tops_color","base"), Jump("wardrobe_update")]
-                add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
-
-                for i in range(0,len(wr_clothcolor)):
-                    $ row = i // 7
-                    $ col = i % 7
-
-                    hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_tops_color",wr_clothcolor[i]), Jump("wardrobe_update")]
-                    add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
 
 
             #Uniforms
@@ -616,7 +587,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("top_color_choice","base"),SetVariable("top_choice",wr_tops_uniform[i]), Jump("equip_top")]
-                    add "characters/"+str(active_girl)+"/clothes/tops/base/"+wr_tops_uniform[i]+".png" xpos 15+(90*col) ypos (60+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/tops/"+wr_tops_uniform[i]+".png" xpos 15+(90*col) ypos (60+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Cheerleader
             if wardrobe_tops_category == 1:
@@ -628,7 +599,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("top_color_choice","base"),SetVariable("top_choice",wr_tops_cheerleader[i]), Jump("equip_top")]
-                    add "characters/"+str(active_girl)+"/clothes/tops/base/"+wr_tops_cheerleader[i]+".png" xpos 15+(90*col) ypos (60+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/tops/"+wr_tops_cheerleader[i]+".png" xpos 15+(90*col) ypos (60+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Muggle
             if wardrobe_tops_category == 2:
@@ -640,7 +611,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("top_color_choice",wardrobe_tops_color),SetVariable("top_choice",wr_tops_normal[i]), Jump("equip_top")]
-                    add "characters/"+str(active_girl)+"/clothes/tops/"+str(wardrobe_tops_color)+"/"+wr_tops_normal[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/tops/"+wr_tops_normal[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35/scaleratio
 
             #Wicked
             if wardrobe_tops_category == 3:
@@ -652,19 +623,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("top_color_choice","base"),SetVariable("top_choice",wr_tops_wicked[i]), Jump("equip_top")] #Wicked tops have NO recolor!
-                    add "characters/"+str(active_girl)+"/clothes/tops/base/"+wr_tops_wicked[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35/scaleratio
-
-            #Misc
-            #if wardrobe_tops_category == 4:
-            #    hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_tops_category",0),Show("wardrobe")]
-            #    add "interface/wardrobe/icons/"+str(active_girl)+"/tops_5.png" xpos 75+360 ypos 139 zoom 0.2
-            #    text "Misc." xalign 0.5 xpos 115+360 ypos 140+75 size 10
-            #    for i in range(0,len(wr_tops_misc)):
-            #        $ row = i // 5
-            #        $ col = i % 5
-
-            #        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("top_color_choice",wardrobe_tops_color),SetVariable("top_choice",wr_tops_misc[i]), Jump("equip_top")]
-            #        add "characters/"+str(active_girl)+"/clothes/tops/"+str(wardrobe_tops_color)+"/"+wr_tops_misc[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35
+                    add "characters/"+str(active_girl)+"/clothes/tops/"+wr_tops_wicked[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35/scaleratio
 
 
 ### Wardrobe Bottoms ###
@@ -680,33 +639,11 @@ screen wardrobe():
                 hotspot (75+90, 139, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",1),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms_2.png" xpos 75+90 ypos 139 zoom 0.2
                 #text "Cheerleader" xalign 0.5 xpos 115+90 ypos 140+75 size 10
-            #Skirts
-            if active_girl in ["hermione","luna","cho","tonks"]:
-                hotspot (75+180, 139, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",2),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms_3.png" xpos 75+180 ypos 139 zoom 0.2
-                #text "Skirts" xalign 0.5 xpos 115+180 ypos 140+75 size 10
             #Pants
             if active_girl in ["hermione","cho","tonks"]:
                 hotspot (75+270, 139, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",3),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms_4.png" xpos 75+270 ypos 139 zoom 0.2
                 #text "Pants" xalign 0.5 xpos 115+270 ypos 140+75 size 10
-            #Misc
-            #hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",4),Show("wardrobe")]
-            #add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms_5.png" xpos 75+360 ypos 139 zoom 0.2
-            #text "Misc." xalign 0.5 xpos 115+360 ypos 140+75 size 10
-
-            #Color Palette
-            if (wardrobe_bottoms_category in [0,2,3] and active_girl in ["hermione"]) or (wardrobe_bottoms_category in [0,2] and active_girl in ["luna","tonks","cho"]): #Not available for cheerleader skirts!
-                hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_bottoms_color","base"), SetVariable("update_wr_colors",True), Jump("wardrobe_update")]
-                add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
-
-                for i in range(0,len(wr_clothcolor)):
-                    $ row = i // 7
-                    $ col = i % 7
-
-                    hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_bottoms_color",wr_clothcolor[i]), Jump("wardrobe_update")]
-                    add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
-
 
             #Uniforms
             if wardrobe_bottoms_category == 0:
@@ -718,7 +655,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice",wardrobe_bottoms_color),SetVariable("skirt_choice",wr_bottoms_uniform[i]), Jump("equip_bottom")]
-                    add "characters/"+str(active_girl)+"/clothes/bottoms/"+str(wardrobe_bottoms_color)+"/"+wr_bottoms_uniform[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/bottoms/"+wr_bottoms_uniform[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Cheerleader
             if wardrobe_bottoms_category == 1:
@@ -730,19 +667,7 @@ screen wardrobe():
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice","base"),SetVariable("skirt_choice",wr_bottoms_cheerleader[i]), Jump("equip_bottom")]
-                    add "characters/"+str(active_girl)+"/clothes/bottoms/base/"+wr_bottoms_cheerleader[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
-
-            #Skirts
-            if wardrobe_bottoms_category == 2:
-                hotspot (75+180, 139, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",0),Show("wardrobe")]
-                add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms_3.png" xpos 75+180 ypos 139 zoom 0.2
-                #text "Skirts" xalign 0.5 xpos 115+180 ypos 140+75 size 10
-                for i in range(0,len(wr_bottoms_skirts)):
-                    $ row = i // 5
-                    $ col = i % 5
-
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice",wardrobe_bottoms_color),SetVariable("skirt_choice",wr_bottoms_skirts[i]), Jump("equip_bottom")]
-                    add "characters/"+str(active_girl)+"/clothes/bottoms/"+str(wardrobe_bottoms_color)+"/"+wr_bottoms_skirts[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
+                    add "characters/"+str(active_girl)+"/clothes/bottoms/"+wr_bottoms_cheerleader[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Pants
             if wardrobe_bottoms_category == 3:
@@ -753,24 +678,9 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    if active_girl in ["hermione"]: #Has recolored pants.
-                        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice",wardrobe_bottoms_color),SetVariable("skirt_choice",wr_bottoms_pants[i]), Jump("equip_bottom")]
-                        add "characters/"+str(active_girl)+"/clothes/bottoms/"+str(wardrobe_bottoms_color)+"/"+wr_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
-                    else: #Has no recolor version.
-                        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice","base"),SetVariable("skirt_choice",wr_bottoms_pants[i]), Jump("equip_bottom")]
-                        add "characters/"+str(active_girl)+"/clothes/bottoms/base/"+wr_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice","base"),SetVariable("skirt_choice",wr_bottoms_pants[i]), Jump("equip_bottom")]
+                    add "characters/"+str(active_girl)+"/clothes/bottoms/"+wr_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
 
-            #Misc
-            #if wardrobe_bottoms_category == 4:
-            #    hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",0),Show("wardrobe")]
-            #    add "interface/wardrobe/icons/"+str(active_girl)+"/bottoms_5.png" xpos 75+360 ypos 139 zoom 0.2
-            #    text "Misc." xalign 0.5 xpos 115+360 ypos 140+75 size 10
-            #    for i in range(0,len(wr_bottoms_misc)):
-            #        $ row = i // 5
-            #        $ col = i % 5
-
-            #        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("bottom_color_choice",wardrobe_bottoms_color),SetVariable("skirt_choice",wr_bottoms_misc[i]), Jump("equip_bottom")]
-            #        add "characters/"+str(active_girl)+"/clothes/bottoms/"+str(wardrobe_bottoms_color)+"/"+wr_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35/scaleratio
 
 
 ## Wardrobe Other Clothings ##
@@ -802,18 +712,6 @@ screen wardrobe():
                 hotspot (75+360, 139, 83, 85) clicked [SetVariable("wardrobe_stockings_category",4),Show("wardrobe")]
                 add "interface/wardrobe/icons/"+str(active_girl)+"/robes.png" xpos 75+360 ypos 139 zoom 0.2
                 #text "Robes" xalign 0.5 xpos 115+360 ypos 140+75 size 10
-
-            #Color Palette
-            if (wardrobe_stockings_category in [3] and active_girl in ["cho"]):
-                hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_stockings_color","base"), SetVariable("update_wr_colors",True), Jump("wardrobe_update")]
-                add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
-
-                for i in range(0,len(wr_clothcolor)):
-                    $ row = i // 7
-                    $ col = i % 7
-
-                    hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_stockings_color",wr_clothcolor[i]), Jump("wardrobe_update")]
-                    add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
 
 
             #Neckwear
@@ -861,11 +759,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("stockings_color_choice",wardrobe_stockings_color), SetVariable("stockings_choice",wr_stockings[i]), Jump("equip_stockings")]
-                    if active_girl in ["cho"]:
-                        add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wardrobe_stockings_color)+"/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
-                    else: # No color variants
-                        add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("stockings_choice",wr_stockings[i]), Jump("equip_stockings")]
+                    add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
 
             #Robes
             if wardrobe_stockings_category == 4:
@@ -894,10 +789,6 @@ screen wardrobe():
                 hotspot (75+90, 139, 83, 85) clicked [SetVariable("wardrobe_accessories_category",1),Show("wardrobe")]
                 add "interface/icons/item_anal_plugs.png" xpos 72+90 ypos 128 zoom 0.30
                 text "Toys" xalign 0.5 xpos 115+90 ypos 140+75 size 10
-            #
-            #hotspot (75+180, 139, 83, 85) clicked [SetVariable("wardrobe_accessories_category",2),Show("wardrobe")]
-            #add "" xpos 0+180 ypos 90 zoom 0.3/scaleratio
-            #text "" xalign 0.5 xpos 115+180 ypos 140+75 size 10
             #Piercings
             if active_girl in ["hermione","cho","tonks"]:
                 hotspot (75+270, 139, 83, 85) clicked [SetVariable("wardrobe_accessories_category",3),Show("wardrobe")]
@@ -933,10 +824,6 @@ screen wardrobe():
 
                     hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("misc_item_choice",(wr_items_list[i])), Jump("equip_misc_item")]
                     add "interface/icons/"+wr_items_list[i]+".png" xpos 72+(90*col) ypos (128+92+(92*row)) zoom 0.30
-
-            ##
-            #if wardrobe_accessories_category == 2:
-            #    hotspot (75+180, 139, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
 
             ##  Piercings ##
             if wardrobe_accessories_category == 3:
@@ -992,18 +879,6 @@ screen wardrobe():
                 add "interface/wardrobe/icons/"+str(active_girl)+"/stockings.png" xpos 75+360 ypos 139 zoom 0.2
                 #text "Stockings" xalign 0.5 xpos 115+360 ypos 140+75 size 10
 
-            #Color Palette
-            if active_girl in ["hermione","cho"] and wardrobe_underwear_category in [0,1,3] or active_girl in ["cho"] and wardrobe_underwear_category in [4]:
-                hotspot (347, 95, 20, 20) clicked [SetVariable("wardrobe_underwear_color","base"), Jump("wardrobe_update")]
-                add "interface/wardrobe/icons/colors/base.png" xpos 348 ypos 96
-
-                for i in range(0,len(wr_clothcolor)):
-                    $ row = i // 7
-                    $ col = i % 7
-
-                    hotspot ((370+(20*col)), (84+(20*row)), 20, 20) clicked [SetVariable("wardrobe_underwear_color",wr_clothcolor[i]), Jump("wardrobe_update")]
-                    add "interface/wardrobe/icons/colors/"+wr_clothcolor[i]+".png" xpos 371+(20*col) ypos (85+(20*row))
-
 
             #Bras
             if wardrobe_underwear_category == 0:
@@ -1014,8 +889,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",wr_bras[i]), Jump("equip_bra")]
-                    add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_bras[i]+".png" xpos 15+(90*col) ypos (55+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",wr_bras[i]), Jump("equip_bra")]
+                    add "characters/"+str(active_girl)+"/clothes/bras/"+wr_bras[i]+".png" xpos 15+(90*col) ypos (55+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Panties
             if wardrobe_underwear_category == 1:
@@ -1026,8 +901,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",wr_panties[i]), Jump("equip_panties")]
-                    add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_panties[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",wr_panties[i]), Jump("equip_panties")]
+                    add "characters/"+str(active_girl)+"/clothes/panties/"+wr_panties[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Nighties & Onepieces #Needs art edits for large breasts, poses,...
             if wardrobe_underwear_category == 2:
@@ -1050,8 +925,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_color_choice",wardrobe_underwear_color),SetVariable("underwear_choice",(wr_garterbelts[i])), Jump("equip_garterbelt")]
-                    add "characters/"+str(active_girl)+"/clothes/underwear/"+str(wardrobe_underwear_color)+"/"+wr_garterbelts[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_garterbelts[i])), Jump("equip_garterbelt")]
+                    add "characters/"+str(active_girl)+"/clothes/garterbelts/"+wr_garterbelts[i]+".png" xpos 15+(90*col) ypos (17+icon_ypos_offset+92+(92*row)) zoom 0.35/scaleratio
 
             #Stockings
             if wardrobe_underwear_category == 4:
@@ -1062,11 +937,8 @@ screen wardrobe():
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("stockings_color_choice",wardrobe_underwear_color), SetVariable("stockings_choice",wr_stockings[i]), Jump("equip_stockings")]
-                    if active_girl in ["cho"]:
-                        add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wardrobe_underwear_color)+"/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
-                    else: # No color variants
-                        add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("stockings_choice",wr_stockings[i]), Jump("equip_stockings")]
+                    add "characters/"+str(active_girl)+"/clothes/stockings/"+str(wr_stockings[i])+".png" xpos -25+(90*col) ypos -75+92+(92*row) zoom 0.5/scaleratio
 
 
 ## Wardrobe Outfits ##

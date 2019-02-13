@@ -7,7 +7,7 @@ label tonks_init:
 
         #Body
         $ tonks_base                = "characters/tonks/body/base/base_01.png"
-        $ tonks_boobs               = "characters/tonks/body/base/boobs_0.png"
+        $ tonks_breasts               = "characters/tonks/body/base/boobs_0.png"
 
         $ tonks_l_arm               = "characters/tonks/body/arms/l_arm_hips.png"
         $ tonks_l_arm_overlay       = "characters/tonks/body/arms/l_arm_hips_overlay.png"
@@ -110,21 +110,21 @@ label tonks_init:
 
 
         #Top
-        $ tonks_top                 = "characters/tonks/clothes/tops/base/top_auror_1.png"
+        $ tonks_top                 = "characters/tonks/clothes/tops/top_auror_1.png"
         $ ton_top                     = "top_auror_1"
         $ ton_top_color               = "base"
 
         #Bottom
-        $ tonks_bottom               = "characters/tonks/clothes/bottoms/base/blank.png"
+        $ tonks_bottom               = "characters/tonks/clothes/bottoms/blank.png"
         $ ton_bottom                   = "blank"
         $ ton_bottom_color             = "base"
 
         #Underwear
-        $ tonks_bra                 = "characters/tonks/clothes/underwear/base/blank.png"
+        $ tonks_bra                 = "characters/tonks/clothes/bras/blank.png"
         $ ton_bra                     = "blank"
         $ ton_bra_color               = "base"
 
-        $ tonks_panties             = "characters/tonks/clothes/underwear/base/panties_base.png"
+        $ tonks_panties             = "characters/tonks/clothes/panties/panties_base.png"
         $ ton_panties                 = "panties_base"
         $ ton_panties_color           = "base"
 
@@ -132,7 +132,7 @@ label tonks_init:
         $ ton_onepiece                = "blank"
         $ ton_onepiece_color          = "base"
 
-        $ tonks_garterbelt          = "characters/tonks/clothes/underwear/base/blank.png"
+        $ tonks_garterbelt          = "characters/tonks/clothes/garterbelts/blank.png"
         $ ton_garterbelt              = "blank"
         $ ton_garterbelt_color        = "base"
 

@@ -8,20 +8,20 @@ label update_cho_uniform:
     $ cho_hair_shadow  = "characters/cho/body/hair/" +str(c_hair_style)+ "_" +str(c_hair_color)+ "_top.png"
 
     #Top
-    $ cho_top            = "characters/cho/clothes/tops/" +str(c_top_color)+ "/" +str(c_top)+ ".png"
+    $ cho_top            = "characters/cho/clothes/tops/" +str(c_top)+ ".png"
 
     #Bottom
-    $ cho_bottom         = "characters/cho/clothes/bottoms/" +str(c_bottom_color)+ "/"+str(c_bottom)+".png"
+    $ cho_bottom         = "characters/cho/clothes/bottoms/"+str(c_bottom)+".png"
 
     #Underwear
-    $ cho_bra            = "characters/cho/clothes/underwear/" +str(c_bra_color)+ "/" +str(c_bra)+ ".png"
+    $ cho_bra            = "characters/cho/clothes/bras/" +str(c_bra)+ ".png"
     $ cho_onepiece       = "characters/cho/clothes/onepieces/" +str(c_onepiece)+ ".png"
-    $ cho_panties        = "characters/cho/clothes/underwear/" +str(c_panties_color)+ "/" +str(c_panties)+ ".png"
-    $ cho_garterbelt     = "characters/cho/clothes/underwear/" +str(c_garterbelt_color)+ "/" +str(c_garterbelt)+ ".png"
+    $ cho_panties        = "characters/cho/clothes/panties/" +str(c_panties)+ ".png"
+    $ cho_garterbelt     = "characters/cho/clothes/garterbelts/" +str(c_garterbelt)+ ".png"
 
     $ cho_neckwear       = "characters/cho/clothes/neckwear/" +str(c_neckwear)+ ".png"
     $ cho_gloves         = "characters/cho/clothes/gloves/" +str(c_gloves)+ ".png"
-    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings_color)+ "/" +str(c_stockings)+ ".png"
+    $ cho_stockings      = "characters/cho/clothes/stockings/" +str(c_stockings)+ ".png"
     $ cho_robe           = "characters/cho/clothes/robe/" +str(c_robe)+ ".png"
 
     #Accessories
@@ -374,22 +374,22 @@ label update_cho_quidditch_outfit:
     $ cc_outfit_quidditch_ITEM.outfit_layers = []
 
     if cho_quidd_points == 0:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/pants_yoga_long.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("bottoms/pants_yoga_long.png")
     elif cho_quidd_points == 1:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_2.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("bottoms/skirt_2.png")
     elif cho_quidd_points == 2:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_3.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("bottoms/skirt_3.png")
     else:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_4.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("bottoms/skirt_4.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("tops/sweater_1.png")
 
     if cho_quidd_points in [0,1,2,3, 5,6]: #Not 4 #Wears robe!
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../robe/robe_quidditch_1.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("robe/robe_quidditch_1.png")
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1_overlay.png") #Hand Overlay #Important
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("tops/sweater_1_overlay.png") #Hand Overlay #Important
 
-    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../gloves/gloves_quidditch.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("gloves/gloves_quidditch.png")
 
     return
 

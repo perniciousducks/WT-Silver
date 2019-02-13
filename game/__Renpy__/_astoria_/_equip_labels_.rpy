@@ -14,16 +14,16 @@ label update_ast_uniform:
         $ astoria_hair_shadow  = "characters/astoria/body/hair/" +str(ast_hair_style)+ "_" +str(ast_hair_color)+ "_top.png"
 
     #Top
-    $ astoria_top            = "characters/astoria/clothes/tops/base/"+str(ast_top)+".png"
+    $ astoria_top            = "characters/astoria/clothes/tops/"+str(ast_top)+".png"
 
     #Bottom
-    $ astoria_bottom          = "characters/astoria/clothes/bottoms/base/"+str(ast_bottom)+".png"
+    $ astoria_bottom          = "characters/astoria/clothes/bottoms/"+str(ast_bottom)+".png"
 
     #Underwear
-    $ astoria_bra            = "characters/astoria/clothes/underwear/base/"+str(ast_bra)+".png"
+    $ astoria_bra            = "characters/astoria/clothes/bras/"+str(ast_bra)+".png"
     $ astoria_onepiece       = "characters/astoria/clothes/onepieces/"+str(ast_onepiece)+".png"
-    $ astoria_panties        = "characters/astoria/clothes/underwear/base/"+str(ast_panties)+".png"
-    $ astoria_garterbelt     = "characters/astoria/clothes/underwear/base/"+str(ast_garterbelt)+".png"
+    $ astoria_panties        = "characters/astoria/clothes/panties/"+str(ast_panties)+".png"
+    $ astoria_garterbelt     = "characters/astoria/clothes/garterbelts/"+str(ast_garterbelt)+".png"
 
     $ astoria_neckwear       = "characters/astoria/clothes/neckwear/"+str(ast_neckwear)+".png"
     $ astoria_gloves         = "characters/astoria/clothes/gloves/"+str(ast_gloves)+".png"

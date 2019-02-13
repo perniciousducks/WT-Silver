@@ -9,7 +9,9 @@ label day_start:
 #    $ renpy.set_style_preference("dialog", "Day")
 
 $ daytime = True #True when it is daytime. Turns False during nighttime.
-$ interface_color = "gold"
+# Dont change UI if using nightmode
+if not persistent.nightmode:
+    $ interface_color = "gold"
 
 $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
 $ save_name = temp_name

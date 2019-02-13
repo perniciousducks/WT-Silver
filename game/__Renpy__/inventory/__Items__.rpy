@@ -115,7 +115,7 @@ label store_items_init:
     #Badges
     if not hasattr(renpy.store,'spew_badge_ITEM'):
         $ spew_badge_ITEM      = item_class(id="spew_badge", name="S.P.E.W. Badge",       type="accessory", items=["badge"],       image="badge_spew",        cost=5,  description=">A badge designed to show one's opposition of elf\n slavery.")
-        $ cum_badge_ITEM       = item_class(id="cum_badge", name="I <3 C.U.M. Badge",     type="accessory", items=["badge"],       image="badge_I_love_cum",  cost=15, description=">A badge that displays ones affection towards semen.")
+        $ cum_badge_ITEM       = item_class(id="cum_badge", name="I <3 C.U.M. Badge",     type="accessory", items=["badge"],       image="badge_cum",  cost=15, description=">A badge that displays ones affection towards semen.")
         $ cat_ears_ITEM        = item_class(id="cat_ears", name="Cat Ears",               type="accessory", items=["ears","tail"], image="ears_cat",          cost=40, description=">A fluffy set of catlike ears that matches one's\n hair-color!")
         $ elf_ears_ITEM        = item_class(id="elf_ears", name="Elf Ears",               type="accessory", items=["ears"],        image="ears_elf",          cost=20, description=">A pointy set of elven ears.")
         $ reading_glasses_ITEM = item_class(id="reading_glasses", name="Reading Glasses", type="accessory", items=["glasses"],     image="glasses_reading",   cost=50, description=">A lot of wizards are into girls wearing these!")
@@ -419,7 +419,7 @@ init -2 python:
         cost = 0
         wait_time = 1
         description = ""
-        
+
         #Used in decorations
         active = False # Check if decoration is used or not
 

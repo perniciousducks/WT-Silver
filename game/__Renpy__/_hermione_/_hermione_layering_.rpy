@@ -246,33 +246,27 @@ label update_her_uniform:
 
     #Top
     if hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
-        if h_top in h_top_has_no_recolor_list:
-            $ hermione_top = "characters/hermione/clothes/tops/base/large_breasts/"+str(h_action_top)+""+str(h_top)+".png"
-        else:
-            $ hermione_top = "characters/hermione/clothes/tops/"+h_top_color+"/large_breasts/"+str(h_action_top)+""+str(h_top)+".png"
+        $ hermione_top = "characters/hermione/clothes/tops/large_breasts/"+str(h_action_top)+""+str(h_top)+".png"
     else:
-        if h_top in h_top_has_no_recolor_list:
-            $ hermione_top = "characters/hermione/clothes/tops/base/"+str(h_action_top)+""+str(h_top)+".png"
-        else:
-            $ hermione_top = "characters/hermione/clothes/tops/"+h_top_color+"/"+str(h_action_top)+""+str(h_top)+".png"
+        $ hermione_top = "characters/hermione/clothes/tops/"+str(h_action_top)+""+str(h_top)+".png"
 
     #Bottom
-    $ hermione_bottom = "characters/hermione/clothes/bottoms/"+h_bottom_color+"/"+str(h_action_bottom)+""+str(h_bottom)+".png"
+    $ hermione_bottom = "characters/hermione/clothes/bottoms/"+str(h_action_bottom)+""+str(h_bottom)+".png"
 
 
     ### Underwear ###
     #Bra
     if hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
-        $ hermione_bra = "characters/hermione/clothes/underwear/"+h_bra_color+"/large_breasts/"+str(h_bra)+".png"
+        $ hermione_bra = "characters/hermione/clothes/bras/large_breasts/"+str(h_bra)+".png"
     else:
-        $ hermione_bra = "characters/hermione/clothes/underwear/"+h_bra_color+"/"+str(h_bra)+".png"
+        $ hermione_bra = "characters/hermione/clothes/bras/"+str(h_bra)+".png"
 
     #Panties
-    $ hermione_panties = "characters/hermione/clothes/underwear/"+h_panties_color+"/"+str(h_panties)+".png"
+    $ hermione_panties = "characters/hermione/clothes/panties/"+str(h_panties)+".png"
     if hermione_wetpanties:
-        $ hermione_panties_overlay = "characters/hermione/clothes/underwear/pantystain.png"
+        $ hermione_panties_overlay = "characters/hermione/clothes/panties/pantystain.png"
     else:
-        $ hermione_panties_overlay = "characters/hermione/clothes/underwear/blank.png"
+        $ hermione_panties_overlay = "characters/hermione/clothes/panties/blank.png"
 
     #Onepiece
     if hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
@@ -281,7 +275,7 @@ label update_her_uniform:
         $ hermione_onepiece = "characters/hermione/clothes/onepieces/"+str(h_onepiece)+".png"
 
     #Garterbelt
-    $ hermione_garterbelt = "characters/hermione/clothes/underwear/"+h_garterbelt_color+"/"+str(h_garterbelt)+".png"
+    $ hermione_garterbelt = "characters/hermione/clothes/garterbelts/"+str(h_garterbelt)+".png"
 
 
     ### Other Clothing ###
@@ -725,8 +719,8 @@ screen hermione_clone:
   ### CLOTHES
     add "characters/hermione/clothes/stockings/fishnet_a.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
 
-    add "characters/hermione/clothes/bottoms/base/skirt_6.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-    add "characters/hermione/clothes/tops/base/top_5_g.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
+    add "characters/hermione/clothes/bottoms/skirt_6.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
+    add "characters/hermione/clothes/tops/top_5_g.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
 
     add "characters/hermione/body/head/B_2_2.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio) #Add the hair shadow
     ### ZORDER
@@ -736,7 +730,7 @@ screen hermione_clone:
 screen hermione_outfit:
     tag hermione_main
     for i in hermoine_outfit_GLBL.getOutfitLayers():
-        add "characters/hermione/clothes/custom/"+i xpos hermione_xpos ypos hermione_ypos alpha her_outfit_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+        add "characters/hermione/clothes/"+i+".png" xpos hermione_xpos ypos hermione_ypos alpha her_outfit_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     add hermione_hair_top xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     add hermione_costume_action_a xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder

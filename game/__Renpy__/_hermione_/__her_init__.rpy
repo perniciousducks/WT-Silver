@@ -172,23 +172,23 @@ label her_init:
 
 
         #Top
-        $ hermione_top              = "characters/hermione/clothes/tops/base/top_1_g.png"
+        $ hermione_top              = "characters/hermione/clothes/tops/top_1_g.png"
         $ h_top                     = "top_1_g"
         $ h_top_color               = "base"
 
 
         #Bottom
-        $ hermione_bottom            = "characters/hermione/clothes/bottoms/base/skirt_1.png"
+        $ hermione_bottom            = "characters/hermione/clothes/bottoms/skirt_1.png"
         $ h_bottom                   = "skirt_1"
         $ h_bottom_color             = "base"
 
 
         #Underwear
-        $ hermione_bra              = "characters/hermione/clothes/underwear/base/bra_base.png"
+        $ hermione_bra              = "characters/hermione/clothes/bras/bra_base.png"
         $ h_bra                     = "bra_base"
         $ h_bra_color               = "base"
 
-        $ hermione_panties          = "characters/hermione/clothes/underwear/base/panties_base.png"
+        $ hermione_panties          = "characters/hermione/clothes/panties/panties_base.png"
         $ h_panties                 = "panties_base"
         $ h_panties_color           = "base"
 
@@ -315,17 +315,17 @@ label her_clothing_lists_init: #Lists update at every game start!
 
     #Tops
     $ h_top_nipfix_list             = ["onepiece_microdress",
-                                       "top_fishnets",
+                                       "top_fishnets_1",
                                        ]
 
-    $ h_top_has_no_recolor_list     = ["leather_jacket_short_sleeves",
-                                       "leather_jacket_short_sleeves_open",
-                                       "leather_jacket_sleeveless",
-                                       "leather_jacket_sleeveless_open",
-                                       "leather_jacket_sleeves",
-                                       "leather_jacket_sleeves_open",
+    $ h_top_has_no_recolor_list     = ["top_jacket_2",
+                                       "top_jacket_open_2",
+                                       "top_jacket_3",
+                                       "top_jacket_open_3",
+                                       "top_jacket_1",
+                                       "top_jacket_open_1",
                                        "top_rocker",
-                                       "top_fishnets",
+                                       "top_fishnets_1",
                                        ]
 
     $ h_top_remove_bra_list         = ["top_1_g", "top_1_s",
@@ -341,8 +341,8 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_cheer_s",
                                        "top_cheer_r",
                                        "top_cheer_h",
-                                       "normal_pullover",
-                                       "normal_sweater",
+                                       "top_pullover_1",
+                                       "top_sweater_1",
                                        ]
 
     $ h_lift_top_list               = ["top_1_g", "top_1_s",
@@ -350,9 +350,9 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "top_3_g", "top_3_s",
                                        "top_4_g", "top_4_s",
                                        "top_6_g", "top_6_s",
-                                       "normal_pullover",
-                                       "normal_pullover_sexy",
-                                       "top_fishnets",
+                                       "top_pullover_1",
+                                       "top_pullover_2",
+                                       "top_fishnets_1",
                                        "top_rocker",
                                        ]
 
@@ -375,8 +375,6 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "skirt_cheer_sexy_s",
                                        "skirt_cheer_sexy_r",
                                        "skirt_cheer_sexy_h",
-                                       "skirt_belted_mini",
-                                       "skirt_belted_micro",
                                        ]
 
     $ h_pants_list                  = ["pants_jeans_long",
@@ -409,7 +407,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                       ]
 
                                        #Bras that need the pressed breast variant
-    $ h_bra_pressed_list            = ["top_fishnets"
+    $ h_bra_pressed_list            = ["top_fishnets_1"
                                       ]
 
     #Piercings
@@ -419,8 +417,7 @@ label her_clothing_lists_init: #Lists update at every game start!
                                        "ears_straight",
                                        "ears_rings",
                                        "ears_gambler",
-                                       "ears_feather_white",
-                                       "ears_feather_black",
+                                       "ears_feather",
                                       ]
     $ tongue_piercings_list         = ["tongue_pearls",
                                       ]
@@ -498,7 +495,7 @@ label her_progress_init:
         #Public Request Vars.
         $ hg_pr_SexWithClassmate_AltFlag = False
 
-        $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. "Lazy Akabur bug". Turns FALSE after that.
+        $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. Turns FALSE after that.
         $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
         $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
         $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.

@@ -567,6 +567,16 @@ init python:
             alpha = "0"+alpha    
         
         return "#" + red + green + blue + alpha
+        
+    def get_hex_string_tuple(color):
+        return get_hex_string(color[0], color[1], color[2], color[3])
+        
+    def get_rgb_tuple(hex):
+        hex = hex.lstrip('#')
+        hex_len = len(hex)
+        rgb = tuple(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
+        rgb = rgb + (255,) # Add alpha
+        return rgb
     
     def get_width(image):   
         return get_image_size(image)[0]

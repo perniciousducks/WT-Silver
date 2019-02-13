@@ -337,7 +337,7 @@ label jerk_off_to_cho:
                             call ctc
 
                             call cho_main("[cho_genie_name], how much longer are you going to-","horny","suspicious","sad","downR")
-                            g4 "Here is comes!"
+                            g4 "Here it comes!"
                             call cum_block
                             call gen_chibi("cumming_behind_desk")
                             call cum_block
@@ -2728,7 +2728,6 @@ label cho_favor_3_3:
                     m "That's it. That's it..."
                     "While Cho's tongue twists and tickles your asshole you pump your thick meat wand."
                     "Cho's hands push your own away and she begins to pound your cock while tongueing your ass."
-                    m "By the Jews of Akabur..."
                     "Cho's hands work in concert with her tongue and it's not long before you find yourself on the edge."
                     #Genie Cums.
                     "Your cock explodes in Cho's soft, slippery hands as her tongue presses deep into your ass."

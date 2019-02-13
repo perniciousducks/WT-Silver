@@ -19,12 +19,16 @@ label phoenix:
                 hide screen desk
                 with Dissolve(0.5)
                 jump day_main_menu
-            
+
 
     if day != 1:
         menu:
             "Testing Card Game":
                 jump test_card_game
+            "Testing clothes":
+                jump color_cloth_test
+            "Test new wardrobe":
+                jump cho_wardrobe_test
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1
@@ -33,8 +37,8 @@ label phoenix:
             $ phoenix_is_petted = True
             $ phoenix_petted_counter += 1
             jump petting
-            
-        
+
+
 
     call screen main_room_menu
 

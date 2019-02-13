@@ -262,7 +262,7 @@ label date_with_snape_09:
     call sna_head("....................","snape_09")
     m "......................"
     call sna_head("What do you think all of that means?","snape_05")
-    m "Sounds like another one of Akabur's self-inserts."
+    m "Some form of self insert, probably."
     call sna_head("What?","snape_05")
     m "Just ignore the whole thing."
     m "A silly dream, nothing more."

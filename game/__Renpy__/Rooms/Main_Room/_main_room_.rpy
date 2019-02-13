@@ -65,7 +65,8 @@ screen main_room_overlay:
 ### Main Room Menu Screen ###
 screen main_room_menu:
     #Hotkeys
-    use hotkeys_main
+    if day != 1:
+        use hotkeys_main
 
     tag room_screen
     imagebutton: # DOOR

@@ -25,7 +25,7 @@ label equip_bra:
 
 ### Equip Hermione's Bra ###
 label equip_her_bra:
-    if underwear_choice == h_bra and underwear_color_choice == h_bra_color:
+    if underwear_choice == h_bra:
         $ hide_transitions = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
@@ -225,7 +225,7 @@ label equip_her_bra:
                         ">Try again at Whoring level 20."
                     jump return_to_wardrobe
 
-            elif underwear_choice in ["top_fishnets"]:
+            elif underwear_choice in ["top_fishnets_1"]:
                 g9 "I've got something for you! Try it out!"
                 if her_whoring >= 20: #Success
                     call her_main("Wow. Fishnets?","smile","down")
@@ -259,7 +259,7 @@ label equip_her_bra:
 
 
 
-            call set_her_bra(underwear_choice, underwear_color_choice)
+            call set_her_bra(underwear_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = 1
@@ -287,14 +287,14 @@ label equip_her_bra:
                     ">Try again at Whoring level 17."
                 jump return_to_wardrobe
 
-            if her_whoring < 20 and underwear_choice in ["bra_french_maid","bra_tape","top_fishnets"]:
+            if her_whoring < 20 and underwear_choice in ["bra_french_maid","bra_tape","top_fishnets_1"]:
                 "She won't wear this item just yet."
                 if cheats_active or game_difficulty <= 2:
                     ">Try again at Whoring level 20."
                 jump return_to_wardrobe
 
             #Success!
-            call set_her_bra(underwear_choice, underwear_color_choice)
+            call set_her_bra(underwear_choice)
 
             call her_main(xpos="wardrobe")
             hide screen wardrobe
@@ -323,7 +323,7 @@ label equip_sus_bra:
 
 ### Equip Cho's Bra ###
 label equip_cho_bra:
-    call set_cho_bra(underwear_choice, underwear_color_choice)
+    call set_cho_bra(underwear_choice)
 
     jump return_to_wardrobe
 
@@ -419,7 +419,7 @@ label equip_panties:
 
 ### Equip Hermione's Panties ###
 label equip_her_panties:
-    if underwear_choice == h_panties and underwear_color_choice == h_panties_color:
+    if underwear_choice == h_panties:
         $ hide_transitions = True
         #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
@@ -619,7 +619,7 @@ label equip_her_panties:
 
 
 
-            call set_her_panties(underwear_choice, underwear_color_choice)
+            call set_her_panties(underwear_choice)
 
             call her_main(xpos="wardrobe")
             $ hide_transitions = 1
@@ -654,7 +654,7 @@ label equip_her_panties:
                 jump return_to_wardrobe
 
             #Success!
-            call set_her_panties(underwear_choice, underwear_color_choice)
+            call set_her_panties(underwear_choice)
 
             call her_main(xpos="wardrobe")
             hide screen wardrobe
@@ -681,7 +681,7 @@ label equip_sus_panties:
 
 ### Equip Cho's Panties ###
 label equip_cho_panties:
-    call set_cho_panties(underwear_choice, underwear_color_choice)
+    call set_cho_panties(underwear_choice)
 
     jump return_to_wardrobe
 
@@ -717,36 +717,36 @@ label equip_garterbelt:
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
-    call set_her_garterbelt(underwear_choice, underwear_color_choice)
+    call set_her_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 
 ### Equip Luna's Garterbelt ###
 label equip_lun_garterbelt:
-    call set_lun_garterbelt(underwear_choice, underwear_color_choice)
+    call set_lun_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 
 ### Equip Astoria's Garterbelt ###
 label equip_ast_garterbelt:
-    call set_ast_garterbelt(underwear_choice, underwear_color_choice)
+    call set_ast_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
-    call set_sus_garterbelt(underwear_choice, underwear_color_choice)
+    call set_sus_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 
 ### Equip Cho's Garterbelt ###
 label equip_cho_garterbelt:
-    call set_cho_garterbelt(underwear_choice, underwear_color_choice)
+    call set_cho_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 
 ### Equip Tonks's Garterbelt ###
 label equip_ton_garterbelt:
-    call set_ton_garterbelt(underwear_choice, underwear_color_choice)
+    call set_ton_garterbelt(underwear_choice)
 
     jump return_to_wardrobe

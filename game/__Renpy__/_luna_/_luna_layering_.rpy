@@ -111,7 +111,7 @@ screen luna_outfit:
     tag luna_main
 
     for i in luna_outfit_GLBL.getOutfitLayers():
-        add "characters/luna/clothes/custom/"+i xpos luna_xpos ypos luna_ypos alpha lun_outfit_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
+        add "characters/luna/clothes/"+i+".png" xpos luna_xpos ypos luna_ypos alpha lun_outfit_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
 
     ### ZORDER
     zorder luna_zorder

@@ -116,7 +116,7 @@ screen universal_walk:
 
 ### MISC SCREENS
 screen bld1:
-    tag bld
+    tag bld1
     add "interface/bld.png"
     zorder 3
 
@@ -236,10 +236,12 @@ label item_description(item):
 
 
 screen blkfade:
+    tag blkfade
     zorder 6
     add "interface/blackfade.png"
 
 screen whitefade:
+    tag whitefade
     zorder 6
     add "interface/whitefade.png"
 

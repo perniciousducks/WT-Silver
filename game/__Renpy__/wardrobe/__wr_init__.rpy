@@ -82,7 +82,7 @@ screen cloth_test:
             cho_top_school_CLOTH.color[active_layer] = color_preview
 
     zorder 100
-    add cho_top_school_CLOTH.get_image() xpos 700 yalign 0.5 zoom 0.5 xanchor 0.5 yanchor 0.5
+    add cho_char.get_image() xpos 700 yalign 0.5 zoom 0.5 xanchor 0.5 yanchor 0.5
 
     vbox:
         xpos 850
@@ -189,24 +189,37 @@ init:
 
     $ cho_top_school_CLOTH = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[200, 100, 100, 255], [100, 200, 100, 255], [100, 100, 200, 255], [150, 50, 150, 255]], name="School top", desc="description") # Keep the 'type' plural please.
     #$ cho_top_school2_CLOTH = cloth_class(char="cho", type="top", id="school2", layers=4, name="School top", desc="description")
-    
+    $ cho_char = char_class(char="cho", head="ponytail_blue", arms="arm_down_l", breasts="breasts_bikini_tan", base="base_01", legs="blank", top=cho_top_school_CLOTH)
 init -5 python:
     class cloth_class(object):
-        char = "MISSING" # astoria, cho, hermione, luna, susan, tonks
-        type = "MISSING" # same as folder names
-        id = "MISSING"
-        layers = 4
+        char = None # astoria, cho, hermione, luna, susan, tonks
+        type = None # same as folder names
+        id = None
+        layers = None
         color = []
         color_default = []
         skinlayer = "characters/dummy.png"
 
-        name = "NONE"
+        name = ""
         desc = ""
 
         imagepath = ""
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
+            
+            if self.char == None:
+                raise Exception('Clothing: "char" was not defined in cloth_class.')
+                
+            if self.type == None:
+                raise Exception('Clothing: "type" was not defined in cloth_class.')
+                
+            if self.id == None:
+                raise Exception('Clothing: "id" was not defined in cloth_class.')
+                
+            if self.layers == None:
+                raise Exception('Clothing: "layers" number was not defined in cloth_class.')
+                
             self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"
                 
             if len(self.color) < self.layers:
@@ -216,6 +229,9 @@ init -5 python:
             self.color_default = [] # DO NOT DELETE !!!
             for i in xrange(0, len(self.color)):
                 self.color_default.append(self.color[i])
+                
+            if self.layers > len(self.color):
+                raise Exception('Clothing: "color" list does not match the number of layers in cloth_class.')
   
             if renpy.exists(self.imagepath+self.id+"/skin.png"):
                 self.skinlayer = self.imagepath+self.id+"/skin.png"
@@ -242,7 +258,7 @@ init -5 python:
             return self.color[layer][3]/255.0
 
         def set_color(self, layer):
-            self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer), pos_xy=[50, 130])
+            self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[50, 130])
             
         def reset_color(self):
             for i in xrange(0, len(self.color)):
@@ -268,4 +284,78 @@ init -5 python:
                            (1010, 1200),
                            (0,0), self.sprite,
                            (0,0), im.MatrixColor(str(self.get_imagelayer(i)), self.get_matrixcolor(i)))
+            return self.sprite
+            
+    class char_class(object):
+        char = None
+        pose = None
+        
+        # Clothing, accessory & tattoos
+        hat = None
+        neck = None
+        badge = None
+        outwear = None
+        gloves = None
+        top = None
+        bra = None
+        belt = None
+        bottom = None
+        garter = None
+        panties = None
+        stockings = None
+        
+        accessory = []
+        tattoo = []
+        
+        # Body
+        head = None
+        arms = None
+        breasts = None
+        base = None
+        legs = None
+        
+        imagepath = ""
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+            
+            if self.char == None:
+                raise Exception('Character: "char" was not defined in char_class.')
+                
+            if self.head == None:
+                raise Exception('Character: "head" was not defined in char_class.\n Or should I say, characters head is missing. :P')
+                
+            if self.arms == None:
+                raise Exception('Character: "arms" was not defined in char_class.')
+                
+            if self.breasts == None:
+                raise Exception('Character: "breasts" was not defined in char_class.\n Error 404, boobs not found.')
+                
+            if self.base == None:
+                raise Exception('Character: "base" was not defined in char_class.')
+                
+            if self.legs == None:
+                raise Exception('Character: "legs" was not defined in char_class.\nLEGS, MY LEGS AAAAAAAAAA!!!!')
+                
+            self.imagepath = "characters/"+self.char+"/body/"
+            
+            self.head = self.imagepath+"/head/"+self.head+".png"
+            self.arms = self.imagepath+"/arms/"+self.arms+".png"
+            self.breasts = self.imagepath+"/breasts/"+self.breasts+".png"
+            self.base = self.imagepath+"/base/"+self.base+".png"
+            self.legs = self.imagepath+"/legs/"+self.legs+".png"
+            
+        def get_image(self):
+            self.sprite = Composite(
+                    (1010, 1200),
+                    (0,0), self.legs,
+                    (0,0), self.base,
+                    (0,0), self.breasts,
+                    (0,0), self.arms,
+                    (0,0), self.head)
+            if not top == None:
+                self.sprite = Composite(
+                    (1010, 1200),
+                    (0,0), self.sprite,
+                    (0,0), self.top.get_image())
             return self.sprite

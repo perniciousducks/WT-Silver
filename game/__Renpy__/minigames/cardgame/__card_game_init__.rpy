@@ -539,6 +539,48 @@ init python:
                 if cardobj.title == elm.title:
                     return True
         return False
+    replace_index = 0
+    new_deck = []
+    def create_random_deck(min, max, card_pool):
+        new_deck = []
+        smalles_func = lambda elm1, elm2 : elm1.get_total_value() > elm2.get_total_value()
+        gretest_func = lambda elm1, elm2 : elm1.get_total_value() < elm2.get_total_value()
+        temp_pool = []
+        temp_pool.extend(card_pool)
+        for card in range(0,5):
+            random_choice = renpy.random.choice(temp_pool)
+                    
+            new_deck.append(random_choice)
+            del temp_pool[temp_pool.index(random_choice)]
+            
+        while min > get_deck_score(new_deck) or max < get_deck_score(new_deck):
+            replace_index = 0
+            if new_deck < min:
+                replace_index = find_index_func(temp_pool, smalles_func)
+            else:
+                replace_index = find_index_func(temp_pool, gretest_func)
+
+                
+            replace_index = clamp(replace_index,0,4)   
+            random_choice = renpy.random.choice(temp_pool)
+            
+            temp_pool.append(new_deck[replace_index])
+            new_deck[replace_index] = (random_choice)
+            del temp_pool[temp_pool.index(random_choice)]
+                
+        return new_deck
+    def find_index_func(seq, func):
+        func_index = 0
+        for i in range(0, len(seq)):
+            if func(seq[func_index], seq[i]):
+                func_index = i
+        return func_index
+        
+    def get_deck_score(deck):
+        score = 0
+        for card in deck:
+            score += card.get_total_value()
+        return score
     
     def playerTint(image):
         return im.MatrixColor( image, im.matrix.tint(playercolor_r, playercolor_g, playercolor_b))
@@ -692,6 +734,9 @@ init python:
             return self.textcolor+"amount: " + str(self.copies+1)+"{/color}"
         def get_totalvalue(self):
             return self.textcolor+str(self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue)+"{/color}"
+        def get_total_value(self):
+            return self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue    
+        
         def get_description(self):
             return self.textcolor+self.description+"{/color}"
             

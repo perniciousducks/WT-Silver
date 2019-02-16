@@ -59,12 +59,12 @@ label set_cho_hair(hair=None,color=None):
 label set_cho_hat(hat=""):
     hide screen cho_chang
 
-    if cho_wear_hat and c_hat == hat:
+    if cho_class.get_cloth("hat") and c_hat == hat:
         $ cho_request_wear_hat = False
-        $ cho_wear_hat = False
+        $ cho_class.strip("hat")
     else:
         $ cho_request_wear_hat = True
-        $ cho_wear_hat = True
+        $ cho_class.wear("hat")
         $ c_hat = hat
 
     call update_cho_uniform
@@ -75,12 +75,12 @@ label set_cho_hat(hat=""):
 label set_cho_top(top="", color=""):
     hide screen cho_chang
 
-    if cho_wear_top and c_top == top and c_top_color == color:
+    if cho_class.get_cloth("top") and c_top == top and c_top_color == color:
         $ cho_request_wear_top = False
-        $ cho_wear_top = False
+        $ cho_class.strip("top")
     else:
         $ cho_request_wear_top = True
-        $ cho_wear_top = True
+        $ cho_class.wear("top")
         $ c_top = top
         $ c_top_color = color
 
@@ -92,12 +92,12 @@ label set_cho_top(top="", color=""):
 label set_cho_bottom(bottom="", color=""):
     hide screen cho_chang
 
-    if cho_wear_bottom and c_bottom == bottom and c_bottom_color == color:
+    if cho_class.get_cloth("bottom") and c_bottom == bottom and c_bottom_color == color:
         $ cho_request_wear_bottom = False
-        $ cho_wear_bottom = False
+        $ cho_class.strip("bottom")
     else:
         $ cho_request_wear_bottom = True
-        $ cho_wear_bottom = True
+        $ cho_class.wear("bottom")
         $ c_bottom = bottom
         $ c_bottom_color = color
 
@@ -109,12 +109,12 @@ label set_cho_bottom(bottom="", color=""):
 label set_cho_bra(bra="", color=""):
     hide screen cho_chang
 
-    if cho_wear_bra and c_bra == bra and c_bra_color == color:
+    if cho_class.get_cloth("bra") and c_bra == bra and c_bra_color == color:
         $ cho_request_wear_bra = False
-        $ cho_wear_bra = False
+        $ cho_class.strip("bra")
     else:
         $ cho_request_wear_bra = True
-        $ cho_wear_bra = True
+        $ cho_class.wear("bra")
         $ c_bra = bra
         $ c_bra_color = color
 
@@ -142,12 +142,12 @@ label set_cho_onepiece(onepiece=""):
 label set_cho_panties(panties="", color=""):
     hide screen cho_chang
 
-    if cho_wear_panties and c_panties == panties and c_panties_color == color:
+    if cho_class.get_cloth("panties") and c_panties == panties and c_panties_color == color:
         $ cho_request_wear_panties = False
-        $ cho_wear_panties = False
+        $ cho_class.strip("panties")
     else:
         $ cho_request_wear_panties = True
-        $ cho_wear_panties = True
+        $ cho_class.wear("panties")
         $ c_panties = panties
         $ c_panties_color = color
 
@@ -159,9 +159,9 @@ label set_cho_panties(panties="", color=""):
 label set_cho_garterbelt(garter="", color=""):
     hide screen cho_chang
 
-    if cho_wear_garterbelt and c_garterbelt == garter and c_garterbelt_color == color:
+    if cho_class.get_cloth("garter") and c_garterbelt == garter and c_garterbelt_color == color:
         $ cho_request_wear_garterbelt = False
-        $ cho_wear_garterbelt = False
+        $ cho_class.strip("gerter")
     else:
         $ cho_request_wear_garterbelt = True
         $ cho_wear_garterbelt = True
@@ -176,7 +176,7 @@ label set_cho_garterbelt(garter="", color=""):
 label set_cho_neckwear(neck=""):
     hide screen cho_chang
 
-    if cho_wear_neckwear and c_neckwear == neck:
+    if cho_class.get_cloth("neckwear") and c_neckwear == neck:
         $ cho_request_wear_neckwear = False
         $ cho_wear_neckwear = False
     else:
@@ -398,9 +398,9 @@ label load_cho_clothing_saves:
 
     #Uniform & Underwear
     if cho_request_wear_top:
-        $ cho_wear_top          = True
+        $ cho_class.wear("top")
     else:
-        $ cho_wear_top          = False
+        $ cho_class.strip("top")
 
     if cho_request_wear_onepiece:
         $ cho_wear_onepiece     = True
@@ -408,30 +408,30 @@ label load_cho_clothing_saves:
         $ cho_wear_onepiece     = False
 
     if cho_request_wear_bra:
-        $ cho_wear_bra          = True
+        $ cho_class.wear("bra")
     else:
-        $ cho_wear_bra          = False
+        $ cho_class.strip("bra")
 
     if cho_request_wear_bottom:
-        $ cho_wear_bottom       = True
+        $ cho_class.wear("bottom")
     else:
-        $ cho_wear_bottom       = False
+        $ cho_class.strip("bottom")
 
     if cho_request_wear_panties:
-        $ cho_wear_panties      = True
+        $ cho_class.wear("panties")
     else:
-        $ cho_wear_panties      = False
+        $ cho_class.strip("panties")
 
     if cho_request_wear_garterbelt:
-        $ cho_wear_garterbelt   = True
+        $ cho_class.wear("garter")
     else:
-        $ cho_wear_garterbelt   = False
+        $ cho_class.strip("garter")
 
     #Other Clothing
     if cho_request_wear_neckwear:
-        $ cho_wear_neckwear     = True
+        $ cho_class.wear("neckwear")
     else:
-        $ cho_wear_neckwear     = False
+        $ cho_class.strip("neckwear")
 
     if cho_request_wear_accs:
         $ cho_wear_accs         = True
@@ -444,25 +444,25 @@ label load_cho_clothing_saves:
         $ cho_wear_body_accs    = False
 
     if cho_request_wear_gloves:
-        $ cho_wear_gloves       = True
+        $ cho_class.wear("gloves")
     else:
-        $ cho_wear_gloves       = False
+        $ cho_class.strip("gloves")
 
     if cho_request_wear_stockings:
-        $ cho_wear_stockings    = True
+        $ cho_class.wear("stockings")
     else:
-        $ cho_wear_stockings    = False
+        $ cho_class.strip("stockings")
 
     if cho_request_wear_robe:
-        $ cho_wear_robe         = True
+        $ cho_class.wear("robe")
     else:
-        $ cho_wear_robe         = False
+        $ cho_class.strip("robe")
 
     #Head Accessories
     if cho_request_wear_hat:
-        $ cho_wear_hat          = True
+        $ cho_class.wear("hat")
     else:
-        $ cho_wear_hat          = False
+        $ cho_class.strip("hat")
 
     if cho_request_wear_glasses:
         $ cho_wear_glasses      = True

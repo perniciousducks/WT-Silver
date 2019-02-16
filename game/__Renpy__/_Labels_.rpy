@@ -166,16 +166,16 @@ label main_room:
     show screen blkfade
 
     #Predict and cache all often used images for the room
-    $ renpy.start_predict("interface/desk/*.*")
-    $ renpy.start_predict("interface/map/*.*")
-    $ renpy.start_predict("interface/icons/*.*")
-    $ renpy.start_predict("interface/frames/*.*")
-    $ renpy.start_predict("images/rooms/_objects_/*.*")
-    $ renpy.start_predict("images/rooms/_weather_/*.*")
-    $ renpy.start_predict("images/animation/working_*.*")
-    $ renpy.start_predict("images/animation/rum_*.*")
-    $ renpy.start_predict("images/animation/reading_*.*")
-    $ renpy.start_predict("images/animation/jerking_off_*.*")
+    #$ renpy.start_predict("interface/desk/*.*")
+    #$ renpy.start_predict("interface/map/*.*")
+    #$ renpy.start_predict("interface/icons/*.*")
+    #$ renpy.start_predict("interface/frames/*.*")
+    #$ renpy.start_predict("images/rooms/_objects_/*.*")
+    #$ renpy.start_predict("images/rooms/_weather_/*.*")
+    #$ renpy.start_predict("images/animation/working_*.*")
+    #$ renpy.start_predict("images/animation/rum_*.*")
+    #$ renpy.start_predict("images/animation/reading_*.*")
+    #$ renpy.start_predict("images/animation/jerking_off_*.*")
 
     call room("main_room")
 

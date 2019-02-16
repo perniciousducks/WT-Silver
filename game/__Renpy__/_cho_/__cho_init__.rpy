@@ -91,7 +91,7 @@ label cho_init:
 
         #Toggle
         $ cho_wear_top               = True
-        $ cho_wear_bra               = True
+        $ cho_class.wear("bra")
         $ cho_wear_bottom            = True
         $ cho_wear_panties           = True
 

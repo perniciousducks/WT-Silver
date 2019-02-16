@@ -5,8 +5,8 @@ label cho_random_clothing:
     call load_cho_clothing_saves
 
     $ cho_wear_outfit = False
-    $ cho_wear_top         = True
-    $ cho_wear_bottom      = True
+    $ cho_class.wear("top")
+    $ cho_class.wear("bottom")
 
     $ random_number = renpy.random.randint(1, 10)
 
@@ -25,12 +25,12 @@ label cho_random_clothing:
                 $ cho_request_wear_panties    = False
                 $ cho_request_wear_stockings  = True
 
-                $ cho_wear_bra         = False
-                $ cho_wear_panties     = False
-                $ cho_wear_stockings   = True
-                $ cho_wear_neckwear    = False
-                $ cho_wear_gloves      = False
-                $ cho_wear_robe        = False
+                $ cho_class.strip("bra")
+                $ cho_class.strip("panties")
+                $ cho_class.wear("stockings")
+                $ cho_class.strip("neckwear")
+                $ cho_class.strip("gloves")
+                $ cho_class.strip("robe")
                 $ c_top = "top_tanktop_2"
                 $ c_top_color = "base"
                 $ c_bottom = "pants_jeans_short"
@@ -80,14 +80,14 @@ label cho_random_clothing:
                 $ cho_request_wear_bottom    = True
                 $ cho_request_wear_panties   = False
 
-                $ cho_wear_top         = False
-                $ cho_wear_bra         = True
-                $ cho_wear_bottom      = True
-                $ cho_wear_panties     = False
-                $ cho_wear_neckwear    = False
-                $ cho_wear_gloves      = False
-                $ cho_wear_stockings   = False
-                $ cho_wear_robe        = False
+                $ cho_class.strip("top")
+                $ cho_class.wear("bra")
+                $ cho_class.wear("bottom")
+                $ cho_class.strip("panties")
+                $ cho_class.strip("neckwear")
+                $ cho_class.strip("gloves")
+                $ cho_class.strip("stockings")
+                $ cho_class.strip("robe")
                 $ c_bra = "bra_party"
                 $ c_bra_color = "base"
                 $ c_bottom = "skirt_party"

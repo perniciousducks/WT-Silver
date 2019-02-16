@@ -38,14 +38,14 @@ label cho_favor_1_1:
             call cho_main("Fine...","pout","base","angry","R")
             call nar(">Cho quickly removes her tie before starting to undo her shirt.","start")
             call nar(">Her inexperience is obvious and she struggles for a moment.","end")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             call cho_main("Sorry, about that.","open","base","sad","mid")
             g9 "Don't worry, girl. You're doing great!"
             call cho_main("Thanks.","angry","base","sad","R")
             m "Now take off your skirt..."
             call cho_main("O-okay...","horny","base","sad","down")
             call nar(">Cho takes a deep breath, then swiftly drops her skirt.")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             call ctc
             jump let_cho_strip
 
@@ -56,14 +56,14 @@ label cho_favor_1_1:
             m "Besides, Just thinking about Miss Granger's ass makes me-"
             call cho_main("Fine, I'll do it...","pout","base","angry","R")
             call nar(">Cho takes a deep breath, then swiftly drops her skirt.")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             call cho_main("There, my skirt is gone!","angry","base","sad","down")
             g9 "I can see that, Miss Chang!"
             m "Now take off your shirt..."
             call cho_main("O-okay...","open","base","sad","mid")
             call nar(">Cho quickly removes her tie before starting to undo her shirt.","start")
             call nar(">Her inexperience is obvious and she struggles for a moment.","end")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             call ctc
             jump let_cho_strip
 
@@ -135,7 +135,7 @@ label cho_favor_1_1:
         g9 "Why don't you thank me by taking off that bra?"
         call cho_main("Of course, sir.","horny","base","sad","down")
         pause.5
-        $ cho_wear_bra = False
+        $ cho_class.strip("bra")
         call ctc
         call cho_main("I bet my tight body looks way better than Hermione's...","soft","base","raised","mid")
 
@@ -177,7 +177,7 @@ label cho_favor_1_2:
     m "If you're not interested, I'm sure Hermione wouldn't mind..."
     call cho_main("!!!","pout","wide","sad","mid",trans="hpunch")
     call cho_main("I'll do it.","horny","base","sad","R")
-    $ cho_wear_top = False
+    $ cho_class.strip("top")
     call cho_main("There! How is that?","horny","base","sad","R")
 
     menu:
@@ -185,11 +185,11 @@ label cho_favor_1_2:
             g9 "Nice!"
             m "Now the bottom."
             call cho_main("Yes, uhm... [cho_genie_name].","pout","base","sad","mid")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             call cho_main("(House points...loads of house points...)","horny","closed","sad","mid")
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             call cho_main("(Am I really doing this?)","angry","base","sad","down")
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             call cho_main("(Too late now...)","angry","closed","sad","mid")
             call ctc
 
@@ -201,16 +201,16 @@ label cho_favor_1_2:
             m "Go on, girl."
             call cho_main("Yes, sir!","smile","base","sad","R")
             call nar("Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips.")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             m "Nice."
             call cho_main("Thank you, [cho_genie_name].","base","closed","base","mid")
             call nar("Her hands nervously move to her bra.")
             call cho_main("Is this okay?","pout","base","sad","mid")
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             call cho_main("What do you think?","horny","angry","sad","R")
             m "Simply gorgeous."
             call nar("Finally, she pushes her panties down.")
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             call cho_main("...","upset","closed","sad","mid")
             g4 "Very nice."
             call cho_main("(...)","pout","base","sad","mid")
@@ -248,17 +248,17 @@ label cho_favor_1_3:
             "Despite her apparent confidence, Cho's hands shake as she reaches for the edge of her top."
             m "Get on with it, girl."
             call cho_main("Yes, [cho_genie_name]!","base","base","sad","R")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             "Cho grits her teeth and removes her top in one swift motion."
             m "That's better. Now the bottoms."
             call cho_main("Yes, [cho_genie_name].","pout","base","sad","mid")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             "Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips."
             call cho_main("(house points...loads of house points....)","smile","base","base","mid")
             "Her hands nervously move to her bra."
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             "She pulls it up, over her head, and lets it fall to the ground."
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             "Finally, she pushes her panties over her hips."
             m "Very good."
             call cho_main("........","smile","base","base","mid")
@@ -267,19 +267,19 @@ label cho_favor_1_3:
             "Despite her apparent confidence, Cho's hands shake as she reaches for the edge of her top."
             m "Go on, girl."
             call cho_main("Yes, [cho_genie_name]!","smile","base","sad","R")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             "Cho flashes a subdued smile and removes her top in one swift motion."
             m "Nice."
             call cho_main("Thank you, [cho_genie_name].","base","closed","base","mid")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             "Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips."
             call cho_main("is this okay?","pout","base","sad","mid")
             "Her hands nervously move to her bra."
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             "She pulls it up, over her head, and lets it fall to the ground."
             call cho_main("what do you think?","horny","angry","sad","R")
             m "Simply. gorgeous."
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             "Finally, she pushes her panties over her hips."
             m "Very nice."
             call cho_main("........","upset","closed","sad","mid")

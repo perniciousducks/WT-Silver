@@ -1,6 +1,15 @@
+screen cho_chang():
+    tag cho_main
+    zorder cho_zorder
+    add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
 
-
-screen cho_chang:
+#
+#
+# Below is old legacy code that is not used anywhere but it still might be useful
+# in the future in case we wanted to check the old layering zorder and/or their respective functions.
+#
+#
+screen cho_changLEGACY:
     tag cho_main
 
     #Behind body

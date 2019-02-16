@@ -59,6 +59,8 @@ label wardrobe_init:
     return
 
 label color_cloth_test:
+    $ cho_class.cache_override = True
+    $ current_clothing = cho_class.get_cloth("top")
     show screen cloth_test
 
     $ _return = ui.interact()
@@ -68,10 +70,11 @@ label color_cloth_test:
     if _return[0] == "change_color":
         $ active_layer = _return[1]
         show screen cloth_test()
-        $ cho_class.top.set_color(_return[1])
+        $ current_clothing.set_color(_return[1])
         hide screen cloth_test
+        $ cho_class.cache_override = False
     elif _return == "reset":
-        $ cho_class.top.reset_color()
+        $ current_clothing.reset_color()
 
     jump color_cloth_test
 
@@ -79,7 +82,7 @@ label color_cloth_test:
 screen cloth_test:
     python:
         if not color_preview == None:
-            cho_class.top.color[active_layer] = color_preview
+            current_clothing.color[active_layer] = color_preview
 
     zorder 100
     add cho_class.get_image() xpos 700 yalign 0.5 zoom 0.5 xanchor 0.5 yanchor 0.5
@@ -88,10 +91,10 @@ screen cloth_test:
         xpos 850
         ypos 300
         spacing 5
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(0)) xsize 50 ysize 50
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(1)) xsize 50 ysize 50
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(2)) xsize 50 ysize 50
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(3)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(0)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(1)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(2)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(3)) xsize 50 ysize 50
     vbox:
         xpos 900
         ypos 300
@@ -115,7 +118,7 @@ screen cho_uniform_test:
     tag cho_main
 
     ### CLOTHES
-    if cho_wear_bra:
+    if cho_class.get_cloth("bra"):
         add t_cho_bra.get_image() xpos cho_xpos ypos cho_ypos alpha cho_bra_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
     #if cho_wear_stockings:
     #    add t_cho_stockings xpos cho_xpos ypos cho_ypos alpha cho_stockings_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
@@ -189,29 +192,53 @@ init:
 
     $ cho_top_school_CLOTH = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[200, 100, 100, 255], [100, 200, 100, 255], [100, 100, 200, 255], [150, 50, 150, 255]], name="School top", desc="description") # Keep the 'type' plural please.
     #$ cho_top_school2_CLOTH = cloth_class(char="cho", type="top", id="school2", layers=4, name="School top", desc="description")
+    $ cho_test_cloth = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[200, 100, 100, 255], [100, 200, 100, 255], [100, 100, 200, 255], [150, 50, 150, 255]], name="School top", desc="description")
     
     
-    
-    
-    
-    $ cho_class = char_class(   char="cho", 
-                                head="ponytail_blue", 
-                                arms="arm_down_l", 
-                                breasts="breasts_bikini_tan", 
-                                base="base_01", 
-                                legs="blank",
-                                mouth="base",
-                                eyes="base",
-                                eyebrows="base",
-                                pupils="mid",
-                                cheeks="blank",
-                                tears="blank",
-                                extras="blank",
-                                emote="blank",
-                                top=cho_top_school_CLOTH, 
-                                bottom=t_cho_bottom, 
-                                bra=t_cho_bra, 
-                                panties=t_cho_panties)
+    python:
+        if not hasattr(renpy.store,'cho_class'): #important!
+            cho_class = char_class(char="cho")
+        
+        if not hasattr(renpy.store,'cho_body'): #important!
+            cho_class.body = {
+                        "hair":        ["ponytail_blue_top", 12, 0, 0, False],
+                        "hairshadow":  ["ponytail_blue_base", 11, 0, 0, False],
+                        "armleft":     ["arm_down_l", 17, 0, 0, False],
+                        "armright":    ["arm_down_r", 1, 0, 0, False],
+                        "breasts":     ["breasts_bikini_tan", 3, 0, 0, False],
+                        "base":        ["base_01", 2, 0, 0, False],
+                        "legs":        [None, 5, 1, 0, False]}
+        if not hasattr(renpy.store,'cho_face'): #important!
+            cho_class.face = {
+                        "tears":       [None, 11, 0, 0, False],
+                        "cheeks":      [None, 10, 0, 0, False],
+                        "eyebrows":    ["base", 9, 0, 0, False],
+                        "eyes":        ["base", 8, 1, 0, False],
+                        "pupils":      ["mid", 7, 0, 0, False],
+                        "whites":      ["_white_", 6, 0, 0, False],
+                        "mouth":       ["base", 5, 0, 0, False]}
+        if not hasattr(renpy.store,'cho_other'): #important!
+            cho_class.other = {
+                        "cum":         [None, 15, 0, 0, False],
+                        "emote":       [None, 30, 0, 0, False]}
+                        
+            cho_class.update_paths("body", "face", "other")
+        if not hasattr(renpy.store,'cho_clothing'): #important!
+            cho_class.clothing = {
+                        "hat":        [None, 24, 0, 0, False],
+                        "neckwear":   [None, 23, 0, 0, False],
+                        "badge":      [None, 22, 0, 0, False],
+                        "robe":       [None, 21, 0, 0, False],
+                        "gloves":     [None, 20, 0, 0, False],
+                        "top":        [cho_test_cloth, 19, 0, 0, False],
+                        "bra":        [t_cho_bra, 18, 0, 0, False],
+                        "belt":       [None, 17, 0, 0, False],
+                        "bottom":     [t_cho_bottom, 16, 0, 0, False],
+                        "garter":     [None, 15, 0, 0, False],
+                        "panties":    [t_cho_panties, 14, 0, 0, False],
+                        "stockings":  [None, 13, 0, 0, False],
+                        "plug":       [None, 0, 0, 0, False]}
+
 init -5 python:
     class cloth_class(object):
         char = None # astoria, cho, hermione, luna, susan, tonks
@@ -224,9 +251,12 @@ init -5 python:
 
         name = ""
         desc = ""
+        
+        pose = ""
 
         imagepath = ""
-
+        imagepath_original = ""
+        
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
             
@@ -243,6 +273,7 @@ init -5 python:
                 raise Exception('Clothing: "layers" number was not defined in cloth_class.')
                 
             self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"
+            self.imagepath_original = self.imagepath
                 
             if len(self.color) < self.layers:
                 for i in xrange(len(self.color), self.layers):
@@ -257,7 +288,13 @@ init -5 python:
   
             if renpy.exists(self.imagepath+self.id+"/skin.png"):
                 self.skinlayer = self.imagepath+self.id+"/skin.png"
-
+                
+        def set_pose(self, pose):
+            if renpy.exists(self.imagepath+self.id+"/"+pose+"_0.png"):
+                self.pose = pose
+                return True
+            return False
+            
         def get_character(self):
             return self.char
 
@@ -296,10 +333,13 @@ init -5 python:
             return self.imagepath
 
         def get_imagelayer(self, layer):
-            return self.imagepath+self.id+"/"+str(layer)+".png"
+            return self.imagepath+self.id+"/"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
                     
         def get_image(self):
             self.sprite = Image(self.skinlayer)
+            
+            # Keep used clothes images in cache
+            renpy.start_predict("characters/"+self.char+"/clothes/"+self.type+"/"+self.id+"/*.*")
 
             for i in xrange(0, self.layers):
                     self.sprite = Composite(
@@ -310,47 +350,14 @@ init -5 python:
             
     class char_class(object):
         char = None
-        pose = None
         
-        # Clothing, accessory & tattoos
-        hat = None
-        neckwear = None
-        badge = None
-        robe = None
-        gloves = None
-        top = None
-        bra = None
-        belt = None
-        bottom = None
-        garter = None
-        panties = None
-        stockings = None
+        cached = False
+        cache_override = False
         
-        body_accessory = []
-        accessory = []
-        tattoo = []
-        
-        # Body
-        head = None
-        arms = None
-        breasts = None
-        base = None
-        legs = None
-        
-        # Face
-        mouth = None
-        eyes = None
-        eyebrows = None
-        pupils = None
-        cheeks = None
-        tears = None
-        extras = None
-        emote = None
-        
-        # Flags
-        stripped = False
-        
-        imagepath = ""
+        body = {}
+        face = {}
+        clothing = {}
+        other = {}
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
@@ -358,195 +365,199 @@ init -5 python:
             if self.char == None:
                 raise Exception('Character: "char" was not defined in char_class.')
                 
-            if self.head == None:
-                raise Exception('Character: "head" was not defined in char_class.\n Or should I say, characters head is missing. :P')
+        def get_object(self, dict, *keys):
+            for key in keys:
+                try:
+                    dict = dict[key][0]
+                except KeyError:
+                    return None
+            return dict
+            
+        def get_cloth(self, cloth):
+            return self.get_object(self.clothing, cloth)
+            
+        def update_paths(self, *args):
+            symbol = "/"
+            
+            if 'body' in args:
+                imagepath = "characters/"+self.char+"/body/"
                 
-            if self.arms == None:
-                raise Exception('Character: "arms" was not defined in char_class.')
+                hair = self.get_object(self.body, 'hair')
+                hairshadow = self.get_object(self.body, 'hairshadow')
+                armleft = self.get_object(self.body, 'armleft')
+                armright = self.get_object(self.body, 'armright')
+                breasts = self.get_object(self.body, 'breasts')
+                base = self.get_object(self.body, 'base')
+                legs = self.get_object(self.body, 'legs')
                 
-            if self.breasts == None:
-                raise Exception('Character: "breasts" was not defined in char_class.\n Error 404, boobs not found.')
+                if hair and symbol not in hair :
+                    self.body['hair'][0] = imagepath+"hair/"+hair+".png"
+                if hairshadow and symbol not in hairshadow :
+                    self.body['hairshadow'][0] = imagepath+"hair/"+hairshadow+".png"
+                if armleft and symbol not in armleft:
+                    self.body['armleft'][0] = imagepath+"arms/"+armleft+".png"
+                if armright and symbol not in armright:
+                    self.body['armright'][0] = imagepath+"arms/"+armright+".png"
+                if breasts and symbol not in breasts:
+                    self.body['breasts'][0] = imagepath+"breasts/"+breasts+".png"
+                if base and symbol not in base:
+                    self.body['base'][0] = imagepath+"base/"+base+".png"
+                if legs and symbol not in legs:
+                    self.body['legs'][0] = imagepath+"legs/"+legs+".png"
+            if 'face' in args:
+                imagepath = "characters/"+self.char+"/face/"
                 
-            if self.base == None:
-                raise Exception('Character: "base" was not defined in char_class.')
+                tears = self.get_object(self.face, 'tears')
+                cheeks = self.get_object(self.face, 'cheeks')
+                eyebrows = self.get_object(self.face, 'eyebrows')
+                eyes = self.get_object(self.face, 'eyes')
+                pupils = self.get_object(self.face, 'pupils')
+                whites = self.get_object(self.face, 'whites')
+                mouth = self.get_object(self.face, 'mouth')
                 
-            if self.legs == None:
-                raise Exception('Character: "legs" was not defined in char_class.\nLEGS, MY LEGS AAAAAAAAAA!!!!')
+                if tears and symbol not in tears:
+                    self.face['tears'][0] = imagepath+"extras/"+tears+".png"
+                if cheeks and symbol not in cheeks:
+                    self.face['cheeks'][0] = imagepath+"extras/"+cheeks+".png"
+                if eyebrows and symbol not in eyebrows:
+                    self.face['eyebrows'][0] = imagepath+"brow/"+eyebrows+".png"
+                if eyes and symbol not in eyes:
+                    self.face['eyes'][0] = imagepath+"eyes/"+eyes+".png"
+                if pupils and symbol not in pupils:
+                    self.face['pupils'][0] = imagepath+"pupil/"+pupils+".png"
+                if whites and symbol not in whites:
+                    self.face['whites'][0] = imagepath+"eyes/"+whites+".png"
+                if mouth and symbol not in mouth:
+                    self.face['mouth'][0] = imagepath+"mouth/"+mouth+".png"
+            if 'other' in args:
+                imagepath = "characters/emotes/"
+                
+                emote = self.get_object(self.other, 'emote')
+                cum = self.get_object(self.other, 'cum')
+                
+                if emote and symbol not in emote:
+                    self.other['emote'][0] = imagepath+emote+".png"
+                    
+                imagepath = "characters/"+self.char+"/cum/"
+                
+                if cum and symbol not in cum:
+                    self.other['cum'][0] = imagepath+cum+".png"
+            self.cached = False
             
-            # Init body
-            self.imagepath = "characters/"+self.char+"/body/"
+        def expression(self, **kwargs):
+            for arg, value in kwargs.iteritems():
+                try:
+                    self.face[str(arg)][0] = value
+                except KeyError:
+                    raise Exception('Character: "'+str(arg)+'" expression type was not defined for "'+self.char+'" character class.')
+
+            self.update_paths("face")
+            self.cached = False
             
-            self.head = self.imagepath+"/head/"+self.head+".png"
-            self.arms = self.imagepath+"/arms/"+self.arms+".png"
-            self.breasts = self.imagepath+"/breasts/"+self.breasts+".png"
-            self.base = self.imagepath+"/base/"+self.base+".png"
-            self.legs = self.imagepath+"/legs/"+self.legs+".png" # Some characters are missing legs images
+        def special(self, **kwargs):
+            for arg, value in kwargs.iteritems():
+                try:
+                    self.other[str(arg)][0] = value
+                except KeyError:
+                    raise Exception('Character: "'+str(arg)+'" other type was not defined for "'+self.char+'" character class.')
+
+            self.update_paths("other")
+            self.cached = False
             
-            # Init face
-            self.imagepath = "characters/"+self.char+"/face/"
+        def equip(self, **kwargs):
+            for arg, value in kwargs.iteritems():
+                try:
+                    self.clothing[str(arg)][0] = value
+                    self.clothing[str(arg)][4] = False
+                except KeyError:
+                    raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+            self.cached = False
             
-            self.mouth = self.imagepath+"/mouth/"+self.mouth+".png"
-            self.whites = self.imagepath+"/eyes/_white_.png" # Is it really needed?
-            self.eyes = self.imagepath+"/eyes/"+self.eyes+".png"
-            self.eyebrows = self.imagepath+"/brow/"+self.eyebrows+".png"
-            self.pupils = self.imagepath+"/pupil/"+self.pupils+".png"
-            self.cheeks = self.imagepath+"/extras/"+self.cheeks+".png"
-            self.tears = self.imagepath+"/extras/"+self.tears+".png"
-            self.extras = self.imagepath+"/extras/"+self.extras+".png"
-            self.emote = "characters/emotes/"+self.emote+".png"
+        def unequip(self, *args):
+            for arg in args.iteritems():
+                try:
+                    self.clothing[str(arg)][0] = None
+                except KeyError:
+                    raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+            self.cached = False
             
-        def face(self, **kwargs):
-            self.imagepath = "characters/"+self.char+"/face/"
-            
-            if len(kwargs) <= 0:
-                self.mouth = self.imagepath+"/mouth/base.png"
-                self.eyes = self.imagepath+"/eyes/base.png"
-                self.eyebrows = self.imagepath+"/brow/base.png"
-                self.pupils = self.imagepath+"/pupil/mid.png"
-                self.cheeks = "characters/dummy.png"
-                self.tears = "characters/dummy.png"
-                self.extras = "characters/dummy.png"
-                self.emote = "characters/dummy.png"
+        def strip(self, *args):
+            if 'all' in args:
+                for key in self.clothing:
+                    self.clothing[key][4] = True
             else:
-                self.__dict__.update(**kwargs)
+                for arg in args:
+                    try:
+                        self.clothing[str(arg)][4] = True
+                    except KeyError:
+                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+            self.cached = False
             
-                if 'mouth' in kwargs:
-                    self.mouth = self.imagepath+"/mouth/"+self.mouth+".png"
-                
-                if 'eyes' in kwargs:
-                    self.eyes = self.imagepath+"/eyes/"+self.eyes+".png"
-                
-                if 'eyebrows' in kwargs:
-                    self.eyebrows = self.imagepath+"/brow/"+self.eyebrows+".png"
-                
-                if 'pupils' in kwargs:
-                    self.pupils = self.imagepath+"/pupil/"+self.pupils+".png"
-            
-                if 'cheeks' in kwargs:
-                    self.cheeks = self.imagepath+"/extras/cheeks_"+self.cheeks+".png"
-                
-                if 'tears' in kwargs:
-                    self.tears = self.imagepath+"/extras/tears_"+self.tears+".png"
-                
-                if 'extras' in kwargs:
-                    self.extras = self.imagepath+"/extras/"+self.extras+".png"
-                
-                if 'emote' in kwargs:
-                    self.emote = "characters/emotes/"+self.emote+".png"
-            
-        def strip(self, **kwargs):
-            if len(kwargs) <= 0:
-                self.hat = None
-                self.neckwear = None
-                self.badge = None
-                self.robe = None
-                self.gloves = None
-                self.top = None
-                self.bra = None
-                self.belt = None
-                self.bottom = None
-                self.garter = None
-                self.panties = None
-                self.stockings = None
+        def wear(self, *args):
+            if 'all' in args:
+                for key in self.clothing:
+                    self.clothing[key][4] = False
             else:
-                self.__dict__.update(**kwargs)
+                for arg in args:
+                    try:
+                        self.clothing[str(arg)][4] = False
+                    except KeyError:
+                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined "'+self.char+'" character class.')
+            self.cached = False
                 
-        def toggle_clothes(self):
-            self.stripped = not self.stripped
-            
         def say(self, string, **kwargs):
-            if len(kwargs) > 0:
-                self.face(**kwargs)
-                
-            renpy.say(self.char, string)
+            if kwargs:
+                self.expression(**kwargs)
+            if string:
+                renpy.say(self.char, string)
             
         def get_image(self):
-            self.sprite = Composite(
-                    (1010, 1200),
-                    (0,0), self.legs,
-                    (0,0), self.base,
-                    (0,0), self.breasts,
-                    (0,0), self.arms,
-                    (0,0), self.head)
-            self.sprite = Composite(
-                    (1010, 1200),
-                    (0,0), self.sprite,
-                    (0,0), self.mouth,
-                    (0,0), self.whites,
-                    (0,0), self.eyes,
-                    (0,0), self.eyebrows,
-                    (0,0), self.pupils,
-                    (0,0), self.cheeks,
-                    (0,0), self.tears,
-                    (0,0), self.extras,
-                    (0,0), self.emote)
-            if len(self.tattoo) > 0:
-                for i in xrange(0, len(tattoo)):
-                    self.sprite = Composite(
-                            (1010, 1200),
-                            (0,0), self.sprite,
-                            (0,0), self.tattoo[i].get_image())
-            if len(self.body_accessory) > 0:
-                for i in xrange(0, len(body_accessory)):
-                    self.sprite = Composite(
-                            (1010, 1200),
-                            (0,0), self.sprite,
-                            (0,0), self.body_accessory[i].get_image())
-            if not self.stripped:
-                if not self.stockings == None:                    
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.stockings.get_image())
-                if not self.panties == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.panties.get_image())
-                if not self.garter == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.garter.get_image())
-                if not self.bottom == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.bottom.get_image(),
-                        (0,0), self.arms) # Arm fix
-                if not self.belt == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.belt.get_image())
-                if not self.bra == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.bra.get_image())
-                if not self.top == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.top.get_image())
-                if not self.gloves == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.gloves.get_image())
-                if not self.robe == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.robe.get_image())
-                if not self.neckwear == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.neckwear.get_image())
-                if not self.hat == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), self.hat.get_image())
+            if not self.cached or self.cache_override:                
+                self.cached = True
+                
+                # Keep character images in cache
+                renpy.start_predict("characters/"+self.char+"/body/*.*")
+                renpy.start_predict("characters/"+self.char+"/face/*.*")
+                
+                # Create sprite list
+                sprite_list = []
+                
+                # Add body to sprite list
+                for key, value in self.body.iteritems():
+                    if self.body[key][0] and not self.body[key][4]:
+                        sprite_list.append(value)
+                        
+                # Add face to sprite list
+                for key, value in self.face.iteritems():
+                    if self.face[key][0] and not self.face[key][4]:
+                        sprite_list.append(value)
+                
+                # Add other to sprite list        
+                for key, value in self.other.iteritems():
+                    if self.other[key][0] and not self.other[key][4]:
+                        sprite_list.append(value)
+                        
+                # Add clothing to sprite list        
+                for key, value in self.clothing.iteritems():
+                    if self.clothing[key][0] and not self.clothing[key][4]:
+                        sprite_list.append(value)
+                        
+                # Sort sprite list by zorder
+                sprite_list.sort(key=lambda x: x[1], reverse=False)
+                
+                # Build image
+                self.sprite = Image("characters/dummy.png")
+                if sprite_list:
+                    for sprite in sprite_list:
+                        # Check if sprite is an imagepath or an object
+                        if isinstance(sprite[0], basestring):
+                            self.sprite = Composite(
+                                    (1010, 1200),
+                                    (0,0), self.sprite,
+                                    (sprite[2],sprite[3]), Image(sprite[0]))
+                        else:
+                            self.sprite = Composite(
+                                    (1010, 1200),
+                                    (0,0), self.sprite,
+                                    (sprite[2],sprite[3]), sprite[0].get_image())
             return self.sprite

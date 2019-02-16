@@ -179,67 +179,118 @@ screen cho_uniform_test:
 
 
 
-init:
-    # Cho basic clothing layers (those are the ones that will be used on her clothing screen!)
-    # The 't_' stands for test to not interfere with Cho's old uniform clothing screen. Remove it when it gets replaced.
-    $ t_cho_top_mid  = cloth_class(char="cho", type="tops", id="top_school_1", layers=5)   # I need a way to add 'mid_' in front of the layer number!
-    $ t_cho_top_L    = cloth_class(char="cho", type="tops", id="top_school_1", layers=5)   # I need a way to add 'L_' in front of the layer number!
-    $ t_cho_top_R    = cloth_class(char="cho", type="tops", id="top_school_1", layers=5)   # I need a way to add 'R_' in front of the layer number!
-
-    $ t_cho_bottom   = cloth_class(char="cho", type="bottoms", id="skirt_short_1", layers=2)
-    $ t_cho_bra      = cloth_class(char="cho", type="bras",    id="sport_bra_1", layers=3)
-    $ t_cho_panties  = cloth_class(char="cho", type="panties", id="sport_panties_1", layers=3)
-
-    $ cho_top_school_CLOTH = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[200, 100, 100, 255], [100, 200, 100, 255], [100, 100, 200, 255], [150, 50, 150, 255]], name="School top", desc="description") # Keep the 'type' plural please.
-    #$ cho_top_school2_CLOTH = cloth_class(char="cho", type="top", id="school2", layers=4, name="School top", desc="description")
-    $ cho_test_cloth = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[200, 100, 100, 255], [100, 200, 100, 255], [100, 100, 200, 255], [150, 50, 150, 255]], name="School top", desc="description")
+label __init_variables:
+        if not hasattr(renpy.store,'cho_class') or reset_persistants:
+            ################
+            #              #
+            #  CLOTH INIT  #
+            #              #
+            ################
+            $ color_black = [0, 0, 0, 255]
     
-    
-    python:
-        if not hasattr(renpy.store,'cho_class'): #important!
-            cho_class = char_class(char="cho")
-        
-        if not hasattr(renpy.store,'cho_body'): #important!
-            cho_class.body = {
-                        "hair":        ["ponytail_blue_top", 12, 0, 0, False],
-                        "hairshadow":  ["ponytail_blue_base", 11, 0, 0, False],
-                        "armleft":     ["arm_down_l", 17, 0, 0, False],
-                        "armright":    ["arm_down_r", 1, 0, 0, False],
-                        "breasts":     ["breasts_bikini_tan", 3, 0, 0, False],
-                        "base":        ["base_01", 2, 0, 0, False],
-                        "legs":        [None, 5, 1, 0, False]}
-        if not hasattr(renpy.store,'cho_face'): #important!
-            cho_class.face = {
-                        "tears":       [None, 11, 0, 0, False],
-                        "cheeks":      [None, 10, 0, 0, False],
-                        "eyebrows":    ["base", 9, 0, 0, False],
-                        "eyes":        ["base", 8, 1, 0, False],
-                        "pupils":      ["mid", 7, 0, 0, False],
-                        "whites":      ["_white_", 6, 0, 0, False],
-                        "mouth":       ["base", 5, 0, 0, False]}
-        if not hasattr(renpy.store,'cho_other'): #important!
-            cho_class.other = {
-                        "cum":         [None, 15, 0, 0, False],
-                        "emote":       [None, 30, 0, 0, False]}
-                        
-            cho_class.update_paths("body", "face", "other")
-        if not hasattr(renpy.store,'cho_clothing'): #important!
-            cho_class.clothing = {
-                        "hat":        [None, 24, 0, 0, False],
-                        "neckwear":   [None, 23, 0, 0, False],
-                        "badge":      [None, 22, 0, 0, False],
-                        "robe":       [None, 21, 0, 0, False],
-                        "gloves":     [None, 20, 0, 0, False],
-                        "top":        [cho_test_cloth, 19, 0, 0, False],
-                        "bra":        [t_cho_bra, 18, 0, 0, False],
-                        "belt":       [None, 17, 0, 0, False],
-                        "bottom":     [t_cho_bottom, 16, 0, 0, False],
-                        "garter":     [None, 15, 0, 0, False],
-                        "panties":    [t_cho_panties, 14, 0, 0, False],
-                        "stockings":  [None, 13, 0, 0, False],
-                        "plug":       [None, 0, 0, 0, False]}
+            # Tops
+            $ cho_cloth_topsailor1 = cloth_class(char="cho", type="tops", id="top_sailor_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_topschool1 = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_topschool2 = cloth_class(char="cho", type="tops", id="top_school_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_topschool3 = cloth_class(char="cho", type="tops", id="top_school_3", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_topschool4 = cloth_class(char="cho", type="tops", id="top_school_4", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_topschool5 = cloth_class(char="cho", type="tops", id="top_school_5", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_topshirt1 = cloth_class(char="cho", type="tops", id="top_shirt_1", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_topsweater1 = cloth_class(char="cho", type="tops", id="top_sweater_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_toptanktop1 = cloth_class(char="cho", type="tops", id="top_tanktop_1", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_toptanktop2 = cloth_class(char="cho", type="tops", id="top_tanktop_2", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
 
-init -5 python:
+            # Bottoms
+            $ cho_cloth_pantslong1 = cloth_class(char="cho", type="bottoms", id="pants_long_1", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_pantslong2 = cloth_class(char="cho", type="bottoms", id="pants_long_2", layers=2, color=[[200, 200, 201, 255], color_black])
+            $ cho_cloth_pantsshort1 = cloth_class(char="cho", type="bottoms", id="pants_short_1", layers=2, color=[[200, 200, 201, 255], color_black])
+            $ cho_cloth_pantsshort2 = cloth_class(char="cho", type="bottoms", id="pants_short_2", layers=3, color=[[200, 200, 201, 255], [200, 200, 201, 255], color_black])
+            $ cho_cloth_pantsshort3 = cloth_class(char="cho", type="bottoms", id="pants_short_3", layers=4, color=[[200, 200, 201, 255], [200, 200, 201, 255], [200, 200, 201, 255], color_black])
+            $ cho_cloth_skirtshort1 = cloth_class(char="cho", type="bottoms", id="skirt_short_1", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_skirtshort2 = cloth_class(char="cho", type="bottoms", id="skirt_short_2", layers=3, color=[[50, 50, 51, 255], color_black])
+            
+            # Bras
+            $ cho_cloth_basicbra1 = cloth_class(char="cho", type="bras", id="basic_bra_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_basicbra2 = cloth_class(char="cho", type="bras", id="basic_bra_2", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_bikinitop1 = cloth_class(char="cho", type="bras", id="bikini_top_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_bikinitop2 = cloth_class(char="cho", type="bras", id="bikini_top_2", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_lacebra1 = cloth_class(char="cho", type="bras", id="lace_bra_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_lacebra2 = cloth_class(char="cho", type="bras", id="lace_bra_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_sportbra1 = cloth_class(char="cho", type="bras", id="sport_bra_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            
+            # Panties
+            $ cho_cloth_basicpanties1 = cloth_class(char="cho", type="panties", id="basic_panties_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_basicpanties1 = cloth_class(char="cho", type="panties", id="basic_panties_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_basicpanties2 = cloth_class(char="cho", type="panties", id="basic_panties_2", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_bikinibottom1 = cloth_class(char="cho", type="panties", id="bikini_bottom_1", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_bikinibottom2 = cloth_class(char="cho", type="panties", id="bikini_bottom_2", layers=2, color=[[50, 50, 51, 255], color_black])
+            $ cho_cloth_lacepanties1 = cloth_class(char="cho", type="panties", id="lace_panties_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_lacepanties2 = cloth_class(char="cho", type="panties", id="lace_panties_2", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_sportpanties1 = cloth_class(char="cho", type="panties", id="sport_panties_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_sportpanties2 = cloth_class(char="cho", type="panties", id="sport_panties_2", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            
+            # Stockings
+            $ cho_cloth_lace_stockings_1 = cloth_class(char="cho", type="stockings", id="lace_stockings_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            
+            # Robes
+            $ cho_cloth_robequidditch1 = cloth_class(char="cho", type="robe", id="robe_quidditch_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_robequidditch2 = cloth_class(char="cho", type="robe", id="robe_quidditch_2", layers=2, color=[[50, 50, 51, 255], color_black])
+            
+            # Neckwear
+            $ cho_cloth_chokerlace1= cloth_class(char="cho", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            
+            # Garterbelts
+            $ cho_cloth_lacegarter1 = cloth_class(char="cho", type="garterbelts", id="lace_garter_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            $ cho_cloth_lacegarter2 = cloth_class(char="cho", type="garterbelts", id="lace_garter_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            
+            ################
+            #              #
+            #  CLASS INIT  #
+            #              #
+            ################
+            python:
+                cho_class = char_class(char="cho")
+            
+                cho_class.body = {
+                            "hair":        ["ponytail_blue_top", 12, 0, 0, False],
+                            "hairshadow":  ["ponytail_blue_base", 11, 0, 0, False],
+                            "armleft":     ["arm_down_l", 17, 0, 0, False],
+                            "armright":    ["arm_down_r", 1, 0, 0, False],
+                            "breasts":     ["breasts_bikini_tan", 3, 0, 0, False],
+                            "base":        ["base_01", 2, 0, 0, False],
+                            "legs":        [None, 5, 1, 0, False]}
+                            
+                cho_class.face = {
+                            "tears":       [None, 11, 0, 0, False],
+                            "cheeks":      [None, 10, 0, 0, False],
+                            "eyebrows":    ["base", 9, 0, 0, False],
+                            "eyes":        ["base", 8, 1, 0, False],
+                            "pupils":      ["mid", 7, 0, 0, False],
+                            "whites":      ["_white_", 6, 0, 0, False],
+                            "mouth":       ["base", 5, 0, 0, False]}
+
+                cho_class.other = {
+                            "cum":         [None, 15, 0, 0, False],
+                            "emote":       [None, 30, 0, 0, False]}
+                            
+                cho_class.update_paths("body", "face", "other")
+
+                cho_class.clothing = {
+                            "hat":        [None, 24, 0, 0, False],
+                            "neckwear":   [None, 23, 0, 0, False],
+                            "badge":      [None, 22, 0, 0, False],
+                            "robe":       [None, 21, 0, 0, False],
+                            "gloves":     [None, 20, 0, 0, False],
+                            "top":        [cho_cloth_topschool1, 19, 0, 0, False],
+                            "bra":        [cho_cloth_basicbra1, 18, 0, 0, False],
+                            "belt":       [None, 17, 0, 0, False],
+                            "bottom":     [cho_cloth_skirtshort1, 16, 0, 0, False],
+                            "garter":     [None, 15, 0, 0, False],
+                            "panties":    [cho_cloth_basicpanties1, 14, 0, 0, False],
+                            "stockings":  [None, 13, 0, 0, False],
+                            "plug":       [None, 0, 0, 0, False]}
+
+init python:
     class cloth_class(object):
         char = None # astoria, cho, hermione, luna, susan, tonks
         type = None # same as folder names
@@ -374,6 +425,9 @@ init -5 python:
             return dict
             
         def get_cloth(self, cloth):
+            return self.get_object(self.clothing, cloth)
+            
+        def get_clothing_list(self, cloth):
             return self.get_object(self.clothing, cloth)
             
         def update_paths(self, *args):

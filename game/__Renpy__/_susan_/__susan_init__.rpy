@@ -33,7 +33,7 @@ label susan_init:
         $ susan_extra               = "characters/susan/face/extras/blank.png"
         $ susan_emote               = "characters/emotes/blank.png"
 
-        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
+        #$ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Chibi
         $ susan_chibi_xpos          = 500

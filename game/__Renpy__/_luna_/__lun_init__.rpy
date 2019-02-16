@@ -34,7 +34,7 @@ label luna_init:
         $ luna_extra             = "characters/luna/face/extras/blank.png"
         $ luna_emote             = "characters/emotes/blank.png"
 
-        $ changeCho("base","base","base","mid","blank","blank","blank","blank")
+        #$ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Cum
         $ luna_cum               = 1

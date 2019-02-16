@@ -72,8 +72,8 @@ label cho_wardrobe_test: # WIP
     # Wardrobe Item Menu (left side)
 
     # Items
-    if isinstance(_return, item_class):
-        call equip_cho_item(_return)
+    if isinstance(_return, cloth_class):
+        call cho_class.equip(_return)
 
     elif _return == "update_group":
         jump cho_wardrobe_test_menu
@@ -367,7 +367,7 @@ python:
         item_ypos = 75
         item_scaling = 0.2
         use_wr_color = True
-
+    
         item_list = []
         if group == "1":
             item_list.append("top_school_1")

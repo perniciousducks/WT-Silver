@@ -24,7 +24,8 @@ label phoenix:
     if day != 1:
         menu:
             "Testing Card Game":
-                jump test_card_game
+                $ geniecard_level = 2
+                jump snape_random_duel
             "Testing clothes":
                 jump color_cloth_test
             "Test new wardrobe":

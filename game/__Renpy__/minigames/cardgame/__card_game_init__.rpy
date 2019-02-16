@@ -12,7 +12,7 @@ label __init_variables:
         #
         #Dobelt_number
         # Rules(Shown Cards, Sudden Death, Reverse, Dobelt_number)
-        standart_rules = [3, True, True, True]
+        standart_rules = [0, False, False, False]
         
         if not hasattr(renpy.store,'playercolor_r'):
             playercolor_r = 51.0/255.0
@@ -465,6 +465,7 @@ label __init_variables:
             snape_second_win = False
             snape_third_win = False
             snape_wager_talk = False
+            random_snape_win = False
 
         if not hasattr(renpy.store, 'her_know_cards'):
             her_know_cards = False

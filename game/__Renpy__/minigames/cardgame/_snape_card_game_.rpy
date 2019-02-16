@@ -138,10 +138,10 @@ label snape_random_duel:
     call play_music("grape_soda")
 
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
-    
-    $ random_enemy_deck = create_random_deck(get_deck_score(unlocked_cards)-2, get_deck_score(unlocked_cards)+8, cards_all)
-    
-    $ duel_response = start_duel(random_enemy_deck, "snape_after", [renpy.random.randint(0,3), False, True, False], random_player_deck)
+
+    $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
+
+    $ duel_response = start_duel(random_enemy_deck, snape_after, [renpy.random.randint(0,3), False, True, False], random_player_deck)
 
     if duel_response == "Close":
         $ wine -= 1
@@ -153,7 +153,8 @@ label snape_random_duel:
     hide screen blkfade
     stop music fadeout 1
     
-    if random_snape_win:
+    if not random_snape_win:
+        $ random_snape_win = True
         m "Yes!"
         g9 "No wine for you.."
         call sna_main("...","snape_04")
@@ -227,17 +228,6 @@ label snape_random_duel:
 
     jump main_room
 
-label snape_after:
-    $ volume = _preferences.volumes['music']
-    $ _preferences.volumes['music'] *= .5
-    $ s_punch = renpy.random.randint(1, 4)
-    play sound "sounds/card_punch%s.mp3" % s_punch
-    # Prevents volume to change again when using rollback
-    $ renpy.block_rollback()
-    call sna_main( (snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)]),"snape_05")
-    call sna_main(remove=True)
-    $ _preferences.volumes['music'] = volume
-    return
     
 label snape_duel_lost:
     hide screen blkfade
@@ -345,3 +335,15 @@ screen genie_vs_snape_smile:
     add "images/cardgame/VS/genie_02.png"
     add "images/cardgame/VS/snape_02.png"
     text "Click to continue" xalign 0.5 yalign 1.0
+    
+init python:
+    def snape_after():
+        volume = _preferences.volumes['music']
+        _preferences.volumes['music'] *= .5
+        s_punch = renpy.random.randint(1, 4)
+        renpy.sound.play( "sounds/card_punch%s.mp3" % s_punch)
+        # Prevents volume to change again when using rollback
+        renpy.block_rollback()
+        sna(snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])
+        _preferences.volumes['music'] = volume
+        return

@@ -1,10 +1,12 @@
 init python:
 
-    def start_duel(opppent_deck, after_enemy = "", rules = None):
+    def start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
         global standart_rules
         global playerdeck
         if rules == None:
             rules = standart_rules
+        if duel_player_deck == None:
+            duel_player_deck = playerdeck
         
         backside_list = []
         for i in range(0, rules[0]):
@@ -14,7 +16,7 @@ init python:
             
         ## Setup Deck ##
         player_deck = []
-        for card in playerdeck:
+        for card in duel_player_deck:
             player_deck.append(card.clone())
             
         enemy_deck = []
@@ -34,8 +36,8 @@ init python:
         response_card = ""
         while not(response_card == "win" or response_card == "loss"):
             response_card = cardgame(enemy_deck, player_deck, backside_list, rules[2], rules[3])
-            if response_card == "AfterEnemy" and not after_enemy == "":
-                renpy.Call(after_enemy)
+            if response_card == "AfterEnemy" and not after_enemy == None:
+                after_enemy()
             elif response_card == "Close":
                 return "Close"
             elif response_card == "draw" and rules[1]:

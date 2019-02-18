@@ -9,7 +9,8 @@ label summon_cho:
     call cho_random_clothing
 
     label cho_requests:
-
+    call cho_main(xpos="base",ypos="base")
+    
     $ menu_x = 0.25
     $ menu_y = 0.5
 
@@ -49,15 +50,8 @@ label summon_cho:
         "-Wardrobe-" if cho_wardrobe_unlocked:
             $ active_girl = "cho"
 
-            call load_cho_clothing_saves
-
-            call reset_wardrobe_vars
-            call update_wr_color_list
-
-            $ hide_transitions = True
-            call cho_main(xpos="wardrobe",ypos="base")
-            call screen wardrobe
-
+            call cho_main(xpos="wardrobe",ypos="base", mouth="base", brows="base", eye="base", pupils="mid")
+            call expression 't_wardrobe' pass (return_label="cho_requests")
         "-Gifts-" if not gave_cho_gift:
             $ current_category = None
 

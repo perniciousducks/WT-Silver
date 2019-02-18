@@ -150,27 +150,5 @@ init python: ###Method Definition for new characters
         if emote is not None:
             cho_emote         = str(emote)
         
-        # Use cho_class.expression to change expressions
         cho_class.expression(mouth=cho_mouth, eyes=cho_eye, eyebrows=cho_eyebrow, pupils=cho_pupil, cheeks=cho_cheeks, tears=cho_tears)
         cho_class.special(emote=cho_emote)
-        #extras=cho_extra, emote=cho_emote
-        
-        
-        
-        
-        #if mouth is not None:
-        #    cho_mouth         = "characters/cho/face/mouth/"+mouth+".png"
-        #if eye is not None:
-        #    cho_eye           = "characters/cho/face/eyes/"+eye+".png"
-        #if brows is not None:
-        #    cho_eyebrow       = "characters/cho/face/brow/"+brows+".png"
-        #if pupils is not None:
-        #    cho_pupil         = "characters/cho/face/pupil/"+pupils+".png"
-        #if cheeks is not None:
-        #    cho_cheeks        = "characters/cho/face/extras/cheeks_"+cheeks+".png"
-        #if tears is not None:
-        #    cho_tears         = "characters/cho/face/extras/tears_"+tears+".png"
-        #if extra is not None:
-        #    cho_extra         = "characters/cho/face/extras/"+extra+".png"
-        #if emote is not None:
-        #    cho_emote         = "characters/emotes/"+str(emote)+".png"

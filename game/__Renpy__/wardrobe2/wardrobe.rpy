@@ -105,8 +105,8 @@ screen t_wardrobe_menuitem(xx, yy):
     if menu_items_length > items_shown:
         # Up Button
         imagebutton:
-            xpos ui_xpos +480
-            ypos ui_ypos +190
+            xpos xx+480
+            ypos yy+190
             idle "interface/general/"+interface_color+"/button_arrow_up.png"
             if not current_page <= 0:
                 hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
@@ -114,8 +114,8 @@ screen t_wardrobe_menuitem(xx, yy):
 
         # Down Button
         imagebutton:
-            xpos ui_xpos +480
-            ypos ui_ypos +190 +55
+            xpos xx+480
+            ypos yy+245
             idle "interface/general/"+interface_color+"/button_arrow_down.png"
             if current_page < math.ceil((menu_items_length-1)/items_shown):
                 hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"

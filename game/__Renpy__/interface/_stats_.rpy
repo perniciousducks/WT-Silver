@@ -7,7 +7,6 @@ label open_stat_menu:
     call update_luna
     call update_astoria
     call update_susan
-    call update_cho
     call update_genie
     call update_snape
     call update_tonks

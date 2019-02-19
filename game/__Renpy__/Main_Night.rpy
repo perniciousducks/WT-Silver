@@ -39,7 +39,6 @@ call update_susan
 $ susan_busy = False
 
 #Cho
-call update_cho
 $ cho_busy = False
 
 #Tonks

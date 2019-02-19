@@ -3,8 +3,6 @@
 #Tonks Gift Responses
 
 label give_cho_gift(gift_item):
-    hide screen cho_chang
-    with d5
 
     #$ gave_cho_gift = True
 
@@ -119,9 +117,6 @@ label give_cho_gift(gift_item):
         call cho_main("It says Joanne on it...",face="disgusted")
         call cho_main("I leave it in the boys changing room, should be a good reward after a practice.",face="annoyed")
 
-
-    hide screen cho_chang
-    with d5
     call cho_main(xpos="base",ypos="base",trans="d5")
 
     return

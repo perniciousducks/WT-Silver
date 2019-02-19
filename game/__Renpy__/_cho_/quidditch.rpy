@@ -69,7 +69,6 @@ label cho_quidd_intro: #have cho come in and talk about wanting help to win more
     call nar(">With that Cho turns to leave your office.")
     call play_sound("door")
     hide screen cho_chang
-    with d3
     pause.5
 
     m "..."
@@ -217,7 +216,6 @@ label cho_quidd_1_1: #come back and describe playing with a skirt on (embarrasse
     call nar(">With that, cho turns and leaves to leave your office.")
     call play_sound("door")
     hide screen cho_chang
-    with d3
     pause.5
 
     m "(I've really gotta learn what this game is about...)"
@@ -368,7 +366,6 @@ label cho_quidd_1_3: #come back and describe playing without a skirt on (aroused
     m "Well, off you go then."
     call cho_main("Thank you Professor...","smile","wink","base","mid")
     hide screen cho_chang
-    with d3
     call nar(">Cho cheerily leaves your office.")
 
     jump end_cho_event
@@ -469,7 +466,6 @@ label cho_quidd_2_1: #Comes back after playing without a robe on
 
     call play_sound("door")
     hide screen cho_chang
-    with d3
     pause.5
 
     m "Maybe it's about time I go see one of these games..."
@@ -516,7 +512,6 @@ label cho_quidd_2_2: #Comes back after playing with the robe still on
 
     call play_sound("door")
     hide screen cho_chang
-    with d3
     pause.5
 
     m "..."
@@ -565,7 +560,6 @@ label cho_quidd_2_3: #Cho comes in telling you not to fire Hermione
 
     call play_sound("door")
     hide screen cho_chang
-    with d3
     pause.5
 
     jump end_cho_event

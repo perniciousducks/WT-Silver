@@ -120,14 +120,14 @@ init python:
         def get_icon(self):
             if not self.cached:
                 self.cached = True
-                self.sprite = Image("characters/dummy.png")
+                self.sprite_ico = Image("characters/dummy.png")
                 
                 for i in xrange(0, self.layers):
-                    self.sprite = Composite(
+                    self.sprite_ico = Composite(
                            (1010, 1200),
-                           (0,0), self.sprite,
+                           (0,0), self.sprite_ico,
                            (0,0), im.MatrixColor(str(self.get_imagelayer(i)), self.get_matrixcolor(i)))
-            return self.sprite
+            return self.sprite_ico
             
     class char_class(object):
         char = None
@@ -243,10 +243,11 @@ init python:
             
         def expression(self, **kwargs):
             for arg, value in kwargs.iteritems():
-                try:
-                    self.face[str(arg)][0] = value
-                except KeyError:
-                    raise Exception('Character: "'+str(arg)+'" expression type was not defined for "'+self.char+'" character class.')
+                if value:
+                    try:
+                        self.face[str(arg)][0] = value
+                    except KeyError:
+                        raise Exception('Character: "'+str(arg)+'" expression type was not defined for "'+self.char+'" character class.')
 
             self.update_paths("face")
             self.cached = False
@@ -273,11 +274,15 @@ init python:
             self.cached = False
             
         def unequip(self, *args):
-            for arg in args.iteritems():
-                try:
-                    self.clothing[str(arg)][0] = None
-                except KeyError:
-                    raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+            if 'all' in args:
+                for key in self.clothing:
+                    self.clothing[key][0] = None
+            else:
+                for arg in args.iteritems():
+                    try:
+                        self.clothing[str(arg)][0] = None
+                    except KeyError:
+                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
             
         def strip(self, *args):
@@ -359,4 +364,7 @@ init python:
                                     (1010, 1200),
                                     (0,0), self.sprite,
                                     (sprite[2],sprite[3]), sprite[0].get_image())
+                                    
+                    # Fixes alpha change issues during transitions
+                    self.sprite = Flatten(self.sprite)
             return self.sprite

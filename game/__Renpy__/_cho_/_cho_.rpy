@@ -2,9 +2,8 @@
 
 ### Cho Chang ###
 
-label cho_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    hide screen cho_chang
-
+label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
+    
     #Flip
     if flip == False:
         $ cho_flip = 1 #Default
@@ -20,7 +19,6 @@ label cho_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         $ extra = "blank"
     if emote == None:
         $ emote = "blank"
-
 
     #Positioning
     if xpos != None:
@@ -56,18 +54,20 @@ label cho_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
             $ cho_zorder = 8
         else:
             $ cho_ypos = int(ypos)
-
+            
     if face != None:
         if mouth == None:
             call set_cho_face(mouth = face)
-        if eye == None:
+        if eyes == None:
             call set_cho_face(eyes = face)
-        if brows == None:
-            call set_cho_face(brows = face)
+        if eyebrows == None:
+            call set_cho_face(eyebrows = face)
         if pupils == None:
             call set_cho_face(pupils = face)
-
-    $ changeCho(mouth, eye, brows, pupils, cheeks, tears, extra, emote) #<--- Legacy
+    
+    python:
+        cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        cho_class.special(emote=emote)
 
     show screen cho_chang
     show screen bld1
@@ -75,80 +75,18 @@ label cho_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     #Transitions
     call transition(trans)
 
-    #if text != "":
-        #$ renpy.say(cho, text) <--- Legacy
-    
-    # New class call for character say
     $ cho_class.say(text)
 
-    if use_cho_head:
-        hide screen cho_chang
-
     return
-
-
-
-label update_cho:
-
-    $ cho_flip = 1
-    $ use_cho_head = False
-
-    return
-
 
 label end_cho_event:
+    call play_sound("door")
     hide screen cho_chang
-    with d3
-
-    call set_cho_outfit(None)
-    call load_cho_clothing_saves #Resets Cho's clothing.
-
-    #Add more cho screens to hide here.
-    #Do not add transitions!
-
-    $ cho_busy = True
-
+    pause.5
+    $ active_girl = None
     jump main_room
-
-
-
-init python: ###Method Definition for new characters
-    def changeCho(  mouth=None,
-                    eye=None,
-                    brows=None,
-                    pupils=None,
-                    cheeks=None,
-                    tears=None,
-                    extra=None,
-                    emote=None):
-
-        ### DEFINE GLOBAL VARIABLES ###
-        global cho_mouth
-        global cho_eye
-        global cho_eyebrow
-        global cho_pupil
-        global cho_cheeks
-        global cho_tears
-        global cho_extra
-        global cho_emote
-
-        ### FACE CONTROL ###
-        if mouth is not None:
-            cho_mouth         = mouth
-        if eye is not None:
-            cho_eye           = eye
-        if brows is not None:
-            cho_eyebrow       = brows
-        if pupils is not None:
-            cho_pupil         = pupils
-        if cheeks is not None:
-            cho_cheeks        = cheeks
-        if tears is not None:
-            cho_tears         = tears
-        if extra is not None:
-            cho_extra         = extra
-        if emote is not None:
-            cho_emote         = str(emote)
-        
-        cho_class.expression(mouth=cho_mouth, eyes=cho_eye, eyebrows=cho_eyebrow, pupils=cho_pupil, cheeks=cho_cheeks, tears=cho_tears)
-        cho_class.special(emote=cho_emote)
+    
+screen cho_chang():
+    tag cho_main
+    zorder cho_zorder
+    add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at moveFade

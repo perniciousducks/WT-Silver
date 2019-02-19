@@ -115,8 +115,6 @@ label cho_intro:
     $ days_since_cho = 0
     call play_sound("door")
 
-    call update_cho_uniform
-
     call cho_main("Professor Dumbledore! I'm sorry for rushing in without knocking, but I finally-","upset","closed","angry","mid",xpos="base",ypos="base")
 
     call play_sound("scratch")

@@ -106,7 +106,7 @@ label update_outfit_layers:
 
     # Cho Outfits
     $ cc_outfit_quidditch_ITEM.outfit_layers = []
-    call update_cho_quidditch_outfit #Adds outfit layers.
+    #call update_cho_quidditch_outfit #Adds outfit layers.
 
     $ cc_dress_red_ITEM.outfit_layers = ["onepieces/onepiece_ball_dress"]
 

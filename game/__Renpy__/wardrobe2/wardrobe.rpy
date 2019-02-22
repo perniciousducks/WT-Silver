@@ -1,4 +1,4 @@
-label t_wardrobe(return_label):
+label t_wardrobe(return_label, char_label):
     $ char_active = get_character_object(active_girl)
     $ char_nickname = char_active.char
     $ hide_transitions = True
@@ -8,12 +8,18 @@ label t_wardrobe(return_label):
         $ btn_hover = "#e3ba7140"
     else:
         $ btn_hover = "#7d75aa40"
+        
+    default bg_color_wardrobe = "#7d756e"
     
     $ items_shown = 20
     $ current_page = 0
     $ current_category = ""
     $ current_item = None
-    $ wardrobe_categories = ["head", "misc", "tops", "underwear", "bottoms", "outfits", "other","gifts"]
+    $ wardrobe_categories_sorted = ["head", "tops", "bottoms", "legs", "potions", "underwear", "outfits", "gifts"]
+    $ wardrobe_categories = char_active.clothing_dictlist
+    
+    if wardrobe_music_active:
+        call play_music("my_immortal")
     
     label t_wardrobe_after_init:
     
@@ -36,23 +42,73 @@ label t_wardrobe(return_label):
         show screen t_wardrobe_menu(550, 50)
         $ char_active.cache_override = True
         $ current_item.set_color(active_layer)
-        $ active_layer = None
         $ char_active.cache_override = False
+        $ active_layer = None
+        $ char_active.cached = False
+    elif _return[0] == "item_color":
+        $ active_layer = _return[1]
+        show screen t_wardrobe_menu(550, 50)
+        $ char_active.cache_override = True
+        $ current_item.set_color(active_layer)
+        $ char_active.cache_override = False
+        $ active_layer = None
+        $ char_active.cached = False
+    elif _return == "bg_color":
+        show screen t_wardrobe_menu(550, 50)
+        $ bg_color_wardrobe = color_picker(get_rgb_tuple(bg_color_wardrobe), False, "Wardrobe Background Color", pos_xy=[20, 130])
+        $ bg_color_wardrobe = get_hex_string(bg_color_wardrobe[0]/255.0, bg_color_wardrobe[1]/255.0, bg_color_wardrobe[2]/255.0, bg_color_wardrobe[3]/255.0)
     elif _return == "item_reset":
         $ current_item.reset_color()
+        $ char_active.cached = False
     elif _return == "inc":
         $ current_page += 1
     elif _return == "dec":
         $ current_page += -1
-    elif _return == "category":
-        $ renpy.play('sounds/scroll.mp3')
-        $ current_item = None
-        if current_category:
-            $ menu_items = char_active.get_clothing_list(current_category)
+    elif _return[0] == "category":
+        if current_category == _return[1]:
+            $ renpy.play('sounds/door2.mp3')
+            $ current_category = ""
+            $ char_active.wear("all")
+        else:
+            if _return[1] == "underwear":
+                $ char_active.strip("top")
+                $ char_active.strip("bottom")
+            else:
+                $ char_active.wear("top")
+                $ char_active.wear("bottom")
+            $ renpy.play('sounds/scroll.mp3')
+            $ current_category = _return[1]
+            $ category_items = wardrobe_categories[current_category]
+            # Default subcategory
+            $ current_subcategory = list(category_items)[0]
+            $ menu_items = category_items[current_subcategory]
             $ menu_items_length = len(menu_items)
+            # Default selected item
+            $ current_item = None
+    elif _return[0] == "subcategory":
+        $ renpy.play('sounds/scroll.mp3')
+        $ current_subcategory = _return[1]
+        $ menu_items = category_items[current_subcategory]
+        $ menu_items_length = len(menu_items)
+        # Default selected item
+        $ current_item = None
+    elif _return == "erozone":
+        call expression char_label pass (text="", face="horny")
+    elif _return == "music":
+        if wardrobe_music_active:
+            $ wardrobe_music_active = False
+            call music_block
+            call expression char_label pass (text="", face="annoyed")
+        else:
+            $ wardrobe_music_active = True
+            call play_music("my_immortal")
+            call expression char_label pass (text="", face="happy")
     elif _return == "Close":
         $ renpy.play('sounds/door2.mp3')
         $ hide_transitions = False
+        $ char_active.wear("all")
+        if wardrobe_music_active:
+            call music_block
         python:
             renpy.jump(return_label)
     jump t_wardrobe_after_init
@@ -74,26 +130,50 @@ screen t_wardrobe_menu(xx, yy):
         ysize 548
         style "empty"
         
+        frame xsize 340 ysize 548 xpos 100 style "empty" background bg_color_wardrobe
+        
         add "interface/wardrobe/test/"+str(interface_color)+"/icons_"+char_active.char+"_"+current_category+".png" xpos 13 ypos 80 zoom 0.5
 
         add "interface/panels/"+interface_color+"/wardrobe_panel.png"
-        
-        grid 2 4:
-            ypos 78
-            xpos 10
-            xspacing 330
-            yspacing 10
-            for i in xrange (0, len(wardrobe_categories)):
-                button xsize 98 ysize 100 style "empty" hover_background btn_hover action [ToggleVariable("current_category", wardrobe_categories[i], ""), Return("category")]
-                
-        hbox:
+            
+        for i in xrange(0, len(wardrobe_categories_sorted)):
+            $ cat_row = (i // 4) % 2
+            $ cat_col = i % 4
+            if current_category == wardrobe_categories_sorted[i]:
+                button xpos 14+425*(cat_row) ypos 80+110*(cat_col) xsize 90 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+            else:
+                button xpos 61+377*(cat_row) ypos 80+110*(cat_col) xsize 44 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+
+        vbox:
             xpos 120
             ypos 60
-            spacing 12
-            imagebutton idle "interface/wardrobe/"+str(interface_color)+"/check_true.png"
-            imagebutton idle "interface/wardrobe/"+str(interface_color)+"/check_true.png"
-            imagebutton idle "interface/wardrobe/"+str(interface_color)+"/check_true.png"
+            spacing 5
+            textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music")
+            textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color")
+            vbox:
+                ypos 60
+                spacing 5
+                textbutton "{size=12}Robe{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("robe"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "robe")
+                textbutton "{size=12}Hat{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("hat"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "hat")
+                textbutton "{size=12}Neckwear{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("neckwear"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "neckwear")
+                textbutton "{size=12}Badge{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("badge"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "badge")
+                textbutton "{size=12}Top{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("top"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "top")
+                textbutton "{size=12}Gloves{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("gloves"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "gloves")
+                textbutton "{size=12}Bra{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("bra"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "bra")
+                textbutton "{size=12}Bottoms{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("bottom"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "bottom")
+                textbutton "{size=12}Panties{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("panties"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "panties")
+                textbutton "{size=12}Garterbelt{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("garter"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "garter")
+                textbutton "{size=12}Stockings{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("stockings"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "stockings")
+                textbutton "{size=12}Buttplug{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("plug"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "plug")
             
+        #Erogenous zones
+        vbox:
+            xalign 0.5
+            ypos 260
+            spacing 72
+            button xsize 120 ysize 60 style "empty" action Return("erozone")
+            button xsize 120 ysize 50 style "empty" action Return("erozone")
+                
         add "interface/general/"+str(interface_color)+"/button_wide.png" xpos 200 ypos -4
         text char_nickname xalign 0.5 ypos 4 size 16
         
@@ -127,10 +207,11 @@ screen t_wardrobe_menuitem(xx, yy):
         xsize 467
         ysize 548
         style "empty"
-
-        add "interface/panels/"+interface_color+"/icon_panel_1.png"
+        background bg_color_wardrobe
         
-        text current_category xalign 0.22 ypos 44 size 16
+        #frame background "#e3ba71" xsize 600 ysize 350 xpos pos_xy[0] ypos pos_xy[1]
+        
+        add "interface/panels/"+interface_color+"/icon_panel_1.png"
         
         if current_item:
             hbox:
@@ -143,9 +224,12 @@ screen t_wardrobe_menuitem(xx, yy):
 
                 textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset")
             
-        # Add category list    
-        for i in xrange (0, 5):
-            button xpos 10+(90*i) ypos 86 xsize 88 ysize 90 style "empty" background "#7d75aa80"
+        # Add subcategory list
+        for i in xrange (0, len(list(category_items))):
+            add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+list(category_items)[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
+            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", list(category_items)[i]])
+            
+        text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
         # Add items
         for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
@@ -154,5 +238,5 @@ screen t_wardrobe_menuitem(xx, yy):
                 $ col = i % 5
                 add menu_items[i].get_icon() xpos 40+90*(col) ypos 75+90*(row) xalign 0.5 zoom 0.2
                 button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
-                if menu_items[i] == char_active.get_equipped(current_category, i):
+                if menu_items[i] == char_active.get_equipped(current_category, current_subcategory, i):
                     text "{color=#FFFFFF}Worn{/color}"xpos 26+90*(col) ypos 240+90*(row)

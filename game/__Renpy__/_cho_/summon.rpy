@@ -3,7 +3,7 @@
 label summon_cho:
     pause.5
     call play_sound("knocking")    
-    pause.5
+    pause 1
     call play_sound("door")
     call cho_chibi("stand","mid","base")
     call cho_random_clothing
@@ -51,7 +51,7 @@ label summon_cho:
             jump cho_requests
         "-Wardrobe-" if cho_wardrobe_unlocked:
             call cho_main(xpos="wardrobe",ypos="base", face="neutral")
-            call expression 't_wardrobe' pass (return_label="cho_requests")
+            call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
         "-Gifts-" if not gave_cho_gift:
             $ current_category = None
             $ current_page = 0

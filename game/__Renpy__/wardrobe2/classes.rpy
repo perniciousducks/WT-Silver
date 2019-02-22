@@ -10,7 +10,7 @@ init python:
     class cloth_class(object):
         char = None # astoria, cho, hermione, luna, susan, tonks
         category = None
-        subcat = ""
+        subcat = None
         type = None
         id = None
         layers = None
@@ -26,7 +26,6 @@ init python:
         pose = ""
 
         imagepath = ""
-        #imagepath_original = ""
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
@@ -36,6 +35,9 @@ init python:
                 
             if self.category == None:
                 raise Exception('Clothing: "category" was not defined in cloth_class.')
+                
+            if self.subcat == None:
+                raise Exception('Clothing: "subcat" was not defined in cloth_class.')
                 
             if self.type == None:
                 raise Exception('Clothing: "type" was not defined in cloth_class.')
@@ -64,14 +66,12 @@ init python:
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.subcat+"/"
             else:
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"
-                
-            #self.imagepath_original = self.imagepath
   
             if renpy.exists(self.imagepath+self.id+"/skin.png"):
                 self.skinlayer = self.imagepath+self.id+"/skin.png"
                 
-            # Add cloth object to respective character and category in dictionary keylist
-            get_character_object(self.char).clothing_dictlist.setdefault(self.category,[]).append(self)
+            # Add cloth object to respective character, category and sub-category in dictionary keylist
+            get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
                 
         def set_pose(self, pose):
             if renpy.exists(self.imagepath+self.id+"/"+pose+"_0.png"):
@@ -158,12 +158,6 @@ init python:
                 except KeyError:
                     return None
             return dict
-            
-        def get_cloth(self, type):
-            return self.get_object(self.clothing, type)
-            
-        def get_clothing_list(self, category):
-            return self.clothing_dictlist[category]
             
         def update_zorder(self, layer, value):
             try:
@@ -262,8 +256,17 @@ init python:
             self.update_paths("other")
             self.cached = False
             
-        def get_equipped(self, category, item):
-            return self.get_cloth(self.get_clothing_list(category)[item].type)
+        def get_cloth(self, type):
+            return self.get_object(self.clothing, type)
+            
+        def get_category_list(self, category):
+            return self.clothing_dictlist[category]
+            
+        def get_clothing_list(self, category, subcategory):
+            return self.clothing_dictlist[category][subcategory]
+            
+        def get_equipped(self, category, subcategory, item):
+            return self.get_cloth(self.get_clothing_list(category, subcategory)[item].type)
             
         def equip(self, object):
             if self.clothing[object.type][0] == object:
@@ -297,6 +300,13 @@ init python:
                         raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
             
+        def get_worn(self, type):
+            if not self.clothing[type][0]:
+                return None
+            if not self.clothing[type][4]:
+                return True
+            return False
+            
         def wear(self, *args):
             if 'all' in args:
                 for key in self.clothing:
@@ -307,6 +317,13 @@ init python:
                         self.clothing[str(arg)][4] = False
                     except KeyError:
                         raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+            self.cached = False
+            
+        def toggle_wear(self, type):
+            try:
+                self.clothing[str(type)][4] = not self.clothing[str(type)][4]
+            except KeyError:
+                raise Exception('Character: "'+str(type)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
                 
         def say(self, string, **kwargs):

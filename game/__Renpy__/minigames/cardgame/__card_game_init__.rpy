@@ -481,6 +481,10 @@ label __init_variables:
             twins_cards_delay = 7
             twins_cards_stocked = False
             twins_cards_stocked_talk = False
+            twins_interest = False
+            first_random_twins = True
+            twins_random_win = True
+            twins_profit = 1.0
         
         if not hasattr(renpy.store,'unlocked_cards'):
             card_rand_realm = renpy.random.choice([iris, jasmine, azalea])

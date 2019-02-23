@@ -18,6 +18,14 @@ label t_wardrobe(return_label, char_label):
     $ wardrobe_categories_sorted = ["head", "tops", "bottoms", "legs", "potions", "underwear", "outfits", "gifts"]
     $ wardrobe_categories = char_active.clothing_dictlist
     
+    python:
+        list_keys = char_active.clothing.keys()
+        character_clothing = []
+        for i in xrange(0, len(list_keys)):
+            value = char_active.clothing[list_keys[i]][1]
+            character_clothing.append([list_keys[i], value])
+        character_clothing = sorted(character_clothing, key=lambda x: x[1], reverse=True)
+    
     if wardrobe_music_active:
         call play_music("my_immortal")
     
@@ -52,7 +60,6 @@ label t_wardrobe(return_label, char_label):
         $ current_item.set_color(active_layer)
         $ char_active.cache_override = False
         $ active_layer = None
-        $ char_active.cached = False
     elif _return == "bg_color":
         show screen t_wardrobe_menu(550, 50)
         $ bg_color_wardrobe = color_picker(get_rgb_tuple(bg_color_wardrobe), False, "Wardrobe Background Color", pos_xy=[20, 130])
@@ -152,19 +159,9 @@ screen t_wardrobe_menu(xx, yy):
             textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color")
             vbox:
                 ypos 60
-                spacing 5
-                textbutton "{size=12}Robe{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("robe"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "robe")
-                textbutton "{size=12}Hat{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("hat"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "hat")
-                textbutton "{size=12}Neckwear{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("neckwear"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "neckwear")
-                textbutton "{size=12}Badge{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("badge"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "badge")
-                textbutton "{size=12}Top{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("top"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "top")
-                textbutton "{size=12}Gloves{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("gloves"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "gloves")
-                textbutton "{size=12}Bra{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("bra"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "bra")
-                textbutton "{size=12}Bottoms{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("bottom"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "bottom")
-                textbutton "{size=12}Panties{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("panties"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "panties")
-                textbutton "{size=12}Garterbelt{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("garter"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "garter")
-                textbutton "{size=12}Stockings{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("stockings"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "stockings")
-                textbutton "{size=12}Buttplug{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn("plug"))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, "plug")
+                for i in xrange (0, len(character_clothing)):
+                    $ curr_item = character_clothing[i][0]
+                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, curr_item)
             
         #Erogenous zones
         vbox:
@@ -208,9 +205,7 @@ screen t_wardrobe_menuitem(xx, yy):
         ysize 548
         style "empty"
         background bg_color_wardrobe
-        
-        #frame background "#e3ba71" xsize 600 ysize 350 xpos pos_xy[0] ypos pos_xy[1]
-        
+   
         add "interface/panels/"+interface_color+"/icon_panel_1.png"
         
         if current_item:
@@ -221,7 +216,6 @@ screen t_wardrobe_menuitem(xx, yy):
                 
                 for i in xrange(0, current_item.layers-1):
                     button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i])
-
                 textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset")
             
         # Add subcategory list

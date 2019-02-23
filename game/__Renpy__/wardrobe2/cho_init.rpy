@@ -71,8 +71,8 @@ label __init_variables:
             # Stockings
             cho_cloth_lace_stockings_1 = cloth_class(char="cho", category="legs", subcat="stockings", type="stockings", id="lace_stockings_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
             # Garterbelts
-            cho_cloth_lacegarter1 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garter", id="lace_garter_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
-            cho_cloth_lacegarter2 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garter", id="lace_garter_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            cho_cloth_lacegarter1 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garterbelt", id="lace_garter_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            cho_cloth_lacegarter2 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garterbelt", id="lace_garter_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
         
             ################
             #              #
@@ -114,7 +114,7 @@ label __init_variables:
                         "bra":        [cho_cloth_basicbra1, 18, 0, 0, False],
                         "belt":       [None, 17, 0, 0, False],
                         "bottom":     [cho_cloth_schoolskirt2, 16, 0, 0, False],
-                        "garter":     [None, 15, 0, 0, False],
+                        "garterbelt": [None, 15, 0, 0, False],
                         "panties":    [cho_cloth_basicpanties1, 14, 0, 0, False],
                         "stockings":  [None, 13, 0, 0, False],
-                        "plug":       [None, 0, 0, 0, False]}
+                        "buttplug":   [None, 0, 0, 0, False]}

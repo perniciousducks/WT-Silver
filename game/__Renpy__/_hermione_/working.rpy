@@ -443,6 +443,227 @@ label slytherin_cheer_responses:
     $ uni_sperm = False
     jump night_main_menu
 
+    
+#[Send Hermione to work, promoting the card game.]
+
+label job_5:
+    $ menu_x = 0.5 #Menu position is back to default. (Center).
+    if hg_gamble_slut_ITEM.unlocked:
+        her "Why are the cards placed like that?"
+        her "..."
+        her "Fine..."
+
+        her "..."
+        her "Well, if it stops you from deducting those points."
+        her "I'll do it."
+
+        her "It's a bit revealing... but I'll do it."
+        call her_main( "For Gryffindor house obviously!", cheeks="blush")
+         
+        her "That doesn't leave a lot to the imagination..."
+        her "At least the straps should cover my nipples..."
+        her "I'll do it..."
+        
+    else:
+        her "You want me to put what on?!"
+        her "Why didn't you mention the outfit before?"
+        her "I think I'll take my leave..."
+        $ her_mood -= 7
+
+        her "...no."
+        her "I'd rather not dress myself up like that in public..."
+        her "I'm leaving..."
+        
+        her "And have my breasts visible to their customers?"
+        her "No thanks..."
+        jump main_room
+    
+    if first_time_cardgame_work:
+        $ first_time_cardgame_work = False
+        her "But... why do you want me to help them promote their shop?"
+        m "That is my business."
+        her "And what do you want me to tell them?"
+        m "Just ask them if they have a need for anyone helping them promote their card game."
+        m "If they're as business minded as I assume then there's no way they'd say no."
+        m "And make sure you ask them for payment."
+        her "Fine..."
+        her "I'll see you tonight."
+        m "Forgetting something?"
+        her "..."
+    
+    call h_equip_temp_outfit(hg_gamble_slut_ITEM)
+
+    g9 "Looking great!"
+    her "Thank you..."  
+    m "Off you go then..."  
+    
+    
+    hide screen hermione_main
+    call h_unequip_temp_outfit()
+    $ hermione_busy = True
+    $ current_job = 5
+
+    jump main_room
+    
+label hermione_helping_selling_cards:
+    $ current_job = 0 
+    $ random_choice = renpy.random.randint(0,4)
+    call h_equip_temp_outfit(hg_gamble_slut_ITEM)
+    
+    if random_choice == 0:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "Good..."
+        her "Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today."
+        her "Apparently we sold a lot more items than usual though."
+        m "Great news, I bet the twins are ecstatic."
+        her "Indeed, It was nice seeing them in such good spirits."
+        her "Whilst I might not agree with all their business methods I think they might become great salesmen some day."
+        m "Seems to me like they are already..."
+        m "So, how come you had such a surge in new customers?"
+        her "No idea, maybe the card game got more people interested in browsing the rest of their stock."
+        her "They actually had some problems with people stealing things before I started working there though."
+        m "And this stopped after you started working there?"
+        her "Well, probably not because of it. They put in some anti thieving measures."
+        m "Patent pending?"
+        her "It's pretty clever actually, they put up a mirror behind the counter so that when I have to turn around and grab something I'll be able to see if anyone takes anything."
+        m "\"Yeah, I'm sure that's why they put the mirror there...\""
+        m "Sounds like you're doing a great job."
+        her "Thanks!"
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], (points) points to Gryffindor."
+
+
+    elif random_choice == 1:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "It was fine, the outfit is a bit chilly though."
+        m "So, no other complications?"
+        her "Well..."
+        her "The twins asked me to give out some free promotional starter packs."
+        m "Yes?"
+        m "Sounds like a great way to get people into playing..."
+        her "Well, I didn't have anywhere to store the packs as you could imagine."
+        her "So I had to resort to putting them behind my suspenders and the top of my stockings."
+        her "And one customer got a bit..."
+        her "Touchy."
+        m "I see..."
+        her "I did get a bit agitated at one point actually..."
+        m "They didn't fire you did they?"
+        her "No!"
+        her "The customer was quite apologetic actually and bought a bunch of things."
+        her "The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves."
+        her "I'm fine with them believing they had anything to do with it though."
+        m "How noble of you..."
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], (points) points to Gryffindor."
+
+    elif random_choice == 2:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "Awful..."  
+        m "Really, why is that?"
+        her "Well, I'm not actually angry..."
+        her "Just a bit annoyed, that's all."
+        m "With?"
+        her "Myself..." 
+        her "The twins has set up a practice day where you get to borrow a deck of cards to get more people into the game."
+        m "Sounds like a good idea, get people invested."
+        her "Well, that was fine and all until the amount of new people interested started to slow down."
+        m "I see, so I expect the responsibility fell on you as you're the one meant to promote the game?"
+        her "Yes... I was the one that suggested the practice day to begin with, if it didn't work out then it would look very bad on my part."
+        m "So, you had to stop the practice sessions?"
+        her "No, that's not why I'm annoyed..."
+        her "In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested."
+        her "..."
+        her "I've played enough not to be beaten by a new player I thought."
+        m "Of course, you've played against me after all..."
+        her "..."
+        m "Sorry, go on."
+        her "Well, I managed to get a bunch of people into the card game so practice day is still on the schedule."
+        m "That's good!"
+        her "Though I might reconsider the whole strip card idea..."
+        her "I lost pretty quick and it turns out they had been cheating the whole time..."
+        m "Well, cheaters never prosper."
+        her "That's not true in this case... they prospered alright."
+        her "In any case, they seemed... happy, they bought a bunch of things so that makes me..."
+        her "Happy as well..."
+        m "Nicely done, I bet the twins are very grateful for your contributions."
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], 30 points to Gryffindor."
+
+
+    elif random_choice == 3:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "Great, they held a card game tournament today."
+        g4 "Wait, a tournament? How come I wasn't invited?"
+        her "It was students only obviously..."
+        m "Oh... of course."
+        her "There were way more participants than I expected seeing that there was an entry fee."
+        m "Must've been a great prize pool then..."
+        her "That's the weird thing. The prize pool only amounted do about half of the total entry fee amount."
+        her "Apparently... someone had gone around spreading the rumour that the winner would..."
+        her "Get a go with me if they won the tournament..."
+        g9 "And did they?"
+        her "Of course not..."
+        her "The winner was standing there with such an expectant look on his face after everyone had left as well..."
+        m "..."
+        her "So I told him that whatever he was expecting it wasn't going to happen."
+        her "He seemed so disheartened so I felt a bit bad about the whole thing..."
+        her "So, since I didn't want to bring his feeling of victory down I figured since some students had spread the rumour they'd assume the worst anyway..."
+        her "So I put my hand down his pants and fiddled around a bit whilst letting the guy get a peek behind my suspenders."
+        m "Good on you!"
+        her "You don't think that was a bit much?"
+        m "No! That was the right thing to do in that situation."
+        m "There wasn't a lot you could do about the rumours even if nothing had happened he'd probably lie about it anyway."
+        m "You probably ended up making that guys night."
+        her "More like week... seeing how much he..."
+        her "Anyway, glad you agree."
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], 30 points to Gryffindor."
+
+
+
+    else:
+        call her_main("","full_cum","dead")
+        m "What happened to you?"
+        her "What do you mean..."
+        her "Oh, that..."
+        m "Yes, that..."
+        her "There's a good explanation for this."
+        m "..."
+        m "Go on."
+        her "Oh, sorry... Well, I was trying out a new sales tactic..."
+        m "Something the twins came up with I assume?"
+        her "No, I read about it in one of their books actually."
+        her "Much like how you should always put the most lucrative cheap items at the counter to make the customer...."
+        m "Get on with it."
+        her "Fine..."
+        her "I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions."
+        g9 "Didn't think you'd be interested in such... unorthodox sales tactics..."
+        her "I was more curious to see if it would work more than anything else."
+        her "It tried it out to test the legitimacy of the claims in that book of theirs..."
+        m "\"I'm sure that's the reason...\""
+        m "And how many time did you test this... theory of yours."
+        her "There's no conclusion to be made by just testing a theory once [genie_name]."
+        her "Anyway..."     
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], 30 points to Gryffindor."
+    
+    call h_unequip_temp_outfit()
+    jump night_main_menu
+    
 label inn_menu:
     show bld1
     if inn_intro:

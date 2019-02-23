@@ -151,7 +151,7 @@ if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7
     if finished_report >= 1:
         $ letter_paperwork_report_OBJ.mailLetter()
     if not first_random_twins:
-        twins_interest = True
+        $ twins_interest = True
 
 $ day_of_week += 1
 

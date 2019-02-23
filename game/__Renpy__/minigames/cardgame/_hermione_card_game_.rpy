@@ -118,7 +118,7 @@ label hermione_third_duel:
 label hermione_random_duel:
     m "Ready for another game of cards?"
 
-    if her_whoring < 16
+    if her_whoring < 16:
         her "You've already challenged me though... and I lost."
         m "What if me made it a wager..."
         her "Like gambling? No thank you."
@@ -180,7 +180,7 @@ label hermione_random_duel:
     stop music fadeout 1
     hide screen blkfade
     
-    if her_random_win == False:
+    if not her_random_win:
         $ her_random_win = True
         $ geniecard_tokens += 3
     else:
@@ -193,9 +193,7 @@ label hermione_random_duel:
     m "This means I'm going to have to deduct [points] from Gryffindor house."
     her "Please, don't. I don't want the others to wake up tomorrow wondering why there's [points] points missing..."
     m "Well, in that case..."
-    [Ask her to give you a blowjob.]
-    [Send Hermione to work, promoting the card game.]
-    [Deduct the points]
+
     menu:
         "Send Hermione to work, promoting the card game.":
             m "In that case, I think I have a good idea for a job..."
@@ -206,7 +204,7 @@ label hermione_random_duel:
             m "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
             her "..."
             her "Did you need anything else?"
-            if cardgame_work == False:
+            if not cardgame_work:
                 call give_reward("Unlock message that the job is available in the work menu", "interface/icons/item_sexdoll.png")
                 $ cardgame_work = True
                 

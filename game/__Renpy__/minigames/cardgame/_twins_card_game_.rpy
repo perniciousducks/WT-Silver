@@ -92,7 +92,7 @@ label twins_second_duel:
     
 label twins_random_duel:
     if first_random_twins:
-        first_random_twins = False
+        $ first_random_twins = False
         m "How about another game?"
         twi "Sure, why not."
         fre "But let's make it a bit interesting."
@@ -169,7 +169,7 @@ label twins_random_duel:
         m "It would appear that I may have lost this one..."
         twi "It seems so."
         m "Well, here's your reward..."
-        gold -= 10
+        $ gold -= 10
         jump twins_duel_lost
 
     hide screen blkfade

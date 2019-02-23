@@ -473,7 +473,9 @@ label __init_variables:
             her_first_win = False
             her_second_win = False
             her_third_win = False
-
+            her_random_win = False
+            cardgame_work = False
+            
         if not hasattr(renpy.store, 'twins_know_cards'):
             twins_know_cards = False
             twins_first_win = False

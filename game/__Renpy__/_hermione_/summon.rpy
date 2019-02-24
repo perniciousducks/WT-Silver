@@ -438,6 +438,13 @@ label hermione_talk:
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
+                    
+                "-Work for the twins to addevetise cardgame-" if daytime and cardgame_work:
+                    jump job_5
+
+                "{color=#858585}-Work for the twins to addevetise cardgame-{/color}" if not daytime and cardgame_work:
+                    "This job is only available during the day."
+                    jump working_menu
 
                 "-Never mind-":
                     jump hermione_talk

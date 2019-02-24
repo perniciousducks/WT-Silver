@@ -29,7 +29,7 @@ label hermione_first_duel:
 label hermione_second_duel:
     call play_music("grape_soda")
     
-    $duel_response = start_duel(her_second_deck)
+    $ duel_response = start_duel(her_second_deck)
           
     if duel_response == "Close":
         jump her_duel_cancel
@@ -83,7 +83,7 @@ label hermione_third_duel:
     hide screen genie_vs_hermione_smile
     play music "music/vs_hermione.mp3"
     
-    $duel_response = start_duel(her_third_deck, "her_after")
+    $ duel_response = start_duel(her_third_deck, her_after)
           
     if duel_response == "Close":
         jump her_duel_cancel
@@ -115,19 +115,110 @@ label hermione_third_duel:
     
     jump main_room
     
-label her_after:
-    $ volume = _preferences.volumes['music']
-    $ _preferences.volumes['music'] *= .5
-    $ s_punch = renpy.random.randint(1, 4)
-    play sound "sounds/card_punch%s.mp3" % s_punch
-    # Prevents volume to change again when using rollback
-    $ renpy.block_rollback()
-    $ her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
-    call her_main ("[her_speech!t]", "base", "base")
-    hide screen hermione_main
-    $ _preferences.volumes['music'] = volume   
-    return
+label hermione_random_duel:
+    m "Ready for another game of cards?"
+
+    if her_whoring < 16:
+        her "You've already challenged me though... and I lost."
+        m "What if me made it a wager..."
+        her "Like gambling? No thank you."
+        m "It's not gambling, just a friendly house point wager..."
+        her "Sounds like gambling to me..."
+        m "So, how about it?"
+        her "Not right now [genie_name]..."
+
+        m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
+    else: 
+        her "You've already challenged me though... and I lost."
+        m "What if me made it a wager..."
+        her "Like gambling you mean?"
+        m "Not for money obviously."
+        her "What are you suggesting then?"
+        m "Well, I was thinking house points."
+        her "House points..."
+        her "How would this work then?"
+        m "Well, if you win I'll give you [amount] to Gryffindor."
+        her "And if I lose?"
+        m "I'll take the same amount away."
+        m "\"As if she's going to let that happen...\""
+        her "..."
+        her "Okay, but let's make it a fair game."
+        
+    call play_music("boss_card_theme")
+    play sound "sounds/Genie_VS_Hermione4.mp3"
+    show screen genie_vs_hermione
+    show screen move_genie
+    pause 1
+    show screen versus
+    pause 1
+    show screen move_hermione
+    pause 3
+    hide screen move_genie
+    hide screen move_hermione
+    show screen genie_vs_hermione_smile
+    with hpunch
+    stop music fadeout 0
+    pause
+    hide screen versus
+    hide screen genie_vs_hermione
+    hide screen genie_vs_hermione_smile
+    play music "music/vs_hermione.mp3"
     
+    $ random_player_deck = create_random_deck(0,150,unlocked_cards)
+
+    $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
+
+    $ duel_response = start_duel(random_enemy_deck, her_after, [5, False, False, True], random_player_deck)
+          
+    if duel_response == "Close":
+        jump her_duel_cancel
+        
+    elif not duel_response == "win":
+        jump her_duel_lost
+    
+    #Won third match
+    stop music fadeout 1
+    hide screen blkfade
+    
+    if not her_random_win:
+        $ her_random_win = True
+        $ geniecard_tokens += 3
+    else:
+        $ geniecard_tokens += 1
+    
+    m "Seems like I've won this one [hermione_name]."
+    her "I noticed..."
+    m "You do know what this means, don't you?"
+    her "..."
+    m "This means I'm going to have to deduct [points] from Gryffindor house."
+    her "Please, don't. I don't want the others to wake up tomorrow wondering why there's [points] points missing..."
+    m "Well, in that case..."
+
+    menu:
+        "Send Hermione to work, promoting the card game.":
+            m "In that case, I think I have a good idea for a job..."
+            her "A job?"
+            m "Yes, I'd like you to start helping the twins promote the card game..."
+            her "I can do that..."
+            her "But not today if that's okay with you."
+            m "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
+            her "..."
+            her "Did you need anything else?"
+            if not cardgame_work:
+                call give_reward("Unlock message that the job is available in the work menu", "interface/icons/item_sexdoll.png")
+                $ cardgame_work = True
+                
+        "Deduct the points":
+            m "Graffindor minus 10 points"
+            $ gryffindor -= 10
+            
+            
+
+    call play_sound("door")
+    $ hermione_busy = True
+    
+    jump main_room
+       
 label her_duel_lost:
     stop music fadeout 1
 
@@ -169,3 +260,17 @@ screen genie_vs_hermione_smile:
     add "images/cardgame/VS/genie_03.png"
     add "images/cardgame/VS/hermione_02.png"
     text "Click to continue" xalign 0.5 yalign 1.0
+    
+init python:
+    def her_after():
+        volume = _preferences.volumes['music']
+        _preferences.volumes['music'] *= .5
+        s_punch = renpy.random.randint(1, 4)
+        renpy.sound("sounds/card_punch%s.mp3" % s_punch)
+        # Prevents volume to change again when using rollback
+        renpy.block_rollback()
+        her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
+        renpy.call("her_main", "[her_speech!t]", "base", "base")
+        renpy.hide_screen("hermione_main")
+        _preferences.volumes['music'] = volume   
+        return

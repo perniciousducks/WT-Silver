@@ -57,29 +57,29 @@ label maid_responses:
                 her "I suppose..."
                 m "10 points to Gryffindor"
             elif day_random <= 8:
-                her "Do I really have to keep doing this?"
-                m "What do you mean [hermione_name]?"
-                her "It's so degrading. I have to clean other students rooms!"
+                call her_main("Do I really have to keep doing this?","normal","glanceL")
+                m "What do you mean, [hermione_name]?"
+                call her_main("It's so degrading... I have to clean other students rooms!","open","down")
                 m "You can stop anytime."
-                her "I can?"
-                m "Certainly, I'll just get one of those Slytherin floosies that you are always on about."
+                call her_main("I can?","soft","concerned")
+                g9 "Certainly, I'll just get one of those Slytherin floosies that you are always on about."
                 m "I'm sure that they'd jump at the chance to make some points for their house."
                 m "They'd probably even do it for next to nothing, if not free."
-                her "Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?"
-                her "I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?"
+                call her_main("Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?","upset","closed")
+                call her_main("I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?","base","baseL")
                 m "I can, it's just not as enjoyable."
-                her "Hmmph. Can I at least get my points now?"
+                call her_main("Hmmph. Can I at least get my points now?","angry","angryCl")
                 m "Certainly, 10 points to Gryffindor."
             else:
-                her "I think you need to start enforcing harsher punishment for sexual harrasment."
-                her "Hmmph. Can I at least get my points now?"
+                call her_main("I think you need to start enforcing harsher punishment for sexual harassment.","mad","angry")
+                call her_main("Hmmph... Can I at least get my points now?","angry","angryCl")
                 m "Certainly, 10 points to Gryffindor."
         "-Dismiss her-":
-            her "Here's your payment."
+            call her_main("Here's your payment.","base","base")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 20 points to Gryffindor."
 
-    her "Thank you, [genie_name]."
+    call her_main("Thank you, [genie_name].","base","base")
     ">You receive [payment] gold coins."
     $ gryffindor+= 20
     $ gold += payment
@@ -135,7 +135,7 @@ label barmaid_responses:
 
     menu:
         "-Ask her how her day was-":
-            her "Fine."
+            her "Fine..."
             m "Anything unusual happen?"
             her "Not really, I just served people drinks."
             m "Well in that case 10 points to Gryffindor."
@@ -166,9 +166,9 @@ label job_3:
     if her_whoring <= 6:
         her "*Humph!*..."
     elif her_whoring <= 15:
-        her "Yes, [genie_name]..."
+        call her_main("Yes, [genie_name]...","normal","baseL")
     else:
-        her "As you wish, [genie_name]."
+        call her_main("As you wish, [genie_name].","open","base")
 
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
@@ -179,7 +179,7 @@ label job_3:
     pause.8
 
     g9 "You look great!"
-    her "Thank you..."
+    call her_main("Thank you...","base","happyCl")
     m "Off you go then..."
 
     call her_walk("mid","leave",2)
@@ -210,36 +210,36 @@ label gryffindor_cheer_responses:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "Hello, [hermione_name], how was your day?"
-                call her_main("It was good [genie_name], I think that the team is really starting to liven up.","base","base")
+                call her_main("It was good [genie_name], I think that the team morale has really started to go up.","base","base")
                 m "How so?"
-                call her_main("Well since I've started they seem to have improved their game.","open","base")
+                call her_main("Well, since I've started they seem to have improved their tactics.","open","base")
                 call her_main("They also seem much happier. Harry is always looking at me with a smile on his face.","base","base")
                 m "And does he look at you a lot?"
                 call her_main("Of course he does, we're good friends.","open","base")
-                m "I'm sure that must be the reason."
+                m "\"I'm sure that must be the reason...\""
                 call her_main("Well here's the money, [genie_name].","base","base")
                 ">You receive [payment] gold coins."
                 m "Well done, [hermione_name], 20 points to Gryffindor."
             elif day_random >= 3 and day_random <= 5:
                 m "Hello, [hermione_name], how was your day?"
-                call her_main("Tiring. This cheering really is quite exhausting.","open","worried")
+                call her_main("Tiring. This cheering thing really is quite exhausting.","open","worried")
                 m "Anything interesting happen?"
                 call her_main("Not unless you count me almost dropping my pom pom.","normal","base")
-                m "I don't. Well did they pay you?"
-                call her_main("Of course, here you are [genie_name]","open","base")
+                m "I don't... Well, did they pay you?"
+                call her_main("Of course, here you are [genie_name].","open","base")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
             elif day_random >= 6 and day_random <= 8:
                 m "Welcome back [hermione_name]."
                 call her_main("Hello [genie_name].","open","base")
-                m "How did you go today?"
-                call her_main("Very well, all the boys said that I helped keep their spirits up.","open","base")
-                m "{size=-5}I'm sure that wasn't the only thing you kept up...{/size}"
+                m "How did everything go today?"
+                call her_main("Very well thank you, all the boys said that I helped keep their spirits up.","open","base")
+                m "{size=-5}I'm sure that wasn't the only thing you've helped stay up...{/size}"
                 call her_main("What was that [genie_name]?","open","suspicious")
-                m "I was just saying that I'm sure you kept them entertained."
-                call her_main("I think so.","open","worriedL")
-                m "Well did they pay you for raising their \"spirits\"?"
-                call her_main("Of course they did.","open","closed")
+                m "I was just saying that I'm sure you did a stand up job."
+                call her_main("I think so...","base","happyCl")
+                m "Well, did they pay you for raising their \"spirits\"?"
+                call her_main("Of course they did.","open","base")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
             elif day_random >=9 and lock_public_favors == True or her_whoring <= 15:
@@ -247,35 +247,41 @@ label gryffindor_cheer_responses:
                 call her_main("Of course I am, we won!","base","base")
                 m "Won?"
                 call her_main("We won! We beat Slytherin in a practice match.","smile","happyCl")
-                m "You seem a little over-excited for a practice match."
-                call her_main("Well it was such a game. Not to mention that we got to rub it in those Slytherin faces afterwards.","smile","baseL")
-                m "Well I'm glad that you are enjoying your work."
-                call her_main("I am [genie_name]. Given that most of the \"work\" I do to help the house has to be kept private, it feels good to do something public for my house.","open","base")
+                m "You seem a little bit over-excited for just a practice match."
+                call her_main("Well it was such a great game. Not to mention that we got to rub it in those Slytherin students faces afterwards.","smile","baseL")
+                g9 "Well I'm glad that you are enjoying your work."
+                call her_main("I am [genie_name]. Given that most of the \"work\" I've done to help my house is kept private, it feels good to be able to do something public once.","open","base")
                 m "Not to mention you get paid for it..."
-                call her_main("Oh, right. Here you are.","soft","baseL")
+                call her_main("Oh, right, Here you are...","soft","baseL")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
             else:
                 m "Welcome back [hermione_name], how was your day?"
                 call her_main("We won! We managed to beat Slytherin.","base","base")
-                m "That must have been very exhilarating. I'm sure your cheering gave the motivation to win."
+                m "That must have been very exhilarating. I'm sure your cheering gave the extra motivation needed to win."
                 call her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.","base","happyCl")
 
                 menu:
                     "-Reward?-":
                         m "What reward did you promise them?"
-                        call her_main("Well I was so keen for us to beat Slytherin that I may have promised them that I would give them all blowjobs if they won.","grin","baseL")
+                        call her_main("Well I was quite keen to ensure our victory against Slytherin that I may have promised that I would give each of them a blowjob if they won.","grin","baseL")
                         m "You gave every team member a blowjob after the game?"
                         call her_main("And the water boy...","smile","glance")
-                        m "How did that even work? Did you just crawl around the room on your knees?"
-                        call her_main("Of course not, they all lined up and waited their turn.","scream","angryCl")
-                        m "They lined up? And then what?"
-                        call her_main("Well I sucked their cocks until they came and then I swallowed. Surely you of all people know how a blowjob works.","annoyed","worriedL")
+                        m "How did you even manage that? Did have to crawl around the locker room on your knees?"
+                        call her_main("Of course not, they all patiently waited on their turn...","scream","angryCl")
+                        m "Who doesn't love a queue..."
+                        m "So they queued up... And then?"
+                        call her_main("Well I did what I said I would, I'm not the kind of person to lie am I?","annoyed","worriedL")
+                        call her_main("So, I gave them the reward I promised... And surely you of all people would know how a blowjob works.","annoyed","squintL")
                         m "That's not quite what I meant."
-                        call her_main("Well I'm glad I did. I can't wait to rub it in Astoria's face tomorrow.","smile","baseL")
-                        m "Well I'm glad you think it was worth it. Did they pay you?"
+                        m "You just look rather..."
+                        m "Clean, that's all."
+                        call her_main("Oh, well...","base","down",cheeks="blush")
+                        call her_main("I didn't want to make a mess","soft","down_raised",cheeks="blush") 
+                        call her_main("Anyhow, I'm glad I did it. I can't wait to rub it in Astoria's face tomorrow...","smile","base")
+                        m "I'm glad you think it was worth it. Did they pay you?"
                     "-Okay-":
-                        m "I'm sure they were. Did they pay you?"
+                        m "I'm sure it was worth it. Did they pay you?"
 
                 her "Of course they did [genie_name], here you are."
                 m "Well done [hermione_name], 20 points to Gryffindor."
@@ -318,7 +324,7 @@ label job_4:
     pause.8
 
     g4 "You look incredible!"
-    her "Thank you..."
+    call her_main("Thank you...","base","happyCl")
     m "Off you go then..."
 
     call her_walk("mid","leave",2)
@@ -353,7 +359,7 @@ label slytherin_cheer_responses:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "How was your day today [hermione_name]?"
-                call her_main("Exhausting. Those Slytherin pigs insisted that I cheer for their entire practice session.","open","angryCl")
+                call her_main("Exhausting... Those Slytherin pigs insisted that I cheer for their entire practice session.","open","angryCl")
                 her "They were hardly playing the game by the end. They were just standing there watching me."
                 m "Well what was your routine?"
                 call her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","annoyed","frown")
@@ -363,55 +369,57 @@ label slytherin_cheer_responses:
                 m "30 points to Gryffindor."
             elif day_random >= 3 and day_random <= 5:
                 m "How was your day today [hermione_name]?"
-                call her_main("Uneventful. I completed my routine and then went back to my room.","open","suspicious")
+                call her_main("Uneventful. I completed my routine and then went back to my room...","open","suspicious")
                 m "You didn't talk to anyone?"
                 call her_main("I make a point of trying to avoid Slytherin student as best I can. ","annoyed","angryL")
-                m "Are they really that unbearable."
-                call her_main("Yes.","open","angryCl")
+                m "Are they really that unbearable?"
+                call her_main("Yes...","open","angryCl")
                 m "Well, you earned your points."
                 m "30 points to Gryffindor."
             elif day_random >= 6 and day_random <= 8:
                 m "Hello [hermione_name]."
                 call her_main("Hello [genie_name].","normal","base")
-                m "How did you go today?"
+                m "How did everything go today?"
                 call her_main("Very well. In fact I think I might be doing too well.","annoyed","worriedL")
                 m "How so?"
-                call her_main("I think that my cheering is having too positive an effect.","open","worried")
-                call her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me.","open","worriedL")
-                m "Just think about how your helping your house in other ways."
-                call her_main("I suppose your right [genie_name].","open","base")
-                m "Of course I am, now did they pay you?"
+                call her_main("I think that my cheering is having too much of an positive effect.","open","worried")
+                call her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me...","open","worriedL")
+                m "Just think about how you're helping your house in other ways."
+                call her_main("I suppose you're right [genie_name].","open","base")
+                m "Of course I am... Now, did they pay you?"
                 call her_main("Yes [genie_name].","base","base")
                 m "Well done [hermione_name], 20 points to Gryffindor."
             elif day_random >=9 and lock_public_favors == True:
-                call her_main("[genie_name], something must be done about these Slytherin boys.","open","angryCl")
-                call her_main("It's bad enough that I have to cheer for them but they are starting to become a little touchy.","annoyed","angryL")
+                call her_main("[genie_name], something must be done about those Slytherin boys...","open","angryCl")
+                call her_main("It's bad enough that I have to cheer for them but they are being a little bit touchy.","annoyed","angryL")
                 m "Touchy?"
                 call her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.","scream","angryCl")
-                m "You keep dancing while they grope you?"
-                call her_main("Of course, I'm there to complete a job. I won't fail at this just because of a few boys.","open","angryCl")
+                m "You kept dancing while they groped you?"
+                call her_main("Of course, I'm there to complete a job. I'm not getting distracted just because of a few boys.","open","angryCl")
                 m "Well what would you have me do?"
-                call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him.","angry","angry")
-                m "Very well, I'll speak to him. I'm not sure it will have the effect your hoping for."
-                call her_main("It better, otherwise I wont put my full effort into the routine.","normal","frown")
+                call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him...","angry","angry")
+                m "Very well, I'll speak to him. Although I'm not sure it will have the effect you're hoping for."
+                call her_main("It better, otherwise I wont put my full effort into this...","normal","frown")
                 m "{size=-5}I'm sure that'll show them.{/size}"
                 call her_main("What was that [genie_name]?","open","suspicious")
-                m "Nothing [hermione_name], I was just saying I'll speak to Professor Snape tonight."
+                m "Nothing [hermione_name], I'll speak to Professor Snape tonight..."
             else:#Comes back with cum on her
                 m "What the hell happened to you?"
                 call her_main("I did my job [genie_name].","angry","down_raised")
                 m "What are you talking about? You were supposed to be a cheerleader."
+                m "You know, cheering..."
+                m "And all that."
                 call her_main("I am [genie_name]. I just performed a different type of cheer today.","soft","ahegao")
-                m "And that cheer included jerking off the entire Slytherin team?"
-                call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room.","angry","down_raised")
-                her "And one thing led to another..."
+                m "And by that you mean jerking off the entire Slytherin team?"
+                call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room...","angry","down_raised")
+                her "And one thing led to another."
                 m "Fine, I don't want to hear it. How much did they pay you for this \"cheering\"?"
                 call her_main("Pay me?","silly","dead")
                 m "You are supposed to be paid for this [hermione_name]."
                 call her_main("Oh... I must have forgotten. Sorry [genie_name]","base","baseL",cheeks="blush")
                 m "Fine, but you aren't getting any points."
-                call her_main("Of course not [genie_name]. Will that be all?","base","base")
-                m "Yes, you can go now."
+                call her_main("Of course [genie_name]. Will that be all?","base","base")
+                m "Yes, you're free to go now."
                 call her_main("Thank you, [genie_name].","base","glance")
                 jump end_her_working_no_payment
         "-Dismiss her-":
@@ -435,6 +443,227 @@ label slytherin_cheer_responses:
     $ uni_sperm = False
     jump night_main_menu
 
+    
+#[Send Hermione to work, promoting the card game.]
+
+label job_5:
+    $ menu_x = 0.5 #Menu position is back to default. (Center).
+    if hg_gamble_slut_ITEM.unlocked:
+        her "Why are the cards placed like that?"
+        her "..."
+        her "Fine..."
+
+        her "..."
+        her "Well, if it stops you from deducting those points."
+        her "I'll do it."
+
+        her "It's a bit revealing... but I'll do it."
+        call her_main( "For Gryffindor house obviously!", cheeks="blush")
+         
+        her "That doesn't leave a lot to the imagination..."
+        her "At least the straps should cover my nipples..."
+        her "I'll do it..."
+        
+    else:
+        her "You want me to put what on?!"
+        her "Why didn't you mention the outfit before?"
+        her "I think I'll take my leave..."
+        $ her_mood -= 7
+
+        her "...no."
+        her "I'd rather not dress myself up like that in public..."
+        her "I'm leaving..."
+        
+        her "And have my breasts visible to their customers?"
+        her "No thanks..."
+        jump main_room
+    
+    if first_time_cardgame_work:
+        $ first_time_cardgame_work = False
+        her "But... why do you want me to help them promote their shop?"
+        m "That is my business."
+        her "And what do you want me to tell them?"
+        m "Just ask them if they have a need for anyone helping them promote their card game."
+        m "If they're as business minded as I assume then there's no way they'd say no."
+        m "And make sure you ask them for payment."
+        her "Fine..."
+        her "I'll see you tonight."
+        m "Forgetting something?"
+        her "..."
+    
+    call h_equip_temp_outfit(hg_gamble_slut_ITEM)
+
+    g9 "Looking great!"
+    her "Thank you..."  
+    m "Off you go then..."  
+    
+    
+    hide screen hermione_main
+    call h_unequip_temp_outfit()
+    $ hermione_busy = True
+    $ current_job = 5
+
+    jump main_room
+    
+label hermione_helping_selling_cards:
+    $ current_job = 0 
+    $ random_choice = renpy.random.randint(0,4)
+    call h_equip_temp_outfit(hg_gamble_slut_ITEM)
+    
+    if random_choice == 0:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "Good..."
+        her "Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today."
+        her "Apparently we sold a lot more items than usual though."
+        m "Great news, I bet the twins are ecstatic."
+        her "Indeed, It was nice seeing them in such good spirits."
+        her "Whilst I might not agree with all their business methods I think they might become great salesmen some day."
+        m "Seems to me like they are already..."
+        m "So, how come you had such a surge in new customers?"
+        her "No idea, maybe the card game got more people interested in browsing the rest of their stock."
+        her "They actually had some problems with people stealing things before I started working there though."
+        m "And this stopped after you started working there?"
+        her "Well, probably not because of it. They put in some anti thieving measures."
+        m "Patent pending?"
+        her "It's pretty clever actually, they put up a mirror behind the counter so that when I have to turn around and grab something I'll be able to see if anyone takes anything."
+        m "\"Yeah, I'm sure that's why they put the mirror there...\""
+        m "Sounds like you're doing a great job."
+        her "Thanks!"
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], (points) points to Gryffindor."
+
+
+    elif random_choice == 1:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "It was fine, the outfit is a bit chilly though."
+        m "So, no other complications?"
+        her "Well..."
+        her "The twins asked me to give out some free promotional starter packs."
+        m "Yes?"
+        m "Sounds like a great way to get people into playing..."
+        her "Well, I didn't have anywhere to store the packs as you could imagine."
+        her "So I had to resort to putting them behind my suspenders and the top of my stockings."
+        her "And one customer got a bit..."
+        her "Touchy."
+        m "I see..."
+        her "I did get a bit agitated at one point actually..."
+        m "They didn't fire you did they?"
+        her "No!"
+        her "The customer was quite apologetic actually and bought a bunch of things."
+        her "The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves."
+        her "I'm fine with them believing they had anything to do with it though."
+        m "How noble of you..."
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], (points) points to Gryffindor."
+
+    elif random_choice == 2:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "Awful..."  
+        m "Really, why is that?"
+        her "Well, I'm not actually angry..."
+        her "Just a bit annoyed, that's all."
+        m "With?"
+        her "Myself..." 
+        her "The twins has set up a practice day where you get to borrow a deck of cards to get more people into the game."
+        m "Sounds like a good idea, get people invested."
+        her "Well, that was fine and all until the amount of new people interested started to slow down."
+        m "I see, so I expect the responsibility fell on you as you're the one meant to promote the game?"
+        her "Yes... I was the one that suggested the practice day to begin with, if it didn't work out then it would look very bad on my part."
+        m "So, you had to stop the practice sessions?"
+        her "No, that's not why I'm annoyed..."
+        her "In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested."
+        her "..."
+        her "I've played enough not to be beaten by a new player I thought."
+        m "Of course, you've played against me after all..."
+        her "..."
+        m "Sorry, go on."
+        her "Well, I managed to get a bunch of people into the card game so practice day is still on the schedule."
+        m "That's good!"
+        her "Though I might reconsider the whole strip card idea..."
+        her "I lost pretty quick and it turns out they had been cheating the whole time..."
+        m "Well, cheaters never prosper."
+        her "That's not true in this case... they prospered alright."
+        her "In any case, they seemed... happy, they bought a bunch of things so that makes me..."
+        her "Happy as well..."
+        m "Nicely done, I bet the twins are very grateful for your contributions."
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], 30 points to Gryffindor."
+
+
+    elif random_choice == 3:
+        call her_main("")
+        m "Hello, [hermione_name], how was your day?" 
+        her "Great, they held a card game tournament today."
+        g4 "Wait, a tournament? How come I wasn't invited?"
+        her "It was students only obviously..."
+        m "Oh... of course."
+        her "There were way more participants than I expected seeing that there was an entry fee."
+        m "Must've been a great prize pool then..."
+        her "That's the weird thing. The prize pool only amounted do about half of the total entry fee amount."
+        her "Apparently... someone had gone around spreading the rumour that the winner would..."
+        her "Get a go with me if they won the tournament..."
+        g9 "And did they?"
+        her "Of course not..."
+        her "The winner was standing there with such an expectant look on his face after everyone had left as well..."
+        m "..."
+        her "So I told him that whatever he was expecting it wasn't going to happen."
+        her "He seemed so disheartened so I felt a bit bad about the whole thing..."
+        her "So, since I didn't want to bring his feeling of victory down I figured since some students had spread the rumour they'd assume the worst anyway..."
+        her "So I put my hand down his pants and fiddled around a bit whilst letting the guy get a peek behind my suspenders."
+        m "Good on you!"
+        her "You don't think that was a bit much?"
+        m "No! That was the right thing to do in that situation."
+        m "There wasn't a lot you could do about the rumours even if nothing had happened he'd probably lie about it anyway."
+        m "You probably ended up making that guys night."
+        her "More like week... seeing how much he..."
+        her "Anyway, glad you agree."
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], 30 points to Gryffindor."
+
+
+
+    else:
+        call her_main("","full_cum","dead")
+        m "What happened to you?"
+        her "What do you mean..."
+        her "Oh, that..."
+        m "Yes, that..."
+        her "There's a good explanation for this."
+        m "..."
+        m "Go on."
+        her "Oh, sorry... Well, I was trying out a new sales tactic..."
+        m "Something the twins came up with I assume?"
+        her "No, I read about it in one of their books actually."
+        her "Much like how you should always put the most lucrative cheap items at the counter to make the customer...."
+        m "Get on with it."
+        her "Fine..."
+        her "I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions."
+        g9 "Didn't think you'd be interested in such... unorthodox sales tactics..."
+        her "I was more curious to see if it would work more than anything else."
+        her "It tried it out to test the legitimacy of the claims in that book of theirs..."
+        m "\"I'm sure that's the reason...\""
+        m "And how many time did you test this... theory of yours."
+        her "There's no conclusion to be made by just testing a theory once [genie_name]."
+        her "Anyway..."     
+        call her_main("Here's your payment.","open","base")
+        call give_reward("You have received 20 gold", "interface/icons/gold.png")
+        $ gold += 20
+        m "Well done [hermione_name], 30 points to Gryffindor."
+    
+    call h_unequip_temp_outfit()
+    jump night_main_menu
+    
 label inn_menu:
     show bld1
     if inn_intro:

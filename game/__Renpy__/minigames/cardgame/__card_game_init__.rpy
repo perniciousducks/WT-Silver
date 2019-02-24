@@ -496,6 +496,12 @@ label __init_variables:
             for i in range(0,5):
                 playerdeck[i].copies = 0
                 
+            card_rule_reverse = cardgame_rules(name="Reverse", description="Instead of a higher number, you need to have the lowest number to take over a card.", icon="images/cardgame/rule_reverse.png")
+            card_rule_hidden = cardgame_rules(name="Hidden", description="The hidden rule means that a certain amount of cards in your enemies deck will be hidden.", icon="images/cardgame/rule_hidden.png")
+            card_rule_death = cardgame_rules(name="Death", description="If your game ends in a draw you pick up the cards that are shown in your colour and play again.", icon="images/cardgame/rule_death.png")
+            card_rule_double = cardgame_rules(name="Double", description="If the card you put down has the same number facing at least 2 other cards (Rather than higher/lower) you'll take over those cards.", icon="images/cardgame/rule_double.png")
+            card_rule_random = cardgame_rules(name="Random", description="Your deck is selected randomly from the available cards.", icon="images/cardgame/rule_random.png")
+                
         cards_realm = [genie, iris, jasmine, azalea, dahlia, maslab, aladdin, lilly, rasul, jafar]
         cards_hogwarts = [her_schoolgirl, her_librarian, lun_schoolgirl, sus_schoolgirl, cho_schoolgirl, fred, george, snape, dumbledore]
         cards_other = [santa]
@@ -701,6 +707,14 @@ init python:
             for card in unlocked_cards:
                 if title == card.title:
                     card.copies += 1
+                    
+    class cardgame_rules(object):
+        name = None
+        description = None
+        icon = None
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
                      
     class card_new(object):
         playercard = True

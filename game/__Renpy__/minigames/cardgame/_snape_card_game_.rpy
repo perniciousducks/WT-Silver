@@ -134,7 +134,7 @@ label snape_third_duel:
 
     jump main_room
     
-label snape_random_duel:
+label snape_random_duel:    
     call play_music("grape_soda")
 
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
@@ -271,7 +271,7 @@ label snape_duel_lost:
             call sna_main("Child's play...","snape_02")
             m "I'm hundreds of years old you know..."
             call sna_main("And I beat you...","snape_02")
-            m "just show how luck based the game is honestly..."
+            m "just shows how luck based the game is honestly..."
         elif rndm_one_of_three == 5:
             call sna_main("...","snape_02")
             m "Just take your prize and go."

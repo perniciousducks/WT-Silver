@@ -1,5 +1,4 @@
 init python:
-
     def start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
         global standart_rules
         global playerdeck
@@ -23,6 +22,13 @@ init python:
         for card in opppent_deck:
             card.playercard = False
             enemy_deck.append(card.clone())
+            
+        # Display rules
+        game_rules_list = convert_rules(rules, player_deck)
+        if len(game_rules_list) > 0:
+            renpy.show_screen("rules_display", game_rules_list)
+            renpy.pause()
+            renpy.hide_screen("rules_display")
          
         ## Clean the table from last fight ##
         reset_table_cards()
@@ -174,6 +180,20 @@ init python:
         update_table(x,y, reverse, dobelt_number)
         
         return
+        
+    def convert_rules(rules, player_deck):
+        rules_list = []
+        if rules[0] > 0:
+            rules_list.append(card_rule_hidden)
+        if rules[1]:
+            rules_list.append(card_rule_death)
+        if rules[2]:
+            rules_list.append(card_rule_reverse)
+        if rules[3]:
+            rules_list.append(card_rule_double)
+        if not player_deck == playerdeck:
+            rules_list.append(card_rule_random)
+        return rules_list
        
         
 screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
@@ -193,6 +213,8 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
                     use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
+                    
+    textbutton "Rules" xpos 200 ypos 60
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
@@ -304,3 +326,32 @@ screen card_end_message(message):
     zorder 9
 
     text "{color=#FFF}{size=+40}[message]{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (5, "#000", 0, 0) ]
+    
+screen rules_display(game_rules_list):
+    tag rules
+    zorder 8
+    
+    add "interface/bld.png" at fadeInOut
+    
+    vbox:
+        ypos 40
+        spacing 20
+        xalign 0.5
+        xsize 640
+        text "{color=#ffffff}Custom rules{/color}"size 32 xalign 0.5
+        text "{color=#ffffff}This game uses some extra rules, it is recommended if it's your first time playing to read the description for the active rules.{/color}" xalign 0.5
+        
+        frame:
+            xalign 0.5
+            background "#7c716a"
+            vbox:
+                spacing 5
+                for i in xrange(0, len(game_rules_list)):
+                    hbox:
+                        add game_rules_list[i].icon
+                        text game_rules_list[i].name yalign 0.5
+                    frame:
+                        background "#625954"
+                        xfill True
+                        text game_rules_list[i].description yalign 0.5 size 12
+                    add "images/cardgame/spacer.png"

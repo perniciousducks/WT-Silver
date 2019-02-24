@@ -168,7 +168,7 @@ label hermione_random_duel:
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
 
-    $ duel_response = start_duel(random_enemy_deck, her_after, [0, True, True, False], random_player_deck)
+    $ duel_response = start_duel(random_enemy_deck, her_after, [5, False, False, True], random_player_deck)
           
     if duel_response == "Close":
         jump her_duel_cancel

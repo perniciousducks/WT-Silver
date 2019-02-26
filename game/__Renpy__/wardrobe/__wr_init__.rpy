@@ -59,6 +59,8 @@ label wardrobe_init:
     return
 
 label color_cloth_test:
+    $ cho_class.cache_override = True
+    $ current_clothing = cho_class.get_cloth("top")
     show screen cloth_test
 
     $ _return = ui.interact()
@@ -66,10 +68,13 @@ label color_cloth_test:
     hide screen cloth_test
 
     if _return[0] == "change_color":
-        $ active_layer = _return[1]
+        #$ active_layer = _return[1]
         show screen cloth_test()
-        $ cho_top_school_CLOTH.set_color(_return[1])
+        $ current_clothing.set_color(_return[1])
         hide screen cloth_test
+        $ cho_class.cache_override = False
+    elif _return == "reset":
+        $ current_clothing.reset_color()
 
     jump color_cloth_test
 
@@ -77,19 +82,19 @@ label color_cloth_test:
 screen cloth_test:
     python:
         if not color_preview == None:
-            cho_top_school_CLOTH.color[active_layer] = color_preview
+            current_clothing.color[active_layer] = color_preview
 
     zorder 100
-    add cho_top_school_CLOTH.get_image() xpos 700 yalign 0.5 zoom 0.5 xanchor 0.5 yanchor 0.5
+    add cho_class.get_image() xpos 700 yalign 0.5 zoom 0.5 xanchor 0.5 yanchor 0.5
 
     vbox:
         xpos 850
         ypos 300
         spacing 5
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(0)) xsize 50 ysize 50
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(1)) xsize 50 ysize 50
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(2)) xsize 50 ysize 50
-        frame background get_hex_string_tuple(cho_top_school_CLOTH.get_color(3)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(0)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(1)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(2)) xsize 50 ysize 50
+        frame background get_hex_string_tuple(current_clothing.get_color(3)) xsize 50 ysize 50
     vbox:
         xpos 900
         ypos 300
@@ -98,6 +103,7 @@ screen cloth_test:
         textbutton "Channel 2" action Return(["change_color", 1])
         textbutton "Channel 3" action Return(["change_color", 2])
         textbutton "Channel 4" action Return(["change_color", 3])
+        textbutton "Default" action Return("reset")
 
 #label change_color(layer):
     #$ cho_top_school_CLOTH.set_color(layer)
@@ -112,7 +118,7 @@ screen cho_uniform_test:
     tag cho_main
 
     ### CLOTHES
-    if cho_wear_bra:
+    if cho_class.get_cloth("bra"):
         add t_cho_bra.get_image() xpos cho_xpos ypos cho_ypos alpha cho_bra_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
     #if cho_wear_stockings:
     #    add t_cho_stockings xpos cho_xpos ypos cho_ypos alpha cho_stockings_transp xzoom cho_flip zoom (1.0/cho_scaleratio)
@@ -167,109 +173,3 @@ screen cho_uniform_test:
 
     ### ZORDER
     zorder cho_zorder
-
-
-
-
-
-
-init:
-    # Cho basic clothing layers (those are the ones that will be used on her clothing screen!)
-    # The 't_' stands for test to not interfere with Cho's old uniform clothing screen. Remove it when it gets replaced.
-    $ t_cho_top_mid  = cloth_class(char="cho", type="tops", id="top_school_1", layers=5)   # I need a way to add 'mid_' in front of the layer number!
-    $ t_cho_top_L    = cloth_class(char="cho", type="tops", id="top_school_1", layers=5)   # I need a way to add 'L_' in front of the layer number!
-    $ t_cho_top_R    = cloth_class(char="cho", type="tops", id="top_school_1", layers=5)   # I need a way to add 'R_' in front of the layer number!
-
-    $ t_cho_bottom   = cloth_class(char="cho", type="bottoms", id="skirt_short_1", layers=2)
-    $ t_cho_bra      = cloth_class(char="cho", type="bras",    id="sport_bra_1", layers=3)
-    $ t_cho_panties  = cloth_class(char="cho", type="panties", id="sport_panties_1", layers=3)
-
-    $ cho_top_school_CLOTH = cloth_class(char="cho", type="tops", id="top_school_1", layers=5, name="School top", desc="description") # Keep the 'type' plural please.
-    #$ cho_top_school2_CLOTH = cloth_class(char="cho", type="top", id="school2", layers=4, name="School top", desc="description")
-
-init -5 python:
-    class cloth_class(object):
-        char = "MISSING" # astoria, cho, hermione, luna, susan, tonks
-        type = "MISSING" # same as folder names
-        id = "MISSING"
-        layers = 4
-        color = []
-
-        name = "NONE"
-        desc = ""
-
-        imagepath = ""
-
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-            self.imagepath = "characters/"+str(self.char)+"/clothes/"+str(self.type)+"/"
-            for i in xrange(0, self.layers):
-                self.color.append([100, 150, 200, 255])
-
-        def get_character(self):
-            return self.char
-
-        def get_type(self):
-            return self.type
-
-        def get_id(self):
-            return self.id
-
-        def get_layers(self):
-            return self.layers
-            #im.matrix.desaturate()*
-        def get_matrixcolor(self, layer):
-            return im.matrix.tint(self.color[layer][0]/255.0, self.color[layer][1]/255.0, self.color[layer][2]/255.0)
-
-        def get_color(self, layer):
-            return (self.color[layer][0]/255.0, self.color[layer][1]/255.0, self.color[layer][2]/255.0, self.color[layer][3]/255.0)
-
-        def get_alpha(self, layer):
-            return self.color[layer][3]/255.0
-
-        def set_color(self, layer):
-            self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer), pos_xy=[50, 130])
-
-        def get_name(self):
-            return self.name
-
-        def get_description(self):
-            return self.desc
-
-        def get_imagepath(self):
-            return self.imagepath
-
-        def get_imagelayer(self, layer):
-            # Appears as (example):
-            # characters/cho/bottoms/ (skirt_school_1) / (1) .png
-            return self.imagepath+str(self.id)+"/"+str(layer)+".png"
-
-        def get_image(self):
-            if self.layers == 1:
-                return im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0))
-            elif self.layers == 2:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)))
-            elif self.layers == 3:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(2)), self.get_matrixcolor(2)))
-            elif self.layers == 4:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(2)), self.get_matrixcolor(2)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(3)), self.get_matrixcolor(3)))
-            elif self.layers == 5:
-                return Composite(
-                    (1010, 1200),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(0)), self.get_matrixcolor(0)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(1)), self.get_matrixcolor(1)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(2)), self.get_matrixcolor(2)),
-                    (0, 0), im.MatrixColor(str(self.get_imagelayer(3)), self.get_matrixcolor(3)),
-                    (0, 0), self.get_imagelayer(4))

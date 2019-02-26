@@ -689,6 +689,19 @@ image ctc7 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "
 
 ## TRANSFORMATION
 
+transform moveFade:
+    subpixel True
+    
+    on show, appear, start:
+        alpha 0.0
+        xoffset 200
+        easein_back 1.0 alpha 1.0 xoffset absolute(0)
+    
+    on hide:
+        alpha 1.0
+        xoffset 0
+        easeout_back 1.0 alpha 0.0 xoffset absolute(200)
+
 transform basicfade:
         on show:
             alpha 1.0

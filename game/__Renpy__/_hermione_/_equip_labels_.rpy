@@ -361,6 +361,8 @@ label set_her_outfit(outfit):
         if hermoine_outfit_GLBL.top_layers != []:
             $ h_request_wear_hat = True
             $ h_hat = hermoine_outfit_GLBL.getTopLayers()
+        else 
+            $ h_request_wear_hat = False
         if hermoine_outfit_GLBL.hair_layer != "":
             call set_her_hair(style=hermoine_outfit_GLBL.getHairLayers() )
 

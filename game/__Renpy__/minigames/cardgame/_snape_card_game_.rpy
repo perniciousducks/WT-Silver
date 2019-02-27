@@ -135,23 +135,6 @@ label snape_third_duel:
     
 label snape_random_duel:
     call play_music("boss_card_theme")
-    play sound "sounds/Genie_VS_Snape.mp3"
-    show screen genie_vs_snape
-    show screen move_genie
-    pause 1
-    show screen versus
-    pause 1
-    show screen move_snape
-    pause 2.5
-    hide screen move_genie
-    hide screen move_snape
-    show screen genie_vs_snape_smile
-    pause
-    hide screen versus
-    hide screen genie_vs_snape
-    hide screen genie_vs_snape_smile
-    
-    call play_music("grape_soda")
 
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 

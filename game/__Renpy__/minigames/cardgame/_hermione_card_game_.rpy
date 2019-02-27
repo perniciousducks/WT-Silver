@@ -146,24 +146,6 @@ label hermione_random_duel:
         her "Okay, but let's make it a fair game."
         
     call play_music("boss_card_theme")
-    play sound "sounds/Genie_VS_Hermione4.mp3"
-    show screen genie_vs_hermione
-    show screen move_genie
-    pause 1
-    show screen versus
-    pause 1
-    show screen move_hermione
-    pause 3
-    hide screen move_genie
-    hide screen move_hermione
-    show screen genie_vs_hermione_smile
-    with hpunch
-    stop music fadeout 0
-    pause
-    hide screen versus
-    hide screen genie_vs_hermione
-    hide screen genie_vs_hermione_smile
-    play music "music/vs_hermione.mp3"
     
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
@@ -210,8 +192,8 @@ label hermione_random_duel:
                 $ cardgame_work = True
                 
         "Deduct the points":
-            m "Graffindor minus 10 points"
-            $ gryffindor -= 10
+            m "Graffindor minus 15 points"
+            $ gryffindor -= 15
             
             
 

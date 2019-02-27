@@ -137,24 +137,9 @@ label twins_random_duel:
         m "Okay, well... If you two win then I'll give you 10 gold."
         ger "Acceptable..."
         twi "Let's play."
-        
-
-    play music "music/vs_twins.ogg" fadein 1.0
-    play sound "sounds/Genie_VS_Twins_Teleport.mp3"
-    show screen genie_vs_twins
-    show screen move_genie
-    pause 1
-    show screen move_twins
-    pause 3.5
-    hide screen move_twins
-    hide screen move_genie
-    show screen genie_vs_twins_smile
-    with flash
-    pause
-    hide screen genie_vs_twins_smile
-    hide screen genie_vs_twins
-    
-    
+       
+    call play_music("boss_card_theme")
+       
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)

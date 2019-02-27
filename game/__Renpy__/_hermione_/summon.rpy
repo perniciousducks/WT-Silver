@@ -443,8 +443,11 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
                     
-                "-Work by advertising the card game-" if daytime and cardgame_work:
+                "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
                     jump job_5
+                "-Work by advertising the card game-" if daytime and cardgame_work:
+                    m "(I'll need an outfit for hermione if I want her to work.)"
+                    jump working_menu
 
                 "{color=#858585}-Work by advertising the card game-{/color}" if not daytime and cardgame_work:
                     "This job is only available during the day."

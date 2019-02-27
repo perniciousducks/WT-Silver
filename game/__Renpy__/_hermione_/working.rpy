@@ -18,11 +18,11 @@ label job_1:
     else:
         her "As you wish [genie_name]."
 
-    show screen bld1
+    show screen blkfade
     with d5
     call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-    hide screen bld1
+    hide screen blkfade
     with d5
     
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
@@ -110,11 +110,11 @@ label job_2:
     else:
         her "As you wish [genie_name]."
 
-    show screen bld1
+    show screen blkfade
     with d5
     call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-    hide screen bld1
+    hide screen blkfade
     with d5
     
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
@@ -180,14 +180,14 @@ label job_3:
     else:
         call her_main("As you wish, [genie_name].","open","base")
 
-    show screen bld1
+    show screen blkfade
     with d5
     call play_sound("equip_inventory")
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_g_ITEM)
-    hide screen bld1
+    hide screen blkfade
     with d5
     
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
@@ -330,14 +330,14 @@ label job_4:
     else:
         her "As you wish, [genie_name]."
 
-    show screen bld1
+    show screen blkfade
     with d5
     call play_sound("equip_inventory")
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_s_ITEM)
-    hide screen bld1
+    hide screen blkfade
     with d5
     
     
@@ -469,36 +469,23 @@ label slytherin_cheer_responses:
 
 label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    if hg_gamble_slut_ITEM.unlocked:
+    $random_choice = renpy.random.rendint(0,3)
+    if random_choice == 0:
         call her_main("Why are the cards placed like that?","mad","down")
         call her_main("...","normal","worriedCl", cheeks="blush")
         call her_main("Fine...","open","down_raised", cheeks="blush")
-
+    elif random_choice == 1:
         call her_main("...","normal","worried", cheeks="blush")
         call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
         call her_main("I'll do it.","base","wink")
-
+    elif random_choice == 2:
         call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
         call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
-         
+    else: 
         call her_main("That doesn't leave a lot to the imagination...","smile","squint")
         call her_main("At least the straps should cover my nipples...","open","wink")
         call her_main("I'll do it...","normal","happy", cheeks="blush")
-        
-    else:
-        her "You want me to put what on?!"
-        her "Why didn't you mention the outfit before?"
-        her "I think I'll take my leave..."
-        $ her_mood -= 7
 
-        her "...no."
-        her "I'd rather not dress myself up like that in public..."
-        her "I'm leaving..."
-        
-        her "And have my breasts visible to their customers?"
-        her "No thanks..."
-        jump main_room
-    
     if first_time_cardgame_work:
         $ first_time_cardgame_work = False
         call her_main("But... why do you want me to help them promote their shop?","annoyed","closed")
@@ -512,11 +499,11 @@ label job_5:
         m "Forgetting something?"
         call her_main("... Just hand it over.","disgust","down", cheeks="blush")
     
-    show screen bld1
+    show screen blkfade
     with d5
     call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
-    hide screen bld1
+    hide screen blkfade
     with d5
     g9 "Looking great!"
     call her_main("Thank you...","open","happy", cheeks="blush")  
@@ -690,7 +677,7 @@ label hermione_helping_selling_cards:
     jump night_main_menu
     
 label inn_menu:
-    show bld1
+
     if inn_intro:
         jump inn_intro
     abe "Welcome to the Hog's Head Inn"

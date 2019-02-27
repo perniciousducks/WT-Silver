@@ -266,11 +266,11 @@ init python:
         volume = _preferences.volumes['music']
         _preferences.volumes['music'] *= .5
         s_punch = renpy.random.randint(1, 4)
-        renpy.sound("sounds/card_punch%s.mp3" % s_punch)
+        renpy.sound.play("sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
         her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
-        renpy.call("her_main", "[her_speech!t]", "base", "base")
+        renpy.say(her, her_speech)
         renpy.hide_screen("hermione_main")
         _preferences.volumes['music'] = volume   
         return

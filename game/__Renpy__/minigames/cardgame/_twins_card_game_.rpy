@@ -273,15 +273,15 @@ init python:
         volume = _preferences.volumes['music']
         _preferences.volumes['music'] *= .5
         s_punch = renpy.random.randint(1, 4)
-        renpy.sound( "sounds/card_punch%s.mp3" % s_punch)
+        renpy.sound.play( "sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
         rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
         #$ rnd_twin = renpy.random.choice = [fre, goe]
 
         if renpy.random.randint(0, 1) == 0:
-            renpy.say(fre, "[rnd_text!t]")
+            renpy.say(fre, rnd_text)
         else:
-            renpy.say(ger, "[rnd_text!t]")
+            renpy.say(ger, rnd_text)
         _preferences.volumes['music'] = volume
         return

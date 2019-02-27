@@ -160,6 +160,10 @@ label summon_hermione:
                         jump hermione_third_duel
                     "{color=#858585}-You need to beat the second duel-{/color}" if not her_second_win:
                         jump hermione_duel_menu
+                    "-Wager-" if geniecard_level == 2:
+                        jump hermione_random_duel
+                    "-Secret-" if geniecard_level == 1:
+                        jump hermione_duel_menu
                     "-Never mind-":
                         jump hermione_requests
 

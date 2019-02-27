@@ -260,41 +260,6 @@ init python:
                 
             return new_color
             
-    class MyScale(im.ImageBase):
-        def __init__(self, im, width, height=None, **properties):
-
-            if height is None:
-                height = width
-
-            im = Image(im)
-            super(MyScale, self).__init__(im, width, height, **properties)
-
-            self.image = im
-            self.width = width
-            self.height = height
-
-        def get_hash(self):
-            return self.image.get_hash()
-
-        def load(self):
-
-            surf = im.Cache().get(self.image)
-            width, height = surf.get_size()
-
-            width = int(width * self.width)
-            height = int(height * self.height)
-
-
-            try:
-                renpy.display.render.blit_lock.acquire()
-                rv = bilear_scale(surf, (width, height))
-            finally:
-                renpy.display.render.blit_lock.release()
-            return rv
-
-        def predict_files(self):
-            return self.image.predict_files()
-      
     def color_bar(src, dest=None):
         width = 1
         height = 255
@@ -476,7 +441,79 @@ init python:
                 b = q
 
         return (float(r)*255, float(g)*255, float(b)*255)
+    
+    
+    class RemoveWhiteSpace(im.ImageBase):
+        cacheCrop = None
+        cache = False
+        def __init__(self, im, **properties):
+            super(RemoveWhiteSpace, self).__init__(im, width, height, **properties)
 
+            self.im = Image(im)
+
+        def get_hash(self):
+            return self.image.get_hash()
+            
+        def __unicode__(self):
+            if len(self.filename) < 20:
+                return u"RWS %r" % self.filename
+            else:
+                return u"RWS \u2026%s" % self.filename[-20:]
+
+        def load(self):
+
+            surf = im.Cache().get(self.image)
+            if not self.cache:
+                try:
+                    renpy.display.render.blit_lock.acquire()
+                    CropData = GetImageArea(surf)
+                    self.cacheCrop = Crop(CropData, self.im)
+                    cache =True
+                finally:
+                    renpy.display.render.blit_lock.release()
+                return rv
+            
+            return self.cacheCrop
+
+        def predict_files(self):
+            return self.image.predict_files()
+    def GetImageArea(surf):
+        
+        return (0,0,0,0)
+    class MyScale(im.ImageBase):
+        def __init__(self, im, width, height=None, **properties):
+
+            if height is None:
+                height = width
+
+            im = Image(im)
+            super(MyScale, self).__init__(im, width, height, **properties)
+
+            self.image = im
+            self.width = width
+            self.height = height
+
+        def get_hash(self):
+            return self.image.get_hash()
+
+        def load(self):
+
+            surf = im.Cache().get(self.image)
+            width, height = surf.get_size()
+
+            width = int(width * self.width)
+            height = int(height * self.height)
+
+
+            try:
+                renpy.display.render.blit_lock.acquire()
+                rv = bilear_scale(surf, (width, height))
+            finally:
+                renpy.display.render.blit_lock.release()
+            return rv
+
+        def predict_files(self):
+            return self.image.predict_files()
     
     def bilear_scale(src, size, dest=None):
         """

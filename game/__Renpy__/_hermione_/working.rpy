@@ -18,11 +18,11 @@ label job_1:
     else:
         her "As you wish [genie_name]."
 
-    show screen black
+    show screen bld1
     with d5
     call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-    hide screen black
+    hide screen bld1
     with d5
     
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
@@ -110,11 +110,11 @@ label job_2:
     else:
         her "As you wish [genie_name]."
 
-    show screen black
+    show screen bld1
     with d5
     call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-    hide screen black
+    hide screen bld1
     with d5
     
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
@@ -180,14 +180,14 @@ label job_3:
     else:
         call her_main("As you wish, [genie_name].","open","base")
 
-    show screen black
+    show screen bld1
     with d5
     call play_sound("equip_inventory")
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_g_ITEM)
-    hide screen black
+    hide screen bld1
     with d5
     
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
@@ -330,14 +330,14 @@ label job_4:
     else:
         her "As you wish, [genie_name]."
 
-    show screen black
+    show screen bld1
     with d5
     call play_sound("equip_inventory")
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_s_ITEM)
-    hide screen black
+    hide screen bld1
     with d5
     
     
@@ -512,11 +512,11 @@ label job_5:
         m "Forgetting something?"
         call her_main("... Just hand it over.","disgust","down", cheeks="blush")
     
-    show screen black
+    show screen bld1
     with d5
     call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
-    hide screen black
+    hide screen bld1
     with d5
     g9 "Looking great!"
     call her_main("Thank you...","open","happy", cheeks="blush")  

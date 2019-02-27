@@ -119,31 +119,35 @@ label hermione_random_duel:
     m "Ready for another game of cards?"
 
     if her_whoring < 16:
-        her "You've already challenged me though... and I lost."
-        m "What if me made it a wager..."
-        her "Like gambling? No thank you."
+        call her_main("You've already challenged me though...","open","squintL")
+        call her_main("and I lost.","annoyed","down")
+        g9 "What if we made it a wager..."
+        call her_main("Like gambling? No thank you!","clench","annoyed")
         m "It's not gambling, just a friendly house point wager..."
-        her "Sounds like gambling to me..."
+        call her_main("Sounds like gambling to me...","normal","suspicious")
         m "So, how about it?"
-        her "Not right now [genie_name]..."
+        call her_main("I'll pass, [genie_name]...","open","worriedL")
 
         m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
         jump hermione_duel_menu
     else: 
-        her "You've already challenged me though... and I lost."
-        m "What if me made it a wager..."
-        her "Like gambling you mean?"
+        call her_main("You've already challenged me though...","open","squintL")
+        call her_main("and I lost.","annoyed","down")
+        g9 "What if we made it a wager..."
+        call her_main("Gambling you mean?","open","worried")
         m "Not for money obviously."
-        her "What are you suggesting then?"
+        call her_main("What are you suggesting then?","base","happy", cheeks="blush")
         m "Well, I was thinking house points."
-        her "House points..."
-        her "How would this work then?"
-        m "Well, if you win I'll give you [amount] to Gryffindor."
-        her "And if I lose?"
+        call her_main("House points...","normal","squintL")
+        call her_main("How would this work then?","open","squint")
+        m "Well, if you win I'll give you 10 points to Gryffindor."
+        call her_main("Only 10?","annoyed","Glance")
+        m "15 then..."
+        call her_main("And if I lose?","open","SquintL")
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
-        her "..."
-        her "Okay, but let's make it a fair game."
+        call her_main("...","normal","WorriedCl", cheeks="blush")
+        call her_main("Okay... In that case to make it fair, let's add these extra rules...","open","happy")
         
     call play_music("boss_card_theme")
     
@@ -192,8 +196,8 @@ label hermione_random_duel:
                 $ cardgame_work = True
                 
         "Deduct the points":
-            m "Graffindor minus 15 points"
-            $ gryffindor -= 15
+            m "Graffindor minus 10 points"
+            $ gryffindor -= 10
             
             
 

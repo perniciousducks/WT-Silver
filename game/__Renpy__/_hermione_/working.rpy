@@ -21,6 +21,7 @@ label job_1:
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
+    pause 2.5
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen blkfade
     with d5
@@ -113,6 +114,7 @@ label job_2:
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
+    pause 2.5
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen blkfade
     with d5
@@ -183,6 +185,7 @@ label job_3:
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
+    pause 2.5
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
     else: #Normal
@@ -333,6 +336,7 @@ label job_4:
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
+    pause 2.5
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
@@ -502,6 +506,7 @@ label job_5:
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
+    pause 2.5
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
     hide screen blkfade
     with d5

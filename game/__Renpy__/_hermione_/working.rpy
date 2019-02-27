@@ -18,9 +18,9 @@ label job_1:
     else:
         her "As you wish [genie_name]."
 
-    call screen black
+    show screen black
     with d5
-    call play_sound("leather_inventory")
+    call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen black
     with d5
@@ -110,9 +110,9 @@ label job_2:
     else:
         her "As you wish [genie_name]."
 
-    call screen black
+    show screen black
     with d5
-    call play_sound("leather_inventory")
+    call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen black
     with d5
@@ -180,9 +180,9 @@ label job_3:
     else:
         call her_main("As you wish, [genie_name].","open","base")
 
-    call screen black
+    show screen black
     with d5
-    call play_sound("leather_inventory")
+    call play_sound("equip_inventory")
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
     else: #Normal
@@ -330,9 +330,9 @@ label job_4:
     else:
         her "As you wish, [genie_name]."
 
-    call screen black
+    show screen black
     with d5
-    call play_sound("leather_inventory")
+    call play_sound("equip_inventory")
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
@@ -512,9 +512,9 @@ label job_5:
         m "Forgetting something?"
         call her_main("... Just hand it over.","disgust","down", cheeks="blush")
     
-    call screen black
+    show screen black
     with d5
-    call play_sound("leather_inventory")
+    call play_sound("equip_inventory")
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
     hide screen black
     with d5

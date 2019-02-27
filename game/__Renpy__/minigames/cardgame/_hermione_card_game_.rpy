@@ -128,6 +128,7 @@ label hermione_random_duel:
         her "Not right now [genie_name]..."
 
         m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
+        jump hermione_duel_menu
     else: 
         her "You've already challenged me though... and I lost."
         m "What if me made it a wager..."

@@ -174,30 +174,33 @@ label hermione_random_duel:
         $ geniecard_tokens += 1
     
     m "Seems like I've won this one [hermione_name]."
-    her "I noticed..."
+    call her_main ("I noticed...","normal","worriedL")
     m "You do know what this means, don't you?"
-    her "..."
-    m "This means I'm going to have to deduct [points] from Gryffindor house."
-    her "Please, don't. I don't want the others to wake up tomorrow wondering why there's [points] points missing..."
+    call her_main("...","normal","worried")
+    g9 "This means I'm going to have to deduct 15 points from Gryffindor house."
+    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 15 house points missing...","open","worriedCl")
     m "Well, in that case..."
 
     menu:
         "Send Hermione to work, promoting the card game.":
-            m "In that case, I think I have a good idea for a job..."
-            her "A job?"
+            g9 "In that case, I think I have a good idea for a job..."
+            call her_main("A job?","open","squint")
             m "Yes, I'd like you to start helping the twins promote the card game..."
-            her "I can do that..."
-            her "But not today if that's okay with you."
-            m "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
-            her "..."
-            her "Did you need anything else?"
+            call her_main("I can do that...","base","worried", cheeks="blush")
+            call her_main("But not today if that's okay with you.","open","down")
+            g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
+            call her_main("...","normal","squintL", cheeks="blush")
+            call her_main("Did you need anything else?","open","soft", cheeks="blush")
             if not cardgame_work:
-                call give_reward("Unlock message that the job is available in the work menu", "interface/icons/item_sexdoll.png")
+                call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
                 $ cardgame_work = True
                 
         "Deduct the points":
-            m "Graffindor minus 10 points"
-            $ gryffindor -= 10
+            m "No, sorry miss Granger... Minus 15 points to Gryffindor..."
+            call her_main("...","disgust","down")
+            call her_main("Fine, that's fair...","open","down_raised")
+            call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
+            $ gryffindor -= 15
             
             
 

@@ -142,9 +142,9 @@ label summon_hermione:
                 call her_main( "Ah, yes...","normal","soft")
                 call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
                 g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
-                m "So, how about a little wager then?"
-                call her_main( "What kind of wager are we talking about? I've only recently started playing.","base","glance")
-                m "Don't worry, we'll play a few practice rounds, when you're ready we'll play the real challenge..."
+                m "So, how about a little some practice rounds then?"
+                call her_main( " I've only recently started playing so I'm not that good yet.","base","glance")
+                m "Don't worry, after a few practice rounds you'll get up to speed, when you're ready we'll play the real challenge..."
                 $ her_cards_stocked_talk = True
                 jump hermione_duel_menu
             else:
@@ -443,10 +443,10 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
                     
-                "-Work for the twins to addevetise cardgame-" if daytime and cardgame_work:
+                "-Work by advertising the card game-" if daytime and cardgame_work:
                     jump job_5
 
-                "{color=#858585}-Work for the twins to addevetise cardgame-{/color}" if not daytime and cardgame_work:
+                "{color=#858585}-Work by advertising the card game-{/color}" if not daytime and cardgame_work:
                     "This job is only available during the day."
                     jump working_menu
 

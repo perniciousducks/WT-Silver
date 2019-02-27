@@ -34,7 +34,7 @@ label update_outfit_layers:
     $ hg_outfit_egypt_ITEM.outfit_layers = ["bottoms/costume/skirt_egyptian","tops/costume/top_egyptian","gloves/wrist_shackles"]
     $ hg_outfit_egypt_ITEM.breast_layer  = "breasts_normal"
 
-    $ hg_gamble_slut_ITEM.outfit_layers = ["onepieces/onepiece_gambler_cards","stockings/stockings_gambler_cards","onepieces/onepiece_gambler","stockings/stockings_gambler","gloves/wrist_cuffs_1","neckwear/choker_bow_tie_1","clothes/piercings/ears_gambler","clothes/piercings/belly_gambler"]
+    $ hg_gamble_slut_ITEM.outfit_layers = ["onepieces/onepiece_gambler_cards","stockings/stockings_gambler_cards","onepieces/onepiece_gambler","stockings/stockings_gambler","gloves/wrist_cuffs_1","neckwear/choker_bow_tie_1","piercings/ears_gambler","piercings/belly_gambler"]
     $ hg_gamble_slut_ITEM.top_layers    = "hat_gambler"
     $ hg_gamble_slut_ITEM.breast_layer  = "breasts_normal"
 

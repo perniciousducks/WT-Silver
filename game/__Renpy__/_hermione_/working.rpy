@@ -18,8 +18,13 @@ label job_1:
     else:
         her "As you wish [genie_name]."
 
+    call screen black
+    with d5
+    call play_sound("leather_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-
+    hide screen black
+    with d5
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -105,8 +110,13 @@ label job_2:
     else:
         her "As you wish [genie_name]."
 
+    call screen black
+    with d5
+    call play_sound("leather_inventory")
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-
+    hide screen black
+    with d5
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -170,11 +180,16 @@ label job_3:
     else:
         call her_main("As you wish, [genie_name].","open","base")
 
+    call screen black
+    with d5
+    call play_sound("leather_inventory")
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_g_ITEM)
-
+    hide screen black
+    with d5
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -315,11 +330,17 @@ label job_4:
     else:
         her "As you wish, [genie_name]."
 
+    call screen black
+    with d5
+    call play_sound("leather_inventory")
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_s_ITEM)
-
+    hide screen black
+    with d5
+    
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -342,7 +363,7 @@ label slytherin_cheer_responses:
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
     pause.2
-
+    
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
@@ -449,20 +470,20 @@ label slytherin_cheer_responses:
 label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
     if hg_gamble_slut_ITEM.unlocked:
-        her "Why are the cards placed like that?"
-        her "..."
-        her "Fine..."
+        call her_main("Why are the cards placed like that?","mad","down")
+        call her_main("...","normal","worriedCl", cheeks="blush")
+        call her_main("Fine...","open","down_raised", cheeks="blush")
 
-        her "..."
-        her "Well, if it stops you from deducting those points."
-        her "I'll do it."
+        call her_main("...","normal","worried", cheeks="blush")
+        call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
+        call her_main("I'll do it.","base","wink")
 
-        her "It's a bit revealing... but I'll do it."
-        call her_main( "For Gryffindor house obviously!", cheeks="blush")
+        call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
+        call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
          
-        her "That doesn't leave a lot to the imagination..."
-        her "At least the straps should cover my nipples..."
-        her "I'll do it..."
+        call her_main("That doesn't leave a lot to the imagination...","smile","squint")
+        call her_main("At least the straps should cover my nipples...","open","wink")
+        call her_main("I'll do it...","normal","happy", cheeks="blush")
         
     else:
         her "You want me to put what on?!"
@@ -480,21 +501,25 @@ label job_5:
     
     if first_time_cardgame_work:
         $ first_time_cardgame_work = False
-        her "But... why do you want me to help them promote their shop?"
-        m "That is my business."
-        her "And what do you want me to tell them?"
-        m "Just ask them if they have a need for anyone helping them promote their card game."
-        m "If they're as business minded as I assume then there's no way they'd say no."
-        m "And make sure you ask them for payment."
-        her "Fine..."
-        her "I'll see you tonight."
+        call her_main("But... why do you want me to help them promote their shop?","annoyed","closed")
+        g9 "That is my business."
+        call her_main("What do you want me to tell them then?","open","concerned")
+        m "Just ask them if they have a need for any help promoting their card game."
+        g9 "If they're as business minded as I assume then there's no way they'd say no."
+        g9 "And make sure you ask them for payment."
+        call her_main("Fine...","base","closed")
+        call her_main("I'll see you tonight.","open","base")
         m "Forgetting something?"
-        her "..."
+        call her_main("... Just hand it over.","disgust","down", cheeks="blush")
     
+    call screen black
+    with d5
+    call play_sound("leather_inventory")
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
-
+    hide screen black
+    with d5
     g9 "Looking great!"
-    her "Thank you..."  
+    call her_main("Thank you...","open","happy", cheeks="blush")  
     m "Off you go then..."  
     
     

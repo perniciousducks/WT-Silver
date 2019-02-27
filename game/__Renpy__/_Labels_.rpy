@@ -374,6 +374,8 @@ label play_sound(sound=""):
     if sound in ["spit"]:
         $ renpy.play('sounds/spit.mp3')
 
+    if sound in ["equip_inventory"]:
+        $ renpy.play('sounds/cloth_sound.mp3')
     return
 
 

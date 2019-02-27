@@ -445,7 +445,7 @@ label hermione_talk:
                     
                 "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
                     jump job_5
-                "-Work by advertising the card game-" if daytime and cardgame_work:
+                "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 

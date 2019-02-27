@@ -469,7 +469,7 @@ label slytherin_cheer_responses:
 
 label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    $random_choice = renpy.random.rendint(0,3)
+    $random_choice = renpy.random.randint(0,3)
     if random_choice == 0:
         call her_main("Why are the cards placed like that?","mad","down")
         call her_main("...","normal","worriedCl", cheeks="blush")

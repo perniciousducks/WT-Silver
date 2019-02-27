@@ -550,34 +550,34 @@ label hermione_helping_selling_cards:
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], (points) points to Gryffindor."
+        m "Well done [hermione_name], 15 points to Gryffindor."
 
 
     elif random_choice == 1:
         call her_main("")
         m "Hello, [hermione_name], how was your day?" 
-        her "It was fine, the outfit is a bit chilly though."
+        call her_main("It was fine, the outfit is a bit chilly though.","normal","happy")
         m "So, no other complications?"
-        her "Well..."
-        her "The twins asked me to give out some free promotional starter packs."
+        call her_main("Well...","soft","down", cheeks="blush")
+        call her_main("The twins asked me to give out some free promotional starter packs.","open","squint", cheeks="blush")
         m "Yes?"
         m "Sounds like a great way to get people into playing..."
-        her "Well, I didn't have anywhere to store the packs as you could imagine."
-        her "So I had to resort to putting them behind my suspenders and the top of my stockings."
-        her "And one customer got a bit..."
-        her "Touchy."
+        call her_main("Well, I didn't have anywhere to store the packs as you could imagine.","base","down", cheeks="blush")
+        call her_main("So I had to resort to putting them behind my suspenders and the top of my stockings...","open","closed", cheeks="blush")
+        call her_main("And one customer got a bit...","normal","closed", cheeks="blush")
+        call her_main("Touchy.","base","ahegao", cheeks="blush")
         m "I see..."
-        her "I did get a bit agitated at one point actually..."
-        m "They didn't fire you did they?"
-        her "No!"
-        her "The customer was quite apologetic actually and bought a bunch of things."
-        her "The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves."
-        her "I'm fine with them believing they had anything to do with it though."
+        call her_main("I did get a bit agitated at one point actually...","open","closed", cheeks="blush")
+        g4 "They didn't fire you did they?"
+        call her_main("No!","mad","wide_stare")
+        call her_main("The customer was quite apologetic actually and bought a bunch of things.","smile","angryCl")
+        call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.","crooked_smile","annoyed")
+        call her_main("I'm fine with them believing they had anything to do with it though.","smile","closed")
         m "How noble of you..."
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], (points) points to Gryffindor."
+        m "Well done [hermione_name], 20 points to Gryffindor."
 
     elif random_choice == 2:
         call her_main("")
@@ -613,7 +613,7 @@ label hermione_helping_selling_cards:
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], 30 points to Gryffindor."
+        m "Well done [hermione_name], 25 points to Gryffindor."
 
 
     elif random_choice == 3:
@@ -646,7 +646,7 @@ label hermione_helping_selling_cards:
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], 30 points to Gryffindor."
+        m "Well done [hermione_name], 25 points to Gryffindor."
 
 
 

@@ -149,12 +149,7 @@ label twins_random_duel:
     if duel_response == "Close":
         jump twins_duel_cancel
         
-    elif  not duel_response == "win":
-        m "..."
-        m "It would appear that I may have lost this one..."
-        twi "It seems so."
-        m "Well, here's your reward..."
-        $ gold -= 10
+    elif  not duel_response == "win":    
         jump twins_duel_lost
 
     hide screen blkfade
@@ -213,6 +208,7 @@ label twins_duel_lost:
         m "It would appear that I may have lost this one..."
         twi "It seems so."
         m "Well, here's your reward..."
+        $ gold -= 10
         
     menu:
         "-Rematch-":

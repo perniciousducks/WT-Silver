@@ -475,6 +475,7 @@ label __init_variables:
             her_third_win = False
             her_random_win = False
             cardgame_work = False
+            first_time_cardgame_work = True
             
         if not hasattr(renpy.store, 'twins_know_cards'):
             twins_know_cards = False
@@ -771,16 +772,16 @@ init python:
             getcardscore = 12
             if reverse:
                 score_func = lambda a : 10 - a
-                take_over = lambda a, b : a > b
+                take_over = lambda a, b : a < b
             else:
                 score_func = lambda a : a
-                take_over = lambda a, b : a < b
+                take_over = lambda a, b : a > b
                 
             for y in range(0,3):
                 for x in range(0,3):
                     score = 0
                     if table_cards[x][y] == None:
-                        if not y == 0 and not table_cards[x][y-1] == None and not table_cards[x][y-1].playercard:
+                        if not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y-1].playercard:
                             if take_over(self.topvalue, table_cards[x][y-1].bottomvalue):
                                 score += getcardscore
                             else:
@@ -788,7 +789,7 @@ init python:
                         else:
                             score += wallscore
                             
-                        if not y == 2 and not table_cards[x][y+1] == None and not table_cards[x][y+1].playercard:
+                        if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y+1].playercard:
                             if take_over(self.bottomvalue, table_cards[x][y+1].topvalue):
                                 score += getcardscore
                             else:
@@ -796,7 +797,7 @@ init python:
                         else:
                             score += wallscore
                             
-                        if not x == 0 and not table_cards[x-1][y] == None and not table_cards[x-1][y].playercard:
+                        if not x == 0 and not table_cards[x-1][y] == None and table_cards[x-1][y].playercard:
                             if take_over(self.leftvalue, table_cards[x-1][y].rightvalue):
                                 score += getcardscore
                             else:
@@ -804,7 +805,7 @@ init python:
                         else:
                             score += wallscore
                             
-                        if not x == 2 and not table_cards[x+1][y] == None and not table_cards[x+1][y].playercard:
+                        if not x == 2 and not table_cards[x+1][y] == None and table_cards[x+1][y].playercard:
                             if take_over(self.rightvalue, table_cards[x+1][y].leftvalue):
                                 score += getcardscore
                             else:
@@ -833,7 +834,7 @@ init python:
                                     
                             if len(dobelt_found) > 1:
                                 for card in dobelt_found:
-                                    if not card.playercard:
+                                    if card.playercard:
                                         high_score += getcardscore
                             
                         if score > high_score:

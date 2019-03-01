@@ -1,20 +1,23 @@
 
 
 label summon_cho:
-
+    pause.5
+    call play_sound("knocking")    
+    pause 1
     call play_sound("door")
-
     call cho_chibi("stand","mid","base")
-    call ctc
     call cho_random_clothing
-
+    
+    $ active_girl = "cho"
+    $ cho_busy = True
+    
     label cho_requests:
-
+    call cho_main(xpos="base",ypos="base")
+    
     $ menu_x = 0.25
     $ menu_y = 0.5
 
     $ hide_transitions = False
-    $ cho_busy = True
 
     menu:
         #"-Talk-":
@@ -29,7 +32,7 @@ label summon_cho:
                     #"-Play with her butt-": #I don't think these event have the right posig yet or are missing CGs? They also cause crashes.
                     #    jump cho_favor_2
                     #"-Make her suck my cock-":
-                        jump cho_favor_3
+                    #    jump cho_favor_3
                     #"{color=#858585}-A vague idea-{/color}" if imagination <= 3:
                     #    call vague_idea
                     #    jump cho_favor_menu
@@ -47,20 +50,11 @@ label summon_cho:
             call nar(">You haven't unlocked this feature yet.")
             jump cho_requests
         "-Wardrobe-" if cho_wardrobe_unlocked:
-            $ active_girl = "cho"
-
-            call load_cho_clothing_saves
-
-            call reset_wardrobe_vars
-            call update_wr_color_list
-
-            $ hide_transitions = True
-            call cho_main(xpos="wardrobe",ypos="base")
-            call screen wardrobe
-
+            call cho_main(xpos="wardrobe",ypos="base", face="neutral")
+            call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
         "-Gifts-" if not gave_cho_gift:
             $ current_category = None
-
+            $ current_page = 0
             label cho_gift_menu:
 
             python:
@@ -126,18 +120,14 @@ label summon_cho:
         "-Dismiss Her-":
             call cho_main("Good bye, [cho_genie_name].","smile","base","base","R")
 
-            call play_sound("door")
-
-            $ cho_busy = True
-
-            jump main_room
+            jump end_cho_event
 
 
 
 label cho_training_menu:
     menu:
-        "-Change outfit-":
-            jump cho_wardrobe_test
+        #"-Change outfit-":
+            #jump cho_wardrobe_test
             #jump cho_quidditch_outfit
         #"-Discuss tactics-":
         #    jump cho_tactics

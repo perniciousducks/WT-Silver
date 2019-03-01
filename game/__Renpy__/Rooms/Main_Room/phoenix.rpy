@@ -30,6 +30,8 @@ label phoenix:
                 jump color_cloth_test
             "Test new wardrobe":
                 jump cho_wardrobe_test
+            "Wardrobe 2.0":
+                call expression 't_wardrobe' pass (character_label="cho_main", return_label="cho_requests")
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1

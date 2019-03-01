@@ -340,23 +340,23 @@ label equip_cho_misc_item:
 
         menu:
             ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
-            "-top-" if cho_wear_top:
+            "-top-" if cho_class.get_cloth("top"):
                 call set_cho_transparency(top=transparency)
-            "-bottom" if cho_wear_bottom:
+            "-bottom" if cho_class.get_cloth("bottom"):
                 call set_cho_transparency(bottom=transparency)
-            "-bra-" if cho_wear_bra:
+            "-bra-" if cho_class.get_cloth("bra"):
                 call set_cho_transparency(bra=transparency)
             "-onepiece-" if cho_wear_onepiece:
                 call set_cho_transparency(onepiece=transparency)
-            "-panties-" if cho_wear_panties:
+            "-panties-" if cho_class.get_cloth("panties"):
                 call set_cho_transparency(panties=transparency)
-            "-garterbelt-" if cho_wear_garterbelt:
+            "-garterbelt-" if cho_class.get_cloth("garter"):
                 call set_cho_transparency(garterbelt=transparency)
-            "-gloves-" if cho_wear_gloves:
+            "-gloves-" if cho_class.get_cloth("gloves"):
                 call set_cho_transparency(gloves=transparency)
-            "-stockings-" if cho_wear_stockings:
+            "-stockings-" if cho_class.get_cloth("stockings"):
                 call set_cho_transparency(stockings=transparency)
-            "-robe-" if cho_wear_robe:
+            "-robe-" if cho_class.get_cloth("robe"):
                 call set_cho_transparency(robe=transparency)
             "-outfit-" if cho_wear_outfit:
                 call set_cho_transparency(outfit=transparency)

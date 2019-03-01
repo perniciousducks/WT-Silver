@@ -306,9 +306,9 @@ label wr_cho_clothing_reset:
     #    if cho_action != "none":
     #        $ cho_use_action = True
     else: #Underwear page Qol
-        $ cho_wear_robe = False
-        $ cho_wear_top = False
-        $ cho_wear_bottom = False
+        $ cho_class.strip("robe")
+        $ cho_class.strip("top")
+        $ cho_class.strip("bottom")
 
     call update_cho_uniform
 

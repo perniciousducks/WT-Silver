@@ -70,8 +70,7 @@ label snape_third_duel:
     if twins_cards_stocked_talk == False:
         m "(I should wait for an owl from Fred and George and train with Hermione first.)"
         jump snape_duel_menu
-
-    call setup_deck(snape_third_deck)
+        
     m "So, how about that prize?"
     call sna_main( "Again with the prize...","snape_01")
     m "I'm bored okay... and I like prizes..."
@@ -103,7 +102,7 @@ label snape_third_duel:
     hide screen genie_vs_snape
     hide screen genie_vs_snape_smile
     
-    $ duel_response = start_duel(snape_third_deck, "snape_after")
+    $ duel_response = start_duel(snape_third_deck, snape_after)
           
     if duel_response == "Close":
         jump snape_duel_cancel
@@ -136,23 +135,6 @@ label snape_third_duel:
     
 label snape_random_duel:
     call play_music("boss_card_theme")
-    play sound "sounds/Genie_VS_Snape.mp3"
-    show screen genie_vs_snape
-    show screen move_genie
-    pause 1
-    show screen versus
-    pause 1
-    show screen move_snape
-    pause 2.5
-    hide screen move_genie
-    hide screen move_snape
-    show screen genie_vs_snape_smile
-    pause
-    hide screen versus
-    hide screen genie_vs_snape
-    hide screen genie_vs_snape_smile
-    
-    call play_music("grape_soda")
 
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
@@ -361,6 +343,6 @@ init python:
         renpy.sound.play( "sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
-        sna(snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])
+        renpy.say(sna,snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])
         _preferences.volumes['music'] = volume
         return

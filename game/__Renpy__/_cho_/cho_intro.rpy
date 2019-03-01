@@ -115,8 +115,6 @@ label cho_intro:
     $ days_since_cho = 0
     call play_sound("door")
 
-    call update_cho_uniform
-
     call cho_main("Professor Dumbledore! I'm sorry for rushing in without knocking, but I finally-","upset","closed","angry","mid",xpos="base",ypos="base")
 
     call play_sound("scratch")
@@ -331,7 +329,7 @@ label cho_intro_2:
             m "Well, for one."
             g9 "She has tits!"
             call cho_main("I have tits too, [cho_genie_name]!!!","scream","angry","angry","mid",trans="hpunch")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             call cho_main("","angry","angry","angry","mid",trans="fade")
             call ctc
             call cho_main("Here!","open","angry","angry","mid")
@@ -339,7 +337,7 @@ label cho_intro_2:
             call ctc
 
             g9 "You are right... They are quite nice."
-            $ cho_wear_top = True
+            $ cho_class.wear("top")
             call cho_main("Wouldn't you like to see them more often, [cho_genie_name]? You'd just need to buy favours from me...","pout","angry","angry","R",trans="fade")
             jump cho_insists_on_favours
 

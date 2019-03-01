@@ -14,30 +14,32 @@
 label cho_wardrobe_test: # WIP
 
     # Reset
-    $ test_clothing_colors = True # Encnables test screen for Cho's clothing.
-    $ current_page = 0
-    $ current_group = "1"
-    $ layer_list = [] # Used to show how many layers the item you culorize has.
-    $ layer_choice = 0
-    $ category_choice = None
     $ char_name = "cho"
     $ char_nickname = cho_name
     $ hide_transitions = True
+    $ test_clothing_colors = True # Encnables test screen for Cho's clothing.
 
-    label cho_wardrobe_test_menu:
+    $ current_page = 0
+    $ current_group = "1"
+    $ category_choice = None
+    $ layer_list = [] # Used to show how many layers the item you culorize has.
+    $ layer_choice = 0
+
+    label cho_wardrobe_test_menu: # Character specific loop.
 
     $ bg_color = cho_bg_color
     $ current_category = category_choice
 
+    call update_wardrobe_groups(char_name, current_category) # Updates 'group_list'
+
     call update_cho_wardrobe_items(char_name, current_category, current_group) # Updates 'item_list'
     call cho_main(xpos="wardrobe",ypos="base")
 
-    label wardrobe_test_menu:
+    label wardrobe_test_menu: # Wardrobe loop.
 
     python:
 
         # Right Wardrobe Panel
-        current_category = category_choice
         wardrobe_categories = ["head","tops","bottoms","other","misc","underwear","outfits","gifts"]
 
         # Left Wardrobe Panel
@@ -57,7 +59,7 @@ label cho_wardrobe_test: # WIP
     show screen wardorobe_menu(char_nickname, char_name, current_category, xpos=550, ypos=50)
 
     if current_category != None:
-        show screen wardorobe_item_menu(item_list, char_name, current_category, group_list, menu_title, xpos=20, ypos=50)
+        show screen wardorobe_item_menu(item_list, char_name, current_category, group_list, current_group, menu_title, xpos=20, ypos=50)
 
     $ _return = ui.interact()
 
@@ -70,8 +72,11 @@ label cho_wardrobe_test: # WIP
     # Wardrobe Item Menu (left side)
 
     # Items
-    if isinstance(_return, item_class):
-        call equip_cho_item(_return)
+    if isinstance(_return, cloth_class):
+        call cho_class.equip(_return)
+
+    elif _return == "update_group":
+        jump cho_wardrobe_test_menu
 
     # Item Buttons
     elif _return == "change_item_position":
@@ -109,9 +114,7 @@ label cho_wardrobe_test: # WIP
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
 
     elif _return == "change_bg_color":
-        show screen wardorobe_custom_menu("colorize", item, "Colorize", xpos=550, ypos=50)
         $ cho_bg_color = color_picker(cho_bg_color, False, "wardrobe color", pos_xy=[100, 130])
-        hide screen wardorobe_custom_menu
 
     elif _return == "Close":
         $ renpy.play('sounds/door2.mp3') #closing wardrobe page
@@ -191,7 +194,7 @@ screen wardorobe_menu(nickname, character, category, xpos, ypos):
 
 
 # Left Wardrobe Menu
-screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos, ypos):
+screen wardorobe_item_menu(menu_items, character, category, groups, group, title, xpos, ypos):
     $ items_shown = 20
     $ ui_xpos = xpos
     $ ui_ypos = ypos
@@ -242,7 +245,7 @@ screen wardorobe_item_menu(menu_items, character, category, groups, title, xpos,
 
         # Groups
         for i in range(0,len(groups)): #Max 5 items!
-            hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("group_choice",groups[i]), Return()
+            hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("current_group",groups[i]), Return("update_group")
             add "interface/icons/wardrobe/" +str(character)+ "/" +str(category)+ "_" +str(groups[i])+ ".png" xanchor 0.5 xpos 50+(90*i) yanchor 0.5 ypos 129 zoom 0.2
 
 
@@ -305,8 +308,8 @@ screen wardorobe_custom_menu(category, item, title, xpos, ypos):
             text title xalign 0.5 yalign 0.5 size 16 bold 0.2
 
         if category == "colorize":
-            for i in range(0,item.layers): # Number of layers/customization options the clothing item has.
-                hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("layer_choice",i), Return()
+            for i in range(0,item.layers-1): # Number of layers/customization options the clothing item has.
+                hotspot (12+(90*i), 87, 83, 85) clicked Return(i)
                 text "Layer " +str(i) xalign 0.5 xpos 55+(90*i) yalign 0.5 ypos 160
 
 
@@ -315,13 +318,28 @@ screen wardorobe_custom_menu(category, item, title, xpos, ypos):
 
 
 
+label update_wardrobe_groups(char, category):
+python:
+    if char == "cho":
+        group_list = ["1"]
+        if category == "head":
+            group_list = ["1"]
+        if category == "tops":
+            group_list = ["1","3"]
+        if category == "bottoms":
+            group_list = ["1","4"]
+        if category == "other":
+            group_list = ["1"]
 
-label update_cho_wardrobe_items(character, category, group):
+    if current_group not in group_list:
+        current_group = "1"
+return
+
+
+label update_cho_wardrobe_items(char, category, group):
 python:
 
     item_list = []
-    if group not in group_list:
-        group = "1"
     toggle_list = []
     color_list = []
     use_wr_color = False
@@ -331,7 +349,6 @@ python:
     item_scaling = 0.2
 
     if category == "head":
-        group_list = ["1","2","3"]
         if group == "1":
             type_choice = "hair"
             item_xpos = 40
@@ -341,17 +358,16 @@ python:
             color_list = []
 
             #Items
+            item_list = []
             item_list.append("ponytail_blue")
-            wr_items_path = "characters/" +str(character)+ "/body/head/"
+            wr_items_path = "characters/" +str(char)+ "/body/head/"
 
     if category == "tops":
-        group_list = ["1","3"]
         item_xpos = 40
         item_ypos = 75
         item_scaling = 0.2
         use_wr_color = True
-
-        type_choice = "tops"
+    
         item_list = []
         if group == "1":
             item_list.append("top_school_1")
@@ -364,16 +380,15 @@ python:
             item_list.append("top_tanktop_1")
             item_list.append("top_tanktop_2")
             item_list.append("top_shirt_1")
-        wr_items_path = "characters/" +str(character)+ "/clothes/tops/"
+        type_choice = "tops"
+        wr_items_path = "characters/" +str(char)+ "/clothes/tops/"
 
     if category == "bottoms":
-        group_list = ["1","4"]
         item_xpos = 40
         item_ypos = 25
         item_scaling = 0.2
         use_wr_color = True
 
-        type_choice = "bottoms"
         item_list = []
         if group == "1":
             item_list.append("skirt_2")
@@ -383,11 +398,12 @@ python:
             item_list.append("skirt_4")
             item_list.append("skirt_4_low")
         if group == "4":
-            item_list.append("pants_sport_long")
-            item_list.append("pants_yoga_long")
-            item_list.append("pants_yoga_short")
-            item_list.append("pants_jeans_short")
+            item_list.append("pants_long_1")
+            item_list.append("pants_long_2")
             item_list.append("pants_short_1")
-        wr_items_path = "characters/" +str(character)+ "/clothes/bottoms/"
+            item_list.append("pants_short_2")
+            item_list.append("pants_short_3")
+        type_choice = "bottoms"
+        wr_items_path = "characters/" +str(char)+ "/clothes/bottoms/"
 
 return

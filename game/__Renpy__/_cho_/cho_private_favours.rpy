@@ -12,7 +12,6 @@ label cho_favor_1:
             "\"(Not right now.)\"":
                 jump cho_requests
 
-    hide screen cho_chang
     call blkfade
     pause.2
     hide screen blkfade
@@ -38,14 +37,14 @@ label cho_favor_1_1:
             call cho_main("Fine...","pout","base","angry","R")
             call nar(">Cho quickly removes her tie before starting to undo her shirt.","start")
             call nar(">Her inexperience is obvious and she struggles for a moment.","end")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             call cho_main("Sorry, about that.","open","base","sad","mid")
             g9 "Don't worry, girl. You're doing great!"
             call cho_main("Thanks.","angry","base","sad","R")
             m "Now take off your skirt..."
             call cho_main("O-okay...","horny","base","sad","down")
             call nar(">Cho takes a deep breath, then swiftly drops her skirt.")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             call ctc
             jump let_cho_strip
 
@@ -56,14 +55,14 @@ label cho_favor_1_1:
             m "Besides, Just thinking about Miss Granger's ass makes me-"
             call cho_main("Fine, I'll do it...","pout","base","angry","R")
             call nar(">Cho takes a deep breath, then swiftly drops her skirt.")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             call cho_main("There, my skirt is gone!","angry","base","sad","down")
             g9 "I can see that, Miss Chang!"
             m "Now take off your shirt..."
             call cho_main("O-okay...","open","base","sad","mid")
             call nar(">Cho quickly removes her tie before starting to undo her shirt.","start")
             call nar(">Her inexperience is obvious and she struggles for a moment.","end")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             call ctc
             jump let_cho_strip
 
@@ -135,7 +134,7 @@ label cho_favor_1_1:
         g9 "Why don't you thank me by taking off that bra?"
         call cho_main("Of course, sir.","horny","base","sad","down")
         pause.5
-        $ cho_wear_bra = False
+        $ cho_class.strip("bra")
         call ctc
         call cho_main("I bet my tight body looks way better than Hermione's...","soft","base","raised","mid")
 
@@ -177,7 +176,7 @@ label cho_favor_1_2:
     m "If you're not interested, I'm sure Hermione wouldn't mind..."
     call cho_main("!!!","pout","wide","sad","mid",trans="hpunch")
     call cho_main("I'll do it.","horny","base","sad","R")
-    $ cho_wear_top = False
+    $ cho_class.strip("top")
     call cho_main("There! How is that?","horny","base","sad","R")
 
     menu:
@@ -185,11 +184,11 @@ label cho_favor_1_2:
             g9 "Nice!"
             m "Now the bottom."
             call cho_main("Yes, uhm... [cho_genie_name].","pout","base","sad","mid")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             call cho_main("(House points...loads of house points...)","horny","closed","sad","mid")
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             call cho_main("(Am I really doing this?)","angry","base","sad","down")
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             call cho_main("(Too late now...)","angry","closed","sad","mid")
             call ctc
 
@@ -201,16 +200,16 @@ label cho_favor_1_2:
             m "Go on, girl."
             call cho_main("Yes, sir!","smile","base","sad","R")
             call nar("Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips.")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             m "Nice."
             call cho_main("Thank you, [cho_genie_name].","base","closed","base","mid")
             call nar("Her hands nervously move to her bra.")
             call cho_main("Is this okay?","pout","base","sad","mid")
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             call cho_main("What do you think?","horny","angry","sad","R")
             m "Simply gorgeous."
             call nar("Finally, she pushes her panties down.")
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             call cho_main("...","upset","closed","sad","mid")
             g4 "Very nice."
             call cho_main("(...)","pout","base","sad","mid")
@@ -248,17 +247,17 @@ label cho_favor_1_3:
             "Despite her apparent confidence, Cho's hands shake as she reaches for the edge of her top."
             m "Get on with it, girl."
             call cho_main("Yes, [cho_genie_name]!","base","base","sad","R")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             "Cho grits her teeth and removes her top in one swift motion."
             m "That's better. Now the bottoms."
             call cho_main("Yes, [cho_genie_name].","pout","base","sad","mid")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             "Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips."
             call cho_main("(house points...loads of house points....)","smile","base","base","mid")
             "Her hands nervously move to her bra."
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             "She pulls it up, over her head, and lets it fall to the ground."
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             "Finally, she pushes her panties over her hips."
             m "Very good."
             call cho_main("........","smile","base","base","mid")
@@ -267,19 +266,19 @@ label cho_favor_1_3:
             "Despite her apparent confidence, Cho's hands shake as she reaches for the edge of her top."
             m "Go on, girl."
             call cho_main("Yes, [cho_genie_name]!","smile","base","sad","R")
-            $ cho_wear_top = False
+            $ cho_class.strip("top")
             "Cho flashes a subdued smile and removes her top in one swift motion."
             m "Nice."
             call cho_main("Thank you, [cho_genie_name].","base","closed","base","mid")
-            $ cho_wear_bottom = False
+            $ cho_class.strip("bottom")
             "Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips."
             call cho_main("is this okay?","pout","base","sad","mid")
             "Her hands nervously move to her bra."
-            $ cho_wear_bra = False
+            $ cho_class.strip("bra")
             "She pulls it up, over her head, and lets it fall to the ground."
             call cho_main("what do you think?","horny","angry","sad","R")
             m "Simply. gorgeous."
-            $ cho_wear_panties = False
+            $ cho_class.strip("panties")
             "Finally, she pushes her panties over her hips."
             m "Very nice."
             call cho_main("........","upset","closed","sad","mid")
@@ -298,7 +297,6 @@ label cho_favor_1_3:
 label jerk_off_to_cho:
     menu:
         "-Start jerking off-":
-            hide screen cho_chang
             hide screen bld1
             with d3
             pause.2
@@ -513,12 +511,11 @@ label end_cho_favor:
     call cho_main("Thank you.","soft","base","base","mid")
 
     call nar(">Cho quickly puts her clothes on before leaving.")
-    call load_cho_clothing_saves
+    $ cho_class.wear("all")
     if daytime:
         call cho_main("Good day, [cho_genie_name].","smile","base","base","mid")
     else:
         call cho_main("Good night, [cho_genie_name].","smile","base","base","mid")
-    call play_sound("door")
 
     jump end_cho_event
 
@@ -634,7 +631,7 @@ label chofbm:
                 call cho_main("THank you, Professor.","smile","base","base","R")
                 m "40 points to Ravenclaw."
                 $ ravenclaw += 40
-                jump chof2end
+                jump end_cho_event
             "\"Absolutely not!\"":
                 m "Absolutely not. I'm paying you 40 house points for this, girl."
                 call cho_main("But, [cho_genie_name], I-","soft","wide","sad","mid")
@@ -656,7 +653,7 @@ label chofbm:
                         m "Of course, Miss Chang. You've earned them."
                         m "40 points to Ravenclaw."
                         $ ravenclaw += 40
-                        jump chof2end
+                        jump end_cho_event
                     "-Keep going-":
                         ">You ignore the foolish girl's cries and continue to abuse her ass, sliding your hands under her panties."
                         call cho_main("Stop!","scream","wide","angry","mid")
@@ -706,7 +703,7 @@ label chofbm:
                                 call cho_main("Thank you, sir.","upset","shocked","base","R")
                                 $ cho_mood += 5
                                 $ ravenclaw += 60
-                                jump chof2end
+                                jump end_cho_event
                             "\"That was a bit much. 80 points\"":
                                 m "I think I got a little carried away."
                                 call cho_main("...","upset","suspicious","angry","downR")
@@ -715,7 +712,7 @@ label chofbm:
                                 call cho_main("Well, I suppose it wasn't that bad...","pout","suspicious","sad","downR")
                                 $ cho_mood +1
                                 $ ravenclaw += 80
-                                jump chof2end
+                                jump end_cho_event
                             "\"(How dare she!) 0 points!\"":
                                 m "How dare you defy your headmaster, Rumbledwarf!"
                                 m "If you don't come back here, you'll get nothing."
@@ -755,7 +752,7 @@ label chofbm:
                                 m "40 points to Ravenclaw."
                                 call cho_main("{size=-2}.....yay.{/size}","horny","suspicious","sad","down")
                                 $ ravenclaw += 40
-                                jump chof2end
+                                jump end_cho_event
     if cho_whoring  == 2:
         call cho_main("...","smile","base","base","mid")
         call cho_main("......","smile","base","base","mid")
@@ -775,7 +772,7 @@ label chofbm:
                 call cho_main("....uh. Yes. Thank you, Professor.","smile","base","base","mid")
                 m "40 points to Ravenclaw."
                 $ ravenclaw += 40
-                jump chof2end
+                jump end_cho_event
             "Not Enough.":
                 m "You're right. After all, I'm paying you 40 house points for this, girl."
                 call cho_main("Yes, sir. But...","smile","base","base","mid")
@@ -850,7 +847,7 @@ label chofbm:
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 m "40 points to Ravenclaw."
                                                 $ ravenclaw += 40
-                                                jump chof2end
+                                                jump end_cho_event
                                             "Keep going.":
                                                 ">You ignore the girl's question and continue to molest her ass, sliding your hands under her panties."
                                                 call cho_main("I knew you couldn't resist.","smile","base","base","mid")
@@ -858,7 +855,7 @@ label chofbm:
                                                 m "40 points to Ravenclaw."
                                                 call cho_main("THank you, Professor.","smile","base","base","mid")
                                                 $ ravenclaw += 40
-                                                jump chof2end
+                                                jump end_cho_event
 
         label chof2wl2:
         ">You stare at Cho's tight, young ass, drinking it in."
@@ -926,7 +923,7 @@ label chofbm:
                                         call cho_main("{sIze=-2}...Thank you, sir.{/size}","smile","base","base","mid")
                                         ">Cho quickly pulls her panties up over her cum soaked ass and smoothes her skirt."
                                         call cho_main("this should be okay.","smile","base","base","mid")
-                                        jump chof2end
+                                        jump end_cho_event
                                     "Too bad.":
                                         m "It's not my fault you made me cum."
                                         call cho_main("!!","smile","base","base","mid")
@@ -937,13 +934,13 @@ label chofbm:
                                         call cho_main("you're nothing but a dirty old wizard!","smile","base","base","mid")
                                         ">Cho grabs her panties from the floor and storms off leaving a trail of cum dripping to your door."
                                         $ cho_mood +5
-                                        jump chof2end
+                                        jump end_cho_event
                             "Better not.":
                                 ">You stop at the last moment and put your cock away."
                                 ">Your swollen balls throb with pressure."
                                 call cho_main("are you okay?","smile","base","base","mid")
                                 m "I'm a wizard, girl."
-                                jump chof2end
+                                jump end_cho_event
                     "I'll give you 15.":
                         ">You give your throbbing cock a few quick pumps before rubbing the head across her ass cheek."
                         m "I'll give you 15."
@@ -988,7 +985,7 @@ label chofbm:
                                         call cho_main("{sIze=-2}...Thank you, sir.{/size}","smile","base","base","mid")
                                         ">Cho quickly pulls her panties up over her cum soaked ass and smoothes her skirt."
                                         call cho_main("this should be okay.","smile","base","base","mid")
-                                        jump chof2end
+                                        jump end_cho_event
                                     "Too bad.":
                                         m "It's not my fault your ass made me cum."
                                         call cho_main("!!!","smile","base","base","mid")
@@ -999,7 +996,7 @@ label chofbm:
                                         call cho_main("you're nothing but a dirty old wizard!","smile","base","base","mid")
                                         ">Cho grabs her panties from the floor and storms off leaving a trail of cum dripping to your door."
                                         $ cho_mood +5
-                                        jump chof2end
+                                        jump end_cho_event
                             "Warn Her.":
                                 m "I'm almost there!"
                                 call cho_main("Really?","smile","base","base","mid")
@@ -1020,7 +1017,7 @@ label chofbm:
                                 ">Cho slips her panties back on, pulling them up over her cum filled crack."
                                 ">Then she lightly pats her sticky ass."
                                 call cho_main("Can't make a mess in the Hall, can I?","smile","base","base","mid")
-                                jump chof2end
+                                jump end_cho_event
     if cho_whoring  ==3:
         ">Cho pulls up the bottom of her skirt, revealing her bare ass, then bends forward over your desk."
         call cho_main("Well?","smile","base","base","mid")
@@ -1039,7 +1036,7 @@ label chofbm:
                 m "40 points to Ravenclaw."
                 $ ravenclaw += 40
                 call cho_main("....thank you?","smile","base","base","mid")
-                jump chof2end
+                jump end_cho_event
             "Of course!":
                 m "{size=-4}(I understand. You nasty little girl.){/size}"
                 m "You'd better earn these 40 points girl."
@@ -1117,7 +1114,7 @@ label chofbm:
                                         call cho_main("Thank you, sir.","smile","base","base","mid")
                                         m "40 points to Ravenclaw."
                                         $ ravenclaw += 40
-                                        jump chof2end
+                                        jump end_cho_event
                                     "Keep going.":
                                         ">You ignore the girl's question and continue to molest her ass, sliding your hands deep between her ass cheeks."
                                         call cho_main("I knew you couldn't resist.","smile","base","base","mid")
@@ -1125,7 +1122,7 @@ label chofbm:
                                         m "40 points to Ravenclaw."
                                         call cho_main("Thank you, Professor.","smile","base","base","mid")
                                         $ ravenclaw += 40
-                                        jump chof2end
+                                        jump end_cho_event
 
         label chof2hd:
         ">You can feel Cho's warmth spreading out over your body from her ass."
@@ -1235,7 +1232,7 @@ label chofbm:
                                         cho_mouthfull "...."
                                         $ renpy.play('sounds/burp.mp3')
                                         call cho_main("i need to go!","smile","base","base","mid")
-                                        jump chof2end
+                                        jump end_cho_event
                                     "I don't know. That was weird.":
                                         m "I don't know. That was weird."
                                         m "But you got your points."
@@ -1244,7 +1241,7 @@ label chofbm:
                                         $ renpy.play('sounds/burp.mp3')
                                         call cho_main("i think i need To go seE moaning Myrtel!","smile","base","base","mid")
                                         $ renpy.play('sounds/run.mp3')
-                                        jump chof2end
+                                        jump end_cho_event
             "Let her.":
                 m "As you wish, Miss Chang."
                 ">You sit back in your chair and let Cho settle down against your lap."
@@ -1305,7 +1302,7 @@ label chofbm:
                                 ">Cho pulls her skirt back over her sticky ass and smoothes the fabric. Dark stains appear as the cum soaks through."
                                 call cho_main("this should be okay.","smile","base","base","mid")
                                 m "Yes, of course. Though, just to be safe you'd better try to avoid the prefects..."
-                                jump chof2end
+                                jump end_cho_event
                             "Too bad.":
                                 m "You're the one who made me cum."
                                 call cho_main("!!!","smile","base","base","mid")
@@ -1316,7 +1313,7 @@ label chofbm:
                                 call cho_main("you're nothing but a dirty old wizard!","smile","base","base","mid")
                                 "Cho pulls her skirt down and storms off, leaving a trail of cum dripping to your door."
                                 $ cho_mood +5
-                                jump chof2end
+                                jump end_cho_event
                     "Warn Her.":
                         m "I'm going to cum!"
                         call cho_main("Really?","smile","base","base","mid")
@@ -1340,16 +1337,7 @@ label chofbm:
                         call cho_main("i think you made a bit of a mess...","smile","base","base","mid")
                         ">Then, bringing the slimy mess to her soft lips she sucks her finger clean."
                         call cho_main("Oops...","smile","base","base","mid")
-                        jump chof2end
-
-    label chof2end:
-    #cho walking out
-    call play_sound("door")
-    hide screen cho_chang
-    with d3
-    jump day_main_menu
-
-
+                        jump end_cho_event
 
 label cho_favor_3:
 

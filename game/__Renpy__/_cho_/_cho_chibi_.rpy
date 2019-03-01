@@ -1,7 +1,4 @@
-
-
 ### cho CHIBI ###
-
 label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False):
     hide screen cho_stand
 
@@ -54,10 +51,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
     return
 
-
-
 ### cho CHIBI WALK ###
-
 label cho_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = cho_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
@@ -132,10 +126,7 @@ label cho_walk_end_loiter(dissolveTime = 3):
         hide screen cho_stand
     return
 
-
-
 ### cho CHIBI SCREENS ###
-
 screen cho_stand:
     tag cho_chibi
 
@@ -159,21 +150,19 @@ screen cho_walk:
 
     zorder cho_chibi_zorder
 
-
 label update_cho_chibi_uniform:
-
     #Clothing
-    if cho_wear_top:
+    if cho_class.get_cloth("top"):
         $ cho_chibi_top       = "characters/cho/chibis/cc_cloth_shirt_r.png"
     else:
         $ cho_chibi_top       = "characters/cho/chibis/blank.png"
 
-    if cho_wear_bottom:
+    if cho_class.get_cloth("bottom"):
         $ cho_chibi_bottom    = "characters/cho/chibis/cc_cloth_skirt.png"
     else:
         $ cho_chibi_bottom    = "characters/cho/chibis/blank.png"
 
-    if cho_wear_robe:
+    if cho_class.get_cloth("robe"):
         $ cho_chibi_robe      = "characters/cho/chibis/cc_cloth_robe_r.png"
     else:
         $ cho_chibi_robe      = "characters/cho/chibis/blank.png"
@@ -181,12 +170,11 @@ label update_cho_chibi_uniform:
     $ cho_chibi_stand         = "ch_cho blink"
 
     #Main Chibi
-    if cho_wear_bottom or cho_wear_stockings: #With Shoes.
+    if cho_class.get_cloth("bottom") or cho_class.get_cloth("stockings"): #With Shoes.
         $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
         $ cho_chibi_walk_shoes    = "ch_cho walk_shoes"
     else:
         $ cho_chibi_shoes         = "characters/cho/chibis/blank.png"
         $ cho_chibi_walk_shoes    = "characters/cho/chibis/blank.png"
-
 
     return

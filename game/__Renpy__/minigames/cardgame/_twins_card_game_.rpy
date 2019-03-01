@@ -137,24 +137,9 @@ label twins_random_duel:
         m "Okay, well... If you two win then I'll give you 10 gold."
         ger "Acceptable..."
         twi "Let's play."
-        
-
-    play music "music/vs_twins.ogg" fadein 1.0
-    play sound "sounds/Genie_VS_Twins_Teleport.mp3"
-    show screen genie_vs_twins
-    show screen move_genie
-    pause 1
-    show screen move_twins
-    pause 3.5
-    hide screen move_twins
-    hide screen move_genie
-    show screen genie_vs_twins_smile
-    with flash
-    pause
-    hide screen genie_vs_twins_smile
-    hide screen genie_vs_twins
-    
-    
+       
+    call play_music("boss_card_theme")
+       
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
@@ -164,12 +149,7 @@ label twins_random_duel:
     if duel_response == "Close":
         jump twins_duel_cancel
         
-    elif  not duel_response == "win":
-        m "..."
-        m "It would appear that I may have lost this one..."
-        twi "It seems so."
-        m "Well, here's your reward..."
-        $ gold -= 10
+    elif  not duel_response == "win":    
         jump twins_duel_lost
 
     hide screen blkfade
@@ -228,6 +208,7 @@ label twins_duel_lost:
         m "It would appear that I may have lost this one..."
         twi "It seems so."
         m "Well, here's your reward..."
+        $ gold -= 10
         
     menu:
         "-Rematch-":
@@ -273,15 +254,15 @@ init python:
         volume = _preferences.volumes['music']
         _preferences.volumes['music'] *= .5
         s_punch = renpy.random.randint(1, 4)
-        renpy.sound( "sounds/card_punch%s.mp3" % s_punch)
+        renpy.sound.play( "sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
         rnd_text = twins_speech_card[renpy.random.randint(0,len(twins_speech_card)-1)]
         #$ rnd_twin = renpy.random.choice = [fre, goe]
 
         if renpy.random.randint(0, 1) == 0:
-            renpy.say(fre, "[rnd_text!t]")
+            renpy.say(fre, rnd_text)
         else:
-            renpy.say(ger, "[rnd_text!t]")
+            renpy.say(ger, rnd_text)
         _preferences.volumes['music'] = volume
         return

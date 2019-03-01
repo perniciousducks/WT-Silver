@@ -18,8 +18,14 @@ label job_1:
     else:
         her "As you wish [genie_name]."
 
+    show screen blkfade
+    with d5
+    call play_sound("equip_inventory")
+    pause 2.5
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-
+    hide screen blkfade
+    with d5
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -105,8 +111,14 @@ label job_2:
     else:
         her "As you wish [genie_name]."
 
+    show screen blkfade
+    with d5
+    call play_sound("equip_inventory")
+    pause 2.5
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-
+    hide screen blkfade
+    with d5
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -170,11 +182,17 @@ label job_3:
     else:
         call her_main("As you wish, [genie_name].","open","base")
 
+    show screen blkfade
+    with d5
+    call play_sound("equip_inventory")
+    pause 2.5
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_g_ITEM)
-
+    hide screen blkfade
+    with d5
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -315,11 +333,18 @@ label job_4:
     else:
         her "As you wish, [genie_name]."
 
+    show screen blkfade
+    with d5
+    call play_sound("equip_inventory")
+    pause 2.5
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_s_ITEM)
-
+    hide screen blkfade
+    with d5
+    
+    
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -342,7 +367,7 @@ label slytherin_cheer_responses:
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
     pause.2
-
+    
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
@@ -448,53 +473,45 @@ label slytherin_cheer_responses:
 
 label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    if hg_gamble_slut_ITEM.unlocked:
-        her "Why are the cards placed like that?"
-        her "..."
-        her "Fine..."
+    $random_choice = renpy.random.randint(0,3)
+    if random_choice == 0:
+        call her_main("Why are the cards placed like that?","mad","down")
+        call her_main("...","normal","worriedCl", cheeks="blush")
+        call her_main("Fine...","open","down_raised", cheeks="blush")
+    elif random_choice == 1:
+        call her_main("...","normal","worried", cheeks="blush")
+        call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
+        call her_main("I'll do it.","base","wink")
+    elif random_choice == 2:
+        call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
+        call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
+    else: 
+        call her_main("That doesn't leave a lot to the imagination...","smile","squint")
+        call her_main("At least the straps should cover my nipples...","open","wink")
+        call her_main("I'll do it...","normal","happy", cheeks="blush")
 
-        her "..."
-        her "Well, if it stops you from deducting those points."
-        her "I'll do it."
-
-        her "It's a bit revealing... but I'll do it."
-        call her_main( "For Gryffindor house obviously!", cheeks="blush")
-         
-        her "That doesn't leave a lot to the imagination..."
-        her "At least the straps should cover my nipples..."
-        her "I'll do it..."
-        
-    else:
-        her "You want me to put what on?!"
-        her "Why didn't you mention the outfit before?"
-        her "I think I'll take my leave..."
-        $ her_mood -= 7
-
-        her "...no."
-        her "I'd rather not dress myself up like that in public..."
-        her "I'm leaving..."
-        
-        her "And have my breasts visible to their customers?"
-        her "No thanks..."
-        jump main_room
-    
     if first_time_cardgame_work:
         $ first_time_cardgame_work = False
-        her "But... why do you want me to help them promote their shop?"
-        m "That is my business."
-        her "And what do you want me to tell them?"
-        m "Just ask them if they have a need for anyone helping them promote their card game."
-        m "If they're as business minded as I assume then there's no way they'd say no."
-        m "And make sure you ask them for payment."
-        her "Fine..."
-        her "I'll see you tonight."
+        call her_main("But... why do you want me to help them promote their shop?","annoyed","closed")
+        g9 "That is my business."
+        call her_main("What do you want me to tell them then?","open","concerned")
+        m "Just ask them if they have a need for any help promoting their card game."
+        g9 "If they're as business minded as I assume then there's no way they'd say no."
+        g9 "And make sure you ask them for payment."
+        call her_main("Fine...","base","closed")
+        call her_main("I'll see you tonight.","open","base")
         m "Forgetting something?"
-        her "..."
+        call her_main("... Just hand it over.","disgust","down", cheeks="blush")
     
+    show screen blkfade
+    with d5
+    call play_sound("equip_inventory")
+    pause 2.5
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
-
+    hide screen blkfade
+    with d5
     g9 "Looking great!"
-    her "Thank you..."  
+    call her_main("Thank you...","open","happy", cheeks="blush")  
     m "Off you go then..."  
     
     
@@ -533,34 +550,34 @@ label hermione_helping_selling_cards:
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], (points) points to Gryffindor."
+        m "Well done [hermione_name], 15 points to Gryffindor."
 
 
     elif random_choice == 1:
         call her_main("")
         m "Hello, [hermione_name], how was your day?" 
-        her "It was fine, the outfit is a bit chilly though."
+        call her_main("It was fine, the outfit is a bit chilly though.","normal","happy")
         m "So, no other complications?"
-        her "Well..."
-        her "The twins asked me to give out some free promotional starter packs."
+        call her_main("Well...","soft","down", cheeks="blush")
+        call her_main("The twins asked me to give out some free promotional starter packs.","open","squint", cheeks="blush")
         m "Yes?"
         m "Sounds like a great way to get people into playing..."
-        her "Well, I didn't have anywhere to store the packs as you could imagine."
-        her "So I had to resort to putting them behind my suspenders and the top of my stockings."
-        her "And one customer got a bit..."
-        her "Touchy."
+        call her_main("Well, I didn't have anywhere to store the packs as you could imagine.","base","down", cheeks="blush")
+        call her_main("So I had to resort to putting them behind my suspenders and the top of my stockings...","open","closed", cheeks="blush")
+        call her_main("And one customer got a bit...","normal","closed", cheeks="blush")
+        call her_main("Touchy.","base","ahegao", cheeks="blush")
         m "I see..."
-        her "I did get a bit agitated at one point actually..."
-        m "They didn't fire you did they?"
-        her "No!"
-        her "The customer was quite apologetic actually and bought a bunch of things."
-        her "The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves."
-        her "I'm fine with them believing they had anything to do with it though."
+        call her_main("I did get a bit agitated at one point actually...","open","closed", cheeks="blush")
+        g4 "They didn't fire you did they?"
+        call her_main("No!","mad","wide_stare")
+        call her_main("The customer was quite apologetic actually and bought a bunch of things.","smile","angryCl")
+        call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.","crooked_smile","annoyed")
+        call her_main("I'm fine with them believing they had anything to do with it though.","smile","closed")
         m "How noble of you..."
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], (points) points to Gryffindor."
+        m "Well done [hermione_name], 20 points to Gryffindor."
 
     elif random_choice == 2:
         call her_main("")
@@ -596,7 +613,7 @@ label hermione_helping_selling_cards:
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], 30 points to Gryffindor."
+        m "Well done [hermione_name], 25 points to Gryffindor."
 
 
     elif random_choice == 3:
@@ -629,7 +646,7 @@ label hermione_helping_selling_cards:
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
-        m "Well done [hermione_name], 30 points to Gryffindor."
+        m "Well done [hermione_name], 25 points to Gryffindor."
 
 
 
@@ -665,7 +682,7 @@ label hermione_helping_selling_cards:
     jump night_main_menu
     
 label inn_menu:
-    show bld1
+
     if inn_intro:
         jump inn_intro
     abe "Welcome to the Hog's Head Inn"

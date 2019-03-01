@@ -71,7 +71,6 @@ if susan_imperio_counter > 0:
         call reset_susan_clothing
 
 #Cho Daily Flags.
-call update_cho
 $ cho_busy = False
 if cho_known:
     $ days_since_cho += 1

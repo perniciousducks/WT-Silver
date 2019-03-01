@@ -141,7 +141,7 @@ init python:
                         renpy.show_screen("card_end_message", "You win!")
                         renpy.sound.play("sounds/card_win.ogg")
                     elif response_card == "draw":
-                        renpy.show_screen("screen card_end_message", "Draw")
+                        renpy.show_screen("card_end_message", "Draw")
                     else:
                         renpy.show_screen("card_end_message", "You lost...")
                     renpy.pause(3.0) # Pause before end

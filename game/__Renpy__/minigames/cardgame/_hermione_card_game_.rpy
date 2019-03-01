@@ -119,50 +119,37 @@ label hermione_random_duel:
     m "Ready for another game of cards?"
 
     if her_whoring < 16:
-        her "You've already challenged me though... and I lost."
-        m "What if me made it a wager..."
-        her "Like gambling? No thank you."
+        call her_main("You've already challenged me though...","open","squintL")
+        call her_main("and I lost.","annoyed","down")
+        g9 "What if we made it a wager..."
+        call her_main("Like gambling? No thank you!","clench","annoyed")
         m "It's not gambling, just a friendly house point wager..."
-        her "Sounds like gambling to me..."
+        call her_main("Sounds like gambling to me...","normal","suspicious")
         m "So, how about it?"
-        her "Not right now [genie_name]..."
+        call her_main("I'll pass, [genie_name]...","open","worriedL")
 
         m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
+        jump hermione_duel_menu
     else: 
-        her "You've already challenged me though... and I lost."
-        m "What if me made it a wager..."
-        her "Like gambling you mean?"
+        call her_main("You've already challenged me though...","open","squintL")
+        call her_main("and I lost.","annoyed","down")
+        g9 "What if we made it a wager..."
+        call her_main("Gambling you mean?","open","worried")
         m "Not for money obviously."
-        her "What are you suggesting then?"
+        call her_main("What are you suggesting then?","base","happy", cheeks="blush")
         m "Well, I was thinking house points."
-        her "House points..."
-        her "How would this work then?"
-        m "Well, if you win I'll give you [amount] to Gryffindor."
-        her "And if I lose?"
+        call her_main("House points...","normal","squintL")
+        call her_main("How would this work then?","open","squint")
+        m "Well, if you win I'll give you 10 points to Gryffindor."
+        call her_main("Only 10?","annoyed","Glance")
+        m "15 then..."
+        call her_main("And if I lose?","open","SquintL")
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
-        her "..."
-        her "Okay, but let's make it a fair game."
+        call her_main("...","normal","WorriedCl", cheeks="blush")
+        call her_main("Okay... In that case to make it fair, let's add these extra rules...","open","happy")
         
     call play_music("boss_card_theme")
-    play sound "sounds/Genie_VS_Hermione4.mp3"
-    show screen genie_vs_hermione
-    show screen move_genie
-    pause 1
-    show screen versus
-    pause 1
-    show screen move_hermione
-    pause 3
-    hide screen move_genie
-    hide screen move_hermione
-    show screen genie_vs_hermione_smile
-    with hpunch
-    stop music fadeout 0
-    pause
-    hide screen versus
-    hide screen genie_vs_hermione
-    hide screen genie_vs_hermione_smile
-    play music "music/vs_hermione.mp3"
     
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
@@ -187,30 +174,33 @@ label hermione_random_duel:
         $ geniecard_tokens += 1
     
     m "Seems like I've won this one [hermione_name]."
-    her "I noticed..."
+    call her_main ("I noticed...","normal","worriedL")
     m "You do know what this means, don't you?"
-    her "..."
-    m "This means I'm going to have to deduct [points] from Gryffindor house."
-    her "Please, don't. I don't want the others to wake up tomorrow wondering why there's [points] points missing..."
+    call her_main("...","normal","worried")
+    g9 "This means I'm going to have to deduct 15 points from Gryffindor house."
+    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 15 house points missing...","open","worriedCl")
     m "Well, in that case..."
 
     menu:
         "Send Hermione to work, promoting the card game.":
-            m "In that case, I think I have a good idea for a job..."
-            her "A job?"
+            g9 "In that case, I think I have a good idea for a job..."
+            call her_main("A job?","open","squint")
             m "Yes, I'd like you to start helping the twins promote the card game..."
-            her "I can do that..."
-            her "But not today if that's okay with you."
-            m "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
-            her "..."
-            her "Did you need anything else?"
+            call her_main("I can do that...","base","worried", cheeks="blush")
+            call her_main("But not today if that's okay with you.","open","down")
+            g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
+            call her_main("...","normal","squintL", cheeks="blush")
+            call her_main("Did you need anything else?","open","soft", cheeks="blush")
             if not cardgame_work:
-                call give_reward("Unlock message that the job is available in the work menu", "interface/icons/item_sexdoll.png")
+                call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
                 $ cardgame_work = True
                 
         "Deduct the points":
-            m "Graffindor minus 10 points"
-            $ gryffindor -= 10
+            m "No, sorry miss Granger... Minus 15 points to Gryffindor..."
+            call her_main("...","disgust","down")
+            call her_main("Fine, that's fair...","open","down_raised")
+            call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
+            $ gryffindor -= 15
             
             
 
@@ -266,11 +256,11 @@ init python:
         volume = _preferences.volumes['music']
         _preferences.volumes['music'] *= .5
         s_punch = renpy.random.randint(1, 4)
-        renpy.sound("sounds/card_punch%s.mp3" % s_punch)
+        renpy.sound.play("sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
         her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
-        renpy.call("her_main", "[her_speech!t]", "base", "base")
+        renpy.say(her, her_speech)
         renpy.hide_screen("hermione_main")
         _preferences.volumes['music'] = volume   
         return

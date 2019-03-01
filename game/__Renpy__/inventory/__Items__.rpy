@@ -171,32 +171,32 @@ label store_items_init:
 
     #Hermione Outfits.
     if not hasattr(renpy.store,'hg_outfit_maid_ITEM'):
-        $ hg_outfit_maid_ITEM      = outfit_class(id="hg_outfit_maid", name="Maid",                 type="outfit", items=["outfit","hair","hat","gloves","garter","stockings"], cost=250, wait_time=2, image="outfits/hg_maid", description=">A classic Maids Outfit for a classy Witch.")
-        $ hg_outfit_pirate_ITEM    = outfit_class(id="hg_outfit_pirate", name="Pirate",             type="outfit", items=["outfit"],       cost=75, wait_time=1, image="outfits/hg_pirate", description="> A lightweight Pirates outfit with only room for the\n necessities. Comes with two canon ball storage compartments.")
-        $ hg_outfit_christmas_ITEM = outfit_class(id="hg_outfit_christmas", name="Christmas Girl",  type="outfit", items=["outfit"],       cost=50, wait_time=2, image="outfits/hg_christmas", description=">A christmas themed outfit complete with tightly wrapped\n snowglobes.")
-        $ hg_outfit_present_ITEM   = outfit_class(id="hg_outfit_present", name="Present",           type="outfit", items=["outfit"],       cost=35, wait_time=1, image="outfits/hg_present", description=">A tightly wrapped gift, scissors not included.")
-        $ hg_outfit_japan_ITEM     = outfit_class(id="hg_outfit_japan", name="Japanese Schoolgirl", type="outfit", items=["outfit"],       cost=125, wait_time=2, image="outfits/hg_japan", description=">A schoolgirl outfit traditionally worn in Japan.")
-        $ hg_outfit_egypt_ITEM     = outfit_class(id="hg_outfit_egypt", name="Egyptian Goddess",    type="outfit", image="outfits/hg_egypt", unlockable=True)
-        $ hg_gamble_slut_ITEM      = outfit_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit_token", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
+        $ hg_outfit_maid_ITEM      = costume_class(id="hg_outfit_maid", name="Maid",                 type="outfit", items=["outfit","hair","hat","gloves","garter","stockings"], cost=250, wait_time=2, image="outfits/hg_maid", description=">A classic Maids Outfit for a classy Witch.")
+        $ hg_outfit_pirate_ITEM    = costume_class(id="hg_outfit_pirate", name="Pirate",             type="outfit", items=["outfit"],       cost=75, wait_time=1, image="outfits/hg_pirate", description="> A lightweight Pirates outfit with only room for the\n necessities. Comes with two canon ball storage compartments.")
+        $ hg_outfit_christmas_ITEM = costume_class(id="hg_outfit_christmas", name="Christmas Girl",  type="outfit", items=["outfit"],       cost=50, wait_time=2, image="outfits/hg_christmas", description=">A christmas themed outfit complete with tightly wrapped\n snowglobes.")
+        $ hg_outfit_present_ITEM   = costume_class(id="hg_outfit_present", name="Present",           type="outfit", items=["outfit"],       cost=35, wait_time=1, image="outfits/hg_present", description=">A tightly wrapped gift, scissors not included.")
+        $ hg_outfit_japan_ITEM     = costume_class(id="hg_outfit_japan", name="Japanese Schoolgirl", type="outfit", items=["outfit"],       cost=125, wait_time=2, image="outfits/hg_japan", description=">A schoolgirl outfit traditionally worn in Japan.")
+        $ hg_outfit_egypt_ITEM     = costume_class(id="hg_outfit_egypt", name="Egyptian Goddess",    type="outfit", image="outfits/hg_egypt", unlockable=True)
+        $ hg_gamble_slut_ITEM      = costume_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit_token", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
 
     if not hasattr(renpy.store,'hg_witch_ITEM'):
-        $ hg_witch_ITEM        = outfit_class(id="hg_witch", name="Witch Outfit",      type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
-        $ hg_witch_skimpy_ITEM = outfit_class(id="hg_witch_skimpy", name="Sexy Witch", type="outfit", items=["outfit","hat"], unlockable=True,       image="outfits/hg_witch_skimpy")
+        $ hg_witch_ITEM        = costume_class(id="hg_witch", name="Witch Outfit",      type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
+        $ hg_witch_skimpy_ITEM = costume_class(id="hg_witch_skimpy", name="Sexy Witch", type="outfit", items=["outfit","hat"], unlockable=True,       image="outfits/hg_witch_skimpy")
 
     #Hermione Costumes.
     if not hasattr(renpy.store,'hg_costume_power_girl_ITEM'):
-        $ hg_costume_power_girl_ITEM   = outfit_class(id="hg_costume_power_girl", name="Power Girl",       type="outfit", items=["outfit"],                      cost=350, wait_time=3, image="outfits/hg_power", description=">An outfit for when you feel extra heroic\n \"Sometimes it takes balls to be a woman\".")
-        $ hg_costume_ms_marvel_ITEM    = outfit_class(id="hg_costume_ms_marvel", name="Mrs Marvel",        type="outfit", items=["outfit"],                      cost=250, wait_time=2, image="outfits/hg_marvel", description=">For the girl that likes the lightningbolt\n better on the chest than the forehead.")
-        $ hg_costume_harley_quinn_ITEM = outfit_class(id="hg_costume_harley_quinn", name="Harley Quinn",   type="outfit", items=["outfit"],                      cost=300, wait_time=3, image="outfits/hg_harley", description=">A outfit for when you're actually nuts\n rather than just crazy for them.")
-        $ hg_costume_lara_croft_ITEM   = outfit_class(id="hg_costume_lara_croft", name="Lara Croft",       type="outfit", items=["outfit","gloves"],             cost=270, wait_time=2, image="outfits/hg_lara", description=">An outfit perfectly suited for exploring deep, dark\n and moist caverns.")
-        $ hg_costume_tifa_ITEM         = outfit_class(id="hg_costume_tifa", name="Tifa",                   type="outfit", items=["outfit"],                      cost=220, wait_time=2, image="outfits/hg_tifa", description=">An outfit for when when your sexual fantasies\n are just getting started.")
-        $ hg_costume_elizabeth_ITEM    = outfit_class(id="hg_costume_elizabeth", name="Bioshock outfit",   type="outfit", items=["outfit","hair","choker"],      cost=400, wait_time=3, image="outfits/hg_bio", description=">Flick some coins for this Bioshock inspired outfit.")
-        $ hg_costume_yennefer_ITEM     = outfit_class(id="hg_costume_yennefer", name="Yennefer's costume", type="outfit", items=["outfit","choker","stockings"], cost=500, wait_time=3, image="outfits/hg_yenn", description=">A Witcher inspired outfit to fit even the most\n perverted witch")
+        $ hg_costume_power_girl_ITEM   = costume_class(id="hg_costume_power_girl", name="Power Girl",       type="outfit", items=["outfit"],                      cost=350, wait_time=3, image="outfits/hg_power", description=">An outfit for when you feel extra heroic\n \"Sometimes it takes balls to be a woman\".")
+        $ hg_costume_ms_marvel_ITEM    = costume_class(id="hg_costume_ms_marvel", name="Mrs Marvel",        type="outfit", items=["outfit"],                      cost=250, wait_time=2, image="outfits/hg_marvel", description=">For the girl that likes the lightningbolt\n better on the chest than the forehead.")
+        $ hg_costume_harley_quinn_ITEM = costume_class(id="hg_costume_harley_quinn", name="Harley Quinn",   type="outfit", items=["outfit"],                      cost=300, wait_time=3, image="outfits/hg_harley", description=">A outfit for when you're actually nuts\n rather than just crazy for them.")
+        $ hg_costume_lara_croft_ITEM   = costume_class(id="hg_costume_lara_croft", name="Lara Croft",       type="outfit", items=["outfit","gloves"],             cost=270, wait_time=2, image="outfits/hg_lara", description=">An outfit perfectly suited for exploring deep, dark\n and moist caverns.")
+        $ hg_costume_tifa_ITEM         = costume_class(id="hg_costume_tifa", name="Tifa",                   type="outfit", items=["outfit"],                      cost=220, wait_time=2, image="outfits/hg_tifa", description=">An outfit for when when your sexual fantasies\n are just getting started.")
+        $ hg_costume_elizabeth_ITEM    = costume_class(id="hg_costume_elizabeth", name="Bioshock outfit",   type="outfit", items=["outfit","hair","choker"],      cost=400, wait_time=3, image="outfits/hg_bio", description=">Flick some coins for this Bioshock inspired outfit.")
+        $ hg_costume_yennefer_ITEM     = costume_class(id="hg_costume_yennefer", name="Yennefer's costume", type="outfit", items=["outfit","choker","stockings"], cost=500, wait_time=3, image="outfits/hg_yenn", description=">A Witcher inspired outfit to fit even the most\n perverted witch")
 
     #Hermione Dresses.
     if not hasattr(renpy.store,'hg_dress_yule_ball_ITEM'):
-        $ hg_dress_yule_ball_ITEM = outfit_class(id="hg_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit","hair","neckless","tiara"], cost=1500, wait_time=7, image="outfits/hg_ball_dress", description=">A traditional ball dress complete with a imitation\n ball-queen tiara.")
-        $ hg_dress_dancer_ITEM    = outfit_class(id="hg_dress_dancer", name="Heart Dancer",  type="outfit", items=["outfit"],                           cost=80,   wait_time=1, image="outfits/hg_heart", description=">A sexy dancers outfit with heart shaped nipple tassels.")
+        $ hg_dress_yule_ball_ITEM = costume_class(id="hg_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit","hair","neckless","tiara"], cost=1500, wait_time=7, image="outfits/hg_ball_dress", description=">A traditional ball dress complete with a imitation\n ball-queen tiara.")
+        $ hg_dress_dancer_ITEM    = costume_class(id="hg_dress_dancer", name="Heart Dancer",  type="outfit", items=["outfit"],                           cost=80,   wait_time=1, image="outfits/hg_heart", description=">A sexy dancers outfit with heart shaped nipple tassels.")
 
     $ hermione_outfits_list=[
         hg_outfit_maid_ITEM, hg_outfit_pirate_ITEM, hg_outfit_christmas_ITEM, hg_outfit_present_ITEM,
@@ -217,14 +217,14 @@ label store_items_init:
 
     # Clothing Sets
     if not hasattr(renpy.store,'hg_cheer_g_ITEM'):
-        $ hg_cheer_g_ITEM      = outfit_class(id="hg_cheer_g", name="Gryffindor Cheerleader",           type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g",      cost=80, wait_time=2, description=">A basic Cheerleader attire for Gryffindor's\n  Quidditch team.")
-        $ hg_cheer_s_ITEM      = outfit_class(id="hg_cheer_s", name="Slythrin Cheerleader",             type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s",      cost=80, wait_time=2, description=">The Slytherin version of the Cheerleader attire.")
-        $ hg_cheer_r_ITEM      = outfit_class(id="hg_cheer_r", name="Ravenclaw Cheerleader",            type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r",      cost=80, wait_time=2, description=">The Ravenclaw version of the Cheerleader attire.")
-        $ hg_cheer_h_ITEM      = outfit_class(id="hg_cheer_h", name="Hufflepuff Cheerleader",           type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h",      cost=80, wait_time=2, description=">The Hufflepuff version of the Cheerleader attire.")
-        $ hg_cheer_g_sexy_ITEM = outfit_class(id="hg_cheer_g_sexy", name="Sexy Gryffindor Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g_sexy", unlockable=True)
-        $ hg_cheer_s_sexy_ITEM = outfit_class(id="hg_cheer_s_sexy", name="Sexy Slythrin Cheerleader",   type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s_sexy", unlockable=True)
-        $ hg_cheer_r_sexy_ITEM = outfit_class(id="hg_cheer_r_sexy", name="Sexy Ravenclaw Cheerleader",  type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r_sexy", unlockable=True)
-        $ hg_cheer_h_sexy_ITEM = outfit_class(id="hg_cheer_h_sexy", name="Sexy Hufflepuff Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h_sexy", unlockable=True)
+        $ hg_cheer_g_ITEM      = costume_class(id="hg_cheer_g", name="Gryffindor Cheerleader",           type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g",      cost=80, wait_time=2, description=">A basic Cheerleader attire for Gryffindor's\n  Quidditch team.")
+        $ hg_cheer_s_ITEM      = costume_class(id="hg_cheer_s", name="Slythrin Cheerleader",             type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s",      cost=80, wait_time=2, description=">The Slytherin version of the Cheerleader attire.")
+        $ hg_cheer_r_ITEM      = costume_class(id="hg_cheer_r", name="Ravenclaw Cheerleader",            type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r",      cost=80, wait_time=2, description=">The Ravenclaw version of the Cheerleader attire.")
+        $ hg_cheer_h_ITEM      = costume_class(id="hg_cheer_h", name="Hufflepuff Cheerleader",           type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h",      cost=80, wait_time=2, description=">The Hufflepuff version of the Cheerleader attire.")
+        $ hg_cheer_g_sexy_ITEM = costume_class(id="hg_cheer_g_sexy", name="Sexy Gryffindor Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g_sexy", unlockable=True)
+        $ hg_cheer_s_sexy_ITEM = costume_class(id="hg_cheer_s_sexy", name="Sexy Slythrin Cheerleader",   type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s_sexy", unlockable=True)
+        $ hg_cheer_r_sexy_ITEM = costume_class(id="hg_cheer_r_sexy", name="Sexy Ravenclaw Cheerleader",  type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r_sexy", unlockable=True)
+        $ hg_cheer_h_sexy_ITEM = costume_class(id="hg_cheer_h_sexy", name="Sexy Hufflepuff Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h_sexy", unlockable=True)
 
     # Lingerie
     if not hasattr(renpy.store,'hg_lingerie_lace_ITEM'):
@@ -272,12 +272,12 @@ label store_items_init:
 
     # Luna Outfits
     if not hasattr(renpy.store,'ll_pyjama_ITEM'):
-        $ ll_pyjama_ITEM           = outfit_class(id="ll_pyjama", name="Pyjama",          type="outfit", items=["outfit"],  cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.")
+        $ ll_pyjama_ITEM           = costume_class(id="ll_pyjama", name="Pyjama",          type="outfit", items=["outfit"],  cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.")
     if not hasattr(renpy.store,'ll_stewardess_ITEM'):
-        $ ll_stewardess_ITEM       = outfit_class(id="ll_stewardess",       name="Stewardess Outfit",         type="outfit", items=["outfit","hat","neckless","thong"], cost=80, wait_time=2, image="outfits/ll_stewardess", description=">For immediate access into the mile-high club!")
-        $ ll_stewardess_short_ITEM = outfit_class(id="ll_stewardess_short", name="Short Stewardess Outfit",   type="outfit", items=["outfit","hat","neckless","thong"], image="outfits/ll_stewardess_short",  unlockable=True)
+        $ ll_stewardess_ITEM       = costume_class(id="ll_stewardess",       name="Stewardess Outfit",         type="outfit", items=["outfit","hat","neckless","thong"], cost=80, wait_time=2, image="outfits/ll_stewardess", description=">For immediate access into the mile-high club!")
+        $ ll_stewardess_short_ITEM = costume_class(id="ll_stewardess_short", name="Short Stewardess Outfit",   type="outfit", items=["outfit","hat","neckless","thong"], image="outfits/ll_stewardess_short",  unlockable=True)
     if not hasattr(renpy.store,'ll_dress_orange_ITEM'):
-        $ ll_dress_orange_ITEM  = outfit_class(id="ll_dress_orange", name="Ball Dress",   type="outfit", items=["outfit","earrings","stockings"],  cost=200, wait_time=3, image="outfits/ll_dress_orange", description=">A cute dress in a questionable color.")
+        $ ll_dress_orange_ITEM  = costume_class(id="ll_dress_orange", name="Ball Dress",   type="outfit", items=["outfit","earrings","stockings"],  cost=200, wait_time=3, image="outfits/ll_dress_orange", description=">A cute dress in a questionable color.")
 
     $ luna_outfits_list=[
         ll_pyjama_ITEM,
@@ -304,10 +304,10 @@ label store_items_init:
 
     # Astoria Outfits
     if not hasattr(renpy.store,'ag_boss_uniform_ITEM'):
-        $ ag_boss_uniform_ITEM            = outfit_class(id="ag_boss_uniform", name="Boss Uniform",                      type="outfit", items=["outfit","hair","hat"],       cost=500, wait_time=3, image="outfits/ag_boss_uniform", description=">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo...")
-        $ ag_costume_lazy_town_ITEM       = outfit_class(id="ag_costume_lazy_town", name="Lazy Town Outfit",             type="outfit", items=["outfit","hair","bracelet"],  cost=120, wait_time=1, image="outfits/ag_lazy", description=">Nobody is lazy at Hogwarts!")
-        $ ag_costume_lazy_town_short_ITEM = outfit_class(id="ag_costume_lazy_town_short", name="Short Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  image="outfits/ag_lazy_short", unlockable=True)
-        $ ag_dress_yule_ball_ITEM         = outfit_class(id="ag_dress_yule_ball", name="Ball Dress",                     type="outfit", items=["outfit"],                    cost=300, wait_time=4, image="outfits/ag_ball_dress", description=">A cute dress for your favourite princess!")
+        $ ag_boss_uniform_ITEM            = costume_class(id="ag_boss_uniform", name="Boss Uniform",                      type="outfit", items=["outfit","hair","hat"],       cost=500, wait_time=3, image="outfits/ag_boss_uniform", description=">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo...")
+        $ ag_costume_lazy_town_ITEM       = costume_class(id="ag_costume_lazy_town", name="Lazy Town Outfit",             type="outfit", items=["outfit","hair","bracelet"],  cost=120, wait_time=1, image="outfits/ag_lazy", description=">Nobody is lazy at Hogwarts!")
+        $ ag_costume_lazy_town_short_ITEM = costume_class(id="ag_costume_lazy_town_short", name="Short Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  image="outfits/ag_lazy_short", unlockable=True)
+        $ ag_dress_yule_ball_ITEM         = costume_class(id="ag_dress_yule_ball", name="Ball Dress",                     type="outfit", items=["outfit"],                    cost=300, wait_time=4, image="outfits/ag_ball_dress", description=">A cute dress for your favourite princess!")
 
     $ astoria_outfits_list=[
         ag_boss_uniform_ITEM,
@@ -345,16 +345,16 @@ label store_items_init:
 
     # Cho Outfits
     if not hasattr(renpy.store,'cc_outfit_sailor_white_ITEM'):
-        $ cc_outfit_quidditch_ITEM  = outfit_class(id="cc_outfit_quidditch", name="Quidditch Outfit",   type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True)
-        $ cc_dress_red_ITEM         = outfit_class(id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.")
-        $ cc_dress_silver_ITEM      = outfit_class(id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture.")
-        $ cc_dress_black_ITEM       = outfit_class(id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture.")
+        $ cc_outfit_quidditch_ITEM  = costume_class(id="cc_outfit_quidditch", name="Quidditch Outfit",   type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True)
+        $ cc_dress_red_ITEM         = costume_class(id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.")
+        $ cc_dress_silver_ITEM      = costume_class(id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture.")
+        $ cc_dress_black_ITEM       = costume_class(id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture.")
 
-        $ cc_outfit_sailor_white_ITEM       = outfit_class(id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
-        $ cc_outfit_sailor_black_ITEM       = outfit_class(id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
+        $ cc_outfit_sailor_white_ITEM       = costume_class(id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
+        $ cc_outfit_sailor_black_ITEM       = costume_class(id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
 
     if not hasattr(renpy.store,'cc_costume_misty_ITEM'):
-        $ cc_costume_misty_ITEM     = outfit_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!")
+        $ cc_costume_misty_ITEM     = costume_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!")
 
     $ cho_outfits_list=[
         cc_outfit_quidditch_ITEM, cc_outfit_sailor_white_ITEM, cc_outfit_sailor_black_ITEM
@@ -465,7 +465,7 @@ init -2 python:
             return ""
 
     #Outfit Items
-    class outfit_class(item_class):
+    class costume_class(item_class):
         top_layers = []
         outfit_layers = []
         actions = []

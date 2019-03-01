@@ -14,8 +14,9 @@ label t_wardrobe(return_label, char_label):
     $ items_shown = 20
     $ current_page = 0
     $ current_category = ""
+    $ current_subcategory = ""
     $ current_item = None
-    $ wardrobe_categories_sorted = ["head", "tops", "bottoms", "legs", "potions", "underwear", "outfits", "gifts"]
+    $ wardrobe_categories_sorted = ["head", "tops", "bottoms", "legs", "misc", "underwear", "outfits", "gifts"]
     $ wardrobe_categories = char_active.clothing_dictlist
     
     python:
@@ -33,18 +34,30 @@ label t_wardrobe(return_label, char_label):
     
     show screen t_wardrobe_menu(550, 50)
     
-    if current_category != "":
-        show screen t_wardrobe_menuitem(20, 50)
+    if current_category:
+        if current_category == "outfits":
+            show screen t_wardrobe_outfit_menuitem(20, 50)
+        else:
+            show screen t_wardrobe_menuitem(20, 50)
     
     $ _return = ui.interact()
     
     hide screen t_wardrobe_menu
     hide screen t_wardrobe_menuitem
+    hide screen t_wardrobe_outfit_menuitem
     
     if _return[0] == "equip":
         $ renpy.play('sounds/equip.ogg')
         $ current_item = _return[1]
         $ char_active.equip(current_item)
+    elif _return == "addoutfit":
+        $ cho_outfit_custom.clone()
+        $ menu_items = char_active.outfits
+        $ menu_items_length = len(menu_items)
+    elif _return[0] == "deloutfit":
+        $ char_active.outfits.pop(_return[1])
+        $ menu_items = char_active.outfits
+        $ menu_items_length = len(menu_items)
     elif _return[0] == "item_color":
         $ active_layer = _return[1]
         show screen t_wardrobe_menu(550, 50)
@@ -53,20 +66,13 @@ label t_wardrobe(return_label, char_label):
         $ char_active.cache_override = False
         $ active_layer = None
         $ char_active.cached = False
-    elif _return[0] == "item_color":
-        $ active_layer = _return[1]
-        show screen t_wardrobe_menu(550, 50)
-        $ char_active.cache_override = True
-        $ current_item.set_color(active_layer)
-        $ char_active.cache_override = False
-        $ active_layer = None
+    elif _return == "item_reset":
+        $ current_item.reset_color()
+        $ char_active.cached = False
     elif _return == "bg_color":
         show screen t_wardrobe_menu(550, 50)
         $ bg_color_wardrobe = color_picker(get_rgb_tuple(bg_color_wardrobe), False, "Wardrobe Background Color", pos_xy=[20, 130])
         $ bg_color_wardrobe = get_hex_string(bg_color_wardrobe[0]/255.0, bg_color_wardrobe[1]/255.0, bg_color_wardrobe[2]/255.0, bg_color_wardrobe[3]/255.0)
-    elif _return == "item_reset":
-        $ current_item.reset_color()
-        $ char_active.cached = False
     elif _return == "inc":
         $ current_page += 1
     elif _return == "dec":
@@ -75,30 +81,41 @@ label t_wardrobe(return_label, char_label):
         if current_category == _return[1]:
             $ renpy.play('sounds/door2.mp3')
             $ current_category = ""
+            $ current_subcategory = ""
             $ char_active.wear("all")
         else:
-            if _return[1] == "underwear":
-                $ char_active.strip("top")
-                $ char_active.strip("bottom")
-            else:
-                $ char_active.wear("top")
-                $ char_active.wear("bottom")
             $ renpy.play('sounds/scroll.mp3')
             $ current_category = _return[1]
-            $ category_items = wardrobe_categories[current_category]
-            # Default subcategory
-            $ current_subcategory = list(category_items)[0]
+            # Outfits
+            if current_category == "outfits":
+                $ category_items = ["Load", "Save", "Delete"]
+                $ current_subcategory = category_items[0]
+                $ current_item = None
+                $ char_active.wear("all")
+                $ menu_items = char_active.outfits
+                $ menu_items_length = len(menu_items)
+            else:
+                if current_category == "underwear":
+                    $ char_active.strip("top")
+                    $ char_active.strip("bottom")
+                else:
+                    $ char_active.wear("top")
+                    $ char_active.wear("bottom")
+                $ category_items = wardrobe_categories[current_category]
+                # Default subcategory
+                $ current_subcategory = list(category_items)[0]
+                $ menu_items = category_items[current_subcategory]
+                $ menu_items_length = len(menu_items)
+                # Default selected item
+                $ current_item = None
+    elif _return[0] == "subcategory":
+        $ renpy.play('sounds/scroll.mp3')
+        $ current_subcategory = _return[1]
+        if current_category != "outfits":
             $ menu_items = category_items[current_subcategory]
             $ menu_items_length = len(menu_items)
             # Default selected item
             $ current_item = None
-    elif _return[0] == "subcategory":
-        $ renpy.play('sounds/scroll.mp3')
-        $ current_subcategory = _return[1]
-        $ menu_items = category_items[current_subcategory]
-        $ menu_items_length = len(menu_items)
-        # Default selected item
-        $ current_item = None
     elif _return == "erozone":
         call expression char_label pass (text="", face="horny")
     elif _return == "music":
@@ -147,9 +164,9 @@ screen t_wardrobe_menu(xx, yy):
             $ cat_row = (i // 4) % 2
             $ cat_col = i % 4
             if current_category == wardrobe_categories_sorted[i]:
-                button xpos 14+425*(cat_row) ypos 80+110*(cat_col) xsize 90 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+                button xpos 14+425*cat_row ypos 80+110*cat_col xsize 90 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
             else:
-                button xpos 61+377*(cat_row) ypos 80+110*(cat_col) xsize 44 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
 
         vbox:
             xpos 120
@@ -230,7 +247,54 @@ screen t_wardrobe_menuitem(xx, yy):
             if i < menu_items_length:
                 $ row = (i // 5) % 4
                 $ col = i % 5
-                add menu_items[i].get_icon() xpos 40+90*(col) ypos 75+90*(row) xalign 0.5 zoom 0.2
+                add menu_items[i].get_icon() xpos 40+90*col ypos 75+90*row xalign 0.5 zoom 0.2
                 button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
-                if menu_items[i] == char_active.get_equipped(current_category, current_subcategory, i):
-                    text "{color=#FFFFFF}Worn{/color}"xpos 26+90*(col) ypos 240+90*(row)
+                if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
+                    text "{color=#FFFFFF}Worn{/color}"xpos 26+90*col ypos 240+90*row
+                    
+        # Add empty items
+        for i in xrange(menu_items_length, items_shown):
+            $ row = (i // 5) % 4
+            $ col = i % 5
+            button xsize 88 ysize 88 style "empty" background "#00000033" xpos 10+90*(col) ypos 180+90*(row)
+                    
+screen t_wardrobe_outfit_menuitem(xx, yy):
+    tag wardrobe_menuitem
+    zorder 4
+    
+    frame:
+        xpos xx
+        ypos yy
+        xsize 467
+        ysize 548
+        style "empty"
+        background bg_color_wardrobe
+   
+        add "interface/panels/"+interface_color+"/icon_panel_2.png"
+            
+        text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
+        
+        # Add subcategory list
+        for i in xrange (0, len(category_items)):
+            add "interface/wardrobe/test/icons/"+current_category+"_"+category_items[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
+            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", category_items[i]])
+        
+        # Add items
+        for i in xrange(current_page*10, (current_page*10)+10):
+            if i < menu_items_length:
+                $ row = (i // 5) % 4
+                $ col = i % 5
+                add menu_items[i].get_image() xpos 40+90*col ypos 117+180*row xalign 0.5 zoom 0.2
+                if current_subcategory == "Delete":
+                    textbutton "{color=#FFFFFF}{size=50}-{/size}{/color}" style "empty" hover_background "#cc330040" xsize 90 ysize 180 xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.5 action Return(["deloutfit", i])
+                elif current_subcategory == "Load":
+                    button xsize 90 ysize 180 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row action Return(["equip", menu_items[i]])
+                    
+        # Add empty items
+        for i in xrange(menu_items_length, 10):
+            $ row = (i // 5) % 4
+            $ col = i % 5
+            if current_subcategory == "Save":
+                textbutton "{color=#FFFFFF}{size=50}+{/size}{/color}" style "empty" background "#00000033" hover_background btn_hover xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row text_xalign 0.5 text_yalign 0.5 action Return("addoutfit")
+            else:
+                button style "empty" background "#00000033" xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row

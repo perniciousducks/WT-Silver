@@ -6,7 +6,84 @@ init python:
             except KeyError:
                 raise Exception('Character "'+key+'" is not defined as a character class')
             return object
+            
+    class outfit_class(object):
+        name = None
+        price = 0
+        desc = ""
+        unlocked = None
+        group = []
+        cached = False
         
+        sprite = "empty"
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+            
+            if self.name == None:
+                raise Exception('Outfit: "name" was not defined in outfit_class.')
+            
+            if self.group < 1:
+                raise Exception('Outfit: "group" list was not defined in outfit_class.')
+            
+            # Mark each clothing piece from the group as unlocked/locked by default
+            if not self.unlocked == None:
+                for i in xrange(0, len(self.group)):
+                    self.group[i].unlocked = self.unlocked
+                    
+            # Add outfit to the respective character outfit list
+            get_character_object(self.group[0].char).outfits.append(self)
+                    
+        def unlock(self, bool):
+            for i in xrange(0, len(self.group)):
+                self.group[i].unlocked = bool
+                
+        def clone(self):
+            clothes = []
+            clothing = get_character_object(self.group[0].char).clothing
+            for key in clothing:
+                if not clothing[key][0] == None:
+                    clothes.append(clothing[key][0].clone())
+            return outfit_class(name=self.name, desc=self.desc, unlocked=self.unlocked, group=clothes)
+                
+        def get_image(self):
+            if not self.cached:
+                self.cached = True
+                # Create sprite list
+                sprite_list = []
+                
+                char = get_character_object(self.group[0].char)
+                
+                # Add body to sprite list
+                body = char.get_bodyparts()
+                for i in xrange(0, len(body)):
+                    item = [body[i][0], body[i][1]]
+                    sprite_list.append(item)
+                
+                # Add clothing to sprite list
+                for i in xrange(0, len(self.group)):
+                    item = [self.group[i], char.clothing[self.group[i].type][1]]
+                    sprite_list.append(item)
+                        
+                # Sort sprite list by zorder based on character clothing zorder
+                sprite_list.sort(key=lambda x: x[1], reverse=False)            
+                
+                # Build image
+                self.sprite = Image("characters/dummy.png")
+                for sprite in sprite_list:                        
+                    if isinstance(sprite[0], basestring):
+                        self.sprite = Composite(
+                                    (1010, 1200),
+                                    (0,0), self.sprite, 
+                                    (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
+                    else:
+                        self.sprite = Composite(
+                                    (1010, 1200),
+                                    (0,0), self.sprite,
+                                    (0,0), sprite[0].get_icon())
+            return self.sprite
+            
+            
     class cloth_class(object):
         char = None # astoria, cho, hermione, luna, susan, tonks
         category = None
@@ -17,7 +94,8 @@ init python:
         color = []
         color_default = []
         skinlayer = "characters/dummy.png"
-        
+        unlocked = True
+        cloned= False
         cached = False
 
         name = ""
@@ -71,7 +149,14 @@ init python:
                 self.skinlayer = self.imagepath+self.id+"/skin.png"
                 
             # Add cloth object to respective character, category and sub-category in dictionary keylist
-            get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+            if not self.cloned:
+                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+            
+        def clone(self):
+            dyes = []
+            for dye in self.color:
+                dyes.append([dye[0],dye[1],dye[2],dye[3]])
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc)
                 
         def set_pose(self, pose):
             if renpy.exists(self.imagepath+self.id+"/"+pose+"_0.png"):
@@ -139,6 +224,7 @@ init python:
         face = {}
         clothing = {}
         clothing_dictlist = {}
+        outfits = []
         other = {}
         
         sprite = "empty"
@@ -266,14 +352,22 @@ init python:
             return self.clothing_dictlist[category][subcategory]
             
         def get_equipped(self, category, subcategory, item):
-            return self.get_cloth(self.get_clothing_list(category, subcategory)[item].type)
+            if not self.get_cloth(self.get_clothing_list(category, subcategory)[item].type) == None:
+                return self.get_cloth(self.get_clothing_list(category, subcategory)[item].type).id
+            return None
             
         def equip(self, object):
-            if self.clothing[object.type][0] == object:
-                self.clothing[object.type][0] = None
+            if isinstance(object, outfit_class):
+                self.unequip("all")
+                for i in xrange(0, len(object.group)):
+                    self.clothing[object.group[i].type][0] = object.group[i]
+                    self.clothing[object.group[i].type][4] = False
             else:
-                self.clothing[object.type][0] = object
-                self.clothing[object.type][4] = False
+                if self.clothing[object.type][0] == object:
+                    self.clothing[object.type][0] = None
+                else:
+                    self.clothing[object.type][0] = object
+                    self.clothing[object.type][4] = False
             self.cached = False
             
         def unequip(self, *args):
@@ -331,6 +425,13 @@ init python:
                 self.expression(**kwargs)
             if string:
                 renpy.say(self.char, string)
+                
+        def get_bodyparts(self):
+            bodyparts = []
+            for key, value in self.body.iteritems():
+                if self.body[key][0]:
+                    bodyparts.append(value) 
+            return bodyparts
             
         def get_image(self):
             if not self.cached or self.cache_override:                

@@ -138,13 +138,13 @@ label update_outfit_layers:
 
     #Hermione Event Outfits
     if not hasattr(renpy.store,'hg_standart_school_ITEM'):
-        $ hg_standart_school_ITEM = outfit_class()
+        $ hg_standart_school_ITEM = costume_class()
     $ hg_standart_school_ITEM.id = "hg_standart_school"
     $ hg_standart_school_ITEM.outfit_layers = ["bottoms/skirt_2", "tops/top_1_g"]
     $ hg_standart_school_ITEM.breast_layer = "breasts_nipfix"
 
     if not hasattr(renpy.store,'hg_standart_school_noshirt_ITEM'):
-        $ hg_standart_school_noshirt_ITEM = outfit_class()
+        $ hg_standart_school_noshirt_ITEM = costume_class()
     $ hg_standart_school_noshirt_ITEM.id = "hg_standart_school_noshirt"
     $ hg_standart_school_noshirt_ITEM.outfit_layers = ["bottoms/skirt_2", "bras/bra_base"]
     $ hg_standart_school_noshirt_ITEM.breast_layer = "breasts_nipfix"

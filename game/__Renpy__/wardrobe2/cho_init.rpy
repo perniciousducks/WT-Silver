@@ -10,7 +10,9 @@ label __init_variables:
             character_list = {}
             
             cho_class = char_class(char="cho")
-            cho_class.clothing_dictlist = {} #otherwise it doesnt get saved :(
+            cho_class.clothing_dictlist = {}
+            cho_class.outfits = []
+            
             color_black = [0, 0, 0, 255]
     
             # Tops
@@ -62,8 +64,8 @@ label __init_variables:
             cho_cloth_sportpanties2 = cloth_class(char="cho", category="underwear", subcat="panties", type="panties", id="sport_panties_2", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
             
             # Robes
-            cho_cloth_robequidditch1 = cloth_class(char="cho", category="robe", subcat="quidditch", type="robe", id="robe_quidditch_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
-            cho_cloth_robequidditch2 = cloth_class(char="cho", category="robe", subcat="quidditch", type="robe", id="robe_quidditch_2", layers=2, color=[[50, 50, 51, 255], color_black])
+            cho_cloth_robequidditch1 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            cho_cloth_robequidditch2 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_2", layers=2, color=[[50, 50, 51, 255], color_black])
             
             # Neckwear
             cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
@@ -73,6 +75,15 @@ label __init_variables:
             # Garterbelts
             cho_cloth_lacegarter1 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garterbelt", id="lace_garter_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
             cho_cloth_lacegarter2 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garterbelt", id="lace_garter_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            
+            # Outfits
+            cho_outfit_school2 = outfit_class(name="School 2", desc="Slightly modified base school outfit", group=[cho_cloth_topschool2, cho_cloth_schoolskirt2, cho_cloth_basicbra2, cho_cloth_basicpanties2, cho_cloth_lace_stockings_1])
+            
+            cho_outfit_quidditch = outfit_class(name="Quidditch", group=[cho_cloth_topsweater1, cho_cloth_pantslong2, cho_cloth_sportbra1, cho_cloth_sportpanties1])
+            
+            cho_outfit_party = outfit_class(name="Party", group=[cho_cloth_skirtshort2, cho_cloth_bikinitop1])
+            
+            cho_outfit_custom = outfit_class(name="Custom", group=[cho_cloth_topschool1]) # Don't change
         
             ################
             #              #

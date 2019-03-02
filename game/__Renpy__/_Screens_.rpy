@@ -211,6 +211,7 @@ label unlock_clothing(text="",item=None):
     with d3
 
     $ item.unlocked = True
+    $ outfit_linking[item.id].unlock(True)
 
     $ menu_y = 0.5 #return to default menu align
 

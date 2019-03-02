@@ -129,11 +129,7 @@ label __init_variables:
                         "panties":    [cho_cloth_basicpanties1, 14, 0, 0, False],
                         "stockings":  [None, 13, 0, 0, False],
                         "buttplug":   [None, 0, 0, 0, False]}
-        ###Outfit linked to old outfits###
-        outfit_linking = {}
-       
-        outfit_linking[cc_outfit_quidditch_ITEM.id] = cho_outfit_quidditch
-        outfit_linking[cc_dress_black_ITEM.id] = cho_outfit_party
+        
 
         
             

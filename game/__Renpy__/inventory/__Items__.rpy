@@ -378,7 +378,12 @@ label store_items_init:
     $ cho_clothing_sets_list=[
         cc_muggle_hot_ITEM, cc_party_slut_ITEM, cc_lingerie_lace_ITEM, cc_bikini_micro_ITEM,
         ]
-
+    
+    ###Outfit linked to old outfits###
+    $ outfit_linking = {}
+   
+    #outfit_linking[cc_outfit_quidditch_ITEM.id] = cho_outfit_quidditch
+    $ outfit_linking[cc_dress_black_ITEM.id] = cho_outfit_party
 
     #Tonks Outfits
     $ tonks_outfits_list=[

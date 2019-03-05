@@ -65,7 +65,7 @@ screen main_room_overlay:
 ### Main Room Menu Screen ###
 screen main_room_menu:
     #Hotkeys
-    if day != 1:
+    if day != 1 and not renpy.variant('android'):
         use hotkeys_main
 
     tag room_screen

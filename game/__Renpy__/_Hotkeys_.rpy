@@ -67,8 +67,11 @@ screen hotkeys_main:
 
 #Add hotkeys to say screen (screens.rpy)
 screen hotkeys_say:
-    key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)
-    key hkey_mhide action ToggleVariable("hkey_chat_hidden", False, True)
+    if renpy.variant('android'):
+        key "game_menu" action ToggleVariable("hkey_chat_hidden", False, True)
+    else:
+        key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)
+        key hkey_mhide action ToggleVariable("hkey_chat_hidden", False, True)
     
 init:
     # define our styles
@@ -126,7 +129,7 @@ init:
 #Custom menu w/ hotkeys    
 screen custom_menu(items):
     tag menu
-    zorder 5
+    zorder 15
     
     # Dont add the fade if character or saybox is present (They have their own triggers for fading)
     if not renpy.get_screen("say") and not renpy.get_screen("hermione_main") and not renpy.get_screen("cho_chang") and not renpy.get_screen("luna_main") and not renpy.get_screen("snape_main") and not renpy.get_screen("astoria_main") and not renpy.get_screen("tonks_main") and not renpy.get_screen("susan_main"):
@@ -158,7 +161,7 @@ screen custom_menu(items):
                         
                         #Dont add a number if choice number is higher than number of available hotkeys
                         #Add a SHIFT modifier maybe?
-                        if hkey < 10:
+                        if hkey < 10 and not renpy.variant('android'):
                             if daytime and not persistent.nightmode:
                                 text "[hkey]. " + caption style "menu_choice_day"
                             else:
@@ -174,8 +177,6 @@ screen custom_menu(items):
                     if hkey < 10:
                         key str(hkey) action action
                         key "K_KP"+str(hkey) action action #Numpad
-                        
-
                 else:
                     if daytime:
                         text caption style "menu_choice_day"

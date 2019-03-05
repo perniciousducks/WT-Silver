@@ -732,9 +732,9 @@ transform basicfade4:
             
 transform fadeInOut:
     alpha 0.0
-    linear 0.3 alpha 1.0
+    linear 0.15 alpha 1.0
     on hide:
-        linear 0.3 alpha 0.0
+        linear 0.15 alpha 0.0
 
 
 

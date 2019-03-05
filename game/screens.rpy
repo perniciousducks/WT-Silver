@@ -703,21 +703,29 @@ init -2:
 screen quick_menu:
 
     # Add an in-game quick menu.
-    hbox:
-        style_group "quick"
+    if renpy.variant('android'):
+        hbox:
+            ypos 600
+            xpos 180
+            spacing 620
+            imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5
+            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(confirm=True) activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5
+    else:
+        hbox:
+            style_group "quick"
 
-        xpos 845
-        ypos 489
-        xanchor 1.0
+            xpos 845
+            ypos 489
+            xanchor 1.0
 
-        #textbutton _("Back") action Rollback()
-        #textbutton _("Save") action ShowMenu('save')
-        textbutton _("Q.Save") action QuickSave() activate_sound "sounds/click3.mp3"
-        textbutton _("Q.Load") action QuickLoad() activate_sound "sounds/click3.mp3"
-        textbutton _("Skip") action Skip() activate_sound "sounds/click3.mp3"
-        #textbutton _("F.Skip") action Skip(fast=True, confirm=True)
-        textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
-        textbutton _("Prefs") action ShowMenu('preferences') activate_sound "sounds/click3.mp3"
+            #textbutton _("Back") action Rollback()
+            #textbutton _("Save") action ShowMenu('save')
+            textbutton _("Q.Save") action QuickSave() activate_sound "sounds/click3.mp3"
+            textbutton _("Q.Load") action QuickLoad() activate_sound "sounds/click3.mp3"
+            textbutton _("Skip") action Skip() activate_sound "sounds/click3.mp3"
+            #textbutton _("F.Skip") action Skip(fast=True, confirm=True)
+            textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
+            textbutton _("Prefs") action ShowMenu('preferences') activate_sound "sounds/click3.mp3"
 
 init -2:
     style quick_button:

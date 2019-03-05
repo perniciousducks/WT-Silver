@@ -408,6 +408,8 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
 
         ground "interface/stat_select/"+str(interface_color)+"/ground_character_screen_"+str(wardrobe_color)+".png"
         hover "interface/stat_select/"+str(interface_color)+"/hover_character_screen_"+str(wardrobe_color)+".png"
+        
+        button style "empty" action NullAction()
 
         vbox:
             xpos 11

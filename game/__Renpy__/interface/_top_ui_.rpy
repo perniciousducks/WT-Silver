@@ -241,10 +241,8 @@ screen ui_stats():
 screen ui_menu():
     tag ui
 
-    button:
-        style "empty"
-        action [SetVariable("toggle_menu", False), Show("main_room_menu")]
-        keysym "game_menu"
+    button style "empty" action [SetVariable("toggle_menu", False), Show("main_room_menu")] keysym "game_menu"
+    
     button:
         ypos 34
         xsize 102

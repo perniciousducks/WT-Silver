@@ -11,7 +11,7 @@ init python:
         name = None
         price = 0
         desc = ""
-        unlocked = None
+        unlocked = False
         group = []
         cached = False
         
@@ -27,20 +27,18 @@ init python:
                 raise Exception('Outfit: "group" list was not defined in outfit_class.')
             
             # Mark each clothing piece from the group as unlocked/locked by default
-            if not self.unlocked == None:
-                for i in xrange(0, len(self.group)):
-                    self.group[i].unlocked = self.unlocked
-                    
-            # Add outfit to the respective character outfit list
-            get_character_object(self.group[0].char).outfits.append(self)
+            if self.unlocked:
+                self.unlock(True)
                     
         def unlock(self, bool):
+            self.unlocked = bool
+            get_character_object(self.group[0].char).outfits.append(self)
             for i in xrange(0, len(self.group)):
-                self.group[i].unlocked = bool
+                self.group[i].unlock(bool)
                 
         def clone(self):
             clothes = []
-            clothing = get_character_object(self.group[0].char).clothing
+            clothing = get_character_object(active_girl).clothing
             for key in clothing:
                 if not clothing[key][0] == None:
                     clothes.append(clothing[key][0].clone())
@@ -95,7 +93,7 @@ init python:
         color_default = []
         skinlayer = "characters/dummy.png"
         unlocked = True
-        cloned= False
+        cloned = False
         cached = False
 
         name = ""
@@ -149,7 +147,12 @@ init python:
                 self.skinlayer = self.imagepath+self.id+"/skin.png"
                 
             # Add cloth object to respective character, category and sub-category in dictionary keylist
-            if not self.cloned:
+            if not self.cloned and self.unlocked:
+                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+                
+        def unlock(self, bool):
+            if not self.unlocked:
+                self.unlocked = bool
                 get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
             
         def clone(self):

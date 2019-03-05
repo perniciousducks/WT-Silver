@@ -15,7 +15,7 @@ screen say:
 
     # Defaults for side_image and two_window
     default side_image = None
-    default two_window = False
+    default two_window = True
     
     #Add "hidden" window
     if hkey_chat_hidden:

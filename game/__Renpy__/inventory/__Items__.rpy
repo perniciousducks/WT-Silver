@@ -383,7 +383,7 @@ label store_items_init:
     $ outfit_linking = {}
    
     #outfit_linking[cc_outfit_quidditch_ITEM.id] = cho_outfit_quidditch
-    $ outfit_linking[cc_dress_black_ITEM.id] = cho_outfit_party
+    $ outfit_linking[cc_party_slut_ITEM.id] = cho_outfit_party
 
     #Tonks Outfits
     $ tonks_outfits_list=[

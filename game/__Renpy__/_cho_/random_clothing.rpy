@@ -56,8 +56,7 @@ label cho_random_clothing:
                 $ cc_party_slut_ITEM.unlocked = True
 
                 $ cho_class.unequip("all")
-                $ cho_class.equip(cho_cloth_bikinitop1)
-                $ cho_class.equip(cho_cloth_skirtshort2)
+                $ cho_class.equip(cho_outfit_party)
 
                 #call cho_chibi("stand","mid","base")
 

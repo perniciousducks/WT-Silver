@@ -454,7 +454,10 @@ init -2 python:
         return "interface/icons/head/head_"+str(name)+"_1.png"
 
     def get_zoom(image, xsize, ysize):
-        myDisplayable = im.Image(image)
+        if isinstance(image, basestring):
+            myDisplayable = im.Image(image)
+        else:
+            myDisplayable = image
         myRender = renpy.render(myDisplayable, 800, 600, 0, 0)
         sizes = myRender.get_size()
         x = sizes[0]

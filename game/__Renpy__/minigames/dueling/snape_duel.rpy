@@ -93,19 +93,22 @@ screen duel_buttons:
     zorder 10
 
     imagebutton: # attack
-        xpos 140
+        xpos 802
+        yalign 1.0
         focus_mask True
         idle "images/dueling/snape/hp_bar_03.png"
         hover "images/dueling/snape/hp_bar_04.png"
         action [Jump("main_attack")]
     imagebutton: # aguard
-        xpos 140
+        xpos 868
+        yalign 1.0
         focus_mask True
         idle "images/dueling/snape/hp_bar_07.png"
         hover "images/dueling/snape/hp_bar_06.png"
         action [Jump("main_defend")]
     imagebutton: # item
-        xpos 140
+        xpos 954
+        yalign 1.0
         focus_mask True
         idle "images/dueling/snape/hp_bar_09.png"
         hover "images/dueling/snape/hp_bar_08.png"

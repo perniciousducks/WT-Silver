@@ -41,13 +41,13 @@ label __init_variables:
             cho_cloth_pantsshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_2", layers=3, color=[[114, 168, 210, 255], [141, 189, 219, 255], color_black])
             cho_cloth_pantsshort3 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_3", layers=4, color=[[47, 150, 136, 255], [175, 220, 191, 255], [247, 152, 38, 255], color_black])
             cho_cloth_skirtshort1 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="skirt_short_1", layers=2, color=[[89, 116, 194, 255], color_black])
-            cho_cloth_skirtshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="skirt_short_2", layers=3, color=[[89, 116, 194, 255], [93, 119, 173, 255], color_black])
+            cho_cloth_skirtshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="skirt_short_2", layers=3, color=[[89, 116, 194, 255], [93, 119, 173, 255], color_black], unlocked=False)
             cho_cloth_pantslong2 = cloth_class(char="cho", category="bottoms", subcat="quidditch", type="bottom", id="pants_long_2", layers=2, color=[[54, 60, 90, 255], color_black])
             
             # Bras
             cho_cloth_basicbra1 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="basic_bra_1", layers=4, color=[[253, 245, 232, 255], [230, 230, 231, 255], [81, 84, 184, 255], color_black])
             cho_cloth_basicbra2 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="basic_bra_2", layers=4, color=[[253, 245, 232, 255], [230, 230, 231, 255], [81, 84, 184, 255], color_black])
-            cho_cloth_bikinitop1 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="bikini_top_1", layers=3, color=[[12, 204, 201, 255], [0, 237, 234, 255], color_black])
+            cho_cloth_bikinitop1 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="bikini_top_1", layers=3, color=[[12, 204, 201, 255], [0, 237, 234, 255], color_black], unlocked=False)
             cho_cloth_bikinitop2 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="bikini_top_2", layers=2, color=[[138, 22, 17, 255], color_black])
             cho_cloth_lacebra1 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="lace_bra_1", layers=4, color=[[230, 230, 231, 255], [187, 192, 255, 255], [230, 230, 231, 255], color_black])
             cho_cloth_lacebra2 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="lace_bra_2", layers=5, color=[[230, 230, 231, 255], [187, 192, 255, 255], [230, 230, 231, 255], [129, 134, 234, 255], color_black])
@@ -68,7 +68,7 @@ label __init_variables:
             cho_cloth_robequidditch2 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_2", layers=2, color=[[50, 50, 51, 255], color_black])
             
             # Neckwear
-            cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black], unlocked=False)
             
             # Stockings
             cho_cloth_lace_stockings_1 = cloth_class(char="cho", category="legs", subcat="stockings", type="stockings", id="lace_stockings_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
@@ -83,7 +83,7 @@ label __init_variables:
             
             cho_outfit_party = outfit_class(name="Party", group=[cho_cloth_skirtshort2, cho_cloth_bikinitop1])
             
-            cho_outfit_custom = outfit_class(name="Custom", group=[cho_cloth_topschool1]) # Don't change
+            cho_outfit_custom = outfit_class(name="Default", group=[cho_cloth_topschool2, cho_cloth_schoolskirt2, cho_cloth_basicbra2, cho_cloth_basicpanties2, cho_cloth_lace_stockings_1], unlocked=True) # Don't change
         
             ################
             #              #

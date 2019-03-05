@@ -101,10 +101,15 @@ label t_wardrobe(return_label, char_label):
                 else:
                     $ char_active.wear("top")
                     $ char_active.wear("bottom")
-                $ category_items = wardrobe_categories[current_category]
+                $ category_items = wardrobe_categories.get(current_category)
                 # Default subcategory
-                $ current_subcategory = list(category_items)[0]
-                $ menu_items = category_items[current_subcategory]
+                if category_items:
+                    $ current_subcategory = list(category_items)[0]
+                    $ menu_items = category_items[current_subcategory]
+                else:
+                    $ category_items = []
+                    $ current_subcategory = "No items available"
+                    $ menu_items = []
                 $ menu_items_length = len(menu_items)
                 # Default selected item
                 $ current_item = None
@@ -247,7 +252,8 @@ screen t_wardrobe_menuitem(xx, yy):
             if i < menu_items_length:
                 $ row = (i // 5) % 4
                 $ col = i % 5
-                add menu_items[i].get_icon() xpos 40+90*col ypos 75+90*row xalign 0.5 zoom 0.2
+                $ image_zoom = get_zoom(menu_items[i].get_icon(), 90, 90)
+                add menu_items[i].get_icon() xpos 40+90*col ypos 176+90*row xalign 0.5 zoom image_zoom
                 button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
                     text "{color=#FFFFFF}Worn{/color}"xpos 26+90*col ypos 240+90*row

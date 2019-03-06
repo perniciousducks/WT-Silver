@@ -142,9 +142,9 @@ label summon_hermione:
                 call her_main( "Ah, yes...","normal","soft")
                 call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
                 g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
-                m "So, how about a little wager then?"
-                call her_main( "What kind of wager are we talking about? I've only recently started playing.","base","glance")
-                m "Don't worry, we'll play a few practice rounds, when you're ready we'll play the real challenge..."
+                m "So, how about a little some practice rounds then?"
+                call her_main( " I've only recently started playing so I'm not that good yet.","base","glance")
+                m "Don't worry, after a few practice rounds you'll get up to speed, when you're ready we'll play the real challenge..."
                 $ her_cards_stocked_talk = True
                 jump hermione_duel_menu
             else:
@@ -159,6 +159,10 @@ label summon_hermione:
                     "-Challenge-" if her_second_win:
                         jump hermione_third_duel
                     "{color=#858585}-You need to beat the second duel-{/color}" if not her_second_win:
+                        jump hermione_duel_menu
+                    "-Wager-" if geniecard_level == 2:
+                        jump hermione_random_duel
+                    "-Secret-" if geniecard_level == 1:
                         jump hermione_duel_menu
                     "-Never mind-":
                         jump hermione_requests
@@ -436,6 +440,16 @@ label hermione_talk:
                     jump working_menu
 
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
+                    "This job is only available during the day."
+                    jump working_menu
+                    
+                "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
+                    jump job_5
+                "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:
+                    m "(I'll need an outfit for hermione if I want her to work.)"
+                    jump working_menu
+
+                "{color=#858585}-Work by advertising the card game-{/color}" if not daytime and cardgame_work:
                     "This job is only available during the day."
                     jump working_menu
 

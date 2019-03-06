@@ -1,10 +1,11 @@
 init python:
-
-    def start_duel(opppent_deck, after_enemy = "", rules = None):
+    def start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
         global standart_rules
         global playerdeck
         if rules == None:
             rules = standart_rules
+        if duel_player_deck == None:
+            duel_player_deck = playerdeck
         
         backside_list = []
         for i in range(0, rules[0]):
@@ -14,13 +15,20 @@ init python:
             
         ## Setup Deck ##
         player_deck = []
-        for card in playerdeck:
+        for card in duel_player_deck:
             player_deck.append(card.clone())
             
         enemy_deck = []
         for card in opppent_deck:
             card.playercard = False
             enemy_deck.append(card.clone())
+            
+        # Display rules
+        game_rules_list = convert_rules(rules, player_deck)
+        if len(game_rules_list) > 0:
+            renpy.show_screen("rules_display", game_rules_list)
+            renpy.pause()
+            renpy.hide_screen("rules_display")
          
         ## Clean the table from last fight ##
         reset_table_cards()
@@ -28,14 +36,14 @@ init python:
         ## Random check to see who start ##
         coin_flip = renpy.random.randint(0,1)
         if coin_flip == 0:
-            enemy_turn(enemy_deck, backside_list, rules[2])
+            enemy_turn(enemy_deck, backside_list, rules[2], rules[3])
 
         ## Game Loop ##
         response_card = ""
         while not(response_card == "win" or response_card == "loss"):
-            response_card = cardgame(enemy_deck, player_deck, backside_list, rules[2])
-            if response_card == "AfterEnemy" and not after_enemy == "":
-                renpy.Call(after_enemy)
+            response_card = cardgame(enemy_deck, player_deck, backside_list, rules[2], rules[3])
+            if response_card == "AfterEnemy" and not after_enemy == None:
+                after_enemy()
             elif response_card == "Close":
                 return "Close"
             elif response_card == "draw" and rules[1]:
@@ -61,7 +69,7 @@ init python:
         return response_card
     
     
-    def cardgame(enemy_deck, player_deck, shown_backside, reverse):
+    def cardgame(enemy_deck, player_deck, shown_backside, reverse, dobelt_number):
         global selectcard
         global selectenemycard
         global table_cards
@@ -102,7 +110,7 @@ init python:
                 del player_deck[selectcard]
                 selectcard = -1
                 selectenemycard = -1
-                update_table(x,y,reverse)
+                update_table(x,y,reverse, dobelt_number)
                 
                 renpy.pause(0.7) # Autoplay enemy card
                 if (len(player_deck) == 0 or len(enemy_deck) == 0):
@@ -125,7 +133,7 @@ init python:
                         renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
                     return response_card
                     
-                enemy_turn(enemy_deck, shown_backside, reverse)
+                enemy_turn(enemy_deck, shown_backside, reverse, dobelt_number)
                 renpy.sound.play("sounds/card.mp3")
                 if (len(player_deck) == 0 or len(enemy_deck) == 0):
                     response_card = check_winner(player_deck)
@@ -133,7 +141,7 @@ init python:
                         renpy.show_screen("card_end_message", "You win!")
                         renpy.sound.play("sounds/card_win.ogg")
                     elif response_card == "draw":
-                        renpy.show_screen("screen card_end_message", "Draw")
+                        renpy.show_screen("card_end_message", "Draw")
                     else:
                         renpy.show_screen("card_end_message", "You lost...")
                     renpy.pause(3.0) # Pause before end
@@ -150,14 +158,14 @@ init python:
             else:
                 return "NewTurn"
         
-    def enemy_turn(enemy_deck, shown_backside, reverse):
+    def enemy_turn(enemy_deck, shown_backside, reverse, dobelt_number):
         global table_cards
         high_score = 0
         high_score_card = None
         high_score_pos = 0
         
         for card in enemy_deck:
-            tuple_my = card.getAIScore(table_cards)
+            tuple_my = card.getAIScore(table_cards, reverse, dobelt_number)
             if tuple_my[0] > high_score:
                 high_score = tuple_my[0]
                 high_score_pos = tuple_my[1]
@@ -169,9 +177,23 @@ init python:
         del enemy_deck[enemy_deck.index(high_score_card)]
         table_cards[x][y] = high_score_card        
         table_cards[x][y].playercard = False
-        update_table(x,y, reverse)
+        update_table(x,y, reverse, dobelt_number)
         
         return
+        
+    def convert_rules(rules, player_deck):
+        rules_list = []
+        if rules[0] > 0:
+            rules_list.append(card_rule_hidden)
+        if rules[1]:
+            rules_list.append(card_rule_death)
+        if rules[2]:
+            rules_list.append(card_rule_reverse)
+        if rules[3]:
+            rules_list.append(card_rule_double)
+        if not player_deck == playerdeck:
+            rules_list.append(card_rule_random)
+        return rules_list
        
         
 screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
@@ -191,6 +213,8 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
                     use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
+                    
+    textbutton "Rules" xpos 200 ypos 60
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
@@ -302,3 +326,32 @@ screen card_end_message(message):
     zorder 9
 
     text "{color=#FFF}{size=+40}[message]{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (5, "#000", 0, 0) ]
+    
+screen rules_display(game_rules_list):
+    tag rules
+    zorder 8
+    
+    add "interface/bld.png" at fadeInOut
+    
+    vbox:
+        ypos 40
+        spacing 20
+        xalign 0.5
+        xsize 640
+        text "{color=#ffffff}Custom rules{/color}"size 32 xalign 0.5
+        text "{color=#ffffff}This game uses some extra rules, it is recommended if it's your first time playing to read the description for the active rules.{/color}" xalign 0.5
+        
+        frame:
+            xalign 0.5
+            background "#7c716a"
+            vbox:
+                spacing 5
+                for i in xrange(0, len(game_rules_list)):
+                    hbox:
+                        add game_rules_list[i].icon
+                        text game_rules_list[i].name yalign 0.5
+                    frame:
+                        background "#625954"
+                        xfill True
+                        text game_rules_list[i].description yalign 0.5 size 12
+                    add "images/cardgame/spacer.png"

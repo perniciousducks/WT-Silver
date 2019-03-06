@@ -150,7 +150,8 @@ if current_job == 3:
     jump gryffindor_cheer_responses
 if current_job == 4:
     jump slytherin_cheer_responses
-
+if current_job == 5:
+    jump hermione_helping_selling_cards
 #Hermione Potions return.
 if cat_ears_potion_return:
     jump potion_scene_1_1_2

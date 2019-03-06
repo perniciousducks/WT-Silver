@@ -4,11 +4,15 @@ label __init_variables:
         selectenemycard = -1
         currentpage = 0
         #Shown Cards is a interger for how many cards should be hidden
+        #
         #Sudden Death is where when there is draw then a new round will begin
         #Where you take all card of you color up in you hand
+        #
         #Reverse is where the take over is reverse so instead of > it is <
-        # Rules(Shown Cards, Sudden Death, Reverse, Swap)
-        standart_rules = [3, True, True]
+        #
+        #Dobelt_number
+        # Rules(Shown Cards, Sudden Death, Reverse, Dobelt_number)
+        standart_rules = [0, False, False, False]
         
         if not hasattr(renpy.store,'playercolor_r'):
             playercolor_r = 51.0/255.0
@@ -461,6 +465,7 @@ label __init_variables:
             snape_second_win = False
             snape_third_win = False
             snape_wager_talk = False
+            random_snape_win = False
 
         if not hasattr(renpy.store, 'her_know_cards'):
             her_know_cards = False
@@ -468,7 +473,10 @@ label __init_variables:
             her_first_win = False
             her_second_win = False
             her_third_win = False
-
+            her_random_win = False
+            cardgame_work = False
+            first_time_cardgame_work = True
+            
         if not hasattr(renpy.store, 'twins_know_cards'):
             twins_know_cards = False
             twins_first_win = False
@@ -476,6 +484,10 @@ label __init_variables:
             twins_cards_delay = 7
             twins_cards_stocked = False
             twins_cards_stocked_talk = False
+            twins_interest = False
+            first_random_twins = True
+            twins_random_win = True
+            twins_profit = 1.0
         
         if not hasattr(renpy.store,'unlocked_cards'):
             card_rand_realm = renpy.random.choice([iris, jasmine, azalea])
@@ -490,6 +502,12 @@ label __init_variables:
             # Delete copies of playerdeck cards
             for i in range(0,5):
                 playerdeck[i].copies = 0
+                
+            card_rule_reverse = cardgame_rules(name="Reverse", description="Instead of a higher number, you need to have the lowest number to take over a card.", icon="images/cardgame/rule_reverse.png")
+            card_rule_hidden = cardgame_rules(name="Hidden", description="The hidden rule means that a certain amount of cards in your enemies deck will be hidden.", icon="images/cardgame/rule_hidden.png")
+            card_rule_death = cardgame_rules(name="Death", description="If your game ends in a draw you pick up the cards that are shown in your colour and play again.", icon="images/cardgame/rule_death.png")
+            card_rule_double = cardgame_rules(name="Double", description="If the card you put down has the same number facing at least 2 other cards (Rather than higher/lower) you'll take over those cards.", icon="images/cardgame/rule_double.png")
+            card_rule_random = cardgame_rules(name="Random", description="Your deck is selected randomly from the available cards.", icon="images/cardgame/rule_random.png")
                 
         cards_realm = [genie, iris, jasmine, azalea, dahlia, maslab, aladdin, lilly, rasul, jafar]
         cards_hogwarts = [her_schoolgirl, her_librarian, lun_schoolgirl, sus_schoolgirl, cho_schoolgirl, fred, george, snape, dumbledore]
@@ -535,6 +553,48 @@ init python:
                 if cardobj.title == elm.title:
                     return True
         return False
+    replace_index = 0
+    new_deck = []
+    def create_random_deck(min, max, card_pool):
+        new_deck = []
+        smalles_func = lambda elm1, elm2 : elm1.get_total_value() > elm2.get_total_value()
+        gretest_func = lambda elm1, elm2 : elm1.get_total_value() < elm2.get_total_value()
+        temp_pool = []
+        temp_pool.extend(card_pool)
+        for card in range(0,5):
+            random_choice = renpy.random.choice(temp_pool)
+                    
+            new_deck.append(random_choice)
+            del temp_pool[temp_pool.index(random_choice)]
+            
+        while min > get_deck_score(new_deck) or max < get_deck_score(new_deck):
+            replace_index = 0
+            if new_deck < min:
+                replace_index = find_index_func(temp_pool, smalles_func)
+            else:
+                replace_index = find_index_func(temp_pool, gretest_func)
+
+                
+            replace_index = clamp(replace_index,0,4)   
+            random_choice = renpy.random.choice(temp_pool)
+            
+            temp_pool.append(new_deck[replace_index])
+            new_deck[replace_index] = (random_choice)
+            del temp_pool[temp_pool.index(random_choice)]
+                
+        return new_deck
+    def find_index_func(seq, func):
+        func_index = 0
+        for i in range(0, len(seq)):
+            if func(seq[func_index], seq[i]):
+                func_index = i
+        return func_index
+        
+    def get_deck_score(deck):
+        score = 0
+        for card in deck:
+            score += card.get_total_value()
+        return score
     
     def playerTint(image):
         return im.MatrixColor( image, im.matrix.tint(playercolor_r, playercolor_g, playercolor_b))
@@ -607,37 +667,61 @@ init python:
         else:
             return "loss"
            
-    def update_table(x, y, reverse):
+    def update_table(x, y, reverse, dobelt_number):
         global table_cards
         if reverse:
-            if  not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue < table_cards[x][y-1].bottomvalue:
-                table_cards[x][y-1].playercard = table_cards[x][y].playercard
-                
-            if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue < table_cards[x][y+1].topvalue:
-                table_cards[x][y+1].playercard = table_cards[x][y].playercard
-                
-            if  not x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue < table_cards[x-1][y].rightvalue:
-                table_cards[x-1][y].playercard = table_cards[x][y].playercard
-                
-            if not x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue < table_cards[x+1][y].leftvalue:
-                table_cards[x+1][y].playercard = table_cards[x][y].playercard
+            take_over = lambda a, b : a < b
         else:
-            if  not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y].topvalue > table_cards[x][y-1].bottomvalue:
-                table_cards[x][y-1].playercard = table_cards[x][y].playercard
+            take_over = lambda a, b : a > b
+        
+
+        if not y == 0 and not table_cards[x][y-1] == None and take_over(table_cards[x][y].topvalue, table_cards[x][y-1].bottomvalue):
+            table_cards[x][y-1].playercard = table_cards[x][y].playercard
+            
+        if not y == 2 and not table_cards[x][y+1] == None and take_over(table_cards[x][y].bottomvalue, table_cards[x][y+1].topvalue):
+            table_cards[x][y+1].playercard = table_cards[x][y].playercard
+            
+        if not x == 0 and not table_cards[x-1][y] == None and take_over(table_cards[x][y].leftvalue, table_cards[x-1][y].rightvalue):
+            table_cards[x-1][y].playercard = table_cards[x][y].playercard
+            
+        if not x == 2 and not table_cards[x+1][y] == None and take_over(table_cards[x][y].rightvalue, table_cards[x+1][y].leftvalue):
+            table_cards[x+1][y].playercard = table_cards[x][y].playercard
+        
+        if dobelt_number:
+            dobelt_found = []
+            if not y == 0 and not table_cards[x][y-1] == None:
+                if table_cards[x][y].topvalue == table_cards[x][y-1].bottomvalue:
+                    dobelt_found.append([x,y-1])
+
+            if not y == 2 and not table_cards[x][y+1] == None:
+                if table_cards[x][y].bottomvalue == table_cards[x][y+1].topvalue:
+                    dobelt_found.append([x,y+1])
                 
-            if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y].bottomvalue > table_cards[x][y+1].topvalue:
-                table_cards[x][y+1].playercard = table_cards[x][y].playercard
+            if not x == 0 and not table_cards[x-1][y] == None:
+                if table_cards[x][y].leftvalue == table_cards[x-1][y].rightvalue:
+                    dobelt_found.append([x-1,y])
+
                 
-            if  not x == 0 and not table_cards[x-1][y] == None and table_cards[x][y].leftvalue > table_cards[x-1][y].rightvalue:
-                table_cards[x-1][y].playercard = table_cards[x][y].playercard
-                
-            if not x == 2 and not table_cards[x+1][y] == None and table_cards[x][y].rightvalue > table_cards[x+1][y].leftvalue:
-                table_cards[x+1][y].playercard = table_cards[x][y].playercard
+            if not x == 2 and not table_cards[x+1][y] == None:
+                if table_cards[x][y].rightvalue == table_cards[x+1][y].leftvalue:
+                    dobelt_found.append([x+1,y])
+                    
+            if len(dobelt_found) > 1:
+                for card in dobelt_found:
+                    table_cards[card[0]][card[1]].playercard = table_cards[x][y].playercard
             
     def add_card_to_deck(title):
             for card in unlocked_cards:
                 if title == card.title:
                     card.copies += 1
+                    
+    class cardgame_rules(object):
+        name = None
+        description = None
+        icon = None
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
                      
     class card_new(object):
         playercard = True
@@ -672,52 +756,86 @@ init python:
             return self.textcolor+"amount: " + str(self.copies+1)+"{/color}"
         def get_totalvalue(self):
             return self.textcolor+str(self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue)+"{/color}"
+        def get_total_value(self):
+            return self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue    
+        
         def get_description(self):
             return self.textcolor+self.description+"{/color}"
             
         def clone(self):
             return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue, playercard = self.playercard)
                     
-        def getAIScore(self, table_of_cards, reverse):
+        def getAIScore(self, table_of_cards, reverse, dobelt_number):
             high_score = 0
             position = 0
-            wallscore = 2
-            getcardscore = 9
+            wallscore = 3
+            getcardscore = 12
+            if reverse:
+                score_func = lambda a : 10 - a
+                take_over = lambda a, b : a < b
+            else:
+                score_func = lambda a : a
+                take_over = lambda a, b : a > b
+                
             for y in range(0,3):
                 for x in range(0,3):
                     score = 0
                     if table_cards[x][y] == None:
-                        if  not y == 0 and not table_cards[x][y-1] == None:
-                            if self.topvalue > table_cards[x][y-1].bottomvalue:
+                        if not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y-1].playercard:
+                            if take_over(self.topvalue, table_cards[x][y-1].bottomvalue):
                                 score += getcardscore
                             else:
-                                score += self.topvalue
+                                score += score_func(self.topvalue)
                         else:
                             score += wallscore
                             
-                        if not y == 2 and not table_cards[x][y+1] == None:
-                            if  self.bottomvalue > table_cards[x][y+1].topvalue:
+                        if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y+1].playercard:
+                            if take_over(self.bottomvalue, table_cards[x][y+1].topvalue):
                                 score += getcardscore
                             else:
-                                score += self.bottomvalue
+                                score += score_func(self.bottomvalue)
                         else:
                             score += wallscore
                             
-                        if  not x == 0 and not table_cards[x-1][y] == None:
-                            if self.leftvalue > table_cards[x-1][y].rightvalue:
+                        if not x == 0 and not table_cards[x-1][y] == None and table_cards[x-1][y].playercard:
+                            if take_over(self.leftvalue, table_cards[x-1][y].rightvalue):
                                 score += getcardscore
                             else:
-                                score += self.leftvalue
+                                score += score_func(self.leftvalue)
                         else:
                             score += wallscore
                             
-                        if not x == 2 and not table_cards[x+1][y] == None:
-                            if self.rightvalue > table_cards[x+1][y].leftvalue:
+                        if not x == 2 and not table_cards[x+1][y] == None and table_cards[x+1][y].playercard:
+                            if take_over(self.rightvalue, table_cards[x+1][y].leftvalue):
                                 score += getcardscore
                             else:
-                                score += self.rightvalue
+                                score += score_func(self.rightvalue)
                         else:
                             score += wallscore
+                            
+                        if dobelt_number:
+                            dobelt_found = []
+                            if not y == 0 and not table_cards[x][y-1] == None:
+                                if self.topvalue == table_cards[x][y-1].bottomvalue:
+                                    dobelt_found.append(table_cards[x][y-1])
+     
+                            if not y == 2 and not table_cards[x][y+1] == None:
+                                if self.bottomvalue == table_cards[x][y+1].topvalue:
+                                    dobelt_found.append(table_cards[x][y+1])
+                                
+                            if not x == 0 and not table_cards[x-1][y] == None:
+                                if self.leftvalue == table_cards[x-1][y].rightvalue:
+                                    dobelt_found.append(table_cards[x-1][y])
+
+                                
+                            if not x == 2 and not table_cards[x+1][y] == None:
+                                if self.rightvalue == table_cards[x+1][y].leftvalue:
+                                    dobelt_found.append(table_cards[x+1][y])
+                                    
+                            if len(dobelt_found) > 1:
+                                for card in dobelt_found:
+                                    if card.playercard:
+                                        high_score += getcardscore
                             
                         if score > high_score:
                             high_score = score

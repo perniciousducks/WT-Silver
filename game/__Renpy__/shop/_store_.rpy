@@ -118,7 +118,28 @@ label store_chit_chat:
         $ twins_cards_stocked_talk = True
         jump twins_duel_menu
     else:
-        twi "Hello Professor! Came here to buy?"
+        if twins_interest:
+            twi "Greetings Dumbledore, sir!"
+            m "Hello boys."
+            m "I'm here to pick up my weekly cut of profits."
+            twi "Of course!"
+            if her_shop_help:
+                ger "Miss Granger has helped us with promotions this week so that means more profits."
+                $ her_help = 200
+            else:
+                $ her_help = 0
+            
+            $ shop_profit = renpy.random.randint(50+her_help, 300)
+            ger "Your weekly cut of [twins_profit] comes down to [shop_profit*twins_profit]."
+            
+            call give_reward("You got " + str(shop_profit*twins_profit) + " gold", "interface/icons/gold.png")
+            
+            $ gold +=  shop_profit*twins_profit
+            ger "..."
+            twi "Did you need anything else?"
+            
+        else:   
+            twi "Hello Professor! Came here to buy?"
         if twins_know_cards:
             twi "Or duel?"
             menu:
@@ -126,16 +147,19 @@ label store_chit_chat:
                     pass
                 "-Let's duel- {image=interface/cards.png}":
                     label twins_duel_menu:
-                    menu:
-                        "-First Duel-":
-                            jump twins_first_duel
-                        "-Challenge-" if twins_first_win:
-                            jump twins_second_duel
-                        "{color=#858585}-You need to beat the first duel-{/color}" if not twins_first_win:
-                            jump twins_duel_menu
-                        "-Never mind-":
-                            twi "Your loss professor."
-                            pass
+                    if geniecard_level == 1:
+                        menu:
+                            "-First Duel-":
+                                jump twins_first_duel
+                            "-Challenge-" if twins_first_win:
+                                jump twins_second_duel
+                            "{color=#858585}-You need to beat the first duel-{/color}" if not twins_first_win:
+                                jump twins_duel_menu
+                            "-Never mind-":
+                                twi "Your loss professor."
+                                pass
+                    else:
+                        jump twins_random_duel
     return
 
 

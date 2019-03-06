@@ -111,9 +111,9 @@ label hg_breast_molester_1:
     call blkfade
 
     call her_main("[genie_name].....?","annoyed","angryL",ypos="head")
-
+    m "..."
+    
     menu:
-        m "..."
         "\"I'm gonna molest your tits now.\"":
             call her_main("What? What do you mean, [genie_name]--?","soft","wide")
             ">Hermione takes a hesitant step back..."

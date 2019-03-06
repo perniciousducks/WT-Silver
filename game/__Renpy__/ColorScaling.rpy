@@ -260,41 +260,6 @@ init python:
                 
             return new_color
             
-    class MyScale(im.ImageBase):
-        def __init__(self, im, width, height=None, **properties):
-
-            if height is None:
-                height = width
-
-            im = Image(im)
-            super(MyScale, self).__init__(im, width, height, **properties)
-
-            self.image = im
-            self.width = width
-            self.height = height
-
-        def get_hash(self):
-            return self.image.get_hash()
-
-        def load(self):
-
-            surf = im.Cache().get(self.image)
-            width, height = surf.get_size()
-
-            width = int(width * self.width)
-            height = int(height * self.height)
-
-
-            try:
-                renpy.display.render.blit_lock.acquire()
-                rv = bilear_scale(surf, (width, height))
-            finally:
-                renpy.display.render.blit_lock.release()
-            return rv
-
-        def predict_files(self):
-            return self.image.predict_files()
-      
     def color_bar(src, dest=None):
         width = 1
         height = 255
@@ -476,7 +441,93 @@ init python:
                 b = q
 
         return (float(r)*255, float(g)*255, float(b)*255)
+    
+    class RemoveWhiteSpace(im.ImageBase):
+        def __init__(self, im, **properties):
+            self.image = Image(im)
+            if isinstance(self.image, basestring):
+                self.image = Image(image)
+            
+            
+            
+            super(RemoveWhiteSpace, self).__init__(im, **properties)
 
+
+        def get_hash(self):
+            return self.image.get_hash()
+
+        def load(self):
+            surf = im.Cache().get(self.image)
+
+            try:
+                renpy.display.render.blit_lock.acquire()
+                rv = GetImageArea(surf)
+            finally:
+                renpy.display.render.blit_lock.release()
+            return rv
+
+        def predict_files(self):
+            return self.image.predict_files()
+
+    def GetImageArea(surf): 
+        width, height = surf.get_size()
+        minx = width
+        maxx = 0
+        miny = height
+        maxy = 0
+        for x in xrange(0, int(width)):
+            for y in xrange(0, int(height)):
+                if(surf.get_at((x,y))[3] > 0):
+                    minx = min(minx, x)
+                    maxx = max(minx, x)
+                    miny = min(miny, y)
+                    maxy = max(maxy, y)
+        width = maxx-minx
+        height = maxy-miny
+        newsurf = surf.subsurface((minx, miny, width, height))
+        dest = renpy.display.pgrender.surface_unscaled((width, height), newsurf)
+        _renpy.transform(newsurf, dest,
+                             0, 0,
+                             1 , 0,
+                             0, 1,
+                             precise=1,
+                             )
+        return dest
+        
+    class MyScale(im.ImageBase):
+        def __init__(self, im, width, height=None, **properties):
+
+            if height is None:
+                height = width
+
+            im = Image(im)
+            super(MyScale, self).__init__(im, width, height, **properties)
+
+            self.image = im
+            self.width = width
+            self.height = height
+
+        def get_hash(self):
+            return self.image.get_hash()
+
+        def load(self):
+
+            surf = im.Cache().get(self.image)
+            width, height = surf.get_size()
+
+            width = int(width * self.width)
+            height = int(height * self.height)
+
+
+            try:
+                renpy.display.render.blit_lock.acquire()
+                rv = bilear_scale(surf, (width, height))
+            finally:
+                renpy.display.render.blit_lock.release()
+            return rv
+
+        def predict_files(self):
+            return self.image.predict_files()
     
     def bilear_scale(src, size, dest=None):
         """

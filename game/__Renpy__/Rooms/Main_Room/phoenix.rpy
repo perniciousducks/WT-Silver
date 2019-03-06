@@ -24,8 +24,7 @@ label phoenix:
     if day != 1:
         menu:
             "Testing Card Game":
-                $ geniecard_level = 2
-                jump snape_random_duel
+                jump imagetest
             "Testing clothes":
                 jump color_cloth_test
             "Test new wardrobe":
@@ -45,7 +44,13 @@ label phoenix:
 
     call screen main_room_menu
 
-
+label imagetest:
+    show screen testingtestingscreen
+    pause
+    jump phoenix
+screen testingtestingscreen:
+    zorder 9999
+    add RemoveWhiteSpace(Image("/characters/hermione/clothes/panties/panties_base.png")) zoom 0.5
 
 ### FEEDING ###
 label feeding:

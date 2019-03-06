@@ -442,44 +442,58 @@ init python:
 
         return (float(r)*255, float(g)*255, float(b)*255)
     
-    
     class RemoveWhiteSpace(im.ImageBase):
-        cacheCrop = None
-        cache = False
         def __init__(self, im, **properties):
-            super(RemoveWhiteSpace, self).__init__(im, width, height, **properties)
+            self.image = Image(im)
+            if isinstance(self.image, basestring):
+                self.image = Image(image)
+            
+            
+            
+            super(RemoveWhiteSpace, self).__init__(im, **properties)
 
-            self.im = Image(im)
 
         def get_hash(self):
             return self.image.get_hash()
-            
-        def __unicode__(self):
-            if len(self.filename) < 20:
-                return u"RWS %r" % self.filename
-            else:
-                return u"RWS \u2026%s" % self.filename[-20:]
 
         def load(self):
-
             surf = im.Cache().get(self.image)
-            if not self.cache:
-                try:
-                    renpy.display.render.blit_lock.acquire()
-                    CropData = GetImageArea(surf)
-                    self.cacheCrop = Crop(CropData, self.im)
-                    cache =True
-                finally:
-                    renpy.display.render.blit_lock.release()
-                return rv
-            
-            return self.cacheCrop
+
+            try:
+                renpy.display.render.blit_lock.acquire()
+                rv = GetImageArea(surf)
+            finally:
+                renpy.display.render.blit_lock.release()
+            return rv
 
         def predict_files(self):
             return self.image.predict_files()
-    def GetImageArea(surf):
+
+    def GetImageArea(surf): 
+        width, height = surf.get_size()
+        minx = width
+        maxx = 0
+        miny = height
+        maxy = 0
+        for x in xrange(0, int(width)):
+            for y in xrange(0, int(height)):
+                if(surf.get_at((x,y))[3] > 0):
+                    minx = min(minx, x)
+                    maxx = max(minx, x)
+                    miny = min(miny, y)
+                    maxy = max(maxy, y)
+        width = maxx-minx
+        height = maxy-miny
+        newsurf = surf.subsurface((minx, miny, width, height))
+        dest = renpy.display.pgrender.surface_unscaled((width, height), newsurf)
+        _renpy.transform(newsurf, dest,
+                             0, 0,
+                             1 , 0,
+                             0, 1,
+                             precise=1,
+                             )
+        return dest
         
-        return (0,0,0,0)
     class MyScale(im.ImageBase):
         def __init__(self, im, width, height=None, **properties):
 

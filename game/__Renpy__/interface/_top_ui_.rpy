@@ -298,7 +298,6 @@ screen ui_menu():
                 action [SetVariable("toggle_menu", False), SetVariable("ui_hint", ""), Jump("bugfix_menu")]
                 activate_sound "sounds/click3.mp3"
 
-
 #Moved from cupbord.rpy #Remove when not needed.
 label options_menu:
     menu:
@@ -373,8 +372,6 @@ label options_menu:
 
         "-Never mind-":
             jump day_main_menu
-
-
 
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")

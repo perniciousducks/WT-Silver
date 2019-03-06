@@ -114,13 +114,14 @@ label t_wardrobe(return_label, char_label):
                 # Default selected item
                 $ current_item = None
     elif _return[0] == "subcategory":
-        $ renpy.play('sounds/scroll.mp3')
-        $ current_subcategory = _return[1]
-        if current_category != "outfits":
-            $ menu_items = category_items[current_subcategory]
-            $ menu_items_length = len(menu_items)
-            # Default selected item
-            $ current_item = None
+        if current_subcategory != _return[1]:
+            $ renpy.play('sounds/scroll.mp3')
+            $ current_subcategory = _return[1]
+            if current_category != "outfits":
+                $ menu_items = category_items[current_subcategory]
+                $ menu_items_length = len(menu_items)
+                # Default selected item
+                $ current_item = None
     elif _return == "erozone":
         call expression char_label pass (text="", face="horny")
     elif _return == "music":

@@ -377,9 +377,6 @@ init -1 python hide:
     style.say_who_window.yminimum = 10
     style.say_who_window.xfill = False
 
-
-
-
 ## This section contains information about how to build your project into
 ## distribution files.
 init python:
@@ -432,7 +429,6 @@ init python:
 
     #build.documentation('*.html')
     #build.documentation('*.txt')
-
 
     config.window_icon = "interface/icon.png"
 

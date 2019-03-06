@@ -277,8 +277,8 @@ screen main_menu:
         action OpenURL("https://discord.gg/7PD57yt")
     
     #New info
-    add "logo/arrow.png" xpos 760 ypos 500
-    text "{color=#b20000}{size=+10}NEW\nPATREON!{/size}{/color}" xpos 700 ypos 445 outlines [ (3, "#000", 0, 0) ]
+    #add "logo/arrow.png" xpos 760 ypos 500
+    #text "{color=#b20000}{size=+10}NEW\nPATREON!{/size}{/color}" xpos 700 ypos 445 outlines [ (3, "#000", 0, 0) ]
 
 
 init -2:
@@ -303,9 +303,6 @@ screen extras:
 
         has vbox
 
-
-
-
         textbutton _("About...") action Start("abouttrainer")
         textbutton _("F.A.Q.") action Start("faq")
         if not persistent.game_complete:
@@ -316,17 +313,6 @@ screen extras:
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
-
-
-
-
-
-
-
-
-
-
-
 
 ##############################################################################
 # Navigation
@@ -361,7 +347,6 @@ init -2:
     # Make all game menu navigation buttons the same size.
     style gm_nav_button:
         size_group "gm_nav"
-
 
 ##############################################################################
 # Save, Load
@@ -464,7 +449,6 @@ init -2:
     style file_picker_button is large_button
     style file_picker_text is large_button_text
 
-
 ##############################################################################
 # Preferences
 #
@@ -532,7 +516,6 @@ screen preferences:
                 #has vbox
 
                 #textbutton _("Joystick...") action Preference("joystick")
-
 
         vbox:
             frame:
@@ -643,7 +626,6 @@ init -2:
     style soundtest_button:
         xalign 1.0
 
-
 ##############################################################################
 # Yes/No Prompt
 #
@@ -706,10 +688,9 @@ screen quick_menu:
     if renpy.variant('android'):
         hbox:
             ypos 600
-            xpos 180
-            spacing 620
-            imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5
-            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(confirm=True) activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5
+            if renpy.can_rollback():
+                imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 180
+            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(confirm=True) activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 800
     else:
         hbox:
             style_group "quick"

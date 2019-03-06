@@ -127,7 +127,6 @@ screen ctc:
 screen points: #House points screen.
     use ui_top_bar
 
-
 screen gift:
     zorder 6
     add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547

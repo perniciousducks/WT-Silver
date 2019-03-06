@@ -457,10 +457,9 @@ init -2 python:
 
     def get_zoom(image, xsize, ysize):
         if isinstance(image, basestring):
-            myDisplayable = im.Image(image)
-        else:
-            myDisplayable = image
-        myRender = renpy.render(myDisplayable, 800, 600, 0, 0)
+            image = im.Image(image)
+
+        myRender = renpy.render(image, 800, 600, 0, 0)
         sizes = myRender.get_size()
         x = sizes[0]
         y = sizes[1]

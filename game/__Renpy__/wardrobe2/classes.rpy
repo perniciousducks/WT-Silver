@@ -78,7 +78,7 @@ init python:
                         self.sprite = Composite(
                                     (1010, 1200),
                                     (0,0), self.sprite,
-                                    (0,0), sprite[0].get_image())
+                                    (0,0), sprite[0].get_image(True))
             return self.sprite
             
             
@@ -192,8 +192,12 @@ init python:
         def get_imagelayer(self, layer):
             return self.imagepath+self.id+"/"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
                     
-        def get_image(self):
+        def get_image(self, skingray=False):
             self.sprite = Image(self.skinlayer)
+            
+            # Used in mannequin generation
+            if skingray:
+                self.sprite = im.MatrixColor(self.sprite, im.matrix.desaturate())
             
             # Keep used clothes images in cache
             renpy.start_predict("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/*.*")

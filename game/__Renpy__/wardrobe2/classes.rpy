@@ -78,7 +78,7 @@ init python:
                         self.sprite = Composite(
                                     (1010, 1200),
                                     (0,0), self.sprite,
-                                    (0,0), sprite[0].get_icon())
+                                    (0,0), sprite[0].get_image())
             return self.sprite
             
             
@@ -211,10 +211,14 @@ init python:
                 self.sprite_ico = Image("characters/dummy.png")
                 
                 for i in xrange(0, self.layers):
-                    self.sprite_ico = Composite(
+                    self.sprite_ico = RemoveWhiteSpaceComp(False,
                            (1010, 1200),
                            (0,0), self.sprite_ico,
                            (0,0), im.MatrixColor(str(self.get_imagelayer(i)), self.get_matrixcolor(i)))
+                           
+                self.sprite_ico = RemoveWhiteSpaceComp(True,
+                        (1010, 1200),
+                        (0,0), self.sprite_ico)
             return self.sprite_ico
             
     class char_class(object):

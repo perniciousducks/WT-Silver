@@ -253,8 +253,8 @@ screen t_wardrobe_menuitem(xx, yy):
             if i < menu_items_length:
                 $ row = (i // 5) % 4
                 $ col = i % 5
-                $ image_zoom = get_zoom(menu_items[i].get_icon(), 90, 90)
-                add menu_items[i].get_icon() xpos 40+90*col ypos 176+90*row xalign 0.5 zoom image_zoom
+                $ image_zoom = get_zoom(menu_items[i].get_icon(), 80, 80)
+                add menu_items[i].get_icon() xpos 53+90*col ypos 220+90*row xanchor 0.5 yanchor 0.5 zoom image_zoom
                 button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
                     text "{color=#FFFFFF}Worn{/color}"xpos 26+90*col ypos 240+90*row

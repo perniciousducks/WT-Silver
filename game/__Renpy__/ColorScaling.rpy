@@ -470,7 +470,8 @@ init python:
             return self.image.predict_files()
             
     class RemoveWhiteSpaceComp(im.ImageBase):
-        def __init__(self, size, *args, **properties):
+        removewhite = None
+        def __init__(self, removewhite, size, *args, **properties):
             global testtesting
             super(RemoveWhiteSpaceComp, self).__init__(size, *args, **properties)
 
@@ -480,6 +481,9 @@ init python:
             self.size = size
             self.positions = []
             images = []
+            
+            self.removewhite = removewhite
+            
             for i in xrange(0, len(args)):
                 if i%2 == 1:
                     images.append(Image(args[i]))
@@ -504,7 +508,13 @@ init python:
             for pos, image in zip(self.positions, self.images):
                 rv.blit(im.Cache().get(image), pos)
             
-            return GetImageArea(rv)
+            if self.removewhite:
+                renpy.display.render.blit_lock.acquire()
+                newimage = GetImageArea(rv)
+                renpy.display.render.blit_lock.release()
+                return newimage
+            else:
+                return rv
 
         def predict_files(self):
             rv = [ ]

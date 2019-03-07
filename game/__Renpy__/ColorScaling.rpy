@@ -444,9 +444,9 @@ init python:
     
     class RemoveWhiteSpace(im.ImageBase):
         def __init__(self, im, **properties):
-            self.image = Image(im)
+            self.image = im
             if isinstance(self.image, basestring):
-                self.image = Image(image)
+                self.image = Image(self.image)
             
             
             
@@ -468,8 +468,52 @@ init python:
 
         def predict_files(self):
             return self.image.predict_files()
+            
+    class RemoveWhiteSpaceComp(im.ImageBase):
+        def __init__(self, size, *args, **properties):
+            global testtesting
+            super(RemoveWhiteSpaceComp, self).__init__(size, *args, **properties)
 
-    def GetImageArea(surf): 
+            if len(args) % 2 != 0:
+                raise Exception("Composite requires an odd number of arguments.")
+
+            self.size = size
+            self.positions = []
+            images = []
+            for i in xrange(0, len(args)):
+                if i%2 == 1:
+                    images.append(Image(args[i]))
+                else:
+                    self.positions.append(args[i])
+            self.images = images
+            testtesting = args
+        def get_hash(self):
+            rv = 0
+            for i in self.images:
+                rv += i.get_hash()
+            return rv
+
+        def load(self):
+            if self.size:
+                size = self.size
+            else:
+                size = im.Cache().get(self.images[0]).get_size()
+
+            rv = renpy.display.pgrender.surface(size, True)
+
+            for pos, image in zip(self.positions, self.images):
+                rv.blit(im.Cache().get(image), pos)
+            
+            return GetImageArea(rv)
+
+        def predict_files(self):
+            rv = [ ]
+            for i in self.images:
+                rv.extend(i.predict_files())
+            return rv
+    testtesting = ""    
+    def GetImageArea(surf):
+        global testtesting
         width, height = surf.get_size()
         minx = width
         maxx = 0
@@ -482,8 +526,9 @@ init python:
                     maxx = max(minx, x)
                     miny = min(miny, y)
                     maxy = max(maxy, y)
-        width = maxx-minx
-        height = maxy-miny
+        
+        width = max(maxx-minx,0)
+        height = max(maxy-miny,0)
         newsurf = surf.subsurface((minx, miny, width, height))
         dest = renpy.display.pgrender.surface_unscaled((width, height), newsurf)
         _renpy.transform(newsurf, dest,

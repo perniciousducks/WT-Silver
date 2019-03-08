@@ -26,6 +26,7 @@ init python:
         # Display rules
         game_rules_list = convert_rules(rules, player_deck)
         if len(game_rules_list) > 0:
+            renpy.choice_for_skipping()
             renpy.show_screen("rules_display", game_rules_list)
             renpy.pause()
             renpy.hide_screen("rules_display")

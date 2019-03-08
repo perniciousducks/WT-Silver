@@ -123,16 +123,16 @@ label store_chit_chat:
             m "Hello boys."
             m "I'm here to pick up my weekly cut of profits."
             twi "Of course!"
+            
+            $ her_help = 0
             if her_shop_help:
                 ger "Miss Granger has helped us with promotions this week so that means more profits."
                 $ her_help = 200
-            else:
-                $ her_help = 0
+                $ her_shop_help = False
             
             $ shop_profit = renpy.random.randint(50+her_help, 300)
-            ger "Your weekly cut of [twins_profit] comes down to [shop_profit*twins_profit]."
-            
-            call give_reward("You got " + str(shop_profit*twins_profit) + " gold", "interface/icons/gold.png")
+            ger "Here, your weekly cut."            
+            call give_reward("You've received "+str(shop_profit*twins_profit)+" gold.", "interface/icons/gold.png")
             
             $ gold +=  shop_profit*twins_profit
             ger "..."

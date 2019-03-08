@@ -192,9 +192,9 @@ label twins_random_duel:
         ger "Yeah, don't want to go minus do we?"
         $ geniecard_tokens += 1
     else:
-        Twi "Not again..."
+        twi "Not again..."
         m "Time to pay up boys."
-        ger "Fine... we'll up your profits by 1%..."
+        ger "Fine... we'll up your profits by 1%%..."
         $ geniecard_tokens += 1
         $ twins_profit += 0.01
 

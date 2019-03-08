@@ -118,7 +118,7 @@ label hermione_third_duel:
 label hermione_random_duel:
     m "Ready for another game of cards?"
 
-    if her_whoring < 16:
+    if her_whoring < 9:
         call her_main("You've already challenged me though...","open","squintL")
         call her_main("and I lost.","annoyed","down")
         g9 "What if we made it a wager..."
@@ -129,7 +129,7 @@ label hermione_random_duel:
         call her_main("I'll pass, [genie_name]...","open","worriedL")
 
         m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
-        jump hermione_duel_menu
+        jump hermione_requests
     else: 
         call her_main("You've already challenged me though...","open","squintL")
         call her_main("and I lost.","annoyed","down")

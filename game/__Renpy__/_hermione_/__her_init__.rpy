@@ -527,6 +527,9 @@ label her_progress_init:
 
     #Clothing Events
         $ hermione_door_event_happened = False
+        
+    # Cardgame promotion job
+        $ her_shop_help = False
 
     #Rewards
         $ autograph = False #Professor Lockhart's tattoo.

@@ -50,7 +50,7 @@ label imagetest:
     jump phoenix
 screen testingtestingscreen:
     zorder 9999
-    add RemoveWhiteSpaceComp((1010,1200),(0,0),"/characters/hermione/clothes/panties/panties_base.png") zoom 0.5
+    add testinttest.get_image() zoom 0.5
 
 ### FEEDING ###
 label feeding:

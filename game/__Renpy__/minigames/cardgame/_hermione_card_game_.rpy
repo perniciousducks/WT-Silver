@@ -142,7 +142,7 @@ label hermione_random_duel:
         call her_main("How would this work then?","open","squint")
         m "Well, if you win I'll give you 10 points to Gryffindor."
         call her_main("Only 10?","annoyed","Glance")
-        m "15 then..."
+        m "20 then..."
         call her_main("And if I lose?","open","SquintL")
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
@@ -159,7 +159,8 @@ label hermione_random_duel:
           
     if duel_response == "Close":
         jump her_duel_cancel
-        
+    elif duel_response == "draw":
+        jump her_duel_draw
     elif not duel_response == "win":
         jump her_duel_lost
     
@@ -208,13 +209,36 @@ label hermione_random_duel:
     $ hermione_busy = True
     
     jump main_room
-       
-label her_duel_lost:
+    
+label her_duel_draw:
     stop music fadeout 1
 
     menu:
         "-Rematch-":
-            jump hermione_duel_menu
+            if geniecard_level == 1:
+                jump hermione_duel_menu
+            else:
+                jump hermione_random_duel
+        "-Stop playing-":
+            pass
+    
+    jump main_room
+       
+label her_duel_lost:
+    stop music fadeout 1
+    
+    if geniecard_level > 1:
+        her "Hah, told you I'd do it!"
+        her "I'll take those points now."
+        m "Fine, 20 to gryffindor."
+        $ gryffindor += 20
+
+    menu:
+        "-Rematch-":
+            if geniecard_level == 1:
+                jump hermione_duel_menu
+            else:
+                jump hermione_random_duel
         "-Be a loser-":
             pass
     her "Cards not in your favour [genie_name]? Maybe next time..."

@@ -132,7 +132,7 @@ label store_chit_chat:
             
             $ shop_profit = renpy.random.randint(50+her_help, 300)
             ger "Here, your weekly cut."            
-            call give_reward("You've received "+str(shop_profit*twins_profit)+" gold.", "interface/icons/gold.png")
+            call give_reward("You've received "+str(int(shop_profit*twins_profit))+" gold.", "interface/icons/gold.png")
             
             $ gold +=  shop_profit*twins_profit
             ger "..."

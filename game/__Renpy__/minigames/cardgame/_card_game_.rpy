@@ -214,8 +214,6 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
                     use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
-                    
-    textbutton "Rules" xpos 200 ypos 60
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:

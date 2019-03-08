@@ -530,6 +530,7 @@ label her_progress_init:
         
     # Cardgame promotion job
         $ her_shop_help = False
+        $ her_shop_help_first = True
 
     #Rewards
         $ autograph = False #Professor Lockhart's tattoo.

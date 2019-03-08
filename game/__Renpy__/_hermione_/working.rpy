@@ -473,7 +473,7 @@ label slytherin_cheer_responses:
 
 label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    $ random_choice = renpy.random.randint(0,3)
+    $random_choice = renpy.random.randint(0,3)
     if random_choice == 0:
         call her_main("Why are the cards placed like that?","mad","down")
         call her_main("...","normal","worriedCl", cheeks="blush")
@@ -519,16 +519,17 @@ label job_5:
     call h_unequip_temp_outfit()
     $ hermione_busy = True
     $ current_job = 5
-    $ her_shop_help = True
 
     jump main_room
     
 label hermione_helping_selling_cards:
     $ current_job = 0 
-    $ random_choice = renpy.random.randint(0,4)
+    $ random_choice = renpy.random.randint(1,4)
+            
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
     
-    if random_choice == 0:
+    if her_shop_help_first:
+        $ her_shop_help_first = False
         call her_main("")
         m "Hello, [hermione_name], how was your day?" 
         call her_main("Good...","normal","squint")
@@ -553,7 +554,10 @@ label hermione_helping_selling_cards:
         $ gold += 20
         m "Well done [hermione_name], 15 points to Gryffindor."
         $ gryffindor += 15
-    elif random_choice == 1:
+        call h_unequip_temp_outfit()
+        jump night_main_menu
+        
+    if random_choice == 1:
         call her_main("")
         m "Hello, [hermione_name], how was your day?" 
         call her_main("It was fine, the outfit is a bit chilly though.","normal","happy")

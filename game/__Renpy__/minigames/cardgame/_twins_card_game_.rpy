@@ -130,7 +130,7 @@ label twins_random_duel:
     else:
         m "Ready for another wager?"
         twi "Why not..."
-        ger "If you win we'll give you another 1% from our weekly profits."
+        ger "If you win we'll give you another 1%% from our weekly profits."
         m "Is there a limit?"
         fre "Of course... but you're not going to reach it..."
         m "..."

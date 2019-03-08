@@ -147,7 +147,7 @@ label store_chit_chat:
                     pass
                 "-Let's duel- {image=interface/cards.png}":
                     label twins_duel_menu:
-                    if geniecard_level == 1:
+                    if geniecard_level < 2:
                         menu:
                             "-First Duel-":
                                 jump twins_first_duel

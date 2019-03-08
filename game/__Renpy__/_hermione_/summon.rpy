@@ -148,24 +148,23 @@ label summon_hermione:
                 $ her_cards_stocked_talk = True
                 jump hermione_duel_menu
             else:
-                label hermione_duel_menu:
-                menu:
-                    "-First Duel-":
-                        jump hermione_first_duel
-                    "-Second Duel-" if her_first_win:
-                        jump hermione_second_duel
-                    "{color=#858585}-You need to beat the first duel-{/color}" if not her_first_win:
-                        jump hermione_duel_menu
-                    "-Challenge-" if her_second_win:
-                        jump hermione_third_duel
-                    "{color=#858585}-You need to beat the second duel-{/color}" if not her_second_win:
-                        jump hermione_duel_menu
-                    "-Wager-" if geniecard_level == 2:
-                        jump hermione_random_duel
-                    "-Secret-" if geniecard_level == 1:
-                        jump hermione_duel_menu
-                    "-Never mind-":
-                        jump hermione_requests
+                if geniecard_level < 2:
+                    label hermione_duel_menu:
+                    menu:
+                        "-First Duel-":
+                            jump hermione_first_duel
+                        "-Second Duel-" if her_first_win:
+                            jump hermione_second_duel
+                        "{color=#858585}-You need to beat the first duel-{/color}" if not her_first_win:
+                            jump hermione_duel_menu
+                        "-Challenge-" if her_second_win:
+                            jump hermione_third_duel
+                        "{color=#858585}-You need to beat the second duel-{/color}" if not her_second_win:
+                            jump hermione_duel_menu
+                        "-Never mind-":
+                            jump hermione_requests
+                else:
+                    jump hermione_random_duel
 
         "-Gifts-" if not gave_hermione_gift:
             $ current_category = None

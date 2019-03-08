@@ -473,7 +473,7 @@ init python:
         def __init__(self, size, *args, **properties):
             global testtesting
             super(RemoveWhiteSpaceComp, self).__init__(size, *args, **properties)
-
+            
             if len(args) % 2 != 0:
                 raise Exception("Composite requires an odd number of arguments.")
 
@@ -486,13 +486,16 @@ init python:
                 else:
                     self.positions.append(args[i])
             self.images = images
-            testtesting = args
+            #testtesting = args
         def get_hash(self):
             rv = 0
             for i in self.images:
                 rv += i.get_hash()
             return rv
-
+            
+        def render(self, w, h, st, at):
+            testtesting = (0, 0, 2)
+            return im.Cache().get(self, render=True)
         def load(self):
             if self.size:
                 size = self.size
@@ -500,7 +503,7 @@ init python:
                 size = im.Cache().get(self.images[0]).get_size()
 
             rv = renpy.display.pgrender.surface(size, True)
-
+            testtesting = (0, 0,0)
             for pos, image in zip(self.positions, self.images):
                 rv.blit(im.Cache().get(image), pos)
             
@@ -508,12 +511,13 @@ init python:
 
         def predict_files(self):
             rv = [ ]
+            testtesting = (0, 0, 1)
             for i in self.images:
                 rv.extend(i.predict_files())
             return rv
-    testtesting = ""    
+            
+    testtesting = ""   
     def GetImageArea(surf):
-        global testtesting
         width, height = surf.get_size()
         minx = width
         maxx = 0
@@ -573,6 +577,67 @@ init python:
 
         def predict_files(self):
             return self.image.predict_files()
+    
+    
+    def test_get_crop(images, thread_class, image_index):
+        image = Image(images[image_index])
+        surf = image.load()
+        list_test.append(surf)
+        width, height = (1010,1200)
+        minx = width
+        maxx = 0
+        miny = height
+        maxy = 0
+        list_test.append(height)
+        for x in xrange(0, int(width)):
+            for y in xrange(0, int(height)):
+                if(surf.get_at((x,y))[3] > 0):
+                    minx = min(minx, x)
+                    maxx = max(minx, x)
+                    miny = min(miny, y)
+                    maxy = max(maxy, y)
+        list_test.append((maxx,minx))
+        thread_class.width = max(maxx-minx,0)
+        thread_class.height = max(maxy-miny,0)
+        thread_class.posx = minx
+        thread_class.posy = miny
+        thread_class.thread_done = True
+    
+
+    list_test = []
+    class this_is_thread_test():
+        width = 0
+        height = 0
+        posx = 0
+        posy = 0
+        images =[]
+        cached = False
+        thread_done = False
+        new_composite= None
+        def __init__(self, images, image_index):
+            self.images = images
+            threading.Thread(target=test_get_crop, args=(images, self, image_index)).start()
+             
+             
+        
+        def get_image(self):
+            if cached:
+                return self.new_composite
+            if thread_done:
+                cached = True
+                image = Composite((self.width+18, self.height+18), (-self.posx-9,-self.posy-9), self.images[0])
+                if len(self.images) > 0:
+                    for i in xrange(1, len(self.images)):
+                        Composite((self.width, self.height), (0,0), image, (-self.posx,-self.posy), self.images[i])
+                self.new_composite = image
+            
+                return self.new_composite
+            raise Exception("Thread not done calculating image area")
+            return Image("blank.png")
+        
+    testinttest = this_is_thread_test(["/characters/hermione/clothes/panties/panties_base.png"])
+    
+    
     
     def bilear_scale(src, size, dest=None):
         """

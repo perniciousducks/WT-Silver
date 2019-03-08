@@ -645,7 +645,7 @@ init python:
             raise Exception("Thread not done calculating image area")
             return Image("blank.png")
         
-    testinttest = this_is_thread_test(["/characters/hermione/clothes/panties/panties_base.png"])
+    #testinttest = this_is_thread_test(["/characters/hermione/clothes/panties/panties_base.png"])
     
     
     

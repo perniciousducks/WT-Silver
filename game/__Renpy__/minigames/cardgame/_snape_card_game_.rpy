@@ -154,12 +154,18 @@ label snape_random_duel:
     
     if not random_snape_win:
         $ random_snape_win = True
+        
+        python:
+            import random
+            rand_ing_or_pot = random.choice(potion_lib.lib)
+            potion_inv.add(rand_ing_or_pot)
+            
         m "Yes!"
         g9 "No wine for you.."
         call sna_main("...","snape_04")
         g9 "Now, how about that prize we discussed."
         call sna_main("Ah, yes... something from my collection.","snape_05")
-        "You've got a random potion ingredient from Snape \[item\]"
+        call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
         g4 "What the fuck is this..."
         call sna_main("As I said...","snape_01")
         call sna_main("Something from my collection...","snape_02")

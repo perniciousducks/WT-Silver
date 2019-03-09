@@ -185,7 +185,7 @@ label hermione_random_duel:
     m "Well, in that case..."
     
     menu:
-        "-Send Hermione to work, promoting the card game.-" if not cardgame_work::
+        "-Send Hermione to work, promoting the card game.-" if not cardgame_work:
             $ cardgame_work = True
             g9 "In that case, I think I have a good idea for a job..."
             call her_main("A job?","open","squint")
@@ -196,7 +196,7 @@ label hermione_random_duel:
             call her_main("...","normal","squintL", cheeks="blush")
             call her_main("Did you need anything else?","open","soft", cheeks="blush")
             call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
-        "-Ask for a blowjob instead-"
+        "-Ask for a blowjob instead-":
             jump hg_wager_bj
         "-Deduct the points-":
             pass

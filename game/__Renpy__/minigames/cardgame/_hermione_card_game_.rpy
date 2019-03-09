@@ -184,21 +184,22 @@ label hermione_random_duel:
     call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...","open","worriedCl")
     m "Well, in that case..."
     
-    if not cardgame_work:
-        menu:
-            "-Send Hermione to work, promoting the card game.-":
-                $ cardgame_work = True
-                g9 "In that case, I think I have a good idea for a job..."
-                call her_main("A job?","open","squint")
-                m "Yes, I'd like you to start helping the twins promote the card game..."
-                call her_main("I can do that...","base","worried", cheeks="blush")
-                call her_main("But not today if that's okay with you.","open","down")
-                g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
-                call her_main("...","normal","squintL", cheeks="blush")
-                call her_main("Did you need anything else?","open","soft", cheeks="blush")
-                call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
-            "-Deduct the points-":
-                pass
+    menu:
+        "-Send Hermione to work, promoting the card game.-" if not cardgame_work::
+            $ cardgame_work = True
+            g9 "In that case, I think I have a good idea for a job..."
+            call her_main("A job?","open","squint")
+            m "Yes, I'd like you to start helping the twins promote the card game..."
+            call her_main("I can do that...","base","worried", cheeks="blush")
+            call her_main("But not today if that's okay with you.","open","down")
+            g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
+            call her_main("...","normal","squintL", cheeks="blush")
+            call her_main("Did you need anything else?","open","soft", cheeks="blush")
+            call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
+        "-Ask for a blowjob instead-"
+            jump hg_wager_bj
+        "-Deduct the points-":
+            pass
                 
     m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
     call her_main("...","disgust","down")

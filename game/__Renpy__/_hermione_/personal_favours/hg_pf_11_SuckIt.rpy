@@ -55,7 +55,6 @@ label hg_pf_SuckIt: #15+
         $ hg_pf_SuckIt_OBJ.level = 1
         jump end_hg_blowjob
 
-
     #Second Event.
     elif hg_pf_SuckIt_OBJ.points == 1:
         m "[hermione_name]?"

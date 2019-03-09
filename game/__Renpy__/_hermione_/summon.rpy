@@ -435,7 +435,7 @@ label hermione_talk:
                     jump job_4
 
                 "-Work as a cheerleader for Slytherin-" if daytime and not (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
-                    m "(I'll need an outfit for hermione if I want her to work.)"
+                    m "(I'll need a slytherin cheerleader outfit for hermione if I want her to work.)"
                     jump working_menu
 
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
@@ -446,6 +446,7 @@ label hermione_talk:
                     jump job_5
                 "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
+                    m "(Maybe the twins have something fitting for her in their stock.)"
                     jump working_menu
 
                 "{color=#858585}-Work by advertising the card game-{/color}" if not daytime and cardgame_work:

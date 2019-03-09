@@ -95,6 +95,8 @@ init python:
         unlocked = True
         cloned = False
         cached = False
+        
+        sprite_ico = None
 
         name = ""
         desc = ""
@@ -149,6 +151,14 @@ init python:
             # Add cloth object to respective character, category and sub-category in dictionary keylist
             if not self.cloned and self.unlocked:
                 get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+                character_clothes_list.append(self)
+                
+            # Initialize icon crop calculations A.K.A threading A.k.A lazyload
+            layers = []
+            for i in xrange(0, self.layers):
+                layers.append(self.get_imagelayer(i))
+                
+            self.sprite_ico = lazyload(layers, self.color, 0)
                 
         def unlock(self, bool):
             if not self.unlocked:
@@ -164,6 +174,7 @@ init python:
         def set_pose(self, pose):
             if renpy.exists(self.imagepath+self.id+"/"+pose+"_0.png"):
                 self.pose = pose
+                self.sprite_ico.cached = False
                 self.cached = False
                 return True
             return False
@@ -182,11 +193,13 @@ init python:
 
         def set_color(self, layer):
             self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+            self.sprite_ico.cached = False
             self.cached = False
             
         def reset_color(self):
             for i in xrange(0, len(self.color)):
                 self.color[i] = self.color_default[i]
+            self.sprite_ico.cached = False
             self.cached = False
 
         def get_imagelayer(self, layer):
@@ -210,20 +223,7 @@ init python:
             return self.sprite
             
         def get_icon(self):
-            if not self.cached:
-                self.cached = True
-                self.sprite_ico = Image("characters/dummy.png")
-                
-                for i in xrange(0, self.layers):
-                    self.sprite_ico = RemoveWhiteSpaceComp(False,
-                           (1010, 1200),
-                           (0,0), self.sprite_ico,
-                           (0,0), im.MatrixColor(str(self.get_imagelayer(i)), self.get_matrixcolor(i)))
-                           
-                self.sprite_ico = RemoveWhiteSpaceComp(True,
-                        (1010, 1200),
-                        (0,0), self.sprite_ico)
-            return self.sprite_ico
+            return self.sprite_ico.get_image()
             
     class char_class(object):
         char = None

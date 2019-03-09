@@ -145,20 +145,21 @@ label snape_random_duel:
     if duel_response == "Close":
         $ wine -= 1
         jump snape_duel_cancel
-        
+    elif duel_response == "draw":
+        jump snape_duel_draw
     elif not duel_response == "win":
         $ wine -= 1
         jump snape_duel_lost
     hide screen blkfade
     stop music fadeout 1
     
+    python:
+        import random
+        rand_ing_or_pot = random.choice(potion_lib.lib)
+        potion_inv.add(rand_ing_or_pot)
+    
     if not random_snape_win:
         $ random_snape_win = True
-        
-        python:
-            import random
-            rand_ing_or_pot = random.choice(potion_lib.lib)
-            potion_inv.add(rand_ing_or_pot)
             
         m "Yes!"
         g9 "No wine for you.."
@@ -220,19 +221,31 @@ label snape_random_duel:
         elif random_choice == 4:
             call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
             call sna_main(  "Well played though.","snape_04")
-            call play_sound("door")
-            call sna_chibi("hide")
+        
+        call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
             
     $ snape_busy = True
-    #
-    #
-    # Random ingredient or a potion
-    #
-    #
     $ geniecard_tokens += 1
-
+    
+    call play_sound("door")
+    call sna_chibi("hide")
+    
     jump main_room
 
+label snape_duel_draw:
+    stop music fadeout 1
+
+    menu:
+        "-Rematch-":
+            if geniecard_level == 1:
+                jump snape_duel_menu
+            else:
+                jump snape_random_duel
+        "-Stop playing-":
+            pass
+            
+    sna "Alright, another time then..."
+    jump main_room    
     
 label snape_duel_lost:
     hide screen blkfade

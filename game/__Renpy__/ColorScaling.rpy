@@ -589,7 +589,7 @@ init python:
             return self.image.predict_files()
     
     
-    def test_get_crop(images, thread_class, image_index):
+    def crop_blank(images, thread_class, image_index):
         image = Image(images[image_index])
         surf = image.load()
         list_test.append(surf)
@@ -615,37 +615,40 @@ init python:
     
 
     list_test = []
-    class this_is_thread_test():
+    class lazyload():
         width = 0
         height = 0
         posx = 0
         posy = 0
-        images =[]
+        images = []
+        colorlist = []
         cached = False
         thread_done = False
         new_composite= None
-        def __init__(self, images, image_index):
+        def __init__(self, images, colorlist, image_index):
             self.images = images
-            threading.Thread(target=test_get_crop, args=(images, self, image_index)).start()
-             
-             
+            self.colorlist = colorlist
+            threading.Thread(target=crop_blank, args=(images, self, image_index)).start()
+            
+        def get_matrixcolor(self, layer):
+            return im.matrix.tint(float(self.colorlist[layer][0])/255.0, float(self.colorlist[layer][1])/255.0, float(self.colorlist[layer][2])/255.0)
         
         def get_image(self):
-            if cached:
+            if self.cached:
                 return self.new_composite
-            if thread_done:
-                cached = True
-                image = Composite((self.width+18, self.height+18), (-self.posx-9,-self.posy-9), self.images[0])
+            if self.thread_done:
+                self.cached = True
+                image = Composite((self.width+18, self.height+18), (-self.posx-9,-self.posy-9), im.MatrixColor(self.images[0], self.get_matrixcolor(0)))
                 if len(self.images) > 0:
                     for i in xrange(1, len(self.images)):
-                        Composite((self.width, self.height), (0,0), image, (-self.posx,-self.posy), self.images[i])
+                        image = Composite((self.width+18, self.height+18), (0,0), image, (-self.posx-9,-self.posy-9), im.MatrixColor(self.images[i], self.get_matrixcolor(i)))
                 self.new_composite = image
             
                 return self.new_composite
             raise Exception("Thread not done calculating image area")
             return Image("blank.png")
         
-    #testinttest = this_is_thread_test(["/characters/hermione/clothes/panties/panties_base.png"])
+    #testinttest = lazyload(["/characters/hermione/clothes/panties/panties_base.png"])
     
     
     

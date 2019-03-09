@@ -13,6 +13,8 @@ label __init_variables:
             cho_class.clothing_dictlist = {}
             cho_class.outfits = []
             
+            character_clothes_list = []
+            
             color_black = [0, 0, 0, 255]
     
             # Tops

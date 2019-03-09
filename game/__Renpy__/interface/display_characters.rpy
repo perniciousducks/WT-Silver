@@ -349,7 +349,7 @@ label pick_custom_background:
         "-White-":
             call custom_bg("white")
         "-Change BG Color-":
-            $ cho_bg_color = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], [255, 255, 255], False, "background color")
+            $ custom_bg_color = color_picker([255.0, 255.0, 255.0, 255], False, "background color")
             $ color_background = True
         "-Add BG Color-" if bg_color != None:
             $ color_background = True
@@ -378,7 +378,7 @@ screen custom_background():
     tag custom_background
 
     if color_background:
-        add im.MatrixColor( custom_bg_image, im.matrix.tint(bg_color[0]/255.0, bg_color[1]/255.0, bg_color[2]/255.0)) alpha bg_transp
+        add im.MatrixColor( "images/rooms/_bg_/white.png", im.matrix.tint(custom_bg_color[0]/255.0, custom_bg_color[1]/255.0, custom_bg_color[2]/255.0)) alpha bg_transp
     else:
         add custom_bg_image alpha bg_transp
 

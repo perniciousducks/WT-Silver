@@ -118,7 +118,7 @@ label hermione_third_duel:
 label hermione_random_duel:
     m "Ready for another game of cards?"
 
-    if her_whoring < 9:
+    if her_whoring < 8:
         call her_main("You've already challenged me though...","open","squintL")
         call her_main("and I lost.","annoyed","down")
         g9 "What if we made it a wager..."
@@ -149,6 +149,8 @@ label hermione_random_duel:
         call her_main("...","normal","WorriedCl", cheeks="blush")
         call her_main("Okay... In that case to make it fair, let's add these extra rules...","open","happy")
         
+    label hermione_random_duel_rematch:
+        
     call play_music("boss_card_theme")
     
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
@@ -178,33 +180,32 @@ label hermione_random_duel:
     call her_main ("I noticed...","normal","worriedL")
     m "You do know what this means, don't you?"
     call her_main("...","normal","worried")
-    g9 "This means I'm going to have to deduct 15 points from Gryffindor house."
-    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 15 house points missing...","open","worriedCl")
+    g9 "This means I'm going to have to deduct 20 points from Gryffindor house."
+    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...","open","worriedCl")
     m "Well, in that case..."
-
-    menu:
-        "Send Hermione to work, promoting the card game.":
-            g9 "In that case, I think I have a good idea for a job..."
-            call her_main("A job?","open","squint")
-            m "Yes, I'd like you to start helping the twins promote the card game..."
-            call her_main("I can do that...","base","worried", cheeks="blush")
-            call her_main("But not today if that's okay with you.","open","down")
-            g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
-            call her_main("...","normal","squintL", cheeks="blush")
-            call her_main("Did you need anything else?","open","soft", cheeks="blush")
-            if not cardgame_work:
-                call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
+    
+    if not cardgame_work:
+        menu:
+            "-Send Hermione to work, promoting the card game.-":
                 $ cardgame_work = True
+                g9 "In that case, I think I have a good idea for a job..."
+                call her_main("A job?","open","squint")
+                m "Yes, I'd like you to start helping the twins promote the card game..."
+                call her_main("I can do that...","base","worried", cheeks="blush")
+                call her_main("But not today if that's okay with you.","open","down")
+                g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
+                call her_main("...","normal","squintL", cheeks="blush")
+                call her_main("Did you need anything else?","open","soft", cheeks="blush")
+                call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
+            "-Deduct the points-":
+                pass
                 
-        "Deduct the points":
-            m "No, sorry miss Granger... Minus 15 points to Gryffindor..."
-            call her_main("...","disgust","down")
-            call her_main("Fine, that's fair...","open","down_raised")
-            call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
-            $ gryffindor -= 15
+    m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
+    call her_main("...","disgust","down")
+    call her_main("Fine, that's fair...","open","down_raised")
+    call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
+    $ gryffindor -= 20
             
-            
-
     call play_sound("door")
     $ hermione_busy = True
     
@@ -218,10 +219,11 @@ label her_duel_draw:
             if geniecard_level == 1:
                 jump hermione_duel_menu
             else:
-                jump hermione_random_duel
+                jump hermione_random_duel_rematch
         "-Stop playing-":
             pass
-    
+            
+    her "Okay, another time then..."
     jump main_room
        
 label her_duel_lost:

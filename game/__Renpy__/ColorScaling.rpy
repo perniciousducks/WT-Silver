@@ -588,6 +588,8 @@ init python:
         def predict_files(self):
             return self.image.predict_files()
     
+    all_threads_done = False
+    threads_task_count = 0
     
     def crop_blank(images, thread_class, image_index):
         image = Image(images[image_index])
@@ -612,9 +614,12 @@ init python:
         thread_class.posx = minx
         thread_class.posy = miny
         thread_class.thread_done = True
+        global threads_task_count
+        threads_task_count -= 1
     
 
     list_test = []
+    
     class lazyload():
         width = 0
         height = 0
@@ -628,6 +633,8 @@ init python:
         def __init__(self, images, colorlist, image_index):
             self.images = images
             self.colorlist = colorlist
+            global threads_task_count
+            threads_task_count += 1
             threading.Thread(target=crop_blank, args=(images, self, image_index)).start()
             
         def get_matrixcolor(self, layer):

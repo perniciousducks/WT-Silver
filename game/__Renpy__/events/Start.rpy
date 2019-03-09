@@ -1,18 +1,6 @@
 
 
 label start_ht:
-
-    # Show loading screen
-    #show screen loading_screen
-    
-    #python:
-        #reduce((lambda x, y: x * y), character_clothes_list)
-        #
-        #
-        # Finish the loading if_done check
-        #
-        #
-
     $ daytime = False
     $ gold = 0
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.

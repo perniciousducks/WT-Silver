@@ -1,7 +1,7 @@
 transform rotateAnim:
     subpixel True
     rotate None
-    linear 5.0 rotate absolute(359.0)
+    linear 3.0 rotate absolute(359.0)
     repeat
     
 screen loading_screen:
@@ -14,4 +14,4 @@ screen loading_screen:
     
     add "interface/loading_0.jpg" zoom 0.5
     add "interface/loading.png" ypos 48 xpos 1032 xanchor 0.5 yanchor 0.5 zoom 0.5 at rotateAnim
-    text "{color=#FFF}[currently_loading]{/color}" xalign 0.53 yanchor 0.5 ypos 560
+    text "{color=#FFF}[threads_task_count]{/color}" xalign 0.53 yanchor 0.5 ypos 560

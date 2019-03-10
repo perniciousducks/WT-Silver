@@ -594,13 +594,11 @@ init python:
     def crop_blank(images, thread_class, image_index):
         image = Image(images[image_index])
         surf = image.load()
-        list_test.append(surf)
         width, height = (1010,1200)
         minx = width
         maxx = 0
         miny = height
         maxy = 0
-        list_test.append(height)
         for x in xrange(0, int(width)):
             for y in xrange(0, int(height)):
                 if(surf.get_at((x,y))[3] > 0):
@@ -608,17 +606,24 @@ init python:
                     maxx = max(minx, x)
                     miny = min(miny, y)
                     maxy = max(maxy, y)
-        list_test.append((maxx,minx))
         thread_class.width = max(maxx-minx,0)
         thread_class.height = max(maxy-miny,0)
         thread_class.posx = minx
         thread_class.posy = miny
         thread_class.thread_done = True
-        global threads_task_count
-        threads_task_count -= 1
+        start_image_crop()
+       
+    def start_image_crop():
+        for cloth in character_clothes_list:
+            if not cloth.sprite_ico.thread_done:
+                cloth.sprite_ico.start_thread()
+                break
     
-
-    list_test = []
+    def cropping_done():
+        resualt = True
+        for cloth in character_clothes_list:
+            resualt = resualt and cloth.sprite_ico.thread_done:
+        return resualt
     
     class lazyload():
         width = 0
@@ -630,16 +635,19 @@ init python:
         cached = False
         thread_done = False
         new_composite= None
+        image_index = None
+        
         def __init__(self, images, colorlist, image_index):
             self.images = images
             self.colorlist = colorlist
-            global threads_task_count
-            threads_task_count += 1
-            threading.Thread(target=crop_blank, args=(images, self, image_index)).start()
+            self.image_index = image_index
             
         def get_matrixcolor(self, layer):
             return im.matrix.tint(float(self.colorlist[layer][0])/255.0, float(self.colorlist[layer][1])/255.0, float(self.colorlist[layer][2])/255.0)
-        
+            
+        def start_thread(self):
+            threading.Thread(target=crop_blank, args=(self.images, self, self.image_index)).start()
+            
         def get_image(self):
             if self.cached:
                 return self.new_composite
@@ -652,13 +660,10 @@ init python:
                 self.new_composite = image
             
                 return self.new_composite
-            raise Exception("Thread not done calculating image area")
+            raise Exception("Thread not done calculating image area)
             return Image("blank.png")
         
-    #testinttest = lazyload(["/characters/hermione/clothes/panties/panties_base.png"])
-    
-    
-    
+ 
     def bilear_scale(src, size, dest=None):
         """
         This scales src up or down to size. This uses both the pixellate

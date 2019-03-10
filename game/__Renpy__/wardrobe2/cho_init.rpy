@@ -134,5 +134,5 @@ label __init_variables:
         
 
         
-            
+        start_image_crop()
         

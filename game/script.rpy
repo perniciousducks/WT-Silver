@@ -11,18 +11,10 @@ define e = Character('Eileen', color="#c8ffc8")
 # The game starts here.
 label start:
     # Show loading screen
-    show screen loading_screen
-    pause 1.0
     
     $ init_variables()
     
-    python:
-        while not all_threads_done:
-            renpy.pause(0.5)
-            if threads_task_count <= 0:
-                renpy.hide_screen("loading_screen")
-                all_threads_done = True
-                break
+    
     #scene black
     jump select_start
 

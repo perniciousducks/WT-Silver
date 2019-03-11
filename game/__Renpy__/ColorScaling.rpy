@@ -622,7 +622,7 @@ init python:
     def cropping_done():
         resualt = True
         for cloth in character_clothes_list:
-            resualt = resualt and cloth.sprite_ico.thread_done:
+            resualt = resualt and cloth.sprite_ico.thread_done
         return resualt
     
     class lazyload():
@@ -660,7 +660,7 @@ init python:
                 self.new_composite = image
             
                 return self.new_composite
-            raise Exception("Thread not done calculating image area)
+            raise Exception("Thread not done calculating image area")
             return Image("blank.png")
         
  

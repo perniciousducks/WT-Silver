@@ -131,8 +131,3 @@ label __init_variables:
                         "panties":    [cho_cloth_basicpanties1, 14, 0, 0, False],
                         "stockings":  [None, 13, 0, 0, False],
                         "buttplug":   [None, 0, 0, 0, False]}
-        
-
-        
-        start_image_crop()
-        

@@ -94,6 +94,8 @@ label t_wardrobe(return_label, char_label):
                 $ char_active.wear("all")
                 $ menu_items = char_active.outfits
                 $ menu_items_length = len(menu_items)
+            elif current_category == "gifts":
+                jump studio
             else:
                 if current_category == "underwear":
                     $ char_active.strip("top")
@@ -254,7 +256,7 @@ screen t_wardrobe_menuitem(xx, yy):
                 $ row = (i // 5) % 4
                 $ col = i % 5
                 $ image_zoom = get_zoom(menu_items[i].get_icon(), 80, 80)
-                add menu_items[i].get_icon() xpos 53+90*col ypos 220+90*row xanchor 0.5 yanchor 0.5 zoom image_zoom
+                add menu_items[i].get_icon() xpos 58+90*col ypos 225+90*row xanchor 0.5 yanchor 0.5 zoom image_zoom
                 button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
                     text "{color=#FFFFFF}Worn{/color}"xpos 26+90*col ypos 240+90*row

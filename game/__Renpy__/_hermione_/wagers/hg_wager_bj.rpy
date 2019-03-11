@@ -31,6 +31,7 @@ label hg_wager_bj:
             $ menu_y = 0.3 #Menu is moved down.
             call hide_blkfade
             call ctc
+            show screen groping_01
             m "Have you been working out [hermione_name]? This feels great!"
             call her_main("No...can we just get this over with?", mouth="annoyed", eye="glance")
             call her_main("{size=-5}All this because of a stupid card game{/size}", mouth="upset", eye="worriedCl")
@@ -40,21 +41,25 @@ label hg_wager_bj:
                 call play_sound("door")
                 call sna_walk("door","mid",2)    
                 call bld
-                call sna_main("snape_01",xpos="base",ypos="base")
+                call sna_main("",xpos="base",ypos="base")
                 call ctc
-                call sna_main( "Hello Geni...What do we have here?!?", face="snape_18")
-                call her_main("{size=-5}Professor Snape!!{/size}", mouth="shocked", eye="shocked")
+                call sna_main( "Hello Geni...", face="snape_09")
+                call sna_main( "What do we have here?!?", face="snape_20")
+                call her_main("{size=+5}Professor Snape?!{/size}", mouth="shock", eye="shocked", xpos="left",ypos="base")
                 call her_main("It's not what it looks like!", mouth="scream", eye="wideL")
-                call sna_main( "So you're not having your headmaster feel you up?", face="snape_15")
-                call sna_main( "And enjoying it, by the looks of it!", face="snape_09")
-                call her_main("I knew playing another round of cards wasn't a good idea...")
-                call her_main("...", mouth="annoyed", eye="annoyed")
-                call her_main("Take your hands off me now!!", mouth="scream", eye="angryCl")
+                hide screen hermione_main
+                call sna_main( "So you're not having your headmaster feel you up?", face="snape_20")
+                call sna_main( "And enjoying it, by the looks of it!", face="snape_20")
+                call her_main("I knew playing another round of cards wasn't a good idea...", mouth="mad", eye="worriedCl", cheeks="blush")
+                call her_main("...", mouth="annoyed", eye="annoyed", cheeks="blush")
+                call her_main("Take your hands off me now!!", mouth="scream", eye="angryCl", cheeks="blush")
                 m "Fine, calm down miss Granger"
-                call her_main("Don't tell me to calm down!!!", mouth="scream", eye="angry")
+                call her_main("Don't tell me to calm down!!!", mouth="scream", eye="angry", cheeks="blush")
+                hide screen hermione_main
                 call sna_main("Don't feel as if you have to stop on my behalf.", face="snape_01")
                 m "Fine, I'll stop... But I'm still taking 20 points from Gryffindor!"
-                call blkfade
+                #call blkfade
+                show screen no_groping_01
                 ">You take your hands off Hermione"
                 hide screen blktone8 #resets hermione to center of room and genie to sitting down
                 hide screen ctc
@@ -89,11 +94,16 @@ label hg_wager_bj:
                 m "Well, to each their own, I am enjoying this very much!"
                 call her_main("Are you done yet?")
                 m "Fine, I'll let you go..."
+                show screen no_groping_01
                 m "I'll only take 10 points from Gryffindor as we agreed."
                 m "10 Points from Gryffindor!"
                 $ gryffindor -= 10
+                call blkfade
+                hide screen no_groping_01
+                call her_chibi("stand","mid","base")
+                call gen_chibi("sit_behind_desk")
+                call hide_blkfade
                 call her_main("Thank you, [genie_name]", mouth="open", eye="base")
-                hide screen bld1 #should make her leave and fade to black
                 hide screen hermione_main
                 with d3
                 call her_walk("mid","leave",2)
@@ -129,7 +139,7 @@ label hg_wager_bj:
         call play_sound("door")
         call sna_walk("door","mid",2)
         call bld
-        call sna_main(face="snape_01",xpos="base",ypos="base")
+        call sna_main("", face="snape_01",xpos="base",ypos="base")
         call ctc
         call sna_main("I want a rematch!", face="snape_05")
         call u_pause_ani

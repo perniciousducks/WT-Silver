@@ -6,15 +6,14 @@
 # Declare characters used by this game.
 define e = Character('Eileen', color="#c8ffc8")
 
-
+init python:
+    config.after_load_callbacks.append(start_image_crop)
 
 # The game starts here.
-label start:
-    # Show loading screen
-    
+label start:    
     $ init_variables()
     
-    
+    $ start_image_crop()
     #scene black
     jump select_start
 

@@ -48,6 +48,7 @@ label studio:
     
     $ studio_text = False
     $ studio_text_input = "Witch Trainer: Silver"
+    $ studio_text_alpha = 1.0
     $ studio_text_size = 24
     $ studio_text_color = "#FFFFFF"
     $ studio_text_outline = 4
@@ -167,9 +168,15 @@ label studio:
             $ studio_text_outline = 4
             $ studio_text_outline_color = "#000000"
     elif _return[0] == "input":
+        show screen studio
         if _return[1] == "text":
-            show screen studio
             $ studio_text_input = renpy.input("Text", studio_text_input, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#@,.&:;!?-\/* ", length=128)
+        elif _return[1] == "color":
+            $ studio_text_color = color_picker(get_rgb_tuple(studio_text_color), False, "Text Color", pos_xy=[200, 130])
+            $ studio_text_color = get_hex_string(studio_text_color[0]/255.0, studio_text_color[1]/255.0, studio_text_color[2]/255.0, studio_text_color[3]/255.0)
+        else:
+            $ studio_text_outline_color = color_picker(get_rgb_tuple(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
+            $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     elif _return == "Close":
         call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
         
@@ -219,9 +226,13 @@ screen studio:
             frame:
                 style "empty"
                 if studio_text_outline > 0:
-                    text "[studio_text_input]" size studio_text_size color studio_text_color outlines [ (studio_text_outline, studio_text_outline_color, 0, 0) ]
+                    text "[studio_text_input]" size studio_text_size color studio_text_color outlines [ (studio_text_outline, studio_text_outline_color, 0, 0)]:
+                        at transform:
+                            alpha studio_text_alpha
                 else:
-                    text "[studio_text_input]" size studio_text_size color studio_text_color
+                    text "[studio_text_input]" size studio_text_size color studio_text_color:
+                        at transform:
+                            alpha studio_text_alpha
     
     if not studio_hide:
         use character_studio
@@ -362,8 +373,12 @@ screen character_studio:
                         xanchor 0.5
                         xsize 96
                         vbox:
+                            bar value VariableValue("studio_text_alpha", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.01)
                             bar value VariableValue("studio_text_size", 100, max_is_zero=False, style=u'bar', offset=0, step=1)
                             bar value VariableValue("studio_text_outline", 20, max_is_zero=False, style=u'bar', offset=0, step=1)
+                    textbutton "{size=11}{color=#FFF}Color{/color}{/size}" action Return(["input", "color"]) xsize 94 xpos 50 xanchor 0.5
+                    if studio_text_outline > 0:
+                        textbutton "{size=11}{color=#FFF}Outline color{/color}{/size}" action Return(["input", "outline_color"]) xsize 94 xpos 50 xanchor 0.5
                     textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "text"]) xsize 94 xpos 50 xanchor 0.5
     frame:
         ypos 24

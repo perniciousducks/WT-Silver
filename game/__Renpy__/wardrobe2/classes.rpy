@@ -270,18 +270,18 @@ init python:
             if 'body' in args:
                 imagepath = "characters/"+self.char+"/body/"
                 
-                hair = self.get_object(self.body, 'hair')
-                hairshadow = self.get_object(self.body, 'hairshadow')
+                #hair = self.get_object(self.body, 'hair')
+                #hairshadow = self.get_object(self.body, 'hairshadow')
                 armleft = self.get_object(self.body, 'armleft')
                 armright = self.get_object(self.body, 'armright')
                 breasts = self.get_object(self.body, 'breasts')
                 base = self.get_object(self.body, 'base')
                 legs = self.get_object(self.body, 'legs')
                 
-                if hair and symbol not in hair :
-                    self.body['hair'][0] = imagepath+"hair/"+hair+".png"
-                if hairshadow and symbol not in hairshadow :
-                    self.body['hairshadow'][0] = imagepath+"hair/"+hairshadow+".png"
+                #if hair and symbol not in hair :
+                #    self.body['hair'][0] = imagepath+"hair/"+hair+".png"
+                #if hairshadow and symbol not in hairshadow :
+                #    self.body['hairshadow'][0] = imagepath+"hair/"+hairshadow+".png"
                 if armleft and symbol not in armleft:
                     self.body['armleft'][0] = imagepath+"arms/"+armleft+".png"
                 if armright and symbol not in armright:

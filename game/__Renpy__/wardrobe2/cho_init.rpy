@@ -69,8 +69,11 @@ label __init_variables:
             cho_cloth_robequidditch1 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_1", layers=3, color=[[50, 50, 51, 255], [50, 50, 51, 255], color_black])
             cho_cloth_robequidditch2 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_2", layers=2, color=[[50, 50, 51, 255], color_black])
             
+            # Hair
+            cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[55, 64, 93, 255], color_black])
+            
             # Neckwear
-            cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black], unlocked=False)
+            cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
             
             # Stockings
             cho_cloth_lace_stockings_1 = cloth_class(char="cho", category="legs", subcat="stockings", type="stockings", id="lace_stockings_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
@@ -94,13 +97,14 @@ label __init_variables:
             ################
         
             cho_class.body = {
-                        "hair":        ["ponytail_blue_top", 12, 0, 0, False],
-                        "hairshadow":  ["ponytail_blue_base", 11, 0, 0, False],
                         "armleft":     ["arm_down_l", 17, 0, 0, False],
                         "armright":    ["arm_down_r", 1, 0, 0, False],
                         "breasts":     ["breasts_bikini_tan", 3, 0, 0, False],
                         "base":        ["base_01", 2, 0, 0, False],
                         "legs":        [None, 5, 1, 0, False]}
+                        
+            # "hair":        ["ponytail_blue_top", 12, 0, 0, False],
+            # "hairshadow":  ["ponytail_blue_base", 11, 0, 0, False],
                         
             cho_class.face = {
                         "tears":       [None, 11, 0, 0, False],
@@ -119,6 +123,7 @@ label __init_variables:
 
             cho_class.clothing = {
                         "hat":        [None, 24, 0, 0, False],
+                        "hair":       [cho_hair_ponytail, 12, 0, 0, False],
                         "neckwear":   [None, 18, 0, 0, False],
                         "badge":      [None, 22, 0, 0, False],
                         "robe":       [None, 21, 0, 0, False],

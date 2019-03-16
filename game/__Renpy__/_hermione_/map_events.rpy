@@ -866,3 +866,137 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     ">You and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cumshot the whole way..."
 
     return
+
+
+
+
+label hermione_map_sex:
+    #Genie notices hermione walking past the courtyard on the map and has the
+    #option to intercept her option to come behind and scare her or to
+    #approach her normally 
+    #Hermione says that she was coming back late from the library
+    #Standard sex scene with a focus on the fact that they could be caught at any time
+    #Option to humiliate her based on either the shame of doing this in public or to tell her that all her teachers want to fuck her
+    #Cum in her in front of Moaning myrtle
+    #end
+    ">This time, the marauders map leads you to Hermione walking through the halls bordering the courtyard."
+    ">You start to stalk her as a lion would it's prey wondering how to best approach the lithe young girl..."
+    menu:
+        "-Surprise her-":
+            "asd"
+            pass
+        "-Greet her-":
+            "asd"
+            pass
+
+    m "Mmmm, gods your pussy is just the best..."
+    her "A-Ah... thank you..."
+    m "Ugh... so what are you doing out here at this hour anyway?"
+    her "I was - ah {image=textheart} at the library..."
+    m "Mmmm, what were you reading? Dick-sucking 101?"
+    her "Ah...{image=textheart} I'd like to think... ah{image=textheart} that I'm past the 101 stage [genie_name]..."
+    m "True, you could probably write the book!"
+    her "Mmmmm...{image=textheart} I'd probably have to... ah{image=textheart} use a pseudonym..."
+    m "Really? Worried about people finding out what a dirty little cockslut you are?"
+    her "I am not a-"
+    ">You interrupt her ministrations with a forceful thrust deep into her sex."
+    her "{image=textheart}Ah!!!{image=textheart}"
+    m "You were saying?"
+    her "Ah...{image=textheart}fine..."
+    her "have it your way then..."
+    m "I intend to!"
+    m "Besides, if you really were worried about people finding out about you then you probably wouldn't be fucking your headmaster in public!"
+    her "Ah...{image=textheart} that's not- ah...{image=textheart} this isn't my fault...{image=textheart}"
+    m "Really? And just how am I expected to turn up a chance to fuck this tight little cunt!"
+    her "A-Ah... {image=textheart}you're Professor{image=textheart} dumbledore{image=textheart}... you should...{image=textheart}"
+    m "The gods themselves wouldn't miss an opportunity like this..."
+    her "...{image=textheart}"
+    m "I think it's about time you just come to admit what a needy little fuckhole you really are..."
+    her "Ah...{image=textheart}a-all right...{image=textheart}"
+    m "Go on then slut... yell it out!"
+    her "Ah...{image=textheart}I-I can't!{image=textheart} people will hear!"
+    m "Good! A whore like you deserves an audience..."
+    her "{image=textheart}...{image=textheart}"
+    ">Despite feeling her pussy spasm hard around your cock the young girl remains silent..."
+    her "..."
+    her "{size=+5}Ah... fuck me harder!{/size}"
+    m "That's it slut! Louder!"
+    ">Hermione turns her head around, looking you square in the eye with a desperate yet smug look plastered over her face..."
+    her "Make. me."
+    ">Her sultry challenge ignites a flame in your core."
+    g4 "MAKE YOU?"
+    g4 "I'll MAKE YOU SCREAM SO LOUD THE WHOLE SCHOOL WILL HEAR YOU!"
+    ">With that your hips go into overdrive as you plough the ever loving shit out of the poor girl."
+    her "{size=+10}{image=textheart}!!!{image=textheart}{/size}"
+    g4 "Tell me what you are!"
+    her "{size=+10}{image=textheart}A WHORE! [genie_name]'s WHORE!{image=textheart}{/size}"
+    g4 "LOUDER!"
+    her "{size=+10}{image=textheart}I'm A CUMSLUT! I'm a bitch in heat!{image=textheart}{/size}"
+    her "{size=+10}{image=textheart}JUST FUCK ME HARDER!!!{image=textheart}{/size}"
+    g4 "LIKE THIS?"
+    her "{size=+10}{image=textheart}ughhh....{image=textheart}{/size}"
+    her "{size=+10}MORE!{/size}"
+    ">As you and hermione make as much noise as possible through the hallowed hogwarts halls, a soft blue glow begins to appear in front of Hermione."
+    myr "Hello again Hermione..."
+    myr "\"Professor\"..."
+    her "{size=+10}Myrtle!{/size} w-w-what are you doing here?"
+    myr "Well seeing as how I'm usually the only person moaning at this time of night I figured I better come take a look..."
+    myr "But when I heard \"I'm a cumslut\"... I knew it had to be you two..."
+    her "G-go -{image=textheart}ah...{image=textheart}- go away Myrtle!"
+    ">Enjoying feeling Hermione squirm at the mixture of shame and pleasure as you plow into her only spurs you on..."
+    myr "And miss the only exciting thing that happens in this dull school? I think not..."
+    her "Ah...{image=textheart}"
+    myr "Besides... I think you like being watched... Don't you Hermione?"
+    her "Ah...{image=textheart} of course- ugh...{image=textheart} - not..."
+    myr "Really? You mean you don't like me watching you be treated like a filthy little piece of fuckmeat?"
+    her "Ah...{image=textheart}{image=textheart}{image=textheart} no..."
+    myr "I'm not so sure..."
+    myr "What about you then? Do you like being watched..."
+    ">Myrtle throws a knowing grin your way."
+    m "I live for fucking pieces of ass like this!"
+    m "Plus it's not like I have to worry about people watching me..."
+    her "..."
+    myr "You're right... Everyone's going to be far more interested in watching little miss granger be fucked senseless."
+    her "Ah...{image=textheart}"
+    myr "Isn't that right Hermione? I bet you'd love to be fucked within an inch of your life in front of the whole school!"
+    ">Hermione's pussy grips hard onto your cock..."
+    her "{image=textheart}N-no!{image=textheart} Don't s-say things like that!"
+    g4 "Ugh... She's squeezing my cock like a vice!"
+    myr "Did just the thought of that get you all hot an bothered?"
+    her "Ah...{image=textheart}no-{image=textheart}"
+    myr "The thought of being drenched in cum-"
+    her "Ah...{image=textheart}"
+    myr "While dumbledore breeds you like the whore you are..."
+    her "{image=textheart}{image=textheart}{size=+5}Mmmm...{/size}{image=textheart}{image=textheart}"
+    myr "While the school watches on..."
+    her "{image=textheart}{image=textheart}{size=+10}ah...{/size}{image=textheart}{image=textheart}"
+    myr "Along with mummy and daddy..."
+    her "{image=textheart}{image=textheart}{size=+15}!!!{/size}{image=textheart}{image=textheart}"
+    ">It all proves too much for Hermione, causing her hips to buck wildly, desperate for any additional stimulation."
+    g4 "That's it whore! You've done it now!"
+    ">You grab onto Hermione's hips and start pumping for dear life."
+    her "{image=textheart}{image=textheart}{size=+5}No! I just came! {size=+5}STOP!!!{/size}{image=textheart}{image=textheart}"
+    ">The halls resonate with Hermione's incoherrent moans and the forceful slapping of her ass against your hips."
+    g4 "TAKE THIS!!!"
+    ">You dump your load into hermione's limp body as you hold her up."
+    her "ahhh..."
+    g4 "Take this you filthy whore!"
+    ">As you keep pumping more and more cum into hermione's tightness, myrtle watches on with a perverted smile..."
+    her "....."
+    myr "Wow... I thought I was a moaner..."
+    her "......."
+    #FTB
+    ">You let go of hermione, letting her slump to the ground with a squelch, landing in a pool of your combined juices.."
+    #Take Hermione back to her room and leave Myrtle alone to masturbate
+    
+
+
+
+
+
+
+
+
+
+
+

@@ -216,10 +216,74 @@ label astoria_tonks_4:
 
     call nar(">Astoria walks into your office in a new skirt, her eyes nervously looking to the side.")
 
-    m "Welcome back, [astoria_name]. How was--"
+    m "Welcome back, [astoria_name]. I like--"
+    ast "Shut up!"
+    m "..."
+    ast "I don't want to talk about it, OK?"
+    g4 "Talk about what?"
+    ast "..."
+    m "Have a fun time with Tonks?"
+    ast "Do I look like I'm having fun?"
+    m "Mmmm, you look like a lot of fun from where I'm sitting..."
+    ast "Gross Dumby!"
+    m "So, will you going to be wearing that skirt from now on?"
+    ast "I have to, don't I?"
+    m "Or else what?"
+    ast "Or else Tonks will dob us in to the ministry! At least try to keep up, Dumby."
+    m "Mmmm, well things certainly have gotten interesting..."
+    ast "Stop looking at me like that! You've got the same look in your eye as she did!"
+    m "Ready for your next lesson then?"
+    ast "..."
+    ast "Do I have to sit on your lap again?"
+    m "I don't know how else you expect to read the book..."
+    ast "..."
+    ast "You're almost as sick as she is..."
+
+
 
 #Tonks spanks Astoria for sending Susan home covered in cum
 label astoria_tonks_5:
+    call play_sound("door")
+    call ast_main("","upset","closed","base","mid",xpos="right",ypos="base")
+    pause.5
+
+    call nar(">Astoria walks into your office in a new skirt, her face a mess from crying...")
+
+    ast "I want you to fire Tonks!"
+    m "What-"
+    ast "FIRE HER!!!"
+    m "I'm not sure I can do that... don't forget about Azkaban."
+    ast "She's the one that deserves to be locked away! She's an evil, old witch!"
+    m "At least tell me what's going on."
+    ast "She spanked me! Like I'm some sort of child!"
+    m "..."
+    ast "It's not fair! She's crazy!"
+    m "She spanked you?"
+    ast "Really hard!"
+    ast "I was even crying and telling her to stop but she kept going!"
+    ast "It was horrible! No one can do that to me!"
+    m "Why did she spank you?"
+    ast "For nothing! She just said that I deserved it! AS IF!"
+    m "It didn't have anything to do with Susan?"
+    ast "..."
+    m "Astoria..."
+    ast "She might have mentioned it... But that still doesn't make it OK!"
+    ast "All I did was tell Susan to walk home!"
+    ast "Why is it my fault if she walked through the great hall covered in {b}your{/b} cum?"
+    ast "I never told her to do that!"
+    m "..."
+    ast "Besides, it's not like there was anyone who didn't think she was a slut anyways..."
+    m "..."
+    ast "Well... Say something! When are you going to fire that old hag?"
+    m "Unless you think Azkaban is better than a spanking, I think we should keep miss Tonks around."
+    ast "*Pffft* I knew you'd be useless!"
+    m "We could slow down with the spells until she cools off, if you think that would help."
+    ast "And just let her get away with this?"
+    ast "No... I'm just going to have to get back at her through Susan!"
+    m "Susan?"
+    ast "Of course! If she wasn't such a cow none of this would have happened."
+    ">With that, Astoria hops up onto your lap in her tiny skirt, giving you a dangerous look at the witches' thighs."
+    ast "Now, hurry up, Dumby! I'll never get my revenge at your reading pace!"
 
 #Tonks spends the whole time rubbing Astoria's butt
 label astoria_tonks_6:

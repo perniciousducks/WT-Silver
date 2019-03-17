@@ -16,6 +16,7 @@ init python:
         ## Setup Deck ##
         player_deck = []
         for card in duel_player_deck:
+            card.playercard = True
             player_deck.append(card.clone())
             
         enemy_deck = []
@@ -192,7 +193,10 @@ init python:
             rules_list.append(card_rule_reverse)
         if rules[3]:
             rules_list.append(card_rule_double)
-        if not player_deck == playerdeck:
+        is_random_deck = True
+        for x in xrange(0, len(player_deck)):
+            is_random_deck =  is_random_deck and (player_deck[x].title is playerdeck[x].title)
+        if not is_random_deck:
             rules_list.append(card_rule_random)
         return rules_list
        

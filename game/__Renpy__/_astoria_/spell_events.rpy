@@ -1513,6 +1513,12 @@ label orgasmio_spell_2: #second level orgasmio spell
 label orgasmio_spell_3: #third level orgasmio spell
     #Extreme orgasm, Astoria casts the spell multiple times
 
+label tentacle_spell_1: #first level tentacle spell
+    #Mild tentacle orgasm for susan and mild intercrural sex between genie and ast
+label tentacle_spell_2: #second level tentacle spell
+    #Extreme tentacle orgasm for susan and borderline sex between genie and ast
+label tentacle_spell_3: #third level tentacle spell
+    #Extreme tentacles and hornify for Susan, Astoria cums on genie's dick rubbing against her pussy
 
 label hermione_spell: #Branching path event based on Astoria and Genie casting spells on Hermione.
     m "Ready to practice some more spells?"

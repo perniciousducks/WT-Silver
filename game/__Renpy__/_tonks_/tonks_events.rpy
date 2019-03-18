@@ -91,7 +91,7 @@ label new_tonks_intro:
     m "Hold on a second... Aren't you here to investigate the school? Why are you suddenly asking for a job?"
     ton "Well, I've only just started this job but my new title is technically \"Auror in charge of Hogwarts protection and oversight\"..."
     ton "So I think I'm allowed to stay on as a teacher while I work. At least that's how Mad Eye Moody did it when he was overseeing the goblet of fire."
-    ton "Or was that the death-eater, Barty Crouch in disguise?..."
+    ton "Or was that the death-eater, Barty Crouch Jr in disguise?..."
     ton "Either way, there's a precedent for it."
     m "(I have no idea who or what she was just talking about.)"
     ton "Or, I could just bring this whole thing to the attention of the ministry and let them deal with it."
@@ -102,4 +102,108 @@ label new_tonks_intro:
     m "Of course, I was just unsure of your title these days..."
     ton "(Title?)"
     m "You can take whatever position is vacant."
+    #Have her become a teacher, send Hermione off and discuss how she's going to start seducing her students with Dumbledore
+
+
+
+
     
+#Tonks teacher favours
+
+#How these favours will be structured/work very similarly to the public favours for Hermione where you send Tonks off to fool around with a student(s) and then wait 
+#for her to return to tell you what happened
+#Each scene will be pretty short but there will be 6 variants for each (2 favours for each of three levels where the levels are determined by Tonk's sluttiness)
+
+#Favour 1 - Show it to me (Tonks gets a student to show her his dick)
+label tonks_teacher_event_1_intro:
+    ton "So, what's the plan?"
+    m "The plan?"
+    ton "You know, how does this go down?"
+    ton "I'm hardly a regular when it comes to this stuff." 
+    m "Let's start small. We'll need to build up a bit of a reputation for you before you start trying anything crazy."
+    ton "A reputation?"
+    ton "Think I'll get a nickname? Maybe they'll call me touchy tonks?"
+    m "Maybe..."
+    ton "So what did you buy off of Hermione on your first favour?"
+    m "Ugh... I think I got her to make a silly face or something..."
+    m "That and getting her to talk to me."
+    ton "Talk to you? You paid her for that? You can get that for free!"
+    m "In that case, the first \"real\" favour I bought was getting her to lift her skirt."
+    ton "That's more like it!"
+    ton "But even though we're in Scotland-"
+    m "(we are?)"
+    ton "None of the boys are wearing skirts..."
+    m "Just get them to show you their dicks then."
+    ton "Show me their dicks... That's good... {p}Can I touch them?"
+    m "Let's just look for now..."
+    ton "Fine... So how many am I allowed to look at?"
+    m "As many as you want..."
+    ton "And how many points am I allowed to give out?"
+    m "Look, I'm not really convinced these points are real..."
+    ton "(what? Can't he see the scoreboard at the top of the screen?)"
+    m "I just say \"Ten points to gryffindor!\" to get these girls to show me their tits..."
+    $ gryffindor += 10
+    m "So as far as I'm concerned, hand out as many as you like."
+    ton "Alright... Well, I better get to class. I've got some boys to {b}teach{/b}..."
+    m "Don't forget to come back here after classes to fill me in."
+    ton "Will do..."
+    #send tonks off
+    return
+
+label tonks_teacher_event_1_repeat: #Repeatable intro
+    m "Ready to help the boys earn some points?"
+    ton "You mean am I ready to see some dick?"
+    m "Is there a difference?"
+    ton "There should be."
+    ton "Lucky for you, I'm happy to do both."
+    m "See you after classes then."
+    ton "Mhmmm... Don't worry if I'm a little late though..."
+    ">With that, Tonks strolls out of your office with a hungry look in her eyes..."
+    return
+
+label tonks_teacher_event_1_1: #Level 1 Event 1
+    m "How were your classes today?"
+    ton "Mmmm... Long and hard... Just how I like them..."
+    m "I take it were able to steal a few glances?"
+    ton "Mmmm, it was even better than I thought it'd be!"
+    ton "Who knew they'd be so nervous!"
+    m "What happened?"
+    ton "Well, I figured I'd have to be alone with a student to manage to convince them to whip it out..."
+    ton "So I gave the cutest little thing I could find detention..."
+    ton "Poor boy, I'm not sure he'd ever even been in trouble before."
+    ton "So when the bell rang and he had to stay behind he started immediately babbling about how sorry he was for speaking in class and how he'd never do it again..."
+    ton "Ugh... I had to hold myself back from jumping him right then and there..."
+    ton "Anyway, I eventually managed to calm him down and tell him it'll be alright..."
+    ton "I even let him know that if he was a good boy he could earn some points for his house."
+    m "Did he like the sound of that?"
+    ton "You should have seen his eyes light up! He thought it was Christmas!"
+    ton "After that it was childs play..."
+    ton "Not that he looked like a kid... Mmmm, I even had him play with himself for a little bit..."
+    ton "Ugh... Fuck he looked tasty..."
+    m "Ahem... So did you pay him his points or just tease him?"
+    ton "Don't worry, I made sure he was paid."
+    m "And did he look like the kind to talk?"
+    ton "Probably not..."
+    m "Well try and get a talker next time. We're trying to build your reputation, remember?"
+    ton "I'll try..."
+    ton "(Although I might have to play with this one a few more times...)"
+    m "That will be all for now, [tonks_name]."
+    ton "Thanks, Dumbledore."
+    ">With that, Tonks strolls off into the hall."
+    return
+
+
+#Favour 2 - Touch me (Tonks gets a student to play with her tits)
+label tonks_teacher_event_2: 
+
+#Favour 3 - Let me touch it (Tonks jerks off a student)
+label tonks_teacher_event_3: 
+
+#Favour 4 - Let me suck it (Tonks sucks off a student)
+label tonks_teacher_event_4: 
+
+#Favour 5 - Eat me out (Tonks gets a student to eat her out)
+label tonks_teacher_event_5: 
+
+#Favour 6 - Fuck me (Tonks fucks a student)
+label tonks_teacher_event_6: 

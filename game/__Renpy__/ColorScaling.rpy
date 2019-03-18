@@ -71,6 +71,15 @@ init python:
     import _renpy
     
     color_preview = None
+    whitespace_dict = {}
+    with renpy.file("BakedWhiteSpaceInfo.whitespace") as fp: 
+        line = fp.readline()
+
+        while line:
+            whitespace_dict[line.split(':')[0]] = line.split(':')[1].split(',')
+            line = fp.readline()
+
+    
     
     def paletteTint(image, palette_color):
         image = im.MatrixColor( image, im.matrix.tint((palette_color[0]/255.0), (palette_color[1]/255.0), (palette_color[2]/255.0)))
@@ -587,10 +596,7 @@ init python:
 
         def predict_files(self):
             return self.image.predict_files()
-    
-    all_threads_done = False
-    threads_task_count = 0
-    
+      
     def crop_blank(images, thread_class, image_index):
         image = Image(images[image_index])
         surf = image.load()
@@ -641,6 +647,13 @@ init python:
             self.images = images
             self.colorlist = colorlist
             self.image_index = image_index
+            if images[image_index] in whitespace_dict:
+                self.width = whitespace_dict[images[image_index]][2]
+                self.height = whitespace_dict[images[image_index]][3]
+                self.posx = whitespace_dict[images[image_index]][0]
+                self.posy = whitespace_dict[images[image_index]][1]
+                self.thread_done = True
+                
             
         def get_matrixcolor(self, layer):
             return im.matrix.tint(float(self.colorlist[layer][0])/255.0, float(self.colorlist[layer][1])/255.0, float(self.colorlist[layer][2])/255.0)

@@ -192,6 +192,41 @@ label tonks_teacher_event_1_1: #Level 1 Event 1
     ">With that, Tonks strolls off into the hall."
     return
 
+label tonks_teacher_event_1_2: #Level 1 Event 2
+    m "How'd it go?"
+    ton "Great! I even managed to convince two boys to show me their dicks at the same time!"
+    m "Really? Two at once?"
+    ton "Yep. To be honest, they probably would have done it for free."
+    ton "Not that they turned down the offer of points though..."
+    m "Care to elaborate?"
+    ton "Alright then you old perv..."
+    ton "Normally I'd just keep the cutest thing that takes my eye back after class for a little one-on-one time..."
+    ton "But I actually had to punish these two idiots for real."
+    m "What did they do?"
+    ton "Ugh... they wouldn't shut up, they kept trying to lift girls skirts with wingardium leviosa..."
+    ton "They reminded me of my younger self... Which means they were going to far."
+    ton "So I kept them after class, gave them the whole lecture about responsibility and respect..."
+    m "..."
+    ton "Then I told them I'd pay them both ten points to show me their cocks..."
+    m "Just like that?"
+    ton "Well, there's a lot more subtlety to it in practice..."
+    ton "Not that I think I would have needed given how keen they were."
+    ton "I think the poor buggers actually thought I was going to jerk them both off..."
+    ton "Still, I think they had a fun time."
+    m "Any chance they'll tell their friends about it?"
+    ton "Are you kidding me? The gryffindor common room is probably a buzz already!"
+    ton "It wouldn't surprise me if I start getting asked to give boys detention."
+    m "Good work."
+    ton "Thank you, Dumbledore. That means a lot coming from you."
+    m "Even if it is encouragement for seducing your students?"
+    ton "Even then."
+    ton "Well, I better get back to work, these halls aren't safe unless there's a teacher on patrol."
+    m "(I'm not sure they're safe with her on patrol...)"
+    return 
+
+label tonks_teacher_event_1_3: #Level 2 Event 1
+    
+
 
 #Favour 2 - Touch me (Tonks gets a student to play with her tits)
 label tonks_teacher_event_2: 

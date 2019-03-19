@@ -3,7 +3,7 @@ init python:
         drags[0].snap(540, 300)
         return
 
-label studio:
+label studio(studio_return, studio_char):
     hide screen cho_chang
     
     $ studio_eyebrows_list = ["base", "raised", "angry", "sad"]
@@ -178,7 +178,8 @@ label studio:
             $ studio_text_outline_color = color_picker(get_rgb_tuple(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     elif _return == "Close":
-        call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
+        call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
+        call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
         
     jump studio_after_init
 

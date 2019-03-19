@@ -637,21 +637,23 @@ init python:
         posx = 0
         posy = 0
         images = []
+        layercount = 0
         colorlist = []
         cached = False
         thread_done = False
         new_composite= None
         image_index = None
         
-        def __init__(self, images, colorlist, image_index):
+        def __init__(self, images, colorlist, image_index, layercount):
             self.images = images
             self.colorlist = colorlist
             self.image_index = image_index
+            self.layercount = layercount
             if images[image_index] in whitespace_dict:
-                self.width = whitespace_dict[images[image_index]][2]
-                self.height = whitespace_dict[images[image_index]][3]
-                self.posx = whitespace_dict[images[image_index]][0]
-                self.posy = whitespace_dict[images[image_index]][1]
+                self.width = int(whitespace_dict[images[image_index]][2])
+                self.height = int(whitespace_dict[images[image_index]][3])
+                self.posx = int(whitespace_dict[images[image_index]][0])
+                self.posy = int(whitespace_dict[images[image_index]][1])
                 self.thread_done = True
                 
             
@@ -668,8 +670,13 @@ init python:
                 self.cached = True
                 image = Composite((self.width+18, self.height+18), (-self.posx-9,-self.posy-9), im.MatrixColor(self.images[0], self.get_matrixcolor(0)))
                 if len(self.images) > 0:
-                    for i in xrange(1, len(self.images)):
+                    for i in xrange(1, self.layercount):
                         image = Composite((self.width+18, self.height+18), (0,0), image, (-self.posx-9,-self.posy-9), im.MatrixColor(self.images[i], self.get_matrixcolor(i)))
+                    image = Composite(
+                            (self.width+18, self.height+18), 
+                            (0,0), image, 
+                            (-self.posx-9,-self.posy-9), self.images[self.layercount],
+                            (-self.posx-9,-self.posy-9), self.images[self.layercount+1])
                 self.new_composite = image
             
                 return self.new_composite

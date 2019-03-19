@@ -21,8 +21,8 @@ label __init_variables:
             cho_cloth_topschool1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_1", layers=5, color=[[183, 183, 184, 255], [124, 120, 136, 255], [216, 163, 10, 255], [89, 116, 194, 255], color_black])
             cho_cloth_topschool2 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_2", layers=5, color=[[183, 183, 184, 255], [124, 120, 136, 255], [216, 163, 10, 255], [89, 116, 194, 255], color_black])
             cho_cloth_topschool3 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_3", layers=4, color=[[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255], color_black])
-            cho_cloth_topschool4 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_4", layers=2, color=[[183, 183, 184, 255], color_black])
-            cho_cloth_topschool5 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_5", layers=2, color=[[183, 183, 184, 255], color_black])
+            cho_cloth_topschool4 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_4", layers=5, color=[[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255], color_black])
+            cho_cloth_topschool5 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_5", layers=4, color=[[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255], color_black])
             cho_cloth_topshirt1 = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_shirt_1", layers=2, color=[[255, 229, 126, 255], color_black])
             cho_cloth_topsailor1 = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_sailor_1", layers=3, color=[[252, 252, 253, 255], [89, 116, 194, 255], color_black])
             cho_cloth_topsweater1 = cloth_class(char="cho", category="tops", subcat="quidditch", type="top", id="top_sweater_1", layers=3, color=[[20, 29, 83, 255], [213, 161, 13, 255], color_black])
@@ -31,13 +31,10 @@ label __init_variables:
             cho_cloth_toptanktop2 = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_tanktop_2", layers=3, color=[[252, 192, 213, 255], [253, 221, 232, 255], color_black])
 
             # Bottoms
-            # first skirt missing
-            #
-            #
-            #
-            cho_cloth_schoolskirt2 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_2", layers=2, color=[[82, 69, 87, 255], color_black])
-            cho_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_3", layers=2, color=[[82, 69, 87, 255], color_black])
-            cho_cloth_schoolskirt4 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_4", layers=2, color=[[82, 69, 87, 255], color_black])
+            cho_cloth_schoolskirt1 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_1", layers=5, color=[[86, 74, 91, 255], [98, 87, 103, 255], [109, 98, 115, 255], [232, 177, 13, 255], color_black])
+            cho_cloth_schoolskirt2 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_2", layers=5, color=[[86, 74, 91, 255], [98, 87, 103, 255], [109, 98, 115, 255], [232, 177, 13, 255], color_black])
+            cho_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_3", layers=5, color=[[86, 74, 91, 255], [98, 87, 103, 255], [109, 98, 115, 255], [232, 177, 13, 255], color_black])
+            cho_cloth_schoolskirt4 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_4", layers=5, color=[[86, 74, 91, 255], [98, 87, 103, 255], [109, 98, 115, 255], [232, 177, 13, 255], color_black])
             cho_cloth_pantslong1 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_long_1", layers=2, color=[[230, 230, 231, 255], color_black])
             cho_cloth_pantsshort1 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_1", layers=2, color=[[230, 230, 231, 255], color_black])
             cho_cloth_pantsshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_2", layers=3, color=[[114, 168, 210, 255], [141, 189, 219, 255], color_black])
@@ -70,13 +67,14 @@ label __init_variables:
             cho_cloth_robequidditch2 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_2", layers=2, color=[[50, 50, 51, 255], color_black])
             
             # Hair
-            cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[55, 64, 93, 255], color_black])
+            cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=4, color=[[43, 42, 51, 255], [54, 62, 95, 255], [80, 102, 164, 255], color_black])
             
             # Neckwear
             cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
             
             # Stockings
             cho_cloth_lace_stockings_1 = cloth_class(char="cho", category="legs", subcat="stockings", type="stockings", id="lace_stockings_1", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
+            cho_cloth_fishnet_stockings_1 = cloth_class(char="cho", category="legs", subcat="stockings", type="stockings", id="fishnet", layers=4, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
             # Garterbelts
             cho_cloth_lacegarter1 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garterbelt", id="lace_garter_1", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
             cho_cloth_lacegarter2 = cloth_class(char="cho", category="legs", subcat="garterbelts", type="garterbelt", id="lace_garter_2", layers=5, color=[[50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], [50, 50, 51, 255], color_black])
@@ -131,7 +129,7 @@ label __init_variables:
                         "top":        [cho_cloth_topschool1, 19, 0, 0, False],
                         "bra":        [cho_cloth_basicbra1, 18, 0, 0, False],
                         "belt":       [None, 17, 0, 0, False],
-                        "bottom":     [cho_cloth_schoolskirt2, 16, 0, 0, False],
+                        "bottom":     [cho_cloth_schoolskirt1, 16, 0, 0, False],
                         "garterbelt": [None, 15, 0, 0, False],
                         "panties":    [cho_cloth_basicpanties1, 14, 0, 0, False],
                         "stockings":  [None, 13, 0, 0, False],

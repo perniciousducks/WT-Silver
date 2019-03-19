@@ -648,10 +648,10 @@ init python:
             self.colorlist = colorlist
             self.image_index = image_index
             if images[image_index] in whitespace_dict:
-                self.width = whitespace_dict[images[image_index]][2]
-                self.height = whitespace_dict[images[image_index]][3]
-                self.posx = whitespace_dict[images[image_index]][0]
-                self.posy = whitespace_dict[images[image_index]][1]
+                self.width = int(whitespace_dict[images[image_index]][2])
+                self.height = int(whitespace_dict[images[image_index]][3])
+                self.posx = int(whitespace_dict[images[image_index]][0])
+                self.posy = int(whitespace_dict[images[image_index]][1])
                 self.thread_done = True
                 
             

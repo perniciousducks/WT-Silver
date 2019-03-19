@@ -201,9 +201,34 @@ init python:
                 self.color[i] = self.color_default[i]
             self.sprite_ico.cached = False
             self.cached = False
-
+            
+        # Find a way to optimize this part
+        #
+        # Maybe check the imagepath during init and store it in a list?
+        #
+        # Bugs: set_color doesn't work with static layers, disable coloring for static layers
+        
         def get_imagelayer(self, layer):
-            return self.imagepath+self.id+"/"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
+            image = self.imagepath+self.id+"/"+str(layer)+".png"
+            imagepose = self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
+            if self.pose == "":
+                if renpy.loadable(image):
+                    return self.imagepath+self.id+"/"+str(layer)+".png"
+            else:
+                if renpy.loadable(imagepose):
+                    return self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
+            return self.imagepath+self.id+"/!"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/!"+self.pose+"_"+str(layer)+".png"
+
+        def get_imagelayer_color(self, layer):
+            imagepath = self.get_imagelayer(layer)
+            if '!' in imagepath:
+                return imagepath
+            return im.MatrixColor(imagepath, self.get_matrixcolor(layer))
+            
+        #
+        #
+        #
+        #
                     
         def get_image(self, skingray=False):
             self.sprite = Image(self.skinlayer)
@@ -219,7 +244,7 @@ init python:
                 self.sprite = Composite(
                        (1010, 1200),
                        (0,0), self.sprite,
-                       (0,0), im.MatrixColor(str(self.get_imagelayer(i)), self.get_matrixcolor(i)))
+                       (0,0), self.get_imagelayer_color(i))
             return self.sprite
             
         def get_icon(self):

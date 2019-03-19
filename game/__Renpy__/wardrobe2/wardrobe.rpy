@@ -26,6 +26,7 @@ label t_wardrobe(return_label, char_label):
             value = char_active.clothing[list_keys[i]][1]
             character_clothing.append([list_keys[i], value])
         character_clothing = sorted(character_clothing, key=lambda x: x[1], reverse=True)
+        character_clothing.pop(12)
     
     if wardrobe_music_active:
         call play_music("my_immortal")
@@ -95,7 +96,8 @@ label t_wardrobe(return_label, char_label):
                 $ menu_items = char_active.outfits
                 $ menu_items_length = len(menu_items)
             elif current_category == "gifts":
-                jump studio
+                #jump studio
+                call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
             else:
                 if current_category == "underwear":
                     $ char_active.strip("top")
@@ -239,7 +241,7 @@ screen t_wardrobe_menuitem(xx, yy):
                 ypos 40
                 spacing 4
                 
-                for i in xrange(0, current_item.layers-1):
+                for i in xrange(0, current_item.layers):
                     button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i])
                 textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset")
             

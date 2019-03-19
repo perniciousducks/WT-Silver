@@ -92,6 +92,8 @@ init python:
         color = []
         color_default = []
         skinlayer = "characters/dummy.png"
+        extralayer = "characters/dummy.png"
+        outline = None
         unlocked = True
         cloned = False
         cached = False
@@ -134,7 +136,7 @@ init python:
             for i in xrange(0, len(self.color)):
                 self.color_default.append(self.color[i])
                 
-            if self.layers > len(self.color):
+            if self.layers != len(self.color):
                 raise Exception('Clothing: "color" list does not match the number of layers in cloth_class.')
             
             # Check if clothing folder is a category, subcategory or a type
@@ -144,9 +146,17 @@ init python:
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.subcat+"/"
             else:
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"
-  
+            
+            # Check if skin layer exists
             if renpy.exists(self.imagepath+self.id+"/skin.png"):
                 self.skinlayer = self.imagepath+self.id+"/skin.png"
+            
+            # Check if extra layer exists
+            if renpy.exists(self.imagepath+self.id+"/extra.png"):
+                self.extralayer = self.imagepath+self.id+"/extra.png"
+            
+            # Set outline layer path
+            self.outline = self.imagepath+self.id+"/outline.png"
                 
             # Add cloth object to respective character, category and sub-category in dictionary keylist
             if not self.cloned and self.unlocked:
@@ -157,8 +167,10 @@ init python:
             layers = []
             for i in xrange(0, self.layers):
                 layers.append(self.get_imagelayer(i))
+            layers.append(self.extralayer)
+            layers.append(self.outline)
                 
-            self.sprite_ico = lazyload(layers, self.color, 0)
+            self.sprite_ico = lazyload(layers, self.color, self.layers+1, self.layers)
                 
         def unlock(self, bool):
             if not self.unlocked:
@@ -209,26 +221,10 @@ init python:
         # Bugs: set_color doesn't work with static layers, disable coloring for static layers
         
         def get_imagelayer(self, layer):
-            image = self.imagepath+self.id+"/"+str(layer)+".png"
-            imagepose = self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
-            if self.pose == "":
-                if renpy.loadable(image):
-                    return self.imagepath+self.id+"/"+str(layer)+".png"
-            else:
-                if renpy.loadable(imagepose):
-                    return self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
-            return self.imagepath+self.id+"/!"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/!"+self.pose+"_"+str(layer)+".png"
+            return self.imagepath+self.id+"/"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
 
         def get_imagelayer_color(self, layer):
-            imagepath = self.get_imagelayer(layer)
-            if '!' in imagepath:
-                return imagepath
-            return im.MatrixColor(imagepath, self.get_matrixcolor(layer))
-            
-        #
-        #
-        #
-        #
+            return im.MatrixColor(self.get_imagelayer(layer), self.get_matrixcolor(layer))
                     
         def get_image(self, skingray=False):
             self.sprite = Image(self.skinlayer)
@@ -245,6 +241,12 @@ init python:
                        (1010, 1200),
                        (0,0), self.sprite,
                        (0,0), self.get_imagelayer_color(i))
+                       
+            self.sprite = Composite(
+                    (1010, 1200),
+                    (0,0), self.sprite,
+                    (0,0), self.extralayer,
+                    (0,0), self.outline)
             return self.sprite
             
         def get_icon(self):
@@ -399,7 +401,7 @@ init python:
                     self.clothing[object.group[i].type][0] = object.group[i]
                     self.clothing[object.group[i].type][4] = False
             else:
-                if self.clothing[object.type][0] == object:
+                if self.clothing[object.type][0] == object and object.type != "hair":
                     self.clothing[object.type][0] = None
                 else:
                     self.clothing[object.type][0] = object
@@ -409,7 +411,8 @@ init python:
         def unequip(self, *args):
             if 'all' in args:
                 for key in self.clothing:
-                    self.clothing[key][0] = None
+                    if not key == "hair":
+                        self.clothing[key][0] = None
             else:
                 for arg in args.iteritems():
                     try:

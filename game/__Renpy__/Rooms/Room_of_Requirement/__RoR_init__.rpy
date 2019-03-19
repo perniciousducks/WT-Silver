@@ -99,7 +99,28 @@ label __init_variables:
                 ach_desc = "",
                 content_characters = []
             )
-
+    if not hasattr(renpy.store,'mr_ev_PR'):
+        $ mr_ev_PR = mirror_stories(
+                name = "Panty Raid",
+                story_description = "Genie asks Hermione to go out and collect other girls panties",
+                start_label = "panty_raid_event",
+                authors = ["WaxerRed"],
+                categories= [],
+                ach_desc = "",
+                content_characters = ["hermione"]
+            )
+    
+    if not hasattr(renpy.store,'mr_ev_CM'):
+        $ mr_ev_CM = mirror_stories(
+                name = "Class Masturbation",
+                story_description = "Genie asks Hermione to go out and masturbate in her classes",
+                start_label = "class_masturbation_event",
+                authors = ["WaxerRed"],
+                categories= [],
+                ach_desc = "",
+                content_characters = ["hermione"]
+            )
+    
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_PaH)
     $ mr_evs_list.append(mr_ev_AXmasTale)
@@ -109,6 +130,8 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_ASOC)
     $ mr_evs_list.append(mr_ev_ABAS)
     $ mr_evs_list.append(mr_ev_ADR)
+    $ mr_evs_list.append(mr_ev_PR)
+    $ mr_evs_list.append(mr_ev_CM)
 
     $current_page = 0
 

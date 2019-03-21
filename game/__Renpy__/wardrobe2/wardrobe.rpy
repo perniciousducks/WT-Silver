@@ -16,7 +16,7 @@ label t_wardrobe(return_label, char_label):
     $ current_category = ""
     $ current_subcategory = ""
     $ current_item = None
-    $ wardrobe_categories_sorted = ["head", "tops", "bottoms", "legs", "misc", "underwear", "outfits", "gifts"]
+    $ wardrobe_categories_sorted = ["head", "tops", "bottoms", "legs", "misc", "underwear", "outfits", "studio"]
     $ wardrobe_categories = char_active.clothing_dictlist
     
     python:
@@ -46,6 +46,8 @@ label t_wardrobe(return_label, char_label):
     hide screen t_wardrobe_menu
     hide screen t_wardrobe_menuitem
     hide screen t_wardrobe_outfit_menuitem
+    
+    $ ui_hint = ""
     
     if _return[0] == "equip":
         $ renpy.play('sounds/equip.ogg')
@@ -79,6 +81,7 @@ label t_wardrobe(return_label, char_label):
     elif _return == "dec":
         $ current_page += -1
     elif _return[0] == "category":
+        $ current_page = 0
         if current_category == _return[1]:
             $ renpy.play('sounds/door2.mp3')
             $ current_category = ""
@@ -95,8 +98,7 @@ label t_wardrobe(return_label, char_label):
                 $ char_active.wear("all")
                 $ menu_items = char_active.outfits
                 $ menu_items_length = len(menu_items)
-            elif current_category == "gifts":
-                #jump studio
+            elif current_category == "studio":
                 call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
             else:
                 if current_category == "underwear":
@@ -122,6 +124,7 @@ label t_wardrobe(return_label, char_label):
             $ renpy.play('sounds/scroll.mp3')
             $ current_subcategory = _return[1]
             if current_category != "outfits":
+                $ current_page = 0
                 $ menu_items = category_items[current_subcategory]
                 $ menu_items_length = len(menu_items)
                 # Default selected item
@@ -164,31 +167,41 @@ screen t_wardrobe_menu(xx, yy):
         ysize 548
         style "empty"
         
-        frame xsize 340 ysize 548 xpos 100 style "empty" background bg_color_wardrobe
-        
-        add "interface/wardrobe/test/"+str(interface_color)+"/icons_"+char_active.char+"_"+current_category+".png" xpos 13 ypos 80 zoom 0.5
-
-        add "interface/panels/"+interface_color+"/wardrobe_panel.png"
-            
         for i in xrange(0, len(wardrobe_categories_sorted)):
             $ cat_row = (i // 4) % 2
             $ cat_col = i % 4
             if current_category == wardrobe_categories_sorted[i]:
-                button xpos 14+425*cat_row ypos 80+110*cat_col xsize 90 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+                add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/test/"+char_active.char+"_"+wardrobe_categories_sorted[i]+".png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
+                button xpos 14+411*cat_row ypos 80+110*cat_col xsize 90 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
             else:
-                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 98 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+                add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/test/"+char_active.char+"_"+wardrobe_categories_sorted[i]+".png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]]) hovered SetVariable("ui_hint", wardrobe_categories_sorted[i]) unhovered SetVariable("ui_hint", "")
+        
+        frame xsize 340 ysize 548 xpos 100 style "empty" background bg_color_wardrobe
+        
+        #add "interface/wardrobe/test/"+str(interface_color)+"/icons_"+char_active.char+"_"+current_category+".png" xpos 13 ypos 80 zoom 0.5
 
-        vbox:
+        add "interface/panels/"+interface_color+"/wardrobe_panel.png"
+
+        hbox:
             xpos 120
             ypos 60
-            spacing 5
-            textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music")
-            textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color")
+            spacing 158
             vbox:
-                ypos 60
+                spacing 2
                 for i in xrange (0, len(character_clothing)):
                     $ curr_item = character_clothing[i][0]
                     textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, curr_item)
+            vbox:
+                ypos 416
+                textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music")
+                textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color")
+                
+        # Tooltip
+        if persistent.ui_hint:
+            text "[ui_hint]" xalign 0.5 ypos 33
             
         #Erogenous zones
         vbox:
@@ -273,6 +286,24 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
     tag wardrobe_menuitem
     zorder 4
     
+    if menu_items_length > 9:
+        # Up Button
+        if not current_page <= 0:
+            imagebutton:
+                xpos xx+480
+                ypos yy+190
+                idle "interface/general/"+interface_color+"/button_arrow_up.png"
+                hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+                action Return("dec")
+        if current_page < math.ceil((menu_items_length)/10):
+            # Down Button
+            imagebutton:
+                xpos xx+480
+                ypos yy+245
+                idle "interface/general/"+interface_color+"/button_arrow_down.png"
+                hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+                action Return("inc")
+    
     frame:
         xpos xx
         ypos yy
@@ -285,6 +316,15 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
+        # Page counter
+        if menu_items_length > 9:
+            hbox:
+                xanchor 1.0
+                xpos 270
+                spacing 5
+                add "interface/page.png" yanchor 0.5 ypos 53
+                text str(current_page+1)+"/"+str(int(math.ceil((menu_items_length)/10))+1) ypos 44 size 16
+        
         # Add subcategory list
         for i in xrange (0, len(category_items)):
             add "interface/wardrobe/test/icons/"+current_category+"_"+category_items[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
@@ -293,17 +333,18 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
         # Add items
         for i in xrange(current_page*10, (current_page*10)+10):
             if i < menu_items_length:
-                $ row = (i // 5) % 4
+                $ row = (i // 5) % 2
                 $ col = i % 5
                 add menu_items[i].get_image() xpos 40+90*col ypos 117+180*row xalign 0.5 zoom 0.2
                 if current_subcategory == "Delete":
-                    textbutton "{color=#FFFFFF}{size=50}-{/size}{/color}" style "empty" hover_background "#cc330040" xsize 90 ysize 180 xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.5 action Return(["deloutfit", i])
+                    button xsize 90 ysize 180 style "empty" hover_background "#cc330040" xpos 10+90*col ypos 176+180*row action Return(["deloutfit", i])
+                    #textbutton "{color=#B33A3A}{size=50}-{/size}{/color}" style "empty" hover_background "#cc330040" xsize 90 ysize 180 xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.5 action Return(["deloutfit", i]) text_outlines [ (4, "#000", 0, 0) ]
                 elif current_subcategory == "Load":
                     button xsize 90 ysize 180 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row action Return(["equip", menu_items[i]])
                     
         # Add empty items
-        for i in xrange(menu_items_length, 10):
-            $ row = (i // 5) % 4
+        for i in xrange(menu_items_length, (current_page*10)+10):
+            $ row = (i // 5) % 2
             $ col = i % 5
             if current_subcategory == "Save":
                 textbutton "{color=#FFFFFF}{size=50}+{/size}{/color}" style "empty" background "#00000033" hover_background btn_hover xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row text_xalign 0.5 text_yalign 0.5 action Return("addoutfit")

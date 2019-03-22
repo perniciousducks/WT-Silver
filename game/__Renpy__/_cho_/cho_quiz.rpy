@@ -112,8 +112,12 @@ label cho_quiz_1:
             $ renpy.sound.play( "sounds/hmm3.mp3")
             call cho_main("Hmm, well that’s the same as in Quidditch I suppose...", "smile", "suspicious", "base", "L")
             g9 "Naturally..."
-            
+    pause
     $ _preferences.volumes['music'] = volume
+    if daytime:
+        call play_music("day_theme")
+    else:
+        call play_music("night_theme")
     if raining:
         $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
     if blizzard:
@@ -204,7 +208,5 @@ label cho_quiz_1:
             m "(Actually, perhaps the twins might be a better idea...)"
         $ cho_quiz_failed = True 
         
-    
-    stop music fadeout 1.0
     $ cho_busy = True        
     jump main_room

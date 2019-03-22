@@ -21,7 +21,7 @@ label cho_quiz_1:
         call cho_main("I don’t see how but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
         m "Alright, so..."
     
-    $ renpy.music.play("music/determined_pursuit_loop.mp3")
+    $ renpy.music.play("music/ominous_music.mp3")
     $ renpy.music.stop("weather")
     
     $ volume = _preferences.volumes['music']
@@ -32,23 +32,23 @@ label cho_quiz_1:
             $ cho_answer_1 = False
             m "There’s two teams with each one having five players on the court at one time..."
             $ _preferences.volumes['music'] *= .5
-            call cho_main("Whilst Quidditch does have two teams...{p=0.5} there’s 7 players on each...", "annoyed", "suspicious", "raised", "mid")
+            call cho_main("Whilst Quidditch does have two teams...{w=0.5} there’s 7 players on each...", "annoyed", "suspicious", "raised", "mid")
+            with hpunch
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            g4 "Ah,{p=0.4} well..."
-            with hpunch
+            g4 "Ah,{w=0.4} well..."
 
         "It’s played on a rectangular court...":
             $ renpy.block_rollback()
             $ cho_answer_1 = False
-            m "The game is played on a rectangular court...{p=1.0}{nw}"
+            m "The game is played on a rectangular court...{w=1.0}{nw}"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             call cho_main("Well, that’s not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "suspicious", "raised", "mid")
+            with hpunch
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            g4 "Of course!{p=0.4}... and in basketball..."
-            with hpunch
+            g4 "Of course!{w=0.4}... and in basketball..."
             
         "At the start of the game the ball gets thrown in the air...":
             $ renpy.block_rollback()
@@ -78,15 +78,16 @@ label cho_quiz_1:
         "You can’t run with the ball unless you dribble or pass":
             $ renpy.block_rollback()
             $ cho_answer_2 = False
-            m "You can’t move whilst holding the ball,{p} you need to pass it or dribble...{p=1.0}{nw}"
+            m "You can’t move whilst holding the ball,{w} you need to pass it or dribble...{w=1.0}{nw}"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             call cho_main("Well, you can move with the ball freely without passing in Quidditch, that’s why we have the beaters...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("To make the opponents drop the ball.", "open", "suspicious", "base", "L")
+            with hpunch
             $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            g4 "Ah!{p=0.4} Well, I guess that is different... Lastly though..."
-            with hpunch
+            g4 "Ah!{w=0.4} Well, I guess that is different... Lastly though..."
+            
             
     menu:
         "You can’t touch your opponent...":
@@ -97,9 +98,9 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] *= .5
             call cho_main("Well, that’s definitely not the case in Quidditch...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("Except for excessive use of elbows...", "open", "suspicious", "base", "L")
-            $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            g4 "Well...{p=0.4}"
             with hpunch
+            $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
+            g4 "Well...{w=0.4}"
             m "Fine..."
 
         "You score by getting the ball through a hoop...":
@@ -139,7 +140,7 @@ label cho_quiz_1:
         m "You’ve made me go on for so long about basketball so we’re already at the end of today's session."
         call cho_main("But we didn’t even get to any tutoring...", "annoyed", "suspicious", "base", "mid")
         m "We’ll get there, don’t you worry... next time..."
-        call cho_main("...{p=0.4}Fine.", "pout", "base", "base", "mid")
+        call cho_main("...{w=0.4}Fine.", "pout", "base", "base", "mid")
         call cho_main("Bye then professor...", "annoyed", "base", "base", "mid")
         
         hide screen cho_chang
@@ -150,8 +151,6 @@ label cho_quiz_1:
         if store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
         $ cho_quiz_failed = True
-        $ cho_busy = True
-        jump main_room
         
     elif cho_answer_1 and cho_answer_2 and cho_answer_3:
         m "So as you can see, Basketball and Quidditch is pretty much the same game..."
@@ -177,10 +176,9 @@ label cho_quiz_1:
 
         hide screen cho_chang
         call cho_walk("mid","leave",2.5)
-
-        $ cho_busy = True
+        
         $ cho_quiz_assed = True
-        jump main_room
+
     else:
         call cho_main("I guess it has some similarities...", "pout", "suspicious", "sad", "mid")
         m "Pretty much the same game I’d say..."
@@ -195,7 +193,7 @@ label cho_quiz_1:
         m "You’ve made me go on for so long about basketball so we’re already at the end of today's session."
         call cho_main("But we didn’t even get to any tutoring...", "annoyed", "angry", "angry", "mid")
         m "We’ll get there, don’t you worry... next time..."
-        call cho_main("...{p=0.4}Fine.", "annoyed", "angry", "base", "mid")
+        call cho_main("...{w=0.4}Fine.", "annoyed", "angry", "base", "mid")
         call cho_main("Bye then professor...", "pout", "base", "base", "R")
         hide screen cho_chang
         call cho_walk("mid","leave",2.5)
@@ -205,5 +203,8 @@ label cho_quiz_1:
         if store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
         $ cho_quiz_failed = True 
-        $ cho_busy = True        
-        jump main_room
+        
+    
+    stop music fadeout 1.0
+    $ cho_busy = True        
+    jump main_room

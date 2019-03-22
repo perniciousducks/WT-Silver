@@ -248,6 +248,15 @@ screen t_wardrobe_menuitem(xx, yy):
    
         add "interface/panels/"+interface_color+"/icon_panel_1.png"
         
+        # Page counter
+        if menu_items_length > items_shown:
+            hbox:
+                xanchor 1.0
+                xpos 270
+                spacing 5
+                add "interface/page.png" yanchor 0.5 ypos 53
+                text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown)+1)) ypos 44 size 16
+        
         if current_item:
             hbox:
                 xpos 300
@@ -323,7 +332,7 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
                 xpos 270
                 spacing 5
                 add "interface/page.png" yanchor 0.5 ypos 53
-                text str(current_page+1)+"/"+str(int(math.ceil((menu_items_length)/10))+1) ypos 44 size 16
+                text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/10))+1) ypos 44 size 16
         
         # Add subcategory list
         for i in xrange (0, len(category_items)):

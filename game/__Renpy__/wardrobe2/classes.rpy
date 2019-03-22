@@ -98,6 +98,12 @@ init python:
         cloned = False
         cached = False
         
+        armfix = False
+        armfix_L = []
+        armfix_Lx = ""
+        armfix_R = []
+        armfix_Rx = ""
+        
         sprite_ico = None
 
         name = ""
@@ -154,6 +160,23 @@ init python:
             # Check if extra layer exists
             if renpy.exists(self.imagepath+self.id+"/extra.png"):
                 self.extralayer = self.imagepath+self.id+"/extra.png"
+                
+            # Check if armfix layers exist
+            self.armfix_L = []
+            self.armfix_R = []
+            if self.armfix:
+                for layer in xrange(0, self.layers):
+                    if renpy.exists(self.imagepath+self.id+"/"+str(layer)+"_armL.png"):
+                        self.armfix_L.append(self.imagepath+self.id+"/"+str(layer)+"_armL.png")
+                        
+                    if renpy.exists(self.imagepath+self.id+"/"+str(layer)+"_armR.png"):
+                        self.armfix_R.append(self.imagepath+self.id+"/"+str(layer)+"_armR.png")
+                        
+                if renpy.exists(self.imagepath+self.id+"/outline_armL.png"):
+                    self.armfix_Lx = self.imagepath+self.id+"/outline_armL.png"
+                    
+                if renpy.exists(self.imagepath+self.id+"/outline_armR.png"):
+                    self.armfix_Rx = self.imagepath+self.id+"/outline_armR.png"
             
             # Set outline layer path
             self.outline = self.imagepath+self.id+"/outline.png"
@@ -248,6 +271,25 @@ init python:
                     (0,0), self.extralayer,
                     (0,0), self.outline)
             return self.sprite
+            
+        def get_armfix(self):
+            armL = Image("characters/"+self.char+"/body/arms/armfixL.png")
+            
+            # Add armfix with proper colors
+            if self.armfix_L > 0:
+                for i in xrange(0, len(self.armfix_L)):
+                    armL = Composite(
+                           (1010, 1200),
+                           (0,0), armL,
+                           (0,0), im.MatrixColor(self.armfix_L[i], self.get_matrixcolor(i)))
+                       
+            # Add armfix outline    
+            if self.armfix_Lx != "":
+                armL = Composite(
+                        (1010, 1200),
+                        (0,0), armL,
+                        (0,0), self.armfix_Lx)
+            return armL
             
         def get_icon(self):
             return self.sprite_ico.get_image()
@@ -506,6 +548,9 @@ init python:
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
                 
+                # Armfix
+                armfix = None
+                
                 # Build image
                 self.sprite = Image("characters/dummy.png")
                 if sprite_list:
@@ -521,6 +566,15 @@ init python:
                                     (1010, 1200),
                                     (0,0), self.sprite,
                                     (sprite[2],sprite[3]), sprite[0].get_image())
+                                    
+                            if sprite[0].armfix and armfix == None:
+                                armfix = sprite[0].get_armfix()
+                    
+                    if not armfix == None:
+                        self.sprite = Composite(
+                            (1010, 1200),
+                            (0,0), self.sprite,
+                            (0,0), armfix)
                                     
                     # Fixes alpha change issues during transitions
                     self.sprite = Flatten(self.sprite)

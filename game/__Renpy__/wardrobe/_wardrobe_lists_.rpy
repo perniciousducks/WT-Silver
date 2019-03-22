@@ -672,8 +672,7 @@ label update_wr_other_clothings_list:
             $ wr_body_accs.append("suspenders_1")
 
         #Gloves
-        if cho_quidd_points != 0:
-            $ wr_gloves.append("gloves_quidditch")
+        $ wr_gloves.append("gloves_quidditch")
 
         #Stockings
         $ wr_stockings.append("stockings")
@@ -684,9 +683,8 @@ label update_wr_other_clothings_list:
             $ wr_stockings.append("stockings_sailor_1")
 
         #Robes
-        if cho_quidd_points != 0:
-            $ wr_robes.append("robe_quidditch_1")
-            $ wr_robes.append("robe_quidditch_2")
+        $ wr_robes.append("robe_quidditch_1")
+        $ wr_robes.append("robe_quidditch_2")
 
     if active_girl == "tonks":
 

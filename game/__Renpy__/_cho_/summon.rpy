@@ -6,6 +6,7 @@ label summon_cho:
     pause 1
     call play_sound("door")
     call cho_chibi("stand","mid","base")
+    call ctc
     call cho_random_clothing
     
     $ active_girl = "cho"
@@ -21,9 +22,37 @@ label summon_cho:
 
     menu:
         #"-Talk-":
-        "-Training-": #For Quidditch events.
+
+
+        # Quidditch
+        "-Training-" if not lock_cho_training:
             jump cho_training_menu
-        "-Personal Favours-":
+
+        "-Practice Match-" if daytime and huffl_matches_won < 2 and cho_mood == 0 and not lock_cho_practice:
+            jump start_training_match
+        "{color=#858585}-Practice Match-{/color}" if (not daytime or cho_mood != 0 or lock_cho_practice) and not cho_content_complete:
+            if not daytime:
+                call nar(">You can only do that during the day.")
+            elif cho_mood != 0:
+                cho "I'm sorry, [cho_genie_name]. But I don't feel like playing today."
+            else:
+                call nar(">You can't do that right now.")
+            jump cho_requests
+
+        "-Start Hufflepuff Match-" if (huffl_matches_won == 2 and main_matches_won == 0):
+            $ lock_cho_training = True # Temporarily, Until next events get added.
+            $ main_matches_won = 1
+            $ main_match_1_stage = "start"
+            $ days_without_an_event = 0 # Event starts on the next day.
+            jump start_hufflepuff_match
+
+
+        # Favours
+        "{color=#858585}-Personal Favours-{/color}" if not cho_training_unlocked:
+            m "I need to help her with her Quidditch training, before I can ask for something like this."
+            jump cho_requests
+
+        "-Personal Favours-" if cho_training_unlocked:
             if cho_mood <= 0:
                 label cho_favor_menu:
                 menu:
@@ -32,7 +61,7 @@ label summon_cho:
                     #"-Play with her butt-": #I don't think these event have the right posig yet or are missing CGs? They also cause crashes.
                     #    jump cho_favor_2
                     #"-Make her suck my cock-":
-                    #    jump cho_favor_3
+                        jump cho_favor_3
                     #"{color=#858585}-A vague idea-{/color}" if imagination <= 3:
                     #    call vague_idea
                     #    jump cho_favor_menu
@@ -42,10 +71,8 @@ label summon_cho:
                 call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
                 jump cho_requests
 
-        #"-Public Favours-":
-        #    "To be done."
-        #    jump summon_cho
 
+        # Wardrobe
         "{color=#858585}-Hidden-{/color}" if not cho_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump cho_requests
@@ -123,6 +150,54 @@ label summon_cho:
             jump end_cho_event
 
 
+
+
+
+label cho_training_menu:
+    menu:
+        "-Change outfit-":
+            jump cho_wardrobe_test
+            #jump cho_quidditch_outfit
+        #"-Discuss tactics-":
+        #    jump cho_tactics
+        "-Go back-":
+            jump cho_requests
+
+
+label cho_favor_menu:
+    python:
+        menu_choices = []
+        for i in cc_favor_list:
+            if i in [cc_pf_C1_Blowjob_OBJ, cc_pf_D1_Sex_OBJ]:
+                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+            elif i.tier > main_matches_won:
+                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+            else:
+                menu_choices.append((i.getMenuText(),i.start_label))
+        menu_choices.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(menu_choices)
+    if result == "nvm":
+        jump cho_requests
+    elif result == "vague":
+        call favor_not_ready
+        jump cho_requests
+    elif result == "na":
+        call not_available
+        jump cho_requests
+    else:
+        $ renpy.jump(result)
+
+
+
+label favor_not_ready:
+    call nar("You can't do this favour just yet.")
+    return
+
+label not_available:
+    call nar("This feature is currently not availabel in v[config.version], and will be added in a later patch.")
+    return
+
+                jump cho_favor_menu
 
 label cho_training_menu:
     menu:

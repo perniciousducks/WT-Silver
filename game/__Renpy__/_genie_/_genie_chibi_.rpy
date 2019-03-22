@@ -204,7 +204,7 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
     hide screen g_c_u
     hide screen genie
 
-    $ secretly_jerking_off = False
+    $ masturbating = False
     hide screen genie_jerking_off                #Jerking off sitting behind desk.
     hide screen genie_jerking_sperm_02           #Sperm on desk and floor.
     hide screen genie_jerking_sperm
@@ -291,7 +291,7 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
     #Jerking off behind desk.
     elif action in ["jerking_behind_desk","jerking_off_behind_desk","cumming_behind_desk","cum_on_desk","came_on_desk"]:
 
-        $ secretly_jerking_off = True
+        $ masturbating = True
 
         if action == "cumming_behind_desk":
             show screen genie_jerking_off

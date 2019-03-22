@@ -50,7 +50,7 @@ label cho_random_clothing:
                 return
             pass
 
-        if daytime and random_number in [6,7,8,9,10]:
+        if daytime and random_number in [6,7,8,9,10] and cho_wardrobe_unlocked:
 
             if not cc_party_slut_ITEM.unlocked:
                 $ cc_party_slut_ITEM.unlocked = True

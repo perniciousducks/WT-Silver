@@ -7,7 +7,7 @@ label summon_snape:
     call sna_chibi("stand","mid","base")
 
     call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base")
-    
+
     $ menu_x = 0.25
     $ menu_y = 0.5
 
@@ -19,9 +19,9 @@ label summon_snape:
         "-Talk-":
             if not chitchated_with_snape:
                 call snape_chitchat
-                
+
             if (letter_curse_complaint_OBJ.read and not astoria_unlocked) or ((third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook):
-                menu:    
+                menu:
                     "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
                         #You tell Snape about the curses.
                         if hermione_on_the_lookout: #Already talked to Hermione.
@@ -39,15 +39,15 @@ label summon_snape:
                     "-Ask for a spellbook-" if (third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook:
                         $ snape_gave_spellbook = True
                         jump snape_book_intro
-                        
+
                     "-Never mind":
                         jump snape_ready
             else:
                 if chitchated_with_snape:
                     ">You have already talked with Snape today."
                 pass
-                
-            $ chitchated_with_snape = True            
+
+            $ chitchated_with_snape = True
             jump snape_ready
 
         "-Let's hang-" if not daytime and not sna_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
@@ -184,25 +184,25 @@ label summon_snape:
             if geniecard_level == 1:
                 if not snape_know_cards:
                     m "Ever heard of Wizard Cards?"
-                    call sna_main( "What about them?","snape_05") 
+                    call sna_main( "What about them?","snape_05")
                     g9 "Do you have any?"
-                    call sna_main( "I do, I collected some when I was younger... never played though.","snape_09") 
+                    call sna_main( "I do, I collected some when I was younger... never played though.","snape_09")
                     m "Why not?"
-                    call sna_main( "Didn't really have anyone to play with so I stopped buying them.","snape_06") 
+                    call sna_main( "Didn't really have anyone to play with so I stopped buying them.","snape_06")
                     m "Up for a game or two?"
-                    call sna_main( "...", "snape_03") 
-                    call sna_main( "Why not...", "snape_02") 
+                    call sna_main( "...", "snape_03")
+                    call sna_main( "Why not...", "snape_02")
                     m "What do I get if I win?"
-                    call sna_main( "What do you mean? There never used to be prizes in Wizard Cards...","snape_01") 
+                    call sna_main( "What do you mean? There never used to be prizes in Wizard Cards...","snape_01")
                     g4 "What..."
                     m "No wonder this game never took off..."
                     m "Let's just play a few practice rounds for now then."
-                    call sna_main( "And then?","snape_05") 
+                    call sna_main( "And then?","snape_05")
                     m "..."
                     m "And then we'll think about prizes."
-                    call sna_main( "...","snape_01") 
-                    call sna_main( "Fine, I'm confident enough to beat a beginner.","snape_06") 
-                    call sna_main( "But first a bit of practice...","snape_02")  
+                    call sna_main( "...","snape_01")
+                    call sna_main( "Fine, I'm confident enough to beat a beginner.","snape_06")
+                    call sna_main( "But first a bit of practice...","snape_02")
                     g9 "Let's play."
                     $ snape_know_cards = True
                 menu:
@@ -285,9 +285,9 @@ label summon_snape:
                         m "Damn!"
                         m "\"I should see if I could find some more wine in that cupboard...  \""
                         jump snape_ready
-                        
+
                     $ one_of_ten = renpy.random.randint(1, 10)
-                    
+
                     if one_of_ten == 1:
                         call sna_main("Sure, lets do it!","snape_02")
                     elif one_of_ten == 2:
@@ -332,7 +332,7 @@ label summon_snape:
                         m "Let's just stick to the original bet for now..."
                         call sna_main("Fine...","snape_06")
                 jump snape_random_duel
-                
+
         "-Never mind-":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -371,6 +371,9 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     with fade
 
 
+    # High Priority Events First!
+
+    # Hermione
     if snape_against_hermione: #Turns True after event_08 (Hermione shows up for the first time).
                                #Activates special event when hanging out with Snape next time.
         show screen with_snape #Makes sure the scene is not animated...
@@ -380,6 +383,12 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_02
 
+    # Cho
+    if cho_intro_2_complete and not cho_snape_talk_complete:
+        $ cho_snape_talk_complete = True
+        jump cho_snape_talk
+
+    # General
     if hg_pf_DanceForMe_OBJ.points >= 2 and not snape_invited_to_watch: #After second dance where Snape entered room.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_03

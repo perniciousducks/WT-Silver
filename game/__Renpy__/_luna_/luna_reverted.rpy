@@ -92,7 +92,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #
             m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
             call lun_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!","normal","base","sad","mid")
             "*Luna hands you a Quibbler*"
-            m "*Reading* “Rotfang conspiracy... 300 ways to tie up a ghost... “ Ah! Wrackspurts..."
+            m "*Reading* \"Rotfang conspiracy... 300 ways to tie up a ghost...\" Ah! Wrackspurts..."
             "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
             "*Luna points to her spectrespecs* "
             call lun_main("I can see them, Sir.","base","happyCl","base","mid")

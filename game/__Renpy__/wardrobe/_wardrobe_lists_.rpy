@@ -345,9 +345,8 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("top_4")
         $ wr_tops_uniform.append("top_5")
 
-        if cho_quidd_points != 0:
-            $ wr_tops_uniform.append("sweater_1")
-            $ wr_tops_uniform.append("sweater_2")
+        $ wr_tops_uniform.append("sweater_1")
+        $ wr_tops_uniform.append("sweater_2")
 
         #Muggle
         if cc_muggle_hot_ITEM.unlocked:
@@ -488,9 +487,8 @@ label update_wr_bottoms_list:
 
         #Pants
         $ wr_bottoms_pants.append("pants_sport_long")
-        if cho_quidd_points != 0:
-            $ wr_bottoms_pants.append("pants_yoga_long")
-            $ wr_bottoms_pants.append("pants_yoga_short")
+        $ wr_bottoms_pants.append("pants_yoga_long")
+        $ wr_bottoms_pants.append("pants_yoga_short")
         if cc_muggle_hot_ITEM.unlocked:
             $ wr_bottoms_pants.append("pants_jeans_short")
         if cc_costume_misty_ITEM.unlocked:
@@ -691,8 +689,7 @@ label update_wr_other_clothings_list:
             $ wr_body_accs.append("suspenders_1")
 
         #Gloves
-        if cho_quidd_points != 0:
-            $ wr_gloves.append("gloves_quidditch")
+        $ wr_gloves.append("gloves_quidditch")
 
         #Stockings
         $ wr_stockings.append("stockings")
@@ -703,9 +700,8 @@ label update_wr_other_clothings_list:
             $ wr_stockings.append("stockings_sailor_1")
 
         #Robes
-        if cho_quidd_points != 0:
-            $ wr_robes.append("robe_quidditch_1")
-            $ wr_robes.append("robe_quidditch_2")
+        $ wr_robes.append("robe_quidditch_1")
+        $ wr_robes.append("robe_quidditch_2")
 
     if active_girl == "tonks":
 

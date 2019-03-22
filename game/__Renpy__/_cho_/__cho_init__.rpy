@@ -232,36 +232,92 @@ label reset_cho_transparency:
 
 
 label cho_progress_init:
-
+    if not hasattr(renpy.store,'main_match_1_seen') or reset_persistants or reset_cho_content:
+        $ main_match_1_seen = False
     if not hasattr(renpy.store,'cho_whoring') or reset_persistants or reset_cho_content:
 
-        #Stats
+        # Stats
         $ cho_whoring = 0
         $ cho_mood = 0
+        $ cho_jerk_off_counter = 0
 
-        #Flags
+        # Flags
         $ cho_busy = False
-        $ days_since_cho = 0
-        $ cho_known = False
-        $ cho_unlocked = False
         $ cho_wardrobe_unlocked = False
 
-        $ chof2_first = True
+        # Intro
+        $ cho_known               = False
+        $ cho_intro_1_complete    = False
+        $ cho_intro_2_complete    = False
+        $ cho_snape_talk_complete = False
+        $ cho_unlocked            = False
 
-        #Names
-        $ cho_genie_name = "Professor"
+        # Quidditch Training
+        $ cho_training_unlocked   = False
+        $ cho_training_intro_complete = False
+        $ lock_cho_training       = False
+        $ lock_cho_practice       = False
+        $ quidditch_commentator   = "None"
+        $ quidditch_position      = "front"
+
+        # Quidditch Outfit
+        $ cho_quidditch_top    = "sweater" # For testing.
+        $ cho_quidditch_bottom = "pants_long" # For testing.
+        $ quid_pants_1_intro = False
+        $ quid_pants_2_intro = False
+        $ quid_skirt_1_intro = False
+        $ quid_skirt_2_intro = False
+        $ cho_quidditch_coat   = True # For testing.
+        $ cho_quidditch_gloves = True # For testing.
+
+        # Quidditch Matches
+        $ quidditch_match_in_progress = False
+        $ huffl_match_counter   = 0
+        $ gryff_match_counter   = 0
+        $ slyth_match_counter   = 0
+
+        $ huffl_matches_won     = 0 # Goes up to 2
+        $ gryff_matches_won     = 0 # Goes up to 2
+        $ slyth_matches_won     = 0 # Goes up to 2
+
+        $ start_match           = 0 # No match will trigger at 0
+        $ main_matches_won      = 0 # Goes up to 3
+        $ main_match_1_seen = False
+        $ main_match_2_seen = False
+        $ main_match_3_seen = False
+
+        $ cho_content_complete = False
+
+        # Names
+        $ cho_genie_name = "Sir"
         $ cho_name = "Cho"
 
         #Quidditch
-        $ cho_quidd = False
-        $ days_since_quidd = 0
-        $ cho_quidd_points = 0
 
         $ first_cho_favor_done = False
-
-    if not hasattr(renpy.store,'gave_cho_gift') or reset_persistants:
         $ gave_cho_gift      = False
 
 
+    ### Cho Favours ###
+
+    # cc = Cho Chang.
+    # pf = Personal Favour.
+    # A1 = A is the tier at which the favour gets unlocked, 1 is the position in the menu/list.
+
+    if not hasattr(renpy.store,'cc_pf_A1_Talking_OBJ'):
+        $ cc_pf_A1_Talking_OBJ = favor_class(title = "Talk to me",       tier = 0, start_label = "cc_pf_A1_Talking")
+
+        $ cc_pf_B1_Groping_OBJ = favor_class(title = "Molest her body!", tier = 1, start_label = "cc_pf_B1_Groping")
+
+        $ cc_pf_C1_Blowjob_OBJ = favor_class(title = "Suck it!",         tier = 2, start_label = "cc_pf_C1_Blowjob")
+
+        $ cc_pf_D1_Sex_OBJ     = favor_class(title = "Let's have sex!",  tier = 3, start_label = "cc_pf_D1_Sex")
+
+    $ cc_favor_list = [
+        cc_pf_A1_Talking_OBJ,
+        cc_pf_B1_Groping_OBJ,
+        cc_pf_C1_Blowjob_OBJ,
+        cc_pf_D1_Sex_OBJ,
+        ]
 
     return

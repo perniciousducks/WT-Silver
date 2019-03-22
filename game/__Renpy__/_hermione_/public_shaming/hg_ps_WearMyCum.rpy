@@ -508,7 +508,7 @@ label hg_ps_WearMyCum_Scene_3:
     m "it would help..."
     call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","base","down")
     call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","grin","ahegao")
-    call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.”","grin","dead")
+    call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.","grin","dead")
     call her_main("not just A slut... a cumslut...","soft","ahegao")
     call her_main("Your {image=textheart}cum{image=textheart}slut...","silly","ahegao")
     g9 "That did it slut!"

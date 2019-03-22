@@ -272,7 +272,7 @@ label hermione_requests_menu:
                 python:
                     pf_menu = []
                     for i in hg_pf_list:
-                        if i.imagination_level > imagination:
+                        if i.tier > imagination:
                             pf_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
                         else:
                             pf_menu.append((i.getMenuText(),i.start_label))
@@ -304,7 +304,7 @@ label hermione_requests_menu:
                     python:
                         pr_menu = []
                         for i in hg_pr_list:
-                            if i.imagination_level > bdsm_imagination:
+                            if i.tier > bdsm_imagination:
                                 pr_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
                             else:
                                 pr_menu.append((i.getMenuText(),i.start_label))
@@ -330,7 +330,7 @@ label hermione_requests_menu:
                 python:
                     ps_menu = []
                     for i in hg_ps_list:
-                        if i.imagination_level > bdsm_imagination:
+                        if i.tier > bdsm_imagination:
                             ps_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
                         else:
                             ps_menu.append((i.getMenuText(),i.start_label))
@@ -442,11 +442,15 @@ label hermione_talk:
                 "-Never mind-":
                     jump hermione_talk
 
+
+        # About Luna.
         "-Ask for a new student-" if hat_known and not luna_known:
             call luna_init
             $ luna_known = True
             jump hat_intro_2
 
+
+        # About Astoria.
         "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
             #You tell Hermione about the curses.
             if snape_on_the_lookout: #Already talked to Snape.
@@ -460,6 +464,22 @@ label hermione_talk:
             $ hermione_on_the_lookout = True
             jump letter_intro_hermione
 
+
+        # About Cho.
+        "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro_2_complete and not cho_unlocked and not cho_snape_talk_complete: # Before talking to Snape.
+            m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
+            jump hermione_talk
+
+        "-Solve the matter with Cho-" if cho_intro_2_complete and not cho_unlocked and cho_snape_talk_complete: # After talking to Snape.
+            $ cho_unlocked = True
+            jump cho_hermione_talk
+
+        "-Ask Hermione to commentate the game-" if quidditch_commentator == "Ask Hermione":
+            $ quidditch_commentator = "Hermione would like to"
+            jump quidditch_commentator_event_2
+
+
+        # General.
         "-Address me only as-":
             menu:
                 "-Sir-":

@@ -73,10 +73,6 @@ if susan_imperio_counter > 0:
 #Cho Daily Flags.
 call update_cho
 $ cho_busy = False
-if cho_known:
-    $ days_since_cho += 1
-if cho_quidd:
-    $ days_since_quidd += 1
 
 #Tonks Daily Flags.
 call update_tonks
@@ -181,6 +177,10 @@ stop bg_sounds #Stops playing the fire SFX.
 stop weather #Stops playing the rain SFX.
 if day != 1:
     $ weather_gen = renpy.random.randint(1, 6)
+
+# Quidditch Matches
+if start_match == 1:
+    $ weather_gen = 1
 $ show_weather()
 
 
@@ -191,7 +191,7 @@ if deliveryQ.got_mail():
 
 if clothing_mail_item != None:
     $ clothing_mail_timer -= 1
-    
+
     if clothing_mail_timer <= 1:
         $ package_is_here = True
 
@@ -203,16 +203,16 @@ if day >= 12 and not letter_paperwork_unlock_OBJ.read:
 
 if day >= 25 and her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
     $ letter_curse_complaint_OBJ.mailLetter()
-    
-if day >= 26 and not deck_unlocked:    
+
+if day >= 26 and not deck_unlocked:
     $ letter_deck.mailLetter()
-    
+
 if day >= twins_cards_delay and deck_unlocked and twins_first_win and not twins_cards_stocked:
     $ letter_cards_store.mailLetter()
-    
+
 if geniecard_level < 2 and snape_third_win and her_third_win and twins_second_win:
     $ letter_cardgame_t2.mailLetter()
-    
+
 if package_is_here or letter_queue_list != []:
     play sound "sounds/owl.mp3"
 
@@ -232,18 +232,21 @@ call house_points
 
 label day_resume:
 
-#Cho Events. They happen first because Cho wakes up at 5 in the morning apparently.
-if days_since_cho == 1 and days_without_an_event >= 1:
+# Cho Events.
+if day >= 18 and her_whoring >= 2 and days_without_an_event >= 1 and not cho_intro_1_complete:
     $ days_without_an_event = 0
-    jump hermione_cho
-if days_since_cho == 2 and days_without_an_event >= 1 and not cho_unlocked:
-    $ days_without_an_event = 0
-    jump cho_intro_2
+    $ cho_intro_1_complete = True
+    jump cho_intro_1
 
-if days_since_cho >= 8 and not cho_quidd:
-    $ cho_quidd = True
-    jump cho_quidd_intro
+if huffl_matches_won == 1 and quidditch_commentator == "None":
+    $ lock_cho_practice = True
+    $ quidditch_commentator = "Ask Hermione"
+    jump quidditch_commentator_event_1
 
+# Quidditch Matches.
+if start_match == 1 and days_without_an_event >= 1:
+    $ start_match = 0 # Reset
+    jump hufflepuff_match
 
 
 if day == 7:

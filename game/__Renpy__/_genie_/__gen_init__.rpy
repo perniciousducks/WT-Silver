@@ -30,6 +30,6 @@ label genie_init:
         $ speed_reading = 0
 
         $ birthday_happened = False # Outfit "Present" wardrobe dialogue.
-        $ secretly_jerking_off = False
+        $ masturbating = False
 
     return

@@ -1148,7 +1148,7 @@ label a_spaced_out_conversation:
     nar "Genie stared at Snape with something like wonder."
     nar "It takes quite a bit to make an ageless being like Genie gape in awe."
 
-    g5 "That’s…That’s brilliant!"
+    g5 "That’s...That’s brilliant!"
 
     nar "Genie shouted."
 
@@ -1186,7 +1186,7 @@ label a_spaced_out_conversation:
     g9 "Are you sure you could resist the urge to use all three on yourself?"
 
     nar "Snape chuckled. He momentarily considered how rarely he chuckled."
-    nar "Not with humor, at least. He hadn’t really done that since…"
+    nar "Not with humor, at least. He hadn’t really done that since..."
 
     call sna_main("Yes","snape_28")
 

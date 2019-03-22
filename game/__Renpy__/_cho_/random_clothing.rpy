@@ -18,7 +18,7 @@ label cho_random_clothing:
     else:
         if daytime and random_number in [1,2,3,4,5]: #50% chance:
 
-            if not cho_wardrobe_unlocked and cho_quidd_points >= 3:
+            if not cho_wardrobe_unlocked and main_matches_won >= 1:
                 $ cc_muggle_hot_ITEM.unlocked = True
 
                 $ cho_request_wear_bra        = False
@@ -70,7 +70,7 @@ label cho_random_clothing:
                 return
             pass
 
-        if daytime and random_number in [6,7,8,9,10]:
+        if daytime and random_number in [6,7,8,9,10] and cho_wardrobe_unlocked:
 
             if not cc_party_slut_ITEM.unlocked:
                 $ cc_party_slut_ITEM.unlocked = True

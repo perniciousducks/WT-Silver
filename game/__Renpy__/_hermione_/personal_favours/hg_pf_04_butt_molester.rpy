@@ -21,10 +21,6 @@ label hg_pf_ButtMolester:
     hide screen hermione_main
     with d3
 
-    if her_whoring >= 9 and not cho_known:
-        jump cho_intro
-
-
 
     #First time event
     if her_whoring >= 0 and her_whoring <= 5: #[3,4,5]

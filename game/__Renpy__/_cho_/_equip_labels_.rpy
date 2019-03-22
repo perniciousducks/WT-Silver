@@ -373,19 +373,18 @@ label update_cho_quidditch_outfit:
 
     $ cc_outfit_quidditch_ITEM.outfit_layers = []
 
-    if cho_quidd_points == 0:
+    if cho_quidditch_bottom == "pants_long":
         $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/pants_yoga_long.png")
-    elif cho_quidd_points == 1:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_2.png")
-    elif cho_quidd_points == 2:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_3.png")
+    elif cho_quidditch_bottom == "skirt_long":
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_1.png")
+    elif cho_quidditch_bottom == "skirt_short":
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_1.png")
     else:
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/skirt_4.png")
+        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../bottoms/base/pants_yoga_short.png")
 
     $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1.png")
 
-    if cho_quidd_points in [0,1,2,3, 5,6]: #Not 4 #Wears robe!
-        $ cc_outfit_quidditch_ITEM.outfit_layers.append("../robe/robe_quidditch_1.png")
+    $ cc_outfit_quidditch_ITEM.outfit_layers.append("../robe/robe_quidditch_1.png")
 
     $ cc_outfit_quidditch_ITEM.outfit_layers.append("../tops/base/sweater_1_overlay.png") #Hand Overlay #Important
 

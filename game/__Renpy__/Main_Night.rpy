@@ -115,26 +115,26 @@ if days_without_an_event >= 1 and event12_happened and not event13_happened:
 if day >= 15 and event13_happened and not event15_happened:
     call event_15 #Returns
 
-#Tonks intro.
+# Tonks intro.
 if astoria_unlocked and not tonks_intro_happened and days_without_an_event >= 1:
     $ tonks_intro_happened = True
     $ days_without_an_event = 0
     jump tonks_intro_event
 
-#Snape prevents the ministry from detecting curses.
+# Snape prevents the ministry from detecting curses.
 if tonks_intro_happened and not spells_unlocked and days_without_an_event >= 1:
     $ spells_unlocked = True #Astoria can now use spells.
     $ days_without_an_event = 0
     jump snape_spell_intro
 
-#Tonks becomes a teacher.
+# Tonks becomes a teacher.
 if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
     $ tonks_unlocked = True
     $ astoria_intro_completed = True
     $ days_without_an_event = 0
     jump astoria_tonks_intro
 
-#Luna events.
+# Luna events.
 if luna_known and not luna_unlocked:
     call hat_intro_3 #Returns
 
@@ -142,7 +142,7 @@ if luna_reverted and lun_corruption == -1:
     $ days_without_an_event = 0
     jump luna_reverted_greeting_2 #Sets lun_corruption to 0
 
-#Hermione working return.
+# Hermione working return.
 if current_job == 1:
     jump maid_responses
 if current_job == 2:
@@ -152,7 +152,7 @@ if current_job == 3:
 if current_job == 4:
     jump slytherin_cheer_responses
 
-#Hermione Potions return.
+# Hermione Potions return.
 if cat_ears_potion_return:
     jump potion_scene_1_1_2
 if transparent_quest:
@@ -165,20 +165,18 @@ if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
     jump hg_pf_TheGamble_complete
 
 
-#Cho Quidditch event return.
-if cho_quidd and cho_quidd_points == 0: #Happens right after the Quidditch intro.
-    $ days_without_an_event = 0
-    jump cho_quidd_1_1
-if days_since_quidd >= 4 and cho_quidd_points == 1:
-    $ days_without_an_event = 0
-    jump cho_quidd_1_2
-if days_since_quidd >= 7 and cho_quidd_points == 2:
-    $ cho_quidd_points = 3 #Prevents this from looping.
-    $ days_without_an_event = 0
-    jump cho_quidd_1_3
+# Cho Events.
+if cho_intro_1_complete and not cho_intro_2_complete: # Happens right after intro.
+    $ cho_intro_2_complete = True
+    jump cho_intro_2
+if quidditch_match_in_progress:
+    $ quidditch_match_in_progress = False
+    jump quidditch_match_return
+if main_matches_won == 1 and not main_match_1_seen:
+    $ main_match_1_seen = True
+    jump hufflepuff_match_return
 
-
-#Hermione Personal Requests, Public Shaming return.
+# Hermione Personal Requests, Public Shaming return.
 python:
     for i in hg_pr_list: #Call any public request event if it's in progress
         if i.inProgress:

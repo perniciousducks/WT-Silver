@@ -170,7 +170,7 @@ label cho_quiz_1:
         m "..."
         cho "Anyway, got to go now or I'll be too late for classes."
         cho "I’ll be ready for training by tomorrow morning."
-        m "Oh, I’m not so sure you’ll be that prepared..." # Small text.
+        m "{size=-5}Oh, I’m not so sure you’ll be that prepared...{/size}" # Small text.
         cho "Until then, Sir."
         m "Looking forward to it."
 

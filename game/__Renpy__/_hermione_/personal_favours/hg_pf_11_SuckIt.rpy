@@ -119,6 +119,14 @@ label hg_pf_SuckIt: #15+
     #Fourth Event
     elif hg_pf_SuckIt_OBJ.points >= 2 and her_whoring >= 21:
         call play_music("playful_tension") # SEX THEME.
+        m "{size=-4}(Should I get a little rough with her?){/size}"
+        menu:
+            "Facefuck her senseless":
+                call hg_blowjob_5
+                jump end_hg_blowjob
+            "Just a regular blowjob":
+                pass
+
         m "Suck my dick, [hermione_name]."
         call her_main("Of course [genie_name]...","base","ahegao_raised",xpos="mid",ypos="base")
         call her_walk_desk_blkfade
@@ -1580,6 +1588,264 @@ label hg_blowjob_4:
 
             return
 
+label hg_blowjob_5: #Bondage facefuck scene
+    call play_music("playful_tension") #HERMIONE
+    m "I think I'd like another blowjob, [hermione_name]."
+    call her_main("Of course [genie_name]...","base","ahegao_raised",xpos="mid",ypos="base")
+    m "Not just any blowjob though."
+    her "Oh? What's so special about this one?"
+    m "Nothing much... You will have to have your hands tied behind your back though."
+    her "WHAT? WHY?"
+    m "Just to make sure you don't try to interfere..."
+    her "..."
+    her "How many points will I be earning for this \"special\" blowjob?"
+    m "How does one hundred sound?"
+    her "One hundred!"
+    her "And all I have to do is let you tie my hands up?"
+    m "That's right."
+    her "You're not going to try anything weird are you?"
+    m "Never..."
+    her "Well... Alright then..."
+    her "(For Gryffindor!)"
+    m "Perfect, I'll get the cuffs ready, you just strip."
+    her "..."
+    ">Hermione starts to slowly strip while nervously staring at the cuffs."
+    #Hermione stands naked before you
+    her "Are you sure we need them? Can't I just promise to keep my hands down?"
+    m "And where's the fun in that?"
+    ">You step in front of Hermione, grabbing her wrists and quickly cuffing them together behind her back."
+    ">Hermione nervously tries to pull her wrists apart, confirming they are indeed locked together."
+    her "..."
+    m "Ready to start?"
+    her "I'm still not so sure about these cuffs though..."
+    her "I don't think I want to do this-"
+    ">You give Hermione a harsh slap across the ass cheeks."
+    her "!!!"
+    m "This isn't about what you want, [hermione_name]."
+    "*SLAP*!"
+    her "!!!"
+    m "This is about what I want!"
+    "*SLAP*!"
+    her "ah!!! please, sir..."
+    "*SLAP*!"
+    her "!!!"
+    her "Why are you slapping me?"
+    m "You need to be taught a lesson."
+    "*SLAP*!"
+    her "!!!"
+    m "I thought we had an agreement..."
+    "*SLAP*!"
+    her "!!!"
+    m "One hundred points for a blowjob."
+    "*SLAP*!"
+    her "!!!"
+    m "I don't remember asking you for backchat."
+    "*SLAP*!"
+    her "!!!"
+    m "All I wanted was for you to suck my cock like the dirty little slut that you are."
+    "*SLAP*!"
+    her "!!!"
+    m "And you even tried to wiggle your way out of that."
+    "*SLAP*!"
+    her "Ah!!! I-I'm sorry!"
+    m "You'll be sorry alright."
+    "*SLAP*!"
+    her "!!!"
+    her "Please, sir... No more!"
+    menu:
+        "Start facefucking her":
+            m "You're lucky I can't wait any longer."
+            her "Thank you, [genie_name]..."
+            pass
+        "Keep teasing her":
+            m "I'll stop."
+            "*SLAP*!"
+            her "!!!"
+            m "When you start begging for my cock like a good slut."
+            "*SLAP*!"
+            her "Ah!!! please!"
+            m "please, what?"
+            "*SLAP*!"
+            her "ah!!!{p}Please, let me suck your cock!"
+            m "\"Let me suck your cock\", what?"
+            "*SLAP*!"
+            her "ah!!! Let me suck your cock, please, Sir!"
+            "*SLAP*!"
+            her "Ah!!! what was wrong with that?"
+            m "I don't just want you to suck my cock..."
+            m "I want to {b}fuck{/b} your face..."
+            her "{i}Fuck{/i} my face?"
+            m "Mhmm. Now beg me."
+            "*SLAP*!"
+            her "Ah!!! P-please, daddy, please {b}fuck{/b} my face!"
+            "*SLAP*!"
+            her "!!!"
+            m "More."
+            her "{size+=2}Fuck {size+=2}my {size+=2}face! Fuck my face until I can't breathe! {size+=2}Pleeeaaase...{/size}"
+            m "If you insist..."
+    ">With that you gently help the red bottomed young girl onto her knees, leaving her hands tied uselessly behind her as she gazes up at you with fear and anticipation."
+    m "Ready?"
+    her "I t-think so..."
+    m "Open wide..."
+    #Start CG with Hermione sitting there with her mouth open gazing up at Genie
+    her "Ahhhh..."
+    m "Perfect."
+    ">Unable to wait any longer, you put your hand on the back of Hermione's head before forcefully pulling it forward burying her nose in your stomach and your cock down her throat?"
+    her "!!!"
+    ">Hermione's arms desperately sturggle against the cuffs as she attempts to push herself off your cock."
+    m "See why we need the cuffs now?"
+    her "..."
+    m "Because I don't juyst want a blowjob today. I don't want your arms interfering and getting in the way."
+    her "..."
+    m "I want to {b}fuck{/b} your face."
+    m "Hard."
+    ">With that you starting mercilessly pumping Hermione's head backwards and forwards viscously on your cock, filling the room with the harsh sounds of you throating the poor girl."
+    #Cocksucking loop
+    her "*glck*glk*glck*"
+    m "Ugh... that's it..."
+    her "*glck*glk*glck*"
+    m "This is what I've been missing..."
+    her "*glck*glk*glck*"
+    m "The feeling some slut's throat struggling..."
+    her "*glck*glk*glck*"
+    m "While I fuck it senseless..."
+    her "*glck*glk*glck*"
+    m "Can't be beat..."
+    her "*glck*glk*glck*"
+    m "Only way this can get any better is when the girl you're doing it to also ends up being a princess."
+    ">You pull Hermione's head off your cock,"
+    m "You're not a princess are you?"
+    her "COUGH COUGH COUGH"
+    her "Ah...... no... I'm not a princess..."
+    m "Shame..."
+    ">You grab hermione's hair, forcefully ramming your cock back down her throat..."
+    her "!!!"
+    her "*glck*glk*glck*"
+    m "Guess you'll just have to settle for being grade-a fuck meat..."
+    her "*glck*glk*glck*"
+    m "Not that you aren't good enough to be dicksucking royalty..."
+    her "*glck*glk*glck*"
+    m "Maybe we'll have to give you a title after all..."
+    her "*glck*glk*glck*"
+    m "You could be the queen of cocksucking..."
+    her "*glck*glk*glck*"
+    m "Princess of penis?"
+    her "*glck*glk*glck*"
+    m "Let me know when you hear anything that piques your fancy."
+    her "*glck*glk*glck*"
+    m "Nothing? Probably too focused on earning yourself a salty treat."
+    her "*glck*glk*glck*"
+    m "Well... Let me indulge you then."
+    her "*glck*glk*glck*"
+    ">With that, you hold hermione's face hard against your stomach as you start pumping your load down her throat."
+    her "!!!"
+    g9 "Ugh... that's it..."
+    her "*glp*glp*glp*"
+    ">Hermione helplessly starts to struggle against her cuffs as you cut off her air supply to pump her full of cum."
+    g9 "Mmmmm...."
+    ">Eventually, you let her head go, allowing her to pull herself off your cock to take a much needed breath."
+    her "aaaaaaahhh...."
+    her "[genie_name]! *pant* You almost killed me!"
+    m "You're fine..."
+    her "Barely! What if I had died?"
+    m "At least you would have died doing what you love."
+    her "Ha! Well don't think I'll let you try that again!"
+    m "You're not really in any position to argue that though, are you?"
+    ">You start smearing your cock against her nose and face while she helplessly glares at you."
+    her "..."
+    m "Besides, that puddle your kneeling in doesn't really make it look like you're having such a bad time yourself..."
+    her "You k-know I can't help that!"
+    m "You're right... You just can't help being such a naughty little slut, can you?"
+    her "..."
+    m "I guess there are other ways your throat can answer that question. Now, open wide..."
+    her "No, please, not again... I can't-"
+    ">Instead of giving her time to complain, you grab the back of her head and jam your cock back down the poor girls throat."
+    her "!!!"
+    m "Fuck... that's it..."
+    her "*glck*glk*glck*"
+    ">You revel in the feeling of Hermione's throat helplessly contracting around the head of your cock as it mercilessly pumps in and out."
+    her "*glck*glk*glck*"
+    m "We really need to do this more often..."
+    her "*glck*glk*glck*"
+    m "Nothing quite drains the old balls more than a good facefucking."
+    her "*glck*glk*glck*"
+    m "What do you think?"
+    her "*glck*glk*glck*"
+    m "Would you be OK with letting your headmaster fuck your little face everyday?"
+    her "*glck*glk*glck*"
+    m "Going to every class with a belly full of cum."
+    her "*glck*glk*glck*"
+    m "Your makeup a mess."
+    her "*glck*glk*glck*"
+    m "Showing off to everyone that your a shameless blowjob barbie..."
+    her "*glck*glk*glck*"
+    m "You'd love it, wouldn't you?"
+    her "*glck*glk*glck*"
+    ">Hermione's legs start spasming as the puddle of cum beneath her grows..."
+    m "That answers that..."
+    her "*glck*glk*glck*"
+    g9 "Ready for another load, slut?"
+    her "*glck*glk*glck*"
+    g9 "HERE IT COMES!"
+    her "*glck*glk*glck*"
+    g9 "ARGH!!!"
+    menu:
+        "Cum up her nose":
+            ">You quickly pull your cock out of her throat before placing it up against her left nostril."
+            her "aaaaaaahhh.... *pant*wait...*pant* not there..."
+            ">Helpless to stop you, Hermione is unable to prevent you from firing a huge load up her nose."
+            g9 "FUCK YES! TAKE THIS, WHORE!"
+            her "Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat..."
+            g9 "UGHH!!!"
+            ">You shift your cock head so it's firmly sealed against her right nostril before you continue unloading into the poor girl."
+            her "Ah.... it's... your shooting it on my brain!"
+            her "Agh.... the smell... it's so much... I can't..."
+            her "ah........"
+
+        "Cum down her throat":
+            ">You firmly hold hermione's head against your body as you shamelessly unload down her throat for the second time..."
+            g9 "FUCK YES! SWALLOW THIS, SLUT!"
+            her "*glp*glp*glp*"
+            g9 "Ugh... that's it..."
+            her "*glp*glp*glp*"
+            g9 "Take it all..."
+            her "*glp*glp*glp*"
+
+        "Cum on her face":
+            ">You pull your cock out and start furiously jerking it in front of her face."
+            her "aaaaaaahhh.... *pant*please...*pant* coat me..."
+            g9 "ARGH!!! YOU WHORE!!!"
+            her "*pant*{image=textheart}{image=textheart}{image=textheart}*pant*"
+            g9 "TAKE THIS!!!"
+            ">You start unloading onto the girl's waiting face."
+            her "{image=textheart}Yesss....{image=textheart}"
+            ">Hermione closes her eyes and smiles, holding her face dead still, allowing you to paint it with cum..."
+
+    ">With that, Hermione's legs again start to shake, giving away another shameless orgasm from the cumslut..."
+    her "Ah... soooo... goooodd..."
+    ">Before she can say anymore, she passes out in a naked mess, laying in a pool of her own cum, still cuffed together."
+    m "I suppose I should probably clean her up and take her back to her room..."
+    her "..."
+    m "Ugh... Even a fleshlight is easier to clean than this..."
+
+
+
+
+    call her_walk_desk_blkfade
+
+    hide screen genie
+    call her_chibi("hide")
+    show screen chair_left
+    call u_play_ani
+    hide screen bld1
+    hide screen blkfade
+    with fade
+    call ctc
+
+
+
+
+    return
 
 
 ### END BLOWJOB ###

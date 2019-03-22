@@ -23,10 +23,10 @@ label phoenix:
 
     if day != 1:
         menu:
-            "Testing Card Game":
-                jump imagetest
             "Testing clothes":
                 jump color_cloth_test
+            "Cho quiz":
+                jump cho_quiz_1
             "Test new wardrobe":
                 jump cho_wardrobe_test
             "Wardrobe 2.0":
@@ -44,13 +44,6 @@ label phoenix:
 
     call screen main_room_menu
 
-label imagetest:
-    show screen testingtestingscreen
-    pause
-    jump phoenix
-screen testingtestingscreen:
-    zorder 9999
-    add testinttest.get_image() zoom 0.5
 
 ### FEEDING ###
 label feeding:

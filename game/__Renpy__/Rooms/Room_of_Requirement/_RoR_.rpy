@@ -86,7 +86,7 @@ label mirror_menu:
         call screen room_of_requirement_menu
 
     elif _return == "inc":
-        $ current_page += current_page+1
+        $ current_page += 1
         jump mirror_menu
     elif _return == "dec":
         $ current_page += -1

@@ -172,8 +172,8 @@ if cho_intro_1_complete and not cho_intro_2_complete: # Happens right after intr
 if quidditch_match_in_progress:
     $ quidditch_match_in_progress = False
     jump quidditch_match_return
-if main_matches_won == 1 and not main_match_1_seen:
-    $ main_match_1_seen = True
+if main_match_1_stage == "return":
+    $ main_match_1_stage = "end"
     jump hufflepuff_match_return
 
 # Hermione Personal Requests, Public Shaming return.

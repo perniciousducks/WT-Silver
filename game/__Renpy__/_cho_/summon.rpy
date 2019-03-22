@@ -36,9 +36,9 @@ label summon_cho:
             jump cho_requests
 
         "-Start Hufflepuff Match-" if (huffl_matches_won == 2 and main_matches_won == 0):
-            $ main_matches_won = 1
             $ lock_cho_training = True # Temporarily, Until next events get added.
-            $ start_match = 1
+            $ main_matches_won = 1
+            $ main_match_1_stage = "start"
             $ days_without_an_event = 0 # Event starts on the next day.
             jump start_hufflepuff_match
 

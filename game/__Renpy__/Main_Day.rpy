@@ -179,7 +179,7 @@ if day != 1:
     $ weather_gen = renpy.random.randint(1, 6)
 
 # Quidditch Matches
-if start_match == 1:
+if main_match_1_stage == "start":
     $ weather_gen = 1
 $ show_weather()
 
@@ -244,8 +244,8 @@ if huffl_matches_won == 1 and quidditch_commentator == "None":
     jump quidditch_commentator_event_1
 
 # Quidditch Matches.
-if start_match == 1 and days_without_an_event >= 1:
-    $ start_match = 0 # Reset
+if main_match_1_stage == "start" and days_without_an_event >= 1:
+    $ main_match_1_stage = "return" # Triggers the return during the evening.
     jump hufflepuff_match
 
 

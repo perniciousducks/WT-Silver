@@ -282,9 +282,9 @@ label cho_progress_init:
 
         $ start_match           = 0 # No match will trigger at 0
         $ main_matches_won      = 0 # Goes up to 3
-        $ main_match_1_seen = False
-        $ main_match_2_seen = False
-        $ main_match_3_seen = False
+        $ main_match_1_stage = "none"
+        $ main_match_2_stage = "none"
+        $ main_match_3_seen = "none"
 
         $ cho_content_complete = False
 

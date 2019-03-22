@@ -55,8 +55,12 @@ label cho_progress_init:
         $ cho_quidd_points = 0
 
         $ first_cho_favor_done = False
-
+        
+        $ cho_quiz_first_attempt = True
+        $ cho_quiz_failed = False
+        $ cho_quiz_assed = False
+        
     if not hasattr(renpy.store,'gave_cho_gift') or reset_persistants:
         $ gave_cho_gift      = False
-
+        
     return

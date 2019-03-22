@@ -149,46 +149,6 @@ label summon_cho:
 
             jump end_cho_event
 
-
-
-
-
-label cho_training_menu:
-    menu:
-        "-Change outfit-":
-            jump cho_wardrobe_test
-            #jump cho_quidditch_outfit
-        #"-Discuss tactics-":
-        #    jump cho_tactics
-        "-Go back-":
-            jump cho_requests
-
-
-label cho_favor_menu:
-    python:
-        menu_choices = []
-        for i in cc_favor_list:
-            if i in [cc_pf_C1_Blowjob_OBJ, cc_pf_D1_Sex_OBJ]:
-                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
-            elif i.tier > main_matches_won:
-                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
-            else:
-                menu_choices.append((i.getMenuText(),i.start_label))
-        menu_choices.append(("-Never mind-", "nvm"))
-        result = renpy.display_menu(menu_choices)
-    if result == "nvm":
-        jump cho_requests
-    elif result == "vague":
-        call favor_not_ready
-        jump cho_requests
-    elif result == "na":
-        call not_available
-        jump cho_requests
-    else:
-        $ renpy.jump(result)
-
-
-
 label favor_not_ready:
     call nar("You can't do this favour just yet.")
     return
@@ -196,15 +156,3 @@ label favor_not_ready:
 label not_available:
     call nar("This feature is currently not availabel in v[config.version], and will be added in a later patch.")
     return
-
-                jump cho_favor_menu
-
-label cho_training_menu:
-    menu:
-        #"-Change outfit-":
-            #jump cho_wardrobe_test
-            #jump cho_quidditch_outfit
-        #"-Discuss tactics-":
-        #    jump cho_tactics
-        "-Go back-":
-            jump cho_requests

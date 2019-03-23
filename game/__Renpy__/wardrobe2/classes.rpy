@@ -93,6 +93,7 @@ init python:
         color_default = []
         skinlayer = "characters/dummy.png"
         extralayer = "characters/dummy.png"
+        overlayer = "characters/dummy.png"
         outline = None
         unlocked = True
         cloned = False
@@ -160,6 +161,9 @@ init python:
             # Check if extra layer exists
             if renpy.exists(self.imagepath+self.id+"/extra.png"):
                 self.extralayer = self.imagepath+self.id+"/extra.png"
+                
+            if renpy.exists(self.imagepath+self.id+"/overlay.png"):
+                self.overlayer = self.imagepath+self.id+"/overlay.png"
                 
             # Check if armfix layers exist
             self.armfix_L = []
@@ -269,7 +273,8 @@ init python:
                     (1010, 1200),
                     (0,0), self.sprite,
                     (0,0), self.extralayer,
-                    (0,0), self.outline)
+                    (0,0), self.outline,
+                    (0,0), self.overlayer)
             return self.sprite
             
         def get_armfix(self):

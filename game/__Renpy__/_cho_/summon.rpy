@@ -54,19 +54,7 @@ label summon_cho:
 
         "-Personal Favours-" if cho_training_unlocked:
             if cho_mood <= 0:
-                label cho_favor_menu:
-                menu:
-                    "-Admire her body-":
-                        jump cho_favor_1
-                    #"-Play with her butt-": #I don't think these event have the right posig yet or are missing CGs? They also cause crashes.
-                    #    jump cho_favor_2
-                    #"-Make her suck my cock-":
-                        jump cho_favor_3
-                    #"{color=#858585}-A vague idea-{/color}" if imagination <= 3:
-                    #    call vague_idea
-                    #    jump cho_favor_menu
-                    "-Nevermind-":
-                        jump cho_requests
+                jump cho_favor_menu
             else:
                 call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
                 jump cho_requests
@@ -148,6 +136,29 @@ label summon_cho:
             call cho_main("Good bye, [cho_genie_name].","smile","base","base","R")
 
             jump end_cho_event
+            
+label cho_favor_menu:
+    python:
+        menu_choices = []
+        for i in cc_favor_list:
+            if i in [cc_pf_C1_Blowjob_OBJ, cc_pf_D1_Sex_OBJ]:
+                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+            elif i.tier > main_matches_won:
+                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+            else:
+                menu_choices.append((i.getMenuText(),i.start_label))
+        menu_choices.append(("-Never mind-", "nvm"))
+        result = custom_menu(menu_choices)
+    if result == "nvm":
+        jump cho_requests
+    elif result == "vague":
+        call favor_not_ready
+        jump cho_requests
+    elif result == "na":
+        call not_available
+        jump cho_requests
+    else:
+        $ renpy.jump(result)
 
 label favor_not_ready:
     call nar("You can't do this favour just yet.")

@@ -52,7 +52,7 @@ label cho_quiz_1:
     
     menu:
         "It’s played on a rectangular court...":
-                    $ renpy.block_rollback()
+            $ renpy.block_rollback()
             $ cho_answer_2 = False
             m "The game is played on a rectangular court...{w=1.0}{nw}"
             $ volume = _preferences.volumes['music']
@@ -64,7 +64,7 @@ label cho_quiz_1:
             g4 "Of course!{w=0.4}... and in basketball..."
             
         "You may not go out of bounds with the ball...":
-                $ renpy.block_rollback()
+            $ renpy.block_rollback()
             $ cho_answer_2 = True
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
             $ volume = _preferences.volumes['music']

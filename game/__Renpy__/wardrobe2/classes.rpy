@@ -62,9 +62,13 @@ init python:
                 for i in xrange(0, len(self.group)):
                     item = [self.group[i], char.clothing[self.group[i].type][1]]
                     sprite_list.append(item)
+                    sprite_list.append([self.group[i].get_skin(), 5])
                         
                 # Sort sprite list by zorder based on character clothing zorder
-                sprite_list.sort(key=lambda x: x[1], reverse=False)            
+                sprite_list.sort(key=lambda x: x[1], reverse=False)
+
+                # Armfix
+                armfix = None
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -76,9 +80,18 @@ init python:
                                     (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
                     else:
                         self.sprite = Composite(
-                                    (1010, 1200),
-                                    (0,0), self.sprite,
-                                    (0,0), sprite[0].get_image(True))
+                                (1010, 1200),
+                                (0,0), self.sprite,
+                                (0,0), sprite[0].get_image())
+                                    
+                        if sprite[0].armfix and armfix == None:
+                            armfix = sprite[0].get_armfix(True)
+                    
+                if not armfix == None:
+                    self.sprite = Composite(
+                        (1010, 1200),
+                        (0,0), self.sprite,
+                        (0,0), armfix)
             return self.sprite
             
             
@@ -208,7 +221,7 @@ init python:
             dyes = []
             for dye in self.color:
                 dyes.append([dye[0],dye[1],dye[2],dye[3]])
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc)
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix)
                 
         def set_pose(self, pose):
             if renpy.exists(self.imagepath+self.id+"/"+pose+"_0.png"):
@@ -252,18 +265,18 @@ init python:
 
         def get_imagelayer_color(self, layer):
             return im.MatrixColor(self.get_imagelayer(layer), self.get_matrixcolor(layer))
-                    
-        def get_image(self, skingray=False):
-            self.sprite = Image(self.skinlayer)
             
-            # Used in mannequin generation
-            if skingray:
-                self.sprite = im.MatrixColor(self.sprite, im.matrix.desaturate())
+        def get_skin(self):
+            return self.skinlayer
+                    
+        def get_image(self):
             
             # Keep used clothes images in cache
             renpy.start_predict("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/*.*")
-
-            for i in xrange(0, self.layers):
+            
+            self.sprite = self.get_imagelayer_color(0)
+            
+            for i in xrange(1, self.layers):
                 self.sprite = Composite(
                        (1010, 1200),
                        (0,0), self.sprite,
@@ -277,8 +290,12 @@ init python:
                     (0,0), self.overlayer)
             return self.sprite
             
-        def get_armfix(self):
+        def get_armfix(self, skingray=False):
             armL = Image("characters/"+self.char+"/body/arms/armfixL.png")
+            
+            # Used in mannequin generation
+            if skingray:
+                armL = im.MatrixColor(armL, im.matrix.desaturate())
             
             # Add armfix with proper colors
             if self.armfix_L > 0:
@@ -344,18 +361,12 @@ init python:
             if 'body' in args:
                 imagepath = "characters/"+self.char+"/body/"
                 
-                #hair = self.get_object(self.body, 'hair')
-                #hairshadow = self.get_object(self.body, 'hairshadow')
                 armleft = self.get_object(self.body, 'armleft')
                 armright = self.get_object(self.body, 'armright')
                 breasts = self.get_object(self.body, 'breasts')
                 base = self.get_object(self.body, 'base')
                 legs = self.get_object(self.body, 'legs')
                 
-                #if hair and symbol not in hair :
-                #    self.body['hair'][0] = imagepath+"hair/"+hair+".png"
-                #if hairshadow and symbol not in hairshadow :
-                #    self.body['hairshadow'][0] = imagepath+"hair/"+hairshadow+".png"
                 if armleft and symbol not in armleft:
                     self.body['armleft'][0] = imagepath+"arms/"+armleft+".png"
                 if armright and symbol not in armright:
@@ -549,6 +560,7 @@ init python:
                 for key, value in self.clothing.iteritems():
                     if self.clothing[key][0] and not self.clothing[key][4]:
                         sprite_list.append(value)
+                        sprite_list.append([self.clothing[key][0].get_skin(), 5, 0, 0, False])
                         
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)

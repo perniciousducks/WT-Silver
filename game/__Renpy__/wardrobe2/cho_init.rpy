@@ -104,10 +104,7 @@ label __init_variables:
                         "armright":    ["arm_down_r", 1, 0, 0, False],
                         "breasts":     ["breasts_bikini_tan", 3, 0, 0, False],
                         "base":        ["base_01", 2, 0, 0, False],
-                        "legs":        [None, 5, 1, 0, False]}
-                        
-            # "hair":        ["ponytail_blue_top", 12, 0, 0, False],
-            # "hairshadow":  ["ponytail_blue_base", 11, 0, 0, False],
+                        "legs":        [None, 4, 0, 0, False]}
                         
             cho_class.face = {
                         "tears":       [None, 11, 0, 0, False],

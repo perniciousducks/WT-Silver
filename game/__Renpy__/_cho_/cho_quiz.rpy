@@ -69,7 +69,7 @@ label cho_quiz_1:
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
-            $ renpy.sound.play( "sounds/hmm1.mp3")
+            $ renpy.sound.play("sounds/hmm1.mp3")
             call cho_main("I guess that's pretty much the same as in Quidditch...", "smile", "base", "raised", "mid")
             $ _preferences.volumes['music'] = volume
             m "Great! I mean, obviously! And..."

@@ -15,11 +15,11 @@ label cho_random_clothing:
     else:
         if daytime and random_number in [1,2,3,4,5]: #50% chance:
 
-            if not cho_wardrobe_unlocked and cho_quidd_points >= 3:
+            if not cho_wardrobe_unlocked and main_matches_won >= 1:
                 $ cho_class.unequip("all")
                 $ cho_class.equip(cho_cloth_topsweater1)
                 $ cho_class.equip(cho_cloth_pantslong2)
-                
+
                 #call cho_chibi("stand","mid","base")
 
                 pause.2

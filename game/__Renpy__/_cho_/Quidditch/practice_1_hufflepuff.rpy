@@ -1,6 +1,6 @@
 
 
-    # Started first training match against Hufflepuff
+# Started first training match against Hufflepuff
 
 label start_training_match:
 

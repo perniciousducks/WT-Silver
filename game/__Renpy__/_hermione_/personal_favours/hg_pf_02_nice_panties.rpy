@@ -3,11 +3,8 @@
 ### Hermione Shows Her Panties ###
 
 label hg_pf_NicePanties:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     m "{size=-4}(I will ask her to show me her panties. Plain and simple.){/size}"
     if hg_pf_NicePanties_OBJ.points < 1:
@@ -16,9 +13,7 @@ label hg_pf_NicePanties:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
-
-    $ menu_x = 0.2 #Menu is moved to the left side.
+                jump hermione_favor_menu
 
     call her_main("So, what will it be, [genie_name]?")
     m "Nothing drastic, really..."
@@ -337,8 +332,5 @@ label end_hg_show_panties:
                 hide screen hermione_main
                 with d3
                 m "Hmmmm, I want..."
-
-                $ menu_x = 0.5 #Menu is moved to the middle.
-                $ menu_y = 0.5 #Menu is moved to the middle.
 
                 jump silver_requests_root

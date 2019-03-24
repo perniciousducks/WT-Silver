@@ -303,8 +303,7 @@ with d3
 
 call teleport("desk")
 
-$ menu_x = 0.5
-$ menu_y = 0.5
+call reset_menu_position
 
 
 jump day_start

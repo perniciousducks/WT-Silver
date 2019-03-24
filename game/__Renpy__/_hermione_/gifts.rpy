@@ -1,6 +1,79 @@
 
 
-#Hermione Gift Responses
+# Hermione Gift Menu
+
+label hermione_gift_menu:
+    call update_quest_items
+
+    python:
+
+        category_list = []
+        category_list.append("ui_gifts")
+        category_list.append("ui_quest_items")
+
+        if current_category == None:
+            current_category = category_list[0]
+            category_choice = category_list[0]
+
+        item_list = []
+        if current_category == "ui_gifts":
+            menu_title = "Gift Items"
+            item_list.extend(candy_gift_list)
+            item_list.extend(mag_gift_list)
+            item_list.extend(drink_gift_list)
+            item_list.extend(toy_gift_list)
+        if current_category == "ui_quest_items":
+            menu_title = "Quest Items"
+            item_list.extend(her_quest_items_list)
+
+        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+
+    $ _return = ui.interact()
+
+    hide screen bottom_menu
+    if category_choice != current_category:
+        $ current_category = _return
+
+    elif isinstance(_return, item_class):
+        if _return in her_quest_items_list:
+            menu:
+                "Would you like to use this quest item?"
+                "\"(Yes, let's do it!)\"":
+                    $ quest_item = _return
+                    jump give_her_quest_item
+                "\"(Not right now.)\"":
+                    jump hermione_gift_menu
+        elif _return.number > 0:
+            call give_her_gift(_return)
+        else:
+            ">You don't own this item."
+            jump hermione_gift_menu
+
+        if her_mood != 0:
+            jump hermione_gift_menu
+        else:
+            jump hermione_requests
+
+    elif _return == "Close":
+        $ current_page = 0
+        $ category_choice = None
+        hide screen bottom_menu
+        with d3
+
+        jump hermione_requests
+
+    elif _return == "inc":
+        $ current_page += 1
+    elif _return == "dec":
+        $ current_page += -1
+
+    jump hermione_gift_menu
+
+
+
+# Hermione Gift Responses
+
 label give_her_quest_item: #(quest_item)
 
     $ gave_hermione_gift = True

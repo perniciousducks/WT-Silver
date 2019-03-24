@@ -1,11 +1,8 @@
 
 
 label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pf_SuckIt_OBJ.points == 0:
         m "{size=-4}(Should I ask her to have sex with me?){/size}"
@@ -13,7 +10,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10

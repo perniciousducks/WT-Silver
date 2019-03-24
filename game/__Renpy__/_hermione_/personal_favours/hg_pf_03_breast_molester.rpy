@@ -3,11 +3,8 @@
 ### Hermione Breast Molester ###
 
 label hg_pf_BreastMolester:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     m "{size=-4}(I will molest her tits a little. Won't even ask her to bare them for me. Pretty harmless stuff.){/size}"
 
@@ -16,7 +13,7 @@ label hg_pf_BreastMolester:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     if her_whoring < 3: #Hermione refuses.
         m "[hermione_name], would you mind if I play with your tits a little?"
@@ -112,7 +109,7 @@ label hg_breast_molester_1:
 
     call her_main("[genie_name].....?","annoyed","angryL",ypos="head")
     m "..."
-    
+
     menu:
         "\"I'm gonna molest your tits now.\"":
             call her_main("What? What do you mean, [genie_name]--?","soft","wide")
@@ -155,8 +152,8 @@ label hg_breast_molester_1:
 
     call her_main("............................","shock","worriedCl",ypos="head")
 
-    $ menu_x = 0.5 #Menu is moved to the left side.
-    $ menu_y = 0.3 #Menu is moved to the left side.
+    $ menu_x = 0.5
+    $ menu_y = 0.3 # Menu is moved up.
 
     menu:
         "-Squeeze her tits with all of your strength-":
@@ -233,8 +230,8 @@ label hg_breast_molester_2:
     call bld
     call her_main("................","base","ahegao_raised",cheeks="blush")
 
-    $ menu_x = 0.5 #Menu is moved to the left side.
-    $ menu_y = 0.3 #Menu is moved to the left side.
+    $ menu_x = 0.5
+    $ menu_y = 0.3 # Menu is moved up.
 
     menu:
         "\"Do you enjoy this, [hermione_name]?\"":

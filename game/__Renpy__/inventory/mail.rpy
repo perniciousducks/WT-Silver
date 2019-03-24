@@ -20,8 +20,7 @@ label read_letter:
 
     $ letter.mailRead()
 
-    $ menu_x = 0.5
-    $ menu_y = 0.5
+    call reset_menu_position
 
     hide screen letter
     hide screen bld1

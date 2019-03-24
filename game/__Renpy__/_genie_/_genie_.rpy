@@ -9,18 +9,18 @@ label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
     if flip == False:
         $ genie_flip = -1
     if flip == True:
-        $ genie_flip = 1 #Default, facing right.
+        $ genie_flip = 1 # Default, facing right.
 
     #Positioning
     if xpos != None:
-        if xpos in ["base","default"]: #All the way to the left.
+        if xpos in ["base","default"]:     # All the way to the left.
             $ genie_xpos = 130
-        elif xpos == "mid":                     #Centered.
+        elif xpos == "mid":                # Centered.
             $ genie_xpos = 300
-        elif xpos == "right":                   #Bit more to the right.
+        elif xpos == "right":              # Bit more to the right.
             $ genie_xpos = 400
         elif xpos in ["wardrobe","close"]:
-            $ genie_flip = -1 #Facing left.
+            $ genie_flip = -1 # Facing left.
             $ genie_xpos = 575
         else:
             $ genie_xpos = int(xpos)
@@ -31,14 +31,17 @@ label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
             $ genie_scaleratio = 2
             $ genie_zorder = 4
             $ use_genie_head = False
-        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+        elif ypos in ["head"]:
+            # Use ypos="head" to activate her head position.
+            # Use ypos="base" to disable it.
+            # Use ypos="200" or any other number to move her head up or down.
             $ use_genie_head = True
-            $ genie_scaleratio = 2 #Reset
+            $ genie_scaleratio = 2
 
-            if genie_flip == -1: #Flipped
-                $ genie_xpos = 590 #620
+            if genie_flip == -1: # Flipped
+                $ genie_xpos = 590
             else:
-                $ genie_xpos = 620 #590
+                $ genie_xpos = 620
             $ genie_ypos = 230
             $ genie_zorder = 8
         else:

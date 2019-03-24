@@ -21,18 +21,14 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
 
     #Positioning
     if xpos != None:
-        if xpos in ["base","default"]: #All the way to the right.
+        if xpos in ["base","default"]:      # All the way to the right.
             $ hermione_xpos = 640
-            $ menu_x = 0.1 #Don't add ypos!
         elif xpos == "left":
             $ hermione_xpos = 200
-            $ menu_x = 0.5
-        elif xpos == "mid":                     #Centered.
+        elif xpos == "mid":                 # Centered.
             $ hermione_xpos = 300
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "right":                   #Bit more to the right.
+        elif xpos == "right":               # Bit more to the right.
             $ hermione_xpos = 400
-            $ menu_x = 0.5 #Don't add ypos!
         elif xpos in ["wardrobe","close"]:
             $ hermione_xpos = 540
         else:
@@ -45,9 +41,12 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
             $ hermione_zorder = 5
             $ use_hermione_head = False
 
-        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+        elif ypos in ["head"]:
+            # Use ypos="head" to activate her head position.
+            # Use ypos="base" to disable it.
+            # Use ypos="200" or any other number to move her head up or down.
             $ use_hermione_head = True
-            $ hermione_scaleratio = 2 #Reset
+            $ hermione_scaleratio = 2
 
             if face_on_cg: #Only her face is visible. Face gets placed on top of the CG screen.
                 if ccg_folder == "herm_sex":

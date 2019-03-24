@@ -3,11 +3,8 @@
 ### Wear A Buttplug ###
 
 label hg_ps_Buttplug:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     $ current_payout = 55 #Used when haggling about price of the favour.
 
@@ -17,7 +14,7 @@ label hg_ps_Buttplug:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
     else:
         m "{size=-4}(I feel like making her walk around with a buttplug again!){/size}"
 

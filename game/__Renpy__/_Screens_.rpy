@@ -170,7 +170,7 @@ label give_reward(text="",gift=""):
     hide screen blktone5
     with d3
 
-    $ menu_y = 0.5 #return to default menu align
+    call reset_menu_position
 
     return
 
@@ -216,7 +216,7 @@ label unlock_clothing(text="",item=None):
     #
     #$ outfit_linking[item.id].unlock(True)
 
-    $ menu_y = 0.5 #return to default menu align
+    call reset_menu_position
 
     return
 

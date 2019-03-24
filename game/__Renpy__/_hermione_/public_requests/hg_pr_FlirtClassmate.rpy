@@ -4,11 +4,8 @@
 
 ##(Level 01) (5 pt.) (Flirt with classmates). (Available during daytime only).
 label hg_pr_FlirtClassmate:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pr_FlirtClassmate_OBJ.points < 1:
         m "{size=-4}(Ask her to go flirt with some boys from \"Slytherin\"?){/size}"
@@ -16,7 +13,7 @@ label hg_pr_FlirtClassmate:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     call bld
 

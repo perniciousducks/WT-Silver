@@ -345,8 +345,7 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("top_school_4")
         $ wr_tops_uniform.append("top_school_5")
 
-        if cho_quidd_points != 0:
-            $ wr_tops_uniform.append("top_sweater_1")
+        $ wr_tops_uniform.append("top_sweater_1")
 
         #Muggle
         if cc_muggle_hot_ITEM.unlocked:
@@ -476,9 +475,8 @@ label update_wr_bottoms_list:
             $ wr_bottoms_skirts.append("skirt_short_2")
 
         #Pants
-        if cho_quidd_points != 0:
-            $ wr_bottoms_pants.append("pants_long_1")
-            $ wr_bottoms_pants.append("pants_short_1")
+        $ wr_bottoms_pants.append("pants_long_1")
+        $ wr_bottoms_pants.append("pants_short_1")
         $ wr_bottoms_pants.append("pants_long_2")
         if cc_muggle_hot_ITEM.unlocked:
             $ wr_bottoms_pants.append("pants_short_2")

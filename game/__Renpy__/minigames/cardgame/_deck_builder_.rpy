@@ -1,4 +1,8 @@
 label deck_builder:
+    python: 
+        for card in playerdeck:
+            card.playercard = True
+    label deck_builder_jump:
     hide screen main_room_menu
     show screen deck_builder_screen
     $ renpy.block_rollback()
@@ -6,7 +10,7 @@ label deck_builder:
 
     if _return in unlocked_cards:
         $ selectcard = unlocked_cards.index(_return)
-        jump deck_builder
+        jump deck_builder_jump
     elif _return == "gallery":
         hide screen deck_builder_screen
         show screen deck_builder_gallery
@@ -24,14 +28,14 @@ label deck_builder:
     elif _return == "inc":
         $ currentpage += 1
         $ selectcard = -1
-        jump deck_builder
+        jump deck_builder_jump
     elif _return == "dec":
         $ currentpage -= 1
         $ selectcard = -1
-        jump deck_builder
+        jump deck_builder_jump
     elif _return == "unselect":
         $ selectcard = -1
-        jump deck_builder
+        jump deck_builder_jump
     else:
         if not selectcard == -1:
             python:
@@ -41,10 +45,10 @@ label deck_builder:
                     playerdeck[int(_return)] = unlocked_cards[selectcard]
                     selectcard = -1
                     pass
-            jump deck_builder
+            jump deck_builder_jump
             
         else:
-            jump deck_builder
+            jump deck_builder_jumps
 
 screen deck_builder_screen():
     zorder 8

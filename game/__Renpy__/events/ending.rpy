@@ -3360,8 +3360,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
             "-Not yet-":
                 jump read_genie_letter_again
 
-        $ menu_x = 0.5
-        $ menu_y = 0.5
+        call reset_menu_position
 
         hide screen letter
         hide screen bld1

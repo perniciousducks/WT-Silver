@@ -19,7 +19,6 @@ label equipping_failed:
             call her_main("I want 5 house points! And that's no guarantee that I'm actually going to wear...","open","closed")
             call her_main("Whatever it is you want me to put on.","annoyed","annoyed")
 
-            $ menu_x = 0.2 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
             menu:
                 "-Give her the points-":
                     m "alright, [hermione_name],... here are your points..."
@@ -71,7 +70,6 @@ label equipping_failed:
             call her_main("Fifteen house points!","open","base")
             call her_main("And maybe I will wear it.-- Only maybe!","open","baseL")
 
-            $ menu_x = 0.2 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
             menu:
                 "-Give her the points-":
                     m "alright, [hermione_name],... here are your points..."

@@ -377,8 +377,7 @@ call update_hints
 label day_main_menu:
 
 ### MENU PLACEMENT ###
-$ menu_x = 0.5
-$ menu_y = 0.5
+call reset_menu_position
 
 if day == 1 and daytime and bird_examined and desk_examined and cupboard_examined and door_examined and fireplace_examined:
     show screen bld1

@@ -25,14 +25,11 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
             $ tonks_xpos = 640
-            $ menu_x = 0.1 #Don't add ypos!
-        elif xpos == "mid":                     #Centered.
+        elif xpos == "mid":            #Centered.
             $ tonks_xpos = 300
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "right":                   #Bit more to the right.
+        elif xpos == "right":          #Bit more to the right.
             $ tonks_xpos = 400
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "wardrobe":
+        elif xpos == ["wardrobe","close"]:
             $ tonks_xpos = 540
         else:
             $ tonks_xpos = int(xpos)
@@ -43,9 +40,12 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
             $ tonks_scaleratio = 2
             $ tonks_zorder = 5
             $ use_tonks_head = False
-        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+        elif ypos in ["head"]:
+            # Use ypos="head" to activate her head position.
+            # Use ypos="base" to disable it.
+            # Use ypos="200" or any other number to move her head up or down.
             $ use_tonks_head = True
-            $ tonks_scaleratio = 2 #Reset
+            $ tonks_scaleratio = 2
 
             if tonks_flip == -1: #Flipped
                 $ tonks_xpos = 620

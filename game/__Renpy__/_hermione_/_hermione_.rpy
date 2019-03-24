@@ -46,7 +46,7 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
             # Use ypos="base" to disable it.
             # Use ypos="200" or any other number to move her head up or down.
             $ use_hermione_head = True
-            $ hermione_scaleratio = 2 #Reset
+            $ hermione_scaleratio = 2
 
             if face_on_cg: #Only her face is visible. Face gets placed on top of the CG screen.
                 if ccg_folder == "herm_sex":

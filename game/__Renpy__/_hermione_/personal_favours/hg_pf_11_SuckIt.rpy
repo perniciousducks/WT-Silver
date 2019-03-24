@@ -3,11 +3,8 @@
 ### Hermione Blowjob ###
 
 label hg_pf_SuckIt: #15+
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pf_SuckIt_OBJ.points == 0:
         m "{size=-4}(Should I ask her for a blowjob?){/size}"
@@ -19,7 +16,7 @@ label hg_pf_SuckIt: #15+
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     call set_u_ani("blowjob_ani","hand_ani",0,10)
     $ mouth_full_of_cum = False

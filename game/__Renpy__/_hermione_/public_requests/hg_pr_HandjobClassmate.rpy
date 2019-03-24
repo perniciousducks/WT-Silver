@@ -4,13 +4,10 @@
 
 ##(Level 06) (55 pt.) (Give handjob to a classmate). (Available during daytime only).
 label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
-    hide screen hermione_main
-    with d3
 
     $ current_payout = 55 #Used when haggling about price of the favour.
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pr_HandjobClassmate_OBJ.points < 1:
         m "{size=-4}(Tell her to give a handjob to one of her classmates?){/size}"
@@ -18,7 +15,7 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     call bld
 

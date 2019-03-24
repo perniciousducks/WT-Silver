@@ -5,8 +5,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     show screen blkfade
     with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
@@ -661,7 +660,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     if not hg_outfit_pirate_ITEM.unlocked:
         call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
-    
+
     if not card_exist(unlocked_cards, maslab):
         if deck_unlocked:
             call give_reward("Ye plundered a special card from 'er cavern.", "images/cardgame/t1/genie_realm/maslab_v1.png")

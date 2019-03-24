@@ -605,7 +605,7 @@ label start_end_events:
             g9 "Maybe we could..."
             call her_main("Have some fun?","soft","glance")
             g9 "You can read my mind, girl."
-            jump hermione_requests_menu
+            jump hermione_favor_menu
         "No.":
             jump hermione_talk
 

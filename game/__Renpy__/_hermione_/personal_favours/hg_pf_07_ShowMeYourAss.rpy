@@ -3,11 +3,8 @@
 ### Hermione Shows Her Backside ###
 
 label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pf_ShowMeYourAss_OBJ.points == 0:
         m "{size=-4}(I feel like checking out that ass.){/size}"
@@ -19,7 +16,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     $ current_payout = 40 #Used when haggling about price of th favor.
 

@@ -1386,8 +1386,7 @@ label forgotten_lets_have_sex:
     hide screen hermione_main
     with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
     $ genie_sprite_base = "characters/genie/base_4.png"
     $ genie_sprite_xpos = 550
     $ genie_sprite_ypos = 0

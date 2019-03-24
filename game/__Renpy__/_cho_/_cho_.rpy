@@ -3,7 +3,7 @@
 ### Cho Chang ###
 
 label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    
+
     #Flip
     if flip == False:
         $ cho_flip = 1 #Default
@@ -22,15 +22,12 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 
     #Positioning
     if xpos != None:
-        if xpos in ["base","default"]: #All the way to the right.
+        if xpos in ["base","default"]:     # All the way to the right.
             $ cho_xpos = 640
-            $ menu_x = 0.1 #Don't add ypos!
-        elif xpos == "mid":                     #Centered.
+        elif xpos == "mid":                # Centered.
             $ cho_xpos = 300
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "right":                   #Bit more to the right.
+        elif xpos == "right":              # Bit more to the right.
             $ cho_xpos = 400
-            $ menu_x = 0.5 #Don't add ypos!
         elif xpos in ["wardrobe","close"]:
             $ cho_xpos = 540
         else:
@@ -42,9 +39,12 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             $ cho_scaleratio = 2
             $ cho_zorder = 5
             $ use_cho_head = False
-        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+        elif ypos in ["head"]:
+            # Use ypos="head" to activate her head position.
+            # Use ypos="base" to disable it.
+            # Use ypos="200" or any other number to move her head up or down.
             $ use_cho_head = True
-            $ cho_scaleratio = 2 #Reset
+            $ cho_scaleratio = 2
 
             if cho_flip == -1: #Flipped
                 $ cho_xpos = 620
@@ -54,7 +54,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             $ cho_zorder = 8
         else:
             $ cho_ypos = int(ypos)
-            
+
     if face != None:
         if mouth == None:
             call set_cho_face(mouth = face)
@@ -64,7 +64,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_cho_face(eyebrows = face)
         if pupils == None:
             call set_cho_face(pupils = face)
-    
+
     python:
         cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         cho_class.special(emote=emote)
@@ -85,7 +85,7 @@ label end_cho_event:
     pause.5
     $ active_girl = None
     jump main_room
-    
+
 screen cho_chang():
     tag cho_main
     zorder cho_zorder

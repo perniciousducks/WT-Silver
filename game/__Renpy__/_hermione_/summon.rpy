@@ -9,13 +9,12 @@ label summon_hermione:
 
     label hermione_requests:
 
-    $ menu_x = 0.25
-    $ menu_y = 0.5
-
     $ hide_transitions = False
     $ hermione_busy = True
 
     menu:
+
+        # Talk
         "-Talk-":
             if not chitchated_with_her:
                 if her_mood <= 7:
@@ -28,6 +27,8 @@ label summon_hermione:
             else:
                 jump hermione_talk
 
+
+        # Tutoring
         "-Tutoring-" if not daytime and her_tutoring < 14: #13 is last level.
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, maybe tomorrow..."
@@ -47,6 +48,8 @@ label summon_hermione:
             else:
                 jump l_tutoring_check
 
+
+        # Favors
         "-Buy sexual favours-" if hermione_favors:
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
@@ -70,8 +73,10 @@ label summon_hermione:
                 her "After what you did I don't feel like doing this ever again!"
                 jump hermione_requests
             else:
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
+
+        # Wardrobe
         "-Wardrobe-" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
             $ active_girl = "hermione"
 
@@ -92,154 +97,23 @@ label summon_hermione:
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
         #    jump your_whore
 
-        "-Let's Duel- {image=interface/cards.png}" if snape_second_win:
-            if her_know_cards == False:
-                m "[hermione_name]..."
-                call her_main( "Yes, [genie_name]?","base","base")
-                m "Are you familiar with Wizard Cards?"
-                call her_main( "I've heard of it... it used to be a popular card game a decade or so ago.","annoyed","squint")
-                g9 "So, would you like to play it?"
-                call her_main( "Do they even make the cards still? I don't think there's anyone in Hogsmeade stocking them.","normal","suspicious")
-                call her_main( "So I wouldn't be able to play against you...","base","base")
-                call her_main( "Unless Fred and Geo...","clench","wide")
-                m "Unless... who now?"
-                call her_main( "\"Hermione... learn to keep your mouth shut.\"","mad","wideL")
-                m "[hermione_name]..."
-                call her_main( "I'm sorry sir, I should have told you...","open","worried")
-                call her_main( "Fred and George have a secret shop set up in the school.","normal","worriedL")
-                m "I see..."
-                call her_main( "Please don't tell them I told you.","open","worriedCl")
-                m "So you say they might have some cards?"
-                call her_main( "Wha... yes, maybe.","base","soft")
-                call her_main( "You're not going to shut them down?","angry","suspicious")
-                m "Why should I? It's a free market is it not?"
-                g9 "A little bit of competition with Hoemead is good for consumers."
-                call her_main( "But... I mean, yes of course.","annoyed","worried")
-                m "So you'll play if they stock some cards?"
-                call her_main( "I mean...","soft","down_raised")
-                m "If they don't get shut down I mean."
-                call her_main( "Oh, yes of course I'll play.","shock","wide")
-                call her_main( "...","soft","surprised")
-                call her_main( "Anything else you needed or am I free to go?","base","worried")
-                $ her_know_cards = True
-                jump hermione_requests
-            elif her_know_cards and twins_know_cards == False:
-                m "(I should talk to Fred and George about wizard cards first.)"
-                jump hermione_requests
-            elif her_know_cards and twins_know_cards and not twins_cards_stocked:
-                m "(I have to convince Fred and George to start stocking up cards in their shop first.)"
-                jump hermione_requests
-            elif twins_cards_stocked_talk and not her_cards_stocked_talk:
-                m "Hello again [hermione_name]."
-                call her_main( "Hello [genie_name].","base","base")
-                m "I wanted to thank you for mentioning the Weasley shop."
-                call her_main( "You're not shutting them down are you?","soft","down")
-                m "Of course not, where else am I supposed to get my supplies from?"
-                call her_main( "Oh, yes... where.","normal","down_raised")
-                g9 "In fact, I noticed that you were on the list."
-                call her_main( "What list? Have I done something wrong?","soft","worried")
-                m "The tier list for the card-game of course."
-                call her_main( "Ah, yes...","normal","soft")
-                call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
-                g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
-                m "So, how about a little some practice rounds then?"
-                call her_main( " I've only recently started playing so I'm not that good yet.","base","glance")
-                m "Don't worry, after a few practice rounds you'll get up to speed, when you're ready we'll play the real challenge..."
-                $ her_cards_stocked_talk = True
-                jump hermione_duel_menu
-            else:
-                if geniecard_level < 2:
-                    label hermione_duel_menu:
-                    menu:
-                        "-First Duel-":
-                            jump hermione_first_duel
-                        "-Second Duel-" if her_first_win:
-                            jump hermione_second_duel
-                        "{color=#858585}-You need to beat the first duel-{/color}" if not her_first_win:
-                            jump hermione_duel_menu
-                        "-Challenge-" if her_second_win:
-                            jump hermione_third_duel
-                        "{color=#858585}-You need to beat the second duel-{/color}" if not her_second_win:
-                            jump hermione_duel_menu
-                        "-Never mind-":
-                            jump hermione_requests
-                else:
-                    jump hermione_random_duel
 
+        # Cardgame
+        "-Let's Duel- {image=interface/cards.png}" if snape_second_win:
+            jump hermione_cardgame_menu
+
+
+        # Gifts
         "-Gifts-" if not gave_hermione_gift:
             $ current_category = None
-
-            label hermione_gift_menu:
-            call update_quest_items
-
-            python:
-
-                category_list = []
-                category_list.append("ui_gifts")
-                category_list.append("ui_quest_items")
-
-                if current_category == None:
-                    current_category = category_list[0]
-                    category_choice = category_list[0]
-
-                item_list = []
-                if current_category == "ui_gifts":
-                    menu_title = "Gift Items"
-                    item_list.extend(candy_gift_list)
-                    item_list.extend(mag_gift_list)
-                    item_list.extend(drink_gift_list)
-                    item_list.extend(toy_gift_list)
-                if current_category == "ui_quest_items":
-                    menu_title = "Quest Items"
-                    item_list.extend(her_quest_items_list)
-
-                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
-
-            $ _return = ui.interact()
-
-            hide screen bottom_menu
-            if category_choice != current_category:
-                $ current_category = _return
-
-            elif isinstance(_return, item_class):
-                if _return in her_quest_items_list:
-                    menu:
-                        "Would you like to use this quest item?"
-                        "\"(Yes, let's do it!)\"":
-                            $ quest_item = _return
-                            jump give_her_quest_item
-                        "\"(Not right now.)\"":
-                            jump hermione_gift_menu
-                elif _return.number > 0:
-                    call give_her_gift(_return)
-                else:
-                    ">You don't own this item."
-                    jump hermione_gift_menu
-
-                if her_mood != 0:
-                    jump hermione_gift_menu
-                else:
-                    jump hermione_requests
-
-            elif _return == "Close":
-                $ current_page = 0
-                $ category_choice = None
-                hide screen bottom_menu
-                with d3
-
-                jump hermione_requests
-
-            elif _return == "inc":
-                $ current_page += 1
-            elif _return == "dec":
-                $ current_page += -1
-
             jump hermione_gift_menu
+
         "{color=#858585}-Gifts-{/color}" if gave_hermione_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump hermione_requests
 
+
+        # Dismiss
         "-Dismiss her-":
             if daytime:
                 if her_mood >=3 and her_mood < 7:
@@ -264,7 +138,7 @@ label summon_hermione:
 
 
 
-label hermione_requests_menu:
+label hermione_favor_menu:
     if slytherin >= gryffindor or ravenclaw >= gryffindor or hufflepuff >= gryffindor:
         show screen hermione_main
 
@@ -441,7 +315,7 @@ label hermione_talk:
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
-                    
+
                 "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
                     jump job_5
                 "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:

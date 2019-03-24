@@ -325,7 +325,7 @@ label hufflepuff_match_return:
     stop music fadeout 1.0
     call give_reward(">New favours for Cho have been unlocked!","interface/icons/head/head_cho_2.png")
 
-    "Developer note:" ">This marks the end of Cho's current Quiditch story.\nThank you for playing."
+    "Developer note:" ">This marks the end of Cho's current Quidditch story.\nThank you for playing."
     $ cho_content_complete = True # Temporary to hide the Practice Match option in the menu.
 
     jump end_cho_event

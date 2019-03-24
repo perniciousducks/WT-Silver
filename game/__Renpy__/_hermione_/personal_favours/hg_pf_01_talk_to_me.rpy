@@ -3,11 +3,8 @@
 ### Hermione Talks ###
 
 label hg_pf_TalkToMe:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     m "{size=-4}(All I'll do is have an innocent conversation with her...){/size}"
     if hg_pf_TalkToMe_OBJ.points < 1:
@@ -16,7 +13,7 @@ label hg_pf_TalkToMe:
             "\"(Yes, let's do that.)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     call play_music("chipper_doodle")
 

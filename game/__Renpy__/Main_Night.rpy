@@ -224,8 +224,7 @@ call update_hints
 label night_main_menu:
 
 ### MENU PLACEMENT ###
-$ menu_x = 0.5
-$ menu_y = 0.5
+call reset_menu_position
 
 hide screen bld1
 hide screen blktone

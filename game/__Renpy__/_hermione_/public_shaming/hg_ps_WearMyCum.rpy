@@ -12,7 +12,7 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump hermione_requests_menu
+            jump hermione_favor_menu
 
     m "[hermione_name]?"
     call her_main("Yes, [genie_name].",xpos="right",ypos="base")

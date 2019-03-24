@@ -182,8 +182,7 @@ label main_room:
     hide screen blkfade
     with d3
 
-    $ menu_x = 0.5
-    $ menu_y = 0.5
+    call reset_menu_position
 
     if daytime:
         call play_music("day_theme")
@@ -197,6 +196,14 @@ label main_room:
     else:
         jump night_resume
 
+
+# Reset menu
+label reset_menu_position:
+
+    $ menu_x = 0.5
+    $ menu_y = 0.6
+
+    return
 
 
 label reset_day_flags:

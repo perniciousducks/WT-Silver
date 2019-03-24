@@ -25,13 +25,10 @@ label ast_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     if xpos != None:
         if xpos in ["base","default"]: #All the way to the right.
             $ astoria_xpos = 640
-            $ menu_x = 0.1 #Don't add ypos!
         elif xpos == "mid":                     #Centered.
             $ astoria_xpos = 300
-            $ menu_x = 0.5 #Don't add ypos!
         elif xpos == "right":                   #Bit more to the right.
             $ astoria_xpos = 400
-            $ menu_x = 0.5 #Don't add ypos!
         elif xpos in ["wardrobe","close"]:
             $ astoria_xpos = 540
         else:

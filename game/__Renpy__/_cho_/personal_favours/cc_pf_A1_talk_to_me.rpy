@@ -16,21 +16,28 @@ label cc_pf_A1_Talking:
 
         if cho_whoring < 3: # Points til 2
             $ cho_whoring += 1
+        if cc_pf_A1_Talking_OBJ.level < 2: # Hear 1+2
+            $ cc_pf_A1_Talking_OBJ.level += 1
 
     # Tier 2
     elif cho_whoring in [3,4,5]:
 
         # Talk with Cho about her Quidditch team.
-        call cc_pf_A1_event4
+        call cc_pf_A1_event3
         # Has two branches.
         # Unlocks first public requests favour.
 
         if cho_whoring < 5: # Points til 5
             $ cho_whoring += 1
+        if cc_pf_A1_Talking_OBJ.level < 3: # Heart 3
+            $ cc_pf_A1_Talking_OBJ.level += 1
 
     # Tier 3+4
     else: # Repeatable events # Lewd
         pass
+
+    # Stats
+    $ cc_pf_A1_Talking_OBJ.points += 1
 
     jump end_cho_event
 
@@ -228,7 +235,7 @@ label cc_pf_A1_event2:
 
 # Event 1 & 2
 # Has two branches
-label cc_pf_A2_event1:
+label cc_pf_A1_event3:
 
     # Intro
     if cho_whoring < 2:

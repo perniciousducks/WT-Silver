@@ -40,6 +40,8 @@ label cho_intro_1:
 
     call cho_main("Good evening, Sir.",face="happy",xpos="mid",ypos="base")
 
+    call ctc
+
     menu:
         "\"Hello, Miss Chang.\"" if cho_name_known == True:
             cho "Hello to you too, Professor."
@@ -316,7 +318,7 @@ label cho_intro_2:
     call cho_chibi("stand","door","base",flip=False)
     with d1
     pause.3
-    call cho_walk("door","mid",2)
+    call cho_walk("door","desk",2.2)
     pause.2
 
     call cho_main("I hate her!","angry","angry","angry","mid",xpos="mid",ypos="base",trans="hpunch")
@@ -360,7 +362,7 @@ label cho_intro_2:
     m "(...)"
 
     # Cho leaves.
-    call cho_walk("mid","leave",2)
+    call cho_walk("desk","leave",2.2)
 
     m "I better talk to Hermione about this..."
     m "Or Snape first. Maybe he can help me more."

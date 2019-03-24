@@ -9,13 +9,12 @@ label summon_tonks:
 
     label tonks_requests:
 
-    $ menu_x = 0.25
-    $ menu_y = 0.5
-
     $ hide_transitions = False
     $ tonks_busy = True
 
     menu:
+
+        # Talk
         "-Talk-":
             if not chitchated_with_tonks:
                 call tonks_chit_chat
@@ -23,17 +22,8 @@ label summon_tonks:
             else:
                 jump tonks_talk
 
-        "{color=#858585}-Send Astoria with her-{/color}" if astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked:
-            if not astoria_book_intro_happened:
-                call nar(">You should probably discuss this with Astoria first.")
-            elif not spells_locked:
-                call nar(">There is no reason to send Astoria with Tonks right now.")
-            elif not daytime:
-                call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.")
-            elif astoria_busy:
-                call nar(">Astoria is currently unavailable.")
-            jump tonks_requests
 
+        # Detention Events
         "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy:
             call blkfade
             call nar(">You summon Astoria.")
@@ -80,6 +70,19 @@ label summon_tonks:
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu
 
+        "{color=#858585}-Send Astoria with her-{/color}" if astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked:
+            if not astoria_book_intro_happened:
+                call nar(">You should probably discuss this with Astoria first.")
+            elif not spells_locked:
+                call nar(">There is no reason to send Astoria with Tonks right now.")
+            elif not daytime:
+                call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.")
+            elif astoria_busy:
+                call nar(">Astoria is currently unavailable.")
+            jump tonks_requests
+
+
+        # Wardrobe
         "-Wardrobe-" if tonks_wardrobe_unlocked:
             $ active_girl = "tonks"
 
@@ -96,70 +99,20 @@ label summon_tonks:
             call nar(">You haven't unlocked this feature yet.")
             jump tonks_requests
 
+
+        # Gifts
         "-Gifts-" if not gave_tonks_gift:
             $ current_category = None
-
-            label tonks_gift_menu:
-
-            python:
-
-                category_list = [] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
-                category_list.append("ui_gifts")
-                #category_list.append("ui_quest_items")
-
-                if current_category == None:
-                    current_category = category_list[0]
-                    category_choice = category_list[0]
-
-                item_list = []
-                if current_category == "ui_gifts":
-                    menu_title = "Gift Items"
-                    item_list.extend(candy_gift_list)
-                    item_list.extend(mag_gift_list)
-                    item_list.extend(drink_gift_list)
-                    item_list.extend(toy_gift_list)
-                if current_category == "ui_quest_items":
-                    menu_title = "Quest Items"
-                    item_list.extend(toy_gift_list)
-
-                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
-
-            $ _return = ui.interact()
-
-            hide screen bottom_menu
-            if category_choice != current_category:
-                $ current_category = _return
-
-            elif isinstance(_return, item_class):
-                if _return.number > 0:
-                    call give_ton_gift(_return)
-                    jump tonks_requests
-                else:
-                    ">You don't own this item."
-                    jump tonks_gift_menu
-
-            elif _return == "Close":
-                $ current_page = 0
-                $ category_choice = None
-                hide screen bottom_menu
-                with d3
-
-                jump tonks_requests
-
-            elif _return == "inc":
-                $ current_page += 1
-            elif _return == "dec":
-                $ current_page += -1
-
             jump tonks_gift_menu
+
         "{color=#858585}-Gifts-{/color}" if gave_tonks_gift:
             m "I already gave her a gift today."
             jump tonks_requests
 
+
+        # Dismiss
         "-Never mind-":
             stop music fadeout 1.0
-            $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
 
             if daytime:
                 ton "Alright, back to work then..."
@@ -171,6 +124,7 @@ label summon_tonks:
             $ tonks_busy = True
 
             jump main_room
+
 
 
 label tonks_talk:

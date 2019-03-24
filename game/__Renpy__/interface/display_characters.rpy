@@ -54,8 +54,7 @@ label close_summon_characters:
     show screen blkfade
     with d3
 
-    $ menu_x = 0.5
-    $ menu_y = 0.5
+    call reset_menu_position
 
     $ hide_transitions = False
 
@@ -265,8 +264,7 @@ label move_character:
     if character_choice == "bg":
         call screen summon_characters
 
-    $ menu_x = 0.5
-    $ menu_y = 0.5
+    call reset_menu_position
 
     hide screen custom_background
     $ bg_transp = 0.3
@@ -333,8 +331,7 @@ label move_character:
 
 label pick_custom_background:
 
-    $ menu_x = 0.5
-    $ menu_y = 0.5
+    call reset_menu_position
 
     menu:
         ">Change background image."

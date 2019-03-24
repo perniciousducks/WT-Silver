@@ -3,11 +3,8 @@
 ### Hermione Dance ###
 
 label hg_pf_DanceForMe:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pf_DanceForMe_OBJ.points < 1:
         m "{size=-4}(Ask her to dance for me?){/size}"
@@ -15,7 +12,7 @@ label hg_pf_DanceForMe:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     $ current_payout = 35 #Because will have option to pay extra.
 

@@ -3,11 +3,8 @@
 ### Hermione Butt Molester ###
 
 label hg_pf_ButtMolester:
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     m "{size=-4}(I'll just molest her butt a little.){/size}"
 
@@ -16,7 +13,7 @@ label hg_pf_ButtMolester:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     hide screen hermione_main
     with d3
@@ -103,7 +100,7 @@ label hg_butt_molester_1:
             with d1
 
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
 
             call hide_blkfade
             call ctc
@@ -222,7 +219,7 @@ label hg_butt_molester_1:
             with d1
 
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
 
             call hide_blkfade
             call ctc
@@ -476,7 +473,7 @@ label hg_butt_molester_2:
             with d1
 
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
 
             call hide_blkfade
             call ctc
@@ -546,7 +543,7 @@ label hg_butt_molester_2:
             with d1
 
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
 
             call hide_blkfade
             call ctc
@@ -710,7 +707,7 @@ label hg_butt_molester_3:
             with d1
 
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
 
             call hide_blkfade
             call ctc
@@ -954,7 +951,7 @@ label hg_butt_molester_3:
             with d1
 
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
 
             call hide_blkfade
             call ctc
@@ -1079,8 +1076,7 @@ label end_hg_butt_molester:
     call her_chibi("stand","mid","base")
     call gen_chibi("sit_behind_desk")
 
-    $ menu_x = 0.5 #Menu is moved to the left side.
-    $ menu_y = 0.5 #Menu is moved to the left side.
+    call reset_menu_position
 
     call hide_blkfade
 

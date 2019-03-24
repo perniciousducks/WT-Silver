@@ -12,7 +12,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump hermione_requests_menu
+            jump hermione_favor_menu
     m "[hermione_name]?"
     call her_main("I am listening, [genie_name].",xpos="right",ypos="base")
     m "I will need your panties..."

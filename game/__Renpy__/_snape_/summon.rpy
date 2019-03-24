@@ -8,14 +8,12 @@ label summon_snape:
 
     call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base")
 
-    $ menu_x = 0.25
-    $ menu_y = 0.5
-
     label snape_ready:
         pass
 
     menu:
 
+        # Talk
         "-Talk-":
             if not chitchated_with_snape:
                 call snape_chitchat
@@ -50,292 +48,30 @@ label summon_snape:
             $ chitchated_with_snape = True
             jump snape_ready
 
+
+        # Fireplace Chats
         "-Let's hang-" if not daytime and not sna_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
                 jump not_today #Snape says: "I am busy tonight."
-#            elif sna_friendship >= 39 and her_whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
-#                jump not_today #Snape says: "I am busy tonight."
             elif sna_friendship >= 88 and her_whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
                 jump not_today #Snape says: "I am busy tonight."
             else:
-                $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
 
+
+        # Potions
         "-Get a potion-" if her_whoring > 10:
-            hide screen snape_main
-            with fade
+            jump snape_potion_menu
 
-            sna_[9] "I notice you're making a bit of progress on Miss Granger."
-            sna_[21] "I've got some potions here that normally aren't available to students."
-            sna_[21] "These might help speed up the process..."
-            menu:
-                "-Lactantium-" if potion_inv.has("p_milk_potion"):
-                    ">You already have a Lactantium potion."
-                    jump snape_ready
-                "-Lactantium-" if not potion_inv.has("p_milk_potion"):
-                    if potion_scene_11_progress < 1:
-                        sna_[9] "Ah yes, a unique concoction of mine. I have a bottle on hand at all times."
-                        sna_[13] "Just in case..."
-                        sna_[18] "Here, take it!"
-                        ">Snape quickly pushes the milky potion into your hands."
-                        ">Milking potion received!"
-                        $ potion_inv.add("p_milk_potion")
-                    elif potion_scene_11_progress == 1:
-                        sna_[9] "Good work on getting her to take it."
-                        sna_[13] "Her breasts did look magnificently full in class."
-                        sna_[13] "mmmm, and I think she was even leaking a little..."
-                        sna_[20] "Get her to take another!"
-                        sna_[18] "Here, I'll even give you a milker for the slut!"
-                        ">Snape hands you an odd leather and metal harness."
-                        m "What is-"
-                        ">Snape quickly pushes another milky potion into your hands."
-                        ">Milking potion received!"
-                        sna_[12] "Don't worry about it, just get her to put it on. It's enchanted so it will handle the rest..."
-                        sna_[6] "but I want it back before you leave!"
-                        sna_[20] "I spent a fortune on the self cleaning model..."
-                        $ potion_inv.add("p_milk_potion")
-                    else:
-                        sna_[13] "Mmmm, I wish I could be there to see you milk her..."
-                        m "..."
-                        m "(That's probably not a good idea...)"
-                        sna_[12] "All that {b}delicious{/b} milk..."
-                        m "(definitely not a good idea.)"
-                        sna_[13] "..."
-                        sna_[9] "Well anyway, I was wondering..."
-                        sna_[9] "Want me to augment the potion?"
-                        m "Augmented?"
-                        m "I never asked for this..."
-                        sna_[6] "I know... I'm offering it..."
-                        m "Oh yeah, sorry. What sort of augmentation?"
-                        sna_[10] "Well I can leave the potion as it is..."
-                        sna_[12] "Or I can add an extra little something to it."
-                        m "Such as?"
-                        sna_[9] "Well..."
-                        label snape_potion_choice:
-                            pass
-                        menu:
-                            "-Normal potion-":
-                                sna_[7] "Here you are Mr. Adventurous..."
-                                $ potion_version = 1
-                            "-futa potion-":
-                                sna_[17] "What? Are you sure you want this one?"
-                                sna_[18] "I mean I figured you were a bit of a pervert..."
-                                sna_[19] "but I didn't think..."
-                                sna_[18] "Oh well, if you want it, it's yours..."
-                                menu:
-                                    "-give it to me-":
-                                        sna_[17] "really?"
-                                        sna_[18] "you're more Adventurous than I thought!"
-                                        sna_[20] "Here, I'll even give you an extra attachment for the milker!"
-                                        ">Snape hands you a different cannister with a soft plastic opening in the bottom. It looks almost like an anus."
-                                        sna_[19] "I also put an undetectable extension charm on the cannister... Promise to tell me what happens!"
-                                    "-no-":
-                                          sna_[7] "Too bad..."
-                                          jump snape_potion_choice
 
-                                $ potion_version = 2
-                            "-Permanent breast expansion-":
-                                sna_[18] "The milk production will still only last a day..."
-                                sna_[9] "But her big boobs will be permanent..."
-                                sna_[18] "Are you sure you want this?"
-                                sna_[20] "She might not like it..."
-                                menu:
-                                    "-yes-":
-                                        sna_[19] "Fantastic!!!"
-                                    "-no-":
-                                          sna_[7] "Too bad..."
-                                          jump snape_potion_choice
-
-                                $ potion_version = 3
-                        ">Snape quickly pushes the milky potion into your hands."
-                        ">Milking potion received!"
-                        $ potion_inv.add("p_milk_potion")
-                    jump snape_ready
-
-                "-Veritaserum-" if potion_inv.has("p_veritaserum"):
-                    ">You already have a Veritaserum potion."
-                    jump snape_ready
-                "-Veritaserum-" if not potion_inv.has("p_veritaserum"):
-                    sna_[1] "Truth potion."
-                    sna_[1] "This is dangerous stuff Genie..."
-                    sna_[21] "Use it to make anyone tell the truth."
-                    sna_[8] "Just not me!"
-                    ">Snape hands you the tiny vial filled with a strange gold liquid."
-                    ">Veritaserum received!"
-                    $ potion_inv.add("p_veritaserum")
-                    jump snape_ready
-
-                "-Voluptatem-" if potion_inv.has("p_voluptatem"):
-                    ">You already a bottle of Voluptatem."
-                    jump snape_ready
-                "-Voluptatem-" if not potion_inv.has("p_voluptatem"):
-                    m "Volupwhatem?"
-                    sna_[1] "This is actually an experimental potion of mine..."
-                    sna_[7] "I'm not sure if this is ready for testing on humans yet."
-                    ">Snape hands you the small bottle filled with a swirling pink and purple liquid."
-                    ">Voluptatem received!"
-                    $ potion_inv.add("p_voluptatem")
-                    jump snape_ready
-
-                "\"Never mind.\"":
-                    jump snape_ready
+        # Cardgame
         "-Let's Duel- {image=interface/cards.png}" if deck_unlocked:
-            label snape_duel_menu:
-            if geniecard_level == 1:
-                if not snape_know_cards:
-                    m "Ever heard of Wizard Cards?"
-                    call sna_main( "What about them?","snape_05")
-                    g9 "Do you have any?"
-                    call sna_main( "I do, I collected some when I was younger... never played though.","snape_09")
-                    m "Why not?"
-                    call sna_main( "Didn't really have anyone to play with so I stopped buying them.","snape_06")
-                    m "Up for a game or two?"
-                    call sna_main( "...", "snape_03")
-                    call sna_main( "Why not...", "snape_02")
-                    m "What do I get if I win?"
-                    call sna_main( "What do you mean? There never used to be prizes in Wizard Cards...","snape_01")
-                    g4 "What..."
-                    m "No wonder this game never took off..."
-                    m "Let's just play a few practice rounds for now then."
-                    call sna_main( "And then?","snape_05")
-                    m "..."
-                    m "And then we'll think about prizes."
-                    call sna_main( "...","snape_01")
-                    call sna_main( "Fine, I'm confident enough to beat a beginner.","snape_06")
-                    call sna_main( "But first a bit of practice...","snape_02")
-                    g9 "Let's play."
-                    $ snape_know_cards = True
-                menu:
-                    "-First Duel-":
-                        jump snape_first_duel
-                    "-Second Duel-" if snape_first_win:
-                        jump snape_second_duel
-                    "{color=#858585}-You need to beat the first duel-{/color}" if not snape_first_win:
-                        jump snape_duel_menu
-                    "-Challenge-" if snape_second_win:
-                        jump snape_third_duel
-                    "{color=#858585}-You need to beat the second duel-{/color}" if not snape_second_win:
-                        jump snape_duel_menu
-                    "-Never mind-":
-                        jump snape_ready
-            else:
-                m "Up for another game?"
-                if not snape_wager_talk:
-                    sna "With you?"
-                    sna "..."
-                    if sna_friendship < 30:
-                        call sna_main("no...", "snape_03")
-                        g4 "Why not."
-                        m "What if we did a game as a part of a wager?"
-                        call sna_main("A wager...","snape_09")
-                        call sna_main("No, I have better things to do right now...","snape_06")
-                        m "\"He doesn't seem that keen, maybe I should ask again when we know each other a bit better.\""
-                        "> Improve your relationship with Snape before trying again."
-                        jump snape_ready
-                    call sna_main("Do you know how hard it is to progress with this game with no one to play against?","snape_03")
-                    call sna_main("I even traded some of my potion ingredients to some wierd guy in knockturn alley for one of the old booster packs...","snape_01")
-                    call sna_main("Turns out... that card I gave you, whilst not very powerful was quite a rare one.","snape_08")
-                    m "Sounds like a you problem."
-                    g9 "I've done fine by just winning cards..."
-                    m "So, you've played a lot of games since our last match I assume?"
-                    call sna_main("...","snape_29")
-                    m "That's what I thought..."
-                    g4 "What's the point in owning the cards if you're not going to play?"
-                    call sna_main("I suppose...","snape_09")
-                    m "How about we do a wager?"
-                    call sna_main("A wager?","snape_05")
-                    g9 "Yes, how about just one token and a wager ontop of that to make it interesting."
-                    call sna_main("...","snape_04")
-                    call sna_main("Fine, only if it's on equal terms...","snape_10")
-                    g4 "What does that mean?"
-                    call sna_main("It means, you set your prize and I'll set mine accordingly.","snape_03")
-                    m "Okay, so..."
-                    m "If you win I'll give you some wine."
-                    call sna_main("Don't you provide me with plenty of wine anyway?","snape_05")
-                    m "I mean, I could stop doing it. The office has my name on it after all and last I checked that means whatever is in it belong to me as well."
-                    sna "..."
-                    g9 "In a figurative way obviously. It doesn't actually have my name on the door."
-                    call sna_main("Obviously...","snape_03")
-                    m "It's not like this office came with any of those slytherin sluts you have yet to share with me..."
-                    call sna_main("Fine, if that's your only proposal. If you win then I'll give you something from my personal collection.","snape_03")
-                    g4 "Like what?"
-                    call sna_main("You'll see...","snape_02")
-                    m "\"Must be something good if he's not going to tell me...\""
-                    g9 "I'm in."
-                    $ snape_wager_talk = True
-                    if wine < 1:
-                        sna "Show me the bottle."
-                        m "What?"
-                        sna "I want to see the wine first."
-                        m "I dont have one, right now..."
-                        sna "Thats a shame, the wager will have to wait then."
-                        m "Damn...!"
-                        m "\"I should see if I could find some more wine in that cupboard... \""
-                        jump snape_ready
-                else:
-                    if wine < 1:
-                        sna "Do you have it?"
-                        m "What?"
-                        sna "The wine of course!"
-                        m "I dont..."
-                        sna "Thats a shame, our wager will have to wait then."
-                        m "Can't we just duel anyway? Im not intending to lose..."
-                        sna "Neither am I."
-                        sna "No wine, no duel."
-                        m "Damn!"
-                        m "\"I should see if I could find some more wine in that cupboard...  \""
-                        jump snape_ready
+            jump snape_duel_menu
 
-                    $ one_of_ten = renpy.random.randint(1, 10)
 
-                    if one_of_ten == 1:
-                        call sna_main("Sure, lets do it!","snape_02")
-                    elif one_of_ten == 2:
-                        call sna_main("Is there another bottle in it for me?","snape_05")
-                        g9 "If you win..."
-                        call sna_main("Good.","snape_02")
-                        call sna_main(" Then let's begin...","snape_02")
-                    elif one_of_ten == 3:
-                        call sna_main("Same wager?","snape_05")
-                        m "Sure."
-                        call sna_main("Okay then...","snape_01")
-                        call sna_main("Let's do it.","snape_02")
-                    elif one_of_ten == 4:
-                        call sna_main("Always!","snape_02")
-                        call sna_main("I'll make sure you lose this time Genie...","snape_01")
-                    elif one_of_ten == 5:
-                        call sna_main("My stock is filled so why not...","snape_03")
-                        g9 "Great."
-                        call sna_main("Good luck... you'll need it.","snape_02")
-                    elif one_of_ten == 6:
-                        call sna_main("You don't have to ask me twice.","snape_02")
-                    elif one_of_ten == 7:
-                        call sna_main("Prepare to lose!","snape_10")
-                        m "..."
-                        m "Let's just play..."
-                    elif one_of_ten == 8:
-                        call sna_main("I've been practicing, there's no way I'll lose.","snape_10")
-                        m "Are you sure about that?"
-                        call sna_main("Yes, I came here to win...","snape_08")
-                    elif one_of_ten == 9:
-                        call sna_main("You're going to lose this time...","snape_04")
-                        g9 "In your dreams..."
-                    else:
-                        call sna_main("Of course!","snape_02")
-                        call sna_main("But I think we should up our wager a bit...","snape_02")
-                        m "In what way?"
-                        call sna_main("I was thinking maybe you could send the Granger girl to my room tonight if I win.","snape_20")
-                        if touched_by_boy and her_whoring >= 11:
-                            m "We'll see about that."
-                        else:
-                            m "I doubt she would agree to that."
-                        m "Let's just stick to the original bet for now..."
-                        call sna_main("Fine...","snape_06")
-                jump snape_random_duel
-
+        # Dismiss
         "-Never mind-":
             stop music fadeout 1.0
-            $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
 
             if daytime:
                 sna "Alright, back to work then..."
@@ -347,6 +83,130 @@ label summon_snape:
             $ snape_busy = True
 
             jump main_room
+
+
+# Potion Menu
+label snape_potion_menu:
+    hide screen snape_main
+    with fade
+
+    sna_[9] "I notice you're making a bit of progress on Miss Granger."
+    sna_[21] "I've got some potions here that normally aren't available to students."
+    sna_[21] "These might help speed up the process..."
+
+    menu:
+        "-Lactantium-" if potion_inv.has("p_milk_potion"):
+            ">You already have a Lactantium potion."
+            jump snape_ready
+        "-Lactantium-" if not potion_inv.has("p_milk_potion"):
+            if potion_scene_11_progress < 1:
+                sna_[9] "Ah yes, a unique concoction of mine. I have a bottle on hand at all times."
+                sna_[13] "Just in case..."
+                sna_[18] "Here, take it!"
+                ">Snape quickly pushes the milky potion into your hands."
+                ">Milking potion received!"
+                $ potion_inv.add("p_milk_potion")
+            elif potion_scene_11_progress == 1:
+                sna_[9] "Good work on getting her to take it."
+                sna_[13] "Her breasts did look magnificently full in class."
+                sna_[13] "mmmm, and I think she was even leaking a little..."
+                sna_[20] "Get her to take another!"
+                sna_[18] "Here, I'll even give you a milker for the slut!"
+                ">Snape hands you an odd leather and metal harness."
+                m "What is-"
+                ">Snape quickly pushes another milky potion into your hands."
+                ">Milking potion received!"
+                sna_[12] "Don't worry about it, just get her to put it on. It's enchanted so it will handle the rest..."
+                sna_[6] "but I want it back before you leave!"
+                sna_[20] "I spent a fortune on the self cleaning model..."
+                $ potion_inv.add("p_milk_potion")
+            else:
+                sna_[13] "Mmmm, I wish I could be there to see you milk her..."
+                m "..."
+                m "(That's probably not a good idea...)"
+                sna_[12] "All that {b}delicious{/b} milk..."
+                m "(definitely not a good idea.)"
+                sna_[13] "..."
+                sna_[9] "Well anyway, I was wondering..."
+                sna_[9] "Want me to augment the potion?"
+                m "Augmented?"
+                m "I never asked for this..."
+                sna_[6] "I know... I'm offering it..."
+                m "Oh yeah, sorry. What sort of augmentation?"
+                sna_[10] "Well I can leave the potion as it is..."
+                sna_[12] "Or I can add an extra little something to it."
+                m "Such as?"
+                sna_[9] "Well..."
+                label snape_potion_choice:
+                    pass
+                menu:
+                    "-Normal potion-":
+                        sna_[7] "Here you are Mr. Adventurous..."
+                        $ potion_version = 1
+                    "-futa potion-":
+                        sna_[17] "What? Are you sure you want this one?"
+                        sna_[18] "I mean I figured you were a bit of a pervert..."
+                        sna_[19] "but I didn't think..."
+                        sna_[18] "Oh well, if you want it, it's yours..."
+                        menu:
+                            "-give it to me-":
+                                sna_[17] "really?"
+                                sna_[18] "you're more Adventurous than I thought!"
+                                sna_[20] "Here, I'll even give you an extra attachment for the milker!"
+                                ">Snape hands you a different cannister with a soft plastic opening in the bottom. It looks almost like an anus."
+                                sna_[19] "I also put an undetectable extension charm on the cannister... Promise to tell me what happens!"
+                            "-no-":
+                                  sna_[7] "Too bad..."
+                                  jump snape_potion_choice
+
+                        $ potion_version = 2
+                    "-Permanent breast expansion-":
+                        sna_[18] "The milk production will still only last a day..."
+                        sna_[9] "But her big boobs will be permanent..."
+                        sna_[18] "Are you sure you want this?"
+                        sna_[20] "She might not like it..."
+                        menu:
+                            "-yes-":
+                                sna_[19] "Fantastic!!!"
+                            "-no-":
+                                  sna_[7] "Too bad..."
+                                  jump snape_potion_choice
+
+                        $ potion_version = 3
+                ">Snape quickly pushes the milky potion into your hands."
+                ">Milking potion received!"
+                $ potion_inv.add("p_milk_potion")
+            jump snape_ready
+
+        "-Veritaserum-" if potion_inv.has("p_veritaserum"):
+            ">You already have a Veritaserum potion."
+            jump snape_ready
+        "-Veritaserum-" if not potion_inv.has("p_veritaserum"):
+            sna_[1] "Truth potion."
+            sna_[1] "This is dangerous stuff Genie..."
+            sna_[21] "Use it to make anyone tell the truth."
+            sna_[8] "Just not me!"
+            ">Snape hands you the tiny vial filled with a strange gold liquid."
+            ">Veritaserum received!"
+            $ potion_inv.add("p_veritaserum")
+            jump snape_ready
+
+        "-Voluptatem-" if potion_inv.has("p_voluptatem"):
+            ">You already a bottle of Voluptatem."
+            jump snape_ready
+        "-Voluptatem-" if not potion_inv.has("p_voluptatem"):
+            m "Volupwhatem?"
+            sna_[1] "This is actually an experimental potion of mine..."
+            sna_[7] "I'm not sure if this is ready for testing on humans yet."
+            ">Snape hands you the small bottle filled with a swirling pink and purple liquid."
+            ">Voluptatem received!"
+            $ potion_inv.add("p_voluptatem")
+            jump snape_ready
+
+        "\"Never mind.\"":
+            jump snape_ready
+
+
 
 label snape_dates:  ### HANGING WITH SNAPE ###
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...

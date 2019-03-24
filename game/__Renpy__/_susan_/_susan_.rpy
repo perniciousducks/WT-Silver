@@ -23,15 +23,12 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
 
     #Positioning
     if xpos != None:
-        if xpos in ["base","default"]: #All the way to the right.
+        if xpos in ["base","default"]:     # All the way to the right.
             $ susan_xpos = 640
-            $ menu_x = 0.1 #Don't add ypos!
-        elif xpos == "mid":                     #Centered.
+        elif xpos == "mid":                # Centered.
             $ susan_xpos = 300
-            $ menu_x = 0.5 #Don't add ypos!
-        elif xpos == "right":                   #Bit more to the right.
+        elif xpos == "right":              # Bit more to the right.
             $ susan_xpos = 400
-            $ menu_x = 0.5 #Don't add ypos!
         elif xpos in ["wardrobe","close"]:
             $ susan_xpos = 540
         else:
@@ -43,9 +40,12 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
             $ susan_scaleratio = 2
             $ susan_zorder = 5
             $ use_susan_head = False
-        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+        elif ypos in ["head"]:
+            # Use ypos="head" to activate her head position.
+            # Use ypos="base" to disable it.
+            # Use ypos="200" or any other number to move her head up or down.
             $ use_susan_head = True
-            $ susan_scaleratio = 2 #Reset
+            $ susan_scaleratio = 2
 
             if susan_flip == -1: #Flipped
                 $ susan_xpos = 620

@@ -3,11 +3,8 @@
 ### Hermione Show Breasts ###
 
 label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pf_ShowThemToMe_OBJ.points == 0:
         m "{size=-4}(I feel like gazing upon those titties.){/size}"
@@ -19,7 +16,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     if her_whoring < 6:
         jump too_much

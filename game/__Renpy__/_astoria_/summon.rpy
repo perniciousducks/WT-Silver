@@ -30,13 +30,12 @@ label summon_astoria:
 
     label astoria_requests:
 
-    $ menu_x = 0.25
-    $ menu_y = 0.5
-
     $ hide_transitions = False
     $ astoria_busy = True
 
     menu:
+
+        # Talk
         "-Talk-":
             if not chitchated_with_astoria:
                 call astoria_chit_chat
@@ -44,6 +43,8 @@ label summon_astoria:
             else:
                 jump astoria_talk
 
+
+        # Spell Training
         "-Spell Training-" if snape_gave_spellbook:
             if not astoria_book_intro_happened:
                 menu:
@@ -55,27 +56,30 @@ label summon_astoria:
                         jump astoria_requests
             else:
                 jump astoria_spell_training
+
         "{color=#858585}-Spell Training-{/color}" if spells_unlocked and not snape_gave_spellbook:
             call nar(">You will need to find a book for that.")
             jump astoria_requests
+
         "{color=#858585}-Hidden-{/color}" if not spells_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump astoria_requests
 
+
+        # Spell Events
         "-Use a Spell-" if spells_unlocked and not spells_locked:
             jump astoria_curse_menu
 
         "{color=#858585}-Use a Spell-{/color}" if tonks_unlocked and spells_locked:
             call nar(">You have recently used an unforgivable curse!\n>Tonks will want to have a word with you before you can use another.")
             jump astoria_requests
+
         "{color=#858585}-Use a Spell-{/color}" if not tonks_unlocked:
             call nar(">You'll need to find a way to deal with the Ministry first before casting any more curses!")
             jump astoria_requests
 
 
-        "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
-            call nar(">You haven't unlocked this feature yet.")
-            jump astoria_requests
+        # Wardrobe
         "-Wardrobe-" if astoria_wardrobe_unlocked:
             $ active_girl = "astoria"
 
@@ -88,66 +92,22 @@ label summon_astoria:
             call ast_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
+        "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump astoria_requests
+
+
+        # Gifts
         "-Gifts-" if not gave_astoria_gift:
             $ current_category = None
-
-            label astoria_gift_menu:
-
-            python:
-
-                category_list = []
-                category_list.append("ui_gifts")
-                #category_list.append("ui_quest_items")
-
-                if current_category == None:
-                    current_category = category_list[0]
-                    category_choice = category_list[0]
-
-                item_list = []
-                if current_category == "ui_gifts":
-                    menu_title = "Gift Items"
-                    item_list.extend(candy_gift_list)
-                    item_list.extend(mag_gift_list)
-                    item_list.extend(drink_gift_list)
-                    item_list.extend(toy_gift_list)
-                if current_category == "ui_quest_items":
-                    item_list.extend(toy_gift_list)
-
-                #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-            show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
-
-            $ _return = ui.interact()
-
-            hide screen bottom_menu
-            if category_choice != current_category:
-                $ current_category = _return
-
-            elif isinstance(_return, item_class):
-                if _return.number > 0:
-                    call give_ast_gift(_return)
-                    jump astoria_requests
-                else:
-                    ">You don't own this item."
-                    jump astoria_gift_menu
-
-            elif _return == "Close":
-                $ current_page = 0
-                $ category_choice = None
-                hide screen bottom_menu
-                with d3
-
-                jump astoria_requests
-
-            elif _return == "inc":
-                $ current_page += 1
-            elif _return == "dec":
-                $ current_page += -1
-
             jump astoria_gift_menu
+
         "{color=#858585}-Gifts-{/color}" if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump astoria_requests
 
+
+        # Dismiss
         "-Dismiss her-":
             if daytime:
                 call ast_main("I will go back to classes then, [ast_genie_name].","smile","base","base","mid")

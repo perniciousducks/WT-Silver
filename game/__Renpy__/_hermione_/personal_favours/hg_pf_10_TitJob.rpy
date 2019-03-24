@@ -3,11 +3,8 @@
 ### Hermione Titjob ###
 
 label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pf_TitJob_OBJ.points == 0:
         m "{size=-4}(Should I ask her for a titjob?){/size}"
@@ -19,7 +16,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     $ current_payout = 45 #Used when haggling about price of th favor.
 

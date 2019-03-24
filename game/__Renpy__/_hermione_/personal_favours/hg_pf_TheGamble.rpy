@@ -14,7 +14,7 @@ label hg_pf_TheGamble:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump hermione_requests_menu
+            jump hermione_favor_menu
 
     call play_music("chipper_doodle")
     show screen hermione_main

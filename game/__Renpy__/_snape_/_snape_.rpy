@@ -17,11 +17,11 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
 
     #Positioning
     if xpos != None:
-        if xpos in ["base","default"]: #All the way to the left.
+        if xpos in ["base","default"]:     # All the way to the left.
             $ snape_xpos = 525
-        elif xpos == "mid":                     #Centered.
+        elif xpos == "mid":                # Centered.
             $ snape_xpos = 300
-        elif xpos == "right":                   #Bit more to the right.
+        elif xpos == "right":              # Bit more to the right.
             $ snape_xpos = 400
         elif xpos in ["wardrobe","close"]:
             $ snape_xpos = 495
@@ -34,9 +34,12 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
             $ snape_scaleratio = 2
             $ snape_zorder = 5
             $ use_snape_head = False
-        elif ypos in ["head"]: #Use ypos="head" to activate her head position. Use ypos="base" to disable it. Use ypos="200" or any other number to move her head up or down.
+        elif ypos in ["head"]:
+            # Use ypos="head" to activate her head position.
+            # Use ypos="base" to disable it.
+            # Use ypos="200" or any other number to move her head up or down.
             $ use_snape_head = True
-            $ snape_scaleratio = 2 #Reset
+            $ snape_scaleratio = 2
 
             if snape_flip == -1: #Flipped #Head is on the left side.
                 $ snape_xpos = -50

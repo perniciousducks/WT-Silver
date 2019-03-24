@@ -5,8 +5,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
     show screen blkfade
     with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10

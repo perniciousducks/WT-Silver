@@ -1,7 +1,7 @@
 label hg_wager_bj:
     g9 "Well if you want to avoid losing the points you could come over here and get on your knees."
     m "And put my dick in your mouth!"
-    
+
     if her_whoring < 15:
         call her_main("I don't want to lose those points, but that is too much!", mouth="angry", eye="angry")
         call her_main("Isn't there anything else I could do?", mouth="open", eye="base")
@@ -23,12 +23,12 @@ label hg_wager_bj:
             call her_main("Should I turn around, [genie_name]?", mouth="open", eye="worriedCl")
             call her_main("", mouth="upset", eye="worried")
             m "No, not this time."
-        
+
             call her_main("Okay then...", mouth="annoyed", eye="glanceL")
             show screen no_groping_01
             with d1
             $ menu_x = 0.5
-            $ menu_y = 0.3 #Menu is moved down.
+            $ menu_y = 0.3 # Menu is moved up.
             call hide_blkfade
             call ctc
             show screen groping_01
@@ -39,7 +39,7 @@ label hg_wager_bj:
             if hg_pf_DanceForMe_OBJ.points >= 2: #If snape walked in during the dance favour.
                 call play_music("dark_fog")
                 call play_sound("door")
-                call sna_walk("door","mid",2)    
+                call sna_walk("door","mid",2)
                 call bld
                 call sna_main("",xpos="base",ypos="base")
                 call ctc
@@ -203,7 +203,7 @@ label hg_wager_bj:
                     call sna_walk("mid","leave",3)
                 else: #if hermione has stripped twice (so snape walked in on her)
                     call sna_main("Miss Granger?! I tho-... I...")
-                    
+
                     if her_whoring > 20:
                         call her_main("Hello, Professor Snape.", mouth="cum", eye="base")
                         call her_main("I was just giving the headmaster some help with an ‘itch'", mouth="soft", eye="soft")
@@ -234,7 +234,7 @@ label hg_wager_bj:
                     with d3
                     pause.2
                     call sna_walk("mid","leave",3)
-                m "Well, that was something..." 
+                m "Well, that was something..."
                 $ uni_sperm = False
                 if her_whoring < 20: #if she has lower whoring than 21
                     call her_main("That was mortifying!", mouth="angry", eye="angryCl")
@@ -303,7 +303,7 @@ label hg_wager_bj:
                             call her_main("In that case I'll take my leave...", mouth="smile", eye="happy")
                             g9 "That girl..."
                             jump end_hg_pf #should reset hermione if I understand correctly.
-        
+
                         "-Let her keep going and deal with the aftermath-":
                             m "Yeah... I'm good,"
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
@@ -381,7 +381,7 @@ label hg_wager_bj:
                     call her_main("I could continue if you want me to...", mouth="soft", eye="soft")
                     m "No, the mood's ruined now..."
                     call her_main("Are you still taking those points away?", mouth="open", eye="base")
-                    menu: 
+                    menu:
                         "-No-":
                             m "No, you're excused..."
                             call her_main("Thank you professor...", mouth="smile", eye="happy")

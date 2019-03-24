@@ -4,11 +4,8 @@
 
 ##(Level 07) (65 pt.) (Blowjob to a boy). (Available during daytime only).
 label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
-    hide screen hermione_main
-    with d3
 
-    $ menu_x = 0.5 #Menu is moved to the middle.
-    $ menu_y = 0.5 #Menu is moved to the middle.
+    call reset_menu_position
 
     if hg_pr_BlowjobClassmate_OBJ.points < 1:
         m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
@@ -23,10 +20,10 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
                     "\"(Yes, continue!)\"":
                         pass
                     "\"(No, return.)\"":
-                        jump hermione_requests_menu
+                        jump hermione_favor_menu
 
             "\"(Not right now.)\"":
-                jump hermione_requests_menu
+                jump hermione_favor_menu
 
     call bld
 

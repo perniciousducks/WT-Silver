@@ -1,9 +1,6 @@
 
 
 label summon_cho:
-    pause.2
-    call play_sound("knocking")
-    pause 1
     call play_sound("door")
     call cho_chibi("stand","mid","base")
 

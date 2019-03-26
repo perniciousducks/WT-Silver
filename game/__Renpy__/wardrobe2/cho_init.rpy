@@ -62,6 +62,9 @@ label __init_variables:
             # Robes
             cho_cloth_robequidditch1 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
             
+            # Gloves
+            cho_cloth_glovesquidditch1 = cloth_class(char="cho", category="misc", subcat="gloves", type="gloves", id="quidditch", layers=1, color=[[213, 161, 13, 255]], armfix=True)
+            
             # Hair
             cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
             

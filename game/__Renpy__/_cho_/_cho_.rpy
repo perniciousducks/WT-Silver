@@ -90,7 +90,7 @@ label end_cho_event:
     $ active_girl = None
     jump main_room
 
-screen cho_chang(animation):
+screen cho_chang(animation=False):
     tag cho_main
     zorder cho_zorder
     if animation:

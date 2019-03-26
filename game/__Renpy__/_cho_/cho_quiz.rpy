@@ -1,19 +1,20 @@
-transform crop_meter(fill):
+transform crop_meter(fill, opacity):
     subpixel True
     transform_anchor True
     on show, appear, start:
+        alpha opacity
         pause(0.5)
         yanchor 1.0
         yzoom -1.0
         ease_back 1.0 crop (0, 0, 60, int((float(fill)/100)*500))
         repeat
 
-label exp_o_meter(fill=50):
-    show screen exp_o_meter(fill=fill)
+label exp_o_meter(fill=50, opacity=1.0):
+    show screen exp_o_meter(fill=fill, opacity=opacity)
     #with d3
     return
     
-screen exp_o_meter(fill):
+screen exp_o_meter(fill, opacity):
     tag exp_o_meter
     zorder 4
     
@@ -23,7 +24,7 @@ screen exp_o_meter(fill):
         ypos 570
         
         add "interface/meter/"+interface_color+"/meter.png" yanchor 1.0
-        add "interface/meter/fill.png" at crop_meter(fill)
+        add "interface/meter/fill.png" at crop_meter(fill, opacity)
         add "interface/meter/glass.png" yanchor 1.0
         
     frame:
@@ -31,7 +32,7 @@ screen exp_o_meter(fill):
         xpos 150
         ypos 70
         add "interface/meter/"+interface_color+"/circle.png"
-        if fill >= 75:
+        if fill >= 90:
             add "interface/meter/100.png"
         elif fill >= 50:
             add "interface/meter/50.png"
@@ -40,6 +41,7 @@ screen exp_o_meter(fill):
             
 label cho_quiz_1:    
     call cho_chibi(xpos="mid")
+    $ confidence_meter = 50
     if cho_quiz_first_attempt:
         $ cho_quiz_first_attempt = False
         g9 "So, let’s begin on this Quiddetch thing then..."
@@ -53,19 +55,20 @@ label cho_quiz_1:
         m "Never seen space Jam?"
         call cho_main("...", "pout", "base", "raised", "mid")
         g4 "Come on."
+        call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "Well..."
     else:
         m "I’m ready to make my case on how Quidditch is similar to basketball..."
         call cho_main("Really sir... again?", "open", "angry", "angry", "L")
         m "Of course, it’s an important subject for your education..."
         call cho_main("I can't really see how but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
+        call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "Alright, so..."
     
     $ renpy.music.play("music/ominous_music.mp3")
     $ renpy.music.stop("weather")
     
     
-    $ confidence_meter = 50
     call exp_o_meter(fill=confidence_meter)
     menu:
         "There’s five players on each team...":
@@ -76,7 +79,7 @@ label cho_quiz_1:
             $ renpy.block_rollback()   
             call cho_main("Whilst Quidditch does have two teams...{w=0.5} there’s 7 players on each...", "annoyed", "suspicious", "raised", "mid")
             with hpunch
-            $ confidence_meter -= 20
+            $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
@@ -85,7 +88,7 @@ label cho_quiz_1:
         "At the start of the game the ball gets thrown in the air...":
             $ cho_answer_1 = True
             m "You start the game by the referee throwing the ball into the air..."
-            $ confidence_meter += 20
+            $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
@@ -104,7 +107,7 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] *= .5
             call cho_main("Well, that’s not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "suspicious", "base", "L")
             with hpunch
-            $ confidence_meter -= 20
+            $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
@@ -114,7 +117,7 @@ label cho_quiz_1:
             $ renpy.block_rollback()
             $ cho_answer_2 = True
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
-            $ confidence_meter += 20
+            $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
@@ -130,7 +133,7 @@ label cho_quiz_1:
             m "Each player takes a certain position."
             m "There are defensive positions..."
             m "And offensive positions..."
-            $ confidence_meter += 20
+            $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
@@ -148,7 +151,7 @@ label cho_quiz_1:
             call cho_main("Well, you can move with the ball freely without passing in Quidditch, that’s why we have the beaters...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("To make the opponents drop the ball.", "open", "suspicious", "base", "L")
             with hpunch
-            $ confidence_meter -= 20
+            $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
@@ -165,7 +168,7 @@ label cho_quiz_1:
             call cho_main("Well, that’s definitely not the case in Quidditch...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("Except for excessive use of elbows...", "open", "suspicious", "base", "L")
             with hpunch
-            $ confidence_meter -= 20
+            $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Well...{w=0.4}"
@@ -175,7 +178,7 @@ label cho_quiz_1:
             $ renpy.block_rollback()
             $ cho_answer_4 = True
             m "The way you score is by getting the ball through a hoop."
-            $ confidence_meter += 20
+            $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5

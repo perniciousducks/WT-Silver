@@ -937,57 +937,54 @@ label event_08:
 
     menu:
         "\"(I will jerk off a little while she talks.)\"":
-            $ her_jerk_off_counter += 1
-            $ jerk_off_session = True #Affects next conversation with Snape.
-            $ d_flag_01 = True #If TRUE genie jerks off under the desk.
-        "\"(No, that's stupid! I Need to behave!)\"":
-            $ d_flag_01 = False #NOT JERKING OFF.
-            pass
+            call hide_characters
+            hide screen bld1
+            with d3
+            pause.2
 
-    if d_flag_01:
-        hide screen bld1
-        with d3
-        call nar(">You reach under the desk and grab your cock...")
-        hide screen genie
-        call gen_chibi("jerking_off_behind_desk")
-        with d3
+            call gen_chibi("jerking_off_behind_desk")
+            with d3
+            pause.5
+
+            show screen bld1
+            call nar(">You reach under the desk and grab your cock...")
+
+            $ her_jerk_off_counter += 1
+            $ jerked_off_during_hermione_intro = True #Affects next conversation with Snape.
+
+            $ masturbating = True
+
+        "\"(No, that's stupid! I Need to behave!)\"":
+
+            $ masturbating = False
 
     m "Yes, keep on going, dear."
-    show screen bld1
     call her_main("\"Yes\"?! So you think it's fair?","angry","angry")
     m "Oh, of course not, I meant \"no\". But keep on going anyway..."
     call her_main("That's a relief. I'm glad that you agree with me, professor...","normal","base")
     call her_main("As I was saying, the whole issue is simply ridiculous and I cannot believe that it is taking place in our day and age!","open","angryCl")
 
-    if d_flag_01:
-        hide screen hermione_main
-        hide screen bld1
+    if masturbating:
         call nar(">*Fap!* *Fap!* *Fap!*","start")
         call nar(">You keep on stroking your cock...","end")
-        show screen hermione_main
-        show screen bld1
-        with d3
     else:
         m "I see..."
 
-    her "I mean, I would understand if something like this were to occur during the middle ages..."
+    call her_main("I mean, I would understand if something like this were to occur during the middle ages...")
     her "But we left the middle ages behind a long time ago, did we not?"
 
-    if d_flag_01:
+    if masturbating:
         g9 "{size=-4}(Would you look at those rosy cheeks? I want to poke 'em with my cock.){/size}"
-        hide screen hermione_main
         call nar(">You keep stroking your cock...")
-        show screen hermione_main
-        with d3
     else:
         m "Ehm... I suppose you did. I mean, we did."
 
-    her "So it hurts the whole house-point-distribution system."
+    call her_main("So it hurts the whole house-point-distribution system.")
     her "But it doesn't even stop there!"
     her "It hurts our entire educational system as well..."
     her "And more importantly, the motivation among students is steadily decreasing due to it!"
 
-    if d_flag_01:
+    if masturbating:
         m "{size=-4}(Look at those huge knockers on you, girl!){/size}"
         m "{size=-4}(Yes... I want to squeeze my dick between them...){/size}"
 
@@ -996,23 +993,19 @@ label event_08:
     her "As the president of our school's Student Representative Body..."
     her "I have a few suggestions on how to do that more efficiently."
 
-    if not d_flag_01:
+    if not masturbating:
         m ".............."
 
     her "First of all, the house point system needs to be maintained!"
     call her_main("You need to control the point distribution better, sir.","normal","base")
 
-    if d_flag_01:
+    if masturbating:
         g4 "{size=-4}(Yes, you are a whore... A nasty little whore... I bet you love to suck cocks... Don't you? Yes, I bet you do...){/size}"
-        hide screen hermione_main
-        with d3
         call nar(">You stroke your rock-hard cock ferociously!")
-        show screen hermione_main
-        with d3
 
     her "Of course you agree with me on this, professor, do you not?"
 
-    if d_flag_01:
+    if masturbating:
         g4 "{size=-4}*Panting heavily*{/size}"
         call her_main("Professor...?","normal","frown")
         g4 "{size=-4}(Crap. What does she want now?){/size}"
@@ -1023,12 +1016,19 @@ label event_08:
 
         menu:
             "\"(Yes, time to actually listen to her.)\"":
-                show screen genie
+                call hide_characters
+                hide screen bld1
                 with d3
-                $ d_flag_01 = False #NOT JERKING OFF ANY MORE.
-                pass
+
+                call gen_chibi("sit_behind_desk")
+                with d3
+                pause.5
+
+                $ masturbating = False
+
             "\"(No! I want to keep on jerking off!)\"":
-                pass
+
+                $ masturbating = True
 
     else:
         m "{size=-4}(Do I? I honestly don't give a damn...){/size}"
@@ -1040,7 +1040,7 @@ label event_08:
     her "Especially the teachers..."
     call her_main("I hope I'm not stepping out of line here, sir, but some of the teachers really do require supervision...","normal","base")
 
-    if d_flag_01:
+    if masturbating:
         g4 "{size=-4}(Yes! You little whore! You little fucking whore!) *Panting*{/size}"
     else:
         m "......................."
@@ -1048,37 +1048,38 @@ label event_08:
     call her_main("I understand that you may not have time for this, professor. After all, you are the headmaster of our school, and a very busy man.","open","angryCl")
     her "Being a top student is hard on me as well, sometimes..."
 
-    if d_flag_01:
+    if masturbating:
         g4 "{size=-4}(She said \"hard-on\"!) *Panting*{/size}"
 
     her "But you could delegate that task to me..."
     her "Just put your faith in me, professor."
 
-    if d_flag_01:
+    if masturbating:
         call her_main("Yes, you can do it! Just put it in me, sir!","base","base")
         stop music fadeout 1.0
-
-        call cum_block
 
         g4 "{size=-4}(Oh crap, that did it!) *Argh!*{/size}"
         hide screen hermione_main
         hide screen bld1
         with d3
+        pause.2
+
+        call cum_block
+
         call gen_chibi("cumming_behind_desk")
         with d3
         pause 3
 
-        show screen bld1
         call her_main("Professor?! What is going on...?","angry","wide")
-        call gen_chibi("jerking_behind_desk")
-        show screen genie_jerking_sperm_02
-        with d3
+
         g4 "Ah... YESSSSS.....!"
         her "???"
         g4 "*breathing heavily* Yes! yes...."
-        call gen_chibi("cum_on_desk")
+
+        call gen_chibi("came_on_desk")
         with d3
-        pause.2
+        pause.5
+
         m "Yes, girl. It's all exactly as you say and I will.... take care of it all."
     else:
         m "Alright... I will think about your proposal, I promise."
@@ -1090,7 +1091,7 @@ label event_08:
 
     call her_main("That's a relief! Thank you, professor.","open","angryCl")
 
-    if d_flag_01:
+    if masturbating:
         m "No, no, thank you..."
         call her_main("Hm...","normal","frown")
 
@@ -1099,7 +1100,7 @@ label event_08:
 
     call her_walk("mid","leave",2)
 
-    if d_flag_01:
+    if masturbating:
         m "{size=-4}(This was awesome...) *Panting*{/size}"
         m "{size=-4}(My pants are ruined though...){/size}"
     else:

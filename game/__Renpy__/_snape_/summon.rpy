@@ -396,7 +396,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     sna_[1] "I imagine she did..."
     sna_[1] "What did she want?"
 
-    if jerk_off_session:
+    if jerked_off_during_hermione_intro:
         m "I'm not sure..."
         sna_[11] "??"
         m "I was jerking off the entire time she was talking..."
@@ -469,7 +469,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "Genies can't kill..."
     sna_[7] "Rats!"
     m "And we frown upon murderers..."
-    if jerk_off_session:
+    if jerked_off_during_hermione_intro:
         sna_[17] "Really? I thought you didn't give a fuck..."
         m "to a certain degree..."
         sna_[7] "............."

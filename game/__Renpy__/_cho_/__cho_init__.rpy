@@ -29,8 +29,6 @@ label cho_init:
     return
 
 label cho_progress_init:
-    if not hasattr(renpy.store,'main_match_1_seen') or reset_persistants or reset_cho_content:
-        $ main_match_1_seen = False
     if not hasattr(renpy.store,'cho_whoring') or reset_persistants or reset_cho_content:
 
         # Stats
@@ -47,6 +45,7 @@ label cho_progress_init:
         $ cho_intro_1_complete    = False
         $ cho_intro_2_complete    = False
         $ cho_snape_talk_complete = False
+        $ cho_hermione_talk_intro = False
         $ cho_unlocked            = False
 
         # Quidditch Training
@@ -92,11 +91,11 @@ label cho_progress_init:
         #Quidditch
 
         $ first_cho_favor_done = False
-        
+
         $ cho_quiz_first_attempt = True
         $ cho_quiz_failed = False
         $ cho_quiz_assed = False
-        
+
     if not hasattr(renpy.store,'gave_cho_gift') or reset_persistants:
         $ gave_cho_gift      = False
 

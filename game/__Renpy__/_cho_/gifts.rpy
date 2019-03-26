@@ -214,16 +214,16 @@ label cho_mood_change(plus=None, minus=None):
     elif plus != None:
         $ cho_mood += plus
         if plus == 1:
-            "Cho's mood has improved slightly."
+            "Cho's mood worsened slightly."
         else:
-            "Cho's mood has improved significantly."
+            "Cho's mood just got a whole lot worse!"
 
     elif minus != None:
         $ cho_mood += -minus
         if minus == 1:
-            "Cho's mood worsened slightly."
+            "Cho's mood has improved slightly."
         else:
-            "Cho's mood just got a whole lot worse!"
+            "Cho's mood has improved significantly."
 
     if cho_mood < 0:
         $ cho_mood = 0

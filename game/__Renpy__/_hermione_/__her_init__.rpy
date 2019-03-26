@@ -507,7 +507,7 @@ label her_progress_init:
 
 
         ### HERMIONE EVENT VARS ###
-        $ jerk_off_session = False #Turns True when you choose to jerk off while Hermione talks (Event_08)
+        $ jerked_off_during_hermione_intro = False #Turns True when you choose to jerk off while Hermione talks (Event_08)
 
         $ tutoring_offer_made = False #If you offered her to tutor her (In event_12). Affects conversation in the next event.
 
@@ -527,7 +527,7 @@ label her_progress_init:
 
     #Clothing Events
         $ hermione_door_event_happened = False
-        
+
     # Cardgame promotion job
         $ her_shop_help = False
         $ her_shop_help_first = True

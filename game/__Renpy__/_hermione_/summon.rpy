@@ -359,7 +359,6 @@ label hermione_talk:
             jump hermione_talk
 
         "-Solve the matter with Cho-" if cho_intro_2_complete and not cho_unlocked and cho_snape_talk_complete: # After talking to Snape.
-            $ cho_unlocked = True
             jump cho_hermione_talk
 
         "-Ask Hermione to commentate the game-" if quidditch_commentator == "Ask Hermione":

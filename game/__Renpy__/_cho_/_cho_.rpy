@@ -77,6 +77,9 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 
     $ cho_class.say(text)
 
+    if use_cho_head:
+        hide screen cho_chang
+
     return
 
 label end_cho_event:

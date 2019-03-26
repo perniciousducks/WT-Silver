@@ -57,7 +57,7 @@ label cho_quiz_1:
             m "The game is played on a rectangular court...{w=1.0}{nw}"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
-            call cho_main("Well, that’s not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "suspicious", "raised", "mid")
+            call cho_main("Well, that’s not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "suspicious", "base", "L")
             with hpunch
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
@@ -70,7 +70,7 @@ label cho_quiz_1:
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play("sounds/hmm1.mp3")
-            call cho_main("I guess that's pretty much the same as in Quidditch...", "smile", "base", "raised", "mid")
+            call cho_main("I guess that's pretty much the same as in Quidditch...", "base", "wide", "raised", "L")
             $ _preferences.volumes['music'] = volume
             m "Great! I mean, obviously! And..."
 

@@ -2,7 +2,7 @@
 
 ### Cho Chang ###
 
-label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
+label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:
@@ -69,7 +69,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         cho_class.special(emote=emote)
 
-    show screen cho_chang
+    show screen cho_chang(animation=animation)
     show screen bld1
 
     #Transitions
@@ -82,11 +82,15 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 label end_cho_event:
     call play_sound("door")
     hide screen cho_chang
+    with d3
     pause.5
     $ active_girl = None
     jump main_room
 
-screen cho_chang():
+screen cho_chang(animation):
     tag cho_main
     zorder cho_zorder
-    add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at moveFade
+    if animation:
+        add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at moveFade
+    else:
+        add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)

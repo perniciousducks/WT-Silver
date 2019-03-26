@@ -104,9 +104,11 @@ label t_wardrobe(return_label, char_label):
                 if current_category == "underwear":
                     $ char_active.strip("top")
                     $ char_active.strip("bottom")
+                    $ char_active.strip("robe")
                 else:
                     $ char_active.wear("top")
                     $ char_active.wear("bottom")
+                    $ char_active.wear("robe")
                 $ category_items = wardrobe_categories.get(current_category)
                 # Default subcategory
                 if category_items:

@@ -68,7 +68,7 @@ init python:
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
 
                 # Armfix
-                armfix = None
+                armfix = []
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -84,14 +84,18 @@ init python:
                                 (0,0), self.sprite,
                                 (0,0), sprite[0].get_image())
                                     
-                        if sprite[0].armfix and armfix == None:
-                            armfix = sprite[0].get_armfix(True)
+                        if sprite[0].armfix:
+                                if armfix == []:
+                                    armfix.append(sprite[0].get_armfix(True, False))
+                                else:
+                                    armfix.append(sprite[0].get_armfix(True, True))
                     
-                if not armfix == None:
-                    self.sprite = Composite(
-                        (1010, 1200),
-                        (0,0), self.sprite,
-                        (0,0), armfix)
+                if armfix > 0:
+                    for i in xrange(0, len(armfix)):
+                        self.sprite = Composite(
+                            (1010, 1200),
+                            (0,0), self.sprite,
+                            (0,0), armfix[i])
             return self.sprite
             
             
@@ -290,8 +294,11 @@ init python:
                     (0,0), self.overlayer)
             return self.sprite
             
-        def get_armfix(self, skingray=False):
+        def get_armfix(self, skingray=False, nohand=False):
             armL = Image("characters/"+self.char+"/body/arms/armfixL.png")
+            
+            if nohand:
+                armL = Image("characters/dummy.png")
             
             # Used in mannequin generation
             if skingray:
@@ -328,6 +335,8 @@ init python:
         clothing_dictlist = {}
         outfits = []
         other = {}
+        
+        pose = ""
         
         sprite = "empty"
         
@@ -424,7 +433,6 @@ init python:
                         self.face[str(arg)][0] = value
                     except KeyError:
                         raise Exception('Character: "'+str(arg)+'" expression type was not defined for "'+self.char+'" character class.')
-
             self.update_paths("face")
             self.cached = False
             
@@ -434,8 +442,16 @@ init python:
                     self.other[str(arg)][0] = value
                 except KeyError:
                     raise Exception('Character: "'+str(arg)+'" other type was not defined for "'+self.char+'" character class.')
-
             self.update_paths("other")
+            self.cached = False
+            
+        def set_pose(self, **kwargs):
+            for arg, value in kwargs.iteritems():
+                try:
+                    self.body[str(arg)][0] = value
+                except KeyError:
+                    raise Exception('Character: "'+str(arg)+'" body part was not defined for "'+self.char+'" character class.')
+            self.update_paths("body")
             self.cached = False
             
         def get_cloth(self, type):
@@ -566,7 +582,7 @@ init python:
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
                 
                 # Armfix
-                armfix = None
+                armfix = []
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -584,14 +600,18 @@ init python:
                                     (0,0), self.sprite,
                                     (sprite[2],sprite[3]), sprite[0].get_image())
                                     
-                            if sprite[0].armfix and armfix == None:
-                                armfix = sprite[0].get_armfix()
+                            if sprite[0].armfix:
+                                if armfix == []:
+                                    armfix.append(sprite[0].get_armfix(False, False))
+                                else:
+                                    armfix.append(sprite[0].get_armfix(False, True))
                     
-                    if not armfix == None:
-                        self.sprite = Composite(
-                            (1010, 1200),
-                            (0,0), self.sprite,
-                            (0,0), armfix)
+                    if armfix > 0:
+                        for i in xrange(0, len(armfix)):
+                            self.sprite = Composite(
+                                (1010, 1200),
+                                (0,0), self.sprite,
+                                (0,0), armfix[i])
                                     
                     # Fixes alpha change issues during transitions
                     self.sprite = Flatten(self.sprite)

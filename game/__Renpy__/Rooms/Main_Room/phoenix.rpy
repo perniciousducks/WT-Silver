@@ -23,14 +23,11 @@ label phoenix:
 
     if day != 1:
         menu:
-            "Testing clothes":
-                jump color_cloth_test
             "Cho quiz":
                 jump cho_quiz_1
-            "Test new wardrobe":
-                jump cho_wardrobe_test
-            "Wardrobe 2.0":
-                call expression 't_wardrobe' pass (character_label="cho_main", return_label="cho_requests")
+            "Flying animation":
+                $ anim_number = 0
+                jump flytest_cho
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1

@@ -15,7 +15,7 @@ label exp_o_meter(fill=50):
     
 screen exp_o_meter(fill):
     tag exp_o_meter
-    zorder 10
+    zorder 4
     
     frame:
         style "empty"
@@ -78,7 +78,6 @@ label cho_quiz_1:
             with hpunch
             $ confidence_meter -= 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_del.mp3"
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah,{w=0.4} well..."
@@ -88,7 +87,6 @@ label cho_quiz_1:
             m "You start the game by the referee throwing the ball into the air..."
             $ confidence_meter += 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play( "sounds/hmm1.mp3")
@@ -108,7 +106,6 @@ label cho_quiz_1:
             with hpunch
             $ confidence_meter -= 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_del.mp3"
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Of course!{w=0.4}... and in basketball..."
@@ -119,7 +116,6 @@ label cho_quiz_1:
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
             $ confidence_meter += 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play("sounds/hmm1.mp3")
@@ -136,7 +132,6 @@ label cho_quiz_1:
             m "And offensive positions..."
             $ confidence_meter += 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play( "sounds/hmm2.mp3")
@@ -155,7 +150,6 @@ label cho_quiz_1:
             with hpunch
             $ confidence_meter -= 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_del.mp3"
             $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah!{w=0.4} Well, I guess that is different... Lastly though..."
@@ -173,7 +167,6 @@ label cho_quiz_1:
             with hpunch
             $ confidence_meter -= 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_del.mp3"
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Well...{w=0.4}"
             m "Fine..."
@@ -184,7 +177,6 @@ label cho_quiz_1:
             m "The way you score is by getting the ball through a hoop."
             $ confidence_meter += 20
             call exp_o_meter(fill=confidence_meter)
-            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play( "sounds/hmm3.mp3")

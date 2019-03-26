@@ -1,4 +1,44 @@
-label cho_quiz_1:
+transform crop_meter(fill):
+    subpixel True
+    transform_anchor True
+    on show, appear, start:
+        pause(0.5)
+        yanchor 1.0
+        yzoom -1.0
+        ease_back 1.0 crop (0, 0, 60, int((float(fill)/100)*500))
+        repeat
+
+label exp_o_meter(fill=50):
+    show screen exp_o_meter(fill=fill)
+    #with d3
+    return
+    
+screen exp_o_meter(fill):
+    tag exp_o_meter
+    zorder 10
+    
+    frame:
+        style "empty"
+        xpos 50
+        ypos 570
+        
+        add "interface/meter/"+interface_color+"/meter.png" yanchor 1.0
+        add "interface/meter/fill.png" at crop_meter(fill)
+        add "interface/meter/glass.png" yanchor 1.0
+        
+    frame:
+        style "empty"
+        xpos 150
+        ypos 70
+        add "interface/meter/"+interface_color+"/circle.png"
+        if fill >= 75:
+            add "interface/meter/100.png"
+        elif fill >= 50:
+            add "interface/meter/50.png"
+        else:
+            add "interface/meter/0.png"
+            
+label cho_quiz_1:    
     call cho_chibi(xpos="mid")
     if cho_quiz_first_attempt:
         $ cho_quiz_first_attempt = False
@@ -25,27 +65,34 @@ label cho_quiz_1:
     $ renpy.music.stop("weather")
     
     
-    
+    $ confidence_meter = 50
+    call exp_o_meter(fill=confidence_meter)
     menu:
         "There’s five players on each team...":
-            $ renpy.block_rollback()    
             $ cho_answer_1 = False
             m "There’s two teams with each one having five players on the court at one time..."
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
+            $ renpy.block_rollback()   
             call cho_main("Whilst Quidditch does have two teams...{w=0.5} there’s 7 players on each...", "annoyed", "suspicious", "raised", "mid")
             with hpunch
+            $ confidence_meter -= 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_del.mp3"
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah,{w=0.4} well..."
             
         "At the start of the game the ball gets thrown in the air...":
-            $ renpy.block_rollback()
             $ cho_answer_1 = True
             m "You start the game by the referee throwing the ball into the air..."
+            $ confidence_meter += 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play( "sounds/hmm1.mp3")
+            $ renpy.block_rollback()
             call cho_main("I guess that’s kind of similar...", "smile", "base", "raised", "mid")
             $ _preferences.volumes['music'] = volume 
             g9 "It is? I mean, yes... and also..."
@@ -59,6 +106,9 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] *= .5
             call cho_main("Well, that’s not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "suspicious", "base", "L")
             with hpunch
+            $ confidence_meter -= 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_del.mp3"
             $ _preferences.volumes['music'] = volume 
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Of course!{w=0.4}... and in basketball..."
@@ -67,6 +117,9 @@ label cho_quiz_1:
             $ renpy.block_rollback()
             $ cho_answer_2 = True
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
+            $ confidence_meter += 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play("sounds/hmm1.mp3")
@@ -81,6 +134,9 @@ label cho_quiz_1:
             m "Each player takes a certain position."
             m "There are defensive positions..."
             m "And offensive positions..."
+            $ confidence_meter += 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play( "sounds/hmm2.mp3")
@@ -97,6 +153,9 @@ label cho_quiz_1:
             call cho_main("Well, you can move with the ball freely without passing in Quidditch, that’s why we have the beaters...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("To make the opponents drop the ball.", "open", "suspicious", "base", "L")
             with hpunch
+            $ confidence_meter -= 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_del.mp3"
             $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah!{w=0.4} Well, I guess that is different... Lastly though..."
@@ -112,6 +171,9 @@ label cho_quiz_1:
             call cho_main("Well, that’s definitely not the case in Quidditch...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("Except for excessive use of elbows...", "open", "suspicious", "base", "L")
             with hpunch
+            $ confidence_meter -= 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_del.mp3"
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Well...{w=0.4}"
             m "Fine..."
@@ -120,12 +182,17 @@ label cho_quiz_1:
             $ renpy.block_rollback()
             $ cho_answer_4 = True
             m "The way you score is by getting the ball through a hoop."
+            $ confidence_meter += 20
+            call exp_o_meter(fill=confidence_meter)
+            play audio "sounds/exp_add.mp3"
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.sound.play( "sounds/hmm3.mp3")
             call cho_main("Hmm, well that’s the same as in Quidditch I suppose...", "smile", "suspicious", "base", "L")
             g9 "Naturally..."
-    pause
+    pause 1.0
+    hide screen exp_o_meter
+    with d3
     $ _preferences.volumes['music'] = volume
     if daytime:
         call play_music("day_theme")

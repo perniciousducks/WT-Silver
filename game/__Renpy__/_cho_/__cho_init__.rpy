@@ -8,6 +8,8 @@ label cho_init:
         $ cho_ypos                = 0
         $ cho_zorder              = 5
         $ cho_flip                = 1
+        
+        default use_cho_head = False
 
         #Chibi
         $ cho_chibi_xpos          = 500

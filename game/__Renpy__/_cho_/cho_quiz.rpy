@@ -3,10 +3,9 @@ transform crop_meter(fill, opacity):
     transform_anchor True
     on show, appear, start:
         alpha opacity
-        pause(0.5)
         yanchor 1.0
         yzoom -1.0
-        ease_back 1.0 crop (0, 0, 60, int((float(fill)/100)*500))
+        easein_back 1.0 crop (0, 0, 60, int((float(fill)/100)*500))
         repeat
 
 label exp_o_meter(fill=50, opacity=1.0):
@@ -23,25 +22,37 @@ screen exp_o_meter(fill, opacity):
         xpos 50
         ypos 570
         
-        add "interface/meter/"+interface_color+"/meter.png" yanchor 1.0
+        add "interface/meter/"+interface_color+"/meter.png" yanchor 1.0 alpha opacity
         add "interface/meter/fill.png" at crop_meter(fill, opacity)
-        add "interface/meter/glass.png" yanchor 1.0
+        add "interface/meter/glass.png" yanchor 1.0 alpha opacity
         
     frame:
         style "empty"
         xpos 150
         ypos 70
-        add "interface/meter/"+interface_color+"/circle.png"
+        add "interface/meter/"+interface_color+"/circle.png" alpha opacity
         if fill >= 90:
-            add "interface/meter/100.png"
+            add "interface/meter/100.png" alpha opacity
         elif fill >= 50:
-            add "interface/meter/50.png"
+            add "interface/meter/50.png" alpha opacity
         else:
-            add "interface/meter/0.png"
+            add "interface/meter/0.png" alpha opacity
+    
+screen swear_bubble(type):
+    tag bubble
+    zorder 6
+    
+    #python:
+        #import random
+        #trnd_type = random.randint(0, 4)
+    
+    add "interface/meter/bubble/"+str(type)+".png" ypos 100 xpos 100
+    timer 1.0 action Hide("swear_bubble")
             
 label cho_quiz_1:    
     call cho_chibi(xpos="mid")
     $ confidence_meter = 50
+    call exp_o_meter(fill=confidence_meter, opacity=0.0)
     if cho_quiz_first_attempt:
         $ cho_quiz_first_attempt = False
         g9 "So, let’s begin on this Quiddetch thing then..."
@@ -55,14 +66,12 @@ label cho_quiz_1:
         m "Never seen space Jam?"
         call cho_main("...", "pout", "base", "raised", "mid")
         g4 "Come on."
-        call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "Well..."
     else:
         m "I’m ready to make my case on how Quidditch is similar to basketball..."
         call cho_main("Really sir... again?", "open", "angry", "angry", "L")
         m "Of course, it’s an important subject for your education..."
         call cho_main("I can't really see how but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
-        call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "Alright, so..."
     
     $ renpy.music.play("music/ominous_music.mp3")
@@ -79,6 +88,8 @@ label cho_quiz_1:
             $ renpy.block_rollback()   
             call cho_main("Whilst Quidditch does have two teams...{w=0.5} there’s 7 players on each...", "annoyed", "suspicious", "raised", "mid")
             with hpunch
+            show screen swear_bubble(random.randint(0, 4))
+            with d1
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ _preferences.volumes['music'] = volume 
@@ -107,6 +118,8 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] *= .5
             call cho_main("Well, that’s not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "suspicious", "base", "L")
             with hpunch
+            show screen swear_bubble(random.randint(0, 4))
+            with d1
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ _preferences.volumes['music'] = volume 
@@ -151,6 +164,8 @@ label cho_quiz_1:
             call cho_main("Well, you can move with the ball freely without passing in Quidditch, that’s why we have the beaters...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("To make the opponents drop the ball.", "open", "suspicious", "base", "L")
             with hpunch
+            show screen swear_bubble(random.randint(0, 4))
+            with d1
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ _preferences.volumes['music'] = volume
@@ -168,6 +183,8 @@ label cho_quiz_1:
             call cho_main("Well, that’s definitely not the case in Quidditch...", "annoyed", "suspicious", "raised", "mid")
             call cho_main("Except for excessive use of elbows...", "open", "suspicious", "base", "L")
             with hpunch
+            show screen swear_bubble(random.randint(0, 4))
+            with d1
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")

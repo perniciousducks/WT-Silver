@@ -421,7 +421,7 @@ label imperio_spell_2: #second level imperio spell #needs posing
     call sus_main("I'm not OK with this!","open","closed","base","mid")
     call ast_main("No one asked you, slut!","clench","angry","angry","L")
     call sus_main("I am not a slut!","scream","closed","angry","mid")
-    call ast_main("Ha! You're standing here, letting old man dumbledore oggle your fat tits while he jerks his wrinkly old cock!","open","closed","base","mid")
+    call ast_main("Ha! You're standing here, letting old man dumbledore ogle your fat tits while he jerks his wrinkly old cock!","open","closed","base","mid")
     call ast_main("If that's not a slut then I don't know what is!","disgust","narrow","narrow","L")
     call sus_main("I-- don't know why I'm doing this...","upset","closed","worried","mid")
     call sus_main("You probably cursed me!","open","closed","angry","mid")

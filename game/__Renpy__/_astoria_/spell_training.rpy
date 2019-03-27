@@ -669,7 +669,7 @@ label astoria_lap_sit_2_2:
     ast "fine... but you're the one with the problem!"
     m "...."
     $ ccg("e2","b4","m4")
-    call nar("With pouty face, astoria hops off of your lap and out of your office.")
+    call nar("Astoria pouts, then hops off your lap and leaves the office.")
 
     return
 

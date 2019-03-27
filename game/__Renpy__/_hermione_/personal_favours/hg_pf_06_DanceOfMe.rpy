@@ -1397,7 +1397,7 @@ label hg_pf_DanceForMe:
                             call her_main("You are probably right, [genie_name]...","angry","worriedCl",emote="05")
                             call her_main("(Oh father, I am so sorry...)","angry","base",tears="soft")
                             call her_main("he must never find out...","angry","base",tears="soft")
-                        "{size=-3}\"Your father love to would watch you strip!\"{/size}":
+                        "{size=-3}\"Your father would love to watch you strip!\"{/size}":
                             call her_main("He would not! He would be ashamed of me!","normal","worriedCl")
                             m "Are you sure about that?"
                             call her_main("absolutely! My father is a man of integrity!","scream","worriedCl")

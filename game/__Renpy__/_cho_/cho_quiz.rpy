@@ -455,6 +455,20 @@ label cho_quiz_2:
                 m "..."
                 $ cho_answer_5 += 1
                 
+    pause 1.0
+    hide screen exp_o_meter
+    with d3
+    $ _preferences.volumes['music'] = volume
+    if daytime:
+        call play_music("day_theme")
+    else:
+        call play_music("night_theme")
+    if raining:
+        $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
+    if blizzard:
+        $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+    $ renpy.block_rollback()
+                
     if cho_answer_5 >= 4:
         cho "Well sir, I thought for a minute that you only cared about basketball but it looks like I was wrong..."
         g9 "Of course, I am well versed in all sports. I just thought I'd teach you a thing or two."

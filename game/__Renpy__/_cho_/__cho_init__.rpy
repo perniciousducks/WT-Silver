@@ -95,6 +95,7 @@ label cho_progress_init:
         $ first_cho_favor_done = False
 
         $ cho_quiz_first_attempt = True
+        $ cho_quiz2_first_attempt = True
         $ cho_quiz_failed = False
         $ cho_quiz_assed = False
 

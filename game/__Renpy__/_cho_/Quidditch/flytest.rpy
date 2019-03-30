@@ -232,6 +232,8 @@ screen flytest:
     tag flytest
     zorder 100
     
+    add "images/rooms/quidditch_pitch/day.png"
+    
     vbox:
         textbutton "inc +" xsize 200 ysize 40 action SetVariable("anim_number", clamp(anim_number+1, 0, 11))
         textbutton "dec -" xsize 200 ysize 40 action SetVariable("anim_number", clamp(anim_number-1, 0, 11))

@@ -80,8 +80,6 @@ label hermione_cardgame_menu:
         else:
             jump hermione_random_duel
 
-
-
 label hermione_first_duel:
     call play_music("grape_soda")
 

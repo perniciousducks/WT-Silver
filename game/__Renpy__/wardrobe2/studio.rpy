@@ -170,7 +170,10 @@ label studio(studio_return, studio_char):
     elif _return[0] == "input":
         show screen studio
         if _return[1] == "text":
+            $ studio_text_backup = studio_text_input
             $ studio_text_input = renpy.input("Text", studio_text_input, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#@,.&:;!?-\/* ", length=128)
+            if studio_text_input == "Close":
+                $ studio_text_input = studio_text_backup
         elif _return[1] == "color":
             $ studio_text_color = color_picker(get_rgb_tuple(studio_text_color), False, "Text Color", pos_xy=[200, 130])
             $ studio_text_color = get_hex_string(studio_text_color[0]/255.0, studio_text_color[1]/255.0, studio_text_color[2]/255.0, studio_text_color[3]/255.0)

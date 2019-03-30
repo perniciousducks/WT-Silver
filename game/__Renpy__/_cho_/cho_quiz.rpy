@@ -320,7 +320,6 @@ label cho_quiz_2:
             call cho_main("I don't know what a stitch is, sorry sir...", "annoyed", "suspicious", "raised", "mid")
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")             
         "Lich":
@@ -332,7 +331,6 @@ label cho_quiz_2:
             m "..."
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             m "Of course not..."
             call cho_main("Next question...", "open", "base", "raised", "down") 
@@ -358,7 +356,6 @@ label cho_quiz_2:
             call cho_main("Well, you're obviously wrong...", "soft", "angry", "raised", "R")
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")
         
@@ -383,7 +380,6 @@ label cho_quiz_2:
             call cho_main("Professor...", "pout", "wide", "raised", "R")
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down") 
     
@@ -412,7 +408,6 @@ label cho_quiz_2:
             $ renpy.block_rollback() 
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("You crazy? That's the same amount of time a student stays at Hogwarts...", "annoyed", "suspicious", "raised", "mid")
             m "Oh right, I don't know what I was thinking... seven just seems like the magical right answer most of the time..."
@@ -430,7 +425,6 @@ label cho_quiz_2:
             g9 "Well, the balls has a big role of it..."
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("I'll have to take your word on that one...", "soft", "base", "base", "down")
             call cho_main("Anyway... final question...", "open", "base", "raised", "down") 
@@ -449,7 +443,6 @@ label cho_quiz_2:
             g9 "Did you consider that?"
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("I think you're going off track a bit...", "open", "base", "base", "down")
             g9 "Or off the pitch..."
@@ -463,7 +456,6 @@ label cho_quiz_2:
             g4 "How am I supposed to then?"
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            show screen swear_bubble(random.randint(0, 4))
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Not sure what else to tell you...", "open", "base", "base", "R")
             

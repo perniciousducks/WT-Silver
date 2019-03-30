@@ -3,14 +3,11 @@
 # Declare images below this line, using the image statement.
 # eg. image eileen happy = "eileen_happy.png"
 
-# Declare characters used by this game.
-define e = Character('Eileen', color="#c8ffc8")
-
 init python:
     config.after_load_callbacks.append(start_image_crop)
 
 # The game starts here.
-label start:    
+label start:
     $ init_variables()
     
     $ start_image_crop()

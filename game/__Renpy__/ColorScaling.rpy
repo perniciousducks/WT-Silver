@@ -43,11 +43,11 @@ screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, t
                 idle im.Scale(UI_alpha_bar, 255, 30, False)
                 clicked Return("alpha_bar")
             add "interface/color_palete/"+str(interface_color)+"/cursor_v.png" xpos int(cursor_h) ypos 290 xanchor 0.5
-            textbutton "Alpha: " + str(int(color[3])) xpos 360 ypos 130 clicked Return("input_alpha")
+            textbutton "Alpha: " + str(int(color[3])) xpos 360 ypos 130 clicked Return(["input", "alpha"])
             
-        textbutton "Red: " + str(int(color[0])) xpos 360 ypos 25 clicked Return("input_red")
-        textbutton "Green: " + str(int(color[1])) xpos 360 ypos 60 clicked Return("input_green")
-        textbutton "Blue: " + str(int(color[2])) xpos 360 ypos 95 clicked Return("input_blue")
+        textbutton "Red: " + str(int(color[0])) xpos 360 ypos 25 clicked Return(["input", "red"])
+        textbutton "Green: " + str(int(color[1])) xpos 360 ypos 60 clicked Return(["input", "green"])
+        textbutton "Blue: " + str(int(color[2])) xpos 360 ypos 95 clicked Return(["input", "blue"])
 
         text title xalign 0.5 text_align 0.5
         
@@ -139,14 +139,20 @@ init python:
             elif _return == "alpha_bar":
                 n_alpha = 255 - (x) # Weird behavior, cant set 255 manually by clicking on the bar
                 color[3] = 0 if n_alpha < 0 else n_alpha
-            elif _return == "input_red":
-                color[0] = clamp(int(renpy.input("Red", "255", "0123456789", length=3)), 0, 255)
-            elif _return == "input_green":
-                color[1] = clamp(int(renpy.input("Green", "255", "0123456789", length=3)), 0, 255)
-            elif _return == "input_blue":
-                color[2] = clamp(int(renpy.input("Blue", "255", "0123456789", length=3)), 0, 255)
-            elif _return == "input_alpha":
-                color[3] = clamp(int(renpy.input("Alpha", "255", "0123456789", length=3)), 0, 255)
+            elif _return[0] == "input":
+                color_input = [color[0], color[1], color[2], color[3]]
+                if _return[1] == "red":
+                    color_input[0] = renpy.input("Red", str(ing(color[0])), "0123456789", length=3)
+                elif _return[1] == "green":
+                    color_input[1] = renpy.input("Green", str(int(color[1])), "0123456789", length=3)
+                elif _return[1] == "blue":
+                    color_input[2] = renpy.input("Blue", str(int(color[2])), "0123456789", length=3)
+                elif _return[1] == "alpha":
+                    color_input[3] = renpy.input("Alpha", str(int(color[3])), "0123456789", length=3)
+                
+                for i in xrange(0, 4):
+                    if color_input[i] != "Close":
+                        color[i] = clamp(int(color_input[i]), 0, 255)
             elif _return == "finish":
                 color_preview = None
                 return color

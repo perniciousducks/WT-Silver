@@ -7,6 +7,10 @@ init python:
                 raise Exception('Character "'+key+'" is not defined as a character class')
             return object
             
+    def copy_to_clipboard(txt):
+        import pygame.scrap
+        pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
+            
     class outfit_class(object):
         name = None
         price = 0
@@ -29,6 +33,44 @@ init python:
             # Mark each clothing piece from the group as unlocked/locked by default
             if self.unlocked:
                 self.unlock(True)
+                
+        def outfit_export(self):
+            exported = []
+            
+            for i in xrange(0, len(self.group)):
+                exported.append([self.group[i].id, self.group[i].color])
+                
+            export_file = open(config.basedir+"/game/exported.txt", "w")
+            export_file.write(str(exported))
+            export_file.close()
+            
+            copy_to_clipboard(str(exported))
+        
+        def outfit_import(self, filename="exported"):
+            import pygame.scrap
+            
+            imported = None
+            group = []
+            
+            import_file = pygame.scrap.get(pygame.scrap.SCRAP_TEXT) #open(config.basedir+"/game/"+filename+".txt", "r")
+            imported = import_file #.read()
+            #import_file.close()
+            
+            # Check if import file doesn't contain weird characters
+            if not (':' or '"' or '#') in imported:
+                imported = eval(imported)
+            else:
+                return False
+            
+            for i in xrange(0, len(imported)):
+                for object in xrange(0, len(character_clothes_list)):
+                    if imported[i][0] == character_clothes_list[object].id:
+                        imported[i][0] = character_clothes_list[object].clone()
+                        imported[i][0].color = imported[i][1]
+                        imported[i][0].cached = False
+                group.append(imported[i][0])
+                
+            return outfit_class(name="", desc="", unlocked=True, group=group)
                     
         def unlock(self, bool):
             self.unlocked = bool

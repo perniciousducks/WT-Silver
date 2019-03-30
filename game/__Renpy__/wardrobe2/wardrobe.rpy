@@ -61,6 +61,12 @@ label t_wardrobe(return_label, char_label):
         $ char_active.outfits.pop(_return[1])
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
+    elif _return[0] == "export":
+        $ _return[1].outfit_export()
+    elif _return == "import":
+        $ cho_outfit_custom.outfit_import()
+        $ menu_items = char_active.outfits
+        $ menu_items_length = len(menu_items)
     elif _return[0] == "item_color":
         $ active_layer = _return[1]
         show screen t_wardrobe_menu(550, 50)
@@ -327,6 +333,8 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
+        textbutton "Import" xsize 100 ysize 50 action Return("import")
+        
         # Page counter
         if menu_items_length > 9:
             hbox:
@@ -352,6 +360,7 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
                     #textbutton "{color=#B33A3A}{size=50}-{/size}{/color}" style "empty" hover_background "#cc330040" xsize 90 ysize 180 xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.5 action Return(["deloutfit", i]) text_outlines [ (4, "#000", 0, 0) ]
                 elif current_subcategory == "Load":
                     button xsize 90 ysize 180 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row action Return(["equip", menu_items[i]])
+                    textbutton "E" xsize 50 ysize 50 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row text_align 0.5 action Return(["export", menu_items[i]])
                     
         # Add empty items
         for i in xrange(menu_items_length, (current_page*10)+10):

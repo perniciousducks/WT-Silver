@@ -22,9 +22,9 @@ label t_wardrobe(return_label, char_label):
     python:
         list_keys = char_active.clothing.keys()
         character_clothing = []
-        for i in xrange(0, len(list_keys)):
-            value = char_active.clothing[list_keys[i]][1]
-            character_clothing.append([list_keys[i], value])
+        for item in list_keys:
+            value = char_active.clothing[item][1]
+            character_clothing.append([item, value])
         character_clothing = sorted(character_clothing, key=lambda x: x[1], reverse=True)
         character_clothing.pop(12)
     
@@ -215,8 +215,8 @@ screen t_wardrobe_menu(xx, yy):
             spacing 158
             vbox:
                 spacing 2
-                for i in xrange (0, len(character_clothing)):
-                    $ curr_item = character_clothing[i][0]
+                for item in character_clothing:
+                    $ curr_item = item[0]
                     textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, curr_item)
             vbox:
                 ypos 416
@@ -292,9 +292,9 @@ screen t_wardrobe_menuitem(xx, yy):
                 textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset")
             
         # Add subcategory list
-        for i in xrange (0, len(list(category_items))):
-            add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+list(category_items)[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
-            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", list(category_items)[i]])
+        for i in xrange (0, len(category_items.keys())):
+            add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+category_items.keys()[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
+            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", category_items.keys()[i]])
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         

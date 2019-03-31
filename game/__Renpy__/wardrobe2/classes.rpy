@@ -47,8 +47,8 @@ init python:
         def outfit_export(self, tofile=True, filename="exported"):
             exported = []
             
-            for i in xrange(0, len(self.group)):
-                exported.append([self.group[i].id, self.group[i].color])
+            for item in self.group:
+                exported.append([item.id, item.color])
                 
             if tofile:
                 export_file = open(config.basedir+"/game/"+filename+".txt", "w")
@@ -77,13 +77,13 @@ init python:
                 except:
                     return False
             
-                for i in xrange(0, len(imported)):
-                    for object in xrange(0, len(character_clothes_list)):
-                        if imported[i][0] == character_clothes_list[object].id:
-                            imported[i][0] = character_clothes_list[object].clone()
-                            imported[i][0].color = imported[i][1]
-                            imported[i][0].cached = False
-                    group.append(imported[i][0])
+                for item in imported:
+                    for object in character_clothes_list:
+                        if item[0] == object.id:
+                            item[0] = object.clone()
+                            item[0].color = item[1]
+                            item[0].cached = False
+                    group.append(item[0])
                     
                 return outfit_class(name="", desc="", unlocked=True, group=group)
             return False
@@ -91,8 +91,8 @@ init python:
         def unlock(self, bool):
             self.unlocked = bool
             get_character_object(self.group[0].char).outfits.append(self)
-            for i in xrange(0, len(self.group)):
-                self.group[i].unlock(bool)
+            for item in self.group:
+                item.unlock(bool)
                 
         def clone(self):
             clothes = []
@@ -149,11 +149,11 @@ init python:
                                     armfix.append(sprite[0].get_armfix(True, True))
                     
                 if armfix > 0:
-                    for i in xrange(0, len(armfix)):
+                    for item in armfix:
                         self.sprite = Composite(
                             (1010, 1200),
                             (0,0), self.sprite,
-                            (0,0), armfix[i])
+                            (0,0), item)
             return self.sprite
             
             
@@ -303,7 +303,7 @@ init python:
             return '#%02x%02x%02x' % (self.color[layer][0], self.color[layer][1], self.color[layer][2])
 
         def get_alpha(self, layer):
-            return self.color[layer][3]
+            return self.color[layer][3]/255.0
 
         def set_color(self, layer):
             self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
@@ -315,18 +315,12 @@ init python:
                 self.color[i] = self.color_default[i]
             self.sprite_ico.cached = False
             self.cached = False
-            
-        # Find a way to optimize this part
-        #
-        # Maybe check the imagepath during init and store it in a list?
-        #
-        # Bugs: set_color doesn't work with static layers, disable coloring for static layers
         
         def get_imagelayer(self, layer):
             return self.imagepath+self.id+"/"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
 
         def get_imagelayer_color(self, layer):
-            return im.MatrixColor(self.get_imagelayer(layer), self.get_matrixcolor(layer))
+            return im.MatrixColor(self.get_imagelayer(layer), self.get_matrixcolor(layer) * im.matrix.opacity(self.get_alpha(layer)))
             
         def get_skin(self):
             return self.skinlayer
@@ -529,9 +523,9 @@ init python:
         def equip(self, object):
             if isinstance(object, outfit_class):
                 self.unequip("all")
-                for i in xrange(0, len(object.group)):
-                    self.clothing[object.group[i].type][0] = object.group[i]
-                    self.clothing[object.group[i].type][4] = False
+                for item in object.group:
+                    self.clothing[item.type][0] = item
+                    self.clothing[item.type][4] = False
             else:
                 if self.clothing[object.type][0] == object and object.type != "hair":
                     self.clothing[object.type][0] = None
@@ -556,7 +550,8 @@ init python:
         def strip(self, *args):
             if 'all' in args:
                 for key in self.clothing:
-                    self.clothing[key][4] = True
+                    if not key == "hair":
+                        self.clothing[key][4] = True
             else:
                 for arg in args:
                     try:
@@ -630,7 +625,7 @@ init python:
                     if self.other[key][0] and not self.other[key][4]:
                         sprite_list.append(value)
                         
-                # Add clothing to sprite list        
+                # Add clothing to sprite list 
                 for key, value in self.clothing.iteritems():
                     if self.clothing[key][0] and not self.clothing[key][4]:
                         sprite_list.append(value)
@@ -665,11 +660,11 @@ init python:
                                     armfix.append(sprite[0].get_armfix(False, True))
                     
                     if armfix > 0:
-                        for i in xrange(0, len(armfix)):
+                        for item in armfix:
                             self.sprite = Composite(
                                 (1010, 1200),
                                 (0,0), self.sprite,
-                                (0,0), armfix[i])
+                                (0,0), item)
                                     
                     # Fixes alpha change issues during transitions
                     self.sprite = Flatten(self.sprite)

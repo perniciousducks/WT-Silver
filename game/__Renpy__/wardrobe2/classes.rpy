@@ -17,6 +17,9 @@ init python:
         if clipboard:
             return clipboard
         return None
+        
+    def evaluate(txt):
+        return __import__('ast').literal_eval(txt)
             
     class outfit_class(object):
         name = None
@@ -68,24 +71,22 @@ init python:
             else:
                 imported = get_clipboard()
             
-            # Check if import data doesn't contain weird characters
-            if not (':' or '"' or '#') in imported and imported != "":
+            if imported != "":
                 try:
-                    imported = eval(imported)
+                    imported = evaluate(imported)
                 except:
                     return False
-            else:
-                return False
             
-            for i in xrange(0, len(imported)):
-                for object in xrange(0, len(character_clothes_list)):
-                    if imported[i][0] == character_clothes_list[object].id:
-                        imported[i][0] = character_clothes_list[object].clone()
-                        imported[i][0].color = imported[i][1]
-                        imported[i][0].cached = False
-                group.append(imported[i][0])
-                
-            return outfit_class(name="", desc="", unlocked=True, group=group)
+                for i in xrange(0, len(imported)):
+                    for object in xrange(0, len(character_clothes_list)):
+                        if imported[i][0] == character_clothes_list[object].id:
+                            imported[i][0] = character_clothes_list[object].clone()
+                            imported[i][0].color = imported[i][1]
+                            imported[i][0].cached = False
+                    group.append(imported[i][0])
+                    
+                return outfit_class(name="", desc="", unlocked=True, group=group)
+            return False
                     
         def unlock(self, bool):
             self.unlocked = bool

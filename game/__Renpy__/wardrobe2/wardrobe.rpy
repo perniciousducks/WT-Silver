@@ -62,9 +62,25 @@ label t_wardrobe(return_label, char_label):
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
     elif _return[0] == "export":
-        $ _return[1].outfit_export()
+        menu:
+            "Export to TXT file":
+                $ txt_filename = "exported"
+                $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
+                $ _return[1].outfit_export(True, txt_filename)
+            "Export to clipboard":
+                $ _return[1].outfit_export(False)
+            "Back":
+                pass
     elif _return == "import":
-        $ cho_outfit_custom.outfit_import()
+        menu:
+            "Import from TXT file":
+                $ txt_filename = "exported"
+                $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
+                $ cho_outfit_custom.outfit_import(True, txt_filename)
+            "Import from clipboard":
+                $ cho_outfit_custom.outfit_import(False)
+            "Back":
+                pass
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
     elif _return[0] == "item_color":
@@ -98,7 +114,7 @@ label t_wardrobe(return_label, char_label):
             $ current_category = _return[1]
             # Outfits
             if current_category == "outfits":
-                $ category_items = ["Load", "Save", "Delete"]
+                $ category_items = ["Load", "Save", "Delete", "Export&Import"]
                 $ current_subcategory = category_items[0]
                 $ current_item = None
                 $ char_active.wear("all")
@@ -333,8 +349,6 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
-        textbutton "Import" xsize 100 ysize 50 action Return("import")
-        
         # Page counter
         if menu_items_length > 9:
             hbox:
@@ -360,13 +374,16 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
                     #textbutton "{color=#B33A3A}{size=50}-{/size}{/color}" style "empty" hover_background "#cc330040" xsize 90 ysize 180 xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.5 action Return(["deloutfit", i]) text_outlines [ (4, "#000", 0, 0) ]
                 elif current_subcategory == "Load":
                     button xsize 90 ysize 180 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row action Return(["equip", menu_items[i]])
-                    textbutton "E" xsize 50 ysize 50 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row text_align 0.5 action Return(["export", menu_items[i]])
+                elif current_subcategory == "Export&Import":
+                    textbutton "Export" xsize 90 ysize 180 style "empty" hover_background btn_hover text_color "#FFF" text_outlines [(4, "#000", 0, 0)] xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.95 action Return(["export", menu_items[i]])
                     
         # Add empty items
         for i in xrange(menu_items_length, (current_page*10)+10):
             $ row = (i // 5) % 2
             $ col = i % 5
             if current_subcategory == "Save":
-                textbutton "{color=#FFFFFF}{size=50}+{/size}{/color}" style "empty" background "#00000033" hover_background btn_hover xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row text_xalign 0.5 text_yalign 0.5 action Return("addoutfit")
+                textbutton "{size=50}+{/size}" style "empty" background "#00000033" hover_background btn_hover text_color "#FFF" xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row text_xalign 0.5 text_yalign 0.5 action Return("addoutfit")
+            elif current_subcategory == "Export&Import":
+                textbutton "Import" style "empty" background "#00000033" hover_background btn_hover text_color "#FFF" text_outlines [(4, "#000", 0, 0)] xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row text_xalign 0.5 text_yalign 0.5 action Return("import")
             else:
                 button style "empty" background "#00000033" xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row

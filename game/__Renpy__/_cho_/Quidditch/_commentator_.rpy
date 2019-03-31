@@ -46,16 +46,28 @@ label quidditch_commentator_event_1:
     m "Why don't we just ask her first?"
     cho "Absolutely not! I won't talk to that Gryffindor skunk ever again!"
     cho "Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?"
-
-    # ADD bridge here!
-
-    m "Do you know of anybody else suited for the job?"
-    cho "(...)"
-    cho "No..."
-    m "I'll ask her. She'll probably say no anyways."
-    cho "I hope that's the case..."
+    m "Alright, any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
+    cho "..."
+    m "Well?"
+    cho "Well, most of them would be on one of the Quidditch teams..."
+    cho "But Granger wouldn't know anything about Quidditch either!"
+    m "Do you know anybody else suited for the job?"
+    cho "(Probably anyone at this poi...{w=1.0}{nw})"
+    cho "(Wait a minute...)"
+    cho "No..." #Mischievous smile
+    g9 "I'll ask her... What's the worst that could happen..."
+    cho "Yeah, actually you're probably right..."
+    g9 "Don't worry she'll do a...{nw}"
+    g4 "Wait... what did you say?"
+    cho "I'm sure she'll do a heckin good job!"
+    cho "(She'll flub the whole thing and everyone will laugh at her.)" #Mischievous smile
+    g9 "Well, great then. I'll ask her in that case!"
+    cho "(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)"
+    cho "(I can picture it now...{w=0.5} the whole school laughing at...{w=0.5}{nw})"
+    m "Miss Chang."
+    cho "Oh, thank you for handling it professor! Boy, you put a load off my mind..."
     cho "I'll be heading back to classes now, if you don't mind."
-    m "Have fun."
+    m "..."
 
     # Cho leaves.
 
@@ -64,12 +76,12 @@ label quidditch_commentator_event_1:
 
 label quidditch_commentator_event_2:
     m "[hermione_name], how much do you know about Quidditch?"
-    call her_main("[genie_name], I know {b}EVERYTHING{/b} about quidditch!","open","angry",xpos="close",ypos="base")
-    m "Not too humble, are we?"
-    call her_main("Do you really think that I, Hermione Granger, would be lacking in a subject so basic as quidditch?","open","closed")
-    call her_main("Not to mention I've been dragged along to every single one of Harry and Ron's games...","open","angry")
-    m "So you'd know enough to commentate then?"
-    call her_main("Wait,... you want me to commentate this years wizarding school cup?","open","wide_stare")
+    call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.","open","baseL",xpos="close",ypos="base")
+    m "Ah, okay... and here I was hoping that you'd be able to comment this years quidditch games..."
+    call her_main("Me, wasting time on something as stu...{w=0.8}{nw}","base","closed")
+    call her_main("Wait...{w=0.5} What did you say?","open","suspicious")
+    m "I was going to ask you if you'd commentate this years quidditch games..."
+    call her_main("You want me... to commentate this years wizarding school cup?","open","wide_stare")
     call her_main("I'd be honoured, sir!","scream","closed",trans="hpunch")
     call her_main("Quidditch has always been one of my passions, to be able to commentate it...","open","angry")
     call her_main("Not to mention getting to make all the announcements...","smile","baseL")
@@ -82,14 +94,16 @@ label quidditch_commentator_event_2:
         call her_main("Everybody will be focused on me...","soft","ahegao")
 
     call her_main("I accept!","scream","angryCl",trans="hpunch")
-    m "Congratulations, [hermione_name]! You got the j..."
-    call her_main("Yay!","smile","happy")
-    call her_main("Ah!!! I better start preparing my opening announcements in front of the mirror!!!","open","wide_stare",trans="hpunch")
+    g4 "I thought you just said you didn't..."
+    call her_main("Cho will be so mad!","crooked_smile","squint")
+    m "I see..."
+    g9 "Congratulations then, [hermione_name]! You got the j..."
+    call her_main("Ah!!! I better start lear...{w=0.5} I mean, prepare my opening speech!","open","wide_stare",trans="hpunch")
 
     call her_walk("mid","leave",1.7)
 
     m "Aaaa-nd, she's gone..."
-    m "I better tell Cho about the news."
+    m "I better tell Cho about the...{w=0.5} news."
 
     $ hermione_busy = True
 
@@ -101,16 +115,17 @@ label quidditch_commentator_event_3:
     cho "Is it Hermione?"
     g4 "Yes! Very good guess!"
     m "How did you know?"
-    cho "Wasn't that difficult, after all she was our only possible option!!!" # Slightly angry
-    m "I'm sure she'll be great."
-    cho "Don't make me regret this, [cho_genie_name]!"
-    g9 "Cheer up! This will be fun!"
+    cho "Wasn't that difficult, after all she was our only possible option!!!" # Mischievious smile
+    g9 "I'm sure she'll be great."
+    cho "I'm sure she will... [cho_genie_name]!" # Mischievious smile
+    g9 "Make sure you tell everyone your great and very proactive headmaster sorted everything out..."
+    chi "Oh, I will. Thank you very much!"
     cho "(...)"
 
     if daytime:
-        cho "I have to head back to classes."
+        cho "I do have to head back to classes now."
     else:
-        cho "It's getting late. I have to head back to out dorms."
+        cho "It's getting a bit late so I'll just head back to the dorms."
 
     cho "See you for our next training session, [cho_genie_name]."
 

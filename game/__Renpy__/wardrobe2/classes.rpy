@@ -7,9 +7,16 @@ init python:
                 raise Exception('Character "'+key+'" is not defined as a character class')
             return object
             
-    def copy_to_clipboard(txt):
+    def set_clipboard(txt):
         import pygame.scrap
         pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
+        
+    def get_clipboard():
+        import pygame.scrap
+        clipboard = pygame.scrap.get(pygame.scrap.SCRAP_TEXT)
+        if clipboard:
+            return clipboard
+        return None
             
     class outfit_class(object):
         name = None
@@ -34,31 +41,39 @@ init python:
             if self.unlocked:
                 self.unlock(True)
                 
-        def outfit_export(self):
+        def outfit_export(self, tofile=True, filename="exported"):
             exported = []
             
             for i in xrange(0, len(self.group)):
                 exported.append([self.group[i].id, self.group[i].color])
                 
-            export_file = open(config.basedir+"/game/exported.txt", "w")
-            export_file.write(str(exported))
-            export_file.close()
-            
-            copy_to_clipboard(str(exported))
+            if tofile:
+                export_file = open(config.basedir+"/game/"+filename+".txt", "w")
+                export_file.write(str(exported))
+                export_file.close()
+            else:
+                set_clipboard(str(exported))
         
-        def outfit_import(self, filename="exported"):
-            import pygame.scrap
-            
+        def outfit_import(self, fromfile=True, filename="exported"):            
             imported = None
             group = []
             
-            import_file = pygame.scrap.get(pygame.scrap.SCRAP_TEXT) #open(config.basedir+"/game/"+filename+".txt", "r")
-            imported = import_file #.read()
-            #import_file.close()
+            if fromfile:
+                try:
+                    import_file = open(config.basedir+"/game/"+filename+".txt", "r")
+                    imported = import_file.read()
+                    import_file.close()
+                except:
+                    return False
+            else:
+                imported = get_clipboard()
             
-            # Check if import file doesn't contain weird characters
-            if not (':' or '"' or '#') in imported:
-                imported = eval(imported)
+            # Check if import data doesn't contain weird characters
+            if not (':' or '"' or '#') in imported and imported != "":
+                try:
+                    imported = eval(imported)
+                except:
+                    return False
             else:
                 return False
             

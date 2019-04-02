@@ -47,10 +47,8 @@ label quidditch_quiz_outro:
 label cho_training_menu:
 
     # Quiz.
-    # ADD Quiz here!
     if not cho_training_unlocked:
-        $ cho_training_unlocked = True
-        jump quidditch_quiz_outro
+        jump cho_quiz_1
 
     # Training Intro.
     if cho_training_unlocked and not cho_training_intro_complete:
@@ -75,6 +73,7 @@ label cho_training_menu:
 
 label quidditch_training_intro:
     # Genie should get into a drill sargeant mood here.
+    call cho_main(xpos="mid",ypos="base",trans="fade")
 
     m "Are you ready for your first training session?"
     cho "Of course, Professor!"

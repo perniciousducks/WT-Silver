@@ -12,20 +12,20 @@ label exp_o_meter(fill=50, opacity=1.0):
     show screen exp_o_meter(fill=fill, opacity=opacity)
     #with d3
     return
-    
+
 screen exp_o_meter(fill, opacity):
     tag exp_o_meter
     zorder 4
-    
+
     frame:
         style "empty"
         xpos 50
         ypos 570
-        
+
         add "interface/meter/"+interface_color+"/meter.png" yanchor 1.0 alpha opacity
         add "interface/meter/fill.png" at crop_meter(fill, opacity)
         add "interface/meter/glass.png" yanchor 1.0 alpha opacity
-        
+
     frame:
         style "empty"
         xpos 150
@@ -37,26 +37,31 @@ screen exp_o_meter(fill, opacity):
             add "interface/meter/50.png" alpha opacity
         else:
             add "interface/meter/0.png" alpha opacity
-    
+
 screen swear_bubble(type):
     tag bubble
     zorder 6
-    
+
     add "interface/meter/bubble/"+str(type)+".png" ypos 100 xpos 100
     timer 1.0 action Hide("swear_bubble")
-            
-label cho_quiz_1:    
-    call cho_chibi(xpos="mid")
-    
+
+
+
+### Quidditch Quiz ###
+
+label cho_quiz_1:
+    call cho_main(xpos="mid",ypos="base",trans="fade")
+
     if cho_quiz_assed:
         m "I'm ready to show you what I know about Quidditch..."
         call cho_main("Great!", "base", "base", "base", "L")
         call cho_main("Let's begin...", "open", "wide", "raised", "mid")
         jump cho_quiz_2
-        
+
     $ confidence_meter = 50
     call exp_o_meter(fill=confidence_meter, opacity=0.0)
-        
+
+    # Intro
     if cho_quiz_first_attempt:
         $ cho_quiz_first_attempt = False
         g9 "So, let’s begin on this Quiddetch thing then..."
@@ -71,34 +76,38 @@ label cho_quiz_1:
         call cho_main("...", "pout", "base", "raised", "mid")
         g4 "Come on."
         m "Well..."
+
+    # Repeat
     else:
         m "I’m ready to make my case on how Quidditch is similar to basketball..."
         call cho_main("Really sir... again?", "open", "angry", "angry", "L")
         m "Of course, it’s an important subject for your education..."
         call cho_main("I can't really see how but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
         m "Alright, so..."
-    
+
     $ renpy.music.play("music/ominous_music.mp3")
     $ renpy.music.stop("weather")
-    
+
     call exp_o_meter(fill=confidence_meter)
+
+    # Question 1
     menu:
         "There’s five players on each team...":
             $ cho_answer_1 = False
             m "There’s two teams with each one having five players on the court at one time..."
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
-            $ renpy.block_rollback()   
+            $ renpy.block_rollback()
             call cho_main("Whilst Quidditch does have two teams...{w=0.5} there’s 7 players on each...", "annoyed", "suspicious", "raised", "mid")
             with hpunch
             show screen swear_bubble(random.randint(0, 4))
             with d1
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            $ _preferences.volumes['music'] = volume 
+            $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah,{w=0.4} well..."
-            
+
         "At the start of the game the ball gets thrown in the air...":
             $ cho_answer_1 = True
             m "You start the game by the referee throwing the ball into the air..."
@@ -109,9 +118,10 @@ label cho_quiz_1:
             $ renpy.sound.play( "sounds/hmm1.mp3")
             $ renpy.block_rollback()
             call cho_main("I guess that’s kind of similar...", "smile", "base", "raised", "mid")
-            $ _preferences.volumes['music'] = volume 
+            $ _preferences.volumes['music'] = volume
             g9 "It is? I mean, yes... and also..."
-    
+
+    # Question 2
     menu:
         "It’s played on a rectangular court...":
             $ cho_answer_2 = False
@@ -125,10 +135,10 @@ label cho_quiz_1:
             with d1
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
-            $ _preferences.volumes['music'] = volume 
+            $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Of course!{w=0.4}... and in basketball..."
-            
+
         "You may not go out of bounds with the ball...":
             $ cho_answer_2 = True
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
@@ -142,6 +152,7 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] = volume
             m "Great! I mean, obviously! And..."
 
+    # Question 3
     menu:
         "Each player takes a certain position...":
             $ cho_answer_3 = True
@@ -155,7 +166,7 @@ label cho_quiz_1:
             $ renpy.block_rollback()
             $ renpy.sound.play( "sounds/hmm2.mp3")
             call cho_main("I guess Quidditch has something like that...", "base", "suspicious", "base", "R")
-            $ _preferences.volumes['music'] = volume 
+            $ _preferences.volumes['music'] = volume
             g9 "Exactly, which is obviously why I brought it up, and lastly..."
 
         "You can’t run with the ball unless you dribble or pass":
@@ -174,8 +185,8 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] = volume
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah!{w=0.4} Well, I guess that is different... Lastly though..."
-            
-            
+
+    # Question 4
     menu:
         "You can’t touch your opponent...":
             $ cho_answer_4 = False
@@ -205,20 +216,23 @@ label cho_quiz_1:
             $ renpy.sound.play( "sounds/hmm3.mp3")
             call cho_main("Hmm, well that’s the same as in Quidditch I suppose...", "smile", "suspicious", "base", "L")
             g9 "Naturally..."
+
     pause 1.0
     hide screen exp_o_meter
     with d3
+
     $ _preferences.volumes['music'] = volume
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
+
+    call music_block
+
     if raining:
         $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
     if blizzard:
         $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+
     $ renpy.block_rollback()
-    
+
+    # Failed
     if not cho_answer_1 and not cho_answer_2 and not cho_answer_3 and not cho_answer_4:
         m "Well, I’m sure that the winning conditions are pretty similar at least..."
         call cho_main("And what are the winning conditions?", "base", "base", "base", "mid")
@@ -241,16 +255,16 @@ label cho_quiz_1:
         m "We’ll get there, don’t you worry... next time..."
         call cho_main("...{w=0.4}Fine.", "pout", "base", "base", "mid")
         call cho_main("Bye then professor...", "annoyed", "base", "base", "mid")
-        
-        hide screen cho_chang
+
+        # Cho leaves.
         call cho_walk("mid","leave",2.5)
-        
+
         g4 "(What am I supposed to do now... I clearly know fuckall about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
         if store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
-        $ cho_quiz_failed = True
-        
+
+    # Success! Or did you?
     elif cho_answer_1 and cho_answer_2 and cho_answer_3 and cho_answer_4:
         $ cho_quiz_assed = True
         call exp_o_meter(fill=confidence_meter, opacity=0.0)
@@ -266,14 +280,16 @@ label cho_quiz_1:
         g4 "(Wait, why did I say that?)"
         call cho_main("...", "smile", "base", "raised", "mid")
         call cho_main("Okay then, show me what you know...", "smile", "base", "raised", "mid")
-        
+
         jump cho_quiz_2
+
+    # Failed
     else:
         call cho_main("I guess it has some similarities...", "pout", "suspicious", "sad", "mid")
         m "Pretty much the same game I’d say..."
         call cho_main("I wouldn’t say that... You fly for one in quidditch...", "open", "base", "base", "mid")
         g4 "You do?!?"
-        call cho_main("Very funny professor, of course you do...", "pout", "base", "raised", "down")  
+        call cho_main("Very funny professor, of course you do...", "pout", "base", "raised", "down")
         call cho_main("Anyway, weren’t you supposed to tutor me?...", "annoyed", "angry", "base", "L")
         m "Oh, right..."
         m "(Perhaps it might be worth trying to learn a bit more about Quidditch before I ruin this whole thing...)"
@@ -284,47 +300,55 @@ label cho_quiz_1:
         m "We’ll get there, don’t you worry... next time..."
         call cho_main("...{w=0.4}Fine.", "annoyed", "angry", "base", "mid")
         call cho_main("Bye then professor...", "pout", "base", "base", "R")
-        hide screen cho_chang
+
+        # Cho leaves.
         call cho_walk("mid","leave",2.5)
-        
+
         g4 "(The fuck am I supposed to do now... I feel like that must’ve been a fluke, I know nothing about Quidditch..)."
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
         if store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
-        $ cho_quiz_failed = True 
-        
-    $ cho_busy = True        
+
+    $ cho_busy = True
+
     jump main_room
-    
+
+
+
 label cho_quiz_2:
     $ confidence_meter = 50
     $ cho_answer_5 = 0
     call exp_o_meter(fill=confidence_meter, opacity=0.0)
-    
+
     $ renpy.music.play("music/determined_pursuit_loop.mp3")
     $ renpy.music.stop("weather")
-    
+
+    # Intro
     if cho_quiz2_first_attempt:
         $ cho_quiz2_first_attempt = False
         call cho_main("You do seem to know some basic things, but do you know anything about the balls?", "open", "suspicious", "base", "mid")
         m "I could probably teach you quite a lot. You should never neglect the balls."
         call cho_main("In that case...", "base", "base", "base", "mid")
-    call cho_main("My position on the team is seeker, it is my job to catch the \"Blank\" to end the game and score our team 150 points.", "open", "base", "base", "L") 
+
+    call cho_main("My position on the team is seeker, it is my job to catch the \"Blank\" to end the game and score our team 150 points.", "open", "base", "base", "L")
     call exp_o_meter(fill=confidence_meter)
+
+    # Question 1
     menu:
         "Stitch":
             m "Stitch?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("no...", "soft", "angry", "raised", "R")
             g4 "Oh wait, that's that blue alien thing isn't it?"
             call cho_main("I don't know what a stitch is, sorry sir...", "annoyed", "suspicious", "raised", "mid")
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            call cho_main("Next question...", "open", "base", "raised", "down")             
+            call cho_main("Next question...", "open", "base", "raised", "down")
+
         "Lich":
             m "Lich?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("the ball is an undead skeletal creature?", "soft", "angry", "raised", "R")
             g4 "Oh, that's what I said? I must've had a PTSD flashback from my tomb raiding days..."
             call cho_main("You've been tomb raiding?", "annoyed", "suspicious", "raised", "mid")
@@ -333,23 +357,26 @@ label cho_quiz_2:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             m "Of course not..."
-            call cho_main("Next question...", "open", "base", "raised", "down") 
+            call cho_main("Next question...", "open", "base", "raised", "down")
+
         "Snitch":
             m "Snitch?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             $ renpy.sound.play( "sounds/gasp.mp3")
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             call cho_main("Yes!", "smile", "wide", "raised", "L")
             g9 "Well then, surely that should show you how superio...{w=1.0}{nw}"
-            call cho_main("Next question...", "open", "base", "raised", "down") 
+            call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_answer_5 += 1
 
-    call cho_main("Apart from the Snitch there are two other types of balls on the pitch, what are they called?", "open", "base", "base", "L") 
+    call cho_main("Apart from the Snitch there are two other types of balls on the pitch, what are they called?", "open", "base", "base", "L")
+
+    # Question 2
     menu:
         "Butter and Waffles":
             m "Butter and Waffles?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("Sir?", "annoyed", "suspicious", "raised", "mid")
             m "Sorry, I didn't have any lunch..."
             g4 "Actually, I can't even remember the last time I ate..."
@@ -358,21 +385,21 @@ label cho_quiz_2:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")
-        
+
         "Bludger and Quaffle":
             m "Bludger and Quaffle?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
-            call cho_main("Yes!", "smile", "wide", "raised", "L") 
+            call cho_main("Yes!", "smile", "wide", "raised", "L")
             g9 "Great! Then lets get started with the...{w=1.0}{nw}"
-            call cho_main("Next question...", "open", "base", "raised", "down") 
+            call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_answer_5 += 1
-            
+
         "Quabble and Bluffer":
             m "Quabble and bluffer?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("I think you got some letters mixed up there...", "soft", "angry", "raised", "R")
             m "Quibble and Blodger?"
             call cho_main("No, that's also...{w=1.0}{nw}", "open", "angry", "raised", "L")
@@ -381,18 +408,20 @@ label cho_quiz_2:
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            call cho_main("Next question...", "open", "base", "raised", "down") 
-    
+            call cho_main("Next question...", "open", "base", "raised", "down")
+
     call cho_main("Let's do some history...", "base", "base", "base", "mid")
     g9 "I am made out of history, this should be a breeze..."
     call cho_main("Okay then...", "smile", "base", "raised", "mid")
     call cho_main("A game of Quidditch doesn't finish until the Snitch is caught, therefor it could go on forever...", "open", "base", "base", "down")
     call cho_main("In the longest ever match played they had to constantly bring on substitutes to let the players get some sleep...", "base", "wide", "raised", "down")
-    call cho_main("For how long did the game go on for?", "open", "base", "base", "mid")    
+    call cho_main("For how long did the game go on for?", "open", "base", "base", "mid")
+
+    # Question 3
     menu:
         "Three Months":
             m "Three months?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
@@ -400,23 +429,23 @@ label cho_quiz_2:
             call cho_main("That's impressive, how did you know that one?", "open", "wide", "raised", "L")
             m "I feel like there wasn't that many realistic options available this time..."
             call cho_main("Okay... not sure what that means...", "soft", "suspicious", "base", "mid")
-            call cho_main("Anyway, final question...", "open", "base", "raised", "down") 
+            call cho_main("Anyway, final question...", "open", "base", "raised", "down")
             $ cho_answer_5 += 1
-            
+
         "Seven Years":
             m "Seven years?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("You crazy? That's the same amount of time a student stays at Hogwarts...", "annoyed", "suspicious", "raised", "mid")
             m "Oh right, I don't know what I was thinking... seven just seems like the magical right answer most of the time..."
             call cho_main("Not in this case...", "open", "base", "raised", "downR")
-            call cho_main("Anyway, final question...", "open", "base", "raised", "down") 
-            
+            call cho_main("Anyway, final question...", "open", "base", "raised", "down")
+
         "Two Minutes":
             m "Two minutes?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("What?", "angry", "wide", "raised", "L")
             g4 "What?"
             call cho_main("Sir, what sport lasts only two minutes?", "annoyed", "base", "raised", "L")
@@ -427,14 +456,16 @@ label cho_quiz_2:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("I'll have to take your word on that one...", "soft", "base", "base", "down")
-            call cho_main("Anyway... final question...", "open", "base", "raised", "down") 
-                
+            call cho_main("Anyway... final question...", "open", "base", "raised", "down")
+
     cho "As you know, you may not go outside of the bounds with the ball during the game or you'd have to hand it over to the opposition..."
-    call cho_main("But what is the penalty if the defensive goes out of bounds?", "open", "wide", "raised", "L") 
+    call cho_main("But what is the penalty if the defensive goes out of bounds?", "open", "wide", "raised", "L")
+
+    # Question 4
     menu:
         "Three Months":
             m "Three months?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("Three months, what?", "soft", "base", "raised", "L")
             m "Three months...{w=0.5} in prison?"
             call cho_main("Professor, you're not going to get a prison sentence unless you do something that's actually illegal...", "annoyed", "wide", "raised", "L")
@@ -446,10 +477,10 @@ label cho_quiz_2:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("I think you're going off track a bit...", "open", "base", "base", "down")
             g9 "Or off the pitch..."
-            
+
         "A free shot at the goal":
             m "Free goal shot?"
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             call cho_main("No that's not right...", "soft", "angry", "raised", "R")
             m "Then what is it?"
             call cho_main("Well, I don't know...", "annoyed", "angry", "base", "downR")
@@ -458,10 +489,10 @@ label cho_quiz_2:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Not sure what else to tell you...", "open", "base", "base", "R")
-            
+
         "I don't know...":
             m "Uh... I don't know..."
-            $ renpy.block_rollback() 
+            $ renpy.block_rollback()
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
@@ -472,25 +503,27 @@ label cho_quiz_2:
             call cho_main("Why would the defensive leave the pitch... they'd just leave the goal open...", "base", "base", "base", "L")
             m "..."
             $ cho_answer_5 += 1
-                
+
     pause 1.0
     hide screen exp_o_meter
     with d3
+
     $ _preferences.volumes['music'] = volume
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
+
+    call music_block
+
     if raining:
         $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
     if blizzard:
         $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+
     $ renpy.block_rollback()
-                
+
+    # Success
     if cho_answer_5 >= 4:
         call cho_main("Well sir, I thought for a minute that you only cared about basketball but it looks like I was wrong...", "smile", "wide", "raised", "mid")
         m "Of course, I am well versed in all sports. I just thought I'd teach you a thing or two."
-        m "So, you will let me train you then?"
+        m "So, you will you let me train you then?"
         call cho_main("I suppose...", "soft", "base", "raised", "R")
         g9 "(Fuck yeah, here we go!)" # Small text.
         call cho_main("And I will stay true to my word... I'll sell you favours...{w}For wins...", "soft", "closed", "base", "mid")
@@ -498,14 +531,27 @@ label cho_quiz_2:
         call cho_main("But keep it civil. I won't do anything those Slytherin skanks do!", "angry", "angry", "sad", "R")
         call cho_main("And should you not be able to help me and my team beat Hufflepuff, this will be over before you can even say Snitch!", "scream", "closed", "raised", "mid")
         g4 "..."
-        call cho_main("Anyway, got to go now or I'll be too late for classes.", "smile", "base", "base", "mid")
+
+        if daytime:
+            call cho_main("Anyway, got to go now, or I'll be too late for classes.", "smile", "base", "base", "mid")
+        else:
+            call cho_main("Anyway, it's getting late. I should better head to our dorms.", "soft", "base", "base", "R")
+
         call cho_main("I’ll be ready for training by tomorrow morning.", "soft", "base", "base", "down")
         m "{size=-5}Oh, I’m not so sure you’ll be that prepared...{/size}" # Small text.
         call cho_main("Until then, Sir.", "open", "base", "raised", "mid")
         m "Looking forward to it."
-        
-        hide screen cho_chang
+
+        # Cho leaves.
         call cho_walk("mid","leave",2.5)
+
+        $ cho_training_unlocked = True
+        call give_reward(">You've unlocked the train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
+
+        $ cho_favors_unlocked = True
+        call give_reward(">You've unlocked the buy favours from Cho.","interface/icons/head/head_cho_2.png")
+
+    # Failed
     else:
         call cho_main("You seem to care a lot about basketball sir but I'm not sure if you know that much about Quidditch...", "annoyed", "angry", "base", "downR")
         m "Or were you asking the wrong questions?"
@@ -520,16 +566,13 @@ label cho_quiz_2:
         g9 "Next time..."
         call cho_main("Oh...", "open", "wide", "base", "mid")
         call cho_main("Good bye then...", "base", "base", "base", "mid")
-    
-        hide screen cho_chang
+
+        # Cho leaves.
         call cho_walk("mid","leave",2.5)
-    
+
         g4 "(What am I supposed to do now... I clearly don't know enough about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
         if store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
-        $ cho_quiz_failed = True
-            
+
     jump main_room
-    
-    

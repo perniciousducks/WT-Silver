@@ -500,13 +500,13 @@ label cho_snape_talk:
             call sna_main("Don't you mean gold?","snape_05")
             m "Twenty... gold then..."
             call sna_main("That's barely worth it.","snape_04")
-            call sna_main("How about two thousands?","snape_13")
+            call sna_main("How about two thousand gold?","snape_13")
 
             if gold < 2000:
                 m "I don't have that much gold."
                 call sna_main("Well, you have plenty of time to gather that amount.","snape_22")
             else:
-                m "Are you feeling that confident?"
+                m "Are you feeling \"that\" confident?"
                 call sna_main("About Slytherin beating Ravenclaw in Quidditch?","snape_20")
                 call sna_main("Absolutely!","snape_22")
 
@@ -545,12 +545,12 @@ label cho_snape_talk:
             call sna_main("What was it about?","snape_20")
 
             if jerked_off_during_hermione_intro and jerked_off_during_cho_intro:
-                m "I have no idea. I jerked off during thir whole exchange."
+                m "I have no idea. I jerked off during thier whole exchange."
                 call sna_main("You did that again? And neither of them realized?","snape_22")
                 m "Didn't seem like it. They were too occupied with insulting each other..."
 
             elif jerked_off_during_cho_intro:
-                m "I have no idea. I jerked off during thir whole exchange."
+                m "I have no idea. I jerked off during thier whole exchange."
                 call sna_main("You did what?","snape_15")
                 m "I jerked off.{w} Beat my meat.{w} Wrestled the snake.{w} Whatever you want to call it."
                 m "Don't tell me you never do it..."
@@ -569,7 +569,7 @@ label cho_snape_talk:
 
             call sna_main("Hmmm...{w} That reminds me of something I witnessed at the end of last year...","snape_23")
             call sna_main("Granger was scolding the poor girl for kissing a boy in the hallways.","snape_20")
-            m "Hot... What happened then?"
+            m "Hot...{w} What happened then?"
             call sna_main("They were screaming and grabbing at each others hair before I had the chance to interfere.","snape_18")
             call sna_main("I ended up taking fifty points from Gryffindor. I should have taken at least one hundred now that I think about it...","snape_22")
             m "Does she often do things like that?"

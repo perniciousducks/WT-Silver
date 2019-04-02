@@ -19,7 +19,7 @@ label quidditch_commentator_event_1:
     call cho_main("Madam Pomfrey says he'll be able to talk in a few days, but yelling is out of the picture for the rest of the season.","soft","closed","sad","mid")
     call cho_main("What are we going to do! We can't have a \"W.S.C.\" without a commentator!","soft","base","sad","mid")
     m "Can't you play without one?"
-    call cho_main("No. Someone has to announce the points after all.","annoyed","sispicious","base","mid")
+    call cho_main("No. Someone has to announce the points after all.","annoyed","suspicious","base","mid")
     m "Fine..."
 
     label who_shall_commentate:
@@ -56,7 +56,7 @@ label quidditch_commentator_event_1:
     m "Do you know anybody else suited for the job?"
     call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")
     call cho_main("(Wait a minute...)","pout","wide","raised","mid")
-    call cho_main("No...","smile","wide","base","mid") #Mischievous smile
+    call cho_main("No...","smile","base","base","mid") #Mischievous smile
     g9 "I'll ask her... What's the worst that could happen..."
     call cho_main("Yeah, actually you're probably right...","angry","angry","angry","mid")
     m "Don't worry she'll do a-{w=1.0}{nw}"
@@ -65,7 +65,7 @@ label quidditch_commentator_event_1:
     call cho_main("(She'll flub the whole thing and everyone will laugh at her.)","smile","angry","angry","R") #Mischievous smile
     g9 "Well, great then. I'll ask her in that case!"
     call cho_main("(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)","quiver","angry","angry","down")
-    call cho_main("(I can already picture it...{w=0.8} the whole school laughing...)","quiver","suspicious","raised","up")
+    call cho_main("(I can already picture it...{w=0.8} the whole school laughing...)","quiver","base","raised","up")
     m "Miss Chang?"
     call cho_main("Oh, thank you for handling it professor! Boy, you put a load off my mind...","open","base","base","mid",trans="hpunch")
     call cho_main("I'll be heading back to classes now, if you don't mind.","soft","closed","base","mid")
@@ -73,13 +73,14 @@ label quidditch_commentator_event_1:
     # Cho leaves.
     call cho_walk("desk","leave",2)
 
+    call bld
     m "(...)"
 
     jump main_room
 
 
 label quidditch_commentator_event_2:
-    call her_main(xpos="close",ypos="base",trans="fade")
+    call her_main(xpos="mid",ypos="base",trans="fade")
 
     m "[hermione_name], how much do you know about Quidditch?"
     call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.","open","baseL")
@@ -108,6 +109,7 @@ label quidditch_commentator_event_2:
 
     call her_walk("mid","leave",1.7)
 
+    call bld
     m "Aaaa-nd, she's gone..."
     m "I better tell Cho about the...{w=0.8} news."
 
@@ -117,7 +119,7 @@ label quidditch_commentator_event_2:
 
 
 label quidditch_commentator_event_3:
-    call cho_main(xpos="close",ypos="base",trans="fade")
+    call cho_main(xpos="mid",ypos="base",trans="fade")
 
     g9 "I've got great news for you! I found us a new commentator!"
     call cho_main("Is it Hermione?","soft","closed","base","mid")

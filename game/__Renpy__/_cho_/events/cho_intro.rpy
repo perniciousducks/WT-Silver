@@ -152,13 +152,11 @@ label cho_intro_1:
     stop music fadeout 1.0
     call hide_characters
     with d3
-    pause.1
 
     call play_sound("door")
     call her_chibi("stand","door","base")
 
     call her_main("Professor I'm sorry to bother you but I wanted to...","open","closed",ypos="head")
-    call play_sound("shatter")
     call her_main("!!!","normal","wide",ypos="head",trans="hpunch")
 
     call her_walk("door","570",2)
@@ -170,11 +168,9 @@ label cho_intro_1:
 
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
     $ renpy.sound.play("sounds/card_punch4.mp3")
-    with hpunch
-    call her_main("{size=-5}Bitch..{/size}","base","angryCl")
+    call her_main("{size=-5}Bitch..{/size}","base","angryCl",trans="hpunch")
     $ renpy.sound.play("sounds/card_punch1.mp3")
-    with hpunch
-    call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L")
+    call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
     call her_main("...","normal","frown", cheeks="blush")
     call cho_main("...", "base", "angry", "base", "L")
     call her_main("So...{p=0.4}what have you been discussing, anything I should know?","open","suspicious", cheeks="blush")
@@ -323,7 +319,7 @@ label cho_intro_1:
     pause.2
     call cho_chibi("stand","door","base",flip=True)
     with d3
-    pause.8
+    pause.5
 
     call cho_chibi("leave")
 
@@ -344,7 +340,7 @@ label cho_intro_1:
     call her_walk("mid","leave",2.5)
 
     # Hermione Mood down
-    $ her_mood += 15
+    $ her_mood += 12
     $ hermione_busy = True
 
     jump main_room
@@ -445,92 +441,152 @@ label cho_intro_2:
 label cho_snape_talk:
 
     m "I had another girl visiting me the other day."
-    sna "I told you not to get involved with the outside world."
-    sna "I hope you were smart enough to not let her into your office."
+    call sna_main("I told you not to get involved with the outside world.","snape_09",ypos="head")
+    call sna_main("I hope you were smart enough to not let her into your office.","snape_05")
     g9 "How couldn’t I let her in? She sounded cute."
-    sna "Why doesn't that surprise me..."
-    sna "And who was this girl?"
+    call sna_main("Why doesn't that surprise me...","snape_06")
+    call sna_main("And who was this girl?","snape_03")
 
     menu:
-        "Her name was Cho Chan.":
-            sna "Cho Chang?"
+        "\"Her name was Cho Chan.\"":
+            call sna_main("Cho Chang?","snape_01")
             m "No, I'm sure it was \"Chan\"."
-            sna "I know my students names, Genie."
+            call sna_main("I know my students names, Genie.","snape_04")
 
-        "I can’t remember. I was too distracted by her legs...":
-            sna "Can you describe her?"
-            sna "Hair colour, hight, her uniform colour? Anything?"
+        "\"I can’t remember. I got too distracted by her legs...\"":
+            call sna_main("Can you describe her?","snape_05")
+            call sna_main("Hair colour, hight, her uniform colour? Anything?","snape_02")
             m "I believe she was asian."
-            sna "Cho Chang?"
+            call sna_main("Cho Chang?","snape_10")
             m "Bless you."
-            sna "No. That's her name."
-            sna "We only have one asian girl at our school."
+            call sna_main("No. That's her name.","snape_08")
+            call sna_main("We only have one asian girl at our school.","snape_24")
+            call sna_main("You’d think as the only wizard school in all of britain, our school would be more diversive...","snape_09")
 
-    sna "You’d think as the only wizard school in all of britain, our school would be more diversive..."
-
-    sna "And What did she want from you exactly?"
+    call sna_main("And What did she want from you exactly?","snape_05")
     m "She asked me a couple of things about Quidditch."
-    sna "Of course."
-    sna "Her entire world revolves around that stupid broomstick rally."
+    call sna_main("Of course.","snape_09")
+    call sna_main("Her entire world revolves around that stupid broomstick rally.","snape_08")
     m "I take it that you aren't a fan?"
 
     m "She could be a great candidate for our little training scheme."
-    sna "What? Do you want to turn her into a slut too?"
+    call sna_main("What? Do you want to turn her into a slut too?","snape_01")
     m "Not only that. I believe she could be of help to deal with Hermione as well."
-    sna "Interesting. It seems like you have already made plans for her."
+    call sna_main("Interesting. It seems like you have already made plans for her.","snape_02")
     m "I thought of a couple of things."
-    sna "You have my attention!"
+    call sna_main("You have my attention!","snape_13")
+
+    label discuss_cho_plan:
+        if "1" in cho_plan and "2" in cho_plan:
+            jump discussed_cho_plan
 
     menu:
-        "-We'll let Ravenclaw win the Quidditch cup-":
-            sna "You know I can't agree to that, Genie."
-            sna "And as much as I'd like to see the Potter boy demoralized by losing to a girl..."
-            sna "I will never help a Ravenclaw beat my own house."
-            m "Didn't you say you don't care about Quidditch?"
-            sna "Of course I don't. But a win is a win."
-            sna "Unless, you can offer me something more interesting..."
-            m "Like what?"
-            sna "You make the offer..."
-            m "Do you really believe I'll need your help to win this?"
-            sna "Judging by your knowledge of the sport, this will be a piece of cake."
-            m "If you're so confident, why don't we bet some gold on this?"
-            sna "How enticing! How much are you willing to bet?"
-            m "20 bucks?"
-            sna "What’s a buck?"
-            m "20... gold then...."
-            sna "That's barely worth it."
-            sna "How about 2000?"
+        "\"Help her win the Quidditch cup\"" if "1" not in cho_plan:
+            $ cho_plan.append("1")
+            call sna_main("And help her win against Slytherin?","snape_16")
+            call sna_main("I can't agree to that, Genie. As much as I'd like to see the Potter boy demoralized by losing to a girl...","snape_10")
+            call sna_main("Or Malfoy for that matter... He's been way too cocky lately.","snape_08")
+            m "Who?"
+            call sna_main("A student of mine... Rich parents, bought his way into our Quidditch team,... Spoiled beyond believe.","snape_29")
+            m "Didn't you say you don't care much about Quidditch?"
+            call sna_main("Of course I don't. But a win is a win.","snape_09")
+            call sna_main("Besides, Ravenclaw doesn't have a chance against Slytherin.","snape_03")
+            call sna_main("They are notoriously bad at Quidditch. And they have been for years.","snape_02")
+            m "You sound very confident."
+            g9 "Want to bet on it?"
+            call sna_main("A bet? How very enticing!","snape_20")
+            call sna_main("How much are you willing to bet?","snape_18")
+            m "Twenty bucks?"
+            call sna_main("Don't you mean gold?","snape_05")
+            m "Twenty... gold then..."
+            call sna_main("That's barely worth it.","snape_04")
+            call sna_main("How about two thousand gold?","snape_13")
 
             if gold < 2000:
                 m "I don't have that much gold."
-                sna "Well, you have plenty of time to gather that amount."
+                call sna_main("Well, you have plenty of time to gather that amount.","snape_22")
             else:
-                m "Are you feeling that confident?"
-                sna "About Slytherin beating Ravenclaw in Quidditch?"
-                sna "Absolutely!"
+                m "Are you feeling \"that\" confident?"
+                call sna_main("About Slytherin beating Ravenclaw in Quidditch?","snape_20")
+                call sna_main("Absolutely!","snape_22")
 
-            sna "So, what do you say? Want to take the bet?"
+            call sna_main("So, what do you say? Want to take the bet?","snape_13")
             m "Under one condition."
             m "You won't cheat, and you won't give Slytherin any unfair advantages."
-            sna "I'd never think of it."
+            call sna_main("I'd never think of it.","snape_09")
             m "So. You want to take on the bet?"
-            sna "Indeed I will."
-            sna "At least Quidditch will be worth watching now. I can't say no to some good old gambling."
+            call sna_main("Indeed I will.","snape_02")
+            call sna_main("At least Quidditch will be worth watching now. I can't say no to some good old gambling.","snape_20")
+            call sna_main("But how will you help Cho in Quidditch? You know nothing about it?","snape_05")
 
+            menu:
+                "\"I'll just read a book about it\"":
+                    call sna_main("You are really planning to take this bet seriously, aren't you?","snape_04")
+                    m "You have no idea! I'll do anything to get into that girl's panties."
+                    call sna_main("Blinded by the sweet love for a girl...","snape_13")
+                    call sna_main("You have already lost, my friend!","snape_21")
+                    m "We'll see about that."
+                    m "(Now, where could I get a book about Quidditch from...)"
 
-        "-Have her and Hermione go at each other-":
-            # Genie tells Snape that Hermione and Cho met in his office.
-            # If Genie has jerked off he’ll tell Snape about it again,
-            # if not he’ll tell Snape what they were arguing about.
+                "\"I trust my instincts!\"":
+                    call sna_main("Your instincts?","snape_14")
+                    m "Never underestimate the capabilities of a Genie..."
+                    call sna_main("(...)","snape_12")
 
-            sna "Granger? Why her?"
+            jump discuss_cho_plan
+
+        "\"Have her and Hermione go at each other\"" if "2" not in cho_plan:
+            $ cho_plan.append("2")
+            call sna_main("Granger? Why her?","snape_05")
             m "They absolutely despise each other."
-            sna "Indeed they do..."
-            sna "If we get them to waste their energy on each other, they will have less incentive to bother me as well."
-            sna "Especially Granger!"
+            call sna_main("They do?","snape_20")
+            m "Yes. They had a little confrontation here in my room..."
+            call sna_main("A confrontation? So so...","snape_13")
+            call sna_main("What was it about?","snape_20")
 
-    # Needs an ending tied to the variations or is it just the normal? You spend the night drinking with snape stuff?
+            if jerked_off_during_hermione_intro and jerked_off_during_cho_intro:
+                m "I have no idea. I jerked off during thier whole exchange."
+                call sna_main("You did that again? And neither of them realized?","snape_22")
+                m "Didn't seem like it. They were too occupied with insulting each other..."
 
+            elif jerked_off_during_cho_intro:
+                m "I have no idea. I jerked off during thier whole exchange."
+                call sna_main("You did what?","snape_15")
+                m "I jerked off.{w} Beat my meat.{w} Wrestled the snake.{w} Whatever you want to call it."
+                m "Don't tell me you never do it..."
+                call sna_main("Not in front of my students!","snape_07")
+                call sna_main("How did neither of them realize what you were doing?","snape_10")
+                m "They were too occupied with insulting each other..."
+                call sna_main("I can imagine that...","snape_20")
+
+            else:
+                m "Some nonsense about wasting my time."
+                call sna_main("Which they probably did?","snape_05")
+                m "Yeah. But I slept through most of it..."
+                call sna_main("I wish I could do the same.","snape_09")
+                call sna_main("Zone out and dream of stuffing that witch's relentless mouth!","snape_06")
+                m "I feel you..."
+
+            call sna_main("Hmmm...{w} That reminds me of something I witnessed at the end of last year...","snape_23")
+            call sna_main("Granger was scolding the poor girl for kissing a boy in the hallways.","snape_20")
+            m "Hot...{w} What happened then?"
+            call sna_main("They were screaming and grabbing at each others hair before I had the chance to interfere.","snape_18")
+            call sna_main("I ended up taking fifty points from Gryffindor. I should have taken at least one hundred now that I think about it...","snape_22")
+            m "Does she often do things like that?"
+            call sna_main("Are you kidding? All the bloody time!","snape_17")
+            call sna_main("Granger is a nuisance to everyone. Didn't I already tell you that?","snape_16")
+            m "No. I meant the Cho girl..."
+            g9 "Does she make out with boys often?"
+            call sna_main("How should I know. I'm not her stalker.","snape_12")
+            m "Well, if what you've said is true... Training her should be a piece of cake."
+            g9 "And what a delicious piece of cake it will be!"
+
+            jump discuss_cho_plan
+
+
+
+    # Ending
+    label discussed_cho_plan:
 
     show screen bld1
     show screen notes
@@ -636,9 +692,9 @@ label cho_hermione_talk:
                 call bld
                 m "She might forget all about it in time."
                 m "I can ask her again once I've trained her some more..."
-                m "Maybe then she'll be pursuaded more easily."
+                m "Maybe then she'll be persuaded more easily."
 
-                $ her_mood += 15
+                $ her_mood += 9
                 $ hermione_busy = True
 
                 jump main_room

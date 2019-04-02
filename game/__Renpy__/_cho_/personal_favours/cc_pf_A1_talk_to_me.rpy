@@ -898,14 +898,14 @@ label jerk_off_to_cho:
 
 
 label end_cho_favor:
-    if not first_cho_favor_done:
-        $ first_cho_favor_done = True
+    #if not first_cho_favor_done:
+    #    $ first_cho_favor_done = True
 
-        m "[current_payout] points to Gryffindor!"
-        $ gryffindor += current_payout
-        call cho_main("[cho_genie_name], I'm from Ravenclaw!","open","wide","raised","mid")
-        m "Right, what did I say?"
-        $ gryffindor -= current_payout
+    m "[current_payout] points to Gryffindor!"
+    $ gryffindor += current_payout
+    call cho_main("[cho_genie_name], I'm from Ravenclaw!","open","wide","raised","mid")
+    m "Right, what did I say?"
+    $ gryffindor -= current_payout
 
     m "[current_payout] points to Ravenclaw!"
     $ ravenclaw += current_payout

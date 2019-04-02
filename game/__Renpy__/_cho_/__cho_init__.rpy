@@ -8,7 +8,7 @@ label cho_init:
         $ cho_ypos                = 0
         $ cho_zorder              = 5
         $ cho_flip                = 1
-        
+
         default use_cho_head = False
 
         #Chibi
@@ -39,19 +39,30 @@ label cho_progress_init:
         $ cho_jerk_off_counter = 0
 
         # Flags
-        $ cho_busy = False
-        $ cho_wardrobe_unlocked = False
+        $ cho_known               = False
+        $ cho_unlocked            = False
+        $ cho_training_unlocked   = False
+        $ cho_favors_unlocked     = False
+        $ cho_wardrobe_unlocked   = False
+        $ cho_busy                = False
 
         # Intro
-        $ cho_known               = False
         $ cho_intro_1_complete    = False
+        $ jerked_off_during_cho_intro = False
+
         $ cho_intro_2_complete    = False
+
         $ cho_snape_talk_complete = False
+        $ cho_plan                = []
+
         $ cho_hermione_talk_intro = False
-        $ cho_unlocked            = False
+
+        # Quidditch Quiz
+        $ cho_quiz_first_attempt  = True
+        $ cho_quiz2_first_attempt = True
+        $ cho_quiz_assed          = False
 
         # Quidditch Training
-        $ cho_training_unlocked   = False
         $ cho_training_intro_complete = False
         $ lock_cho_training       = False
         $ lock_cho_practice       = False
@@ -80,26 +91,17 @@ label cho_progress_init:
 
         $ start_match           = 0 # No match will trigger at 0
         $ main_matches_won      = 0 # Goes up to 3
-        $ main_match_1_stage = "none"
-        $ main_match_2_stage = "none"
-        $ main_match_3_seen = "none"
+        $ main_match_1_stage    = "none"
+        $ main_match_2_stage    = "none"
+        $ main_match_3_seen     = "none"
 
-        $ cho_content_complete = False
+        $ cho_content_complete  = False
 
         # Names
         $ cho_genie_name = "Sir"
         $ cho_name = "Cho"
 
-        #Quidditch
 
-        $ first_cho_favor_done = False
-
-        $ cho_quiz_first_attempt = True
-        $ cho_quiz2_first_attempt = True
-        $ cho_quiz_failed = False
-        $ cho_quiz_assed = False
-
-    if not hasattr(renpy.store,'gave_cho_gift') or reset_persistants:
         $ gave_cho_gift      = False
 
 

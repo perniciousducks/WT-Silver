@@ -5,6 +5,8 @@
 label quidditch_commentator_event_1:
     call play_sound("door")
 
+    call cho_walk("door","desk",2)
+
     call cho_main("[cho_genie_name], there's been a disaster!","scream","closed","angry","mid",xpos="mid",ypos="base")
     m "What? Did something happen during your game?"
     call cho_main("Why would-... [cho_genie_name], Ravenclaw wasn't even playing today...","open","angry","angry","mid")
@@ -17,7 +19,7 @@ label quidditch_commentator_event_1:
     call cho_main("Madam Pomfrey says he'll be able to talk in a few days, but yelling is out of the picture for the rest of the season.","soft","closed","sad","mid")
     call cho_main("What are we going to do! We can't have a \"W.S.C.\" without a commentator!","soft","base","sad","mid")
     m "Can't you play without one?"
-    cho "No! Someone has to announce the points after all."
+    call cho_main("No. Someone has to announce the points after all.","annoyed","suspicious","base","mid")
     m "Fine..."
 
     label who_shall_commentate:
@@ -44,42 +46,47 @@ label quidditch_commentator_event_1:
     call cho_main("You can't pick her!","upset","closed","raised","mid")
     m "Now, now... Don't underestimate Miss Granger..."
     m "Why don't we just ask her first?"
-    cho "Absolutely not! I won't talk to that Gryffindor skunk ever again!"
-    cho "Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?"
+    call cho_main("Absolutely not! I won't talk to that Gryffindor skunk ever again!","scream","closed","angry","mid")
+    call cho_main("Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?","annoyed","suspicious","angry","mid")
     m "Alright, any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
-    cho "..."
+    call cho_main("...","pout","base","base","down")
     m "Well?"
-    cho "Well, most of them would be on one of the Quidditch teams..."
-    cho "But Granger wouldn't know anything about Quidditch either!"
+    call cho_main("Well, most of them would be on one of the Quidditch teams...","soft","base","raised","R")
+    call cho_main("But Granger wouldn't know anything about Quidditch either!","pout","suspicious","angry","mid")
     m "Do you know anybody else suited for the job?"
-    cho "(Probably anyone at this poi...{w=1.0}{nw})"
-    cho "(Wait a minute...)"
-    cho "No..." #Mischievous smile
+    call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")
+    call cho_main("(Wait a minute...)","pout","wide","raised","mid")
+    call cho_main("No...","smile","base","base","mid") #Mischievous smile
     g9 "I'll ask her... What's the worst that could happen..."
-    cho "Yeah, actually you're probably right..."
-    g9 "Don't worry she'll do a...{nw}"
+    call cho_main("Yeah, actually you're probably right...","angry","angry","angry","mid")
+    m "Don't worry she'll do a-{w=1.0}{nw}"
     g4 "Wait... what did you say?"
-    cho "I'm sure she'll do a heckin good job!"
-    cho "(She'll flub the whole thing and everyone will laugh at her.)" #Mischievous smile
+    call cho_main("I'm sure she'll do a heckin good job!","smile","angry","angry","mid")
+    call cho_main("(She'll flub the whole thing and everyone will laugh at her.)","smile","angry","angry","R") #Mischievous smile
     g9 "Well, great then. I'll ask her in that case!"
-    cho "(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)"
-    cho "(I can picture it now...{w=0.5} the whole school laughing at...{w=0.5}{nw})"
-    m "Miss Chang."
-    cho "Oh, thank you for handling it professor! Boy, you put a load off my mind..."
-    cho "I'll be heading back to classes now, if you don't mind."
-    m "..."
+    call cho_main("(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)","quiver","angry","angry","down")
+    call cho_main("(I can already picture it...{w=0.8} the whole school laughing...)","quiver","base","raised","up")
+    m "Miss Chang?"
+    call cho_main("Oh, thank you for handling it professor! Boy, you put a load off my mind...","open","base","base","mid",trans="hpunch")
+    call cho_main("I'll be heading back to classes now, if you don't mind.","soft","closed","base","mid")
 
     # Cho leaves.
+    call cho_walk("desk","leave",2)
+
+    call bld
+    m "(...)"
 
     jump main_room
 
 
 label quidditch_commentator_event_2:
+    call her_main(xpos="mid",ypos="base",trans="fade")
+
     m "[hermione_name], how much do you know about Quidditch?"
-    call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.","open","baseL",xpos="close",ypos="base")
+    call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.","open","baseL")
     m "Ah, okay... and here I was hoping that you'd be able to comment this years quidditch games..."
     call her_main("Me, wasting time on something as stu...{w=0.8}{nw}","base","closed")
-    call her_main("Wait...{w=0.5} What did you say?","open","suspicious")
+    call her_main("Wait...{w=0.6} What did you say?","open","suspicious")
     m "I was going to ask you if you'd commentate this years quidditch games..."
     call her_main("You want me... to commentate this years wizarding school cup?","open","wide_stare")
     call her_main("I'd be honoured, sir!","scream","closed",trans="hpunch")
@@ -98,12 +105,13 @@ label quidditch_commentator_event_2:
     call her_main("Cho will be so mad!","crooked_smile","squint")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the j..."
-    call her_main("Ah!!! I better start lear...{w=0.5} I mean, prepare my opening speech!","open","wide_stare",trans="hpunch")
+    call her_main("Ah!!! I better start lear...{w=0.8} I mean, prepare my opening speech!","open","wide_stare",trans="hpunch")
 
     call her_walk("mid","leave",1.7)
 
+    call bld
     m "Aaaa-nd, she's gone..."
-    m "I better tell Cho about the...{w=0.5} news."
+    m "I better tell Cho about the...{w=0.8} news."
 
     $ hermione_busy = True
 
@@ -111,26 +119,33 @@ label quidditch_commentator_event_2:
 
 
 label quidditch_commentator_event_3:
+    call cho_main(xpos="mid",ypos="base",trans="fade")
+
     g9 "I've got great news for you! I found us a new commentator!"
-    cho "Is it Hermione?"
+    call cho_main("Is it Hermione?","soft","closed","base","mid")
     g4 "Yes! Very good guess!"
-    m "How did you know?"
-    cho "Wasn't that difficult, after all she was our only possible option!!!" # Mischievious smile
-    g9 "I'm sure she'll be great."
-    cho "I'm sure she will... [cho_genie_name]!" # Mischievious smile
+    call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.","pout","suspicious","angry","mid")
+    m "Oh, sure..."
+    call cho_main("But I'm surprised she even took up to the task...","pout","base","base","R")
+    g9 "Right away. No questions asked."
+    call cho_main("And little miss Granger wasn't even the slightest bit intimidated by her new obligation?","open","base","raised","mid")
+    g9 "Not at all. She seemed rather joyous of her situation."
+    call cho_main("Oh...","pout","base","sad","down") # Bit sad.
+    call cho_main("Well she just doesn't know what's coming towards her yet!","annoyed","angry","angry","mid") # Mischievious smile
+    call cho_main("{size=-4}I hope she gets hit by a bludger as well! I might even tell the boys to aim at her once or twice!{/size}","angry","angry","angry","R") # Small text.
     g9 "Make sure you tell everyone your great and very proactive headmaster sorted everything out..."
-    chi "Oh, I will. Thank you very much!"
-    cho "(...)"
+    call cho_main("Oh, I will. Thank you very much!","soft","base","base","mid")
+    call cho_main("(...)","pout","base","base","R")
 
     if daytime:
-        cho "I do have to head back to classes now."
+        call cho_main("I do have to head back to classes now.","open","closed","base","down")
     else:
-        cho "It's getting a bit late so I'll just head back to the dorms."
+        call cho_main("It's getting a bit late so I'll just head back to the dorms.","open","base","base","R")
 
-    cho "See you for our next training session, [cho_genie_name]."
+    call cho_main("See you for our next training session, [cho_genie_name].","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk("mid","leave",2.5)
+    call cho_walk("mid","leave",1.6)
 
     $ cho_busy = True
 

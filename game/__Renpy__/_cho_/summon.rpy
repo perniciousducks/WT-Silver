@@ -47,14 +47,14 @@ label summon_cho:
 
 
         # Favours
-        "-Personal Favours-" if cho_training_unlocked:
+        "-Personal Favours-" if cho_favors_unlocked:
             if cho_mood <= 0:
                 jump cho_favor_menu
             else:
                 call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
                 jump cho_requests
 
-        "{color=#858585}-Personal Favours-{/color}" if not cho_training_unlocked:
+        "{color=#858585}-Personal Favours-{/color}" if not cho_favors_unlocked:
             m "I need to help her with her Quidditch training, before I can ask for something like this."
             jump cho_requests
 

@@ -8,7 +8,7 @@ label cho_init:
         $ cho_ypos                = 0
         $ cho_zorder              = 5
         $ cho_flip                = 1
-        
+
         default use_cho_head = False
 
         #Chibi
@@ -47,6 +47,7 @@ label cho_progress_init:
         $ cho_intro_1_complete    = False
         $ cho_intro_2_complete    = False
         $ cho_snape_talk_complete = False
+        $ cho_plan                = []
         $ cho_hermione_talk_intro = False
         $ cho_unlocked            = False
 

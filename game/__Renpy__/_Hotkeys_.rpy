@@ -48,6 +48,8 @@ init -2 python:
 
 #Add hotkeys to main_room_menu screen (_main_room_.rpy)
 screen hotkeys_main:
+    tag hotkeys_main
+    
     if map_unlocked:
         key hkey_map action Jump("desk")
     if letter_paperwork_unlock_OBJ.read:
@@ -67,11 +69,17 @@ screen hotkeys_main:
 
 #Add hotkeys to say screen (screens.rpy)
 screen hotkeys_say:
+    tag hotkeys_say
     if renpy.variant('android'):
         key "game_menu" action ToggleVariable("hkey_chat_hidden", False, True)
     else:
         key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)
         key hkey_mhide action ToggleVariable("hkey_chat_hidden", False, True)
+        
+screen rollback_check:
+    tag rollback_check
+    if not tried_rollback:
+        key "rollback" action [SetVariable("tried_rollback", True), Jump("hg_wager_bj_secret")]
     
 init:
     # define our styles

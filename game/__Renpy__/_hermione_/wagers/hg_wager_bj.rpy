@@ -1,7 +1,6 @@
 label hg_wager_bj:
     g9 "Well if you want to avoid losing the points you could come over here and get on your knees."
     m "And put my dick in your mouth!"
-
     if her_whoring < 15:
         call her_main("I don't want to lose those points, but that is too much!", mouth="angry", eye="angry")
         call her_main("Isn't there anything else I could do?", mouth="open", eye="base")
@@ -23,7 +22,6 @@ label hg_wager_bj:
             call her_main("Should I turn around, [genie_name]?", mouth="open", eye="worriedCl")
             call her_main("", mouth="upset", eye="worried")
             m "No, not this time."
-
             call her_main("Okay then...", mouth="annoyed", eye="glanceL")
             show screen no_groping_01
             with d1
@@ -41,8 +39,6 @@ label hg_wager_bj:
                 call play_sound("door")
                 call sna_walk("door","mid",2)
                 call bld
-                call sna_main("",xpos="base",ypos="base")
-                call ctc
                 call sna_main( "Hello Geni...", face="snape_09")
                 call sna_main( "What do we have here?!?", face="snape_20")
                 call her_main("{size=+5}Professor Snape?!{/size}", mouth="shock", eye="shocked", xpos="left",ypos="base")
@@ -58,23 +54,19 @@ label hg_wager_bj:
                 hide screen hermione_main
                 call sna_main("Don't feel as if you have to stop on my behalf.", face="snape_01")
                 m "Fine, I'll stop... But I'm still taking 20 points from Gryffindor!"
-                #call blkfade
                 show screen no_groping_01
                 ">You take your hands off Hermione"
-                hide screen blktone8 #resets hermione to center of room and genie to sitting down
-                hide screen ctc
-                hide screen bld1
-                call her_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")
+                call her_chibi("stand","410","base", flip=True)
                 call sna_main("The perfect Hermione Granger letting her headmaster feel her up over a card game and some house points!", face="snape_15")
                 call sna_main("How sweet...!", face="snape_14")
-                call her_main("Can I leave now?", mouth="annoyed", eye="down")
+                call her_main("Can I leave now?", mouth="annoyed", eye="down", flip=True)
                 m "You are excused miss Granger, but I will be taking 20 points from Gryffindor."
                 $ gryffindor -= 20 #should take gryffindor points and then hermione leaves
-                hide screen bld1
+                #hide screen bld1
                 hide screen hermione_main
                 with d3
-                call her_walk("mid","leave",2)
+                call her_walk("410","leave",2)
                 call sna_main("How did you talk her into that?", face="snape_18")
                 m "We made a bet involving house points and she lost, why did you have to barge your way in like that?"
                 m "It was just getting good!"
@@ -108,6 +100,7 @@ label hg_wager_bj:
                 with d3
                 call her_walk("mid","leave",2)
     else: #If her whoring is higher than 15 (when she can do blowjob favour)
+        call set_u_ani("blowjob_ani","hand_ani", 0,10)
         call her_main("Gryffindor really can't afford to lose 20 points...", mouth="soft", eye="worried")
         call her_main("Okay then, I'll do it", mouth="open", eye="closed")
         if hg_pf_SuckIt_OBJ.points > 0: #if shes done the blowjob favour these show
@@ -115,7 +108,7 @@ label hg_wager_bj:
             if her_whoring > 18:
                 call her_main("And it does feel good having my mouth full of your cock...", mouth="soft", eye="happyCl", cheeks="blush")
         m "Get over here then!"
-        call her_walk_desk_blkfade #Fade to black and then hermione is sucking genies dick with him stood up, unless theres a chibi for him sitting down
+        call her_walk_desk_blkfade
         call play_music("playful_tension")
         hide screen hermione_main
         hide screen genie
@@ -162,15 +155,14 @@ label hg_wager_bj:
         call her_main("*Gurk*, *Gulp*, *Gulp*")
         call sna_main("No, something is going on here, what are you doing?", face="snape_07")
         m "...Just standing at my desk."
+        hide screen snape_main
         menu:
         #Tell him not to worry about it.
         #Tell him the ghost is gone.
             "-Tell him not to worry about it.-":
                 m "There's nothing suspicious happening here {size=-5}Ugh!{/size}"
-                call ctc
-                hide screen bld1
-                call blkfade
-                call set_u_ani("cum_in_mouth_ani")
+                pause.5
+                call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
                 call u_play_ani
                 call cum_block
                 g4 "{size=+7}ARGH!{/size}"
@@ -179,42 +171,51 @@ label hg_wager_bj:
                 call sna_main("Hmm, it seems the weird sound is gone", face="snape_11")
                 call sna_main("I’ll leave you to it then...", face="snape_18")
                 call sna_walk("mid","door",3) #snape walks to the door, pauses on gulp sound
-                pause.2
                 $ renpy.play('sounds/gulp.mp3')
-                call her_main("*Gulp*", mouth="full_cum", eye="ahegao")
+                call her_main("*Gulp* {image=textheart}", mouth="full_cum", eye="ahegao")
+                call sna_main("...", face="snape_07", flip=True)
+                pause.2
+                call blkfade
                 $ renpy.play('sounds/07_run.mp3') #snape runs back and draws his wand
-                pause 2
-                show screen snape_defends
+                hide screen snape_main
+                call sna_chibi("hide")
+                show screen snape_defends(xx=50)
+                pause 1
+                hide screen blkfade
                 g4 "...?!"
-                call sna_main("Reveal yourself! I won't let you harm him!", face="snape_14")
+                call sna_main("Reveal yourself! I won't let you harm him!", face="snape_14", wand=True)
+                call u_pause_ani
                 m "Severus, wait!"
-                call sna_main("I knew something was wrong from the start, you can't hide from me, now reveal yourself or prepare to die!", face="snape_03")
+                call sna_main("I knew something was wrong from the start, you can't hide from me, now reveal yourself or prepare to die!", face="snape_03", wand=True)
                 $ uni_sperm = True #Should cover her in cum
                 if hg_pf_DanceForMe_OBJ.points < 2: #if hermione hasn't stripped twice
                     m "What are you doing Severus?"
                     call her_main("...")
                     m "You're being very strange..."
                     g4 "I didn’t know you cared so much about my well being..."
-                    call sna_main("I thought... never mind, I'll just go.", face="snape_11")
+                    call sna_main("I thought... never mind, I'll just go.", face="snape_11", wand=True)
+                    hide screen snape_defends
                     call sna_chibi("stand","mid","base",flip=True) #snape turns and leaves
                     hide screen bld1
                     with d3
                     pause.2
                     call sna_walk("mid","leave",3)
                 else: #if hermione has stripped twice (so snape walked in on her)
-                    call sna_main("Miss Granger?! I tho-... I...")
-
+                    call set_u_ani("desk_idle_ani")
+                    call u_play_ani
+                    call her_chibi("stand","220","base", flip=True)
+                    call sna_main("Miss Granger?! I tho-... I...", wand=True)
+                    hide screen snape_defends
+                    hide screen snape_main
+                    call sna_chibi("stand","460","base")
                     if her_whoring > 20:
-                        call her_main("Hello, Professor Snape.", mouth="cum", eye="base")
-                        call her_main("I was just giving the headmaster some help with an ‘itch'", mouth="soft", eye="soft")
+                        call her_main("Hello, Professor Snape.", mouth="cum", eye="base", xpos="left", ypos="base", flip=True)
+                        call her_main("I was just giving the headmaster some help with an ‘itch'", mouth="soft", eye="soft", flip=True)
                         call sna_main("I was expecting a poor excuse, at least you're honest with it!", face="snape_17")
-                        call her_main("Well I've done a lot worse in here...", mouth="smile", eye="soft", cheeks="blush")
+                        call her_main("Well I've done a lot worse in here...", mouth="smile", eye="soft", cheeks="blush", flip=True)
                         call sna_main("I bet you have!", face="snape_13")
                     else: #whoring of 20 or less
-                        call u_end_ani
-                        call her_chibi("stand","desk","base")
-                        call gen_chibi("sit_behind_desk")
-                        call her_main("Oh, hello there professor...", mouth="cum", eye="glanceL", cheeks="blush")
+                        call her_main("Oh, hello there professor...", mouth="cum", eye="glanceL", cheeks="blush", xpos="left", ypos="base", flip=True)
                         call her_main("I was just helping the headmaster with some cleaning under his desk", mouth="cum", eye="down", cheeks="blush")
                         $ random_choice = renpy.random.randint(0, 2)
                         if random_choice == 0:
@@ -234,6 +235,7 @@ label hg_wager_bj:
                     with d3
                     pause.2
                     call sna_walk("mid","leave",3)
+                pause.2
                 m "Well, that was something..."
                 $ uni_sperm = False
                 if her_whoring < 20: #if she has lower whoring than 21
@@ -244,6 +246,7 @@ label hg_wager_bj:
                     m "And he didn't care, I don't see the problem here."
                     call her_main("You are unbelievable sometimes!", eye="angry")
                     call her_main("I'm going now, don't expect me to do anything for you any time soon!", mouth="scream", eye="angry")
+                    call u_end_ani
                     jump end_hg_pf #should reset it all
                 else: #if whoring is higher than 20
                     call her_main("The old me would have been embarrassed by that...", mouth="clench", eye="concerned", cheeks="blush")
@@ -252,15 +255,15 @@ label hg_wager_bj:
                     call her_main("I've got to lose to you more often!", mouth="smile", eye="soft")
                     m "Well you did a great job, I'll try to win even harder now!"
                     call her_main("Well anyway, I must be going. Good bye [genie_name]", mouth="open", eye="base")
+                    call u_end_ani
                     jump end_hg_pf #should reset it all
             "-Tell Him the ghost is gone-":
                 g4 "Wait..."
-                call her_main("Glick?")
+                call her_main("*Glick*?", eye="base")
                 m "No, I think I think I should be able to exorcise these spirits myself..."
                 call sna_main("You can do that?",face="snape_11")
                 call her_main("...")
-
-                if her_whoring > 21:
+                if her_whoring > 20:
                     call her_main("*Slurp*, *Slurp*, *Gobble*")
                     g4 "Ghh, of... of course I can..."
                     call sna_main("I didn't think you could still use your powers like that...", face="snape_11")
@@ -287,23 +290,24 @@ label hg_wager_bj:
                             pause.2
                             call sna_walk("mid","leave",3)
                             g4 "And not a moment to soon.... Take this you whore!"
-                            call ctc
-                            hide screen bld1
-                            call blkfade
-                            call set_u_ani("cum_in_mouth_ani")
+                            call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
                             call u_play_ani
                             call cum_block
                             $ uni_sperm = True #Should cover her in cum.
+                            pause 1
+                            call u_pause_ani
                             call her_main("*Cough*,*Cough*")
                             m "Who said you could continue?"
                             call her_main("From my perspective it looks like you appreciated the initiative...", mouth="cum", eye="soft")
                             m "..."
                             m "Fine, I won't deduct those points..."
                             call her_main("Thank you...", mouth="open", eye="base")
-                            call her_main("In that case I'll take my leave...", mouth="smile", eye="happy")
-                            g9 "That girl..."
-                            jump end_hg_pf #should reset hermione if I understand correctly.
-
+                            call u_end_ani
+                            call her_chibi("stand","mid","base")
+                            call gen_chibi("sit_behind_desk")
+                            call her_main("In that case I'll take my leave...", mouth="smile", eye="happy", ypos="base")
+                            call her_chibi("leave","door","base")
+                            g9 "That girl..."                            
                         "-Let her keep going and deal with the aftermath-":
                             m "Yeah... I'm good,"
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
@@ -315,12 +319,9 @@ label hg_wager_bj:
                             call her_main("*Slurp*, *Slurp*, *Slurp*")
                             m "No... It's all good... I can feel the ghostly presence being expelled as we speak..."
                             g4 "Now take this you whore!"
-                            hide screen bld1
-                            call blkfade
-                            call set_u_ani("cum_in_mouth_ani")
+                            call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
                             call u_play_ani
                             call cum_block
-                            call ctc
                             g4 "..."
                             call sna_main("...",face="snape_11")
                             m "..."
@@ -337,10 +338,15 @@ label hg_wager_bj:
                             call sna_walk("mid","leave",3)
                             m "You can come out now [hermione_name]..."
                             $ uni_sperm = True #Should cover her in cum
+                            call u_pause_ani
                             call her_main("Thank you for your ghostly residue, [genie_name]", mouth="cum", eye="ahegao")
                             m "You're welcome, I can't believe he bought it..."
                             call her_main("What do you expect from the head of Slytherin?", mouth="cum", eye="narrow")
                             m "yes.. Well.. I think that's enough for today."
+                            call u_end_ani
+                            call her_chibi("stand","mid","base")
+                            call gen_chibi("sit_behind_desk")
+                            call her_main("", mouth="cum", eye="ahegao", ypos="base")
                             m "You've done more than enough to save those points."
                             call her_main("Thank you, [genie_name]", mouth="smile", eye="happy")
                             if daytime: #should play if day time
@@ -350,8 +356,9 @@ label hg_wager_bj:
                                 call her_main("Good night.", mouth="open", eye="base")
                                 m "Good night, [hermione_name]"
                             $ uni_sperm = False
-                            jump end_hg_pf
+                            #jump end_hg_pf
                 else: #whoring not higher than 21
+                    call u_pause_ani
                     call her_main("*Mmphaa...*")
                     m "Hold on... Yes, I think the ghostly presence has departed..."
                     call sna_main("Already?",face="snape_05")
@@ -385,7 +392,6 @@ label hg_wager_bj:
                         "-No-":
                             m "No, you're excused..."
                             call her_main("Thank you professor...", mouth="smile", eye="happy")
-                            jump end_hg_pf
                         "-Yes-":
                             m "Of course I am, you didn't finish the job!"
                             call her_main("...", mouth="annoyed", eye="annoyed")
@@ -395,4 +401,6 @@ label hg_wager_bj:
                             m "20 Points from Gryffindor!"
                             $ gryffindor -= 20
                             $ her_mood += 12
+                            
+        $ hg_pf_SuckIt_OBJ.points += 1
     jump end_hg_pf

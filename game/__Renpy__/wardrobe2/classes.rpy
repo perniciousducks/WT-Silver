@@ -56,6 +56,7 @@ init python:
                 export_file.close()
             else:
                 set_clipboard(str(exported))
+            renpy.show_screen("popup_window", "Export successful!")
         
         def outfit_import(self, fromfile=True, filename="exported"):            
             imported = None
@@ -67,7 +68,7 @@ init python:
                     imported = import_file.read()
                     import_file.close()
                 except:
-                    return False
+                    return (False, renpy.show_screen("popup_window", "Import failed!"))
             else:
                 imported = get_clipboard()
             
@@ -75,7 +76,7 @@ init python:
                 try:
                     imported = evaluate(imported)
                 except:
-                    return False
+                    return (False, renpy.show_screen("popup_window", "Import failed!"))
             
                 for item in imported:
                     for object in character_clothes_list:
@@ -85,6 +86,7 @@ init python:
                             item[0].cached = False
                     group.append(item[0])
                     
+                renpy.show_screen("popup_window", "Import successful!")                    
                 return outfit_class(name="", desc="", unlocked=True, group=group)
             return False
                     

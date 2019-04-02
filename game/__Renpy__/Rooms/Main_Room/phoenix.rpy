@@ -23,6 +23,8 @@ label phoenix:
 
     if day != 1:
         menu:
+            "Fix":
+                jump jumpfix_quick
             "Cho quiz":
                 jump cho_quiz_1
             "Flying animation":

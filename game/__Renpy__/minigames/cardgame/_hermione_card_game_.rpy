@@ -266,6 +266,7 @@ label hermione_random_duel:
     call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...","open","worriedCl")
     m "Well, in that case..."
 
+    label jumpfix_quick:
     menu:
         "-Send Hermione to work, promoting the card game.-" if not cardgame_work:
             $ cardgame_work = True

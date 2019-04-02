@@ -2123,3 +2123,6 @@ image titjob_mouth_ani:    #titjob cum in mouth
     "characters/hermione/chibis/titjob/tj_cum_mouth_18.png"
     pause.2
     repeat
+    
+image desk_idle_ani:
+    "images/animation/00_desk.png"

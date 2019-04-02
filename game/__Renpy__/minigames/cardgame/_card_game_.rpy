@@ -179,8 +179,7 @@ init python:
         del enemy_deck[enemy_deck.index(high_score_card)]
         table_cards[x][y] = high_score_card        
         table_cards[x][y].playercard = False
-        update_table(x,y, reverse, dobelt_number)
-        
+        update_table(x,y, reverse, dobelt_number)        
         return
         
     def convert_rules(rules, player_deck):
@@ -217,7 +216,7 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
                 if table_cards[x][y] == None:
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
-                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375)
+                    use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375, animated=True)
    
     for i in range(0, len(l_playerdeck)):
         if not selectcard == i:
@@ -234,13 +233,24 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
         use cardrender(l_enemydeck[selectenemycard], 860,17+80*selectenemycard, backside= shown_cards[selectenemycard])
         
     use close_button
-        
-screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5, color=True, gallery=False, backside=False):
+    
+transform cardrender_move(xpos_card, ypos_card, start_xy):
+    subpixel True
+    
+    on start, show:
+        pos start_xy
+        linear 0.2 xpos absolute(xpos_card) ypos absolute(ypos_card)
+
+screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5, color=True, gallery=False, backside=False, animated=False):
+    zorder 10
     if return_value == None:
         $ return_value = card
     frame:
-        xpos xpos_card -4
-        ypos ypos_card -4
+        if animated:
+            at cardrender_move(xpos_card-4, ypos_card-6, start_xy=[540, -100])
+        else:
+            xpos xpos_card -4
+            ypos ypos_card -4
         xsize card_width*cardzoom
         ysize card_height*cardzoom
         background #00000000

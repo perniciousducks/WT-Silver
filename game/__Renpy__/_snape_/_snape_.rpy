@@ -1,6 +1,6 @@
 
 
-label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, remove=False):
+label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, remove=False, wand=False):
     hide screen snape_main
     hide screen snape_head
 
@@ -53,7 +53,7 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
     if face != "":
         $ s_sprite = "characters/snape/main/"+str(face)+".png"
 
-    show screen snape_main
+    show screen snape_main(wand=wand)
     show screen bld1
 
     call transition(trans)
@@ -115,11 +115,12 @@ label update_snape:
 
 
 ### SNAPE FULL
-screen snape_main:
+screen snape_main(wand=False):
     tag big_snape
 
     add s_sprite xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)#tt_xpos+140 ypos tt_ypos
-
+    if wand:
+        add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
     zorder snape_zorder
 
 screen snape_picture_frame:

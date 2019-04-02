@@ -279,8 +279,8 @@ screen emo: #Character talking off screen.
     add "emo8" at Position(xpos=840, ypos=100, xanchor=0, yanchor=0)
 
 ### DUEL ###
-screen snape_defends:
-    add "ch_sna defend" at Position(xpos=-90+140, ypos=-5)
+screen snape_defends(xx=0):
+    add "ch_sna defend" at Position(xpos=-90+140+xx, ypos=-5)
     zorder 2
 
 ### DAMAGE ###

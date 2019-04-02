@@ -1,6 +1,6 @@
 
-
-label end_hg_pf: #Hides screens. Hermione walks out. Resets Hermione.
+#Hides screens. Hermione walks out. Resets Hermione.
+label end_hg_pf:
     hide screen hermione_main
 
     hide screen bld1

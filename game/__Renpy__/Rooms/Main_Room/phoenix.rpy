@@ -30,6 +30,9 @@ label phoenix:
             "Flying animation":
                 $ anim_number = 0
                 jump flytest_cho
+            "add hint":
+                $ quid_hint_icon = "{image=interface/check_True.png} "
+                jump cho_quiz_1
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1

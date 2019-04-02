@@ -64,25 +64,55 @@ label cho_quiz_1:
     # Intro
     if cho_quiz_first_attempt:
         $ cho_quiz_first_attempt = False
-        g9 "So, let’s begin on this Quiddetch thing then..."
-        call cho_main("Quidditch sir... I’m sure I’ve seen you at our games before...", "annoyed", "suspicious", "raised", "mid")
-        call cho_main("Two teams, balls, goal hoops... Ring a bell?", "soft", "angry", "raised", "R")
-        g9 "Ah, yes... Quidditch, my tongue must’ve slipped!"
-        call cho_main("...", "smile", "closed", "raised", "down")
-        g9 "The basketball rip off of wizards... My favourite sport! How could I forget..."
-        call cho_main("What’s basketball?", "open", "suspicious", "base", "mid")
+        m "It's time to start our first lesson miss Chang."
+        call cho_main("Great, where do we begin?","smile","base","base","mid")
+        m "Well, first we're going to have to discuss what you'll do for me in this arangement of ours..."
+        call cho_main("Oh, well... as I said, I'll do anything to win the cup!","soft","base","base","R")
+        g9 "That's what I want to hear!"
+        m "In that case, I'd like you to start selling favours to me for my service..."
+        call cho_main("Favours? What kind of favours?","annoyed","suspicious","raised","mid")
+        m "Nothing that Miss Granger hasn't had any issues with."
+
+        if her_reputation < 20:
+            call cho_main("(So nothing sexual, at the very least...)","base","base","base","R")
+        else:
+            call cho_main("(I hope it's nothing sexual. I've heard some rumors about Granger...)","quiver","base","sad","R")
+
+        call cho_main("Well... if Granger could do it, so can I!","open","closed","base","mid")
+        call cho_main("And better!","soft","suspicious","base","mid")
+        m "Great!"
+        call cho_main("And longer!","smile","suspicious","base","mid")
+        m "Longer?"
+        call cho_main("And harder!","angry","suspicious","angry","mid",trans="hpunch")
+        m "(Oh my...)"
+        call cho_main("But...","soft","closed","base","mid")
+        m "Yes?"
+        call cho_main("I'll only do it if we actually win!","base","suspicious","raised","mid")
         m "..."
-        m "Never seen space Jam?"
-        call cho_main("...", "pout", "base", "raised", "mid")
+        g4 "(Damn it! There's always a catch with those girls...)"
+        m "Fine..."
+        m "Okay, so...{w} I'll help you win quidditch matches, and in return, you'll sell me favours..."
+        m "Sounds good?"
+        call cho_main("Yes, that's the deal.","smile","base","base","mid")
+        call cho_main("Although...","pout","base","sad","down")
+        m "Although?"
+        call cho_main("Well, how do I know that you actually know anything about the game?","open","base","base","mid")
+        call cho_main("I mean...{w} I never really saw you showing too much interest before...","soft","suspicious","base","mid")
+        m "About what?"
+        call cho_main("Quidditch!","angry","closed","angry","mid",trans="hpunch")
+        g9 "Ah, yes,... Quidditch.{w} It's like the Wizards version of Basketball, right?"
+        call cho_main("Basketball?{w} That muggle sport nobody here cares about?","annoyed","suspicious","raised","mid")
+        g4 "Nobody cares?{w} Haven't you seen \"Space Jam\"?"
+        call cho_main("...","pout","base","raised","mid")
         g4 "Come on."
         m "Well..."
 
     # Repeat
     else:
-        m "I’m ready to make my case on how Quidditch is similar to basketball..."
+        m "I’m ready to make my case on how Quidditch is a knock off of basketball..."
         call cho_main("Really sir... again?", "open", "angry", "angry", "L")
         m "Of course, it’s an important subject for your education..."
-        call cho_main("I can't really see how but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
+        call cho_main("I can't really see how, but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
         m "Alright, so..."
 
     $ renpy.music.play("music/ominous_music.mp3")
@@ -108,7 +138,7 @@ label cho_quiz_1:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah,{w=0.4} well..."
 
-        "At the start of the game the ball gets thrown in the air...":
+        "[quid_hint_icon]At the start of the game the ball gets thrown in the air...":
             $ cho_answer_1 = True
             m "You start the game by the referee throwing the ball into the air..."
             $ confidence_meter += 12
@@ -139,7 +169,7 @@ label cho_quiz_1:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Of course!{w=0.4}... and in basketball..."
 
-        "You may not go out of bounds with the ball...":
+        "[quid_hint_icon]You may not go out of bounds with the ball...":
             $ cho_answer_2 = True
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
             $ confidence_meter += 12
@@ -148,13 +178,13 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] *= .5
             $ renpy.block_rollback()
             $ renpy.sound.play("sounds/hmm1.mp3")
-            call cho_main("I guess that's pretty much the same as in Quidditch...", "base", "wide", "raised", "L")
+            call cho_main("I guess that's pretty much the same as in Quidditch...", "base", "base", "raised", "L")
             $ _preferences.volumes['music'] = volume
             m "Great! I mean, obviously! And..."
 
     # Question 3
     menu:
-        "Each player takes a certain position...":
+        "[quid_hint_icon]Each player takes a certain position...":
             $ cho_answer_3 = True
             m "Each player takes a certain position."
             m "There are defensive positions..."
@@ -194,8 +224,8 @@ label cho_quiz_1:
             $ volume = _preferences.volumes['music']
             $ _preferences.volumes['music'] *= .5
             $ renpy.block_rollback()
-            call cho_main("Well, that’s definitely not the case in Quidditch...", "annoyed", "suspicious", "raised", "mid")
-            call cho_main("Except for excessive use of elbows...", "open", "suspicious", "base", "L")
+            call cho_main("Well, that’s definitely not the case in Quidditch...", "open", "closed", "raised", "mid")
+            call cho_main("Except for excessive use of elbows...", "annoyed", "suspicious", "base", "L")
             with hpunch
             show screen swear_bubble(random.randint(0, 4))
             with d1
@@ -205,7 +235,7 @@ label cho_quiz_1:
             g4 "Well...{w=0.4}"
             m "Fine..."
 
-        "You score by getting the ball through a hoop...":
+        "[quid_hint_icon]You score by getting the ball through a hoop...":
             $ cho_answer_4 = True
             m "The way you score is by getting the ball through a hoop."
             $ confidence_meter += 12
@@ -214,7 +244,7 @@ label cho_quiz_1:
             $ _preferences.volumes['music'] *= .5
             $ renpy.block_rollback()
             $ renpy.sound.play( "sounds/hmm3.mp3")
-            call cho_main("Hmm, well that’s the same as in Quidditch I suppose...", "smile", "suspicious", "base", "L")
+            call cho_main("Hmm, well that’s the same as in Quidditch I suppose...", "smile", "base", "base", "mid")
             g9 "Naturally..."
 
     pause 1.0
@@ -270,8 +300,8 @@ label cho_quiz_1:
         call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "So as you can see, Basketball and Quidditch is pretty much the same game..."
         call cho_main("I’m sure that can’t be right...", "annoyed", "base", "base", "mid")
-        call cho_main("I’ll have to look up this... basketball thing.", "open", "suspicious", "base", "mid")
-        m "No need, I think I pretty much covered it."
+        call cho_main("I’ll have to look up this... \"Space Jamming\" thing.", "open", "suspicious", "base", "mid")
+        g9 "You should! It's a fun movie!"
         call cho_main("I'm still quite unsure if you actually know Quidditch or am just trying to confuse me with Basketball terms...", "annoyed", "suspicious", "raised", "mid")
         call exp_o_meter(fill=75)
         g4 "(Fuck, she's onto me!)"
@@ -359,7 +389,7 @@ label cho_quiz_2:
             m "Of course not..."
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "Snitch":
+        "[quid_hint_icon]Snitch":
             m "Snitch?"
             $ renpy.block_rollback()
             $ renpy.sound.play( "sounds/gasp.mp3")
@@ -386,7 +416,7 @@ label cho_quiz_2:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "Bludger and Quaffle":
+        "[quid_hint_icon]Bludger and Quaffle":
             m "Bludger and Quaffle?"
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -419,7 +449,7 @@ label cho_quiz_2:
 
     # Question 3
     menu:
-        "Three Months":
+        "[quid_hint_icon]Three Months":
             m "Three months?"
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -490,7 +520,7 @@ label cho_quiz_2:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Not sure what else to tell you...", "open", "base", "base", "R")
 
-        "I don't know...":
+        "[quid_hint_icon]I don't know...":
             m "Uh... I don't know..."
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -546,10 +576,10 @@ label cho_quiz_2:
         call cho_walk("mid","leave",2.5)
 
         $ cho_training_unlocked = True
-        call give_reward(">You've unlocked the train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
+        call give_reward(">You've unlocked the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
 
         $ cho_favors_unlocked = True
-        call give_reward(">You've unlocked the buy favours from Cho.","interface/icons/head/head_cho_2.png")
+        call give_reward(">You can now buy favours from Cho.","interface/icons/head/head_cho_2.png")
 
     # Failed
     else:

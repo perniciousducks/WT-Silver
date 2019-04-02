@@ -91,11 +91,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("A good witch never revels her secrets.", mouth="open", eye="wink")
         m "Well you've certainly left me impressed."
         call her_main("Does that mean I earned some extra house points?", mouth="grin", eye="happy")
-        m "I think the situation calls for it. 90 points to Gry-… [hermione_name]"
+        m "I think the situation calls for it. 90 points to Gry-... [hermione_name]"
         call her_main("Yes?", mouth="upset", eye="concerned")
         m "Why is there a price tag on these?"
         call her_main("...!", mouth="shock", eye="wide")
-        call her_main("Uh…..Well the person I stole these from must have forgotten to take them off.", mouth="open", eye="squint")
+        call her_main("Uh.....Well the person I stole these from must have forgotten to take them off.", mouth="open", eye="squint")
         m "I see...Well whoever you took the from must be a bit slow to forget something so simple, don't you agree?"
         call her_main("Uhh...", mouth="base", eye="down")
         m "They're an idiot?"
@@ -271,15 +271,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_walk("door","mid",2.5)
         m "I have a riddle for you [hermione_name]"
         call her_main("Oh, this ought to be fun. You can make it a 'hard' one [genie_name].", mouth="grin", eye="happy")
-        m "\“I am as soft and pure as a baby kitten, though far more desirable.\”"
+        m "\"I am as soft and pure as a baby kitten, though far more desirable.\""
         call her_main("Hmmmm...", mouth="soft", eye="concerned")
         call her_main("Boobs? Is it a Titjob?", mouth="open", eye="base")
         call her_main("", mouth="normal", eye="base")
         m "Nope, in this case contrary to a titjob, it being small and tight is usually more enjoyable here."
         call her_main("Sex?", mouth="annoyed", eye="suspicious")
-        m "Nope... \“While boys may want me, they wouldn’t be caught dead ever just buying me for themselves.\”"
+        m "Nope... \"While boys may want me, they wouldn’t be caught dead ever just buying me for themselves.\""
         call her_main(" Well that definitely rules out sex.", mouth="open", eye="baseL")
-        m "\“The less of me there is, the more...'desirable' I become to behold.\”"
+        m "\"The less of me there is, the more...'desirable' I become to behold.\""
         call her_main(" Oh! Oh! Panties!", mouth="crooked_smile", eye="closed")
         g9 "Spot on."
         call her_main(" Do you want mine or someone else’s?", mouth="smile", eye="happy")

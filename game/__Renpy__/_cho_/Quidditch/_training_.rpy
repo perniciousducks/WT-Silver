@@ -2,48 +2,6 @@
 
 ### Cho Quidditch Training ###
 
-label quiz_intro:
-
-    return
-
-
-
-label quidditch_quiz:
-
-    return
-
-label quidditch_quiz_outro:
-    call nar("You are supposed to do and beat a quiz about you Quidditch knowledge here. Not yet added if you see this message.")
-
-    cho "I have to say Sir, I'm impressed!"
-    cho "You have proven that you know a great deal about Quidditch."
-    m "So you will let me train you?"
-    cho "I suppose..."
-    g9 "(Fuck yeah, here we go!)" # Small text.
-    cho "And I will stay true to my word that I will sell you favours for...{w} Wins..."
-    g4 "(Hell yes!)"
-    cho "But keep it civil. I won't do anything those Slytherin skanks do!"
-    m "(Aaaaaa-nd she's ruined the mood...)"
-    cho "And should you not be able to help me and my team beat Hufflepuff, this will be over before you can even say Snitch!"
-    m "..."
-
-    cho "I got to go now, [cho_genie_name] or I'll be too late for classes."
-    cho "Please ask me again about our training tomorrow morning. I'll be ready."
-    m "Oh you have no idea, girl..." # Small text.
-    cho "Until then, [cho_genie_name]."
-    m "I'm looking forward to it."
-
-    # Cho leaves
-    call cho_walk("mid","leave",2.5)
-
-    $ cho_busy = True
-
-    jump main_room
-
-
-
-### Quidditch Training ###
-
 label cho_training_menu:
 
     # Quiz.

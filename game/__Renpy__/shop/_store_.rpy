@@ -63,6 +63,47 @@ label store_chit_chat:
         m "Well do you sell anything else?"
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
+
+    elif cho_snape_talk_complete and not quidditch_book_1_ITEM.unlocked:
+        m "Boys..."
+        twi "Hello again mr Dumbledore sir..."
+        ger "What can we do for you?"
+        m "Just having a look around at your fine merchandise..."
+        fre "If you’re worried, don’t be... Everything is completely above board and procured from totally legitimate sources."
+        ger "No stolen goods here..."
+        m "I wasn’t looking out for stolen goods in particular, should I?"
+        ger "Oh, well..."
+        ger "Of course you weren’t..."
+        m "Seems like I can’t find what I’m looking for anyway..."
+        fre "Well, if you’re looking for something in particular then we could always look into procuring said item."
+        ger "What type of object are you looking for?"
+        m "Well... as you boys may know, the Quidditch season is starting soon..."
+        fre "Yes?"
+        m "Well, I realized that I haven't actually gone in depth with the sport yet."
+        fre "I find that hard to believe... You’re telling me that \"the\" Dumbledore doesn’t know anything about Quidditch?"
+        ger "Explains why you’d always just stare out in the distance and just clap politely..."
+        m "I was always more fond of Basketball myself."
+        fre "Sounds like the muggle sport our dad always goes on about...."
+        fre "But in any case, since both George and I are on the Gryffindor team."
+        m "You are?"
+        ger "Yes... don’t you keep any kind of records on these things?"
+        m "Of course, I’m just... forgetful when it comes to names, that’s all."
+        ger "Understandable..."
+        m "But, as I said, I’d like to get a runthrough of the basics of Quidditch this year."
+        m "You don’t happen to have a Quidditch book to refresh my memories?"
+        fre "Of course, you can have ours. We know it off by heart at this point!"
+
+        $ quidditch_book_1_ITEM.unlocked = True
+        $ quidditch_book_1_ITEM.unlockable = False # Makes it clickable in the menu.
+        call give_gift(">You have unlocked a new book to read!", quidditch_book_1_ITEM)
+
+        m "Great, thanks again boys..."
+        twi "Don’t mention it..."
+        twi "Make sure to take notes!"
+        m "Are you assuming your headmaster doesn’t know how studying works?"
+        fre "Of course not..."
+        ger "Anyway... if you need anything else we should have another book coming in at some point which is not just about the basics of Quidditch..."
+
     elif deck_unlocked and her_know_cards and not twins_know_cards:
         m "Hello boys."
         twi "Good day professor\nDumbledore, sir."
@@ -83,6 +124,7 @@ label store_chit_chat:
         twi "\"There's no way this\nold man would ever beat us.\""
         $ twins_know_cards = True
         jump twins_duel_menu
+
     elif twins_cards_stocked and not twins_second_win and not twins_cards_stocked_talk:
         m "Well, well. Looking good as always boys!"
         twi "..."
@@ -117,29 +159,31 @@ label store_chit_chat:
         ger "There's no way you'll beat us again anyway."
         $ twins_cards_stocked_talk = True
         jump twins_duel_menu
+
     else:
         if twins_interest:
             twi "Greetings Dumbledore, sir!"
             m "Hello boys."
             m "I'm here to pick up my weekly cut of profits."
             twi "Of course!"
-            
+
             $ her_help = 0
             if her_shop_help:
                 ger "Miss Granger has helped us with promotions this week so that means more profits."
                 $ her_help = 200
                 $ her_shop_help = False
-            
+
             $ shop_profit = renpy.random.randint(50+her_help, 300)
-            ger "Here, your weekly cut."            
+            ger "Here, your weekly cut."
             call give_reward("You've received "+str(int(shop_profit*twins_profit))+" gold.", "interface/icons/gold.png")
-            
+
             $ gold +=  shop_profit*twins_profit
             ger "..."
             twi "Did you need anything else?"
-            
-        else:   
+
+        else:
             twi "Hello Professor! Came here to buy?"
+
         if twins_know_cards:
             twi "Or duel?"
             menu:
@@ -160,6 +204,7 @@ label store_chit_chat:
                                 pass
                     else:
                         jump twins_random_duel
+
     return
 
 
@@ -370,9 +415,9 @@ label book_shop_menu:
             item_list.extend(scroll_list_B)
             item_list.extend(scroll_list_C)
 
-        item_list = list(filter(lambda x: x.unlocked==False, item_list))
+        item_list = list(filter(lambda x: x.unlocked==False and x.unlockable==False, item_list))
 
-    show screen list_menu(item_list, "Books & Scrolls", toggle1="Fiction Books", toggle2="Educat. Books", toggle3="Scrolls" )
+    show screen list_menu(item_list, "Books & Scrolls", toggle1="Fictional", toggle2="Educational", toggle3="Scrolls" )
 
     $ _return = ui.interact()
 
@@ -570,7 +615,7 @@ label token_shop_menu:
 
     python:
         item_list = []
-        
+
         if toggle1_bool:
             item_list.extend([hg_gamble_slut_ITEM])
         if toggle2_bool:
@@ -579,7 +624,7 @@ label token_shop_menu:
             item_list.extend(wall_deco_list)
 
         item_list = list(filter(lambda x: x.unlocked==False, item_list))
-        
+
     show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations")
 
     $ _return = ui.interact()

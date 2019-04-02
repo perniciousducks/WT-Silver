@@ -739,6 +739,14 @@ transform fadeInOut:
 transform fadeOutOnly:
     on hide:
         linear 0.15 alpha 0.0
+        
+transform blink:
+    on show:
+        alpha 1.0
+        pause 0.5
+        alpha 0.0
+        pause 0.5
+        repeat
 
 
 

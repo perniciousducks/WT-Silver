@@ -393,7 +393,29 @@ label snape_random_duel:
     call sna_chibi("hide")
 
     jump main_room
+    
+label snape_special_duel:
+    call play_music("boss_card_theme")
 
+    $ random_enemy_deck = create_random_deck(get_deck_score(playerdeck)-2, get_deck_score(playerdeck)+8, cards_all)
+    $ duel_response = start_duel(random_enemy_deck) #snape_after_special
+    
+    hide screen blkfade
+    stop music fadeout 1
+    if duel_response == "draw":
+        g4 "Not another fucking..."
+        call her_main("*Gltch*, *Slurp*, *Gobble*")  
+        g4 "Draaaaaaw!"
+        return "draw"
+    elif not duel_response == "win" or duel_response == "Close":
+        call sna_main("Well, well.. Looks like I've...{nw}")
+        m "Fuuuuuuuuck!"
+        return "loss"
+        
+    g9 "Yeeeeees!"
+    g4 "Thats it you whore! Take it!"
+    return "win"
+    
 label snape_duel_draw:
     stop music fadeout 1
 
@@ -526,4 +548,20 @@ init python:
         renpy.block_rollback()
         renpy.say(sna,snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])
         _preferences.volumes['music'] = volume
+        return
+        
+    def snape_after_special():
+        renpy.call("sna_main", "It's my time to shine, I'm counting on an explosive victory.", face="snape_02")
+        renpy.call("her_main", "*Slurp*, *Slurp*, *Gobble*")
+        renpy.say(g4, "Ngh, not on my watch... I'll do my best to prevent any unwarranted explosions during the current circumstance...")
+        renpy.call("sna_main", "Now you're talking, usually I'm the one doing all the trash talk...", face="snape_28")
+        renpy.say(m, "I feel like today especially it's important to keep the conversation going...")
+        renpy.call("her_main", "*Gltch*, *Slurp*, *Gobble*")
+        renpy.say(g4, "...")
+        renpy.call("sna_main", "Great, I can't wait to see your face as I destroy you...", face="snape_22")
+        renpy.say(m, "Surely you'd know by now I'm not the kind of person to lose...")
+        renpy.call("her_main", "*Slurp*, *Slurp*, *Gobble*")
+        renpy.say(g4, "... My composure that easily...")
+        renpy.call("sna_main", "I'll make you bust this time for sure... I can already taste victory...", face="snape_21")
+        renpy.say(m, "That's not the only thing that someone will be tasting in a second...")
         return

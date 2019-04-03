@@ -183,7 +183,7 @@ label twins_random_duel:
         m "Well, how about a lower percentage? I'll adjust my wager as well."
         ger "We'll think about it..."
 
-        call give_reward("You have received 5% of the twins profits", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins))
+        call give_reward("You have received 5% of the twins profits", "interface/icons/cards.png")
         $ twins_profit += 0.05
         $ twins_random_win = False
         $ geniecard_tokens += 3

@@ -78,7 +78,7 @@ label twins_second_duel:
         ger "And we also heard about your wins against Snape so here's some extra tokens."
         fre "Make sure to come back and spend those tokens in our tokenshop."
         $ card_rand_twins = renpy.random.choice([[fred, "fred"], [george, "george"]])
-        $ unlocked_cards += card_rand_twins[0]
+        $ unlocked_cards += [card_rand_twins[0]]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins[1]))
         $ twins_second_win = True
         $ geniecard_tokens += 3
@@ -183,7 +183,7 @@ label twins_random_duel:
         m "Well, how about a lower percentage? I'll adjust my wager as well."
         ger "We'll think about it..."
 
-        call give_reward("You have received 5% of the twins profits", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins))
+        call give_reward("You have received 5% of the twins profits", "interface/icons/cards.png")
         $ twins_profit += 0.05
         $ twins_random_win = False
         $ geniecard_tokens += 3

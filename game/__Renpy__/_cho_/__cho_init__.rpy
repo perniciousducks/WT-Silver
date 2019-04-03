@@ -58,6 +58,7 @@ label cho_progress_init:
         $ cho_hermione_talk_intro = False
 
         # Quidditch Quiz
+        $ quid_hint_icon          = ""
         $ cho_quiz_first_attempt  = True
         $ cho_quiz2_first_attempt = True
         $ cho_quiz_assed          = False

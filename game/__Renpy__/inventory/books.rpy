@@ -19,9 +19,22 @@ label __init_variables:
         $ Armchairs_ITEM      = fiction_book(id="Armchairs",      name="\"A game of Armchairs\"",               cost=300, type="book", image="book_chairs",      chapters=20, description=">An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. 20 chapters.", effect = ">Your imagination has improved.")
         $ Dear_Wifu_ITEM      = fiction_book(id="Dear_Wifu",      name="\"My dear waifu\"",                     cost=300, type="book", image="book_waifu",       chapters=20, description=">Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? 20 chapters.", effect = ">Your imagination has improved.")
 
+    if not hasattr(renpy.store,'quidditch_book_1_ITEM'):
+        $ quidditch_book_1_ITEM = fiction_book(id="quidditch_book_1", name="\"Quidditch for Dummies\"",  unlockable=True, type="book", image="book_general",     chapters=10,  description=">This book contains the basic knowledge of Quidditch.\n 10 chapters.", effect = ">New skill unlocked: You now have enough knowledge to beat even the simplest of Quidditch quizzes.")
 
 
-
+    $ quidditch_book_1_ITEM.chapter_description = [
+        "Quidditch - One of the most popular sports in the wizarding world is a team based sport played on broomsticks...",
+        "Two opposing teams with seven people making up each team go up against each other...",
+        "The game is played using four balls... One quaffle, two bludgers and one snitch.\nThe beginning of the match is signaled by the quaffle being thrown into the air by the referee...",
+        "Quidditch, unlike many other sports is played on an oval shaped pitch with a scoring area on each end...",
+        "Much like other sports, you’re not allowed to go outside the boundary lines with the quaffle or you’d have to hand it over to the opposing team...",
+        "When the game is set in motion each player takes their assigned positions.\nThere’s three chasers, two beaters, one keeper and one seeker...",
+        "The chasers purpose once they have the quaffle to try and score. The Beaters on the other hand is to hit them with the bludgers as to knock the ball out of their grasp... The keeper blocks the goal and the seeker needs to catch the snitch.",
+        "As most injuries are easily remedied through magical means there’s nothing to stop a player from knocking into one another as to get a hold of the quaffle.\nTactics which distracts is therefore quite common even during official matches...",
+        "The way scoring is done is when the chaser has a hold of the quaffle they need to get to the opponent's side of the pitch and score it by getting it through a hoop...",
+        "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefor a match could technically go on forever... The longest Quidditch match ever recorded went on for about 3 months..."
+    ]
 
     $ Galadriel_I_ITEM.chapter_description = [
         "Galadriel - a gentle and gracious elven princess is introduced into the story.",
@@ -93,25 +106,30 @@ label __init_variables:
         "A new race of half-frozen undead monsters is introduced into the story. To be continued..."
     ]
 
-
+    # Efficiency Books
     $ book_list = silver_book_lib()
     $ book_list.read_books = [
         Speedreading_1_ITEM,
         Speedreading_2_ITEM,
         Speedreading_3_ITEM,
-        Speedreading_4_ITEM
+        Speedreading_4_ITEM,
     ]
+
+    # Educational Books
     $ book_list.write_books = [
         Speedwriting_1_ITEM,
         Speedwriting_2_ITEM,
         Speedwriting_3_ITEM,
         Speedwriting_4_ITEM
     ]
+
+    # Fictional Books
     $ book_list.fiction_books = [
         Galadriel_I_ITEM,
         Galadriel_II_ITEM,
         Armchairs_ITEM,
-        Dear_Wifu_ITEM
+        Dear_Wifu_ITEM,
+        quidditch_book_1_ITEM
     ]
 
 
@@ -137,7 +155,7 @@ label read_book_menu:
 
         item_list = list(filter(lambda x: (x.unlocked == True and x.done==False), item_list))
 
-    show screen list_menu(item_list, "Read Books", toggle1="Fiction Books", toggle2="Educat. Books", toggle4="Effic. Books")
+    show screen list_menu(item_list, "Read Books", toggle1="Fictional", toggle2="Educational", toggle4="Efficiency")
     with d1
 
     $ _return = ui.interact()
@@ -361,6 +379,11 @@ label book_complete:
         m "Although all those rapes gave me a few ideas..."
         if bdsm_imagination < 2: #Only goes to 2.
             $ bdsm_imagination += 1
+    elif book_choice.id == "quidditch_book_1":
+        m "Well, that was quite informative...{w} But who in their right mind wants to watch a game for three months... even with basketball I'd struggle a bit at that point."
+        m "Hopefully that’s enough information to convince Miss Chang I know what I'm doing...{w} basketball is still better though..."
+        $ quid_hint_icon = "{image=interface/check_True.png} "
+
     elif book_choice in book_list.read_books:
         $ speed_reading += 1
     elif book_choice in book_list.write_books:

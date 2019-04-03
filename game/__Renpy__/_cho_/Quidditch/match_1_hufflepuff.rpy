@@ -73,7 +73,7 @@ label hufflepuff_match:
     sna "Speak up girl! And would it kill you to enunciate?!"
     her "*Grrr*"
     her "Welcome to the first quidditch game of the season!"
-    sna "Better… You’ve advanced from Troll to Dreadful...."
+    sna "Better... You’ve advanced from Troll to Dreadful...."
     m "Troll?" # Small text.
     sna "Those are grades we give out to our students, for decidedly poor performances, like Granger’s..."
     her "..."
@@ -86,7 +86,7 @@ label hufflepuff_match:
     m "What? Isn’t that me?"  # Small text.
     sna "It is."
     m "Why did no one warn me about this?"
-    sna "I’ve been looking forward to watching you bumble your way through this…"
+    sna "I’ve been looking forward to watching you bumble your way through this..."
     sna "Besides, you only have to give some trivial speech about team spirit, gesticulate wildly and say \"let the games begin\". A child could manage it."
     sna "Now get up there!"
     ">With that, Snape shoves you out of your chair, in front of the podium."
@@ -94,25 +94,25 @@ label hufflepuff_match:
     menu:
         "\"Miracle on ice speech\"":
             m "Great moments are born from great opportunity."
-            ">A reverent hush falls over the crowd…"
+            ">A reverent hush falls over the crowd..."
             m "And that’s what we have here tonight-"
             #Fade to black
             m "Tonight, WE are the greatest hockey team in the world!"
             #Fade to black
             m "Their time is done, it’s over! I’m sick and tired about hearing what a great hockey team the soviets have!"
-            mal "I think Dumbledore has finally started to lose his marbles…"
+            mal "I think Dumbledore has finally started to lose his marbles..."
             mal2 "I think you might be right."
             m "Screw it! This is our time, now let the games begin!"
         "\"Good Morning, Vietnam!\"":
             ">A confused murmur falls over the crowd."
-            m "Ugh…"
+            m "Ugh..."
             m "Go team!"
-            ">The sound of confused murmuring increases even further…"
+            ">The sound of confused murmuring increases even further..."
             mal "Fire’s lit but the cauldron’s empty..."
             mal2 "Looks like it..."
-            m "Tough crowd… Anyway, let the games begin!"
+            m "Tough crowd... Anyway, let the games begin!"
     ">The crowd cheers excitedly, desperate to see the match kickoff."
-    her "Ugh… thank you for that, professor Dumbledore…"
+    her "Ugh... thank you for that, professor Dumbledore..."
     her "Now, to get this game underway!"
 
 
@@ -124,10 +124,10 @@ label hufflepuff_match:
     her "And coming onto the field to face them are the equally impressive, Hufflepuff!"
     sna "Back down to Troll..."
     her "*grrrrr*"
-    her "It appears we’ve got an interesting game ahead of us. If I’m not mistaken, there’s some history between our seekers, Cho Chang and Cedric Diggory…"
+    her "It appears we’ve got an interesting game ahead of us. If I’m not mistaken, there’s some history between our seekers, Cho Chang and Cedric Diggory..."
     ">Even though they are far down below on the pitch, you can clearly see Cho and Cedric glaring up at Hermione."
-    her "Given how essential the seekers role are in Quidditch, their complex past might cost one of them the game…"
-    sna "Complex past…"
+    her "Given how essential the seekers role are in Quidditch, their complex past might cost one of them the game..."
+    sna "Complex past..."
     sna "I practically caught them chew each other’s tongues off at one point."
     her "Speaking of important, I just realised that as the inaugural game, I should cover the rules of the game for any first-years watching."
     ">Hermione heaves a heavy rule book from under the table and begins to monotonously recite it to the crowd."
@@ -140,22 +140,22 @@ label hufflepuff_match:
     her "Ugh, fine. If everyone wants us to begin play without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!"
     sna "This should be good" # Small text.
     ">With that, the snitch and bludgers are released and fly off into the air."
-    her "Now then…"
+    her "Now then..."
     her "Let’s begin!"
 
 
     # Start of the Game
     ">A Grey haired woman then throws the quaffle into the air which signals the start of the match and the players quickly takes off!"
 
-    her "Oh, wow… They’re going quite f-fast…"
-    sna "Great commentary there girl… You might want to let them know the colour of the grass next…"
-    her "Um, I’m not sure if anyone’s scored yet… Wait, that guy has the quaffle… I think…"
+    her "Oh, wow... They’re going quite f-fast..."
+    sna "Great commentary there girl... You might want to let them know the colour of the grass next..."
+    her "Um, I’m not sure if anyone’s scored yet... Wait, that guy has the quaffle... I think..."
     her "Scratch that last bit, he has a stick so he must be a beater!"
 
 
 
     # Cho’s Skirt gets addressed
-    her "Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who…"
+    her "Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who..."
     her "Hold on a minute... Is Cho wearing a skirt?"
     qcr "!!!" # [screenshake?]
     mal "She totally is!"
@@ -163,55 +163,55 @@ label hufflepuff_match:
     her "Professor, why won’t you say something? She’s clearly breaking the very basics of Quidditch rules!"
     m "I fail to see anything wrong with the way she’s dressed."
     her "But... she’s wearing a skirt!"
-    her "Surely that must be against some kind of regulation…"
-    m "You tell me miss granger, you’ve got the rulebook right there…" # Small text.
+    her "Surely that must be against some kind of regulation..."
+    m "You tell me miss granger, you’ve got the rulebook right there..." # Small text.
     sna "..." # [Smirk]
-    her "Perhaps I could get Madame Hooch to pause the game…"
+    her "Perhaps I could get Madame Hooch to pause the game..."
     sna "Knowing her, she’s probably enjoying the sight of the Ravenclaw seeker rushing past her."
     sna "Odds are she’s already tried to take a peek."  # Small text.
     m "Who’s Madame Hooch?"  # Small text.
-    sna "It’s that grey haired lady on the pitch that is seemingly unable to take her eyes off the underside of Cho’s… undergarments." # [Smirk]
+    sna "It’s that grey haired lady on the pitch that is seemingly unable to take her eyes off the underside of Cho’s... undergarments." # [Smirk]
     sna "Great idea with the skirt, if I might add."  # Small text.
     m "You’re welcome, by the way."  # Small text.
     sna "..."
     sna "She is wearing something underneath I assume?" # Small text.
-    m "For now…"
+    m "For now..."
     sna "Excellent..."
 
     mal "Cho show us your panties!"
     mal2 "We want to see them!"
 
-    her "Oh, apparently Ravenclaw scored during that… \"captivating\" bit of distraction…"
+    her "Oh, apparently Ravenclaw scored during that... \"captivating\" bit of distraction..."
     g9 "Sarcasm much?"
     sna "..." # [Smirk]
     her "I think it’s 10-20!"
-    her "Or is that 20-10… I’m not sure, aren’t they both home teams…"
+    her "Or is that 20-10... I’m not sure, aren’t they both home teams..."
     sna "Surely you must have learnt how to read by now, Miss Granger?"
     her "Hey! I have excellent reading skills I’ll have you know..."
-    her "Wait, now it’s… 20-30… I think…"
+    her "Wait, now it’s... 20-30... I think..."
     mal "Has this girl ever commentated even once in her life?"
     mal2 "She can’t help herself answering questions in class...."
     mal2 "I suppose the rule book was more for her benefit than ours."
     mal "Then how’d she get the role over Lee Jordan?"
     mal2 "Affirmative action at it again if you ask me!"
     mal "..."
-    her "Wow… that snitch is darting around like nobody’s business-"
+    her "Wow... that snitch is darting around like nobody’s business-"
 
 
     # Genie and Snape get Drunk
     # Cut to genie and snape
     sna "Fancy a glass of wine then?"
-    m "Don’t mind if I do… Something to distract me from this... bizzare game…"
-    sna "I don’t care much for it myself…"
-    sna "Although, there is a special place in my heart for watching the bludgers catch a student…"
+    m "Don’t mind if I do... Something to distract me from this... bizzare game..."
+    sna "I don’t care much for it myself..."
+    sna "Although, there is a special place in my heart for watching the bludgers catch a student..."
     m "Blubbers?"
-    sna "Bludgers… See those cannonball looking things whizzing around?"
-    m "Oh… The ones those boys are whacking at?"
+    sna "Bludgers... See those cannonball looking things whizzing around?"
+    m "Oh... The ones those boys are whacking at?"
     sna "Right... Well, we enchant them to go after the students while they play."
     m "Really? Why?"
     sna "Makes things more interesting doesn’t it!"
     m "So what happens when they hit their target?"
-    sna "Generally it’s just a concussion… Though sometimes they fall pretty far, that’s always entertaining."
+    sna "Generally it’s just a concussion... Though sometimes they fall pretty far, that’s always entertaining."
 
     # hpunch
     her "Oh no!"
@@ -224,11 +224,11 @@ label hufflepuff_match:
     her "I’m trying to commentate the game!"
     sna "Yes, and I was starting to enjoy it, you are missing most of it by the way..."
     her "As a result of your yelling!"
-    sna "Eyes forward… girl."
+    sna "Eyes forward... girl."
     her "Grrrrr!"
     ">Hermione’s eyes briefly meets with yours as if she can’t believe you’re letting Snape talk to her that way."
 
-    sna "As I was saying… They’re the only reason I watch the bloody thing. Now, mind if I top that one off for you?"
+    sna "As I was saying... They’re the only reason I watch the bloody thing. Now, mind if I top that one off for you?"
     ">You and Snape lean back and watch the game, frequently shifting your focus to Cho, as she darts past the stands, only occasionally pausing for more wine or for Snape to ridicule Hermione’s commentating."
 
     # Fade to black
@@ -250,7 +250,7 @@ label hufflepuff_match:
     her "But who caught the Snitch?"
     ">Cho waves the snitch in front of her."
     cho "My first ever win this season and you didn’t even notice it! No one did thanks to your dreadful commentating!"
-    her "Oh…"
+    her "Oh..."
     her "So should I announce it now?"
     sna "Obviousl-"
     cho "YES!"
@@ -258,7 +258,7 @@ label hufflepuff_match:
     her "Don’t scream at me like that, slut!"
     cho "WHAT DID YOU JUST CALL ME?!!!" # Large text.
     her "Everyone, Ravenclaw wins!"
-    her "Cho Chang managed to catch it, the snitch that is…"
+    her "Cho Chang managed to catch it, the snitch that is..."
     her "With the help of her ridiculously short skirt!"
     cho "!!!"
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
@@ -267,13 +267,13 @@ label hufflepuff_match:
 
     # Outro
     m "This isn’t such a bad game after all."
-    sna "I *hick* told you… so…"
+    sna "I *hick* told you... so..."
     m "Just bring more wine next time!"
     sna "M-More?!"
     m "Or at least share more of it with me!"
     sna "Get your own, magic man!"
     m "..."
-    ">Snape wanders off in a drunken rage…"
+    ">Snape wanders off in a drunken rage..."
 
     # Blackfade
 

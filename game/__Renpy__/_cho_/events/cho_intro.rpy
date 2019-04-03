@@ -168,7 +168,7 @@ label cho_intro_1:
 
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
     $ renpy.sound.play("sounds/card_punch4.mp3")
-    call her_main("{size=-5}Bitch..{/size}","base","angryCl",trans="hpunch")
+    call her_main("{size=-5}Bitch...{/size}","base","angryCl",trans="hpunch")
     $ renpy.sound.play("sounds/card_punch1.mp3")
     call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
     call her_main("...","normal","frown", cheeks="blush")

@@ -74,7 +74,20 @@ label quidditch_training_intro:
 ### Quidditch Tactics ###
 
 label change_quidditch_tactics:
-    # Replace this menu with a proper wardrobe panel.
+
+    # Intro
+    if not cho_tactics_intro_done:
+        m "How about we discuss some tactics."
+        cho "That sounds grat, [cho_genie_name]! Shall I call the rest of my team up here?"
+        m "What? Why?"
+        cho "So they can hear your expertise as well, of course."
+        m "I don't think that will be necessary."
+
+
+    else:
+        pass
+
+
     menu:
         "-Fly in front the enemy seeker-":
             $ quidditch_position = "front"

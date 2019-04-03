@@ -204,7 +204,6 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
     hide screen g_c_u
     hide screen genie
 
-    $ masturbating = False
     hide screen genie_jerking_off                #Jerking off sitting behind desk.
     hide screen genie_jerking_sperm_02           #Sperm on desk and floor.
     hide screen genie_jerking_sperm

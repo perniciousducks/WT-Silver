@@ -16,7 +16,7 @@ label cc_pf_A1_Talking:
 
         if cho_whoring < 3: # Points til 2
             $ cho_whoring += 1
-        if cc_pf_A1_Talking_OBJ.level < 2: # Hear 1+2
+        if cc_pf_A1_Talking_OBJ.level < 3: # Hearts 1+2
             $ cc_pf_A1_Talking_OBJ.level += 1
 
     # Tier 2
@@ -46,110 +46,225 @@ label cc_pf_A1_Talking:
 ### Tier 1 ###
 
 label cc_pf_A1_event1:
+    m "Let’s have a little chat shall we."
+    g9 "Just to get to know each other a little bit better."
+    call cho_main("Of course, Sir.","smile","base","base","mid")
+    m "First, I'd like you to come a bit closer."
+    call cho_main("Very well, [cho_genie_name]...","soft","base","base","R")
 
-    m "How would you like to have a little chat with me?"
-    g9 "Just so we get to know each other a little better."
-    cho "Of course, Sir."
-    cho "What would you like to talk about with-"
+    call cho_walk("mid","desk",1.6)
+
+    call play_music("chipper_doodle")
+    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
+    call ctc
+
+    call cho_main("What would you like to talk about?","soft","base","base","mid")
     m "Do you have a boyfriend, Miss Chang?"
-    cho "I'm sorry?" # Shocked
+    call cho_main("Excuse me?","open","wide","base","mid",trans="hpunch") # Shocked
     m "I asked if you have boyfriend. Anybody you fool around with?"
-    cho "Me? Professor? He- hav- a boyfrind?" # Reluctant, Embarassed
+    call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfrind?","open","wide","base","R") # Reluctant, Embarassed
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
-    cho "Sir that's-{w} that's not something a headmaster should be concerned about."
-    cho "Why would it matter if- {w}Even if I did I'd-"
+    call cho_main("Sir that's-{w} that's not something a headmaster should be concerned about.","open","base","sad","L")
+    call cho_main("And I don’t see how this information would be of importance for my training.","open","wide","raised","downR")
+    call cho_main("Why would it matter if- {w}Even if I did I'd-","soft","wide","base","down")
     g9 "So you don't have one?"
-    cho "You are making me nervous, [cho_genie_name]. <3"
-    m "(So cute.{w} She's almost making me feel things...)"
+    call cho_main("You are making me nervous, [cho_genie_name]. <3","horny","suspicious","sad","R")
+    m "(So cute.{w=0.5} She's almost making me feel things...)"
+    m "(Perhaps this is something I could push her further on...)"
 
-    cho "I do not, Sir. I don't have a boyfriend right now."
-    g9 "A girlfriend then?"
-    cho "No, Sir."
+    call cho_main("Sir, I do not have a boyfriend at the moment.{w} I hope that answers your question.","soft","closed","angry","mid")
+    g9 "So, a girlfriend then?"
+    call cho_main("!!!","angry","wide","raised","mid",trans="hpunch")
+    call cho_main("No!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("","annoyed","suspicious","angry","mid")
+    m "(She doesn’t seem that keen on the subject, perhaps I could tell her...)"
 
-    ### ADD Bridge
-    ### Genie needs to convince Cho to tell him about her boyfriends, starting with Cedric.
+    label get_cho_to_talk:
+
+    menu:
+        "\"It's important to open up to your headmaster.\"":
+            m "Emphasis on \"opening up\"..."
+            call cho_main("I don't think that will be necessary, [cho_genie_name].","annoyed","suspicious","angry","mid")
+            m "There's a lot more to gather from discussing previous life choices than you might think."
+            m "You get to learn a lot about the way someone has matured by previous experiences..."
+            m "Like a first kiss, who it was with, and so on..."
+            call cho_main("You think I'm mature?","soft","base","base","mid")
+            g4 "(That's what she's focusing on?)"
+            m "Ahem, yes.{w=0.5} Of course you are, don't you think so?"
+            call cho_main("Well, my previous boyfriend didn't seem to think so...","open","base","raised","R")
+            m "So you did have one?"
+            call cho_main("*Urgh*{w=0.8} Fine...{w=0.8} I'll tell you...","soft","suspicious","base","down")
+
+            pass
+
+        "\"It's okay if you like girls...\"":
+            m "Swinging the other, way you know..."
+            call cho_main("What?","angry","wide","base","mid")
+            m "Some people like flicking the bean rather than rubbing a wand..."
+            call cho_main("Ugh, I never said I minded either way...","quiver","suspicious","sad","R")
+            m "So you have had a girlfriend?"
+            call cho_main("I'd rather not talk about it right now...","soft","suspicious","sad","mid")
+            m "(Damn, maybe that's not the way to go about this, maybe instead I could tell her...)"
+
+            jump get_cho_to_talk
+
+        "\"Let me tell you something about my own previous relationships...\"":
+            call cho_main("Sir, I'd rather not hear a boring old tale about any of your old flames...","open","suspicious","base","R")
+            g9 "Oh they weren't boring at all!"
+            call cho_main("Hmm?","annoyed","suspicious","base","mid")
+            g9 "They were very intimate..."
+            call cho_main("???","annoyed","base","raised","mid")
+            g4 "Very sexual!"
+            call cho_main("!!!","annoyed","wide","base","mid")
+            g9 "Lots of acrobatic stuff!"
+            call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!","scream","closed","angry","mid",trans="hpunch")
+            call cho_main("(Gross!{w=0.5} Keep it to yourself...)","angry","suspicious","sad","R")
+            m "I just wanted to expand my backstory a little bit...{w=0.5} What's so wrong with that..."
+
+            jump get_cho_to_talk
 
     # Cedric Diggory
-    cho "Cedric was my boyfriend during most of my fifth school year."
-    cho "At the time, Hogwarts was hosting the triwizards tournament."
+    call cho_main("Cedric was my boyfriend during the time Hogwarts was hosting the triwizards tournament.","soft","base","base","R")
     m "(They host tournaments here? Interesting...)"
-    cho "That year was the most fun I've ever had!"
-    cho "Sir, we should have this tourney every year, at least if you were to ask me!"
-    g9 "(A slut tournament is what this school needs!)"
+    call cho_main("That year was the most fun I've ever had!","smile","base","base","mid")
+    call cho_main("We should have this tourney every year, at least if you were to ask me!","open","closed","base","mid")
+    g9 "(A cosplay tournament is what this school needs...)"
+    call cho_main("Sir that would be great!","smile","suspicious","base","mid")
+    g4 "(Wait, wait!{w=0.8} A \"nude\" cosplay tournament!{w=0.6} Even better!)"
+    call cho_main("And with new contesters every month! You've got to do this, Sir!","smile","base","base","mid")
     m "I'll think about it..."
-    m "Now tell me, why did you two end up together?"
-    cho "You should know, Professor, I have a huge thing for athletes..."
-    cho "Cedric was the representative champion of our school, so of course I had to date him."
-    g4 "(Wait until you see me, girl. I'm shredded!)"
-    cho "He even put his live at risk during it!"
+
+    m "Now tell me, how come you two ended up together?"
+    call cho_main("Oh. Well...","soft","base","base","down")
+    call cho_main("I have this thing for...{w=0.5} athletes.","horny","base","base","down")
+    call cho_main("Cedric was the representative champion of our school, so of course I had to date him.","horny","base","sad","down")
+    m "Of course..."
+    g4 "(You should see me, girl. I'm shredded!)"
+    m "(Too bad you can only see the body of that wrinkly old geezer...)"
+    m "(Maybe there's like a steroid spell...)"
+    g4 "Plexus maximus!"
+    call cho_main("Did you say something?","soft","base","raised","mid")
+    m "Oh, it was nothing... go on."
+
+    call cho_main("Anyway, Cedric even put his life at risk during the whole thing.","open","base","base","R")
+    m "Oh you poor, poor thing..."
+    m "I can see why you didn't want to mention him before then..."
+    call cho_main("Why?","soft","suspicious","raised","mid")
     m "He surely will be missed."
-    cho "Sir?" # Shocked
+    call cho_main("Sir?","angry","suspicious","base","mid")
     m "Died just the way he lived,...{w} as a plot device."
-    cho "Cedric isn't dead."
-    m "Oh... he isn't?"
-    cho "No!"
-    m "He died in the books..."
-    cho "What books?"
-    g9 "And shortly after became a vampire."
-    cho "Sir you are making no sense!"
-    cho "Please don't joke about him that way. It's so unlike you..."
-    cho "He's one of your best students! The best Hufflepuff has ever seen!"
-    m "A Hufflepuff? Well, that explains so many things."
+    call cho_main("Sir, Cedric isn't dead.","open","angry","angry","mid")
+    m "Oh...{w} he's not?"
+    call cho_main("No!","annoyed","suspicious","angry","mid")
+    m "I could've sworn I read that somewhere..."
+    m "Are you sure he's still around?{w} What if he \"did\" die, but then he returned from the dead?"
+    g4 "For all you know he could be a vampire!"
+    call cho_main("Sir, you're being ridiculous...","annoyed","angry","angry","R")
+    call cho_main("Please don't joke about your students. It's so unlike you...","open","closed","base","mid")
+    call cho_main("He's one of your bests! The best student Hufflepuff has ever seen!","open","base","base","mid")
+    m "A Hufflepuff? Well, that explains everything..."
     m "If he's such an exceptionally great student, then why aren't you two still together?"
-    cho "Things didn't work out, naturally..."
-    cho "The tourney ended, and he didn't win, so..."
-    m "That's why you two broke up?... Because he didn't win?"
-    cho "Sort of. There is of course also the fact that he's on the opposite Quidditch team, as their Seeker."
-    cho "It's the last chance to win the Quidditch cup for our house, for the both of us."
-    cho "We'd constantly be at each other's throats."
-    m "You are missing out, girl."
-    g9 "Hatesex is the best!" # Small text
-    cho "I didn't quite hear that, Sir."
-    m "Yeah yeah, whatever. Who else did you do it with?"
-    cho "Do it with?" # Shocked
-    m "Smooshing, kissing, or whatever it is you kids do nowadays..."
-    cho "With all due respect, Professor, it's very weird that you'd ask me about those sort of things,..."
-    cho "But,... you are helping me. So I guess I'm fine with telling you everything."
-    g9 "I do like the sound of \"everything\"!"
+    call cho_main("Things didn't work out, naturally...","open","base","raised","R")
+    call cho_main("The tourney ended, and he didn't win, so...","soft","base","raised","down")
+    m "So you two broke up?... Because he didn't win?"
+    call cho_main("That was one of the reasons...","soft","base","base","downR")
+    call cho_main("There is also the fact that he's on the Hufflepuff Quidditch team, as their Seeker.","open","base","base","mid")
+    call cho_main("It's our last shot at winning the Quidditch house cup, for the both of us.","angry","base","base","down")
+    call cho_main("We'd constantly be at each other's throats.","soft","suspicious","angry","mid")
+    g4 "Intriguing!"
+    g9 "{size=-4}You are missing out, girl.{w} Hatesex is the best!{/size}" # Small text
+    call cho_main("I didn't quite hear that, Sir.","base","base","base","mid")
+    m "Who else did you do it with?"
+    call cho_main("Do it with?","soft","suspicious","raised","mid") # Shocked
+    m "Smooshing, kissing,...{w} whatever you call it nowadays..."
+    call cho_main("With all due respect, Professor, it's very odd that you'd ask me about those sort of things...","open","closed","base","mid")
+    call cho_main("But,... you are helping me. So I guess I owe you that much...","annoyed","base","base","R")
+    g9 "That's what I wanted to hear."
 
     # Fleur
-    cho "Well, Cedric wasn't the only one I was with during the year the tourney took place..."
-    m "You don't say."
-    g9 "Please, elaborate!"
-    cho "I was sort of dating somebody else. At the same time." # Embarrassed
+    call cho_main("Well, Cedric wasn't the only one I was with during the year of the tourney...","open","base","raised","down")
+    g9 "Is that so...{w} feel free to elaborate!"
+    call cho_main("I was sort of dating somebody else....","quiver","base","sad","downR")
+    call cho_main("At the same time.","horny","base","sad","R") # Embarrassed
     m "No{w} way!"
     g4 "You were cheating on that Hufflepuffer?"
-    cho "It wasn't cheating, Professor. It wasn't even that serious with Cedric to begin with."
-    cho "I was just fooling around a bit with somebody else. Trying out new things..."
+    call cho_main("I wouldn't call it cheating, Professor. It wasn't even that serious with Cedric to begin with.","annoyed","suspicious","base","mid")
+    call cho_main("I had a unique opportunity that's all...","soft","base","base","R")
+    call cho_main("One of those no strings attached kind of thing... Trying out new things...","smile","base","base","L")
     m "New things? Like what?"
-    cho "Dating a girl, for example."
-    m "(This keeps getting better and better...)"
-    cho "She was one of the students from Beauxbaton."
+    call cho_main("Dating a girl, for example.","base","suspicious","base","mid")
+    g9 "(Finally this gets interesting!)"
+    call cho_main("She was one of the students from Beauxbaton.","soft","base","base","downR")
     m "(...)"
-    cho "A French girl."
-    g4 "You frenched her?"
-    cho "Among other things..." # Super embarrassed
-    cho "(Why am I telling him this?)"
-    cho "You probably know her, since Fleur was also a champion at the tourney."
+    call cho_main("A French girl.","soft","base","base","down")
+    g9 "And did you french her?"
+    call cho_main("Among other things...","angry","closed","sad","mid") # Super embarrassed
+    call cho_main("(Why am I telling him this?)","horny","suspicious","sad","R")
+    call cho_main("You probably know her, since Fleur was also a champion at the tourney.","soft","base","sad","mid")
     g4 "I'm in shock!"
 
     # Viktor
-    cho "Then there also was Viktor Crum who-"
+    call cho_main("Then there also was Viktor Crum who-","open","base","base","R")
+    with hpunch
     g4 "Slow down, girl! I'm still not over the fact that you made out with a girl!"
+    call cho_main("","annoyed","suspicious","base","mid")
+
+    menu:
+        "-Jerk off while she's talking-":
+            $ cho_jerk_off_counter += 1
+            $ masturbating = True
+
+            hide screen cho_chang
+            call nar(">You reach under the desk and grab your cock...")
+
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+            call bld
+
+        "-Participate in the conversation-":
+            $ masturbating = False
+
     g9 "I want to hear everything!"
 
-    cho "I'm sorry, Sir. It's just that,..."
+    call cho_main("I'm sorry, Sir. It's just that...","open","closed","raised","mid")
 
     if daytime:
-        cho "I'm really late for classes. May we postpone this talk for some other time?"
+        call cho_main("I'm really late for classes. May we postpone this talk for some other time?","soft","suspicious","sad","R")
     else:
-        cho "It's getting really late. May we postpone this talk for some other time?"
+        call cho_main("It's getting really late. May we postpone this talk for some other time?","soft","suspicious","sad","R")
 
-    ### This part could be fleshed out a bit more.
+    if masturbating:
+        g4 "What? Please don't go now. I've only just started!"
+        call cho_main("Started with what, [cho_genie_name]?","annoyed","suspicious","angry","mid")
+        g4 "I'll give you 10 house points if you stay!{w=0.8} Just a tiny bit longer!"
+        call cho_main("And what makes you believe that I'd agree to such a thing? Getting rewardred with points for doing nothing?","open","closed","base","mid")
+        call cho_main("Earning house points in such a way is despicable, and it would be unfair towards the other school houses, as well as my fellow students...","open","suspicious","base","mid")
+        call cho_main("","annoyed","suspicious","angry","mid")
+        g4 "Fifty points?"
+        call cho_main("I have to go now, Sir.","soft","closed","raised","mid")
+        m "(Fuck me...)"
 
-    m "Okay, girl. You may leave..."
-    cho "Thank you, Sir."
-    cho "See you next time."
+        call gen_chibi("sit_behind_desk")
+        with d3
+        pause.8
+
+        call cho_main("Until next time!","base","suspicious","base","mid")
+
+    else:
+        m "Okay, girl. You may leave..."
+        call cho_main("Thank you, Sir.","base","base","base","down")
+        call cho_main("See you next time.","smile","base","base","mid")
+
+    # Cho leaves.
+    call cho_walk("desk","leave",2.2)
+
+    call bld
+    m "(...)"
+    if masturbating:
+        m "Well, I got blue-balled..."
+        m "Feel like I've deserved it..."
 
     return
 

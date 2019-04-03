@@ -142,7 +142,7 @@ init python:
             elif _return[0] == "input":
                 color_input = [color[0], color[1], color[2], color[3]]
                 if _return[1] == "red":
-                    color_input[0] = renpy.input("Red", str(ing(color[0])), "0123456789", length=3)
+                    color_input[0] = renpy.input("Red", str(int(color[0])), "0123456789", length=3)
                 elif _return[1] == "green":
                     color_input[1] = renpy.input("Green", str(int(color[1])), "0123456789", length=3)
                 elif _return[1] == "blue":

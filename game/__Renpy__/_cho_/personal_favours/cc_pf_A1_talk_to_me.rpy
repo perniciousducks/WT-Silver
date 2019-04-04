@@ -2,42 +2,43 @@
 
 ### Talk with Cho ###
 
-label cc_pf_A1_Talking:
+label cc_pf_T1a_talking:
 
     # Tier 1
-    if cho_whoring in [0,1,2]:
+    if main_matches_won == 0:
 
         if cho_whoring == 0:
             # Ask about boyfriends.
-            call cc_pf_A1_event1
-        else:
+            call cc_pf_T1_talking_1
+
+        elif cho_whoring == 1:
             # Ask about boyfriends some more.
-            call cc_pf_A1_event2
+            # Unlocks public requests favours.
+            $ cho_requests_unlocked = True
+            call cc_pf_T1_talking_2
+
+        else:
+            call cc_pf_T1_talking_3
 
         if cho_whoring < 3: # Points til 2
             $ cho_whoring += 1
-        if cc_pf_A1_Talking_OBJ.level < 3: # Hearts 1+2
-            $ cc_pf_A1_Talking_OBJ.level += 1
+        if cc_pf_T1a_talking_OBJ.level < 2: # Hearts 1+2
+            $ cc_pf_T1a_talking_OBJ.level += 1
 
     # Tier 2
-    elif cho_whoring in [3,4,5]:
+    elif main_matches_won == 1:
 
         # Talk with Cho about her Quidditch team.
-        call cc_pf_A1_event3
-        # Has two branches.
-        # Unlocks first public requests favour.
+        call cc_pf_T1_talking_3 #Temporary?
 
         if cho_whoring < 5: # Points til 5
             $ cho_whoring += 1
-        if cc_pf_A1_Talking_OBJ.level < 3: # Heart 3
-            $ cc_pf_A1_Talking_OBJ.level += 1
+        if cc_pf_T1a_talking_OBJ.level < 3: # Heart 3
+            $ cc_pf_T1a_talking_OBJ.level += 1
 
-    # Tier 3+4
-    else: # Repeatable events # Lewd
-        pass
 
     # Stats
-    $ cc_pf_A1_Talking_OBJ.points += 1
+    $ cc_pf_T1a_talking_OBJ.points += 1
 
     jump end_cho_event
 
@@ -45,7 +46,7 @@ label cc_pf_A1_Talking:
 
 ### Tier 1 ###
 
-label cc_pf_A1_event1:
+label cc_pf_T1_talking_1:
     m "Let’s have a little chat shall we."
     g9 "Just to get to know each other a little bit better."
     call cho_main("Of course, Sir.","smile","base","base","mid")
@@ -98,7 +99,7 @@ label cc_pf_A1_event1:
             pass
 
         "\"It's okay if you like girls...\"":
-            m "Swinging the other, way you know..."
+            m "Swinging the other way, you know..."
             call cho_main("What?","angry","wide","base","mid")
             m "Some people like flicking the bean rather than rubbing a wand..."
             call cho_main("Ugh, I never said I minded either way...","quiver","suspicious","sad","R")
@@ -142,7 +143,7 @@ label cc_pf_A1_event1:
     g4 "(You should see me, girl. I'm shredded!)"
     m "(Too bad you can only see the body of that wrinkly old geezer...)"
     m "(Maybe there's like a steroid spell...)"
-    g4 "Plexus maximus!"
+    g4 "{size=-4}Plexus maximus!{/size}"
     call cho_main("Did you say something?","soft","base","raised","mid")
     m "Oh, it was nothing... go on."
 
@@ -172,7 +173,8 @@ label cc_pf_A1_event1:
     call cho_main("It's our last shot at winning the Quidditch house cup, for the both of us.","angry","base","base","down")
     call cho_main("We'd constantly be at each other's throats.","soft","suspicious","angry","mid")
     g4 "Intriguing!"
-    g9 "{size=-4}You are missing out, girl.{w} Hatesex is the best!{/size}" # Small text
+    m "You are missing out, girl..." # Small text
+    g9 "{size=-4}Hatesex is the best!{/size}" # Small text
     call cho_main("I didn't quite hear that, Sir.","base","base","base","mid")
     m "Who else did you do it with?"
     call cho_main("Do it with?","soft","suspicious","raised","mid") # Shocked
@@ -197,7 +199,7 @@ label cc_pf_A1_event1:
     call cho_main("She was one of the students from Beauxbaton.","soft","base","base","downR")
     m "(...)"
     call cho_main("A French girl.","soft","base","base","down")
-    g9 "And did you french her?"
+    g9 "And I hope you also frenched that french girl!"
     call cho_main("Among other things...","angry","closed","sad","mid") # Super embarrassed
     call cho_main("(Why am I telling him this?)","horny","suspicious","sad","R")
     call cho_main("You probably know her, since Fleur was also a champion at the tourney.","soft","base","sad","mid")
@@ -270,12 +272,160 @@ label cc_pf_A1_event1:
 
 
 
+# Second Event
+label cc_pf_T1_talking_2:
+    g9 "Get closer, [cho_name]..."
+    cho "Ok, [cho_genie_name]."
+
+    call cho_walk("mid","desk",1.6)
+
+    call play_music("chipper_doodle")
+    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
+    call ctc
+
+    cho "Another chat, Professor?"
+    cho "Are you going to ask me inappropriate questions again? About my previous relationships?"
+    m "Not today. I'd like to hear more about Quiddish."
+    cho "Quidditch, [cho_genie_name]."
+    m "Are you getting along with your team well?"
+    cho "I'd say so."
+    cho "It's been difficult for me at first too. A sport so dominated by men."
+    cho "Getting accepted into the team as a girl is rare. It's a shame how women are always getting treated unfairly."
+    m "(Not this again...)"
+    cho "Quidditch at our school has been no exception to this. Very few teams have allowed a female player into their ranks over the years."
+    cho "And I've been the only female seeker at this school in over half a century. Can you even believe that, [cho_genie_name]?"
+    m "(A century? That's like a coffee brake for me girl...)"
+    cho "I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!"
+    cho "If you don't have a good seeker, you have no chance of winning!"
+    m "Which is why you need my help so badly..."
+    m "Because of your exceptional talents."
+    cho "No, [cho_genie_name]! It's not about me!"
+    m "So it isn't your fault that you're constantly losing?"
+    cho "Of course not! I'm always giving my best."
+    cho "It's the other team's fault. They are cheating!"
+    cho "Every year it has been the same. And I'm growing more and more desperate with my situation."
+
+    m "(...)"
+
+    menu:
+        "-Jerk off while she is talking-":
+            hide screen cho_chang
+            hide screen bld1
+            with d5
+            pause.8
+            call gen_chibi("jerking_off_behind_desk")
+            pause.8
+
+            $ cho_jerk_off_counter += 1
+            $ masturbating = True
+
+        "-Participate in the conversation-":
+            $ masturbating = False
+
+    call cho_main("Ever since I was a little girl Quidditch has been my dream...",face="sad")
+    cho "[cho_genie_name], can you even believe how \"hard\" it was for me?"
+    if masturbating:
+        g4 "Yes, yes... It's so hard for you, you little slut!!!"
+    cho "How difficult it was for me?"
+    cho "Being accepted?"
+    cho "I'm the only female in my team. The only girl that has made it onto the Ravenclaw team in over a decade!"
+    cho "Constantly surrounded by other men."
+    if masturbating:
+        g4 "And you want to fuck all of them you whore!"
+    cho "Even on my own team, I can constantly feel their gazes behind my back."
+    cho "If it wasn't for our team leader, I would have been thrown out already, and I know it."
+    cho "My own team, [cho_genie_name]. They sometimes treat me like the plague..."
+
+    if masturbating:
+        cho "Anywhere I have to go with them."
+        g4 "Don't be so shy. I know you want it!"
+        cho "Be it the Quidditch pitch..."
+        cho "The dormitories..."
+        cho "Our classrooms..."
+        g4 "In front of all those people, you fucking slut!"
+        cho "The showers..."
+        g4 "Yes, yes! Even in the showers you who-"
+
+    else:
+        cho "Anywhere I go with them. Be it the pitch, the dormitories, our classrooms, or the showers..."
+
+    m "Wait a bloody minute.{w} You shower \"with\" your team?"
+    cho "Of course, [cho_genie_name]. It was after my request, after all."
+    g4 "No kidding?"
+    cho "They shouldn't exclude me from team activities just because I'm a girl."
+    cho "It makes absolutely no difference!"
+
+    if masturbating:
+        g4 "You are naked with them? In the shower?"
+    else:
+        m "Just to be clear. You are naked with them, in the shower."
+
+    cho "Of course we are all naked, [cho_genie_name]!"
+    cho "Why would anyone take showers with their clothes still on?"
+
+    if masturbating:
+        g4 "{size=-4}You exhibitionistic slut!{/size}"
+        g4 "*Argh* {size=-4}Here it comes!{/size}"
+
+        call cum_block
+        call gen_chibi("cumming_behind_desk")
+        with d3
+        pause.8
+
+        g4 "*heavy breathing* {size=-4}Take it!{/size}"
+
+        call cum_block
+
+        g4 "*Argh!* {size=-4}Get showered in my cum!{/size}"
+
+        call cum_block
+
+        cho "[cho_genie_name], are you alright?"
+        cho "You are sweating and breathing quite heavily..."
+
+        call gen_chibi("came_on_desk")
+        with d3
+        pause.8
+
+        cho "Shall I get Madam Pomfrey to check on yo-"
+        g4 "No, no! I'm..."
+        m "I'm done.{w} Lets get back to the topic."
+        cho "Which was?"
+        m "You taking a shower with your team-mates..."
+        cho "(...)" # Annoyed
+
+    m "The fact that you are naked with them has nothing to do with the way they act?"
+    cho "Of course not. We are all just friends!"
+    g9 "I bet some of them would like to be more than \"just friends\" with you!"
+
+    # Cho is shocked
+    cho "[cho_genie_name]!"
+    cho "But, they are my team. I have known them for years..."
+    m "Let me ask you a question."
+    m "Do they always have their backs turned to you in the showers? And only to you?"
+    cho "May I... May I leave, [cho_genie_name]?"
+    m "Yes you may leave now."
+    cho "Thank you, [cho_genie_name]."
+
+    # Cho very slowly walks out of your office...
+    call cho_walk("desk","leave",3)
+
+    m "(...)"
+    g9 "(I just got an idea!)"
+    stop music fadeout 1.0
+
+    $ cho_requests_unlocked = True
+    call give_reward(">You can now tell Cho to flirt with the other Quidditch players!","interface/icons/head/head_cho_1.png")
 
 
-### Second event.
+    return
+
+
+
+# Third event
 ## Asking more questions abour her ex boyfriends and jerking off.
 
-label cc_pf_A1_event2:
+label cc_pf_T1_talking_3:
 
     ## Genie wasnts to know more about Cho's ex boyfriends again.
     ## There are 4 choices, two of them are more elaborate.
@@ -340,105 +490,6 @@ label cc_pf_A1_event2:
             ## (Spoiler, she did even more with him but won't tell you that in this conversation!)
             ## Continue
             call nar("Writing not yet added.")
-    return
-
-
-
-
-
-### Tier 2 ###
-
-# Event 1 & 2
-# Has two branches
-label cc_pf_A1_event3:
-
-    # Intro
-    if cho_whoring < 2:
-        cho "Another chat, Professor?"
-        cho "Are you going to ask me inappropriate questions again? About my previous relationships?"
-        m "Not today. I'd like to hear more about Quiddish."
-        cho "Quidditch, [cho_genie_name]."
-        m "Are you getting along with your team well?"
-        cho "I'd say so."
-        cho "It's been difficult for me at first too. A sport so dominated by men."
-        cho "Getting accepted into the team as a girl is rare. It's a shame how women are always getting treated unfairly."
-        m "(Not this again...)"
-        cho "Quidditch at our school has been no exception to this. Very few teams have allowed a female player into their ranks over the years."
-        cho "And I've been the only female seeker at this school in over half a century. Can you even believe that, [cho_genie_name]?"
-        m "(A century? That's like a coffee brake for me girl...)"
-        cho "I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!"
-        cho "If you don't have a good seeker, you have no chance of winning!"
-        m "Which is why you need my help so badly..."
-        m "Because of your exceptional talents."
-        cho "No, [cho_genie_name]! It's not about me!"
-        m "So it isn't your fault that you're constantly losing?"
-        cho "Of course not! I'm always giving my best."
-        cho "It's the other team's fault. They are cheating!"
-        cho "Every year it has been the same. And I'm growing more and more desperate with my situation."
-
-    # Third & Repeated Event
-    else:
-        m "Tell me some more about Quidditch."
-        cho "Gladly, [cho_genie_name]."
-
-    m "(...)"
-
-    menu:
-        "-Jerk off while she is talking-":
-            $ cho_jerk_off_counter += 1
-            hide screen cho_chang
-            hide screen bld1
-            with d5
-            pause.8
-            call gen_chibi("jerking_off_behind_desk")
-            pause.8
-
-        "-Participate in the conversation-":
-            pass
-
-    cho "Ever since I was a little girl this has been my dream..."
-    cho "[cho_genie_name], can you even believe how \"hard\" it was for me?"
-    if masturbating:
-        g4 "Yes It's so hard for you, you little slut!!!"
-    cho "How difficult it was for me?"
-    cho "Being accepted?"
-    cho "I'm the only female in my team. The only girl that has made it onto the Ravenclaw team in over a decade!"
-    cho "Constantly surrounded by other men."
-    if masturbating:
-        g4 "And you want to fuck all of them you whore!"
-    cho "Even on my own team, I can constantly feel their gazes behind my back."
-    cho "If it wasn't for our team leader, I would have been thrown out already, and I know it."
-    cho "My own team, [cho_genie_name]. They sometimes treat me like the plague..."
-    cho "Anywhere I go with them. Be it the pitch, the dormitories, our classrooms, or the showers..."
-
-    if masturbating:
-        pass
-
-       #ADD Jerk off section here.
-
-    else:
-        m "Wait a second. You shower \"with\" your team?"
-        cho "Of course, [cho_genie_name]. It was after my request, after all."
-        cho "They shouldn't exclude me from team activities just because I'm a girl."
-        cho "It makes absolutely no difference!"
-        m "Just to be clear. You are naked with them, in the shower."
-        cho "Of course we are all naked, [cho_genie_name]!"
-        cho "Why would anyone take showers with their clothes still on?"
-
-        m "So seeing you naked had nothing to do with the way they act?"
-        cho "Of course not. We are all just friends!"
-        g9 "I bet some of them would like to be more than \"just friends\" with you!"
-
-        # Cho is shocked
-        cho "[cho_genie_name]!"
-        cho "But, they are my team. I have known them for years..."
-        m "Let me ask you a question."
-        m "Do they always have their backs turned to you in the showers? And only to you?"
-        cho "May I... May I leave, [cho_genie_name]?"
-        m "Yes you may leave now."
-        cho "Thank you, [cho_genie_name]."
-        # Cho very slowly walks out of your office...
-
     return
 
 

@@ -35,6 +35,7 @@ label cho_progress_init:
 
         # Stats
         $ cho_whoring = 0
+        $ cho_reputation = 0
         $ cho_mood = 0
         $ cho_jerk_off_counter = 0
 
@@ -43,6 +44,8 @@ label cho_progress_init:
         $ cho_unlocked            = False
         $ cho_training_unlocked   = False
         $ cho_favors_unlocked     = False
+        $ cho_requests_unlocked   = False
+        $ cho_shaming_unlocked    = False
         $ cho_wardrobe_unlocked   = False
         $ cho_busy                = False
 
@@ -64,7 +67,8 @@ label cho_progress_init:
         $ cho_quiz_assed          = False
 
         # Quidditch Training
-        $ cho_training_intro_complete = False
+        $ cho_training_intro_done = False
+        $ cho_tactics_intro_done  = False
         $ lock_cho_training       = False
         $ lock_cho_practice       = False
         $ quidditch_commentator   = "None"
@@ -110,22 +114,30 @@ label cho_progress_init:
 
     # cc = Cho Chang.
     # pf = Personal Favour.
-    # A1 = A is the tier at which the favour gets unlocked, 1 is the position in the menu/list.
+    # pr = Public Requests.
+    # T1a = T1 is the tier at which the favour gets unlocked, a,b,c,... is the position in the menu/list.
 
-    if not hasattr(renpy.store,'cc_pf_A1_Talking_OBJ'):
-        $ cc_pf_A1_Talking_OBJ = favor_class(title = "Talk to me",       tier = 0, start_label = "cc_pf_A1_Talking")
+    if not hasattr(renpy.store,'cc_pf_T1a_talking_OBJ'):
+        $ cc_pf_T1a_talking_OBJ = favor_class(title = "Talk to me!",       tier = 0, start_label = "cc_pf_T1a_talking")
 
-        $ cc_pf_B1_Groping_OBJ = favor_class(title = "Molest her body!", tier = 1, start_label = "cc_pf_B1_Groping")
+        $ cc_pf_T2a_groping_OBJ = favor_class(title = "Inspect her body!", tier = 1, start_label = "cc_pf_T2a_groping")
 
-        $ cc_pf_C1_Blowjob_OBJ = favor_class(title = "Suck it!",         tier = 2, start_label = "cc_pf_C1_Blowjob")
+        $ cc_pf_T3a_blowjob_OBJ = favor_class(title = "Suck it!",          tier = 2, start_label = "cc_pf_T3a_blowjob")
 
-        $ cc_pf_D1_Sex_OBJ     = favor_class(title = "Let's have sex!",  tier = 3, start_label = "cc_pf_D1_Sex")
+        $ cc_pf_T4a_sex_OBJ     = favor_class(title = "Let's have sex!",   tier = 3, start_label = "cc_pf_T4a_sex")
 
     $ cc_favor_list = [
-        cc_pf_A1_Talking_OBJ,
-        cc_pf_B1_Groping_OBJ,
-        cc_pf_C1_Blowjob_OBJ,
-        cc_pf_D1_Sex_OBJ,
+        cc_pf_T1a_talking_OBJ,
+        cc_pf_T2a_groping_OBJ,
+        cc_pf_T3a_blowjob_OBJ,
+        cc_pf_T4a_sex_OBJ,
+        ]
+
+    if not hasattr(renpy.store,'cc_pr_T1a_flirt_OBJ'):
+        $ cc_pr_T1a_flirt_OBJ   = request_class(title = "Flirt with the teams!", tier = 0, start_label = "cc_pr_T1_flirt_start", return_label = "cc_pr_T1_flirt_return")
+
+    $ cc_requests_list = [
+        cc_pr_T1a_flirt_OBJ,
         ]
 
     return

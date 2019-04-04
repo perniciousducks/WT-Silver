@@ -2,7 +2,7 @@
 
 # Favour tier 2 - Grope Her
 
-label cc_pf_B1_Groping:
+label cc_pf_T2a_groping:
     call nar("not implemented yet")
     jump end_cho_event
 

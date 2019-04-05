@@ -330,7 +330,7 @@ init python:
         def get_image(self):
             
             # Keep used clothes images in cache
-            renpy.start_predict("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/*.*")
+            #renpy.start_predict("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/*.*")
             
             self.sprite = self.get_imagelayer_color(0)
             
@@ -606,8 +606,8 @@ init python:
                 self.cached = True
                 
                 # Keep character images in cache
-                renpy.start_predict("characters/"+self.char+"/body/*.*")
-                renpy.start_predict("characters/"+self.char+"/face/*.*")
+                #renpy.start_predict("characters/"+self.char+"/body/*.*")
+                #renpy.start_predict("characters/"+self.char+"/face/*.*")
                 
                 # Create sprite list
                 sprite_list = []

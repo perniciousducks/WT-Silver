@@ -124,10 +124,10 @@ init python:
             
             if _return == "Close":
                 color_preview = None
+                renpy.free_memory() # Prevent memory leak
                 return original_color
             elif _return == "main_color":
                 color = UI_color_scale.get_main_color( x ,y)
-                
             elif _return == "color_bar":
                 ypos_to_color = float(y)
                 
@@ -155,6 +155,7 @@ init python:
                         color[i] = clamp(int(color_input[i]), 0, 255)
             elif _return == "finish":
                 color_preview = None
+                renpy.free_memory() # Prevent memory leak
                 return color
                 
     

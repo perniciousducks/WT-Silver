@@ -66,7 +66,7 @@ label cho_quiz_1:
         $ cho_quiz_first_attempt = False
         m "It's time to start our first lesson miss Chang."
         call cho_main("Great, where do we begin?","smile","base","base","mid")
-        m "Well, first we're going to have to discuss what you'll do for me in this arangement of ours..."
+        m "Well, first we're going to have to discuss what you'll do for me in this arrangement of ours..."
         call cho_main("Oh, well... as I said, I'll do anything to win the cup!","soft","base","base","R")
         g9 "That's what I want to hear!"
         m "In that case, I'd like you to start selling favours to me for my service..."
@@ -89,7 +89,7 @@ label cho_quiz_1:
         m "Yes?"
         call cho_main("I'll only do it if we actually win!","base","suspicious","raised","mid")
         m "..."
-        g4 "(Damn it! There's always a catch with those girls...)"
+        g4 "(Damn it! Always a catch...)"
         m "Fine..."
         m "Okay, so...{w} I'll help you win quidditch matches, and in return, you'll sell me favours..."
         m "Sounds good?"
@@ -101,8 +101,8 @@ label cho_quiz_1:
         m "About what?"
         call cho_main("Quidditch!","angry","closed","angry","mid",trans="hpunch")
         g9 "Ah, yes,... Quidditch.{w} It's like the Wizards version of Basketball, right?"
-        call cho_main("Basketball?{w} That muggle sport nobody here cares about?","annoyed","suspicious","raised","mid")
-        g4 "Nobody cares?{w} Haven't you seen \"Space Jam\"?"
+        call cho_main("Basketball?{w} Is that the muggle sport nobody cares about?","annoyed","suspicious","raised","mid")
+        g4 "Nobody cares?{w}What are you...{w} Haven't you seen \"Space Jam\"?"
         call cho_main("...","pout","base","raised","mid")
         g4 "Come on."
         m "Well..."
@@ -300,9 +300,10 @@ label cho_quiz_1:
         call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "So as you can see, Basketball and Quidditch is pretty much the same game..."
         call cho_main("I’m sure that can’t be right...", "annoyed", "base", "base", "mid")
-        call cho_main("I’ll have to look up this... \"Space Jamming\" thing.", "open", "suspicious", "base", "mid")
-        g9 "You should! It's a fun movie!"
-        call cho_main("I'm still quite unsure if you actually know Quidditch or am just trying to confuse me with Basketball terms...", "annoyed", "suspicious", "raised", "mid")
+        call cho_main("I’ll have to look up this \"Space Jamming\"...{w=1.0} thing.", "open", "suspicious", "base", "mid")
+        g9 "You should! It has Bugs Bunny in it!"
+        call cho_main("And now you stopped making sense again...", "annoyed", "base", "raised", "L")
+        call cho_main("Also I'm still quite unsure if you actually know Quidditch or am just trying to confuse me with Basketball terms...", "annoyed", "suspicious", "raised", "mid")
         call exp_o_meter(fill=75)
         g4 "(Fuck, she's onto me!)"
         g9 "Of course I'm not... I'll prove it to you!"

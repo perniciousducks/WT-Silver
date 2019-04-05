@@ -16,8 +16,11 @@ init -1 python hide:v
     #config.missing_image_callback = LABEL #This function can be used to display the default image in case of missing file
     #config.missing_label_callback = LABEL #This function can be used to default the player to main room in case of missing label
     config.sound_sample_rate = 48000 #Force bitrate to default gaming rate 48k
-    config.cache_surfaces = True #Cache often used images to RAM
+    config.cache_surfaces = False #Cache often used images to RAM False = use VRAM instead
+    #config.image_cache_size = 32
+    config.image_cache_size_mb = 1024
     config.nearest_neighbor = False #Disable pixel art filtering
+    config.hw_video = True
 
     #Set default persistent values
     if persistent.delwarning == None:

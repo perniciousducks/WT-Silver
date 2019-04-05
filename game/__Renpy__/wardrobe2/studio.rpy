@@ -1,3 +1,55 @@
+default studio_room_bg = 0
+default studio_room_bg_hue = 0
+default studio_room_bg_saturation = 2.0
+default studio_room_bg_brightness = 1.0
+default studio_room_bg_blur = 0.0
+default studio_room_bg_flipx = 1
+default studio_room_bg_flipy = 1
+default studio_room_bg_xoffset = 1080
+default studio_room_bg_yoffset = 600
+
+default studio_room_overlay = 0
+default studio_room_overlay_alpha = 1.0
+default studio_room_overlay_hue = 0
+default studio_room_overlay_saturation = 2.0
+default studio_room_overlay_brightness = 1.0
+default studio_room_overlay_blur = 0.0
+default studio_room_overlay_flipx = 1
+default studio_room_overlay_flipy = 1
+default studio_room_overlay_xoffset = 1080
+default studio_room_overlay_yoffset = 600
+
+default studio_room_overlay2 = 0
+default studio_room_overlay2_alpha = 1.0
+default studio_room_overlay2_hue = 0
+default studio_room_overlay2_saturation = 2.0
+default studio_room_overlay2_brightness = 1.0
+default studio_room_overlay2_blur = 0.0
+default studio_room_overlay2_flipx = 1
+default studio_room_overlay2_flipy = 1
+default studio_room_overlay2_xoffset = 1080
+default studio_room_overlay2_yoffset = 600
+
+default studio_text = False
+default studio_text_input = "Witch Trainer: Silver"
+default studio_text_alpha = 1.0
+default studio_text_size = 24
+default studio_text_color = "#FFFFFF"
+default studio_text_outline = 4
+default studio_text_outline_color = "#000000"
+
+default studio_image_eyebrows = 0
+default studio_image_eyes = 0
+default studio_image_pupils = 0
+default studio_image_mouth = 0
+default studio_image_zoom = 0.5
+default studio_image_flip = 1
+default studio_image_alpha = 1.0
+default studio_image_rotation = 0.0
+
+default studio_image_xx = 1010
+default studio_image_yy = 1200
+
 init python:
     def character_dropped(drags, drops):
         drags[0].snap(540, 300)
@@ -14,59 +66,7 @@ label studio(studio_return, studio_char):
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
     
-    $ studio_room_bg = 0
-    $ studio_room_bg_hue = 0
-    $ studio_room_bg_saturation = 2.0
-    $ studio_room_bg_brightness = 1.0
-    $ studio_room_bg_blur = 0.0
-    $ studio_room_bg_flipx = 1
-    $ studio_room_bg_flipy = 1
-    $ studio_room_bg_xoffset = 1080
-    $ studio_room_bg_yoffset = 600
-    
-    $ studio_room_overlay = 0
-    $ studio_room_overlay_alpha = 1.0
-    $ studio_room_overlay_hue = 0
-    $ studio_room_overlay_saturation = 2.0
-    $ studio_room_overlay_brightness = 1.0
-    $ studio_room_overlay_blur = 0.0
-    $ studio_room_overlay_flipx = 1
-    $ studio_room_overlay_flipy = 1
-    $ studio_room_overlay_xoffset = 1080
-    $ studio_room_overlay_yoffset = 600
-    
-    $ studio_room_overlay2 = 0
-    $ studio_room_overlay2_alpha = 1.0
-    $ studio_room_overlay2_hue = 0
-    $ studio_room_overlay2_saturation = 2.0
-    $ studio_room_overlay2_brightness = 1.0
-    $ studio_room_overlay2_blur = 0.0
-    $ studio_room_overlay2_flipx = 1
-    $ studio_room_overlay2_flipy = 1
-    $ studio_room_overlay2_xoffset = 1080
-    $ studio_room_overlay2_yoffset = 600
-    
-    $ studio_text = False
-    $ studio_text_input = "Witch Trainer: Silver"
-    $ studio_text_alpha = 1.0
-    $ studio_text_size = 24
-    $ studio_text_color = "#FFFFFF"
-    $ studio_text_outline = 4
-    $ studio_text_outline_color = "#000000"
-    
-    $ studio_image_eyebrows = 0
-    $ studio_image_eyes = 0
-    $ studio_image_pupils = 0
-    $ studio_image_mouth = 0
-    $ studio_image_zoom = 0.5
-    $ studio_image_flip = 1
-    $ studio_image_alpha = 1.0
-    $ studio_image_rotation = 0.0
-    
-    $ char_active.expression(eyebrows=studio_eyebrows_list[0], eyes=studio_eyes_list[0], pupils=studio_pupils_list[0], mouth=studio_mouth_list[0])
-    
-    $ studio_image_xx = 1010
-    $ studio_image_yy = 1200
+    $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows], eyes=studio_eyes_list[studio_image_eyes], pupils=studio_pupils_list[studio_image_pupils], mouth=studio_mouth_list[studio_image_mouth])
     
     $ studio_hide = False
     

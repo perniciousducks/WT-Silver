@@ -164,12 +164,9 @@ label hermione_favor_menu:
                     $ renpy.jump(result)
 
             "{color=#858585}-Public requests-{/color}" if not daytime:
-                show screen blktone
-                with d3
-                ">Public requests are available during the daytime only."
-                hide screen blktone
-                with d3
+                call nar(">Public requests are available during the daytime only.")
                 jump silver_requests_root
+
             "-Public requests-" if daytime:
                 if lock_public_favors:
                     her "Em... [genie_name]..."

@@ -7,13 +7,13 @@ init -2 python:
     #Favours
     class silver_request(object):
         title = ""
+        tier = 0
         start_label = ""
         return_label = ""
         points = 0
         progress_hint = False
 
     class favor_class(silver_request):
-        tier = 0
         level = 0 # Hearts
         costume_event = False
 
@@ -30,9 +30,11 @@ init -2 python:
             return ret_str
 
     class request_class(silver_request):
-        tier = 0
         complete = False
         inProgress = False
+
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
 
         def getMenuText(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
@@ -42,9 +44,11 @@ init -2 python:
             return ret_str
 
     class shaming_class(silver_request):
-        tier = 0
         complete = False
         inProgress = False
+
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
 
         def getMenuText(self):
             menu_image = "interface/check_"+str(self.complete)+".png"

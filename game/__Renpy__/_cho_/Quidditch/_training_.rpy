@@ -9,8 +9,8 @@ label cho_training_menu:
         jump cho_quiz_1
 
     # Training Intro.
-    if cho_training_unlocked and not cho_training_intro_complete:
-        $ cho_training_intro_complete = True
+    if cho_training_unlocked and not cho_training_intro_done:
+        $ cho_training_intro_done = True
         call quidditch_training_intro
 
     menu:
@@ -77,6 +77,7 @@ label change_quidditch_tactics:
 
     # Intro
     if not cho_tactics_intro_done:
+        $ cho_tactics_intro_done = True
         m "How about we discuss some tactics."
         cho "That sounds grat, [cho_genie_name]! Shall I call the rest of my team up here?"
         m "What? Why?"

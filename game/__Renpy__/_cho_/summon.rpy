@@ -59,6 +59,23 @@ label summon_cho:
             jump cho_requests
 
 
+        # Requests
+        "-Public Requests-" if daytime and cho_requests_unlocked:
+            if cho_mood <= 0:
+                jump cho_requests_menu
+            else:
+                call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
+                jump cho_requests
+
+        "{color=#858585}-Public Requests-{/color}" if not daytime and cho_requests_unlocked:
+            call nar(">Public requests are available during the daytime only.")
+            jump cho_requests
+
+        "{color=#858585}-Hidden-{/color}" if not cho_requests_unlocked:
+            call nar(">You haven't unlocked this feature yet.")
+            jump cho_requests
+
+
         # Wardrobe
         "-Wardrobe-" if cho_wardrobe_unlocked:
             call cho_main(xpos="wardrobe",ypos="base", face="neutral")
@@ -92,7 +109,7 @@ label cho_favor_menu:
     python:
         menu_choices = []
         for i in cc_favor_list:
-            if i in [cc_pf_C1_Blowjob_OBJ, cc_pf_D1_Sex_OBJ]: # Not in the game yet.
+            if i in [cc_pf_T3a_blowjob_OBJ, cc_pf_T4a_sex_OBJ]: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
             elif i.tier > main_matches_won:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
@@ -110,6 +127,32 @@ label cho_favor_menu:
         jump cho_requests
     else:
         $ renpy.jump(result)
+
+
+# Cho Requests Menu
+label cho_requests_menu:
+    python:
+        menu_choices = []
+        for i in cc_requests_list:
+            if i in []: # Not in the game yet.
+                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+            elif i.tier > main_matches_won:
+                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+            else:
+                menu_choices.append((i.getMenuText(),i.start_label))
+        menu_choices.append(("-Never mind-", "nvm"))
+        result = custom_menu(menu_choices)
+    if result == "nvm":
+        jump cho_requests
+    elif result == "vague":
+        call favor_not_ready
+        jump cho_requests
+    elif result == "na":
+        call not_available
+        jump cho_requests
+    else:
+        $ renpy.jump(result)
+
 
 label favor_not_ready:
     call nar("You can't do this favour just yet.")

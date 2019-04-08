@@ -154,7 +154,7 @@ label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, action 
     elif pos1 == "door":
         $ walk_xpos = 750
     else:
-        $ walk_xpos = pos1
+        $ walk_xpos = int(pos1)
 
     if pos2 == "mid":
         $ walk_xpos2 = 500
@@ -166,7 +166,7 @@ label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, action 
         $ walk_xpos2 = 750
         $ loiter = False
     else:
-        $ walk_xpos2 = pos2
+        $ walk_xpos2 = int(pos2)
 
     $ snape_chibi_ypos = 210 #Works for walking chibi, doesn't for standing (needs 210 for standing?!)
     $ snape_speed = speed #Speed of walking animation. (lower = faster)

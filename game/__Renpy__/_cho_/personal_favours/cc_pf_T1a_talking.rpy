@@ -2,7 +2,7 @@
 
 ### Talk with Cho ###
 
-label cc_pf_T1a_talking:
+label cc_pf_talking:
 
     # Tier 1
     if main_matches_won == 0:
@@ -22,8 +22,8 @@ label cc_pf_T1a_talking:
 
         if cho_whoring < 3: # Points til 2
             $ cho_whoring += 1
-        if cc_pf_T1a_talking_OBJ.level < 2: # Hearts 1+2
-            $ cc_pf_T1a_talking_OBJ.level += 1
+        if cc_pf_talking_OBJ.level < 2: # Hearts 1+2
+            $ cc_pf_talking_OBJ.level += 1
 
     # Tier 2
     elif main_matches_won == 1:
@@ -33,12 +33,12 @@ label cc_pf_T1a_talking:
 
         if cho_whoring < 5: # Points til 5
             $ cho_whoring += 1
-        if cc_pf_T1a_talking_OBJ.level < 3: # Heart 3
-            $ cc_pf_T1a_talking_OBJ.level += 1
+        if cc_pf_talking_OBJ.level < 3: # Heart 3
+            $ cc_pf_talking_OBJ.level += 1
 
 
     # Stats
-    $ cc_pf_T1a_talking_OBJ.points += 1
+    $ cc_pf_talking_OBJ.points += 1
 
     jump end_cho_event
 
@@ -435,18 +435,46 @@ label cc_pf_T1_talking_3:
 
     menu:
         "\"Tell me more about Cedric\"":
-            ## Short chat with Cho about Cedric.
-            ## No jerk off option for Genie.
+            # Short chat with Cho about Cedric.
+            # No jerk off option for Genie.
+            # Genie will get some hints on how to beat Cedric in Quidditch from this event.
 
-            ### Should we make him a stalking kreep, like in the Twilight books?
             cho "There isn't much more to tell, [cho_genie_name]."
             cho "He never seemed to be too interested in me. Always had this dead-pan look in his eyes."
-            cho "And he was oddle pale... "
-            m "More signs of vampirism." # Small text
+            cho "And he was oddly pale... "
+            g4 "More signs of vampirism." # Small text
             cho "There surely are girls into boys looking like him, but I wasn't one of them."
             cho "But he was a good kisser, at the very least..."
-            ## Add end of conversation.
-            call nar("End of conversation. Writing not yet added.")
+
+            cho "He had this weird, unhealthy obsession with my panties."
+            m "A panties obsession? So so…"
+            cho "It was almost creepy how often he tried to look up my skirt."
+            cho "And he’d always walk behind me when we went up the stairs to get a better view..."
+            m "Did you ever show them to him?"
+            cho "My panties?"
+            m "No, your good manners… Yes, your panties!"
+            cho "Why would I have wanted to? We weren’t that close!"
+            m "So not close enough for a healthy relationship?"
+            cho "What?"
+            m "Showing your boyfriend your panties is a given."
+            cho "That’s just ridiculous…"
+
+            if huffl_matches_won == 0:
+                m "But, that made me think…"
+                m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
+                cho "Like how?"
+                m "We use them as a distraction!"
+                m "Now we only have to find out how to show them off properly during the game."
+                cho "I have to say I don’t like this notion one bit. But it’s probably worth a try…"
+            else:
+                m "You must have been so embarrassed during the game."
+                m "Beating him at Quayditch..."
+                cho "Quidditch...{p=0.2}{nw}"
+                m "Quidditch...{p=0.4} was almost too easy…"
+                m "All we had to do was put some good-old panties in front of his face, and he’s like a blind dog chasing after them."
+                cho "I’m also still shocked how well that worked out."
+                m "You’re welcome."
+
 
         "\"Tell me more about that Potter boy\"":
             ## Short chat with Cho about Harry.

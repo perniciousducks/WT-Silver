@@ -110,34 +110,33 @@ label cho_progress_init:
         $ gave_cho_gift      = False
 
 
-    ### Cho Favours ###
+    ### Cho Favors ###
 
     # cc = Cho Chang.
-    # pf = Personal Favour.
+    # pf = Personal Favor.
     # pr = Public Requests.
-    # T1a = T1 is the tier at which the favour gets unlocked, a,b,c,... is the position in the menu/list.
 
-    if not hasattr(renpy.store,'cc_pf_T1a_talking_OBJ'):
-        $ cc_pf_T1a_talking_OBJ = favor_class(title = "Talk to me!",       tier = 0, start_label = "cc_pf_T1a_talking")
+    if not hasattr(renpy.store,'cc_pf_talking_OBJ'):
+        $ cc_pf_talking_OBJ = favor_class(title = "Talk to me!",       tier = 0, start_label = "cc_pf_talking")
 
-        $ cc_pf_T2a_groping_OBJ = favor_class(title = "Inspect her body!", tier = 1, start_label = "cc_pf_T2a_groping")
+        $ cc_pf_groping_OBJ = favor_class(title = "Inspect her body!", tier = 1, start_label = "cc_pf_groping")
 
-        $ cc_pf_T3a_blowjob_OBJ = favor_class(title = "Suck it!",          tier = 2, start_label = "cc_pf_T3a_blowjob")
+        $ cc_pf_blowjob_OBJ = favor_class(title = "Suck it!",          tier = 2, start_label = "cc_pf_blowjob")
 
-        $ cc_pf_T4a_sex_OBJ     = favor_class(title = "Let's have sex!",   tier = 3, start_label = "cc_pf_T4a_sex")
+        $ cc_pf_sex_OBJ     = favor_class(title = "Let's have sex!",   tier = 3, start_label = "cc_pf_sex")
 
     $ cc_favor_list = [
-        cc_pf_T1a_talking_OBJ,
-        cc_pf_T2a_groping_OBJ,
-        cc_pf_T3a_blowjob_OBJ,
-        cc_pf_T4a_sex_OBJ,
+        cc_pf_talking_OBJ,
+        cc_pf_groping_OBJ,
+        cc_pf_blowjob_OBJ,
+        cc_pf_sex_OBJ,
         ]
 
-    if not hasattr(renpy.store,'cc_pr_T1a_flirt_OBJ'):
-        $ cc_pr_T1a_flirt_OBJ   = request_class(title = "Flirt with the teams!", tier = 0, start_label = "cc_pr_T1_flirt_start", return_label = "cc_pr_T1_flirt_return")
+    if not hasattr(renpy.store,'cc_pr_flirt_OBJ'):
+        $ cc_pr_flirt_OBJ   = request_class(title = "Flirt with the teams!", tier = 0, start_label = "cc_pr_flirt_start", return_label = "cc_pr_flirt_return")
 
     $ cc_requests_list = [
-        cc_pr_T1a_flirt_OBJ,
+        cc_pr_flirt_OBJ,
         ]
 
     return

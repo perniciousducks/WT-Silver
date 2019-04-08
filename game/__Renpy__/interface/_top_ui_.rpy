@@ -351,7 +351,7 @@ label options_menu:
                     call reset_luna_clothing
                     call reset_astoria_clothing
                     call reset_susan_clothing
-                    call reset_cho_clothing
+                    #call reset_cho_clothing <- Has to be changed
                     call reset_tonks_clothing
                     ">Appearance of each girl set back to default."
                     jump day_main_menu

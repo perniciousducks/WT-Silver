@@ -33,6 +33,8 @@ label phoenix:
             "add hint":
                 $ quid_hint_icon = "{image=interface/check_True.png} "
                 jump cho_quiz_1
+            "Event class test":
+                jump event_class_test
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1

@@ -358,7 +358,7 @@ screen s_head2: #Snape. Head.
     zorder 8
 
 
-label teleport(position=None):
+label teleport(position=None,effect=True):
     if position == "genie":
         $ teleport_xpos = genie_chibi_xpos+75
         $ teleport_ypos = genie_chibi_ypos-15
@@ -373,20 +373,20 @@ label teleport(position=None):
         $ teleport_zorder = 1
         show screen desk
 
+    if effect == True:
+        $ renpy.play('sounds/magic4.ogg')
+        show screen whitefade
+        with d1
 
-    $ renpy.play('sounds/magic4.ogg')
-    show screen whitefade
-    with d1
+        hide screen whitefade
+        with d1
 
-    hide screen whitefade
-    with d1
+        show screen blkfade
+        with d1
 
-    show screen blkfade
-    with d1
-
-    hide screen blkfade
-    show screen heal_animation
-    with d3
+        hide screen blkfade
+        show screen heal_animation
+        with d3
 
     #stop music fadeout 1
 
@@ -396,7 +396,9 @@ label teleport(position=None):
 
     hide screen teleport_animation
     with d5
-    pause 1
+
+    if effect == True:
+        pause 1
 
     return
 

@@ -109,7 +109,7 @@ label cho_favor_menu:
     python:
         menu_choices = []
         for i in cc_favor_list:
-            if i in [cc_pf_T3a_blowjob_OBJ, cc_pf_T4a_sex_OBJ]: # Not in the game yet.
+            if i in [cc_pf_blowjob_OBJ, cc_pf_sex_OBJ]: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
             elif i.tier > main_matches_won:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))

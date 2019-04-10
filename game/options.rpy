@@ -7,6 +7,12 @@
 ## commented-out code, and you may want to uncomment them when
 ## appropriate.
 
+# Garbage collector
+define config.manage_gc = True
+define config.gc_thresholds = (25000, 10, 10)
+define config.idle_gc_count = 2500
+define gc_print_unreachable = False
+
 init -1 python hide:v
 
     config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.

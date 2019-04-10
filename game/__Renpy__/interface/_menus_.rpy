@@ -466,5 +466,4 @@ init -2 python:
 
         if xsize / x < ysize / y:
             return xsize / x
-        else:
-            return ysize / y
+        return ysize / y

@@ -689,7 +689,24 @@ init python:
                 return self.new_composite
             raise Exception("Thread not done calculating image area")
             return Image("blank.png")
+            
+    def crop_image_zoom(path, xsize, ysize, grayscale=False):
+        width = int(whitespace_dict[path][2])
+        height = int(whitespace_dict[path][3])
+        posx = int(whitespace_dict[path][0])
+        posy = int(whitespace_dict[path][1])
         
+        if float(xsize) / width < float(ysize) / height:
+            zoom = float(xsize) / width
+        else:
+            zoom = float(ysize) / height
+        if grayscale:
+            sprite = Image(im.MatrixColor(path, im.matrix.desaturate()))
+        else:
+            sprite = Image(path)
+        sprite = Composite((width, height), (-posx, -posy), sprite)
+            
+        return (sprite, zoom) 
  
     def bilear_scale(src, size, dest=None):
         """

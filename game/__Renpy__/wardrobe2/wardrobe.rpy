@@ -25,7 +25,7 @@ label t_wardrobe(return_label, char_label):
         for item in list_keys:
             value = char_active.clothing[item][1]
             character_clothing.append([item, value])
-        character_clothing = sorted(character_clothing, key=lambda x: x[1], reverse=True)
+        character_clothing.sort(key=lambda x: x[1], reverse=True)
         character_clothing.pop(12)
     
     if wardrobe_music_active:
@@ -134,8 +134,8 @@ label t_wardrobe(return_label, char_label):
                 $ category_items = wardrobe_categories.get(current_category)
                 # Default subcategory
                 if category_items:
-                    $ current_subcategory = list(category_items)[0]
-                    $ menu_items = category_items[current_subcategory]
+                    $ current_subcategory = category_items.keys()[0]
+                    $ menu_items = category_items.get(current_subcategory)
                 else:
                     $ category_items = []
                     $ current_subcategory = "No items available"
@@ -149,7 +149,7 @@ label t_wardrobe(return_label, char_label):
             $ current_subcategory = _return[1]
             if current_category != "outfits":
                 $ current_page = 0
-                $ menu_items = category_items[current_subcategory]
+                $ menu_items = category_items.get(current_subcategory)
                 $ menu_items_length = len(menu_items)
                 # Default selected item
                 $ current_item = None
@@ -164,7 +164,7 @@ label t_wardrobe(return_label, char_label):
             $ wardrobe_music_active = True
             call play_music("my_immortal")
             call expression char_label pass (text="", face="happy")
-    elif _return == "Close":
+    else: #_return == "Close":
         $ renpy.play('sounds/door2.mp3')
         $ hide_transitions = False
         $ char_active.wear("all")

@@ -312,7 +312,11 @@ label hermione_talk:
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
-
+                
+                "{color=#858585}-Hidden-{/color}" if daytime and not cardgame_work and hg_gamble_slut_ITEM.unlocked:
+                    "You haven't unlocked this feature yet"
+                    jump working_menu
+                    
                 "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
                     jump job_5
                 "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:

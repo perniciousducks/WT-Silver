@@ -34,5 +34,5 @@ init python:
                         self.tier = i
                         return renpy.jump(self.events[i][j][0])
             events_filtered = filter(lambda x: '_intro' not in x[0], self.events[self.tier])
-            random_event = events_filtered[random.randint(0, len(events_filtered))][0]
+            random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)

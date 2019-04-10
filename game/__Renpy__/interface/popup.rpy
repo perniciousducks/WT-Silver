@@ -1,10 +1,10 @@
-transform popup_animation:
+transform popup_animation(time=4.0, xx=-200):
     subpixel True
     on show, appear, start:
-        xoffset -200
+        xoffset xx
         linear 0.5 xoffset absolute(0)
-        pause 3.0
-        linear 0.5 xoffset absolute(-200)
+        pause time
+        linear 0.5 xoffset absolute(xx)
 
 screen popup_window(string="", xpos=0, ypos=60):
     tag popup_window

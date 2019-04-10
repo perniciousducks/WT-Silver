@@ -116,6 +116,16 @@ screen ui_top_bar():
 
         hbox:
             xpos 900
+            # Achievements button
+            imagebutton:
+                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
+                if renpy.get_screen("main_room_menu"):
+                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
+                    hovered SetVariable("ui_hint", "Achievements")
+                    unhovered SetVariable("ui_hint", "")
+                    action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("achievement_menu")]
+                    activate_sound "sounds/click3.mp3"
+                    
             # Stats button
             imagebutton:
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"

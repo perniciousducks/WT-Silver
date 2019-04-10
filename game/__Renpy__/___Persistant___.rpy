@@ -49,7 +49,12 @@ label __init_variables:
         $ phoenix_is_petted = False
         $ phoenix_fed_counter = 0
         $ phoenix_petted_counter = 0
-
+        
+    #Other
+    if not hasattr(renpy.store,'stat_fireplace_counter'):
+        $ stat_fireplace_counter = 0
+        $ stat_reports_counter = 0
+        
     #Room Deco
     if not hasattr(renpy.store,'room_deco'):
         $ room_deco = ""

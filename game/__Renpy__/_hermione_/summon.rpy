@@ -409,6 +409,7 @@ label hermione_talk:
                 "-Daddy-":
                     if her_whoring >=20:
                         $ genie_name = "Daddy"
+                        $ achievement.unlock("daddy")
                         jump genie_change
                     else:
                         jump genie_change_fail

@@ -33,6 +33,7 @@ label fireplace:
             stop bg_sounds #Stops playing the fire SFX.
         else:
             $ fire_in_fireplace = True
+            $ stat_fireplace_counter += 1
             show screen fireplace_fire
 
     jump day_main_menu

@@ -104,5 +104,6 @@ hide screen bld1
 
 if daytime:
     jump night_start
-else: 
+else:
+    $ achievement.unlock("wanker")
     jump day_start

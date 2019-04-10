@@ -71,6 +71,7 @@ label t_wardrobe(return_label, char_label):
                 $ _return[1].outfit_export(False)
             "Back":
                 pass
+        $ achievement.unlock("export")
     elif _return == "import":
         menu:
             "Import from TXT file":

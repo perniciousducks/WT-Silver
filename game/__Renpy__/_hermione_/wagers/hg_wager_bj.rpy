@@ -524,6 +524,7 @@ label hg_wager_bj:
                                     call her_main("If I do what back?","annoyed","glance")
                                     m "Nevermind..."
                                 else:
+                                    $ achievement.unlock("flashback")
                                     call her_main("........","annoyed","down")
                                 m "We're done for today [hermione_name]."
                                 call her_main("What about the points...","annoyed","down")

@@ -23,6 +23,7 @@ label event_01:
     m "....alien."
     m "Interesting..."
     m "I think I will stick around for a little bit..."
+    $ achievement.unlock("start")
     hide screen bld1
     with d3
     return
@@ -817,6 +818,7 @@ label event_07:
     pause.2
 
     call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","interface/icons/head/head_snape_1.png")
+    $ achievement.unlock("unlocksna")
     $ snape_unlocked = True
 
     jump day_start
@@ -1138,12 +1140,14 @@ label event_09:
                 "\"Absolutely not! I'm busy! Come back later!\"":
                     her "But..."
                     her "Alright... I will come back tomorrow then..."
+                    $ achievement.unlock("knock")
                     return
                 "\"Of course. Come on in.\"":
                     pass
         "\"I'm busy. Come back later.\"":
             her "But..."
             her "Well alright..."
+            $ achievement.unlock("knock")
             return
         "\"Yes, come in.\"":
             pass
@@ -1542,7 +1546,7 @@ label event_14:
     stop music fadeout 1.0
 
     call give_reward(">You've unlocked the ability to summon Hermione to your office.","interface/icons/head/head_hermione_1.png")
-
+    $ achievement.unlock("unlockher")
     $ hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
     $ hermione_busy = True
     $ tutoring_hermione_unlocked = True
@@ -1574,12 +1578,14 @@ label event_15:
                 "\"Absolutely not! I'm busy! Come back later!\"":
                     her "But..."
                     her "Alright... I will come back tomorrow then..."
+                    $ achievement.unlock("knock")
                     return
                 "\"Of course. Come on in.\"":
                     pass
         "\"I'm busy. Come back later.\"":
             her "But..."
             her "Well, alright..."
+            $ achievement.unlock("knock")
             return
         "\"Yes, come in.\"":
             pass

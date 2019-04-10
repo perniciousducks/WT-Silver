@@ -180,6 +180,7 @@ label enter_room_of_req:
 
     if first_visit_req == False:
         $ first_visit_req = True
+        $ achievement.unlock("mirror")
         call gen_chibi("stand","door","base",flip=True)
         call hide_blkfade
 

@@ -1,40 +1,48 @@
 init python:
-    #if persistent.achievements == None:
-    persistent.achievements = {"firsttime": ["General", "Popped my cherry", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus eleifend blandit. Aliquam viverra augue a Sed ornare vitae velit et molestie. Curabitur et auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus eleifend blandit. Aliquam viverra augue a Sed ornare vitae velit et molestie. Curabitur et auctor. Lorem ipsum dolor sit amet.", False, "interface/icons/book_galadriel_1.png"],
-                               "unlockher": ["Characters", "Granger Danger", "Rewarded for unlocking Hermione.", False, "interface/icons/head/head_hermione_2.png"],
-                               "unlockcho": ["Characters", "Ming Dynasty", "Rewarded for unlocking Cho.", False, "interface/icons/head/head_cho_2.png"],
-                               "unlocklun": ["Characters", "Looney Tunes", "Rewarded for unlocking Luna.", False, "interface/icons/head/head_luna_2.png"],
-                               "unlockast": ["Characters", "Greenpeas", "Rewarded for unlocking Astoria.", False, "interface/icons/head/head_astoria_2.png"],
-                               "unlockton": ["Characters", "Nymphadoreador", "Rewarded for unlocking Tonks.", False, "interface/icons/head/head_tonks_1.png"],
-                               "unlocksus": ["Characters", "Boner", "Rewarded for unlocking Susan.", False, "interface/icons/head/head_susan_2.png"],
-                               "mirror": ["General", "Mirror, mirror on the wall..", "Rewarded for unlocking Room of Requirements.", False, "images/rooms/room_of_requirement/mirror_hover.png"],
-                               "gold": ["General", "Gold Digger", "Rewarded for collecting 10000 gold coins.", False, "interface/icons/gold.png"],
-                               "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.png"],
-                               "workaholic": ["General", "Workaholic", "Completed 100 reports.", False, "interface/icons/item_scroll.png"],
-                               "fireplace": ["General", "Feel the Heat", "Used the fireplace at least 5 times.", False, None],
-                               "peta": ["General", "Not another movement..", "Rewarded for not feeding the bird for 50 days in a row.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.png"],
-                               "petpal": ["General", "Petpal", "Rewarded for feeding the bird for 50 days in a row.", False, "images/rooms/_objects_/phoenix/phoenix_01.png"],
-                               "postman": ["General", "Postman", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png"],
-                               "hats": ["General", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png"],
-                               "daddy": ["Characters", "Whos your daddy?", "Be called a daddy at least once.", False, "interface/icons/head/head_hermione_2.png"],
-                               "wanker": ["General", "Wanker", "Rubbed one out during a very lonely night.", False, "images/animation/06_jerking_02.png"],
-                               "bros": ["Characters", "Bros before hoes", "Became good friends with Snape.", False, "characters/snape/head/head_9.png"],
-                               "spoiler": ["Characters", "\"Spoiler\"", "My boner just died..", False, "characters/snape/head/head_14.png"],
-                               "knock": ["General", "*Knock* *knock*", "Who's there?", False, "images/rooms/_objects_/doors/door_idle.png"],
-                               "decorator": ["General", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png"]}
-                                 
+    if persistent.achievements == None:
+        persistent.achievements = {"unlockher": ["Characters", "Granger Danger", "Rewarded for unlocking Hermione.", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "unlockcho": ["Characters", "Chang Dynasty", "Rewarded for unlocking Cho.", False, "interface/icons/head/head_cho_2.png", False],
+                                   "unlocklun": ["Characters", "Looney Tunes", "Rewarded for unlocking Luna.", False, "interface/icons/head/head_luna_2.png", False],
+                                   "unlockast": ["Characters", "Greenpeas", "Rewarded for unlocking Astoria.", False, "interface/icons/head/head_astoria_2.png", False],
+                                   "unlockton": ["Characters", "Nymphadoreador", "Rewarded for unlocking Tonks.", False, "interface/icons/head/head_tonks_1.png", False],
+                                   "overwhored": ["Characters", "Overwhored", "Hermione reached maximum corruption.", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "unlocksus": ["Characters", "Boner", "Rewarded for unlocking Susan.", False, "interface/icons/head/head_susan_2.png", False],
+                                   "unlocksna": ["Characters", "Buddies", "Rewarded for unlocking Snape.", False, "characters/snape/head/head_9.png", False],
+                                   "mirror": ["General", "Mirror, mirror on the wall..", "Rewarded for unlocking Room of Requirements.", False, "images/rooms/room_of_requirement/mirror_hover.png", False],
+                                   "gold": ["General", "Gold Digger", "Rewarded for collecting 10000 gold coins.", False, "interface/icons/gold.png", False],
+                                   "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.png", False],
+                                   "workaholic": ["General", "Workaholic", "Completed 5 full reports.", False, "interface/icons/item_scroll.png", False],
+                                   "fireplace": ["General", "Feel the Heat", "Started fire 5 times or more.", False, None, True],
+                                   "peta": ["General", "Not another movement..", "Rewarded for not feeding the bird for 50 days.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.png", True],
+                                   "petpal": ["General", "Petpal", "Rewarded for petting the bird 25 times.", False, "images/rooms/_objects_/phoenix/phoenix_01.png", False],
+                                   "postman": ["Cardgame", "Postman", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png", False],
+                                   "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png", False],
+                                   "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/head_hermione_2.png", True],
+                                   "wanker": ["General", "Wanker", "Rubbed one out during a very lonely night.", False, "images/animation/06_jerking_02.png", False],
+                                   "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "characters/snape/head/head_9.png", False],
+                                   #"spoiler": ["Characters", "\"Spoiler\"", "My boner just died..", False, "characters/snape/head/head_14.png", True],
+                                   "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.png", True],
+                                   "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
+                                   "flashback": ["Cardgame", "Flashback", "Johnny28 please add details", False, "interface/icons/cards.png", True],
+                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False],
+                                   "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/test/icons/outfits_load.png", False],
+                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False]}
+
     class achievement_class(object):
         achievements = {}
     
         def __init__(self):
             self.achievements = persistent.achievements
             
-        def unlock(self, id):
+        def unlock(self, id, silent=False):
             try:
                 if persistent.achievements[id][3] == False:
                     self.achievements[id][3] = True
                     persistent.achievements[id][3] = True
-                    renpy.show_screen("achievement_window", persistent.achievements[id][1], persistent.achievements[id][4])
+                    if not silent:
+                        renpy.play('sounds/achievement.mp3')
+                        renpy.show_screen("achievement_window", persistent.achievements[id][1], persistent.achievements[id][4])
+                return
             except KeyError:
                 return
             
@@ -44,9 +52,11 @@ init python:
             
     def achievement_sortfilter(item, sortby="A-z", filtering=None):
         if filtering == "Locked":
-            item = filter(lambda x: 'True' in str(x[1][3]), item)
-        elif filtering == "Unlocked":
             item = filter(lambda x: 'False' in str(x[1][3]), item)
+        elif filtering == "Unlocked":
+            item = filter(lambda x: 'True' in str(x[1][3]), item)
+        elif filtering == "Secret":
+            item = filter(lambda x: 'True' in str(x[1][5]), item)
             
         if sortby == "z-A":
             item = sorted(item, key=lambda x: x[1][1], reverse=True)
@@ -57,7 +67,39 @@ init python:
         else:
             item = sorted(item, key=lambda x: x[1][1])
         return item
+### Test function
+init:
+    python:
+        def update_achievements():
+            if gold >= 10000:
+                achievement.unlock("gold")
             
+            if wine >= 25:
+                achievement.unlock("drunkard")
+                
+            if (day-phoenix_fed_counter) >= 50:
+                achievement.unlock("peta")
+                
+            if phoenix_petted_counter >= 25:
+                achievement.unlock("petpal")
+                
+            if sna_friendship_maxed:
+                achievement.unlock("bros")
+                
+            if her_whoring >= 24:
+                achievement.unlock("overwhored")
+                
+            if stat_fireplace_counter >= 5:
+                achievement.unlock("fireplace")
+                
+            if stat_reports_counter >= 5:
+                achievement.unlock("workaholic")
+    
+screen achievement_block():
+    tag achievement_block
+    
+    timer 5.0 action Function(update_achievements) repeat True
+###
 init:
     $ achievement = achievement_class()
 
@@ -67,7 +109,7 @@ screen achievement_window(string="", icon=None, xpos=0, ypos=60):
     
     frame:
         style "empty"
-        at popup_animation(time=19.0, xx=-410)
+        at popup_animation(time=5.0, xx=-410)
         pos (xpos, ypos)
         xsize 410 
         ysize 96
@@ -88,14 +130,14 @@ screen achievement_window(string="", icon=None, xpos=0, ypos=60):
             pos (136, 12)
             text "Achievement unlocked!" size 18 xalign 0.5
             text string size 14 xalign 0.5
-    timer 20.0 action Hide("achievement_window")
+    timer 6.0 action Hide("achievement_window")
     
 transform rotate_circular():
     subpixel True
     
     on show, appear, start:
         rotate 0
-        linear 5.0 rotate 360
+        linear 7.0 rotate 360
         repeat
     
 ####################################
@@ -108,11 +150,12 @@ label achievement_menu(xx=150, yy=90):
     
     # Styling
     if daytime:
-        $ btn_hover = "#e3ba7140"
+        #$ btn_hover = "#e3ba7140"
+        $ btn_hover = "#edc48240"
     else:
         $ btn_hover = "#7d75aa40"
     
-    $ achievement_categories_sorted = ["All", "General", "Characters"]
+    $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame"]
     $ achievement_categories_sorted_length = len(achievement_categories_sorted)
     
     $ items_shown = 36
@@ -160,6 +203,8 @@ label achievement_menu(xx=150, yy=90):
             $ current_filter = "Locked"
         elif current_filter == "Locked":
             $ current_filter = "Unlocked"
+        elif current_filter == "Unlocked":
+            $ current_filter = "Secret"
         else:
             $ current_filter = None
         $ menu_items = achievement_sortfilter(category_items, current_sorting, current_filter)
@@ -210,7 +255,10 @@ screen achievement_menu(xx, yy):
                     add "interface/achievements/"+interface_color+"/spacer_left.png"
         vbox:
             pos (6, 384)
-            textbutton "Filter: [current_filter]" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("filter")
+            if current_filter == None:
+                textbutton "Show: All" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("filter")
+            else:
+                textbutton "Show: [current_filter]" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("filter")
             textbutton "Sort by: [current_sorting]" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("sort")
         
 screen achievement_menuitem(xx, yy):
@@ -270,8 +318,14 @@ screen achievement_menuitem(xx, yy):
                         if menu_items[i][1][3]:
                             $ image_zoom = crop_image_zoom(menu_items[i][1][4], 42, 42)
                         else:
-                            $ image_zoom = crop_image_zoom(menu_items[i][1][4], 42, 42, True)
-                        add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
+                            if not menu_items[i][1][5]:
+                                $ image_zoom = crop_image_zoom(menu_items[i][1][4], 42, 42, True)
+                            else:
+                                $ image_zoom = crop_image_zoom("interface/achievements/secret.png", 35, 35, True)
+                        if menu_items[i][1][0] == "Characters":
+                            add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -3
+                        else:
+                            add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                     add "interface/achievements/glass_iconbox.png" pos (3, 2)
                     button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]])
                     
@@ -292,8 +346,14 @@ screen achievement_menuitem(xx, yy):
                     if current_item[1][3]:
                         $ image_zoom = crop_image_zoom(current_item[1][4], 84, 84)
                     else:
-                        $ image_zoom = crop_image_zoom(current_item[1][4], 84, 84, True)
-                    add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
+                        if current_item[1][5]:
+                            $ image_zoom = crop_image_zoom("interface/achievements/secret.png", 70, 70, True)
+                        else:
+                            $ image_zoom = crop_image_zoom(current_item[1][4], 84, 84, True)
+                    if current_item[1][0] == "Characters":
+                        add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -7
+                    else:
+                        add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                 add "interface/achievements/glass_selected.png" pos (6, 6)
                 
             add "interface/achievements/"+interface_color+"/highlight.png" pos (112, 375)
@@ -306,4 +366,10 @@ screen achievement_menuitem(xx, yy):
             hbox:
                 pos (132, 407)
                 xsize 410
-                text current_item[1][2] size 12
+                if current_item[1][3]:
+                    text current_item[1][2] size 12
+                else:
+                    if current_item[1][5]:
+                        text "???" size 12
+                    else:
+                        text current_item[1][2] size 12

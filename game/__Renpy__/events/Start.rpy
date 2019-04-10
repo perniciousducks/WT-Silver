@@ -187,6 +187,8 @@ label start_ht:
                 $ skip_duel = True
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True
+        # Test
+        show screen achievement_block()
 
 
 

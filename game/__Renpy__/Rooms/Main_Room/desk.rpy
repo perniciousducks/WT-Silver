@@ -360,6 +360,7 @@ label report_chapters_check:
         ">You've completed a report."
         $ report_chapters = 0
         $ finished_report += 1
+        $ stat_reports_counter += 1
 
     return
 

@@ -19,8 +19,8 @@ label event_class_test:
         "-Reset all flags-":
             $ cc_pr_flirt_OBJ.tier = 0
             python:
-                for i in xrange(0, cc_pr_flirt_OBJ.max_tiers):
-                    for j in xrange(0, len(cc_pr_flirt_OBJ.events[i])):
+                for i in xrange(cc_pr_flirt_OBJ.max_tiers):
+                    for j in xrange(len(cc_pr_flirt_OBJ.events[i])):
                             cc_pr_flirt_OBJ.events[i][j][1] = False
             jump event_class_test
         "Exit":

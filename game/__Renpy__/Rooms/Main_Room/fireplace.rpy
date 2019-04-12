@@ -22,9 +22,15 @@ label fireplace:
                 m "(Hmm, there's something glimmering in the fireplace.)"
                 "Click Click Click Click Click!!!"
                 m "(A loose brick...If only I could..*Hhng*...There we go.)"
-                call give_reward("A puzzle box has been added to your inventory!", "interface/icons/icon_puzzle.png")
-                m "Seems straight forward enough."
+                call give_reward("A puzzle box has been added to the your quest items in the Inventory!", "interface/icons/icon_puzzle.png")
                 $ puzzle_box_ITEM.unlocked = True
+                m "Seems straight forward enough."
+                m "Maybe I should give it a try?"
+                menu:
+                    "-Try solving the puzzle-":
+                        jump start_slide_puzzle
+                    "-Save it for later-":
+                        pass
 
     else:
         if fire_in_fireplace:

@@ -193,7 +193,7 @@ init python:
         if rules[3]:
             rules_list.append(card_rule_double)
         is_random_deck = True
-        for x in xrange(0, len(player_deck)):
+        for x in xrange(len(player_deck)):
             is_random_deck =  is_random_deck and (player_deck[x].title is playerdeck[x].title)
         if not is_random_deck:
             rules_list.append(card_rule_random)
@@ -359,7 +359,7 @@ screen rules_display(game_rules_list):
             background "#7c716a"
             vbox:
                 spacing 5
-                for i in xrange(0, len(game_rules_list)):
+                for i in xrange(len(game_rules_list)):
                     hbox:
                         add game_rules_list[i].icon
                         text game_rules_list[i].name yalign 0.5

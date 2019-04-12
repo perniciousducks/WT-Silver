@@ -13,12 +13,12 @@ init python:
 
             self.max_tiers = len(self.events)
 
-            for i in xrange(0, self.max_tiers):
-                for j in xrange(0, len(self.events[i])):
+            for i in xrange(self.max_tiers):
+                for j in xrange(len(self.events[i])):
                     self.events[i][j] += [False]
                     
         def start(self):
-            for i in xrange(0, len(self.events[self.tier])):
+            for i in xrange(len(self.events[self.tier])):
                 if self.events[self.tier][i][1] == False:
                     self.events[self.tier][i][1] = True
                     return renpy.jump(self.events[self.tier][i][0])
@@ -27,8 +27,8 @@ init python:
             return renpy.jump(random_event)
             
         def start_advance(self):
-            for i in xrange(0, self.max_tiers):
-                for j in xrange(0, len(self.events[i])):
+            for i in xrange(self.max_tiers):
+                for j in xrange(len(self.events[i])):
                     if self.events[i][j][1] == False:
                         self.events[i][j][1] = True
                         self.tier = i

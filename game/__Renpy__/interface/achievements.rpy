@@ -13,8 +13,8 @@ init python:
                                    "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.png", True],
                                    "workaholic": ["General", "Workaholic", "Completed 5 full reports.", False, "interface/icons/item_scroll.png", False],
                                    "fireplace": ["General", "Feel the Heat", "Started fire 5 times or more.", False, None, True],
-                                   "peta": ["General", "I think I forgot something...", "Awarded for not feeding the bird for 50 days.... you monster.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.png", True],
-                                   "Petbird": ["General", "Regular stroking", "Awarded for petting the bird 25 times.", False, "images/rooms/_objects_/phoenix/phoenix_01.png", False],
+                                   "peta": ["General", "I think I forgot something...", "Awarded for not feeding the bird for 50 days.... \nYou monster.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.png", True],
+                                   "petpal": ["General", "Regular stroking", "Awarded for petting the bird 25 times.", False, "images/rooms/_objects_/phoenix/phoenix_01.png", False],
                                    "postman": ["Cardgame", "Poster Boy", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png", False],
                                    "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png", False],
                                    "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/head_hermione_2.png", True],
@@ -54,22 +54,22 @@ init python:
             
     def achievement_sortfilter(item, sortby="A-z", filtering=None):
         if filtering == "Locked":
-            item = filter(lambda x: 'False' in str(x[1][3]), item)
+            item = filter(lambda x: x[1][3] is False, item)
         elif filtering == "Unlocked":
-            item = filter(lambda x: 'True' in str(x[1][3]), item)
+            item = filter(lambda x: x[1][3] is True, item)
         elif filtering == "Secret":
-            item = filter(lambda x: 'True' in str(x[1][5]), item)
+            item = filter(lambda x: x[1][5] is True, item)
             
         if sortby == "z-A":
             item = sorted(item, key=lambda x: x[1][1], reverse=True)
         elif current_sorting == "Unlocked":
-            item = sorted(item, key=lambda x: 'True' in str(x[1][3]), reverse=True)
+            item = sorted(item, key=lambda x: x[1][3] is False)
         elif current_sorting == "Locked":
-            item = sorted(item, key=lambda x: 'True' in str(x[1][3]))
+            item = sorted(item, key=lambda x: x[1][3] is True)
         else:
             item = sorted(item, key=lambda x: x[1][1])
         return item
-### Test function
+        
 init:
     python:
         def update_achievements():
@@ -248,12 +248,12 @@ screen achievement_menu(xx, yy):
         
         vbox:
             pos (6, 41)
-            for i in xrange(0, achievement_categories_sorted_length):
+            for category in achievement_categories_sorted:
                 vbox:
-                    if current_category == achievement_categories_sorted[i]:
-                        textbutton achievement_categories_sorted[i] xsize 195 ysize 16 style "empty" background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5
+                    if current_category == category:
+                        textbutton category xsize 195 ysize 16 style "empty" background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5
                     else:
-                        textbutton achievement_categories_sorted[i] xsize 195 ysize 16 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5 action Return(["category", achievement_categories_sorted[i]])
+                        textbutton category xsize 195 ysize 16 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5 action Return(["category", category])
                     add "interface/achievements/"+interface_color+"/spacer_left.png"
         vbox:
             pos (6, 384)
@@ -277,7 +277,7 @@ screen achievement_menuitem(xx, yy):
         
         text "Achievements" size 22 xalign 0.5 ypos 65
         
-        text "Unlocked: "+str(len(filter(lambda x: 'True' in str(x[1][3]), menu_items)))+"/[menu_items_length]" size 12 pos (24, 70)
+        text "Unlocked: "+str(len(filter(lambda x: x[1][3] is True, menu_items)))+"/[menu_items_length]" size 12 pos (24, 70)
         
         # Page counter
         if menu_items_length > items_shown:

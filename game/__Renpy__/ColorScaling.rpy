@@ -150,7 +150,7 @@ init python:
                 elif _return[1] == "alpha":
                     color_input[3] = renpy.input("Alpha", str(int(color[3])), "0123456789", length=3)
                 
-                for i in xrange(0, 4):
+                for i in xrange(4):
                     if color_input[i] != "Close":
                         color[i] = clamp(int(color_input[i]), 0, 255)
             elif _return == "finish":
@@ -500,7 +500,7 @@ init python:
             
             self.removewhite = removewhite
             
-            for i in xrange(0, len(args)):
+            for i in xrange(len(args)):
                 if i%2 == 1:
                     images.append(Image(args[i]))
                 else:
@@ -549,8 +549,8 @@ init python:
         maxx = 0
         miny = height
         maxy = 0
-        for x in xrange(0, int(width)):
-            for y in xrange(0, int(height)):
+        for x in xrange(int(width)):
+            for y in xrange(int(height)):
                 if(surf.get_at((x,y))[3] > 0):
                     minx = min(minx, x)
                     maxx = max(minx, x)
@@ -612,8 +612,8 @@ init python:
         maxx = 0
         miny = height
         maxy = 0
-        for x in xrange(0, int(width)):
-            for y in xrange(0, int(height)):
+        for x in xrange(int(width)):
+            for y in xrange(int(height)):
                 if(surf.get_at((x,y))[3] > 0):
                     minx = min(minx, x)
                     maxx = max(minx, x)

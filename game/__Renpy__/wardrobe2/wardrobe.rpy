@@ -192,17 +192,17 @@ screen t_wardrobe_menu(xx, yy):
         ysize 548
         style "empty"
         
-        for i in xrange(0, len(wardrobe_categories_sorted)):
+        for i, category in enumerate(wardrobe_categories_sorted):
             $ cat_row = (i // 4) % 2
             $ cat_col = i % 4
-            if current_category == wardrobe_categories_sorted[i]:
+            if current_category == category:
                 add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
-                add "interface/wardrobe/test/"+char_active.char+"_"+wardrobe_categories_sorted[i]+".png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
-                button xpos 14+411*cat_row ypos 80+110*cat_col xsize 90 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]])
+                add "interface/wardrobe/test/"+char_active.char+"_"+category+".png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
+                button xpos 14+411*cat_row ypos 80+110*cat_col xsize 90 ysize 96 style "empty" hover_background btn_hover action Return(["category", category])
             else:
                 add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
-                add "interface/wardrobe/test/"+char_active.char+"_"+wardrobe_categories_sorted[i]+".png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
-                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]]) hovered SetVariable("ui_hint", wardrobe_categories_sorted[i]) unhovered SetVariable("ui_hint", "")
+                add "interface/wardrobe/test/"+char_active.char+"_"+category+".png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]]) hovered SetVariable("ui_hint", category) unhovered SetVariable("ui_hint", "")
         
         frame xsize 340 ysize 548 xpos 100 style "empty" background bg_color_wardrobe
         
@@ -288,14 +288,14 @@ screen t_wardrobe_menuitem(xx, yy):
                 ypos 40
                 spacing 4
                 
-                for i in xrange(0, current_item.layers):
+                for i in xrange(current_item.layers):
                     button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i])
                 textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset")
             
         # Add subcategory list
-        for i in xrange (0, len(category_items.keys())):
-            add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+category_items.keys()[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
-            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", category_items.keys()[i]])
+        for i, subcategory in enumerate(category_items.keys()):
+            add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
+            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory])
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
@@ -360,9 +360,9 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
                 text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/10))+1) ypos 44 size 16
         
         # Add subcategory list
-        for i in xrange (0, len(category_items)):
-            add "interface/wardrobe/test/icons/"+current_category+"_"+category_items[i]+".png" ypos 88 xpos 10+(90*i) zoom 0.2
-            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", category_items[i]])
+        for i, subcategory in enumerate(category_items):
+            add "interface/wardrobe/test/icons/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
+            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory])
         
         # Add items
         for i in xrange(current_page*10, (current_page*10)+10):

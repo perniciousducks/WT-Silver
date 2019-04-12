@@ -118,9 +118,9 @@ screen ui_top_bar():
             xpos 900
             # Achievements button
             imagebutton:
-                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
+                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png"
                 if renpy.get_screen("main_room_menu"):
-                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
+                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
                     hovered SetVariable("ui_hint", "Achievements")
                     unhovered SetVariable("ui_hint", "")
                     action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("achievement_menu")]
@@ -453,13 +453,13 @@ label decorate_room_menu:
             "Yes":
                 # Loop through all decorations and deactivate them
                 python:
-                    for i in xrange(0, len(wall_deco_list)):
+                    for i in xrange(len(wall_deco_list)):
                         wall_deco_list[i].active = False
-                    for i in xrange(0, len(fireplace_deco_list)):
+                    for i in xrange(len(fireplace_deco_list)):
                         fireplace_deco_list[i].active = False
-                    for i in xrange(0, len(cupboard_deco_list)):
+                    for i in xrange(len(cupboard_deco_list)):
                         cupboard_deco_list[i].active = False
-                    for i in xrange(0, len(misc_deco_list)):
+                    for i in xrange(len(misc_deco_list)):
                         misc_deco_list[i].active = False
                 
                 $ poster_OBJ.room_image = ""
@@ -523,7 +523,7 @@ label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove 
     if item.type == "poster":
         # Loop through all posters and deactivate them
         python:
-            for i in xrange(0, len(wall_deco_list)):
+            for i in xrange(len(wall_deco_list)):
                 wall_deco_list[i].active = False
         
         if poster_OBJ.room_image == item.id:
@@ -533,7 +533,7 @@ label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove 
             $ item.active = True
     elif item.type == "trophy":
         python:
-            for i in xrange(0, len(fireplace_deco_list)):
+            for i in xrange(len(fireplace_deco_list)):
                 fireplace_deco_list[i].active = False
                 
         if trophy_OBJ.room_image == item.id:

@@ -27,6 +27,7 @@ init -1 python hide:v
     config.image_cache_size_mb = 1024
     config.nearest_neighbor = False #Disable pixel art filtering
     config.hw_video = True
+    config.save_physical_size = True
 
     #Set default persistent values
     if persistent.delwarning == None:
@@ -55,6 +56,7 @@ init -1 python hide:v
 
     config.developer = "auto" # Will detect if you're using Renpy launcher, if not it will turn off the console
     config.debug = False # Use ONLY for testing, disable before release
+    config.help = None
 
     ## These control the width and height of the screen.
 

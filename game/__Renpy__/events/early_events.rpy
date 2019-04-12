@@ -818,7 +818,7 @@ label event_07:
     pause.2
 
     call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","interface/icons/head/head_snape_1.png")
-    $ achievement.unlock("unlocksna")
+    $ achievement.unlock("unlocksna", True)
     $ snape_unlocked = True
 
     jump day_start
@@ -1104,7 +1104,7 @@ label event_08:
 
     if masturbating:
         m "{size=-4}(This was awesome...) *Panting*{/size}"
-        m "{size=-4}(My pants are ruined though...){/size}"
+        m "{size=-4}(My trousers are ruined though...){/size}"
     else:
         m "................."
         m "(She is cute, but quite a piece of work...)"
@@ -1546,7 +1546,7 @@ label event_14:
     stop music fadeout 1.0
 
     call give_reward(">You've unlocked the ability to summon Hermione to your office.","interface/icons/head/head_hermione_1.png")
-    $ achievement.unlock("unlockher")
+    $ achievement.unlock("unlockher", True)
     $ hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
     $ hermione_busy = True
     $ tutoring_hermione_unlocked = True

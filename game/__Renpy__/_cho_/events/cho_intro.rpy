@@ -864,7 +864,7 @@ label cho_hermione_talk:
 
     $ cho_unlocked = True
     call give_reward(">You've unlocked the ability to summon Cho to your office.","interface/icons/head/head_cho_1.png")
-    $ achievement.unlock("unlockcho")
+    $ achievement.unlock("unlockcho", True)
     # End of Intro.
     $ hermione_busy = True
     $ cho_busy = True

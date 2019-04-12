@@ -146,7 +146,7 @@ screen hermione_uniform:
     #Bottom #Behind top layer.
     if hermione_wear_bottom:
 
-        if hermione_wear_onepiece and (h_onepiece in h_onepieces_list): #Skirt or Pants gets added later
+        if hermione_wear_onepiece and (h_onepiece in h_onepieces_list): #Skirt or trousers gets added later
             pass
         else:
             if hermione_action == "none" or hermione_action == "hold_book": #Other actions use the layer below!

@@ -1648,7 +1648,7 @@ label hg_pf_DanceForMe:
                                             call her_main("Nothing of that sort!","open","baseL")
                                             call her_main("You should have restrained yourself like a proper headmaster would!")
                                             m "Really? What did you expect me to do?"
-                                            m "Aim at the wall or just put it back in my pants and start cumming?"
+                                            m "Aim at the wall or just put it back in my trousers and start cumming?"
                                             call her_main("........","soft","squintL")
                                             call her_main("Still, you should not have...","soft","angry")
                                             call her_main("I agreed to perform a striptease for you...","open","closed")

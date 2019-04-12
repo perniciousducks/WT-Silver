@@ -64,12 +64,15 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_cho_face(eyebrows = face)
         if pupils == None:
             call set_cho_face(pupils = face)
+            
+    if animation != False:
+        $ cho_animation = animation
 
     python:
         cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         cho_class.special(emote=emote)
 
-    show screen cho_chang(animation=animation)
+    show screen cho_chang()
     show screen bld1
 
     #Transitions
@@ -90,10 +93,10 @@ label end_cho_event:
     $ active_girl = None
     jump main_room
 
-screen cho_chang(animation=False):
+screen cho_chang():
     tag cho_main
     zorder cho_zorder
-    if animation:
-        add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at moveFade
+    if cho_animation != None:
+        add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
     else:
         add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)

@@ -296,8 +296,8 @@ label hg_pf_TheGamble_complete:
         with fade
         show screen bld1
         with d3
-        #"You're interrupted as she jerks your pants down and swallows your cock to the root."
-        ">Hermione jerks your pants down and swallows your cock to the root."
+        #"You're interrupted as she jerks your trousers down and swallows your cock to the root."
+        ">Hermione jerks your trousers down and swallows your cock to the root."
 
 
 

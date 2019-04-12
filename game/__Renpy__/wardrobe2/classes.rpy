@@ -225,42 +225,28 @@ init python:
             
             # Check if clothing folder is a category, subcategory or a type
             if renpy.exists("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/0.png"):
-                self.imagepath = "characters/"+self.char+"/clothes/"+self.category+"/"
+                self.imagepath = "characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/"
             elif renpy.exists("characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/0.png"):
-                self.imagepath = "characters/"+self.char+"/clothes/"+self.subcat+"/"
+                self.imagepath = "characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/"
             else:
-                self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"
+                self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"+self.id+"/"
             
             # Check if skin layer exists
-            if renpy.exists(self.imagepath+self.id+"/skin.png"):
-                self.skinlayer = self.imagepath+self.id+"/skin.png"
+            if renpy.exists(self.imagepath+"skin.png"):
+                self.skinlayer = self.imagepath+"skin.png"
             
             # Check if extra layer exists
-            if renpy.exists(self.imagepath+self.id+"/extra.png"):
-                self.extralayer = self.imagepath+self.id+"/extra.png"
+            if renpy.exists(self.imagepath+"extra.png"):
+                self.extralayer = self.imagepath+"extra.png"
                 
-            if renpy.exists(self.imagepath+self.id+"/overlay.png"):
-                self.overlayer = self.imagepath+self.id+"/overlay.png"
+            if renpy.exists(self.imagepath+"overlay.png"):
+                self.overlayer = self.imagepath+"overlay.png"
                 
             # Check if armfix layers exist
-            self.armfix_L = []
-            self.armfix_R = []
-            if self.armfix:
-                for layer in xrange(0, self.layers):
-                    if renpy.exists(self.imagepath+self.id+"/"+str(layer)+"_armL.png"):
-                        self.armfix_L.append(self.imagepath+self.id+"/"+str(layer)+"_armL.png")
-                        
-                    if renpy.exists(self.imagepath+self.id+"/"+str(layer)+"_armR.png"):
-                        self.armfix_R.append(self.imagepath+self.id+"/"+str(layer)+"_armR.png")
-                        
-                if renpy.exists(self.imagepath+self.id+"/outline_armL.png"):
-                    self.armfix_Lx = self.imagepath+self.id+"/outline_armL.png"
-                    
-                if renpy.exists(self.imagepath+self.id+"/outline_armR.png"):
-                    self.armfix_Rx = self.imagepath+self.id+"/outline_armR.png"
+            self.set_armfix()
             
             # Set outline layer path
-            self.outline = self.imagepath+self.id+"/outline.png"
+            self.outline = self.imagepath+"outline.png"
                 
             # Add cloth object to respective character, category and sub-category in dictionary keylist
             if not self.cloned and self.unlocked:
@@ -288,12 +274,59 @@ init python:
             return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix)
                 
         def set_pose(self, pose):
-            if renpy.exists(self.imagepath+self.id+"/"+pose+"_0.png"):
+            if pose == None:
+                self.pose = ""
+                self.outline = self.imagepath+"outline.png"
+                if renpy.exists(self.imagepath+"skin.png"):
+                    self.skinlayer = self.imagepath+"skin.png"
+                if renpy.exists(self.imagepath+"extra.png"):
+                    self.extralayer = self.imagepath+"extra.png"
+                if renpy.exists(self.imagepath+"overlay.png"):
+                    self.overlayer = self.imagepath+"overlay.png"
+                self.set_armfix()
+                self.cached = False
+                return None
+            if renpy.exists(self.imagepath+pose+"_0.png"):
                 self.pose = pose
-                self.sprite_ico.cached = False
+                self.outline = self.imagepath+pose+"_outline.png"
+                if renpy.exists(self.imagepath+pose+"_skin.png"):
+                    self.skinlayer = self.imagepath+pose+"_skin.png"
+                else:
+                    self.skinlayer = "characters/dummy.png"
+                if renpy.exists(self.imagepath+pose+"_extra.png"):
+                    self.extralayer = self.imagepath+pose+"_extra.png"
+                else:
+                    self.extralayer = "characters/dummy.png"
+                if renpy.exists(self.imagepath+pose+"_overlay.png"):
+                    self.overlayer = self.imagepath+pose+"_overlay.png"
+                else:
+                    self.overlayer = "characters/dummy.png"
+                self.set_armfix(True)
                 self.cached = False
                 return True
             return False
+            
+        def set_armfix(self, anim=False):
+            pose = self.pose
+            if anim:
+                pose += "_"
+                
+            self.armfix_L = []
+            self.armfix_R = []
+            if self.armfix:
+                for layer in xrange(0, self.layers):
+                    if renpy.exists(self.imagepath+pose+str(layer)+"_armL.png"):
+                        self.armfix_L.append(self.imagepath+pose+str(layer)+"_armL.png")
+                        
+                    if renpy.exists(self.imagepath+pose+str(layer)+"_armR.png"):
+                        self.armfix_R.append(self.imagepath+pose+str(layer)+"_armR.png")
+                        
+                if renpy.exists(self.imagepath+pose+"outline_armL.png"):
+                    self.armfix_Lx = self.imagepath+pose+"outline_armL.png"
+                    
+                if renpy.exists(self.imagepath+pose+"outline_armR.png"):
+                    self.armfix_Rx = self.imagepath+pose+"outline_armR.png"
+            return
 
         def get_matrixcolor(self, layer):
             return im.matrix.tint(float(self.color[layer][0])/255.0, float(self.color[layer][1])/255.0, float(self.color[layer][2])/255.0)
@@ -319,7 +352,7 @@ init python:
             self.cached = False
         
         def get_imagelayer(self, layer):
-            return self.imagepath+self.id+"/"+str(layer)+".png" if self.pose == "" else self.imagepath+self.id+"/"+self.pose+"_"+str(layer)+".png"
+            return self.imagepath+str(layer)+".png" if self.pose == "" else self.imagepath+self.pose+"_"+str(layer)+".png"
 
         def get_imagelayer_color(self, layer):
             return im.MatrixColor(self.get_imagelayer(layer), self.get_matrixcolor(layer) * im.matrix.opacity(self.get_alpha(layer)))
@@ -330,7 +363,7 @@ init python:
         def get_image(self):
             
             # Keep used clothes images in cache
-            #renpy.start_predict("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/*.*")
+            #renpy.start_predict(self.imagepath)
             
             self.sprite = self.get_imagelayer_color(0)
             
@@ -351,7 +384,7 @@ init python:
         def get_armfix(self, skingray=False, nohand=False):
             armL = Image("characters/"+self.char+"/body/arms/armfixL.png")
             
-            if nohand:
+            if nohand or self.pose != "":
                 armL = Image("characters/dummy.png")
             
             # Used in mannequin generation
@@ -429,6 +462,7 @@ init python:
                 breasts = self.get_object(self.body, 'breasts')
                 base = self.get_object(self.body, 'base')
                 legs = self.get_object(self.body, 'legs')
+                animation = self.get_object(self.body, 'animation') #
                 
                 if armleft and symbol not in armleft:
                     self.body['armleft'][0] = imagepath+"arms/"+armleft+".png"
@@ -440,6 +474,8 @@ init python:
                     self.body['base'][0] = imagepath+"base/"+base+".png"
                 if legs and symbol not in legs:
                     self.body['legs'][0] = imagepath+"legs/"+legs+".png"
+                if animation and symbol not in animation: #
+                    self.body['animation'][0] = imagepath+"animation/"+animation+".png" #
             if 'face' in args:
                 imagepath = "characters/"+self.char+"/face/"
                 
@@ -499,7 +535,7 @@ init python:
             self.update_paths("other")
             self.cached = False
             
-        def set_pose(self, **kwargs):
+        def set_body(self, **kwargs):
             for arg, value in kwargs.iteritems():
                 try:
                     self.body[str(arg)][0] = value
@@ -507,15 +543,44 @@ init python:
                     raise Exception('Character: "'+str(arg)+'" body part was not defined for "'+self.char+'" character class.')
             self.update_paths("body")
             self.cached = False
+            return
+            
+        def set_pose(self, pose):
+            if not pose == None:
+                self.pose = pose
+                for key, value in self.body.iteritems():
+                    self.body[key][4] = True
+                for key, value in self.face.iteritems():
+                    self.face[key][2] = 233
+                    self.face[key][3] = -78
+                self.body['animation'][0] = pose
+                self.body['animation'][4] = False
+            else:
+                self.pose = ""
+                for key, value in self.body.iteritems():
+                    self.body[key][4] = False
+                for key, value in self.face.iteritems():
+                    self.face[key][2] = 0
+                    self.face[key][3] = 0
+                self.body['animation'][0] = None
+            self.update_paths("body")
+            self.cached = False
+            
+        def animation(self, anim):
+            for key, value in self.clothing.iteritems():
+                if self.clothing[key][0]:
+                    self.clothing[key][0].set_pose(anim)
+            self.set_pose(pose=anim)
+            self.cached = False
             
         def get_cloth(self, type):
             return self.get_object(self.clothing, type)
             
         def get_category_list(self, category):
-            return self.clothing_dictlist[category]
+            return self.clothing_dictlist.get(category)
             
         def get_clothing_list(self, category, subcategory):
-            return self.clothing_dictlist[category][subcategory]
+            return self.clothing_dictlist.get(category).get(subcategory)
             
         def get_equipped(self, category, subcategory, item):
             if not self.get_cloth(self.get_clothing_list(category, subcategory)[item].type) == None:
@@ -636,6 +701,13 @@ init python:
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
                 
+                if self.pose == "":
+                    width = 1010
+                    height = 1200
+                else:
+                    width = 1920
+                    height = 1440
+                
                 # Armfix
                 armfix = []
                 
@@ -646,12 +718,12 @@ init python:
                         # Check if sprite is an imagepath or an object
                         if isinstance(sprite[0], basestring):
                             self.sprite = Composite(
-                                    (1010, 1200),
+                                    (width, height),
                                     (0,0), self.sprite,
                                     (sprite[2],sprite[3]), Image(sprite[0]))
                         else:
                             self.sprite = Composite(
-                                    (1010, 1200),
+                                    (width, height),
                                     (0,0), self.sprite,
                                     (sprite[2],sprite[3]), sprite[0].get_image())
                                     
@@ -664,7 +736,7 @@ init python:
                     if armfix > 0:
                         for item in armfix:
                             self.sprite = Composite(
-                                (1010, 1200),
+                                (width, height),
                                 (0,0), self.sprite,
                                 (0,0), item)
                                     

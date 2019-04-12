@@ -108,8 +108,8 @@ label waifu:
         if complited_leena and complited_shea and complited_stevens and victoria >= 1 and shea >= 1 and leena >= 1:
             "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}You decide to go to the prom and you're surprised to see the \"library girl\" there. She invites you to a dance and kisses you. You notice Shea staring at you incredulously.{/size}"
             "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}The \"library girl\" leads you outside. She kisses you, takes your dick out and starts jerking it. Shea appears from behind the corner of the building.{/size}"
-            "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}Shea gets mad and starts yelling at the girl who continues to jerk you off. Alarmed by all the yelling Ms.Stevens shows up and You still have your pants down.{/size}"
-            "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}You pull your pants up, completely embarrassed. Ms.Stevens stays calm and simply leaves to bring her car around. Afterwards She orders all of you in the car and takes you to a motel.{/size}"
+            "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}Shea gets mad and starts yelling at the girl who continues to jerk you off. Alarmed by all the yelling Ms.Stevens shows up and You still have your trousers down.{/size}"
+            "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}You pull your trousers up, completely embarrassed. Ms.Stevens stays calm and simply leaves to bring her car around. Afterwards She orders all of you in the car and takes you to a motel.{/size}"
             "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}In the motel room she grabs your crotch, takes your cock out and starts jerking it off. Shea is in shock but the \"library girl\" is already kissing you.{/size}"
             "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}Reluctantly Shea joins the girls. You fuck your step sister first, up her butt of course. The \"library girl\" is next in line, Then Ms.Stevens.{/size}"
             "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}When you wake up everyone but Shea is gone. Your stepsister is asleep, You spread her butt cheeks and slide your morning wood up her little asshole. -The End-{/size}"
@@ -161,7 +161,7 @@ label waifu:
                 "-Hang around the library (page 97)-":
                     if leena >= 8:
                         "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}You ignore the prom and head towards the library. It's deserted, so You take your usual seat. You're surprised to see the dark haired girl crouching under your desk.{/size}"
-                        "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}Two men in black suits appear just as she puts your dick into her mouth. They take her away and you just stand there stupefied and confused with your pants down. What the heck?{/size}"
+                        "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}Two men in black suits appear just as she puts your dick into her mouth. They take her away and you just stand there stupefied and confused with your trousers down. What the heck?{/size}"
                         "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}The girl shows up at your doorstep Early on the next morning. She says that she's in the witness protection program, and that her cover has now been compromised because of you...{/size}"
                         "\"Epilogue\"" "{size=-2}It's been two years now. You and the \"library girl\" got married. You live in a beach-house at a secret location with new names.{/size}"
                         "\"Epilogue\"" "{size=-2}You are very much in love with her and left your past behind for her. she's so grateful that, more often than not, you find your cock deep down her throat. -The End-{/size}"

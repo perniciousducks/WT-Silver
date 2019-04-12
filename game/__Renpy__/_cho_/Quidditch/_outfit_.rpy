@@ -32,7 +32,7 @@ label change_quidditch_outfit:
 
 # Wear Pants
 label use_quidditch_pants_1:
-    m "I'd like you to wear pants for your games again."
+    m "I'd like you to wear trousers for your games again."
     cho "Really? Just my regular pants?"
     m "Yes. Regular ole- pants."
     m "I know what I'm doing..."
@@ -48,7 +48,7 @@ label use_quidditch_pants_1:
 label use_quidditch_pants_2:
     if not quid_pants_2_intro:
         $ quid_pants_2_intro = True
-        m "Do you happen to have Quidditch pants that are a bit shorter?"
+        m "Do you happen to have Quidditch trousers that are a bit shorter?"
         m "Some sort of hot-pants?"
         cho "I do. I typically wear them in the summer."
         m "Well I'd like you to wear them all the time!"

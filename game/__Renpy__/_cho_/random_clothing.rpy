@@ -23,7 +23,7 @@ label cho_random_clothing:
                 #call cho_chibi("stand","mid","base")
 
                 pause.2
-                call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=True)
+                call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=moveFade)
                 call ctc
 
                 g9 "Got a new outfit, [cho_name]?"
@@ -61,7 +61,7 @@ label cho_random_clothing:
                 #call cho_chibi("stand","mid","base")
 
                 pause.2
-                call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=True)
+                call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=moveFade)
                 call ctc
 
                 g9 "Wow girl, the hell are you wearing?"
@@ -88,6 +88,7 @@ label cho_random_clothing:
                 return
             pass
 
-    call cho_main("Hello, [cho_genie_name].","base","base","base","mid",xpos="base",ypos="base", animation=True)
+    call cho_main("Hello, [cho_genie_name].","base","base","base","mid",xpos="base",ypos="base", animation=moveFade)
+    $ cho_animation = None
 
     return

@@ -182,7 +182,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call nar(">Hermione's eyes widen and tears form as she senses your semen enter her.")
             call her_main("hhaanooo hhhheerrr","scream","wide")
             hide screen hermione_main
-            call nar(">Her hands shoot down into her pants as she starts violently orgasming.","start")
+            call nar(">Her hands shoot down into her trousers as she starts violently orgasming.","start")
             call nar(">The sight of her pleasuring herself as you use her throat only prolongs your orgasm.","end")
             m "You dirty little girl. Getting off from your headmaster sticking his cock down your throat."
             m "I bet your loving this, being used as a nothing more than a toy."

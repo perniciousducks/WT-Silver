@@ -172,7 +172,7 @@ label start_ht:
                 $ cheats_active = False
 
     menu:
-        "Use chibi animations or image sprites." ">This can be changed in the options menu at the top left of the screen."
+        "Animations" ">Use chibi animations or image sprites.\nThis can be changed in the options menu at the top left of the screen."
         "-Use chibis-":
             $ use_cgs = False
         "-Use sprites-":

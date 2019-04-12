@@ -166,7 +166,7 @@ label hat_intro_3: #Luna change scene #DONE
     $ luna_busy = True
 
     call give_reward(">You've unlocked the ability to summon Luna Lovegood to your office.","interface/icons/head/head_luna_1.png")
-    $ achievement.unlock("unlocklun")
+    $ achievement.unlock("unlocklun", True)
     $ luna_unlocked = True
 
     return

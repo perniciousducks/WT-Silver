@@ -179,7 +179,7 @@ label tonks_teacher_event_1_1: #Level 1 Event 1
     m "Was the big and beautiful part really necessary?"
     ton "Oh, that's not the best bit..."
     ton "I went on to tell him how {b}naughty{/b} is was for him to peek at me..."
-    ton "So I made him pull down his pants before he wrote his lines."
+    ton "So I made him pull down his trousers before he wrote his lines."
     m "So you did see it."
     ton "He still had his underwear on. I think if I pushed him much further he would have snapped."
     ton "Besides, I could still see how hard he was..."

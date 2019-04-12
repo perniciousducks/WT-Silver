@@ -87,7 +87,7 @@ label __init_variables:
             # Outfits
             #cho_outfit_school2 = outfit_class(name="School 2", desc="Slightly modified base school outfit", group=[cho_cloth_topschool2, cho_cloth_schoolskirt2, cho_cloth_basicbra2, cho_cloth_basicpanties2, cho_cloth_lace_stockings_1])
             
-            cho_outfit_quidditch = outfit_class(name="Quidditch", group=[cho_cloth_topsweater1, cho_cloth_pantslong2, cho_cloth_sportbra1, cho_cloth_sportpanties1])
+            cho_outfit_quidditch = outfit_class(name="Quidditch", group=[cho_cloth_pantslong2, cho_cloth_robequidditch1])
             
             cho_outfit_party = outfit_class(name="Party", group=[cho_cloth_skirtshort2, cho_cloth_bikinitop1])
             
@@ -104,7 +104,8 @@ label __init_variables:
                         "armright":    ["arm_down_r", 1, 0, 0, False],
                         "breasts":     ["breasts_bikini_tan", 3, 0, 0, False],
                         "base":        ["base_01", 2, 0, 0, False],
-                        "legs":        [None, 4, 0, 0, False]}
+                        "legs":        [None, 4, 0, 0, False],
+                        "animation":   [None, 1, 0, 0, False]}
                         
             cho_class.face = {
                         "tears":       [None, 11, 0, 0, False],

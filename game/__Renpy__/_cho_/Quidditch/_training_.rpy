@@ -267,12 +267,12 @@ label demonstrate_tactic(position=""):
     # The *ASS* position!
     if position == "front":
         m "Now turn away from me."
-        call cho_walk("mid","200", 0.5, flip=True)
+        call cho_walk("600","200", 0.5)
 
         cho "Like this?"
         m "A bit higher maybe..."
 
-        call cho_walk("mid", "150", 0.3, flip=True)
+        call cho_walk("600", "150", 0.3)
 
         m "Yes, very good. Keep that position."
 
@@ -292,8 +292,8 @@ label demonstrate_tactic(position=""):
     # The ~Panties~ position!
     elif position == "above":
         m "Now move a bit higher."
-        call cho_chibi("stand","mid","200")
-        with d3
+
+        call cho_walk("mid", "180", 0.3)
 
         cho "Like this?"
         with hpunch
@@ -308,7 +308,7 @@ label demonstrate_tactic(position=""):
         else:
             cho "Of course, [cho_genie_name]..."
 
-        call cho_walk("desk", "100", 0.5)
+        call cho_walk("mid", "100", 0.5)
 
         cho "How is this?"
         call gen_chibi("hide")
@@ -330,7 +330,7 @@ label demonstrate_tactic(position=""):
     elif position == "close":
         m "Come as close to me as you can..."
         cho "Yes, [cho_genie_name]."
-        call cho_walk("desk", "200", 0.5, flip=True)
+        call cho_walk("desk", "200", 0.5)
 
 
     $ quidditch_position = position

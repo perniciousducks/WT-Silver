@@ -153,8 +153,8 @@ screen cho_walk:
 label flying_cho_chibi(flying=True):
 
     if flying == True:
-        $ cho_stand  = "ch_hem fly_a" # Temporarily
-        $ cho_walk   = "characters/hermione/chibis/broom/shime14.png" # Temporarily
+        $ cho_chibi_stand  = "ch_hem fly_a" # Temporarily
+        $ cho_chibi_walk   = "characters/hermione/chibis/broom/shime14.png" # Temporarily
 
         $ cho_chibi_top       = "characters/cho/chibis/blank.png"
         $ cho_chibi_bottom    = "characters/cho/chibis/blank.png"

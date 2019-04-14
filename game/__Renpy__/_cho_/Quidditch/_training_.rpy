@@ -229,6 +229,7 @@ label change_quidditch_tactics:
 
         "\"Come back down.\"" if cho_flying == True:
             $ cho_flying = False
+            call cho_walk("mid", "base", 1.2)
             call cho_chibi("hide")
             call flying_cho_chibi(flying=False) # Reset chibi images.
             call cho_chibi("stand","mid","base")
@@ -267,7 +268,7 @@ label demonstrate_tactic(position=""):
     # The *ASS* position!
     if position == "front":
         m "Now turn away from me."
-        call cho_walk("600","200", 0.5)
+        call cho_walk("580","200", 0.5)
 
         cho "Like this?"
         m "A bit higher maybe..."
@@ -324,13 +325,13 @@ label demonstrate_tactic(position=""):
             m "(Nothing can stop us now...)"
         else:
             m "(...)"
-            g4 "(No panties!!!)"
+            g4 "(What a tragedy!{w} No matter how high up she flies, you won't be able to see them while she's wearing those...)"
 
     # The [intimate] position!
     elif position == "close":
         m "Come as close to me as you can..."
         cho "Yes, [cho_genie_name]."
-        call cho_walk("desk", "200", 0.5)
+        call cho_walk("desk", "220", 0.5)
 
 
     $ quidditch_position = position

@@ -1,5 +1,5 @@
 ### cho CHIBI ###
-label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False):
+label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):
     hide screen cho_stand
 
     if xpos != cho_chibi_xpos:
@@ -43,6 +43,9 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         else:
             $ cho_chibi_flip = 1
             show screen cho_stand
+            
+    if animation != False:
+        $ cho_chibi_animation = animation
 
     return
 
@@ -153,8 +156,8 @@ screen cho_walk:
 label flying_cho_chibi(flying=True):
 
     if flying == True:
-        $ cho_stand  = "ch_hem fly_a" # Temporarily
-        $ cho_walk   = "characters/hermione/chibis/broom/shime14.png" # Temporarily
+        $ cho_chibi_stand  = "ch_hem fly_a" # Temporarily
+        $ cho_chibi_walk   = "characters/hermione/chibis/broom/shime14.png" # Temporarily
 
         $ cho_chibi_top       = "characters/cho/chibis/blank.png"
         $ cho_chibi_bottom    = "characters/cho/chibis/blank.png"

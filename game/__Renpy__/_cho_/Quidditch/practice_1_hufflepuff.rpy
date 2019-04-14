@@ -44,11 +44,11 @@ label start_training_match:
         m "That’s the spirit! Now go get them tiger!"
         cho "Later, [cho_genie_name]!"
 
-    # Cho leaves
-    call cho_walk("mid","leave",2)
+    # Cho leaves.
+    call cho_walk(speed=2, action="leave")
 
     $ cho_busy = True
-    if quidditch_commentator == "Hermione": # Hermione has to commentate.
+    if quidditch_commentator == "hermione": # Hermione has to commentate.
         $ hermione_busy = True
     $ quidditch_match_in_progress = True
 
@@ -101,7 +101,7 @@ label hufflepuff_practice_lost:
 
     # If he was, but the event failed, he’ll ask why he wasn’t distracted enough
     # Cho responds by saying that she didn’t feel comfortable while flying, almost acted clumsy
-    call cho_walk("door","mid",2.2)
+    call cho_walk(speed=2.2, action="enter")
 
     m "So, how did it go?"
     cho "We lost..."
@@ -124,8 +124,8 @@ label hufflepuff_practice_lost:
         cho "I was trying to distract Cedric with my skirt, just like you've said..."
 
 
-    # Cho leaves
-    call cho_walk("mid","leave",2.2)
+    # Cho leaves.
+    call cho_walk(speed=2.2, action="leave")
 
     $ cho_mood += 9
     $ cho_busy = True
@@ -147,8 +147,7 @@ label hufflepuff_practice_win_1:
             m "Ah miss Chong... Come on in!"
             cho "..."
 
-    call play_sound("door")
-    call cho_walk("door","mid",2)
+    call cho_walk(speed=2, action="enter")
 
     call cho_main("...","annoyed","suspicious","angry","R",xpos="mid",ypos="base")
     m "You seem a little on edge today..."
@@ -177,7 +176,8 @@ label hufflepuff_practice_win_1:
     call cho_main("\"Ravenclaw\"... isn't very good...","pout","suspicious","sad","down")
     call cho_main("But I have a feeling that's going to change this year!","smile","closed","base","mid")
 
-    call cho_walk("mid","leave",2)
+    # Cho leaves.
+    call cho_walk(speed=2, action="leave")
     $ cho_busy = True
 
     jump main_room
@@ -190,9 +190,8 @@ label hufflepuff_practice_win_2:
     ">*knock* *knock* *knock*"
 
     m "Come in..."
-    call play_sound("door")
-    call cho_walk("door","mid",2)
 
+    call cho_walk(speed=2, action="enter")
 
     call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",trans="hpunch")
     m "Good hustle. Nice work catching that gold thing..."
@@ -209,7 +208,8 @@ label hufflepuff_practice_win_2:
     m "Ugh... fine..."
     call cho_main("Good...","pout","angry","angry","mid")
 
-    call cho_walk("mid","leave",2)
+    # Cho leaves.
+    call cho_walk(speed=2, action="leave")
     $ cho_busy = True
 
     jump main_room

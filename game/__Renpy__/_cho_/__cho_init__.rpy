@@ -49,41 +49,27 @@ label cho_progress_init:
         $ cho_shaming_unlocked    = False
         $ cho_wardrobe_unlocked   = False
         $ cho_busy                = False
+        $ cho_chatted             = False
 
         # Intro
-        $ cho_intro_1_complete    = False
+        $ cho_intro_state         = "event_1"
         $ jerked_off_during_cho_intro = False
-
-        $ cho_intro_2_complete    = False
-
-        $ cho_snape_talk_complete = False
-        $ cho_plan                = []
-
-        $ cho_hermione_talk_intro = False
-
-        # Quidditch Quiz
-        $ quid_hint_icon          = ""
-        $ cho_quiz_first_attempt  = True
-        $ cho_quiz2_first_attempt = True
-        $ cho_quiz_assed          = False
+        $ cho_plan                = [] # Talk with Snape about Cho.
 
         # Quidditch Training
-        $ cho_training_intro_done = False
-        $ cho_tactics_intro_done  = False
+        $ cho_training_state      = "quiz_start"
+        $ quid_hint_icon          = "" # Icon: "{image=interface/check_True.png} "
         $ lock_cho_training       = False
         $ lock_cho_practice       = False
-        $ quidditch_commentator   = "None"
+        $ quidditch_commentator   = "none"
         $ quidditch_position      = "front"
 
         # Quidditch Outfit
-        $ cho_quidditch_top    = "sweater" # For testing.
-        $ cho_quidditch_bottom = "pants_long" # For testing.
-        $ quid_pants_1_intro = False
-        $ quid_pants_2_intro = False
-        $ quid_skirt_1_intro = False
-        $ quid_skirt_2_intro = False
-        $ cho_quidditch_coat   = True # For testing.
-        $ cho_quidditch_gloves = True # For testing.
+        $ quid_outfit_intro       = []
+        $ cho_quidditch_top       = "sweater" # For testing.
+        $ cho_quidditch_bottom    = "pants_long" # For testing.
+        $ cho_quidditch_coat      = True # For testing.
+        $ cho_quidditch_gloves    = True # For testing.
 
         # Quidditch Matches
         $ quidditch_match_in_progress = False

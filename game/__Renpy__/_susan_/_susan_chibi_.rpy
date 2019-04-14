@@ -150,12 +150,12 @@ screen susan_stand:
 screen susan_walk:
     tag susan_chibi
 
-    add susan_chibi_walk         at susan_walk(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_walk_shoes   at susan_walk(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_walk         at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_walk_shoes   at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
 
-    add susan_chibi_top          at susan_walk(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_bottom       at susan_walk(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_robe         at susan_walk(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_top          at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_bottom       at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_robe         at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
 
     zorder susan_chibi_zorder
 

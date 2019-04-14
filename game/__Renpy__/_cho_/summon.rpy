@@ -16,10 +16,31 @@ label summon_cho:
 
     menu:
 
-        #"-Talk-":
+        # Talk
+        "-Talk-" if cho_training_unlocked:
+            if not cho_chatted:
+                if cho_mood <= 3:
+                    $ cho_chatted = True
+                    #call cho_chit_chat
+                    jump cho_talk
+                else:
+                    cho "I have nothing to say to you, [cho_genie_name]..."
+                    jump cho_requests
+            else:
+                jump cho_talk
+
 
         # Quidditch Training
         "-Training-" if not lock_cho_training:
+            if cho_mood != 0:
+                m "Ready to get back to training?"
+                if cho_mood >= 5:
+                    cho "No.{w} And I don't want to hear of it right now, Sir."
+                else:
+                    cho "I don't think I'm ready yet, Sir."
+                m "Fair enough..."
+                call nar(">Cho is still mad at you.")
+                jump cho_requests
             jump cho_training_menu
 
 
@@ -104,6 +125,7 @@ label summon_cho:
             jump end_cho_event
 
 
+
 # Cho Favor Menu
 label cho_favor_menu:
     python:
@@ -161,3 +183,56 @@ label favor_not_ready:
 label not_available:
     call nar("This feature is currently not availabel in v[config.version], and will be added in a later patch.")
     return
+
+
+# Cho Talk
+label cho_talk:
+    menu:
+        #"-Working-":
+
+        "-Quidditch Commentator-" if quidditch_commentator == "talk_with_cho":
+            $ lock_cho_practice = False
+            $ quidditch_commentator = "hermione"
+            jump quidditch_commentator_event_3
+
+        # Naming
+        "\"Address me only as\"":
+            menu:
+                "\"Coach\"":
+                    $ cho_genie_name = "Coach"
+                "\"Sergeant\"":
+                    $ cho_genie_name = "Sergeant"
+                "\"Captain\"":
+                    $ cho_genie_name = "Captain"
+                "-Custom Input-":
+                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = temp_name.strip()
+                    if temp_name == "":
+                        $ cho_genie_name = "Sir"
+                    $ cho_genie_name = temp_name
+                    cho "Do I really have to?"
+
+                "\"Never mind\"":
+                    pass
+
+            jump cho_talk
+
+        "\"From now on I will refer to you as\"":
+            menu:
+                "\"Miss Chang\"":
+                    $ temp_name = "Miss Chang"
+                    jump cho_requests
+                "-Custom Input-":
+                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = temp_name.strip()
+                    if temp_name == "":
+                        $ temp_name = "Miss Chang"
+                    $ cho_name = temp_name
+                    jump cho_requests
+                "\"Never mind\"":
+                    pass
+
+            jump cho_talk
+
+        "\"Never mind\"":
+            jump cho_requests

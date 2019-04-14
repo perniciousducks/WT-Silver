@@ -23,7 +23,7 @@ label change_quidditch_outfit:
             call remove_quidditch_gloves
         "-Go back-":
             jump cho_training_menu
-            
+
     call update_cho_quidditch_outfit
 
     jump change_quidditch_outfit
@@ -32,6 +32,11 @@ label change_quidditch_outfit:
 
 # Wear Pants
 label use_quidditch_pants_1:
+
+    # Intro
+    if "pants_1" not in quid_outfit_intro:
+        $ quid_outfit_intro.appned("pants_1")
+
     m "I'd like you to wear trousers for your games again."
     cho "Really? Just my regular pants?"
     m "Yes. Regular ole- pants."
@@ -46,8 +51,11 @@ label use_quidditch_pants_1:
 
 # Wear Short Pants
 label use_quidditch_pants_2:
-    if not quid_pants_2_intro:
-        $ quid_pants_2_intro = True
+
+    # Intro
+    if "pants_2" not in quid_outfit_intro:
+        $ quid_outfit_intro.append("pants_2")
+
         m "Do you happen to have Quidditch trousers that are a bit shorter?"
         m "Some sort of hot-pants?"
         cho "I do. I typically wear them in the summer."
@@ -55,6 +63,8 @@ label use_quidditch_pants_2:
         cho "Even when it's cold, and raining?"
         g9 "Especially when it's raining."
         cho "Ok, [cho_genie_name]. I'll put them on."
+
+    # Repeat
     else:
         m "I'd like you to wear those hot-pants duing your games again."
         cho "Alright. I see nothing wrong with that."
@@ -68,8 +78,10 @@ label use_quidditch_pants_2:
 
 # Wear Skirt
 label use_quidditch_skirt_1:
-    if not quid_skirt_1_intro:
-        $ quid_skirt_1_intro = True
+
+    # Intro
+    if "skirt_1" not in quid_outfit_intro:
+        $ quid_outfit_intro.append("skirt_1")
         m "Why don't you wear a skirt while playing?"
         cho "A skirt?!"
         call cho_main("I couldn't do that!","scream","wide","angry","mid")
@@ -88,6 +100,7 @@ label use_quidditch_skirt_1:
         call cho_main("Alright! I'll do it!","smile","base","base","mid")
         call cho_main("Go Go \'Ravenclaw\'!","scream","closed","sad","mid")
 
+    # Repeat
     else:
         m "I'd like you to wear a skirt for your games."
         cho "Ok, [cho_genie_name]. If I have to."
@@ -102,8 +115,10 @@ label use_quidditch_skirt_1:
 
 
 label use_quidditch_skirt_2:
-    if not quid_skirt_2_intro:
-        $ quid_skirt_2_intro = True
+
+    # Intro
+    if "skirt_2" not in quid_outfit_intro:
+        $ quid_outfit_intro.append("skirt_2")
         m "Seeing as how the skirt was such a success, how about we up the ante a bit?"
         call cho_main("How do you mean?","open","suspicious","raised","mid")
         m "Well, that skirt seemed a little long to me..."
@@ -122,6 +137,7 @@ label use_quidditch_skirt_2:
         call cho_main("...","pout","base","sad","R")
         call cho_main("fine...","annoyed","suspicious","sad","down")
 
+    # Repeat
     else:
         m "I'd like you to wear your short skirt again."
         cho "Why always the short one, [cho_genie_name]?"

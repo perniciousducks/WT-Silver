@@ -244,8 +244,8 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         jump special_date_with_snape_02
 
     # Cho
-    if cho_intro_2_complete and not cho_snape_talk_complete:
-        $ cho_snape_talk_complete = True
+    if cho_intro_state == "talk_with_snape":
+        $ cho_intro_state = "talk_with_hermione"
         jump cho_snape_talk
 
     # General

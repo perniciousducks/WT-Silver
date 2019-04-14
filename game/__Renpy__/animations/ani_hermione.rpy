@@ -968,22 +968,22 @@ image ch_hem run_a_flip:
     repeat
 
 image ch_hem fly_a:
-    "characters/hermione/chibis/run/h_run_a_01.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_02.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_03.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_02.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_01.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_04.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_05.png"
-    pause.07
-    "characters/hermione/chibis/run/h_run_a_04.png"
-    pause.07
+    "characters/hermione/chibis/broom/shime13a.png"
+    pause.1
+    "characters/hermione/chibis/broom/shime13b.png"
+    pause.1
+    "characters/hermione/chibis/broom/shime13c.png"
+    pause.1
+    "characters/hermione/chibis/broom/shime13d.png"
+    pause.2
+    "characters/hermione/chibis/broom/shime13c.png"
+    pause.1
+    "characters/hermione/chibis/broom/shime13b.png"
+    pause.2
+    "characters/hermione/chibis/broom/shime13c.png"
+    pause.1
+    "characters/hermione/chibis/broom/shime13b.png"
+    pause.1
     repeat
 image ch_hem fly_a_flip:
     im.Flip("characters/hermione/chibis/run/h_run_a_01.png", horizontal=True)
@@ -2123,6 +2123,6 @@ image titjob_mouth_ani:    #titjob cum in mouth
     "characters/hermione/chibis/titjob/tj_cum_mouth_18.png"
     pause.2
     repeat
-    
+
 image desk_idle_ani:
     "images/animation/00_desk.png"

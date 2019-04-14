@@ -53,7 +53,7 @@ label cc_pf_T1_talking_1:
     m "First, I'd like you to come a bit closer."
     call cho_main("Very well, [cho_genie_name]...","soft","base","base","R")
 
-    call cho_walk("mid","desk",1.6)
+    call cho_walk("desk", "base", 1.6) # Updated
 
     call play_music("chipper_doodle")
     call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
@@ -260,7 +260,7 @@ label cc_pf_T1_talking_1:
         call cho_main("See you next time.","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk("desk","leave",2.2)
+    call cho_walk(speed=2.2, action="leave") # Updated
 
     call bld
     m "(...)"
@@ -277,7 +277,7 @@ label cc_pf_T1_talking_2:
     g9 "Get closer, [cho_name]..."
     cho "Ok, [cho_genie_name]."
 
-    call cho_walk("mid","desk",1.6)
+    call cho_walk("desk", "base", 1.6) # Updated
 
     call play_music("chipper_doodle")
     call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
@@ -408,7 +408,7 @@ label cc_pf_T1_talking_2:
     cho "Thank you, [cho_genie_name]."
 
     # Cho very slowly walks out of your office...
-    call cho_walk("desk","leave",3)
+    call cho_walk(speed=3, action="leave") # Updated
 
     m "(...)"
     g9 "(I just got an idea!)"

@@ -29,7 +29,7 @@ screen genie_stand:
 screen genie_walk:
     tag genie_chibi
 
-    add genie_chibi_walk at genie_walk(walk_xpos, walk_xpos2) xzoom genie_chibi_flip #zoom (1.0/scaleratio)
+    add genie_chibi_walk at genie_walk_trans(walk_xpos, walk_xpos2) xzoom genie_chibi_flip #zoom (1.0/scaleratio)
 
     zorder genie_chibi_zorder
 

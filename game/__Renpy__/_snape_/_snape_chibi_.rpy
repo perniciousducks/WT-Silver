@@ -26,7 +26,7 @@ screen snape_stand:
 screen snape_walk:
     tag snape_chibi
 
-    add snape_chibi_walk at snape_walk(walk_xpos, walk_xpos2) xzoom snape_chibi_flip #zoom (1.0/scaleratio)
+    add snape_chibi_walk at snape_walk_trans(walk_xpos, walk_xpos2) xzoom snape_chibi_flip #zoom (1.0/scaleratio)
 
     zorder snape_chibi_zorder
 

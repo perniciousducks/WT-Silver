@@ -234,14 +234,14 @@ call house_points
 label day_resume:
 
 # Cho Events.
-if day >= 18 and her_whoring >= 2 and days_without_an_event >= 1 and not cho_intro_1_complete:
+if day >= 18 and her_whoring >= 2 and days_without_an_event >= 1 and cho_intro_state == "event_1":
     $ days_without_an_event = 0
-    $ cho_intro_1_complete = True
+    $ cho_intro_state = "event_2"
     jump cho_intro_1
 
-if huffl_matches_won == 1 and quidditch_commentator == "None":
+if huffl_matches_won == 1 and quidditch_commentator == "none":
     $ lock_cho_practice = True
-    $ quidditch_commentator = "Ask Hermione"
+    $ quidditch_commentator = "talk_with_hermione"
     jump quidditch_commentator_event_1
 
 # Quidditch Matches.

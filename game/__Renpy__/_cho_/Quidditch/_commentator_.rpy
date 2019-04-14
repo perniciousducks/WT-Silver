@@ -3,9 +3,8 @@
 ### Quidditch Commentator Quests ###
 
 label quidditch_commentator_event_1:
-    call play_sound("door")
 
-    call cho_walk("door","desk",2)
+    call cho_walk("desk", "base", 2, action="enter") # Updated
 
     call cho_main("[cho_genie_name], there's been a disaster!","scream","closed","angry","mid",xpos="mid",ypos="base")
     m "What? Did something happen during your game?"
@@ -71,7 +70,7 @@ label quidditch_commentator_event_1:
     call cho_main("I'll be heading back to classes now, if you don't mind.","soft","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk("desk","leave",2)
+    call cho_walk(speed=2, action="leave") # Updated
 
     call bld
     m "(...)"
@@ -145,7 +144,7 @@ label quidditch_commentator_event_3:
     call cho_main("See you for our next training session, [cho_genie_name].","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk("mid","leave",1.6)
+    call cho_walk(speed=1.6, action="leave") # Updated
 
     $ cho_busy = True
 

@@ -52,7 +52,7 @@ screen swear_bubble(type):
 label cho_quiz_1:
     call cho_main(xpos="mid",ypos="base",trans="fade")
 
-    if cho_quiz_assed:
+    if cho_training_state == "quiz_part_2":
         m "I'm ready to show you what I know about Quidditch..."
         call cho_main("Great!", "base", "base", "base", "L")
         call cho_main("Let's begin...", "open", "wide", "raised", "mid")
@@ -62,8 +62,8 @@ label cho_quiz_1:
     call exp_o_meter(fill=confidence_meter, opacity=0.0)
 
     # Intro
-    if cho_quiz_first_attempt:
-        $ cho_quiz_first_attempt = False
+    if cho_training_state == "quiz_start":
+        $ cho_training_state = "quiz_part_1"
         m "It's time to start our first lesson miss Chang."
         call cho_main("Great, where do we begin?","smile","base","base","mid")
         m "Well, first we're going to have to discuss what you'll do for me in this arrangement of ours..."
@@ -287,7 +287,7 @@ label cho_quiz_1:
         call cho_main("Bye then professor...", "annoyed", "base", "base", "mid")
 
         # Cho leaves.
-        call cho_walk("mid","leave",2.5)
+        call cho_walk(speed=2.5, action="leave") # Updated
 
         g4 "(What am I supposed to do now... I clearly know fuckall about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
@@ -296,7 +296,6 @@ label cho_quiz_1:
 
     # Success! Or did you?
     elif cho_answer_1 and cho_answer_2 and cho_answer_3 and cho_answer_4:
-        $ cho_quiz_assed = True
         call exp_o_meter(fill=confidence_meter, opacity=0.0)
         m "So as you can see, Basketball and Quidditch is pretty much the same game..."
         call cho_main("I’m sure that can’t be right...", "annoyed", "base", "base", "mid")
@@ -333,7 +332,7 @@ label cho_quiz_1:
         call cho_main("Bye then professor...", "pout", "base", "base", "R")
 
         # Cho leaves.
-        call cho_walk("mid","leave",2.5)
+        call cho_walk(speed=2.5, action="leave") # Updated
 
         g4 "(The fuck am I supposed to do now... I feel like that must’ve been a fluke, I know nothing about Quidditch..)."
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
@@ -355,8 +354,8 @@ label cho_quiz_2:
     $ renpy.music.stop("weather")
 
     # Intro
-    if cho_quiz2_first_attempt:
-        $ cho_quiz2_first_attempt = False
+    if cho_training_state == "quiz_part_1":
+        $ cho_training_state = "quiz_part_2"
         call cho_main("You do seem to know some basic things, but do you know anything about the balls?", "open", "suspicious", "base", "mid")
         m "I could probably teach you quite a lot. You should never neglect the balls."
         call cho_main("In that case...", "base", "base", "base", "mid")
@@ -574,13 +573,10 @@ label cho_quiz_2:
         m "Looking forward to it."
 
         # Cho leaves.
-        call cho_walk("mid","leave",2.5)
+        call cho_walk(speed=2.5, action="leave") # Updated
 
-        $ cho_training_unlocked = True
+        $ cho_training_state = "intro_1"
         call give_reward(">You've unlocked the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
-
-        $ cho_favors_unlocked = True
-        call give_reward(">You can now buy favours from Cho.","interface/icons/head/head_cho_2.png")
 
     # Failed
     else:
@@ -599,7 +595,7 @@ label cho_quiz_2:
         call cho_main("Good bye then...", "base", "base", "base", "mid")
 
         # Cho leaves.
-        call cho_walk("mid","leave",2.5)
+        call cho_walk(speed=2.5, action="leave") # Updated
 
         g4 "(What am I supposed to do now... I clearly don't know enough about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"

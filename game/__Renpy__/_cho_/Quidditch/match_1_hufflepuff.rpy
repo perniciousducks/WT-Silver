@@ -25,7 +25,7 @@ label start_hufflepuff_match:
     m "Good luck!"
 
     # Cho leaves.
-    call cho_walk("mid","leave",1.6)
+    call cho_walk(speed=1.6, action="leave")
 
     jump end_cho_event
 
@@ -357,9 +357,7 @@ label hufflepuff_match_return:
     # Demands that you will find somebody to replace her.
     pause.8
 
-    call play_sound("door")
-
-    call cho_walk("door","mid",1.6)
+    call cho_walk("mid", "base", 1.6, action="enter")
 
     call cho_main("We beat \"Hufflepuff\"!!!","scream","shocked","base","mid",trans="hpunch")
     call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!","smile","base","base","mid")
@@ -380,7 +378,8 @@ label hufflepuff_match_return:
     m "Well, off you go then."
     call cho_main("Thank you Professor...","smile","wink","base","mid")
 
-    call cho_walk("mid","leave",1.6)
+    # Cho leaves.
+    call cho_walk(speed=1.6, action="leave")
 
     stop music fadeout 1.0
     call give_reward(">New favours for Cho have been unlocked!","interface/icons/head/head_cho_2.png")

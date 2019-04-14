@@ -312,11 +312,11 @@ label hermione_talk:
                 "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                     "This job is only available during the day."
                     jump working_menu
-                
+
                 "{color=#858585}-Hidden-{/color}" if daytime and not cardgame_work and hg_gamble_slut_ITEM.unlocked:
                     "You haven't unlocked this feature yet"
                     jump working_menu
-                    
+
                 "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
                     jump job_5
                 "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:
@@ -355,15 +355,15 @@ label hermione_talk:
 
 
         # About Cho.
-        "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro_2_complete and not cho_unlocked and not cho_snape_talk_complete: # Before talking to Snape.
+        "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro_state == "talk_with_snape": # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
             jump hermione_talk
 
-        "-Solve the matter with Cho-" if cho_intro_2_complete and not cho_unlocked and cho_snape_talk_complete: # After talking to Snape.
+        "-Solve the matter with Cho-" if cho_intro_state in ["talk_with_hermione","nagotiate_with_hermione"]: # After talking to Snape.
             jump cho_hermione_talk
 
-        "-Ask Hermione to commentate the game-" if quidditch_commentator == "Ask Hermione":
-            $ quidditch_commentator = "Hermione would like to"
+        "-Ask Hermione to commentate the game-" if quidditch_commentator == "talk_with_hermione":
+            $ quidditch_commentator = "talk_with_cho"
             jump quidditch_commentator_event_2
 
 

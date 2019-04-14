@@ -35,8 +35,7 @@ label cho_intro_1:
 
 
     # Cho enters your office for the first time.
-    call play_sound("door")
-    call cho_walk("door","660",1.6)
+    call cho_walk("660", "base", 1.6, action="enter") # updated
 
     call cho_main("Good evening, Sir.",face="happy",xpos="mid",ypos="base")
 
@@ -257,7 +256,7 @@ label cho_intro_1:
         m "Certainly..."
 
         # Cho walks to the door and stops.
-        call cho_walk("mid","door",1.6)
+        call cho_walk("door", "base", 1.6) # Updated
         pause.8
         call cho_chibi("stand","door","base")
         with d3
@@ -304,7 +303,7 @@ label cho_intro_1:
         call her_main("...","annoyed","angryL")
 
         # Cho walks to the door and stops.
-        call cho_walk("mid","door",2.5)
+        call cho_walk("door", "base", 2.5) # Updated
         pause.8
         call cho_chibi("stand","door","base")
         with d3
@@ -362,7 +361,7 @@ label cho_intro_2:
     call cho_chibi("stand","door","base",flip=False)
     with d1
     pause.3
-    call cho_walk("door","desk",2.2)
+    call cho_walk("desk", "base", 2.2) # Updated
     pause.2
 
     call cho_main("I hate her!","scream","closed","angry","mid",xpos="mid",ypos="base",trans="hpunch")
@@ -406,7 +405,7 @@ label cho_intro_2:
     call cho_main("Have a nice evening, Professor.","smile","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk("desk","leave",2.2)
+    call cho_walk(speed=2.2, action="leave") # Updated
 
     m "I better talk to Hermione about this..."
     m "Or Snape first. Maybe he can help me more."
@@ -609,8 +608,8 @@ label cho_hermione_talk:
     call her_main("",xpos="mid",ypos="base",trans="fade")
 
     # Intro
-    if not cho_hermione_talk_intro:
-        $ cho_hermione_talk_intro = True
+    if cho_intro_state == "talk_with_hermione":
+        $ cho_intro_state = "nagotiate_with_hermione"
 
         m "I got some word about you that needs to be addressed..."
         call her_main("About what? Am I in trouble for anything?","soft","wide_stare")
@@ -804,8 +803,7 @@ label cho_hermione_talk:
         pause.5
 
     # Cho enters the office.
-    call play_sound("door")
-    call cho_walk("door","mid",1.6)
+    call cho_walk("mid", "base", 1.6, action="enter") # Updated
 
     call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid",xpos="base",ypos="base")
     call her_main("","normal","closed",xpos="450",ypos="base")
@@ -854,7 +852,7 @@ label cho_hermione_talk:
     call cho_main("Good day, Professor.","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk("mid","leave",1.6)
+    call cho_walk(speed=1.6, action="leave") # Updated
 
     call bld
     m "That went better than expected."
@@ -862,9 +860,11 @@ label cho_hermione_talk:
     # You can now summon Cho Chang to your office.
     stop music fadeout 1.0
 
+    $ cho_intro_state = "complete"
     $ cho_unlocked = True
     call give_reward(">You've unlocked the ability to summon Cho to your office.","interface/icons/head/head_cho_1.png")
     $ achievement.unlock("unlockcho", True)
+
     # End of Intro.
     $ hermione_busy = True
     $ cho_busy = True

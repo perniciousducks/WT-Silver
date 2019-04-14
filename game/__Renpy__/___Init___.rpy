@@ -44,12 +44,12 @@ init -2:
 
 
 
-    transform genie_walk(x,x2):
+    transform genie_walk_trans(x,x2):
         xpos x
         ypos 190
         linear genie_speed xpos x2 # linear
 
-    transform snape_walk(x,x2):
+    transform snape_walk_trans(x,x2):
         xpos x
         ypos 210
         linear snape_speed xpos x2 # linear
@@ -59,12 +59,12 @@ init -2:
         ypos 250
         linear hermione_speed xpos x2 # linear
 
-    transform susan_walk(x,x2):
+    transform susan_walk_trans(x,x2):
         xpos x
         ypos 250
         linear susan_speed xpos x2 # linear
 
-    transform cho_walk(x,x2):
+    transform cho_walk_trans(x, x2, y, y2):
         xpos x
-        ypos 250
-        linear cho_speed xpos x2 # linear
+        ypos y
+        linear cho_speed xpos x2 ypos y2 # linear

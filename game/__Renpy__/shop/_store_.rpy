@@ -64,7 +64,7 @@ label store_chit_chat:
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
 
-    elif cho_snape_talk_complete and not quidditch_book_1_ITEM.unlocked:
+    elif cho_intro_state not in ["event_1","event_2","talk_with_snape"] and not quidditch_book_1_ITEM.unlocked: # After talking to Snape about Cho.
         m "Boys..."
         twi "Hello again mr Dumbledore sir..."
         ger "What can we do for you?"

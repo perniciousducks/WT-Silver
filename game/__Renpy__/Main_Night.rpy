@@ -166,8 +166,8 @@ if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
 
 
 # Cho Events.
-if cho_intro_1_complete and not cho_intro_2_complete: # Happens right after intro.
-    $ cho_intro_2_complete = True
+if cho_intro_state == "event_2": # Happens right after intro.
+    $ cho_intro_state = "talk_with_snape"
     jump cho_intro_2
 if quidditch_match_in_progress:
     $ quidditch_match_in_progress = False

@@ -106,7 +106,7 @@ screen puzzle_board:
 
     use close_button(close_var=lambda : -1)
 
-    if puzzle_tries > 300:
+    if puzzle_tries > 150:
         imagebutton:
             xpos 240
             ypos 100

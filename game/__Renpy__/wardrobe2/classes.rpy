@@ -114,12 +114,12 @@ init python:
                 
                 # Add body to sprite list
                 body = char.get_bodyparts()
-                for i in xrange(0, len(body)):
+                for i in xrange(len(body)):
                     item = [body[i][0], body[i][1]]
                     sprite_list.append(item)
                 
                 # Add clothing to sprite list
-                for i in xrange(0, len(self.group)):
+                for i in xrange(len(self.group)):
                     item = [self.group[i], char.clothing[self.group[i].type][1]]
                     sprite_list.append(item)
                     sprite_list.append([self.group[i].get_skin(), 5])
@@ -217,7 +217,7 @@ init python:
                     self.color.append([255, 255, 255, 255])
                     
             self.color_default = [] # DO NOT DELETE !!!
-            for i in xrange(0, len(self.color)):
+            for i in xrange(len(self.color)):
                 self.color_default.append(self.color[i])
                 
             if self.layers != len(self.color):
@@ -255,7 +255,7 @@ init python:
                 
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload
             layers = []
-            for i in xrange(0, self.layers):
+            for i in xrange(self.layers):
                 layers.append(self.get_imagelayer(i))
             layers.append(self.extralayer)
             layers.append(self.outline)
@@ -314,7 +314,7 @@ init python:
             self.armfix_L = []
             self.armfix_R = []
             if self.armfix:
-                for layer in xrange(0, self.layers):
+                for layer in xrange(self.layers):
                     if renpy.exists(self.imagepath+pose+str(layer)+"_armL.png"):
                         self.armfix_L.append(self.imagepath+pose+str(layer)+"_armL.png")
                         
@@ -346,7 +346,7 @@ init python:
             self.cached = False
             
         def reset_color(self):
-            for i in xrange(0, len(self.color)):
+            for i in xrange(len(self.color)):
                 self.color[i] = self.color_default[i]
             self.sprite_ico.cached = False
             self.cached = False
@@ -393,7 +393,7 @@ init python:
             
             # Add armfix with proper colors
             if self.armfix_L > 0:
-                for i in xrange(0, len(self.armfix_L)):
+                for i in xrange(len(self.armfix_L)):
                     armL = Composite(
                            (1010, 1200),
                            (0,0), armL,

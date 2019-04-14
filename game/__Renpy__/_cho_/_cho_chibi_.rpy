@@ -1,5 +1,5 @@
 ### cho CHIBI ###
-label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False):
+label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):
     hide screen cho_stand
 
     if xpos != cho_chibi_xpos:
@@ -43,6 +43,9 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         else:
             $ cho_chibi_flip = 1
             show screen cho_stand
+            
+    if animation != False:
+        $ cho_chibi_animation = animation
 
     return
 

@@ -173,17 +173,17 @@ label flying_cho_chibi(flying=True):
 
 label update_cho_chibi_uniform:
     #Clothing
-    if cho_class.get_cloth("top"):
+    if cho_class.get_worn("top"):
         $ cho_chibi_top       = "characters/cho/chibis/cc_cloth_shirt_r.png"
     else:
         $ cho_chibi_top       = "characters/cho/chibis/blank.png"
 
-    if cho_class.get_cloth("bottom"):
+    if cho_class.get_worn("bottom"):
         $ cho_chibi_bottom    = "characters/cho/chibis/cc_cloth_skirt.png"
     else:
         $ cho_chibi_bottom    = "characters/cho/chibis/blank.png"
 
-    if cho_class.get_cloth("robe"):
+    if cho_class.get_worn("robe"):
         $ cho_chibi_robe      = "characters/cho/chibis/cc_cloth_robe_r.png"
     else:
         $ cho_chibi_robe      = "characters/cho/chibis/blank.png"
@@ -191,7 +191,7 @@ label update_cho_chibi_uniform:
     $ cho_chibi_stand         = "ch_cho blink"
 
     #Main Chibi
-    if cho_class.get_cloth("bottom") or cho_class.get_cloth("stockings"): #With Shoes.
+    if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"): #With Shoes.
         $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
         $ cho_chibi_walk_shoes    = "ch_cho walk_shoes"
     else:

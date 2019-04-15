@@ -214,6 +214,10 @@ label change_quidditch_tactics:
     call update_gen_chibi # Reset Chibi.
     call gen_chibi("stand","desk","base")
     with fade
+    
+    $ cho_outift_last.save() # Temporarily save last worn clothes
+    
+    $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
 
     label demonstrate_quidditch_tactics:
 
@@ -239,10 +243,56 @@ label change_quidditch_tactics:
 
         "\"Customize quidditch outfit.\"" if cho_flying == False:
             call cho_main(xpos="wardrobe",ypos="base", face="neutral")
-            call expression 't_wardrobe' pass (return_label="change_quidditch_tactics", char_label="cho_main") # TODO:  Only show Quidditch items. Lock recolo options. Lock outfit & studio category tabs.
+            menu:
+                "Standard":
+                    m "Wear your classic quidditch outfit."
+                    cho "Sure let me get changed"
+                    $ cho_class.equip(cho_outfit_quidditch1)
+                    $ cho_outfit_quidditch.save()
+                "Breezy":
+                    m "Maybe you could wear shorts instead.."
+                    m "And don't wear the robe"
+                    cho "Okay.."
+                    $ cho_class.equip(cho_outfit_quidditch2)
+                    $ cho_outfit_quidditch.save()
+                "Risky":
+                    m "Could you put your robe back on?"
+                    cho "Sure."
+                    m "But remove your top and bottoms first."
+                    cho "What?!"
+                    cho "You expect me to go out there with just my underwear and a robe?!"
+                    m "Yes, thats exactly what I want."
+                    cho "..."
+                    m "Will you do that or not?"
+                    cho "Fine.."
+                    cho "But if it doesn't help Ravenclaw win the cup I'm calling this whole thing off!"
+                    $ cho_class.equip(cho_outfit_quidditch3)
+                    $ cho_outfit_quidditch.save()
+                "Lewd":
+                    m "..."
+                    cho "....."
+                    cho "...........?"
+                    m "You know what, why don't you wear just the robe this time."
+                    cho "But.."
+                    m "I helped you win last time, didn't I?"
+                    m "You should have more faith in your trainer."
+                    cho "... I guess you are right."
+                    cho "Let me get changed."
+                    $ cho_class.equip(cho_outfit_quidditch4)
+                    $ cho_outfit_quidditch.save()
+                    m "(This is great!)"
+                    cho "Could you please stop oggling me and focus on the Quidditch Cup, sir?"
+                    cho "(I can't believe I agreed to this..)"
+                    m "*ahem* Yes, of course."
+                "Custom":            
+                    call cho_main(xpos="mid",ypos="base", face="neutral")
+                    call t_wardrobe_quidditch() # Open quidditch wardrobe
+                    $ cho_outfit_quidditch.save()
+                    call cho_main(xpos="wardrobe",ypos="base", face="neutral")
 
         "\"That's enough.\"" if cho_flying == False:
             cho "Very well, [cho_genie_name]."
+            $ cho_class.equip(cho_outift_last) # Equip last worn clothes
             call cho_chibi("stand","mid","base")
             call gen_chibi("sit_behind_desk")
             call cho_main(face="happy",xpos="base",ypos="base",trans="fade")

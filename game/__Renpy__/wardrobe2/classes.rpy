@@ -103,6 +103,14 @@ init python:
                 if not clothing[key][0] == None:
                     clothes.append(clothing[key][0].clone())
             return outfit_class(name=self.name, desc=self.desc, unlocked=self.unlocked, group=clothes)
+            
+        def save(self):
+            self.group = []
+            clothing = get_character_object(active_girl).clothing
+            for key in clothing:
+                if not clothing[key][0] == None:
+                    self.group.append(clothing[key][0])
+            return
                 
         def get_image(self):
             if not self.cached:
@@ -279,26 +287,32 @@ init python:
                 self.outline = self.imagepath+"outline.png"
                 if renpy.exists(self.imagepath+"skin.png"):
                     self.skinlayer = self.imagepath+"skin.png"
+                else:
+                    self.skinlayer = "characters/dummy.png"
                 if renpy.exists(self.imagepath+"extra.png"):
                     self.extralayer = self.imagepath+"extra.png"
+                else:
+                    self.extralayer = "characters/dummy.png"
                 if renpy.exists(self.imagepath+"overlay.png"):
                     self.overlayer = self.imagepath+"overlay.png"
+                else:
+                    self.overlayer = "characters/dummy.png"
                 self.set_armfix()
                 self.cached = False
                 return None
-            if renpy.exists(self.imagepath+pose+"_0.png"):
+            if renpy.exists(self.imagepath+"/"+pose+"/0.png"):
                 self.pose = pose
-                self.outline = self.imagepath+pose+"_outline.png"
-                if renpy.exists(self.imagepath+pose+"_skin.png"):
-                    self.skinlayer = self.imagepath+pose+"_skin.png"
+                self.outline = self.imagepath+"/"+pose+"/outline.png"
+                if renpy.exists(self.imagepath+"/"+pose+"/skin.png"):
+                    self.skinlayer = self.imagepath+"/"+pose+"/skin.png"
                 else:
                     self.skinlayer = "characters/dummy.png"
-                if renpy.exists(self.imagepath+pose+"_extra.png"):
-                    self.extralayer = self.imagepath+pose+"_extra.png"
+                if renpy.exists(self.imagepath+"/"+pose+"/extra.png"):
+                    self.extralayer = self.imagepath+"/"+pose+"/extra.png"
                 else:
                     self.extralayer = "characters/dummy.png"
-                if renpy.exists(self.imagepath+pose+"_overlay.png"):
-                    self.overlayer = self.imagepath+pose+"_overlay.png"
+                if renpy.exists(self.imagepath+"/"+pose+"/overlay.png"):
+                    self.overlayer = self.imagepath+"/"+pose+"/overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
                 self.set_armfix(True)
@@ -309,7 +323,7 @@ init python:
         def set_armfix(self, anim=False):
             pose = self.pose
             if anim:
-                pose += "_"
+                pose += "/"+self.pose+"/"
                 
             self.armfix_L = []
             self.armfix_R = []
@@ -323,9 +337,13 @@ init python:
                         
                 if renpy.exists(self.imagepath+pose+"outline_armL.png"):
                     self.armfix_Lx = self.imagepath+pose+"outline_armL.png"
+                else:
+                    self.armfix_Lx = ""
                     
                 if renpy.exists(self.imagepath+pose+"outline_armR.png"):
                     self.armfix_Rx = self.imagepath+pose+"outline_armR.png"
+                else:
+                    self.armfix_Rx = ""
             return
 
         def get_matrixcolor(self, layer):
@@ -352,7 +370,7 @@ init python:
             self.cached = False
         
         def get_imagelayer(self, layer):
-            return self.imagepath+str(layer)+".png" if self.pose == "" else self.imagepath+self.pose+"_"+str(layer)+".png"
+            return self.imagepath+str(layer)+".png" if self.pose == "" else self.imagepath+"/"+self.pose+"/"+str(layer)+".png"
 
         def get_imagelayer_color(self, layer):
             return im.MatrixColor(self.get_imagelayer(layer), self.get_matrixcolor(layer) * im.matrix.opacity(self.get_alpha(layer)))
@@ -569,7 +587,10 @@ init python:
         def animation(self, anim):
             for key, value in self.clothing.iteritems():
                 if self.clothing[key][0]:
-                    self.clothing[key][0].set_pose(anim)
+                    if self.clothing[key][0].set_pose(anim) == False:
+                        self.clothing[key][4] = True
+                    else:
+                        self.clothing[key][4] = False
             self.set_pose(pose=anim)
             self.cached = False
             
@@ -607,7 +628,7 @@ init python:
                     if not key == "hair":
                         self.clothing[key][0] = None
             else:
-                for arg in args.iteritems():
+                for arg in args:
                     try:
                         self.clothing[str(arg)][0] = None
                     except KeyError:

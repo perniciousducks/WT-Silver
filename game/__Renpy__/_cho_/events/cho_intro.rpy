@@ -109,8 +109,8 @@ label cho_intro_1:
     m "Granger? What did she do this time?"
     g9 "I promise you, I'll give her a good, ole-fashioned spanking next time I see her."
     call cho_main("Spanking?", "angry", "base", "sad", "down")
-    call cho_main("And why would you do that, Professor?", "annoyed", "suspicious", "raised", "downR")
-    call cho_main("(He really must be old... {w} They probably did stuff like that all the time back in the day...)", "upset", "suspicious", "base", "downR")
+    call cho_main("And why would you do that, Professor?", "annoyed", "narrow", "raised", "downR")
+    call cho_main("(He really must be old... {w} They probably did stuff like that all the time back in the day...)", "upset", "narrow", "base", "downR")
     call cho_main("Well Sir, it's about a new movement of hers...", "soft", "angry", "raised", "mid")
     m "The \"Men's rights movement\"? I'm familiar."
     call cho_main("Not that one Sir...{w=0.5} The other one...", "open", "angry", "raised", "L")
@@ -125,7 +125,7 @@ label cho_intro_1:
     m "(Quidditch? What a stupid name for a sport.)"
     call cho_main("The movements' goal is to grant a larger portion of our female students the ability to play.", "open", "angry", "base", "down")
     m "And...{w} that's a bad thing?"
-    call cho_main("Her way of going about to achieve it is...", "open", "suspicious", "angry", "R")
+    call cho_main("Her way of going about to achieve it is...", "open", "narrow", "angry", "R")
     call cho_main("Granger is trying to separate us into male and female teams.", "angry", "angry", "sad", "mid")
     call cho_main("She believes it would put girls on an equal playing field against other girl teams.", "open", "closed", "sad", "mid")
     call cho_main("But what she’s forgetting is that all the female players who made it into a team are already considered a valuable asset... or they wouldn’t be there!", "open", "angry", "angry", "R")
@@ -134,7 +134,7 @@ label cho_intro_1:
     m "Doesn’t sound like the worst idea honestly..."
     call cho_main("Sir... I’ve trained all my life to be where I’m at.", "open", "angry", "raised", "mid")
     call cho_main("Just as hard as all the other great female Quidditch players of history!", "scream", "closed", "angry", "mid")
-    call cho_main("They played side by side with men... Earning their place amongst the best! It never mattered what gender they were.", "angry", "suspicious", "angry", "down")
+    call cho_main("They played side by side with men... Earning their place amongst the best! It never mattered what gender they were.", "angry", "narrow", "angry", "down")
     call cho_main("And to be shoved aside and forced to play alongside a collection of mediocre amateurs... I won't let that happen!", "angry", "closed", "angry", "down")
     call cho_main("It would undermine the whole sport, and I’d get even less attention as one of the few girls in the league...", "open", "angry", "angry", "down")
     m "Ah, so that’s where the problem lies..."
@@ -207,7 +207,7 @@ label cho_intro_1:
         call her_main("You know exactly what I mean... I heard about how you were flaunting those...things of yours at Seamus Finnigan.","crooked_smile","glanceL")
         with hpunch
         call cho_main("Things?", "angry", "wide", "base", "L")
-        call cho_main("Oh, miss perfect Hermione Granger. Afraid of using the word tits...", "horny", "suspicious", "raised", "downR")
+        call cho_main("Oh, miss perfect Hermione Granger. Afraid of using the word tits...", "horny", "narrow", "raised", "downR")
         call her_main("Cho!","scream","wide", cheeks="blush")
         call her_main(".{w=0.3}.{w=0.3}.","mad","worried", cheeks="blush")
         call cho_main("And so what? What’s wrong with being confident about your body... you should try it some time... You might even get a boyfriend one day...", "soft", "wide", "base", "L")
@@ -242,7 +242,7 @@ label cho_intro_1:
 
         g4 "*Argh!* {size=-4}You whores!{/size}"
 
-        call cho_main("Sir?","soft","suspicious","base","mid",ypos="head")
+        call cho_main("Sir?","soft","narrow","base","mid",ypos="head")
 
         m "(Shit...)"
 
@@ -262,7 +262,7 @@ label cho_intro_1:
         with d3
         pause.8
 
-        call cho_main("{size=-4}You have fun now... getting at that wand of his...{/size}","angry","suspicious","angry","L",ypos="head")
+        call cho_main("{size=-4}You have fun now... getting at that wand of his...{/size}","angry","narrow","angry","L",ypos="head")
         call her_main("Tzzz-...","clench","angryCl",ypos="head")
 
 
@@ -270,7 +270,7 @@ label cho_intro_1:
     else:
         m "Ladies, no arguing now... you’re in the headmasters office, surely there’s a time and place."
         call her_main("...","annoyed","glanceL")
-        call cho_main("*Hmph* There’s no argument here...","angry","suspicious","angry","L")
+        call cho_main("*Hmph* There’s no argument here...","angry","narrow","angry","L")
         call cho_main("I’m sure that Hermione’s reasons for interrupting are totally valid...","upset","closed","angry","mid")
         call her_main("And I’m sure Cho wasn’t just coming here to flaunt her body again...","soft","closed")
         call cho_main("What’s that supposed to mean?!?","scream","base","base","mid",trans="hpunch")
@@ -288,7 +288,7 @@ label cho_intro_1:
 
         gen "*Z{size=-1}zz{size=-1}zzz{size=-1}zzzz{/size}*"
         show screen hermione_main
-        call cho_main("Well I’m sure that your reasons for being here are totally legitimate...","soft","suspicious","base","L",trans="hpunch")
+        call cho_main("Well I’m sure that your reasons for being here are totally legitimate...","soft","narrow","base","L",trans="hpunch")
         gen "*Z{size=-1}zz{size=-1}zzz{size=-1}zzzzz{/size}*"
         call her_main("They are, for a fact. Completely legitimate... you tell her Professor!","clench","angryL",trans="hpunch")
         gen "*Z{size=-1}zz{size=-1}zzz{size=-1}zzzzzz{/size}*"
@@ -296,10 +296,10 @@ label cho_intro_1:
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don’t I?","base","base")
         m "Of course you-{w=0.6}{nw}"
-        call cho_main("Always? So you \"do\" come here often!","smile","suspicious","base","L")
+        call cho_main("Always? So you \"do\" come here often!","smile","narrow","base","L")
         call her_main("So what...","angry","angryCl")
         m "Ladies, I think it’s time to-{w=0.8}{nw}"
-        call cho_main("Don’t worry about it Sir, I was just about to leave anyway...","soft","suspicious","angry","mid")
+        call cho_main("Don’t worry about it Sir, I was just about to leave anyway...","soft","narrow","angry","mid")
         call her_main("...","annoyed","angryL")
 
         # Cho walks to the door and stops.
@@ -371,31 +371,31 @@ label cho_intro_2:
     g9 "I'm so glad to see you. Is there something I can-"
 
     call play_music("hitman")
-    call cho_main("Cut the crap, Professor!{p=0.6}I know you've told her!","soft","suspicious","angry","mid")
+    call cho_main("Cut the crap, Professor!{p=0.6}I know you've told her!","soft","narrow","angry","mid")
     g4 "{size=-4}Please don't hurt me.{/size}"
     call cho_main("How could you have done this?{p=0.6}Sending this dim-witted Gryffindor tramp after me?","open","angry","angry","mid")
     g4 "W-who?"
     call cho_main("Granger!","scream","closed","angry","mid",trans="hpunch")
     g4 "Aaa-h!{p=0.5}{nw}" # Girly scream
     call cho_main("Gryffindor's role model student.","angry","angry","angry","mid")
-    call cho_main("She's out there spreading mean rumours about me!","open","suspicious","base","R")
+    call cho_main("She's out there spreading mean rumours about me!","open","narrow","base","R")
     m "How mean are we talking?"
-    call cho_main("The worst kind! That I'm cheating at Quidditch!","angry","suspicious","angry","down")
-    call cho_main("How am I cheating, Professor? Ravenclaw is always in last place?!","soft","suspicious","sad","downR")
-    call cho_main("Not to mention that she's told everyone that I'm whoring myself out to my other classmates, and even my teachers!","open","suspicious","angry","L")
+    call cho_main("The worst kind! That I'm cheating at Quidditch!","angry","narrow","angry","down")
+    call cho_main("How am I cheating, Professor? Ravenclaw is always in last place?!","soft","narrow","sad","downR")
+    call cho_main("Not to mention that she's told everyone that I'm whoring myself out to my other classmates, and even my teachers!","open","narrow","angry","L")
     call cho_main("I did none of that, Professor! None!","scream","closed","angry","mid",trans="hpunch")
     call cho_main("And she still won't lay off her stupid equality movement thing!","angry","angry","angry","mid")
     m "You need to calm down, girl."
-    call cho_main("{size=-4}When I'm out of here I'm going to rip that bitch's head off...{/size}","quiver","suspicious","angry","downR")
+    call cho_main("{size=-4}When I'm out of here I'm going to rip that bitch's head off...{/size}","quiver","narrow","angry","downR")
     g4 "(Yikes!)"
     m "I could hear that."
     call cho_main("Good. Then you already know what I'm willing to do if this continues...","soft","closed","base","mid")
-    call cho_main("If you can't stop her, Professor. Then I will!","open","suspicious","base","mid")
-    call cho_main("And rest assured that I will end her!","soft","suspicious","angry","mid")
+    call cho_main("If you can't stop her, Professor. Then I will!","open","narrow","base","mid")
+    call cho_main("And rest assured that I will end her!","soft","narrow","angry","mid")
     m "I'd prefer you didn't."
-    call cho_main("Don't even think about calling me to your office again until you've dealt with that skank!","open","suspicious","angry","mid")
+    call cho_main("Don't even think about calling me to your office again until you've dealt with that skank!","open","narrow","angry","mid")
     call cho_main("Do I make myself clear, Sir?","scream","closed","angry","mid",trans="hpunch")
-    call cho_main("","angry","suspicious","angry","mid")
+    call cho_main("","angry","narrow","angry","mid")
     m "I suppose..."
 
     # Back to cheerful.
@@ -807,16 +807,16 @@ label cho_hermione_talk:
 
     call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid",xpos="base",ypos="base")
     call her_main("","normal","closed",xpos="450",ypos="base")
-    call cho_main("Granger...","soft","suspicious","angry","L")
+    call cho_main("Granger...","soft","narrow","angry","L")
     call her_main("Chang...","annoyed","angryL")
     m "Go on, girl. Tell her."
     call cho_main("Tell me what?","smile","angry","angry","mid")
     call her_main("...","annoyed","ahegao_raised")
     call her_main("About my \"Quidditch equality movement\"...","normal","closed")
-    call cho_main("Did our Professor finally convince you what a terrible idea it would be?","soft","suspicious","angry","mid")
+    call cho_main("Did our Professor finally convince you what a terrible idea it would be?","soft","narrow","angry","mid")
     m "Actually, I still think granting more people the ability to-"
-    call cho_main("Please be quiet, Sir.{p=0.6}I’d like to hear it from her.","pout","suspicious","angry","mid")
-    call cho_main("I'm going to enjoy this!","horny","suspicious","base","L")
+    call cho_main("Please be quiet, Sir.{p=0.6}I’d like to hear it from her.","pout","narrow","angry","mid")
+    call cho_main("I'm going to enjoy this!","horny","narrow","base","L")
     call her_main("...","annoyed","angry")
     call her_main("*Sigh*{p=0.6}I will end my movement. And I won't interfere with Quidditch again...","open","closed") #[Looking bored]
     call cho_main("This is amazing! I feel as if it's my birthday!","smile","base","base","mid")
@@ -847,7 +847,7 @@ label cho_hermione_talk:
     call cho_main("Thank you for getting her off my back, Professor.","base","base","base","mid")
     m "No problem."
     call cho_main("Now, if you’ll excuse me. I'm expected back on the Quidditch field.","open","closed","base","mid")
-    call cho_main("Just call me whenever I can be of service.","soft","suspicious","base","mid")
+    call cho_main("Just call me whenever I can be of service.","soft","narrow","base","mid")
     g9 "I will."
     call cho_main("Good day, Professor.","smile","base","base","mid")
 

@@ -86,15 +86,15 @@ label use_quidditch_skirt_1:
         cho "A skirt?!"
         call cho_main("I couldn't do that!","scream","wide","angry","mid")
         call cho_main("Everyone would be able to see straight up it!","quiver","wide","angry","downR")
-        call cho_main("Not to mention all the other player-","horny","suspicious","sad","R")
-        call cho_main("Oh...","pout","suspicious","angry","mid")
+        call cho_main("Not to mention all the other player-","horny","narrow","sad","R")
+        call cho_main("Oh...","pout","narrow","angry","mid")
         call cho_main("So that's your plan then? For me to distract \'the enemy\' with some upskirt?","pout","angry","angry","mid")
         m "If you don't think it would work-"
-        call cho_main("Of course it would work! Those \'boys\' are all a bunch of perverts...","open","suspicious","angry","R")
+        call cho_main("Of course it would work! Those \'boys\' are all a bunch of perverts...","open","narrow","angry","R")
         call cho_main("But I can't go and play a game with a skirt on!","horny","shocked","sad","down")
         call cho_main("All my friends would see!","annoyed","shocked","sad","mid")
         m "They'll forget all about it after you defeat you have won!"
-        call cho_main("I highly doubt that...","upset","suspicious","sad","downR")
+        call cho_main("I highly doubt that...","upset","narrow","sad","downR")
         m "Then just tell them it was the only way to win. I'm sure they'll understand."
         call cho_main("You... might be right...","open","base","sad","downR")
         call cho_main("Alright! I'll do it!","smile","base","base","mid")
@@ -120,22 +120,22 @@ label use_quidditch_skirt_2:
     if "skirt_2" not in quid_outfit_intro:
         $ quid_outfit_intro.append("skirt_2")
         m "Seeing as how the skirt was such a success, how about we up the ante a bit?"
-        call cho_main("How do you mean?","open","suspicious","raised","mid")
+        call cho_main("How do you mean?","open","narrow","raised","mid")
         m "Well, that skirt seemed a little long to me..."
         m "If you took a few inches off of it, maybe the other players wouldn't be able to keep their eyes off of you."
-        call cho_main("Well I suppose I could take another inch or two off...","quiver","suspicious","sad","downR")
-        call cho_main("But we better win the next practice against \"Hufflepuff\"!","scream","suspicious","angry","mid")
+        call cho_main("Well I suppose I could take another inch or two off...","quiver","narrow","sad","downR")
+        call cho_main("But we better win the next practice against \"Hufflepuff\"!","scream","narrow","angry","mid")
         m "Hey, the games up to you... All I can give is pointers."
-        call cho_main("Hmph... That's not what a coach is supposed to say!","pout","suspicious","angry","mid")
+        call cho_main("Hmph... That's not what a coach is supposed to say!","pout","narrow","angry","mid")
         call cho_main("You're supposed to believe in me!","open","closed","angry","mid")
         m "You've gotta show some commitment to the game first."
         call cho_main("commitment...","angry","shocked","angry","mid")
-        call cho_main("Isn't wearing a skirt enough?","pout","suspicious","angry","R")
+        call cho_main("Isn't wearing a skirt enough?","pout","narrow","angry","R")
         m "For now..."
-        call cho_main("What's that supposed to mean?","upset","suspicious","angry","mid")
+        call cho_main("What's that supposed to mean?","upset","narrow","angry","mid")
         m "It means stop being such a prude and shorten that skirt!"
         call cho_main("...","pout","base","sad","R")
-        call cho_main("fine...","annoyed","suspicious","sad","down")
+        call cho_main("fine...","annoyed","narrow","sad","down")
 
     # Repeat
     else:
@@ -146,10 +146,10 @@ label use_quidditch_skirt_2:
         m "For now... They'll probably get bored of that skirt after a while..."
         call cho_main("They will not!","scream","shocked","angry","mid")
         m "Are you going to let me coach you or not?"
-        call cho_main("...","pout","suspicious","angry","R")
-        call cho_main("How much shorter?","horny","suspicious","sad","mid")
+        call cho_main("...","pout","narrow","angry","R")
+        call cho_main("How much shorter?","horny","narrow","sad","mid")
         m "Just a few inches..."
-        call cho_main("Alright...","base","suspicious","sad","down")
+        call cho_main("Alright...","base","narrow","sad","down")
 
     $ cho_quidditch_bottom = "skirt_short" # For testing.
 

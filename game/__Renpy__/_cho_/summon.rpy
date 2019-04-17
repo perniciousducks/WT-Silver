@@ -24,7 +24,7 @@ label summon_cho:
                     #call cho_chit_chat
                     jump cho_talk
                 else:
-                    cho "I have nothing to say to you, [cho_genie_name]..."
+                    call cho_main("I have nothing to say to you, [cho_genie_name]...",face="annoyed")
                     jump cho_requests
             else:
                 jump cho_talk
@@ -35,11 +35,11 @@ label summon_cho:
             if cho_mood != 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
-                    cho "No.{w} And I don't want to hear of it right now, Sir."
+                    call cho_main("No.{w} And I don't want to hear of it right now, Sir.",face="angry")
                 else:
-                    cho "I don't think I'm ready yet, Sir."
+                    call cho_main("I don't think I'm ready yet, Sir.",face="annoyed")
                 m "Fair enough..."
-                call nar(">Cho is still mad at you.")
+                call nar(">Cho is still upset with you.")
                 jump cho_requests
             jump cho_training_menu
 
@@ -52,7 +52,7 @@ label summon_cho:
             if not daytime:
                 call nar(">You can only do that during the day.")
             elif cho_mood != 0:
-                cho "I'm sorry, [cho_genie_name]. But I don't feel like playing today."
+                call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like playing today.","soft","base","sad","down")
             else:
                 call nar(">You can't do that right now.")
             jump cho_requests
@@ -120,7 +120,10 @@ label summon_cho:
 
         # Dismiss
         "-Dismiss Her-":
-            call cho_main("Good bye, [cho_genie_name].","smile","base","base","R")
+            if cho_mood != 0:
+                call cho_main("Good bye, [cho_genie_name].",face="annoyed")
+            else:
+                call cho_main("Good bye, [cho_genie_name].",face="happy")
 
             jump end_cho_event
 
@@ -213,40 +216,50 @@ label cho_talk:
         # Naming
         "\"Address me only as\"":
             menu:
+                "\"Professor\"":
+                    $ cho_genie_name = "Professor"
                 "\"Coach\"":
                     $ cho_genie_name = "Coach"
-                "\"Sergeant\"":
-                    $ cho_genie_name = "Sergeant"
-                "\"Captain\"":
-                    $ cho_genie_name = "Captain"
+                "\"Old Man\"":
+                    $ cho_genie_name = "Old Man"
+                "\"Daddy\"":
+                    $ cho_genie_name = "Daddy"
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)")
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
                         $ cho_genie_name = "Sir"
                     $ cho_genie_name = temp_name
-                    cho "Do I really have to?"
-
+                    call cho_main("If I really have to...",face="annoyed")
+                    jump cho_talk
                 "\"Never mind\"":
-                    pass
+                    jump cho_talk
 
+            call cho_main("Of course, [cho_genie_name]...",face="neutral")
             jump cho_talk
 
         "\"From now on I will refer to you as\"":
             menu:
                 "\"Miss Chang\"":
                     $ temp_name = "Miss Chang"
-                    jump cho_requests
+                "\"Princess\"":
+                    $ temp_name = "Princess"
+                "\"Boy\"":
+                    $ temp_name = "Boy"
+                "\"Miss Chang\"":
+                    $ temp_name = "Miss Chang"
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)")
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
                         $ temp_name = "Miss Chang"
                     $ cho_name = temp_name
-                    jump cho_requests
+                    call cho_main("If you say so, [cho_genie_name].",face="neutral")
+                    jump cho_talk
                 "\"Never mind\"":
-                    pass
+                    jump cho_talk
 
+            call cho_main("Very well,...",face="neutral")
             jump cho_talk
 
         "\"Never mind\"":

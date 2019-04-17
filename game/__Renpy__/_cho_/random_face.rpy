@@ -22,7 +22,7 @@ label set_cho_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif mouth in ["naughty","horny"]:
             $ temp_mouth    = renpy.random.choice(["quiver","horny","soft"])
         elif mouth in ["annoyed"]:
-            $ temp_mouth    = renpy.random.choice(["annoyed","quiver","pout"])
+            $ temp_mouth    = renpy.random.choice(["annoyed","pout"])
         elif mouth in ["disgusted"]:
             $ temp_mouth    = renpy.random.choice(["angry","upset"])
         elif mouth in ["angry"]:
@@ -34,13 +34,13 @@ label set_cho_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif eyes in ["happy"]:
             $ temp_eyes     = renpy.random.choice(["base"])
         elif eyes in ["naughty","horny"]:
-            $ temp_eyes     = renpy.random.choice(["base","suspicious"])
+            $ temp_eyes     = renpy.random.choice(["base","narrow"])
         elif eyes in ["annoyed"]:
-            $ temp_eyes     = renpy.random.choice(["base","closed","suspicious"])
+            $ temp_eyes     = renpy.random.choice(["base","closed","narrow"])
         elif eyes in ["disgusted"]:
-            $ temp_eyes     = renpy.random.choice(["base","suspicious"])
+            $ temp_eyes     = renpy.random.choice(["base","narrow"])
         elif eyes in ["angry"]:
-            $ temp_eyes     = renpy.random.choice(["angry","suspicious"])
+            $ temp_eyes     = renpy.random.choice(["angry","narrow"])
 
     if eyebrows != None:
         if eyebrows in ["neutral"]:
@@ -114,7 +114,7 @@ label cho_face_layers:
                            "base",
                            "closed",
                            "shocked",
-                           "suspicious",
+                           "narrow",
                            "wide",
                            "wink"
                            ]

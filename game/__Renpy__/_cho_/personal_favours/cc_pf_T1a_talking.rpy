@@ -66,7 +66,7 @@ label cc_pf_T1_talking_1:
     call cho_main("And I don’t see how this information would be of importance for my training.","open","wide","raised","downR")
     call cho_main("Why would it matter if- {w}Even if I did I'd-","soft","wide","base","down")
     g9 "So you don't have one?"
-    call cho_main("You are making me nervous, [cho_genie_name]. <3","horny","suspicious","sad","R")
+    call cho_main("You are making me nervous, [cho_genie_name]. <3","horny","narrow","sad","R")
     m "(So cute.{w=0.5} She's almost making me feel things...)"
     m "(Perhaps this is something I could push her further on...)"
 
@@ -74,7 +74,7 @@ label cc_pf_T1_talking_1:
     g9 "So, a girlfriend then?"
     call cho_main("!!!","angry","wide","raised","mid",trans="hpunch")
     call cho_main("No!","scream","closed","angry","mid",trans="hpunch")
-    call cho_main("","annoyed","suspicious","angry","mid")
+    call cho_main("","annoyed","narrow","angry","mid")
     m "(She doesn’t seem that keen on the subject, perhaps I could tell her...)"
 
     label get_cho_to_talk:
@@ -82,7 +82,7 @@ label cc_pf_T1_talking_1:
     menu:
         "\"It's important to open up to your headmaster.\"":
             m "Emphasis on \"opening up\"..."
-            call cho_main("I don't think that will be necessary, [cho_genie_name].","annoyed","suspicious","angry","mid")
+            call cho_main("I don't think that will be necessary, [cho_genie_name].","annoyed","narrow","angry","mid")
             m "There's a lot more to gather from discussing previous life choices than you might think."
             m "You get to learn a lot about the way someone has matured by previous experiences..."
             m "Like a first kiss, who it was with, and so on..."
@@ -91,7 +91,7 @@ label cc_pf_T1_talking_1:
             m "Ahem, yes.{w=0.5} Of course you are, don't you think so?"
             call cho_main("Well, my previous boyfriend didn't seem to think so...","open","base","raised","R")
             m "So you did have one?"
-            call cho_main("*Urgh*{w=0.8} Fine...{w=0.8} I'll tell you...","soft","suspicious","base","down")
+            call cho_main("*Urgh*{w=0.8} Fine...{w=0.8} I'll tell you...","soft","narrow","base","down")
 
             pass
 
@@ -99,24 +99,24 @@ label cc_pf_T1_talking_1:
             m "Swinging the other way, you know..."
             call cho_main("What?","angry","wide","base","mid")
             m "Some people like flicking the bean rather than rubbing a wand..."
-            call cho_main("Ugh, I never said I minded either way...","quiver","suspicious","sad","R")
+            call cho_main("Ugh, I never said I minded either way...","quiver","narrow","sad","R")
             m "So you have had a girlfriend?"
-            call cho_main("I'd rather not talk about it right now...","soft","suspicious","sad","mid")
+            call cho_main("I'd rather not talk about it right now...","soft","narrow","sad","mid")
             m "(Damn, maybe that's not the way to go about this, maybe instead I could tell her...)"
 
             jump get_cho_to_talk
 
         "\"Let me tell you something about my own previous relationships...\"":
-            call cho_main("Sir, I'd rather not hear a boring old tale about any of your old flames...","open","suspicious","base","R")
+            call cho_main("Sir, I'd rather not hear a boring old tale about any of your old flames...","open","narrow","base","R")
             g9 "Oh they weren't boring at all!"
-            call cho_main("Hmm?","annoyed","suspicious","base","mid")
+            call cho_main("Hmm?","annoyed","narrow","base","mid")
             g9 "They were very intimate..."
             call cho_main("???","annoyed","base","raised","mid")
             g4 "Very sexual!"
             call cho_main("!!!","annoyed","wide","base","mid")
             g9 "Lots of acrobatic stuff!"
             call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!","scream","closed","angry","mid",trans="hpunch")
-            call cho_main("(Gross!{w=0.5} Keep it to yourself...)","angry","suspicious","sad","R")
+            call cho_main("(Gross!{w=0.5} Keep it to yourself...)","angry","narrow","sad","R")
             m "I just wanted to expand my backstory a little bit...{w=0.5} What's so wrong with that..."
 
             jump get_cho_to_talk
@@ -127,7 +127,7 @@ label cc_pf_T1_talking_1:
     call cho_main("That year was the most fun I've ever had!","smile","base","base","mid")
     call cho_main("We should have this tourney every year, at least if you were to ask me!","open","closed","base","mid")
     g9 "(A cosplay tournament is what this school needs...)"
-    call cho_main("Sir that would be great!","smile","suspicious","base","mid")
+    call cho_main("Sir that would be great!","smile","narrow","base","mid")
     g4 "(Wait, wait!{w=0.8} A \"nude\" cosplay tournament!{w=0.6} Even better!)"
     call cho_main("And with new contesters every month! You've got to do this, Sir!","smile","base","base","mid")
     m "I'll think about it..."
@@ -147,13 +147,13 @@ label cc_pf_T1_talking_1:
     call cho_main("Anyway, Cedric even put his life at risk during the whole thing.","open","base","base","R")
     m "Oh you poor, poor thing..."
     m "I can see why you didn't want to mention him before then..."
-    call cho_main("Why?","soft","suspicious","raised","mid")
+    call cho_main("Why?","soft","narrow","raised","mid")
     m "He surely will be missed."
-    call cho_main("Sir?","angry","suspicious","base","mid")
+    call cho_main("Sir?","angry","narrow","base","mid")
     m "Died just the way he lived,...{w} as a plot device."
     call cho_main("Sir, Cedric isn't dead.","open","angry","angry","mid")
     m "Oh...{w} he's not?"
-    call cho_main("No!","annoyed","suspicious","angry","mid")
+    call cho_main("No!","annoyed","narrow","angry","mid")
     m "I could've sworn I read that somewhere..."
     m "Are you sure he's still around?{w} What if he \"did\" die, but then he returned from the dead?"
     g4 "For all you know he could be a vampire!"
@@ -168,13 +168,13 @@ label cc_pf_T1_talking_1:
     call cho_main("That was one of the reasons...","soft","base","base","downR")
     call cho_main("There is also the fact that he's on the Hufflepuff Quidditch team, as their Seeker.","open","base","base","mid")
     call cho_main("It's our last shot at winning the Quidditch house cup, for the both of us.","angry","base","base","down")
-    call cho_main("We'd constantly be at each other's throats.","soft","suspicious","angry","mid")
+    call cho_main("We'd constantly be at each other's throats.","soft","narrow","angry","mid")
     g4 "Intriguing!"
     m "You are missing out, girl..." # Small text
     g9 "{size=-4}Hatesex is the best!{/size}" # Small text
     call cho_main("I didn't quite hear that, Sir.","base","base","base","mid")
     m "Who else did you do it with?"
-    call cho_main("Do it with?","soft","suspicious","raised","mid") # Shocked
+    call cho_main("Do it with?","soft","narrow","raised","mid") # Shocked
     m "Smooshing, kissing,...{w} whatever you call it nowadays..."
     call cho_main("With all due respect, Professor, it's very odd that you'd ask me about those sort of things...","open","closed","base","mid")
     call cho_main("But,... you are helping me. So I guess I owe you that much...","annoyed","base","base","R")
@@ -187,18 +187,18 @@ label cc_pf_T1_talking_1:
     call cho_main("At the same time.","horny","base","sad","R") # Embarrassed
     m "No{w} way!"
     g4 "You were cheating on that Hufflepuffer?"
-    call cho_main("I wouldn't call it cheating, Professor. It wasn't even that serious with Cedric to begin with.","annoyed","suspicious","base","mid")
+    call cho_main("I wouldn't call it cheating, Professor. It wasn't even that serious with Cedric to begin with.","annoyed","narrow","base","mid")
     call cho_main("I had a unique opportunity that's all...","soft","base","base","R")
     call cho_main("One of those no strings attached kind of thing... Trying out new things...","smile","base","base","L")
     m "New things? Like what?"
-    call cho_main("Dating a girl, for example.","base","suspicious","base","mid")
+    call cho_main("Dating a girl, for example.","base","narrow","base","mid")
     g9 "(Finally this gets interesting!)"
     call cho_main("She was one of the students from Beauxbaton.","soft","base","base","downR")
     m "(...)"
     call cho_main("A French girl.","soft","base","base","down")
     g9 "And I hope you also frenched that french girl!"
     call cho_main("Among other things...","angry","closed","sad","mid") # Super embarrassed
-    call cho_main("(Why am I telling him this?)","horny","suspicious","sad","R")
+    call cho_main("(Why am I telling him this?)","horny","narrow","sad","R")
     call cho_main("You probably know her, since Fleur was also a champion at the tourney.","soft","base","sad","mid")
     g4 "I'm in shock!"
 
@@ -206,7 +206,7 @@ label cc_pf_T1_talking_1:
     call cho_main("Then there also was Viktor Crum who-","open","base","base","R")
     with hpunch
     g4 "Slow down, girl! I'm still not over the fact that you made out with a girl!"
-    call cho_main("","annoyed","suspicious","base","mid")
+    call cho_main("","annoyed","narrow","base","mid")
 
     menu:
         "-Jerk off while she's talking-":
@@ -230,17 +230,17 @@ label cc_pf_T1_talking_1:
     call cho_main("I'm sorry, Sir. It's just that...","open","closed","raised","mid")
 
     if daytime:
-        call cho_main("I'm really late for classes. May we postpone this talk for some other time?","soft","suspicious","sad","R")
+        call cho_main("I'm really late for classes. May we postpone this talk for some other time?","soft","narrow","sad","R")
     else:
-        call cho_main("It's getting really late. May we postpone this talk for some other time?","soft","suspicious","sad","R")
+        call cho_main("It's getting really late. May we postpone this talk for some other time?","soft","narrow","sad","R")
 
     if masturbating:
         g4 "What? Please don't go now. I've only just started!"
-        call cho_main("Started with what, [cho_genie_name]?","annoyed","suspicious","angry","mid")
+        call cho_main("Started with what, [cho_genie_name]?","annoyed","narrow","angry","mid")
         g4 "I'll give you 10 house points if you stay!{w=0.8} Just a tiny bit longer!"
         call cho_main("And what makes you believe that I'd agree to such a thing? Getting rewardred with points for doing nothing?","open","closed","base","mid")
-        call cho_main("Earning house points in such a way is despicable, and it would be unfair towards the other school houses, as well as my fellow students...","open","suspicious","base","mid")
-        call cho_main("","annoyed","suspicious","angry","mid")
+        call cho_main("Earning house points in such a way is despicable, and it would be unfair towards the other school houses, as well as my fellow students...","open","narrow","base","mid")
+        call cho_main("","annoyed","narrow","angry","mid")
         g4 "Fifty points?"
         call cho_main("I have to go now, Sir.","soft","closed","raised","mid")
         m "(Fuck me...)"
@@ -249,7 +249,7 @@ label cc_pf_T1_talking_1:
         with d3
         pause.8
 
-        call cho_main("Until next time!","base","suspicious","base","mid")
+        call cho_main("Until next time!","base","narrow","base","mid")
 
     else:
         m "Okay, girl. You may leave..."
@@ -684,7 +684,7 @@ label cho_favor_1_1:
         "\"Do you eat ass, Miss Chong?\"":
             call cho_main("Miss... Chong?","open","wide","raised","mid")
             call cho_main("My name Is Chang, [cho_genie_name],... Cho Chang!","open","angry","angry","mid")
-            call cho_main("...","pout","suspicious","angry","R")
+            call cho_main("...","pout","narrow","angry","R")
             m "..."
             m "(She didn't answer my question...)"
             $ cho_mood += 5
@@ -706,7 +706,7 @@ label cho_favor_1_1:
         else:
             call cho_main("That stupid slut can't spend even a single day without flirting with somebody that has legs attached...","open","angry","angry","mid")
 
-        call cho_main("I wake up every morning before dawn and run the Quidditch pitch, until the sun rises!","angry","suspicious","angry","mid")
+        call cho_main("I wake up every morning before dawn and run the Quidditch pitch, until the sun rises!","angry","narrow","angry","mid")
         call cho_main("My body's at the absolute peak of human and wizard conditioning!","open","angry","angry","mid")
         g4 "It is quite impressive, I've got to say!"
         call cho_main("Glad to hear it, [cho_genie_name].","smile","angry","angry","mid")
@@ -717,8 +717,8 @@ label cho_favor_1_1:
 
         menu:
             "-10 points-":
-                call cho_main("(10 points... I hope that's a good price.)","horny","suspicious","sad","downR")
-                call cho_main("I guess that's ok, [cho_genie_name].","angry","suspicious","sad","down")
+                call cho_main("(10 points... I hope that's a good price.)","horny","narrow","sad","downR")
+                call cho_main("I guess that's ok, [cho_genie_name].","angry","narrow","sad","down")
                 call blktone
                 m "(Really? She'd strip down for barely anything?)"
                 m "(Even Hermione gets more points for just her mindless talking...)"
@@ -759,17 +759,17 @@ label cho_favor_1_1:
                 call hide_blktone
                 call cho_main("She really is a...","open","closed","raised","mid")
                 call cho_main("...stupid...","angry","closed","angry","mid")
-                call cho_main("...fat...","angry","suspicious","angry","mid")
-                call cho_main("...cow, isn't she?","quiver","suspicious","angry","mid")
+                call cho_main("...fat...","angry","narrow","angry","mid")
+                call cho_main("...cow, isn't she?","quiver","narrow","angry","mid")
                 $ cho_mood = 0
             "-I can't choose-":
                 m  "You're both hot."
-                call cho_main("I guess.","pout","suspicious","angry","downR")
+                call cho_main("I guess.","pout","narrow","angry","downR")
             "-Nope, you lose-":
                 m "I'm afraid, Miss Granger is simply... how shall I put it... sexier!"
                 call cho_main("What?","scream","wide","angry","mid")
                 m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
-                call cho_main("But she doesn't even do work-outs, [cho_genie_name]!","angry","suspicious","angry","downR")
+                call cho_main("But she doesn't even do work-outs, [cho_genie_name]!","angry","narrow","angry","downR")
                 $ cho_mood +=5
 
         jump jerk_off_to_cho
@@ -780,7 +780,7 @@ label cho_favor_1_1:
 label cho_favor_1_2:
 
     m "Miss Chang, how would you like to earn 20 house points the easy way?"
-    call cho_main("What do i have to do?","base","suspicious","sad","down")
+    call cho_main("What do i have to do?","base","narrow","sad","down")
     m "I want to see your body!"
     call cho_main("You want me to get naked, sir?","open","base","sad","R")
     m "Of course."
@@ -825,7 +825,7 @@ label cho_favor_1_2:
             g4 "Very nice."
             call cho_main("(...)","pout","base","sad","mid")
             call cho_main("Um...","base","base","sad","R")
-            call cho_main("Can I put my clothes back on now?","open","suspicious","sad","down")
+            call cho_main("Can I put my clothes back on now?","open","narrow","sad","down")
 
     jump jerk_off_to_cho
 
@@ -837,7 +837,7 @@ label cho_favor_1_3:
     m "Miss Chang, how would you like to earn 20 house points the easy way?"
     call cho_main("What do i have to do?","base","angry","sad","mid")
     m "I want to see your body again."
-    call cho_main("You want me to get naked, sir?","horny","suspicious","sad","down")
+    call cho_main("You want me to get naked, sir?","horny","narrow","sad","down")
     m "Of course."
     m "If you're not interested, I'm sure Hermione wouldn't mind..."
     call cho_main("!!!","scream","wide","sad","mid")
@@ -918,13 +918,13 @@ label jerk_off_to_cho:
             if cho_mood <= 0: #OK with it.
                 if cho_whoring in [0]:
                     call cho_main("(!!!)","angry","wide","raised","mid")
-                    call cho_main("[cho_genie_name], are you...","horny","suspicious","sad","R")
+                    call cho_main("[cho_genie_name], are you...","horny","narrow","sad","R")
                     call nar(">Cho's voice is soft and slightly husky. She almost sounds...aroused.")
-                    call cho_main("Touching yourself?","quiver","suspicious","angry","down")
-                    call cho_main("[cho_genie_name], I didn't agree to this...","angry","suspicious","sad","down")
+                    call cho_main("Touching yourself?","quiver","narrow","angry","down")
+                    call cho_main("[cho_genie_name], I didn't agree to this...","angry","narrow","sad","down")
                 elif cho_whoring in [1]:
-                    call cho_main("[cho_genie_name]...","horny","suspicious","raised","mid")
-                    call cho_main("You are touching yourself.","quiver","suspicious","raised","down")
+                    call cho_main("[cho_genie_name]...","horny","narrow","raised","mid")
+                    call cho_main("You are touching yourself.","quiver","narrow","raised","down")
                 else:
                     call cho_main("I knew you would do that...","smile","angry","angry","mid")
 
@@ -934,19 +934,19 @@ label jerk_off_to_cho:
                         if cho_whoring in [0]:
                             call nar(">Your eyes continue to drift over the young Quidditch players tight, athletic body.","start")
                             call nar(">You lean back in your chair and begin stroking in earnest.","end")
-                        call cho_main("...","quiver","suspicious","raised","downR")
+                        call cho_main("...","quiver","narrow","raised","downR")
                         call nar(">The young seeker looks mesmerized by your actions.")
-                        call cho_main("...","quiver","suspicious","base","down")
+                        call cho_main("...","quiver","narrow","base","down")
                         call nar(">Her eyes glued to your thick cock.")
 
                         if cho_whoring in [0]: #Not really ok with it.
-                            call cho_main("I-I've never seen one before.","open","suspicious","sad","down")
-                            call cho_main("Are they always so... BIG?","smile","suspicious","raised","down")
+                            call cho_main("I-I've never seen one before.","open","narrow","sad","down")
+                            call cho_main("Are they always so... BIG?","smile","narrow","raised","down")
                             m "(Look at the body on that slut!)"
-                            call cho_main("(...)","horny","suspicious","sad","downR")
+                            call cho_main("(...)","horny","narrow","sad","downR")
                             call ctc
 
-                            call cho_main("[cho_genie_name], how much longer are you going to-","horny","suspicious","sad","downR")
+                            call cho_main("[cho_genie_name], how much longer are you going to-","horny","narrow","sad","downR")
                             g4 "Here it comes!"
                             call cum_block
                             call gen_chibi("cumming_behind_desk")
@@ -970,7 +970,7 @@ label jerk_off_to_cho:
 
                         if cho_whoring >= 1: #Very OK with it!
                             if cho_whoring in [1]:
-                                call cho_main("It's so big...","horny","suspicious","raised","down")
+                                call cho_main("It's so big...","horny","narrow","raised","down")
                                 call cho_main("Does it always get like this??","soft","base","raised","mid")
                             else:
                                 call cho_main("Keep stroking your cock, [cho_genie_name].","open","angry","angry","down")
@@ -1008,9 +1008,9 @@ label jerk_off_to_cho:
                                         call cho_main("Maybe next time, [cho_genie_name], I'll give you something that feels a lot nicer than her disgusting tits!","soft","closed","raised","mid")
                                         call ctc
                                     else:
-                                        call cho_main("Is my body that good?","quiver","suspicious","raised","mid")
+                                        call cho_main("Is my body that good?","quiver","narrow","raised","mid")
                                         call ctc
-                                        call cho_main("You're' dripping everywhere, professor","horny","suspicious","sad","downR")
+                                        call cho_main("You're' dripping everywhere, professor","horny","narrow","sad","downR")
                                         call cho_main("oh god...your balls looks so full. There's so much.","horny","base","raised","down")
                                         call nar("The perverse wonder in Cho's voice pushes you over the edge.")
                                     call cho_main("Wouldn't you just love to touch every muscle on my bod-","soft","base","raised","R")
@@ -1027,7 +1027,7 @@ label jerk_off_to_cho:
                             else:
                                 call cho_main("(Look at all that cum!)","horny","wide","raised","down")
                                 call cho_main("......","horny","base","base","downR")
-                                call cho_main("(I wonder what it tastes like...)","quiver","suspicious","raised","L")
+                                call cho_main("(I wonder what it tastes like...)","quiver","narrow","raised","L")
 
                             hide screen bld1
                             with d3
@@ -1039,7 +1039,7 @@ label jerk_off_to_cho:
                             call cho_main("...","horny","base","raised","mid")
 
                             if cho_whoring <= 1:
-                                call cho_main("(I can't believe I agreed to that...)","horny","suspicious","sad","down")
+                                call cho_main("(I can't believe I agreed to that...)","horny","narrow","sad","down")
                                 call cho_main("Can I have my points now, [cho_genie_name]?","soft","base","base","mid")
                             else:
                                 call cho_main("I'd like to get my points now, [cho_genie_name].","soft","base","base","mid")

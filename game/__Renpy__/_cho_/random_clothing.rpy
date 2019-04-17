@@ -74,8 +74,8 @@ label cho_random_clothing:
                 g4 "Makes me want to whip out my cock and jerk off like a mad-man! You little slut!"
                 call cho_main("Oh...","horny","base","raised","down")
                 call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...","soft","base","sad","R")
-                call cho_main("I'm glad to see it working.","smile","suspicious","base","mid")
-                call cho_main("Jerk off any time you want, [cho_genie_name]!","horny","suspicious","angry","mid")
+                call cho_main("I'm glad to see it working.","smile","narrow","base","mid")
+                call cho_main("Jerk off any time you want, [cho_genie_name]!","horny","narrow","angry","mid")
                 g4 "Hngggh-!!!"
                 call cho_main(xpos="base",ypos="base")
 
@@ -88,7 +88,12 @@ label cho_random_clothing:
                 return
             pass
 
-    call cho_main("Hello, [cho_genie_name].","base","base","base","mid",xpos="base",ypos="base", animation=moveFade)
+    if cho_mood != 0:
+        call cho_main("[cho_genie_name]...",face="annoyed",xpos="base",ypos="base", animation=moveFade)
+    else:
+        call cho_main("Hello, [cho_genie_name].",face="happy",xpos="base",ypos="base", animation=moveFade)
     $ cho_animation = None
+
+    ">Cho is upset with you."
 
     return

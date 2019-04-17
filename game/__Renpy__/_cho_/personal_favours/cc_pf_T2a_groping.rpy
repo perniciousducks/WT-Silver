@@ -56,7 +56,7 @@ label cho_favor_2:
             if chof2_first: #have to include new boolean chof2_first=False
                 $ chof2_first = False
                 g9 "Miss Chang, I'd like to touch your ass."
-                call cho_main("My...ass?","smile","suspicious","sad","downR")
+                call cho_main("My...ass?","smile","narrow","sad","downR")
                 m "Yes. I'd like to touch it."
                 call cho_main("I knew you liked my ass.","horny","shocked","base","mid")
                 call cho_main("{size=-4}(i knew he couldn't resist for long.){/size}","quiver","shocked","base","R")
@@ -78,26 +78,26 @@ label cho_favor_2:
                         jump chofbm
                     "-35 points-":
                         m "I could get Hermione to do it for 35 points."
-                        call cho_main("{size=-2}35? Really?....{/size}","pout","suspicious","angry","down")
+                        call cho_main("{size=-2}35? Really?....{/size}","pout","narrow","angry","down")
                         call cho_main("{size=+2}If her fat ass is worth 35 then mine must be worth 40.{/size}","open","closed","angry","mid")
                         m "Fine."
                         jump chofbm
                     "-50 points-":
                         m "I could get Hermione to do it for 50 points."
                         call cho_main("50!","open","wide","angry","mid")
-                        call cho_main("50! are you serious! No way.","smile","suspicious","angry","down")
-                        call cho_main("but, she doesn't even work out...","pout","suspicious","sad","downR")
+                        call cho_main("50! are you serious! No way.","smile","narrow","angry","down")
+                        call cho_main("but, she doesn't even work out...","pout","narrow","sad","downR")
                         m "I suppose you're ass will do for now, but I'm only paying you 40 house points."
-                        call cho_main("my ass will do?!","scream","suspicious","angry","down")
-                        call cho_main("i'll show you whose ass is better!","smile","suspicious","angry","down")
+                        call cho_main("my ass will do?!","scream","narrow","angry","down")
+                        call cho_main("i'll show you whose ass is better!","smile","narrow","angry","down")
                         $ cho_mood +5 #new variable cho_mood
                         jump chofbm
                     "-Nothing-":
                         m "I could get Hermione to do it for absolutely nothing."
                         call cho_main("Nothing?","open","wide","angry","mid")
-                        call cho_main("what a little slut.","horny","suspicious","base","downR")
+                        call cho_main("what a little slut.","horny","narrow","base","downR")
                         call cho_main("you'll still haVE to pay me, of course.","soft","closed","angry","mid")
-                        call cho_main("40 house Points.","open","suspicious","angry","down")
+                        call cho_main("40 house Points.","open","narrow","angry","down")
                         m "Very Well, Miss Chang."
                         jump chofbm
             else:
@@ -113,14 +113,14 @@ label cho_favor_2:
                         jump chofbm
                     if cho_whoring  == 3:
                         call cho_main("You do?","horny","base","base","mid")
-                        call cho_main("are you going to wank off?","quiver","suspicious","sad","down")
+                        call cho_main("are you going to wank off?","quiver","narrow","sad","down")
                         menu:
                             "Of course.":
                                 m "Of course."
-                                call cho_main("i guess I'd better take off my panties.","quiver","suspicious","sad","downR")
+                                call cho_main("i guess I'd better take off my panties.","quiver","narrow","sad","downR")
                             "No Way.":
                                 m "Of course not. What do you take me for, a pervert?"
-                                call cho_main("Well...","smile","suspicious","base","R")
+                                call cho_main("Well...","smile","narrow","base","R")
                         jump chofbm
 
 label chofbm:
@@ -197,7 +197,7 @@ label chofbm:
                         "{size=+4}SLAP!{/size}"
                         hide screen white
                         with hpunch
-                        call cho_main("ockk!","upset","suspicious","sad","downR")
+                        call cho_main("ockk!","upset","narrow","sad","downR")
                         $ renpy.play('sounds/slap_02.mp3')
                         show screen white
                         "{size=+4}SLAP!{/size}"
@@ -228,10 +228,10 @@ label chofbm:
                                 jump chof2end
                             "\"That was a bit much. 80 points\"":
                                 m "I think I got a little carried away."
-                                call cho_main("...","upset","suspicious","angry","downR")
+                                call cho_main("...","upset","narrow","angry","downR")
                                 m "80 points to Ravenclaw."
-                                call cho_main("Really?","soft","suspicious","angry","down")
-                                call cho_main("Well, I suppose it wasn't that bad...","pout","suspicious","sad","downR")
+                                call cho_main("Really?","soft","narrow","angry","down")
+                                call cho_main("Well, I suppose it wasn't that bad...","pout","narrow","sad","downR")
                                 $ cho_mood +1
                                 $ ravenclaw += 80
                                 jump chof2end
@@ -241,7 +241,7 @@ label chofbm:
                                 call cho_main("What!","scream","wide","sad","mid")
                                 call cho_main("That's not fair!","scream","wide","angry","mid")
                                 m "Well?"
-                                call cho_main("Fine!","upset","suspicious","angry","down")
+                                call cho_main("Fine!","upset","narrow","angry","down")
                                 $ cho_mood +15
                                 #Cho chibi returns to Dumbledore's desk.
                                 ">Cho returns to your desk."
@@ -250,14 +250,14 @@ label chofbm:
                                 call cho_main("...","horny","wide","angry","R")
                                 pause
                                 ">Pulling her cheeks apart, you begin to rub your thumbs across the tight ring of her virgin asshole."
-                                call cho_main("...","horny","suspicious","sad","downR")
-                                call cho_main("......","quiver","suspicious","sad","down")
+                                call cho_main("...","horny","narrow","sad","downR")
+                                call cho_main("......","quiver","narrow","sad","down")
                                 ">You can feel Cho's body tensing up."
                                 ">You wet a finger with your saliva and begin to prod her asshole."
                                 call cho_main(".........","horny","wide","sad","L")
                                 m "Just relax."
                                 ">Finally, you feel it give and your thick digit begins to slowly slide in."
-                                call cho_main("Profes-....","quiver","suspicious","sad","downR")
+                                call cho_main("Profes-....","quiver","narrow","sad","downR")
                                 ">Cho fights the urge to cry out. Letting you continue."
                                 ">It's clear she wants her points more than anything."
                                 m "{size=-2}(Don't you worry girl. You'll get your points.){/size}"
@@ -272,7 +272,7 @@ label chofbm:
                                 call cho_main("Professor!","quiver","wide","sad","L")
                                 ">Cho cums hard on your finger, before completely collapsing."
                                 m "40 points to Ravenclaw."
-                                call cho_main("{size=-2}.....yay.{/size}","horny","suspicious","sad","down")
+                                call cho_main("{size=-2}.....yay.{/size}","horny","narrow","sad","down")
                                 $ ravenclaw += 40
                                 jump chof2end
     if cho_whoring  == 2:

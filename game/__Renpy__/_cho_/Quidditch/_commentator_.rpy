@@ -18,7 +18,7 @@ label quidditch_commentator_event_1:
     call cho_main("Madam Pomfrey says he'll be able to talk in a few days, but yelling is out of the picture for the rest of the season.","soft","closed","sad","mid")
     call cho_main("What are we going to do! We can't have a \"W.S.C.\" without a commentator!","soft","base","sad","mid")
     m "Can't you play without one?"
-    call cho_main("No. Someone has to announce the points after all.","annoyed","suspicious","base","mid")
+    call cho_main("No. Someone has to announce the points after all.","annoyed","narrow","base","mid")
     m "Fine..."
 
     label who_shall_commentate:
@@ -34,7 +34,7 @@ label quidditch_commentator_event_1:
             m "How about..."
             jump who_shall_commentate
         "\"Luna\"" if luna_unlocked:
-            call cho_main("Luna? Luna Lovegood, [cho_genie_name]?","open","suspicious","raised","mid")
+            call cho_main("Luna? Luna Lovegood, [cho_genie_name]?","open","narrow","raised","mid")
             call cho_main("Knowing her she'd probably commentate the grass as it's growing...","open","closed","raised","mid")
             call cho_main("Trust me, [cho_genie_name], Luna would be a terrible choice!","soft","angry","angry","mid")
             m "Fine. How about..."
@@ -46,12 +46,12 @@ label quidditch_commentator_event_1:
     m "Now, now... Don't underestimate Miss Granger..."
     m "Why don't we just ask her first?"
     call cho_main("Absolutely not! I won't talk to that Gryffindor skunk ever again!","scream","closed","angry","mid")
-    call cho_main("Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?","annoyed","suspicious","angry","mid")
+    call cho_main("Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?","annoyed","narrow","angry","mid")
     m "Alright, any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
     call cho_main("...","pout","base","base","down")
     m "Well?"
     call cho_main("Well, most of them would be on one of the Quidditch teams...","soft","base","raised","R")
-    call cho_main("But Granger wouldn't know anything about Quidditch either!","pout","suspicious","angry","mid")
+    call cho_main("But Granger wouldn't know anything about Quidditch either!","pout","narrow","angry","mid")
     m "Do you know anybody else suited for the job?"
     call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")
     call cho_main("(Wait a minute...)","pout","wide","raised","mid")
@@ -123,7 +123,7 @@ label quidditch_commentator_event_3:
     g9 "I've got great news for you! I found us a new commentator!"
     call cho_main("Is it Hermione?","soft","closed","base","mid")
     g4 "Yes! Very good guess!"
-    call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.","pout","suspicious","angry","mid")
+    call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.","pout","narrow","angry","mid")
     m "Oh, sure..."
     call cho_main("But I'm surprised she even took up to the task...","pout","base","base","R")
     g9 "Right away. No questions asked."
@@ -159,20 +159,20 @@ label quidditch_commentator_event_3:
 
 label nothing_to_see_here_001:
     call play_sound("door")
-    call cho_main("...","pout","suspicious","sad","R",xpos="mid",ypos="base")
+    call cho_main("...","pout","narrow","sad","R",xpos="mid",ypos="base")
     m "Miss Chang... In case you were wondering, I haven't gotten around to firing miss granger yet..."
-    call cho_main("Oh... Um... About that...","soft","suspicious","raised","R")
+    call cho_main("Oh... Um... About that...","soft","narrow","raised","R")
     call cho_main("Could you please... not... do that...","open","base","sad","down")
     g4 "What? You want Hermione to keep commentating your games?"
     g4 "What about our strategies?"
     call cho_main("We can still do them...","soft","base","raised","down")
     call cho_main("...","pout","base","raised","R")
     m "[cho_name], is there something you're not telling me?"
-    call cho_main("Well...","soft","suspicious","raised","R")
-    call cho_main("It's just that...","open","suspicious","sad","mid")
-    call cho_main("People have been a lot nicer to me since that game!","quiver","suspicious","sad","mid")
+    call cho_main("Well...","soft","narrow","raised","R")
+    call cho_main("It's just that...","open","narrow","sad","mid")
+    call cho_main("People have been a lot nicer to me since that game!","quiver","narrow","sad","mid")
     call cho_main("All the gryffindors are inviting me to parties...","soft","base","raised","down")
     call cho_main("Most of the Slytherins have stopped being racist...","open","closed","angry","mid")
     call cho_main("And the hufflepuff team weren't even upset that i beat them!","open","base","raised","L")
     m "So you want to keep on with my coaching?"
-    call cho_main("Of course! It's the only chance Ravenclaw has to win the W.S.C.!","pout","suspicious","raised","down")
+    call cho_main("Of course! It's the only chance Ravenclaw has to win the W.S.C.!","pout","narrow","raised","down")

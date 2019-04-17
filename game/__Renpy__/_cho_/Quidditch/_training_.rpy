@@ -32,10 +32,10 @@ label quidditch_training_intro_1:
     call cho_main(xpos="mid",ypos="base",trans="fade")
 
     m "Are you ready for your first training session?"
-    cho "Of course, Professor!"
+    call cho_main("Of course, Professor!","base","base","base","mid")
     g4 "Professor? Who are you calling Professor, girl?"
-    cho "I'm sorry?"
-    m "From now on you will address me only as Sir, or..."
+    call cho_main("I'm... sorry?","soft","base","raised","mid")
+    m "From now on you will address me only as Sir!{w} Or..."
 
     menu:
         "\"Coach\"":
@@ -45,7 +45,7 @@ label quidditch_training_intro_1:
         "\"Captain\"":
             $ cho_genie_name = "Captain"
 
-    cho "Yes, [cho_genie_name]."
+    call cho_main("Yes, [cho_genie_name].","smile","base","base","down")
     m "And you I will call..."
 
     menu:
@@ -61,103 +61,107 @@ label quidditch_training_intro_1:
         "\"Eagle #2\"":
             $ cho_name = "Eagle #2"
 
-    cho "Yes, Sir."
+    call cho_main("Yes, Sir!","soft","angry","angry","mid")
     g4 "Let's start with your \"Quiddesh\" training!"
-    cho "\"Quidditch\", Sir."
+    call cho_main("\"Quidditch\", Sir.","soft","narrow","base","mid")
     g4 "Let's start with your \"Quidditch\" training, [cho_name]."
-    cho "!!!" # Happy
-    cho "Shall I call the rest of my team up here?"
+    call cho_main("!!!","smile","base","base","downR") # Happy
+    call cho_main("Shall I call the rest of my team up here?","open","base","base","mid")
     m "What? Why?"
-    cho "So they can hear your expertise as well, of course."
+    call cho_main("So they can hear your expertise as well, of course.","soft","narrow","base","mid")
     m "I don't think that will be necessary."
     m "Let's focus on you, for the moment..."
-    cho "Very well, [cho_genie_name]."
+    call cho_main("Very well, [cho_genie_name].","soft","base","base","R")
     m "How did you usually play? Why were you always losing?"
-    cho "Well, Hufflepuff has a really good seeker."
-    cho "He's always catching the snitch before me."
-    cho "I don't know how he does it, to be honest. It always happens so quick..."
+    call cho_main("Well, Hufflepuff has a really good seeker.","open","base","base","mid")
+    call cho_main("He's always catching the snitch before me.","quiver","narrow","sad","down")
+    call cho_main("I don't know how he does it, to be honest. It always happens so quick...","open","narrow","sad","mid")
     m "And you are both looking for that thing? At the same time?"
-    cho "Yes, [cho_genie_name]."
-    cho "I do my best flying around the pitch searching for it. But it's just so small and really tricky to see."
+    call cho_main("Yes, [cho_genie_name].","soft","base","base","mid")
+    call cho_main("I do my best flying around the pitch searching for it. But it's just so small and really tricky to see.","angry","base","sad","down")
     m "Why don't you look for it together? After all there is only one."
     m "You just need to grab that Snatch before he does."
-    cho "[cho_genie_name]! It's \"Snitch\"!"
+    call cho_main("???","annoyed","wide","raised","mid")
+    call cho_main("[cho_genie_name]! It's \"Snitch\"!","angry","closed","angry","mid")
     m "Potato potato..."
-    cho "You just said the same thing twice..."
+    call cho_main("You just said the same thing twice...","open","base","raised","R")
     m "Exactly..."
-    cho "..."
-    cho "But what am I supposed to do once he catches sight of it?"
-    m "catches the sight of what?"
-    cho "The snitch!"
+    call cho_main("(...)","annoyed","narror","angry","mid")
+    call cho_main("But what am I supposed to do once he catches sight of it?","open","narrow","base","mid")
+    m "Catches the sight of what?"
+    call cho_main("The snitch!","angry","narrow","angry","mid")
     m "Oh, I see..."
-    cho "There wouldn't be a way for me to stop him. With how determined he is,... and how fast he can be..."
+    call cho_main("There wouldn't be a way for me to stop him. With how determined he is,... and how fast he can be...","quiver","base","sad","R")
     g9 "Well, lucky for you, you have me!"
+    call cho_main("","annoyed","wide","raised","mid")
     m "And you just gave me a great idea."
     m "We'll need to distract him. So you can get a hold of that Snatch before he does!"
-    cho "Please stop saying that, [cho_genie_name]!"
+    call cho_main("Please stop saying that, [cho_genie_name]!","angry","closed","angry","mid")
     m "Saying what?"
-    cho "(...)"
-    cho "\"Snatch\"." # Small text
+    call cho_main("(...)","annoyed","narrow","angry","mid")
+    call cho_main("\"Snatch\".","soft","narrow","angry","mid") # Small text
     g9 "Hehehe- Now you've said it!"
-    cho "Could we please just talk about your plan, [cho_genie_name]?"
+    call cho_main("Could we please just talk about your plan, [cho_genie_name]?","soft","narrow","angry","mid")
     m "Patience, Miss Chang."
-    cho "Tell me!"
+    call cho_main("Tell me!","scream","closed","angry","mid")
+    call cho_main("","annoyed","narrow","angry","mid")
     g9 "May I present to you{w}, the goal to our victory!"
 
     menu:
         "\"It's all about the ass!\"":
             $ quidditch_position = "front"
-            cho "Who- What?! Whose ass?"
+            call cho_main("Who- What?! Whose ass?","soft","wide","base","mid")
             m "Yours, of course."
-            cho "M-my... my ass?"
+            call cho_main("M-my... my ass?","open","wide","raised","mid")
             g4 "Yes! With an ass as great as yours, Miss Chang, we'd be foolish not to make use of it!"
-            cho "Sir, please. You can't be serious!"
+            call cho_main("Sir, please. You can't be serious!","quiver","closed","sad","mid")
             m "Oh I'm dead serious! I never belittle a great ass should I see one."
 
         "\"Panties are Key!\"":
             $ quidditch_position = "above"
-            cho "Panties? What does panties have to do with Quidditch?"
+            call cho_main("Panties? What does panties have to do with Quidditch?","soft","wide","raised","mid")
             m "Everything, girl! For some they are the meaning of life!"
-            cho "What? Are you seriously suggesting \"this\"? To win? Panties?"
+            call cho_main("What? Are you seriously suggesting \"this\"? To win? Panties?","angry","narrow","angry","mid")
             m "I was never more sure about anything in my life..."
 
         "\"Get intimate!\"":
             $ quidditch_position = "close"
-            cho "[cho_genie_name]?"
+            call cho_main("[cho_genie_name]?","soft","wide","raised","mid")
             m "Get close. Show him your goods. Give him a peek..."
             m "You know, basic stuff..."
-            cho "Give him a peek? Of what?!"
+            call cho_main("Give him a peek? Of what?!","annoyed","wide","base","mid")
             m "Your goods..."
             m "Am I not clear enough with how I word things?"
             m "You can also let him feel you up if you have to."
 
-    cho "Sir, this is just ridiculous!"
-    cho "I thought a hightly regarded wizard of your stature would know at least something that could help us at Quidditch."
-    cho "I didn't hold it against you that you seemingly know very little about the sport."
+    call cho_main("Sir, this is just ridiculous!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("I thought a hightly regarded wizard of your stature would know at least something that could help us at Quidditch.","open","narrow","angry","mid")
+    call cho_main("I didn't hold it against you that you seemingly know very little about the sport.","open","base","angry","R")
     m "Which I proved you wrong, but who cares..."
-    cho "Even with my limited time I thought it was at least worth a try. But hearing your suggestions now..."
+    call cho_main("Even with my limited time I thought it was at least worth a try. But hearing your suggestions now...","angry","narrow","angry","mid")
     m "You will learn soon enough, girl."
     m "It’s very clear that to win we’ll have to go beyond normal conventional methods."
     g4 "The only way you can keep a man from fulfilling his seeked out purpose, is by confronting him with his most primal instinct!"
-    cho "Which would be?"
+    call cho_main("Which would be?","annoyed","narrow","angry","mid")
     g9 "The act of procreation!"
-    cho "Sir, are you suggesting I should have \"sex\" with him?!" # Shocked
+    call cho_main("Sir, are you suggesting I should have \"sex\" with him?!","soft","wide","base","mid") # Shocked
     m "What? I never said that..."
+    call cho_main("","annoyed","narrow","angry","mid")
     g9 "You have a really dirty mind, girl!"
-    cho "But you just said-"
+    call cho_main("But you just said-","angry","closed","angry","mid")
     m "I merely want you to distract him with your body, during the match."
     g9 "And then, when he can't keep his eyes off you, you grab that Snatch!"
-    cho "(...)"
-    cho "I'm sorry Sir, but I feel methods like those would get us nowhere!"
-    cho "And it's very improper for a teacher to suggest such things! Not to mention right out vulgar!"
-    cho "I'll be leaving now. Please only call me once you've decided to take things seriously!"
+    call cho_main("(...)","annoyed","narrow","angry","mid")
+    call cho_main("I'm sorry Sir, but I feel methods like those would get us nowhere!","open","closed","raised","mid")
+    call cho_main("And it's very improper for a teacher to suggest such things! Not to mention right out vulgar!","open","base","angry","R")
+    call cho_main("I'll be leaving now. Please only call me once you've decided to finally take things seriously!","soft","narrow","angry","mid")
     g9 "And you, think about using that adrett body of yours to win your dream!"
-    cho "*Tzzzz*"
+    call cho_main("*Tzzzz*","angry","closed","angry","mid")
 
     if daytime:
-        cho "Good day, Sir..."
+        call cho_main("Good day, Sir...","soft","narrow","angry","mid")
     else:
-        cho "Good night, Sir..."
+        call cho_main("Good night, Sir...","soft","narrow","angry","mid")
 
     # Cho leaves.
     call cho_walk(speed=1.6, action="leave") # Updated

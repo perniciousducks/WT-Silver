@@ -149,12 +149,12 @@ label hufflepuff_practice_win_1:
 
     call cho_walk(speed=2, action="enter")
 
-    call cho_main("...","annoyed","suspicious","angry","R",xpos="mid",ypos="base")
+    call cho_main("...","annoyed","narrow","angry","R",xpos="mid",ypos="base")
     m "You seem a little on edge..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
-    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practicem, didn't you!","pout","suspicious","angry","R")
-    call cho_main("I bet you were probably in on it...","upset","suspicious","angry","mid")
+    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practicem, didn't you!","pout","narrow","angry","R")
+    call cho_main("I bet you were probably in on it...","upset","narrow","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
     call cho_main("{size=+10}I got it!!!{/size}","scream","base","base","mid")
@@ -168,9 +168,9 @@ label hufflepuff_practice_win_1:
     m "Is this the first time you've caught one?"
     call cho_main("Uh-hum- This is the first game of quidditch \"Ravenclaw\" has won in over six years!","smile","base","base","mid")
     m "Wasn't this just a practice game?"
-    call cho_main("I was including the practices, [cho_genie_name]...","annoyed","suspicious","sad","downR")
+    call cho_main("I was including the practices, [cho_genie_name]...","annoyed","narrow","sad","downR")
     m "oh..."
-    call cho_main("\"Ravenclaw\"...{w} isn't very good...","pout","suspicious","sad","down")
+    call cho_main("\"Ravenclaw\"...{w} isn't very good...","pout","narrow","sad","down")
     call cho_main("But I have a feeling that's going to change this year!","smile","closed","base","mid")
     g9 "And I am happy to be of help!"
     cho "Yes, [cho_genie_name]! Thank you so much!"

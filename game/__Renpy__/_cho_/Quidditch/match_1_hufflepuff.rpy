@@ -363,12 +363,12 @@ label hufflepuff_match_return:
     call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!","smile","base","base","mid")
     call cho_main("We could actually win the cup!","open","shocked","angry","L")
     m "And you weren't embarrassed?"
-    call cho_main("I was a little at the start of the game...","quiver","suspicious","sad","downR")
+    call cho_main("I was a little at the start of the game...","quiver","narrow","sad","downR")
     call cho_main("But once I realized how much it was affecting those slack-jawed \"Hufflepuffs\"s...","smile","angry","angry","R")
     call cho_main("It was like having my own personal weapon of mass distraction!","smile","shocked","angry","mid")
     call cho_main("I don't think Cedric even knew where the snitch was most of the time!","horny","base","base","downR")
-    call cho_main("All he seemed to do was follow me around...","horny","suspicious","sad","down")
-    call cho_main("{size=-2}Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}","quiver","suspicious","sad","downR")
+    call cho_main("All he seemed to do was follow me around...","horny","narrow","sad","down")
+    call cho_main("{size=-2}Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}","quiver","narrow","sad","downR")
     call cho_main("This might be the first real chance \"Ravenclaw\" has ever had to win the cup.","open","closed","sad","mid")
     m "I'm sure this must mean a lot to you..."
     call cho_main("It does... I might even get picked up by a pro team!","smile","base","base","R")

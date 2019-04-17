@@ -150,31 +150,49 @@ label hufflepuff_practice_win_1:
     call cho_walk(speed=2, action="enter")
 
     call cho_main("...","annoyed","suspicious","angry","R",xpos="mid",ypos="base")
-    m "You seem a little on edge today..."
+    m "You seem a little on edge..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
-    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practice didn't you!","pout","suspicious","angry","R")
+    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practicem, didn't you!","pout","suspicious","angry","R")
     call cho_main("I bet you were probably in on it...","upset","suspicious","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
-    m "Score many... points?"
-    m "(I hope this stupid game has points...)"
-    call cho_main("As a matter of fact I did!","open","closed","base","mid")
-    call cho_main("{size=+10}150 of them!!!{/size}","scream","base","base","mid")
-    m "Wow... That seems like a lot!"
-    call cho_main("Of course it is, I caught the snitch!","smile","closed","base","mid")
-    m "(The snitch? Is this prison rules?)"
-    call cho_main("Today, I was racing after the snitch along with that blockhead Cedric Diggory...","open","base","sad","R")
-    call cho_main("I'm normally never fast enough to beat him with my crummy old nimbus 2010...","pout","angry","angry","downR")
-    call cho_main("But today I just flew above him as we were both after the snitch!","smile","base","base","mid")
+    call cho_main("{size=+10}I got it!!!{/size}","scream","base","base","mid")
+    call cho_main("I caught the snitch!","smile","closed","base","mid")
+    m "Congratulations..."
+    call cho_main("That blockhead Cedric didn't stand a chance against me!","open","base","sad","R")
+    call cho_main("Usually I'm never fast enough to beat him with my crummy old nimbus...","pout","angry","angry","downR")
+    call cho_main("But today, I flew above him as we were both racing after the snitch, just like you said I should.","smile","base","base","mid")
+    g9 "Sounds like somebody should get a reward for his efforts!"
     call cho_main("Ah!!! I can't believe I was able to finally catch it!","smile","closed","base","mid")
-    m "Is this the first time you've caught the... snitch?"
-    call cho_main("Of course! This is the first game of quidditch \"Ravenclaw\" has won in over six years!","smile","base","base","mid")
+    m "Is this the first time you've caught one?"
+    call cho_main("Uh-hum- This is the first game of quidditch \"Ravenclaw\" has won in over six years!","smile","base","base","mid")
     m "Wasn't this just a practice game?"
     call cho_main("I was including the practices, [cho_genie_name]...","annoyed","suspicious","sad","downR")
     m "oh..."
-    call cho_main("\"Ravenclaw\"... isn't very good...","pout","suspicious","sad","down")
+    call cho_main("\"Ravenclaw\"...{w} isn't very good...","pout","suspicious","sad","down")
     call cho_main("But I have a feeling that's going to change this year!","smile","closed","base","mid")
+    g9 "And I am happy to be of help!"
+    cho "Yes, [cho_genie_name]! Thank you so much!"
+    cho "If there is any way I can return the favour...?"
+
+    if cc_pf_talking_OBJ.points == 0:
+        m "Why don't we start with that, Miss Chang,...{w} favours!"
+        m "I did prove the effectiveness of my methods to you. Now it's your turn to stay true to your promise..."
+        cho "Of course, Sir."
+        cho "But, if you don't mind..."
+    else:
+        g9 "You could sell some more favors to me!"
+        cho "Is it just talking?"
+        m "I had hoped for something more... advanced."
+        cho "(...)"
+        cho "If you don't mind, maybe some other time, Sir."
+
+    cho "The whole house is celebrating our win at the moment... And I'd rather not miss spending some time with-"
+    g4 "You did well today, [cho_name]."
+    g9 "Go and party! You've earned it."
+    cho "Thank you, [cho_genie_name],... for everything."
+    cho "Have a good night!"
 
     # Cho leaves.
     call cho_walk(speed=2, action="leave")
@@ -194,19 +212,16 @@ label hufflepuff_practice_win_2:
     call cho_walk(speed=2, action="enter")
 
     call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",trans="hpunch")
-    m "Good hustle. Nice work catching that gold thing..."
-    call cho_main("This isn't the time for your stupid jokes!","open","angry","angry","mid")
+    m "Did you catch that gold thing?"
     call cho_main("I've never felt so humiliated in my entire life!","open","angry","angry","R")
-    m "It wasn't that bad, was it? At least you won."
+    g4 "Did you win or what?{w} I'm on the edge of my seat here, girl!"
     call cho_main("At the expense of my dignity!","quiver","base","raised","down")
-    call cho_main("Lee Jordan only used to say that I had a nice butt!","soft","base","sad","down")
-    call cho_main("Hermione is the absolute wors commentator Quidditch has ever seen!","open","base","raised","R")
-    m "She wasn't that bad..."
-    call cho_main("She is as incompetent as one can possibly be!","open","base","raised","R")
-    call cho_main("This just can't go on! I insist you fire Hermione!","open","closed","base","mid")
-    call cho_main("Otherwise I'm going to stop listening to your ridiculous coaching!","open","angry","angry","mid")
-    m "Ugh... fine..."
-    call cho_main("Good...","pout","angry","angry","mid")
+    m "That's a...{w} yes?"
+    call cho_main("Lee Jordan only used to say that I had a nice butt! But-","soft","base","sad","down")
+    call cho_main("But, Hermione! Her incompetece as a Quidditch commentator is unmeasurable!","open","base","raised","R")
+    call cho_main("Almost makes me miss Jordan's sexist remarks about my body...","open","closed","base","mid")
+    m "Hey, look at it positively. You won another game!"
+    cho "We did indeed! This is so awesome!!!"
 
     # Cho leaves.
     call cho_walk(speed=2, action="leave")

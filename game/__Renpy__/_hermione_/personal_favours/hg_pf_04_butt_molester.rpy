@@ -48,7 +48,7 @@ label hg_pf_ButtMolester:
         jump hg_butt_molester_1 #Can't use "call" as the event jumps to other places in between.
 
     #Second Event
-    elif her_whoring >= 6 and her_whoring <= 15: #[6,7,8,9,10,11,12,13,14,15]
+    elif her_whoring >= 6 and her_whoring <= 14: #[6,7,8,9,10,11,12,13,14]
 
         $ hg_pf_ButtMolester_OBJ.level = 2 #Event hearts level (0-3)
 
@@ -60,7 +60,7 @@ label hg_pf_ButtMolester:
         jump hg_butt_molester_2 #Can't use "call" as the event jumps to other places in between.
 
     #Third Event
-    elif her_whoring >= 16:
+    elif her_whoring >= 15:
 
         $ hg_pf_ButtMolester_OBJ.level = 3 #Event hearts level (0-3)
 

@@ -563,6 +563,7 @@ label her_progress_init:
         $ hg_pf_BreastMolester_OBJ = favor_class(
             tier = 1,
             title = "Breast molester",
+            max_level = 4,
             start_label = "hg_pf_BreastMolester",
         )
 
@@ -612,6 +613,7 @@ label her_progress_init:
         $ hg_pf_SuckIt_OBJ = favor_class(
             tier = 4,
             title = "Suck it!",
+            max_level = 4,
             start_label = "hg_pf_SuckIt",
         )
 

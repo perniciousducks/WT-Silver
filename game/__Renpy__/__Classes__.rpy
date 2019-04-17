@@ -15,14 +15,24 @@ init -2 python:
 
     class favor_class(silver_request):
         level = 0 # Hearts
+        max_level = 3
+        heart_color = "red"
         costume_event = False
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
 
         def getMenuText(self):
-            menu_image = "interface/heart_0"+str(self.level)+".png"
-            ret_str = "\""+self.title+"\" {image="+menu_image+"}"
+            heart_list = []
+            for i in range(0,self.max_level):
+                if i < self.level:
+                    heart_list.append("interface/icons/small/heart_" +str(self.heart_color)+ ".png")
+                else:
+                    heart_list.append("interface/icons/small/heart_empty.png")
+            ret_str = "\""+self.title+"\" "
+            for i in range(0,len(heart_list)):
+                ret_str += "{image="+str(heart_list[i])+"}"
+
             if self.progress_hint:
                ret_str += "  {image=interface/check_True.png}"
             if self.costume_event:

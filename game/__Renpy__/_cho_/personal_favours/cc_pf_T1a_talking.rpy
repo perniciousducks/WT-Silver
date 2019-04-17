@@ -20,22 +20,19 @@ label cc_pf_talking:
         else:
             call cc_pf_T1_talking_3
 
-        if cho_whoring < 3: # Points til 2
+        if cho_whoring < 3: # Points til 3
             $ cho_whoring += 1
-        if cc_pf_talking_OBJ.level < 2: # Hearts 1+2
+        if cc_pf_talking_OBJ.level < 3: # Hearts 1+2
             $ cc_pf_talking_OBJ.level += 1
 
     # Tier 2
     elif main_matches_won == 1:
 
         # Talk with Cho about her Quidditch team.
-        call cc_pf_T1_talking_3 #Temporary?
+        call cc_pf_T2_talking_1 #Temporary?
 
-        if cho_whoring < 5: # Points til 5
+        if cho_whoring < 6: # Points til 5
             $ cho_whoring += 1
-        if cc_pf_talking_OBJ.level < 3: # Heart 3
-            $ cc_pf_talking_OBJ.level += 1
-
 
     # Stats
     $ cc_pf_talking_OBJ.points += 1
@@ -427,97 +424,115 @@ label cc_pf_T1_talking_2:
 
 label cc_pf_T1_talking_3:
 
-    ## Genie wasnts to know more about Cho's ex boyfriends again.
-    ## There are 4 choices, two of them are more elaborate.
-    ## She'll only have a quick chat with you about Cedric and Harry.
-    ## She'll go into more detail with Fleur and Krum.
-    ## Genie gets the option to jerk off during the Fleur and Krum talk.
+    m "Care to tell me more about Quidditch?"
+    cho "Of course, [cho_genie_name]. Anything specific you'd like to know?"
+    m "Yes. Let's talk some more about Diggory..."
+    g9 "Your ex-boyfriend."
+    cho "*Ugh* I knew I shouldn't have told you!"
+    cho "Why do you have to keep bringing that up, Sir? What's past is in the past..."
+    m "I believe otherwise..."
+    g4 "Did you already forget that he's our enemy?!"
+    m "Your relation to him is of the utmost importance right now!"
+    m "I need to know every tiny bit of detail about the two of you."
+    g4 "What you were doing when you were together. How often you made out with him. The exact locations where he touched you..."
+    cho "What?!"
+    m "As well as his sexual preferences. Secret fetishes he might have. Everything!"
+    cho "I will not tell you any of those things!"
+    g4 "Didn't you say you wanted to win?"
+    cho "I did, Sir... But..."
+    m "What did he like about you? Tell me! Maybe we can use it to our advantage!"
+    cho "I'm not goint to tell you those things, [cho_genie_name]. But, I will cooperate..."
+    cho "Cedric was never too interested in me. His mind was always somewhere else. Drifting off..."
+    cho "He always had this dead look in his eyes. Except for when-"
+    cho "(...)"
+    m "Yes? Go on..."
+    cho "He had this weird, unhealthy obsession with my panties, Sir."
 
-    menu:
-        "\"Tell me more about Cedric\"":
-            # Short chat with Cho about Cedric.
-            # No jerk off option for Genie.
-            # Genie will get some hints on how to beat Cedric in Quidditch from this event.
+    if huffl_matches_won == 0:
+        m "A panties obsession? So so…"
+    else:
+        g9 "Ha! I knew it!"
 
-            cho "There isn't much more to tell, [cho_genie_name]."
-            cho "He never seemed to be too interested in me. Always had this dead-pan look in his eyes."
-            cho "And he was oddly pale... "
-            g4 "More signs of vampirism." # Small text
-            cho "There surely are girls into boys looking like him, but I wasn't one of them."
-            cho "But he was a good kisser, at the very least..."
+    cho "It was almost creepy how often he tried to look up my skirt."
+    cho "And he’d always walk behind me when we went up the stairs to get a better view..."
+    m "Did you ever show them to him?"
+    cho "My panties?"
+    m "No, your good manners... Yes, your panties!"
+    cho "Why would I have wanted to? We weren’t that close!"
+    m "So not close enough for a healthy relationship?"
+    cho "What?"
+    m "What girl doesn't show her panties to her loved one?"
+    cho "That’s just ridiculous..."
 
-            cho "He had this weird, unhealthy obsession with my panties."
-            m "A panties obsession? So so…"
-            cho "It was almost creepy how often he tried to look up my skirt."
-            cho "And he’d always walk behind me when we went up the stairs to get a better view..."
-            m "Did you ever show them to him?"
-            cho "My panties?"
-            m "No, your good manners… Yes, your panties!"
-            cho "Why would I have wanted to? We weren’t that close!"
-            m "So not close enough for a healthy relationship?"
-            cho "What?"
-            m "Showing your boyfriend your panties is a given."
-            cho "That’s just ridiculous…"
+    if huffl_matches_won == 0:
+        m "But, that made me think…"
+        m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
+        cho "Like how?"
+        m "We use them as a distraction!"
+        m "Now we only have to find out how to show them off properly during the game."
+        cho "I have to say I don’t like this notion one bit. But it’s probably worth a try…"
+    else:
+        m "Well, it worked."
+        m "Beating him at Quayditch was almost too easy!"
+        cho "Quidditch, Sir..."
+        m "All we had to do was put some good-old panties in front of his face..."
+        g4 "And he was like a wild goat chasing after them!"
+        cho "A goat?"
+        m "Yes. Don't you have those here?"
+        cho "I'm still surprised how well that worked out, if I'm honest."
+        m "You’re welcome."
 
-            if huffl_matches_won == 0:
-                m "But, that made me think…"
-                m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
-                cho "Like how?"
-                m "We use them as a distraction!"
-                m "Now we only have to find out how to show them off properly during the game."
-                cho "I have to say I don’t like this notion one bit. But it’s probably worth a try…"
-            else:
-                m "You must have been so embarrassed during the game."
-                m "Beating him at Quayditch..."
-                cho "Quidditch...{p=0.2}{nw}"
-                m "Quidditch...{p=0.4} was almost too easy…"
-                m "All we had to do was put some good-old panties in front of his face, and he’s like a blind dog chasing after them."
-                cho "I’m also still shocked how well that worked out."
-                m "You’re welcome."
-
-
-        "\"Tell me more about that Potter boy\"":
-            ## Short chat with Cho about Harry.
-            ## No jerk off option for Genie.
-
-            cho "Potter?"
-            m "Yeah, that boy Snape is always bitching about."
-            cho "But I never dated him!"
-            m "Wait a minute."
-            g4 "Didn't you say you had a relationship with \"all\" of the tourney champions?"
-            cho "Yes, with all three of them, Professor."
-            cho "Potter wasn't one of the champions."
-            m "He wasn't?"
-            cho "No. He never threw his name into the Goblet of fire."
-            with hpunch
-            g4 "He never threw his name into the goblet o' fiya?"
-            m "(Wait, why am I getting all riled up? I don't even know what that's supposed to mean.)"
-            cho "No, [cho_genie_name]. He wasn't allowed to participate."
-            m "So you never did anything with him?"
-            cho "I know for a fact that he has a thing for me, but I'm not interested in Harry."
-            cho "Plus, he's always surrounded by Granger."
-            ## Add end of conversation.
-            call nar("End of conversation. Writing not yet added.")
+    return
 
 
-        "\"Tell me more about Fleur\"":
-            ## Elaborate chat with Cho about Fleur.
-            ## She gets into detail about her and all the kissing the've done.
-            ## Maybe even talk about Fleur's sister...
-            ## French dirty talk?
-            ## Genie gets the option to jerk off or pay attention.
-            ## Continue
-            call nar("Writing not yet added.")
+### Tier 2 ###
 
-        "\"Tell me more about Crum\"":
-            cho "He was at this school for only the year, so I naturally made the most out of it."
-            ## Same options as with Fleur.
-            ## They did more than just kissing.
-            ## She was jealous when she saw him making out with Hermione, so Cho made it her mission to take him from her.
-            ## Cho reluctantly tells you about the BJ she gave him.
-            ## (Spoiler, she did even more with him but won't tell you that in this conversation!)
-            ## Continue
-            call nar("Writing not yet added.")
+label cc_pf_T2_talking_1:
+
+    m "Could you tell me anything about who we are up against next?"
+    cho "Our next game is against the Slytherin team."
+    g9 "(Sweet! I will win Snape's bet sooner than I thought!)"
+    m "Are they better than Hufflepuff?"
+    cho "They are, by quite a bit."
+    cho "However, Hufflepuff only had one really good player. Which was Cedric."
+    cho "Slytherin on the other hand, they are almost unbeatable. They might even be better than Gryffindor!"
+    m "You don't say. So why are they next and not Gryffindor?"
+    cho "Because of their seeker, he's...{w} so,{w} so bad!"
+    m "Who is?"
+    cho "Draco Malfoy, Sir."
+    m "Any chance you fooled around with him too?"
+    cho "*Tzzzz* I'd never surround myself with Slytherin scum."
+    m "I guess you and Granger have at least something in common..."
+    cho "His daddy bought their whole team new brooms, which is the only reason they've let him in."
+    m "His daddy?"
+    cho "His father, Sir."
+    m "Oh. I thought you might be talking about a different \"daddy\"."
+    cho "Very funny, [cho_genie_name]..."
+    cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried about..."
+    cho "You don't just win by catching the snitch first. You also have to be leading in points!"
+    cho "If you catch the snitch too early, the game will be over."
+    cho "That's how Slytherin won most of their games in the past. They win by letting the other seeker catch the Snitch..."
+    m "Those rules are so idiotic..."
+
+    # Plan how to deal with Slytherin's team.
+
+    # Cho leaves.
+
+    return
+
+
+label cc_pf_T2_talking_2:
+
+    # Tell her to talk dirty.
+    # She's a bit bad at it.
+    # You encourage her to thinking of hermione and try again.
+    # Cho is getting aggressive which gets you off.
+
+    return
+
+
+label cc_pf_T2_talking_3:
+
     return
 
 

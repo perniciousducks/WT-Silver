@@ -6,7 +6,42 @@ label cc_pf_groping:
     call nar("not implemented yet")
     jump end_cho_event
 
+label cc_pf_T1_groping_1:
+    m "It's time for your next favour, [cho_name]."
+    cho "I uhm- I think I'm ready."
+    cho "What would you like me to do, [cho_genie_name]?"
+    m "How often do you typically exercise, Miss Chang?"
+    cho "As often as I can, [cho_genie_name]!"
+    m "Which is... how often? Twice a week?"
+    cho "Three times a day, Sir!"
+    m "What? That's just ridiculous!"
+    cho "It is not! It's necessary for somebody in my position!"
 
+
+
+    m "I need you to remove your clothes."
+    cho "(!!!)"
+    m "Go on, girl. Start with the top..."
+    cho "No!"
+    cho "Why are you even ask me of such a thing?!"
+    m "I- uhm-..."
+
+    menu:
+        "\"I need to inspect your body!\"":
+            m "You know, just making sure that you are even fit enough for the job."
+            m "After all, you only work out three times a day."
+            m "As a coach, I need to have a proper look at you."
+        "\"Hermione asked me to...\"":
+            cho "Granger? And why would she do that?"
+            g4 "(I'm running out of excuses!)"
+            m "Because she believes you wouldn't be up for it?"
+            cho "Did she?"
+            h9 "And I would like the look of \"her\" body over yours..."
+            cho "That pretentious bitch!"
+            cho "Her body is --- compared to mine!"
+
+
+    return
 
 
 

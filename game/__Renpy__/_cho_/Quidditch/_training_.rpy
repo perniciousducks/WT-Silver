@@ -19,6 +19,7 @@ label cho_training_menu:
     if cho_training_state == "intro_2":
         $ cho_training_state = "complete"
         $ cho_training_unlocked = True
+        $ cho_favors_unlocked = True
         call quidditch_training_intro_2
 
     jump change_quidditch_tactics
@@ -57,6 +58,8 @@ label quidditch_training_intro_1:
             cho "(...)" # Annoyed look to the left.
         "\"Eagle #1\"":
             $ cho_name = "Eagle #1"
+        "\"Eagle #2\"":
+            $ cho_name = "Eagle #2"
 
     cho "Yes, Sir."
     g4 "Let's start with your \"Quiddesh\" training!"
@@ -195,9 +198,6 @@ label quidditch_training_intro_2:
 
     call give_reward(">You've re-gained the ability to train Cho in Quidditch!","interface/icons/head/head_cho_1.png")
 
-    $ cho_favors_unlocked = True
-    call give_reward(">You can now also buy favours from Cho.","interface/icons/head/head_cho_2.png")
-
     return
 
 
@@ -214,9 +214,9 @@ label change_quidditch_tactics:
     call update_gen_chibi # Reset Chibi.
     call gen_chibi("stand","desk","base")
     with fade
-    
+
     $ cho_outift_last.save() # Temporarily save last worn clothes
-    
+
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
 
     label demonstrate_quidditch_tactics:
@@ -284,7 +284,7 @@ label change_quidditch_tactics:
                     cho "Could you please stop oggling me and focus on the Quidditch Cup, sir?"
                     cho "(I can't believe I agreed to this..)"
                     m "*ahem* Yes, of course."
-                "Custom":            
+                "Custom":
                     call cho_main(xpos="mid",ypos="base", face="neutral")
                     call t_wardrobe_quidditch() # Open quidditch wardrobe
                     $ cho_outfit_quidditch.save()

@@ -128,6 +128,7 @@ label summon_cho:
 
 # Cho Favor Menu
 label cho_favor_menu:
+    call update_cho_heart_color
     python:
         menu_choices = []
         for i in cc_favor_list:
@@ -175,6 +176,20 @@ label cho_requests_menu:
     else:
         $ renpy.jump(result)
 
+label update_cho_heart_color:
+    if main_matches_won == 0:
+        $ heart_color = "yellow"
+    elif main_matches_won == 1:
+        $ heart_color = "green"
+    elif main_matches_won == 2:
+        $ heart_color = "red"
+    else:
+        $ heart_color = "blue"
+
+    $ cc_pf_talking_OBJ.heart_color = heart_color
+    $ cc_pf_groping_OBJ.heart_color = heart_color
+
+    return
 
 label favor_not_ready:
     call nar("You can't do this favour just yet.")

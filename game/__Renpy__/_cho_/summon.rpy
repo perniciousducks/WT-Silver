@@ -196,7 +196,7 @@ label favor_not_ready:
     return
 
 label not_available:
-    call nar("This feature is currently not availabel in v[config.version], and will be added in a later patch.")
+    call nar("This feature is currently not available in v[config.version], and will be added in a later patch.")
     return
 
 

@@ -129,14 +129,8 @@ screen points: #House points screen.
 
 screen gift:
     zorder 6
-    add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547
-    vbox:
-        xalign 0.5
-        yalign 0.547
-        xsize 313
-        ysize 186
-
-        add the_gift xalign 0.5 yalign 0.5 zoom get_zoom(the_gift, 300,160)
+    #add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547
+    add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
 
 
 label give_reward(text="",gift=""):

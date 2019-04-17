@@ -71,7 +71,7 @@ label __init_variables:
             
             # Hats
             cho_goggles = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="goggles", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]])
-            cho_goggles_face = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="goggles_face", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]])
+            cho_goggles_face = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="goggles_face", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]], unlocked=False)
             
             # Neckwear
             cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=2, color=[[100, 100, 255, 255], [220, 220, 221, 255]])

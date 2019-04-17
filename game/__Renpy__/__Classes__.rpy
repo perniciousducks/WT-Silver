@@ -24,13 +24,13 @@ init -2 python:
 
         def getMenuText(self):
             heart_list = []
-            for i in range(0,self.max_level):
+            for i in xrange(self.max_level):
                 if i < self.level:
-                    heart_list.append("interface/icons/small/heart_" +str(self.heart_color)+ ".png")
+                    heart_list.append("interface/icons/small/heart_"+self.heart_color+".png")
                 else:
                     heart_list.append("interface/icons/small/heart_empty.png")
             ret_str = "\""+self.title+"\" "
-            for i in range(0,len(heart_list)):
+            for i in xrange(len(heart_list)):
                 ret_str += "{image="+str(heart_list[i])+"}"
 
             if self.progress_hint:

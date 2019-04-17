@@ -61,6 +61,7 @@ label hide_all_screens:
     #Room of Requirement
     hide screen room_of_requirement
     hide screen room_of_requirement_menu
+    hide screen room_of_requirement_overlay
     hide screen candle_light_1
     hide screen candle_light_2
     hide screen whose_points_screen

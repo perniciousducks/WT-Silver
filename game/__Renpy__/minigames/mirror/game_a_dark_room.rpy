@@ -522,7 +522,7 @@ label DRgame_random_event:
 screen dark_room:
     add "images/rooms/_bg_/main_room_night.png"
 
-    add "images/rooms/_objects_/doors/door_idle.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/doors/door_idle_night.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
     add "images/rooms/_objects_/fireplace/fireplace_w_shadow.png" at Position(xpos=693, ypos=277, xanchor="center", yanchor="center")
     if read_book:
         if DRgame.fire == 0:

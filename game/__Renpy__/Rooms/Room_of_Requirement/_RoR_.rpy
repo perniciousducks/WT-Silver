@@ -1,16 +1,42 @@
-
+init:
+    $ mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.png"]
+    $ mirror_image = 0
+    
+transform mirrage:
+    subpixel True
+    on show, appear, start:
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    on hide:
+        alpha 1.0
+        linear 0.5 alpha 0.0
 
 screen room_of_requirement:
+    zorder 0
+    add im.Flip("images/rooms/room_of_requirement/corridor.png", horizontal=True)
+    if mirror_image != 0:
+        add im.Flip(mirror_bg[mirror_image], horizontal=True) xpos -540 at mirrage
+    if renpy.get_screen("genie_stand"):
+        use genie_stand_mirror
+    if renpy.get_screen("genie_walk"):
+        use genie_walk_mirror
     add "images/rooms/room_of_requirement/empty_room.png"
-    add "images/rooms/_objects_/doors/door_idle.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/doors/door_idle_night.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
-    add "images/rooms/_objects_/candles/candle.png" at Position(xpos=350, ypos=200, xanchor="center", yanchor="center")
 
     add "images/rooms/_objects_/candles/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
-    zorder -1
+    
+screen room_of_requirement_overlay:
+    tag foreground
+    zorder 5
+    
+    add "images/rooms/room_of_requirement/foreground.png"
+    add "candle_fire_01" xpos 592 ypos 85
+    add "candle_fire_02" xpos 248 ypos 50
 
 screen room_of_requirement_menu:
     tag room_screen
+    zorder 1
 
     imagebutton: # Mirror
         xpos 100
@@ -25,50 +51,28 @@ screen room_of_requirement_menu:
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/_objects_/doors/door_idle.png"
-        hover "images/rooms/_objects_/doors/door_hover.png"
+        idle "images/rooms/_objects_/doors/door_idle_night.png"
+        hover "images/rooms/_objects_/doors/door_hover_night.png"
         action [Jump("return_office")]
+    
+screen genie_stand_mirror:
+    tag genie_chibi_mirror
 
-    imagebutton: # Cadle Fire left
-        xpos 350
-        ypos 200
-        focus_mask True
-        xanchor "center"
-        yanchor "center"
-        idle "images/rooms/_objects_/candles/candle.png"
-        hover "images/rooms/_objects_/candles/candle.png"
-        action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_2")]
+    add genie_chibi_stand xpos genie_chibi_xpos-110 ypos genie_chibi_ypos xzoom -genie_chibi_flip #zoom (1.0/scaleratio)
 
-    imagebutton: # Cadle Fire Right
-        xpos 700
-        ypos 200
-        focus_mask True
-        xanchor "center"
-        yanchor "center"
-        idle "images/rooms/_objects_/candles/candleM.png"
-        hover "images/rooms/_objects_/candles/candleM.png"
-        action [Hide("room_of_requirement_menu"), Jump("turn_on_cadle_1")]
-    zorder -1
+    zorder genie_chibi_zorder
 
-label turn_on_cadle_1:
-    if renpy.get_screen("candle_light_1") == None:
-        show screen candle_light_1
-    else:
-        hide screen candle_light_1
-    call screen room_of_requirement_menu
+screen genie_walk_mirror:
+    tag genie_chibi_mirror
 
-label turn_on_cadle_2:
-    if renpy.get_screen("candle_light_2") == None:
-        show screen candle_light_2
-    else:
-        hide screen candle_light_2
-    call screen room_of_requirement_menu
+    add genie_chibi_walk at genie_walk_trans(-walk_xpos, walk_xpos2-110) xzoom -genie_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder genie_chibi_zorder
 
 label hide_room_req:
     hide screen room_of_requirement_menu
     hide screen room_of_requirement
-    hide screen candle_light_1
-    hide screen candle_light_2
+    hide screen room_of_requirement_overlay
     return
 
 label mirror_menu:
@@ -91,13 +95,6 @@ label mirror_menu:
     elif _return == "dec":
         $ current_page += -1
         jump mirror_menu
-
-
-screen candle_light_1:
-    add "candle_fire_01" xpos 590 ypos 85
-
-screen candle_light_2:
-    add "candle_fire_02" xpos 240 ypos 85
 
 screen room_of_req_door:
     add "images/rooms/_objects_/doors/front_door.png" at fade_in(420, 105, 1)
@@ -154,9 +151,6 @@ image flower_animation:
     "images/animation/Bouquet4.png"
     repeat
 
-
-
-
 screen floor_7th_menu:
     imagebutton:
         xpos 420
@@ -170,9 +164,10 @@ label enter_room_of_req:
     show screen blkfade
     with d3
 
-    call play_standart_theme
+    call music_block
 
     call room("room_of_requirement")
+    show screen room_of_requirement_overlay
 
     python:
         for i in mr_evs_list:
@@ -214,6 +209,7 @@ label enter_room_of_req:
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
         call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_06")
         m "*Squints* Just seems like an old mirror to me, a bit dusty and cloudy thou...hold on a minute."
+        $ mirror_image = 1
         call sna_main(".....", "snape_23")
         m "... I see myself...I've won the house cup."
         call sna_main("Really?", "snape_05")
@@ -229,6 +225,8 @@ label enter_room_of_req:
         call sna_main("The intended purpose was far too boring, so I modified the enchantment. This would be incredibly difficult for a lesser wizard, but genius like I am...", "snape_23")
         m "Booooring."
         call sna_main("It's a porn creator..", "snape_03")
+        $ mirror_image = 0
+        call gen_chibi("stand","200","base")
         g5 "A what, sorry?"
         call sna_main("A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn.", "snape_01")
         g5 "And you didn't tell me a thing like this existed?"
@@ -248,14 +246,7 @@ label enter_room_of_req:
         call sna_chibi("hide")
         call gen_chibi("hide")
 
-
+    $ mirror_image = 1
     call gen_chibi("stand","200","base",flip=True)
     call hide_blkfade
     call screen room_of_requirement_menu
-
-label play_standart_theme:
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
-    return

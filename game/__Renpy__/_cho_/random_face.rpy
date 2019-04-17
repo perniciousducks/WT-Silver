@@ -22,7 +22,7 @@ label set_cho_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif mouth in ["naughty","horny"]:
             $ temp_mouth    = renpy.random.choice(["quiver","horny","soft"])
         elif mouth in ["annoyed"]:
-            $ temp_mouth    = renpy.random.choice(["annoyed","quiver","pout"])
+            $ temp_mouth    = renpy.random.choice(["annoyed","pout"])
         elif mouth in ["disgusted"]:
             $ temp_mouth    = renpy.random.choice(["angry","upset"])
         elif mouth in ["angry"]:

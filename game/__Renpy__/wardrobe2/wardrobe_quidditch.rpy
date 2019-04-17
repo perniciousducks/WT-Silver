@@ -6,9 +6,8 @@ label t_wardrobe_quidditch():
     
     python:
         quidditch_items = { "robe": [cho_cloth_robequidditch1, None],
-                            "top": [cho_cloth_topsweater1, cho_cloth_topsweater2, cho_cloth_topschool1, cho_cloth_topschool2, cho_cloth_topschool3, cho_cloth_topschool4, cho_cloth_topschool5, cho_cloth_topschool6, cho_cloth_topsailor1, None],
-                            "bottom": [cho_cloth_pantslong2, cho_cloth_pantsshort4, cho_cloth_schoolskirt1, cho_cloth_schoolskirt2, cho_cloth_schoolskirt3, cho_cloth_schoolskirt4, cho_cloth_skirtshort1, None]}
-        current_item = [0, 0, 0]
+                            "bottom": [cho_cloth_pantslong2, cho_cloth_pantsshort4, cho_cloth_schoolskirt3]}
+        current_item = [0, 0]
     
     label t_wardrobe_quidditch_after_init:
     
@@ -30,10 +29,32 @@ label t_wardrobe_quidditch():
                 $ char_active.equip(quidditch_items.items()[_return[2]][1][current_item[_return[2]]])
             else:
                 $ char_active.unequip(quidditch_items.keys()[_return[2]])
-    else:
+    elif _return == "apply":
+        # Add reactions here, example:
+        
+        if cho_class.get_cloth("robe") == None:
+            call remove_quidditch_coat
+            
+        # If taking off coat failed
+        if _return == "fail":
+            jump t_wardrobe_quidditch_after_init
+            
+        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id:
+            call use_quidditch_skirt_1
+        elif cho_class.get_cloth("bottom").id == cho_cloth_pantslong2.id:
+            call use_quidditch_pants_1
+        elif cho_class.get_cloth("bottom").id == cho_cloth_pantsshort4.id:
+            call use_quidditch_pants_2
+            
+        $ cho_outfit_quidditch.save() #<- use this to save quidditch outfit if all checks are passed
         $ hide_transitions = False
-        $ char_active.wear("all")
         return
+    else:
+        m "Nevermind, your current outfit is sufficient enough."
+        cho "Okay."
+        $ hide_transitions = False
+        return
+
     jump t_wardrobe_quidditch_after_init
         
 screen t_wardrobe_quidditch_menuitem(xx, yy):
@@ -49,3 +70,4 @@ screen t_wardrobe_quidditch_menuitem(xx, yy):
             spacing 210
             imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["equip", "dec", i])
             imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["equip", "inc", i])
+    textbutton "Apply" action Return("apply") pos (400, 450)

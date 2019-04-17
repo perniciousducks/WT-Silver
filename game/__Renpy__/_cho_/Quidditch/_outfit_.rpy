@@ -35,7 +35,7 @@ label use_quidditch_pants_1:
 
     # Intro
     if "pants_1" not in quid_outfit_intro:
-        $ quid_outfit_intro.appned("pants_1")
+        $ quid_outfit_intro.append("pants_1")
 
     m "I'd like you to wear trousers for your games again."
     cho "Really? Just my regular pants?"
@@ -176,7 +176,7 @@ label remove_quidditch_coat:
         m "(...)"
         m "(Guess I have to try something else.)"
         $ cho_quidditch_coat = True # For testing.
-
+        return "fail"
     else:
         call cho_main("Ugh...","quiver","angry","angry","mid")
         call cho_main("Fine...","pout","angry","angry","R")

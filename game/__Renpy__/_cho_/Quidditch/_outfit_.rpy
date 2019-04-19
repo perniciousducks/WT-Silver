@@ -176,7 +176,7 @@ label remove_quidditch_coat:
         m "(...)"
         m "(Guess I have to try something else.)"
         $ cho_quidditch_coat = True # For testing.
-
+        return "fail"
     else:
         call cho_main("Ugh...","quiver","angry","angry","mid")
         call cho_main("Fine...","pout","angry","angry","R")

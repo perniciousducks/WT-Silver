@@ -89,14 +89,14 @@ label __init_variables:
             # Outfits
             #cho_outfit_school2 = outfit_class(name="School 2", desc="Slightly modified base school outfit", group=[cho_cloth_topschool2, cho_cloth_schoolskirt2, cho_cloth_basicbra2, cho_cloth_basicpanties2, cho_cloth_lace_stockings_1])
             
-            cho_outfit_quidditch = outfit_class(name="Quidditch", group=[cho_cloth_basicbra1, cho_cloth_basicpanties1, cho_cloth_pantslong2.clone(), cho_cloth_robequidditch1.clone(), cho_cloth_glovesquidditch1.clone()])
+            cho_outfit_quidditch = outfit_class(name="Quidditch", group=[cho_cloth_topsweater1.clone(), cho_cloth_pantslong2.clone(), cho_cloth_robequidditch1.clone(), cho_cloth_glovesquidditch1.clone()])
             
             # Used in quidditch training
-            cho_outfit_quidditch1 = outfit_class(name="Quidditch", group=[cho_cloth_topsweater1, cho_cloth_pantslong2.clone(), cho_cloth_robequidditch1.clone(), cho_cloth_glovesquidditch1.clone()])
+            cho_outfit_quidditch1 = outfit_class(name="Quidditch1", group=[cho_cloth_topsweater1.clone(), cho_cloth_schoolskirt3.clone(), cho_cloth_robequidditch1.clone(), cho_cloth_glovesquidditch1.clone()])
             
-            cho_outfit_quidditch2 = outfit_class(name="Quidditch", group=[cho_cloth_topsweater1.clone(), cho_cloth_basicbra1, cho_cloth_basicpanties1, cho_cloth_pantsshort4.clone(), cho_cloth_glovesquidditch1.clone()])
+            cho_outfit_quidditch2 = outfit_class(name="Quidditch2", group=[cho_cloth_topsweater1.clone(), cho_cloth_pantslong2.clone(), cho_cloth_glovesquidditch1.clone()])
             
-            cho_outfit_quidditch3 = outfit_class(name="Quidditch", group=[cho_cloth_robequidditch1.clone(), cho_cloth_basicbra1, cho_cloth_basicpanties1, cho_cloth_glovesquidditch1.clone()])
+            cho_outfit_quidditch3 = outfit_class(name="Quidditch", group=[cho_cloth_topsweater2.clone(), cho_cloth_pantsshort4.clone(), cho_cloth_glovesquidditch1.clone()])
             
             cho_outfit_quidditch4 = outfit_class(name="Quidditch", group=[cho_cloth_robequidditch1.clone(), cho_cloth_glovesquidditch1.clone()])
             

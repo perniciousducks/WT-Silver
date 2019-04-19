@@ -2,16 +2,16 @@
 
 ### Hermione Titjob ###
 
-label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
+label hg_pf_titjob: #LV.6 (Whoring = 15 - 17)
 
     call reset_menu_position
 
-    if hg_pf_TitJob_OBJ.points == 0:
+    if hg_pf_titjob_OBJ.points == 0:
         m "{size=-4}(Should I ask her for a titjob?){/size}"
     else:
         g9 "{size=-4}(I feel like putting my cock between those tits again!){/size}"
 
-    if hg_pf_TitJob_OBJ.points < 1:
+    if hg_pf_titjob_OBJ.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -23,7 +23,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
     call bld
 
     #First Event.
-    if hg_pf_TitJob_OBJ.points == 0:
+    if hg_pf_titjob_OBJ.points == 0:
         m "Now [hermione_name]."
         call her_main("Yes, [genie_name]?","base","base",xpos="right",ypos="base")
         m "Have you ever given someone a titjob?"
@@ -104,7 +104,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
 
 
     #Second Event.
-    elif hg_pf_TitJob_OBJ.points == 1:
+    elif hg_pf_titjob_OBJ.points == 1:
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","base","base",xpos="right",ypos="base")
         m "How do you feel about wrapping those nice tits of yours around my cock again?"
@@ -126,7 +126,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
 
 
     #Third Event.
-    elif hg_pf_TitJob_OBJ.points >= 2:
+    elif hg_pf_titjob_OBJ.points >= 2:
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="right",ypos="base")
         m "You don't mind wrapping those perfect tits of yours around my cock again, do you?"
@@ -194,7 +194,7 @@ label hg_titjob_1:
     call bld
     g9 "mmmm..."
     $ ccg1 = 6
-    if hg_pf_TitJob_OBJ.points == 0:
+    if hg_pf_titjob_OBJ.points == 0:
         call her_main("...","base","base")
         call her_main("Does it... feel good?","base","squint")
         m "Good?"
@@ -953,10 +953,10 @@ label end_hg_titjob:
     if her_whoring < 18:
         $ her_whoring +=1
 
-    $ hg_pf_TitJob_OBJ.points += 1
+    $ hg_pf_titjob_OBJ.points += 1
 
-    if hg_pf_TitJob_OBJ.points <= 3:
-        $ hg_pf_TitJob_OBJ.level = hg_pf_TitJob_OBJ.points
+    if hg_pf_titjob_OBJ.points <= 3:
+        $ hg_pf_titjob_OBJ.level = hg_pf_titjob_OBJ.points
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 

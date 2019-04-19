@@ -3,11 +3,11 @@
 ### Let Classmate Molest Her ###
 
 ##(Level 03) (25 pt.) (Let a classmate touch you). (Available during daytime only).
-label hg_pr_ClassmateTouchYou:
+label hg_pr_grope:
 
     call reset_menu_position
 
-    if hg_pr_ClassmateTouchYou_OBJ.points < 1:
+    if hg_pr_grope_OBJ.points < 1:
         m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,7 +18,7 @@ label hg_pr_ClassmateTouchYou:
     call bld
 
     #Intro.
-    if hg_pr_ClassmateTouchYou_OBJ.points == 0:
+    if hg_pr_grope_OBJ.points == 0:
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="right",ypos="base")
         m "You do like boys your age, don't you?"
@@ -33,7 +33,7 @@ label hg_pr_ClassmateTouchYou:
         call her_main(".......?","open","base")
         m "And let him touch you..."
 
-        if her_whoring < 6 or hg_pr_FlirtTeacher_OBJ.points < 2: # Counts how many times Hermione been sent to flirt with teachers.
+        if her_whoring < 6 or hg_pr_flirt_teacher_OBJ.points < 2: # Counts how many times Hermione been sent to flirt with teachers.
             jump too_much
 
         call her_main("Let him... touch me, [genie_name]?","open","base")
@@ -98,12 +98,12 @@ label hg_pr_ClassmateTouchYou:
             call her_main("Great. I will see you after the classes then, [genie_name]. As usual.","angry","wink")
             m "Yes. Good luck."
 
-    $ hg_pr_ClassmateTouchYou_OBJ.inProgress = True
+    $ hg_pr_grope_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_ClassmateTouchYou_complete:
+label hg_pr_grope_complete:
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -402,11 +402,11 @@ label hg_pr_ClassmateTouchYou_complete:
 
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
 
-    $ hg_pr_ClassmateTouchYou_OBJ.points += 1
-    $ hg_pr_ClassmateTouchYou_OBJ.inProgress = False
+    $ hg_pr_grope_OBJ.points += 1
+    $ hg_pr_grope_OBJ.inProgress = False
 
-    if hg_pr_ClassmateTouchYou_OBJ.points >= 2:
-        $ hg_pr_ClassmateTouchYou_OBJ.complete = True
+    if hg_pr_grope_OBJ.points >= 2:
+        $ hg_pr_grope_OBJ.complete = True
 
     if her_reputation <= 8:
         $ her_reputation +=1

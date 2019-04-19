@@ -2,16 +2,16 @@
 
 ### Hermione Shows Her Backside ###
 
-label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
+label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
     call reset_menu_position
 
-    if hg_pf_ShowMeYourAss_OBJ.points == 0:
+    if hg_pf_look_at_ass_OBJ.points == 0:
         m "{size=-4}(I feel like checking out that ass.){/size}"
     else:
         m "{size=-4}(I feel like checking out that ass again.){/size}"
 
-    if hg_pf_ShowMeYourAss_OBJ.points < 1:
+    if hg_pf_look_at_ass_OBJ.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -20,7 +20,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
 
     $ current_payout = 40 #Used when haggling about price of th favor.
 
-    if hg_pf_ShowMeYourAss_OBJ.points == 0 and her_whoring < 15: # LEVEL 04 # FIRST TIME.
+    if hg_pf_look_at_ass_OBJ.points == 0 and her_whoring < 15: # LEVEL 04 # FIRST TIME.
 
         call bld
         m "[hermione_name]?"
@@ -871,22 +871,22 @@ label end_hg_show_ass:
     else:
         her "I'd better go now then. It's getting pretty late..."
 
-    $ hg_pf_ShowMeYourAss_OBJ.level = 1 #Event hearts level (0-3)
+    $ hg_pf_look_at_ass_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 12 and her_whoring < 15:
-        $ hg_pf_ShowMeYourAss_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_look_at_ass_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 15 and her_whoring < 18:
-        $ hg_pf_ShowMeYourAss_OBJ.level = 2 #Event hearts level (0-3)
+        $ hg_pf_look_at_ass_OBJ.level = 2 #Event hearts level (0-3)
 
     if her_whoring >= 18:
-        $ hg_pf_ShowMeYourAss_OBJ.level = 3 #Event hearts level (0-3)
+        $ hg_pf_look_at_ass_OBJ.level = 3 #Event hearts level (0-3)
 
 
     if her_whoring < 15:
         $ her_whoring +=1
 
-    $ hg_pf_ShowMeYourAss_OBJ.points += 1
+    $ hg_pf_look_at_ass_OBJ.points += 1
 
     hide screen bld1
     hide screen hermione_main

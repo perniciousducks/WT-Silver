@@ -34,7 +34,7 @@ label hg_wager_bj:
             call her_main("No... can we just get this over with?", mouth="annoyed", eye="glance")
             call her_main("{size=-5}All this because of a stupid card game{/size}.", mouth="upset", eye="worriedCl")
             m "I know, we should definitely do this again."
-            if hg_pf_DanceForMe_OBJ.points >= 2: #If snape walked in during the dance favour.
+            if hg_pf_dance_OBJ.points >= 2: #If snape walked in during the dance favour.
                 call play_music("dark_fog")
                 call play_sound("door")
                 call sna_walk("door","mid",2)
@@ -103,7 +103,7 @@ label hg_wager_bj:
         call set_u_ani("blowjob_ani","hand_ani", 0,10)
         call her_main("Gryffindor really can't afford to lose 20 points...", mouth="soft", eye="worried")
         call her_main("Okay then, I'll do it.", mouth="open", eye="closed")
-        if hg_pf_SuckIt_OBJ.points > 0: #if shes done the blowjob favour these show
+        if hg_pf_blowjob_OBJ.points > 0: #if shes done the blowjob favour these show
             call her_main("Not like I haven't done it before.", mouth="base", eye="happy", cheeks="blush")
             if her_whoring > 18:
                 call her_main("And it does feel good having my mouth full of your cock...", mouth="soft", eye="happyCl", cheeks="blush")
@@ -172,7 +172,7 @@ label hg_wager_bj:
                 g4 "..."
                 call sna_main("Hmm...{w} it seems the weird sound is gone.", face="snape_04")
                 m "Oh... yes, seems like it..."
-                call sna_main("I bet it was peeves again...", face="snape_16") 
+                call sna_main("I bet it was peeves again...", face="snape_16")
                 call sna_main("I’ll leave you to it then...", face="snape_03")
                 call her_main("...", mouth="full_cum", eye="down_raised", cheeks="blush")
                 call sna_walk("mid","door",3) #snape walks to the door, pauses on gulp sound
@@ -193,7 +193,7 @@ label hg_wager_bj:
                 call sna_main("Reveal yourself! I won't let you harm him!", face="snape_10", wand=True)
                 g4 "Severus, wait!"
                 call sna_main("I knew something was wrong from the start, you can't hide from me, now reveal yourself or prepare to die!", face="snape_30", wand=True)
-                if hg_pf_DanceForMe_OBJ.points < 2: #if hermione hasn't stripped twice
+                if hg_pf_dance_OBJ.points < 2: #if hermione hasn't stripped twice
                     m "What are you doing Severus?"
                     call her_main("...", mouth="soft", eye="worried", cheeks="blush")
                     m "You're being very strange..."
@@ -311,7 +311,7 @@ label hg_wager_bj:
                             hide screen blkfade
                             call her_main("In that case I'll take my leave...", mouth="smile", eye="happy", ypos="base")
                             call her_chibi("leave","door","base")
-                            g9 "That girl..."                            
+                            g9 "That girl..."
                         "-Let her keep going and deal with the aftermath-":
                             m "Yeah... I'm good."
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
@@ -574,13 +574,13 @@ label hg_wager_bj:
                             m "20 Points from Gryffindor!"
                             $ gryffindor -= 20
                             $ her_mood += 10
-                            
-        $ hg_pf_SuckIt_OBJ.points += 1
+
+        $ hg_pf_blowjob_OBJ.points += 1
     call blkfade
     call u_end_ani
     hide screen blkfade
     jump end_hg_pf #should reset it all
-    
+
 label hg_wager_bj_secret:
     hide screen rollback_check
     hide screen hermione_main
@@ -604,7 +604,7 @@ label hg_wager_bj_secret:
     g9 "Slam dunk!"
     $ renpy.play('sounds/other/secret_line4.mp3')
     g9 "Another victory in the bag, eat my shit!"
-    
+
     call blkfade
     call u_pause_ani
     call sna_chibi("hide")
@@ -612,14 +612,14 @@ label hg_wager_bj_secret:
     hide screen hg_wager_bj_secret
     pause 1.0
     call hide_blkfade
-    
+
     $ renpy.block_rollback()
     g9 "\"And then I totally just shat all over the game board...\""
-    
+
     jump hg_wager_bj_secret_end
-    
+
 screen hg_wager_bj_secret:
     zorder 4
     add im.MatrixColor("images/rooms/overlays/g_circular.png", im.matrix.saturation(0.0)*im.matrix.brightness(0.7))
-    
+
     text "Replay" pos (50, 50) size 40 color "#FFF" outlines [(5, "#000", 0, 0)] at blink

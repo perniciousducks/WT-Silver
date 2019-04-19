@@ -34,10 +34,10 @@ label jerk_off:
     
     label how_to_finish:
     menu:
-        "{color=#858585}...(LOCKED)...{/color}" if not hg_ps_PantyThief_OBJ.inProgress:
+        "{color=#858585}...(LOCKED)...{/color}" if not hg_ps_get_panties_OBJ.inProgress:
             ">You lack the item required for this option."
             jump  how_to_finish
-        "-Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress:
+        "-Hermione's panties-" if hg_ps_get_panties_OBJ.inProgress:
             $ cum_on_panties = True #True when choose to cum on Hermione's panties.
         "-On the floor!-":
             $ cum_on_panties = False #TRUE when chosen to cum on the floor.
@@ -76,7 +76,7 @@ pause 1
 if not cum_on_panties:
     call nar(">You cum on the floor.") 
 if cum_on_panties:
-    $ hg_ps_PantyThief_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
+    $ hg_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
     call nar(">You cum all over Hermione's panties, and then use them to wipe the cum off the floor...") 
     call gen_chibi("cum_on_desk") 
     pause.5

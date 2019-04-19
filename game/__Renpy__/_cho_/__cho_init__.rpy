@@ -51,6 +51,7 @@ label cho_progress_init:
         $ cho_busy                = False
         $ cho_chatted             = False
 
+
         # Intro
         $ cho_intro_state         = "event_1"
         $ jerked_off_during_cho_intro = False
@@ -103,24 +104,27 @@ label cho_progress_init:
     # pf = Personal Favor.
     # pr = Public Requests.
 
-    if not hasattr(renpy.store,'cc_pf_talking_OBJ'):
-        $ cc_pf_talking_OBJ = favor_class(title = "Talk to me!",       tier = 0, start_label = "cc_pf_talking")
+    if not hasattr(renpy.store,'cc_pf_talk_OBJ'):
+        $ cc_pf_talk_OBJ    = favor_class(title = "Talk to me!", tier = 0, start_label = "cc_pf_talk")
 
-        $ cc_pf_groping_OBJ = favor_class(title = "Inspect her body!", tier = 1, start_label = "cc_pf_groping")
+        $ cc_pf_strip_OBJ   = favor_class(title = "Inspect her body!", tier = 1, start_label = "cc_pf_strip")
 
-        $ cc_pf_blowjob_OBJ = favor_class(title = "Suck it!",          tier = 2, start_label = "cc_pf_blowjob")
+        $ cc_pf_blowjob_OBJ = favor_class(title = "Suck it!", tier = 2, start_label = "cc_pf_blowjob")
 
-        $ cc_pf_sex_OBJ     = favor_class(title = "Let's have sex!",   tier = 3, start_label = "cc_pf_sex")
+        $ cc_pf_sex_OBJ     = favor_class(title = "Let's have sex!", tier = 3, start_label = "cc_pf_sex")
 
     $ cc_favor_list = [
-        cc_pf_talking_OBJ,
-        cc_pf_groping_OBJ,
+        cc_pf_talk_OBJ,
+        cc_pf_strip_OBJ,
         cc_pf_blowjob_OBJ,
         cc_pf_sex_OBJ,
         ]
 
     if not hasattr(renpy.store,'cc_pr_flirt_OBJ'):
-        $ cc_pr_flirt_OBJ   = request_class(title = "Flirt with the teams!", tier = 0, start_label = "cc_pr_flirt_start", return_label = "cc_pr_flirt_return")
+        $ cc_pr_flirt_OBJ   = event_class(title = "Get Flirty!", start_label = "cc_pr_flirt_start", events = [
+            [   ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"], ["cc_pr_flirt_T1_E2"]  ],
+            [   ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"], ["cc_pr_flirt_T2_E2"]  ] ]
+            )
 
     $ cc_requests_list = [
         cc_pr_flirt_OBJ,

@@ -2,13 +2,13 @@
 
 ### Hermione Breast Molester ###
 
-label hg_pf_BreastMolester:
+label hg_pf_grope_breasts:
 
     call reset_menu_position
 
     m "{size=-4}(I will molest her tits a little. Won't even ask her to bare them for me. Pretty harmless stuff.){/size}"
 
-    if hg_pf_BreastMolester_OBJ.points < 1:
+    if hg_pf_grope_breasts_OBJ.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -30,7 +30,7 @@ label hg_pf_BreastMolester:
 
         call hg_breast_molester_1
 
-        $ hg_pf_BreastMolester_OBJ.level = 1
+        $ hg_pf_grope_breasts_OBJ.level = 1
         jump end_hg_breast_molester
 
     #Second Event
@@ -43,7 +43,7 @@ label hg_pf_BreastMolester:
 
         call hg_breast_molester_2
 
-        $ hg_pf_BreastMolester_OBJ.level = 2
+        $ hg_pf_grope_breasts_OBJ.level = 2
         jump end_hg_breast_molester
 
     #Third Event
@@ -82,7 +82,7 @@ label hg_pf_BreastMolester:
 
         call hg_breast_molester_3_grabbing
 
-        $ hg_pf_BreastMolester_OBJ.level = 3
+        $ hg_pf_grope_breasts_OBJ.level = 3
         jump end_hg_breast_molester
 
     if her_whoring >= 15:
@@ -96,7 +96,7 @@ label hg_pf_BreastMolester:
         call hg_breast_molester_3
         call hg_breast_molester_3_grabbing
 
-        $ hg_pf_BreastMolester_OBJ.level = 4
+        $ hg_pf_grope_breasts_OBJ.level = 4
         jump end_hg_breast_molester
 
 
@@ -610,6 +610,6 @@ label end_hg_breast_molester:
     if her_whoring < 6: #Adds points till 6.
         $ her_whoring +=1
 
-    $ hg_pf_BreastMolester_OBJ.points += 1
+    $ hg_pf_grope_breasts_OBJ.points += 1
 
     jump end_hg_pf

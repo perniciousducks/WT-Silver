@@ -64,7 +64,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_cho_face(eyebrows = face)
         if pupils == None:
             call set_cho_face(pupils = face)
-            
+
     if animation != False:
         $ cho_animation = animation
 
@@ -86,11 +86,14 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     return
 
 label end_cho_event:
-    call play_sound("door")
     hide screen cho_chang
     with d3
     pause.5
+
     $ active_girl = None
+    $ cho_busy = True
+
+    call music_block
     jump main_room
 
 screen cho_chang():

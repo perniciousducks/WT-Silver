@@ -3,11 +3,11 @@
 ### Make Out With A Girl ###
 
 ##(Level 05) (45 pt.) (MAKE OUT WITH A GIRL). (Available during daytime only).
-label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
+label hg_pr_kiss: #LV.5 (Whoring = 12 - 14)
 
     call reset_menu_position
 
-    if hg_pr_KissAGirl_OBJ.points < 1:
+    if hg_pr_kiss_OBJ.points < 1:
         m "{size=-4}(Tell her to go make out with one of her female classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,11 +18,11 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
     call bld
 
     #Intro.
-    if hg_pr_KissAGirl_OBJ.points == 0:
+    if hg_pr_kiss_OBJ.points == 0:
         m "Have You ever kissed another girl, [hermione_name]?"
         call her_main("?!","normal","frown",xpos="right",ypos="base")
 
-        if her_whoring < 12 or hg_pr_FlashClassmate_OBJ.points < 2: # Counts how many times you sent Hermione to flash a classmate.
+        if her_whoring < 12 or hg_pr_flash_OBJ.points < 2: # Counts how many times you sent Hermione to flash a classmate.
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -77,12 +77,12 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
             call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.","smile","glance")
             m "Great. See you after your classes then."
 
-    $ hg_pr_KissAGirl_OBJ.inProgress = True
+    $ hg_pr_kiss_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_KissAGirl_complete:
+label hg_pr_kiss_complete:
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -124,7 +124,7 @@ label hg_pr_KissAGirl_complete:
             call her_main("I don't care...","scream","angryCl")
             $ her_mood +=25
 
-            $ hg_pr_KissAGirl_OBJ.inProgress = False
+            $ hg_pr_kiss_OBJ.inProgress = False
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
         #Event A
@@ -190,7 +190,7 @@ label hg_pr_KissAGirl_complete:
                     call her_main("......","angry","base",tears="soft")
                     $ her_mood +=25
 
-                    $ hg_pr_KissAGirl_OBJ.inProgress = False
+                    $ hg_pr_kiss_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
 
@@ -431,11 +431,11 @@ label hg_pr_KissAGirl_complete:
     m "The \"Gryffindor\" house gets 45 points!"
     her "Thank you, [genie_name]."
 
-    $ hg_pr_KissAGirl_OBJ.points += 1
-    $ hg_pr_KissAGirl_OBJ.inProgress = False
+    $ hg_pr_kiss_OBJ.points += 1
+    $ hg_pr_kiss_OBJ.inProgress = False
 
-    if hg_pr_KissAGirl_OBJ.points >= 2:
-        $ hg_pr_KissAGirl_OBJ.complete = True
+    if hg_pr_kiss_OBJ.points >= 2:
+        $ hg_pr_kiss_OBJ.complete = True
 
     if her_reputation <= 14:
         $ her_reputation +=1

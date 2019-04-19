@@ -3,11 +3,11 @@
 ### Flash A Classmate ###
 
 ##(Level 04) (35 pt.) (Flash your tits to a boy). (Available during daytime only).
-label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
+label hg_pr_flash: #LV.4 (Whoring = 9 - 11)
 
     call reset_menu_position
 
-    if hg_pr_FlashClassmate_OBJ.points < 1:
+    if hg_pr_flash_OBJ.points < 1:
         m "{size=-4}(Tell her to flash her tits to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,7 +18,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
     call bld
 
     #Intro.
-    if hg_pr_FlashClassmate_OBJ.points == 0:
+    if hg_pr_flash_OBJ.points == 0:
         m "[hermione_name]..."
         m "I would like to award \"Gryffindor\" with 25 house points today."
         call her_main("Really?","base","base",xpos="right",ypos="base")
@@ -31,7 +31,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
         m "You know, flash your breasts to some boys..."
         call her_main("?!!","shock","wide")
 
-        if her_whoring < 9 or hg_pr_ClassmateTouchYou_OBJ.points < 2:
+        if her_whoring < 9 or hg_pr_grope_OBJ.points < 2:
             jump too_much
 
         her "[genie_name]!"
@@ -111,12 +111,12 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
             call her_main("Classes are about to start... I'd better leave now.","base","base")
             her "I will see you later tonight, [genie_name]."
 
-    $ hg_pr_FlashClassmate_OBJ.inProgress = True
+    $ hg_pr_flash_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_FlashClassmate_complete:
+label hg_pr_flash_complete:
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -146,7 +146,7 @@ label hg_pr_FlashClassmate_complete:
                 her "..."
                 her "I'd better go now."
 
-                $ hg_pr_FlashClassmate_OBJ.inProgress = False
+                $ hg_pr_flash_OBJ.inProgress = False
                 jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
         #Event B
@@ -474,11 +474,11 @@ label hg_pr_FlashClassmate_complete:
 
     call hide_blktone
 
-    $ hg_pr_FlashClassmate_OBJ.points += 1
-    $ hg_pr_FlashClassmate_OBJ.inProgress = False
+    $ hg_pr_flash_OBJ.points += 1
+    $ hg_pr_flash_OBJ.inProgress = False
 
-    if hg_pr_FlashClassmate_OBJ.points >= 2:
-        $ hg_pr_FlashClassmate_OBJ.complete = True
+    if hg_pr_flash_OBJ.points >= 2:
+        $ hg_pr_flash_OBJ.complete = True
 
     if her_reputation <= 11:
         $ her_reputation +=1

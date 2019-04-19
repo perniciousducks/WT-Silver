@@ -102,7 +102,7 @@ label cho_quiz_1:
         call cho_main("Quidditch!","angry","closed","angry","mid",trans="hpunch")
         g9 "Ah, yes,... Quidditch.{w} It's like the Wizards version of Basketball, right?"
         call cho_main("Basketball?{w} Is that the muggle sport nobody cares about?","annoyed","narrow","raised","mid")
-        g4 "Nobody cares?{w}What are you...{w} Haven't you seen \"Space Jam\"?"
+        g4 "Nobody cares?{w} What are you...{w} Haven't you seen \"Space Jam\"?"
         call cho_main("...","pout","base","raised","mid")
         g4 "Come on."
         m "Well..."
@@ -304,9 +304,13 @@ label cho_quiz_1:
         call cho_main("And now you stopped making sense again...", "annoyed", "base", "raised", "L")
         call cho_main("Also I'm still quite unsure if you actually know Quidditch or am just trying to confuse me with Basketball terms...", "annoyed", "narrow", "raised", "mid")
         call exp_o_meter(fill=75)
+        pause.3
+        call bld
         g4 "(Fuck, she's onto me!)"
         g9 "Of course I'm not... I'll prove it to you!"
         call exp_o_meter(fill=50)
+        pause.5
+        call bld
         g4 "(Wait, why did I say that?)"
         call cho_main("...", "smile", "base", "raised", "mid")
         call cho_main("Okay then, show me what you know...", "smile", "base", "raised", "mid")
@@ -423,7 +427,7 @@ label cho_quiz_2:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
             call cho_main("Yes!", "smile", "wide", "raised", "L")
-            g9 "Great! Then lets get started with the...{w=1.0}{nw}"
+            g9 "Great! Then lets get started with the...{w=1.2}{nw}"
             call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_answer_5 += 1
 
@@ -432,7 +436,7 @@ label cho_quiz_2:
             $ renpy.block_rollback()
             call cho_main("I think you got some letters mixed up there...", "soft", "angry", "raised", "R")
             m "Quibble and Blodger?"
-            call cho_main("No, that's also...{w=1.0}{nw}", "open", "angry", "raised", "L")
+            call cho_main("No, that's also...{w=1.2}{nw}", "open", "angry", "raised", "L")
             m "Qacker and Blugger?"
             call cho_main("Professor...", "pout", "wide", "raised", "R")
             $ confidence_meter -= 12
@@ -556,7 +560,7 @@ label cho_quiz_2:
         m "So, you will you let me train you then?"
         call cho_main("I suppose...", "soft", "base", "raised", "R")
         g9 "(Fuck yeah, here we go!)" # Small text.
-        call cho_main("And I will stay true to my word... I'll sell you favours...{w}For wins...", "soft", "closed", "base", "mid")
+        call cho_main("And I will stay true to my word... I'll sell you favours...{w} For wins...", "soft", "closed", "base", "mid")
         g4 "(Hell yes!)"
         call cho_main("But keep it civil. I won't do anything those Slytherin skanks do!", "angry", "angry", "sad", "R")
         call cho_main("And should you not be able to help me and my team beat Hufflepuff, this will be over before you can even say Snitch!", "scream", "closed", "raised", "mid")

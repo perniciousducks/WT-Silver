@@ -17,7 +17,7 @@ label summon_hermione:
         # Talk
         "-Talk-":
             if not chitchated_with_her:
-                if her_mood <= 7:
+                if her_mood <= 3:
                     $ chitchated_with_her = True
                     call chit_chat
                     jump hermione_talk

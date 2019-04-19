@@ -2,7 +2,7 @@
 
 ### Walk Of Shame ###
 
-label hg_ps_WalkOfShame: #This will become more intense as the wear a shorter skirt and wear a sluttier shirt favours are completed
+label hg_ps_walk: #This will become more intense as the wear a shorter skirt and wear a sluttier shirt favours are completed
 
     m "[hermione_name], what classes do you have today?"
     call her_main("What? Since when have you taken an interest in my education?","normal","frown") 
@@ -30,7 +30,7 @@ label hg_ps_WalkOfShame: #This will become more intense as the wear a shorter sk
     call her_main("I suppose that you're right [genie_name].","normal","frown") 
     call her_main("Well I best be off... Can't be late for class.","normal","frown") 
     ">She leaves your office reluctantly."
-    $ hg_ps_WalkOfShame_OBJ.inProgress = True
+    $ hg_ps_walk_OBJ.inProgress = True
 
-label hg_ps_WalkOfShame_complete:#Returns to your office after being made walk around the school with no shirt
+label hg_ps_walk_complete:#Returns to your office after being made walk around the school with no shirt
     return

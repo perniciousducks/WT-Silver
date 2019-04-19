@@ -3,11 +3,11 @@
 ### Flirt With Classmate ###
 
 ##(Level 01) (5 pt.) (Flirt with classmates). (Available during daytime only).
-label hg_pr_FlirtClassmate:
+label hg_pr_flirt:
 
     call reset_menu_position
 
-    if hg_pr_FlirtClassmate_OBJ.points < 1:
+    if hg_pr_flirt_OBJ.points < 1:
         m "{size=-4}(Ask her to go flirt with some boys from \"Slytherin\"?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -21,7 +21,7 @@ label hg_pr_FlirtClassmate:
     call her_main("Yes?","soft","baseL",xpos="right",ypos="base")
 
     #Intro.
-    if hg_pr_FlirtClassmate_OBJ.points == 0 and her_whoring < 6: ### LEVEL 01 and LEVEL 02
+    if hg_pr_flirt_OBJ.points == 0 and her_whoring < 6: ### LEVEL 01 and LEVEL 02
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "What is your opinion on the boys of the \"Slytherin\" house?"
@@ -71,12 +71,12 @@ label hg_pr_FlirtClassmate:
 
     her "Well, I'd better go now. Classes are about to start..."
 
-    $ hg_pr_FlirtClassmate_OBJ.inProgress = True
+    $ hg_pr_flirt_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_FlirtClassmate_complete:
+label hg_pr_flirt_complete:
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -135,7 +135,7 @@ label hg_pr_FlirtClassmate_complete:
                             m "Get out of my sight..."
                             call her_main("Yes, [genie_name]...Sorry, [genie_name]...","annoyed","frown")
 
-                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
+                            $ hg_pr_flirt_OBJ.inProgress = False
                             jump could_not_flirt
 
                 #Event B
@@ -174,7 +174,7 @@ label hg_pr_FlirtClassmate_complete:
                             call her_main("But, you promised!","angry","base",tears="soft")
                             call her_main("................","mad","worriedCl",tears="soft_blink")
 
-                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
+                            $ hg_pr_flirt_OBJ.inProgress = False
                             jump could_not_flirt
 
                 #Event C
@@ -200,7 +200,7 @@ label hg_pr_FlirtClassmate_complete:
                             stop music fadeout 1.0
                             call her_main("I don't feel like I deserved any this time anyway...","annoyed","angryL")
 
-                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
+                            $ hg_pr_flirt_OBJ.inProgress = False
                             jump could_not_flirt
 
             #Second Level.
@@ -387,20 +387,20 @@ label hg_pr_FlirtClassmate_complete:
                             m "You are free to leave."
                             call her_main("{size=-4}(Stubborn old man!){/size}","angry","angry")
 
-                            $ hg_pr_FlirtClassmate_OBJ.inProgress = False
+                            $ hg_pr_flirt_OBJ.inProgress = False
                             jump could_not_flirt
 
     $ gryffindor +=5
     m "The \"Gryffindor\" house gets 5 points!"
     her "Thank you, [genie_name]."
 
-    $ hg_pr_FlirtClassmate_OBJ.points += 1
-    $ hg_pr_FlirtClassmate_OBJ.inProgress = False
+    $ hg_pr_flirt_OBJ.points += 1
+    $ hg_pr_flirt_OBJ.inProgress = False
 
     if her_whoring <= 2:
         $ her_whoring +=1
-    if her_whoring >= 2 and hg_pr_FlirtClassmate_OBJ.points >= 2:
-        $ hg_pr_FlirtClassmate_OBJ.complete = True
+    if her_whoring >= 2 and hg_pr_flirt_OBJ.points >= 2:
+        $ hg_pr_flirt_OBJ.complete = True
 
     if her_reputation <= 2:
         $ her_reputation +=1

@@ -2,16 +2,16 @@
 
 ### Hermione Handjob ###
 
-label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
+label hg_pf_handjob: #LV.5 (Whoring = 12 - 14)
 
     call reset_menu_position
 
-    if hg_pf_TouchMe_OBJ.points == 0:
+    if hg_pf_handjob_OBJ.points == 0:
         m "{size=-4}(Should I ask her for a handjob?){/size}"
     else:
         m "{size=-4}(I feel like getting another handjob!){/size}"
 
-    if hg_pf_TouchMe_OBJ.points < 1:
+    if hg_pf_handjob_OBJ.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -23,7 +23,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     call bld
 
     #First Event.
-    if hg_pf_TouchMe_OBJ.points == 0:
+    if hg_pf_handjob_OBJ.points == 0:
 
         m "[hermione_name]."
         call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
@@ -47,7 +47,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
 
 
-        $ hg_pf_TouchMe_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_handjob_OBJ.level = 1 #Event hearts level (0-3)
 
         label back_to_handjob_choices:
 
@@ -87,8 +87,8 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
 
     #Second Event.
-    elif hg_pf_TouchMe_OBJ.points == 1:
-        $ hg_pf_TouchMe_OBJ.level = 2 #Event hearts level (0-3)
+    elif hg_pf_handjob_OBJ.points == 1:
+        $ hg_pf_handjob_OBJ.level = 2 #Event hearts level (0-3)
 
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
@@ -117,8 +117,8 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
 
     #Third Event.
-    elif hg_pf_TouchMe_OBJ.points >= 2:
-        $ hg_pf_TouchMe_OBJ.level = 3 #Event hearts level (0-3)
+    elif hg_pf_handjob_OBJ.points >= 2:
+        $ hg_pf_handjob_OBJ.level = 3 #Event hearts level (0-3)
 
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="mid",ypos="base")
@@ -178,7 +178,7 @@ label hg_handjob_1:
     call blktone
     g9 "Nice..."
 
-    if hg_pf_TouchMe_OBJ.points == 0:
+    if hg_pf_handjob_OBJ.points == 0:
         call her_main("!!!","shock","wide",xpos="right",ypos="base")
         call her_main("Are you about to finish, [genie_name]?!")
         m "About to finish?"
@@ -1039,15 +1039,15 @@ label end_hg_handjob:
 
     call her_main("Thank you, [genie_name]...","soft","baseL")
 
-    $ hg_pf_TouchMe_OBJ.points += 1
+    $ hg_pf_handjob_OBJ.points += 1
 
     if her_whoring < 15:
         $ her_whoring +=1
 
     if her_whoring >= 12 and her_whoring < 15:
-        $ hg_pf_TouchMe_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_handjob_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 15 and her_whoring < 18:
-        $ hg_pf_TouchMe_OBJ.level = 2 #Event hearts level (0-3)
+        $ hg_pf_handjob_OBJ.level = 2 #Event hearts level (0-3)
 
     jump end_hg_pf

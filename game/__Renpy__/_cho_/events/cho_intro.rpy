@@ -18,10 +18,10 @@ label cho_intro_1:
     g4 "I just need to-{w} ugh!-"
     m "Adjust my pants... There we go."
 
-    $ cho_name_known = False
     menu:
         "\"Who is it?\"":
             $ cho_name_known = True # Affects talk with Snape.
+            call bld
             cho "Cho Chang, Sir."
             g4 "(Such a cute name... please be hot, please be hot...!)"
             cho "May I come in?"
@@ -339,7 +339,7 @@ label cho_intro_1:
     call her_walk("mid","leave",2.5)
 
     # Hermione Mood down
-    $ her_mood += 12
+    $ her_mood += 6
     $ hermione_busy = True
 
     jump main_room
@@ -407,6 +407,7 @@ label cho_intro_2:
     # Cho leaves.
     call cho_walk(speed=2.2, action="leave") # Updated
 
+    call bld
     m "I better talk to Hermione about this..."
     m "Or Snape first. Maybe he can help me more."
     g4 "With his unfailing wisdom."
@@ -439,6 +440,7 @@ label cho_intro_2:
 
 label cho_snape_talk:
 
+    call bld
     m "I had another girl visiting me the other day."
     call sna_main("I told you not to get involved with the outside world.","snape_09",ypos="head")
     call sna_main("I hope you were smart enough to not let her into your office.","snape_05")
@@ -693,7 +695,7 @@ label cho_hermione_talk:
                 m "I can ask her again once I've trained her some more..."
                 m "Maybe then she'll be persuaded more easily."
 
-                $ her_mood += 9
+                $ her_mood += 6
                 $ hermione_busy = True
 
                 jump main_room

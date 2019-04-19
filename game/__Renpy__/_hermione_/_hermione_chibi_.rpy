@@ -79,7 +79,7 @@ screen hermione_chibi_lift_top:
 screen hermione_chibi_lift_skirt:
     tag hermione_chibi
     if hermione_wear_panties:
-        if hg_pf_NicePanties_OBJ.points <= 1:
+        if hg_pf_show_panties_OBJ.points <= 1:
             add "characters/hermione/chibis/lift_skirt/panties_00.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
         else:
             add "characters/hermione/chibis/lift_skirt/panties_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)

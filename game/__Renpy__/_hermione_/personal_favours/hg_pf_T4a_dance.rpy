@@ -2,11 +2,11 @@
 
 ### Hermione Dance ###
 
-label hg_pf_DanceForMe:
+label hg_pf_dance:
 
     call reset_menu_position
 
-    if hg_pf_DanceForMe_OBJ.points < 1:
+    if hg_pf_dance_OBJ.points < 1:
         m "{size=-4}(Ask her to dance for me?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -17,7 +17,7 @@ label hg_pf_DanceForMe:
     $ current_payout = 35 #Because will have option to pay extra.
 
     #First Time Event.
-    if hg_pf_DanceForMe_OBJ.points == 0:
+    if hg_pf_dance_OBJ.points == 0:
 
         call bld
         m "[hermione_name], I need you to dance for me a little."
@@ -30,7 +30,7 @@ label hg_pf_DanceForMe:
             call her_main("...dance for you, [genie_name]?","open","wink")
 
 
-        $ hg_pf_DanceForMe_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_dance_OBJ.level = 1 #Event hearts level (0-3)
 
         m "Yes... You think you could manage that?"
         call her_main("Ehm... I suppose so...","soft","baseL")
@@ -235,8 +235,8 @@ label hg_pf_DanceForMe:
 
 
     #Second Event
-    if hg_pf_DanceForMe_OBJ.points == 1:
-        $ hg_pf_DanceForMe_OBJ.level = 2 #Event hearts level (0-3)
+    if hg_pf_dance_OBJ.points == 1:
+        $ hg_pf_dance_OBJ.level = 2 #Event hearts level (0-3)
 
         call bld
         m "[hermione_name], I need you to dance for me."
@@ -568,8 +568,8 @@ label hg_pf_DanceForMe:
 
 
     #Third Event.
-    if hg_pf_DanceForMe_OBJ.points >= 2:
-        $ hg_pf_DanceForMe_OBJ.level = 3 #Event hearts level (0-3)
+    if hg_pf_dance_OBJ.points >= 2:
+        $ hg_pf_dance_OBJ.level = 3 #Event hearts level (0-3)
 
         call blktone
 
@@ -1933,6 +1933,6 @@ label end_hg_dancing:
     if her_whoring < 12: #Adds points till 12.
         $ her_whoring +=1
 
-    $ hg_pf_DanceForMe_OBJ.points += 1
+    $ hg_pf_dance_OBJ.points += 1
 
     jump end_hg_pf

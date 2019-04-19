@@ -316,8 +316,8 @@ if collar == 5:
     $ days_without_an_event = 0
     jump collar_scene
 
-if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
-    call hg_pr_SexWithClassmate_Alt
+if hg_pr_sex_skip:#Hermione does not show up. This sends to label where she shows up next morning.
+    call hg_pr_sex_Alt
 
 
 

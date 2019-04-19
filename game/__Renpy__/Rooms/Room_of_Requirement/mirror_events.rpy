@@ -1614,7 +1614,7 @@ label forgotten_lets_have_sex:
     call bld
     stop music fadeout 4.0
 
-    $ hg_pf_LetsHaveSex_OBJ.points += 1
+    $ hg_pf_sex_OBJ.points += 1
 
     hide screen luna
     hide screen luna_chibi

@@ -35,7 +35,7 @@ label quidditch_training_intro_1:
     call cho_main("Of course, Professor!","base","base","base","mid")
     g4 "Professor? Who are you calling Professor, girl?"
     call cho_main("I'm... sorry?","soft","base","raised","mid")
-    m "From now on you will address me only as Sir!{w} Or..."
+    m "From now on you will address me only as \"Sir\"!{w} Or..."
 
     menu:
         "\"Coach\"":
@@ -55,7 +55,7 @@ label quidditch_training_intro_1:
             $ cho_name = "Pilot"
         "\"Maggot\"":
             $ cho_name = "Maggot"
-            cho "(...)" # Annoyed look to the left.
+            call cho_main("(...)","quiver","base","sad","R")
         "\"Eagle #1\"":
             $ cho_name = "Eagle #1"
         "\"Eagle #2\"":
@@ -72,13 +72,13 @@ label quidditch_training_intro_1:
     m "I don't think that will be necessary."
     m "Let's focus on you, for the moment..."
     call cho_main("Very well, [cho_genie_name].","soft","base","base","R")
-    m "How did you usually play? Why were you always losing?"
-    call cho_main("Well, Hufflepuff has a really good seeker.","open","base","base","mid")
+    m "Tell me, how did you usually play?{w} Why were you always losing?"
+    call cho_main("Well, Hufflepuff has a really good seeker!","open","base","base","mid")
     call cho_main("He's always catching the snitch before me.","quiver","narrow","sad","down")
     call cho_main("I don't know how he does it, to be honest. It always happens so quick...","open","narrow","sad","mid")
-    m "And you are both looking for that thing? At the same time?"
+    m "And you are \"both\" looking for that thing? At the same time?"
     call cho_main("Yes, [cho_genie_name].","soft","base","base","mid")
-    call cho_main("I do my best flying around the pitch searching for it. But it's just so small and really tricky to see.","angry","base","sad","down")
+    call cho_main("I do my best flying around the pitch searching for it. But it's just so small and really tricky to see...","angry","base","sad","down")
     m "Why don't you look for it together? After all there is only one."
     call cho_main("Hmmm?","annoyed","base","base","mid")
     g9 "You just need to grab that Snatch before he does."
@@ -95,6 +95,7 @@ label quidditch_training_intro_1:
     call cho_main("There wouldn't be a way for me to stop him. With how determined he is,... and how fast he can be...","open","base","base","R")
     g9 "Well, lucky for you, you have me!"
     call cho_main("","annoyed","base","base","mid")
+    g9 "I'm also very fast and determined!"
     m "And you just gave me a great idea."
     call cho_main("","annoyed","base","raised","mid")
     m "We'll need to distract him!"
@@ -102,7 +103,7 @@ label quidditch_training_intro_1:
     call cho_main("Please stop saying that, [cho_genie_name]!","angry","closed","angry","mid")
     m "Saying what?"
     call cho_main("(...)","annoyed","narrow","angry","mid")
-    call cho_main("\"Snatch\".","soft","narrow","angry","mid") # Small text
+    call cho_main("{size=-4}\"Snatch\".{/size}","soft","narrow","angry","mid") # Small text
     g9 "Hehehe- Now you've said it!"
     call cho_main("Could we please just talk about your plan, [cho_genie_name]?","open","narrow","angry","R")
     m "Patience, Miss Chang."
@@ -229,56 +230,70 @@ label change_quidditch_tactics:
 
     label demonstrate_quidditch_tactics:
 
-    menu:
-        "\"It's all about the ass!\"":
-            call demonstrate_tactic("front")
+    if cho_flying:
+        menu:
+            m "(What directions should I give her?)"
+            "\"It's all about the ass!\"":
+                call demonstrate_tactic("front")
 
-        "\"Panties are Key!\"":
-            call demonstrate_tactic("above")
+            "\"Panties are Key!\"":
+                call demonstrate_tactic("above")
 
-        "\"Get intimate!\"":
-            call demonstrate_tactic("close")
+            "\"Get intimate!\"":
+                call demonstrate_tactic("close")
 
-        "\"Come back down.\"" if cho_flying == True:
-            $ cho_flying = False
-            call cho_walk("mid", "base", 1.2)
-            call cho_chibi("hide")
-            call flying_cho_chibi(flying=False) # Reset chibi images.
-            call cho_chibi("stand","mid","base")
-            with d3
+            "\"Come back down.\"" if cho_flying == True:
+                $ cho_flying = False
+                call cho_walk("mid", "base", 1.2)
+                call cho_chibi("hide")
+                call flying_cho_chibi(flying=False) # Reset chibi images.
+                call cho_chibi("stand","mid","base")
+                with d3
 
-            jump cho_training_menu
+                jump change_quidditch_tactics
 
-        "\"Customize quidditch outfit.\"" if cho_flying == False:
-            call cho_main(xpos="mid",ypos="base", face="neutral")
-            call t_wardrobe_quidditch() # Open quidditch wardrobe
-            $ cho_class.equip(cho_outfit_quidditch)
-            call cho_main(xpos="wardrobe",ypos="base", face="neutral")
+        jump demonstrate_quidditch_tactics
 
-        "\"That's enough.\"" if cho_flying == False:
-            cho "Very well, [cho_genie_name]."
-            $ cho_class.equip(cho_outift_last) # Equip last worn clothes
-            call cho_chibi("stand","mid","base")
-            call gen_chibi("sit_behind_desk")
-            call cho_main(face="happy",xpos="base",ypos="base",trans="fade")
-            jump cho_requests
+    else:
+        menu:
+            "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
+                jump start_training_match
 
-    jump demonstrate_quidditch_tactics
+            "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:
+                if not daytime:
+                    call nar(">You can only do that during the day.")
+                else:
+                    call nar(">You can't do that right now.")
+
+            "-Fly Test-":
+                $ cho_flying = True # Demonstrating
+                m "Start flying, [cho_name]."
+                cho "Yes, Sir!"
+
+                call cho_chibi("hide")
+                call flying_cho_chibi(flying=True) # Change chibi images to flying.
+                call cho_walk("mid", "200", 0.3)
+                with d3
+
+            "-Customize quidditch outfit-":
+                call cho_main(xpos="mid",ypos="base", face="neutral")
+                call t_wardrobe_quidditch() # Open quidditch wardrobe
+                $ cho_class.equip(cho_outfit_quidditch)
+                call cho_main(xpos="wardrobe",ypos="base", face="neutral")
+
+            "-Go Back-":
+                cho "Very well, [cho_genie_name]."
+                $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+                call cho_chibi("stand","mid","base")
+                call gen_chibi("sit_behind_desk")
+                call cho_main(face="happy",xpos="base",ypos="base",trans="fade")
+                jump cho_requests
+
+        jump demonstrate_quidditch_tactics
 
 
 
 label demonstrate_tactic(position=""):
-
-    if not cho_flying:
-        $ cho_flying = True # Demonstrating
-
-        m "Start flying, [cho_name]."
-        cho "Yes, Sir!"
-
-        call cho_chibi("hide")
-        call flying_cho_chibi(flying=True) # Change chibi images to flying.
-        call cho_walk("mid", "200", 0.3)
-        with d3
 
     # The *ASS* position!
     if position == "front":

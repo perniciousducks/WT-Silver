@@ -384,7 +384,7 @@ label play_sound(sound=""):
 
     if sound in ["equip_inventory"]:
         $ renpy.play('sounds/cloth_sound.mp3')
-    
+
     if sound in ["shatter"]:
         $ renpy.play('sounds/glass_shatter.mp3')
     return
@@ -453,76 +453,76 @@ label update_hints:
     #Does not add star to hardcore difficulty (3+)!
     #Favour 1
     if her_whoring < 3 and game_difficulty <= 2:
-        $ hg_pf_TalkToMe_OBJ.progress_hint = True
+        $ hg_pf_talk_OBJ.hint = True
     else:
-        $ hg_pf_TalkToMe_OBJ.progress_hint = False
+        $ hg_pf_talk_OBJ.hint = False
 
     #Favour 2
     if her_whoring < 3 and game_difficulty <= 2:
-        $ hg_pf_NicePanties_OBJ.progress_hint = True
+        $ hg_pf_show_panties_OBJ.hint = True
     else:
-        $ hg_pf_NicePanties_OBJ.progress_hint = False
+        $ hg_pf_show_panties_OBJ.hint = False
 
     #Favour 3
     if her_whoring >= 3 and her_whoring < 6 and game_difficulty <= 2:
-        $ hg_pf_BreastMolester_OBJ.progress_hint = True
+        $ hg_pf_grope_breasts_OBJ.hint = True
     else:
-        $ hg_pf_BreastMolester_OBJ.progress_hint = False
+        $ hg_pf_grope_breasts_OBJ.hint = False
 
     #Favour 4
     if her_whoring >= 3 and her_whoring < 9 and game_difficulty <= 2:
-        $ hg_pf_ButtMolester_OBJ.progress_hint = True
+        $ hg_pf_grope_ass_OBJ.hint = True
     elif her_whoring >= 9 and not cho_known:
-        $ hg_pf_ButtMolester_OBJ.progress_hint = True
+        $ hg_pf_grope_ass_OBJ.hint = True
     else:
-        $ hg_pf_ButtMolester_OBJ.progress_hint = False
+        $ hg_pf_grope_ass_OBJ.hint = False
 
     #Favour 5
     if her_whoring >= 6 and her_whoring < 9 and game_difficulty <= 2:
-        $ hg_pf_ShowThemToMe_OBJ.progress_hint = True
+        $ hg_pf_look_at_breasts_OBJ.hint = True
     else:
-        $ hg_pf_ShowThemToMe_OBJ.progress_hint = False
+        $ hg_pf_look_at_breasts_OBJ.hint = False
 
     #Favour 6
     if her_whoring >= 9 and her_whoring < 12 and game_difficulty <= 2:
-        $ hg_pf_DanceForMe_OBJ.progress_hint = True
+        $ hg_pf_dance_OBJ.hint = True
     else:
-        $ hg_pf_DanceForMe_OBJ.progress_hint = False
+        $ hg_pf_dance_OBJ.hint = False
 
     #Favour 7
     if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
-        $ hg_pf_ShowMeYourAss_OBJ.progress_hint = True
+        $ hg_pf_look_at_ass_OBJ.hint = True
     else:
-        $ hg_pf_ShowMeYourAss_OBJ.progress_hint = False
+        $ hg_pf_look_at_ass_OBJ.hint = False
 
     #Favour 8
     if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
-        $ hg_pf_TouchMe_OBJ.progress_hint = True
+        $ hg_pf_handjob_OBJ.hint = True
     else:
-        $ hg_pf_TouchMe_OBJ.progress_hint = False
+        $ hg_pf_handjob_OBJ.hint = False
 
     #Favour 9
     if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
-        $ hg_pf_TitJob_OBJ.progress_hint = True
+        $ hg_pf_titjob_OBJ.hint = True
     else:
-        $ hg_pf_TitJob_OBJ.progress_hint = False
+        $ hg_pf_titjob_OBJ.hint = False
 
     #Favour 10
     if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
-        $ hg_pf_SuckIt_OBJ.progress_hint = True
+        $ hg_pf_blowjob_OBJ.hint = True
     else:
-        $ hg_pf_SuckIt_OBJ.progress_hint = False
+        $ hg_pf_blowjob_OBJ.hint = False
 
     #Favour 11
     if her_whoring >= 18 and her_whoring < 21 and game_difficulty <= 2:
-        $ hg_pf_LetsHaveSex_OBJ.progress_hint = True
+        $ hg_pf_sex_OBJ.hint = True
     else:
-        $ hg_pf_LetsHaveSex_OBJ.progress_hint = False
+        $ hg_pf_sex_OBJ.hint = False
 
     #Favour 12
     if her_whoring >= 21 and her_whoring < 24 and game_difficulty <= 2:
-        $ hg_pf_TimeForAnal_OBJ.progress_hint = True
+        $ hg_pf_anal_sex_OBJ.hint = True
     else:
-        $ hg_pf_TimeForAnal_OBJ.progress_hint = False
+        $ hg_pf_anal_sex_OBJ.hint = False
 
     return

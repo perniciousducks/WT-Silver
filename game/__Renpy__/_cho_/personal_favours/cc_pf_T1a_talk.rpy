@@ -2,40 +2,40 @@
 
 ### Talk with Cho ###
 
-label cc_pf_talking:
+label cc_pf_talk:
 
     # Tier 1
     if main_matches_won == 0:
 
         if cho_whoring == 0:
             # Ask about boyfriends.
-            call cc_pf_T1_talking_1
+            call cc_pf_talk_T1_E1
 
         elif cho_whoring == 1:
             # Ask about boyfriends some more.
             # Unlocks public requests favours.
             $ cho_requests_unlocked = True
-            call cc_pf_T1_talking_2
+            call cc_pf_talk_T1_E2
 
         else:
-            call cc_pf_T1_talking_3
+            call cc_pf_talk_T1_E3
 
         if cho_whoring < 3: # Points til 3
             $ cho_whoring += 1
-        if cc_pf_talking_OBJ.level < 3: # Hearts 1+2
-            $ cc_pf_talking_OBJ.level += 1
+        if cc_pf_talk_OBJ.level < 3: # Hearts 1+2
+            $ cc_pf_talk_OBJ.level += 1
 
     # Tier 2
     elif main_matches_won == 1:
 
         # Talk with Cho about her Quidditch team.
-        call cc_pf_T2_talking_1 #Temporary?
+        call cc_pf_talk_T2_E1 #Temporary?
 
-        if cho_whoring < 6: # Points til 5
+        if cho_whoring < 8: # Points til 8
             $ cho_whoring += 1
 
     # Stats
-    $ cc_pf_talking_OBJ.points += 1
+    $ cc_pf_talk_OBJ.points += 1
 
     jump end_cho_event
 
@@ -43,7 +43,7 @@ label cc_pf_talking:
 
 ### Tier 1 ###
 
-label cc_pf_T1_talking_1:
+label cc_pf_talk_T1_E1:
     m "Let’s have a little chat shall we."
     g9 "Just to get to know each other a little bit better."
     call cho_main("Of course, Sir.","smile","base","base","mid")
@@ -270,7 +270,7 @@ label cc_pf_T1_talking_1:
 
 
 # Second Event
-label cc_pf_T1_talking_2:
+label cc_pf_talk_T1_E2:
     g9 "Get closer, [cho_name]..."
     cho "Ok, [cho_genie_name]."
 
@@ -422,7 +422,7 @@ label cc_pf_T1_talking_2:
 # Third event
 ## Asking more questions abour her ex boyfriends and jerking off.
 
-label cc_pf_T1_talking_3:
+label cc_pf_talk_T1_E3:
 
     m "Care to tell me more about Quidditch?"
     cho "Of course, [cho_genie_name]. Anything specific you'd like to know?"
@@ -487,7 +487,7 @@ label cc_pf_T1_talking_3:
 
 ### Tier 2 ###
 
-label cc_pf_T2_talking_1:
+label cc_pf_talk_T2_E1:
 
     m "Could you tell me anything about who we are up against next?"
     cho "Our next game is against the Slytherin team."

@@ -2,12 +2,12 @@
 
 ### Hermione Talks ###
 
-label hg_pf_TalkToMe:
+label hg_pf_talk:
 
     call reset_menu_position
 
     m "{size=-4}(All I'll do is have an innocent conversation with her...){/size}"
-    if hg_pf_TalkToMe_OBJ.points < 1:
+    if hg_pf_talk_OBJ.points < 1:
 
         menu:
             "\"(Yes, let's do that.)\"":
@@ -21,7 +21,7 @@ label hg_pf_TalkToMe:
     m "Just tell me some news about you."
     call her_main("","open","suspicious")
 
-    if hg_pf_TalkToMe_OBJ.points == 0: #First time this event taking place.
+    if hg_pf_talk_OBJ.points == 0: #First time this event taking place.
         her "Ehm... Alright..."
         her "I just stand here and talk then...? Like this?"
     else:
@@ -33,9 +33,9 @@ label hg_pf_TalkToMe:
     m "Well?"
 
     #First time event. #[0,1,2]
-    if hg_pf_TalkToMe_OBJ.points == 0 and her_whoring <=5:
+    if hg_pf_talk_OBJ.points == 0 and her_whoring <=5:
 
-        $ hg_pf_TalkToMe_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_talk_OBJ.level = 1 #Event hearts level (0-3)
 
         call her_main("Em... very well...","open","worried")
         call nar(">Hermione is feeling confused...")
@@ -49,7 +49,7 @@ label hg_pf_TalkToMe:
     if her_whoring >= 0 and  her_whoring <= 5:
         if her_whoring >= 3 and her_whoring <= 5:
 
-            $ hg_pf_TalkToMe_OBJ.level = 2 #Event hearts level (0-3)
+            $ hg_pf_talk_OBJ.level = 2 #Event hearts level (0-3)
 
         #call hg_talk_2
         call hg_talk_1
@@ -159,7 +159,7 @@ label hg_talk_1:
 
 label hg_talk_3:
 
-    $ hg_pf_TalkToMe_OBJ.level = 3 #Event hearts level (0-3)
+    $ hg_pf_talk_OBJ.level = 3 #Event hearts level (0-3)
 
     call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
     her "Hm..."
@@ -312,13 +312,13 @@ label end_hg_talk:
             her "*sigh of relief*"
         m "Yes, you can go now."
 
-    if hg_pf_TalkToMe_OBJ.points == 0:
+    if hg_pf_talk_OBJ.points == 0:
         call her_main("Another 5 points... The Guys will be so happy.","base","base")
         her "Thank you, [genie_name]."
 
     if her_whoring < 3: #Adds points till 3.
         $ her_whoring +=1
 
-    $ hg_pf_TalkToMe_OBJ.points += 1
+    $ hg_pf_talk_OBJ.points += 1
 
     jump end_hg_pf

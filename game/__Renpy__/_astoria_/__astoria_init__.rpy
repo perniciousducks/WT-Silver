@@ -232,29 +232,29 @@ label astoria_progress_init:
 
 
     #Curses on Susan
-    if not hasattr(renpy.store,'ag_imperio_susan_OBJ'):
-        $ ag_imperio_susan_OBJ = favor_class()
-    $ ag_imperio_susan_OBJ.title   = "Imperio on Susan"
-    $ ag_imperio_susan_OBJ.start_label = "ag_imperio_susan"
+    if not hasattr(renpy.store,'ag_cs_imperio_sb_OBJ'):
+        $ ag_cs_imperio_sb_OBJ = favor_class()
+    $ ag_cs_imperio_sb_OBJ.title   = "Imperio on Susan"
+    $ ag_cs_imperio_sb_OBJ.start_label = "ag_cs_imperio_sb"
 
     $ ag_susan_spells_list = [
-        ag_imperio_susan_OBJ
+        ag_cs_imperio_sb_OBJ
         ]
 
     #Curses on Hermione
-    if not hasattr(renpy.store,'ag_imperio_hermione_OBJ'):
-        $ ag_imperio_hermione_OBJ = favor_class()
-    $ ag_imperio_hermione_OBJ.title   = "Imperio on Hermione"
-    $ ag_imperio_hermione_OBJ.start_label = "ag_imperio_hermione"
+    if not hasattr(renpy.store,'ag_cs_imperio_hg_OBJ'):
+        $ ag_cs_imperio_hg_OBJ = favor_class()
+    $ ag_cs_imperio_hg_OBJ.title   = "Imperio on Hermione"
+    $ ag_cs_imperio_hg_OBJ.start_label = "ag_cs_imperio_hg"
 
     $ ag_hermione_spells_list = [
         ]
 
     #Curses on Tonks
-    if not hasattr(renpy.store,'ag_crucio_tonks_OBJ'):
-        $ ag_crucio_tonks_OBJ = favor_class()
-    $ ag_crucio_tonks_OBJ.title   = "Crucio on Tonks"
-    $ ag_crucio_tonks_OBJ.start_label = "ag_crucio_tonks"
+    if not hasattr(renpy.store,'ag_cs_imperio_nt_OBJ'):
+        $ ag_cs_imperio_nt_OBJ = favor_class()
+    $ ag_cs_imperio_nt_OBJ.title   = "Crucio on Tonks"
+    $ ag_cs_imperio_nt_OBJ.start_label = "ag_cs_imperio_nt"
 
     $ ag_tonks_spells_list = [
         ]

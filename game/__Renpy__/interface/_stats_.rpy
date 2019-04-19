@@ -260,14 +260,14 @@ screen hermione_stat_menu:
                 use text_stat("You Jerked off in front of her:")
                 use text_stat("- ", " times -", her_jerk_off_counter)
                 use text_stat("You saw her panties:")
-                use text_stat("- ", " times -", hg_pf_NicePanties_OBJ.points)
+                use text_stat("- ", " times -", hg_pf_show_panties_OBJ.points)
 
                 #Imagination 2:
                 if imagination >= 2:
                     use text_stat("You admired her tits:")
-                    use text_stat("- ", " times -", hg_pf_BreastMolester_OBJ.points)
+                    use text_stat("- ", " times -", hg_pf_grope_breasts_OBJ.points)
                     use text_stat("You admired her butt:")
-                    use text_stat("- ", " times -", (hg_pf_ButtMolester_OBJ.points + hg_pf_ShowMeYourAss_OBJ.points) )
+                    use text_stat("- ", " times -", (hg_pf_grope_ass_OBJ.points + hg_pf_look_at_ass_OBJ.points) )
                 else:
                     use text_stat("Hidden")
                     use text_stat("Hidden")
@@ -275,18 +275,18 @@ screen hermione_stat_menu:
                 #Imagination 3:
                 if imagination >= 3:
                     use text_stat("Hermione has danced for you:")
-                    use text_stat("- ", " times -", hg_pf_DanceForMe_OBJ.points)
+                    use text_stat("- ", " times -", hg_pf_dance_OBJ.points)
                 else:
                     use text_stat("Hidden")
 
                 #Imagination 4:
                 if imagination >= 4:
                     use text_stat("Hermione has masturbated for you:")
-                    use text_stat("- ", " times -", hg_pf_TouchYourself_OBJ.points)
+                    use text_stat("- ", " times -", hg_pf_masturbate_OBJ.points)
                     use text_stat("Hermione has given you:")
-                    use text_stat("- ", " Handjobs -", hg_pf_TouchMe_OBJ.points)
-                    use text_stat("- ", " Blowjobs -", hg_pf_SuckIt_OBJ.points)
-                    use text_stat("- ", " Tit jobs -", hg_pf_TitJob_OBJ.points)
+                    use text_stat("- ", " Handjobs -", hg_pf_handjob_OBJ.points)
+                    use text_stat("- ", " Blowjobs -", hg_pf_blowjob_OBJ.points)
+                    use text_stat("- ", " Tit jobs -", hg_pf_titjob_OBJ.points)
                 else:
                     use text_stat("Hidden")
                     use text_stat("Hidden")
@@ -296,9 +296,9 @@ screen hermione_stat_menu:
                 #Imagination 5:
                 if imagination >= 5:
                     use text_stat("You've had sex with her:")
-                    use text_stat("- ", " times -", hg_pf_LetsHaveSex_OBJ.points)
+                    use text_stat("- ", " times -", hg_pf_sex_OBJ.points)
                     use text_stat("You've had anal sex with her:")
-                    use text_stat("- ", " times -", hg_pf_TimeForAnal_OBJ.points)
+                    use text_stat("- ", " times -", hg_pf_anal_sex_OBJ.points)
                 else:
                     use text_stat("Hidden")
                     use text_stat("Hidden")
@@ -335,7 +335,7 @@ screen astoria_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(ag_imperio_susan_OBJ.points/0.3), "-Spells-", "", ag_imperio_susan_OBJ.points) #Max is 4
+                use stat_bar(int(ag_cs_imperio_sb_OBJ.points/0.3), "-Spells-", "", ag_cs_imperio_sb_OBJ.points) #Max is 4
                 use stat_bar(int(ast_training_counter/0.9), "-Training-", "", ast_training_counter) #Max is 9
                 use stat_bar(int(ast_affection/10), "-Affection-", "", ast_affection) #Max is 100
 

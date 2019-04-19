@@ -2,16 +2,16 @@
 
 #Spell Training.
 label astoria_spell_training:
-    if ag_imperio_susan_OBJ.level == 0 and ag_imperio_susan_OBJ.points == 0:
+    if ag_cs_imperio_sb_OBJ.level == 0 and ag_cs_imperio_sb_OBJ.points == 0:
         $ ast_training_counter += 1 #For Stats
         jump imperio_spell_1_training
-    elif ag_imperio_susan_OBJ.level == 1  and ag_imperio_susan_OBJ.points == 1: #You have to try the spell once before you can train the next one.
+    elif ag_cs_imperio_sb_OBJ.level == 1  and ag_cs_imperio_sb_OBJ.points == 1: #You have to try the spell once before you can train the next one.
         $ ast_training_counter += 1 #For Stats
         jump imperio_spell_2_training
-    elif ag_imperio_susan_OBJ.level == 2 and ag_imperio_susan_OBJ.points == 2: #You have to try the spell once before you can train the next one.
+    elif ag_cs_imperio_sb_OBJ.level == 2 and ag_cs_imperio_sb_OBJ.points == 2: #You have to try the spell once before you can train the next one.
         $ ast_training_counter += 1 #For Stats
         jump imperio_spell_3_training
-    elif ag_imperio_susan_OBJ.level == 3 and ag_imperio_susan_OBJ.points == 3:
+    elif ag_cs_imperio_sb_OBJ.level == 3 and ag_cs_imperio_sb_OBJ.points == 3:
         call nar(">There are currently no more spells to train!")
         jump astoria_requests
     else:
@@ -214,7 +214,7 @@ label imperio_spell_1_training: #first level imperio spell
     call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks imperio spell.
-    $ ag_imperio_susan_OBJ.points += 1
+    $ ag_cs_imperio_sb_OBJ.points += 1
 
     if daytime:
         jump night_start
@@ -250,7 +250,7 @@ label imperio_spell_2_training: #second level imperio spell
     call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks Spell 2.
-    $ ag_imperio_susan_OBJ.points += 1
+    $ ag_cs_imperio_sb_OBJ.points += 1
 
     if daytime:
         jump night_start
@@ -282,7 +282,7 @@ label imperio_spell_3_training: #third level imperio spell
     call give_reward(">Congratulations! Astoria has learned a new spell!","interface/icons/head/head_astoria_2.png")
 
     #Unlocks Spell 3.
-    $ ag_imperio_susan_OBJ.points += 1
+    $ ag_cs_imperio_sb_OBJ.points += 1
 
     if daytime:
         jump night_start
@@ -333,7 +333,7 @@ label astoria_spell_practice:
     with fade
     pause.8
 
-    $ renpy.call('astoria_lap_sit_'+str(ag_imperio_susan_OBJ.points)+'_'+str(ast_spell_progress))
+    $ renpy.call('astoria_lap_sit_'+str(ag_cs_imperio_sb_OBJ.points)+'_'+str(ast_spell_progress))
 
     pause.8
     call blkfade

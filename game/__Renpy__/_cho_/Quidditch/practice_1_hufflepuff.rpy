@@ -176,7 +176,7 @@ label hufflepuff_practice_win_1:
     cho "Yes, [cho_genie_name]! Thank you so much!"
     cho "If there is any way I can return the favour...?"
 
-    if cc_pf_talking_OBJ.points == 0:
+    if cc_pf_talk_OBJ.points == 0:
         m "Why don't we start with that, Miss Chang,...{w} favours!"
         m "I did prove the effectiveness of my methods to you. Now it's your turn to stay true to your promise..."
         cho "Of course, Sir."

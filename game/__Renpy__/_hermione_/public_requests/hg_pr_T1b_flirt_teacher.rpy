@@ -3,11 +3,11 @@
 ### Flirt With Teacher ###
 
 ##(Level 02) (15 pt.) (Flirt with teachers). (Available during daytime only).
-label hg_pr_FlirtTeacher:
+label hg_pr_flirt_teacher:
 
     call reset_menu_position
 
-    if hg_pr_FlirtTeacher_OBJ.points < 1:
+    if hg_pr_flirt_teacher_OBJ.points < 1:
         m "{size=-4}(Tell her to be flirtatious with her teachers today?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -19,11 +19,11 @@ label hg_pr_FlirtTeacher:
 
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
 
-    if her_whoring < 3 or hg_pr_FlirtClassmate_OBJ.points < 2:
+    if her_whoring < 3 or hg_pr_flirt_OBJ.points < 2:
         jump too_much
 
     #Intro
-    if hg_pr_FlirtTeacher_OBJ.points == 0 and her_whoring < 9:
+    if hg_pr_flirt_teacher_OBJ.points == 0 and her_whoring < 9:
         call her_main("I will do my best, [genie_name]!","base","base",xpos="right",ypos="base")
         call her_main("I am glad you finally decided to act, [genie_name]!","open","base")
         m "Huh?"
@@ -39,12 +39,12 @@ label hg_pr_FlirtTeacher:
 
     her "Well, I'd better go now. Classes are about to start..."
 
-    $ hg_pr_FlirtTeacher_OBJ.inProgress = True
+    $ hg_pr_flirt_teacher_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_FlirtTeacher_complete:
+label hg_pr_flirt_teacher_complete:
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -109,7 +109,7 @@ label hg_pr_FlirtTeacher_complete:
                             $ her_mood += 18
                             call music_block
 
-                            $ hg_pr_FlirtTeacher_OBJ.inProgress = False
+                            $ hg_pr_flirt_teacher_OBJ.inProgress = False
                             jump could_not_flirt
 
                 #Event B
@@ -158,7 +158,7 @@ label hg_pr_FlirtTeacher_complete:
                             call her_main("But I understand and won't argue with your decision...","normal","worriedCl")
                             call music_block
 
-                            $ hg_pr_FlirtTeacher_OBJ.inProgress = False
+                            $ hg_pr_flirt_teacher_OBJ.inProgress = False
                             jump could_not_flirt
 
                 #Event C
@@ -302,7 +302,7 @@ label hg_pr_FlirtTeacher_complete:
                             m "You are dismissed, [hermione_name]."
                             call her_main(".........................................","angry","angry")
 
-                            $ hg_pr_FlirtTeacher_OBJ.inProgress = False
+                            $ hg_pr_flirt_teacher_OBJ.inProgress = False
                             jump could_not_flirt
 
             #Third level.
@@ -458,13 +458,13 @@ label hg_pr_FlirtTeacher_complete:
     m "The \"Gryffindors\" gets 15 points!"
     her "Thank you, [genie_name]."
 
-    $ hg_pr_FlirtTeacher_OBJ.points += 1
-    $ hg_pr_FlirtTeacher_OBJ.inProgress = False
+    $ hg_pr_flirt_teacher_OBJ.points += 1
+    $ hg_pr_flirt_teacher_OBJ.inProgress = False
 
     if her_whoring <= 5:  # (if her_whoring >= 3 and her_whoring <= 5) - LEVEL 02
         $ her_whoring +=1
-    if her_whoring >= 5 and hg_pr_FlirtTeacher_OBJ.points >= 2:
-        $ hg_pr_FlirtTeacher_OBJ.complete = True
+    if her_whoring >= 5 and hg_pr_flirt_teacher_OBJ.points >= 2:
+        $ hg_pr_flirt_teacher_OBJ.complete = True
 
     if her_reputation <= 5:
         $ her_reputation +=1

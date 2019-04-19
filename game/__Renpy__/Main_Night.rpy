@@ -175,6 +175,12 @@ if quidditch_match_in_progress:
 if main_match_1_stage == "return":
     $ main_match_1_stage = "end"
     jump hufflepuff_match_return
+python:
+    for i in cc_requests_list:
+        if i.inProgress:
+            i.inProgress = False
+            i.start()
+
 
 # Hermione Personal Requests, Public Shaming return.
 python:

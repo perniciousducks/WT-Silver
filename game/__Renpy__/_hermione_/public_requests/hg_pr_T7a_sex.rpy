@@ -3,11 +3,11 @@
 ### Have Sex With A Classmate ###
 
 ##(Level 08) (75 pt.) (FUCK A CLASSMATE). (Available during daytime only).
-label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
+label hg_pr_sex: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    if hg_pr_SexWithClassmate_OBJ.points < 1:
+    if hg_pr_sex_OBJ.points < 1:
         m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,11 +18,11 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
     call bld
 
     #Intro.
-    if hg_pr_SexWithClassmate_OBJ.points == 0:
+    if hg_pr_sex_OBJ.points == 0:
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
 
-        if her_whoring < 21 or hg_pr_BlowjobClassmate_OBJ.points < 2:
+        if her_whoring < 21 or hg_pr_blowjob_OBJ.points < 2:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -43,15 +43,15 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
         m "Yes. And you will get 75 points again as well."
         call her_main("Well, alright...","annoyed","annoyed")
 
-    $ hg_pr_SexWithClassmate_OBJ.inProgress = True
+    $ hg_pr_sex_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_SexWithClassmate_complete:
+label hg_pr_sex_complete:
 
     #Event A
-    if hg_pr_SexWithClassmate_OBJ.points <= 0 or one_out_of_three == 1: ### EVENT (A)
+    if hg_pr_sex_OBJ.points <= 0 or one_out_of_three == 1: ### EVENT (A)
 
         if fucked_ron_and_har:
             jump returns_next_morning
@@ -62,10 +62,10 @@ label hg_pr_SexWithClassmate_complete:
         m ".........."
         m "She was supposed to be here, by now..."
         m "Hm..."
-        $ hg_pr_SexWithClassmate_OBJ.points += 1
-        $ hg_pr_SexWithClassmate_OBJ.inProgress = False
+        $ hg_pr_sex_OBJ.points += 1
+        $ hg_pr_sex_OBJ.inProgress = False
         $ hermione_busy = True
-        $ hg_pr_SexWithClassmate_AltFlag = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
+        $ hg_pr_sex_skip = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
 
         jump day_start
         # NEXT MORNING
@@ -130,9 +130,9 @@ label hg_pr_SexWithClassmate_complete:
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
 
-    $ hg_pr_SexWithClassmate_OBJ.points += 1
-    $ hg_pr_SexWithClassmate_OBJ.complete = True
-    $ hg_pr_SexWithClassmate_OBJ.inProgress = False
+    $ hg_pr_sex_OBJ.points += 1
+    $ hg_pr_sex_OBJ.complete = True
+    $ hg_pr_sex_OBJ.inProgress = False
 
     jump hg_pr_transition_block
 
@@ -140,8 +140,8 @@ label hg_pr_SexWithClassmate_complete:
 
 
 
-label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label where she shows up next morning.
-    $ hg_pr_SexWithClassmate_AltFlag = False #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
+label hg_pr_sex_Alt: #Hermione does not show up. This is label where she shows up next morning.
+    $ hg_pr_sex_skip = False #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -171,9 +171,9 @@ label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label wher
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
 
-    $ hg_pr_SexWithClassmate_OBJ.points += 1
-    $ hg_pr_SexWithClassmate_OBJ.complete = True
-    $ hg_pr_SexWithClassmate_OBJ.inProgress = False
+    $ hg_pr_sex_OBJ.points += 1
+    $ hg_pr_sex_OBJ.complete = True
+    $ hg_pr_sex_OBJ.inProgress = False
 
     if her_reputation <= 23:
         $ her_reputation +=1

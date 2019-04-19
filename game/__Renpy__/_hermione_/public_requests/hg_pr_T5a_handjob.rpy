@@ -3,13 +3,13 @@
 ### Give Classmate A Handjob ###
 
 ##(Level 06) (55 pt.) (Give handjob to a classmate). (Available during daytime only).
-label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
+label hg_pr_handjob: #LV.6 (Whoring = 15 - 17)
 
     $ current_payout = 55 #Used when haggling about price of the favour.
 
     call reset_menu_position
 
-    if hg_pr_HandjobClassmate_OBJ.points < 1:
+    if hg_pr_handjob_OBJ.points < 1:
         m "{size=-4}(Tell her to give a handjob to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -20,9 +20,9 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
     call bld
 
     #Intro
-    if hg_pr_HandjobClassmate_OBJ.points == 0:
+    if hg_pr_handjob_OBJ.points == 0:
 
-        if her_whoring < 15 or hg_pr_KissAGirl_OBJ.points < 2:
+        if her_whoring < 15 or hg_pr_kiss_OBJ.points < 2:
             m "[hermione_name], I want you to do something different today..."
             call her_main("...?","normal","frown",xpos="right",ypos="base")
             m "I want you to give a handjob to one of your classmates."
@@ -106,12 +106,12 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
             m "And report back to me after your classes, as usual."
             call her_main("Of course, [genie_name].","base","happyCl")
 
-    $ hg_pr_HandjobClassmate_OBJ.inProgress = True
+    $ hg_pr_handjob_OBJ.inProgress = True
 
     jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
 
 
-label hg_pr_HandjobClassmate_complete:
+label hg_pr_handjob_complete:
 
     call play_sound("door") #Sound of a door opening.
     call her_walk("door","mid",2)
@@ -160,7 +160,7 @@ label hg_pr_HandjobClassmate_complete:
                     call her_main(".........","annoyed","angryL")
                     $ her_mood +=9
 
-                    $ hg_pr_HandjobClassmate_OBJ.inProgress = False
+                    $ hg_pr_handjob_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
                 "\"You shall only get half the payment then.\"":
@@ -286,7 +286,7 @@ label hg_pr_HandjobClassmate_complete:
                     call her_main("This is just not fair!","scream","worriedCl")
                     $ her_mood +=20
 
-                    $ hg_pr_HandjobClassmate_OBJ.inProgress = False
+                    $ hg_pr_handjob_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
 
                 "\"Alright, I think I can trust you.\"":
@@ -565,11 +565,11 @@ label hg_pr_HandjobClassmate_complete:
     $ uni_sperm = False  #Universal sperm.
     $ aftersperm = False #Shows stains on Hermione's uniform.
 
-    $ hg_pr_HandjobClassmate_OBJ.points += 1
-    $ hg_pr_HandjobClassmate_OBJ.inProgress = False
+    $ hg_pr_handjob_OBJ.points += 1
+    $ hg_pr_handjob_OBJ.inProgress = False
 
-    if hg_pr_HandjobClassmate_OBJ.points >= 2:
-        $ hg_pr_HandjobClassmate_OBJ.complete = True
+    if hg_pr_handjob_OBJ.points >= 2:
+        $ hg_pr_handjob_OBJ.complete = True
 
     if her_reputation <= 17:
         $ her_reputation +=1

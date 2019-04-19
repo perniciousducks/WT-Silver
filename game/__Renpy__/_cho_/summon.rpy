@@ -16,6 +16,15 @@ label summon_cho:
 
     menu:
 
+        # Main Matches
+        "Start Hufflepuff Match" if (huffl_matches_won == 2 and main_matches_won == 0):
+            $ lock_cho_training = True # Temporarily, Until next events get added.
+            $ main_matches_won = 1
+            $ main_match_1_stage = "start"
+            $ days_without_an_event = 0 # Event starts on the next day.
+            jump start_hufflepuff_match
+
+
         # Talk
         "-Talk-" if cho_training_unlocked:
             if not cho_chatted:
@@ -37,34 +46,10 @@ label summon_cho:
                 if cho_mood >= 5:
                     call cho_main("No.{w} And I don't want to hear of it right now, Sir.",face="angry")
                 else:
-                    call cho_main("I don't think I'm ready yet, Sir.",face="annoyed")
-                m "Fair enough..."
+                    call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like training today.","soft","base","sad","down")
                 call nar(">Cho is still upset with you.")
                 jump cho_requests
             jump cho_training_menu
-
-
-        # Practice Matches
-        "-Practice Match-" if daytime and huffl_matches_won < 2 and cho_mood == 0 and not lock_cho_practice:
-            jump start_training_match
-
-        "{color=#858585}-Practice Match-{/color}" if (not daytime or cho_mood != 0 or lock_cho_practice) and not cho_content_complete:
-            if not daytime:
-                call nar(">You can only do that during the day.")
-            elif cho_mood != 0:
-                call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like playing today.","soft","base","sad","down")
-            else:
-                call nar(">You can't do that right now.")
-            jump cho_requests
-
-
-        # Main Matches
-        "-Start Hufflepuff Match-" if (huffl_matches_won == 2 and main_matches_won == 0):
-            $ lock_cho_training = True # Temporarily, Until next events get added.
-            $ main_matches_won = 1
-            $ main_match_1_stage = "start"
-            $ days_without_an_event = 0 # Event starts on the next day.
-            jump start_hufflepuff_match
 
 
         # Favours
@@ -154,9 +139,26 @@ label cho_favor_menu:
     else:
         $ renpy.jump(result)
 
+label update_cho_heart_color:
+    if main_matches_won == 0:
+        $ heart_color = "yellow"
+    elif main_matches_won == 1:
+        $ heart_color = "green"
+    elif main_matches_won == 2:
+        $ heart_color = "red"
+    else:
+        $ heart_color = "blue"
+
+    $ cc_pf_talk_OBJ.heart_color = heart_color
+    $ cc_pf_strip_OBJ.heart_color = heart_color
+
+    return
+
+
 
 # Cho Requests Menu
 label cho_requests_menu:
+    call update_cho_request_tier
     python:
         menu_choices = []
         for i in cc_requests_list:
@@ -179,20 +181,13 @@ label cho_requests_menu:
     else:
         $ renpy.jump(result)
 
-label update_cho_heart_color:
-    if main_matches_won == 0:
-        $ heart_color = "yellow"
-    elif main_matches_won == 1:
-        $ heart_color = "green"
-    elif main_matches_won == 2:
-        $ heart_color = "red"
-    else:
-        $ heart_color = "blue"
-
-    $ cc_pf_talking_OBJ.heart_color = heart_color
-    $ cc_pf_groping_OBJ.heart_color = heart_color
-
+label update_cho_request_tier:
+    python:
+        for i in cc_requests_list:
+            i.tier = main_matches_won
     return
+
+
 
 label favor_not_ready:
     call nar("You can't do this favour just yet.")

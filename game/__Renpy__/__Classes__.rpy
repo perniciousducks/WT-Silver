@@ -11,7 +11,7 @@ init -2 python:
         start_label = ""
         return_label = ""
         points = 0
-        progress_hint = False
+        hint = False
 
     class favor_class(silver_request):
         level = 0 # Hearts
@@ -24,20 +24,26 @@ init -2 python:
 
         def getMenuText(self):
             heart_list = []
+            menu_text = None
             for i in xrange(self.max_level):
                 if i < self.level:
                     heart_list.append("interface/icons/small/heart_"+self.heart_color+".png")
                 else:
                     heart_list.append("interface/icons/small/heart_empty.png")
-            ret_str = "\""+self.title+"\" "
-            for i in xrange(len(heart_list)):
-                ret_str += "{image="+str(heart_list[i])+"}"
 
-            if self.progress_hint:
-               ret_str += "  {image=interface/check_True.png}"
-            if self.costume_event:
-               ret_str += "  {image=interface/clothes.png}"
-            return ret_str
+            # Before Text
+            if self.hint:
+                menu_text = "{image=interface/check_True.png} "
+            # Main Text
+            if menu_text != None:
+                menu_text += "\""+self.title+"\" "
+            else:
+                menu_text = "\""+self.title+"\" "
+            # After Text
+            for i in xrange(len(heart_list)):
+                menu_text += "{image="+str(heart_list[i])+"}"
+
+            return menu_text
 
     class request_class(silver_request):
         complete = False
@@ -49,7 +55,7 @@ init -2 python:
         def getMenuText(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
             ret_str = "\""+self.title+"\" {image="+menu_image+"}"
-            if self.progress_hint:
+            if self.hint:
                ret_str += "  {image=interface/check_True.png}"
             return ret_str
 
@@ -63,6 +69,6 @@ init -2 python:
         def getMenuText(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
             ret_str = "\""+self.title+"\" {image="+menu_image+"}"
-            if self.progress_hint:
+            if self.hint:
                ret_str += "  {image=interface/check_True.png}"
             return ret_str

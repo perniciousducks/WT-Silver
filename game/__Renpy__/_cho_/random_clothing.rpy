@@ -90,10 +90,9 @@ label cho_random_clothing:
 
     if cho_mood != 0:
         call cho_main("[cho_genie_name]...",face="annoyed",xpos="base",ypos="base", animation=moveFade)
+        ">Cho is upset with you."
     else:
         call cho_main("Hello, [cho_genie_name].",face="happy",xpos="base",ypos="base", animation=moveFade)
     $ cho_animation = None
-
-    ">Cho is upset with you."
 
     return

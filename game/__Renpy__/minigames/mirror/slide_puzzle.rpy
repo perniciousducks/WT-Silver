@@ -56,10 +56,7 @@ label update_puzzle_slide:
     jump open_pyzzle_box
 
 label open_pyzzle_box:
-    if unlocked_7th == True:
-        m "Empty... I don't know what I expected."
-        jump main_room
-    if p_move == -2:
+    if unlocked_7th or p_move == -2:
         m "Fuck it... {size=18}*Smash*{/size}"
         m "A broken bottle..."
         m "Oh well, too late now. Back to my usual-"

@@ -384,7 +384,12 @@ label store_items_init:
 
     #outfit_linking[cc_outfit_quidditch_ITEM.id] = cho_outfit_quidditch
     $ outfit_linking[cc_party_slut_ITEM.id] = cho_outfit_party
-
+    $ outfit_linking[cc_muggle_hot_ITEM.id] = cho_outfit_trainee
+    $ outfit_linking[cc_outfit_sailor_white_ITEM.id] = cho_outfit_sailor
+    $ outfit_linking[cc_costume_misty_ITEM.id] = cho_outfit_misty
+    $ outfit_linking[cc_bikini_micro_ITEM.id] = cho_outfit_bikini
+    $ outfit_linking[cc_lingerie_lace_ITEM.id] = cho_outfit_lacelingerie
+    $ outfit_linking[cc_dress_red_ITEM.id] = cho_outfit_dress1
     #Tonks Outfits
     $ tonks_outfits_list=[
         ]

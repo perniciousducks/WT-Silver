@@ -205,10 +205,14 @@ label unlock_clothing(text="",item=None):
 
     $ item.unlocked = True
     #
-    # Re-enable it after adding all character clothing
+    # New outfit system compatibility
     #
     #
-    #$ outfit_linking[item.id].unlock(True)
+    python:
+        try:
+            outfit_linking[item.id].unlock(True)
+        except:
+            pass
 
     call reset_menu_position
 

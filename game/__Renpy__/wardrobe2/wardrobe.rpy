@@ -26,7 +26,7 @@ label t_wardrobe(return_label, char_label):
             value = char_active.clothing[item][1]
             character_clothing.append([item, value])
         character_clothing.sort(key=lambda x: x[1], reverse=True)
-        character_clothing.pop(12)
+        character_clothing.pop(13)
     
     if wardrobe_music_active:
         call play_music("my_immortal")

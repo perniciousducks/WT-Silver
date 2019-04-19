@@ -7,9 +7,6 @@ transform mirrage:
     on show, appear, start:
         alpha 0.0
         linear 0.5 alpha 1.0
-    on hide:
-        alpha 1.0
-        linear 0.5 alpha 0.0
 
 screen room_of_requirement:
     zorder 0
@@ -72,7 +69,7 @@ screen genie_walk_mirror:
 label hide_room_req:
     hide screen room_of_requirement_menu
     hide screen room_of_requirement
-    hide screen room_of_requirement_overlay
+    hide screen room_of_requirement_overlay with None
     return
 
 label mirror_menu:
@@ -106,14 +103,8 @@ screen floor_7th_door:
 
 screen floor_7th_screen:
     add "images/rooms/room_of_requirement/corridor_edit.png"
-    #add "images/rooms/room_of_requirement/picture_frame.png" xpos 800 ypos 140 zoom 0.60
-    #add "flower_animation" xpos 830 ypos 160 zoom 0.60
     add "images/rooms/_objects_/candles/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
-    #add "images/rooms/_objects_/candles/candle.png" xpos 300 ypos 95
-    #add "candle_fire_01" xpos 300 ypos 95
-    #add "images/rooms/_objects_/candles/candle.png" xpos 600 ypos 95
-    #add "candle_fire_02" xpos 600 ypos 95
     add "images/rooms/_objects_/candles/candleM.png" xpos 900 ypos 95
     add "candle_fire_01" xpos 900 ypos 95
     add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 800 ypos 105
@@ -179,63 +170,79 @@ label enter_room_of_req:
         call gen_chibi("stand","door","base",flip=True)
         call hide_blkfade
 
-        m"It's just an empty room....with a mirror?"
+        stop music fadeout 1.0
+        $ renpy.music.stop("weather")
+        $ renpy.sound.play( "sounds/door.mp3")
+        m "..."
+        $ renpy.music.play("music/RoomOfReqIntro.mp3")
+        call gen_chibi("stand","door","base",flip=False)
+        g4 "It's just a room filled with a bunch of crap...."
+        call gen_chibi("stand","door","base",flip=True)
+        m "And a mirror?"
         call gen_walk("door","200",2.7)
-        m "...."
-        whom "So you've found the mirror of Erised"
-        m "Dumbledore!"
-        m "*Cough* I mean...yes Severus, it is I... \"Dumbledore\""
+        m "..."
+        m "Odd, it appears the source of the magic is emanating from this mirror..."
+        whom "So you've found the mirror of Erised..."
+        $ renpy.sound.play( "sounds/MaleGasp.mp3")
+        stop music fadeout 1.0
+        g4 "Dumbledore!"
+        $ renpy.sound.play( "sounds/soft_wind.mp3")
         call sna_chibi("stand","door","base")
         call gen_chibi("stand","200","base")
+        g9 "*Cough* I mean... Yes Severus, it is I...{w} \"Dumbledore\"."
         m "I'm so glad to be back..."
         call sna_main(".....","snape_05")
         m "Worth a shot..."
+        play music "music/song18.mp3" fadein 4 fadeout 1
         call sna_main("I'm quite certain I told you to stay in your office... For how long have you been roaming the school grounds?","snape_06")
         m "This is the first time... hence why I was so lost."
         call sna_main(".....","snape_05")
         m "Only for the past week or so..."
         call sna_main(".....","snape_07")
         m "Yeah pretty much since the moment I got here."
-        call sna_main("*Sigh* Well, you've not been caught so I suppose it's okay as long as you don't make any weird requests or comments to other staff members.","snape_06")
+        call sna_main("*Sigh* Well, at least it doesn't appear you've been caught...{w} yet.","snape_06")
+        call sna_main("So I wont stop you as long as you refrain from any of your...{w=0.6} weird requests or comments to other staff members.","snape_05")
         m "...."
-        call sna_main(".....","snape_03")
-        m "I might have ordered a few oddities from Madam Mafkin..."
-        call sna_main("Hahahah...That old hag?","snape_28")
-        call sna_main("She's nuts, she can sew that's for damn sure but she'd never know nor care...do whatever you want with her. ", "snape_01")
-        m "\"I'd rather not...\""
-        call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")
+        if clothing_store_intro_done:
+            call sna_main(".....","snape_03")
+            m "I might have ordered a few oddities from Madam Mafkin..."
+            call sna_main("Hahahah... That old hag?","snape_28")
+            call sna_main("She's nuts, she can sew that's for damn sure but she'd never know nor care... do whatever you want with her. ", "snape_01")
+            m "(I'd rather not...)"
+            call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
         call gen_chibi("stand","200","base",flip=True)
+        show screen bld1
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
-        call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_06")
-        m "*Squints* Just seems like an old mirror to me, a bit dusty and cloudy thou...hold on a minute."
+        call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_01")
+        m "*Squints* Just seems like an old mirror to me, a bit dusty and cloudy thou... hold on a minute."
         $ mirror_image = 1
         call sna_main(".....", "snape_23")
-        m "... I see myself...I've won the house cup."
+        g4 "... I see myself... I've won the house cup!"
         call sna_main("Really?", "snape_05")
         m "No, I can see myself in Agrabah. I'm surrounded by a harem of women all dedicated to pleasing me."
         call sna_main("You really are nothing more than a sexual deviant are you?", "snape_02")
         m "Pretty much."
         call sna_main("The mirror is known as the mirror of Erised, or Desire backwards...", "snape_09")
         g9 "Very clever..."
-        call sna_main("Quite...in short, it's designed to show you your deepest desire... but by your comment I'm sure you already got that.", "snape_05")
+        call sna_main("Quite... in short, it's designed to show you your deepest desire... but by your comment I'm sure you already got that.", "snape_05")
         m "Your magic might be foreign to me but this seems like nothing more than a party trick, I already know what I desire. "
         call sna_main("Well, it would be quite dull... if you didn't include the changes I made that had it locked up in the first place.", "snape_20")
         m "I could probably make a good guess already but please, do tell..."
         call sna_main("The intended purpose was far too boring, so I modified the enchantment. This would be incredibly difficult for a lesser wizard, but genius like I am...", "snape_23")
         m "Booooring."
-        call sna_main("It's a porn creator..", "snape_03")
+        call sna_main("It's a porn creator...", "snape_03")
         $ mirror_image = 0
         call gen_chibi("stand","200","base")
         g5 "A what, sorry?"
         call sna_main("A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn.", "snape_01")
         g5 "And you didn't tell me a thing like this existed?"
-        call sna_main("Well, it didn't exist until I made it...and I thought it was moved or destroyed.", "snape_26")
+        call sna_main("Well, it didn't exist until I made it... and I thought it was moved or destroyed.", "snape_26")
         g4 "Get out."
         call sna_main("What?", "snape_05")
         g9 "I said get out, I found it so I get to keep it."
         call sna_main("But, I thought maybe I could move...", "snape_06")
-        g4 "It's staying right where it is, I've been getting incredibly bored lately and might consider roaming the school a bit more...actually, I feel the urge to take a trip to the girls dormitory right now."
+        g4 "It's staying right where it is, I've been getting incredibly bored lately and might consider roaming the school a bit more... actually, I feel the urge to take a trip to the girls dormitory right now."
         call sna_main("Fine, it stays. Please don't... just remember that it will take time for it to reshape and create imagery so check back every now and then.", "snape_06")
         m "Noted... Out. Now."
 
@@ -245,6 +252,12 @@ label enter_room_of_req:
         call give_reward("You've unlocked the room of requirement","interface/icons/item_voucher.png")
         call sna_chibi("hide")
         call gen_chibi("hide")
+    else:
+        $ mirror_image = 0
+        play music "music/song18.mp3" fadein 4 fadeout 1
+        call gen_chibi("stand","door","base",flip=True)
+        call hide_blkfade
+        call gen_walk("door","200",2.7)
 
     $ mirror_image = 1
     call gen_chibi("stand","200","base",flip=True)

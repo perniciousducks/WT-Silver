@@ -622,6 +622,8 @@ label token_shop_menu:
             item_list.extend(fireplace_deco_list)
             item_list.extend(cupboard_deco_list)
             item_list.extend(wall_deco_list)
+            item_list.extend(misc_deco_list)
+            item_list.extend(misc_hat_list)
 
         item_list = list(filter(lambda x: x.unlocked==False, item_list))
 
@@ -672,6 +674,11 @@ label purchase_deco(item):
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
                 "[item_token_str]"
+                
+                if len(filter(lambda x: x.unlocked==False, wall_deco_list)) <= 0:
+                    $ achievement.unlock("postman")
+                if len(filter(lambda x: x.unlocked==False, misc_hat_list)) <= 0:
+                    $ achievement.unlock("hats")
             else:
                 m "I don't have enough tokens."
         "-Never mind-":

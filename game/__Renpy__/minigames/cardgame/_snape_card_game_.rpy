@@ -181,6 +181,7 @@ label snape_first_duel:
     stop music fadeout 1
     call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
     call sna_main(  "Well played though.","snape_04")
+    $ achievement.unlock("Cardwin")
     $ snape_first_win = True
     call play_sound("door")
     call sna_chibi("hide")

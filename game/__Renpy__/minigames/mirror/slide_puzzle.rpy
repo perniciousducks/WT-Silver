@@ -70,6 +70,7 @@ label open_pyzzle_box:
         $renpy.play("sounds/gulp.mp3")
         m "...."
         m "I feel no difference..."
+        $ achievement.unlock("puzzle")
 
     m "Hold on a second, there's a book in here..."
     m "Seems to be some sort of notebook, I'll skim through it....."

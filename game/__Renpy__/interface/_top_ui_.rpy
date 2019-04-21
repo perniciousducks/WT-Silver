@@ -423,6 +423,7 @@ label decorate_room_menu:
             menu_title = "Miscellaneous"
             item_list.extend(cupboard_deco_list)
             item_list.extend(misc_deco_list)
+            item_list.extend(misc_hat_list)
 
         #item_list = list(filter(lambda x: x.unlocked==False, item_list))
     show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475, func_btn=True, func_btn_ico="ui_delete")
@@ -435,6 +436,7 @@ label decorate_room_menu:
     elif isinstance(_return, item_class):
         if _return.number > 0 or _return.unlocked:
             call use_deco_item(_return)
+            $ achievement.unlock("decorator")
         else:
             "You haven't unlocked this decoration yet."
             jump deco_menu
@@ -461,6 +463,8 @@ label decorate_room_menu:
                         cupboard_deco_list[i].active = False
                     for i in xrange(len(misc_deco_list)):
                         misc_deco_list[i].active = False
+                    for i in xrange(len(misc_hat_list)):
+                        misc_hat_list[i].active = False
                 
                 $ poster_OBJ.room_image = ""
                 $ trophy_OBJ.room_image = ""
@@ -502,16 +506,17 @@ label update_deco_items:
         #Pinups & Misc
         $ pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
         # HATS HATS HATS HATS HATS HYPE
-        $ owl_hat_ITEM = item_class(id="owl_hat", name="Owl Hat", cost=0, type="owl", imagepath="interface/icons/misc/owl_hat.png", unlocked=True)
-        $ phoenix_hat_ITEM = item_class(id="phoenix_hat", name="Phoenix Hat", cost=0, type="phoenix", imagepath="interface/icons/misc/phoenix_hat.png", unlocked=True)
-        $ fireplace_hat_ITEM = item_class(id="fireplace_hat", name="Skull Hat", cost=0, type="fireplace", imagepath="interface/icons/misc/fireplace_hat.png", unlocked=True)
+        $ owl_hat_ITEM = item_class(id="owl_hat", name="Owl Hat", cost=1, type="owl", imagepath="interface/icons/misc/owl_hat.png")
+        $ phoenix_hat_ITEM = item_class(id="phoenix_hat", name="Phoenix Hat", cost=1, type="phoenix", imagepath="interface/icons/misc/phoenix_hat.png")
+        $ fireplace_hat_ITEM = item_class(id="fireplace_hat", name="Skull Hat", cost=1, type="fireplace", imagepath="interface/icons/misc/fireplace_hat.png")
         
-        $ owl_black_ITEM = item_class(id="owl_idle_black", name="Black Owl", cost=4, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
+        $ owl_black_ITEM = item_class(id="owl_idle_black", name="Black Owl", cost=3, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
         
         $ wall_deco_list = [poster_agrabah_ITEM, poster_gryffindor_ITEM, poster_hufflepuff_ITEM, poster_ravenclaw_ITEM, poster_slytherin_ITEM, poster_hermione_ITEM, poster_harlots_ITEM, poster_stripper_ITEM, poster_wanted_ITEM]
         $ fireplace_deco_list = [trophy_crest_ITEM, trophy_stag_ITEM]
         $ cupboard_deco_list = [pinup_girl_ITEM]
-        $ misc_deco_list = [phoenix_hat_ITEM, owl_hat_ITEM, fireplace_hat_ITEM, owl_black_ITEM]
+        $ misc_deco_list = [owl_black_ITEM]
+        $ misc_hat_list = [phoenix_hat_ITEM, owl_hat_ITEM, fireplace_hat_ITEM]
     
     # Outfits
     if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.

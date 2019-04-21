@@ -81,6 +81,7 @@ if cum_on_panties:
     call gen_chibi("cum_on_desk") 
     pause.5
     
+    $ achievement.unlock("pantiesfap")
     call nar(">You received the item: \"Cum-soaked panties\".") 
 
 call gen_chibi("cum_on_desk") 
@@ -105,5 +106,4 @@ hide screen bld1
 if daytime:
     jump night_start
 else:
-    $ achievement.unlock("wanker")
     jump day_start

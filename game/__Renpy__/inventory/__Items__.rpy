@@ -357,14 +357,14 @@ label store_items_init:
         $ cc_costume_misty_ITEM     = costume_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!")
 
     $ cho_outfits_list=[
-        cc_outfit_quidditch_ITEM, cc_outfit_sailor_white_ITEM, cc_outfit_sailor_black_ITEM
-        ]
+        cc_outfit_quidditch_ITEM, cc_outfit_sailor_white_ITEM
+        ] #cc_outfit_sailor_black_ITEM
     $ cho_costumes_list=[
         cc_costume_misty_ITEM
         ]
     $ cho_dresses_list=[
-        cc_dress_red_ITEM, cc_dress_silver_ITEM, cc_dress_black_ITEM
-        ]
+        cc_dress_red_ITEM
+        ] # cc_dress_silver_ITEM, cc_dress_black_ITEM
 
     # Cho Sets
     if not hasattr(renpy.store,'cc_muggle_hot_ITEM'):

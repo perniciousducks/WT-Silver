@@ -12,7 +12,7 @@ init python:
                                    "gold": ["General", "Gold Digger", "Awarded for collecting 10000 gold coins.", False, "interface/icons/gold.png", False],
                                    "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.png", True],
                                    "workaholic": ["General", "Workaholic", "Completed 5 full reports.", False, "interface/icons/item_scroll.png", False],
-                                   "fireplace": ["General", "Feel the Heat", "Started fire 5 times or more.", False, None, True],
+                                   "fireplace": ["General", "Feel the Heat", "Started fire 5 times or more.", False, "images/rooms/_objects_/fireplace/fireplace_idle.png", True],
                                    "peta": ["General", "I think I forgot something...", "Awarded for not feeding the bird for 50 days.... \nYou monster.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.png", True],
                                    "petpal": ["General", "Regular stroking", "Awarded for petting the bird 25 times.", False, "images/rooms/_objects_/phoenix/phoenix_01.png", False],
                                    "postman": ["Cardgame", "Poster Boy", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png", False],
@@ -20,15 +20,15 @@ init python:
                                    "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/head_hermione_2.png", True],
                                    "pantiesfap": ["General", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "images/animation/06_jerking_02.png", False],
                                    "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "characters/snape/head/head_9.png", False],
-                                   #"spoiler": ["Characters", "\"Spoiler\"", "My boner just died..", False, "characters/snape/head/head_14.png", True],
                                    "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.png", True],
                                    "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
                                    "flashback": ["Cardgame", "Flashback", "Totally what happened...", False, "interface/icons/cards.png", True],
                                    "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False],
                                    "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/test/icons/outfits_load.png", False],
-                                   "Credits":  ["General", "New game, who this?", "Checked out the Menu Credits", False, None, False],
-                                   "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, None, False],
-                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False]}
+                                   "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
+                                   "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
+                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False],
+                                   "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True]}
 
     class achievement_class(object):
         achievements = {}

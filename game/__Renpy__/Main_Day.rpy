@@ -342,6 +342,7 @@ if skip_duel or skip_to_hermione:
     $ cupboard_examined = True
     $ door_examined = True
     $ fireplace_examined = True
+    $ achievement.unlock("start", True)
     if skip_duel:
         $ skip_duel = False
         $ rum_times = 3 #7 unlocks map!
@@ -351,6 +352,7 @@ if skip_duel or skip_to_hermione:
         $ skip_to_hermione = False
         #Add vars
         $ snape_unlocked = True
+        $ achievement.unlock("unlocksna", True)
         $ event08_happened = True
         $ event09 = True #You let Hermione in. This event will stop looping now.
         $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.

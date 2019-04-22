@@ -38,7 +38,7 @@ label __init_variables:
             cho_cloth_schoolskirt4 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
             cho_cloth_pantslong1 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_long_1", layers=1, color=[[230, 230, 231, 255]])
             cho_cloth_pantsshort1 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_1", layers=1, color=[[230, 230, 231, 255]])
-            cho_cloth_pantsshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_2", layers=2, color=[[114, 168, 210, 255], [141, 189, 219, 255]], unlocked=False)
+            cho_cloth_pantsshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_2", layers=2, color=[[114, 168, 210, 255], [232, 177, 13, 255]], unlocked=False)
             cho_cloth_pantsshort3 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="pants_short_3", layers=3, color=[[47, 150, 136, 255], [175, 220, 191, 255], [247, 152, 38, 255]], unlocked=False)
             cho_cloth_skirtshort1 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="skirt_short_1", layers=1, color=[[89, 116, 194, 255]], unlocked=False)
             cho_cloth_skirtshort2 = cloth_class(char="cho", category="bottoms", subcat="muggle", type="bottom", id="skirt_short_2", layers=1, color=[[93, 119, 173, 255]], unlocked=False)
@@ -62,7 +62,7 @@ label __init_variables:
             
             # Robes
             cho_cloth_robequidditch1 = cloth_class(char="cho", category="misc", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
-            cho_cloth_dress1 = cloth_class(char="cho", category="misc", subcat="Onepieces", type="robe", id="dress_1", layers=2, color=[[231, 29, 41, 255], [242, 162, 73, 255]])
+            cho_cloth_dress1 = cloth_class(char="cho", category="misc", subcat="Onepieces", type="robe", id="dress_1", layers=2, color=[[231, 29, 41, 255], [242, 162, 73, 255]], armfix=True, unlocked=False)
             
             # Gloves
             cho_cloth_glovesquidditch1 = cloth_class(char="cho", category="misc", subcat="gloves", type="gloves", id="quidditch", layers=1, color=[[213, 161, 13, 255]], armfix=True)

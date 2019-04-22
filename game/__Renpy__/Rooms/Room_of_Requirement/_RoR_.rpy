@@ -209,7 +209,8 @@ label enter_room_of_req:
             call sna_main("Hahahah... That old hag?","snape_28")
             call sna_main("She's nuts, she can sew that's for damn sure but she'd never know nor care... do whatever you want with her. ", "snape_01")
             m "(I'd rather not...)"
-            call sna_main("Now, continuing where I left off. This mirror that you've found...", "snape_09")
+            call sna_main("Continuing where I left off.", "snape_09")
+        call sna_main("Now, this mirror that you've found...", "snape_01")    
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
         call gen_chibi("stand","200","base",flip=True)
         show screen bld1

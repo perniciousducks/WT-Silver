@@ -232,8 +232,16 @@ screen main_menu:
     
     # Version display
     text "{color=#fff}{size=-4}%s{/size}{/color}" % config.version xpos 1020 ypos 250 outlines [ (1, "#000", 0, 0) ]
-    if update_available:
-        textbutton "{color=#fff}{size=-4}UPDATE AVAILABLE!{/size}{/color}" style "empty" action OpenURL("https://pastebin.com/6zbuZ5gS") xpos 850 ypos 250 text_outlines [ (1, "#000", 0, 0) ] at pulse
+    
+    if update_available:        
+        frame:
+            style_group "mm"
+            xalign .96
+            yalign .575
+
+            has vbox
+
+            textbutton _("{size=-6}{color=#B33A3A}UPDATE AVAILABLE{/color}{/size}") action OpenURL("https://pastebin.com/6zbuZ5gS") text_outlines [ (1, "#000000CC", 0, 0) ]
 
     # The main menu buttons.
     frame:

@@ -747,6 +747,14 @@ transform blink:
         alpha 0.0
         pause 0.5
         repeat
+        
+transform pulse:
+    on show:
+        xzoom 1.0
+        yzoom 1.0
+        linear 0.8 xzoom 1.2 yzoom 1.2
+        linear 0.8 xzoom 1.0 yzoom 1.0
+        repeat
 
 
 

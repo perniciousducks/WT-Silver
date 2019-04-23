@@ -13,7 +13,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     $ g_c_u_pic = "sex_slow_ani"
 
     centered "{size=+7}{color=#cbcbcb}Panty Raid{/color}{/size}"
-    narrator "Based on story written by {size=+8}WaxerRed{/size}.{w=1.0}{size=-3}\nProofreading&Editing: Lineup, Johnny28, LoafyLemon{w=1.0}\nImplementation: Lineup, LoafyLemon{/size}"
+    narrator "Based on story written by {size=+8}WaxerRed{/size}.{w=1.0}{size=-3}\nProofreading&Editing: Lineup, Johnny, LoafyLemon{w=1.0}\nImplementation: Lineup, LoafyLemon{/size}"
     
     $ temp_time = daytime
 
@@ -576,14 +576,13 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         "Katie" "Hey there sweet cheeks.{image=textheart}{w=0.5} I have been waiting for you. {image=textheart}{image=textheart}{image=textheart}"
         her "We need to ta-..{w=1.0}{nw}"
         "Katie" "I know exactly what we need.{image=textheart}"
-        hide screen hermione_main
-        hide screen bld1
         $ renpy.play('sounds/slap_03.mp3')
         "> Katie grabs Hermione and pulls her in the room{nw}"
         $ renpy.play('sounds/door2.mp3')
         "> Katie grabs Hermione and pulls her in the room{fast} then shuts the door."
         pause 1.0
         $ renpy.play('sounds/09_lock.wav')
+        pause 0.5
         her "Why did you lock the door...?!"
         $ renpy.play('sounds/cloth_sound.mp3')
         "> Katie starts taking off her clothes."
@@ -719,5 +718,6 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         show screen blkfade with d9
         stop music fadeout 5.0
         hide screen fireplace_fire
+        call gen_chibi("sit_behind_desk")
         centered "{size=+7}{color=#cbcbcb}~End of part four{/color}{/size}"
         jump panty_raid_event_menu

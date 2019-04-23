@@ -1,4 +1,4 @@
-
+define vpunch_repeat = Move((0, 10), (0, -10), .5, bounce=True, repeat=True, delay=4.5)
 
 label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     show screen blkfade
@@ -13,7 +13,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     $ g_c_u_pic = "sex_slow_ani"
 
     centered "{size=+7}{color=#cbcbcb}Panty Raid{/color}{/size}"
-    narrator "Story written by {size=+8}WaxerRed{/size}.{w=1.0}{size=-3}\nProofreading: Lineup, Johnny28, LoafyLemon{w=1.0}\nImplementation: Lineup, LoafyLemon{/size}"
+    narrator "Based on story written by {size=+8}WaxerRed{/size}.{w=1.0}{size=-3}\nProofreading&Editing: Lineup, Johnny28, LoafyLemon{w=1.0}\nImplementation: Lineup, LoafyLemon{/size}"
     
     $ temp_time = daytime
 
@@ -63,13 +63,13 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "How would you feel about going out and earning 35 points for your house today?"
         call her_main("I would love to...{w=0.3} as long as it doesn't involve me humiliating myself in front of my peers.", mouth="open", eye="baseL", cheeks="blush")
         call her_main("", mouth="normal", cheeks="blush")
-        m "Well then, perhaps today is your lucky day."
+        g9 "Well then, perhaps today is your lucky day."
         call her_main("Really?", mouth="open", eye="base", cheeks="blush")
         call her_main("", mouth="soft", cheeks="blush")
         m "Yes, in fact you may wish to remain as unseen as possible during your activities today."
         call her_main("(That doesn't sound suspicious at all...)", mouth="disgust", eye="down", cheeks="blush")
         call her_main("", mouth="normal", eye="base", cheeks="blush")
-        m "I would very much like for you to recover on of the most revered and sacred objects in this academy...{w=0.5} No, in the world!"
+        g9 "I would very much like for you to recover one of the most revered and sacred objects in this academy...{w=0.5} No, in the world!"
         call her_main("Oh! You want me to recover a magical artifact?", mouth="open", eye="base")
         call her_main("", mouth="normal", eye="base")
         m "Something like that..."
@@ -99,7 +99,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="normal", eye="base")
         m "... \"Sometimes I am plain and white, but I look my best when skimpy and black.\""
         call her_main("", eye="squint")
-        m "No wait! \"skimpy and pink.\""
+        g4 "No wait! \"skimpy and pink.\""
         call her_main("This is an ancient riddle...?", mouth="open", eye="frown")
         call her_main("", mouth="upset", eye="baseL")
         m "Hush girl.. {w=1.0}{nw}" 
@@ -108,20 +108,20 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "..."
         m "\"No schoolgirl fetish would be complete without me.\""
         call her_main("[genie_name]...?!", mouth="open", eye="frown")
-        m "\"The answer is on page 74, Spell: seitnaP backwards.\""
+        g9 "\"The answer is on page 74, Spell: seitnaP backwards.\""
         call her_main("PROFESSOR!", mouth="scream", eye="frown")
         call her_main("", mouth="angry", eye="frown")
         m "Yes?{w=0.5} Did you figure it out?"
         call her_main("If you wanted to see my..{w=0.3} *ahem*{w=0.3} 'undergarments' you could have just asked...", mouth="disgust", eye="suspicious", cheeks="blush")
         call her_main("{size=-4}(You didn't have to make the whole story up to catch my attention...){/size}", mouth="upset", eye="glanceL", cheeks="blush")
-        m "By Merlin's beard! I think you've got it girl... {w=0.5}\n{size=-4}for the most part at least.{/size}"
+        g9 "By Merlin's beard! I think you've got it girl... {w=0.5}\n{size=-4}for the most part at least.{/size}"
         call her_main("[genie_name], my classes start soon, can we just get over with it so I can get my points and leave?", mouth="open", eye="closed", cheeks="blush")
         call her_main("", mouth="upset", eye="glance")
-        m "Such eagerness...{w=0.3} but where's the challenge in handing me yours?"
-        call her_main("Sorry? Handing my what?", mouth="open", eye="wide_stare", cheeks="blush")
-        m "Not yours silly girl.."
+        g9 "Such eagerness...{w=0.3} but where's the challenge in handing me yours?"
+        call her_main("Sorry, you wanted me to hand you a pair?", mouth="open", eye="wide_stare", cheeks="blush")
+        m "Of course, but not yours silly girl.."
         call her_main("", mouth="angry", cheeks="blush")
-        m "This is meant to be a treasure hunt! Go out and find someone's panties out in the world then bring them to me."
+        g9 "This is meant to be a treasure hunt! Go out and find someone's panties out in the world then bring them to me."
         call her_main("But, [genie_name]?!", mouth="shock", eye="frown", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
         m "You're a bright young gal, I'm sure you'll think of something... Make haste!"
@@ -172,7 +172,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Does that mean I've earned some extra house points?", mouth="open", eye="baseL")
         m "I think the situation calls for it..."
         call her_main("", mouth="smile", eye="baseL")
-        m "90 points to Gryffi-... {w=0.2} wait a second..."
+        g9 "90 points to Gryffi-... {w=0.5}{nw}"
+        g4 "90 points to Gryffi-... {fast} wait a second..."
         call her_main("", mouth="smile", eye="base")
         "> You take another look at the undergarments and notice something unusual."
         call her_main("", mouth="base", eye="base")
@@ -210,7 +211,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "Not only you disobeyed me but also tried to trick me, your headmaster, into thinking these belonged to some colleague of yours."
                 call her_main("it won't happen again..", eye="down")
                 call her_main("", eye="glance")
-                m "For your own sake it better doesn't or I will have to take action."
+                g4 "For your own sake it better doesn't or I will have to take action."
                 call her_main("", eye="down")
                 m "Dismissed."
                 call her_main("Yes sir.")
@@ -223,7 +224,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "I never imagined you'd posses such \"out of the box\" problem solving!"
                 call her_main("Really?", mouth="open", eye="worried")
                 call her_main("", mouth="soft", eye="worried")
-                m "You fumbled the landing, but otherwise cheated like a pro!"
+                g9 "You fumbled the landing, but otherwise cheated like a pro!"
                 call her_main("Thank you...", mouth="soft", eye="worried")
                 call her_main("(I guess..?)", mouth="soft", eye="glanceL")
                 call her_main("", mouth="soft", eye="worriedL")
@@ -254,17 +255,17 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Hello [genie_name], you called?", mouth="open", eye="base", flip=False)
         call her_main("", mouth="base")
         m "Hello to you too, [hermione_name]."
-        m "Say..{w=0.3} would you like to earn some points today girl?"
+        g9 "Say..{w=0.3} would you like to earn some points today girl?"
         call her_main("Possibly..", mouth="open")
         call her_main("But that depends on the task required of me.", eye="closed")
         call her_main("", mouth="soft", eye="baseL")
         m "I would like you to try yourself at {size=+4}'that'{/size} favour again."
         call her_main("*sigh* I knew that sooner or later you would ask me about it, [genie_name]..", mouth="open", eye="closed")
         call her_main("Do I have a choice?", mouth="upset", eye="worried")
-        m "Certainly, if you don't mind those 'Slytherin Harlots' taking the house cup!"
+        g9 "Certainly, if you don't mind those 'Slytherin Harlots' taking the house cup!"
         call her_main("I Do mind...", eye="down_raised")
         call her_main("", eye="worried")
-        m "Then you'd better head on out and steal some girl's panties!"
+        g9 "Then you'd better head on out and steal some girl's panties!"
         call her_main("{size=-4}...100 points{/size}", mouth="open", eye="worriedL")
         call her_main("", mouth="upset")
         m "35."
@@ -275,7 +276,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "45..."
         call her_main("Fine.", mouth="disgust", eye="glanceL")
         call her_main("", mouth="upset", eye="baseL")
-        m "We got a deal then, splendid!"
+        g9 "We got a deal then, splendid!"
         call her_main("", mouth="normal", eye="base")
         m "You're free to go then."
         call her_main("Thank you sir.", mouth="open", eye="base")
@@ -318,7 +319,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "Yes, you are free to go."
                 call her_walk("desk","mid",1.0)
                 $ renpy.play('sounds/sniff.mp3')
-                m "{size=-4}Such nice fragrance, I wonder to whom these belong?{/size}"
+                g9 "{size=-4}Such nice fragrance, I wonder to whom these belong?{/size}"
                 call her_main(".........(I'm sorry Ginny).........", mouth="disgust", eye="down", cheeks="blush", flip=True)
                 call her_walk("mid", "leave", 2.0)
             "\"Ask for details.\"":
@@ -339,7 +340,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("...", eye="down", cheeks="blush")
                 m "Well?"
                 call her_main("I guess she is kind of both..", mouth="soft", cheeks="blush")
-                m "(Splendid! Maybe she can introduce her to me sometimes)"
+                g9 "(Splendid! Maybe she can introduce her to me sometimes)"
                 call her_main("", eye="base", cheeks="blush")
                 m "So, how did you do it?"
                 call her_main("I offered to do her laundry along with mine this week...", mouth="open", eye="down", cheeks="blush")
@@ -352,13 +353,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "And?"
                 call her_main(" And... that’s really it.", mouth="open", eye="base")
                 call her_main("", mouth="normal")
-                m "How dull.{w=0.5} 45 stupid house points to Gryffindor."
+                g4 "How dull.{w=0.5} 45 stupid house points to Gryffindor."
                 call her_main("Do those count the same as regular points?", mouth="annoyed")
                 m "I suppose..."
                 call her_main("Goodnight then sir.", mouth="open", eye="base")
                 call her_walk("desk","door",3.0)
-                m "{size=-4}Ginny..{w=1.0} its time for you to meet 'George'.{/size}"
+                m "{size=-4}Ginny..{w=1.0} its time for you to meet 'George'.{/size}{w=0.2}{nw}"
+                call gen_chibi("jerking_off_behind_desk")
                 $ renpy.play('sounds/zipper.mp3')
+                g9 "{size=-4}Ginny.. Its time for you to meet 'George'.{/size}{fast}"
                 call her_main("", mouth="angry", eye="shocked", cheeks="blush", flip=True)
                 pause 0.8
                 call her_main("(I better leave now...)", mouth="disgust", eye="baseL", cheeks="blush", flip=True)
@@ -371,6 +374,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         show screen blkfade with d3
         stop music fadeout 1.0
         hide screen fireplace_fire
+        call gen_chibi("sit_behind_desk")
         centered "{size=+7}{color=#cbcbcb}~End of part two{/color}{/size}"
         jump panty_raid_event_menu
 
@@ -383,7 +387,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         her "I'm coming in.{w=1.0}{nw}"
         call play_sound("door")
         call her_walk("door","mid",2.5)
-        m "Well, well, well.. if it isn't my favourite minx!"
+        g9 "Well, well, well.. if it isn't my favourite minx!"
         call her_main("Good morning to you too, [genie_name].", mouth="open", eye="closed", flip=False)
         call her_main("", mouth="base", eye="base")
         m "What brings you here this time?"
@@ -396,7 +400,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", eye="worried", cheeks="blush")
         m "..for which in return you bring me panties of that colleague of yours.."
         call her_main("", eye="down_raised", cheeks="blush")
-        m "..I wonder if she realized by now that a washing machine can only eat so much panties."
+        g9 "..I wonder if she realized by now that a washing machine can only eat so much panties."
         call her_main("", mouth="soft", eye="glanceL", cheeks="blush")
         m "but surely that's something worth risking your reputation over, am I right?"
         call her_main("...", mouth="annoyed", eye="glanceL")
@@ -438,8 +442,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         "She drops a bunched-up ball of about half a dozen girl's panties on your desk, coming in an array of different sizes, designs and colours."
         call her_main("I usually don’t conduct such a shotgun approach to work, although...", mouth="open", eye="base", cheeks="blush")
         call her_main("", mouth="soft", cheeks="blush")
-        m "In this instance it appears to have served you well, full marks for stealing panties from your schoolmates."
-        call her_main("It would have fluster me if I hadn't told my dorm mates time and time again, it is all of our responsibilities to keep our dorm tidy.", mouth="annoyed", eye="baseL", cheeks="blush")
+        g9 "In this instance it appears to have served you well, full marks for stealing panties from your schoolmates."
+        call her_main("It would have flustered me if I hadn't told my dorm mates time and time again, it is all of our responsibilities to keep our dorm tidy.", mouth="annoyed", eye="baseL", cheeks="blush")
         call her_main("Loss of said property is expected when leaving their undergarments strewn around as if a hurricane blew through their drawers.", mouth="open", eye="base")
         call her_main("", mouth="soft")
         m "Yes, Yes... But how does this connect back to a ‘Connie’?"
@@ -448,7 +452,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("But just as I was shoving the last pair into my bag, Katie Bell walked in...", mouth="angry", eye="down_raised", cheeks="blush")
         call her_main("She caught me red handed!", mouth="disgust", eye="down", cheeks="blush")
         call her_main("", eye="concerned")
-        m "Or caught silky handed! {w=0.5}...panty handed?"
+        g9 "Or caught silky handed!{w=1.0}{nw}"
+        m "Or caught silky handed!{fast} ...panty handed?"
         call her_main("", eye="down")
         m "..."
         m "Sounded better in my head...{w=0.5} give me a minute and I'll come up with something that works..."
@@ -461,7 +466,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Well... that's the odd thing, while I was floundering like a fish she was just grinning at me. And then she said and I quote-", mouth="open", eye="base")
         call her_main("\"Heh, I always had a feeling about you Granger... But if you want them, you'll need to do me a favor. Meet me tonight and we can help Connie with her Linguistic homework.\"", mouth="open", eye="baseL")
         call her_main("", mouth="base", eye="base")
-        m "Connie with her linguist?- oh."
+        m "Connie with her linguist?-{w=1.0}{nw}"
+        g9 "Connie with her linguist?-{fast} oh I see.."
         call her_main("As embarrassing as initial circumstances are, I would never turn down a request to help a student with homework! But I don't think we have a linguistic class or what Connie she was-", mouth="open", eye="concerned")
         call her_main("", mouth="soft", eye="base")
         g9 "Cunnilingus [hermione_name]... She was asking for Cunnilingus."
@@ -489,7 +495,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "Are you really supposed to be this school’s top student? She was asking you to eat her out."
         call her_main("Eat her what out?", mouth="open")
         call her_main("", mouth="annoyed", eye="angryL")
-        m "Alright... work with me. She wanted you...{w} Still with me here?"
+        m "Alright... work with me. She wanted you...{w=1.0} Still with me here?"
         call her_main("Yes obviously...", mouth="open", eye="angryCl")
         call her_main("(...does he think I'm an idiot?)", mouth="annoyed", eye="angryL")
         m "Okay then repeat after me."
@@ -505,14 +511,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("{size=+8}WHAT?!{/size}", mouth="shock", eye="wide", cheeks="blush")
         call her_main("Why would she want that?!", mouth="shock", eye="wide_stare", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
-        m "Because in my experience it feels awesome...{w=0.5} Wait, did that make it sound like I have a vagin-"
+        g9 "Because in my experience it feels awesome...{w=0.5}{nw}"
+        m "Because in my experience it feels awesome...{fast} Wait, did that make it sound like I have a vagin-"
         call her_main("You're wrong! She- She-", mouth="shock", eye="angryCl", cheeks="blush")
         call her_main("", mouth="angry", eye="WorriedCl", cheeks="blush")
         m "What? Never done it before?"
         call her_main("{size=+4}OF COURSE NOT!{/size}", mouth="angry", eye="angry", cheeks="blush")
-        m "I mean, I assumed you didn't have any real friends... But to get to your age and never eat another girl out? How shameful."
+        g9 "I mean, I assumed you didn't have any real friends... But to get to your age and never eat another girl out? How shameful."
         call her_main("Not everyone in this school is as gross as you!", mouth="angry", eye="annoyed", cheeks="blush")
-        m "well, there's one way to prove me wrong. Go find ‘Katie’ and ask her yourself."
+        g9 "well, there's one way to prove me wrong. Go find ‘Katie’ and ask her yourself."
         call her_main("", mouth="annoyed", eye="annoyed", cheeks="blush")
         call her_main("Maybe I will...", mouth="open", eye="angryCl")
         call her_main("", mouth="upset", eye="annoyed")
@@ -523,15 +530,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I-I-I-I-I.....", mouth="angry", eye="wide_stare", cheeks="blush")
         m "Just spit it out!"
         call her_main("I was so nervous with her that I just said yes! She'll be expecting me soon!", mouth="mad", eye="down_raised", cheeks="blush")
-        m "You better get to it then, [hermione_name]!"
+        g9 "You better get to it then, [hermione_name]!"
         call her_main("But I- But I- I couldn't- ", mouth="shock", eye="down", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
         call her_main("I'll just have to inform her that it was a misunderstanding, yes that will have to do.", eye="glanceL", cheeks="blush")
         call her_main("", eye="glance", cheeks="blush")
-        m "Sure, and risk her spilling the beans to your entire dorm that the proud Hermione Granger steals girls’ panties."
+        g9 "Sure, and risk her spilling the beans to your entire dorm that the proud Hermione Granger steals girls’ panties."
         call her_main("...", eye="down", cheeks="blush")
         call her_main("", eye="angryCl", cheeks="blush")
-        m "Hey, for sixty points would you let me watc-"
+        g9 "Hey, for sixty points would you let me watc-"
         call her_main("Absolutely not!", mouth="scream", eye="angry", cheeks="blush")
         call her_main("", mouth="angry", eye="angry", cheeks="blush")
         m "That's a bummer.."
@@ -547,7 +554,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="upset", eye="baseL")
         pause 0.5
         call her_walk("desk","mid",1)
-        g9 "Have fun!"
+        g9 "Bon apetite!"
         call her_main("", mouth="open", eye="baseL", flip=True)
         pause 0.5
         call her_main(".....", mouth="angry", eye="base", flip=True)
@@ -557,78 +564,160 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         show screen blkfade with d3
         stop music fadeout 1.0
         hide screen fireplace_fire
+        pause 1.0
+        call play_sound("knocking")
+        pause 1.0
+        fem "Who is it?"
+        pause 0.5
+        her "It's me.. Hermione granger."
+        call play_sound("door")
+        her "Hello Katie I-..{w=1.5}{nw}"
+        $ renpy.play('sounds/giggle2.mp3')
+        "Katie" "Hey there sweet cheeks.{image=textheart}{w=0.5} I have been waiting for you. {image=textheart}{image=textheart}{image=textheart}"
+        her "We need to ta-..{w=1.0}{nw}"
+        "Katie" "I know exactly what we need.{image=textheart}"
+        hide screen hermione_main
+        hide screen bld1
+        $ renpy.play('sounds/slap_03.mp3')
+        "> Katie grabs Hermione and pulls her in the room{nw}"
+        $ renpy.play('sounds/door2.mp3')
+        "> Katie grabs Hermione and pulls her in the room{fast} then shuts the door."
+        pause 1.0
+        $ renpy.play('sounds/09_lock.wav')
+        her "Why did you lock the door...?!"
+        $ renpy.play('sounds/cloth_sound.mp3')
+        "> Katie starts taking off her clothes."
+        her "Wha- wha- what-t-t are you d-doing?!"
+        $ renpy.play('sounds/giggle.mp3')
+        "Katie" "Aren't you talkative today?{w=0.5} I would save my breath if I was you. {image=textheart}{image=textheart}{image=textheart}"
+        "Katie" "I'm quite{w=0.2} {image=textheart}horny{image=textheart}{w=0.2} so you might be 'stuck' for a while."
+        $ renpy.play('sounds/push_on_bed.mp3')
+        "> She pushes Hermione onto the bed." with vpunch
+        her "{size=+4}W-wait?!{/size}"
+        $ renpy.play('sounds/sit_on_bed.mp3')
+        "> Then she swiftly straddles her face in cowgirl position." with hpunch
+        $ renpy.play('sounds/gltch.mp3')
+        her "..........!!!{w=1.0}{nw}"
+        her "*Hmph*"
+        $ renpy.play('sounds/gasp2.mp3')
+        "Katie" "Ahh!{image=textheart} {w=0.5}So much better..{image=textheart}{image=textheart}{image=textheart}"
+        "Katie" "I'll start moving now.{w=0.5} You ready?"
+        her "*nwh*!!!"
+        $ renpy.play('sounds/giggle3.mp3')
+        "Katie" "I'll take that as a yes. {image=textheart}{image=textheart}{image=textheart}"
+        $ renpy.play('sounds/jump_on_bed.mp3')
+        her "*Hmph{cps=10}hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh{/cps}*{nw}" with vpunch_repeat
+        pause 1.0
         centered "{size=+7}{color=#cbcbcb}~End of part three{/color}{/size}"
         jump panty_raid_event_menu
 
     #Fourth Level
     elif pathvalue == 3:
+        centered "{size=+7}{color=#cbcbcb}A Couple months later after the 'linguistic' incident{/color}{/size}"
+        call hide_blkfade
+        pause 1.0
+        call play_sound("door")
         call her_walk("door","mid",2.5)
-        g9 "Hello again [hermione_name]."
+        call her_main("Hello, [genie_name].{image=textheart}", mouth="smile", eye="wink", flip=False)
+        call her_main("", mouth="smile", eye="base")
+        g9 "[hermione_name]! My favourite slut."
         m "I have another riddle for you."
-        call her_main("Oh, this ought to be fun. Could you make it a 'hard' one [genie_name]?", mouth="grin", eye="happy")
-        m "You'll enjoy this one...{w} Ready?"
-        call her_main("Ready!")
+        call her_main("Oh, this ought to be fun.", mouth="grin")
+        call her_main("Could you make it a 'hard' one [genie_name]?", mouth="open_wide_tongue")
+        call her_main("", mouth="smile")
+        g9 "You'll enjoy this one for sure...{w=0.3} Ready?"
+        call her_main("Ready!", eye="happyCl")
+        call her_main("", eye="base")
         m "\"I am as soft and pure as a kitten, though far more desirable.\""
-        call her_main("Hmmmm...", mouth="soft", eye="concerned")
-        call her_main("Boobs?{w=0.3} Titjob?", mouth="open", eye="base")
-        call her_main("", mouth="normal", eye="base")
+        call her_main("Hmmmm...", mouth="base", eye="baseL")
+        call her_main("Boobs?{w=0.3} Titjob?", mouth="soft", eye="base")
+        call her_main("", mouth="smile", eye="base")
         m "Nope, in this case contrary to a titjob, it being both small and tight is usually preferred."
-        call her_main("Sex?", mouth="annoyed", eye="suspicious")
-        m "Nope...{w} \"While boys may want me, they wouldn’t be caught dead ever just buying me for themselves.\""
-        call her_main(" Well that definitely rules out sex.", mouth="open", eye="baseL")
+        call her_main("Sex?", mouth="grin", eye="glance")
+        call her_main("", mouth="base", eye="glance")
+        m "Nope...{w=0.5} \"While boys may want me, they wouldn’t be caught dead ever just buying me for themselves.\""
+        call her_main("Well that definitely rules out sex.", mouth="open", eye="baseL")
+        call her_main("", mouth="base")
         m "\"The less of me there is, the more...'desirable' I become to behold.\""
-        call her_main(" Oh! Oh! Panties!", mouth="crooked_smile", eye="closed")
+        call her_main("Oh! Oh! Panties!", mouth="crooked_smile", eye="closed")
+        call her_main("", eye="base")
         g9 "Spot on."
-        call her_main(" Mine or someone else’s?", mouth="smile", eye="happy")
+        call her_main("Mine or someone else’s?", mouth="smile", eye="happy")
         m "Someone else's if you don't mind, [hermione_name]."
-        call her_main(" On it! I'll be back soon...", mouth="grin", eye="happy")
+        call her_main("On it! I'll be back soon...", eye="base")
         call her_walk("mid","leave",2.5)
 
-        show screen blkfade
+        show screen blkfade with d3
+        stop music fadeout 1.0
+        centered "{size=+7}{color=#cbcbcb}Some time later...{/color}{/size}"
+        $ daytime = False
+        $ interface_color = "gray"
+        call music_block
+        show screen fireplace_fire
+        pause 1.0
         call hide_blkfade
 
+        call play_sound("door")
         call her_walk("door","mid",2.5)
-        call her_main(" Hello [genie_name], I hope I didn't keep you waiting long... it took longer than expected.", mouth="smile", eye="happy")
+        call her_main("Hello [genie_name], I hope I didn't keep you waiting for too long...", mouth="smile", eye="happy")
+        call her_walk("mid","desk",1.0)
+        call her_main("I had a little..{w=0.5} 'setback'{w=0.2} if you know what I mean..", mouth="grin", eye="glance", cheeks="blush")
+        call her_main("", mouth="base", cheeks="blush")
+        pause 0.5
+        hide screen bld1
+        hide screen hermione_main
+        with d3
         "She drops a pair of laced white panties on your desk."
-        m "No trouble at all [hermione_name]. And you have excellent taste as always."
+        show screen bld1 with d3
+        m "No trouble at all [hermione_name].{w=0.5} And you have excellent taste as always."
+        $ renpy.play('sounds/sniff.mp3')
+        g9 "These smell fantastic!"
         call her_main("You're too kind [genie_name].", mouth="grin", eye="happy", cheeks="blush")
-
-        hide screen genie
+        hide screen bld1
+        hide screen hermione_main
+        with d3
+        pause 1.0
+        call gen_chibi("jerking_off_behind_desk")
+        $ renpy.play('sounds/zipper.mp3')
         ">You take your cock out and start stroking it..."
         call gen_chibi("jerking_off_behind_desk")
-        call her_main("Mmmm, [genie_name] need any help with that?", mouth="base", eye="ahegao_raised", cheeks="blush")
+        call her_main("Mmmm, [genie_name] need any help with that?", mouth="base", eye="suspicious", cheeks="blush")
         m "These already feel a little damp in the middle. Why don’t you tell me why that is?"
-        call her_main("Oh you know, girls will be girls and all.", mouth="open", eye="ahegao", cheeks="blush")
-        m "You know, charming the panties off someone is just a figure of speech."
-        call her_main("Not anymore... I'd like to think Katie was quite pleased with me.", mouth="smile", eye="ahegao", cheeks="blush")
+        call her_main("Oh you know, girls will be girls and all.", mouth="grin", eye="glance", cheeks="blush")
+        g9 "You know, charming the panties off someone is just a figure of speech."
+        call her_main("Not anymore... I'd like to think Katie was quite pleased with me.", mouth="smile", eye="glance", cheeks="blush")
         m "Katie? Katie Bell? The same delicious dyke that wanted you to clam joust with her?"
-        call her_main("Maybe...{w} Although, Katie keeps raising the fee every time I ask.", mouth="smile", eye="ahegao_squint", cheeks="blush")
-        call her_main("Not that I mind.", mouth="open", eye="happy", cheeks="blush")
-        m "Ugh!"
-
+        call her_main("Maybe...", eye="glanceL", cheeks="blush")
+        call her_main("Although, Katie keeps raising the fee every time I ask.", eye="happyCl", cheeks="blush")
+        call her_main("", mouth="open", cheeks="blush")
+        call her_main("Not that I mind, but my tongue can get quite sore sometimes.", mouth="open_tongue", cheeks="blush")
+        call her_main("Especially since we've started the alphabet-lingous thing.", mouth="open_wide_tongue", eye="ahegao_squint", cheeks="blush")
+        call her_main("", mouth="open_wide_tongue", eye="ahegao_squint", cheeks="blush")
+        g4 "Ugh!"
+        call cum_block
         call gen_chibi("cumming_behind_desk")
-
-        call her_main("Oh, poor [genie_name], I had no idea you were so pent up. You can start calling me out more than twice a day, if two a day isn't enough.", mouth="smile", eye="baseL", cheeks="blush")
-
+        call her_main("", eye="glance", cheeks="blush")
+        pause 1.5
         call gen_chibi("came_on_desk")
-
+        call her_main("Oh, poor [genie_name], I had no idea you were so pent up. You can start calling me out more than twice a day, if two a day isn't enough.", mouth="soft", eye="concerned", cheeks="blush")
         m "During the day? But what about your classes?"
-        call her_main("Hmm? Oh well, missing one or two wouldn't hurt... Especially if the headmaster has an important 'assignment' for me.", mouth="grin", eye="happy")
+        call her_main("Hmm? Oh well, missing one or two wouldn't hurt... Especially if the headmaster has an important 'assignment' for me.", mouth="base", eye="glance", cheeks="blush")
         m "I'll consider it... Now let's circle back to you, Katie and your binge of her minge."
-        call her_main(" PROFESSOR! How dare you! I would never even think to shamelessly do something so heinous with a classmate and give you all the juicy details...", mouth="annoyed", eye="base")
-        call her_main(" For less than 40 house points.", mouth="soft", eye="wink")
+        call her_main("Professor.. How dare you.. I would never even think to shamelessly do something so heinous with a classmate and give you all the juicy details...", mouth="annoyed", eye="baseL")
+        call her_main("For less than 40 house points.", mouth="grin", eye="wink", cheeks="blush")
+        call her_main("", mouth="base", eye="glance", cheeks="blush")
         m "Maybe next time [hermione_name]. I'm a little... spent for tonight."
-        call her_main(" We both know you could go for longer if you wanted, but you’re right, we'll leave it for later.", mouth="soft", eye="base")
-        call her_main(" See you tomorrow [genie_name].", mouth="smile", eye="wink")
+        call her_main("We both know you could go for longer if you wanted to...", mouth="soft", eye="glance", cheeks="blush")
+        call her_main("but you’re right, we'll leave it for later.", mouth="base", eye="happy", cheeks="blush")
+        call her_main("See you tomorrow [genie_name].", mouth="smile", eye="wink", cheeks="blush")
 
-        call her_walk("mid","leave",2)
+        call her_walk("desk","leave",2.5)
+        pause 1.0
+        m "...Hmmm...{w=1.0} I don't think I ever gave her points."
+        pause 0.5
 
-        m "...Hmmm. wait, I don't think I ever gave her points."
-
-
-    call blkfade
-    # call h_unequip_temp_outfit
-    call her_chibi("hide")
-    hide screen main_room
-
-    jump enter_room_of_req
+        show screen blkfade with d9
+        stop music fadeout 5.0
+        hide screen fireplace_fire
+        centered "{size=+7}{color=#cbcbcb}~End of part four{/color}{/size}"
+        jump panty_raid_event_menu

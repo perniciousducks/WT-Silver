@@ -48,7 +48,7 @@ label deck_builder:
             jump deck_builder_jump
             
         else:
-            jump deck_builder_jumps
+            jump deck_builder_jump
 
 screen deck_builder_screen():
     zorder 8

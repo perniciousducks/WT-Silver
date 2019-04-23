@@ -23,6 +23,8 @@ screen room_of_requirement:
 
     add "images/rooms/_objects_/candles/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
     
+    #use ui_top_bar
+    
 screen room_of_requirement_overlay:
     tag foreground
     zorder 5

@@ -8,7 +8,7 @@ init python:
                                    "overwhored": ["Characters", "Overwhored", "Hermione reached maximum corruption.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "unlocksus": ["Characters", "Boner", "Awarded for unlocking Susan Bones.", False, "interface/icons/head/head_susan_2.png", False],
                                    "unlocksna": ["Characters", "Strictly colleagues", "Awarded for unlocking Severus Snape.", False, "characters/snape/head/head_9.png", False],
-                                   "mirror": ["General", "Mirror, mirror on the wall..", "Awarded for unlocking the Room of Requirements.", False, "images/rooms/room_of_requirement/mirror_hover.png", False],
+                                   "mirror": ["Mirror", "Mirror, mirror on the wall..", "Awarded for unlocking the Room of Requirements.", False, "images/rooms/room_of_requirement/mirror_hover.png", False],
                                    "gold": ["General", "Gold Digger", "Awarded for collecting 10000 gold coins.", False, "interface/icons/gold.png", False],
                                    "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.png", True],
                                    "workaholic": ["General", "Workaholic", "Completed 5 full reports.", False, "interface/icons/item_scroll.png", False],
@@ -73,29 +73,41 @@ init python:
 init:
     python:
         def update_achievements():
+            temp_var = 0
             if gold >= 10000:
                 achievement.unlock("gold")
+                temp_var += 1
             
             if wine >= 25:
                 achievement.unlock("drunkard")
+                temp_var += 1
                 
             if (day-phoenix_fed_counter) >= 50:
                 achievement.unlock("peta")
+                temp_var += 1
                 
             if phoenix_petted_counter >= 25:
                 achievement.unlock("petpal")
+                temp_var += 1
                 
             if sna_friendship_maxed:
                 achievement.unlock("bros")
+                temp_var += 1
                 
             if her_whoring >= 24:
                 achievement.unlock("overwhored")
+                temp_var += 1
                 
             if stat_fireplace_counter >= 5:
                 achievement.unlock("fireplace")
+                temp_var += 1
                 
             if stat_reports_counter >= 5:
                 achievement.unlock("workaholic")
+                temp_var += 1
+                
+            if temp_var >= 8:
+                renpy.hide_screen("achievement_block")
     
 screen achievement_block():
     tag achievement_block
@@ -157,7 +169,7 @@ label achievement_menu(xx=150, yy=90):
     else:
         $ btn_hover = "#7d75aa40"
     
-    $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame"]
+    $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame", "Mirror"]
     $ achievement_categories_sorted_length = len(achievement_categories_sorted)
     
     $ items_shown = 36

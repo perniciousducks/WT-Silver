@@ -1,5 +1,5 @@
 init python:
-    if persistent.achievements == None or config.developer:
+    if persistent.achievements == None:
         persistent.achievements = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "unlockcho": ["Characters", "Chang Dynasty", "Awarded for unlocking Cho Chang.", False, "interface/icons/head/head_cho_2.png", False],
                                    "unlocklun": ["Characters", "Looney Tunes", "Awarded for unlocking Luna Lovegood.", False, "interface/icons/head/head_luna_2.png", False],

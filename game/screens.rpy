@@ -253,7 +253,7 @@ screen main_menu:
 
         if not persistent.game_complete:
             textbutton _("New Game") action Start()
-        if persistent.game_complete:
+        else:
             textbutton _("New Game {size=+3}+{/size}") action Start()
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Preferences") action ShowMenu("preferences")
@@ -519,7 +519,7 @@ screen preferences:
                 textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Call("saybox_color", False)
                 textbutton _("Shadow") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("persistent.text_color_day", "#402313"), SetVariable("persistent.text_color_night", "#341c0f"), SetVariable("persistent.text_outline", "#00000000")]
-            
+
             # Joystick settings aren't needed, I dont think anyone plays WT with it.
             #frame:
                 #style_group "pref"
@@ -560,6 +560,14 @@ screen preferences:
 
                 if config.has_voice:
                     textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+                    
+            frame:
+                style_group "pref"
+                has vbox
+                
+                label _("{size=-4}Animation preference{/size}")
+                textbutton _("Chibis") action SetVariable("use_cgs", False)
+                textbutton _("Sprites") action SetVariable("use_cgs", True)
 
         vbox:
             frame:

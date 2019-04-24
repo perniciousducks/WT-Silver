@@ -3,9 +3,9 @@
 
     def check_for_updates():
         # Get the version from raw pastebin
-        updt_website = urllib2.Request('https://pastebin.com/raw/VvEdS3Kx')
+        updt_website = urllib2.Request('https://pastebin.com/raw/BN5Badv9')
         try:
-            updt_website2 = urllib2.urlopen(updt_website)
+            updt_website2 = urllib2.urlopen(updt_website, timeout=5)
             version_check = updt_website2.read()
             # Compare version of the game with the online version
             return False if config.version == version_check else True

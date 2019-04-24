@@ -15,8 +15,9 @@ init -2:
             else:
                 return True
 
-
-
+    $ daytime = False
+    $ interface_color = "gray"
+    $ use_cgs = False
     $ config.autoreload = False
 
     transform fade_in(x, y, speed):

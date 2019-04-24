@@ -83,7 +83,7 @@ label quidditch_commentator_event_2:
 
     m "[hermione_name], how much do you know about Quidditch?"
     call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.","open","baseL")
-    m "Ah, okay... and here I was hoping that you'd be able to comment this years quidditch games..."
+    m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
     call her_main("Me, wasting time on something as stu...{w=0.8}{nw}","base","closed")
     call her_main("Wait...{w=0.6} What did you say?","open","suspicious")
     m "I was going to ask you if you'd commentate this years quidditch games..."
@@ -104,7 +104,7 @@ label quidditch_commentator_event_2:
     call her_main("Cho will be so mad!","crooked_smile","squint")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the j..."
-    call her_main("Ah!!! I better start lear...{w=0.8} I mean, prepare my opening speech!","open","wide_stare",trans="hpunch")
+    call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!","open","wide_stare",trans="hpunch")
 
     call her_walk("mid","leave",1.7)
 
@@ -122,7 +122,7 @@ label quidditch_commentator_event_3:
 
     g9 "I've got great news for you! I found us a new commentator!"
     call cho_main("Is it Hermione?","soft","closed","base","mid")
-    g4 "Yes! Very good guess!"
+    g9 "Yes! Very good guess!"
     call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.","pout","narrow","angry","mid")
     m "Oh, sure..."
     call cho_main("But I'm surprised she even took up to the task...","pout","base","base","R")

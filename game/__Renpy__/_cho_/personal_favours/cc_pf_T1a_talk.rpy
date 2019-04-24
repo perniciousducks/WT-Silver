@@ -310,7 +310,7 @@ label cc_pf_talk_T1_E2:
     m "So who's is it then?"
     call cho_main("The enemy team's, obviously!","soft","narrow","angry","mid")
     call cho_main("They are cheating! And they have done so for years!","open","narrow","angry","R")
-    call cho_main("This is my last change! And I'm growing more and more desperate with my situation...","angry","narrow","angry","mid")
+    call cho_main("This is my last chance! And I'm growing more and more desperate with my situation...","angry","narrow","angry","mid")
     m "(...)"
 
     menu:
@@ -472,9 +472,9 @@ label cc_pf_talk_T1_E3:
     cho "My panties?"
     m "No, your good manners... Yes, your panties!"
     cho "Why would I have wanted to? We weren’t that close!"
-    m "So not close enough for a healthy relationship?"
+    m "So you were not close enough for a healthy relationship?"
     cho "What?"
-    m "What girl doesn't show her panties to her loved one?"
+    m "What kind of girl doesn't show her panties to her beloved?"
     cho "That’s just ridiculous..."
 
     if huffl_matches_won == 0:

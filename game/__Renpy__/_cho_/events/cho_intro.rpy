@@ -3,20 +3,24 @@
 ### Cho Intro ###
 
 label cho_intro_1:
-
+    
+    call play_sound("knocking")
     "*Knock-knock-knock*"
     m "(...)"
 
+    call play_sound("knocking")
     "*Knock-knock-knock*"
     m "(Who's that?)"
     m "(Can't be Hermione, she usually walks in after the second knock.)"
     m "(...)"
     g9 "I bet it’s another girl!"
 
+    call play_sound("knocking")
     "*Knock-knock-knock*"
     m "Please, give me a moment..."
     g4 "I just need to-{w} ugh!-"
-    m "Adjust my pants... There we go."
+    call play_sound("equip_inventory")
+    m "Adjust my pants...{w} There we go."
 
     menu:
         "\"Who is it?\"":
@@ -472,7 +476,7 @@ label cho_snape_talk:
 
     m "She could be a great candidate for our little training scheme."
     call sna_main("What? Do you want to turn her into a slut too?","snape_01")
-    m "Not only that. I believe she could be of help to deal with Hermione as well."
+    m "Not only that. I believe she could be of help to deal with the Granger girl as well."
     call sna_main("Interesting. It seems like you have already made plans for her.","snape_02")
     m "I thought of a couple of things."
     call sna_main("You have my attention!","snape_13")
@@ -488,7 +492,7 @@ label cho_snape_talk:
             call sna_main("I can't agree to that, Genie. As much as I'd like to see the Potter boy demoralized by losing to a girl...","snape_10")
             call sna_main("Or Malfoy for that matter... He's been way too cocky lately.","snape_08")
             m "Who?"
-            call sna_main("A student of mine... Rich parents, bought his way into our Quidditch team,... Spoiled beyond believe.","snape_29")
+            call sna_main("A student of mine... Rich parents, bought his way into our Quidditch team,... Spoiled beyond belief.","snape_29")
             m "Didn't you say you don't care much about Quidditch?"
             call sna_main("Of course I don't. But a win is a win.","snape_09")
             call sna_main("Besides, Ravenclaw doesn't have a chance against Slytherin.","snape_03")
@@ -518,7 +522,7 @@ label cho_snape_talk:
             m "So. You want to take on the bet?"
             call sna_main("Indeed I will.","snape_02")
             call sna_main("At least Quidditch will be worth watching now. I can't say no to some good old gambling.","snape_20")
-            call sna_main("But how will you help Cho in Quidditch? You know nothing about it?","snape_05")
+            call sna_main("But how will you help Miss Chang in Quidditch? You know nothing about it?","snape_05")
 
             menu:
                 "\"I'll just read a book about it\"":
@@ -594,7 +598,7 @@ label cho_snape_talk:
     with d3
     $ renpy.play('sounds/win_04.mp3')
 
-    ">You spend rest of the evening in Snape's company talking about Cho's impressive thights."
+    ">You spend rest of the evening in Snape's company talking about Cho's impressive thighs."
 
     hide screen bld1
     hide screen notes

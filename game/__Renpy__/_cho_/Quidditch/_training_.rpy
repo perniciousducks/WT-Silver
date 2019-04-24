@@ -139,7 +139,7 @@ label quidditch_training_intro_1:
             m "You can also let him feel you up if you have to."
 
     call cho_main("Sir, this is just ridiculous!","scream","closed","angry","mid",trans="hpunch")
-    call cho_main("I thought a hightly regarded wizard of your stature would know at least something that could help us at Quidditch.","open","narrow","angry","mid")
+    call cho_main("I thought a highly regarded wizard of your stature would know at least something that could help us at Quidditch.","open","narrow","angry","mid")
     call cho_main("I didn't hold it against you that you seemingly know very little about the sport.","open","base","angry","R")
     m "Which I proved you wrong, but who cares..."
     call cho_main("Even with my limited time I thought it was at least worth a try.{w} But hearing your suggestions now...","angry","narrow","angry","mid")
@@ -212,12 +212,12 @@ label quidditch_training_intro_2:
         g9 "Ah yes. Panties!{w} Now I remember!"
 
     elif quidditch_position == "close":
-        cho "You wanted me to have sex with Diggory..."
+        cho "You wanted me to have sex with Cedric..."
         m "I did?"
         cho "You did! You ask me to get intimate with him!"
         g9 "Yes, now I remember!"
         m "I wanted you to stay close to him."
-        m "Let him kope a feel once or twice..."
+        m "Let him cup a feel once or twice..."
         cho "And that's going to help us how exactly?"
 
     m "I will show you."
@@ -367,9 +367,9 @@ label demonstrate_tactic(position=""):
 
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
-            g9 "You have very cure panties, girl!"
+            g9 "You have very cute panties, girl!"
             cho "Uhm-...{w} Thank you, [cho_genie_name]."
-            m "(I have created the ultimate upskirt!)"
+            m "(I have created the ultimate up-skirt!)"
             m "(Nothing can stop us now...)"
         else:
             m "(...)"

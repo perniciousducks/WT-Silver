@@ -217,7 +217,7 @@ label hufflepuff_practice_win_1:
         cho "Of course, Sir."
         cho "But, if you don't mind..."
     else:
-        g9 "You could sell some more favors to me!"
+        g9 "You could sell some more favours to me!"
         cho "Is it just talking?"
         m "I had hoped for something more... advanced."
         cho "(...)"

@@ -44,7 +44,7 @@ label hufflepuff_match:
     call sna_main("Are you ready to go?","snape_03",xpos="base",ypos="base")
     g4 "Can't you bloody knock?!"
     call sna_main("Should I?{w} I was sure you were already waiting for me...","snape_05")
-    m "To do what?"
+    m "For what?"
     call sna_main("We have to head out for the pitch. The whole school is waiting on you.","snape_24")
     m "Didn't you berate me about not to leaving this room unless absolutely necessary?"
     call sna_main("A rule which I’m sure you have disregarded a great many times already...","snape_29")
@@ -129,16 +129,27 @@ label hufflepuff_match:
     # Hermione’s Intro
     # open shot of Quidditch pitch
     # fade to hermione CG with eyes closed
+    $ renpy.music.stop("weather")
+    $ renpy.music.play("sounds/crowd.mp3", fadein=2)
     her "Good Morning everyone, and welcome to the i-inaugural-"
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
     her "*Grrr*"
-    her "Welcome to the first quidditch game of the season!"
+    her "Welcome to the first Quidditch game of the season..."
     call sna_main("Better... You’ve advanced from Troll to Dreadful....","snape_09",ypos="head")
     m "{size=-4}Troll?{/size}" # Small text.
     call sna_main("{size=-4}Those are grades we give out to our students, for decidedly poor performances, like Granger’s...{/size}","snape_01",ypos="head")
     her "..."
+    with hpunch
+    her "{size=+5}Quiet Please!{/size}"
+    $ renpy.music.stop(fadeout=4)
+    her "..."
+    $ renpy.music.play("sounds/crowd_low.mp3")
+    her "Thank you."
+    her "L-let's begin!"
     her "Hufflepuff versus Ravenclaw!"
+    $ renpy.sound.play("sounds/crowd_cheer.mp3")
     ">A loud cheer roars from the grandstands."
+
 
 
     # Speech
@@ -153,7 +164,9 @@ label hufflepuff_match:
 
     menu:
         "\"Miracle on ice speech\"":
+            $ renpy.music.stop(fadeout=4)
             m "Great moments are born from great opportunity."
+            $ renpy.music.play("sounds/wind_long_loop.mp3")
             ">A reverent hush falls over the crowd..."
             m "And that’s what we have here tonight-"
             #Fade to black
@@ -164,24 +177,32 @@ label hufflepuff_match:
             mal2 "I think you might be right."
             m "Screw it! This is our time, now let the games begin!"
         "\"Good Morning, Vietnam!\"":
+            $ renpy.music.stop(fadeout=4)
             ">A confused murmur falls over the crowd."
+            $ renpy.music.play("sounds/wind_long_loop.mp3")
             m "Ugh..."
             m "Go team!"
+            $ renpy.sound.play("sounds/murmur.mp3")
             ">The sound of confused murmuring increases even further..."
             mal "Fire’s lit but the cauldron’s empty..."
             mal2 "Looks like it..."
             m "Tough crowd... Anyway, let the games begin!"
+    $ renpy.sound.play("sounds/crowd_cheer.mp3")        
     ">The crowd cheers excitedly, desperate to see the match kickoff."
+    $ renpy.music.play("sounds/crowd_low.mp3")
     her "Ugh... thank you for that, professor Dumbledore..."
     her "Now, to get this game underway!"
 
 
     # Player Introduction
     her "First, let’s welcome everyone’s favourite underdogs, Ravenclaw!"
+    $ renpy.sound.play("sounds/crowd_stomping.mp3")
     ">The blue grandstand shakes violently with enthusiasm."
     call sna_main("At least try to sound like you’re awake, Miss Granger.","snape_03",ypos="head")
     her "..."
     her "And coming onto the field to face them are the equally impressive, Hufflepuff!"
+    $ renpy.sound.play("sounds/crowd_cheer2.mp3")
+    ">The yellow granstand bursts into a mix of applause and whistles."
     call sna_main("Back down to Troll...","snape_09",ypos="head")
     her "*grrrrr*"
     her "It appears we’ve got an interesting game ahead of us. If I’m not mistaken, there’s some history between our seekers, Cho Chang and Cedric Diggory..."
@@ -190,21 +211,31 @@ label hufflepuff_match:
     call sna_main("Complex past...","snape_01",ypos="head")
     call sna_main("I practically caught them chew each other’s tongues off at one point.","snape_02",ypos="head")
     her "Speaking of important, I just realised that as the inaugural game, I should cover the rules of the game for any first-years watching."
+    $ renpy.music.stop(fadeout=4)
     ">Hermione heaves a heavy rule book from under the table and begins to monotonously recite it to the crowd."
+    $ renpy.sound.play("sounds/sniff.mp3")
+    her "..."
+    $ renpy.music.play("sounds/wind_long_loop.mp3", fadein=2)
+    $ renpy.sound.play("sounds/murmur.mp3")
     her "The capturing of the snitch is worth 150 points-"
     her "The game may not conclude until it has been caught, or an agreement is made between both capt-"
+    $ renpy.music.play("sounds/crowd.mp3", fadein=8)
     mal "Just get on with it already you big titted slag!"
     mal2 "Yeh! Start the game!"
     qcr "START THE GAME! START THE GAME!"
     ">Hermione’s voice eventually gets drowned out by the growing restlessness of the crowd."
     her "Ugh, fine. If everyone wants us to begin play without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!"
-    call sna_main("{size=-4}This should be good{/size}","snape_02",ypos="head") # Small text.
+    call sna_main("{size=-4}This should be good.{/size}","snape_02",ypos="head") # Small text.
+    $ renpy.sound.play("sounds/crowd_cheer.mp3")
+    $ renpy.music.stop(fadeout=4)
     ">With that, the snitch and bludgers are released and fly off into the air."
+    $ renpy.music.play("sounds/wind_long_loop.mp3", fadein=2)
     her "Now then..."
     her "Let’s begin!"
 
 
     # Start of the Game
+    $ renpy.sound.play("sounds/referee.mp3")
     ">A Grey haired woman then throws the quaffle into the air which signals the start of the match and the players quickly takes off!"
 
     her "Oh, wow... They’re going quite f-fast..."
@@ -232,7 +263,7 @@ label hufflepuff_match:
     m "{size=-4}Who’s Madame Hooch?{/size}"  # Small text.
     call sna_main("{size=-4}It’s that grey haired lady on the pitch that is seemingly unable to take her eyes off the underside of Cho’s... undergarments.{/size}","snape_09",ypos="head") # [Smirk]
     call sna_main("{size=-4}Great idea with the skirt, if I might add.{/size}","snape_13",ypos="head")  # Small text.
-    m "{size=-4}You’re welcome, by the way.{/size}"  # Small text.
+    m "{size=-4}You’re welcome.{/size}"  # Small text.
     call sna_main("...","snape_12",ypos="head")
     call sna_main("{size=-4}She is wearing something underneath I assume?{/size}","snape_13",ypos="head") # Small text.
     m "For now..."
@@ -253,7 +284,7 @@ label hufflepuff_match:
     mal2 "She can’t help herself answering questions in class...."
     mal2 "I suppose the rule book was more for her benefit than ours."
     mal "Then how’d she get the role over Lee Jordan?"
-    mal2 "Affirmative action at it again if you ask me!"
+    mal2 "I heard he had an accident with a rogue bludger."
     mal "..."
     her "Wow... that snitch is darting around like nobody’s business-"
 
@@ -280,9 +311,9 @@ label hufflepuff_match:
     # hpunch
     with hpunch
     her "Oh no!"
-    call sna_main("{size=+4}HAHAHAHA!!{/size}","snape_28",ypos="head")
+    call sna_main("{size=+4}HA-HA-HA-HA!!{/size}","snape_28",ypos="head")
     her "Somebody on the Ravenclaw team just got hit by a bludger!"
-    g9 "That was awesome!"
+    g9 "What an amazing turn of events!"
     call sna_main("See, I told you!","snape_22",ypos="head")
     her "Professors, could you please keep it down a little?"
     call sna_main("Why? It’s not like we’re interrupting anything important.","snape_18",ypos="head")

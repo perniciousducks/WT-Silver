@@ -241,7 +241,7 @@ screen main_menu:
 
             has vbox
 
-            textbutton _("{size=-6}{color=#B33A3A}UPDATE AVAILABLE{/color}{/size}") action OpenURL("https://pastebin.com/6zbuZ5gS") text_outlines [ (1, "#000000CC", 0, 0) ]
+            textbutton _("{size=-6}{color=#7a0000}UPDATE AVAILABLE{/color}{/size}") action OpenURL("https://pastebin.com/6zbuZ5gS")
 
     # The main menu buttons.
     frame:
@@ -369,8 +369,7 @@ init -2:
 # a single screen, file_picker. We then use the file_picker screen
 # from simple load and save screens.
 
-screen file_picker:
-
+screen file_picker():
     frame:
         style "file_picker_frame"
 
@@ -408,33 +407,64 @@ screen file_picker:
 
             # Display ten file slots, numbered 1 - 10.
             for i in range(1, columns * rows + 1):
+                $ is_compatible = check_save_compatibility(FileCurrentPage(), str(i))
+                
+                if renpy.get_screen("load"):
+                    $ current_action = Confirm("{color=#7a0000}Warning!{/color}\nThe save file you're trying to load is incompatible with the current version of the game and may result in broken gameplay and multiple errors.\nDo you still wish to proceed?", yes=FileAction(i), no=NullAction())
+                else:
+                    $ current_action = FileAction(i)
+                
+                if is_compatible == True or is_compatible == None:
+                    button:
+                        xfill True
+                        action FileAction(i)
+                        has hbox
 
-                # Each file slot is a button.
-                button:
-                    action FileAction(i)
-                    xfill True
+                        # Add the screenshot.
+                        add FileScreenshot(i)
 
-                    has hbox
-
-                    # Add the screenshot.
-                    add FileScreenshot(i)
-
-                    $ file_name = FileSlotName(i, columns * rows)
-                    $ file_time = FileTime(i, empty=_("Empty Slot."))
-                    $ save_name = FileSaveName(i)
-                    
-                    if save_name != "":
-                        textbutton _("X"):
-                            yalign 0.5
-                            xpos 235
-                            yfill True
-                            ymaximum 50
-                            action FileDelete(i, persistent.delwarning)
-                        text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5
-                    else:
-                        text "[file_name]. [file_time!t]" xoffset 1
+                        $ file_name = FileSlotName(i, columns * rows)
+                        $ file_time = FileTime(i, empty=_("Empty Slot."))
+                        $ save_name = FileSaveName(i)
                         
-                    key "save_delete" action FileDelete(i, persistent.delwarning)
+                        if save_name != "":
+                            textbutton _("X"):
+                                yalign 0.5
+                                xpos 235
+                                yfill True
+                                ymaximum 50
+                                action FileDelete(i, persistent.delwarning)
+                            text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5
+                        else:
+                            text "[file_name]. [file_time!t]" xoffset 1
+                            
+                        key "save_delete" action FileDelete(i, persistent.delwarning)
+                else:
+                    button:
+                        xfill True
+                        action current_action
+                            
+                        has hbox
+
+                        # Add the screenshot.
+                        add grayTint(FileScreenshot(i))
+
+                        $ file_name = FileSlotName(i, columns * rows)
+                        $ file_time = FileTime(i, empty=_("Empty Slot."))
+                        $ save_name = FileSaveName(i)
+                        
+                        if save_name != "":
+                            textbutton _("X"):
+                                yalign 0.5
+                                xpos 235
+                                yfill True
+                                ymaximum 50
+                                action FileDelete(i, persistent.delwarning)
+                            text "[file_name]. [file_time!t]\n\n{color=#7a0000}NOT COMPATIBLE{/color}" xpos -40 yalign 0.5
+                        else:
+                            text "[file_name]. [file_time!t]" xoffset 1
+                            
+                        key "save_delete" action FileDelete(i, persistent.delwarning)
 
 screen save:
     tag menu

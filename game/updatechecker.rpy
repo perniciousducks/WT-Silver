@@ -13,3 +13,12 @@
             return False
             
     update_available = check_for_updates() 
+            
+    # Groundwork for future save compatibility patches
+    def check_save_compatibility(page, slot):
+        if renpy.slot_json(page+"-"+slot) != None:
+            save_version = renpy.slot_json(page+"-"+slot)['_version']
+            if float(save_version) < float(config.version):
+                return False
+            return True
+        return None

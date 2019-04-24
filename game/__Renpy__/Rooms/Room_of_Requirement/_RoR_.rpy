@@ -1,7 +1,7 @@
 init:
     $ mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.png"]
     $ mirror_image = 0
-    
+
 transform mirrage:
     subpixel True
     on show, appear, start:
@@ -22,13 +22,13 @@ screen room_of_requirement:
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
 
     add "images/rooms/_objects_/candles/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
-    
+
     #use ui_top_bar
-    
+
 screen room_of_requirement_overlay:
     tag foreground
     zorder 5
-    
+
     add "images/rooms/room_of_requirement/foreground.png"
     add "candle_fire_01" xpos 592 ypos 85
     add "candle_fire_02" xpos 248 ypos 50
@@ -53,7 +53,7 @@ screen room_of_requirement_menu:
         idle "images/rooms/_objects_/doors/door_idle_night.png"
         hover "images/rooms/_objects_/doors/door_hover_night.png"
         action [Jump("return_office")]
-    
+
 screen genie_stand_mirror:
     tag genie_chibi_mirror
 
@@ -71,7 +71,8 @@ screen genie_walk_mirror:
 label hide_room_req:
     hide screen room_of_requirement_menu
     hide screen room_of_requirement
-    hide screen room_of_requirement_overlay with None
+    hide screen room_of_requirement_overlay
+    with None
     return
 
 label mirror_menu:
@@ -212,7 +213,7 @@ label enter_room_of_req:
             call sna_main("She's nuts, she can sew that's for damn sure but she'd never know nor care... do whatever you want with her. ", "snape_01")
             m "(I'd rather not...)"
             call sna_main("Continuing where I left off.", "snape_09")
-        call sna_main("Now, this mirror that you've found...", "snape_01")    
+        call sna_main("Now, this mirror that you've found...", "snape_01")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
         call gen_chibi("stand","200","base",flip=True)
         show screen bld1

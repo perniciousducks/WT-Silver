@@ -33,6 +33,8 @@ label cc_pf_talk:
 
         if cho_whoring < 8: # Points til 8
             $ cho_whoring += 1
+        if cc_pf_talk_OBJ.level < 3: # Hearts 1+2
+            $ cc_pf_talk_OBJ.level += 1
 
     # Stats
     $ cc_pf_talk_OBJ.points += 1
@@ -50,7 +52,7 @@ label cc_pf_talk_T1_E1:
     m "First, I'd like you to come a bit closer."
     call cho_main("Very well, [cho_genie_name]...","soft","base","base","R")
 
-    call cho_walk("desk", "base", 1.6) # Updated
+    call cho_walk("desk", "base", 1.6)
 
     call play_music("chipper_doodle")
     call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
@@ -66,7 +68,7 @@ label cc_pf_talk_T1_E1:
     call cho_main("And I don’t see how this information would be of importance for my training.","open","wide","raised","downR")
     call cho_main("Why would it matter if- {w}Even if I did I'd-","soft","wide","base","down")
     g9 "So you don't have one?"
-    call cho_main("You are making me nervous, [cho_genie_name]. <3","horny","narrow","sad","R")
+    call cho_main("You are making me nervous, [cho_genie_name]. {image=textheart}","horny","narrow","sad","R")
     m "(So cute.{w=0.5} She's almost making me feel things...)"
     m "(Perhaps this is something I could push her further on...)"
 
@@ -257,7 +259,7 @@ label cc_pf_talk_T1_E1:
         call cho_main("See you next time.","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(speed=2.2, action="leave") # Updated
+    call cho_walk(action="leave", speed=2.2)
 
     call bld
     m "(...)"
@@ -272,36 +274,43 @@ label cc_pf_talk_T1_E1:
 # Second Event
 label cc_pf_talk_T1_E2:
     g9 "Get closer, [cho_name]..."
-    cho "Ok, [cho_genie_name]."
+    call cho_main("...","annoyed","base","base","down")
 
-    call cho_walk("desk", "base", 1.6) # Updated
+    call cho_chibi("stand","desk","base")
 
     call play_music("chipper_doodle")
-    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
+    call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans="fade")
     call ctc
 
-    cho "Another chat, Professor?"
-    cho "Are you going to ask me inappropriate questions again? About my previous relationships?"
-    m "Not today. I'd like to hear more about Quiddish."
-    cho "Quidditch, [cho_genie_name]."
+    call cho_main("Another chat, Professor?","soft","narrow","angry","mid")
+    call cho_main("Are we going to discuss my previous relationships again?","open","narrow","base","R")
+    g9 "I don't know.{w} Would you like to?"
+    call cho_main("I'd rather not.","soft","narrow","angry","mid")
+    m "Tell me about yourself then."
+    call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
+    call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against Hufflepuff.","open","narrow","base","mid")
+    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a great boost in confidance after I've told'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
-    cho "I'd say so."
-    cho "It's been difficult for me at first too. A sport so dominated by men."
-    cho "Getting accepted into the team as a girl is rare. It's a shame how women are always getting treated unfairly."
-    m "(Not this again...)"
-    cho "Quidditch at our school has been no exception to this. Very few teams have allowed a female player into their ranks over the years."
-    cho "And I've been the only female seeker at this school in over half a century. Can you even believe that, [cho_genie_name]?"
+    call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
+    call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...","open","narrow","sad","down")
+    call cho_main("Getting accepted into our Quidditch team was a challenge. I really had to prove I was worth it.","angry","narrow","sad","mid")
+    g9 "And how exactly did you manage that? Mind spilling the beans?"
+    call cho_main("Through diligance, expertice, and determination!","open","closed","base","mid")
+    m "(...)"
+    m "I was sort of expecting something else entirely but,... you do you..."
+    call cho_main("As you can see it did work out in my favour, Sir.","open","base","base","mid")
+    call cho_main("Very few teams have allowed a female player into their ranks over the past years.","open","narrow","angry","mid")
+    call cho_main("And I've been the only female seeker at this school in over half a century.{w} Can you even believe that, [cho_genie_name]?","open","wide","base","mid")
     m "(A century? That's like a coffee brake for me girl...)"
-    cho "I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!"
-    cho "If you don't have a good seeker, you have no chance of winning!"
+    call cho_main("I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!","smile","narrow","base","mid")
+    call cho_main("If you don't have a good seeker, you have no chance of winning!","soft","closed","base","mid")
     m "Which is why you need my help so badly..."
-    m "Because of your exceptional talents."
-    cho "No, [cho_genie_name]! It's not about me!"
-    m "So it isn't your fault that you're constantly losing?"
-    cho "Of course not! I'm always giving my best."
-    cho "It's the other team's fault. They are cheating!"
-    cho "Every year it has been the same. And I'm growing more and more desperate with my situation."
-
+    m "Because you are great at it..."
+    call cho_main("That we're losing is neither my fault, nor my team's, [cho_genie_name]!","annoyed","base","angry","mid")
+    m "So who's is it then?"
+    call cho_main("The enemy team's, obviously!","soft","narrow","angry","mid")
+    call cho_main("They are cheating! And they have done so for years!","open","narrow","angry","R")
+    call cho_main("This is my last change! And I'm growing more and more desperate with my situation...","angry","narrow","angry","mid")
     m "(...)"
 
     menu:
@@ -309,8 +318,10 @@ label cc_pf_talk_T1_E2:
             hide screen cho_chang
             hide screen bld1
             with d5
-            pause.8
+            pause.5
+
             call gen_chibi("jerking_off_behind_desk")
+            with d3
             pause.8
 
             $ cho_jerk_off_counter += 1
@@ -319,47 +330,43 @@ label cc_pf_talk_T1_E2:
         "-Participate in the conversation-":
             $ masturbating = False
 
-    call cho_main("Ever since I was a little girl Quidditch has been my dream...",face="sad")
-    cho "[cho_genie_name], can you even believe how \"hard\" it was for me?"
+    call cho_main("Ever since I was a little girl Quidditch has been my dream...","quiver","narrow","sad","down")
+    call cho_main("[cho_genie_name], can you imagine how \"hard\" it was for me?","soft","narrow","sad","mid")
     if masturbating:
-        g4 "Yes, yes... It's so hard for you, you little slut!!!"
-    cho "How difficult it was for me?"
-    cho "Being accepted?"
-    cho "I'm the only female in my team. The only girl that has made it onto the Ravenclaw team in over a decade!"
-    cho "Constantly surrounded by other men."
+        g4 "{size=-4}Yes, yes... It's so hard for you, you little slut!!!{/size}"
+    call cho_main("How difficult it was for me at first?","open","narrow","sad","R")
+    call cho_main("Getting accepted?","soft","closed","sad","mid")
     if masturbating:
-        g4 "And you want to fuck all of them you whore!"
-    cho "Even on my own team, I can constantly feel their gazes behind my back."
-    cho "If it wasn't for our team leader, I would have been thrown out already, and I know it."
-    cho "My own team, [cho_genie_name]. They sometimes treat me like the plague..."
-
+        g4 "{size=-4}I'd accept your ass on my cock if you're in such a need for acceptance, you whore!{/size}"
+    call cho_main("I'm the only female in my team. Constantly surrounded by other men...","soft","base","sad","down")
     if masturbating:
-        cho "Anywhere I have to go with them."
-        g4 "Don't be so shy. I know you want it!"
-        cho "Be it the Quidditch pitch..."
-        cho "The dormitories..."
-        cho "Our classrooms..."
-        g4 "In front of all those people, you fucking slut!"
-        cho "The showers..."
-        g4 "Yes, yes! Even in the showers you who-"
-
+        g4 "{size=-4}Yes! Yes! And they all would like to have their way with you!{/size}"
     else:
-        cho "Anywhere I go with them. Be it the pitch, the dormitories, our classrooms, or the showers..."
-
-    m "Wait a bloody minute.{w} You shower \"with\" your team?"
-    cho "Of course, [cho_genie_name]. It was after my request, after all."
+        m "(Quite a sausage-party this Quidditch I have to admit.)"
+        g4 "(Maybe telling Hermione off was a bad idea after all...{w} An \"all female\" team would be more fun to watch...)"
+    call cho_main("I can constantly feel their gazes behind my back...","angry","base","sad","down")
+    call cho_main("My own team, [cho_genie_name]!{w} They treat me like the plague!","upset","base","sad","mid")
+    call cho_main("They ignore me during classes...","soft","closed","base","mid")
+    call cho_main("When we're in our dormitories they are going out of their way to not cross paths with me...","annoyed","narrow","angry","R")
+    call cho_main("And in the showers they are scared to even look at me!","angry","angry","angry","mid")
+    if masturbating:
+        g4 "{size=-4}Yes, yes!{w} Even in the showers you who-{/size}"
+        with hpunch
+        m "Wait a bloody minute!{w} You shower \"with\" your team?"
+    else:
+        m "The showers?{w} You shower \"with\" your team?"
+    call cho_main("Of course, [cho_genie_name]. It was after my request, after all.","soft","base","raised","mid")
     g4 "No kidding?"
-    cho "They shouldn't exclude me from team activities just because I'm a girl."
-    cho "It makes absolutely no difference!"
-
+    call cho_main("They shouldn't exclude me from team activities just because I'm a girl.","open","base","base","R")
+    call cho_main("It makes absolutely no difference!","base","base","base","mid")
     if masturbating:
         g4 "You are naked with them? In the shower?"
     else:
         m "Just to be clear. You are naked with them, in the shower."
+    call cho_main("Of course we are all naked, [cho_genie_name]!","soft","base","angry","mid")
+    call cho_main("Why would I take a shower with my clothes still on?","soft","closed","base","mid")
 
-    cho "Of course we are all naked, [cho_genie_name]!"
-    cho "Why would anyone take showers with their clothes still on?"
-
+    # Genie cums.
     if masturbating:
         g4 "{size=-4}You exhibitionistic slut!{/size}"
         g4 "*Argh* {size=-4}Here it comes!{/size}"
@@ -369,50 +376,56 @@ label cc_pf_talk_T1_E2:
         with d3
         pause.8
 
+        call bld
         g4 "*heavy breathing* {size=-4}Take it!{/size}"
 
         call cum_block
-
-        g4 "*Argh!* {size=-4}Get showered in my cum!{/size}"
+        call cho_main("","base","narrow","raised","mid")
+        g4 "*Argh!* {size=-4}Shower in this, you slut!{/size}"
 
         call cum_block
-
-        cho "[cho_genie_name], are you alright?"
-        cho "You are sweating and breathing quite heavily..."
+        call cho_main("[cho_genie_name], are you alright?","quiver","wide","base","mid")
+        call cho_main("You are sweating and breathing quite heavily...","quiver","base","base","mid")
 
         call gen_chibi("came_on_desk")
         with d3
         pause.8
 
-        cho "Shall I get Madam Pomfrey to check on yo-"
+        call cho_main("Shall I get Madam Pomfrey to check on yo-","soft","narrow","base","mid")
         g4 "No, no! I'm..."
         m "I'm done.{w} Lets get back to the topic."
-        cho "Which was?"
-        m "You taking a shower with your team-mates..."
-        cho "(...)" # Annoyed
+        call cho_main("Which was?","open","wink","raised","mid")
+        m "You taking a shower with your \"teammates\"..."
+        call cho_main("(...)","annoyed","narrow","angry","mid") # Annoyed
 
-    m "The fact that you are naked with them has nothing to do with the way they act?"
-    cho "Of course not. We are all just friends!"
-    g9 "I bet some of them would like to be more than \"just friends\" with you!"
-
-    # Cho is shocked
-    cho "[cho_genie_name]!"
-    cho "But, they are my team. I have known them for years..."
-    m "Let me ask you a question."
-    m "Do they always have their backs turned to you in the showers? And only to you?"
-    cho "May I... May I leave, [cho_genie_name]?"
-    m "Yes you may leave now."
-    cho "Thank you, [cho_genie_name]."
+    m "Don't you think, the fact that they've seen you naked has no affect on their actions?"
+    call cho_main("Why would it [cho_genie_name]? We're all adults here...","soft","closed","base","mid")
+    m "Maybe that's your response to it, girl."
+    call cho_main("","annoyed","narrow","angry","mid")
+    g9 "Maybe your \"teammates\" aren't as... \"mature\" as you."
+    call cho_main("I have known my team for years, [cho_genie_name]. We're all professionals!","soft","narrow","base","mid")
+    m "Let me ask you a question..."
+    m "In the showers,{w} do they all have their backs turned towards you?"
+    call cho_main("I don't know. Maybe they uhm-...","open","base","base","mid")
+    call cho_main("!!!","scream","wide","raised","mid") # Cho remembers something?!
+    g9 "Yes?"
+    g9 "What is it?"
+    call cho_main("May I... May I leave, [cho_genie_name]?","quiver","closed","base","mid")
+    g9 "Don't want to tell me?"
+    call cho_main("No...","quiver","closed","sad","mid")
+    m "Fine...{w} you may leave..."
+    call cho_main("Thank you, [cho_genie_name].","soft","wink","sad","mid")
 
     # Cho very slowly walks out of your office...
-    call cho_walk(speed=3, action="leave") # Updated
+    call cho_walk(action="leave", speed=3)
 
+    call bld
     m "(...)"
-    g9 "(I just got an idea!)"
+    g9 "(That just gave me an idea!)"
     stop music fadeout 1.0
 
     $ cho_requests_unlocked = True
-    call give_reward(">You can now tell Cho to flirt with the other Quidditch players!","interface/icons/head/head_cho_1.png")
+    call give_reward(">You can now buy \"Public Requests\" from Cho! (They are optional to her training.)","interface/icons/head/head_cho_1.png")
 
 
     return
@@ -428,7 +441,7 @@ label cc_pf_talk_T1_E3:
     cho "Of course, [cho_genie_name]. Anything specific you'd like to know?"
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
-    cho "*Ugh* I knew I shouldn't have told you!"
+    cho "{size=-4}I knew I shouldn't have told him...{/size}"
     cho "Why do you have to keep bringing that up, Sir? What's past is in the past..."
     m "I believe otherwise..."
     g4 "Did you already forget that he's our enemy?!"

@@ -208,3 +208,85 @@ label cc_pf_strip_T1_E1:
     call cho_main("I'm sorry, who?","soft","wink","raised","mid")
 
     return
+
+
+label cc_pf_strip_T1_E2:
+    cho "[cho_genie_name], may I ask, does Hermione do these sorts of things for you?"
+    g9 "She does a lot of things for me. You need to be more specific!"
+    cho "I meant buying favours. Doing tasks that are, let's say, a little audacious..."
+    m "Are you talking about stripping, girl?"
+    cho "I am, Sir."
+
+    #menu:
+    #    "":
+
+    cho "[cho_genie_name], could you please do me a huge, huge favour?"
+    m "For you, anything my dear..."
+    cho "Great! I'd like to to summon Hermione."
+    with hpunch
+    g4 "What?"
+    cho "You've heard right."
+
+    jump cc_pf_strip_T1_hermione
+
+label cc_pf_strip_T1_E3:
+    jump cc_pf_strip_T1_hermione
+
+label cc_pf_strip_T1_hermione:
+
+    cho "Tell me, Professor..."
+    cho "Do you like my athletic, naked body, Sir? Is it better than Miss Granger's?"
+
+    menu:
+        "\"Definitely!\"":
+            $ cho_mood += 10
+        "\"Not even close!\"":
+            $ cho_mood += 30
+        "\"Ask Hermione.\"":
+            che "Her?"
+            her "I couldn't care less about the way she looks?"
+            m "Are you sure about that?"
+            m "Miss Granger, I'd like to you rate Miss Chang's figure, truthfully, and to the best of your ability."
+            her "Do I really have to?"
+
+            if her_whoring < 11:
+                her "I refuse to give her a rating, Professor."
+            elif whoring < 24:
+                her "B+"
+                cho "Only a B?"
+                m "With a plus at the end, mind you..."
+                cho "So in your opinion, Granger, my body has flaws?"
+                her "Naturally..."
+                cho "That's quite curious, don't you think so too? Professor?"
+                m "Is a B+ not good enough for you?"
+                cho "Are you kidding? Not even close!"
+                cho "And I also know she isn't entirely truthfull!"
+                her "But I am! And it's a C+ now!"
+                cho "You area lying bitch, Granger!"
+                her "Sir, you can't let her talk to me like that!"
+                m "Bitch isn't even a proper curse word. You can say it on TV..."
+                cho "Tell me Granger. If my body is so noticably flawd as you say, then it should be an easy task for you to define them to us."
+                her "Of course. "
+                her "Well, there is obviously"
+
+            else:
+                her "I uhm-..."
+                her "I'm a bit ahamed to admit, in front of her, but..."
+                cho "Yes, Granger..."
+                her "I'd probably give it an...{w} \"A\"."
+                g9 "Hear, hear!"
+                her "Maybe even an \"A+\"..."
+                cho "Thank you..." # Confident.
+                her "(...)"
+                cho "I ecpected nothing less."
+                m "I'm surprised about that, Granger."
+                her "I mean would you just look at it! It's utter ridiculous!"
+                her "There isn't the tiniest flaw! Her body is so marvellous it almost drives me mad!!!"
+                her "I wish I could find one but..."
+                cho "Yours isn't too bad either, Granger."
+                cho "If you were to start doing hourly exercises, you might even get close to where I'm at by the end of the year..."
+                her "Hourly exercises?" # Shocked
+                cho "And I do love your huge melons!"
+                her "How dare you talk of them like that!"
+                g9 "*Heh*... melons..."
+    cho "I have to say, [cho_genie_name], doing those favours is fun!"

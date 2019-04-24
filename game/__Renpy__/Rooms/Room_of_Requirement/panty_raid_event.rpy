@@ -3,7 +3,7 @@ define vpunch_repeat = Move((0, 10), (0, -10), .5, bounce=True, repeat=True, del
 label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     show screen blkfade
     with d5
-    
+
     call room(hide_screens=True)
     call room("main_room")
     call reset_menu_position
@@ -14,7 +14,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
 
     centered "{size=+7}{color=#cbcbcb}Panty Raid{/color}{/size}"
     narrator "Based on story written by {size=+8}WaxerRed{/size}.{w=1.0}{size=-3}\nProofreading&Editing: Lineup, Johnny, LoafyLemon{w=1.0}\nImplementation: Lineup, LoafyLemon{/size}"
-    
+
     $ temp_time = daytime
 
     label panty_raid_event_menu:
@@ -39,14 +39,14 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
             else:
                 $ interface_color = "gray"
             call update_gen_chibi
-            jump enter_room_of_req            
+            jump enter_room_of_req
 
     stop music fadeout 1.0
 
 
     #Add day/night with music before and after she comes back. Add in transition used in A bad time to disrobe story or similar
     #Change expressions.
-    
+
     $ temp_time = daytime #Switch 'daytime' back to this at the end of the store.
     $ daytime = True
     $ interface_color = "gold"
@@ -102,7 +102,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g4 "No wait! \"skimpy and pink.\""
         call her_main("This is an ancient riddle...?", mouth="open", eye="frown")
         call her_main("", mouth="upset", eye="baseL")
-        m "Hush girl.. {w=1.0}{nw}" 
+        m "Hush girl.. {w=1.0}{nw}"
         m "\"In order to find me you must get close to earth, then look up to the heavens.\""
         call her_main("...", mouth="upset", eye="base")
         m "..."
@@ -285,24 +285,34 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Yes?", mouth="soft", eye="baseL", flip=True)
         m "Make sure they're not new this time."
         call her_main(".....okay.....", mouth="disgust", eye="down", flip=True)
-        hide screen hermione_main with d3
-        hide screen bld1 with d3
+        hide screen hermione_main
+        hide screen bld1
+        with d3
         pause 0.5
-        call her_chibi("hide")
+
         call play_sound("door")
+        call her_chibi("hide")
+        with d3
         pause 1.0
-        
-        show screen blkfade with d3
+
+        show screen blkfade
+        with d3
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Four hours later...{/color}{/size}"
         $ daytime = False
         $ interface_color = "gray"
         call music_block
+        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
         show screen fireplace_fire
         pause 1.0
+
         call hide_blkfade
+        with d3
+        pause.5
+
         call play_sound("door")
         call her_walk("door","desk",3.0)
+
         call play_sound("bump")
         "She drops a slightly used pair of plain panties on your desk."
         call her_main("", mouth="soft", eye="baseL", cheeks="blush", flip=False)
@@ -365,13 +375,18 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("", mouth="angry", eye="shocked", cheeks="blush", flip=True)
                 pause 0.8
                 call her_main("(I better leave now...)", mouth="disgust", eye="baseL", cheeks="blush", flip=True)
-                hide screen hermione_main with d3
-                hide screen bld1 with d3
+                hide screen hermione_main
+                hide screen bld1
+                with d3
                 pause 0.5
-                call her_chibi("hide")
+
                 call play_sound("door")
+                call her_chibi("hide")
+                with d3
+
                 pause 1.0
-        show screen blkfade with d3
+        show screen blkfade
+        with d3
         stop music fadeout 1.0
         hide screen fireplace_fire
         call gen_chibi("sit_behind_desk")
@@ -560,7 +575,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main(".....", mouth="angry", eye="base", flip=True)
         call her_main("(What did I get myself into this time..?)", mouth="angry", eye="down_raised", cheeks="blush", flip=True)
         call her_walk("mid","leave",2)
-        
+
         show screen blkfade with d3
         stop music fadeout 1.0
         hide screen fireplace_fire

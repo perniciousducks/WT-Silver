@@ -22,20 +22,15 @@ label __init_variables:
     if not hasattr(renpy.store,'ignore_warning'):
         $ ignore_warning = False #Warning message that tells you which ending you will get.
 
-    if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'):
-        $ hg_pf_TheGamble_Flag = False
-        $ hg_pf_TheGamble_FlagA = False
-        $ hg_pf_TheGamble_FlagB = False
-        $ hg_pf_TheGamble_FlagC = False
-
-
-    #Misc
-    if not hasattr(renpy.store,'nscale'):
+    ### Misc ###
+    if not hasattr(renpy.store,'walk_xpos'):
         #For UI help,temporary add them to your UI element and use the console to quickly get it into place.
         #Then replace the variables with the number you ended up with.
         $ nxpos = 0
         $ nypos = 0
         $ nscale = 0.5
+        $ walk_xpos = 750
+        $ walk_ypos = 250
 
     if not hasattr(renpy.store,'unlocked_xmas_deco'):
         $ unlocked_7th = False
@@ -49,12 +44,12 @@ label __init_variables:
         $ phoenix_is_petted = False
         $ phoenix_fed_counter = 0
         $ phoenix_petted_counter = 0
-        
+
     #Other
     if not hasattr(renpy.store,'stat_fireplace_counter'):
         $ stat_fireplace_counter = 0
         $ stat_reports_counter = 0
-        
+
     #Room Deco
     if not hasattr(renpy.store,'room_deco'):
         $ room_deco = ""

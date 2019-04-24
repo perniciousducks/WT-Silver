@@ -114,7 +114,8 @@ if days_without_an_event >= 1 and event12_happened and not event13_happened:
 if day >= 15 and event13_happened and not event15_happened:
     call event_15 #Returns
 
-# Tonks intro.
+
+# Tonks Events.
 if astoria_unlocked and not tonks_intro_happened and days_without_an_event >= 1:
     $ tonks_intro_happened = True
     $ days_without_an_event = 0
@@ -132,37 +133,6 @@ if third_curse_got_cast and not tonks_unlocked and days_without_an_event >= 1:
     $ astoria_intro_completed = True
     $ days_without_an_event = 0
     jump astoria_tonks_intro
-
-# Luna events.
-if luna_known and not luna_unlocked:
-    call hat_intro_3 #Returns
-
-if luna_reverted and lun_corruption == -1:
-    $ days_without_an_event = 0
-    jump luna_reverted_greeting_2 #Sets lun_corruption to 0
-
-# Hermione working return.
-if current_job == 1:
-    jump maid_responses
-if current_job == 2:
-    jump barmaid_responses
-if current_job == 3:
-    jump gryffindor_cheer_responses
-if current_job == 4:
-    jump slytherin_cheer_responses
-if current_job == 5:
-    jump hermione_helping_selling_cards
-#Hermione Potions return.
-if cat_ears_potion_return:
-    jump potion_scene_1_1_2
-if transparent_quest:
-    $ transparent_quest = False
-    jump potion_scene_4_2
-if addicted == True:
-    jump potion_scene_3_1_2
-
-if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
-    jump hg_pf_TheGamble_complete
 
 
 # Cho Events.
@@ -182,6 +152,44 @@ python:
             i.start()
 
 
+# Luna events.
+if luna_known and not luna_unlocked:
+    call hat_intro_3 #Returns
+
+if luna_reverted and lun_corruption == -1:
+    $ days_without_an_event = 0
+    jump luna_reverted_greeting_2 #Sets lun_corruption to 0
+
+
+# Hermione Events.
+if current_job == 1:
+    jump maid_responses
+if current_job == 2:
+    jump barmaid_responses
+if current_job == 3:
+    jump gryffindor_cheer_responses
+if current_job == 4:
+    jump slytherin_cheer_responses
+if current_job == 5:
+    jump hermione_helping_selling_cards
+
+if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
+    jump good_bye_snape
+
+#Hermione Potions return.
+if cat_ears_potion_return:
+    jump potion_scene_1_1_2
+if transparent_quest:
+    $ transparent_quest = False
+    jump potion_scene_4_2
+if addicted == True:
+    jump potion_scene_3_1_2
+
+if milking == -1:
+    call potion_scene_11_1_2 #Returns
+if milking == -3:
+    call potion_scene_11_3_2
+
 # Hermione Personal Requests, Public Shaming return.
 python:
     for i in hg_pr_list: #Call any public request event if it's in progress
@@ -190,15 +198,6 @@ python:
     for i in hg_ps_list: #Call any public shaming event if it's in progress
         if i.inProgress:
             renpy.jump(i.complete_label)
-
-if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
-    jump good_bye_snape
-
-if milking == -1:
-    call potion_scene_11_1_2 #Returns
-if milking == -3:
-    call potion_scene_11_3_2
-
 
 if her_whoring == 11 and not touched_by_boy and not ignore_warning:
     call nar("!!! Attention !!!","start")

@@ -61,21 +61,43 @@ label start_training_match:
 # Check if Cho won or lost the practice game.
 label quidditch_match_return:
 
+    $ cho_outift_last.save() # Temporarily save last worn clothes
+
+    $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
+
+    # Cho enters.
+    call play_sound("knocking")
+    call bld
+    ">*knock* *knock* *knock*"
+
+    menu:
+        "\"Come in!\"":
+            cho "Yes, [cho_genie_name]..."
+        "\"Who is it?\"":
+            cho "Cho Chang, [cho_genie_name]."
+            m "Come on in, [cho_name]!"
+            cho "..."
+
+    call cho_walk(action="enter", speed=2.2)
+
+
     # Hufflepuff Match
     if main_matches_won == 0:
+
         # First practice game.
         if huffl_matches_won == 0:
             # Win
-            if cho_quidditch_bottom in ["skirt_long"] and quidditch_position == "above":
+            if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above":
                 $ huffl_matches_won = 1
                 jump hufflepuff_practice_win_1
             # Lose
             else:
                 jump hufflepuff_practice_lost
+
         # Second practice game.
         else:
             # Win
-            if cho_quidditch_bottom in ["skirt_short"] and quidditch_position == "above" and cho_whoring >= 3:
+            if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above" and cho_whoring >= 3:
                 $ huffl_matches_won = 2
                 $ lock_cho_training = True
                 jump hufflepuff_practice_win_2
@@ -96,38 +118,63 @@ label quidditch_match_return:
 # Lost first hufflepuff match.
 label hufflepuff_practice_lost:
 
-    # Genie asks if Cedric was distracted by her outfit
-    # Cho responds either that he was or wasn’t
-
-    # If he was, but the event failed, he’ll ask why he wasn’t distracted enough
-    # Cho responds by saying that she didn’t feel comfortable while flying, almost acted clumsy
-    call cho_walk(speed=2.2, action="enter")
-
+    call cho_main("...",mouth="upset",face="neutral",xpos="mid",ypos="base")
     m "So, how did it go?"
-    cho "We lost..."
-
+    call cho_main("We lost... again...",mouth="soft",eyebrows="sad",face="neutral")
     m "What was the problem?"
-    cho "I'm not really sure, [cho_genie_name]."
 
-    if cho_quidditch_bottom in ["pants_long","pants_short"]:
-        cho "Cedric didn't seem too distracted by me. He ended up catching the snitch."
+    # Low whoring response
+    if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and cho_whoring < 3:
+        cho "I couldn't focus on the game!"
+        cho "This ridiculously short skirt! The whole match it kept on slipping over my bottoms!"
+        m "So what? Just ignore it..."
+        cho "Ignore it? And let everyone ogle at my bare ass?"
+        m "Aren't you still wearing panties?"
+        cho "Of course I am! And I don't intent to show them to the whole school!"
+        cho "Just enough to let Cedric have a peek..."
+        g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
+        g4 "If the entire school knows the color of your panties, that's when you have done your task well!"
+        cho "You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing..."
+        m "Give it some time, girl. We'll get you to be more confident on your broom soon enough..."
+        g9 "With your panties on display!"
+        cho "(...)"
+        cho "It's getting late..."
+        cho "If you don't mind I'd like to go to bed now."
+        m "Sure. You may leave..."
+        cho "Have a good night, Sir."
 
-    elif cho_quidditch_bottom in ["skirt_short"] and cho_whoring < 2:
-        cho "I couldn't really focus on the game too much."
-        cho "My skirt just kept on slipping over my bottoms..."
-        cho "How I'm supposed to fly with a skirt this short?"
-        m "I don't think the skirt was the issue here."
-        m "(Maybe I need her to get more confident flying with it.)"
+    # Position response
+    elif quidditch_position != "above":
+        cho "Our tactic didn't work, [cho_genie_name]."
+        cho "Cedric just ignored me for most of the game and ended up catching the snitch..."
+        m "Were you trying to distract him enough?"
+        cho "Of course I was! I tried to let him have a peek up my skirt, but I'm not sure he even noticed that I was wearing one."
+        m "Interesting..."
+        m "Maybe we need to tackle this situation from another angle."
+        cho "Whatever you say, [cho_genie_name]."
+        cho "I'll be going to bed now if you don't mind."
+        cho "Have a good night, Sir."
+        m "You too..."
 
     else:
-        cho "I tried my best, however."
-        cho "I was trying to distract Cedric with my skirt, just like you've said..."
-
+        cho "Cedric didn't seem too distracted by me... He ended up catching the snitch and..."
+        cho "I'm not sure what the problem was..."
+        m "Maybe we aren't using the right tactics."
+        cho "Lets try a different approach next time, [cho_genie_name]."
+        cho "I have to head back to our dorms and get some sleep..."
+        m "Sure. You may go..."
+        cho "Have a good night, Sir."
 
     # Cho leaves.
-    call cho_walk(speed=2.2, action="leave")
+    call cho_walk(action="leave", speed=2.2)
 
-    $ cho_mood += 9
+    $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+
+    if huffl_matches_won == 0:
+        $ cho_mood += 5
+    else:
+        $ cho_mood += 8
+
     $ cho_busy = True
 
     jump main_room
@@ -136,24 +183,12 @@ label hufflepuff_practice_lost:
 
 # Won first Hufflepuff match.
 label hufflepuff_practice_win_1:
-    call play_sound("knocking")
-    ">*knock* *knock* *knock*"
-
-    menu:
-        "\"Come in!\"":
-            cho "Yes, [cho_genie_name]..."
-        "\"Who is it?\"":
-            cho "Cho Chang, [cho_genie_name]."
-            m "Ah miss Chong... Come on in!"
-            cho "..."
-
-    call cho_walk(speed=2, action="enter")
 
     call cho_main("...","annoyed","narrow","angry","R",xpos="mid",ypos="base")
     m "You seem a little on edge..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
-    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch the practicem, didn't you!","pout","narrow","angry","R")
+    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch us practice, didn't you!","pout","narrow","angry","R")
     call cho_main("I bet you were probably in on it...","upset","narrow","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
@@ -195,7 +230,10 @@ label hufflepuff_practice_win_1:
     cho "Have a good night!"
 
     # Cho leaves.
-    call cho_walk(speed=2, action="leave")
+    call cho_walk(action="leave", speed=2)
+
+    $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+
     $ cho_busy = True
 
     jump main_room
@@ -204,12 +242,6 @@ label hufflepuff_practice_win_1:
 
 
 label hufflepuff_practice_win_2:
-    call play_sound("knocking")
-    ">*knock* *knock* *knock*"
-
-    m "Come in..."
-
-    call cho_walk(speed=2, action="enter")
 
     call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",trans="hpunch")
     m "Did you catch that gold thing?"
@@ -219,12 +251,22 @@ label hufflepuff_practice_win_2:
     m "That's a...{w} yes?"
     call cho_main("Lee Jordan only used to say that I had a nice butt! But-","soft","base","sad","down")
     call cho_main("But, Hermione! Her incompetece as a Quidditch commentator is unmeasurable!","open","base","raised","R")
-    call cho_main("Almost makes me miss Jordan's sexist remarks about my body...","open","closed","base","mid")
-    m "Hey, look at it positively. You won another game!"
-    cho "We did indeed! This is so awesome!!!"
+    call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
+    g9 "I could tell Hermione to do the same if you'd like."
+    cho "Please don't, [cho_genie_name]! I was merely joking!"
+    m "Would you say you've had enough practive to play against them in a tourney game?"
+    cho "Absolutely! The next time we will confront \"Hufflepuff\", they will be crushed!"
+    cho "This should be an easy win for \"Ravenclaw\"."
+    cho "Speaking of which, I need to get back to my team now, [cho_genie_name]."
+    cho "Thank you for helping me!"
+    m "You're welcome."
+    cho "Good night, Sir."
 
     # Cho leaves.
-    call cho_walk(speed=2, action="leave")
+    call cho_walk(action="leave", speed=2)
+
+    $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+
     $ cho_busy = True
 
     jump main_room

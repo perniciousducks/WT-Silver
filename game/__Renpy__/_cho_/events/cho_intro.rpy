@@ -713,8 +713,11 @@ label cho_hermione_talk:
         m "(...)"
         call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll' just continue with it!","base","glance")
         m "Go on girl."
-        m "Tell me what you want,{w=0.6} what you really, really want."
-        call her_main("Very well, [genie_name].{p=0.8}I'll tell you what I want.{w=0.6} What I really, really want.","soft","glance")
+        m "Tell me what you want."
+        m "What you really{w}, really want..."
+        call her_main("Very well, [genie_name].","soft","baseL")
+        call her_main("I'll tell you what I want!","open","closed")
+        call her_main("What I really, really want!","grin","glance")
         g9 "{size=-4}Nice!{/size}"
         call her_main("I’d like a seat in the teacher stands, during the Quidditch matches..","open","closed")
         m "Is that all?"

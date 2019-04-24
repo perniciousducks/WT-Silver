@@ -186,24 +186,41 @@ label quidditch_training_intro_1:
 # Training Intro 2.
 label quidditch_training_intro_2:
     call cho_main(xpos="mid",ypos="base",trans="fade")
-    m "Let's start by discussing tactics."
+    m "Did you finally come to terms with my training methods?"
+    cho "No, Sir."
+    cho "I've simply run out of options.{w} Without your help "
+    cho "So I might as well try your methods, Sir."
+    g9 "I'm glad you came to your senses."
+    cho "(...)"
+    g9 "Let's discussing tactics then, shall we!"
+    cho "(...)"
     m "(...)"
     m "What did I suggest last time again?"
 
     if quidditch_position == "front":
         cho "You were raving about my bottom, Sir."
+        g9 "That's right! Your ass!{w} Now I remember!"
+        cho "(...)"
+        cho "I'm not here to deny that my behind is in great shape.{w} And I'm very proud of it!"
+        g9 "You should be!"
+        cho "But, May I ask, Sir..."
+        cho "How exactly did you picture my \"ass\" helping us win?" # Annoyed
 
     elif quidditch_position == "above":
         cho "It had something to do with panties."
         cho "However, I have no clue why you would include panties in our training..."
-        m "Ah yes. How could I forget."
+        g9 "Ah yes. Panties!{w} Now I remember!"
 
     elif quidditch_position == "close":
-        pass
+        cho "You wanted me to have sex with Diggory..."
+        m "I did?"
+        cho "You did! You ask me to get intimate with him!"
+        g9 "Yes, now I remember!"
+        m "I wanted you to stay close to him."
+        m "Let him kope a feel once or twice..."
+        cho "And that's going to help us how exactly?"
 
     m "I will show you."
-    m "First, get on your flying thing..."
-    cho "My broom?"
 
     call give_reward(">You've re-gained the ability to train Cho in Quidditch!","interface/icons/head/head_cho_1.png")
 
@@ -229,6 +246,7 @@ label change_quidditch_tactics:
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
 
     label demonstrate_quidditch_tactics:
+    call bld
 
     if cho_flying:
         menu:
@@ -283,7 +301,7 @@ label change_quidditch_tactics:
 
             "-Go Back-":
                 cho "Very well, [cho_genie_name]."
-                $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+                $ cho_class.equip(cho_outift_last) # Equip last worn clothes # TODO: This doesn't work.
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")
                 call cho_main(face="happy",xpos="base",ypos="base",trans="fade")

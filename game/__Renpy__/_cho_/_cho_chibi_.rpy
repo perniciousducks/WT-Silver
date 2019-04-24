@@ -43,7 +43,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         else:
             $ cho_chibi_flip = 1
             show screen cho_stand
-            
+
     if animation != False:
         $ cho_chibi_animation = animation
 
@@ -188,9 +188,10 @@ label update_cho_chibi_uniform:
     else:
         $ cho_chibi_robe      = "characters/cho/chibis/blank.png"
 
-    $ cho_chibi_stand         = "ch_cho blink"
-
     #Main Chibi
+    $ cho_chibi_stand         = "ch_cho blink"
+    $ cho_chibi_walk          = "ch_cho walk"
+
     if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"): #With Shoes.
         $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
         $ cho_chibi_walk_shoes    = "ch_cho walk_shoes"

@@ -5,7 +5,7 @@
 label start_hufflepuff_match:
     call cho_main(xpos="mid",ypos="base",trans="fade")
     m "[cho_name], what do you say... ready for your first game of the season?"
-    call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervouse.","soft","base","sad","R")
+    call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.","soft","base","sad","R")
     m "Don't worry. I believe you are ready..."
     m "When are you going to play against Hufflepuff?"
     call cho_main("That's up to you, [cho_genie_name]. As headmaster you decide when the games will be held...","open","base","base","mid")
@@ -87,9 +87,12 @@ label hufflepuff_match:
     call gen_chibi("stand","door","base",flip=True)
     with d3
     pause.2
+
+    call bld
     m "What are we waiting for. Let's go!"
 
     call sna_chibi("stand","mid","base",flip=True)
+    hide screen bld1
     with d3
     pause.2
 
@@ -103,6 +106,7 @@ label hufflepuff_match:
     with d3
     pause.2
 
+    call bld
     m "You should lead the way..."
     call sna_main("Right you are. Time to get smashed!","snape_02",ypos="head")
 
@@ -373,7 +377,7 @@ label hufflepuff_match_return:
     m "I'm sure this must mean a lot to you..."
     call cho_main("It does... I might even get picked up by a pro team!","smile","base","base","R")
     m "..."
-    call cho_main("Agh, I can't wait!","scream","closed","base","mid")
+    call cho_main("*Argh* I can't wait!","scream","closed","base","mid")
     call cho_main("I better go celebrate with the team now!","open","base","base","R")
     m "Well, off you go then."
     call cho_main("Thank you Professor...","smile","wink","base","mid")
@@ -387,6 +391,9 @@ label hufflepuff_match_return:
     $ cho_busy      = True
     $ hermione_busy = True
     $ snape_busy    = True
+
+    $ cc_pf_talk_OBJ.level = 0
+    $ cc_pf_strip_OBJ.level = 0
 
     $ cho_content_complete = True # Temporary to hide the Practice Match option in the menu.
 

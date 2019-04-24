@@ -74,14 +74,14 @@ label give_cho_gift(gift_item):
         call cho_main("My team captain hasn't let buy any to keep my blood sugar balanced, whatever that means.",mouth="soft",face="annoyed")
         call give_gift(">You give the sweets to Cho...",gift_item)
         call cho_main("But thanks, [cho_genie_name].",face="neutral")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=2)
 
     if gift_item == chocolate_ITEM:
         call cho_main("Chocolate?",pupils="down",face="horny",xpos="mid",ypos="base",trans="d5")
         call cho_main("I probably shouldn't... although.",pupils="R",face="horny")
         call give_gift(">You give the chocolate to Cho...",gift_item)
         call cho_main("I'll take it, [cho_genie_name]!",face="happy")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=2)
 
     if gift_item == plush_owl_ITEM:
         call cho_main("A toy?",face="annoyed",xpos="mid",ypos="base",trans="d5")
@@ -96,7 +96,7 @@ label give_cho_gift(gift_item):
         call give_gift(">You give the Butterbeer to Cho...",gift_item)
         call cho_main("Wait, it says low alcohol content on it... those boys lied to me.",face="angry")
         call cho_main("Thank you, [cho_genie_name].",face="happy")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=2)
 
     if gift_item == science_mag_ITEM:
         call cho_main("Oh, I heard that they put out a new formula for broom polish in this issue.",mouth="open",pupils="R",face="neutral",xpos="mid",ypos="base",trans="d5")
@@ -117,7 +117,7 @@ label give_cho_gift(gift_item):
         call cho_main("These people do have nice, posture...",face="horny")
         call cho_main("I... I guess they could be useful.",face="horny")
         call cho_main("Thank you, [cho_genie_name].",face="neutral")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=2)
 
     if gift_item == porn_mag_ITEM:
         call cho_main("What's this?",face="annoyed",xpos="mid",ypos="base",trans="d5")
@@ -132,34 +132,34 @@ label give_cho_gift(gift_item):
         call cho_main("I'll take that if you don't mind.",pupils="downR",face="horny")
         call cho_main("(...)",mouth="soft",pupils="up",face="horny")
         call cho_main("I love it, [cho_genie_name].",pupils="mid",face="horny")
-        call cho_mood_change(minus=2)
+        call cho_mood_change(minus=5)
 
     if gift_item == sexy_lingerie_ITEM:
         call cho_main("Lingerie?",face="annoyed",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give the lingerie to Cho...",gift_item)
         call cho_main("Seems pretty flexible. I might be able use these when stretching.",mouth="pout",pupils="down",face="annoyed")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=3)
 
     if gift_item == pink_condoms_ITEM:
         call cho_main("Condoms?",face="annoyed",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give a pack of condoms to Cho...", gift_item)
         call cho_main("I do surround myself with mostly boys, so having these at hand could be useful...",pupils="downR",face="horny")
         call cho_main("Thank you for your concerns, [cho_genie_name]...",mouth="soft",pupils="mid",face="neutral")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=3)
 
     if gift_item == vibrator_ITEM:
         call cho_main("A Vibrator?",face="horny",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give the vibrator to Cho...", gift_item)
         call cho_main("Ahh, It does promote a healthy lifestyle...",face="horny")
         call cho_main("Thank you, [cho_genie_name].",face="happy")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=3)
 
     if gift_item == anal_lube_ITEM:
         call cho_main("Anal lube?",face="annoyed",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give the jar of anal lube to Cho...", gift_item)
         call cho_main("You should've given me this yesterday, [cho_genie_name].",mouth="soft",face="annoyed")
         call cho_main("I haven't been able to sit on a broom all day after yesterday's game...",mouth="pout",pupils="down",face="annoyed")
-        call cho_mood_change(minus=1)
+        call cho_mood_change(minus=5)
 
     if gift_item == ballgag_and_cuffs_ITEM:
         call cho_main("Ball gag and cuffs?",pupils="down",face="annoyed",xpos="mid",ypos="base",trans="d5")
@@ -189,14 +189,14 @@ label give_cho_gift(gift_item):
         call cho_main("I mean, it's a nice broom alright...",pupils="downR",face="horny")
         call cho_main("But, to be honest, [cho_genie_name]...",mouth="soft",pupils="down",face="horny")
         call cho_main("I can't wait to try it out!",pupils="mid",face="happy")
-        call cho_mood_change(minus=5)
+        call cho_mood_change(minus=10)
 
     if gift_item == sexdoll_ITEM:
         call cho_main("A sex doll?",face="annoyed",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give the sex doll to Cho...", gift_item)
         call cho_main("It says Joanne on it...",face="disgusted")
         call cho_main("I leave it in the boys changing room, should be a good reward after a practice.",face="annoyed")
-        call cho_mood_change(minus=2)
+        call cho_mood_change(minus=7)
 
     call cho_main(xpos="base",ypos="base",trans="d5")
 

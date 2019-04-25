@@ -277,7 +277,7 @@ label potions_menu:
             else:
                 items_menu.append((potion.getMissingIngMenu(),potion.ingredients))
         items_menu.append(("-Never mind-", "nvm"))
-        PotionOBJ = renpy.display_menu(items_menu)
+        PotionOBJ = custom_menu(items_menu)
     if PotionOBJ == "nvm":
         jump return_office
     elif isinstance(PotionOBJ, silver_potion):

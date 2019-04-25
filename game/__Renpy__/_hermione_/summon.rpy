@@ -154,7 +154,7 @@ label hermione_favor_menu:
                         else:
                             pf_menu.append((i.getMenuText(),i.start_label))
                     pf_menu.append(("-Never mind-", "nvm"))
-                    result = renpy.display_menu(pf_menu)
+                    result = custom_menu(pf_menu)
                 if result == "nvm":
                     jump silver_requests_root
                 elif result == "vague":
@@ -183,7 +183,7 @@ label hermione_favor_menu:
                             else:
                                 pr_menu.append((i.getMenuText(),i.start_label))
                         pr_menu.append(("-Never mind-", "nvm"))
-                        result = renpy.display_menu(pr_menu)
+                        result = custom_menu(pr_menu)
                     if result == "nvm":
                         jump silver_requests_root
                     elif result == "vague":
@@ -209,7 +209,7 @@ label hermione_favor_menu:
                         else:
                             ps_menu.append((i.getMenuText(),i.start_label))
                     ps_menu.append(("-Never mind-", "nvm"))
-                    result = renpy.display_menu(ps_menu)
+                    result = custom_menu(ps_menu)
                 if result == "nvm":
                     jump silver_requests_root
                 else:

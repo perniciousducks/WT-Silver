@@ -1021,7 +1021,7 @@ label music_room:
 
         music_room_menu.append(("-No music-", "stop_music"))
         music_room_menu.append(("-Keep the current tune-", "keep"))
-        result = renpy.display_menu(music_room_menu)
+        result = custom_menu(music_room_menu)
 
     if result == "stop_music":
         $ music_room_playing = ""

@@ -284,7 +284,7 @@ label snape_third_duel:
         call sna_main( "Fine, here's your tokens and one of my precious cards....","snape_05")
         call sna_main( "\"You were a good card my boy. But it's time to grow up.\"","snape_05")
         $ snape_third_win = True
-        $ unlocked_cards += [snape]
+        $ unlocked_cards += [card_snape]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.png")
         $ geniecard_tokens += 3
     else:

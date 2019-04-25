@@ -55,8 +55,8 @@ screen deck_builder_screen():
     $ card_shown=5
     imagebutton idle "images/cardgame/deck_builder.png" action Return("unselect")
 
-    for i in range(0, clamp(card_shown, 0, (len(unlocked_cards))-(card_shown*currentpage))):
-            use cardrender(unlocked_cards[clamp(i+(currentpage*card_shown), 0, len(unlocked_cards))], 18,17+80*i, True, color=False)
+    for i in xrange(0, clamp(card_shown, 0, (len(unlocked_cards))-(card_shown*currentpage))):
+        use cardrender(unlocked_cards[clamp(i+(currentpage*card_shown), 0, len(unlocked_cards))], 18,17+80*i, True, color=False)
             
     if not selectcard == -1:
         use cardrender(unlocked_cards[selectcard], 885, 316)
@@ -164,7 +164,7 @@ screen deck_builder_gallery():
     
     text "{size=+15}Gallery{/size}" ypos 15 xalign 0.5
 
-    for i in range(0, len(cards_all)):
+    for i in xrange(len(cards_all)):
         if i <= 12:
             use cardrender(cards_all[i], 18+80*i,67, False, cardzoom=0.25, gallery=True)
         elif i > 12 and i < 26:

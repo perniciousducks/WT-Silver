@@ -124,16 +124,16 @@ label deck_mail_send:
     #Randomize starter pack (Hardcore difficulty gets randomized at the start of the game)
     if game_difficulty <= 2:
         python:
-            card_rand_realm = random.choice([iris, jasmine, azalea])
-            card_rand_girl = random.choice([her_schoolgirl, sus_schoolgirl, cho_schoolgirl, lun_schoolgirl])
-            card_rand_item1 = random.choice([item_desk, item_bird])
-            card_rand_item2 = random.choice([item_beads, item_dildo, item_doll, item_condoms, item_plugs])
-            card_rand_item3 = random.choice([item_barbell, item_lingerie, item_stockings, item_badge, item_bdsm, item_lipstick])
-            card_rand_item4 = random.choice([item_bookchairs, item_bookgala, item_bookgala2, item_bookwaifu, item_hat])
-            card_rand_item5 = random.choice([item_eromag, item_pornmag, item_girlmag, item_scroll, item_wine, item_sweets])
+            card_rand_realm = random.choice([card_iris, card_jasmine, card_azalea])
+            card_rand_girl = random.choice([card_her_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_lun_schoolgirl])
+            card_rand_item1 = random.choice([card_item_desk, card_item_bird])
+            card_rand_item2 = random.choice([card_item_beads, card_item_dildo, card_item_doll, card_item_condoms, card_item_plugs])
+            card_rand_item3 = random.choice([card_item_barbell, card_item_lingerie, card_item_stockings, card_item_badge, card_item_bdsm, card_item_lipstick])
+            card_rand_item4 = random.choice([card_item_bookchairs, card_item_bookgala, card_item_bookgala2, card_item_bookwaifu, card_item_hat])
+            card_rand_item5 = random.choice([card_item_eromag, card_item_pornmag, card_item_girlmag, card_item_scroll, card_item_wine, card_item_sweets])
 
-            unlocked_cards = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
-            playerdeck = [genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
+            unlocked_cards = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
+            playerdeck = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
             # Delete copies of playerdeck cards
             for i in range(0,5):
                 playerdeck[i].copies -= 1
@@ -164,7 +164,7 @@ label cardgame_t2_mail_send:
 
     g9 "Sweet..."
     g9 "Fucking love prizes."
-    $ geniecard_level = 2
+    $ advance_tier(2)
 
     return
 

@@ -212,6 +212,9 @@ label hermione_favor_menu:
                     result = custom_menu(ps_menu)
                 if result == "nvm":
                     jump silver_requests_root
+                elif result == "vague":
+                    call vague_idea
+                    jump not_now_pr
                 else:
                     $ renpy.jump(result)
 

@@ -661,10 +661,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     if not hg_outfit_pirate_ITEM.unlocked:
         call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
 
-    if not card_exist(unlocked_cards, maslab):
+    if not card_exist(unlocked_cards, card_maslab):
         if deck_unlocked:
             call give_reward("Ye plundered a special card from 'er cavern.", "images/cardgame/t1/genie_realm/maslab_v1.png")
-        $ unlocked_cards += [maslab]
+        $ unlocked_cards += [card_maslab]
 
     call blkfade
     call h_unequip_temp_outfit

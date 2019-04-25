@@ -185,7 +185,7 @@ label hermione_third_duel:
         g9 "You seem to have forgotten something..."
         call her_main( "Fine...","angry","glance")
         call her_main( "Here...","mad","glanceL")
-        $ unlocked_cards += [her_librarian]
+        $ unlocked_cards += [card_her_librarian]
         call give_reward("You have received a card!", "images/cardgame/t1/hermione/her_librarian_v1.png")
         $ her_third_win = True
         $ geniecard_tokens += 3

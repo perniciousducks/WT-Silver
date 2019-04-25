@@ -198,8 +198,31 @@ init python:
         if not is_random_deck:
             rules_list.append(card_rule_random)
         return rules_list
-       
         
+    def advance_tier(tier):
+        global geniecard_level
+        renpy.show_screen("blktone")
+        renpy.show_screen("advance_deck") 
+        renpy.transition(Dissolve(0.3))
+        renpy.pause(1.0)
+        for card in cards_dynamic:
+            card.imagepath = card.imagepath[:-5]+str(tier)+".png"
+            for card_in_use in playerdeck:
+                if card.title == card_in_use.title:
+                    card_in_use.imagepath = card_in_use.imagepath[:-5]+str(tier)+".png"
+            for card_in_deck in unlocked_cards:
+                if card.title == card_in_deck.title:
+                    card_in_deck.imagepath = card_in_deck.imagepath[:-5]+str(tier)+".png"
+        geniecard_level = tier
+        renpy.play("sounds/magic4.ogg")
+        renpy.show_screen("advance_deck")
+        renpy.transition(Fade(0.2, 0.0, 0.8, color='#fff'))
+        renpy.pause()
+        renpy.hide_screen("blktone")
+        renpy.hide_screen("advance_deck")
+        renpy.transition(Dissolve(0.3))
+        return
+
 screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
     zorder 5
     imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
@@ -232,7 +255,7 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
     if not selectenemycard == -1:
         use cardrender(l_enemydeck[selectenemycard], 860,17+80*selectenemycard, backside= shown_cards[selectenemycard])
         
-    use close_button
+    use top_bar_close_button
     
 transform cardrender_move(xpos_card, ypos_card, start_xy):
     subpixel True
@@ -332,8 +355,20 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
 screen start_deck:
     zorder 9
 
-    for i in range(0, len(unlocked_cards)):
+    for i in xrange(len(unlocked_cards)):
         use cardrender(unlocked_cards[i],40+125*i,200, interact=False, cardzoom=0.375)
+        
+screen advance_deck():
+    tag advance_deck
+    zorder 9
+    
+    for i in xrange(len(cards_dynamic)):
+        use cardrender(cards_dynamic[i],40+125*i,200, interact=False, cardzoom=0.375)
+        
+    text "Tier [geniecard_level]" size 32 color "#fff" ypos 100 xalign 0.5 outlines [ (2, "#000", 0, 0) ]
+    
+    use ctc
+        
         
 screen card_end_message(message):
     zorder 9

@@ -147,6 +147,7 @@ label hufflepuff_match:
     $ renpy.music.play("sounds/crowd_low.mp3", fadein=2)
     her "Thank you."
     her "L-let's begin!"
+    play bg_sounds "music/11 The Quidditch Match_original.mp3"
     her "Hufflepuff versus Ravenclaw!"
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
     ">A loud cheer roars from the grandstands."
@@ -161,36 +162,60 @@ label hufflepuff_match:
     call sna_main("I’ve been looking forward to watching you bumble your way through this...","snape_22",ypos="head")
     call sna_main("Besides, you only have to give some trivial speech about team spirit, gesticulate wildly and say \"let the games begin\". A child could manage it.","snape_24",ypos="head")
     call sna_main("Now get up there!","snape_10",ypos="head")
+    stop bg_sounds fadeout 2.0
     ">With that, Snape shoves you out of your chair, behind the podium."
 
     menu:
         "\"Miracle on ice speech\"":
             $ renpy.music.stop(fadeout=4)
+            play bg_sounds "music/fanfare.mp3" fadein 1.0
             m "Great moments are born from great opportunity."
             $ renpy.music.play("sounds/wind_long_loop.mp3")
             ">A reverent hush falls over the crowd..."
-            m "And that’s what we have here tonight-"
+            m "And that’s what you have here tonight-"
+            m "That's what you've earned here tonight!"
             #Fade to black
+            #Fades back with spotlight on genie and Breaker switch sound effect
+            m "One game..."
             m "Tonight, WE are the greatest hockey team in the world!"
+            m "You were born to be hockey players..."
+            m "Every one of you..."
+            m "And you were meant to be here tonight!"
+            m "This is your time..."
             #Fade to black
             m "Their time is done, it’s over! I’m sick and tired about hearing what a great hockey team the soviets have!"
             mal "I think Dumbledore has finally started to lose his marbles..."
             mal2 "I think you might be right."
-            m "Screw it! This is our time, now let the games begin!"
+            stop bg_sounds fadeout 2.0
+            m "Screw it! This is our time..."
+            mal "..." 
+            $ renpy.sound.play("sounds/cough_male.mp3")
+            mal2 "..."            
+            m "Now let the games begin!"
         "\"Good Morning, Vietnam!\"":
             $ renpy.music.stop(fadeout=4)
-            m "Good morning, Vietnam!"
-            $ renpy.music.play("sounds/wind_long_loop.mp3")
-            m "Ugh..."
+            play bg_sounds "sounds/wind_long_loop.mp3"
+            g9 "{cps=7}Goooooooood{/cps}  morning,{w=0.1} Vietnam!"
+            g9 "Hey, this is not a test... This is rock and roll!"
+            g9 "Time to rock it from the delta to the DMZ!"
+            g9 "Is that me or does that sound like an Elvis Presley movie?"
             ">A confused murmur falls over the crowd."
-            m "Go team!"
+            m "Ugh..."
+            $ renpy.sound.play("sounds/microphone_feedback.mp3")
+            m "Is this thing on?"
+            $ renpy.sound.play("sounds/cough_male.mp3")
+            mal "..."
+            g9 "It's O six hundred, what does the O stand for?"
+            g9 "Ooooh my god it's early!"
             $ renpy.sound.play("sounds/murmur.mp3")
             ">The sound of confused murmuring increases even further..."
-            mal "Fire’s lit but the cauldron’s empty..."
+            mal "What's he on about? Is the fire lit but the cauldron empty?"
             mal2 "Looks like it..."
+            stop bg_sounds fadeout 2.0
             m "Tough crowd... Anyway, let the games begin!"
     $ renpy.sound.play("sounds/crowd_cheer.mp3")   
-    $ renpy.music.play("sounds/crowd_low.mp3", fadein=3)    
+    $ renpy.music.play("sounds/crowd_low.mp3", fadein=3)
+    play bg_sounds "music/11 The Quidditch Match_original.mp3"    
     ">The crowd cheers excitedly, desperate to see the match kickoff."
     her "Ugh... thank you for that, professor Dumbledore..."
     her "Now, to get this game underway!"
@@ -214,7 +239,10 @@ label hufflepuff_match:
     call sna_main("I practically caught them chew each other’s tongues off at one point.","snape_02",ypos="head")
     her "Speaking of important, I just realised that as the inaugural game, I should cover the rules of the game for any first-years watching."
     $ renpy.music.stop(fadeout=4)
-    ">Hermione heaves a heavy rule book from under the table and begins to monotonously recite it to the crowd."
+    stop bg_sounds fadeout 2.0
+    ">Hermione heaves a heavy rule book{nw}"
+    $ renpy.sound.play("sounds/punch01.mp3") 
+    ">Hermione heaves a heavy rule book{fast} from under the table and begins to monotonously recite it to the crowd."
     $ renpy.sound.play("sounds/sniff.mp3")
     her "..."
     $ renpy.music.play("sounds/wind_long_loop.mp3", fadein=2)
@@ -238,6 +266,7 @@ label hufflepuff_match:
 
     # Start of the Game
     $ renpy.sound.play("sounds/referee.mp3")
+    play bg_sounds "music/11 The Quidditch Match_original.mp3"
     ">A Grey haired woman then throws the quaffle into the air which signals the start of the match and the players quickly takes off!"
 
     her "Oh, wow... They’re going quite f-fast..."
@@ -326,7 +355,7 @@ label hufflepuff_match:
     m "{size=-4}Oh... The ones those boys are whacking at?{/size}"
     call sna_main("{size=-4}Right... Well, we enchant them to go after the students while they play.{/size}","snape_23",ypos="head")
     m "{size=-4}I see... {w}{nw}"
-    g9 "{size=-4}I see... {fast}Wait, Really? Why?{/size}"
+    g4 "{size=-4}I see... {fast}Wait, Really? Why?{/size}"
     call sna_main("{size=-4}Makes things more interesting doesn’t it!{/size}","snape_02",ypos="head")
     m "{size=-4}So what happens when they hit their target?{/size}"
     call sna_main("{size=-4}Generally it’s just a concussion... Though sometimes they fall pretty far, that’s always entertaining.{/size}","snape_20",ypos="head")
@@ -361,6 +390,7 @@ label hufflepuff_match:
     # Fade to black
     $ renpy.music.play("sounds/crowd_low.mp3", fadein=8)
     show screen blkfade with d5
+    stop bg_sounds fadeout 8.0
     ">You and Snape lean back and watch the game, frequently shifting your focus to Cho, as she darts past the stands, only occasionally pausing for more wine or for Snape to ridicule Hermione’s commentating."
 
     # End of game
@@ -375,7 +405,6 @@ label hufflepuff_match:
     cho "Hey, Granger!"
     her "What do you want? Shouldn’t you be busy with, I don’t know... playing the game?"
     cho "The game is over, you dipstick!"
-    $ renpy.sound.play("sounds/gasp3.mp3")
     her "What? Already?"
     her "But who caught the Snitch?"
     ">Cho waves the snitch in front of her."
@@ -455,16 +484,18 @@ label hufflepuff_match_return:
     $ renpy.sound.play("sounds/snore2.mp3")
     m "......{w=0.5}*Snore*{w=1.0}{nw}"
     stop music fadeout 6.0
-    call cho_walk("mid", "base", 1.6, action="enter")
-
-    call cho_main("We beat \"Hufflepuff\"!!!","scream","shocked","base","mid",trans="hpunch")
+    call cho_walk("desk", "base", 2.4, action="enter")
+    
+    $ renpy.sound.play("sounds/punch01.mp3")
+    call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid",trans="hpunch")
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!"
     m "..........."
     call cho_main("huh?{w=0.5} Are you okay, [cho_genie_name]?","angry","narrow","base","mid")
     m "Wha-{w=0.5}{nw}"
     g4 "Of course I am!"
-    call cho_main("If you say so.....","annoyed","angry","base","R")
+    call cho_main("...","annoyed","angry","raised","R")
+    call cho_main("If you say so.....","annoyed","angry","base","mid")
     call play_music("chipper_doodle")
     call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!","smile","base","base","mid")
     call cho_main("We could actually win the cup!","open","shocked","angry","L")
@@ -480,15 +511,15 @@ label hufflepuff_match_return:
     call cho_main("It does... I might even get picked up by a pro team!","smile","base","base","R")
     m "..."
     call cho_main("*Argh* I can't wait!","scream","closed","base","mid")
-    call cho_main("I better go celebrate with the team now!","open","base","base","R")
+    call cho_main("I better go celebrate with the team now!","open","base","base","mid")
     m "Well, off you go then."
     call cho_main("Thank you Professor...","smile","wink","base","mid")
 
     # Cho leaves.
-    call cho_walk(speed=1.6, action="leave")
+    call cho_walk(speed=2.4, action="leave")
 
     stop music fadeout 1.0
-    call give_reward(">New favours for Cho have been unlocked!","interface/icons/head/head_cho_2.png")
+    call give_reward(">New favours for Cho has been unlocked!","interface/icons/head/head_cho_2.png")
 
     $ cho_busy      = True
     $ hermione_busy = True

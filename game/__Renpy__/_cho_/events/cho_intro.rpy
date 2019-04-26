@@ -288,14 +288,17 @@ label cho_intro_1:
         centered "{size=+7}{color=#cbcbcb}Some time later...{/color}{/size}"
 
         pause 1
-        call hide_blkfade
-
-        gen "*Z{size=-1}zz{size=-1}zzz{size=-1}zzzz{/size}*"
+        call hide_blkfade    
+    
+        $ renpy.sound.play("sounds/snore1.mp3")
+        gen "*Snore*{w=2.0}{nw}"
         show screen hermione_main
         call cho_main("Well I’m sure that your reasons for being here are totally legitimate...","soft","narrow","base","L",trans="hpunch")
-        gen "*Z{size=-1}zz{size=-1}zzz{size=-1}zzzzz{/size}*"
+        $ renpy.sound.play("sounds/snore2.mp3")
+        gen "......{w=0.5}*Snore*{w=1.0}{nw}"
         call her_main("They are, for a fact. Completely legitimate... you tell her Professor!","clench","angryL",trans="hpunch")
-        gen "*Z{size=-1}zz{size=-1}zzz{size=-1}zzzzzz{/size}*"
+        $ renpy.sound.play("sounds/snore3.mp3")
+        gen "*Sn{cps=8}oooooooreeee*{w=2.0}{nw}"
         call her_main("Professor!","scream","angryCl",trans="hpunch")
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don’t I?","base","base")

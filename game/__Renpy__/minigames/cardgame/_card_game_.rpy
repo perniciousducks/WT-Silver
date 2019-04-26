@@ -269,11 +269,8 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
     if return_value == None:
         $ return_value = card
     frame:
-        if animated:
-            at cardrender_move(xpos_card-4, ypos_card-6, start_xy=[540, -100])
-        else:
-            xpos xpos_card -4
-            ypos ypos_card -4
+        xpos xpos_card -4
+        ypos ypos_card -6
         xsize card_width*cardzoom
         ysize card_height*cardzoom
         background #00000000

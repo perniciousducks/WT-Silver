@@ -122,6 +122,7 @@ label hufflepuff_match:
 
     call room("quidditch_pitch", True)
     $ qp_mob = 3 # Controls number of people
+    $ qp_mob_reaction = [None, None, None] # Reset reactions
     call sna_chibi("stand","180","0", flip=True)
     call gen_chibi("stand", "130", "10")
     call her_chibi("stand","375","105", flip=True)

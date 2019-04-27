@@ -4671,13 +4671,6 @@ characters/cho/clothes/hats/hair_ponytail/snitch.png:629,327,75,39
 characters/cho/clothes/neckwear/choker_lace_1/0.png:552,521,69,41
 characters/cho/clothes/neckwear/choker_lace_1/1.png:554,523,67,35
 characters/cho/clothes/neckwear/choker_lace_1/outline.png:550,519,73,45
-characters/cho/clothes/onepieces/dress_1/0.png:445,529,269,670
-characters/cho/clothes/onepieces/dress_1/1.png:461,531,249,185
-characters/cho/clothes/onepieces/dress_1/outline.png:453,527,264,672
-characters/cho/clothes/onepieces/dress_1/skin.png:427,557,281,237
-characters/cho/clothes/onepieces/dress_2/0.png:457,525,243,465
-characters/cho/clothes/onepieces/dress_2/1.png:527,595,59,51
-characters/cho/clothes/onepieces/dress_2/outline.png:455,521,249,470
 characters/cho/clothes/panties/basic_panties_1/0.png:461,853,217,106
 characters/cho/clothes/panties/basic_panties_1/1.png:461,853,216,106
 characters/cho/clothes/panties/basic_panties_1/outline.png:459,850,220,110
@@ -5992,3 +5985,10 @@ characters/cho/clothes/tops/top_tanktop_2.png:459,557,210,321
 characters/cho/clothes/tops/vest.png:468,554,239,333
 characters/cho/clothes/bottoms/pants_short_2/extra.png:464,874,193,87
 characters/cho/clothes/bottoms/pants_short_2/outline.png:451,858,244,117
+characters/cho/clothes/onepieces/dress_1/0.png:445,529,269,670
+characters/cho/clothes/onepieces/dress_1/1.png:461,531,249,185
+characters/cho/clothes/onepieces/dress_1/outline.png:453,527,264,672
+characters/cho/clothes/onepieces/dress_1/skin.png:427,557,281,237
+characters/cho/clothes/onepieces/dress_2/0.png:457,525,243,465
+characters/cho/clothes/onepieces/dress_2/1.png:527,595,59,51
+characters/cho/clothes/onepieces/dress_2/outline.png:455,521,249,470

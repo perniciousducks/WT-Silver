@@ -514,46 +514,81 @@ image heal:
 
 image emo01:
     "characters/emotes/animated/ex01.png"
-    pause.1
+    pause.5
     "characters/emotes/animated/ex02.png"
-    pause.1
+    pause.5
     "characters/emotes/animated/ex03.png"
-    pause.1
+    pause.5
     "characters/emotes/animated/ex04.png"
-    pause 2
+    pause 1
     "characters/emotes/animated/ex01.png"
-    pause.1
+    pause.5
     "characters/emotes/animated/ex00.png"
+    repeat
 
 image emo02:
     "characters/emotes/animated/exl01.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/exl02.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/exl03.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/exl04.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/exl05.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/exl06.png"
+    repeat
+    
+image emo03:
+    "characters/emotes/animated/sad_01.png"
+    pause.4
+    "characters/emotes/animated/sad_02.png"
+    pause.4
+    "characters/emotes/animated/sad_03.png"
+    pause.4
+    "characters/emotes/animated/sad_04.png"
+    pause.4
+    "characters/emotes/animated/sad_03.png"
+    pause.4
+    "characters/emotes/animated/sad_02.png"
+    pause.4
+    repeat
+    
+image emo04:
+    "characters/emotes/animated/hoot_01.png"
+    pause.4
+    "characters/emotes/animated/hoot_02.png"
+    pause.4
+    "characters/emotes/animated/hoot_03.png"
+    pause.4
+    "characters/emotes/animated/hoot_04.png"
+    pause.4
+    "characters/emotes/animated/hoot_05.png"
+    pause.4
+    "characters/emotes/animated/hoot_06.png"
+    pause.4
+    "characters/emotes/animated/hoot_07.png"
+    pause.4
+    repeat
 
 image emoq:
     "characters/emotes/animated/q1.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q2.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q3.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q4.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q1.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q2.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q3.png"
-    pause.05
+    pause.5
     "characters/emotes/animated/q4.png"
+    repeat
 
 image emom:
     "characters/emotes/animated/emo00.png"
@@ -562,26 +597,27 @@ image emom:
 
 image excl:
     "characters/emotes/animated/excl01.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/excl02.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/excl03.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/excl04.png"
-    pause.08
-
+    pause.5
+    repeat
 image qu:
     "characters/emotes/animated/que1.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/que2.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/que3.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/que4.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/que5.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/que6.png"
+    repeat
 
 image an:
     "characters/emotes/animated/an1.png"
@@ -624,45 +660,48 @@ image th:
 
 image emo7:
     "characters/emotes/animated/emotion00.png"
-    pause.2
+    pause.5
     "characters/emotes/animated/emotion01.png"
-    pause.2
+    pause.5
     "characters/emotes/animated/emotion00.png"
-    pause.08
+    pause.7
     "characters/emotes/animated/emotion01.png"
-    pause.08
+    pause.7
     "characters/emotes/animated/emotion00.png"
-    pause.08
+    pause.6
     "characters/emotes/animated/emotion01.png"
-    pause.08
+    pause.6
+    repeat
 
 image emo8:
     "characters/emotes/animated/emotion00.png"
-    pause.2
+    pause.7
     "characters/emotes/animated/emotion03.png"
-    pause.2
+    pause.7
     "characters/emotes/animated/emotion00.png"
-    pause.08
+    pause.6
     "characters/emotes/animated/emotion03.png"
-    pause.08
+    pause.6
     "characters/emotes/animated/emotion00.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/emotion03.png"
-    pause.08
+    pause.5
+    repeat
 
 image sur:
     "characters/emotes/animated/sur1.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/sur2.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/sur3.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/sur4.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/sur5.png"
-    pause.08
+    pause.5
     "characters/emotes/animated/sur6.png"
-    pause.08
+    pause.5
+    repeat
 
 ######
 image magic = "magic/magic1.png"

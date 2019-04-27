@@ -117,7 +117,8 @@ screen universal_walk:
 ### MISC SCREENS
 screen bld1:
     tag bld1
-    add "interface/bld.png"
+    if not current_room == "quidditch_pitch":
+        add "interface/bld.png"
     zorder 3
 
 screen ctc:

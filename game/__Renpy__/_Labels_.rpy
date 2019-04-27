@@ -65,6 +65,10 @@ label hide_all_screens:
     hide screen candle_light_1
     hide screen candle_light_2
     hide screen whose_points_screen
+    
+    #Quidditch pitch
+    hide screen quidditch_pitch
+    hide screen quidditch_pitch_overlay
 
     #A Dark Room (minigame)
     hide screen dark_room
@@ -152,12 +156,22 @@ label room(room=None, hide_screens=True):
         show screen clothing_store_room
 
     if room in ["7th floor"]:
+        $ current_room = "7th_floor"
+        
         show screen floor_7th_door
         show screen room_of_req_door
         show screen floor_7th_screen
 
     if room in ["room_of_requirement","ror"]:
+        $ current_room = "room_of_requirement"
+
         show screen room_of_requirement
+        
+    if room in ["quidditch_pitch", "quid", "qp"]:
+        $ current_room = "quidditch_pitch"
+        
+        show screen quidditch_pitch
+        show screen quidditch_pitch_overlay
 
     return
 

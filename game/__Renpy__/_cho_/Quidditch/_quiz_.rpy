@@ -70,7 +70,7 @@ label cho_quiz_1:
         call cho_main("Oh, well... as I said, I'll do anything to win the cup!","soft","base","base","R")
         g9 "That's what I want to hear!"
         m "In that case, I'd like you to start selling favours to me for my service..."
-        call cho_main("Favours? What kind of favours?","annoyed","narrow","raised","mid")
+        call cho_main("Favours? What kind o' favours?","annoyed","narrow","raised","mid")
         m "Nothing that Miss Granger hasn't had any issues with."
 
         if her_reputation < 20:
@@ -272,7 +272,7 @@ label cho_quiz_1:
         m "The game doesn’t end until the snitch is caught?"
         call cho_main("Yes...", "base", "base", "base", "mid")
         m "Well, that is stupid..."
-        call cho_main("Yes, that bit is kind of stupid...", "pout", "base", "sad", "down")
+        call cho_main("Yes, that bit's kind o' stupid...", "pout", "base", "sad", "down")
         call cho_main("Anyway...", "base", "closed", "base")
         call cho_main("I didn’t come here to listen to you talk about about basketball...", "pout", "base", "base", "downR")
         m "Right..."
@@ -472,7 +472,7 @@ label cho_quiz_2:
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
-            call cho_main("You crazy? That's the same amount of time a student stays at Hogwarts...", "annoyed", "narrow", "raised", "mid")
+            call cho_main("You crazy? That's the same amount o' time a student stays at Hogwarts...", "annoyed", "narrow", "raised", "mid")
             m "Oh right, I don't know what I was thinking... seven just seems like the magical right answer most of the time..."
             call cho_main("Not in this case...", "open", "base", "raised", "downR")
             call cho_main("Anyway, final question...", "open", "base", "raised", "down")
@@ -493,7 +493,7 @@ label cho_quiz_2:
             call cho_main("Anyway... final question...", "open", "base", "raised", "down")
 
     cho "As you know, you may not go outside of the bounds with the ball during the game or you'd have to hand it over to the opposition..."
-    call cho_main("But what is the penalty if the defensive goes out of bounds?", "open", "wide", "raised", "L")
+    call cho_main("But what is the penalty if the defensive goes out o' bounds?", "open", "wide", "raised", "L")
 
     # Question 4
     menu:
@@ -588,7 +588,7 @@ label cho_quiz_2:
         m "Or were you asking the wrong questions?"
         call cho_main("Sorry?", "open", "angry", "raised", "L")
         g9 "Time is just relative... what is the difference between a month or a few minutes really..."
-        call cho_main("Sir, you got bunch of the questions wrong...", "upset", "angry", "raised", "L")
+        call cho_main("Sir, you got a bunch o' the questions wrong...", "upset", "angry", "raised", "L")
         m "The truth lies in the eyes of the beholder Miss Chang..."
         call cho_main("I don't...{nw=1.0}", "annoyed", "base", "base", "mid")
         m "You'll see, I'll show you the real truth..."

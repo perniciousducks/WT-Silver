@@ -86,14 +86,14 @@ label use_quidditch_skirt_1:
         cho "A skirt?!"
         call cho_main("I couldn't do that!","scream","wide","angry","mid")
         call cho_main("Everyone would be able to see straight up it!","quiver","wide","angry","downR")
-        call cho_main("Not to mention all the other player-","horny","narrow","sad","R")
+        call cho_main("Not to mention all the other players-","horny","narrow","sad","R")
         call cho_main("Oh...","pout","narrow","angry","mid")
         call cho_main("So that's your plan then? For me to distract \'the enemy\' with some upskirt?","pout","angry","angry","mid")
         m "If you don't think it would work-"
-        call cho_main("Of course it would work! Those \'boys\' are all a bunch of perverts...","open","narrow","angry","R")
-        call cho_main("But I can't go and play a game with a skirt on!","horny","shocked","sad","down")
+        call cho_main("Of course it would work! Those \'boys\' are all a bunch o' perverts...","open","narrow","angry","R")
+        call cho_main("But I can't go and play a game with a skirt on!","horny","wide","sad","down")
         call cho_main("All my friends would see!","annoyed","shocked","sad","mid")
-        m "They'll forget all about it after you defeat you have won!"
+        m "They'll forget all about it after you have won!"
         call cho_main("I highly doubt that...","upset","narrow","sad","downR")
         m "Then just tell them it was the only way to win. I'm sure they'll understand."
         call cho_main("You... might be right...","open","base","sad","downR")
@@ -142,7 +142,7 @@ label use_quidditch_skirt_2:
         m "I'd like you to wear your short skirt again."
         cho "Why always the short one, [cho_genie_name]?"
         m "Naturally, so the other players probably wouldn't be able to keep their eyes off of you?"
-        call cho_main("They already can't keep their eyes off of me...","smile","closed","base","mid")
+        call cho_main("They already can't keep their eyes off o' me...","smile","closed","base","mid")
         m "For now... They'll probably get bored of that skirt after a while..."
         call cho_main("They will not!","scream","shocked","angry","mid")
         m "Are you going to let me coach you or not?"
@@ -192,7 +192,7 @@ label remove_quidditch_coat:
 label remove_quidditch_gloves:
     m "You should remove those bulky looking gloves of yours."
     cho "My gloves? But I need them to play!"
-    cho "They are made out of pure \"Insert fantasy creature here\" leather! Their friction is necessary If I want to keep a good grip on my broom."
+    cho "They are made oot of pure \"Insert fantasy creature here\" leather! Their friction is necessary If I want to keep a good grip on my broom."
     cho "And how would I even be able to catch the snitch without them?"
     m "With your mouth?"
     cho "That's just stupid!"

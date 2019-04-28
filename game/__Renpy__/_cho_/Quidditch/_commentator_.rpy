@@ -50,7 +50,7 @@ label quidditch_commentator_event_1:
     m "Alright, any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
     call cho_main("...","pout","base","base","down")
     m "Well?"
-    call cho_main("Well, most of them would be on one of the Quidditch teams...","soft","base","raised","R")
+    call cho_main("Well, most o' them would be on one of the Quidditch teams...","soft","base","raised","R")
     call cho_main("But Granger wouldn't know anything about Quidditch either!","pout","narrow","angry","mid")
     m "Do you know anybody else suited for the job?"
     call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")

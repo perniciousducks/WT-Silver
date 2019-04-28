@@ -7,17 +7,32 @@ label cc_pf_strip:
     # Tier 1
     if main_matches_won <= 1:
 
-        # First time event.
+        # Event 1
         if cc_pf_strip_OBJ.points == 0:
             call cc_pf_strip_T1_E1
 
-        # Second time event or repeat.
-        else:
-            call cc_pf_strip_T1_E1
+        # Event 2
+        elif cc_pf_strip_OBJ.points == 1:
+            call cc_pf_strip_T1_E2
 
+        # Event 3
+        # Fails when Hermione hasn't stripped for you yet.
+        # Succeeds after Hermione's second dance favour.
+        elif cc_pf_strip_OBJ.points == 2:
+            jump cc_pf_strip_T1_E3
+
+        # Event 4
+        # Repeat of event 3 with different intro.
+        else:
+            jump cc_pf_strip_T1_E4
+
+
+    # End event jump
+    # (only used when the event isn't called.)
+    label end_cho_strip_event:
         if cho_whoring < 8: # Points til 8
             $ cho_whoring += 1
-        if cc_pf_strip_OBJ.level < 3: # Hearts 1+2
+        if cc_pf_strip_OBJ.level < 4: # Hearts 1 to 4
             $ cc_pf_strip_OBJ.level += 1
 
     # Stats
@@ -29,17 +44,9 @@ label cc_pf_strip:
 
 ### Tier 1 ###
 
-# Event 1, summary:
-# Cho will remove her clothing for you. At first she only agreed to remove her top and skirt, but after you promise her that nobody will know, she strips down completely.
-
-# Event 2, summary:
-# After getting naked again, Cho asks you to summon Hermione into your room.
-# While still concerned about her reputation, and Hermione's record of tarnishing it, she knows there is no thread from Hermione anymore, as she can blackmail Hermione with the knowledge about her favor trading.
-# Cho wants to body shame Hermione. You summon her. She's in shock. Cho makes fun of her and Hermione gets angry at you.
-
 label cc_pf_strip_T1_E1:
     m "It's time for your next favour, [cho_name]."
-    cho "I uhm- I think I'm ready."
+    cho "I- *uhm*...{w} I think I'm ready."
     cho "What would you like me to do, [cho_genie_name]?"
     m "How often do you typically exercise, Miss Chang?"
     cho "As often as I can, [cho_genie_name]!"
@@ -48,7 +55,11 @@ label cc_pf_strip_T1_E1:
     m "What?!"
     g4 "(I don't even jerk off that often!)"
     m "You are clearly exaggerating..."
-    cho "I am not! It's necessary for somebody in my position!"
+    cho "I'm not! It's necessary for somebody in my position!"
+
+    m "I assume you get complimented often?"
+    cho "Occasionally..."
+    g9 "You must have many admirers."
 
     # Add section here.
 
@@ -56,21 +67,21 @@ label cc_pf_strip_T1_E1:
     cho "(!!!)"
     m "Go on, girl. Start with the top..."
     cho "No!"
-    cho "Why are you even ask me of such a thing?!"
+    cho "Why are you even asking me to do such a thing?!"
     m "I- uhm-..."
 
     menu:
         "\"I need to inspect your body!\"":
-            m "You know, just making sure that you are even fitted for the job...{w} Literally..."
+            m "You know, just making sure that you're fitted for that Quidditch job...{w} Literally..."
             cho "I am!"
             m "After all, you only work out three times a day."
             m "As your [cho_genie_name], I need to have a proper look at you..."
             m "Do you even keep your body in shape?"
             m "By the looks of it I'd say you are doing okay."
             cho "Only okay?!"
-            m "I can only judge you probably once I get a better look at it..."
+            m "I can only judge you probably once I've getten a better look at you..."
         "\"Hermione asked me to...\"":
-            cho "Granger? And why would she do that?"
+            cho "Granger? And why'd she do that?"
             g4 "(I'm running out of excuses!)"
             m "Because she believes you wouldn't be up for it?"
             cho "Did she?"
@@ -79,7 +90,7 @@ label cc_pf_strip_T1_E1:
             cho "Her body is --- compared to mine!"
 
     call cho_main("I wake up every morning before dawn and run the Quidditch pitch, until the sun rises!","angry","narrow","angry","mid")
-    call cho_main("My body's at the absolute peak of human and wizard condition!","open","angry","angry","mid")
+    call cho_main("My body's at the absolute peak of human condition!","open","angry","angry","mid")
     g4 "It is quite impressive, I've got to say!"
     call cho_main("Glad to hear it, [cho_genie_name].","smile","angry","angry","mid")
     g9 "Now let me see it!"
@@ -122,7 +133,7 @@ label cc_pf_strip_T1_E1:
             cho "Thank you, Sir!{w} I'm glad you noticed!" # Happy
             cho "It's a relief to see your interest in my body status!"
             m "(Oh- You have no idea, girl!)"
-            cho "I thought you just wanted to gush at my body like all the other teachers..."
+            cho "I thought ye just wanted to gush at my body like all the other teachers..."
             m "Who?{w} Which other teachers are you talking about?"
             m "Snape?"
             cho "No, not him."
@@ -131,20 +142,20 @@ label cc_pf_strip_T1_E1:
             m "Her?!"
             cho "Madame Hooch, Sir."
             m "Ah, the old, gray haired lady..."
-            cho "Yeah she's been eyeing me a lot lately..."
+            cho "Yeah, she's been eyeing me a lot lately..."
             cho "Even more so after our recent game against Hufflepuff. I woder why..."
             g9 "And I wonder why you haven't taken off that skirt already!"
 
         "\"Would you look at those abs!\"":
-            cho "Uhm-..." # Embarrassed
+            cho "*Uhmm*..." # Embarrassed
             g9 "You didn't tell me you had such nice abs, girl!{w} Why were you hiding them from me?"
             cho "I wasn't hiding anything..."
 
             # Add section here.
 
-            call cho_main("Are you surprised, Sir?{w} I bet you only get to see wrinkly Hermione...","soft","narrow","angry","mid")
-            call cho_main("Does Hermione have abs like this? Of course she doesn't!","horny","base","raised","down")
-            call cho_main("All she does is sit at the library all day stuffing her head with useless junk...","open","angry","angry","mid")
+            call cho_main("Are you surprised, Sir?{w} I bet ye only get to see that munter Hermione...","soft","narrow","angry","mid")
+            call cho_main("Does she have abs like this? O' course she doesn't!","horny","base","raised","down")
+            call cho_main("All she does is sit at the library all day stuffing that balloon of hers...","open","angry","angry","mid") # Balloon = air head
             m "(...)"
             call cho_main("I bet my \"tight\" body looks way better than hers!","soft","base","raised","mid")
 
@@ -160,13 +171,10 @@ label cc_pf_strip_T1_E1:
                     call cho_main("...stupid...","angry","closed","angry","mid")
                     call cho_main("...fat...","angry","narrow","angry","mid")
                     call cho_main("...cow, isn't she?","quiver","narrow","angry","mid")
-                "\"I can't choose\"":
-                    m  "You're both hot."
-                    call cho_main("In your dreams...","pout","narrow","angry","downR")
-                    g9 "Not for much longer!"
+
                 "\"Nope, you lose\"":
-                    m "I'm afraid, Miss Granger is simply...{w} how shall I put it...{w} sexier!"
                     call cho_main("What?!","scream","wide","angry","mid",trans="hpunch")
+                    m "I'm afraid, Miss Granger is simply...{w} how shall I put it...{w} sexier!"
                     m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
                     call cho_main("But she doesn't even do work-outs!","angry","narrow","angry","downR")
                     $ cho_mood +=6
@@ -205,88 +213,393 @@ label cc_pf_strip_T1_E1:
     g4 "Look at those thighs!"
     g4 "Those tree-trunks!"
     g9 "Even the great \"Chun Lee\" would be jealous of those!"
-    call cho_main("I'm sorry, who?","soft","wink","raised","mid")
+    call cho_main("I'm sorry Sir, who's that?","soft","wink","raised","mid")
+    m "One of the best female street fighters, if you know how to play with her..."
+    cho "(Play with her?!)"
+    g9 "Speaking of which!{w} I don't believe we are done here just yet."
+    cho "We aren't? But I did exactly what ye wanted!"
+    g9 "You've still got some clothes on..."
+    cho "Sir is this why you are helping me?"
+    cho "Is this all just part of a sick scheme to get to see me naked?"
+    m "(...)"
+
+    menu:
+        "\"It absolutely is!\"":
+            $ cho_mood += 20
+            $ cho_mad_about_stripping = True # Flag that enables different dialogue that is a bit more "lewd" in the next favor repeat.
+            g9 "Now take off that bra of yours and show me those titties!"
+            cho "[cho_genie_name], how can you talk to me like that!"
+            cho "I'm your student!"
+            g9 "And a very pretty one at that!"
+            cho "You disgust me, Professor..."
+
+        "\"Of course not...\"":
+            $ cho_mood += 6
+            $ cho_mad_about_stripping = False
+            cho "Aye right..." # Expression of disbelieve...
+            cho "And I'm supposed to believe that."
+            cho "You're practically foaming out of your mouth just looking at me..."
+            g4 "I'm not...{w} that's just..."
+            #if butterbeer_ITEM.number > 0:
+            g4 "Butterbeer..."
+            cho "This is as far as I will go, Sir!"
+
+    cho "If you want a bimbo to strip for you, I suggest ye call Hermione instead..."
+
+    hide screen cho_chang
+    $ cho_class.wear("all")
+
+    call cho_main("We are done here!","angry","angry","angry","mid")
+
+    # Cho leaves.
+    call cho_walk(action="leave", speed=2.2)
 
     return
 
 
+
 label cc_pf_strip_T1_E2:
-    cho "[cho_genie_name], may I ask, does Hermione do these sorts of things for you?"
+
+    return
+
+
+
+label cc_pf_strip_T1_E3:
+
+    # Intro for the first time you summon Hermione to watch Cho having fun, naked in your office…
+
+
+    cho "[cho_genie_name], may I ask, does Granger do these sorts of things for you?"
     g9 "She does a lot of things for me. You need to be more specific!"
-    cho "I meant buying favours. Doing tasks that are, let's say, a little audacious..."
+    cho "I meant buying favours. Doing tasks that are, let's say, a wee bit... audacious..."
     m "Are you talking about stripping, girl?"
     cho "I am, Sir."
 
-    #menu:
-    #    "":
+    # Add section here.
 
     cho "[cho_genie_name], could you please do me a huge, huge favour?"
-    m "For you, anything my dear..."
-    cho "Great! I'd like to to summon Hermione."
+    m "Of course, anything my dear..."
+    cho "Great! I'd like ye to summon Granger."
     with hpunch
     g4 "What?"
-    cho "You've heard right."
+    cho "You heard right."
+    cho "It’s time someone throws \"high and mighty\" Granger from her high horse!"
+    cho "She’s been a pain in my butt for years now…"
+    cho "This is going to be my revenge!"
+
+    # Check if Hermione is willing to strip for you.
+    if hg_pf_dance_OBJ.points < 2:
+        m "I don’t think it’s a good idea…"
+        cho "Why not? I’m not scared o' her!"
+        m "Have you ever thought about what it could mean for me?"
+        cho "What’s the worst that could happen?"
+        m "She could report me, and I’d get kicked out of this school most likely."
+        m "She’s reported me to that ministry before..."
+        cho "The \"ministry of magic\"?!"
+        cho "She's nuts! Isn’t she in on this too? All the favour trading?"
+        m "Lets just say, she isn’t as progressive as you...{w} yet."
+        cho "Wait, you haven’t even seen her naked?"
+        cho "What favours are you even buying from her?"
+        m "Just chit-chats, mostly…"
+        cho "Make her strip too!"
+        g4 "It’s not that easy, girl!"
+        cho "Well then get on with it! I want to see her humiliated!"
+        m "(...)"
+
+        # Cho leaves.
+        call cho_walk(action="leave", speed=2.5)
+
+        jump end_cho_event
+
+    else:
+        pass
+
+    m "Are you sure that’s a good idea? Aren’t you scared she’ll tattle about you?"
+    cho "No. Granger is smarter than that..."
+    cho "I’m not the only one stripping for you, ain’t I."
+    m "I suppose not..."
+    cho "I can’t believe how depraved Granger actually is..."
+
+    # Cho removes her top.
+    # Cho removes her robe.
+
+    cho "Stripping for her headmaster. What a slut..."
+
+    # Cho removed her bottom.
+
+    m "Aren’t you doing exactly the same?"
+    cho "Yes, but I’m doing it for a good cause.{w} Not because I’m a slut!"
+    cho "I’m untouchable! I’ll show that bitch she can’t mess with me!"
+    cho "This is gonna be so much fun!"
+    cho "Don't ye think so too, [cho_genie_name]?"
+
+    # Cho removes her bra.
+
+    # Add writing. Hermione is shocked. Cho blackmails her...
+
+    cho "Tell me, Professor..."
+    cho "How do you like the athletic, immaculate body of your student?"
+    cho "Isn't it so much better than Miss Granger's?"
 
     jump cc_pf_strip_T1_hermione
 
-label cc_pf_strip_T1_E3:
+
+
+label cc_pf_strip_T1_E4:
+
+    g9 "[cho_name], I’m in the mood for another strip-tease!"
+    cho "Funny you should say that, [cho_genie_name]..."
+
+    # Cho removes her top.
+    # Cho removes her robe.
+
+    cho "Because so am I!"
+
+    # Cho removes her bottom.
+
+    g4 "*Argh!* You little minx!"
+
+    cho "Are we going to invite Granger again?"
+    cho "I want to have some fun with her..."
+    cho "Let her watch..."
+
+    # Cho removes her bra.
+
+    g9 "The more, the merrier!"
+    cho "I agree."
+
+    # Cho removes her panties.
+
+    cho "Catch, [cho_genie_name]!"
+    call nar("Cho throws her panties at you.")
+
+    # Panties acquired message!
+    $ has_cho_panties = True
+
+    g9 "Nice!"
+    cho "I'd like to have them back after this, mind you."
+    m "Of course..."
+    cho "Now, if ye don't mind, Sir..."
+    cho "I'd like you to call that Gryffindor slut to your office!"
+    g9 "On it!"
+    cho "(...)"
+    m "(...)"
+
+    # Hermione enters.
+    call her_chibi("stand","door","base")
+    with d3
+    pause.2
+
+    her "You wanted to see me, Professor?"
+    g9 "Yes, but I wasn't the only one."
+    her "(...)" # Annoyed look at Cho
+    cho "Hi, Granger!" # Grinning
+    her "Let me guess, we are here to marvel at your insecurity again?"
+    cho "Why don't you join me, Granger? Strip down for your headmaster, like you usually do..."
+    her "*glare*" # Hermione glares at you angrily.
+    cho "Maybe then you'd have a chance to win against me! And earn some useless Gryffindor point while you're at it."
+    her "I don't think that will even be necessary..."
+    cho "Well, we all know how this is going to end, don't we, [cho_genie_name]?"
+    cho "My body is still better than Miss Granger's, isn't it?"
+
     jump cc_pf_strip_T1_hermione
+
+
 
 label cc_pf_strip_T1_hermione:
 
-    cho "Tell me, Professor..."
-    cho "Do you like my athletic, naked body, Sir? Is it better than Miss Granger's?"
-
     menu:
         "\"Definitely!\"":
-            $ cho_mood += 10
-        "\"Not even close!\"":
-            $ cho_mood += 30
-        "\"Ask Hermione.\"":
-            che "Her?"
-            her "I couldn't care less about the way she looks?"
-            m "Are you sure about that?"
-            m "Miss Granger, I'd like to you rate Miss Chang's figure, truthfully, and to the best of your ability."
-            her "Do I really have to?"
+            $ her_mood += 10
 
-            if her_whoring < 11:
-                her "I refuse to give her a rating, Professor."
-            elif whoring < 24:
-                her "B+"
-                cho "Only a B?"
-                m "With a plus at the end, mind you..."
-                cho "So in your opinion, Granger, my body has flaws?"
-                her "Naturally..."
-                cho "That's quite curious, don't you think so too? Professor?"
-                m "Is a B+ not good enough for you?"
-                cho "Are you kidding? Not even close!"
-                cho "And I also know she isn't entirely truthfull!"
-                her "But I am! And it's a C+ now!"
-                cho "You area lying bitch, Granger!"
-                her "Sir, you can't let her talk to me like that!"
-                m "Bitch isn't even a proper curse word. You can say it on TV..."
-                cho "Tell me Granger. If my body is so noticably flawd as you say, then it should be an easy task for you to define them to us."
-                her "Of course. "
-                her "Well, there is obviously"
+            # Hermione steals Cho's clothes and runs off.
+
+            # Cho has to sneak out naked.
+
+            jump end_cho_strip_event
+
+        "\"Not even close.\"":
+            $ cho_mood += 15
+            cho "Thank you, Sir. Just what I thought you'd sa-"
+            her "*Hihihi*"
+            cho "What?!"
+            cho "Professor, could you please repeat that for me?"
+            m "Hermione's body is better."
+            her "Thank you, Professor..." # Small text. Cute and shy
+            cho "No!{w} It clearly isn't!" # Scream
+            cho "You are mad, old man!"
+            her "Don't talk like that to our headmaster..."
+            her "After all, he's the smartest living wizard!{w} Surely he has to know what he's talking about."
+            g9 "Miss Granger, why don't you show Miss Chang why I chose you..."
+            g9 "Share with us your two most compelling arguments..."
+            her "Sir?"
+            cho "He's talking about your \"tits\", ye dimwit!" # Angry
+            her "(...)" # Embarrassed
+            g9 "Yes Miss Granger!{w} Your very round{w}, handsomely sphered{w}, perfectly sized{w}, very voluptuous and-"
+            her "I got it, Professor!"
+            cho "(Cow tits...)"
+            her "Here..."
+
+            # Hermione lifts her top
+
+            her "Have a good look."
+            cho "(...)" # Tries to look away.
+            her "You can have a peek too, slut."
+            cho "I'd rather not, or I might have to boak..." # Boak = vomit
+            g9 "Very nice, Miss Granger!"
+
+            menu:
+                "\"Ten points to Gryffindor!\"":
+                    cho "(...)"
+
+                "\"Fifty points to Gryffindor!\"":
+                    $ cho_mood += 10
+                    cho "(Fifty?!)" # Shocked
+
+            her "Thank you."
+            g9 "For exposing those magnificent breasts to us."
+            her "Any time, Professor."
+            cho "(I bloody hate her!)"
+
+            her "If you don't mind, Sir."
+            her "I'd like to leave now."
+            cho "By all means, just go already."
+            her "Is somebody mad? Did something not go as you expected?"
+            her "Even exposing yourself wasn't in your favour..."
+            her "Thank you for inviting me, Proffessor."
+            her "I \"did\" enjoy watching this little, obscene freak-show you've arranged for me..."
+            cho "You'll regret this, Granger!"
+            her "Oh, will I?{w} I bet it's just another empty threat of yours."
+            her "You don't have the balls..."
+            cho "(...)"
+
+            if daytime:
+                her "Have a nice day, Professor."
+            else:
+                her "Have a good night, Professor."
+
+            m "(...)"
+            her "See you in school, slut!"
+            cho "*Tzzzz!*"
+            cho "Cow..."
+
+            # Hermione leaves.
+            call her_walk("mid","leave",2.5)
+
+            cho "I thought you were on my side, Sir..."
+            m "I'm on nobody's side, because nobody is on my side..."
+            cho "You're supposed to have my back! Not Granger's!"
+            cho "That \"whore\" doesn't deserve your praise!"
+            m "She made some good arguments..."
+            g9 "\"Two\" good arguments, to be precise!"
+            cho "They're barely larger than mine!"
+            cho "You'll see, Sir. I'm better than her. I'll prove it to you..."
+            g9 "I'm looking forward to it!"
+
+            # Cho puts her clothes back on.
+
+            # Cho walks closer to your desk.
+
+            cho "Sir, my *uhm*... my panties..."
+            m "Oh, Right...{w} one second."
+            call nar("You give them one last sniff before handing them back to the girl.")
+            g4 "There."
+            cho "(Pervert...)"
+            cho "I have to go now."
+            cho "Until next time, [cho_genie_name]."
+
+            # Cho leaves.
+            call cho_walk(action="leave", speed=2.5)
+
+            call bld
+            g4 "Damn!"
+            g9 "For somebody that does a lot of sport, she smells really nice!"
+            m "Maybe I should be a bit nicer to her next time..."
+
+            $ has_cho_panties = False
+
+            jump end_cho_strip_event
+
+
+        "\"Ask Hermione.\"":
+            $ her_mood += 6
+            cho "Her?"
+            her "I couldn't care less about the way she looks!"
+            m "Are you sure about that? I've seen you staring..."
+            her "Because she just so happens to be standing there, butt naked! In your own office!"
+            her "What other choice to I have than to look at the obscenity of this slut!"
+            m "I'd like to you rate Miss Chang's figure, truthfully, and to the best of your ability."
+            her "Do I really have to?"
+            g9 "You do! And I'd really like to hear your opinion about Miss Chang's shamelessly exposed body!"
+            cho "*Hmmmpf*" # Self assured.
+            her "Fine..."
+            her "\"Poor\", I'd say..."
+            cho "How dare you! You snobby skunk!"
+            m "(Is that better or worse than \"troll\"?)" # Snape explained school ratings during the match.
+            cho "Our Professor asked you to rate my body truthfully!"
+            her "Which I did!{w} And it's at \"dreadful\" now!"
+            cho "\"Dreadful\"?!"
+            cho "You're a lying bitch, Granger!"
+            her "Sir, you can't let her talk to me like that!"
+            m "Bitch isn't even a proper curse word. You can even say that on TV..."
+            cho "Tell me Granger. If my body is so noticeably flawed as you say, then it shouldn't be too difficult for you to define those flaws for us."
+            her "Very well…"
+            her "For one, you are one huge narcissistic bitch!{w} That likes to think her body is superior to others..."
+            cho "Because it is." # Grinning
+            her "Not to mention that you have even fever curves than some of the boys I know..."
+            her "Maybe once your Quidditch endeavors all fail, you can apply for a profession to model male underwear..."
+            cho "Nice one, Granger."
+            cho "I wonder where you're getting \"your\" undergarments from..."
+            cho "Stealing them from Madam Pomfrey, are ye?"
+            her "I do not!!!"
+            m "Girls, we all know that what really counts is how we look on the inside."
+            cho "Oh- Shut up!" # Annoyed
+            her "Professor, you are the one who continuously asks us to expose ourselves for you..." # Angry
+            m "Well yes. I also never claimed that \"I\" was pretty on the inside."
+            m "I'm a guy, Miss Granger. You of all people should know better..."
+            her "Despicable..."
+            cho "Don't worry.{w} If you're to start doing hourly exercises, our Professor might even be attracted to ye by the end of the year..."
+            her "Hourly exercises?" # Shocked
+            cho "By the way Granger{w}, I \"do\" love your huge melons!"
+            her "How dare you talk of them like that!"
+            g9 "*Heh*... melons..."
+            her "Sir, I’d like to leave now."
+
+            cho "Already missing your books?"
+            her "I am not. And I don't appreciate being made fun of!"
+
+            if daytime:
+                her "Good day, Sir."
+                cho "See ya around, Granger..."
+                her "*Hmpf*"
 
             else:
-                her "I uhm-..."
-                her "I'm a bit ahamed to admit, in front of her, but..."
-                cho "Yes, Granger..."
-                her "I'd probably give it an...{w} \"A\"."
-                g9 "Hear, hear!"
-                her "Maybe even an \"A+\"..."
-                cho "Thank you..." # Confident.
-                her "(...)"
-                cho "I ecpected nothing less."
-                m "I'm surprised about that, Granger."
-                her "I mean would you just look at it! It's utter ridiculous!"
-                her "There isn't the tiniest flaw! Her body is so marvellous it almost drives me mad!!!"
-                her "I wish I could find one but..."
-                cho "Yours isn't too bad either, Granger."
-                cho "If you were to start doing hourly exercises, you might even get close to where I'm at by the end of the year..."
-                her "Hourly exercises?" # Shocked
-                cho "And I do love your huge melons!"
-                her "How dare you talk of them like that!"
-                g9 "*Heh*... melons..."
-    cho "I have to say, [cho_genie_name], doing those favours is fun!"
+                her "Good night, Sir."
+                cho "Nighty-night, Granger..."
+                her "*Tzzzzzh!*"
+
+            # Hermione leaves.
+            call her_walk("mid","leave",2.5)
+
+            cho "I have to say, [cho_genie_name], doing these favours is fun!"
+            m "I'm glad you're enjoying yourself."
+            cho "Believe me, Sir. I am."
+
+            # Cho puts her clothes back on.
+
+            cho "Now, if ye excuse me..."
+
+            if daytime:
+                cho "I have to head back to classes."
+                m "I still got your-"
+                cho "See ya next time, [cho_genie_name]!"
+            else:
+                cho "I have to head back to our dorms."
+                m "Don't you want your-"
+                cho "Sweet dreams, [cho_genie_name]!"
+
+            g9 "Nice, her panties!"
+
+            $ has_cho_panties = True
+
+            jump end_cho_strip_event

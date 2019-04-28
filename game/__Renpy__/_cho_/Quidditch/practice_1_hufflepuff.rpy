@@ -201,7 +201,7 @@ label hufflepuff_practice_win_1:
     g9 "Sounds like somebody should get a reward for his efforts!"
     call cho_main("Ah!!! I can't believe I was able to finally catch it!","smile","closed","base","mid")
     m "Is this the first time you've caught one?"
-    call cho_main("*Uh-huhm* This is the first game o' quidditch \"Ravenclaw\" has won in over six years!","smile","base","base","mid")
+    call cho_main("Uh-hum- This is the first game of quidditch \"Ravenclaw\" has won in over six years!","smile","base","base","mid")
     m "Wasn't this just a practice game?"
     call cho_main("I was including the practices, [cho_genie_name]...","annoyed","narrow","sad","downR")
     m "oh..."
@@ -215,13 +215,13 @@ label hufflepuff_practice_win_1:
         m "Why don't we start with that, Miss Chang,...{w} favours!"
         m "I did prove the effectiveness of my methods to you. Now it's your turn to stay true to your promise..."
         cho "Of course, Sir."
-        cho "But, if ye don't mind..."
+        cho "But, if you don't mind..."
     else:
         g9 "You could sell some more favours to me!"
         cho "Is it just talking?"
         m "I had hoped for something more... advanced."
         cho "(...)"
-        cho "If ye don't mind, maybe some other time, Sir."
+        cho "If you don't mind, maybe some other time, Sir."
 
     cho "The whole house is celebrating our win at the moment... And I'd rather not miss spending some time with-"
     g4 "You did well today, [cho_name]."
@@ -243,7 +243,7 @@ label hufflepuff_practice_win_1:
 
 label hufflepuff_practice_win_2:
 
-    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",xpos="mid",ypos="base",trans="hpunch")
+    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",trans="hpunch")
     m "Did you catch that gold thing?"
     call cho_main("I've never felt so humiliated in my entire life!","open","angry","angry","R")
     g4 "Did you win or what?{w} I'm on the edge of my seat here, girl!"

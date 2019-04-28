@@ -68,7 +68,7 @@ label quidditch_training_intro_1:
     call cho_main("!!!","smile","base","base","downR") # Happy
     call cho_main("Shall I call the rest of my team up here?","open","base","base","mid")
     m "What? Why?"
-    call cho_main("So they can hear your expertise as well, o' course.","soft","narrow","base","mid")
+    call cho_main("So they can hear your expertise as well, of course.","soft","narrow","base","mid")
     m "I don't think that will be necessary."
     m "Let's focus on you, for the moment..."
     call cho_main("Very well, [cho_genie_name].","soft","base","base","R")
@@ -88,7 +88,7 @@ label quidditch_training_intro_1:
     call cho_main("You just said the same thing twice...","open","base","raised","R")
     m "Exactly..."
     call cho_main("(...)","annoyed","narrow","angry","mid")
-    call cho_main("But what am I supposed to do once he catches sight o' it?","open","narrow","base","mid")
+    call cho_main("But what am I supposed to do once he catches sight of it?","open","narrow","base","mid")
     m "Catches the sight of what?"
     call cho_main("The snitch!","annoyed","narrow","base","mid")
     m "Oh, I see..."
@@ -188,9 +188,9 @@ label quidditch_training_intro_2:
     call cho_main(xpos="mid",ypos="base",trans="fade")
     m "Did you finally come to terms with my training methods?"
     cho "No, Sir."
-    cho "But I've simply run oot o' options.{w} If we ought to win, then you're our only hope we have..."
-    cho "So we might as well try your methods, Sir."
-    g9 "I'm glad you came to your senses, [cho_name]!"
+    cho "I've simply run out of options.{w} Without your help "
+    cho "So I might as well try your methods, Sir."
+    g9 "I'm glad you came to your senses."
     cho "(...)"
     g9 "Let's discussing tactics then, shall we!"
     cho "(...)"
@@ -198,21 +198,21 @@ label quidditch_training_intro_2:
     m "What did I suggest last time again?"
 
     if quidditch_position == "front":
-        cho "You were raving about my bum, Sir."
+        cho "You were raving about my bottom, Sir."
         g9 "That's right! Your ass!{w} Now I remember!"
         cho "(...)"
-        cho "I'm not here to deny that my behind's in great shape.{w} And I'm very proud o' it!"
+        cho "I'm not here to deny that my behind is in great shape.{w} And I'm very proud of it!"
         g9 "You should be!"
         cho "But, May I ask, Sir..."
         cho "How exactly did you picture my \"ass\" helping us win?" # Annoyed
 
     elif quidditch_position == "above":
         cho "It had something to do with panties."
-        cho "However, I have no clue why ye would include panties in our training..."
+        cho "However, I have no clue why you would include panties in our training..."
         g9 "Ah yes. Panties!{w} Now I remember!"
 
     elif quidditch_position == "close":
-        cho "You wanted me to have sex with their seeker..."
+        cho "You wanted me to have sex with Cedric..."
         m "I did?"
         cho "You did! You ask me to get intimate with him!"
         g9 "Yes, now I remember!"
@@ -274,6 +274,15 @@ label change_quidditch_tactics:
 
     else:
         menu:
+            "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
+                jump start_training_match
+
+            "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:
+                if not daytime:
+                    call nar(">You can only do that during the day.")
+                else:
+                    call nar(">You can't do that right now.")
+
             "-Fly Test-":
                 $ cho_flying = True # Demonstrating
                 m "Start flying, [cho_name]."
@@ -289,14 +298,6 @@ label change_quidditch_tactics:
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(xpos="wardrobe",ypos="base", face="neutral")
-            "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
-                jump start_training_match
-
-            "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:
-                if not daytime:
-                    call nar(">You can only do that during the day.")
-                else:
-                    call nar(">You can't do that right now.")
 
             "-Go Back-":
                 cho "Very well, [cho_genie_name]."
@@ -349,16 +350,16 @@ label demonstrate_tactic(position=""):
         g4 "Fly right above my head!"
 
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
-            cho "But then ye could see under my skirt, [cho_genie_name]!"
+            cho "But then you could see under my skirt, [cho_genie_name]!"
             g4 "Which is what we are going for, [cho_name]!"
             g4 "Maximum distraction!{w} Now show me those panties!"
             cho "(...)"
         else:
-            cho "O' course, [cho_genie_name]..."
+            cho "Of course, [cho_genie_name]..."
 
         call cho_walk("mid", "100", 0.5)
 
-        cho "How's this?"
+        cho "How is this?"
         call gen_chibi("hide")
         $ genie_chibi_stand = "characters/genie/chibis/standing.png"
         call gen_chibi("stand","desk","base")
@@ -367,7 +368,7 @@ label demonstrate_tactic(position=""):
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
-            cho "*Uhm*...{w} Thank you, [cho_genie_name]."
+            cho "Uhm-...{w} Thank you, [cho_genie_name]."
             m "(I have created the ultimate up-skirt!)"
             m "(Nothing can stop us now...)"
         else:

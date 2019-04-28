@@ -48,7 +48,7 @@ label cc_pf_talk:
 label cc_pf_talk_T1_E1:
     m "Let’s have a little chat shall we."
     g9 "Just to get to know each other a little bit better."
-    call cho_main("O' course, Sir.","smile","base","base","mid")
+    call cho_main("Of course, Sir.","smile","base","base","mid")
     m "First, I'd like you to come a bit closer."
     call cho_main("Very well, [cho_genie_name]...","soft","base","base","R")
 
@@ -68,8 +68,9 @@ label cc_pf_talk_T1_E1:
     call cho_main("And I don’t see how this information would be of importance for my training.","open","wide","raised","downR")
     call cho_main("Why would it matter if- {w}Even if I did I'd-","soft","wide","base","down")
     g9 "So you don't have one?"
-    call cho_main("You're making me nervous, [cho_genie_name]. {image=textheart}","horny","narrow","sad","R")
-    m "(So cute.{w=0.5} Perhaps this is something I could push her further on...)"
+    call cho_main("You are making me nervous, [cho_genie_name]. {image=textheart}","horny","narrow","sad","R")
+    m "(So cute.{w=0.5} She's almost making me feel things...)"
+    m "(Perhaps this is something I could push her further on...)"
 
     call cho_main("Sir, I do not have a boyfriend at the moment.{w} I hope that answers your question.","soft","closed","angry","mid")
     g9 "So, a girlfriend then?"
@@ -89,10 +90,10 @@ label cc_pf_talk_T1_E1:
             m "Like a first kiss, who it was with, and so on..."
             call cho_main("You think I'm mature?","soft","base","base","mid")
             g4 "(That's what she's focusing on?)"
-            m "*Ahem*, yes.{w=0.5} Of course you are, don't you think so?"
+            m "Ahem, yes.{w=0.5} Of course you are, don't you think so?"
             call cho_main("Well, my previous boyfriend didn't seem to think so...","open","base","raised","R")
             m "So you did have one?"
-            call cho_main("*Ugh*{w=0.8} Fine...{w=0.8} I'll tell you about him...","soft","narrow","base","down")
+            call cho_main("*Urgh*{w=0.8} Fine...{w=0.8} I'll tell you...","soft","narrow","base","down")
 
             pass
 
@@ -100,7 +101,7 @@ label cc_pf_talk_T1_E1:
             m "Swinging the other way, you know..."
             call cho_main("What?","angry","wide","base","mid")
             m "Some people like flicking the bean rather than rubbing a wand..."
-            call cho_main("*Uhmm*, I never said I minded either way...","quiver","narrow","sad","R")
+            call cho_main("Ugh, I never said I minded either way...","quiver","narrow","sad","R")
             m "So you have had a girlfriend?"
             call cho_main("I'd rather not talk about it right now...","soft","narrow","sad","mid")
             m "(Damn, maybe that's not the way to go about this, maybe instead I could tell her...)"
@@ -116,20 +117,17 @@ label cc_pf_talk_T1_E1:
             g4 "Very sexual!"
             call cho_main("!!!","annoyed","wide","base","mid")
             g9 "Lots of acrobatic stuff!"
-            call cho_main("NO Sir, please!{w=0.5} I don't want to know any o' that!","scream","closed","angry","mid",trans="hpunch")
+            call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!","scream","closed","angry","mid",trans="hpunch")
             call cho_main("(Gross!{w=0.5} Keep it to yourself...)","angry","narrow","sad","R")
             m "I just wanted to expand my backstory a little bit...{w=0.5} What's so wrong with that..."
 
             jump get_cho_to_talk
 
     # Cedric Diggory
-    call cho_main("Cedric was my boyfriend during the time Hogwarts was hosting the \"triwizards tournament\".","soft","base","base","R")
+    call cho_main("Cedric was my boyfriend during the time Hogwarts was hosting the triwizards tournament.","soft","base","base","R")
     m "(They host tournaments here? Interesting...)"
     call cho_main("That year was the most fun I've ever had!","smile","base","base","mid")
-    m "Was he that good?"
-    call cho_main("What?{w=0.5} No, Sir, not because o' him!{w} The tourney, [cho_genie_name]!","soft","narrow","base","mid")
-    m "Sure..."
-    call cho_main("We should have it every year if ye were to ask me!","open","closed","base","mid")
+    call cho_main("We should have this tourney every year, at least if you were to ask me!","open","closed","base","mid")
     g9 "(A cosplay tournament is what this school needs...)"
     call cho_main("Sir that would be great!","smile","narrow","base","mid")
     g4 "(Wait, wait!{w=0.8} A \"nude\" cosplay tournament!{w=0.6} Even better!)"
@@ -139,14 +137,13 @@ label cc_pf_talk_T1_E1:
     m "Now tell me, how come you two ended up together?"
     call cho_main("Oh. Well...","soft","base","base","down")
     call cho_main("I have this thing for...{w=0.5} athletes.","horny","base","base","down")
-    call cho_main("Cedric was the representative champion of our school, so o' course I had to date him.","horny","base","sad","down")
+    call cho_main("Cedric was the representative champion of our school, so of course I had to date him.","horny","base","sad","down")
     m "Of course..."
-    m "(She's into athletes, so so...)"
     g4 "(You should see me, girl. I'm shredded!)"
     m "(Too bad you can only see the body of that wrinkly old geezer...)"
     m "(Maybe there's like a steroid spell...)"
     g4 "{size=-4}Plexus maximus!{/size}"
-    call cho_main("Did ye say something?","soft","base","raised","mid")
+    call cho_main("Did you say something?","soft","base","raised","mid")
     m "Oh, it was nothing... go on."
 
     call cho_main("Anyway, Cedric even put his life at risk during the whole thing.","open","base","base","R")
@@ -162,16 +159,16 @@ label cc_pf_talk_T1_E1:
     m "I could've sworn I read that somewhere..."
     m "Are you sure he's still around?{w} What if he \"did\" die, but then he returned from the dead?"
     g4 "For all you know he could be a vampire!"
-    call cho_main("Sir, you're talking nonsense...","annoyed","angry","angry","R")
-    call cho_main("Please don't joke about your student like that. It's so unlike you...","open","closed","base","mid")
-    call cho_main("He's one of your bests! The best student \"Hufflepuff\" has ever seen!","open","base","base","mid")
-    m "A \"Hufflepuff\"? Well, that explains everything..."
+    call cho_main("Sir, you're being ridiculous...","annoyed","angry","angry","R")
+    call cho_main("Please don't joke about your students. It's so unlike you...","open","closed","base","mid")
+    call cho_main("He's one of your bests! The best student Hufflepuff has ever seen!","open","base","base","mid")
+    m "A Hufflepuff? Well, that explains everything..."
     m "If he's such an exceptionally great student, then why aren't you two still together?"
     call cho_main("Things didn't work out, naturally...","open","base","raised","R")
     call cho_main("The tourney ended, and he didn't win, so...","soft","base","raised","down")
     m "So you two broke up?... Because he didn't win?"
     call cho_main("That was one of the reasons...","soft","base","base","downR")
-    call cho_main("There is also the fact that he's on the \"Hufflepuff Quidditch team\", as their Seeker.","open","base","base","mid")
+    call cho_main("There is also the fact that he's on the Hufflepuff Quidditch team, as their Seeker.","open","base","base","mid")
     call cho_main("It's our last shot at winning the Quidditch house cup, for the both of us.","angry","base","base","down")
     call cho_main("We'd constantly be at each other's throats.","soft","narrow","angry","mid")
     g4 "Intriguing!"
@@ -180,9 +177,9 @@ label cc_pf_talk_T1_E1:
     call cho_main("I didn't quite hear that, Sir.","base","base","base","mid")
     m "Who else did you do it with?"
     call cho_main("Do it with?","soft","narrow","raised","mid") # Shocked
-    m "Smooshing, kissing, snogging,...{w} whatever you call it nowadays..."
+    m "Smooshing, kissing,...{w} whatever you call it nowadays..."
     call cho_main("With all due respect, Professor, it's very odd that you'd ask me about those sort of things...","open","closed","base","mid")
-    call cho_main("But,... you \"are\" helping me.{w} So I guess I owe ye that much...","annoyed","base","base","R")
+    call cho_main("But,... you are helping me. So I guess I owe you that much...","annoyed","base","base","R")
     g9 "That's what I wanted to hear."
 
     # Fleur
@@ -194,8 +191,8 @@ label cc_pf_talk_T1_E1:
     g4 "You were cheating on that Hufflepuffer?"
     call cho_main("I wouldn't call it cheating, Professor. It wasn't even that serious with Cedric to begin with.","annoyed","narrow","base","mid")
     call cho_main("I had a unique opportunity that's all...","soft","base","base","R")
-    call cho_main("One of those \"no strings attached\" kind of things... Trying out new stuff...","smile","base","base","L")
-    m "Like what?"
+    call cho_main("One of those no strings attached kind of thing... Trying out new things...","smile","base","base","L")
+    m "New things? Like what?"
     call cho_main("Dating a girl, for example.","base","narrow","base","mid")
     g9 "(Finally this gets interesting!)"
     call cho_main("She was one of the students from Beauxbaton.","soft","base","base","downR")
@@ -204,8 +201,7 @@ label cc_pf_talk_T1_E1:
     g9 "And I hope you also frenched that french girl!"
     call cho_main("Among other things...","angry","closed","sad","mid") # Super embarrassed
     call cho_main("(Why am I telling him this?)","horny","narrow","sad","R")
-    g9 "And who was it?"
-    call cho_main("Fleur Delacour.{w} She was also a champion at the tourney.","soft","base","sad","mid")
+    call cho_main("You probably know her, since Fleur was also a champion at the tourney.","soft","base","sad","mid")
     g4 "I'm in shock!"
 
     # Viktor
@@ -236,9 +232,9 @@ label cc_pf_talk_T1_E1:
     call cho_main("I'm sorry, Sir. It's just that...","open","closed","raised","mid")
 
     if daytime:
-        call cho_main("I'm really late for classes. May we postpone this talk to some other time?","soft","narrow","sad","R")
+        call cho_main("I'm really late for classes. May we postpone this talk for some other time?","soft","narrow","sad","R")
     else:
-        call cho_main("It's getting really late. May we postpone this talk to some other time?","soft","narrow","sad","R")
+        call cho_main("It's getting really late. May we postpone this talk for some other time?","soft","narrow","sad","R")
 
     if masturbating:
         g4 "What? Please don't go now. I've only just started!"
@@ -260,7 +256,7 @@ label cc_pf_talk_T1_E1:
     else:
         m "Okay, girl. You may leave..."
         call cho_main("Thank you, Sir.","base","base","base","down")
-        call cho_main("See ye next time.","smile","base","base","mid")
+        call cho_main("See you next time.","smile","base","base","mid")
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.2)
@@ -286,13 +282,13 @@ label cc_pf_talk_T1_E2:
     call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans="fade")
     call ctc
 
-    call cho_main("Another talk, Professor?","soft","narrow","angry","mid")
+    call cho_main("Another chat, Professor?","soft","narrow","angry","mid")
     call cho_main("Are we going to discuss my previous relationships again?","open","narrow","base","R")
     g9 "I don't know.{w} Would you like to?"
     call cho_main("I'd rather not.","soft","narrow","angry","mid")
     m "Tell me about yourself then."
-    call cho_main("O' course, [cho_genie_name].","smile","base","base","mid")
-    call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against \"Hufflepuff\".","open","narrow","base","mid")
+    call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
+    call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against Hufflepuff.","open","narrow","base","mid")
     call cho_main("Our team really believes that we have a chance to win this time!{w} They got a great boost in confidance after I've told'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
@@ -302,12 +298,12 @@ label cc_pf_talk_T1_E2:
     call cho_main("Through diligance, expertice, and determination!","open","closed","base","mid")
     m "(...)"
     m "I was sort of expecting something else entirely but,... you do you..."
-    call cho_main("And as you can see it did work out in my favour, Sir.","open","base","base","mid")
+    call cho_main("As you can see it did work out in my favour, Sir.","open","base","base","mid")
     call cho_main("Very few teams have allowed a female player into their ranks over the past years.","open","narrow","angry","mid")
-    call cho_main("And I've been the only female seeker at this school in over half a century.{w} Can ye even believe that, [cho_genie_name]?","open","wide","base","mid")
+    call cho_main("And I've been the only female seeker at this school in over half a century.{w} Can you even believe that, [cho_genie_name]?","open","wide","base","mid")
     m "(A century? That's like a coffee brake for me girl...)"
     call cho_main("I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!","smile","narrow","base","mid")
-    call cho_main("If ye don't have a good seeker, you have no chance of winning!","soft","closed","base","mid")
+    call cho_main("If you don't have a good seeker, you have no chance of winning!","soft","closed","base","mid")
     m "Which is why you need my help so badly..."
     m "Because you are great at it..."
     call cho_main("That we're losing is neither my fault, nor my team's, [cho_genie_name]!","annoyed","base","angry","mid")
@@ -352,14 +348,14 @@ label cc_pf_talk_T1_E2:
     call cho_main("My own team, [cho_genie_name]!{w} They treat me like the plague!","upset","base","sad","mid")
     call cho_main("They ignore me during classes...","soft","closed","base","mid")
     call cho_main("When we're in our dormitories they are going out of their way to not cross paths with me...","annoyed","narrow","angry","R")
-    call cho_main("And in the showers they're scared to even look at me!","angry","angry","angry","mid")
+    call cho_main("And in the showers they are scared to even look at me!","angry","angry","angry","mid")
     if masturbating:
         g4 "{size=-4}Yes, yes!{w} Even in the showers you who-{/size}"
         with hpunch
         m "Wait a bloody minute!{w} You shower \"with\" your team?"
     else:
         m "The showers?{w} You shower \"with\" your team?"
-    call cho_main("O' course, [cho_genie_name]. It was after my request, after all.","soft","base","raised","mid")
+    call cho_main("Of course, [cho_genie_name]. It was after my request, after all.","soft","base","raised","mid")
     g4 "No kidding?"
     call cho_main("They shouldn't exclude me from team activities just because I'm a girl.","open","base","base","R")
     call cho_main("It makes absolutely no difference!","base","base","base","mid")
@@ -367,8 +363,8 @@ label cc_pf_talk_T1_E2:
         g4 "You are naked with them? In the shower?"
     else:
         m "Just to be clear. You are naked with them, in the shower."
-    call cho_main("O' course we're all naked, [cho_genie_name]!","soft","base","angry","mid")
-    call cho_main("Why would I take showers with my clothes still on?","soft","closed","base","mid")
+    call cho_main("Of course we are all naked, [cho_genie_name]!","soft","base","angry","mid")
+    call cho_main("Why would I take a shower with my clothes still on?","soft","closed","base","mid")
 
     # Genie cums.
     if masturbating:
@@ -388,8 +384,8 @@ label cc_pf_talk_T1_E2:
         g4 "*Argh!* {size=-4}Shower in this, you slut!{/size}"
 
         call cum_block
-        call cho_main("[cho_genie_name], are ye alright?","quiver","wide","base","mid")
-        call cho_main("You're sweating and breathing quite heavily...","quiver","base","base","mid")
+        call cho_main("[cho_genie_name], are you alright?","quiver","wide","base","mid")
+        call cho_main("You are sweating and breathing quite heavily...","quiver","base","base","mid")
 
         call gen_chibi("came_on_desk")
         with d3
@@ -403,18 +399,18 @@ label cc_pf_talk_T1_E2:
         call cho_main("(...)","annoyed","narrow","angry","mid") # Annoyed
 
     m "Don't you think, the fact that they've seen you naked has no affect on their actions?"
-    call cho_main("Why would it, [cho_genie_name]? We're all adults here...","soft","closed","base","mid")
+    call cho_main("Why would it [cho_genie_name]? We're all adults here...","soft","closed","base","mid")
     m "Maybe that's your response to it, girl."
     call cho_main("","annoyed","narrow","angry","mid")
     g9 "Maybe your \"teammates\" aren't as... \"mature\" as you."
-    call cho_main("I've known my team for years.{w} We're all professionals!","soft","narrow","base","mid")
+    call cho_main("I have known my team for years, [cho_genie_name]. We're all professionals!","soft","narrow","base","mid")
     m "Let me ask you a question..."
     m "In the showers,{w} do they all have their backs turned towards you?"
     call cho_main("I don't know. Maybe they uhm-...","open","base","base","mid")
     call cho_main("!!!","scream","wide","raised","mid") # Cho remembers something?!
     g9 "Yes?"
     g9 "What is it?"
-    call cho_main("May I... May I go, [cho_genie_name]?","quiver","closed","base","mid")
+    call cho_main("May I... May I leave, [cho_genie_name]?","quiver","closed","base","mid")
     g9 "Don't want to tell me?"
     call cho_main("No...","quiver","closed","sad","mid")
     m "Fine...{w} you may leave..."
@@ -442,14 +438,14 @@ label cc_pf_talk_T1_E2:
 label cc_pf_talk_T1_E3:
 
     m "Care to tell me more about Quidditch?"
-    cho "O' course, [cho_genie_name]. Anything specific you'd like to know?"
+    cho "Of course, [cho_genie_name]. Anything specific you'd like to know?"
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
     cho "{size=-4}I knew I shouldn't have told him...{/size}"
-    cho "Why do ye have to keep bringing that up, Sir? What's past is in the past..."
+    cho "Why do you have to keep bringing that up, Sir? What's past is in the past..."
     m "I believe otherwise..."
     g4 "Did you already forget that he's our enemy?!"
-    m "Your relationship with him is of the utmost importance right now!"
+    m "Your relation to him is of the utmost importance right now!"
     m "I need to know every tiny bit of detail about the two of you."
     g4 "What you were doing when you were together. How often you made out with him. The exact locations where he touched you..."
     cho "What?!"
@@ -458,7 +454,7 @@ label cc_pf_talk_T1_E3:
     g4 "Didn't you say you wanted to win?"
     cho "I did, Sir... But..."
     m "What did he like about you? Tell me! Maybe we can use it to our advantage!"
-    cho "Okay, [cho_genie_name].{w} I'm willing to cooperate..."
+    cho "I'm not goint to tell you those things, [cho_genie_name]. But, I will cooperate..."
     cho "Cedric was never too interested in me. His mind was always somewhere else. Drifting off..."
     cho "He always had this dead look in his eyes. Except for when-"
     cho "(...)"
@@ -471,7 +467,7 @@ label cc_pf_talk_T1_E3:
         g9 "Ha! I knew it!"
 
     cho "It was almost creepy how often he tried to look up my skirt."
-    cho "And he’d always walk behind me when we went up the stairs, to get a better view I bet..."
+    cho "And he’d always walk behind me when we went up the stairs to get a better view..."
     m "Did you ever show them to him?"
     cho "My panties?"
     m "No, your good manners... Yes, your panties!"
@@ -487,7 +483,7 @@ label cc_pf_talk_T1_E3:
         cho "Like how?"
         m "We use them as a distraction!"
         m "Now we only have to find out how to show them off properly during the game."
-        cho "I have to say I don’t like this notion one bit. But it might be worth a try..."
+        cho "I have to say I don’t like this notion one bit. But it’s probably worth a try…"
     else:
         m "Well, it worked."
         m "Beating him at Quayditch was almost too easy!"
@@ -518,15 +514,15 @@ label cc_pf_talk_T2_E1:
     m "Who is?"
     cho "Draco Malfoy, Sir."
     m "Any chance you fooled around with him too?"
-    cho "*Tzzzz* I'd never surround myself with Slytherin shite."
+    cho "*Tzzzz* I'd never surround myself with Slytherin scum."
     m "I guess you and Granger have at least something in common..."
     cho "His daddy bought their whole team new brooms, which is the only reason they've let him in."
     m "His daddy?"
     cho "His father, Sir."
     m "Oh. I thought you might be talking about a different \"daddy\"."
     cho "Very funny, [cho_genie_name]..."
-    cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried 'bout..."
-    cho "You don't just win by catching the snitch first. Ye also have to be leading in points!"
+    cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried about..."
+    cho "You don't just win by catching the snitch first. You also have to be leading in points!"
     cho "If you catch the snitch too early, the game will be over."
     cho "That's how Slytherin won most of their games in the past. They win by letting the other seeker catch the Snitch..."
     m "Those rules are so idiotic..."

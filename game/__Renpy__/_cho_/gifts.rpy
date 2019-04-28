@@ -107,7 +107,7 @@ label give_cho_gift(gift_item):
     if gift_item == girls_mag_ITEM:
         call cho_main("Girls magazines?",pupils="down",face="annoyed",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give an assortment of rather girly magazines to Cho...",gift_item)
-        call cho_main("I don't usually read these types o' magazines, the boys used to make fun of me for it.",face="annoyed")
+        call cho_main("I don't usually read these types of magazines, the boys used to make fun of me for it.",face="annoyed")
         call cho_main("But they can't get into the girls dorm.",face="neutral")
         call cho_mood_change(minus=1)
 

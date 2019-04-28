@@ -44,7 +44,7 @@ label summon_cho:
             if cho_mood != 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
-                    call cho_main("No.{w} And I don't want to hear o' it right now, Sir.",face="angry")
+                    call cho_main("No.{w} And I don't want to hear of it right now, Sir.",face="angry")
                 else:
                     call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like training today.","soft","base","sad","down")
                 call nar(">Cho is still upset with you.")
@@ -144,7 +144,6 @@ label update_cho_heart_color:
         $ heart_color = "yellow"
     elif main_matches_won == 1:
         $ heart_color = "green"
-        $ cc_pf_strip_OBJ.max_level = 4
     elif main_matches_won == 2:
         $ heart_color = "red"
     else:

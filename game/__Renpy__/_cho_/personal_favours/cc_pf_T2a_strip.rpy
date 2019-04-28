@@ -217,7 +217,7 @@ label cc_pf_strip_T1_E1:
     m "One of the best female street fighters, if you know how to play with her..."
     cho "(Play with her?!)"
     g9 "Speaking of which!{w} I don't believe we are done here just yet."
-    cho "We aren't? But I did exactly what ye wanted!"
+    cho "We aren't? But I did exactly what you wanted!"
     g9 "You've still got some clothes on..."
     cho "Sir is this why you are helping me?"
     cho "Is this all just part of a sick scheme to get to see me naked?"
@@ -279,7 +279,7 @@ label cc_pf_strip_T1_E3:
 
     cho "[cho_genie_name], could you please do me a huge, huge favour?"
     m "Of course, anything my dear..."
-    cho "Great! I'd like ye to summon Granger."
+    cho "Great! I'd like you to summon Granger."
     with hpunch
     g4 "What?"
     cho "You heard right."
@@ -290,7 +290,7 @@ label cc_pf_strip_T1_E3:
     # Check if Hermione is willing to strip for you.
     if hg_pf_dance_OBJ.points < 2:
         m "I don’t think it’s a good idea…"
-        cho "Why not? I’m not scared o' her!"
+        cho "Why not? I’m not scared of her!"
         m "Have you ever thought about what it could mean for me?"
         cho "What’s the worst that could happen?"
         m "She could report me, and I’d get kicked out of this school most likely."
@@ -433,7 +433,7 @@ label cc_pf_strip_T1_hermione:
             g9 "Miss Granger, why don't you show Miss Chang why I chose you..."
             g9 "Share with us your two most compelling arguments..."
             her "Sir?"
-            cho "He's talking about your \"tits\", ye dimwit!" # Angry
+            cho "He's talking about your \"tits\", you dimwit!" # Angry
             her "(...)" # Embarrassed
             g9 "Yes Miss Granger!{w} Your very round{w}, handsomely sphered{w}, perfectly sized{w}, very voluptuous and-"
             her "I got it, Professor!"
@@ -445,7 +445,7 @@ label cc_pf_strip_T1_hermione:
             her "Have a good look."
             cho "(...)" # Tries to look away.
             her "You can have a peek too, slut."
-            cho "I'd rather not, or I might have to boak..." # Boak = vomit
+            cho "I'd rather not, or I might have to vomit..." # 
             g9 "Very nice, Miss Granger!"
 
             menu:
@@ -558,7 +558,7 @@ label cc_pf_strip_T1_hermione:
             m "Well yes. I also never claimed that \"I\" was pretty on the inside."
             m "I'm a guy, Miss Granger. You of all people should know better..."
             her "Despicable..."
-            cho "Don't worry.{w} If you're to start doing hourly exercises, our Professor might even be attracted to ye by the end of the year..."
+            cho "Don't worry.{w} If you're to start doing hourly exercises, our Professor might even be attracted to you by the end of the year..."
             her "Hourly exercises?" # Shocked
             cho "By the way Granger{w}, I \"do\" love your huge melons!"
             her "How dare you talk of them like that!"

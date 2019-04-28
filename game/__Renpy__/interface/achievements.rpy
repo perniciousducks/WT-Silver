@@ -19,6 +19,7 @@ init python:
                                    "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png", False],
                                    "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/head_hermione_2.png", True],
                                    "pantiesfap": ["General", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "images/animation/06_jerking_02.png", False],
+                                   "pantiesfapcho": ["General", "Exercise is important", "Rubbed one out on Cho's panties.", False, "images/animation/06_jerking_04.png", False],
                                    "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "characters/snape/head/head_9.png", False],
                                    "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.png", True],
                                    "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
@@ -27,7 +28,6 @@ init python:
                                    "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/test/icons/outfits_load.png", False],
                                    "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
                                    "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
-                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False],
                                    "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True]}
 
     class achievement_class(object):

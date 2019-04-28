@@ -129,7 +129,7 @@ label cc_pf_talk_T1_E1:
     m "Was he that good?"
     call cho_main("What?{w=0.5} No, Sir, not because of him!{w} The tourney, [cho_genie_name]!","soft","narrow","base","mid")
     m "Sure..."
-    call cho_main("We should have it every year if ye were to ask me!","open","closed","base","mid")
+    call cho_main("We should have it every year if you were to ask me!","open","closed","base","mid")
     g9 "(A cosplay tournament is what this school needs...)"
     call cho_main("Sir that would be great!","smile","narrow","base","mid")
     g4 "(Wait, wait!{w=0.8} A \"nude\" cosplay tournament!{w=0.6} Even better!)"
@@ -526,7 +526,7 @@ label cc_pf_talk_T2_E1:
     m "Oh. I thought you might be talking about a different \"daddy\"."
     cho "Very funny, [cho_genie_name]..."
     cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried 'bout..."
-    cho "You don't just win by catching the snitch first. Ye also have to be leading in points!"
+    cho "You don't just win by catching the snitch first. You also have to be leading in points!"
     cho "If you catch the snitch too early, the game will be over."
     cho "That's how Slytherin won most of their games in the past. They win by letting the other seeker catch the Snitch..."
     m "Those rules are so idiotic..."

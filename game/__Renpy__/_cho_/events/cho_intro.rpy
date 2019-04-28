@@ -103,7 +103,7 @@ label cho_intro_1:
            call cho_main("Anyway...", "base", "closed", "base", "mid")
 
 
-    call cho_main("I'm terribly sorry for bothering ye, Sir.{p=0.8}Hope I'm not interrupting anything important.", "open", "base", "base", "down")
+    call cho_main("I'm terribly sorry for bothering you, Sir.{p=0.8}Hope I'm not interrupting anything important.", "open", "base", "base", "down")
     m "No worries, I can always spare some of my...{w=0.6} valuable time...{p=1.0}*Ahem*{w=0.6} for my dear students..."
     g9 "What's on your mind?"
 

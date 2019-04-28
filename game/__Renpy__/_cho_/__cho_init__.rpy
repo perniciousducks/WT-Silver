@@ -15,8 +15,6 @@ label cho_init:
         #Chibi
         $ cho_chibi_xpos          = 500
         $ cho_chibi_ypos          = 250
-        $ cho_chibi_xpos_name     = "base" #Memory of chibi position.
-        $ cho_chibi_ypos_name     = "base" #Memory of chibi position.
         $ cho_chibi_flip          = 1
         $ cho_chibi_zorder        = 3
 

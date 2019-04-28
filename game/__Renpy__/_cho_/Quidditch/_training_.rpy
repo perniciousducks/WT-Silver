@@ -189,8 +189,8 @@ label quidditch_training_intro_2:
     m "Did you finally come to terms with my training methods?"
     cho "No, Sir."
     cho "I've simply run out of options.{w} Without your help "
-    cho "So I might as well try your methods, Sir."
-    g9 "I'm glad you came to your senses."
+    cho "So we might as well try your methods, Sir."
+    g9 "I'm glad you came to your senses, [cho_name]!"
     cho "(...)"
     g9 "Let's discussing tactics then, shall we!"
     cho "(...)"
@@ -212,7 +212,7 @@ label quidditch_training_intro_2:
         g9 "Ah yes. Panties!{w} Now I remember!"
 
     elif quidditch_position == "close":
-        cho "You wanted me to have sex with Cedric..."
+        cho "You wanted me to have sex with their seeker..."
         m "I did?"
         cho "You did! You ask me to get intimate with him!"
         g9 "Yes, now I remember!"
@@ -274,15 +274,6 @@ label change_quidditch_tactics:
 
     else:
         menu:
-            "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
-                jump start_training_match
-
-            "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:
-                if not daytime:
-                    call nar(">You can only do that during the day.")
-                else:
-                    call nar(">You can't do that right now.")
-
             "-Fly Test-":
                 $ cho_flying = True # Demonstrating
                 m "Start flying, [cho_name]."
@@ -298,6 +289,14 @@ label change_quidditch_tactics:
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(xpos="wardrobe",ypos="base", face="neutral")
+            "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
+                jump start_training_match
+
+            "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:
+                if not daytime:
+                    call nar(">You can only do that during the day.")
+                else:
+                    call nar(">You can't do that right now.")
 
             "-Go Back-":
                 cho "Very well, [cho_genie_name]."
@@ -368,7 +367,7 @@ label demonstrate_tactic(position=""):
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
-            cho "Uhm-...{w} Thank you, [cho_genie_name]."
+            cho "*Uhm*...{w} Thank you, [cho_genie_name]."
             m "(I have created the ultimate up-skirt!)"
             m "(Nothing can stop us now...)"
         else:

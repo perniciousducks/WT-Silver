@@ -16,10 +16,10 @@ label start_hufflepuff_match:
     if weather_gen in [5,6]: # Bad weather.
         call cho_main("Sounds great, [cho_genie_name]. I just hope it stops raining until then.","soft","base","base","R")
     else:
-        call cho_main("Sounds great, [cho_genie_name]. I hope the weather stays like this until tomorrw.","soft","base","base","R")
+        call cho_main("Sounds great, [cho_genie_name]. I just hope the weather stays like it is too.","soft","base","base","R")
 
     m "With our tactics, this will be a piece of cake!"
-    call cho_main("I hope you are right, [cho_genie_name].","base","base","base","mid")
+    call cho_main("I hope you're right, [cho_genie_name].","base","base","base","mid")
     call cho_main("Anyhow, I need to prepare for the game.","soft","base","base","R")
     call cho_main("See you then, [cho_genie_name]!","smile","base","base","mid")
     m "Good luck!"
@@ -328,7 +328,7 @@ label hufflepuff_match:
     $ renpy.music.stop(fadeout=4)
     stop bg_sounds fadeout 2.0
     ">Hermione heaves a heavy rule book{nw}"
-    $ renpy.sound.play("sounds/punch01.mp3") 
+    $ renpy.sound.play("sounds/punch01.mp3")
     ">Hermione heaves a heavy rule book{fast} from under the table and begins to monotonously recite it to the crowd."
     $ renpy.sound.play("sounds/sniff.mp3")
     her "..."
@@ -501,7 +501,7 @@ label hufflepuff_match:
 
     call sna_main("{size=-4}As I was saying... They’re the only reason I watch the bloody thing. Now, mind if I top that one off for you?{/size}","snape_20",ypos="head")
 
-    
+
     $ renpy.music.stop(fadeout=6)
     $ qp_mob_reaction[0] = "th"
     $ qp_mob_reaction[2] = "emo8"
@@ -607,7 +607,7 @@ label hufflepuff_match_return:
     m "......{w=0.5}*Snore*{w=1.0}{nw}"
     stop music fadeout 6.0
     call cho_walk("desk", "base", 2.4, action="enter")
-    
+
     $ renpy.sound.play("sounds/punch01.mp3")
     call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid",trans="hpunch")
     $ renpy.sound.play("sounds/MaleGasp.mp3")

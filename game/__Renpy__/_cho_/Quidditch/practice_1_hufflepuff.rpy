@@ -243,7 +243,7 @@ label hufflepuff_practice_win_1:
 
 label hufflepuff_practice_win_2:
 
-    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",xpos="mid",ypos="base",trans="hpunch")
     m "Did you catch that gold thing?"
     call cho_main("I've never felt so humiliated in my entire life!","open","angry","angry","R")
     g4 "Did you win or what?{w} I'm on the edge of my seat here, girl!"

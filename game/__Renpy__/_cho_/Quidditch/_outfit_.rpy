@@ -86,14 +86,14 @@ label use_quidditch_skirt_1:
         cho "A skirt?!"
         call cho_main("I couldn't do that!","scream","wide","angry","mid")
         call cho_main("Everyone would be able to see straight up it!","quiver","wide","angry","downR")
-        call cho_main("Not to mention all the other player-","horny","narrow","sad","R")
+        call cho_main("Not to mention all the other players-","horny","narrow","sad","R")
         call cho_main("Oh...","pout","narrow","angry","mid")
         call cho_main("So that's your plan then? For me to distract \'the enemy\' with some upskirt?","pout","angry","angry","mid")
         m "If you don't think it would work-"
         call cho_main("Of course it would work! Those \'boys\' are all a bunch of perverts...","open","narrow","angry","R")
-        call cho_main("But I can't go and play a game with a skirt on!","horny","shocked","sad","down")
+        call cho_main("But I can't go and play a game with a skirt on!","horny","wide","sad","down")
         call cho_main("All my friends would see!","annoyed","shocked","sad","mid")
-        m "They'll forget all about it after you defeat you have won!"
+        m "They'll forget all about it after you have won!"
         call cho_main("I highly doubt that...","upset","narrow","sad","downR")
         m "Then just tell them it was the only way to win. I'm sure they'll understand."
         call cho_main("You... might be right...","open","base","sad","downR")

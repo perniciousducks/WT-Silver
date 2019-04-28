@@ -144,6 +144,7 @@ label update_cho_heart_color:
         $ heart_color = "yellow"
     elif main_matches_won == 1:
         $ heart_color = "green"
+        $ cc_pf_strip_OBJ.max_level = 4
     elif main_matches_won == 2:
         $ heart_color = "red"
     else:

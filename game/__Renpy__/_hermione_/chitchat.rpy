@@ -379,15 +379,14 @@ label chit_chat:
 
 
     ### WHORING LEVEL 08+ ###
-    if her_whoring >= 21:
+    if her_whoring == 21:
         if one_of_ten == 1:
             call her_main("Do You have any adult magazines you don't need, sir?","open","baseL",cheeks="blush")
             call her_main("","base","baseL",cheeks="blush")
 
         elif one_of_ten == 2:
-            call her_main("I am sorry to bother you with this, sir...","open","base")
-            her "But do you have any condoms?"
-            call her_main("This is not for me of course... I'm asking for a friend...","angry","worriedCl",emote="05")
+            call her_main("If you need anything [genie_name], just ask okay?","open","base")
+            call her_main("","base","base")
 
         elif one_of_ten == 3:
             call her_main("It's been getting so cold lately...","open","base")
@@ -416,7 +415,7 @@ label chit_chat:
             call her_main("","angry","wink")
 
         elif one_of_ten == 9:
-            call her_main("A read this one article about the positive effects of semen on a woman's skin...","open","closed")
+            call her_main("I have read this one article about the positive effects of semen on a woman's skin...","open","closed")
             call her_main("I wonder where their information is coming from...","base","glance")
             call her_main("Did the magazine conduct research of some sort?","angry","wink")
             call her_main("","base","glance")
@@ -427,5 +426,62 @@ label chit_chat:
             call her_main("And Slytherin is not even on the list!","open","annoyed",cheeks="blush")
             call her_main("","upset","closed")
 
+    if her_whoring >= 22:
+        if one_of_ten == 1:
+            call her_main("If you ever need some \"help\", sir, please let me know.","open_wide_tongue","baseL",cheeks="blush")
+            her "-She suggestively jerks her hand-"
+            call her_main("","base","baseL",cheeks="blush") 
 
+        elif one_of_ten == 2:
+            call her_main("I am sorry to bother you with this, sir...","open","base") 
+            her "But do you have any condoms?"
+            call her_main("Sadly the ones I've bought are already gone...","annoyed","worriedCl",emote="05")
+            call her_main("","base","baseL")
+                 
+        elif one_of_ten == 3:
+            call her_main("It's been getting so cold lately...","open","base") 
+            call her_main("I hope it's going to start snowing soon...","base","base")
+            call her_main("You will let me wear a coat at least right?","angry","worriedCl",emote="05")
+            call her_main("","base","glance")
+        
+        elif one_of_ten == 4:
+            call her_main("Jump and scream for the Gryffindor team!","open","closed") 
+            call her_main("So daring and bold, sporting red and gold!","smile","happyCl",emote="06") 
+            call her_main("","base","base") 
+
+        elif one_of_ten == 5:
+            call her_main("Sir, I have a favour to ask...","base","worried") 
+            call her_main("Could help me with the dress later, sir?","base","baseL")
+            call her_main("I could use some of your... insight","soft","glance",cheeks="blush")
+            call her_main("", "base","glance")
+
+        elif one_of_ten == 6:
+            call her_main("I can't believe I was such a prude before.","angry","worried")
+            call her_main("Meeting you was the best thing that has happened to me, sir.","smile","glance")
+            call her_main("", "base","glance")
+        
+        elif one_of_ten == 7:
+            call her_main("Considering the nature of the favours you keep buying from me sir...","open","closed") 
+            call her_main("I seldom bother to put on underwear at all anymore...","open","worried")
+            call her_main("(Not that I complain anyway..)","soft","ahegao") 
+        
+        elif one_of_ten == 8:
+            call her_main("Sir, could you put your penis in my mouth?","angry","base") 
+            call her_main("Sir, I am begging you...","open_wide_tongue","ahegao") 
+            call her_main("Fifty five points, please!","smile","angry")
+            call her_main("(Although I wouldn't mind doing it for free..).","smile","ahegao")
+
+        elif one_of_ten == 9:
+            call her_main("Remember when I told you about this one article...","open","closed") 
+            her "It was about the positive effects of semen on a woman's skin."
+            call her_main("I tested it recently...","base","glance") 
+            call her_main("And it actually works!","smile","glance")
+            call her_main("My skin definitely is getting softer.","smile","closed") 
+            call her_main("","base","glance") 
+
+        elif one_of_ten == 10:
+            call her_main("It goes like this...","open","closed") 
+            her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
+            call her_main("And Slytherin is not even on the list!","open","annoyed",cheeks="blush") 
+            call her_main("","upset","closed")
     return

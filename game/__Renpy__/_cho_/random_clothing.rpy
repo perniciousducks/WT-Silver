@@ -63,18 +63,17 @@ label cho_random_clothing:
                     call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=moveFade)
                     call ctc
 
-                    g9 "Wow girl, the hell are you wearing?"
+                    g9 "Wow girl, what are you wearing?"
                     call cho_main("It's my party outfit...","soft","base","raised","down")
                     m "(...)"
                     call cho_main("Is it too much?","quiver","wink","raised","mid")
                     m "Too much? Are you really asking me that?"
                     m "If I'm truely honest with you-"
                     g4 "Your body, in an outfit like that,..."
-                    g4 "Makes me want to whip out my cock and jerk off like a mad-man! You little slut!"
+                    g4 "Really shows off your best assets."
                     call cho_main("Oh...","horny","base","raised","down")
                     call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...","soft","base","sad","R")
-                    call cho_main("I'm glad to see it working.","smile","narrow","base","mid")
-                    call cho_main("Jerk off any time you want, [cho_genie_name]!","horny","narrow","angry","mid")
+                    call cho_main("Stare at my assets any time you want, [cho_genie_name]!","horny","narrow","angry","mid")
                     g4 "Hngggh-!!!"
                     call cho_main(xpos="base",ypos="base")
 

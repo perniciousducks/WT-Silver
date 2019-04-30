@@ -35,7 +35,7 @@ label start_hufflepuff_match:
 
 label hufflepuff_match:
 
-    # Scene before Match agains Hufflepuff
+    # Scene before Match against Hufflepuff
     call play_sound("door")
 
     call sna_walk("door","mid",2)
@@ -193,10 +193,10 @@ label hufflepuff_match:
     call her_main("", flip=True,xpos="100",ypos="120")
     with d5
     ">With that, Snape shoves you out of your chair, behind the podium."
+    m "(Shit, what do I even talk about)"
     hide screen hermione_main
-    $ qp_spotlight = True
     menu:
-        "\"Miracle on ice speech\"":
+        "\"Miracles\"":
             $ renpy.music.stop(fadeout=4)
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             m "Great moments are born from great opportunity."
@@ -204,8 +204,8 @@ label hufflepuff_match:
             ">A reverent hush falls over the crowd..."
             m "And that’s what you have here tonight-"
             m "That's what you've earned here tonight!"
-            #Fade to black
-            #Fades back with spotlight on genie and Breaker switch sound effect
+            $ renpy.sound.play("sounds/killswitch_on.mp3")
+            $ qp_spotlight = True
             m "One game..."
             m "Tonight, WE are the greatest hockey team in the world!"
             m "You were born to be hockey players..."
@@ -230,34 +230,10 @@ label hufflepuff_match:
             mal2 "..."            
             $ qp_mob_reaction[0] = None
             $ qp_mob_reaction[1] = None
+            $ qp_spotlight = False
+            $ renpy.sound.play("sounds/killswitch_off.mp3")
             m "Now let the games begin!"
-        "\"Good Morning, Vietnam!\"":
-            $ renpy.music.stop(fadeout=4)
-            play bg_sounds "sounds/wind_long_loop.mp3"
-            g9 "{cps=7}Goooooooood{/cps}  morning,{w=0.1} Vietnam!"
-            g9 "Hey, this is not a test... This is rock and roll!"
-            g9 "Time to rock it from the delta to the DMZ!"
-            g9 "Is that me or does that sound like an Elvis Presley movie?"
-            $ qp_mob_reaction[0] = "sal"
-            $ qp_mob_reaction[1] = "emoq"
-            ">A confused murmur falls over the crowd."
-            m "Ugh..."
-            $ renpy.sound.play("sounds/microphone_feedback.mp3")
-            m "Is this thing on?"
-            $ qp_mob_reaction[1] = "sal"
-            $ renpy.sound.play("sounds/cough_male.mp3")
-            mal "..."
-            $ qp_mob_reaction[0] = "emoq"
-            $ qp_mob_reaction[1] = "qu"
-            g9 "It's O six hundred, what does the O stand for?"
-            g9 "Ooooh my god it's early!"
-            $ renpy.sound.play("sounds/murmur.mp3")
-            ">The sound of confused murmuring increases even further..."
-            mal "What's he on about? Is the fire lit but the cauldron empty?"
-            mal2 "Looks like it..."
-            stop bg_sounds fadeout 2.0
-            m "Tough crowd... Anyway, let the games begin!"
-        "\"Freedom speech\"":
+        "\"Freedom\"":
             $ renpy.music.stop(fadeout=4)
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             m "Son's of Scotland!"
@@ -299,7 +275,32 @@ label hufflepuff_match:
             call sna_chibi("stand","180","0", flip=True)
             with d5
             stop bg_sounds fadeout 2.0
-    $ qp_spotlight = False
+        "\"Nam\"":
+            $ renpy.music.stop(fadeout=4)
+            play bg_sounds "sounds/wind_long_loop.mp3"
+            g9 "{cps=7}Goooooooood{/cps}  morning,{w=0.1} Vietnam!"
+            g9 "Hey, this is not a test... This is rock and roll!"
+            g9 "Time to rock it from the delta to the DMZ!"
+            g9 "Is that me or does that sound like an Elvis Presley movie?"
+            $ qp_mob_reaction[0] = "sal"
+            $ qp_mob_reaction[1] = "emoq"
+            ">A confused murmur falls over the crowd."
+            m "Ugh..."
+            $ renpy.sound.play("sounds/microphone_feedback.mp3")
+            m "Is this thing on?"
+            $ qp_mob_reaction[1] = "sal"
+            $ renpy.sound.play("sounds/cough_male.mp3")
+            mal "..."
+            $ qp_mob_reaction[0] = "emoq"
+            $ qp_mob_reaction[1] = "qu"
+            g9 "It's O six hundred, what does the O stand for?"
+            g9 "Ooooh my god it's early!"
+            $ renpy.sound.play("sounds/murmur.mp3")
+            ">The sound of confused murmuring increases even further..."
+            mal "What's he on about? Is the fire lit but the cauldron empty?"
+            mal2 "Looks like it..."
+            stop bg_sounds fadeout 2.0
+            m "Tough crowd... Anyway, let the games begin!"            
     $ renpy.sound.play("sounds/crowd_cheer.mp3")   
     $ renpy.music.play("sounds/crowd_low.mp3", fadein=3)
     play bg_sounds "music/11 The Quidditch Match_original.mp3"  

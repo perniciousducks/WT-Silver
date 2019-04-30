@@ -1,5 +1,5 @@
 init python:
-    if persistent.achievements == None:
+    if persistent.achievements == None or config.developer:
         persistent.achievements = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "unlockcho": ["Characters", "Chang Dynasty", "Awarded for unlocking Cho Chang.", False, "interface/icons/head/head_cho_2.png", False],
                                    "unlocklun": ["Characters", "Looney Tunes", "Awarded for unlocking Luna Lovegood.", False, "interface/icons/head/head_luna_2.png", False],
@@ -28,7 +28,8 @@ init python:
                                    "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/test/icons/outfits_load.png", False],
                                    "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
                                    "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
-                                   "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True]}
+                                   "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True],
+                                   "ending": ["General", "Bittersweet ending", "Finished the game.", False, "interface/icons/book_silver.png", True]}
 
     class achievement_class(object):
         achievements = {}

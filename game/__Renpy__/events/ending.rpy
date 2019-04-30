@@ -3069,6 +3069,7 @@ label test_credits:
 
 
     ## FINAL CREDITS ###
+    $ achievement.unlock("ending")
     stop music fadeout 1.0
     if public_whore_ending: # PUBLIC WHORE ENDING
         centered "{size=+7}{color=#cbcbcb}Congratulations on completing the game!{/color}{/size}\n\n
@@ -3341,7 +3342,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
 
         #Define Letter.
         $ letter_from_genie_OBJ = mail_letter_class()
-        $ letter_from_genie_OBJ.text = "{size=-7}To: Hermione Granger\n\n{/size}{size=-4}Dear [word_01]. \nI am not who you think I am... Not even human so to speak. For months now I have been posing as a person known to you as Professor Dumbledore. But it is time for me to go back [word_02]. By the time you will receive this letter I shall be long gone. We shall never cross paths again, but I promise you that I will cherish the memories of my brief time in your strange world. \n\nFarewell, my little [word_03]. {size=-3}\n\n-[word_04]-{/size}"
+        $ letter_from_genie_OBJ.text = "{size=-7}To: Hermione Granger\n\n{/size}{size=-4}Dear Hermione. \nI am not who you think I am... Not even human so to speak. For months now I have been posing as a person known to you as Professor Dumbledore. But it is time for me to go back to the place I belong. By the time you will receive this letter I shall be long gone. We shall never cross paths again, but I promise you that I will cherish the memories of my brief time in your strange world. \n\nFarewell, my little [hermione_name]. {size=-3}\n\n-Yours truly, Genie-{/size}"
 
         #Read Letter.
         $ letter = letter_from_genie_OBJ

@@ -20,7 +20,6 @@ screen luna_main:
     add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the right arm
 
     ### FACE
-    add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add her blush to base
     add luna_hair xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the hair base
 
     add luna_mouth xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the mouth
@@ -28,6 +27,7 @@ screen luna_main:
     add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the pupil
     add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the eye outline
     add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the eyebrow
+    #add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add her blush to base
     add luna_tears xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
     add luna_hair_shadow xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio) #add the hair overlayer
 

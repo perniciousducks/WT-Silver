@@ -194,7 +194,7 @@ label hufflepuff_match:
     with d5
     ">With that, Snape shoves you out of your chair, behind the podium."
     hide screen hermione_main
-
+    $ qp_spotlight = True
     menu:
         "\"Miracle on ice speech\"":
             $ renpy.music.stop(fadeout=4)
@@ -298,7 +298,8 @@ label hufflepuff_match:
             g4 "But they'll never take away our freedom!"
             call sna_chibi("stand","180","0", flip=True)
             with d5
-            stop bg_sounds fadeout 2.0             
+            stop bg_sounds fadeout 2.0
+    $ qp_spotlight = False
     $ renpy.sound.play("sounds/crowd_cheer.mp3")   
     $ renpy.music.play("sounds/crowd_low.mp3", fadein=3)
     play bg_sounds "music/11 The Quidditch Match_original.mp3"  

@@ -29,7 +29,7 @@ init python:
                                    "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
                                    "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
                                    "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True],
-                                   "ending": ["General", "Bittersweet ending", "Finished the game.", False, "interface/icons/book_silver.png", True]}
+                                   "ending": ["General", "Bittersweet Farewell", "Finished the game.", False, "interface/icons/book_silver.png", True]}
 
     class achievement_class(object):
         achievements = {}

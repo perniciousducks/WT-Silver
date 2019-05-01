@@ -184,6 +184,33 @@ label luna_init:
 
         call reset_lun_transparency
 
+    if not hasattr(renpy.store,'lun_cg_path') or reset_persistants or reset_luna_content:
+        $ lun_cg_path       = "images/CG/luna_desk2/"
+        $ lun_cg_base       = lun_cg_path+"base.png" 
+        $ lun_cg_body       = lun_cg_path+"luna_base.png" 
+        $ lun_cg_hair       = lun_cg_path+str(lun_hair_style)+"_hair.png" 
+        $ lun_cg_cheeks     = lun_cg_path+"c_base.png" 
+        $ lun_cg_mouth      = lun_cg_path+"m_base.png" 
+        $ lun_cg_eyewhite   = lun_cg_path+"eye_white.png" 
+        $ lun_cg_pupil      = lun_cg_path+"pup_base.png"     
+        $ lun_cg_eye        = lun_cg_path+"eye_base.png" 
+        $ lun_cg_eyebrow    = lun_cg_path+"eb_base.png" 
+        $ lun_cg_eyewear    = lun_cg_path+"glasses.png" 
+        $ lun_cg_tears      = lun_cg_path+"blank.png" 
+        $ lun_cg_hairtop    = lun_cg_path+str(lun_hair_style)+"_hair_top.png"  
+        $ lun_cg_extra_1    = lun_cg_path+"blank.png" 
+        $ lun_cg_extra_2    = lun_cg_path+"blank.png" 
+        $ lun_cg_extra_3    = lun_cg_path+"blank.png" 
+        $ lun_cg_dick       = lun_cg_path+"dick_1.png" 
+        $ lun_cg_genie      = lun_cg_path+"genie.png" 
+        $ lun_cg_xpos       = 0
+        $ lun_cg_ypos       = 0
+        $ lun_cg_xpos_abs   = 0
+        $ lun_cg_ypos_abs   = 0
+        $ lun_loop_xpos     = [-150, 0, 55, 66, 74, 80, 88, 99, 103, 114, 121, 129, 134, 141, 148, 152, 155]
+        $ lun_loop_ypos     = [0, 0, 12, 20, 31, 40, 48, 59, 71, 76, 83, 90, 97, 103, 107, 111, 112]
+        $ lun_cg_zoom       = 1
+
 
 
     # Luna Lists

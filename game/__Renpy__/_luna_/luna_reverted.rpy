@@ -1327,7 +1327,7 @@ label luna_reverted_event_4: #Luna gentle BJ for about 9 hours and 14 orgasms fr
     m "Zzzz..."
     jump main_room
 
-label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna masturbating the whole time #NEEDS POSING
+label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna masturbating the whole time #NEEDS TESTING
     ">*knock* *knock* *knock* *knock* *knock* {b}*knock* *knock*{/b}"
     ">Your door swings wide as the effervescent Luna Lovegood strolls in."
     call lun_main("Hello [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush")
@@ -1579,7 +1579,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     m "Eh, who cares..."
     jump main_room #NEEDS POSING
 
-label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS POSING
+label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     $ lunCG('up', 'wide', 'open', extra_2='hand')
     ">You put your hand on the back of the unsuspecting girls head..."
     $ lunCG('up', 'base')
@@ -1729,21 +1729,32 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS POSING
     $ lunCG('up', 'tired', 'pout')
     lun "Can't we keep going? There must be so many wrackspurts left in you..."
     m "(Oh right... those things...)"
+    $ lunCG('up', 'sad', 'open')
     m "Quite right... it seems that you're bringing in more wookiesports than I can deal with..."
     m "I'll have to teach you an advanced method for getting rid of them in both of us at once."
+    $ lunCG('up', 'wide', 'base')
     lun "Really? You have something like that?"
+    $ lunCG('up', 'tired', 'open')
     lun "That could solve the school's wrackspurt infestation in no time!"
+    $ lunCG('up', 'seduction', 'pout')
     lun "could you teach it to me now? Pleeeease..."
     m "Ugh... I think I need a bit of a nap after that... not to mention you could use a shower..."
+    $ lunCG('up', 'blink', 'base')
     lun "And waste this? I told you that I'm using it to make a perfume to ward off those wrackspurts."
+    $ lunCG('dl', 'seduction', 'pout')
     lun "I'm even thinking of selling it to the other students to help slow down those nasty things..."
     m "Whatever... just do it somewhere else... I need a nap..."
-    lun "Okay Mr Genie, sir!"
+    $ lunCG('up', 'base', 'base')
+    lun "Okay, Mr Genie, sir!"
     m "Genie is fine."
     m "And only call me that when we're alone in this office. Outside, I'm Dumbledore."
+    $ lunCG('dick', 'tired', 'base')
     lun "Of course... Have a nice nap,{w} Genie..."
     ">With that, a cum-soaked Luna prances out of your office and into the wide world..."
     m "..."
+    show screen blkfade
+    with d3
+    hide screen luncg
     $ lun_genie_name = "genie"
 
     jump main_room
@@ -1761,21 +1772,21 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     #hermione starts to tease whoever's under the desk (calling a cumslut)
     #only serves to turn luna on more and make her believe the room is infected with wrackspurts
     ">The bubbly Luna Lovegood strolls in through your door."
-    lun "Good morning, [lun_genie_name]!"
+    call lun_main("Good morning, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush")
     m "Miss Lovegood."
-    lun "Is there {i}anything{/i} I can help you with today?"
+    call lun_main("Is there {i}anything{/i} I can help you with today?","base","happyCl","sad","mid",cheeks="blush")
     m "Well... Now that you mention it... What's your class schedule like for today?"
-    lun "Hmmmm... not too busy. I have divination at eleven and... um... herbology at two!"
+    call lun_main("Hmmmm... not too busy. I have divination at eleven and... um... herbology at two!","base","happyCl","sad","mid",cheeks="blush")
     m "I think I might need to write you a note explaining your absence from class then."
-    lun "Really? Why's that?"
+    call lun_main("Really? Why's that?","base","happyCl","sad","mid",cheeks="blush")
     m "Those nasty wickerspoons are bothering me again, quite badly I'm afraid."
-    lun "They are?!"
+    call lun_main("They are?!","base","happyCl","sad","mid",cheeks="blush")
     m "Indeed. I'm thinking you'll need to spend the whole day seeing to them."
-    lun "the {b}whole{/b} day?..."
+    call lun_main("the {b}whole{/b} day?...","base","happyCl","sad","mid",cheeks="blush")
     m "Unless, of course, you'd prefer to go to your classes?"
-    lun "No, no, no! I'll help you!"
+    call lun_main("No, no, no! I'll help you!","base","happyCl","sad","mid",cheeks="blush")
     m "Fantastic... Shall we begin then?"
-    lun "{b}yes{/b}... thank you [lun_genie_name]..."
+    call lun_main("{b}yes{/b}... thank you [lun_genie_name]...","base","happyCl","sad","mid",cheeks="blush")
     show screen blkfade
     with d3
     pause
@@ -1836,7 +1847,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     her "You wanted to see me [genie_name]?"
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
-    her "Ugh... This room reeks of cum! Open a window or something..."
+    her "Ugh... This room reeks! Open a window or something..."
     m "The window doesn't shut."
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     her "Then maybe try cumming a bit less..."
@@ -1893,6 +1904,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     m "Scout's honor."
     her "We'll see about that..."
     ">Before you can say anything Hermione walks around your desk to check on Luna."
+    #Transition back to full screen CG
     lun "*slrp* *pop*"
     lun "Hi Hermione! Nice work guessing that it was me!"
     her "..."

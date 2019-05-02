@@ -65,7 +65,7 @@ label hide_all_screens:
     hide screen candle_light_1
     hide screen candle_light_2
     hide screen whose_points_screen
-    
+
     #Quidditch pitch
     hide screen quidditch_pitch
     hide screen quidditch_pitch_overlay
@@ -157,7 +157,7 @@ label room(room=None, hide_screens=True):
 
     if room in ["7th floor"]:
         $ current_room = "7th_floor"
-        
+
         show screen floor_7th_door
         show screen room_of_req_door
         show screen floor_7th_screen
@@ -166,10 +166,10 @@ label room(room=None, hide_screens=True):
         $ current_room = "room_of_requirement"
 
         show screen room_of_requirement
-        
+
     if room in ["quidditch_pitch", "quid", "qp"]:
         $ current_room = "quidditch_pitch"
-        
+
         show screen quidditch_pitch
         show screen quidditch_pitch_overlay
 
@@ -485,8 +485,6 @@ label update_hints:
 
     #Favour 4
     if her_whoring >= 3 and her_whoring < 9 and game_difficulty <= 2:
-        $ hg_pf_grope_ass_OBJ.hint = True
-    elif her_whoring >= 9 and not cho_known:
         $ hg_pf_grope_ass_OBJ.hint = True
     else:
         $ hg_pf_grope_ass_OBJ.hint = False

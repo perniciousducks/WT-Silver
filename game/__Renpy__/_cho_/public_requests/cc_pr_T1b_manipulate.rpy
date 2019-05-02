@@ -79,6 +79,7 @@ label cc_pr_manipulate_T1_intro:
     # Cho enters.
     call cho_walk(action="enter", speed=1.6)
 
+    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
     m "How did it go?"
     cho "It went...{w} well?"
     cho "Maybe a little too well... He tried to kiss me!"
@@ -115,6 +116,7 @@ label cc_pr_manipulate_T1_E1:
     # Cho enters.
     call cho_walk(action="enter", speed=1.6)
 
+    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
     m "What's my favourite Quidditch player been up to today?"
     cho "I think you'll be happy, [cho_genie_name]!"
     g9 "I like the sound of that! Tell me what happened."
@@ -148,6 +150,7 @@ label cc_pr_manipulate_T1_E2:
     # Cho enters.
     call cho_walk(action="enter", speed=1.6)
 
+    call cho_main(face="annoyed",xpos="mid",ypos="base",trans="fade")
     g4 "[cho_name]! Do you have some good news for me?"
     cho "I'm afraid not this time, Sir."
     m "Why not? Tell me what happened..."
@@ -191,6 +194,7 @@ label cc_pr_manipulate_T1_E3:
     # Cho enters.
     call cho_walk(action="enter", speed=1.6)
 
+    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
     m "Well? How did it go?"
     cho "Very well, Sir!"
     g9 "Yeah? Tell me about it!"

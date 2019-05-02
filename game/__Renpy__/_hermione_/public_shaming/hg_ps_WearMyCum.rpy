@@ -2,7 +2,7 @@
 
 ### Wear My Cum ###
 
-label hg_ps_wear_cum: #Walk around school covered in genies cum
+label hg_ps_cumslut: #Walk around school covered in genies cum
     hide screen hermione_main
     with d3
 
@@ -28,11 +28,11 @@ label hg_ps_wear_cum: #Walk around school covered in genies cum
         jump too_much
 
     elif her_whoring < 15:
-        jump hg_ps_wear_cum_Scene_1
+        jump hg_ps_cumslut_Scene_1
     elif her_whoring < 21:
-        jump hg_ps_wear_cum_Scene_2 #This is 1 until I write 2
+        jump hg_ps_cumslut_Scene_2 #This is 1 until I write 2
     else:
-        jump hg_ps_wear_cum_Scene_2 #This is 1 until I write 3
+        jump hg_ps_cumslut_Scene_2 #This is 1 until I write 3
 
 
 
@@ -40,8 +40,8 @@ label hg_ps_wear_cum: #Walk around school covered in genies cum
 
 
 
-label hg_ps_wear_cum_Scene_1:
-    $ hg_ps_wear_cum_OBJ.inProgress = True
+label hg_ps_cumslut_Scene_1:
+    $ hg_ps_cumslut_OBJ.inProgress = True
     call her_main("What?!?","shock","wide")
     call her_main("You can't be serious!","angry","angry")
     call her_main("It's bad enough that I let you cum on me in private!","annoyed","annoyed")
@@ -244,8 +244,8 @@ label hg_ps_wear_cum_Scene_1:
 
 
 
-label hg_ps_wear_cum_Scene_2:
-    $ hg_ps_wear_cum_OBJ.inProgress = True
+label hg_ps_cumslut_Scene_2:
+    $ hg_ps_cumslut_OBJ.inProgress = True
     call her_main("Again?","shock","wide")
     call her_main("You can not be serious!","angry","angry")
     call her_main("I already let you do this to me once, isn't that enough?","annoyed","annoyed")
@@ -464,8 +464,8 @@ label hg_ps_wear_cum_Scene_2:
     jump end_hg_pf
 
 
-label hg_ps_wear_cum_Scene_3:
-    $ hg_ps_wear_cum_OBJ.inProgress = True
+label hg_ps_cumslut_Scene_3:
+    $ hg_ps_cumslut_OBJ.inProgress = True
     call her_main("Are you serious?","shock","wide")
     call her_main("Can I?","grin","ahegao")
     m "well-"
@@ -598,16 +598,16 @@ label hg_ps_wear_cum_Scene_3:
 
 
 
-label hg_ps_wear_cum_complete: #Hermione returns from her day of wearing your cum
-    $ hg_ps_wear_cum_OBJ.inProgress = False
-    $ hg_ps_wear_cum_OBJ.complete = True
+label hg_ps_cumslut_complete: #Hermione returns from her day of wearing your cum
+    $ hg_ps_cumslut_OBJ.inProgress = False
+    $ hg_ps_cumslut_OBJ.complete = True
     if cum_location <= 3:
-        jump hg_ps_wear_cum_complete_1
+        jump hg_ps_cumslut_complete_1
     else:
-        jump hg_ps_wear_cum_complete_2
+        jump hg_ps_cumslut_complete_2
 
 
-label hg_ps_wear_cum_complete_1:
+label hg_ps_cumslut_complete_1:
 
     call play_sound("door")
     call her_walk("door","mid",2)
@@ -699,7 +699,7 @@ label hg_ps_wear_cum_complete_1:
     jump end_hg_pf
 
 
-label hg_ps_wear_cum_complete_2:
+label hg_ps_cumslut_complete_2:
 
     call play_sound("door")
     call her_walk("door","mid",2)
@@ -797,7 +797,7 @@ label hg_ps_wear_cum_complete_2:
     jump end_hg_pf
 
 
-label hg_ps_wear_cum_complete_3:
+label hg_ps_cumslut_complete_3:
     if cum_location == 7: #Cleavage
         $ u_sperm = "characters/hermione/face/auto_06.png"
         $ uni_sperm = True

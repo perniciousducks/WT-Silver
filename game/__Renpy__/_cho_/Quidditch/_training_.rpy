@@ -104,7 +104,7 @@ label quidditch_training_intro_1:
     m "Saying what?"
     call cho_main("(...)","annoyed","narrow","angry","mid")
     call cho_main("{size=-4}\"Snatch\".{/size}","soft","narrow","angry","mid") # Small text
-    g9 "Hehehe- Now you've said it!"
+    g9 "*Hehehehe*{w} Now you've said it!"
     call cho_main("Could we please just talk about your plan, [cho_genie_name]?","open","narrow","angry","R")
     m "Patience, Miss Chang."
     call cho_main("Tell me!","scream","closed","angry","mid",trans="hpunch")
@@ -160,7 +160,7 @@ label quidditch_training_intro_1:
     call cho_main("I'm sorry Sir, but I feel methods like those would get us nowhere!","open","closed","raised","mid")
     call cho_main("And it's very improper for a teacher to suggest such things! Not to mention right out vulgar!","open","base","angry","R")
     call cho_main("I'll be leaving now.{p=0.8}Please only call me should you decide to finally take things seriously...","soft","narrow","angry","mid")
-    g9 "And you, think about using that adrett body of yours to get closed to your dreams!"
+    g9 "And you, think about using that adrett body of yours to get closer to your dreams!"
     call cho_main("*Tzzzz*","angry","closed","angry","mid")
 
     if daytime:
@@ -326,6 +326,7 @@ label demonstrate_tactic(position=""):
 
         call cho_walk("600", "150", 0.3)
 
+        call bld
         m "Yes, very good. Keep that position."
 
         if cho_quidditch_coat == True:
@@ -370,6 +371,7 @@ label demonstrate_tactic(position=""):
         call gen_chibi("stand","desk","base")
         with d3
 
+        call bld
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"

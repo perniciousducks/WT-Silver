@@ -195,7 +195,7 @@ label cc_pf_talk_T1_E1: # Complete.
     call cho_main("Do it with?","soft","narrow","raised","mid") # Shocked
     m "Smooshing, kissing, snogging,...{w} whatever you call it nowadays..."
     call cho_main("With all due respect, Professor, it's very odd that you'd ask me about those sort of things...","open","closed","base","mid")
-    call cho_main("But,... you \"are\" helping me.{w} So I guess I owe ye that much...","annoyed","base","base","R")
+    call cho_main("But,... you \"are\" helping me.{w} So I guess I owe you that much...","annoyed","base","base","R")
     g9 "That's what I wanted to hear."
 
     # Fleur

@@ -247,7 +247,7 @@ label cc_pf_strip_T1_E1: # Almost complete. Not posed.
             g4 "Butterbeer..."
             cho "This is as far as I will go, Sir!"
 
-    cho "If you want a bimbo to strip for you, I suggest ye call Hermione instead..."
+    cho "If you want a bimbo to strip for you, I suggest you call Hermione instead..."
 
     hide screen cho_chang
     $ cho_class.wear("all")
@@ -405,7 +405,7 @@ label cc_pf_strip_T1_E3: # Incomplete. Not posed.
     cho "Yes, but I’m doing it for a good cause.{w} Not because I’m a slut!"
     cho "I’m untouchable! I’ll show that bitch she can’t mess with me!"
     cho "This is gonna be so much fun!"
-    cho "Don't ye think so too, [cho_genie_name]?"
+    cho "Don't you think so too, [cho_genie_name]?"
 
     # Cho removes her bra.
 
@@ -453,7 +453,7 @@ label cc_pf_strip_T1_E4: # Complete. Not posed.
     g9 "Nice!"
     cho "I'd like to have them back after this, mind you."
     m "Of course..."
-    cho "Now, if ye don't mind, Sir..."
+    cho "Now, if you don't mind, Sir..."
     cho "I'd like you to call that Gryffindor slut to your office!"
     g9 "On it!"
     cho "(...)"
@@ -634,7 +634,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
             her "Despicable..."
             cho "If you're to start doing hourly exercises, our Professor might even be attracted to you by the end of the year..."
             her "Hourly exercises?" # Shocked
-            cho "Don't worry, Granger.{w} Not all is lost.
+            cho "Don't worry, Granger.{w} Not all is lost."
             cho "While your figure might be a bit repulsive on the eyes..."
             cho "I don't mind looking at those huge melons of yours."
             her "How dare you talk of them like that!"
@@ -663,7 +663,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
 
             # Cho puts her clothes back on.
 
-            cho "Now, if ye excuse me..."
+            cho "Now, if you excuse me..."
 
             if daytime:
                 cho "I have to head back to classes."

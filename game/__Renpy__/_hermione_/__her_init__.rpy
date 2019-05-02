@@ -744,19 +744,19 @@ label her_progress_init:
     $ hg_ps_get_panties_OBJ.start_label = "hg_ps_get_panties"
     $ hg_ps_get_panties_OBJ.return_label = "hg_ps_get_panties_complete"
 
-    if not hasattr(renpy.store,'hg_ps_wear_buttplug_OBJ'):
-        $ hg_ps_wear_buttplug_OBJ = shaming_class()
-    $ hg_ps_wear_buttplug_OBJ.tier = 1
-    $ hg_ps_wear_buttplug_OBJ.title = "Wear A Buttplug"
-    $ hg_ps_wear_buttplug_OBJ.start_label = "hg_ps_wear_buttplug"
-    $ hg_ps_wear_buttplug_OBJ.return_label = "hg_ps_wear_buttplug_complete"
+    if not hasattr(renpy.store,'hg_ps_buttplug_OBJ'):
+        $ hg_ps_buttplug_OBJ = shaming_class()
+    $ hg_ps_buttplug_OBJ.tier = 1
+    $ hg_ps_buttplug_OBJ.title = "Wear A Buttplug"
+    $ hg_ps_buttplug_OBJ.start_label = "hg_ps_buttplug"
+    $ hg_ps_buttplug_OBJ.return_label = "hg_ps_buttplug_complete"
 
-    if not hasattr(renpy.store,'hg_ps_wear_cum_OBJ'):
-        $ hg_ps_wear_cum_OBJ = shaming_class()
-    $ hg_ps_wear_cum_OBJ.tier = 2
-    $ hg_ps_wear_cum_OBJ.title = "Wear My Cum"
-    $ hg_ps_wear_cum_OBJ.start_label = "hg_ps_wear_cum"
-    $ hg_ps_wear_cum_OBJ.return_label = "hg_ps_wear_cum_complete"
+    if not hasattr(renpy.store,'hg_ps_cumslut_OBJ'):
+        $ hg_ps_cumslut_OBJ = shaming_class()
+    $ hg_ps_cumslut_OBJ.tier = 2
+    $ hg_ps_cumslut_OBJ.title = "Wear My Cum"
+    $ hg_ps_cumslut_OBJ.start_label = "hg_ps_cumslut"
+    $ hg_ps_cumslut_OBJ.return_label = "hg_ps_cumslut_complete"
 
     if not hasattr(renpy.store,'hg_ps_walk_OBJ'):
         $ hg_ps_walk_OBJ = shaming_class()
@@ -767,8 +767,8 @@ label her_progress_init:
 
 
     $ hg_ps_list = [hg_ps_get_panties_OBJ,
-                    hg_ps_wear_buttplug_OBJ,
-                    hg_ps_wear_cum_OBJ
+                    hg_ps_buttplug_OBJ,
+                    hg_ps_cumslut_OBJ
         ]
 
     return

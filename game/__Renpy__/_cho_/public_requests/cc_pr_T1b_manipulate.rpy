@@ -3,7 +3,7 @@
 ### Manipulate the enemy Quidditch players ###
 
 # Start
-label cc_pr_manipulate_start:
+label cc_pr_manipulate_start: # Complete. Not posed.
 
     # Intro
     if cc_pr_manipulate_OBJ.points == 0:
@@ -202,8 +202,9 @@ label cc_pr_manipulate_T1_E3:
     cho "After all those years of playing Quidditch, I've grown pretty resistent to it..."
     m "A usefull skill to have I suppose..."
     cho "Anyways, Cedric helped me back up on my feet, but before he could even say how sorry he was, I kissed him!"
+    cho "It just... happened..."
     m "Well done, girl!"
-    cho "It was really nice. He still is a really good kisser!"
+    cho "It was really nice, though. He still is a really good kisser!"
     cho "Compared to most of the others I had, at the very least..."
     g4 "!!!"
     cho "Anyhow, I should get going, Sir."

@@ -2,7 +2,7 @@
 
 ### Old Writing ###
 
-label cho_favor_3:
+label cho_favor_3: # Not in use.
 
         m "Miss Chang, do you know what a blowjob is?"
         call cho_main("?","smile","base","base","mid")

@@ -58,7 +58,7 @@ label cc_pf_talk:
 
 ### Tier 1 ###
 
-label cc_pf_talk_T1_E1:
+label cc_pf_talk_T1_E1: # Complete.
     m "Let’s have a little chat shall we."
     g9 "Just to get to know each other a little bit better."
     call cho_main("Of course, Sir.","smile","base","base","mid")
@@ -289,7 +289,7 @@ label cc_pf_talk_T1_E1:
 
 
 # Second Event
-label cc_pf_talk_T1_E2:
+label cc_pf_talk_T1_E2: # Complete.
     g9 "Get closer, [cho_name]..."
     call cho_main("...","annoyed","base","base","down")
 
@@ -452,7 +452,7 @@ label cc_pf_talk_T1_E2:
 # Third event
 ## Asking more questions abour her ex boyfriends and jerking off.
 
-label cc_pf_talk_T1_E3:
+label cc_pf_talk_T1_E3: # Incomplete. Not posed.
 
     m "Care to tell me more about Quidditch?"
     cho "Of course, [cho_genie_name]. Anything specific you'd like to know?"
@@ -517,7 +517,7 @@ label cc_pf_talk_T1_E3:
 
 ### Tier 2 ###
 
-label cc_pf_talk_T2_E1:
+label cc_pf_talk_T2_E1: # Incomplete. Not posed.
 
     m "Could you tell me anything about who we are up against next?"
     cho "Our next game is against the Slytherin team."
@@ -551,7 +551,7 @@ label cc_pf_talk_T2_E1:
     return
 
 
-label cc_pf_T2_talking_2:
+label cc_pf_T2_talking_2: # Incomplete. Not posed.
 
     # Cho is angry about Hermione.
     # Talks about all the things she'd do to her.
@@ -563,7 +563,7 @@ label cc_pf_T2_talking_2:
     # She insults you which gets you off.
     # She angrily leaves...
 
-    m "Miss Chang, with out Quidditch talk out of the way, I thought you maybe wanted to talk about your regular school life with me."
+    m "Miss Chang, with our Quidditch talk out of the way, I thought you maybe wanted to talk about your regular school life with me."
     cho "Very well, Sir. Anything in particular you'd like to hear about?"
     m "Not necessarily. Why don't you surprise me? Has anything interesting happened to you lately?"
     cho "I feel like people have shown me more affection even since our game against Hufflepuff."
@@ -651,7 +651,7 @@ label cc_pf_T2_talking_2:
     return
 
 
-label cc_pf_T2_talking_3:
+label cc_pf_T2_talking_3: # Incomplete. Not posed.
 
     menu:
         "Jerk off":
@@ -723,7 +723,7 @@ label cc_pf_T2_talking_3:
 
 ###  Stretching ###
 
-label cho_stretching:
+label cho_stretching: # Not in use.
 
     #If you begin masturbating:
     #Tell me how you get ready for practice...

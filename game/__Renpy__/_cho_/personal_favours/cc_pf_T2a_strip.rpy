@@ -7,32 +7,34 @@ label cc_pf_strip:
     # Tier 1
     if main_matches_won <= 1:
 
-        # Event 1
-        if cc_pf_strip_OBJ.points == 0:
+        if cc_pf_strip_OBJ.level == 0:   # 0 Hearts.
+            # Cho strips to her underwear.
             call cc_pf_strip_T1_E1
 
-        # Event 2
-        elif cc_pf_strip_OBJ.points == 1:
+        elif cc_pf_strip_OBJ.level == 1: # 1 Heart.
+            # Cho strips naked.
             call cc_pf_strip_T1_E2
 
-        # Event 3
-        # Fails when Hermione hasn't stripped for you yet.
-        # Succeeds after Hermione's second dance favour.
-        elif cc_pf_strip_OBJ.points == 2:
+        elif cc_pf_strip_OBJ.level == 2: # 2 Hearts.
+            # Cho wants you to summon Hermione.
+            # Event fails when Hermione hasn't stripped for you yet.
+            # Succeeds after Hermione's second dance favour.
             jump cc_pf_strip_T1_E3
 
-        # Event 4
-        # Repeat of event 3 with different intro.
-        else:
+        else:                            # 3+ Hearts.
+            # Cho wants you to summon Hermione again.
+            # Repeat of event 3 with different intro.
             jump cc_pf_strip_T1_E4
 
 
     # End event jump
     # (only used when the event isn't called.)
     label end_cho_strip_event:
+
         if cho_whoring < 8: # Points til 8
             $ cho_whoring += 1
-        if cc_pf_strip_OBJ.level < 4: # Hearts 1 to 4
+
+        if cc_pf_strip_OBJ.level < 4:
             $ cc_pf_strip_OBJ.level += 1
 
     # Stats
@@ -44,7 +46,7 @@ label cc_pf_strip:
 
 ### Tier 1 ###
 
-label cc_pf_strip_T1_E1:
+label cc_pf_strip_T1_E1: # Almost complete. Not posed.
     m "It's time for your next favour, [cho_name]."
     cho "I- *uhm*...{w} I think I'm ready."
     cho "What would you like me to do, [cho_genie_name]?"
@@ -52,6 +54,7 @@ label cc_pf_strip_T1_E1:
     cho "As often as I can, [cho_genie_name]!"
     m "Which is... how often? Twice a week?"
     cho "Three times a day, Sir!"
+    with hpunch
     m "What?!"
     g4 "(I don't even jerk off that often!)"
     m "You are clearly exaggerating..."
@@ -244,7 +247,7 @@ label cc_pf_strip_T1_E1:
             g4 "Butterbeer..."
             cho "This is as far as I will go, Sir!"
 
-    cho "If you want a bimbo to strip for you, I suggest ye call Hermione instead..."
+    cho "If you want a bimbo to strip for you, I suggest you call Hermione instead..."
 
     hide screen cho_chang
     $ cho_class.wear("all")
@@ -258,22 +261,93 @@ label cc_pf_strip_T1_E1:
 
 
 
-label cc_pf_strip_T1_E2:
+label cc_pf_strip_T1_E2: # Incomplete. Not posed.
+
+    m "If you're not interested, I'm sure Hermione wouldn't mind..."
+    call cho_main("!!!","pout","wide","sad","mid",trans="hpunch")
+    call cho_main("I'll do it.","horny","base","sad","R")
+
+    cho "[cho_genie_name], may I ask, does Granger do these sorts of things for you?"
+    g9 "She does a lot of things for me. You need to be more specific!"
+    cho "I meant buying sexual favours. Doing tasks that are, let's say, a little audacious..."
+    m "Are you talking about stripping, girl?"
+    cho "Yes, Sir."
+    cho "Do you really pay Hermione house points for doing this sort of thing?"
+
+    cho "Just out of curiosity, [cho_genie_name]. How much does she get for such a favour?"
+    m "(What should I tell her? Should I exaggerate a bit to get her more motivated?)"
+
+    menu:
+        "\"Five points.\"":
+            $ current_payout = 5
+            call cho_main("Only five points? I expected more, Sir.","horny","narrow","sad","downR")
+            call cho_main("I've gotten more points for answering Quidditch questions to Madam Hooch!","open","wide","raised","mid")
+            m "I'm sure that wasn't the only reason she gave you those points..."
+            call cho_main("Just to be clear... She completely undresses? For five mere points?","angry","narrow","sad","down")
+            m "Yep"
+            call cho_main("What a slut! I can't believe it!","angry","narrow","sad","down")
+            m "Sometimes I only give her two if she doesn't sway her hips enough..."
+            cho "You don't say!"
+            m "Why were you asking?"
+
+        "\"One-hundred points!\"":
+            $ current_payout = 30
+            $ cho_mood += 6
+            call cho_main("So many? But...","soft","wide","base","mid")
+            call cho_main("Sir, how can you agree to such a thing?","open","closed","angry","mid")
+            call cho_main("People in house \"Ravenclaw\" work hard to earn that amount!","open","base","raised","L")
+            call cho_main("And you're telling me that you give that cow \"one-hundred bloody points\"{w}, for showing you her tits?!","open","base","raised","L")
+            m "(Well that clearly backfired...)"
+            m "Not just her tits, [cho_name]."
+            g4 "Everything!!!"
+            call cho_main("Sir, how can you agree to such a thing?","open","closed","angry","mid")
+            m "Calm down, would you. I was joking..."
+            m "She doesn't get that many points from me. It's closer to thirty..."
+            cho "That's still far too many points!"
+            m "Why are you even so invested in this all of a sudden?"
+            cho "(...)"
+
+    cho "I thought,...{w} maybe...{w} just this once..."
+    cho "You could give me house points as well?"
+    m "Really? I thought you were so appalled by that though."
+    cho "I still am, [cho_genie_name]!"
+    cho "But if you want me to remove my clothes for you, Sir, I'll require some additional motivation!"
+    m "What is your motivation I wonder..."
+    cho "Sir?"
+    m "Is it the noble deed of earning points for your house?..."
+    g4 "Or the corruptive, dirty feeling you get from the way you acquired them?"
+    cho "(...)" # Embarrassed
+    g9 "Stripping down for points! Don't you know what that would make you?"
+    cho "*Uhm*"
+    m "You'd be just as cheap as Hermione..."
+    cho "Don't compare me to that whore!"
+    g9 "Yes, Miss Chang. A whore!"
+    cho "That's not why-"
+    cho "Please, Sir. Just this once!"
+    cho "I won't ask for payment ever again!"
+    cho "I'll strip naked for you, for... [current_payout] house points!" # Embarrassed
+
+    menu:
+        "\"Make your house proud, slut! Earn those points!\"":
+            cho "Yes, Sir!"
+            cho "Here goes my bra!"
+        "\"No. You are better than that!\"":
+            pass
+
+
+    g4 "It is quite impressive, I've got to say!"
+    call cho_main("Glad to hear it, [cho_genie_name].","smile","angry","angry","mid")
+    call cho_main("Now... How badly do you want me to take off the rest?","soft","angry","base","mid")
 
     return
 
 
 
-label cc_pf_strip_T1_E3:
+label cc_pf_strip_T1_E3: # Incomplete. Not posed.
 
     # Intro for the first time you summon Hermione to watch Cho having fun, naked in your office…
 
 
-    cho "[cho_genie_name], may I ask, does Granger do these sorts of things for you?"
-    g9 "She does a lot of things for me. You need to be more specific!"
-    cho "I meant buying favours. Doing tasks that are, let's say, a little audacious..."
-    m "Are you talking about stripping, girl?"
-    cho "I am, Sir."
 
     # Add section here.
 
@@ -331,7 +405,7 @@ label cc_pf_strip_T1_E3:
     cho "Yes, but I’m doing it for a good cause.{w} Not because I’m a slut!"
     cho "I’m untouchable! I’ll show that bitch she can’t mess with me!"
     cho "This is gonna be so much fun!"
-    cho "Don't ye think so too, [cho_genie_name]?"
+    cho "Don't you think so too, [cho_genie_name]?"
 
     # Cho removes her bra.
 
@@ -345,7 +419,7 @@ label cc_pf_strip_T1_E3:
 
 
 
-label cc_pf_strip_T1_E4:
+label cc_pf_strip_T1_E4: # Complete. Not posed.
 
     g9 "[cho_name], I’m in the mood for another strip-tease!"
     cho "Funny you should say that, [cho_genie_name]..."
@@ -379,7 +453,7 @@ label cc_pf_strip_T1_E4:
     g9 "Nice!"
     cho "I'd like to have them back after this, mind you."
     m "Of course..."
-    cho "Now, if ye don't mind, Sir..."
+    cho "Now, if you don't mind, Sir..."
     cho "I'd like you to call that Gryffindor slut to your office!"
     g9 "On it!"
     cho "(...)"
@@ -406,7 +480,7 @@ label cc_pf_strip_T1_E4:
 
 
 
-label cc_pf_strip_T1_hermione:
+label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not posed.
 
     menu:
         "\"Definitely!\"":
@@ -445,7 +519,7 @@ label cc_pf_strip_T1_hermione:
             her "Have a good look."
             cho "(...)" # Tries to look away.
             her "You can have a peek too, slut."
-            cho "I'd rather not, or I might have to vomit..." # 
+            cho "I'd rather not, or I might have to vomit..." #
             g9 "Very nice, Miss Granger!"
 
             menu:
@@ -558,9 +632,11 @@ label cc_pf_strip_T1_hermione:
             m "Well yes. I also never claimed that \"I\" was pretty on the inside."
             m "I'm a guy, Miss Granger. You of all people should know better..."
             her "Despicable..."
-            cho "Don't worry.{w} If you're to start doing hourly exercises, our Professor might even be attracted to you by the end of the year..."
+            cho "If you're to start doing hourly exercises, our Professor might even be attracted to you by the end of the year..."
             her "Hourly exercises?" # Shocked
-            cho "By the way Granger{w}, I \"do\" love your huge melons!"
+            cho "Don't worry, Granger.{w} Not all is lost."
+            cho "While your figure might be a bit repulsive on the eyes..."
+            cho "I don't mind looking at those huge melons of yours."
             her "How dare you talk of them like that!"
             g9 "*Heh*... melons..."
             her "Sir, I’d like to leave now."
@@ -587,7 +663,7 @@ label cc_pf_strip_T1_hermione:
 
             # Cho puts her clothes back on.
 
-            cho "Now, if ye excuse me..."
+            cho "Now, if you excuse me..."
 
             if daytime:
                 cho "I have to head back to classes."

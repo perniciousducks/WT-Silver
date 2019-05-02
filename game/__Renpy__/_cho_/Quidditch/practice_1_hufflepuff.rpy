@@ -13,13 +13,13 @@ label start_training_match:
             $ huffl_match_counter += 1 # Stat counter
 
             m "So, when will those Quidditch matches take place?"
-            cho "We could arrange one for today. Just for practice, against Hufflepuff."
+            call cho_main("We could arrange one for today. Just for practice, against Hufflepuff.","open","base","base","R")
             m "Really? Just like that?"
-            cho "Why yes. The Hufflepuff team wouldn’t take up a chance to play against us for training."
-            cho "They’d welcome every opportunity to test us and study our tactics..."
-            cho "All I need to do is give their team captain a heads up during classes."
+            call cho_main("Why yes. The Hufflepuff team wouldn’t take up a chance to play against us for training.","soft","base","raised","mid")
+            call cho_main("They’d welcome every opportunity to test us and study our tactics...","open","narrow","angry","mid")
+            call cho_main("All I need to do is give their team captain a heads up during classes.","base","base","base","mid")
             m "Great. Get your team ready cause you are going to play today."
-            cho "I will, [cho_genie_name]. Wish me luck."
+            call cho_main("I will, [cho_genie_name]. Wish me luck.","smile","base","base","mid")
 
         # Repeated
         else:
@@ -27,10 +27,10 @@ label start_training_match:
             $ huffl_match_counter += 1 # Stat counter
 
             m "Time for another practice match don't you think?"
-            cho "I’ll try my best, [cho_genie_name]."
+            call cho_main("I’ll try my best, [cho_genie_name].","base","base","base","mid")
             m "Good luck out there."
-            cho "Thanks."
-            cho "I better get going. See you later, [cho_genie_name]!"
+            call cho_main("Thank you, Sir.", face="happy")
+            call cho_main("I better get going. See you later, [cho_genie_name]!","soft","base","raised","mid")
 
 
     # Second Hufflepuff match.
@@ -39,13 +39,13 @@ label start_training_match:
         $ huffl_match_counter += 1 # Stat counter
 
         m "Ready to kick some badger ass again?"
-        cho "Absolutely!"
-        cho "If we beat them twice, we might have a chance against them in the tourney!"
+        call cho_main("Absolutely!","smile","narrow","angry","mid")
+        call cho_main("If we beat them twice, we might have a chance against them in the tourney!","base","narrow","angry","mid")
         m "That’s the spirit! Now go get them tiger!"
-        cho "Later, [cho_genie_name]!"
+        call cho_main("Later, [cho_genie_name]!", face="happy")
 
     # Cho leaves.
-    call cho_walk(speed=2, action="leave")
+    call cho_walk(action="leave", speed=2)
 
     $ cho_busy = True
     if quidditch_commentator == "hermione": # Hermione has to commentate.
@@ -118,52 +118,52 @@ label quidditch_match_return:
 # Lost first hufflepuff match.
 label hufflepuff_practice_lost:
 
-    call cho_main("...",mouth="upset",face="neutral",xpos="mid",ypos="base")
+    call cho_main("...", mouth="upset", face="neutral", xpos="mid", ypos="base")
     m "So, how did it go?"
-    call cho_main("We lost... again...",mouth="soft",eyebrows="sad",face="neutral")
+    call cho_main("We lost... again...", mouth="soft", eyebrows="sad", face="neutral")
     m "What was the problem?"
 
     # Low whoring response
     if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and cho_whoring < 3:
-        cho "I couldn't focus on the game!"
-        cho "This ridiculously short skirt! The whole match it kept on slipping over my bottoms!"
-        m "So what? Just ignore it..."
-        cho "Ignore it? And let everyone ogle at my bare ass?"
+        call cho_main("I couldn't focus on the game!","angry","closed","angry","mid")
+        call cho_main("This ridiculously short skirt! The whole match it kept on slipping over my bum!","soft","narrow","angry","mid")
+        m "So what? It wasn't an issue before... Just ignore it..."
+        call cho_main("And let everybody ogle at my bare ass?","open","angry","angry","mid")
         m "Aren't you still wearing panties?"
-        cho "Of course I am! And I don't intent to show them to the whole school!"
-        cho "Just enough to let Cedric have a peek..."
+        call cho_main("Of course I am! And I don't intent to show them to the whole school!","annoyed","narrow","angry","mid")
+        call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
         g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
         g4 "If the entire school knows the color of your panties, that's when you have done your task well!"
-        cho "You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing..."
-        m "Give it some time, girl. We'll get you to be more confident on your broom soon enough..."
+        call cho_main("You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing...","annoyed","narrow","base","mid")
+        m "Clearly you just aren't ready yet. We'll get you to be more confident on your broom soon enough..."
         g9 "With your panties on display!"
-        cho "(...)"
-        cho "It's getting late..."
-        cho "If you don't mind I'd like to go to bed now."
+        call cho_main("(...)","annoyed","narrow","angry","mid")
+        call cho_main("It's getting late...","soft","narrow","base","R")
+        call cho_main("If you don't mind I'd like to go to bed now.","open","base","angry","mid")
         m "Sure. You may leave..."
-        cho "Have a good night, Sir."
+        call cho_main("Have a good night, Sir.","soft","closed","base","mid")
 
     # Position response
     elif quidditch_position != "above":
-        cho "Our tactic didn't work, [cho_genie_name]."
-        cho "Cedric just ignored me for most of the game and ended up catching the snitch..."
+        call cho_main("Our tactic didn't work, [cho_genie_name].","annoyed","narrow","sad","mid")
+        call cho_main("Cedric just ignored me for most of the game, and ended up catching the snitch...","soft","narrow","sad","R")
         m "Were you trying to distract him enough?"
-        cho "Of course I was! I tried to let him have a peek up my skirt, but I'm not sure he even noticed that I was wearing one."
+        call cho_main("Of course I was! I tried to let him have a peek up my skirt, but I'm not sure he even noticed that I was wearing one.","soft","narrow","angry","mid")
         m "Interesting..."
         m "Maybe we need to tackle this situation from another angle."
-        cho "Whatever you say, [cho_genie_name]."
-        cho "I'll be going to bed now if you don't mind."
-        cho "Have a good night, Sir."
+        call cho_main("Whatever you say, [cho_genie_name].","annoyed","narrow","angry","R")
+        call cho_main("I'll be going to bed now if you don't mind.","soft","narrow","angry","mid")
+        call cho_main("Have a good night, Sir.","annoyed","narrow","base","mid")
         m "You too..."
 
     else:
-        cho "Cedric didn't seem too distracted by me... He ended up catching the snitch and..."
-        cho "I'm not sure what the problem was..."
+        call cho_main("Cedric didn't seem too distracted by me... He ended up catching the snitch and...","open","narrow","base","R")
+        call cho_main("I'm not sure what the problem was...","annoyed","narrow","sad","mid")
         m "Maybe we aren't using the right tactics."
-        cho "Lets try a different approach next time, [cho_genie_name]."
-        cho "I have to head back to our dorms and get some sleep..."
-        m "Sure. You may go..."
-        cho "Have a good night, Sir."
+        call cho_main("Lets try a different approach next time, [cho_genie_name].","open","narrow","angry","mid")
+        call cho_main("I should head back to our dorms and get some sleep...","soft","closed","base","mid")
+        m "Sure. You may leave..."
+        call cho_main("Have a good night, Sir.","soft","base","base","R")
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.2)
@@ -208,26 +208,27 @@ label hufflepuff_practice_win_1:
     call cho_main("\"Ravenclaw\"...{w} isn't very good...","pout","narrow","sad","down")
     call cho_main("But I have a feeling that's going to change this year!","smile","closed","base","mid")
     g9 "And I am happy to be of help!"
-    cho "Yes, [cho_genie_name]! Thank you so much!"
-    cho "If there is any way I can return the favour...?"
+    call cho_main("Yes, [cho_genie_name]! Thank you so much!","horny","narrow","base","down")
+    call cho_main("If there is any way I can return the favour...?","horny","base","raised","mid")
 
     if cc_pf_talk_OBJ.points == 0:
         m "Why don't we start with that, Miss Chang,...{w} favours!"
         m "I did prove the effectiveness of my methods to you. Now it's your turn to stay true to your promise..."
-        cho "Of course, Sir."
-        cho "But, if you don't mind..."
+        call cho_main("Of course, Sir.","base","base","base","mid")
+        call cho_main("But, if you don't mind...","soft","base","base","R")
     else:
         g9 "You could sell some more favours to me!"
-        cho "Is it just talking?"
+        call cho_main("More chit-chats?","quiver","wink","sad","mid")
         m "I had hoped for something more... advanced."
-        cho "(...)"
-        cho "If you don't mind, maybe some other time, Sir."
+        call cho_main("More advanced?...","soft","narrow","sad","mid")
+        call cho_main("Maybe some other time, Sir.","quiver","closed","sad","mid")
 
-    cho "The whole house is celebrating our win at the moment... And I'd rather not miss spending some time with-"
+    call cho_main("The whole house is celebrating our win at the moment...{w} And I'd rather not miss spending some time with-","horny","closed","sad","mid")
     g4 "You did well today, [cho_name]."
     g9 "Go and party! You've earned it."
-    cho "Thank you, [cho_genie_name],... for everything."
-    cho "Have a good night!"
+    call cho_main("Thank you, [cho_genie_name]... For everything.","base","narrow","base","mid")
+    call cho_main("Have a good night!","smile","base","base","mid")
+    m "You too..."
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2)
@@ -253,14 +254,14 @@ label hufflepuff_practice_win_2:
     call cho_main("But, Hermione! Her incompetece as a Quidditch commentator is unmeasurable!","open","base","raised","R")
     call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
     g9 "I could tell Hermione to do the same if you'd like."
-    cho "Please don't, [cho_genie_name]! I was merely joking!"
+    call cho_main("Please don't, [cho_genie_name]! I was merely joking!","annoyed","narrow","angry","mid")
     m "Would you say you've had enough practive to play against them in a tourney game?"
-    cho "Absolutely! The next time we will confront \"Hufflepuff\", they will be crushed!"
-    cho "This should be an easy win for \"Ravenclaw\"."
-    cho "Speaking of which, I need to get back to my team now, [cho_genie_name]."
-    cho "Thank you for helping me!"
+    call cho_main("Absolutely! The next time we will confront \"Hufflepuff\", they will be crushed!","smile","angry","angry","mid")
+    call cho_main("This should be an easy win for \"Ravenclaw\".","base","closed","base","mid")
+    call cho_main("Speaking of which, I need to get back to my team now, [cho_genie_name].","open","wide","base","R")
+    call cho_main("Thank you for helping me!","smile","narrow","base","mid")
     m "You're welcome."
-    cho "Good night, Sir."
+    call cho_main("Good night, Sir.","base","base","base","mid")
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2)

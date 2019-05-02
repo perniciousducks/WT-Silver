@@ -83,7 +83,7 @@ label use_quidditch_skirt_1:
     if "skirt_1" not in quid_outfit_intro:
         $ quid_outfit_intro.append("skirt_1")
         m "Why don't you wear a skirt while playing?"
-        cho "A skirt?!"
+        call cho_main("A skirt?!","soft","wide","base","mid")
         call cho_main("I couldn't do that!","scream","wide","angry","mid")
         call cho_main("Everyone would be able to see straight up it!","quiver","wide","angry","downR")
         call cho_main("Not to mention all the other players-","horny","narrow","sad","R")
@@ -103,10 +103,10 @@ label use_quidditch_skirt_1:
     # Repeat
     else:
         m "I'd like you to wear a skirt for your games."
-        cho "Ok, [cho_genie_name]. If I have to."
+        call cho_main("Ok, [cho_genie_name]. If I have to.","soft","base","base","R")
         m "You have to if you want to win this."
-        cho "I hope you're' right."
-        cho "This is going to be so embarrassing..."
+        call cho_main("I hope you're' right.","soft","closed","angry","mid")
+        call cho_main("This is going to be so embarrassing...","quiver","base","sad","down")
 
     $ cho_quidditch_bottom = "skirt_long" # For testing.
 
@@ -114,7 +114,7 @@ label use_quidditch_skirt_1:
 
 
 
-label use_quidditch_skirt_2:
+label use_quidditch_skirt_2: # Not in use.
 
     # Intro
     if "skirt_2" not in quid_outfit_intro:
@@ -170,26 +170,26 @@ label remove_quidditch_coat:
     g9 "That's probably what the crowd will be chanting..."
 
     if main_matches_won < 1: # Hasn't won against Hufflepuff yet.
-        cho "This is just ridiculous!"
-        cho "I will not play Quidditch without a coat on."
-        # Maybe she can explain here why the coat is so important for Quidditch. Aerodynamics maybe?
-        m "(...)"
-        m "(Guess I have to try something else.)"
-        $ cho_quidditch_coat = True # For testing.
-        return "fail"
-    else:
-        call cho_main("Ugh...","quiver","angry","angry","mid")
-        call cho_main("Fine...","pout","angry","angry","R")
-        call cho_main("But-{p} I better win!","soft","angry","raised","mid")
+        call cho_main("I'm sorry [cho_genie_name], but you expect me to play without the most basic equipment and expect me to win!","open","shocked","raised","mid")
+        m "What do you even need that coat for?"
+        call cho_main("To keep dry should it start raining, for one.{w} And to keep my broom steady if the wind is too strong.","soft","base","base","R")
+        call cho_main("After all, flying is all about aerodynamics, [cho_genie_name].","open","closed","base","mid")
+        call cho_main("Playing without a coat on is out of the question!","annoyed","base","angry","mid")
+        m "Fair enough..."
+        m "(Guess I have to try something else then.)"
 
-        # Remove coat from Quidditch outfit here.
-        $ cho_quidditch_coat = False # For testing.
+        return "fail"
+
+    else:
+        call cho_main("*Ugh*...","quiver","angry","angry","mid")
+        call cho_main("Fine...","pout","angry","angry","R")
+        call cho_main("But-{w} I better win!","soft","angry","raised","mid")
 
     return
 
 
 # Remove Gloves
-label remove_quidditch_gloves:
+label remove_quidditch_gloves: # Not in use.
     m "You should remove those bulky looking gloves of yours."
     cho "My gloves? But I need them to play!"
     cho "They are made out of pure \"Insert fantasy creature here\" leather! Their friction is necessary If I want to keep a good grip on my broom."
@@ -197,7 +197,5 @@ label remove_quidditch_gloves:
     m "With your mouth?"
     cho "That's just stupid!"
     m "Fair enough... Keep them on then."
-
-    $ cho_quidditch_coat = True # For testing.
 
     return

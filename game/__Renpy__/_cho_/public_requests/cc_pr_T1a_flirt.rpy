@@ -3,7 +3,7 @@
 ### Flirt with the other Quidditch players ###
 
 # Start
-label cc_pr_flirt_start:
+label cc_pr_flirt_start: # Not in use.
 
     # Intro
     if cc_pr_flirt_OBJ.points == 0:

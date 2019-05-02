@@ -237,13 +237,13 @@ label cho_talk:
         "\"From now on I will refer to you as\"":
             menu:
                 "\"Miss Chang\"":
-                    $ temp_name = "Miss Chang"
+                    $ cho_name = "Miss Chang"
                 "\"Princess\"":
-                    $ temp_name = "Princess"
+                    $ cho_name = "Princess"
                 "\"Boy\"":
-                    $ temp_name = "Boy"
+                    $ cho_name = "Boy"
                 "\"Miss Chang\"":
-                    $ temp_name = "Miss Chang"
+                    $ cho_name = "Miss Chang"
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)")
                     $ temp_name = temp_name.strip()

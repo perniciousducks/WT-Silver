@@ -5,6 +5,7 @@
 label cho_intro_1:
 
     call play_sound("knocking")
+    call bld
     "*Knock-knock-knock*"
     m "(...)"
 
@@ -24,7 +25,7 @@ label cho_intro_1:
 
     menu:
         "\"Who is it?\"":
-            $ cho_name_known = True # Affects talk with Snape.
+            $ cho_name_known = True
             call bld
             cho "Cho Chang, Sir."
             g4 "(Such a cute name... please be hot, please be hot...!)"
@@ -34,12 +35,12 @@ label cho_intro_1:
             m "Oh, right... Come in."
 
         "\"Come in!\"":
-            $ cho_name_known = False # Affects talk with Snape.
+            $ cho_name_known = False
             pass
 
 
     # Cho enters your office for the first time.
-    call cho_walk("660", "base", 1.6, action="enter") # updated
+    call cho_walk("660", "base", action="enter", speed=1.6)
 
     call cho_main("Good evening, Sir.","base","base","base","mid",xpos="mid",ypos="base")
 
@@ -261,7 +262,7 @@ label cho_intro_1:
         m "Certainly..."
 
         # Cho walks to the door and stops.
-        call cho_walk("door", "base", 1.6) # Updated
+        call cho_walk("door", "base", speed=1.6)
         pause.8
         call cho_chibi("stand","door","base")
         with d3
@@ -311,7 +312,7 @@ label cho_intro_1:
         call her_main("...","annoyed","angryL")
 
         # Cho walks to the door and stops.
-        call cho_walk("door", "base", 2.5) # Updated
+        call cho_walk("door", "base", speed=2.5)
         pause.8
         call cho_chibi("stand","door","base")
         with d3
@@ -369,7 +370,7 @@ label cho_intro_2:
     call cho_chibi("stand","door","base",flip=False)
     with d1
     pause.3
-    call cho_walk("desk", "base", 2.2) # Updated
+    call cho_walk("desk", "base", speed=2.2)
     pause.2
 
     call cho_main("I hate her!","scream","closed","angry","mid",xpos="mid",ypos="base",trans="hpunch")
@@ -413,7 +414,7 @@ label cho_intro_2:
     call cho_main("Have a nice evening, Professor.","smile","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk(speed=2.2, action="leave") # Updated
+    call cho_walk(action="leave", speed=2.2)
 
     call bld
     m "I better talk to Hermione about this..."
@@ -816,7 +817,7 @@ label cho_hermione_talk:
         pause.5
 
     # Cho enters the office.
-    call cho_walk("mid", "base", 1.6, action="enter") # Updated
+    call cho_walk("mid", "base", action="enter", speed=1.6)
 
     call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid",xpos="base",ypos="base")
     call her_main("","normal","closed",xpos="450",ypos="base")
@@ -865,7 +866,7 @@ label cho_hermione_talk:
     call cho_main("Good day, Professor.","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(speed=1.6, action="leave") # Updated
+    call cho_walk(action="leave", speed=1.6)
 
     call bld
     m "That went better than expected."

@@ -2,13 +2,13 @@
 
 ### Wear A Buttplug ###
 
-label hg_ps_wear_buttplug:
+label hg_ps_buttplug:
 
     call reset_menu_position
 
     $ current_payout = 55 #Used when haggling about price of the favour.
 
-    if hg_ps_wear_buttplug_OBJ.points < 1:
+    if hg_ps_buttplug_OBJ.points < 1:
         m "{size=-4}(Tell her to wear a buttplug around the school?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -22,13 +22,13 @@ label hg_ps_wear_buttplug:
     menu:
         "-Small, regular-":
             $ buttplug_size = 1
-        "-Medium, magical-" if hg_ps_wear_buttplug_OBJ.points >= 1:
+        "-Medium, magical-" if hg_ps_buttplug_OBJ.points >= 1:
             $ buttplug_size = 2
         "-Large, magical-" if buttplug_2_worn == True and her_whoring > 23:
             $ buttplug_size = 3
 
     #First event.
-    if hg_ps_wear_buttplug_OBJ.points == 0 and buttplug_size == 1:
+    if hg_ps_buttplug_OBJ.points == 0 and buttplug_size == 1:
         m "[hermione_name], I want you to do something different today..."
         call her_main("...........","soft","base",xpos="right",ypos="base")
         call nar(">You pull a large size buttplug out from under your desk and place it in front of her.")
@@ -411,7 +411,7 @@ label hg_ps_wear_buttplug:
             call her_main("Thank you, [genie_name]!","base","glance")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","soft","ahegao")
 
-    $ hg_ps_wear_buttplug_OBJ.inProgress = True
+    $ hg_ps_buttplug_OBJ.inProgress = True
 
     jump hg_pr_transition_block
 
@@ -419,7 +419,7 @@ label hg_ps_wear_buttplug:
 
 
 
-label hg_ps_wear_buttplug_complete:
+label hg_ps_buttplug_complete:
 
     call play_sound("door")
     call her_walk("door","mid",2)
@@ -1019,9 +1019,9 @@ label hg_ps_wear_buttplug_complete:
     m "The \"Gryffindor\" house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    $ hg_ps_wear_buttplug_OBJ.points += 1
-    $ hg_ps_wear_buttplug_OBJ.complete = True
-    $ hg_ps_wear_buttplug_OBJ.inProgress = False
+    $ hg_ps_buttplug_OBJ.points += 1
+    $ hg_ps_buttplug_OBJ.complete = True
+    $ hg_ps_buttplug_OBJ.inProgress = False
 
     call set_her_buttplug("remove")
 

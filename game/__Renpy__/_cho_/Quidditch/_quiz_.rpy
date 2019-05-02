@@ -287,7 +287,7 @@ label cho_quiz_1:
         call cho_main("Bye then professor...", "annoyed", "base", "base", "mid")
 
         # Cho leaves.
-        call cho_walk(speed=2.5, action="leave") # Updated
+        call cho_walk(action="leave", speed=2.5)
 
         g4 "(What am I supposed to do now... I clearly know fuckall about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
@@ -336,7 +336,7 @@ label cho_quiz_1:
         call cho_main("Bye then professor...", "pout", "base", "base", "R")
 
         # Cho leaves.
-        call cho_walk(speed=2.5, action="leave") # Updated
+        call cho_walk(action="leave", speed=2.5)
 
         g4 "(The fuck am I supposed to do now... I feel like that must’ve been a fluke, I know nothing about Quidditch..)."
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
@@ -577,7 +577,7 @@ label cho_quiz_2:
         m "Looking forward to it."
 
         # Cho leaves.
-        call cho_walk(speed=2.5, action="leave") # Updated
+        call cho_walk(action="leave", speed=2.5)
 
         $ cho_training_state = "intro_1"
         call give_reward(">You've unlocked the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
@@ -599,7 +599,7 @@ label cho_quiz_2:
         call cho_main("Good bye then...", "base", "base", "base", "mid")
 
         # Cho leaves.
-        call cho_walk(speed=2.5, action="leave") # Updated
+        call cho_walk(action="leave", speed=2.5)
 
         g4 "(What am I supposed to do now... I clearly don't know enough about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"

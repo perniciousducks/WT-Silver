@@ -169,11 +169,12 @@ label quidditch_training_intro_1:
         call cho_main("Good night, Sir...","soft","narrow","angry","mid")
 
     # Cho leaves.
-    call cho_walk(speed=1.6, action="leave") # Updated
+    call cho_walk(action="leave", speed=1.6)
 
     $ cho_training_state = "intro_2"
     call give_reward(">You've lost the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
 
+    call bld
     m "She'll get over it..."
 
     $ cho_mood += 9
@@ -187,38 +188,38 @@ label quidditch_training_intro_1:
 label quidditch_training_intro_2:
     call cho_main(xpos="mid",ypos="base",trans="fade")
     m "Did you finally come to terms with my training methods?"
-    cho "No, Sir."
-    cho "I've simply run out of options.{w} Without your help "
-    cho "So we might as well try your methods, Sir."
-    g9 "I'm glad you came to your senses, [cho_name]!"
-    cho "(...)"
+    call cho_main("No, Sir.","soft","closed","angry","mid")
+    call cho_main("But I've simply run out of options.{w} If we want to win the cup this year, you're the only hope we have left...","open","narrow","angry","mid")
+    call cho_main("I have no choice but to try your methods, Sir.","annoyed","narrow","angry","mid")
+    g9 "I'm glad you came to your senses."
+    call cho_main("(...)","annoyed","narrow","angry","R")
     g9 "Let's discussing tactics then, shall we!"
-    cho "(...)"
+    call cho_main("(...)","annoyed","base","base","mid")
     m "(...)"
     m "What did I suggest last time again?"
 
     if quidditch_position == "front":
-        cho "You were raving about my bottom, Sir."
+        call cho_main("You were raving about my bum, Sir.","open","closed","base","mid")
         g9 "That's right! Your ass!{w} Now I remember!"
-        cho "(...)"
-        cho "I'm not here to deny that my behind is in great shape.{w} And I'm very proud of it!"
+        call cho_main("(...)","annoyed","narrow","angry","mid")
+        call cho_main("I'm not here to deny that my behind is in great shape.{w} And I'm very proud of it!","open","closed","base","mid")
         g9 "You should be!"
-        cho "But, May I ask, Sir..."
-        cho "How exactly did you picture my \"ass\" helping us win?" # Annoyed
+        call cho_main("But, May I ask, Sir...","open","base","base","R")
+        call cho_main("How exactly did you picture my \"ass\" helping us win?","annoyed","narrow","angry","mid") # Annoyed
 
     elif quidditch_position == "above":
-        cho "It had something to do with panties."
-        cho "However, I have no clue why you would include panties in our training..."
+        call cho_main("It had something to do with panties.","open","narrow","angry","mid")
+        call cho_main("However, I have no clue why you would include panties in our training...","soft","narrow","base","R")
         g9 "Ah yes. Panties!{w} Now I remember!"
 
     elif quidditch_position == "close":
-        cho "You wanted me to have sex with their seeker..."
+        call cho_main("You wanted me to have sex with their seeker...","angry","closed","angry","mid")
         m "I did?"
-        cho "You did! You ask me to get intimate with him!"
+        call cho_main("You did! You ask me to get intimate with him!","soft","narrow","angry","mid")
         g9 "Yes, now I remember!"
         m "I wanted you to stay close to him."
         m "Let him cup a feel once or twice..."
-        cho "And that's going to help us how exactly?"
+        call cho_main("And that's going to help us how exactly?","soft","narrow","raised","mid")
 
     m "I will show you."
 
@@ -263,6 +264,7 @@ label change_quidditch_tactics:
             "\"Come back down.\"" if cho_flying == True:
                 $ cho_flying = False
                 call cho_walk("mid", "base", 1.2)
+
                 call cho_chibi("hide")
                 call flying_cho_chibi(flying=False) # Reset chibi images.
                 call cho_chibi("stand","mid","base")
@@ -277,7 +279,7 @@ label change_quidditch_tactics:
             "-Fly Test-":
                 $ cho_flying = True # Demonstrating
                 m "Start flying, [cho_name]."
-                cho "Yes, Sir!"
+                call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
 
                 call cho_chibi("hide")
                 call flying_cho_chibi(flying=True) # Change chibi images to flying.
@@ -289,6 +291,7 @@ label change_quidditch_tactics:
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(xpos="wardrobe",ypos="base", face="neutral")
+
             "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
                 jump start_training_match
 
@@ -299,8 +302,9 @@ label change_quidditch_tactics:
                     call nar(">You can't do that right now.")
 
             "-Go Back-":
-                cho "Very well, [cho_genie_name]."
+                call cho_main("Very well, [cho_genie_name].","open","base","base","mid", ypos="head")
                 $ cho_class.equip(cho_outift_last) # Equip last worn clothes # TODO: This doesn't work.
+
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")
                 call cho_main(face="happy",xpos="base",ypos="base",trans="fade")
@@ -317,7 +321,7 @@ label demonstrate_tactic(position=""):
         m "Now turn away from me."
         call cho_walk("580","200", 0.5)
 
-        cho "Like this?"
+        call cho_main("Like this?","soft","base","base","R", ypos="head")
         m "A bit higher maybe..."
 
         call cho_walk("600", "150", 0.3)
@@ -343,22 +347,24 @@ label demonstrate_tactic(position=""):
 
         call cho_walk("mid", "180", 0.3)
 
-        cho "Like this?"
+        call cho_main("Like this?","soft","base","base","downR", ypos="head")
         with hpunch
         g4 "Higher!"
         g4 "Fly right above my head!"
 
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
-            cho "But then you could see under my skirt, [cho_genie_name]!"
+            call cho_main("But then you could see under my skirt, [cho_genie_name]!","open","base","base","downR", ypos="head")
             g4 "Which is what we are going for, [cho_name]!"
             g4 "Maximum distraction!{w} Now show me those panties!"
-            cho "(...)"
+            call cho_main("(...)","annoyed","narrow","angry","downR", ypos="head")
         else:
-            cho "Of course, [cho_genie_name]..."
+            call cho_main("Of course, [cho_genie_name]...","base","base","base","downR", ypos="head")
 
         call cho_walk("mid", "100", 0.5)
 
-        cho "How is this?"
+        call cho_main("How is this?","open","base","base","down", ypos="head")
+
+        # Genie looks up.
         call gen_chibi("hide")
         $ genie_chibi_stand = "characters/genie/chibis/standing.png"
         call gen_chibi("stand","desk","base")
@@ -367,7 +373,7 @@ label demonstrate_tactic(position=""):
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
-            cho "*Uhm*...{w} Thank you, [cho_genie_name]."
+            call cho_main("*Uhm*...{w} Thank you, [cho_genie_name].","annoyed","base","base","down", ypos="head")
             m "(I have created the ultimate up-skirt!)"
             m "(Nothing can stop us now...)"
         else:
@@ -377,8 +383,16 @@ label demonstrate_tactic(position=""):
     # The [intimate] position!
     elif position == "close":
         m "Come as close to me as you can..."
-        cho "Yes, [cho_genie_name]."
+        call cho_main("Yes, [cho_genie_name].","soft","base","base","R", ypos="head")
+
         call cho_walk("desk", "220", 0.5)
+
+        call cho_main("How's this? Too close?","soft","wink","raised","mid", ypos="head")
+        m "No! It's the perfect distance!"
+        m "He should even be able to smell you if you are this close!"
+        call cho_main("I hope not!","quiver","closed","sad","mid", ypos="head")
+        g9 "Why? You smell lovely, girl!"
+        call cho_main("*Uhm*...{w} Thank you, Sir.","soft","base","sad","mid", ypos="head")
 
 
     $ quidditch_position = position

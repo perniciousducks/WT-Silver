@@ -118,14 +118,17 @@ label cho_progress_init:
         cc_pf_sex_OBJ,
         ]
 
-    if not hasattr(renpy.store,'cc_pr_flirt_OBJ'):
+    if not hasattr(renpy.store,'cc_pr_manipulate_OBJ'):
         $ cc_pr_flirt_OBJ   = event_class(title = "Get Flirty!", start_label = "cc_pr_flirt_start", events = [
             [   ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"], ["cc_pr_flirt_T1_E2"]  ],
             [   ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"], ["cc_pr_flirt_T2_E2"]  ] ]
             )
-
+        $ cc_pr_manipulate_OBJ   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", events = [
+            [   ["cc_pr_manipulate_T1_intro"], ["cc_pr_manipulate_T1_E1"], ["cc_pr_manipulate_T1_E2"], ["cc_pr_manipulate_T1_E3"]  ],
+            [   ["cc_pr_manipulate_T2_intro"], ["cc_pr_manipulate_T2_E1"], ["cc_pr_manipulate_T2_E2"]  ] ]
+            )
     $ cc_requests_list = [
-        cc_pr_flirt_OBJ,
+        cc_pr_manipulate_OBJ,
         ]
 
     return

@@ -186,7 +186,8 @@ label luna_init:
 
     if not hasattr(renpy.store,'lun_cg_path') or reset_persistants or reset_luna_content:
         $ lun_cg_path       = "images/CG/luna_desk2/"
-        $ lun_cg_base       = lun_cg_path+"base.png" 
+        $ lun_cg_base       = lun_cg_path+"base.png"
+        $ lun_cg_border     = lun_cg_path+"border.png" 
         $ lun_cg_body       = lun_cg_path+"luna_base.png" 
         $ lun_cg_hair       = lun_cg_path+str(lun_hair_style)+"_hair.png" 
         $ lun_cg_cheeks     = lun_cg_path+"c_base.png" 

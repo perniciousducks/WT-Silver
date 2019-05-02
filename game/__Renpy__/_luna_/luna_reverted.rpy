@@ -1330,16 +1330,16 @@ label luna_reverted_event_4: #Luna gentle BJ for about 9 hours and 14 orgasms fr
 label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna masturbating the whole time #NEEDS TESTING
     ">*knock* *knock* *knock* *knock* *knock* {b}*knock* *knock*{/b}"
     ">Your door swings wide as the effervescent Luna Lovegood strolls in."
-    call lun_main("Hello [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Hello [lun_genie_name]!","base","happyCl","base","mid",cheeks="blush")
     m "..."
     m "You're not going to paralyse me again are you?"
-    call lun_main("Oh... not if you don't want me too...","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Oh... not if you don't want me too...","base","wink","sad","mid",cheeks="blush")
     m "I do not."
-    call lun_main("Sorry... I thought you'd like it... Is there anything I can do to make it up to you?","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Sorry... I thought you'd like it... Is there anything I can do to make it up to you?","base","seductive","sad","downL",cheeks="blush")
     m "Hopping under the desk would be a good start."
-    call lun_main("Really? I was worried you'd be mad at me!","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Really? I was worried you'd be mad at me!","base","wide","sad","mid",cheeks="blush")
     m "Well, so long as you do a good job making it up to me..."
-    call lun_main("Don't worry sir, I'll do my best!","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Don't worry sir, I'll do my best!","base","mad","sad","mid",cheeks="blush")
     m "About that..."
     show screen blkfade
     with d3
@@ -1499,6 +1499,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
             $ lunCG('ahegao', 'sad', 'open_tongue')
             lun "Ah..."
             g9 "Oh that's it, here it comes you hungry little cumslut!"
+            $ lunCG('dick', 'sad', 'open_tongue', extra_1='cum_2')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             ">With that, you begin firing a huge load, coating the poor girl in a thick layer of cum..."
             g9 "ugh yes...{w=0.3} take this slut..."
@@ -1541,7 +1542,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     lun "You're..."
     $ lunCG('up', 'seductive', 'base', 'sad')
     lun "You're just the {b}best{/b}..."
-    $ lunCG('up', 'happyCl', 'open_tongue')
+    $ lunCG('up', 'closed', 'open_tongue')
     ">Luna leans forward, placing a kiss on the end of your cock before whispering something quietly to it..."
     $ lunCG('dick', 'angry', 'open')
     lun "{size=-5}Thank you...{/size}"
@@ -1549,35 +1550,41 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     lun "Now, I think I better be going sir..."
     $ lunCG('dick', 'angry', 'base', 'angry')
     lun "Unless you had anymore wrackspurts that you needed me to take care of?"
-    $ lunCG('up', 'blink', 'base' 'sad')
+    $ lunCG('up', 'blink', 'base', 'sad')
     m "For goodness sake girl!"
     lun "..."
-    $ lunCG('up', 'happyCl')
+    $ lunCG('up', 'closed')
     m "You can go now..."
     $ lunCG('up', 'closed', 'open')
     lun "Yes, sir..."
     ">Luna picks herself up from under your desk and goes to leave."
-    hide screen lunCG
+    show screen blkfade
+    with d3
+    hide screen luncg
+    hide screen blkfade 
+    $ luna_cum = "12"
+    $ luna_wear_cum = True
+    with d3
     m "Aren't you forgetting something?"
-    lun "Probably! I'm not the best when it comes to that."
+    call lun_main("Probably! I'm not the best when it comes to that.","base","happyCl","sad","mid",cheeks="blush")
     m "Don't you think you should clean yourself off a little before you head back to your room?"
-    lun "Oh, don't worry sir, I'm not going to my room, I'm going to the potions lab."
-    lun "Oh, I {b}did{/b} forget something!"
+    call lun_main("Oh, don't worry sir, I'm not going to my room, I'm going to the potions lab.","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Oh, I {b}did{/b} forget something!","base","happyCl","sad","mid",cheeks="blush")
     m "What's that?"
-    lun "What's a slut, sir?"
+    call lun_main("What's a slut, sir?","base","happyCl","sad","mid",cheeks="blush")
     m "A slut?"
-    lun "Mhmm, you called me one when I was getting rid of the wrackspurts!"
+    call lun_main("Mhmm, you called me one when I was getting rid of the wrackspurts!","base","happyCl","sad","mid",cheeks="blush")
     m "Oh, ugh... It's someone who loves...{p} doing what we're doing..."
-    lun "Really? So does that mean a cumslut is someone who loves cum?"
+    call lun_main("Really? So does that mean a cumslut is someone who loves cum?","base","happyCl","sad","mid",cheeks="blush")
     m "Mhmm."
-    lun "Then I must be the biggest cumslut in the whole wide world!"
+    call lun_main("Then I must be the biggest cumslut in the whole wide world!","base","happyCl","sad","mid",cheeks="blush")
     m "..."
-    lun "Well, toodaloo sir!"
+    call lun_main("Well, toodaloo sir!","base","happyCl","sad","mid",cheeks="blush")
     ">With that, Luna hops out of your office, even more of a spring in her step than when she entered."
     m "..."
     m "(Am I playing around with a disabled chick?)"
     m "Eh, who cares..."
-    jump main_room #NEEDS POSING
+    jump main_room 
 
 label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     $ lunCG('up', 'wide', 'open', extra_2='hand')
@@ -1677,7 +1684,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     lun "Thank you, thank you, thank you!"
     $ lunCG('up')
     lun "You're the best genie ever!"
-    $ lunCG('dick', 'happyCl', 'open_tongue', pos=2)
+    $ lunCG('dick', 'closed', 'open_tongue', pos=2)
     ">With that, luna willing impales her head on your cock, shamelessly slobbering over every inch of it..."
     $ lunCG('ahegao', 'seductive', 'sucking', pos=4)
     m "ugh... I'm glad you've learned your lesson."
@@ -1692,7 +1699,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     m "Well, yes..."
     $ lunCG('up', 'base', 'base')
     m "But how do you know that? I thought I looked like dumbydoo or whoever..."
-    $ lunCG('up', 'happyCl', 'base')
+    $ lunCG('up', 'closed', 'base')
     lun "Only when I'm not wearing my spectrespecs!"
     m "Those glasses?... So you've known the whole time?"
     $ lunCG('dl', 'base', 'open')
@@ -1701,7 +1708,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     ">She gives the end of your dick a quick lick."
     $ lunCG('up', 'wide', 'base', pos=1)
     lun "I don't think any other creature could make something so tasty..."
-    $ lunCG('up', 'happyCl', 'open')
+    $ lunCG('up', 'closed', 'open')
     lun "Not even a unicorn..."
     m "So you don't care I'm a genie?"
     $ lunCG('up', 'base', 'base')
@@ -1759,7 +1766,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
 
     jump main_room
 
-label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
+label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     #Invite Luna to your office, ask what she's doing
     #Offer to give her a note to excuse her from class
     #Have her hop under the desk
@@ -1774,7 +1781,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     ">The bubbly Luna Lovegood strolls in through your door."
     call lun_main("Good morning, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush")
     m "Miss Lovegood."
-    call lun_main("Is there {i}anything{/i} I can help you with today?","base","happyCl","sad","mid",cheeks="blush")
+    call lun_main("Is there {i}anything{/i} I can help you with today?","base","seductive","sad","down",cheeks="blush")
     m "Well... Now that you mention it... What's your class schedule like for today?"
     call lun_main("Hmmmm... not too busy. I have divination at eleven and... um... herbology at two!","base","happyCl","sad","mid",cheeks="blush")
     m "I think I might need to write you a note explaining your absence from class then."
@@ -1790,22 +1797,38 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     show screen blkfade
     with d3
     pause
+    $ lun_cg_base         = lun_cg_path+"base_2.png"
+    $ lun_cg_genie        = lun_cg_path+"blank.png" 
+    $ lun_cg_xpos_abs     = -275
+    $ lun_cg_ypos_abs     = -100
+    $ hermione_scaleratio = 1.2
+    $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', tears='mascara')
+    show screen luncg
+    hide screen luna_main
     hide screen blkfade
     with d3
-    #No CG, just Genie at his desk...
+    hide screen blkfade
+    with d3
     g4 "{size=+5}You greedy little slut! Take this!{/size}"
+    $ lunCG('ahegao', 'wide', pos=12)
     lun "*gulp* *gulp* *gulp*"
+    $ lunCG('aheagao', 'angry', pos=16)
     ">You fire your third load of the day into Luna's hungry mouth."
+    $ lunCG('up', 'seductive', pos=6)
     lun "*gulp*{image=textheart}*gulp*{image=textheart}*gulp*"
+    $ lunCG('dick', 'seductive', pos=9)
     m "Fuck that's good... Ugh..."
+    $ lunCG('dick', 'tired', pos=3, extra_2='blank')
     ">Sensing that your orgasm has ended, Luna begins to slow down and focus suckling the end of your cock to nurse it back to health..."
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
     m "Ugh... I should... mmmm... do some work... or something..."
+    $ lunCG('up', 'wink', pos=4)
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
     menu: 
         "-Try and do some paperwork-":
             ">Intent on not losing the entire day to Luna's mouth, you begin to write out a report for the ministry."
             m "Yes... school activities..."
+            $ lunCG('dick', 'seductive', pos=6)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
             m "..."
             show screen blkfade
@@ -1814,23 +1837,34 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
             hide screen blkfade
             with d3
             m "There, all done!"
+            $ lunCG('up', 'wink', 'sucking', 'base', pos=13)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
+            $ lunCG('down', 'seductive', pos=5)
             m "(It only took three hours and twice as many orgasms)"
+            $ lunCG('dick', 'angry', pos=10)
             lun "*glck* *slrp* *glck*"
             m "Just a quick read through before I send this off to the ministry..."
             m "..."
+            $ lunCG('up', 'seductive', pos=6)
             lun "*glck* *slrp* *glck*"
             m "......"
+            $ lunCG('dick', 'seductive', 'open_wide', pos=2)
             lun "*Slrp* *pop*"
+            $ lunCG('up', 'wink', 'base', pos=1)
             lun "How's the report, [lun_genie_name]?"
             m "Unless you consider a three page report about how you suck cock useful..."
             m "Then it's trash..."
+            $ lunCG('up', 'wide', 'open', 'sad')
             lun "Wait... You wrote a report on how I..."
+            $ lunCG('up', 'seductive')
             lun "Can I have it? Please, [lun_genie_name]!"
             m "Sure, it's not like I can send it to the ministry anyway."
+            $ lunCG('up', 'closed', 'base', 'base',)
             lun "Oh thank you, thank you, thank you! I can't wait to read it tonight."
             m "Until then..."
+            $ lunCG('dick', 'wide', 'base', 'base',)
             lun "Oh, right!"
+            $ lunCG('up', 'angry', 'sucking', 'sad', pos=13)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
             m "Ugh... that's it slut..."
         "-Summon someone-":
@@ -1843,66 +1877,139 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     #First time Hermione is brought up 
     #Will need a check if Luna intro is is moved
     m "(That slut will probably get off on it.)"
+    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=6)
     ">Without further ado, you summon Hermione up to your office to take your mind off of Luna's endless cocksucking."
-    her "You wanted to see me [genie_name]?"
+    call her_main("You wanted to see me [genie_name]?","smile","happyCl", xpos=450, ypos=-150)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
-    her "Ugh... This room reeks! Open a window or something..."
+    $ lunCG('ahegao', 'angry', pos=13)
+    call her_main("Ugh... This room reeks! Open a window or something...","disgust","suspicious")
     m "The window doesn't shut."
+    $ lunCG(pos=6)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    her "Then maybe try cumming a bit less..."
+    call her_main("Then maybe try cumming a bit less...","disgust","annoyed")
     m "If I do that I'm not sure you'll' be able to win the house cup..."
+    $ lunCG('dick', pos=14)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
+    $ lunCG(pos=6)
     m "Speaking of..."
-    her "oh..."
-    her "What will it be today then [genie_name]?"
+    $ lunCG(pos=13)
+    call her_main("oh...","smile","concerned")
+    $ lunCG(pos=8)
+    call her_main("What will it be today then [genie_name]?","smile","suspicious")
+    $ lunCG(pos=14)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    her "Do you want me to suck your cock?"
-    her "Or maybe you want to bend me over your desk again{image=textheart}{image=textheart}{image=textheart}..."
-    m "I love your enthusiasm but lets just start with a nice look at your tits..."
+    $ lunCG(pos=6)
+    call her_main("Do you want me to suck your cock?","base","down_raised")
+    $ lunCG(pos=12)
+    call her_main("Or maybe you want to bend me over your desk again{image=textheart}{image=textheart}{image=textheart}...","smile","frown")
+    $ lunCG(pos=8)
+    m "I love your enthusiasm... but lets just start with a nice look at your tits..."
+    $ lunCG(pos=15)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    her "Oh... alright then..."
-    #Hermione shows her tits
+    call her_main("Oh... alright then...","soft","concerned")
+    call play_music("playful_tension") # SEX THEME.
+    hide screen blkfade
+    hide screen bld1
+    hide screen hermione_main
+    with d5
+    pause.3
+    call her_chibi("lift_top","mid","base")
+    with fade
+    pause.8
+
+    $ hermione_wear_bra = False
+    call set_her_action("lift_top")
+    pause.5
+
+    show screen blktone
+    call her_main("","soft","down_raised")
+    call ctc
+    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=13)
     m "Ugh... that's it, slut..."
+    $ lunCG(pos=8)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    her "..."
+    call her_main("...","smile","down")
     m "Mmmm... Make them jiggle!"
+    $ lunCG('up', 'wide', pos=16)
     ">You start bucking your hips to facefuck Luna while Hermione unknowingly encourages you on..."
+    $ lunCG(pos=13)
     lun "*glck* *slrp* *glck*"
+    $ lunCG(pos=15)
     m "Oh fuck yes... just like that..."
-    her "Is something going-"
+    $ lunCG(pos=11)
+    call her_main("Is something going-","pout","suspicious")
     m "Shut-up and get naked [hermione_name]!"
+    $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
-    her "..."
+    $ lunCG(pos=15)
+    call her_main("...","smile","down_raised")
+    $ lunCG(pos=10)
     ">Hermione stares at your desk while stripping down to nothing."
-    her "So... who's hiding under the desk?"
+    pause.2
+    $ lunCG(pos=13)
+    $ hermione_wear_bra = False
+    call set_her_action("lift_top")
+    pause.5
+    $ lunCG(pos=10)
+    $ hermione_wear_top = False
+    call set_her_action("None")
+    pause.5
+    $ lunCG(pos=15)
+    call nar(">One piece after another...")
+    $ lunCG(pos=10)
+    $ hermione_wear_panties = True
+    call set_her_action("lift_skirt")
+    pause.5
+    $ lunCG(pos=12)
+    $ hermione_wear_bottom = False
+    call set_her_action("None")
+    pause.5
+    $ lunCG(pos=8)
+    call nar(">Vest, shirt, her skirt, and finally...")
+    $ lunCG(pos=15)
+    $ hermione_wear_panties = False
+    call set_her_action("covering")
+    call her_main("So... who's hiding under the desk?","smile","down_raised")
+    $ lunCG(pos=9)
     lun "*glck* *slrp* *glck*"
     m "Ugh... what do you mean?"
-    her "Please, I can hear them sucking you off from here."
+    $ lunCG(pos=16)
+    call her_main("Please, I can hear them sucking you off from here.","smile","glance")
+    $ lunCG('downL', 'wide', pos=9)
     lun "*glck* *slrp* *glck*"
-    her "I'm just curious who you managed to get..."
+    $ lunCG('dick', pos=12)
+    call her_main("I'm just curious who you managed to get...","soft","down_raised")
+    $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
-    her "Anyone I know?"
+    $ lunCG(pos=13)
+    call her_main("Anyone I know?","smile","squint")
     m "I believe... argh... you've met..."
-    her "Hmmmm... It's not a slytherin is it?"
+    $ lunCG(pos=7)
+    call her_main("Hmmmm... It's not a slytherin is it?","pout","suspicious")
     m "Which colour are they again?"
-    her "The green ones you decrepit old perv!"
+    $ lunCG(pos=14)
+    call her_main("The green ones you decrepit old perv!","open","angry")
+    $ lunCG(pos=9)
     lun "*glck* *slrp* *glck*"
+    $ lunCG('up', pos=15)
     m "Mmmm... she's not a slytherin then..."
-    her "Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff..."
+    call her_main("Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff...","pout","angryL")
+    $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
-    her "It has to be a Gryffindor! They're the only ones brave enough to try this..."
+    $ lunCG(pos=13)
+    call her_main("It has to be a Gryffindor! They're the only ones brave enough to try this...","open","happy")
     lun "*glck* *slrp* *glck*"
-    her "Ginny, is that you?! I told you to stay away from Dumbledore!"
+    call her_main("Ginny, is that you?! I told you to stay away from Dumbledore!","smile","happyCl")
     m "Wrong, they're in the blue house."
-    her "A ravenclaw? But which ravenclaw girl would be stupid enough to-"
-    her "..."
+    call her_main("A ravenclaw? But which ravenclaw girl would be stupid enough to-","smile","happyCl")
+    call her_main("...","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "It's Luna again isn't it?"
+    call her_main("It's Luna again isn't it?","smile","happyCl")
     m "..."
-    her "That hat better not have been involved!"
+    call her_main("That hat better not have been involved!","smile","happyCl")
     m "Scout's honor."
-    her "We'll see about that..."
+    call her_main("We'll see about that...","smile","happyCl")
     ">Before you can say anything Hermione walks around your desk to check on Luna."
     #Transition back to full screen CG
     lun "*slrp* *pop*"
@@ -1919,46 +2026,47 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS POSING
     her "..."
     lun "Now if it's OK Hermione, I think I better get back to work, I've only gotten six rounds out so far."
     ">Without any hesitation, Luna shamelessly returns to sucking your cock in front of Hermione."
+    #Transistion back to half CG
     lun "*glck* *slrp* *glck*"
-    her "Six times already? How long does she stay under there?"
+    call her_main("Six times already? How long does she stay under there?","smile","happyCl")
     m "She'd live under there if she could..."
     lun "*glck* *slrp* *glck*"
-    her "So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?"
+    call her_main("So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?","smile","happyCl")
     m "Pretty much... It was getting a little boring with just the two of us..."
-    her "Ugh... You're such a pig!"
+    call her_main("Ugh... You're such a pig!","smile","happyCl")
     m "So you don't want to earn some points for your house?"
-    her "I didn't say no... I just wanted to make sure you know how perverted this is!"
+    call her_main("I didn't say no... I just wanted to make sure you know how perverted this is!","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "You hadn't even locked your door!"
+    call her_main("You hadn't even locked your door!","smile","happyCl")
     #Hermione starts touching herself
-    her "What if someone else walked in while this was going on?"
+    call her_main("What if someone else walked in while this was going on?","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "Do you think they wouldn't be able to hear it?"
-    her "To {b}smell{/b} it?"
+    call her_main("Do you think they wouldn't be able to hear it?","smile","happyCl")
+    call her_main("To {b}smell{/b} it?","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "But maybe that's what you two want..."
-    her "Maybe you were waiting for someone else to walk in and catch you..."
+    call her_main("But maybe that's what you two want...","smile","happyCl")
+    call her_main("Maybe you were waiting for someone else to walk in and catch you...","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them..."
-    her "To be forced into breathing in this thick musk..."
+    call her_main("Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them...","smile","happyCl")
+    call her_main("To be forced into breathing in this thick musk...","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "Imagine if it was a first year? What would you do then?"
-    her "Would you do the right thing and send them away?"
+    call her_main("Imagine if it was a first year? What would you do then?","smile","happyCl")
+    call her_main("Would you do the right thing and send them away?","smile","happyCl")
     lun "*glck* *slrp* *glck*"
-    her "Or would you make them stay..." 
+    call her_main("Or would you make them stay...","smile","happyCl") 
     g4 "Mmmm...."
     lun "*glck* *slrp* *glck*"
-    her "Make them watch while you bust your seventh load of the day down Luna's throat!"
+    call her_main("Make them watch while you bust your seventh load of the day down Luna's throat!","smile","happyCl")
     g4 "ARGHH, this is it you sluts!"
     ">With that you fire another gargantuan load into Luna's mouth."
     lun "*glp* *glp* *glp*"
     g4 "Mmmm...."
     lun "*glp* *glp* *glp*"
-    her "I guess that answers that..."
-    her "I think I better be going then."
+    call her_main("I guess that answers that...","smile","happyCl")
+    call her_main("I think I better be going then.","smile","happyCl")
     m "Ugh... yes... good... bye..."
     lun "*glck* *slrp* *glck*"
-    her "Have a nice day you two!"
+    call her_main("Have a nice day you two!","smile","happyCl")
     ">With that your vision starts to fade to black as Luna suckles your wilting cock back to health..."
     show screen blkfade 
     with d3
@@ -2333,38 +2441,38 @@ label luna_reverted_event_8_ast_2: #Astoria repeatable part
 
 label luna_reverted_event_8_her_1: #Hermione part 1#NEEDS POSING
     call her_main("[genie_name], I hope you're not too busy to ben-","smile","happyCl")
-    her "[genie_name], Luna! What are you two doing?!"
+    call her_main("[genie_name], Luna! What are you two doing?!","smile","happyCl")
     m "ah... Isn't it obvious?"
-    her "Ugh... Why are you two fucking then?"
+    call her_main("Ugh... Why are you two fucking then?","smile","happyCl")
     lun "Mmmm... we're getting rid... of some nasty wrackspurts!"
-    her "You're still going on about that? I told you before, you're just horny!"
+    call her_main("You're still going on about that? I told you before, you're just horny!","smile","happyCl")
     lun "Stop... ah... being closed... minded Hermione..."
     lun "I bet you... didn't even realise that... Dumbledore was a genie at first!"
-    her "My goodness, you're such an {b}idiot{/b}!"
+    call her_main("My goodness, you're such an {b}idiot{/b}!","smile","happyCl")
     lun "Don't be mean Hermione... is it the wrackspurts that are bothering you?"
     lun "I'm sure that we can teach you how to get rid of them by yourself!"
-    her "I know how to play with myself, idiot!"
+    call her_main("I know how to play with myself, idiot!","smile","happyCl")
     lun "oh..."
     lun "Well if you just want to watch us, I don't mind..."
-    her "Don't you have any shame!?"
+    call her_main("Don't you have any shame!?","smile","happyCl")
     lun "mmmm... why should I be ashamed... this feels so {b}good{/b}..."
-    her "I know it feels good... but you shouldn't let other people watch you do it..."
-    her "Imagine if the whole school found out!"
+    call her_main("I know it feels good... but you shouldn't let other people watch you do it...","smile","happyCl")
+    call her_main("Imagine if the whole school found out!","smile","happyCl")
     lun "Oh, that would be {b}fantastic{/b}!"
     lun "Imagine me... being the person to teach the world how the dispel wrackspurts!"
-    her "So you'd be okay with everyone knowing you've had Dumbledore's cock in you?"
+    call her_main("So you'd be okay with everyone knowing you've had Dumbledore's cock in you?","smile","happyCl")
     lun "I'd give the school a demonstration if I was allowed!"
     ">Hermione's hands drift in between her legs..."
-    her "Ugh... you're so fucking {b}dirty{/b} aren't you..."
-    her "I just thought you were an idiot..."
-    her "But now... I see you've been a bimbo this whole time without even realizing..."
+    call her_main("Ugh... you're so fucking {b}dirty{/b} aren't you...","smile","happyCl")
+    call her_main("I just thought you were an idiot...","smile","happyCl")
+    call her_main("But now... I see you've been a bimbo this whole time without even realizing...","smile","happyCl")
     lun "A bimbo?"
-    her "Uh-huh... You've become Dumbledore's new blonde bimbo..."
+    call her_main("Uh-huh... You've just Dumbledore's blonde bimbo...","smile","happyCl")
     lun "..."
-    her "Well, I think I better give you two some alone time..."
+    call her_main("Well, I think I better give you two some alone time...","smile","happyCl")
     lun "You don't want to stay?"
-    her "I need to take care of something... Until then..."
-    her "Why don't you just let [genie_name] empty his balls in you..."
+    call her_main("I need to take care of something... Until then...","smile","happyCl")
+    call her_main("Why don't you just let [genie_name] empty his balls in you...","smile","happyCl")
     ">With that, Hermione runs her pussy-drenched hand down Luna's face before turning and leaving the room."
     lun "I'm glad I've got a good friend like Hermione..."
     m "..."
@@ -2395,25 +2503,25 @@ label luna_reverted_event_8_her_1: #Hermione part 1#NEEDS POSING
 
 label luna_reverted_event_8_her_2: #Hermione repeatable part
     call her_main("[genie_name], I really need a good-","smile","happyCl")
-    her "Oh... Hello, Luna."
+    call her_main("Oh... Hello, Luna.","smile","happyCl")
     lun "H-hello Hermione."
-    her "I think I'll leave you two alone..."
+    call her_main("I think I'll leave you two alone...","smile","happyCl")
     ">Hermione turns to leave."
     lun "W-wait. Don't go..."
-    her "..."
+    call her_main("...","smile","happyCl")
     lun "We can share... if you like..."
-    her "Share? Share what?"
+    call her_main("Share? Share what?","smile","happyCl")
     lun "{b}Him{/b}."
-    her "..."
-    her "Do you really think I'm going to share with you?"
-    her "Just get naked... and let him take turns..."
-    her "Fucking us both... senseless..."
-    her "..."
-    her "......"
-    her "Fine! But only because that's what I came here for anyway."
+    call her_main("...","smile","happyCl")
+    call her_main("Do you really think I'm going to share with you?","smile","happyCl")
+    call her_main("Just get naked... and let him take turns...","smile","happyCl")
+    call her_main("Fucking us both... senseless...","smile","happyCl")
+    call her_main("...","smile","happyCl")
+    call her_main("......","smile","happyCl")
+    call her_main("Fine! But only because that's what I came here for anyway.","smile","happyCl")
     ">With that, Hermione starts to strip, eager to join the fun."
     m "Don't I get a say in this?"
-    her "Oh, shut it. You're hardly going to say no to this are you?"
+    call her_main("Oh, shut it. You're hardly going to say no to this are you?","smile","happyCl")
     m "Fair point..."
     #FTB Also, have the favour repeat from this point
     ">With that, Hermione hops up onto your desk, her eyes begging for your cock."

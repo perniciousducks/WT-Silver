@@ -146,7 +146,8 @@ label cc_pf_talk_T1_E1: # Complete.
     g9 "(A cosplay tournament is what this school needs...)"
     call cho_main("Sir that would be great!","smile","narrow","base","mid")
     g4 "(Wait, wait!{w=0.8} A \"nude\" cosplay tournament!{w=0.6} Even better!)"
-    call cho_main("And with new contesters every month! You've got to do this, Sir!","smile","base","base","mid")
+    g4 "(Is it even cosplay if they're naked?)"
+    call cho_main("And with new contestants every month! You've got to do this, Sir!","smile","base","base","mid")
     m "I'll think about it..."
 
     m "Now tell me, how come you two ended up together?"
@@ -257,7 +258,7 @@ label cc_pf_talk_T1_E1: # Complete.
         g4 "What? Please don't go now. I've only just started!"
         call cho_main("Started with what, [cho_genie_name]?","annoyed","narrow","angry","mid")
         g4 "I'll give you 10 house points if you stay!{w=0.8} Just a tiny bit longer!"
-        call cho_main("And what makes you believe that I'd agree to such a thing? Getting rewardred with points for doing nothing?","open","closed","base","mid")
+        call cho_main("And what makes you believe that I'd agree to such a thing? Getting rewarded with points for doing nothing?","open","closed","base","mid")
         call cho_main("Earning house points in such a way is despicable, and it would be unfair towards the other school houses, as well as my fellow students...","open","narrow","base","mid")
         call cho_main("","annoyed","narrow","angry","mid")
         g4 "Fifty points?"
@@ -306,19 +307,19 @@ label cc_pf_talk_T1_E2: # Complete.
     m "Tell me about yourself then."
     call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
     call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against \"Hufflepuff\".","open","narrow","base","mid")
-    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a great boost in confidance after I've told'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
+    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I've told'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
     call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...","open","narrow","sad","down")
     call cho_main("Getting accepted into our Quidditch team was a challenge. I really had to prove I was worth it.","angry","narrow","sad","mid")
     g9 "And how exactly did you manage that? Mind spilling the beans?"
-    call cho_main("Through diligance, expertice, and determination!","open","closed","base","mid")
+    call cho_main("Through diligence, expertise, and determination!","open","closed","base","mid")
     m "(...)"
     m "I was sort of expecting something else entirely but,... you do you..."
     call cho_main("And as you can see it did work out in my favour, Sir.","open","base","base","mid")
     call cho_main("Very few teams have allowed a female player into their ranks over the past years.","open","narrow","angry","mid")
     call cho_main("And I've been the only female seeker at this school in over half a century.{w} Can you even believe that, [cho_genie_name]?","open","wide","base","mid")
-    m "(A century? That's like a coffee brake for me girl...)"
+    m "(Half a century? That's like a coffee break for me girl...)"
     call cho_main("I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!","smile","narrow","base","mid")
     call cho_main("If you don't have a good seeker, you have no chance of winning!","soft","closed","base","mid")
     m "Which is why you need my help so badly..."
@@ -377,7 +378,7 @@ label cc_pf_talk_T1_E2: # Complete.
     call cho_main("They shouldn't exclude me from team activities just because I'm a girl.","open","base","base","R")
     call cho_main("It makes absolutely no difference!","base","base","base","mid")
     if masturbating:
-        g4 "You are naked with them? In the shower?"
+        g4 "You are naked with them? In the showers?"
     else:
         m "Just to be clear. You are naked with them, in the shower."
     call cho_main("Of course we're all naked, [cho_genie_name]!","soft","base","angry","mid")
@@ -415,7 +416,7 @@ label cc_pf_talk_T1_E2: # Complete.
         m "You taking a shower with your \"teammates\"..."
         call cho_main("(...)","annoyed","narrow","angry","mid") # Annoyed
 
-    m "Don't you think, the fact that they've seen you naked has no affect on their actions?"
+    m "Don't you think, the fact that they've seen you naked hasn't affected any of their actions?"
     call cho_main("Why would it, [cho_genie_name]? We're all adults here...","soft","closed","base","mid")
     m "Maybe that's your response to it, girl."
     call cho_main("","annoyed","narrow","angry","mid")
@@ -450,7 +451,7 @@ label cc_pf_talk_T1_E2: # Complete.
 
 
 # Third event
-## Asking more questions abour her ex boyfriends and jerking off.
+## Asking more questions about her ex boyfriends and jerking off.
 
 label cc_pf_talk_T1_E3: # Incomplete. Not posed.
 
@@ -532,13 +533,13 @@ label cc_pf_talk_T2_E1: # Incomplete. Not posed.
     cho "Draco Malfoy, Sir."
     m "Any chance you fooled around with him too?"
     cho "*Tzzzz* I'd never surround myself with Slytherin scum."
-    m "I guess you and Granger have at least something in common..."
+    m "I guess you and Granger have at least some things in common..."
     cho "His daddy bought their whole team new brooms, which is the only reason they've let him in."
     m "His daddy?"
     cho "His father, Sir."
     m "Oh. I thought you might be talking about a different \"daddy\"."
     cho "Very funny, [cho_genie_name]..."
-    cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried 'bout..."
+    cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried about..."
     cho "You don't just win by catching the snitch first. You also have to be leading in points!"
     cho "If you catch the snitch too early, the game will be over."
     cho "That's how Slytherin won most of their games in the past. They win by letting the other seeker catch the Snitch..."
@@ -598,11 +599,11 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     cho "You should see her face, [cho_genie_name]. She's so angry at me! I love it!"
     cho "She can't even bear to look at me anymore."
     cho "You should know, for whatever reason, almost all of Hufflepuff faults her for helping Ravenclaw secure the win!"
-    cho "Several times she announced that Hufflepuff was leading in points, while they actually weren't!"
+    cho "Several times she announced that Hufflepuff was leading in points, when they actually weren't!"
     cho "Which resulted in Hufflepuff playing far more defensively, when they should have been aggressive!"
     if masturbating:
         g4 "Oh you are one of those girls! I like going aggressive!"
-    cho "I catched the Snitch at just the right time! If we wouldn't have been in the lead, we would have lost!"
+    cho "I caught the Snitch at just the right time! If Hufflepuff had gone to far in the lead, we would have lost!"
     cho "I really need to thank Granger the next time I see her. I owe her a great deal..."
     if masturbating:
         g4 "I'd love to watch you thank her!"
@@ -611,7 +612,7 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     else:
         m "Yeah? How would you thank her?"
         cho "I don't know. Something that would rile her up even more!"
-    cho "Like a kiss on her cheek, or an unconfortably long hug!"
+    cho "Like a kiss on her cheek, or an uncomfortably long hug!"
     cho "Or I'll do something more naughty! Something she'd never expect!"
     g4 "*Argh!*"
     cho "Give her a proper kiss on the lips, perhaps?"
@@ -664,8 +665,8 @@ label cc_pf_T2_talking_3: # Incomplete. Not posed.
         cho "Mind doing what?!"
         cho "Oh..."
         m "I have urges, girl."
-        cho "If you can't help yourself, Sir. I don't really care anyways..."
-        g9 "Awesome!"
+        cho "If you can't help yourself, Sir. I don't really care..."
+        g9 "Great!"
         cho "I have more important matters on my mind."
         m "Like what?"
     else:

@@ -130,7 +130,7 @@ label hufflepuff_practice_lost:
         m "So what? It wasn't an issue before... Just ignore it..."
         call cho_main("And let everybody ogle at my bare ass?","open","angry","angry","mid")
         m "Aren't you still wearing panties?"
-        call cho_main("Of course I am! And I don't intent to show them to the whole school!","annoyed","narrow","angry","mid")
+        call cho_main("Of course I am! And I don't intend to show them to the whole school!","annoyed","narrow","angry","mid")
         call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
         g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
         g4 "If the entire school knows the color of your panties, that's when you have done your task well!"
@@ -255,7 +255,7 @@ label hufflepuff_practice_win_2:
     call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
     g9 "I could tell Hermione to do the same if you'd like."
     call cho_main("Please don't, [cho_genie_name]! I was merely joking!","annoyed","narrow","angry","mid")
-    m "Would you say you've had enough practive to play against them in a tourney game?"
+    m "Would you say you've had enough practice to play against them in a tourney game?"
     call cho_main("Absolutely! The next time we will confront \"Hufflepuff\", they will be crushed!","smile","angry","angry","mid")
     call cho_main("This should be an easy win for \"Ravenclaw\".","base","closed","base","mid")
     call cho_main("Speaking of which, I need to get back to my team now, [cho_genie_name].","open","wide","base","R")

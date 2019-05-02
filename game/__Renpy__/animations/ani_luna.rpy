@@ -221,3 +221,43 @@ image ch_lun blink_robe_flip:
     im.Flip("characters/luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause 3
     repeat
+
+image luna_bj_loop_1:    #BJ loop 1
+    "images/CG/luna_desk/l1.png"
+    pause.35
+    "images/CG/luna_desk/l2.png"
+    pause.35
+    "images/CG/luna_desk/l3.png"
+    pause.35
+    "images/CG/luna_desk/l4.png"
+    pause.35
+    "images/CG/luna_desk/l5.png"
+    pause.35
+    "images/CG/luna_desk/l4.png"
+    pause.35
+    "images/CG/luna_desk/l3.png"
+    pause.35
+    "images/CG/luna_desk/l2.png"
+    pause.35
+    "images/CG/luna_desk/l1.png"
+    pause.35
+    repeat
+
+image luna_bj_loop_2:    #BJ loop 2
+    "images/CG/luna_desk/l6.png"
+    pause.35
+    "images/CG/luna_desk/l7.png"
+    pause.35
+    "images/CG/luna_desk/l8.png"
+    pause.35
+    "images/CG/luna_desk/l9.png"
+    pause.35
+    "images/CG/luna_desk/l10.png"
+    pause.35
+    "images/CG/luna_desk/l9.png"
+    pause.35
+    "images/CG/luna_desk/l8.png"
+    pause.35
+    "images/CG/luna_desk/l7.png"
+    pause.35
+    repeat

@@ -14,6 +14,8 @@ screen ccg:
     add "images/CG/"+ccg_folder+"/"+str(ccg1)+".png"
     add "images/CG/"+ccg_folder+"/"+str(ccg2)+".png"
     add "images/CG/"+ccg_folder+"/"+str(ccg3)+".png"
+    if loopimage is not None:
+        add loopimage
 
     zorder 4
 
@@ -509,6 +511,31 @@ screen sccg:
 
     zorder 6
 
+screen luncg:
+
+    add lun_cg_base    
+
+    add lun_cg_body         xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_hair         xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_cheeks       xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_mouth        xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_eyewhite     xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_pupil        xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_eye          xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_eyebrow      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_tears        xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    if luna_wear_glasses:
+        add lun_cg_eyewear  xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_hairtop      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_extra_1      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_extra_2      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+    add lun_cg_extra_3      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   zoom lun_cg_zoom
+
+    add lun_cg_dick         xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   zoom lun_cg_zoom
+    add lun_cg_genie        xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   zoom lun_cg_zoom
+
+    zorder 6
+
 
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
@@ -524,10 +551,11 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.show_screen("cg")
         renpy.with_statement(Dissolve(0.5))
 
-    def ccg(layer1=None, layer2=None, layer3=None):
+    def ccg(layer1=None, layer2=None, layer3=None, loop=None):
         global ccg1
         global ccg2
         global ccg3
+        global loopimage 
 
         if layer1 is not None:
             ccg1 = layer1
@@ -535,6 +563,9 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
             ccg2 = layer2
         if layer3 is not None:
             ccg3 = layer3
+
+        loopimage = loop
+
         renpy.show_screen("ccg")
         renpy.with_statement(Dissolve(0.5))
 
@@ -565,3 +596,66 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))
+
+    def lunCG(pupil=None, eye=None, mouth=None, eyebrow=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None):
+        global lun_cg_body     
+        global lun_cg_hair     
+        global lun_cg_cheeks   
+        global lun_cg_mouth    
+        global lun_cg_eyewhite 
+        global lun_cg_pupil        
+        global lun_cg_eye      
+        global lun_cg_eyebrow  
+        global lun_cg_eyewear  
+        global lun_cg_tears  
+        global lun_cg_hairtop  
+        global lun_cg_extra_1  
+        global lun_cg_extra_2 
+        global lun_cg_extra_3
+        global lun_cg_xpos 
+        global lun_cg_ypos
+        global lun_cg_dick
+
+        ###HIDE OLD SCREEN
+        renpy.hide_screen("luncg")
+        renpy.hide_screen("blkfade")
+        #renpy.with_statement(Dissolve(0.5))
+
+        lun_cg_hair = lun_cg_path+lun_hair_style+"_hair.png"
+        lun_cg_hairtop = lun_cg_path+lun_hair_style+"_hair_top.png"
+
+        if cheeks is not None:
+            lun_cg_cheeks = lun_cg_path+"c_"+str(cheeks)+".png"
+        if mouth is not None:
+            lun_cg_mouth = lun_cg_path+"m_"+str(mouth)+".png"
+        if pupil is not None:
+            lun_cg_pupil = lun_cg_path+"pup_"+str(pupil)+".png"
+        if eye is not None:
+            lun_cg_eye = lun_cg_path+"eye_"+str(eye)+".png"
+        if eyebrow is not None:
+            lun_cg_eyebrow = lun_cg_path+"eb_"+str(eyebrow)+".png"
+        if tears is not None:
+            lun_cg_tears = lun_cg_path+str(tears)+".png"
+        if extra_1 is not None:
+            lun_cg_extra_1 = lun_cg_path+str(extra_1)+".png"
+        if extra_2 is not None:
+            lun_cg_extra_2 = lun_cg_path+str(extra_2)+".png"
+        if extra_3 is not None:
+            lun_cg_extra_3 = lun_cg_path+str(extra_3)+".png"
+        if xpos is not None:
+            lun_cg_xpos = xpos
+        if ypos is not None:
+            lun_cg_ypos = ypos
+
+        if pos is not None:
+            lun_cg_xpos = lun_loop_xpos[pos]
+            lun_cg_ypos = lun_loop_ypos[pos]
+            lun_cg_dick = lun_cg_path+"dick_"+str(pos)+".png" 
+
+
+
+
+        ###DISPLAY THE UPDATED SCREEEN
+        renpy.show_screen("luncg")
+        renpy.with_statement(Dissolve(0.1))
+

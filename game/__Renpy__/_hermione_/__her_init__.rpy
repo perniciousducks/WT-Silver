@@ -466,10 +466,11 @@ label her_progress_init:
         $ forest_BJ_progress = 1
 
         #Flags
-        $ hermione_busy = False
-        $ hermione_unlocked = False
-        $ hermione_favors = False
-        $ hermione_tutoring = False
+        $ hermione_busy           = False
+        $ hermione_unlocked       = False
+        $ hermione_favors         = False
+        $ hermione_tutoring       = False
+        $ her_panties_soaked      = False
 
         $ hermione_desperate_done = False
         $ hermione_favors_convinced = 0

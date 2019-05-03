@@ -672,7 +672,7 @@ label cc_pf_talk_T2_E2: # Complete. Not posed.
         g4 "*Argh!* {size=-4}Take it!{/size}"
 
         call cum_block
-        call cho_main("","base","narrow","raised","mid")"
+        call cho_main("","base","narrow","raised","mid")
 
         call gen_chibi("came_on_desk")
         with d3
@@ -680,7 +680,7 @@ label cc_pf_talk_T2_E2: # Complete. Not posed.
 
         m "(*Phewwww...)"
         m "(That was nice.)"
-        call cho_main("Are you feeling well, Sir?","open","narrow","base","mid")"
+        call cho_main("Are you feeling well, Sir?","open","narrow","base","mid")
         g9 "Never felt better!"
         cho "That's good to hear."
 
@@ -705,17 +705,15 @@ label cc_pf_talk_T2_E2: # Complete. Not posed.
     return
 
 
-label cc_pf_talk_T2_E3: # Incomplete. Not posed.
+label cc_pf_talk_T2_E3: # Complete. Not posed.
 
-    # Cho is angry about Hermione.
-    # Talks about all the things she'd do to her.
-    # You get the option to jerk off.
-    # Cho really gets into it.
+    # Cho is getting popular thanks to her Quidditch efforts.
+    # Hufflepuff hates Hermione for causing them to lose.
+    # Cho wants to "thank" Hermione for helping them win by doing something naughty or uncomfortable with her.
     # If you are not masturbating, Genie says "fuck it" and starts jerking off regardless.
     # Cho notices you jerking off.
     # She finds it repulsive and disgusting.
-    # She insults you which gets you off.
-    # She angrily leaves...
+    # She insults you and then angrily leaves...
 
     m "How's school? Have much to tell me?"
     cho "Quite a bit, Sir!"
@@ -749,20 +747,35 @@ label cc_pf_talk_T2_E3: # Incomplete. Not posed.
 
     cho "It's like I'm a celebrity now! I'm getting so much attention!"
     cho "It never happened that Ravenclaw won a game. And I made that possible!"
-    m "Hey don't you forget about me."
-    m "Where would you be without the great Dooblydore..."
-    cho "Of course, Sir! Sorry, Sir!"
+    if masturbating:
+        g4 "And soon you'll be on your knees thanking me for it!"
+    else:
+        m "Hey don't you forget about me."
+        m "Where would you be without the great Dooblydore..."
+        cho "Of course, Sir! Sorry, Sir!"
 
-    menu:
-        "Jerk off":
-            $ masturbating = True
-            m "Please, don't let me interrupt your thought..."
-            g9 "I'd like to hear more!"
-        "Don't":
-            $ masturbating = False
-            m "(No, I need to focus!)"
-            m "Please, don't let me interrupt your thought..."
-            m "Continue..."
+        menu:
+            m "Maybe it wouldn't be such a bad idea to..."
+            "-Jerk off while she's talking-":
+                $ cho_jerk_off_counter += 1
+                $ masturbating = True
+
+                hide screen cho_chang
+                call nar(">You reach under the desk and grab your cock...")
+
+                call gen_chibi("jerking_behind_desk")
+                with d3
+                pause.8
+
+                call bld
+                m "Please, don't let me interrupt your thought..."
+                g9 "I'd like to hear more!"
+
+            "-Participate in the conversation-":
+                $ masturbating = False
+                m "(No, I need to focus!)"
+                m "Please, don't let me interrupt your thought..."
+                m "Continue..."
 
     cho "Of course, Sir."
     cho "It's fun getting all of the boys attention! And seeing how jealous it makes all of the girls!"
@@ -790,6 +803,8 @@ label cc_pf_talk_T2_E3: # Incomplete. Not posed.
     g4 "*Argh!*"
     cho "Give her a proper kiss on the lips, perhaps?"
     cho "I bet a prude like her would be \"so\" shocked by that! I might even be her first!"
+
+    # Forced to jerk off.
     if masturbating:
         g4 "Yes! You fucking sluts!"
     else:
@@ -806,30 +821,61 @@ label cc_pf_talk_T2_E3: # Incomplete. Not posed.
     cho "She's making my blood boil! That know it all, pretentious little bitch!"
     cho "Excuse my language, Sir."
 
+    # Add section here
+
+    # Genie cums.
     g4 "Yes, yes! You nasty slut!"
+
+    call cum_block
+    call gen_chibi("cumming_behind_desk")
+    with d3
+    pause.8
+
+    call bld
+    g4 "*Argh!* {size=-4}Take it!{/size}"
+
+    call cum_block
+    call cho_main("Sir?!","base","narrow","raised","mid")
 
     cho "Sir?!" # Scream
     cho "What the bloody hell are you doing?"
-    m "Oh no!"
-
-
-
-    call cho_main("I know exactly what you are doing!","angry","closed","angry","mid")
-    call cho_main("Stop!","open","closed","angry","mid",trans="hpunch")
-    call cho_main("Touching!","scream","angry","angry","mid",trans="hpunch")
-    call cho_main("Yourself!!!","angry","angry","angry","mid",trans="hpunch")
-    g4 "Jeeze..., no need to scream like that..."
+    g4 "(Oh no! I'm busted!)"
 
     # Genie stops.
     hide screen bld1
     with d3
     pause.2
 
-    call gen_chibi("sit_behind_desk")
+    call gen_chibi("came_on_desk")
     pause.8
 
-    call bld
-    m "I will stop...{w} scratching...{w} my leg..."
+    g4 "Nothing, I was just-"
+    cho "Don't tell me you were..."
+    g4 "I was merely scratching my leg!"
+    call cho_main("I know exactly what were doing!","angry","closed","angry","mid")
+    cho "You were touching yourself!" # Scream
+    g4 "Not so loud! People might hear you!"
+    m "I don't know if those are proper castle walls, or just set-dressing..."
+    cho "Why would you think I care?!"
+    cho "You were wanking off!"
+    m "No I wasn't..."
+    cho "In front of your own student!"
+    m "(...)"
+    cho "You were wanking off!!!"
+    g4 "You've said that before!"
+    m "Stop making a big deal out of it, would you?"
+    cho "So you admit that you did it!"
+    m "Fine... Who even cares at this point..."
+    cho "That's so disgusting!"
+    m "You're making an even bigger fuzz about it than Hermione..."
+    cho "Well good for her!"
+    cho "Maybe you should call her to clean up your mess!"
+    cho "With her stupid red lips! I bet she'd love that!!!"
+    cho "I'm leaving."
+    cho "Have a nice day, [cho_genie_name]!"
+
+    # Cho leaves.
+    call cho_walk(action="leave", speed=1.6)
 
     $ cho_mood += 9
 

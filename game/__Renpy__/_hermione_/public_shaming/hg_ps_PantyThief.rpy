@@ -168,7 +168,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
     if her_whoring >= 9 and her_whoring <= 15: #LEVEL 04+ (THIRD EVENT)
         call her_main("My panties...","annoyed","down",xpos="right",ypos="base")
-        if hg_SoakedPantiesFlag:
+        if her_panties_soaked:
             her "They are covered in something slimy again..."
         else:
             her "They are covered in something slimy..."
@@ -267,7 +267,7 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
 
     menu:
         "\"Here are your panties.\"":
-            if hg_SoakedPantiesFlag:
+            if her_panties_soaked:
                 jump hg_cum_on_panties_response
             else:
                 her "Thank you, [genie_name]."
@@ -290,7 +290,7 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
                 hide screen hermione_main
                 with d3
                 call nar(">You give Hermione her panties back...")
-                if hg_SoakedPantiesFlag:
+                if her_panties_soaked:
                     jump hg_cum_on_panties_response
                 else:
                     call her_main("And my payment?","open","base")
@@ -322,7 +322,7 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
                         call her_main("Can I have my payment now please?","disgust","glance")
                         m "What about your panties?"
                         call her_main("Oh, them too of course...","angry","worriedCl",emote="05")
-                        if hg_SoakedPantiesFlag:
+                        if her_panties_soaked:
                             jump hg_cum_on_panties_response
                         else:
                             pass
@@ -332,7 +332,7 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
                         her "It is not my fault that the system is so corrupted..."
                         call her_main("I shall remain a symbol of righteousness to my peers, no matter what!","open","closed")
                         call her_main("Can I have my panties back now, please?","open","base")
-                        if hg_SoakedPantiesFlag:
+                        if her_panties_soaked:
                             jump hg_cum_on_panties_response
                         else:
                             her "And my payment."
@@ -353,14 +353,14 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
                 hide screen hermione_main
                 with d3
                 call nar(">You give Hermione her panties back...")
-                if hg_SoakedPantiesFlag:
+                if her_panties_soaked:
                     jump hg_cum_on_panties_response
                 else:
                     call her_main("And my payment?","base","base")
                     m "Yes, yes..."
 
     label back_from_soaked:
-    if hg_SoakedPantiesFlag and her_whoring >= 9 and her_whoring < 15 :
+    if her_panties_soaked and her_whoring >= 9 and her_whoring < 15 :
         m "You can go now."
         call her_main("What about my points?","scream","angryCl")
         m "You still want points after I just gave you a gift?"
@@ -373,7 +373,7 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
         call her_main("Thank you, [genie_name]...","annoyed","suspicious")
         m "You can go now."
         her "Good night, [genie_name]."
-    elif hg_SoakedPantiesFlag and her_whoring >= 15:
+    elif her_panties_soaked and her_whoring >= 15:
         $ hg_ps_get_panties_OBJ.level = 4 #Event hearts level (0-4)
         m "You can go now."
         call her_main("yes, [genie_name]","angry","down_raised")
@@ -397,6 +397,6 @@ label hg_ps_get_panties_complete: # WHORING LEVEL 02 <=================
 
     $ hg_ps_get_panties_OBJ.points += 1
     $ hg_ps_get_panties_OBJ.inProgress = False #False when favor is not in progress
-    $ hg_SoakedPantiesFlag = False #TRUE if you jerked off in panties
+    $ her_panties_soaked = False #TRUE if you jerked off in panties
 
     jump end_hg_pf

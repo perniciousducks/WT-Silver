@@ -3,13 +3,15 @@
 label summon_cho:
     call play_sound("door")
     call cho_chibi("stand","mid","base")
+    with d3
 
     call cho_random_clothing
+
+    label cho_requests:
 
     $ active_girl = "cho"
     $ cho_busy = True
 
-    label cho_requests:
     call cho_main(xpos="base",ypos="base")
 
     $ hide_transitions = False

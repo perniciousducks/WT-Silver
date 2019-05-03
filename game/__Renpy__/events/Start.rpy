@@ -34,11 +34,6 @@ label start_ht:
 
 
 
-
-### JERKING OFF FLAGS ###
-    $ cum_on_panties = False #True when choose to cum on Hermione's panties.
-
-
 ### EVENTS ###
     $ event08_happened = False #Turns TRUE after event_08 (Hermone visits first time).
     $ event09 = False #Turns TRUE when you let Hermione in during event_09. Otherwise she will keep coming every morning.

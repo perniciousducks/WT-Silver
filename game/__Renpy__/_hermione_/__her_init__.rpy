@@ -501,7 +501,7 @@ label her_progress_init:
         $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
 
         #Public Shaming Flags
-        $ hg_SoakedPantiesFlag = False
+        $ her_panties_soaked = False
         $ current_job = 0
         $ transparent_quest = False
 

@@ -45,6 +45,7 @@ label cho_progress_init:
         $ cho_favors_unlocked     = False
         $ cho_requests_unlocked   = False
         $ cho_shaming_unlocked    = False
+        $ cho_strip_complete      = False
         $ cho_wardrobe_unlocked   = False
         $ cho_busy                = False
         $ cho_chatted             = False

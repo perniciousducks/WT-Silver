@@ -339,6 +339,8 @@ label cc_pf_strip_T1_E2: # Incomplete. Not posed.
     call cho_main("Glad to hear it, [cho_genie_name].","smile","angry","angry","mid")
     call cho_main("Now... How badly do you want me to take off the rest?","soft","angry","base","mid")
 
+    $ cho_strip_complete = True # Unlocks Wardrobe on next summon.
+
     return
 
 

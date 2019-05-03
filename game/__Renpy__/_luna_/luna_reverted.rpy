@@ -35,7 +35,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #
             m "Come in!"
 
         "-Tell her to go away-":
-            m "(SHe's probably here because of that thing with the hat!)"
+            m "(She's probably here because of that thing with the hat!)"
             m "Ugh... I'm not here!"
             lun "..."
             call nar(">Your door opens as Luna walks in.")
@@ -58,7 +58,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem #
     m "(What?)"
     m "Can I help you with anything?"
     call lun_main("Oh... there was something I came here for, wasn't there...","upset","base","sad","down")
-    m "(What's going on here? I thought the hat wiped her mind!)"
+    m "(What's going on here?)"
     call lun_main("I remember! The wrackspurt infestation!","base","happyCl","sad","R")
 
     menu:
@@ -1802,7 +1802,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     $ lun_cg_xpos_abs     = -275
     $ lun_cg_ypos_abs     = -100
     $ hermione_scaleratio = 1.2
-    $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', tears='mascara')
+    $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', extra_3='blank', tears='mascara')
     show screen luncg
     hide screen luna_main
     hide screen blkfade
@@ -2010,66 +2010,128 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     call her_main("That hat better not have been involved!","smile","happyCl")
     m "Scout's honor."
     call her_main("We'll see about that...","smile","happyCl")
+    show screen blkfade
+    with d3
     ">Before you can say anything Hermione walks around your desk to check on Luna."
-    #Transition back to full screen CG
+    $ lun_cg_base         = lun_cg_path+"base.png"
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    hide screen hermione_main
+    hide screen blkfade
+    with d3
+    $ lunCG('dick', 'seductive', 'wide_tongue', pos=2)
     lun "*slrp* *pop*"
+    $ lunCG('left', 'blink', 'base', pos=1)
     lun "Hi Hermione! Nice work guessing that it was me!"
     her "..."
     her "What are you doing Luna?"
+    $ lunCG('dick', 'angry', 'base', 'mad')
     lun "Getting rid of wrackspurts! There's so many!"
     her "..."
     her "God you're stupid... well, At least I know why the room stinks of cum now..."
+    $ lunCG('ahegao', 'wide', 'base', 'sad')
     lun "Isn't it great? I'm thinking about using it to make a perfume!"
     her "(Idiot)"
     her "At least I know this is the real you..."
+    $ lunCG('left', 'blink')
     lun "You do? Thanks for checking, sometimes I'm not so sure myself!"
     her "..."
+    $ lunCG('dick', 'angry', 'base', 'mad')
     lun "Now if it's OK Hermione, I think I better get back to work, I've only gotten six rounds out so far."
+    show screen blkfade
+    with d3
     ">Without any hesitation, Luna shamelessly returns to sucking your cock in front of Hermione."
-    #Transistion back to half CG
+    $ lun_cg_base         = lun_cg_path+"base_2.png"
+    $ lun_cg_genie        = lun_cg_path+"blank.png" 
+    $ lun_cg_xpos_abs     = -275
+    $ lun_cg_ypos_abs     = -100
+    show screen hermione_main
+    hide screen blkfade
+    with d3
+    $ lunCG('dick', 'seductive', 'sucking', 'angry', pos=14)
     lun "*glck* *slrp* *glck*"
-    call her_main("Six times already? How long does she stay under there?","smile","happyCl")
+    $ lunCG(pos=8)
+    call her_main("Six times already? How long does she stay under there?","disgust","narrow")
     m "She'd live under there if she could..."
+    $ lunCG('ahegao', pos=13)
     lun "*glck* *slrp* *glck*"
-    call her_main("So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?","smile","happyCl")
+    $ lunCG(pos=5)
+    call her_main("So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?","frown","suspicious")
+    $ lunCG(pos=8)
     m "Pretty much... It was getting a little boring with just the two of us..."
-    call her_main("Ugh... You're such a pig!","smile","happyCl")
+    $ lunCG(pos=13)
+    call her_main("Ugh... You're such a pig!","base","suspicious")
+    $ lunCG('dick', 'angry', pos=6)
     m "So you don't want to earn some points for your house?"
-    call her_main("I didn't say no... I just wanted to make sure you know how perverted this is!","smile","happyCl")
+    $ lunCG(pos=14)
+    call her_main("I didn't say no... I just wanted to make sure you know how perverted this is!","smile","narrow")
+    $ lunCG(pos=8)
     lun "*glck* *slrp* *glck*"
-    call her_main("You hadn't even locked your door!","smile","happyCl")
+    $ lunCG('up', 'wide', pos=12)
+    call her_main("You hadn't even locked your door!","grin","angryL")
     #Hermione starts touching herself
-    call her_main("What if someone else walked in while this was going on?","smile","happyCl")
+    call set_her_action("fingering")
+    $ lunCG('up', 'angry', pos=8)
+    call her_main("What if someone else walked in while this was going on?","grin","dead_mad")
+    $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
-    call her_main("Do you think they wouldn't be able to hear it?","smile","happyCl")
-    call her_main("To {b}smell{/b} it?","smile","happyCl")
+    $ lunCG(pos=4)
+    call her_main("Do you think they wouldn't be able to hear it?","grin","dead")
+    $ lunCG(pos=8)
+    call her_main("To {b}smell{/b} it?","open_tongue","dead_mad")
+    $ lunCG('aheagao', 'mad', pos=14)
     lun "*glck* *slrp* *glck*"
-    call her_main("But maybe that's what you two want...","smile","happyCl")
-    call her_main("Maybe you were waiting for someone else to walk in and catch you...","smile","happyCl")
+    $ lunCG(pos=4)
+    call her_main("But maybe that's what you two want...","grin","down")
+    $ lunCG(pos=8)
+    call her_main("Maybe you were waiting for someone else to walk in and catch you...","grin","down_raised")
+    $ lunCG(pos=12)
     lun "*glck* *slrp* *glck*"
-    call her_main("Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them...","smile","happyCl")
-    call her_main("To be forced into breathing in this thick musk...","smile","happyCl")
+    $ lunCG(pos=16)
+    call her_main("Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them...","smile","dead_mad")
+    $ lunCG('up', 'wide', pos=13)
+    call her_main("To be forced into breathing in this thick musk...","disgust","dead_mad")
+    $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
-    call her_main("Imagine if it was a first year? What would you do then?","smile","happyCl")
-    call her_main("Would you do the right thing and send them away?","smile","happyCl")
+    $ lunCG(pos=7)
+    call her_main("Imagine if it was a first year? What would you do then?","grin","hateful")
+    $ lunCG(pos=9)
+    call her_main("Would you do the right thing and send them away?","smile","squint")
+    $ lunCG('dick', 'mad', pos=11)
     lun "*glck* *slrp* *glck*"
-    call her_main("Or would you make them stay...","smile","happyCl") 
+    call her_main("Or would you make them stay...","grin","suspicious") 
+    $ lunCG(pos=13)
     g4 "Mmmm...."
+    $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
-    call her_main("Make them watch while you bust your seventh load of the day down Luna's throat!","smile","happyCl")
+    $ lunCG(pos=16)
+    call her_main("Make them watch while you bust your seventh load of the day down Luna's throat!","grin","glance")
+    $ lunCG(pos=14)
     g4 "ARGHH, this is it you sluts!"
+    $ lunCG('right', 'wide', 'sucking', 'sad', pos=16)
     ">With that you fire another gargantuan load into Luna's mouth."
+    $ lunCG('up')
     lun "*glp* *glp* *glp*"
+    $ lunCG('aheagao')
     g4 "Mmmm...."
+    $ lunCG('ahegao', 'seductive')
     lun "*glp* *glp* *glp*"
+    $ lunCG('ahegao', 'angry', 'sucking', 'angry')
     call her_main("I guess that answers that...","smile","happyCl")
     call her_main("I think I better be going then.","smile","happyCl")
     m "Ugh... yes... good... bye..."
+    $ lunCG('ahegao', 'seductive', 'sucking', 'sad', pos=7)
     lun "*glck* *slrp* *glck*"
     call her_main("Have a nice day you two!","smile","happyCl")
+    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=3)
     ">With that your vision starts to fade to black as Luna suckles your wilting cock back to health..."
     show screen blkfade 
     with d3
+    hide scren luncg
+    $ hermione_scaleratio = 2
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    hide screen hermione_main
     ">By the time you wake up Luna is gone and the sun has set."
     ">All that's left is a puddle of cum under the desk and an aching in your balls..."
     hide screen blkfade 

@@ -552,7 +552,73 @@ label cc_pf_talk_T2_E1: # Incomplete. Not posed.
     return
 
 
-label cc_pf_T2_talking_2: # Incomplete. Not posed.
+label cc_pf_talk_T2_E2: # Incomplete. Not posed.
+
+    m "How's school? Anything to report?"
+    cho "Rather boring, and uneventful as always, Sir."
+    cho "That is, if constantly getting bullied is the new norm at this school..."
+
+    menu:
+        "Jerk off":
+            $ masturbating = True
+            m "(Just to be clear, I'm only doing this because I'm already horny.{w} Not because it turnes me on that she's getting bullied...)"
+            call nar("Right...")
+            g4 "Who's bullying you? I hope you faught back?"
+            cho "Of course, [cho_genie_name]!"
+
+        "Don't":
+            $ masturbating = False
+            m "(No, I need to focus!)"
+            m "You are getting bullied? By whom?"
+
+    cho "The Slytherin Quidditch team. They've been total dicks lately..."
+    m "You don't say.{w} What did they do?"
+    cho "They've been harassing my team..."
+    cho "Well mostly me, actually." # Embarrassed
+    if not masturbating:
+        m "So,... would you like to report them?"
+        cho "No, Sir."
+        m "No?"
+    cho "I do not endorse their behaviour, Sir. And I hope no other student has to share the same harassment that I receive."
+    cho "Unless maybe Granger..." # Small text.
+    cho "But{w}, watching them succumb to me has been rather fun..."
+    m "Succumb to you?"
+    cho "Yes. They're so desperately trying to embarrass me. To make me doubt myself before the big game..."
+    if masturbating:
+        g4 "Those asshole bullies... Show them who's boss!"
+    else:
+        g9 "And a strong, independent woman like yourself would never be intimidated by puny Slytherins!"
+        cho "Of course not, Sir."
+        g4 "I'm so proud!"
+    cho "They think they can intimidate me. After all I'm only a small girl, and they are a group of ugly, brainless brutes!"
+
+    # Add section here.
+    # Cho describes what they have been doing to her.
+
+    cho "But that's where they are mistaken!{w} They should be scared of me, [cho_genie_name]!"
+    if masturbating:
+        g4 "Yes! Show them what a slut you are!"
+    cho "Of what I'm capable off!"
+    if masturbating:
+        g4 "*Argh!* I'm getting close!"
+    cho  "Scared of what's about to come!"
+
+    # Genie cums.
+    if masturbating:
+        g4 "Yes! Yes! It's coming!"
+        call cum_block
+        g4 "*Argh!* Take it!"
+
+    else:
+        g4 "I am scared already!"
+
+
+
+
+    return
+
+
+label cc_pf_talk_T2_E3: # Incomplete. Not posed.
 
     # Cho is angry about Hermione.
     # Talks about all the things she'd do to her.
@@ -569,11 +635,27 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     m "Not necessarily. Why don't you surprise me? Has anything interesting happened to you lately?"
     cho "I feel like people have shown me more affection even since our game against Hufflepuff."
     m "You don't say..."
-    m "Do you have any idea why that might be?"
-    cho "Because of our win, of course!"
-    m "And it had nothing to do with the fact that half the school got to see your panties?"
-    cho "No! Of course not!"
-    cho "Please don't try to diminish my achievement, Sir!"
+
+    menu:
+        "Jerk off":
+            $ masturbating = True
+            m "You don't mind if I..."
+            cho "Mind doing what?!"
+            cho "Oh..."
+            m "I have urges, girl."
+            cho "If you can't help yourself, Sir. I don't really care..."
+            g9 "Great!"
+            m "Please, don't let me interrupt your thought..."
+            g9 "I'd like to hear more!"
+
+        "Don't":
+            $ masturbating = False
+            m "Do you have any idea why that might be?"
+            cho "Because of our win, of course!"
+            m "And it had nothing to do with the fact that half the school got to see your panties?"
+            cho "No! Of course not!"
+            cho "Please don't try to diminish my achievement, Sir!"
+
     cho "It's like I'm a celebrity now! I'm getting so much attention!"
     cho "It never happened that Ravenclaw won a game. And I made that possible!"
     m "Hey don't you forget about me."
@@ -648,75 +730,6 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     pause.8
     call bld
     m "I will stop...{w} scratching...{w} my leg..."
-
-    return
-
-
-label cc_pf_T2_talking_3: # Incomplete. Not posed.
-
-    menu:
-        "Jerk off":
-            $ masturbating = True
-        "Don't":
-            $ masturbating = False
-
-    if masturbating:
-        m "You don't mind if I..."
-        cho "Mind doing what?!"
-        cho "Oh..."
-        m "I have urges, girl."
-        cho "If you can't help yourself, Sir. I don't really care..."
-        g9 "Great!"
-        cho "I have more important matters on my mind."
-        m "Like what?"
-    else:
-        m "How's school? Anything to report?"
-        cho "Rather boring, and uneventful as always, Sir."
-        cho "That is, if constantly getting bullied is the new norm at this school..."
-        m "You are getting bullied? By whom?"
-
-    cho "The Slytherin Quidditch team. They've been total dicks lately..."
-    m "You don't say.{w} What did they do?"
-    cho "They've been harassing my team..."
-    cho "Well mostly me, actually." # Embarrassed
-    m "So,... would you like to report them?"
-    cho "No, Sir."
-    m "No?"
-    cho "I do not endorse their behaviour, Sir. And I hope no other student has to share the same harassment that I receive."
-    cho "Unless maybe Granger..." # Small text.
-    cho "But{w}, watching them succumb to me has been rather fun..."
-    m "Succumb to you?"
-    cho "Yes. They're so desperately trying to embarrass me. To make me doubt myself before the big game..."
-    if masturbating:
-        g4 "Those asshole bullies... Show them who's boss!"
-    else:
-        g9 "And a strong, independent woman like yourself would never be intimidated by puny Slytherins!"
-        cho "Of course not, Sir."
-        g4 "I'm so proud!"
-    cho "They think they can intimidate me. After all I'm only a small girl, and they are a group of ugly, brainless brutes!"
-
-    # Add section here.
-    # Cho describes what they have been doing to her.
-
-    cho "But that's where they are mistaken!{w} They should be scared of me, [cho_genie_name]!"
-    if masturbating:
-        g4 "Yes! Show them what a slut you are!"
-    cho "Of what I'm capable off!"
-    if masturbating:
-        g4 "*Argh!* I'm getting close!"
-    cho  "Scared of what's about to come!"
-
-    # Genie cums.
-    if masturbating:
-        g4 "Yes! Yes! It's coming!"
-        call cum_block
-        g4 "*Argh!* Take it!"
-
-    else:
-        g4 "I am scared already!"
-
-
-
 
     return
 

@@ -67,7 +67,7 @@ label cho_panties_response_T2:
         call cho_walk("desk","base", speed=2)
         pause.8
 
-        call call cho_walk("mid","base", speed=2)
+        call cho_walk("mid","base", speed=2)
         call cho_chibi("stand","mid","base")
         with d3
         pause.2

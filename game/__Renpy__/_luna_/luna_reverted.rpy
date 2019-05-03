@@ -1328,6 +1328,10 @@ label luna_reverted_event_4: #Luna gentle BJ for about 9 hours and 14 orgasms fr
     jump main_room
 
 label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna masturbating the whole time #NEEDS TESTING
+    $ lun_corruption = 4
+    $ days_to_luna = 1
+
+    call play_sound("knocking")
     ">*knock* *knock* *knock* *knock* *knock* {b}*knock* *knock*{/b}"
     ">Your door swings wide as the effervescent Luna Lovegood strolls in."
     call lun_main("Hello [lun_genie_name]!","base","happyCl","base","mid",cheeks="blush")
@@ -1346,7 +1350,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
 
     menu:
         "Facefuck her to teach her a lesson!":
-            jump luna_reverted_facefuck
+            jump luna_reverted_event_5_1
         "Let her do her own thing...":
             pass
 
@@ -1587,6 +1591,9 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     jump main_room 
 
 label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
+    $ lun_corruption = 5
+    $ days_to_luna = 3
+
     $ lunCG('up', 'wide', 'open', extra_2='hand')
     ">You put your hand on the back of the unsuspecting girls head..."
     $ lunCG('up', 'base')
@@ -1594,7 +1601,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     $ lunCG('up', 'wide', 'base')
     lun "Really? What sort?"
     m "Well, today I'll be teaching you what happens when you decide to paralyse your headmaster and suck their cock for hours on end..."
-    $ lunCG('up', 'blink', 'wide')
+    $ lunCG('up', 'blink', 'base')
     lun "Oh... and what's that?"
     m "This happens, miss lovegood, this happens..."
     $ lunCG('base', 'wide', 'sucking', pos=14)
@@ -1641,7 +1648,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     lun "*glck*{image=textheart}*glck*!!!*Gulp*{image=textheart}*glck*{image=textheart}"
     $ lunCG('dick', 'wide', pos=16)
     ">Allowing your withering cock to come back to life, firing a inhumane volley of cum into the girls stomach."
-    $ lunCG('ahegao', 'wide', 'sad', pos=6)
+    $ lunCG('ahegao', 'wide', 'sucking', 'sad', pos=6)
     m "That's better! This is what a cumslut like you deserves!"
     $ lunCG(pos=10)
     ">Luna's hands have both managed to sneak under her skirt and are now a blur of movement..."
@@ -1659,24 +1666,24 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     lun "*GASP* *cough* *cough* *cough*"
     $ lunCG('up', 'wide', 'open', extra_1='cum_3')
     m "Mmmmm that's it just let me cover you..."
-    $ lunCG('up', 'wide', 'base', extra_1='cum_4')
+    $ lunCG('up', 'wide', 'base', extra_3='cum_4')
     lun "..."
     m "Anything to say for yourself cumslut?"
     $ lunCG('left', 'blink', 'pout')
     lun "..."
-    $ lunCG('dick', 'tired', 'open')
+    $ lunCG('dick', 'sad', 'open')
     lun "{size=-5}T-Thank you...{/size}"
     m "What was that? I don't think I could hear you through all that cum..."
-    $ lunCG('up', 'tired', 'open')
+    $ lunCG('up', 'sad', 'open')
     lun "Thank you sir..."
     m "(what?)"
-    $ lunCG('left', 'tired', 'open')
+    $ lunCG('left', 'sad', 'open')
     lun "You're the only person who has taken me seriously with the wrackspurts..."
     $ lunCG('up', 'seductive', 'base')
     lun "And you've been so nice..."
     $ lunCG('dl', 'wide', 'open')
     lun "And taught me so many things..."
-    $ lunCG('down', 'tired', 'open')
+    $ lunCG('down', 'sad', 'open')
     lun "And this cum..."
     $ lunCG('up', 'wide', 'open')
     lun "It's so good! It's as if it's made of pure magic!"
@@ -1689,7 +1696,7 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     $ lunCG('ahegao', 'seductive', 'sucking', pos=4)
     m "ugh... I'm glad you've learned your lesson."
     m "I am the best genie ever..."
-    play sound "scratch.mp3"
+    play sound "sounds/scratch.wav"
     $ lunCG(pos=6)
     m "DID YOU JUST SAY GENIE?"
     $ lunCG('up', 'closed', 'open', pos=2)
@@ -1722,18 +1729,18 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     lun "Awww... rubbing this doesn't count?"
     ">Luna gives your cock a playful few strokes."
     m "Afraid not, although this job would be a lot better if it did."
-    $ lunCG('up', 'happyCl', 'base')
+    $ lunCG('up', 'closed', 'base')
     lun "Oh well... I guess that your yummy cummy will just have to do."
     $ lunCG('dick', 'angry', 'base', 'mad')
     lun "Speaking of..."
     $ lunCG('ahegao', 'angry', 'sucking', 'sad', pos=14)
     ">Luna goes to throw her head onto your cock again..."
     m "Steady on there girl... Don't you think you've had enough cum for one day?"
-    $ lunCG('up', 'sad', 'pout', 'sad')
+    $ lunCG('up', 'sad', 'pout', 'sad', pos=1)
     lun "What? Already? But there's still so much magic..."
     $ lunCG('dick', 'wide', 'base')
     lun "{image=textheart}{image=textheart}{image=textheart}"
-    $ lunCG('up', 'tired', 'pout')
+    $ lunCG('up', 'sad', 'pout')
     lun "Can't we keep going? There must be so many wrackspurts left in you..."
     m "(Oh right... those things...)"
     $ lunCG('up', 'sad', 'open')
@@ -1741,21 +1748,21 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     m "I'll have to teach you an advanced method for getting rid of them in both of us at once."
     $ lunCG('up', 'wide', 'base')
     lun "Really? You have something like that?"
-    $ lunCG('up', 'tired', 'open')
+    $ lunCG('up', 'sad', 'open')
     lun "That could solve the school's wrackspurt infestation in no time!"
-    $ lunCG('up', 'seduction', 'pout')
+    $ lunCG('up', 'seductive', 'pout')
     lun "could you teach it to me now? Pleeeease..."
     m "Ugh... I think I need a bit of a nap after that... not to mention you could use a shower..."
     $ lunCG('up', 'blink', 'base')
     lun "And waste this? I told you that I'm using it to make a perfume to ward off those wrackspurts."
-    $ lunCG('dl', 'seduction', 'pout')
+    $ lunCG('dl', 'seductive', 'pout')
     lun "I'm even thinking of selling it to the other students to help slow down those nasty things..."
     m "Whatever... just do it somewhere else... I need a nap..."
     $ lunCG('up', 'base', 'base')
     lun "Okay, Mr Genie, sir!"
     m "Genie is fine."
     m "And only call me that when we're alone in this office. Outside, I'm Dumbledore."
-    $ lunCG('dick', 'tired', 'base')
+    $ lunCG('dick', 'sad', 'base')
     lun "Of course... Have a nice nap,{w} Genie..."
     ">With that, a cum-soaked Luna prances out of your office and into the wide world..."
     m "..."
@@ -1767,17 +1774,10 @@ label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     jump main_room
 
 label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
-    #Invite Luna to your office, ask what she's doing
-    #Offer to give her a note to excuse her from class
-    #Have her hop under the desk
-    #Get the idea to have someone come up and visit while this is happening
-    #Summon up hermione for some entertainment
-    #menu options between show tits/pussy
-    #hermione catches on when you cum in front of her with your hands above the desk
-    #demands extra points for playing your sick game
-    #gets into it
-    #hermione starts to tease whoever's under the desk (calling a cumslut)
-    #only serves to turn luna on more and make her believe the room is infected with wrackspurts
+    $ lun_corruption = 6
+    $ days_to_luna = 5
+
+    call play_sound("knocking")
     ">The bubbly Luna Lovegood strolls in through your door."
     call lun_main("Good morning, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush")
     m "Miss Lovegood."
@@ -1812,17 +1812,17 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     g4 "{size=+5}You greedy little slut! Take this!{/size}"
     $ lunCG('ahegao', 'wide', pos=12)
     lun "*gulp* *gulp* *gulp*"
-    $ lunCG('aheagao', 'angry', pos=16)
+    $ lunCG('ahegao', 'angry', pos=16)
     ">You fire your third load of the day into Luna's hungry mouth."
     $ lunCG('up', 'seductive', pos=6)
     lun "*gulp*{image=textheart}*gulp*{image=textheart}*gulp*"
     $ lunCG('dick', 'seductive', pos=9)
     m "Fuck that's good... Ugh..."
-    $ lunCG('dick', 'tired', pos=3, extra_2='blank')
+    $ lunCG('dick', 'sad', pos=3, extra_2='blank')
     ">Sensing that your orgasm has ended, Luna begins to slow down and focus suckling the end of your cock to nurse it back to health..."
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
     m "Ugh... I should... mmmm... do some work... or something..."
-    $ lunCG('up', 'wink', pos=4)
+    $ lunCG('up', 'blink', pos=4)
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
     menu: 
         "-Try and do some paperwork-":
@@ -1837,7 +1837,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
             hide screen blkfade
             with d3
             m "There, all done!"
-            $ lunCG('up', 'wink', 'sucking', 'base', pos=13)
+            $ lunCG('up', 'blink', 'sucking', 'base', pos=13)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
             $ lunCG('down', 'seductive', pos=5)
             m "(It only took three hours and twice as many orgasms)"
@@ -1850,7 +1850,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
             m "......"
             $ lunCG('dick', 'seductive', 'open_wide', pos=2)
             lun "*Slrp* *pop*"
-            $ lunCG('up', 'wink', 'base', pos=1)
+            $ lunCG('up', 'blink', 'base', pos=1)
             lun "How's the report, [lun_genie_name]?"
             m "Unless you consider a three page report about how you suck cock useful..."
             m "Then it's trash..."
@@ -1938,7 +1938,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     $ lunCG(pos=15)
     m "Oh fuck yes... just like that..."
     $ lunCG(pos=11)
-    call her_main("Is something going-","pout","suspicious")
+    call her_main("Is something going-","frown","suspicious")
     m "Shut-up and get naked [hermione_name]!"
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
@@ -1976,7 +1976,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     m "Ugh... what do you mean?"
     $ lunCG(pos=16)
     call her_main("Please, I can hear them sucking you off from here.","smile","glance")
-    $ lunCG('downL', 'wide', pos=9)
+    $ lunCG('dl', 'wide', pos=9)
     lun "*glck* *slrp* *glck*"
     $ lunCG('dick', pos=12)
     call her_main("I'm just curious who you managed to get...","soft","down_raised")
@@ -1986,7 +1986,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     call her_main("Anyone I know?","smile","squint")
     m "I believe... argh... you've met..."
     $ lunCG(pos=7)
-    call her_main("Hmmmm... It's not a slytherin is it?","pout","suspicious")
+    call her_main("Hmmmm... It's not a slytherin is it?","frown","suspicious")
     m "Which colour are they again?"
     $ lunCG(pos=14)
     call her_main("The green ones you decrepit old perv!","open","angry")
@@ -1994,7 +1994,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     lun "*glck* *slrp* *glck*"
     $ lunCG('up', pos=15)
     m "Mmmm... she's not a slytherin then..."
-    call her_main("Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff...","pout","angryL")
+    call her_main("Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff...","frown","angryL")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=13)
@@ -2088,18 +2088,10 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     #FTB as both Luna and Hermione spend the rest of the day under your desk
 
 label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
-    #Luna is desperate to learn Genie's new techniques
-    #Have genie explain some bullshit about how the technique will work
-    #explain she'll have to get naked
-    #have Luna get more and more excited by the idea of what is going to happen
-    #start sex
-    #Luna starts babbling about how good it's feeling
-    #starts crying over the idea of losing the wrackspurts and not being able to do this anymore
-    #Have genie explain that she's just a needy little slut and that her lust isn't going to go away
-    #Luna extatic at the idea of being able to continuosly being able to fuck/suck genie
-    #Cries as she begs for Genie to dump his load in her
-    #ahegao face
-    #asks genie to come to her room to cuddle
+    $ lun_corruption = 7
+    $ days_to_luna = 4
+
+    call play_sound("knocking")
     m "Ready to learn a new technique?"
     call lun_main("Truly?! Oh, I've been waiting for this since you first mentioned it!","base","base","sad","mid")
     call lun_main("A way for both of us to get rid of our wrackspurts at once!","base","base","sad","mid")

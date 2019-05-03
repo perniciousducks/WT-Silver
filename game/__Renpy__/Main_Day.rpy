@@ -299,6 +299,21 @@ if luna_reverted and lun_corruption >= 0 and days_to_luna <= 0:
     elif luna_reverted and lun_corruption == 2:
         $ days_without_an_event = 0
         jump luna_reverted_event_3
+    elif luna_reverted and lun_corruption == 3:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_4
+    elif luna_reverted and lun_corruption == 4:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_5
+    elif luna_reverted and lun_corruption == 5:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_6
+    elif luna_reverted and lun_corruption == 6:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_7
+    elif luna_reverted and lun_corruption == 7:
+        $ days_without_an_event = 0
+        jump luna_reverted_event_8
     else:
         pass
 

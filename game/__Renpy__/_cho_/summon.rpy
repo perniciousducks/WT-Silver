@@ -142,13 +142,23 @@ label cho_favor_menu:
         $ renpy.jump(result)
 
 label update_cho_heart_color:
+
+    # Pre Hufflepuff
     if main_matches_won == 0:
         $ heart_color = "yellow"
+        $ cc_pf_talk_OBJ.max_level = 3
+
+    # Pre Slytherin
     elif main_matches_won == 1:
         $ heart_color = "green"
+        $ cc_pf_talk_OBJ.max_level = 4
         $ cc_pf_strip_OBJ.max_level = 4
+
+    # Pre Gryffindor
     elif main_matches_won == 2:
         $ heart_color = "red"
+
+    # After winning the cup.
     else:
         $ heart_color = "blue"
 

@@ -126,7 +126,7 @@ label hufflepuff_match:
     ">Amazed... by the sight, Snape then leads you up one of the towers, narrowly dodging one of the teachers greeting you."
     if _preferences.volumes['music'] < 0.1 or _preferences.volumes['sfx'] < 0.1:
         sil "This section of the game is best play with audio/music unmuted."
-        
+
 
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
 
@@ -224,10 +224,10 @@ label hufflepuff_match:
             $ qp_mob_reaction[1] = None
             m "Screw it! This is our time..."
             $ qp_mob_reaction[0] = "sal"
-            mal "..." 
+            mal "..."
             $ renpy.sound.play("sounds/cough_male.mp3")
             $ qp_mob_reaction[1] = "sal"
-            mal2 "..."            
+            mal2 "..."
             $ qp_mob_reaction[0] = None
             $ qp_mob_reaction[1] = None
             $ qp_spotlight = False
@@ -256,16 +256,16 @@ label hufflepuff_match:
             call sna_main("I think it's time for you to step down from the...","snape_01")
             g4 "No, I'm just about to get to the best part!"
             $ renpy.sound.play("sounds/cloth_sound.mp3")
-            stop bg_sounds fadeout 2.0 
+            stop bg_sounds fadeout 2.0
             call sna_chibi("stand","280","80", flip=True)
-            call gen_chibi("stand", "340", "45") 
+            call gen_chibi("stand", "340", "45")
             with d3
             ">Snape then begins to drag you away from the podium."
             play bg_sounds "sounds/wind_long_loop.mp3"
             g4 "This is our chance... they may take away our microphones... {w=1.0}But they...{nw}{w=0.3}But they...{nw}"
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
             call sna_chibi("stand","300","80", flip=True)
-            call gen_chibi("stand", "360", "45") 
+            call gen_chibi("stand", "360", "45")
             with d3
             g4 "This is our chance... they may take away our microphones... {w=0.3}But they...{nw}{fast}{w=1.0}But they...{w=0.5}{nw}"
             call sna_chibi("stand","260","80", flip=True)
@@ -300,10 +300,10 @@ label hufflepuff_match:
             mal "What's he on about? Is the fire lit but the cauldron empty?"
             mal2 "Looks like it..."
             stop bg_sounds fadeout 2.0
-            m "Tough crowd... Anyway, let the games begin!"            
-    $ renpy.sound.play("sounds/crowd_cheer.mp3")   
+            m "Tough crowd... Anyway, let the games begin!"
+    $ renpy.sound.play("sounds/crowd_cheer.mp3")
     $ renpy.music.play("sounds/crowd_low.mp3", fadein=3)
-    play bg_sounds "music/11 The Quidditch Match_original.mp3"  
+    play bg_sounds "music/11 The Quidditch Match_original.mp3"
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"
     $ qp_mob_reaction[2] = "emo8"
@@ -536,7 +536,7 @@ label hufflepuff_match:
     call sna_main("Eyes forward... girl.","snape_13",ypos="head")
     hide screen hermione_main
     her "*Grrrrr*"
-    call her_chibi("stand","375","105", flip=True)   
+    call her_chibi("stand","375","105", flip=True)
     ">Hermione’s eyes briefly meets with yours as if she can’t believe you’re letting Snape talk to her that way."
     call sna_main("{size=-4}As I was saying... They’re the only reason I watch the bloody thing. Now, mind if I top that one off for you?{/size}","snape_20",ypos="head")
 
@@ -692,7 +692,7 @@ label hufflepuff_match_return:
     $ hermione_busy = True
     $ snape_busy    = True
 
-    $ cc_pf_talk_OBJ.level = 0
+    $ cc_pf_talk_OBJ.level  = 0
     $ cc_pf_strip_OBJ.level = 0
 
     $ cho_content_complete = True # Temporary to hide the Practice Match option in the menu.

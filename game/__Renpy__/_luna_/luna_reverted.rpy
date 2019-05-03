@@ -2155,49 +2155,50 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
 
     call play_sound("knocking")
     m "Ready to learn a new technique?"
-    call lun_main("Truly?! Oh, I've been waiting for this since you first mentioned it!","base","base","sad","mid")
-    call lun_main("A way for both of us to get rid of our wrackspurts at once!","base","base","sad","mid")
-    call lun_main("When do you think you'll approach the rest of the wizarding world with this knowledge?","base","base","sad","mid")
-    call lun_main("Everyone deserves to hear about it, we can finally get rid of this scourge once and for all!","base","base","sad","mid")
+    call lun_main("Truly?! Oh, I've been waiting for this since you first mentioned it!","base","happyCl","base","mid")
+    call lun_main("A way for both of us to get rid of our wrackspurts at once!","base","wide","base","mid")
+    call lun_main("When do you think you'll approach the rest of the wizarding world with this knowledge?","open","wide","base","mid")
+    call lun_main("Everyone deserves to hear about it, we can finally get rid of this scourge once and for all!","base","happyCl","base","mid")
     m "It's not quite ready for the masses just yet..."
     m "I was hoping you'd be able to help me iron out a few kinks to perfect it..."
-    call lun_main("Kinks? What sort of kinks?","base","base","sad","mid")
+    call lun_main("Kinks? What sort of kinks?","base","wink","sad","mid")
     m "Well, doing it in public has always done it for me... why don't we go for a walk?"
-    call lun_main("Okay! Want me to give you a tour of the school while we're at it, [lun_genie_name]?","base","base","sad","mid")
+    call lun_main("Okay! Want me to give you a tour of the school while we're at it, [lun_genie_name]?","base","wink","base","mid")
     m "Why not..."
     show screen blkfade
     with d3
     ">Together you and Luna gently meander around the grounds, all the while Luna happily explains the history of it all..."
-    call lun_main("And this is the school library...","base","base","sad","mid")
+    call lun_main("And this is the school library...","open","closed","base","mid")
     m "This place is huge! We could definitely find somewhere to do it in here!"
-    call lun_main("I wouldn't recommend it... If we accidentally get cum on any of the books they'll probably attack us...","base","base","sad","mid")
+    call lun_main("I wouldn't recommend it... If we accidentally get cum on any of the books they'll probably attack us...","open","angry","sad","downL")
     m "(Is she being serious?)"
     m "Well, where do you suggest?"
-    call lun_main("hmmm, we need somewhere we don't have to worry about being found...","base","base","sad","mid")
-    call lun_main("And also somewhere the wrackspurts we expel won't bother anyone...","base","base","sad","mid")
-    call lun_main("...","base","base","sad","mid")
-    call lun_main("I know, let's go to the lake! Wrackspurts hate cold water!","base","base","sad","mid")
+    call lun_main("hmmm, we need somewhere we don't have to worry about being found...","pout","seductive","sad","down")
+    call lun_main("And also somewhere the wrackspurts we expel won't bother anyone...","pout","angry","sad","downL")
+    call lun_main("...","pout","closed","sad","mid")
+    call lun_main("I know, let's go to the lake! Wrackspurts hate cold water!","open","wide","base","mid")
     m "They do?"
-    call lun_main("Of course! Just think about how much a cold shower gets rid of them.","base","base","sad","mid")
+    call lun_main("Of course! Just think about how much a cold shower gets rid of them.","base","happyCl","mad","mid")
     m "You're a clever one."
-    call lun_main("Thank you, [lun_genie_name]!","base","base","sad","mid")
+    call lun_main("Thank you, [lun_genie_name]!","base","happyCl","base","mid")
     ">With that, Luna grabs your hand and leads you down to the lakeside, out into the open moonlight."
     $ ccg_folder = "luna_fucking"
     $ ccg("lake_1","blank","blank")
     hide screen blkfade
     with d3
-    call lun_main("Is this alright, [lun_genie_name]?","base","base","sad","mid")
+    call lun_main("Is this alright, [lun_genie_name]?","open","wink","sad","mid")
     m "This seems as good a place as any."
-    call lun_main("So can you finally teach me?","base","base","sad","mid")
+    call lun_main("So can you finally teach me?","open","wide","base","mid")
     m "Oh, alright then... Seeing as how you asked so nicely..."
-    call lun_main("Oh thank you, thank you, thank you!","base","base","sad","mid")
-    call lun_main("So how does it work?","base","base","sad","mid")
+    call lun_main("Oh thank you, thank you, thank you!","open","happyCl","base","mid")
+    call lun_main("So how does it work?","open","wink","sad","mid")
     m "You'll need to take your top off."
-    call lun_main("Okay!","base","base","sad","mid")
+    call lun_main("Okay!","base","happyCl","base","mid")
+    $ luna_wear_top = False
     ">Without even the slightest bit of hesitation, Luna rips off her top and throws it to the ground."
-    call lun_main("What's next?","base","base","sad","mid")
+    call lun_main("What's next?","base","seductive","sad","mid")
     m "Bend over."
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","base","sad","mid")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","empty")
     show screen blkfade
     with d3
     hide screen luna_main
@@ -2321,7 +2322,8 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
             ">You softly pick the cum coated young girl up off the cold grass, cradling her in your arms as you take her to her dorm."
             pass
     ">You return to your office."
-
+    hide screen blkfade 
+    with d3
     jump main_room  
 
 label luna_reverted_event_8: #Luna sex repeatable (in the office)#NEEDS POSING

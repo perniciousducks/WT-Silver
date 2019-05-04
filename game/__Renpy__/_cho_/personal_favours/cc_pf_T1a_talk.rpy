@@ -25,14 +25,17 @@ label cc_pf_talk:
     elif main_matches_won == 1:
 
         if cc_pf_talk_OBJ.level == 0:    # 0 Hearts.
-            # Talk about Malfoy.
+            # Talk about Malfoy and his team.
             call cc_pf_talk_T2_E1
         elif cc_pf_talk_OBJ.level == 1:  # 1 Heart.
-            # Talk about Hermione.
+            # Talk about getting bullied by Slytherin.
             call cc_pf_talk_T2_E2
-        else:                            # 2+ Hearts.
-            # Cho gets bullied by the Slytherin Quidditch team.
+        elif cc_pf_talk_OBJ.level == 3:  # 2 Heart.
+            # Talk about becoming more popular.
             call cc_pf_talk_T2_E3
+        else:                            # 3+ Hearts.
+            #
+            call cc_pf_talk_T2_E4
 
     # End event jump
     # (only used when the event isn't called.)
@@ -46,7 +49,7 @@ label cc_pf_talk:
             if cho_whoring < 8: # Points til 8
                 $ cho_whoring += 1
 
-        if cc_pf_talk_OBJ.level < 3:
+        if cc_pf_talk_OBJ.level < 4:
             $ cc_pf_talk_OBJ.level += 1
 
     # Stats
@@ -520,6 +523,11 @@ label cc_pf_talk_T1_E3: # Incomplete. Not posed.
 
 label cc_pf_talk_T2_E1: # Incomplete. Not posed.
 
+    # Talk about Draco.
+    # Mention their faster brooms.
+    # Talk about Crabbe & Goyle.
+    # They are week playing during the rain.
+
     m "Could you tell me anything about who we are up against next?"
     cho "Our next game is against the Slytherin team."
     g9 "(Sweet! I will win Snape's bet sooner than I thought!)"
@@ -531,19 +539,56 @@ label cc_pf_talk_T2_E1: # Incomplete. Not posed.
     cho "Because of their seeker, he's...{w} so,{w} so bad!"
     m "Who is?"
     cho "Draco Malfoy, Sir."
+    m "(The cocky fella! Snape mentioned him before...)"
     m "Any chance you fooled around with him too?"
     cho "*Tzzzz* I'd never surround myself with Slytherin scum."
     m "I guess you and Granger have at least some things in common..."
     cho "His daddy bought their whole team new brooms, which is the only reason they've let him in."
-    m "His daddy?"
+    m "His \"daddy\"?"
     cho "His father, Sir."
     m "Oh. I thought you might be talking about a different \"daddy\"."
     cho "Very funny, [cho_genie_name]..."
     cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried about..."
     cho "You don't just win by catching the snitch first. You also have to be leading in points!"
+    m "(Counting Cards in \"Black Jack\" is easier than counting the score of this game...)"
     cho "If you catch the snitch too early, the game will be over."
     cho "That's how Slytherin won most of their games in the past. They win by letting the other seeker catch the Snitch..."
-    m "Those rules are so idiotic..."
+    m "(Those rules are so idiotic...)"
+    cho "We can't just narrow down our focus on their seeker this time!"
+    cho "For this one, we have to dismantle the other weak points in their team..."
+    m "Who would be?"
+    cho "Their beaters!"
+    cho "I'm talking about Crabbe and Goyle, of course..."
+    m "Of course..."
+    m "(I have no idea who you are talking about, girl...)"
+    m "And do you think can accomplish that?"
+    cho "*Tzzz!* There would nothing be easier!"
+    m "Yes?"
+    cho "They're Slytherin's two brainless thugs!"
+    cho "They aren't in the slightest bit devoted to their house!"
+    cho "They don't play Quidditch to win the cup... They play to beat people up and get away with it..."
+    cho "All I have to do is get them to play poorly..."
+    m "And how will you manage that?"
+    cho "Just leave that to me, Sir."
+    cho "They would happily throw the towel with the right kind of... motivation."
+    m "You've become quite the strategist, aren't you?"
+    cho "You could say that, Sir..."
+    g9 "How are you going to motivate them exactly?"
+
+    menu:
+        "-Jerk off while she's talking-":
+            $ cho_jerk_off_counter += 1
+            $ masturbating = True
+
+            hide screen cho_chang
+            call nar(">You reach under the desk and grab your cock...")
+
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+        "-Participate in the conversation-":
+            $ masturbating = False
 
     # Plan how to deal with Slytherin's team.
 
@@ -552,44 +597,185 @@ label cc_pf_talk_T2_E1: # Incomplete. Not posed.
     return
 
 
-label cc_pf_T2_talking_2: # Incomplete. Not posed.
+label cc_pf_talk_T2_E2: # Complete. Not posed.
 
-    # Cho is angry about Hermione.
-    # Talks about all the things she'd do to her.
-    # You get the option to jerk off.
-    # Cho really gets into it.
+    m "Miss Chang, with our Quidditch talk out of the way, I thought maybe you wanted to talk to me about your regular school life some more."
+    cho "Well, my school life has been rather boring and uneventful lately."
+    cho "That is, if constantly getting bullied is the new norm at this school..."
+
+    menu:
+        "-Jerk off while she's talking-":
+            $ cho_jerk_off_counter += 1
+            $ masturbating = True
+
+            hide screen cho_chang
+            call nar(">You reach under the desk and grab your cock...")
+
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+            call bld
+            m "(Just to be clear, I'm only doing this because I'm already horny.{w} Not because it turnes me on that she's getting bullied...)"
+            call nar("Right...")
+            g4 "Who's bullying you? I hope you fought back?"
+            cho "Of course, [cho_genie_name]!"
+
+        "-Participate in the conversation-":
+            $ masturbating = False
+            m "(No, I need to focus!)"
+            m "You are getting bullied? By whom?"
+
+    cho "The Slytherin Quidditch team. They've been total dicks lately..."
+    m "You don't say.{w} What did they do?"
+    cho "They've been harassing my team..."
+    cho "Well mostly me, actually." # Embarrassed
+    if not masturbating:
+        m "So,... would you like to report them?"
+        cho "No, Sir."
+        m "No?"
+    cho "I do not endorse their behaviour, Sir. And I hope no other student has to share the same harassment that I receive."
+    cho "Unless maybe Granger..." # Small text.
+    cho "But{w}, watching them succumb to me has been rather fun..."
+    m "Succumb to you?"
+    cho "Yes. They're so desperately trying to embarrass me. To make me doubt myself before the big game..."
+    if masturbating:
+        g4 "Those asshole bullies... Show them who's boss!"
+    else:
+        g9 "And a strong, independent woman like yourself would never be intimidated by puny Slytherins!"
+        cho "Of course not, Sir."
+        g4 "I'm so proud!"
+    cho "After all I'm only a small girl, and they are a group of ugly, brainless brutes!"
+    cho "Their attempts are pathetic!"
+    cho "Trying to lift my skirt with first-year spells..."
+    cho "Stealing my underwear while I take a shower after practice..."
+    cho "Writing the words \"Cho is a slut\" on the blackboard in our transfiguration classroom..."
+
+    cho "They think they can intimidate me. But that's where they are mistaken!{w} They should be scared of me, [cho_genie_name]!"
+    if masturbating:
+        g4 "Yes! Show them what a slut you are!"
+    cho "Of what \"I'm\" capable off!"
+    if masturbating:
+        g4 "*Argh!* I'm getting close!"
+    cho  "Scared of what's about to come!"
+
+    # Genie cums.
+    if masturbating:
+        g4 "Yes! Yes! It's coming!"
+
+        call cum_block
+        call gen_chibi("cumming_behind_desk")
+        with d3
+        pause.8
+
+        call bld
+        g4 "*Argh!* {size=-4}Take it!{/size}"
+
+        call cum_block
+        call cho_main("","base","narrow","raised","mid")
+
+        call gen_chibi("came_on_desk")
+        with d3
+        pause.8
+
+        m "(*Phewwww...)"
+        m "(That was nice.)"
+        call cho_main("Are you feeling well, Sir?","open","narrow","base","mid")
+        g9 "Never felt better!"
+        cho "That's good to hear."
+
+    else:
+        g4 "I am scared already!"
+
+    m "I'm glad you aren't letting yourself get repressed by those bullies."
+    cho "Not in a million years!"
+    m "Admirable."
+
+    if daytime:
+        cho "I have to leave for classes now, though."
+        cho "I hope you don't mind, Sir."
+    else:
+        cho "I have to head back to our dorms now, though. To get some sleep."
+        cho "I hope you don't mind, Sir."
+
+    m "Not at all. You may leave."
+    cho "Thank you, Sir."
+    cho "Until next time..."
+
+    return
+
+
+label cc_pf_talk_T2_E3: # Complete. Not posed.
+
+    # Cho is getting popular thanks to her Quidditch efforts.
+    # Hufflepuff hates Hermione for causing them to lose.
+    # Cho wants to "thank" Hermione for helping them win by doing something naughty or uncomfortable with her.
     # If you are not masturbating, Genie says "fuck it" and starts jerking off regardless.
     # Cho notices you jerking off.
     # She finds it repulsive and disgusting.
-    # She insults you which gets you off.
-    # She angrily leaves...
+    # She insults you and then angrily leaves...
 
-    m "Miss Chang, with our Quidditch talk out of the way, I thought you maybe wanted to talk about your regular school life with me."
-    cho "Very well, Sir. Anything in particular you'd like to hear about?"
-    m "Not necessarily. Why don't you surprise me? Has anything interesting happened to you lately?"
+    m "How's school? Have much to tell me?"
+    cho "Quite a bit, Sir!"
     cho "I feel like people have shown me more affection even since our game against Hufflepuff."
     m "You don't say..."
-    m "Do you have any idea why that might be?"
-    cho "Because of our win, of course!"
-    m "And it had nothing to do with the fact that half the school got to see your panties?"
-    cho "No! Of course not!"
-    cho "Please don't try to diminish my achievement, Sir!"
-    cho "It's like I'm a celebrity now! I'm getting so much attention!"
-    cho "It never happened that Ravenclaw won a game. And I made that possible!"
-    m "Hey don't you forget about me."
-    m "Where would you be without the great Dooblydore..."
-    cho "Of course, Sir! Sorry, Sir!"
 
     menu:
-        "Jerk off":
+        "-Jerk off while she's talking-":
+            $ cho_jerk_off_counter += 1
             $ masturbating = True
-            m "Please, don't let me interrupt your thought..."
-            g9 "I'd like to hear more!"
-        "Don't":
+
+            hide screen cho_chang
+            call nar(">You reach under the desk and grab your cock...")
+
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+            call bld
+            g4 "*Agh!* Go on!"
+            cho "What?{w} Oh, of course, [cho_genie_name]!"
+            cho "I'm sorry. I had my head in the clouds there for a second, Sir."
+
+        "-Participate in the conversation-":
             $ masturbating = False
-            m "(No, I need to focus!)"
-            m "Please, don't let me interrupt your thought..."
-            m "Continue..."
+            m "Do you have any idea why that might be?"
+            cho "Because of our win, of course!"
+            m "And it had nothing to do with the fact that half the school got to see your panties?"
+            cho "No! Of course not!"
+            cho "Please don't try to diminish my achievement, Sir!"
+
+    cho "It's like I'm a celebrity now! I'm getting so much attention!"
+    cho "It never happened that Ravenclaw won a game. And I made that possible!"
+    if masturbating:
+        g4 "And soon you'll be on your knees thanking me for it!"
+    else:
+        m "Hey don't you forget about me."
+        m "Where would you be without the great Dooblydore..."
+        cho "Of course, Sir! Sorry, Sir!"
+
+        menu:
+            m "Maybe it wouldn't be such a bad idea to..."
+            "-Jerk off while she's talking-":
+                $ cho_jerk_off_counter += 1
+                $ masturbating = True
+
+                hide screen cho_chang
+                call nar(">You reach under the desk and grab your cock...")
+
+                call gen_chibi("jerking_behind_desk")
+                with d3
+                pause.8
+
+                call bld
+                m "Please, don't let me interrupt your thought..."
+                g9 "I'd like to hear more!"
+
+            "-Participate in the conversation-":
+                $ masturbating = False
+                m "(No, I need to focus!)"
+                m "Please, don't let me interrupt your thought..."
+                m "Continue..."
 
     cho "Of course, Sir."
     cho "It's fun getting all of the boys attention! And seeing how jealous it makes all of the girls!"
@@ -603,7 +789,7 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     cho "Which resulted in Hufflepuff playing far more defensively, when they should have been aggressive!"
     if masturbating:
         g4 "Oh you are one of those girls! I like going aggressive!"
-    cho "I caught the Snitch at just the right time! If Hufflepuff had gone to far in the lead, we would have lost!"
+    cho "I caught the Snitch at just the right time! If Hufflepuff had gone too far in the lead, we would have lost!"
     cho "I really need to thank Granger the next time I see her. I owe her a great deal..."
     if masturbating:
         g4 "I'd love to watch you thank her!"
@@ -617,6 +803,8 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     g4 "*Argh!*"
     cho "Give her a proper kiss on the lips, perhaps?"
     cho "I bet a prude like her would be \"so\" shocked by that! I might even be her first!"
+
+    # Forced to jerk off.
     if masturbating:
         g4 "Yes! You fucking sluts!"
     else:
@@ -633,90 +821,103 @@ label cc_pf_T2_talking_2: # Incomplete. Not posed.
     cho "She's making my blood boil! That know it all, pretentious little bitch!"
     cho "Excuse my language, Sir."
 
-    g4 "Yes, yes! How nasty!"
+    # Add section here
 
+    # Genie cums.
+    g4 "Yes, yes! You nasty slut!"
 
-    call cho_main("I know exactly what you are doing!","angry","closed","angry","mid")
-    call cho_main("Stop!","open","closed","angry","mid",trans="hpunch")
-    call cho_main("Touching!","scream","angry","angry","mid",trans="hpunch")
-    call cho_main("Yourself!!!","angry","angry","angry","mid",trans="hpunch")
-    g4 "Jeeze..., no need to scream like that..."
+    call cum_block
+    call gen_chibi("cumming_behind_desk")
+    with d3
+    pause.8
+
+    call bld
+    g4 "*Argh!* {size=-4}Take it!{/size}"
+
+    call cum_block
+    call cho_main("Sir?!","base","narrow","raised","mid")
+
+    cho "Sir?!" # Scream
+    cho "What the bloody hell are you doing?"
+    g4 "(Oh no! I'm busted!)"
+
+    # Genie stops.
     hide screen bld1
     with d3
     pause.2
-    call gen_chibi("sit_behind_desk")
+
+    call gen_chibi("came_on_desk")
     pause.8
-    call bld
-    m "I will stop...{w} scratching...{w} my leg..."
+
+    g4 "Nothing, I was just-"
+    cho "Don't tell me you were..."
+    g4 "I was merely scratching my leg!"
+    call cho_main("I know exactly what were doing!","angry","closed","angry","mid")
+    cho "You were touching yourself!" # Scream
+    g4 "Not so loud! People might hear you!"
+    m "I don't know if those are proper castle walls, or just set-dressing..."
+    cho "Why would you think I care?!"
+    cho "You were wanking off!"
+    m "No I wasn't..."
+    cho "In front of your own student!"
+    m "(...)"
+    cho "You were wanking off!!!"
+    g4 "You've said that before!"
+    m "Stop making a big deal out of it, would you?"
+    cho "So you admit that you did it!"
+    m "Fine... Who even cares at this point..."
+    cho "That's so disgusting!"
+    m "You're making an even bigger fuzz about it than Hermione..."
+    cho "Well good for her!"
+    cho "Maybe you should call her to clean up your mess!"
+    cho "With her stupid red lips! I bet she'd love that!!!"
+    cho "I'm leaving."
+    cho "Have a nice day, [cho_genie_name]!"
+
+    # Cho leaves.
+    call cho_walk(action="leave", speed=1.6)
+
+    $ cho_mood += 9
 
     return
 
 
-label cc_pf_T2_talking_3: # Incomplete. Not posed.
+label cc_pf_talk_T2_E4: # Incomplete. Not posed.
+
+    g9 "[cho_name], how is my favourite Quidditch player doing today?"
+    cho "Me?"
+    m "No.{w} The bird..."
+    g4 "Yes, you!"
+    m "Has anything interesting happened?"
+    m "I need to stay \"on top\" of all the latest \"hot goss\"..."
+    cho "Sir, I don't tend to pay attention to that sort of stuff."
+    m "You must have at least heard something raunchy here at the school lately."
+    cho "*Uhm*...{w} well..."
 
     menu:
-        "Jerk off":
+        "-Jerk off while she's talking-":
+            $ cho_jerk_off_counter += 1
             $ masturbating = True
-        "Don't":
+
+            hide screen cho_chang
+            call nar(">You reach under the desk and grab your cock...")
+
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+            call bld
+            m "You don't mind if I..."
+            cho "Mind what?!"
+            cho "Oh..."
+            m "I have urges, girl."
+            cho "If you can't help yourself, Sir. I don't really care..."
+            g9 "Great!"
+            m "Please, don't let me interrupt your thought..."
+            g9 "I'd like to hear more!"
+
+        "-Participate in the conversation-":
             $ masturbating = False
-
-    if masturbating:
-        m "You don't mind if I..."
-        cho "Mind doing what?!"
-        cho "Oh..."
-        m "I have urges, girl."
-        cho "If you can't help yourself, Sir. I don't really care..."
-        g9 "Great!"
-        cho "I have more important matters on my mind."
-        m "Like what?"
-    else:
-        m "How's school? Anything to report?"
-        cho "Rather boring, and uneventful as always, Sir."
-        cho "That is, if constantly getting bullied is the new norm at this school..."
-        m "You are getting bullied? By whom?"
-
-    cho "The Slytherin Quidditch team. They've been total dicks lately..."
-    m "You don't say.{w} What did they do?"
-    cho "They've been harassing my team..."
-    cho "Well mostly me, actually." # Embarrassed
-    m "So,... would you like to report them?"
-    cho "No, Sir."
-    m "No?"
-    cho "I do not endorse their behaviour, Sir. And I hope no other student has to share the same harassment that I receive."
-    cho "Unless maybe Granger..." # Small text.
-    cho "But{w}, watching them succumb to me has been rather fun..."
-    m "Succumb to you?"
-    cho "Yes. They're so desperately trying to embarrass me. To make me doubt myself before the big game..."
-    if masturbating:
-        g4 "Those asshole bullies... Show them who's boss!"
-    else:
-        g9 "And a strong, independent woman like yourself would never be intimidated by puny Slytherins!"
-        cho "Of course not, Sir."
-        g4 "I'm so proud!"
-    cho "They think they can intimidate me. After all I'm only a small girl, and they are a group of ugly, brainless brutes!"
-
-    # Add section here.
-    # Cho describes what they have been doing to her.
-
-    cho "But that's where they are mistaken!{w} They should be scared of me, [cho_genie_name]!"
-    if masturbating:
-        g4 "Yes! Show them what a slut you are!"
-    cho "Of what I'm capable off!"
-    if masturbating:
-        g4 "*Argh!* I'm getting close!"
-    cho  "Scared of what's about to come!"
-
-    # Genie cums.
-    if masturbating:
-        g4 "Yes! Yes! It's coming!"
-        call cum_block
-        g4 "*Argh!* Take it!"
-
-    else:
-        g4 "I am scared already!"
-
-
-
 
     return
 

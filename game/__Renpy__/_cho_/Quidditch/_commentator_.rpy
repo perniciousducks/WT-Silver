@@ -47,7 +47,7 @@ label quidditch_commentator_event_1:
     m "Why don't we just ask her first?"
     call cho_main("Absolutely not! I won't talk to that Gryffindor skunk ever again!","scream","closed","angry","mid")
     call cho_main("Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?","annoyed","narrow","angry","mid")
-    m "Alright, any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
+    m "Alright, are there any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
     call cho_main("...","pout","base","base","down")
     m "Well?"
     call cho_main("Well, most of them would be on one of the Quidditch teams...","soft","base","raised","R")

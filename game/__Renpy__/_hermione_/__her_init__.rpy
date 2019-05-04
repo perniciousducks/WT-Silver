@@ -466,10 +466,11 @@ label her_progress_init:
         $ forest_BJ_progress = 1
 
         #Flags
-        $ hermione_busy = False
-        $ hermione_unlocked = False
-        $ hermione_favors = False
-        $ hermione_tutoring = False
+        $ hermione_busy           = False
+        $ hermione_unlocked       = False
+        $ hermione_favors         = False
+        $ hermione_tutoring       = False
+        $ her_panties_soaked      = False
 
         $ hermione_desperate_done = False
         $ hermione_favors_convinced = 0
@@ -501,7 +502,7 @@ label her_progress_init:
         $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
 
         #Public Shaming Flags
-        $ hg_SoakedPantiesFlag = False
+        $ her_panties_soaked = False
         $ current_job = 0
         $ transparent_quest = False
 

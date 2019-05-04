@@ -38,9 +38,8 @@ label susan_init:
         #Chibi
         $ sus_chibi_xpos          = 500
         $ sus_chibi_ypos          = 250
-        $ sus_chibi_xpos_name     = "base" #Memory of chibi position.
-        $ sus_chibi_ypos_name     = "base" #Memory of chibi position.
         $ sus_chibi_flip          = 1
+        $ sus_speed               = 2.0
         $ sus_chibi_zorder        = 3
 
         $ susan_chibi_stand         = "ch_sus blink"

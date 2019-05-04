@@ -2337,10 +2337,10 @@ label luna_reverted_event_8: #Luna sex repeatable (in the office)#NEEDS POSING
     #Option to choose who it is
     #Needs check on visiting character progression
     m "How are you feeling today, [luna_name]?"
-    call lun_main("Happier now that I'm in here!","base","base","sad","mid")
+    call lun_main("Happier now that I'm in here!","base","happyCl","base","mid")
     m "Fantastic... Now, would you be interested in expelling a few more wookspoons together?"
-    call lun_main("{b}Together{/b}? You mean...","base","base","sad","mid")
-    call lun_main("Oh, thank you, thank you, thank you, [lun_genie_name]!","base","base","sad","mid")
+    call lun_main("{b}Together{/b}? You mean...","base","seductive","sad","mid", cheeks="blush")
+    call lun_main("Oh, thank you, thank you, thank you, [lun_genie_name]!","base","happyCl","sad","mid", cheeks="blush")
     show screen blkfade
     with d3
     hide screen luna_main

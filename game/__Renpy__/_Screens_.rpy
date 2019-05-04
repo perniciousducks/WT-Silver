@@ -621,8 +621,10 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("blkfade")
         #renpy.with_statement(Dissolve(0.5))
 
-        lun_cg_hair = lun_cg_path+lun_hair_style+"_hair.png"
-        lun_cg_hairtop = lun_cg_path+lun_hair_style+"_hair_top.png"
+        lun_cg_body         = lun_cg_path+"luna_base.png"  
+        lun_cg_eyewhite     = lun_cg_path+"eye_white.png" 
+        lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
+        lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
 
         if cheeks is not None:
             lun_cg_cheeks = lun_cg_path+"c_"+str(cheeks)+".png"

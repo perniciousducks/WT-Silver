@@ -99,6 +99,9 @@ label __init_variables:
         $ reset_luna_content = False
         $ reset_cho_content = False
 
+    if not hasattr(renpy.store,'loopimage'):
+        $ loopimage = None
+
     #Rooms
     call room_objects_init
 

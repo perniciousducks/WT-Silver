@@ -36,9 +36,9 @@ label hg_wager_bj:
             m "I know, we should definitely do this again."
             if hg_pf_dance_OBJ.points >= 2: #If snape walked in during the dance favour.
                 call play_music("dark_fog")
-                call play_sound("door")
-                call sna_walk("door","mid",2)
-                call bld
+
+                call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+
                 call sna_main( "Hello Geni...", face="snape_09")
                 call sna_main( "What do we have here?!?", face="snape_20")
                 call her_main("{size=+5}Professor Snape?!{/size}", mouth="shock", eye="shocked", xpos="left",ypos="base")
@@ -76,7 +76,7 @@ label hg_wager_bj:
                 g4 "Can't a mythical creature feel up a schoolgirl in peace around here?"
                 call sna_main("Fine, I'll leave you to it, the less I have to see that girl the better...", face="snape_06")
 
-                call sna_walk("mid","leave",3)
+                call sna_walk(action="leave", speed=3)
 
             else : #If she hasn't stripped twice.
                 call her_main("No, it's bad enough doing this to gain house points, it's much worse to prevent losing them!", mouth="clench", eye="angryL")
@@ -129,12 +129,14 @@ label hg_wager_bj:
         call her_main("I'm glad you like it [genie_name].", mouth="open", eye="squint", cheeks="blush")
         call u_play_ani
         call her_main("*Gobble*, *Slurp*, *Gobble*", mouth="open_wide_tongue", eye="closed", cheeks="blush")
+
         call play_music("dark_fog")#Snape walks in
-        call play_sound("door")
-        call sna_walk("door","mid",2)
-        call bld
+
+        call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+
         call sna_main("", face="snape_01",xpos="base",ypos="base")
         call ctc
+
         with hpunch
         call sna_main("I want a rematch!", face="snape_07")
         call u_pause_ani
@@ -176,7 +178,9 @@ label hg_wager_bj:
                 call sna_main("I bet it was peeves again...", face="snape_16")
                 call sna_main("I’ll leave you to it then...", face="snape_03")
                 call her_main("...", mouth="full_cum", eye="down_raised", cheeks="blush")
-                call sna_walk("mid","door",3) #snape walks to the door, pauses on gulp sound
+
+                call sna_walk(xpos="door", ypos="base", speed=3) #snape walks to the door, pauses on gulp sound
+
                 $ renpy.play('sounds/gulp.mp3')
                 call her_main("{image=textheart}*Gulp* {image=textheart}", mouth="cum", eye="ahegao")
                 call sna_main("...", face="snape_07", flip=True)
@@ -205,7 +209,9 @@ label hg_wager_bj:
                     hide screen bld1
                     with d3
                     pause.2
-                    call sna_walk("mid","leave",3)
+
+                    call sna_walk(action="leave", speed=3)
+
                 else: #if hermione has stripped twice (so snape walked in on her)
                     call set_u_ani("desk_idle_ani")
                     call u_play_ani
@@ -241,7 +247,9 @@ label hg_wager_bj:
                     hide screen bld1
                     with d3
                     pause.2
-                    call sna_walk("mid","leave",3)
+
+                    call sna_walk(action="leave", speed=3)
+
                 pause.2
                 m "Well, that was something..."
                 $ uni_sperm = False
@@ -290,7 +298,9 @@ label hg_wager_bj:
                             hide screen bld1
                             with d3
                             pause.2
-                            call sna_walk("mid","leave",3)
+
+                            call sna_walk(action="leave", speed=3)
+
                             g4 "And not a moment to soon.... Take this you whore!"
                             call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
                             call u_play_ani
@@ -341,7 +351,9 @@ label hg_wager_bj:
                             hide screen bld1 #should go black
                             with d3
                             pause.2
-                            call sna_walk("mid","leave",3)
+
+                            call sna_walk(action="leave", speed=3)
+
                             m "You can come out now [hermione_name]..."
                             call u_pause_ani
                             call her_main("Thank you for your ghostly residue, [genie_name]", mouth="cum", eye="concerned")
@@ -409,7 +421,9 @@ label hg_wager_bj:
                                 call sna_main("...", face="snape_03")
                                 m "I don't know what that means..."
                                 call sna_main("I feel like understand you less and less by the day...", face="snape_01")
-                                call sna_walk("mid","leave",3)
+
+                                call sna_walk(action="leave", speed=3)
+
                                 call u_pause_ani
                                 call her_main("So, no rematch then?","crooked_smile","glance")
                                 g9 "As I said, at least not for another 30 minutes..."
@@ -439,7 +453,9 @@ label hg_wager_bj:
                                         m "Something like that..."
                                         m "Just take the wine and leave..."
                                         m "I need to reflect on my previous life decisions."
-                                        call sna_walk("mid","leave",3)
+
+                                        call sna_walk(action="leave", speed=3)
+
                                         m "Get out of there... life decisions."
                                         call u_pause_ani
                                         call her_main("Happy?","normal","happyCl", cheeks="blush")
@@ -456,7 +472,9 @@ label hg_wager_bj:
                                             call sna_main("Fine, but next time I'm playing you for one of those bottles...", face="snape_03")
                                         else:
                                             call sna_main("Fine...", face="snape_03")
-                                        call sna_walk("mid","leave",3)
+
+                                        call sna_walk(action="leave", speed=3)
+
                                         call u_pause_ani
                                         call her_main("Happy?","normal","happyCl", cheeks="blush")
                                         g4 "What are you talking about? How could I be happy in a moment like this..."
@@ -508,7 +526,9 @@ label hg_wager_bj:
                                 m "No you..."
                                 call sna_main("That's fair...", face="snape_03")
                                 call sna_main("I'll take my leave in that case...", face="snape_01")
-                                call sna_walk("mid","leave",3)
+
+                                call sna_walk(action="leave", speed=3)
+
                                 call u_pause_ani
                                 call her_main("Did you just call me a...{nw}")
                                 m "Snape..."
@@ -553,7 +573,9 @@ label hg_wager_bj:
                     hide screen bld1
                     with d3
                     pause.2
-                    call sna_walk("mid","leave",3)
+
+                    call sna_walk(action="leave", speed=3)
+
                     m "..."
                     g4 "...Why did you stop?"
                     call her_main("What?", mouth="annoyed", eye="annoyed")

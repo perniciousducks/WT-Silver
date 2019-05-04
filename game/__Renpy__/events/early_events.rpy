@@ -67,10 +67,9 @@ label event_00:
     hide screen thought
     with d3
 
-    call sna_walk("door","mid",4)
+    call sna_walk(xpos="mid", ypos="base", speed=4)
     pause.2
 
-    show screen bld1
     call sna_main("","snape_01",xpos="base",ypos="base")
     call ctc
 
@@ -159,13 +158,9 @@ label event_00:
 
     stop music fadeout 1.0
 
-    hide screen snape_main
-    with d3
-    hide screen bld1
+    call sna_walk(action="leave", speed=3)
 
-    call sna_walk("mid","leave",3)
     call bld
-
     m "Hm..."
     m "So that tall, broody dude mistook me for someone else...?"
     m "Which means I must be shrouded in a concealment spell..."
@@ -185,11 +180,10 @@ label event_00:
 #Sanpe talks to genie about hermione, snape becomes suspicious
 label event_03:
     call play_music("dark_fog")
-    call play_sound("door")
 
-    call sna_walk("door","mid",2)
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+
     call bld
-
     m "{size=-3}(That broody guy again...){/size}"
     call sna_main("","snape_01",xpos="base",ypos="base")
     who2 "Albus!"
@@ -249,12 +243,7 @@ label event_03:
     call sna_main("","snape_24")
     who2 "Good night, Albus."
 
-
-    hide screen snape_main
-    hide screen bld1
-    with d3
-
-    call sna_walk("mid","door",3)
+    call sna_walk(xpos="door", ypos="base", speed=3)
     pause.2
 
     who2 "................."
@@ -291,10 +280,8 @@ label event_04:
 #Snape comes in, has a talk with Genie, then the duel starts.
 label event_05:
     call play_music("dark_fog")
-    call play_sound("door")
 
-    call sna_walk("door","mid",2)
-    call bld
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call sna_main("","snape_01",xpos="base",ypos="base")
     call ctc
@@ -389,10 +376,8 @@ label event_05:
 
     call sna_main("","snape_06")
     who2 "Well, good night, Albus."
-    hide screen snape_main
-    hide screen bld1
 
-    call sna_walk("mid","door",3)
+    call sna_walk(xpos="door", ypos="base", speed=3)
     pause.2
 
     stop music fadeout 1.0
@@ -691,34 +676,19 @@ label event_06:
 #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
 label event_07:
     call play_music("dark_fog")
-    call play_sound("door")
 
-    call sna_walk("door","mid",2)
-    call bld
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call sna_main("","snape_01",xpos="base",ypos="base")
-    show screen ctc
-    with d3
 
     sna "..................."
-    hide screen snape_main
-    with d3
     m "Good evening..."
-    show screen snape_main
-    with d3
     sna "Is the spell still in effect?"
-    hide screen snape_main
-    with d3
     m "Yes. very much so."
-    show screen snape_main
-    with d3
-
     sna "I see..."
     sna "Last night I gave our little.... conundrum some thought."
     sna "And I think I came up with a solution..."
     m "Really? Great! I'm listening."
-    hide screen snape_main
-    with d3
 
     call sna_main("Let's just roll with it...","snape_29")
     m "Excuse me?"
@@ -800,12 +770,7 @@ label event_07:
     call sna_main("Good night... genie.","snape_24")
     m "Yes. Good night, Severus."
 
-    hide screen snape_main
-    hide screen ctc
-    hide screen bld1
-    with d3
-
-    call sna_walk("mid","door",3)
+    call sna_walk(xpos="door", ypos="base", speed=3)
     pause.2
 
     call sna_head(".................","snape_06",xpos="base",ypos="base")

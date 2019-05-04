@@ -3273,7 +3273,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         call sna_chibi("stand","door","base")
         pause.8
 
-        call sna_walk("door","mid",2)
+        call sna_walk(xpos="mid", ypos="base", speed=2)
         pause.8
 
         call bld

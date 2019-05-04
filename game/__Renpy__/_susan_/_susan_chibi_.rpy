@@ -2,35 +2,30 @@
 
 ### SUSAN CHIBI ###
 
-label sus_chibi(action = "", xpos=susan_chibi_xpos, ypos=susan_chibi_ypos, flip=False):
+label sus_chibi(action = "", xpos=sus_chibi_xpos, ypos=sus_chibi_ypos, flip=False):
     hide screen susan_stand
 
-    if xpos != susan_chibi_xpos:
+    if xpos != sus_chibi_xpos:
         if xpos == "mid":
-            $ susan_chibi_xpos_name = "mid"
-            $ susan_chibi_xpos = 560
+            $ sus_chibi_xpos = 560
         elif xpos in ["wardrobe","center","base","default"]: #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
-            $ susan_chibi_xpos_name = "mid"
-            $ susan_chibi_xpos = 530
+            $ sus_chibi_xpos = 530
         elif xpos == "desk":
-            $ susan_chibi_xpos_name = "desk"
-            $ susan_chibi_xpos = 440
+            $ sus_chibi_xpos = 440
         elif xpos == "on_desk":
-            $ susan_chibi_xpos_name = "desk"
-            $ susan_chibi_xpos = 350
+            $ sus_chibi_xpos = 350
         elif xpos == "door":
-            $ susan_chibi_xpos_name = "door"
-            $ susan_chibi_xpos = 750
+            $ sus_chibi_xpos = 750
         else:
-            $ susan_chibi_xpos = int(xpos)
+            $ sus_chibi_xpos = int(xpos)
 
-    if ypos != susan_chibi_ypos:
-        if ypos == "base" or ypos == "default":
-            $ susan_chibi_ypos = 250
+    if ypos != sus_chibi_ypos:
+        if ypos in ["base","default"]:
+            $ sus_chibi_ypos = 250
         elif ypos == "on_desk":
-            $ susan_chibi_ypos = 180
+            $ sus_chibi_ypos = 180
         else:
-            $ susan_chibi_ypos = int(ypos)
+            $ sus_chibi_ypos = int(ypos)
 
 
     if action == "hide":
@@ -45,11 +40,11 @@ label sus_chibi(action = "", xpos=susan_chibi_xpos, ypos=susan_chibi_ypos, flip=
         pause.5
 
     else:
-        if flip or susan_flip != 1: #Same variable that the main sprite is using. #1 == Default
-            $ susan_chibi_flip = -1
+        if flip:
+            $ sus_chibi_flip = -1
             show screen susan_stand
         else:
-            $ susan_chibi_flip = 1
+            $ sus_chibi_flip = 1
             show screen susan_stand
 
     return
@@ -58,65 +53,70 @@ label sus_chibi(action = "", xpos=susan_chibi_xpos, ypos=susan_chibi_ypos, flip=
 
 ### SUSAN CHIBI WALK ###
 
-label sus_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = susan_speed, action = "", loiter = True, redux_pause = 0):
+label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loiter=True, redux_pause=0):
+    call hide_characters
     hide screen bld1
     hide screen blktone
-    call hide_characters
     with d3
 
     hide screen susan_walk
-
     hide screen susan_stand
 
-    if pos1 == "mid":
-        $ walk_xpos = 580 #540
-    elif pos1 == "desk":
-        $ walk_xpos = 440
-    elif pos1 == "door":
-        $ walk_xpos = 750
-    else:
-        $ walk_xpos = int(pos1)
-
-    if pos2 == "mid":
-        $ susan_chibi_xpos_name = "mid"
-        $ walk_xpos2 = 580 #540
-    elif pos2 == "desk":
-        $ susan_chibi_xpos_name = "desk"
-        $ walk_xpos2 = 440
-    elif pos2 == "door":
-        $ susan_chibi_xpos_name = "door"
-        $ walk_xpos2 = 750
-    elif pos2 == "leave":
-        $ susan_chibi_xpos_name = "door"
-        $ walk_xpos2 = 750
+    # Action command.
+    if action == "enter":
+        call play_sound("door")
+        $ sus_chibi_xpos = 750
+        $ sus_chibi_ypos = 250
+    if action == "leave":
+        $ xpos = "door"
+        $ ypos = "base"
         $ loiter = False
+
+    # Start position.
+    $ walk_xpos = sus_chibi_xpos
+    $ walk_ypos = sus_chibi_ypos
+
+    # Target location.
+    if xpos == "mid":
+        $ walk_xpos2 = 580 #540
+    elif xpos == "desk":
+        $ walk_xpos2 = 440
+    elif xpos == "door":
+        $ walk_xpos2 = 750
     else:
-        $ susan_chibi_xpos_name = "mid"
-        $ walk_xpos2 = int(pos2)
+        $ walk_xpos2 = int(xpos)
 
-    $ susan_chibi_ypos = 250
-    $ susan_speed = speed #Speed of walking animation. (lower = faster)
+    if ypos in ["base","default"]:
+        $ walk_ypos2 = 250
+    else:
+        $ walk_ypos2 = int(ypos)
 
-    #Susan walks
-    if walk_xpos >= walk_xpos2: #right to left
-        $ susan_chibi_flip = 1
+    $ sus_speed = speed #Speed of walking animation. (lower = faster)
+
+
+    # Walk right to left
+    if walk_xpos >= walk_xpos2:
+        $ sus_chibi_flip = 1
         show screen susan_walk
-        $ tmp = susan_speed - redux_pause
+        $ tmp = sus_speed - redux_pause
         pause tmp
-        $ susan_chibi_xpos = walk_xpos2
+        $ sus_chibi_xpos = walk_xpos2
+        $ sus_chibi_ypos = walk_ypos2
         hide screen susan_walk
         if loiter:
             show screen susan_stand
 
-    else: #left to right (flipped)
-        $ susan_chibi_flip = -1
+    # Walk left to right
+    else:
+        $ sus_chibi_flip = -1
         show screen susan_walk
-        $ tmp = susan_speed - redux_pause
+        $ tmp = sus_speed - redux_pause
         pause tmp
-        $ susan_chibi_xpos = walk_xpos2
+        $ sus_chibi_xpos = walk_xpos2
+        $ sus_chibi_ypos = walk_ypos2
         hide screen susan_walk
-        if pos2 == "leave":
-            call play_sound("door") #Sound of a door opening.
+        if action == "leave":
+            call play_sound("door")
             with d3
             pause.5
         if loiter:
@@ -139,25 +139,25 @@ label susan_walk_end_loiter(dissolveTime = 3):
 screen susan_stand:
     tag susan_chibi
 
-    add susan_chibi_stand    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_shoes    xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_top      xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_bottom   xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_robe     xpos susan_chibi_xpos ypos susan_chibi_ypos xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_stand    xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_shoes    xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_top      xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_bottom   xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_robe     xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
 
-    zorder susan_chibi_zorder
+    zorder sus_chibi_zorder
 
 screen susan_walk:
     tag susan_chibi
 
-    add susan_chibi_walk         at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_walk_shoes   at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_walk         at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_walk_shoes   at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
 
-    add susan_chibi_top          at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_bottom       at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_robe         at susan_walk_trans(walk_xpos, walk_xpos2) xzoom susan_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_top          at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_bottom       at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_robe         at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
 
-    zorder susan_chibi_zorder
+    zorder sus_chibi_zorder
 
 
 label update_susan_chibi_uniform:

@@ -375,11 +375,9 @@ label against_the_rule:
     $ snape_against_chairman_hap = True # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
     $ days_without_an_event = 0
 
-    call play_sound("door") #Sound of a door opening.
-    call sna_walk("door","mid",3)
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=3)
     pause.2
 
-    show screen bld1
     call sna_main("Are you bloody insane?!","snape_01",xpos="base",ypos="base")
     m "You know, sometimes I think I may be..."
 
@@ -688,11 +686,9 @@ label good_bye_snape:
 
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
 
-    call play_sound("door") #Sound of a door opening.
-    call sna_walk("door","desk",2.5)
+    call sna_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
     pause 1.5
 
-    show screen bld1
     call sna_main("Genie...","snape_01",xpos="base",ypos="base")
     m "Severus?"
     call sna_main("I think I may have figured out why your magic does not work the way it should...","snape_05")
@@ -770,13 +766,12 @@ label good_bye_snape:
     call hide_blkfade
     pause.5
 
-    call sna_walk("desk","door",3)
+    call sna_walk(xpos="door", ypos="base", speed=3)
     pause.5
 
     call sna_chibi("stand","door","base")
     pause.5
 
-    call bld
     call sna_head("One more thing though...","snape_01")
     m "Yes?"
     call sna_head("If it all goes well...","snape_24")

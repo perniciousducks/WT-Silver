@@ -57,9 +57,9 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 ### Cho Chibi Walk ###
 
 label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loiter=True, redux_pause=0):
+    call hide_characters
     hide screen bld1
     hide screen blktone
-    call hide_characters
     with d3
 
     hide screen cho_walk
@@ -96,8 +96,8 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
 
     $ cho_speed = speed #Speed of walking animation. (lower = faster)
 
-    #cho walks
-    if walk_xpos >= walk_xpos2: #right to left
+    # Walk right to left
+    if walk_xpos >= walk_xpos2:
         $ cho_chibi_flip = 1
         show screen cho_walk
         $ tmp = cho_speed - redux_pause
@@ -108,7 +108,8 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         if loiter:
             show screen cho_stand
 
-    else: #left to right (flipped)
+    # Walk left to right
+    else:
         $ cho_chibi_flip = -1
         show screen cho_walk
         $ tmp = cho_speed - redux_pause
@@ -117,7 +118,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         $ cho_chibi_ypos = walk_ypos2
         hide screen cho_walk
         if action == "leave":
-            call play_sound("door") #Sound of a door opening.
+            call play_sound("door")
             with d3
             pause.5
         if loiter:

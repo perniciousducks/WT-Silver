@@ -122,8 +122,9 @@ label letter_intro_snape:
     call sna_main("Not really... With how potent your magic is you'll probably just attract more attention from the ministry and then they'll definitely send an auror.","snape_03")
     call sna_main("Don't worry Genie, I'll find that student in no time.","snape_02")
 
-    call sna_walk("mid","leave",2)
+    call sna_walk(action="leave", speed=2)
 
+    call bld
     m "Drama queen..."
 
     jump main_room
@@ -232,8 +233,7 @@ label astoria_captured_intro:
     call ast_main("I am not a child!","scream","angry","angry","angry")
     m "ugh... I better get Snape."
 
-    call play_sound("door")
-    call sna_walk("door","mid",2)
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("snape_theme")
     call sna_main("gen- oh, I see you already have a visitor...","snape_03",xpos="base",ypos="base")
@@ -277,8 +277,9 @@ label astoria_captured_intro:
     m "How long until they get here?"
     call sna_main("I'm not sure, but I don't intend to find out!","snape_16")
 
-    call sna_walk("mid","leave",1.5)
+    call sna_walk(action="leave", speed=1.5)
 
+    call bld
     g4 "COWARD!"
     call play_music("night_theme")
     call ast_main("So there really is an auror coming?","worried","closed","worried","mid")
@@ -494,8 +495,8 @@ label tonks_intro_event: #occurs a day or two after the last event
 
 #SNAPE MASKING SPELL #Done
 label snape_spell_intro: #Snape tells genie that he has adjusted the magic shield
-    call play_sound("door")
-    call sna_walk("door","mid",2)
+
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("snape_theme")
     call sna_main("I've done it, Genie!","snape_02",xpos="base",ypos="base")
@@ -655,13 +656,13 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     pause.2
 
     m "Come in."
-    call play_sound("door")
 
-    call sus_walk("door","mid",2.5)
+    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
     pause.8
 
     call sus_main("","upset","base","worried","mid",xpos="mid",ypos="base")
     call ctc
+
     with hpunch
     g4 "!!!"
     g9 "(LOOK AT THOSE KNOCKERS!)"
@@ -848,9 +849,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     with d3
     pause.8
 
-    call play_sound("door")
-
-    call sus_walk("mid","leave",2.5)
+    call sus_walk(action="leave", speed=2.5)
 
     call play_music("hermione_theme")
     call ast_main("","grin","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
@@ -916,7 +915,7 @@ label snape_book_intro: #Have genie ask for a book of sex spells
     call sna_main("I'm not going to stand here and explain them all to you.","snape_12")
     call sna_main("Just take the book.","snape_13")
 
-    call sna_walk("mid","desk",2)
+    call sna_walk(xpos="desk", ypos="base", speed=2)
 
     call nar(">Snape hands you a pink leather book.")
     call sna_main("I've written notes explaining what the spells do as well as how to cast them.","snape_24")

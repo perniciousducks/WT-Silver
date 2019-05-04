@@ -17,29 +17,6 @@ screen g_c_c_u:
 
 
 
-### SUSAN CHIBI SCREENS ###
-
-screen genie_stand:
-    tag genie_chibi
-
-    add gen_chibi_stand xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder gen_chibi_zorder
-
-screen genie_walk:
-    tag genie_chibi
-    add gen_chibi_walk         at gen_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom gen_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder gen_chibi_zorder
-
-label update_gen_chibi:
-    $ gen_chibi_stand = "characters/genie/chibis/walk_01.png"
-    $ gen_chibi_walk = "genie_walk_ani"
-
-    return
-
-
-
 screen genie: #Sitting behind desk.
     tag genie_chibi
     add "images/rooms/main_room/11_genie_00.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
@@ -194,6 +171,28 @@ screen genie_groping:
     tag genie_chibi
     add "groping_ass_ani" at Position(xpos=gen_chibi_xpos-285, ypos=gen_chibi_ypos-185)
 
+
+
+### SUSAN CHIBI SCREENS ###
+
+screen genie_stand:
+    tag genie_chibi
+
+    add gen_chibi_stand xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder gen_chibi_zorder
+
+screen genie_walk:
+    tag genie_chibi
+    add gen_chibi_walk         at gen_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom gen_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder gen_chibi_zorder
+
+label update_gen_chibi:
+    $ gen_chibi_stand = "characters/genie/chibis/walk_01.png"
+    $ gen_chibi_walk = "genie_walk_ani"
+
+    return
 
 
 

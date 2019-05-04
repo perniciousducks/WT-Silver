@@ -59,7 +59,7 @@ label a_christmas_tale:
     with d3
     nar "Severus then entered, all flustered and spent."
 
-    call sna_walk("door","mid",2.5)
+    call sna_walk(xpos="mid", ypos="base", speed=2.5)
     pause.2
 
     call sna_main("Genie? Where are you... I came here, to vent...",face="snape_03",ypos="head")
@@ -757,7 +757,8 @@ label genie_house_elf:
 
     nar "Snape then opened the door, his pointy nose protruding under his silky hair."
 
-    call sna_walk("door","mid",2)
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+
     call sna_main("You called? ","snape_23", xpos="base", ypos="base")
 
     nar "Snape said with a smirk, doing his best to hide his amusement."
@@ -840,8 +841,8 @@ label genie_house_elf:
     call sna_main("If that is all, I’ll be in the dungeons.","snape_01", xpos="base", ypos="base")
     call sna_main("I’ve been working on a new cleaning solution.","snape_01", xpos="base", ypos="base")
     call sna_main("It might come in handy sooner than I thought.","snape_02", xpos="base", ypos="base")
-    call sna_walk("mid","leave",2)
-    call sna_main(remove=True)
+
+    call sna_walk(action="leave", speed=2)
 
     nar "The door shut and silence spread across the room only interrupted after a few minutes by the house elf."
 
@@ -899,8 +900,8 @@ label prev_at_hogwarts:
 
     dum_[3] "Please, come in..."
     pause.2
-    call play_sound("door")
-    call sna_walk("door","mid",2.5)
+
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
     pause.5
 
     dum_[1] "Ah, Severus..."
@@ -951,7 +952,8 @@ label prev_at_hogwarts:
     call sna_chibi("stand","mid","base",flip=True)
     with d3
     pause.2
-    call sna_walk("mid","leave",2.5)
+
+    call sna_walk(action="leave", speed=2.5)
 
     call play_music("stop")
 

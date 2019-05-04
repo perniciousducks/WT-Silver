@@ -475,10 +475,8 @@ label hg_pf_dance:
         with d1
 
         stop music
-        call play_sound("door") #Sound of a door opening.
 
-        call sna_walk("door","mid",2)
-
+        call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
         call sna_main("Listen, Genie. I've been thinki--","snape_01",xpos="base",ypos="base")
 
@@ -528,7 +526,7 @@ label hg_pf_dance:
         with fade
         pause.2
 
-        call sna_walk("mid","leave",3)
+        call sna_walk(action="leave", speed=3)
 
         call blkfade
         ">Hermione hastily hops off your desk."
@@ -1149,7 +1147,7 @@ label hg_pf_dance:
                                         call sna_chibi("stand","mid","base",flip=True)
                                         call hide_blkfade
 
-                                        call sna_walk("mid","leave",2)
+                                        call sna_walk(action="leave", speed=2)
                                         pause.5
 
                                         call her_chibi("stand","desk","base")

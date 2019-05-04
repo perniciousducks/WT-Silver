@@ -36,12 +36,12 @@ label susan_init:
         #$ changeCho("base","base","base","mid","blank","blank","blank","blank")
 
         #Chibi
-        $ susan_chibi_xpos          = 500
-        $ susan_chibi_ypos          = 250
-        $ susan_chibi_xpos_name     = "base" #Memory of chibi position.
-        $ susan_chibi_ypos_name     = "base" #Memory of chibi position.
-        $ susan_chibi_flip          = 1
-        $ susan_chibi_zorder        = 3
+        $ sus_chibi_xpos          = 500
+        $ sus_chibi_ypos          = 250
+        $ sus_chibi_xpos_name     = "base" #Memory of chibi position.
+        $ sus_chibi_ypos_name     = "base" #Memory of chibi position.
+        $ sus_chibi_flip          = 1
+        $ sus_chibi_zorder        = 3
 
         $ susan_chibi_stand         = "ch_sus blink"
         $ susan_chibi_shoes         = "characters/susan/chibis/sb_walk_01_shoes.png"

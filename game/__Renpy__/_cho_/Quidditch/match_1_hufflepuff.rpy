@@ -36,9 +36,7 @@ label start_hufflepuff_match:
 label hufflepuff_match:
 
     # Scene before Match against Hufflepuff
-    call play_sound("door")
-
-    call sna_walk("door","mid",2)
+    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
 
     call sna_main("Are you ready to go?","snape_03",xpos="base",ypos="base")
@@ -111,7 +109,7 @@ label hufflepuff_match:
     m "You should lead the way..."
     call sna_main("Right you are. Time to get smashed!","snape_02",ypos="head")
 
-    call sna_walk("mid","700",1.6)
+    call sna_walk(xpos="700", ypos="base", speed=1.6)
 
     # Blackfade
     call play_sound("door")
@@ -228,7 +226,6 @@ label hufflepuff_match:
     call ctc
 
     hide screen hermione_main
-    call her_chibi(flip=False)
     with d3
 
     m "{size=-4}What? Isn’t that me?{/size}"  # Small text.
@@ -239,7 +236,7 @@ label hufflepuff_match:
     call sna_main("I’ve been looking forward to watching you bumble your way through this...","snape_22",ypos="head")
     $ qp_mob_reaction[0] = None
     call sna_main("Besides, you only have to give some trivial speech about team spirit, gesticulate wildly and say \"let the games begin\". A child could manage it.","snape_24",ypos="head")
-    call sna_main("Now get down there!","snape_10",ypos="head")
+    call sna_main("Now get up there!","snape_10",ypos="head")
     stop bg_sounds fadeout 2.0
 
     $ her_chibi_zorder = 4
@@ -358,7 +355,7 @@ label hufflepuff_match:
             with d5
             stop bg_sounds fadeout 2.0
 
-            $ snape_chibi_zorder = 3
+            $ sna_chibi_zorder = 3
             $ gen_chibi_zorder   = 2
             call sna_chibi("stand","260","80", flip=True)
             call gen_chibi("stand", "320", "45", flip=True)
@@ -410,7 +407,7 @@ label hufflepuff_match:
 
     call gen_walk(xpos="130", ypos="10", speed=2)
 
-    $ snape_chibi_zorder = 2
+    $ sna_chibi_zorder = 2
     $ her_chibi_zorder   = 4
     $ gen_chibi_zorder   = 3
     call gen_chibi("stand", "130", "10", flip=False)

@@ -1,9 +1,24 @@
 
 
+screen snape_jerking_off:
+    tag snape_chibi
+    add "jerking_off_03_ani" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    zorder 3
+
+screen snape_jerking_off_cum:
+    add "snape_cum_01" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    zorder 3
+
+screen snape_stands_holds_dick:
+    tag snape_chibi
+    add "images/animation/10_jerking_01.png" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    zorder 3
+
+
 ###  SNAPE CHIBI UNIVERSAL SCREEN ###
 screen s_c_u:
     tag snape_chibi
-    add s_c_u_pic at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos) # (xpos=360, ypos=210)
+    add s_c_u_pic at Position(xpos=sna_chibi_xpos, ypos=sna_chibi_ypos) # (xpos=360, ypos=210)
     zorder 3
 
 ###  SNAPE'S CUM UNIVERSAL SCREEN ###
@@ -18,70 +33,52 @@ screen s_c_c_u:
 screen snape_stand:
     tag snape_chibi
 
-    add snape_chibi_stand xpos snape_chibi_xpos ypos snape_chibi_ypos xzoom snape_chibi_flip #zoom (1.0/scaleratio)
+    add sna_chibi_stand xpos sna_chibi_xpos ypos sna_chibi_ypos xzoom sna_chibi_flip #zoom (1.0/scaleratio)
 
-    zorder snape_chibi_zorder
-
+    zorder sna_chibi_zorder
 
 screen snape_walk:
     tag snape_chibi
 
-    add snape_chibi_walk at snape_walk_trans(walk_xpos, walk_xpos2) xzoom snape_chibi_flip #zoom (1.0/scaleratio)
+    add sna_chibi_walk         at sna_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sna_chibi_flip #zoom (1.0/scaleratio)
 
-    zorder snape_chibi_zorder
+    zorder sna_chibi_zorder
 
 
 label update_sna_chibi:
-    $ snape_chibi_stand = "characters/snape/chibis/snape_stand.png"
-    $ snape_chibi_walk = "snape_walk"
+    $ sna_chibi_stand = "characters/snape/chibis/snape_stand.png"
+    $ sna_chibi_walk = "snape_walk"
     return
 
 
 
-screen snape_jerking_off:
-    tag snape_chibi
-    add "jerking_off_03_ani" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240)
-    zorder 3
-
-screen snape_jerking_off_cum:
-    add "snape_cum_01" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240)
-    zorder 3
-
-screen snape_stands_holds_dick:
-    tag snape_chibi
-    add "images/animation/10_jerking_01.png" at Position(xpos=snape_chibi_xpos-500, ypos=snape_chibi_ypos-240)
-    zorder 3
-
-
-
-
-label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_ypos), pic = "", flip=False):
+label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos), pic = "", flip=False):
     hide screen snape_stand
 
     hide screen s_c_u
     hide screen snape_jerking_off
     hide screen snape_jerking_off_cum
 
-    $ snape_chibi_xpos = 500
-    $ snape_chibi_ypos = 250
+    $ sna_chibi_xpos = 500
+    $ sna_chibi_ypos = 250
 
-    if xpos != snape_chibi_xpos:
+    if xpos != sna_chibi_xpos:
         if xpos == "mid":
-            $ snape_chibi_xpos = 500
+            $ sna_chibi_xpos = 500
         elif xpos == "desk":
-            $ snape_chibi_xpos = 440
+            $ sna_chibi_xpos = 440
         elif xpos == "desk_close":
-            $ snape_chibi_xpos = 420
+            $ sna_chibi_xpos = 420
         elif xpos == "door":
-            $ snape_chibi_xpos = 750
+            $ sna_chibi_xpos = 750
         elif xpos.isdigit():
-            $ snape_chibi_xpos = int(xpos)
+            $ sna_chibi_xpos = int(xpos)
 
-    if ypos != snape_chibi_ypos:
+    if ypos != sna_chibi_ypos:
         if ypos == "base" or ypos == "default":
-            $ snape_chibi_ypos = 210
+            $ sna_chibi_ypos = 210
         elif ypos.isdigit():
-            $ snape_chibi_ypos = int(ypos)
+            $ sna_chibi_ypos = int(ypos)
 
     #Snape Chibi Actions.
 
@@ -89,18 +86,18 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
     if action == "image":
 
         if xpos == "desk":
-            $ snape_chibi_xpos = 440
+            $ sna_chibi_xpos = 440
         elif xpos == "mid":
-            $ snape_chibi_xpos = 500
+            $ sna_chibi_xpos = 500
         elif xpos == "door":
-            $ snape_chibi_xpos = 750
+            $ sna_chibi_xpos = 750
         else:
-            $ snape_chibi_xpos = 500
+            $ sna_chibi_xpos = 500
 
         if ypos == "base":
-            $ snape_chibi_ypos = 210
+            $ sna_chibi_ypos = 210
         else:
-            $ snape_chibi_ypos = 210
+            $ sna_chibi_ypos = 210
 
         if pic != "":
             $ s_c_u_pic = "characters/snape/chibis/"+str(pic)+".png"
@@ -127,67 +124,90 @@ label sna_chibi(action = "", xpos=str(snape_chibi_xpos), ypos=str(snape_chibi_yp
         pause.5
 
     else:
-        if flip or snape_flip != 1: #Same variable that the main sprite is using. #1 == Default
-            $ snape_chibi_flip = -1
+        if flip:
+            $ sna_chibi_flip = -1
             show screen snape_stand
         else:
-            $ snape_chibi_flip = 1
+            $ sna_chibi_flip = 1
             show screen snape_stand
 
     return
 
 
-label sna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, action = "", loiter = True, redux_pause = 0):
+### Snape Chibi Walk ###
+
+# xpos + ypos = position the chibi walks to.
+# action = "enter", sets the starting position of the chibi at the entrance (door).
+# action = "leave", automatically hide the chibi with a door sound and pause.
+# speed = time it will take for the chibi to move A to B in seconds. Lower value = faster walk.
+# loiter = flag that shows the standing chibi after the walk, default is True
+# redux_pause = value to decrease the time to pause before hideing the animation early
+
+label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loiter=True, redux_pause=0):
+    call hide_characters
     hide screen bld1
     hide screen blktone
-    call hide_characters
     with d3
 
     hide screen snape_walk
-
     hide screen snape_stand
 
-    if pos1 == "mid":
-        $ walk_xpos = 500
-    elif pos1 == "desk":
-        $ walk_xpos = 440
-    elif pos1 == "door":
-        $ walk_xpos = 750
-    else:
-        $ walk_xpos = int(pos1)
-
-    if pos2 == "mid":
-        $ walk_xpos2 = 500
-    elif pos2 == "desk":
-        $ walk_xpos2 = 440
-    elif pos2 == "door":
-        $ walk_xpos2 = 750
-    elif pos2 == "leave":
-        $ walk_xpos2 = 750
+    # Action command.
+    if action == "enter":
+        call play_sound("door")
+        $ sna_chibi_xpos = 750
+        $ sna_chibi_ypos = 250
+    if action == "leave":
+        $ xpos = "door"
+        $ ypos = "base"
         $ loiter = False
+
+    # Start position.
+    $ walk_xpos = sna_chibi_xpos
+    $ walk_ypos = sna_chibi_ypos
+
+    # Target location.
+    if xpos == "mid":
+        $ walk_xpos2 = 500
+    elif xpos == "desk":
+        $ walk_xpos2 = 440
+    elif xpos == "left":
+        $ walk_xpos2 = 100
+    elif xpos == "door":
+        $ walk_xpos2 = 750
     else:
-        $ walk_xpos2 = int(pos2)
+        $ walk_xpos2 = int(xpos)
 
-    $ snape_chibi_ypos = 210 #Works for walking chibi, doesn't for standing (needs 210 for standing?!)
-    $ snape_speed = speed #Speed of walking animation. (lower = faster)
+    if ypos in ["base","default"]:
+        $ walk_ypos2 = 250
+    else:
+        $ walk_ypos2 = int(ypos)
 
-    if walk_xpos > walk_xpos2: #right to left (snape_walk)
-        $ snape_chibi_flip = 1
+    $ sna_speed = speed #Speed of walking animation. (lower = faster)
+
+
+    # Walk right to left
+    if walk_xpos > walk_xpos2:
+        $ sna_chibi_flip = 1
         show screen snape_walk
-        $ tmp = snape_speed - redux_pause
+        $ tmp = sna_speed - redux_pause
         pause tmp
-        $ snape_chibi_xpos = walk_xpos2
+        $ sna_chibi_xpos = walk_xpos2
+        $ sna_chibi_ypos = walk_ypos2
         hide screen snape_walk
         if loiter:
             show screen snape_stand
-    else: #left to right (snape_walk)
-        $ snape_chibi_flip = -1
+
+    # Walk left to right
+    else:
+        $ sna_chibi_flip = -1
         show screen snape_walk
-        $ tmp = snape_speed - redux_pause
+        $ tmp = sna_speed - redux_pause
         pause tmp
-        $ snape_chibi_xpos = walk_xpos2
+        $ sna_chibi_xpos = walk_xpos2
+        $ sna_chibi_ypos = walk_ypos2
         hide screen snape_walk
-        if pos2 == "leave":
+        if action == "leave":
             call play_sound("door")
             with d3
             pause.5

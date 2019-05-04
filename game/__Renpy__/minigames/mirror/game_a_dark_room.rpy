@@ -151,7 +151,7 @@ label DRgame_chibis:
         call gen_chibi("stand","710","165",flip=True)
 
     #Stranger
-    $ snape_chibi_zorder = 1
+    $ sna_chibi_zorder = 1
     if DRstranger in DRgame.characters:
         if DRstranger.location != "outside":
             call sna_chibi("stand","450","180",flip=True)
@@ -610,17 +610,17 @@ screen DRgame_menu:
     #Stranger
     if DRstranger in DRgame.characters and DRstranger.location not in ["outside"]:
         imagebutton:
-            xpos snape_chibi_xpos
-            ypos snape_chibi_ypos
+            xpos sna_chibi_xpos
+            ypos sna_chibi_ypos
             focus_mask True
             #xanchor "center"
             #yanchor "center"
-            if snape_chibi_flip == 1:
-                idle snape_chibi_stand
-                hover yellowTint(snape_chibi_stand)
+            if sna_chibi_flip == 1:
+                idle sna_chibi_stand
+                hover yellowTint(sna_chibi_stand)
             else:
-                idle im.Flip(snape_chibi_stand, horizontal=True)
-                hover yellowTint( im.Flip(snape_chibi_stand, horizontal=True) )
+                idle im.Flip(sna_chibi_stand, horizontal=True)
+                hover yellowTint( im.Flip(sna_chibi_stand, horizontal=True) )
             action [Hide("DRgame_menu"), Jump("dark_room_stranger")]
 
     if DRmaid in DRgame.characters and DRmaid.location in ["room","desk","fireplace"]:

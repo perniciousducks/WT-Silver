@@ -515,7 +515,8 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
             hide screen bld1
             with d3
             pause.8
-            call sna_walk("door","mid",4)
+
+            call sna_walk(xpos="mid", ypos="base", speed=4)
             pause.2
 
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
@@ -563,11 +564,12 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
             hide screen bld1
             with d3
             pause.2
-            call sna_walk("mid","leave",3)
+
+            call sna_walk(action="leave", speed=3)
             stop music fadeout 1.0
             call ctc
-            call blkfade
 
+            call blkfade
             call play_music("playful_tension") # SEX THEME.
             ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
             ">Seeing her being so confused and vulnerable and yet continuing to perform her task diligently pushes you over the edge."

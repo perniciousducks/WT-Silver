@@ -133,19 +133,49 @@ label hufflepuff_match:
     call room("quidditch_pitch", True)
     $ qp_mob = 2 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
-    call sna_chibi("stand","180","0", flip=True)
-    call gen_chibi("stand", "130", "10")
-    call her_chibi("stand","375","105", flip=True)
+    #call sna_chibi("stand","180","0", flip=True)
+    #call gen_chibi("stand", "130", "10")
+    #call her_chibi("stand","375","105", flip=True)
     pause 1
-    call hide_blkfade
 
     ### Main Match Starts ###
-
-    # Hermione’s Intro
-    # open shot of Quidditch pitch
-    # fade to hermione CG with eyes closed
     $ renpy.music.stop("weather")
     $ renpy.music.play("sounds/crowd.mp3", fadein=2)
+    call hide_blkfade
+
+    call play_sound("footsteps")
+    pause.5
+
+    call sna_chibi("stand","180","0", flip=True)
+    with d3
+    pause.2
+
+    call sna_chibi("stand","180","0", flip=False)
+    with d3
+
+    sna "Don't hit your head."
+
+    call play_sound("kick")
+    pause.2
+    call gen_chibi("stand", "130", "10")
+    with d3
+
+    g4 "Bloody hell!"
+
+    call sna_chibi("stand","180","0", flip=True)
+    with d3
+
+    sna "Well, here we are..."
+    sna "Now we are only waiting for-"
+
+    call her_chibi("stand","375","105", flip=True)
+    with d3
+
+    her "Progessors."
+
+    sna "Granger..."
+
+
     call her_main("Good Morning everyone, and welcome to the i-inaugural-","soft","worried", flip=True,xpos="120",ypos="base")
     call her_main("", mouth="normal", eye="worried")
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
@@ -616,15 +646,20 @@ label hufflepuff_match:
     show screen desk
     call hide_blkfade
     pause 1.0
+
     call play_sound("door")
     call gen_chibi("stand","door","base",flip=True)
     with d3
     pause 0.3
+
+    call bld
     m "I'm hom-...{w=0.8}{nw}"
     g4 "Dammit, I almost said that!"
     m "Anyway, I'm beat, time to hit the hay."
-    call gen_walk("door","desk",3.0)
-    show screen blkfade with d3
+
+    call gen_walk(xpos="desk", ypos="base", speed=2.8)
+
+    call blkfade
 
     # Skip to evening.
     jump night_start

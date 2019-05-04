@@ -3314,13 +3314,12 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         call her_chibi("stand","door","base")
         pause.8
 
-        call her_walk("door","mid",3)
+        call her_walk(xpos="mid", ypos="base", speed=3)
         pause.8
 
-        call bld
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-
         call her_main("Sir, if this is about yesterday...","upset","closed",xpos="right",ypos="base")
+
         #her "You wanted to see me, sir?"
         dum_[1]"Good morning, Miss Granger."
         call her_main("It's not like I actually enjoyed it or anything, you know...","annoyed","annoyed")

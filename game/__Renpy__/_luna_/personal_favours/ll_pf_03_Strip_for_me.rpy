@@ -739,8 +739,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     with d3
 
                     hide screen genie
-                    $ genie_chibi_xpos = 40
-                    $ genie_chibi_ypos = 10
+                    $ gen_chibi_xpos = 40
+                    $ gen_chibi_ypos = 10
                     $ g_c_u_pic = "groping_ass_ani"
                     show screen g_c_u
                     with fade
@@ -763,7 +763,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     ">Luna pushes you back."
                     call lun_main("......","normal","suspicious","sad","mid",tears="crying")
                     ">You let her go and take a step back."
-                    $ genie_chibi_xpos = 20
+                    $ gen_chibi_xpos = 20
                     call lun_main("...","upset","suspicious","sad","down",tears="crying")
                     m "Sorry..."
                     call lun_main("It-it's alright, [lun_genie_name]...","normal","suspicious","sad","R",tears="crying")
@@ -784,8 +784,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     ">You reach into your robe and pull out your cock..."
                     ">You spit on your hand to lube it before you start stroking..."
                     hide screen genie
-                    $ genie_chibi_xpos = -20
-                    $ genie_chibi_ypos = 10
+                    $ gen_chibi_xpos = -20
+                    $ gen_chibi_ypos = 10
                     $ g_c_u_pic = "jerking_off_02_ani"
                     show screen g_c_u
                     hide screen blkfade
@@ -924,8 +924,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             show screen blkfade
             ">You take your cock out and start stroking it..."
             hide screen genie
-            $ genie_chibi_xpos = -20
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -20
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "jerking_off_02_ani"
             show screen g_c_u
             hide screen blkfade

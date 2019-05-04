@@ -1,4 +1,7 @@
-### cho CHIBI ###
+
+
+### Cho Chibi ###
+
 label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):
     hide screen cho_stand
 
@@ -37,7 +40,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         pause.5
 
     else:
-        if flip or cho_flip != 1: #Same variable that the main sprite is using. #1 == Default
+        if flip: #Same variable that the main sprite is using. #1 == Default
             $ cho_chibi_flip = -1
             show screen cho_stand
         else:
@@ -49,7 +52,10 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
     return
 
-### cho CHIBI WALK ###
+
+
+### Cho Chibi Walk ###
+
 label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loiter=True, redux_pause=0):
     hide screen bld1
     hide screen blktone
@@ -126,6 +132,8 @@ label cho_walk_end_loiter(dissolveTime = 3):
     else:
         hide screen cho_stand
     return
+
+
 
 ### CHO CHIBI SCREENS ###
 screen cho_stand:

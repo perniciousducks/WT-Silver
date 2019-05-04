@@ -7,8 +7,8 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_slow_ani"
 
     nar "This event is written by WaxerRed."
@@ -28,7 +28,9 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
 
     #First Level
     if pathvalue == 0:
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
+        call bld
         m "[hermione_name] There is another task I have in mind for you."
         call her_main("I assume this is a new way to humiliate myself in front of you. Or will it be in front of my peers this time?", mouth="open", eye="annoyed")
         m "[hermione_name] you should know that when you 'Assume', you make and ass out of you..."
@@ -41,12 +43,14 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("[genie_name]!", mouth="shock", eye="wide")
         call her_main("I was right to assume that this would be humiliating!", mouth="angry", eye="angry")
         m "you know what they say about assuming, you make an"
-        call her_walk("mid","leave",2.5)
+        call her_walk(action="leave", speed=2.5)
 
         show screen blkfade
         call hide_blkfade
 
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
+        call bld
         m "..."
         call her_main("...", mouth="upset", eye="down")
         m "...So"
@@ -97,7 +101,6 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Thank you, professor. Good Day!", mouth="open", eye="narrow")
                 call her_main("{size=-5}(Was that even worth it? I’d rather have just sucked his cock twice then try that again.){/size}", mouth="annoyed", eye="annoyed")
                 call her_main("{size=-5}(Did I really just think that?){/size}", mouth="open", eye="down")
-                call her_walk("mid","leave",2.5)
 
             "\"Nah.\"":
 
@@ -108,21 +111,28 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "Ah, is it you assumed I'd give you points for this?"
                 m "Well, you know what they say about assuming it makes an ass out of yo-"
                 call her_main("AGGGH!", mouth="scream", eye="angry")
-                call her_walk("mid","leave",2.5)
+
+        call her_walk(action="leave",2.5)
 
     #Second Level
     if pathvalue == 1:
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
+        call bld
         m "'Morning, [hermione_name]."
         call her_main("Good morning [genie_name]", mouth="smile", eye="happy")
         m "Did I ever tell you of the time I saved Christmas?"
         call her_main("Can we just skip to the part where you tell me to do something disgusting.", mouth="clench", eye="frown")
         m "...Go masturbate during class. 80 points."
         call her_main("Fine.", mouth="annoyed", eye="annoyed")
-        call her_walk("mid","leave",2.5)
+
+        call her_walk(action="leave", speed=2.5)
+
+        call bld
         m "I would have given you 200 for listening to my story!"
 
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         m "Why hello there [hermione_name] you loo-"
         call her_main("[genie_name] I demand the expulsion of all those Slytherin Harlots!", mouth="angry", eye="angry")
         m "What happened this time?"
@@ -157,7 +167,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "Sorry [hermione_name], but there isn't much I can do."
                 m "But here these should cheer you up, 80 house points to Gryffindor."
                 call her_main("Ugh- It's like you don't even listen to me.", mouth="annoyed", eye="annoyed")
-                call her_walk("mid","leave",2.5)
+
             "\"Take 200 points from Slytherin.\"":
                 m "Hmmm. While I doubt I can do anything official just yet..."
                 m "200 house points from Slytherin!"
@@ -169,8 +179,8 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Ahem. I mean.... uhm It's getting time for dinner. So, goodnight [genie_name]", mouth="open", eye="down", cheeks="blush")
                 m "See you tomorrow [hermione_name]"
                 call her_main("Yes! I mean...if I must.", mouth="open", eye="glance")
-                call her_walk("mid","leave",2.5)
                 call her_main("{size=-5}Totally worth it.{/size}", mouth="smile", eye="happy")
+
             "\"Humiliate her.\"":
                 m "I'm sorry can you say that again?"
                 call her_main("Agh! For the hundredth time, DO SOMETHING about Slytherin!", mouth="annoyed", eye="annoyed")
@@ -192,11 +202,14 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "Are you sure that you aren't you the..."
                 call her_main("Stop it...please.", mouth="upset", eye="down")
                 m "The hypocritical harlot?"
-                call her_walk("mid","leave",2.5)
+
+        call her_walk(action="leave", speed=2.5)
 
     # Third Level
     elif pathvalue == 2:
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
+        call bld
         m "POP QUIZ!"
         call her_main("{size=-5}(my ears!){/size}", mouth="annoyed", eye="annoyed")
         m "Question 1 of 1 if you wanted to earn 80 points, you'd need to..."
@@ -214,12 +227,15 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Snape gave a 2-hour lecture on the 'Rich and Pure' History of Slytherin.", mouth="open", eye="base")
         m "You don't ALWAYS need my permission to masturbate [hermione_name]"
         call her_main("Oh trust me, I know.", mouth="soft", eye="soft", cheeks="blush")
-        call her_walk("mid","leave",2.5)
+
+        call her_walk(action="leave", speed=2.5)
 
         show screen blkfade
         call hide_blkfade
 
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
+        call bld
         m "Everything alright [hermione_name]? I usually expect you a bit earlier."
         call her_main("Uh.. yeah, yeah.", mouth="upset", eye="down")
         m "..."
@@ -270,11 +286,14 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("{size=-5}Really?{/size} For what? Oh right masturbating during class. Hahah, I already forgot.", mouth="silly", eye="happy")
         m "Have a good night [hermione_name]"
         call her_main("You too [genie_name]", mouth="open", eye="base")
-        call her_walk("mid","leave",2.5)
+
+        call her_walk(action="leave", speed=2.5)
 
     #Fourth Level
     elif pathvalue == 3:
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
+        call bld
         m "How are you doing this fine, beautiful morning my little, wittle [hermione_name]"
         call her_main("How sweet of you to ask, I'm quite well my handsome, bandsome [genie_name]. And yourself?", mouth="smile", eye="happy")
         m "Every day with you in it is quite fine, my cutesy, dutesy [hermione_name]"
@@ -303,21 +322,25 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I guess...", mouth="upset", eye="frown")
         m "I'd certainly be happy about it...And perhaps my happiness will be its own reward?"
         call her_main("Heh. Yes, maybe it will. Well I better get to work then.", mouth="smile", eye="base")
-        call her_walk("mid","leave",2.5)
+
+        call her_walk(action="leave", speed=2.5)
 
         show screen blkfade
         call hide_blkfade
 
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         call her_main("[genie_name]", mouth="open", eye="base")
         m "Did you complete your task?"
         call her_main("Of course, was there ever any doubt?", mouth="smile", eye="base")
+
         menu:
             "\"Just give her the points.\"":
                 m "Well I trust you at your word, [hermione_name] 80 points."
                 call her_main("Oh really? Are you sure you don't want me to give you the details to be sure?", mouth="upset", eye="frown")
                 m "No no, it's quite alright you deserve my trust. I'm sure you have some studying or some such to get to"
                 call her_main("I suppose. Well goodnight [genie_name]", mouth="annoyed", eye="annoyed")
+
             "\"Tell me about it.\"":
                 m "Well [hermione_name], how was your day exactly?"
                 call her_main("Let's just say it was...", mouth="open", eye="baseL")
@@ -392,7 +415,8 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Pant Pant, heh and I didn't tell you about my other classes.", mouth="smile", eye="happy", cheeks="blush")
                 m "[hermione_name] I'm going to repeal the rule about not giving bonus points, you'll get double for today."
                 call her_main("Thank you, [genie_name]", mouth="smile", eye="base")
-                call her_walk("mid","leave",2.5)
+
+                call her_walk(action="leave", speed=2.5)
 
     call blkfade
     # call h_unequip_temp_outfit

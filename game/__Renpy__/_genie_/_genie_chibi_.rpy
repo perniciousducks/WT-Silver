@@ -6,7 +6,7 @@
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
 screen g_c_u:
     tag genie
-    add g_c_u_pic at Position(xpos=genie_chibi_xpos, ypos=genie_chibi_ypos)
+    add g_c_u_pic at Position(xpos=gen_chibi_xpos, ypos=gen_chibi_ypos)
     zorder 3
 
 
@@ -22,20 +22,19 @@ screen g_c_c_u:
 screen genie_stand:
     tag genie_chibi
 
-    add genie_chibi_stand xpos genie_chibi_xpos ypos genie_chibi_ypos xzoom genie_chibi_flip #zoom (1.0/scaleratio)
+    add gen_chibi_stand xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip #zoom (1.0/scaleratio)
 
-    zorder genie_chibi_zorder
+    zorder gen_chibi_zorder
 
 screen genie_walk:
     tag genie_chibi
+    add gen_chibi_walk         at gen_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom gen_chibi_flip #zoom (1.0/scaleratio)
 
-    add genie_chibi_walk at genie_walk_trans(walk_xpos, walk_xpos2) xzoom genie_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder genie_chibi_zorder
+    zorder gen_chibi_zorder
 
 label update_gen_chibi:
-    $ genie_chibi_stand = "characters/genie/chibis/walk_01.png"
-    $ genie_chibi_walk = "genie_walk_ani"
+    $ gen_chibi_stand = "characters/genie/chibis/walk_01.png"
+    $ gen_chibi_walk = "genie_walk_ani"
 
     return
 
@@ -130,16 +129,16 @@ screen genie_jerking_sperm_02: #Genie's behind desk cum still image, CUM ONLY!
 
 screen genie_jerking_off_standing:
     tag genie_chibi
-    add "jerking_off_02_ani" at Position(xpos=genie_chibi_xpos-270, ypos=genie_chibi_ypos-185)
+    add "jerking_off_02_ani" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_jerking_off_standing_cum:
-    add "genie_cum_03" at Position(xpos=genie_chibi_xpos-270, ypos=genie_chibi_ypos-185)
+    add "genie_cum_03" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_stands_holds_dick:
     tag genie_chibi
-    add "images/animation/06_jerking_01.png" at Position(xpos=genie_chibi_xpos-270, ypos=genie_chibi_ypos-185)
+    add "images/animation/06_jerking_01.png" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
 
 
@@ -147,63 +146,64 @@ screen genie_stands_holds_dick:
 
 screen genie_handjob:
     tag genie_chibi
-    add "handjob_ani" at Position(xpos=genie_chibi_xpos-230, ypos=genie_chibi_ypos-185)
+    add "handjob_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_pause:
     tag genie_chibi
-    add "images/animation/12_handjob_01.png" at Position(xpos=genie_chibi_xpos-230, ypos=genie_chibi_ypos-185)
+    add "images/animation/12_handjob_01.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_kiss:
     tag genie_chibi
-    add "kiss_ani" at Position(xpos=genie_chibi_xpos-230, ypos=genie_chibi_ypos-185)
+    add "kiss_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_cum_on_shirt:
-    add "on_shirt_cum_ani" at Position(xpos=genie_chibi_xpos-230, ypos=genie_chibi_ypos-185)
+    add "on_shirt_cum_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_cum_on_shirt_pause:
-    add "images/animation/15_cum_21.png" at Position(xpos=genie_chibi_xpos-230, ypos=genie_chibi_ypos-185)
+    add "images/animation/15_cum_21.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_cum_under_shirt:
-    add "undershirt_cum_ani" at Position(xpos=genie_chibi_xpos-230, ypos=genie_chibi_ypos-185)
+    add "undershirt_cum_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 
 ### TITJOB HERMIONE ###
 screen genie_titjob:
     tag genie_chibi
-    add "titjob_ani" at Position(xpos=genie_chibi_xpos-30, ypos=genie_chibi_ypos)
+    add "titjob_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos)
 
 screen genie_titjob_pause:
     tag genie_chibi
-    add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" at Position(xpos=genie_chibi_xpos-30, ypos=genie_chibi_ypos)
+    add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos)
 
 screen genie_titjob_cum_on_tits:
     tag genie_chibi
-    add "titjob_chest_ani" at Position(xpos=genie_chibi_xpos-30, ypos=genie_chibi_ypos+10)
+    add "titjob_chest_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos+10)
 
 screen genie_titjob_cum_in_mouth:
     tag genie_chibi
-    add "titjob_mouth_ani" at Position(xpos=genie_chibi_xpos-30, ypos=genie_chibi_ypos+10)
+    add "titjob_mouth_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos+10)
 
 
 screen genie_groping:
     tag genie_chibi
-    add "groping_ass_ani" at Position(xpos=genie_chibi_xpos-285, ypos=genie_chibi_ypos-185)
+    add "groping_ass_ani" at Position(xpos=gen_chibi_xpos-285, ypos=gen_chibi_ypos-185)
 
 
 
 
-label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic = "", flip=False):
+label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "", flip=False):
     hide screen genie_stand
 
     hide screen g_c_u
     hide screen genie
 
+    hide screen jerking_off_01                   #Hermione topless. Genie jerking off.
     hide screen genie_jerking_off                #Jerking off sitting behind desk.
     hide screen genie_jerking_sperm_02           #Sperm on desk and floor.
     hide screen genie_jerking_sperm
@@ -227,35 +227,36 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
     hide screen no_groping_01
     hide screen no_groping_02
     hide screen groping_03
+    hide screen genie_and_tits_01
     hide screen groping_naked_tits
 
     hide screen genie_groping
     hide screen blktone
     hide screen bld1
 
-    if xpos != genie_chibi_xpos:
+    if xpos != gen_chibi_xpos:
         if xpos == "mid":
-            $ genie_chibi_xpos = 500
+            $ gen_chibi_xpos = 500
         elif xpos == "desk":
-            $ genie_chibi_xpos = 420
+            $ gen_chibi_xpos = 420
         elif xpos == "on_girl": #Girl has to stand at mid.
-            $ genie_chibi_xpos = 470
+            $ gen_chibi_xpos = 470
         elif xpos == "door":
-            $ genie_chibi_xpos = 750
+            $ gen_chibi_xpos = 750
         elif xpos == "left":
-            $ genie_chibi_xpos = 100
+            $ gen_chibi_xpos = 100
         elif xpos == "behind_desk":
-            $ genie_chibi_xpos = 230
+            $ gen_chibi_xpos = 230
         else:
-            $ genie_chibi_xpos = int(xpos)
+            $ gen_chibi_xpos = int(xpos)
 
-    if ypos != genie_chibi_ypos:
-        if ypos == "base" or ypos == "default":
-            $ genie_chibi_ypos = 190
+    if ypos != gen_chibi_ypos:
+        if ypos in ["base","default"]:
+            $ gen_chibi_ypos = 190
         elif ypos == "behind_desk":
-            $ genie_chibi_ypos = 200
+            $ gen_chibi_ypos = 200
         else:
-            $ genie_chibi_ypos = int(ypos)
+            $ gen_chibi_ypos = int(ypos)
 
 
     #Genie Chibi Actions.
@@ -346,68 +347,89 @@ label gen_chibi(action = "", xpos=genie_chibi_xpos, ypos=genie_chibi_ypos, pic =
         pause.5
 
     else:
-        if flip or genie_flip != 1: #Same variable that the main sprite is using. #1 == Default
-            $ genie_chibi_flip = -1
+        if flip:
+            $ gen_chibi_flip = -1
             show screen genie_stand
         else:
-            $ genie_chibi_flip = 1
+            $ gen_chibi_flip = 1
             show screen genie_stand
 
     return
 
 
-label gen_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = genie_speed, loiter = True, redux_pause = 0):
+### Genie Chibi Walk ###
+
+# xpos + ypos = position the chibi walks to.
+# action = "enter", sets the starting position of the chibi at the entrance (door).
+# action = "leave", automatically hide the chibi with a door sound and pause.
+# speed = time it will take for the chibi to move A to B in seconds. Lower value = faster walk.
+# loiter = flag that shows the standing chibi after the walk, default is True
+# redux_pause = value to decrease the time to pause before hideing the animation early
+
+label gen_walk(xpos=walk_xpos, ypos=walk_ypos, speed=gen_speed, action="", loiter=True, redux_pause=0):
     hide screen bld1
     hide screen blktone
     with d3
 
     hide screen genie_walk
-
     hide screen genie_stand
 
-    if pos1 == "mid":
-        $ walk_xpos = 500
-    elif pos1 == "desk":
-        $ walk_xpos = 440
-    elif pos1 == "door":
-        $ walk_xpos = 750
-    else:
-        $ walk_xpos = int(pos1)
-
-    if pos2 == "mid":
-        $ walk_xpos2 = 500
-    elif pos2 == "desk":
-        $ walk_xpos2 = 440
-    elif pos2 == "left":
-        $ walk_xpos2 = 100
-    elif pos2 == "door":
-        $ walk_xpos2 = 750
-    elif pos2 == "leave":
-        $ walk_xpos2 = 750
+    # Action command.
+    if action == "enter":
+        call play_sound("door")
+        $ gen_chibi_xpos = 750
+        $ gen_chibi_ypos = 250
+    if action == "leave":
+        $ xpos = "door"
+        $ ypos = "base"
         $ loiter = False
+
+    # Start position.
+    $ walk_xpos = gen_chibi_xpos
+    $ walk_ypos = gen_chibi_ypos
+
+    # Target location.
+    if xpos == "mid":
+        $ walk_xpos2 = 500
+    elif xpos == "desk":
+        $ walk_xpos2 = 440
+    elif xpos == "left":
+        $ walk_xpos2 = 100
+    elif xpos == "door":
+        $ walk_xpos2 = 750
     else:
-        $ walk_xpos2 = int(pos2)
+        $ walk_xpos2 = int(xpos)
 
-    $ genie_chibi_ypos = 190
-    $ genie_speed = speed #Speed of walking animation. (lower = faster)
+    if ypos in ["base","default"]:
+        $ walk_ypos2 = 190
+    else:
+        $ walk_ypos2 = int(ypos)
 
-    if walk_xpos > walk_xpos2: #right to left (genie_walk)
-        $ genie_chibi_flip = -1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( 1 )
+    $ gen_speed = speed #Speed of walking animation. (lower = faster)
+
+
+    # Walk right to left
+    if walk_xpos > walk_xpos2:
+        $ gen_chibi_flip = -1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( 1 )
         show screen genie_walk
-        $ tmp = genie_speed - redux_pause
+        $ tmp = gen_speed - redux_pause
         pause tmp
-        $ genie_chibi_xpos = walk_xpos2
+        $ gen_chibi_xpos = walk_xpos2
+        $ gen_chibi_ypos = walk_ypos2
         hide screen genie_walk
         if loiter:
             show screen genie_stand
-    else: #left to right (genie_walk)
-        $ genie_chibi_flip = 1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( -1 )
+
+    # Walk left to right
+    else:
+        $ gen_chibi_flip = 1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( -1 )
         show screen genie_walk
-        $ tmp = genie_speed - redux_pause
+        $ tmp = gen_speed - redux_pause
         pause tmp
-        $ genie_chibi_xpos = walk_xpos2
+        $ gen_chibi_xpos = walk_xpos2
+        $ gen_chibi_ypos = walk_ypos2
         hide screen genie_walk
-        if pos2 == "leave":
+        if action == "leave":
             call play_sound("door")
             with d3
             pause.5

@@ -15,8 +15,8 @@ label hermione_random_clothing:
         $ hermione_wardrobe_unlocked = True
 
         call set_her_action("hold_book") # This will only be used once in the game, here.
-        call her_walk("door","mid",2.7)
-        pause.2
+
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
         call her_main("","base","base",xpos="mid",ypos="base")
         call ctc

@@ -229,9 +229,11 @@ label hg_pf_dance:
                 m "We'll see..."
                 call her_main("Tsk!","disgust","glance",tears="mascara")
 
+                call her_walk(action="leave", speed=2.5)
+
                 $ her_mood += 35
 
-                jump could_not_flirt
+                jump end_hermione_event
 
 
     #Second Event
@@ -542,12 +544,11 @@ label hg_pf_dance:
         with d3
         pause.2
 
-        call her_walk("desk","mid",1.5)
+        call her_walk(xpos="mid", ypos="base", speed=1.5)
 
         call her_main("................................","disgust","down_raised",ypos="head")
         pause.2
 
-        hide screen hermione_main
         $ hermione_wear_panties = True
         $ hermione_wear_top = True
         $ hermione_wear_bottom = True
@@ -556,9 +557,9 @@ label hg_pf_dance:
 
         call her_chibi("stand","mid","base",flip=True)
         pause.2
-        call her_walk("mid","desk",2)
 
-        show screen bld1
+        call her_walk(xpos="desk", ypos="base", speed=2)
+
         call her_main("........................","normal","worriedCl",xpos="base",ypos="base")
         stop music fadeout 2.0
         call her_main("Can I just get my points now, please?","angry","worriedCl",emote="05")
@@ -633,7 +634,8 @@ label hg_pf_dance:
                     hide screen hermione_main
                     with d3
 
-                    call her_walk("mid","leave",2.5,loiter=False)
+                    call her_walk(action="leave", speed=2.5)
+
                     call blkfade
 
                     stop music fadeout 1.0
@@ -1326,9 +1328,8 @@ label hg_pf_dance:
                     with d3
                     pause.5
 
+                    call her_walk(xpos="door", ypos="base", speed=2)
 
-                    #Walks to the door
-                    call her_walk("mid","door",2)
                     pause.2
                     $ tt_xpos=670
                     $ tt_ypos=200
@@ -1347,17 +1348,17 @@ label hg_pf_dance:
                     call her_chibi("stand","door","base")
                     pause.1
 
-                    call her_walk("door","mid",3)
+                    call her_walk(xpos="mid", ypos="base", speed=3)
                     pause.2
 
-                    show screen bld1
                     call her_main("Just in case...","annoyed","angryL")
                     stop music fadeout 1.0
 
                     hide screen bld1
                     with d3
 
-                    call her_walk("mid","desk",3, redux_pause = 2,loiter=False)
+                    call her_walk(xpos="desk", ypos="base", speed=3, redux_pause=2, loiter=False)
+
                     call blkfade
                     pause.5
 
@@ -1767,22 +1768,20 @@ label hg_pf_dance:
                                                             call her_main("Oh, this is a new low even for you, [genie_name]!","soft","angry")
                                                             m "I said you are dismissed."
                                                             call her_main("*GROAN!*","clench","angry",emote="01")
-                                                            $ her_mood += 50
                                                             hide screen bld1
                                                             call ctc
 
                                                             call blkfade
-                                                            call gen_chibi("hide")
-                                                            hide screen g_c_c_u # Genie's sperm. Universal.
-                                                            hide screen chair_left
-                                                            hide screen desk
-                                                            show screen genie
-                                                            show screen bld1
+                                                            hide screen g_c_c_u
+                                                            call gen_chibi("sit_behind_desk")
                                                             call her_chibi("stand","desk","base")
-                                                            pause.1
                                                             call hide_blkfade
-                                                            call music_block
-                                                            jump could_not_flirt #Leaves without getting any points.
+
+                                                            call her_walk(action="leave", speed=2.5)
+
+                                                            $ her_mood += 50
+
+                                                            jump end_hermione_event
 
 
                                     else: # You jerk off your cock and Hermione is NOT OK with it.
@@ -1930,9 +1929,11 @@ label end_hg_dancing:
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="base",ypos="base")
 
+    call her_walk(action="leave", speed=2.5)
+
     if her_whoring < 12: #Adds points till 12.
         $ her_whoring +=1
 
     $ hg_pf_dance_OBJ.points += 1
 
-    jump end_hg_pf
+    jump end_hermione_event

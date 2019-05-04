@@ -164,7 +164,7 @@ label cho_intro_1:
     call her_main("Professor I'm sorry to bother you but I wanted to...","open","closed",ypos="head")
     call her_main("!!!","normal","wide",ypos="head",trans="hpunch")
 
-    call her_walk("door","570",2)
+    call her_walk(xpos="570", ypos="base", speed=2)
     call her_chibi("stand","570","base",flip=True)
 
     call cho_main("","annoyed","angry","angry","R",xpos="base",ypos="base")
@@ -331,7 +331,7 @@ label cho_intro_1:
 
     call cho_chibi("leave")
 
-    call her_chibi("stand","mid","base")
+    call her_chibi("stand","mid","base",flip=False)
     with d3
     pause.5
 
@@ -345,7 +345,7 @@ label cho_intro_1:
     call her_main("I’m leaving.","normal","frown")
 
     # Hermione leaves
-    call her_walk("mid","leave",2.5)
+    call her_walk(action="leave", speed=2.5)
 
     # Hermione Mood down
     $ her_mood += 6
@@ -697,7 +697,7 @@ label cho_hermione_talk:
                 g9 "You may leave now."
                 call her_main("I will!{w} Good day, Sir!","open","angryCl")
 
-                call her_walk("mid","leave",2.5)
+                call her_walk(action="leave", speed=2.5)
 
                 call bld
                 m "She might forget all about it in time."
@@ -843,11 +843,11 @@ label cho_hermione_talk:
     call her_main("...","annoyed","glanceL")
 
     # Hermione leaves after glaring one last time at Cho.
-    call her_walk("mid","door",2.5)
-    pause.5
+    call her_walk(xpos="door", ypos="base", speed=2.5)
+    pause.2
     call her_chibi("stand","door","base",flip=False)
     with d3
-    pause.5
+    pause.2
 
     call her_main("*glare*","normal","angry",ypos="head")
     # Add Cho glaring back with her 'head' image.
@@ -875,9 +875,9 @@ label cho_hermione_talk:
     stop music fadeout 1.0
 
     $ cho_intro_state = "complete"
+
     $ cho_unlocked = True
-    call give_reward(">You've unlocked the ability to summon Cho to your office.","interface/icons/head/head_cho_1.png")
-    $ achievement.unlock("unlockcho", True)
+    $ achievement.unlock("unlockcho")
 
     # End of Intro.
     $ hermione_busy = True

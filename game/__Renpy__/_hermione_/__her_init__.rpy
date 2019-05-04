@@ -82,28 +82,18 @@ label her_init:
 
 
         # Chibi.
-        $ hermione_chibi_xpos_name        = "base" #Stored xpos name
-        $ hermione_chibi_ypos_name        = "base" #Stored ypos name
-        $ hermione_chibi_stand       = "characters/hermione/chibis/walk/h_walk_a_01.png"
-        $ hermione_chibi_stand_f     = "characters/hermione/chibis/walk/h_walk_a_01.png"
-        $ hermione_chibi_stand_nude  = "characters/hermione/chibis/walk/h_walk_n_01.png" #NOT IN USE
-        $ hermione_chibi_blink       = "ch_hem blink_a"
-        $ hermione_chibi_blink_f     = "ch_hem blink_a_flip"
-        $ hermione_chibi_walk        = "ch_hem walk_a"
-        $ hermione_chibi_walk_f      = "ch_hem walk_a_flip"
-        $ hermione_chibi_run         = "ch_hem run_a"
-        $ hermione_chibi_run_f       = "ch_hem run_a_flip"
-        $ hermione_chibi_fly         = "ch_hem fly_a"
-        $ hermione_chibi_fly_f       = "ch_hem fly_a_flip"
+        $ her_chibi_stand       = "ch_hem blink_a"
+        $ her_chibi_walk        = "ch_hem walk_a"
 
         $ u_h_animation              = ""
         $ u_h_animation_paused       = ""
         $ u_h_ani_xpos               = 0
         $ u_h_ani_ypos               = 0
 
-        $ hermione_chibi_xpos        = 540
-        $ hermione_chibi_ypos        = 250
-        $ hermione_chibi_zorder      = 3
+        $ her_chibi_xpos        = 540
+        $ her_chibi_ypos        = 250
+        $ her_chibi_zorder      = 3
+        $ her_chibi_flip        = 1
 
 
 

@@ -44,26 +44,31 @@ init -2:
         linear speed xpos x2 # linear
 
 
-
-    transform genie_walk_trans(x,x2):
-        xpos x
-        ypos 190
-        linear genie_speed xpos x2 # linear
-
     transform snape_walk_trans(x,x2):
         xpos x
         ypos 210
         linear snape_speed xpos x2 # linear
 
-    transform custom_walk_02(x,x2):
+    transform custom_walk_02(x,x2): # Used for Luna screens
         xpos x
         ypos 250
-        linear hermione_speed xpos x2 # linear
+        linear her_speed xpos x2 # linear
 
     transform susan_walk_trans(x,x2):
         xpos x
         ypos 250
         linear susan_speed xpos x2 # linear
+
+
+    transform gen_walk_trans(x, x2, y, y2):
+        xpos x
+        ypos y
+        linear gen_speed xpos x2 ypos y2 # linear
+
+    transform her_walk_trans(x, x2, y, y2):
+        xpos x
+        ypos y
+        linear her_speed xpos x2 ypos y2 # linear
 
     transform cho_walk_trans(x, x2, y, y2):
         xpos x

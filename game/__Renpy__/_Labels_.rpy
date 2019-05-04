@@ -360,6 +360,9 @@ label play_sound(sound=""):
     if sound in ["door"]:
         $ renpy.play('sounds/door.mp3')
 
+    if sound in ["footsteps"]:
+        $ renpy.play('sounds/footsteps.mp3')
+
     if sound in ["owl"]:
         play sound "sounds/owl.mp3"  #Quiet...
 
@@ -459,6 +462,20 @@ label play_music(music=""):
 
     return
 
+### MUSIC BLOCK ###
+label music_block:
+    if daytime:
+        call play_music("day_theme")
+    else:
+        call play_music("night_theme")
+    return
+
+### YOU LUCK IMAGINATION ###
+label vague_idea:
+
+    call nar(">You lack imagination for an idea of this caliber.")
+
+    return
 
 
 #Adds star next to personal favours if you can gain her_whoring points.

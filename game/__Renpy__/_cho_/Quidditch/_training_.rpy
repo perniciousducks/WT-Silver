@@ -367,7 +367,7 @@ label demonstrate_tactic(position=""):
 
         # Genie looks up.
         call gen_chibi("hide")
-        $ genie_chibi_stand = "characters/genie/chibis/standing.png"
+        $ gen_chibi_stand = "characters/genie/chibis/standing.png"
         call gen_chibi("stand","desk","base")
         with d3
 

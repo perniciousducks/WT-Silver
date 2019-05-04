@@ -4,14 +4,10 @@
 
 label collar_scene:
 
-    call play_sound("door") #Sound of a door opening.
-
-    call her_walk("door","mid",1.5)
-    pause.2
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call nar(">Hermione bursts into the room crying")
 
-    show screen bld1
     call her_main("[genie_name], am I a slut?","angry","base",tears="soft",xpos="right",ypos="base")
     m "What are you talking about?"
     call her_main("Susan Bones is telling everyone in the school that I'm a slut!","open","angryCl")
@@ -58,16 +54,16 @@ label slut_scene: #Locked to her being your slut
 
     call play_music("playful_tension") #HERMIONE
     hide screen genie
-    $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
+    $ gen_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
+    $ her_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ her_chibi_ypos = 10
     $ g_c_u_pic = "blowjob_ani"
     $ h_c_u_pic = "hand_ani"
     show screen chair_left
     show screen h_c_u
 
-    hide screen hermione_blink #Hermione stands still.
+    hide screen hermione_stand #Hermione stands still.
     hide screen blktone
     hide screen bld1
     call hide_blkfade
@@ -217,18 +213,13 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     m "Good night. {w}Slut."
     call her_main("...","base","down")
-    show screen genie
-    hide screen chair_left
-    hide screen hermione_main
-    hide screen chair_left
-    hide screen g_c_u
-    hide screen h_c_u
-    hide screen ctc
-    hide screen bld1
+
+    call her_walk(action="leave", speed=2.5)
+
     $ hermione_zorder = 5
 
-    jump end_hg_pf #Hides screens, calls her_walk, resets and ends day.
-    #she then comes back in the evening with a story about some people abusing her and some congratulating her
+    jump end_hermione_event
+
 
 label whore_scene: #(locked behind the public her_whoring flag)
 
@@ -258,8 +249,8 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_walk_desk_blkfade
                                                                                                                                                                                   #HERMIONE
     hide screen genie
-    $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "pause_sex"
     show screen chair_left
     show screen g_c_u
@@ -365,13 +356,12 @@ label whore_scene: #(locked behind the public her_whoring flag)
 
     call her_main("Goodbye [genie_name].","angry","dead",cheeks="blush",tears="crying")
     m "Goodbye whore."
-    hide screen hermione_main
-    with d3
 
-    jump end_hg_pf
+    call her_walk(action="leave", speed=2.5)
 
-    #m "Also, come see me tonight after everyone has seen the new you. I want to hear what they say."
-    #call her_main("...yes [genie_name].","angry","suspicious",cheeks="blush",tears="messy")
+    $ hermione_zorder = 5
+
+    jump end_hermione_event
 
 
 label slave_scene:
@@ -396,12 +386,12 @@ label slave_scene:
     call her_walk_desk_blkfade
 
     hide screen genie
-    $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "pause_sex"
     show screen chair_left
     show screen g_c_u
-    hide screen hermione_blink #Hermione stands still.
+    hide screen hermione_stand #Hermione stands still.
     call hide_blkfade
 
     $ hermione_zorder = 8
@@ -501,10 +491,10 @@ label slave_scene:
     m "Because I said so. Now get off the table and on to your knees."
     call her_main("Yes master.","angry","down_raised")
     hide screen hermione_main
-    $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
+    $ gen_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
+    $ her_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ her_chibi_ypos = 10
     $ h_c_u_pic = "hand_ani"
     hide screen g_c_u
     show screen h_c_u
@@ -540,22 +530,17 @@ label slave_scene:
     hide screen hermione_main
     m "Hahaha, of course not. Slaves aren't paid girl, that's what makes them slaves."
     call her_main("I suppose your right.","base","glance")
+
     hide screen hermione_main
-    show screen blkfade
-    with d3                                                                                                                                                                                 #HERMIONE
-    show screen genie
-    hide screen chair_left
-    hide screen g_c_u
-    hide screen h_c_u
-    show screen hermione_blink #Hermione stands still.
-    $ hermione_chibi_xpos = 400
-    call hide_blkfade
+    call gen_chibi("sit_behind_desk")
+    call her_chibi("stand","mid","base")
+    call fade
+
+    call her_walk(action="leave", speed=2.5)
 
     $ hermione_zorder = 5
-    hide screen hermione_main
-    with d3
 
-    jump end_hg_pf
+    jump end_hermione_event
 
 
 label good_girl_scene:
@@ -596,9 +581,11 @@ label good_girl_scene:
     $ gryffindor += 50
     call her_main("Thank you [genie_name]. Have a nice night.","smile","angry")
     m "You too [hermione_name]."
-    hide screen hermione_main
-    with d3
 
     $ collar = 4
 
-    jump end_hg_pf
+    call her_walk(action="leave", speed=2.5)
+
+    $ hermione_zorder = 5
+
+    jump end_hermione_event

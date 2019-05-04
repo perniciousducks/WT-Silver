@@ -77,17 +77,16 @@ label hg_pr_kiss: #LV.5 (Whoring = 12 - 14)
             call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.","smile","glance")
             m "Great. See you after your classes then."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_kiss_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_kiss_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First time event.
     if her_whoring >= 12 and her_whoring < 15: # LEVEL 05
@@ -122,10 +121,14 @@ label hg_pr_kiss_complete:
             m ".............."
             m "You are not getting paid, you know that, right?"
             call her_main("I don't care...","scream","angryCl")
+
+            call her_walk(action="leave", speed=2.5)
+
             $ her_mood +=25
 
             $ hg_pr_kiss_OBJ.inProgress = False
-            jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
+
+            jump end_hermione_event
 
         #Event A
         elif one_out_of_three == 2:
@@ -188,10 +191,14 @@ label hg_pr_kiss_complete:
                     m "Too late for that, [hermione_name]."
                     m "You are dismissed."
                     call her_main("......","angry","base",tears="soft")
+
+                    call her_walk(action="leave", speed=2.5)
+
                     $ her_mood +=25
 
                     $ hg_pr_kiss_OBJ.inProgress = False
-                    jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
+
+                    jump end_hermione_event
 
 
     elif her_whoring >= 15 and her_whoring <= 17: # LEVEL 06. Event level 02.
@@ -431,6 +438,8 @@ label hg_pr_kiss_complete:
     m "The \"Gryffindor\" house gets 45 points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_kiss_OBJ.points += 1
     $ hg_pr_kiss_OBJ.inProgress = False
 
@@ -440,4 +449,4 @@ label hg_pr_kiss_complete:
     if her_reputation <= 14:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

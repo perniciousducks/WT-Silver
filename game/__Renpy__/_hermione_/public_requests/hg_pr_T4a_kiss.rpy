@@ -111,17 +111,16 @@ label hg_pr_flash: #LV.4 (Whoring = 9 - 11)
             call her_main("Classes are about to start... I'd better leave now.","base","base")
             her "I will see you later tonight, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_flash_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_flash_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First time event.
     if her_whoring >= 9 and her_whoring < 12:
@@ -146,8 +145,11 @@ label hg_pr_flash_complete:
                 her "..."
                 her "I'd better go now."
 
+                call her_walk(action="leave", speed=2.5)
+
                 $ hg_pr_flash_OBJ.inProgress = False
-                jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
+
+                jump end_hermione_event
 
         #Event B
         elif one_out_of_three == 2:
@@ -452,27 +454,29 @@ label hg_pr_flash_complete:
     hide screen blktone
     with d3
 
-    call her_walk("mid","door",2)
-    pause.3
+    call her_walk(xpos="door", ypos="base", speed=2)
+    pause.2
 
     show screen blktone
-    if one_out_of_three == 2 and her_whoring >= 12 and her_whoring <= 14: #Event level 02.
-        call her_main("\"Slytherin\"...","upset","closed",ypos="head")
+    if her_whoring <= 14:
 
-    if one_out_of_three == 3 and her_whoring >= 12 and her_whoring <= 14: #Event level 02.
-        call her_main("(I can't believe I did that today...)","upset","closed",ypos="head")
-        call her_main("(What if Harry or Ron saw me like that?)","angry","wide",ypos="head")
-        call her_main("(Standing there...)",ypos="head")
-        call her_main("(Pressing my breasts against that window glass...)",ypos="head")
-        call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised",ypos="head")
-        call her_main("(No. Protecting the honor of the \"Gryffindor\" house is my number one priority.)","upset","closed",ypos="head")
-        call her_main("(We must get the cup this year, no matter the cost...)",ypos="head")
-        call her_main("(........)","angry","down_raised",ypos="head")
+        if one_out_of_three == 3:
+            call her_main("(I can't believe I did that today...)","upset","closed",ypos="head")
+            call her_main("(What if Harry or Ron saw me like that?)","angry","wide",ypos="head")
+            call her_main("(Standing there...)",ypos="head")
+            call her_main("(Pressing my breasts against that window glass...)",ypos="head")
+            call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised",ypos="head")
+            call her_main("(No. Protecting the honor of the \"Gryffindor\" house is my number one priority.)","upset","closed",ypos="head")
+            call her_main("(We must get the cup this year, no matter the cost...)",ypos="head")
+            call her_main("(........)","angry","down_raised",ypos="head")
+        else:
+            call her_main("\"Slytherin\"...","upset","closed",ypos="head")
 
-    if her_whoring >= 15 and one_out_of_three == 1:
+    else:
         call her_main(".........................","grin","dead",ypos="head")
 
-    call hide_blktone
+    hide screen blktone
+    call her_chibi(action="leave")
 
     $ hg_pr_flash_OBJ.points += 1
     $ hg_pr_flash_OBJ.inProgress = False
@@ -483,4 +487,4 @@ label hg_pr_flash_complete:
     if her_reputation <= 11:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

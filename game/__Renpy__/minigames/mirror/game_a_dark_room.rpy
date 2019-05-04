@@ -146,7 +146,7 @@ label DRgame_chibis:
     call sna_chibi("hide")
 
     #Player
-    $ genie_chibi_zorder = 1
+    $ gen_chibi_zorder = 1
     if DRplayer in DRgame.characters:
         call gen_chibi("stand","710","165",flip=True)
 
@@ -594,17 +594,17 @@ screen DRgame_menu:
 
     #Player
     imagebutton:
-        xpos genie_chibi_xpos
-        ypos genie_chibi_ypos
+        xpos gen_chibi_xpos
+        ypos gen_chibi_ypos
         focus_mask True
         #xanchor "center"
         #yanchor "center"
-        if genie_chibi_flip == 1:
-            idle genie_chibi_stand
-            hover yellowTint(genie_chibi_stand)
+        if gen_chibi_flip == 1:
+            idle gen_chibi_stand
+            hover yellowTint(gen_chibi_stand)
         else:
-            idle im.Flip(genie_chibi_stand, horizontal=True)
-            hover yellowTint( im.Flip(genie_chibi_stand, horizontal=True) )
+            idle im.Flip(gen_chibi_stand, horizontal=True)
+            hover yellowTint( im.Flip(gen_chibi_stand, horizontal=True) )
         action [Hide("DRgame_menu"), Jump("dark_room_player")]
 
     #Stranger
@@ -625,8 +625,8 @@ screen DRgame_menu:
 
     if DRmaid in DRgame.characters and DRmaid.location in ["room","desk","fireplace"]:
         imagebutton:
-            xpos hermione_chibi_xpos
-            ypos hermione_chibi_ypos
+            xpos her_chibi_xpos
+            ypos her_chibi_ypos
             focus_mask True
             xanchor "center"
             yanchor "center"

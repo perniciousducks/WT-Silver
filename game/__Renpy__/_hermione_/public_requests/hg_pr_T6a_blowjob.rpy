@@ -91,17 +91,16 @@ label hg_pr_blowjob: #LV.7 (Whoring = 18 - 20)
             m "Report back to me after your classes as usual..."
             call her_main("Of course...","annoyed","angryL")
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_blowjob_OBJ.inProgress = True
 
-    jump hg_pr_transition_block
+    jump end_hermione_event
 
 
 label hg_pr_blowjob_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First time event.
     if her_whoring >= 18 and her_whoring < 21:
@@ -153,11 +152,14 @@ label hg_pr_blowjob_complete:
             call her_main("No, [genie_name]. I would not accept it...","annoyed","annoyed")
             m "Hm... Well, this will be all then."
             her "Have a good night, [genie_name]."
-            hide screen hermione_main                                                                                                                                                                                 #HERMIONE
+            hide screen hermione_main
             with d3
 
+            call her_walk(action="leave", speed=2.5)
+
             $ hg_pr_blowjob_OBJ.inProgress = False
-            jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
+
+            jump end_hermione_event
 
         #Event C
         elif one_out_of_three == 3: ### EVENT (C)
@@ -259,9 +261,7 @@ label hg_pr_blowjob_complete:
             m "Don't forget to take a shower first."
             call her_main("A shower? Why?","base","glance")
             m "Never mind..."
-            show screen ctc
-            pause
-            hide screen ctc
+            call ctc
 
         #Event C
         elif one_out_of_three == 3:
@@ -298,6 +298,8 @@ label hg_pr_blowjob_complete:
     m "The \"Gryffindor\" house gets 65 points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ aftersperm = False
     $ uni_sperm = False
 
@@ -312,6 +314,4 @@ label hg_pr_blowjob_complete:
     if her_reputation <= 20:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block
-
-    return
+    jump end_hermione_event

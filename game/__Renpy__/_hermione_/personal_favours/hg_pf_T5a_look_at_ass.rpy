@@ -73,16 +73,18 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                         call her_main("but you better keep your hands you yourself...","annoyed","angryL")
 
             "\"Fine, leave. I don't care...\"":
-                $ her_mood = +12
                 her "Tsk!"
-                call music_block
-                jump could_not_flirt
+
+                call her_walk(action="leave", speed=2.5)
+
+                $ her_mood = +12
+
+                jump end_hermione_event
 
 
         m "Alright, alright..."
         g9 "Just get naked already!"
 
-        hide screen bld1
         show screen blktone
         call her_main("...","annoyed","annoyed",xpos="mid",ypos="base")
 
@@ -248,7 +250,7 @@ label hg_show_ass:
                 call set_her_action("none","update")
 
                 call her_main("I think I'd better go...","angry","worriedCl",cheeks="blush")
-                hide screen chair_left #Genie's chair.
+                hide screen chair_left
                 hide screen desk
                 call gen_chibi("hide")
                 call her_chibi("stand","mid","base")
@@ -470,7 +472,7 @@ label hg_show_ass:
 
             ">You take your cock out and start stroking it..."
 
-            show screen chair_left #Genie's chair.
+            show screen chair_left
             show screen desk
             call gen_chibi("jerking_off","mid","base")
             hide screen bld1
@@ -832,19 +834,17 @@ label hg_show_ass_cumming:
 label end_hg_show_ass:
     $ hermione_ass_cum = False
 
-    call set_her_action("none","update") #Resets clothing.
-
     hide screen hermione_main
     hide screen hermione_ass
     hide screen jerking_off_01
     hide screen groping_01
     hide screen groping_02
 
+    call set_her_action("none","update") #Resets clothing.
+
+    call gen_chibi("sit_behind_desk")
     call her_chibi("stand","desk","base")
 
-    hide screen chair_left
-    show screen genie
-    show screen hermione_main
     hide screen blktone
     hide screen blkfade
     call her_main(xpos="right",ypos="base",trans="fade")
@@ -871,6 +871,30 @@ label end_hg_show_ass:
     else:
         her "I'd better go now then. It's getting pretty late..."
 
+    call her_walk(xpos="door", ypos="base", speed=2.5)
+
+    #First event.
+    if her_whoring < 15:
+        call her_main("(How degrading... why do i keep agreeing to this...?)","disgust","down_raised",cheeks="blush",ypos="head")
+
+    #Second event.
+    elif her_whoring < 18:
+        call her_main("........................","disgust","down_raised",cheeks="blush",ypos="head")
+
+    #Third event.
+    elif her_whoring >= 18 and aftersperm:
+        call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-5}(i wonder what he'll ask me to do next...?){/size}","open","ahegao_raised",cheeks="blush",ypos="head")
+
+    else:
+        call her_main("{size=-5}(That was so exhilerating...) {/size}", "base", "ahegao_raised", cheeks="blush",ypos="head")
+        call her_main("{size=-5}(No, Hermione, you silly girl!) {/size}", "angry", "angry", cheeks="blush",ypos="head")
+        call her_main("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!) {/size}", "angry", "angry", cheeks="blush",ypos="head")
+        call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
+
+    call her_chibi(action="leave")
+
+
     $ hg_pf_look_at_ass_OBJ.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 12 and her_whoring < 15:
@@ -888,29 +912,4 @@ label end_hg_show_ass:
 
     $ hg_pf_look_at_ass_OBJ.points += 1
 
-    hide screen bld1
-    hide screen hermione_main
-    with d3
-    pause.2
-
-    call her_walk("desk","door",2.5)
-
-    #First event.
-    if her_whoring >= 12 and her_whoring < 15:
-        call her_main("(How degrading... why do i keep agreeing to this...?)","disgust","down_raised",cheeks="blush",ypos="head")
-
-    #Second event.
-    elif her_whoring >= 15 and her_whoring < 18:
-        call her_main("........................","disgust","down_raised",cheeks="blush",ypos="head")
-
-    #Third event.
-    elif her_whoring >= 18:
-        call her_main("{size=-5}(That was so exhilerating...) {/size}", "base", "ahegao_raised", cheeks="blush",ypos="head")
-        call her_main("{size=-5}(No, Hermione, you silly girl!) {/size}", "angry", "angry", cheeks="blush",ypos="head")
-        call her_main("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!) {/size}", "angry", "angry", cheeks="blush",ypos="head")
-        call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
-    if her_whoring >= 18 and aftersperm:
-        call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
-        call her_main("{size=-5}(i wonder what he'll ask me to do next...?){/size}","open","ahegao_raised",cheeks="blush",ypos="head")
-
-    jump end_hg_pf
+    jump end_hermione_event

@@ -78,7 +78,10 @@ label hg_pf_grope_breasts:
 
         if favor_failed: #fails when you slap her tits and her_whoring < 12
             $ favor_failed = False #Reset
-            jump could_not_flirt
+
+            call her_walk(action="leave", speed=2.5)
+
+            jump end_hermione_event
 
         call hg_breast_molester_3_grabbing
 
@@ -124,7 +127,7 @@ label hg_breast_molester_1:
 
     hide screen genie
     call her_chibi("hide")
-    show screen chair_left #Genie's chair.
+    show screen chair_left
     show screen groping_03
     with d1
     hide screen bld1
@@ -218,7 +221,7 @@ label hg_breast_molester_2:
 
     hide screen genie
     call her_chibi("hide")
-    show screen chair_left #Genie's chair.
+    show screen chair_left
     show screen groping_03
     with d1
 
@@ -599,7 +602,7 @@ label end_hg_breast_molester:
 
     if her_whoring >= 21:
 
-        call her_walk("desk","door",3)
+        call her_walk(xpos="door", ypos="base", speed=3)
 
         call her_main("(What about my points?)","disgust","down_raised",cheeks="blush",ypos="head")
         if her_whoring < 24:
@@ -607,9 +610,11 @@ label end_hg_breast_molester:
         else:
             call her_main("(Eh, who cares)","base","ahegao_raised",cheeks="blush",ypos="head")
 
+        call her_chibi(action="leave")
+
     if her_whoring < 6: #Adds points till 6.
         $ her_whoring +=1
 
     $ hg_pf_grope_breasts_OBJ.points += 1
 
-    jump end_hg_pf
+    jump end_hermione_event

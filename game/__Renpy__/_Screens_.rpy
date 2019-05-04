@@ -361,12 +361,12 @@ screen s_head2: #Snape. Head.
 
 label teleport(position=None,effect=True):
     if position == "genie":
-        $ teleport_xpos = genie_chibi_xpos+75
-        $ teleport_ypos = genie_chibi_ypos-15
+        $ teleport_xpos = gen_chibi_xpos+75
+        $ teleport_ypos = gen_chibi_ypos-15
         $ teleport_zorder = 3
     elif position == "hermione":
-        $ teleport_xpos = hermione_chibi_xpos+45
-        $ teleport_ypos = hermione_chibi_ypos-80
+        $ teleport_xpos = her_chibi_xpos+45
+        $ teleport_ypos = her_chibi_ypos-80
         $ teleport_zorder = 3
     elif position == "desk":
         $ teleport_xpos = 320
@@ -484,19 +484,19 @@ screen l_head: #Screen that shows a full sprite of HERMIONE.
 ### CGs ###
 screen snape_groping:
     add "images/CG/scene_01.png"
-    zorder hermione_chibi_zorder
+    zorder her_chibi_zorder
 
 screen snape_facial:
     add "images/CG/scene_03.png"
-    zorder hermione_chibi_zorder
+    zorder her_chibi_zorder
 
 screen snape_sex:
     add "images/CG/scene_04.png"
-    zorder hermione_chibi_zorder
+    zorder her_chibi_zorder
 
 screen dual_hand_job:
     add "images/CG/scene_02.png"
-    zorder hermione_chibi_zorder
+    zorder her_chibi_zorder
 
 screen blkback:
     zorder 1
@@ -513,7 +513,7 @@ screen sccg:
 
 screen luncg:
 
-    add lun_cg_base       
+    add lun_cg_base
 
     add lun_cg_body         xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom
     add lun_cg_hair         xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom
@@ -533,7 +533,7 @@ screen luncg:
 
     add lun_cg_dick         xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
     add lun_cg_genie        xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
-    
+
     zorder 6
 
 
@@ -555,7 +555,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         global ccg1
         global ccg2
         global ccg3
-        global loopimage 
+        global loopimage
 
         if layer1 is not None:
             ccg1 = layer1
@@ -598,21 +598,21 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.with_statement(Dissolve(0.5))
 
     def lunCG(pupil=None, eye=None, mouth=None, eyebrow=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None):
-        global lun_cg_body     
-        global lun_cg_hair     
-        global lun_cg_cheeks   
-        global lun_cg_mouth    
-        global lun_cg_eyewhite 
-        global lun_cg_pupil        
-        global lun_cg_eye      
-        global lun_cg_eyebrow  
-        global lun_cg_eyewear  
-        global lun_cg_tears  
-        global lun_cg_hairtop  
-        global lun_cg_extra_1  
-        global lun_cg_extra_2 
+        global lun_cg_body
+        global lun_cg_hair
+        global lun_cg_cheeks
+        global lun_cg_mouth
+        global lun_cg_eyewhite
+        global lun_cg_pupil
+        global lun_cg_eye
+        global lun_cg_eyebrow
+        global lun_cg_eyewear
+        global lun_cg_tears
+        global lun_cg_hairtop
+        global lun_cg_extra_1
+        global lun_cg_extra_2
         global lun_cg_extra_3
-        global lun_cg_xpos 
+        global lun_cg_xpos
         global lun_cg_ypos
         global lun_cg_dick
 
@@ -650,7 +650,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         if pos is not None:
             lun_cg_xpos = lun_loop_xpos[pos]
             lun_cg_ypos = lun_loop_ypos[pos]
-            lun_cg_dick = lun_cg_path+"dick_"+str(pos)+".png" 
+            lun_cg_dick = lun_cg_path+"dick_"+str(pos)+".png"
 
 
 
@@ -658,4 +658,3 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("luncg")
         renpy.with_statement(Dissolve(0.1))
-

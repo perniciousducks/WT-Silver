@@ -71,17 +71,16 @@ label hg_pr_flirt:
 
     her "Well, I'd better go now. Classes are about to start..."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_flirt_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_flirt_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First time event.
     call her_main("Good evening, [genie_name].","base","base",xpos="right",ypos="base")
@@ -135,8 +134,11 @@ label hg_pr_flirt_complete:
                             m "Get out of my sight..."
                             call her_main("Yes, [genie_name]...Sorry, [genie_name]...","annoyed","frown")
 
+                            call her_walk(action="leave", speed=2.5)
+
                             $ hg_pr_flirt_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
                 #Event B
                 elif one_out_of_three == 2:
@@ -170,12 +172,16 @@ label hg_pr_flirt_complete:
                         "\"Favour failed! No points of you!\"":
                             stop music fadeout 1.0
                             call her_main("You are not going to pay me, [genie_name]?","open","worried")
-                            $ her_mood +=15
                             call her_main("But, you promised!","angry","base",tears="soft")
                             call her_main("................","mad","worriedCl",tears="soft_blink")
 
+                            call her_walk(action="leave", speed=2.5)
+
+                            $ her_mood +=15
+
                             $ hg_pr_flirt_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
                 #Event C
                 elif one_out_of_three == 3:
@@ -200,8 +206,11 @@ label hg_pr_flirt_complete:
                             stop music fadeout 1.0
                             call her_main("I don't feel like I deserved any this time anyway...","annoyed","angryL")
 
+                            call her_walk(action="leave", speed=2.5)
+
                             $ hg_pr_flirt_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
             #Second Level.
             elif her_whoring >= 3 and her_whoring < 6:
@@ -381,18 +390,24 @@ label hg_pr_flirt_complete:
                             call her_main("","base","happyCl")
 
                         "\"Tell me now, or lose the points!\"":
-                            $ her_mood +=10
                             call her_main("[genie_name], please, I don't want to discuss this with you, [genie_name].","disgust","glance")
                             m "No one is forcing you, [hermione_name]."
                             m "You are free to leave."
                             call her_main("{size=-4}(Stubborn old man!){/size}","angry","angry")
 
+                            call her_walk(action="leave", speed=2.5)
+
+                            $ her_mood +=10
+
                             $ hg_pr_flirt_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
     $ gryffindor +=5
     m "The \"Gryffindor\" house gets 5 points!"
     her "Thank you, [genie_name]."
+
+    call her_walk(action="leave", speed=2.5)
 
     $ hg_pr_flirt_OBJ.points += 1
     $ hg_pr_flirt_OBJ.inProgress = False
@@ -405,4 +420,4 @@ label hg_pr_flirt_complete:
     if her_reputation <= 2:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

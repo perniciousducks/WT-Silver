@@ -133,8 +133,8 @@ label luna_revert_1: #Reversion event #DONE
     hide screen genie
     show screen chair_left
     show screen desk
-    $ genie_chibi_xpos = -20
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -20
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "jerking_off_02_ani"
     show screen g_c_u
     with fade
@@ -298,8 +298,8 @@ label luna_revert_1: #Reversion event #DONE
     call lun_main("[lun_genie_name]!!!","open","angry","mad","mid")
 
     #Hermione Enters.
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
+
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","closed",xpos="base",ypos="base")
 
@@ -468,6 +468,8 @@ label luna_revert_1: #Reversion event #DONE
     m "Don't you want to stay a little longer?"
     call her_main("I don't think so, sir...","disgust","glance")
 
+    call her_walk(action="leave", speed=2.5)
+
     $ luna_reverted = True
     $ luna_wardrobe_unlocked = False
     $ lun_corruption = -2 #Triggers new intro event.
@@ -475,7 +477,7 @@ label luna_revert_1: #Reversion event #DONE
 
     $ hermione_busy = True
 
-    jump end_hg_pf
+    jump end_hermione_event
 
     #result of this event:
         #Ability to redo all luna's favours with the real luna
@@ -489,8 +491,8 @@ label luna_revert_2: #Non-Reversion event #DONE
     hide screen genie
     show screen chair_left
     show screen desk
-    $ genie_chibi_xpos = -20
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -20
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "jerking_off_02_ani"
     show screen g_c_u
     with fade
@@ -636,8 +638,8 @@ label luna_revert_2: #Non-Reversion event #DONE
     call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
     #Hermione Enters.
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
+
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","closed",xpos="base",ypos="base")
     call her_main("But I really need a good-.","angry","down_raised")
@@ -1212,10 +1214,12 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("(Wait, what was I doing here...)","annoyed","suspicious")
     call reset_luna
 
+    call her_walk(action="leave", speed=2.5)
+
     $ luna_busy = True
     $ hermione_busy = True
 
-    jump end_hg_pf
+    jump end_hermione_event
 
     #result of this event:
         #Ability to get Luna to summon hermione for threesome (Planned future event)

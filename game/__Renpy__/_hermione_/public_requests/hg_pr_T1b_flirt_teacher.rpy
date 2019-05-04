@@ -39,17 +39,16 @@ label hg_pr_flirt_teacher:
 
     her "Well, I'd better go now. Classes are about to start..."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_flirt_teacher_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_flirt_teacher_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First level.
     call her_main("Good evening, [genie_name].","base","base",xpos="right",ypos="base")
@@ -106,11 +105,14 @@ label hg_pr_flirt_teacher_complete:
                             call her_main("How unbecoming of a school headmaster!","scream","worriedCl")
                             m "You are dismissed, [hermione_name]."
                             call her_main("Tsk!","angry","angry",emote="01")
+
+                            call her_walk(action="leave", speed=2.5)
+
                             $ her_mood += 18
-                            call music_block
 
                             $ hg_pr_flirt_teacher_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
                 #Event B
                 elif one_out_of_three == 2: ### Snape
@@ -156,10 +158,12 @@ label hg_pr_flirt_teacher_complete:
                             call her_main("But I did my best...","annoyed","angryL")
                             call her_main("And I feel so humiliated now...","angry","worriedCl",emote="05")
                             call her_main("But I understand and won't argue with your decision...","normal","worriedCl")
-                            call music_block
+
+                            call her_walk(action="leave", speed=2.5)
 
                             $ hg_pr_flirt_teacher_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
                 #Event C
                 elif one_out_of_three == 3: ### Filch
@@ -267,6 +271,7 @@ label hg_pr_flirt_teacher_complete:
 
                                     call her_main("","angry","angry")
                                     call ctc
+
                                     $ her_mood += 18
 
                         "\"Fine... Here are your points.\"":
@@ -297,13 +302,17 @@ label hg_pr_flirt_teacher_complete:
                         "\"Just take your points and go!\"":
                             call her_main(".........................","normal","base")
                         "\"Favour failed! No points for you!\"":
-                            $ her_mood +=15
                             call her_main("But [genie_name]?","normal","frown")
                             m "You are dismissed, [hermione_name]."
                             call her_main(".........................................","angry","angry")
 
+                            call her_walk(action="leave", speed=2.5)
+
+                            $ her_mood +=15
+
                             $ hg_pr_flirt_teacher_OBJ.inProgress = False
-                            jump could_not_flirt
+
+                            jump end_hermione_event
 
             #Third level.
             elif her_whoring >= 9:
@@ -458,6 +467,8 @@ label hg_pr_flirt_teacher_complete:
     m "The \"Gryffindors\" gets 15 points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_flirt_teacher_OBJ.points += 1
     $ hg_pr_flirt_teacher_OBJ.inProgress = False
 
@@ -469,4 +480,4 @@ label hg_pr_flirt_teacher_complete:
     if her_reputation <= 5:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

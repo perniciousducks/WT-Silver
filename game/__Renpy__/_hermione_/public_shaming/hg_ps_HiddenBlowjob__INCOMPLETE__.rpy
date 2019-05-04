@@ -120,5 +120,5 @@ label hg_ps_HiddenBlowjob_complete:
 
 label hg_ps_HiddenBlowjob_complete_1:
 
-    jump end_hg_pf
+    jump end_hermione_event
 

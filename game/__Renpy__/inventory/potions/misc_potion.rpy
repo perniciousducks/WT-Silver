@@ -11,22 +11,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-#    hide screen bld1
-#    hide screen hermione_main
-#    hide screen blktone
-#    hide screen ctc
-#    with Dissolve(.3)
-
-#    call her_walk("mid","leave",2)
+#    call her_walk(action="leave", speed=2)
 
 #    $ hermione_busy = True
+
 #    jump main_room

@@ -27,9 +27,11 @@ label open_weasley_store:
         call gen_chibi("stand","left","base")
         call hide_blkfade
     else:
-        call gen_chibi("hide")
+        call gen_chibi("stand","0","base")
         call hide_blkfade
-        call gen_walk("0","left",1.4)
+
+        call gen_walk(xpos="left", ypos="base", speed=1.4)
+        
     pause.2
 
     $ renpy.block_rollback()
@@ -674,7 +676,7 @@ label purchase_deco(item):
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
                 "[item_token_str]"
-                
+
                 if len(filter(lambda x: x.unlocked==False, wall_deco_list)) <= 0:
                     $ achievement.unlock("postman")
                 if len(filter(lambda x: x.unlocked==False, misc_hat_list)) <= 0:

@@ -312,7 +312,9 @@ label end_hg_show_panties:
 
         $ hg_pf_show_panties_OBJ.points += 1
 
-        jump end_hg_pf #Hides screens. Hermione walks out. Resets Hermione.
+        call her_walk(action="leave", speed=2.5)
+
+        jump end_hermione_event
 
     else:
         menu:
@@ -324,7 +326,9 @@ label end_hg_show_panties:
                 else:
                     her "It's getting pretty late, [genie_name]... I should go..."
 
-                jump end_hg_pf
+                call her_walk(action="leave", speed=2.5)
+
+                jump end_hermione_event
 
             "-Ask about more favours-":
                 m "Are you interested in some additional points?"

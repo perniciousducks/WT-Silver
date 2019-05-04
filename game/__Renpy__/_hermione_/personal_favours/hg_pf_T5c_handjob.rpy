@@ -1023,14 +1023,11 @@ label end_hg_handjob:
     hide screen groping_02
     hide screen groping_naked_tits
 
+    call gen_chibi("sit_behind_desk")
     call her_chibi("stand","desk","base")
 
-    hide screen chair_left
-    show screen genie
-    show screen hermione_main
     hide screen blktone
     hide screen blkfade
-    show screen bld1
     call her_main(trans="fade",xpos="right",ypos="base")
 
     if her_whoring < 24:
@@ -1038,6 +1035,8 @@ label end_hg_handjob:
         $ gryffindor += current_payout
 
     call her_main("Thank you, [genie_name]...","soft","baseL")
+
+    call her_walk(action="leave", speed=2.5)
 
     $ hg_pf_handjob_OBJ.points += 1
 
@@ -1050,4 +1049,4 @@ label end_hg_handjob:
     if her_whoring >= 15 and her_whoring < 18:
         $ hg_pf_handjob_OBJ.level = 2 #Event hearts level (0-3)
 
-    jump end_hg_pf
+    jump end_hermione_event

@@ -98,17 +98,16 @@ label hg_pr_grope:
             call her_main("Great. I will see you after the classes then, [genie_name]. As usual.","angry","wink")
             m "Yes. Good luck."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_grope_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_grope_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First time event.
     call her_main("Good evening, [genie_name].","base","base",xpos="right",ypos="base")
@@ -400,6 +399,8 @@ label hg_pr_grope_complete:
     m "The \"Gryffindor\" house gets 25 points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
 
     $ hg_pr_grope_OBJ.points += 1
@@ -411,4 +412,4 @@ label hg_pr_grope_complete:
     if her_reputation <= 8:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

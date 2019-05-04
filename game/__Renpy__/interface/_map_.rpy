@@ -532,19 +532,31 @@ label floor_7th:
         if unlocked_7th and first_time_7th:
             call gen_chibi(xpos="door", ypos="base", flip=True)
             call hide_blkfade
+
             $ first_time_7th=False
             m "So... he was walking around here."
-            call gen_chibi(action="hide")
-            call gen_walk("door","200",2.7)
+
+            call gen_walk(xpos="200", ypos="base", speed=2.7)
+
+            call bld
             m "I can definitely sense a strong magical energy in this place..."
-            call gen_walk("200","door",2.7)
+
+            call gen_walk(xpos="door", ypos="base", speed=2.7)
+
+            call bld
             m "Maybe if I...or I could..."
-            call gen_walk("door","120",2.7)
+
+            call gen_walk(xpos="120", ypos="base", speed=2.7)
+
+            call bld
             g4 "I could be in my office jacking off right now!!"
             show screen room_of_req_door
             pause 1
+
             call gen_chibi(xpos="120",ypos="base")
             pause.8
+
+            call bld
             g9 "Well... will you look at that"
             hide screen room_of_req_door
             show screen floor_7th_door
@@ -756,7 +768,7 @@ label outskirts_of_hogwarts:
     call gen_chibi("stand","desk","base")
     call hide_blkfade
 
-    call gen_walk("desk","leave",3)
+    call gen_walk(action="leave", speed=2.8)
     call blkfade
 
     stop music fadeout 1.0

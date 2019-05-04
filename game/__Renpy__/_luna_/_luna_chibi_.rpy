@@ -58,7 +58,7 @@ label lun_chibi(action = "", xpos=luna_chibi_xpos, ypos=luna_chibi_ypos, flip=Fa
 
 ### LUNA CHIBI WALK ###
 
-label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, action = "", loiter = True, redux_pause = 0):
+label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
     call hide_characters

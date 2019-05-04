@@ -24,7 +24,7 @@ label a_christmas_tale:
     $ daytime = False #Night
     $ interface_color = "gray"
     $ room_deco = "_deco_1" #Xmas deco
-    $ genie_chibi_stand = "characters/misc/santa/santa_chibi.png"
+    $ gen_chibi_stand = "characters/misc/santa/santa_chibi.png"
 
     call room("main_room")
     hide screen genie
@@ -244,7 +244,8 @@ label a_bad_time_to_disrobe_part_1:
 
     m "25 points you said? sounds good to me."
 
-    call her_walk("desk","door", 2.5)
+    call her_walk(xpos="door", ypos="base", speed=2.5)
+
     call her_main("{size=7}You heard what I said...{/size}","annoyed","closed",ypos="head")
     call her_chibi("leave")
 
@@ -261,30 +262,18 @@ label a_bad_time_to_disrobe_part_1:
     with d3
 
     g9 "I'll take that cloak back if you don't mind."
-
     call her_main("Certainly.","base","base",xpos="right",ypos="base")
-
     m "Now, spill the beans."
-
     call her_main("I..I don't have any beans on me sir.","soft","narrow")
-
     m "\"Is this girl for real?\""
-
     m "It's just an expression, tell me... did you complete your assignment?"
-
     call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.","soft","happyCl")
-
     m "Naked?"
-
     call her_main("Naked..ish","disgust","baseL")
-
     m "How can you be naked...ish?"
-
     call her_main("Well, I had my underwear on, I'd be cold otherwise","base","base")
-
     m "Cold? You'd have the cloak on you..."
     m "What happened next then?"
-
     call her_main("Well, a few of the boys were in there.","base","base")
     call her_main("They were playing wizards chess...","base","base")
     call her_main("Pretty poorly in fact.","disgust","wink")
@@ -292,15 +281,10 @@ label a_bad_time_to_disrobe_part_1:
     m "..."
     m "I'm sorry miss Granger but you're going to have to do better than this."
     m "I expect better from you by now."
-
     call her_main("So, no points then?", "angry", "annoyed")
-
     m "No, I know you can do better."
-
     call her_main("Fine! I'll do better next time. Double points! I'll show you!","angry","angryL")
-
     m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
-
     call her_main("Thank you professor... I'll remember that for next time.", "grin", "happy")
 
     show screen blkfade
@@ -316,13 +300,9 @@ label a_bad_time_to_disrobe_part_1:
     hide screen blkfade
     with d3
 
-
     call her_main("I see that you have the cloak ready for me sir.","base","baseL",xpos="right",ypos="base")
-
     m "Indeed, I'm expecting better from you today girl."
-
     call her_main("I won't disappoint you sir!","grin","base")
-
     m "I'll be the judge of that..."
 
     show screen day_to_night
@@ -338,55 +318,38 @@ label a_bad_time_to_disrobe_part_1:
     with d3
 
     call her_main("...","upset","base", tears="mascara_soft",xpos="right",ypos="base")
-
     m "What happened? Where's your shirt?"
-
     call her_main("What does it look like?","upset","base", tears="mascara_soft")
-
     m "Well, I know what it looks like..."
-
     call her_main("I didn't want to disappoint, sir, so I did what you asked...","soft","base", tears="mascara_soft")
     call her_main("I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.","base","base", tears="mascara_soft")
-
     m "Well done. And then?"
-
     call her_main("I took the cloak and snuck into the boys changing room...","base","base", tears="mascara")
     call her_main("I stood next to the doorway so that they wouldn't bump into me.","base","base", tears="mascara")
-
     m "Great idea... and no one noticed?"
-
     call her_main("Well, at first... This damn cloak is too small.","angry","base", tears="mascara")
     call her_main("I thought I would be short enough to fit under it...","base","base", tears="mascara")
     call her_main("I didn't notice that my feet were visible...","upset","angry", tears="mascara")
-
     m "\"Well, that's a shame.\""
-
     call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.","upset","shocked_raised", tears="mascara")
-
     g11 "And what?"
-
     call her_main("And I slipped and my butt fell out!","scream","surprised", tears="mascara")
 
     g9 "{size=18}30 POINTS TO....{/size}"
 
     call her_main("I'm not done!","open","down", tears="mascara")
-
     m "Sorry, you carry on my dear!"
-
     call her_main("I ran out and grabbed what I could of my clothes... I think the boy may have seen me.","soft","concerned", tears="mascara")
     call her_main("Professor.... I'm beginning to have second thoughts about this cloak idea.","soft","concerned", tears="mascara")
-
     m "The boy didn't see your face, that's what matters."
     m "You could've draped the cloak around your head and it would be enough."
-
     call her_main("Professor!","shock","wide_stare", tears="mascara")
-
     m "Just trying to lighten the mood."
     m "Here's an extra 5 points for a Job well done, miss Granger."
     g9 "35 points to Gryffindor!"
-
     call her_main("Thank you professor....","grin","base", tears="mascara")
-    call her_walk ("desk","door", 2.5)
+
+    call her_walk (xpos="door", ypos="base", speed=2.5)
 
     call her_main("\"He's right, they wouldn't recognize me if I didn't show my face...\"","base","base", cheeks="blush", tears="mascara",ypos="head")
     call her_main("\"would they?\"","base","base", cheeks="blush", tears="mascara",ypos="head")
@@ -463,7 +426,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("By getting your cloak back right?","base","worried")
     m "Right..."
 
-    call her_walk("desk","leave", 2.5)
+    call her_walk(action="leave", speed=2.5)
 
     show screen day_to_night
     with d3
@@ -481,7 +444,7 @@ label a_bad_time_to_disrobe_part_2:
     hide screen day_to_night
     with d3
 
-    call her_walk("door","desk",2.5)
+    call her_walk(xpos="desk", ypos="base", speed=2.5)
     pause.5
 
     call her_main("...","normal","dead", cheeks="blush",xpos="right",ypos="base")
@@ -547,7 +510,7 @@ label a_bad_time_to_disrobe_part_2:
     m "40 points to Gryffindor!"
     call her_main("Thank you professor...","soft","soft")
 
-    call her_walk("desk","door", 2.5)
+    call her_walk(xpos="door", ypos="base", speed=2.5)
 
     call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"","base","dead", cheeks="blush",ypos="head")
     call her_main("\"That thing was massive...\"","normal","down",ypos="head")
@@ -1390,8 +1353,8 @@ label forgotten_lets_have_sex:
     $ genie_sprite_base = "characters/genie/base_4.png"
     $ genie_sprite_xpos = 550
     $ genie_sprite_ypos = 0
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_ani"
 
     call bld
@@ -1416,8 +1379,8 @@ label forgotten_lets_have_sex:
     call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide") #HERMIONE
     hide screen genie
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_ani"
     show screen chair_left
     show screen g_c_u

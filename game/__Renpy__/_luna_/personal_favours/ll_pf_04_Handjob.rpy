@@ -26,8 +26,8 @@ label luna_favour_4: ###Luna handjob #DONE
         hide screen genie
         show screen chair_left
         show screen desk
-        $ genie_chibi_xpos = -20
-        $ genie_chibi_ypos = 10
+        $ gen_chibi_xpos = -20
+        $ gen_chibi_ypos = 10
         $ g_c_u_pic = "jerking_off_02_ani"
         show screen g_c_u
         with fade
@@ -354,8 +354,8 @@ label luna_favour_4: ###Luna handjob #DONE
             hide screen genie
             show screen chair_left
             show screen desk
-            $ genie_chibi_xpos = -20
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -20
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "jerking_off_02_ani"
             show screen g_c_u
             with fade
@@ -571,8 +571,8 @@ label luna_favour_4: ###Luna handjob #DONE
             hide screen genie
             show screen chair_left
             show screen desk
-            $ genie_chibi_xpos = -20
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -20
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "jerking_off_02_ani"
             show screen g_c_u
             with fade

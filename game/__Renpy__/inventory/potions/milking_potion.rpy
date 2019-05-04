@@ -119,10 +119,12 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("Thanks...","annoyed","suspicious")
     $ milking = -1
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
+
     jump main_room
+
 
 label potion_scene_11_2: #Milking potion part 2
     #Genie offers hermione the potion again
@@ -345,11 +347,12 @@ label potion_scene_11_2: #Milking potion part 2
 
     $ milking = 0
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
-    $ hermione_busy = True #this is intentional
+
     jump main_room
+
 
 label potion_scene_11_3: #Milking potion part 3
     $ milking = 0
@@ -945,9 +948,8 @@ label potion_scene_11_3: #Milking potion part 3
 
     $ milking = 0
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
-    $ hermione_busy = True
     $ hermione_busy = True
 
     if potion_version == 3:
@@ -964,8 +966,7 @@ label potion_scene_11_1_2: #Milking potion part 1 night time
     $ aftersperm = True
     $ milking = 0
 
-    call play_sound("door")
-    call her_walk("door","desk",2.5)
+    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call her_main("Professor! why didn't you warn me about this!","angry","angry",xpos="right",ypos="base")
 
@@ -994,13 +995,15 @@ label potion_scene_11_1_2: #Milking potion part 1 night time
     call her_main("good...","open","suspicious")
     call her_main("but don't think I've forgiven you!","open","angryCl")
     call nar(">Hermione storms out in a huff.")
-    $ her_mood =+ 10
 
-    call her_walk("desk","leave",2.5)
+    call her_walk(action="leave", speed=2.5)
+
+    $ her_mood =+ 10
 
     $ hermione_busy = True
     $ aftersperm = False
 
+    call bld
     m "(bitches... you'd think she'd be happy to get some {size=+5}big kahunas{/size} for free!)"
 
     return

@@ -63,10 +63,9 @@ label hg_wager_bj:
                 call her_main("Can I leave now?", mouth="annoyed", eye="down", flip=True)
                 m "You are excused miss Granger, but I will be taking 20 points from Gryffindor."
                 $ gryffindor -= 20 #should take gryffindor points and then hermione leaves
-                #hide screen bld1
-                hide screen hermione_main
-                with d3
-                call her_walk("410","leave",2)
+
+                call her_walk(action="leave", speed=2)
+
                 call sna_main("How did you talk her into that?", face="snape_02")
                 m "We made a bet involving house points and she lost, why did you have to barge your way in like that?"
                 m "It was just getting good!"
@@ -76,9 +75,9 @@ label hg_wager_bj:
                 m "It's not like I know how to lock that door..."
                 g4 "Can't a mythical creature feel up a schoolgirl in peace around here?"
                 call sna_main("Fine, I'll leave you to it, the less I have to see that girl the better...", face="snape_06")
-                hide screen bld1 #screen fades black and snape walks out
-                with d3
+
                 call sna_walk("mid","leave",3)
+
             else : #If she hasn't stripped twice.
                 call her_main("No, it's bad enough doing this to gain house points, it's much worse to prevent losing them!", mouth="clench", eye="angryL")
                 m "You don't enjoy it? Even a little?"
@@ -98,7 +97,9 @@ label hg_wager_bj:
                 call her_main("Thank you, [genie_name].", mouth="open", eye="base")
                 hide screen hermione_main
                 with d3
-                call her_walk("mid","leave",2)
+
+                call her_walk(action="leave", speed=2)
+
     else: #If her whoring is higher than 15 (when she can do blowjob favour)
         call set_u_ani("blowjob_ani","hand_ani", 0,10)
         call her_main("Gryffindor really can't afford to lose 20 points...", mouth="soft", eye="worried")
@@ -541,7 +542,7 @@ label hg_wager_bj:
                             call blkfade
                             call u_end_ani
                             hide screen blkfade
-                            jump end_hg_pf
+                            jump end_hermione_event
                         "-I'll pass-":
                             pass
                     #
@@ -579,7 +580,7 @@ label hg_wager_bj:
     call blkfade
     call u_end_ani
     hide screen blkfade
-    jump end_hg_pf #should reset it all
+    jump end_hermione_event
 
 label hg_wager_bj_secret:
     hide screen rollback_check

@@ -76,10 +76,13 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                         her "Well, so be it..."
 
             "\"Fine, leave. I don't care...\"":
-                $mad = +12
                 her "Tsk!"
-                call music_block
-                jump could_not_flirt
+
+                call her_walk(action="leave", speed=2.5)
+
+                $mad = +12
+
+                jump end_hermione_event
 
 
         hide screen blktone
@@ -234,7 +237,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
 
                 #Start Groping
                 hide screen blktone
-                show screen chair_left #Genie's chair.
+                show screen chair_left
                 hide screen bld1
                 show screen groping_naked_tits
                 call hide_blkfade
@@ -257,7 +260,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 call her_main("I think I'd better go...","angry","worriedCl",cheeks="blush",xpos="base",ypos="base")
 
                 #End Groping
-                hide screen chair_left #Genie's chair.
+                hide screen chair_left
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
@@ -272,10 +275,13 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 call her_main("And I am getting nothing?","scream","angry",cheeks="blush",emote="01")
                 m "You are dismissed, [hermione_name]..."
                 call her_main("Gr..................","angry","worriedCl",cheeks="blush")
-                call her_main("{size=-5}(Burn in hell, you wretched old---{/size}","angry","worriedCl",cheeks="blush")
+                call her_main("{size=-5}(Burn in hell, you wretched old-{/size}","angry","worriedCl",cheeks="blush")
+
+                call her_walk(action="leave", speed=2.5)
+
                 $ her_mood += 22
-                call music_block
-                jump could_not_flirt
+
+                jump end_hermione_event
 
             #Event Succeeds
             elif her_whoring >= 9 and her_whoring <= 11:
@@ -288,7 +294,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 #Start Groping
                 hide screen blktone8
                 hide screen blktone
-                show screen chair_left #Genie's chair.
+                show screen chair_left
                 hide screen bld1
                 call hide_blkfade
                 show screen groping_naked_tits
@@ -317,18 +323,16 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 m "It was hard to resist..."
 
                 #End Groping
-                hide screen chair_left #Genie's chair.
-                hide screen groping_naked_tits
                 hide screen bld1
-                show screen genie
+                call gen_chibi("sit_behind_desk")
                 call her_chibi("stand","desk","base")
                 call hide_blkfade
                 call ctc
 
-                call bld
                 call her_main(".............","soft","baseL",cheeks="blush")
                 call her_main("Can I get paid now please?","angry","worriedCl",cheeks="blush",emote="05")
                 m "Sure..."
+
                 $ her_mood += 9
 
             #Event Also Succeeds
@@ -342,7 +346,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 #Start Groping
                 hide screen blktone8
                 hide screen blktone
-                show screen chair_left #Genie's chair.
+                show screen chair_left
                 hide screen bld1
                 call hide_blkfade
                 show screen groping_naked_tits
@@ -418,7 +422,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 m "Right..."
 
                 #End Groping
-                hide screen chair_left #Genie's chair.
+                hide screen chair_left
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
@@ -522,7 +526,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 hide screen genie
                 hide screen bld1
                 hide screen blktone
-                show screen chair_left #Genie's chair.
+                show screen chair_left
                 show screen jerking_off_01
                 with d1
                 call hide_blkfade
@@ -558,13 +562,15 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
                         call her_main("You are a horrible person, [genie_name]...","angry","suspicious",cheeks="blush",tears="messy")
 
+                        call her_walk(aciton="leave", speed=2.5)
+
                         $ her_mood += 30
 
-                        call music_block
-                        jump could_not_flirt
+                        jump end_hermione_event
 
                     "\"Alright, alright. That's enough for now.\"":
                         $ her_mood +=9
+
                         pass
 
                     "-Start jerking your cock faster-":
@@ -575,14 +581,14 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                         ">You jerk it even faster!"
                         call her_main("[genie_name], think I will be leaving now...","annoyed","angryL",cheeks="blush")
                         g4 "No, wait, I'm almost there!"
-                        call blkfade
+                        call set_her_action("none","update")
 
                         call her_main("Ew! [genie_name]!","angry","suspicious",cheeks="blush")
                         call her_main("I'm leaving!","angry","suspicious",cheeks="blush")
-                        call set_her_action("none","update")
 
-                        call music_block
-                        jump could_not_flirt
+                        call her_walk(action="leave", speed=2.5)
+
+                        jump end_hermione_event
 
             #Second Event.
             elif her_whoring >= 9 and her_whoring <= 11:
@@ -598,9 +604,8 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 hide screen genie
                 hide screen bld1
                 hide screen blktone
-                show screen chair_left #Genie's chair.
+                show screen chair_left
                 show screen jerking_off_01
-                with d1
                 call hide_blkfade
                 call ctc
 
@@ -709,7 +714,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                 hide screen genie
                 hide screen bld1
                 hide screen blktone
-                show screen chair_left #Genie's chair.
+                show screen chair_left
                 show screen jerking_off_01
                 with d1
                 call hide_blkfade
@@ -942,19 +947,13 @@ label end_hg_show_breasts:
     #Door reaction.
     if her_whoring >= 6:
 
-        call her_walk("desk","door",3)
+        call her_walk(xpos="door", ypos="base", speed=3)
 
-        if her_whoring >= 6 and her_whoring < 9:
+        if her_whoring < 9:
             call her_main("(How humiliating... What have I become...?)","disgust","down_raised",cheeks="blush",ypos="head")
 
-        elif her_whoring >= 9 and her_whoring < 12:
+        elif her_whoring < 12:
             call her_main("........................","disgust","down_raised",cheeks="blush",ypos="head")
-
-        elif her_whoring >= 12:
-            call her_main("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
-            call her_main("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry",cheeks="blush",ypos="head")
-            call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry",cheeks="blush",ypos="head")
-            call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
 
         elif her_whoring >= 17 and aftersperm:
             call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
@@ -962,9 +961,17 @@ label end_hg_show_breasts:
             call her_main("{size=-5}(What will people think of me?){/size}","open","ahegao_raised",cheeks="blush",ypos="head")
             call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
 
+        else:
+            call her_main("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+            call her_main("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry",cheeks="blush",ypos="head")
+            call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry",cheeks="blush",ypos="head")
+            call her_main(".................................","base","ahegao_raised",cheeks="blush",ypos="head")
+
+    call her_chibi(action="leave")
+
     if her_whoring < 9: #Adds points till 9.
         $ her_whoring +=1
 
     $ hg_pf_look_at_breasts_OBJ.points += 1
 
-    jump end_hg_pf
+    jump end_hermione_event

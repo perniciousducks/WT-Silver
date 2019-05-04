@@ -84,7 +84,9 @@ label hat_intro_2: #Bringing in Hermione
     m "Scouts honor!"
     call her_main("Well if that's all then, [genie_name], I better head to class.","open","closed")
 
-    jump end_hg_pf
+    call her_walk(action="leave", speed=2.5)
+
+    jump end_hermione_event
 
 
 label hat_intro_3: #Luna change scene #DONE
@@ -108,7 +110,7 @@ label hat_intro_3: #Luna change scene #DONE
     call lun_main("Really? So am I going to have to change house?","upset","base","sad","mid")
     m "Of course not!"
     call lun_main("*Phew*!","base","happyCl","base","mid")
-    menu: 
+    menu:
         "-Let the hat mess with her-":
             pass
         "-Let her go-":
@@ -132,10 +134,11 @@ label hat_intro_3: #Luna change scene #DONE
             call lun_main("I'll come back later then, this really is something you nead to hear about!","base","closed","angry","R")
             $ luna_busy = True
 
-            call give_reward(">You've unlocked the ability to summon Luna Lovegood to your office.","interface/icons/head/head_luna_1.png")
-            $ achievement.unlock("unlocklun", True)
             $ luna_unlocked = True
+            $ achievement.unlock("unlocklun")
+
             return
+
     m "I just wanted to put the hat on your head to see if he made the right choice."
     call lun_main("oh, alright then!","base","base","base","R")
     ">You turn around and reach for the hat."
@@ -191,11 +194,10 @@ label hat_intro_3: #Luna change scene #DONE
     hat "Now now... no sense ruining the fun. You'll just have to wait..."
     m "Hmmph"
 
-    $ luna_busy = True
-
-    call give_reward(">You've unlocked the ability to summon Luna Lovegood to your office.","interface/icons/head/head_luna_1.png")
-    $ achievement.unlock("unlocklun", True)
     $ luna_unlocked = True
+    $ achievement.unlock("unlocklun")
+
+    $ luna_busy = True
 
     return
 

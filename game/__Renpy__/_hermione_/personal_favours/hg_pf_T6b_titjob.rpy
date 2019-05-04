@@ -933,13 +933,10 @@ label end_hg_titjob:
 
     call set_her_action("none","update")
 
-    call gen_chibi("hide")
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen chair_left
-    hide screen desk
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     call her_chibi("stand","desk","base")
-    pause.1
+
     call hide_blkfade
     pause.5
 
@@ -949,6 +946,8 @@ label end_hg_titjob:
         $ gryffindor += current_payout
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
+
+    call her_walk(action="leave", speed=2.5)
 
     if her_whoring < 18:
         $ her_whoring +=1
@@ -960,4 +959,4 @@ label end_hg_titjob:
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 
-    jump end_hg_pf #Resets screens. Hermione walks out. Resets Hermione.
+    jump end_hermione_event

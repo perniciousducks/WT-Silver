@@ -3,6 +3,8 @@
 label summon_hermione:
 
     call play_sound("door")
+    
+    call update_hermione
 
     ### RANDOM CLOTHING EVENTS ###
     call hermione_random_clothing

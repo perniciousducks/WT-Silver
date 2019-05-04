@@ -57,16 +57,16 @@ screen room_of_requirement_menu:
 screen genie_stand_mirror:
     tag genie_chibi_mirror
 
-    add genie_chibi_stand xpos genie_chibi_xpos-110 ypos genie_chibi_ypos xzoom -genie_chibi_flip #zoom (1.0/scaleratio)
+    add gen_chibi_stand xpos gen_chibi_xpos-110 ypos gen_chibi_ypos xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
 
-    zorder genie_chibi_zorder
+    zorder gen_chibi_zorder
 
 screen genie_walk_mirror:
     tag genie_chibi_mirror
 
-    add genie_chibi_walk at genie_walk_trans(-walk_xpos, walk_xpos2-110) xzoom -genie_chibi_flip #zoom (1.0/scaleratio)
+    add gen_chibi_walk at genie_walk_trans(-walk_xpos, walk_xpos2-110) xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
 
-    zorder genie_chibi_zorder
+    zorder gen_chibi_zorder
 
 label hide_room_req:
     hide screen room_of_requirement_menu
@@ -182,7 +182,10 @@ label enter_room_of_req:
         g4 "It's just a room filled with a bunch of crap...."
         call gen_chibi("stand","door","base",flip=True)
         m "And a mirror?"
-        call gen_walk("door","200",2.7)
+
+        call gen_walk(xpos="200", ypos="base", speed=2.7)
+
+        call bld
         m "..."
         m "Odd, it appears the source of the magic is emanating from this mirror..."
         whom "So you've found the mirror of Erised..."
@@ -261,7 +264,8 @@ label enter_room_of_req:
         play music "music/song18.mp3" fadein 4 fadeout 1
         call gen_chibi("stand","door","base",flip=True)
         call hide_blkfade
-        call gen_walk("door","200",2.7)
+
+        call gen_walk(xpos="200", ypos="base", speed=2.7)
 
     $ mirror_image = 1
     call gen_chibi("stand","200","base",flip=True)

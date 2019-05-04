@@ -37,9 +37,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("...","normal","angry","raised","mid")
         call lun_main("Well come on then, summon her...","pout","mad","angry","mid")
         ">You summon Hermione. Somehow..."
-        call play_sound("door") #Sound of a door opening.
 
-        call her_walk("desk","mid",2)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
         $ luna_flip = -1
         $ luna_r_arm = 2
@@ -119,8 +118,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("then kneel...","normal","suspicious","sad","mid")
 
         hide screen hermione_main
-        $ hermione_chibi_xpos = 40 #40 = Near Luna
-        $ hermione_chibi_ypos = 60
+        $ her_chibi_xpos = 40 #40 = Near Luna
+        $ her_chibi_ypos = 60
         $ h_c_u_pic = "characters/hermione/chibis/dance/sit_naked_blink.png"
         $ hermione_xpos=590
         show screen h_c_u
@@ -141,8 +140,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen genie
         show screen chair_left
         show screen desk
-        $ genie_chibi_xpos = -20
-        $ genie_chibi_ypos = 10
+        $ gen_chibi_xpos = -20
+        $ gen_chibi_ypos = 10
         $ g_c_u_pic = "images/animation/06_jerking_01.png"
         show screen g_c_u
         hide screen blkfade
@@ -463,8 +462,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Yes, well, 60 points to \"gryffindor\"!"
         $ gryffindor += 60
         call her_main("Thank you [genie_name]...","open","baseL")
+
+        call her_walk(action="leave", speed=2.5)
+
         $ luna_busy = True
-        jump end_hg_pf
+        $ hermione_busy = True
+
+        jump end_hermione_event
 
     elif lun_corruption <= 12: #second time
         $ lun_corruption += 1
@@ -479,9 +483,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("...","upset","suspicious","angry","R")
 
         ">You summon Hermione to your office."
-        call play_sound("door") #Sound of a door opening.
 
-        call her_walk("desk","mid",2)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
         $ luna_flip = -1
         $ luna_r_arm = 2
@@ -545,8 +548,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">As they're putting their clothes in a pile you slowly get up from your desk and whip your cock out from in between your robes."
         call lun_main("On your knees then, slut...","base","seductive","angry","mid")
         hide screen hermione_main
-        $ hermione_chibi_xpos = 40 #40 = Near Luna
-        $ hermione_chibi_ypos = 60
+        $ her_chibi_xpos = 40 #40 = Near Luna
+        $ her_chibi_ypos = 60
         $ h_c_u_pic = "characters/hermione/chibis/dance/sit_naked_blink.png"
         $ hermione_xpos=590
         show screen h_c_u
@@ -556,8 +559,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen genie
         show screen chair_left
         show screen desk
-        $ genie_chibi_xpos = -20
-        $ genie_chibi_ypos = 10
+        $ gen_chibi_xpos = -20
+        $ gen_chibi_ypos = 10
         $ g_c_u_pic = "images/animation/06_jerking_01.png"
         show screen g_c_u
         with fade
@@ -823,13 +826,17 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         with d3
 
         call her_main("this is going to be so much FUN!","grin","ahegao")
+
+        call her_walk(action="leave", speed=2.5)
+
         call lun_main("(What have I agreed to)","normal","suspicious","sad","down")
         hide screen luna_main
         call lun_chibi("leave")
 
         $ luna_busy = True
+        $ hermione_busy = True
 
-        jump end_hg_pf
+        jump end_hermione_event
 
 
     else: #third handjob event, needs to be repeatable
@@ -1148,7 +1155,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call load_hermione_clothing_saves
                     call update_her_uniform
 
-                    call her_walk("mid","leave",2.5)
+                    call her_walk(action="leave", speed=2.5)
 
                 else:
                     jump luna_her_hj_end
@@ -1192,7 +1199,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
     call play_sound("door") #Sound of a door opening.
     hide screen luna_main
     call lun_chibi("hide")
+    call her_chibi("hide")
 
     $ luna_busy = True
+    $ hermione_busy = True
 
-    jump end_hg_pf
+    jump end_hermione_event

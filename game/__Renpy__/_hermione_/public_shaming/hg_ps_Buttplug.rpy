@@ -411,9 +411,11 @@ label hg_ps_buttplug:
             call her_main("Thank you, [genie_name]!","base","glance")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","soft","ahegao")
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_ps_buttplug_OBJ.inProgress = True
 
-    jump hg_pr_transition_block
+    jump end_hermione_event
 
 
 
@@ -421,10 +423,9 @@ label hg_ps_buttplug:
 
 label hg_ps_buttplug_complete:
 
-    call play_sound("door")
-    call her_walk("door","mid",2)
-    pause.5
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
+    call bld
     if her_whoring <= 15 and buttplug_size == 1: # LEVEL 06
         if one_out_of_three == 1: ### EVENT (A)
             m "[hermione_name], how did it go?"
@@ -1019,10 +1020,12 @@ label hg_ps_buttplug_complete:
     m "The \"Gryffindor\" house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_ps_buttplug_OBJ.points += 1
     $ hg_ps_buttplug_OBJ.complete = True
     $ hg_ps_buttplug_OBJ.inProgress = False
 
     call set_her_buttplug("remove")
 
-    jump hg_pr_transition_block
+    jump end_hermione_event

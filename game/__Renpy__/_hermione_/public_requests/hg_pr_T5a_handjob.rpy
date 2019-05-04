@@ -106,17 +106,16 @@ label hg_pr_handjob: #LV.6 (Whoring = 15 - 17)
             m "And report back to me after your classes, as usual."
             call her_main("Of course, [genie_name].","base","happyCl")
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_handjob_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_handjob_complete:
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
-
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     #First level.
     if her_whoring >= 15 and her_whoring < 18:
@@ -158,10 +157,14 @@ label hg_pr_handjob_complete:
                     call her_main(".....","angry","base")
                     m "You are free to go, [hermione_name]."
                     call her_main(".........","annoyed","angryL")
+
+                    call her_walk(action="leave", speed=2.5)
+
                     $ her_mood +=9
 
                     $ hg_pr_handjob_OBJ.inProgress = False
-                    jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
+
+                    jump end_hermione_event
 
                 "\"You shall only get half the payment then.\"":
                     $ current_payout = 27 #Used when haggling about price of th favour.
@@ -284,10 +287,14 @@ label hg_pr_handjob_complete:
                     m "Well, I didn't force you to give him that promise, did I?"
                     call her_main("......","angry","base")
                     call her_main("This is just not fair!","scream","worriedCl")
+
+                    call her_walk(action="leave", speed=2.5)
+
                     $ her_mood +=20
 
                     $ hg_pr_handjob_OBJ.inProgress = False
-                    jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
+
+                    jump end_hermione_event
 
                 "\"Alright, I think I can trust you.\"":
                     call her_main("Thank you, [genie_name].","base","base")
@@ -412,6 +419,7 @@ label hg_pr_handjob_complete:
                     m "That's the plan And thanks to your hard work, [hermione_name]..."
                     m "All goes according to keik-... I mean, the plan..."
                     call her_main("Hm...","upset","closed")
+
                     $ her_mood += 11
 
     #Third level.
@@ -562,6 +570,8 @@ label hg_pr_handjob_complete:
     m "The \"Gryffindor\" house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ uni_sperm = False  #Universal sperm.
     $ aftersperm = False #Shows stains on Hermione's uniform.
 
@@ -574,4 +584,4 @@ label hg_pr_handjob_complete:
     if her_reputation <= 17:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

@@ -47,15 +47,10 @@ label potion_scene_1_1_1: #catears (keep in mind Genie is trying to transform he
     m "Yes, [hermione_name], 20 points to Gryffindor."
     call her_main("Thank you [genie_name].","base","base")
     call nar(">Hermione heads off to class.")
+
+    call her_walk(action="leave", speed=2)
+
     $ gryffindor += 20
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone
-    hide screen ctc
-    with Dissolve(.3)
-
-    call her_walk("mid","leave",2)
 
     $ cat_ears_potion_return = True #Triggers Hermione return
 
@@ -66,14 +61,14 @@ label potion_scene_1_1_1: #catears (keep in mind Genie is trying to transform he
     call update_her_uniform
 
     $ hermione_busy = True
+
     jump main_room
 
-label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry and confused at being given cat ears and a tail.
-    call play_sound("door") #Sound of a door opening.
-    call her_chibi("stand","mid","base")
 
-    show screen bld1
-    call her_main("How could you do this to me [genie_name]?","angry","angry")
+label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry and confused at being given cat ears and a tail.
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+
+    call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
     her "Try and turn me into a cat!"
     call her_main("In the middle of class!","annoyed","worriedL")
     m "I didn't try and turn you into a cat [hermione_name]."
@@ -88,13 +83,8 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
         "-Let her go-":
             m "Goodnight [hermione_name]."
             call her_main("Goodnight [genie_name].","upset","closed")
-            hide screen bld1
-            hide screen hermione_main
-            hide screen blktone
-            hide screen ctc
-            with d3
 
-            call her_walk("mid","leave",2)
+            call her_walk(action="leave", speed=2)
 
             $ cat_ears_potion_return = False #Triggers Hermione return
             $ h_request_wear_ears = False
@@ -102,6 +92,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
             call update_her_uniform
 
             $ hermione_busy = True
+
             jump main_room
 
         "-Make her suck you off-" if her_whoring >= 17:
@@ -125,8 +116,8 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     hide screen genie
 
-    $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "blowjob_ani"
     show screen chair_left
     show screen g_c_u
@@ -212,18 +203,16 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     $ g_c_u_pic = "hand_ani"
     with d3
     call her_main("Thank you [genie_name]. Will that be all.","base","ahegao_raised")
-    hide screen hermione_main
     m "One last thing."
     m "Who's a good girl?"
     call her_main("..........","annoyed","worriedL")
     call her_main("I am...","smile","baseL")
 
     $ hermione_zorder = 5
-    hide screen hermione_main
-    hide screen chair_left
+
+    call hide_characters
     call her_chibi("hide")
-    call gen_chibi("hide")
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     hide screen bld1
     hide screen blktone
     with fade
@@ -233,6 +222,7 @@ label potion_scene_1_1_2: #Scene where Hermione comes back after classes angry a
     call update_her_uniform
 
     $ hermione_busy = True
+
     jump main_room
 
 
@@ -301,7 +291,7 @@ label potion_scene_1_2: #Luna potion
 
     hide screen hermione_main
     with hpunch
-    hide screen hermione_blink
+    hide screen hermione_stand
     call lun_chibi("stand","base","base")
     pause.5
 
@@ -461,13 +451,9 @@ label potion_scene_1_4: #Clone potion
     #Hermione feels both shame and pride
     #THE END
 
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone
-    hide screen ctc
-    with Dissolve(.3)
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
+
     jump main_room

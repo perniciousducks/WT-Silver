@@ -548,7 +548,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_chibi("hide")
     call update_luna_chibi_uniform
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
     $ luna_busy = True

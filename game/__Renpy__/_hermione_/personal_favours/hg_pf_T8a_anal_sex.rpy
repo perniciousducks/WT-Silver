@@ -12,8 +12,8 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_slow_ani"
 
     #Intro
@@ -154,8 +154,8 @@ label hg_anal_sex_1:
             hide screen genie
             show screen chair_left
 
-            $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "sex_slow_ani"
             show screen g_c_u
 
@@ -200,8 +200,8 @@ label hg_anal_sex_1:
             hide screen genie
             show screen chair_left
 
-            $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "blowjob_ani"
             show screen g_c_u
 
@@ -237,8 +237,8 @@ label hg_anal_sex_1:
             hide screen genie
             show screen chair_left
 
-            $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "sex_slow_ani"
             show screen g_c_u
 
@@ -279,8 +279,8 @@ label hg_anal_sex_1:
             hide screen genie
             show screen chair_left
 
-            $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "blowjob_ani"
             show screen g_c_u
 
@@ -302,8 +302,8 @@ label hg_anal_sex_1:
             hide screen genie
             show screen chair_left
 
-            $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+            $ gen_chibi_ypos = 10
             $ g_c_u_pic = "sex_slow_ani"
             show screen g_c_u
 
@@ -481,8 +481,8 @@ label hg_anal_sex_3:
     hide screen genie
     show screen chair_left
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_ani"
     show screen g_c_u
 
@@ -680,6 +680,8 @@ label end_hg_anal_sex:
 
     call her_main("Thank you, [genie_name]...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
 
+    call her_walk(action="leave", speed=2.5)
+
     if her_whoring < 24: #Adds points till 24.
         $ her_whoring +=1
 
@@ -696,4 +698,4 @@ label end_hg_anal_sex:
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 
-    jump end_hg_pf  #Resets screens. Hermione walks out. Resets Hermione.
+    jump end_hermione_event

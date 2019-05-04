@@ -69,12 +69,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "I'm afraid that I don't [hermione_name], now you'd best hurry if you don't want to be late."
             call her_main("...Yes [genie_name].","annoyed","annoyed")
 
-            hide screen hermione_main
-            hide screen blktone
-            hide screen bld1
-            with d3
-
-            call her_walk("mid","leave",2)
+            call her_walk(action="leave", speed=2)
 
             $ hermione_busy = True
 
@@ -177,14 +172,14 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call hide_blkfade
     pause.5
 
-    show screen bld1
     call her_main("Will... that be all [genie_name]?","soft","ahegao")
     m "Yes [hermione_name]. You can go now."
     pause.2
 
-    call her_walk("desk","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
+
     jump main_room
 
 
@@ -398,8 +393,8 @@ label potion_scene_2_2: #ass expansion
             hide screen ch_hotdog
             $ g_c_u_pic = "sex_cum_out_ani"
             show screen chair_left
-            $ genie_chibi_xpos = -70
-            $ genie_chibi_ypos = 10
+            $ gen_chibi_xpos = -70
+            $ gen_chibi_ypos = 10
             show screen g_c_u
 
             call cum_block
@@ -446,18 +441,17 @@ label potion_scene_2_2: #ass expansion
     hide screen groping_02
     hide screen chair_left
     hide screen desk
-    call gen_chibi("hide")
+    call gen_chibi("sit_behind_desk")
     call her_chibi("stand","desk","base")
-    show screen genie
-    hide screen blktone
-    hide screen bld1
     with d3
 
-    call her_walk("desk","leave",2)
+    call her_walk(action="leave", speed=2.5)
 
     $ hermione_busy = True
+
     call update_her_uniform
 
     jump main_room
+
         #will add this later
         #"-Fuck her ass-" if her_whoring >= 22:

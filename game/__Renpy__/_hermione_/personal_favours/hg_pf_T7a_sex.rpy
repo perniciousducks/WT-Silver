@@ -12,8 +12,8 @@ label hg_pf_sex: #LV.7 (Whoring = 18 - 20)
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_ani"
 
     call bld
@@ -640,8 +640,8 @@ label hg_sex_luna:
     call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide",ypos="head") #HERMIONE
     hide screen genie
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_ani"
     show screen chair_left
     show screen g_c_u
@@ -831,6 +831,8 @@ label end_hg_sex:
         $ gryffindor += current_payout
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base",flip=False)
 
+    call her_walk(action="leave", speed=2.5)
+
     if her_whoring < 21: #Adds points till 21.
         $ her_whoring +=1
 
@@ -845,4 +847,4 @@ label end_hg_sex:
 
     $ hg_pf_sex_OBJ.points += 1
 
-    jump end_hg_pf  #Resets screens. Hermione walks out. Resets Hermione.
+    jump end_hermione_event

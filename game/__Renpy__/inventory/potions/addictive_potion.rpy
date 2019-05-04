@@ -36,20 +36,18 @@ label potion_scene_3_1_1: #cum addiction - work in progress, has some scenes adj
     hide screen ctc
     with d3
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ addicted = True
     $ hermione_busy = True
     jump main_room
 
 label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum (replace sucking noises with actual text)
-    call play_sound("door") #Sound of a door opening.
-    call her_chibi("stand","mid","base")
-    pause.5
 
-    show screen bld1
-    call nar(">Hermione quickly enters your office.")
-    call her_main("What the hell did you do to me?","scream","worriedCl")
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    pause.2
+
+    call her_main("What the hell did you do to me?","scream","worriedCl", xpos="mid", ypos="base", trans="hpunch")
     m "Whatever are you talking about, [hermione_name]?"
     call her_main("Ughh, it doesn't matter, just let me suck it.","annoyed","worriedL")
     m "Why on earth would you want to do that? You're a top student, that doesn't sound appropriate."
@@ -71,8 +69,8 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
 
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     hide screen genie
-    $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "blowjob_ani"
     show screen chair_left
     show screen g_c_u
@@ -465,7 +463,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("...","annoyed","angryL")
     call her_chibi("drink_potion","mid","base")
     with d3
-    hide screen hermione_blink
+    hide screen hermione_stand
     call nar(">Hermione cautiously starts drinking the potion.")
     call her_main("","cum","worriedCl")
     pause .5
@@ -793,8 +791,9 @@ label potion_scene_3_3_1: #Hypno potion
     call set_her_action("none","skip_update")
     call her_main("And thanks again!{image=textheart} You're the best!","smile","happyCl",emote="06")
 
-    call her_walk("desk","leave",2.5)
+    call her_walk(action="leave", speed=2.5)
 
+    call bld
     m "(Maybe I should have told her to get dressed first...)"
 
     $ lipstick_pink_ITEM.unlocked = True #Unlocks pink lipstick.
@@ -803,7 +802,7 @@ label potion_scene_3_3_1: #Hypno potion
     call reset_hermione
 
     $ hermione_busy = True
-    call music_block
+
     jump main_room
 
 
@@ -822,7 +821,7 @@ label potion_scene_3_4_1:
     show screen blkfade
     with d3
     hide screen bld1
-    hide screen hermione_blink
+    hide screen hermione_stand
     #SEX
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
@@ -1010,7 +1009,7 @@ label potion_scene_3_4_1:
     ">you carry her unconscious body back to her room to sleep the last of the potion off."
     hide screen ccg
     hide screen hermione_main
-    hide screen hermione_blink
+    hide screen hermione_stand
     show screen genie
     hide screen blkfade
     with d3

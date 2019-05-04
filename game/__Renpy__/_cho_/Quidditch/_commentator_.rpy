@@ -108,7 +108,7 @@ label quidditch_commentator_event_2:
     g9 "Congratulations then, [hermione_name]! You got the j..."
     call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!","open","wide_stare",trans="hpunch")
 
-    call her_walk("mid","leave",1.7)
+    call her_walk(action="leave", speed=1.7)
 
     call bld
     m "Aaaa-nd, she's gone..."

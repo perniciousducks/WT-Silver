@@ -564,8 +564,8 @@ label hg_masturbate_3_cumming:
     #show screen desk
     #show screen chair_left
     hide screen genie
-    $ genie_chibi_xpos = -77
-    $ genie_chibi_ypos = 13
+    $ gen_chibi_xpos = -77
+    $ gen_chibi_ypos = 13
     $ g_c_u_pic = "images/animation/grope_e_01.png"
     show screen g_c_u
 
@@ -706,7 +706,6 @@ label end_hg_masturbate:
     hide screen g_c_c_u # Genie's sperm. Universal.
     call her_chibi("stand","desk","base")
     call gen_chibi("sit_behind_desk")
-    pause.1
 
     hide screen blktone
     hide screen bld1
@@ -719,6 +718,8 @@ label end_hg_masturbate:
         $ gryffindor += current_payout
 
     call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
+
+    call her_walk(action="leave", speed=2.5)
 
     if her_whoring < 15: #Adds points till 15.
         $ her_whoring +=1
@@ -734,4 +735,4 @@ label end_hg_masturbate:
     if hg_pf_masturbate_OBJ.points == 3:
         $ hg_pf_masturbate_OBJ.level = 3 #Event hearts level (0-3)
 
-    jump end_hg_pf  #Resets screens. Hermione walks out. Resets Hermione.
+    jump end_hermione_event

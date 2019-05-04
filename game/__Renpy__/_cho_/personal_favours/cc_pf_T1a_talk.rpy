@@ -30,7 +30,7 @@ label cc_pf_talk:
         elif cc_pf_talk_OBJ.level == 1:  # 1 Heart.
             # Talk about getting bullied by Slytherin.
             call cc_pf_talk_T2_E2
-        elif cc_pf_talk_OBJ.level == 3:  # 2 Heart.
+        elif cc_pf_talk_OBJ.level == 2:  # 2 Heart.
             # Talk about becoming more popular.
             call cc_pf_talk_T2_E3
         else:                            # 3+ Hearts.

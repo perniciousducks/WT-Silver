@@ -560,7 +560,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
             cho "Cow..."
 
             # Hermione leaves.
-            call her_walk("mid","leave",2.5)
+            call her_walk(action="leave", speed=2.5)
 
             cho "I thought you were on my side, Sir..."
             m "I'm on nobody's side, because nobody is on my side..."
@@ -657,7 +657,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
                 her "*Tzzzzzh!*"
 
             # Hermione leaves.
-            call her_walk("mid","leave",2.5)
+            call her_walk(action="leave", speed=2.5)
 
             cho "I have to say, [cho_genie_name], doing these favours is fun!"
             m "I'm glad you're enjoying yourself."

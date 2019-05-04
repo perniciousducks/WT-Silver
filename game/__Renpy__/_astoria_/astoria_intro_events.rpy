@@ -80,7 +80,7 @@ label letter_intro_hermione:
 
     call her_main("Consider it done, [genie_name]!","open","closed")
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     if snape_on_the_lookout:
         m "I wonder if she'll find them before Snape..."
@@ -138,7 +138,7 @@ label astoria_captured_intro:
     her "It's hermione granger, sir, although,... I'm not alone."
     m "Come in."
 
-    call her_walk("door","desk",2.7)
+    call her_walk(xpos="desk", ypos="base", action="enter", speed=2.7)
 
     call her_main("Hello sir.","normal","happy",xpos="mid",ypos="base")
     m "I thought you said you weren't alone?"
@@ -205,7 +205,7 @@ label astoria_captured_intro:
     call her_main("Goodbye Astoria...","angry","closed")
 
 
-    call her_walk("desk","leave",2.7)
+    call her_walk(action="leave", speed=2.7)
 
     call bld
     m "Right, well now that Hermione's gone, why don't you tell me exactly what--"
@@ -312,8 +312,9 @@ label astoria_captured_intro:
     m "(I feel like I'm actually starting to run this damn school.)"
     m "(This isn't what I signed on for...)"
 
-    call give_reward(">You've unlocked the ability to summon Astoria to your office.","interface/icons/head/head_astoria_1.png")
-    $ achievement.unlock("unlockast", True)
+    $ astoria_unlocked = True
+    $ achievement.unlock("unlockast")
+
     $ astoria_busy = True
     $ hermione_busy = True
     $ snape_busy = True
@@ -868,8 +869,9 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     hide screen bld1
     with d3
 
-    call give_reward(">You've unlocked the ability to summon Susan to your office.","interface/icons/head/head_susan_1.png")
-    $ achievement.unlock("unlocksus", True)
+    $ susan_unlocked = True
+    $ achievement.unlock("unlocksus")
+
     $ astoria_busy = True
     $ susan_busy = True
 
@@ -1083,8 +1085,9 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     m "..."
     m "Did I just become a pimp?"
 
-    call give_reward(">You've unlocked the ability to summon Tonks to your office.","interface/icons/head/head_tonks_1.png")
-    $ achievement.unlock("unlockton", True)
+    $ tonks_unlocked = True
+    $ achievement.unlock("unlockton")
+
     $ tonks_busy = True
 
 

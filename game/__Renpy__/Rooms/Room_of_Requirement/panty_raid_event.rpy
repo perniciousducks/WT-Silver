@@ -8,8 +8,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     call room("main_room")
     call reset_menu_position
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_slow_ani"
 
     centered "{size=+7}{color=#cbcbcb}Panty Raid{/color}{/size}"
@@ -132,11 +132,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Isn't there any other way I coul-..{w=0.5}{nw}", eye="glance", cheeks="blush")
         m "No."
         call her_main("{size=-4}...fine.{/size}", eye="down", cheeks="blush")
-        call her_walk("mid","leave",2.5)
 
-        show screen blkfade with d3
+        call her_walk(action="leave", speed=2.5)
+
+        show screen blkfade
+        with d3
+
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Three hours later...{/color}{/size}"
+
         $ daytime = False
         $ interface_color = "gray"
         call music_block
@@ -147,8 +151,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call play_sound("knocking")
         pause 1.0
         m "Enter!"
-        call play_sound("door")
-        call her_walk("door","mid",2.5)
+
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
 
         call her_main("Good evening, [genie_name].", mouth="open", eye="baseL")
         call her_main("", mouth="normal", eye="baseL")
@@ -156,7 +160,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", cheeks="blush")
         m "Did you finish your assignment?"
         call her_main("about that...", mouth="soft", eye="glanceL", cheeks="blush")
-        call her_walk("mid","desk",1.0)
+
+        call her_walk(xpos="desk", ypos="base", speed=1.0)
+
         "She elegantly drops a pair of frilly pink panties on your desk."
         call her_main("And for extra credit...", mouth="soft", eye="down", cheeks="blush")
         hide screen bld1
@@ -203,6 +209,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "So...{w=0.5} You're the bloated, scatterbrained moron then?"
         call her_main("Sir, this has been embarrassing enough...{w=0.5}\nCan I just go back to my dormitory please?", eye="glance")
         m "[hermione_name]..."
+
         menu:
             "\"Cheaters never Prosper.\"":
                 m "Well, I must say I am disappointed with your actions [hermione_name]."
@@ -215,7 +222,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("", eye="down")
                 m "Dismissed."
                 call her_main("Yes sir.")
-                call her_walk("desk","leave",3.0)
+
             "\"Yes, they do.\"":
                 m "Well, I must say...{w=0.3} I am impressed with your courage [hermione_name]."
                 call her_main("I am sorry [genie_name] I wo-..{w=0.2}{nw}", mouth="disgust", eye="down")
@@ -232,11 +239,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("", mouth="soft", eye="worried")
                 m "Take your house points and go...{w=0.5} 35 points to Gryffindor!"
                 call her_main("{size=+4}Really?!{/size}{w=0.2} Thank you so much [genie_name]!", mouth="smile", eye="base", cheeks="blush")
-                call her_walk("desk","mid",1.0)
+
+                call her_walk(xpos="mid", ypos="base", speed=1)
+
                 m "I hope next time you do better though."
                 call her_main("(Next time...?!)", mouth="shock", eye="shocked", cheeks="blush", flip=True)
                 call her_main("(Think about the points Hermione, the points......)", mouth="angry", eye="worriedCl", cheeks="blush", flip=True)
-                call her_walk("mid","leave",2.0)
+
+        call her_walk(action="leave", speed=2.5)
+
         show screen blkfade with d3
         stop music fadeout 1.0
         hide screen fireplace_fire
@@ -250,8 +261,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call play_sound("knocking")
         pause 1.0
         m "Come in!"
-        call play_sound("door")
-        call her_walk("door","mid",2.5)
+
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         call her_main("Hello [genie_name], you called?", mouth="open", eye="base", flip=False)
         call her_main("", mouth="base")
         m "Hello to you too, [hermione_name]."
@@ -280,7 +292,10 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="normal", eye="base")
         m "You're free to go then."
         call her_main("Thank you sir.", mouth="open", eye="base")
-        call her_walk("mid","door",2.5)
+
+        call her_walk(xpos="door", ypos="base", speed=2.5)
+
+        call bld
         m "Oh and one more thing.."
         call her_main("Yes?", mouth="soft", eye="baseL", flip=True)
         m "Make sure they're not new this time."
@@ -307,11 +322,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         pause 1.0
 
         call hide_blkfade
-        with d3
         pause.5
 
-        call play_sound("door")
-        call her_walk("door","desk",3.0)
+        call her_walk(action="enter", xpos="desk", ypos="base", speed=3.0)
 
         call play_sound("bump")
         "She drops a slightly used pair of plain panties on your desk."
@@ -319,6 +332,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "I don't see any tags, thats good, did you learn from your previous error?"
         call her_main("Yes sir...", mouth="disgust", eye="down", cheeks="blush")
         call her_main("", mouth="soft", eye="down", cheeks="blush")
+
         menu:
             "\"Let her Go.\"":
                 m "Well, quality leaves a bit to be desired but a good step forward."
@@ -327,11 +341,15 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Thank you, [genie_name].", mouth="open", eye="base", cheeks="blush")
                 call her_main("Am I free to go now?", mouth="soft", eye="base", cheeks="blush")
                 m "Yes, you are free to go."
-                call her_walk("desk","mid",1.0)
+
+                call her_walk(xpos="mid", ypos="base", speed=1.0)
+
                 $ renpy.play('sounds/sniff.mp3')
                 g9 "{size=-4}Such nice fragrance, I wonder to whom these belong?{/size}"
                 call her_main(".........(I'm sorry Ginny).........", mouth="disgust", eye="down", cheeks="blush", flip=True)
-                call her_walk("mid", "leave", 2.0)
+
+                call her_walk(action="leave", speed=2)
+
             "\"Ask for details.\"":
                 m "So, who was the lucky lady?"
                 call her_main("No one.", mouth="open", eye="worriedL", cheeks="blush")
@@ -367,7 +385,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Do those count the same as regular points?", mouth="annoyed")
                 m "I suppose..."
                 call her_main("Goodnight then sir.", mouth="open", eye="base")
-                call her_walk("desk","door",3.0)
+
+                call her_walk(xpos="door", ypos="base", speed=3.0)
+
                 m "{size=-4}Ginny..{w=1.0} its time for you to meet 'George'.{/size}{w=0.2}{nw}"
                 call gen_chibi("jerking_off_behind_desk")
                 $ renpy.play('sounds/zipper.mp3')
@@ -380,13 +400,10 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 with d3
                 pause 0.5
 
-                call play_sound("door")
-                call her_chibi("hide")
-                with d3
+                call her_chibi("leave")
 
-                pause 1.0
-        show screen blkfade
-        with d3
+        call blkfade
+
         stop music fadeout 1.0
         hide screen fireplace_fire
         call gen_chibi("sit_behind_desk")
@@ -400,8 +417,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call play_sound("knocking")
         pause 0.5
         her "I'm coming in.{w=1.0}{nw}"
-        call play_sound("door")
-        call her_walk("door","mid",2.5)
+
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         g9 "Well, well, well.. if it isn't my favourite minx!"
         call her_main("Good morning to you too, [genie_name].", mouth="open", eye="closed", flip=False)
         call her_main("", mouth="base", eye="base")
@@ -424,9 +442,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Fine.", mouth="open", eye="closed")
         call her_main("", mouth="annoyed", eye="glance")
         g9 "That ‘a girl."
-        call her_walk("mid","leave",2.5)
 
-        show screen blkfade with d3
+        call her_walk(action="leave", speed=2.5)
+
+        call blkfade
+
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Few hours later...{/color}{/size}"
         $ daytime = False
@@ -436,8 +456,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         pause 1.0
         call hide_blkfade
 
-        call play_sound("door")
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         g9 "Hello [hermione_name], looking good."
         call her_main("Uh-huh. Sir, if I'm not mistaken... {w=0.3}Hogwarts does not have a 'linguistic' class, do we?", mouth="open", eye="concerned")
         call her_main("", mouth="upset")
@@ -452,7 +472,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="normal")
         m "The perfect hunting grounds."
         call her_main("I am astonished that I'll have to agree with you but yes... I had the pick of the litter with no absence of choice.{w=0.3} Speaking of...", mouth="open", eye="closed")
-        call her_walk("mid","desk",1.0)
+
+        call her_walk(xpos="desk", ypos="base", speed=1.0)
+
         $ renpy.play('sounds/cloth_sound.mp3')
         "She drops a bunched-up ball of about half a dozen girl's panties on your desk, coming in an array of different sizes, designs and colours."
         call her_main("I usually don’t conduct such a shotgun approach to work, although...", mouth="open", eye="base", cheeks="blush")
@@ -568,15 +590,19 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Thank you sir...", mouth="open", eye="concerned")
         call her_main("", mouth="upset", eye="baseL")
         pause 0.5
-        call her_walk("desk","mid",1)
+
+        call her_walk(xpos="mid", ypos="base", speed=1)
+
         g9 "Bon apetite!"
         call her_main("", mouth="open", eye="baseL", flip=True)
         pause 0.5
         call her_main(".....", mouth="angry", eye="base", flip=True)
         call her_main("(What did I get myself into this time..?)", mouth="angry", eye="down_raised", cheeks="blush", flip=True)
-        call her_walk("mid","leave",2)
 
-        show screen blkfade with d3
+        call her_walk(action="leave", speed=2)
+
+        call blkfade
+
         stop music fadeout 1.0
         hide screen fireplace_fire
         pause 1.0
@@ -630,8 +656,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         centered "{size=+7}{color=#cbcbcb}A Couple months later after the 'linguistic' incident{/color}{/size}"
         call hide_blkfade
         pause 1.0
-        call play_sound("door")
-        call her_walk("door","mid",2.5)
+
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         call her_main("Hello, [genie_name].{image=textheart}", mouth="smile", eye="wink", flip=False)
         call her_main("", mouth="smile", eye="base")
         g9 "[hermione_name]! My favourite slut."
@@ -659,9 +686,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Mine or someone else’s?", mouth="smile", eye="happy")
         m "Someone else's if you don't mind, [hermione_name]."
         call her_main("On it! I'll be back soon...", eye="base")
-        call her_walk("mid","leave",2.5)
 
-        show screen blkfade with d3
+        call her_walk(action="leave", speed=2.5)
+
+        call blkfade
+
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Some time later...{/color}{/size}"
         $ daytime = False
@@ -671,10 +700,12 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         pause 1.0
         call hide_blkfade
 
-        call play_sound("door")
-        call her_walk("door","mid",2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+
         call her_main("Hello [genie_name], I hope I didn't keep you waiting for too long...", mouth="smile", eye="happy")
-        call her_walk("mid","desk",1.0)
+
+        call her_walk(xpos="desk", ypos="base", speed=1.0)
+
         call her_main("I had a little..{w=0.5} 'setback'{w=0.2} if you know what I mean..", mouth="grin", eye="glance", cheeks="blush")
         call her_main("", mouth="base", cheeks="blush")
         pause 0.5
@@ -725,7 +756,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("but you’re right, we'll leave it for later.", mouth="base", eye="happy", cheeks="blush")
         call her_main("See you tomorrow [genie_name].", mouth="smile", eye="wink", cheeks="blush")
 
-        call her_walk("desk","leave",2.5)
+        call her_walk(action="leave", speed=2.5)
+
         pause 1.0
         m "...Hmmm...{w=1.0} I don't think I ever gave her points."
         pause 0.5

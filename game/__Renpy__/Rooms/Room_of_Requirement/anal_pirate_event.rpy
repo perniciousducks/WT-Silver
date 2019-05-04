@@ -7,8 +7,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
+    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+    $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_slow_ani"
 
     nar "This story is a rewrite of the \"Time for anal\" Private favour. And the genie is a pirate? Who knows... Enjoy."
@@ -101,8 +101,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-                $ genie_chibi_ypos = 10
+                $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+                $ gen_chibi_ypos = 10
                 $ g_c_u_pic = "sex_slow_ani"
                 show screen g_c_u
 
@@ -148,8 +148,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-                $ genie_chibi_ypos = 10
+                $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
+                $ gen_chibi_ypos = 10
                 $ g_c_u_pic = "blowjob_ani"
                 show screen g_c_u
 
@@ -186,8 +186,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-                $ genie_chibi_ypos = 10
+                $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+                $ gen_chibi_ypos = 10
                 $ g_c_u_pic = "sex_slow_ani"
                 show screen g_c_u
 
@@ -228,8 +228,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ genie_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-                $ genie_chibi_ypos = 10
+                $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
+                $ gen_chibi_ypos = 10
                 $ g_c_u_pic = "blowjob_ani"
                 show screen g_c_u
 
@@ -251,8 +251,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-                $ genie_chibi_ypos = 10
+                $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+                $ gen_chibi_ypos = 10
                 $ g_c_u_pic = "sex_slow_ani"
                 show screen g_c_u
 
@@ -465,8 +465,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         hide screen genie
         show screen chair_left
 
-        $ genie_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-        $ genie_chibi_ypos = 10
+        $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
+        $ gen_chibi_ypos = 10
         $ g_c_u_pic = "sex_ani"
         show screen g_c_u
 
@@ -654,7 +654,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     call her_main("Thank you, captain...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
 
-    call her_walk("desk","leave",2.7)
+    call her_walk(action="leave", speed=2.7)
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 

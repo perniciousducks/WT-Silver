@@ -23,9 +23,9 @@ label event_01:
     m "....alien."
     m "Interesting..."
     m "I think I will stick around for a little bit..."
+
     $ achievement.unlock("start")
-    hide screen bld1
-    with d3
+
     return
 
 
@@ -817,9 +817,8 @@ label event_07:
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
 
-    call give_reward(">You've unlocked the ability to summon Severus Snape to your office.","interface/icons/head/head_snape_1.png")
-    $ achievement.unlock("unlocksna", True)
     $ snape_unlocked = True
+    $ achievement.unlock("unlocksna")
 
     jump day_start
 
@@ -899,13 +898,8 @@ label event_08:
     if not d_flag_02: #When TRUE Genie knows it's a girl knocking on the door.
         m "{size=-3}(A girl?){/size}"
 
-    call play_music("chipper_doodle")
-
-    call her_walk("door","mid",3)
+    call her_walk(xpos="mid", ypos="base", speed=3)
     pause.5
-
-    show screen bld1
-    show screen ctc
 
     call her_main("","base","base",xpos="base",ypos="base")
     call ctc
@@ -1100,7 +1094,7 @@ label event_08:
     call her_main("My classes are about to start, so I'd better go now.","open","angryCl")
     her "Thank you for your time..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     if masturbating:
         m "{size=-4}(This was awesome...) *Panting*{/size}"
@@ -1140,17 +1134,25 @@ label event_09:
                 "\"Absolutely not! I'm busy! Come back later!\"":
                     her "But..."
                     her "Alright... I will come back tomorrow then..."
+
                     $ achievement.unlock("knock")
+
                     return
+
                 "\"Of course. Come on in.\"":
                     pass
+
         "\"I'm busy. Come back later.\"":
             her "But..."
             her "Well alright..."
+
             $ achievement.unlock("knock")
+
             return
+
         "\"Yes, come in.\"":
             pass
+
         "\"...................................\"":
             call play_sound("knocking") #Sound someone knocking on the door.
             "*Knock-knock-knock!*"
@@ -1160,14 +1162,10 @@ label event_09:
 
     $ event09 = True #You let Hermione in. This event will stop looping now.
 
-    call play_sound("door") #Sound of a door opening.
-
-    call her_walk("door","mid",3)
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
     pause.5
-    call bld
 
     call play_music("chipper_doodle")
-
     call her_main("","normal","base",xpos="base",ypos="base")
     call ctc
 
@@ -1233,7 +1231,7 @@ label event_09:
 
     her "Now, if you'll excuse me, I must get to my classes..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     m "...................."
 
@@ -1258,14 +1256,11 @@ label event_11:
     m "...."
 
     call play_music("chipper_doodle")
-    call play_sound("door") #Sound of a door opening.
 
     $ hermione_wear_robe = True
     call update_her_uniform
 
-    call her_walk("door","mid",2.1) #Hermione Chibi stands still after.
-
-    call bld
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
 
     call her_main("","annoyed","frown",xpos="base",ypos="base")
@@ -1332,7 +1327,7 @@ label event_11:
     call her_main("Well, if there is nothing else, I have a studying schedule to keep.","open","closed")
     m "By all means..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_wear_robe = False
 
@@ -1349,17 +1344,13 @@ label event_11:
 
 #Hermione complains that she might have failed a test. (EVENING EVENT!)
 label event_12:
-    call play_sound("door")
 
-    call her_walk("door","desk",2.8)
+    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
 
     call play_music("chipper_doodle")
-
-    her "Professor! I need to talk to you!"
+    call her_main("Professor! I need to talk to you!","open","base", xpos="right", ypos="base")
     m "(So She doesn't even bother to knock anymore?)"
-    call bld
-
-    call her_main("Professor, something awful happened today!","open","worried",xpos="right",ypos="base")
+    call her_main("Professor, something awful happened today!","open","worried")
     her "I failed a test today..."
     her "I cannot believe this is happening!"
     call her_main("How is this even possible?!","angry","wide")
@@ -1402,7 +1393,7 @@ label event_12:
     her "I will let you know about the new ideas we come up with tonight."
     m "I can hardly wait..."
 
-    call her_walk("desk","leave",3)
+    call her_walk(action="leave", speed=3)
 
     $ event12_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
@@ -1415,22 +1406,20 @@ label event_12:
 
 #Hermione complains that she did fail the test. (EVENING EVENT!)
 label event_13:
-    call play_sound("door")
 
-    call her_walk("door","mid",2)
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     her "....................."
     m "???"
 
-    call her_walk("mid","desk",1.6)
+    call her_walk(xpos="desk", ypos="base", speed=1.6)
 
     her "............"
     m "Miss Granger?"
     her "..............................."
     m "Miss Granger?!!"
-    call bld
 
-    call her_main("","upset","dead",tears="mascara",xpos="right",ypos="base")
+    call her_main("","upset","dead",tears="mascara", xpos="right", ypos="base")
     call ctc
 
     her "Huh?"
@@ -1446,9 +1435,11 @@ label event_13:
     her "I think I'd better go..."
     m "..................."
 
-    call her_walk("desk","leave",1,action="run")
-
+    call her_walk(action="run", xpos="door", ypos="base", speed=1, loiter=False)
+    call play_sound("door")
     pause.3
+
+    call bld
     m "............."
     m "She will be alright..."
     m "I think..."
@@ -1465,10 +1456,8 @@ label event_13:
 #Hermione comes after her breakdown (when she failed the test). She is asking for tutoring. Tutoring unlocked.
 label event_14:
     call play_music("chipper_doodle")
-    call play_sound("door")
 
-    call her_walk("door","mid",2)
-    call bld
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call her_main("Good morning, Professor.","base","base",xpos="base",ypos="base")
     m "How can I help you today, miss Granger?"
@@ -1541,13 +1530,13 @@ label event_14:
     m "Ehm... alright..."
     call her_main("Oh, my classes are about to start. I'd better go...","open","worriedL")
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     stop music fadeout 1.0
 
-    call give_reward(">You've unlocked the ability to summon Hermione to your office.","interface/icons/head/head_hermione_1.png")
-    $ achievement.unlock("unlockher", True)
-    $ hermione_unlocked = True #Unlocks after event_14. Adds "Summon Hermione" button to the door.
+    $ hermione_unlocked = True
+    $ achievement.unlock("unlockher")
+
     $ hermione_busy = True
     $ tutoring_hermione_unlocked = True
 
@@ -1578,17 +1567,25 @@ label event_15:
                 "\"Absolutely not! I'm busy! Come back later!\"":
                     her "But..."
                     her "Alright... I will come back tomorrow then..."
+
                     $ achievement.unlock("knock")
+
                     return
+
                 "\"Of course. Come on in.\"":
                     pass
+
         "\"I'm busy. Come back later.\"":
             her "But..."
             her "Well, alright..."
+
             $ achievement.unlock("knock")
+
             return
+
         "\"Yes, come in.\"":
             pass
+
         "\"...................................\"":
             call play_sound("knocking")
             "*Knock-knock-knock!*"
@@ -1596,9 +1593,7 @@ label event_15:
             her "Professor, I'm coming in..."
             m "{size=-4}(Crap!){/size}"
 
-    call play_sound("door")
-
-    call her_walk("door","mid",3)
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
 
     call her_main("Good evening, professor...","soft","baseL",xpos="base",ypos="base")
     her "........................"
@@ -1858,7 +1853,7 @@ label event_15:
     call her_main("Well... I suppose I'd better go now...","base","base")
     m "............"
 
-    call her_walk("mid","door",2)
+    call her_walk(xpos="door", ypos="base", speed=2)
     pause.3
 
     if d_flag_01: #Show me your tongue

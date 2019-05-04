@@ -208,31 +208,33 @@ label want_to_rule:
 
 
                     #Walks to the door
-                    call her_walk("mid","door",2)
+                    call her_walk(xpos="door", ypos="base", speed=2)
 
                     #Locks the door
                     pause.5
                     $ tt_xpos=670
                     $ tt_ypos=200
                     show screen thought
-                    with Dissolve(.3)
+                    with d3
                     pause.5
+
                     hide screen thought
                     pause.5
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
                     pause.4
+
                     call her_chibi("stand","door","base")
                     pause.5
 
                     #Returns from the door
                     m "??!"
-                    call her_walk("door","mid",3)
+
+                    call her_walk(xpos="mid", ypos="base", speed=3)
                     pause.2
-                    show screen bld1
-                    with d3
 
                     call her_main("Just in case...","annoyed","angryL")
                     call ctc
+
                     m ".........................."
 
                     show screen blktone
@@ -346,9 +348,9 @@ label want_to_rule:
     with d3
     pause.2
 
-    call her_walk("mid","leave",2)
-
+    call her_walk(action="leave", speed=2)
     pause.5
+
     call bld
     m "........................................"
     m "A ball, huh?"
@@ -505,13 +507,13 @@ label crying_about_dress:
     hide screen blktone
     with d3
 
-    call her_walk("mid","door",2)
+    call her_walk(xpos="door", ypos="base", speed=2)
     pause.3
 
-    show screen bld1
     call her_main("(My life is ruined...)","angry","suspicious",cheeks="blush",tears="messy",ypos="head")
     pause.1
-    call her_chibi("leave","door","base")
+
+    call her_chibi(action="leave")
 
     m "Hm... I don't remember ever seeing the girl this desperate..."
     m "And that says a lot, all things considered..."
@@ -568,7 +570,8 @@ label sorry_about_hesterics:
     show screen genie
     with d1
 
-    call her_walk("mid","leave",2,action="run")
+    call her_walk(action="run", xpos="door", ypos="base", speed=1, loiter=False)
+    call play_sound("door")
     pause.5
 
     call bld
@@ -666,7 +669,7 @@ label giving_the_dress:
     call her_chibi("stand","mid","base",flip="True")
     pause.2
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call bld
     m "......................"
@@ -721,8 +724,8 @@ label good_bye_snape:
     call sna_chibi("hide")
     show screen chair_left
     show screen g_c_u
-    $ genie_chibi_xpos = 220
-    $ genie_chibi_ypos = 205
+    $ gen_chibi_xpos = 220
+    $ gen_chibi_ypos = 205
     $ g_c_u_pic = "images/rooms/main_room/hand_00.png"
     play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 # EPIC THEME.
     pause 1
@@ -965,15 +968,17 @@ label good_bye_snape:
 
     m "........."
 
-    call gen_walk("desk","door",3)
-    pause 1
+    call gen_walk(xpos="door", ypos="base", speed=2.8)
+    pause.5
 
+    call bld
     m "...................."
     m "Agrabah... here I come..."
     call ctc
 
-    call gen_chibi("leave","door","base")
+    call gen_chibi(action="leave")
     pause.3
+
     ">.......................{w}............................{w}.....................{w}......................"
     pause.7
     call blkfade
@@ -1069,13 +1074,11 @@ label good_bye_snape:
     return
 
 
-
-
-
-
 label hg_event_EnterRoom_block: #Chibi stands mid. bld1 active.
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
+
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
+
     call bld
+
     return

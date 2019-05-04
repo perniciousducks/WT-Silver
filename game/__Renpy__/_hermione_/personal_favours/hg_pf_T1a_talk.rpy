@@ -321,4 +321,6 @@ label end_hg_talk:
 
     $ hg_pf_talk_OBJ.points += 1
 
-    jump end_hg_pf
+    call her_chibi(action="leave")
+
+    jump end_hermione_event

@@ -828,7 +828,7 @@ image ch_hem walk_robe_flip: #hermione walking in robe flip
     im.Flip("characters/hermione/chibis/walk/h_walk_robe_04.png", horizontal=True)
     pause.08
     repeat
-image ch_hem blink_robe_blink:
+image ch_hem blink_robe:
     "characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause 2
     "characters/hermione/chibis/walk/h_walk_robe_01_blink.png"
@@ -842,22 +842,6 @@ image ch_hem blink_robe_blink:
     "characters/hermione/chibis/walk/h_walk_robe_01_blink.png"
     pause.08
     "characters/hermione/chibis/walk/h_walk_robe_01.png"
-    pause 3
-    repeat
-image ch_hem blink_robe_blink_flip:
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
-    pause 2
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01_blink.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
-    pause 5
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01_blink.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01_blink.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause 3
     repeat
 
@@ -879,24 +863,7 @@ image ch_hem walk_robe_n: #hermione walking in robe naked
     "characters/hermione/chibis/walk/h_walk_robe_n_04.png"
     pause.08
     repeat
-image ch_hem walk_robe_n_flip: #hermione walking in robe naked flip
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_02.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_03.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_02.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_04.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_05.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_04.png", horizontal=True)
-    pause.08
-    repeat
+
 image ch_hem blink_robe_n:
     "characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause 2
@@ -911,22 +878,6 @@ image ch_hem blink_robe_n:
     "characters/hermione/chibis/walk/h_walk_robe_n_01_blink.png"
     pause.08
     "characters/hermione/chibis/walk/h_walk_robe_n_01.png"
-    pause 3
-    repeat
-image ch_hem blink_robe_n_flip:
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
-    pause 2
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01_blink.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
-    pause 5
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01_blink.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01_blink.png", horizontal=True)
-    pause.08
-    im.Flip("characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause 3
     repeat
 
@@ -948,24 +899,6 @@ image ch_hem run_a:
     "characters/hermione/chibis/run/h_run_a_04.png"
     pause.07
     repeat
-image ch_hem run_a_flip:
-    im.Flip("characters/hermione/chibis/run/h_run_a_01.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_02.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_03.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_02.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_01.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_04.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_05.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_04.png", horizontal=True)
-    pause.07
-    repeat
 
 image ch_hem fly_a:
     "characters/hermione/chibis/broom/shime13a.png"
@@ -985,24 +918,8 @@ image ch_hem fly_a:
     "characters/hermione/chibis/broom/shime13b.png"
     pause.1
     repeat
-image ch_hem fly_a_flip:
-    im.Flip("characters/hermione/chibis/run/h_run_a_01.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_02.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_03.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_02.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_01.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_04.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_05.png", horizontal=True)
-    pause.07
-    im.Flip("characters/hermione/chibis/run/h_run_a_04.png", horizontal=True)
-    pause.07
-    repeat
+
+
 
 ### HERMIONE FAVOR ANIMATIONS ###
 

@@ -102,12 +102,12 @@ label l_tutoring:
 
         call nar("You dismiss Hermione.")
 
-        call her_walk("mid","door",3)
+        call her_walk(xpos="door", ypos="base", speed=3)
 
         call her_main("{size=-4}(I'm glad the professor agreed to tutor me!){/size}","base","worriedCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","annoyed","baseL",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 1
         $ aftercum = False
@@ -148,12 +148,12 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk("mid","door",2)
+        call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(Filthy whores...){/size}","angry","angryCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 2
         $ aftercum = False
@@ -193,13 +193,13 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk("mid","door",2)
+        call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}","base","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}","silly","glance",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 3
         $ aftercum = False
@@ -270,13 +270,13 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk("mid","door",2)
+        call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(Well, I'll try to investigate those two girls again.){/size}","disgust","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Like a real anthropologist!){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 4
         $ aftercum = False
@@ -385,13 +385,13 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk("mid","door",2)
+        call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I lost control, it won't happen again!){/size}","shock","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","base","glance",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 5
         $ aftercum = False
@@ -473,13 +473,13 @@ label l_tutoring:
         hide screen bld1
         call hide_blkfade
 
-        call her_walk("desk","door",3)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(This is wrong...){/size}","disgust","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I shouldn't listen to him.){/size}","angry","worriedCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(And yet...){/size}","base","down_raised",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 6
         $ aftercum = False
@@ -562,7 +562,7 @@ label l_tutoring:
         show screen genie_and_hermione
         hide screen genie_and_hermione
         show screen genie
-        show screen hermione_blink
+        show screen hermione_stand
         call hide_blkfade
 
         call her_main("...........","mad","wide",cheeks="blush")
@@ -581,13 +581,12 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call her_walk("desk","door",3)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        show screen hermione_stand_f
         call her_main("{size=-4}(\"My little witch?\"){/size}","annoyed","angryL",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Why not, after all...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 7
         $ aftercum = False
@@ -719,13 +718,13 @@ label l_tutoring:
         show screen genie
         call hide_blkfade
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(I'm such a slut...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Cumming in front of my professor...){/size}","base","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I definitely need to do that again!){/size}","base","glance",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 8
         $ aftercum = False
@@ -886,13 +885,13 @@ label l_tutoring:
         show screen genie
         call hide_blkfade
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Favorite...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(There's another one?){/size}","mad","wide",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I'll do my best to remain his favorite!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 9
         $ aftercum = False
@@ -1059,13 +1058,13 @@ label l_tutoring:
         m "Good night, my dirty little slut."
         call nar("You dismiss Hermione.")
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Rest...){/size}","base","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Not before I've played with this marvelous toy again){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(And again){/size}","silly","glance",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 10
         $ aftercum = False
@@ -1229,13 +1228,13 @@ label l_tutoring:
 
         call nar("You dismiss Hermione.")
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Finally tonight I'll just go to bed){/size}","base","worriedCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(That was a little too intense){/size}","angry","worriedCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Not that I'm complaining...){/size}","silly","glance",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 11
         $ aftercum = False
@@ -1420,8 +1419,8 @@ label l_tutoring:
 
         call her_chibi("hide")
         hide screen genie
-        $ genie_chibi_xpos = -10
-        $ genie_chibi_ypos = 10
+        $ gen_chibi_xpos = -10
+        $ gen_chibi_ypos = 10
         $ g_c_u_pic = "blowjob_ani"
         show screen chair_left
         show screen g_c_u
@@ -1466,13 +1465,13 @@ label l_tutoring:
         call her_main("Good night, professor.","annoyed","closed",cheeks="blush")
         call nar("You dismiss Hermione.")
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Sucking his cock without getting any points!){/size}","annoyed","angryL",cheeks="blush",ypos="head")
         call her_main("{size=-4}(If he hadn't made me come so hard...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","base","down_raised",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 12
         $ aftercum = False
@@ -1499,7 +1498,7 @@ label l_tutoring:
         call her_chibi("stand","door","base")
         call hide_blkfade
 
-        call her_walk("door","mid",3)
+        call her_walk(xpos="mid", ypos="base", speed=2.5)
 
         call her_main("{size=-4}*panting*{/size} Oh good, you're still here.","open","base",cheeks="blush",xpos="right",ypos="base")
         m "Is it safe to assume you have honored my request this time?"
@@ -1677,12 +1676,12 @@ label l_tutoring:
         m "And next time bring your books, I'll help you with your revisions."
         call nar("You dismiss Hermione.")
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Yes, sweet dreams...){/size}","base","worriedCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Sweet and wet!){/size}","silly","glance",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 13
 
@@ -1871,13 +1870,13 @@ label l_tutoring:
         call her_chibi("stand","desk","base")
         call hide_blkfade
 
-        call her_walk("desk","door",2.5)
+        call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(\"my beloved prince\"...){/size}","base","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(He's hardly Prince Charming but...){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","grin","ahegao_raised",cheeks="blush",ypos="head")
 
-        call her_chibi("leave")
+        call her_chibi(action="leave")
 
         $ her_tutoring = 14
         $ aftercum = False

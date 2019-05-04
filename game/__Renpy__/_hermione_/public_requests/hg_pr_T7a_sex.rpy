@@ -43,9 +43,11 @@ label hg_pr_sex: #LV.8 (Whoring = 21 - 23)
         m "Yes. And you will get 75 points again as well."
         call her_main("Well, alright...","annoyed","annoyed")
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_sex_OBJ.inProgress = True
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event
 
 
 label hg_pr_sex_complete:
@@ -58,25 +60,26 @@ label hg_pr_sex_complete:
         else:
             $ fucked_ron_and_har = True #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
 
+        call bld
         m "....."
         m ".........."
         m "She was supposed to be here, by now..."
         m "Hm..."
+
         $ hg_pr_sex_OBJ.points += 1
         $ hg_pr_sex_OBJ.inProgress = False
         $ hermione_busy = True
         $ hg_pr_sex_skip = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
 
+        # Next Morning.
         jump day_start
-        # NEXT MORNING
 
     #Event B
     elif one_out_of_three == 2: ### EVENT (B)
 
-        call play_sound("door") #Sound of a door opening.
-        call her_walk("door","mid",2)
-        call bld
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
+        call bld
         m "[hermione_name], did you complete your task?"
         show screen blktone
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -103,10 +106,9 @@ label hg_pr_sex_complete:
         label returns_next_morning:
             pass
 
-        call play_sound("door") #Sound of a door opening.
-        call her_walk("door","mid",2)
-        call bld
+        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
+        call bld
         m "[hermione_name], did you complete your task?"
         call play_music("playful_tension") # SEX THEME.
         call her_main("I did, [genie_name].","upset","closed",xpos="right",ypos="base")
@@ -130,23 +132,22 @@ label hg_pr_sex_complete:
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_sex_OBJ.points += 1
     $ hg_pr_sex_OBJ.complete = True
     $ hg_pr_sex_OBJ.inProgress = False
 
-    jump hg_pr_transition_block
-
-    return
+    jump end_hermione_event
 
 
 
 label hg_pr_sex_Alt: #Hermione does not show up. This is label where she shows up next morning.
     $ hg_pr_sex_skip = False #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    call bld
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
+    call bld
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "[hermione_name], you missed your debriefing yesterday."
     call her_main("Yes, [genie_name], I apologize... *yawn*...","open","closed",xpos="right",ypos="base")
@@ -171,6 +172,8 @@ label hg_pr_sex_Alt: #Hermione does not show up. This is label where she shows u
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
 
+    call her_walk(action="leave", speed=2.5)
+
     $ hg_pr_sex_OBJ.points += 1
     $ hg_pr_sex_OBJ.complete = True
     $ hg_pr_sex_OBJ.inProgress = False
@@ -178,4 +181,4 @@ label hg_pr_sex_Alt: #Hermione does not show up. This is label where she shows u
     if her_reputation <= 23:
         $ her_reputation +=1
 
-    jump hg_pr_transition_block #hides labels. Shows walkout. Jumps to next day.
+    jump end_hermione_event

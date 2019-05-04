@@ -163,26 +163,22 @@ label hg_butt_molester_1:
                                             jump hg_butt_molester_1_continue
 
                                         "\"You are not getting any points for this!\"":
-                                            $ her_mood += 20
                                             call her_main("Ha! See if I care, [genie_name]!","angry","angry",cheeks="blush")
-                                            ### Takes place aftre you refuse to pay her the points.
-                                            hide screen no_groping_02
-                                            hide screen bld1
-                                            show screen genie
-                                            with d3
 
-                                            call her_walk("desk","leave",3,redux_pause=1)
+                                            call gen_chibi("sit_behind_desk")
 
+                                            call her_walk(action="leave", speed=3)
+
+                                            call bld
                                             g4 "Tsk! (You little brat!)"
 
+                                            $ her_mood += 20
                                             $ hg_pf_grope_ass_OBJ.points += 1
 
-                                            jump end_hg_pf
+                                            jump end_hermione_event
 
                                         "\"I'm subtracting points from you then!\"":
-                                            $ her_mood += 30
                                             call her_main("You can't be serious!?","scream","wide",cheeks="blush")
-                                            $ gryffindor -=10
                                             g4 "The \"Gryffindor\" house, minus 10 points!"
                                             g4 "There! It's done!"
                                             call her_main("Gr...........","angry","angry",cheeks="blush")
@@ -191,13 +187,16 @@ label hg_butt_molester_1:
                                             m "What? Hey, wait, don't you start crying on me..."
                                             call her_main("I hate you, [genie_name]! I hate you!","scream","worriedCl",cheeks="blush",tears="messy")
 
-                                            hide screen no_groping_02
-                                            hide screen bld1
-                                            show screen genie
+                                            call gen_chibi("sit_behind_desk")
 
-                                            call her_walk("desk","leave",2,action="run")
+                                            # Hermione runs out of the room.
+                                            call her_walk(action="run", speed=2, loiter=False)
+                                            call play_sound("door")
+                                            pause.2
 
+                                            call bld
                                             m ".............."
+
                                             menu:
                                                 "\"Dammit. Now I feel like crap...\"":
                                                     m "Dammit... Now I feel like crap..."
@@ -207,8 +206,11 @@ label hg_butt_molester_1:
                                                     m "Acting all wounded now..."
                                                     g9 "I bet she actually enjoyed the slapping and just won't admit it..."
 
-                                            $ hg_pf_grope_ass_OBJ.points += 1
+                                            $ gryffindor -=10
+                                            $ her_mood += 30
                                             $ hermione_busy = True
+
+                                            $ hg_pf_grope_ass_OBJ.points += 1
 
                                             jump main_room
 
@@ -440,12 +442,12 @@ label screams_of_rapings:
     hide screen blkfade
     with d3
 
-    call her_walk("mid","door",2)
+    call her_walk(xpos="door", ypos="base", speed=2)
 
     if her_whoring >= 3 and her_whoring <= 5: #First level. Not happy.
         call her_main("...........................","disgust","down_raised",cheeks="blush",ypos="head")
 
-    call her_chibi("leave","door","base")
+    call her_chibi(action="leave")
 
     $ hermione_busy = True
 
@@ -1100,20 +1102,20 @@ label end_hg_butt_molester:
 
     if her_whoring >= 3 and her_whoring <= 5: #First level. Not happy.
 
-        call her_walk("mid","door",2)
+        call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("...........................","disgust","down_raised",cheeks="blush",ypos="head")
 
         pause.5
-        call her_chibi("leave","door","base")
+        call her_chibi(action="leave")
 
     else:
 
-        call her_walk("mid","leave",2)
+        call her_walk(action="leave", speed=2)
 
     if her_whoring < 9: #Adds points till 9.
         $ her_whoring +=1
 
     $ hg_pf_grope_ass_OBJ.points += 1
 
-    jump end_hg_pf
+    jump end_hermione_event

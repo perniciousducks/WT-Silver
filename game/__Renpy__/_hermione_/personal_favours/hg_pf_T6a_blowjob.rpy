@@ -1872,12 +1872,14 @@ label end_hg_blowjob:
     else:
         call her_main("Thank you, [genie_name]...","soft","baseL",xpos="right",ypos="base")
 
+    call her_walk(action="leave", speed=2.5)
+
     if her_whoring < 18:
         $ her_whoring +=1
 
     $ hg_pf_blowjob_OBJ.points += 1
 
-    jump end_hg_pf #Hides screens. Hermione walks out. Resets Hermione.
+    jump end_hermione_event
 
 
 

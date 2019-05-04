@@ -25,18 +25,15 @@ label potion_scene_4: #Transparent uniform
 
     her "Can I go now?"
     m "Yes you may. 20 points to Gryffindor"
-    call her_main("Thank you [genie_name].","open","closed")
 
     $ gryffindor += 20
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone
-    hide screen ctc
-    with Dissolve(.3)
 
-    call her_walk("mid","leave",2)
+    call her_main("Thank you [genie_name].","open","closed")
+
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
+
     if her_whoring <= 7:
         call set_her_transparency(top=0.8, bottom=0.9)
     elif her_whoring <= 13:
@@ -47,7 +44,9 @@ label potion_scene_4: #Transparent uniform
         call set_her_transparency(top=0.2, bottom=0.2, bra=0.4, onepiece=0.4, panties=0.4)
 
     $ transparent_quest = True
+
     jump main_room
+
 
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
     $ transparent_quest = False
@@ -128,15 +127,11 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Yes, you can go now slut."
         call her_main("{image=textheart}","smile","baseL")
 
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone
-    hide screen ctc
-    with d3
     call reset_her_transparency
     $ transparent_quest = False
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
+
     jump main_room

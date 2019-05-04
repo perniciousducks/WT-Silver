@@ -1300,7 +1300,7 @@ label luna_reverted_event_4: #Luna gentle BJ for about 9 hours and 14 orgasms fr
     m "Five!- just hurry up and get yourself cleaned up, I'm about to pass out..."
     $ ccg1 = "52"
     lun "Clean up? Why?"
-    show screen blkfade 
+    show screen blkfade
     with d3
     show screen luna_main
     hide screen ccg
@@ -1369,7 +1369,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     lun "Mmmm, what sort of attention?"
     $ lunCG(eye='excited', xpos=20, ypos=20)
     ">You place the tip of your cock against the air-headed girl's lips."
-    m "Shhhh..."  
+    m "Shhhh..."
     $ lunCG('up')
     ">You slowly start rubbing the tip over her soft lips, a drop of precum smearing across them like lip-gloss."
     m "Why don't you start with a nice kiss..."
@@ -1520,7 +1520,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
             $ lunCG('up', 'wide', 'wide')
             lun "*sob* That's so mean sir! *sob*"
             $ lunCG('dick', 'sad', 'open')
-            lun "*sob* You'd make me go to class without...*sob*{w} you'd have so many left in you!*sob*" 
+            lun "*sob* You'd make me go to class without...*sob*{w} you'd have so many left in you!*sob*"
             g9 "Ugh, that's it slut! Here it comes!"
             $ lunCG('up', 'sad', 'pout')
             lun "*sob*O-o-ok*sob*"
@@ -1565,7 +1565,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     show screen blkfade
     with d3
     hide screen luncg
-    hide screen blkfade 
+    hide screen blkfade
     $ luna_cum = "12"
     $ luna_wear_cum = True
     with d3
@@ -1588,7 +1588,7 @@ label luna_reverted_event_5: #Luna regular BJ for about 5 hours with Luna mastur
     m "..."
     m "(Am I playing around with a disabled chick?)"
     m "Eh, who cares..."
-    jump main_room 
+    jump main_room
 
 label luna_reverted_event_5_1: #Luna facefuck transitional part #NEEDS TESTING
     $ lun_corruption = 5
@@ -1798,7 +1798,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     with d3
     pause
     $ lun_cg_base         = lun_cg_path+"base_2.png"
-    $ lun_cg_genie        = lun_cg_path+"blank.png" 
+    $ lun_cg_genie        = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = -275
     $ lun_cg_ypos_abs     = -100
     $ hermione_scaleratio = 1.2
@@ -1824,7 +1824,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     m "Ugh... I should... mmmm... do some work... or something..."
     $ lunCG('up', 'blink', pos=4)
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
-    menu: 
+    menu:
         "-Try and do some paperwork-":
             ">Intent on not losing the entire day to Luna's mouth, you begin to write out a report for the ministry."
             m "Yes... school activities..."
@@ -1833,7 +1833,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
             m "..."
             show screen blkfade
             with d3
-            pause 
+            pause
             hide screen blkfade
             with d3
             m "There, all done!"
@@ -1874,7 +1874,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
         "-Hermione-":
             pass
 
-    #First time Hermione is brought up 
+    #First time Hermione is brought up
     #Will need a check if Luna intro is is moved
     m "(That slut will probably get off on it.)"
     $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=6)
@@ -2042,7 +2042,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     with d3
     ">Without any hesitation, Luna shamelessly returns to sucking your cock in front of Hermione."
     $ lun_cg_base         = lun_cg_path+"base_2.png"
-    $ lun_cg_genie        = lun_cg_path+"blank.png" 
+    $ lun_cg_genie        = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = -275
     $ lun_cg_ypos_abs     = -100
     show screen hermione_main
@@ -2099,7 +2099,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     call her_main("Would you do the right thing and send them away?","smile","squint")
     $ lunCG('dick', 'mad', pos=11)
     lun "*glck* *slrp* *glck*"
-    call her_main("Or would you make them stay...","grin","suspicious") 
+    call her_main("Or would you make them stay...","grin","suspicious")
     $ lunCG(pos=13)
     g4 "Mmmm...."
     $ lunCG(pos=15)
@@ -2125,7 +2125,7 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     call her_main("Have a nice day you two!","smile","happyCl")
     $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=3)
     ">With that your vision starts to fade to black as Luna suckles your wilting cock back to health..."
-    show screen blkfade 
+    show screen blkfade
     with d3
     hide scren luncg
     $ hermione_scaleratio = 2
@@ -2134,14 +2134,14 @@ label luna_reverted_event_6: #Repeatable Luna BJ for whole day #NEEDS TESTING
     hide screen hermione_main
     ">By the time you wake up Luna is gone and the sun has set."
     ">All that's left is a puddle of cum under the desk and an aching in your balls..."
-    hide screen blkfade 
+    hide screen blkfade
     with d3
 
     jump main_room
 
-    #repeatable Hermione summon event 
+    #repeatable Hermione summon event
     #Hermione immediately comments about Luna being under the desk due to the smell
-    #Talks about how perverted this is 
+    #Talks about how perverted this is
     #Starts calling Luna names as she strips and starts to play with herself
     #Genie asks her why she's stripping and also criticising Luna
     #Asks what she's expected to do when the room reeks like cum so badly
@@ -2286,7 +2286,7 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     $ ccg2 = 13
     lun "Yes! Yes! Thank you! Thank you! I'm almost... almost...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
     $ ccg2 = 14
-    ">You feel Luna's tight cunt start to spasm and grip down hard on your cock..." 
+    ">You feel Luna's tight cunt start to spasm and grip down hard on your cock..."
     m "Argh! You dirty little slut! Who said you could cum yet!"
     $ ccg2 = 15
     lun "I had too, [lun_genie_name]."
@@ -2305,7 +2305,7 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     ">You can see that Luna is still trying to thrust onto you, but her legs refuse to listen to her with multiple orgasms taking over her body..."
     show screen blkfade
     with d3
-    ">Luna tries to keep going but collapses on the ground with a thump after you pull out of her..." 
+    ">Luna tries to keep going but collapses on the ground with a thump after you pull out of her..."
     m "Ugh...{w} I suppose I better carry her back, she'll freeze out here otherwise."
     menu:
         "-Carry her back to her room-":
@@ -2322,9 +2322,9 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
             ">You softly pick the cum coated young girl up off the cold grass, cradling her in your arms as you take her to her dorm."
             pass
     ">You return to your office."
-    hide screen blkfade 
+    hide screen blkfade
     with d3
-    jump main_room  
+    jump main_room
 
 label luna_reverted_event_8: #Luna sex repeatable (in the office)#NEEDS POSING
     #Luna already in the office
@@ -2432,7 +2432,7 @@ label luna_reverted_event_8_ast_1: #Astoria part 1#NEEDS POSING
     ">You look around but can't find any trace of the small witch..."
     lun "ah... y-y-yea..."
     m "Awesome, I'm just gonna... take a nap..."
-    show screen blkfade 
+    show screen blkfade
     with d3
     ">With that the two of you doze off..."
     ">When you wake you find only a Luna shaped cumstain on your desk."
@@ -2553,7 +2553,7 @@ label luna_reverted_event_8_her_1: #Hermione part 1#NEEDS POSING
     with d3
     ">With that the two of you doze off..."
     ">When you wake you find only a Luna shaped cumstain on your desk."
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     jump main_room
 
@@ -3029,7 +3029,7 @@ label luna_reverted_event_8_her_2: #Hermione repeatable part
     call lun_chibi("hide")
     call update_luna_chibi_uniform
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
     $ luna_busy = True
@@ -3121,7 +3121,7 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
     lun "You don't have to... a-ah...{image=textheart} stay if you don't want to..."
     ton "Oh...{p}I may as well stick around for a little bit longer..."
     ">Tonks' angrily fingers her cunt while she stares hungrily at Luna's bouncing boobs."
-    show screen blkfade 
+    show screen blkfade
     with d3
     pause 2
     hide screen blkfade

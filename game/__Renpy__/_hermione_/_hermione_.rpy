@@ -127,6 +127,7 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
 label update_hermione:
 
     $ hermione_flip = 1
+    $ her_chibi_flip = 1
     $ use_hermione_head = False
 
     call update_her_uniform

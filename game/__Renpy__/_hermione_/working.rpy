@@ -25,13 +25,13 @@ label job_1:
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen blkfade
     with d5
-    
+
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
     m "Off you go then..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -43,9 +43,7 @@ label job_1:
 label maid_responses:
     $ payment = renpy.random.randint(10, 25)
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    pause.2
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
 
@@ -90,7 +88,7 @@ label maid_responses:
     $ gryffindor+= 20
     $ gold += payment
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -118,13 +116,13 @@ label job_2:
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen blkfade
     with d5
-    
+
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
     m "Off you go then..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -136,9 +134,7 @@ label job_2:
 label barmaid_responses:
     $ payment = renpy.random.randint(20, 50)
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    pause.2
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
 
@@ -162,7 +158,7 @@ label barmaid_responses:
     $ gryffindor+= 20
     $ gold += payment
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -192,7 +188,7 @@ label job_3:
         call h_equip_temp_outfit(hg_cheer_g_ITEM)
     hide screen blkfade
     with d5
-    
+
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -200,7 +196,7 @@ label job_3:
     call her_main("Thank you...","base","happyCl")
     m "Off you go then..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -212,9 +208,7 @@ label job_3:
 label gryffindor_cheer_responses:
     $ payment = renpy.random.randint(40, 80)
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    pause.2
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
@@ -295,7 +289,7 @@ label gryffindor_cheer_responses:
                         m "You just look rather..."
                         m "Clean, that's all."
                         call her_main("Oh, well...","base","down",cheeks="blush")
-                        call her_main("I didn't want to make a mess","soft","down_raised",cheeks="blush") 
+                        call her_main("I didn't want to make a mess","soft","down_raised",cheeks="blush")
                         call her_main("Anyhow, I'm glad I did it. I can't wait to rub it in Astoria's face tomorrow...","smile","base")
                         m "I'm glad you think it was worth it. Did they pay you?"
                     "-Okay-":
@@ -313,7 +307,7 @@ label gryffindor_cheer_responses:
     $ gryffindor+= 20
     $ gold += payment
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -343,8 +337,8 @@ label job_4:
         call h_equip_temp_outfit(hg_cheer_s_ITEM)
     hide screen blkfade
     with d5
-    
-    
+
+
     call her_main("","base","base",xpos="right",ypos="base",trans="fade")
     pause.8
 
@@ -352,7 +346,7 @@ label job_4:
     call her_main("Thank you...","base","happyCl")
     m "Off you go then..."
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -364,10 +358,8 @@ label job_4:
 label slytherin_cheer_responses:
     $ payment = renpy.random.randint(50, 100)
 
-    call play_sound("door") #Sound of a door opening.
-    call her_walk("door","mid",2)
-    pause.2
-    
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
     else: #Normal
@@ -459,7 +451,7 @@ label slytherin_cheer_responses:
 
     label end_her_working_no_payment:
 
-    call her_walk("mid","leave",2)
+    call her_walk(action="leave", speed=2)
 
     call h_unequip_temp_outfit()
 
@@ -468,7 +460,7 @@ label slytherin_cheer_responses:
     $ uni_sperm = False
     jump night_main_menu
 
-    
+
 #Send Hermione to work, promoting the card game.
 
 label job_5:
@@ -485,7 +477,7 @@ label job_5:
     elif random_choice == 2:
         call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
         call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
-    else: 
+    else:
         call her_main("That doesn't leave a lot to the imagination...","smile","squint")
         call her_main("At least the straps should cover my nipples...","open","wink")
         call her_main("I'll do it...","normal","happy", cheeks="blush")
@@ -502,7 +494,7 @@ label job_5:
         call her_main("I'll see you tonight.","open","base")
         m "Forgetting something?"
         call her_main("... Just hand it over.","disgust","down", cheeks="blush")
-    
+
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
@@ -511,27 +503,27 @@ label job_5:
     hide screen blkfade
     with d5
     g9 "Looking great!"
-    call her_main("Thank you...","open","happy", cheeks="blush")  
-    m "Off you go then..."  
-    
-    
+    call her_main("Thank you...","open","happy", cheeks="blush")
+    m "Off you go then..."
+
+
     hide screen hermione_main
     call h_unequip_temp_outfit()
     $ hermione_busy = True
     $ current_job = 5
 
     jump main_room
-    
+
 label hermione_helping_selling_cards:
-    $ current_job = 0 
+    $ current_job = 0
     $ random_choice = renpy.random.randint(1,4)
-            
+
     call h_equip_temp_outfit(hg_gamble_slut_ITEM)
-    
+
     if her_shop_help_first:
         $ her_shop_help_first = False
         call her_main("")
-        m "Hello, [hermione_name], how was your day?" 
+        m "Hello, [hermione_name], how was your day?"
         call her_main("Good...","normal","squint")
         call her_main("Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today.","open","closed")
         call her_main("Apparently we sold a lot more items than usual though.","base","happy", cheeks="blush")
@@ -556,10 +548,10 @@ label hermione_helping_selling_cards:
         $ gryffindor += 15
         call h_unequip_temp_outfit()
         jump night_main_menu
-        
+
     if random_choice == 1:
         call her_main("")
-        m "Hello, [hermione_name], how was your day?" 
+        m "Hello, [hermione_name], how was your day?"
         call her_main("It was fine, the outfit is a bit chilly though.","normal","happy")
         m "So, no other complications?"
         call her_main("Well...","soft","down", cheeks="blush")
@@ -585,13 +577,13 @@ label hermione_helping_selling_cards:
         $ gryffindor += 20
     elif random_choice == 2:
         call her_main("")
-        m "Hello, [hermione_name], how was your day?" 
-        call her_main("Awful...","normal","down")  
+        m "Hello, [hermione_name], how was your day?"
+        call her_main("Awful...","normal","down")
         m "Really, why is that?"
         call her_main("Well, I'm not actually angry...","open","base")
         call her_main("Just a bit annoyed, that's all.","annoyed","closed")
         m "With?"
-        call her_main("Myself...","open","worriedL", cheeks="blush") 
+        call her_main("Myself...","open","worriedL", cheeks="blush")
         call her_main("We've set up a practice day where you get to borrow a deck of cards to get more people into the game.","normal","squint")
         g9 "Sounds like a good idea, get people invested."
         call her_main("Well, that was fine and all until the amount of new people interested started to slow down.","open","down")
@@ -608,7 +600,7 @@ label hermione_helping_selling_cards:
         call her_main("Well, I managed to get a bunch of people into the card game so practice day is still on the schedule.","annoyed","angryCl")
         g9 "That's good!"
         call her_main("Though I might reconsider the whole strip card idea...","angry","down", cheeks="blush")
-        call her_main("I lost pretty quickly...","normal","closed", cheeks="blush") 
+        call her_main("I lost pretty quickly...","normal","closed", cheeks="blush")
         call her_main("It turned out they had been cheating the whole time...","normal","base", cheeks="blush")
         g9 "Well, cheaters never prosper..."
         call her_main("That's not true in this case... they prospered alright.","open","squintL", cheeks="blush")
@@ -624,7 +616,7 @@ label hermione_helping_selling_cards:
         $ gryffindor += 25
     elif random_choice == 3:
         call her_main("")
-        m "Hello, [hermione_name], how was your day?" 
+        m "Hello, [hermione_name], how was your day?"
         call her_main("Great, they held a card game tournament today.","base","base")
         g4 "Wait, a tournament? How come I wasn't invited?"
         call her_main("It was students only obviously...","open","squintL")
@@ -680,16 +672,16 @@ label hermione_helping_selling_cards:
         m "of course..."
         m "And how many times did you test this... theory of yours."
         call her_main("There's no conclusion to be made by just testing a theory once [genie_name].","normal","angryCl")
-        call her_main("Anyway...","open","base")     
+        call her_main("Anyway...","open","base")
         call her_main("Here's your payment.","open","base")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
         m "Well done [hermione_name], 30 points to Gryffindor."
         $ gryffindor += 30
-    
+
     call h_unequip_temp_outfit()
     jump night_main_menu
-    
+
 label inn_menu:
 
     if inn_intro:

@@ -34,7 +34,8 @@ label start_hufflepuff_match:
 ### Main Match Against Hufflepuff ###
 
 label hufflepuff_match:
-
+    # Equip standard Hermione clothes for event
+    call h_equip_temp_outfit(hg_standart_school_ITEM)
     # Scene before Match against Hufflepuff
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
@@ -154,7 +155,7 @@ label hufflepuff_match:
     call sna_chibi("stand", flip=False)
     with d3
 
-    sna "Cereful at the top. Don't hit your head."
+    sna "Careful at the top. Don't hit your head."
 
     call play_sound("kick")
     with hpunch
@@ -735,6 +736,9 @@ label hufflepuff_match:
     call gen_walk(xpos="desk", ypos="base", speed=2.8)
 
     call blkfade
+    
+    # Change hermione outfit to previous one
+    call h_unequip_temp_outfit()
 
     # Skip to evening.
     jump night_start

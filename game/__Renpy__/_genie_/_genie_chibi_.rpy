@@ -367,6 +367,7 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
 # redux_pause = value to decrease the time to pause before hideing the animation early
 
 label gen_walk(xpos=walk_xpos, ypos=walk_ypos, speed=gen_speed, action="", loiter=True, redux_pause=0):
+    call hide_characters
     hide screen bld1
     hide screen blktone
     with d3

@@ -168,7 +168,7 @@ screen hermione_stand:
     #add her_chibi_bottom   xpos her_chibi_xpos ypos her_chibi_ypos xzoom her_chibi_flip zoom (1.0/scaleratio)
     #add her_chibi_robe     xpos her_chibi_xpos ypos her_chibi_ypos xzoom her_chibi_flip zoom (1.0/scaleratio)
 
-    zorder cho_chibi_zorder
+    zorder her_chibi_zorder
 
 
 screen hermione_walk:

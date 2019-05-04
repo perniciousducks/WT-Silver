@@ -136,45 +136,62 @@ label hufflepuff_match:
     #call sna_chibi("stand","180","0", flip=True)
     #call gen_chibi("stand", "130", "10")
     #call her_chibi("stand","375","105", flip=True)
+    $ sna_chibi_zorder = 2
+    $ her_chibi_zorder = 3
+    $ gen_chibi_zorder = 4
     pause 1
 
     ### Main Match Starts ###
     $ renpy.music.stop("weather")
     $ renpy.music.play("sounds/crowd.mp3", fadein=2)
     call hide_blkfade
+    call ctc
 
     call play_sound("footsteps")
-    pause.5
-
-    call sna_chibi("stand","180","0", flip=True)
+    pause.8
+    call sna_chibi("stand","190","0", flip=True)
     with d3
-    pause.2
+    pause.8
 
-    call sna_chibi("stand","180","0", flip=False)
+    call sna_chibi("stand", flip=False)
     with d3
 
-    sna "Don't hit your head."
+    sna "Cereful at the top. Don't hit your head."
 
     call play_sound("kick")
-    pause.2
-    call gen_chibi("stand", "130", "10")
-    with d3
+    with hpunch
+    pause.6
 
     g4 "Bloody hell!"
 
-    call sna_chibi("stand","180","0", flip=True)
+    call play_sound("footsteps")
+    pause.8
+    call gen_chibi("stand", "130", "10")
+    with d3
+    pause.5
+
+    call sna_chibi("stand", flip=True)
     with d3
 
     sna "Well, here we are..."
     sna "Now we are only waiting for-"
 
-    call her_chibi("stand","375","105", flip=True)
+    call her_chibi("stand","220","50", flip=True)
+    with d3
+    pause.5
+
+    call her_chibi("stand","230","50", flip=False)
     with d3
 
-    her "Progessors."
-
+    her "Professors."
     sna "Granger..."
 
+    call her_chibi("stand","220","50", flip=True)
+    with d3
+    pause.2
+
+    call her_walk(xpos="375", ypos="105", speed=2)
+    pause.5
 
     call her_main("Good Morning everyone, and welcome to the i-inaugural-","soft","worried", flip=True,xpos="120",ypos="base")
     call her_main("", mouth="normal", eye="worried")
@@ -208,6 +225,12 @@ label hufflepuff_match:
     # Speech
     call her_main("And now, to say a few words and declare the games open, Professor Dumbledore!", mouth="open", eye="closed")
     call her_main("", mouth="base", eye="soft")
+    call ctc
+
+    hide screen hermione_main
+    call her_chibi(flip=False)
+    with d3
+
     m "{size=-4}What? Isn’t that me?{/size}"  # Small text.
     call sna_main("It is.","snape_02",ypos="head")
     $ qp_mob_reaction[2] = None
@@ -216,35 +239,51 @@ label hufflepuff_match:
     call sna_main("I’ve been looking forward to watching you bumble your way through this...","snape_22",ypos="head")
     $ qp_mob_reaction[0] = None
     call sna_main("Besides, you only have to give some trivial speech about team spirit, gesticulate wildly and say \"let the games begin\". A child could manage it.","snape_24",ypos="head")
-    call sna_main("Now get up there!","snape_10",ypos="head")
+    call sna_main("Now get down there!","snape_10",ypos="head")
     stop bg_sounds fadeout 2.0
-    call gen_chibi("stand", "360", "45")
+
+    $ her_chibi_zorder = 4
+    $ gen_chibi_zorder = 3
     call her_chibi("stand","350","185", flip=True)
-    call her_main("", flip=True,xpos="100",ypos="120")
-    with d5
-    ">With that, Snape shoves you out of your chair, behind the podium."
-    m "(Shit, what do I even talk about)"
-    hide screen hermione_main
+    with d3
+
+    call gen_walk(xpos="360", ypos="45", speed=2)
+
+    $ genie_base = "characters/genie/base/base.png"
+    $ genie_zorder = 5
+
+    call gen_main(face="base", xpos="100", ypos="120")
+    call ctc
+
+    call gen_main("", face="angry")
+
     menu:
+        "(Shit, what do I even talk about?)"
         "\"Miracles\"":
             $ renpy.music.stop(fadeout=4)
             play bg_sounds "music/fanfare.mp3" fadein 1.0
-            m "Great moments are born from great opportunity."
+            call gen_main("Great moments are born from great opportunity.",face="base")
             $ renpy.music.play("sounds/wind_long_loop.mp3")
             ">A reverent hush falls over the crowd..."
-            m "And that’s what you have here tonight-"
-            m "That's what you've earned here tonight!"
+            call gen_main("And that’s what you have here tonight-",face="base")
+            call gen_main("That's what you've earned here tonight!",face="base")
+            hide screen genie_main
+            with d3
+            pause.5
+
             $ renpy.sound.play("sounds/killswitch_on.mp3")
             $ qp_spotlight = True
-            m "One game..."
-            m "Tonight, WE are the greatest hockey team in the world!"
-            m "You were born to be hockey players..."
-            m "Every one of you..."
+            pause.8
+
+            call gen_main("One game...",face="base")
+            call gen_main("Tonight, WE are the greatest hockey team in the world!",face="base")
+            call gen_main("You were born to be hockey players...",face="base")
+            call gen_main("Every one of you...",face="base")
             $ qp_mob_reaction[0] = "emoq"
-            m "And you were meant to be here tonight!"
-            m "This is your time..."
+            call gen_main("And you were meant to be here tonight!",face="base")
+            call gen_main("This is your time...",face="base")
             #Fade to black
-            m "Their time is done, it’s over! I’m sick and tired about hearing what a great hockey team the soviets have!"
+            call gen_main("Their time is done, it’s over! I’m sick and tired about hearing what a great hockey team the soviets have!",face="base")
             $ qp_mob_reaction[1] = "qu"
             pause 1.5
             mal "I think Dumbledore has finally started to lose his marbles..."
@@ -252,7 +291,7 @@ label hufflepuff_match:
             stop bg_sounds fadeout 2.0
             $ qp_mob_reaction[0] = "sur"
             $ qp_mob_reaction[1] = None
-            m "Screw it! This is our time..."
+            call gen_main("Screw it! This is our time...",face="base")
             $ qp_mob_reaction[0] = "sal"
             mal "..."
             $ renpy.sound.play("sounds/cough_male.mp3")
@@ -262,75 +301,102 @@ label hufflepuff_match:
             $ qp_mob_reaction[1] = None
             $ qp_spotlight = False
             $ renpy.sound.play("sounds/killswitch_off.mp3")
-            m "Now let the games begin!"
+            call gen_main("Now let the games begin!",face="base")
+
         "\"Freedom\"":
             $ renpy.music.stop(fadeout=4)
             play bg_sounds "music/fanfare.mp3" fadein 1.0
-            m "Son's of Scotland!"
-            m "I am William Wallace..."
+            call gen_main("Son's of Scotland!",face="angry")
+            call gen_main("I am William Wallace...",face="base")
             $ qp_mob_reaction[0] = "qu"
             ">A confused murmur falls over the crowd."
             call sna_main("{size=-4}William Wallace?{/size}","snape_05",ypos="head")
-            g4 "{size=-4}That's not your line...{/size}"
-            g9 "Yes... I am William Wallace!"
-            g9 "And I see a whole army of my countrymen, here in the defiance of tyranny..."
-            g9 "You have come to fight as free men, and free men you are. What would you do with that freedom? Will you fight?"
+            call gen_main("{size=-4}That's not your line...{/size}",face="angry")
+            call gen_main("Yes... I am William Wallace!",face="grin")
+            call gen_main("And I see a whole army of my countrymen, here in the defiance of tyranny...",face="grin")
+            call gen_main("You have come to fight as free men, and free men you are. What would you do with that freedom? Will you fight?",face="grin")
             $ renpy.sound.play("sounds/murmur.mp3")
             $ qp_mob_reaction[1] = "emoq"
             ">The sound of confused murmuring increases even further..."
             mal "Fight? Against what?"
-            m "{size=-4}See, that guy knows his lines...{/size}"
+            call gen_main("{size=-4}See, that guy knows his lines...{/size}",face="base")
             call sna_main("...","snape_03")
-            m "Aye, fight and you may die..."
+            call gen_main("Aye, fight and you may die...",face="base")
+
             call sna_chibi("stand","300","80", flip=True)
             call sna_main("I think it's time for you to step down from the...","snape_01")
-            g4 "No, I'm just about to get to the best part!"
+            call gen_main("No, I'm just about to get to the best part!",face="angry")
             $ renpy.sound.play("sounds/cloth_sound.mp3")
             stop bg_sounds fadeout 2.0
+
+            hide screen genie_main
             call sna_chibi("stand","280","80", flip=True)
             call gen_chibi("stand", "340", "45")
             with d3
+
             ">Snape then begins to drag you away from the podium."
             play bg_sounds "sounds/wind_long_loop.mp3"
-            g4 "This is our chance... they may take away our microphones... {w=1.0}But they...{nw}{w=0.3}But they...{nw}"
+
+            call gen_main("This is our chance... they may take away our microphones...{w=1.0} But they...{nw}{w=0.3}But they...{nw}",face="angry")
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
+
+            hide screen genie_main
             call sna_chibi("stand","300","80", flip=True)
             call gen_chibi("stand", "360", "45")
             with d3
-            g4 "This is our chance... they may take away our microphones... {w=0.3}But they...{nw}{fast}{w=1.0}But they...{w=0.5}{nw}"
+
+            call gen_main("This is our chance... they may take away our microphones... {w=0.3}But they...{nw}{fast}{w=1.0}But they...{w=0.5}{nw}",face="angry")
+
+            hide screen genie_main
             call sna_chibi("stand","260","80", flip=True)
             call gen_chibi("stand", "320", "45")
             with d3
-            g4 "But they'll never take away our freedom!"
-            call sna_chibi("stand","180","0", flip=True)
+
+            call gen_main("But they'll never take away our freedom!",face="angry")
+
+            hide screen genie_main
             with d5
             stop bg_sounds fadeout 2.0
+
+            $ snape_chibi_zorder = 3
+            $ gen_chibi_zorder   = 2
+            call sna_chibi("stand","260","80", flip=True)
+            call gen_chibi("stand", "320", "45", flip=True)
+            with d3
+
         "\"Nam\"":
             $ renpy.music.stop(fadeout=4)
             play bg_sounds "sounds/wind_long_loop.mp3"
-            g9 "{cps=7}Goooooooood{/cps}  morning,{w=0.1} Vietnam!"
-            g9 "Hey, this is not a test... This is rock and roll!"
-            g9 "Time to rock it from the delta to the DMZ!"
-            g9 "Is that me or does that sound like an Elvis Presley movie?"
+            call gen_main("{cps=7}Goooooooood{/cps}  morning,{w=0.1} Vietnam!",face="grin")
+            call gen_main("Hey, this is not a test... This is rock and roll!",face="grin")
+            call gen_main("Time to rock it from the delta to the DMZ!",face="grin")
+            call gen_main("Is that me or does that sound like an Elvis Presley movie?",face="grin")
+
             $ qp_mob_reaction[0] = "sal"
             $ qp_mob_reaction[1] = "emoq"
             ">A confused murmur falls over the crowd."
-            m "Ugh..."
+            call gen_main("Ugh...",face="base")
+
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
-            m "Is this thing on?"
+            call gen_main("Is this thing on?",face="base")
+
             $ qp_mob_reaction[1] = "sal"
             $ renpy.sound.play("sounds/cough_male.mp3")
             mal "..."
+
             $ qp_mob_reaction[0] = "emoq"
             $ qp_mob_reaction[1] = "qu"
-            g9 "It's O six hundred, what does the O stand for?"
-            g9 "Ooooh my god it's early!"
+            call gen_main("It's O six hundred, what does the O stand for?",face="grin")
+            call gen_main("Ooooh my god it's early!",face="grin")
+
             $ renpy.sound.play("sounds/murmur.mp3")
             ">The sound of confused murmuring increases even further..."
             mal "What's he on about? Is the fire lit but the cauldron empty?"
             mal2 "Looks like it..."
             stop bg_sounds fadeout 2.0
-            m "Tough crowd... Anyway, let the games begin!"
+            call gen_main("Tough crowd... Anyway, let the games begin!",face="base")
+
+
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
     $ renpy.music.play("sounds/crowd_low.mp3", fadein=3)
     play bg_sounds "music/11 The Quidditch Match_original.mp3"
@@ -341,10 +407,22 @@ label hufflepuff_match:
     $ qp_mob_reaction[0] = None
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[2] = None
-    call gen_chibi("stand", "130", "10")
-    with d5
-    pause 0.2
+
+    call gen_walk(xpos="130", ypos="10", speed=2)
+
+    $ snape_chibi_zorder = 2
+    $ her_chibi_zorder   = 4
+    $ gen_chibi_zorder   = 3
+    call gen_chibi("stand", "130", "10", flip=False)
+    call sna_chibi("stand","190","0", flip=True)
+    with d3
+    pause.2
+
+    # Hermione commentates again.
     call her_chibi("stand","375","105", flip=True)
+    with d3
+    pause.8
+
     call her_main("Ugh... thank you for that, professor Dumbledore...","soft","glanceL", flip=True,xpos="120",ypos="base")
     call her_main("Now, to get this game underway!", mouth="open", eye="closed")
 
@@ -718,7 +796,7 @@ label hufflepuff_match_return:
     call cho_main("Thank you Professor...","smile","wink","base","mid")
 
     # Cho leaves.
-    call cho_walk(speed=2.4, action="leave")
+    call cho_walk(action="leave", speed=2.4)
 
     stop music fadeout 1.0
     call give_reward(">New favours for Cho has been unlocked!","interface/icons/head/head_cho_2.png")

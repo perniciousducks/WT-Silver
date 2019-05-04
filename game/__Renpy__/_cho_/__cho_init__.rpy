@@ -49,6 +49,7 @@ label cho_progress_init:
         $ cho_wardrobe_unlocked   = False
         $ cho_busy                = False
         $ cho_chatted             = False
+        $ has_cho_panties         = False
         $ cho_panties_soaked      = False
 
 

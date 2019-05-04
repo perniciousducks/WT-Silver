@@ -114,22 +114,23 @@ label hat_intro_3: #Luna change scene #DONE
         "-Let her go-":
             $ luna_reverted = True
             m "Actually, on second thought, I better not put the hat on."
-            call lun_main("Oh... Why not?","base","wink","sad","R")
+            call lun_main("Oh... Why not?","base","wink","sad","mid")
             m "Well, if I let you change house then half the school will probably want a second go."
             m "Better to keep the status quo."
             hat "Wait, I don't get to-"
             ">You slam the hat into a draw in your desk to silence it."
             call lun_main("oh, alright then!","base","base","base","R")
-            call lun_main("But seeing as how I'm already here ,sir, I need to talk to you.","base","base","base","R")
+            call lun_main("But seeing as how I'm already here ,sir, I need to talk to you.","base","base","base","mid")
             m "You do?"
-            m "(Maybe this won't be a waste of time afterall!)"
-            call lun_main("It's about the school being in great danger!","open","wide","nagry", "R")
+            m "(Maybe this won't be a waste of time after-all!)"
+            call lun_main("It's about the school being in great danger!","open","wide","angry", "mid")
             m "Oh..."
             m "In that case, you'll have to come speak to me later."
             call lun_main("Oh, um alright then... You must be very busy at the moment!","base","wink","sad","R")
             m "Yeah, busy..."
             m "(Too busy to hear about something that dull.)"
             call lun_main("I'll come back later then, this really is something you nead to hear about!","base","closed","angry","R")
+            call lun_walk("mid","leave",2)
             $ luna_busy = True
 
             call give_reward(">You've unlocked the ability to summon Luna Lovegood to your office.","interface/icons/head/head_luna_1.png")

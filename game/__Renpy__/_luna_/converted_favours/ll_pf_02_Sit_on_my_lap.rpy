@@ -3,9 +3,9 @@
 label luna_favour_2: ###SIT ON MY LAP #DONE
 
     m "{size=-4}(I'll just ask her to sit on my lap...){/size}"
-    if lun_corruption <= 3: #FIRST TIME
-        if lun_corruption <= 3:
-            $ lun_corruption += 1
+    if lun_whoring <= 3: #FIRST TIME
+        if lun_whoring <= 3:
+            $ lun_whoring += 1
         call play_music("chipper_doodle")
         m "Before we get started, Would you like a seat, [luna_name]?"
         call lun_main("I would, but there's no chair [lun_genie_name]...","normal","angry","raised","mid")
@@ -326,9 +326,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
             call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif lun_corruption <= 4: #SECOND TIME
-        if lun_corruption <= 4:
-            $ lun_corruption += 1
+    elif lun_whoring <= 4: #SECOND TIME
+        if lun_whoring <= 4:
+            $ lun_whoring += 1
         call play_music("chipper_doodle")
         m "Can I offer you another seat [luna_name]?"
         if lun_sub > lun_dom:
@@ -787,9 +787,9 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
             call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif lun_corruption >= 5 and lun_corruption < 13: #THIRD TIME
-        if lun_corruption <= 5:
-            $ lun_corruption += 1
+    elif lun_whoring >= 5 and lun_whoring < 13: #THIRD TIME
+        if lun_whoring <= 5:
+            $ lun_whoring += 1
         call play_music("chipper_doodle")
         m "Can I offer you another seat [luna_name]?"
         if lun_sub > lun_dom:

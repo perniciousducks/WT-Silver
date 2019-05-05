@@ -3,11 +3,11 @@
 label luna_favour_4: ###Luna handjob #DONE
 
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
-    if lun_corruption > 13:
+    if lun_whoring > 13:
         jump luna_handjob_hermione_call
     if luna_addicted:
-        if lun_corruption <= 11:
-            $ lun_corruption += 1
+        if lun_whoring <= 11:
+            $ lun_whoring += 1
         call play_music("chipper_doodle")
         m "[luna_name]?"
         call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
@@ -290,9 +290,9 @@ label luna_favour_4: ###Luna handjob #DONE
 
 
     else:
-        if lun_corruption <= 10: #FIRST TIME - Change this to 10 when part 2 added
-            if lun_corruption <= 10:
-                $ lun_corruption += 1
+        if lun_whoring <= 10: #FIRST TIME - Change this to 10 when part 2 added
+            if lun_whoring <= 10:
+                $ lun_whoring += 1
             call play_music("chipper_doodle")
             m "[luna_name]?"
             call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
@@ -508,8 +508,8 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
         else: #last time event is run before cum addict variant
-            if lun_corruption <= 11:
-                $ lun_corruption += 1
+            if lun_whoring <= 11:
+                $ lun_whoring += 1
             call play_music("chipper_doodle")
             m "[luna_name]?"
             call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
@@ -805,3 +805,108 @@ label luna_favour_4: ###Luna handjob #DONE
     hide screen desk
 
     jump luna_away
+
+
+label luna_cum_addict_event:
+    $ luna_addicted = True #luna is now a cum addict. I'm a bit undecided about the whole thing tbh, might ruin the dom path but idk, we can work it in, make her a dommy cumslut or whatever........
+    ">You put your arms on Luna's shoulders forcing her to her knees."
+    $ luna_l_arm = 2
+    $ luna_r_arm = 2
+    $ genie_base = "characters/genie/base/hard.png"
+    call gen_main("Down we go!","grin")
+    $ luna_ypos = 225
+    $ luna_xpos = 350
+    call lun_main("Stop right now! This wasn't an option [lun_genie_name]!","open","wide","mad","mid")
+    g4 "Argh, too late slut!"
+    call lun_main("!!!","upset","closed","mad","mid")
+    $ luna_cum = 11
+    call cum_block
+
+    $ luna_wear_cum = True
+    ">You coat Luna's furious expression in a wave of hot cum!"
+    pause
+    g4 "Argh! by the gods {size=+10}YES!{/size}"
+    call lun_main("...","normal","seductive","base","crossed")
+    call lun_main("(What's this smell?)","pout","seductive","sad","downL")
+    g4 "{size=+10}TAKE IT ALL YOU big titted SLUT!{/size}"
+    g4 "mmmm....."
+    hide screen g_c_c_u
+    $ g_c_u_pic = "images/animation/06_jerking_01.png"
+    $ luna_r_arm = 2
+    hide screen genie_main
+    $ genie_base = "characters/genie/base/open.png"
+    with d3
+    m "That hit the spot..."
+    call lun_main("...","pout","mad","mad","L")
+    call lun_main("......","normal","angry","angry","downL")
+    call lun_main(".........","base","seductive","sad","empty")
+    m "Ahh... that was fantastic slut..."
+    $ g_c_u_pic = "images/animation/06_groping_01.png"
+    call lun_main("What {size=+4}is {size=+4}this {size=+4}smell?{/size}","base","wide","sad","mid")
+    m "Cum?"
+    ">Luna gets up from her knees"
+    $ luna_ypos = 0
+    call lun_main("{size=+4}it{/size}","upset","suspicious","mad","L")
+    call lun_main("{size=+8}smells{/size}","normal","mad","angry","downL")
+    call lun_main("{size=+12}incredible!!!{/size}","base","wide","sad","empty")
+    m "..."
+    m "What?"
+    call lun_main("My god!!! there's so much magical energy in it!","base","wide","sad","mid")
+    call lun_main("I've never sensed anything this powerful before!","base","wide","sad","down")
+    m "Ah yes, well I am the great fumblemore!"
+    call lun_main("...","pout","angry","angry","mid")
+    call lun_main("This smell... it's too much for any mortal to make...","base","angry","base","mid")
+    m "(Shit...)"
+    call lun_main("Can I...","normal","base","sad","mid")
+    call lun_main("Taste it?","normal","seductive","sad","R")
+    m "What sort of question is that?"
+    call lun_main("If it's too much...","normal","wide","sad","mid")
+    g9 "Of course you can taste my cum girl!"
+    call lun_main("Thank you, sir...","base","wide","sad","mid")
+    m "(She seems different...)"
+    $ luna_cum = 12
+    ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","seductive","sad","empty")
+    call lun_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}","base","happyCl","sad","mid")
+    call lun_main("Can I have the rest? Please sir?","base","wide","sad","mid")
+    m "Sure..."
+    ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
+    $ luna_cum = 13
+    call lun_main("...","full","seductive","sad","empty")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    pause
+    $ luna_cum = 14
+    call lun_main("...","full","seductive","sad","empty")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    $ luna_cum = 15
+    call lun_main("...","full","seductive","sad","empty")
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    $ luna_wear_cum = False
+    call lun_main("Ah...","base","happyCl","sad","mid")
+    call lun_main("Amazing...","base","seductive","sad","mid")
+    m "Enjoyed yourself did we?"
+    call lun_main("How could I not?","pout","angry","angry","R")
+    m "(What is going on here? She seems all bitchy again...)"
+    call lun_main("You have to tell me how you did that!","normal","mad","angry","mid")
+    m "Cum? I'm pretty sure you've got that all worked out..."
+    call lun_main("Not that, idiot!","normal","suspicious","mad","mid")
+    call lun_main("Why did it contain so much magical energy?","normal","angry","angry","mid")
+    call lun_main("We lovegoods are sensitive to magic, but the only thing I've ever experienced like this was when I was allowed in the same room as some essence of Djinn...","pout","angry","mad","R")
+    call lun_main("But everyone knows the Djinn were hunted to extinction millenia ago...","normal","mad","angry","mid")
+    g4 "(!!!)"
+    m "Oh,{w=0.3} um..."
+    m "Trade secret..."
+    call lun_main("Fine! Be that way then [lun_genie_name]...","pout","suspicious","angry","R")
+    ">Luna gets dressed in front of you in a huff."
+
+    call load_luna_clothing_saves
+
+    call lun_main("Just don't expect me to let you get away with wasting that spunk anymore [lun_genie_name]!","normal","mad","angry","mid")
+
+    m "Anyway, here's your payment, [luna_name]."
+    $ gold -= current_payout
+    $ luna_gold += current_payout
+    ">You hand Luna [current_payout] gold."
+    call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
+
+    jump luna_away #DONE

@@ -2,8 +2,8 @@
 
 label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
-    if lun_corruption <= 11:
-        $ lun_corruption += 1
+    if lun_whoring <= 11:
+        $ lun_whoring += 1
         m "[luna_name], how would you feel about selling another favour?"
         call lun_main("...","base","seductive","angry","mid")
         call lun_main("What is it this time [lun_genie_name]?","base","angry","angry","R")
@@ -470,8 +470,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         jump end_hermione_event
 
-    elif lun_corruption <= 12: #second time
-        $ lun_corruption += 1
+    elif lun_whoring <= 12: #second time
+        $ lun_whoring += 1
         $ luna_payout = 150
         $ hermione_payout = 40
         m "How would you feel about another handjob involving Miss Granger?"
@@ -840,8 +840,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
 
     else: #third handjob event, needs to be repeatable
-        if lun_corruption <= 13:
-            $ lun_corruption += 1
+        if lun_whoring <= 13:
+            $ lun_whoring += 1
         label luna_handjob_hermione_call:
             pass
         m "How about another handjob, [luna_name]?"

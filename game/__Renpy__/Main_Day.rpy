@@ -285,37 +285,38 @@ if her_whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_
 if her_whoring >= 21 and not hat_known:
     call hat_intro #Returns
 
-if luna_reverted and lun_corruption == -2 and days_to_luna <= 0:
+if luna_reverted and lun_whoring == -2 and days_to_luna <= 0:
     $ days_without_an_event = 0
-    jump luna_reverted_greeting_1 #Sets lun_corruption to -1, returns next night.
+    jump luna_reverted_greeting_1 #Sets lun_whoring to -1, returns next night.
 
-if luna_reverted and lun_corruption >= 0 and days_to_luna <= 0:
-    if luna_reverted and lun_corruption == 0:
+
+# Random Luna Favors
+# They happen once and unlock the favor in her favor menu.
+
+if luna_reverted and days_to_luna <= 0:
+
+    # Masturbate
+    if lun_whoring >= 0 and ll_pf_masturbate_OBJ not in ll_favor_list:
+        $ ll_favor_list.append(ll_pf_masturbate_OBJ)
+
         $ days_without_an_event = 0
-        jump luna_reverted_event_1
-    elif luna_reverted and lun_corruption == 1:
+        $ days_to_luna = 5
+
+        jump ll_pf_masturbate_T1_intro
+
+    # Blowjob
+    elif lun_whoring >= 3 and ll_pf_blowjob_OBJ not in ll_favor_list:
+        $ ll_favor_list.append(ll_pf_blowjob_OBJ)
+
         $ days_without_an_event = 0
-        jump luna_reverted_event_2
-    elif luna_reverted and lun_corruption == 2:
-        $ days_without_an_event = 0
-        jump luna_reverted_event_3
-    elif luna_reverted and lun_corruption == 3:
-        $ days_without_an_event = 0
-        jump luna_reverted_event_4
-    elif luna_reverted and lun_corruption == 4:
-        $ days_without_an_event = 0
-        jump luna_reverted_event_5
-    elif luna_reverted and lun_corruption == 5:
-        $ days_without_an_event = 0
-        jump luna_reverted_event_6
-    elif luna_reverted and lun_corruption == 6:
-        $ days_without_an_event = 0
-        jump luna_reverted_event_7
-    elif luna_reverted and lun_corruption == 7:
-        $ days_without_an_event = 0
-        jump luna_reverted_event_8
+        $ days_to_luna = 5
+
+        jump ll_pf_blowjob_T1_intro
+
     else:
         pass
+
+
 
 ### NOT IN USE
 #if day == 10:

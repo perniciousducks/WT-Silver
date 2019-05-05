@@ -80,12 +80,12 @@ label cheats:
 
                 "-Sub Luna-":
                     $ lun_sub = 8
-                    $ lun_corruption = 10
+                    $ lun_whoring = 10
                     "Set to Sub Luna"
                     jump cheats_luna
                 "-Dom Luna-":
                     $ lun_dom = 8
-                    $ lun_corruption = 10
+                    $ lun_whoring = 10
                     "Set to Dom Luna"
                     jump cheats_luna
 

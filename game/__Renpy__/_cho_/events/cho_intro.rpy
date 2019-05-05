@@ -652,7 +652,7 @@ label cho_hermione_talk:
         m "I’d like you to stop your..."
         m "Quidditch-...{w} something something...{w} movement."
 
-    if her_whoring < 5:
+    if her_whoring < 4: # If you haven't groped her breasts or ass yet.
         call her_main("My \"Quidditch equality movement\"?","soft","base")
         call her_main("But Sir, I'm on the verge of a breakthrough with it!","soft","closed")
         call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!","open","wink")

@@ -64,7 +64,7 @@ screen genie_stand_mirror:
 screen genie_walk_mirror:
     tag genie_chibi_mirror
 
-    add gen_chibi_walk at genie_walk_trans(-walk_xpos, walk_xpos2-110) xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
+    add gen_chibi_walk at gen_walk_trans(-walk_xpos, walk_xpos2-110, walk_ypos, walk_ypos2 ) xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
 
     zorder gen_chibi_zorder
 

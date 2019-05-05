@@ -317,7 +317,7 @@ screen luna_stat_menu:
             mousewheel True
 
             vbox:
-                use stat_bar(int(lun_corruption/2.4), "-Corruption-", "", lun_corruption)
+                use stat_bar(int(lun_whoring/2.4), "-Corruption-", "", lun_whoring)
                 use stat_bar(int(lun_dom/2.4), "-Dom points-", "", lun_dom)
                 use stat_bar(int(lun_sub/2.4), "-Sub points-", "", lun_sub)
 

@@ -118,7 +118,7 @@ label summon_cho:
 
 # Cho Favor Menu
 label cho_favor_menu:
-    call update_cho_heart_color
+    call update_cho_favors
     python:
         menu_choices = []
         for i in cc_favor_list:
@@ -141,7 +141,7 @@ label cho_favor_menu:
     else:
         $ renpy.jump(result)
 
-label update_cho_heart_color:
+label update_cho_favors:
 
     # Pre Hufflepuff
     if main_matches_won == 0:

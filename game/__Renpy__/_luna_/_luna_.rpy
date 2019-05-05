@@ -110,16 +110,22 @@ label luna_away:
     jump main_room
 
 
-label update_luna:
-    $ luna_flip = 1
-    $ use_luna_head = False
-    $ luna_l_arm             = 1
-    $ luna_r_arm             = 1
 
-    call update_lun_uniform
-    call update_luna_chibi_uniform
+label end_luna_event:
 
-    return
+    call hide_characters
+    call lun_chibi("hide")
+    call gen_chibi("sit_behind_desk")
+    hide screen blkfade
+    hide screen blktone
+    hide screen bld1
+    with d3
+
+    call reset_luna
+
+    $ luna_busy = True
+
+    jump main_room
 
 
 label reset_luna:
@@ -132,6 +138,21 @@ label reset_luna:
     call update_luna
 
     return
+
+
+label update_luna:
+    $ luna_flip = 1
+    $ use_luna_head = False
+    $ luna_l_arm             = 1
+    $ luna_r_arm             = 1
+
+    call update_lun_uniform
+    call update_luna_chibi_uniform
+
+    return
+
+
+
 
 
 label luna_no_money:

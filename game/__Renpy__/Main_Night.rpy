@@ -162,7 +162,7 @@ if luna_known and not luna_unlocked:
 if luna_reverted and days_to_luna <= 0:
 
     # Sex
-    elif lun_whoring >= 9 and ll_pf_sex_OBJ not in ll_favor_list:
+    if lun_whoring >= 9 and ll_pf_sex_OBJ not in ll_favor_list:
         $ ll_favor_list.append(ll_pf_sex_OBJ)
 
         $ days_without_an_event = 0

@@ -156,10 +156,6 @@ python:
 if luna_known and not luna_unlocked:
     call hat_intro_3 #Returns
 
-if luna_reverted and lun_whoring == -1:
-    $ days_without_an_event = 0
-    jump luna_reverted_greeting_2 #Sets lun_whoring to 0
-
 # Random Luna Favors
 # They happen once and unlock the favor in her favor menu.
 

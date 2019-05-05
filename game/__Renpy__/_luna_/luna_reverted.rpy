@@ -2708,45 +2708,45 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
     call ton_main("I didn't think you'd be able to land a grade-a bird like this you old horndog!","horny","base","raised","L")
     call ton_main("How'd you manage this one then? Love potion? Points? Gold?","horny","base","raised","L")
     lun "He's helping me... ah... get rid of... my wrackspurts!"
-    call ton_main("...","horny","base","raised","L")
+    call ton_main("...","horny","base","base","L")
     call ton_main("Mind control?","horny","base","raised","L")
     m "Nope."
-    call ton_main("Then should I ask what the hell a \"wrackspurt\" is?","horny","base","raised","L")
+    call ton_main("Then should I ask what the hell a \"wrackspurt\" is?","open","base","base","L")
     m "Ugh... Luna can explain them..."
     lun "Ah... they're nasty little... mmmm... creatures that make... ah... you want... mmm... to {b}fuck{/b}."
-    call ton_main("...","horny","base","raised","L")
+    call ton_main("...","base","base","base","L")
     lun "You should... ah... be careful, Ms Tonks... {image=textheart} we're expelling a lot... {image=textheart} of them..."
-    call ton_main("Really? And how will I know If these \"wrackspurts\" are after me...?","horny","base","raised","L")
+    call ton_main("Really? And how will I know If these \"wrackspurts\" are after me...?","base","base","raised","L")
     lun "You'll feel... ah... hot...{image=textheart} down there..."
     call ton_main("Oh... I see...","horny","base","raised","L")
     call ton_main("You know, you should come visit me after hours Miss Lovegood, I think I might also be able to help you out...","horny","base","raised","L")
     m "Hey!"
     lun "Ah... thank you... {image=textheart} Ms tonks... but I don't think... ah... you'll {b}taste{/b} as good..."
-    call ton_main("Now, now, you don't know that... I taste like {b}heaven{/b}...","horny","base","raised","L")
+    call ton_main("Now, now, you don't know that... I taste like {b}heaven{/b}...","base","base","raised","L")
     lun "There's just... ah{image=textheart} no way... you can...{image=textheart} taste half as good..."
     ">Tonks hand disappears down the front of her pants..."
     call ton_main("Oh I see how it is...","horny","base","raised","L")
     lun "Ah... you do?"
-    call ton_main("Uh-huh... You're just Dumbledore's dirty, little, cumslut... aren't you?","horny","base","raised","L")
+    call ton_main("Uh-huh... You're just Dumbledore's dirty, little, cumslut... aren't you?","base","base","raised","L")
     lun "That's it!"
-    call ton_main("So you admit it then?","horny","base","raised","L")
+    call ton_main("So you admit it then?","horny","base","base","L")
     lun "Of course! I'm proud... to be a cumslut!"
     lun "As an auror you should... ah{image=textheart} know the importance of... mmm{image=textheart} warding off evil magic!"
-    call ton_main("There's warding...","horny","base","raised","L")
-    call ton_main("And then there's just being covered in cum...","horny","base","raised","L")
+    call ton_main("There's warding...","base","base","base","L")
+    call ton_main("And then there's just being covered in cum...","base","base","raised","L")
     lun "Oh..."
     lun "They're both fun!"
     call ton_main("Fuck... you've really done a number on this her, haven't you, Dumbledore...","horny","base","raised","L")
     m "She was like this from the start..."
     lun "Mhmm!"
-    call ton_main("Then you've lucked out on finding the horniest little nymph to ever live...","horny","base","raised","L")
+    call ton_main("Then you've lucked out on finding the horniest little nymph to ever live...","horny","base","base","L")
     lun "I am not... a nymph!"
-    call ton_main("Anyway... all this talk of how much you love your headmasters yummy cum...","horny","base","raised","L")
+    call ton_main("Anyway... all this talk of how much you love your headmasters yummy cum...","base","base","raised","L")
     call ton_main("I want to see it...","horny","base","raised","L")
     m "See what?"
-    call ton_main("Her, covered in it...","horny","base","raised","L")
+    call ton_main("Her, covered in it...","horny","base","base","L")
     lun "You do?"
-    call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmasters spunk...","horny","base","raised","L")
+    call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmasters spunk...","base","base","raised","L")
     lun "{image=textheart}{image=textheart}{image=textheart}"
     menu:
         "Where should you cum?"
@@ -2758,12 +2758,12 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
             g4 "Shutup!"
             lun "..."
             g4 "Ugh... here it is you little whore!"
-            call ton_main("...","horny","base","raised","L")
+            call ton_main("...","base","base","raised","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
             ">Tonk's fingers noticeably begin to speed up."
-            call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
+            call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","base","L")
         "-Fire it in her-":
             g4 "ARGH!!! TAKE IT ALL YOU LITTLE WHORE!"
             ">You start filling up poor Luna as her hungry pussy does it's best to milk you dry."
@@ -2773,7 +2773,7 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
             ">Tonk's fingers noticeably begin to speed up."
             call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
     call ton_main("ah...{w=0.5} this has certainly been...{p}fun.","horny","base","raised","L")
-    call ton_main("But I think I best be on my way... I need to take care of some \"rockspoons\" of my own...","horny","base","raised","L")
+    call ton_main("But I think I best be on my way... I need to take care of some \"rockspoons\" of my own...","base","base","raised","L")
     lun "Ugh... You don't want to see us go again?"
     ">With that slips your softening cock back into her tight hole..."
     m "Ugh... can't we have a break first?"
@@ -2781,9 +2781,9 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
     ">Luna simply looks back at you with the eyes of a puppy dog begging for a treat."
     m "Fine... just start off slowly this time!"
     lun "That's no fun..."
-    call ton_main("Wow... you two really are going to go again, aren't you?","horny","base","raised","L")
+    call ton_main("Wow... you two really are going to go again, aren't you?","base","base","raised","L")
     lun "You don't have to... a-ah...{image=textheart} stay if you don't want to..."
-    call ton_main("Oh...{p}I may as well stick around for a little bit longer...","horny","base","raised","L")
+    call ton_main("Oh...{p}I may as well stick around for a little bit longer...","base","base","raised","L")
     ">Tonks' angrily fingers her cunt while she stares hungrily at Luna's bouncing boobs."
     show screen blkfade
     with d3
@@ -2796,25 +2796,25 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
     g9 "I've already gone four rounds!"
     lun "But there are still so many-"
     g9 "Well, too bad, I'm about to pass out."
-    call ton_main("Hmmm, he's probably right, Luna... He is pretty old.","horny","base","raised","L")
+    call ton_main("Hmmm, he's probably right, Luna... He is pretty old.","base","base","raised","L")
     lun "That shouldn't matter!"
-    call ton_main("It's also getting rather late. As your teacher, it is my responsibility to make sure you follow curfew.","horny","base","raised","L")
+    call ton_main("It's also getting rather late. As your teacher, it is my responsibility to make sure you follow curfew.","base","base","raised","L")
     m "The whole cum bath thing is okay though?"
     call ton_main("Surprisingly, there's nothing about a \"cum bath\" in the teachers handbook...","horny","base","raised","L")
     m "Fair enough. You two going to bed suits me anyway."
     call ton_main("Well, come on then, Luna, hurry up and get dressed, I'll walk you home.","horny","base","raised","L")
     lun "Alright then Miss Tonks..."
     ">With an airy smile, Luna picks up her clothes and places them on over her cum soaked form."
-    call ton_main("Aren't you going to scourgify yourself before we go?","horny","base","raised","L")
+    call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L")
     lun "What, Why?"
-    call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","horny","base","raised","L")
+    call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","base","base","base","L")
     lun "Oh that's just the wrackspurts! They're corpses can have that affect on people."
     lun "I {b}love{/b} the smell myself... Besides, I need to wear them to act as a warning to the other wrackspurts while I sleep!"
-    call ton_main("You mean you expect me to walk you back to your room covered head to toe in cum?","horny","base","raised","L")
+    call ton_main("You mean you expect me to walk you back to your room covered head to toe in cum?","horny","base","base","L")
     lun "You don't have to... I can make my own way home."
     call ton_main("I wouldn't miss this for the world... All we need is a leash and we can cross a line off my bucket list.","horny","base","raised","L")
     lun "What?"
-    call ton_main("Never mind, let's just go before the prefects start whining about curfew.","horny","base","raised","L")
+    call ton_main("Never mind, let's just go before the prefects start whining about curfew.","base","base","raised","L")
     ">With that, tonks walks off with the cum-soaked Luna..."
     m "Finally... I thought they'd never leave..."
     ">You collapse into your chair and doze off seconds later."
@@ -2845,7 +2845,7 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
     call ton_main("Mmmm, don't mind if I do...","horny","base","raised","L")
     ">The room falls silent save for the rhythmic noise of Luna being fucked and the quiet squelching coming from her perverted teacher."
     lun "Ah... ah... ah..."
-    call ton_main("So, Luna.","horny","base","raised","L")
+    call ton_main("So, Luna.","horny","base","raised","R")
     lun "Yes... ah..."
     call ton_main("Will you be needing another escort home today?","horny","base","raised","L")
     lun "Oh, well I don't think I really need one."
@@ -2855,21 +2855,21 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
     call ton_main("Ugh... {image=textheart}fuck{image=textheart}... that's it...","horny","base","raised","L")
     call ton_main("Last time I walked you home...","horny","base","raised","L")
     lun "{image=textheart}Ah... yes? ah...{image=textheart}"
-    call ton_main("God, I've never been so turned on in my life!","horny","base","raised","L")
+    call ton_main("God, I've never been so turned on in my life!","base","base","raised","R")
     call ton_main("Watching everyone in the school turn to look at you...","horny","base","raised","L")
-    call ton_main("Coated in the biggest fucking load of cum...","horny","base","raised","L")
+    call ton_main("Coated in the biggest fucking load of cum...","base","base","raised","L")
     lun "Ah...{image=textheart}"
-    call ton_main("And no one said a word...","horny","base","raised","L")
-    call ton_main("They just {b}fucked{/b} you with their eyes...","horny","base","raised","L")
+    call ton_main("And no one said a word...","base","base","raised","L")
+    call ton_main("They just {b}fucked{/b} you with their eyes...","horny","base","base","L")
     lun "They did?{image=textheart}"
     call ton_main("Can you blame them? You were such pretty, well-fucked mess...","horny","base","raised","L")
-    call ton_main("Ugh... I stayed up all night fingering myself to the sight of you...","horny","base","raised","L")
+    call ton_main("Ugh... I stayed up all night fingering myself to the sight of you...","base","base","base","L")
     lun "Ah... you did?"
-    call ton_main("Mhmmm... I'll probably do it again tonight...","horny","base","raised","L")
+    call ton_main("Mhmmm... I'll probably do it again tonight...","horny","base","base","L")
     lun "Careful... ah... you might release... too many wrackspurts..."
-    call ton_main("Oh... Will that make all my students nice and slutty like you?","horny","base","raised","L")
+    call ton_main("Oh... Will that make all my students nice and slutty like you?","horny","base","base","L")
     lun "It- ah... it could."
-    call ton_main("Mmmm, fantastic...","horny","base","raised","L")
+    call ton_main("Mmmm, fantastic...","base","base","raised","L")
     lun "Fantastic? Why...{w=0.3} ah...{w=0.3} would you..."
     ">Before Luna can say anymore, you grab onto her hips before slamming into her."
     lun "Ah...{image=textheart}{image=textheart}{image=textheart}"
@@ -2882,16 +2882,16 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
             ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             ">You slump back into your chair, leaving Luna on your desk, leaking cum."
-            call ton_main("Dumbledore, what do you think you're doing?","horny","base","raised","L")
+            call ton_main("Dumbledore, what do you think you're doing?","open","base","raised","L")
             m "Busting a load?"
-            call ton_main("Inside her! Now she won't be able to show off what a little cumslut she is!","horny","base","raised","L")
+            call ton_main("Inside her! Now she won't be able to show off what a little cumslut she is!","open","base","base","L")
             lun "ah..."
             m "You're just upset you don't get to lead her around like a trophy."
-            call ton_main("Ugh...","horny","base","raised","L")
-            call ton_main("At least try and get a little on her dress next time.","horny","base","raised","L")
+            call ton_main("Ugh...","horny","base","base","L")
+            call ton_main("At least try and get a little on her dress next time.","open","base","base","L")
             lun "..."
             m "I'll try. Now, are you ready to take Miss Lovegood home?"
-            call ton_main("I suppose so... Not that there's much point if she isn't covered in cum...","horny","base","raised","L")
+            call ton_main("I suppose so... Not that there's much point if she isn't covered in cum...","horny","base","base","L")
 
         "Coat her face":
             m "On your knees slut!"
@@ -2899,12 +2899,12 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
             ">Luna quickly hops off the desk and smiles in front of your cock..."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             g4 "Ugh... here it is you little whore!"
-            call ton_main("...","horny","base","raised","L")
+            call ton_main("...","horny","base","base","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
             ">Tonk's fingers noticeably begin to speed up."
-            call ton_main("Mmmm, damn... that's hot...","horny","base","raised","L")
+            call ton_main("Mmmm, damn... that's hot...","horny","base","base","L")
             m "Ready to take Miss Lovegood home?"
             call ton_main("You bet! I hope you don't mind taking the long route, Luna...","horny","base","raised","L")
 

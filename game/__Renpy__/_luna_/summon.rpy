@@ -6,7 +6,9 @@ label summon_luna:
 
     call lun_chibi("stand","mid","base")
 
-    if lun_dom >= lun_sub:
+    if luna_reverted:
+        call lun_main("Hello, [lun_genie_name]!","normal","wink","base","mid",xpos="base",ypos="base")
+    elif lun_dom >= lun_sub:
         if lun_dom >= 4:
             call lun_main("[lun_genie_name]...","normal","suspicious","angry","R",xpos="base",ypos="base")
         else:
@@ -71,7 +73,8 @@ label summon_luna:
         # Dismiss
         "-Never mind-":
 
-            #ADD Luna says goodbye.
+            if luna_reverted:
+                call lun_main("Oh... alright then... Bye, [lun_genie_name]!","normal","wink","sad","down",xpos="base",ypos="base")
 
             call play_sound("door")
 

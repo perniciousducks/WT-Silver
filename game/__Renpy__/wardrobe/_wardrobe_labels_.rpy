@@ -96,7 +96,7 @@ label return_to_wardrobe:
         if active_girl == "hermione":
             call her_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "luna":
-            call lun_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
+            call lun_main(eye="base", mouth='base',xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "astoria":
             call ast_main(face="neutral",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
@@ -115,7 +115,7 @@ label return_to_wardrobe:
         if active_girl == "hermione":
             call her_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "luna":
-            call lun_main(face="happy",xpos="wardrobe",ypos="base")
+            call lun_main(eye="base", mouth='base',xpos="wardrobe",ypos="base")
         if active_girl == "astoria":
             call ast_main(face="neutral",xpos="wardrobe",ypos="base")
         if active_girl == "susan":

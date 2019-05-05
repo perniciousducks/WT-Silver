@@ -111,9 +111,9 @@ label hat_intro_3: #Luna change scene #DONE
     m "Of course not!"
     call lun_main("*Phew*!","base","happyCl","base","mid")
     menu:
-        "-Let the hat mess with her-":
+        "-Let the hat mess with her-(Slytherin Luna Path)":
             pass
-        "-Let her go-":
+        "-Let her go-(Regular Luna Path)":
             $ luna_reverted = True
             m "Actually, on second thought, I better not put the hat on."
             call lun_main("Oh... Why not?","base","wink","sad","mid")

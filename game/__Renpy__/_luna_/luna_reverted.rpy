@@ -2233,8 +2233,9 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     $ lun_cg_dick         = lun_cg_path+"blank.png" 
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
-    $ lun_cg_xpos       = 0
-    $ lun_cg_ypos       = 0
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
+    $ luna_wear_top       = True
     $ lunCG(pupil='up', eye='excited', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank')
     hide screen blkfade
     with d3
@@ -2248,12 +2249,12 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     m "Ugh... steady on there, [luna_name], we've only just started!"
     $ lunCG('dr', 'furious', 'open')
     lun "{image=textheart}a-ah...{w=0.3} I can't...{w=0.3} [lun_genie_name]...{w=0.3} it's just...{w=0.3} too... {image=textheart}{b}goood{/b}...{image=textheart}"
-    $ lunCG('up', 'furious', 'open_tongue')
+    $ lunCG('up', 'furious', 'open_tongue', extra_1='speed')
     ">All you can do is stand there as Luna fucks herself senseless on your cock..."
     lun "{image=textheart}ah...{image=textheart}the wrackspurts...{image=textheart}{w=0.3} they're going...{image=textheart}{w=0.3} aaaahhh..."
     $ lunCG('dl', 'tired', 'pout')
     lun "I'm almost...{w=0.3} sad to lose...{w=0.3} them...{image=textheart}{image=textheart}"
-    $ lunCG('ahegao', 'furious', 'open_tongue', extra_3='fade')
+    $ lunCG('ahegao', 'furious', 'open_tongue', overlay='fade')
     lun "They feel {image=textheart}{b}amazing{/b}...{image=textheart}"
     m "About that..."
     $ lunCG('left', 'wink', 'base')
@@ -2262,7 +2263,7 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     $ lunCG('left', 'wide', 'open')
     lun "It isn't?... then... ah...{image=textheart} what's this feeling..."
     m "This is sex..."
-    $ lunCG('dr', 'tired', 'pout')
+    $ lunCG('dr', 'tired', 'pout', extra_1='blank')
     ">Luna's hips slam into your stomach and hold there."
     lun "Oh..."
     m "..."
@@ -2272,7 +2273,7 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     lun "So, sex forces us to eject the wrackspurts... but the feeling good is normal?"
     m "..."
     m "You got it."
-    $ lunCG('up', 'furious', 'open')
+    $ lunCG('up', 'furious', 'open', extra_1='speed')
     ">Luna's hips resume their assault, desperate to make up for the lost time."
     $ lunCG('left', 'seductive', 'base')
     lun "So we're... using {b}sex{/b}... to eject them..."
@@ -2290,7 +2291,7 @@ label luna_reverted_event_7: #Luna sex with Genie #NEEDS TESTING
     lun "a-ahhhhh..."
     ">You keep pounding her from behind. Luna's lovely breasts jiggle a little with every thrust."
     ">You turn your attention to her butt... It's so milky and... pert... she's such a needy little girl...."
-    $ lunCG('right', 'wide', 'wide', extra_1='spanking')
+    $ lunCG('right', 'wide', 'wide', extra_3='spanking')
     $ renpy.play('sounds/slap.mp3')
     lun "ah...{image=textheart}{image=textheart}{image=textheart}"
     ">You give her buttocks another loud slap."
@@ -2364,94 +2365,150 @@ label luna_reverted_event_8: #Luna sex repeatable (in the office)#NEEDS POSING
     m "Gods, you're a needy little whore, aren't you?"
     lun "{b}yes{/b}..."
     m "Mmmm"
-    $ ccg_folder = "luna_fucking_2"
-    $ ccg("1","blank","blank")
+    $ lun_cg_path         = "images/CG/luna_fucking/"
+    $ lun_cg_base         = lun_cg_path+"base.png"
+    $ lun_cg_genie        = lun_cg_path+"blank.png" 
+    $ lun_cg_dick         = lun_cg_path+"blank.png" 
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    $ lun_cg_xpos       = 0
+    $ lun_cg_ypos       = 0
+    ">Tired of talking, you decide to end the poor girl's suffering by slamming into her needy little fuckhole."
+    $ lunCG(pupil='up', eye='wide', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', overlay='fade', tears='blank')
     hide screen blkfade
     with d3
-    ">Tired of talking, you decide to end the poor girl's suffering by slamming into her needy little fuckhole."
     lun "{size=+10}{image=textheart}!!!{image=textheart}{/size}"
     m "That's it you little slut!"
-    $ ccg2 = 2
+    $ lunCG('ahegao', 'furious', 'open')
     lun "{size=-5}{image=textheart}wow...{image=textheart}{/size}"
-    $ ccg2 = 3
+    $ lunCG('up', 'angry', 'base', 'base')
     ">She starts grinding her hips against you immediately. Desperate for as much stimulation as she can get..."
     m "Ugh... steady on there, [luna_name], we've only just started!"
-    $ ccg2 = 4
+    $ lunCG('dl', 'seductive', 'open', 'sad')
     lun "{image=textheart}a-ah... I can't... [lun_genie_name]... it's just... too... {image=textheart}{b}goood{/b}...{image=textheart}"
-    $ ccg2 = 5
+    $ lunCG('up', 'furious', 'open_tongue')
     ">Not content to just stand there, you start thrusting back into Luna's tight pussy..."
+    $ lunCG('ahegao', 'seductive', 'open_tongue', extra_1='speed')
     lun "{image=textheart}ah...{image=textheart}the wrackspurts...{image=textheart} they're going...{image=textheart}aaaahhh..."
-    m "I already told you- Ugh... They're not real!"
-    $ ccg2 = 4
+    m "I already told you- Argh... They're not real!"
+    $ lunCG('dr', 'wide', 'open')
     lun "Ugh... I can see... them... ah...{image=textheart}{image=textheart} with my own two... eyes..."
-    $ ccg2 = 5
+    $ lunCG('left', 'seductive', 'base')
     lun "Can't you see them? The red mist..."
+    $ lunCG('dl', 'tired', 'base')
     lun "There's so many... You should be able to almost... ah... make them out..."
     m "..."
-    m "(Am I going crazy as well now?)"
+    m "(Am I going crazy?)"
     "*knock*knock*knock*"
     m "Crap!"
+    $ lunCG('left', 'wink', 'base', 'base')
     lun "Ah... who do you... think it is?"
     m "Umm... It's probably-"
+    show screen blkfade
+    with d3
     menu:
         "Astoria":
-            jump luna_reverted_event_8_ast_1
+            if not lun_reverted_event_flag_1:
+                jump luna_reverted_event_8_ast_1
+            else:
+                jump luna_reverted_event_8_ast_2
         "Tonks":
-            jump luna_reverted_event_8_ton_1
-        "Hermione":
-            jump luna_reverted_event_8_her_1
+            if not lun_reverted_event_flag_2:
+                jump luna_reverted_event_8_ton_1
+            else:
+                jump luna_reverted_event_8_ton_2
+        #"Hermione":
+        #    jump luna_reverted_event_8_her_1
 
 label luna_reverted_event_8_ast_1: #Astoria part 1#NEEDS POSING
+    $ lun_reverted_event_flag_1 = True
     ">No sooner is the name out of your mouth than a blast of light blasts from the keyhole of your door."
     ast "Alohomora!"
     ">Your door bursts open to reveal a troublesome young witch behind it."
-    call ast_main("Ready to practice ano-","smile","happyCl","base","mid",xpos=600)
+    $ lun_cg_base = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos = -200
+    $ astoria_scaleratio = 1.2
+
+    hide screen blkfade
+    with d3
+    call ast_main("Ready to practice ano-","smile","happyCl","base","mid", xpos=400, ypos=-300)
+    $ lunCG('right', 'wide', 'open')
     m "!!!"
     lun "!!!"
-    ast "{size+=10}Dumby!{/size} {b}What{/b} are you doing?"
+    call ast_main("{size=+10}Dumby!{/size} {b}What{/b} are you doing?","scream","wide","wide","mid")
+    $ lunCG('right', 'wink', 'base')
     lun "Oh... hello, Astoria..."
-    ast "I wasn't speaking to you, Lovegood! I thought we were only going to practice Imperio when we were together, Dumby!"
-    ast "It's no fair if you get to play around with other students on your own!"
+    $ lunCG('right', 'tired', 'pout', 'sad')
+    call ast_main("I wasn't speaking to you, Lovegood! I thought we were only going to practice Imperio when we were together, Dumby!","upset","angry","angry","mid")
+    $ lunCG('dl', 'seductive', 'base')
+    call ast_main("It's no fair if you get to play around with other students on your own!","pout","closed","angry","mid")
+    $ lunCG('up', 'angry', 'open')
     m "It's not what you think, Astoria..."
-    ast "What, so I'm supposed to think that Loony Luna just bent over and begged you to screw her?!"
-    ast "Speaking of which..."
-    ast "{size+=3}Why {size+=3}haven't {size+=3}you {size+=3}two {size+=3}{b}stopped{/b}!!!{/size}"
+    $ lunCG('ahegao', 'wide', 'open')
+    call ast_main("What, so I'm supposed to think that Loony Luna just bent over and begged you to screw her?!","disgust","closed","narrow","mid")
+    $ lunCG('right')
+    call ast_main("Speaking of which...","pout","closed","base","mid")
+    $ lunCG('dl', 'tired', 'base')
+    call ast_main("{size=+3}Why {size=+3}haven't {size=+3}you {size=+3}two {size=+3}{b}stopped{/b}!!!{/size}","scream","angry","angry","mid")
+    $ lunCG('right', 'tired', 'open')
     lun "Sorry... Astoria... but this... is an emergency..."
+    $ lunCG('up', 'furious', 'open_tongue')
     lun "I had a wrackspurt attack and needed help to purge them..."
-    ast "Wrackspurt?..."
-    ast "Ugh... I always knew you \"ravenclaw\" girls were {b}special{/b}..."
-    ast "But you really do take the cake, Luna..."
+    call ast_main("Wrackspurt?...","pout","narrow","narrow","mid")
+    $ lunCG('right', 'seductive', 'base')
+    call ast_main("Ugh... I always knew you \"ravenclaw\" girls were {b}special{/b}...","disgust","narrow","base","R")
+    $ lunCG('up', 'wide', 'open')
+    call ast_main("But you really do take the cake, Luna...","disgust","narrow","narrow","mid")
+    $ lunCG('right', 'happyCl', 'base', 'sad')
     lun "Thank you, Astoria! I love cake."
-    ast "So, is she just like this then Dumby?"
+    $ lunCG('up', 'furious', 'open_tongue', 'sad', extra_1='speed')
+    call ast_main("So, is she just like this then Dumby?","disgust","narrow","narrow","mid")
     m "Pretty much..."
-    ast "Well, I guess this is OK then..."
-    ast "So long as you clean this room afterwards, it reeks in here!"
+    $ lunCG('up', 'angry', 'open')
+    call ast_main("Well, I guess this is OK then...","pout","narrow","narrow","R")
+    $ lunCG('ahegao', 'furious', 'open_tongue')
+    call ast_main("So long as you clean this room afterwards, it reeks in here!","disgust","narrow","narrow","mid")
+    $ lunCG('right', 'angry', 'base', 'sad')
     lun "Isn't it {b}great{/b}..."
-    ast "No! It smells gross! I can hardly breathe!"
+    call ast_main("No! It smells gross! I can hardly breathe!","disgust","angry","narrow","mid")
+    $ lunCG('up', 'wide', 'open', 'base')
     lun "Those are probably the wrackspurts... We can teach you how to get rid of them if you'd like."
-    ast "No. thanks."
+    $ lunCG('right', 'seductive', 'open', 'base')
+    call ast_main("No. thanks.","upset","angry","narrow","mid")
+    $ lunCG('right', 'furious', 'base', 'sad')
     lun "At least watch us finish then..."
-    ast "What? {b}Why{/b}?"
+    call ast_main("What? {b}Why{/b}?","pout","angry","angry","mid")
+    $ lunCG('right', 'wide', 'open')
     lun "You should know... how to expel them..."
+    $ lunCG('up', 'furious', 'open')
     lun "It's just... the {b}best{/b}..."
-    ast "You want me to watch while Dumby-"
+    $ lunCG('right', 'wink', 'base')
+    call ast_main("You want me to watch while Dumby-","disgust","wide","narrow","mid")
     g4 "Argh... This is it whores!"
-    ast "!!!"
+    $ lunCG('ahegao', 'furious', 'open_tongue', extra_2='cum_1')
+    call ast_main("!!!","disgust","wide","wide","mid")
     lun "Yes!"
     g4 "ARGH!!!"
     ">You grab a tight hold of Luna's hips as you start to wildly fill her up with your cum."
-    ast "..."
+    call ast_main("...","upset","angry","angry","mid")
     ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
+    hide screen astoria_main
+    with d3
+    $ lunCG('ahegao', 'wide', 'open_tongue')
     lun "{image=textheart}{image=textheart}{image=textheart}"
+    show screen blkfade
+    with d3
     ">You slump back into your chair, leaving Luna on your desk, leaking cum."
     m "Like the show?"
     ">You look around but can't find any trace of the small witch..."
     lun "ah... y-y-yea..."
     m "Awesome, I'm just gonna... take a nap..."
-    show screen blkfade
-    with d3
+
     ">With that the two of you doze off..."
     ">When you wake you find only a Luna shaped cumstain on your desk."
+    hide screen luncg
+    hide screen blkfade
+    with d3
     jump main_room
 
 label luna_reverted_event_8_ast_2: #Astoria repeatable part
@@ -2460,54 +2517,90 @@ label luna_reverted_event_8_ast_2: #Astoria repeatable part
     #Starts shaming Luna about the smell of the room and her being a cumslut
     #Complains about all big boobed girls being sluts
     #Cum all over her as Astoria watches
-    ast "DUMBY!"
+    $ lun_cg_base = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos = -200
+
+    call ast_main("DUMBY!","smile","happyCl","base","mid")
+    $ lunCG('right', 'wide', 'open', 'base')
+    hide screen blkfade
+    with d3
     lun "Ah... Astoria..."
-    ast "Are you two going at it again?"
+    call ast_main("Are you two going at it again?","upset","narrow","narrow","mid")
     m "Take a guess."
-    ast "Ugh! How am I ever supposed to learn any magic if you two won't stop shagging like rabbits!"
+    $ lunCG('up', 'furious', 'open_tongue', extra_1='speed')
+    call ast_main("Ugh! How am I ever supposed to learn any magic if you two won't stop shagging like rabbits!","pout","angry","angry","mid")
+    $ lunCG('right', 'seductive', 'base','sad')
     lun "Ah..."
     m "I don't know Astoria, what you're watching here is pretty magical if you ask me."
-    ast "Pfft... I'd hardly call an old perv like you banging a {b}bimbo{/b} \"magical\"!"
+    $ lunCG('up', 'seductive', 'open')
+    call ast_main("Pfft... I'd hardly call an old perv like you banging a {b}bimbo{/b} \"magical\"!","upset","angry","angry","R")
     m "Mmmm, feels pretty magical..."
     m "Why don't you stay and watch... You might learn something."
+    $ lunCG('right', 'furious', 'base')
     lun "Ah... yes... stay, Astoria..."
+    $ lunCG('ahegao', 'furious', 'open', 'base')
     lun "You should... ah... learn how to get rid of wrackspurts."
-    ast "Again with your made up mumbo jumbo?!"
-    ast "If you want to want to be gross with Dumby just say so..."
+    call ast_main("Again with your made up mumbo jumbo?!","open","narrow","narrow","mid")
+    call ast_main("If you want to want to be gross with Dumby just say so...","disgust","angry","angry","R")
+    $ lunCG('right', 'wide', 'open', 'sad', tears='tears')
     lun "Ah... I'm serious..."
+    $ lunCG('up', 'wide', 'open_tongue')
     lun "They're real... and they... ah... make your head... all fuzzy..."
+    $ lunCG('ahegao', 'angry', 'open_tongue')
     lun "I can barely... think about anything but {b}this{/b}... sometimes..."
-    ast "You're just a big boobed bimbo!"
-    ast "All of you big boobed girls are the same!"
+    $ lunCG('ahegao', 'angry', 'base', 'base')
+    call ast_main("You're just a big boobed bimbo!","scream","angry","angry","mid")
+    call ast_main("{b}All{/b} of you big boobed girls are the same!","disgust","narrow","narrow","mid")
+    $ lunCG('ahegao', 'furious', 'open', 'sad')
     lun "Ah..."
-    ast "If it's not you fucking Dumby every chance you can get it's Susan strutting around the halls."
-    ast "Or Hermione Granger wearing the sluttiest outfit she can find..."
-    ast "It's ridiculous!"
+    call ast_main("If it's not you fucking Dumby every chance you can get it's Susan strutting around the halls.","pout","narrow","narrow","R")
+    $ lunCG('ahegao', 'angry', 'base')
+    call ast_main("Or Hermione Granger wearing the sluttiest outfit she can find...","clench","narrow","narrow","L")
+    $ lunCG('right', 'seductive', 'base')
+    call ast_main("It's ridiculous!","upset","angry","angry","R")
+    $ lunCG('right', 'wink', 'base')
     lun "Ah... It's not that..."
+    $ lunCG('right', 'wide', 'open')
     g9 "ARGH! HERE IT COMES SLUTS!"
+    $ lunCG('ahegao', 'angry', 'open_tongue')
     lun "Yes..."
-    ast "I think I'm going to go..."
+    call ast_main("I think I'm going to go...","pout","narrow","narrow","R")
+    $ lunCG('right', 'wide', 'open', 'sad')
     lun "Ah... No... stay..."
+    $ lunCG('ahegao', 'wide', 'base')
     lun "You need to see... them..."
-    ast "See who?"
+    call ast_main("See who?","pout","narrow","narrow","mid")
+    $ lunCG('right', 'wide', 'base')
     lun "The wrackspurts"
     g9 "HERE'S YOUR ROCKSPORTS SLUT!"
     g9 "ARGH!!!"
+    call ast_main("...","disgust","wide","wide","mid")
+    $ lunCG('ahegao', 'furious', 'open_tongue', 'base')
     ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
     g9 "FUCK YES!!!"
+    $ lunCG('ahegao', 'wide', 'open_tongue', 'sad')
     lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+    $ lunCG('ahegao', 'angry', 'base')
     lun "..."
-    ast "Wow..."
+    call ast_main("Wow...","disgust","wide","worried","mid")
+    $ lunCG('ahegao', 'tired', 'open')
     lun "{image=textheart}ah...{image=textheart} Did you see... them?"
-    ast "Pffft"
-    ast "The only thing I saw was a super slut getting banged by her gross old headmaster!"
+    call ast_main("Pffft","disgust","angry","angry","mid")
+    call ast_main("The only thing I saw was a super slut getting banged by her gross old headmaster!","scream","narrow","narrow","mid")
+    $ lunCG('dl', 'seductive', 'base')
     lun "mmm{image=textheart}{image=textheart}"
+    hide screen astoria_main
+    with d3
     ">With that, Astoria turns and leaves, a confused look plastered across her face."
     lun "ah...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
+    show screen blkfade 
+    with d3
     m "Gods that was good..."
     lun "ah..."
     ">With that, you let Luna recover before letting her slip out of your office and back to school."
-
+    hide screen luncg
+    hide screen blkfade
+    with d3
 
     jump main_room
 
@@ -2533,7 +2626,7 @@ label luna_reverted_event_8_her_1: #Hermione part 1#NEEDS POSING
     lun "Oh, that would be {b}fantastic{/b}!"
     lun "Imagine me... being the person to teach the world how the dispel wrackspurts!"
     call her_main("So you'd be okay with everyone knowing you've had Dumbledore's cock in you?","smile","happyCl")
-    lun "I'd give the school a demonstration if I was allowed!"
+    lun "I'd give the school a demonstration if I could!"
     ">Hermione's hands drift in between her legs..."
     call her_main("Ugh... you're so fucking {b}dirty{/b} aren't you...","smile","happyCl")
     call her_main("I just thought you were an idiot...","smile","happyCl")
@@ -2598,507 +2691,62 @@ label luna_reverted_event_8_her_2: #Hermione repeatable part
     #FTB Also, have the favour repeat from this point
     ">With that, Hermione hops up onto your desk, her eyes begging for your cock."
     her "My turn."
-    $ ccg_folder = "luna_sex"
-    $ ccg1 = "luna_1"
-    $ ccg2 = "herm_1"
-    $ ccg3 = "blank"
-    show screen ccg
-    hide screen bld1
-    hide screen blkfade
-    with d3
-    call ctc
 
-    menu:
-        "-Be gentle...-":
-            ">You take a hold of Hermione's legs, slowly parting them as the head of your cock leans up against her tender sex."
-            $ ccg2 = "herm_2"
-            her "Now, just take it slowly [genie_name] no need to show off to-"
-            ">You sneak the head of your cock softly into her waiting pussy."
-            $ ccg2 = "herm_3"
-            her "{image=textheart}ah{image=textheart}"
-            m "Mmmm, that's it slut... we can take it nice and slow..."
-            ">You slide the rest of your cock into her needy hole."
-            $ ccg2 = "herm_4"
-            her "ah{image=textheart}{image=textheart}{image=textheart}..."
-            pause
-            her "So {image=textheart}gooood{image=textheart}..."
-            $ ccg1 = "luna_2"
-            lun "mmm..."
-            g4 "{size=+10}Here we go!{/size}"
-            ">You start thrusting your hips in and out of Hermione, her pussy spasming around your hard member."
-            $ ccg2 = "herm_5"
-            her "ah{image=textheart}... ah{image=textheart}... ah{image=textheart}..."
-            her "{size=-15}harder...{/size}"
-            $ ccg1 = "luna_3"
-            lun "What's that Hermione?"
-            her "{size=-10}harder...{/size}"
-            $ ccg1 = "luna_4"
-            lun "I think you better stop sir... I think you might be hurting her!"
-            $ ccg2 = "herm_6"
-            her "HARDER!!!"
-            g4 "Ugh... take this you filthy whore."
-            $ ccg1 = "luna_5"
-            lun "..."
-            her "Yes, yes!"
-            her "I'm a nasty little whore..."
-            $ ccg2 = "herm_7"
-            her "Getting {image=textheart}fucked{image=textheart} silly in front of their friend..."
-            $ ccg1 = "luna_6"
-            $ ccg2 = "herm_8"
-            her "I'm even going to cum in front of her!"
-            $ ccg2 = "herm_5"
-            her "ah... here I..."
-            $ ccg1 = "luna_7"
-            lun "Already?"
-            her "Y-y-yes... {size=+5}I'm{image=textheart}{image=textheart}{image=textheart}{/size}"
-            $ ccg2 = "herm_9"
-            her "{size=+5}CUMMING!!!{/size}"
-        "-Be rough!-":
-            ">You take a hold of Hermione's legs, lining the head of your cock up with her tender sex."
-            her "Now just take it slowly, no need to show off-"
-            ">You slam into her, burying your cock to the hilt."
-            her "!!!"
-            g4 "Mmmm, that's it slut... You're still so tight."
-            her "ah{image=textheart}{image=textheart}{image=textheart}... this is..."
-            pause
-            her "So {image=textheart}gooood{image=textheart}..."
-            $ ccg1 = "luna_5"
-            lun "mmm..."
-            g4 "{size=+10}Here we go!{/size}"
-            ">You start thrusting your hips in and out of hermione, her pussy spasming around your hard member."
-            $ ccg2 = "herm_5"
-            her "ah{image=textheart}... ah{image=textheart}... ah{image=textheart}..."
-            her "{size=-15}harder...{/size}"
-            $ ccg1 = "luna_3"
-            lun "What's that Hermione?"
-            her "{size=-10}harder...{/size}"
-            $ ccg1 = "luna_4"
-            lun "I think you better stop sir... I think you might be hurting her!"
-            $ ccg2 = "herm_6"
-            her "HARDER!!!"
-            g4 "Ugh... take this you filthy whore."
-            $ ccg1 = "luna_5"
-            lun "..."
-            her "Yes, yes!"
-            her "I'm a nasty little whore..."
-            $ ccg2 = "herm_7"
-            her "Getting {image=textheart}fucked{image=textheart} silly in front of their friend..."
-            $ ccg1 = "luna_6"
-            $ ccg2 = "herm_8"
-            her "I'm even going to cum in front of her!"
-            $ ccg2 = "herm_5"
-            her "ah... here I..."
-            $ ccg1 = "luna_7"
-            lun "Already?"
-            her "Y-y-yes... {size=+5}I'm{image=textheart}{image=textheart}{image=textheart}{/size}"
-            $ ccg2 = "herm_9"
-            her "{size=+5}CUMMING!!!{/size}"
-
-    ">Hermione's cunt shakes violently as her eyes roll back into her head..."
-    pause
-    $ ccg2 = "herm_10"
-    m "Ugh... that's it girl..."
-    $ ccg2 = "herm_11"
-    her "so{image=textheart}{image=textheart}{image=textheart} goooooooooooood...{image=textheart}"
-    $ ccg1 = "luna_8"
-    lun "wow..."
-    ">You pull your rock hard cock out of Hermione's needy hole, despite her best efforts to wrap her legs around your torso."
-    $ ccg2 = "herm_12"
-    her "Just... a little longer [genie_name]..."
-    m "Now, now, [hermione_name]... don't be greedy..."
-    $ ccg2 = "herm_13"
-    her "..."
-    her "You're right sir..."
-    $ ccg2 = "herm_14"
-    her "Sorry Luna..."
-    $ ccg2 = "herm_15"
-    her "I'm just such a greedy little cockslut..."
-    pause
-    $ ccg1 = "luna_9"
-    lun "I know..."
-    $ ccg2 = "herm_14"
-    her "..."
-    ">You move away from Hermione's sweaty body, over to Luna's milky white form."
-    $ ccg1 = "luna_10"
-    ">You grab a hold of her legs, lining your cock up with her dripping cunt."
-    m "Are you ready [luna_name]?"
-    $ ccg1 = "luna_11"
-    lun "Yes... please..."
-    $ ccg1 = "luna_12"
-    lun "Are you sure you don't mind sharing, Hermione?"
-    $ ccg2 = "herm_16"
-    $ ccg1 = "luna_13"
-    ">Hermione gently takes Luna's hand in her own."
-    pause
-    her "I promise."
-    $ ccg1 = "luna_14"
-    lun "Thanks Hermioneeeeehhhh"
-    ">You decide to interrupt the cute moment by slowly forcing the head of your cock into Luna's soft pussy."
-    $ ccg1 = "luna_15"
-    lun "ah... it's... so hot..."
-    $ ccg2 = "herm_17"
-    her "mmmmm, yeah it is..."
-    $ ccg1 = "luna_16"
-    lun "ah...{image=textheart}{image=textheart}{image=textheart}"
-    her "Mmmm it seems like she likes it [genie_name]..."
-    $ ccg1 = "luna_17"
-    ">Luna barely muffles a timid little moan in response."
-    $ ccg2 = "herm_18"
-    her "Maybe she's ready for a little more?"
-    $ ccg1 = "luna_18"
-    lun "ah... yes..."
-    lun "Just please... be gentle sir..."
-    her "Hmmm, I'm not sure he'll be able to control himself."
-    show screen blkfade
-    with d3
-    ">Hermione leans over and whispers into Luna's ear."
-    $ ccg_folder = "luna_kiss"
-    $ ccg1 = "1"
-    $ ccg2 = "blank"
-    $ ccg3 = "blank"
-    hide screen blkfade
-    with d3
-    her "I know I wouldn't."
-    pause
-    show screen blkfade
-    with d3
-    $ ccg_folder = "luna_sex"
-    $ ccg1 = "luna_18"
-    $ ccg2 = "herm_18"
-    $ ccg3 = "blank"
-    hide screen blkfade
-    with d3
-    ">As if to punctuate the end of Hermione's sentence, you slowly thrust the rest of your length into Luna's tight fuckhole."
-    hide screen blkfade
-    with hpunch
-    $ ccg1 = "luna_19"
-    lun "{size=+10}!!!{/size}"
-    $ ccg1 = "luna_20"
-    lun "Ahhhhhhh"
-    $ ccg2 = "herm_19"
-    her "Mmmm, maybe that was a little too much sir..."
-    m "ugh... I couldn't help myself."
-    ">You slowly pull your cock out of her, until only the tip remains, before thrusting forward, reburying it in it's newfound home."
-    g4 "Fuck, she's so tight..."
-    g4 "I can barely move..."
-    $ ccg1 = "luna_20"
-    lun "a-a-ahhhhh..."
-    ">You slowly start to settle into a deep, rhythmic motion with your hips. Each thrust eliciting a gentle moan from Luna's lips."
-    $ ccg2 = "herm_20"
-    her "How is she [genie_name]?"
-    m "Incredible..."
-    $ ccg1 = "luna_21"
-    lun "thank you sir..."
-    $ ccg1 = "luna_22"
-    ">You begin to notice tears start to form in the corners of Luna's eyes."
-    $ ccg2 = "herm_16"
-    her "Is everything alright Luna?"
-    $ ccg2 = "herm_18"
-    her "It's not hurting too much is it?"
-    $ ccg1 = "luna_23"
-    lun "I-It's nothing!"
-    $ ccg2 = "herm_17"
-    her "Are you sure? If it's too much we can stop..."
-    $ ccg1 = "luna_24"
-    lun "No!"
-    lun "It's just... I'm... just..."
-    lun "So..."
-    $ ccg1 = "luna_25"
-    lun "Happy..."
-    ">You start to notice Luna and Hermione's hands tremble as Hermione squeezes tightly around Luna's."
-    $ ccg2 = "herm_21"
-    her "So you like it?"
-    $ ccg1 = "luna_26"
-    lun "Yes... I love it..."
-    $ ccg1 = "luna_27"
-    lun "It's a little painful... but it's..."
-    $ ccg1 = "luna_26"
-    lun "ah...{image=textheart}{image=textheart}{image=textheart}"
-    $ ccg1 = "luna_25"
-    lun "Still nice..."
-    $ ccg2 = "herm_17"
-    her "shhh... just enjoy yourself."
-    $ ccg1 = "luna_26"
-    lun "a-alright...{image=textheart}"
-    g4 "Gods, you're tight..."
-    $ ccg1 = "luna_25"
-    lun "Ah... thank you... sir..."
-    $ ccg2 = "herm_21"
-    her "Mmmm, he likes it when you call him that, doesn't he..."
-    $ ccg1 = "luna_18"
-    lun "Really?"
-    $ ccg2 = "herm_18"
-    her "Mhmmm... He likes it even more when you describe what you feel to him."
-    $ ccg1 = "luna_23"
-    lun "I-I don't know... ah...{image=textheart} if I could do that..."
-    lun "It's too embarrassing!"
-    $ ccg2 = "herm_17"
-    her "I'd like it too..."
-    $ ccg1 = "luna_18"
-    lun "..."
-    lun "well Alright..."
-    $ ccg1 = "luna_21"
-    lun "It's... ah...{image=textheart} it's like he's scratching an itch I never knew I had."
-    her "mmmmm, I know that itch..."
-    lun "Ah...{image=textheart} does it go away?"
-    $ ccg2 = "herm_18"
-    her "Eventually... but not for long..."
-    $ ccg1 = "luna_17"
-    lun "ah...{image=textheart}"
-    $ ccg1 = "luna_20"
-    lun "You mean?"
-    $ ccg2 = "herm_19"
-    her "Mhmmm... Don't worry, I'm sure Dumbledore will be more than happy to scratch it for you..."
-    $ ccg2 = "herm_18"
-    her "Or if he's too busy... well... you could always come to my room..."
-    $ ccg1 = "luna_17"
-    lun "{image=textheart}{image=textheart}{image=textheart}"
-    $ ccg1 = "luna_18"
-    lun "A-alright..."
-    $ ccg_folder = "luna_kiss"
-    $ ccg1 = "2"
-    $ ccg2 = "blank"
-    $ ccg3 = "blank"
-    hide screen blkfade
-    with d3
-    her "{size=-5}good girl{/size}"
-    pause
-    ">As Hermione whispers to Luna, you feel her pussy squeeze around your cock."
-    show screen blkfade
-    with d3
-    $ ccg_folder = "luna_sex"
-    $ ccg1 = "luna_18"
-    $ ccg2 = "herm_18"
-    $ ccg3 = "blank"
-    hide screen blkfade
-    with d3
-    g9 "Mmmm yes!"
-    g9 "Do that again [hermione_name]!"
-    $ ccg2 = "herm_22"
-    her "Do what?"
-    g9 "Call her a good girl!"
-    $ ccg1 = "luna_16"
-    lun "{image=textheart}{image=textheart}{image=textheart}"
-    g9 "Ugh... by the gods! Her cunt goes wild every time!"
-    $ ccg1 = "luna_30"
-    lun "D-don't... {image=textheart}ah...{image=textheart}"
-    $ ccg2 = "herm_17"
-    her "Ohhh..."
-    $ ccg2 = "herm_19"
-    her "Someone's got a nasty little fetish don't they?"
-    $ ccg1 = "luna_24"
-    lun "No... it's not like that!"
-    $ ccg1 = "luna_22"
-    lun "It's just... mmmm...{image=textheart}{image=textheart}"
-    lun "That's what... ah...{image=textheart}"
-    $ ccg1 = "luna_21"
-    lun "That's what {image=textheart}daddy{image=textheart} used to call me..."
-    $ ccg2 = "herm_18"
-    her "And hearing us call you a {b}good girl...{/b}"
-    $ ccg1 = "luna_16"
-    lun "mmmmm{image=textheart}{image=textheart}"
-    g9 "Fuck yes..."
-    $ ccg2 = "herm_17"
-    her "Makes your pussy feel good?"
-    $ ccg1 = "luna_20"
-    lun "Y-y-yes...{image=textheart}"
-    $ ccg1 = "luna_24"
-    lun "Is that wrong?"
-    $ ccg2 = "herm_23"
-    her "No!"
-    $ ccg2 = "herm_24"
-    her "It's perfectly natural for you to get turned on by us calling you a...{w} good girl-"
-    $ ccg1 = "luna_17"
-    lun "a{image=textheart}a{image=textheart}ahhhhh{image=textheart}"
-    $ ccg2 = "herm_25"
-    her "just like your {b}daddy{/b} used to..."
-    $ ccg1 = "luna_31"
-    lun "{size=+10}!!!{/size}"
-    $ ccg1 = "luna_32"
-    lun "mmmm I think I'm getting close Hermione!"
-    g9 "argh!!! Me too!"
-
-    menu:
-        "-Cum inside-":
-            g9 "GET READY SLUTS!"
-            $ ccg1 = "luna_33"
-            lun "W-w-what?"
-            $ ccg2 = "herm_26"
-            her "Aren't you going to pull out [genie_name]?"
-            g9 "HERE IT COMES!!!"
-            $ ccg2 = "herm_27"
-            her "I guess not then..."
-            $ ccg1 = "luna_34"
-            lun "You don't mean..."
-            g9 "ARGH!!!"
-            ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
-            g9 "BY THE NINE DIVINES!"
-            $ ccg1 = "luna_35"
-            lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
-            $ ccg1 = "luna_36"
-            lun "..."
-            $ ccg2 = "herm_25"
-            her "Mmmm, just enjoy it Luna..."
-            $ ccg2 = "herm_24"
-            her "Be a {b}good girl{/b} for {b}daddy{/b} and just let him pump you full of cum..."
-            $ ccg1 = "luna_37"
-            lun "{image=textheart}ah{image=textheart}"
-            $ ccg2 = "herm_26"
-            her "mmmm"
-            her "{b}good{/b}"
-            $ ccg1 = "luna_36"
-            lun "mmm{image=textheart}{image=textheart}"
-            $ ccg2 = "herm_25"
-            her "{b}girl{/b}"
-            $ ccg1 = "luna_38"
-            lun "Ah...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
-            pause
-            show screen blkfade
-            with d3
-            ">It all proves too much for Luna, who passes out on your desk, cum still seeping out of her well used sex."
-
-        "-Cum all over her-":
-            g9 "GET READY SLUTS!"
-            $ ccg1 = "luna_33"
-            lun "W-w-what?"
-            g9 "HERE CUMS DADDY!!!"
-            $ ccg2 = "herm_24"
-            her "mmm... do it [genie_name]!"
-            $ ccg1 = "luna_39"
-            lun "ah-ah-ah..."
-            g9 "ARGH!!!"
-            ">You pull your cock out at the last second, jerking it furiously as you shoot rope after rope of thick cum."
-            g9 "BY THE NINE DIVINES!"
-            $ ccg1 = "luna_40"
-            lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
-            $ ccg1 = "luna_41"
-            lun "..."
-            $ ccg2 = "herm_25"
-            her "Mmmm, just enjoy it Luna..."
-            $ ccg2 = "herm_24"
-            her "Be a {b}good girl{/b} for daddy and just let him coat you with his nasty cum..."
-            $ ccg1 = "luna_42"
-            lun "{image=textheart}ah{image=textheart}don't{image=textheart}call{image=textheart}it{image=textheart}nasty...{image=textheart}{image=textheart}{image=textheart}"
-            $ ccg2 = "herm_26"
-            her "mmmm"
-            her "{b}good{/b}"
-            $ ccg1 = "luna_43"
-            lun "mmm{image=textheart}{image=textheart}"
-            $ ccg2 = "herm_25"
-            her "{b}girl{/b}"
-            $ ccg1 = "luna_44"
-            lun "Ah...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
-            pause
-            show screen blkfade
-            with d3
-            ">It all proves too much for Luna, who passes out on your desk, coated in a thick layer of your cum."
-
-    $ luna_wear_top = False
-    $ luna_wear_bottom = False
-    call update_luna_chibi_uniform
-
-    call gen_chibi("sit_behind_desk")
-    call lun_chibi("stand","on_desk","base")
-    call her_chibi("stand","desk","base")
-    hide screen ccg
-    hide screen blkfade
-    with d3
-
-    call her_main("I think you broke her...","grin","wink")
-    m "She's fine..."
-    m "If I remember correctly, you've had some similar responses as well..."
-    call her_main("[genie_name]!","shock","happy")
-    m "Anyway, are you able to take call her back to her room?"
-    call her_main("Of course! Goodness knows what would happen if I left her here...","base","wink")
-
-    $ luna_wear_top = True
-    $ luna_wear_bottom = True
-    call update_luna_chibi_uniform
-    pause.2
-
-    call nar(">With a flick of Hermione's wand, Luna's clothes slither back onto her naked form.")
-    call her_main("Wingardium Leviosaaaaa!","open","happyCl")
-
-    hide screen luna_blink
-    with d3
-    call lun_chibi("stand","on_desk","140")
-    pause.2
-
-    call nar(">Luna's body lifts gently into the air, as if she was the star of a magic show.")
-
-    call her_main("Well I better be off, [genie_name], it's getting a little late.","grin","happy",xpos="base",ypos="base")
-
-    m "Goodnight, [hermione_name]."
-    call her_main("Goodnight {size=-5}daddy{/size}...","grin","narrow")
-    hide screen hermione_main
-    with d3
-    pause.2
-
-    hide screen luna_blink
-    with d3
-    call lun_chibi("stand","mid","base",flip=True)
-    call her_chibi("stand","desk","base",flip=True)
-
-    $ luna_chibi_walk = "ch_lun blink_a"
-    $ luna_chibi_walk_f = "ch_lun blink_a_flip"
-    call lun_walk("mid","door",2)
-    call lun_chibi("hide")
-    call update_luna_chibi_uniform
-
-    call her_walk(action="leave", speed=2)
-
-    $ hermione_busy = True
-    $ luna_busy = True
-
-    jump main_room
 
 label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
+    $ lun_reverted_event_flag_2 = True
+    $ lun_cg_base = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos = -200
+
+    $ lunCG('right', 'wide', 'open', 'base')
+    hide screen blkfade
+    with d3
     call ton_main("Professor Dumbledore!","horny","base","raised","L")
+    $ lunCG('dr', 'sedctive', 'open', 'sad')
     lun "!!!"
     m "!!!"
-    ton "I didn't think you'd be able to land a grade-a bird like this you old horndog!"
-    ton "How'd you manage this one then? Love potion? Points? Gold?"
+    call ton_main("I didn't think you'd be able to land a grade-a bird like this you old horndog!","horny","base","raised","L")
+    call ton_main("How'd you manage this one then? Love potion? Points? Gold?","horny","base","raised","L")
     lun "He's helping me... ah... get rid of... my wrackspurts!"
-    ton "..."
-    ton "Mind control?"
+    call ton_main("...","horny","base","raised","L")
+    call ton_main("Mind control?","horny","base","raised","L")
     m "Nope."
-    ton "Then should I ask what the hell a \"wrackspurt\" is?"
+    call ton_main("Then should I ask what the hell a \"wrackspurt\" is?","horny","base","raised","L")
     m "Ugh... Luna can explain them..."
     lun "Ah... they're nasty little... mmmm... creatures that make... ah... you want... mmm... to {b}fuck{/b}."
-    ton "..."
+    call ton_main("...","horny","base","raised","L")
     lun "You should... ah... be careful, Ms Tonks... {image=textheart} we're expelling a lot... {image=textheart} of them..."
-    ton "Really? And how will I know If these \"wrackspurts\" are after me...?"
+    call ton_main("Really? And how will I know If these \"wrackspurts\" are after me...?","horny","base","raised","L")
     lun "You'll feel... ah... hot...{image=textheart} down there..."
-    ton "Oh... I see..."
-    ton "You know, you should come visit me after hours Miss Lovegood, I think I might also be able to help you out..."
+    call ton_main("Oh... I see...","horny","base","raised","L")
+    call ton_main("You know, you should come visit me after hours Miss Lovegood, I think I might also be able to help you out...","horny","base","raised","L")
     m "Hey!"
     lun "Ah... thank you... {image=textheart} Ms tonks... but I don't think... ah... you'll {b}taste{/b} as good..."
-    ton "Now, now, you don't know that... I taste like {b}heaven{/b}..."
-    lun "There's just... ah{image=textheart} no way... your cum can...{image=textheart} taste half as good..."
+    call ton_main("Now, now, you don't know that... I taste like {b}heaven{/b}...","horny","base","raised","L")
+    lun "There's just... ah{image=textheart} no way... you can...{image=textheart} taste half as good..."
     ">Tonks hand disappears down the front of her pants..."
-    ton "Oh I see how it is..."
+    call ton_main("Oh I see how it is...","horny","base","raised","L")
     lun "Ah... you do?"
-    ton "Uh-huh... You're just Dumbledore's little cumslut... aren't you?"
+    call ton_main("Uh-huh... You're just Dumbledore's dirty, little, cumslut... aren't you?","horny","base","raised","L")
     lun "That's it!"
-    ton "So you admit it then?"
+    call ton_main("So you admit it then?","horny","base","raised","L")
     lun "Of course! I'm proud... to be a cumslut!"
     lun "As an auror you should... ah{image=textheart} know the importance of... mmm{image=textheart} warding off evil magic!"
-    ton "There's warding..."
-    ton "And then there's just being covered in cum..."
+    call ton_main("There's warding...","horny","base","raised","L")
+    call ton_main("And then there's just being covered in cum...","horny","base","raised","L")
     lun "Oh..."
-    lun "Well, they're both fun!"
-    ton "Fuck... you've really done a number on this her, haven't you, Dumbledore..."
+    lun "They're both fun!"
+    call ton_main("Fuck... you've really done a number on this her, haven't you, Dumbledore...","horny","base","raised","L")
     m "She was like this from the start..."
     lun "Mhmm!"
-    ton "Then you've lucked out on finding the horniest little nymph to ever live..."
+    call ton_main("Then you've lucked out on finding the horniest little nymph to ever live...","horny","base","raised","L")
     lun "I am not... a nymph!"
-    m "more like Nympho."
-    ton "Anyway... all this talk of how much you love your headmasters yummy cum..."
-    ton "I want to see it..."
+    call ton_main("Anyway... all this talk of how much you love your headmasters yummy cum...","horny","base","raised","L")
+    call ton_main("I want to see it...","horny","base","raised","L")
     m "See what?"
-    ton "Her, covered in it..."
+    call ton_main("Her, covered in it...","horny","base","raised","L")
     lun "You do?"
-    ton "Ugh... you bet... nothing like seeing your students soaking in their headmasters spunk..."
+    call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmasters spunk...","horny","base","raised","L")
     lun "{image=textheart}{image=textheart}{image=textheart}"
     menu:
         "Where should you cum?"
@@ -3110,22 +2758,22 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
             g4 "Shutup!"
             lun "..."
             g4 "Ugh... here it is you little whore!"
-            ton "..."
+            call ton_main("...","horny","base","raised","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
             ">Tonk's fingers noticeably begin to speed up."
-            ton "Mmmm, damn... where were all the sluts like this when I was in school..."
+            call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
         "-Fire it in her-":
             g4 "ARGH!!! TAKE IT ALL YOU LITTLE WHORE!"
             ">You start filling up poor Luna as her hungry pussy does it's best to milk you dry."
             lun "Oh thank you! thank you! thank you!"
-            ton "Wow..."
+            call ton_main("Wow...","horny","base","raised","L")
             lun "Ugh...{image=textheart} it's like he's... pumped me full of magic..."
             ">Tonk's fingers noticeably begin to speed up."
-            ton "Mmmm, damn... where were all the sluts like this when I was in school..."
-    ton "ah...{w=0.5} this has certainly been...{p}fun."
-    ton "But I think I best be on my way... I need to take care of some \"rockspoons\" of my own..."
+            call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
+    call ton_main("ah...{w=0.5} this has certainly been...{p}fun.","horny","base","raised","L")
+    call ton_main("But I think I best be on my way... I need to take care of some \"rockspoons\" of my own...","horny","base","raised","L")
     lun "Ugh... You don't want to see us go again?"
     ">With that slips your softening cock back into her tight hole..."
     m "Ugh... can't we have a break first?"
@@ -3133,9 +2781,9 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
     ">Luna simply looks back at you with the eyes of a puppy dog begging for a treat."
     m "Fine... just start off slowly this time!"
     lun "That's no fun..."
-    ton "Wow... you two really are going to go again, aren't you?"
+    call ton_main("Wow... you two really are going to go again, aren't you?","horny","base","raised","L")
     lun "You don't have to... a-ah...{image=textheart} stay if you don't want to..."
-    ton "Oh...{p}I may as well stick around for a little bit longer..."
+    call ton_main("Oh...{p}I may as well stick around for a little bit longer...","horny","base","raised","L")
     ">Tonks' angrily fingers her cunt while she stares hungrily at Luna's bouncing boobs."
     show screen blkfade
     with d3
@@ -3144,29 +2792,29 @@ label luna_reverted_event_8_ton_1: #Tonks part 1#NEEDS POSING
     with d3
     g9 "NO! MORE!"
     lun "Pleaaaaaase!"
-    ton "Yeah, you can make it one more round Dumbledore!"
+    call ton_main("Yeah, you can make it one more round Dumbledore!","horny","base","raised","L")
     g9 "I've already gone four rounds!"
     lun "But there are still so many-"
     g9 "Well, too bad, I'm about to pass out."
-    ton "Hmmm, he's probably right, Luna... He is pretty old."
+    call ton_main("Hmmm, he's probably right, Luna... He is pretty old.","horny","base","raised","L")
     lun "That shouldn't matter!"
-    ton "It's also getting rather late. As your teacher, it is my responsibility to make sure you follow curfew."
+    call ton_main("It's also getting rather late. As your teacher, it is my responsibility to make sure you follow curfew.","horny","base","raised","L")
     m "The whole cum bath thing is okay though?"
-    ton "Surprisingly, there's nothing about a \"cum bath\" in the teachers handbook..."
+    call ton_main("Surprisingly, there's nothing about a \"cum bath\" in the teachers handbook...","horny","base","raised","L")
     m "Fair enough. You two going to bed suits me anyway."
-    ton "Well, come on then, Luna, hurry up and get dressed, I'll walk you home."
+    call ton_main("Well, come on then, Luna, hurry up and get dressed, I'll walk you home.","horny","base","raised","L")
     lun "Alright then Miss Tonks..."
     ">With an airy smile, Luna picks up her clothes and places them on over her cum soaked form."
-    ton "Aren't you going to scourgify yourself before we go?"
+    call ton_main("Aren't you going to scourgify yourself before we go?","horny","base","raised","L")
     lun "What, Why?"
-    ton "No offence honey, but you reek... I'm feeling light headed just standing next to you."
+    call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","horny","base","raised","L")
     lun "Oh that's just the wrackspurts! They're corpses can have that affect on people."
     lun "I {b}love{/b} the smell myself... Besides, I need to wear them to act as a warning to the other wrackspurts while I sleep!"
-    ton "You mean you expect me to walk you back to your room covered head to toe in cum?"
+    call ton_main("You mean you expect me to walk you back to your room covered head to toe in cum?","horny","base","raised","L")
     lun "You don't have to... I can make my own way home."
-    ton "I wouldn't miss this for the world... All we need is a leash and we can cross a line off my bucket list."
+    call ton_main("I wouldn't miss this for the world... All we need is a leash and we can cross a line off my bucket list.","horny","base","raised","L")
     lun "What?"
-    ton "Never mind, let's just go before the prefects start whining about curfew."
+    call ton_main("Never mind, let's just go before the prefects start whining about curfew.","horny","base","raised","L")
     ">With that, tonks walks off with the cum-soaked Luna..."
     m "Finally... I thought they'd never leave..."
     ">You collapse into your chair and doze off seconds later."
@@ -3180,48 +2828,48 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
     #Talks about how wet she was during it
     #Tonks starts talking about how she wishes she could be so brazen
     #Cum all over Luna and Tonks excitedely takes her home while offering to lick her clean
-    ton "Ugh... are you two going at it again?"
+    call ton_main("Ugh... are you two going at it again?","horny","base","raised","L")
     lun "Ah... these wrackspurts... ah... are quite... powerful..."
-    ton "Mmmm, I can believe that... In fact..."
+    call ton_main("Mmmm, I can believe that... In fact...","horny","base","raised","L")
     #Tonks slides her hands down her pants
-    ton "Ah... it looks like they're affecting me too..."
+    call ton_main("Ah... it looks like they're affecting me too...","horny","base","raised","L")
     m "..."
     lun "So quick! Ah... You better stay here... ah... to let them all out..."
-    ton "I wouldn't miss a show like this for the world..."
-    ton "I'd normally have to pay a fortune this definition."
+    call ton_main("I wouldn't miss a show like this for the world...","horny","base","raised","L")
+    call ton_main("I'd normally have to pay a fortune this definition.","horny","base","raised","L")
     m "Maybe I should start charging?"
-    ton "I could say the same to you..."
-    ton "Although I think my charges would be a little more severe..."
+    call ton_main("I could say the same to you...","horny","base","raised","L")
+    call ton_main("Although I think my charges would be a little more severe...","horny","base","raised","L")
     m "Watch away then..."
     ">Tonks' starts violently fingering herself under her pants..."
-    ton "Mmmm, don't mind if I do..."
-    ">The room falls silent save for the gently noise of Luna being fucked and the quiet squelching coming from her perverted teacher."
+    call ton_main("Mmmm, don't mind if I do...","horny","base","raised","L")
+    ">The room falls silent save for the rhythmic noise of Luna being fucked and the quiet squelching coming from her perverted teacher."
     lun "Ah... ah... ah..."
-    ton "So, Luna."
+    call ton_main("So, Luna.","horny","base","raised","L")
     lun "Yes... ah..."
-    ton "Will you be needing another escort home today?"
+    call ton_main("Will you be needing another escort home today?","horny","base","raised","L")
     lun "Oh, well I don't think I really need one."
     lun "But I'd be happy for the company! I always love to make new friends."
-    ton "I can see that... Will you also be wearing a fresh load of your headmasters cum while we walk?"
+    call ton_main("I can see that... Will you also be wearing a fresh load of your headmasters cum while we walk?","horny","base","raised","L")
     lun "Of course!"
-    ton "Ugh... {image=textheart}fuck{image=textheart}... that's it..."
-    ton "Last time I walked you home..."
+    call ton_main("Ugh... {image=textheart}fuck{image=textheart}... that's it...","horny","base","raised","L")
+    call ton_main("Last time I walked you home...","horny","base","raised","L")
     lun "{image=textheart}Ah... yes? ah...{image=textheart}"
-    ton "God, I've never been so turned on in my life!"
-    ton "Watching everyone in the school turn to look at you..."
-    ton "Coated in the biggest fucking load of cum..."
+    call ton_main("God, I've never been so turned on in my life!","horny","base","raised","L")
+    call ton_main("Watching everyone in the school turn to look at you...","horny","base","raised","L")
+    call ton_main("Coated in the biggest fucking load of cum...","horny","base","raised","L")
     lun "Ah...{image=textheart}"
-    ton "And no one said a word..."
-    ton "They just {b}fucked{/b} you with their eyes..."
+    call ton_main("And no one said a word...","horny","base","raised","L")
+    call ton_main("They just {b}fucked{/b} you with their eyes...","horny","base","raised","L")
     lun "They did?{image=textheart}"
-    ton "Can you blame them? You were such pretty, well-fucked mess..."
-    ton "Ugh... I stayed up all night fingering myself to the sight of you..."
+    call ton_main("Can you blame them? You were such pretty, well-fucked mess...","horny","base","raised","L")
+    call ton_main("Ugh... I stayed up all night fingering myself to the sight of you...","horny","base","raised","L")
     lun "Ah... you did?"
-    ton "Mhmmm... I'll probably do it again tonight..."
+    call ton_main("Mhmmm... I'll probably do it again tonight...","horny","base","raised","L")
     lun "Careful... ah... you might release... too many wrackspurts..."
-    ton "Oh... Will that make all my students nice and slutty like you?"
+    call ton_main("Oh... Will that make all my students nice and slutty like you?","horny","base","raised","L")
     lun "It- ah... it could."
-    ton "Mmmm, fantastic..."
+    call ton_main("Mmmm, fantastic...","horny","base","raised","L")
     lun "Fantastic? Why...{w=0.3} ah...{w=0.3} would you..."
     ">Before Luna can say anymore, you grab onto her hips before slamming into her."
     lun "Ah...{image=textheart}{image=textheart}{image=textheart}"
@@ -3234,16 +2882,16 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
             ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             ">You slump back into your chair, leaving Luna on your desk, leaking cum."
-            ton "Dumbledore, what do you think you're doing?"
+            call ton_main("Dumbledore, what do you think you're doing?","horny","base","raised","L")
             m "Busting a load?"
-            ton "Inside her! Now she won't be able to show off what a little cumslut she is!"
+            call ton_main("Inside her! Now she won't be able to show off what a little cumslut she is!","horny","base","raised","L")
             lun "ah..."
             m "You're just upset you don't get to lead her around like a trophy."
-            ton "Ugh..."
-            ton "At least try and get a little on her dress next time."
+            call ton_main("Ugh...","horny","base","raised","L")
+            call ton_main("At least try and get a little on her dress next time.","horny","base","raised","L")
             lun "..."
             m "I'll try. Now, are you ready to take Miss Lovegood home?"
-            ton "I suppose so... Not that there's much point if she isn't covered in cum..."
+            call ton_main("I suppose so... Not that there's much point if she isn't covered in cum...","horny","base","raised","L")
 
         "Coat her face":
             m "On your knees slut!"
@@ -3251,14 +2899,14 @@ label luna_reverted_event_8_ton_2: #Tonks repeatable part
             ">Luna quickly hops off the desk and smiles in front of your cock..."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             g4 "Ugh... here it is you little whore!"
-            ton "..."
+            call ton_main("...","horny","base","raised","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
             ">Tonk's fingers noticeably begin to speed up."
-            ton "Mmmm, damn... that's hot..."
+            call ton_main("Mmmm, damn... that's hot...","horny","base","raised","L")
             m "Ready to take Miss Lovegood home?"
-            ton "You bet! I hope you don't mind taking the long route, Luna..."
+            call ton_main("You bet! I hope you don't mind taking the long route, Luna...","horny","base","raised","L")
 
     ">With that, Tonks leads Luna out in the halls and takes her back to her room."
     ">You doze off seconds after they leave."

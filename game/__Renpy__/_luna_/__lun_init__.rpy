@@ -186,6 +186,7 @@ label luna_init:
 
     if not hasattr(renpy.store,'lun_cg_path') or reset_persistants or reset_luna_content:
         $ lun_cg_path       = "images/CG/luna_desk2/"
+        $ lun_cg_overlay    = lun_cg_path+"blank.png"  
         $ lun_cg_base       = lun_cg_path+"base.png"
         $ lun_cg_border     = lun_cg_path+"border.png" 
         $ lun_cg_body       = lun_cg_path+"luna_base.png" 
@@ -211,6 +212,10 @@ label luna_init:
         $ lun_loop_xpos     = [-150, 0, 55, 66, 74, 80, 88, 99, 103, 114, 121, 129, 134, 141, 148, 152, 155]
         $ lun_loop_ypos     = [0, 0, 12, 20, 31, 40, 48, 59, 71, 76, 83, 90, 97, 103, 107, 111, 112]
         $ lun_cg_zoom       = 1
+
+    if not hasattr(renpy.store,'lun_reverted_event_flag_1') or reset_persistants or reset_luna_content:
+        $ lun_reverted_event_flag_1       = False
+        $ lun_reverted_event_flag_2       = False
 
 
 

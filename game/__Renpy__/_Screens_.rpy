@@ -531,6 +531,7 @@ screen luncg:
     add lun_cg_extra_2      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom
     add lun_cg_extra_3      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom
 
+    add lun_cg_overlay      xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
     add lun_cg_dick         xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
     add lun_cg_genie        xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
 
@@ -597,12 +598,14 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))
 
-    def lunCG(pupil=None, eye=None, mouth=None, eyebrow=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None):
+    def lunCG(pupil=None, eye=None, mouth=None, eyebrow=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None, overlay=None):
         global lun_cg_body
+        global lun_cg_overlay
         global lun_cg_hair
         global lun_cg_cheeks
         global lun_cg_mouth
         global lun_cg_eyewhite
+        global lun_cg_eyewear
         global lun_cg_pupil
         global lun_cg_eye
         global lun_cg_eyebrow
@@ -623,6 +626,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
 
         lun_cg_body         = lun_cg_path+"luna_base.png"  
         lun_cg_eyewhite     = lun_cg_path+"eye_white.png" 
+        lun_cg_eyewear      = lun_cg_path+"glasses.png" 
         lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
         lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
 
@@ -648,6 +652,8 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
             lun_cg_xpos = xpos
         if ypos is not None:
             lun_cg_ypos = ypos
+        if overlay is not None:
+            lun_cg_overlay = lun_cg_path+str(overlay)+".png"
 
         if pos is not None:
             lun_cg_xpos = lun_loop_xpos[pos]

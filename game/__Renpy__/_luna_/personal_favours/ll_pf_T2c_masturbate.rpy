@@ -302,6 +302,13 @@ label ll_pf_masturbate_T1_E1:
     # Tell her to masturbate.
     call ll_pf_masturbate_T1_start
 
+    $ luna_l_arm = 1
+    m "Feeling better?"
+    call lun_main("Yes. I'm feeling much better now.","normal","seductive","sad","down")
+    m "Glad I could be of help..."
+    call lun_main("Thank you, [lun_genie_name]!","normal","seductive","sad","mid")
+    call lun_main("I have to head back to our dorms now...","upset","seductive","sad","R")
+
     call lun_walk("desk", "leave", 2)
 
     call bld
@@ -443,6 +450,8 @@ label ll_pf_masturbate_T1_start: # Call label
     call nar(">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm.","start")
     call nar(">However despite this, her fingers remain a flurry of movement under her skirt.","end")
     m "Well, it seems those wickedspots have been giving you a fair bit of grief now haven't they?"
+    call lun_main("Ah...{image=textheart}yes{image=textheart}","normal","seductive","raised","mid")
+    m "Don't worry, that should sort them out for now..."
 
     return
 
@@ -452,8 +461,6 @@ label ll_pf_masturbate_T1_start: # Call label
 
 label ll_pf_masturbate_T1_continue: # Call label
 
-    call lun_main("Ah...{image=textheart}yes{image=textheart}","normal","seductive","raised","mid")
-    m "Don't worry, that should sort them out for now..."
     call lun_main("Ummm...","base","base","sad","R")
     m "What's wrong?"
     call lun_main("...","normal","happyCl","sad","R")

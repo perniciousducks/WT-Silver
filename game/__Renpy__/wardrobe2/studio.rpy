@@ -60,7 +60,7 @@ label studio(studio_return, studio_char):
     hide screen cho_chang
     
     $ studio_eyebrows_list = ["base", "raised", "angry", "sad"]
-    $ studio_eyes_list = ["base", "closed", "wink", "suspicious", "angry", "wide", "shocked"]
+    $ studio_eyes_list = ["base", "closed", "wink", "narrow", "angry", "wide", "shocked"]
     $ studio_mouth_list = ["base", "open", "soft", "upset", "angry", "scream", "smile", "annoyed", "horny", "pout", "quiver"]
     $ studio_pupils_list = ["mid", "L", "R", "up", "down", "downR"]
     
@@ -258,8 +258,8 @@ screen character_studio:
     
     use top_bar_close_button
     
-    if config.developer:
-        textbutton "Save transparent" xalign 1.0 yalign 1.0 action Return("save")
+    #if config.developer:
+        #textbutton "Save transparent" xalign 1.0 yalign 1.0 action Return("save")
     
     frame:
         ypos 50

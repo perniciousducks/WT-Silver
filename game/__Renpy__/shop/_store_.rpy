@@ -31,7 +31,7 @@ label open_weasley_store:
         call hide_blkfade
 
         call gen_walk(xpos="left", ypos="base", speed=1.4)
-        
+
     pause.2
 
     $ renpy.block_rollback()
@@ -66,7 +66,9 @@ label store_chit_chat:
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
 
-    elif cho_intro_state not in ["event_1","event_2","talk_with_snape"] and not quidditch_book_1_ITEM.unlocked: # After talking to Snape about Cho.
+    # After talking to Snape about Cho.
+    # If you haven't yet beaten the Quiz.
+    elif cho_intro_state not in ["event_1","event_2","talk_with_snape"] and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False:
         m "Boys..."
         twi "Hello again mr Dumbledore sir..."
         ger "What can we do for you?"

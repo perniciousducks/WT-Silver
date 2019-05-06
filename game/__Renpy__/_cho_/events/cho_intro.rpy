@@ -603,7 +603,7 @@ label cho_snape_talk:
     with d3
     $ renpy.play('sounds/win_04.mp3')
 
-    ">You spend rest of the evening in Snape's company talking about Cho's impressive thighs."
+    ">You spend the rest of the evening in Snape's company talking about Cho's impressive thighs."
 
     hide screen bld1
     hide screen notes

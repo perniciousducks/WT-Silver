@@ -61,6 +61,8 @@ label cho_progress_init:
         # Quidditch Training
         $ cho_training_state      = "quiz_start"
         $ quid_hint_icon          = "" # Icon: "{image=interface/check_True.png} "
+        $ cho_quiz_complete       = False
+        $ snape_quid_help         = False # True after Failing the Quiz.
         $ lock_cho_training       = False
         $ lock_cho_practice       = False
         $ quidditch_commentator   = "none"

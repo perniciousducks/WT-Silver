@@ -291,8 +291,21 @@ label cho_quiz_1:
 
         g4 "(What am I supposed to do now... I clearly know fuckall about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
-        if store_intro_done:
+
+        $ snape_quid_help = True
+
+        # Read the book.
+        if quidditch_book_1_ITEM.done:
+            m "(Why didn't I just follow the book?{w} Serves me right...)"
+
+        # Got the book but not read.
+        elif quidditch_book_1_ITEM.unlocked:
+            m "(Maybe I should read that book they gave me...)"
+
+        # Visited their shop before.
+        elif store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
+
 
     # Success! Or did you?
     elif cho_answer_1 and cho_answer_2 and cho_answer_3 and cho_answer_4:
@@ -340,7 +353,19 @@ label cho_quiz_1:
 
         g4 "(The fuck am I supposed to do now... I feel like that must’ve been a fluke, I know nothing about Quidditch..)."
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
-        if store_intro_done:
+
+        $ snape_quid_help = True
+
+        # Read the book.
+        if quidditch_book_1_ITEM.done:
+            m "(Why didn't I just follow the book?{w} Serves me right...)"
+
+        # Got the book but not read.
+        elif quidditch_book_1_ITEM.unlocked:
+            m "(Maybe I should read that book they gave me...)"
+
+        # Visited their shop before.
+        elif store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
 
     $ cho_busy = True
@@ -579,7 +604,9 @@ label cho_quiz_2:
         # Cho leaves.
         call cho_walk(action="leave", speed=2.5)
 
+        $ cho_quiz_complete = True
         $ cho_training_state = "intro_1"
+
         call give_reward(">You've unlocked the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
 
     # Failed
@@ -603,7 +630,81 @@ label cho_quiz_2:
 
         g4 "(What am I supposed to do now... I clearly don't know enough about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
-        if store_intro_done:
+
+        $ snape_quid_help = True
+
+        # Read the book.
+        if quidditch_book_1_ITEM.done:
+            m "(Why didn't I just follow the book?{w} Serves me right...)"
+
+        # Got the book but not read.
+        elif quidditch_book_1_ITEM.unlocked:
+            m "(Maybe I should read that book they gave me...)"
+
+        # Visited their shop before.
+        elif store_intro_done:
             m "(Actually, perhaps the twins might be a better idea...)"
 
     jump main_room
+
+
+
+# Ask Snape for Quidditch help.
+label ask_snape_for_quidditch_help:
+
+    call bld
+    m "So It looks like I might need some information about Quidditch..."
+    call sna_head("I see, I guess it was only a matter of time before you got yourself involved...","snape_01", ypos="head")
+    m "Oh, I don’t care much about the sport..."
+    call sna_head("Worried you will lose the bet?","snape_03")
+    m "No?{w} Let’s say it’s more of a plot device to push the narrative forward..."
+    call sna_head("Of course you can't teach the girl Quidditch if you know nothing about it...","snape_09")
+    call sna_head("Did she call your bluff?","snape_13")
+    m "Of course not..."
+    call sna_head("Well, whilst I could drone on for hours about Quidditch rules....","snape_06")
+    call sna_head("I’d rather not spend my time on such a topic.","snape_03")
+    m "Where am I supposed to learn the basics then?"
+    call sna_head("Why do you think I care where you’d learn it from?","snape_09")
+    m "Because keeping me occupied is within your best interests?"
+    call sna_head("...","snape_04")
+    call sna_head("Good point...","snape_06")
+    call sna_head("Well, I guess it wouldn’t be too harmful if you made yourself to the Weasley Twins...","snape_05")
+
+    if store_intro_done:
+        m "And how would they be able to help me?"
+        call sna_head("Well, they’re both on the Gryffindor team...","snape_03")
+        call sna_head("And as much as it pains me to say this...","snape_06")
+        call sna_head("They’re very discrete business minded individuals...","snape_02")
+        m "I’ve take it you’ve had a fair deal of business with them yourself?"
+        call sna_head("No comment...","snape_03")
+
+    else:
+        m "The Twins? Have you been keeping twins from me now as well?"
+        call sna_head("I mean, if two very irritating ginger boys is your type I’m not going to judge...","snape_03")
+        m "..."
+        call sna_head("Fred and George Weasley runs a secret shop in the school...","snape_01")
+        m "Doesn’t sound very secret if you know about it..."
+        call sna_head("Their rates are good, plus it means I don’t have to leave the castle unless absolutely necessary...","snape_09")
+        m "Ah, a basement dweller... charmed."
+        call sna_head("In any case, about your inquiry...","snape_03")
+        call sna_head("The boys are both on the Gryffindor team so they’re sure have the means of providing what you need.","snape_01")
+        m "Sweet, looking forward to meeting them..."
+        call sna_head("Aren’t you going to ask for directions?","snape_05")
+        m "I’m sure I’ll manage..."
+        call sna_head("Try not to wander too far from your office...","snape_09")
+        m "Yes... dad..."
+        call sna_head("...","snape_08") #[angry]
+
+    # Ending
+    show screen bld1
+    show screen notes
+    with d3
+    $ renpy.play('sounds/win_04.mp3')
+
+    ">You spend the rest of the evening in Snape's company once again talking about Cho's remarkable legs."
+
+    hide screen bld1
+    hide screen notes
+    with d3
+
+    jump day_start

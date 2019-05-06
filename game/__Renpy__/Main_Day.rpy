@@ -300,7 +300,7 @@ if luna_reverted and days_to_luna <= 0:
         $ ll_favor_list.append(ll_pf_masturbate_OBJ)
 
         $ days_without_an_event = 0
-        $ days_to_luna = 5
+        $ days_to_luna = 3
 
         jump ll_pf_masturbate_T1_intro
 
@@ -309,7 +309,7 @@ if luna_reverted and days_to_luna <= 0:
         $ ll_favor_list.append(ll_pf_blowjob_OBJ)
 
         $ days_without_an_event = 0
-        $ days_to_luna = 5
+        $ days_to_luna = 3
 
         jump ll_pf_blowjob_T1_intro
 

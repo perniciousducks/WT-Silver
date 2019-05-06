@@ -5,8 +5,7 @@
 label cho_training_menu:
 
     # Quiz.
-    if cho_training_state in ["quiz_start","quiz_part_1","quiz_part_2"]:
-        # Gets changed to "intro_1" once the quiz is beaten.
+    if not cho_quiz_complete:
         jump cho_quiz_1
 
     # Training Intro 1.

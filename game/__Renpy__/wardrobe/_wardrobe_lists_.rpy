@@ -161,6 +161,7 @@ label update_wr_head_list:
         #Hair
         $ wr_hair.append("curly")
         $ wr_hair.append("playful")
+        $ wr_hair.append("short")
 
         if luna_reverted:
             $ wr_glasses.append("spectrespecs")

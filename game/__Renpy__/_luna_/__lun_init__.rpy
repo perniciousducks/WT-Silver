@@ -186,24 +186,25 @@ label luna_init:
 
     if not hasattr(renpy.store,'lun_cg_path') or reset_persistants or reset_luna_content:
         $ lun_cg_path       = "images/CG/luna_desk2/"
+        $ lun_cg_overlay    = lun_cg_path+"blank.png"
         $ lun_cg_base       = lun_cg_path+"base.png"
-        $ lun_cg_border     = lun_cg_path+"border.png" 
-        $ lun_cg_body       = lun_cg_path+"luna_base.png" 
-        $ lun_cg_hair       = lun_cg_path+str(lun_hair_style)+"_hair.png" 
-        $ lun_cg_cheeks     = lun_cg_path+"c_base.png" 
-        $ lun_cg_mouth      = lun_cg_path+"m_base.png" 
-        $ lun_cg_eyewhite   = lun_cg_path+"eye_white.png" 
-        $ lun_cg_pupil      = lun_cg_path+"pup_base.png"     
-        $ lun_cg_eye        = lun_cg_path+"eye_base.png" 
-        $ lun_cg_eyebrow    = lun_cg_path+"eb_base.png" 
-        $ lun_cg_eyewear    = lun_cg_path+"glasses.png" 
-        $ lun_cg_tears      = lun_cg_path+"blank.png" 
-        $ lun_cg_hairtop    = lun_cg_path+str(lun_hair_style)+"_hair_top.png"  
-        $ lun_cg_extra_1    = lun_cg_path+"blank.png" 
-        $ lun_cg_extra_2    = lun_cg_path+"blank.png" 
-        $ lun_cg_extra_3    = lun_cg_path+"blank.png" 
-        $ lun_cg_dick       = lun_cg_path+"dick_1.png" 
-        $ lun_cg_genie      = lun_cg_path+"genie.png" 
+        $ lun_cg_border     = lun_cg_path+"border.png"
+        $ lun_cg_body       = lun_cg_path+"luna_base.png"
+        $ lun_cg_hair       = lun_cg_path+str(lun_hair_style)+"_hair.png"
+        $ lun_cg_cheeks     = lun_cg_path+"c_base.png"
+        $ lun_cg_mouth      = lun_cg_path+"m_base.png"
+        $ lun_cg_eyewhite   = lun_cg_path+"eye_white.png"
+        $ lun_cg_pupil      = lun_cg_path+"pup_base.png"
+        $ lun_cg_eye        = lun_cg_path+"eye_base.png"
+        $ lun_cg_eyebrow    = lun_cg_path+"eb_base.png"
+        $ lun_cg_eyewear    = lun_cg_path+"glasses.png"
+        $ lun_cg_tears      = lun_cg_path+"blank.png"
+        $ lun_cg_hairtop    = lun_cg_path+str(lun_hair_style)+"_hair_top.png"
+        $ lun_cg_extra_1    = lun_cg_path+"blank.png"
+        $ lun_cg_extra_2    = lun_cg_path+"blank.png"
+        $ lun_cg_extra_3    = lun_cg_path+"blank.png"
+        $ lun_cg_dick       = lun_cg_path+"dick_1.png"
+        $ lun_cg_genie      = lun_cg_path+"genie.png"
         $ lun_cg_xpos       = 0
         $ lun_cg_ypos       = 0
         $ lun_cg_xpos_abs   = 0
@@ -211,6 +212,27 @@ label luna_init:
         $ lun_loop_xpos     = [-150, 0, 55, 66, 74, 80, 88, 99, 103, 114, 121, 129, 134, 141, 148, 152, 155]
         $ lun_loop_ypos     = [0, 0, 12, 20, 31, 40, 48, 59, 71, 76, 83, 90, 97, 103, 107, 111, 112]
         $ lun_cg_zoom       = 1
+
+    if not hasattr(renpy.store,'seen_luna_sex_list') or reset_persistants or reset_luna_content:
+        $ seen_luna_sex_list       = []
+
+    if not hasattr(renpy.store,'ll_pf_talk_OBJ') or reset_persistants or reset_luna_content:
+        $ ll_pf_talk_OBJ       = favor_class(title = "Talk to me!", tier = 0, start_label = "ll_pf_talk")
+
+        $ ll_pf_strip_OBJ      = favor_class(title = "Inspect her body!", tier = 1, start_label = "ll_pf_strip")
+
+        $ ll_pf_masturbate_OBJ = favor_class(title = "Masturbate for me!", tier = 2, start_label = "ll_pf_masturbate")
+        $ ll_pf_blowjob_OBJ    = favor_class(title = "Suck it!", tier = 2, max_level = 4, start_label = "ll_pf_blowjob")
+
+        $ ll_pf_sex_OBJ        = favor_class(title = "Let's have sex!", tier = 3, start_label = "ll_pf_sex")
+
+
+    # Favors get added to the list after their intro events.
+    # Do not add them manually to this list!
+
+    if not hasattr(renpy.store,'ll_favor_list') or reset_persistants or reset_luna_content:
+        $ ll_favor_list = [
+            ]
 
 
 
@@ -259,8 +281,6 @@ label luna_progress_init:
 
         $ lun_dom = 0
         $ lun_sub = 0
-        $ lun_corruption = 0
-        $ lun_arousal = 0
 
         #Flags
         $ hat_known = False

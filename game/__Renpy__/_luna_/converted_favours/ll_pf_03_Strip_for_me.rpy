@@ -2,9 +2,9 @@
 
 label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options for each path. #DONE
 
-    if lun_corruption <= 8:
-        $ lun_corruption += 1
-    if lun_corruption >= 13:
+    if lun_whoring <= 8:
+        $ lun_whoring += 1
+    if lun_whoring >= 13:
         m "how do you feel about stripping?"
         call lun_main("really?","normal","angry","angry","mid")
         call lun_main("Aren't we a little past that?","normal","mad","raised","mid")
@@ -14,8 +14,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         m "well then..."
         jump luna_favour_6
     call play_music("chipper_doodle")
-    if lun_corruption < 8:
-        if lun_sub > lun_dom and lun_corruption < 5:
+    if lun_whoring < 8:
+        if lun_sub > lun_dom and lun_whoring < 5:
             m "Have you ever been naked in front of another person [luna_name]?"
             call lun_main("What?","normal","base","sad","down")
             call lun_main("Well... um... not really, I suppose.","normal","base","sad","R")

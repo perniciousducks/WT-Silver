@@ -156,10 +156,22 @@ python:
 if luna_known and not luna_unlocked:
     call hat_intro_3 #Returns
 
-if luna_reverted and lun_corruption == -1:
-    $ days_without_an_event = 0
-    jump luna_reverted_greeting_2 #Sets lun_corruption to 0
+# Random Luna Favors
+# They happen once and unlock the favor in her favor menu.
 
+if luna_reverted and days_to_luna <= 0:
+
+    # Sex
+    if lun_whoring >= 9 and ll_pf_sex_OBJ not in ll_favor_list:
+        $ ll_favor_list.append(ll_pf_sex_OBJ)
+
+        $ days_without_an_event = 0
+        $ days_to_luna = 3
+
+        jump ll_pf_sex_T1_intro
+
+    else:
+        pass
 
 # Hermione Events.
 if current_job == 1:

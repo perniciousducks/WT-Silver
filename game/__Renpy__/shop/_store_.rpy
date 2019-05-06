@@ -31,7 +31,7 @@ label open_weasley_store:
         call hide_blkfade
 
         call gen_walk(xpos="left", ypos="base", speed=1.4)
-        
+
     pause.2
 
     $ renpy.block_rollback()
@@ -66,7 +66,9 @@ label store_chit_chat:
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
 
-    elif cho_intro_state not in ["event_1","event_2","talk_with_snape"] and not quidditch_book_1_ITEM.unlocked: # After talking to Snape about Cho.
+    # After talking to Snape about Cho.
+    # If you haven't yet beaten the Quiz.
+    elif cho_intro_state not in ["event_1","event_2","talk_with_snape"] and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False:
         m "Boys..."
         twi "Hello again mr Dumbledore sir..."
         ger "What can we do for you?"
@@ -104,7 +106,7 @@ label store_chit_chat:
         twi "Make sure to take notes!"
         m "Are you assuming your headmaster doesn’t know how studying works?"
         fre "Of course not..."
-        ger "Anyway... if you need anything else we should have another book coming in at some point which is not just about the basics of Quidditch..."
+        #ger "Anyway... if you need anything else we should have another book coming in at some point which is not just about the basics of Quidditch..."
 
     elif deck_unlocked and her_know_cards and not twins_know_cards:
         m "Hello boys."
@@ -318,12 +320,16 @@ label gift_shop_menu:
 
     elif _return == "toggle1":
         $ toggle1_bool = not toggle1_bool
+        $ current_page = 0
     elif _return == "toggle2":
         $ toggle2_bool = not toggle2_bool
+        $ current_page = 0
     elif _return == "toggle3":
         $ toggle3_bool = not toggle3_bool
+        $ current_page = 0
     elif _return == "toggle4":
         $ toggle4_bool = not toggle4_bool
+        $ current_page = 0
 
     elif _return == "inc":
         $ current_page += 1
@@ -440,10 +446,13 @@ label book_shop_menu:
 
     elif _return == "toggle1":
         $ toggle1_bool = not toggle1_bool
+        $ current_page = 0
     elif _return == "toggle2":
         $ toggle2_bool = not toggle2_bool
+        $ current_page = 0
     elif _return == "toggle3":
         $ toggle3_bool = not toggle3_bool
+        $ current_page = 0
 
     elif _return == "inc":
         $ current_page += 1
@@ -644,12 +653,16 @@ label token_shop_menu:
 
     elif _return == "toggle1":
         $ toggle1_bool = not toggle1_bool
+        $ current_page = 0
     elif _return == "toggle2":
         $ toggle2_bool = not toggle2_bool
+        $ current_page = 0
     elif _return == "toggle3":
         $ toggle3_bool = not toggle3_bool
+        $ current_page = 0
     elif _return == "toggle4":
         $ toggle4_bool = not toggle4_bool
+        $ current_page = 0
 
     elif _return == "inc":
         $ current_page += 1

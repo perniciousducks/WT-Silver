@@ -6,7 +6,9 @@ label summon_luna:
 
     call lun_chibi("stand","mid","base")
 
-    if lun_dom >= lun_sub:
+    if luna_reverted:
+        call lun_main("Hello, [lun_genie_name]!","normal","wink","base","mid",xpos="base",ypos="base")
+    elif lun_dom >= lun_sub:
         if lun_dom >= 4:
             call lun_main("[lun_genie_name]...","normal","suspicious","angry","R",xpos="base",ypos="base")
         else:
@@ -29,12 +31,14 @@ label summon_luna:
 
 
         # Personal Favors
-        "-favours-":
-            if gold <= 0 and not luna_reverted:
+        "-favours-" if not luna_reverted:
+            if gold <= 0:
                 m "I don't have any gold..."
                 jump luna_requests
-            jump luna_favour_menu
+            jump luna_favor_menu
 
+        "-Personal Favours-" if luna_reverted and ll_favor_list != []: # List is not empty.
+            jump luna_favor_menu
 
         # Wardrobe
         "-Wardrobe-": # if luna_wardrobe_unlocked:
@@ -71,40 +75,65 @@ label summon_luna:
         # Dismiss
         "-Never mind-":
 
-            #ADD Luna says goodbye.
+            if luna_reverted:
+                call lun_main("Oh... alright then... Bye, [lun_genie_name]!","normal","wink","sad","down",xpos="base",ypos="base")
 
-            call play_sound("door")
-
-            $ luna_busy = True
-
-            jump main_room
+            jump end_luna_event
 
 
+# Luna Favor Menu
+label luna_favor_menu:
 
-label luna_favour_menu:
+if not luna_reverted:
     menu:
-        "-Talk to me-" if not luna_reverted:
+        "-Talk to me-":
             jump luna_favour_1
-        "-Sit on my lap-" if lun_corruption >= 3 and not luna_reverted:
+        "-Sit on my lap-" if lun_whoring >= 3:
             jump luna_favour_2
-        "-Strip for me-" if lun_corruption >= 5 and not luna_reverted:
+        "-Strip for me-" if lun_whoring >= 5:
             jump luna_favour_3
-        "-Touch me-" if lun_corruption >= 9 and not luna_reverted:
-            if lun_corruption == 9:
+        "-Touch me-" if lun_whoring >= 9:
+            if lun_whoring == 9:
                 jump luna_reversion_event
             jump luna_favour_4
-        "-Touch me with Hermione-" if lun_corruption >= 11 and not luna_reverted:
+        "-Touch me with Hermione-" if lun_whoring >= 11:
             jump luna_favour_5
-        "-Suck it-" if lun_corruption >= 14 and not luna_reverted:
+        "-Suck it-" if lun_whoring >= 14:
             jump luna_favour_6
-        "-Sex-" if lun_corruption >= 17 and not luna_reverted:
+        "-Sex-" if lun_whoring >= 17:
             jump luna_favour_7
-
-        #Luna reverted.
-        #"-Talk about Wrackspurts-": #Luna would describe the affects Wrackspurts (cum) had on her, their smell, taste,...
-        #"-Wrackspurt infection-": #Luna will help you with your wrackspurts problem, by giving you a handjob.
-        "-Sucking out Wrackspurts-" if lun_corruption >= 3 and luna_reverted:
-            jump luna_blowjob_under_desk #Repeat of event.
 
         "-Never mind-":
             jump luna_requests
+else:
+    call update_luna_favors
+
+    python:
+        menu_choices = []
+        for i in ll_favor_list:
+            if i in []: # Not in the game yet.
+                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+            #elif i.tier > lun_whoring:
+            #    menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+            else:
+                menu_choices.append((i.getMenuText(),i.start_label))
+        menu_choices.append(("-Never mind-", "nvm"))
+        result = custom_menu(menu_choices)
+    if result == "nvm":
+        jump luna_requests
+    elif result == "vague":
+        call favor_not_ready
+        jump luna_requests
+    elif result == "na":
+        call not_available
+        jump luna_requests
+    else:
+        $ renpy.jump(result)
+
+label update_luna_favors:
+
+    $ ll_pf_masturbate_OBJ.heart_color = "blue"
+    $ ll_pf_blowjob_OBJ.heart_color    = "blue"
+    $ ll_pf_sex_OBJ.heart_color        = "blue"
+
+    return

@@ -248,6 +248,12 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         $ cho_intro_state = "talk_with_hermione"
         jump cho_snape_talk
 
+    # After talking to Snape about Cho.
+    # If you haven't yet beaten the Quiz.
+    if snape_quid_help == False and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False: # After failing the Quiz.
+        $ snape_quid_help = True
+        jump ask_snape_for_quidditch_help
+
     # General
     if hg_pf_dance_OBJ.points >= 2 and not snape_invited_to_watch: #After second dance where Snape entered room.
         show screen with_snape #Makes sure the scene is not animated...
@@ -574,7 +580,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[7] "Yes..."
     sna_[6] "Now, pour me some more wine."
 
-    ">You spend rest of the evening in Snape's company drinking your worries away."
+    ">You spend the rest of the evening in Snape's company drinking your worries away."
 
     $ snape_against_hermione_02 = False #Turns True after event_10. Activates special event (THIS EVENT) when hanging out with Snape next time.
     $ hermione_is_waiting_02 = True #Triggers another visit from Hermione. (Event_11)
@@ -620,7 +626,7 @@ label special_date_with_snape_03: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[9] "I can hardly wait I tell you!"
     sna_[21] "Do you think she will let me touch them...?"
 
-    ">You spend rest of the evening in Snape's company talking about Hermione's naked breasts."
+    ">You spend the rest of the evening in Snape's company talking about Hermione's naked breasts."
 
     $ snape_invited_to_watch = True
 

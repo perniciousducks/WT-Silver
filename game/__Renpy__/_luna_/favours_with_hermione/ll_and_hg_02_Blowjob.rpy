@@ -2,8 +2,8 @@
 
 label luna_favour_6: #luna and hermione blowjob #DONE
 
-    if lun_corruption == 14: #first time
-        $ lun_corruption += 1
+    if lun_whoring == 14: #first time
+        $ lun_whoring += 1
         m "I have a new favour for you to complete today, [luna_name]!"
         call lun_main("...","normal","angry","angry","mid")
         m "If it's not too much trouble."
@@ -312,8 +312,8 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("...","base","base","base","R")
         ">Luna and hermione leave the office together, chattering happily as the door closes."
 
-    elif lun_corruption == 15: #second time
-        $ lun_corruption += 1
+    elif lun_whoring == 15: #second time
+        $ lun_whoring += 1
         m "how do you feel about another blowjob?"
         call lun_main("...","normal","angry","angry","mid")
         m "Come on, you seemed to like the last one..."
@@ -617,8 +617,8 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         ">Luna and hermione leave the office together, chattering happily as the door closes."
 
     else: #third time (repeatable)
-        if lun_corruption <= 16:
-            $ lun_corruption += 1
+        if lun_whoring <= 16:
+            $ lun_whoring += 1
         m "how about another lesson in blowjobs?"
         call lun_main("...","base","seductive","angry","R")
         call lun_main("alright...","base","seductive","sad","R")

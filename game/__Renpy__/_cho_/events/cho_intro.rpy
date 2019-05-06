@@ -603,7 +603,7 @@ label cho_snape_talk:
     with d3
     $ renpy.play('sounds/win_04.mp3')
 
-    ">You spend rest of the evening in Snape's company talking about Cho's impressive thighs."
+    ">You spend the rest of the evening in Snape's company talking about Cho's impressive thighs."
 
     hide screen bld1
     hide screen notes
@@ -652,7 +652,7 @@ label cho_hermione_talk:
         m "I’d like you to stop your..."
         m "Quidditch-...{w} something something...{w} movement."
 
-    if her_whoring < 5:
+    if her_whoring < 4: # If you haven't groped her breasts or ass yet.
         call her_main("My \"Quidditch equality movement\"?","soft","base")
         call her_main("But Sir, I'm on the verge of a breakthrough with it!","soft","closed")
         call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!","open","wink")

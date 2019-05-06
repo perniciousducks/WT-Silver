@@ -156,7 +156,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
     if action == "enter":
         call play_sound("door")
         $ sna_chibi_xpos = 750
-        $ sna_chibi_ypos = 250
+        $ sna_chibi_ypos = 210
     if action == "leave":
         $ xpos = "door"
         $ ypos = "base"
@@ -179,7 +179,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
         $ walk_xpos2 = int(xpos)
 
     if ypos in ["base","default"]:
-        $ walk_ypos2 = 250
+        $ walk_ypos2 = 210
     else:
         $ walk_ypos2 = int(ypos)
 

@@ -2,34 +2,6 @@
 
 ### Quidditch Outfit Customization ###
 
-label change_quidditch_outfit:
-    # Replace this menu with a proper wardrobe panel.
-    menu:
-        "-Change her bottom-":
-            menu:
-                "-Pants-":
-                    call use_quidditch_pants_1
-                "-Short Pants-":
-                    call use_quidditch_pants_2
-                "-Skirt-":
-                    call use_quidditch_skirt_1
-                "-Short Skirt-" if huffl_matches_won >= 1:
-                    call use_quidditch_skirt_2
-
-            jump change_quidditch_outfit
-        "-Remove her coat-":
-            call remove_quidditch_coat
-        "-Remove her gloves-":
-            call remove_quidditch_gloves
-        "-Go back-":
-            jump cho_training_menu
-
-    call update_cho_quidditch_outfit
-
-    jump change_quidditch_outfit
-
-
-
 # Wear Pants
 label use_quidditch_pants_1:
 
@@ -38,10 +10,10 @@ label use_quidditch_pants_1:
         $ quid_outfit_intro.append("pants_1")
 
     m "I'd like you to wear trousers for your games again."
-    cho "Really? Just my regular pants?"
+    call cho_main("Really? Just my regular pants?","annoyed","base","raised","mid")
     m "Yes. Regular ole- pants."
     m "I know what I'm doing..."
-    cho "If you say so, [cho_genie_name]."
+    call cho_main("If you say so, [cho_genie_name].","base","base","base","mid")
 
     $ cho_quidditch_bottom = "pants_long" # For testing.
 
@@ -58,17 +30,17 @@ label use_quidditch_pants_2:
 
         m "Do you happen to have Quidditch trousers that are a bit shorter?"
         m "Some sort of hot-pants?"
-        cho "I do. I typically wear them in the summer."
+        call cho_main("I do. I typically wear them in the summer.","open","base","raised","mid")
         m "Well I'd like you to wear them all the time!"
-        cho "Even when it's cold, and raining?"
+        call cho_main("Even when it's cold, and raining?","soft","base","sad","mid")
         g9 "Especially when it's raining."
-        cho "Ok, [cho_genie_name]. I'll put them on."
+        call cho_main("Ok, [cho_genie_name]. I'll put them on.","annoyed","base","base","mid")
 
     # Repeat
     else:
         m "I'd like you to wear those hot-pants duing your games again."
-        cho "Alright. I see nothing wrong with that."
-        cho "I just hope it won't get too cold on our next game..."
+        call cho_main("Alright. I see nothing wrong with that.","soft","base","base","down")
+        call cho_main("I just hope it won't get too cold on our next game...","annoyed","base","sad","mid")
 
     $ cho_quidditch_bottom = "pants_short" # For testing.
 

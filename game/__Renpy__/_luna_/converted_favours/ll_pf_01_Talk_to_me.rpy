@@ -3,8 +3,8 @@
 label luna_favour_1: ###TALK TO ME #DONE
 
     m "{size=-4}(All I'll do is have a nice little conversation with her...){/size}"
-    if lun_corruption == 0: #FIRST TIME
-            $ lun_corruption += 1
+    if lun_whoring == 0: #FIRST TIME
+            $ lun_whoring += 1
             call play_music("chipper_doodle")
             m "Ok then..."
             m "Tell me a little about yourself, [luna_name]."
@@ -135,9 +135,9 @@ label luna_favour_1: ###TALK TO ME #DONE
 
 
 
-    elif lun_corruption == 1: #SECOND TIME
-        if lun_corruption <= 1:
-            $ lun_corruption += 1
+    elif lun_whoring == 1: #SECOND TIME
+        if lun_whoring <= 1:
+            $ lun_whoring += 1
         call play_music("chipper_doodle")
         m "Alright then..."
         m "How's school going, [luna_name]."
@@ -357,9 +357,9 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
-    elif lun_corruption >= 2 and lun_corruption < 13: #THIRD TIME
-        if lun_corruption <= 2:
-            $ lun_corruption += 1
+    elif lun_whoring >= 2 and lun_whoring < 13: #THIRD TIME
+        if lun_whoring <= 2:
+            $ lun_whoring += 1
         call play_music("chipper_doodle")
         m "Tell me [luna_name]..."
         m "How's you're home life going?"

@@ -46,6 +46,7 @@ default studio_image_zoom = 0.5
 default studio_image_flip = 1
 default studio_image_alpha = 1.0
 default studio_image_rotation = 0.0
+default studio_image_body = True
 
 default studio_image_xx = 1010
 default studio_image_yy = 1200
@@ -79,7 +80,13 @@ label studio(studio_return, studio_char):
     $ _return = ui.interact()
     
     hide screen studio
-    if _return[0] == "eyebrows":
+    if _return == "save":
+        $ saveimage_to_file(cho_outfit_last.get_image())
+    elif _return[0] == "body":
+        $ cho_outfit_last.save()
+        $ char_active.equip(cho_outfit_last)
+        $ studio_image_body = _return[1]
+    elif _return[0] == "eyebrows":
         if _return[1] == "inc":
             $ studio_image_eyebrows += 1
         else:
@@ -113,7 +120,7 @@ label studio(studio_return, studio_char):
         else:
             $ studio_room_bg -= 1
         $ studio_room_bg = clamp(studio_room_bg, 0, len(studio_bg_list)-1)
-    if _return[0] == "overlay":
+    elif _return[0] == "overlay":
         if _return[1] == "inc":
             if _return[2] == 1:
                 $ studio_room_overlay += 1
@@ -132,6 +139,7 @@ label studio(studio_return, studio_char):
             $ studio_image_flip = 1
             $ studio_image_alpha = 1.0
             $ studio_image_rotation = 0.0
+            $ studio_image_body = True
         elif _return[1] == "background":
             $ studio_room_bg_hue = 0
             $ studio_room_bg_saturation = 2.0
@@ -180,7 +188,7 @@ label studio(studio_return, studio_char):
         else:
             $ studio_text_outline_color = color_picker(get_rgb_tuple(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
-    elif _return == "Close":
+    else:
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
         
@@ -212,7 +220,10 @@ screen studio:
         draggable not studio_hide
         drag_offscreen True
         xpos 160 ypos -75
-        add char_active.get_image() zoom get_zoom(cho_class.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+        if studio_image_body:
+            add char_active.get_image() zoom get_zoom(cho_class.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+        else:
+            add cho_outfit_last.get_image() zoom get_zoom(cho_class.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:
@@ -247,6 +258,9 @@ screen character_studio:
     
     use top_bar_close_button
     
+    if config.developer:
+        textbutton "Save transparent" xalign 1.0 yalign 1.0 action Return("save")
+    
     frame:
         ypos 50
         xpos 50
@@ -270,14 +284,15 @@ screen character_studio:
                     spacing 32
                     imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["mouth", "dec"])
                     imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["mouth", "inc"])
-                hbox:
-                    spacing 32
-                    imagebutton idle image_arrow
-                    imagebutton idle im.Flip(image_arrow, horizontal=True)
-                hbox:
-                    spacing 32
-                    imagebutton idle image_arrow
-                    imagebutton idle im.Flip(image_arrow, horizontal=True)
+                if config.developer:
+                    hbox:
+                        spacing 32
+                        imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["body", True])
+                        imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["body", False])
+                    hbox:
+                        spacing 32
+                        imagebutton idle image_arrow
+                        imagebutton idle im.Flip(image_arrow, horizontal=True)
                     
                 frame:
                     style "empty"
@@ -400,8 +415,9 @@ screen character_studio:
                     text "[studio_image_eyes]" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
                     text "[studio_image_pupils]" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
                     text "[studio_image_mouth]" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
-                    text "2" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
-                    text "3" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
+                    if config.developer:
+                        text "Body" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
+                        text "3" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
             vbox:
                 text "Background" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5 xpos -10
                 text "[studio_room_bg]" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5 xpos -10 ypos 19

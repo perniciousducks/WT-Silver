@@ -110,6 +110,7 @@ init python:
             for key in clothing:
                 if not clothing[key][0] == None:
                     self.group.append(clothing[key][0])
+            self.cached = False
             return
                 
         def get_image(self):
@@ -603,7 +604,7 @@ init python:
         def get_clothing_list(self, category, subcategory):
             return self.clothing_dictlist.get(category).get(subcategory)
             
-        def get_equipped(self, category, subcategory, item):
+        def get_equipped(self, category, subcategory, item=0):
             if not self.get_cloth(self.get_clothing_list(category, subcategory)[item].type) == None:
                 return self.get_cloth(self.get_clothing_list(category, subcategory)[item].type).id
             return None

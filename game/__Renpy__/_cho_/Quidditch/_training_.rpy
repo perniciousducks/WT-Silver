@@ -242,7 +242,7 @@ label change_quidditch_tactics:
     call gen_chibi("stand","desk","base")
     with fade
 
-    $ cho_outift_last.save() # Temporarily save last worn clothes
+    $ cho_outfit_last.save() # Temporarily save last worn clothes
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
 
@@ -303,7 +303,7 @@ label change_quidditch_tactics:
 
             "-Go Back-":
                 call cho_main("Very well, [cho_genie_name].","open","base","base","mid", ypos="head")
-                $ cho_class.equip(cho_outift_last) # Equip last worn clothes # TODO: This doesn't work.
+                $ cho_class.equip(cho_outfit_last) # Equip last worn clothes # TODO: This doesn't work.
 
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")

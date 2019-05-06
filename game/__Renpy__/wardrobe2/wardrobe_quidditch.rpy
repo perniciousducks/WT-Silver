@@ -5,8 +5,8 @@ label t_wardrobe_quidditch():
     $ image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
     
     python:
-        quidditch_items = { "robe": [cho_cloth_robequidditch1, None],
-                            "bottom": [cho_cloth_pantslong2, cho_cloth_pantsshort4, cho_cloth_schoolskirt3]}
+        quidditch_items = { "robe": [choq_cloth_robequidditch1, None],
+                            "bottom": [choq_cloth_pantslong2, choq_cloth_pantsshort4, choq_cloth_schoolskirt3]}
         current_item = [0, 0]
     
     label t_wardrobe_quidditch_after_init:
@@ -39,11 +39,11 @@ label t_wardrobe_quidditch():
         if _return == "fail":
             jump t_wardrobe_quidditch_after_init
             
-        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id:
+        if cho_class.get_cloth("bottom").id == choq_cloth_schoolskirt3.id:
             call use_quidditch_skirt_1
-        elif cho_class.get_cloth("bottom").id == cho_cloth_pantslong2.id:
+        elif cho_class.get_cloth("bottom").id == choq_cloth_pantslong2.id:
             call use_quidditch_pants_1
-        elif cho_class.get_cloth("bottom").id == cho_cloth_pantsshort4.id:
+        elif cho_class.get_cloth("bottom").id == choq_cloth_pantsshort4.id:
             call use_quidditch_pants_2
             
         $ cho_outfit_quidditch.save() #<- use this to save quidditch outfit if all checks are passed

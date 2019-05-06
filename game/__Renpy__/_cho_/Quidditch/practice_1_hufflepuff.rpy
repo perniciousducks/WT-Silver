@@ -61,7 +61,7 @@ label start_training_match:
 # Check if Cho won or lost the practice game.
 label quidditch_match_return:
 
-    $ cho_outift_last.save() # Temporarily save last worn clothes
+    $ cho_outfit_last.save() # Temporarily save last worn clothes
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
 
@@ -168,7 +168,7 @@ label hufflepuff_practice_lost:
     # Cho leaves.
     call cho_walk(action="leave", speed=2.2)
 
-    $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
     if huffl_matches_won == 0:
         $ cho_mood += 5
@@ -233,7 +233,7 @@ label hufflepuff_practice_win_1:
     # Cho leaves.
     call cho_walk(action="leave", speed=2)
 
-    $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
     $ cho_busy = True
 
@@ -266,7 +266,7 @@ label hufflepuff_practice_win_2:
     # Cho leaves.
     call cho_walk(action="leave", speed=2)
 
-    $ cho_class.equip(cho_outift_last) # Equip last worn clothes
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
     $ cho_busy = True
 

@@ -60,7 +60,7 @@ screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, t
         # Add frame including selected colour
         frame background get_hex_string(color[0]/255.0,color[1]/255.0,color[2]/255.0,color[3]/255.0) xsize 100 ysize 100 xpos 360 ypos 180
         
-    use close_button
+    use top_bar_close_button
     
     #Cursor
     add "interface/color_palete/"+str(interface_color)+"/cursor_sq.png" xpos int(cursor[0]) ypos int(cursor[1]) xanchor 0.5 yanchor 0.5

@@ -760,91 +760,156 @@ label ll_pf_sex_T1_ton_1: # Call label
     hide screen blkfade
     with d3
     call ton_main("Professor Dumbledore!","horny","base","raised","L")
-    $ lunCG('dr', 'seductive', 'open', 'sad')
     lun "!!!"
+    $ lunCG('dr', 'seductive', 'open', 'sad')
     m "!!!"
+    $ lunCG('right', 'wide', 'base', 'base')
     call ton_main("I didn't think you'd be able to land a grade-a bird like this you old horndog!","horny","base","raised","L")
+    $ lunCG('up', 'seductive', 'open', 'sad')
     call ton_main("How'd you manage this one then? Love potion? Points? Gold?","horny","base","raised","L")
+    $ lunCG('right', 'wink', 'open', 'base')
     lun "He's helping me... ah... get rid of... my wrackspurts!"
     call ton_main("...","horny","base","base","L")
+    $ lunCG('up', 'seductive', 'open', 'sad')
     call ton_main("Mind control?","horny","base","raised","L")
     m "Nope."
+    $ lunCG('up', 'furious', 'open_tongue', 'sad')
     call ton_main("Then should I ask what the hell a \"wrackspurt\" is?","base","base","raised","L")
     m "Ugh... Luna can explain them..."
+    $ lunCG('right', 'seductive', 'base', 'sad')
     lun "Ah... they're nasty little... mmmm... creatures that make... ah... you want... mmm... to {b}fuck{/b}."
+    $ lunCG('up', 'furious')
     call ton_main("...","horny","base","raised","L")
+    $ lunCG('right', 'wink', 'open', 'sad')
     lun "You should... ah... be careful, Ms Tonks... {image=textheart} we're expelling a lot... {image=textheart} of them..."
+    $ lunCG('dl', 'seductive', 'base', 'sad')
     call ton_main("Really? And how will I know If these \"wrackspurts\" are after me...?","horny","base","raised","L")
+    $ lunCG('dr', 'angry', 'base', 'base')
     lun "You'll feel... ah... hot...{image=textheart} down there..."
     call ton_main("Oh... I see...","horny","base","raised","L")
+    $ lunCG('right', 'furious', 'base', 'sad')
     call ton_main("You know, you should come visit me after hours Miss Lovegood, I think I might also be able to help you out...","horny","base","raised","L")
     m "Hey!"
+    $ lunCG('dl', 'seductive', 'base', 'sad')
     lun "Ah... thank you... {image=textheart} Ms tonks... but I don't think... ah... you'll {b}taste{/b} as good..."
     call ton_main("Now, now, you don't know that... I taste like {b}heaven{/b}...","base","base","raised","L")
+    $ lunCG('ahegao', 'furious', 'base', 'mad')
     lun "There's just... ah{image=textheart} no way... you can...{image=textheart} taste half as good..."
+    $ lunCG('dr', 'seductive', 'open_tongue', 'sad')
     ">Tonks hand disappears down the front of her pants..."
     call ton_main("Oh I see how it is...","horny","base","raised","L")
+    $ lunCG('right', 'wink', 'open', 'sad')
     lun "Ah... you do?"
+    $ lunCG('right', 'seductive', 'base', 'sad')
     call ton_main("Uh-huh... You're just Dumbledore's dirty, little, cumslut... aren't you?","base","base","raised","L")
+    $ lunCG('dr', 'happyCl', 'open', 'base')
     lun "That's it!"
+    $ lunCG('right', 'base', 'open', 'sad')
     call ton_main("So you admit it then?","horny","base","base","L")
+    $ lunCG('right', 'wide', 'base', 'base')
     lun "Of course! I'm proud... to be a cumslut!"
+    $ lunCG('dr', 'happyCl', 'open', 'sad')
     lun "As an auror you should... ah{image=textheart} know the importance of... mmm{image=textheart} warding off evil magic!"
+    $ lunCG('up', 'seductive', 'open', 'sad')
     call ton_main("There's warding...","base","base","base","L")
+    $ lunCG('ahegao', 'furious', 'open_tongue', 'sad')
     call ton_main("And then there's just being covered in cum...","base","base","raised","L")
+    $ lunCG('dl', 'tired', 'open', 'sad')
     lun "Oh..."
+    $ lunCG('right', 'happyCl', 'open', 'base')
     lun "They're both fun!"
+    $ lunCG('up', 'seductive', 'open', 'base')
     call ton_main("Fuck... you've really done a number on this her, haven't you, Dumbledore...","horny","base","raised","L")
     m "She was like this from the start..."
+    $ lunCG('dr', 'happyCl', 'base', 'base')
     lun "Mhmm!"
     call ton_main("Then you've lucked out on finding the horniest little nymph to ever live...","horny","base","base","L")
+    $ lunCG('right', 'angry', 'open', 'mad')
     lun "I am not... a nymph!"
+    $ lunCG('up', 'angry', 'open', 'sad')
     call ton_main("Anyway... all this talk of how much you love your headmasters yummy cum...","base","base","raised","L")
+    $ lunCG('right')
     call ton_main("I want to see it...","horny","base","raised","L")
+    $ lunCG('dl')
     m "See what?"
     call ton_main("Her, covered in it...","horny","base","base","L")
+    $ lunCG('right', 'wide', 'open', 'base')
     lun "You do?"
+    $ lunCG('ahegao', 'angry', 'open_tongue', 'sad')
     call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmasters spunk...","base","base","raised","L")
     lun "{image=textheart}{image=textheart}{image=textheart}"
+    show screen blkfade
+    with d3
 
     menu:
         "Where should you cum?"
         "-On her face-":
+            $ lun_cg_path         = "images/CG/luna_desk2/"
+            $ lun_cg_base         = lun_cg_path+"base.png"
+            $ lun_cg_genie        = lun_cg_path+"blank.png"
+            $ lun_cg_xpos_abs     = 0
+            $ lun_cg_ypos_abs     = 0
+            $ lun_cg_xpos         = 0
+            $ lun_cg_ypos         = 0
+            $ lunCG(pupil='up', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', pos=1)
             m "On your knees slut!"
+            $ lunCG('up', 'seductive', 'sucking', 'sad', pos=8)
             lun "Mhmm!"
             ">Luna quickly hops off the desk and smiles in front of your cock..."
+            $ lunCG('up', 'blink', 'open', 'base', pos=1)
             lun "Need me to-"
             g4 "Shutup!"
+            $ lunCG('up', 'base', 'base', 'sad')
             lun "..."
             g4 "Ugh... here it is you little whore!"
-            call ton_main("...","base","base","raised","L")
+            ton "..."
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
+            $ lunCG('ahegao', 'seductive', 'open_tongue', 'sad', extra_1='cum_3')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
             ">Tonk's fingers noticeably begin to speed up."
-            call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","base","L")
+            ton "Mmmm, damn... where were all the sluts like this when I was in school..."
 
         "-Fire it in her-":
             g4 "ARGH!!! TAKE IT ALL YOU LITTLE WHORE!"
+            $ lunCG('ahegao', 'angry', 'open', 'sad', extra_1='cum_3')
             ">You start filling up poor Luna as her hungry pussy does it's best to milk you dry."
+            $ lunCG('ahegao', 'furious', 'open_tongue', 'sad')
             lun "Oh thank you! thank you! thank you!"
             call ton_main("Wow...","horny","base","raised","L")
+            $ lunCG('right', 'furious', 'open_tongue', 'sad')
             lun "Ugh...{image=textheart} it's like he's... pumped me full of magic..."
             ">Tonk's fingers noticeably begin to speed up."
+            $ lunCG('ahegao', 'furious', 'open_tongue', 'sad')
             call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
 
     call ton_main("ah...{w=0.5} this has certainly been...{p}fun.","horny","base","raised","L")
     call ton_main("But I think I best be on my way... I need to take care of some \"rockspoons\" of my own...","base","base","raised","L")
+    $ lunCG('right', 'seductive', 'base', 'sad')
     lun "Ugh... You don't want to see us go again?"
-    ">With that slips your softening cock back into her tight hole..."
+    $ lun_cg_path         = "images/CG/luna_fucking/"
+    $ lun_cg_base         = lun_cg_path+"base_2.png"
+    $ lun_cg_genie        = lun_cg_path+"blank.png"
+    $ lun_cg_dick         = lun_cg_path+"blank.png"
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    $ lun_cg_xpos         = -200
+    $ lun_cg_ypos         = 0
+    $ lunCG(pupil='ahegao', eye='furious', mouth='base', eyebrow='sad', cheeks='blush', extra_1='cum_3', extra_2='blank', extra_3='blank', tears='mascara')
+    ">With that, she slips your softening cock back into her tight hole..."
     m "Ugh... can't we have a break first?"
+    $ lunCG('left', 'seductive', 'pout', 'sad')
     lun "..."
     ">Luna simply looks back at you with the eyes of a puppy dog begging for a treat."
     m "Fine... just start off slowly this time!"
+    $ lunCG('left', 'wink', 'base', 'base')
     lun "That's no fun..."
+    $ lunCG('up', 'angry', 'open', 'sad', extra_2='speed')
     call ton_main("Wow... you two really are going to go again, aren't you?","base","base","raised","L")
+    $ lunCG('right', 'wink', 'open', 'sad')
     lun "You don't have to... a-ah...{image=textheart} stay if you don't want to..."
     call ton_main("Oh...{p}I may as well stick around for a little bit longer...","base","base","raised","L")
+    $ lunCG('up', 'furious', 'open_tongue', 'sad')
     ">Tonks' angrily fingers her cunt while she stares hungrily at Luna's bouncing boobs."
 
     show screen blkfade
@@ -854,34 +919,53 @@ label ll_pf_sex_T1_ton_1: # Call label
     with d3
 
     g9 "NO! MORE!"
+    $ lunCG('left', 'angry', 'base', 'sad')
     lun "Pleaaaaaase!"
     call ton_main("Yeah, you can make it one more round Dumbledore!","horny","base","raised","L")
+    $ lunCG('dl', 'tired', 'base', 'sad')
     g9 "I've already gone four rounds!"
+    $ lunCG('left', 'wide', 'open', 'sad')
     lun "But there are still so many-"
+    $ lunCG('dl', 'tired', 'pout')
     g9 "Well, too bad, I'm about to pass out."
     call ton_main("Hmmm, he's probably right, Luna... He is pretty old.","base","base","raised","L")
+    $ lunCG('right', 'angry', 'pout', 'sad')
     lun "That shouldn't matter!"
+    $ lunCG('dr', 'angry', 'pout', 'sad')
     call ton_main("It's also getting rather late. As your teacher, it is my responsibility to make sure you follow curfew.","base","base","raised","L")
+    $ lunCG('dl')
     m "The whole cum bath thing is okay though?"
     call ton_main("Surprisingly, there's nothing about a \"cum bath\" in the teachers handbook...","horny","base","raised","L")
     m "Fair enough. You two going to bed suits me anyway."
+    $ lunCG('right', 'tired', 'open', 'sad')
     call ton_main("Well, come on then, Luna, hurry up and get dressed, I'll walk you home.","horny","base","raised","L")
+    $ lunCG('dr', 'base', 'base', 'sad')
     lun "Alright then Miss Tonks..."
-    ">With an airy smile, Luna picks up her clothes and places them on over her cum soaked form."
-    call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L")
-    lun "What, Why?"
-    call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","base","base","raised","L")
-    lun "Oh that's just the wrackspurts! They're corpses can have that affect on people."
-    lun "I {b}love{/b} the smell myself... Besides, I need to wear them to act as a warning to the other wrackspurts while I sleep!"
-    call ton_main("You mean you expect me to walk you back to your room covered head to toe in cum?","horny","base","base","L")
-    lun "You don't have to... I can make my own way home."
-    call ton_main("I wouldn't miss this for the world... All we need is a leash and we can cross a line off my bucket list.","horny","base","raised","L")
-    lun "What?"
-    call ton_main("Never mind, let's just go before the prefects start whining about curfew.","base","base","raised","L")
-
-    hide screen luncg
     show screen blkfade
     with d3
+    hide screen luncg
+    $ luna_flip = -1
+    $ luna_cum = 9
+    $ luna_wear_cum = True
+    hide screen blkfade 
+    with d3
+    ">With an airy smile, Luna picks up her clothes and places them on over her cum soaked form."
+    call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L")
+    call lun_main("What, Why?","base","wink","raised","mid", xpos=350)
+    call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","base","base","raised","L")
+    call lun_main("Oh that's just the wrackspurts! They're corpses can have that affect on people.","base","happyCl","base","mid")
+    call lun_main("I {b}love{/b} the smell myself... Besides, I need to wear them to act as a warning to the other wrackspurts while I sleep!","base","angry","sad","up")
+    call ton_main("You mean you expect me to walk you back to your room covered head to toe in cum?","horny","base","base","L")
+    call lun_main("You don't have to... I can make my own way home.","base","wink","sad","mid")
+    call ton_main("I wouldn't miss this for the world... All we need is a leash and we can cross a line off my bucket list.","horny","base","raised","L")
+    call lun_main("What?","open","wink","base","mid")
+    call ton_main("Never mind, let's just go before the prefects start whining about curfew.","base","base","raised","L")
+
+
+    show screen blkfade
+    with d3
+    hide screen luna_main
+    hide screen tonks_main
 
     ">With that, tonks walks off with the cum-soaked Luna..."
     m "Finally... I thought they'd never leave..."
@@ -903,49 +987,81 @@ label ll_pf_sex_T1_ton_2: # Call label
     #Talks about how wet she was during it
     #Tonks starts talking about how she wishes she could be so brazen
     #Cum all over Luna and Tonks excitedely takes her home while offering to lick her clean
+    $ lun_cg_base = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos = -200
+    hide screen blkfade
+    with d3
 
-    call ton_main("Ugh... are you two going at it again?","horny","base","raised","L")
+    call ton_main("Ugh... are you two going at it again?","open","base","raised","mid")
+    $ lunCG('right', 'seductive', 'base', 'base')
     lun "Ah... these wrackspurts... ah... are quite... powerful..."
-    call ton_main("Mmmm, I can believe that... In fact...","horny","base","raised","L")
+    call ton_main("Mmmm, I can believe that... In fact...","horny","base","base","L")
     #Tonks slides her hands down her pants
-    call ton_main("Ah... it looks like they're affecting me too...","horny","base","raised","L")
+    $ lunCG('up', 'angry', 'base', 'sad')
+    call ton_main("Ah... it looks like they're affecting me too...","open","base","raised","down")
     m "..."
+    $ lunCG('right', 'wide', 'open', 'base')
     lun "So quick! Ah... You better stay here... ah... to let them all out..."
-    call ton_main("I wouldn't miss a show like this for the world...","horny","base","raised","L")
-    call ton_main("I'd normally have to pay a fortune this definition.","horny","base","raised","L")
+    call ton_main("I wouldn't miss a show like this for the world...","horny","base","base","mid")
+    $ lunCG('up', 'base', 'base', 'sad')
+    call ton_main("I'd normally have to pay a fortune this definition.","open","base","wide","mid")
     m "Maybe I should start charging?"
-    call ton_main("I could say the same to you...","horny","base","raised","L")
-    call ton_main("Although I think my charges would be a little more severe...","horny","base","raised","L")
+    $ lunCG('left', 'wink', 'pout', 'sad')
+    call ton_main("I could say the same to you...","open","base","base","mid")
+    $ lunCG('left', 'angry', 'base', 'sad')
+    call ton_main("Although I think my charges would be a little more severe...","horny","base","angry","L")
     m "Watch away then..."
     ">Tonks' starts violently fingering herself under her pants..."
-    call ton_main("Mmmm, don't mind if I do...","horny","base","raised","L")
+    call ton_main("Mmmm, don't mind if I do...","horny","base","angry","L")
+    $ lunCG('up', 'seductive', 'open', 'sad', extra_2='speed')
     ">The room falls silent save for the rhythmic noise of Luna being fucked and the quiet squelching coming from her perverted teacher."
+    $ lunCG('ahegao', 'base', 'open_tongue', 'sad')
     lun "Ah... ah... ah..."
-    call ton_main("So, Luna.","horny","base","raised","R")
+    $ lunCG('right', 'wink', 'base', 'base')
+    call ton_main("So, Luna.","open","base","base","L")
+    $ lunCG('up', 'seductive', 'open_tongue', 'sad')
     lun "Yes... ah..."
-    call ton_main("Will you be needing another escort home today?","horny","base","raised","L")
-    lun "Oh, well I don't think I really need one."
+    $ lunCG('right', 'tired', 'base', 'sad')
+    call ton_main("Will you be needing another escort home today?","base","base","angry","L")
+    $ lunCG('left', 'wink', 'base', 'base')
+    lun "Oh, well I don't think I really need one..."
+    $ lunCG('right', 'wide', 'open', 'sad')
     lun "But I'd be happy for the company! I always love to make new friends."
-    call ton_main("I can see that... Will you also be wearing a fresh load of your headmasters cum while we walk?","horny","base","raised","L")
+    $ lunCG('up', 'base', 'base', 'base')
+    call ton_main("I can see that... Will you also be wearing a fresh load of your headmasters cum while we walk?","horny","base","angry","mid")
+    $ lunCG('right', 'angry', 'open', 'sad')
     lun "Of course!"
-    call ton_main("Ugh... {image=textheart}fuck{image=textheart}... that's it...","horny","base","raised","L")
-    call ton_main("Last time I walked you home...","horny","base","raised","L")
+    $ lunCG('ahegao', 'sedctive', 'open_tongue', 'sad')
+    call ton_main("Ugh... {image=textheart}fuck{image=textheart}... that's it...","open","base","angry","L")
+    call ton_main("Last time I walked you home...","open","base","base","ahegao")
+    $ lunCG('right', 'wink', 'base', 'sad')
     lun "{image=textheart}Ah... yes? ah...{image=textheart}"
-    call ton_main("God, I've never been so turned on in my life!","base","base","raised","R")
-    call ton_main("Watching everyone in the school turn to look at you...","horny","base","raised","L")
-    call ton_main("Coated in the biggest fucking load of cum...","base","base","raised","L")
+    call ton_main("God, I've never been so turned on in my life!","horny","base","angry","ahegao")
+    $ lunCG('right', 'seductive', 'open_tongue', 'sad')
+    call ton_main("Watching everyone in the school turn to look at you...","open","base","base","L")
+    $ lunCG('up', 'angry', 'open_tongue', 'mad')
+    call ton_main("Coated in the biggest fucking load of cum...","open","base","base","ahegao")
+    $ lunCG('ahegao', 'angry', 'wide', 'sad')
     lun "Ah...{image=textheart}"
-    call ton_main("And no one said a word...","base","base","raised","L")
-    call ton_main("They just {b}fucked{/b} you with their eyes...","horny","base","base","L")
+    $ lunCG('right', 'angry', 'open', 'sad')
+    call ton_main("And no one said a word...","base","base","base","L")
+    call ton_main("They just {b}fucked{/b} you with their eyes...","horny","base","base","mid")
+    $ lunCG('right', 'wide', 'open_tongue', 'sad')
     lun "They did?{image=textheart}"
-    call ton_main("Can you blame them? You were such pretty, well-fucked mess...","horny","base","raised","L")
-    call ton_main("Ugh... I stayed up all night fingering myself to the sight of you...","base","base","base","L")
+    $ lunCG('up')
+    call ton_main("Can you blame them? You were such pretty, well-fucked mess...","horny","base","base","mid")
+    call ton_main("Ugh... I stayed up all night fingering myself to the sight of you...","open","base","angry","ahegao")
+    $ lunCG('right', 'seductive', 'base', 'sad')
     lun "Ah... you did?"
-    call ton_main("Mhmmm... I'll probably do it again tonight...","horny","base","base","L")
+    $ lunCG('up', 'angry', 'base', 'sad')
+    call ton_main("Mhmmm... I'll probably do it again tonight...","open","base","base","L")
     lun "Careful... ah... you might release... too many wrackspurts..."
-    call ton_main("Oh... Will that make all my students nice and slutty like you?","horny","base","base","L")
+    $ lunCG('left', 'angry', 'open', 'sad')
+    call ton_main("Oh... Will that make all my students nice and slutty like you?","horny","base","raised","L")
+    $ lunCG('up', 'tired', 'base', 'sad')
     lun "It- ah... it could."
-    call ton_main("Mmmm, fantastic...","base","base","raised","L")
+    $ lunCG('ahegao', 'angry', 'open_tongue', 'mad')
+    call ton_main("Mmmm, fantastic...","open","angry","angry","mid")
     lun "Fantastic? Why...{w=0.3} ah...{w=0.3} would you..."
     ">Before Luna can say anymore, you grab onto her hips before slamming into her."
     lun "Ah...{image=textheart}{image=textheart}{image=textheart}"
@@ -953,36 +1069,61 @@ label ll_pf_sex_T1_ton_2: # Call label
 
     menu:
         "Cum inside":
+            $ lunCG('ahegao', 'mad', 'open_tongue', 'angry', extra_1='cum_1')
             ">With that, you start unloading into Luna's pussy."
+            $ lunCG('ahegao', 'angry', 'open_tongue', 'mad')
             lun "a-a-ahh..... soo... goooood..."
             m "..."
+            $ lunCG('ahegao', 'mad', 'wide', 'angry')
             ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
+            $ lunCG('ahegao', 'mad', 'base', 'mad')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             ">You slump back into your chair, leaving Luna on your desk, leaking cum."
-            call ton_main("Dumbledore, what do you think you're doing?","open","base","raised","L")
+            $ lunCG('ahegao', 'angry', 'open_tongue', 'angry')
+            call ton_main("Dumbledore, what do you think you're doing?","open","wide","wide","mid")
             m "Busting a load?"
-            call ton_main("Inside her! Now she won't be able to show off what a little cumslut she is!","open","base","base","L")
+            call ton_main("Inside her! Now she won't be able to show off what a little cumslut she is!","open","base","angry","mid")
+            $ lunCG('left', 'angry', 'base', 'sad')
             lun "ah..."
             m "You're just upset you don't get to lead her around like a trophy."
+            $ lunCG('left', 'tired', 'open', 'sad')
             call ton_main("Ugh...","horny","base","base","L")
-            call ton_main("At least try and get a little on her dress next time.","open","base","base","L")
+            $ lunCG('dr', 'seductive', 'open_tongue', 'sad')
+            call ton_main("At least try and get a little on her dress next time.","base","base","angry","r")
+            $ lunCG('dl', 'tired', 'open_tongue', 'sad')
             lun "..."
             m "I'll try. Now, are you ready to take Miss Lovegood home?"
-            call ton_main("I suppose so... Not that there's much point if she isn't covered in cum...","horny","base","base","L")
+            $ lunCG('dr', 'tired', 'open_tongue', 'sad')
+            call ton_main("I suppose so... Not that there's much point if she isn't covered in cum...","base","base","angry","R")
 
         "Coat her face":
+            $ lun_cg_path         = "images/CG/luna_desk2/"
+            $ lun_cg_base         = lun_cg_path+"base_2.png"
+            $ lun_cg_genie        = lun_cg_path+"blank.png"
+            $ lun_cg_xpos_abs     = 0
+            $ lun_cg_ypos_abs     = 0
+            $ lun_cg_xpos         = -200
+            $ lun_cg_ypos         = 0
+            $ lunCG(pupil='up', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', pos=1)
             m "On your knees slut!"
             lun "OK!"
+            $ lunCG('dick', 'seductive', 'open_tongue', 'sad')
             ">Luna quickly hops off the desk and smiles in front of your cock..."
+            $ lunCG('up', 'seductive', 'open_tongue', 'sad')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             g4 "Ugh... here it is you little whore!"
+            $ lunCG('dick', 'seductive', 'open_tongue', 'sad', extra_1='cum_3')
             call ton_main("...","horny","base","base","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
+            $ lunCG('up', 'angry', 'open_tongue', 'sad')
             lun "{image=textheart}{image=textheart}{image=textheart}"
+            $ lunCG('up', 'seductive', 'base', 'sad')
             lun "{size=-5}thank you...{/size}"
             ">Tonk's fingers noticeably begin to speed up."
+            $ lunCG('left', 'seductive', 'base', 'sad')
             call ton_main("Mmmm, damn... that's hot...","horny","base","base","L")
             m "Ready to take Miss Lovegood home?"
+            $ lunCG('left', 'blink', 'base', 'base')
             call ton_main("You bet! I hope you don't mind taking the long route, Luna...","horny","base","raised","L")
 
     hide screen luncg

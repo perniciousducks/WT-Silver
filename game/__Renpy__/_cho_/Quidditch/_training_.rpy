@@ -244,6 +244,7 @@ label change_quidditch_tactics:
     $ cho_outift_last.save() # Temporarily save last worn clothes
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
+    call update_cho_chibi_uniform
 
     label demonstrate_quidditch_tactics:
     call bld
@@ -264,12 +265,17 @@ label change_quidditch_tactics:
                 $ cho_flying = False
                 call cho_walk("mid", "base", 1.2)
 
+                show screen blkfade
+                with d3
+
                 call cho_chibi("hide")
                 call flying_cho_chibi(flying=False) # Reset chibi images.
                 call cho_chibi("stand","mid","base")
-                with d3
+                hide screen blkfade
 
-                jump change_quidditch_tactics
+                call cho_main("","base","base","base","mid", xpos="mid", ypos="base")
+
+                jump demonstrate_quidditch_tactics
 
         jump demonstrate_quidditch_tactics
 
@@ -278,7 +284,9 @@ label change_quidditch_tactics:
             "-Fly Test-":
                 $ cho_flying = True # Demonstrating
                 m "Start flying, [cho_name]."
-                call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
+                call cho_main("Yes, Sir!","open","closed","angry","mid", xpos="mid", ypos="base")
+                hide screen cho_chang
+                with d3
 
                 call cho_chibi("hide")
                 call flying_cho_chibi(flying=True) # Change chibi images to flying.
@@ -286,10 +294,10 @@ label change_quidditch_tactics:
                 with d3
 
             "-Customize quidditch outfit-":
-                call cho_main(xpos="mid",ypos="base", face="neutral")
+                call cho_main(face="neutral", xpos="mid", ypos="base")
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho_class.equip(cho_outfit_quidditch)
-                call cho_main(xpos="wardrobe",ypos="base", face="neutral")
+                call cho_main(face="neutral", xpos="mid", ypos="base")
 
             "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
                 jump start_training_match
@@ -301,12 +309,20 @@ label change_quidditch_tactics:
                     call nar(">You can't do that right now.")
 
             "-Go Back-":
-                call cho_main("Very well, [cho_genie_name].","open","base","base","mid", ypos="head")
-                $ cho_class.equip(cho_outift_last) # Equip last worn clothes # TODO: This doesn't work.
+                call cho_main("Very well, [cho_genie_name].","open","base","base","mid")
+
+                hide screen cho_chang
+                show screen blkfade
+                with d3
+
+                $ cho_class.equip(cho_outift_last)
+                call update_cho_chibi_uniform
 
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")
-                call cho_main(face="happy",xpos="base",ypos="base",trans="fade")
+
+                hide screen blkfade
+                call cho_main(face="happy", xpos="base", ypos="base", trans="fade")
                 jump cho_requests
 
         jump demonstrate_quidditch_tactics

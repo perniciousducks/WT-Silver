@@ -106,7 +106,7 @@ label store_chit_chat:
         twi "Make sure to take notes!"
         m "Are you assuming your headmaster doesn’t know how studying works?"
         fre "Of course not..."
-        ger "Anyway... if you need anything else we should have another book coming in at some point which is not just about the basics of Quidditch..."
+        #ger "Anyway... if you need anything else we should have another book coming in at some point which is not just about the basics of Quidditch..."
 
     elif deck_unlocked and her_know_cards and not twins_know_cards:
         m "Hello boys."
@@ -320,12 +320,16 @@ label gift_shop_menu:
 
     elif _return == "toggle1":
         $ toggle1_bool = not toggle1_bool
+        $ current_page = 0
     elif _return == "toggle2":
         $ toggle2_bool = not toggle2_bool
+        $ current_page = 0
     elif _return == "toggle3":
         $ toggle3_bool = not toggle3_bool
+        $ current_page = 0
     elif _return == "toggle4":
         $ toggle4_bool = not toggle4_bool
+        $ current_page = 0
 
     elif _return == "inc":
         $ current_page += 1

@@ -654,46 +654,46 @@ label ask_snape_for_quidditch_help:
 
     call bld
     m "So It looks like I might need some information about Quidditch..."
-    call sna_head("I see, I guess it was only a matter of time before you got yourself involved...","snape_01", ypos="head")
+    call sna_main("I see, I guess it was only a matter of time before you got yourself involved...","snape_01", ypos="head")
     m "Oh, I don’t care much about the sport..."
-    call sna_head("Worried you will lose the bet?","snape_03")
+    call sna_main("Worried you will lose the bet?","snape_03")
     m "No?{w} Let’s say it’s more of a plot device to push the narrative forward..."
-    call sna_head("Of course you can't teach the girl Quidditch if you know nothing about it...","snape_09")
-    call sna_head("Did she call your bluff?","snape_13")
+    call sna_main("Of course you can't teach the girl Quidditch if you know nothing about it...","snape_09")
+    call sna_main("Did she call your bluff?","snape_13")
     m "Of course not..."
-    call sna_head("Well, whilst I could drone on for hours about Quidditch rules....","snape_06")
-    call sna_head("I’d rather not spend my time on such a topic.","snape_03")
+    call sna_main("Well, whilst I could drone on for hours about Quidditch rules....","snape_06")
+    call sna_main("I’d rather not spend my time on such a topic.","snape_03")
     m "Where am I supposed to learn the basics then?"
-    call sna_head("Why do you think I care where you’d learn it from?","snape_09")
+    call sna_main("Why do you think I care where you’d learn it from?","snape_09")
     m "Because keeping me occupied is within your best interests?"
-    call sna_head("...","snape_04")
-    call sna_head("Good point...","snape_06")
-    call sna_head("Well, I guess it wouldn’t be too harmful if you made yourself to the Weasley Twins...","snape_05")
+    call sna_main("...","snape_04")
+    call sna_main("Good point...","snape_06")
+    call sna_main("Well, I guess it wouldn’t be too harmful if you made yourself to the Weasley Twins...","snape_05")
 
     if store_intro_done:
         m "And how would they be able to help me?"
-        call sna_head("Well, they’re both on the Gryffindor team...","snape_03")
-        call sna_head("And as much as it pains me to say this...","snape_06")
-        call sna_head("They’re very discrete business minded individuals...","snape_02")
+        call sna_main("Well, they’re both on the Gryffindor team...","snape_03")
+        call sna_main("And as much as it pains me to say this...","snape_06")
+        call sna_main("They’re very discrete business minded individuals...","snape_02")
         m "I’ve take it you’ve had a fair deal of business with them yourself?"
-        call sna_head("No comment...","snape_03")
+        call sna_main("No comment...","snape_03")
 
     else:
         m "The Twins? Have you been keeping twins from me now as well?"
-        call sna_head("I mean, if two very irritating ginger boys is your type I’m not going to judge...","snape_03")
+        call sna_main("I mean, if two very irritating ginger boys is your type I’m not going to judge...","snape_03")
         m "..."
-        call sna_head("Fred and George Weasley runs a secret shop in the school...","snape_01")
+        call sna_main("Fred and George Weasley runs a secret shop in the school...","snape_01")
         m "Doesn’t sound very secret if you know about it..."
-        call sna_head("Their rates are good, plus it means I don’t have to leave the castle unless absolutely necessary...","snape_09")
+        call sna_main("Their rates are good, plus it means I don’t have to leave the castle unless absolutely necessary...","snape_09")
         m "Ah, a basement dweller... charmed."
-        call sna_head("In any case, about your inquiry...","snape_03")
-        call sna_head("The boys are both on the Gryffindor team so they’re sure have the means of providing what you need.","snape_01")
+        call sna_main("In any case, about your inquiry...","snape_03")
+        call sna_main("The boys are both on the Gryffindor team so they’re sure have the means of providing what you need.","snape_01")
         m "Sweet, looking forward to meeting them..."
-        call sna_head("Aren’t you going to ask for directions?","snape_05")
+        call sna_main("Aren’t you going to ask for directions?","snape_05")
         m "I’m sure I’ll manage..."
-        call sna_head("Try not to wander too far from your office...","snape_09")
+        call sna_main("Try not to wander too far from your office...","snape_09")
         m "Yes... dad..."
-        call sna_head("...","snape_08") #[angry]
+        call sna_main("...","snape_08") #[angry]
 
     # Ending
     show screen bld1

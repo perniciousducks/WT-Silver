@@ -250,8 +250,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 
     # After talking to Snape about Cho.
     # If you haven't yet beaten the Quiz.
-    if snape_quid_help == False and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False: # After failing the Quiz.
-        $ snape_quid_help = True
+    if snape_quid_help == True and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False: # After failing the Quiz.
         jump ask_snape_for_quidditch_help
 
     # General

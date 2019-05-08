@@ -230,3 +230,5 @@ game/__Renpy__/_hermione_/outfits.rpy
 \.android\.json
 
 game/BakeRemovedWhiteSpace\.exe
+
+*.kra

@@ -322,8 +322,8 @@ screen t_wardrobe_menuitem(xx, yy):
         # Add subcategory list
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
-                add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
-                button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory])
+                add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+subcategory+".png" ypos 86 xpos 10+(90*i) zoom 0.2
+                button xsize 86 ysize 86 ypos 86 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory])
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         

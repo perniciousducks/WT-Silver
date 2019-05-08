@@ -29,6 +29,7 @@ label __init_variables:
             cho_cloth_toptanktop2 = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_tanktop_2", layers=2, color=[[252, 192, 213, 255], [253, 221, 232, 255]], unlocked=False)
             cho_cloth_topsweater1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_sweater_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
             cho_cloth_robequidditch1 = cloth_class(char="cho", category="tops", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
+            cho_cloth_topquid1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_quid_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]])
             
             # Bottoms
             cho_cloth_schoolskirt1 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="school_skirt_1", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
@@ -43,6 +44,7 @@ label __init_variables:
             cho_cloth_skirtshort2 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="skirt_short_2", layers=1, color=[[93, 119, 173, 255]], unlocked=False)
             cho_cloth_pantslong2 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="pants_long_2", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
             cho_cloth_pantsshort4 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="pants_short_4", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
+            cho_cloth_quidskirt1 = cloth_class(char="cho", category="bottoms", subcat="school", type="bottom", id="quid_skirt_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]])
             
             # Bras
             cho_cloth_basicbra1 = cloth_class(char="cho", category="underwear", subcat="bras", type="bra", id="basic_bra_1", layers=2, color=[[230, 230, 231, 255], [89, 116, 194, 255]])
@@ -64,6 +66,8 @@ label __init_variables:
             
             # Hair
             cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
+            cho_hair_pigtails = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="pigtails", layers=3, color=[[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]])
+            
             cho_hats_catears = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="catears", layers=1, color=[[70, 90, 147, 255]])
             cho_hats_witch = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="witch", layers=2, color=[[71, 51, 102, 255], [215, 170, 98, 255]])
             cho_glasses1 = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="glasses1", layers=1, color=[[240, 240, 241, 255]])
@@ -71,6 +75,8 @@ label __init_variables:
             # Neckwear
             cho_cloth_chokerlace1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=2, color=[[100, 100, 255, 255], [220, 220, 221, 255]], unlocked=False)
             cho_cloth_tie1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="tie_1", layers=2, color=[[216, 163, 10, 255], [89, 116, 194, 255]])
+            cho_cloth_chokermedallion= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_medallion", layers=1, color=[[25, 25, 26, 255]])
+            cho_cloth_collarleather1= cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="collar_leather_1", layers=1, color=[[56, 56, 57, 255]])
             
             cho_makeup_blush=cloth_class(char="cho", category="head", subcat="makeup", type="makeup", id="blush", layers=1, color=[[238, 113, 196, 255]])
             
@@ -78,6 +84,7 @@ label __init_variables:
             cho_cloth_lace_stockings_1 = cloth_class(char="cho", category="underwear", subcat="stockings", type="stockings", id="lace_stockings_1", layers=2, color=[[100, 100, 255, 255], [220, 220, 221, 255]], unlocked=False)
             cho_cloth_fishnet_stockings_1 = cloth_class(char="cho", category="underwear", subcat="stockings", type="stockings", id="fishnet", layers=2, color=[[100, 100, 101, 255], [50, 50, 51, 255]])
             cho_cloth_sailor_stockings_1 = cloth_class(char="cho", category="underwear", subcat="stockings", type="stockings", id="sailor", layers=1, color=[[232, 232, 233, 255]], unlocked=False)
+            cho_cloth_quidstocking1 = cloth_class(char="cho", category="underwear", subcat="stockings", type="stockings", id="quid1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]])
             
             # Garterbelts
             cho_cloth_lacegarter1 = cloth_class(char="cho", category="underwear", subcat="garterbelts", type="garterbelt", id="lace_garter_1", layers=4, color=[[220, 220, 221, 255], [100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False)
@@ -88,6 +95,7 @@ label __init_variables:
             cho_acc_suspenders = cloth_class(char="cho", category="misc", subcat="accessory", type="accessory", id="suspenders", layers=2, color=[[137, 22, 17, 255], [229, 140, 33, 255]], unlocked=False)
             cho_earring_feather = cloth_class(char="cho", category="head", subcat="earrings", type="earring", id="feather", layers=3, color=[[232, 232, 232, 255], [70, 90, 147, 255], [136, 91, 34, 255]], unlocked=False)
             cho_earring_basic = cloth_class(char="cho", category="head", subcat="earrings", type="earring", id="basic", layers=1, color=[[220, 220, 221, 255]])
+            cho_earring_snitch = cloth_class(char="cho", category="head", subcat="earrings", type="earring", id="snitch", layers=2, color=[[220, 220, 221, 255], [213, 161, 13, 255]])
             
             # Quidditch seperate category
             choq_cloth_robequidditch1 = cloth_class(char="cho", category="event", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)

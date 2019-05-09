@@ -597,7 +597,7 @@ label hufflepuff_match:
     call sna_main("Fancy a glass of wine then?","snape_02",ypos="head")
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[2] = None
-    m "Don’t mind if I do... Something to distract me from this... bizzare game..."
+    m "Don’t mind if I do... Something to distract me from this... bizarre game..."
     pause.5
     call play_sound("bottle")
     pause.8

@@ -5474,7 +5474,6 @@ interface/wardrobe/icons/tonks/accessories/tiara.png:216,277,68,144
 interface/wardrobe/icons/tonks/accessories/transparency_potion.png:223,253,69,94
 interface/wardrobe/icons/tonks/accessories/vintage_glasses.png:221,287,65,27
 interface/wardrobe/icons/tonks/accessories/witch_hat.png:358,373,321,285
-interface/wardrobe/test/icons/cho/bottoms_school.png:19,0,394,429
 interface/wardrobe/test/icons/cho/head_hair.png:3,173,349,256
 interface/wardrobe/test/icons/cho/head_hats.png:3,0,395,429
 interface/wardrobe/test/icons/cho/head_neckwear.png:0,0,395,429
@@ -6167,3 +6166,10 @@ characters/cho/clothes/hair/pigtails/0.png:450,311,248,196
 characters/cho/clothes/hair/pigtails/1.png:1010,1200,0,0
 characters/cho/clothes/hair/pigtails/2.png:472,364,209,41
 characters/cho/clothes/hair/pigtails/outline.png:447,309,254,206
+characters/cho/clothes/hair/pigtails/skin.png:492,369,91,52
+characters/cho/clothes/makeup/blush2/0.png:495,430,126,70
+characters/cho/clothes/makeup/blush2/outline.png:499,441,110,48
+characters/cho/clothes/makeup/blush3/0.png:495,430,126,70
+characters/cho/clothes/makeup/blush3/outline.png:499,441,110,48
+characters/cho/clothes/tops/top_quid_1/skin.png:490,571,178,220
+interface/wardrobe/test/icons/cho/bottoms_skirts_old.png:75,0,306,429

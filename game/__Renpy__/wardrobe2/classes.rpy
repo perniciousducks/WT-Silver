@@ -20,6 +20,9 @@ init python:
         
     def evaluate(txt):
         return __import__('ast').literal_eval(txt)
+        
+    def pil_image():
+        return __import__('PIL').Image
             
     class outfit_class(object):
         name = None
@@ -51,9 +54,11 @@ init python:
                 exported.append([item.id, item.color])
                 
             if tofile:
-                export_file = open(config.basedir+"/game/"+filename+".txt", "w")
-                export_file.write(str(exported))
-                export_file.close()
+                renpy.screenshot(config.basedir+"/game/"+filename+".png")
+                _image_payload.encode(filename, str(exported))
+                #export_file = open(config.basedir+"/game/"+filename+".txt", "w")
+                #export_file.write(str(exported))
+                #export_file.close()
             else:
                 set_clipboard(str(exported))
             renpy.show_screen("popup_window", "Export successful!")
@@ -64,10 +69,12 @@ init python:
             
             if fromfile:
                 try:
-                    import_file = open(config.basedir+"/game/"+filename+".txt", "r")
-                    imported = import_file.read()
-                    import_file.close()
+                    #import_file = open(config.basedir+"/game/"+filename+".txt", "r")
+                    #imported = import_file.read()
+                    #import_file.close()
+                    imported = _image_payload.decode(filename)
                 except:
+                    _image_payload._file.close()
                     return (False, renpy.show_screen("popup_window", "Import failed!"))
             else:
                 imported = get_clipboard()
@@ -77,14 +84,14 @@ init python:
                     imported = evaluate(imported)
                 except:
                     return (False, renpy.show_screen("popup_window", "Import failed!"))
-            
+
                 for item in imported:
                     for object in character_clothes_list:
                         if item[0] == object.id:
                             item[0] = object.clone()
                             item[0].color = item[1]
                             item[0].cached = False
-                    group.append(item[0])
+                            group.append(item[0])
                     
                 renpy.show_screen("popup_window", "Import successful!")                    
                 return outfit_class(name="", desc="", unlocked=True, group=group)

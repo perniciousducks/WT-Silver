@@ -360,6 +360,9 @@ label play_sound(sound=""):
     if sound in ["door"]:
         $ renpy.play('sounds/door.mp3')
 
+    if sound in ["desk","climb_desk"]:
+        $ renpy.play('sounds/08_hop_on_desk.mp3')
+
     if sound in ["footsteps"]:
         $ renpy.play('sounds/footsteps.mp3')
 

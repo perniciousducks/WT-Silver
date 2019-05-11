@@ -118,6 +118,7 @@ label __init_variables:
             choq_cloth_glovesquidditch1 = cloth_class(char="cho", category="event", subcat="gloves", type="gloves", id="quidditch", layers=1, color=[[213, 161, 13, 255]], armfix=True)
             choq_goggles = cloth_class(char="cho", category="event", subcat="miscellaneous", type="hat", id="goggles", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]])
             choq_goggles_face = cloth_class(char="cho", category="event", subcat="miscellaneous", type="hat", id="goggles_face", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]], unlocked=False)
+            choq_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
             
             cho_outfit_quidditch = outfit_class(name="Quidditch", group=[choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1])
             

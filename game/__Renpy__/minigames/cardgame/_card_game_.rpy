@@ -1,9 +1,9 @@
 init python:
     def start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
-        global standart_rules
+        global standard_rules
         global playerdeck
         if rules == None:
-            rules = standart_rules
+            rules = standard_rules
         if duel_player_deck == None:
             duel_player_deck = playerdeck
         

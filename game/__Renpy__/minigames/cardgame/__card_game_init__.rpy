@@ -12,15 +12,11 @@ label __init_variables:
         #
         #Dobelt_number
         # Rules(Shown Cards, Sudden Death, Reverse, Dobelt_number)
-        standart_rules = [0, False, False, False]
+        standard_rules = [0, False, False, False]
         
-        if not hasattr(renpy.store,'playercolor_r'):
-            playercolor_r = 51.0/255.0
-            playercolor_g = 92.0/255.0
-            playercolor_b = 147.0/255.0
-            enemycolor_r = 116.0/255.0
-            enemycolor_g = 0
-            enemycolor_b = 0
+        if not hasattr(renpy.store,'playercolor_rgb'):
+            playercolor_rgb = [51.0, 92.0, 147.0, 255.0]
+            enemycolor_rgb = [116.0, 0, 0, 255.0]
         
         if not hasattr(renpy.store, 'geniecard_level'):
             geniecard_level = 1
@@ -599,11 +595,11 @@ init python:
         return score
     
     def playerTint(image):
-        return im.MatrixColor( image, im.matrix.tint(playercolor_r, playercolor_g, playercolor_b))
+        return im.MatrixColor(image, im.matrix.tint(playercolor_rgb[0]/255.0, playercolor_rgb[1]/255.0, playercolor_rgb[2]/255.0))
     def enemyTint(image):
-        return im.MatrixColor( image, im.matrix.tint(enemycolor_r, enemycolor_g, enemycolor_b))
+        return im.MatrixColor(image, im.matrix.tint(enemycolor_rgb[0]/255.0, enemycolor_rgb[1]/255.0, enemycolor_rgb[2]/255.0))
     def grayTint(image):
-        return im.MatrixColor( image, im.matrix.desaturate())
+        return im.MatrixColor(image, im.matrix.desaturate())
       
     def get_image_size(image):
         myDisplayable = im.Image(image)
@@ -638,6 +634,13 @@ init python:
         hex_len = len(hex)
         rgb = tuple(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
         rgb = rgb + (255,) # Add alpha
+        return rgb
+        
+    def get_rgb_list(hex):
+        hex = hex.lstrip('#')
+        hex_len = len(hex)
+        rgb = list(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
+        rgb = rgb + [255] # Add alpha
         return rgb
     
     def get_width(image):   

@@ -154,7 +154,7 @@ screen deck_builder_screen():
         xsize 40
         ysize 40
         button action Jump("color_change") background "#ffffff00"
-        #add Solid(get_hex_string(playercolor_r, playercolor_g, playercolor_b))
+        #add Solid(get_hex_string(playercolor_rgb))
   
     #use close_button
     
@@ -185,18 +185,10 @@ screen deck_builder_gallery():
 
 label color_change:
     
-    $ color_rgb = color_picker([playercolor_r*255, playercolor_g*255, playercolor_b*255, 255], [playercolor_r*255, playercolor_g*255, playercolor_b*255], False, "Player border")
-    
-    $ playercolor_r = color_rgb[0]/255.0
-    $ playercolor_g = color_rgb[1]/255.0
-    $ playercolor_b = color_rgb[2]/255.0
+    $ color_rgb = color_picker(playercolor_rgb, False, "Player border")
     $ playerborder = playerTint("images/cardgame/border.png")
     
-    $ color_rgb = color_picker([enemycolor_r*255, enemycolor_g*255, enemycolor_b*255, 255], [enemycolor_r*255, enemycolor_g*255, enemycolor_b*255], False, "Enemy border")
-    
-    $ enemycolor_r = color_rgb[0]/255.0
-    $ enemycolor_g = color_rgb[1]/255.0
-    $ enemycolor_b = color_rgb[2]/255.0
+    $ color_rgb = color_picker(enemycolor_rgb, False, "Enemy border")
     $ enemyborder = enemyTint("images/cardgame/border.png")
     
     jump deck_builder

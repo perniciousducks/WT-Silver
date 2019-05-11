@@ -197,10 +197,10 @@ label studio(studio_return, studio_char):
             if studio_text_input == "Close":
                 $ studio_text_input = studio_text_backup
         elif _return[1] == "color":
-            $ studio_text_color = color_picker(get_rgb_tuple(studio_text_color), False, "Text Color", pos_xy=[200, 130])
+            $ studio_text_color = color_picker(get_rgb_list(studio_text_color), False, "Text Color", pos_xy=[200, 130])
             $ studio_text_color = get_hex_string(studio_text_color[0]/255.0, studio_text_color[1]/255.0, studio_text_color[2]/255.0, studio_text_color[3]/255.0)
         else:
-            $ studio_text_outline_color = color_picker(get_rgb_tuple(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
+            $ studio_text_outline_color = color_picker(get_rgb_list(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     else:
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")

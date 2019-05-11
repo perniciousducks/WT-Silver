@@ -127,7 +127,7 @@ label t_wardrobe(return_label, char_label):
         $ char_active.cached = False
     elif _return == "bg_color":
         show screen t_wardrobe_menu(550, 50)
-        $ bg_color_wardrobe = color_picker(get_rgb_tuple(bg_color_wardrobe), False, "Wardrobe Background Color", pos_xy=[20, 130])
+        $ bg_color_wardrobe = color_picker(get_rgb_list(bg_color_wardrobe), False, "Wardrobe Background Color", pos_xy=[20, 130])
         $ bg_color_wardrobe = get_hex_string(bg_color_wardrobe[0]/255.0, bg_color_wardrobe[1]/255.0, bg_color_wardrobe[2]/255.0, bg_color_wardrobe[3]/255.0)
     elif _return == "inc":
         $ current_page += 1

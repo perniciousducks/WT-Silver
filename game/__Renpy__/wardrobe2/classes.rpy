@@ -650,18 +650,28 @@ init python:
                         self.clothing[key][4] = True
             else:
                 for arg in args:
-                    try:
-                        self.clothing[str(arg)][4] = True
-                    except KeyError:
-                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                    if 'makeup' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'makeup' in key:
+                                self.clothing[key][4] = True
+                    elif 'accessory' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'accessory' in key:
+                                self.clothing[key][4] = True
+                    elif 'piercing' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'piercing' in key:
+                                self.clothing[key][4] = True
+                    elif 'tattoo' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'tattoo' in key:
+                                self.clothing[key][4] = True
+                    else:
+                        try:
+                            self.clothing[str(arg)][4] = True
+                        except KeyError:
+                            raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
-            
-        def get_worn(self, type):
-            if not self.clothing[type][0]:
-                return None
-            if not self.clothing[type][4]:
-                return True
-            return False
             
         def wear(self, *args):
             if 'all' in args:
@@ -669,18 +679,80 @@ init python:
                     self.clothing[key][4] = False
             else:
                 for arg in args:
-                    try:
-                        self.clothing[str(arg)][4] = False
-                    except KeyError:
-                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                    if 'makeup' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'makeup' in key:
+                                self.clothing[key][4] = False
+                    elif 'accessory' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'accessory' in key:
+                                self.clothing[key][4] = False
+                    elif 'piercing' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'piercing' in key:
+                                self.clothing[key][4] = False
+                    elif 'tattoo' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'tattoo' in key:
+                                self.clothing[key][4] = False
+                    else:
+                        try:
+                            self.clothing[str(arg)][4] = False
+                        except KeyError:
+                            raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
             
         def toggle_wear(self, type):
-            try:
-                self.clothing[str(type)][4] = not self.clothing[str(type)][4]
-            except KeyError:
-                raise Exception('Character: "'+str(type)+'" clothing type was not defined for "'+self.char+'" character class.')
+            if 'makeup' == type:
+                for key in self.clothing.iterkeys():
+                    if 'makeup' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            elif 'accessory' == type:
+                for key in self.clothing.iterkeys():
+                    if 'accessory' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            elif 'piercing' == type:
+                for key in self.clothing.iterkeys():
+                    if 'piercing' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            elif 'tattoo' == type:
+                for key in self.clothing.iterkeys():
+                    if 'tattoo' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            else:
+                try:
+                    self.clothing[str(type)][4] = not self.clothing[str(type)][4]
+                except KeyError:
+                    raise Exception('Character: "'+str(type)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
+            
+        def get_worn(self, type):
+            if 'makeup' == type:
+                for key in self.clothing.iterkeys():
+                    if 'makeup' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            elif 'accessory' == type:
+                for key in self.clothing.iterkeys():
+                    if 'accessory' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            elif 'piercing' == type:
+                for key in self.clothing.iterkeys():
+                    if 'piercing' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            elif 'tattoo' == type:
+                for key in self.clothing.iterkeys():
+                    if 'tattoo' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            else:
+                if not self.clothing[type][0]:
+                    return None
+                if not self.clothing[type][4]:
+                    return True
+            return False
                 
         def say(self, string, **kwargs):
             if kwargs:

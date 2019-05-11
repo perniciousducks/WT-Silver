@@ -368,6 +368,10 @@ label teleport(position=None,effect=True):
         $ teleport_xpos = her_chibi_xpos+45
         $ teleport_ypos = her_chibi_ypos-80
         $ teleport_zorder = 3
+    elif position == "cho":
+        $ teleport_xpos = cho_chibi_xpos+45
+        $ teleport_ypos = cho_chibi_ypos-80
+        $ teleport_zorder = 3
     elif position == "desk":
         $ teleport_xpos = 320
         $ teleport_ypos = 160
@@ -624,9 +628,9 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("blkfade")
         #renpy.with_statement(Dissolve(0.5))
 
-        lun_cg_body         = lun_cg_path+"luna_base.png"  
-        lun_cg_eyewhite     = lun_cg_path+"eye_white.png" 
-        lun_cg_eyewear      = lun_cg_path+"glasses.png" 
+        lun_cg_body         = lun_cg_path+"luna_base.png"
+        lun_cg_eyewhite     = lun_cg_path+"eye_white.png"
+        lun_cg_eyewear      = lun_cg_path+"glasses.png"
         lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
         lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
 

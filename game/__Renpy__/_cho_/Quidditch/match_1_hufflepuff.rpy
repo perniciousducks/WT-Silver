@@ -80,11 +80,11 @@ label hufflepuff_match:
     call gen_chibi("hide")
     with d3
 
-    call gen_chibi("stand","door","base",flip=False)
-    call teleport(position="genie",effect=False)
+    call gen_chibi("stand","door","base", flip=False)
+    call teleport(position="genie", effect=False)
     pause.5
 
-    call gen_chibi("stand","door","base",flip=True)
+    call gen_chibi("stand","door","base", flip=True)
     with d3
     pause.2
 
@@ -736,7 +736,7 @@ label hufflepuff_match:
     call gen_walk(xpos="desk", ypos="base", speed=2.8)
 
     call blkfade
-    
+
     # Change hermione outfit to previous one
     call h_unequip_temp_outfit()
 

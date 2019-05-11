@@ -54,7 +54,11 @@ init python:
                 exported.append([item.id, item.color])
                 
             if tofile:
-                renpy.screenshot(config.basedir+"/game/"+filename+".png")
+                renpy.screenshot(config.basedir+"/game/outfits/"+filename+".png")
+                img = pygame.image.load(config.basedir+"/game/outfits/"+filename+".png")
+                img = pygame.transform.smoothscale(img, (1080, 600))
+                subsurface = img.subsurface((384, 63, 309, 470))
+                pygame.image.save(subsurface, config.basedir+"/game/outfits/"+filename+".png")
                 _image_payload.encode(filename, str(exported))
                 #export_file = open(config.basedir+"/game/"+filename+".txt", "w")
                 #export_file.write(str(exported))

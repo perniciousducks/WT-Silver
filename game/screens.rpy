@@ -159,10 +159,10 @@ screen input:
         has vbox
             #style "say_vbox"
         
-        text prompt style "input_prompt"
-        input id "input" style "input_text"
+        text prompt #style "input_prompt"
+        input id "input" #style "input_text"
         
-    use quick_menu
+    #use quick_menu
 
 ##############################################################################
 # Nvl

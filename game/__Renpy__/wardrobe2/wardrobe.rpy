@@ -18,6 +18,8 @@ label t_wardrobe(return_label, char_label):
     $ current_item = None
     $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
     $ wardrobe_categories = char_active.clothing_dictlist
+    $ export_in_progress = False
+    $ item_to_export = None
     
     python:
         character_toggles = []
@@ -89,10 +91,12 @@ label t_wardrobe(return_label, char_label):
         $ menu_items_length = len(menu_items)
     elif _return[0] == "export":
         menu:
-            "Export to TXT file":
-                $ txt_filename = "exported"
-                $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
-                $ _return[1].outfit_export(True, txt_filename)
+            "Export to PNG file":
+                $ export_in_progress = True
+                $ cho_outfit_last.save()
+                $ char_active.equip(_return[1])
+                $ item_to_export = _return[1]
+                call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
             "Export to clipboard":
                 $ _return[1].outfit_export(False)
             "Back":
@@ -100,7 +104,7 @@ label t_wardrobe(return_label, char_label):
         $ achievement.unlock("export")
     elif _return == "import":
         menu:
-            "Import from TXT file":
+            "Import from PNG file":
                 $ txt_filename = "exported"
                 $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
                 $ cho_outfit_custom.outfit_import(True, txt_filename)
@@ -246,7 +250,7 @@ screen t_wardrobe_menu(xx, yy):
         button xsize 50 ysize 50 pos (373, 62) style "empty" background "interface/wardrobe/test/switch.png" hover_background image_hover("interface/wardrobe/test/switch.png") action Return("tabswitch") hovered SetVariable("ui_hint", "Switch tabs") unhovered SetVariable("ui_hint", "")
 
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 117)
-        button xsize 50 ysize 50 pos (373, 117) style "empty" background "interface/wardrobe/test/outfits.png" hover_background image_hover("interface/wardrobe/test/outfits.png") action Return(["category", "outfits"]) hovered SetVariable("ui_hint", "Manage Outfits") unhovered SetVariable("ui_hint", "")
+        button xsize 50 ysize 50 pos (373, 117) style "empty" background "interface/wardrobe/test/outfits.png" hover_background image_hover("interface/wardrobe/test/outfits.png") action Return(["category", "outfits"]) hovered SetVariable("ui_hint", "Outfits Manager") unhovered SetVariable("ui_hint", "")
 
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 172)
         button xsize 50 ysize 50 pos (373, 172) style "empty" background "interface/wardrobe/test/studio.png" hover_background image_hover("interface/wardrobe/test/studio.png") action Return("studio") hovered SetVariable("ui_hint", "Open Studio") unhovered SetVariable("ui_hint", "")
@@ -263,7 +267,7 @@ screen t_wardrobe_menu(xx, yy):
                 spacing 2
                 for item in character_toggles:
                     $ curr_item = item[0]
-                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Function(char_active.toggle_wear, curr_item) hovered SetVariable("ui_hint", "Show/hide "+str(curr_item)) unhovered SetVariable("ui_hint", "")
+                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 80 action Function(char_active.toggle_wear, curr_item) hovered SetVariable("ui_hint", "Show/hide "+str(curr_item)) unhovered SetVariable("ui_hint", "")
             vbox:
                 ypos 416
                 textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("ui_hint", "Toggle music") unhovered SetVariable("ui_hint", "")

@@ -1,6 +1,8 @@
 #####################################
 ##     Created by briandeheus      ##
 ## https://github.com/briandeheus  ##
+##    Implementation and changes   ##
+##           LoafyLemon            ##
 #####################################
 init python:
     import binascii
@@ -9,7 +11,7 @@ init python:
     class image_payload(object):
 
         _END_CHUNK_TYPE = 'IEND'
-        _PUNK_CHUNK_TYPE = 'puNk'
+        _PUNK_CHUNK_TYPE = 'wtSi'
         _MAX_BYTES = 2147483647
         _chunks = dict()
 
@@ -24,7 +26,7 @@ init python:
         def decode(self, input_file):
             self.__init__()
             self._mode = 'decode'
-            self._file = open(config.basedir+'/game/'+input_file+'.png', 'rb+')
+            self._file = open(config.basedir+'/game/outfits/'+input_file+'.png', 'rb+')
             #self._output = open(config.basedir+'/game/'+output_file+'.txt', 'wb+')
 
             # First move cursor past the signature
@@ -37,7 +39,7 @@ init python:
         def encode(self, input_file, bytes_to_hide):
             self.__init__()
             self._mode = 'encode'
-            self._file = open(config.basedir+'/game/'+input_file+'.png', 'rb+')
+            self._file = open(config.basedir+'/game/outfits/'+input_file+'.png', 'rb+')
             self._bytes_to_hide = bytes_to_hide.encode('utf-8')
 
             # First move cursor past the signature
@@ -96,6 +98,9 @@ init python:
             self._file.write(bytearray(struct.pack('!i', 0)))
             # Then the chunk type.
             self._file.write(bytearray(self._END_CHUNK_TYPE))
+            
+            crc = binascii.crc32(bytearray(self._END_CHUNK_TYPE))
+            self._file.write(bytearray(struct.pack('!i', crc)))
 
             #print 'Punk chunk injected'
 

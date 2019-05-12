@@ -76,9 +76,13 @@ init python:
                     #import_file = open(config.basedir+"/game/"+filename+".txt", "r")
                     #imported = import_file.read()
                     #import_file.close()
-                    imported = _image_payload.decode(filename)
+                    if renpy.exists("/outfits/"+filename+".png"):
+                        imported = _image_payload.decode(filename)
+                    else:
+                        return (False, renpy.show_screen("popup_window", "File doesn't exist!"))
                 except:
-                    _image_payload._file.close()
+                    if _image_payload._file:
+                        _image_payload._file.close()
                     renpy.block_rollback()
                     return (False, renpy.show_screen("popup_window", "Corrupted file!"))
             else:

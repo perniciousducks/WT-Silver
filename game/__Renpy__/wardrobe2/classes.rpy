@@ -79,7 +79,8 @@ init python:
                     imported = _image_payload.decode(filename)
                 except:
                     _image_payload._file.close()
-                    return (False, renpy.show_screen("popup_window", "Import failed!"))
+                    renpy.block_rollback()
+                    return (False, renpy.show_screen("popup_window", "Corrupted file!"))
             else:
                 imported = get_clipboard()
             
@@ -87,19 +88,27 @@ init python:
                 try:
                     imported = evaluate(imported)
                 except:
-                    return (False, renpy.show_screen("popup_window", "Import failed!"))
+                    renpy.block_rollback()
+                    return (False, renpy.show_screen("popup_window", "Corrupted file!"))
 
                 for item in imported:
                     for object in character_clothes_list:
                         if item[0] == object.id:
-                            item[0] = object.clone()
-                            item[0].color = item[1]
-                            item[0].cached = False
-                            group.append(item[0])
-                    
-                renpy.show_screen("popup_window", "Import successful!")                    
-                return outfit_class(name="", desc="", unlocked=True, group=group)
-            return False
+                            if object.char == char_active.char:
+                                if not cheats_active:
+                                    if not object.unlocked:
+                                        renpy.block_rollback()
+                                        return (False, renpy.show_screen("popup_window", "Items locked!"))
+                                item[0] = object.clone()
+                                item[0].color = item[1]
+                                item[0].cached = False
+                                group.append(item[0])
+                if len(group) > 0:
+                    renpy.show_screen("popup_window", "Import successful!")     
+                    renpy.block_rollback()
+                    return outfit_class(name="", desc="", unlocked=True, group=group)
+            renpy.block_rollback()
+            return (False, renpy.show_screen("popup_window", "Import failed!"))
                     
         def unlock(self, bool):
             self.unlocked = bool
@@ -269,8 +278,9 @@ init python:
             self.outline = self.imagepath+"outline.png"
                 
             # Add cloth object to respective character, category and sub-category in dictionary keylist
-            if not self.cloned and self.unlocked:
-                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+            if not self.cloned:
+                if self.unlocked:
+                    get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
                 character_clothes_list.append(self)
                 
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload

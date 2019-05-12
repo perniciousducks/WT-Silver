@@ -161,7 +161,7 @@ label cc_pf_strip_T1_E1:
             m "Ah, the old, gray haired lady..."
             call cho_main("Yes, she's been eying me a lot lately...","quiver","base","sad","downR")
             call cho_main("Even more so after our recent game against Hufflepuff. I wonder why...","horny","narrow","sad","R")
-            g9 "I can't blame her... Your body is very pleasing to look at!"
+            g9 "I can't blame her... Your body is very plasant to look at!"
             call cho_main("Thank you, Sir.","base","base","base","mid")
 
         "\"You have marvelous abs!\"":
@@ -182,7 +182,7 @@ label cc_pf_strip_T1_E1:
     call cho_main("Please. Why should I care what Granger does for you in here?","soft","narrow","angry","R")
     call cho_main("I suspected she was one of those girls buying favours from her teachers!","soft","closed","angry","mid")
     call cho_main("With how many points she's earned for her house lately,... to win the house cup...","open","narrow","angry","R")
-    call cho_main("But as long as you don't help any \"Gryffindor\" or \"Slytherins\" sluts win the Quidditch cup, everything will be fine.","base","narrow","base","mid")
+    call cho_main("But as long as you don't help any \"Gryffindor\" or \"Slytherin\" sluts win the Quidditch cup, everything will be fine.","base","narrow","base","mid")
     m "That's a relief..."
 
     call cho_main("Besides, she clearly doesn't hold a candle against me!","open","narrow","base","R")
@@ -514,93 +514,6 @@ label cc_pf_strip_T1_E3:
     g9 "Take off your panties!"
     call cho_main("(...)","annoyed","base","sad","down")
     call cho_main("Very well, Sir.","base","base","base","mid")
-
-    # Cho asks if you could give her house points for once.
-    call cho_main("But, before that, may I ask you about something?","soft","base","sad","mid")
-    m "Sure..."
-    call cho_main("Does Granger only ask for house points? To do this sort of thing?","open","base","base","mid")
-    m "She does."
-    call cho_main("And, just out of curiosity, how much do you pay her for such a favour?","soft","base","base","R")
-    call blktone
-    m "(What should I tell her? Should I exaggerate a bit to get her more motivated?)"
-
-    menu:
-        "\"Five points.\"":
-            $ current_payout = 5
-
-            call hide_blktone
-            call cho_main("Only five points? I expected more, Sir.","horny","narrow","sad","downR")
-            call cho_main("I've gotten more points for answering Quidditch questions to Madam Hooch!","open","base","base","mid")
-            m "I'm sure that wasn't the only reason she gave you those points..."
-            call cho_main("Just to be clear... She completely undresses?{w} For five mere points?","soft","narrow","raised","mid")
-            m "Yep."
-            call cho_main("What a slut! I can't believe it!","smile","narrow","angry","R")
-            g9 "Sometimes I only reward her with two points!{w} If she doesn't sway her hips enough..."
-            call cho_main("You don't say!","smile","base","angry","mid")
-            m "Why were you asking?"
-
-        "\"One-hundred points!\"":
-            $ current_payout = 30
-            $ cho_mood += 6
-
-            call hide_blktone
-            call cho_main("So many? But...","soft","wide","base","mid")
-            call cho_main("Sir, don't you think that's a bit outrageous?","open","closed","angry","mid")
-            call cho_main("People in house \"Ravenclaw\" work hard to earn that amount of points!","open","base","raised","L")
-            call cho_main("And you're telling me that you give that cow \"one-hundred bloody points\"{w}, for showing you her tits?!","angry","narrow","angry","mid")
-            m "Not just her tits, [cho_name]."
-            g4 "Everything!!!"
-            call cho_main("Sir, how can you agree to such a thing?","angry","closed","angry","mid")
-            m "Calm down, would you. I was joking..."
-            m "She doesn't get that many points from me. It's closer to thirty..."
-            call cho_main("That's still far too many points!","annoyed","narrow","angry","mid")
-            m "Why are you even so invested in this all of a sudden?"
-            call cho_main("(...)","annoyed","narrow","angry","R")
-
-    call cho_main("I thought,...{w} maybe...{w} just this once...","angry","base","sad","down")
-    call cho_main("You could give me house points as well?","soft","base","sad","mid")
-    m "Really? I thought you didn't give a flying fuck about that house cup?"
-    call cho_main("Sir?!","angry","wide","base","mid") # Shock
-    m "Why do you want points all of a sudden?"
-    call cho_main("I have my reasons....","annoyed","narrow","angry","mid")
-    call cho_main("And, as I've said, this will be a one-time-only request of mine. I promise!","open","base","base","R")
-    call cho_main("I'm a fair sportsman, [cho_genie_name]. You know that...","base","closed","base","mid")
-    call cho_main("I'd never subject myself to earning house-points this way!","soft","narrow","angry","mid")
-    call cho_main("Unlike a certain other student at this school...","angry","narrow","angry","R")
-    m "And yet you asked me for that very thing?{w} I wonder why, Miss Chang..."
-    call cho_main("Just as additional motivation, Sir!","angry","closed","sad","mid")
-    m "Additional motivation, so so..."
-    call cho_main("Yes.","soft","narrow","sad","mid")
-    m "Does that motivation come from the noble deed of earning those points for your house?"
-    g4 "Or getting that dirty, corruptive feeling from the way you acquired them?"
-    call cho_main("(...)","angry","closed","sad","mid") # Embarrassed
-    g9 "Stripping down for points! Don't you know what that would make you?"
-    call cho_main("*Uhm*","soft","narrow","sad","mid")
-    m "You'd be just as cheap as Hermione..."
-    call cho_main("Please, Sir.{w} Don't compare me to that whore!","annoyed","narrow","angry","mid")
-    g9 "Yes, Miss Chang. A whore!"
-    call cho_main("That's not why-","angry","closed","sad","mid")
-    call cho_main("Please, Sir. Just this once!","soft","narrow","sad","mid")
-    call cho_main("I won't ask for payment ever again!","soft","base","sad","mid")
-    call cho_main("I'll strip naked for you, for... [current_payout] house points!","angry","closed","sad","mid") # Embarrassed
-
-    menu:
-        "\"Yes! Make your house proud, you slut! Earn those points!\"":
-            call cho_main("Yes, Sir!","base","narrow","angry","mid")
-            g9 "Take of those panties!"
-
-        "\"No. You are better than that...\"":
-            $ cho_mood += 6
-            call cho_main("But Sir! I asked for them!","soft","wide","sad","mid")
-            m "And I'm sure you wouldn't want to sink as low as Miss Granger, would you?"
-            call cho_main("Yes! I would!","angry","closed","angry","mid")
-            call cho_main("That's the entire reason I want them!!!","open","narrow","angry","R")
-            m "Seriously?"
-            call cho_main("Give me those points, or I will walk right out of here!","open","narrow","angry","mid")
-            m "Fine. If you're that insistent on [current_payout] meager points..."
-            call cho_main("Thank you.","soft","closed","base","mid")
-
-    call cho_main("","base","narrow","angry","mid")
     pause.4
 
     # Remove panties.
@@ -719,61 +632,147 @@ label cc_pf_strip_T1_E3:
 
 
 label cc_pf_strip_T1_E4: # Complete. Not posed.
+    m "[cho_name], why don't you come a bit closer?"
+    call cho_main("Of course, [cho_genie_name]...","base","narrow","base","mid")
 
-    g9 "[cho_name], I’m in the mood for another strip-tease!"
-    cho "Funny you should say that, [cho_genie_name]..."
+    call cho_walk(xpos="desk", ypos="base", speed=1.6)
 
-    # Cho removes her top.
-    # Cho removes her robe.
+    call cho_main("","base","base","base","R", xpos="mid", ypos="base", trans="fade")
+    call ctc
 
-    cho "Because so am I!"
+    g9 "I’m in the mood for another strip-tease!"
+    call cho_main("Funny you should say that, [cho_genie_name]...","soft","base","raised","downR")
+    call cho_main("","horny","narrow","angry","mid")
+    pause.4
 
-    # Cho removes her bottom.
+    # Remove top & robe.
+    hide screen cho_chang
+    $ cho_class.strip("robe","top")
+    call update_cho_chibi_uniform
+    show screen cho_chang
+    with d3
+    pause.5
+
+    call cho_main("Because so am I!","base","narrow","angry","mid")
+    call cho_main("Enjoying yourself, Sir...","soft","closed","base","mid")
+    call cho_main("","base","narrow","angry","mid")
+    pause.4
+
+    # Remove bottom.
+    hide screen cho_chang
+    $ cho_class.strip("bottom")
+    call update_cho_chibi_uniform
+    show screen cho_chang
+    with d3
+    pause.5
 
     g4 "*Argh!* You little minx!"
 
-    cho "Are we going to invite Granger again?"
-    cho "I want to have some fun with her..."
-    cho "Let her watch..."
+    call cho_main("Are we going to invite Granger again?","quiver","narrow","raised","down")
+    call cho_main("I would like to have some fun with her...","smile","narrow","angry","mid")
+    call cho_main("Let her watch...","horny","narrow","angry","mid")
+    pause.4
 
-    # Cho removes her bra.
+    # Remove bra.
+    hide screen cho_chang
+    $ cho_class.strip("bra")
+    call update_cho_chibi_uniform
+    show screen cho_chang
+    with d3
+    pause.5
 
     g9 "The more, the merrier!"
-    cho "I agree."
+    call cho_main("","base","narrow","angry","mid")
+    pause.4
 
-    # Cho removes her panties.
+    # Remove panties.
+    hide screen cho_chang
+    $ cho_class.strip("panties")
+    call update_cho_chibi_uniform
+    show screen cho_chang
+    with d3
+    call ctc
 
-    cho "Catch, [cho_genie_name]!"
+    call cho_main("Catch, [cho_genie_name]!","soft","base","base","mid")
     call nar("Cho throws her panties at you.")
 
     # Panties acquired message!
     $ has_cho_panties = True
 
     g9 "Nice!"
-    cho "I'd like to have them back after this, mind you."
+    call cho_main("I'd like to have them back after this, mind you.","soft","base","raised","R")
     m "Of course..."
-    cho "Now, if you don't mind, Sir..."
-    cho "I'd like you to call that Gryffindor slut to your office!"
+    call cho_main("Anything else you'd like, Sir?","base","base","base","mid")
+
+    menu:
+        "\"Hop on my desk!\"":
+            call cho_main("Sounds like fun idea, [cho_genie_name]!","base","closed","base","mid")
+            call hide_characters
+            show screen blkfade
+            with d3
+            call play_sound("desk")
+            pause 2
+
+            call cho_chibi("stand","on_desk","on_desk")
+            hide screen bld1
+            hide screen blkfade
+            with d3
+            pause 1
+
+            call cho_main("How is the view down there, Sir?","base","narrow","base","down")
+            g9 "Couldn't be any better!"
+
+            call hide_characters
+            hide screen bld1
+            with d3
+            pause.2
+
+            call cho_chibi("stand","on_desk","on_desk", flip=True)
+            with d3
+            pause.8
+
+        "\"Let Granger have a good luck at you!\"":
+            call cho_main("I'll make sure of it, Sir!","quiver","narrow","angry","mid")
+
+            call cho_walk(xpos="570",ypos="base", speed=2)
+
+    call cho_main("Now, if you don't mind, Sir...","soft","base","base","R", xpos="mid", ypos="base", flip=True)
+    call cho_main("I'd like you to call that Gryffindor slut to your office!","soft","base","base","L")
     g9 "On it!"
-    cho "(...)"
+    call cho_main("(...)","annoyed","narrow","angry","L")
     m "(...)"
 
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause.5
+
     # Hermione enters.
+    call play_sound("door")
     call her_chibi("stand","door","base")
     with d3
-    pause.2
+    pause.5
 
-    her "You wanted to see me, Professor?"
+    call chibi_effect("thought","hermione")
+    pause.8
+
+    call her_walk(xpos="660", ypos="base", speed=2)
+
+    call cho_main("","horny","narrow","angry","L", xpos="mid", ypos="base", flip=True)
+    call her_main("You wanted to see me, Professor?","soft","closed", xpos="base", ypos="base")
     g9 "Yes, but I wasn't the only one."
-    her "(...)" # Annoyed look at Cho
-    cho "Hi, Granger!" # Grinning
-    her "Let me guess, we are here to marvel at your insecurity again?"
-    cho "Why don't you join me, Granger? Strip down for your headmaster, like you usually do..."
-    her "*glare*" # Hermione glares at you angrily.
-    cho "Maybe then you'd have a chance to win against me! And earn some useless Gryffindor point while you're at it."
-    her "I don't think that will even be necessary..."
-    cho "Well, we all know how this is going to end, don't we, [cho_genie_name]?"
-    cho "My body is still better than Miss Granger's, isn't it?"
+    call her_main("(...)","annoyed","angryL")
+    call cho_main("Hi, Granger!","smile","narrow","angry","L")
+    call her_main("Let me guess, we are here to marvel at your insecurity again?","soft","closed")
+    call cho_main("Granger, instead of spitting out insults, why don't you join me and have some fun for once?","soft","base","raised","L")
+    call cho_main("Strip down for your headmaster aswell, like you usually do...","smile","narrow","angry","L")
+    call cho_main("Or would it bother you too much, now that I'm here?","horny","narrow","base","L")
+    call her_main("*glare*","angry","angry")
+    call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless Gryffindor point while you're at it.","soft","base","base","L")
+    call her_main("I don't think that will even be necessary...","soft","closed")
+    call cho_main("Well, we all already know how this is going to end, don't we, [cho_genie_name]?","soft","base","base","mid")
+    call cho_main("My body is still better than Miss Granger's, isn't it?","smile","angry","angry","L")
+    call ctc
 
     jump cc_pf_strip_T1_hermione
 
@@ -923,7 +922,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
             her "Maybe once your Quidditch endeavors all fail, you can apply for a profession to model male underwear..."
             cho "Nice one, Granger."
             cho "I wonder where you're getting \"your\" undergarments from..."
-            cho "Stealing them from Madam Pomfrey, are ye?"
+            cho "Stealing them from Madam Pomfrey, are you?"
             her "I do not!!!"
             m "Girls, we all know that what really counts is how we look on the inside."
             cho "Oh- Shut up!" # Annoyed
@@ -954,7 +953,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
                 her "*Tzzzzzh!*"
 
             # Hermione leaves.
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave", speed=1.5)
 
             cho "I have to say, [cho_genie_name], doing these favours is fun!"
             m "I'm glad you're enjoying yourself."
@@ -978,3 +977,99 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
             $ has_cho_panties = True
 
             jump end_cho_strip_event
+
+
+
+### Tier 2 - After beating Slytherin ###
+label cc_pf_strip_T2_E1:
+
+    # Cho asks if you could give her house points for once.
+    call cho_main("But, before that, may I ask you about something?","soft","base","sad","mid")
+    m "Sure..."
+    call cho_main("Does Granger only ask for house points? To do this sort of thing?","open","base","base","mid")
+    m "She does."
+    call cho_main("And, just out of curiosity, how much do you pay her for such a favour?","soft","base","base","R")
+    call blktone
+    m "(What should I tell her? Should I exaggerate a bit to get her more motivated?)"
+
+    menu:
+        "\"Five points.\"":
+            $ current_payout = 5
+
+            call hide_blktone
+            call cho_main("Only five points? I expected more, Sir.","horny","narrow","sad","downR")
+            call cho_main("I've gotten more points for answering Quidditch questions to Madam Hooch!","open","base","base","mid")
+            m "I'm sure that wasn't the only reason she gave you those points..."
+            call cho_main("Just to be clear... She completely undresses?{w} For five mere points?","soft","narrow","raised","mid")
+            m "Yep."
+            call cho_main("What a slut! I can't believe it!","smile","narrow","angry","R")
+            g9 "Sometimes I only reward her with two points!{w} If she doesn't sway her hips enough..."
+            call cho_main("You don't say!","smile","base","angry","mid")
+            m "Why were you asking?"
+
+        "\"One-hundred points!\"":
+            $ current_payout = 30
+            $ cho_mood += 6
+
+            call hide_blktone
+            call cho_main("So many? But...","soft","wide","base","mid")
+            call cho_main("Sir, don't you think that's a bit outrageous?","open","closed","angry","mid")
+            call cho_main("People in house \"Ravenclaw\" work hard to earn that amount of points!","open","base","raised","L")
+            call cho_main("And you're telling me that you give that cow \"one-hundred bloody points\"{w}, for showing you her tits?!","angry","narrow","angry","mid")
+            m "Not just her tits, [cho_name]."
+            g4 "Everything!!!"
+            call cho_main("Sir, how can you agree to such a thing?","angry","closed","angry","mid")
+            m "Calm down, would you. I was joking..."
+            m "She doesn't get that many points from me. It's closer to thirty..."
+            call cho_main("That's still far too many points!","annoyed","narrow","angry","mid")
+            m "Why are you even so invested in this all of a sudden?"
+            call cho_main("(...)","annoyed","narrow","angry","R")
+
+    call cho_main("I thought,...{w} maybe...{w} just this once...","angry","base","sad","down")
+    call cho_main("You could give me house points as well?","soft","base","sad","mid")
+    m "Really? I thought you didn't give a flying fuck about that house cup?"
+    call cho_main("Sir?!","angry","wide","base","mid") # Shock
+    m "Why do you want points all of a sudden?"
+    call cho_main("I have my reasons....","annoyed","narrow","angry","mid")
+    call cho_main("And, as I've said, this will be a one-time-only request of mine. I promise!","open","base","base","R")
+    call cho_main("I'm a fair sportsman, [cho_genie_name]. You know that...","base","closed","base","mid")
+    call cho_main("I'd never subject myself to earning house-points this way!","soft","narrow","angry","mid")
+    call cho_main("Unlike a certain other student at this school...","angry","narrow","angry","R")
+    m "And yet you asked me for that very thing?{w} I wonder why, Miss Chang..."
+    call cho_main("Just as additional motivation, Sir!","angry","closed","sad","mid")
+    m "Additional motivation, so so..."
+    call cho_main("Yes.","soft","narrow","sad","mid")
+    m "Does that motivation come from the noble deed of earning those points for your house?"
+    g4 "Or getting that dirty, corruptive feeling from the way you acquired them?"
+    call cho_main("(...)","angry","closed","sad","mid") # Embarrassed
+    g9 "Stripping down for points! Don't you know what that would make you?"
+    call cho_main("*Uhm*","soft","narrow","sad","mid")
+    m "You'd be just as cheap as Hermione..."
+    call cho_main("Please, Sir.{w} Don't compare me to that whore!","annoyed","narrow","angry","mid")
+    g9 "Yes, Miss Chang. A whore!"
+    call cho_main("That's not why-","angry","closed","sad","mid")
+    call cho_main("Please, Sir. Just this once!","soft","narrow","sad","mid")
+    call cho_main("I won't ask for payment ever again!","soft","base","sad","mid")
+    call cho_main("I'll strip naked for you, for... [current_payout] house points!","angry","closed","sad","mid") # Embarrassed
+
+    menu:
+        "\"Yes! Make your house proud, you slut! Earn those points!\"":
+            call cho_main("Yes, Sir!","base","narrow","angry","mid")
+            g9 "Take of those panties!"
+
+        "\"No. You are better than that...\"":
+            $ cho_mood += 6
+            call cho_main("But Sir! I asked for them!","soft","wide","sad","mid")
+            m "And I'm sure you wouldn't want to sink as low as Miss Granger, would you?"
+            call cho_main("Yes! I would!","angry","closed","angry","mid")
+            call cho_main("That's the entire reason I want them!!!","open","narrow","angry","R")
+            m "Seriously?"
+            call cho_main("Give me those points, or I will walk right out of here!","open","narrow","angry","mid")
+            m "Fine. If you're that insistent on [current_payout] meager points..."
+            call cho_main("Thank you.","soft","closed","base","mid")
+
+
+
+
+
+    jump main_room

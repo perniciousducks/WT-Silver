@@ -87,10 +87,23 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 
     return
 
+
+
+label update_cho:
+    call update_cho_chibi_uniform
+    $ cho_flip = 1
+
+    return
+
+
+
 label end_cho_event:
+    call cho_chibi("hide")
     hide screen cho_chang
     with d3
     pause.5
+
+    call update_cho
 
     $ active_girl = None
     $ cho_busy = True

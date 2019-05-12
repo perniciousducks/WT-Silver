@@ -58,6 +58,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
 label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loiter=True, redux_pause=0):
     call hide_characters
+    call hide_chibi_effects
     hide screen bld1
     hide screen blktone
     with d3

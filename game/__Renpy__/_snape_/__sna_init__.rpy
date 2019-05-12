@@ -16,7 +16,7 @@ label snape_init:
         $ snape_head_zorder = 8
 
         $ sna_chibi_xpos    = 610
-        $ sna_chibi_ypos    = 210
+        $ sna_chibi_ypos    = 190
         $ sna_speed         = 2.0
         $ sna_chibi_flip    = 1
         $ sna_chibi_zorder  = 2

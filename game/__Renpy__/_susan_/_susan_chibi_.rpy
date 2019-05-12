@@ -55,6 +55,7 @@ label sus_chibi(action = "", xpos=sus_chibi_xpos, ypos=sus_chibi_ypos, flip=Fals
 
 label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loiter=True, redux_pause=0):
     call hide_characters
+    call hide_chibi_effects
     hide screen bld1
     hide screen blktone
     with d3

@@ -206,20 +206,15 @@ label want_to_rule:
                     hide screen hermione_main
                     with d5
 
-
                     #Walks to the door
                     call her_walk(xpos="door", ypos="base", speed=2)
 
                     #Locks the door
                     pause.5
-                    $ tt_xpos=670
-                    $ tt_ypos=200
-                    show screen thought
-                    with d3
+                    call chibi_effect("thought","hermione")
                     pause.5
 
-                    hide screen thought
-                    pause.5
+                    call chibi_effect("hide")
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
                     pause.4
 

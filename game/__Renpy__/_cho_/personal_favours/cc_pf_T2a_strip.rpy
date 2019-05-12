@@ -631,7 +631,7 @@ label cc_pf_strip_T1_E3:
 
 
 
-label cc_pf_strip_T1_E4: # Complete. Not posed.
+label cc_pf_strip_T1_E4:
     m "[cho_name], why don't you come a bit closer?"
     call cho_main("Of course, [cho_genie_name]...","base","narrow","base","mid")
 
@@ -654,7 +654,7 @@ label cc_pf_strip_T1_E4: # Complete. Not posed.
     pause.5
 
     call cho_main("Because so am I!","base","narrow","angry","mid")
-    call cho_main("Enjoying yourself, Sir...","soft","closed","base","mid")
+    call cho_main("Enjoy yourself, Sir...","soft","closed","base","mid")
     call cho_main("","base","narrow","angry","mid")
     pause.4
 
@@ -737,8 +737,9 @@ label cc_pf_strip_T1_E4: # Complete. Not posed.
             call cho_walk(xpos="570",ypos="base", speed=2)
 
     call cho_main("Now, if you don't mind, Sir...","soft","base","base","R", xpos="mid", ypos="base", flip=True)
-    call cho_main("I'd like you to call that Gryffindor slut to your office!","soft","base","base","L")
+    call cho_main("I'd like you to call that \"Gryffindor slut\" to your office!","soft","base","base","L")
     g9 "On it!"
+    pause.8
     call cho_main("(...)","annoyed","narrow","angry","L")
     m "(...)"
 
@@ -768,117 +769,143 @@ label cc_pf_strip_T1_E4: # Complete. Not posed.
     call cho_main("Strip down for your headmaster aswell, like you usually do...","smile","narrow","angry","L")
     call cho_main("Or would it bother you too much, now that I'm here?","horny","narrow","base","L")
     call her_main("*glare*","angry","angry")
-    call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless Gryffindor point while you're at it.","soft","base","base","L")
-    call her_main("I don't think that will even be necessary...","soft","closed")
+    call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless \"Gryffindor\" points while you're at it.","soft","base","base","L")
+    call her_main("I don't think that will be necessary...","soft","closed")
     call cho_main("Well, we all already know how this is going to end, don't we, [cho_genie_name]?","soft","base","base","mid")
     call cho_main("My body is still better than Miss Granger's, isn't it?","smile","angry","angry","L")
+    call her_main("","annoyed","angry")
     call ctc
 
     jump cc_pf_strip_T1_hermione
 
 
 
-label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not posed.
+label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
 
     menu:
         "\"Definitely!\"":
+            $ cho_mood = 0
             $ her_mood += 10
 
             # Hermione steals Cho's clothes and runs off.
 
             # Cho has to sneak out naked.
+            "Dev Note" "This favour ending hasn't been written yet."
 
             jump end_cho_strip_event
 
         "\"Not even close.\"":
             $ cho_mood += 15
-            cho "Thank you, Sir. Just what I thought you'd sa-"
-            her "*Hihihi*"
-            cho "What?!"
-            cho "Professor, could you please repeat that for me?"
+            call cho_main("Not even clo-","soft","wide","base","mid")
+            call her_main("","smile","baseL")
+            call cho_main("Professor, could you please repeat that for me?","angry","closed","angry","mid")
             m "Hermione's body is better."
-            her "Thank you, Professor..." # Small text. Cute and shy
-            cho "No!{w} It clearly isn't!" # Scream
-            cho "You are mad, old man!"
-            her "Don't talk like that to our headmaster..."
-            her "After all, he's the smartest living wizard!{w} Surely he has to know what he's talking about."
-            g9 "Miss Granger, why don't you show Miss Chang why I chose you..."
+            call her_main("No surprise there...","base","baseL")
+            call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans="hpunch")
+            call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
+            call her_main("You shouldn't talk to your headmaster like that...","soft","closed")
+            call cho_main("Nobody asked you!","angry","angry","angry","L")
+            call her_main("He's the smartest wizard at our school...{w} Surely he has to knows what he's talking about...","smile","glance")
+            call cho_main("Why did you side with her all of a sudden?","annoyed","narrow","angry","mid")
+            m "Good question."
+            m "Miss Granger, why don't you show Miss Chang why I chose you..."
             g9 "Share with us your two most compelling arguments..."
-            her "Sir?"
-            cho "He's talking about your \"tits\", you dimwit!" # Angry
-            her "(...)" # Embarrassed
+            call her_main("Sir?","soft","wink")
+            call cho_main("He's talking about your \"tits\", you dimwit!","angry","closed","angry","mid")
+            call her_main("(...)","clench","down_raised") # Embarrassed
+            call cho_main("","annoyed","narrow","angry","mid")
             g9 "Yes Miss Granger!{w} Your very round{w}, handsomely sphered{w}, perfectly sized{w}, very voluptuous and-"
-            her "I got it, Professor!"
-            cho "(Cow tits...)"
-            her "Here..."
+            call her_main("I got it, Professor!","clench","worriedCl")
+            call cho_main("(Cow tits...)","annoyed","narrow","angry","R")
+            call her_main("Here...","base","glance")
 
             # Hermione lifts her top
+            call set_her_action("lift_top")
+            pause.5
 
-            her "Have a good look."
-            cho "(...)" # Tries to look away.
-            her "You can have a peek too, slut."
-            cho "I'd rather not, or I might have to vomit..." #
+            call her_main("Have a good look.","soft","glance")
+            call cho_main("(...)","annoyed","narrow","angry","downR") # Tries to look away.
+            call her_main("You can have a peek too, slut.","smile","angryL")
+            call cho_main("I'd rather not, or I might have to vomit...","soft","narrow","angry","R") #
             g9 "Very nice, Miss Granger!"
 
             menu:
                 "\"Ten points to Gryffindor!\"":
-                    cho "(...)"
+                    $ gryffindor += 10
+                    call cho_main("(...)","annoyed","narrow","angry","mid")
+                    call her_main("Thank you.","soft","glance")
 
                 "\"Fifty points to Gryffindor!\"":
                     $ cho_mood += 10
-                    cho "(Fifty?!)" # Shocked
+                    $ gryffindor += 50
+                    call cho_main("(Fifty?!)","soft","wide","base","mid") # Shocked
+                    call her_main("Thank you.","soft","glance")
+                    call cho_main("","angry","closed","angry","mid")
 
-            her "Thank you."
-            g9 "For exposing those magnificent breasts to us."
-            her "Any time, Professor."
-            cho "(I bloody hate her!)"
+            g9 "For exposing those magnificent breasts."
 
-            her "If you don't mind, Sir."
-            her "I'd like to leave now."
-            cho "By all means, just go already."
-            her "Is somebody mad? Did something not go as you expected?"
-            her "Even exposing yourself wasn't in your favour..."
-            her "Thank you for inviting me, Professor."
-            her "I \"did\" enjoy watching this little, obscene freak-show you've arranged for me..."
-            cho "You'll regret this, Granger!"
-            her "Oh, will I?{w} I bet it's just another empty threat of yours."
-            her "You don't have the balls..."
-            cho "(...)"
+            call set_her_action("none")
+            pause.5
+
+            call her_main("Any time, Professor.","soft","glance")
+            call cho_main("(I bloody hate her!)","angry","angry","angry","L")
+
+            call her_main("If you don't mind, Sir.","open","baseL")
+            call her_main("I'd like to leave now.","soft","base")
+            call cho_main("By all means, just go already.","soft","narrow","angry","R")
+            call her_main("Did something not go as you expected?","smile","baseL")
+            call her_main("Even exposing yourself wasn't in your favour...","soft","closed")
+            call cho_main("(...)","annoyed","angry","angry","L")
+            call her_main("Thank you for inviting me, Professor.","soft","glance")
+            call her_main("I \"did\" enjoy this little obscene \"freak-show\" you've arranged for me...","grin","glance")
+            call cho_main("You'll regret this, Granger!","angry","narrow","angry","L")
 
             if daytime:
-                her "Have a nice day, Professor."
+                call her_main("Have a nice day, Professor.","soft","closed")
             else:
-                her "Have a good night, Professor."
+                call her_main("Have a good night, Professor.","soft","closed")
 
             m "(...)"
-            her "See you in school, slut!"
-            cho "*Tzzzz!*"
-            cho "Cow..."
+            call her_main("See you in school, slut!","grin","glanceL")
+            call cho_main("*Tzzzz!*","angry","closed","angry","mid")
+            call cho_main("Cow...","annoyed","narrow","angry","R")
 
             # Hermione leaves.
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave", speed=2)
 
-            cho "I thought you were on my side, Sir..."
+            # Cho stands close to your desk.
+            call hide_characters
+            show screen blkfade
+            call cho_chibi("stand","desk","base", flip=False)
+            with d3
+
+            hide screen blkfade
+            call cho_main("I thought you were on my side, Sir!","soft","narrow","angry","mid", xpos="mid", ypos="base", flip=False, trans="fade")
             m "I'm on nobody's side, because nobody is on my side..."
-            cho "You're supposed to have my back! Not Granger's!"
-            cho "That \"whore\" doesn't deserve your praise!"
+            call cho_main("You were supposed to have my back! Not Granger's!","angry","closed","angry","mid")
+            call cho_main("That \"whore\" doesn't deserve your praise!","soft","narrow","angry","mid")
             m "She made some good arguments..."
             g9 "\"Two\" good arguments, to be precise!"
-            cho "They're barely larger than mine!"
-            cho "You'll see, Sir. I'm better than her. I'll prove it to you..."
+            call cho_main("They're barely larger than mine...","annoyed","narrow","base","downR")
+            call cho_main("You'll see, Sir.{w} I'm better than her.{w} And I'll prove it to you...","soft","narrow","angry","mid")
             g9 "I'm looking forward to it!"
 
-            # Cho puts her clothes back on.
+            # Cho gets dressed.
+            hide screen cho_chang
+            $ cho_class.wear("all")
+            call update_cho_chibi_uniform
+            hide screen blkfade
 
-            # Cho walks closer to your desk.
-
-            cho "Sir, my *uhm*... my panties..."
-            m "Oh, Right...{w} one second."
+            call cho_main("Sir, my *uhm*...{w} my panties...","soft","base","angry","R", xpos="mid", ypos="base", trans="fade")
+            m "Oh, Right..."
+            call cho_main("","annoyed","narrow","angry","mid")
+            pause.5
+            m "One second..."
             call nar("You give them one last sniff before handing them back to the girl.")
             g4 "There."
-            cho "(Pervert...)"
-            cho "I have to go now."
-            cho "Until next time, [cho_genie_name]."
+            call cho_main("(Pervert...)","annoyed","narrow","angry","R")
+            call cho_main("I have to go now.","soft","closed","angry","mid")
+            call cho_main("Until next time, [cho_genie_name].","soft","narrow","angry","mid")
 
             # Cho leaves.
             call cho_walk(action="leave", speed=2.5)
@@ -893,86 +920,108 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch. Not pos
             jump end_cho_strip_event
 
 
-        "\"Ask Hermione.\"":
+        "\"Let Hermione assess you.\"":
             $ her_mood += 6
-            cho "Her?"
-            her "I couldn't care less about the way she looks!"
+            call cho_main("Her?","soft","wide","base","mid")
+            call her_main("I couldn't care less about the way she looks!","soft","angry")
+            call cho_main("(...)","annoyed","narrow","angry","L")
             m "Are you sure about that? I've seen you staring..."
-            her "Because she just so happens to be standing there, butt naked! In your own office!"
-            her "What other choice to I have than to look at the obscenity of this slut!"
-            m "I'd like to you rate Miss Chang's figure, truthfully, and to the best of your ability."
-            her "Do I really have to?"
-            g9 "You do! And I'd really like to hear your opinion about Miss Chang's shamelessly exposed body!"
-            cho "*Hmmmpf*" # Self assured.
-            her "Fine..."
-            her "\"Poor\", I'd say..."
-            cho "How dare you! You snobby skunk!"
+            call cho_main("","base","narrow","angry","L")
+            call her_main("Because she just so happens to be standing there, butt naked!{w} In your office!","angry","angryCl")
+            call her_main("What other choice to I have than to look at the obscenity of this slut!","soft","glanceL")
+            m "I'd like you to rate Miss Chang's figure, truthfully, and to the best of your ability."
+            call her_main("Do I really have to?","annoyed","base")
+            g9 "You do! And I'd really like to hear your full opinion on Miss Chang's shamelessly exposed body!"
+            call cho_main("*Mhmm*","base","closed","base","mid") # Self assured.
+            call her_main("Fine...","soft","angryL")
+            call her_main("\"Poor\", I'd say...","soft","closed")
+            call cho_main("How dare you!{w} You snobby skunk!","scream","angry","angry","L", trans="hpunch")
+            call her_main("","base","baseL")
             m "(Is that better or worse than \"troll\"?)" # Snape explained school ratings during the match.
-            cho "Our Professor asked you to rate my body truthfully!"
-            her "Which I did!{w} And it's at \"dreadful\" now!"
-            cho "\"Dreadful\"?!"
-            cho "You're a lying bitch, Granger!"
-            her "Sir, you can't let her talk to me like that!"
-            m "Bitch isn't even a proper curse word. You can even say that on TV..."
-            cho "Tell me Granger. If my body is so noticeably flawed as you say, then it shouldn't be too difficult for you to define those flaws for us."
-            her "Very well…"
-            her "For one, you are one huge narcissistic bitch!{w} That likes to think her body is superior to others..."
-            cho "Because it is." # Grinning
-            her "Not to mention that you have even fever curves than some of the boys I know..."
-            her "Maybe once your Quidditch endeavors all fail, you can apply for a profession to model male underwear..."
-            cho "Nice one, Granger."
-            cho "I wonder where you're getting \"your\" undergarments from..."
-            cho "Stealing them from Madam Pomfrey, are you?"
-            her "I do not!!!"
+            call cho_main("Our Professor asked you to rate my body truthfully!","angry","angry","angry","L")
+            call her_main("Which I did!{w} And it's at \"dreadful\" now!","soft","closed")
+            call cho_main("\"Dreadful\"?!","soft","wide","base","mid")
+            call cho_main("You're a lying bitch, Granger!","angry","closed","angry","mid")
+            call her_main("Sir, you can't let her talk to me like that!","angry","angry")
+            m "Bitch isn't even a proper curse word."
+            m "You can say that on TV..."
+            call cho_main("Granger, why don't you tell us which part of my immaculate body deserves such a poor rating?","soft","narrow","angry","L")
+            call her_main("Very well…","soft","closed")
+            call her_main("For one, you are a narcissistic bitch!{w} That likes to think her body is superior to others...","open","angry")
+            call cho_main("Because it is.","smile","narrow","angry","mid")
+            call her_main("Not to mention that you have even fever curves than some of the boys I know...","grin","angry")
+            call cho_main("","annoyed","narrow","angry","mid")
+            call her_main("Maybe once your Quidditch endeavors all fail, you can apply for a profession to model male underwear...","soft","closed")
+            call cho_main("I wonder where you're getting \"your\" undergarments from...","soft","closed","base","mid")
+            call cho_main("Stealing them from Madam Pomfrey, are you?","smile","narrow","angry","mid")
+            call her_main("I do not!!!","open","wide")
             m "Girls, we all know that what really counts is how we look on the inside."
-            cho "Oh- Shut up!" # Annoyed
-            her "Professor, you are the one who continuously asks us to expose ourselves for you..." # Angry
+            call her_main("","angry","angryCl")
+            call cho_main("Oh- Shut up!","angry","narrow","angry","mid")
+            call her_main("Professor, you're the one who continuously asks us to expose ourselves!","soft","angry")
             m "Well yes. I also never claimed that \"I\" was pretty on the inside."
-            m "I'm a guy, Miss Granger. You of all people should know better..."
-            her "Despicable..."
-            cho "If you're to start doing hourly exercises, our Professor might even be attracted to you by the end of the year..."
-            her "Hourly exercises?" # Shocked
-            cho "Don't worry, Granger.{w} Not all is lost."
-            cho "While your figure might be a bit repulsive on the eyes..."
-            cho "I don't mind looking at those huge melons of yours."
-            her "How dare you talk of them like that!"
+            m "You of all people should know better by now..."
+            call her_main("Despicable...","angry","angryL")
+            call cho_main("Don't worry, Granger!","soft","narrow","angry","L")
+            call cho_main("If you were to start doing hourly exercises, our Professor might even be attracted to you by the end of the year...","soft","closed","raised","mid")
+            call her_main("Hourly exercises?","soft","wide") # Shocked
+            call cho_main("But I wouldn't say all hope is lost!","smile","narrow","angry","L")
+            call cho_main("While your figure might be a bit repulsive on the eyes...","soft","closed","base","mid")
+            call cho_main("I don't mind looking at those \"huge melons\" of yours.","soft","narrow","base","L")
+            call her_main("How dare you talk of them like that!","angry","angryL")
             g9 "*Heh*... melons..."
-            her "Sir, I’d like to leave now."
+            call her_main("Sir, I’d like to leave now.","open","angry")
 
-            cho "Already missing your books?"
-            her "I am not. And I don't appreciate being made fun of!"
+            call cho_main("Already missing your books, are you?","annoyed","narrow","base","L")
+            call her_main("I am not.{w} And I don't appreciate being made fun of!","angry","angryCl")
 
             if daytime:
-                her "Good day, Sir."
-                cho "See ya around, Granger..."
-                her "*Hmpf*"
+                call her_main("Good day, Sir.","soft","angry")
+                call cho_main("See ya around, Granger...","smile","narrow","angry","L")
+                call her_main("*Hmpf*","annoyed","angryL")
 
             else:
-                her "Good night, Sir."
-                cho "Nighty-night, Granger..."
-                her "*Tzzzzzh!*"
+                call her_main("Good night, Sir.","soft","angry")
+                call cho_main("Nighty-night, Granger...","soft","narrow","angry","L")
+                call her_main("*Tzzzzzh!*","annoyed","angryL")
 
             # Hermione leaves.
             call her_walk(action="leave", speed=1.5)
 
-            cho "I have to say, [cho_genie_name], doing these favours is fun!"
+            show screen blkfade
+            call cho_chibi("stand","desk","base", flip=False)
+            with d3
+
+            hide screen blkfade
+            call cho_main("I have to say, [cho_genie_name], doing these favours is fun!","smile","narrow","base","mid", xpos="mid", ypos="base", flip=False, trans="fade")
             m "I'm glad you're enjoying yourself."
-            cho "Believe me, Sir. I am."
+            call cho_main("Believe me, Sir. I am.","smile","narrow","angry","mid")
+            call cho_main("","horny","narrow","angry","mid")
+            pause.4
 
-            # Cho puts her clothes back on.
+            # Cho gets dressed.
+            hide screen cho_chang
+            $ cho_class.wear("all")
+            call update_cho_chibi_uniform
+            show screen cho_chang
+            with d3
+            pause.5
 
-            cho "Now, if you excuse me..."
+            call cho_main("Now, if you excuse me...","soft","base","base","mid")
 
             if daytime:
-                cho "I have to head back to classes."
+                call cho_main("I have to head back to classes.","soft","base","base","R")
                 m "I still got your-"
-                cho "See ya next time, [cho_genie_name]!"
+                call cho_main("See ya next time, [cho_genie_name]!","smile","narrow","angry","mid")
             else:
-                cho "I have to head back to our dorms."
+                call cho_main("I have to head back to our dorms.","soft","base","base","R")
                 m "Don't you want your-"
-                cho "Sweet dreams, [cho_genie_name]!"
+                call cho_main("Sweet dreams, [cho_genie_name]!","smile","narrow","angry","mid")
 
-            g9 "Nice, her panties!"
+            call cho_walk(action="leave", speed=2.5)
+
+            call bld
+            g9 "Nice, I still got her panties!"
 
             $ has_cho_panties = True
 

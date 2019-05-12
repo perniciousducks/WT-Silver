@@ -232,6 +232,7 @@ label quidditch_training_intro_2:
 
 label change_quidditch_tactics:
     $ cho_flying = False
+    $ cho_outfit_last.save()
     call hide_characters
     hide screen bld1
     call cho_chibi("stand","mid","base")
@@ -240,8 +241,6 @@ label change_quidditch_tactics:
     call update_gen_chibi # Reset Chibi.
     call gen_chibi("stand","desk","base")
     with fade
-
-    $ cho_outfit_last.save() # Temporarily save last worn clothes
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
     call update_cho_chibi_uniform
@@ -310,13 +309,12 @@ label change_quidditch_tactics:
 
             "-Go Back-":
                 call cho_main("Very well, [cho_genie_name].","open","base","base","mid", ypos="head")
-                $ cho_class.equip(cho_outfit_last) # Equip last worn clothes # TODO: This doesn't work.
 
                 hide screen cho_chang
                 show screen blkfade
                 with d3
 
-                $ cho_class.equip(cho_outift_last)
+                $ cho_class.equip(cho_outfit_last)
                 call update_cho_chibi_uniform
 
                 call cho_chibi("stand","mid","base")

@@ -21,6 +21,17 @@ init -2 python:
         systemerror = ["Missing label", name]
         return "missing_label"
         
+    # If you're reading this it probably means you've got the warning message about old unusable files, since there has been hundreds of changes I cant guarantee if the game will work correctly if you decide to delete just the files listed below, make your life easier and simply delete the game and unpack it into new empty folder instead. -LoafyLemon
+    def check_for_old_files():
+        path = "__Renpy__/_cho_/"
+        oldfiles = ["_cho_layering_.rpy", "_cho_layering_.rpyc", "_equip_labels_.rpy", "_equip_labels_.rpyc", "cho_private_favours.rpy", "cho_private_favours.rpyc", "quidditch.rpy", "quidditch.rpyc"]
+        
+        for item in oldfiles:
+            if renpy.exists(path+item):
+                return True
+        return False
+
+        
 label missing_label():
     $ renpy.choice_for_skipping()
     $ err_msg1 = systemerror[0]

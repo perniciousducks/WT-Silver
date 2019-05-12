@@ -159,10 +159,10 @@ screen input:
         has vbox
             #style "say_vbox"
         
-        text prompt style "input_prompt"
-        input id "input" style "input_text"
+        text prompt #style "input_prompt"
+        input id "input" #style "input_text"
         
-    use quick_menu
+    #use quick_menu
 
 ##############################################################################
 # Nvl
@@ -289,6 +289,18 @@ screen main_menu:
     #New info
     #add "logo/arrow.png" xpos 760 ypos 500
     #text "{color=#b20000}{size=+10}NEW\nPATREON!{/size}{/color}" xpos 700 ypos 445 outlines [ (3, "#000", 0, 0) ]
+    
+    if check_for_old_files():
+        frame:
+            style "empty"
+            background "#000"
+            xsize 1080
+            ysize 600
+            button style "empty" action NullAction()
+            add "images/misc/old.png" yanchor 1.0 yalign 0.99 xpos 10
+            text "{size=+40}WARNING!{/size}" xalign 0.5 xanchor 0.5 ypos 150 color "#7a0000"
+            text "We have detected old unusable files in your game folder,\nplease close the game and perform a clean installation." xalign 0.5 xanchor 0.5 ypos 250 color "#FFF"
+            textbutton "{size=+30}Quit{/size}" action Quit(confirm=False) xalign 0.5 xanchor 0.5 yalign 0.9
 
 
 init -2:

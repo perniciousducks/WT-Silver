@@ -54,17 +54,8 @@ label start_training_match:
 
     jump main_room
 
-
-
-
-
 # Check if Cho won or lost the practice game.
 label quidditch_match_return:
-
-    $ cho_outfit_last.save() # Temporarily save last worn clothes
-
-    $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
-
     # Cho enters.
     call play_sound("knocking")
     call bld
@@ -113,7 +104,7 @@ label quidditch_match_return:
     #Slytherin Match
     elif main_matches_won == 2:
         jump main_room
-
+        
 
 # Lost first hufflepuff match.
 label hufflepuff_practice_lost:

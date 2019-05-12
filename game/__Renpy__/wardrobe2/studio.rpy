@@ -80,8 +80,22 @@ label studio(studio_return, studio_char):
     $ _return = ui.interact()
     
     hide screen studio
-    if _return == "save":
-        $ saveimage_to_file(cho_outfit_last.get_image())
+    if _return == "confirm":
+        show screen studio
+        $ txt_filename = "exported"
+        $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
+        $ studio_hide = True
+        $ renpy.pause(0.1, hard=True)
+        $ item_to_export.outfit_export(True, txt_filename)
+        $ studio_hide = False
+        $ char_active.equip(cho_outfit_last)
+        hide screen studio
+        call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
+        call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
+    elif _return == "cancel":
+        $ char_active.equip(cho_outfit_last)
+        call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
+        call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
     elif _return[0] == "body":
         $ cho_outfit_last.save()
         $ char_active.equip(cho_outfit_last)
@@ -183,10 +197,10 @@ label studio(studio_return, studio_char):
             if studio_text_input == "Close":
                 $ studio_text_input = studio_text_backup
         elif _return[1] == "color":
-            $ studio_text_color = color_picker(get_rgb_tuple(studio_text_color), False, "Text Color", pos_xy=[200, 130])
+            $ studio_text_color = color_picker(get_rgb_list(studio_text_color), False, "Text Color", pos_xy=[200, 130])
             $ studio_text_color = get_hex_string(studio_text_color[0]/255.0, studio_text_color[1]/255.0, studio_text_color[2]/255.0, studio_text_color[3]/255.0)
         else:
-            $ studio_text_outline_color = color_picker(get_rgb_tuple(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
+            $ studio_text_outline_color = color_picker(get_rgb_list(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     else:
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
@@ -248,6 +262,18 @@ screen studio:
                     text "[studio_text_input]" size studio_text_size color studio_text_color:
                         at transform:
                             alpha studio_text_alpha
+                            
+    if export_in_progress:
+        add "images/rooms/overlays/card_sp.png"
+        hbox:
+            xalign 1.0 
+            yalign 1.0
+            textbutton "confirm" action Return("confirm") xalign 1.0 yalign 1.0
+            textbutton "cancel" action Return("cancel") xalign 1.0 yalign 1.0
+        frame:
+            style "empty"
+            pos (688, 512)
+            text "WT:S [config.version]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0
     
     if not studio_hide:
         use character_studio
@@ -256,7 +282,8 @@ screen character_studio:
     tag character_studio
     zorder 5
     
-    use top_bar_close_button
+    if not export_in_progress:
+        use top_bar_close_button
     
     #if config.developer:
         #textbutton "Save transparent" xalign 1.0 yalign 1.0 action Return("save")

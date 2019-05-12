@@ -20,9 +20,6 @@ init python:
         
     def evaluate(txt):
         return __import__('ast').literal_eval(txt)
-        
-    def pil_image():
-        return __import__('PIL').Image
             
     class outfit_class(object):
         name = None
@@ -54,7 +51,11 @@ init python:
                 exported.append([item.id, item.color])
                 
             if tofile:
-                renpy.screenshot(config.basedir+"/game/"+filename+".png")
+                renpy.screenshot(config.basedir+"/game/outfits/"+filename+".png")
+                img = pygame.image.load(config.basedir+"/game/outfits/"+filename+".png")
+                img = pygame.transform.smoothscale(img, (1080, 600))
+                subsurface = img.subsurface((384, 63, 309, 470))
+                pygame.image.save(subsurface, config.basedir+"/game/outfits/"+filename+".png")
                 _image_payload.encode(filename, str(exported))
                 #export_file = open(config.basedir+"/game/"+filename+".txt", "w")
                 #export_file.write(str(exported))
@@ -72,10 +73,16 @@ init python:
                     #import_file = open(config.basedir+"/game/"+filename+".txt", "r")
                     #imported = import_file.read()
                     #import_file.close()
-                    imported = _image_payload.decode(filename)
+                    if renpy.exists("/outfits/"+filename+".png"):
+                        imported = _image_payload.decode(filename)
+                    else:
+                        renpy.block_rollback()
+                        return (False, renpy.show_screen("popup_window", "File doesn't exist!"))
                 except:
-                    _image_payload._file.close()
-                    return (False, renpy.show_screen("popup_window", "Import failed!"))
+                    if _image_payload._file:
+                        _image_payload._file.close()
+                    renpy.block_rollback()
+                    return (False, renpy.show_screen("popup_window", "Corrupted file!"))
             else:
                 imported = get_clipboard()
             
@@ -83,19 +90,27 @@ init python:
                 try:
                     imported = evaluate(imported)
                 except:
-                    return (False, renpy.show_screen("popup_window", "Import failed!"))
+                    renpy.block_rollback()
+                    return (False, renpy.show_screen("popup_window", "Corrupted file!"))
 
                 for item in imported:
                     for object in character_clothes_list:
                         if item[0] == object.id:
-                            item[0] = object.clone()
-                            item[0].color = item[1]
-                            item[0].cached = False
-                            group.append(item[0])
-                    
-                renpy.show_screen("popup_window", "Import successful!")                    
-                return outfit_class(name="", desc="", unlocked=True, group=group)
-            return False
+                            if object.char == char_active.char:
+                                if not cheats_active:
+                                    if not object.unlocked:
+                                        renpy.block_rollback()
+                                        return (False, renpy.show_screen("popup_window", "Items locked!"))
+                                item[0] = object.clone()
+                                item[0].color = item[1]
+                                item[0].cached = False
+                                group.append(item[0])
+                if len(group) > 0:
+                    renpy.show_screen("popup_window", "Import successful!")     
+                    renpy.block_rollback()
+                    return outfit_class(name="", desc="", unlocked=True, group=group)
+            renpy.block_rollback()
+            return (False, renpy.show_screen("popup_window", "Import failed!"))
                     
         def unlock(self, bool):
             self.unlocked = bool
@@ -265,8 +280,9 @@ init python:
             self.outline = self.imagepath+"outline.png"
                 
             # Add cloth object to respective character, category and sub-category in dictionary keylist
-            if not self.cloned and self.unlocked:
-                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+            if not self.cloned:
+                if self.unlocked:
+                    get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
                 character_clothes_list.append(self)
                 
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload
@@ -650,18 +666,28 @@ init python:
                         self.clothing[key][4] = True
             else:
                 for arg in args:
-                    try:
-                        self.clothing[str(arg)][4] = True
-                    except KeyError:
-                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                    if 'makeup' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'makeup' in key:
+                                self.clothing[key][4] = True
+                    elif 'accessory' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'accessory' in key:
+                                self.clothing[key][4] = True
+                    elif 'piercing' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'piercing' in key:
+                                self.clothing[key][4] = True
+                    elif 'tattoo' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'tattoo' in key:
+                                self.clothing[key][4] = True
+                    else:
+                        try:
+                            self.clothing[str(arg)][4] = True
+                        except KeyError:
+                            raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
-            
-        def get_worn(self, type):
-            if not self.clothing[type][0]:
-                return None
-            if not self.clothing[type][4]:
-                return True
-            return False
             
         def wear(self, *args):
             if 'all' in args:
@@ -669,18 +695,80 @@ init python:
                     self.clothing[key][4] = False
             else:
                 for arg in args:
-                    try:
-                        self.clothing[str(arg)][4] = False
-                    except KeyError:
-                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                    if 'makeup' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'makeup' in key:
+                                self.clothing[key][4] = False
+                    elif 'accessory' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'accessory' in key:
+                                self.clothing[key][4] = False
+                    elif 'piercing' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'piercing' in key:
+                                self.clothing[key][4] = False
+                    elif 'tattoo' == arg:
+                        for key in self.clothing.iterkeys():
+                            if 'tattoo' in key:
+                                self.clothing[key][4] = False
+                    else:
+                        try:
+                            self.clothing[str(arg)][4] = False
+                        except KeyError:
+                            raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
             
         def toggle_wear(self, type):
-            try:
-                self.clothing[str(type)][4] = not self.clothing[str(type)][4]
-            except KeyError:
-                raise Exception('Character: "'+str(type)+'" clothing type was not defined for "'+self.char+'" character class.')
+            if 'makeup' == type:
+                for key in self.clothing.iterkeys():
+                    if 'makeup' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            elif 'accessory' == type:
+                for key in self.clothing.iterkeys():
+                    if 'accessory' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            elif 'piercing' == type:
+                for key in self.clothing.iterkeys():
+                    if 'piercing' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            elif 'tattoo' == type:
+                for key in self.clothing.iterkeys():
+                    if 'tattoo' in key:
+                        self.clothing[key][4] = not self.clothing[key][4]
+            else:
+                try:
+                    self.clothing[str(type)][4] = not self.clothing[str(type)][4]
+                except KeyError:
+                    raise Exception('Character: "'+str(type)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
+            
+        def get_worn(self, type):
+            if 'makeup' == type:
+                for key in self.clothing.iterkeys():
+                    if 'makeup' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            elif 'accessory' == type:
+                for key in self.clothing.iterkeys():
+                    if 'accessory' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            elif 'piercing' == type:
+                for key in self.clothing.iterkeys():
+                    if 'piercing' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            elif 'tattoo' == type:
+                for key in self.clothing.iterkeys():
+                    if 'tattoo' in key:
+                        if self.clothing[key][0] and not self.clothing[key][4]:
+                            return True
+            else:
+                if not self.clothing[type][0]:
+                    return None
+                if not self.clothing[type][4]:
+                    return True
+            return False
                 
         def say(self, string, **kwargs):
             if kwargs:

@@ -24,6 +24,8 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     if xpos != None:
         if xpos in ["base","default"]:     # All the way to the right.
             $ cho_xpos = 640
+        elif xpos == "left":
+            $ hermione_xpos = 200
         elif xpos == "mid":                # Centered.
             $ cho_xpos = 300
         elif xpos == "right":              # Bit more to the right.
@@ -47,10 +49,10 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             $ cho_scaleratio = 2
 
             if cho_flip == -1: #Flipped
-                $ cho_xpos = 620
+                $ cho_xpos = -50
             else:
                 $ cho_xpos = 590
-            $ cho_ypos = 230
+            $ cho_ypos = 200
             $ cho_zorder = 8
         else:
             $ cho_ypos = int(ypos)
@@ -85,10 +87,23 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 
     return
 
+
+
+label update_cho:
+    call update_cho_chibi_uniform
+    $ cho_flip = 1
+
+    return
+
+
+
 label end_cho_event:
+    call cho_chibi("hide")
     hide screen cho_chang
     with d3
     pause.5
+
+    call update_cho
 
     $ active_girl = None
     $ cho_busy = True

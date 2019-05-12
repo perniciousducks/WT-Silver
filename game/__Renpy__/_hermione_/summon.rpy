@@ -362,6 +362,7 @@ label hermione_talk:
         # About Cho.
         "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro_state == "talk_with_snape": # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
+            m "(I should ask him to hang-out in the evening.)"
             jump hermione_talk
 
         "-Solve the matter with Cho-" if cho_intro_state in ["talk_with_hermione","nagotiate_with_hermione"]: # After talking to Snape.

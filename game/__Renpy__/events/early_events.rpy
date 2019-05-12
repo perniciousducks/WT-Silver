@@ -54,18 +54,14 @@ label event_00:
     g4 "{size=-3}(An Indigenous life form!?){/size}"
     hide screen bld1
 
-    $ tt_xpos=650
-    $ tt_ypos=180
-    show screen thought
-    with d3
+    call chibi_effect("thought", "snape")
     pause 1
 
     call bld
     m "{size=-3}(looks human enough...){/size}"
     m "{size=-3}(Maybe if I just act cool he'll leave...?){/size}"
-    hide screen bld1
-    hide screen thought
-    with d3
+
+    call chibi_effect("hide")
 
     call sna_walk(xpos="mid", ypos="base", speed=4)
     pause.2

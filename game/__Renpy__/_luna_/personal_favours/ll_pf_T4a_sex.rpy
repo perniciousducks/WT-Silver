@@ -1137,3 +1137,157 @@ label ll_pf_sex_T1_ton_2: # Call label
     with d3
 
     return
+
+
+label ll_pf_sex_bedroom:
+
+    #Offer to bang Luna
+    #She accepts
+    #Hesitates, asking Genie a huge favour
+    #Asks that they go to her bed
+    #Genie explains that he'll have to sneak around after dark
+    #Luna sounds excited about the idea
+    #Eventually they sneak out together
+    #Sneak to Luna's room undiscovered
+    #Eventually start fooling around
+    #Have Cho burst in and catch you
+    #Have Genie talk his way out of it 
+    #Cho agrees to it but says she's going to silence herself off
+    #Reveal screen to show Luna and Genie banging 
+    #Short bit of sex before a choice of topics
+    #Cumslut
+        #Have luna go on about how much she loves cum
+        #Have her talk about how lovely the room will be now
+        #Eventually Cho yells at her to shut up 
+        #Luna asks her about the silence
+        #She says it was just to tell her off
+        #Eventually cum in Luna in the middle of her sentence
+    #Wrackspurt spreading
+        #Have her talk about the idea of spreading wrackspurts
+        #Have her talk about spreading them through slutty outfits
+        #Cums at the thought of them spreading
+    #Compliment bed
+        #Compliment bed
+        #Have her ask genie to stay in it
+        #Cum when she begs him to cum in her on their bed
+
+    #Head back to your room
+
+    m "Mmmm, you know, I think you might be on to something with these rookiesports..."
+    m "I haven't been able to get that tight little pussy of your out of my mind!"
+    lun "Really?"
+    lun "For you to be think about that..."
+    lun "They must be truly be out of control..."
+    m "Mind giving me a hand getting rid of them?"
+    lun "Of course!"
+    lun "I mean... No! I don't mind..."
+    lun "Can we please... just..."
+    lun "They've been bothering me as well..."
+    m "Well in that case... why don't you bend over so we can get to work!"
+    lun "Oh um... well, about that..."
+    m "Is something wrong?"
+    lun "No! It's not that I don't want to do it..."
+    lun "It's just this room has so many in here already..."
+    lun "I don't think there's any more room for them in here..."
+    m "So you want to go somewhere else?"
+    lun "If that's okay with you..."
+    m "Got anywhere in mind?"
+    lun "Well... I've been wanting to try out your technique somewhere we can lie down..."
+    lun "Would you like to... Come to my room, [lun_genie_name]?"
+    m "Are girl as gorgeous and king as you inviting me to her bed?"
+    m "I don't think any man on the planet could turn you down."
+    lun "..."
+    ">With that, Luna leads you through the dark and cavernous halls of hogwarts."
+    m "Woah, the stairs move around? Isn't that dangerous?"
+    lun "Only if you're not paying attention!"
+    m "..."
+    ">Eventually you safely manage to navigate to Luna's secluded room, hidden towards the base of Ravenclaw's imposing dorm tower."
+    m "Wow... This room's fantastic! It's practically as big as my office! And you have two beds!"
+    lun "Well, the other one doesn't belong to me."
+    m "Oh... So you're boarding with another chick?"
+    lun "Mhmm!"
+    menu:
+        "-Ask her if she's ever fooled around-":
+            m "Ever fool around?"
+            lun "Fool around. Like a pillow fight?"
+            m "That's a good start, but I was think more along the lines of..."
+            m "Getting rid of some wricklespots together."
+            lun "Oh..."
+            lun "No, nothing like that together."
+            lun "Although I think Cho's fighting her own battles against them some nights..."
+
+        "-Ask who her room-mate is-":
+            m "So who's your roomie?"
+            lun "Cho!"
+    m "Cho Chang?"
+    lun "Yep! You've probably seen her play quidditch!"
+    lun "Actually, have you seen her play quidditch?"
+    lun "I don't know exactly how long you've been here instead of Dumbledore."
+    m "I've seen her play."
+    lun "Goodie!"
+    lun "So, um... is it alright... can we... start... now... {b}{size-=5}please{/size}{/b}..."
+    m "if you insist..."
+    #Start cg
+    hide screen blkfade
+    with d3
+
+    lun "Wow... doing this... it's so... different..."
+    m "You're telling me!"
+    m "(This is the first good bed I've slept on in years!)"
+    lun "Ah... The wrackspurts... they're go wild..."
+    lun "Ah... It's... incredible..."
+    lun "Being in control like this" #Show speed effect
+    lun "Not to mention..."
+    lun "Ah..."
+    lun "Having you so deep inside me..."
+    lun "it's incredible..."
+    m "Mmmm..."
+    lun "The wrackspurts... they-"
+    m "(Not these things again... Better change the subject.)"
+    menu:
+        "-Call her a cumslut-":
+            m "That's enough, cumslut."
+            lun "Mmmm, I am a cumslut aren't I?"
+            m "The best..."
+            lun "Mmmm... It's not my fault your cum's so yummy!"
+            lun "It's because of you're genie magic!"
+            m "Yeah, yeah, I'm sure..."
+            lun "It is! It's {b}amazing{/b}..."
+            m "That still doesn't explain it. I've lived lifetimes on this planet and others."
+            m "In that time, I've never come across a bigger cumslut than you."
+            m "Not even Hermione."
+            lun "Ah..."
+            lun "Well... the wrackspurts... and Lovegoods..."
+            lun "We're more susceptible to magic than regular witches..."
+            lun "It must be... All of that combined... that makes your cum... so {b}special{/b}..."
+            m "Yeah, yeah..."
+            lun "Ugh... I can't wait for you to give me some more..."
+            lun "Don't hold back... let it all out..."
+        "-Fuck it, talk about wrackspurts some more-":
+
+        "-Talk about the bed-":
+
+
+    m "Ugh... here it comes then you nasty little slut!"
+    lun "Ah... yes!!!..."
+
+    return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

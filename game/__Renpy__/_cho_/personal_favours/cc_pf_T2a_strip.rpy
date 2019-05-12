@@ -901,6 +901,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
             call cho_main("","annoyed","narrow","angry","mid")
             pause.5
             m "One second..."
+            $ renpy.sound.play("sounds/sniff.mp3")
             call nar("You give them one last sniff before handing them back to the girl.")
             g4 "There."
             call cho_main("(Pervert...)","annoyed","narrow","angry","R")

@@ -20,9 +20,6 @@ init python:
         
     def evaluate(txt):
         return __import__('ast').literal_eval(txt)
-        
-    def pil_image():
-        return __import__('PIL').Image
             
     class outfit_class(object):
         name = None
@@ -79,6 +76,7 @@ init python:
                     if renpy.exists("/outfits/"+filename+".png"):
                         imported = _image_payload.decode(filename)
                     else:
+                        renpy.block_rollback()
                         return (False, renpy.show_screen("popup_window", "File doesn't exist!"))
                 except:
                     if _image_payload._file:

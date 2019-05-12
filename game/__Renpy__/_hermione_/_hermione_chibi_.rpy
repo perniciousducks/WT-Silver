@@ -315,9 +315,10 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
 # redux_pause = value to decrease the time to pause before hideing the animation early
 
 label her_walk(xpos=walk_xpos, ypos=walk_ypos, speed=her_speed, action="", loiter=True, redux_pause=0):
+    call hide_characters
+    call hide_chibi_effects
     hide screen bld1
     hide screen blktone
-    call hide_characters
     with d3
 
     hide screen hermione_stand

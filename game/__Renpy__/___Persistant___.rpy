@@ -31,6 +31,9 @@ label __init_variables:
         $ nscale = 0.5
         $ walk_xpos = 750
         $ walk_ypos = 250
+        $ chibi_xpos = 0
+        $ chibi_ypos = 0
+        $ chibi_zorder = 0
 
     if not hasattr(renpy.store,'unlocked_xmas_deco'):
         $ unlocked_7th = False

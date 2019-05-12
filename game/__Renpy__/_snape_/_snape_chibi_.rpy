@@ -60,7 +60,7 @@ label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos),
     hide screen snape_jerking_off_cum
 
     $ sna_chibi_xpos = 500
-    $ sna_chibi_ypos = 250
+    $ sna_chibi_ypos = 190
 
     if xpos != sna_chibi_xpos:
         if xpos == "mid":
@@ -75,8 +75,8 @@ label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos),
             $ sna_chibi_xpos = int(xpos)
 
     if ypos != sna_chibi_ypos:
-        if ypos == "base" or ypos == "default":
-            $ sna_chibi_ypos = 210
+        if ypos in ["base","default"]:
+            $ sna_chibi_ypos = 190
         elif ypos.isdigit():
             $ sna_chibi_ypos = int(ypos)
 
@@ -95,9 +95,9 @@ label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos),
             $ sna_chibi_xpos = 500
 
         if ypos == "base":
-            $ sna_chibi_ypos = 210
+            $ sna_chibi_ypos = 190
         else:
-            $ sna_chibi_ypos = 210
+            $ sna_chibi_ypos = 190
 
         if pic != "":
             $ s_c_u_pic = "characters/snape/chibis/"+str(pic)+".png"
@@ -145,6 +145,7 @@ label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos),
 
 label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loiter=True, redux_pause=0):
     call hide_characters
+    call hide_chibi_effects
     hide screen bld1
     hide screen blktone
     with d3
@@ -156,7 +157,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
     if action == "enter":
         call play_sound("door")
         $ sna_chibi_xpos = 750
-        $ sna_chibi_ypos = 210
+        $ sna_chibi_ypos = 190
     if action == "leave":
         $ xpos = "door"
         $ ypos = "base"
@@ -179,7 +180,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
         $ walk_xpos2 = int(xpos)
 
     if ypos in ["base","default"]:
-        $ walk_ypos2 = 210
+        $ walk_ypos2 = 190
     else:
         $ walk_ypos2 = int(ypos)
 

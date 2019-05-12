@@ -25,7 +25,7 @@ label cho_random_clothing:
             #call cho_chibi("stand","mid","base")
 
             pause.2
-            call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=moveFade)
+            call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
             $ cho_animation = None
             call ctc
 

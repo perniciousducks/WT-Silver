@@ -102,13 +102,6 @@ screen dumbledore: # DUMBLEDORE AND HIS DESK.
     tag chibi_genie
     add "images/rooms/main_room/dum.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
 
-### EMO
-screen thought: #Thinking emotion over a chibi.
-    tag emo
-    add "thought" xpos tt_xpos+140 ypos tt_ypos
-    zorder 2
-
-
 
 
 screen universal_walk:
@@ -414,6 +407,105 @@ screen teleport_animation:
 screen heal_animation:
     add "heal_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos zoom 0.5
     zorder teleport_zorder
+
+label get_chibi_position(char=None):
+
+    if char == "genie":
+        $ chibi_xpos   = gen_chibi_xpos
+        $ chibi_ypos   = gen_chibi_ypos
+        $ chibi_zorder = gen_chibi_zorder
+    elif char == "snape":
+        $ chibi_xpos   = sna_chibi_xpos
+        $ chibi_ypos   = sna_chibi_ypos
+        $ chibi_zorder = sna_chibi_zorder
+    #elif char == "tonks":
+    #    $ chibi_xpos   = ton_chibi_xpos
+    #    $ chibi_ypos   = ton_chibi_ypos
+    #    $ chibi_zorder = ton_chibi_zorder
+
+    elif char == "hermione":
+        $ chibi_xpos   = her_chibi_xpos
+        $ chibi_ypos   = her_chibi_ypos
+        $ chibi_zorder = her_chibi_zorder
+    #elif char == "astoria":
+    #    $ chibi_xpos   = ast_chibi_xpos
+    #    $ chibi_ypos   = ast_chibi_ypos
+    #    $ chibi_zorder = ast_chibi_zorder
+    elif char == "susan":
+        $ chibi_xpos   = sus_chibi_xpos
+        $ chibi_ypos   = sus_chibi_ypos
+        $ chibi_zorder = sus_chibi_zorder
+    elif char == "luna":
+        $ chibi_xpos   = lun_chibi_xpos
+        $ chibi_ypos   = lun_chibi_ypos
+        $ chibi_zorder = lun_chibi_zorder
+    elif char == "cho":
+        $ chibi_xpos   = cho_chibi_xpos
+        $ chibi_ypos   = cho_chibi_ypos
+        $ chibi_zorder = cho_chibi_zorder
+
+    return
+
+
+
+### Chibi Effects ###
+
+label chibi_effect(action=None, chibi=None):
+    call hide_chibi_effects
+
+    if chibi != None:
+        call get_chibi_position(chibi)
+        if chibi in ["snape","genie"]: # Their chibis have a different size border than the girls'.
+            $ chibi_xpos = chibi_xpos +40
+            $ chibi_ypos = chibi_ypos -10
+        else:
+            $ chibi_xpos = chibi_xpos
+            $ chibi_ypos = chibi_ypos -50
+
+    if action in [None, "hide"]:
+        with d3
+        return
+
+    elif action == "thought":
+        show screen emo_thought
+    elif action in ["!","exclamation"]:
+        show screen emo_exclamation
+    elif action == "sad":
+        show screen emo_sad
+    elif action == "hoot":
+        show screen emo_hoot
+
+    with d3
+
+    return
+
+screen emo_thought:
+    tag emo
+    add "thought" xpos chibi_xpos ypos chibi_ypos
+    zorder chibi_zorder+1
+
+screen emo_exclamation:
+    tag emo
+    add "exclaim_01" xpos chibi_xpos ypos chibi_ypos
+    zorder chibi_zorder+1
+
+screen emo_sad:
+    tag emo
+    add "sad_01" xpos chibi_xpos ypos chibi_ypos
+    zorder chibi_zorder+1
+
+screen emo_hoot:
+    tag emo
+    add "hoot" xpos chibi_xpos ypos chibi_ypos
+    zorder chibi_zorder+1
+
+label hide_chibi_effects:
+    hide screen emo_thought
+    hide screen emo_exclamation
+    hide screen emo_sad
+    hide screen emo_hoot
+
+    return
 
 
 

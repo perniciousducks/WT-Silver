@@ -18,9 +18,6 @@ label change_hair:
     #Susan
     if active_girl == "susan":
         jump change_sus_hair
-    #Cho
-    if active_girl == "cho":
-        jump change_cho_hair
     #Tonks
     if active_girl == "tonks":
         jump change_ton_hair
@@ -447,11 +444,6 @@ label change_ast_hair:
 
 label change_sus_hair:
     call set_sus_hair(hair_style_choice, hair_color_choice)
-
-    jump return_to_wardrobe
-
-label change_cho_hair:
-    call set_cho_hair(hair_style_choice, hair_color_choice)
 
     jump return_to_wardrobe
 

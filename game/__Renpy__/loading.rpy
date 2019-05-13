@@ -4,7 +4,7 @@ transform rotateAnim:
     linear 3.0 rotate absolute(359.0)
     repeat
     
-screen loading_screen:
+screen loading_screen():
     tag loading
     zorder 100
 

@@ -30,7 +30,6 @@ init -2 python:
             if renpy.exists(path+item):
                 return True
         return False
-
         
 label missing_label():
     $ renpy.choice_for_skipping()

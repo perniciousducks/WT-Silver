@@ -2,7 +2,7 @@
 
 # Hermione Screens.
 
-screen hermione_main:
+screen hermione_main():
     tag hermione_main
 
     #Behind body
@@ -127,7 +127,7 @@ screen hermione_main:
 
 ### HERMIONE UNIFORM ###
 
-screen hermione_uniform:
+screen hermione_uniform():
     tag hermione_main
 
     #Panties
@@ -215,7 +215,7 @@ screen hermione_uniform:
     zorder hermione_zorder
 
 
-screen hermione_face:
+screen hermione_face():
     tag hermione_main
 
     #Face
@@ -659,21 +659,21 @@ label update_her_body:
 
 
 #Makeup
-screen hermione_makeup:
+screen hermione_makeup():
     for i in range(0,len(hermione_makeup_list)):
         add "characters/hermione/clothes/makeup/"+str(hermione_makeup_list[i])+".png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
 
 
 #Body Accessories
-screen hermione_body_accs:
+screen hermione_body_accs():
     for i in range(0,len(hermione_body_accs_list)):
         add "characters/hermione/clothes/accs/"+str(hermione_body_accs_list[i])+".png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
 
 
 #Piercings
-screen hermione_piercings:
+screen hermione_piercings():
     for i in range(0,len(hermione_piercings_list)):
         if hermione_perm_expand_breasts or hermione_expand_breasts: #Expanded Breasts
             add "characters/hermione/clothes/piercings/large_breasts/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
@@ -684,13 +684,13 @@ screen hermione_piercings:
 
 
 #TATTOOS
-screen hermione_tattoos:
+screen hermione_tattoos():
     for i in range(0,len(hermione_tattoos_list)):
         add "characters/hermione/body/tattoos/"+str(hermione_tattoos_list[i])+".png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
 
 
-screen hermione_ass:
+screen hermione_ass():
     tag hermione_ass
 
     add "characters/hermione/body/ass/hermione_ass_01.png" xpos 500 ypos 0 zoom (1.0/hermione_scaleratio)
@@ -698,7 +698,7 @@ screen hermione_ass:
         add "characters/hermione/body/ass/ass_cum_01.png" xpos 500 ypos 0 zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
 
-screen hermione_clone:
+screen hermione_clone():
     tag hermione_clone
 
     $ hermione_clone_xpos = 500
@@ -727,7 +727,7 @@ screen hermione_clone:
     zorder hermione_zorder
 
 
-screen hermione_outfit:
+screen hermione_outfit():
     tag hermione_main
     for i in hermoine_outfit_GLBL.getOutfitLayers():
         add "characters/hermione/clothes/"+i+".png" xpos hermione_xpos ypos hermione_ypos alpha her_outfit_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
@@ -736,7 +736,7 @@ screen hermione_outfit:
     zorder hermione_zorder
 
 
-screen hermione_kneel:
+screen hermione_kneel():
     tag hermione_kneel
 
     $ hermione_xpos = hermione_xpos

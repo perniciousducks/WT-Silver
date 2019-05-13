@@ -100,7 +100,7 @@ label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loite
         $ sus_chibi_flip = 1
         show screen susan_walk
         $ tmp = sus_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sus_chibi_xpos = walk_xpos2
         $ sus_chibi_ypos = walk_ypos2
         hide screen susan_walk
@@ -112,7 +112,7 @@ label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loite
         $ sus_chibi_flip = -1
         show screen susan_walk
         $ tmp = sus_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sus_chibi_xpos = walk_xpos2
         $ sus_chibi_ypos = walk_ypos2
         hide screen susan_walk
@@ -137,7 +137,7 @@ label susan_walk_end_loiter(dissolveTime = 3):
 
 ### SUSAN CHIBI SCREENS ###
 
-screen susan_stand:
+screen susan_stand():
     tag susan_chibi
 
     add susan_chibi_stand    xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
@@ -148,7 +148,7 @@ screen susan_stand:
 
     zorder sus_chibi_zorder
 
-screen susan_walk:
+screen susan_walk():
     tag susan_chibi
 
     add susan_chibi_walk         at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)

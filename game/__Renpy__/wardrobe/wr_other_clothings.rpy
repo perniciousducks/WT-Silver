@@ -23,9 +23,6 @@ label equip_neckwear:
     #Susan
     if active_girl == "susan":
         jump equip_sus_neckwear
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_neckwear
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_neckwear
@@ -54,12 +51,6 @@ label equip_sus_neckwear:
 
     jump return_to_wardrobe
 
-### Equip Cho's Neckwear ###
-label equip_cho_neckwear:
-    call set_cho_neckwear(neckwear_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Tonks's Neckwear ###
 label equip_ton_neckwear:
     call set_ton_neckwear(neckwear_choice)
@@ -83,9 +74,6 @@ label equip_gloves:
     #Susan
     if active_girl == "susan":
         jump equip_sus_gloves
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_gloves
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_gloves
@@ -98,25 +86,19 @@ label equip_her_gloves:
 
 ### Equip Luna's Gloves ###
 label equip_lun_gloves:
-    call set_lun_gloves(gloves_choice)
+    #call set_lun_gloves(gloves_choice)
 
     jump return_to_wardrobe
 
 ### Equip Astoria's Gloves ###
 label equip_ast_gloves:
-    call set_ast_gloves(gloves_choice)
+    #call set_ast_gloves(gloves_choice)
 
     jump return_to_wardrobe
 
 ### Equip Susan's Gloves ###
 label equip_sus_gloves:
-    call set_sus_gloves(gloves_choice)
-
-    jump return_to_wardrobe
-
-### Equip Cho's Gloves ###
-label equip_cho_gloves:
-    call set_cho_gloves(gloves_choice)
+    #call set_sus_gloves(gloves_choice)
 
     jump return_to_wardrobe
 
@@ -135,20 +117,17 @@ label equip_body_accessory:
     if active_girl == "hermione":
         jump equip_her_body_accessory
     #Luna
-    if active_girl == "luna":
-        jump equip_lun_body_accessory
+    #if active_girl == "luna":
+        #jump equip_lun_body_accessory
     #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_body_accessory
+    #if active_girl == "astoria":
+        #jump equip_ast_body_accessory
     #Susan
-    if active_girl == "susan":
-        jump equip_sus_body_accessory
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_body_accessory
+    #if active_girl == "susan":
+        #jump equip_sus_body_accessory
     #Tonks
-    if active_girl == "ton":
-        jump equip_ton_body_accessory
+    #if active_girl == "ton":
+        #jump equip_ton_body_accessory
 
 ### Equip Hermione's Body Accessory ###
 label equip_her_body_accessory:
@@ -263,18 +242,6 @@ label equip_her_body_accessory:
 #Add Luna Body Accessory Texts
 #Add Astoria Body Accessory Texts
 
-label equip_cho_body_accessory:
-
-    if body_accessory_choice not in cho_body_accs_list:
-        call set_cho_body_accessory(body_accessory_choice)
-        call cho_main(xpos="wardrobe")
-        call screen wardrobe
-
-    else:
-        call set_cho_body_accessory(body_accessory_choice) #Removes Item
-        call cho_main(xpos="wardrobe")
-        call screen wardrobe
-
 ### Stockings Equip ###
 label equip_stockings:
 
@@ -290,9 +257,6 @@ label equip_stockings:
     #Susan
     if active_girl == "susan":
         jump equip_sus_stockings
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_stockings
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_stockings
@@ -321,12 +285,6 @@ label equip_sus_stockings:
 
     jump return_to_wardrobe
 
-### Equip Cho's Stockings ###
-label equip_cho_stockings:
-    call set_cho_stockings(stockings_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Tonks's Stockings ###
 label equip_ton_stockings:
     call set_ton_stockings(stockings_choice)
@@ -350,9 +308,6 @@ label equip_robe:
     #Susan
     if active_girl == "susan":
         jump equip_sus_robe
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_robe
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_robe
@@ -378,12 +333,6 @@ label equip_ast_robe:
 ### Equip Susan's Robe ###
 label equip_sus_robe:
     call set_sus_robe(robe_choice)
-
-    jump return_to_wardrobe
-
-### Equip Cho's Robe ###
-label equip_cho_robe:
-    call set_cho_robe(robe_choice)
 
     jump return_to_wardrobe
 

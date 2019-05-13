@@ -1225,7 +1225,7 @@ label ll_pf_sex_bedroom:
     lun "I don't know exactly how long you've been here instead of Dumbledore."
     m "I've seen her play."
     lun "Goodie!"
-    lun "So, um... is it alright... can we... start... now... {b}{size-=5}please{/size}{/b}..."
+    lun "So, um... is it alright... can we... start... now... {b}{size=-5}please{/size}{/b}..."
     m "if you insist..."
     #Start cg
     hide screen blkfade
@@ -1264,8 +1264,9 @@ label ll_pf_sex_bedroom:
             lun "Ugh... I can't wait for you to give me some more..."
             lun "Don't hold back... let it all out..."
         "-Fuck it, talk about wrackspurts some more-":
-
+            pass
         "-Talk about the bed-":
+            pass
 
 
     m "Ugh... here it comes then you nasty little slut!"

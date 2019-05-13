@@ -520,20 +520,20 @@ label snape_duel_cancel:
 
     jump main_room
 
-screen genie_vs_snape:
+screen genie_vs_snape():
     zorder 8
     add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
-screen move_genie:
+screen move_genie():
     zorder 8
     add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
-screen versus:
+screen versus():
     zorder 8
     add "images/cardgame/VS/vs.png"
-screen move_snape:
+screen move_snape():
     zorder 8
     add "images/cardgame/VS/snape_01.png" at move_in(300, 0.5)
 
-screen genie_vs_snape_smile:
+screen genie_vs_snape_smile():
     zorder 8
     add "images/cardgame/VS/genie_02.png"
     add "images/cardgame/VS/snape_02.png"

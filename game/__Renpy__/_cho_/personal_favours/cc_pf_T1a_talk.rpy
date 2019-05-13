@@ -1013,7 +1013,7 @@ label end_cho_favor:
     call cho_main("Thank you.","soft","base","base","mid")
 
     call nar(">Cho quickly puts her clothes on before leaving.")
-    call load_cho_clothing_saves
+    #call load_cho_clothing_saves <- use cho_class.equip('all') instead
     if daytime:
         call cho_main("Good day, [cho_genie_name].","smile","base","base","mid")
     else:

@@ -87,7 +87,7 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
 
     #Text
     if text != "":
-        $ renpy.say(her,text)
+        $ renpy.say(her, text)
 
     if use_hermione_head and not face_on_cg:
         hide screen hermione_main

@@ -1,7 +1,7 @@
 
 
 #Main Room Screen
-screen main_room:
+screen main_room():
     if daytime:
         add "images/rooms/_bg_/main_room_day.png"
     else:
@@ -37,7 +37,7 @@ screen main_room:
 
 
 #Main Room Overlay - (layer is on top of main_room_menu screen)
-screen main_room_overlay:
+screen main_room_overlay():
     tag room_overlay_screen
 
     #Decorations
@@ -63,7 +63,7 @@ screen main_room_overlay:
     zorder 3#2
 
 ### Main Room Menu Screen ###
-screen main_room_menu:
+screen main_room_menu():
     #Hotkeys
     if day != 1 and not renpy.variant('android'):
         use hotkeys_main
@@ -229,7 +229,7 @@ screen main_room_menu:
             yanchor "center"
             idle "newanimation"
             hover "images/rooms/main_room/11_genie_02.png"
-            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210), SetVariable("ui_hint", "Open desk menu") ]
+            hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("ui_hint", "Open desk menu") ]
             unhovered [Hide("gui_tooltip"), SetVariable("ui_hint", "")]
             action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("desk")]
 

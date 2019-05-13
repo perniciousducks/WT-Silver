@@ -66,9 +66,6 @@ label reset_wardrobe_vars:
     elif active_girl == "susan":
         $ wr_base_hair_style = "braided"
         $ wr_base_hair_color = "red"
-    elif active_girl == "cho":
-        $ wr_base_hair_style = "ponytail"
-        $ wr_base_hair_color = "blue"
     elif active_girl == "tonks":
         $ wr_base_hair_style = "short"
         $ wr_base_hair_color = "pink"
@@ -101,8 +98,6 @@ label return_to_wardrobe:
             call ast_main(face="neutral",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
             call sus_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
-        if active_girl == "cho":
-            call cho_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "tonks":
             call ton_main(face="horny",xpos="wardrobe",ypos="base",trans="fade")
 
@@ -120,8 +115,6 @@ label return_to_wardrobe:
             call ast_main(face="neutral",xpos="wardrobe",ypos="base")
         if active_girl == "susan":
             call sus_main(face="happy",xpos="wardrobe",ypos="base")
-        if active_girl == "cho":
-            call cho_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "tonks":
             call ton_main(face="horny",xpos="wardrobe",ypos="base")
 
@@ -140,8 +133,6 @@ label update_wardrobe_color:
         call ast_main(xpos="wardrobe",ypos="base")
     if active_girl == "susan":
         call sus_main(xpos="wardrobe",ypos="base")
-    if active_girl == "cho":
-        call cho_main(xpos="wardrobe",ypos="base")
     if active_girl == "tonks":
         call ton_main(xpos="wardrobe",ypos="base")
 
@@ -208,9 +199,6 @@ label wardrobe_update:
     if active_girl == "susan":
         call wr_sus_clothing_reset
         call sus_main(xpos="wardrobe",ypos="base")
-    if active_girl == "cho":
-        call wr_cho_clothing_reset
-        call cho_main(xpos="wardrobe",ypos="base")
     if active_girl == "tonks":
         call wr_ton_clothing_reset
         call ton_main(xpos="wardrobe",ypos="base")
@@ -296,24 +284,6 @@ label wr_sus_clothing_reset:
 
     return
 
-label wr_cho_clothing_reset:
-    #Reload Clothing
-    call load_cho_clothing_saves
-
-    #Qol stuff
-    if wardrobe_page != 6:
-        pass
-    #    if cho_action != "none":
-    #        $ cho_use_action = True
-    else: #Underwear page Qol
-        $ cho_class.strip("robe")
-        $ cho_class.strip("top")
-        $ cho_class.strip("bottom")
-
-    call update_cho_uniform
-
-    return
-
 label wr_ton_clothing_reset:
     #Reload Clothing
     call load_tonks_clothing_saves
@@ -363,9 +333,6 @@ label close_wardrobe:
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
         jump susan_requests
-    if active_girl == "cho":
-        call cho_main(xpos="base",ypos="base")
-        jump cho_requests
     if active_girl == "tonks":
         call ton_main(xpos="base",ypos="base")
         jump tonks_requests
@@ -784,8 +751,6 @@ label her_tattoos_toggle:
 label equip_piercing:
     if active_girl == "hermione":
         call set_her_piercing(piercing_choice)
-    if active_girl == "cho":
-        call set_cho_piercing(piercing_choice)
     if active_girl == "tonks":
         call set_ton_piercing(piercing_choice)
         call ton_main(mouth="open_wide_tongue", face="horny",xpos="wardrobe",ypos="base")

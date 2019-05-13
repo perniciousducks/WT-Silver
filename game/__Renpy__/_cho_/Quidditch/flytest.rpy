@@ -252,7 +252,7 @@ label flytest_cho:
     
 
     
-screen flytest:
+screen flytest():
     tag flytest
     zorder 4
     

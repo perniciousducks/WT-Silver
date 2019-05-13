@@ -184,7 +184,7 @@ label luna_favour_4: ###Luna handjob #DONE
         call lun_main("then cum for me...","base","angry","mad","down")
         call lun_main("cum...","base","seductive","sad","empty")
         call ctc
-        g4 "Ah{size=+2} here {size=+2}it {size=+2}is!{/size}"
+        g4 "Ah{size=+2} here{/size} {size=+4}it{/size} {size=+6}is!{/size}"
 
         menu:
             "Where should you cum?"
@@ -719,7 +719,7 @@ label luna_favour_4: ###Luna handjob #DONE
             ">She rubs them together as she rotates on the balls of her feet."
             call lun_main("boobs are an extra 100...","base","angry","mad","mid")
             call lun_main("thighs are 50...","normal","angry","angry","R")
-            g4 "Ah{size=+2} here {size=+2}it {size=+2}is!{/size}"
+            g4 "Ah{size=+2} here{/size} {size=+4}it{/size} {size=+6}is!{/size}"
 
             menu:
                 "-boobs-":

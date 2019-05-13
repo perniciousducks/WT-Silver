@@ -15,9 +15,6 @@ label equip_bra:
     #Susan
     if active_girl == "susan":
         jump equip_sus_bra
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_bra
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_bra
@@ -321,12 +318,6 @@ label equip_sus_bra:
 
     jump return_to_wardrobe
 
-### Equip Cho's Bra ###
-label equip_cho_bra:
-    call set_cho_bra(underwear_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Tonks's Bra ###
 label equip_ton_bra:
     call set_ton_bra(underwear_choice)
@@ -350,9 +341,6 @@ label equip_onepiece:
     #Susan
     if active_girl == "susan":
         jump equip_sus_onepiece
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_onepiece
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_onepiece
@@ -381,12 +369,6 @@ label equip_sus_onepiece:
 
     jump return_to_wardrobe
 
-### Equip Cho's OnePiece/Nighty ###
-label equip_cho_onepiece:
-    call set_cho_onepiece(underwear_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Tonks's OnePiece/Nighty ###
 label equip_ton_onepiece:
     call set_ton_onepiece(underwear_choice)
@@ -410,9 +392,6 @@ label equip_panties:
     #Susan
     if active_girl == "susan":
         jump equip_sus_panties
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_panties
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_panties
@@ -679,12 +658,6 @@ label equip_sus_panties:
 
     jump return_to_wardrobe
 
-### Equip Cho's Panties ###
-label equip_cho_panties:
-    call set_cho_panties(underwear_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Tonks's Panties ###
 label equip_ton_panties:
     call set_ton_panties(underwear_choice)
@@ -708,9 +681,6 @@ label equip_garterbelt:
     #Susan
     if active_girl == "susan":
         jump equip_sus_garterbelt
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_garterbelt
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_garterbelt
@@ -736,12 +706,6 @@ label equip_ast_garterbelt:
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
     call set_sus_garterbelt(underwear_choice)
-
-    jump return_to_wardrobe
-
-### Equip Cho's Garterbelt ###
-label equip_cho_garterbelt:
-    call set_cho_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 

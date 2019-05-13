@@ -15,12 +15,9 @@ label equip_outfit:
     #Susan
     if active_girl == "susan":
         jump equip_sus_outfit
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_outfit
     #Tonks
     if active_girl == "tonks":
-        jump equip_cho_outfit
+        jump equip_ton_outfit
 
 
 ### Equip Hermione's Outfit ###
@@ -536,23 +533,6 @@ label equip_sus_outfit:
         call set_sus_outfit(None)
 
         jump return_to_wardrobe
-
-
-### Equip Cho's Outfit ###
-label equip_cho_outfit:
-    if (outfit_choice != cho_outfit_GLBL) or (outfit_choice == cho_outfit_GLBL and not cho_wear_outfit):
-
-        call set_cho_outfit(outfit_choice)
-
-        call cho_main(xpos="wardrobe")
-        call screen wardrobe
-
-    else: # Unequip
-
-        call set_cho_outfit(None)
-
-        jump return_to_wardrobe
-
 
 ### Equip Tonks's Outfit ###
 label equip_ton_outfit:

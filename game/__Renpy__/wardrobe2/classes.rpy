@@ -774,7 +774,7 @@ init python:
             if kwargs:
                 self.expression(**kwargs)
             if string:
-                renpy.say(self.char, string)
+                renpy.say(eval(self.char), string)
                 
         def get_bodyparts(self):
             bodyparts = []

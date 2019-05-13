@@ -426,7 +426,7 @@ label potion_scene_1_4: #Clone potion
     her "Well here goes..."
     call nar(">Hermione drinks the potion.")
     her "Mmmmmm it's so sweet..."
-    herA "Ughhhh, it's so sour..."
+    her "Ughhhh, it's so sour..."
 
     #Hermione split into two versions of herself, one slutty, one prudish
     #Slutty one wants to have sex with Genie

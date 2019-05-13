@@ -519,7 +519,7 @@ label DRgame_random_event:
     return
 
 
-screen dark_room:
+screen dark_room():
     add "images/rooms/_bg_/main_room_night.png"
 
     add "images/rooms/_objects_/doors/door_idle_night.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
@@ -535,7 +535,7 @@ screen dark_room:
 
     zorder 0
 
-screen DRgame_blktone: #Use this instead of "blktone", or it will cause issues with chibis.
+screen DRgame_blktone(): #Use this instead of "blktone", or it will cause issues with chibis.
     tag DRgame_blktone
     if DRgame.fire <= 0:
         add im.Alpha("interface/blackfade.png", 0.7)
@@ -545,7 +545,7 @@ screen DRgame_blktone: #Use this instead of "blktone", or it will cause issues w
         add "blank.png"
     zorder 4
 
-screen DRgame_menu:
+screen DRgame_menu():
     tag DRgame_menu
 
     #Door

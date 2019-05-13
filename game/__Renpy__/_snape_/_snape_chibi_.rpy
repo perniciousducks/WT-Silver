@@ -1,28 +1,28 @@
 
 
-screen snape_jerking_off:
+screen snape_jerking_off():
     tag snape_chibi
     add "jerking_off_03_ani" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
     zorder 3
 
-screen snape_jerking_off_cum:
+screen snape_jerking_off_cum():
     add "snape_cum_01" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
     zorder 3
 
-screen snape_stands_holds_dick:
+screen snape_stands_holds_dick():
     tag snape_chibi
     add "images/animation/10_jerking_01.png" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
     zorder 3
 
 
 ###  SNAPE CHIBI UNIVERSAL SCREEN ###
-screen s_c_u:
+screen s_c_u():
     tag snape_chibi
     add s_c_u_pic at Position(xpos=sna_chibi_xpos, ypos=sna_chibi_ypos) # (xpos=360, ypos=210)
     zorder 3
 
 ###  SNAPE'S CUM UNIVERSAL SCREEN ###
-screen s_c_c_u:
+screen s_c_c_u():
     add s_c_c_u_pic at Position(xpos=snape_cum_chibi_xpos+140, ypos=snape_cum_chibi_ypos)
     zorder 3
 
@@ -30,14 +30,14 @@ screen s_c_c_u:
 
 ### SNAPE CHIBI SCREENS ###
 
-screen snape_stand:
+screen snape_stand():
     tag snape_chibi
 
     add sna_chibi_stand xpos sna_chibi_xpos ypos sna_chibi_ypos xzoom sna_chibi_flip #zoom (1.0/scaleratio)
 
     zorder sna_chibi_zorder
 
-screen snape_walk:
+screen snape_walk():
     tag snape_chibi
 
     add sna_chibi_walk         at sna_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sna_chibi_flip #zoom (1.0/scaleratio)
@@ -192,7 +192,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
         $ sna_chibi_flip = 1
         show screen snape_walk
         $ tmp = sna_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sna_chibi_xpos = walk_xpos2
         $ sna_chibi_ypos = walk_ypos2
         hide screen snape_walk
@@ -204,7 +204,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
         $ sna_chibi_flip = -1
         show screen snape_walk
         $ tmp = sna_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sna_chibi_xpos = walk_xpos2
         $ sna_chibi_ypos = walk_ypos2
         hide screen snape_walk

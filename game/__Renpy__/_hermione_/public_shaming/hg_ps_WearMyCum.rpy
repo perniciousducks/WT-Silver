@@ -489,7 +489,7 @@ label hg_ps_cumslut_Scene_3:
     $ g_c_u_pic = "handjob_ani"
     show screen chair_left
     show screen g_c_u
-    show screen desk_02
+    #show screen desk_02 <- screen does not exist
     hide screen blktone
     hide screen blkfade
     with d3

@@ -1,4 +1,4 @@
-label __init_variables:
+label cho_wardrobe_init:
     python:
         if not hasattr(renpy.store,'cho_class') or reset_persistants:
             ################
@@ -14,7 +14,7 @@ label __init_variables:
             cho_class.outfits = []
             
             character_clothes_list = []
-    
+
             # Tops
             cho_cloth_topschool1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]])
             cho_cloth_topschool2 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]])
@@ -200,3 +200,4 @@ label __init_variables:
                         "makeup2":    [None, 11, 0, 0, False],
                         "makeup3":    [None, 11, 0, 0, False],
                         "makeup4":    [None, 11, 0, 0, False]}
+    return

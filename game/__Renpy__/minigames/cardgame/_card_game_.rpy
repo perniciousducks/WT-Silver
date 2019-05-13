@@ -349,7 +349,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
                 else:
                     text lefttext+str(card.get_totalvalue())+righttext xalign 0.15 yalign 0.1 size sizetext xoffset 5
             
-screen start_deck:
+screen start_deck():
     zorder 9
 
     for i in xrange(len(unlocked_cards)):

@@ -2,7 +2,7 @@
 
 # Susan Screens.
 
-screen susan_main:
+screen susan_main():
     tag susan_main
 
     ### BASE IMAGE
@@ -62,7 +62,7 @@ screen susan_main:
     zorder susan_zorder
 
 
-screen susan_uniform:
+screen susan_uniform():
     tag susan_main
 
     ### CLOTHES
@@ -89,7 +89,7 @@ screen susan_uniform:
     zorder susan_zorder
 
 
-screen susan_outfit:
+screen susan_outfit():
     tag susan_main
 
     for i in susan_outfit_GLBL.getOutfitLayers():

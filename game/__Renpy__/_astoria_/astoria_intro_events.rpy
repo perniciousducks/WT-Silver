@@ -810,7 +810,7 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("Before I was certain you were going to expel me as soon as I cast Imperio.","open","base","base","mid")
     call ast_main("But after you've asked to see Susy's boobs,... well...","open","base","base","L")
 
-    hide susan_main
+    #hide susan_main
     $ susan_wear_top = False
     call update_sus_uniform
     call sus_main("","base","base","base","mid")

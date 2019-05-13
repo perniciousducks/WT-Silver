@@ -67,7 +67,7 @@ image map_unfold:
     pause.5
     "interface/map/map.png" with Dissolve(0.5)
 
-screen map_buttons:
+screen map_buttons():
     tag map
     zorder 4
     #Office

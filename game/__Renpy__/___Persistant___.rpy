@@ -127,6 +127,7 @@ label __init_variables:
     #Cho Init
     call cho_init
     call cho_progress_init
+    call cho_wardrobe_init
 
     #Susan Init
     call susan_init

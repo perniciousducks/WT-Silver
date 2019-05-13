@@ -71,7 +71,7 @@ label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
 
 # Genie Screens.
 
-screen genie_main:
+screen genie_main():
     tag genie_main
 
     add genie_base xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add the base body

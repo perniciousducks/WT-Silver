@@ -50,7 +50,7 @@ label cc_pf_strip_T1_E1:
     m "It's time for your next favour, [cho_name]."
     call cho_main("I- *uhm*...{w} I think I'm ready.","horny","base","sad","downR")
     call cho_main("What would you like me to do, [cho_genie_name]?","soft","base","sad","mid")
-    m "First, come a bit closed..."
+    m "First, come a bit closer..."
     call cho_main("Very well, Sir.","base","base","base","mid")
 
     call cho_walk(xpos="desk", ypos="base", speed=1.6)
@@ -65,11 +65,11 @@ label cc_pf_strip_T1_E1:
     with hpunch
     g4 "What?!"
     m "(I don't even jerk off that often!)"
-    m "You are clearly exaggerating..."
-    call cho_main("I'm not, Sir! It's necessary for somebody in my position!","open","closed","angry","mid")
-    call cho_main("I wake up every morning before dawn and run the Quidditch pitch, until the sun rises!","open","narrow","angry","mid")
+    m "I find that a bit hard to believe... You're not embellishing the truth, are you?"
+    call cho_main("I'm not, Sir! It's necessary for someone in my position!","open","closed","angry","mid")
+    call cho_main("I wake up every morning before dawn, then run around the Quidditch pitch until the sun rises!","open","narrow","angry","mid")
     call cho_main("My body's at the absolute peak of human condition!","open","narrow","angry","R")
-    g4 "It is quite impressive, I've got to say!"
+    g4 "It is quite impressive..."
     call cho_main("Glad to hear it, [cho_genie_name].","base","closed","base","mid")
     m "I assume you get complimented often?"
     call cho_main("Occasionally...","soft","base","base","R")

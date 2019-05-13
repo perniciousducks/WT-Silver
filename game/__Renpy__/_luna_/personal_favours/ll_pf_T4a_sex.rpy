@@ -1264,8 +1264,9 @@ label ll_pf_sex_bedroom:
             lun "Ugh... I can't wait for you to give me some more..."
             lun "Don't hold back... let it all out..."
         "-Fuck it, talk about wrackspurts some more-":
-
+            pass
         "-Talk about the bed-":
+            pass
 
 
     m "Ugh... here it comes then you nasty little slut!"

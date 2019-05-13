@@ -256,7 +256,7 @@ label enter_room_of_req:
         hide screen snape_main
         hide screen snape_head
         hide screen bld1
-        call give_reward("You've unlocked the room of requirement","interface/icons/item_voucher.png")
+        call give_reward("You've unlocked the room of requirement","images/rooms/room_of_requirement/mirror_hover.png")
         call sna_chibi("hide")
         call gen_chibi("hide")
     else:

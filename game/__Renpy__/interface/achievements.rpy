@@ -1,5 +1,5 @@
 init python:
-    if persistent.achievements == None or config.developer:
+    if persistent.achievements == None:
         persistent.achievements = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "unlockcho": ["Characters", "Chang Dynasty", "Awarded for unlocking Cho Chang.", False, "interface/icons/head/head_cho_2.png", False],
                                    "unlocklun": ["Characters", "Looney Tunes", "Awarded for unlocking Luna Lovegood.", False, "interface/icons/head/head_luna_2.png", False],
@@ -44,7 +44,7 @@ init python:
                     persistent.achievements[id][3] = True
                     if not silent:
                         renpy.play('sounds/achievement.mp3')
-                        renpy.show_screen("achievement_window", persistent.achievements[id][1], persistent.achievements[id][4])
+                        renpy.show_screen("achievement_window", string=persistent.achievements[id][1], title="Achievement unlocked!", icon=persistent.achievements[id][4])
                 return
             except KeyError:
                 return
@@ -117,8 +117,14 @@ screen achievement_block():
 ###
 init:
     $ achievement = achievement_class()
+    
+label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):
+    if sound:
+        $ renpy.play(soundfile)
+    show screen achievement_window(string=string, title=title, icon=icon, xpos=xpos, ypos=ypos)
+    return
 
-screen achievement_window(string="", icon=None, xpos=0, ypos=60):
+screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
     tag popup_window
     zorder 100
     
@@ -137,14 +143,22 @@ screen achievement_window(string="", icon=None, xpos=0, ypos=60):
                 xsize 84
                 ysize 84
                 $ image_zoom = crop_image_zoom(icon, 84, 84)
-                add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
-        add "interface/achievements/glass.png"
-        
-        vbox:
-            spacing 10
-            pos (136, 12)
-            text "Achievement unlocked!" size 18 xalign 0.5
-            text string size 14 xalign 0.5
+                if 'head' in icon:
+                    add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -1
+                else:
+                    add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
+                
+            add "interface/achievements/glass.png"
+        frame:
+            style "empty"
+            xpos 96
+            xsize 314
+            vbox:
+                ypos 12
+                spacing 10
+                xalign 0.5
+                text title size 18 xalign 0.5 xanchor 0.5
+                text string size 14 xalign 0.5 xanchor 0.5
     timer 6.0 action Hide("achievement_window")
     
 transform rotate_circular():
@@ -337,7 +351,7 @@ screen achievement_menuitem(xx, yy):
                                 $ image_zoom = crop_image_zoom(menu_items[i][1][4], 42, 42, True)
                             else:
                                 $ image_zoom = crop_image_zoom("interface/achievements/secret.png", 35, 35, True)
-                        if menu_items[i][1][0] == "Characters":
+                        if menu_items[i][1][0] == "Characters" and not (menu_items[i][1][5] is True and not menu_items[i][1][3] is True):
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -3
                         else:
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
@@ -365,7 +379,7 @@ screen achievement_menuitem(xx, yy):
                             $ image_zoom = crop_image_zoom("interface/achievements/secret.png", 70, 70, True)
                         else:
                             $ image_zoom = crop_image_zoom(current_item[1][4], 84, 84, True)
-                    if current_item[1][0] == "Characters":
+                    if current_item[1][0] == "Characters" and not (current_item[1][5] is True and not current_item[1][3] is True):
                         add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -7
                     else:
                         add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)

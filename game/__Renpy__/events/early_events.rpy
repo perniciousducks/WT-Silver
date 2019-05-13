@@ -1843,13 +1843,15 @@ label event_15:
 
     stop music fadeout 1.0
 
-    call give_reward(">You unlocked the ability to buy sexual favours from Hermione.","interface/icons/head/head_hermione_2.png")
+    call popup("You unlocked the ability to buy sexual favours from Hermione.", "Congratulations!", "interface/icons/head/head_hermione_2.png")
 
     $ hermione_favors = True
 
     $ event15_happened = True #Turns TRUE after event_15
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     $ hermione_busy = True
+    
+    call music_block
 
     return
 

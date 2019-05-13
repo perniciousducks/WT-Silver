@@ -186,7 +186,7 @@ screen charecter_name(name):
 
 ### Character Stats ###
 
-screen genie_stat_menu:
+screen genie_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)
@@ -214,7 +214,7 @@ screen genie_stat_menu:
 
     zorder 8
 
-screen snape_stat_menu:
+screen snape_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)
@@ -238,7 +238,7 @@ screen snape_stat_menu:
     zorder 8
 
 
-screen hermione_stat_menu:
+screen hermione_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)
@@ -307,7 +307,7 @@ screen hermione_stat_menu:
 
     zorder 8
 
-screen luna_stat_menu:
+screen luna_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)
@@ -325,7 +325,7 @@ screen luna_stat_menu:
 
     zorder 8
 
-screen astoria_stat_menu:
+screen astoria_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)
@@ -343,7 +343,7 @@ screen astoria_stat_menu:
 
     zorder 8
 
-screen susan_stat_menu:
+screen susan_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)
@@ -360,10 +360,10 @@ screen susan_stat_menu:
 
     zorder 8
 
-screen cho_stat_menu:
+screen cho_stat_menu():
     zorder 8
 
-screen tonks_stat_menu:
+screen tonks_stat_menu():
     tag stat_content
     side "c r":
         area (220, 150, 425, 420)

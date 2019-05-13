@@ -138,7 +138,7 @@ label cho_walk_end_loiter(dissolveTime = 3):
 
 
 ### CHO CHIBI SCREENS ###
-screen cho_stand:
+screen cho_stand():
     tag cho_chibi
 
     add cho_chibi_stand    xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
@@ -149,7 +149,7 @@ screen cho_stand:
 
     zorder cho_chibi_zorder
 
-screen cho_walk:
+screen cho_walk():
     tag cho_chibi
 
     add cho_chibi_walk         at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom cho_chibi_flip zoom (1.0/scaleratio)

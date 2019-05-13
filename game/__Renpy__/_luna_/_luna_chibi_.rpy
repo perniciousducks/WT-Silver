@@ -156,23 +156,23 @@ label luna_walk_end_loiter(dissolveTime = 3):
 
 ### LUNA CHIBI SCREENS ###
 
-screen luna_chibi:
+screen luna_chibi():
     tag luna_chibi
     add luna_chibi_stand xpos luna_chibi_xpos ypos luna_chibi_ypos xzoom luna_flip zoom (1.0/scaleratio)
     zorder luna_chibi_zorder
-screen luna_blink:
+screen luna_blink():
     tag luna_chibi
     add luna_chibi_blink xpos luna_chibi_xpos ypos luna_chibi_ypos zoom (1.0/scaleratio)
     zorder luna_chibi_zorder
-screen luna_blink_f:
+screen luna_blink_f():
     tag luna_chibi
     add luna_chibi_blink_f xpos luna_chibi_xpos ypos luna_chibi_ypos zoom (1.0/scaleratio)
     zorder luna_chibi_zorder
-screen luna_walk:
+screen luna_walk():
     tag luna_chibi
     add luna_chibi_walk at custom_walk_02(walk_xpos, walk_xpos2) zoom (1.0/scaleratio)
     zorder luna_chibi_zorder
-screen luna_walk_f:
+screen luna_walk_f():
     tag luna_chibi
     add luna_chibi_walk_f at custom_walk_02(walk_xpos, walk_xpos2) zoom (1.0/scaleratio)
     zorder luna_chibi_zorder

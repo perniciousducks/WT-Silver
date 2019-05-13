@@ -42,7 +42,7 @@ label read_letter:
     call screen main_room_menu
 
 
-screen letter:
+screen letter():
     tag letter
 
     add "interface/points/letter.png" at Position(xpos=340, ypos=30)

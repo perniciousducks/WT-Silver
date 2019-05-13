@@ -499,8 +499,8 @@ label cho_favor_3_1:
                                     "Before long, you can feel the cum churning in your enchanted nut sack."
                                     m "It's magically delicious!"
                                     #Genie cums in Cho's mouth.
-                                    Cho_WideEyes"!..."
-                                    Cho_WideEyes"(What?)"
+                                    #Cho_WideEyes"!..."
+                                    #Cho_WideEyes"(What?)"
                                     "Cho's cheeks begin to bulge with the heavy load, causing her to forget your mad outburst."
                                     "When it's over, your cock slips out from between Cho's lips, leaving her struggling with the massive mouthful."
                                     call cho_main("Hmmm!","smile","base","base","mid")
@@ -639,7 +639,7 @@ label cho_favor_3_2:
                                         call cho_main("but! That's not fair!","smile","base","base","mid")
                                         m "Take it or leave it, Ms. Chong."
                                         call cho_main("MY name is Chang, you old jerk!","smile","base","base","mid")
-                                        Cho_Sad"It's not even a hard name..."
+                                        #Cho_Sad"It's not even a hard name..."
                                         m "DO you want your points or not?"
                                         call cho_main("yes, please.","smile","base","base","mid")
                                         m "[current_payout] to Ravenclaw."

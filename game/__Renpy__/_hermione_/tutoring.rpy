@@ -1934,49 +1934,49 @@ define sd_slap = "sounds/slap.mp3"
 define sd_spit = "sounds/spit.mp3"
 define sd_win2 = "sounds/win2.mp3"
 # Screens
-screen genie_and_hermione: #Genie sitting, Hermione stands right in front of him (behind the desk even).
+screen genie_and_hermione(): #Genie sitting, Hermione stands right in front of him (behind the desk even).
     tag favor
     add "images/rooms/main_room/genie_and_hermione_01.png" at Position(xpos = -84, ypos = 10)
 
-screen groping_05:
+screen groping_05():
     tag favor
     add "groping_05" at Position(xpos = -84, ypos = 10)
     add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
-screen groping_05b:
+screen groping_05b():
     tag favor
     add "groping_05b" at Position(xpos = -84, ypos = 10)
     add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
-screen no_groping_05:
+screen no_groping_05():
     tag favor
     add "images/animation/grope_d_05.png" at Position(xpos = -84, ypos = 10)
     add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
-screen no_groping_05_desk:
+screen no_groping_05_desk():
     tag favor
     add "images/animation/grope_d_06.png" at Position(xpos = -84, ypos = 10)
 
-screen no_groping_06: #Facing Genie.
+screen no_groping_06(): #Facing Genie.
     tag favor
     add "images/animation/grope_e_05.png" at Position(xpos = -84, ypos = 10)
     add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
-screen groping_06:
+screen groping_06():
     tag favor
     add "groping_06" at Position(xpos = -84, ypos = 10)
     add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
-screen groping_06b:
+screen groping_06b():
     tag favor
     add "groping_06b" at Position(xpos = -84, ypos = 10)
     add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
-screen no_groping_laying_01:
+screen no_groping_laying_01():
     tag favor
     add "images/animation/grope_laying_01.png" at Position(xpos = -84, ypos = 10)
 
-screen no_groping_laying_02:
+screen no_groping_laying_02():
     tag favor
     add "images/animation/grope_laying_b_01.png" at Position(xpos = -84, ypos = 10)
 

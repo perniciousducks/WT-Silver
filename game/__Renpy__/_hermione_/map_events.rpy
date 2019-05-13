@@ -252,7 +252,7 @@ label forest_BJ_2:
     $ ccg2 = 18
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 21
-    her "sucking all that cum out her headmasters {b}fat, {size=+2}juicy, {size=+2}cock...{/size}{/b}{image=textheart}"
+    her "sucking all that cum out her headmasters fat, {size=+2}juicy,{/size} {size=+2}cock...{/size}{image=textheart}"
     g9 "ARGH THAT's IT GIRL!"
     g9 "HERE IT COMES"
     $ ccg2 = 22
@@ -423,7 +423,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 32
     ">Instead, it appears like she only wants to watch hermione have her throat fucked silly..."
     $ ccg2 = 34
-    g9 "Well if it's a show you want, {size=+3}it's {size=+3}a {size=+3}show {size=+3}you'll {size=+3}get!{/size}"
+    g9 "Well if it's a show you want, {size=+3}it's{/size} {size=+3}a{/size} {size=+3}show{/size} {size=+3}you'll{/size} {size=+3}get!{/size}"
     $ ccg2 = 35
     her "???"
     $ ccg2 = 34
@@ -504,7 +504,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     her "{size=+14}!!!{/size}"
     $ ccg2 = 40
 
-    myr "{size=+3}Oh {size=+3}my {size=+3}God!{/size}"
+    myr "{size=+3}Oh{/size} {size=+3}my{/size} {size=+3}God!{/size}"
     $ ccg2 = 39
     call cum_block
 
@@ -542,7 +542,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     her "*gllllgggggg*..."
     $ ccg2 = 41
     call cum_block
-    myr "{size=+14}MORE!!!{size=+14}"
+    myr "{size=+14}MORE!!!{/size}"
     $ ccg2 = 42
     call cum_block
     show screen blkfade
@@ -791,7 +791,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 34
     myr "Then hogsmead!"
     $ ccg2 = 35
-    myr "{size=+2}THEN {size=+2}THE {size=+2}WHOLE {size=+2}WORLD!!!{/size}"
+    myr "{size=+2}THEN{/size} {size=+2}THE{/size} {size=+2}WHOLE{/size} {size=+2}WORLD!!!{/size}"
     $ ccg2 = 34
     g9 "ARGH, HERE IT COMES SLUTS!"
     $ ccg2 = 35
@@ -975,7 +975,7 @@ label hermione_map_sex:
     ">It all proves too much for Hermione, causing her hips to buck wildly, desperate for any additional stimulation."
     g4 "That's it whore! You've done it now!"
     ">You grab onto Hermione's hips and start pumping for dear life."
-    her "{image=textheart}{image=textheart}{size=+5}No! I just came! {size=+5}STOP!!!{/size}{image=textheart}{image=textheart}"
+    her "{image=textheart}{image=textheart}{size=+5}No! I just came! STOP!!!{/size}{image=textheart}{image=textheart}"
     ">The halls resonate with Hermione's incoherrent moans and the forceful slapping of her ass against your hips."
     g4 "TAKE THIS!!!"
     ">You dump your load into hermione's limp body as you hold her up."

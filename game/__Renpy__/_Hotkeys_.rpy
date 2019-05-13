@@ -47,7 +47,7 @@ init -2 python:
     menu = custom_menu
 
 #Add hotkeys to main_room_menu screen (_main_room_.rpy)
-screen hotkeys_main:
+screen hotkeys_main():
     tag hotkeys_main
     
     if map_unlocked:
@@ -68,7 +68,7 @@ screen hotkeys_main:
     key hkey_ui_lock action ToggleVariable("toggle_ui_lock", False, True)
 
 #Add hotkeys to say screen (screens.rpy)
-screen hotkeys_say:
+screen hotkeys_say():
     tag hotkeys_say
     if renpy.variant('android'):
         key "game_menu" action ToggleVariable("hkey_chat_hidden", False, True)
@@ -76,7 +76,7 @@ screen hotkeys_say:
         key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)
         key hkey_mhide action ToggleVariable("hkey_chat_hidden", False, True)
         
-screen rollback_check:
+screen rollback_check():
     tag rollback_check
     if not tried_rollback:
         key "rollback" action [SetVariable("tried_rollback", True), Jump("hg_wager_bj_secret")]

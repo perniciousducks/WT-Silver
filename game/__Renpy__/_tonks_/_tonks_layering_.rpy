@@ -1,6 +1,6 @@
 
 
-screen tonks_main:
+screen tonks_main():
     ### BASE IMAGE
     add tonks_base xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the base body
     add tonks_l_arm xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) #Add the arms
@@ -69,7 +69,7 @@ screen tonks_main:
     zorder tonks_zorder
 
 
-screen tonks_uniform:
+screen tonks_uniform():
     tag tonks_main
 
     ### Piercings
@@ -117,7 +117,7 @@ screen tonks_uniform:
     zorder tonks_zorder
 
 
-screen tonks_outfit:
+screen tonks_outfit():
     tag tonks_main
 
     for i in tonks_outfit_GLBL.getOutfitLayers():

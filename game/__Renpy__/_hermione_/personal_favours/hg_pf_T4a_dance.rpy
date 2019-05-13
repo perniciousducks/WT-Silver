@@ -1331,12 +1331,12 @@ label hg_pf_dance:
                     pause.2
                     $ tt_xpos=670
                     $ tt_ypos=200
-                    show screen thought
-                    with d3
+                    #show screen thought <- screen does not exist
+                    #with d3
                     pause.5
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
-                    hide screen thought
-                    with d3
+                    #hide screen thought <- screen does not exist
+                    #with d3
                     pause.2
 
                     #Returns from the door

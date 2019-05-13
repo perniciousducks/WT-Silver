@@ -172,7 +172,7 @@ image lightning: #Lightening during rain behind the window.
     pause 20
     repeat
 
-screen weather:
+screen weather():
     zorder -1
     if daytime:
         if weather_gen < 4:# (cloud across sky)

@@ -372,11 +372,14 @@ label potion_scene_7: #hyper sensitivity potion
     m "Fair enough, here it is."
     menu:
         "-Drop it on her chest-":
-            jump potion_scene_7_1
+            pass
+            #jump potion_scene_7_1 <- label does not exist
         "-Hand it to her-":
-            jump potion_scene_7_2
+            pass
+            #jump potion_scene_7_2 <- label does not exist
         "-Drop it on her skirt-":
-            jump potion_scene_7_3
+            pass
+            #jump potion_scene_7_3 <- label does not exist
 
 
 
@@ -933,7 +936,7 @@ label potion_scene_3_4_1:
     $ ccg2 = 29
     her "Each time is just another stronger {image=textheart}orgasm{image=textheart}..."
     $ ccg2 = 30
-    her "{size=+10}AND{image=textheart} THEY{image=textheart} NEVER{image=textheart} STOOO{image=textheart}OOOP!!!!!!"
+    her "{size=+10}AND{image=textheart} THEY{image=textheart} NEVER{image=textheart} STOOO{image=textheart}OOOP!!!!!!{/size}"
     g4 "Sounds nice... and what about when I give your fat ass a nice... slap?"
     $ renpy.play('sounds/slap.mp3')
     show screen white

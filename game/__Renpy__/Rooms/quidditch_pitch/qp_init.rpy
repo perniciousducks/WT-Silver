@@ -3,7 +3,7 @@ init:
     $ qp_mob_reaction = [None, None, None]
     $ qp_spotlight = False
 
-screen quidditch_pitch:
+screen quidditch_pitch():
     tag quidditch_pitch
     zorder 0
     add "images/rooms/quidditch_pitch/bg.png"
@@ -16,7 +16,7 @@ screen quidditch_pitch:
     if qp_spotlight:
         add "images/rooms/quidditch_pitch/spotlight.png"
     
-screen quidditch_pitch_overlay:
+screen quidditch_pitch_overlay():
     tag quidditch_pitch_overlay
     zorder 5
     add "images/rooms/quidditch_pitch/podium_top.png"

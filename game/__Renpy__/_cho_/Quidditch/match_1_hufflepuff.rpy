@@ -609,7 +609,7 @@ label hufflepuff_match:
     call sna_main("{size=-4}Bludgers... See those cannonball looking things whizzing around?{/size}","snape_03",ypos="head")
     m "{size=-4}Oh... The ones those boys are whacking at?{/size}"
     call sna_main("{size=-4}Right... Well, we enchant them to go after the students while they play.{/size}","snape_23",ypos="head")
-    m "{size=-4}I see... {w}{nw}"
+    m "{size=-4}I see... {/size}{w}{nw}"
     g4 "{size=-4}I see... {fast}Wait, Really? Why?{/size}"
     call sna_main("{size=-4}Makes things more interesting doesn’t it!{/size}","snape_02",ypos="head")
     m "{size=-4}So what happens when they hit their target?{/size}"
@@ -760,7 +760,7 @@ label hufflepuff_match_return:
     m "*Snore*{w=2.0}{nw}"
     pause 1.0
     $ renpy.sound.play("sounds/snore3.mp3")
-    m "*Sn{cps=8}oooooooreeee*{w=2.0}{nw}"
+    m "*Sn{cps=8}oooooooreeee*{/cps}{w=2.0}{nw}"
     pause 1.0
     $ renpy.sound.play("sounds/snore2.mp3")
     m "......{w=0.5}*Snore*{w=1.0}{nw}"
@@ -770,7 +770,7 @@ label hufflepuff_match_return:
     $ renpy.sound.play("sounds/punch01.mp3")
     call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid",trans="hpunch")
     $ renpy.sound.play("sounds/MaleGasp.mp3")
-    g4 "{size=+10}IT WASN'T ME!"
+    g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
     call cho_main("huh?{w=0.5} Are you okay, [cho_genie_name]?","angry","narrow","base","mid")
     m "Wha-{w=0.5}{nw}"

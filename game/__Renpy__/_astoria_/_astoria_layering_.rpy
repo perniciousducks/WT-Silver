@@ -1,6 +1,6 @@
 
 
-screen astoria_main:
+screen astoria_main():
     tag astoria_main
 
     ### BASE IMAGE
@@ -54,7 +54,7 @@ screen astoria_main:
     zorder astoria_zorder
 
 
-screen astoria_uniform:
+screen astoria_uniform():
     tag astoria_main
 
     ### CLOTHES
@@ -81,7 +81,7 @@ screen astoria_uniform:
     zorder astoria_zorder
 
 
-screen astoria_outfit:
+screen astoria_outfit():
     tag astoria_main
 
     for i in astoria_outfit_GLBL.getOutfitLayers():

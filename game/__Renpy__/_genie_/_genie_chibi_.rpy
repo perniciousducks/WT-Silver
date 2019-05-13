@@ -4,26 +4,26 @@
 
 
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
-screen g_c_u:
+screen g_c_u():
     tag genie
     add g_c_u_pic at Position(xpos=gen_chibi_xpos, ypos=gen_chibi_ypos)
     zorder 3
 
 
 ###  GENIE'S CUM UNIVERSAL SCREEN ###
-screen g_c_c_u:
+screen g_c_c_u():
     add g_c_c_u_pic at Position(xpos=genie_cum_chibi_xpos, ypos=genie_cum_chibi_ypos) #xpos=-45,ypos=5
     zorder 4
 
 
 
-screen genie: #Sitting behind desk.
+screen genie(): #Sitting behind desk.
     tag genie_chibi
     add "images/rooms/main_room/11_genie_00.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
     zorder 1
 
 
-screen rum_screen: #Rummaging through the cumpboard.
+screen rum_screen(): #Rummaging through the cumpboard.
     tag genie_chibi
     add "images/rooms/_objects_/cupboard/cupboard_open.png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center")
     add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center") #Pinup Girl
@@ -32,53 +32,53 @@ screen rum_screen: #Rummaging through the cumpboard.
     add "genie_rum_ani" xpos 160 ypos 110
     zorder 1
 
-screen feeding: #FEEDING THE PHOENIX.
+screen feeding(): #FEEDING THE PHOENIX.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
     add "grab_high" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
     zorder 1
 
-screen petting: #PETTING THE PHOENIX.
+screen petting(): #PETTING THE PHOENIX.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
     add "petting" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 390 ypos 65
     zorder 1
 
-screen sad_phoenix: #SAD SMILEY THAT SHOWS WHEN YOU PET THE BIRD.
+screen sad_phoenix(): #SAD SMILEY THAT SHOWS WHEN YOU PET THE BIRD.
     tag genie_chibi
     add "sad_01" xpos 423+140 ypos 130
     zorder 1
 
 
-screen paperwork: #GENIE DOING PAPERWORK BEHIND HIS DESK.
+screen paperwork(): #GENIE DOING PAPERWORK BEHIND HIS DESK.
     tag genie_chibi
     add "paperwork_02" xpos 84+140 ypos 205
 
 
-screen reading_near_fire: #GENIE READING A BOOK BY THE FIRE.
+screen reading_near_fire(): #GENIE READING A BOOK BY THE FIRE.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add "reading_near_fire" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
-screen reading: #GENIE READING A BOOK.
+screen reading(): #GENIE READING A BOOK.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add "reading" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
-screen done_reading: #DONE READING THE BOOK.
+screen done_reading(): #DONE READING THE BOOK.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     add im.Flip("images/animation/reading_07.png", horizontal=True) xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
-screen done_reading_near_fire: #DONE READING THE BOOK BY THE FIRE.
+screen done_reading_near_fire(): #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
@@ -88,32 +88,32 @@ screen done_reading_near_fire: #DONE READING THE BOOK BY THE FIRE.
 
 ### JERKING OFF BEHIND DESK ###
 
-screen genie_jerking_off: #Genie sitting behind his desk and jerking off...
+screen genie_jerking_off(): #Genie sitting behind his desk and jerking off...
     tag genie_chibi
     add "genie_jerking_off" xpos 218 ypos 205
     zorder 2
 
-screen genie_jerking_sperm: #Genie's behind desk cum animation, CUM ONLY!
+screen genie_jerking_sperm(): #Genie's behind desk cum animation, CUM ONLY!
     add "genie_jerking_sperm_ani" xpos 218 ypos 205
     zorder 2
 
-screen genie_jerking_sperm_02: #Genie's behind desk cum still image, CUM ONLY!
+screen genie_jerking_sperm_02(): #Genie's behind desk cum still image, CUM ONLY!
     add "images/animation/jerking_sperm_11.png" xpos 218 ypos 205
     zorder 2
 
 
 ### JERKING OFF STANDING ###
 
-screen genie_jerking_off_standing:
+screen genie_jerking_off_standing():
     tag genie_chibi
     add "jerking_off_02_ani" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_jerking_off_standing_cum:
+screen genie_jerking_off_standing_cum():
     add "genie_cum_03" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_stands_holds_dick:
+screen genie_stands_holds_dick():
     tag genie_chibi
     add "images/animation/06_jerking_01.png" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
@@ -121,53 +121,53 @@ screen genie_stands_holds_dick:
 
 ### HANDJOB, Genie and Hermione ###
 
-screen genie_handjob:
+screen genie_handjob():
     tag genie_chibi
     add "handjob_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_handjob_pause:
+screen genie_handjob_pause():
     tag genie_chibi
     add "images/animation/12_handjob_01.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_handjob_kiss:
+screen genie_handjob_kiss():
     tag genie_chibi
     add "kiss_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_handjob_cum_on_shirt:
+screen genie_handjob_cum_on_shirt():
     add "on_shirt_cum_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_handjob_cum_on_shirt_pause:
+screen genie_handjob_cum_on_shirt_pause():
     add "images/animation/15_cum_21.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
-screen genie_handjob_cum_under_shirt:
+screen genie_handjob_cum_under_shirt():
     add "undershirt_cum_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 
 ### TITJOB HERMIONE ###
-screen genie_titjob:
+screen genie_titjob():
     tag genie_chibi
     add "titjob_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos)
 
-screen genie_titjob_pause:
+screen genie_titjob_pause():
     tag genie_chibi
     add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos)
 
-screen genie_titjob_cum_on_tits:
+screen genie_titjob_cum_on_tits():
     tag genie_chibi
     add "titjob_chest_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos+10)
 
-screen genie_titjob_cum_in_mouth:
+screen genie_titjob_cum_in_mouth():
     tag genie_chibi
     add "titjob_mouth_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos+10)
 
 
-screen genie_groping:
+screen genie_groping():
     tag genie_chibi
     add "groping_ass_ani" at Position(xpos=gen_chibi_xpos-285, ypos=gen_chibi_ypos-185)
 
@@ -175,14 +175,14 @@ screen genie_groping:
 
 ### SUSAN CHIBI SCREENS ###
 
-screen genie_stand:
+screen genie_stand():
     tag genie_chibi
 
     add gen_chibi_stand xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip #zoom (1.0/scaleratio)
 
     zorder gen_chibi_zorder
 
-screen genie_walk:
+screen genie_walk():
     tag genie_chibi
     add gen_chibi_walk         at gen_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom gen_chibi_flip #zoom (1.0/scaleratio)
 

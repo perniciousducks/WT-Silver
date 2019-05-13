@@ -14,9 +14,6 @@ label equip_bottom:
     #Susan
     if active_girl == "susan":
         jump equip_sus_bottom
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_bottom
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_bottom
@@ -698,12 +695,6 @@ label equip_ast_bottom:
 ### Equip Susan's Bottom ###
 label equip_sus_bottom:
     call set_sus_bottom(skirt_choice)
-
-    jump return_to_wardrobe
-
-### Equip Cho's Bottom ###
-label equip_cho_bottom:
-    call set_cho_bottom(skirt_choice)
 
     jump return_to_wardrobe
 

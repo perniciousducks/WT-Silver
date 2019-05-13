@@ -300,7 +300,7 @@ label cho_intro_1:
         gen "......{w=0.5}*Snore*{w=1.0}{nw}"
         call her_main("They are, for a fact. Completely legitimate... you tell her Professor!","clench","angryL",trans="hpunch")
         $ renpy.sound.play("sounds/snore3.mp3")
-        gen "*Sn{cps=8}oooooooreeee*{w=2.0}{nw}"
+        gen "*Sn{cps=8}oooooooreeee*{/cps}{w=2.0}{nw}"
         call her_main("Professor!","scream","angryCl",trans="hpunch")
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don’t I?","base","base")

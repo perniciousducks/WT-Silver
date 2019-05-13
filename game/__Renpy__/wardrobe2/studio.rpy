@@ -208,7 +208,7 @@ label studio(studio_return, studio_char):
         
     jump studio_after_init
 
-screen studio:
+screen studio():
     tag studio
     zorder 4
     
@@ -278,7 +278,7 @@ screen studio:
     if not studio_hide:
         use character_studio
     
-screen character_studio:
+screen character_studio():
     tag character_studio
     zorder 5
     

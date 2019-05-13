@@ -52,10 +52,10 @@ label u_end_ani:
     with d3
     return
 
-screen u_ani_pause:
+screen u_ani_pause():
     tag u_animation
     add u_ani_pause_img at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)
 
-screen u_ani_play:
+screen u_ani_play():
     tag u_animation
     add u_ani_play_img at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)

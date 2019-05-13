@@ -688,7 +688,7 @@ label imperio_spell_3:
     call ast_main("Answer the question, Susy...","open","base","base","mid")
     sus "..."
     sus "Please sir..."
-    sus "{size=-3}Coat {size=-3}me {size=-3}in {size=-3}your {size=-3}cum...{/size}"
+    sus "{size=-3}Coat{/size} {size=-3}me{/size} {size=-3}in{/size} {size=-3}your{/size} {size=-3}cum...{/size}"
     call ast_main("I knew it!","scream","wide","wide","wide")
     call ast_main("You're a dirty little slut after all aren't you!","clench","angry","angry","down")
     sus "I am not! I don't know why I'm down here!"
@@ -727,7 +727,7 @@ label imperio_spell_3:
     call ast_main("Then I'll let you go...","open","closed","base","mid")
     sus "Really? You mean I won't have to..."
     sus "Alright..."
-    sus "{size=-5}I'm a... {size=-3}slut...{/size}"
+    sus "{size=-5}I'm a...{/size} {size=-3}slut...{/size}"
     call ast_main("Hmmm, I'm not sure I heard anything... What about you, dumby?","pout","base","base","R")
     m "Ah... almost..."
     call ast_main("Go on susy... one more time...","smile","narrow","narrow","down")

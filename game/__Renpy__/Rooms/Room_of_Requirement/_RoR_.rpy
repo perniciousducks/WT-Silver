@@ -8,7 +8,7 @@ transform mirrage:
         alpha 0.0
         linear 0.5 alpha 1.0
 
-screen room_of_requirement:
+screen room_of_requirement():
     zorder 0
     add im.Flip("images/rooms/room_of_requirement/corridor.png", horizontal=True)
     if mirror_image != 0:
@@ -25,7 +25,7 @@ screen room_of_requirement:
 
     #use ui_top_bar
 
-screen room_of_requirement_overlay:
+screen room_of_requirement_overlay():
     tag foreground
     zorder 5
 
@@ -33,7 +33,7 @@ screen room_of_requirement_overlay:
     add "candle_fire_01" xpos 592 ypos 85
     add "candle_fire_02" xpos 248 ypos 50
 
-screen room_of_requirement_menu:
+screen room_of_requirement_menu():
     tag room_screen
     zorder 1
 
@@ -54,14 +54,14 @@ screen room_of_requirement_menu:
         hover "images/rooms/_objects_/doors/door_hover_night.png"
         action [Jump("return_office")]
 
-screen genie_stand_mirror:
+screen genie_stand_mirror():
     tag genie_chibi_mirror
 
     add gen_chibi_stand xpos gen_chibi_xpos-110 ypos gen_chibi_ypos xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
 
     zorder gen_chibi_zorder
 
-screen genie_walk_mirror:
+screen genie_walk_mirror():
     tag genie_chibi_mirror
 
     add gen_chibi_walk at gen_walk_trans(-walk_xpos, walk_xpos2-110, walk_ypos, walk_ypos2 ) xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
@@ -96,15 +96,15 @@ label mirror_menu:
         $ current_page += -1
         jump mirror_menu
 
-screen room_of_req_door:
+screen room_of_req_door():
     add "images/rooms/_objects_/doors/front_door.png" at fade_in(420, 105, 1)
     zorder -1
 
-screen floor_7th_door:
+screen floor_7th_door():
     add "images/rooms/_objects_/doors/front_door.png" xpos 420 ypos 105
     zorder -1
 
-screen floor_7th_screen:
+screen floor_7th_screen():
     add "images/rooms/room_of_requirement/corridor_edit.png"
     add "images/rooms/_objects_/candles/candle.png" xpos 0 ypos 95
     add "candle_fire_02" xpos 0 ypos 95
@@ -145,7 +145,7 @@ image flower_animation:
     "images/animation/Bouquet4.png"
     repeat
 
-screen floor_7th_menu:
+screen floor_7th_menu():
     imagebutton:
         xpos 420
         ypos 105

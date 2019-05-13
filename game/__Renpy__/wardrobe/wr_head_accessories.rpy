@@ -11,20 +11,17 @@ label equip_makeup:
     if active_girl == "hermione":
         jump equip_her_makeup
     #Luna
-    if active_girl == "luna":
-        jump equip_lun_makeup
+    #if active_girl == "luna":
+        #jump equip_lun_makeup
     #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_makeup
+    #if active_girl == "astoria":
+        #jump equip_ast_makeup
     #Susan
-    if active_girl == "susan":
-        jump equip_sus_makeup
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_makeup
+    #if active_girl == "susan":
+        #jump equip_sus_makeup
     #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_makeup
+    #if active_girl == "tonks":
+        #jump equip_ton_makeup
 
 
 ### Equip Hermione's Makeup ###
@@ -194,9 +191,6 @@ label equip_head_accessory:
     #Susan
     if active_girl == "astoria":
         jump equip_sus_head_accessory
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_head_accessory
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_head_accessory
@@ -435,10 +429,10 @@ label equip_lun_head_accessory:
 
 ### Equip Astoria's Accessory ###
 label equip_ast_head_accessory:
-    if head_accessory_choice in []:
-        call set_ast_ears(head_accessory_choice)
-    if head_accessory_choice in []:
-        call set_ast_glasses(head_accessory_choice)
+    #if head_accessory_choice in []:
+        #call set_ast_ears(head_accessory_choice)
+    #if head_accessory_choice in []:
+        #call set_ast_glasses(head_accessory_choice)
     if head_accessory_choice in ["boss_hat"]:
         call set_ast_hat(head_accessory_choice)
 
@@ -446,32 +440,21 @@ label equip_ast_head_accessory:
 
 ### Equip Susan's Accessory ###
 label equip_sus_head_accessory:
-    if head_accessory_choice in []:
-        call set_sus_ears(head_accessory_choice)
-    if head_accessory_choice in []:
-        call set_sus_glasses(head_accessory_choice)
+    #if head_accessory_choice in []:
+        #call set_sus_ears(head_accessory_choice)
+    #if head_accessory_choice in []:
+        #call set_sus_glasses(head_accessory_choice)
     if head_accessory_choice in []:
         call set_sus_hat(head_accessory_choice)
 
     jump return_to_wardrobe
 
-### Equip Cho's Accessory ###
-label equip_cho_head_accessory:
-    if head_accessory_choice in []:
-        call set_cho_ears(head_accessory_choice)
-    if head_accessory_choice in []:
-        call set_cho_glasses(head_accessory_choice)
-    if head_accessory_choice in ["hat_witch","snitch","bow_sailor_yellow","bow_sailor_blue","bow_sailor_dark_blue","bow_sailor_green","bow_sailor_red"]:
-        call set_cho_hat(head_accessory_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Tonks's Accessory ###
 label equip_ton_head_accessory:
-    if head_accessory_choice in []:
-        call set_ton_ears(head_accessory_choice)
-    if head_accessory_choice in []:
-        call set_ton_glasses(head_accessory_choice)
+    #if head_accessory_choice in []:
+        #call set_ton_ears(head_accessory_choice)
+    #if head_accessory_choice in []:
+        #call set_ton_glasses(head_accessory_choice)
     if head_accessory_choice in ["gimp_mask_1","gimp_mask_2","gimp_mask_3","gimp_mask_4","gimp_mask_5"]:
         call set_ton_mask(head_accessory_choice)
     if head_accessory_choice in ["hat_witch","hat_maid","paper_bag_1","paper_bag_2","paper_bag_3"]:

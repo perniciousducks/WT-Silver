@@ -7,21 +7,17 @@
 # Screen that's used to display adv-mode dialogue.
 # http://www.renpy.org/doc/html/screen_special.html#say
     
-screen say:
+screen say(who, what, side_image=False):
     zorder 6 #Otherwise the character sprite would be obscuring it.
 
     #Hotkeys
     use hotkeys_say
-
-    # Defaults for side_image and two_window
-    default side_image = None
-    default two_window = True
     
     #Add "hidden" window
     if hkey_chat_hidden:
         window:
             xalign 0.5
-            yalign 1.0
+            yalign 0.99
             if daytime and not persistent.nightmode:
                 style "say_who_window_day"
                 text "Hidden" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
@@ -33,63 +29,37 @@ screen say:
             action SetVariable("hkey_chat_hidden", False)
             style "empty"
 
-    # Decide if we want to use the one-window or two-window variant.
-    if not two_window:
-        # The one window variant.
-        vbox:
-            if hkey_chat_hidden:
-                ypos 1000
-                
-            style "say_two_window_vbox"
-            window:
-                id "window"
-
-                has vbox:
-                    style "say_vbox"
-                
-                if daytime and not persistent.nightmode:
-                    if who:
-                        text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False
-                    text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
-                else:
-                    if who:
-                        text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False
-                    text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
-
-    else:
-        # The two window variant.
-        vbox:
             #Its the easiest way to hide the chat window without breaking the game, really
             if hkey_chat_hidden:
                 ypos 1000
+    else:
+        window id "window":
+            has vbox:
+                style "say_vbox"
                 
-            style "say_two_window_vbox"
-
             if who:
                 window:
+                    xalign 0
+                    yalign 0
+                    yoffset -45
+                    xoffset -15
                     if daytime and not persistent.nightmode:
                         style "say_who_window_day"
                         text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
                     else:
                         style "say_who_window_night"
                         text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
-
-            window:
-                id "window"
-
-                has vbox:
-                    style "say_vbox"
-                
-                if daytime and not persistent.nightmode:
-                    text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
-                else:
-                    text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
+            
+            if daytime and not persistent.nightmode:
+                text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
+            else:
+                text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
 
     # If there's a side image, display it above the text.
     if side_image:
         add side_image
-    else:
-        add SideImage() xalign 0.0 yalign 1.0
+    #else:
+        #add SideImage() xalign 0.0 yalign 1.0
 
     # Use the quick menu.
     if not hkey_chat_hidden and not who == "":
@@ -101,7 +71,7 @@ screen say:
 # Screen that's used to display in-game menus.
 # http://www.renpy.org/doc/html/screen_special.html#choice
 
-screen choice:
+screen choice(items):
     add "interface/bld.png"
     window:
         style "menu_window"
@@ -145,7 +115,7 @@ init -2:
 # Screen that's used to display renpy.input()
 # http://www.renpy.org/doc/html/screen_special.html#input
     
-screen input:
+screen input(prompt):
     tag input
     zorder 15 #Always on top
     
@@ -170,7 +140,7 @@ screen input:
 # Screen used for nvl-mode dialogue and menus.
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 
-screen nvl:
+screen nvl(dialogue, items=None):
     zorder 7
     window:
         style "nvl_window"
@@ -222,7 +192,7 @@ screen nvl:
 
 
 # Main Menu
-screen main_menu:
+screen main_menu():
     tag menu
     zorder 5
 
@@ -312,7 +282,7 @@ init -2:
 
 
 # Extras
-screen extras:
+screen extras():
     tag menu
     zorder 5
 
@@ -342,7 +312,7 @@ init -2 python:
 # Screen that's included in other screens to display the game menu
 # navigation and background.
 # http://www.renpy.org/doc/html/screen_special.html#navigation
-screen navigation:
+screen navigation():
 
     # The background of the game menu.
     window:
@@ -478,7 +448,7 @@ screen file_picker():
                             
                         key "save_delete" action FileDelete(i, persistent.delwarning)
 
-screen save:
+screen save():
     tag menu
 
     use navigation
@@ -486,7 +456,7 @@ screen save:
 
     zorder 5
 
-screen load:
+screen load():
     tag menu
 
     use navigation
@@ -507,7 +477,7 @@ init -2:
 # Screen that allows the user to change the preferences.
 # http://www.renpy.org/doc/html/screen_special.html#prefereces
 
-screen preferences:
+screen preferences():
     tag menu
 
     # Include the navigation.
@@ -691,8 +661,8 @@ init -2:
 #
 # Screen that asks the user a yes or no question.
 # http://www.renpy.org/doc/html/screen_special.html#yesno-prompt
-
-screen yesno_prompt:
+    
+screen confirm(message, yes_action, no_action):
 
     modal True
 
@@ -700,32 +670,28 @@ screen yesno_prompt:
         style "gm_root"
 
     frame:
-        style_group "yesno"
+        style_prefix "confirm"
 
         xfill True
-        xmargin .05
-        ypos .1
-        yanchor 0
-        ypadding .05
+        xmargin 50
+        ypadding 25
+        yalign .25
 
-        has vbox:
-            xalign .5
-            yalign .5
-            spacing 30
+        vbox:
+            xfill True
+            spacing 25
 
-        label _(message):
-            xalign 0.5
+            text _(message):
+                text_align 0.5
+                xalign 0.5
 
-        hbox:
-            xalign 0.5
-            spacing 100
-
-            textbutton _("Yes") action yes_action
-            textbutton _("No") action no_action
-
+            hbox:
+                spacing 100
+                xalign .5
+                textbutton _("Yes") action yes_action
+                textbutton _("No") action no_action
     # Right-click and escape answer "no".
     key "game_menu" action no_action
-
     zorder 6
 
 init -2:
@@ -742,7 +708,7 @@ init -2:
 #
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
-screen quick_menu:
+screen quick_menu():
 
     # Add an in-game quick menu.
     if renpy.variant('android'):
@@ -790,7 +756,7 @@ init -2:
     #config.default_afm_time = 10
     #config.default_afm_enable = False
     
-screen input:
+screen input():
     tag input
     zorder 15 #Always on top
     

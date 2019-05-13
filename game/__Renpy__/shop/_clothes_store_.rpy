@@ -2,7 +2,7 @@
 
 ### CLOTHING STORE ###
 
-screen clothing_store_room:
+screen clothing_store_room():
     tag room_screen
 
     if daytime:
@@ -89,7 +89,7 @@ label close_clothing_store:
 
 
 
-screen clothing_store_menu:
+screen clothing_store_menu():
     tag store_menu
     if store_category == 0:
         $ UI_xpos_offset = 0

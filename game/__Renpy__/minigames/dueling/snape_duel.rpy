@@ -89,7 +89,7 @@ label duel_main:
     call screen duel_buttons
 
 
-screen duel_buttons:
+screen duel_buttons():
     zorder 10
 
     imagebutton: # attack
@@ -353,9 +353,9 @@ label snape_attack:
         show screen minus_100_genie
         $ genie_hp -= 100
     elif game_difficulty == 2: #Normal
-        hide screen minus_200_genie
-        show screen minus_200_genie
-        $ genie_hp -= 200
+        hide screen minus_100_genie
+        show screen minus_100_genie
+        $ genie_hp -= 100
     else: #Hardcore
         hide screen minus_300_genie
         show screen minus_300_genie
@@ -382,7 +382,7 @@ label snape_attack_guard:
 
 
 ### DUEL ###
-screen duel:
+screen duel():
     zorder 2
 
     use chair_left
@@ -416,7 +416,7 @@ screen duel:
             add "ch_sna duel_01" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
 
 
-screen hp_bar:
+screen hp_bar():
     zorder 3
 
     ### health bar is 271 px wide ###
@@ -973,7 +973,7 @@ init -1:
         pause.2
 
 
-screen snape_glass:
+screen snape_glass():
     # add "interface/blackfade.png"
     add "glass" at Position(xpos=0,ypos=0)
     zorder 2

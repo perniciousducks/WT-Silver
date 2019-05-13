@@ -2,7 +2,7 @@
 
 ### Potions Room ###
 
-screen potions_room:
+screen potions_room():
     tag room_screen
 
     if daytime:

@@ -123,14 +123,14 @@ screen snape_main(wand=False):
         add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
     zorder snape_zorder
 
-screen snape_picture_frame:
+screen snape_picture_frame():
     add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
     zorder snape_zorder+1
 
 
 
 ### SNAPE HEAD
-screen snape_head:
+screen snape_head():
     tag big_snape
 
     add s_sprite xpos snape_head_xpos ypos snape_head_ypos zoom (1.0/snape_scaleratio)
@@ -139,7 +139,7 @@ screen snape_head:
 
 
 ### SNAPE EMOTIONS
-screen s_emo_01: #Closed eyes and closed mouth.
+screen s_emo_01(): #Closed eyes and closed mouth.
     tag semo
 
     add "characters/snape/main/s_emo_01.png" xpos tt_xpos ypos tt_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)

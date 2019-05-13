@@ -1,6 +1,6 @@
 
 
-screen weasley_store_room:
+screen weasley_store_room():
     tag room_screen
 
     if daytime:
@@ -225,7 +225,7 @@ label close_weasley_store:
 
 
 
-screen weasley_store_menu:
+screen weasley_store_menu():
     tag store_menu
     $ UI_xpos_offset = 100
 

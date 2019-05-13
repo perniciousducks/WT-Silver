@@ -2,7 +2,7 @@
 
 # Luna Screens.
 
-screen luna_main:
+screen luna_main():
     tag luna_main
 
     ### BASE IMAGE
@@ -78,7 +78,7 @@ screen luna_main:
     zorder luna_zorder
 
 
-screen luna_uniform:
+screen luna_uniform():
     tag luna_main
 
     ### CLOTHES
@@ -107,7 +107,7 @@ screen luna_uniform:
     zorder luna_zorder
 
 
-screen luna_outfit:
+screen luna_outfit():
     tag luna_main
 
     for i in luna_outfit_GLBL.getOutfitLayers():

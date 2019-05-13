@@ -11,14 +11,11 @@ label equip_misc_item:
     if active_girl == "luna":
         jump equip_lun_misc_item
     #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_misc_item
+    #if active_girl == "astoria":
+        #jump equip_ast_misc_item
     #Susan
-    if active_girl == "susan":
-        jump equip_sus_misc_item
-    #Cho
-    if active_girl == "cho":
-        jump equip_cho_misc_item
+    #if active_girl == "susan":
+        #jump equip_sus_misc_item
     #Tonks
     if active_girl == "tonks":
         jump equip_ton_misc_item
@@ -341,25 +338,35 @@ label equip_cho_misc_item:
         menu:
             ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
             "-top-" if cho_class.get_cloth("top"):
-                call set_cho_transparency(top=transparency)
+                pass
+                #call set_cho_transparency(top=transparency)
             "-bottom" if cho_class.get_cloth("bottom"):
-                call set_cho_transparency(bottom=transparency)
+                pass
+                #call set_cho_transparency(bottom=transparency)
             "-bra-" if cho_class.get_cloth("bra"):
-                call set_cho_transparency(bra=transparency)
+                pass
+                #call set_cho_transparency(bra=transparency)
             "-onepiece-" if cho_wear_onepiece:
-                call set_cho_transparency(onepiece=transparency)
+                pass
+                #call set_cho_transparency(onepiece=transparency)
             "-panties-" if cho_class.get_cloth("panties"):
-                call set_cho_transparency(panties=transparency)
+                pass
+                #call set_cho_transparency(panties=transparency)
             "-garterbelt-" if cho_class.get_cloth("garter"):
-                call set_cho_transparency(garterbelt=transparency)
+                pass
+                #call set_cho_transparency(garterbelt=transparency)
             "-gloves-" if cho_class.get_cloth("gloves"):
-                call set_cho_transparency(gloves=transparency)
+                pass
+                #call set_cho_transparency(gloves=transparency)
             "-stockings-" if cho_class.get_cloth("stockings"):
-                call set_cho_transparency(stockings=transparency)
+                pass
+                #call set_cho_transparency(stockings=transparency)
             "-robe-" if cho_class.get_cloth("robe"):
-                call set_cho_transparency(robe=transparency)
+                pass
+                #call set_cho_transparency(robe=transparency)
             "-outfit-" if cho_wear_outfit:
-                call set_cho_transparency(outfit=transparency)
+                pass
+                #call set_cho_transparency(outfit=transparency)
             "-Never mind-":
                 jump return_to_wardrobe
 

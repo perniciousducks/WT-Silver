@@ -79,7 +79,7 @@ label color_cloth_test:
     jump color_cloth_test
 
 
-screen cloth_test:
+screen cloth_test():
     python:
         if not color_preview == None:
             current_clothing.color[active_layer] = color_preview
@@ -114,7 +114,7 @@ label equip_cho_item(item): # ('_return', will be the id of the clothing item.)
     return
 
 # Toggle 'test_clothing_colors' to True to torn this screen on for Cho.
-screen cho_uniform_test:
+screen cho_uniform_test():
     tag cho_main
 
     ### CLOTHES

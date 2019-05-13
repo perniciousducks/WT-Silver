@@ -100,7 +100,7 @@ label open_pyzzle_box:
     $ unlocked_cards += [card_item_elf]
     jump main_room
 
-screen puzzle_board:
+screen puzzle_board():
 
     use close_button(close_var=lambda : -1)
 

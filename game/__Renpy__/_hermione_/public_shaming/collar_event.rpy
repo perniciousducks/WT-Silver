@@ -534,7 +534,7 @@ label slave_scene:
     hide screen hermione_main
     call gen_chibi("sit_behind_desk")
     call her_chibi("stand","mid","base")
-    call fade
+    #call fade <- label does not exist
 
     call her_walk(action="leave", speed=2.5)
 

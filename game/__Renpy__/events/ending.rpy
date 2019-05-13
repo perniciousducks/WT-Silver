@@ -308,10 +308,6 @@ label your_whore:
     m "(Snape?)"
     sna "I said, quiet down everyone!"
     sna "It is time to announce who will be this year's queen of the annual \"Hogwarts autumn ball\"."
-
-
-#    ann "Quiet down everyone, quiet down..."
-#    ann "It is time to choose this year's queen of the annual \"Hogwarts autumn ball\"."
     hide screen bld1
     with d5
 
@@ -1167,10 +1163,10 @@ label your_whore:
 
         show screen bld1
         with d7
-        cr1 "Show us both of them, Hermione!"
-        cr2 "Look! Her face is all covered in cum!"
-        cr1 "Have you no shame anymore, Hermione?!"
-        cr2 "Cover up, you slut!"
+        "Somebody from the crowd" "Show us both of them, Hermione!"
+        "Another voice from the crowd" "Look! Her face is all covered in cum!"
+        "Somebody from the crowd" "Have you no shame anymore, Hermione?!"
+        "Another voice from the crowd" "Cover up, you slut!"
         hide screen bld1
         with d7
 
@@ -1225,10 +1221,10 @@ label your_whore:
 
         show screen bld1
         with d7
-        cr1 "Whore!"
-        cr2 "Gryffindor slut!"
-        cr1 "I love you, Hermione!"
-        cr2 "Gryffindor rules!!!"
+        "Somebody from the crowd" "Whore!"
+        "Another voice from the crowd" "Gryffindor slut!"
+        "Somebody from the crowd" "I love you, Hermione!"
+        "Another voice from the crowd" "Gryffindor rules!!!"
 
         $ s_sprite = "characters/snape/main/snape_18.png"
         show screen s_head2
@@ -3120,21 +3116,8 @@ label test_credits:
     show screen uni_cr
     hide screen credits_chibi
 
-
-
-
-    centered "{cps=40}{size=+5}{color=#e5e297}-\{Sound Effects\}-{/color}{/size}\n    {color=#cbcbcb}http://www.freesound.org/{/color}\n\n
-
-    {size=+5}{color=#e5e297}-\{Music provided by\}-{/color}{/size}\n    {color=#cbcbcb}http://incompetech.com/{/color}\n\n
-
-
-
-
-    {size=+5}{color=#e5e297}-\{MUSIC\}-{/color}{/size}\n
-
-
-
-    {color=#e5e297}\"(Orchestral) Playful Tension\" {/color}{color=#cbcbcb}by Shadow16nh.{/color}\n
+    centered "{cps=40}{size=+5}{color=#e5e297}-\{Sound Effects\}-{/color}{/size}\n{color=#cbcbcb} http://www.freesound.org/ {/color}\n\n{size=+5}{color=#e5e297}-\{Music provided by\}-{/color}{/size}\n{color=#cbcbcb} http://incompetech.com/ {/color}\n\n
+    {size=+5}{color=#e5e297}-\{MUSIC\}-{/color}{/size}\n{color=#e5e297}\"(Orchestral) Playful Tension\" {/color}{color=#cbcbcb}by Shadow16nh.{/color}\n
     {color=#e5e297}\"Prologue\" {/color}{color=#cbcbcb}Harry Potter OST.{/color}\n
     {color=#e5e297}\"Shanghai Honey\"{/color} {color=#cbcbcb}by orange range.{/color}\n
     {color=#e5e297}\"Introducing Colin\"{/color} {color=#cbcbcb}Harry Potter OST.{/color}\n
@@ -3152,7 +3135,6 @@ label test_credits:
     {color=#e5e297}\"Music for Manatees\" {/color}{color=#cbcbcb}by  Kevin MacLeod.{/color}\n
     {color=#e5e297}\"Plaint\" {/color}{color=#cbcbcb}by  Kevin MacLeod.{/color}\n
     {color=#e5e297}\"Under-the-Radar\" {/color}{color=#cbcbcb}by  PhobyAk.{/color}{/cps}"
-
 
     $ xder = 670
     $ yder = 410

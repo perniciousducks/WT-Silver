@@ -641,7 +641,7 @@ label hg_wager_bj_secret:
 
     jump hg_wager_bj_secret_end
 
-screen hg_wager_bj_secret:
+screen hg_wager_bj_secret():
     zorder 4
     add im.MatrixColor("images/rooms/overlays/g_circular.png", im.matrix.saturation(0.0)*im.matrix.brightness(0.7))
 

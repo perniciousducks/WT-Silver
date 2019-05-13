@@ -1,7 +1,7 @@
 
 
 #Main Room Screen
-screen main_room:
+screen main_room():
     if daytime:
         add "images/rooms/_bg_/main_room_day.png"
     else:
@@ -37,7 +37,7 @@ screen main_room:
 
 
 #Main Room Overlay - (layer is on top of main_room_menu screen)
-screen main_room_overlay:
+screen main_room_overlay():
     tag room_overlay_screen
 
     #Decorations
@@ -63,7 +63,7 @@ screen main_room_overlay:
     zorder 3#2
 
 ### Main Room Menu Screen ###
-screen main_room_menu:
+screen main_room_menu():
     #Hotkeys
     if day != 1 and not renpy.variant('android'):
         use hotkeys_main

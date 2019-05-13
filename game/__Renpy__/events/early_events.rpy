@@ -1678,7 +1678,7 @@ label event_15:
         hide screen bld1
         pause.5
 
-        show screen hermione_stand_f #Hermione stands still.
+        #show screen hermione_stand_f <- screen does not exist
         with d7
 
         call her_main(".................................","annoyed","baseL",flip=True)

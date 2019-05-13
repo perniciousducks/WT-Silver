@@ -318,7 +318,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I thought we were done with the nicknames.", mouth="annoyed", eye="base")
         m "Hmm yes, well unfortunately according to the official rules, I may only give 80 points per day for masturbation related favors."
         call her_main("Oh I see, that's too bad.", mouth="upset", eye="down")
-        G9 "A real shame...but there nothing preventing you from doing those 'bonus’ acts on your own."
+        g9 "A real shame...but there nothing preventing you from doing those 'bonus’ acts on your own."
         call her_main("I guess...", mouth="upset", eye="frown")
         m "I'd certainly be happy about it...And perhaps my happiness will be its own reward?"
         call her_main("Heh. Yes, maybe it will. Well I better get to work then.", mouth="smile", eye="base")

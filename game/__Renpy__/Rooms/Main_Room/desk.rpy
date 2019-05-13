@@ -135,7 +135,7 @@ label desk:
     $ renpy.jump(_return)
 
 
-screen desk_empty:
+screen desk_empty():
     tag desk_interface
 
     zorder 5
@@ -145,7 +145,7 @@ screen desk_empty:
     if not daytime:
         add "interface/desk/_night_overlay_.png"
 
-screen desk_menu:
+screen desk_menu():
     tag desk_interface
 
     zorder 5
@@ -231,7 +231,7 @@ screen desk_menu:
     use close_button #Temporary
 
 
-screen crystal_ball:
+screen crystal_ball():
     tag desk_interface
 
     zorder 8
@@ -241,7 +241,7 @@ screen crystal_ball:
         add "interface/desk/hints/glow.png" xpos 268+40
         add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 268+125 xanchor 0.5
 
-screen watch:
+screen watch():
     #Day/Night Clock
     add "interface/desk/watch.png" xpos 603 ypos 0
     imagebutton:

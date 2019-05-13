@@ -363,7 +363,7 @@ label her_walk(xpos=walk_xpos, ypos=walk_ypos, speed=her_speed, action="", loite
         $ her_chibi_flip = 1
         show screen hermione_walk
         $ tmp = her_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ her_chibi_xpos = walk_xpos2
         $ her_chibi_ypos = walk_ypos2
         hide screen hermione_walk
@@ -375,7 +375,7 @@ label her_walk(xpos=walk_xpos, ypos=walk_ypos, speed=her_speed, action="", loite
         $ her_chibi_flip = -1
         show screen hermione_walk
         $ tmp = her_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ her_chibi_xpos = walk_xpos2
         $ her_chibi_ypos = walk_ypos2
         hide screen hermione_walk
@@ -426,7 +426,7 @@ label play_h_animation:
         show screen chair_left
     #if:
 
-    show screen u_h_animation
+    show screen u_h_ani_scr
     return
 
 label pause_u_animation:
@@ -439,7 +439,7 @@ label end_h_animation:
     if u_h_animation == "sex_ani":
         show screen genie
         hide screen chair_left
-        hide screen u_h_animation
+        hide screen u_h_ani_scr
     #if:
     return
 

@@ -100,7 +100,7 @@ label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loite
         $ sus_chibi_flip = 1
         show screen susan_walk
         $ tmp = sus_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sus_chibi_xpos = walk_xpos2
         $ sus_chibi_ypos = walk_ypos2
         hide screen susan_walk
@@ -112,7 +112,7 @@ label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loite
         $ sus_chibi_flip = -1
         show screen susan_walk
         $ tmp = sus_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sus_chibi_xpos = walk_xpos2
         $ sus_chibi_ypos = walk_ypos2
         hide screen susan_walk

@@ -229,7 +229,7 @@ screen main_room_menu():
             yanchor "center"
             idle "newanimation"
             hover "images/rooms/main_room/11_genie_02.png"
-            hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=195+140, my_tt_ypos=210), SetVariable("ui_hint", "Open desk menu") ]
+            hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("ui_hint", "Open desk menu") ]
             unhovered [Hide("gui_tooltip"), SetVariable("ui_hint", "")]
             action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("desk")]
 

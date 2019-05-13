@@ -102,7 +102,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         $ cho_chibi_flip = 1
         show screen cho_walk
         $ tmp = cho_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ cho_chibi_xpos = walk_xpos2
         $ cho_chibi_ypos = walk_ypos2
         hide screen cho_walk
@@ -114,7 +114,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         $ cho_chibi_flip = -1
         show screen cho_walk
         $ tmp = cho_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ cho_chibi_xpos = walk_xpos2
         $ cho_chibi_ypos = walk_ypos2
         hide screen cho_walk

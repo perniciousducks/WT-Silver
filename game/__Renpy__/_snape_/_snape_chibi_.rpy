@@ -192,7 +192,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
         $ sna_chibi_flip = 1
         show screen snape_walk
         $ tmp = sna_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sna_chibi_xpos = walk_xpos2
         $ sna_chibi_ypos = walk_ypos2
         hide screen snape_walk
@@ -204,7 +204,7 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
         $ sna_chibi_flip = -1
         show screen snape_walk
         $ tmp = sna_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ sna_chibi_xpos = walk_xpos2
         $ sna_chibi_ypos = walk_ypos2
         hide screen snape_walk

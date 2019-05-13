@@ -19,8 +19,8 @@ screen ccg():
 
     zorder 4
 
-screen gui_tooltip():
-    add my_picture xpos my_tt_xpos ypos my_tt_ypos
+screen gui_tooltip(img=None, xx=335, yy=210):
+    add img xpos xx ypos yy
     zorder 3
 
 screen notes(): #A bunch of notes poping out with a "win" sound effect.

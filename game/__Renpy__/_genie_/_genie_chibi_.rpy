@@ -414,7 +414,7 @@ label gen_walk(xpos=walk_xpos, ypos=walk_ypos, speed=gen_speed, action="", loite
         $ gen_chibi_flip = -1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( 1 )
         show screen genie_walk
         $ tmp = gen_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ gen_chibi_xpos = walk_xpos2
         $ gen_chibi_ypos = walk_ypos2
         hide screen genie_walk
@@ -426,7 +426,7 @@ label gen_walk(xpos=walk_xpos, ypos=walk_ypos, speed=gen_speed, action="", loite
         $ gen_chibi_flip = 1 #ToDo - Flip Genie's images so this can be the same as every other chibi ( -1 )
         show screen genie_walk
         $ tmp = gen_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ gen_chibi_xpos = walk_xpos2
         $ gen_chibi_ypos = walk_ypos2
         hide screen genie_walk

@@ -108,7 +108,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = 
         #else:
         show screen luna_walk
         $ tmp = luna_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ luna_chibi_xpos = walk_xpos2
         #hide screen luna_fly
         #hide screen luna_run
@@ -124,7 +124,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = 
         #else:
         show screen luna_walk_f
         $ tmp = luna_speed - redux_pause
-        pause tmp
+        $ renpy.pause(tmp)
         $ luna_chibi_xpos = walk_xpos2
         #hide screen luna_fly_f
         #hide screen luna_run_f

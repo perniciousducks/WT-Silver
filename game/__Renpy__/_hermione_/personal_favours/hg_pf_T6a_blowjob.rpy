@@ -1651,11 +1651,11 @@ label hg_blowjob_5: #Bondage facefuck scene
     her "!!!"
     her "Please, sir... No more!"
     menu:
-        "Start facefucking her":
+        "-Start facefucking her-":
             m "You're lucky I can't wait any longer."
             her "Thank you, [genie_name]..."
             pass
-        "Keep teasing her":
+        "-Keep teasing her-":
             m "I'll stop."
             "*SLAP*!"
             her "!!!"
@@ -1679,7 +1679,7 @@ label hg_blowjob_5: #Bondage facefuck scene
             "*SLAP*!"
             her "!!!"
             m "More."
-            her "{size=+2}Fuck{/size} {size=+4}my{/size} {size=+6}face!{/size} Fuck my face until I can't breathe! {size+=8}Pleeeaaase...{/size}"
+            her "{size=+2}Fuck{/size} {size=+4}my{/size} {size=+6}face!{/size} Fuck my face until I can't breathe! {size=+8}Pleeeaaase...{/size}"
             m "If you insist..."
     ">With that you gently help the red bottomed young girl onto her knees, leaving her hands tied uselessly behind her as she gazes up at you with fear and anticipation."
     m "Ready?"

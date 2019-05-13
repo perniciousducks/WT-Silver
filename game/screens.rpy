@@ -7,7 +7,7 @@
 # Screen that's used to display adv-mode dialogue.
 # http://www.renpy.org/doc/html/screen_special.html#say
     
-screen say(who, what, side_image=False):
+screen say(who, what, side_image=None):
     zorder 6 #Otherwise the character sprite would be obscuring it.
 
     #Hotkeys
@@ -33,36 +33,30 @@ screen say(who, what, side_image=False):
             if hkey_chat_hidden:
                 ypos 1000
     else:
+        if who:
+            window:
+                ypos 470
+                if daytime and not persistent.nightmode:
+                    style "say_who_window_day"
+                    text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+                else:
+                    style "say_who_window_night"
+                    text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
         window id "window":
             has vbox:
-                style "say_vbox"
-                
-            if who:
-                window:
-                    xalign 0
-                    yalign 0
-                    yoffset -45
-                    xoffset -15
-                    if daytime and not persistent.nightmode:
-                        style "say_who_window_day"
-                        text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
-                    else:
-                        style "say_who_window_night"
-                        text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
-            
+                style "say_vbox"            
             if daytime and not persistent.nightmode:
                 text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
             else:
                 text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
 
-    # If there's a side image, display it above the text.
     if side_image:
-        add side_image
-    #else:
-        #add SideImage() xalign 0.0 yalign 1.0
+        add side_image xpos 20 yalign 1.0
+    else:
+        add SideImage() xalign 0.0 yalign 1.0
 
     # Use the quick menu.
-    if not hkey_chat_hidden and not who == "":
+    if not hkey_chat_hidden and not who == None:
         use quick_menu
 
 ##############################################################################

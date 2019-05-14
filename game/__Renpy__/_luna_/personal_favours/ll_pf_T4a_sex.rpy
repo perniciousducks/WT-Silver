@@ -1176,7 +1176,7 @@ label ll_pf_sex_bedroom:
     m "Mmmm, you know, I think you might be on to something with these rookiesports..."
     m "I haven't been able to get that tight little pussy of your out of my mind!"
     lun "Really?"
-    lun "For you to be think about that..."
+    lun "For you to be think about it too..."
     lun "They must be truly be out of control..."
     m "Mind giving me a hand getting rid of them?"
     lun "Of course!"

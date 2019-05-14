@@ -296,42 +296,39 @@ label luna_blowjob_under_desk:
     ">Luna quickly walks around your desk and crawls underneath..."
     m "Are you ok down there?"
     $ ccg_folder = "luna_desk"
-    $ ccg1 = "1"
-    $ ccg2 = "blank"
-    $ ccg3 = "blank"
-    show screen ccg
+    $ ccg("1", "blank", "blank")
     hide screen blkfade
     with d3
 
     lun "My goodness...{w=0.3} I've never seen so much..."
     m "Oh yeah...{w=0.4} that..."
-    $ ccg1 = "2"
+    $ ccg("2")
     lun "There's more magic in here than under my Wiggentree!"
     m "Wait..."
     m "Magic?"
-    $ ccg1 = "3"
+    $ ccg("3")
     lun "Can't you feel it, [lun_genie_name]?"
-    $ ccg1 = "4"
+    $ ccg("4")
     lun "It's so heavy in the air... It's {b}all{/b} over the wood..."
-    $ ccg1 = "5"
+    $ ccg("5")
     lun "You can almost taste it..."
     ">Luna takes a deep breath of the air under your soiled desk..."
-    $ ccg1 = "6"
+    $ ccg("6")
     lun "Wow..."
     m "Are you sure you're OK down there? I haven't cleaned it since...{w=0.3} well...{w=0.3} ever..."
     lun "I'm...{w=0.3} great..."
-    $ ccg1 = "7"
+    $ ccg("7")
     lun "Now..."
     ">Luna takes another deep breath..."
-    $ ccg1 = "8"
+    $ ccg("8")
     lun "Are you ready to teach me this new technique?"
     m "(She's gotta be in on this... No one could be this oblivious...)"
     g9 "Certainly!"
     m "(Still, better not to look a gift horse in the mouth...)"
     m "Now, I'm going to need you to open your mouth..."
-    $ ccg1 = "9"
+    $ ccg("9")
     lun "OK!"
-    $ ccg1 = "10"
+    $ ccg("10")
     lun "Agh..."
     m "..."
 
@@ -339,24 +336,24 @@ label luna_blowjob_under_desk:
         "-Take your cock out-":
             ">While the naive young blonde sits under your desk you decide it's finally time for her to get to work."
             ">You slowly pull your hardening cock from underneath under your robe."
-            $ ccg1 = "11"
+            $ ccg("11")
             lun "..."
-            $ ccg1 = "12"
+            $ ccg("12")
             lun "{size=-7}wow...{/size}"
             m "Now this special technique requires you to suck those nasty little critters out of the affected area..."
             m "For me that's right here..."
             ">You give your thick cock a lazy stroke to emphasize."
-            $ ccg1 = "13"
+            $ ccg("13")
             lun "Is there any way in particular that you want me to suck it?"
             m "Imagine it's a tasty lollipop..."
             m "Just don't bite it."
-            $ ccg1 = "14"
+            $ ccg("14")
             lun "Okay then..."
             ">Without any further delay, Luna hops forward to take the head of your cock in her mouth."
 
         "-Shove it in her mouth!-":
             m "Open wide!"
-            $ ccg1 = "15"
+            $ ccg("15")
             lun "Aghhhh..."
             ">As the naive blonde kneels under your desk with her mouth open wide, you decide to reward her eagerness..."
             ">You quickly slip your hard clock from between your robes and into the girls warm mouth."
@@ -364,73 +361,73 @@ label luna_blowjob_under_desk:
         "-Make her take it out-":
             m "Now, seeing as how I'm a little tired..."
             m "Why don't you open my robe and pull out the 'affected area'..."
-            $ ccg1 = "9"
+            $ ccg("9")
             lun "Of course, [lun_genie_name]..."
             ">Luna reverently opens your robe and softly withdraws your hard cock."
-            $ ccg1 = "12"
+            $ ccg("10")
             lun "What do you..."
-            $ ccg1 = "13"
+            $ ccg("13")
             lun "What now, [lun_genie_name]?"
             m "Put the tip in your mouth and Imagine it's a tasty lollipop..."
             m "Just don't bite it."
-            $ ccg1 = "14"
+            $ ccg("14")
             lun "Mhmm!"
-            $ ccg1 = "15"
+            $ ccg("15")
             lun "Okay then!"
             ">Without any further delay, Luna hops forward to take the head of your cock in her mouth."
 
-    $ ccg1 = "16"
+    $ ccg("16")
     ">Luna begins sucking in earnest as her tongue starts darting along the underside of the head of your sensitive cock at a blistering pace."
-    $ ccg1 = "17"
+    $ ccg("17")
     g4 "By the gods girl!"
-    $ ccg1 = "18"
+    $ ccg("18")
     lun "Hee howhng howng? (Is something wrong?)"
     ">Luna somehow manages to form her muffled response without once slowing her tongue."
     g4 "N-no, of course not...{w=0.3} You're doing great..."
-    $ ccg1 = "19"
+    $ ccg("19")
     lun "Hi hm? (I am?)"
     g4 "Yes..."
-    $ ccg1 = "20"
+    $ ccg("20")
     lun "Hnnk hoo hrr! (Thank you, [lun_genie_name]!)"
     ">In response to your misguided praise, Luna's tongue seems to increase in speed."
     g4 "Argh..."
-    $ ccg1 = "17"
+    $ ccg("17")
     lun "(Those wrackspurts must really be affecting him...)"
-    $ ccg1 = "21"
+    $ ccg("21")
     lun "(I better try even harder!)"
     g4 "Would you please slow down miss lovegood!"
-    $ ccg1 = "13"
+    $ ccg("13")
     ">Luna takes your cock out of her mouth."
     g4 "Ah...."
-    $ ccg1 = "12"
+    $ ccg("12")
     lun "Was I doing a bad job, [lun_genie_name]?"
     m "You were just going a little-"
-    $ ccg1 = "22"
+    $ ccg("22")
     lun "I knew I was hurting you!"
-    $ ccg1 = "23"
+    $ ccg("23")
     lun "Maybe we should stop?"
     m "What? Gods no!"
-    $ ccg1 = "24"
+    $ ccg("24")
     lun "But wasn't I doing it wrong?"
     m "Of course not..."
-    $ ccg1 = "25"
+    $ ccg("25")
     lun "Why did you ask me to slow down then?"
     m "I didn't... It was those nasty wrinklespores!"
     m "They must have made me say it so you'd leave them alone..."
-    $ ccg1 = "26"
+    $ ccg("26")
     lun "Those tricky little..."
-    $ ccg1 = "13"
+    $ ccg("13")
     lun "Don't worry, [lun_genie_name], I'll have them out in no time!"
     ">With that, Luna begins her tongue lashing of your cock anew."
-    $ ccg1 = "21"
+    $ ccg("21")
     g4 "A-Ah..."
     g4 "G-good work miss Lovegood..."
-    $ ccg1 = "27"
+    $ ccg("27")
     lun "Hnnk hoo hrr! (Thank you, [lun_genie_name]!)"
     show screen blkfade
     with d3
 
-    $ ccg1 = "28"
+    $ ccg("28")
     ">Over the next hour, Luna continues to hide under your desk as she relentlessly assaults your cock."
     ">She has an uncanny ability to tell when you're about to cum and slows to a halt every time..."
     hide screen blkfade
@@ -438,33 +435,36 @@ label luna_blowjob_under_desk:
 
     g4 "I-I think this is it... again..."
     lun "Hmmmm... (Hmmmm...)"
-    $ ccg1 = "17"
+    $ ccg("17")
     lun "Hhhoohhyyy! (OK!)"
     m "Oh, thank-"
     ">Before you can finish your sentence Luna suddenly thrusts her head forward, forcing your cock down the young girl's throat."
-    $ ccg1 = "29"
+    $ ccg("29")
     g4 "OH GODS!"
     g4 "HERE IT CUMS!"
     ">You grab the desk to steady yourself as your balls begin to contract and fire out one of the largest loads of your life."
-    $ ccg1 = "30"
+    call cum_block
+    $ ccg("30")
     lun "!!!"
     g4 "Oh fuck...{w=0.3} fuck yes!!!"
-    $ ccg1 = "31"
+    call cum_block
+    $ ccg("31")
     ">Your cock continues to fire shot after shot down her throat and into her stomach."
     ">Eventually this proves too much for the young girl, forcing her to pull back off until your cock rests in her mouth-"
-    $ ccg1 = "32"
+    $ ccg("32")
     ">Causing your cum to start firing directly into the poor girls mouth, quickly filling her cheeks and spurt out of her nose..."
-    $ ccg1 = "33"
+    $ ccg("33")
     lun "{size=+10}!!!{/size}"
     g4 "FUCK YES!!!"
-    $ ccg1 = "34"
+    $ ccg("34")
     ">The sheer force of your orgasm causes white dots to scatter across your vision as it finally dies off..."
-    $ ccg1 = "35"
-    ">In the afterglow of your titanic enjoyment, all that can be heard is Luna slowly slurping up your cum under the desk."
+    $ renpy.play('sounds/gulp.mp3')
+    $ ccg("35")
+    pause 1
     show screen blkfade
+    with d5
+    ">In the afterglow of your titanic enjoyment, all that can be heard is Luna slowly slurping up your cum under the desk."
     hide screen ccg
-    with d3
-
     ">Once done, she Eventually decides to crawl out..."
 
     call lun_chibi("stand","desk","base")
@@ -494,65 +494,69 @@ label ll_pf_blowjob_T1_marathon: # Call label
     with d3
 
     lun "Hmmmm... you don't know how heavy this has been on my mind sir..."
-    $ ccg1 = "37"
+    $ ccg("37")
     lun "All those nasty wrackspurts churning around in you..."
-    $ ccg1 = "38"
+    $ ccg("38")
     lun "But don't worry sir! I've got a foolproof plan to drag every single one off them out!"
     m "Oh really? And what does this plan involve?"
-    $ ccg1 = "39"
+    $ ccg("39")
     lun "The first part was the hardest...{w=0.3} Gillyweed isn't an easy thing to get..."
-    $ ccg1 = "40"
+    $ ccg("40")
     lun "But being able to breathe without using my throat will be worth it!"
     m "I'm liking the sound of this plan already!"
     m "What's part two?"
-    $ ccg1 = "39"
+    $ ccg("39")
     lun "It's the easiest part! All I need is my wand!"
     m "What's that fo-"
-    $ ccg1 = "15"
+    $ ccg("15")
     show screen white
+    $ renpy.play('sounds/magic2.mp3')
     lun "PETRIFICUS TOTALUS!"
     ">Your body cements itself in place as you lose complete control from the neck down."
     hide screen white
-    $ ccg1 = "39"
+    $ ccg("39")
     m "What have you done!? I can't move my legs!"
-    $ ccg1 = "41"
+    $ ccg("41")
     lun "Calm down sir, I'm not going to hurt you."
     m "Then why can't I move!?"
-    $ ccg1 = "36"
+    $ ccg("36")
     lun "I was just a little worried that those nasty wrackspurts would try to make us stop before we were finished..."
     m "(Oh no...)"
     m "What do you mean by... finished?"
-    $ ccg1 = "37"
+    $ ccg("37")
     lun "I already told you that I'm going to get {b}ALL{/b} of those tast- nasty wrackspurts out didn't I?"
-    $ ccg1 = "39"
+    $ ccg("39")
     lun "The petrification charm is just so you don't hurt yourself."
     m "Lun-"
     ">Before you're able to protest anymore, your jaw locks in place..."
     lun "Shh... that's it... Just imagine that you're under the Wiggentree..."
-    $ ccg1 = "36"
+    $ ccg("36")
     lun "We've got the whole day to look forward to..."
     m "(oh... no...)"
-    $ ccg1 = "37"
+    $ ccg("37")
     lun "Well, let's get started shall we?"
     show screen blkfade
-    with d3
+    with d2
+    pause 0.3
+    $ renpy.play('sounds/gltch.mp3')
+    with hpunch
+    gen "!!!!!!!"
     pause 0.5
-
-    #3 hours later
+    centered "{size=+7}{color=#cbcbcb}Three hours later..{/color}{/size}"
     pause 0.5
     $ ccg("blank","blank","blank", "luna_bj_loop_1")
     hide screen blkfade
     with d3
     #have loop here
-
+    
     m "Please Luna... you have to stop now..."
     g4 "four times is enough..."
     $ ccg("42","blank","blank")
     lun "Those tasty wrackspurts really have a hold on you don't they?"
     ">Luna gives your stressed balls a playful squeeze."
-    $ ccg1 = "43"
+    $ ccg("43")
     lun "Mmmm... I can still feel so much magic in here..."
-    $ ccg1 = "44"
+    $ ccg("44")
     lun "well, back to work!"
     $ ccg("blank","blank","blank", "luna_bj_loop_1")
     ">Luna's head dives forward as she gleefully impales your cock on her soft, magically smooth throat. "
@@ -561,8 +565,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     show screen blkfade
     with d3
     pause 0.5
-
-    #3 hours later
+    centered "{size=+7}{color=#cbcbcb}Few hours later..{/color}{/size}"
     $ ccg("blank","blank","blank", "luna_bj_loop_2")
     pause 0.5
     hide screen blkfade
@@ -576,18 +579,23 @@ label ll_pf_blowjob_T1_marathon: # Call label
     lun "*glck*hm-ha*glck*huu*glck*"
     g4 "NO!!!"
     ">The vibrations from her humming push you over the edge, earning an excited chirp from Luna as you fire another painful load into her stomach."
+    call cum_block
     g4 "Arghhhhhh..."
     m "Don't you... need to stop..."
     m "for lunch... or something..."
+    $ ccg("f44")
     lun "Slrp-*pop*"
+    pause 0.5
+    $ renpy.play('sounds/gulp.mp3')
     $ ccg("45","blank","blank")
+    pause 0.5
     lun "After swallowing all these wrackspurts? I don't think I'll need dinner sir, let alone lunch!"
     m "please..."
-    $ ccg1 = "46"
+    $ ccg("46")
     lun "Shhhh, it's okay sir... Just let me get rid of these tasty little wrackspurts and then you can have a nice night sleep..."
-    $ ccg1 = "47"
+    $ ccg("47")
     lun "Goodness knows they haven't been letting me get a good nights sleep..."
-    $ ccg1 = "48"
+    $ ccg("48")
     lun "I've been plotting out my revenge on them all week..."
     lun "Now..."
     $ ccg("blank","blank","blank", "luna_bj_loop_2")
@@ -595,19 +603,17 @@ label ll_pf_blowjob_T1_marathon: # Call label
     ">Luna renews her attack on your cock, lashing her tongue along the underside as she slams the tip down her throat..."
     m "ARGHHH-"
     show screen blkfade
-    with d3
+    with d5
     pause 0.5
-
-    #one eternity later
-
-    # ToDo, add next day transition here
-
-
-
-
-
-
+    stop music fadeout 1.5
+    ######################
+    # NEXT DAY TRANSITION#
+    ######################
+    play bg_sounds "sounds/day.mp3" fadeout 5.0 fadein 6.0
+    centered "{size=+7}{color=#cbcbcb}One eternity later..{/color}{/size}"
+    $ daytime=True
     pause 0.5
+    stop bg_sounds fadeout 3.0
     hide screen blkfade
     with d3
     g4 "Please... i can't... not any more... I'll die..."
@@ -615,34 +621,42 @@ label ll_pf_blowjob_T1_marathon: # Call label
     g4 "PLEASE"
     lun "*glck*glck*glck*"
     g4 "ARGHH!!! FUCKING UGH ARGHHHHHH!!!"
+    call cum_block
     $ ccg("53","blank","blank")
     lun "*glck*glck*glck*"
+    call cum_block
     g4 "!!!!!!!"
     lun "*glck*glck*glck*"
-    $ ccg1 = "45"
+    pause 0.5
+    $ renpy.play('sounds/gulp.mp3')
+    pause 1.5
+    g4 "Ugh.."
+    pause 1.5
+    $ renpy.play('sounds/kiss.mp3')
+    $ ccg("45")
     lun "Slrp-*pop*"
     ">Luna Finally pulls away from your cock..."
     lun "I think that's probably enough..."
-    $ ccg1 = "47"
+    $ ccg("47")
     lun "Even if I do think there were still a few too many wrackspurts in that last load..."
-    $ ccg1 = "45"
+    $ ccg("45")
     lun "Don't worry though, we can get them later!"
     m "No... not again... I can't..."
-    $ ccg1 = "49"
+    $ ccg("49")
     lun "Of course you can! How else are we going to rid the school of them?"
     m "I... suppose so..."
     m "But... at least give me a few days to recover..."
-    $ ccg1 = "50"
+    $ ccg("50")
     lun "A few days?!"
     m "At least..."
-    $ ccg1 = "51"
+    $ ccg("51")
     lun "Alright..."
     lun "I might not have been so thorough today if I knew you'd take so long to recover!"
     m "Well, at least you've learned a valuable lesson."
-    $ ccg1 = "45"
+    $ ccg("45")
     lun "I suppose i did! I think five hours is probably the limit from now on."
-    m "Five!- just hurry up and get yourself cleaned up, I'm about to pass out..."
-    $ ccg1 = "52"
+    m "Five!-..{w=0.5} just hurry up and get yourself cleaned up, I'm about to pass out..."
+    $ ccg("52")
     lun "Clean up? Why?"
 
     show screen blkfade
@@ -744,6 +758,8 @@ label ll_pf_blowjob_T1_slapping:
             $ lunCG('ahegao', 'wide', pos=15)
             ">With that, you unleash a colossal load down her throat!"
             $ lunCG(pos=7)
+            call cum_block
+            pause 1.0
             lun "!!!"
             $ lunCG(pos=15)
             g9 "Ughh... my balls have been aching ever since you drained them you little semen demon!"
@@ -790,6 +806,7 @@ label ll_pf_blowjob_T1_slapping:
         "\"Shutup and take this!!!\"(Coat her)":
             $ lunCG('dick', 'wide', 'open_tongue', extra_1='cum_1', pos=1)
             ">You begin firing off one of the largest loads of your life, taking care to make sure every square inch of the girl receives a thick coating of spunk."
+            call cum_block
             $ lunCG(extra_1='cum_3', eye='mad')
             g9 "Ugh... this is what you deserve after the other day."
             $ lunCG('up', 'seductive')
@@ -812,9 +829,10 @@ label ll_pf_blowjob_T1_slapping:
             $ lunCG('ahegao', 'sad', 'open_tongue')
             lun "Ah..."
             g9 "Oh that's it, here it comes you hungry little cumslut!"
+            ">With that, you begin firing a huge load, coating the poor girl in a thick layer of cum..."
+            call cum_block
             $ lunCG('dick', 'sad', 'open_tongue', extra_1='cum_3')
             lun "{image=textheart}{image=textheart}{image=textheart}"
-            ">With that, you begin firing a huge load, coating the poor girl in a thick layer of cum..."
             g9 "ugh yes...{w=0.3} take this slut..."
             lun "Ah..."
 
@@ -833,9 +851,10 @@ label ll_pf_blowjob_T1_slapping:
             lun "*sob* You'd make me go to class without...*sob*{w} you'd have so many left in you!*sob*"
             g9 "Ugh, that's it slut! Here it comes!"
             $ lunCG('up', 'sad', 'pout')
-            lun "*sob*O-o-ok*sob*"
-            $ lunCG('ahegao', 'wide', 'base', extra_1='cum_3')
+            lun "*sob*Yee-ee-s*sob*"
             ">With that, you begin firing a huge load, coating the poor girl in a thick layer of cum..."
+            call cum_block
+            $ lunCG('ahegao', 'wide', 'base', extra_1='cum_3')
             $ lunCG('ahegao', 'closed', 'base')
             lun "*sob*{image=textheart}*sob*{image=textheart}*sob*{image=textheart}*sob*"
             $ lunCG('ahegao', 'seductive')

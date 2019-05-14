@@ -148,7 +148,7 @@ label hufflepuff_match:
 
     call play_sound("footsteps")
     pause.8
-    call sna_chibi("stand","190","-20", flip=True)
+    call sna_chibi("stand","190",-20, flip=True)
     with d3
     pause.8
 
@@ -412,7 +412,7 @@ label hufflepuff_match:
     $ her_chibi_zorder   = 4
     $ gen_chibi_zorder   = 3
     call gen_chibi("stand", "130", "10", flip=False)
-    call sna_chibi("stand","190","-20", flip=True)
+    call sna_chibi("stand","190",-20, flip=True)
     with d3
     pause.2
 

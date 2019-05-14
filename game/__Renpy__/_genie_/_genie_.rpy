@@ -60,7 +60,7 @@ label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
     call transition(trans)
 
     if text != "":
-        $ renpy.say(msp,text)
+        $ renpy.say("Genie", text)
 
     if use_genie_head:
         hide screen genie_main

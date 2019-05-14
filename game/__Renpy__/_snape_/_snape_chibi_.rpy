@@ -52,7 +52,7 @@ label update_sna_chibi:
 
 
 
-label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos), pic = "", flip=False):
+label sna_chibi(action = "", xpos=sna_chibi_xpos, ypos=sna_chibi_ypos, pic = "", flip=False):
     hide screen snape_stand
 
     hide screen s_c_u
@@ -71,13 +71,13 @@ label sna_chibi(action = "", xpos=str(sna_chibi_xpos), ypos=str(sna_chibi_ypos),
             $ sna_chibi_xpos = 420
         elif xpos == "door":
             $ sna_chibi_xpos = 750
-        elif xpos.isdigit():
+        else:
             $ sna_chibi_xpos = int(xpos)
 
     if ypos != sna_chibi_ypos:
         if ypos in ["base","default"]:
             $ sna_chibi_ypos = 190
-        elif ypos.isdigit():
+        else:
             $ sna_chibi_ypos = int(ypos)
 
     #Snape Chibi Actions.

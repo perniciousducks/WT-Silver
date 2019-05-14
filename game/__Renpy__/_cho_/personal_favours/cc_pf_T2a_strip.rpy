@@ -564,7 +564,7 @@ label cc_pf_strip_T1_E3:
     m "You may leave now.{w} Dismissed."
     call cho_main("Wait Sir!{w} I can't leave just yet!","open","wide","base","mid")
     m "Why not? Don't tell me you want some points now after all..."
-    call cho_main("Not Sir, but...{w} I don't believe we are done here...","angry","base","sad","R")
+    call cho_main("No Sir, but...{w} I don't believe we are done here...","angry","base","sad","R")
     g9 "We aren't?"
     call cho_main("May I request something of you, Sir?","soft","narrow","sad","mid")
     m "Yes?{w} What is it?"

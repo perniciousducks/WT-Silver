@@ -132,7 +132,7 @@ label hufflepuff_match:
     call room("quidditch_pitch", True)
     $ qp_mob = 2 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
-    #call sna_chibi("stand","180","0", flip=True)
+    #call sna_chibi("stand","190","-20", flip=True)
     #call gen_chibi("stand", "130", "10")
     #call her_chibi("stand","375","105", flip=True)
     $ sna_chibi_zorder = 2
@@ -148,7 +148,7 @@ label hufflepuff_match:
 
     call play_sound("footsteps")
     pause.8
-    call sna_chibi("stand","190","0", flip=True)
+    call sna_chibi("stand","190","-20", flip=True)
     with d3
     pause.8
 
@@ -321,14 +321,14 @@ label hufflepuff_match:
             call sna_main("...","snape_03")
             call gen_main("Aye, fight and you may die...",face="base")
 
-            call sna_chibi("stand","300","80", flip=True)
+            call sna_chibi("stand","300","60", flip=True)
             call sna_main("I think it's time for you to step down from the...","snape_01")
             call gen_main("No, I'm just about to get to the best part!",face="angry")
             $ renpy.sound.play("sounds/cloth_sound.mp3")
             stop bg_sounds fadeout 2.0
 
             hide screen genie_main
-            call sna_chibi("stand","280","80", flip=True)
+            call sna_chibi("stand","280","60", flip=True)
             call gen_chibi("stand", "340", "45")
             with d3
 
@@ -339,14 +339,14 @@ label hufflepuff_match:
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
 
             hide screen genie_main
-            call sna_chibi("stand","300","80", flip=True)
+            call sna_chibi("stand","300","60", flip=True)
             call gen_chibi("stand", "360", "45")
             with d3
 
             call gen_main("This is our chance... they may take away our microphones... {w=0.3}But they...{nw}{fast}{w=1.0}But they...{w=0.5}{nw}",face="angry")
 
             hide screen genie_main
-            call sna_chibi("stand","260","80", flip=True)
+            call sna_chibi("stand","260","60", flip=True)
             call gen_chibi("stand", "320", "45")
             with d3
 
@@ -358,7 +358,7 @@ label hufflepuff_match:
 
             $ sna_chibi_zorder = 3
             $ gen_chibi_zorder   = 2
-            call sna_chibi("stand","260","80", flip=True)
+            call sna_chibi("stand","260","60", flip=True)
             call gen_chibi("stand", "320", "45", flip=True)
             with d3
 
@@ -412,7 +412,7 @@ label hufflepuff_match:
     $ her_chibi_zorder   = 4
     $ gen_chibi_zorder   = 3
     call gen_chibi("stand", "130", "10", flip=False)
-    call sna_chibi("stand","190","0", flip=True)
+    call sna_chibi("stand","190","-20", flip=True)
     with d3
     pause.2
 

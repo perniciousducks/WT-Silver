@@ -21,13 +21,13 @@ init -2 python:
         systemerror = ["Missing label", name]
         return "missing_label"
         
-    # If you're reading this it probably means you've got the warning message about old unusable files, since there has been hundreds of changes I cant guarantee if the game will work correctly if you decide to delete just the files listed below, make your life easier and simply delete the game and unpack it into new empty folder instead. -LoafyLemon
+    # If you're reading this it probably means you've got the warning message about old unusable files, since there has been hundreds of changes I cant guarantee if the game will work correctly if you decide to delete just the files/labels listed below, make your life easier and simply delete the game and unpack it into new empty folder instead. -LoafyLemon
     def check_for_old_files():
         path = "__Renpy__/_cho_/"
-        oldfiles = ["_cho_layering_.rpy", "_cho_layering_.rpyc", "_equip_labels_.rpy", "_equip_labels_.rpyc", "cho_private_favours.rpy", "cho_private_favours.rpyc", "quidditch.rpy", "quidditch.rpyc"]
+        oldfiles = ["cho_wear_buttplug", "update_cho_uniform", "set_cho_hair", "set_cho_hat", "set_cho_top", "set_cho_bottom", "set_cho_bra", "set_cho_onepiece", "set_cho_panties", "set_cho_garterbelt", "set_cho_neckwear", "set_cho_body_accessory", "set_cho_gloves", "set_cho_stockings", "set_cho_robe", "set_cho_gag", "set_cho_piercing", "set_cho_outfit", "set_cho_transparency", "update_cho_quidditch_outfit", "load_cho_clothing_saves", "cho_favor_1", "cho_favor_1_1", "cho_favor_1_2", "cho_favor_1_3", "jerk_off_to_cho", "cho_quidd_intro", "cho_quidd_1_1", "cho_quidd_1_2", "cho_quidd_1_3", "cho_quidd_2_1", "cho_quidd_2_2", "cho_quidd_2_3", "new_custom_request", "custom_request_wrapup", "shaming_intro", "shaming_event", "shaming", "shaming_night", "rcement", "heritic_intro", "heritic_event", "heretic", "heretic_night"]
         
         for item in oldfiles:
-            if renpy.exists(path+item):
+            if renpy.has_label(item):
                 return True
         return False
         

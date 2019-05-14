@@ -39,11 +39,6 @@ init:
     ### MENU PLACEMENT ###
     $ menu_x = 0.5
     $ menu_y = 0.5
-    $ who = Character('Female voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ whom = Character('Male voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ who2 = Character('???', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-
-    $ aa = Character('AKABUR', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
 
@@ -58,7 +53,6 @@ init:
     $ kissiris = Fade(0.2, 0.0, 0.8, color='#fb8dc8')
 
     #NVLE STUFF
-    $ nvle = Character(color="#000", what_color="#ffffff", kind=nvl)
     $ config.adv_nvl_transition = dissolve
     $ config.nvl_adv_transition = dissolve
 
@@ -794,16 +788,3 @@ transform pulse:
         linear 0.8 xzoom 1.2 yzoom 1.2
         linear 0.8 xzoom 1.0 yzoom 1.0
         repeat
-
-define eslow = Character(None, color="#402313", what_slow_cps=20)
-define centertext = Character(None,
-    what_size=20, #Font size
-    what_xalign=0.5, #Centers text within the window
-    window_xalign=0.5, #Centers the window horizontally
-    window_yalign=0.5, #Centers the window vertically
-    what_text_align=0.5, #Centers text within the window, just in case
-    window_background=None,#Removes the window, so only the text shows
-    what_outlines=[(3, "#000000", 2, 2), (3, "#ffffff", 0, 0)],
-    #Gives an outline
-    what_slow_cps=20 #Speed at which the text appears (slow)
-    )

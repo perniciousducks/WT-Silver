@@ -151,3 +151,6 @@ init python:
     sly1 = Character('Slytherin student')
     sly2 = Character('Another Slytherin student')
     qcr = Character('Quidditch Crowd')
+    who = Character('Female voice')
+    whom = Character('Male voice')
+    who2 = Character('???')

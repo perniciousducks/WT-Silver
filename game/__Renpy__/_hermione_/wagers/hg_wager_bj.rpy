@@ -398,7 +398,7 @@ label hg_wager_bj:
                         "-Hmm.. Actually.. {image=interface/cards.png}":
                             g9 "I don't see why not... I don't have anything else going on at the moment..."
                             label bj_duel_game:
-                            call her_main("...","clench","annoyed")
+                            call her_main("...",mouth="open_wide_tongue","annoyed")
                             call u_play_ani
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
                             g4 "Gngh..."
@@ -619,17 +619,13 @@ label hg_wager_bj_secret:
     show screen hg_wager_bj_secret
     call hide_blkfade
     $ renpy.block_rollback()
-    $ renpy.play('sounds/other/secret_line1.mp3')
     g9 "Yeeeeees!{w=0.5}{nw}"
     call cum_block
     g4 "Go fuck yourself Snape, take that you fucking whore!"
     call sna_main("...", face="snape_11")
-    $ renpy.play('sounds/other/secret_line2.mp3')
     g9 "Yeah! What do you have to say about that... Slut!"
-    call sna_main("...", face="snape_28")
-    $ renpy.play('sounds/other/secret_line3.mp3')
+    call sna_main("...", face="snape_11")
     g9 "Slam dunk!"
-    $ renpy.play('sounds/other/secret_line4.mp3')
     g9 "Another victory in the bag, eat my shit!"
 
     call blkfade

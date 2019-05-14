@@ -20,10 +20,10 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
     if her_whoring <=2:
         jump too_much
 
-    if hg_ps_get_panties_OBJ.points == 0 and her_whoring <= 5:
+    if hg_ps_get_panties.points == 0 and her_whoring <= 5:
         stop music fadeout 10.0
 
-        $ hg_ps_get_panties_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_ps_get_panties.level = 1 #Event hearts level (0-3)
 
         call her_main("W-what?","open","worried")
         her "My... panties...?"
@@ -71,7 +71,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         jump hg_ps_get_panties_ends
 
     else:
-        if hg_ps_get_panties_OBJ.points >= 1:
+        if hg_ps_get_panties.points >= 1:
             her "Again, [genie_name]?"
             m "Yes, again..."
         her "Here..."
@@ -94,7 +94,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_ps_get_panties_OBJ.inProgress = True #True when Hermione has no panties on.
+    $ hg_ps_get_panties.inProgress = True #True when Hermione has no panties on.
 
     jump end_hermione_event
 
@@ -209,7 +209,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
     elif her_whoring > 15: ###New variant of the event
         call her_main("My panties...","base","ahegao_raised",xpos="right",ypos="base")
-        if hg_ps_get_panties_OBJ.points >= 1:
+        if hg_ps_get_panties.points >= 1:
             her "You came all over them again..."
         else:
             her "You came all over them..."
@@ -258,7 +258,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
     jump back_from_soaked
 
 label hg_ps_get_panties_complete:
-    $ hg_ps_get_panties_OBJ.complete = True
+    $ hg_ps_get_panties.complete = True
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
@@ -277,7 +277,7 @@ label hg_ps_get_panties_complete:
         "\"How was your day, [hermione_name]?\"":
             if  her_whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
 
-                $ hg_ps_get_panties_OBJ.level = 1 #Event hearts level (0-3)
+                $ hg_ps_get_panties.level = 1 #Event hearts level (0-3)
 
                 $ sc34CG(1, 10)
                 call her_main("Oh...","soft","base",xpos="base",ypos="base")
@@ -298,7 +298,7 @@ label hg_ps_get_panties_complete:
 
             elif her_whoring >= 6 and her_whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
 
-                $ hg_ps_get_panties_OBJ.level = 2 #Event hearts level (0-3)
+                $ hg_ps_get_panties.level = 2 #Event hearts level (0-3)
 
                 $ sc34CG(1, 5)
                 call her_main("Oh...","soft","base",xpos="base",ypos="base")
@@ -339,7 +339,7 @@ label hg_ps_get_panties_complete:
 
             elif her_whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
 
-                $ hg_ps_get_panties_OBJ.level = 3 #Event hearts level (0-3)
+                $ hg_ps_get_panties.level = 3 #Event hearts level (0-3)
 
                 $ sc34CG(1, 11)
                 call her_main("Another ordinary day at hogwarts...","open","closed",xpos="base",ypos="base")
@@ -374,7 +374,7 @@ label hg_ps_get_panties_complete:
         m "You can go now."
         her "Good night, [genie_name]."
     elif her_panties_soaked and her_whoring >= 15:
-        $ hg_ps_get_panties_OBJ.level = 4 #Event hearts level (0-4)
+        $ hg_ps_get_panties.level = 4 #Event hearts level (0-4)
         m "You can go now."
         call her_main("yes, [genie_name]","angry","down_raised")
         m "After you say thank you. "
@@ -397,8 +397,11 @@ label hg_ps_get_panties_complete:
     if her_whoring < 6:
         $ her_whoring +=1
 
-    $ hg_ps_get_panties_OBJ.points += 1
-    $ hg_ps_get_panties_OBJ.inProgress = False #False when favor is not in progress
+    $ hg_ps_get_panties.points += 1
+    $ hg_ps_get_panties.inProgress = False #False when favor is not in progress
     $ her_panties_soaked = False #TRUE if you jerked off in panties
+
+    # Stats
+    $ hg_ps_get_panties.counter += 1
 
     jump end_hermione_event

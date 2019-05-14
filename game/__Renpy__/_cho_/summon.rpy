@@ -122,7 +122,7 @@ label cho_favor_menu:
     python:
         menu_choices = []
         for i in cc_favor_list:
-            if i in [cc_pf_blowjob_OBJ, cc_pf_sex_OBJ]: # Not in the game yet.
+            if i in [cc_pf_blowjob, cc_pf_sex]: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
             elif i.tier > main_matches_won:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
@@ -146,13 +146,13 @@ label update_cho_favors:
     # Pre Hufflepuff
     if main_matches_won == 0:
         $ heart_color = "yellow"
-        $ cc_pf_talk_OBJ.max_level = 3
+        $ cc_pf_talk.max_level = 3
 
     # Pre Slytherin
     elif main_matches_won == 1:
         $ heart_color = "green"
-        $ cc_pf_talk_OBJ.max_level = 4
-        $ cc_pf_strip_OBJ.max_level = 4
+        $ cc_pf_talk.max_level = 4
+        $ cc_pf_strip.max_level = 4
 
     # Pre Gryffindor
     elif main_matches_won == 2:
@@ -162,8 +162,8 @@ label update_cho_favors:
     else:
         $ heart_color = "blue"
 
-    $ cc_pf_talk_OBJ.heart_color = heart_color
-    $ cc_pf_strip_OBJ.heart_color = heart_color
+    $ cc_pf_talk.heart_color = heart_color
+    $ cc_pf_strip.heart_color = heart_color
 
     return
 

@@ -103,11 +103,13 @@ label ll_pf_sex:
         if lun_whoring < 12: # Points til 12
             $ lun_whoring += 1
 
-        if ll_pf_sex_OBJ.level < 3:
-            $ ll_pf_sex_OBJ.level = len(seen_luna_sex_list)
+        if ll_pf_sex.level < 3:
+            $ ll_pf_sex.level = len(seen_luna_sex_list)
+
+    $ ll_pf_sex.points += 1
 
     # Stats
-    $ ll_pf_sex_OBJ.points += 1
+    $ ll_pf_sex.counter += 1
 
     jump end_luna_event
 
@@ -947,7 +949,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ luna_flip = -1
     $ luna_cum = 9
     $ luna_wear_cum = True
-    hide screen blkfade 
+    hide screen blkfade
     with d3
     ">With an airy smile, Luna picks up her clothes and places them on over her cum soaked form."
     call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L")
@@ -1151,14 +1153,14 @@ label ll_pf_sex_bedroom:
     #Sneak to Luna's room undiscovered
     #Eventually start fooling around
     #Have Cho burst in and catch you
-    #Have Genie talk his way out of it 
+    #Have Genie talk his way out of it
     #Cho agrees to it but says she's going to silence herself off
-    #Reveal screen to show Luna and Genie banging 
+    #Reveal screen to show Luna and Genie banging
     #Short bit of sex before a choice of topics
     #Cumslut
         #Have luna go on about how much she loves cum
         #Have her talk about how lovely the room will be now
-        #Eventually Cho yells at her to shut up 
+        #Eventually Cho yells at her to shut up
         #Luna asks her about the silence
         #She says it was just to tell her off
         #Eventually cum in Luna in the middle of her sentence
@@ -1273,22 +1275,3 @@ label ll_pf_sex_bedroom:
     lun "Ah... yes!!!..."
 
     return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,7 +4,7 @@ label hg_pf_sex: #LV.7 (Whoring = 18 - 20)
 
     call reset_menu_position
 
-    if hg_pf_blowjob_OBJ.points == 0:
+    if hg_pf_blowjob.points == 0:
         m "{size=-4}(Should I ask her to have sex with me?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -25,7 +25,7 @@ label hg_pf_sex: #LV.7 (Whoring = 18 - 20)
         jump too_much
 
     #First Event.
-    if hg_pf_sex_OBJ.points == 0:
+    if hg_pf_sex.points == 0:
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base")
         m "The favour I will be buying from you today..."
@@ -50,7 +50,7 @@ label hg_pf_sex: #LV.7 (Whoring = 18 - 20)
         jump end_hg_sex
 
     #Second time event.
-    elif hg_pf_sex_OBJ.points == 1:
+    elif hg_pf_sex.points == 1:
         m "[hermione_name], are you keeping your pussy wet and ready for me?"
         call her_main("[genie_name]!","scream","angryCl")
         m "Just say \"I do\" and come over here, [hermione_name]."
@@ -65,7 +65,7 @@ label hg_pf_sex: #LV.7 (Whoring = 18 - 20)
         jump end_hg_sex
 
     #Third time event.
-    elif hg_pf_sex_OBJ.points >= 2:
+    elif hg_pf_sex.points >= 2:
         m "[hermione_name]..."
         m "Last night I had a dream..."
         g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
@@ -836,15 +836,18 @@ label end_hg_sex:
     if her_whoring < 21: #Adds points till 21.
         $ her_whoring +=1
 
-    if hg_pf_sex_OBJ.points == 0:
-        $ hg_pf_sex_OBJ.level = 1 #Event hearts level (0-3)
+    if hg_pf_sex.points == 0:
+        $ hg_pf_sex.level = 1 #Event hearts level (0-3)
 
-    if hg_pf_sex_OBJ.points == 1:
-        $ hg_pf_sex_OBJ.level = 2 #Event hearts level (0-3)
+    if hg_pf_sex.points == 1:
+        $ hg_pf_sex.level = 2 #Event hearts level (0-3)
 
-    if hg_pf_sex_OBJ.points >= 2:
-        $ hg_pf_sex_OBJ.level = 3 #Event hearts level (0-3)
+    if hg_pf_sex.points >= 2:
+        $ hg_pf_sex.level = 3 #Event hearts level (0-3)
 
-    $ hg_pf_sex_OBJ.points += 1
+    $ hg_pf_sex.points += 1
+
+    # Stats
+    $ hg_pf_sex.counter += 1
 
     jump end_hermione_event

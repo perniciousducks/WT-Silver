@@ -60,13 +60,13 @@ label susan_imperio: #Not being used anymore...
 
 
 label ag_cs_imperio_sb:
-    if ag_cs_imperio_sb_OBJ.points == 1: #Trained once.
+    if ag_cs_imperio_sb.points == 1: #Trained once.
         jump imperio_spell_1
-    elif ag_cs_imperio_sb_OBJ.points == 2: #Trained twice.
+    elif ag_cs_imperio_sb.points == 2: #Trained twice.
         jump imperio_spell_2
-    elif ag_cs_imperio_sb_OBJ.points == 3 and ag_cs_imperio_sb_OBJ.level < 3: #Trained three times.
+    elif ag_cs_imperio_sb.points == 3 and ag_cs_imperio_sb.level < 3: #Trained three times.
         jump imperio_spell_3
-    elif ag_cs_imperio_sb_OBJ.points == 3 and ag_cs_imperio_sb_OBJ.level == 3: #Three hearts. Repeats events.
+    elif ag_cs_imperio_sb.points == 3 and ag_cs_imperio_sb.level == 3: #Three hearts. Repeats events.
         $ random_number = renpy.random.randint(1, 3)
         if random_number in [1]:
             jump imperio_spell_1
@@ -259,8 +259,8 @@ label imperio_spell_1:
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    if ag_cs_imperio_sb_OBJ.points == 1:
-        $ ag_cs_imperio_sb_OBJ.level = 1
+    if ag_cs_imperio_sb.points == 1:
+        $ ag_cs_imperio_sb.level = 1
         $ ast_affection = 1
         $ ast_spell_progress = 0
 
@@ -490,8 +490,8 @@ label imperio_spell_2: #second level imperio spell #needs posing
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    if ag_cs_imperio_sb_OBJ.points == 2:
-        $ ag_cs_imperio_sb_OBJ.level = 2
+    if ag_cs_imperio_sb.points == 2:
+        $ ag_cs_imperio_sb.level = 2
         $ ast_affection = 2
         $ ast_spell_progress = 0
 
@@ -819,8 +819,8 @@ label imperio_spell_3:
     $ susan_busy = True
     $ spells_locked = True #Locks spells until you send Astoria to Tonks.
 
-    if ag_cs_imperio_sb_OBJ.points == 3:
-        $ ag_cs_imperio_sb_OBJ.level = 3
+    if ag_cs_imperio_sb.points == 3:
+        $ ag_cs_imperio_sb.level = 3
         $ ast_affection = 3
         $ ast_spell_progress = 0
 

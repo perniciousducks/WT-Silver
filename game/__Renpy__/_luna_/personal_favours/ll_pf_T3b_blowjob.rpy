@@ -103,11 +103,11 @@ label ll_pf_blowjob_T1_intro:
 
 label ll_pf_blowjob:
 
-    if ll_pf_blowjob_OBJ.points <= 0:
+    if ll_pf_blowjob.points <= 0:
         # Luna sucks you off under your desk.
         jump ll_pf_blowjob_T1_E1
 
-    elif ll_pf_blowjob_OBJ.points == 1:
+    elif ll_pf_blowjob.points == 1:
         # Luna sucks you off  under your desk.
         # Luna paralyses you.
         # She sucks you off for an entire 9 hours.
@@ -125,14 +125,16 @@ label ll_pf_blowjob:
         if lun_whoring < 9: # Points til 9
             $ lun_whoring += 1
 
-            if ll_pf_blowjob_OBJ.level < 3:
-                $ ll_pf_blowjob_OBJ.level += 1
+            if ll_pf_blowjob.level < 3:
+                $ ll_pf_blowjob.level += 1
 
         if lun_whoring >= 9: # Intentional! Don't replace with an else!
-            $ ll_pf_blowjob_OBJ.level = 4
+            $ ll_pf_blowjob.level = 4
+
+    $ ll_pf_blowjob.points += 1
 
     # Stats
-    $ ll_pf_blowjob_OBJ.points += 1
+    $ ll_pf_blowjob.counter += 1
 
     jump end_luna_event
 
@@ -548,7 +550,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     hide screen blkfade
     with d3
     #have loop here
-    
+
     m "Please Luna... you have to stop now..."
     g4 "four times is enough..."
     $ ccg("42","blank","blank")

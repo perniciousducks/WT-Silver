@@ -7,11 +7,11 @@ label cc_pf_talk:
     # Tier 1
     if main_matches_won == 0:
 
-        if cc_pf_talk_OBJ.level == 0:    # 0 Hearts.
+        if cc_pf_talk.level == 0:    # 0 Hearts.
             # Talk about her boyfriends.
             call cc_pf_talk_T1_E1
 
-        elif cc_pf_talk_OBJ.level == 1:  # 1 Heart.
+        elif cc_pf_talk.level == 1:  # 1 Heart.
             # Talk about her Quidditch team.
             # Unlocks public requests favours.
             $ cho_requests_unlocked = True
@@ -24,13 +24,13 @@ label cc_pf_talk:
     # Tier 2
     elif main_matches_won == 1:
 
-        if cc_pf_talk_OBJ.level == 0:    # 0 Hearts.
+        if cc_pf_talk.level == 0:    # 0 Hearts.
             # Talk about Malfoy and his team.
             call cc_pf_talk_T2_E1
-        elif cc_pf_talk_OBJ.level == 1:  # 1 Heart.
+        elif cc_pf_talk.level == 1:  # 1 Heart.
             # Talk about getting bullied by Slytherin.
             call cc_pf_talk_T2_E2
-        elif cc_pf_talk_OBJ.level == 2:  # 2 Heart.
+        elif cc_pf_talk.level == 2:  # 2 Heart.
             # Talk about becoming more popular.
             call cc_pf_talk_T2_E3
         else:                            # 3+ Hearts.
@@ -49,11 +49,13 @@ label cc_pf_talk:
             if cho_whoring < 8: # Points til 8
                 $ cho_whoring += 1
 
-        if cc_pf_talk_OBJ.level < 4:
-            $ cc_pf_talk_OBJ.level += 1
+        if cc_pf_talk.level < 4:
+            $ cc_pf_talk.level += 1
+
+    $ cc_pf_talk.points += 1
 
     # Stats
-    $ cc_pf_talk_OBJ.points += 1
+    $ cc_pf_talk.counter += 1
 
     jump end_cho_event
 

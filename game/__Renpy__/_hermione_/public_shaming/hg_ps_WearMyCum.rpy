@@ -41,7 +41,7 @@ label hg_ps_cumslut: #Walk around school covered in genies cum
 
 
 label hg_ps_cumslut_Scene_1:
-    $ hg_ps_cumslut_OBJ.inProgress = True
+    $ hg_ps_cumslut.inProgress = True
     call her_main("What?!?","shock","wide")
     call her_main("You can't be serious!","angry","angry")
     call her_main("It's bad enough that I let you cum on me in private!","annoyed","annoyed")
@@ -245,7 +245,7 @@ label hg_ps_cumslut_Scene_1:
 
 
 label hg_ps_cumslut_Scene_2:
-    $ hg_ps_cumslut_OBJ.inProgress = True
+    $ hg_ps_cumslut.inProgress = True
     call her_main("Again?","shock","wide")
     call her_main("You can not be serious!","angry","angry")
     call her_main("I already let you do this to me once, isn't that enough?","annoyed","annoyed")
@@ -466,7 +466,7 @@ label hg_ps_cumslut_Scene_2:
 
 
 label hg_ps_cumslut_Scene_3:
-    $ hg_ps_cumslut_OBJ.inProgress = True
+    $ hg_ps_cumslut.inProgress = True
     call her_main("Are you serious?","shock","wide")
     call her_main("Can I?","grin","ahegao")
     m "well-"
@@ -599,8 +599,8 @@ label hg_ps_cumslut_Scene_3:
 
 
 label hg_ps_cumslut_complete: #Hermione returns from her day of wearing your cum
-    $ hg_ps_cumslut_OBJ.inProgress = False
-    $ hg_ps_cumslut_OBJ.complete = True
+    $ hg_ps_cumslut.inProgress = False
+    $ hg_ps_cumslut.complete = True
     if cum_location <= 3:
         jump hg_ps_cumslut_complete_1
     else:

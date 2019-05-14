@@ -6,12 +6,12 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
 
     call reset_menu_position
 
-    if hg_pf_look_at_breasts_OBJ.points == 0:
+    if hg_pf_look_at_breasts.points == 0:
         m "{size=-4}(I feel like gazing upon those titties.){/size}"
     else:
         m "{size=-4}(I feel like gazing upon those titties again.){/size}"
 
-    if hg_pf_look_at_breasts_OBJ.points < 1:
+    if hg_pf_look_at_breasts.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -27,7 +27,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
     $ current_payout = 25 #Used when haggling about price of th favor.
 
     #First time event
-    if hg_pf_look_at_breasts_OBJ.points == 0 and her_whoring <= 11:
+    if hg_pf_look_at_breasts.points == 0 and her_whoring <= 11:
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]...","normal","base",xpos="mid",ypos="base")
         m "How much will it cost me to see your tits?"
@@ -931,13 +931,13 @@ label end_hg_show_breasts:
         her "I'd better go now then. It's getting pretty late..."
 
     if her_whoring >= 6 and her_whoring < 9:
-        $ hg_pf_look_at_breasts_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_look_at_breasts.level = 1 #Event hearts level (0-3)
 
     if her_whoring >= 9 and her_whoring < 12:
-        $ hg_pf_look_at_breasts_OBJ.level = 2 #Event hearts level (0-3)
+        $ hg_pf_look_at_breasts.level = 2 #Event hearts level (0-3)
 
     if her_whoring >= 12:
-        $ hg_pf_look_at_breasts_OBJ.level = 3 #Event hearts level (0-3)
+        $ hg_pf_look_at_breasts.level = 3 #Event hearts level (0-3)
 
 
     hide screen bld1
@@ -972,6 +972,9 @@ label end_hg_show_breasts:
     if her_whoring < 9: #Adds points till 9.
         $ her_whoring +=1
 
-    $ hg_pf_look_at_breasts_OBJ.points += 1
+    $ hg_pf_look_at_breasts.points += 1
+
+    # Stats
+    $ hg_pf_look_at_breasts.counter += 1
 
     jump end_hermione_event

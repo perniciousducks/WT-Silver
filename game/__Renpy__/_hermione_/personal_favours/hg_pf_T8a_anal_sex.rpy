@@ -4,7 +4,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    if hg_pf_anal_sex_OBJ.points == 0:
+    if hg_pf_anal_sex.points == 0:
         m "{size=-4}(Should I ask her to have anal sex with me?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -17,7 +17,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
     $ g_c_u_pic = "sex_slow_ani"
 
     #Intro
-    if hg_pf_anal_sex_OBJ.points == 0:
+    if hg_pf_anal_sex.points == 0:
         m "[hermione_name]..."
         call her_main("[genie_name]..?","annoyed","suspicious")
         m "How familiar you are with the term \"Anal Sex\"?"
@@ -37,7 +37,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
         jump end_hg_anal_sex
 
     #Second time event.
-    elif hg_pf_anal_sex_OBJ.points == 1:
+    elif hg_pf_anal_sex.points == 1:
         m "[hermione_name]?"
         call her_main("[genie_name]?","soft","base")
         m "I will be buying another favour from you today..."
@@ -59,7 +59,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
         jump end_hg_anal_sex
 
     #Third time event.
-    elif hg_pf_anal_sex_OBJ.points >= 2:
+    elif hg_pf_anal_sex.points >= 2:
         m "How about another assfuck, [hermione_name]?"
         call her_main("Of course, [genie_name].","base","ahegao_raised")
         g9 "Come here, you little mynx!"
@@ -685,17 +685,20 @@ label end_hg_anal_sex:
     if her_whoring < 24: #Adds points till 24.
         $ her_whoring +=1
 
-    if hg_pf_anal_sex_OBJ.points == 0:
-        $ hg_pf_anal_sex_OBJ.level = 1 #Event hearts level (0-3)
+    if hg_pf_anal_sex.points == 0:
+        $ hg_pf_anal_sex.level = 1 #Event hearts level (0-3)
 
-    if hg_pf_anal_sex_OBJ.points == 1:
-        $ hg_pf_anal_sex_OBJ.level = 2 #Event hearts level (0-3)
+    if hg_pf_anal_sex.points == 1:
+        $ hg_pf_anal_sex.level = 2 #Event hearts level (0-3)
 
-    if hg_pf_anal_sex_OBJ.points >= 2:
-        $ hg_pf_anal_sex_OBJ.level = 3 #Event hearts level (0-3)
+    if hg_pf_anal_sex.points >= 2:
+        $ hg_pf_anal_sex.level = 3 #Event hearts level (0-3)
 
-    $ hg_pf_anal_sex_OBJ.points += 1
+    $ hg_pf_anal_sex.points += 1
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
+
+    # Stats
+    $ hg_pf_anal_sex.counter += 1
 
     jump end_hermione_event

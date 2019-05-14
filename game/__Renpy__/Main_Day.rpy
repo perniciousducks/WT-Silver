@@ -296,8 +296,8 @@ if luna_reverted and lun_whoring == -2 and days_to_luna <= 0:
 if luna_reverted and days_to_luna <= 0:
 
     # Masturbate
-    if lun_whoring >= 0 and ll_pf_masturbate_OBJ not in ll_favor_list:
-        $ ll_favor_list.append(ll_pf_masturbate_OBJ)
+    if lun_whoring >= 0 and ll_pf_masturbate not in ll_favor_list:
+        $ ll_favor_list.append(ll_pf_masturbate)
 
         $ days_without_an_event = 0
         $ days_to_luna = 3
@@ -305,8 +305,8 @@ if luna_reverted and days_to_luna <= 0:
         jump ll_pf_masturbate_T1_intro
 
     # Blowjob
-    elif lun_whoring >= 3 and ll_pf_blowjob_OBJ not in ll_favor_list:
-        $ ll_favor_list.append(ll_pf_blowjob_OBJ)
+    elif lun_whoring >= 3 and ll_pf_blowjob not in ll_favor_list:
+        $ ll_favor_list.append(ll_pf_blowjob)
 
         $ days_without_an_event = 0
         $ days_to_luna = 3

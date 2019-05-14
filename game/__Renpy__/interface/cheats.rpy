@@ -123,7 +123,7 @@ label cheats:
                     $ astoria_tonks_1_completed = True
                     $ astoria_tonks_2_completed = True
 
-                    $ ag_cs_imperio_sb_OBJ.points = 3
+                    $ ag_cs_imperio_sb.points = 3
                     ">Astoria can now use the first spell!"
                     jump cheats_astoria
                 "-never mind-":

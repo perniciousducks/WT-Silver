@@ -132,8 +132,8 @@ else:
 
 label update_luna_favors:
 
-    $ ll_pf_masturbate_OBJ.heart_color = "blue"
-    $ ll_pf_blowjob_OBJ.heart_color    = "blue"
-    $ ll_pf_sex_OBJ.heart_color        = "blue"
+    $ ll_pf_masturbate.heart_color = "blue"
+    $ ll_pf_blowjob.heart_color    = "blue"
+    $ ll_pf_sex.heart_color        = "blue"
 
     return

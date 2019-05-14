@@ -104,7 +104,7 @@ label quidditch_match_return:
     #Slytherin Match
     elif main_matches_won == 2:
         jump main_room
-        
+
 
 # Lost first hufflepuff match.
 label hufflepuff_practice_lost:
@@ -202,7 +202,7 @@ label hufflepuff_practice_win_1:
     call cho_main("Yes, [cho_genie_name]! Thank you so much!","horny","narrow","base","down")
     call cho_main("If there is any way I can return the favour...?","horny","base","raised","mid")
 
-    if cc_pf_talk_OBJ.points == 0:
+    if cc_pf_talk.points == 0:
         m "Why don't we start with that, Miss Chang,...{w} favours!"
         m "I did prove the effectiveness of my methods to you. Now it's your turn to stay true to your promise..."
         call cho_main("Of course, Sir.","base","base","base","mid")

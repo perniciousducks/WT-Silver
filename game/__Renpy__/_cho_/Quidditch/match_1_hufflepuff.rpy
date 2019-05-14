@@ -806,8 +806,12 @@ label hufflepuff_match_return:
     $ hermione_busy = True
     $ snape_busy    = True
 
-    $ cc_pf_talk_OBJ.level  = 0
-    $ cc_pf_strip_OBJ.level = 0
+    # Favor Tier Reset
+    $ cc_pf_talk.points       = 0
+    $ cc_pf_strip.points      = 0
+
+    $ cc_pr_flirt.points      = 0
+    $ cc_pr_manipulate.points = 0
 
     $ cho_content_complete = True # Temporary to hide the Practice Match option in the menu.
 

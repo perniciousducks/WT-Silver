@@ -216,15 +216,15 @@ label luna_init:
     if not hasattr(renpy.store,'seen_luna_sex_list') or reset_persistants or reset_luna_content:
         $ seen_luna_sex_list       = []
 
-    if not hasattr(renpy.store,'ll_pf_talk_OBJ') or reset_persistants or reset_luna_content:
-        $ ll_pf_talk_OBJ       = favor_class(title = "Talk to me!", tier = 0, start_label = "ll_pf_talk")
+    if not hasattr(renpy.store,'ll_pf_talk') or reset_persistants or reset_luna_content:
+        $ ll_pf_talk       = favor_class(title = "Talk to me!", tier = 0, start_label = "ll_pf_talk")
 
-        $ ll_pf_strip_OBJ      = favor_class(title = "Inspect her body!", tier = 1, start_label = "ll_pf_strip")
+        $ ll_pf_strip      = favor_class(title = "Inspect her body!", tier = 1, start_label = "ll_pf_strip")
 
-        $ ll_pf_masturbate_OBJ = favor_class(title = "Masturbate for me!", tier = 2, start_label = "ll_pf_masturbate")
-        $ ll_pf_blowjob_OBJ    = favor_class(title = "Suck it!", tier = 2, max_level = 4, start_label = "ll_pf_blowjob")
+        $ ll_pf_masturbate = favor_class(title = "Masturbate for me!", tier = 2, start_label = "ll_pf_masturbate")
+        $ ll_pf_blowjob    = favor_class(title = "Suck it!", tier = 2, max_level = 4, start_label = "ll_pf_blowjob")
 
-        $ ll_pf_sex_OBJ        = favor_class(title = "Let's have sex!", tier = 3, start_label = "ll_pf_sex")
+        $ ll_pf_sex        = favor_class(title = "Let's have sex!", tier = 3, start_label = "ll_pf_sex")
 
 
     # Favors get added to the list after their intro events.

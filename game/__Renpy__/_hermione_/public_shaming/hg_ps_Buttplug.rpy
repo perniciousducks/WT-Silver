@@ -8,7 +8,7 @@ label hg_ps_buttplug:
 
     $ current_payout = 55 #Used when haggling about price of the favour.
 
-    if hg_ps_buttplug_OBJ.points < 1:
+    if hg_ps_buttplug.points < 1:
         m "{size=-4}(Tell her to wear a buttplug around the school?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -22,13 +22,13 @@ label hg_ps_buttplug:
     menu:
         "-Small, regular-":
             $ buttplug_size = 1
-        "-Medium, magical-" if hg_ps_buttplug_OBJ.points >= 1:
+        "-Medium, magical-" if hg_ps_buttplug.points >= 1:
             $ buttplug_size = 2
         "-Large, magical-" if buttplug_2_worn == True and her_whoring > 23:
             $ buttplug_size = 3
 
     #First event.
-    if hg_ps_buttplug_OBJ.points == 0 and buttplug_size == 1:
+    if hg_ps_buttplug.points == 0 and buttplug_size == 1:
         m "[hermione_name], I want you to do something different today..."
         call her_main("...........","soft","base",xpos="right",ypos="base")
         call nar(">You pull a large size buttplug out from under your desk and place it in front of her.")
@@ -413,7 +413,7 @@ label hg_ps_buttplug:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_ps_buttplug_OBJ.inProgress = True
+    $ hg_ps_buttplug.inProgress = True
 
     jump end_hermione_event
 
@@ -1022,10 +1022,13 @@ label hg_ps_buttplug_complete:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_ps_buttplug_OBJ.points += 1
-    $ hg_ps_buttplug_OBJ.complete = True
-    $ hg_ps_buttplug_OBJ.inProgress = False
+    $ hg_ps_buttplug.points += 1
+    $ hg_ps_buttplug.complete = True
+    $ hg_ps_buttplug.inProgress = False
 
     call set_her_buttplug("remove")
+
+    # Stats
+    $ hg_ps_buttplug.counter += 1
 
     jump end_hermione_event

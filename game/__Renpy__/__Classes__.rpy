@@ -6,18 +6,18 @@ init -2 python:
 
     #Favours
     class silver_request(object):
-        title = ""
-        tier = 0
-        start_label = ""
+        title        = ""
+        tier         = 0
+        start_label  = ""
         return_label = ""
-        points = 0
-        hint = False
+        points       = 0 # For progress checks. Can be reset if needed.
+        counter      = 0 # For stats
+        hint         = False
 
     class favor_class(silver_request):
-        level = 0 # Hearts
-        max_level = 3
-        heart_color = "red"
-        costume_event = False
+        level        = 0 # Hearts
+        max_level    = 3
+        heart_color  = "red"
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)

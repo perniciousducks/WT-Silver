@@ -7,7 +7,7 @@ label hg_pr_flirt_teacher:
 
     call reset_menu_position
 
-    if hg_pr_flirt_teacher_OBJ.points < 1:
+    if hg_pr_flirt_teacher.points < 1:
         m "{size=-4}(Tell her to be flirtatious with her teachers today?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -19,11 +19,11 @@ label hg_pr_flirt_teacher:
 
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
 
-    if her_whoring < 3 or hg_pr_flirt_OBJ.points < 2:
+    if her_whoring < 3 or hg_pr_flirt.points < 2:
         jump too_much
 
     #Intro
-    if hg_pr_flirt_teacher_OBJ.points == 0 and her_whoring < 9:
+    if hg_pr_flirt_teacher.points == 0 and her_whoring < 9:
         call her_main("I will do my best, [genie_name]!","base","base",xpos="right",ypos="base")
         call her_main("I am glad you finally decided to act, [genie_name]!","open","base")
         m "Huh?"
@@ -41,7 +41,7 @@ label hg_pr_flirt_teacher:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_flirt_teacher_OBJ.inProgress = True
+    $ hg_pr_flirt_teacher.inProgress = True
 
     jump end_hermione_event
 
@@ -110,7 +110,7 @@ label hg_pr_flirt_teacher_complete:
 
                             $ her_mood += 18
 
-                            $ hg_pr_flirt_teacher_OBJ.inProgress = False
+                            $ hg_pr_flirt_teacher.inProgress = False
 
                             jump end_hermione_event
 
@@ -161,7 +161,7 @@ label hg_pr_flirt_teacher_complete:
 
                             call her_walk(action="leave", speed=2.5)
 
-                            $ hg_pr_flirt_teacher_OBJ.inProgress = False
+                            $ hg_pr_flirt_teacher.inProgress = False
 
                             jump end_hermione_event
 
@@ -310,7 +310,7 @@ label hg_pr_flirt_teacher_complete:
 
                             $ her_mood +=15
 
-                            $ hg_pr_flirt_teacher_OBJ.inProgress = False
+                            $ hg_pr_flirt_teacher.inProgress = False
 
                             jump end_hermione_event
 
@@ -469,15 +469,18 @@ label hg_pr_flirt_teacher_complete:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_flirt_teacher_OBJ.points += 1
-    $ hg_pr_flirt_teacher_OBJ.inProgress = False
+    $ hg_pr_flirt_teacher.points += 1
+    $ hg_pr_flirt_teacher.inProgress = False
 
     if her_whoring <= 5:  # (if her_whoring >= 3 and her_whoring <= 5) - LEVEL 02
         $ her_whoring +=1
-    if her_whoring >= 5 and hg_pr_flirt_teacher_OBJ.points >= 2:
-        $ hg_pr_flirt_teacher_OBJ.complete = True
+    if her_whoring >= 5 and hg_pr_flirt_teacher.points >= 2:
+        $ hg_pr_flirt_teacher.complete = True
 
     if her_reputation <= 5:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_flirt_teacher.counter += 1
 
     jump end_hermione_event

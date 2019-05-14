@@ -1,11 +1,12 @@
 init python:
     class event_class(object):
-        title = ""
-        tier = 0
+        title     = ""
+        tier      = 0
         max_tiers = 0
-        level = 0
+        level     = 0
         max_level = 3
-        points = 0
+        points    = 0
+        counter   = 0
 
         start_label = ""
         inProgress = False

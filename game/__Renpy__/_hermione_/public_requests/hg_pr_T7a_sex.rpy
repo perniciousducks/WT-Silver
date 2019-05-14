@@ -7,7 +7,7 @@ label hg_pr_sex: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    if hg_pr_sex_OBJ.points < 1:
+    if hg_pr_sex.points < 1:
         m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,11 +18,11 @@ label hg_pr_sex: #LV.8 (Whoring = 21 - 23)
     call bld
 
     #Intro.
-    if hg_pr_sex_OBJ.points == 0:
+    if hg_pr_sex.points == 0:
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
 
-        if her_whoring < 21 or hg_pr_blowjob_OBJ.points < 2:
+        if her_whoring < 21 or hg_pr_blowjob.points < 2:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -45,7 +45,7 @@ label hg_pr_sex: #LV.8 (Whoring = 21 - 23)
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_sex_OBJ.inProgress = True
+    $ hg_pr_sex.inProgress = True
 
     jump end_hermione_event
 
@@ -53,7 +53,7 @@ label hg_pr_sex: #LV.8 (Whoring = 21 - 23)
 label hg_pr_sex_complete:
 
     #Event A
-    if hg_pr_sex_OBJ.points <= 0 or one_out_of_three == 1: ### EVENT (A)
+    if hg_pr_sex.points <= 0 or one_out_of_three == 1: ### EVENT (A)
 
         if fucked_ron_and_har:
             jump returns_next_morning
@@ -66,10 +66,13 @@ label hg_pr_sex_complete:
         m "She was supposed to be here, by now..."
         m "Hm..."
 
-        $ hg_pr_sex_OBJ.points += 1
-        $ hg_pr_sex_OBJ.inProgress = False
+        $ hg_pr_sex.points += 1
+        $ hg_pr_sex.inProgress = False
         $ hermione_busy = True
         $ hg_pr_sex_skip = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
+
+        # Stats
+        $ hg_pr_sex.counter += 1
 
         # Next Morning.
         jump day_start
@@ -134,9 +137,12 @@ label hg_pr_sex_complete:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_sex_OBJ.points += 1
-    $ hg_pr_sex_OBJ.complete = True
-    $ hg_pr_sex_OBJ.inProgress = False
+    $ hg_pr_sex.points += 1
+    $ hg_pr_sex.complete = True
+    $ hg_pr_sex.inProgress = False
+
+    # Stats
+    $ hg_pr_sex.counter += 1
 
     jump end_hermione_event
 
@@ -174,11 +180,14 @@ label hg_pr_sex_Alt: #Hermione does not show up. This is label where she shows u
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_sex_OBJ.points += 1
-    $ hg_pr_sex_OBJ.complete = True
-    $ hg_pr_sex_OBJ.inProgress = False
+    $ hg_pr_sex.points += 1
+    $ hg_pr_sex.complete = True
+    $ hg_pr_sex.inProgress = False
 
     if her_reputation <= 23:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_sex.counter += 1
 
     jump end_hermione_event

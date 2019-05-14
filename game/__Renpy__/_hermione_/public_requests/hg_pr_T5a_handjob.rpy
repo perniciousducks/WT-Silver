@@ -9,7 +9,7 @@ label hg_pr_handjob: #LV.6 (Whoring = 15 - 17)
 
     call reset_menu_position
 
-    if hg_pr_handjob_OBJ.points < 1:
+    if hg_pr_handjob.points < 1:
         m "{size=-4}(Tell her to give a handjob to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -20,9 +20,9 @@ label hg_pr_handjob: #LV.6 (Whoring = 15 - 17)
     call bld
 
     #Intro
-    if hg_pr_handjob_OBJ.points == 0:
+    if hg_pr_handjob.points == 0:
 
-        if her_whoring < 15 or hg_pr_kiss_OBJ.points < 2:
+        if her_whoring < 15 or hg_pr_kiss.points < 2:
             m "[hermione_name], I want you to do something different today..."
             call her_main("...?","normal","frown",xpos="right",ypos="base")
             m "I want you to give a handjob to one of your classmates."
@@ -108,7 +108,7 @@ label hg_pr_handjob: #LV.6 (Whoring = 15 - 17)
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_handjob_OBJ.inProgress = True
+    $ hg_pr_handjob.inProgress = True
 
     jump end_hermione_event
 
@@ -162,7 +162,7 @@ label hg_pr_handjob_complete:
 
                     $ her_mood +=9
 
-                    $ hg_pr_handjob_OBJ.inProgress = False
+                    $ hg_pr_handjob.inProgress = False
 
                     jump end_hermione_event
 
@@ -292,7 +292,7 @@ label hg_pr_handjob_complete:
 
                     $ her_mood +=20
 
-                    $ hg_pr_handjob_OBJ.inProgress = False
+                    $ hg_pr_handjob.inProgress = False
 
                     jump end_hermione_event
 
@@ -575,13 +575,16 @@ label hg_pr_handjob_complete:
     $ uni_sperm = False  #Universal sperm.
     $ aftersperm = False #Shows stains on Hermione's uniform.
 
-    $ hg_pr_handjob_OBJ.points += 1
-    $ hg_pr_handjob_OBJ.inProgress = False
+    $ hg_pr_handjob.points += 1
+    $ hg_pr_handjob.inProgress = False
 
-    if hg_pr_handjob_OBJ.points >= 2:
-        $ hg_pr_handjob_OBJ.complete = True
+    if hg_pr_handjob.points >= 2:
+        $ hg_pr_handjob.complete = True
 
     if her_reputation <= 17:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_handjob.counter += 1
 
     jump end_hermione_event

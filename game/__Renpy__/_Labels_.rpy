@@ -487,74 +487,74 @@ label update_hints:
     #Does not add star to hardcore difficulty (3+)!
     #Favour 1
     if her_whoring < 3 and game_difficulty <= 2:
-        $ hg_pf_talk_OBJ.hint = True
+        $ hg_pf_talk.hint = True
     else:
-        $ hg_pf_talk_OBJ.hint = False
+        $ hg_pf_talk.hint = False
 
     #Favour 2
     if her_whoring < 3 and game_difficulty <= 2:
-        $ hg_pf_show_panties_OBJ.hint = True
+        $ hg_pf_show_panties.hint = True
     else:
-        $ hg_pf_show_panties_OBJ.hint = False
+        $ hg_pf_show_panties.hint = False
 
     #Favour 3
     if her_whoring >= 3 and her_whoring < 6 and game_difficulty <= 2:
-        $ hg_pf_grope_breasts_OBJ.hint = True
+        $ hg_pf_grope_breasts.hint = True
     else:
-        $ hg_pf_grope_breasts_OBJ.hint = False
+        $ hg_pf_grope_breasts.hint = False
 
     #Favour 4
     if her_whoring >= 3 and her_whoring < 9 and game_difficulty <= 2:
-        $ hg_pf_grope_ass_OBJ.hint = True
+        $ hg_pf_grope_ass.hint = True
     else:
-        $ hg_pf_grope_ass_OBJ.hint = False
+        $ hg_pf_grope_ass.hint = False
 
     #Favour 5
     if her_whoring >= 6 and her_whoring < 9 and game_difficulty <= 2:
-        $ hg_pf_look_at_breasts_OBJ.hint = True
+        $ hg_pf_look_at_breasts.hint = True
     else:
-        $ hg_pf_look_at_breasts_OBJ.hint = False
+        $ hg_pf_look_at_breasts.hint = False
 
     #Favour 6
     if her_whoring >= 9 and her_whoring < 12 and game_difficulty <= 2:
-        $ hg_pf_dance_OBJ.hint = True
+        $ hg_pf_dance.hint = True
     else:
-        $ hg_pf_dance_OBJ.hint = False
+        $ hg_pf_dance.hint = False
 
     #Favour 7
     if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
-        $ hg_pf_look_at_ass_OBJ.hint = True
+        $ hg_pf_look_at_ass.hint = True
     else:
-        $ hg_pf_look_at_ass_OBJ.hint = False
+        $ hg_pf_look_at_ass.hint = False
 
     #Favour 8
     if her_whoring >= 12 and her_whoring < 15 and game_difficulty <= 2:
-        $ hg_pf_handjob_OBJ.hint = True
+        $ hg_pf_handjob.hint = True
     else:
-        $ hg_pf_handjob_OBJ.hint = False
+        $ hg_pf_handjob.hint = False
 
     #Favour 9
     if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
-        $ hg_pf_titjob_OBJ.hint = True
+        $ hg_pf_titjob.hint = True
     else:
-        $ hg_pf_titjob_OBJ.hint = False
+        $ hg_pf_titjob.hint = False
 
     #Favour 10
     if her_whoring >= 15 and her_whoring < 18 and game_difficulty <= 2:
-        $ hg_pf_blowjob_OBJ.hint = True
+        $ hg_pf_blowjob.hint = True
     else:
-        $ hg_pf_blowjob_OBJ.hint = False
+        $ hg_pf_blowjob.hint = False
 
     #Favour 11
     if her_whoring >= 18 and her_whoring < 21 and game_difficulty <= 2:
-        $ hg_pf_sex_OBJ.hint = True
+        $ hg_pf_sex.hint = True
     else:
-        $ hg_pf_sex_OBJ.hint = False
+        $ hg_pf_sex.hint = False
 
     #Favour 12
     if her_whoring >= 21 and her_whoring < 24 and game_difficulty <= 2:
-        $ hg_pf_anal_sex_OBJ.hint = True
+        $ hg_pf_anal_sex.hint = True
     else:
-        $ hg_pf_anal_sex_OBJ.hint = False
+        $ hg_pf_anal_sex.hint = False
 
     return

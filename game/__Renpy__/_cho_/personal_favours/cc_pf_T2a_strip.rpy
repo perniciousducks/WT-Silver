@@ -7,15 +7,15 @@ label cc_pf_strip:
     # Tier 1
     if main_matches_won <= 1:
 
-        if cc_pf_strip_OBJ.level == 0:   # 0 Hearts.
+        if cc_pf_strip.level == 0:   # 0 Hearts.
             # Cho strips to her underwear.
             call cc_pf_strip_T1_E1
 
-        elif cc_pf_strip_OBJ.level == 1: # 1 Heart.
+        elif cc_pf_strip.level == 1: # 1 Heart.
             # Cho strips naked.
             call cc_pf_strip_T1_E2
 
-        elif cc_pf_strip_OBJ.level == 2: # 2 Hearts.
+        elif cc_pf_strip.level == 2: # 2 Hearts.
             # Cho wants you to summon Hermione.
             # Event fails when Hermione hasn't stripped for you yet.
             # Succeeds after Hermione's second dance favour.
@@ -34,11 +34,13 @@ label cc_pf_strip:
         if cho_whoring < 8: # Points til 8
             $ cho_whoring += 1
 
-        if cc_pf_strip_OBJ.level < 4:
-            $ cc_pf_strip_OBJ.level += 1
+        if cc_pf_strip.level < 4:
+            $ cc_pf_strip.level += 1
+
+    $ cc_pf_strip.points += 1
 
     # Stats
-    $ cc_pf_strip_OBJ.points += 1
+    $ cc_pf_strip.counter += 1
 
     jump end_cho_event
 
@@ -320,9 +322,27 @@ label cc_pf_strip_T1_E2: # Incomplete. Not posed.
     #call cho_main("That pretentious bitch!","base","base","base","mid")
     #call cho_main("Her body is --- compared to mine!","base","base","base","mid")
 
+    m "[cho_name], to continue your training where we left off..."
+    g9 "I'd like you to undress once again!"
+    cho "Of course, Sir."
 
+    call cho_walk(xpos="desk", ypos="base", speed=1.6)
 
-    $ cho_strip_complete = True # Unlocks Wardrobe on next summon.
+    call cho_main("Down to my undergarments, [cho_genie_name]?", xpos="mid", ypos="base", trans="fade")
+    cho "Or would you like me to take off all of it?"
+    m "*Uhm*... All of it?"
+    cho "Very well, Sir."
+    g4 "(Please don't let this be a trick question.)"
+
+    # Remove top.
+
+    cho "I'm a very good trainee, [cho_genie_name]!"
+    g9 "Yes you are!"
+    cho "If my trainer requires me to take off my clothing and stip for him."
+    cho "Then I have no other choice but to indulge..."
+    cho "I see nothing wrong with that..."
+
+    # Remove skirt.
 
     return
 
@@ -390,7 +410,7 @@ label cc_pf_strip_T1_E3:
     call ctc
 
     # Check if Hermione has already stripped for you.
-    if hg_pf_dance_OBJ.points < 2:
+    if hg_pf_dance.points < 2:
 
         # Cho demands that you get Hermione to strip, so Cho has something to blackmail her should anything happen.
         # Cho gets dressed again and storms off.
@@ -540,15 +560,13 @@ label cc_pf_strip_T1_E3:
     # Panties acquired message!
     $ has_cho_panties = True
 
-    m "Well then..."
-    m "[current_payout] points for \"Ravencla-\""
-    call cho_main("Wait Sir!{w} Not yet!","open","wide","base","mid")
-    m "What? Didn't you specifically ask me for it?"
-    call cho_main("I did, Sir, but...{w} we aren't done here just yet...","angry","base","sad","R")
+    m "Well then, Miss Chang..."
+    m "You may leave now.{w} Dismissed."
+    call cho_main("Wait Sir!{w} I can't leave just yet!","open","wide","base","mid")
+    m "Why not? Don't tell me you want some points now after all..."
+    call cho_main("Not Sir, but...{w} I don't believe we are done here...","angry","base","sad","R")
     g9 "We aren't?"
-    call cho_main("Could you please wait just a tiny bit longer, until...","soft","narrow","base","mid")
-    m "Until what?"
-    call cho_main("May I ask another request of you, Sir?","soft","narrow","sad","mid")
+    call cho_main("May I request something of you, Sir?","soft","narrow","sad","mid")
     m "Yes?{w} What is it?"
 
     # Cho asks you to summon Hermione.
@@ -627,6 +645,8 @@ label cc_pf_strip_T1_E3:
     call cho_main("How do you like the athletic, immaculate, nude body of your favourite student?","smile","narrow","angry","mid")
     call cho_main("How does it compare to Miss Granger's?","base","narrow","angry","mid")
     call ctc
+
+    $ cho_strip_complete = True # Unlocks Wardrobe on next summon.
 
     jump cc_pf_strip_T1_hermione
 

@@ -6,12 +6,12 @@ label hg_pf_blowjob: #15+
 
     call reset_menu_position
 
-    if hg_pf_blowjob_OBJ.points == 0:
+    if hg_pf_blowjob.points == 0:
         m "{size=-4}(Should I ask her for a blowjob?){/size}"
     else:
         m "{size=-4}(Should I ask the girl to give me another blowjob?){/size}"
 
-    if hg_pf_blowjob_OBJ.points < 1:
+    if hg_pf_blowjob.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -24,7 +24,7 @@ label hg_pf_blowjob: #15+
     call bld
 
     #Intro
-    if hg_pf_blowjob_OBJ.points == 0:
+    if hg_pf_blowjob.points == 0:
 
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
@@ -49,11 +49,11 @@ label hg_pf_blowjob: #15+
 
         call hg_blowjob_1 #First Blowjob.
 
-        $ hg_pf_blowjob_OBJ.level = 1
+        $ hg_pf_blowjob.level = 1
         jump end_hg_blowjob
 
     #Second Event.
-    elif hg_pf_blowjob_OBJ.points == 1:
+    elif hg_pf_blowjob.points == 1:
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="mid",ypos="base")
         m "How about another blowjob?"
@@ -93,12 +93,12 @@ label hg_pf_blowjob: #15+
 
         call hg_blowjob_1 #Same as first. Change to second.
 
-        $ hg_pf_blowjob_OBJ.level = 2
+        $ hg_pf_blowjob.level = 2
         jump end_hg_blowjob
 
 
     #Third Event.
-    elif hg_pf_blowjob_OBJ.points >= 2 and her_whoring < 21:
+    elif hg_pf_blowjob.points >= 2 and her_whoring < 21:
         call play_music("playful_tension") # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course...","base","base",xpos="mid",ypos="base")
@@ -108,12 +108,12 @@ label hg_pf_blowjob: #15+
 
         call hg_hidden_blowjob #Hidden Blowjob with Snape, Luna;
 
-        $ hg_pf_blowjob_OBJ.level = 3
+        $ hg_pf_blowjob.level = 3
         jump end_hg_blowjob
 
 
     #Fourth Event
-    elif hg_pf_blowjob_OBJ.points >= 2 and her_whoring >= 21:
+    elif hg_pf_blowjob.points >= 2 and her_whoring >= 21:
         call play_music("playful_tension") # SEX THEME.
         m "{size=-4}(Should I get a little rough with her?){/size}"
         menu:
@@ -138,7 +138,7 @@ label hg_pf_blowjob: #15+
 
         else:
             call hg_blowjob_4 #Daddy Roleplay, Worship Cock;
-            $ hg_pf_blowjob_OBJ.level = 4
+            $ hg_pf_blowjob.level = 4
 
         jump end_hg_blowjob
 
@@ -1879,7 +1879,10 @@ label end_hg_blowjob:
     if her_whoring < 18:
         $ her_whoring +=1
 
-    $ hg_pf_blowjob_OBJ.points += 1
+    $ hg_pf_blowjob.points += 1
+
+    # Stats
+    $ hg_pf_blowjob.counter += 1
 
     jump end_hermione_event
 

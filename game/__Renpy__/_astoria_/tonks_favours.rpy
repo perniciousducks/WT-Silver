@@ -9,13 +9,13 @@ label astoria_tonks_event: #send astoria to go see tonks
     if ast_affection < 100:
         $ ast_affection += 1
 
-    if ag_cs_imperio_sb_OBJ.level == 0 and not astoria_tonks_intro_completed:
+    if ag_cs_imperio_sb.level == 0 and not astoria_tonks_intro_completed:
         jump astoria_tonks_0
-    elif ag_cs_imperio_sb_OBJ.level == 1 and not astoria_tonks_1_completed:
+    elif ag_cs_imperio_sb.level == 1 and not astoria_tonks_1_completed:
         jump astoria_tonks_1
-    elif ag_cs_imperio_sb_OBJ.level == 2 and not astoria_tonks_2_completed:
+    elif ag_cs_imperio_sb.level == 2 and not astoria_tonks_2_completed:
         jump astoria_tonks_2
-    elif ag_cs_imperio_sb_OBJ.level == 3 and not astoria_tonks_3_completed:
+    elif ag_cs_imperio_sb.level == 3 and not astoria_tonks_3_completed:
         jump astoria_tonks_3
     else: #Repeatable events.
         jump astoria_tonks_random

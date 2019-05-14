@@ -7,7 +7,7 @@ label hg_pr_grope:
 
     call reset_menu_position
 
-    if hg_pr_grope_OBJ.points < 1:
+    if hg_pr_grope.points < 1:
         m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,7 +18,7 @@ label hg_pr_grope:
     call bld
 
     #Intro.
-    if hg_pr_grope_OBJ.points == 0:
+    if hg_pr_grope.points == 0:
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base",xpos="right",ypos="base")
         m "You do like boys your age, don't you?"
@@ -33,7 +33,7 @@ label hg_pr_grope:
         call her_main(".......?","open","base")
         m "And let him touch you..."
 
-        if her_whoring < 6 or hg_pr_flirt_teacher_OBJ.points < 2: # Counts how many times Hermione been sent to flirt with teachers.
+        if her_whoring < 6 or hg_pr_flirt_teacher.points < 2: # Counts how many times Hermione been sent to flirt with teachers.
             jump too_much
 
         call her_main("Let him... touch me, [genie_name]?","open","base")
@@ -100,7 +100,7 @@ label hg_pr_grope:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_grope_OBJ.inProgress = True
+    $ hg_pr_grope.inProgress = True
 
     jump end_hermione_event
 
@@ -403,13 +403,16 @@ label hg_pr_grope_complete:
 
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
 
-    $ hg_pr_grope_OBJ.points += 1
-    $ hg_pr_grope_OBJ.inProgress = False
+    $ hg_pr_grope.points += 1
+    $ hg_pr_grope.inProgress = False
 
-    if hg_pr_grope_OBJ.points >= 2:
-        $ hg_pr_grope_OBJ.complete = True
+    if hg_pr_grope.points >= 2:
+        $ hg_pr_grope.complete = True
 
     if her_reputation <= 8:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_grope.counter += 1
 
     jump end_hermione_event

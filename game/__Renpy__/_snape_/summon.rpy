@@ -254,7 +254,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
         jump ask_snape_for_quidditch_help
 
     # General
-    if hg_pf_dance_OBJ.points >= 2 and not snape_invited_to_watch: #After second dance where Snape entered room.
+    if hg_pf_dance.points >= 2 and not snape_invited_to_watch: #After second dance where Snape entered room.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_03
 

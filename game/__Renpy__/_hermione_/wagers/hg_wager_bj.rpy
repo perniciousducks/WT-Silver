@@ -34,7 +34,7 @@ label hg_wager_bj:
             call her_main("No... can we just get this over with?", mouth="annoyed", eye="glance")
             call her_main("{size=-5}All this because of a stupid card game{/size}.", mouth="upset", eye="worriedCl")
             m "I know, we should definitely do this again."
-            if hg_pf_dance_OBJ.points >= 2: #If snape walked in during the dance favour.
+            if hg_pf_dance.points >= 2: #If snape walked in during the dance favour.
                 call play_music("dark_fog")
 
                 call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
@@ -104,7 +104,7 @@ label hg_wager_bj:
         call set_u_ani("blowjob_ani","hand_ani", 0,10)
         call her_main("Gryffindor really can't afford to lose 20 points...", mouth="soft", eye="worried")
         call her_main("Okay then, I'll do it.", mouth="open", eye="closed")
-        if hg_pf_blowjob_OBJ.points > 0: #if shes done the blowjob favour these show
+        if hg_pf_blowjob.points > 0: #if shes done the blowjob favour these show
             call her_main("Not like I haven't done it before.", mouth="base", eye="happy", cheeks="blush")
             if her_whoring > 18:
                 call her_main("And it does feel good having my mouth full of your cock...", mouth="soft", eye="happyCl", cheeks="blush")
@@ -198,7 +198,7 @@ label hg_wager_bj:
                 call sna_main("Reveal yourself! I won't let you harm him!", face="snape_10", wand=True)
                 g4 "Severus, wait!"
                 call sna_main("I knew something was wrong from the start, you can't hide from me, now reveal yourself or prepare to die!", face="snape_30", wand=True)
-                if hg_pf_dance_OBJ.points < 2: #if hermione hasn't stripped twice
+                if hg_pf_dance.points < 2: #if hermione hasn't stripped twice
                     m "What are you doing Severus?"
                     call her_main("...", mouth="soft", eye="worried", cheeks="blush")
                     m "You're being very strange..."
@@ -598,10 +598,14 @@ label hg_wager_bj:
                             $ gryffindor -= 20
                             $ her_mood += 10
 
-        $ hg_pf_blowjob_OBJ.points += 1
+        $ hg_pf_blowjob.points += 1
     call blkfade
     call u_end_ani
     hide screen blkfade
+
+    # Stats
+    $ hg_pf_blowjob.counter += 1
+
     jump end_hermione_event
 
 label hg_wager_bj_secret:

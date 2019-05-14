@@ -6,7 +6,7 @@
 label cc_pr_flirt_start: # Not in use.
 
     # Intro
-    if cc_pr_flirt_OBJ.points == 0:
+    if cc_pr_flirt.points == 0:
         m "[cho_name], to continue your training I'll need you to get more involved with the other players."
         cho "With whom? The Hufflepuff team?{w} Gryffindor?"
         g9 "No, our focus will be on your own team!"
@@ -47,9 +47,10 @@ label cc_pr_flirt_start: # Not in use.
 
     call cho_walk(action="leave", speed=1.6)
 
-    $ cc_pr_flirt_OBJ.inProgress = True
+    $ cc_pr_flirt.inProgress = True
 
-    $ cc_pr_flirt_OBJ.points += 1
+    # Stats
+    $ cc_pr_flirt.counter += 1
 
     jump end_cho_event
 
@@ -57,21 +58,21 @@ label cc_pr_flirt_start: # Not in use.
 label event_class_test:
     menu:
         "-Start event-":
-            $ cc_pr_flirt_OBJ.start()
+            $ cc_pr_flirt.start()
         "-Set event tier-":
-            $ cc_pr_flirt_OBJ.tier = int(renpy.input("Tier (0-2):", str(cc_pr_flirt_OBJ.tier), "0123456789", length=1))
+            $ cc_pr_flirt.tier = int(renpy.input("Tier (0-2):", str(cc_pr_flirt.tier), "0123456789", length=1))
             jump event_class_test
         "-Display current tier values-":
             python:
-                tmp_values_display = cc_pr_flirt_OBJ.events[cc_pr_flirt_OBJ.tier]
+                tmp_values_display = cc_pr_flirt.events[cc_pr_flirt.tier]
             "{size=-5}[tmp_values_display]{/size}"
             jump event_class_test
         "-Reset all flags-":
-            $ cc_pr_flirt_OBJ.tier = 0
+            $ cc_pr_flirt.tier = 0
             python:
-                for i in xrange(cc_pr_flirt_OBJ.max_tiers):
-                    for j in xrange(len(cc_pr_flirt_OBJ.events[i])):
-                            cc_pr_flirt_OBJ.events[i][j][1] = False
+                for i in xrange(cc_pr_flirt.max_tiers):
+                    for j in xrange(len(cc_pr_flirt.events[i])):
+                            cc_pr_flirt.events[i][j][1] = False
             jump event_class_test
         "Exit":
             jump main_room
@@ -88,7 +89,7 @@ label event_class_test:
 # She stumbles upon Hermione who interrogates Cho on the spot.
 
 label cc_pr_flirt_T1_intro:
-    $ cc_pr_flirt_OBJ.level = 1
+    $ cc_pr_flirt.level = 1
 
     # Cho enters.
     call cho_walk(action="enter", speed=1.6)
@@ -143,7 +144,7 @@ label cc_pr_flirt_T1_E2:
 # Cho meets Malfoy. She flashes her panties at him but he was unimpressed. Genie wonders if he maybe isn't into panties.
 
 label cc_pr_flirt_T2_intro:
-    $ cc_pr_flirt_OBJ.level = 2
+    $ cc_pr_flirt.level = 2
 
     # Cho enters.
     call cho_walk(action="enter", speed=1.6)

@@ -7,7 +7,7 @@ label hg_pf_show_panties:
     call reset_menu_position
 
     m "{size=-4}(I will ask her to show me her panties. Plain and simple.){/size}"
-    if hg_pf_show_panties_OBJ.points < 1:
+    if hg_pf_show_panties.points < 1:
 
         menu:
             "\"(Yes, let's do it!)\"":
@@ -20,7 +20,7 @@ label hg_pf_show_panties:
     m "I just want you to show me your panties."
 
     #First Time Event.
-    if hg_pf_show_panties_OBJ.points == 0 and her_whoring <= 5:
+    if hg_pf_show_panties.points == 0 and her_whoring <= 5:
         call her_main("My... panties...?","open","base")
         call her_main("[genie_name]!","angry","angry")
         m "I know, I know, this a little weird..."
@@ -35,7 +35,7 @@ label hg_pf_show_panties:
         call her_main(".............","angry","angry")
 
     else:
-        if hg_pf_show_panties_OBJ.points >= 1: #Not the first time
+        if hg_pf_show_panties.points >= 1: #Not the first time
             call her_main("Oh... again?","annoyed","worriedL")
             m "Just do it..."
         call her_main("..................","annoyed","worriedL")
@@ -51,11 +51,11 @@ label hg_pf_show_panties:
 
     #Third Event
     else:
-        if hg_pf_show_panties_OBJ.level == 2: #Before third event happens.
+        if hg_pf_show_panties.level == 2: #Before third event happens.
             $ h_request_wear_panties = False
             $ hermione_wear_panties = False
 
-        elif hg_pf_show_panties_OBJ.level == 3: #Third event.
+        elif hg_pf_show_panties.level == 3: #Third event.
             if h_request_wear_panties:
                 $ hermione_wear_panties = True
             else:
@@ -82,7 +82,7 @@ label hg_pf_show_panties:
 
 label hg_show_panties_1:
 
-    $ hg_pf_show_panties_OBJ.level = 1 #Event hearts level (0-3)
+    $ hg_pf_show_panties.level = 1 #Event hearts level (0-3)
 
     pause.8
 
@@ -113,7 +113,7 @@ label hg_show_panties_1:
 
 label hg_show_panties_2:
 
-    $ hg_pf_show_panties_OBJ.level = 2 #Event hearts level (0-3)
+    $ hg_pf_show_panties.level = 2 #Event hearts level (0-3)
 
     pause.8
 
@@ -151,7 +151,7 @@ label hg_show_panties_2:
 
 label hg_show_panties_3:
 
-    $ hg_pf_show_panties_OBJ.level = 3 #Event hearts level (0-3)
+    $ hg_pf_show_panties.level = 3 #Event hearts level (0-3)
 
     call ctc
 
@@ -297,7 +297,7 @@ label end_hg_show_panties:
 
     if her_whoring <= 13:
         m "Yes, you can go now."
-        if hg_pf_show_panties_OBJ.points == 0: #First time.
+        if hg_pf_show_panties.points == 0: #First time.
             call her_main("Another 5 points...","soft","baseL")
             her "Can't wait to tell the guys!"
             call her_main("Only that I can't actually tell them about any of this...","annoyed","angryL")
@@ -310,7 +310,10 @@ label end_hg_show_panties:
         if her_whoring < 3: #Adds points till 3.
             $ her_whoring +=1
 
-        $ hg_pf_show_panties_OBJ.points += 1
+        $ hg_pf_show_panties.points += 1
+
+        # Stats
+        $ hg_pf_show_panties.counter += 1
 
         call her_walk(action="leave", speed=2.5)
 

@@ -234,11 +234,11 @@ label ll_pf_masturbate_T1_intro:
 
 label ll_pf_masturbate:
 
-    if ll_pf_masturbate_OBJ.points <= 0:
+    if ll_pf_masturbate.points <= 0:
         # Luna masturbates.
         jump ll_pf_masturbate_T1_E1
 
-    elif ll_pf_masturbate_OBJ.points == 1:
+    elif ll_pf_masturbate.points == 1:
         # Luna masturbates again.
         # You tell her to keep going even after she came once.
         jump ll_pf_masturbate_T1_E2
@@ -256,11 +256,13 @@ label ll_pf_masturbate:
         if lun_whoring < 3: # Points til 3
             $ lun_whoring += 1
 
-        if ll_pf_masturbate_OBJ.level < 3:
-            $ ll_pf_masturbate_OBJ.level += 1
+        if ll_pf_masturbate.level < 3:
+            $ ll_pf_masturbate.level += 1
+
+    $ ll_pf_masturbate.points += 1
 
     # Stats
-    $ ll_pf_masturbate_OBJ.points += 1
+    $ ll_pf_masturbate.counter += 1
 
     jump end_luna_event
 

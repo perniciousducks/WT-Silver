@@ -7,7 +7,7 @@ label hg_pr_flash: #LV.4 (Whoring = 9 - 11)
 
     call reset_menu_position
 
-    if hg_pr_flash_OBJ.points < 1:
+    if hg_pr_flash.points < 1:
         m "{size=-4}(Tell her to flash her tits to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,7 +18,7 @@ label hg_pr_flash: #LV.4 (Whoring = 9 - 11)
     call bld
 
     #Intro.
-    if hg_pr_flash_OBJ.points == 0:
+    if hg_pr_flash.points == 0:
         m "[hermione_name]..."
         m "I would like to award \"Gryffindor\" with 25 house points today."
         call her_main("Really?","base","base",xpos="right",ypos="base")
@@ -31,7 +31,7 @@ label hg_pr_flash: #LV.4 (Whoring = 9 - 11)
         m "You know, flash your breasts to some boys..."
         call her_main("?!!","shock","wide")
 
-        if her_whoring < 9 or hg_pr_grope_OBJ.points < 2:
+        if her_whoring < 9 or hg_pr_grope.points < 2:
             jump too_much
 
         her "[genie_name]!"
@@ -113,7 +113,7 @@ label hg_pr_flash: #LV.4 (Whoring = 9 - 11)
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_flash_OBJ.inProgress = True
+    $ hg_pr_flash.inProgress = True
 
     jump end_hermione_event
 
@@ -147,7 +147,7 @@ label hg_pr_flash_complete:
 
                 call her_walk(action="leave", speed=2.5)
 
-                $ hg_pr_flash_OBJ.inProgress = False
+                $ hg_pr_flash.inProgress = False
 
                 jump end_hermione_event
 
@@ -478,13 +478,16 @@ label hg_pr_flash_complete:
     hide screen blktone
     call her_chibi(action="leave")
 
-    $ hg_pr_flash_OBJ.points += 1
-    $ hg_pr_flash_OBJ.inProgress = False
+    $ hg_pr_flash.points += 1
+    $ hg_pr_flash.inProgress = False
 
-    if hg_pr_flash_OBJ.points >= 2:
-        $ hg_pr_flash_OBJ.complete = True
+    if hg_pr_flash.points >= 2:
+        $ hg_pr_flash.complete = True
 
     if her_reputation <= 11:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_flash.counter += 1
 
     jump end_hermione_event

@@ -30,7 +30,7 @@ label hg_ps_walk: #This will become more intense as the wear a shorter skirt and
     call her_main("I suppose that you're right [genie_name].","normal","frown") 
     call her_main("Well I best be off... Can't be late for class.","normal","frown") 
     ">She leaves your office reluctantly."
-    $ hg_ps_walk_OBJ.inProgress = True
+    $ hg_ps_walk.inProgress = True
 
 label hg_ps_walk_complete:#Returns to your office after being made walk around the school with no shirt
     return

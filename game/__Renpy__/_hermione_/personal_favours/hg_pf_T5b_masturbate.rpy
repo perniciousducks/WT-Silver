@@ -6,7 +6,7 @@ label hg_pf_masturbate: #LV.4 (Whoring = 8 - 10)
 
     call reset_menu_position
 
-    if hg_pf_masturbate_OBJ.points == 0:
+    if hg_pf_masturbate.points == 0:
         m "{size=-4}(Should I ask her to masturbate?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -17,7 +17,7 @@ label hg_pf_masturbate: #LV.4 (Whoring = 8 - 10)
     $ current_payout = 40 #Used when haggling about price of the favor.
 
     #First time event.
-    if hg_pf_masturbate_OBJ.points == 0:
+    if hg_pf_masturbate.points == 0:
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?","base","base")
         m "Do you ever touch yourself?"
@@ -76,11 +76,11 @@ label hg_pf_masturbate: #LV.4 (Whoring = 8 - 10)
         call hg_masturbate_1
         call hg_masturbate_1_cumming
 
-        $ hg_pf_masturbate_OBJ.level = 1
+        $ hg_pf_masturbate.level = 1
         jump end_hg_masturbate
 
     #Second time event.
-    elif hg_pf_masturbate_OBJ.points == 1: # SECOND EVENT
+    elif hg_pf_masturbate.points == 1: # SECOND EVENT
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?","base","base")
         m "Are you feeling horny?"
@@ -112,11 +112,11 @@ label hg_pf_masturbate: #LV.4 (Whoring = 8 - 10)
 
         call hg_masturbate_2_cumming
 
-        $ hg_pf_masturbate_OBJ.level = 2
+        $ hg_pf_masturbate.level = 2
         jump end_hg_masturbate
 
     #Third time event.
-    elif hg_pf_masturbate_OBJ.points >= 2:
+    elif hg_pf_masturbate.points >= 2:
         m "[hermione_name]?"
         call her_main("[genie_name]?","base","base")
         m "You don't mind pleasuring yourself in front of me, do you?"
@@ -131,7 +131,7 @@ label hg_pf_masturbate: #LV.4 (Whoring = 8 - 10)
         call hg_masturbate_3
         call hg_masturbate_3_cumming
 
-        $ hg_pf_masturbate_OBJ.level = 3
+        $ hg_pf_masturbate.level = 3
         jump end_hg_masturbate
 
 
@@ -230,7 +230,7 @@ label hg_masturbate_1:
 
             return
 
-        "\"Play with your breasts\"" if hg_pf_masturbate_OBJ.points > 0:
+        "\"Play with your breasts\"" if hg_pf_masturbate.points > 0:
             call her_main("my breasts...","open","down")
             call set_her_action("covering_top")
 
@@ -280,7 +280,7 @@ label hg_masturbate_1:
 
             return
 
-        "\"Take off your skirt\"" if hg_pf_masturbate_OBJ.points > 0:
+        "\"Take off your skirt\"" if hg_pf_masturbate.points > 0:
             call her_main("Excuse me?","soft","wide")
             m "You heard me, [hermione_name]..."
             call her_main("........","annoyed","angryL",cheeks="blush")
@@ -724,15 +724,18 @@ label end_hg_masturbate:
     if her_whoring < 15: #Adds points till 15.
         $ her_whoring +=1
 
-    $ hg_pf_masturbate_OBJ.points += 1
+    $ hg_pf_masturbate.points += 1
 
-    if hg_pf_masturbate_OBJ.points == 1:
-        $ hg_pf_masturbate_OBJ.level = 1 #Event hearts level (0-3)
+    if hg_pf_masturbate.points == 1:
+        $ hg_pf_masturbate.level = 1 #Event hearts level (0-3)
 
-    if hg_pf_masturbate_OBJ.points == 2:
-        $ hg_pf_masturbate_OBJ.level = 2 #Event hearts level (0-3)
+    if hg_pf_masturbate.points == 2:
+        $ hg_pf_masturbate.level = 2 #Event hearts level (0-3)
 
-    if hg_pf_masturbate_OBJ.points == 3:
-        $ hg_pf_masturbate_OBJ.level = 3 #Event hearts level (0-3)
+    if hg_pf_masturbate.points == 3:
+        $ hg_pf_masturbate.level = 3 #Event hearts level (0-3)
+
+    # Stats
+    $ hg_pf_masturbate.counter += 1
 
     jump end_hermione_event

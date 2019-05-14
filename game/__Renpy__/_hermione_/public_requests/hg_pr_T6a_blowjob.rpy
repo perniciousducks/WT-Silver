@@ -7,7 +7,7 @@ label hg_pr_blowjob: #LV.7 (Whoring = 18 - 20)
 
     call reset_menu_position
 
-    if hg_pr_blowjob_OBJ.points < 1:
+    if hg_pr_blowjob.points < 1:
         m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -28,7 +28,7 @@ label hg_pr_blowjob: #LV.7 (Whoring = 18 - 20)
     call bld
 
     #Intro.
-    if hg_pr_blowjob_OBJ.points == 0:
+    if hg_pr_blowjob.points == 0:
         m "[hermione_name], I will be buying another favour from you today."
         call her_main("Thank you, [genie_name]. I really appreciate it.","open","closed",xpos="right",ypos="base")
         m "Sure, Happy to help."
@@ -37,7 +37,7 @@ label hg_pr_blowjob: #LV.7 (Whoring = 18 - 20)
         call her_main("!!!","shock","wide")
         her "...with my mouth?"
 
-        if her_whoring < 18 or hg_pr_handjob_OBJ.points < 2:
+        if her_whoring < 18 or hg_pr_handjob.points < 2:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -93,7 +93,7 @@ label hg_pr_blowjob: #LV.7 (Whoring = 18 - 20)
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_blowjob_OBJ.inProgress = True
+    $ hg_pr_blowjob.inProgress = True
 
     jump end_hermione_event
 
@@ -157,7 +157,7 @@ label hg_pr_blowjob_complete:
 
             call her_walk(action="leave", speed=2.5)
 
-            $ hg_pr_blowjob_OBJ.inProgress = False
+            $ hg_pr_blowjob.inProgress = False
 
             jump end_hermione_event
 
@@ -305,13 +305,16 @@ label hg_pr_blowjob_complete:
 
     $ public_whore_ending = True #Activates "Public Whore" ending.
 
-    $ hg_pr_blowjob_OBJ.points += 1
-    $ hg_pr_blowjob_OBJ.inProgress = False
+    $ hg_pr_blowjob.points += 1
+    $ hg_pr_blowjob.inProgress = False
 
-    if hg_pr_blowjob_OBJ.points >= 2:
-        $ hg_pr_blowjob_OBJ.complete = True
+    if hg_pr_blowjob.points >= 2:
+        $ hg_pr_blowjob.complete = True
 
     if her_reputation <= 20:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_blowjob.counter += 1
 
     jump end_hermione_event

@@ -7,7 +7,7 @@ label hg_pr_kiss: #LV.5 (Whoring = 12 - 14)
 
     call reset_menu_position
 
-    if hg_pr_kiss_OBJ.points < 1:
+    if hg_pr_kiss.points < 1:
         m "{size=-4}(Tell her to go make out with one of her female classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -18,11 +18,11 @@ label hg_pr_kiss: #LV.5 (Whoring = 12 - 14)
     call bld
 
     #Intro.
-    if hg_pr_kiss_OBJ.points == 0:
+    if hg_pr_kiss.points == 0:
         m "Have You ever kissed another girl, [hermione_name]?"
         call her_main("?!","normal","frown",xpos="right",ypos="base")
 
-        if her_whoring < 12 or hg_pr_flash_OBJ.points < 2: # Counts how many times you sent Hermione to flash a classmate.
+        if her_whoring < 12 or hg_pr_flash.points < 2: # Counts how many times you sent Hermione to flash a classmate.
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -79,7 +79,7 @@ label hg_pr_kiss: #LV.5 (Whoring = 12 - 14)
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_kiss_OBJ.inProgress = True
+    $ hg_pr_kiss.inProgress = True
 
     jump end_hermione_event
 
@@ -126,7 +126,7 @@ label hg_pr_kiss_complete:
 
             $ her_mood +=25
 
-            $ hg_pr_kiss_OBJ.inProgress = False
+            $ hg_pr_kiss.inProgress = False
 
             jump end_hermione_event
 
@@ -196,7 +196,7 @@ label hg_pr_kiss_complete:
 
                     $ her_mood +=25
 
-                    $ hg_pr_kiss_OBJ.inProgress = False
+                    $ hg_pr_kiss.inProgress = False
 
                     jump end_hermione_event
 
@@ -440,13 +440,16 @@ label hg_pr_kiss_complete:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ hg_pr_kiss_OBJ.points += 1
-    $ hg_pr_kiss_OBJ.inProgress = False
+    $ hg_pr_kiss.points += 1
+    $ hg_pr_kiss.inProgress = False
 
-    if hg_pr_kiss_OBJ.points >= 2:
-        $ hg_pr_kiss_OBJ.complete = True
+    if hg_pr_kiss.points >= 2:
+        $ hg_pr_kiss.complete = True
 
     if her_reputation <= 14:
         $ her_reputation +=1
+
+    # Stats
+    $ hg_pr_kiss.counter += 1
 
     jump end_hermione_event

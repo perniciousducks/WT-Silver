@@ -8,7 +8,7 @@ label hg_pf_grope_ass:
 
     m "{size=-4}(I'll just molest her butt a little.){/size}"
 
-    if hg_pf_grope_ass_OBJ.points < 1:
+    if hg_pf_grope_ass.points < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -22,7 +22,7 @@ label hg_pf_grope_ass:
     #First time event
     if her_whoring >= 0 and her_whoring <= 5: #[3,4,5]
 
-        $ hg_pf_grope_ass_OBJ.level = 1 #Event hearts level (0-3)
+        $ hg_pf_grope_ass.level = 1 #Event hearts level (0-3)
 
         m "Come closer, child. Let me molest your butt a little."
         if her_whoring < 3:
@@ -30,7 +30,7 @@ label hg_pf_grope_ass:
             call her_main("My butt?!","shock","shocked")
             jump too_much
 
-        if hg_pf_grope_ass_OBJ.points == 0 and her_whoring <= 5: #First time
+        if hg_pf_grope_ass.points == 0 and her_whoring <= 5: #First time
             stop music fadeout 5.0
             call her_main("[genie_name]!?","mad","wide",cheeks="blush",ypos="head")
             m "Relax, [hermione_name]. It will be the easiest 15 points you've ever made, I promise."
@@ -50,7 +50,7 @@ label hg_pf_grope_ass:
     #Second Event
     elif her_whoring >= 6 and her_whoring <= 14: #[6,7,8,9,10,11,12,13,14]
 
-        $ hg_pf_grope_ass_OBJ.level = 2 #Event hearts level (0-3)
+        $ hg_pf_grope_ass.level = 2 #Event hearts level (0-3)
 
         m "Come closer, [hermione_name]. Let me molest your butt a little."
         call her_main("If I must...","open","baseL",cheeks="blush",ypos="head")
@@ -62,7 +62,7 @@ label hg_pf_grope_ass:
     #Third Event
     elif her_whoring >= 15:
 
-        $ hg_pf_grope_ass_OBJ.level = 3 #Event hearts level (0-3)
+        $ hg_pf_grope_ass.level = 3 #Event hearts level (0-3)
 
         hide screen bld1
         m "Come closer, [hermione_name]. Let me molest your butt a little."
@@ -173,7 +173,10 @@ label hg_butt_molester_1:
                                             g4 "Tsk! (You little brat!)"
 
                                             $ her_mood += 20
-                                            $ hg_pf_grope_ass_OBJ.points += 1
+                                            $ hg_pf_grope_ass.points += 1
+
+                                            # Stats
+                                            $ hg_pf_grope_ass.counter += 1
 
                                             jump end_hermione_event
 
@@ -210,7 +213,10 @@ label hg_butt_molester_1:
                                             $ her_mood += 30
                                             $ hermione_busy = True
 
-                                            $ hg_pf_grope_ass_OBJ.points += 1
+                                            $ hg_pf_grope_ass.points += 1
+
+                                            # Stats
+                                            $ hg_pf_grope_ass.counter += 1
 
                                             jump main_room
 
@@ -1116,6 +1122,9 @@ label end_hg_butt_molester:
     if her_whoring < 9: #Adds points till 9.
         $ her_whoring +=1
 
-    $ hg_pf_grope_ass_OBJ.points += 1
+    $ hg_pf_grope_ass.points += 1
+
+    # Stats
+    $ hg_pf_grope_ass.counter += 1
 
     jump end_hermione_event

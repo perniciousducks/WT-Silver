@@ -84,7 +84,7 @@ label cc_pr_manipulate_start: # Complete. Not posed.
             cho "I'll do anything but that!"
             m "So no kissing?"
             cho "Absolutely not! Not even with Malfoy..."
-            m "(...)
+            m "(...)"
             cho "Besides, Sir. They're Slytherins! What if someone saw me with them?"
             m "Would that be an issue?"
             cho "If they are on the enemy team, yes! What if my team was to find out I hang around them?"

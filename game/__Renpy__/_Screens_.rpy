@@ -265,7 +265,7 @@ screen whitetone8():
     add im.Alpha("interface/white.jpg", 0.8)
 
 screen white():
-    zorder 3
+    zorder 4
     add "interface/white.jpg"
 
 screen emo(): #Character talking off screen.
@@ -633,8 +633,6 @@ screen luncg():
 
     zorder 6
 
-
-
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
 
     def cg(image):
@@ -665,7 +663,6 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
 
         renpy.show_screen("ccg")
         renpy.with_statement(Dissolve(0.5))
-
 
     def sc34CG(scene=None, image1=None, image2=None, image3=None):
         global sc_cg_base

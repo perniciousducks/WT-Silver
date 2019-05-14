@@ -24,14 +24,14 @@ screen say(who, what, side_image=None):
             else:
                 style "say_who_window_night"
                 text "Hidden" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+            if who:
+                text who id "who" ypos 1000
+            text what id "what" ypos 1000
+            
         #Add fullscreen CTC button
         button:
             action SetVariable("hkey_chat_hidden", False)
             style "empty"
-
-            #Its the easiest way to hide the chat window without breaking the game, really
-            if hkey_chat_hidden:
-                ypos 1000
     else:
         if who:
             window:
@@ -43,8 +43,8 @@ screen say(who, what, side_image=None):
                     style "say_who_window_night"
                     text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
         window id "window":
-            has vbox:
-                style "say_vbox"            
+            has vbox#:
+                #style "say_vbox"            
             if daytime and not persistent.nightmode:
                 text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
             else:

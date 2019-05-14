@@ -72,24 +72,25 @@ label cc_pf_strip_T1_E1:
     g4 "It is quite impressive..."
     call cho_main("Glad to hear it, [cho_genie_name].","base","closed","base","mid")
     m "I assume you get complimented often?"
-    call cho_main("Occasionally...","soft","base","base","R")
+    call cho_main("Sometimes...","soft","base","base","R")
     g9 "And I suspect you have many admirers?"
-    call cho_main("A couple, maybe...","quiver","base","sad","down")
+    call cho_main("Oh, umm... maybe?","quiver","base","sad","down")
     call cho_main("But that's \"not\" why I take such great care of my body, Sir!","open","narrow","angry","mid")
     m "Of course not..."
-    call cho_main("I simply have to be at the top of the game! Stay competitive, as best as I can!","open","closed","base","mid")
+    call cho_main("Quidditch is a hard game for anyone, as I'm sure you know...","open","closed","base","mid")
+    call cho_main("But that goes double for girls! I have to train twice as hard as the boys if I want to stand a chance!","open","closed","base","mid")
     m "That's very commendable of you..."
     call cho_main("Thank you, Sir.","base","base","base","mid")
 
     # Ask her to strip.
-    g9 "Why don't you show me what you are made of?{w} Let me have a proper look at you!"
+    g9 "So, Why don't you show me what you are made of?{w} Let me have a proper look at you!"
     call cho_main("Sir?","soft","wink","raised","mid")
     m "I need you to remove your clothes."
     call cho_main("!!!","soft","wide","base","mid")
     m "Go on, girl. Start with the top..."
     call cho_main("No!","scream","closed","angry","mid", trans="hpunch")
     call cho_main("Why are you even asking me to do such a thing?!","angry","narrow","angry","mid")
-    m "Have you already forgotten that I help you?"
+    m "Have you already forgotten that I'm here to train you?"
     call cho_main("And I'm very thankful for that, Sir, but...","open","closed","base","mid")
     m "Am I not your trusted mentor?"
     call cho_main("(...)","annoyed","narrow","angry","mid")
@@ -111,7 +112,7 @@ label cc_pf_strip_T1_E1:
 
     # Cho stays reluctant.
     call cho_main("Is there no other way I could repay the favor?","annoyed","narrow","sad","mid")
-    m "Well yes- Several.{w} But we'll get to those later..."
+    m "Well, yes- Several.{w} But we'll get to those later..."
     call cho_main("Later, Sir?","soft","base","raised","mid")
     g4 "Girl, I wouldn't be asking you this if it wasn't absolutely necessary for your training!"
     call cho_main("Of course, [cho_genie_name].","annoyed","base","sad","down")

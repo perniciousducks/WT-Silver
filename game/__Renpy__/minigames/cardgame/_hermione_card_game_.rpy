@@ -344,12 +344,6 @@ label her_duel_cancel:
 screen genie_vs_hermione():
     zorder 8
     add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
-screen move_genie():
-    zorder 8
-    add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
-screen versus():
-    zorder 8
-    add "images/cardgame/VS/vs.png"
 screen move_hermione():
     zorder 8
     add "images/cardgame/VS/hermione_01.png" at move_in(300, 0.5)

@@ -236,9 +236,6 @@ label twins_duel_cancel:
 screen genie_vs_twins():
     zorder 8
     add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
-screen move_genie():
-    zorder 8
-    add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
 screen move_twins():
     zorder 8
     add "images/cardgame/VS/twins_01.png" at move_in(300, 1)

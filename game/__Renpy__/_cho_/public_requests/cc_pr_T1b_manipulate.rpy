@@ -297,7 +297,7 @@ label cc_pr_manipulate_T1_E3:
     # Cho leaves.
     call cho_walk(action="leave", speed=1.6)
 
-    $ cc_pr_manipulate.level = 2 # Last event of that tier.
+    $ cc_pr_manipulate.tier = 2 # Last event of that tier.
 
     jump end_cho_event
 

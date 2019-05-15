@@ -119,12 +119,14 @@ screen input(prompt):
         action NullAction()
         style "empty"
         
-    window style "input_window":      
-        has vbox
-            #style "say_vbox"
+    window:
+        id "window"
         
-        text prompt #style "input_prompt"
-        input id "input" #style "input_text"
+        has vbox:
+            style "say_vbox"
+        
+        text prompt
+        input id "input"
         
     #use quick_menu
 
@@ -743,28 +745,3 @@ init -2:
         selected_idle_color "#cc08"
         selected_hover_color "#cc0"
         insensitive_color "#4448"
-
-
-# Set a default value for the auto-forward time, and note that AFM is
-    # turned off by default.
-    #config.default_afm_time = 10
-    #config.default_afm_enable = False
-    
-screen input():
-    tag input
-    zorder 15 #Always on top
-    
-    button:
-        xsize 1080
-        ysize 600
-        action NullAction()
-        style "empty"
-        
-    window:
-        id "window"
-        
-        has vbox:
-            style "say_vbox"
-        
-        text prompt
-        input id "input"

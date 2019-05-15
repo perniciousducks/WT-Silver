@@ -216,7 +216,7 @@ label hermione_favor_menu:
                     jump silver_requests_root
                 elif result == "vague":
                     call vague_idea
-                    jump not_now_pr
+                    jump not_now_ps
                 else:
                     $ renpy.jump(result)
 

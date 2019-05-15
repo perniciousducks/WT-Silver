@@ -72,7 +72,7 @@ label event_class_test:
             python:
                 for i in xrange(cc_pr_flirt.max_tiers):
                     for j in xrange(len(cc_pr_flirt.events[i])):
-                            cc_pr_flirt.events[i][j][1] = False
+                        cc_pr_flirt.events[i][j][1] = False
             jump event_class_test
         "Exit":
             jump main_room

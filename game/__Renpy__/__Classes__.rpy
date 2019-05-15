@@ -9,7 +9,7 @@ init -2 python:
         title        = ""
         tier         = 0
         start_label  = ""
-        return_label = ""
+        complete_label = ""
         points       = 0 # For progress checks. Can be reset if needed.
         counter      = 0 # For stats
         hint         = False

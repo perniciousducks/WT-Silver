@@ -664,56 +664,56 @@ label her_progress_init:
     $ hg_pr_flirt.tier = 1
     $ hg_pr_flirt.title = "She's a flirt"
     $ hg_pr_flirt.start_label = "hg_pr_flirt"
-    $ hg_pr_flirt.return_label = "hg_pr_flirt_complete"
+    $ hg_pr_flirt.complete_label = "hg_pr_flirt_complete"
 
     if not hasattr(renpy.store,'hg_pr_flirt_teacher'):
         $ hg_pr_flirt_teacher = request_class()
     $ hg_pr_flirt_teacher.tier = 1
     $ hg_pr_flirt_teacher.title = "She's bait"
     $ hg_pr_flirt_teacher.start_label = "hg_pr_flirt_teacher"
-    $ hg_pr_flirt_teacher.return_label = "hg_pr_flirt_teacher_complete"
+    $ hg_pr_flirt_teacher.complete_label = "hg_pr_flirt_teacher_complete"
 
     if not hasattr(renpy.store,'hg_pr_grope'):
         $ hg_pr_grope = request_class()
     $ hg_pr_grope.tier = 1
     $ hg_pr_grope.title = "Let a classmate molest you"
     $ hg_pr_grope.start_label = "hg_pr_grope"
-    $ hg_pr_grope.return_label = "hg_pr_grope_complete"
+    $ hg_pr_grope.complete_label = "hg_pr_grope_complete"
 
     if not hasattr(renpy.store,'hg_pr_flash'):
         $ hg_pr_flash = request_class()
     $ hg_pr_flash.tier = 1
     $ hg_pr_flash.title = "Flash your tits to a classmate"
     $ hg_pr_flash.start_label = "hg_pr_flash"
-    $ hg_pr_flash.return_label = "hg_pr_flash_complete"
+    $ hg_pr_flash.complete_label = "hg_pr_flash_complete"
 
     if not hasattr(renpy.store,'hg_pr_kiss'):
         $ hg_pr_kiss = request_class()
     $ hg_pr_kiss.tier = 2
     $ hg_pr_kiss.title = "Kiss a girl."
     $ hg_pr_kiss.start_label = "hg_pr_kiss"
-    $ hg_pr_kiss.return_label = "hg_pr_kiss_complete"
+    $ hg_pr_kiss.complete_label = "hg_pr_kiss_complete"
 
     if not hasattr(renpy.store,'hg_pr_handjob'):
         $ hg_pr_handjob = request_class()
     $ hg_pr_handjob.tier = 2
     $ hg_pr_handjob.title = "Give a handjob to a classmate"
     $ hg_pr_handjob.start_label = "hg_pr_handjob"
-    $ hg_pr_handjob.return_label = "hg_pr_handjob_complete"
+    $ hg_pr_handjob.complete_label = "hg_pr_handjob_complete"
 
     if not hasattr(renpy.store,'hg_pr_blowjob'):
         $ hg_pr_blowjob = request_class()
     $ hg_pr_blowjob.tier = 2
     $ hg_pr_blowjob.title = "Give a blowjob to a classmate"
     $ hg_pr_blowjob.start_label = "hg_pr_blowjob"
-    $ hg_pr_blowjob.return_label = "hg_pr_blowjob_complete"
+    $ hg_pr_blowjob.complete_label = "hg_pr_blowjob_complete"
 
     if not hasattr(renpy.store,'hg_pr_sex'):
         $ hg_pr_sex = request_class()
     $ hg_pr_sex.tier = 2
     $ hg_pr_sex.title = "Have sex with a classmate"
     $ hg_pr_sex.start_label = "hg_pr_sex"
-    $ hg_pr_sex.return_label = "hg_pr_sex_complete"
+    $ hg_pr_sex.complete_label = "hg_pr_sex_complete"
 
 
     $ hg_pr_list = [hg_pr_flirt,
@@ -733,33 +733,30 @@ label her_progress_init:
     $ hg_ps_get_panties.tier = 1
     $ hg_ps_get_panties.title = "Panty Thief"
     $ hg_ps_get_panties.start_label = "hg_ps_get_panties"
-    $ hg_ps_get_panties.return_label = "hg_ps_get_panties_complete"
+    $ hg_ps_get_panties.complete_label = "hg_ps_get_panties_complete"
 
     if not hasattr(renpy.store,'hg_ps_buttplug'):
         $ hg_ps_buttplug = shaming_class()
     $ hg_ps_buttplug.tier = 1
     $ hg_ps_buttplug.title = "Wear A Buttplug"
     $ hg_ps_buttplug.start_label = "hg_ps_buttplug"
-    $ hg_ps_buttplug.return_label = "hg_ps_buttplug_complete"
+    $ hg_ps_buttplug.complete_label = "hg_ps_buttplug_complete"
 
     if not hasattr(renpy.store,'hg_ps_cumslut'):
         $ hg_ps_cumslut = shaming_class()
     $ hg_ps_cumslut.tier = 2
     $ hg_ps_cumslut.title = "Wear My Cum"
     $ hg_ps_cumslut.start_label = "hg_ps_cumslut"
-    $ hg_ps_cumslut.return_label = "hg_ps_cumslut_complete"
+    $ hg_ps_cumslut.complete_label = "hg_ps_cumslut_complete"
 
     if not hasattr(renpy.store,'hg_ps_walk'):
         $ hg_ps_walk = shaming_class()
     $ hg_ps_walk.tier = 2
     $ hg_ps_walk.title = "Walk Of Shame"
     $ hg_ps_walk.start_label = "hg_ps_walk"
-    $ hg_ps_walk.return_label = "hg_ps_walk_complete"
-
+    $ hg_ps_walk.complete_label = "hg_ps_walk_complete"
 
     $ hg_ps_list = [hg_ps_get_panties,
                     hg_ps_buttplug,
-                    hg_ps_cumslut
-        ]
-
+                    hg_ps_cumslut]
     return

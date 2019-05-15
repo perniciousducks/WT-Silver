@@ -37,11 +37,8 @@ label nar(text="",action=""):
 
     return
 
-
-
 #Transitions
 label transition(trans=None):
-
     if trans != None:         #d3 is default.
         if trans == "d1":
             with d1
@@ -53,7 +50,6 @@ label transition(trans=None):
             with d7
         elif trans == "d9":
             with d9
-
         elif trans == "fade":
             with fade
         elif trans == "hpunch":
@@ -62,18 +58,14 @@ label transition(trans=None):
             with vpunch
         elif trans == "move":
             with move
-
         #Skip Transitions
         elif trans in ["None","none","skip"]:
             pass
         else: #for typos and preventing crashes...
             with d3
-
-    #Default transition.
     else:
         if not hide_transitions:
             with d3
-
     return
 
 init python:

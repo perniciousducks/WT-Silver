@@ -61,14 +61,16 @@ label duel:
     show screen duel
 
     hide screen snape_glass
+    hide screen bld1
     with fade
+    call ctc
 
-
+    call bld
     m "This is foolish... You are no match for me..."
-    sna_[1] "Amusing..."
+    call sna_main("Amusing...","snape_01", ypos="head")
     m "{size=-4}(Actually my human body is quite weak...){/size}"
     m "{size=-4}(But I should still be way more powerful than any human wizard...){/size}"
-    sna_[1] "Let the duel begin!"
+    call sna_main("Let the duel begin!","snape_01")
     hide screen bld1
     show screen hp_bar
     $ duel_OBJ.in_progress = True
@@ -78,14 +80,15 @@ label duel:
 label duel_main:
     if genie_hp <= 300 and not d_flag_01:
         $ d_flag_01 = True
-        sna_[1] "Ready to give up yet?"
+        call sna_main("Ready to give up yet?","snape_01", ypos="head")
         g4 "Tsk..."
 
     if snape_hp <= 400 and not d_flag_02:
         $ d_flag_02 = True
         g4 "{size=-4}(He is getting weaker, I can feel it!){/size}"
-        sna_[1] "*Panting*"
+        call sna_main("*Panting*","snape_01", ypos="head")
 
+    hide screen bld1
     call screen duel_buttons
 
 
@@ -465,12 +468,11 @@ label genie_lost:
             hide screen end_u_1
             if rum_times == 1:
                 $ potions = 1
-            if rum_times == 2:
+            elif rum_times == 2:
                 $ potions = 2
             elif rum_times == 3:
                 $ potions = 3
-            else:
-                pass
+
             jump duel
 
         "-Give up-":

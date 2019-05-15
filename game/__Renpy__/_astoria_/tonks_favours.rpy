@@ -182,9 +182,7 @@ label astoria_tonks_3:
     m "I will try..."
     call ast_main("Great! Now lets get started!","grin","angry","angry","mid")
 
-    call give_reward(">Congratulations! You can now access Astoria's wardrobe and change her appearance!","interface/icons/head/head_astoria_2.png")
-
-    call give_reward(">Congratulations! Susan's wardrobe has also been unlocked!","interface/icons/head/head_susan_2.png")
+    call popup("You can now access Susan & Astoria's wardrobe and change their appearance!", "Congratulations!", "interface/icons/head/head_astoria_2.png")
 
     "Developer note:" ">We have made both Susan's and Astoria's wardrobe available.\nAll available clothing has also been unlocked."
     "Developer note:" ">Susan's wardrobe as well as Astoria's clothings will unlock with future events instead in later patches."

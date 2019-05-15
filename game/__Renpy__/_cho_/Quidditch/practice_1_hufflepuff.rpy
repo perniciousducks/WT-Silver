@@ -73,7 +73,7 @@ label quidditch_match_return:
 
 
     # Hufflepuff Match
-    if main_matches_won == 0:
+    if cho_tier == 1:
 
         # First practice game.
         if huffl_matches_won == 0:
@@ -97,12 +97,12 @@ label quidditch_match_return:
                 jump hufflepuff_practice_lost
 
 
-    #Gryffindor Match
-    elif main_matches_won == 1:
+    #Slytherin Match
+    elif cho_tier == 2:
         jump main_room
 
-    #Slytherin Match
-    elif main_matches_won == 2:
+    #Gryffindor Match
+    elif cho_tier == 3:
         jump main_room
 
 

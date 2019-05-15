@@ -4,14 +4,14 @@
 
 label cc_pf_talk:
 
-    # Tier 1
-    if main_matches_won == 0:
+    ### Tier 1 (pre Hufflepuff) ###
+    if cho_tier == 1:
 
-        if cc_pf_talk.level == 0:    # 0 Hearts.
+        if cc_pf_talk.points == 0:    # 0 Hearts.
             # Talk about her boyfriends.
             call cc_pf_talk_T1_E1
 
-        elif cc_pf_talk.level == 1:  # 1 Heart.
+        elif cc_pf_talk.points == 1:  # 1 Heart.
             # Talk about her Quidditch team.
             # Unlocks public requests favours.
             $ cho_requests_unlocked = True
@@ -21,31 +21,33 @@ label cc_pf_talk:
             # Talk about Cedric some more.
             call cc_pf_talk_T1_E3
 
-    # Tier 2
-    elif main_matches_won == 1:
+    ### Tier 2 (pre Slytherin) ###
+    elif cho_tier == 2:
 
-        if cc_pf_talk.level == 0:    # 0 Hearts.
+        if cc_pf_talk.points == 0:
             # Talk about Malfoy and his team.
             call cc_pf_talk_T2_E1
-        elif cc_pf_talk.level == 1:  # 1 Heart.
+
+        elif cc_pf_talk.points == 1:
             # Talk about getting bullied by Slytherin.
             call cc_pf_talk_T2_E2
-        elif cc_pf_talk.level == 2:  # 2 Heart.
+
+        elif cc_pf_talk.points == 2:
             # Talk about becoming more popular.
             call cc_pf_talk_T2_E3
-        else:                            # 3+ Hearts.
-            #
+
+        else:
             call cc_pf_talk_T2_E4
 
     # End event jump
     # (only used when the event isn't called.)
     label end_cho_talk_event:
 
-        if main_matches_won == 0:
+        if cho_tier == 1:
             if cho_whoring < 3: # Points til 3
                 $ cho_whoring += 1
 
-        elif main_matches_won == 1:
+        elif cho_tier == 2:
             if cho_whoring < 8: # Points til 8
                 $ cho_whoring += 1
 
@@ -61,9 +63,9 @@ label cc_pf_talk:
 
 
 
-### Tier 1 ###
+### Tier 1 (pre Hufflepuff) ###
 
-label cc_pf_talk_T1_E1: # Complete.
+label cc_pf_talk_T1_E1:
     m "Let’s have a little chat shall we."
     g9 "Just to get to know each other a little bit better."
     call cho_main("Of course, Sir.","smile","base","base","mid")
@@ -293,9 +295,7 @@ label cc_pf_talk_T1_E1: # Complete.
     return
 
 
-
-# Second Event
-label cc_pf_talk_T1_E2: # Complete.
+label cc_pf_talk_T1_E2:
     g9 "Get closer, [cho_name]..."
     call cho_main("...","annoyed","base","base","down")
 
@@ -448,18 +448,12 @@ label cc_pf_talk_T1_E2: # Complete.
     stop music fadeout 1.0
 
     $ cho_requests_unlocked = True
-    call give_reward(">You can now buy \"Public Requests\" from Cho! (They are optional to her training.)","interface/icons/head/head_cho_1.png")
-
+    call popup("You can now buy \"Public Requests\" from Cho! (They are optional to her training.)", "Congratulations!", "interface/icons/head/head_cho_1.png")
 
     return
 
 
-
-# Third event
-## Asking more questions about her ex boyfriends and jerking off.
-
 label cc_pf_talk_T1_E3: # Incomplete. Not posed.
-
     m "Care to tell me more about Quidditch?"
     cho "Of course, [cho_genie_name]. Anything specific you'd like to know?"
     m "Yes. Let's talk some more about Diggory..."
@@ -485,7 +479,7 @@ label cc_pf_talk_T1_E3: # Incomplete. Not posed.
     cho "He had this weird, unhealthy obsession with my panties, Sir."
 
     if huffl_matches_won == 0:
-        m "A panties obsession? So so…"
+        m "A panties obsession? So so..."
     else:
         g9 "Ha! I knew it!"
 
@@ -501,7 +495,7 @@ label cc_pf_talk_T1_E3: # Incomplete. Not posed.
     cho "That’s just ridiculous..."
 
     if huffl_matches_won == 0:
-        m "But, that made me think…"
+        m "But, that made me think..."
         m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
         cho "Like how?"
         m "We use them as a distraction!"
@@ -521,7 +515,8 @@ label cc_pf_talk_T1_E3: # Incomplete. Not posed.
     return
 
 
-### Tier 2 ###
+
+### Tier 2 (pre Slytherin) ###
 
 label cc_pf_talk_T2_E1: # Incomplete. Not posed.
 
@@ -600,7 +595,6 @@ label cc_pf_talk_T2_E1: # Incomplete. Not posed.
 
 
 label cc_pf_talk_T2_E2: # Complete. Not posed.
-
     m "Miss Chang, with our Quidditch talk out of the way, I thought maybe you wanted to talk to me about your regular school life some more."
     cho "Well, my school life has been rather boring and uneventful lately."
     cho "That is, if constantly getting bullied is the new norm at this school..."
@@ -993,33 +987,3 @@ label cho_stretching: # Not in use.
         cho "That hasn’t been part of my training so far..."
         m "I see.."
         cho "But I could...{nw}"
-
-
-
-
-
-label end_cho_favor:
-    #if not first_cho_favor_done:
-    #    $ first_cho_favor_done = True
-
-    m "[current_payout] points to Gryffindor!"
-    $ gryffindor += current_payout
-    call cho_main("[cho_genie_name], I'm from Ravenclaw!","open","wide","raised","mid")
-    m "Right, what did I say?"
-    $ gryffindor -= current_payout
-
-    m "[current_payout] points to Ravenclaw!"
-    $ ravenclaw += current_payout
-    $ cho_mood -= 10
-
-    call cho_main("Thank you.","soft","base","base","mid")
-
-    call nar(">Cho quickly puts her clothes on before leaving.")
-    #call load_cho_clothing_saves <- use cho_class.equip('all') instead
-    if daytime:
-        call cho_main("Good day, [cho_genie_name].","smile","base","base","mid")
-    else:
-        call cho_main("Good night, [cho_genie_name].","smile","base","base","mid")
-    call play_sound("door")
-
-    jump end_cho_event

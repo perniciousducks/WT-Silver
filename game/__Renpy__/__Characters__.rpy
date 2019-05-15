@@ -81,7 +81,7 @@ init python:
     # Name has to be left empty "" otherwise quickmenu will be shown
     centered = Character(None, what_style="centered_text", window_style="centered_window")
     vcentered = Character(None, what_style="centered_vtext", window_style="centered_window")
-    
+
     #Genie
     gen = Character('Genie')
     m = Character("", show_side_image=Image("characters/genie/mage.png"))
@@ -99,12 +99,6 @@ init python:
     g13 = Character("", show_side_image=Image("characters/genie/mage13.png"))
     g14 = Character("", show_side_image=Image("characters/genie/mage14.png"))
     g15 = Character("", show_side_image=Image("characters/genie/mage15.png"))
-
-    #Snape      #ToDo replace those screens with the normal head sprite positions.
-    sna_ = [""]
-    for i in xrange(1,26):
-        sna_.append("")
-        sna_[i] = Character("Severus Snape", show_side_image=Image("characters/snape/head/head_" + str(i) + ".png"),  show_who_xalign=0.5)
 
     #Dumbledore
     dum_ = [""]

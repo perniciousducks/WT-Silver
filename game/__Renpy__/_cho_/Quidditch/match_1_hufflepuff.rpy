@@ -34,8 +34,13 @@ label start_hufflepuff_match:
 ### Main Match Against Hufflepuff ###
 
 label hufflepuff_match:
-    # Equip standard Hermione clothes for event
+
+    ### Event Setup ###
+    $ cho_outfit_last.save()
+    $ cho_class.equip(cho_outfit_quidditch)
     call h_equip_temp_outfit(hg_standart_school_ITEM)
+
+
     # Scene before Match against Hufflepuff
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
@@ -800,11 +805,14 @@ label hufflepuff_match_return:
     call cho_walk(action="leave", speed=2.4)
 
     stop music fadeout 1.0
-    call give_reward(">New favours for Cho has been unlocked!","interface/icons/head/head_cho_2.png")
+    call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/head_cho_2.png")
 
     $ cho_busy      = True
     $ hermione_busy = True
     $ snape_busy    = True
+
+    # Reset Cho
+    $ cho_class.equip(cho_outfit_last)
 
     # Favor Tier Reset
     $ cc_pf_talk.points       = 0

@@ -19,9 +19,9 @@ label summon_cho:
     menu:
 
         # Main Matches
-        "Start Hufflepuff Match" if (huffl_matches_won == 2 and main_matches_won == 0):
+        "Start Hufflepuff Match" if (huffl_matches_won == 2 and cho_tier == 1):
             $ lock_cho_training = True # Temporarily, Until next events get added.
-            $ main_matches_won = 1
+            $ cho_tier = 2
             $ main_match_1_stage = "start"
             $ days_without_an_event = 0 # Event starts on the next day.
             jump start_hufflepuff_match
@@ -124,7 +124,7 @@ label cho_favor_menu:
         for i in cc_favor_list:
             if i in [cc_pf_blowjob, cc_pf_sex]: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
-            elif i.tier > main_matches_won:
+            elif i.tier > cho_tier:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
@@ -142,20 +142,24 @@ label cho_favor_menu:
         $ renpy.jump(result)
 
 label update_cho_favors:
+    python:
+        for i in cc_favor_list:
+            if i.points == 0:
+                i.level = 0
 
     # Pre Hufflepuff
-    if main_matches_won == 0:
+    if cho_tier == 1:
         $ heart_color = "yellow"
         $ cc_pf_talk.max_level = 3
 
     # Pre Slytherin
-    elif main_matches_won == 1:
+    elif cho_tier == 2:
         $ heart_color = "green"
         $ cc_pf_talk.max_level = 4
         $ cc_pf_strip.max_level = 4
 
     # Pre Gryffindor
-    elif main_matches_won == 2:
+    elif cho_tier == 3:
         $ heart_color = "red"
 
     # After winning the cup.
@@ -177,7 +181,7 @@ label cho_requests_menu:
         for i in cc_requests_list:
             if i in []: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
-            elif i.tier > main_matches_won:
+            elif i.tier > cho_tier:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
@@ -197,7 +201,9 @@ label cho_requests_menu:
 label update_cho_request_tier:
     python:
         for i in cc_requests_list:
-            i.tier = main_matches_won
+            i.tier = cho_tier
+            if i.points == 0:
+                i.level = 0
     return
 
 
@@ -254,8 +260,6 @@ label cho_talk:
                     $ cho_name = "Princess"
                 "\"Boy\"":
                     $ cho_name = "Boy"
-                "\"Miss Chang\"":
-                    $ cho_name = "Miss Chang"
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)")
                     $ temp_name = temp_name.strip()

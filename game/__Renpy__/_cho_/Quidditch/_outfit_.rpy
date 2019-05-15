@@ -141,7 +141,7 @@ label remove_quidditch_coat:
     call cho_main("But, but, but!","open","closed","sad","mid")
     g9 "That's probably what the crowd will be chanting..."
 
-    if main_matches_won < 1: # Hasn't won against Hufflepuff yet.
+    if cho_tier < 2: # Hasn't won against Hufflepuff yet.
         call cho_main("I'm sorry [cho_genie_name], but you expect me to play without the most basic equipment and expect me to win!","open","shocked","raised","mid")
         m "What do you even need that coat for?"
         call cho_main("To keep dry should it start raining, for one.{w} And to keep my broom steady if the wind is too strong.","soft","base","base","R")

@@ -1,27 +1,27 @@
 
 
-# Favour tier 2 - Inspect her Body
+### Let Cho Strip ###
 
 label cc_pf_strip:
 
-    # Tier 1
-    if main_matches_won <= 1:
+    ### Tier 1 (pre Slytherin) ###
+    if cho_tier <= 2:
 
-        if cc_pf_strip.level == 0:   # 0 Hearts.
+        if cc_pf_strip.points == 0:
             # Cho strips to her underwear.
             call cc_pf_strip_T1_E1
 
-        elif cc_pf_strip.level == 1: # 1 Heart.
+        elif cc_pf_strip.points == 1:
             # Cho strips naked.
             call cc_pf_strip_T1_E2
 
-        elif cc_pf_strip.level == 2: # 2 Hearts.
+        elif cc_pf_strip.points == 2:
             # Cho wants you to summon Hermione.
             # Event fails when Hermione hasn't stripped for you yet.
             # Succeeds after Hermione's second dance favour.
             jump cc_pf_strip_T1_E3
 
-        else:                            # 3+ Hearts.
+        else:
             # Cho wants you to summon Hermione again.
             # Repeat of event 3 with different intro.
             jump cc_pf_strip_T1_E4
@@ -46,7 +46,7 @@ label cc_pf_strip:
 
 
 
-### Tier 1 ###
+### Tier 1 (pre Slytherin) ###
 
 label cc_pf_strip_T1_E1:
     m "It's time for your next favour, [cho_name]."
@@ -306,7 +306,6 @@ label cc_pf_strip_T1_E1:
     return
 
 
-
 label cc_pf_strip_T1_E2: # Incomplete. Not posed.
 
     # Ask Cho to strip again.
@@ -347,13 +346,7 @@ label cc_pf_strip_T1_E2: # Incomplete. Not posed.
     return
 
 
-
 label cc_pf_strip_T1_E3:
-
-    # Intro for the first time you summon Hermione to watch Cho having fun, naked in your office…
-
-    # Cho starts to strip. Asks you some questions about Hermione.
-
     g9 "[cho_name], how would you like to do another strip-tease for me?"
     call cho_main("(...)","annoyed","narrow","angry","mid")
     g9 "You did such a phenomenal job last time!"
@@ -577,7 +570,7 @@ label cc_pf_strip_T1_E3:
     with hpunch
     g4 "What?"
     call cho_main("It’s time someone throws \"high and mighty\" Granger off her high horse!","open","narrow","angry","mid")
-    call cho_main("She’s been a pain in my butt for years now…","angry","angry","angry","downR")
+    call cho_main("She’s been a pain in my butt for years now...","angry","angry","angry","downR")
     call cho_main("This is going to be my revenge!","soft","narrow","angry","mid")
     m "Are you sure that this is such a good idea? Aren’t you scared she’ll tattle about it?"
     call cho_main("No.{w} Granger is clever...","soft","closed","base","mid")
@@ -649,7 +642,6 @@ label cc_pf_strip_T1_E3:
     $ cho_strip_complete = True # Unlocks Wardrobe on next summon.
 
     jump cc_pf_strip_T1_hermione
-
 
 
 label cc_pf_strip_T1_E4:
@@ -798,7 +790,6 @@ label cc_pf_strip_T1_E4:
     call ctc
 
     jump cc_pf_strip_T1_hermione
-
 
 
 label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
@@ -968,7 +959,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
             m "Bitch isn't even a proper curse word."
             m "You can say that on TV..."
             call cho_main("Granger, why don't you tell us which part of my immaculate body deserves such a poor rating?","soft","narrow","angry","L")
-            call her_main("Very well…","soft","closed")
+            call her_main("Very well...","soft","closed")
             call her_main("For one, you are a narcissistic bitch!{w} That likes to think her body is superior to others...","open","angry")
             call cho_main("Because it is.","smile","narrow","angry","mid")
             call her_main("Not to mention that you have even fever curves than some of the boys I know...","grin","angry")
@@ -1051,7 +1042,8 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
 
 
 
-### Tier 2 - After beating Slytherin ###
+### Tier 2 (pre Gryffindor) ###
+
 label cc_pf_strip_T2_E1:
 
     # Cho asks if you could give her house points for once.

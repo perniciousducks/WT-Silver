@@ -378,6 +378,12 @@ label play_sound(sound=""):
     if sound in ["slap","slapping"]:
         $ renpy.play('sounds/slap_02.mp3')
 
+    if sound in ["gulp"]:
+        $ renpy.play('sounds/gulp.mp3')
+        
+    if sound in ["spit"]:
+        $ renpy.play('sounds/spit.mp3')
+
     if sound in ["kick","bump"]:
         $ renpy.play('sounds/kick.ogg')
 
@@ -398,9 +404,6 @@ label play_sound(sound=""):
 
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
-
-    if sound in ["spit"]:
-        $ renpy.play('sounds/spit.mp3')
 
     if sound in ["equip_inventory"]:
         $ renpy.play('sounds/cloth_sound.mp3')

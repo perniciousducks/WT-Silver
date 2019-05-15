@@ -33,10 +33,11 @@ label cho_progress_init:
     if not hasattr(renpy.store,'cho_whoring') or reset_persistants or reset_cho_content:
 
         # Stats
-        $ cho_whoring = 0
-        $ cho_reputation = 0
-        $ cho_mood = 0
-        $ cho_jerk_off_counter = 0
+        $ cho_tier                = 1
+        $ cho_whoring             = 0
+        $ cho_reputation          = 0
+        $ cho_mood                = 0
+        $ cho_jerk_off_counter    = 0
 
         # Flags
         $ cho_known               = False
@@ -86,7 +87,6 @@ label cho_progress_init:
         $ slyth_matches_won     = 0 # Goes up to 2
 
         $ start_match           = 0 # No match will trigger at 0
-        $ main_matches_won      = 0 # Goes up to 3
         $ main_match_1_stage    = "none"
         $ main_match_2_stage    = "none"
         $ main_match_3_seen     = "none"
@@ -108,13 +108,13 @@ label cho_progress_init:
     # pr = Public Requests.
 
     if not hasattr(renpy.store,'cc_pf_talk'):
-        $ cc_pf_talk    = favor_class(title = "Talk to me!", tier = 0, start_label = "cc_pf_talk")
+        $ cc_pf_talk    = favor_class(title = "Talk to me!", tier = 1, start_label = "cc_pf_talk")
 
-        $ cc_pf_strip   = favor_class(title = "Inspect her body!", tier = 1, start_label = "cc_pf_strip")
+        $ cc_pf_strip   = favor_class(title = "Inspect her body!", tier = 2, start_label = "cc_pf_strip")
 
-        $ cc_pf_blowjob = favor_class(title = "Suck it!", tier = 2, start_label = "cc_pf_blowjob")
+        $ cc_pf_blowjob = favor_class(title = "Suck it!", tier = 3, start_label = "cc_pf_blowjob")
 
-        $ cc_pf_sex     = favor_class(title = "Let's have sex!", tier = 3, start_label = "cc_pf_sex")
+        $ cc_pf_sex     = favor_class(title = "Let's have sex!", tier = 4, start_label = "cc_pf_sex")
 
     $ cc_favor_list = [
         cc_pf_talk,
@@ -125,12 +125,14 @@ label cho_progress_init:
 
     if not hasattr(renpy.store,'cc_pr_manipulate'):
         $ cc_pr_flirt   = event_class(title = "Get Flirty!", start_label = "cc_pr_flirt_start", events = [
-            [   ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"], ["cc_pr_flirt_T1_E2"]  ],
-            [   ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"], ["cc_pr_flirt_T2_E2"]  ] ]
+            [   ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"], ["cc_pr_flirt_T1_E2"], ["cc_pr_flirt_T1_E3"]  ],
+            [   ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"], ["cc_pr_flirt_T2_E2"], ["cc_pr_flirt_T2_E3"]  ]
+            ]
             )
         $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", max_level = 2, events = [
             [   ["cc_pr_manipulate_T1_intro"], ["cc_pr_manipulate_T1_E1"], ["cc_pr_manipulate_T1_E2"], ["cc_pr_manipulate_T1_E3"]  ],
-            [   ["cc_pr_manipulate_T2_intro"], ["cc_pr_manipulate_T2_E1"], ["cc_pr_manipulate_T2_E2"]  ] ]
+            [   ["cc_pr_manipulate_T2_intro"], ["cc_pr_manipulate_T2_E1"], ["cc_pr_manipulate_T2_E2"], ["cc_pr_manipulate_T2_E2"]  ]
+            ]
             )
     $ cc_requests_list = [
         cc_pr_manipulate,

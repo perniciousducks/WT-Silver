@@ -171,7 +171,8 @@ label quidditch_training_intro_1:
     call cho_walk(action="leave", speed=1.6)
 
     $ cho_training_state = "intro_2"
-    call give_reward(">You've lost the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
+
+    call popup("You've lost the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/head_cho_2.png")
 
     call bld
     m "She'll get over it..."
@@ -222,7 +223,7 @@ label quidditch_training_intro_2:
 
     m "I will show you."
 
-    call give_reward(">You've re-gained the ability to train Cho in Quidditch!","interface/icons/head/head_cho_1.png")
+    call popup("You've re-gained the ability to train Cho in Quidditch!", "Congratulations!", "interface/icons/head/head_cho_1.png")
 
     return
 

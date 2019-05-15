@@ -1,8 +1,8 @@
 init python:
     class event_class(object):
         title     = ""
-        tier      = 0
-        max_tiers = 0
+        tier      = 1
+        max_tiers = 1
         level     = 0
         max_level = 3
         points    = 0

@@ -71,6 +71,7 @@ label event_00:
 
     who2 "Albus... Do you have a moment?"
     hide screen snape_main
+    with d3
 
     menu:
         m "..."
@@ -98,18 +99,12 @@ label event_00:
     call sna_main("","snape_06")
     who2 "I have something important I need to discuss with you..."
     who2 "I think we need to revise our admittance policy."
-    hide screen snape_main
-    with d3
     m "................?"
     call sna_main("","snape_03")
     who2 "Half of my... so-called \"pupils\" are nothing but annoying maggots that make my life miserable on a daily basis."
-    hide screen snape_main
-    with d3
     m "................"
     call sna_main("","snape_06")
     who2 "Most of them belong to your precious \"gryffindor\" house of course..."
-    hide screen snape_main
-    with d3
     m "......?"
     call sna_main("","snape_03")
     who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe...."
@@ -117,16 +112,12 @@ label event_00:
     who2 "{size=+3}The Potter boy!{/size}"
     call sna_main("","snape_01")
     who2 "Mark my words, Albus. The \"gryffindor house\" will become this school's undoing!"
-    hide screen snape_main
-    with d3
     m "...................."
     call sna_main("","snape_01")
     who2 "Nothing but annoying maggots, the lot of them!"
     call sna_main("","snape_06")
     who2 "And if that wasn't enough, now they spread all sorts of nasty rumours about the teachers!"
     who2 "Particularly about yours truly..."
-    hide screen snape_main
-    with d3
     m "......................"
     call sna_main("","snape_05")
     who2 "You don't believe those rumours, do you Albus?"
@@ -144,8 +135,6 @@ label event_00:
             who2 "Albus?! You can't be serious!"
             who2 "Those are nothing but filthy lies, I'm telling you!"
 
-    hide screen snape_main
-    with d3
     m "........................."
     call sna_main("","snape_04")
     who2 "Well, those wretched kids left me completely exhausted. I think I will retire for today."
@@ -267,13 +256,8 @@ label event_03:
     jump day_start
 
 
-#NOT IN USE
-label event_04:
-    return
 
-### EVENT 5 ###
-
-#Snape comes in, has a talk with Genie, then the duel starts.
+# Snape comes in, has a talk with Genie, then the duel starts.
 label event_05:
     call play_music("dark_fog")
 
@@ -338,7 +322,6 @@ label event_05:
     who2 "Well, I just wanted to make sure that you take those rumours about me for what they are..."
     who2 "Nasty lies made up by a bunch of spoiled kids."
 
-
     who2 "Oh.... Before I go..."
     who2 "There is one thing I meant to ask you for a while now..."
     call sna_main("","snape_09")
@@ -362,10 +345,8 @@ label event_05:
             $ d_flag_01 = True
             hide screen snape_main
             with d3
-            call blktone
-            ">You use your phenomenal cosmic powers to peek into the very fabric of the universe and get the correct answer."
-            call hide_blktone
-            call sna_main("","snape_03") #SNAPE
+            call nar(">You use your phenomenal cosmic powers to peek into the very fabric of the universe and get the correct answer.")
+            call sna_main("","snape_03")
             who2 "!!?"
             m "What kind of question is this, Severus?"
             who2 "Forgive me... I'm just being paranoid I suppose..."
@@ -377,11 +358,10 @@ label event_05:
     pause.2
 
     stop music fadeout 1.0
+    call bld
     who2 "........................"
 
     call sna_chibi("leave")
-    hide screen bld1
-    hide screen snape_main
 
     show screen blkfade
     with d3
@@ -391,29 +371,27 @@ label event_05:
     g4 "???"
 
     show screen snape_defends
+    hide screen bld1
     call hide_blkfade
-    show screen ctc
 
     call play_music("hitman") #TENSE THEME
-
     call ctc
 
     call bld
-
     if d_flag_01:
-        sna_[6] "Who are you, scum!"
+        call sna_main("Who are you, scum!","snape_34", ypos="head")
         g4 "What? It's me... uhm... Abius! I mean, Albus!"
-        sna_[4] "You cannot fool me."
-        sna_[4] "Just now, you used some sort of alien magic!"
-        sna_[6] "Reveal your true self to me now, fiend! Who are you?!"
+        call sna_main("You cannot fool me.","snape_32")
+        call sna_main("Just now, you used some sort of alien magic!","snape_32")
+        call sna_main("Reveal your true self to me now, fiend! Who are you?!","snape_34")
     else:
-        sna_[1] "My name is Severus Snape!"
-        sna_[1] "Now, who might you be...?"
+        call sna_main("My name is Severus Snape!", ypos="head")
+        call sna_main("Now, who might you be...?","snape_01")
 
     g4 "!!!"
-    sna_[1] "Easy now... Just answer my question."
+    call sna_main("Easy now... Just answer my question.","snape_01")
     m "Alright, alright. Just calm down, would you?"
-    sna_[1] "........"
+    call sna_main("........","snape_01")
 
     $ d_points = 0
     $ d_flag_01 = False
@@ -426,23 +404,23 @@ label event_05:
         "\"I am not your enemy.\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna_[1] "That the first thing an enemy would say."
+            call sna_main("That the first thing an enemy would say.","snape_01")
         "\"I'm just a tourist. I'll be leaving now.\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna_[1] "You are not going anywhere."
+            call sna_main("You are not going anywhere.","snape_01")
         "\"I work for Albis Doombldore!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna_[1] "It's Albus Dumbledore, you moron!"
+            call sna_main("It's Albus Dumbledore, you moron!","snape_01")
 
     if d_points == 2:
         pass
     else:
         jump no_wait
 
-    sna_[1] "Who sent you here? What did you do with the real Albus?"
-    sna_[1] "Shed your disguise and reveal your true self at once, this is your last warning!"
+    call sna_main("Who sent you here? What did you do with the real Albus?","snape_01")
+    call sna_main("Shed your disguise and reveal your true self at once, this is your last warning!","snape_01")
 
     $ d_points = 0
     $ d_flag_01 = False
@@ -455,28 +433,28 @@ label event_05:
         "\"I can't. It's hard to explain...\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna_[1] "I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!"
+            call sna_main("I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!","snape_01")
         "\"Stop threatening me, human!\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna_[1] "\"Human\"?"
-            sna_[1] "Are you implying that you are {size=+5}not{/size} one?"
-            sna_[1] "What are you then?! Dispell your cloaking charm immediately or else!"
+            call sna_main("\"Human\"?","snape_01",ypos="head")
+            call sna_main("Are you implying that you are {size=+5}not{/size} one?","snape_01")
+            call sna_main("What are you then?! Dispell your cloaking charm immediately or else!","snape_01")
         "\"I mean you no harm, I swear!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna_[1] "Is that so?"
-            sna_[1] "Prove it then. Dispel your cloaking charm now!"
+            call sna_main("Is that so?","snape_01")
+            call sna_main("Prove it then. Dispel your cloaking charm now!","snape_01")
 
     if d_points == 2:
         pass
     else:
         jump no_wait_2
 
-    sna_[1] "I've heard enough!"
+    call sna_main("I've heard enough!","snape_01")
     g4 "By the great desert sands! Would you let me explain, human?!"
-    sna_[1] "There is nothing left to explain!"
-    sna_[1] "Since you refuse to cooperate, I'll be taking you into custody by force!"
+    call sna_main("There is nothing left to explain!","snape_01")
+    call sna_main("Since you refuse to cooperate, I'll be taking you into custody by force!","snape_01")
     g4 "What?! Wait!"
 
     if skip_duel == True:
@@ -499,17 +477,16 @@ label event_05:
 
 
 
-### EVENT 6 ###
-
 #THE TALK AFTER THE DUEL ENDS.
 label event_06:
     $ potions = 0 #Makes sure there are no potions left in the possessions.
 
     stop music fadeout 2.0
 
+    call bld
     g4 "*Panting*"
     g4 "Ready to talk now?!"
-    sna_[8] "(...i-impossible...)"
+    call sna_main("(...i-impossible...)","snape_36", ypos="head")
 
     call play_music("dark_fog")
 
@@ -520,54 +497,54 @@ label event_06:
     call bld
 
     m "You did give me a good run for my money though..."
-    sna_[1] "The way you conjure the spells with your bare hands..."
-    sna_[1] "No human could do that... who--"
-    sna_[4] "{size=+5}What are you?{/size}"
-    sna_[1] "Some sort of shape-shifting demon summoned by \"you know who\"?"
+    call sna_main("The way you conjure the spells with your bare hands...","snape_01")
+    call sna_main("No human could do that... who--","snape_01")
+    call sna_main("{size=+5}What are you?{/size}","snape_32")
+    call sna_main("Some sort of shape-shifting demon summoned by \"you know who\"?","snape_01")
     m "Summoned by whom?"
-    sna_[2] "By \"you know who\"!"
+    call sna_main("By \"you know who\"!","snape_31")
     m "What?"
-    sna_[7] "......................"
+    call sna_main("......................","snape_35")
     m "............................"
     m "Listen, I'm not a demon..."
     m "And I sure as heck don't work for \"I don't know who\"!"
-    sna_[1] "............................."
+    call sna_main(".............................","snape_01")
     m "I've been ehm..."
     m "...Conducting an experiment back in my world, during which something went wrong and I ended up here."
     m "That's all..."
-    sna_[1] ".........................."
-    sna_[1] "What became of the real Albus Dumbledore then?"
+    call sna_main("..........................","snape_01")
+    call sna_main("What became of the real Albus Dumbledore then?","snape_01")
     m "I'm sure he is fine."
     m "He's Probably feeling as surprised about finding himself in my world as I am about finding myself here..."
-    sna_[1] "...................................."
-    sna_[1] "When did this happen?"
+    call sna_main("....................................","snape_01")
+    call sna_main("When did this happen?","snape_01")
     m "Four days ago..."
-    sna_[1] "Can you go back?"
+    call sna_main("Can you go back?","snape_01")
     m "I think so..."
-    sna_[2] "Why didn't you then?"
+    call sna_main("Why didn't you then?","snape_31")
     m "Not sure..."
     m "The Magic of this world is so bizarre... Perhaps I just got curious."
-    sna_[1] "..................."
-    sna_[1] "You need to fix this..."
+    call sna_main("...................","snape_01")
+    call sna_main("You need to fix this...","snape_01")
     m "Fix what?"
-    sna_[4] "Everything. You need to bring back Albus and leave our world."
+    call sna_main("Everything. You need to bring back Albus and leave our world.","snape_32")
 
     menu:
         m "..."
         "\"Yes, yes, I know. Off I go then.\"":
             m "Yes, yes, I know..."
             m "Well, off I go then. Sorry for the ruckus."
-            sna_[1] "No harm done..."
+            call sna_main("No harm done...","snape_01")
         "\"But I like it here! Can't I stay?\"":
-            sna_[1] "Absolutely not."
-            sna_[1] "Whoever you are, you are not from this plane of existence."
-            sna_[1] "Your very presence here upsets the natural order of things."
-            sna_[1] "And these days this school needs a proper headmaster more than ever."
+            call sna_main("Absolutely not.","snape_01")
+            call sna_main("Whoever you are, you are not from this plane of existence.","snape_01")
+            call sna_main("Your very presence here upsets the natural order of things.","snape_01")
+            call sna_main("And these days this school needs a proper headmaster more than ever.","snape_01")
 
-    sna_[1] "Have a safe trip home now."
+    call sna_main("Have a safe trip home now.","snape_01")
     m "Ehm... Thank you, mr. Severus. Good luck with your students and the \"potter gang\"."
-    sna_[1] "\"The potter gang\"?"
-    sna_[7] "Oh, right, those buggers..."
+    call sna_main("\"The potter gang\"?","snape_01")
+    call sna_main("Oh, right, those buggers...","snape_35")
 
     menu:
         "-Undo the spell-":
@@ -579,89 +556,86 @@ label event_06:
         "-Undo the spell-":
             pass
 
-    sna_[1] "Did it work? Albus, is that really you?"
+    call sna_main("Did it work? Albus, is that really you?","snape_01")
 
     menu:
         m "..."
         "\"Yeah, that's me. So good to be back!\"":
-            sna_[1] "Glad to have you back, old friend. Are you alright?"
+            call sna_main("Glad to have you back, old friend. Are you alright?","snape_01")
             m "I'm fine, Severus, thank you."
-            sna_[1] "How was it, in that other world?"
+            call sna_main("How was it, in that other world?","snape_01")
             m "A lot of sand and very hot, but other than that quite pleasant."
-            sna_[1] "I see... Did you miss your brother?"
+            call sna_main("I see... Did you miss your brother?","snape_01")
             menu:
                 m "..."
                 "\"Yes, I missed you so much!\"":
-                    sna_[1] "......................."
-                    sna_[1] "Yeah, right...."
+                    call sna_main(".......................","snape_01")
+                    call sna_main("Yeah, right....","snape_01")
                 "\"I don't have a brother, Severus.\"":
-                     sna_[1] "........................"
-                     sna_[1] "You may not have one, but the real Albus Dumbledore does."
+                     call sna_main("........................","snape_01")
+                     call sna_main("You may not have one, but the real Albus Dumbledore does.","snape_01")
                 "-Use magic to get the right answer-":
-                    call bld
-                    ">You use your phenomenal cosmic powers to peek into the very fabric of the universe and get the correct answer."
-                    hide screen bld1
-                    with d3
+                    call nar(">You use your phenomenal cosmic powers to peek into the very fabric of the universe and get the correct answer.")
                     m "My little brother Aberforth? Why would I miss him?"
-                    sna_[1] "I can feel it whenever you use your alien magic..."
+                    call sna_main("I can feel it whenever you use your alien magic...","snape_01")
 
         "\"Nope. It's still me. The non-human guy.\"":
             pass
 
-    sna_[1] "Why are you still here, creature?"
+    call sna_main("Why are you still here, creature?","snape_01")
     m "I'm not sure... I tried to undo the spell but nothing happened..."
-    sna_[7] "Marvelous..."
-    sna_[1] "What does this mean? So You're staying here for good?"
+    call sna_main("Marvelous...","snape_35")
+    call sna_main("What does this mean? So You're staying here for good?","snape_01")
     m "Of course not..."
     m "Me being here at all is only possible because the spell is compensating for the unbalance caused by itself..."
     m "said spell will wear off eventually and I shall be pulled back into my world."
     m "Likewise, your Dumbledore-friend shall be pulled back here."
-    sna_[1] "I see..."
-    sna_[1] "How long until the spell wears off?"
+    call sna_main("I see...","snape_01")
+    call sna_main("How long until the spell wears off?","snape_01")
 
     menu:
         m "..."
         "\"A couple of days.\"":
-            sna_[1] "I see..."
+            call sna_main("I see...","snape_01")
         "\"A week or so...\"":
-            sna_[1] "Hm.... A week, huh..."
+            call sna_main("Hm.... A week, huh...","snape_01")
         "\"Could be months...\"":
-             sna_[1] "That long?"
-             sna_[1] "Now isn't that just \"perfect\"?"
+             call sna_main("That long?","snape_01")
+             call sna_main("Now isn't that just \"perfect\"?","snape_01")
         "\"I have no clue...\"":
-            sna_[1] "....................."
-            sna_[2] "Splendid..."
+            call sna_main(".....................","snape_01")
+            call sna_main("Splendid...","snape_31")
 
     m "Alright, to be honest I'm not sure where to go from here..."
     m "All this time I thought I could undo the spell whenever I wanted to..."
-    sna_[1] "..................................................."
-    sna_[1] ".................................."
-    sna_[1] "..................."
+    call sna_main("...................................................","snape_01")
+    call sna_main("..................................","snape_01")
+    call sna_main("...................","snape_01")
     m "Snape?"
-    sna_[1] "..................................................."
+    call sna_main("...................................................","snape_01")
     m "Severus?"
-    sna_[6] "Yes, yes..."
-    sna_[1] "Listen, it's very late, and too much has happened already..."
-    sna_[7] "I need to process all of this."
-    sna_[1] "I will come to see you tomorrow, after my classes."
-    sna_[6] "Until then, keep your true identity and our conversation a secret, alright?"
+    call sna_main("Yes, yes...","snape_34")
+    call sna_main("Listen, it's very late, and too much has happened already...","snape_01")
+    call sna_main("I need to process all of this.","snape_35")
+    call sna_main("I will come to see you tomorrow, after my classes.","snape_01")
+    call sna_main("Until then, keep your true identity and our conversation a secret, alright?","snape_34")
     m "Not a problem."
-    sna_[1] "Alright then..."
-    sna_[1] "But before I go, I have one more question..."
+    call sna_main("Alright then...","snape_01")
+    call sna_main("But before I go, I have one more question...","snape_01")
     m "I'm listening..."
-    sna_[2] "........"
-    sna_[1] "If you are not a human, then..."
-    sna_[7] "What are you?"
+    call sna_main("........","snape_31")
+    call sna_main("If you are not a human, then...","snape_01")
+    call sna_main("What are you?","snape_35")
     m "...I'm a genie."
-    sna_[1] "A genie?"
+    call sna_main("A genie?","snape_01")
     m "Yes, I possess phenomenal cosmic powers and all that..."
-    sna_[1] "Seriously?"
+    call sna_main("Seriously?","snape_01")
     m "Oh, yes."
-    sna_[1] "Unbelievable..."
-    sna_[1] "Well, I'll see you tomorrow.... genie."
+    call sna_main("Unbelievable...","snape_01")
+    call sna_main("Well, I'll see you tomorrow.... genie.","snape_01")
     m "I'll be here..."
 
-    sna_[7] "(A genie? Now that's new...)"
+    call sna_main("(A genie? Now that's new...)","snape_35")
 
     hide screen duel
 
@@ -669,7 +643,7 @@ label event_06:
 
 
 
-#THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
+# Snape visits you after the dual (next evening).
 label event_07:
     call play_music("dark_fog")
 
@@ -785,9 +759,7 @@ label event_07:
 
 
 
-### EVENT 8 ###
-
-#HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
+# Hermione's first visit!
 label event_08:
     stop music fadeout 1.0
     pause 1
@@ -1850,7 +1822,7 @@ label event_15:
     $ event15_happened = True #Turns TRUE after event_15
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     $ hermione_busy = True
-    
+
     call music_block
 
     return

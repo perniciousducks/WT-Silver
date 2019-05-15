@@ -607,7 +607,7 @@ label cho_quiz_2:
         $ cho_quiz_complete = True
         $ cho_training_state = "intro_1"
 
-        call give_reward(">You've unlocked the ability to train Cho in Quidditch.","interface/icons/head/head_cho_1.png")
+        call popup("You've unlocked the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/head_cho_1.png")
 
     # Failed
     else:

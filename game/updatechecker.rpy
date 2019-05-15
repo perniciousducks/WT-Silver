@@ -22,17 +22,12 @@
         return None
         
     # Work in progress
-    #def update_savefile():
-        #variables_global = []
-        #variables = ["test1", "test2", "test3"]
+    def update_savefile():
+        if 'head_9.png' in persistent.achievements['unlocksna'][4]:
+            path = "interface/icons/head/head_snape_1.png"
+            persistent.achievements['unlocksna'][4] = path
+            persistent.achievements['bros'][4] = path
+            achievement.achievements['unlocksna'][4] = path
+            achievement.achievements['bros'][4] = path
         
-        #for var in variables:
-        #    variables_global.append("global "+var)
-        
-        #for i in xrange(len(variables)):
-        #    try:
-        #        exec(statement)
-        #    except NameError:
-        #        exec(statement2)
-        
-    #config.after_load_callbacks.append(update_savefile)
+    config.after_load_callbacks.append(update_savefile)

@@ -48,7 +48,7 @@ label cc_pf_talk:
                 $ cho_whoring += 1
 
         elif cho_tier == 2:
-            if cho_whoring < 8: # Points til 8
+            if cho_whoring < 9: # Points til 9
                 $ cho_whoring += 1
 
         if cc_pf_talk.level < 4:

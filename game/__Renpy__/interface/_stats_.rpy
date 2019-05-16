@@ -361,6 +361,35 @@ screen susan_stat_menu():
     zorder 8
 
 screen cho_stat_menu():
+    tag stat_content
+    side "c r":
+        area (220, 150, 425, 420)
+
+        viewport id "vp":
+            draggable True
+            mousewheel True
+
+            vbox:
+                use stat_bar(int(cho_whoring/0.9), "-Whoring-", cho_whoring_word, cho_whoring) #Max 9
+
+                use stat_bar(int(cho_reputation/0.9), "-Reputation-", cho_reputation_word, cho_reputation) #Max 9
+
+                use stat_bar(int(10-cho_mood/1.0), "-Mood-" , cho_mood_word, cho_mood)
+
+                # General
+                use text_stat("You Jerked off in front of her:")
+                use text_stat("- ", " times -", cho_jerk_off_counter)
+
+        vbar value YScrollValue("vp")
+
+
+
+
+
+
+
+
+
     zorder 8
 
 screen tonks_stat_menu():
@@ -377,7 +406,7 @@ screen tonks_stat_menu():
                 #use stat_bar(int(ton_support/1.5), "-Support-", "", ton_support) #Number of Tonks events.
                 use stat_bar(int(ton_friendship/10), "-Relationship-", ton_friendship_word, ton_friendship)   #max is 100.
                 #use stat_bar(int(0/10), "-Reputation-", "", tonks_reputation)
-                use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
+                #use stat_bar(int(ton_clothing_level/10), "-Sluttiness-", ton_sluttiness_word, ton_clothing_level)
 
                 use text_stat("Hung out with Astoria:")
                 use text_stat("- ", " times -", ton_astoria_date_counter)
@@ -392,13 +421,17 @@ screen tonks_stat_menu():
 label update_stats:
     #$ madWords = ["Happy", "Slightly upset", "annoyed", "upset", "very upset", "mad", "angry", "hateful", "despises you", "Furious", "Absolutely Furious"] #Her face will be angry if she's mad. No need to display a stat for it.
 
-    #Hermione
+    ### Hermione ###
+
+    # Whoring
     $ her_whoring_word_list = ["Pure", "Naive", "Curious", "Naughty", "Perverse", "Immoral", "Slutty", "Shameless", "Cumslut", "Total Cumslut", "Shameless Cumslut"]
     $ her_whoring_word = her_whoring_word_list[int(her_whoring/2.4)]
 
+    # Reputation
     $ her_reputation_word_list = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor whore", "school cumdump", "mudblood cumdump"]
     #$ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
 
+    # Tutoring
     $ her_tutoring_word_list = ["pure ", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
     $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
 
@@ -407,6 +440,7 @@ label update_stats:
     else:
         $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
+    # Mood
     $ her_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
     if her_mood >= 0 and her_mood <= 10:
         $ her_mood_word = her_mood_word_list[int(her_mood/1.0)]
@@ -418,21 +452,43 @@ label update_stats:
     #$ ast_cuteness_word_list = ["Ugly Duckling", "Swot", "", "", "", "", "", "Cutypie", "", "", ""]
     #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
 
+    ### Cho ###
 
-    #Snape
+    # Whoring
+    $ cho_whoring_word_list = ["Incorruptible", "Focused", "Resilient", "Bi-Curious", "Naughty", "Immoral", "Perverse", "Slutty", "Shameless", "Cumslut", "Shameless Cumslut"]
+    $ cho_whoring_word = cho_whoring_word_list[int(cho_whoring/2.4)]
+
+    # Reputation
+    $ cho_reputation_word_list = ["Tomboy", "Team Player", "Quidditch Star", "Flying Ace", "Minx", "Manipulative", "Exploiting", "Cheater", "Team's Cumdump", "Quidditch Whore", "Cheating Slut"]
+    $ cho_reputation_word = cho_reputation_word_list[int(cho_reputation/2.4)]
+
+    # Mood
+    $ cho_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    if cho_mood >= 0 and cho_mood <= 10:
+        $ cho_mood_word = cho_mood_word_list[int(cho_mood/1.0)]
+    else:
+        $ cho_mood_word = "Very Angry"
+
+
+
+    ### Snape ###
+
+    # Friendship
     $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
     $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
+    # Support
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
     $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
 
 
-    #Tonks
+    ### Tonks ###
+
+    # Friendship
     $ ton_friendship_word_list = ["Unknown", "inferior", "employee", "advisor", "trusted advisor", "Acquaintance", "friend", "Girlfriend", "Partner in crime", "Bonnie & Clyde", "Master & Slave"]
     $ ton_friendship_word = ton_friendship_word_list[int(ton_friendship/10)]
 
-    call tonks_clothing_level
-    $ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
-    $ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
+    #$ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
+    #$ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
 
     return

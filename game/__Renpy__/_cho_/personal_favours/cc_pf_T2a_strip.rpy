@@ -31,7 +31,7 @@ label cc_pf_strip:
     # (only used when the event isn't called.)
     label end_cho_strip_event:
 
-        if cho_whoring < 8: # Points til 8
+        if cho_whoring < 9: # Points til 9
             $ cho_whoring += 1
 
         if cc_pf_strip.level < 4:

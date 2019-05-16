@@ -165,6 +165,9 @@ label cc_pr_manipulate_T1_intro_E1:
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
 
+    if cho_reputation < 3: # Points til 3.
+        $ cho_reputation += 1
+
     jump end_cho_event
 
 
@@ -195,6 +198,9 @@ label cc_pr_manipulate_T1_E1:
     call cho_main("He couldn't keep his eyes off my bum for the rest of classes!","base","narrow","angry","mid")
     g9 "Well done, [cho_name]! You may leave now."
     call cho_main("Thank you, Sir.","base","closed","base","mid")
+
+    if cho_reputation < 3: # Points til 3.
+        $ cho_reputation += 1
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
@@ -250,6 +256,9 @@ label cc_pr_manipulate_T1_E2:
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
 
+    if cho_reputation < 3: # Points til 3.
+        $ cho_reputation += 1
+
     jump end_cho_event
 
 
@@ -284,6 +293,9 @@ label cc_pr_manipulate_T1_E3:
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
+
+    if cho_reputation < 3: # Points til 3.
+        $ cho_reputation += 1
 
     jump end_cho_event
 
@@ -344,6 +356,9 @@ label cc_pr_manipulate_T2_intro_E1:
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
 
+    if cho_reputation < 9: # Points til 9.
+        $ cho_reputation += 1
+
     jump end_cho_event
 
 
@@ -385,6 +400,9 @@ label cc_pr_manipulate_T2_E1:
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
 
+    if cho_reputation < 9: # Points til 9.
+        $ cho_reputation += 1
+
     jump end_cho_event
 
 
@@ -421,6 +439,9 @@ label cc_pr_manipulate_T2_intro_E2:
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
+
+    if cho_reputation < 9: # Points til 9.
+        $ cho_reputation += 1
 
     jump end_cho_event
 
@@ -487,6 +508,9 @@ label cc_pr_manipulate_T2_intro_E3:
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
+
+    if cho_reputation < 9: # Points til 9.
+        $ cho_reputation += 1
 
     jump end_cho_event
 
@@ -555,6 +579,9 @@ label cc_pr_manipulate_T2_E3:
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
+
+    if cho_reputation < 9: # Points til 9.
+        $ cho_reputation += 1
 
     jump end_cho_event
 

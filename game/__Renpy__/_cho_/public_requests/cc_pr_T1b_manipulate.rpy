@@ -9,6 +9,7 @@ label cc_pr_manipulate_start:
 
     ### Tier 1 (pre Hufflepuff) ###
     if cho_tier <= 1:
+
         # Intro
         if cc_pr_manipulate.points == 0:
             m "So what do we know about our opponents?"
@@ -54,14 +55,17 @@ label cc_pr_manipulate_start:
             call cho_main("I think I can do that...{w} For \"Ravenclaw\"...","quiver","base","sad","down")
             m "Good, let me know how it goes later today."
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
+
         # Repeated
         else:
             m "Ready to mess with \"Hufflepuff\" again?"
             call cho_main("I guess so...", mouth="soft", face="happy")
             g9 "Great! I'll see you later today for your report, [cho_name]!"
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
+
     ### Tier 2 (pre Slytherin) ###
     else:
+
         # Intro
         if cc_pr_manipulate.points == 0:
             m "[cho_name], how well, in your opinion, did you do in your last match?"
@@ -133,7 +137,7 @@ label cc_pr_manipulate_start:
 label cc_pr_manipulate_T1_intro:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
     m "How did it go?"
@@ -159,7 +163,7 @@ label cc_pr_manipulate_T1_intro:
     call cho_main("Thank you, [cho_genie_name].","base","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
@@ -167,7 +171,7 @@ label cc_pr_manipulate_T1_intro:
 label cc_pr_manipulate_T1_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
     m "What's my favourite Quidditch player been up to today?"
@@ -193,7 +197,7 @@ label cc_pr_manipulate_T1_E1:
     call cho_main("Thank you, Sir.","base","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
@@ -201,7 +205,7 @@ label cc_pr_manipulate_T1_E1:
 label cc_pr_manipulate_T1_E2:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     g4 "[cho_name]! Do you have some good news for me?"
@@ -244,7 +248,7 @@ label cc_pr_manipulate_T1_E2:
     call cho_main("Have a nice day.","soft","narrow","sad","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
@@ -252,7 +256,7 @@ label cc_pr_manipulate_T1_E2:
 label cc_pr_manipulate_T1_E3:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
     m "So? How did it go?"
@@ -279,11 +283,7 @@ label cc_pr_manipulate_T1_E3:
     call cho_main("Good night, [cho_genie_name].", face="happy")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
-
-    # Set event tier to current Cho tier if they are different
-    if cc_pr_manipulate.tier != cho_tier:
-        $ cc_pr_manipulate.tier = cho_tier
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
@@ -291,10 +291,10 @@ label cc_pr_manipulate_T1_E3:
 
 ### Tier 2 (pre Slytherin) ###
 
-label cc_pr_manipulate_T2_intro:
+label cc_pr_manipulate_T2_intro_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="angry", xpos="mid", ypos="base", trans="fade")
     m "Good evening [cho_name], How did todays task go?"
@@ -342,7 +342,7 @@ label cc_pr_manipulate_T2_intro:
     call cho_main("I'll do my best.","soft","narrow","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
@@ -350,7 +350,7 @@ label cc_pr_manipulate_T2_intro:
 label cc_pr_manipulate_T2_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     call cho_main("I managed to corner their seeker when he came out of the boys bathroom.{w} One of the only times those thugs weren't hanging around with him.","soft","narrow","base","down")
@@ -383,22 +383,110 @@ label cc_pr_manipulate_T2_E1:
     call cho_main("Good night, [cho_genie_name].","smile","narrow","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
 
-label cc_pr_manipulate_T2_E2:
+label cc_pr_manipulate_T2_intro_E2:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
-    "This is the {color=#e42e4e}second{/color} event in {color=#8000ff}Tier2{/color}"
-
-
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    m "Back already? How did it go?"
+    call cho_main("Not too great this time, [cho_genie_name].","soft","narrow","sad","R")
+    m "No? What happened?"
+    call cho_main("Nothing, actually. I didn't see any of their team members all day. Not even at the Quidditch pitch...","annoyed","narrow","sad","mid")
+    m "Odd... Were they hiding from you?"
+    call cho_main("I believe they were, Sir...","soft","closed","base","mid")
+    g9 "So, are they afraid of confronting you face to face? Why are they avoiding you?"
+    call cho_main("I have reason to believe that they were observing me all day.","soft","narrow","angry","mid")
+    m "They were stalking you?"
+    call cho_main("You could say that.","annoyed","base","base","R")
+    call cho_main("I swear I could see Malfoy's blonde head around a corner at one point...","soft","narrow","angry","downR")
+    call cho_main("But when I was about to confront them, I heard them running off...","soft","narrow","angry","mid")
+    call cho_main("Cowards...","angry","narrow","angry","mid")
+    m "I think this is a good thing, [cho_name]!"
+    call cho_main("You do?","soft","wide","base","mid")
+    m "The fact that they’re following you..."
+    g4 "It proves that they are weak!{w} They are obsessed with you!"
+    call cho_main("You think so?","annoyed","base","raised","mid")
+    m "Yes! As long as you keep teasing them."
+    m "They won't be able to keep focus on anything else..."
+    g9 "Except your perfect bod!"
+    call cho_main("I'll do my best, Sir","base","base","base","mid")
+    m "You may go now, [cho_name]. Nice work!"
+    call cho_main("Thank you, [cho_genie_name]!","smile","base","base","R")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave", speed=2.5)
+
+    jump end_cho_event
+
+
+label cc_pr_manipulate_T2_intro_E3:
+
+    # Cho enters.
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    m "[cho_name], how was your day?"
+    m "Were you successful this time?"
+    call cho_main("Sir, I believe they are onto me!","angry","narrow","sad","mid")
+    m "Who are... they?"
+    call cho_main("Malfoy and his gang, Sir.","soft","base","base","R")
+    call cho_main("They confronted me, outside the girl's bathroom.","angry","narrow","sad","down")
+    g4 "How very rude of them."
+    call cho_main("I'm just glad they didn't follow me inside to be frank...","angry","base","sad","mid")
+    m "But they’re boys! They aren't allowed in there!"
+    call cho_main("Don’t underestimate them, [cho_genie_name].","soft","closed","base","mid")
+    call cho_main("I doubt that anything would stop them from breaking into a girl's most private place...","soft","narrow","angry","mid")
+    g4 "They are ruthless!"
+    m "What exactly did they want from you?"
+    call cho_main("They questioned me...","annoyed","base","sad","R")
+    call cho_main("About what I'm up to. What my plan is. Why I'm acting... strangely.","soft","narrow","sad","downR")
+    m "Strangely? In what way?"
+    call cho_main("Typically, girls from other houses doesn’t talk to boys from Slytherin...","angry","closed","sad","mid")
+    call cho_main("Not to mention flirt with them!","angry","wide","base","mid")
+    m "So? What did you do?"
+    call cho_main("I panicked, [cho_genie_name]!","angry","closed","base","mid")
+    call cho_main("I tried to get out of the situation, although in my haste the only solution I could think of was to-...","soft","narrow","base","downR")
+    m "Yes?"
+    call cho_main("Flash them, Sir. I flashed them my breasts!","soft","narrow","sad","mid")
+    g9 "Nice!"
+    call cho_main("I'm sorry, Sir. I shouldn't have done it!","angry","narrow","sad","down")
+    g9 "And what was their reaction?"
+    call cho_main("I don't know... They were surprised?","angry","wink","base","mid")
+    call cho_main("I closed my eyes through most of it, and then I ran off...","soft","base","sad","down")
+    m "*Hmmm*"
+    call cho_main("Did I do wrong, [cho_genie_name]?","angry","closed","sad","mid")
+    call cho_main("Did I go too far?","soft","narrow","sad","mid")
+    g9 "No girl, you did great!"
+    m "You successfully got yourself out of an intricate situation."
+    m "You improvised, just as I taught you."
+    call cho_main("Thank you, Sir.","base","narrow","sad","mid")
+    call cho_main("But what would you suggest I do next time something like this happens?","soft","narrow","sad","mid")
+    m "Trust your instincts, it worked once didn’t it?"
+    m "Try it again, show them your breasts, and see what effects it has on them..."
+    call cho_main("Show them my breasts?! But I can't possibly do that!","scream","wide","base","mid")
+    m "Why not? Didn't you just do that?{w} They \"have\" seen your tits haven't they?"
+    call cho_main("My tits?!","soft","wide","base","mid")
+    call cho_main("*Oh* I mean yes, I guess they have seen them now but...","soft","base","sad","downR")
+    g4 "Remember why we are doing this, girl! You need to get into their minds!"
+    m "If they want to see your breasts again, or any other part of your body, you show it to them!"
+    call cho_main("But, Sir!","angry","closed","sad","mid") # Embarrassed
+    m "Do as I say, [cho_name]!"
+    g4 "Your mission, should you choose to accept it, is to please them!{w} No matter the cost!"
+    call cho_main("What?!","soft","wide","base","mid")
+    m "For now, you are dismissed."
+    call cho_main("Sir!","angry","base","angry","mid")
+    g4 "Dismissed!{w} Now go back to your room..."
+    call cho_main("Fine...","annoyed","narrow","angry","mid") # Annoyed
+    call cho_main("Good night, coach.","soft","narrow","angry","mid") # Angry
+
+    # Cho leaves.
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
 
@@ -406,18 +494,70 @@ label cc_pr_manipulate_T2_E2:
 label cc_pr_manipulate_T2_E3:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
-    "This is the {color=#e42e4e}third{/color} event in {color=#8000ff}Tier2{/color}"
-
-
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    g9 "[cho_name]! You’re back."
+    call cho_main("(...)","annoyed","narrow","angry","down") # Annoyed
+    g9 "How was your day? Anything exciting to tell me?"
+    call cho_main("I- *uhm*...","soft","narrow","base","down")
+    call cho_main("I did what you asked me to...","soft","narrow","sad","mid")
+    g9 "Yes?"
+    call cho_main("I... flashed them...","angry","closed","sad","mid")
+    g4 "You showed them your tits again?!"
+    call cho_main("What? No!","soft","wide","base","mid")
+    m "But you just said-"
+    call cho_main("They... didn't want to see them...","annoyed","narrow","angry","downR")
+    m "Oh..."
+    m "(Could it be that they aren't into girls?)"
+    call cho_main("I was on my way to the Quidditch pitch, somewhere close to the library when they ambushed me...","soft","narrow","base","R")
+    g4 "An ambush?!"
+    call cho_main("I tried to be nice to them, even flirt a bit, but I just couldn't!","soft","narrow","sad","mid")
+    call cho_main("It's hard enough to deal with one of those brutes, but three at the same time?!","angry","wide","base","mid")
+    m "There are girls that could handle that with ease..."
+    call cho_main("Sir?","soft","base","raised","mid")
+    m "Nothing,... go on..."
+    call cho_main("They started mocking me... About what I did last time. Called me a slut, among other things...","soft","narrow","angry","R")
+    call cho_main("Even threatened to report it as indecent behaviour...","angry","narrow","angry","downR")
+    call cho_main("I was about to lash back as they were really starting to annoy me... But then I remembered what you  told me.","angry","narrow","sad","mid")
+    call cho_main("That I should do my best to be nice to them... and... try and please them...","angry","base","sad","down")
+    m "So? What did you do?"
+    call cho_main("I asked if they liked it...","angry","closed","sad","mid")
+    g9 "Liked what?"
+    call cho_main("Seeing my breasts, Sir.","soft","wink","base","mid")
+    call cho_main("Instead of insulting them, I begged them not to report me to a teacher, and in return, I’d let them see them again!","soft","narrow","sad","R")
+    g9 "And then?"
+    call cho_main("They laughed at me!","annoyed","narrow","angry","R")
+    call cho_main("Started mocking my breasts even... Calling them small...","annoyed","narrow","angry","downR")
+    m "How foolish those boys..."
+    call cho_main("Well, I had to show them something else instead...","soft","narrow","sad","mid")
+    call cho_main("After all, they asked for it.","annoyed","narrow","sad","down")
+    g4 "Intriguing..."
+    call cho_main("They asked to see my bum, Sir!","soft","narrow","angry","mid")
+    g9 "I see, they are men of culture..."
+    call cho_main("I turned around and lowered my skirt for them...","annoyed","base","sad","down")
+    g9 "Sweet!"
+    m "And how did they react to it?"
+    call cho_main("It seemed like they enjoyed it, Sir.","soft","closed","base","mid")
+    call cho_main("I mean, who wouldn't... I have a great butt.","soft","narrow","angry","R")
+    m "Yes indeed!"
+    call cho_main("They did ask why I keep wearing a skirt to school, though.","annoyed","base","sad","mid")
+    call cho_main("Said that it would look a lot better in trousers... or some tight leggins...","angry","base","sad","downR")
+    m "They’re not wrong... you would look great in some leggins!"
+    call cho_main("Anyway, I left before they had a chance to touch it...","annoyed","narrow","angry","mid")
+    call cho_main("The last thing I want is their grimy hands on it.","annoyed","narrow","angry","R")
+    m "Well, I believe you made the best out of the situation!"
+    call cho_main("I think so too, [cho_genie_name]!","base","base","base","mid")
+    g4 "You may leave now. Exceptionally good work, [cho_name]!"
+    call cho_main("Thank you.","smile","base","base","R")
+    m "Dismissed."
+    call cho_main("Good night, Sir.","base","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
-
-    $ cc_pr_manipulate.tier = 3
+    call cho_walk(action="leave", speed=2.5)
 
     jump end_cho_event
+
 
 
 ### Tier 3 ###

@@ -2,7 +2,7 @@ default use_cho_head = False # This has to be left outside of any label, default
 
 label cho_init:
 
-    if not hasattr(renpy.store,'cho_class') or reset_persistants:
+    if not hasattr(renpy.store,'cho_chibi_animation') or reset_persistants:
 
         $ cho_xpos                = 300
         $ cho_ypos                = 0
@@ -15,6 +15,7 @@ label cho_init:
         $ cho_chibi_ypos          = 250
         $ cho_chibi_flip          = 1
         $ cho_chibi_zorder        = 3
+        $ cho_chibi_animation     = None
 
         $ cho_chibi_stand         = "ch_cho blink"
         $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
@@ -118,18 +119,42 @@ label cho_progress_init:
         cc_pf_sex
         ]
 
-    if not hasattr(renpy.store,'cc_pr_manipulate'):
+    if not hasattr(renpy.store,'cc_pr_flirt'): # Not in use
         $ cc_pr_flirt   = event_class(title = "Get Flirty!", start_label = "cc_pr_flirt_start", events = [
-            [   ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"], ["cc_pr_flirt_T1_E2"], ["cc_pr_flirt_T1_E3"]  ],
-            [   ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"], ["cc_pr_flirt_T2_E2"], ["cc_pr_flirt_T2_E3"]  ]
+            [
+            ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"],
+            ["cc_pr_flirt_T1_E2"],
+            ["cc_pr_flirt_T1_E3"]
+            ],
+
+            [
+            ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"],
+            ["cc_pr_flirt_T2_E2"],
+            ["cc_pr_flirt_T2_E3"]
             ]
+
+            ],
+            icons = ["interface/huff.png", "interface/slyt.png"]
             )
+
+    if not hasattr(renpy.store,'cc_pr_manipulate'):
         $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", events = [
-            [   ["cc_pr_manipulate_T1_intro"], ["cc_pr_manipulate_T1_E1"], ["cc_pr_manipulate_T1_E2"], ["cc_pr_manipulate_T1_E3"]  ],
-            [   ["cc_pr_manipulate_T2_intro"], ["cc_pr_manipulate_T2_E1"], ["cc_pr_manipulate_T2_E2"], ["cc_pr_manipulate_T2_E3"]  ]
+            [
+            ["cc_pr_manipulate_T1_intro_E1"], ["cc_pr_manipulate_T1_E1"],
+            ["cc_pr_manipulate_T1_E2"],
+            ["cc_pr_manipulate_T1_E3"]
+            ],
+
+            [
+            ["cc_pr_manipulate_T2_intro_E1"], ["cc_pr_manipulate_T2_E1"],
+            ["cc_pr_manipulate_T2_intro_E2"],
+            ["cc_pr_manipulate_T2_intro_E3"], ["cc_pr_manipulate_T2_E3"]
+            ]
+
             ],
             icons = ["interface/huff.png", "interface/slyt.png"] #if a tier doesn't need an icon replace with None
             )
+
     $ cc_requests_list = [
         cc_pr_manipulate
         ]

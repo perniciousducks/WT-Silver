@@ -175,6 +175,7 @@ label update_cho_favors:
 
 # Cho Requests Menu
 label cho_requests_menu:
+    call update_cho_requests
     python:
         menu_choices = []
         for i in cc_requests_list:
@@ -197,6 +198,13 @@ label cho_requests_menu:
     else:
         $ renpy.jump(result)
 
+label update_cho_requests:
+
+    # Set event tier to current Cho tier if they are different
+    if cc_pr_manipulate.tier != cho_tier:
+        $ cc_pr_manipulate.tier = cho_tier
+
+    return
 
 
 label favor_not_ready:

@@ -134,7 +134,7 @@ label cc_pr_manipulate_start:
 
 ### Tier 1 (pre Hufflepuff) ###
 
-label cc_pr_manipulate_T1_intro:
+label cc_pr_manipulate_T1_intro_E1:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)

@@ -8,7 +8,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
     if xpos != cho_chibi_xpos:
         if xpos == "mid":
             $ cho_chibi_xpos = 560
-        elif xpos in ["wardrobe","center","base","default"]: #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
+        elif xpos in ("wardrobe","center","base","default"): #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
             $ cho_chibi_xpos = 530
         elif xpos == "desk":
             $ cho_chibi_xpos = 440
@@ -20,7 +20,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
             $ cho_chibi_xpos = int(xpos)
 
     if ypos != cho_chibi_ypos:
-        if ypos in ["base","default"]:
+        if ypos in ("base","default"):
             $ cho_chibi_ypos = 250
         elif ypos == "on_desk":
             $ cho_chibi_ypos = 180
@@ -30,7 +30,16 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
     if action == "hide":
         pass
-
+    elif action == "fly":
+        $ cho_chibi_animation = "fly"
+        call update_cho_chibi_uniform
+        show screen cho_stand
+        with d4
+    elif action in ("reset", "default", "stand"):
+        $ cho_chibi_animation = None
+        call update_cho_chibi_uniform
+        show screen cho_stand
+        with d4
     elif action == "leave":
         call play_sound("door")
         hide screen cho_main
@@ -90,7 +99,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
     else:
         $ walk_xpos2 = int(xpos)
 
-    if ypos in ["base","default"]:
+    if ypos in ("base","default"):
         $ walk_ypos2 = 250
     else:
         $ walk_ypos2 = int(ypos)
@@ -140,26 +149,33 @@ label cho_walk_end_loiter(dissolveTime = 3):
 ### CHO CHIBI SCREENS ###
 screen cho_stand():
     tag cho_chibi
-
-    add cho_chibi_stand    xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_shoes    xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_top      xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_bottom   xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_robe     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
-
     zorder cho_chibi_zorder
+
+    frame:
+        style "empty"
+        if cho_chibi_animation == "fly":
+            at chibi_fly_idle
+        add cho_chibi_stand    xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_shoes    xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_top      xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_bottom   xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_robe     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
 
 screen cho_walk():
     tag cho_chibi
-
-    add cho_chibi_walk         at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_walk_shoes   at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom cho_chibi_flip zoom (1.0/scaleratio)
-
-    add cho_chibi_top          at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_bottom       at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom cho_chibi_flip zoom (1.0/scaleratio)
-    add cho_chibi_robe         at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom cho_chibi_flip zoom (1.0/scaleratio)
-
     zorder cho_chibi_zorder
+
+    frame:
+        style "empty"
+        if cho_chibi_animation == "fly":
+            at chibi_fly(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2)
+        else:
+            at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2)
+        add cho_chibi_walk         xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_walk_shoes   xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_top          xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_bottom       xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_robe         xzoom cho_chibi_flip zoom (1.0/scaleratio)
 
 
 
@@ -199,8 +215,12 @@ label update_cho_chibi_uniform:
         $ cho_chibi_robe      = "characters/cho/chibis/blank.png"
 
     #Main Chibi
-    $ cho_chibi_stand         = "ch_cho blink"
-    $ cho_chibi_walk          = "ch_cho walk"
+    if cho_chibi_animation == "fly":
+        $ cho_chibi_stand         = "ch_cho fly_idle"
+        $ cho_chibi_walk          = "ch_cho fly"
+    else:
+        $ cho_chibi_stand         = "ch_cho blink"
+        $ cho_chibi_walk          = "ch_cho walk"
 
     if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"): #With Shoes.
         $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"

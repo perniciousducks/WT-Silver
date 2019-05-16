@@ -4,39 +4,40 @@
 
 label cho_panties_response_T2:
     $ has_cho_panties = False
-    call cho_main("Hello, [cho_genie_name]", xpos="mid", ypos="base")
+    call cho_main("Hello, [cho_genie_name].","soft","narrow","sad","mid", xpos="right", ypos="base")
     m "Sup..."
-    cho "*Uhm*..."
-    cho "I forgot to take my underwear with me the last time I was here."
+    call cho_main("*Uhm*...","annoyed","narrow","sad","R")
+    call cho_main("I forgot to take my underwear with me the last time I was here.","soft","narrow","sad","downR")
 
     if cho_panties_soaked:
         g9 "Your panties! Of course, [cho_name]!{w} I've got them right here..."
         call cho_walk("desk","base", speed=2)
         pause.8
 
-        cho "(...)" # Evil stare.
+        call cho_main("(...)","annoyed","narrow","angry","mid", xpos="mid", ypos="base", trans="fade") # Evil stare.
         m "What?"
-        cho "(...)"
+        call cho_main("(...)","annoyed","narrow","angry","R")
         m "Anything wrong?"
-        cho "They are covered in semen."
+        call cho_main("They are covered in semen.","soft","narrow","base","R")
         m "What was that?"
-        cho "Semen, Sir!" # Scream
+        call cho_main("Semen, Sir!","scream","narrow","angry","mid", trans="hpunch") # Scream
+        call cho_main("","annoyed","narrow","angry","mid")
         g4 "You are correct!{w} They are indeed covered in a thick load of filthy, nasty reeking semen!"
-        g4 "Who could have done this?!"
-        cho "I don't know... why don't we inquire how they got here in the first place..."
-        cho "Didn't I take off my panties while I was stipping for you?"
+        g9 "Who could have done this?!"
+        call cho_main("I don't know... why don't we inquire how they got here in the first place...","open","base","base","R")
+        call cho_main("Didn't I take off my panties while I was stipping for you?","soft","narrow","base","mid")
         m "That is correct."
-        cho "And you had my panties this whole time?"
+        call cho_main("And you had my panties this whole time?","soft","narrow","raised","mid")
         m "Yup."
-        cho "And you just gave them back to me covered in cum..."
+        call cho_main("And you just gave them back to me covered in cum...","annoyed","narrow","base","mid")
         m "That makes sense to me..."
-        cho "So you admit that you did it?"
+        call cho_main("So you admit that you did it?","soft","narrow","angry","mid")
         m "It's not my cum..."
-        cho "*Argh!*"
-        cho "Well who's cum is it then? The house-elfes?"
+        call cho_main("*Argh!*","angry","narrow","angry","mid", trans="hpunch")
+        call cho_main("Well who's is it then?{w} The house-elfes?","soft","narrow","base","mid")
         m "*Uhm*...{w} Yes?"
-        cho "It's disgusting!"
-        cho "I better get them cleaned immediately..."
+        call cho_main("It's disgusting!","annoyed","narrow","base","down")
+        call cho_main("I better get them cleaned immediately...","angry","narrow","sad","down")
 
         call cho_walk("door","base", speed=3)
 
@@ -59,10 +60,12 @@ label cho_panties_response_T2:
 
     else:
         g9 "Your panties, that's right!{w} I've got them right here..."
+
         $ renpy.sound.play("sounds/sniff.mp3")
         call nar(">You take the panties to your nose and give them one last sniff.")
+
         g4 "*Aaahhh!*{w} Wonderful!"
-        cho "(...)"
+        call cho_main("(...)","annoyed","narrow","base","mid")
         m "There, take them..."
 
         call cho_walk("desk","base", speed=2)
@@ -73,7 +76,7 @@ label cho_panties_response_T2:
         with d3
         pause.2
 
-        cho "Thank you, Sir."
+        call cho_main("Thank you, Sir.","base","base","base","mid")
         m "You're welcome..."
 
         jump cho_requests

@@ -175,7 +175,6 @@ label update_cho_favors:
 
 # Cho Requests Menu
 label cho_requests_menu:
-    call update_cho_request_tier
     python:
         menu_choices = []
         for i in cc_requests_list:
@@ -197,14 +196,6 @@ label cho_requests_menu:
         jump cho_requests
     else:
         $ renpy.jump(result)
-
-label update_cho_request_tier:
-    python:
-        for i in cc_requests_list:
-            i.tier = cho_tier
-            if i.points == 0:
-                i.level = 0
-    return
 
 
 

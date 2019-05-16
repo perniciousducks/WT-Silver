@@ -1,4 +1,4 @@
-
+default use_cho_head = False # This has to be left outside of any label, default doesn't overwrite the save variables but if the variable doesn't exist it sets it to = Value, in this case its False
 
 label cho_init:
 
@@ -9,8 +9,6 @@ label cho_init:
         $ cho_zorder              = 5
         $ cho_flip                = 1
         $ cho_animation           = None
-
-        default use_cho_head = False
 
         #Chibi
         $ cho_chibi_xpos          = 500
@@ -109,18 +107,15 @@ label cho_progress_init:
 
     if not hasattr(renpy.store,'cc_pf_talk'):
         $ cc_pf_talk    = favor_class(title = "Talk to me!", tier = 1, start_label = "cc_pf_talk")
-
         $ cc_pf_strip   = favor_class(title = "Inspect her body!", tier = 2, start_label = "cc_pf_strip")
-
         $ cc_pf_blowjob = favor_class(title = "Suck it!", tier = 3, start_label = "cc_pf_blowjob")
-
         $ cc_pf_sex     = favor_class(title = "Let's have sex!", tier = 4, start_label = "cc_pf_sex")
 
     $ cc_favor_list = [
         cc_pf_talk,
         cc_pf_strip,
         cc_pf_blowjob,
-        cc_pf_sex,
+        cc_pf_sex
         ]
 
     if not hasattr(renpy.store,'cc_pr_manipulate'):
@@ -129,13 +124,14 @@ label cho_progress_init:
             [   ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"], ["cc_pr_flirt_T2_E2"], ["cc_pr_flirt_T2_E3"]  ]
             ]
             )
-        $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", max_level = 2, events = [
+        $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", events = [
             [   ["cc_pr_manipulate_T1_intro"], ["cc_pr_manipulate_T1_E1"], ["cc_pr_manipulate_T1_E2"], ["cc_pr_manipulate_T1_E3"]  ],
-            [   ["cc_pr_manipulate_T2_intro"], ["cc_pr_manipulate_T2_E1"], ["cc_pr_manipulate_T2_E2"], ["cc_pr_manipulate_T2_E2"]  ]
-            ]
+            [   ["cc_pr_manipulate_T2_intro"], ["cc_pr_manipulate_T2_E1"], ["cc_pr_manipulate_T2_E2"], ["cc_pr_manipulate_T2_E3"]  ]
+            ],
+            icons = ["interface/huff.png", "interface/slyt.png"] #if a tier doesn't need an icon replace with None
             )
     $ cc_requests_list = [
-        cc_pr_manipulate,
+        cc_pr_manipulate
         ]
 
     return

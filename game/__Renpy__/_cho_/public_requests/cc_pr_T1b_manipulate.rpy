@@ -9,7 +9,6 @@ label cc_pr_manipulate_start:
 
     ### Tier 1 (pre Hufflepuff) ###
     if cho_tier <= 1:
-
         # Intro
         if cc_pr_manipulate.points == 0:
             m "So what do we know about our opponents?"
@@ -55,18 +54,14 @@ label cc_pr_manipulate_start:
             call cho_main("I think I can do that...{w} For \"Ravenclaw\"...","quiver","base","sad","down")
             m "Good, let me know how it goes later today."
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
-
         # Repeated
         else:
             m "Ready to mess with \"Hufflepuff\" again?"
             call cho_main("I guess so...", mouth="soft", face="happy")
             g9 "Great! I'll see you later today for your report, [cho_name]!"
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
-
-
     ### Tier 2 (pre Slytherin) ###
     else:
-
         # Intro
         if cc_pr_manipulate.points == 0:
             m "[cho_name], how well, in your opinion, did you do in your last match?"
@@ -122,21 +117,10 @@ label cc_pr_manipulate_start:
             g9 "Report to me later as usual, [cho_name]!"
             call cho_main("Yes, Sir!","base","base","base","mid")
 
-
     # Cho leaves.
     call cho_walk(action="leave", speed=1.6)
 
     $ cc_pr_manipulate.inProgress = True
-
-    # First Star
-    if cc_pr_manipulate.points == 0:
-        $ cc_pr_manipulate.level = 1
-    # Second Star, gets added when you play the last event in the list.
-
-    $ cc_pr_manipulate.points += 1 # Points get set to 0 when you beat Hufflepuff.
-
-    # Stats
-    $ cc_pr_manipulate.counter += 1
 
     jump end_cho_event
 
@@ -297,7 +281,9 @@ label cc_pr_manipulate_T1_E3:
     # Cho leaves.
     call cho_walk(action="leave", speed=1.6)
 
-    $ cc_pr_manipulate.tier = 2 # Last event of that tier.
+    # Set event tier to current Cho tier if they are different
+    if cc_pr_manipulate.tier != cho_tier:
+        $ cc_pr_manipulate.tier = cho_tier
 
     jump end_cho_event
 
@@ -429,7 +415,7 @@ label cc_pr_manipulate_T2_E3:
     # Cho leaves.
     call cho_walk(action="leave", speed=1.6)
 
-    $ cc_pr_manipulate.level = 2
+    $ cc_pr_manipulate.tier = 3
 
     jump end_cho_event
 

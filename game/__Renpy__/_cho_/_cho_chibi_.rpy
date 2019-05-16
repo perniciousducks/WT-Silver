@@ -80,7 +80,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         call play_sound("door")
         $ cho_chibi_xpos = 750
         $ cho_chibi_ypos = 250
-    if action == "leave":
+    elif action == "leave":
         $ xpos = "door"
         $ ypos = "base"
         $ loiter = False
@@ -130,7 +130,8 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         if action == "leave":
             call play_sound("door")
             with d3
-            pause.5
+            pause.3
+            $ cho_chibi_flip = 1
         if loiter:
             show screen cho_stand
 

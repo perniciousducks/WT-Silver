@@ -73,7 +73,7 @@ init python:
                     #import_file = open(config.basedir+"/game/"+filename+".txt", "r")
                     #imported = import_file.read()
                     #import_file.close()
-                    if renpy.exists("/outfits/"+filename+".png"):
+                    if renpy.loadable("/outfits/"+filename+".png"):
                         imported = _image_payload.decode(filename)
                     else:
                         renpy.block_rollback()
@@ -255,22 +255,22 @@ init python:
                 raise Exception('Clothing: "color" list does not match the number of layers in cloth_class.')
             
             # Check if clothing folder is a category, subcategory or a type
-            if renpy.exists("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/0.png"):
+            if renpy.loadable("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/0.png"):
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/"
-            elif renpy.exists("characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/0.png"):
+            elif renpy.loadable("characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/0.png"):
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/"
             else:
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"+self.id+"/"
             
             # Check if skin layer exists
-            if renpy.exists(self.imagepath+"skin.png"):
+            if renpy.loadable(self.imagepath+"skin.png"):
                 self.skinlayer = self.imagepath+"skin.png"
             
             # Check if extra layer exists
-            if renpy.exists(self.imagepath+"extra.png"):
+            if renpy.loadable(self.imagepath+"extra.png"):
                 self.extralayer = self.imagepath+"extra.png"
                 
-            if renpy.exists(self.imagepath+"overlay.png"):
+            if renpy.loadable(self.imagepath+"overlay.png"):
                 self.overlayer = self.imagepath+"overlay.png"
                 
             # Check if armfix layers exist
@@ -309,33 +309,33 @@ init python:
             if pose == None:
                 self.pose = ""
                 self.outline = self.imagepath+"outline.png"
-                if renpy.exists(self.imagepath+"skin.png"):
+                if renpy.loadable(self.imagepath+"skin.png"):
                     self.skinlayer = self.imagepath+"skin.png"
                 else:
                     self.skinlayer = "characters/dummy.png"
-                if renpy.exists(self.imagepath+"extra.png"):
+                if renpy.loadable(self.imagepath+"extra.png"):
                     self.extralayer = self.imagepath+"extra.png"
                 else:
                     self.extralayer = "characters/dummy.png"
-                if renpy.exists(self.imagepath+"overlay.png"):
+                if renpy.loadable(self.imagepath+"overlay.png"):
                     self.overlayer = self.imagepath+"overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
                 self.set_armfix()
                 self.cached = False
                 return None
-            if renpy.exists(self.imagepath+"/"+pose+"/0.png"):
+            if renpy.loadable(self.imagepath+"/"+pose+"/0.png"):
                 self.pose = pose
                 self.outline = self.imagepath+"/"+pose+"/outline.png"
-                if renpy.exists(self.imagepath+"/"+pose+"/skin.png"):
+                if renpy.loadable(self.imagepath+"/"+pose+"/skin.png"):
                     self.skinlayer = self.imagepath+"/"+pose+"/skin.png"
                 else:
                     self.skinlayer = "characters/dummy.png"
-                if renpy.exists(self.imagepath+"/"+pose+"/extra.png"):
+                if renpy.loadable(self.imagepath+"/"+pose+"/extra.png"):
                     self.extralayer = self.imagepath+"/"+pose+"/extra.png"
                 else:
                     self.extralayer = "characters/dummy.png"
-                if renpy.exists(self.imagepath+"/"+pose+"/overlay.png"):
+                if renpy.loadable(self.imagepath+"/"+pose+"/overlay.png"):
                     self.overlayer = self.imagepath+"/"+pose+"/overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
@@ -353,18 +353,18 @@ init python:
             self.armfix_R = []
             if self.armfix:
                 for layer in xrange(self.layers):
-                    if renpy.exists(self.imagepath+pose+str(layer)+"_armL.png"):
+                    if renpy.loadable(self.imagepath+pose+str(layer)+"_armL.png"):
                         self.armfix_L.append(self.imagepath+pose+str(layer)+"_armL.png")
                         
-                    if renpy.exists(self.imagepath+pose+str(layer)+"_armR.png"):
+                    if renpy.loadable(self.imagepath+pose+str(layer)+"_armR.png"):
                         self.armfix_R.append(self.imagepath+pose+str(layer)+"_armR.png")
                         
-                if renpy.exists(self.imagepath+pose+"outline_armL.png"):
+                if renpy.loadable(self.imagepath+pose+"outline_armL.png"):
                     self.armfix_Lx = self.imagepath+pose+"outline_armL.png"
                 else:
                     self.armfix_Lx = ""
                     
-                if renpy.exists(self.imagepath+pose+"outline_armR.png"):
+                if renpy.loadable(self.imagepath+pose+"outline_armR.png"):
                     self.armfix_Rx = self.imagepath+pose+"outline_armR.png"
                 else:
                     self.armfix_Rx = ""

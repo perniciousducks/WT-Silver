@@ -115,7 +115,11 @@ screen ui_top_bar():
                 activate_sound "sounds/click3.mp3"
 
         hbox:
-            xpos 900
+            if renpy.variant('android'):
+                spacing 10
+                xpos 800
+            else:
+                xpos 900
             # Achievements button
             imagebutton:
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png"
@@ -171,7 +175,7 @@ screen ui_top_bar():
                 xpos 10 ypos 40
                 text "{size=-3}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
 
-        if not ui_hint == "" and persistent.ui_hint and not renpy.get_screen("t_wardrobe_menu"):
+        if not ui_hint == "" and persistent.ui_hint and not renpy.get_screen("t_wardrobe_menu") and not renpy.variant('android'):
             text "{color=#FFF}{size=+4}[ui_hint]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
 
 screen ui_points():
@@ -267,6 +271,8 @@ screen ui_menu():
             style_group "mm"
             ypos 20
             xpos -5
+            if renpy.variant('android'):
+                spacing 6
             textbutton "Save" action ShowMenu("save") background #000
             textbutton "Load" action ShowMenu("load") background #000
             text "" # space
@@ -274,7 +280,7 @@ screen ui_menu():
                 textbutton "{size=-11}Cheats{/size}" action [SetVariable("toggle_menu", False), Jump("cheats")] background #000
             if day != 1:
                 textbutton "{size=-11}Decorate{/size}" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background #000
-            if day != 1:
+            if day != 1 and config.developer:
                 textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background #000
 
         hbox:

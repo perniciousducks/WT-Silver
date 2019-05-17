@@ -480,20 +480,27 @@ screen preferences():
     use navigation
 
     # Put the navigation columns in a four-wide grid.
-    grid 4 1:
+    if not renpy.variant('android'):
+        $ columns = 4
+        $ rows = 1
+    else:
+        $ columns = 3
+        $ rows = 1
+    grid columns rows:
         style_group "prefs"
         xfill True
 
         # The left column.
         vbox:
-            frame:
-                style_group "pref"
-                has vbox
+            if not renpy.variant('android'):
+                frame:
+                    style_group "pref"
+                    has vbox
 
-                label _("Display")
-                textbutton _("Window") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
+                    label _("Display")
+                    textbutton _("Window") action Preference("display", "window")
+                    textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                    
             frame:
                 style_group "pref"
                 has vbox
@@ -514,9 +521,10 @@ screen preferences():
                 has vbox
                 
                 label _("Interface")
-                textbutton "Tooltips" action ToggleVariable("persistent.ui_hint", True, False)
+                if not renpy.variant('android'):
+                    textbutton "Tooltips" action ToggleVariable("persistent.ui_hint", True, False)
+                    textbutton _("Custom Cursor") action [ToggleVariable("persistent.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
                 textbutton _("Nightmode") action ToggleVariable("persistent.nightmode", True, False)
-                textbutton _("Custom Cursor") action [ToggleVariable("persistent.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
             frame:
                 style_group "pref"
                 has vbox
@@ -617,19 +625,20 @@ screen preferences():
                 label _("Saving&Loading")
                 textbutton _("Autosave") action [ToggleVariable("persistent.autosave", True, False), ToggleVariable("config.has_autosave", True, False), ToggleVariable("config.autosave_on_choice", True, False)]
                 textbutton _("Save Del. Warning") action ToggleVariable("persistent.delwarning", True, False)
-        vbox:#Hotkeys
-            frame:
-                style_group "pref"
-                has vbox
+        if not renpy.variant('android'):
+            vbox:#Hotkeys
+                frame:
+                    style_group "pref"
+                    has vbox
 
-                label _("Hotkeys")
-                textbutton _("Map - [hkey_map]") action None
-                textbutton _("Work - [hkey_work]") action None
-                textbutton _("Books - [hkey_book]") action None
-                textbutton _("Stats - [hkey_stats]") action None
-                textbutton _("Inventory - [hkey_inventory]") action None
-                textbutton _("Sleep - [hkey_sleep]") action None
-                textbutton _("Jerk off - [hkey_fap]") action None
+                    label _("Hotkeys")
+                    textbutton _("Map - [hkey_map]") action None
+                    textbutton _("Work - [hkey_work]") action None
+                    textbutton _("Books - [hkey_book]") action None
+                    textbutton _("Stats - [hkey_stats]") action None
+                    textbutton _("Inventory - [hkey_inventory]") action None
+                    textbutton _("Sleep - [hkey_sleep]") action None
+                    textbutton _("Jerk off - [hkey_fap]") action None
     zorder 5
 
 init -2:
@@ -709,10 +718,19 @@ screen quick_menu():
     # Add an in-game quick menu.
     if renpy.variant('android'):
         hbox:
+            style_group "quick"
+
+            xpos 845
+            ypos 489
+            xanchor 1.0
+
+            textbutton _("Save") action ShowMenu('save') activate_sound "sounds/click3.mp3"
+            textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
+        hbox:
             ypos 600
             if renpy.can_rollback():
                 imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 180
-            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(confirm=True) activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 800
+            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(fast=True, confirm=True) activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 800
     else:
         hbox:
             style_group "quick"

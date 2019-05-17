@@ -91,7 +91,7 @@ label t_wardrobe(return_label, char_label):
         $ menu_items_length = len(menu_items)
     elif _return[0] == "export":
         menu:
-            "Export to PNG file":
+            "Export to PNG file" if not renpy.variant('android'):
                 $ export_in_progress = True
                 $ cho_outfit_last.save()
                 $ char_active.equip(_return[1])
@@ -104,7 +104,7 @@ label t_wardrobe(return_label, char_label):
         $ achievement.unlock("export")
     elif _return == "import":
         menu:
-            "Import from PNG file":
+            "Import from PNG file" if not renpy.variant('android'):
                 $ txt_filename = "exported"
                 $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
                 $ cho_outfit_custom.outfit_import(True, txt_filename)
@@ -252,8 +252,9 @@ screen t_wardrobe_menu(xx, yy):
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 117)
         button xsize 50 ysize 50 pos (373, 117) style "empty" background "interface/wardrobe/test/outfits.png" hover_background image_hover("interface/wardrobe/test/outfits.png") action Return(["category", "outfits"]) hovered SetVariable("ui_hint", "Outfits Manager") unhovered SetVariable("ui_hint", "")
 
-        add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 172)
-        button xsize 50 ysize 50 pos (373, 172) style "empty" background "interface/wardrobe/test/studio.png" hover_background image_hover("interface/wardrobe/test/studio.png") action Return("studio") hovered SetVariable("ui_hint", "Open Studio") unhovered SetVariable("ui_hint", "")
+        if not renpy.variant('android'):
+            add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 172)
+            button xsize 50 ysize 50 pos (373, 172) style "empty" background "interface/wardrobe/test/studio.png" hover_background image_hover("interface/wardrobe/test/studio.png") action Return("studio") hovered SetVariable("ui_hint", "Open Studio") unhovered SetVariable("ui_hint", "")
         
         #add "interface/wardrobe/test/"+str(interface_color)+"/icons_"+char_active.char+"_"+current_category+".png" xpos 13 ypos 80 zoom 0.5
 

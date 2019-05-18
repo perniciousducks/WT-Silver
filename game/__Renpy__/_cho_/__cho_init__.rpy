@@ -107,10 +107,10 @@ label cho_progress_init:
     # pr = Public Requests.
 
     if not hasattr(renpy.store,'cc_pf_talk'):
-        $ cc_pf_talk    = favor_class(title = "Talk to me!", tier = 1, start_label = "cc_pf_talk")
+        $ cc_pf_talk    = favor_class(title = "Talk to me!",       tier = 1, start_label = "cc_pf_talk")
         $ cc_pf_strip   = favor_class(title = "Inspect her body!", tier = 2, start_label = "cc_pf_strip")
-        $ cc_pf_blowjob = favor_class(title = "Suck it!", tier = 3, start_label = "cc_pf_blowjob")
-        $ cc_pf_sex     = favor_class(title = "Let's have sex!", tier = 4, start_label = "cc_pf_sex")
+        $ cc_pf_blowjob = favor_class(title = "Suck it!",          tier = 3, start_label = "cc_pf_blowjob")
+        $ cc_pf_sex     = favor_class(title = "Let's have sex!",   tier = 4, start_label = "cc_pf_sex")
 
     $ cc_favor_list = [
         cc_pf_talk,

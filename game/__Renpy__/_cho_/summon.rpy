@@ -155,7 +155,7 @@ label update_cho_favors:
     # Pre Slytherin
     elif cho_tier == 2:
         $ heart_color = "green"
-        $ cc_pf_talk.max_level = 4
+        $ cc_pf_talk.max_level = 3
         $ cc_pf_strip.max_level = 4
 
     # Pre Gryffindor

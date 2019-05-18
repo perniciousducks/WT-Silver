@@ -833,7 +833,9 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
 
             # Hermione lifts her top
             call set_her_action("lift_top")
-            pause.5
+
+            call her_main("","base","glance")
+            call ctc
 
             call her_main("Have a good look.","soft","glance")
             call cho_main("(...)","annoyed","narrow","angry","downR") # Tries to look away.
@@ -857,7 +859,6 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
             g9 "For exposing those magnificent breasts."
 
             call set_her_action("none")
-            pause.5
 
             call her_main("Any time, Professor.","soft","glance")
             call cho_main("(I bloody hate her!)","angry","angry","angry","L")

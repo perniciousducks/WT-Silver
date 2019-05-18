@@ -290,7 +290,7 @@ label give_cho_gift(gift_item):
             call cho_main("He really is quite muscular isn't he...","open","narrow","base","down")
             call cho_main("I'll use it...","smile","base","base","mid")
             call give_gift(">You give the poster to Cho...",gift_item)
-            call cho_main("As a motivational poster that is!","open","wide","raise","L")
+            call cho_main("As a motivational poster that is!","open","wide","raised","L")
             call cho_main("Thank you [cho_genie_name].",face="neutral")
             call cho_mood_change(-2)
         elif cho_tier == 3:

@@ -62,33 +62,7 @@ image ch_cho walk_shoes: #With Shoes.
 
     repeat
 
-### FLYING ANIMATIONS ###
-transform chibi_fly_idle:
-    subpixel True
-    
-    on show, appear, start:
-        yoffset absolute(0)
-        ease_back 2.5 yoffset absolute(-10)
-        ease_back 2.5 yoffset absolute(10)
-        ease_back 2.0 yoffset absolute(0)
-        repeat
-        
-transform chibi_fly(x, x2, y, y2):
-    subpixel True
-    
-    on show, appear, start:
-        parallel:
-            xpos x
-            ypos y
-            ease_quad cho_speed xpos x2 ypos y2
-
-        parallel:
-            yoffset absolute(0)
-            linear cho_speed/3.0 yoffset absolute(-10)
-            linear cho_speed/3.0 yoffset absolute(10)
-            linear cho_speed/3.0 yoffset absolute(0)
-            repeat
-        
+### FLYING ANIMATIONS ###        
 image ch_cho fly:
     "characters/cho/chibis/cc_fly.png"
     

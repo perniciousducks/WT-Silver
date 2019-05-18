@@ -31,27 +31,6 @@ label phoenix:
             jump petting
 
     call screen main_room_menu
-    
-### TEST ###
-label flytest_cho_chibi:
-    call cho_walk(action="enter", speed=1.6)
-    pause
-    call cho_chibi(action="fly", xpos="mid",ypos="base")
-    pause
-    call cho_walk(xpos="0",ypos="base", speed=1.5)
-    pause
-    call cho_walk("900", "base", speed=2.2)
-    pause
-    call cho_walk("0", "base", speed=4.0)
-    pause
-    call cho_walk("900", "base", speed=6.0)
-    pause
-    call cho_walk("mid", "base", speed=6.0)
-    pause
-    call cho_chibi(action="reset", xpos="600",ypos="base")
-    pause
-    call cho_walk(action="leave", speed=1.6)
-    return
 
 ### FEEDING ###
 label feeding:

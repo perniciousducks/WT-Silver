@@ -29,8 +29,6 @@ label start_hufflepuff_match:
 
     jump end_cho_event
 
-
-
 ### Main Match Against Hufflepuff ###
 
 label hufflepuff_match:
@@ -517,7 +515,9 @@ label hufflepuff_match:
 
 
     # Cho’s Skirt gets addressed
+    show screen hufflepuff_match_cho_chase(1.0, 1.0)
     call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", mouth="open", eye="narrow")
+    show screen hufflepuff_match_cho_chase(1.0, 0.5)
     call her_main("Hold on a minute... Is Cho wearing a skirt?", mouth="scream", eye="surprised")
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     $ renpy.music.stop(fadeout=4)
@@ -534,6 +534,7 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
     "Fem Student #1" "What a slut!"
+    hide screen hufflepuff_match_cho_chase with d4
     call her_chibi("stand","375","105", flip=False)
     her "Professor, why won’t you say something? She’s clearly breaking the very basics of Quidditch rules!"
     m "I fail to see anything wrong with the way she’s dressed."
@@ -668,32 +669,46 @@ label hufflepuff_match:
     # End of game
     $ renpy.sound.play("sounds/referee.mp3")
     # Hooch should blow the whistle here.
-
+    pause 1.0
+    call hide_blkfade
     her "What was that? Did somebody do a foul?"
     "You see Cho flying over to the commentator booth glaring at Hermione with a look of pure hatred."
-    call hide_blkfade
+    #call hide_blkfade
 
     # Transition to Cho on her broom.
-    cho "Hey, Granger!"
+    $ cho_animation = sprite_fly_idle
+    $ cho_class.animation("quid")
+    call cho_chibi(action="fly", xpos=1200,ypos=-100)
+    call cho_walk(xpos=500,ypos=50, speed=2.5)
+    pause 1.5
+    show screen bld2
+    call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200)
     call her_main("What do you want? Shouldn’t you be busy with,{w=0.3} I don’t know...", mouth="open", eye="angry", flip=True,xpos="120",ypos="base")
+    call cho_main("", "pout", "angry", "raised", "L")
     call her_main("playing the game?", mouth="smile", eye="closed")
-    cho "The game is over, you dipstick!"
+    call cho_main("The game is over, you dipstick!", "scream", "angry", "angry", "L")
     call her_main("What? Already?", mouth="shock", eye="surprised")
+    call cho_main("", "upset", "angry", "angry", "L")
     call her_main("But who caught the Snitch?", mouth="open", eye="wide")
+    call cho_main("", "base", "angry", "raised", "L")
     ">Cho waves the snitch in front of her."
     call her_main("", mouth="mad", eye="shocked")
-    cho "My first ever win this season and you didn’t even notice it! No one did thanks to your dreadful commentating!"
+    call cho_main("My first ever win this season and you didn’t even notice it! No one did thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
     call her_main("Oh...", mouth="normal", eye="shocked")
+    call cho_main("", "upset", "closed", "angry", "L")
     call her_main("So should I announce it now?", mouth="open", eye="worriedCl")
     call sna_main("Obviousl-","snape_12",ypos="head")
-    cho "{size=+10}YES!{/size}" with vpunch
+    call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans="vpunch") 
     call her_main("", mouth="normal", eye="worried")
-    cho "{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}" with hpunch # Large text.
-    call her_main("Don’t scream at me like that, bitch!", mouth="scream", eye="angry")
+    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "angry", "L", trans="hpunch") 
+    call her_main("Don’t scream at me like that, bitch!", mouth="scream", eye="angry", trans="hpunch")
+    call cho_main("", "angry", "shocked", "angry", "L") 
     call her_main("", mouth="normal", eye="angry")
-    cho "{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}" with vpunch # Large text.
+    call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "shocked", "angry", "L", trans="vpunch")
+    call cho_main("", "angry", "shocked", "angry", "L")
     call her_main("Everyone, Ravenclaw wins!", mouth="grin", eye="happy")
     call her_main("Cho Chang managed to catch it, the snitch that is...", mouth="smile", eye="happyCl")
+    call cho_main("", "scream", "shocked", "raised", "L")
     call her_main("With the help of her ridiculously short skirt!", mouth="crooked_smile", eye="angry")
     $ renpy.music.play("sounds/crowd.mp3", fadein=3)
     cho "{size=+10}!!!{/size}"
@@ -702,9 +717,15 @@ label hufflepuff_match:
     $ qp_mob_reaction[2] = "emo7"
     $ renpy.sound.play("sounds/crowd_applause.mp3")
     hide screen hermione_main
+    hide screen bld2
+    call cho_main("", "quiver", "wide", "sad", "downR")
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
-    cho "{size=+6}You are done, Granger!{/size}"
+    call cho_main("{size=+6}You are done, Granger!{/size}", "scream", "closed", "angry", "L")
+    call cho_walk(xpos=1200,ypos=800, speed=2.5)
     pause.8
+    $ cho_animation = None
+    $ cho_class.animation(None)
+    call cho_chibi(action="reset", xpos=1200,ypos="base")
 
     # Outro
     m "This isn’t such a bad game after all."
@@ -773,7 +794,7 @@ label hufflepuff_match_return:
     call cho_walk("desk", "base", 2.4, action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
-    call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid",trans="hpunch")
+    call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid", ypos="base", trans="hpunch")
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."

@@ -169,7 +169,7 @@ screen cho_walk():
     frame:
         style "empty"
         if cho_chibi_animation == "fly":
-            at chibi_fly(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2)
+            at chibi_fly(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2, speed=cho_speed)
         else:
             at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2)
         add cho_chibi_walk         xzoom cho_chibi_flip zoom (1.0/scaleratio)

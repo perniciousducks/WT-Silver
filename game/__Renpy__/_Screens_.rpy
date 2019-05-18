@@ -115,6 +115,11 @@ screen bld1():
     if not current_room == "quidditch_pitch":
         add "interface/bld.png"
     zorder 3
+    
+screen bld2():
+    tag bld2
+    add im.Flip("interface/bld.png", vertical=True)
+    zorder 3
 
 screen ctc():
     add "ctc4"

@@ -74,3 +74,29 @@ init -2:
         xpos x
         ypos y
         linear cho_speed xpos x2 ypos y2 # linear
+        
+    transform chibi_fly_idle:
+        subpixel True
+        
+        on show, appear, start:
+            yoffset absolute(0)
+            ease_back 2.5 yoffset absolute(-10)
+            ease_back 2.5 yoffset absolute(10)
+            ease_back 2.0 yoffset absolute(0)
+            repeat
+        
+    transform chibi_fly(x, x2, y, y2, speed):
+        subpixel True
+        
+        on show, appear, start:
+            parallel:
+                xpos x
+                ypos y
+                ease_quad speed xpos x2 ypos y2
+
+            parallel:
+                yoffset absolute(0)
+                linear speed/3.0 yoffset absolute(-10)
+                linear speed/3.0 yoffset absolute(10)
+                linear speed/3.0 yoffset absolute(0)
+                repeat

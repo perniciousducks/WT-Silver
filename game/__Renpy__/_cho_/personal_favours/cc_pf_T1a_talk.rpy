@@ -618,7 +618,7 @@ label cc_pf_talk_T2_E1: # Complete. Needs review. Not posed.
         g4 "Yes! Show them, you slut!"
         call cho_main("Of what \"I'm\" capable off!","angry","narrow","angry","mid")
         g4 "*Argh!* I'm getting close!"
-        cho  "Scared of what's about to come!","angry","angry","angry","mid")
+        call cho_main("Scared of what's about to come!","angry","angry","angry","mid")
 
         # Genie cums.
         g4 "Yes! Yes! It's coming!"

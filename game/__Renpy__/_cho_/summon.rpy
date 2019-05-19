@@ -122,7 +122,7 @@ label cho_favor_menu:
     python:
         menu_choices = []
         for i in cc_favor_list:
-            if i in [cc_pf_blowjob, cc_pf_sex]: # Not in the game yet.
+            if i in []: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
             elif i.tier > cho_tier:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
@@ -142,21 +142,14 @@ label cho_favor_menu:
         $ renpy.jump(result)
 
 label update_cho_favors:
-    python:
-        for i in cc_favor_list:
-            if i.points == 0:
-                i.level = 0
 
     # Pre Hufflepuff
     if cho_tier == 1:
         $ heart_color = "yellow"
-        $ cc_pf_talk.max_level = 3
 
     # Pre Slytherin
     elif cho_tier == 2:
         $ heart_color = "green"
-        $ cc_pf_talk.max_level = 3
-        $ cc_pf_strip.max_level = 4
 
     # Pre Gryffindor
     elif cho_tier == 3:

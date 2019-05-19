@@ -107,35 +107,39 @@ label cho_progress_init:
     # pr = Public Requests.
 
     if not hasattr(renpy.store,'cc_pf_talk'):
-        $ cc_pf_talk    = favor_class(title = "Talk to me!",       tier = 1, start_label = "cc_pf_talk")
-        $ cc_pf_strip   = favor_class(title = "Inspect her body!", tier = 2, start_label = "cc_pf_strip")
-        $ cc_pf_blowjob = favor_class(title = "Suck it!",          tier = 3, start_label = "cc_pf_blowjob")
-        $ cc_pf_sex     = favor_class(title = "Let's have sex!",   tier = 4, start_label = "cc_pf_sex")
-
-    $ cc_favor_list = [
-        cc_pf_talk,
-        cc_pf_strip,
-        cc_pf_blowjob,
-        cc_pf_sex
-        ]
-
-    if not hasattr(renpy.store,'cc_pr_flirt'): # Not in use
-        $ cc_pr_flirt   = event_class(title = "Get Flirty!", start_label = "cc_pr_flirt_start", events = [
+        $ cc_pf_talk   = event_class(title = "Talk to me!", start_label = "cc_pf_talk", events = [
             [
-            ["cc_pr_flirt_T1_intro"], ["cc_pr_flirt_T1_E1"],
-            ["cc_pr_flirt_T1_E2"],
-            ["cc_pr_flirt_T1_E3"]
+            ["cc_pf_talk_T1_intro_E1"],
+            ["cc_pf_talk_T1_intro_E2"],
+            ["cc_pf_talk_T1_E3"]
             ],
 
             [
-            ["cc_pr_flirt_T2_intro"], ["cc_pr_flirt_T2_E1"],
-            ["cc_pr_flirt_T2_E2"],
-            ["cc_pr_flirt_T2_E3"]
+            ["cc_pf_talk_T2_intro_E1"],
+            ["cc_pf_talk_T2_intro_E2"],
+            ["cc_pf_talk_T2_E3"]
             ]
 
             ],
-            icons = ["interface/huff.png", "interface/slyt.png"]
+            icons = ["interface/huff.png", "interface/slyt.png"] #if a tier doesn't need an icon replace with None
             )
+
+    if not hasattr(renpy.store,'cc_pf_strip'):
+        $ cc_pf_strip   = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", events = [
+            [
+            ["cc_pf_strip_T2_intro_E1"],
+            ["cc_pf_strip_T2_intro_E2"],
+            ["cc_pf_strip_T2_intro_E3"], ["cc_pf_strip_T2_E3"]
+            ]
+
+            ],
+            icons = [None, None] #if a tier doesn't need an icon replace with None
+            )
+
+    $ cc_favor_list = [
+        cc_pf_talk,
+        cc_pf_strip
+        ]
 
     if not hasattr(renpy.store,'cc_pr_manipulate'):
         $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", events = [

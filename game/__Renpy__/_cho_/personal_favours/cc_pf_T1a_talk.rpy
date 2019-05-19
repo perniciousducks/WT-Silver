@@ -4,40 +4,10 @@
 
 label cc_pf_talk:
 
-    ### Tier 1 (pre Hufflepuff) ###
-    if cho_tier == 1:
+    # Start Event
+    $ cc_pf_talk.start()
 
-        if cc_pf_talk.points == 0:
-            # Talk about her boyfriends.
-            call cc_pf_talk_T1_E1
-
-        elif cc_pf_talk.points == 1:
-            # Talk about her Quidditch team.
-            # Unlocks public requests favours.
-            $ cho_requests_unlocked = True
-            call cc_pf_talk_T1_E2
-
-        else:
-            # Talk about Cedric some more.
-            call cc_pf_talk_T1_E3
-
-    ### Tier 2 (pre Slytherin) ###
-    elif cho_tier == 2:
-
-        if cc_pf_talk.points == 0:
-            # Talk about Malfoy and his team.
-            # Talk about getting bullied by Slytherin.
-            call cc_pf_talk_T2_E1
-
-        elif cc_pf_talk.points == 1:
-            # Talk about becoming more popular.
-            call cc_pf_talk_T2_E2
-
-        else:
-            call cc_pf_talk_T2_E3
-
-    # End event jump
-    # (only used when the event isn't called.)
+    # End Event Jump
     label end_cho_talk_event:
 
         if cho_tier == 1:
@@ -48,21 +18,13 @@ label cc_pf_talk:
             if cho_whoring < 9: # Points til 9
                 $ cho_whoring += 1
 
-        if cc_pf_talk.level < 4:
-            $ cc_pf_talk.level += 1
-
-    $ cc_pf_talk.points += 1
-
-    # Stats
-    $ cc_pf_talk.counter += 1
-
     jump end_cho_event
 
 
 
 ### Tier 1 (pre Hufflepuff) ###
 
-label cc_pf_talk_T1_E1: # Complete
+label cc_pf_talk_T1_intro_E1:
     m "Let’s have a little chat shall we."
     g9 "Just to get to know each other a little bit better."
     call cho_main("Of course, Sir.","smile","base","base","mid")
@@ -289,10 +251,10 @@ label cc_pf_talk_T1_E1: # Complete
         m "Well, I got blue-balled..."
         m "Feel like I've deserved it..."
 
-    return
+    jump end_cho_talk_event
 
 
-label cc_pf_talk_T1_E2: # Complete
+label cc_pf_talk_T1_intro_E2:
     g9 "Get closer, [cho_name]..."
     call cho_main("...","annoyed","base","base","down")
 
@@ -447,7 +409,7 @@ label cc_pf_talk_T1_E2: # Complete
     $ cho_requests_unlocked = True
     call popup("You can now buy \"Public Requests\" from Cho! (They are optional to her training.)", "Congratulations!", "interface/icons/head/head_cho_1.png")
 
-    return
+    jump end_cho_talk_event
 
 
 label cc_pf_talk_T1_E3: # Incomplete. Not posed.
@@ -518,13 +480,13 @@ label cc_pf_talk_T1_E3: # Incomplete. Not posed.
 
     # Add ending
 
-    return
+    jump end_cho_talk_event
 
 
 
 ### Tier 2 (pre Slytherin) ###
 
-label cc_pf_talk_T2_E1:
+label cc_pf_talk_T2_intro_E1:
     m "Miss Chang, it's time we have a little chat again!"
     m "Please come a bit closer..."
     call cho_main("Yes, Sir.","base","base","base","mid")
@@ -682,10 +644,10 @@ label cc_pf_talk_T2_E1:
     # Cho leaves.
     call cho_walk(action="leave", speed=2.5)
 
-    return
+    jump end_cho_talk_event
 
 
-label cc_pf_talk_T2_E2:
+label cc_pf_talk_T2_intro_E2:
     m "Would you mind if we had another chat?"
     call cho_main("Of course not, [cho_genie_name]!","smile","base","base","mid")
     m "Come closer..."
@@ -880,10 +842,10 @@ label cc_pf_talk_T2_E2:
 
     $ cho_mood += 9
 
-    return
+    jump end_cho_talk_event
 
 
-label cc_pf_talk_T2_E3: # Incomplete. Not posed.
+label cc_pf_talk_T2_E3: # Incomplete.
     g9 "[cho_name], how is my favourite Quidditch player doing today?"
     call cho_main("Me?","soft","base","raised","mid")
     m "I don't see anyone else in here besides the bird..."
@@ -979,7 +941,7 @@ label cc_pf_talk_T2_E3: # Incomplete. Not posed.
                 call hide_characters
                 hide screen bld1
                 with d3
-                
+
                 call cum_block
                 call gen_chibi("cumming_behind_desk")
                 with d3
@@ -1045,7 +1007,7 @@ label cc_pf_talk_T2_E3: # Incomplete. Not posed.
             m "(Well that was weird.)"
             m "(That girl has a very comprehensive imagination, I got to say...)"
 
-            return
+            jump end_cho_talk_event
 
         "\"Luna\"" if luna_unlocked:
             cho "Luna? What about her?"
@@ -1108,7 +1070,7 @@ label cc_pf_talk_T2_E3: # Incomplete. Not posed.
     #cho "You could say that, Sir..."
     #g9 "How are you going to motivate them exactly?"
 
-    return
+    jump end_cho_talk_event
 
 
 

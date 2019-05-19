@@ -4,43 +4,14 @@
 
 label cc_pf_strip:
 
-    ### Tier 1 (pre Slytherin) ###
-    if cho_tier <= 2:
+    # Start Event
+    $ cc_pf_talk.start()
 
-        if cc_pf_strip.points == 0:
-            # Cho strips to her underwear.
-            call cc_pf_strip_T1_E1
-
-        elif cc_pf_strip.points == 1:
-            # Cho strips naked.
-            call cc_pf_strip_T1_E2
-
-        elif cc_pf_strip.points == 2:
-            # Cho wants you to summon Hermione.
-            # Event fails when Hermione hasn't stripped for you yet.
-            # Succeeds after Hermione's second dance favour.
-            jump cc_pf_strip_T1_E3
-
-        else:
-            # Cho wants you to summon Hermione again.
-            # Repeat of event 3 with different intro.
-            jump cc_pf_strip_T1_E4
-
-
-    # End event jump
-    # (only used when the event isn't called.)
+    # End Event Jump
     label end_cho_strip_event:
 
         if cho_whoring < 9: # Points til 9
             $ cho_whoring += 1
-
-        if cc_pf_strip.level < 4:
-            $ cc_pf_strip.level += 1
-
-    $ cc_pf_strip.points += 1
-
-    # Stats
-    $ cc_pf_strip.counter += 1
 
     jump end_cho_event
 
@@ -48,7 +19,7 @@ label cc_pf_strip:
 
 ### Tier 1 (pre Slytherin) ###
 
-label cc_pf_strip_T1_E1:
+label cc_pf_strip_T1_intro_E1:
     m "It's time for your next favour, [cho_name]."
     call cho_main("I- *uhm*...{w} I think I'm ready.","horny","base","sad","downR")
     call cho_main("What would you like me to do, [cho_genie_name]?","soft","base","sad","mid")
@@ -303,10 +274,10 @@ label cc_pf_strip_T1_E1:
     call bld
     m "She'll do it next time, I'm sure..."
 
-    return
+    jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_E2: # Incomplete. Not posed.
+label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
 
     # Ask Cho to strip again.
     # This event is similar to Hermione's second strip favor.
@@ -343,10 +314,10 @@ label cc_pf_strip_T1_E2: # Incomplete. Not posed.
 
     # Remove skirt.
 
-    return
+    jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_E3:
+label cc_pf_strip_T1_intro_E3:
     g9 "[cho_name], how would you like to do another strip-tease for me?"
     call cho_main("(...)","annoyed","narrow","angry","mid")
     g9 "You did such a phenomenal job last time!"
@@ -403,7 +374,7 @@ label cc_pf_strip_T1_E3:
     call ctc
 
     # Check if Hermione has already stripped for you.
-    if hg_pf_dance.points < 2:
+    if hg_pf_dance.points < 2: #DEVNOTE: Add failstate
 
         # Cho demands that you get Hermione to strip, so Cho has something to blackmail her should anything happen.
         # Cho gets dressed again and storms off.
@@ -444,6 +415,7 @@ label cc_pf_strip_T1_E3:
         # Cho leaves.
         call cho_walk(action="leave", speed=2.5)
 
+        # Event failed, no progress.
         jump end_cho_event
 
 
@@ -641,10 +613,12 @@ label cc_pf_strip_T1_E3:
 
     $ cho_strip_complete = True # Unlocks Wardrobe on next summon.
 
-    jump cc_pf_strip_T1_hermione
+    call cc_pf_strip_T1_hermione
+
+    jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_E4:
+label cc_pf_strip_T1_E3: # Repeats
     m "[cho_name], why don't you come a bit closer?"
     call cho_main("Of course, [cho_genie_name]...","base","narrow","base","mid")
 
@@ -789,10 +763,12 @@ label cc_pf_strip_T1_E4:
     call her_main("","annoyed","angry")
     call ctc
 
-    jump cc_pf_strip_T1_hermione
+    call cc_pf_strip_T1_hermione
+
+    jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
+label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu branch.
 
     menu:
         "\"Definitely!\"":
@@ -804,7 +780,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
             # Cho has to sneak out naked.
             "Dev Note" "This favour ending hasn't been written yet."
 
-            jump end_cho_strip_event
+            return
 
         "\"Not even close.\"":
             $ cho_mood += 15
@@ -931,7 +907,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
 
             $ has_cho_panties = False
 
-            jump end_cho_strip_event
+            return
 
 
         "\"Let Hermione assess you.\"":
@@ -1039,7 +1015,7 @@ label cc_pf_strip_T1_hermione: # Almost complete. Missing 1 menu branch.
 
             $ has_cho_panties = True
 
-            jump end_cho_strip_event
+            return
 
 
 

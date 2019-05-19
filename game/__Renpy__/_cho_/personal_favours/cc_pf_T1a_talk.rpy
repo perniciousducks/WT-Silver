@@ -71,7 +71,7 @@ label cc_pf_talk_T1_E1: # Complete
 
     call cho_walk("desk", "base", speed=1.6)
 
-    call play_music("chipper_doodle")
+    call play_music("cho_theme")
     call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
     call ctc
 
@@ -298,7 +298,7 @@ label cc_pf_talk_T1_E2: # Complete
 
     call cho_chibi("stand","desk","base")
 
-    call play_music("chipper_doodle")
+    call play_music("cho_theme")
     call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans="fade")
     call ctc
 

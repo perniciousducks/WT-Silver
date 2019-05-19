@@ -98,7 +98,7 @@ label door:
             call nar(">Cho is already asleep.")
             jump night_main_menu
     elif _return == "cho" and not cho_busy:
-        call play_music("chipper_doodle") # CHO'S THEME (placeholder probably)
+        call play_music("cho_theme")
         jump summon_cho
 
 

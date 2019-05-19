@@ -2,8 +2,9 @@
 
 ### Cho Chibi ###
 
-label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):
-    hide screen cho_stand
+label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):  
+    $ cho_chibi_status = ""
+    call update_cho_chibi_uniform
 
     if xpos != cho_chibi_xpos:
         if xpos == "mid":
@@ -29,13 +30,13 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
 
     if action == "hide":
-        pass
+        hide screen cho_stand
     elif action == "fly":
         $ cho_chibi_animation = "fly"
         call update_cho_chibi_uniform
         show screen cho_stand
         with d4
-    elif action in ("reset", "default", "stand"):
+    elif action in ("reset", "default", "stand", "base"):
         $ cho_chibi_animation = None
         call update_cho_chibi_uniform
         show screen cho_stand
@@ -47,7 +48,6 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         hide screen blktone
         with d3
         pause.5
-
     else:
         if flip: #Same variable that the main sprite is using. #1 == Default
             $ cho_chibi_flip = -1
@@ -58,7 +58,6 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
     if animation != False:
         $ cho_chibi_animation = animation
-
     return
 
 
@@ -71,15 +70,16 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
     hide screen bld1
     hide screen blktone
     with d3
-
-    hide screen cho_walk
-    hide screen cho_stand
+    
+    $ cho_chibi_status = "move"
+    call update_cho_chibi_uniform
 
     # Action command.
     if action == "enter":
         call play_sound("door")
         $ cho_chibi_xpos = 750
         $ cho_chibi_ypos = 250
+        $ cho_chibi_flip = 1
     elif action == "leave":
         $ xpos = "door"
         $ ypos = "base"
@@ -116,6 +116,8 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         $ cho_chibi_ypos = walk_ypos2
         hide screen cho_walk
         if loiter:
+            $ cho_chibi_status = ""
+            call update_cho_chibi_uniform
             show screen cho_stand
 
     # Walk left to right
@@ -133,6 +135,8 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
             pause.3
             $ cho_chibi_flip = 1
         if loiter:
+            $ cho_chibi_status = ""
+            call update_cho_chibi_uniform
             show screen cho_stand
 
     return
@@ -173,7 +177,7 @@ screen cho_walk():
         else:
             at cho_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2)
         add cho_chibi_walk         xzoom cho_chibi_flip zoom (1.0/scaleratio)
-        add cho_chibi_walk_shoes   xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        add cho_chibi_shoes        xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_top          xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_bottom       xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_robe         xzoom cho_chibi_flip zoom (1.0/scaleratio)
@@ -199,35 +203,35 @@ label flying_cho_chibi(flying=True):
     return
 
 label update_cho_chibi_uniform:
-    #Clothing
-    if cho_class.get_worn("top"):
-        $ cho_chibi_top       = "characters/cho/chibis/cc_cloth_shirt_r.png"
-    else:
-        $ cho_chibi_top       = "characters/cho/chibis/blank.png"
-
-    if cho_class.get_worn("bottom"):
-        $ cho_chibi_bottom    = "characters/cho/chibis/cc_cloth_skirt.png"
-    else:
-        $ cho_chibi_bottom    = "characters/cho/chibis/blank.png"
-
-    if cho_class.get_worn("robe"):
-        $ cho_chibi_robe      = "characters/cho/chibis/cc_cloth_robe_r.png"
-    else:
-        $ cho_chibi_robe      = "characters/cho/chibis/blank.png"
-
-    #Main Chibi
-    if cho_chibi_animation == "fly":
-        $ cho_chibi_stand         = "ch_cho fly_idle"
-        $ cho_chibi_walk          = "ch_cho fly"
-    else:
-        $ cho_chibi_stand         = "ch_cho blink"
-        $ cho_chibi_walk          = "ch_cho walk"
-
-    if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"): #With Shoes.
-        $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
-        $ cho_chibi_walk_shoes    = "ch_cho walk_shoes"
-    else:
-        $ cho_chibi_shoes         = "characters/cho/chibis/blank.png"
-        $ cho_chibi_walk_shoes    = "characters/cho/chibis/blank.png"
-
+    $ update_chibi_image("cho")
     return
+    
+init python:
+    def update_chibi_image(name):
+        if name == "cho":
+            imagepath = "characters/cho/chibis/"
+            animation = "_"+cho_chibi_animation if cho_chibi_animation else ""
+            status = "_"+cho_chibi_status if cho_chibi_status else ""
+            global cho_chibi_top, cho_chibi_bottom, cho_chibi_robe, cho_chibi_shoes, cho_chibi_walk_shoes, cho_chibi_stand, cho_chibi_walk
+            cho_chibi_top, cho_chibi_bottom, cho_chibi_robe, cho_chibi_shoes, cho_chibi_walk_shoes, cho_chibi_stand, cho_chibi_walk, cho_chibi_shoes = "blank", "blank", "blank", "blank", "blank", "ch_cho blink", "ch_cho walk", "ch_cho walk_shoes"
+            
+            if cho_chibi_animation == "fly":
+                cho_chibi_stand = "ch_cho fly_idle"
+                cho_chibi_walk = "ch_cho fly"
+            
+            if cho_class.get_worn("top"):
+                cho_chibi_top = imagepath+"cc_top"+animation+status+".png" if animation else imagepath+"cc_top.png"
+
+            if cho_class.get_worn("bottom"):
+                cho_chibi_bottom = imagepath+"cc_bottom"+animation+status+".png" if animation else imagepath+"cc_bottom.png"
+                    
+            if cho_class.get_worn("robe"):
+                cho_chibi_robe = imagepath+"cc_robe"+animation+status+".png" if animation else imagepath+"cc_robe.png"
+                    
+            if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"):
+                if not status == "_move":
+                    cho_chibi_shoes = imagepath+"cc_shoes"+animation+".png"
+                else:
+                    if animation:
+                        cho_chibi_shoes = imagepath+"cc_shoes"+animation+".png"
+        return

@@ -12,6 +12,8 @@ image snitch:
     pause.01
     "images/rooms/quidditch_pitch/snitch2.png"
     pause.01
+    "images/rooms/quidditch_pitch/snitch1.png"
+    pause.01
     repeat
     
 transform sprite_fly_idle:

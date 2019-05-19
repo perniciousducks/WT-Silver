@@ -803,7 +803,7 @@ label hufflepuff_match_return:
     g4 "Of course I am!"
     call cho_main("...","annoyed","angry","raised","R")
     call cho_main("If you say so.....","annoyed","angry","base","mid")
-    call play_music("chipper_doodle")
+    call play_music("cho_theme")
     call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!","smile","base","base","mid")
     call cho_main("We could actually win the cup!","open","shocked","angry","L")
     m "And you weren't embarrassed?"

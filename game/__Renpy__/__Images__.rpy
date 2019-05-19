@@ -1,6 +1,8 @@
 
 
 ### UNIVERSAL ANIMATION ###
+image blank:
+    "characters/dummy.png"
 
 label __init_variables:
 

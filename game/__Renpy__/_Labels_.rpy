@@ -432,6 +432,9 @@ label play_music(music=""):
 
     if music in ["chipper_doodle","hermione_theme"]:
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
+        
+    if music in ["happy_adventure","cho_theme"]:
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 #Placeholder
 
     if music in ["playful_tension","playful"]:
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1

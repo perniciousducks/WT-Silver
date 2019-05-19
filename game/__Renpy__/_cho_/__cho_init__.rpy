@@ -16,6 +16,7 @@ label cho_init:
         $ cho_chibi_flip          = 1
         $ cho_chibi_zorder        = 3
         $ cho_chibi_animation     = None
+        $ cho_chibi_status        = ""
 
         $ cho_chibi_stand         = "ch_cho blink"
         $ cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"

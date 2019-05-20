@@ -21,7 +21,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             $ pathvalue = 1
         "Path 3":
             $ pathvalue = 2
-
+    call music_block
+    call her_chibi("stand","mid","base")
     call hide_blkfade
 
     #Intro
@@ -35,38 +36,45 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "Wha'?"
         call her_main(".............................","disgust","glance")
         m "Ah, well then lass. 90 galleon points 'tis."
+        call blkfade
         hide screen hermione_main
-
+        $ renpy.play('sounds/cloth_sound.mp3')
+        pause 2
         label lucky_anal_guess:
         call h_equip_temp_outfit(hg_outfit_pirate_ITEM)
-        call blkfade
         call hide_blkfade
 
-        call her_main("...........","annoyed","worriedL",ypos="head")
+        call her_main("...........","annoyed","worriedL")
         m "Time to get me ole canon out..."
         call her_main(".................","angry","worriedCl",emote="05")
+        call blkfade
+        call play_sound("climb_desk")
+        pause 2
         m "Hm..."
-        call her_main("!!!","angry","wide")
-        g4 "Blistering barnacles"
+        $ renpy.play('sounds/boing02.mp3')
+        call her_main("!!!","angry","wide", ypos="head")
+        call play_sound("slap")
+        g4 "Blistering barnacles!"
         call her_main("Ouch!","mad","worriedCl",tears="soft_blink")
         m "Jus' try t' loosen up a wee, would ye?"
         call her_main("I be tryin'!","angry","base",tears="soft")
         m "Aye, wha' if I do this..?"
+        $ renpy.play('sounds/boing03.mp3')
         call her_main("Ouch! Wha' are ye doin', captain?","mad","worriedCl",tears="soft_blink")
         m "Aye, this won't work either..."
         m "Hm..."
         m "Har har, I reckon I know wha' we should do."
         m "..."
-
         menu:
             "\"I reckon I'll raise the anchor 'n jus' set sail!\"":
-                call play_music("playful_tension") # SEX THEME.
+                play music "music/pirate.mp3" fadein 1 fadeout 1
                 call her_main("Just set sail, captain?!","angry","wide",ypos="head")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting.
                 g4 "*SPIT!*"
                 call her_main("What are ye doing you Seadog!","scream","worriedCl")
                 call her_main("No, cap'n, Belay that! Ye're nah in open waters--","open","base")
                 m "No needs, raise the anchor! Heave Ho!"
+                $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 call her_main("ARGH!","angry","base",tears="soft")
                 call her_main("Ouch! Ouch! Ouch!","mad","worriedCl",tears="soft_blink")
@@ -141,7 +149,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
             "\"Lather me canon balls first. Lubricate me pegleg!\"":
                 call her_main("Oh... Alright...","open","base",ypos="head")
-                call play_music("playful_tension") # SEX THEME.
+                play music "music/pirate.mp3" fadein 1 fadeout 1
 
                 #SUCKING
                 call her_chibi("hide")
@@ -303,14 +311,16 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         menu:
             "-Sink her vessel, fill her up-":
                 g4 "Argh!"
+                $ renpy.play('sounds/fuse.mp3')
                 call her_main("No! AH!","scream","wide",ypos="head")
+                $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
                 $ g_c_u_pic = "sex_cum_in_ani"
                 hide screen bld1
                 with d3
-
+                $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 call ctc
 
@@ -321,12 +331,16 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "Aye, ye wench! I be shooting me canons!"
                 call her_main("Me hull is splintering, spare me Captain!","angry","suspicious",cheeks="blush",tears="messy")
                 g4 "Ye're nah sunk yet!"
+                $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 call her_main("No, I be already full! Stop cummin', ye bastard!","scream","surprised",cheeks="blush",tears="messy")
                 g4 "Shut th' farrg up, wench! Ye still be afloat!"
                 call her_main("No! Me stomach! Me ship will capsize!","scream","suspicious",cheeks="blush",tears="messy")
+                $ renpy.play('sounds/cannon.mp3')
+                with hpunch
                 g4 "ARGH!"
                 call her_main("No! I reckon me bilge be flooded... I must get t' me pumps.","open","surprised",cheeks="blush",tears="messy")
+                $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 play sound "sounds/burp.mp3"
                 call her_main("{size=+7}*BURP!*!!!!!{/size}","full","surprised",tears="messy")
@@ -384,11 +398,16 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Can I get paid now please?","grin","closed",cheeks="blush",tears="mascara")
 
             "-Spread yer canon fire o'er er hull-":
-                $ g_c_u_pic = "sex_cum_out_ani"
+                $ renpy.play('sounds/fuse.mp3')
+                g4 "*argh*"
+                g4 "{size=+6}Fire!{/size}"
                 hide screen bld1
                 with d3
 
                 call cum_block
+                $ renpy.play('sounds/cannon.mp3')
+                with hpunch
+                $ g_c_u_pic = "sex_cum_out_ani"
                 call ctc
 
                 $ uni_sperm = True
@@ -399,6 +418,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Ah... No, me hull!","silly","ahegao")
                 hide screen bld1
                 with d3
+                $ renpy.play('sounds/cannon.mp3')
+                call cum_block 
+                with hpunch
                 call ctc
 
                 call blkfade
@@ -484,7 +506,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call hide_blkfade
         call ctc
 
-        call play_music("playful_tension") # SEX THEME.
+        play music "music/pirate.mp3" fadein 1 fadeout 1
 
         #INSERTION
         call her_main("Ah... Ah...","open","closed")
@@ -568,14 +590,17 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","scream","wide")
         g4 "{size=+7}Argh!{/size}"
 
+        $ renpy.play('sounds/fuse.mp3')
+        g4 "!!!"
         menu:
-            g4 "!!!"
             "-Sink her vessel, fill her up-":
                 hide screen bld1
                 with d3
+                
+                $ renpy.play('sounds/cannon.mp3')
                 $ g_c_u_pic = "sex_cum_in_ani"
-
                 call cum_block
+                with hpunch
                 call ctc
 
                 $ uni_sperm = True
@@ -585,7 +610,12 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Shiver me timbers! Argh!"
                 call her_main("Ah!{image=textheart} 'tis fillin' me up!{image=textheart} me bilge is takin in water!{image=textheart}","silly","ahegao")
                 m "'tis nah water, wench!"
+                $ renpy.play('sounds/cannon.mp3')
+                call cum_block
+                with hpunch
                 call her_main("Ah! I BE A WENCH!!!!{image=textheart}{image=textheart}{image=textheart}","scream","worriedCl",cheeks="blush",tears="crying")
+                $ renpy.play('sounds/cannon.mp3')
+                with hpunch
                 m "Agh!"
                 call her_main("Ah...{image=textheart} yer seamen, captain...{image=textheart}","open","surprised",cheeks="blush",tears="messy")
                 m "Aye, my semen..."
@@ -600,9 +630,11 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "-Spread yer canon fire o'er er hull-":
                 hide screen bld1
                 with d3
-                $ g_c_u_pic = "sex_cum_out_ani"
 
+                $ renpy.play('sounds/cannon.mp3')
+                $ g_c_u_pic = "sex_cum_out_ani"
                 call cum_block
+                with hpunch
                 call ctc
 
                 $ uni_sperm = True
@@ -612,9 +644,14 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "{size=+7}Aye I do, wench{/size}"
                 call her_main("Blisterin' Barnacles, me too! Me too!","scream","worriedCl",cheeks="blush",tears="messy")
                 g4 "{size=+7}FARRRGIN' WENCH!{/size}"
+                $ renpy.play('sounds/cannon.mp3')
+                call cum_block
+                with hpunch
                 call her_main("Ah...{image=textheart} yer cum...{image=textheart}","angry","dead",cheeks="blush",tears="crying")
                 call her_main("Ye covered me whole deck{image=textheart}{image=textheart}{image=textheart}")
                 g4 "Aye!!! All o'er yer hull!"
+                $ renpy.play('sounds/cannon.mp3')
+                with hpunch
                 call her_main("Shiver me timbers... 'tis so hot!","silly","ahegao")
                 hide screen bld1
                 with d3
@@ -652,7 +689,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     call hide_blkfade
 
 
-    call her_main("Thank you, captain...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
+    call her_main("Thank you, captain...","grin","base",xpos="right",ypos="base", cheeks="blush")
 
     call her_walk(action="leave", speed=2.7)
 

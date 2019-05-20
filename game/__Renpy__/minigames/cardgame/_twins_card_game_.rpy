@@ -120,7 +120,7 @@ label twins_random_duel:
             fre "The further extension to fractional values of your current income in the first instance on the establishment of a method of algebraical evolution which bears the same relation to arithmetical evolution that algebraical division bears to arithmetical division gives unsatisfactory results."
             m "...........what?"
             ger "It means you're broke, sir."
-            fer "Come back with your offer when you have more gold, professor."
+            fre "Come back with your offer when you have more gold, professor."
             m "Fine.."
             m "(Kids nowadays..)"
             "You return to your office."

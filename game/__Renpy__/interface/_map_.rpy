@@ -780,12 +780,12 @@ label outskirts_of_hogwarts:
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
 
     $ ccg_folder = "ball"
-    call ccg(layer1="171", layer2="blank", layer3="blank")
+    $ ccg(layer1="171", layer2="blank", layer3="blank")
     pause.3
     call hide_blkfade
     pause.8
     call play_music("walking_on_grass")
-    call ccg(layer2="172")
+    $ ccg(layer2="172")
 
     return
 

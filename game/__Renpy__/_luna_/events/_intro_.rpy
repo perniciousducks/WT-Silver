@@ -122,7 +122,7 @@ label hat_intro_3: #Luna change scene #DONE
             m "Well, if I let you change house then half the school will probably want a second go."
             m "Better to keep the status quo."
             hat "Wait, I don't get to-"
-            ">You slam the hat into a draw in your desk to silence it."
+            ">You slam the hat into a drawer in your desk to silence it."
             call lun_main("oh, alright then!","base","base","base","R")
             call lun_main("But seeing as how I'm already here ,sir, I need to talk to you.","base","base","base","mid")
             m "You do?"
@@ -133,7 +133,7 @@ label hat_intro_3: #Luna change scene #DONE
             call lun_main("Oh, um alright then... You must be very busy at the moment!","base","wink","sad","R")
             m "Yeah, busy..."
             m "(Too busy to hear about something that dull.)"
-            call lun_main("I'll come back later then, this really is something you nead to hear about!","base","closed","angry","R")
+            call lun_main("I'll come back later then, this really is something you need to hear about!","base","closed","angry","R")
             call lun_walk("mid","leave",2)
             $ luna_busy = True
 

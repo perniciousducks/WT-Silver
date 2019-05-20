@@ -690,7 +690,7 @@ label hg_pf_dance:
 
                     call her_main(".............","open","closed",ypos="head")
 
-                    call sna_head("......................","snape_05")
+                    call sna_main("......................","snape_05")
 
                     m ".........................."
 
@@ -911,8 +911,8 @@ label hg_pf_dance:
 
                             call her_main("[genie_name]?!","open","wide",ypos="head")
                             m "It's alright, [hermione_name]. Don't mind me..."
-                            call sna_head("Oh, we're doing it like this then?","snape_12",xpos="base",ypos="base")
-                            call sna_head("Well, don't mind if I do...","snape_12")
+                            call sna_main("Oh, we're doing it like this then?","snape_12",xpos="base",ypos="base")
+                            call sna_main("Well, don't mind if I do...","snape_12")
                             call her_main("!!!")
 
                             hide screen genie
@@ -941,7 +941,7 @@ label hg_pf_dance:
                                     hide screen hermione_main
                                     with d3
                                     pause.2
-                                    call sna_head("I see Miss Granger manages to remain exceptionally stubborn in any situation...","snape_03")
+                                    call sna_main("I see Miss Granger manages to remain exceptionally stubborn in any situation...","snape_03")
                                     call blkfade
 
                                     hide screen chair_left
@@ -963,9 +963,9 @@ label hg_pf_dance:
                                     if her_whoring >= 15:
 
                                         call her_main("Oh, right...","shock","wide")
-                                        call sna_head("What was that?","snape_05")
+                                        call sna_main("What was that?","snape_05")
                                         call her_main("Please don't mind what I just said...","silly","worriedCl",emote="05")
-                                        call sna_head("Hm...?","snape_05")
+                                        call sna_main("Hm...?","snape_05")
                                         call her_main("I do not mind you touching yourself in front of me...","silly","worriedCl",emote="05")
                                         call her_main("Yes, I do not mind it at all...")
                                         call her_main("I will just keep on dancing then...")
@@ -974,17 +974,17 @@ label hg_pf_dance:
                                         call nar(">Hermione squeezes her breasts and shakes her hips slightly...","end")
 
                                         m "Yes, [hermione_name]. Very good."
-                                        call sna_head("*Khem!* Acceptable performance, miss Granger.","snape_12")
+                                        call sna_main("*Khem!* Acceptable performance, miss Granger.","snape_12")
                                         call her_main("....................","angry","worriedCl")
                                         m "Heh..."
                                         m "So, how would you grade her tits?"
                                         call her_main("......","open","wide")
-                                        call sna_head("Hm......","snape_13")
+                                        call sna_main("Hm......","snape_13")
                                         call her_main("........","annoyed","angryL")
-                                        call sna_head("\"B+\"!","snape_12")
+                                        call sna_main("\"B+\"!","snape_12")
                                         call her_main("!!!","open","wide")
                                         m "Really?"
-                                        call sna_head("Yes. I do give credit where credit is due.","snape_12")
+                                        call sna_main("Yes. I do give credit where credit is due.","snape_12")
                                         call her_main("(Professor...)","annoyed","closed")
                                         call her_main("(Time for my finishing act then!)","open","closed")
                                         pause.1
@@ -1001,23 +1001,23 @@ label hg_pf_dance:
                                         call ctc
 
                                         show screen blktone
-                                        call sna_head("Yes... Yes!!!","snape_18")
-                                        call sna_head("Now shake those B+ titties for me, you harlot!")
+                                        call sna_main("Yes... Yes!!!","snape_18")
+                                        call sna_main("Now shake those B+ titties for me, you harlot!")
                                         call her_main(".......","angry","worriedCl")
 
                                         call set_her_action("None")
                                         pause.5
 
                                         call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
-                                        call sna_head("Yes, such grace...","snape_19")
-                                        call sna_head("That lithe, young body!","snape_20")
+                                        call sna_main("Yes, such grace...","snape_19")
+                                        call sna_main("That lithe, young body!","snape_20")
                                         call her_main(".........","grin","ahegao")
-                                        call sna_head("Oh, yes!","snape_20")
+                                        call sna_main("Oh, yes!","snape_20")
                                         call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","grin","ahegao")
                                         call nar(">Hermione seems very focused on her dancing routine...")
-                                        call sna_head("Yes, and now another pirouette!","snape_19")
-                                        call sna_head("Magnificent!")
-                                        call sna_head("I would applaud you but one of my hands is very busy at the moment.","snape_13")
+                                        call sna_main("Yes, and now another pirouette!","snape_19")
+                                        call sna_main("Magnificent!")
+                                        call sna_main("I would applaud you but one of my hands is very busy at the moment.","snape_13")
                                         m "{size=-4}(Was that an attempt at a joke?){/size}"
                                         m "{size=-4}(Man, horny Snape is weird...){/size}"
                                         call blkfade
@@ -1056,8 +1056,8 @@ label hg_pf_dance:
                                         call her_main("","angry","worriedCl")
                                         call ctc
 
-                                        call sna_head("Good job, you harlot!","snape_18")
-                                        call sna_head("Here is your reward!","snape_21")
+                                        call sna_main("Good job, you harlot!","snape_18")
+                                        call sna_main("Here is your reward!","snape_21")
 
                                         call cum_block
 
@@ -1070,14 +1070,14 @@ label hg_pf_dance:
                                         call her_main("!!!!!!!!!!!","shock","wide")
                                         call ctc
 
-                                        call sna_head("Oh... Yes...","snape_21")
+                                        call sna_main("Oh... Yes...","snape_21")
                                         g4 "Little slut!"
                                         call her_main("...............................","grin","ahegao")
 
                                         $ s_c_c_u_pic = "images/animation/11_cum_18.png"
                                         $ g_c_c_u_pic = "images/animation/09_cum_18.png"
 
-                                        call sna_head("Ha-ha-ha! This is magnificent!","snape_21")
+                                        call sna_main("Ha-ha-ha! This is magnificent!","snape_21")
                                         g9 "I know, right!?"
 
                                         call gen_chibi("hold_dick","behind_desk","base")
@@ -1085,22 +1085,22 @@ label hg_pf_dance:
                                         pause.2
 
                                         call bld
-                                        call sna_head("Yes... We should do this more often.","snape_22")
+                                        call sna_main("Yes... We should do this more often.","snape_22")
                                         call her_main(".................","grin","ahegao")
 
-                                        call sna_head("Your performance was acceptable, miss Granger...","snape_20")
+                                        call sna_main("Your performance was acceptable, miss Granger...","snape_20")
                                         call her_main("Thank you................","annoyed","dead")
-                                        call sna_head("But if I were to grade it...","snape_19")
+                                        call sna_main("But if I were to grade it...","snape_19")
                                         call her_main("...........","annoyed","dead")
-                                        call sna_head("Hm....","snape_22")
+                                        call sna_main("Hm....","snape_22")
                                         call her_main("............","annoyed","dead")
-                                        call sna_head("\"{size=+5}F+{/size}\"!","snape_10")
+                                        call sna_main("\"{size=+5}F+{/size}\"!","snape_10")
                                         stop music
 
                                         hide screen bld1
                                         show screen blktone
                                         call her_main("{size=+5}WHAT?!!!{/size}","shock","wide")
-                                        call sna_head("Yes... Quite a few things could use some improvement actually.","snape_09")
+                                        call sna_main("Yes... Quite a few things could use some improvement actually.","snape_09")
                                         call play_music("chipper_doodle") # HERMIONE'S THEME.
                                         call her_main("I cannot believe this!","clench","angry",emote="01")
                                         call ctc
@@ -1124,10 +1124,10 @@ label hg_pf_dance:
 
                                         show screen bld1
                                         call her_main("I demand a higher grade than that!","soft","angry",xpos="right",ypos="base")
-                                        call sna_head("You do not demand a grade miss Granger, you earn it.","snape_09")
+                                        call sna_main("You do not demand a grade miss Granger, you earn it.","snape_09")
                                         call her_main("I did earn it!","open","baseL")
                                         call her_main("And could you at least have the decency to stop touching yourself, professor!","annoyed","angryL")
-                                        call sna_head("Tch...","snape_12")
+                                        call sna_main("Tch...","snape_12")
                                         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                                         with d3
                                         m "(Are they for real?)"
@@ -1185,11 +1185,11 @@ label hg_pf_dance:
                                         call blkfade
 
                                         ">Hermione jumps off the desk and starts to put her clothes back on."
-                                        call sna_head("Well, this was awfully anticlimactic...","snape_03")
+                                        call sna_main("Well, this was awfully anticlimactic...","snape_03")
                                         g4 "You don't say..."
-                                        call sna_head("May as well leave now I suppose. I will talk to you later, Albus.","snape_03")
+                                        call sna_main("May as well leave now I suppose. I will talk to you later, Albus.","snape_03")
                                         m "Yes, later, Severus."
-                                        call sna_head("Miss Granger...","snape_04")
+                                        call sna_main("Miss Granger...","snape_04")
                                         call her_main("Professor...","angry","worriedCl",ypos="head")
 
                                         call sna_chibi("hide")

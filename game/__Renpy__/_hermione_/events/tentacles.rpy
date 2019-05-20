@@ -75,14 +75,14 @@ label tentacle_1: #Public tentacle scene
     call play_music("hermione_theme")
     pause.8
 
-    $ cg("images/CG/p1.png")
+    call cg_scene(path="images/CG/", image="p1")
     hide screen blkfade
     with d9
     call ctc
 
     her "What on earth is going on?"
     ">You start pumping the tentacles in her vagina slowly"
-    $ cg("images/CG/p2.png")
+    call cg_scene("p2")
     her "Oh..."
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     gen "Enjoying yourself slut?"
@@ -92,7 +92,7 @@ label tentacle_1: #Public tentacle scene
     her "How am I supposed to relax?!"
     gen "Well if you're not going to relax, at least try to enjoy it..."
     ">You start rotating the tentacles in her vagina."
-    $ cg("images/CG/p3.png")
+    call cg_scene("p3")
     her "..."
     spo "What's wrong Miss Granger?"
     her "It's nothing... it's just very uncomfortable..."
@@ -104,7 +104,7 @@ label tentacle_1: #Public tentacle scene
     gen "Are you sure? Do you think you'll be able to stifle every moan?"
     ">You push deeply into her with the 3 tentacles."
     her "!!!"
-    $ cg("images/CG/p4.png")
+    call cg_scene("p4")
     gen "Do you think you'll be able to stop your hips from bucking?"
     ">You give her another powerful thrust."
     her "{size=-6}mmmm{/size}"
@@ -128,20 +128,20 @@ label tentacle_1: #Public tentacle scene
     her "Yes, yes, I'm a fucking slut. Fuck me harder."
     gen "See that wasn't so hard now was it. How about I give you a little reward."
     her "Wha-"
-    $ cg("images/CG/p5.png")
+    call cg_scene("p5")
     ">You thrust a ribbed tentacle deeply into her asshole in one motion."
     her "!!!"
     her "It's in my ass... I-I'm cumming."
     ">You take alternating turns pumping into her ass and pussy."
     her "I'm cumming! It's too much..."
-    $ cg("images/CG/p6.png")
+    call cg_scene("p6")
     ">You feel her body shudder as the orgasm rocks her."
     ">This only spurs you on to fuck her harder."
     her "Please... no more... I'll faint..."
     ">You start to feel a strange energy flowing through the vines, moving towards the tips."
     gen "This is it girl, get ready."
     her "...ready?..."
-    $ cg("images/CG/p7.png")
+    call cg_scene("p7")
     ">With one final surge you release the pent up energy in a surge of white sap all over her."
     gen "Oh gods, it's like each vine is cumming. This is amazing..."
     ">The sensations proved to much for hermione and she faints, going limp in your tentacles."
@@ -178,7 +178,7 @@ label tentacle_2: #Enjoyable tentacle scene
     call play_music("hermione_theme")
     pause.8
 
-    $ cg("images/CG/p1.png")
+    call cg_scene(path="images/CG/", image="p1")
     hide screen blkfade
     with d9
     call ctc
@@ -189,7 +189,7 @@ label tentacle_2: #Enjoyable tentacle scene
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     gen "Enjoying yourself [hermione_name]?"
     her "Profes-"
-    $ cg("images/CG/e2.png")
+    call cg_scene("e2")
     ">You quickly force another flowered tentacle into her mouth"
     gen "Now, now [hermione_name], you don't want anyone to find out that how you've been earning so many points now do you?"
     her "mmmmmoo"
@@ -205,7 +205,7 @@ label tentacle_2: #Enjoyable tentacle scene
     gen "Hear that [hermione_name]? Your classmates are starting to realise what a whore you really are."
     her "mmmoo mmmeey mmnnttt"
     gen "What's that? Faster?"
-    $ cg("images/CG/e3.png")
+    call cg_scene("e3")
     ">You begin fucking Hermione in earnest"
     her "mmmmm..."
     "The sensation of fucking Hermione in two different holes is almost overwhelming"
@@ -214,7 +214,7 @@ label tentacle_2: #Enjoyable tentacle scene
     gen "Trying to pretend that you hate it."
     ">You move a ridged tentacle towards her ass"
     her "mm eehh oorr mmmnooo!"
-    $ cg("images/CG/e4.png")
+    call cg_scene("e4")
     ">You enter her tight ass. The feeling of being in every hole at once is incredible."
     her "mmmmmmmm"
     ">Hermione barely manages a groan. She is being overwhelmed by the shear amount of pleasure that she is receiving."
@@ -225,16 +225,16 @@ label tentacle_2: #Enjoyable tentacle scene
     gen "What was that I couldn't quite make it out over the sound of you sucking dick."
     her "hmmm aaaaa hhhhhhuuuttt!"
     gen "One last time. Say it like you mean it."
-    $ cg("images/CG/e5.png")
+    call cg_scene("e5")
     ">As she goes to exhale you quickly remove the tentacle from her mouth."
     her "{size=+5}I'm a slut!{/size}"
     ">The realisation of what has just occurred hits her like a ton of bricks."
     her "I-I'm cumming... Profes-"
-    $ cg("images/CG/e6.png")
+    call cg_scene("e6")
     ">You quickly reinsert the tentacle into her mouth, silencing her."
     gen "Good girl. Time for your reward."
     ">You quicken the pace as she convulses beneath you."
-    $ cg("images/CG/e7.png")
+    call cg_scene("e7")
     ">You explode from sap from nearly every vine. Exploding onto her head and into each of her holes."
     mal "Told you she was a slut."
     fem "I guess you were right..."

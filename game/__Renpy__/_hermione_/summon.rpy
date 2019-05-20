@@ -3,7 +3,7 @@
 label summon_hermione:
 
     call play_sound("door")
-    
+
     call update_hermione
 
     ### RANDOM CLOTHING EVENTS ###
@@ -93,11 +93,11 @@ label summon_hermione:
 
         #"-Ending \"Your whore\"-":
         #    $ public_whore_ending = False
-        #    jump your_whore
+        #    jump ending_yule_ball
 
         #"-Ending \"Public whore\"-":
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
-        #    jump your_whore
+        #    jump ending_yule_ball
 
 
         # Cardgame

@@ -251,12 +251,12 @@ if main_match_1_stage == "start" and days_without_an_event >= 1:
 
 
 if day == 7:
-    call event_08 #Hermione shows up for the first time.
+    call hermione_intro_E1 #Hermione shows up for the first time.
 if (day >= 8 or day >= 12) and hermione_is_waiting_01 and not event09:
-    call event_09 #Second visit from Hermione. Says she sent a letter to the Minestry.
+    call hermione_intro_E2 #Second visit from Hermione. Says she sent a letter to the Minestry.
                   #Takes place after first special event with Snape, where he just complains about Hermione.
 if event13_happened and not event14_happened:
-    call event_14 #Returns
+    call hermione_intro_E6 #Returns
 
 
 
@@ -379,11 +379,11 @@ if skip_duel or skip_to_hermione:
 
         if day < 14:
             $ day = 14
-        call event_14 #returns
+        call hermione_intro_E6 #returns
 
 ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
 if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
-    call event_01 #Returns
+    call genie_intro_E1 #Returns
 
 ### Guide ###
 call update_hints

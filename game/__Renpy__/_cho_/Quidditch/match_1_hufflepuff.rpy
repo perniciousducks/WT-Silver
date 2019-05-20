@@ -534,7 +534,9 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
     "Fem Student #1" "What a slut!"
-    hide screen hufflepuff_match_cho_chase with d4
+    hide screen hufflepuff_match_cho_chase
+    with d3
+
     call her_chibi("stand","375","105", flip=False)
     her "Professor, why won’t you say something? She’s clearly breaking the very basics of Quidditch rules!"
     m "I fail to see anything wrong with the way she’s dressed."
@@ -702,11 +704,11 @@ label hufflepuff_match:
     call cho_main("", "upset", "closed", "angry", "L")
     call her_main("So should I announce it now?", mouth="open", eye="worriedCl")
     call sna_main("Obviousl-","snape_12",ypos="head")
-    call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans="vpunch") 
+    call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans="vpunch")
     call her_main("", mouth="normal", eye="worried")
-    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "angry", "L", trans="hpunch") 
+    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "angry", "L", trans="hpunch")
     call her_main("Don’t scream at me like that, bitch!", mouth="scream", eye="angry", trans="hpunch")
-    call cho_main("", "angry", "shocked", "angry", "L") 
+    call cho_main("", "angry", "shocked", "angry", "L")
     call her_main("", mouth="normal", eye="angry")
     call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "shocked", "angry", "L", trans="vpunch")
     call cho_main("", "angry", "shocked", "angry", "L")

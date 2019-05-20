@@ -234,12 +234,12 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     # High Priority Events First!
 
     # Hermione
-    if snape_against_hermione: #Turns True after event_08 (Hermione shows up for the first time).
+    if snape_against_hermione: #Turns True after hermione_intro_E1 (Hermione shows up for the first time).
                                #Activates special event when hanging out with Snape next time.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape
 
-    if snape_against_hermione_02: #Activates after second visit from Hermione (event_09).
+    if snape_against_hermione_02: #Activates after second visit from Hermione (hermione_intro_E2).
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_02
 
@@ -348,7 +348,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 
 ### SPECIAL DATE ###
 label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
-    $ snape_against_hermione = False #Turns True after event_08. Activates special event (THIS EVENT) when hanging out with Snape next time.
+    $ snape_against_hermione = False #Turns True after hermione_intro_E1. Activates special event (THIS EVENT) when hanging out with Snape next time.
     call sna_main("...........................","snape_31", ypos="head")
     m "...............................?"
     call sna_main("I hate her so much...","snape_08")
@@ -445,7 +445,7 @@ label special_date_with_snape_02:
     call bld
     m "......................."
     m "Hermione Granger came by again..."
-    call sna_main("Don't mention the witch's name when I'm off duty...","snape_01",ypos="head")
+    call sna_main("Don't mention the witch's name when I'm off duty...","snape_01", ypos="head")
     call sna_main("...............","snape_31")
     call sna_main("Dammit! I am a grown man, Albus!","snape_08")
     m "My name is not--"
@@ -642,8 +642,8 @@ label special_date_with_snape_03:
 label wine_intro:
     call bld
     m "Look what I've got!"
-    call sna_head("Hm..?","snape_05")
-    call sna_head("Let me see...")
+    call sna_main("Hm..?","snape_05")
+    call sna_main("Let me see...")
     pause.1
     $ the_gift = "interface/icons/item_wine.png" # WINE.
     show screen gift
@@ -652,10 +652,10 @@ label wine_intro:
     hide screen gift
     with d3
 
-    call sna_head("This one has got to be from Albus' personal stash!","snape_24")
-    call sna_head("Some pricey and incredibly rare stuff.","snape_06")
+    call sna_main("This one has got to be from Albus' personal stash!","snape_24")
+    call sna_main("Some pricey and incredibly rare stuff.","snape_06")
     m "Shall we then?"
-    call sna_head("We most certainly shall!","snape_02")
+    call sna_main("We most certainly shall!","snape_02")
 
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
@@ -679,27 +679,27 @@ label drink_wine:
     hide screen gift
     with d3
 
-    call sna_head("Another one?","snape_05", ypos="head")
+    call sna_main("Another one?","snape_05", ypos="head")
     if one_of_ten == 1:
-        call sna_head("Splendid!","snape_02")
+        call sna_main("Splendid!","snape_02")
     elif one_of_ten == 2:
-        call sna_head("Alright!","snape_02")
+        call sna_main("Alright!","snape_02")
     elif one_of_ten == 3:
-        call sna_head("Awesome!","snape_02")
+        call sna_main("Awesome!","snape_02")
     elif one_of_ten == 4:
-        call sna_head("Well done, my friend!","snape_02")
+        call sna_main("Well done, my friend!","snape_02")
     elif one_of_ten == 5:
-        call sna_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
+        call sna_main("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
     elif one_of_ten == 6:
-        call sna_head("lately I am having hard time drinking anything but this!","snape_02")
+        call sna_main("lately I am having hard time drinking anything but this!","snape_02")
     elif one_of_ten == 7:
-        call sna_head("Great! I feel less stressed out already!","snape_02")
+        call sna_main("Great! I feel less stressed out already!","snape_02")
     elif one_of_ten == 8:
-        call sna_head("This just keeps getting better and better!","snape_02")
+        call sna_main("This just keeps getting better and better!","snape_02")
     elif one_of_ten == 9:
-        call sna_head("Seriously, how big is that stash?","snape_05")
+        call sna_main("Seriously, how big is that stash?","snape_05")
     else:
-        call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02")
+        call sna_main("It's sure good to be us! let's uncork that bastard!","snape_02")
 
     call nar(">Your relationship with Professor Snape has improved.")
     #">Your relationship with Professor Snape has improved."

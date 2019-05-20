@@ -76,33 +76,33 @@ init python:
 
     #Genie
     gen = Character('Genie')
-    m = Character("", show_side_image=Image("characters/genie/mage.png"))
-    g = Character("", show_side_image=Image("characters/genie/mage2.png"))
-    g2 = Character("", show_side_image=Image("characters/genie/mage3.png"))
-    g4 = Character("", show_side_image=Image("characters/genie/mage4.png"))
-    g5 = Character("", show_side_image=Image("characters/genie/mage5.png"))
-    g6 = Character("", show_side_image=Image("characters/genie/mage6.png"))
-    g7 = Character("", show_side_image=Image("characters/genie/mage7.png"))
-    g8 = Character("", show_side_image=Image("characters/genie/mage8.png"))
-    g9 = Character("", show_side_image=Image("characters/genie/mage9.png"))
-    g10 = Character("", show_side_image=Image("characters/genie/mage10.png"))
-    g11 = Character("", show_side_image=Image("characters/genie/mage11.png"))
-    g12 = Character("", show_side_image=Image("characters/genie/mage12.png"))
-    g13 = Character("", show_side_image=Image("characters/genie/mage13.png"))
-    g14 = Character("", show_side_image=Image("characters/genie/mage14.png"))
-    g15 = Character("", show_side_image=Image("characters/genie/mage15.png"))
+    m = Character("", show_side_image=Image("characters/genie/mage.png", xpos=20))
+    g = Character("", show_side_image=Image("characters/genie/mage2.png", xpos=20))
+    g2 = Character("", show_side_image=Image("characters/genie/mage3.png", xpos=20))
+    g4 = Character("", show_side_image=Image("characters/genie/mage4.png", xpos=20))
+    g5 = Character("", show_side_image=Image("characters/genie/mage5.png", xpos=20))
+    g6 = Character("", show_side_image=Image("characters/genie/mage6.png", xpos=20))
+    g7 = Character("", show_side_image=Image("characters/genie/mage7.png", xpos=20))
+    g8 = Character("", show_side_image=Image("characters/genie/mage8.png", xpos=20))
+    g9 = Character("", show_side_image=Image("characters/genie/mage9.png", xpos=20))
+    g10 = Character("", show_side_image=Image("characters/genie/mage10.png", xpos=20))
+    g11 = Character("", show_side_image=Image("characters/genie/mage11.png", xpos=20))
+    g12 = Character("", show_side_image=Image("characters/genie/mage12.png", xpos=20))
+    g13 = Character("", show_side_image=Image("characters/genie/mage13.png", xpos=20))
+    g14 = Character("", show_side_image=Image("characters/genie/mage14.png", xpos=20))
+    g15 = Character("", show_side_image=Image("characters/genie/mage15.png", xpos=20))
 
     #Dumbledore
     dum_ = [""]
     for i in xrange(1,6):
         dum_.append("")
-        dum_[i] = Character("Dumbledore", show_side_image=Image("characters/misc/dumbledore/dum_"+str(i)+".png", xpos=20, yalign=1.0))
+        dum_[i] = Character("Dumbledore", show_side_image=Image("characters/misc/dumbledore/dum_"+str(i)+".png", xpos=20))
 
     #Santa
     san_ = [""]
     for i in xrange(1,7):
         san_.append("")
-        san_[i] = Character("Santa", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20, yalign=1.0))
+        san_[i] = Character("Santa", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20))
 
     ### STUDENTS ###
     her = Character('[hermione_name]')
@@ -110,9 +110,9 @@ init python:
     cho = Character('[cho_name]')
     sus = Character('Susan')
     ast = Character('Astoria')
-    twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png"))
-    fre = Character('Fred', show_side_image=Image("characters/misc/weasley_twins/fred_01.png"))
-    ger = Character('George', show_side_image=Image("characters/misc/weasley_twins/george_01.png"))
+    twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))
+    fre = Character('Fred', show_side_image=Image("characters/misc/weasley_twins/fred_01.png", xalign=1.0))
+    ger = Character('George', show_side_image=Image("characters/misc/weasley_twins/george_01.png", xalign=1.0))
 
     ### TEACHERS ###
     sna = Character('Severus Snape')
@@ -120,12 +120,12 @@ init python:
     spo = Character('Professor Sprout')
     hoo = Character('Madam Hooch')
     ### Other Characters ###
-    hat = Character('Sorting Hat', show_side_image=Image("characters/misc/hat/hat.png"))
+    hat = Character('Sorting Hat', show_side_image=Image("characters/misc/hat/hat.png", xalign=1.0))
     helf = Character("House-Elf")
     nar = Character('Narrator', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
     sil = Character('Team Silver', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
 
-    maf = Character('Madam Mafkin', show_side_image=Image("characters/misc/mafkin/maf_1.png"))
+    maf = Character('Madam Mafkin', show_side_image=Image("characters/misc/mafkin/maf_1.png", xalign=1.0))
     abe = Character('Aberforth')
     myr = Character('Moaning Myrtle')
     vol = Character('Lord Voldemort')

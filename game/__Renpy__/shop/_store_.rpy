@@ -190,6 +190,7 @@ label store_chit_chat:
 
         if twins_know_cards:
             twi "Or duel?"
+            label twins_menu:
             menu:
                 "-Buy something-":
                     pass

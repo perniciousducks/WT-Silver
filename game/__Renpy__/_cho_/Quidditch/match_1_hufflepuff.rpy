@@ -689,10 +689,11 @@ label hufflepuff_match:
     call cho_main("", "pout", "angry", "raised", "L")
     call her_main("playing the game?", mouth="smile", eye="closed")
     call cho_main("The game is over, you dipstick!", "scream", "angry", "angry", "L")
+    call cho_main("", "pout", "angry", "raised", "L")
     call her_main("What? Already?", mouth="shock", eye="surprised")
     call cho_main("", "upset", "angry", "angry", "L")
     call her_main("But who caught the Snitch?", mouth="open", eye="wide")
-    call cho_main("", "base", "angry", "raised", "L")
+    call cho_main("", "open", "angry", "angry", "L")
     $ cho_class.set_body(armright="arm_snitch_r")
     with d3
     ">Cho waves the snitch in front of her."
@@ -700,13 +701,14 @@ label hufflepuff_match:
     $ cho_class.set_body(armright="arm_down_r")
     $ cho_class.body['armright'][4] = True
     call cho_main("My first ever win this season and you didn’t even notice it! No one did thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
+    call cho_main("", "upset", "angry", "angry", "down")
     call her_main("Oh...", mouth="normal", eye="shocked")
-    call cho_main("", "upset", "closed", "angry", "L")
     call her_main("So should I announce it now?", mouth="open", eye="worriedCl")
     call sna_main("Obviousl-","snape_12",ypos="head")
     call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans="vpunch")
     call her_main("", mouth="normal", eye="worried")
-    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "angry", "L", trans="hpunch")
+    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "raised", "L", trans="hpunch")
+    call cho_main("", "upset", "angry", "angry", "down")
     call her_main("Don’t scream at me like that, bitch!", mouth="scream", eye="angry", trans="hpunch")
     call cho_main("", "angry", "shocked", "angry", "L")
     call her_main("", mouth="normal", eye="angry")
@@ -840,13 +842,6 @@ label hufflepuff_match_return:
 
     # Reset Cho
     $ cho_class.equip(cho_outfit_last)
-
-    # Favor Tier Reset
-    $ cc_pf_talk.points       = 0
-    $ cc_pf_strip.points      = 0
-
-    $ cc_pr_flirt.points      = 0
-    $ cc_pr_manipulate.points = 0
 
     $ cho_content_complete = True # Temporary to hide the Practice Match option in the menu.
 

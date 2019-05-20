@@ -134,10 +134,11 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
             with d3
             pause.3
             $ cho_chibi_flip = 1
-        if loiter:
-            $ cho_chibi_status = ""
-            call update_cho_chibi_uniform
-            show screen cho_stand
+        else:
+            if loiter:
+                $ cho_chibi_status = ""
+                call update_cho_chibi_uniform
+                show screen cho_stand
 
     return
 

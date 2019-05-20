@@ -9,6 +9,11 @@
     
 screen say(who, what, side_image=None):
     zorder 6 #Otherwise the character sprite would be obscuring it.
+    
+    if side_image:
+        add side_image yalign 1.0 yanchor 1.0
+    else:
+        add SideImage() xalign 0.0 yalign 1.0 yanchor 1.0
 
     #Hotkeys
     use hotkeys_say
@@ -49,11 +54,6 @@ screen say(who, what, side_image=None):
                 text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
             else:
                 text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
-
-    if side_image:
-        add side_image xpos 20 yalign 1.0
-    else:
-        add SideImage() xalign 0.0 yalign 1.0
 
     # Use the quick menu.
     if not hkey_chat_hidden and not who == None:

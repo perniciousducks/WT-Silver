@@ -114,6 +114,17 @@ label twins_random_duel:
         m "Finished?"
         ger "Just a second..."
         ger "Done!"
+        if gold < 10:
+            ger "Unfortunately we will have to refuse."
+            g4 "Why?"
+            fre "The further extension to fractional values of your current income in the first instance on the establishment of a method of algebraical evolution which bears the same relation to arithmetical evolution that algebraical division bears to arithmetical division gives unsatisfactory results."
+            m "...........what?"
+            ger "It means you're broke, sir."
+            fer "Come back with your offer when you have more gold, professor."
+            m "Fine.."
+            m "(Kids nowadays..)"
+            "You return to your office."
+            jump main_room
         ger "Yes, that is quite satisfactory..."
         fre "This deal is only until we leave Hogwarts by the way..."
         m "Obviously..."
@@ -127,6 +138,7 @@ label twins_random_duel:
         ger "Yes, we still need to think about growth."
         m "\"I should've asked for a cut to begin with.\""
         m "\"Well, hopefully if I can get Hermione to help them promote their shop I'll get more that week...\""
+        jump twins_menu
     else:
         m "Ready for another wager?"
         twi "Why not..."
@@ -135,6 +147,21 @@ label twins_random_duel:
         fre "Of course... but you're not going to reach it..."
         m "..."
         m "Okay, well... If you two win then I'll give you 10 gold."
+        ger "One second, professor."
+        "> George takes out a calculator and starts calculating something."
+        if gold < 10:
+            ger "We have to refuse."
+            m "Why?"
+            fre "Long explanation or short?"
+            menu:
+                "-Long-":
+                    fre "The further extension to fractional values of your current income in the first instance on the establishment of a method of algebraical evolution which bears the same relation to arithmetical evolution that algebraical division bears to arithmetical division gives unsatisfactory results."
+                "-Short-":
+                    ger "You are broke, sir."
+            fre "Come back with your offer when you have more gold, professor."
+            m "Fine.."
+            "> You return to your office."
+            jump main_room
         ger "Acceptable..."
         twi "Let's play."
        

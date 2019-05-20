@@ -398,7 +398,7 @@ label hg_wager_bj:
                         "-Hmm.. Actually.. {image=interface/cards.png}":
                             g9 "I don't see why not... I don't have anything else going on at the moment..."
                             label bj_duel_game:
-                            call her_main("...",mouth="open_wide_tongue","annoyed")
+                            call her_main("...", mouth="open_wide_tongue", eye="annoyed")
                             call u_play_ani
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
                             g4 "Gngh..."

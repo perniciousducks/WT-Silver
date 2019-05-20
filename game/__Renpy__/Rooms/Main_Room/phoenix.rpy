@@ -19,8 +19,6 @@ label phoenix:
 
 
     if day != 1:
-        call flytest_cho_chibi
-        jump day_main_menu
         if not phoenix_is_fed:
             $ phoenix_is_fed = True
             $ phoenix_fed_counter += 1

@@ -779,15 +779,13 @@ label outskirts_of_hogwarts:
 
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
 
-    $ end_u_1_pic =  "images/yule_ball/171.png"
-    show screen end_u_1
+    $ ccg_folder = "ball"
+    call ccg(layer1="171", layer2="blank", layer3="blank")
     pause.3
     call hide_blkfade
     pause.8
-    $ renpy.play('sounds/steps_grass.mp3') # SOUNDS OF STEPS IN THE GRASS.
-    $ end_u_3_pic =  "images/yule_ball/172.png"
-    show screen end_u_3
-    with d7
+    call play_music("walking_on_grass")
+    call ccg(layer2="172")
 
     return
 

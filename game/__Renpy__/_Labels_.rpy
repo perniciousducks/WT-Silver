@@ -256,8 +256,11 @@ label reset_day_and_night_flags:
     return
 
 
-label bld:
-    show screen bld1
+label bld(action=None):
+    if action == "hide":
+        hide screen bld1
+    else:
+        show screen bld1
     with d3
 
     return
@@ -265,13 +268,13 @@ label bld:
 label blktone:
     show screen bld1 #Making sure it's active. Blktone looks stupid without.
     show screen blktone
-    with d3
+    with d5
 
     return
 
 label hide_blktone:
     hide screen blktone
-    with d3
+    with d5
 
     return
 
@@ -279,14 +282,14 @@ label blkfade:
     hide screen bld1
     hide screen blktone
     show screen blkfade
-    with d3
+    with d5
     pause.2
 
     return
 
 label hide_blkfade:
     hide screen blkfade
-    with d3
+    with d5
 
     return
 
@@ -354,62 +357,70 @@ label cast_spell(spell=""):
 
 label play_sound(sound=""):
 
-    if sound in ["knocking"]:
+    # Objects
+    if sound in ["knock", "knocking"]:
         $ renpy.play('sounds/knocking.mp3')
-
     if sound in ["door"]:
         $ renpy.play('sounds/door.mp3')
-
     if sound in ["desk","climb_desk"]:
         $ renpy.play('sounds/08_hop_on_desk.mp3')
-
-    if sound in ["footsteps"]:
-        $ renpy.play('sounds/footsteps.mp3')
-
     if sound in ["owl"]:
-        play sound "sounds/owl.mp3"  #Quiet...
+        play sound "sounds/owl.mp3"
 
-    if sound in ["glass_break","glass"]:
-        $ renpy.play('sounds/glass_break.mp3')
+    # Ambience
+    if sound in ["applause"]:
+        $ renpy.play('sounds/applause01.ogg')
 
-    if sound in ["scratch"]:
-        $ renpy.play('sounds/scratch.wav')
-
-    if sound in ["slap","slapping"]:
-        $ renpy.play('sounds/slap_02.mp3')
-
-    if sound in ["gulp"]:
+    # Affection
+    if sound in ["gulp", "gulping", "swallow", "swallowing"]:
         $ renpy.play('sounds/gulp.mp3')
-        
-    if sound in ["spit"]:
+    if sound in ["slap", "slapping"]:
+        $ renpy.play('sounds/slap_02.mp3')
+    if sound in ["spit", "spitting"]:
         $ renpy.play('sounds/spit.mp3')
-
-    if sound in ["kick","bump"]:
+    if sound in ["kick", "kicking", "bump"]:
         $ renpy.play('sounds/kick.ogg')
-
-    if sound in ["kiss","kissing"]:
+    if sound in ["kiss", "kissing"]:
         $ renpy.play('sounds/kiss.mp3')
-
-    if sound in ["bottle","pop"]:
+    if sound in ["insert", "inserting", "goo"]:
+        $ renpy.play('sounds/gltch.mp3')
+    if sound in ["boing"]:
+        $ renpy.play('sounds/boing.mp3')
+    if sound in ["pop", "bottle"]:
         $ renpy.play('sounds/bottle.mp3')
 
+    # Magic
     if sound in ["spell"]:
         $ renpy.play('sounds/magic2.mp3')
-
     if sound in ["magic"]:
-        $ renpy.play('sounds/magic4.mp3')
+        $ renpy.play('sounds/magic4.ogg')
 
-    if sound in ["walking_on_grass","grass"]:
+    # Movement
+    if sound in ["footsteps"]:
+        $ renpy.play('sounds/footsteps.mp3')
+    if sound in ["walking"]:
+        $ renpy.play('sounds/run_04.mp3')
+    if sound in ["running"]:
+        $ renpy.play('sounds/run_03.mp3')
+    if sound in ["sprinting"]:
+        $ renpy.play('sounds/run_02.mp3')
+    if sound in ["walking_on_grass", "grass"]:
         $ renpy.play('sounds/steps_grass.mp3')
 
+    # Interface
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
-
     if sound in ["equip_inventory"]:
         $ renpy.play('sounds/cloth_sound.mp3')
 
+    # Misc
+    if sound in ["scratch"]:
+        $ renpy.play('sounds/scratch.wav')
     if sound in ["shatter"]:
         $ renpy.play('sounds/glass_shatter.mp3')
+    if sound in ["glass_break","glass"]:
+        $ renpy.play('sounds/glass_break.mp3')
+
     return
 
 
@@ -418,56 +429,55 @@ label play_music(music=""):
     if music in ["stop","pause"]:
         stop music fadeout 1.0
 
-    if music in ["hedwigs_theme"]:
+    # Harry Potter
+    if music in ["hedwigs_theme", "hogwarts"]:
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1
+    if music in ["ball_theme", "ball"]:
+        play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1
+    if music in ["festive", "xmas"]:
+        play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1
 
+    # Character Music
+    if music in ["snape", "snape_theme", "dark_fog"]:
+        play music "music/Dark Fog.mp3" fadein 1 fadeout 1
+    if music in ["hermione", "hermione_theme", "chipper_doodle"]:
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
+    if music in ["cho", "cho_theme", "happy_adventure"]:
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 #Placeholder
+    if music in ["playful", "playful_tension"]:
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1
+    if music in ["silly", "fun", "silly_fun_loop"]:
+        play music "music/silly_fun_loop.mp3" fadein 1 fadeout 1
+
+    # Store Music
     if music in ["weasley_store"]:
         play music "music/weasley_store.mp3" fadein 1 fadeout 1 #Loop
-
     if music in ["clothing_store"]:
         play music "music/clothing_store.mp3" fadein 1 fadeout 1 #Loop
 
-    if music in ["dark_fog","snape_theme"]:
-        play music "music/Dark Fog.mp3" fadein 1 fadeout 1
-
-    if music in ["chipper_doodle","hermione_theme"]:
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
-        
-    if music in ["happy_adventure","cho_theme"]:
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 #Placeholder
-
-    if music in ["playful_tension","playful"]:
-        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1
-
-    if music in ["silly_fun_loop","silly","fun"]:
-        play music "music/silly_fun_loop.mp3" fadein 1 fadeout 1
-
-    if music in ["brittle_rille","day_theme"]:
+    # Background Music
+    if music in ["day", "day_theme", "brittle_rille"]:
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
-
-    if music in ["manatees","night_theme"]:
+    if music in ["night", "night_theme", "manatees"]:
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
-
-    if music in ["outside_night","night_outside"]:
+    if music in ["night_outside", "outside_night"]:
         play music "sounds/night.mp3" fadein 1 fadeout 1
 
-    if music in ["hitman"]:
-        play music "music/hitman.mp3" fadein 1 fadeout 1
-
-    if music in ["boss_theme"]:
-        play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
-
-    if music in ["boss_card_theme"]:
-        play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1
-
-    if music in ["sad","grape_soda"]:
-        play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5
-
-    if music in ["anguish"]:
-        play music "music/Anguish.mp3" fadein 1 fadeout 1
-
+    # Interface
     if music in ["my_immortal"]:
         play music "music/Spring_In_My_Step.mp3" fadein 0.2 fadeout 0.2
+
+    # Misc
+    if music in ["hitman"]:
+        play music "music/hitman.mp3" fadein 1 fadeout 1
+    if music in ["boss_theme"]:
+        play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
+    if music in ["boss_card_theme"]:
+        play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1
+    if music in ["sad","grape_soda"]:
+        play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5
+    if music in ["anguish"]:
+        play music "music/Anguish.mp3" fadein 1 fadeout 1
 
     return
 

@@ -2,7 +2,6 @@
 
 label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, remove=False, wand=False):
     hide screen snape_main
-    hide screen snape_head
 
     #Flip
     if flip == False:
@@ -72,38 +71,6 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
     return
 
 
-label sna_head(text="",face="",xpos=snape_head_xpos ,ypos=snape_head_ypos):
-    hide screen snape_main
-    hide screen snape_head
-    show screen bld1
-
-    if xpos != snape_head_xpos:
-        if xpos == "base" or xpos == "default":
-            $ snape_head_xpos = 540
-        else:
-            $ snape_head_xpos = xpos
-
-    if ypos != snape_head_ypos:
-        if ypos == "base" or ypos == "default":
-            $ snape_head_ypos = 380
-        else:
-            $ snape_head_ypos = ypos
-
-    if face != "":
-        $ s_sprite = "characters/snape/main/"+str(face)+".png"
-
-    show screen snape_head
-    with d3
-
-    if text != "":
-        sna "[text]"
-    hide screen snape_head
-    with d3
-
-    return
-
-
-
 label update_snape:
 
     $ snape_flip = 1
@@ -118,30 +85,13 @@ label update_snape:
 screen snape_main(wand=False):
     tag big_snape
 
-    add s_sprite xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)#tt_xpos+140 ypos tt_ypos
+    add s_sprite xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+
     if wand:
         add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+
     zorder snape_zorder
 
 screen snape_picture_frame():
     add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
     zorder snape_zorder+1
-
-
-
-### SNAPE HEAD
-screen snape_head():
-    tag big_snape
-
-    add s_sprite xpos snape_head_xpos ypos snape_head_ypos zoom (1.0/snape_scaleratio)
-
-    zorder 8 #In front of text box.
-
-
-### SNAPE EMOTIONS
-screen s_emo_01(): #Closed eyes and closed mouth.
-    tag semo
-
-    add "characters/snape/main/s_emo_01.png" xpos tt_xpos ypos tt_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
-
-    zorder 4

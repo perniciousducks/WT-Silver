@@ -79,21 +79,21 @@ label night_resume:
 
     ### NIGHT EVENTS ###
     if day == 1:
-        call owl_intro #Returns
+        call genie_intro_E2 #Returns
     if day == 2:
-        jump event_03 #No return. Jumps next day.
+        jump snape_intro_E2 #No return. Jumps next day.
     if day == 4:
-        jump event_05 #Before Duel #No return.
+        jump snape_intro_E3 #Before Duel #No return.
     if day == 5:
-        jump event_07 #No return.
+        jump snape_intro_E5 #No return.
     if days_without_an_event >= 1 and hermione_is_waiting_02 and not event11_happened:
-        call event_11 #Returns
+        call hermione_intro_E3 #Returns
     if days_without_an_event >= 1 and event11_happened and not event12_happened:
-        jump event_12 #No return.
+        jump hermione_intro_E4 #No return.
     if days_without_an_event >= 1 and event12_happened and not event13_happened:
-        jump event_13 #No return.
+        jump hermione_intro_E5 #No return.
     if day >= 15 and event13_happened and not event15_happened:
-        call event_15 #Returns
+        call hermione_intro_E7 #Returns
 
     # Tonks Events.
     if astoria_unlocked and not tonks_intro_happened and days_without_an_event >= 1:

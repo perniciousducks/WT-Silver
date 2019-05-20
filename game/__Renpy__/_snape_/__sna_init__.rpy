@@ -11,10 +11,6 @@ label snape_init:
 
         $ s_sprite = "characters/snape/main/snape_01.png"
 
-        $ snape_head_xpos = 540
-        $ snape_head_ypos = 380
-        $ snape_head_zorder = 8
-
         $ sna_chibi_xpos    = 610
         $ sna_chibi_ypos    = 190
         $ sna_speed         = 2.0
@@ -48,8 +44,8 @@ label snape_progress_init:
 
 
         ### SNAPE EVENTS ###
-        $ snape_against_hermione = False #Turns True after event_01. Activates event_11 when hanging out with Snape next time.
-        $ snape_against_hermione_02 = False #Turns True after event_09. Activates second event when hanging out with Snape.
+        $ snape_against_hermione = False #Turns True after genie_intro_E1. Activates hermione_intro_E3 when hanging out with Snape next time.
+        $ snape_against_hermione_02 = False #Turns True after hermione_intro_E2. Activates second event when hanging out with Snape.
 
 
         ### CHITCHATS WITH SNAPE ###
@@ -69,7 +65,7 @@ label snape_progress_init:
         $ hanging_with_snape = False #Removed! Not in use anymore!
 
         $ date_with_snape_02_happened = False #Second date with Snape. They decide to de-throne Hermione.
-                                      #Turns true after event_09
+                                      #Turns true after hermione_intro_E2
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
 

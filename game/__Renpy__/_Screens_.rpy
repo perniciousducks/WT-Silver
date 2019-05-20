@@ -1,19 +1,40 @@
 
 
+### CGs ###
+
+label cg_scene(layer=None, folder=None, trans=None):
+    hide screen cg
+
+    if layer != None:
+        $ cg_image = layer
+
+    if folder != None:
+        $ cg_path = "images/CG/"+folder+""+cg_image+".png"
+
+    show screen cg
+
+    #Transitions
+    if trans == None:
+        with d5 # Default
+    else:
+        call transition(trans)
+
+    return
+
 screen cg(): #Used in tentacle event.
     tag cg_screen
 
-    add cg_image
+    add cg_image xpos 540 xanchor 0.5 ypos 0 # At Screen Center
 
-    zorder 4
+    zorder 2
 
 screen ccg():
     tag cg_screen
 
-    add "images/CG/"+ccg_folder+"/base.png"
-    add "images/CG/"+ccg_folder+"/"+str(ccg1)+".png"
-    add "images/CG/"+ccg_folder+"/"+str(ccg2)+".png"
-    add "images/CG/"+ccg_folder+"/"+str(ccg3)+".png"
+    add "images/CG/"+ccg_folder+"/base.png"          xpos 540 xanchor 0.5 ypos 0 # At Screen Center
+    add "images/CG/"+ccg_folder+"/"+str(ccg1)+".png" xpos 540 xanchor 0.5 ypos 0
+    add "images/CG/"+ccg_folder+"/"+str(ccg2)+".png" xpos 540 xanchor 0.5 ypos 0
+    add "images/CG/"+ccg_folder+"/"+str(ccg3)+".png" xpos 540 xanchor 0.5 ypos 0
     if loopimage is not None:
         add loopimage
 
@@ -115,7 +136,7 @@ screen bld1():
     if not current_room == "quidditch_pitch":
         add "interface/bld.png"
     zorder 3
-    
+
 screen bld2():
     tag bld2
     add im.Flip("interface/bld.png", vertical=True)
@@ -339,22 +360,10 @@ screen c_scene(): #Snape Classroom Scene
     add "images/CG/scene_01.png" xpos 140 ypos 0
     zorder 4
 
-
-
 screen ch_hotdog():
     add "ch_hem hotdog" xpos -70 ypos 10 #Desk sex ani.
     zorder 0
 
-
-screen s_head(): #Snape. Head.
-    tag head
-    add s_sprite xpos tt_xpos+140 ypos tt_ypos # x = 330, Right bottom corner: y = 340
-    zorder 8
-
-screen s_head2(): #Snape. Head.
-    tag head
-    add s_sprite xpos snape_head_xpos+140 ypos snape_head_ypos # x = 330, Right bottom corner: y = 340
-    zorder 8
 
 
 label teleport(position=None,effect=True):

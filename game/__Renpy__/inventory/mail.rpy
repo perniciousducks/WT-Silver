@@ -37,7 +37,7 @@ label read_letter:
         with d3
 
         if letter.label == "letter_from_hermione_A" and day == 1:
-            jump event_00 # First event with Snape.
+            jump snape_intro_E1 # First event with Snape.
 
     call screen main_room_menu
 

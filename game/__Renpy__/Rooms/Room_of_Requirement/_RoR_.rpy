@@ -254,7 +254,6 @@ label enter_room_of_req:
         m "Noted... Out. Now."
 
         hide screen snape_main
-        hide screen snape_head
         hide screen bld1
         call give_reward("You've unlocked the room of requirement","images/rooms/room_of_requirement/mirror_hover.png")
         call sna_chibi("hide")

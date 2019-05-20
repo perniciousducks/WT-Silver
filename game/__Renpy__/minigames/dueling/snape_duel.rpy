@@ -446,7 +446,7 @@ label snape_lost:
     hide screen hp_bar
     with flashbulb
     pause 1
-    jump event_06
+    jump snape_intro_E4
 
 
 ### GENIE LOSES ###

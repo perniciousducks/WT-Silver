@@ -73,11 +73,13 @@ label __init_variables:
         $ cho_scaleratio = 2
 
     #CGs
-    if not hasattr(renpy.store,'ccg_folder'):
+    if not hasattr(renpy.store,'cg_image'):
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
         $ ccg2 = 1
         $ ccg3 = "gene"
+        $ cg_image = "e2"
+        $ cg_path  = "images/CG/"+cg_image+".png"
 
     if not hasattr(renpy.store,'sc_cg_base'):
         $ sc_cg_base = "images/CG/sc34/1/base_1.png"

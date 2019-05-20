@@ -521,44 +521,44 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
 
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
 
-            call sna_head("Good, you are here.","snape_01",xpos="base",ypos="base")
+            call sna_main("Good, you are here.","snape_01",xpos="base",ypos="base")
             call u_play_ani
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call sna_head("Listen, there is something I want to discuss...","snape_06")
-            call sna_head("Hm...?","snape_05")
-            call sna_head("Genie? Are you alright?")
+            call sna_main("Listen, there is something I want to discuss...","snape_06")
+            call sna_main("Hm...?","snape_05")
+            call sna_main("Genie? Are you alright?")
             her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
             her "{size=-4}(No, please! I will die of shame!){/size}"
             m "Yes, Severus, I am fine..."
             her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
-            call sna_head("What are you... looking at?","snape_05")
+            call sna_main("What are you... looking at?","snape_05")
             m "Ehm... Just admiring...{w} the cupboard."
             m "Please, continue..."
-            call sna_head("...............","snape_05")
+            call sna_main("...............","snape_05")
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
             m "Did you want to discuss something?"
-            call sna_head("Yes. That Hermione girl.","snape_06")
+            call sna_main("Yes. That Hermione girl.","snape_06")
             her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
             m "Oh... What about her?"
-            call sna_head("You promised that you would take care of the little witch.","snape_04")
+            call sna_main("You promised that you would take care of the little witch.","snape_04")
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call sna_head("But she is still being a major pain in my arse!","snape_04")
-            call sna_head("Her tactics have changed...")
-            call sna_head("But the amount of grief she manages to bring me is the same...","snape_03")
+            call sna_main("But she is still being a major pain in my arse!","snape_04")
+            call sna_main("Her tactics have changed...")
+            call sna_main("But the amount of grief she manages to bring me is the same...","snape_03")
             m "I see... ah..."
-            call sna_head("I swear, that girl is driving me crazy!","snape_10")
+            call sna_main("I swear, that girl is driving me crazy!","snape_10")
             g4 "Yeah, she is driving me crazy as well... ah..."
             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-            call sna_head("Will you take care of this then?","snape_04")
+            call sna_main("Will you take care of this then?","snape_04")
             m "Yes. She'll get what she deserves."
-            call sna_head("Good. That is all I wanted to hear.","snape_06")
+            call sna_main("Good. That is all I wanted to hear.","snape_06")
 
             if daytime:
                 m "Well, have a good day, Severus."
-                call sna_head("Yes, thank you.","snape_06")
+                call sna_main("Yes, thank you.","snape_06")
             else:
                 m "Good night, Severus."
-                call sna_head("Right...","snape_06")
+                call sna_main("Right...","snape_06")
 
             call sna_chibi("stand","mid","base",flip=True)
             hide screen bld1

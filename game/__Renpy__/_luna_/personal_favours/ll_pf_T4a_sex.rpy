@@ -517,35 +517,93 @@ label ll_pf_sex_T1_her_2: # Call label
 
     call her_main("[genie_name], I really need a good-","smile","happyCl")
     call her_main("Oh... Hello, Luna.","smile","happyCl")
-    lun "H-hello Hermione."
-    call her_main("I think I'll leave you two alone...","smile","happyCl")
-    ">Hermione turns to leave."
-    lun "W-wait. Don't go..."
-    call her_main("...","smile","happyCl")
-    lun "We can share... if you like..."
-    call her_main("Share? Share what?","smile","happyCl")
-    lun "{b}Him{/b}."
-    call her_main("...","smile","happyCl")
-    call her_main("Do you really think I'm going to share with you?","smile","happyCl")
-    call her_main("Just get naked... and let him take turns...","smile","happyCl")
-    call her_main("Fucking us both... senseless...","smile","happyCl")
-    call her_main("...","smile","happyCl")
-    call her_main("......","smile","happyCl")
-    call her_main("Fine! But only because that's what I came here for anyway.","smile","happyCl")
-    ">With that, Hermione starts to strip, eager to join the fun."
-    m "Don't I get a say in this?"
-    call her_main("Oh, shut it. You're hardly going to say no to this are you?","smile","happyCl")
-    m "Fair point..."
-    #FTB Also, have the favour repeat from this point
-    ">With that, Hermione hops up onto your desk, her eyes begging for your cock."
-    her "My turn."
+    her "Figures I'd find you up here..."
+    m "Why's that?"
+    lun "..."
+    her "Hmph... I think you know what I'm talking about..."
+    menu:
+        "-The cum-":
+            m "The cum?"
+            her "Of course it's the cum!"
+        "-The wrackspurts-":
+            m "The wricklespots things?"
+            ">You continue to slam into Luna, unperturbed by the conversation."
+            her "The-"
+            her "You're not going on about that complete nonsense as well as you [genie_name]?"
+            her "I expect better from you when it comes to unsubstantiated claims of magical beings."
+            lun "ah... but hermione... they are real..."
+            her "Shut it! Even if they are, that's not what I'm talking about?"
+            m "Then what?"
+            her "I'm talking about the fact that you keep sending Luna to class covered in cum!"
+    m "Is it that big a deal?"
+    lun "I don't think people mind too much Hermione."
+    lun "Especially once I explain it to them!"
+    her "That's the problem! Everyone's so confused about why you're doing it!"
+    her "They're not sure if you're a slut or a simpleton!"
+    m "Now, now... I seem to remember a few occasions where you've been out and about with a little something on your person."
+    lun "You have?"
+    her "That's different! I had the decency to actually feel shame!"
+    her "You don't care at all, do you, Luna?"
+    lun "Should I?"
+    her "Ugh!"
+    m "What's the real problem here Hermione?"
+    lun "ah..."
+    her "What?"
+    lun "Gen-um-Dumbledore is right hermione..."
+    her "(?)"
+    lun "There's something else that's wrong. We've been friends long enough for me to know."
+    her "There's nothing wrong!"
+    m "..."
+    lun "..."
+    her "I just think it's funny that whenever I wear even a little bit of cum around the school-"
+    her "Every student decides it's their business and that they should get to shout whatever slur they want across the halls at me..."
+    her "But when Luna does it, no one so much as bats an eye!"
+    lun "Mmmm, they know I'm trying to help them..."
+    her "No they don't! All they know is that you're crazy!"
+    lun "Hey! You know I don't like that word, Hermione!"
+    her "..."
+    her "Sorry Luna... it's just..."
+    lun "I know..."
+    her "Y-You do?"
+    lun "I do... And I'm sorry..."
+    her "..."
+    lun "I'll try and be a little more considerate..."
+    her "Thank you..."
+    ">With that Hermione looks thankfully at Luna before turning and leaving your office."
+    m "What was all that about?"
+    lun "Oh, couldn't you tell?"
+    lun "Hermione was just a little jealous I think..."
+    lun "You might need to have a conversation with her about the wrackspurts effects on your emotions."
+    lun "And to tell her you care about-"
+    ">Before Luna can prattle on any longer, your hips start helplessly firing their load into the Ravenclaw..."
+    g9 "HERE'S YOUR CONVERSATION SLUT!"
+    g9 "ARGH!!!"
+    $ lunCG('ahegao', 'furious', 'open_tongue', 'base')
+    ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
+    g9 "FUCK YES!!!"
+    $ lunCG('ahegao', 'wide', 'open_tongue', 'sad')
+    lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+    $ lunCG('ahegao', 'angry', 'base')
+    lun "..."
+    $ lunCG('ahegao', 'tired', 'open')
+    lun "mmm{image=textheart}{image=textheart}"
+    lun "ah...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
 
     hide screen luncg
     show screen blkfade
     with d3
 
+    m "Gods that was good..."
+    lun "ah..."
+    ">With that, you let Luna recover before letting her slip out of your office and back to school."
+
     hide screen blkfade
     with d3
+
+    return
+
+
+
 
     return
 
@@ -1223,7 +1281,7 @@ label ll_pf_sex_bedroom:
             lun "Cho!"
     m "Cho Chang?"
     lun "Yep! You've probably seen her play quidditch!"
-    lun "Actually, have you seen her play quidditch?"
+    lun "Actually... have you seen her play quidditch?"
     lun "I don't know exactly how long you've been here instead of Dumbledore."
     m "I've seen her play."
     lun "Goodie!"
@@ -1236,7 +1294,7 @@ label ll_pf_sex_bedroom:
     lun "Wow... doing this... it's so... different..."
     m "You're telling me!"
     m "(This is the first good bed I've slept on in years!)"
-    lun "Ah... The wrackspurts... they're go wild..."
+    lun "Ah... The wrackspurts... they're going wild..."
     lun "Ah... It's... incredible..."
     lun "Being in control like this" #Show speed effect
     lun "Not to mention..."
@@ -1251,7 +1309,7 @@ label ll_pf_sex_bedroom:
             m "That's enough, cumslut."
             lun "Mmmm, I am a cumslut aren't I?"
             m "The best..."
-            lun "Mmmm... It's not my fault your cum's so yummy!"
+            lun "It's not my fault your cum's so yummy!"
             lun "It's because of you're genie magic!"
             m "Yeah, yeah, I'm sure..."
             lun "It is! It's {b}amazing{/b}..."
@@ -1266,12 +1324,67 @@ label ll_pf_sex_bedroom:
             lun "Ugh... I can't wait for you to give me some more..."
             lun "Don't hold back... let it all out..."
         "-Fuck it, talk about wrackspurts some more-":
-            pass
+            m "They feel good, don't they?"
+            lun "Ugh... so good..."
+            lun "I {b}wish{/b} we could just stay like this all day, everyday..."
+            m "Careful what you wish for, [luna_name]..."
+            lun "Mmmm, why?"
+            lun "I thought you said I don't get any wishes?"
+            m "That's true... But a wish like that?"
+            m "I might make an exception."
+            lun "Ah... Just the idea of you granting a wish like that..."
+            lun "..."
+            lun "Are you sure I don't get any wishes, [lun_genie_name]?"
+            m "No lamp, no wishes. Those are the rules."
+            lun "Hmph... Maybe I should try a- ah... - summoning spell..."
+            m "I'm not sure that'd work... Besides, what do you need a wish for?"
+            ">You grab a hold of Luna's hips and go to town on the greedy fuckslut."
+            lun "Ohh... wow... I...{image=textheart}"
+            m "You've got everything you could ever want right here!"
+            lun "Ah... the wrackspurts... we need to do something about-"
+            ">Tired of hearing about this again, you decide to slam into the blabbering girl to shut her up."
+            lun "{image=textheart}{image=textheart}{image=textheart}"
+
         "-Talk about the bed-":
-            pass
+            m "Fuck me, this feels incredible..."
+            lun "It does... doesn't it?"
+            m "Not the sex."
+            lun "Oh."
+            m "Don't get me wrong, the sex isn't great!"
+            lun "..."
+            m "I just haven't been in a proper bed since... I can't remember when..."
+            lun "Really?"
+            lun "Ugh... you poor thing..."
+            lun "Where have you been... ah...{image=textheart} sleeping?"
+            m "I just fall asleep in my chair most nights..."
+            lun "Your chair?"
+            lun "That must be so uncomfortable!"
+            m "You get used to it."
+            lun "You know... ah...{image=textheart}"
+            lun "You're welcome to..."
+            lun "Spend some more time... in this bed..."
+            lun "If you like."
+            m "As much as I'd love to spend every single night in here with you..."
+            lun "{image=textheart}{image=textheart}{image=textheart}"
+            m "I don't think that'd be appropriate for a headmaster and his student..."
+            lun "But you're not my headmaster, you're my genie!"
+            m "Even still."
+            lun "..."
+            ">You decide to cheer the girl up by bouncing her enthusiastically up on your cock."
+            lun "{image=textheart}{image=textheart}{image=textheart}"
+
 
 
     m "Ugh... here it comes then you nasty little slut!"
     lun "Ah... yes!!!..."
+    lun "Luna's eyes roll upwards into her head as the pleasure proves too much for her."
+    g9 "Take this you greedy little whore!"
+    ">You begin to unload a gigantic load into the gleeful girl as she is almost too enamored in her own lust to notice."
+    lun "ah..."
+    lun "{image=textheart}{image=textheart}{image=textheart}"
+    show screen blkfade
+    with d3
+    ">Eventually it all proves to much for the two of you as you collapse onto Luna's bed before both quickly succumbing to sleep."
+    ">In the morning you decide to avoid any confrontation and sneak out before anyone else wakes up..."
 
     return

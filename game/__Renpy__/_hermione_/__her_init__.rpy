@@ -500,9 +500,9 @@ label her_progress_init:
         ### HERMIONE EVENT VARS ###
         $ jerked_off_during_hermione_intro = False #Turns True when you choose to jerk off while Hermione talks (Event_08)
 
-        $ tutoring_offer_made = False #If you offered her to tutor her (In event_12). Affects conversation in the next event.
+        $ tutoring_offer_made = False #If you offered her to tutor her (In hermione_intro_E4). Affects conversation in the next event.
 
-        $ hermione_is_waiting_01 = False #Turns True at the end of first special event with Snape. Triggers next visit from Hermione (event_09)
+        $ hermione_is_waiting_01 = False #Turns True at the end of first special event with Snape. Triggers next visit from Hermione (hermione_intro_E2)
         $ hermione_is_waiting_02 = False #Turns True at the end of second special event with Snape. Triggers next visit from Hermione
 
         $ collar = 0

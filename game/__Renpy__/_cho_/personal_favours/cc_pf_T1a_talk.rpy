@@ -1026,10 +1026,10 @@ label cc_pf_talk_T2_E3: # Incomplete.
 
 
 
-        "\"Boys\"":
+        "\"Slytherin's Team\"":
+            pass
 
             # Cho tells you more about the boys at her school,
-            # her rise in popularity,
             # and how the Slytherin team is treating her...
 
             # Writing:
@@ -1038,8 +1038,6 @@ label cc_pf_talk_T2_E3: # Incomplete.
             # It's like my bum has become their new target practice!
             # I swear if they continue with it I might just-... I will snap!
 
-            "Not yet written."
-            pass
 
 
     ### Maybe use this writing somewhere. ###

@@ -1,14 +1,12 @@
 
 #hermione asks genie about who will be in-charge of the ball
 label want_to_rule:
+    $ event_chairman_happened = True
+    #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
 
-    $ event_chairman_happened = True #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-
-    call hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-
-    #her "Professor Dumbledore?"
     call her_main("[genie_name]?","soft","base",xpos="right",ypos="base")
     m "Miss Granger, how can I help you?"
     call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?","open","base")
@@ -373,7 +371,7 @@ label against_the_rule:
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=3)
     pause.2
 
-    call sna_main("Are you bloody insane?!","snape_01",xpos="base",ypos="base")
+    call sna_main("Are you bloody insane?!","snape_01",xpos="base", ypos="base")
     m "You know, sometimes I think I may be..."
 
     call sna_main("You appointed the girl as the head of the \"Autumn Ball Organization Committee\"?!!","snape_01")
@@ -464,15 +462,14 @@ label against_the_rule:
 #============================
 
 label crying_about_dress:
-
-    $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+    $ have_no_dress_hap = True
+    # Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
 
-    call hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-
-    call her_main("My parents sent me the wrong dress!","angry","base",tears="soft",xpos="right",ypos="base")
+    call her_main("My parents sent me the wrong dress!","angry","base",tears="soft",xpos="right", ypos="base")
     m "are You kidding me!?"
     call her_main("They sent me the dress I wore to the ball last year...","angry","base",tears="soft")
     m "Those inconsiderate bastards!"
@@ -523,21 +520,22 @@ label crying_about_dress:
 
     return
 
-#===========================
 
 label sorry_about_hesterics:
-    $ sorry_for_hesterics = True # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+    $ sorry_for_hesterics = True
+    # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+
+    $ have_no_dress_hap = True
+    #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+
     $ days_without_an_event = 0
 
-    $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-    $ days_without_an_event = 0
-
-    call hg_event_EnterRoom_block #Chibi stands mid. bld1 active.
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-
+    call bld
     m "Miss Granger?"
-    call her_main("Sorry to disturb you sir...","open","worried",xpos="right",ypos="base")
+    call her_main("Sorry to disturb you sir...","open","worried",xpos="right", ypos="base")
     call her_main("I came to apologize for my...","open","worriedL")
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
@@ -723,11 +721,11 @@ label good_bye_snape:
 
     m "Right, tonight is the night of the \"Autumn ball\"..."
     m "So it ends tonight then..."
-    call sna_head("Seems like it...","snape_09")
+    call sna_main("Seems like it...","snape_09")
     call hide_blkfade
     pause.5
 
-    call sna_head("In case I'm right and will never see you again...","snape_05")
+    call sna_main("In case I'm right and will never see you again...","snape_05")
     m "Right..."
     call blkfade
 
@@ -736,21 +734,21 @@ label good_bye_snape:
     pause 2
 
     call bld
-    call sna_head("The past several month were the best months of my life, Genie...","snape_26")
-    call sna_head("Thank you for that, you incredible traveler from another world...")
-    call sna_head("Thank you, my friend...")
+    call sna_main("The past several month were the best months of my life, Genie...","snape_26")
+    call sna_main("Thank you for that, you incredible traveler from another world...")
+    call sna_main("Thank you, my friend...")
     m "I don't know what to say, Severus..."
-    call sna_head("Then don't say anything...","snape_06")
-    call sna_head("Just move on to your next adventure...")
-    call sna_head("Our world has stalled you long enough...")
+    call sna_main("Then don't say anything...","snape_06")
+    call sna_main("Just move on to your next adventure...")
+    call sna_main("Our world has stalled you long enough...")
     m "Thank you for keeping me company and being my only friend here, Severus."
-    call sna_head("Thank you for being mine...","snape_27") #TEARS?
-    call sna_head("I'd better go now...","snape_06")
-    #Goes to the door, stops and turns around.
+    call sna_main("Thank you for being mine...","snape_27") #TEARS?
+    call sna_main("I'd better go now...","snape_06")
 
-    hide screen s_head2
+    # Goes to the door, stops and turns around.
     call blkfade
 
+    hide screen snape_main
     hide screen chair_left
     hide screen g_c_u
     show screen genie
@@ -767,42 +765,41 @@ label good_bye_snape:
     call sna_chibi("stand","door","base")
     pause.5
 
-    call sna_head("One more thing though...","snape_01")
+    call sna_main("One more thing though...","snape_01", ypos="head")
     m "Yes?"
-    call sna_head("If it all goes well...","snape_24")
-    call sna_head("Will I find the real Albus Dumbledore in that chair tomorrow?")
+    call sna_main("If it all goes well...","snape_24")
+    call sna_main("Will I find the real Albus Dumbledore in that chair tomorrow?")
     m "I believe so..."
-    call sna_head("Hm...","snape_04")
-    call sna_head("Albus can't know that I was aware of his absence...","snape_03")
-    call sna_head("Is there a way to tell you guys apart?","snape_01")
+    call sna_main("Hm...","snape_04")
+    call sna_main("Albus can't know that I was aware of his absence...","snape_03")
+    call sna_main("Is there a way to tell you guys apart?","snape_01")
     m ".............."
     m "How about a secret password?"
-    call sna_head("A password?","snape_05")
+    call sna_main("A password?","snape_05")
     m "Yes... just ask me tomorrow: \"Who rules?\"."
-    call sna_head("\"Who rules?\"","snape_01")
+    call sna_main("\"Who rules?\"","snape_01")
     g9 "\"Robin Williams!\""
-    call sna_head("Robin Wil-... ehm... I'm sorry, who?","snape_05")
+    call sna_main("Robin Wil-... ehm... I'm sorry, who?","snape_05")
     m "You didn't see \"flubber\"?\nGreat movie. Just came out."
-    call sna_head("Can't say that I have...","snape_02")
-    call sna_head("Alright then...","snape_06")
-    call sna_head("Have a save trip home...")
-    hide screen s_head2
+    call sna_main("Can't say that I have...","snape_02")
+    call sna_main("Alright then...","snape_06")
+    call sna_main("Have a save trip home...")
     m "Thank you. Have fun with hosting the ball..."
-    call sna_head("*Sigh*","snape_06")
+    call sna_main("*Sigh*","snape_06")
     pause.3
 
-    hide screen bld1
-    with d3
+    call bld("hide")
     pause.3
 
     stop music fadeout 1.0
 
-    call sna_chibi("stand","door","base",flip=True)
+    call sna_chibi("stand","door","base", flip=True)
     pause.3
 
     call sna_chibi("leave","door","base")
     pause.8
 
+    call bld
     m "............................"
     m "So this is it then...?"
     play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
@@ -938,24 +935,22 @@ label good_bye_snape:
         m "Yes, \"[word_04]\"..."
         show screen genie
         hide screen paperwork
-        with Dissolve(0.3)
+        with d3
         m "........................"
         m "Yes, this should do..."
 
-    hide screen bld1
-    with d3
     m "Well, off I go then..."
 
     call blkfade
 
     hide screen genie
     show screen chair_left
-    hide screen desk
     show screen desk
     call gen_chibi("stand","desk","base")
     hide screen bld1
     call hide_blkfade
 
+    call bld
     m "........."
 
     call gen_walk(xpos="door", ypos="base", speed=2.8)
@@ -977,29 +972,28 @@ label good_bye_snape:
 
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
-    play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
+    call play_music("night_outside")
 
-    show screen blkback # Hide room
 
-    $ end_u_1_pic =  "images/yule_ball/171.png" #<---- SCREEN
-    show screen end_u_1                                           #<---- SCREEN
+    ### Scene Setup ###
+
+    $ ccg_folder = "ball"
+    $ ccg(layer1="171", layer2="blank", layer3="blank")
+
     pause.3
     call hide_blkfade
     call ctc
 
     m "Severus was right..."
     pause.5
-    $ renpy.play('sounds/steps_grass.mp3') # SOUNDS OF STEPS IN THE GRASS.
-    $ end_u_3_pic =  "images/yule_ball/172.png" #<---- SCREEN
-    show screen end_u_3                                           #<---- SCREEN
-    with d7
+    call play_sound("walking_on_grass")
+
+    $ ccg(layer2="172")
 
     m "The farther away I get from the school grounds..."
     m "The more powerful I'm starting to feel..."
 
-    $ end_u_4_pic =  "images/yule_ball/173.png" #<---- SCREEN
-    show screen end_u_4                                           #<---- SCREEN
-    with d7                                                                       #<---- SCREEN
+    $ ccg(layer3="173")
     pause.5
 
     m "I think  this is far enough..."
@@ -1026,16 +1020,17 @@ label good_bye_snape:
         stop music
         with hpunch
         g4 "Wait, I'm still here!"
+
         centered "{size=+7}{color=#cbcbcb}WHAT?!{/color}{/size}"
+
         g4 "I said I am still here, dammit!"
+
         centered "{size=+7}{color=#cbcbcb}Oh... :({/color}{/size}"
 
-
-
-        hide screen end_u_4
-        with d1
+        $ ccg(layer3="blank")
         hide screen blkfade
         with d9
+
         play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
 
     m "....................."
@@ -1048,27 +1043,16 @@ label good_bye_snape:
 
     call ctc
 
-    show screen blkfade
-    with d7
-
+    hide screen ccg
+    call blkfade
     stop music fadeout 1.0
 
     if not persistent.game_complete: # FIRST PLAY THROUGH.
+
         centered "{size=+7}{color=#cbcbcb}Fine whatever...{/color}{/size}"
-    play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 # BALL THEME.
+
+    call play_music("ball")
+
     centered "{size=+7}{color=#cbcbcb}\"The Annual Hogwarts Autumn Ball\"{/color}{/size}"
 
-    hide screen end_u_4
-    jump your_whore
-
-    return
-
-
-label hg_event_EnterRoom_block: #Chibi stands mid. bld1 active.
-
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
-    pause.5
-
-    call bld
-
-    return
+    jump ending_yule_ball

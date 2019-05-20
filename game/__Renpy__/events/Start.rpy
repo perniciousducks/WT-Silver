@@ -35,14 +35,14 @@ label start_ht:
 
 
 ### EVENTS ###
-    $ event08_happened = False #Turns TRUE after event_08 (Hermone visits first time).
-    $ event09 = False #Turns TRUE when you let Hermione in during event_09. Otherwise she will keep coming every morning.
+    $ event08_happened = False #Turns TRUE after hermione_intro_E1 (Hermone visits first time).
+    $ event09 = False #Turns TRUE when you let Hermione in during hermione_intro_E2. Otherwise she will keep coming every morning.
     $ event10 = False #Turns TRUE when you let Hermione in during event_10. Otherwise she will keep coming every morning.
-    $ event11_happened = False #Turns TRUE after event_11
-    $ event12_happened = False #Turns TRUE after event_12
-    $ event13_happened = False #Turns TRUE after event_13
-    $ event14_happened = False #Turns TRUE after event_14
-    $ event15_happened = False #Turns TRUE after event_15
+    $ event11_happened = False #Turns TRUE after hermione_intro_E3
+    $ event12_happened = False #Turns TRUE after hermione_intro_E4
+    $ event13_happened = False #Turns TRUE after hermione_intro_E5
+    $ event14_happened = False #Turns TRUE after hermione_intro_E6
+    $ event15_happened = False #Turns TRUE after hermione_intro_E7
     $ event16_happened = False #Turns TRUE after event_16
 
     $ event_chairman_happened = False #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
@@ -304,3 +304,48 @@ call reset_menu_position
 
 
 jump day_start
+
+
+
+### EVENT 0 ###
+
+# First event in the game. Gennie finds himself at the desk.
+label genie_intro_E1:
+    #$ genie_intro.complete("E1")
+
+    call bld
+    m "..................?"
+    m "Your majesty?"
+    m "......................................................."
+    g4 "I did it again, didn't I?"
+    g4 "Teleported myself to who knows where..."
+    m "What's with those ingredients?"
+    m "They seem to be way more potent than I thought."
+    m "Well, whatever this place is I have no business here..."
+    m "Better undo the spell and return to the shop before the princess gets angry with me again..."
+    m "....................."
+    m "Although..."
+    m "There is something odd about this place... it's..."
+    m "It's almost brimming with...."
+    g4 "{size=+5}MAGIC?!{/size}"
+    m "Yes... magic, I can feel it. So powerful and yet somehow..."
+    m "....alien."
+    m "Interesting..."
+    m "I think I will stick around for a little bit..."
+
+    $ achievement.unlock("start")
+
+    return
+
+
+# Owl intro.
+label genie_intro_E2:
+    #$ genie_intro.complete("E2")
+    call play_sound("owl")
+    show screen owl
+    call bld
+    m "What? An owl?"
+    hide screen bld1
+    with d3
+
+    return

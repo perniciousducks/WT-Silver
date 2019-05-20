@@ -122,7 +122,8 @@ label cho_progress_init:
             ]
 
             ],
-            icons = ["interface/huff.png", "interface/slyt.png"] #if a tier doesn't need an icon replace with None
+            icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_blue"], ["heart_empty", "heart_yellow"]]
             )
 
     if not hasattr(renpy.store,'cc_pf_strip'):
@@ -134,7 +135,7 @@ label cho_progress_init:
             ]
 
             ],
-            icons = [None, None] #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_yellow"]]
             )
 
     $ cc_favor_list = [
@@ -157,7 +158,8 @@ label cho_progress_init:
             ]
 
             ],
-            icons = ["interface/huff.png", "interface/slyt.png"] #if a tier doesn't need an icon replace with None
+            icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
 
     $ cc_requests_list = [

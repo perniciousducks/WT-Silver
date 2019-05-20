@@ -581,6 +581,7 @@ init python:
             for arg, value in kwargs.iteritems():
                 try:
                     self.body[str(arg)][0] = value
+                    self.body[str(arg)][4] = False
                 except KeyError:
                     raise Exception('Character: "'+str(arg)+'" body part was not defined for "'+self.char+'" character class.')
             self.update_paths("body")
@@ -645,6 +646,7 @@ init python:
                     self.clothing[object.type][0] = object
                     self.clothing[object.type][4] = False
             self.cached = False
+            update_chibi_image(self.char)
             
         def unequip(self, *args):
             if 'all' in args:
@@ -658,6 +660,7 @@ init python:
                     except KeyError:
                         raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
+            update_chibi_image(self.char)
             
         def strip(self, *args):
             if 'all' in args:
@@ -688,6 +691,7 @@ init python:
                         except KeyError:
                             raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
+            update_chibi_image(self.char)
             
         def wear(self, *args):
             if 'all' in args:
@@ -717,6 +721,7 @@ init python:
                         except KeyError:
                             raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
+            update_chibi_image(self.char)
             
         def toggle_wear(self, type):
             if 'makeup' == type:

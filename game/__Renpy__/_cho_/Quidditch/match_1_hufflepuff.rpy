@@ -691,8 +691,12 @@ label hufflepuff_match:
     call cho_main("", "upset", "angry", "angry", "L")
     call her_main("But who caught the Snitch?", mouth="open", eye="wide")
     call cho_main("", "base", "angry", "raised", "L")
+    $ cho_class.set_body(armright="arm_snitch_r")
+    with d3
     ">Cho waves the snitch in front of her."
     call her_main("", mouth="mad", eye="shocked")
+    $ cho_class.set_body(armright="arm_down_r")
+    $ cho_class.body['armright'][4] = True
     call cho_main("My first ever win this season and you didn’t even notice it! No one did thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
     call her_main("Oh...", mouth="normal", eye="shocked")
     call cho_main("", "upset", "closed", "angry", "L")

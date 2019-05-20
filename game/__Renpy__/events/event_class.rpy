@@ -10,6 +10,7 @@ init python:
         events = []
         
         icons = []
+        iconset = []
         
         # Private attributes
         _tier     = 0
@@ -21,8 +22,14 @@ init python:
 
             if self.events == []:
                 raise Exception('Events: "events" list was not defined in event_class.')
-
+                
             self._max_tiers = len(self.events)
+                
+            if self.iconset == []:
+                raise Exception('Events: "iconset" list was not defined in event_class. You need to add at least one set of icons.')
+            elif len(self.iconset) < self._max_tiers:
+                for i in xrange(self._max_tiers-len(self.iconset)):
+                    self.iconset.append([self.iconset[0][0], self.iconset[0][1]])
 
             for i in xrange(self._max_tiers):
                 for j in xrange(len(self.events[i])):
@@ -54,12 +61,13 @@ init python:
 
         def getMenuText(self):
             heart_list = []
+            imagepath = "interface/icons/small/"
             menu_text = ""
             for event in self.events[self._tier]:
                 if event[1] == True:
-                    heart_list.append("interface/icons/small/star_yellow.png")
+                    heart_list.append(imagepath+self.iconset[self._tier][1]+".png")
                 else:
-                    heart_list.append("interface/icons/small/star_empty.png")
+                    heart_list.append(imagepath+self.iconset[self._tier][0]+".png")
                     
             # Before Text hint
             if self.hint:
@@ -68,7 +76,7 @@ init python:
             # Before Text icon
             if len(self.icons) > 0:
                 if self.icons[self._tier]:
-                    menu_text += "{image="+self.icons[self._tier]+"} "
+                    menu_text += "{image="+imagepath+self.icons[self._tier]+".png} "
                 
             # Main Text
             if self.title:
@@ -79,6 +87,12 @@ init python:
                 menu_text += "{image="+heart+"}"
 
             return menu_text
+            
+        def fail(self):
+            self.counter -= max(0, self.counter-1)
+            self.points -= 1
+            self.events[self._tier][self._points][1] = False
+            return
             
         # Reset the event completely
         def reset(self):

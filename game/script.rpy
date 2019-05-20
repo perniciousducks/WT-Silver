@@ -224,6 +224,57 @@ image title_ani: #Main title animation.
         pause.1
         repeat
         
+    #sparkle
+    contains:
+        subpixel True
+        xpos 798
+        ypos 200
+        xanchor 0.5
+        yanchor 0.5
+        zoom 0.0
+        "title/sparkle.png"
+        linear 0.8 zoom 1.0
+        linear 0.5 zoom 0.0
+        pause 5
+        repeat
+        
+    #shine silver (synchronized)
+    contains:
+        subpixel True
+        xpos 848
+        ypos 230
+        xanchor 0.5
+        yanchor 0.5
+        zoom 0.0
+        "title/sparkle.png"
+        pause 1.3
+        linear 0.5 zoom 1.0
+        linear 0.5 zoom 0.0
+        
+        xpos 870
+        ypos 205
+        linear 0.5 zoom 1.0
+        linear 0.5 zoom 0.0
+        
+        xpos 914
+        ypos 227
+        linear 0.5 zoom 1.0
+        linear 0.5 zoom 0.0
+        
+        xpos 948
+        ypos 233
+        linear 0.5 zoom 1.0
+        linear 0.5 zoom 0.0
+        
+        xpos 999
+        ypos 226
+        linear 0.5 zoom 1.0
+        linear 0.5 zoom 0.0
+        pause 12.6
+        repeat
+        
+        
+        
 image menu_ani:
     contains:
         "title/00b.png"

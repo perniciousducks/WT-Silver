@@ -20,7 +20,10 @@
     # Groundwork for future save compatibility patches
     def check_save_compatibility(page, slot):
         if renpy.slot_json(page+"-"+slot) != None:
-            save_version = renpy.slot_json(page+"-"+slot)['_version']
+            try:
+                save_version = renpy.slot_json(page+"-"+slot)['_version']
+            except:
+                return False
             if float(save_version) < float(config.version):
                 return False
             return True

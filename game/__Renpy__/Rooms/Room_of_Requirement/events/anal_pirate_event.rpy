@@ -68,6 +68,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         menu:
             "\"I reckon I'll raise the anchor 'n jus' set sail!\"":
                 play music "music/pirate.mp3" fadein 1 fadeout 1
+                play bg_sounds "sounds/CreakingShip.mp3"
                 call her_main("Just set sail, captain?!","angry","wide",ypos="head")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting.
                 g4 "*SPIT!*"
@@ -150,6 +151,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "\"Lather me canon balls first. Lubricate me pegleg!\"":
                 call her_main("Oh... Alright...","open","base",ypos="head")
                 play music "music/pirate.mp3" fadein 1 fadeout 1
+                play bg_sounds "sounds/CreakingShip.mp3"
 
                 #SUCKING
                 call her_chibi("hide")
@@ -507,6 +509,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call ctc
 
         play music "music/pirate.mp3" fadein 1 fadeout 1
+        play bg_sounds "sounds/CreakingShip.mp3"
 
         #INSERTION
         call her_main("Ah... Ah...","open","closed")
@@ -678,6 +681,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     show screen blkfade
 
     stop music fadeout 1.0
+    stop bg_sounds
 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 

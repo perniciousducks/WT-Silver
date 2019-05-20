@@ -844,7 +844,7 @@ init python:
                             
                         if score > high_score:
                             high_score = score
-                            position = x + y * 3
+                            position = (x, y)
                             
                             
             return [high_score, position]

@@ -173,8 +173,8 @@ init python:
                 high_score_pos = tuple_my[1]
                 high_score_card = card
                 
-        y = int(math.floor(int(high_score_pos)/3))
-        x = int(high_score_pos)-(y*3)
+        y = high_score_pos[1]
+        x = high_score_pos[0]
         del shown_backside[enemy_deck.index(high_score_card)]
         del enemy_deck[enemy_deck.index(high_score_card)]
         table_cards[x][y] = high_score_card        

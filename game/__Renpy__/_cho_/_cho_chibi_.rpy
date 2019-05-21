@@ -235,4 +235,6 @@ init python:
                 else:
                     if animation:
                         cho_chibi_shoes = imagepath+"cc_shoes"+animation+".png"
+            else:
+                cho_chibi_shoes = "blank"
         return

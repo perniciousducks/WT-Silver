@@ -2,7 +2,7 @@
 
 ### Cho Chibi ###
 
-label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):  
+label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):
     $ cho_chibi_status = ""
     call update_cho_chibi_uniform
 
@@ -70,7 +70,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
     hide screen bld1
     hide screen blktone
     with d3
-    
+
     $ cho_chibi_status = "move"
     call update_cho_chibi_uniform
 
@@ -166,6 +166,8 @@ screen cho_stand():
         add cho_chibi_top      xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_bottom   xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_robe     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        if cho_cloth_pile:
+            add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
 
 screen cho_walk():
     tag cho_chibi
@@ -182,7 +184,8 @@ screen cho_walk():
         add cho_chibi_top          xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_bottom       xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_robe         xzoom cho_chibi_flip zoom (1.0/scaleratio)
-
+        if cho_cloth_pile:
+            add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
 
 
 label flying_cho_chibi(flying=True):
@@ -206,7 +209,7 @@ label flying_cho_chibi(flying=True):
 label update_cho_chibi_uniform:
     $ update_chibi_image("cho")
     return
-    
+
 init python:
     def update_chibi_image(name):
         if name == "cho":
@@ -215,20 +218,20 @@ init python:
             status = "_"+cho_chibi_status if cho_chibi_status else ""
             global cho_chibi_top, cho_chibi_bottom, cho_chibi_robe, cho_chibi_shoes, cho_chibi_walk_shoes, cho_chibi_stand, cho_chibi_walk
             cho_chibi_top, cho_chibi_bottom, cho_chibi_robe, cho_chibi_shoes, cho_chibi_walk_shoes, cho_chibi_stand, cho_chibi_walk, cho_chibi_shoes = "blank", "blank", "blank", "blank", "blank", "ch_cho blink", "ch_cho walk", "ch_cho walk_shoes"
-            
+
             if cho_chibi_animation == "fly":
                 cho_chibi_stand = "ch_cho fly_idle"
                 cho_chibi_walk = "ch_cho fly"
-            
+
             if cho_class.get_worn("top"):
                 cho_chibi_top = imagepath+"cc_top"+animation+status+".png" if animation else imagepath+"cc_top.png"
 
             if cho_class.get_worn("bottom"):
                 cho_chibi_bottom = imagepath+"cc_bottom"+animation+status+".png" if animation else imagepath+"cc_bottom.png"
-                    
+
             if cho_class.get_worn("robe"):
                 cho_chibi_robe = imagepath+"cc_robe"+animation+status+".png" if animation else imagepath+"cc_robe.png"
-                    
+
             if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"):
                 if not status == "_move":
                     cho_chibi_shoes = imagepath+"cc_shoes"+animation+".png"

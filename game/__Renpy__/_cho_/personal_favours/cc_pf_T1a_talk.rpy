@@ -412,7 +412,7 @@ label cc_pf_talk_T1_intro_E2:
     jump end_cho_talk_event
 
 
-label cc_pf_talk_T1_E3: # Incomplete. Not posed.
+label cc_pf_talk_T1_E3: # Complete. Need review. Not posed.
     m "Care to tell me more about Quidditch?"
     cho "Of course, [cho_genie_name].{w} I always love talking about Quidditch!"
     m "Yeah, yeah... I know."
@@ -425,62 +425,171 @@ label cc_pf_talk_T1_E3: # Incomplete. Not posed.
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
     cho "{size=-4}I knew I shouldn't have told him...{/size}"
-    cho "Why do you have to keep bringing that up, Sir? What's past is in the past..."
+    cho "Sir, Why do you have to keep bringing that up?"
+    cho "What's past is in the past..."
     m "I believe otherwise..."
-    g4 "Did you already forget that he's our enemy?!"
+    g4 "Have you already forgetten that he's our enemy?!"
     m "Your relationship with him is of the utmost importance right now!"
     m "I need to know every tiny bit of detail about the two of you."
-    g4 "What you were doing when you were together. How often you made out with him. The exact locations where he touched you..."
-    cho "What?!"
-    m "As well as his sexual preferences. Secret fetishes he might have. Everything!"
-    cho "I will not tell you any of those things!"
-    g4 "Didn't you say you wanted to win?"
-    cho "I did, Sir... But..."
-    m "What did he like about you? Tell me! Maybe we can use it to our advantage!"
-    cho "Okay, [cho_genie_name].{w} I'm willing to cooperate..."
-    cho "Cedric was never too interested in me. His mind was always somewhere else. Drifting off..."
-    cho "He always had this dead look in his eyes. Except for when-"
+    m "His sexual preferences. Secret fetishes he might have. That sort of stuff..."
+    cho "Sir that's a very personal thing to ask for!"
+    cho "I'll not tell you about any of that!"
+    m "[cho_name], we need to find something we can use against him. To our advantage!"
+    cho "And you believe that that would help us win?"
+    m "Precisely."
+    cho "(...)"
+    cho "Very well, [cho_genie_name]..."
+    cho "I'll tell you what I know about him."
+    cho "Cedric was always a bit of a loner..."
+    cho "He was cold. Focused. Never showed too much affection towards me. Except for-"
     cho "(...)"
     m "Yes? Go on..."
-    cho "He had this weird, unhealthy obsession with my panties, Sir."
-
+    cho "I believe he had a bit of an obsession with my panties, Sir."
     if huffl_matches_won == 0:
         m "A panties obsession? So so..."
     else:
-        g9 "Ha! I knew it!"
+        g9 "*Ha!* Called it!"
+    cho "It was almost creepy how often he tried to look up my skirt..."
+    cho "I mean who would do such a thing?"
+    m "Yes, yes,... how terrible of him..."
 
-    cho "It was almost creepy how often he tried to look up my skirt."
-    cho "And he’d always walk behind me when we went up the stairs, to get a better view I bet..."
-    m "Did you ever show them to him?"
-    cho "My panties?"
-    m "No, your good manners... Yes, your panties!"
-    cho "Why would I have wanted to? We weren’t that close!"
-    m "So you were not close enough for a healthy relationship?"
-    cho "What?"
-    m "What kind of girl doesn't show her panties to her beloved?"
-    cho "That’s just ridiculous..."
+    menu:
+        "-Jerk off while she's talking-":
+            $ cho_jerk_off_counter += 1
+            $ masturbating = True
 
-    if huffl_matches_won == 0:
-        m "But, that made me think..."
-        m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
-        cho "Like how?"
-        m "We use them as a distraction!"
-        m "Now we only have to find out how to show them off properly during the game."
-        cho "I have to say I don’t like this notion one bit. But it might be worth a try..."
+            hide screen cho_chang
+            call nar(">You reach under the desk and grab your cock...")
+
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+            show screen blktone5
+            show screen bld1
+            with d3
+
+            g9 "Please tell me more about your panties!"
+
+        "-Participate in the conversation-":
+            $ masturbating = False
+            m "(No, I need to focus!)"
+            m "(This might be useful information in our game against him...)"
+            m "Please, carry on..."
+            cho "Of course, Sir."
+
+    if masturbating:
+        cho "That's an oddly specific question, don't you think?"
+        g4 "Come on, girl! Which were the ones he liked the most?"
+        cho "*Uhm*..."
+        cho "I never wore panties too often..."
+        cho "At least not those fancy ones the other girls are wearing."
+        g4 "*Argh!* I'd love to see those!"
+        cho "If you can even call them that..."
+        cho "Most of them look like shoelaces!"
+        g4 "What a bunch of sluts!"
+        cho "They're all a bunch of sluts!!!"
+        call nar("*Fap* *Fap* *Fap*...")
+        cho "You should see them, [cho_genie_name]!"
+        cho "They wear their skirts so low, you just have to wonder how they haven't fallen off yet..."
+        g4 "Indeed, I'd love to see that!"
+        cho "And pull their panty-string up and over their hip bones..."
+        g4 "Yes! So fucking slutty!"
+        cho "They look like arrows pointing at their slutty cunts!"
+        g4 "*Fuck!* That did it!!!"
+
+        # Genie cums.
+
+        cho "As for me, panties have to be practical, first and formost!"
+        g4 "So you can quickly get them off, you whore!"
+
+        # Cums again.
+
+        cho "And there needs to be enough fabric to soak up all the sweat..."
+        g4 "I bet you are so wet right now!"
+
+        # Genie finished.
+
+        cho "(...)"
+        cho "Sir, would it be alright if I head off now?"
+        g9 "Already? Do you have to be somewhere?"
+        cho "No?"
+        g9 "Did our little talk about panties maybe... excited you?"
+        cho "What? No of course not!"
+
+        if daytime:
+            cho "I simply have to go to my next lection now..."
+            cho "Or I will be late again."
+        else:
+            cho "But if you expect me to do well during our next \"Hufflepuff\" game, then I'll require some sleep..."
+
+        m "Of course. You may go..."
+        cho "Thank you, Sir."
+        cho "Until next time."
+
+        # Cho leaves.
+
+        g9 "Sweet little wank I had there."
+        m "(...)"
+        m "I hope she'll show me her panties aswell eventually..."
+        g9 "Would love to see them!"
+
+        jump end_cho_talk_event
+
     else:
-        m "Well, it worked."
-        m "Beating him at Quayditch was almost too easy!"
-        cho "Quidditch, Sir..."
-        m "All we had to do was put some good-old panties in front of his face..."
-        g4 "And he was like a wild goat chasing after them!"
-        cho "A goat?"
-        m "Yes. Don't you have those here?"
-        cho "I'm still surprised how well that worked out, if I'm honest."
-        m "You’re welcome."
+        cho "He’d always walk behind me when we went up the stairs, to get a better view I bet..."
+        m "Did you ever show them to him?"
+        cho "My panties?"
+        m "No, your good manners...{w} Yes, your panties!"
+        cho "Why would I have wanted to?"
+        m "What kind of girl doesn't show her panties to her beloved?"
+        cho "That’s just ridiculous..."
 
-    # Add ending
+        if huffl_matches_won == 0:
+            m "But, that made me think..."
+            m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
+            cho "Like how?"
+            m "We use them as a distraction!"
+            m "Now we only have to find out how to show them off properly during the game."
+            cho "I have to say I don’t like this notion one bit."
+            cho "But it might be worth a try..."
+        else:
+            m "Well, it worked."
+            m "Beating him at Quayditch was almost too easy!"
+            cho "Quidditch, Sir..."
+            m "All we had to do was put some good-old panties in front of his face..."
+            g4 "And he was like a wild goat chasing after them!"
+            cho "A goat?"
+            m "Yes. Don't you have those here?"
+            cho "Goats don't chase after panties, Sir..."
+            m "They do where I'm from..."
+            cho "(...)"
+            cho "But you were correct with your assumption, Sir."
+            cho "I'm surprised how well that worked out in our favour."
+            cho "He really \"does\" love panties..."
+            m "Who doesn't..."
 
-    jump end_cho_talk_event
+        cho "Sir, if you don't mind..."
+        if daytime:
+            cho "I'm already late for classes."
+            cho "I really should be going now..."
+        else:
+            cho "It's getting late."
+            cho "I really should head to bed now..."
+
+        m "Of course. You are dismissed."
+        cho "Thank you, Sir."
+        if daytime:
+            cho "Until next time."
+        else:
+            cho "Good night."
+
+        # Cho leaves.
+
+        m "I wonder what colours they are..."
+
+
+        jump end_cho_talk_event
 
 
 
@@ -845,11 +954,11 @@ label cc_pf_talk_T2_intro_E2:
     jump end_cho_talk_event
 
 
-label cc_pf_talk_T2_E3: # Incomplete.
+label cc_pf_talk_T2_E3: # Complete. Needs review.
     g9 "[cho_name], how is my favourite Quidditch player doing today?"
     call cho_main("Me?","soft","base","raised","mid")
     m "I don't see anyone else in here besides the bird..."
-    g9 "Come a bit closed, would you."
+    g9 "Come a bit closer, would you."
     call cho_main("Of course...","annoyed","base","base","R")
 
     call cho_chibi("stand","desk","base")
@@ -858,7 +967,7 @@ label cc_pf_talk_T2_E3: # Incomplete.
     g9 "So. How is school life?"
     m "I need to stay \"on top\" of all the latest \"hot goss\"..."
     call cho_main("Sir, I don't tend to pay attention to that sort of stuff.","soft","closed","base","mid")
-    m "You must have at least heard something raunchy here at the school?"
+    m "You must at least have heard something raunchy here at the school?"
     call cho_main("*Uhm*...{w} well...","annoyed","base","base","R")
 
     menu:
@@ -1009,66 +1118,124 @@ label cc_pf_talk_T2_E3: # Incomplete.
 
             jump end_cho_talk_event
 
-        "\"Luna\"" if luna_unlocked:
-            cho "Luna? What about her?"
-            m "Aren't you two practically roommates?"
-            g9 "I bet there are some fun memories you shared with her!"
-            m "Mind telling me about them?"
+        #"\"Luna\"" if luna_unlocked:
+            #cho "Luna? What about her?"
+            #m "Aren't you two practically roommates?"
+            #g9 "I bet there are some fun memories you shared with her!"
+            #m "Mind telling me about them?"
 
             # Add section here.
 
-            cho "Don't tell me you also buy favors from her?!"
-            m "No, of course not!"
-            m "She's more of a-..."
-            m "It's complicated..."
+            #cho "Don't tell me you also buy favors from her?!"
+            #m "No, of course not!"
+            #m "She's more of a-..."
+           # m "It's complicated..."
 
             # Add ending here.
 
+        "\"Slytherin's Team\"": # Needs review.
+            cho "Please, Sir. I'm trying my best to suppress even thinking of them..."
 
+            # Malfoy
+            cho "It was only yesterday that I had that stinking Malfoy boy snickering behind my back as I walked past him."
+            if masturbating:
+                cho "I can only imagine the things that were on his mind."
+            else:
+                m "Yeah? Like what?"
+                cho "It's obvious if you ask me, Sir."
+                cho "After all, he's just like any boy at this school...{w} They are all pervs..."
+            cho "He even had the audaciousness to whistle at me, in front of everybody!"
+            cho "And shout about what a \"great arse\" I have, and that he couldn't wait to \"beat it!\""
+            if masturbating:
+                g4 "Great minds think alike!"
+                g4 "*Argh!* You whore!"
+            else:
+                g9 "Seems to me like he enjoyed the view!"
+            cho "Next time he does it I'll turn him into a filthy ferret, I swear!"
+            if masturbating:
+                g4 "*Hah!* You can do whatever you want with me too, if that's what turns you on baby!"
+                g4 "I'd love to be your little pet ferret!"
+            else:
+                m "Your ass is a real head turner, isn't it?"
+                cho "If I'm honest, I would be disappointed if it wasn't..."
+                m "Why don't you tease him a bit more then? Get him hooked on it..."
+                m "It would be to our benefit, don't you think?"
+                cho "*Hmmm* Yes I could give him a peak once or twice."
+                cho "For as long as I don't have to let him touch it..."
+                m "..."
+                m "Anything else you could tell me?"
 
-        "\"Slytherin's Team\"":
-            pass
+            # Crabbe & Goyle
+            if masturbating:
+                cho "Then there are the two Slytherin beaters, Crabbe and Goyle..."
+            else:
+                cho "Well, there are also the Slytherin's beaters, Crabbe and Goyle..."
+            cho "Malfoy's extraordinarily dense thugs..."
+            cho "They've been strutting around school with their two bats..."
+            cho "Hitting any girl's bum that happens to be in their reach..."
 
-            # Cho tells you more about the boys at her school,
-            # and how the Slytherin team is treating her...
+            if masturbating:
+                cho "It's like they use them as target practice."
+                g4 "*Argh!* How nasty!"
+                cho "I was lucky enough to spot them before they had a chance to try it on me."
+                cho "If they hit me with those things I wouldn't be able to sit on a broom for weeks!"
+                cho "My butt would be so red and sensitive even sitting on a broom would make me squirm."
+                g4 "*Yes!* I wouldn't mind borrowing one of those bats!"
+                cho "Not even mentioning what the others would think if it looked like I had been spanked red raw."
+                g4 "*Yes!* That did it!"
 
-            # Writing:
-            # Their beaters are the worst!
-            # They keep on hitting my arse with their stupid sticks whenever I walk past them.
-            # It's like my bum has become their new target practice!
-            # I swear if they continue with it I might just-... I will snap!
+                # Genie cums.
 
+                g4 "*Argh!* You nasty slut!"
 
+                # Cums again.
 
-    ### Maybe use this writing somewhere. ###
-    #cho "In any case, dealing with him won't be an issue at all! It's their team I'm more worried about..."
-    #cho "You don't just win by catching the snitch first. You also have to be leading in points!"
-    #m "(Counting Cards in \"Black Jack\" is easier than counting the score of this game...)"
-    #cho "If you catch the snitch too early, the game will be over."
-    #cho "That's how Slytherin won most of their games in the past. They win by letting the other seeker catch the Snitch..."
-    #m "(Those rules are so idiotic...)"
-    #cho "We can't just narrow down our focus on their seeker this time!"
-    #cho "For this one, we have to dismantle the other weak points in their team..."
-    #m "Who would be?"
-    #cho "Their beaters!"
-    #cho "I'm talking about Crabbe and Goyle, of course..."
-    #m "Of course..."
-    #m "(I have no idea who you are talking about, girl...)"
-    #m "And do you think can accomplish that?"
-    #cho "*Tzzz!* There would nothing be easier!"
-    #m "Yes?"
-    #cho "They're Slytherin's two brainless thugs!"
-    #cho "They aren't in the slightest bit devoted to their house!"
-    #cho "They don't play Quidditch to win the cup... They play to beat people up and get away with it..."
-    #cho "All I have to do is get them to play poorly..."
-    #m "And how will you manage that?"
-    #cho "Just leave that to me, Sir."
-    #cho "They would happily throw the towel with the right kind of... motivation."
-    #m "You've become quite the strategist, aren't you?"
-    #cho "You could say that, Sir..."
-    #g9 "How are you going to motivate them exactly?"
+                cho "*Ugh*... Sir, don't tell me you just..."
+                g9 "You did great, [cho_name]."
+                cho "Where could one acquire one of those bats you're speaking of?"
+                cho "You're kidding right..."
 
-    jump end_cho_talk_event
+            else:
+                cho "They aren't even allowed to make use of any Quidditch equipment outside the Quidditch pitch area!"
+                m "Aren't you a bit too harsh on them?"
+                cho "Sir, since when is sexual harassment tolerated at this school?"
+                m "I bet there are many girls that enjoy the occasional spanking..."
+                cho "What?"
+                m "Next time you should ask one of those girls..."
+                cho "As if any of those would enjoy it, Sir! Don't be ridiculous!"
+                m "They might just be too embarrassed to admit it..."
+                m "Anyhow, do you have any suggestions on how we might deal with them?"
+                m "To make them blow their game against you..."
+                cho "Luckily for us, they're not in the slightest bit devoted to their house... Or their team..."
+                cho "You see, they don't play Quidditch to win... but as a warrant to beat up the opposing players instead..."
+                cho "But... If I could get them to play poorly..."
+                m "Could you manage that?"
+                cho "*Tzzz!* Nothing would be easier, Sir!"
+                cho "They would happily throw the towel with the right kind of... motivation. Don't you think?"
+                g9 "You've become quite the strategist!"
+                cho "If they like smacking asses that much, maybe I should just let them hit a girl that can take their feeble swings..."
+                m "Very good suggestion!"
+
+            cho "Would it be okay if I go now?"
+            if daytime:
+                cho "I'm late for classes..."
+            else:
+                cho "It's getting late..."
+
+            m "You know how I feel about that, girl."
+            m "I hate to see you leave..."
+            g9 "But I love to watch you go!"
+            cho "Sir..." # Annoyed
+
+            m "You are dismissed."
+            cho "Thank you, Sir."
+
+            # Cho leaves.
+
+            g4 "Go! Go! Ravenclaw!"
+            m "I have to admit, I'm a bit of a fanboy now..."
+
+            jump end_cho_talk_event
 
 
 

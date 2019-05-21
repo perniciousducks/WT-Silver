@@ -410,7 +410,7 @@ label play_sound(sound=""):
     # Interface
     if sound in ["scroll"]:
         $ renpy.play('sounds/scroll.mp3')
-    if sound in ["equip_inventory"]:
+    if sound in ["equip", "equip_inventory"]:
         $ renpy.play('sounds/cloth_sound.mp3')
 
     # Misc

@@ -27,6 +27,12 @@ label cho_init:
         $ cho_chibi_top           = "characters/cho/chibis/cc_cloth_shirt_r.png"
         $ cho_chibi_bottom        = "characters/cho/chibis/cc_cloth_skirt.png"
         $ cho_chibi_robe          = "characters/cho/chibis/blank.png"
+
+    if not hasattr(renpy.store,'cho_cloth_pile') or reset_persistants:
+        $ cho_cloth_pile = False
+        $ cho_pile_xpos = 440 # Right side of desk.
+        $ cho_pile_ypos = 425 # Bit below feet level.
+
     return
 
 label cho_progress_init:
@@ -123,7 +129,7 @@ label cho_progress_init:
 
             ],
             icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
-            iconset = [["heart_empty", "heart_blue"], ["heart_empty", "heart_yellow"]]
+            iconset = [["heart_empty", "heart_yellow"], ["heart_empty", "heart_green"]]
             )
 
     if not hasattr(renpy.store,'cc_pf_strip'):
@@ -135,13 +141,8 @@ label cho_progress_init:
             ]
 
             ],
-            iconset = [["heart_empty", "heart_yellow"]]
+            iconset = [["heart_empty", "heart_green"]]
             )
-
-    $ cc_favor_list = [
-        cc_pf_talk,
-        cc_pf_strip
-        ]
 
     if not hasattr(renpy.store,'cc_pr_manipulate'):
         $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", events = [
@@ -161,9 +162,5 @@ label cho_progress_init:
             icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
             iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
-
-    $ cc_requests_list = [
-        cc_pr_manipulate
-        ]
 
     return

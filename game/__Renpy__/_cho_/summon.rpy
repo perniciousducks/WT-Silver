@@ -145,22 +145,21 @@ label update_cho_favors:
 
     # Pre Hufflepuff
     if cho_tier == 1:
-        $ heart_color = "yellow"
+        $ cc_favor_list = [
+            cc_pf_talk
+            ]
 
     # Pre Slytherin
     elif cho_tier == 2:
-        $ heart_color = "green"
+        $ cc_favor_list = [
+            cc_pf_talk,
+            cc_pf_strip
+            ]
 
-    # Pre Gryffindor
-    elif cho_tier == 3:
-        $ heart_color = "red"
-
-    # After winning the cup.
-    else:
-        $ heart_color = "blue"
-
-    $ cc_pf_talk.heart_color = heart_color
-    $ cc_pf_strip.heart_color = heart_color
+    python:
+        for i in cc_requests_list:
+            if i.tier != cho_tier:
+                i.tier = cho_tier
 
     return
 
@@ -193,9 +192,17 @@ label cho_requests_menu:
 
 label update_cho_requests:
 
+    # Pre Hufflepuff
+    if cho_tier in [1,2]:
+        $ cc_requests_list = [
+            cc_pr_manipulate
+            ]
+
     # Set event tier to current Cho tier if they are different
-    if cc_pr_manipulate.tier != cho_tier:
-        $ cc_pr_manipulate.tier = cho_tier
+    python:
+        for i in cc_requests_list:
+            if i.tier != cho_tier:
+                i.tier = cho_tier
 
     return
 

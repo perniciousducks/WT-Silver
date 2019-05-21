@@ -109,6 +109,7 @@ label cc_pf_strip_T1_intro_E1:
     # Remove top.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
+    $ cho_cloth_pile = True
     show screen cho_chang
     with d3
     pause.5
@@ -263,6 +264,7 @@ label cc_pf_strip_T1_intro_E1:
 
     hide screen cho_chang
     $ cho_class.wear("all")
+    $ cho_cloth_pile = False
     call cho_main("","angry","angry","angry","mid")
     pause.8
 
@@ -347,6 +349,7 @@ label cc_pf_strip_T1_intro_E3:
     # Remove top.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
+    $ cho_cloth_pile = True
     call update_cho_chibi_uniform
     show screen cho_chang
     with d3
@@ -406,6 +409,7 @@ label cc_pf_strip_T1_intro_E3:
 
         hide screen cho_chang
         $ cho_class.wear("all")
+        $ cho_cloth_pile = False
         call update_cho_chibi_uniform
         call cho_main("","angry","closed","angry","mid")
         pause.8
@@ -635,6 +639,7 @@ label cc_pf_strip_T1_E3: # Repeats
     # Remove top & robe.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
+    $ cho_cloth_pile = True
     call update_cho_chibi_uniform
     show screen cho_chang
     with d3
@@ -700,7 +705,7 @@ label cc_pf_strip_T1_E3: # Repeats
             call play_sound("desk")
             pause 2
 
-            call cho_chibi("stand","on_desk","on_desk")
+            call cho_chibi("stand","on_desk","on_desk", flip=False)
             hide screen bld1
             hide screen blkfade
             with d3
@@ -714,11 +719,11 @@ label cc_pf_strip_T1_E3: # Repeats
             with d3
             pause.2
 
-            call cho_chibi("stand","on_desk","on_desk", flip=True)
+            call cho_chibi("stand","on_desk","on_desk", flip=True) # Facing the door.
             with d3
             pause.8
 
-        "\"Let Granger have a good luck at you!\"":
+        "\"Let Granger have a good look at you!\"":
             call cho_main("I'll make sure of it, Sir!","quiver","narrow","angry","mid")
 
             call cho_walk(xpos="570",ypos="base", speed=2)
@@ -775,10 +780,62 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             $ cho_mood = 0
             $ her_mood += 10
 
-            # Hermione steals Cho's clothes and runs off.
+            cho "You see, Granger..."
+            cho "Tits aren't everything!"
 
-            # Cho has to sneak out naked.
-            "Dev Note" "This favour ending hasn't been written yet."
+
+            # Hermione walks towards the desk to pick up Cho's clothing.
+            call her_walk(xpos="desk", ypos="base", speed=1.6)
+            pause.2
+            if cho_chibi_xpos == 570: # Close to the middle.
+                call cho_chibi("stand","570","base", flip=False) # Facing the desk.
+                with d3
+
+            pause.6
+
+            cho "What are you doing, Granger?"
+
+            # Hermione picks them up and runs off.
+            call bld("hide")
+            pause.2
+            call play_sound("equip")
+            $ cho_cloth_pile = False
+            pause.5
+
+            cho "My clothes!"
+
+            call play_sound("running")
+            call her_walk(xpos="door", ypos="base", speed=1.4)
+
+            cho "Hey!"
+            # Hermione leaves out of the door.
+            call her_chibi("leave")
+
+            cho "Give them back you bitch!"
+
+            # Cho runs out the door.
+            if cho_chibi_xpos == 350: # On desk
+                call play_sound("climb_desk")
+                show screen blkfade
+                with d3
+                pause 1
+
+                hide screen bld1
+                hide screen blkfade
+                call cho_chibi("stand","desk","base",flip=True)
+                with d3
+
+                call play_sound("running")
+                call cho_walk(action="leave", speed=1.2)
+
+            else:
+                call play_sound("running")
+                call cho_walk(action="leave", speed=1)
+
+            call bld
+            m "Did she just?"
+            m "(...)"
+            m "I don't think she's coming back..."
 
             return
 
@@ -882,6 +939,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             # Cho gets dressed.
             hide screen cho_chang
             $ cho_class.wear("all")
+            $ cho_cloth_pile = False
             call update_cho_chibi_uniform
             hide screen blkfade
 
@@ -992,6 +1050,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             # Cho gets dressed.
             hide screen cho_chang
             $ cho_class.wear("all")
+            $ cho_cloth_pile = False
             call update_cho_chibi_uniform
             show screen cho_chang
             with d3

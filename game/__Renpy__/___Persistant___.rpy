@@ -78,6 +78,7 @@ label __init_variables:
         $ ccg1 = "herm"
         $ ccg2 = 1
         $ ccg3 = "gene"
+        $ loopimage = None
         $ cg_image = "e2"
         $ cg_path  = "images/CG/"+cg_image+".png"
 
@@ -103,9 +104,6 @@ label __init_variables:
     if not hasattr(renpy.store,'reset_cho_content'):
         $ reset_luna_content = False
         $ reset_cho_content = False
-
-    if not hasattr(renpy.store,'loopimage'):
-        $ loopimage = None
 
     #Rooms
     call room_objects_init

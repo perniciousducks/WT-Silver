@@ -270,6 +270,7 @@ label change_quidditch_tactics:
 
                 call cho_chibi("hide")
                 call flying_cho_chibi(flying=False) # Reset chibi images.
+                $ cho_chibi_flip = 1
                 call cho_chibi("stand","mid","base")
                 hide screen blkfade
 
@@ -288,10 +289,7 @@ label change_quidditch_tactics:
                 hide screen cho_chang
                 with d3
 
-                call cho_chibi("hide")
-                call flying_cho_chibi(flying=True) # Change chibi images to flying.
-                call cho_walk("mid", "200", 0.3)
-                with d3
+                call cho_chibi(action="fly")
 
             "-Customize quidditch outfit-":
                 call cho_main(face="neutral", xpos="mid", ypos="base")
@@ -334,12 +332,12 @@ label demonstrate_tactic(position=""):
     # The *ASS* position!
     if position == "front":
         m "Now turn away from me."
-        call cho_walk("580","200", 0.5)
+        call cho_walk("580","150", 0.5)
 
         call cho_main("Like this?","soft","base","base","R", ypos="head")
         m "A bit higher maybe..."
 
-        call cho_walk("600", "150", 0.3)
+        call cho_walk("600", "100", 0.3)
 
         call bld
         m "Yes, very good. Keep that position."

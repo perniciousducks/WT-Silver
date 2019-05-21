@@ -1,5 +1,7 @@
 label a_bad_time_to_disrobe:
+    show screen blkfade
     call h_equip_temp_outfit(hg_standart_school_ITEM)
+    call room("main_room")
     menu:
         "Part 1":
             jump a_bad_time_to_disrobe_part_1
@@ -8,9 +10,9 @@ label a_bad_time_to_disrobe:
 
 
 label a_bad_time_to_disrobe_part_1:
-    call room("main_room")
-    show screen blkfade
-    with d3
+    $ temp_time = daytime
+    $ daytime = True
+    $ interface_color = "gold"
 
     nar "In this story the genie has found an invisibility cloak."
     nar "And with the cloak comes great opportunities"
@@ -56,8 +58,9 @@ label a_bad_time_to_disrobe_part_1:
     show screen day_to_night
     with d3
 
-    nar "Later that evening. Hermione returns."
     $ daytime = False
+    $ interface_color = "gray"
+    nar "Later that evening. Hermione returns."
     call her_chibi("stand","desk","base")
 
     hide screen day_to_night
@@ -92,9 +95,10 @@ label a_bad_time_to_disrobe_part_1:
     show screen blkfade
     with d3
 
-    show screen quistion_pop_up("Hermione will remember that")
+    show screen quistion_pop_up("{color=#cbcbcb}Hermione will remember that{/color}")
     nar "Hermione returns the next morning, looking nervous but more determined than yesterday."
     $ daytime = True
+    $ interface_color = "gold"
 
     hide screen quistion_pop_up
     call her_chibi("stand","desk","base")
@@ -110,8 +114,9 @@ label a_bad_time_to_disrobe_part_1:
     show screen day_to_night
     with d3
 
-    nar "Later that evening a distraught looking Hermione enters the office. "
     $ daytime = False
+    $ interface_color = "gray"
+    nar "Later that evening a distraught looking Hermione enters the office. "
 
     call her_chibi("top_naked","desk","base")
     call h_equip_temp_outfit(hg_standart_school_noshirt_ITEM)
@@ -159,13 +164,17 @@ label a_bad_time_to_disrobe_part_1:
     call her_chibi("leave")
     "The End."
 
+    $ daytime = temp_time
+    if daytime:
+        $ interface_color = "gold"
+    else:
+        $ interface_color = "gray"
     call room(hide_screens=True)
     call reset_hermione
     call h_unequip_temp_outfit
     jump enter_room_of_req
 
 label a_bad_time_to_disrobe_part_2:
-    show screen blkfade
     $ temp_time = daytime
     $ daytime = True
     call music_block
@@ -234,8 +243,8 @@ label a_bad_time_to_disrobe_part_2:
     with d3
 
     nar "Later that evening"
-    $ temp_time = daytime
     $ daytime = False
+    $ interface_color = "gray"
     call music_block
 
     call h_unequip_temp_outfit()
@@ -319,11 +328,15 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush",ypos="head")
 
     call her_chibi("leave")
-
-    "The end"
+    call blkfade
+    centered "{size=+10}{color=#cbcbcb}The end{/size}"
 
     call room(hide_screens=True)
     $ daytime = temp_time
+    if daytime:
+        $ interface_color = "gold"
+    else:
+        $ interface_color = "gray"
     call music_block
     call reset_hermione
     call set_her_action("none")

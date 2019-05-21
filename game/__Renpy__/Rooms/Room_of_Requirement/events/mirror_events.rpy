@@ -132,9 +132,11 @@ label prev_at_hogwarts:
 
 label a_spaced_out_conversation:
     $ temp_time = daytime
+    $ interface_color = "gray"
     $ daytime = False
 
     call room("main_room")
+    call music_block
 
     hide screen genie
     hide screen chair_right
@@ -476,6 +478,10 @@ label a_spaced_out_conversation:
     "The End"
 
     $ daytime = temp_time
+    if daytime:
+        $ interface_color = "gold"
+    else:
+        $ interface_color = "gray"
     call room(hide_screens=True)
     $ fire_in_fireplace = False
     hide screen fireplace_fire

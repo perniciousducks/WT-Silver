@@ -29,7 +29,7 @@ label cho_panties_response_T2:
         m "That is correct."
         call cho_main("And you had my panties this whole time?","soft","narrow","raised","mid")
         m "Yup."
-        call cho_main("And you just gave them back to me covered in cum...","annoyed","narrow","base","mid")
+        call cho_main("And you just gave them back to me covered in spunk...","annoyed","narrow","base","mid")
         m "That makes sense to me..."
         call cho_main("So you admit that you did it?","soft","narrow","angry","mid")
         m "It's not my cum..."

@@ -790,7 +790,6 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             if cho_chibi_xpos == 570: # Close to the middle.
                 call cho_chibi("stand","570","base", flip=False) # Facing the desk.
                 with d3
-
             pause.6
 
             cho "What are you doing, Granger?"

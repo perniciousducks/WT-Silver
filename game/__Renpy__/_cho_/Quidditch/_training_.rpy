@@ -232,19 +232,26 @@ label quidditch_training_intro_2:
 ### Quidditch Tactics ###
 
 label change_quidditch_tactics:
-    $ cho_flying = False
-    $ cho_outfit_last.save()
+    show screen blkfade
     call hide_characters
-    hide screen bld1
+    with d3
+
+    $ cho_outfit_last.save()
+
+    $ cho_flying = False
     call cho_chibi("stand","mid","base")
+
     show screen chair_left
     show screen desk
     call update_gen_chibi # Reset Chibi.
     call gen_chibi("stand","desk","base")
-    with fade
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
     call update_cho_chibi_uniform
+
+    hide screen bld1
+    hide screen blkfade
+    with fade
 
     label demonstrate_quidditch_tactics:
     call bld
@@ -266,15 +273,14 @@ label change_quidditch_tactics:
                 call cho_walk("mid", "base", 1.2)
 
                 show screen blkfade
-                with d3
+                with d5
 
                 call cho_chibi("hide")
                 call flying_cho_chibi(flying=False) # Reset chibi images.
                 $ cho_chibi_flip = 1
                 call cho_chibi("stand","mid","base")
                 hide screen blkfade
-
-                call cho_main("","base","base","base","mid", xpos="mid", ypos="base")
+                with d5
 
                 jump demonstrate_quidditch_tactics
 
@@ -285,9 +291,7 @@ label change_quidditch_tactics:
             "-Fly Test-":
                 $ cho_flying = True # Demonstrating
                 m "Start flying, [cho_name]."
-                call cho_main("Yes, Sir!","open","closed","angry","mid", xpos="mid", ypos="base")
-                hide screen cho_chang
-                with d3
+                call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
 
                 call cho_chibi(action="fly")
 

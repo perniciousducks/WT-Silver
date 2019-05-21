@@ -28,19 +28,22 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         else:
             $ cho_chibi_ypos = int(ypos)
 
-
+    # Action command.
     if action == "hide":
         hide screen cho_stand
     elif action == "fly":
         $ cho_chibi_animation = "fly"
         call update_cho_chibi_uniform
         show screen cho_stand
-        with d4
     elif action in ("reset", "default", "stand", "base"):
         $ cho_chibi_animation = None
         call update_cho_chibi_uniform
-        show screen cho_stand
-        with d4
+        if flip: #Same variable that the main sprite is using. #1 == Default
+            $ cho_chibi_flip = -1
+            show screen cho_stand
+        else:
+            $ cho_chibi_flip = 1
+            show screen cho_stand
     elif action == "leave":
         call play_sound("door")
         hide screen cho_main

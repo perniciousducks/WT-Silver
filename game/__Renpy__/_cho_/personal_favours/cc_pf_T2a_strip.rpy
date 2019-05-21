@@ -5,7 +5,7 @@
 label cc_pf_strip:
 
     # Start Event
-    $ cc_pf_talk.start()
+    $ cc_pf_strip.start()
 
     # End Event Jump
     label end_cho_strip_event:

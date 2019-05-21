@@ -129,9 +129,9 @@ label cho_progress_init:
     if not hasattr(renpy.store,'cc_pf_strip'):
         $ cc_pf_strip   = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", events = [
             [
-            ["cc_pf_strip_T2_intro_E1"],
-            ["cc_pf_strip_T2_intro_E2"],
-            ["cc_pf_strip_T2_intro_E3"], ["cc_pf_strip_T2_E3"]
+            ["cc_pf_strip_T1_intro_E1"],
+            ["cc_pf_strip_T1_intro_E2"],
+            ["cc_pf_strip_T1_intro_E3"], ["cc_pf_strip_T1_E3"]
             ]
 
             ],

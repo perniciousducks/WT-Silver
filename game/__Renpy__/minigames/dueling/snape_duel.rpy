@@ -455,8 +455,8 @@ label genie_lost:
 
     hide screen duel
     hide screen hp_bar
-    $ cg_path = "images/dueling/snape/game_over.jpg"
-    call cg()
+    $ cg_image = "images/dueling/snape/game_over.jpg"
+    show screen cg
     with flashbulb
     with hpunch
     call ctc
@@ -477,6 +477,7 @@ label genie_lost:
 
         "-Give up-":
             pass
+    $ MainMenu(confirm=False)
 
 ### DUEL IMAGES ###
 init -1:

@@ -329,7 +329,7 @@ label a_bad_time_to_disrobe_part_2:
 
     call her_chibi("leave")
     call blkfade
-    centered "{size=+10}{color=#cbcbcb}The end{/size}"
+    centered "{size=+10}{color=#cbcbcb}The end{/color}{/size}"
 
     call room(hide_screens=True)
     $ daytime = temp_time

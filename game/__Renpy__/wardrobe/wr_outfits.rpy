@@ -424,7 +424,7 @@ label equip_her_outfit:
                     hide screen wardrobe
                     with d3
                     pause.5
-                    jump giving_the_dress
+                    jump ball_quest_E5
                 else:
                     m "Remember that dress I gave you?"
                     call her_main("Of course! How could I ever forget!","open","wide")

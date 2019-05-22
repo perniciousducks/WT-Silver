@@ -14,6 +14,11 @@ label __init_variables:
     if not hasattr(renpy.store,'interface_color'):
         $ interface_color = "gold"
 
+    ### Gallery ###
+    if not hasattr(renpy.store,'gallery_active'):
+        $ gallery_active = False
+        $ ball_ending_2  = False
+
     ### Difficulty ###
     if not hasattr(renpy.store,'game_difficulty'):
         $ game_difficulty = 2                      # 2 = normal

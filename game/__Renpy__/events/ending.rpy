@@ -1,8 +1,422 @@
 
 
-label ending_yule_ball:
+### Yule Ball Ending ###
 
-    #Daytime interface.
+label ball_ending_start:
+    call nar("Are you sure you wish to start this event?")
+
+    menu:
+        "Yes!":
+            $ gave_the_dress = True #Turns True when Hermione has the dress.
+            m "[hermione_name], that ball you've mentioned..."
+            m "When did you say it would start again?"
+            call her_main("The autumn ball?!","grin","base")
+            call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
+            call her_main("Just two more days, [genie_name]","base","glance")
+            m "That soon, huh?"
+            call her_main("Yep! I still have a ton op preparations to make though.","soft","baseL")
+            m "Well then I better not keep you occupied any longer..."
+            m "Unless..."
+            g9 "Maybe we could..."
+            call her_main("Have some fun?","soft","glance")
+            g9 "You can read my mind, girl."
+            jump hermione_favor_menu
+        "No.":
+            jump hermione_talk
+
+
+label ball_ending_E1:
+
+    $ days_without_an_event = 0
+
+    play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+
+    call sna_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    pause 1.5
+
+    call sna_main("Genie...","snape_01", xpos="base", ypos="base")
+    m "Severus?"
+    call sna_main("I think I may have figured out why your magic does not work the way it should...","snape_05")
+    g4 "Seriously?!"
+    call sna_main("Yes...","snape_23")
+    sna "It's quite obvious actually... I'm surprised that it didn't cross my mind before."
+    call sna_main("You see, the thing is that every building in \"Hogwarts\" is enchanted with all kinds of protection spells...","snape_24")
+    m "Protection spells, huh?"
+    call sna_main("Yes...","snape_23")
+    sna "Very powerful, old and nasty magic..."
+    call sna_main("Even the land itself is heavily enchanted for kilometers in every direction...","snape_24")
+    m "Hm..."
+    call sna_main("Basically, any number of spells could be interfering with your powers around here...","snape_25")
+    m "Wait, then how come that you have no problems with casting your spells?"
+    call sna_main("My magic is \"Hogwarts\" magic, friend...","snape_05")
+    sna "But I bet your powers are alien enough to be perceived as a threat."
+    m "Interesting..."
+    call sna_main("I think if you manage to get far enough from the school grounds...","snape_24")
+    m "I will be able to go home... finally..."
+    call sna_main("Yes, and the best time to do that would be tonight...","snape_02")
+    call sna_main("While everyone is preoccupied with that bloody \"Autumn ball\" you could sneak out unnoticed...","snape_23")
+
+    ### SHAKE HANDS WITH SNAPE ###
+    hide screen snape_main
+    call blkfade
+
+    hide screen genie
+    hide screen bld1
+    call sna_chibi("hide")
+    show screen chair_left
+    show screen g_c_u
+    $ gen_chibi_xpos = 220
+    $ gen_chibi_ypos = 205
+    $ g_c_u_pic = "images/rooms/main_room/hand_00.png"
+    play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 # EPIC THEME.
+    pause 1
+
+    m "Right, tonight is the night of the \"Autumn ball\"..."
+    m "So it ends tonight then..."
+    call sna_main("Seems like it...","snape_09")
+    call hide_blkfade
+    pause.5
+
+    call sna_main("In case I'm right and will never see you again...","snape_05")
+    m "Right..."
+    call blkfade
+
+    $ g_c_u_pic = "images/rooms/main_room/hand_01.png"
+    call hide_blkfade
+    pause 2
+
+    call sna_main("The past several month were the best months of my life, Genie...","snape_26")
+    call sna_main("Thank you for that, you incredible traveler from another world...")
+    call sna_main("Thank you, my friend...")
+    m "I don't know what to say, Severus..."
+    call sna_main("Then don't say anything...","snape_06")
+    call sna_main("Just move on to your next adventure...")
+    call sna_main("Our world has stalled you long enough...")
+    m "Thank you for keeping me company and being my only friend here, Severus."
+    call sna_main("Thank you for being mine...","snape_27") #TEARS?
+    call sna_main("I'd better go now...","snape_06")
+
+    # Goes to the door, stops and turns around.
+    call blkfade
+
+    hide screen snape_main
+    hide screen chair_left
+    hide screen g_c_u
+    show screen genie
+    pause.5
+
+    call sna_chibi("stand","desk","base")
+    hide screen bld1
+    call hide_blkfade
+    pause.5
+
+    call sna_walk(xpos="door", ypos="base", speed=3)
+    pause.5
+
+    call sna_chibi("stand","door","base")
+    pause.5
+
+    call sna_main("One more thing though...","snape_01", ypos="head")
+    m "Yes?"
+    call sna_main("If it all goes well...","snape_24")
+    call sna_main("Will I find the real Albus Dumbledore in that chair tomorrow?")
+    m "I believe so..."
+    call sna_main("Hm...","snape_04")
+    call sna_main("Albus can't know that I was aware of his absence...","snape_03")
+    call sna_main("Is there a way to tell you guys apart?","snape_01")
+    m ".............."
+    m "How about a secret password?"
+    call sna_main("A password?","snape_05")
+    m "Yes... just ask me tomorrow: \"Who rules?\"."
+    call sna_main("\"Who rules?\"","snape_01")
+    g9 "\"Robin Williams!\""
+    call sna_main("Robin Wil-... ehm... I'm sorry, who?","snape_05")
+    m "You didn't see \"flubber\"?\nGreat movie. Just came out."
+    call sna_main("Can't say that I have...","snape_02")
+    call sna_main("Alright then...","snape_06")
+    call sna_main("Have a save trip home...")
+    m "Thank you. Have fun with hosting the ball..."
+    call sna_main("*Sigh*","snape_06")
+    pause.3
+
+    call bld("hide")
+    pause.3
+
+    stop music fadeout 1.0
+
+    call sna_chibi("stand","door","base", flip=True)
+    with d3
+    pause.3
+
+    call sna_chibi("leave","door","base")
+    pause.8
+
+    call bld
+    m "............................"
+    m "So this is it then...?"
+    play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
+    m "Seems like my time in this world has come to an end..."
+    m "......................."
+
+    if not public_whore_ending: #YOUR PERSONAL WHORE ENDING. WRITING A LETTER.
+        m "That Means I'll probably never see the girl again..."
+        m "..........."
+        m "When I first met her she was so annoying..."
+        m "to be honest, all the training I put her through changed very little in that regard..."
+        m "But we did have a few special moments together..."
+        m ".............."
+        m "......................"
+        m "I doesn't feel right to leave her without saying goodbye properly..."
+        m "And yet I don't want to miss my chance to sneak out unnoticed..."
+        m "I don't like long goodbyes..."
+        m "Hm..."
+        m "I suppose I could leave her a note or something..."
+
+        m "Let's see..."
+        call bld
+        hide screen genie
+        show screen paperwork
+        with d3
+        m "\"Dear...\""
+        show screen genie
+        hide screen paperwork
+        with d3
+        m "Hm... How shoud I adress her?"
+
+        menu:
+            m "Dear..."
+            "\"Miss Granger\"":
+                 $ word_01 = "Hermione Granger"
+            "\"Nasty whore\"":
+                $ word_01 = "Nasty whore"
+            "\"Slut\"":
+                $ word_01 = "Slut"
+            "\"Cumbucket\"":
+                $ word_01 = "Cumbucket"
+            "\"Human female\"":
+                $ word_01 = "Human female"
+            "\"friend\"":
+                $ word_01 = "Friend"
+
+        hide screen genie
+        show screen paperwork
+        with d3
+        m "Yes, \"Dear [word_01]\" fits perfectly..."
+        ">scribble-scribble-scribble..."
+        ">scribble-scribble-scribble..."
+        m "\"...it is time for me to go back...\""
+        show screen genie
+        hide screen paperwork
+        with d3
+        m "What should I write now?"
+
+        menu:
+            m "...time to go back..."
+            "\"home\"":
+                $ word_02 = "home"
+            "\"to the mothership\"":
+                $ word_02 = "to the mothership"
+            "\"to Dimension \"X\"":
+                $ word_02 = "to Dimension \"X\""
+            "\"to my world\"":
+                $ word_02 = "to my world"
+            "\"To my Home Planet - Krypton\"":
+                $ word_02 = "to my Home Planet - Krypton"
+
+        hide screen genie
+        show screen paperwork
+        with d3
+        m "Yes, \"Time to go back [word_02]\" that will do..."
+        ">scribble-scribble-scribble..."
+        ">scribble-scribble-scribble..."
+        m "\"...farewell my little...\""
+        show screen genie
+        hide screen paperwork
+        with d3
+        m "What should I write now?"
+
+        menu:
+            m "...farewell my little... "
+            "\"cock-hungry slut\"":
+                $ word_03 = "cock-hungry slut"
+            "\"cum receptacle\"":
+                $ word_03 = "cum receptacle"
+            "\"Girl\"":
+                $ word_03 = "girl"
+            "\"Witch\"":
+                $ word_03 = "witch"
+
+        hide screen genie
+        show screen paperwork
+        with d3
+        m "Yes, \"farewell my little [word_03]\" sounds about right..."
+        ">scribble-scribble-scribble..."
+        ">scribble-scribble-scribble..."
+        show screen genie
+        hide screen paperwork
+        with d3
+        m "And now to sign it as..."
+
+        label stupid_kent:
+            pass
+
+        menu:
+            m "..."
+            "\"Genie\"":
+                $ word_04 = "Genie"
+            "\"Clark Kent\"":
+                $ word_04 = "Clark Kent"
+                hide screen genie
+                show screen paperwork
+                with d3
+                m "Yes, \"sincerely yours, [word_04]\"..."
+                show screen genie
+                hide screen paperwork
+                with d3
+                m "..........."
+                m "No, that doesn't make any sense..."
+                jump stupid_kent
+            "\"Lord Voldemort\"":
+                $ word_04 = "Lord Voldemort"
+            "\"Traveler\"":
+                $ word_04 = "Traveler"
+
+        hide screen genie
+        show screen paperwork
+        with d3
+        m "Yes, \"[word_04]\"..."
+        show screen genie
+        hide screen paperwork
+        with d3
+        m "........................"
+        m "Yes, this should do..."
+
+    m "Well, off I go then..."
+
+    call blkfade
+
+    hide screen genie
+    show screen chair_left
+    show screen desk
+    call gen_chibi("stand","desk","base")
+    hide screen bld1
+    call hide_blkfade
+
+    call bld
+    m "........."
+
+    call gen_walk(xpos="door", ypos="base", speed=2.8)
+    pause.5
+
+    call bld
+    m "...................."
+    m "Agrabah... here I come..."
+    call ctc
+
+    call gen_chibi(action="leave")
+    pause.3
+
+    ">.......................{w}............................{w}.....................{w}......................"
+    pause.7
+    call blkfade
+
+    stop music fadeout 1.0
+
+    centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
+
+    call play_music("night_outside")
+
+
+    ### Scene Setup ###
+
+    $ ccg_folder = "ball"
+    $ ccg(layer1="171", layer2="blank", layer3="blank")
+
+    pause.3
+    call hide_blkfade
+    call ctc
+
+    m "Severus was right..."
+    pause.5
+    call play_sound("walking_on_grass")
+
+    $ ccg(layer2="172")
+
+    m "The farther away I get from the school grounds..."
+    m "The more powerful I'm starting to feel..."
+
+    $ ccg(layer3="173")
+    pause.5
+
+    m "I think  this is far enough..."
+    m "Time to undo the spell and go back home..."
+    m ".........."
+    m "...................."
+    m "Agrabah, here I come..."
+
+    if not persistent.game_complete: # FIRST PLAYTHOURGH.
+        call ctc
+
+        show screen blkfade
+        with d9
+        pause .5
+
+        play music "music/Plaint.mp3" fadein 1 fadeout 1 #SAD CREDITS MUSIC.
+
+        centered "{size=+7}{color=#cbcbcb}Congratulations on completing the game!{/color}{/size}\n\n
+                  {size=+5}{color=#cbcbcb}This is ending \"00\" out of \"02\".{/color}{/size}"
+
+        centered "{size=+7}{color=#cbcbcb}Thank you for playing!{/color}{/size}\n\n"
+
+        $ renpy.play('sounds/scratch.wav')
+        stop music
+        with hpunch
+        g4 "Wait, I'm still here!"
+
+        centered "{size=+7}{color=#cbcbcb}WHAT?!{/color}{/size}"
+
+        g4 "I said I am still here, dammit!"
+
+        centered "{size=+7}{color=#cbcbcb}Oh... :({/color}{/size}"
+
+        $ ccg(layer3="blank")
+        hide screen blkfade
+        with d9
+
+        play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
+
+    m "....................."
+    if persistent.game_complete:
+        m "No, I can't just leave like this!"
+    else:
+        m "I can't just leave like this!"
+
+    m "I must see the girl one last time..."
+
+    call ctc
+
+    hide screen ccg
+    call blkfade
+    stop music fadeout 1.0
+
+    if not persistent.game_complete: # FIRST PLAY THROUGH.
+
+        centered "{size=+7}{color=#cbcbcb}Fine whatever...{/color}{/size}"
+
+    call play_music("ball")
+
+    centered "{size=+7}{color=#cbcbcb}\"The Annual Hogwarts Autumn Ball\"{/color}{/size}"
+
+    jump ball_ending_E2
+
+
+label ball_ending_E2:
+    call blkfade
+
+    if gallery_active == False: # Regular play-through of the scene.
+        $ ball_ending_2 = public_whore_ending # Sets this to True or False
+
+    # Scene Setup
     $ interface_color = "gold"
 
     hide screen bld1
@@ -45,9 +459,8 @@ label ending_yule_ball:
     hide screen done_reading_near_fire
     hide screen main_room_menu
     with fade
-
-    hide screen end_u_3
     pause.1
+
     hide screen bld1
     hide screen blktone
     call hide_blkfade
@@ -70,7 +483,7 @@ label ending_yule_ball:
     call blktone
 
     #Public whore ending.
-    if public_whore_ending: #Students talking.
+    if ball_ending_2: #Students talking.
         mal "Have you heard that rumour about Hermione Granger?"
         mal2 "That she is a major slut?"
         mal "Huh? No, that's not a rumour, that's a fact."
@@ -296,7 +709,7 @@ label ending_yule_ball:
     her "Alright. There is no time lose then."
     m "Yes! That's the spirit!"
 
-    if public_whore_ending: #Students talking. Ending "Public whore".
+    if ball_ending_2: #Students talking. Ending "Public whore".
         call cg_scene("03")
         her "*Slurp!* *Gulp!* *Slurp!*"
         m "Yes..."
@@ -694,7 +1107,7 @@ label ending_yule_ball:
     pause 1
 
 
-    if public_whore_ending: #Students talking. Ending "Public whore".
+    if ball_ending_2: #Students talking. Ending "Public whore".
         call sna_main("Miss Granger...?","snape_03", ypos="head")
         call sna_main("You decided to show up after all?","snape_04")
         call sna_main("What an unpleasant surprise...","snape_03")
@@ -2332,6 +2745,10 @@ label ending_yule_ball:
         call bld("hide")
         call ctc
 
+    if gallery_active:
+        jump return_gallery
+    else:
+        pass
 
 
     ### FINAL SCENE ###
@@ -2395,9 +2812,6 @@ label ending_yule_ball:
     pause .5
 
 
-
-    ### FINAL CREDITS ###
-
     $ achievement.unlock("ending")
     stop music fadeout 1.0
 
@@ -2410,6 +2824,17 @@ label ending_yule_ball:
 
     hide screen blktone8
     with d7
+
+    if persistent.game_complete:
+        jump ball_ending_E3
+    else:
+        jump ball_ending_credits
+
+
+
+    ### FINAL CREDITS ###
+
+label ball_ending_credits:
 
     play music "music/02 - Shanghai Honey.mp3" fadein 1 fadeout 1 # ORANGE RANGE THEME.
 
@@ -2499,6 +2924,13 @@ label ending_yule_ball:
     pause 1
     call ctc
 
+    jump ball_ending_E3
+
+
+
+### Back At Hogwarts ###
+
+label ball_ending_E3:
     show screen blkfade
     with d9
 
@@ -2510,7 +2942,7 @@ label ending_yule_ball:
 
 
 
-    ### Daytime ###
+    # Scene Setup
 
     $ daytime = True
     $ interface_color = "gold"
@@ -2694,6 +3126,7 @@ label ending_yule_ball:
 
         dum_[4] "Oh, dear... {image=textheart} "
         pause 1
+
 
     $ renpy.play('sounds/win2.mp3')
 

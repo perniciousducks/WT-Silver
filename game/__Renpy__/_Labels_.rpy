@@ -14,9 +14,9 @@ label hide_all_screens:
     call gen_chibi("hide")
 
     #CGs
+    hide screen cg
     hide screen ccg
-    hide screen end_u_1
-    hide screen end_u_3
+    hide screen blkback
 
     #Main Room
     hide screen main_room

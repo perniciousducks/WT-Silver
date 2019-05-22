@@ -455,8 +455,8 @@ label genie_lost:
 
     hide screen duel
     hide screen hp_bar
-    $ end_u_1_pic =  "images/dueling/snape/game_over.jpg"
-    show screen end_u_1
+    $ cg_path = "images/dueling/snape/game_over.jpg"
+    call cg()
     with flashbulb
     with hpunch
     call ctc
@@ -465,7 +465,7 @@ label genie_lost:
             stop music
             $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
             play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
-            hide screen end_u_1
+            hide screen cg
             if rum_times == 1:
                 $ potions = 1
             elif rum_times == 2:

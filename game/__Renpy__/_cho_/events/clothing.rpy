@@ -48,6 +48,7 @@ label cho_random_clothing:
             call cho_main(xpos="base",ypos="base",trans="fade")
 
             return
+
         elif cho_wardrobe_unlocked:
             # Party outfit
             if random_number < 6: #50% chance for any random clothing event
@@ -57,7 +58,7 @@ label cho_random_clothing:
                     $ cho_class.unequip("all")
                     $ cho_class.equip(cho_outfit_party)
 
-                    call cho_main("","base","base","base","mid",xpos="mid",ypos="base", animation=moveFade)
+                    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
                     $ cho_animation = None
                     call ctc
 
@@ -77,19 +78,16 @@ label cho_random_clothing:
                     #Unlocks rewards.
                     call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_party_slut_ITEM)
 
-                    call cho_main(xpos="base",ypos="base",face="horny")
+                    call cho_main(xpos="base", ypos="base", face="horny")
 
                     return
-                # Add more here
-                #
-                #elif not outfit_name.unlocked:
-                    # do_something
+
 
     if cho_mood != 0:
-        call cho_main("[cho_genie_name]...",face="annoyed",xpos="base",ypos="base", animation=moveFade)
+        call cho_main("[cho_genie_name]...", face="annoyed", xpos="base", ypos="base", animation=moveFade)
         ">Cho is upset with you."
     else:
-        call cho_main("Hello, [cho_genie_name].",face="happy",xpos="base",ypos="base", animation=moveFade)
+        call cho_main("Hello, [cho_genie_name].", face="happy", xpos="base", ypos="base", animation=moveFade)
     $ cho_animation = None
 
     return

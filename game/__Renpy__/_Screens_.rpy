@@ -522,34 +522,6 @@ label hide_chibi_effects:
     return
 
 
-
-### ENDING UNIVERSAL 01 ###
-screen end_u_1():
-    tag ending
-    add "interface/blackfade.png"
-    add end_u_1_pic at Position(xpos=140,ypos=0)
-    zorder 2
-
-### ENDING UNIVERSAL 02 ###
-screen end_u_2():
-    tag ending
-    add "interface/blackfade.png"
-    add end_u_2_pic at Position(xpos=140,ypos=0)
-    zorder 2
-
-### ENDING UNIVERSAL 03 ###
-screen end_u_3():
-    add end_u_3_pic at Position(xpos=140,ypos=0)
-    zorder 2
-
-### ENDING UNIVERSAL 04 ###
-screen end_u_4():
-    add end_u_4_pic at Position(xpos=140,ypos=0)
-    zorder 2
-
-
-
-
 screen credits_chibi(): # ONE CHIBI
     zorder 5
     add dermo at Position(xpos=420, ypos=140)

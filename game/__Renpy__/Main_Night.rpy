@@ -161,7 +161,7 @@ label night_resume:
         jump hermione_helping_selling_cards
 
     if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
-        jump good_bye_snape
+        jump ball_ending_E1
 
     #Hermione Potions return.
     if cat_ears_potion_return:

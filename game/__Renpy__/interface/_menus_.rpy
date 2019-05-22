@@ -459,11 +459,11 @@ init -2 python:
         if isinstance(image, basestring):
             image = im.Image(image)
 
-        myRender = renpy.render(image, 800, 600, 0, 0)
+        myRender = renpy.render(image, 800, 800, 0, 0)
         sizes = myRender.get_size()
         x = sizes[0]
         y = sizes[1]
 
         if xsize / x < ysize / y:
-            return xsize / x
-        return ysize / y
+            return min(1.0, xsize / x)
+        return min(1.0, ysize / y)

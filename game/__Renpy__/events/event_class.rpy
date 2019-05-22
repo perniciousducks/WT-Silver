@@ -5,6 +5,7 @@ init python:
         counter   = 0
         
         start_label = ""
+        start_tier = 0
         inProgress = False
 
         events = []
@@ -126,7 +127,7 @@ init python:
         def tier(self, value):
             if value > self._tier+1:
                 self._points = 0
-            self._tier = max(0, min(value-1, self._max_tiers))
+            self._tier = max(0, min(value-1, self._max_tiers-1))
             
         @property
         def max_tiers(self):

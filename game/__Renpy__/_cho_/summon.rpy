@@ -124,7 +124,7 @@ label cho_favor_menu:
         for i in cc_favor_list:
             if i in []: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
-            elif i.tier > cho_tier:
+            elif i.start_tier > cho_tier:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
@@ -142,20 +142,6 @@ label cho_favor_menu:
         $ renpy.jump(result)
 
 label update_cho_favors:
-
-    # Pre Hufflepuff
-    if cho_tier == 1:
-        $ cc_favor_list = [
-            cc_pf_talk
-            ]
-
-    # Pre Slytherin
-    elif cho_tier == 2:
-        $ cc_favor_list = [
-            cc_pf_talk,
-            cc_pf_strip
-            ]
-
     python:
         for i in cc_favor_list:
             if i.tier != cho_tier:
@@ -171,7 +157,7 @@ label cho_requests_menu:
         for i in cc_requests_list:
             if i in []: # Not in the game yet.
                 menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
-            elif i.tier > cho_tier:
+            elif i.start_tier > cho_tier:
                 menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
@@ -189,13 +175,6 @@ label cho_requests_menu:
         $ renpy.jump(result)
 
 label update_cho_requests:
-
-    # Pre Hufflepuff
-    if cho_tier in [1,2]:
-        $ cc_requests_list = [
-            cc_pr_manipulate
-            ]
-
     # Set event tier to current Cho tier if they are different
     python:
         for i in cc_requests_list:

@@ -49,6 +49,7 @@ init python:
 
 init -2:
     transform cloud_move: #http://www.renpy.org/wiki/atl
+        subpixel True
         xpos 520
         choice:
             ypos 150
@@ -61,11 +62,12 @@ init -2:
         choice:
             ypos 200
 
-        linear 15.0 xpos 280 # linear
+        linear 15.0 xpos 237 # linear
         pause 7
         repeat
 
     transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+        subpixel True
         xpos 520
         choice:
             ypos 130
@@ -78,6 +80,7 @@ init -2:
         repeat
 
     transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+        subpixel True
         xpos 520
         choice:
             ypos 150
@@ -88,6 +91,7 @@ init -2:
         repeat
 
     transform cloud_night_move_03: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+        subpixel True
         xpos 520
         ypos 160
         linear 50.0 xpos 280 # linear

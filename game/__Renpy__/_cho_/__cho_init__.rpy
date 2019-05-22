@@ -103,7 +103,6 @@ label cho_progress_init:
         $ cho_genie_name = "Sir"
         $ cho_name = "Cho"
 
-
         $ gave_cho_gift      = False
 
 
@@ -114,7 +113,7 @@ label cho_progress_init:
     # pr = Public Requests.
 
     if not hasattr(renpy.store,'cc_pf_talk'):
-        $ cc_pf_talk   = event_class(title = "Talk to me!", start_label = "cc_pf_talk", events = [
+        $ cc_pf_talk   = event_class(title = "Talk to me!", start_label = "cc_pf_talk", start_tier = 1, events = [
             [
             ["cc_pf_talk_T1_intro_E1"],
             ["cc_pf_talk_T1_intro_E2"],
@@ -133,7 +132,7 @@ label cho_progress_init:
             )
 
     if not hasattr(renpy.store,'cc_pf_strip'):
-        $ cc_pf_strip   = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", events = [
+        $ cc_pf_strip   = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", start_tier = 2, events = [
             [
             ["cc_pf_strip_T1_intro_E1"],
             ["cc_pf_strip_T1_intro_E2"],
@@ -143,7 +142,12 @@ label cho_progress_init:
             ],
             iconset = [["heart_empty", "heart_green"]]
             )
-
+            
+        $ cc_favor_list = [cc_pf_talk, cc_pf_strip]
+        
+    ###################
+    # Public requests #
+    ###################
     if not hasattr(renpy.store,'cc_pr_manipulate'):
         $ cc_pr_manipulate   = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start", events = [
             [
@@ -162,5 +166,7 @@ label cho_progress_init:
             icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
             iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
+            
+        $ cc_requests_list = [cc_pr_manipulate]
 
     return

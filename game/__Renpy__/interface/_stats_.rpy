@@ -208,8 +208,10 @@ screen genie_stat_menu():
                 use text_stat("- ", " times -", phoenix_fed_counter)
                 use text_stat("Bird petted:")
                 use text_stat("- ", " times -", phoenix_petted_counter)
-                use text_stat("You missed feeding your bird for ", " days...", (day - phoenix_fed_counter) )
-
+                use text_stat("You missed feeding your bird for:")
+                use text_stat("- ", " days...", (day - phoenix_fed_counter) )
+                use text_stat("If you were a Quidditch player...")
+                use text_stat("You'd be a \" ", " \"", phoenix_fed_counter)
         vbar value YScrollValue("vp")
 
     zorder 8

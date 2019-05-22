@@ -31,19 +31,6 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
     # Action command.
     if action == "hide":
         hide screen cho_stand
-    elif action == "fly":
-        $ cho_chibi_animation = "fly"
-        call update_cho_chibi_uniform
-        show screen cho_stand
-    elif action in ("reset", "default", "stand", "base"):
-        $ cho_chibi_animation = None
-        call update_cho_chibi_uniform
-        if flip: #Same variable that the main sprite is using. #1 == Default
-            $ cho_chibi_flip = -1
-            show screen cho_stand
-        else:
-            $ cho_chibi_flip = 1
-            show screen cho_stand
     elif action == "leave":
         call play_sound("door")
         hide screen cho_main
@@ -51,7 +38,15 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         hide screen blktone
         with d3
         pause.5
+
     else:
+        if action in ["fly"]:
+            $ cho_chibi_animation = "fly"
+            call update_cho_chibi_uniform
+        if action in ["reset"]:
+            $ cho_chibi_animation = None
+            call update_cho_chibi_uniform
+
         if flip: #Same variable that the main sprite is using. #1 == Default
             $ cho_chibi_flip = -1
             show screen cho_stand
@@ -61,6 +56,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
     if animation != False:
         $ cho_chibi_animation = animation
+
     return
 
 

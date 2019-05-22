@@ -280,22 +280,8 @@ label cc_pf_strip_T1_intro_E1:
 
 
 label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
-
-    # Ask Cho to strip again.
-    # This event is similar to Hermione's second strip favor.
-
-    "Dev Note" ">This favour hasn't been written yet!"
-
-    #call cho_main("Granger? And why'd she do that?","base","base","base","mid")
-    #g4 "(I'm running out of excuses!)"
-    #m "Because she believes you wouldn't be up for it?"
-    #call cho_main("Did she?","base","base","base","mid")
-    #g9 "And that I'd prefer the look of \"her\" body, over yours..."
-    #call cho_main("That pretentious bitch!","base","base","base","mid")
-    #call cho_main("Her body is --- compared to mine!","base","base","base","mid")
-
     m "[cho_name], to continue your training where we left off..."
-    g9 "I'd like you to undress once again!"
+    g9 "I'd like you to undress, once again!"
     cho "Of course, Sir."
 
     call cho_walk(xpos="desk", ypos="base", speed=1.6)
@@ -305,16 +291,253 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     m "*Uhm*... All of it?"
     cho "Very well, Sir."
     g4 "(Please don't let this be a trick question.)"
+    pause.4
 
     # Remove top.
+    hide screen cho_chang
+    $ cho_class.strip("robe","top")
+    $ cho_cloth_pile = True
+    show screen cho_chang
+    with d3
+    pause.5
+
+    call cho_main("","quiver","narrow","sad","mid")
+    call ctc
 
     cho "I'm a very good trainee, [cho_genie_name]!"
     g9 "Yes you are!"
     cho "If my trainer requires me to take off my clothing and stip for him."
     cho "Then I have no other choice but to indulge..."
     cho "I see nothing wrong with that..."
+    pause.4
 
     # Remove skirt.
+    hide screen cho_chang
+    $ cho_class.strip("bottom")
+    show screen cho_chang
+    with d3
+    pause.5
+
+    call cho_main("","horny","narrow","base","mid")
+    call ctc
+
+    cho "Would you perhaps like me to climb on top of your desk as well?"
+    cho "And dance for you like some common harlot?"
+
+    # You saw Hermione strip before.
+    if hg_pf_dance.points >= 2:
+        m "If it's not too much trouble..."
+        cho "Of course not, [cho_genie_name]."
+        g4 "(I'm having a bit of a déjà vu!)"
+    else:
+        g9 "Yes please!"
+        cho "Whatever you say, Sir!"
+    cho "Like I said, I'd go to any lenghts just to please my trainer..."
+
+    # Climbs desk.
+    call hide_characters
+    show screen blkfade
+    with d3
+    call play_sound("climb_desk")
+    pause 2
+
+    "To your surprise, the athletic little asian rather playfully climbs on top of your desk."
+
+    call cho_chibi("stand","on_desk","on_desk", flip=False)
+    hide screen bld1
+    hide screen blkfade
+    with fade
+    call ctc
+
+    cho "After all I promised I'd do anything to win that Quidditch cup..."
+    cho "If stripping for you is what it takes- then..."
+    cho "I- I'll do it..."
+    m "(Shit. Is she crying?)"
+    m "(Can she even cry?)"
+    m "Are you alright, girl?"
+    cho "Shut up!" # Scream
+    cho "Can't you see what I'm trying to do here?"
+    m "Not really, no."
+    cho "I'm testing my limits!"
+    cho "And I believe I have reached them, Sir!"
+    m "(Already? We haven't even gotten to the blowjob part...)"
+    cho "If I can go as far as embarrassing myself in front of my headmaster..."
+    cho "Doing the same in front of the school won't feel as bad in comparison."
+    cho "When we eventually lose..."
+    m "(This is so sad...)"
+    g4 "(Desposi- I mean,... Alexa, play Desposito...)"
+    m "(...)"
+    m "(Right... I'm stuck in the 90s. I forgot.)"
+    cho "Sir, I don't think I can do this after all."
+    cho "Could I get your permission to leave and never come back?"
+
+    menu:
+        "\"Yes, but take off those clothes first...\"":
+            cho "I'm glad to know that you're believing in me, Sir!"
+            m "What?{w} *Ahem* I mean..."
+            g9 "Of course! I always did!"
+            cho "I may not like it. But this is all just part of my training..."
+            m "*Uhhhh*... Sure..."
+            cho "It's one of many challenges I have to face before I can call myself a Quidditch champion!"
+            cho "This is just about facing my inner demons, isn't it?"
+            cho "Overcoming my fears..."
+            cho "Failure, and embarrassment..."
+            cho "(Come on Cho, you can do it!!!)"
+            cho "*Uhm*..."
+            cho "What would you like me to do firts, [cho_genie_game]?"
+            cho "Remove my bra..."
+            cho "Or take off my panties?"
+
+        "\"Yes, you are dismissed...\"":
+            $ cho_mood += 6
+            cho "What?!"
+            cho "But Sir!"
+            m "You can go now."
+            cho "You can't do that!"
+            g4 "Didn't you just beg me for just that?"
+            cho "I begged you to help me win the Quidditch cup!"
+            cho "And to be my trainer!{w} To be a \"good\" trainer!"
+            cho "How can I overcome my fear of losing if I can't even do... this!"
+            cho "You're supposed to encourage me! Get me through any challenges I'm confronted with."
+            m "Including stripping?"
+            cho "Including bloody stripping!"
+            m "To my defense. I got some mixed messages from you earlier..."
+            cho "(...)" # Annoyed
+            cho "So what shall it be?"
+            cho "Would you like me to take off my bra first?"
+            cho "Or pull down my panties so you can get a nice look at my lower half?"
+
+    m "(...)"
+    menu:
+        m "First, I'd like you to..."
+        "\"Show me those big, juicy Quaffles of yours!\"":
+            cho "*uhhh*..."
+            g9 "Those two mean, hearty bludgers!"
+            cho "Sir? Could it be that you are talking about my breasts?"
+            m "Yes indeed! Very good."
+            m "I had hoped you would eventually get my drift."
+            m "Because I had also run out of balls to compare them to..."
+            cho "Promise me you won't laugh when I show you my..."
+            cho "Bludgers!"
+            m "Why would I ever laugh at a pretty girl like you, Miss Chang?"
+            cho "Because they aren't as big as Hermione's..."
+            cho "Hers are more closer to Quaffles than mine..."
+            m "And there will always be a pair of \"Beaters\" that perfer to play with your...{w} balls."
+            cho "Two aren't enough!"
+            g9 "Don't forget to count those that get hit by those bludgers!"
+            m "Speaking of which..."
+            cho "What?"
+            g4 "I'd like you to hit me with them!"
+            cho "With my breasts?"
+            g9 "Yes! Hit me full force! Take off that bra!"
+            cho "*Sigh*..."
+            cho "I can't believe I'm actually going to do this!"
+            pause.4
+
+            # Remove bra.
+            hide screen cho_chang
+            $ cho_class.strip("bra")
+            show screen cho_chang
+            with d3
+            pause.5
+
+            call cho_main("","horny","narrow","base","mid")
+            call ctc
+
+            m "Yes."
+            g9 "Would you mind if I smack them?"
+            cho "What?! Of course I would mind!"
+            m "I just want to beat them around a bit..."
+            g9 "After all, they are two soft, meaty bludgers!"
+            g9 "And I'm a beater!"
+
+            $ genie_quid_position = "beater"
+
+            cho "You are childish.{w} That's what you are..."
+            m "Please?"
+            cho "(...)"
+            cho "Fine... But Only once!"
+            cho "Twice,... maybe..."
+            m "That's more than I had hoped for!"
+
+            call slap_her
+            cho "*Ouch!*"
+            call slap_her
+            call slap_her
+            call slap_her
+            cho "Stop it!"
+            cho "That was more than twice!"
+            m "I wasn't really counting..."
+
+        "\"Let me catch a sight of that Snitch!\"":
+            cho "Don't you mean \"Snatch\", Sir?"
+            g9 "Potato, Potato!"
+            cho "You were a pervert from the very beginning, weren't you?" # Annoyed
+            m "More or less..."
+            m "However, I never lied about wanting to help you win the Quidditch cup!"
+            m "I'm a man of my word!"
+            cho "And a dead man, if you try to trick me!"
+            m "Well technically I'm a gen-"
+            call play_sound("kick")
+            call nar("Cho does a daunting stomp on your desk...")
+            g4 "*Aaaaah!*"
+            cho "Don't think for a second I wouldn't do it! After all of this!"
+            call play_sound("gulp")
+            m "*Gulp*"
+            m "Yes, Ma'am."
+            cho "(...)"
+            pause.4
+
+            # Remove panties.
+            hide screen cho_chang
+            $ cho_class.strip("panties")
+            show screen cho_chang
+            with d3
+            pause.5
+
+            call cho_main("","horny","narrow","base","mid")
+            call ctc
+
+            # ADD section here.
+
+            g9 "I've become quite a bit of a seeker myself!"
+
+            $ genie_quid_position = "seeker"
+
+
+    cho "Will that be all then, Sir?"
+    m "Didn't you forget about something?"
+    cho "Didn't I do enough for you already?"
+    m "For me, you did more than enough. I'm far more than pleased with just seeing your titties..."
+    cho "*Ugh*..." # Disgusted
+    m "But, wasn't your goal earlier to undress entirely?"
+    m "To prove to yourself that you could do it?"
+    cho "I hoped you already forgot about that..." # Small text.
+    g9 "Well, I didn't!"
+    m "I'm here to help you mature."
+    m "A body like yours is nothing you need to hide behind!"
+    m "Don't you think so too? After all the work you put into it?"
+    g4 "It should be celebrated! And seen be everyone!"
+    cho "You're making me blush, [cho_genie_name]..."
+    g9 "You can do it, [cho_name]! Only one more piece to go..."
+    cho "Yes, Sir!"
+    cho "(...)"
+    pause.4
+
+    # Cho strips completely.
+    hide screen cho_chang
+    $ cho_class.strip("all")
+    call update_cho_chibi_uniform
+    show screen cho_chang
+    with d3
+    pause.5
+
+    call cho_main("","horny","narrow","base","mid")
+    call ctc
+
+    # ADD ending here.
+
+
 
     jump end_cho_strip_event
 
@@ -821,7 +1044,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
                 hide screen bld1
                 hide screen blkfade
-                call cho_chibi("stand","desk","base",flip=True)
+                call cho_chibi("stand","desk","base", flip=True)
                 with d3
 
                 call play_sound("running")

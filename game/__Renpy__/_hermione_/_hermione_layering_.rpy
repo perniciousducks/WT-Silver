@@ -473,6 +473,8 @@ label update_her_action:
         $ hermione_wear_bottom = False
         $ hermione_wear_garterbelt = False
         $ hermione_wear_panties = False
+        if h_stockings in ["stockings_pantyhose"]:
+            $ hermione_wear_stockings = False
 
         if hermione_action == "hands_behind":
 

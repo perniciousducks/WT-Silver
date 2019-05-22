@@ -33,4 +33,6 @@ label genie_init:
         $ birthday_happened = False # Outfit "Present" wardrobe dialogue.
         $ masturbating = False
 
+        $ genie_quid_position = "???" # For stats.
+
     return

@@ -157,7 +157,7 @@ label update_cho_favors:
             ]
 
     python:
-        for i in cc_requests_list:
+        for i in cc_favor_list:
             if i.tier != cho_tier:
                 i.tier = cho_tier
 

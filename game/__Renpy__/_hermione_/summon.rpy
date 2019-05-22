@@ -93,11 +93,11 @@ label summon_hermione:
 
         #"-Ending \"Your whore\"-":
         #    $ public_whore_ending = False
-        #    jump ending_yule_ball
+        #    jump ball_ending_E2
 
         #"-Ending \"Public whore\"-":
         #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
-        #    jump ending_yule_ball
+        #    jump ball_ending_E2
 
 
         # Cardgame
@@ -530,7 +530,7 @@ label hermione_talk:
                     jump hermione_talk
 
         "-Start the Ending-" if her_dress_wearable: #Starts the ending of the game.
-            jump start_end_events
+            jump ball_ending_start
 
         "-Never mind":
             jump hermione_requests

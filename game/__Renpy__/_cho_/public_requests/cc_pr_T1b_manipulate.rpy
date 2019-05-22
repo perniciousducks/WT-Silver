@@ -8,7 +8,7 @@ label cc_pr_manipulate_start:
     call cho_main(xpos="right", ypos="base", trans="fade")
 
     ### Tier 1 (pre Hufflepuff) ###
-    if cho_tier <= 1:
+    if cho_tier == 1:
 
         # Intro
         if cc_pr_manipulate.points == 0:

@@ -268,16 +268,16 @@ if hermione_finds_astoria and days_without_an_event >= 2 and not astoria_unlocke
 
 
 if her_whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-    call want_to_rule #Returns
+    call ball_quest_E1 #Returns
 
 if her_whoring >= 15 and event_chairman_happened and days_without_an_event >= 2 and not snape_against_chairman_hap: # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
-    jump against_the_rule #No return.
+    jump ball_quest_E2 #No return.
 
 if her_whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap and not have_no_dress_hap: #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-    call crying_about_dress #Returns
+    call ball_quest_E3 #Returns
 
 if her_whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
-    call sorry_about_hesterics #Returns
+    call ball_quest_E4 #Returns
 
 
 

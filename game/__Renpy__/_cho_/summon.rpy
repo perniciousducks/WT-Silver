@@ -163,8 +163,6 @@ label update_cho_favors:
 
     return
 
-
-
 # Cho Requests Menu
 label cho_requests_menu:
     call update_cho_requests

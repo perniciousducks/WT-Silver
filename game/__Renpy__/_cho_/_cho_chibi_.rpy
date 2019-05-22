@@ -40,10 +40,10 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         pause.5
 
     else:
-        if action in ["fly"]:
+        if action == "fly":
             $ cho_chibi_animation = "fly"
             call update_cho_chibi_uniform
-        if action in ["reset"]:
+        elif action == "reset":
             $ cho_chibi_animation = None
             call update_cho_chibi_uniform
 

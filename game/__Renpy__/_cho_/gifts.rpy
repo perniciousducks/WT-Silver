@@ -271,7 +271,7 @@ label give_cho_gift(gift_item):
         else:
             call cho_main("Porn magazines?",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("Ooh, are those two doing it on a broom? That's impressive...","open","wide","raised","down")
-            call cho_main("[cho_genie_game], this is naughty. Even for you...","horny","wink","base","L")
+            call cho_main("[cho_genie_name], this is naughty. Even for you...","horny","wink","base","L")
             call cho_main("I've got my eyes on you.","base","angry","raised","L")
             call give_gift(">You give an assortment of porn magazines to Cho...",gift_item)
             call cho_main("Thank you.","smile","base","base","mid")

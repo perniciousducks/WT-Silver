@@ -328,7 +328,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     if hg_pf_dance.points >= 2:
         m "If it's not too much trouble..."
         cho "Of course not, [cho_genie_name]."
-        g4 "(I'm having a bit of a déjà vu!)"
+        g4 "(I'm having a bit of a deja vu!)" # In-game font doesn't support special characters. déjà vu!
     else:
         g9 "Yes please!"
         cho "Whatever you say, Sir!"
@@ -384,7 +384,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             cho "Failure, and embarrassment..."
             cho "(Come on Cho, you can do it!!!)"
             cho "*Uhm*..."
-            cho "What would you like me to do firts, [cho_genie_game]?"
+            cho "What would you like me to do first, [cho_genie_name]?"
             cho "Remove my bra..."
             cho "Or take off my panties?"
 
@@ -527,7 +527,6 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     # Cho strips completely.
     hide screen cho_chang
     $ cho_class.strip("all")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -573,7 +572,6 @@ label cc_pf_strip_T1_intro_E3:
     hide screen cho_chang
     $ cho_class.strip("robe","top")
     $ cho_cloth_pile = True
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -591,7 +589,6 @@ label cc_pf_strip_T1_intro_E3:
     # Remove skirt.
     hide screen cho_chang
     $ cho_class.strip("bottom")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -633,7 +630,6 @@ label cc_pf_strip_T1_intro_E3:
         hide screen cho_chang
         $ cho_class.wear("all")
         $ cho_cloth_pile = False
-        call update_cho_chibi_uniform
         call cho_main("","angry","closed","angry","mid")
         pause.8
 
@@ -686,7 +682,6 @@ label cc_pf_strip_T1_intro_E3:
     # Remove bra.
     hide screen cho_chang
     $ cho_class.strip("bra")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -732,7 +727,6 @@ label cc_pf_strip_T1_intro_E3:
     # Remove panties.
     hide screen cho_chang
     $ cho_class.strip("panties")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -863,7 +857,6 @@ label cc_pf_strip_T1_E3: # Repeats
     hide screen cho_chang
     $ cho_class.strip("robe","top")
     $ cho_cloth_pile = True
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -876,7 +869,6 @@ label cc_pf_strip_T1_E3: # Repeats
     # Remove bottom.
     hide screen cho_chang
     $ cho_class.strip("bottom")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -891,7 +883,6 @@ label cc_pf_strip_T1_E3: # Repeats
     # Remove bra.
     hide screen cho_chang
     $ cho_class.strip("bra")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     pause.5
@@ -903,7 +894,6 @@ label cc_pf_strip_T1_E3: # Repeats
     # Remove panties.
     hide screen cho_chang
     $ cho_class.strip("panties")
-    call update_cho_chibi_uniform
     show screen cho_chang
     with d3
     call ctc
@@ -1162,7 +1152,6 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             hide screen cho_chang
             $ cho_class.wear("all")
             $ cho_cloth_pile = False
-            call update_cho_chibi_uniform
             hide screen blkfade
 
             call cho_main("Sir, my *uhm*...{w} my panties...","soft","base","angry","R", xpos="mid", ypos="base", trans="fade")
@@ -1273,7 +1262,6 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             hide screen cho_chang
             $ cho_class.wear("all")
             $ cho_cloth_pile = False
-            call update_cho_chibi_uniform
             show screen cho_chang
             with d3
             pause.5

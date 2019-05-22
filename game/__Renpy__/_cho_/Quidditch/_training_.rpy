@@ -247,7 +247,6 @@ label change_quidditch_tactics:
     call gen_chibi("stand","desk","base")
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
-    call update_cho_chibi_uniform
 
     hide screen bld1
     hide screen blkfade
@@ -318,7 +317,6 @@ label change_quidditch_tactics:
                 with d3
 
                 $ cho_class.equip(cho_outfit_last)
-                call update_cho_chibi_uniform
 
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")

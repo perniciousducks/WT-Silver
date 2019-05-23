@@ -90,7 +90,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
 
     # Target location.
     if xpos == "mid":
-        $ walk_xpos2 = 580 #540
+        $ walk_xpos2 = 560
     elif xpos == "desk":
         $ walk_xpos2 = 440
     elif xpos == "door":
@@ -187,27 +187,11 @@ screen cho_walk():
             add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
 
 
-label flying_cho_chibi(flying=True):
-
-    if flying == True:
-        $ cho_chibi_stand  = "ch_hem fly_a" # Temporarily
-        $ cho_chibi_walk   = "characters/hermione/chibis/broom/shime14.png" # Temporarily
-
-        $ cho_chibi_top       = "characters/cho/chibis/blank.png"
-        $ cho_chibi_bottom    = "characters/cho/chibis/blank.png"
-        $ cho_chibi_robe      = "characters/cho/chibis/blank.png"
-
-        $ cho_chibi_shoes         = "characters/cho/chibis/blank.png"
-        $ cho_chibi_walk_shoes    = "characters/cho/chibis/blank.png"
-
-    elif flying == False:
-        call update_cho_chibi_uniform
-
-    return
-
 label update_cho_chibi_uniform:
     $ update_chibi_image("cho")
     return
+
+
 
 init python:
     def update_chibi_image(name):

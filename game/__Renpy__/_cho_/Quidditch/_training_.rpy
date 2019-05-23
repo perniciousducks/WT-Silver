@@ -19,7 +19,7 @@ label cho_training_menu:
         $ cho_training_state = "complete"
         $ cho_training_unlocked = True
         $ cho_favors_unlocked = True
-        call quidditch_training_intro_2
+        jump quidditch_training_intro_2
 
     jump change_quidditch_tactics
 
@@ -222,10 +222,46 @@ label quidditch_training_intro_2:
         call cho_main("And that's going to help us how exactly?","soft","narrow","raised","mid")
 
     m "I will show you."
+    call cho_main("","base","base","base","mid")
 
     call popup("You've re-gained the ability to train Cho in Quidditch!", "Congratulations!", "interface/icons/head/head_cho_1.png")
+    pause 1
 
-    return
+    m "First, get your flying thing ready!"
+    call cho_main("My broom?","soft","base","raised","mid")
+    m "Broom,... flying carper,... Whichever you prefer."
+    call cho_main("Only brooms are allowed in Quidditch, sir.","annoyed","base","base","mid")
+    m "Good for you."
+    m "And put on your Quidditch outfit while you're at it..."
+    m "I suspect we'll need to do some adjustsment to it."
+    call cho_main("Yes, Sir.{w} Let me just go and get all of my equipment.","smile","base","base","mid")
+    call cho_main("I'll be right back.","base","narrow","base","mid")
+
+    call cho_walk(action="leave", speed=2)
+
+    call blkfade
+    pause.8
+
+    # Scene Setup
+    show screen chair_left
+    show screen desk
+    call update_gen_chibi # Reset Chibi.
+    call gen_chibi("stand","desk","base")
+
+    $ cho_outfit_last.save()
+    $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
+
+    call hide_blkfade
+    pause.8
+
+    call cho_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    pause.5
+
+    call cho_main("Ready when you are, [cho_genie_name]!","smile","base","base","mid", xpos="right", ypos="base")
+    m "(...)"
+
+    jump demonstrate_quidditch_tactics
+
 
 
 
@@ -234,11 +270,10 @@ label quidditch_training_intro_2:
 label change_quidditch_tactics:
     show screen blkfade
     call hide_characters
-    with d3
+    with d5
 
     $ cho_outfit_last.save()
 
-    $ cho_flying = False
     call cho_chibi("stand","mid","base")
 
     show screen chair_left
@@ -250,12 +285,16 @@ label change_quidditch_tactics:
 
     hide screen bld1
     hide screen blkfade
-    with fade
+    with d5
+    pause.8
 
     label demonstrate_quidditch_tactics:
+    call hide_characters
     call bld
 
-    if cho_flying:
+    $ menu_y = 0.8
+
+    if cho_chibi_animation == "fly":
         menu:
             m "(What directions should I give her?)"
             "\"It's all about the ass!\"":
@@ -267,18 +306,11 @@ label change_quidditch_tactics:
             "\"Get intimate!\"":
                 call demonstrate_tactic("close")
 
-            "\"Come back down.\"" if cho_flying == True:
-                $ cho_flying = False
+            "\"Come back down.\"":
                 call cho_walk("mid", "base", 1.2)
+                pause.2
 
-                show screen blkfade
-                with d5
-
-                call cho_chibi("hide")
-                call flying_cho_chibi(flying=False) # Reset chibi images.
-                $ cho_chibi_flip = 1
-                call cho_chibi("stand","mid","base")
-                hide screen blkfade
+                call cho_chibi("reset","mid","base", flip=False)
                 with d5
 
                 jump demonstrate_quidditch_tactics
@@ -288,11 +320,15 @@ label change_quidditch_tactics:
     else:
         menu:
             "-Fly Test-":
-                $ cho_flying = True # Demonstrating
                 m "Start flying, [cho_name]."
                 call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
+                hide screen bld1
+                with d3
+                pause.2
 
-                call cho_chibi(action="fly")
+                call cho_chibi(action="fly", xpos="550", ypos="260")
+                with d5
+                pause.8
 
             "-Customize quidditch outfit-":
                 call cho_main(face="neutral", xpos="mid", ypos="base")
@@ -334,12 +370,12 @@ label demonstrate_tactic(position=""):
     # The *ASS* position!
     if position == "front":
         m "Now turn away from me."
-        call cho_walk("580","150", 0.5)
+        call cho_walk(xpos=580, ypos=220, speed=0.5)
 
         call cho_main("Like this?","soft","base","base","R", ypos="head")
         m "A bit higher maybe..."
 
-        call cho_walk("600", "100", 0.3)
+        call cho_walk(xpos=600, ypos=150, speed=0.3)
 
         call bld
         m "Yes, very good. Keep that position."
@@ -361,7 +397,7 @@ label demonstrate_tactic(position=""):
     elif position == "above":
         m "Now move a bit higher."
 
-        call cho_walk("mid", "180", 0.3)
+        call cho_walk(xpos=550, ypos=200, speed=0.3)
 
         call cho_main("Like this?","soft","base","base","downR", ypos="head")
         with hpunch
@@ -376,7 +412,7 @@ label demonstrate_tactic(position=""):
         else:
             call cho_main("Of course, [cho_genie_name]...","base","base","base","downR", ypos="head")
 
-        call cho_walk("mid", "100", 0.5)
+        call cho_walk(xpos=500, ypos=100, speed=0.5)
 
         call cho_main("How is this?","open","base","base","down", ypos="head")
 
@@ -384,9 +420,9 @@ label demonstrate_tactic(position=""):
         call gen_chibi("hide")
         $ gen_chibi_stand = "characters/genie/chibis/standing.png"
         call gen_chibi("stand","desk","base")
+        show screen bld1
         with d3
 
-        call bld
         if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
@@ -395,14 +431,19 @@ label demonstrate_tactic(position=""):
             m "(Nothing can stop us now...)"
         else:
             m "(...)"
-            g4 "(What a tragedy!{w} No matter how high up she flies, you won't be able to see them while she's wearing those...)"
+            g4 "(You would never be able to see her panties while she's wearing those pants... Such a tragedy!)"
+
+        call update_gen_chibi
+        call gen_chibi("stand","desk","base")
+        show screen bld1
+        with d3
 
     # The [intimate] position!
     elif position == "close":
         m "Come as close to me as you can..."
         call cho_main("Yes, [cho_genie_name].","soft","base","base","R", ypos="head")
 
-        call cho_walk("desk", "220", 0.5)
+        call cho_walk(xpos=450, ypos=240, speed=0.5)
 
         call cho_main("How's this? Too close?","soft","wink","raised","mid", ypos="head")
         m "No! It's the perfect distance!"

@@ -347,7 +347,7 @@ label luna_blowjob_under_desk:
     g9 "Certainly!"
     m "(Still, better not to look a gift horse in the mouth...)"
     m "Now, I'm going to need you to open your mouth..."
-    $ lunCG('dick', 'tired', 'base', 'sad'. cheeks='blush')
+    $ lunCG('dick', 'tired', 'base', 'sad', cheeks='blush')
     lun "OK!"
     $ lunCG('up', 'base', 'open_tongue', 'sad')
     lun "Agh..."

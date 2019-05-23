@@ -629,7 +629,7 @@ label cc_pf_strip_T1_intro_E3:
     call ctc
 
     # Check if Hermione has already stripped for you.
-    if hg_pf_dance.points < 2: #DEVNOTE: Add failstate
+    if hg_pf_dance.points < 2:
 
         # Cho demands that you get Hermione to strip, so Cho has something to blackmail her should anything happen.
         # Cho gets dressed again and storms off.
@@ -671,6 +671,7 @@ label cc_pf_strip_T1_intro_E3:
         call cho_walk(action="leave", speed=2.5)
 
         # Event failed, no progress.
+        cc_pf_strip.fail()
         jump end_cho_event
 
 

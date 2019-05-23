@@ -330,9 +330,18 @@ label ll_pf_masturbate_T1_E2:
     $ days_to_luna += renpy.random.randint(1, 2)
 
     # Add section here
-    "Dev note" "This section is missing writing! (ll_pf_masturbate_T1_E2)"
 
-    m "Please, why don't you come a bit closer..."
+    m "So, Miss Lovegood, To what do I owe the pleasure today?"
+    call lun_main("Ah... I was hoping that I could... Um...","normal","tired","sad","mid", xpos="mid", ypos="base")
+    call lun_main("I know you must be very busy with school management.","normal","wide","sad","mid")
+    call lun_main("And I promise that I wouldn't ask unless it was of the utmost importance!","base","normal","sad","R")
+    m "Get on with it, [luna_name]."
+    call lun_main("Can I... get some more wrackspurts out? Please?","normal","wink","sad","mid")
+    m "Hmmm, again? so soon?"
+    call lun_main("If you think that it's too much for you to handle, we could slow down a bit...","normal","seductive","sad","R")
+    m "Nonsense! I could never forgo my students in their hour of need."
+    call lun_main("You mean it's okay if I?","normal","wide","sad","mid")
+    call lun_main("Oh... Thank you, thank you, thank you!","normal","happyCl","base","R")
 
     call lun_walk("mid", "desk", 2)
 

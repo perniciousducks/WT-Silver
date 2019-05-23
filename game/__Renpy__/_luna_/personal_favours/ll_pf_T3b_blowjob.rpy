@@ -147,10 +147,19 @@ label ll_pf_blowjob:
 label ll_pf_blowjob_T1_E1:
     $ days_to_luna += renpy.random.randint(1, 2)
 
-    call lun_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
-
-    # Add section here
-    "Dev note" "This section is missing writing! (ll_pf_blowjob_T1_E1)"
+    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
+    m "Argh... these wrackspurts are causing a fair bit of swelling-"
+    call lun_main("They are?!","pout","wide","sad","mid")
+    m "Indeed. I think it's about time I taught you another important method to treat them."
+    call lun_main("Another technique?","base","wide","base","mid")
+    m "Only if you want to learn it."
+    call lun_main("Of course!","happyCl","base","base","mid")
+    call lun_main("They're all I can think about, [lun_genie_name]!","base","seductive","sad","R")
+    call lun_main("And these lessons have been so much fun...","base","wink","sad","mid")
+    call lun_main("I definitely want to learn more!","base","happyCl","base","mid")
+    m "Then do I have the lesson for you..."
+    m "Come over here and I'll we can start..."
+    call lun_main("Yay","open","happyCl","sad","mid")
 
     call lun_walk("mid","desk",1.6)
 

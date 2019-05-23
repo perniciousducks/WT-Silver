@@ -167,10 +167,10 @@ label start_ht:
                 $ cheats_active = False
 
     menu:
-        "Animations" ">Use chibi animations or image sprites.\nThis can be changed in the options menu at the top left of the screen."
-        "-Use chibis-":
+        "Animations" ">Would you like to use chibi animations, or CG images when available?\nThis can be changed in the options menu at the top left of the screen."
+        "-Use animated chibis-":
             $ use_cgs = False
-        "-Use sprites-":
+        "-Use CG images-":
             $ use_cgs = True
 
     if cheats_active or persistent.game_complete:

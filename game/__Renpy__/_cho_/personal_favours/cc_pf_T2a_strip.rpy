@@ -306,7 +306,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
 
     cho "I'm a very good trainee, [cho_genie_name]!"
     g9 "Yes you are!"
-    cho "If my trainer requires me to take off my clothing and stip for him."
+    cho "If my trainer requires me to take off my clothing and strip for him."
     cho "Then I have no other choice but to indulge..."
     cho "I see nothing wrong with that..."
     pause.4
@@ -332,7 +332,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     else:
         g9 "Yes please!"
         cho "Whatever you say, Sir!"
-    cho "Like I said, I'd go to any lenghts just to please my trainer..."
+    cho "Like I said, I'd go to any lengths just to please my trainer..."
 
     # Climbs desk.
     call hide_characters
@@ -341,7 +341,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     call play_sound("climb_desk")
     pause 2
 
-    "To your surprise, the athletic little asian rather playfully climbs on top of your desk."
+    "To your surprise, the athletic petite girl rather playfully climbs on top of your desk."
 
     call cho_chibi("stand","on_desk","on_desk", flip=False)
     hide screen bld1
@@ -349,7 +349,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     with fade
     call ctc
 
-    cho "After all I promised I'd do anything to win that Quidditch cup..."
+    cho "After all, I promised I'd do anything to win that Quidditch cup..."
     cho "If stripping for you is what it takes- then..."
     cho "I- I'll do it..."
     m "(Shit. Is she crying?)"
@@ -358,16 +358,9 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     cho "Shut up!" # Scream
     cho "Can't you see what I'm trying to do here?"
     m "Not really, no."
-    cho "I'm testing my limits!"
-    cho "And I believe I have reached them, Sir!"
-    m "(Already? We haven't even gotten to the blowjob part...)"
-    cho "If I can go as far as embarrassing myself in front of my headmaster..."
+    cho "I'm testing my limits and I believe I have reached them, Sir!"
+    cho "If I could go as far as embarrassing myself in front of my headmaster..."
     cho "Doing the same in front of the school won't feel as bad in comparison."
-    cho "When we eventually lose..."
-    m "(This is so sad...)"
-    g4 "(Desposi- I mean,... Alexa, play Desposito...)"
-    m "(...)"
-    m "(Right... I'm stuck in the 90s. I forgot.)"
     cho "Sir, I don't think I can do this after all."
     cho "Could I get your permission to leave and never come back?"
 
@@ -394,7 +387,7 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             cho "But Sir!"
             m "You can go now."
             cho "You can't do that!"
-            g4 "Didn't you just beg me for just that?"
+            g4 "Didn't you just beg me to do just that?"
             cho "I begged you to help me win the Quidditch cup!"
             cho "And to be my trainer!{w} To be a \"good\" trainer!"
             cho "How can I overcome my fear of losing if I can't even do... this!"
@@ -415,14 +408,14 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             g9 "Those two mean, hearty bludgers!"
             cho "Sir? Could it be that you are talking about my breasts?"
             m "Yes indeed! Very good."
-            m "I had hoped you would eventually get my drift."
+            m "I had hoped you would eventually catch on."
             m "Because I had also run out of balls to compare them to..."
-            cho "Promise me you won't laugh when I show you my..."
+            cho "Promise me that you won't laugh when I show you my..."
             cho "Bludgers!"
             m "Why would I ever laugh at a pretty girl like you, Miss Chang?"
             cho "Because they aren't as big as Hermione's..."
             cho "Hers are more closer to Quaffles than mine..."
-            m "And there will always be a pair of \"Beaters\" that perfer to play with your...{w} balls."
+            m "And there will always be a pair of \"Beaters\" that prefer to play with your...{w} balls."
             cho "Two aren't enough!"
             g9 "Don't forget to count those that get hit by those bludgers!"
             m "Speaking of which..."
@@ -454,11 +447,11 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             $ genie_quid_position = "beater"
 
             cho "You are childish.{w} That's what you are..."
-            m "Please?"
+            m "You're the one playing games."
             cho "(...)"
-            cho "Fine... But Only once!"
-            cho "Twice,... maybe..."
-            m "That's more than I had hoped for!"
+            cho "Fine...{w} But Only once!"
+            cho "Twice,...{w} maybe..."
+            m "That's a hundred percent more than I had hoped for!"
 
             call slap_her
             cho "*Ouch!*"
@@ -472,11 +465,11 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
         "\"Let me catch a sight of that Snitch!\"":
             cho "Don't you mean \"Snatch\", Sir?"
             g9 "Potato, Potato!"
-            cho "You were a pervert from the very beginning, weren't you?" # Annoyed
+            cho "Your motives were nothing but for your own perverted gains from the start were they?" # Annoyed
             m "More or less..."
             m "However, I never lied about wanting to help you win the Quidditch cup!"
-            m "I'm a man of my word!"
-            cho "And a dead man, if you try to trick me!"
+            m "And I wouldn't be able to call myself a man if I was lying!"
+            cho "And you'd be called a dead man, if you try to trick me!"
             m "Well technically I'm a gen-"
             call play_sound("kick")
             call nar("Cho does a daunting stomp on your desk...")
@@ -498,26 +491,38 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             call cho_main("","horny","narrow","base","mid")
             call ctc
 
-            # ADD section here.
 
-            g9 "I've become quite a bit of a seeker myself!"
+            cho "Happy?"
+            m "Very."
+            m "I think I even found a new favourite feature on that body of yours."
+            cho "Oh?"
+            m "Absolutely..."
+            g9 "I think I've become quite a bit of a seeker myself recently."
+            cho "..."
+            m "And I think I just found my golden snatch."
+            cho "Really?"
+            cho "I never considered it before. It's just sort of been another part of my body..."
+            m "You should consider yourself lucky Miss Chang."
+            m "It's very pretty."
+            cho "Thank you [cho_genie_name]."
+            
 
             $ genie_quid_position = "seeker"
 
 
     cho "Will that be all then, Sir?"
-    m "Didn't you forget about something?"
+    m "Haven't you forgotten something?"
     cho "Didn't I do enough for you already?"
-    m "For me, you did more than enough. I'm far more than pleased with just seeing your titties..."
+    m "For me, you did more than enough. I'm more than pleased with what you've shown me..."
     cho "*Ugh*..." # Disgusted
     m "But, wasn't your goal earlier to undress entirely?"
     m "To prove to yourself that you could do it?"
-    cho "I hoped you already forgot about that..." # Small text.
+    cho "I hoped you'd forget about that..." # Small text.
     g9 "Well, I didn't!"
-    m "I'm here to help you mature."
-    m "A body like yours is nothing you need to hide behind!"
+    m "I'm here to help you mature and boost your confidence."
+    m "A body like yours is nothing you need to hide away!"
     m "Don't you think so too? After all the work you put into it?"
-    g4 "It should be celebrated! And seen be everyone!"
+    g4 "It should be celebrated! And seen by everyone!"
     cho "You're making me blush, [cho_genie_name]..."
     g9 "You can do it, [cho_name]! Only one more piece to go..."
     cho "Yes, Sir!"
@@ -534,7 +539,34 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     call cho_main("","horny","narrow","base","mid")
     call ctc
 
-    # ADD ending here.
+    m "See, that wasn't very hard was it?"
+    cho "No..."
+    cho "No you're right."
+    m "And you have a very beautiful body if I might add."
+    m "I can see why Hermione is so jealous."
+    cho "She is?"
+    m "Look who perked up all of a sudden."
+    cho "She should be jealous, these thighs could break a broom in half if I tried hard enough."
+    m "..."
+    m "I don't doubt it."
+    cho "Thank you."
+    m "For what?"
+    cho "Teaching me, I couldn't have imagined showing myself off like this before... but."
+    m "Yes?"
+    cho "Well, your methods has clearly worked so far and I feel more confident than ever."
+    m "That's great news, and hey... if distracting doesn't work you could just crush your opponents with those thighs of yours."
+    cho "That's true..."
+    cho "..."
+    m "Miss Chang."
+    cho "Yes?"
+    m "You're still naked in my office."
+    cho "Oh, yes of course."
+    #Cho puts clothes back on.
+    cho "Will that be all?"
+    m "Yes miss Chang, great work today... I doubt you'll have any problems distracting anyone with a body like that."
+    cho "Thank you."
+    cho "Until next time."
+    
 
 
 
@@ -694,7 +726,7 @@ label cc_pf_strip_T1_intro_E3:
     m "So...{w} what if it's not Snape, but some other teacher that makes their way in here?"
     call cho_main("*Huh?*{w} Oh no!","soft","wide","base","mid")
     call cho_main("For a second I forgot we even had other teachers at this school!","open","wide","sad","L")
-    call cho_main("What if Professor McGonagal stumbples in here while-{w} while I-...","angry","closed","sad","mid")
+    call cho_main("What if Professor McGonagal stumbles in here while-{w} while I-...","angry","closed","sad","mid")
 
     call play_sound("desk")
     call hide_characters
@@ -807,12 +839,12 @@ label cc_pf_strip_T1_intro_E3:
     call her_main("","angry","angry")
 
     call cho_main("You know, just the usual...","soft","base","base","L")
-    call cho_main("Stripping for our dear headmaster!","smile","angry","angry","L")
+    call cho_main("Like stripping for our dear headmaster!","smile","angry","angry","L")
     call cho_main("I trust that you're more than familiar with it...","soft","closed","base","L")
     call her_main("You've told her?","clench","angry")
     call cho_main("So you really \"did\" do it!","open","wide","base","L")
-    call her_main("That's none of your business what I do at this school! You slut!","angry","angryL")
-    call cho_main("Are you sure? I believe there are some people that would think otherwise...","angry","narrow","base","mid")
+    call her_main("It's none of your business what I do at this school! You slut!","angry","angryL")
+    call cho_main("Are you sure about that? I believe there are some people that would think otherwise...","angry","narrow","base","mid")
     call cho_main("Your friends...{w} the other students...{w} our teachers...","soft","narrow","angry","L")
     call cho_main("Maybe even the ministry?","smile","narrow","angry","L")
     call her_main("You wouldn't dare!!!","upset","squint")
@@ -821,11 +853,12 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("Which is why we brought you here...","open","base","base","mid")
     call cho_main("To have some fun!","base","narrow","angry","mid")
 
-    call her_main("Sir, I demand that you stop her nonsense!","open","angry")
-    call cho_main("I don't think he will do that, Granger...","soft","narrow","angry","mid")
-    call cho_main("We both know what he prefers...","soft","closed","base","mid")
+    call her_main("Sir, I demand that you stop this nonsense!","open","angry")
+    call cho_main("I don't think that's very likely to happen, Granger...","soft","narrow","angry","mid")
+    call cho_main("We both know what he would prefer...","soft","closed","base","mid")
+    m "..."
     call cho_main("And who he prefers...","smile","angry","angry","mid")
-    call her_main("And you think that's you?","soft","angryL")
+    call her_main("You think that's he prefers you over me?{w} Please...","soft","angryL")
     call cho_main("Why don't we just ask him?","base","narrow","base","mid")
     call cho_main("Tell us, Professor...","soft","narrow","base","R")
     call cho_main("How do you like the athletic, immaculate, nude body of your favourite student?","smile","narrow","angry","mid")
@@ -971,12 +1004,12 @@ label cc_pf_strip_T1_E3: # Repeats
     call cho_main("Hi, Granger!","smile","narrow","angry","L")
     call her_main("Let me guess, we are here to marvel at your insecurity again?","soft","closed")
     call cho_main("Granger, instead of spitting out insults, why don't you join me and have some fun for once?","soft","base","raised","L")
-    call cho_main("Strip down for your headmaster aswell, like you usually do...","smile","narrow","angry","L")
+    call cho_main("Strip down for your headmaster as well, like you usually do...","smile","narrow","angry","L")
     call cho_main("Or would it bother you too much, now that I'm here?","horny","narrow","base","L")
     call her_main("*glare*","angry","angry")
     call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless \"Gryffindor\" points while you're at it.","soft","base","base","L")
     call her_main("I don't think that will be necessary...","soft","closed")
-    call cho_main("Well, we all already know how this is going to end, don't we, [cho_genie_name]?","soft","base","base","mid")
+    call cho_main("Well, we all already know how this is going to turn out don't we, [cho_genie_name]?","soft","base","base","mid")
     call cho_main("My body is still better than Miss Granger's, isn't it?","smile","angry","angry","L")
     call her_main("","annoyed","angry")
     call ctc
@@ -1056,16 +1089,17 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Not even clo-","soft","wide","base","mid")
             call her_main("","smile","baseL")
             call cho_main("Professor, could you please repeat that for me?","angry","closed","angry","mid")
-            m "Hermione's body is better."
+            m "Hermione's body is superior."
             call her_main("No surprise there...","base","baseL")
             call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans="hpunch")
             call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
-            call her_main("You shouldn't talk to your headmaster like that...","soft","closed")
+            call her_main("Don't use that tone with the headmaster...","soft","closed")
             call cho_main("Nobody asked you!","angry","angry","angry","L")
-            call her_main("He's the smartest wizard at our school...{w} Surely he has to knows what he's talking about...","smile","glance")
-            call cho_main("Why did you side with her all of a sudden?","annoyed","narrow","angry","mid")
+            call her_main("He's the wisest wizard at our school...{w} Surely his word should be final...","smile","glance")
+            m "I'd use the word astute but I'll take wise..."
+            call cho_main("Why are you siding with her all of a sudden?","annoyed","narrow","angry","mid")
             m "Good question."
-            m "Miss Granger, why don't you show Miss Chang why I chose you..."
+            m "Miss Granger, why don't you show Miss Chang why your body is superior to hers..."
             g9 "Share with us your two most compelling arguments..."
             call her_main("Sir?","soft","wink")
             call cho_main("He's talking about your \"tits\", you dimwit!","angry","closed","angry","mid")
@@ -1084,8 +1118,8 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
             call her_main("Have a good look.","soft","glance")
             call cho_main("(...)","annoyed","narrow","angry","downR") # Tries to look away.
-            call her_main("You can have a peek too, slut.","smile","angryL")
-            call cho_main("I'd rather not, or I might have to vomit...","soft","narrow","angry","R") #
+            call her_main("And you'd better take in what a real pair looks like, slut.","smile","angryL")
+            call cho_main("I'd rather not, or I might barf...","soft","narrow","angry","R") #
             g9 "Very nice, Miss Granger!"
 
             menu:
@@ -1112,10 +1146,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("I'd like to leave now.","soft","base")
             call cho_main("By all means, just go already.","soft","narrow","angry","R")
             call her_main("Did something not go as you expected?","smile","baseL")
-            call her_main("Even exposing yourself wasn't in your favour...","soft","closed")
+            call her_main("Did you think having me here when you exposed yourself would make me jealous...","soft","closed")
             call cho_main("(...)","annoyed","angry","angry","L")
             call her_main("Thank you for inviting me, Professor.","soft","glance")
-            call her_main("I \"did\" enjoy this little obscene \"freak-show\" you've arranged for me...","grin","glance")
+            call her_main("I \"did\" enjoy this little obscene \"freak-show\" you arranged for me...","grin","glance")
             call cho_main("You'll regret this, Granger!","angry","narrow","angry","L")
 
             if daytime:
@@ -1124,7 +1158,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 call her_main("Have a good night, Professor.","soft","closed")
 
             m "(...)"
-            call her_main("See you in school, slut!","grin","glanceL")
+            call her_main("See you in class Chang!","grin","glanceL")
             call cho_main("*Tzzzz!*","angry","closed","angry","mid")
             call cho_main("Cow...","annoyed","narrow","angry","R")
 
@@ -1143,10 +1177,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("You were supposed to have my back! Not Granger's!","angry","closed","angry","mid")
             call cho_main("That \"whore\" doesn't deserve your praise!","soft","narrow","angry","mid")
             m "She made some good arguments..."
-            g9 "\"Two\" good arguments, to be precise!"
+            g9 "\"A couple\" of good arguments, to be precise!"
             call cho_main("They're barely larger than mine...","annoyed","narrow","base","downR")
             call cho_main("You'll see, Sir.{w} I'm better than her.{w} And I'll prove it to you...","soft","narrow","angry","mid")
-            g9 "I'm looking forward to it!"
+            g9 "Well, that is yet to be seen."
 
             # Cho gets dressed.
             hide screen cho_chang
@@ -1155,15 +1189,15 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             hide screen blkfade
 
             call cho_main("Sir, my *uhm*...{w} my panties...","soft","base","angry","R", xpos="mid", ypos="base", trans="fade")
-            m "Oh, Right..."
+            m "Oh, of course..."
             call cho_main("","annoyed","narrow","angry","mid")
             pause.5
-            m "One second..."
+            m "Give me just a moment..."
             $ renpy.sound.play("sounds/sniff.mp3")
-            call nar("You give them one last sniff before handing them back to the girl.")
+            call nar("You miss Chang's panties one last sniff before handing them back to the girl.")
             g4 "There."
             call cho_main("(Pervert...)","annoyed","narrow","angry","R")
-            call cho_main("I have to go now.","soft","closed","angry","mid")
+            call cho_main("I think it's time for me to go now.","soft","closed","angry","mid")
             call cho_main("Until next time, [cho_genie_name].","soft","narrow","angry","mid")
 
             # Cho leaves.
@@ -1171,7 +1205,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
             call bld
             g4 "Damn!"
-            g9 "For somebody that does a lot of sport, she smells really nice!"
+            g9 "For somebody that does a lot of exercising, she smells really nice!"
             m "Maybe I should be a bit nicer to her next time..."
 
             $ has_cho_panties = False
@@ -1187,10 +1221,9 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             m "Are you sure about that? I've seen you staring..."
             call cho_main("","base","narrow","angry","L")
             call her_main("Because she just so happens to be standing there, butt naked!{w} In your office!","angry","angryCl")
-            call her_main("What other choice to I have than to look at the obscenity of this slut!","soft","glanceL")
             m "I'd like you to rate Miss Chang's figure, truthfully, and to the best of your ability."
-            call her_main("Do I really have to?","annoyed","base")
-            g9 "You do! And I'd really like to hear your full opinion on Miss Chang's shamelessly exposed body!"
+            call her_main("Really? Do I have to?","annoyed","base")
+            g9 "You do! I'd really like to hear your opinion on Miss Chang's shamelessly exposed body!"
             call cho_main("*Mhmm*","base","closed","base","mid") # Self assured.
             call her_main("Fine...","soft","angryL")
             call her_main("\"Poor\", I'd say...","soft","closed")
@@ -1206,7 +1239,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             m "You can say that on TV..."
             call cho_main("Granger, why don't you tell us which part of my immaculate body deserves such a poor rating?","soft","narrow","angry","L")
             call her_main("Very well...","soft","closed")
-            call her_main("For one, you are a narcissistic bitch!{w} That likes to think her body is superior to others...","open","angry")
+            call her_main("For one, you are a narcissistic bitch!{w} That makes the presumption her body is superior to all others...","open","angry")
             call cho_main("Because it is.","smile","narrow","angry","mid")
             call her_main("Not to mention that you have even fever curves than some of the boys I know...","grin","angry")
             call cho_main("","annoyed","narrow","angry","mid")
@@ -1214,7 +1247,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("I wonder where you're getting \"your\" undergarments from...","soft","closed","base","mid")
             call cho_main("Stealing them from Madam Pomfrey, are you?","smile","narrow","angry","mid")
             call her_main("I do not!!!","open","wide")
-            m "Girls, we all know that what really counts is how we look on the inside."
+            m "Girls, we all know what really counts is how we appear on the inside."
             call her_main("","angry","angryCl")
             call cho_main("Oh- Shut up!","angry","narrow","angry","mid")
             call her_main("Professor, you're the one who continuously asks us to expose ourselves!","soft","angry")

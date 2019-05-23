@@ -412,45 +412,45 @@ label cc_pf_talk_T1_intro_E2:
     jump end_cho_talk_event
 
 
-label cc_pf_talk_T1_E3: # Complete. Need review. Not posed.
+label cc_pf_talk_T1_E3:
     m "Care to tell me more about Quidditch?"
-    cho "Of course, [cho_genie_name].{w} I always love talking about Quidditch!"
+    call cho_main("Of course, [cho_genie_name].{w} I always love talking about Quidditch!","smile","base","base","R")
     m "Yeah, yeah... I know."
     m "First, come closer. Let me have a good look at you!"
-    cho "Yes, Sir."
+    call cho_main("Yes, Sir.","base","base","base","mid")
 
     call cho_walk(xpos="desk", ypos="base", speed=1.6)
 
-    cho "Anything specific you'd like to know?"
+    call cho_main("Anything specific you'd like to know?","soft","base","base","mid", xpos="mid", ypos="base", trans="fade")
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
-    cho "{size=-4}I knew I shouldn't have told him...{/size}"
-    cho "Sir, Why do you have to keep bringing that up?"
-    cho "What's past is in the past..."
+    call cho_main("{size=-4}I knew I shouldn't have told him...{/size}","angry","narrow","base","down")
+    call cho_main("Sir, Why do you have to keep bringing that up?","soft","narrow","base","mid")
+    call cho_main("What's past is in the past...","annoyed","narrow","angry","R")
     m "I believe otherwise..."
     g4 "Have you already forgetten that he's our enemy?!"
     m "Your relationship with him is of the utmost importance right now!"
     m "I need to know every tiny bit of detail about the two of you."
     m "His sexual preferences. Secret fetishes he might have. That sort of stuff..."
-    cho "Sir that's a very personal thing to ask for!"
-    cho "I'll not tell you about any of that!"
+    call cho_main("Sir that's a very personal thing to ask for!","angry","wide","base","mid")
+    call cho_main("I'll not tell you about any of that!","soft","base","angry","mid")
     m "[cho_name], we need to find something we can use against him. To our advantage!"
-    cho "And you believe that that would help us win?"
+    call cho_main("And you believe that that would help us win?","annoyed","narrow","angry","mid")
     m "Precisely."
-    cho "(...)"
-    cho "Very well, [cho_genie_name]..."
-    cho "I'll tell you what I know about him."
-    cho "Cedric was always a bit of a loner..."
-    cho "He was cold. Focused. Never showed too much affection towards me. Except for-"
-    cho "(...)"
+    call cho_main("(...)","annoyed","narrow","angry","mid")
+    call cho_main("Very well, [cho_genie_name]...","soft","narrow","angry","R")
+    call cho_main("I'll tell you what I know about him.","soft","closed","base","mid")
+    call cho_main("Cedric was always a bit of a loner...","annoyed","narrow","base","R")
+    call cho_main("He was cold. Focused. Never showed too much affection towards me. Except for-","soft","base","base","downR")
+    call cho_main("(...)","annoyed","narrow","base","R")
     m "Yes? Go on..."
-    cho "I believe he had a bit of an obsession with my panties, Sir."
+    call cho_main("I believe he had a bit of an obsession with my panties, Sir.","soft","narrow","base","mid")
     if huffl_matches_won == 0:
         m "A panties obsession? So so..."
     else:
         g9 "*Ha!* Called it!"
-    cho "It was almost creepy how often he tried to look up my skirt..."
-    cho "I mean who would do such a thing?"
+    call cho_main("It was almost creepy how often he tried to look up my skirt...","angry","wide","base","mid")
+    call cho_main("I mean who would do such a thing?","soft","base","base","mid")
     m "Yes, yes,... how terrible of him..."
 
     menu:
@@ -465,10 +465,7 @@ label cc_pf_talk_T1_E3: # Complete. Need review. Not posed.
             with d3
             pause.8
 
-            show screen blktone5
-            show screen bld1
-            with d3
-
+            call bld
             g9 "Please tell me more about your panties!"
 
         "-Participate in the conversation-":
@@ -476,59 +473,73 @@ label cc_pf_talk_T1_E3: # Complete. Need review. Not posed.
             m "(No, I need to focus!)"
             m "(This might be useful information in our game against him...)"
             m "Please, carry on..."
-            cho "Of course, Sir."
+            call cho_main("Of course, Sir.","base","base","base","mid")
 
     if masturbating:
-        cho "That's an oddly specific question, don't you think?"
+        call cho_main("That's an oddly specific question, don't you think?","soft","base","raised","mid")
         g4 "Come on, girl! Which were the ones he liked the most?"
-        cho "*Uhm*..."
-        cho "I never wore panties too often..."
-        cho "At least not those fancy ones the other girls are wearing."
+        call cho_main("*Uhm*...","annoyed","base","base","R")
+        call cho_main("I never wore panties too often...","angry","narrow","base","downR")
+        call cho_main("At least not those fancy ones the other girls are wearing.","soft","narrow","base","mid")
         g4 "*Argh!* I'd love to see those!"
-        cho "If you can even call them that..."
-        cho "Most of them look like shoelaces!"
+        call cho_main("If you can even call them that...","annoyed","narrow","base","R")
+        call cho_main("Most of them look like shoelaces!","annoyed","narrow","angry","R")
         g4 "What a bunch of sluts!"
-        cho "They're all a bunch of sluts!!!"
+        call cho_main("They're all a bunch of sluts!!!","soft","narrow","angry","mid")
         call nar("*Fap* *Fap* *Fap*...")
-        cho "You should see them, [cho_genie_name]!"
-        cho "They wear their skirts so low, you just have to wonder how they haven't fallen off yet..."
+        call cho_main("You should see them, [cho_genie_name]!","annoyed","narrow","angry","R")
+        call cho_main("They wear their skirts so low, you just have to wonder how they haven't fallen off yet...","soft","narrow","base","downR")
         g4 "Indeed, I'd love to see that!"
-        cho "And pull their panty-string up and over their hip bones..."
+        call cho_main("And pull their panty-string up and over their hip bones...","soft","narrow","base","mid")
         g4 "Yes! So fucking slutty!"
-        cho "They look like arrows pointing at their slutty cunts!"
+        call cho_main("They look like arrows pointing down at their snitch!","angry","narrow","angry","mid")
+        g4 "*Argh!* Those cheap whores!"
+        call cho_main("As if it's an open invitation for any boy to lay with them...","soft","narrow","angry","R")
         g4 "*Fuck!* That did it!!!"
 
         # Genie cums.
+        call hide_characters
+        hide screen bld1
+        with d3
 
-        cho "As for me, panties have to be practical, first and formost!"
-        g4 "So you can quickly get them off, you whore!"
+        call cum_block
+        call gen_chibi("cumming_behind_desk")
+        with d3
+        pause.8
 
-        # Cums again.
+        call cho_main("As for me, panties have to be practical, first and formost!","soft","closed","base","mid")
+        g4 "*Ahg!* So you can quickly get them off, you whore!"
 
-        cho "And there needs to be enough fabric to soak up all the sweat..."
+        call cum_block
+        call cho_main("And there needs to be enough fabric to soak up all the sweat...","soft","narrow","base","R")
         g4 "I bet you are so wet right now!"
 
         # Genie finished.
+        call gen_chibi("came_on_desk")
+        with d3
+        pause.8
 
-        cho "(...)"
-        cho "Sir, would it be alright if I head off now?"
+        call cho_main("(...)","annoyed","narrow","base","mid")
+        call cho_main("Sir, would it be alright if I head off now?","soft","base","base","R")
         g9 "Already? Do you have to be somewhere?"
-        cho "No?"
+        call cho_main("No?","soft","base","base","mid")
         g9 "Did our little talk about panties maybe... excited you?"
-        cho "What? No of course not!"
+        call cho_main("What? No of course not!","angry","wide","base","mid")
 
         if daytime:
-            cho "I simply have to go to my next lection now..."
-            cho "Or I will be late again."
+            call cho_main("I simply have to go to my next lesson...","soft","closed","base","mid")
+            call cho_main("Or I will be late again.","annoyed","base","base","R")
         else:
-            cho "But if you expect me to do well during our next \"Hufflepuff\" game, then I'll require some sleep..."
+            call cho_main("But if you expect me to do well during our next \"Hufflepuff\" game, then I'll require some sleep...","soft","base","base","R")
 
         m "Of course. You may go..."
-        cho "Thank you, Sir."
-        cho "Until next time."
+        call cho_main("Thank you, Sir.","base","base","base","mid")
+        call cho_main("Until next time.","smile","narrow","base","mid")
 
         # Cho leaves.
+        call cho_walk(action="leave", speed=2.5)
 
+        call bld
         g9 "Sweet little wank I had there."
         m "(...)"
         m "I hope she'll show me her panties aswell eventually..."
@@ -537,57 +548,60 @@ label cc_pf_talk_T1_E3: # Complete. Need review. Not posed.
         jump end_cho_talk_event
 
     else:
-        cho "He’d always walk behind me when we went up the stairs, to get a better view I bet..."
+        call cho_main("He’d always walk behind me when we went up the stairs, to get a better view I bet...","soft","narrow","angry","R")
         m "Did you ever show them to him?"
-        cho "My panties?"
-        m "No, your good manners...{w} Yes, your panties!"
-        cho "Why would I have wanted to?"
+        call cho_main("My panties?","soft","base","raised","mid")
+        m "No, your good manners...{w} Yes your panties!"
+        call cho_main("Why would I have wanted to?","base","base","base","mid")
         m "What kind of girl doesn't show her panties to her beloved?"
-        cho "That’s just ridiculous..."
+        call cho_main("I beg your pardon?!","angry","wide","base","mid")
+        call cho_main("Sir who would-","angry","narrow","base","mid")
 
         if huffl_matches_won == 0:
             m "But, that made me think..."
             m "If he’s as obsessed with panties as you say, why don’t we use that information to our advantage?"
-            cho "Like how?"
+            call cho_main("Like how?","soft","narrow","raised","mid")
             m "We use them as a distraction!"
             m "Now we only have to find out how to show them off properly during the game."
-            cho "I have to say I don’t like this notion one bit."
-            cho "But it might be worth a try..."
+            call cho_main("I have to say I don’t like this notion one bit.","annoyed","narrow","base","mid")
+            call cho_main("But it might be worth a try...","soft","narrow","base","R")
         else:
             m "Well, it worked."
             m "Beating him at Quayditch was almost too easy!"
-            cho "Quidditch, Sir..."
+            call cho_main("Quidditch, Sir...","soft","closed","base","mid")
             m "All we had to do was put some good-old panties in front of his face..."
+            call cho_main("","annoyed","narrow","base","mid")
             g4 "And he was like a wild goat chasing after them!"
-            cho "A goat?"
+            call cho_main("A goat?","soft","narrow","raised","mid")
             m "Yes. Don't you have those here?"
-            cho "Goats don't chase after panties, Sir..."
+            call cho_main("Goats don't chase after panties, Sir...","soft","narrow","base","R")
             m "They do where I'm from..."
-            cho "(...)"
-            cho "But you were correct with your assumption, Sir."
-            cho "I'm surprised how well that worked out in our favour."
-            cho "He really \"does\" love panties..."
+            call cho_main("(...)","annoyed","narrow","angry","R")
+            call cho_main("But you were correct with your assumption, Sir.","soft","closed","base","mid")
+            call cho_main("I'm surprised how well that worked out in our favour.","angry","base","base","down")
+            call cho_main("He really \"does\" love panties...","soft","narrow","base","mid")
             m "Who doesn't..."
 
-        cho "Sir, if you don't mind..."
+        call cho_main("Sir, if you don't mind...","soft","closed","base","mid")
         if daytime:
-            cho "I'm already late for classes."
-            cho "I really should be going now..."
+            call cho_main("I'm already late for classes.","soft","narrow","base","R")
+            call cho_main("I really should be going now...","angry","narrow","sad","mid")
         else:
-            cho "It's getting late."
-            cho "I really should head to bed now..."
+            call cho_main("It's getting late.","soft","narrow","base","mid")
+            call cho_main("I really should head to bed now...","angry","narrow","sad","mid")
 
         m "Of course. You are dismissed."
-        cho "Thank you, Sir."
+        call cho_main("Thank you, Sir.","base","base","base","mid")
         if daytime:
-            cho "Until next time."
+            call cho_main("Until next time.","smile","narrow","base","mid")
         else:
-            cho "Good night."
+            call cho_main("Have a good night.","smile","narrow","base","mid")
 
         # Cho leaves.
+        call cho_walk(action="leave", speed=2.5)
 
+        call bld
         m "I wonder what colours they are..."
-
 
         jump end_cho_talk_event
 
@@ -642,7 +656,7 @@ label cc_pf_talk_T2_intro_E1:
             with d3
             pause.8
 
-            show screen blktone5
+            show screen blktone5 # Gets removed by `call nar()`
             show screen bld1
             with d3
             m "(Just to make this clear, I'm not getting off because I like the thought that she's getting bullied...)"
@@ -1134,104 +1148,132 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
             # Add ending here.
 
         "\"Slytherin's Team\"": # Needs review.
-            cho "Please, Sir. I'm trying my best to suppress even thinking of them..."
+            call cho_main("Please, Sir. I'm trying my best to suppress even thinking of them...","soft","closed","base","mid")
 
             # Malfoy
-            cho "It was only yesterday that I had that stinking Malfoy boy snickering behind my back as I walked past him."
+            call cho_main("It was only yesterday that I had that stinking Malfoy boy snickering behind my back as I walked past him.","soft","narrow","angry","R")
             if masturbating:
-                cho "I can only imagine the things that were on his mind."
+                call cho_main("I can only imagine the things that were on his mind...","annoyed","narrow","angry","downR")
             else:
                 m "Yeah? Like what?"
-                cho "It's obvious if you ask me, Sir."
-                cho "After all, he's just like any boy at this school...{w} They are all pervs..."
-            cho "He even had the audaciousness to whistle at me, in front of everybody!"
-            cho "And shout about what a \"great arse\" I have, and that he couldn't wait to \"beat it!\""
+                call cho_main("It's obvious if you ask me, Sir.","soft","closed","base","mid")
+                call cho_main("After all, he's just like any boy at this school...{w} They are all pervs...","annoyed","narrow","angry","mid")
+            call cho_main("He even had the audaciousness to whistle at me, in front of everybody!","soft","narrow","base","mid")
+            call cho_main("And shout about what a \"great arse\" I have, and that he couldn't wait to \"beat it!\"","soft","narrow","angry","mid")
             if masturbating:
-                g4 "Great minds think alike!"
-                g4 "*Argh!* You whore!"
+                g4 "Great minds...{w=0.2} *Argh!* think alike!"
             else:
                 g9 "Seems to me like he enjoyed the view!"
-            cho "Next time he does it I'll turn him into a filthy ferret, I swear!"
+            call cho_main("Next time he does it I'll turn him into a filthy ferret, I swear!","angry","angry","angry","down")
+            call cho_main("","annoyed","narrow","angry","mid")
             if masturbating:
                 g4 "*Hah!* You can do whatever you want with me too, if that's what turns you on baby!"
                 g4 "I'd love to be your little pet ferret!"
             else:
                 m "Your ass is a real head turner, isn't it?"
-                cho "If I'm honest, I would be disappointed if it wasn't..."
+                call cho_main("To be frank with you, Sir,...{w=0.6} I would be disappointed if it wasn't...","base","narrow","base","mid")
                 m "Why don't you tease him a bit more then? Get him hooked on it..."
                 m "It would be to our benefit, don't you think?"
-                cho "*Hmmm* Yes I could give him a peak once or twice."
-                cho "For as long as I don't have to let him touch it..."
+                call cho_main("*Hmmm* Yes I could give him a peak once or twice.","annoyed","base","base","R")
+                call cho_main("For as long as I don't have to let him touch it...","soft","narrow","angry","mid")
                 m "..."
                 m "Anything else you could tell me?"
 
             # Crabbe & Goyle
             if masturbating:
-                cho "Then there are the two Slytherin beaters, Crabbe and Goyle..."
+                call cho_main("Then there are the two Slytherin beaters, Crabbe and Goyle...","soft","narrow","base","mid")
             else:
-                cho "Well, there are also the Slytherin's beaters, Crabbe and Goyle..."
-            cho "Malfoy's extraordinarily dense thugs..."
-            cho "They've been strutting around school with their two bats..."
-            cho "Hitting any girl's bum that happens to be in their reach..."
+                call cho_main("Well, there are also the Slytherin's beaters, Crabbe and Goyle...","soft","narrow","base","mid")
+            call cho_main("Malfoy's extraordinarily dense thugs...","angry","closed","angry","mid")
+            call cho_main("They've been strutting around school with their two bats...","soft","narrow","angry","mid")
+            call cho_main("Hitting any girl's bum that happens to be in their reach...","annoyed","narrow","angry","R")
 
             if masturbating:
-                cho "It's like they use them as target practice."
+                call cho_main("It's like they use them as target practice.","soft","narrow","angry","mid")
                 g4 "*Argh!* How nasty!"
-                cho "I was lucky enough to spot them before they had a chance to try it on me."
-                cho "If they hit me with those things I wouldn't be able to sit on a broom for weeks!"
-                cho "My butt would be so red and sensitive even sitting on a broom would make me squirm."
+                call cho_main("I dare them to try it on me, those bastards!","soft","narrow","angry","R")
+                g4 "*Yes!* You deserve a good spanking!"
+                call cho_main("I saw them go after Katie Bell today, one of the \"Gryffindor\" chasers...","soft","narrow","base","mid")
+                call cho_main("She was carrying a whole bunch of books and other equipment,... so she couldn't simply run off or drop them...","soft","narrow","angry","mid")
+                call cho_main("She would have probably beaten them up immediately if that wasn't the case. Those cowards...","angry","angry","angry","mid")
                 g4 "*Yes!* I wouldn't mind borrowing one of those bats!"
-                cho "Not even mentioning what the others would think if it looked like I had been spanked red raw."
+                call cho_main("They really did her dirty, Sir.{w} Even pulled down her skirt before they ran off!","soft","narrow","base","mid")
+                g4 "What a bunch of daredevils!"
+                call cho_main("Her bum was so red afterwards... It was hard not to look at it...","horny","narrow","base","down")
+                g4 "*Fuck yeah!* You'd love to bury your face in some girl's ass, don't you?!"
+                call cho_main("She really does have a cute bum...","soft","narrow","base","down")
                 g4 "*Yes!* That did it!"
 
                 # Genie cums.
+                call hide_characters
+                hide screen bld1
+                with d3
+
+                call cum_block
+                call gen_chibi("cumming_behind_desk")
+                with d3
+                pause.8
 
                 g4 "*Argh!* You nasty slut!"
+                call cum_block
 
-                # Cums again.
+                call cho_main("(...)","upset","wide","base","mid")
+                call cho_main("*Ugh*... Sir, don't tell me you just...","angry","closed","angry","mid")
 
-                cho "*Ugh*... Sir, don't tell me you just..."
+                # Genie stops.
+                hide screen bld1
+                with d3
+                pause.2
+
+                call gen_chibi("came_on_desk")
+                pause.8
+
                 g9 "You did great, [cho_name]."
-                cho "Where could one acquire one of those bats you're speaking of?"
-                cho "You're kidding right..."
+                call cho_main("","annoyed","narrow","angry","mid")
+                m"Where could one acquire one of those bats you're speaking of?"
+                call cho_main("You're kidding right...","soft","narrow","base","mid")
 
             else:
-                cho "They aren't even allowed to make use of any Quidditch equipment outside the Quidditch pitch area!"
+                call cho_main("They aren't even allowed to make use of any Quidditch equipment outside the Quidditch pitch area!","soft","narrow","angry","R")
                 m "Aren't you a bit too harsh on them?"
-                cho "Sir, since when is sexual harassment tolerated at this school?"
+                call cho_main("Sir, since when is sexual harassment tolerated at this school?","angry","closed","angry","mid")
                 m "I bet there are many girls that enjoy the occasional spanking..."
-                cho "What?"
+                call cho_main("What?","soft","wide","base","mid")
                 m "Next time you should ask one of those girls..."
-                cho "As if any of those would enjoy it, Sir! Don't be ridiculous!"
+                call cho_main("As if any of those would enjoy it, Sir! Don't be ridiculous!","soft","narrow","angry","mid")
                 m "They might just be too embarrassed to admit it..."
+                call cho_main("","annoyed","narrow","base","mid")
                 m "Anyhow, do you have any suggestions on how we might deal with them?"
                 m "To make them blow their game against you..."
-                cho "Luckily for us, they're not in the slightest bit devoted to their house... Or their team..."
-                cho "You see, they don't play Quidditch to win... but as a warrant to beat up the opposing players instead..."
-                cho "But... If I could get them to play poorly..."
+                call cho_main("Well, luckily for us, they're not in the slightest bit devoted to their house... Or their team...","soft","base","base","R")
+                call cho_main("You see, they don't play Quidditch to win... but as a warrant to beat up the opposing players instead...","soft","narrow","base","mid")
+                call cho_main("But... If I could get them to play poorly...","soft","narrow","raised","mid")
                 m "Could you manage that?"
-                cho "*Tzzz!* Nothing would be easier, Sir!"
-                cho "They would happily throw the towel with the right kind of... motivation. Don't you think?"
+                call cho_main("*Tzzz!* Nothing would be easier, Sir!","angry","clsoed","angry","mid")
+                call cho_main("They would happily throw the towel with the right kind of... motivation. Don't you think?","base","narrow","base","mid")
                 g9 "You've become quite the strategist!"
-                cho "If they like smacking asses that much, maybe I should just let them hit a girl that can take their feeble swings..."
-                m "Very good suggestion!"
+                call cho_main("If they like smacking asses that much, maybe I should just let them hit a girl that can take their feeble swings...","soft","narrow","base","R")
+                m "A very good suggestion!"
+                call cho_main("Thank you, Sir.","base","narrow","base","mid")
 
-            cho "Would it be okay if I go now?"
+            call cho_main("Would it be okay if I go now?","soft","base","base","R")
             if daytime:
-                cho "I'm late for classes..."
+                call cho_main("I'm late for classes...","soft","base","base","mid")
             else:
-                cho "It's getting late..."
+                call cho_main("It's getting late...","soft","base","base","mid")
 
             m "You know how I feel about that, girl."
             m "I hate to see you leave..."
             g9 "But I love to watch you go!"
-            cho "Sir..." # Annoyed
+            call cho_main("Sir...","annoyed","narrow","base","mid") # Annoyed
 
             m "You are dismissed."
-            cho "Thank you, Sir."
+            call cho_main("Thank you, Sir.","soft","closed","base","mid")
 
             # Cho leaves.
+            call cho_walk(action="leave", speed=2.5)
 
+            call bld
             g4 "Go! Go! Ravenclaw!"
             m "I have to admit, I'm a bit of a fanboy now..."
 

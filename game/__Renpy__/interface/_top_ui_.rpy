@@ -278,7 +278,7 @@ screen ui_menu():
             text "" # space
             if cheats_active and game_difficulty <= 2 and day > 1:
                 textbutton "{size=-11}Cheats{/size}" action [SetVariable("toggle_menu", False), Jump("cheats")] background #000
-            if cheats_active and game_difficulty <= 2 and day > 1:
+            if day != 1:
                 textbutton "{size=-11}Options{/size}" action [SetVariable("toggle_menu", False), Jump("options_menu")] background #000
             if day != 1:
                 textbutton "{size=-11}Gallery{/size}" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background #000
@@ -343,12 +343,12 @@ label options_menu:
                     jump day_main_menu
                 "-Back-":
                     jump day_main_menu
-        "-Replace Chibis with Sprites-" if not use_cgs:
-            ">The last two personal favours will use sprites now."
+        "-Replace Chibi animations with CG images-" if not use_cgs:
+            ">The last two of Hermione's personal favours will use CG images."
             $ use_cgs = True
             jump day_main_menu
-        "-Replace Sprites with Chibis-" if use_cgs:
-            ">The last two personal favours will use chibi animations again."
+        "-Replace CG images with Chibi animations-" if use_cgs:
+            ">The last two of Hermione's personal favours will now use chibi animations."
             $ use_cgs = False
             jump day_main_menu
         "-Never mind-":

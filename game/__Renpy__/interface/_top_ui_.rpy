@@ -356,6 +356,32 @@ label options_menu:
             jump day_main_menu
         "-Never mind-":
             jump day_main_menu
+            
+label bugfix_menu:
+    menu:
+        "-Reset Everyone's Appearance-":
+            call reset_hermione_base
+            call reset_hermione_clothing
+            call reset_luna_base
+            call reset_luna_clothing
+            call reset_astoria_clothing
+            call reset_susan_clothing
+            $ cho_class.animation(None)
+            $ cho_class.wear("all")
+            call reset_tonks_clothing
+            ">Appearance of each girl set back to default."
+            jump bugfix_menu
+        "-Reset Cho public and personal favours-" if cho_unlocked:
+            python:
+                for ev in cc_favor_list:
+                    ev.reset()
+                for ev in cc_requests_list:
+                    ev.reset()
+            "> Events have been successfully reset."
+            jump bugfix_menu
+        "-Back-":
+            pass
+    jump day_main_menu
 
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")

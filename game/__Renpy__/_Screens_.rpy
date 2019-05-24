@@ -232,6 +232,7 @@ label unlock_clothing(text="",item=None):
     #
     python:
         try:
+            item.unlock(True)
             outfit_linking[item.id].unlock(True)
         except:
             pass

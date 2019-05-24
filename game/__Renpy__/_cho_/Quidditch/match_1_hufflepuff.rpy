@@ -835,6 +835,7 @@ label hufflepuff_match_return:
 
     stop music fadeout 1.0
     call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/head_cho_2.png")
+    call unlock_clothing(text=">New clothing items for Cho have been unlocked!", item=cho_outfit_cheerleader)
 
     $ cho_busy      = True
     $ hermione_busy = True

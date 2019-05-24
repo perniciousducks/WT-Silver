@@ -17,7 +17,7 @@ label cho_random_clothing:
     else:
         # Unlock wardrobe
         if not cho_wardrobe_unlocked and cho_strip_complete:
-            $ cc_muggle_hot_ITEM.unlocked = True
+            #$ cc_muggle_hot_ITEM.unlocked = True
 
             $ cho_class.unequip("all")
             $ cho_class.equip(cho_outfit_trainee)
@@ -42,7 +42,6 @@ label cho_random_clothing:
 
             #Unlocks Wardrobe.
             call give_reward(">Congratulations! You can now access Cho's wardrobe and change her appearance!","interface/icons/head/head_cho_2.png")
-            call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_muggle_hot_ITEM)
             $ cho_wardrobe_unlocked = True
 
             call cho_main(xpos="base",ypos="base",trans="fade")

@@ -2,10 +2,6 @@
 
 ### Intro ###
 
-# Maybe Luna could explain what Weckspurts are,
-# and Genie could suggest to her to masturbate to fight them off.
-# This could be a random event to unlock the favor, instead of a menu even you start.
-
 label ll_pf_masturbate_T1_intro:
 
     call play_sound("knocking")
@@ -234,20 +230,7 @@ label ll_pf_masturbate_T1_intro:
 
 label ll_pf_masturbate:
 
-    if ll_pf_masturbate.points <= 0:
-        # Luna masturbates.
-        jump ll_pf_masturbate_T1_E1
-
-    elif ll_pf_masturbate.points == 1:
-        # Luna masturbates again.
-        # You tell her to keep going even after she came once.
-        jump ll_pf_masturbate_T1_E2
-
-    else:
-        # Has a menu branch with two options.
-        # Genie jerks off on her face after she masturbated
-        jump ll_pf_masturbate_T1_E3
-
+    $ ll_pf_masturbate.start()
 
     # End event jump
     # (only used when the event isn't called.)
@@ -255,14 +238,6 @@ label ll_pf_masturbate:
 
         if lun_whoring < 3: # Points til 3
             $ lun_whoring += 1
-
-        if ll_pf_masturbate.level < 3:
-            $ ll_pf_masturbate.level += 1
-
-    $ ll_pf_masturbate.points += 1
-
-    # Stats
-    $ ll_pf_masturbate.counter += 1
 
     jump end_luna_event
 
@@ -272,10 +247,10 @@ label ll_pf_masturbate:
 
 # Masturbate for Genie and then Genie cums on Luna's face
 
-label ll_pf_masturbate_T1_E1:
+label ll_pf_masturbate_T1_intro_E1:
     $ days_to_luna += renpy.random.randint(1, 2)
 
-    call lun_main("","base","base","base","mid", xpos="mid", ypos="base")
+    call lun_main("","base","base","base","mid")
     m "Miss Lovegood. How have you been?"
     call lun_main("Alright... but the wrackspurts seem to have come back..","upset","base","angry","R")
     m "Again? So soon?"
@@ -326,22 +301,20 @@ label ll_pf_masturbate_T1_E1:
 
 # Masturbate for Genie
 
-label ll_pf_masturbate_T1_E2:
+label ll_pf_masturbate_T1_intro_E2:
     $ days_to_luna += renpy.random.randint(1, 2)
 
-    # Add section here
-
     m "So, Miss Lovegood, To what do I owe the pleasure today?"
-    call lun_main("Ah... I was hoping that I could... Um...","normal","tired","sad","mid", xpos="mid", ypos="base")
+    call lun_main("Ah... I was hoping that I could... Um...","normal","seductive","sad","mid")
     call lun_main("I know you must be very busy with school management.","normal","wide","sad","mid")
-    call lun_main("And I promise that I wouldn't ask unless it was of the utmost importance!","base","normal","sad","R")
-    m "Get on with it, [luna_name]."
+    call lun_main("And I promise that I wouldn't ask unless it was of the utmost importance!","soft","base","sad","R")
+    m "Get on with it, [lun_name]."
     call lun_main("Can I... get some more wrackspurts out? Please?","normal","wink","sad","mid")
     m "Hmmm, again? so soon?"
     call lun_main("If you think that it's too much for you to handle, we could slow down a bit...","normal","seductive","sad","R")
     m "Nonsense! I could never forgo my students in their hour of need."
     call lun_main("You mean it's okay if I?","normal","wide","sad","mid")
-    call lun_main("Oh... Thank you, thank you, thank you!","normal","happyCl","base","R")
+    call lun_main("Oh... Thank you, thank you, thank you!","smile","happyCl","base","R")
 
     call lun_walk("mid", "desk", 2)
 
@@ -372,7 +345,7 @@ label ll_pf_masturbate_T1_E2:
 label ll_pf_masturbate_T1_E3:
 
     call lun_main("","base","closed","angry","mid", xpos="mid", ypos="base")
-    m "[luna_name], are those wrackspurts still causing you-"
+    m "[lun_name], are those wrackspurts still causing you-"
 
     $ luna_wear_top = False # Has to be removed because of the sleeves.
     $ luna_l_arm = 4

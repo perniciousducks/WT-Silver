@@ -140,11 +140,14 @@ label night_resume:
         # Sex
         if lun_whoring >= 9 and ll_pf_sex not in ll_favor_list:
             $ ll_favor_list.append(ll_pf_sex)
+            $ lun_tier = 4
+            call update_luna_favors
 
             $ days_without_an_event = 0
-            $ days_to_luna = 3
+            $ days_to_luna += renpy.random.randint(2, 4)
 
-            jump ll_pf_sex_T1_intro
+            $ ll_pf_sex.start()
+
         else:
             pass
 

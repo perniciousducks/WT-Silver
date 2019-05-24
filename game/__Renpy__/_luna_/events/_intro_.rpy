@@ -116,6 +116,7 @@ label hat_intro_3: #Luna change scene #DONE
         "-Let the hat mess with her-(Slytherin Luna Path)":
             pass
         "-Let her go-(Regular Luna Path)":
+            $ days_to_luna += renpy.random.randint(2, 5)
             $ luna_reverted = True
             m "Actually, on second thought, I better not put the hat on."
             call lun_main("Oh... Why not?","base","wink","sad","mid")
@@ -215,7 +216,7 @@ label hat_intro_3: #Luna change scene #DONE
 
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
-    $ days_to_luna = 3
+    $ days_to_luna += renpy.random.randint(2, 5)
     $ lun_whoring = 0 #Triggers event during the evening.
 
     #Reset Luna Model
@@ -234,7 +235,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
     call reset_luna
 
     $ lun_genie_name = "Professor" #reset genie's name with Luna
-    $ luna_name = "Miss Lovegood" #reset luna's name with genie
+    $ lun_name = "Miss Lovegood" #reset luna's name with genie
 
 
 

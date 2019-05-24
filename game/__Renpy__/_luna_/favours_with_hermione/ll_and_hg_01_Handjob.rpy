@@ -4,7 +4,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
     if lun_whoring <= 11:
         $ lun_whoring += 1
-        m "[luna_name], how would you feel about selling another favour?"
+        m "[lun_name], how would you feel about selling another favour?"
         call lun_main("...","base","seductive","angry","mid")
         call lun_main("What is it this time [lun_genie_name]?","base","angry","angry","R")
         m "Well, do you remember how we had a little fun with miss granger the other day?"
@@ -200,7 +200,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_kneel("ah... {p}a slut...{image=textheart}","open","baseL")
         call lun_main("good girl...","base","seductive","sad","down")
         call her_kneel("{image=textheart}{image=textheart}{image=textheart}","grin","dead")
-        m "Ah... almost there [luna_name]..."
+        m "Ah... almost there [lun_name]..."
         ">Luna gives your cock a hard squeeze."
         g9 "Ah!"
         call lun_main("not yet old man!","upset","mad","mad","mid")
@@ -844,7 +844,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             $ lun_whoring += 1
         label luna_handjob_hermione_call:
             pass
-        m "How about another handjob, [luna_name]?"
+        m "How about another handjob, [lun_name]?"
         call lun_main("sure... do you want hermione here as well?","normal","suspicious","angry","R")
         m "You read my mind!"
         call lun_main("alright. but I expect to be the one doing the... job.","normal","angry","base","R")

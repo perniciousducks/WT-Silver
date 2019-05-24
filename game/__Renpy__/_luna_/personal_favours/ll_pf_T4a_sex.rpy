@@ -32,7 +32,7 @@ label ll_pf_sex_T1_intro:
     call lun_main("A way for both of us to get rid of our wrackspurts at once!","base","wide","base","mid")
     g9 "You don't say!"
     #call lun_main("When do you think you'll approach the rest of the wizarding world with this knowledge?","open","wide","base","mid")
-    m "[luna_name], you weren't the only one thinking of something ingenious to get rid of those nasty beasts!"
+    m "[lun_name], you weren't the only one thinking of something ingenious to get rid of those nasty beasts!"
     g9 "I could teach you a thing or two as well!{w} After you've showen me your suggestion..."
     call lun_main("That's very exciting don't you think?{w} We can finally get rid of this scourge once and for all!","base","happyCl","base","mid")
     call lun_main("Everyone deserves to hear about it!","base","happyCl","base","mid")
@@ -89,12 +89,9 @@ label ll_pf_sex_T1_intro:
 
 label ll_pf_sex:
 
-
     # You have sex with Luna and somebody knocks at the door...
     # This should be one of the later ones, but for now it's the only one.
-    jump ll_pf_sex_T1_E1
-
-
+    $ ll_pf_sex.start()
 
     # End event jump
     # (only used when the event isn't called.)
@@ -103,19 +100,41 @@ label ll_pf_sex:
         if lun_whoring < 12: # Points til 12
             $ lun_whoring += 1
 
-        if ll_pf_sex.level < 3:
-            $ ll_pf_sex.level = len(seen_luna_sex_list)
-
-    $ ll_pf_sex.points += 1
-
-    # Stats
-    $ ll_pf_sex.counter += 1
-
     jump end_luna_event
 
 
 
+label ll_pf_sex_T1_E1: # Repeatable
+    g9 "Miss Lovegood! Would you like me to teach you about dispelling those wacky wrackspurts again?"
+    call lun_main("I'd love to, [lun_genie_name].","soft","seductive","base","mid")
+    g9 "Splendid!"
+    m "Let's go for a trip to the lake again, shall we?"
+    call lun_main("Of course! [lun_genie_name]!","base","happyCl","mad","mid")
 
+    call ll_pf_sex_T1_lake_sex
+
+    jump end_luna_event
+
+
+label ll_pf_sex_T1_E2: #Luna sex repeatable (in the office)
+    #Luna already in the office
+    #Ask her if she's ready for a bit of sex
+    #Say she was hoping he'd ask about this again
+    #ask if he wants to go down to the lake again
+    #Says can't be bothered, offers to have sex here
+    #Adamant that no one will bother them
+    #Moments after they start there's a knock on the door
+    #Option to choose who it is
+    #Needs check on visiting character progression
+    m "How are you feeling today, [lun_name]?"
+    call lun_main("Happier now that I'm in here!","base","happyCl","base","mid")
+    m "Fantastic... Now, would you be interested in expelling a few more wookspoons together?"
+    call lun_main("{b}Together{/b}? You mean...","base","seductive","sad","mid", cheeks="blush")
+    call lun_main("Oh, thank you, thank you, thank you, [lun_genie_name]!","base","happyCl","sad","mid", cheeks="blush")
+
+    call ll_pf_sex_start
+
+    jump end_luna_sex_event
 
 
 label ll_pf_sex_T1_lake_sex: # Call label
@@ -191,7 +210,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
     lun "{size=-5}{image=textheart}wow...{image=textheart}{/size}"
     $ lunCG('left', 'seductive', 'open')
     ">Before you're able to even start a steady pace of fucking the girl, her hips start violently slamming against you..."
-    m "Ugh... steady on there, [luna_name], we've only just started!"
+    m "Ugh... steady on there, [lun_name], we've only just started!"
     $ lunCG('dr', 'furious', 'open')
     lun "{image=textheart}a-ah...{w=0.3} I can't...{w=0.3} [lun_genie_name]...{w=0.3} it's just...{w=0.3} too... {image=textheart}{b}goood{/b}...{image=textheart}"
     $ lunCG('up', 'furious', 'open_tongue', extra_1='speed')
@@ -295,29 +314,6 @@ label ll_pf_sex_T1_lake_sex: # Call label
     return
 
 
-label ll_pf_sex_T1_E1: #Luna sex repeatable (in the office)#NEEDS POSING
-    #Luna already in the office
-    #Ask her if she's ready for a bit of sex
-    #Say she was hoping he'd ask about this again
-    #ask if he wants to go down to the lake again
-    #Says can't be bothered, offers to have sex here
-    #Adamant that no one will bother them
-    #Moments after they start there's a knock on the door
-    #Option to choose who it is
-    #Needs check on visiting character progression
-    m "How are you feeling today, [luna_name]?"
-    call lun_main("Happier now that I'm in here!","base","happyCl","base","mid")
-    m "Fantastic... Now, would you be interested in expelling a few more wookspoons together?"
-    call lun_main("{b}Together{/b}? You mean...","base","seductive","sad","mid", cheeks="blush")
-    call lun_main("Oh, thank you, thank you, thank you, [lun_genie_name]!","base","happyCl","sad","mid", cheeks="blush")
-
-    call ll_pf_sex_start
-
-    jump end_luna_sex_event
-
-
-
-
 label ll_pf_sex_start: # Call label
     hide screen luna_main
     show screen blkfade
@@ -350,7 +346,7 @@ label ll_pf_sex_start: # Call label
     lun "{size=-5}{image=textheart}wow...{image=textheart}{/size}"
     $ lunCG('up', 'angry', 'base', 'base')
     ">She starts grinding her hips against you immediately. Desperate for as much stimulation as she can get..."
-    m "Ugh... steady on there, [luna_name], we've only just started!"
+    m "Ugh... steady on there, [lun_name], we've only just started!"
     $ lunCG('dl', 'seductive', 'open', 'sad')
     lun "{image=textheart}a-ah... I can't... [lun_genie_name]... it's just... too... {image=textheart}{b}goood{/b}...{image=textheart}"
     $ lunCG('up', 'furious', 'open_tongue')
@@ -440,74 +436,109 @@ label ll_pf_sex_random: # Call label
     return
 
 
-# Hermione part 1 #NEEDS POSING
+# Hermione part 1
 label ll_pf_sex_T1_her_1: # Call label
+    $ lun_cg_base = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos = -200
+    $ hermione_scaleratio = 1.6
+
     show screen luncg
     hide screen blkfade
     with d3
 
-    call her_main("[genie_name], I hope you're not too busy to ben-","smile","happyCl")
-    call her_main("[genie_name], Luna! What are you two doing?!","smile","happyCl")
+    $ lunCG('right', 'wide', 'open', 'base')
+
+    hide screen blkfade
+    with d3
+
+    call play_sound("door")
+    call her_main("[genie_name], I hope you're not too busy to ben-","smile","happyCl", xpos=550, ypos=-140)
+    call her_main("[genie_name], Luna! What are you two doing?!","soft","shocked", trans="hpunch")
     m "ah... Isn't it obvious?"
-    call her_main("Ugh... Why are you two fucking then?","smile","happyCl")
+    call her_main("Ugh... Why are you two fucking then?","scream","angry")
     lun "Mmmm... we're getting rid... of some nasty wrackspurts!"
-    call her_main("You're still going on about that? I told you before, you're just horny!","smile","happyCl")
-    lun "Stop... ah... being closed... minded Hermione..."
+    call her_main("You're still going on about that? I told you before, you're just horny!","angry","angryCl")
+    $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="right")
+    lun "Stop... *ah*... being so closed... minded Hermione..."
     lun "I bet you... didn't even realise that... Dumbledore was a genie at first!"
-    call her_main("My goodness, you're such an {b}idiot{/b}!","smile","happyCl")
+    call her_main("My goodness, you're such an {b}idiot{/b}!","disgust","angry")
     lun "Don't be mean Hermione... is it the wrackspurts that are bothering you?"
     lun "I'm sure that we can teach you how to get rid of them by yourself!"
-    call her_main("I know how to play with myself, idiot!","smile","happyCl")
+    call her_main("I know how to play with myself...","annoyed","angry")
+    $ lunCG(mouth="open", eye="base", eyebrow="base", pupil="right")
     lun "oh..."
     lun "Well if you just want to watch us, I don't mind..."
-    call her_main("Don't you have any shame!?","smile","happyCl")
+    call her_main("Don't you have any shame!?","soft","angry")
+    $ lunCG(mouth="open_tongue", eye="base", eyebrow="base", pupil="ahegao")
     lun "mmmm... why should I be ashamed... this feels so {b}good{/b}..."
-    call her_main("I know it feels good... but you shouldn't let other people watch you do it...","smile","happyCl")
-    call her_main("Imagine if the whole school found out!","smile","happyCl")
+    call her_main("I know it feels good... but you shouldn't let other people watch you do it...","annoyed","angryL")
+    call her_main("Imagine if the whole school found out!","soft","angry")
+    $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "Oh, that would be {b}fantastic{/b}!"
     lun "Imagine me... being the person to teach the world how the dispel wrackspurts!"
-    call her_main("So you'd be okay with everyone knowing you've had Dumbledore's cock in you?","smile","happyCl")
+    call her_main("So you'd be okay with everyone knowing you've had Dumbledore's cock in you?","annoyed","closed")
+    $ lunCG(mouth="base", eye="happyCl", eyebrow="base", pupil="right")
     lun "I'd give the school a demonstration if I could!"
-    ">Hermione's hands drift in between her legs..."
-    call her_main("Ugh... you're so fucking {b}dirty{/b} aren't you...","smile","happyCl")
-    call her_main("I just thought you were an idiot...","smile","happyCl")
-    call her_main("But now... I see you've been a bimbo this whole time without even realizing...","smile","happyCl")
+    #">Hermione's hands drift in between her legs..."
+    call her_main("*Ugh*... I can't believe how fucking {b}dirty{/b} you are...","soft","glanceL")
+    call her_main("I just thought you were an idiot...","disgust","glance")
+    call her_main("But now... I see you've been a bimbo this whole time without even realizing...","upset","ahegao")
+    $ lunCG(mouth="open", eye="base", eyebrow="sad", pupil="right")
     lun "A bimbo?"
-    call her_main("Uh-huh... You've just Dumbledore's blonde bimbo...","smile","happyCl")
+    call her_main("*Uh-huh*... You've just Dumbledore's dumb, blonde bimbo...","soft","angryL")
+    $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "..."
-    call her_main("Well, I think I better give you two some alone time...","smile","happyCl")
+    call her_main("Well, I think I better give you two some alone time...","soft","angry")
+    $ lunCG(mouth="open", eye="wink", eyebrow="base", pupil="right")
     lun "You don't want to stay?"
-    call her_main("I need to take care of something... Until then...","smile","happyCl")
-    call her_main("Why don't you just let [genie_name] empty his balls in you...","smile","happyCl")
+    call her_main("I need to take care of something... Until then...","soft","down_raised")
+    call her_main("Why don't you just let [genie_name] empty his balls in you...","angry","angry")
+    call hide_characters
+    show screen blkfade
+    with d5
+
+    $ lun_cg_base = lun_cg_path+"base.png"
+    $ lun_cg_xpos = 0
+
     ">With that, Hermione runs her pussy-drenched hand down Luna's face before turning and leaving the room."
+
+    hide screen blkfade
+    with d5
+
+    $ lunCG(mouth="base", eye="base", eyebrow="base", pupil="ahegao")
     lun "I'm glad I've got a good friend like Hermione..."
     m "..."
+    $ lunCG(mouth="open_tongue", eye="seductive", eyebrow="raised", pupil="ahegao")
     lun "I wish... she could have stayed though..."
     lun "Maybe... I should have asked if... she wanted to take turns..."
     lun "That was probably... rude of me..."
     m "You'd take turns?"
+    $ lunCG(mouth="base", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "Of course, sharing is w-what friends do."
     g4 "You filthy slut!"
     ">You start slamming into Luna at full pace."
     g4 "Here it comes you bimbo!"
     ">With that, you start unloading into Luna's pussy."
-    lun "a-a-ahh..... soo... goooood..."
+    call cum_block
+    $ lunCG(mouth="wide_tongue", eye="base", eyebrow="base", pupil="ahegao")
+    lun "*a-a-ahh*..... soo... goooood..."
     m "..."
-    ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
-    lun "{image=textheart}{image=textheart}{image=textheart}"
-    ">You slump back into your chair, leaving Luna on your desk, leaking cum."
-    m "Are you good to make your own way back?"
-    lun "ah... y-y-yea..."
-    m "Awesome, I'm just gonna... take a nap..."
 
     hide screen luncg
     show screen blkfade
-    with d3
+    with d5
+
+    ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
+    call lun_main("{image=textheart}{image=textheart}{image=textheart}","soft","seductive","base","up", ypos="head")
+    ">You slump back into your chair, leaving Luna on your desk, leaking cum."
+    m "Are you good to make your own way back?"
+    call lun_main("*ah*... y-y-yea...","base","seductive","base","up", ypos="head")
+    m "Awesome, I'm just gonna... take a nap..."
 
     ">With that the two of you doze off..."
     ">When you wake you find only a Luna shaped cumstain on your desk."
     hide screen blkfade
-    with d3
+    with d5
 
     return
 
@@ -609,7 +640,7 @@ label ll_pf_sex_T1_her_2: # Call label
 
 
 
-# Astoria part 1 #NEEDS POSING
+# Astoria part 1
 label ll_pf_sex_T1_ast_1: # Call label
 
     $ ast_seen_lun_sex = True
@@ -618,12 +649,12 @@ label ll_pf_sex_T1_ast_1: # Call label
     ">Your door bursts open to reveal a troublesome young witch behind it."
     $ lun_cg_base = lun_cg_path+"base_2.png"
     $ lun_cg_xpos = -200
-    $ astoria_scaleratio = 1.2
+    $ astoria_scaleratio = 1.6
 
     hide screen blkfade
     with d3
 
-    call ast_main("Ready to practice ano-","smile","happyCl","base","mid", xpos=400, ypos=-300)
+    call ast_main("Ready to practice ano-","smile","happyCl","base","mid", xpos=570, ypos=-150)
     $ lunCG('right', 'wide', 'open')
     m "!!!"
     lun "!!!"
@@ -696,7 +727,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     ">You slump back into your chair, leaving Luna on your desk, leaking cum."
     m "Like the show?"
     ">You look around but can't find any trace of the small witch..."
-    lun "ah... y-y-yea..."
+    call lun_main("*ah*... y-y-yea...","base","seductive","base","up", ypos="head")
     m "Awesome, I'm just gonna... take a nap..."
 
     ">With that the two of you doze off..."
@@ -719,11 +750,15 @@ label ll_pf_sex_T1_ast_2: # Call label
 
     $ lun_cg_base = lun_cg_path+"base_2.png"
     $ lun_cg_xpos = -200
+    $ astoria_scaleratio = 1.6
 
-    call ast_main("DUMBY!","smile","happyCl","base","mid")
     $ lunCG('right', 'wide', 'open', 'base')
+
     hide screen blkfade
     with d3
+
+    call play_sound("door")
+    call ast_main("DUMBY!","smile","happyCl","base","mid", xpos=570, ypos=-150)
     lun "Ah... Astoria..."
     call ast_main("Are you two going at it again?","upset","narrow","narrow","mid")
     m "Take a guess."
@@ -799,7 +834,7 @@ label ll_pf_sex_T1_ast_2: # Call label
     with d3
 
     m "Gods that was good..."
-    lun "ah..."
+    call lun_main("*ah*...","soft","seductive","base","up", ypos="head")
     ">With that, you let Luna recover before letting her slip out of your office and back to school."
 
     hide screen blkfade
@@ -809,17 +844,21 @@ label ll_pf_sex_T1_ast_2: # Call label
 
 
 
-# Tonks part 1#NEEDS POSING
+# Tonks part 1
 label ll_pf_sex_T1_ton_1: # Call label
-
     $ ton_seen_lun_sex = True
+
     $ lun_cg_base = lun_cg_path+"base_2.png"
     $ lun_cg_xpos = -200
+    $ tonks_scaleratio = 1.6
 
     $ lunCG('right', 'wide', 'open', 'base')
+
     hide screen blkfade
     with d3
-    call ton_main("Professor Dumbledore!","horny","base","raised","L")
+
+    call play_sound("door")
+    call ton_main("Professor Dumbledore!","horny","base","raised","L", xpos=540, ypos=-140)
     lun "!!!"
     $ lunCG('dr', 'seductive', 'open', 'sad')
     m "!!!"
@@ -916,7 +955,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             $ lunCG('up', 'seductive', 'sucking', 'sad', pos=8)
             lun "Mhmm!"
             ">Luna quickly hops off the desk and smiles in front of your cock..."
-            $ lunCG('up', 'blink', 'open', 'base', pos=1)
+            $ lunCG('up', 'wink', 'open', 'base', pos=1)
             lun "Need me to-"
             g4 "Shutup!"
             $ lunCG('up', 'base', 'base', 'sad')
@@ -1003,15 +1042,19 @@ label ll_pf_sex_T1_ton_1: # Call label
     lun "Alright then Miss Tonks..."
     show screen blkfade
     with d3
+
+    call hide_characters
+    call lun_chibi("stand","mid","base", flip=True)
     hide screen luncg
-    $ luna_flip = -1
     $ luna_cum = 9
     $ luna_wear_cum = True
     hide screen blkfade
     with d3
+
     ">With an airy smile, Luna picks up her clothes and places them on over her cum soaked form."
-    call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L")
-    call lun_main("What, Why?","base","wink","raised","mid", xpos=350)
+    call lun_main("","base","base","base","mid", xpos="mid", ypos="base", flip=True)
+    call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L", xpos="base", ypos="base")
+    call lun_main("What, Why?","base","wink","raised","mid")
     call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","base","base","raised","L")
     call lun_main("Oh that's just the wrackspurts! They're corpses can have that affect on people.","base","happyCl","base","mid")
     call lun_main("I {b}love{/b} the smell myself... Besides, I need to wear them to act as a warning to the other wrackspurts while I sleep!","base","angry","sad","up")
@@ -1049,10 +1092,15 @@ label ll_pf_sex_T1_ton_2: # Call label
     #Cum all over Luna and Tonks excitedely takes her home while offering to lick her clean
     $ lun_cg_base = lun_cg_path+"base_2.png"
     $ lun_cg_xpos = -200
+    $ tonks_scaleratio = 1.6
+
+    $ lunCG('right', 'wide', 'open', 'base')
+
     hide screen blkfade
     with d3
 
-    call ton_main("Ugh... are you two going at it again?","open","base","raised","mid")
+    call play_sound("door")
+    call ton_main("Ugh... are you two going at it again?","open","base","raised","mid", xpos=540, ypos=-140)
     $ lunCG('right', 'seductive', 'base', 'base')
     lun "Ah... these wrackspurts... ah... are quite... powerful..."
     call ton_main("Mmmm, I can believe that... In fact...","horny","base","base","L")
@@ -1183,7 +1231,7 @@ label ll_pf_sex_T1_ton_2: # Call label
             $ lunCG('left', 'seductive', 'base', 'sad')
             call ton_main("Mmmm, damn... that's hot...","horny","base","base","L")
             m "Ready to take Miss Lovegood home?"
-            $ lunCG('left', 'blink', 'base', 'base')
+            $ lunCG('left', 'wink', 'base', 'base')
             call ton_main("You bet! I hope you don't mind taking the long route, Luna...","horny","base","raised","L")
 
     hide screen luncg
@@ -1327,7 +1375,7 @@ label ll_pf_sex_bedroom:
             m "They feel good, don't they?"
             lun "Ugh... so good..."
             lun "I {b}wish{/b} we could just stay like this all day, everyday..."
-            m "Careful what you wish for, [luna_name]..."
+            m "Careful what you wish for, [lun_name]..."
             lun "Mmmm, why?"
             lun "I thought you said I don't get any wishes?"
             m "That's true... But a wish like that?"

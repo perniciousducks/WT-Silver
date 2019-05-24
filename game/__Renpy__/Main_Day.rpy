@@ -250,7 +250,7 @@ if main_match_1_stage == "start" and days_without_an_event >= 1:
     jump hufflepuff_match
 
 
-if day == 7:
+if day == 7 and not event08_happened:
     call hermione_intro_E1 #Hermione shows up for the first time.
 if (day >= 8 or day >= 12) and hermione_is_waiting_01 and not event09:
     call hermione_intro_E2 #Second visit from Hermione. Says she sent a letter to the Minestry.

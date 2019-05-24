@@ -671,7 +671,7 @@ label cc_pf_strip_T1_intro_E3:
         call cho_walk(action="leave", speed=2.5)
 
         # Event failed, no progress.
-        cc_pf_strip.fail()
+        $ cc_pf_strip.fail()
         jump end_cho_event
 
 

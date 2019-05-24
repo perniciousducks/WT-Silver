@@ -487,7 +487,7 @@ label date_with_snape_15:
     pause.1
     call blktone
 
-    ">Your friendship level with professor Snape reached itss maximum value."
+    ">Your friendship level with professor Snape reached its maximum value."
     ">Congratulations. If this were a \"dating-sim\" you would be getting the ending with Severus Snape."
     ">The \"Slytherin\" house point payout has increased greatly and reached it's maximum level as well."
 

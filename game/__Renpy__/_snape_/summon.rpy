@@ -50,10 +50,8 @@ label summon_snape:
 
 
         # Fireplace Chats
-        "-Let's hang-" if not daytime and not sna_friendship_maxed: # Turns TRUE when friendship with Snape been maxed out.
+        "-Let's hang-" if not daytime: # Turns TRUE when friendship with Snape been maxed out.
             if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
-                jump not_today #Snape says: "I am busy tonight."
-            elif sna_friendship >= 88 and her_whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
                 jump not_today #Snape says: "I am busy tonight."
             else:
                 jump snape_dates

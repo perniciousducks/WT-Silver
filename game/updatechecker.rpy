@@ -22,11 +22,12 @@
         if renpy.slot_json(page+"-"+slot) != None:
             try:
                 save_version = renpy.slot_json(page+"-"+slot)['_version']
+                
+                if float(save_version) < float(config.version):
+                    return False
+                return True
             except:
                 return False
-            if float(save_version) < float(config.version):
-                return False
-            return True
         return None
         
     # Work in progress

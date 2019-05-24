@@ -535,6 +535,19 @@ screen preferences():
                 textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Call("saybox_color", False)
                 textbutton _("Shadow") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("persistent.text_color_day", "#402313"), SetVariable("persistent.text_color_night", "#341c0f"), SetVariable("persistent.text_outline", "#00000000")]
+                
+            if not main_menu:
+                frame:
+                    style_group "pref"
+                    has vbox
+                    
+                    label _("Difficulty")
+                    hbox:
+                        xalign 0.5
+                        textbutton _("Easy") text_size 14 text_color "#93b04c66" text_selected_color "#93b04c" xsize 80 action [SetVariable("game_difficulty", 1), SetVariable("cheat_reading", True)]
+                        textbutton _("Normal") text_size 14 xsize 80 action [SetVariable("game_difficulty", 2), SetVariable("cheat_reading", False), SelectedIf(game_difficulty==2)]
+                        if persistent.game_complete:
+                            textbutton _("Hard") text_size 14 text_color "#7a000066" text_selected_color "#7a0000" xsize 80 action [SetVariable("game_difficulty", 3), SetVariable("cheat_reading", False), SelectedIf(game_difficulty==3)]
 
             # Joystick settings aren't needed, I dont think anyone plays WT with it.
             #frame:

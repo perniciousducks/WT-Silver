@@ -269,17 +269,20 @@ screen ui_menu():
         add "interface/topbar/"+str(interface_color)+"/menu.png"
         vbox:
             style_group "mm"
-            ypos 20
-            xpos -5
             if renpy.variant('android'):
-                spacing 6
+                ypos 10
+                spacing 5
+                xpos 5
+            else:
+                ypos 20
+                xpos 5
             textbutton "Save" action ShowMenu("save") background #000
             textbutton "Load" action ShowMenu("load") background #000
             text "" # space
             if cheats_active and game_difficulty <= 2 and day > 1:
                 textbutton "{size=-11}Cheats{/size}" action [SetVariable("toggle_menu", False), Jump("cheats")] background #000
-            if day != 1:
-                textbutton "{size=-11}Options{/size}" action [SetVariable("toggle_menu", False), Jump("options_menu")] background #000
+            if day != 1 and renpy.variant('android'):
+                textbutton "{size=-11}PrEfErEnCeS{/size}" action ShowMenu("preferences") background #000
             if day != 1 and persistent.game_complete:
                 textbutton "{size=-11}Gallery{/size}" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background #000
             if day != 1:

@@ -36,6 +36,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         hide screen cho_main
         hide screen bld1
         hide screen blktone
+        hide screen cho_stand
         with d3
         pause.5
 
@@ -231,7 +232,7 @@ init python:
                                 cho_chibi_bottom = imagepath+"cc_trousers.png"
                 else:
                     cho_chibi_bottom = imagepath+"cc_skirt"+animation+status+".png" if animation else imagepath+"cc_skirt.png"
-                    
+
             if cho_class.get_worn("gloves"):
                 if cho_class.get_cloth("gloves").id == "quidditch":
                     cho_chibi_gloves = imagepath+"cc_gloves"+animation+status+".png" if animation else imagepath+"cc_gloves.png"

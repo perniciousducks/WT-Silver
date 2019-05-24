@@ -61,6 +61,46 @@ image ch_cho walk_shoes: #With Shoes.
     pause.08
 
     repeat
+    
+image ch_cho walk_quid_shoes: #With quidditch Shoes.
+    "characters/cho/chibis/cc_walk_01_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_02_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_03_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_02_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_01_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_04_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_05_quid_shoes.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_04_quid_shoes.png"
+    pause.08
+
+    repeat
+    
+image ch_cho trousers:
+    "characters/cho/chibis/cc_walk_01_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_02_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_03_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_02_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_01_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_04_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_05_trousers.png"
+    pause.08
+    "characters/cho/chibis/cc_walk_04_trousers.png"
+    pause.08
+
+    repeat
 
 ### FLYING ANIMATIONS ###        
 image ch_cho fly:

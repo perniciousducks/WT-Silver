@@ -26,7 +26,9 @@ label cho_init:
 
         $ cho_chibi_top           = "characters/cho/chibis/cc_cloth_shirt_r.png"
         $ cho_chibi_bottom        = "characters/cho/chibis/cc_cloth_skirt.png"
-        $ cho_chibi_robe          = "characters/cho/chibis/blank.png"
+        $ cho_chibi_robe          = "blank"
+        $ cho_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
+        $ cho_chibi_fix           = "blank"
 
     if not hasattr(renpy.store,'cho_cloth_pile') or reset_persistants:
         $ cho_cloth_pile = False
@@ -127,7 +129,6 @@ label cho_progress_init:
             ]
 
             ],
-            icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
             iconset = [["heart_empty", "heart_yellow"], ["heart_empty", "heart_green"]]
             )
 

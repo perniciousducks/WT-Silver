@@ -144,7 +144,7 @@ label cho_favor_menu:
 label update_cho_favors:
     python:
         for i in cc_favor_list:
-            if i.tier != cho_tier:
+            if i.tier != cho_tier and i.max_tiers >= cho_tier:
                 i.tier = cho_tier
 
     return
@@ -178,7 +178,7 @@ label update_cho_requests:
     # Set event tier to current Cho tier if they are different
     python:
         for i in cc_requests_list:
-            if i.tier != cho_tier:
+            if i.tier != cho_tier and i.max_tiers >= cho_tier:
                 i.tier = cho_tier
 
     return

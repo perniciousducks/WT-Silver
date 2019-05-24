@@ -216,16 +216,46 @@ label luna_init:
     if not hasattr(renpy.store,'seen_luna_sex_list') or reset_persistants or reset_luna_content:
         $ seen_luna_sex_list       = []
 
-    if not hasattr(renpy.store,'ll_pf_talk') or reset_persistants or reset_luna_content:
-        $ ll_pf_talk       = favor_class(title = "Talk to me!", tier = 0, start_label = "ll_pf_talk")
+    if not hasattr(renpy.store,'ll_pf_masturbate') or reset_persistants or reset_luna_content:
+        $ ll_pf_masturbate = event_class(title = "Masturbate for me!", start_label = "ll_pf_masturbate", start_tier = 2, events = [
+            [
+            ["ll_pf_masturbate_T1_intro"],
+            ["ll_pf_masturbate_T1_intro_E1"],
+            ["ll_pf_masturbate_T1_intro_E2"],
+            ["ll_pf_masturbate_T1_E3"]
+            ]
 
-        $ ll_pf_strip      = favor_class(title = "Inspect her body!", tier = 1, start_label = "ll_pf_strip")
+            ],
+            iconset = [["heart_empty", "heart_blue"]]
+            )
 
-        $ ll_pf_masturbate = favor_class(title = "Masturbate for me!", tier = 2, start_label = "ll_pf_masturbate")
-        $ ll_pf_blowjob    = favor_class(title = "Suck it!", tier = 2, max_level = 4, start_label = "ll_pf_blowjob")
+    if not hasattr(renpy.store,'ll_pf_blowjob') or reset_persistants or reset_luna_content:
+        $ ll_pf_blowjob = event_class(title = "Suck it!", start_label = "ll_pf_blowjob", start_tier = 3, events = [
+            [
+            ["ll_pf_blowjob_T1_intro"],
+            ["ll_pf_blowjob_T1_intro_E1"],
+            ["ll_pf_blowjob_T1_intro_E2"],
+            ["ll_pf_blowjob_T1_E3"]
+            ]
 
-        $ ll_pf_sex        = favor_class(title = "Let's have sex!", tier = 3, start_label = "ll_pf_sex")
+            ],
+            iconset = [["heart_empty", "heart_blue"]]
+            )
 
+    if not hasattr(renpy.store,'ll_pf_sex') or reset_persistants or reset_luna_content:
+        $ ll_pf_sex = event_class(title = "Let's have sex!", start_label = "ll_pf_sex", start_tier = 4, events = [
+            [
+            ["ll_pf_sex_T1_intro"],
+            ["ll_pf_sex_T1_E1"],
+            ["ll_pf_sex_T1_E2"]
+            ]
+
+            ],
+            iconset = [["heart_empty", "heart_blue"]]
+            )
+
+    # $ ll_pf_talk       = favor_class(title = "Talk to me!", tier = 0, start_label = "ll_pf_talk")
+    # $ ll_pf_strip      = favor_class(title = "Inspect her body!", tier = 1, start_label = "ll_pf_strip")
 
     # Favors get added to the list after their intro events.
     # Do not add them manually to this list!
@@ -273,6 +303,7 @@ label luna_progress_init:
 
         #Stats
         $ lun_whoring = 0
+        $ lun_tier = 1
         $ lun_mood = 0
 
         $ luna_gold = 0
@@ -296,8 +327,8 @@ label luna_progress_init:
         $ days_to_luna = 0
 
         #Names
-        $ lun_genie_name = "Old man"
-        $ luna_name = "Miss Lovegood"
+        $ lun_genie_name = "Professor"
+        $ lun_name = "Miss Lovegood"
 
     if not hasattr(renpy.store,'gave_luna_gift') or reset_persistants:
         $ gave_luna_gift     = False

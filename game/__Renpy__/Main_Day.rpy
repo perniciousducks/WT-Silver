@@ -298,20 +298,24 @@ if luna_reverted and days_to_luna <= 0:
     # Masturbate
     if lun_whoring >= 0 and ll_pf_masturbate not in ll_favor_list:
         $ ll_favor_list.append(ll_pf_masturbate)
+        $ lun_tier = 2
+        call update_luna_favors
 
         $ days_without_an_event = 0
-        $ days_to_luna = 3
+        $ days_to_luna += renpy.random.randint(2, 3)
 
-        jump ll_pf_masturbate_T1_intro
+        $ ll_pf_masturbate.start()
 
     # Blowjob
     elif lun_whoring >= 3 and ll_pf_blowjob not in ll_favor_list:
         $ ll_favor_list.append(ll_pf_blowjob)
+        $ lun_tier = 3
+        call update_luna_favors
 
         $ days_without_an_event = 0
-        $ days_to_luna = 3
+        $ days_to_luna += renpy.random.randint(4, 6)
 
-        jump ll_pf_blowjob_T1_intro
+        $ ll_pf_blowjob.start()
 
     else:
         pass

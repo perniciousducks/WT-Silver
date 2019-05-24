@@ -56,7 +56,7 @@ label letter_intro_hermione:
     call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...","open","happyCl")
     call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...","open","angryL")
     call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...","open","angry")
-    call her_main("Tormenting them relentlessly for the rest of their miserable lives...","grin","happyCL")
+    call her_main("Tormenting them relentlessly for the rest of their miserable lives...","grin","happyCl")
     call her_main("And the perfect place to house all those dirty \'slytherins\'!","angry","angry")
 
     menu:

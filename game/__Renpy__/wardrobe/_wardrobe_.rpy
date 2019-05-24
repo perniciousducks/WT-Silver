@@ -65,7 +65,7 @@ screen wardrobe():
             hotspot (770,310,95,45) clicked Jump("touched_her_boobies") #Her Breasts
             hotspot (795,460,40,30) clicked Jump("touched_her_crotch") #Her Crotch
         if active_girl == "luna":
-            text ""+luna_name xalign 0.5 xpos 820 ypos 57 size 20
+            text ""+lun_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "astoria":
             text ""+astoria_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "susan":

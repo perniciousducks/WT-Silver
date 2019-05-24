@@ -9,7 +9,7 @@ label luna_favour_4: ###Luna handjob #DONE
         if lun_whoring <= 11:
             $ lun_whoring += 1
         call play_music("chipper_doodle")
-        m "[luna_name]?"
+        m "[lun_name]?"
         call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
         m "Would it be possible for me to buy another favour..."
         call lun_main("Does it involve me cranking out that delicous cum from your wrinkly old balls?","base","angry","angry","R")
@@ -50,13 +50,13 @@ label luna_favour_4: ###Luna handjob #DONE
         call lun_main("*Hmmph*","base","seductive","angry","mid")
         call lun_main("(It's so warm...)","base","seductive","mad","down")
         ">Luna slowly starts stroking your cock with her hand, her movements are fast yet stiff."
-        m "Why don't you try grabbing it with both hands, [luna_name]..."
+        m "Why don't you try grabbing it with both hands, [lun_name]..."
         call lun_main("Hmph... I don't think so [lun_genie_name]!","base","mad","angry","mid")
         m "..."
         ">Luna starts moving her hand back and forth along the length of your cock."
         m "ugh... Yes, that's it..."
         call lun_main("See, one hand's all you need.","upset","suspicious","mad","down")
-        m "Mmmm, yes... just like that, [luna_name]..."
+        m "Mmmm, yes... just like that, [lun_name]..."
         call lun_main("Is this good, [lun_genie_name]?","soft","annoyed","sad","mid")
         m "yes, yes, this is amazing..."
         call lun_main("good...","base","suspicious","sad","mid")
@@ -90,7 +90,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 m "Mmmm"
                 ">She slowly rolls her hips side to side."
                 call lun_main("Enjoying the view...","base","mad","sad","R")
-                m "Very nice, [luna_name]!"
+                m "Very nice, [lun_name]!"
                 call lun_main("...","normal","angry","sad","mid")
                 call lun_main("Thank you sir...","base","angry","sad","R")
                 $ luna_xpos = 390
@@ -129,9 +129,9 @@ label luna_favour_4: ###Luna handjob #DONE
                 ">Luna starts rolling her thighs around your cock. You can even feel her wet mound grinding against the top of your shaft."
                 g4 "Ah! yes!"
                 call lun_main("...","base","suspicious","mad","mid")
-                g4 "[luna_name]..."
+                g4 "[lun_name]..."
                 call lun_main("Hmmm, are you feeling alright now, [lun_genie_name]?","base","seductive","raised","R")
-                g4 "yes... thank you, [luna_name]..."
+                g4 "yes... thank you, [lun_name]..."
                 call lun_main("Good boy.","base","angry","angry","down")
                 $ luna_xpos = 390
                 $ luna_ypos = 0
@@ -141,7 +141,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 $ genie_base = "characters/genie/base/open.png"
                 ">Luna spits into her hand before placing it back on your cock."
 
-        g4 "Mmmm, yes that's it, [luna_name]..."
+        g4 "Mmmm, yes that's it, [lun_name]..."
         call lun_main("...","base","angry","angry","mid")
         g4 "Just keep pumping that hand up and down."
         call lun_main("......","base","mad","mad","mid")
@@ -163,7 +163,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
         call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
         call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
-        g4 "Ah, [luna_name], I'm almost there!"
+        g4 "Ah, [lun_name], I'm almost there!"
         $ genie_base = "characters/genie/base/hard.png"
         $ luna_ypos = 220
         $ luna_xpos = 350
@@ -265,7 +265,7 @@ label luna_favour_4: ###Luna handjob #DONE
         $ g_c_u_pic = "images/animation/06_groping_01.png"
         $ luna_xpos = 390
         $ luna_ypos = 0
-        m "well then, Here's your payment, [luna_name]."
+        m "well then, Here's your payment, [lun_name]."
         $ gold -= current_payout
         $ luna_gold += current_payout
         ">You hand Luna [current_payout] gold."
@@ -294,7 +294,7 @@ label luna_favour_4: ###Luna handjob #DONE
             if lun_whoring <= 10:
                 $ lun_whoring += 1
             call play_music("chipper_doodle")
-            m "[luna_name]?"
+            m "[lun_name]?"
             call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
             m "Would it be possible for me to buy another favour..."
             call lun_main("...","normal","angry","angry","R")
@@ -378,13 +378,13 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("*Hmmph* At least it isn't small...","base","seductive","angry","mid")
             call lun_main("(I can't even fit my hand around it.)","base","seductive","mad","down")
             ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
-            m "Why don't you try grabbing it with both hands, [luna_name]..."
+            m "Why don't you try grabbing it with both hands, [lun_name]..."
             call lun_main("Hmph... you wish!","base","mad","angry","mid")
             m "..."
             ">Luna starts moving her hand back and forth along the length of your cock."
             m "ugh... Yes, that's it..."
             call lun_main("(Men really are the worst)","upset","suspicious","mad","down")
-            m "Mmmm, yes... just like that, [luna_name]..."
+            m "Mmmm, yes... just like that, [lun_name]..."
             call lun_main("Is this good, [lun_genie_name]?","soft","annoyed","sad","mid")
             m "yes, yes, this is amazing..."
             call lun_main("good...","base","suspicious","sad","mid")
@@ -406,7 +406,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
                     ">She takes her shirt off and places it onto the floor."
                     call lun_main("There...","base","mad","sad","R")
-                    m "Very nice, [luna_name]!"
+                    m "Very nice, [lun_name]!"
                     call lun_main("...","normal","angry","sad","mid")
                     call lun_main("Thank you sir...","base","angry","sad","mid")
                     $ luna_r_arm = 3
@@ -436,7 +436,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     ">Luna doesn't slow down. If anything she speeds up slightly."
                     g9 "Ah!"
                     call lun_main("...","base","suspicious","mad","mid")
-                    g9 "[luna_name]..."
+                    g9 "[lun_name]..."
                     call lun_main("Hmmm, do You want me to spit on your cock then?","base","seductive","raised","mid")
                     g9 "Just a little bit..."
                     call lun_main("...","base","seductive","angry","mid")
@@ -446,7 +446,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     call lun_main("*Ptew*","open_tongue","seductive","angry","downL")
                     ">Luna spits into her hand before placing it back on your cock."
 
-            g4 "Mmmm, yes that's it, [luna_name]..."
+            g4 "Mmmm, yes that's it, [lun_name]..."
             call lun_main("...","base","angry","angry","mid")
             g4 "Just keep pumping those hands up and down."
             call lun_main("......","base","mad","mad","mid")
@@ -468,7 +468,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
             call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
             call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
-            g4 "Ah, [luna_name], I'm almost there."
+            g4 "Ah, [lun_name], I'm almost there."
             call lun_main("Well...","upset","suspicious","mad","mid")
             $ luna_wear_bottom = False
             ">Luna quickly pulls down her skirt."
@@ -511,7 +511,7 @@ label luna_favour_4: ###Luna handjob #DONE
             if lun_whoring <= 11:
                 $ lun_whoring += 1
             call play_music("chipper_doodle")
-            m "[luna_name]?"
+            m "[lun_name]?"
             call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
             m "Would it be possible for me to buy another favour..."
             call lun_main("I think I know what you want...","base","angry","angry","R")
@@ -595,13 +595,13 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("*Hmmph* At least it isn't small...","base","seductive","angry","mid")
             call lun_main("(I can't even fit my hand around it.)","base","seductive","mad","down")
             ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
-            m "Why don't you try grabbing it with both hands, [luna_name]..."
+            m "Why don't you try grabbing it with both hands, [lun_name]..."
             call lun_main("Hmph... you wish [lun_genie_name]!","normal","mad","angry","mid")
             m "..."
             ">Luna starts moving her hand back and forth along the length of your cock."
             m "ugh... Yes, that's it..."
             call lun_main("(He loves this...)","base","suspicious","mad","down")
-            m "Mmmm, yes... just like that, [luna_name]..."
+            m "Mmmm, yes... just like that, [lun_name]..."
             call lun_main("Is this good [lun_genie_name]?","soft","annoyed","sad","mid")
             m "yes, yes, this is amazing..."
             call lun_main("good...","base","suspicious","sad","mid")
@@ -623,7 +623,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     ">She takes her shirt off and places it onto the floor."
                     call lun_main("There...","base","mad","sad","R")
                     $ luna_r_arm = 2
-                    m "Very nice, [luna_name]!"
+                    m "Very nice, [lun_name]!"
                     call lun_main("...","normal","angry","sad","mid")
                     call lun_main("Thank you sir...","base","angry","sad","mid")
                     $ luna_r_arm = 3
@@ -664,14 +664,14 @@ label luna_favour_4: ###Luna handjob #DONE
                     ">Luna doesn't slow down. If anything she speeds up slightly."
                     g9 "Ah! yes!"
                     call lun_main("...","base","suspicious","mad","mid")
-                    g9 "[luna_name]..."
+                    g9 "[lun_name]..."
                     call lun_main("Hmmm, do You want me to spit on your cock then?","base","seductive","raised","mid")
-                    g9 "yes... please, [luna_name]..."
+                    g9 "yes... please, [lun_name]..."
                     call lun_main("Good boy.","base","angry","angry","mid")
                     call lun_main("*Ptew*","open_tongue","seductive","angry","downL")
                     ">Luna spits into her hand before placing it back on your cock."
 
-            g4 "Mmmm, yes that's it, [luna_name]..."
+            g4 "Mmmm, yes that's it, [lun_name]..."
             call lun_main("...","base","angry","angry","mid")
             g4 "Just keep pumping those hands up and down."
             call lun_main("......","base","mad","mad","mid")
@@ -694,7 +694,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
             call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
             call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
-            g4 "Ah [luna_name], I'm almost there!"
+            g4 "Ah [lun_name], I'm almost there!"
             call lun_main("hmmm... (Might as well make some more money from the, [lun_genie_name]...)","upset","suspicious","mad","mid")
 
             hide screen luna_main
@@ -790,7 +790,7 @@ label luna_favour_4: ###Luna handjob #DONE
     hide screen bld1
     with d3
 
-    m "well then, Here's your payment, [luna_name]."
+    m "well then, Here's your payment, [lun_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
     ">You hand Luna [current_payout] gold."
@@ -903,7 +903,7 @@ label luna_cum_addict_event:
 
     call lun_main("Just don't expect me to let you get away with wasting that spunk anymore [lun_genie_name]!","normal","mad","angry","mid")
 
-    m "Anyway, here's your payment, [luna_name]."
+    m "Anyway, here's your payment, [lun_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
     ">You hand Luna [current_payout] gold."

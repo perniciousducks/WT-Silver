@@ -131,9 +131,9 @@ else:
         $ renpy.jump(result)
 
 label update_luna_favors:
-
-    $ ll_pf_masturbate.heart_color = "blue"
-    $ ll_pf_blowjob.heart_color    = "blue"
-    $ ll_pf_sex.heart_color        = "blue"
+    python:
+        for i in ll_favor_list:
+            if i.tier != lun_tier and i.max_tiers >= lun_tier:
+                i.tier = lun_tier
 
     return

@@ -127,7 +127,7 @@ screen stat_menu(character=""):
         use hermione_stat_menu
 
     if character == "luna":
-        use charecter_name(luna_name)
+        use charecter_name(lun_name)
         use luna_stat_menu
 
     if character == "astoria":

@@ -492,9 +492,9 @@ label cc_pf_talk_T1_E3:
         g4 "Indeed, I'd love to see that!"
         call cho_main("And pull their panty-string up and over their hip bones...","soft","narrow","base","mid")
         g4 "Yes! So fucking slutty!"
-        call cho_main("They look like arrows pointing down at their snitch!","angry","narrow","angry","mid")
+        call cho_main("They look like arrows pointing down at their \"Snitch\", if you get what I mean...","angry","narrow","angry","mid")
         g4 "*Argh!* Those cheap whores!"
-        call cho_main("As if it's an open invitation for any boy to lay with them...","soft","narrow","angry","R")
+        call cho_main("As if they give any boy an open invitation to lay with them...","soft","narrow","angry","R")
         g4 "*Fuck!* That did it!!!"
 
         # Genie cums.
@@ -512,9 +512,10 @@ label cc_pf_talk_T1_E3:
 
         call cum_block
         call cho_main("And there needs to be enough fabric to soak up all the sweat...","soft","narrow","base","R")
-        g4 "I bet you are so wet right now!"
+        g4 "I bet you are so wet right now too!"
 
         # Genie finished.
+        call hide_characters
         call gen_chibi("came_on_desk")
         with d3
         pause.8
@@ -552,10 +553,9 @@ label cc_pf_talk_T1_E3:
         m "Did you ever show them to him?"
         call cho_main("My panties?","soft","base","raised","mid")
         m "No, your good manners...{w} Yes your panties!"
-        call cho_main("Why would I have wanted to?","base","base","base","mid")
+        call cho_main("Why would I have wanted to?","soft","narrow","raised","mid")
         m "What kind of girl doesn't show her panties to her beloved?"
         call cho_main("I beg your pardon?!","angry","wide","base","mid")
-        call cho_main("Sir who would-","angry","narrow","base","mid")
 
         if huffl_matches_won == 0:
             m "But, that made me think..."
@@ -580,7 +580,7 @@ label cc_pf_talk_T1_E3:
             call cho_main("But you were correct with your assumption, Sir.","soft","closed","base","mid")
             call cho_main("I'm surprised how well that worked out in our favour.","angry","base","base","down")
             call cho_main("He really \"does\" love panties...","soft","narrow","base","mid")
-            m "Who doesn't..."
+            m "I mean who doesn't..."
 
         call cho_main("Sir, if you don't mind...","soft","closed","base","mid")
         if daytime:
@@ -602,6 +602,7 @@ label cc_pf_talk_T1_E3:
 
         call bld
         m "I wonder what colours they are..."
+        m "Or if she's even wearing any.{w} You never know..."
 
         jump end_cho_talk_event
 
@@ -777,10 +778,10 @@ label cc_pf_talk_T2_intro_E2:
 
     call cho_walk(xpos="desk", ypos="base", speed=1.6)
 
-    call cho_main("","base","base","base","R", xpos="mid", ypos="base", trans="fade")
+    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
     m "How's school? Have anything to tell me?"
-    call cho_main("Quite a bit, Sir!","smile","base","base","mid")
-    call cho_main("I feel like people have shown me more affection ever since our game against \"Hufflepuff\".","base","closed","base","mid")
+    call cho_main("Quite a bit, Sir!","smile","base","base","down")
+    call cho_main("I feel like people have shown me more affection ever since our game against \"Hufflepuff\".","base","base","base","mid")
     m "You don't say..."
 
     menu:
@@ -805,19 +806,20 @@ label cc_pf_talk_T2_intro_E2:
         "-Participate in the conversation-":
             $ masturbating = False
             m "Do you have any idea why that might be?"
-            call cho_main("Because of our win, of course!","base","closed","base","mid")
+            call cho_main("Because of our win, why else!","smile","narrow","base","mid")
             m "And it had nothing to do with the fact that half the school got to see your panties?"
             call cho_main("No! Of course not!","soft","narrow","angry","mid")
             call cho_main("Please don't try to diminish my achievement, Sir!","annoyed","narrow","base","R")
 
     call cho_main("It's like I'm a celebrity now! I'm getting so much attention!","soft","base","base","R")
-    call cho_main("It never happened that \"Ravenclaw\" won a game.{p=0.6} And I made that possible!","smile","base","base","mid")
+    call cho_main("It never happened that \"Ravenclaw\" won a game.{p=0.6}And I made that possible!","smile","base","base","mid")
     if masturbating:
         g4 "{size=-4}And soon you'll be on your knees thanking me for it!{/size}"
     else:
         m "Hey! Don't you forget about me!"
         m "Where would you be without the great Dooblydore..."
-        call cho_main("Of course, Sir! Sorry, Sir!","angry","closed","sad","mid")
+        call cho_main("Of course, Sir!","angry","closed","sad","mid")
+        call cho_main("Sorry, Sir!","angry","narrow","sad","mid")
 
         menu:
             m "(Maybe it wouldn't be such a bad idea to...)"
@@ -862,7 +864,7 @@ label cc_pf_talk_T2_intro_E2:
         call cho_main("Maybe I'll do something fun with her the next time I see her...","base","narrow","base","R")
         call cho_main("Do something that would rile her up even more!","smile","narrow","angry","downR")
     else:
-        g9 "Yes? How exactly would you \"thank her\"?"
+        g9 "Yes? Tell me how you would \"thank her\"!"
         call cho_main("I don't know. Maybe something that would rile her up even more...","annoyed","base","base","downR")
     call cho_main("Like a kiss on her cheek, or an uncomfortably long hug!","soft","narrow","base","mid")
     call cho_main("Or I'll do something more sinister! Something she'd never expect!","base","base","base","R")
@@ -878,7 +880,17 @@ label cc_pf_talk_T2_intro_E2:
 
         menu:
             "Jerk off":
+                $ cho_jerk_off_counter += 1
                 $ masturbating = True
+
+                hide screen cho_chang
+                call nar(">You reach under the desk and grab your cock...")
+
+                call gen_chibi("jerking_behind_desk")
+                with d3
+                pause.8
+
+                call bld
                 g4 "Please, continue!"
 
     call cho_main("Just thinking about her puffy pink lips...","soft","narrow","sad","down")
@@ -898,6 +910,7 @@ label cc_pf_talk_T2_intro_E2:
     g4 "{size=-4}Yes, yes! You nasty slut!{/size}"
 
     call cum_block
+    call hide_characters
     call gen_chibi("cumming_behind_desk")
     with d3
     pause.8
@@ -1228,9 +1241,10 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 call gen_chibi("came_on_desk")
                 pause.8
 
+                call bld
                 g9 "You did great, [cho_name]."
                 call cho_main("","annoyed","narrow","angry","mid")
-                m"Where could one acquire one of those bats you're speaking of?"
+                m "Where could one acquire one of those bats you're speaking of?"
                 call cho_main("You're kidding right...","soft","narrow","base","mid")
 
             else:

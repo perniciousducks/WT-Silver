@@ -4,7 +4,7 @@
 
 label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=False, animation=False):
     $ cho_chibi_status = ""
-    call update_cho_chibi_uniform
+    $ update_chibi_image("cho")
 
     if xpos != cho_chibi_xpos:
         if xpos == "mid":
@@ -42,10 +42,10 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
     else:
         if action == "fly":
             $ cho_chibi_animation = "fly"
-            call update_cho_chibi_uniform
+            $ update_chibi_image("cho")
         elif action == "reset":
             $ cho_chibi_animation = None
-            call update_cho_chibi_uniform
+            $ update_chibi_image("cho")
 
         if flip: #Same variable that the main sprite is using. #1 == Default
             $ cho_chibi_flip = -1
@@ -71,7 +71,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
     with d3
 
     $ cho_chibi_status = "move"
-    call update_cho_chibi_uniform
+    $ update_chibi_image("cho")
 
     # Action command.
     if action == "enter":
@@ -116,7 +116,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         hide screen cho_walk
         if loiter:
             $ cho_chibi_status = ""
-            call update_cho_chibi_uniform
+            $ update_chibi_image("cho")
             show screen cho_stand
 
     # Walk left to right
@@ -136,7 +136,7 @@ label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loite
         else:
             if loiter:
                 $ cho_chibi_status = ""
-                call update_cho_chibi_uniform
+                $ update_chibi_image("cho")
                 show screen cho_stand
 
     return
@@ -193,11 +193,6 @@ screen cho_walk():
         add cho_chibi_gloves       xzoom cho_chibi_flip zoom (1.0/scaleratio)
         if cho_cloth_pile:
             add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
-
-
-label update_cho_chibi_uniform:
-    $ update_chibi_image("cho")
-    return
 
 
 

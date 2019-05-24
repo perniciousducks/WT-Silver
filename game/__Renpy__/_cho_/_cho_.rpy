@@ -92,7 +92,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 label update_cho:
 
     # Chibi Update
-    call update_cho_chibi_uniform
+    $ update_chibi_image("cho")
     $ cho_flip = 1
     $ cho_cloth_pile = False
 

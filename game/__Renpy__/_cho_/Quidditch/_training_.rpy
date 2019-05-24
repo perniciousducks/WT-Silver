@@ -337,6 +337,8 @@ label change_quidditch_tactics:
                 call cho_main(face="neutral", xpos="mid", ypos="base")
 
             "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
+                # Cho continues to wear her Quidditch outfit.
+                # No clothing reset until after the eventing.
                 jump start_training_match
 
             "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:

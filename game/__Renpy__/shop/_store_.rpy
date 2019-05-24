@@ -166,6 +166,7 @@ label store_chit_chat:
 
     else:
         if twins_interest:
+            twins_interest = False
             twi "Greetings Dumbledore, sir!"
             m "Hello boys."
             m "I'm here to pick up my weekly cut of profits."

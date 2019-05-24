@@ -221,7 +221,7 @@ label cho_intro_1:
         call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "angry", "angry", "L")
         call her_main("Well, I heard that you were caught snogging someone in one off the carriages after the triwizard tournament. I’m sure that will go down in the Hogwarts book of history...","grin","closed", cheeks="blush")
         g9 "(How naughty, didn’t expect such indecent behavior from a girl with such a cute face...)"
-        call cho_main("Yeah? You ever even kissed a boy before Granger? And I’m not talking about a real kiss and not your daddy kissing you good night...", "soft", "angry", "raised", "L")
+        call cho_main("Yeah? You ever even kissed a boy before Granger? And I’m talking about a real kiss and not your daddy kissing you good night...", "soft", "angry", "raised", "L")
         call her_main("Oh...{w=0.5} Of course I have!","angry","worriedL", cheeks="blush")
         call her_main("Hey, just because I’m not the kind of person to jump on every opportunity they get to have a peek at some random boys wand... that doesn’t mean I’ve never kissed anyone...","open","WorriedCl", cheeks="blush")
         g9 "..."

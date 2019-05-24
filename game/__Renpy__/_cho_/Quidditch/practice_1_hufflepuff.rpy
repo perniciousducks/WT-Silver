@@ -4,6 +4,8 @@
 
 label start_training_match:
 
+    call cho_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
+
     # First Hufflepuff match.
     if huffl_matches_won == 0:
 

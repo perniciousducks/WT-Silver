@@ -279,36 +279,37 @@ label cc_pf_strip_T1_intro_E1:
     jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
+label cc_pf_strip_T1_intro_E2:
+    call cho_main("","upset","base","base","R")
     m "[cho_name], to continue your training where we left off..."
     g9 "I'd like you to undress, once again!"
-    cho "Of course, Sir."
+    call cho_main("Of course, Sir.","annoyed","base","angry","downR")
 
     call cho_walk(xpos="desk", ypos="base", speed=1.6)
 
-    call cho_main("Down to my undergarments, [cho_genie_name]?", xpos="mid", ypos="base", trans="fade")
-    cho "Or would you like me to take off all of it?"
+    call cho_main("Down to my undergarments, [cho_genie_name]?","soft","closed","base","mid", xpos="mid", ypos="base", trans="fade")
+    call cho_main("Or would you like me to take off all of it?","soft","narrow","base","mid")
     m "*Uhm*... All of it?"
-    cho "Very well, Sir."
+    call cho_main("Very well, Sir.","soft","closed","base","mid")
     g4 "(Please don't let this be a trick question.)"
+    call cho_main("","upset","narrow","base","mid")
     pause.4
 
     # Remove top.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
     $ cho_cloth_pile = True
-    show screen cho_chang
-    with d3
+    call cho_main("","upset","narrow","base","mid")
     pause.5
 
-    call cho_main("","quiver","narrow","sad","mid")
+    call cho_main("","upset","narrow","angry","mid")
     call ctc
 
-    cho "I'm a very good trainee, [cho_genie_name]!"
+    call cho_main("I'm a very good trainee, [cho_genie_name]!","soft","narrow","angry","mid")
     g9 "Yes you are!"
-    cho "If my trainer requires me to take off my clothing and strip for him."
-    cho "Then I have no other choice but to indulge..."
-    cho "I see nothing wrong with that..."
+    call cho_main("If my trainer requires me to take off my clothing and strip for him...","soft","closed","base","mid")
+    call cho_main("Then I have no other choice but to indulge...","soft","narrow","base","R")
+    call cho_main("I see nothing wrong with that...","annoyed","narrow","angry","mid")
     pause.4
 
     # Remove skirt.
@@ -318,113 +319,129 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     with d3
     pause.5
 
-    call cho_main("","horny","narrow","base","mid")
+    call cho_main("","annoyed","narrow","base","mid")
     call ctc
 
-    cho "Would you perhaps like me to climb on top of your desk as well?"
-    cho "And dance for you like some common harlot?"
+    call cho_main("Would you perhaps like me to climb on top of your desk as well?","soft","narrow","raised","mid")
+    call cho_main("And dance for you like some common harlot?","soft","narrow","base","R")
 
     # You saw Hermione strip before.
     if hg_pf_dance.points >= 2:
         m "If it's not too much trouble..."
-        cho "Of course not, [cho_genie_name]."
+        call cho_main("Of course not, [cho_genie_name].","soft","closed","base","mid")
         g4 "(I'm having a bit of a deja vu!)" # In-game font doesn't support special characters. déjà vu!
     else:
         g9 "Yes please!"
-        cho "Whatever you say, Sir!"
-    cho "Like I said, I'd go to any lengths just to please my trainer..."
+        call cho_main("Whatever you say, Sir!","soft","closed","base","mid")
+    call cho_main("Like I said, I'd go to any lengths just to please my trainer...","soft","narrow","base","mid")
 
     # Climbs desk.
     call hide_characters
     show screen blkfade
-    with d3
+    with d5
     call play_sound("climb_desk")
-    pause 2
+    pause 1
 
     "To your surprise, the athletic petite girl rather playfully climbs on top of your desk."
+    pause.5
+    g9 "Nice!"
+    pause.2
 
     call cho_chibi("stand","on_desk","on_desk", flip=False)
     hide screen bld1
     hide screen blkfade
-    with fade
+    with d5
     call ctc
 
-    cho "After all, I promised I'd do anything to win that Quidditch cup..."
-    cho "If stripping for you is what it takes- then..."
-    cho "I- I'll do it..."
+    call cho_main("After all, I promised I'd do anything to win that Quidditch cup...","soft","narrow","angry","mid")
+    call cho_main("If stripping for you is what it takes- then...","soft","base","angry","down")
+    call cho_main("Then...","angry","base","sad","down")
+    call cho_main("I- I'll do it...","soft","narrow","sad","down")
     m "(Shit. Is she crying?)"
     m "(Can she even cry?)"
     m "Are you alright, girl?"
-    cho "Shut up!" # Scream
-    cho "Can't you see what I'm trying to do here?"
+    call cho_main("No.{w} I'm already regretting climbing up here!!!","angry","closed","sad","mid")
+    call cho_main("(What were you thinking, Cho?!)","angry","narrow","sad","down")
+    m "You can come back down if it's too much for yo-"
+    call cho_main("Shut up!","scream","closed","angry","mid", trans="hpunch") # Scream
+    call cho_main("Can't you see what I'm trying to do here?","angry","angry","angry","mid")
     m "Not really, no."
-    cho "I'm testing my limits and I believe I have reached them, Sir!"
-    cho "If I could go as far as embarrassing myself in front of my headmaster..."
-    cho "Doing the same in front of the school won't feel as bad in comparison."
-    cho "Sir, I don't think I can do this after all."
-    cho "Could I get your permission to leave and never come back?"
+    call cho_main("I-I'm... testing my limits, Sir.","angry","narrow","sad","down")
+    call cho_main("And I believe I've reached them!","angry","closed","sad","mid")
+    m "For real? You are still wearing clothes..."
+    call cho_main("I thought{w=0.2}, if I could go as far as embarrassing myself in front of my headmaster...","soft","narrow","sad","down")
+    call cho_main("Doing the same in front of the school won't feel as bad in comparison.","annoyed","narrow","sad","down")
+    call cho_main("Sir, I don't think I can do this after all.","soft","narrow","sad","mid")
+    call cho_main("Could I get your permission to leave and never come back?","angry","narrow","sad","mid")
 
     menu:
         "\"Yes, but take off those clothes first...\"":
-            cho "I'm glad to know that you're believing in me, Sir!"
-            m "What?{w} *Ahem* I mean..."
-            g9 "Of course! I always did!"
-            cho "I may not like it. But this is all just part of my training..."
+            call cho_main("Yes! Thank you, Sir!","quiver","closed","sad","mid")
+            call cho_main("Even after I've given up you're still believing in me!","soft","narrow","sad","mid")
+            m "What?{w=0.2} *Ahem* I mean..."
+            g9 "Of course!{w=0.2} I always did!"
+            call cho_main("I may not like it. But this is all just part of my training...","soft","base","sad","R")
             m "*Uhhhh*... Sure..."
-            cho "It's one of many challenges I have to face before I can call myself a Quidditch champion!"
-            cho "This is just about facing my inner demons, isn't it?"
-            cho "Overcoming my fears..."
-            cho "Failure, and embarrassment..."
-            cho "(Come on Cho, you can do it!!!)"
-            cho "*Uhm*..."
-            cho "What would you like me to do first, [cho_genie_name]?"
-            cho "Remove my bra..."
-            cho "Or take off my panties?"
+            call cho_main("It's one of many challenges I have to face before I can call myself a Quidditch champion!","soft","closed","angry","mid")
+            call cho_main("This is just about facing my inner demons, isn't it?","soft","narrow","angry","mid")
+            call cho_main("Overcoming my fears...","soft","narrow","angry","R")
+            call cho_main("Failure, and embarrassment...","soft","closed","base","mid")
+            call cho_main("(Come on Cho, you can do it!!!)","horny","closed","sad","mid")
+            call cho_main("*Uhm*...","horny","narrow","sad","down")
+            call cho_main("What would you like me to do first, [cho_genie_name]?","soft","narrow","sad","mid")
+            call cho_main("Remove my bra...","soft","narrow","base","mid")
+            call cho_main("Or take off my panties?","horny","narrow","sad","down")
 
         "\"Yes, you are dismissed...\"":
             $ cho_mood += 6
-            cho "What?!"
-            cho "But Sir!"
-            m "You can go now."
-            cho "You can't do that!"
+            call cho_main("What?!","soft","wide","base","mid")
+            call cho_main("But Sir!","soft","wide","sad","mid")
+            m "You can go now..."
+            call cho_main("You can't do that!","scream","narrow","angry","mid", trans="hpunch")
+            call cho_main("","angry","narrow","angry","mid")
             g4 "Didn't you just beg me to do just that?"
-            cho "I begged you to help me win the Quidditch cup!"
-            cho "And to be my trainer!{w} To be a \"good\" trainer!"
-            cho "How can I overcome my fear of losing if I can't even do... this!"
-            cho "You're supposed to encourage me! Get me through any challenges I'm confronted with."
+            call cho_main("I begged you to help me win the Quidditch cup!","angry","angry","angry","mid")
+            call cho_main("And to be my trainer!{w} To be a \"good\" trainer!","soft","narrow","angry","mid")
+            call cho_main("How can I overcome my fear of losing if I can't even do... this!","soft","base","sad","down")
+            call cho_main("You're supposed to encourage me! Get me through any challenges I'm confronted with.","soft","narrow","angry","mid")
             m "Including stripping?"
-            cho "Including bloody stripping!"
+            call cho_main("Including bloody stripping!","scream","closed","angry","mid", trans="hpunch")
+            call cho_main("","annoyed","narrow","angry","mid")
             m "To my defense. I got some mixed messages from you earlier..."
-            cho "(...)" # Annoyed
-            cho "So what shall it be?"
-            cho "Would you like me to take off my bra first?"
-            cho "Or pull down my panties so you can get a nice look at my lower half?"
+            call cho_main("(...)","annoyed","narrow","angry","R") # Annoyed
+            m "Very well then..."
+            m "Take of your clothes, [cho_name]."
+            call cho_main("Yes, Sir!","soft","closed","base","mid")
+            call cho_main("Would you like me to take off my bra first?","soft","narrow","angry","mid")
+            call cho_main("Or pull down my panties so you can get a nice look at my lower half?","soft","narrow","base","mid")
 
     m "(...)"
     menu:
         m "First, I'd like you to..."
-        "\"Show me those big, juicy Quaffles of yours!\"":
-            cho "*uhhh*..."
-            g9 "Those two mean, hearty bludgers!"
-            cho "Sir? Could it be that you are talking about my breasts?"
+        "\"Show me those big, juicy \"Quaffles\" of yours!\"":
+            call cho_main("*uhhh*...","upset","wide","base","mid")
+            g9 "Those two mean, hearty \"bludgers\"!"
+            call cho_main("Sir? Could it be that you are talking about my breasts?","soft","narrow","sad","mid")
             m "Yes indeed! Very good."
             m "I had hoped you would eventually catch on."
             m "Because I had also run out of balls to compare them to..."
-            cho "Promise me that you won't laugh when I show you my..."
-            cho "Bludgers!"
+            call cho_main("Promise me that you won't laugh when I show you my...","soft","narrow","sad","R")
+            call cho_main("\"Bludgers\"!","angry","closed","sad","mid")
             m "Why would I ever laugh at a pretty girl like you, Miss Chang?"
-            cho "Because they aren't as big as Hermione's..."
-            cho "Hers are more closer to Quaffles than mine..."
+            call cho_main("Because they...{w} aren't as big as Hermione's...","soft","narrow","sad","downR")
+            call cho_main("Hers are more closer to \"Quaffles\" than mine...","soft","base","sad","mid")
             m "And there will always be a pair of \"Beaters\" that prefer to play with your...{w} balls."
-            cho "Two aren't enough!"
-            g9 "Don't forget to count those that get hit by those bludgers!"
+            call cho_main("Only two?...","upset","base","sad","downR")
+            g9 "Don't forget to count those lucky enough to get hit by those \"bludgers\"!"
+            call cho_main("","upset","base","raised","mid")
             m "Speaking of which..."
-            cho "What?"
+            call cho_main("Yes?","soft","base","sad","mid")
             g4 "I'd like you to hit me with them!"
-            cho "With my breasts?"
-            g9 "Yes! Hit me full force! Take off that bra!"
-            cho "*Sigh*..."
-            cho "I can't believe I'm actually going to do this!"
+            call cho_main("With my breasts?","open","wide","base","mid")
+            g9 "Yes! Hit me full force!{w} Take off that bra!"
+            call cho_main("*Ugh!*...","angry","narrow","base","down")
+            call cho_main("{size=-4}I can't believe I'm actually going to do this!{/size}","angry","closed","sad","mid")
+            call cho_main("","soft","narrow","sad","mid")
             pause.4
 
             # Remove bra.
@@ -432,53 +449,61 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             $ cho_class.strip("bra")
             show screen cho_chang
             with d3
-            pause.5
+            pause.8
 
-            call cho_main("","horny","narrow","base","mid")
+            call cho_main("","horny","narrow","sad","mid")
             call ctc
 
-            m "Yes."
-            g9 "Would you mind if I smack them?"
-            cho "What?! Of course I would mind!"
+            g4 "Simply wonderful, Miss Chang."
+            m "Those are some stellar breasts you got there."
+            call cho_main("(...)","base","narrow","sad","downR")
+            g4 "Some \"outstanding\" boobies!"
+            call cho_main("...","annoyed","narrow","base","mid")
+            m "Would you mind if I smack them?"
+            call cho_main("What?! Of course I would mind!","soft","wide","base","mid")
             m "I just want to beat them around a bit..."
-            g9 "After all, they are two soft, meaty bludgers!"
-            g9 "And I'm a beater!"
+            call cho_main("","annoyed","narrow","angry","mid")
+            g9 "After all, they are two soft, meaty \"bludgers\"!"
+            g9 "And I'm a \"beater\"!"
 
             $ genie_quid_position = "beater"
 
-            cho "You are childish.{w} That's what you are..."
+            call cho_main("You are childish.{w} That's what you are...","soft","narrow","angry","mid")
             m "You're the one playing games."
-            cho "(...)"
-            cho "Fine...{w} But Only once!"
-            cho "Twice,...{w} maybe..."
-            m "That's a hundred percent more than I had hoped for!"
+            call cho_main("(...)","annoyed","narrow","angry","mid")
+            call cho_main("Fine...{w} But Only once!","soft","narrow","angry","R")
+            call cho_main("Twice,...{w} maybe...","angry","narrow","sad","downR")
+            g9 "That's a hundred percent more than I had hoped for!"
 
             call slap_her
-            cho "*Ouch!*"
+            call cho_main("*Ouch!*","angry","wide","base","mid")
             call slap_her
             call slap_her
             call slap_her
-            cho "Stop it!"
-            cho "That was more than twice!"
-            m "I wasn't really counting..."
+            call cho_main("Stop it!","scream","closed","sad","mid")
+            call cho_main("That was more than twice!","soft","narrow","angry","mid")
+            m "I stopped counting halfway through..."
 
-        "\"Let me catch a sight of that Snitch!\"":
-            cho "Don't you mean \"Snatch\", Sir?"
+        "\"Let me catch a sight of that \"Snitch\"!\"":
+            call cho_main("Don't you mean \"Snatch\", Sir?","annoyed","narrow","angry","mid")
             g9 "Potato, Potato!"
-            cho "Your motives were nothing but for your own perverted gains from the start were they?" # Annoyed
+            call cho_main("Your motives were nothing but for your own perverted gains, were they? From the very start.","soft","narrow","base","mid") # Annoyed
             m "More or less..."
             m "However, I never lied about wanting to help you win the Quidditch cup!"
-            m "And I wouldn't be able to call myself a man if I was lying!"
-            cho "And you'd be called a dead man, if you try to trick me!"
+            g4 "And I wouldn't be able to call myself a man if I was lying!"
+            call cho_main("And you'd be called a dead man, if you try to trick me!","angry","narrow","angry","mid")
             m "Well technically I'm a gen-"
             call play_sound("kick")
-            call nar("Cho does a daunting stomp on your desk...")
+            call cho_main("","annoyed","angry","angry","mid", trans="vpunch")
             g4 "*Aaaaah!*"
-            cho "Don't think for a second I wouldn't do it! After all of this!"
+            call nar("Cho does a daunting stomp on your desk...")
+            call cho_main("Don't think for a second I wouldn't do it! After all of this!","scream","narrow","angry","mid")
+            call cho_main("","angry","narrow","angry","mid")
             call play_sound("gulp")
-            m "*Gulp*"
+            g4 "*Gulp*"
             m "Yes, Ma'am."
-            cho "(...)"
+            call cho_main("(...)","upset","closed","base","mid")
+            call cho_main("","upset","narrow","sad","down")
             pause.4
 
             # Remove panties.
@@ -488,45 +513,46 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
             with d3
             pause.5
 
-            call cho_main("","horny","narrow","base","mid")
+            call cho_main("","horny","narrow","sad","mid")
             call ctc
 
-
-            cho "Happy?"
+            call cho_main("Happy, Sir?","soft","narrow","sad","mid")
             m "Very."
-            m "I think I even found a new favourite feature on that body of yours."
-            cho "Oh?"
-            m "Absolutely..."
-            g9 "I think I've become quite a bit of a seeker myself recently."
-            cho "..."
-            m "And I think I just found my golden snatch."
-            cho "Really?"
-            cho "I never considered it before. It's just sort of been another part of my body..."
-            m "You should consider yourself lucky Miss Chang."
-            m "It's very pretty."
-            cho "Thank you [cho_genie_name]."
-            
+            g9 "Finally I get the appeal of Quidditch."
+            call cho_main("Really?","soft","base","raised","mid")
+            m "Yes..."
+            g9 "You see, I think I've become quite a bit of a seeker myself!"
 
             $ genie_quid_position = "seeker"
 
+            call cho_main("(...)","annoyed","base","base","mid")
+            m "And I believe I've just found my very own golden snatch!"
+            call cho_main("","annoyed","narrow","angry","mid")
+            m "You should consider yourself lucky, Miss Chang."
+            call cho_main("Why?...","soft","narrow","raised","mid")
+            g9 "It's very pretty."
+            call cho_main("*Ugh*...","angry","narrow","base","down")
 
-    cho "Will that be all then, Sir?"
+
+    call cho_main("Sir, will that be all then?","soft","narrow","angry","mid")
+    call cho_main("May I go now?","soft","narrow","angry","R")
     m "Haven't you forgotten something?"
-    cho "Didn't I do enough for you already?"
-    m "For me, you did more than enough. I'm more than pleased with what you've shown me..."
-    cho "*Ugh*..." # Disgusted
+    call cho_main("Didn't I do enough for you already?","angry","angry","angry","mid")
+    g9 "For me, you did more than enough!{p=0.6}I'm more than pleased with what you've shown me..."
+    call cho_main("*Ugh*...","angry","narrow","base","mid") # Disgusted
     m "But, wasn't your goal earlier to undress entirely?"
-    m "To prove to yourself that you could do it?"
-    cho "I hoped you'd forget about that..." # Small text.
+    m "To prove to yourself that you \"could\" do it?"
+    call cho_main("{size=-4}I hoped you'd just forget about that...{/size}","angry","narrow","sad","down") # Small text.
     g9 "Well, I didn't!"
     m "I'm here to help you mature and boost your confidence."
     m "A body like yours is nothing you need to hide away!"
-    m "Don't you think so too? After all the work you put into it?"
+    call cho_main("","base","narrow","sad","mid")
+    m "Don't you think so too?{w} After all the work you put into it?"
     g4 "It should be celebrated! And seen by everyone!"
-    cho "You're making me blush, [cho_genie_name]..."
+    call cho_main("You're making me blush, [cho_genie_name]...","soft","narrow","sad","downR")
     g9 "You can do it, [cho_name]! Only one more piece to go..."
-    cho "Yes, Sir!"
-    cho "(...)"
+    call cho_main("Yes, Sir!","angry","closed","sad","mid")
+    call cho_main("","base","narrow","sad","mid")
     pause.4
 
     # Cho strips completely.
@@ -536,39 +562,104 @@ label cc_pf_strip_T1_intro_E2: # Incomplete. Not posed.
     with d3
     pause.5
 
-    call cho_main("","horny","narrow","base","mid")
+    call cho_main("","horny","narrow","sad","mid")
     call ctc
 
     m "See, that wasn't very hard was it?"
-    cho "No..."
-    cho "No you're right."
+    call cho_main("No...","soft","narrow","base","down")
+    call cho_main("No! You're right!","smile","base","base","mid")
     m "And you have a very beautiful body if I might add."
+    call cho_main("Thank you, Sir.","soft","narrow","sad","mid")
     m "I can see why Hermione is so jealous."
-    cho "She is?"
+    call cho_main("","upset","base","base","mid")
+    pause.8
+    call cho_main("She is?","scream","wide","base","mid", trans="vpunch")
+    call cho_main("","horny","base","base","down")
     m "Look who perked up all of a sudden."
-    cho "She should be jealous, these thighs could break a broom in half if I tried hard enough."
-    m "..."
+    call cho_main("She should be jealous, these thighs could break a broom in half if I tried hard enough.","smile","narrow","angry","mid")
+    m "(...)"
+    call play_sound("gulp")
+    g4 "*Gulp!*"
     m "I don't doubt it."
-    cho "Thank you."
+
+    call cho_main("Thank you.","base","closed","base","mid")
     m "For what?"
-    cho "Teaching me, I couldn't have imagined showing myself off like this before... but."
+    call cho_main("Teaching me.{p=0.4}I couldn't have imagined showing myself off like this before... but.","horny","narrow","sad","downR")
     m "Yes?"
-    cho "Well, your methods has clearly worked so far and I feel more confident than ever."
-    m "That's great news, and hey... if distracting doesn't work you could just crush your opponents with those thighs of yours."
-    cho "That's true..."
-    cho "..."
+    call cho_main("Well, your methods have clearly worked so far...","soft","narrow","base","R")
+    call cho_main("And I feel more confident than ever!","soft","wide","base","mid")
+    m "That's great news, and hey..."
+    m "If distracting doesn't work, you could just crush your opponents with those thighs of yours."
+    call cho_main("That's true...","smile","narrow","base","mid")
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d5
+
+    call play_sound("climb_desk")
+    call cho_chibi("stand","desk","base", flip=False)
+
+    pause 1
+
+    hide screen blkfade
+    with d5
+    pause.2
+
+    call cho_main("Will this be all then, Sir?","soft","base","base","R")
+    m "Yes Miss Chang, great work today..."
+    m "I doubt you'll have any problems distracting anyone with a body like that."
+    m "You're dismissed."
+    call cho_main("Thank you, [cho_genie_name].","base","closed","base","mid")
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause.2
+
+    call cho_walk(xpos="door", ypos="base", speed=2.5)
+
+    call bld
     m "Miss Chang."
-    cho "Yes?"
-    m "You're still naked in my office."
-    cho "Oh, yes of course."
-    #Cho puts clothes back on.
-    cho "Will that be all?"
-    m "Yes miss Chang, great work today... I doubt you'll have any problems distracting anyone with a body like that."
-    cho "Thank you."
-    cho "Until next time."
-    
+    hide screen bld1
+    with d3
+    pause.5
 
+    call cho_chibi("stand","door","base", flip=False)
+    with d3
+    pause.5
 
+    call cho_main("Yes?","soft","base","raised","mid", ypos="head")
+    m "Aren't you forgetting about something?"
+    call cho_main("Sir?","soft","narrow","base","mid")
+    m "You're still naked...{w} I wouldn't go out there if I were you..."
+    call cho_main("Oh, yes of course!","soft","wide","base","mid", trans="hpunch")
+
+    call cho_walk(xpos="desk", ypos="base", speed=2)
+    pause.5
+    call chibi_effect("thought","cho")
+    pause.8
+
+    # Cho puts clothes back on.
+    call play_sound("equip")
+    hide screen cho_chang
+    $ cho_class.wear("all")
+    $ update_chibi_image("Cho")
+    $ cho_cloth_pile = False
+    pause.8
+
+    call cho_main("(...)","upset","narrow","sad","down", xpos="right", ypos="base")
+    call cho_main("*Uhm*...","soft","narrow","sad","mid")
+    if daytime:
+        call cho_main("Have a good day...","soft","base","base","R")
+    else:
+        call cho_main("Have a good night...","soft","base","base","R")
+
+    # Cho leaves.
+    call cho_walk(action="leave", speed=2.5)
+
+    call bld
+    m "She's so cute..."
+    g9 "And sexy!"
+    m "But also a bit intimidating..."
 
     jump end_cho_strip_event
 
@@ -1030,6 +1121,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             cho "You see, Granger..."
             cho "Tits aren't everything!"
 
+            "Dev Note" "This section is missing some writing."
 
             # Hermione walks towards the desk to pick up Cho's clothing.
             call her_walk(xpos="desk", ypos="base", speed=1.6)
@@ -1039,7 +1131,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
             pause.6
 
-            cho "What are you doing, Granger?"
+            call cho_main("What are you doing, Granger?","soft","narrow","base","R", ypos="head", flip=True)
 
             # Hermione picks them up and runs off.
             call bld("hide")
@@ -1048,16 +1140,15 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             $ cho_cloth_pile = False
             pause.5
 
-            cho "My clothes!"
+            call cho_main("My clothes!","angry","wide","base","R", ypos="head", flip=True)
 
             call play_sound("running")
             call her_walk(xpos="door", ypos="base", speed=1.4)
 
-            cho "Hey!"
+            call cho_main("Hey!","angry","narrow","angry","R", ypos="head", flip=True)
+
             # Hermione leaves out of the door.
             call her_chibi("leave")
-
-            cho "Give them back you bitch!"
 
             # Cho runs out the door.
             if cho_chibi_xpos == 350: # On desk
@@ -1070,11 +1161,21 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 hide screen blkfade
                 call cho_chibi("stand","desk","base", flip=True)
                 with d3
+                pause.2
+
+                call cho_main("Give them back you bitch!","scream","narrow","angry","R", ypos="head", flip=True, trans="hpunch")
 
                 call play_sound("running")
                 call cho_walk(action="leave", speed=1.2)
 
             else:
+                hide screen bld1
+                call cho_chibi("stand","570","base", flip=True) # Facing the door.
+                with d3
+                pause.2
+
+                call cho_main("Give them back you bitch!","scream","narrow","angry","R", ypos="head", flip=True, trans="hpunch")
+
                 call play_sound("running")
                 call cho_walk(action="leave", speed=1)
 

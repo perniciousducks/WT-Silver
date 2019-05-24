@@ -280,7 +280,7 @@ screen ui_menu():
                 textbutton "{size=-11}Cheats{/size}" action [SetVariable("toggle_menu", False), Jump("cheats")] background #000
             if day != 1:
                 textbutton "{size=-11}Options{/size}" action [SetVariable("toggle_menu", False), Jump("options_menu")] background #000
-            if day != 1:
+            if day != 1 and persistent.game_complete:
                 textbutton "{size=-11}Gallery{/size}" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background #000
             if day != 1:
                 textbutton "{size=-11}Decorate{/size}" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background #000

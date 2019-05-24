@@ -197,6 +197,8 @@ screen cho_walk():
 
 
 init python:
+    # Temporal function
+    # TODO: Create a chibi class instead.
     def update_chibi_image(name):
         if name == "cho":
             imagepath = "characters/cho/chibis/"
@@ -216,7 +218,7 @@ init python:
                     cho_chibi_top = imagepath+"cc_top"+animation+status+".png" if animation else imagepath+"cc_top.png"
 
             if cho_class.get_worn("bottom"):
-                if cho_class.get_cloth("bottom").subcat == "trousers":
+                if cho_class.get_cloth("bottom").id in ("pants_long_2", "pants_short_4"):
                     if not status == "_move":
                         cho_chibi_bottom = imagepath+"cc_trousers"+animation+".png"
                     else:

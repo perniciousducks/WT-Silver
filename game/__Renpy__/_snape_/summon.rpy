@@ -642,7 +642,7 @@ label special_date_with_snape_03:
 label wine_intro:
     call bld
     m "Look what I've got!"
-    call sna_main("Hm..?","snape_05")
+    call sna_main("Hm..?","snape_05", ypos="head")
     call sna_main("Let me see...")
     pause.1
     $ the_gift = "interface/icons/item_wine.png" # WINE.

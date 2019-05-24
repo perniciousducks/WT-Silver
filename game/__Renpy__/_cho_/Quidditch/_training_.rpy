@@ -205,7 +205,7 @@ label quidditch_training_intro_2:
         call cho_main("I'm not here to deny that my behind is in great shape.{w} And I'm very proud of it!","open","closed","base","mid")
         g9 "You should be!"
         call cho_main("But, May I ask, Sir...","open","base","base","R")
-        call cho_main("How exactly did you picture my \"ass\" helping us win?","annoyed","narrow","angry","mid") # Annoyed
+        call cho_main("How exactly did you picture my \"ass\" helping us win?","annoyed","narrow","angry","mid")
 
     elif quidditch_position == "above":
         call cho_main("It had something to do with panties.","open","narrow","angry","mid")
@@ -229,11 +229,11 @@ label quidditch_training_intro_2:
 
     m "First, get your flying thing ready!"
     call cho_main("My broom?","soft","base","raised","mid")
-    m "Broom,... flying carper,... Whichever you prefer."
+    m "Broom,... flying carpet,... Whichever you prefer."
     call cho_main("Only brooms are allowed in Quidditch, sir.","annoyed","base","base","mid")
     m "Good for you."
     m "And put on your Quidditch outfit while you're at it..."
-    m "I suspect we'll need to do some adjustsment to it."
+    m "I suspect we'll need to do some adjustsments to it."
     call cho_main("Yes, Sir.{w} Let me just go and get all of my equipment.","smile","base","base","mid")
     call cho_main("I'll be right back.","base","narrow","base","mid")
 
@@ -358,6 +358,8 @@ label change_quidditch_tactics:
 
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")
+
+                call reset_menu_position
 
                 hide screen blkfade
                 call cho_main(face="happy", xpos="base", ypos="base", trans="fade")

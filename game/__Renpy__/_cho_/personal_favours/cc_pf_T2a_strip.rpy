@@ -354,6 +354,8 @@ label cc_pf_strip_T1_intro_E2:
     call ctc
 
     call cho_main("After all, I promised I'd do anything to win that Quidditch cup...","soft","narrow","angry","mid")
+    call play_music("sad")
+
     call cho_main("If stripping for you is what it takes- then...","soft","base","angry","down")
     call cho_main("Then...","angry","base","sad","down")
     call cho_main("I- I'll do it...","soft","narrow","sad","down")
@@ -376,12 +378,14 @@ label cc_pf_strip_T1_intro_E2:
 
     menu:
         "\"Yes, but take off those clothes first...\"":
+            call play_music("stop")
             call cho_main("Yes! Thank you, Sir!","quiver","closed","sad","mid")
             call cho_main("Even after I've given up you're still believing in me!","soft","narrow","sad","mid")
             m "What?{w=0.2} *Ahem* I mean..."
             g9 "Of course!{w=0.2} I always did!"
             call cho_main("I may not like it. But this is all just part of my training...","soft","base","sad","R")
             m "*Uhhhh*... Sure..."
+            call play_music("cho_theme")
             call cho_main("It's one of many challenges I have to face before I can call myself a Quidditch champion!","soft","closed","angry","mid")
             call cho_main("This is just about facing my inner demons, isn't it?","soft","narrow","angry","mid")
             call cho_main("Overcoming my fears...","soft","narrow","angry","R")
@@ -394,12 +398,14 @@ label cc_pf_strip_T1_intro_E2:
 
         "\"Yes, you are dismissed...\"":
             $ cho_mood += 6
+            call play_music("stop")
             call cho_main("What?!","soft","wide","base","mid")
             call cho_main("But Sir!","soft","wide","sad","mid")
             m "You can go now..."
             call cho_main("You can't do that!","scream","narrow","angry","mid", trans="hpunch")
             call cho_main("","angry","narrow","angry","mid")
             g4 "Didn't you just beg me to do just that?"
+            call play_music("sad")
             call cho_main("I begged you to help me win the Quidditch cup!","angry","angry","angry","mid")
             call cho_main("And to be my trainer!{w} To be a \"good\" trainer!","soft","narrow","angry","mid")
             call cho_main("How can I overcome my fear of losing if I can't even do... this!","soft","base","sad","down")
@@ -409,6 +415,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("","annoyed","narrow","angry","mid")
             m "To my defense. I got some mixed messages from you earlier..."
             call cho_main("(...)","annoyed","narrow","angry","R") # Annoyed
+            call play_music("stop")
             m "Very well then..."
             m "Take of your clothes, [cho_name]."
             call cho_main("Yes, Sir!","soft","closed","base","mid")
@@ -419,6 +426,7 @@ label cc_pf_strip_T1_intro_E2:
     menu:
         m "First, I'd like you to..."
         "\"Show me those big, juicy \"Quaffles\" of yours!\"":
+            call play_music("cho_theme")
             call cho_main("*uhhh*...","upset","wide","base","mid")
             g9 "Those two mean, hearty \"bludgers\"!"
             call cho_main("Sir? Could it be that you are talking about my breasts?","soft","narrow","sad","mid")
@@ -485,6 +493,7 @@ label cc_pf_strip_T1_intro_E2:
             m "I stopped counting halfway through..."
 
         "\"Let me catch sight of that \"Snitch\"!\"":
+            call play_music("cho_theme")
             call cho_main("Don't you mean \"Snatch\", Sir?","annoyed","narrow","angry","mid")
             g9 "Potato, Potato!"
             call cho_main("Your motives were nothing but for your own perverted gains, weren't they? From the very start.","soft","narrow","base","mid") # Annoyed
@@ -1123,7 +1132,19 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             #cho "You see, Granger..."
             #cho "Tits aren't everything!"
 
-            "Dev Note" "This section is missing some writing."
+            call her_main("What?!","open","wide")
+            call cho_main("See, I told you! How could he pick a walking bush on legs over this!","smile","narrow","angry","L")
+            call her_main("","angry","angry")
+            call cho_main("Now tell her. Tell her why my body is superior compared to hers.","soft","closed","base","mid")
+            m "..."
+            m "Well, you're more flexible for one..."
+            call cho_main("That's right, I am!","soft","wide","base","mid")
+            call her_main("*Humph.*","annoyed","angryL")
+            call cho_main("And? What else?","smile","narrow","base","L")
+            g4 "And Cho's thighs are probably the most impressive ones I’ve seen in the last hund-... decade or more!"
+            call her_main("Well in that case...","soft","closed")
+            call her_main("In that case I’ll give you a great opportunity to stare at them indefinitely.","angry","angry")
+            call cho_main("What are you talking about, Granger?","soft","narrow","raised","L")
 
             # Hermione walks towards the desk to pick up Cho's clothing.
             call her_walk(xpos="desk", ypos="base", speed=1.6)
@@ -1133,7 +1154,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
             pause.6
 
-            call cho_main("What are you doing, Granger?","soft","narrow","base","L", ypos="head", flip=True)
+            call cho_main("What are you doing?","soft","narrow","base","L", ypos="head", flip=True)
 
             # Hermione picks them up and runs off.
             call bld("hide")
@@ -1146,10 +1167,18 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
             call play_sound("running")
             call her_walk(xpos="door", ypos="base", speed=1.4)
+            call her_chibi("stand","door","base", flip=False)
+            with d3
 
+            call her_main("Hey seeker, looks like someone will have to seek their way to their dorm without any clothes tonight.","open","angry", ypos="head")
             call cho_main("Hey!","angry","narrow","angry","L", ypos="head", flip=True)
 
             # Hermione leaves out of the door.
+            hide screen bld1
+            call her_chibi("stand","door","base", flip=True)
+            with d3
+            pause.2
+
             call her_chibi("leave")
 
             # Cho runs out the door.

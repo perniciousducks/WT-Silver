@@ -484,13 +484,14 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("That was more than twice!","soft","narrow","angry","mid")
             m "I stopped counting halfway through..."
 
-        "\"Let me catch a sight of that \"Snitch\"!\"":
+        "\"Let me catch sight of that \"Snitch\"!\"":
             call cho_main("Don't you mean \"Snatch\", Sir?","annoyed","narrow","angry","mid")
             g9 "Potato, Potato!"
-            call cho_main("Your motives were nothing but for your own perverted gains, were they? From the very start.","soft","narrow","base","mid") # Annoyed
+            call cho_main("Your motives were nothing but for your own perverted gains, weren't they? From the very start.","soft","narrow","base","mid") # Annoyed
             m "More or less..."
             m "However, I never lied about wanting to help you win the Quidditch cup!"
-            g4 "And I wouldn't be able to call myself a man if I was lying!"
+            g4 "(Since I've bet a fortune on it...)"
+            m "And I wouldn't be able to call myself a man if I was lying!"
             call cho_main("And you'd be called a dead man, if you try to trick me!","angry","narrow","angry","mid")
             m "Well technically I'm a gen-"
             call play_sound("kick")
@@ -577,7 +578,8 @@ label cc_pf_strip_T1_intro_E2:
     call cho_main("","horny","base","base","down")
     m "Look who perked up all of a sudden."
     call cho_main("She should be jealous, these thighs could break a broom in half if I tried hard enough.","smile","narrow","angry","mid")
-    m "(...)"
+    call ctc
+
     call play_sound("gulp")
     g4 "*Gulp!*"
     m "I don't doubt it."
@@ -613,7 +615,7 @@ label cc_pf_strip_T1_intro_E2:
     call hide_characters
     hide screen bld1
     with d3
-    pause.2
+    pause.1
 
     call cho_walk(xpos="door", ypos="base", speed=2.5)
 
@@ -621,11 +623,11 @@ label cc_pf_strip_T1_intro_E2:
     m "Miss Chang."
     hide screen bld1
     with d3
-    pause.5
+    pause.3
 
     call cho_chibi("stand","door","base", flip=False)
     with d3
-    pause.5
+    pause.2
 
     call cho_main("Yes?","soft","base","raised","mid", ypos="head")
     m "Aren't you forgetting about something?"
@@ -954,7 +956,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("Why don't we just ask him?","base","narrow","base","mid")
     call cho_main("Tell us, Professor...","soft","narrow","base","R")
     call cho_main("How do you like the athletic, immaculate, nude body of your favourite student?","smile","narrow","angry","mid")
-    call cho_main("How does it compare to Miss Granger's?","base","narrow","angry","mid")
+    call cho_main("It's so much better than Miss Granger's, isn't it?","base","narrow","angry","mid")
     call ctc
 
     $ cho_strip_complete = True # Unlocks Wardrobe on next summon.
@@ -1118,8 +1120,8 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             $ cho_mood = 0
             $ her_mood += 10
 
-            cho "You see, Granger..."
-            cho "Tits aren't everything!"
+            #cho "You see, Granger..."
+            #cho "Tits aren't everything!"
 
             "Dev Note" "This section is missing some writing."
 
@@ -1131,7 +1133,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
             pause.6
 
-            call cho_main("What are you doing, Granger?","soft","narrow","base","R", ypos="head", flip=True)
+            call cho_main("What are you doing, Granger?","soft","narrow","base","L", ypos="head", flip=True)
 
             # Hermione picks them up and runs off.
             call bld("hide")
@@ -1140,12 +1142,12 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             $ cho_cloth_pile = False
             pause.5
 
-            call cho_main("My clothes!","angry","wide","base","R", ypos="head", flip=True)
+            call cho_main("My clothes!","angry","wide","base","L", ypos="head", flip=True)
 
             call play_sound("running")
             call her_walk(xpos="door", ypos="base", speed=1.4)
 
-            call cho_main("Hey!","angry","narrow","angry","R", ypos="head", flip=True)
+            call cho_main("Hey!","angry","narrow","angry","L", ypos="head", flip=True)
 
             # Hermione leaves out of the door.
             call her_chibi("leave")
@@ -1163,7 +1165,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
                 pause.2
 
-                call cho_main("Give them back you bitch!","scream","narrow","angry","R", ypos="head", flip=True, trans="hpunch")
+                call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans="hpunch")
 
                 call play_sound("running")
                 call cho_walk(action="leave", speed=1.2)
@@ -1174,7 +1176,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
                 pause.2
 
-                call cho_main("Give them back you bitch!","scream","narrow","angry","R", ypos="head", flip=True, trans="hpunch")
+                call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans="hpunch")
 
                 call play_sound("running")
                 call cho_walk(action="leave", speed=1)

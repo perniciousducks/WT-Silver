@@ -191,8 +191,8 @@ screen cho_walk():
             add cho_chibi_shoes        xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_robe         xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_gloves       xzoom cho_chibi_flip zoom (1.0/scaleratio)
-        if cho_cloth_pile:
-            add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
+    if cho_cloth_pile:
+        add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
 
 
 

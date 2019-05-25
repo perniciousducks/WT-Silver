@@ -13,6 +13,8 @@ define config.gc_thresholds = (25000, 10, 10)
 define config.idle_gc_count = 2500
 define gc_print_unreachable = False
 
+define game_version = "1.36a"
+
 init -1 python hide:v
 
     config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.
@@ -70,12 +72,13 @@ init -1 python hide:v
     # with tracebacks and other debugging logs.
 
     config.name = "WT Silver"
-    config.version = "1.36"
+    config.version = "1.361"
+    game_version = "1.36a"
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Witch Trainer (Silver) %s" % config.version
+    config.window_title = u"Witch Trainer (Silver) %s" % game_version
 
     #########################################
     # Themes

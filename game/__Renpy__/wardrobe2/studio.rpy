@@ -273,7 +273,7 @@ screen studio():
         frame:
             style "empty"
             pos (688, 512)
-            text "WT:S [config.version]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0
+            text "WT:S [game_version]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0
     
     if not studio_hide:
         use character_studio

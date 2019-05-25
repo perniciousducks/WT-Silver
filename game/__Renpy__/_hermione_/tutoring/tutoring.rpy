@@ -607,11 +607,13 @@ label l_tutoring:
         call her_main("Ok...","angry","worriedCl",cheeks="blush",emote="05")
 
         hide screen hermione_main
+        $ hermione_wear_robe = False
         call her_chibi("lift_top")
 
         call set_her_action("lift_top")
 
         hide screen hermione_main
+        $ hermione_wear_robe = False
         $ hermione_wear_top = False
         call set_her_action("none")
 
@@ -621,6 +623,7 @@ label l_tutoring:
             m "Without your bra Miss Granger..."
             hide screen hermione_main
             $ hermione_wear_bra = False
+            call update_her_body
             call her_main()
 
         m "Yes, and now come here."
@@ -755,6 +758,7 @@ label l_tutoring:
 
         call her_walk_desk_blkfade
 
+        $ hermione_wear_robe = False
         $ hermione_wear_top = False
         call update_her_body
 
@@ -946,6 +950,7 @@ label l_tutoring:
             call set_her_action("lift_top")
             pause.5
 
+            $ hermione_wear_robe = False
             $ hermione_wear_top = False
             $ hermione_wear_bra = False
             call set_her_action("None")
@@ -958,6 +963,7 @@ label l_tutoring:
             call set_her_action("lift_top")
             pause.5
 
+            $ hermione_wear_robe = False
             $ hermione_wear_top = False
             call set_her_action("None")
             pause.5
@@ -1098,6 +1104,7 @@ label l_tutoring:
         call set_her_action("lift_top")
         pause.2
 
+        $ hermione_wear_robe = False
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
         call set_her_action("None")
@@ -1282,6 +1289,7 @@ label l_tutoring:
         call set_her_action("lift_top")
         pause.5
 
+        $ hermione_wear_robe = False
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
         call set_her_action("None")

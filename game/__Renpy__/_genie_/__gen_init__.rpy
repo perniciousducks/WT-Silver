@@ -24,6 +24,9 @@ label genie_init:
         $ gen_chibi_flip   = 1
         $ gen_chibi_stand  = "characters/genie/chibis/walk_01.png"
         $ gen_chibi_walk   = "genie_walk_ani"
+        
+        $ genie_cum_chibi_xpos = -45
+        $ genie_cum_chibi_ypos = -5
 
         $ imagination      = 1
         $ bdsm_imagination = 1

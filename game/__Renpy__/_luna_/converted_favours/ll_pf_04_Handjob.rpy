@@ -482,6 +482,8 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("Now...","normal","mad","mad","mid")
             call lun_main("Cum.","base","seductive","angry","mid")
             $ g_c_c_u_pic = "jerking_off_cum_ani"
+            $ genie_cum_chibi_xpos = -45
+            $ genie_cum_chibi_ypos = 5
             show screen g_c_c_u
             $ luna_wear_cum_under = True
             $ luna_cum = 10

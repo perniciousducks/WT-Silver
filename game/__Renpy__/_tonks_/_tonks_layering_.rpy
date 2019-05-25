@@ -101,8 +101,8 @@ screen tonks_uniform():
 
     if tonks_wear_mask:
         add tonks_mask xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
-    if tonks_wear_accs:
-        add tonks_accs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the accessory
+    #if tonks_wear_accs:
+        #add tonks_accs xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) # Add the accessory
     if tonks_wear_neckwear:
         add tonks_neckwear xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
     if tonks_wear_robe:

@@ -562,7 +562,7 @@ label hg_pf_look_at_breasts: #LV.3 (Whoring = 6 - 8)
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
                         call her_main("You are a horrible person, [genie_name]...","angry","suspicious",cheeks="blush",tears="messy")
 
-                        call her_walk(aciton="leave", speed=2.5)
+                        call her_walk(action="leave", speed=2.5)
 
                         $ her_mood += 30
 

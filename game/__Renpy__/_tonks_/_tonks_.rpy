@@ -29,7 +29,7 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
             $ tonks_xpos = 300
         elif xpos == "right":          #Bit more to the right.
             $ tonks_xpos = 400
-        elif xpos == ["wardrobe","close"]:
+        elif xpos in ["wardrobe","close"]:
             $ tonks_xpos = 540
         else:
             $ tonks_xpos = int(xpos)

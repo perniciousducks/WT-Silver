@@ -75,7 +75,7 @@ label tentacle_1: #Public tentacle scene
     call play_music("hermione_theme")
     pause.8
 
-    call cg_scene(path="images/CG/", image="p1")
+    call cg_scene(folder="", layer="p1")
     hide screen blkfade
     with d9
     call ctc
@@ -178,7 +178,7 @@ label tentacle_2: #Enjoyable tentacle scene
     call play_music("hermione_theme")
     pause.8
 
-    call cg_scene(path="images/CG/", image="p1")
+    call cg_scene(folder="", layer="e1")
     hide screen blkfade
     with d9
     call ctc

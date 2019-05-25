@@ -4,12 +4,12 @@
 
 label cg_scene(layer=None, folder=None, trans=None):
     hide screen cg
+    
+    if folder != None:
+        $ cg_path = "images/CG/"+folder+"/"
 
     if layer != None:
-        $ cg_image = layer
-
-    if folder != None:
-        $ cg_path = "images/CG/"+folder+""+cg_image+".png"
+        $ cg_image = cg_path+layer+".png"
 
     show screen cg
 
@@ -26,7 +26,7 @@ screen cg(): #Used in tentacle event.
 
     add cg_image xpos 540 xanchor 0.5 ypos 0 # At Screen Center
 
-    zorder 2
+    zorder 4
 
 screen ccg():
     tag cg_screen

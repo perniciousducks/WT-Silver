@@ -117,19 +117,28 @@ label hufflepuff_practice_lost:
     m "What was the problem?"
 
     # Low whoring response
-    if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and cho_whoring < 3:
-        call cho_main("I couldn't focus on the game!","angry","closed","angry","mid")
-        call cho_main("This ridiculously short skirt! The whole match it kept on slipping over my bum!","soft","narrow","angry","mid")
-        m "So what? It wasn't an issue before... Just ignore it..."
-        call cho_main("And let everybody ogle at my bare ass?","open","angry","angry","mid")
-        m "Aren't you still wearing panties?"
-        call cho_main("Of course I am! And I don't intend to show them to the whole school!","annoyed","narrow","angry","mid")
-        call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
-        g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
-        g4 "If the entire school knows the color of your panties, that's when you have done your task well!"
-        call cho_main("You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing...","annoyed","narrow","base","mid")
-        m "Clearly you just aren't ready yet. We'll get you to be more confident on your broom soon enough..."
-        g9 "With your panties on display!"
+    if huffl_matches_won == 1 and cho_whoring < 3:
+        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id:
+            call cho_main("I couldn't focus on the game!","angry","closed","angry","mid")
+            call cho_main("This ridiculously short skirt! The whole match it kept on slipping over my bum!","soft","narrow","angry","mid")
+            m "So what? It wasn't an issue before... Just ignore it..."
+            call cho_main("And let everybody ogle at my bare ass?","open","angry","angry","mid")
+            m "Aren't you still wearing panties?"
+            call cho_main("Of course I am! And I don't intend to show them to the whole school!","annoyed","narrow","angry","mid")
+            call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
+            g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
+            g4 "If the entire school knows the color of your panties, that's when you have done your task well!"
+            call cho_main("You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing...","annoyed","narrow","base","mid")
+            m "Clearly you just aren't ready yet. We'll get you to be more confident on your broom soon enough..."
+            g9 "With your panties on display!"
+        else:
+            call cho_main("I'm not really sure...","soft","narrow","sad","R")
+            call cho_main("Our tactics worked so well last time!","soft","base","sad","mid")
+            call cho_main("It might have been a bad idea to change them, don't you think so too, [cho_genie_name]?","annoyed","narrow","sad","mid")
+            m "Hmmm..."
+            m "Yes, maybe we should try again with out previous tactics."
+            call cho_main("Yes, [cho_genie_name].","soft","narrow","sad","mid")
+
         call cho_main("(...)","annoyed","narrow","angry","mid")
         call cho_main("It's getting late...","soft","narrow","base","R")
         call cho_main("If you don't mind I'd like to go to bed now.","open","base","angry","mid")
@@ -141,9 +150,19 @@ label hufflepuff_practice_lost:
         call cho_main("Our tactic didn't work, [cho_genie_name].","annoyed","narrow","sad","mid")
         call cho_main("Cedric just ignored me for most of the game, and ended up catching the snitch...","soft","narrow","sad","R")
         m "Were you trying to distract him enough?"
-        call cho_main("Of course I was! I tried to let him have a peek up my skirt, but I'm not sure he even noticed that I was wearing one.","soft","narrow","angry","mid")
-        m "Interesting..."
-        m "Maybe we need to tackle this situation from another angle."
+
+        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id:
+            call cho_main("Of course I was! I tried to let him have a peek up my skirt, but I'm not sure he even noticed that I was wearing one.","soft","narrow","angry","mid")
+            m "Interesting..."
+            m "Maybe we need to tackle this situation from another angle."
+            m "And change our flying tactics to best show it off..."
+        else:
+            call cho_main("I did! To the best of my ability...","soft","narrow","angry","R")
+            call cho_main("Maybe he doesn't like the outfit I'm wearing?","soft","narrow","base","mid")
+            m "Yes that might be it."
+            m "We'll discuss your outfit next time..."
+            m "And change our flying tactics to best show it off..."
+
         call cho_main("Whatever you say, [cho_genie_name].","annoyed","narrow","angry","R")
         call cho_main("I'll be going to bed now if you don't mind.","soft","narrow","angry","mid")
         call cho_main("Have a good night, Sir.","annoyed","narrow","base","mid")

@@ -5594,7 +5594,6 @@ images/CG/luna_desk2/eb_raised.png:453,240,223,228
 images/CG/luna_desk2/eb_sad.png:503,242,173,33
 images/CG/luna_desk2/eye_angry.png:382,243,292,160
 images/CG/luna_desk2/eye_base.png:499,254,177,149
-images/CG/luna_desk2/eye_blink.png:499,258,168,145
 images/CG/luna_desk2/eye_closed.png:507,262,162,47
 images/CG/luna_desk2/eye_excited.png:499,254,177,149
 images/CG/luna_desk2/eye_mad.png:499,243,175,160
@@ -6133,3 +6132,7 @@ images/CG/luna_desk2/luna_base_2.png:127,149,861,650
 images/CG/luna_desk2/m_full.png:464,319,220,124
 images/CG/luna_desk2/m_talk.png:582,380,43,35
 images/CG/luna_desk2/up_N.png:548,267,104,27
+images/CG/luna_desk2/curly_hair.png:56,69,717,530
+images/CG/luna_desk2/curly_hair_top.png:169,69,572,424
+images/CG/luna_desk2/eye_happyCl.png:507,262,162,47
+images/CG/luna_desk2/eye_wink.png:499,258,168,145

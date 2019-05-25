@@ -1020,7 +1020,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
             m "What a Bummer...{w} Last time you were such a great aid..."
             call cho_main("What?! When did I ever help you with that?","soft","wide","base","mid")
             g9 "When you told me about that little fantasy you had with Granger!"
-            call cho_main("You shouldn't have payed attention to any of that!","angry","closed","sad","mid")
+            call cho_main("You shouldn't have paid attention to any of that!","angry","closed","sad","mid")
             g9 "But I did!"
             m "..."
             m "I could just tell Hermione that you're into her, you know..."

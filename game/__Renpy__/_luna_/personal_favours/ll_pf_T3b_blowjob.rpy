@@ -1139,7 +1139,6 @@ label ll_pf_blowjob_T1_summon:
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
-    $ hermione_scaleratio = 1.2
     $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', extra_3='blank', tears='mascara')
 
     show screen luncg
@@ -1219,13 +1218,14 @@ label ll_pf_blowjob_T1_summon:
 
     # Setup
     hide screen luncg
+    $ hermione_scaleratio = 1.6
     $ lun_cg_path         = "images/CG/luna_desk2/"
     $ lun_cg_base         = lun_cg_path+"base_2.png" # Split-screen
     $ lun_cg_xpos_abs     = -275
     $ lun_cg_ypos_abs     = -100
     show screen luncg
 
-    call her_main("You wanted to see me [genie_name]?","smile","happyCl", xpos=450, ypos=-150, trans="fade")
+    call her_main("You wanted to see me [genie_name]?","smile","happyCl", xpos=550, ypos=-140, trans="fade")
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
     $ lunCG('ahegao', 'angry', pos=13)

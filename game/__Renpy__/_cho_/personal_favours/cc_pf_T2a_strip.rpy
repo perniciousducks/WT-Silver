@@ -354,9 +354,8 @@ label cc_pf_strip_T1_intro_E2:
     call ctc
 
     call cho_main("After all, I promised I'd do anything to win that Quidditch cup...","soft","narrow","angry","mid")
-    call play_music("sad")
-
     call cho_main("If stripping for you is what it takes- then...","soft","base","angry","down")
+    call play_music("sad")
     call cho_main("Then...","angry","base","sad","down")
     call cho_main("I- I'll do it...","soft","narrow","sad","down")
     m "(Shit. Is she crying?)"

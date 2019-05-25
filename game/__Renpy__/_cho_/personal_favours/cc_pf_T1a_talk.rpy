@@ -433,7 +433,7 @@ label cc_pf_talk_T1_E3:
     m "I need to know every tiny bit of detail about the two of you."
     m "His sexual preferences. Secret fetishes he might have. That sort of stuff..."
     call cho_main("Sir that's a very personal thing to ask for!","angry","wide","base","mid")
-    call cho_main("I won't tell you about any of that!","soft","base","angry","mid")
+    call cho_main("I will not tell you about any of that!","soft","base","angry","mid")
     m "[cho_name], we need to find something we can use against him. To our advantage!"
     call cho_main("And you believe that that would help us win?","annoyed","narrow","angry","mid")
     m "Precisely."

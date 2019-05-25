@@ -41,7 +41,8 @@ label cho_random_clothing:
             call cho_main("Thank you.","base","base","base","mid")
 
             #Unlocks Wardrobe.
-            call give_reward(">Congratulations! You can now access Cho's wardrobe and change her appearance!","interface/icons/head/head_cho_2.png")
+            call popup("You can now access Cho's wardrobe and change her appearance!", "Congratulations!", "interface/icons/head/head_cho_2.png")
+
             $ cho_wardrobe_unlocked = True
 
             call cho_main(xpos="base",ypos="base",trans="fade")

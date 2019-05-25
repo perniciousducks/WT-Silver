@@ -315,9 +315,9 @@ label ll_pf_sex_T1_lake_sex: # Call label
 
 
 label ll_pf_sex_start: # Call label
-    hide screen luna_main
+    call hide_characters
     show screen blkfade
-    with d3
+    with d5
 
     ">Before you can say anything else, Luna throws her clothes to the floor and starts desperately thrusting her ass towards you."
     m "Gods, you're a needy little whore, aren't you?"
@@ -330,15 +330,15 @@ label ll_pf_sex_start: # Call label
     $ lun_cg_dick         = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
-    $ lun_cg_xpos       = 0
-    $ lun_cg_ypos       = 0
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
 
     ">Tired of talking, you decide to end the poor girl's suffering by slamming into her needy little fuckhole."
 
     $ lunCG(pupil='up', eye='wide', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', overlay='fade', tears='blank')
 
     hide screen blkfade
-    with d3
+    with d5
 
     lun "{size=+10}{image=textheart}!!!{image=textheart}{/size}"
     m "That's it you little slut!"
@@ -380,7 +380,7 @@ label ll_pf_sex_random: # Call label
     m "Umm... It's probably-"
 
     show screen blkfade
-    with d3
+    with d5
 
     $ random_number = renpy.random.randint(1, 10)
 
@@ -438,18 +438,20 @@ label ll_pf_sex_random: # Call label
 
 # Hermione part 1
 label ll_pf_sex_T1_her_1: # Call label
-    $ lun_cg_base = lun_cg_path+"base_2.png"
-    $ lun_cg_xpos = -200
-    $ hermione_scaleratio = 1.6
+    call hide_characters
+    show screen blkfade
+    with d5
 
-    show screen luncg
-    hide screen blkfade
-    with d3
+    $ lun_cg_path         = "images/CG/luna_desk2/"
+    $ lun_cg_base         = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos         = -200
+    $ hermione_scaleratio = 1.6
 
     $ lunCG('right', 'wide', 'open', 'base')
 
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
 
     call play_sound("door")
     call her_main("[genie_name], I hope you're not too busy to ben-","smile","happyCl", xpos=550, ypos=-140)
@@ -642,17 +644,26 @@ label ll_pf_sex_T1_her_2: # Call label
 
 # Astoria part 1
 label ll_pf_sex_T1_ast_1: # Call label
+    call hide_characters
+    show screen blkfade
+    with d5
 
     $ ast_seen_lun_sex = True
+
     ">No sooner is the name out of your mouth than a blast of light blasts from the keyhole of your door."
     ast "Alohomora!"
     ">Your door bursts open to reveal a troublesome young witch behind it."
-    $ lun_cg_base = lun_cg_path+"base_2.png"
-    $ lun_cg_xpos = -200
+
+    $ lun_cg_path        = "images/CG/luna_desk2/"
+    $ lun_cg_base        = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos        = -200
     $ astoria_scaleratio = 1.6
 
+    $ lunCG('right', 'wide', 'open', 'base')
+
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
 
     call ast_main("Ready to practice ano-","smile","happyCl","base","mid", xpos=570, ypos=-150)
     $ lunCG('right', 'wide', 'open')
@@ -741,21 +752,25 @@ label ll_pf_sex_T1_ast_1: # Call label
 
 # Astoria repeatable part.
 label ll_pf_sex_T1_ast_2: # Call label
+    call hide_characters
+    show screen blkfade
+    with d5
 
     #Upset at Dumby for banging Luna again
     #Comes in after Luna is covered in cum
     #Starts shaming Luna about the smell of the room and her being a cumslut
     #Complains about all big boobed girls being sluts
     #Cum all over her as Astoria watches
-
-    $ lun_cg_base = lun_cg_path+"base_2.png"
-    $ lun_cg_xpos = -200
+    $ lun_cg_path        = "images/CG/luna_desk2/"
+    $ lun_cg_base        = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos        = -200
     $ astoria_scaleratio = 1.6
 
     $ lunCG('right', 'wide', 'open', 'base')
 
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
 
     call play_sound("door")
     call ast_main("DUMBY!","smile","happyCl","base","mid", xpos=570, ypos=-150)
@@ -846,16 +861,22 @@ label ll_pf_sex_T1_ast_2: # Call label
 
 # Tonks part 1
 label ll_pf_sex_T1_ton_1: # Call label
+    call hide_characters
+    show screen blkfade
+    with d5
+
     $ ton_seen_lun_sex = True
 
-    $ lun_cg_base = lun_cg_path+"base_2.png"
-    $ lun_cg_xpos = -200
+    $ lun_cg_path      = "images/CG/luna_desk2/"
+    $ lun_cg_base      = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos      = -200
     $ tonks_scaleratio = 1.6
 
     $ lunCG('right', 'wide', 'open', 'base')
 
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
 
     call play_sound("door")
     call ton_main("Professor Dumbledore!","horny","base","raised","L", xpos=540, ypos=-140)
@@ -1083,6 +1104,9 @@ label ll_pf_sex_T1_ton_1: # Call label
 
 # Tonks repeatable part
 label ll_pf_sex_T1_ton_2: # Call label
+    call hide_blkfade
+    show screen blkfade
+    with d5
 
     #shocked to see that they're going at it again
     #Immediately starts touching herself
@@ -1090,14 +1114,17 @@ label ll_pf_sex_T1_ton_2: # Call label
     #Talks about how wet she was during it
     #Tonks starts talking about how she wishes she could be so brazen
     #Cum all over Luna and Tonks excitedely takes her home while offering to lick her clean
-    $ lun_cg_base = lun_cg_path+"base_2.png"
-    $ lun_cg_xpos = -200
+
+    $ lun_cg_path      = "images/CG/luna_desk2/"
+    $ lun_cg_base      = lun_cg_path+"base_2.png"
+    $ lun_cg_xpos      = -200
     $ tonks_scaleratio = 1.6
 
     $ lunCG('right', 'wide', 'open', 'base')
 
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
 
     call play_sound("door")
     call ton_main("Ugh... are you two going at it again?","open","base","raised","mid", xpos=540, ypos=-140)

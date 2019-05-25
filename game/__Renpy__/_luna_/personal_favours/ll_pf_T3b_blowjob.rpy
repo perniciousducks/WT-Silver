@@ -225,8 +225,6 @@ label ll_pf_blowjob_T1_E3:
     m "Well, so long as you do a good job making it up to me..."
     call lun_main("Don't worry sir, I'll do my best!","base","mad","sad","mid",cheeks="blush")
     m "About that..."
-    show screen blkfade
-    with d3
 
     menu:
         "-Facefuck her to teach her a lesson!-":
@@ -277,14 +275,14 @@ label ll_pf_blowjob_T1_E3:
 # Luna blows your cock under your desk.
 
 label luna_blowjob_under_desk: # Call label
+    call hide_characters
     show screen blkfade
-    hide screen luna_main
-    with d3
+    with d5
 
     ">Luna quickly walks around your desk and crawls underneath..."
     m "Are you ok down there?"
+    pause.5
 
-    pause
     $ lun_cg_path         = "images/CG/luna_desk2/"
     $ lun_cg_base         = lun_cg_path+"base.png"
     $ lun_cg_genie        = lun_cg_path+"blank.png"
@@ -295,8 +293,10 @@ label luna_blowjob_under_desk: # Call label
     $ lun_cg_ypos         = 0
     $ luna_wear_top       = True
     $ lunCG(pupil='left', eye='wide', mouth='open', eyebrow='base', cheeks='base', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank')
+
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
 
     lun "My goodness...{w=0.3} I've never seen so much..."
     m "Oh yeah...{w=0.4} that..."
@@ -480,17 +480,17 @@ label luna_blowjob_under_desk: # Call label
 # Used in Tier 1 - Event 2
 
 label ll_pf_blowjob_T1_marathon: # Call label
-    hide screen luna_main
+    call hide_characters
     show screen blkfade
-    with d3
+    with d5
 
     ">Luna quickly hops over to her favourite spot in the room, your cum-soaked desk, and kneels before you."
 
-    $ ccg_folder = "luna_desk"
+    $ ccg_folder    = "luna_desk"
     $ ccg("38","blank","blank")
 
     hide screen blkfade
-    with d3
+    with d5
 
     lun "Hmmmm... you don't know how heavy this has been on my mind sir..."
     $ ccg("37")
@@ -659,28 +659,41 @@ label ll_pf_blowjob_T1_marathon: # Call label
     lun "Clean up? Why?"
 
     show screen blkfade
-    with d3
+    with d5
+
     show screen luna_main
     hide screen ccg
     $ luna_cum = 11
     $ genie_base = "characters/genie/base/base.png"
     $ luna_wear_cum = True
+
     hide screen blkfade
-    with d3
+    with d5
 
     return
 
 
 # Used in Tier 1 - Event 3
-label ll_pf_blowjob_T1_slapping:
+label ll_pf_blowjob_T1_slapping: # Call label
+    call hide_characters
+    show screen blkfade
+    with d5
 
     ">You quickly take out your hard cock and slap it against Luna's naive nose a few times."
+
     $ lun_cg_path       = "images/CG/luna_desk2/"
+    $ lun_cg_base       = lun_cg_path+"base.png"
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
+
     $ lunCG(pupil='dick', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', pos=1, extra_1='blank', extra_2='blank', extra_3='blank', tears='blank')
+
     show screen luncg
-    hide screen luna_main
     hide screen blkfade
-    with d3
+    with d5
+
     m "I expect you to make it up to my cock miss lovegood."
     $ lunCG('up','wide', 'open')
     lun "Oh no, is he upset with me?"
@@ -894,12 +907,12 @@ label ll_pf_blowjob_T1_slapping:
 
     hide screen luncg
     show screen blkfade
-    with d3
+    with d5
 
-    hide screen blkfade
     $ luna_cum = "12"
     $ luna_wear_cum = True
-    with d3
+    hide screen blkfade
+    with d5
 
     return
 
@@ -909,10 +922,26 @@ label ll_pf_blowjob_T1_slapping:
 # Luna facefuck transitional part #NEEDS TESTING
 # Used in Tier 1 - Event 3
 
-label ll_pf_blowjob_T1_facefuck:
+label ll_pf_blowjob_T1_facefuck: # Call label
+    call hide_characters
+    show screen blkfade
+    with d5
+
+    ">You put your hand on the back of the unsuspecting girls head..."
+
+    $ lun_cg_path         = "images/CG/luna_desk2/"
+    $ lun_cg_base         = lun_cg_path+"base.png"
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
 
     $ lunCG('up', 'wide', 'open', 'base', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank')
-    ">You put your hand on the back of the unsuspecting girls head..."
+
+    show screen luncg
+    hide screen blkfade
+    with d5
+
     $ lunCG('up', 'base')
     m "I was thinking we could have another lesson today..."
     $ lunCG('up', 'wide', 'base')
@@ -1084,12 +1113,12 @@ label ll_pf_blowjob_T1_facefuck:
 
     hide screen luncg
     show screen blkfade
-    with d3
+    with d5
 
     call lun_chibi("stand","desk","base")
     call gen_chibi("sit_behind_desk")
     hide screen blkfade
-    with d3
+    with d5
 
     return
 
@@ -1099,21 +1128,23 @@ label ll_pf_blowjob_T1_facefuck:
 # Used in Tier 1 - Event 3
 
 label ll_pf_blowjob_T1_summon:
+    call hide_characters
     show screen blkfade
-    with d3
+    with d5
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base_2.png"
+    $ lun_cg_base         = lun_cg_path+"base.png" # Split-screen
     $ lun_cg_genie        = lun_cg_path+"blank.png"
-    $ lun_cg_xpos_abs     = -275
-    $ lun_cg_ypos_abs     = -100
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
     $ hermione_scaleratio = 1.2
     $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', extra_3='blank', tears='mascara')
 
     show screen luncg
-    hide screen luna_main
     hide screen blkfade
-    with d3
+    with d5
 
     g4 "{size=+5}You greedy little slut! Take this!{/size}"
     $ lunCG('ahegao', 'wide', pos=12)
@@ -1138,15 +1169,7 @@ label ll_pf_blowjob_T1_summon:
             $ lunCG('dick', 'seductive', pos=6)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
             m "..."
-
-            show screen blkfade
-            with d3
-
-            call ctc
-
-            hide screen blkfade
-            with d3
-
+            pause 2
             m "There, all done!"
             $ lunCG('up', 'wink', 'sucking', 'base', pos=13)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
@@ -1191,8 +1214,18 @@ label ll_pf_blowjob_T1_summon:
     #Will need a check if Luna intro is is moved
     m "(That slut will probably get off on it.)"
     $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=6)
+
     ">Without further ado, you summon Hermione up to your office to take your mind off of Luna's endless cocksucking."
-    call her_main("You wanted to see me [genie_name]?","smile","happyCl", xpos=450, ypos=-150)
+
+    # Setup
+    hide screen luncg
+    $ lun_cg_path         = "images/CG/luna_desk2/"
+    $ lun_cg_base         = lun_cg_path+"base_2.png" # Split-screen
+    $ lun_cg_xpos_abs     = -275
+    $ lun_cg_ypos_abs     = -100
+    show screen luncg
+
+    call her_main("You wanted to see me [genie_name]?","smile","happyCl", xpos=450, ypos=-150, trans="fade")
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
     $ lunCG('ahegao', 'angry', pos=13)
@@ -1225,15 +1258,9 @@ label ll_pf_blowjob_T1_summon:
     call play_music("playful_tension") # SEX THEME.
     hide screen blkfade
     hide screen bld1
-    hide screen hermione_main
-    with d5
-    pause.3
-    call her_chibi("lift_top","mid","base")
-    with fade
-    pause.8
-
     $ hermione_wear_bra = False
     call set_her_action("lift_top")
+    with d5
     pause.5
 
     show screen blktone
@@ -1324,15 +1351,24 @@ label ll_pf_blowjob_T1_summon:
     call her_main("That hat better not have been involved!","smile","happyCl")
     m "Scout's honor."
     call her_main("We'll see about that...","smile","happyCl")
+
+    call hide_characters
     show screen blkfade
-    with d3
+    with d5
+
     ">Before you can say anything Hermione walks around your desk to check on Luna."
+
+    $ lun_cg_path         = "images/CG/luna_desk2/"
     $ lun_cg_base         = lun_cg_path+"base.png"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
-    hide screen hermione_main
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
+
+    show screen luncg
     hide screen blkfade
-    with d3
+    with d5
+
     $ lunCG('dick', 'seductive', 'wide_tongue', pos=2)
     lun "*slrp* *pop*"
     $ lunCG('left', 'wink', 'base', pos=1)
@@ -1352,16 +1388,22 @@ label ll_pf_blowjob_T1_summon:
     her "..."
     $ lunCG('dick', 'angry', 'base', 'mad')
     lun "Now if it's OK Hermione, I think I better get back to work, I've only gotten six rounds out so far."
+
     show screen blkfade
-    with d3
+    with d5
+
     ">Without any hesitation, Luna shamelessly returns to sucking your cock in front of Hermione."
-    $ lun_cg_base         = lun_cg_path+"base_2.png"
+
+    $ lun_cg_path         = "images/CG/luna_desk2/"
+    $ lun_cg_base         = lun_cg_path+"base_2.png" # Split-screen
     $ lun_cg_genie        = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = -275
     $ lun_cg_ypos_abs     = -100
+
     show screen hermione_main
     hide screen blkfade
-    with d3
+    with d5
+
     $ lunCG('dick', 'seductive', 'sucking', 'angry', pos=14)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=8)
@@ -1438,25 +1480,25 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     call her_main("Have a nice day you two!","smile","happyCl")
     $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=3)
+
+
     ">With that your vision starts to fade to black as Luna suckles your wilting cock back to health..."
 
+    call hide_characters
     hide screen luncg
-    hide screen hermione_main
-    hide screen luna_main
     show screen blkfade
-    with d3
+    with d5
 
     $ hermione_scaleratio = 2
-    $ lun_cg_xpos_abs     = 0
-    $ lun_cg_ypos_abs     = 0
 
     ">By the time you wake up Luna is gone and the sun has set."
     ">All that's left is a puddle of cum under the desk and an aching in your balls..."
 
     call lun_chibi("hide")
     call gen_chibi("sit_behind_desk")
+
     hide screen blkfade
-    with d3
+    with d5
 
     return
 

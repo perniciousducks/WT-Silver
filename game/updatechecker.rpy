@@ -10,7 +10,7 @@
             try:
                 updt_website2 = urllib2.urlopen(updt_website, timeout=5)
                 version_check = updt_website2.read()
-                return False if config.version == version_check else True
+                return False if float(config.version) >= float(version_check) else True
             except:
                 pass
         return False
@@ -23,16 +23,41 @@
             try:
                 save_version = renpy.slot_json(page+"-"+slot)['_version']
                 
-                if float(save_version) < float(config.version):
+                if float(save_version) < 1.36: #float(config.version)
                     return False
                 return True
             except:
                 return False
         return None
         
-    # Work in progress
+    # Save compatibility patches
     def update_savefile():
-        pass
-        #Nothing to see here yet
+        # Check for version variable
+        global save_internal_version
+        try:
+            if save_internal_version:
+                pass
+        except NameError:
+            save_internal_version = 1.36
+            
+        # Compare&perform an update
+        if save_internal_version < 1.361:
+            global genie_cum_chibi_xpos, genie_cum_chibi_ypos
+            try:
+                if genie_cum_chibi_xpos:
+                    pass
+                if genie_cum_chibi_ypos:
+                    pass
+            except NameError:
+                genie_cum_chibi_xpos = -45
+                genie_cum_chibi_ypos = -5
+                
+            if "head_9" in persistent.achievements['unlocksna'][4]:
+                persistent.achievements['unlocksna'][4] = "interface/icons/head/head_snape_1.png"
+                persistent.achievements['bros'][4] = "interface/icons/head/head_snape_1.png"
+                achievement.achievements['unlocksna'][4] = "interface/icons/head/head_snape_1.png"
+                achievement.achievements['bros'][4] = "interface/icons/head/head_snape_1.png"
+            # end
+            save_internal_version = 1.361
         
     config.after_load_callbacks.append(update_savefile)

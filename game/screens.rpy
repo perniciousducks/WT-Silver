@@ -197,7 +197,8 @@ screen main_menu():
         style "mm_root"
     
     # Version display
-    text "{color=#fff}{size=-2}[game_version]{/size}{/color}" xpos 1024 ypos 228 outlines [ (1, "#000", 0, 0) ]
+    $ ver = config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else config.version
+    text "{color=#fff}{size=-2}[ver]{/size}{/color}" xpos 1024 ypos 228 outlines [ (1, "#000", 0, 0) ]
     
     if update_available:        
         frame:

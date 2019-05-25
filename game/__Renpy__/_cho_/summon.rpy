@@ -189,7 +189,8 @@ label favor_not_ready:
     return
 
 label not_available:
-    call nar("This feature is currently not available in v[game_version], and will be added in a later patch.")
+    $ ver = config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else config.version
+    call nar("This feature is currently not available in v[ver], and will be added in a later patch.")
     return
 
 

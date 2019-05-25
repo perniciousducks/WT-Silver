@@ -10,6 +10,8 @@ init python:
 label start:
     $ init_variables()
     
+    $ save_internal_version = config.version
+    
     $ start_image_crop()
     #scene black
     jump select_start
@@ -22,7 +24,7 @@ label after_load:
 init:
 
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF.
-
+    
     ### Disposable flags ###
     $ d_flag_01 = False
     $ d_flag_02 = False

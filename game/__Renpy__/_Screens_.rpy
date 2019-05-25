@@ -4,7 +4,7 @@
 
 label cg_scene(layer=None, folder=None, trans=None):
     hide screen cg
-    
+
     if folder != None:
         $ cg_path = "images/CG/"+folder+"/"
 
@@ -614,7 +614,7 @@ screen luncg():
     add lun_cg_extra_2      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom
     add lun_cg_extra_3      xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom
 
-    add lun_cg_overlay      xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
+    add lun_cg_overlay      # xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom # Overlay should cover the screen and not move with the CG.
     add lun_cg_dick         xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
     add lun_cg_genie        xpos lun_cg_xpos_abs ypos lun_cg_ypos_abs   xzoom lun_cg_zoom
 

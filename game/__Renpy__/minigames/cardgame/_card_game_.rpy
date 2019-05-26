@@ -166,15 +166,21 @@ init python:
         high_score_card = None
         high_score_pos = 0
         
+        #Fix for not finding a card
+        tuple_my = enemy_deck[0].getAIScore(table_cards, reverse, dobelt_number)
+        high_score = tuple_my[0]
+        high_score_pos = tuple_my[1]
+        high_score_card = enemy_deck[0]
+        
         for card in enemy_deck:
             tuple_my = card.getAIScore(table_cards, reverse, dobelt_number)
             if tuple_my[0] > high_score:
                 high_score = tuple_my[0]
                 high_score_pos = tuple_my[1]
                 high_score_card = card
-                
-        y = high_score_pos[1]
+
         x = high_score_pos[0]
+        y = high_score_pos[1]
         del shown_backside[enemy_deck.index(high_score_card)]
         del enemy_deck[enemy_deck.index(high_score_card)]
         table_cards[x][y] = high_score_card        

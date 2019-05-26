@@ -192,7 +192,7 @@ label twins_random_duel:
         m "You're not backing out are you?"
         fre "Of course not, I just wanted to make sure we're on the same page about this."
         fre "We'll send you your cut once a week..."
-        ger "The amount may wary obviously."
+        ger "The amount may vary obviously."
         fre "It all depends of how many sales we get that week."
         fre "We're always looking to have someone help with promoting the shop and cardgame."
         m "\"Sounds like something Hermione might be able to do.\""

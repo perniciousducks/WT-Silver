@@ -277,7 +277,8 @@ label hermione_random_duel:
             g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
             call her_main("...","normal","squintL", cheeks="blush")
             call her_main("Did you need anything else?","open","soft", cheeks="blush")
-            call give_reward("Hermione can now work helping the twins promote the card game,", "interface/icons/icon_gambler_hat.png")
+            call give_reward("Hermione can now work by helping the twins promote the card game.", "interface/icons/icon_gambler_hat.png")
+            jump hermione_requests
         "-Ask for a blowjob instead-":
             jump hg_wager_bj
         "-Deduct the points-":

@@ -70,7 +70,7 @@ label give_cho_gift(gift_item):
     if gift_item == lollipop_ITEM:
         if cho_tier <= 1:
             call cho_main("Sweets?",pupils="down",face="horny",xpos="mid",ypos="base")
-            call cho_main("My team captain hasn't let buy any to keep my blood sugar balanced, whatever that means.",mouth="soft",face="annoyed")
+            call cho_main("My team captain hasn't let me buy any to keep my blood sugar balanced, whatever that means.",mouth="soft",face="annoyed")
             call give_gift(">You give the sweets to Cho...",gift_item)
             call cho_main("But thanks, [cho_genie_name].",face="neutral")
             call cho_mood_change(-2)

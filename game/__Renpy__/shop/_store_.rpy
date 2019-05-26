@@ -434,7 +434,7 @@ label book_shop_menu:
     hide screen list_menu
 
     if isinstance(_return, item_class):
-        if _return in [book_list.fiction_books, book_list.read_books, book_list.write_books]:
+        if _return.type == "book":
             call purchase_book(_return)
         else:
             if _return in forbidden_scroll_list:
@@ -588,7 +588,7 @@ label shop_potion_menu:
             potion_menu.append(("-Never mind-", "nvm"))
             choice = custom_menu(potion_menu)
         if isinstance(choice, silver_potion):
-            if gold > PotionOBJ.cost:
+            if gold >= PotionOBJ.cost:
                 $ gold -= PotionOBJ.cost
                 $ potion_inv.add(PotionOBJ.id)
                 $ renpy.say(m, PotionOBJ.name+" aquired, although it's missing a key ingredient...")

@@ -73,7 +73,7 @@ label cho_quiz_1:
         call cho_main("Favours? What kind of favours?","annoyed","narrow","raised","mid")
         m "Nothing that Miss Granger hasn't had any issues with."
 
-        if her_reputation < 20:
+        if her_reputation < 16:
             call cho_main("(So nothing sexual, at the very least...)","base","base","base","R")
         else:
             call cho_main("(I hope it's nothing sexual. I've heard some rumors about Granger...)","quiver","base","sad","R")

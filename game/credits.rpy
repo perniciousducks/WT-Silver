@@ -1,27 +1,28 @@
-﻿label credits:    
+﻿init python:
+    # Function to add a line to the credits
+    def addLine(credits_text, line):
+        # Add the line to the credits
+        credits_text += line + "\n\n"
+
+        return credits_text
+
+    # Function to add a section to the credits
+    def addSection(credits_text, title, names):
+        # Add the section title to the credits
+        credits_text += "{size=+10}" + title + "{/size}\n\n"
+        # Add all of the names in the section to the credits
+        for name in names:
+            credits_text += name + "\n"
+        # Add some extra newlines to the credits
+        credits_text += "\n"
+
+        return credits_text
+
+label credits:    
     python:
         # Variables to control and setup the credits text
         credits_duration = 40.0
         credits_text = "{image=logo/silverstudiogames.png}\n\n"
-
-        # Function to add a line to the credits
-        def addLine(credits_text, line):
-            # Add the line to the credits
-            credits_text += line + "\n\n"
-
-            return credits_text
-
-        # Function to add a section to the credits
-        def addSection(credits_text, title, names):
-            # Add the section title to the credits
-            credits_text += "{size=+10}" + title + "{/size}\n\n"
-            # Add all of the names in the section to the credits
-            for name in names:
-                credits_text += name + "\n"
-            # Add some extra newlines to the credits
-            credits_text += "\n"
-
-            return credits_text
 
         # Text for artists credits
         credits_team = ["MadMerlin: {size=-5}Lead writer, QA Lead, Coder, Editor.{/size}", "Soggy: {size=-5}Lead Artist.{/size}", "Asease1: {size=-5}Lead Coder.{/size}", "DostojevskijSTG: {size=-5}Artist.{/size}", "Johnny: {size=-5}Writer, Editor, Designer, QA.{/size}", "LoafyLemon: {size=-5}Artist, C{s}o{/s}der, Designer.{/size}", "Dr. Lupin: {size=-5}Networking, Management and Administration.{/size}", "Lineup: {size=-5}Moderator, tester{/size}", "Mo: {size=-5}Writer, coder.{/size}"]

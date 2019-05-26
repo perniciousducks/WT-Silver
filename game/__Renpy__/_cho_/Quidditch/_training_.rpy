@@ -233,7 +233,7 @@ label quidditch_training_intro_2:
     call cho_main("Only brooms are allowed in Quidditch, sir.","annoyed","base","base","mid")
     m "Good for you."
     m "And put on your Quidditch outfit while you're at it..."
-    m "I suspect we'll need to do some adjustsments to it."
+    m "I suspect we'll need to do some adjustments to it."
     call cho_main("Yes, Sir.{w} Let me just go and get all of my equipment.","smile","base","base","mid")
     call cho_main("I'll be right back.","base","narrow","base","mid")
 
@@ -297,15 +297,22 @@ label change_quidditch_tactics:
     if cho_chibi_animation == "fly":
         menu:
             m "(What directions should I give her?)"
-            "\"It's all about the ass!\"":
+            "\"It's all about the ass!\"" if quidditch_position != "front":
                 call demonstrate_tactic("front")
+            "\"It's all about the ass!\" {size=-6}(selected){/size}" if quidditch_position == "front":
+                pass
 
-            "\"Panties are Key!\"":
+            "\"Panties are Key!\"" if quidditch_position != "above":
                 call demonstrate_tactic("above")
-
-            "\"Get intimate!\"":
+            "\"Panties are Key!\" {size=-6}(selected){/size}" if quidditch_position == "above":
+                pass
+                
+            "\"Get intimate!\"" if quidditch_position != "close":
                 call demonstrate_tactic("close")
-
+            "\"Get intimate!\" {size=-6}(selected){/size}" if quidditch_position == "close":
+                pass
+            "":
+                pass
             "\"Come back down.\"":
                 call cho_walk("mid", "base", 1.2)
                 pause.2
@@ -319,7 +326,7 @@ label change_quidditch_tactics:
 
     else:
         menu:
-            "-Fly Test-":
+            "-Change Tactic-":
                 m "Start flying, [cho_name]."
                 call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
                 hide screen bld1

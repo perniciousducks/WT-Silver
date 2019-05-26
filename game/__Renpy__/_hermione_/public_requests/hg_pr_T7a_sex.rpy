@@ -143,6 +143,9 @@ label hg_pr_sex_complete:
 
     # Stats
     $ hg_pr_sex.counter += 1
+    
+    if her_reputation <= 23:
+        $ her_reputation +=1
 
     jump end_hermione_event
 

@@ -247,7 +247,8 @@ label luna_init:
             [
             ["ll_pf_sex_T1_intro"],
             ["ll_pf_sex_T1_E1"],
-            ["ll_pf_sex_T1_E2"]
+            ["ll_pf_sex_T1_E2"],
+            ["ll_pf_sex_T1_E3"]
             ]
 
             ],

@@ -136,6 +136,12 @@ label ll_pf_sex_T1_E2: #Luna sex repeatable (in the office)
 
     jump end_luna_sex_event
 
+label ll_pf_sex_T1_E3: #Luna sex repeatable (in her bedroom)
+    
+    call ll_pf_sex_bedroom
+
+    jump end_luna_sex_event
+
 
 label ll_pf_sex_T1_lake_sex: # Call label
     show screen blkfade
@@ -442,7 +448,7 @@ label ll_pf_sex_T1_her_1: # Call label
     show screen blkfade
     with d5
 
-    $ lun_cg_path         = "images/CG/luna_desk2/"
+    $ lun_cg_path         = "images/CG/luna_fucking/"
     $ lun_cg_base         = lun_cg_path+"base_2.png"
     $ lun_cg_xpos         = -200
     $ hermione_scaleratio = 1.6
@@ -829,7 +835,7 @@ label ll_pf_sex_T1_ast_2: # Call label
     ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
     g9 "FUCK YES!!!"
     $ lunCG('ahegao', 'wide', 'open_tongue', 'sad')
-    lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+    lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
     $ lunCG('ahegao', 'angry', 'base')
     lun "..."
     call ast_main("Wow...","disgust","wide","worried","mid")
@@ -1276,190 +1282,237 @@ label ll_pf_sex_T1_ton_2: # Call label
 
 label ll_pf_sex_bedroom:
 
-    #Offer to bang Luna
-    #She accepts
-    #Hesitates, asking Genie a huge favour
-    #Asks that they go to her bed
-    #Genie explains that he'll have to sneak around after dark
-    #Luna sounds excited about the idea
-    #Eventually they sneak out together
-    #Sneak to Luna's room undiscovered
-    #Eventually start fooling around
-    #Have Cho burst in and catch you
-    #Have Genie talk his way out of it
-    #Cho agrees to it but says she's going to silence herself off
-    #Reveal screen to show Luna and Genie banging
-    #Short bit of sex before a choice of topics
-    #Cumslut
-        #Have luna go on about how much she loves cum
-        #Have her talk about how lovely the room will be now
-        #Eventually Cho yells at her to shut up
-        #Luna asks her about the silence
-        #She says it was just to tell her off
-        #Eventually cum in Luna in the middle of her sentence
-    #Wrackspurt spreading
-        #Have her talk about the idea of spreading wrackspurts
-        #Have her talk about spreading them through slutty outfits
-        #Cums at the thought of them spreading
-    #Compliment bed
-        #Compliment bed
-        #Have her ask genie to stay in it
-        #Cum when she begs him to cum in her on their bed
-
-    #Head back to your room
-
     m "Mmmm, you know, I think you might be on to something with these rookiesports..."
     m "I haven't been able to get that tight little pussy of your out of my mind!"
-    lun "Really?"
-    lun "For you to be think about it too..."
-    lun "They must be truly be out of control..."
+    call lun_main("Really?","soft","wink","sad","mid")
+    call lun_main("For you to be think about it too...","pout","angry","sad","R")
+    call lun_main("They must be truly be out of control...","soft","open","sad","down")
     m "Mind giving me a hand getting rid of them?"
-    lun "Of course!"
-    lun "I mean... No! I don't mind..."
-    lun "Can we please... just..."
-    lun "They've been bothering me as well..."
+    call lun_main("Of course!","open","wide","sad","mid")
+    call lun_main("I mean... No! I don't mind...","base","tired","sad","R", cheeks='blush')
+    call lun_main("Can we please... just...","base","seductive","sad","mid")
+    call lun_main("They've been bothering me as well...","base","seductive","sad","down")
     m "Well in that case... why don't you bend over so we can get to work!"
-    lun "Oh um... well, about that..."
+    call lun_main("Oh um... well, about that...","soft","tired","sad","mid")
     m "Is something wrong?"
-    lun "No! It's not that I don't want to do it..."
-    lun "It's just this room has so many in here already..."
-    lun "I don't think there's any more room for them in here..."
+    call lun_main("No! It's not that I don't want to do it...","open","wide","base","mid")
+    call lun_main("It's just this room has so many in here already...","soft","angry","sad","down")
+    call lun_main("I don't think there's any more room for them in here...","soft","base","sad","R")
     m "So you want to go somewhere else?"
-    lun "If that's okay with you..."
+    call lun_main("If that's okay with you...","soft","wink","sad","R")
     m "Got anywhere in mind?"
-    lun "Well... I've been wanting to try out your technique somewhere we can lie down..."
-    lun "Would you like to... Come to my room, [lun_genie_name]?"
+    call lun_main("Well... I've been wanting to try out your technique somewhere we can lie down...","soft","angry","sad","R")
+    call lun_main("Would you like to... Come to my room, [lun_genie_name]?","base","seductive","sad","mid")
     m "Are girl as gorgeous and king as you inviting me to her bed?"
     m "I don't think any man on the planet could turn you down."
-    lun "..."
+    call lun_main("...","base","angry","sad","down")
+    show screen blkfade
+    $ ccg_folder = "luna_bedsex"
+    $ ccg("base","blank","blank")
     ">With that, Luna leads you through the dark and cavernous halls of hogwarts."
     m "Woah, the stairs move around? Isn't that dangerous?"
     lun "Only if you're not paying attention!"
     m "..."
+    hide screen blkfade
+    with d3
     ">Eventually you safely manage to navigate to Luna's secluded room, hidden towards the base of Ravenclaw's imposing dorm tower."
     m "Wow... This room's fantastic! It's practically as big as my office! And you have two beds!"
-    lun "Well, the other one doesn't belong to me."
+    call lun_main("Well, the other one doesn't belong to me.","soft","wink","sad","mid")
     m "Oh... So you're boarding with another chick?"
-    lun "Mhmm!"
+    call lun_main("Mhmm!","base","happyCl","sad","mid")
     menu:
         "-Ask her if she's ever fooled around-":
             m "Ever fool around?"
-            lun "Fool around. Like a pillow fight?"
+            call lun_main("Fool around. Like a pillow fight?","soft","wink","raised","mid")
             m "That's a good start, but I was think more along the lines of..."
             m "Getting rid of some wricklespots together."
-            lun "Oh..."
-            lun "No, nothing like that together."
-            lun "Although I think Cho's fighting her own battles against them some nights..."
+            call lun_main("Oh...","base","wide","sad","down")
+            call lun_main("No, nothing like that together.","soft","annoyed","sad","mid")
+            call lun_main("Although I think Cho's fighting her own battles against them some nights...","pout","angry","sad","down")
 
         "-Ask who her room-mate is-":
             m "So who's your roomie?"
-            lun "Cho!"
+            call lun_main("Cho!","open","happyCl","base","mid")
     m "Cho Chang?"
-    lun "Yep! You've probably seen her play quidditch!"
-    lun "Actually... have you seen her play quidditch?"
-    lun "I don't know exactly how long you've been here instead of Dumbledore."
+    call lun_main("Yep! You've probably seen her play quidditch!","soft","happyCl","base","mid")
+    call lun_main("Actually... have you seen her play quidditch?","soft","wink","sad","mid")
+    call lun_main("I don't know exactly how long you've been here instead of Dumbledore.","base","closed","base","mid")
     m "I've seen her play."
-    lun "Goodie!"
-    lun "So, um... is it alright... can we... start... now... {b}{size=-5}please{/size}{/b}..."
+    call lun_main("Goodie!","base","happyCl","base","mid")
+    call lun_main("So, um... is it alright... can we... start... now... {b}{size=-5}please{/size}{/b}...","soft","seductive","sad","R")
     m "if you insist..."
+    show screen blkfade 
+    with d3
     #Start cg
+    $ lun_cg_path         = "images/CG/luna_bedsex/"
+    $ lun_cg_base         = lun_cg_path+"base.png"
+    $ lun_cg_genie        = lun_cg_path+"blank.png"
+    $ lun_cg_dick         = lun_cg_path+"blank.png"
+    $ lun_cg_xpos_abs     = 0
+    $ lun_cg_ypos_abs     = 0
+    $ lun_cg_xpos         = 0
+    $ lun_cg_ypos         = 0
+
+    hide screen luna_main
+    hide screen ccg
+
+    $ lunCG(pupil='up', eye='base', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='hand', extra_2='blank', extra_3='blank', overlay='overlay', tears='blank')
+    ">Led on by Luna's ignorant desperation you take the naive girl to her bed, reveling in its softness before guiding the needy slut onto your lap."
     hide screen blkfade
     with d3
 
+    pause
+    $ lunCG('dl', 'seductive', 'talk', 'sad')
     lun "Wow... doing this... it's so... different..."
     m "You're telling me!"
     m "(This is the first good bed I've slept on in years!)"
+    $ lunCG('up', 'angry', 'open_tongue', 'sad')
     lun "Ah... The wrackspurts... they're going wild..."
+    $ lunCG('dl', 'tired', 'base', 'sad')
     lun "Ah... It's... incredible..."
+    $ lunCG('dr', 'seductive', 'open_tongue', 'sad', extra_2='speed')
     lun "Being in control like this" #Show speed effect
+    $ lunCG('right', 'angry', 'base', 'sad')
     lun "Not to mention..."
+    $ lunCG('up', 'seductive', 'base', 'sad')
     lun "Ah..."
+    $ lunCG('dl', 'furious', 'talk', 'sad')
     lun "Having you so deep inside me..."
+    $ lunCG('up', 'excited', 'base', 'sad')
     lun "it's incredible..."
     m "Mmmm..."
+    $ lunCG('ur', 'base', 'talk', 'sad', extra_2='blank')
     lun "The wrackspurts... they-"
     m "(Not these things again... Better change the subject.)"
     menu:
         "-Call her a cumslut-":
-            m "That's enough, cumslut."
+            m "That's enough, {b}cumslut{/b}."
+            $ lunCG('right', 'excited', 'talk', 'sad')
             lun "Mmmm, I am a cumslut aren't I?"
             m "The best..."
+            $ lunCG('dl', 'wink', 'base', 'raised')
             lun "It's not my fault your cum's so yummy!"
+            $ lunCG('ur', 'furious', 'open_tongue', 'sad')
             lun "It's because of you're genie magic!"
             m "Yeah, yeah, I'm sure..."
+            $ lunCG('dl', 'wide', 'talk', 'sad')
             lun "It is! It's {b}amazing{/b}..."
             m "That still doesn't explain it. I've lived lifetimes on this planet and others."
+            $ lunCG('right', 'excited', 'base', 'sad')
             m "In that time, I've never come across a bigger cumslut than you."
             m "Not even Hermione."
+            $ lunCG('dr', 'base', 'talk', 'sad')
             lun "Ah..."
+            $ lunCG('dl', 'seductive', 'talk', 'sad')
             lun "Well... the wrackspurts... and Lovegoods..."
+            $ lunCG('right', 'angry', 'base', 'sad')
             lun "We're more susceptible to magic than regular witches..."
+            $ lunCG('up', 'furious', 'talk', 'sad')
             lun "It must be... All of that combined... that makes your cum... so {b}special{/b}..."
             m "Yeah, yeah..."
+            $ lunCG('dr', 'angry', 'base', 'sad')
             lun "Ugh... I can't wait for you to give me some more..."
+            $ lunCG('dl', 'seductive', 'talk', 'sad')
             lun "Don't hold back... let it all out..."
         "-Fuck it, talk about wrackspurts some more-":
             m "They feel good, don't they?"
+            $ lunCG('up', 'excited', 'talk', 'sad')
             lun "Ugh... so good..."
+            $ lunCG('right', 'tired', 'talk', 'sad')
             lun "I {b}wish{/b} we could just stay like this all day, everyday..."
             m "Careful what you wish for, [lun_name]..."
+            $ lunCG('dl', 'wink', 'base', 'raised')
             lun "Mmmm, why?"
+            $ lunCG('dl', 'wink', 'talk', 'sad')
             lun "I thought you said I don't get any wishes?"
             m "That's true... But a wish like that?"
-            m "I might make an exception."
-            lun "Ah... Just the idea of you granting a wish like that..."
+            m "I might just make an exception."
+            $ lunCG('dr', 'seductive', 'base', 'sad')
+            lun "Mmmm... Just the idea of you granting a wish like that..."
+            $ lunCG('up', 'angry', 'base', 'sad')
             lun "..."
+            $ lunCG('dl', 'wink', 'base', 'raised')
             lun "Are you sure I don't get any wishes, [lun_genie_name]?"
             m "No lamp, no wishes. Those are the rules."
+            $ lunCG('right', 'angry', 'pout', 'sad')
             lun "Hmph... Maybe I should try a- ah... - summoning spell..."
             m "I'm not sure that'd work... Besides, what do you need a wish for?"
             ">You grab a hold of Luna's hips and go to town on the greedy fuckslut."
+            $ lunCG('up', 'furious', 'open_tongue', 'sad')
             lun "Ohh... wow... I...{image=textheart}"
             m "You've got everything you could ever want right here!"
+            $ lunCG('ur', 'furious', 'talk', 'sad')
             lun "Ah... the wrackspurts... we need to do something about-"
             ">Tired of hearing about this again, you decide to slam into the blabbering girl to shut her up."
+            $ lunCG('ahegao', 'furious', 'open_tongue', 'sad')
             lun "{image=textheart}{image=textheart}{image=textheart}"
 
         "-Talk about the bed-":
             m "Fuck me, this feels incredible..."
+            $ lunCG('dl', 'seductive', 'base', 'sad')
             lun "It does... doesn't it?"
             m "Not the sex."
+            $ lunCG('dr', 'tired', 'pout', 'base')
             lun "Oh."
             m "Don't get me wrong, the sex isn't great!"
+            $ lunCG('right', 'tired', 'pout', 'sad')
             lun "..."
             m "I just haven't been in a proper bed since... I can't remember when..."
+            $ lunCG('dl', 'wide', 'talk', 'raised')
             lun "Really?"
+            $ lunCG('dl', 'furious', 'base', 'sad')
             lun "Ugh... you poor thing..."
+            $ lunCG('dl', 'seductive', 'talk', 'sad')
             lun "Where have you been... ah...{image=textheart} sleeping?"
             m "I just fall asleep in my chair most nights..."
+            $ lunCG('dl', 'wide', 'talk', 'sad')
             lun "Your chair?"
+            $ lunCG('dr', 'tired', 'talk', 'sad')
             lun "That must be so uncomfortable!"
             m "You get used to it."
+            $ lunCG('dl', 'seductive', 'talk', 'sad')
             lun "You know... ah...{image=textheart}"
+            $ lunCG('right', 'seductive', 'base', 'sad')
             lun "You're welcome to..."
+            $ lunCG('ur', 'furious', 'talk', 'sad')
             lun "Spend some more time... in this bed..."
+            $ lunCG('dr', 'tired', 'talk', 'sad')
             lun "If you like."
             m "As much as I'd love to spend every single night in here with you..."
+            $ lunCG('dl', 'wide', 'base', 'sad')
             lun "{image=textheart}{image=textheart}{image=textheart}"
-            m "I don't think that'd be appropriate for a headmaster and his student..."
+            m "I'm not sure what would happen if people found out you slept with your headmaster every night..."
+            $ lunCG('dl', 'wide', 'talk', 'sad')
             lun "But you're not my headmaster, you're my genie!"
             m "Even still."
+            $ lunCG('right', 'furious', 'pout', 'sad')
             lun "..."
             ">You decide to cheer the girl up by bouncing her enthusiastically up on your cock."
+            $ lunCG('up', 'furious', 'open_tongue', 'sad')
             lun "{image=textheart}{image=textheart}{image=textheart}"
 
 
 
     m "Ugh... here it comes then you nasty little slut!"
+    $ lunCG('up', 'angry', 'open_tongue', 'sad')
     lun "Ah... yes!!!..."
+    $ lunCG('up', 'furious', 'talk', 'sad')
     lun "Luna's eyes roll upwards into her head as the pleasure proves too much for her."
     g9 "Take this you greedy little whore!"
+    $ lunCG('dick', 'wide', 'open_tongue', 'sad', extra_2='cum_1')
     ">You begin to unload a gigantic load into the gleeful girl as she is almost too enamored in her own lust to notice."
+    $ lunCG('ahegao', 'angry', 'open', 'sad')
     lun "ah..."
+    $ lunCG('dl', 'seductive', 'base', 'sad')
     lun "{image=textheart}{image=textheart}{image=textheart}"
+    hide screen luncg
     show screen blkfade
     with d3
+
     ">Eventually it all proves to much for the two of you as you collapse onto Luna's bed before both quickly succumbing to sleep."
     ">In the morning you decide to avoid any confrontation and sneak out before anyone else wakes up..."
+
+    hide screen blkfade
+    with d3
 
     return

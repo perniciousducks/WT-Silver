@@ -295,7 +295,7 @@ screen whitetone8():
     add im.Alpha("interface/white.jpg", 0.8)
 
 screen white():
-    zorder 4
+    zorder 5
     add "interface/white.jpg"
 
 screen emo(): #Character talking off screen.

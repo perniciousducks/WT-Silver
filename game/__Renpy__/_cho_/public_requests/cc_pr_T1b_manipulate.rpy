@@ -43,7 +43,7 @@ label cc_pr_manipulate_start:
             m "And don't worry about him.{w} He's hardly going to complain about having a pretty little thing like you to talk to..."
             g9 "Not to mention look at..."
             call cho_main("Hey!","soft","base","base","mid")
-            m "I'm just saying, he's hasn't got anything to be whine about."
+            m "I'm just saying, he hasn't got anything to be whine about."
             m "And if you are worried about his feelings..."
             m "Maybe you can fool around a little... I'm sure that would make him forget all about the garden path..."
             call cho_main("Sir!","angry","narrow","base","mid")

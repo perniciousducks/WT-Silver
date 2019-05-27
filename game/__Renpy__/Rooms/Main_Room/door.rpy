@@ -21,7 +21,6 @@ label door:
 
     call update_character_map_locations
 
-
     #Screens
     call play_sound("scroll")
     show screen door_menu
@@ -34,29 +33,27 @@ label door:
 
 
     #Hermione
-    if _return == "hermione" and hermione_busy:
-        if daytime:
-            call nar(">Hermione is taking classes.")
-            jump day_main_menu
-        else:
+    if _return == "hermione":
+        if hermione_busy:
+            if daytime:
+                call nar(">Hermione is taking classes.")
+                jump day_main_menu
             call nar(">Hermione is already asleep.")
             jump night_main_menu
-    elif _return == "hermione" and not hermione_busy:
+                
         if her_map_location == "forest":
             jump hermione_map_BJ
-
         jump summon_hermione
 
 
     #Luna
-    elif luna_known and _return == "luna" and luna_busy:
-        if daytime:
-            call nar(">Luna is taking classes.")
-            jump day_main_menu
-        else:
+    elif _return == "luna":
+        if luna_busy:
+            if daytime:
+                call nar(">Luna is taking classes.")
+                jump day_main_menu
             call nar(">Luna is already asleep.")
             jump night_main_menu
-    elif luna_known and _return == "luna" and not luna_busy:
         if not luna_reverted:
             call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
         else:
@@ -65,85 +62,71 @@ label door:
 
 
     #Astoria
-    elif astoria_busy and _return == "astoria":
-        if daytime:
-            call nar(">Astoria is taking classes.")
-            jump day_main_menu
-        else:
+    elif _return == "astoria":
+        if astoria_busy:
+            if daytime:
+                call nar(">Astoria is taking classes.")
+                jump day_main_menu
             call nar(">Astoria is already asleep.")
             jump night_main_menu
-    elif not astoria_busy and _return == "astoria": #Summoning after intro events done.
         call play_music("chipper_doodle")
         jump summon_astoria
 
 
     #Susan
-    elif _return == "susan" and susan_busy:
-        if daytime:
-            call nar(">Susan is taking classes.")
-            jump day_main_menu
-        else:
+    elif _return == "susan":
+        if susan_busy:
+            if daytime:
+                call nar(">Susan is taking classes.")
+                jump day_main_menu
             call nar(">Susan is already asleep.")
             jump night_main_menu
-    elif _return == "susan" and not susan_busy:
         jump summon_susan
 
 
     #Cho
-    elif _return == "cho" and cho_busy:
-        if daytime:
-            call nar(">Cho is taking classes.")
-            jump day_main_menu
-        else:
+    elif _return == "cho":
+        if cho_busy:
+            if daytime:
+                call nar(">Cho is taking classes.")
+                jump day_main_menu
             call nar(">Cho is already asleep.")
             jump night_main_menu
-    elif _return == "cho" and not cho_busy:
         call play_music("cho_theme")
         jump summon_cho
 
 
     #Snape
-    elif _return == "snape" and snape_busy:
-        call nar(">Professor Snape is unavailable.")
-        if daytime:
-            jump day_main_menu
-        else:
+    elif _return == "snape":
+        if snape_busy:
+            call nar(">Professor Snape is unavailable.")
+            if daytime:
+                jump day_main_menu
             jump night_main_menu
-    elif _return == "snape" and not snape_busy:
         call play_music("dark_fog") # SNAPE'S THEME
         jump summon_snape
 
 
     #Tonks
-    elif _return == "tonks" and tonks_busy:
-        call nar(">Tonks is unavailable.")
-        if daytime:
-            jump day_main_menu
-        else:
+    elif _return == "tonks":
+        if tonks_busy:
+            call nar(">Tonks is unavailable.")
+            if daytime:
+                jump day_main_menu
             jump night_main_menu
-    elif _return == "tonks" and not tonks_busy:
         jump summon_tonks
 
-
     #Close
-    elif _return == "Close":
+    else:
         jump day_main_menu
 
     $ renpy.jump(_return)
-
-
 
 screen door_menu():
     zorder 8
     button style "empty" action [Return("Close")]
     use top_bar_close_button
     use character_select_menu(summon_list, "-Summon-", 812, 40)
-
-
-
-
-
-
 
 #Day 1 room interact quest.
 label examine_door:

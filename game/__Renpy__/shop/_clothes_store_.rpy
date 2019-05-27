@@ -306,7 +306,7 @@ label purchase_outfit(item):
     if item == hg_cheer_s_ITEM:
         m "I'd like to order another cheerleader outfit."
         maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
-        m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
+        m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one as well."
         maf "Those Slytherins never could stand being second."
         maf "So do you just want the same basic design modified to suit?"
         m "Maybe make this one a little more sporty if you know what I mean."

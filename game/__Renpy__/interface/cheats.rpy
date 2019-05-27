@@ -176,6 +176,7 @@ label cheats:
                 "-All Books-" if day >= 16:
                     python:
                         for book in book_list.get_all():
+                            book.unlockable = False
                             book.unlocked = True
                     "Obtained All Books."
                     jump cheats_books

@@ -182,7 +182,7 @@ label store_chit_chat:
             ger "Here, your weekly cut."
             call give_reward("You've received "+str(int(shop_profit*twins_profit))+" gold.", "interface/icons/gold.png")
 
-            $ gold +=  shop_profit*twins_profit
+            $ gold += int(shop_profit*twins_profit)
             ger "..."
             twi "Did you need anything else?"
 

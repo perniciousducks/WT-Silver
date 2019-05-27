@@ -524,7 +524,7 @@ label cc_pf_talk_T1_E3:
         call cho_main("Sir, would it be alright if I head off now?","soft","base","base","R")
         g9 "Already? Do you have to be somewhere?"
         call cho_main("No?","soft","base","base","mid")
-        g9 "Did our little talk about panties maybe... excited you?"
+        g9 "Did our little talk about panties maybe... excite you?"
         call cho_main("What? No of course not!","angry","wide","base","mid")
 
         if daytime:
@@ -543,7 +543,7 @@ label cc_pf_talk_T1_E3:
         call bld
         g9 "Sweet little wank I had there."
         m "(...)"
-        m "I hope she'll show me her panties aswell eventually..."
+        m "I hope she'll show me her panties as well eventually..."
         g9 "Would love to see them!"
 
         jump end_cho_talk_event

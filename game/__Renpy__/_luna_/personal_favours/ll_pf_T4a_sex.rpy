@@ -660,7 +660,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     ast "Alohomora!"
     ">Your door bursts open to reveal a troublesome young witch behind it."
 
-    $ lun_cg_path        = "images/CG/luna_desk2/"
+    $ lun_cg_path        = "images/CG/luna_fucking/"
     $ lun_cg_base        = lun_cg_path+"base_2.png"
     $ lun_cg_xpos        = -200
     $ astoria_scaleratio = 1.6
@@ -873,7 +873,7 @@ label ll_pf_sex_T1_ton_1: # Call label
 
     $ ton_seen_lun_sex = True
 
-    $ lun_cg_path      = "images/CG/luna_desk2/"
+    $ lun_cg_path      = "images/CG/luna_fucking/"
     $ lun_cg_base      = lun_cg_path+"base_2.png"
     $ lun_cg_xpos      = -200
     $ tonks_scaleratio = 1.6
@@ -1121,7 +1121,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     #Tonks starts talking about how she wishes she could be so brazen
     #Cum all over Luna and Tonks excitedely takes her home while offering to lick her clean
 
-    $ lun_cg_path      = "images/CG/luna_desk2/"
+    $ lun_cg_path      = "images/CG/luna_fucking/"
     $ lun_cg_base      = lun_cg_path+"base_2.png"
     $ lun_cg_xpos      = -200
     $ tonks_scaleratio = 1.6

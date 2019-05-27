@@ -6,6 +6,16 @@ label snape_chitchat:
  
 #    $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
 
+    # Prior to hermione introductions
+    if not hermione_unlocked:
+        if one_of_ten <= 5:
+            call sna_main("I am starting to get worried about Albus..","snape_06")
+            call sna_main("I simply hope he's alright.","snape_09") 
+        else:
+            call sna_main("Do you know how much longer will that spell of yours last?","snape_05")
+            call sna_main("I have important matters to discuss with Albus very soon...","snape_09")
+        return
+
     ### WHORING LEVEL 01 ###
     if her_whoring >= 0 and her_whoring <= 2:
         if one_of_ten == 1:

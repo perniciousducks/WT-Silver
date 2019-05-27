@@ -1202,7 +1202,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     $ lunCG('up', 'tired', 'base', 'sad')
     lun "It- ah... it could."
     $ lunCG('ahegao', 'angry', 'open_tongue', 'mad')
-    call ton_main("Mmmm, fantastic...","open","angry","angry","mid")
+    call ton_main("Mmmm, fantastic...","open","base","angry","mid")
     lun "Fantastic? Why...{w=0.3} ah...{w=0.3} would you..."
     ">Before Luna can say anymore, you grab onto her hips before slamming into her."
     lun "Ah...{image=textheart}{image=textheart}{image=textheart}"

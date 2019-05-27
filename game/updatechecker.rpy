@@ -57,7 +57,12 @@
                 persistent.achievements['bros'][4] = "interface/icons/head/head_snape_1.png"
                 achievement.achievements['unlocksna'][4] = "interface/icons/head/head_snape_1.png"
                 achievement.achievements['bros'][4] = "interface/icons/head/head_snape_1.png"
-            # end
+
             save_internal_version = 1.361
+            
+        if save_internal_version < 1.362:
+            ll_pf_sex = event_class(title = "Let's have sex!", start_label = "ll_pf_sex", start_tier = 4, events = [[["ll_pf_sex_T1_intro"],["ll_pf_sex_T1_E1"],["ll_pf_sex_T1_E2"],["ll_pf_sex_T1_E3"]]],iconset = [["heart_empty", "heart_blue"]])
+            
+            save_internal_version = 1.362
         
     config.after_load_callbacks.append(update_savefile)

@@ -70,7 +70,7 @@ init -1 python hide:v
     # with tracebacks and other debugging logs.
 
     config.name = "WT Silver"
-    config.version = "1.361"
+    config.version = "1.362"
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.

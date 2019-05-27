@@ -171,7 +171,6 @@ label cardgame_t2_mail_send:
 label get_package:
     show screen blktone
 
-
     if clothing_mail_item != None:
         if clothing_mail_timer <= 1:
             call unlock_clothing(text="You received a new outfit.",item=clothing_mail_item)
@@ -179,6 +178,7 @@ label get_package:
             $ clothing_mail_timer = 0
 
     python:
+        gift_list = []
         for item in deliveryQ.get_mail():
             if item.type == 'Event_item':
                 pass
@@ -186,21 +186,31 @@ label get_package:
             if item.type == 'Gift':
                 gift = item.object
                 gift.number += item.quantity
-                the_gift = gift.get_image()
-
-                renpy.show_screen("gift")
-                renpy.with_statement(Dissolve(0.3))
-                if item.quantity > 1:
-                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name)+"'s")
+                gift_list.append([gift.name, gift.get_image(), item.quantity])
+                
+        if len(gift_list) > 0:
+            renpy.block_rollback()
+            if len(gift_list) == 1:
+                if gift_list[0][2] == 1:
+                    renpy.call("give_reward","You have received a "+gift_list[0][0], gift_list[0][1])
                 else:
-                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name))
-                renpy.hide_screen("gift")
-                renpy.with_statement(Dissolve(0.3))
-
+                    renpy.call("give_reward","You have received "+str(gift_list[0][2])+" pieces of "+gift_list[0][0], the_gift)
+            else:
+                txt_gifts = "{size=-4}"
+                for i, item in enumerate(gift_list):
+                    if i < len(gift_list)-1:
+                        txt_gifts += str(item[2])+" "+item[0]+", "
+                    else:
+                        txt_gifts += str(item[2])+" "+item[0]+".{/size}"
+                renpy.block_rollback()
+                renpy.call("give_reward","You have received your ordered items:\n"+txt_gifts, "interface/icons/box_brown_"+str(random.randint(1, 4))+".png")
+                
+            
     hide screen blktone
     with d3
 
     $ package_is_here = False
+    $ renpy.block_rollback()
 
     call screen main_room_menu
 

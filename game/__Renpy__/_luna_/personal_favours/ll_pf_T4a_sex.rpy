@@ -1286,14 +1286,14 @@ label ll_pf_sex_bedroom:
     m "I haven't been able to get that tight little pussy of your out of my mind!"
     call lun_main("Really?","soft","wink","sad","mid")
     call lun_main("For you to be think about it too...","pout","angry","sad","R")
-    call lun_main("They must be truly be out of control...","soft","open","sad","down")
+    call lun_main("They must be truly be out of control...","soft","wide","sad","down")
     m "Mind giving me a hand getting rid of them?"
     call lun_main("Of course!","open","wide","sad","mid")
-    call lun_main("I mean... No! I don't mind...","base","tired","sad","R", cheeks='blush')
+    call lun_main("I mean... No! I don't mind...","base","annoyed","sad","R", cheeks='blush')
     call lun_main("Can we please... just...","base","seductive","sad","mid")
     call lun_main("They've been bothering me as well...","base","seductive","sad","down")
     m "Well in that case... why don't you bend over so we can get to work!"
-    call lun_main("Oh um... well, about that...","soft","tired","sad","mid")
+    call lun_main("Oh um... well, about that...","soft","annoyed","sad","mid")
     m "Is something wrong?"
     call lun_main("No! It's not that I don't want to do it...","open","wide","base","mid")
     call lun_main("It's just this room has so many in here already...","soft","angry","sad","down")

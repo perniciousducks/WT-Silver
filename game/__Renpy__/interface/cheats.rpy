@@ -228,6 +228,7 @@ label cheats_init:
         $ next_day = False
         $ skip_duel = False
         $ skip_to_hermione = False
+        $ skip_after_hermione = False
 
         $ force_unlock_pub_favors = False
 

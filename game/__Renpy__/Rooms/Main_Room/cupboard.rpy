@@ -24,12 +24,8 @@ label cupboard:
     if day > 1:
         jump rummaging
 
-
-
 label rummaging:
-
     $ searched = True #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
-
     $ rum_times += 1 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
 
     hide screen genie
@@ -95,6 +91,10 @@ label rummaging:
 
             hide screen bld1
             with d3
+            if daytime:
+                jump day_main_menu
+            else:
+                jump night_main_menu
     else:                                  #Easy difficulty
         jump rum_rewards
 
@@ -245,15 +245,4 @@ label rum_block(item = ""):
         ">[item.description]"
         hide screen gift
         with d3
-    return
-
-
-
-######################
-label already_did:
-    show screen bld1
-    with d3
-    m "I already did that today..."
-    hide screen bld1
-    with d3
     return

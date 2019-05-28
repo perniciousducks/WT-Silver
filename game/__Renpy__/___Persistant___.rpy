@@ -47,7 +47,6 @@ label __init_variables:
 
     #Phoenix
     if not hasattr(renpy.store,'phoenix_is_fed'):
-        $ fawkes_intro_done = False
         $ phoenix_is_fed = False
         $ phoenix_is_petted = False
         $ phoenix_fed_counter = 0

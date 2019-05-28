@@ -1,6 +1,4 @@
-
-
-label start_ht:
+label start_wt:
     $ daytime = False
     $ gold = 0
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
@@ -182,128 +180,129 @@ label start_ht:
                 $ skip_duel = True
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True
-        # Test
-        show screen achievement_block()
+            "-Skip to {color=#007f00}AFTER{/color} Hermione events-" if config.developer:
+                $ skip_to_hermione = True
+                $ skip_after_hermione = True
+                
+
+    show screen achievement_block()
+
+    ### GAME STARTS HERE ###
+    stop music fadeout 1
+    hide image "images/rooms/_bg_/castle.png"
+    show screen blkfade
+    with d7
+    pause 1.2
 
 
+    if not persistent.nightmode:
+        $ interface_color = "gold"
+    $ day = 0
 
+    ### CHARACTER INIT RESET ###
+    $ reset_persistants = True
+    call reset_genie_base
+    call snape_init
+    call snape_progress_init
+    call reset_hermione_base
+    call reset_hermione_clothing
+    call her_clothing_lists_init #Everything resets here!
+    call her_progress_init #Everything resets here!
+    call luna_init
+    call luna_progress_init
+    call cho_init
+    call cho_progress_init
+    call susan_init
+    call susan_progress_init
+    call astoria_init
+    call astoria_progress_init
+    call tonks_init
+    call tonks_progress_init
+    call store_init
+    call store_items_init
+    call wardrobe_init
+    $ reset_persistants = False
 
-### GAME STARTS HERE ###
+    ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
+    $ day_of_week = 0 #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
+    $ report_chapters = 0 #Shows how many chapters of a current report has been completed so far. Resets to zero when report is finished.
+    $ finished_report = 0 #Shows amount of completed reports.
 
-stop music fadeout 1
-hide image "images/rooms/_bg_/castle.png"
-show screen blkfade
-with d7
-pause 1.2
+    ###Miscellaneous flags###
+    $ phoenix_is_fed = False #When True the graphic of bird food being displayed on top of the phoenix food can.
+    $ fire_in_fireplace = False #When True there is a fire going in the fireplace.
 
+    #Event - Examine Room
+    $ desk_examined = False #Turns True when you did examine you desk on day one.
+    $ cupboard_examined = False
+    $ bird_examined = False
+    $ door_examined = False
+    $ fireplace_examined = False
 
-if not persistent.nightmode:
-    $ interface_color = "gold"
-$ day = 0
+    #Map
+    $ inn_intro = True
+    $ pitch_open = True
+    $ attic_open = False
+    $ clothes_store_intro_done = False
 
+    $ tentacle_cosmetic = False
+    $ addicted = False
+    
+    ### CHEATS / SKIPPING ###
+    if skip_duel or skip_to_hermione:
+        $ bird_examined = True
+        $ desk_examined = True
+        $ cupboard_examined = True
+        $ door_examined = True
+        $ fireplace_examined = True
+        $ achievement.unlock("start", True)
+        if skip_duel:
+            $ skip_duel = False
+            $ rum_times = 3 #7 unlocks map!
+            $ day = 5
 
+        if skip_to_hermione:
+            $ skip_to_hermione = False
+            #Add vars
+            $ snape_unlocked = True
+            $ achievement.unlock("unlocksna", True)
+            $ event08_happened = True
+            $ event09 = True #You let Hermione in. This event will stop looping now.
+            $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
+            $ event11_happened = True #Allows next event to start.
+            $ event12_happened = True #Allows next event to start.
+            $ event13_happened = True #Allows next event to start.
+            $ rum_times = 6 #7 unlocks map!
+            $ day = 14
+            
+            if skip_after_hermione:
+                $ hermione_unlocked = True
+                $ achievement.unlock("unlockher", True)
+                $ day = 15
+                $ tutoring_hermione_unlocked = True
+                $ event14_happened = True
+                $ hermione_favors = True
+                $ event15_happened = True
+                jump day_start
+            call hermione_intro_E6 #returns
 
-### CHARACTER INIT RESET ###
-$ reset_persistants            = True
+    ### START ANIMATION ###
+    stop bg_sounds #Stops playing the fire SFX.
+    stop weather #Stops playing the rain SFX.
+    $ weather_gen = 2
+    $ show_weather()
 
-#Genie
-call  reset_genie_base
+    call room("main_room")
+    call gen_chibi("sit_behind_desk")
+    pause.1
+    hide screen blkfade
+    with d3
 
-#Snape
-call snape_init
-call snape_progress_init
+    call teleport("desk")
 
-#Hermione
-call reset_hermione_base
-call reset_hermione_clothing
+    call reset_menu_position
 
-call her_clothing_lists_init #Everything resets here!
-call her_progress_init #Everything resets here!
-
-#Luna
-call luna_init
-call luna_progress_init
-
-#Cho
-call cho_init
-call cho_progress_init
-
-#Susan
-call susan_init
-call susan_progress_init
-
-#Astoria
-call astoria_init
-call astoria_progress_init
-
-#Tonks
-call tonks_init
-call tonks_progress_init
-
-#Store
-call store_init
-call store_items_init
-
-#Wardrobe Reset
-call wardrobe_init
-
-
-### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
-$ day_of_week = 0 #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
-$ report_chapters = 0 #Shows how many chapters of a current report has been completed so far. Resets to zero when report is finished.
-$ finished_report = 0 #Shows amount of completed reports.
-$ job_lvl = 1 #Show how many reports you are allowed to complete per week.
-
-
-###Miscellaneous flags###
-$ hold_all_the_events_please = False #When TRUE all the story events will be put on hold.
-$ phoenix_is_fed = False #When True the graphic of bird food being displayed on top of the phoenix food can.
-$ fire_in_fireplace = False #When True there is a fire going in the fireplace.
-$ fawkes_intro_done = False
-
-
-#Event - Examine Room
-$ desk_examined = False #Turns True when you did examine you desk on day one.
-$ cupboard_examined = False
-$ bird_examined = False
-$ door_examined = False
-$ fireplace_examined = False
-
-
-#Map
-$ inn_intro = True
-$ pitch_open = True
-$ attic_open = False
-$ clothes_store_intro_done = False
-
-$ tentacle_cosmetic = False
-
-$ hermione_desperate_done = False
-$ gave_tinyminiskirt = False
-$ addicted = False
-
-$ reset_persistants            = False
-
-
-### START ANIMATION ###
-
-stop bg_sounds #Stops playing the fire SFX.
-stop weather #Stops playing the rain SFX.
-$ weather_gen = 2
-$ show_weather()
-
-call room("main_room")
-call gen_chibi("sit_behind_desk")
-pause.1
-hide screen blkfade
-with d3
-
-call teleport("desk")
-
-call reset_menu_position
-
-
-jump day_start
+    jump day_start
 
 
 

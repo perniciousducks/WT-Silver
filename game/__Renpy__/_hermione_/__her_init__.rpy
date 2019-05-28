@@ -461,8 +461,6 @@ label her_progress_init:
         $ hermione_favors         = False
         $ hermione_tutoring       = False
         $ her_panties_soaked      = False
-
-        $ hermione_desperate_done = False
         $ hermione_favors_convinced = 0
 
         #Names

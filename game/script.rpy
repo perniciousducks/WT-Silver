@@ -14,7 +14,7 @@ label start:
     
     $ start_image_crop()
     #scene black
-    jump select_start
+    jump start_wt
 
 label after_load:
     $ init_variables()

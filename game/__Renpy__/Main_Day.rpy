@@ -28,9 +28,6 @@ label day_start:
     $ chitchated_with_snape = False
     $ chitchated_with_tonks = False
 
-
-
-
     #Hermione Daily Flags.
     call reset_hermione
     $ gifted    = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
@@ -317,8 +314,6 @@ label day_start:
         else:
             pass
 
-
-
     ### NOT IN USE
     #if day == 10:
     #    call event_08_02 #Hermione shows up for the second time. (Shorter skirts notion).
@@ -336,8 +331,6 @@ label day_start:
     if hg_pr_sex_skip:#Hermione does not show up. This sends to label where she shows up next morning.
         call hg_pr_sex_Alt
 
-
-
     if her_whoring == 11 and not touched_by_boy and not ignore_warning:
         call nar("!!! Attention !!!","start")
         ">Increasing Hermione's Whoring level any further without doing more public requests will lock your game to a specific ending."
@@ -350,48 +343,12 @@ label day_start:
                 call nar(">This message will stop appearing. You're on your own!")
                 $ ignore_warning = True
 
-
-
-    ### CHEATS / SKIPPING ###
-    if skip_duel or skip_to_hermione:
-        $ bird_examined = True
-        $ desk_examined = True
-        $ cupboard_examined = True
-        $ door_examined = True
-        $ fireplace_examined = True
-        $ achievement.unlock("start", True)
-        if skip_duel:
-            $ skip_duel = False
-            $ rum_times = 3 #7 unlocks map!
-            $ day = 5
-
-        if skip_to_hermione:
-            $ skip_to_hermione = False
-            #Add vars
-            $ snape_unlocked = True
-            $ achievement.unlock("unlocksna", True)
-            $ event08_happened = True
-            $ event09 = True #You let Hermione in. This event will stop looping now.
-            $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
-            $ event11_happened = True #Allows next event to start.
-            $ event12_happened = True #Allows next event to start.
-            $ event13_happened = True #Allows next event to start.
-            $ rum_times = 6 #7 unlocks map!
-
-            if day < 14:
-                $ day = 14
-            call hermione_intro_E6 #returns
-
     ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
     if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
         call genie_intro_E1 #Returns
 
     ### Guide ###
     call update_hints
-
-
-
-
 
     label day_main_menu:
 

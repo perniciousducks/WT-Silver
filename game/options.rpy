@@ -69,13 +69,13 @@ init -1 python hide:v
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
 
-    config.name = "WT Silver"
-    config.version = "1.362"
+    config.name = "WT Silver EXPERIMENTAL VERSION"
+    config.version = "1.37"
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Witch Trainer (Silver) %s" % config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else u"Witch Trainer (Silver) %s" % config.version
+    config.window_title = u"Witch Trainer (Silver) %s EXPERIMENTAL VERSION" % config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else u"Witch Trainer (Silver) %s EXPERIMENTAL VERSION" % config.version
 
     #########################################
     # Themes

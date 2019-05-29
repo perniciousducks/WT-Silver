@@ -4,10 +4,10 @@
 
 #How these favours will be structured/work very similarly to the public favours for Hermione where you send Tonks off to fool around with a student(s) and then wait
 #for her to return to tell you what happened
-#Each scene will be pretty short but there will be 6 variants for each (2 favours for each of three levels where the levels are determined by Tonk's sluttiness)
+#Each scene will be pretty short but there will be 12 variants for each (4 favours for each of three levels where the levels are determined by Tonk's sluttiness)
 
 #Favour 1 - Show it to me (Tonks gets a student to show her his dick)
-label tonks_teacher_event_1_intro:
+label tonks_teacher_event_1_intro: #First time intro
     ton "So, what's the plan?"
     m "The plan?"
     ton "You know, how does this go down?"
@@ -46,7 +46,7 @@ label tonks_teacher_event_1_repeat: #Repeatable intro
     m "Ready to help the boys earn some points?"
     ton "You mean am I ready to see some dick?"
     m "Is there a difference?"
-    ton "There should be."
+    ton "There {b}should{/b} be."
     ton "Lucky for you, I'm happy to do both."
     m "See you after classes then."
     ton "Mhmmm... Don't worry if I'm a little late though..."
@@ -70,9 +70,9 @@ label tonks_teacher_event_1_1: #Level 1 Event 1
     ton "\"I will not stare at my teacher's big, beautiful breasts\"..."
     m "Was the big and beautiful part really necessary?"
     ton "Oh, that's not the best bit..."
-    ton "I went on to tell him how {b}naughty{/b} is was for him to peek at me..."
-    ton "So I made him pull down his trousers before he wrote his lines."
-    m "So you did see it."
+    ton "I went on to tell him how {b}naughty{/b} it was for him to peek at me..."
+    ton "Then I made him pull down his trousers before he wrote his lines."
+    m "So you did see it!"
     ton "He still had his underwear on. I think if I pushed him much further he would have snapped."
     ton "Besides, I could still see how hard he was..."
     ton "Ugh... It was crazy..."
@@ -96,7 +96,7 @@ label tonks_teacher_event_1_1: #Level 1 Event 1
 label tonks_teacher_event_1_2: #Level 1 Event 2
     m "How were your classes today?"
     ton "Mmmm... Long and hard... Just how I like them..."
-    m "I take it were able to steal a few glances?"
+    m "I take it you were able to steal a few glances?"
     ton "Mmmm, it was even better than I thought it'd be!"
     ton "Who knew they'd be so nervous!"
     m "What happened?"
@@ -111,7 +111,7 @@ label tonks_teacher_event_1_2: #Level 1 Event 2
     ton "You should have seen his eyes light up! He thought it was Christmas!"
     ton "After that it was child's play..."
     ton "Not that he looked like a kid down there... Mmmm, I even had him play with himself for a little bit..."
-    ton "Ugh... Fuck he looked tasty..."
+    ton "Ugh... Fuck, he looked tasty..."
     m "Ahem... So did you pay him his points or just tease him?"
     ton "Don't worry, I made sure \"Ravenclaw\" was paid."
     m "And did he look like the kind to talk?"
@@ -156,21 +156,53 @@ label tonks_teacher_event_1_3: #Level 1 Event 3
     m "(I'm not sure they're safe with her on patrol...)"
     return
 
-label tonks_teacher_event_1_4: #Level 2 Event 1
-
-
-
-#Favour 2 - Touch me (Tonks gets a student to play with her tits)
-label tonks_teacher_event_2:
-
-#Favour 3 - Let me touch it (Tonks jerks off a student)
-label tonks_teacher_event_3:
-
-#Favour 4 - Let me suck it (Tonks sucks off a student)
-label tonks_teacher_event_4:
-
-#Favour 5 - Eat me out (Tonks gets a student to eat her out)
-label tonks_teacher_event_5:
-
-#Favour 6 - Fuck me (Tonks fucks a student)
-label tonks_teacher_event_6:
+label tonks_teacher_event_1_4: #Level 1 Event 4
+    m "Manage to sneak a peek today?"
+    ton "Um... Afraid not..."
+    m "Oh."
+    ton "But I do have a story for you!"
+    m "Well why didn't you just start with that? You had me worried for a moment there!"
+    ton "Are you that desperate to hear about me fooling around with my students?"
+    m "I'm desperate to hear anything, this office isn't exactly riveting to listen to..."
+    ton "In that case, I'll try and add some flair to it."
+    ton "Once upon a time-"
+    m "Ahem..."
+    ton "Too much?"
+    m "Just a tad."
+    ton "So, I know my job is to try and balance out the favour trading a little..."
+    ton "But I just couldn't help myself today..."
+    m "Help yourself? You mean..."
+    ton "Ugh, I don't normally mess around with girls..."
+    ton "(Not since I left here anyway...)"
+    ton "But there was the tastiest morsel I have ever seen in class."
+    m "..."
+    ton "Now, I know when I'm being checked out, I can feel someones eyes on me..."
+    ">You nod, unconsciously gazing directly at her tits."
+    ton "And most of the time I don't mind... I might even encourage it from time to time..."
+    ton "So when I felt a pair of cute little eyes struggling they're hardest not to stare at me."
+    ton "I {b}had{/b} to play with her."
+    m "Mmmm... what happened?"
+    ton "Nothing much... I'm pretty sure she would have freaked if I tried anything..."
+    ton "So I just asked her to stay after class for a little... {b}chat{/b}."
+    m "What did that chat involve?"
+    ton "Not much..."
+    ton "I just sat directly in front of her desk..."
+    ton "Asked her how she felt she was doing in class..."
+    ton "I made sure to ask her if she was feeling distracted..."
+    ton "All the while, playing with the buttons on my shirt..."
+    ton "Ugh... I've never seen someone so flustered..."
+    ton "Eventually, it got too much for her so she just yelled that I was wasting her time and ran off in typical \"slytherin\" fashion."
+    m "Do you really think she was looking at you?"
+    ton "After that? There's no doubt... she's hooked."
+    ton "Now I've just got to reel her in."
+    ton "If that's alright with you, sir!"
+    m "You're asking my permission?"
+    ton "Well, I was only supposed to buy favours from the boys..."
+    m "Eat your heart out. Just make sure you keep me in the loop."
+    ton "Thanks, Dumbledore."
+    ton "I can't believe how much you've mellowed out since I was a student."
+    m "Oh, um... time can do that..."
+    m "Speaking of, it's getting a bit late..."
+    ton "So it is... Night, sir."
+    m "Goodnight, Tonks."
+    return

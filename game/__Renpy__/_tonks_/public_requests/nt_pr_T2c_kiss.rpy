@@ -1,7 +1,7 @@
 #Favour 3 - Kiss me (Tonks makes-out with her students)
 label tonks_teacher_event_3_intro: #First intro
-	
-	return
+    
+    return
 
 label tonks_teacher_event_3_repeat: #Repeatable intro
 

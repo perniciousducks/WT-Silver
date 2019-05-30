@@ -1,7 +1,7 @@
 #Favour 5 - Sex (Tonks has sex with her students)
 label tonks_teacher_event_5_intro: #First intro
-	
-	return
+    
+    return
 
 label tonks_teacher_event_5_repeat: #Repeatable intro
 

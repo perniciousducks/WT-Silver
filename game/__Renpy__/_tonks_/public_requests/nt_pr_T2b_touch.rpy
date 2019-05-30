@@ -30,6 +30,7 @@ label tonks_teacher_event_2_repeat: #Repeatable intro
     m "Good to hear. I'll see you after class."
     ton "(I still can't believe Dumbledore is telling me to go molest my students...)"
     ton "Yes, sir!"
+    return
 
 label tonks_teacher_event_2_1: #Level 1 Event 1
     m "How were classes today, [tonks_name]?"

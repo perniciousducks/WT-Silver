@@ -6,6 +6,8 @@ label tonks_init:
         $ tonks_flip                = 1
         $ use_tonks_head            = False
         $ tonks_animation = None
+        
+        $ tonks_haircolor = [[243, 158, 189, 255]]
     return
 
 label tonks_progress_init:

@@ -1,6 +1,6 @@
 ### Tonks###
 
-label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False, hair=None):
 
     #Flip
     if flip == False:
@@ -17,6 +17,8 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         $ extra = "blank"
     if emote == None:
         $ emote = "blank"
+    if hair == None:
+        $ tonks_class.get_cloth("hair").color = tonks_haircolor
 
     #Positioning
     if xpos != None:
@@ -61,6 +63,23 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_ton_face(eyebrows = face)
         if pupils == None:
             call set_ton_face(pupils = face)
+            
+    # Hair color changes
+    if hair != None:
+        if hair in ("red", "angry", "furious"):
+            $ tonks_class.get_cloth("hair").color = [[164, 34, 34, 255]]
+        elif hair in ("orange", "upset", "annoyed"):
+            $ tonks_class.get_cloth("hair").color = [[228, 93, 34, 255]]
+        elif hair in ("yellow", "surprised", "shocked"):
+            $ tonks_class.get_cloth("hair").color = [[240, 240, 50, 255]]
+        elif hair in ("green", "oblivious", "what"):
+            $ tonks_class.get_cloth("hair").color = [[111, 205, 75, 255]]
+        elif hair in ("blue", "sad"):
+            $ tonks_class.get_cloth("hair").color = [[64, 75, 205, 255]]
+        else: #purple, horny
+            $ tonks_class.get_cloth("hair").color = [[205, 75, 205, 255]]
+        # Clear cache and redraw
+        $ tonks_class.get_cloth("hair").cached = False
 
     if animation != False:
         $ tonks_animation = animation

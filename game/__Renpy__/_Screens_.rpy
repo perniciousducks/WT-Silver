@@ -681,7 +681,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))
 
-    def lunCG(pupil=None, eye=None, mouth=None, eyebrow=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None, overlay=None):
+    def lunCG(mouth=None, eye=None, eyebrow=None, pupil=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None, overlay=None):
         global lun_cg_body
         global lun_cg_overlay
         global lun_cg_hair
@@ -713,16 +713,16 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
         lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
 
-        if cheeks is not None:
+        if cheeks is not None and is not "":
             lun_cg_cheeks = lun_cg_path+"c_"+str(cheeks)+".png"
-        if mouth is not None:
+        if mouth is not None and is not "":
             lun_cg_mouth = lun_cg_path+"m_"+str(mouth)+".png"
-        if pupil is not None:
-            lun_cg_pupil = lun_cg_path+"pup_"+str(pupil)+".png"
-        if eye is not None:
+        if eye is not None and is not "":
             lun_cg_eye = lun_cg_path+"eye_"+str(eye)+".png"
-        if eyebrow is not None:
+        if eyebrow is not None and is not "":
             lun_cg_eyebrow = lun_cg_path+"eb_"+str(eyebrow)+".png"
+        if pupil is not None and is not "":
+            lun_cg_pupil = lun_cg_path+"pup_"+str(pupil)+".png"
         if tears is not None:
             lun_cg_tears = lun_cg_path+str(tears)+".png"
         if extra_1 is not None:

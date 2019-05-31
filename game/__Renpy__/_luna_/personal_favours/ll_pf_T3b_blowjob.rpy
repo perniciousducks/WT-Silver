@@ -318,15 +318,15 @@ label luna_blowjob_under_desk: # Call label
     $ lunCG('ahegao', 'closed')
     lun "Now..."
     ">Luna takes another deep breath..."
-    $ lunCG('up', 'seductive', 'talk', 'sad')
+    $ lunCG('sad', 'seductive', 'up', 'talk')
     lun "Are you ready to teach me this new technique?"
     m "(She's gotta be in on this... No one could be this oblivious...)"
     g9 "Certainly!"
     m "(Still, better not to look a gift horse in the mouth...)"
     m "Now, I'm going to need you to open your mouth..."
-    $ lunCG('dick', 'seductive', 'base', 'sad', cheeks='blush')
+    $ lunCG('base', 'seductive', 'sad', 'dick', cheeks='blush')
     lun "OK!"
-    $ lunCG('up', 'base', 'open_tongue', 'sad')
+    $ lunCG('open_tongue', 'base', 'sad', 'up')
     lun "Agh..."
     m "..."
 
@@ -334,24 +334,24 @@ label luna_blowjob_under_desk: # Call label
         "-Take your cock out-":
             ">While the naive young blonde sits under your desk you decide it's finally time for her to get to work."
             ">You slowly pull your hardening cock from underneath under your robe."
-            $ lunCG('dick', 'wide', 'open', 'base', pos=1)
+            $ lunCG('open', 'wide', 'base', 'dick', pos=1)
             lun "..."
-            $ lunCG('dick', 'wide', 'talk', 'sad')
+            $ lunCG('talk', 'wide', 'sad', 'dick')
             lun "{size=-7}wow...{/size}"
             m "Now this special technique requires you to suck those nasty little critters out of the affected area..."
             m "For me that's right here..."
             ">You give your thick cock a lazy stroke to emphasize."
-            $ lunCG('up', 'wink', 'base', 'base')
+            $ lunCG('base', 'wink', 'base', 'up')
             lun "Is there any way in particular that you want me to suck it?"
             m "Imagine it's a tasty lollipop..."
             m "Just don't bite it."
-            $ lunCG('dick', 'seductive', 'base', 'sad')
+            $ lunCG('base', 'seductive', 'sad', 'dick')
             lun "Okay then..."
             ">Without any further delay, Luna hops forward to take the head of your cock in her mouth."
 
         "-Shove it in her mouth!-":
             m "Open wide!"
-            $ lunCG('dick', 'closed', 'wide', 'sad')
+            $ lunCG('wide', 'closed', 'sad', 'dick')
             lun "Aghhhh..."
             ">As the naive blonde kneels under your desk with her mouth open wide, you decide to reward her eagerness..."
             ">You quickly slip your hard clock from between your robes and into the girls warm mouth."
@@ -359,106 +359,106 @@ label luna_blowjob_under_desk: # Call label
         "-Make her take it out-":
             m "Now, seeing as how I'm a little tired..."
             m "Why don't you open my robe and pull out the 'affected area'..."
-            $ lunCG('dick', 'seductive', 'base', 'sad')
+            $ lunCG('base', 'seductive', 'sad', 'dick')
             lun "Of course, [lun_genie_name]..."
             ">Luna reverently opens your robe and softly withdraws your hard cock."
-            $ lunCG('up', 'base', 'open_tongue', 'sad')
+            $ lunCG('open_tongue', 'base', 'sad', 'up')
             lun "What do you..."
-            $ lunCG('dick', 'wide', 'open', 'base')
+            $ lunCG('open', 'wide', 'base', 'dick')
             lun "What now, [lun_genie_name]?"
             m "Put the tip in your mouth and Imagine it's a tasty lollipop..."
             m "Just don't bite it."
-            $ lunCG('dick', 'seductive', 'base', 'sad')
+            $ lunCG('base', 'seductive', 'sad', 'dick')
             lun "Mhmm!"
-            $ lunCG('up', 'closed', 'wide', 'base')
+            $ lunCG('wide', 'closed', 'base', 'up')
             lun "Okay then!"
             ">Without any further delay, Luna hops forward to take the head of your cock in her mouth."
 
-    $ lunCG('base', 'seductive', 'sucking', 'sad', pos=3)
+    $ lunCG('sucking', 'seductive', 'sad', 'base', pos=3)
     ">Luna begins sucking in earnest as her tongue starts darting along the underside of the head of your sensitive cock at a blistering pace."
-    $ lunCG('down', 'angry', 'sucking', 'mad', pos=6)
+    $ lunCG('sucking', 'angry', 'mad', 'down', pos=6)
     g4 "By the gods girl!"
-    $ lunCG('up', 'wide', 'sucking', 'sad', pos=4)
+    $ lunCG('sucking', 'wide', 'sad', 'up', pos=4)
     lun "Hee howhng howng? (Is something wrong?)"
     ">Luna somehow manages to form her muffled response without once slowing her tongue."
     g4 "N-no, of course not...{w=0.3} You're doing great..."
-    $ lunCG('up', 'wink', 'sucking', 'sad', pos=5)
+    $ lunCG('sucking', 'wink', 'sad', 'up', pos=5)
     lun "Hi hm? (I am?)"
     g4 "Yes..."
-    $ lunCG('up', 'seductive', 'sucking', 'sad', pos=3)
+    $ lunCG('sucking', 'seductive', 'sad', 'up', pos=3)
     lun "Hnnk hoo hrr! (Thank you, [lun_genie_name]!)"
     ">In response to your misguided praise, Luna's tongue seems to increase in speed."
     g4 "Argh..."
-    $ lunCG('down', 'angry', 'sucking', 'mad', pos=5)
+    $ lunCG('sucking', 'angry', 'mad', 'down', pos=5)
     lun "(Those wrackspurts must really be affecting him...)"
-    $ lunCG('down', 'wide', 'sucking', 'mad', pos=8)
+    $ lunCG('sucking', 'wide', 'mad', 'down', pos=8)
     lun "(I better try even harder!)"
     g4 "Would you please slow down miss lovegood!"
-    $ lunCG('up', 'wink', 'sucking', 'base', pos=3)
+    $ lunCG('sucking', 'wink', 'base', 'up', pos=3)
     ">Luna takes your cock out of her mouth."
     g4 "Ah...."
-    $ lunCG('up', 'seductive', 'base', 'sad', pos=1)
+    $ lunCG('base', 'seductive', 'sad', 'up', pos=1)
     lun "Was I doing a bad job, [lun_genie_name]?"
     m "You were just going a little-"
-    $ lunCG('up', 'wide', 'pout', 'sad', pos=1)
+    $ lunCG('pout', 'wide', 'sad', 'up', pos=1)
     lun "I knew I was hurting you!"
-    $ lunCG('down', 'base', 'pout', 'sad', pos=1)
+    $ lunCG('pout', 'base', 'sad', 'down', pos=1)
     lun "Maybe we should stop?"
     m "What? Gods no!"
-    $ lunCG('up', 'wink', 'pout', 'sad', pos=1)
+    $ lunCG('pout', 'wink', 'sad', 'up', pos=1)
     lun "But wasn't I doing it wrong?"
     m "Of course not..."
-    $ lunCG('up', 'seductive', 'talk', 'sad', pos=1)
+    $ lunCG('talk', 'seductive', 'sad', 'up', pos=1)
     lun "Why did you ask me to slow down then?"
     m "I didn't... It was those nasty wrinklespores!"
     m "They must have made me say it so you'd leave them alone..."
-    $ lunCG('dick', 'mad', 'pout', 'mad', pos=1)
+    $ lunCG('pout', 'mad', 'mad', 'dick', pos=1)
     lun "Those tricky little..."
-    $ lunCG('dick', 'angry', 'base', 'angry', pos=1)
+    $ lunCG('base', 'angry', 'angry', 'dick', pos=1)
     lun "Don't worry, [lun_genie_name], I'll have them out in no time!"
     ">With that, Luna begins her tongue lashing of your cock anew."
-    $ lunCG('down', 'angry', 'sucking', 'mad', pos=5)
+    $ lunCG('sucking', 'angry', 'mad', 'down', pos=5)
     g4 "A-Ah..."
     g4 "G-good work miss Lovegood..."
-    $ lunCG('up', 'closed', 'sucking', 'sad', pos=8)
+    $ lunCG('sucking', 'closed', 'sad', 'up', pos=8)
     lun "Hnnk hoo hrr! (Thank you, [lun_genie_name]!)"
     show screen blkfade
     with d3
 
-    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=5)
+    $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=5)
     ">Over the next hour, Luna continues to hide under your desk as she relentlessly assaults your cock."
     ">She has an uncanny ability to tell when you're about to cum and slows to a halt every time..."
     hide screen blkfade
     with d3
 
     g4 "I-I think this is it... again..."
-    $ lunCG('dick', 'angry', 'sucking', 'mad', pos=6)
+    $ lunCG('sucking', 'angry', 'mad', 'dick', pos=6)
     lun "Hmmmm... (Hmmmm...)"
-    $ lunCG('up', 'closed', 'sucking', 'base', pos=3)
+    $ lunCG('sucking', 'closed', 'base', 'up', pos=3)
     lun "Hhhoohhyyy! (OK!)"
     m "Oh, thank-"
     ">Before you can finish your sentence Luna suddenly thrusts her head forward, forcing your cock down the young girl's throat."
-    $ lunCG('up', 'angry', 'sucking', 'sad', pos=10)
+    $ lunCG('sucking', 'angry', 'sad', 'up', pos=10)
     g4 "OH GODS!"
     g4 "HERE IT CUMS!"
     ">You grab the desk to steady yourself as your balls begin to contract and fire out one of the largest loads of your life."
     call cum_block
-    $ lunCG('down', 'angry', 'sucking', 'mad', pos=5, extra_1='cum_2')
+    $ lunCG('sucking', 'angry', 'mad', 'down', pos=5, extra_1='cum_2')
     lun "!!!"
     g4 "Oh fuck...{w=0.3} fuck yes!!!"
     call cum_block
-    $ lunCG('dick', 'wide', 'sucking', 'sad', pos=8)
+    $ lunCG('sucking', 'wide', 'sad', 'dick', pos=8)
     ">Your cock continues to fire shot after shot down her throat and into her stomach."
     ">Eventually this proves too much for the young girl, forcing her to pull back off until your cock rests in her mouth-"
-    $ lunCG('up', 'angry', 'sucking', 'sad', pos=2)
+    $ lunCG('sucking', 'angry', 'sad', 'up', pos=2)
     ">Causing your cum to start firing directly into the poor girls mouth, quickly filling her cheeks and spurt out of her nose..."
-    $ lunCG('ahegao', 'mad', 'sucking', 'sad', pos=2, extra_1='cum_3')
+    $ lunCG('sucking', 'mad', 'sad', 'ahegao', pos=2, extra_1='cum_3')
     lun "{size=+10}!!!{/size}"
     g4 "FUCK YES!!!"
-    $ lunCG('dick', 'seductive', 'full', 'sad', pos=1)
+    $ lunCG('full', 'seductive', 'sad', 'dick', pos=1)
     ">The sheer force of your orgasm causes white dots to scatter across your vision as it finally dies off..."
     $ renpy.play('sounds/gulp.mp3')
-    $ lunCG('ahegao', 'angry', 'talk', 'sad', pos=1)
+    $ lunCG('talk', 'angry', 'sad', 'ahegao', pos=1)
     pause 1
     show screen blkfade
     with d5
@@ -882,11 +882,11 @@ label ll_pf_blowjob_T1_slapping: # Call label
             $ lunCG('up', 'wide', 'pout')
             ">You place the tip of your cock against her lips to silence the cum-soaked girl..."
 
-    $ lunCG('dick', 'angry', 'open', 'sad', pos=2)
+    $ lunCG('open', 'angry', 'sad', 'dick', pos=2)
     lun "wow..."
     $ lunCG('up')
     lun "You're..."
-    $ lunCG('up', 'seductive', 'base', 'sad', pos=0)
+    $ lunCG('base', 'seductive', 'sad', 'up', pos=0)
     lun "You're just the {b}best{/b}..."
     $ lunCG('up', 'closed', 'open_tongue', pos=1)
     ">Luna leans forward, placing a kiss on the end of your cock before whispering something quietly to it..."
@@ -894,9 +894,9 @@ label ll_pf_blowjob_T1_slapping: # Call label
     lun "{size=-5}Thank you...{/size}"
     $ lunCG('up', 'wink', 'base', pos=1)
     lun "Now, I think I better be going sir..."
-    $ lunCG('dick', 'angry', 'base', 'angry')
+    $ lunCG('base', 'angry', 'angry', 'dick')
     lun "Unless you had anymore wrackspurts that you needed me to take care of?"
-    $ lunCG('up', 'wink', 'base', 'sad')
+    $ lunCG('base', 'wink', 'sad', 'up')
     m "For goodness sake girl!"
     lun "..."
     $ lunCG('up', 'closed')
@@ -936,18 +936,18 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
 
-    $ lunCG('up', 'wide', 'open', 'base', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank')
+    $ lunCG('open', 'wide', 'base', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank', 'up')
 
     show screen luncg
     hide screen blkfade
     with d5
 
-    $ lunCG('up', 'base')
+    $ lunCG('', 'base', '', 'up')
     m "I was thinking we could have another lesson today..."
-    $ lunCG('up', 'wide', 'base')
+    $ lunCG('base', 'wide', '', 'up')
     lun "Really? What sort?"
     m "Well, today I'll be teaching you what happens when you decide to paralyse your headmaster and suck their cock for hours on end..."
-    $ lunCG('up', 'wink', 'base')
+    $ lunCG('base', 'wink', '', 'up')
     lun "Oh... and what's that?"
     m "This happens, miss lovegood, this happens..."
     $ lunCG('base', 'wide', 'sucking', pos=14)
@@ -994,7 +994,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     lun "*glck*{image=textheart}*glck*!!!*Gulp*{image=textheart}*glck*{image=textheart}"
     $ lunCG('dick', 'wide', pos=16)
     ">Allowing your withering cock to come back to life, firing a inhumane volley of cum into the girls stomach."
-    $ lunCG('ahegao', 'wide', 'sucking', 'sad', pos=6, extra_3='cum_4', )
+    $ lunCG('sucking', 'wide', 'sad', pos=6, extra_3='cum_4', 'ahegao', )
     m "That's better! This is what a cumslut like you deserves!"
     $ lunCG(pos=10)
     ">Luna's hands have both managed to sneak under her skirt and are now a blur of movement..."
@@ -1008,32 +1008,32 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     m "Instead I have to teach you a lesson."
     $ lunCG(pos=1)
     ">You pull luna's limp head off your cock as it continues to fire off round after round..."
-    $ lunCG('up', 'closed', 'wide')
+    $ lunCG('wide', 'closed', '', 'up')
     lun "*GASP* *cough* *cough* *cough*"
-    $ lunCG('up', 'wide', 'open')
+    $ lunCG('open', 'wide', '', 'up')
     m "Mmmmm that's it just let me cover you..."
-    $ lunCG('up', 'wide', 'base')
+    $ lunCG('base', 'wide', '', 'up')
     lun "..."
     m "Anything to say for yourself cumslut?"
-    $ lunCG('left', 'wink', 'pout')
+    $ lunCG('pout', 'wink', '', 'left')
     lun "..."
-    $ lunCG('dick', 'sad', 'open')
+    $ lunCG('open', 'sad', '', 'dick')
     lun "{size=-5}T-Thank you...{/size}"
     m "What was that? I don't think I could hear you through all that cum..."
-    $ lunCG('up', 'sad', 'open')
+    $ lunCG('open', 'sad', '', 'up')
     lun "Thank you sir..."
     m "(what?)"
-    $ lunCG('left', 'sad', 'open')
+    $ lunCG('open', 'sad', '', 'left')
     lun "You're the only person who has taken me seriously with the wrackspurts..."
-    $ lunCG('up', 'seductive', 'base')
+    $ lunCG('base', 'seductive', '', 'up')
     lun "And you've been so nice..."
-    $ lunCG('dl', 'wide', 'open')
+    $ lunCG('open', 'wide', '', 'dl')
     lun "And taught me so many things..."
-    $ lunCG('down', 'sad', 'open')
+    $ lunCG('open', 'sad', '', 'down')
     lun "And this cum..."
-    $ lunCG('up', 'wide', 'open')
+    $ lunCG('open', 'wide', '', 'up')
     lun "It's so good! It's as if it's made of pure magic!"
-    $ lunCG('dick', 'base', 'open')
+    $ lunCG('open', 'base', '', 'dick')
     lun "Thank you, thank you, thank you!"
     $ lunCG('up')
     lun "You're the best genie ever!"
@@ -1050,65 +1050,65 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lunCG('up', 'wink', 'pout', pos=1)
     lun "Mhmmm. I mean you are a genie aren't you?"
     m "Well, yes..."
-    $ lunCG('up', 'base', 'base')
+    $ lunCG('base', 'base', '', 'up')
     m "But how do you know that? I thought I looked like dumbydoo or whoever..."
-    $ lunCG('up', 'closed', 'base')
+    $ lunCG('base', 'closed', '', 'up')
     lun "Only when I'm not wearing my spectrespecs!"
     m "Those glasses?... So you've known the whole time?"
-    $ lunCG('dl', 'base', 'open')
+    $ lunCG('open', 'base', '', 'dl')
     lun "Well, I didn't know you were a genie until I tasted this..."
     $ lunCG('ahegao', 'seductive', 'open_tongue', pos=2)
     ">She gives the end of your dick a quick lick."
     $ lunCG('up', 'wide', 'base', pos=1)
     lun "I don't think any other creature could make something so tasty..."
-    $ lunCG('up', 'closed', 'open')
+    $ lunCG('open', 'closed', '', 'up')
     lun "Not even a unicorn..."
     m "So you don't care I'm a genie?"
-    $ lunCG('up', 'base', 'base')
+    $ lunCG('base', 'base', '', 'up')
     lun "Nope! Not unless it bothers you..."
     m "As long as you keep sucking cock like that, you can think I'm the prince of persia..."
     m "Just don't expect any wishes."
-    $ lunCG('dl', 'wink', 'pout')
+    $ lunCG('pout', 'wink', '', 'dl')
     lun "Oh... Why not?"
     m "You have to rub my lamp to get wishes and I'm pretty sure that thing is all the way back in Agrabah."
-    $ lunCG('dick', 'seductive', 'base')
+    $ lunCG('base', 'seductive', '', 'dick')
     lun "Awww... rubbing this doesn't count?"
     ">Luna gives your cock a playful few strokes."
     m "Afraid not, although this job would be a lot better if it did."
-    $ lunCG('up', 'closed', 'base')
+    $ lunCG('base', 'closed', '', 'up')
     lun "Oh well... I guess that your yummy cummy will just have to do."
-    $ lunCG('dick', 'angry', 'base', 'mad')
+    $ lunCG('dick', 'mad', '', 'base', 'angry')
     lun "Speaking of..."
-    $ lunCG('ahegao', 'angry', 'sucking', 'sad', pos=14)
+    $ lunCG('sucking', 'angry', 'sad', 'ahegao', pos=14)
     ">Luna goes to throw her head onto your cock again..."
     m "Steady on there girl... Don't you think you've had enough cum for one day?"
-    $ lunCG('up', 'sad', 'pout', 'sad', pos=1)
+    $ lunCG('pout', 'sad', 'sad', 'up', pos=1)
     lun "What? Already? But there's still so much magic..."
-    $ lunCG('dick', 'wide', 'base')
+    $ lunCG('base', 'wide', '', 'dick')
     lun "{image=textheart}{image=textheart}{image=textheart}"
-    $ lunCG('up', 'sad', 'pout')
+    $ lunCG('pout', 'sad', '', 'up')
     lun "Can't we keep going? There must be so many wrackspurts left in you..."
     m "(Oh right... those things...)"
-    $ lunCG('up', 'sad', 'open')
+    $ lunCG('open', 'sad', '', 'up')
     m "Quite right... it seems that you're bringing in more wookiesports than I can deal with..."
     m "I'll have to teach you an advanced method for getting rid of them in both of us at once."
-    $ lunCG('up', 'wide', 'base')
+    $ lunCG('base', 'wide', '', 'up')
     lun "Really? You have something like that?"
-    $ lunCG('up', 'sad', 'open')
+    $ lunCG('open', 'sad', '', 'up')
     lun "That could solve the school's wrackspurt infestation in no time!"
-    $ lunCG('up', 'seductive', 'pout')
+    $ lunCG('pout', 'seductive', '', 'up')
     lun "could you teach it to me now? Pleeeease..."
     m "Ugh... I think I need a bit of a nap after that... not to mention you could use a shower..."
-    $ lunCG('up', 'wink', 'base')
+    $ lunCG('base', 'wink', '', 'up')
     lun "And waste this? I told you that I'm using it to make a perfume to ward off those wrackspurts."
-    $ lunCG('dl', 'seductive', 'pout')
+    $ lunCG('pout', 'seductive', '', 'dl')
     lun "I'm even thinking of selling it to the other students to help slow down those nasty things..."
     m "Whatever... just do it somewhere else... I need a nap..."
-    $ lunCG('up', 'base', 'base')
+    $ lunCG('base', '', 'base', 'up')
     lun "Okay, Mr Genie, sir!"
     m "Genie is fine."
     m "And only call me that when we're alone in this office. Outside, I'm Dumbledore."
-    $ lunCG('dick', 'sad', 'base')
+    $ lunCG('base', '', 'sad', 'dick')
     lun "Of course... Have a nice nap,{w} Genie..."
 
     hide screen luncg
@@ -1146,58 +1146,58 @@ label ll_pf_blowjob_T1_summon:
     with d5
 
     g4 "{size=+5}You greedy little slut! Take this!{/size}"
-    $ lunCG('ahegao', 'wide', pos=12)
+    $ lunCG('', 'wide', '', 'ahegao', pos=12)
     lun "*gulp* *gulp* *gulp*"
-    $ lunCG('ahegao', 'angry', pos=16)
+    $ lunCG('', 'angry', '', 'ahegao', pos=16)
     ">You fire your third load of the day into Luna's hungry mouth."
-    $ lunCG('up', 'seductive', pos=6)
+    $ lunCG('', 'seductive', '', 'up', pos=6)
     lun "*gulp*{image=textheart}*gulp*{image=textheart}*gulp*"
-    $ lunCG('dick', 'seductive', pos=9)
+    $ lunCG('', 'seductive', '', 'dick', pos=9)
     m "Fuck that's good... Ugh..."
-    $ lunCG('dick', 'sad', pos=3, extra_2='blank')
+    $ lunCG('', 'sad', '', 'dick', pos=3, extra_2='blank')
     ">Sensing that your orgasm has ended, Luna begins to slow down and focus suckling the end of your cock to nurse it back to health..."
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
     m "Ugh... I should... mmmm... do some work... or something..."
-    $ lunCG('up', 'wink', pos=4)
+    $ lunCG('', 'wink', '', 'up', pos=4)
     lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
 
     menu:
         "-Try and do some paperwork-":
             ">Intent on not losing the entire day to Luna's mouth, you begin to write out a report for the ministry."
             m "Yes... school activities..."
-            $ lunCG('dick', 'seductive', pos=6)
+            $ lunCG('', 'seductive', '', 'dick', pos=6)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
             m "..."
             pause 2
             m "There, all done!"
-            $ lunCG('up', 'wink', 'sucking', 'base', pos=13)
+            $ lunCG('sucking', 'wink', 'base', 'up', pos=13)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
-            $ lunCG('down', 'seductive', pos=5)
+            $ lunCG('', 'seductive', '', 'down', pos=5)
             m "(It only took three hours and twice as many orgasms)"
-            $ lunCG('dick', 'angry', pos=10)
+            $ lunCG('', 'angry', '', 'dick', pos=10)
             lun "*glck* *slrp* *glck*"
             m "Just a quick read through before I send this off to the ministry..."
             m "..."
-            $ lunCG('up', 'seductive', pos=6)
+            $ lunCG('', 'seductive', '', 'up', pos=6)
             lun "*glck* *slrp* *glck*"
             m "......"
-            $ lunCG('dick', 'seductive', 'wide', pos=2)
+            $ lunCG('', 'seductive', '', 'dick', pos=2)
             lun "*Slrp* *pop*"
-            $ lunCG('up', 'wink', 'base', pos=1)
+            $ lunCG('base', 'wink', '', 'up', pos=1)
             lun "How's the report, [lun_genie_name]?"
             m "Unless you consider a three page report about how you suck cock useful..."
             m "Then it's trash..."
-            $ lunCG('up', 'wide', 'open', 'sad')
+            $ lunCG('open', 'wide', 'sad', 'up')
             lun "Wait... You wrote a report on how I..."
-            $ lunCG('up', 'seductive')
+            $ lunCG('', 'seductive', '', 'up')
             lun "Can I have it? Please, [lun_genie_name]!"
             m "Sure, it's not like I can send it to the ministry anyway."
-            $ lunCG('up', 'closed', 'base', 'base',)
+            $ lunCG('base', 'closed', 'base', 'up',)
             lun "Oh thank you, thank you, thank you! I can't wait to read it tonight."
             m "Until then..."
-            $ lunCG('dick', 'wide', 'base', 'base',)
+            $ lunCG('base', 'wide', 'base', 'dick',)
             lun "Oh, right!"
-            $ lunCG('up', 'angry', 'sucking', 'sad', pos=13)
+            $ lunCG('sucking', 'angry', 'sad', 'up', pos=13)
             lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
             m "Ugh... that's it slut..."
 
@@ -1212,7 +1212,7 @@ label ll_pf_blowjob_T1_summon:
     #First time Hermione is brought up
     #Will need a check if Luna intro is is moved
     m "(That slut will probably get off on it.)"
-    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=6)
+    $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=6)
 
     ">Without further ado, you summon Hermione up to your office to take your mind off of Luna's endless cocksucking."
 
@@ -1235,7 +1235,7 @@ label ll_pf_blowjob_T1_summon:
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     call her_main("Then maybe try cumming a bit less...","disgust","annoyed")
     m "If I do that I'm not sure you'll' be able to win the house cup..."
-    $ lunCG('dick', pos=14)
+    $ lunCG('', '', '', 'dick', pos=14)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     $ lunCG(pos=6)
     m "Speaking of..."
@@ -1266,7 +1266,7 @@ label ll_pf_blowjob_T1_summon:
     show screen blktone
     call her_main("","soft","down_raised")
     call ctc
-    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=13)
+    $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=13)
     m "Ugh... that's it, slut..."
     $ lunCG(pos=8)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
@@ -1317,9 +1317,9 @@ label ll_pf_blowjob_T1_summon:
     m "Ugh... what do you mean?"
     $ lunCG(pos=16)
     call her_main("Please, I can hear them sucking you off from here.","smile","glance")
-    $ lunCG('dl', 'wide', pos=9)
+    $ lunCG('', 'wide', '', 'dl', pos=9)
     lun "*glck* *slrp* *glck*"
-    $ lunCG('dick', pos=12)
+    $ lunCG('', '', '', 'dick', pos=12)
     call her_main("I'm just curious who you managed to get...","soft","down_raised")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
@@ -1333,7 +1333,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("The green ones you decrepit old perv!","open","angry")
     $ lunCG(pos=9)
     lun "*glck* *slrp* *glck*"
-    $ lunCG('up', pos=15)
+    $ lunCG('', '', '', 'up', pos=15)
     m "Mmmm... she's not a slytherin then..."
     call her_main("Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff...","upset","angryL")
     $ lunCG(pos=10)
@@ -1369,24 +1369,24 @@ label ll_pf_blowjob_T1_summon:
     hide screen blkfade
     with d5
 
-    $ lunCG('dick', 'seductive', 'wide_tongue', pos=2)
+    $ lunCG('wide_tongue', 'seductive', '', 'dick', pos=2)
     lun "*slrp* *pop*"
-    $ lunCG('left', 'wink', 'base', pos=1)
+    $ lunCG('base', 'wink', '', 'left', pos=1)
     lun "Hi Hermione! Nice work guessing that it was me!"
     her "..."
     her "What are you doing Luna?"
-    $ lunCG('dick', 'angry', 'base', 'mad')
+    $ lunCG('base', 'angry', 'mad', 'dick')
     lun "Getting rid of wrackspurts! There's so many!"
     her "..."
     her "God you're stupid... well, At least I know why the room stinks of cum now..."
-    $ lunCG('ahegao', 'wide', 'base', 'sad')
+    $ lunCG('base', 'wide', 'sad', 'ahegao')
     lun "Isn't it great? I'm thinking about using it to make a perfume!"
     her "(Idiot)"
     her "At least I know this is the real you..."
-    $ lunCG('left', 'wink')
+    $ lunCG('', 'wink', '', 'left')
     lun "You do? Thanks for checking, sometimes I'm not so sure myself!"
     her "..."
-    $ lunCG('dick', 'angry', 'base', 'mad')
+    $ lunCG('base', 'angry', 'mad', 'dick')
     lun "Now if it's OK Hermione, I think I better get back to work, I've only gotten six rounds out so far."
 
     show screen blkfade
@@ -1404,12 +1404,12 @@ label ll_pf_blowjob_T1_summon:
     hide screen blkfade
     with d5
 
-    $ lunCG('dick', 'seductive', 'sucking', 'angry', pos=14)
+    $ lunCG('sucking', 'seductive', 'angry', 'dick', pos=14)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=8)
     call her_main("Six times already? How long does she stay under there?","disgust","narrow")
     m "She'd live under there if she could..."
-    $ lunCG('ahegao', pos=13)
+    $ lunCG('', '', '', 'ahegao', pos=13)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=5)
     call her_main("So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?","upset","suspicious")
@@ -1417,17 +1417,17 @@ label ll_pf_blowjob_T1_summon:
     m "Pretty much... It was getting a little boring with just the two of us..."
     $ lunCG(pos=13)
     call her_main("Ugh... You're such a pig!","base","suspicious")
-    $ lunCG('dick', 'angry', pos=6)
+    $ lunCG('', 'angry', '', 'dick', pos=6)
     m "So you don't want to earn some points for your house?"
     $ lunCG(pos=14)
     call her_main("I didn't say no... I just wanted to make sure you know how perverted this is!","smile","narrow")
     $ lunCG(pos=8)
     lun "*glck* *slrp* *glck*"
-    $ lunCG('up', 'wide', pos=12)
+    $ lunCG('', 'wide', '', 'up', pos=12)
     call her_main("You hadn't even locked your door!","grin","angryL")
     #Hermione starts touching herself
     call set_her_action("fingering")
-    $ lunCG('up', 'angry', pos=8)
+    $ lunCG('', 'angry', '', 'up', pos=8)
     call her_main("What if someone else walked in while this was going on?","grin","dead_mad")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
@@ -1435,7 +1435,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Do you think they wouldn't be able to hear it?","grin","dead")
     $ lunCG(pos=8)
     call her_main("To {b}smell{/b} it?","open_tongue","dead_mad")
-    $ lunCG('ahegao', 'mad', pos=14)
+    $ lunCG('', 'mad', '', 'ahegao', pos=14)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=4)
     call her_main("But maybe that's what you two want...","grin","down")
@@ -1445,7 +1445,7 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=16)
     call her_main("Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them...","smile","dead_mad")
-    $ lunCG('up', 'wide', pos=13)
+    $ lunCG('', 'wide', '', 'up', pos=13)
     call her_main("To be forced into breathing in this thick musk...","disgust","dead_mad")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
@@ -1453,7 +1453,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Imagine if it was a first year? What would you do then?","grin","squint")
     $ lunCG(pos=9)
     call her_main("Would you do the right thing and send them away?","smile","squint")
-    $ lunCG('dick', 'mad', pos=11)
+    $ lunCG('', 'mad', '', 'dick', pos=11)
     lun "*glck* *slrp* *glck*"
     call her_main("Or would you make them stay...","grin","suspicious")
     $ lunCG(pos=13)
@@ -1464,22 +1464,22 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Make them watch while you bust your seventh load of the day down Luna's throat!","grin","glance")
     $ lunCG(pos=14)
     g4 "ARGHH, this is it you sluts!"
-    $ lunCG('right', 'wide', 'sucking', 'sad', pos=16)
+    $ lunCG('sucking', 'wide', 'sad', 'right', pos=16)
     ">With that you fire another gargantuan load into Luna's mouth."
-    $ lunCG('up')
+    $ lunCG('', '', '', 'up')
     lun "*glp* *glp* *glp*"
     $ lunCG('ahegao')
     g4 "Mmmm...."
-    $ lunCG('ahegao', 'seductive')
+    $ lunCG('', 'seductive', '', 'ahegao')
     lun "*glp* *glp* *glp*"
-    $ lunCG('ahegao', 'angry', 'sucking', 'angry')
+    $ lunCG('sucking', 'angry', 'angry', 'ahegao')
     call her_main("I guess that answers that...","smile","happyCl")
     call her_main("I think I better be going then.","smile","happyCl")
     m "Ugh... yes... good... bye..."
-    $ lunCG('ahegao', 'seductive', 'sucking', 'sad', pos=7)
+    $ lunCG('sucking', 'seductive', 'sad', 'ahegao', pos=7)
     lun "*glck* *slrp* *glck*"
     call her_main("Have a nice day you two!","smile","happyCl")
-    $ lunCG('dick', 'seductive', 'sucking', 'sad', pos=3)
+    $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=3)
 
 
     ">With that your vision starts to fade to black as Luna suckles your wilting cock back to health..."

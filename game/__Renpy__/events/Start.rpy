@@ -10,7 +10,7 @@ label start_wt:
     $ aftersperm = False #Shows cum stains on Hermione's uniform.
     $ legs_02 = False # Turns TRUE when miniskirt is activated.
 
-    $ current_payout = 0 #Used when haggling about price of th favor.
+    $ current_payout = 0
 
     $ snape_invited_to_watch = False #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
     $ invited_snape_once_already = False #In the "Dance for me" event, after you send Hermione to invite Snape to watch for the first time - turns TRUE.

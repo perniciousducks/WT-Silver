@@ -504,6 +504,7 @@ label hg_pf_dance:
             "\"Severus, I am busy right now.\"":
                 call sna_main("Yes... I can see that...","snape_13")
                 call her_main("{size=-7}(I want to die!){/size}","angry","worriedCl")
+
             "\"Severus! Please, come join us.\"":
                 $ her_mood += 20
                 #$ snape_invited_to_watch = True #Removed. Turns true on a new Snape event instead. (label special_date_with_snape_03)
@@ -565,6 +566,7 @@ label hg_pf_dance:
         call blkfade
         pause.5
 
+        $ hg_T3_strip_trigger = True
 
     #Third Event.
     if hg_pf_dance.points >= 2:

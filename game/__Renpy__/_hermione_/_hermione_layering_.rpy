@@ -160,7 +160,9 @@ screen hermione_uniform():
     add hermione_action_a xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
     #Bra
-    if hermione_wear_bra and not (h_top in h_top_remove_bra_list and hermione_wear_top):
+    if hermione_wear_bra and hermione_use_action and hermione_action in ["lift_top"]:
+        add hermione_bra xpos hermione_xpos ypos hermione_ypos alpha her_bra_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+    elif hermione_wear_bra and not (h_top in h_top_remove_bra_list and hermione_wear_top):
         add hermione_bra xpos hermione_xpos ypos hermione_ypos alpha her_bra_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
     #One-Piece
@@ -402,7 +404,7 @@ label update_her_action:
     #Lift Top
     if hermione_use_action and hermione_action == "lift_top":
 
-        $ hermione_wear_bra = False #Hide until art edits are made.
+        #$ hermione_wear_bra = False #Hide until art edits are made.
 
         if hermione_wear_top:
             if h_top in h_lift_top_list:

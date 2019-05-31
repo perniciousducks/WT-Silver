@@ -28,7 +28,7 @@ label __init_variables:
         $ ignore_warning = False #Warning message that tells you which ending you will get.
 
     ### Misc ###
-    if not hasattr(renpy.store,'walk_xpos'):
+    if not hasattr(renpy.store,'desk_zorder'):
         #For UI help,temporary add them to your UI element and use the console to quickly get it into place.
         #Then replace the variables with the number you ended up with.
         $ nxpos = 0
@@ -39,6 +39,7 @@ label __init_variables:
         $ chibi_xpos = 0
         $ chibi_ypos = 0
         $ chibi_zorder = 0
+        $ desk_zorder = 2
 
     if not hasattr(renpy.store,'unlocked_xmas_deco'):
         $ unlocked_7th = False

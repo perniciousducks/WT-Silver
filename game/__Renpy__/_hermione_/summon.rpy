@@ -5,11 +5,14 @@ label summon_hermione:
     call play_sound("door")
 
     call update_hermione
+    call update_her_tier
 
     ### RANDOM CLOTHING EVENTS ###
     call hermione_random_clothing
 
     label hermione_requests:
+
+    call reset_menu_position
 
     $ hide_transitions = False
     $ hermione_busy = True
@@ -91,14 +94,6 @@ label summon_hermione:
             call her_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
-        #"-Ending \"Your whore\"-":
-        #    $ public_whore_ending = False
-        #    jump ball_ending_E2
-
-        #"-Ending \"Public whore\"-":
-        #    $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
-        #    jump ball_ending_E2
-
 
         # Cardgame
         "-Let's Duel- {image=interface/cards.png}" if snape_second_win:
@@ -140,7 +135,31 @@ label summon_hermione:
 
 
 
+label update_her_tier:
+    if her_tier == 1 and her_whoring >= 3 and hg_T1_trigger == True:
+        # Trigger: None
+        $ her_tier = 2
+    elif her_tier == 2 and her_whoring >= 9 and hg_T2_jerk_off_trigger == True:
+        # Trigger: When you get caught jerking off.
+        $ her_tier = 3
+    elif her_tier == 3 and her_whoring >= 12 and hg_T3_strip_trigger == True:
+        # Trigger: After she strips for you.
+        $ her_tier = 4
+    elif her_tier == 4 and her_whoring >= 15 and hg_T4_trigger == True:
+        # Trigger: None
+        $ her_tier = 5
+    elif her_tier == 5 and her_whoring >= 21 and hg_T5_blowjob_trigger == True:
+        # Trigger: First BJ
+        $ her_tier = 6
+    #elif her_tier == 6 and her_whoring >= 24 and hg_T6_sex_trigger == True:
+        # Trigger: First time having sex.
+    #    $ her_tier = 7
+
+    return
+
 label hermione_favor_menu:
+    call update_her_favors
+
     if slytherin >= gryffindor or ravenclaw >= gryffindor or hufflepuff >= gryffindor:
         show screen hermione_main
 
@@ -149,19 +168,30 @@ label hermione_favor_menu:
             "-Personal favours-":
                 label not_now_pf:
                 python:
-                    pf_menu = []
+                    menu_choices = []
+                    for i in hg_favor_list:
+                        if i in []: # Not in the game yet.
+                            menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                        elif i.start_tier > her_tier:
+                            menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                        else:
+                            menu_choices.append((i.getMenuText(),i.start_label))
+
                     for i in hg_pf_list:
                         if i.tier > imagination:
-                            pf_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                            menu_choices.append(("{color=#858585}-A vague idea-{/color}","vague"))
                         else:
-                            pf_menu.append((i.getMenuText(),i.start_label))
-                    pf_menu.append(("-Never mind-", "nvm"))
-                    result = custom_menu(pf_menu)
+                            menu_choices.append((i.getMenuText(),i.start_label))
+                    menu_choices.append(("-Never mind-", "nvm"))
+                    result = custom_menu(menu_choices)
                 if result == "nvm":
                     jump silver_requests_root
                 elif result == "vague":
                     call vague_idea
                     jump not_now_pf
+                elif result == "na":
+                    call not_available
+                    jump silver_requests_root
                 else:
                     $ renpy.jump(result)
 
@@ -178,14 +208,14 @@ label hermione_favor_menu:
                 else:
                     label not_now_pr:
                     python:
-                        pr_menu = []
+                        menu_choices = []
                         for i in hg_pr_list:
                             if i.tier > bdsm_imagination:
-                                pr_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                                menu_choices.append(("{color=#858585}-A vague idea-{/color}","vague"))
                             else:
-                                pr_menu.append((i.getMenuText(),i.start_label))
-                        pr_menu.append(("-Never mind-", "nvm"))
-                        result = custom_menu(pr_menu)
+                                menu_choices.append((i.getMenuText(),i.start_label))
+                        menu_choices.append(("-Never mind-", "nvm"))
+                        result = custom_menu(menu_choices)
                     if result == "nvm":
                         jump silver_requests_root
                     elif result == "vague":
@@ -195,23 +225,19 @@ label hermione_favor_menu:
                         $ renpy.jump(result)
 
             "{color=#858585}-Public Shaming-{/color}" if not daytime:
-                show screen blktone
-                with d3
-                ">Public Shaming events are available during the daytime only."
-                hide screen blktone
-                with d3
+                call nar(">Public Shaming events are available during the daytime only.")
                 jump silver_requests_root
             "-Public Shaming-"if daytime:
                 label not_now_ps:
                 python:
-                    ps_menu = []
+                    menu_choices = []
                     for i in hg_ps_list:
                         if i.tier > bdsm_imagination:
-                            ps_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                            menu_choices.append(("{color=#858585}-A vague idea-{/color}","vague"))
                         else:
-                            ps_menu.append((i.getMenuText(),i.start_label))
-                    ps_menu.append(("-Never mind-", "nvm"))
-                    result = custom_menu(ps_menu)
+                            menu_choices.append((i.getMenuText(),i.start_label))
+                    menu_choices.append(("-Never mind-", "nvm"))
+                    result = custom_menu(menu_choices)
                 if result == "nvm":
                     jump silver_requests_root
                 elif result == "vague":
@@ -278,7 +304,13 @@ label hermione_favor_menu:
                         pass
         jump hermione_requests
 
+label update_her_favors:
+    python:
+        for i in hg_favor_list:
+            if i.tier != her_tier and i.max_tiers >= her_tier:
+                i.tier = her_tier
 
+    return
 
 label hermione_talk:
     menu:

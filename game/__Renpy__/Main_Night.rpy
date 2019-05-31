@@ -205,8 +205,7 @@ label night_resume:
     if astoria_tonks_event_in_progress:
         jump astoria_tonks_event #These do not return to 'night_resume'!
 
-    ### Guide ###
-    call update_hints
+
 
 label night_main_menu:
     ### MENU PLACEMENT ###

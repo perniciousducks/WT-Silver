@@ -448,11 +448,12 @@ label her_progress_init:
     if not hasattr(renpy.store,'her_whoring') or reset_persistants:
 
         #Stats
-        $ her_whoring = 0
+        $ her_tier       = 1
+        $ her_whoring    = 0
         $ her_reputation = 0
-        $ her_tutoring = 0
+        $ her_tutoring   = 0
 
-        $ her_mood = 0
+        $ her_mood       = 0
         $ forest_BJ_progress = 1
 
         #Flags
@@ -532,43 +533,9 @@ label her_progress_init:
         $ hermione_wardrobe_unlocked = False
         call reset_hermione_clothing # Makes sure she's wearing her default clothing before doing the first tutoring events unlocking the wardrobe.
 
+
+
     ### Hermione Favours ###
-
-    if not hasattr(renpy.store,'hg_pf_talk'): #important!
-        $ hg_pf_talk = favor_class(
-            tier = 1,
-            title = "Talk to me",
-            start_label = "hg_pf_talk",
-        )
-
-    if not hasattr(renpy.store,'hg_pf_show_panties'): #important!
-        $ hg_pf_show_panties = favor_class(
-            tier = 1,
-            title = "Nice panties",
-            start_label = "hg_pf_show_panties",
-        )
-
-    if not hasattr(renpy.store,'hg_pf_grope_breasts'): #important!
-        $ hg_pf_grope_breasts = favor_class(
-            tier = 1,
-            title = "Breast molester",
-            max_level = 4,
-            start_label = "hg_pf_grope_breasts",
-        )
-
-    if not hasattr(renpy.store,'hg_pf_grope_ass'): #important!
-        $ hg_pf_grope_ass = favor_class(
-            tier = 1,
-            title = "Butt molester",
-            start_label = "hg_pf_grope_ass",
-        )
-
-    if not hasattr(renpy.store,'hg_pf_look_at_breasts'): #important!
-        $ hg_pf_look_at_breasts = favor_class(
-            tier = 2,
-            title = "Show them to me!",
-            start_label = "hg_pf_look_at_breasts",
-        )
 
     if not hasattr(renpy.store,'hg_pf_dance'): #important!
         $ hg_pf_dance = favor_class(
@@ -628,9 +595,6 @@ label her_progress_init:
         )
 
     if game_difficulty >= 3: #Hardcore
-        $ hg_pf_grope_breasts.tier = 2
-        $ hg_pf_grope_ass.tier = 2
-        $ hg_pf_look_at_breasts.tier = 3
         $ hg_pf_dance.tier = 4
         $ hg_pf_look_at_ass.tier = 5
         $ hg_pf_masturbate.tier = 5
@@ -640,11 +604,7 @@ label her_progress_init:
         $ hg_pf_sex.tier = 7
         $ hg_pf_anal_sex.tier = 8
 
-    $ hg_pf_list = [hg_pf_talk,
-                    hg_pf_show_panties,
-                    hg_pf_grope_breasts,
-                    hg_pf_grope_ass,
-                    hg_pf_look_at_breasts,
+    $ hg_pf_list = [
                     hg_pf_dance,
                     hg_pf_look_at_ass,
                     hg_pf_masturbate,
@@ -757,4 +717,130 @@ label her_progress_init:
     $ hg_ps_list = [hg_ps_get_panties,
                     hg_ps_buttplug,
                     hg_ps_cumslut]
+#    return
+
+
+label updated_hermione_favors: # For 1.37
+
+    if not hasattr(renpy.store,'hg_T1_trigger'):
+        $ her_tier = 1
+        $ hg_T1_trigger          = True # Temporary
+        $ hg_T2_jerk_off_trigger = False
+        $ hg_T3_strip_trigger    = False
+        $ hg_T4_trigger          = True # Temporary
+        $ hg_T5_blowjob_trigger  = False
+        $ hg_T6_sex_trigger      = False
+
+    if not hasattr(renpy.store,'hg_pf_talk'):
+        $ hg_pf_talk   = event_class(title = "Talk to me!", start_label = "hg_pf_talk", start_tier = 1, events = [
+            [
+            ["hg_pf_talk_T1_intro_E1"],
+            ["hg_pf_talk_T1_E1"]
+            ],
+
+            [
+            ["hg_pf_talk_T2_intro_E1"],
+            ["hg_pf_talk_T2_E1"]
+            ],
+
+            [
+            ["hg_pf_talk_T3_intro_E1"],
+            ["hg_pf_talk_T3_E1"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_yellow"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
+            )
+
+    if not hasattr(renpy.store,'hg_pf_admire_panties'):
+        $ hg_pf_admire_panties   = event_class(title = "Show me your Panties!", start_label = "hg_pf_admire_panties", start_tier = 1, events = [
+            [
+            ["hg_pf_admire_panties_T1_intro_E1"],
+            ["hg_pf_admire_panties_T1_E1"]
+            ],
+
+            [
+            ["hg_pf_admire_panties_T2_intro_E1"],
+            ["hg_pf_admire_panties_T2_E1"]
+            ],
+
+            [
+            ["hg_pf_admire_panties_T3_intro_E1"],
+            ["hg_pf_admire_panties_T3_E1"],
+            ["hg_pf_admire_panties_T3_E2"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_yellow"],["heart_empty", "heart_red"],["heart_empty", "heart_yellow"]]
+            )
+
+    if not hasattr(renpy.store,'hg_pf_admire_breasts'):
+        $ hg_pf_admire_breasts   = event_class(title = "Show me your tits!", start_label = "hg_pf_admire_breasts", start_tier = 1, events = [
+            [
+            ["hg_pf_admire_breasts_T1_intro_E1"],
+            ["hg_pf_admire_breasts_T1_intro_E2"],
+            ["hg_pf_admire_breasts_T1_E2"]
+            ],
+
+            [
+            ["hg_pf_admire_breasts_T2_intro_E1"],
+            ["hg_pf_admire_breasts_T2_intro_E2"],
+            ["hg_pf_admire_breasts_T2_E2"]
+            ],
+
+            [
+            ["hg_pf_admire_breasts_T3_intro_E1"],
+            ["hg_pf_admire_breasts_T3_E1"]
+            ],
+
+            [
+            ["hg_pf_admire_breasts_T4_intro_E1"],
+            ["hg_pf_admire_breasts_T4_E1"],
+            ["hg_pf_admire_breasts_T4_E2"]
+            ]
+
+            ],
+            icons = [None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_yellow"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
+            )
+
+
+
+    if not hasattr(renpy.store,'hg_pf_grope'):
+        $ hg_pf_grope   = event_class(title = "Grope her!", start_label = "hg_pf_grope", start_tier = 1, events = [
+            [
+            ["hg_pf_grope_T1_fail_intro"],
+            ["hg_pf_grope_T1_fail_repeat"],
+            ],
+
+            [
+            ["hg_pf_grope_T2_intro_E1"],
+            ["hg_pf_grope_T2_E1"]
+            ],
+
+            [
+            ["hg_pf_grope_T3_intro_E1"],
+            ["hg_pf_grope_T3_E1"]
+            ],
+
+            [
+            ["hg_pf_grope_T4_intro_E1"],
+            ["hg_pf_grope_T4_intro_E2"],
+            ["hg_pf_grope_T4_E2"]
+            ]
+
+            ],
+            icons = [None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
+            )
+
+    $ hg_favor_list = [
+        hg_pf_talk,
+        hg_pf_admire_breasts,
+        hg_pf_admire_panties,
+        hg_pf_grope
+        ]
+
     return

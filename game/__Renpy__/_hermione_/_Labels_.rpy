@@ -56,3 +56,57 @@ label her_walk_desk_blkfade:
     call blkfade
 
     return
+
+
+
+label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, trans="fade"):
+    call hide_characters
+    show screen blkfade
+
+    $ menu_y = 0.75 # Menu moved down.
+    call her_chibi("hide")
+    call gen_chibi("hide")
+
+    if action in ["lift_top", "lift_skirt"]:
+        $ menu_y = 0.5
+        call her_chibi(action, xpos, ypos, flip)
+        call gen_chibi("sit_behind_desk")
+
+    elif action in ["admire_breasts"]:
+        show screen genie_and_tits_01
+
+    elif action in ["stand_behind_desk"]:
+        if flip:
+            show screen no_groping_02 # Towards Door.
+        else:
+            show screen no_groping_01 # Towards Cupboard.
+
+    elif action in ["grope_breasts"]:
+        if hermione_use_action and hermione_action in ["lift_top"]:
+            show screen groping_naked_tits
+        else:
+            show screen groping_03
+
+    elif action in ["grope_ass"]:
+        if flip:
+            show screen groping_02 # Towards Door.
+        else:
+            show screen groping_01 # Towards Cupboard.
+
+    elif action in ["jerk_off"]:
+        show screen jerking_off_01
+
+    else:
+        $ menu_y = 0.5
+        call reset_hermione
+        call her_chibi("stand", xpos, ypos)
+        call gen_chibi("sit_behind_desk")
+
+    hide screen bld1
+    hide screen blkfade
+    if trans != "fade":
+        call transition(trans)
+    else:
+        with fade # Default
+
+    return

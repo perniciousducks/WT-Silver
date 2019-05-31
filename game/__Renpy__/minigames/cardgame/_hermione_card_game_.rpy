@@ -128,7 +128,7 @@ label hermione_second_duel:
         g9 "So, do you want to take a break?"
         call her_main( "No, I'm ready...","soft","concerned")
         m "You sure?"
-        call her_main( "I said I'm ready.","clench","hateful")
+        call her_main( "I said I'm ready.","clench","angry")
         $ her_second_win = True
         jump hermione_duel_menu
         pass

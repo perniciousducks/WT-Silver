@@ -18,7 +18,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    $ current_payout = 40 #Used when haggling about price of th favor.
+    $ current_payout = 40
 
     if hg_pf_look_at_ass.points == 0 and her_whoring < 15: # LEVEL 04 # FIRST TIME.
 
@@ -47,7 +47,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
         menu:
             "\"Fine. 50 points are yours. Show me!\"":
-                $ current_payout = 50 #Used when haggling about price of th favor.
+                $ current_payout = 50
                 call her_main("Really?","open","base")
                 m "Well?"
                 call her_main("...","annoyed","worriedL")
@@ -63,7 +63,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
                 menu:
                     "\"Fine. 100 it is! strip already!":
-                        $ current_payout = 100 #Used when haggling about price of th favor.
+                        $ current_payout = 100
                         her "................."
                         call her_main("(I didn't think he'd agree to this...)","annoyed","worriedL")
                         call her_main("W-Well alright then...","normal","worriedCl")

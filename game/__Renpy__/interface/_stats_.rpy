@@ -262,16 +262,15 @@ screen hermione_stat_menu():
                 use text_stat("You Jerked off in front of her:")
                 use text_stat("- ", " times -", her_jerk_off_counter)
                 use text_stat("You saw her panties:")
-                use text_stat("- ", " times -", hg_pf_show_panties.counter)
+                use text_stat("- ", " times -", hg_pf_admire_panties.counter)
+                use text_stat("You admired her tits:")
+                use text_stat("- ", " times -", hg_pf_admire_breasts.counter)
 
                 #Imagination 2:
                 if imagination >= 2:
-                    use text_stat("You admired her tits:")
-                    use text_stat("- ", " times -", hg_pf_grope_breasts.counter)
-                    use text_stat("You admired her butt:")
-                    use text_stat("- ", " times -", (hg_pf_grope_ass.counter + hg_pf_look_at_ass.counter) )
+                    use text_stat("You groped her:")
+                    use text_stat("- ", " times -", hg_pf_grope.counter)
                 else:
-                    use text_stat("Hidden")
                     use text_stat("Hidden")
 
                 #Imagination 3:
@@ -282,6 +281,13 @@ screen hermione_stat_menu():
                     use text_stat("Hidden")
 
                 #Imagination 4:
+                if imagination >= 2:
+                    use text_stat("You admired her butt:")
+                    use text_stat("- ", " times -", (hg_pf_look_at_ass.counter) )
+                else:
+                    use text_stat("Hidden")
+                    use text_stat("Hidden")
+
                 if imagination >= 4:
                     use text_stat("Hermione has masturbated for you:")
                     use text_stat("- ", " times -", hg_pf_masturbate.counter)

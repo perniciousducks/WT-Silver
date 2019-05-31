@@ -18,7 +18,7 @@ label hg_pf_handjob: #LV.5 (Whoring = 12 - 14)
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    $ current_payout = 45 #Used when haggling about price of th favor.
+    $ current_payout = 45
 
     call bld
 
@@ -72,7 +72,7 @@ label hg_pf_handjob: #LV.5 (Whoring = 12 - 14)
 
             "\"you will get 100 house points.\"":
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
-                $ current_payout = 100 #Used when haggling about price of th favor.
+                $ current_payout = 100
                 $ her_mood = 0
                 call her_main("100 house points?!","scream","wide_stare")
                 her "This will definitely put \"Gryffindor\" in the lead!"

@@ -347,8 +347,6 @@ label day_start:
     if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
         call genie_intro_E1 #Returns
 
-    ### Guide ###
-    call update_hints
 
     label day_main_menu:
 

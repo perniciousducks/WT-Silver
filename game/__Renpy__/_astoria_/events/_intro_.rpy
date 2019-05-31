@@ -485,7 +485,6 @@ label tonks_intro_event: #occurs a day or two after the last event
 
     m "(I didn't even realise we had beds here, I've just been sleeping in this chair...)"
     m "(I really need to clean this thing...)"
-    m "asd"
 
     $ astoria_busy = True
 

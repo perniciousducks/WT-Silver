@@ -60,7 +60,7 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
                 if hermione_flip == -1: #Flipped
                     $ hermione_xpos = -70 #Left side of screen!
                 else:
-                    $ hermione_xpos = 590
+                    $ hermione_xpos = 640
                 $ hermione_ypos = 230
                 $ hermione_zorder = 8
 
@@ -152,6 +152,8 @@ label reset_hermione:
     call update_hermione
 
     return
+
+
 
 
 

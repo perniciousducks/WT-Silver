@@ -1884,6 +1884,8 @@ label end_hg_blowjob:
     # Stats
     $ hg_pf_blowjob.counter += 1
 
+    $ hg_T5_blowjob_trigger = True
+
     jump end_hermione_event
 
 

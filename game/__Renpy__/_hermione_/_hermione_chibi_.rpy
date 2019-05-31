@@ -37,7 +37,7 @@ screen hermione_chibi_lift_top():
 screen hermione_chibi_lift_skirt():
     tag hermione_chibi
     if hermione_wear_panties:
-        if hg_pf_show_panties.points <= 1:
+        if hg_pf_admire_panties.counter <= 1:
             add "characters/hermione/chibis/lift_skirt/panties_00.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
         else:
             add "characters/hermione/chibis/lift_skirt/panties_01.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
@@ -56,39 +56,44 @@ screen ch_potion():
 ### HERMIONE CHIBI FAVOUR SCREENS (with Genie or Snape,...) ###
 
 ### GROPING ###
-screen groping_01(): #Facing Genie.
+screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
     add "groping_01" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
 
-screen groping_02(): #Facing Genie.
+screen groping_02(): # Grope Ass fully clothed - Flip = False
     tag favor
     add "groping_02" at Position(xpos=-60, ypos=10)
     add "groping_02_blinking" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
 
-screen no_groping_01(): #Facing Genie.
+screen no_groping_01(): # Hermione stands with you behind desk - Flip = True (facing door)
     tag favor
     add "images/animation/grope_05.png" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
 
-screen no_groping_02(): #Facing Genie.
+screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
     tag favor
     add "images/animation/grope_b_05.png" at Position(xpos=-60, ypos=10)
     add "groping_02_blinking" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
 
 
 ### MOLESTING TITS FULLY CLOTHED ###
-screen groping_03(): #Facing Genie.
+screen groping_03(): # Grope breasts fully clothed
     tag favor
     add "groping_03_ani" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
 
 ### MOLESTING NAKED TITS ###
 screen groping_naked_tits():
     tag favor
     add "groping_naked_tits_ani" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
-    zorder 1 #Otherwise chair is on top.
+    zorder desk_zorder
 
 ### JERKING OFF ###
 screen jerking_off_01():
@@ -96,18 +101,19 @@ screen jerking_off_01():
     add "jerking_off_ani" at Position(xpos=-60, ypos=10)
     if not no_blinking: #When True - blinking animation is not displayed.
         add "groping_01_blinking" at Position(xpos=-60, ypos=10)
-    zorder 1 #Otherwise chair is on top.
+    zorder desk_zorder
 
 ### SPERM ###
 screen jerking_off_cum():
     add "jerking_off_cum_ani" at Position(xpos=-60, ypos=10)
     #add "groping_01_blinking" at Position(xpos=-200, ypos=10)
-    zorder 2 #Otherwise there is a bug with blinking.
+    zorder desk_zorder+1
 
 ### ADMIRING TITS ###
 screen genie_and_tits_01(): #Genie sitting, looking ar naked tits. Hermione stands right in front of him. (Behind the desk even).
     tag favor
     add "images/rooms/main_room/admire_tits_00.png" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
 
 
 
@@ -232,16 +238,20 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
             $ her_chibi_xpos = 440
         elif xpos == "on_desk":
             $ her_chibi_xpos = 350
+        elif xpos == "behind_desk":
+            $ her_chibi_xpos = 230
         elif xpos == "door":
             $ her_chibi_xpos = 750
         else:
             $ her_chibi_xpos = int(xpos)
 
     if ypos != her_chibi_ypos:
-        if ypos == "base" or ypos == "default":
+        if ypos in ["base","default"]:
             $ her_chibi_ypos = 250
         elif ypos == "on_desk":
             $ her_chibi_ypos = 180
+        elif ypos == "behind_desk":
+            $ her_chibi_ypos = 260
         else:
             $ her_chibi_ypos = int(ypos)
 

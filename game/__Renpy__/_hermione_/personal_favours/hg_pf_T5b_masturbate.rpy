@@ -56,7 +56,7 @@ label hg_pf_masturbate: #LV.4 (Whoring = 8 - 10)
                 m "fantastic!"
             "\"you will get 80 house points!\"":
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
-                $ current_payout = 80 #Used when haggling about price of th favor.
+                $ current_payout = 80
                 $ her_mood = 0
                 call her_main("80 house points?!","scream","wide_stare")
                 m "Is that enough?"

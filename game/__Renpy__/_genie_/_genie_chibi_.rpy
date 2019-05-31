@@ -221,11 +221,12 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     hide screen genie_titjob_cum_in_mouth
     hide screen genie_titjob_cum_on_tits
 
-    hide screen groping_01
-    hide screen groping_02
-    hide screen no_groping_01
-    hide screen no_groping_02
-    hide screen groping_03
+    hide screen groping_01    # Grope Ass fully clothed - Flip = True (facing door)
+    hide screen groping_02    # Grope Ass fully clothed - Flip = False
+    hide screen no_groping_01 # Hermione stands with you behind desk - Flip = True (facing door)
+    hide screen no_groping_02 # Hermione stands with you behind desk - Flip = False
+
+    hide screen groping_03         # Grope breasts fully clothed
     hide screen genie_and_tits_01
     hide screen groping_naked_tits
 
@@ -246,6 +247,8 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
             $ gen_chibi_xpos = 100
         elif xpos == "behind_desk":
             $ gen_chibi_xpos = 230
+        elif xpos == "cupboard":
+            $ gen_chibi_xpos = 260
         else:
             $ gen_chibi_xpos = int(xpos)
 

@@ -1,9 +1,6 @@
+### Tonks###
 
-
-### Tonks ###
-
-label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    hide screen tonks_main
+label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:
@@ -23,11 +20,13 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
 
     #Positioning
     if xpos != None:
-        if xpos in ["base","default"]: #All the way to the right.
+        if xpos in ["base","default"]:     # All the way to the right.
             $ tonks_xpos = 640
-        elif xpos == "mid":            #Centered.
+        elif xpos == "left":
+            $ tonks_xpos = 200
+        elif xpos == "mid":                # Centered.
             $ tonks_xpos = 300
-        elif xpos == "right":          #Bit more to the right.
+        elif xpos == "right":              # Bit more to the right.
             $ tonks_xpos = 400
         elif xpos in ["wardrobe","close"]:
             $ tonks_xpos = 540
@@ -41,17 +40,14 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
             $ tonks_zorder = 5
             $ use_tonks_head = False
         elif ypos in ["head"]:
-            # Use ypos="head" to activate her head position.
-            # Use ypos="base" to disable it.
-            # Use ypos="200" or any other number to move her head up or down.
             $ use_tonks_head = True
             $ tonks_scaleratio = 2
 
             if tonks_flip == -1: #Flipped
-                $ tonks_xpos = 620
+                $ tonks_xpos = -50
             else:
                 $ tonks_xpos = 590
-            $ tonks_ypos = 230
+            $ tonks_ypos = 200
             $ tonks_zorder = 8
         else:
             $ tonks_ypos = int(ypos)
@@ -59,129 +55,75 @@ label ton_main(text="",mouth=None,eye=None, brows=None, pupils=None, cheeks=None
     if face != None:
         if mouth == None:
             call set_ton_face(mouth = face)
-        if eye == None:
+        if eyes == None:
             call set_ton_face(eyes = face)
-        if brows == None:
-            call set_ton_face(brows = face)
+        if eyebrows == None:
+            call set_ton_face(eyebrows = face)
         if pupils == None:
             call set_ton_face(pupils = face)
 
-    call update_tonks_tongue_piercing(mouth)
-    $ changeTonks(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
+    if animation != False:
+        $ tonks_animation = animation
 
-    show screen tonks_main
+    python:
+        tonks_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        tonks_class.special(emote=emote)
+
+    show screen tonks_main()
     show screen bld1
 
     #Transitions
     call transition(trans)
 
-    if text != "":
-        $ renpy.say(ton, text)
+    $ tonks_class.say(text)
 
     if use_tonks_head:
         hide screen tonks_main
 
     return
 
-label update_tonks_tongue_piercing(mouth=None):
-    if mouth != None:
-        if mouth in ["open","horny","open_wide_tongue"]: #Tongue is visible.
-            $ tonks_tongue_piercing = "characters/tonks/clothes/piercings/mouth/" +str(ton_tongue_piercing)+ "_" +str(mouth)+ ".png"
-        else:
-            $ tonks_tongue_piercing = "blank.png"
-    if ton_tongue_piercing == "blank":
-        $ tonks_tongue_piercing = "blank.png"
 
-    return
 
 label update_tonks:
-
-    $ tonks_flip = 1
-    $ use_tonks_head = False
-
     return
-
-
-label check_tonks_clothing_upgrades:
-
-    $ upgradable_clothing = []
-    # Hermione
-    if hg_cheer_g_ITEM.unlocked and not hg_cheer_g_sexy_ITEM.unlocked:
-        $ upgradable_clothing.append(hg_cheer_g_sexy_ITEM)
-    if hg_cheer_s_ITEM.unlocked and not hg_cheer_s_sexy_ITEM.unlocked:
-        $ upgradable_clothing.append(hg_cheer_s_sexy_ITEM)
-    if hg_cheer_r_ITEM.unlocked and not hg_cheer_r_sexy_ITEM.unlocked:
-        $ upgradable_clothing.append(hg_cheer_r_sexy_ITEM)
-    if hg_cheer_h_ITEM.unlocked and not hg_cheer_h_sexy_ITEM.unlocked:
-        $ upgradable_clothing.append(hg_cheer_h_sexy_ITEM)
-    if hg_witch_ITEM.unlocked and not hg_witch_skimpy_ITEM.unlocked:
-        $ upgradable_clothing.append(hg_witch_skimpy_ITEM)
-
-    # Luna
-    if ll_stewardess_ITEM.unlocked and not ll_stewardess_short_ITEM.unlocked:
-        $ upgradable_clothing.append(ll_stewardess_short_ITEM)
-
-    # Astoria
-    if ag_costume_lazy_town_ITEM.unlocked and not ag_costume_lazy_town_short_ITEM.unlocked:
-        $ upgradable_clothing.append(ag_costume_lazy_town_short_ITEM)
-
-    if upgradable_clothing != []:
-        $ clothing_unlock = upgradable_clothing[ renpy.random.randint(0,len(upgradable_clothing)-1)]
-
+    # Chibi Update
+    #$ update_chibi_image("tonks")
+    #$ tonks_flip = 1
+    #$ tonks_cloth_pile = False
     return
-
-
+    
 label set_ton_astoria_name:
     if one_of_five == 1:
         $ ton_astoria_name = "Cutie"
-    if one_of_five == 2:
+    elif one_of_five == 2:
         $ ton_astoria_name = "Kitty"
-    if one_of_five == 3:
+    elif one_of_five == 3:
         $ ton_astoria_name = "Princess"
-    if one_of_five == 4:
-        $ ton_astoria_name = "Little Girl"
-    if one_of_five == 5:
+    elif one_of_five == 4:
+        $ ton_astoria_name = "Little girl"
+    else:
         $ ton_astoria_name = "Honey"
-
     return
 
 
+label end_tonks_event:
+    #call tonks_chibi("hide")
+    hide screen tonks_main
+    with d3
+    pause.5
 
-init python:
-    def changeTonks(    mouth=None,
-                        eye=None,
-                        brows=None,
-                        pupils=None,
-                        cheeks=None,
-                        tears=None,
-                        extra=None,
-                        emote=None):
+    call update_tonks
 
-        ### GLOBAL VARIABLES ###
-        global tonks_mouth
-        global tonks_eye
-        global tonks_eyebrow
-        global tonks_pupil
-        global tonks_cheeks
-        global tonks_tears
-        global tonks_extra
-        global tonks_emote
+    $ active_girl = None
+    $ tonks_busy = True
 
-        ### FACE CONTROL
-        if mouth is not None:
-            tonks_mouth       = "characters/tonks/face/mouth/"+mouth+".png"
-        if eye is not None:
-            tonks_eye         = "characters/tonks/face/eyes/"+eye+".png"
-            tonks_eye_bg      = "characters/tonks/face/eyes/_white_.png"
-        if brows is not None:
-            tonks_eyebrow     = "characters/tonks/face/brow/"+brows+".png"
-        if pupils is not None:
-            tonks_pupil       = "characters/tonks/face/pupil/"+pupils+".png"
-        if cheeks is not None:
-            tonks_cheeks      = "characters/tonks/face/extras/"+cheeks+".png"
-        if tears is not None:
-            tonks_tears       = "characters/tonks/face/extras/"+tears+".png"
-        if extra is not None:
-            tonks_extra       = "characters/tonks/face/extras/"+extra+".png"
-        if emote is not None:
-            tonks_emote       = "characters/emotes/"+str(emote)+".png"
+    call music_block
+    jump main_room
+
+screen tonks_main():
+    tag tonks_main
+    zorder tonks_zorder
+    if tonks_animation != None:
+        add tonks_class.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
+    else:
+        add tonks_class.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)

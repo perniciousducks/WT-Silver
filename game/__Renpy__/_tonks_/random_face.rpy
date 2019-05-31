@@ -85,8 +85,9 @@ label set_ton_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
     elif change in ["all","random"]:
         call set_ton_face(mouth="naughty",eyes="happy",brows="happy",pupils="happy")
 
-    call update_tonks_tongue_piercing(temp_mouth)
-    $ changeTonks(temp_mouth, temp_eyes, temp_eyebrows, temp_pupils, temp_cheeks, temp_tears, temp_extra, temp_emote)
+    python:
+        tonks_class.expression(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)
+        tonks_class.special(emote=temp_emote)
 
     return
 

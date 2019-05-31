@@ -2,7 +2,7 @@
 
 
 label tonks_random_clothing:
-
+    return
     $ random_number = renpy.random.randint(1, 20)
     if random_number in [1,2,3,4,5,7] and tonks_wear_top and ast_affection >= 2 and ton_friendship >= 5: #Naked
         if not tonks_strip_happened: #First time.
@@ -127,13 +127,11 @@ label tonks_random_clothing:
         call ton_main(xpos="base",ypos="base",trans="fade")
 
     else:
-        if weather_gen >= 5: #Rainy & thundery weather.
-            $ ton_request_wear_coat = True
-        else:
-            $ ton_request_wear_coat = False
+        #if weather_gen >= 5: #Rainy & thundery weather.
+            #$ ton_request_wear_coat = True
+        #else:
+            #$ ton_request_wear_coat = False
 
-        call load_tonks_clothing_saves
-        call update_tonks_body
         call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
 
     return

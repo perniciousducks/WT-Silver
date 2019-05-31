@@ -25,7 +25,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         if xpos in ["base","default"]:     # All the way to the right.
             $ cho_xpos = 640
         elif xpos == "left":
-            $ hermione_xpos = 200
+            $ cho_xpos = 200
         elif xpos == "mid":                # Centered.
             $ cho_xpos = 300
         elif xpos == "right":              # Bit more to the right.

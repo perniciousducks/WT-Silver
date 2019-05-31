@@ -144,6 +144,7 @@ label __init_variables:
     #Tonks Init
     call tonks_init
     call tonks_progress_init
+    call tonks_wardrobe_init
 
     #Map
     call map_init

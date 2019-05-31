@@ -936,7 +936,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
 
-    $ lunCG('open', 'wide', 'base', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank', 'up')
+    $ lunCG('open', 'wide', 'base', 'up', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank')
 
     show screen luncg
     hide screen blkfade
@@ -994,7 +994,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     lun "*glck*{image=textheart}*glck*!!!*Gulp*{image=textheart}*glck*{image=textheart}"
     $ lunCG('dick', 'wide', pos=16)
     ">Allowing your withering cock to come back to life, firing a inhumane volley of cum into the girls stomach."
-    $ lunCG('sucking', 'wide', 'sad', pos=6, extra_3='cum_4', 'ahegao', )
+    $ lunCG('sucking', 'wide', 'sad', 'ahegao', pos=6, extra_3='cum_4')
     m "That's better! This is what a cumslut like you deserves!"
     $ lunCG(pos=10)
     ">Luna's hands have both managed to sneak under her skirt and are now a blur of movement..."

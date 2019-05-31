@@ -701,7 +701,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     call ast_main("But you really do take the cake, Luna...","disgust","narrow","narrow","mid")
     $ lunCG('base', 'happyCl', 'sad', 'right')
     lun "Thank you, Astoria! I love cake."
-    $ lunCG('open_tongue', 'furious', 'sad', extra_1='speed', 'up')
+    $ lunCG('open_tongue', 'furious', 'sad', 'up', extra_1='speed')
     call ast_main("So, is she just like this then Dumby?","disgust","narrow","narrow","mid")
     m "Pretty much..."
     $ lunCG('open', 'angry', '', 'up')
@@ -1030,7 +1030,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     m "Fine... just start off slowly this time!"
     $ lunCG('base', 'wink', 'base', 'left')
     lun "That's no fun..."
-    $ lunCG('open', 'angry', 'sad', extra_2='speed', 'up')
+    $ lunCG('open', 'angry', 'sad', 'up', extra_2='speed')
     call ton_main("Wow... you two really are going to go again, aren't you?","base","base","raised","L")
     $ lunCG('open', 'wink', 'sad', 'right')
     lun "You don't have to... a-ah...{image=textheart} stay if you don't want to..."
@@ -1154,7 +1154,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     m "Watch away then..."
     ">Tonks' starts violently fingering herself under her pants..."
     call ton_main("Mmmm, don't mind if I do...","horny","base","angry","L")
-    $ lunCG('open', 'seductive', 'sad', extra_2='speed', 'up')
+    $ lunCG('open', 'seductive', 'sad', 'up', extra_2='speed')
     ">The room falls silent save for the rhythmic noise of Luna being fucked and the quiet squelching coming from her perverted teacher."
     $ lunCG('open_tongue', 'base', 'sad', 'ahegao')
     lun "Ah... ah... ah..."
@@ -1210,7 +1210,7 @@ label ll_pf_sex_T1_ton_2: # Call label
 
     menu:
         "Cum inside":
-            $ lunCG('open_tongue', 'mad', 'angry', extra_1='cum_1', 'ahegao')
+            $ lunCG('open_tongue', 'mad', 'angry', 'ahegao', extra_1='cum_1')
             ">With that, you start unloading into Luna's pussy."
             $ lunCG('open_tongue', 'angry', 'mad', 'ahegao')
             lun "a-a-ahh..... soo... goooood..."
@@ -1253,7 +1253,7 @@ label ll_pf_sex_T1_ton_2: # Call label
             $ lunCG('open_tongue', 'seductive', 'sad', 'up')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             g4 "Ugh... here it is you little whore!"
-            $ lunCG('open_tongue', 'seductive', 'sad', extra_1='cum_3', 'dick')
+            $ lunCG('open_tongue', 'seductive', 'sad', 'dick', extra_1='cum_3')
             call ton_main("...","horny","base","base","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
             $ lunCG('open_tongue', 'angry', 'sad', 'up')
@@ -1370,7 +1370,7 @@ label ll_pf_sex_bedroom:
     lun "Ah... The wrackspurts... they're going wild..."
     $ lunCG('base', 'tired', 'sad', 'dl')
     lun "Ah... It's... incredible..."
-    $ lunCG('open_tongue', 'seductive', 'sad', extra_2='speed', 'dr')
+    $ lunCG('open_tongue', 'seductive', 'sad', 'dr', extra_2='speed')
     lun "Being in control like this" #Show speed effect
     $ lunCG('base', 'angry', 'sad', 'right')
     lun "Not to mention..."
@@ -1381,7 +1381,7 @@ label ll_pf_sex_bedroom:
     $ lunCG('base', 'excited', 'sad', 'up')
     lun "it's incredible..."
     m "Mmmm..."
-    $ lunCG('talk', 'base', 'sad', extra_2='blank', 'ur')
+    $ lunCG('talk', 'base', 'sad', 'ur', extra_2='blank')
     lun "The wrackspurts... they-"
     m "(Not these things again... Better change the subject.)"
     menu:
@@ -1499,7 +1499,7 @@ label ll_pf_sex_bedroom:
     $ lunCG('talk', 'furious', 'sad', 'up')
     lun "Luna's eyes roll upwards into her head as the pleasure proves too much for her."
     g9 "Take this you greedy little whore!"
-    $ lunCG('open_tongue', 'wide', 'sad', extra_2='cum_1', 'dick')
+    $ lunCG('open_tongue', 'wide', 'sad', 'dick', extra_2='cum_1')
     ">You begin to unload a gigantic load into the gleeful girl as she is almost too enamored in her own lust to notice."
     $ lunCG('open', 'angry', 'sad', 'ahegao')
     lun "ah..."

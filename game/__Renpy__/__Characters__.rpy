@@ -116,7 +116,7 @@ init python:
 
     ### TEACHERS ###
     sna = Character('Severus Snape')
-    ton = Character('Tonks')
+    ton = Character('[tonks_name]')
     spo = Character('Professor Sprout')
     hoo = Character('Madam Hooch')
     ### Other Characters ###

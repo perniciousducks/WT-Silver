@@ -682,25 +682,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.with_statement(Dissolve(0.5))
 
     def lunCG(mouth=None, eye=None, eyebrow=None, pupil=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None, overlay=None):
-        global lun_cg_body
-        global lun_cg_overlay
-        global lun_cg_hair
-        global lun_cg_cheeks
-        global lun_cg_mouth
-        global lun_cg_eyewhite
-        global lun_cg_eyewear
-        global lun_cg_pupil
-        global lun_cg_eye
-        global lun_cg_eyebrow
-        global lun_cg_eyewear
-        global lun_cg_tears
-        global lun_cg_hairtop
-        global lun_cg_extra_1
-        global lun_cg_extra_2
-        global lun_cg_extra_3
-        global lun_cg_xpos
-        global lun_cg_ypos
-        global lun_cg_dick
+        global lun_cg_body, lun_cg_overlay, lun_cg_hair, lun_cg_cheeks, lun_cg_mouth, lun_cg_eyewhite, lun_cg_eyewear, lun_cg_pupil, lun_cg_eye, lun_cg_eyebrow, lun_cg_eyewear, lun_cg_tears, lun_cg_hairtop, lun_cg_extra_1, lun_cg_extra_2, lun_cg_extra_3, lun_cg_xpos, lun_cg_ypos, lun_cg_dick
 
         ###HIDE OLD SCREEN
         renpy.hide_screen("luncg")
@@ -713,32 +695,32 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
         lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
 
-        if cheeks is not None and is not "":
+        if cheeks:
             lun_cg_cheeks = lun_cg_path+"c_"+str(cheeks)+".png"
-        if mouth is not None and is not "":
+        if mouth:
             lun_cg_mouth = lun_cg_path+"m_"+str(mouth)+".png"
-        if eye is not None and is not "":
+        if eye:
             lun_cg_eye = lun_cg_path+"eye_"+str(eye)+".png"
-        if eyebrow is not None and is not "":
+        if eyebrow:
             lun_cg_eyebrow = lun_cg_path+"eb_"+str(eyebrow)+".png"
-        if pupil is not None and is not "":
+        if pupil:
             lun_cg_pupil = lun_cg_path+"pup_"+str(pupil)+".png"
-        if tears is not None:
+        if tears:
             lun_cg_tears = lun_cg_path+str(tears)+".png"
-        if extra_1 is not None:
+        if extra_1:
             lun_cg_extra_1 = lun_cg_path+str(extra_1)+".png"
-        if extra_2 is not None:
+        if extra_2:
             lun_cg_extra_2 = lun_cg_path+str(extra_2)+".png"
-        if extra_3 is not None:
+        if extra_3:
             lun_cg_extra_3 = lun_cg_path+str(extra_3)+".png"
-        if xpos is not None:
+        if xpos:
             lun_cg_xpos = xpos
-        if ypos is not None:
+        if ypos:
             lun_cg_ypos = ypos
-        if overlay is not None:
+        if overlay:
             lun_cg_overlay = lun_cg_path+str(overlay)+".png"
 
-        if pos is not None:
+        if pos != None:
             lun_cg_xpos = lun_loop_xpos[pos]
             lun_cg_ypos = lun_loop_ypos[pos]
             lun_cg_dick = lun_cg_path+"dick_"+str(pos)+".png"

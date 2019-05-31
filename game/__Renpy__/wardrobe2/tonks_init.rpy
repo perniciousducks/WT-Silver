@@ -12,6 +12,10 @@ label tonks_wardrobe_init:
             tonks_class.outfits = []
             
             tonks_hair_base = cloth_class(char="tonks", category="head", subcat="hair", type="hair", id="base", layers=1, color=[[243, 158, 189, 255]])
+            
+            tonks_cloth_top_auror = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror", layers=2, color=[[28, 27, 31, 255], [124, 42, 50, 255]])
+            
+            tonks_cloth_jeans = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="jeans", layers=1, color=[[51, 104, 105, 255]])
         
             ################
             #              #
@@ -20,9 +24,11 @@ label tonks_wardrobe_init:
             ################
         
             tonks_class.body = {
+                        "handleft":    ["characters/tonks/body/arms/armfixL.png", 40, 0, 0, False],
+                        "handright":   ["characters/tonks/body/arms/armfixR.png", 40, 0, 0, False],
                         "armleft":     ["l_arm_hips", 18, 0, 0, False],
                         "armright":    ["r_arm_hips", 5, 0, 0, False],
-                        "breasts":     ["boobs_1", 6, 0, 0, False],
+                        "breasts":     [None, 6, 0, 0, False],
                         "base":        ["base_01", 3, 0, 0, False],
                         "legs":        [None, 2, 0, 0, False],
                         "animation":   [None, 2, 0, 0, False]}
@@ -49,9 +55,9 @@ label tonks_wardrobe_init:
                         "neckwear":   [None, 17, 0, 0, False],
                         "robe":       [None, 21, 0, 0, False],
                         "gloves":     [None, 20, 0, 0, False],
-                        "top":        [None, 19, 0, 0, False],
+                        "top":        [tonks_cloth_top_auror, 19, 0, 0, False],
                         "bra":        [None, 18, 0, 0, False],
-                        "bottom":     [None, 16, 0, 0, False],
+                        "bottom":     [tonks_cloth_jeans, 16, 0, 0, False],
                         "garterbelt": [None, 15, 0, 0, False],
                         "panties":    [None, 14, 0, 0, False],
                         "stockings":  [None, 13, 0, 0, False],

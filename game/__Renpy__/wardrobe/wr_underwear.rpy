@@ -15,9 +15,6 @@ label equip_bra:
     #Susan
     if active_girl == "susan":
         jump equip_sus_bra
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_bra
 
 
 ### Equip Hermione's Bra ###
@@ -318,14 +315,6 @@ label equip_sus_bra:
 
     jump return_to_wardrobe
 
-### Equip Tonks's Bra ###
-label equip_ton_bra:
-    call set_ton_bra(underwear_choice)
-
-    jump return_to_wardrobe
-
-
-
 ### Equip Onepiece ###
 label equip_onepiece:
 
@@ -341,9 +330,6 @@ label equip_onepiece:
     #Susan
     if active_girl == "susan":
         jump equip_sus_onepiece
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_onepiece
 
 ### Equip Hermione's OnePiece/Nighty ###
 label equip_her_onepiece:
@@ -369,14 +355,6 @@ label equip_sus_onepiece:
 
     jump return_to_wardrobe
 
-### Equip Tonks's OnePiece/Nighty ###
-label equip_ton_onepiece:
-    call set_ton_onepiece(underwear_choice)
-
-    jump return_to_wardrobe
-
-
-
 ### Equip Panties ###
 label equip_panties:
 
@@ -392,9 +370,6 @@ label equip_panties:
     #Susan
     if active_girl == "susan":
         jump equip_sus_panties
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_panties
 
 ### Equip Hermione's Panties ###
 label equip_her_panties:
@@ -658,14 +633,6 @@ label equip_sus_panties:
 
     jump return_to_wardrobe
 
-### Equip Tonks's Panties ###
-label equip_ton_panties:
-    call set_ton_panties(underwear_choice)
-
-    jump return_to_wardrobe
-
-
-
 ### Equip Garterbelt ###
 label equip_garterbelt:
 
@@ -681,9 +648,6 @@ label equip_garterbelt:
     #Susan
     if active_girl == "susan":
         jump equip_sus_garterbelt
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_garterbelt
 
 ### Equip Hermione's Garterbelt ###
 label equip_her_garterbelt:
@@ -706,11 +670,5 @@ label equip_ast_garterbelt:
 ### Equip Susan's Garterbelt ###
 label equip_sus_garterbelt:
     call set_sus_garterbelt(underwear_choice)
-
-    jump return_to_wardrobe
-
-### Equip Tonks's Garterbelt ###
-label equip_ton_garterbelt:
-    call set_ton_garterbelt(underwear_choice)
 
     jump return_to_wardrobe

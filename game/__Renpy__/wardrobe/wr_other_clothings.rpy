@@ -23,9 +23,6 @@ label equip_neckwear:
     #Susan
     if active_girl == "susan":
         jump equip_sus_neckwear
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_neckwear
 
 ### Equip Hermione's Neckwear ###
 label equip_her_neckwear:
@@ -51,14 +48,6 @@ label equip_sus_neckwear:
 
     jump return_to_wardrobe
 
-### Equip Tonks's Neckwear ###
-label equip_ton_neckwear:
-    call set_ton_neckwear(neckwear_choice)
-
-    jump return_to_wardrobe
-
-
-
 ### Gloves Equip ###
 label equip_gloves:
 
@@ -74,9 +63,6 @@ label equip_gloves:
     #Susan
     if active_girl == "susan":
         jump equip_sus_gloves
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_gloves
 
 ### Equip Hermione's Gloves ###
 label equip_her_gloves:
@@ -102,14 +88,6 @@ label equip_sus_gloves:
 
     jump return_to_wardrobe
 
-### Equip Tonks's Gloves ###
-label equip_ton_gloves:
-    call set_ton_gloves(gloves_choice)
-
-    jump return_to_wardrobe
-
-
-
 ### Body Accs Equip ###
 label equip_body_accessory:
 
@@ -125,9 +103,6 @@ label equip_body_accessory:
     #Susan
     #if active_girl == "susan":
         #jump equip_sus_body_accessory
-    #Tonks
-    #if active_girl == "ton":
-        #jump equip_ton_body_accessory
 
 ### Equip Hermione's Body Accessory ###
 label equip_her_body_accessory:
@@ -257,9 +232,6 @@ label equip_stockings:
     #Susan
     if active_girl == "susan":
         jump equip_sus_stockings
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_stockings
 
 ### Equip Hermione's Stockings ###
 label equip_her_stockings:
@@ -285,13 +257,6 @@ label equip_sus_stockings:
 
     jump return_to_wardrobe
 
-### Equip Tonks's Stockings ###
-label equip_ton_stockings:
-    call set_ton_stockings(stockings_choice)
-
-    jump return_to_wardrobe
-
-
 
 ### Robe Equip ###
 label equip_robe:
@@ -308,9 +273,6 @@ label equip_robe:
     #Susan
     if active_girl == "susan":
         jump equip_sus_robe
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_robe
 
 ### Equip Hermione's Robe ###
 label equip_her_robe:
@@ -333,11 +295,5 @@ label equip_ast_robe:
 ### Equip Susan's Robe ###
 label equip_sus_robe:
     call set_sus_robe(robe_choice)
-
-    jump return_to_wardrobe
-
-### Equip Tonks's Robe ###
-label equip_ton_robe:
-    call set_ton_robe(robe_choice)
 
     jump return_to_wardrobe

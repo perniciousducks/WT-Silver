@@ -368,7 +368,7 @@ label bugfix_menu:
             call reset_susan_clothing
             $ cho_class.animation(None)
             $ cho_class.wear("all")
-            call reset_tonks_clothing
+            #call reset_tonks_clothing
             ">Appearance of each girl set back to default."
             jump bugfix_menu
         "-Reset Cho public and personal favours-" if cho_unlocked:

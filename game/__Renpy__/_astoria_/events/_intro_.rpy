@@ -340,11 +340,6 @@ label tonks_intro_event: #occurs a day or two after the last event
     g9 "(Better to just let my charm play...)"
     m "Yes... come in."
 
-    $ ton_request_wear_robe = True
-    $ ton_robe = "auror_coat"
-
-    call update_tonks_uniform
-
     call play_sound("door")
     call ton_main("","base","base","base","mid",xpos="right",ypos="base")
     call ctc

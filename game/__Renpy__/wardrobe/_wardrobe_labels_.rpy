@@ -98,8 +98,6 @@ label return_to_wardrobe:
             call ast_main(face="neutral",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
             call sus_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
-        if active_girl == "tonks":
-            call ton_main(face="horny",xpos="wardrobe",ypos="base",trans="fade")
 
         $ hide_transitions = True
         call screen wardrobe
@@ -115,8 +113,6 @@ label return_to_wardrobe:
             call ast_main(face="neutral",xpos="wardrobe",ypos="base")
         if active_girl == "susan":
             call sus_main(face="happy",xpos="wardrobe",ypos="base")
-        if active_girl == "tonks":
-            call ton_main(face="horny",xpos="wardrobe",ypos="base")
 
         call screen wardrobe
 
@@ -133,8 +129,6 @@ label update_wardrobe_color:
         call ast_main(xpos="wardrobe",ypos="base")
     if active_girl == "susan":
         call sus_main(xpos="wardrobe",ypos="base")
-    if active_girl == "tonks":
-        call ton_main(xpos="wardrobe",ypos="base")
 
     hide screen main_room_menu
     call screen wardrobe
@@ -199,9 +193,6 @@ label wardrobe_update:
     if active_girl == "susan":
         call wr_sus_clothing_reset
         call sus_main(xpos="wardrobe",ypos="base")
-    if active_girl == "tonks":
-        call wr_ton_clothing_reset
-        call ton_main(xpos="wardrobe",ypos="base")
 
     hide screen main_room_menu
     call screen wardrobe
@@ -284,26 +275,6 @@ label wr_sus_clothing_reset:
 
     return
 
-label wr_ton_clothing_reset:
-    #Reload Clothing
-    call load_tonks_clothing_saves
-
-    #Qol stuff
-    if wardrobe_page != 6:
-        pass
-    #    if cho_action != "none":
-    #        $ cho_use_action = True
-    else: #Underwear page Qol
-        $ tonks_wear_robe = False
-        $ tonks_wear_top = False
-        $ tonks_wear_bottom = False
-
-    call update_tonks_uniform
-
-    return
-
-
-
 ### CLOSE WARDROBE LABELS ###
 
 label hide_wardrobe:
@@ -333,9 +304,6 @@ label close_wardrobe:
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
         jump susan_requests
-    if active_girl == "tonks":
-        call ton_main(xpos="base",ypos="base")
-        jump tonks_requests
 
 ### Pose/Action ###
 
@@ -751,11 +719,6 @@ label her_tattoos_toggle:
 label equip_piercing:
     if active_girl == "hermione":
         call set_her_piercing(piercing_choice)
-    if active_girl == "tonks":
-        call set_ton_piercing(piercing_choice)
-        call ton_main(mouth="open_wide_tongue", face="horny",xpos="wardrobe",ypos="base")
-        call ctc
-
     jump return_to_wardrobe
 
 

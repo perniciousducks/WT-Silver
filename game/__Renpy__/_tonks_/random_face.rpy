@@ -1,6 +1,6 @@
 
 
-label set_ton_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
+label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=None):
     hide screen tonks_main
 
     $ temp_mouth    = None
@@ -42,18 +42,18 @@ label set_ton_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         elif eyes in ["angry"]:
             $ temp_eyes     = renpy.random.choice(["base"])
 
-    if brows != None:
-        if brows in ["neutral"]:
+    if eyebrows != None:
+        if eyebrows in ["neutral"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
-        elif brows in ["happy"]:
+        elif eyebrows in ["happy"]:
             $ temp_eyebrows = renpy.random.choice(["base","raised"])
-        elif brows in ["naughty","horny"]:
+        elif eyebrows in ["naughty","horny"]:
             $ temp_eyebrows = renpy.random.choice(["raised","angry"])
-        elif brows in ["annoyed"]:
+        elif eyebrows in ["annoyed"]:
             $ temp_eyebrows = renpy.random.choice(["base","angry"])
-        elif brows in ["disgusted"]:
+        elif eyebrows in ["disgusted"]:
             $ temp_eyebrows = renpy.random.choice(["raised","worried"])
-        elif brows in ["angry"]:
+        elif eyebrows in ["angry"]:
             $ temp_eyebrows = renpy.random.choice(["angry"])
 
     if pupils != None:
@@ -76,14 +76,14 @@ label set_ton_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         $ temp_mouth    = renpy.random.choice(ton_mouth_layers)
     elif change in ["eyes"]:
         $ temp_eyes     = renpy.random.choice(ton_eye_layers)
-    elif change in ["brows"]:
+    elif change in ["eyebrows"]:
         $ temp_eyebrows = renpy.random.choice(ton_brow_layers)
     elif change in ["pupils"]:
         $ temp_pupils   = renpy.random.choice(ton_pupil_layers)
 
     #Mood specific
     elif change in ["all","random"]:
-        call set_ton_face(mouth="naughty",eyes="happy",brows="happy",pupils="happy")
+        call set_ton_face(mouth="naughty",eyes="happy",eyebrows="happy",pupils="happy")
 
     python:
         tonks_class.expression(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)

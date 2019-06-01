@@ -19,9 +19,6 @@ label equip_makeup:
     #Susan
     #if active_girl == "susan":
         #jump equip_sus_makeup
-    #Tonks
-    #if active_girl == "tonks":
-        #jump equip_ton_makeup
 
 
 ### Equip Hermione's Makeup ###
@@ -191,9 +188,6 @@ label equip_head_accessory:
     #Susan
     if active_girl == "astoria":
         jump equip_sus_head_accessory
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_head_accessory
 
 ### Equip Hermione's Head Accessory ###
 
@@ -446,18 +440,5 @@ label equip_sus_head_accessory:
         #call set_sus_glasses(head_accessory_choice)
     if head_accessory_choice in []:
         call set_sus_hat(head_accessory_choice)
-
-    jump return_to_wardrobe
-
-### Equip Tonks's Accessory ###
-label equip_ton_head_accessory:
-    #if head_accessory_choice in []:
-        #call set_ton_ears(head_accessory_choice)
-    #if head_accessory_choice in []:
-        #call set_ton_glasses(head_accessory_choice)
-    if head_accessory_choice in ["gimp_mask_1","gimp_mask_2","gimp_mask_3","gimp_mask_4","gimp_mask_5"]:
-        call set_ton_mask(head_accessory_choice)
-    if head_accessory_choice in ["hat_witch","hat_maid","paper_bag_1","paper_bag_2","paper_bag_3"]:
-        call set_ton_hat(head_accessory_choice)
 
     jump return_to_wardrobe

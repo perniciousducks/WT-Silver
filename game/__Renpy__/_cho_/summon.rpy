@@ -13,7 +13,6 @@ label summon_cho:
     $ cho_busy = True
 
     call cho_main(xpos="base",ypos="base")
-
     $ hide_transitions = False
 
     menu:

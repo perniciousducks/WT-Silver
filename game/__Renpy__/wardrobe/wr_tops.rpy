@@ -14,9 +14,6 @@ label equip_top:
     #Susan
     if active_girl == "susan":
         jump equip_sus_top
-    #Tonks
-    if active_girl == "tonks":
-        jump equip_ton_top
 
 
 ### Equip Hermione's Top ###
@@ -860,11 +857,5 @@ label equip_ast_top:
 ### Equip Susan's Top ###
 label equip_sus_top:
     call set_sus_top(top_choice)
-
-    jump return_to_wardrobe
-
-### Equip Tonks's Top ###
-label equip_ton_top:
-    call set_ton_top(top_choice)
 
     jump return_to_wardrobe

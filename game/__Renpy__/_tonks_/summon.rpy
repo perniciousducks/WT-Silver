@@ -9,8 +9,11 @@ label summon_tonks:
 
     label tonks_requests:
 
-    $ hide_transitions = False
+    $ active_girl = "tonks"
     $ tonks_busy = True
+    
+    call ton_main(xpos="base",ypos="base")
+    $ hide_transitions = False
 
     menu:
 
@@ -84,16 +87,8 @@ label summon_tonks:
 
         # Wardrobe
         "-Wardrobe-" if tonks_wardrobe_unlocked:
-            $ active_girl = "tonks"
-
-            call load_tonks_clothing_saves
-
-            call reset_wardrobe_vars
-            call update_wr_color_list
-
-            $ hide_transitions = True
-            call ton_main(xpos="wardrobe",ypos="base")
-            call screen wardrobe
+            call ton_main(xpos="wardrobe",ypos="base", face="neutral")
+            call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
 
         "{color=#858585}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
@@ -122,6 +117,7 @@ label summon_tonks:
             call play_sound("door")
 
             $ tonks_busy = True
+            $ tonks_class.wear("all")
 
             jump main_room
 
@@ -136,7 +132,7 @@ label tonks_talk:
             g9 "Make them sluttier!"
             call ton_main("Let me see...","base","base","base","down")
 
-            call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
+            #call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
             if upgradable_clothing != []:
                 $ ton_clothing_upgrades += 1
                 call ton_main("Oh I really like this one.","open","base","raised","down")
@@ -162,7 +158,7 @@ label tonks_talk:
             hide screen tonks_main
             with d3
 
-            call set_tonks_action("strip_naked")
+            $ tonks_class.strip("all")
             pause.8
 
             call ton_main("Do you like it, [ton_genie_name]?","horny","base","raised","mid")
@@ -180,7 +176,7 @@ label tonks_talk:
             hide screen tonks_main
             with d3
 
-            call set_tonks_action(None)
+            $ tonks_class.wear("all")
             pause.8
 
             call ton_main("...","base","base","base","mid")

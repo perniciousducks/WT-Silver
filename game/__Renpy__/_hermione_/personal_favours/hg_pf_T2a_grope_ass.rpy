@@ -562,7 +562,7 @@ label hg_pf_grope_ass_T3_fail:
 
 ### Tier 4 ###
 
-label hg_pf_grope_ass_4:
+label hg_pf_grope_ass_T4:
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
 
     call her_main("Do you want me to turn around then, [genie_name]?","base","baseL", cheeks="blush", ypos="head")

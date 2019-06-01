@@ -88,7 +88,7 @@ label summon_tonks:
         # Wardrobe
         "-Wardrobe-" if tonks_wardrobe_unlocked:
             call ton_main(xpos="wardrobe",ypos="base", face="neutral")
-            call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
+            call expression 't_wardrobe' pass (return_label="tonks_requests", char_label="ton_main")
 
         "{color=#858585}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")

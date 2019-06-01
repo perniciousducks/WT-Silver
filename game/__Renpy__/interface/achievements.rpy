@@ -29,7 +29,14 @@ init python:
                                    "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
                                    "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
                                    "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True],
-                                   "ending": ["General", "Bittersweet Farewell", "Finished the game.", False, "interface/icons/book_silver.png", True]}
+                                   "ending": ["General", "Bittersweet Farewell", "Finished the game.", False, "interface/icons/book_silver.png", True],
+                                   #1.37 HG achievements
+                                   "NONAMEYET": ["Characters", "BLANK", "BLANK", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "busted": ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "herstrip": ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "headlib": ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "nerdgasm": ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/head_hermione_2.png", False]}
 
     class achievement_class(object):
         achievements = {}

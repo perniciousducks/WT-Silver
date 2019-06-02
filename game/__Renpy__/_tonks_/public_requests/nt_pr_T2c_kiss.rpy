@@ -30,6 +30,33 @@ label tonks_teacher_event_3_repeat: #Repeatable intro
     return
 
 label tonks_teacher_event_3_1: #Level 1 Event 1
+
+    return
+
+label tonks_teacher_event_3_2: #Level 1 Event 2
+
+    return
+    
+label tonks_teacher_event_3_3: #Level 1 Event 3
+    m "Tonks."
+    ton "Dumbledore. Want me to jump straight into the story?"
+    m "By all means."
+    menu: 
+        "-start jerking off-":
+            ">Your arm slips into your robe, grabbing a hold of your cock and gently stroking it back to life."
+            ton "...*tsk*"
+            ton "At least I know I have your attention..."
+            m "Mmmm... undivided."
+
+
+
+    return
+    
+label tonks_teacher_event_3_4: #Level 1 Event 4
+
+    return
+    
+label tonks_teacher_event_3_5: #Level 2 Event 1
     m "How did your extra-curricular activities pan out today?"
     ton "Honestly? I don't think I've ever been as turned on in my life..."
     ton "Fuck... It was incredible... the power I felt over him... it was intoxicating..."
@@ -85,7 +112,7 @@ label tonks_teacher_event_3_1: #Level 1 Event 1
 
     return
 
-label tonks_teacher_event_3_2: #Level 1 Event 2
+label tonks_teacher_event_3_6: #Level 2 Event 2
     m "You're a bit late... Get caught up having fun with your students?"
     ton "Mmmm, and then some..."
     m "I like the sound of that!"
@@ -107,10 +134,10 @@ label tonks_teacher_event_3_2: #Level 1 Event 2
     ton "So, I figured I'd indulge him... I walked over and plonked myself onto his lap, facing towards him..."
     m "Mmmm, did he see that coming."
     ton "No, although it didn't seem to bother him..."
-    ton "He just gazed up at me with this look in his eyes..."
+    ton "He just looked up at me with this look in his eyes..."
     ton "It was too much... I started kissing him just to break our gaze..."
     m "I assume he just sat there, taking it?"
-    ton "Oh no... He may have looked shy... but kissing awoke something in him..."
+    ton "Oh no... He may have seemed shy... but kissing awoke something in him..."
     ton "It was like he wanted to suck my soul out through my mouth... ugh..."
     ton "I've never had attack me with their tongue like that..."
     ton "It was intense... if a little inexperienced..."
@@ -123,12 +150,3 @@ label tonks_teacher_event_3_2: #Level 1 Event 2
     ton "..."
     ton "Thank you, Dumbledore."
     return
-    
-label tonks_teacher_event_3_3: #Level 1 Event 3
-
-    return
-    
-label tonks_teacher_event_3_4: #Level 1 Event 4
-
-    return
-    

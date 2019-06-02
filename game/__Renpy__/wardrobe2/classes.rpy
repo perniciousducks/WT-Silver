@@ -1,11 +1,6 @@
 init python:    
     def get_character_object(key):
-        for key in character_list:
-            try:
-                object = character_list[key]
-            except KeyError:
-                raise Exception('Character "'+key+'" is not defined as a character class')
-            return object
+        return character_list.get(key)
             
     def set_clipboard(txt):
         import pygame.scrap
@@ -45,7 +40,7 @@ init python:
                 self.unlock(True)
                 
         def outfit_export(self, tofile=True, filename="exported"):
-            exported = []
+            exported = [self.group[0].char]
             
             for item in self.group:
                 exported.append([item.id, item.color])
@@ -94,17 +89,18 @@ init python:
                     return (False, renpy.show_screen("popup_window", "Corrupted file!"))
 
                 for item in imported:
-                    for object in character_clothes_list:
-                        if item[0] == object.id:
-                            if object.char == char_active.char:
-                                if not cheats_active:
-                                    if not object.unlocked:
-                                        renpy.block_rollback()
-                                        return (False, renpy.show_screen("popup_window", "Items locked!"))
-                                item[0] = object.clone()
-                                item[0].color = item[1]
-                                item[0].cached = False
-                                group.append(item[0])
+                    if isinstance(item, list):
+                        for object in character_clothes_list:
+                            if item[0] == object.id:
+                                if object.char == char_active.char:
+                                    if not cheats_active:
+                                        if not object.unlocked:
+                                            renpy.block_rollback()
+                                            return (False, renpy.show_screen("popup_window", "Items locked!"))
+                                    item[0] = object.clone()
+                                    item[0].color = item[1]
+                                    item[0].cached = False
+                                    group.append(item[0])
                 if len(group) > 0:
                     renpy.show_screen("popup_window", "Import successful!")     
                     renpy.block_rollback()

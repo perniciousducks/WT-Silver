@@ -1,33 +1,57 @@
-#Favour 3 - Kiss me (Tonks makes-out with her students)
-label tonks_teacher_event_3_intro: #First intro
-    m "Ready to try something a little different?"
-    ton "Mmmm, you bet... This is the most fun I've had in years!"
-    ton "What were you thinking we try out next?"
-    m "What do you think?"
-    ton "I know you shot it down earlier... but I think making-out with them would be really fucking hot..."
-    m "Pfft, you're such a girl."
-    m "You've already gotten to second base, let's not jump back to first!"
-    ton "You don't understand... The way I make-out... It's way more intense than anything these kids will have ever experienced..."
-    m "Hmmmm... So you're not just going to give them a peck on the cheek, are you?"
-    ton "Oh no..."
-    ton "They'll be lucky if they can talk straight after I'm done with them..."
-    m "In that case, you have my permission..."
-    m "Just don't disappoint me with the stories you bring back!"
-    ton "I'll make sure you get your money's worth, don't worry."
-    m "Just see me after class."
-    ton "Yes, sir!"
 
+
+### Kissing ###
+
+# ([ton_name] makes out with her students...)
+
+
+label nt_pr_kiss_start:
+
+    if ton_tier == 1:
+
+        if nt_pr_kiss.points == 0:
+            m "Ready to try something a little different?"
+            ton "Mmmm, you bet... This is the most fun I've had in years!"
+            ton "What were you thinking we try out next?"
+            m "What do you think?"
+            ton "I know you shot it down earlier... but I think making-out with them would be really fucking hot..."
+            m "Pfft, you're such a girl."
+            m "You've already gotten to second base, let's not jump back to first!"
+            ton "You don't understand... The way I make-out... It's way more intense than anything these kids will have ever experienced..."
+            m "Hmmmm... So you're not just going to give them a peck on the cheek, are you?"
+            ton "Oh no..."
+            ton "They'll be lucky if they can talk straight after I'm done with them..."
+            m "In that case, you have my permission..."
+            m "Just don't disappoint me with the stories you bring back!"
+            ton "I'll make sure you get your money's worth, don't worry."
+            m "Just see me after class."
+            ton "Yes, sir!"
+
+        else:
+
+            m "Fancy another student-snog-session?"
+            ton "Mmmm, you bet... It's my job to teach these kids..."
+            ton "Even if that lesson is French Kissing..."
+            m "Well, don't let me stop you."
+            ton "Thank you, sir..."
+
+    elif ton_tier >= 2:
+
+        if nt_pr_kiss.points == 0: # Tell her to be even lewder for the next level of favors.
+
+            "Dev Note" "Write 2nd intro."
+
+        else: # Repeat
+            m "Would you like to help your students with their oral skills again?"
+            ton "Mmmm, yes... Some of these kids are in dire need of some practice..."
+            g9 "Then go and practice with them!"
+            ton "I will, [ton_genie_name]..."
 
     return
 
-label tonks_teacher_event_3_repeat: #Repeatable intro
-    m "Fancy another student-snog-session?"
-    ton "Mmmm, you bet... It's my job to teach these kids..."
-    ton "Even if that lesson is French Kissing..."
-    m "Well, don't let me stop you."
-    ton "Thank you, sir..."
 
-    return
+
+### Tier 1 ###
 
 label tonks_teacher_event_3_1: #Level 1 Event 1
 
@@ -36,12 +60,12 @@ label tonks_teacher_event_3_1: #Level 1 Event 1
 label tonks_teacher_event_3_2: #Level 1 Event 2
 
     return
-    
+
 label tonks_teacher_event_3_3: #Level 1 Event 3
-    m "Tonks."
-    ton "Dumbledore. Want me to jump straight into the story?"
+    m "[ton_name]."
+    ton "[ton_genie_name]. Want me to jump straight into the story?"
     m "By all means."
-    menu: 
+    menu:
         "-start jerking off-":
             ">Your arm slips into your robe, grabbing a hold of your cock and gently stroking it back to life."
             ton "...*tsk*"
@@ -51,11 +75,11 @@ label tonks_teacher_event_3_3: #Level 1 Event 3
 
 
     return
-    
+
 label tonks_teacher_event_3_4: #Level 1 Event 4
 
     return
-    
+
 label tonks_teacher_event_3_5: #Level 2 Event 1
     m "How did your extra-curricular activities pan out today?"
     ton "Honestly? I don't think I've ever been as turned on in my life..."
@@ -66,34 +90,37 @@ label tonks_teacher_event_3_5: #Level 2 Event 1
     ton "The boy."
     m "Yep, I think I remember them..."
     ton "I asked them to stay back after classes again... Even if it was by staring at them during class..."
-    ton "Either way... He knew he had to stay behind to play with \'auntie\' tonks..."
+    ton "Either way... He knew he had to stay behind to play with \"auntie\" Tonks..."
     m "Kinky..."
     ton "Mmmm, I walked over to him slowly... Making sure I savored that frightened look on his face..."
     ton "Then, I got to his desk... I was half expecting him to blabber on about not deserving to be there..."
     ton "But today he just looked up at me with a delectable mix of fear and anticipation..."
+
+    # Genie starts jerking off
+
     ">Unable to help yourself any longer, you start to inconspicuously stroke your cock under your desk."
-    ton "...{w}*tsk*tsk*tsk*{w}Couldn't help yourself, could you?"
+    ton "*tsk* *tsk* *tsk*...{w} Couldn't help yourself, could you?"
     m "Can you blame me?"
     ton "I suppose not..."
     ton "Anyway, back to that cute little thing..."
     ton "Eventually I'd had enough of his eager expression..."
     ton "I pounced upon him... Sitting down on his lap, pinning him to his chair and forcing my chest into his..."
-    ton "I could feel his heartbeat... It so fast... Like a mouse..."
-    ton "Whispering in his ear I made sure I asked if he wanted a little kiss..."
-    ton "Letting him know I'd pay him plenty of points..."
+    ton "I could feel his heartbeat... It was so fast... Like a mouse..."
+    ton "Whispering in his ear I asked if he wanted a little kiss..."
+    ton "Making sure to let him know that I'd pay him plenty of points..."
     ton "Just for a kiss..."
     m "Mmmmm..."
     ton "Of course he said yes... Even if it was so faint I could barely hear it..."
     ton "But once he said it... I was on him..."
     ton "I pinned him down as I held his head in place..."
     ton "Ugh... My tongue was going crazy..."
-    ton "I'm not sure if you remember this from school, sir, but I'm an Metamorphmagus..."
+    ton "I'm not sure if you remember this from school, sir, but I'm an Metamorphmagus..." # Note: I'd wait with adding Tonks' abilities and reserve them for the 2nd level of favors (longer tongue, bigger breasts,...)
     ton "Normally I just use that to blend in or for jokes..."
     ton "But sometimes I use it to... Play around..."
     ton "And all the excitement today may have caused me to lose control of my tongue..."
     m "Lose control of your tongue?"
     ton "Ugh... it was so long..."
-    ton "It was like I was fucking that poor boys mouth with it..."
+    ton "It was like I was fucking that poor boys mouth with it..." # Note: This section is a bit too extreme for the first level.
     ton "I wrapped his tongue in mine... stuck it down his throat..."
     ton "Ugh... I even licked his face clean..."
     ton "By the time I was done there wasn't a dry spot on his face..."
@@ -102,6 +129,9 @@ label tonks_teacher_event_3_5: #Level 2 Event 1
     m "That's it..."
     ton "I thought he'd like it... but there were so many tears-"
     g9 "UGH... THERE IT IS!!!"
+
+    # Genie cums
+
     ">You begin firing a load of under your desk, making a dull thud with each blast hitting against the backboard..."
     ton "Mmmm, looks like you enjoyed our little lesson as well..."
     m "Ugh... can you blame me? That was... Ugh..."
@@ -119,11 +149,11 @@ label tonks_teacher_event_3_6: #Level 2 Event 2
     m "Now, care to elaborate?"
     ton "Alright then, you old perv..."
     ton "Today was that shy, horny \"ravenclaw\" boy..."
-    m "The one who stayed behind by himself?"
+    m "The one who stayed behind by himself?" # Note: If the favors don't reference each other in such a direct way, we could make bother "tough" and "kiss" available at the same time, playable independently to each other.
     ton "Yep..."
     ton "Ugh... he made the classic school boy mistake today..."
     m "Which is?"
-    ton "Calling your teacher \'Mommy\'"
+    ton "Calling your teacher \"Mommy\"."
     m "hahaha! Really?"
     m "I bet he copped it for that!"
     ton "Surprisingly not... Everyone just sort of went quiet."
@@ -139,14 +169,14 @@ label tonks_teacher_event_3_6: #Level 2 Event 2
     m "I assume he just sat there, taking it?"
     ton "Oh no... He may have seemed shy... but kissing awoke something in him..."
     ton "It was like he wanted to suck my soul out through my mouth... ugh..."
-    ton "I've never had attack me with their tongue like that..."
+    ton "I've never had someone attack me with their tongue like that..."
     ton "It was intense... if a little inexperienced..."
-    ton "But my god... the most fun I've had in years!"
+    ton "But my god... the most fun I've had in years!" # They don't really say "my god" in HP or reference god. "Merlin" is their stand in for that.
     m "And what, you made out for a few minutes and sent him on his way?"
     ton "A few minutes? Why do you think I'm so late?"
     m "Wait... You mean to tell me you spent all afternoon, french kissing one of your students?"
     ton "I didn't think it'd-"
-    m "I'm very proud. Good work, Tonks."
+    m "I'm very proud. Good work, [ton_name]."
     ton "..."
-    ton "Thank you, Dumbledore."
+    ton "Thank you, [ton_genie_name]."
     return

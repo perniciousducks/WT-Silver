@@ -74,171 +74,188 @@ image newanimation:
 
 ### Paperwork ###
 image paperwork_02: #Genie working behind his desk.
-    "images/animation/working_01.png"
+    "characters/genie/chibis/working/01.png"
     pause.15
-    "images/animation/working_02.png"
+    "characters/genie/chibis/working/02.png"
     pause.15
-    "images/animation/working_01.png"
+    "characters/genie/chibis/working/01.png"
     pause.15
-    "images/animation/working_02.png"
+    "characters/genie/chibis/working/02.png"
     pause.15
-    "images/animation/working_01.png"
+    "characters/genie/chibis/working/01.png"
     pause.15
-    "images/animation/working_02.png"
+    "characters/genie/chibis/working/02.png"
     pause 1
-    "images/animation/working_03.png"
+    "characters/genie/chibis/working/03.png"
     pause.15
-    "images/animation/working_04.png"
+    "characters/genie/chibis/working/04.png"
     pause.15
-    "images/animation/working_05.png"
+    "characters/genie/chibis/working/05.png"
     pause.15
-    "images/animation/working_06.png"
+    "characters/genie/chibis/working/06.png"
     pause.15
-    "images/animation/working_05.png"
+    "characters/genie/chibis/working/05.png"
     pause.15
-    "images/animation/working_06.png"
+    "characters/genie/chibis/working/06.png"
     pause.15
-    "images/animation/working_05.png"
+    "characters/genie/chibis/working/05.png"
     pause.15
-    "images/animation/working_06.png"
+    "characters/genie/chibis/working/06.png"
     pause 1
-    "images/animation/working_07.png"
+    "characters/genie/chibis/working/07.png"
     pause.15
-    "images/animation/working_08.png"
+    "characters/genie/chibis/working/08.png"
     pause.15
-    "images/animation/working_09.png"
+    "characters/genie/chibis/working/09.png"
     pause.15
-    "images/animation/working_08.png"
+    "characters/genie/chibis/working/08.png"
     pause.15
-    "images/animation/working_07.png"
+    "characters/genie/chibis/working/07.png"
     pause.15
-    "images/animation/working_08.png"
+    "characters/genie/chibis/working/08.png"
     pause.15
-    "images/animation/working_09.png"
+    "characters/genie/chibis/working/09.png"
     pause.15
-    "images/animation/working_08.png"
+    "characters/genie/chibis/working/08.png"
     pause.15
-    "images/animation/working_03.png"
+    "characters/genie/chibis/working/03.png"
     pause.15
-    "images/animation/working_02.png"
+    "characters/genie/chibis/working/02.png"
     pause.15
     repeat
 
 
 ### Reading ###
 image reading: #Genie reading.
-    im.Flip("images/animation/reading_01.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/01.png", horizontal=True)
     pause 2
-    im.Flip("images/animation/reading_06.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/06.png", horizontal=True)
     pause.15
-    im.Flip("images/animation/reading_05.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/05.png", horizontal=True)
     pause.15
-    im.Flip("images/animation/reading_04.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/04.png", horizontal=True)
     pause.15
-    im.Flip("images/animation/reading_03.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/03.png", horizontal=True)
     pause.15
-    im.Flip("images/animation/reading_02.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/02.png", horizontal=True)
     pause.15
-    im.Flip("images/animation/reading_01.png", horizontal=True)
+    im.Flip("characters/genie/chibis/reading/01.png", horizontal=True)
     pause 2
     repeat
 
 image reading_near_fire: #Genie reading near the fireplace.
-    "images/animation/reading_01.png"
+    "characters/genie/chibis/reading/01.png"
     pause 2
-    "images/animation/reading_06.png"
+    "characters/genie/chibis/reading/06.png"
     pause.15
-    "images/animation/reading_05.png"
+    "characters/genie/chibis/reading/05.png"
     pause.15
-    "images/animation/reading_04.png"
+    "characters/genie/chibis/reading/04.png"
     pause.15
-    "images/animation/reading_03.png"
+    "characters/genie/chibis/reading/03.png"
     pause.15
-    "images/animation/reading_02.png"
+    "characters/genie/chibis/reading/02.png"
     pause.15
-    "images/animation/reading_01.png"
+    "characters/genie/chibis/reading/01.png"
     pause 2
+    repeat
+
+
+### Drinking ###
+image genie_toast_goblet: # Genie sitting in front of fireplace, left sire.
+    "characters/genie/chibis/drinking/01.png"
+    pause 2
+    "characters/genie/chibis/drinking/02.png"
+    pause.2
+    "characters/genie/chibis/drinking/03.png"
+    pause.2
+    "characters/genie/chibis/drinking/04.png"
+    pause 1
+    "characters/genie/chibis/drinking/03.png"
+    pause.2
+    "characters/genie/chibis/drinking/01.png"
+    pause 3
     repeat
 
 
 ### Jerking Off ###
 image genie_jerking_off: #Genie sitting behind his desk and jerking off...
-    "images/animation/jerking_off_01.png"
+    "characters/genie/chibis/masturbating/desk_01.png"
     pause.2
-    "images/animation/jerking_off_02.png"
+    "characters/genie/chibis/masturbating/desk_02.png"
     pause.2
-    "images/animation/jerking_off_03.png"
+    "characters/genie/chibis/masturbating/desk_03.png"
     pause.2
-    "images/animation/jerking_off_02.png"
+    "characters/genie/chibis/masturbating/desk_02.png"
     pause.2
     repeat
 
 image genie_jerking_sperm_ani: #Sperm after jerking off.
-    "images/animation/jerking_sperm_01.png"
+    "characters/genie/chibis/masturbating/desk_sperm_01.png"
     pause.1
-    "images/animation/jerking_sperm_02.png"
+    "characters/genie/chibis/masturbating/desk_sperm_02.png"
     pause.1
-    "images/animation/jerking_sperm_03.png"
+    "characters/genie/chibis/masturbating/desk_sperm_03.png"
     pause.1
-    "images/animation/jerking_sperm_04.png"
+    "characters/genie/chibis/masturbating/desk_sperm_04.png"
     pause.1
-    "images/animation/jerking_sperm_05.png"
+    "characters/genie/chibis/masturbating/desk_sperm_05.png"
     pause.1
-    "images/animation/jerking_sperm_06.png"
+    "characters/genie/chibis/masturbating/desk_sperm_06.png"
     pause.1
-    "images/animation/jerking_sperm_07.png"
+    "characters/genie/chibis/masturbating/desk_sperm_07.png"
     pause.1
-    "images/animation/jerking_sperm_08.png"
+    "characters/genie/chibis/masturbating/desk_sperm_08.png"
     pause.1
-    "images/animation/jerking_sperm_09.png"
+    "characters/genie/chibis/masturbating/desk_sperm_09.png"
     pause.1
-    "images/animation/jerking_sperm_10.png"
+    "characters/genie/chibis/masturbating/desk_sperm_10.png"
     pause.1
-    "images/animation/jerking_sperm_11.png"
+    "characters/genie/chibis/masturbating/desk_sperm_11.png"
     pause 2
     repeat
 
 ### CUM_02 ###
 image genie_cum_03: #Genie cuming on Hermione after she is done striping.
-    "images/animation/09_cum_01.png"
+    "characters/genie/chibis/masturbating/sperm_wide_01.png"
     pause.1
-    "images/animation/09_cum_02.png"
+    "characters/genie/chibis/masturbating/sperm_wide_02.png"
     pause.1
-    "images/animation/09_cum_03.png"
+    "characters/genie/chibis/masturbating/sperm_wide_03.png"
     pause.1
-    "images/animation/09_cum_04.png"
+    "characters/genie/chibis/masturbating/sperm_wide_04.png"
     pause.1
-    "images/animation/09_cum_05.png"
+    "characters/genie/chibis/masturbating/sperm_wide_05.png"
     pause.1
-    "images/animation/09_cum_06.png"
+    "characters/genie/chibis/masturbating/sperm_wide_06.png"
     pause.1
-    "images/animation/09_cum_07.png"
+    "characters/genie/chibis/masturbating/sperm_wide_07.png"
     pause.1
-    "images/animation/09_cum_08.png"
+    "characters/genie/chibis/masturbating/sperm_wide_08.png"
     pause.1
-    "images/animation/09_cum_09.png"
+    "characters/genie/chibis/masturbating/sperm_wide_09.png"
     pause.1
-    "images/animation/09_cum_10.png"
+    "characters/genie/chibis/masturbating/sperm_wide_10.png"
     pause.1
-    "images/animation/09_cum_11.png"
+    "characters/genie/chibis/masturbating/sperm_wide_11.png"
     pause.1
-    "images/animation/09_cum_12.png"
+    "characters/genie/chibis/masturbating/sperm_wide_12.png"
     pause.1
-    "images/animation/09_cum_13.png"
+    "characters/genie/chibis/masturbating/sperm_wide_13.png"
     pause.1
-    "images/animation/09_cum_14.png"
+    "characters/genie/chibis/masturbating/sperm_wide_14.png"
     pause.1
-    "images/animation/09_cum_15.png"
+    "characters/genie/chibis/masturbating/sperm_wide_15.png"
     pause.1
-    "images/animation/09_cum_16.png"
+    "characters/genie/chibis/masturbating/sperm_wide_16.png"
     pause.1
-    "images/animation/09_cum_17.png"
+    "characters/genie/chibis/masturbating/sperm_wide_17.png"
     pause.1
-    "images/animation/09_cum_18.png"
+    "characters/genie/chibis/masturbating/sperm_wide_18.png"
     pause 2
-    "images/animation/09_cum_19.png"
+    "characters/genie/chibis/masturbating/sperm_wide_19.png"
     pause.1
-    "images/animation/09_cum_20.png"
+    "characters/genie/chibis/masturbating/sperm_wide_20.png"
     pause.1
     "images/animation/00.png"
     pause.5

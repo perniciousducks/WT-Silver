@@ -82,6 +82,8 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             show screen no_groping_01 # Towards Cupboard.
 
     elif action in ["grope_breasts"]:
+        show screen chair_left
+
         if hermione_use_action and hermione_action in ["lift_top"]:
             show screen groping_naked_tits
         else:
@@ -94,6 +96,7 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             show screen groping_01 # Towards Cupboard.
 
     elif action in ["jerk_off"]:
+        show screen chair_left
         show screen jerking_off_01
 
     else:

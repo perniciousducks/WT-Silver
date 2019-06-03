@@ -13,7 +13,6 @@ label start_wt:
     $ current_payout = 0
 
     $ snape_invited_to_watch = False #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
-    $ invited_snape_once_already = False #In the "Dance for me" event, after you send Hermione to invite Snape to watch for the first time - turns TRUE.
 
     $ uni_sperm = False #Triggers universal sperm to show on hermione_main screen.
     $ days_without_an_event = 0 #Counts days since last (any) event took place.
@@ -183,7 +182,7 @@ label start_wt:
             "-Skip to {color=#007f00}AFTER{/color} Hermione events-" if config.developer:
                 $ skip_to_hermione = True
                 $ skip_after_hermione = True
-                
+
 
     show screen achievement_block()
 
@@ -247,7 +246,7 @@ label start_wt:
 
     $ tentacle_cosmetic = False
     $ addicted = False
-    
+
     ### CHEATS / SKIPPING ###
     if skip_duel or skip_to_hermione:
         $ bird_examined = True
@@ -274,7 +273,7 @@ label start_wt:
             $ event13_happened = True #Allows next event to start.
             $ rum_times = 6 #7 unlocks map!
             $ day = 14
-            
+
             if skip_after_hermione:
                 $ hermione_unlocked = True
                 $ achievement.unlock("unlockher", True)

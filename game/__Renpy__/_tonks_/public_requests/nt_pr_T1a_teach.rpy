@@ -2,58 +2,83 @@
 
 ### Tonks Teaching ###
 
-#How these favours will be structured/work very similarly to the public favours for Hermione where you send Tonks off to fool around with a student(s) and then wait
-#for her to return to tell you what happened
-#Each scene will be pretty short but there will be 12 variants for each (4 favours for each of three levels where the levels are determined by Tonk's sluttiness)
+# Detention with Tonks
+# (Tonks gives students detention or lets them stay after class)
+# (Gets to see the boy's dicks, the girl's panties, punishs them,...)
+# (Gives hours points to each of the students)
 
-#Favour 1 - Show it to me (Tonks gets a student to show her his dick)
-label tonks_teacher_event_1_intro: #First time intro
-    ton "So, what's the plan?"
-    m "The plan?"
-    ton "You know, how does this go down?"
-    ton "I'm hardly a regular when it comes to this stuff."
-    m "Let's start small. We'll need to build up a bit of a reputation for you before you start trying anything crazy."
-    ton "A reputation?"
-    ton "Think I'll get a nickname? Maybe they'll call me touchy tonks?"
-    m "Maybe..."
-    ton "So what did you buy off of Hermione on your first favour?"
-    m "Ugh... I think I got her to make a silly face or something..."
-    m "That and getting her to talk to me."
-    ton "Talk to you? You paid her for that? You can get that for free!"
-    m "In that case, the first \"real\" favour I bought was getting her to lift her skirt."
-    ton "That's more like it!"
-    ton "But even though we're in Scotland-"
-    m "(we are?)"
-    ton "None of the boys are wearing skirts..."
-    m "Just get them to show you their dicks then."
-    ton "Show me their dicks... That's good... {p}Can I touch them?"
-    m "Let's just look for now..."
-    ton "Fine... So how many am I allowed to look at?"
-    m "As many as you want..."
-    ton "And how many points am I allowed to give out?"
-    m "Look, I'm not really convinced these points are real..."
-    ton "(what? Can't he see the scoreboard at the top of the screen?)"
-    m "I just say \"Ten points to gryffindor!\" to get these girls to show me their tits..."
-    $ gryffindor += 10
-    m "So as far as I'm concerned, hand out as many as you like."
-    ton "Alright... Well, I better get to class. I've got some boys to {b}teach{/b}..."
-    m "Don't forget to come back here after classes to fill me in."
-    ton "Will do..."
-    #send tonks off
+label nt_pr_teach_start:
+
+    if ton_tier == 1:
+
+        if nt_pr_teach.points == 0:
+            ton "So, what's the plan?"
+            m "The plan?"
+            ton "You know, how does this go down?"
+            ton "I'm hardly a regular when it comes to this stuff."
+            m "Let's start small. We'll need to build up a bit of a reputation for you before you start trying anything crazy."
+            ton "A reputation?"
+            ton "Think I'll get a nickname? Maybe they'll call me touchy tonks?"
+            m "Maybe..."
+            ton "So what did you buy off of Hermione on your first favour?"
+            m "Ugh... I think I got her to make a silly face or something..."
+            m "That and getting her to talk to me."
+            ton "Talk to you? You paid her for that? You can get that for free!"
+            m "In that case, the first \"real\" favour I bought was getting her to lift her skirt."
+            ton "That's more like it!"
+            ton "But even though we're in Scotland-"
+            m "(we are?)"
+            ton "None of the boys are wearing skirts..."
+            m "Just get them to show you their dicks then."
+            # Note: Mabye ad a section here in which Tonks is a bit more surprised about this suggestion, but ok with it in the end.
+            ton "Show me their dicks... That's good... {p}Can I touch them?"
+            m "Let's just look for now..."
+            ton "Fine... So how many am I allowed to look at?"
+            m "As many as you want..."
+            ton "And how many points am I allowed to give out?"
+            m "Look, I'm not really convinced these points are real..."
+            ton "(what? Can't he see the scoreboard at the top of the screen?)" # Note: only Genie can break the 4th wall.
+            m "I just say \"Ten points to gryffindor!\" to get these girls to show me their tits..."
+            $ gryffindor += 10
+            m "So as far as I'm concerned, hand out as many as you like."
+            ton "Alright... Well, I better get to class. I've got some boys to {b}teach{/b}..."
+            m "Don't forget to come back here after classes to fill me in."
+            ton "Will do..."
+            #send tonks off
+
+        else:
+            m "Ready to help the boys earn some points?"
+            ton "You mean am I ready to see some dick?"
+            m "Is there a difference?"
+            ton "There {b}should{/b} be."
+            ton "Lucky for you, I'm happy to do both."
+            m "See you after classes then."
+            ton "Mhmmm... Don't worry if I'm a little late though..."
+            ">With that, Tonks strolls out of your office with a hungry look in her eyes..." # Note, we can just replace sentences like that with the chibi walking out.
+
+    elif ton_tier >= 2:
+
+        if nt_pr_teach.points == 0: # Tell her to be even lewder for the next level of favors.
+
+            "Dev Note" "Write 2nd intro."
+
+        else: # Repeat
+            m "Would you like to give some boys detention again?"
+            ton "And make them show me their dicks, Sir?"
+            m "If that's what you fancy..."
+            ton "Hmm...Yes. I wouldn't mind seeing the \"hard cocks\" of some of my \"favorites\"..."
+            m "And make sure they remember it."
+            ton "Yes, [ton_genie_name]. Don't wait for me, though..."
+
+    # Tonks leaves
+
     return
 
-label tonks_teacher_event_1_repeat: #Repeatable intro
-    m "Ready to help the boys earn some points?"
-    ton "You mean am I ready to see some dick?"
-    m "Is there a difference?"
-    ton "There {b}should{/b} be."
-    ton "Lucky for you, I'm happy to do both."
-    m "See you after classes then."
-    ton "Mhmmm... Don't worry if I'm a little late though..."
-    ">With that, Tonks strolls out of your office with a hungry look in her eyes..."
-    return
 
-label tonks_teacher_event_1_1: #Level 1 Event 1
+
+### Tier 1 ###
+
+label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
     m "How were your extra curricular activities today?"
     ton "Ah! It's such a rush!"
     ton "I can't believe how naughty I feel!"
@@ -81,7 +106,7 @@ label tonks_teacher_event_1_1: #Level 1 Event 1
     ton "Don't worry, I just whispered in his ear a little..."
     ton "Told him what a naughty boy he'd been..."
     ton "Let him know he'd earn some points for Slytherin..."
-    ton "If my boobs happened to rub into his back a little while it happened I don't see how that's my fault."
+    ton "If my boobs happened to rub into his back a little while it happened I don't see how that's my fault." # This sentense is a bit convoluted.
     m "Ugh... that poor kid."
     ton "Pfft... He was having the time of his life..."
     ton "His underwear was practically {b}soaked{/b} in precum."
@@ -89,11 +114,17 @@ label tonks_teacher_event_1_1: #Level 1 Event 1
     ton "I'm not sure... Maybe..."
     ton "All I know is that he won't be able to keep his eyes off of me next lesson."
     m "Very good. That'll be all."
-    ton "Thank you, Dumbledore."
-    ">Tonks turns and leaves, closing the door quietly after her."
+    ton "Thank you, [ton_genie_name]."
+
+    # Tonks leaves
+
+    if ton_reputation < 3: # Points til 3.
+        $ ton_reputation += 1
+
     return
 
-label tonks_teacher_event_1_2: #Level 1 Event 2
+
+label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
     m "How were your classes today?"
     ton "Mmmm... Long and hard... Just how I like them..."
     m "I take it you were able to steal a few glances?"
@@ -120,11 +151,17 @@ label tonks_teacher_event_1_2: #Level 1 Event 2
     ton "I'll try..."
     ton "(Although I might have to play with this one a few more times...)"
     m "That will be all for now, [tonks_name]."
-    ton "Thanks, Dumbledore."
-    ">With that, Tonks strolls off into the hall."
+    ton "Thanks, [ton_genie_name]."
+
+    # Tonks leaves
+
+    if ton_reputation < 3: # Points til 3.
+        $ ton_reputation += 1
+
     return
 
-label tonks_teacher_event_1_3: #Level 1 Event 3
+
+label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     m "How'd it go?"
     ton "Great! I even managed to convince two boys to show me their dicks at the same time!"
     m "Two at once? Nice."
@@ -136,9 +173,12 @@ label tonks_teacher_event_1_3: #Level 1 Event 3
     ton "But I actually had to punish these two idiots for real."
     m "What did they do?"
     ton "Ugh... they wouldn't shut up, they kept trying to lift girl's skirts with \"wingardium leviosa\"..."
-    ton "They reminded me of my younger self... Which probably meant they were going to far."
+    ton "They reminded me of my younger self... Which probably meant they were going too far."
     ton "So I kept them after class, gave them the whole lecture about responsibility and respect..."
     m "..."
+    # m "With their pants down?"
+    # ton "With their pants down!..."
+    # ton "I told them I'd pay them both ten points to show me their cocks as well."
     ton "Then I told them I'd pay them both ten points to show me their cocks..."
     m "Just like that?"
     ton "Well, there's a lot more subtlety to it in practice..."
@@ -146,17 +186,24 @@ label tonks_teacher_event_1_3: #Level 1 Event 3
     ton "I think the poor buggers actually thought I was going to jerk them both off..."
     ton "Still, I think they had a fun time."
     m "Any chance they'll tell their friends about it?"
-    ton "Are you kidding me? The gryffindor common room is probably a buzz already!"
+    ton "Are you kidding me? The \"Gryffindor\" common room is probably a buzz already!"
     ton "It wouldn't surprise me if I start getting asked to give boys detention."
     m "Great work."
-    ton "Thank you, Dumbledore. That means a lot coming from you."
+    ton "Thank you, [ton_genie_name]. That means a lot coming from you."
     m "Even if it is encouragement for seducing your students?"
     ton "Even then."
     ton "Well, I better get back to work, these halls aren't safe unless there's a teacher on patrol."
     m "(I'm not sure they're safe with her on patrol...)"
+
+    # Tonks leaves
+
+    if ton_reputation < 3: # Points til 3.
+        $ ton_reputation += 1
+
     return
 
-label tonks_teacher_event_1_4: #Level 1 Event 4
+
+label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     m "Manage to sneak a peek today?"
     ton "Um... Afraid not..."
     m "Oh."
@@ -192,7 +239,7 @@ label tonks_teacher_event_1_4: #Level 1 Event 4
     ton "I made sure to ask her if she was feeling distracted..."
     ton "All the while, playing with the buttons on my shirt..."
     ton "Ugh... I've never seen someone so flustered..."
-    ton "Eventually, it got too much for her so she just yelled that I was wasting her time and ran off in typical \"slytherin\" fashion."
+    ton "Eventually, it got too much for her so she just yelled that I was wasting her time and ran off in typical \"Slytherin\" fashion."
     m "Do you really think she was looking at you?"
     ton "After that? There's no doubt... she's hooked."
     ton "Now I've just got to reel her in."
@@ -200,21 +247,31 @@ label tonks_teacher_event_1_4: #Level 1 Event 4
     m "You're asking my permission?"
     ton "Well, I was only supposed to buy favours from the boys..."
     m "Eat your heart out. Just make sure you keep me in the loop."
-    ton "Thanks, Dumbledore."
+    ton "Thanks, [ton_genie_name]."
     ton "I can't believe how much you've mellowed out since I was a student."
     m "Oh, um... time can do that..."
     m "Speaking of, it's getting a bit late..."
     ton "So it is... Night, sir."
-    m "Goodnight, Tonks."
+    m "Goodnight, [ton_name]."
+
+    # Tonks leaves
+
+    if ton_reputation < 3: # Points til 3.
+        $ ton_reputation += 1
+
     return
 
-label tonks_teacher_event_1_5: #Level 2 Event 1 
-    ton "Guess what happened, Dumbledore!"
+
+
+### Tier 2 ###
+
+label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
+    ton "Guess what happened, [ton_genie_name]!"
     m "Um... You found the golden ticket?"
     ton "Better! I had a student come to me to sell a favour!"
     m "And you haven't bought a favour from them before?"
     ton "Not one! They're not even in any of my classes!"
-    m "Very good! Word must be getting around that you're... \'purchasing\'."
+    m "Very good! Word must be getting around that you're... \"purchasing\"."
     m "So what house is he in?"
     ton "Oh... um... it wasn't a he..."
     ton "I hope that's alright... I know I'm supposed to be balancing out the favours for the boys..."
@@ -225,10 +282,10 @@ label tonks_teacher_event_1_5: #Level 2 Event 1
     ton "Poor thing must have spent hours building up the courage..."
     m "So what did you buy from her?"
     ton "Well... I asked her what sort of favour she wanted to sell me..."
-    ton "Poor thing was so flustered... She probably didn't plan ahead this far ahead..."
+    ton "Poor thing was so flustered... She probably didn't plan this far ahead..."
     ton "She started babbling on so I just calmed her down by letting her know what favour I wanted..."
     ton "While she just sort of stood there stunned for a little bit I went and locked the door."
-    ton "After that I sat down in the front row of class and told her to sit on my desk..."
+    ton "After that I sat down in the front row of the class and told her to sit on my desk..."
     m "Mmm, now that's a front row seat to die for."
     ton "All that was missing was a bucket of popcorn..."
     ton "Eventually she was able to muster up enough courage to pull up her skirt..."
@@ -251,18 +308,24 @@ label tonks_teacher_event_1_5: #Level 2 Event 1
     ton "I'm not sure she was ready for this... She sure as hell wasn't ready for the orgasm she had..."
     ton "Ugh... I had to spend ten minutes scourgifying the desk..."
     m "Ah... very good... but I think that should be all for now..."
-    m "Much more of this and I'll need to \'scour-ify\' my own desk..."
-    ton "Mmm, alright then, Dumbledore. I better be on my way as well."
-    ton "(Fuck knows I could use a bit of \'alone\' time myself...)"
+    m "Much more of this and I'll need to \"scour-ify\" my own desk..."
+    ton "Mmm, alright then, [ton_genie_name]. I better be on my way as well."
+    ton "(Fuck knows I could use a bit of \"alone\" time myself...)"
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
 
     return
 
-label tonks_teacher_event_1_6: #Level 2 Event 2
+
+label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     #Have a few drops of cum on her clothes when she comes in
     m "How'd your day go?"
     ton "The teaching was a little boring... Simple wards, hex-detection, basic stuff..."
     ton "Not that you'd know it was basic with how much they all struggled with it!"
-    m "I was sort of referring to your... \'extra-curricular\' activities."
+    m "I was sort of referring to your... \"extra-curricular\" activities."
     ton "I know, I just wanted to get that off my chest. I'd complain to someone else but I'm not that fond of the other teachers..."
     m "Oh?"
     ton "Well McGonagall is as stuck up as ever, Snapes a gross weirdo, Hooch keeps trying to hit on me..."
@@ -304,27 +367,35 @@ label tonks_teacher_event_1_6: #Level 2 Event 2
     ton "What? Why? It's just a little dirty talk... I might have even joined in."
     m "Really?"
     ton "What do you think made him fire his load across the room?"
-    ton "All I said was \'cum for Mommy\' and he was blowing the biggest load I've seen."
+    ton "All I said was \"cum for Mommy\" and he was blowing the biggest load I've seen."
+    # ton "(From a human...)"
     m "Fuck. That's pretty hot..."
     ton "I know... Ugh... I need to go rub one out after it..."
     ton "See you, sir."
-    m "Goodbye Tonks."
+    m "Goodbye [ton_name]."
     if choice_flag:
         m "Are you going to do anything about the cum?"
         ton "Oh... Eh, why bother?"
         ton "I already had it on the way here. Besides, it'll be good for spreading the word."
         m "Whatever you say..."
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
+
     return
 
-label tonks_teacher_event_1_7: #Level 2 Event 3 
+
+label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     m "How'd your favour go today?"
     ton "It was alright, I was able to kill two birds with one stone though."
     m "I'm intrigued."
-    ton "So, I had some cocky little \'Slytherin\' brat causing trouble in class."
+    ton "So, I had some cocky little \"Slytherin\" brat causing trouble in class."
     ton "Talking, letting a chocolate frog loose, not locking his monster book of monsters."
     ton "Just being a general pain in the ass."
     m "Sounds like a hassle."
-    ton "\'slytherins\' always are."
+    ton "\"Slytherins\" always are."
     ton "Anyway, I let him know he'd earned himself detention after class."
     ton "Little bastard cursed me out for that..."
     ton "Once the class had emptied out I proceeded to lock the door to scare him a little..."
@@ -338,21 +409,32 @@ label tonks_teacher_event_1_7: #Level 2 Event 3
     ton "Ugh... It was actually pretty cute at first..."
     ton "Then just as he was about to blow his load..."
     ton "Boom! Petrficus totalus!"
-    m "Petrifi-"
-    ton "You're god damn right I petrified him! Hahaha that look on his face!"
+    m "Petrifi-{w} Petrifico-?"
+    g4 "(What does she even mean by that?)"
+    ton "I petrified him!"
+    m "*Ahh*..."
+    ton "Hahaha that look on his face!"
     ton "That's what he gets, the little shit. Not only did I leave him blueballed, I left him pants down in the class."
     m "Forever?"
-    ton "What? Just until the spell wears off in an hour or so..."
+    ton "What? Just until the spell wears off."
+    ton "In an hour or so..."
     ton "That or someone else finds him..."
     ton "Either way, he's learned his lesson about screwing around in my class."
     m "Very good..."
     m "(This bitch might be crazier than I thought...)"
-    ton "Thank you, sir... See you..."
+    ton "Thank you, Sir..."
+    ton "See you..."
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
 
     return
 
-label tonks_teacher_event_1_8: #Level 2 Event 4 
-    m "Anything interesting happen today, Tonks?"
+
+label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
+    m "Anything interesting happen today, [ton_name]?"
     ton "Do I ever... I broke new ground today..."
     m "That's what I like to hear... So what happened?"
     ton "Remember that cute little \"Slytherin\" that's still coming to grips with her budding sexuality?"
@@ -363,7 +445,7 @@ label tonks_teacher_event_1_8: #Level 2 Event 4
     ton "Maybe... Anyway, we agreed on me getting a little peek under her skirt for 15 points..."
     ton "After she'd pulled up I did the old offer more points for her to drop her panties."
     ton "I was expecting her to at least argue for more points but she dropped them in an instant."
-    ton "Next, she just looked at me as if to ask, \'what next?\'"
+    ton "Next, she just looked at me as if to ask, \"what next?\""
     ton "Ugh... it was so fucking hot..."
     ton "So I was going to have her play with herself..."
     ton "But that cute face of hers... and all the teasing..."
@@ -373,11 +455,17 @@ label tonks_teacher_event_1_8: #Level 2 Event 4
     ton "And that look on her face... that perfect mix of lust and need..."
     ton "Fucking. incredible. "
     m "What did she have to say about the whole thing?"
-    ton "Not much... She just looked up at me with those puppy-dog eyes whispering \'wow\' and \'don't stop\'..."
+    ton "Not much... She just looked up at me with those puppy-dog eyes whispering \"wow\" and \"don't stop\"..."
     ton "To think she tried to pretend she wasn't into me before..."
-    m "Good work, Tonks. Think she'll start talking now?"
+    m "Good work, [ton_name]. Think she'll start talking now?"
     ton "Not unless she's ready to out herself as bi..."
     ton "But I think there are some whispers..."
     m "Very good. That'll be all then."
     ton "Thank you, sir... See you..."
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
+
     return

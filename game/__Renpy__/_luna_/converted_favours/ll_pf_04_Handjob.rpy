@@ -199,7 +199,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
                 ">You start shooting your load across her face, coating her in your sticky cum."
                 hide screen g_c_c_u
-                $ g_c_u_pic = "images/animation/06_jerking_01.png"
+                $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
                 $ luna_r_arm = 2
                 $ luna_l_arm = 2
                 $ genie_base = "characters/genie/base/open.png"
@@ -249,7 +249,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
                 g4 "mmmm....."
                 hide screen g_c_c_u
-                $ g_c_u_pic = "images/animation/06_jerking_01.png"
+                $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
                 $ luna_r_arm = 2
                 $ luna_l_arm = 2
                 $ genie_base = "characters/genie/base/open.png"
@@ -262,7 +262,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 m "Ahh... that was fantastic slut..."
                 call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
-        $ g_c_u_pic = "images/animation/06_groping_01.png"
+        $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
         $ luna_xpos = 390
         $ luna_ypos = 0
         m "well then, Here's your payment, [lun_name]."
@@ -496,7 +496,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
             g4 "mmmm....."
             hide screen g_c_c_u
-            $ g_c_u_pic = "images/animation/06_jerking_01.png"
+            $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
             $ luna_r_arm = 2
             hide screen genie_main
             with d3
@@ -506,7 +506,7 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("[lun_genie_name]!","base","mad","mad","mid")
             call lun_main("How could you! Cumming on your students {size=-10}pussy{/size}...","base","angry","angry","mid")
             m "Ahh... that was fantastic slut..."
-            $ g_c_u_pic = "images/animation/06_groping_01.png"
+            $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
         else: #last time event is run before cum addict variant
@@ -751,7 +751,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
             g4 "mmmm....."
             hide screen g_c_c_u
-            $ g_c_u_pic = "images/animation/06_jerking_01.png"
+            $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
             $ luna_r_arm = 2
             hide screen genie_main
             with d3
@@ -782,7 +782,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 call lun_main("amazing...","base","seductive","sad","mid")
 
             m "Ahh... that was fantastic slut..."
-            $ g_c_u_pic = "images/animation/06_groping_01.png"
+            $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
     hide screen luna_main
@@ -833,7 +833,7 @@ label luna_cum_addict_event:
     g4 "{size=+10}TAKE IT ALL YOU big titted SLUT!{/size}"
     g4 "mmmm....."
     hide screen g_c_c_u
-    $ g_c_u_pic = "images/animation/06_jerking_01.png"
+    $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
     $ luna_r_arm = 2
     hide screen genie_main
     $ genie_base = "characters/genie/base/open.png"
@@ -843,7 +843,7 @@ label luna_cum_addict_event:
     call lun_main("......","normal","angry","angry","downL")
     call lun_main(".........","base","seductive","sad","empty")
     m "Ahh... that was fantastic slut..."
-    $ g_c_u_pic = "images/animation/06_groping_01.png"
+    $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
     call lun_main("What {size=+4}is {size=+4}this {size=+4}smell?{/size}","base","wide","sad","mid")
     m "Cum?"
     ">Luna gets up from her knees"

@@ -34,7 +34,8 @@ label hg_wager_bj:
             call her_main("No... can we just get this over with?", mouth="annoyed", eye="glance")
             call her_main("{size=-5}All this because of a stupid card game{/size}.", mouth="upset", eye="worriedCl")
             m "I know, we should definitely do this again."
-            if hg_pf_dance.points >= 2: #If snape walked in during the dance favour.
+
+            if hg_T3_strip_trigger: #If snape walked in during the dance favour.
                 call play_music("dark_fog")
 
                 call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
@@ -198,7 +199,7 @@ label hg_wager_bj:
                 call sna_main("Reveal yourself! I won't let you harm him!", face="snape_10", wand=True)
                 g4 "Severus, wait!"
                 call sna_main("I knew something was wrong from the start, you can't hide from me, now reveal yourself or prepare to die!", face="snape_30", wand=True)
-                if hg_pf_dance.points < 2: #if hermione hasn't stripped twice
+                if not hg_T3_strip_trigger: #if hermione hasn't stripped twice
                     m "What are you doing Severus?"
                     call her_main("...", mouth="soft", eye="worried", cheeks="blush")
                     m "You're being very strange..."

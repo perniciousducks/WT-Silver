@@ -94,7 +94,7 @@ label hg_pf_grope:
 # Those events still prgress, but Hermione will run off and get mad.
 # The heart icons for these events are 'black'
 
-label hg_pf_grope_T1_fail_intro:
+label hg_pf_grope_T0_fail_intro:
     m "[hermione_name], would you mind if I play with your tits a little?"
     call her_main("Play with...?","shock","wide")
     call her_main("My tits?!","angry","wide_stare")
@@ -103,7 +103,7 @@ label hg_pf_grope_T1_fail_intro:
     jump too_much
 
 
-label hg_pf_grope_T1_fail_repeat:
+label hg_pf_grope_T0_fail_repeat:
     g9 "[hermione_name], I'd like to grope you a little!"
     call her_main("This again...?","angry","angry")
     call her_main("I've told you before, [genie_name], absolutely not!!","scream","angryCl")
@@ -124,14 +124,14 @@ label hg_pf_grope_T1_fail_repeat:
 # Event 1 (i) - Hermione is shocked about you groping her.
 # Event 2 (i) - Hermione is still shocked.
 
-label hg_pf_grope_T2_intro_E1:
+label hg_pf_grope_T1_intro_E1:
     stop music fadeout 2.0
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("*Uhm*... very well, Sir.","disgust","down_raised")
 
     call her_walk_desk_blkfade
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
     pause.5
 
     call her_main("[genie_name].....?","annoyed","worriedL", ypos="head")
@@ -142,21 +142,21 @@ label hg_pf_grope_T2_intro_E1:
             call her_main("What? What do you mean, [genie_name]-","soft","wide")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
-            jump hg_pf_grope_breasts_T2
+            jump hg_pf_grope_breasts_T1
 
         "\"I'm gonna play with your butt a little.\"":
             call nar(">You reach out and place your hand under her skirt...")
 
-            jump hg_pf_grope_ass_T2
+            jump hg_pf_grope_ass_T1
 
 
 
-label hg_pf_grope_T2_E1:
+label hg_pf_grope_T1_E1:
     stop music fadeout 2.0
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("...............","annoyed","angry")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("[genie_name].....?","annoyed","angryL", ypos="head")
     m "..."
@@ -167,12 +167,12 @@ label hg_pf_grope_T2_E1:
             call her_main("S-Sir?!","disgust","worriedCl")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
-            jump hg_pf_grope_breasts_T2
+            jump hg_pf_grope_breasts_T1
 
         "\"I'm gonna play with your butt a little.\"":
             call nar(">You reach out and place your hand under her skirt...")
 
-            jump hg_pf_grope_ass_T2
+            jump hg_pf_grope_ass_T1
 
 
 
@@ -181,7 +181,7 @@ label hg_pf_grope_T2_E1:
 # Event 1 (i) - Hermione tries to talk you out of it.
 # Event 2 (i) - Hermione is indignant.
 
-label hg_pf_grope_T3_intro_E1:
+label hg_pf_grope_T2_intro_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?","base","base")
     m "How would you like to earn some house-points today?"
@@ -212,7 +212,7 @@ label hg_pf_grope_T3_intro_E1:
 
     call her_walk_desk_blkfade
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("[genie_name].....?","annoyed","angryL", ypos="head")
     m "..."
@@ -222,16 +222,16 @@ label hg_pf_grope_T3_intro_E1:
             #call nar(">You reach out swiftly and grab both of her tits through her uniform...")
             call her_main("[genie_name].....?","disgust","worriedCl")
 
-            jump hg_pf_grope_breasts_T3
+            jump hg_pf_grope_breasts_T2
 
         "\"I'm gonna play with your butt a little.\"":
             call nar(">You reach out and place your hand under her skirt...")
 
-            jump hg_pf_grope_ass_T3
+            jump hg_pf_grope_ass_T2
 
 
 
-label hg_pf_grope_T3_E1:
+label hg_pf_grope_T2_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?","base","base")
     m "How would you like to earn some house-points today?"
@@ -239,7 +239,7 @@ label hg_pf_grope_T3_E1:
     g9 "Get squeezed!"
     call her_main("....................................","annoyed","angryL")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("[genie_name].....?","annoyed","angryL", ypos="head")
     m "..."
@@ -249,12 +249,12 @@ label hg_pf_grope_T3_E1:
             #call nar(">You reach out swiftly and grab both of her tits through her uniform...")
             call her_main("[genie_name].....?","disgust","worriedCl")
 
-            jump hg_pf_grope_breasts_T3
+            jump hg_pf_grope_breasts_T2
 
         "\"I'm gonna play with your butt a little.\"":
             call nar(">You reach out and place your hand under her skirt...")
 
-            jump hg_pf_grope_ass_T3
+            jump hg_pf_grope_ass_T2
 
 
 
@@ -264,7 +264,7 @@ label hg_pf_grope_T3_E1:
 # Event 2 (i) - Hermione asks if you are going to grope her tits or her ass.
 # Event 2 (i) - Hermione ejoys it.
 
-label hg_pf_grope_T4_intro_E1:
+label hg_pf_grope_T3_intro_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?","base","base")
     m "Would you like to join me again?"
@@ -275,7 +275,7 @@ label hg_pf_grope_T4_intro_E1:
 
     call her_walk_desk_blkfade
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("[genie_name].....?","base","down", ypos="head")
     m "..."
@@ -285,20 +285,20 @@ label hg_pf_grope_T4_intro_E1:
             #call nar(">You reach out swiftly and grab both of her tits through her uniform...")
             call her_main("..........","base","down")
 
-            jump hg_pf_grope_breasts_T4
+            jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt a little.\"":
             call nar(">You reach out and place your hand under her skirt...")
-            jump hg_pf_grope_ass_T4
+            jump hg_pf_grope_ass_T3
 
 
 
-label hg_pf_grope_T4_intro_E2:
+label hg_pf_grope_T3_intro_E2:
     m "[hermione_name]. Come here and join me..."
     g9 "I feel like playing with you a little."
     call her_main("Yes, Sir...","soft","baseL")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("[genie_name].....?","soft","down", ypos="head")
     m "Yes?"
@@ -311,27 +311,27 @@ label hg_pf_grope_T4_intro_E2:
             call her_main("Of course, Sir.","base","down")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
-            jump hg_pf_grope_breasts_T4
+            jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt today.\"":
             call her_main("Of course, Sir.","base","down")
             call nar(">You reach out and place your hand under her skirt...")
-            jump hg_pf_grope_ass_T4
+            jump hg_pf_grope_ass_T3
 
 
 
-label hg_pf_grope_T4_E2:
+label hg_pf_grope_T3_E2:
     g9 "[hermione_name]. Come here and let me grope you!"
     call her_main("Of course, [genie_name]...","base","glance")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False)
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("Are you going to grope my breasts today, Sir?","soft","glanceL", ypos="head")
     call her_main("Or my bum?....","soft","glance")
 
     m "*Hmm*... What would you like?"
     if one_out_of_three == 1:
-        call her_main("I wouldn't mind it if you messaged my breasts a little...","soft","glanceL")
+        call her_main("I wouldn't mind it if you massaged my breasts a little...","soft","glanceL")
     elif one_out_of_three == 2:
         call her_main("I wouldn't mind it if you carassed my bum a bit, Sir...","soft","down")
     else:
@@ -344,10 +344,10 @@ label hg_pf_grope_T4_E2:
             call her_main("Yes, Sir.","base","ahegao")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
-            jump hg_pf_grope_breasts_T4
+            jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt now.\"":
             call her_main("Yes, Sir.","soft","ahegao")
             call nar(">You reach out and place your hand under her skirt...")
 
-            jump hg_pf_grope_ass_T4
+            jump hg_pf_grope_ass_T3

@@ -11,9 +11,9 @@
 
 # Complete
 
-label hg_pf_grope_breasts_T2:
+label hg_pf_grope_breasts_T1:
     stop music fadeout 1.0
-    call hg_chibi_transition("grope_breasts")
+    call hg_chibi_transition("grope_breasts", trans="d7")
     pause.8
 
     call her_main("!!!","normal","shocked")
@@ -99,11 +99,13 @@ label hg_pf_grope_breasts_T2:
 
 # Complete
 
-label hg_pf_grope_breasts_T3: # Favor fails if you Slap them.
+label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     stop music fadeout 1.0
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
+
     if hg_T3_strip_trigger:
         menu:
-            "\"First, lift up your top\"":
+            "\"First, lift up your top\"": # Needs posing
                 her "Sir?!"
                 m "What? It's not like I haven't seen them before..."
                 her "But!"
@@ -114,7 +116,7 @@ label hg_pf_grope_breasts_T3: # Favor fails if you Slap them.
                 m "Sure..."
                 $ hermione_wear_bra = False
                 call set_her_action("lift_top")
-                call hg_chibi_transition("admire_breasts")
+                call hg_chibi_transition("admire_breasts", flip=False, trans="d5")
                 call ctc
 
             "\"Yes, let me feel them!\"":
@@ -122,15 +124,14 @@ label hg_pf_grope_breasts_T3: # Favor fails if you Slap them.
                 #show screen genie_and_tits_01
                 pause.5
 
-    else:
-        call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
-        pause.5
+
+    pause.5
 
     call bld
     menu:
         m "..."
         "-Grab them-":
-            jump hg_pf_grope_breasts_T3_continue
+            jump hg_pf_grope_breasts_T2_continue
 
         "-Slap them-":
             pass
@@ -164,8 +165,8 @@ label hg_pf_grope_breasts_T3: # Favor fails if you Slap them.
 
 
 
-label hg_pf_grope_breasts_T3_continue:
-    call hg_chibi_transition("grope_breasts", trans="d5")
+label hg_pf_grope_breasts_T2_continue:
+    call hg_chibi_transition("grope_breasts", trans="d7")
     #show screen groping_naked_tits
     call ctc
 
@@ -208,9 +209,9 @@ label hg_pf_grope_breasts_T3_continue:
 
 # Complete
 
-label hg_pf_grope_breasts_T4:
+label hg_pf_grope_breasts_T3:
     stop music fadeout 1.0
-    call hg_chibi_transition("stand_behind_desk")
+    call hg_chibi_transition("stand_behind_desk", trans="d7")
     pause.8
 
     call her_main("............","base","down", cheeks="blush", ypos="head")
@@ -222,18 +223,18 @@ label hg_pf_grope_breasts_T4:
         "\"That's right, take it off!\"":
             $ hermione_wear_bra = False
             call set_her_action("lift_top")
-            jump hg_pf_grope_breasts_T4_naked
+            jump hg_pf_grope_breasts_T3_naked
 
         "\"No, leave it on.\"":
             m "I want to massage them while you are fully dressed..."
             call her_main("Oh, I see...","base","baseL", cheeks="blush", ypos="head")
-            jump hg_pf_grope_breasts_T4_clothed
+            jump hg_pf_grope_breasts_T3_clothed
 
 
 
-label hg_pf_grope_breasts_T4_naked:
+label hg_pf_grope_breasts_T3_naked:
     stop music fadeout 1.0
-    call hg_chibi_transition("admire_breasts")
+    call hg_chibi_transition("admire_breasts", trans="d7")
     #show screen genie_and_tits_01
     call ctc
 
@@ -250,7 +251,7 @@ label hg_pf_grope_breasts_T4_naked:
     menu:
         m "..."
         "-Grab them-":
-            jump hg_pf_grope_breasts_T4_continue
+            jump hg_pf_grope_breasts_T3_continue
 
         "-Slap them-":
             pass
@@ -277,12 +278,12 @@ label hg_pf_grope_breasts_T4_naked:
     call her_main("...then I think I should leave.","annoyed","annoyed")
     m "Fine, fine..."
 
-    jump hg_pf_grope_breasts_T4_continue
+    jump hg_pf_grope_breasts_T3_continue
 
 
 
-label hg_pf_grope_breasts_T4_clothed:
-    call hg_chibi_transition("grope_breasts", trans="d5")
+label hg_pf_grope_breasts_T3_clothed:
+    call hg_chibi_transition("grope_breasts", trans="d7")
     call ctc
 
     #">Hermione stands in front of you expectantly..."
@@ -311,7 +312,7 @@ label hg_pf_grope_breasts_T4_clothed:
                 m "What would you say then, [hermione_name]?"
                 call her_main("I just like it, {size=-4}a lot{image=textheart}{/size}","base","ahegao_raised", cheeks="blush")
 
-            jump hg_pf_grope_breasts_T4_continue
+            jump hg_pf_grope_breasts_T3_continue
 
         "-Pull on them abruptly with force-":
             call nar(">You give Hermione's tits a sudden but firm pull...","start")
@@ -327,12 +328,12 @@ label hg_pf_grope_breasts_T4_clothed:
             call her_main("*Panting* What are you doing, [genie_name]...?","open","baseL", cheeks="blush")
             call her_main("You don't need to be so rough with me....{image=textheart}","base","baseL", cheeks="blush")
 
-            jump hg_pf_grope_breasts_T4_continue
+            jump hg_pf_grope_breasts_T3_continue
 
 
 
-label hg_pf_grope_breasts_T4_continue:
-    call hg_chibi_transition("grope_breasts", trans="d5")
+label hg_pf_grope_breasts_T3_continue:
+    call hg_chibi_transition("grope_breasts", trans="d7")
     #show screen groping_naked_tits
     call ctc
 
@@ -401,9 +402,9 @@ label hg_pf_grope_breasts_T4_continue:
 
 ### Tier 5 ###
 
-label hg_pf_grope_breasts_T5_naked: # No top.
+label hg_pf_grope_breasts_T4_naked: # No top.
     stop music fadeout 1.0
-    call hg_chibi_transition("admire_breasts")
+    call hg_chibi_transition("admire_breasts", trans="d7")
     #show screen genie_and_tits_01
     call ctc
 
@@ -478,9 +479,9 @@ label hg_pf_grope_breasts_T5_naked: # No top.
 
 ### Tier 6 ###
 
-label hg_pf_grope_breasts_T6_naked:
+label hg_pf_grope_breasts_T5_naked:
     call set_her_action("lift_top")
-    call hg_chibi_transition("grope_breasts", trans="d5")
+    call hg_chibi_transition("grope_breasts", trans="d7")
     #show screen groping_naked_tits
     call ctc
 

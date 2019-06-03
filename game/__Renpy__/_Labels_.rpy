@@ -187,10 +187,10 @@ label main_room:
     #$ renpy.start_predict("interface/frames/*.*")
     #$ renpy.start_predict("images/rooms/_objects_/*.*")
     #$ renpy.start_predict("images/rooms/_weather_/*.*")
-    #$ renpy.start_predict("images/animation/working_*.*")
+    #$ renpy.start_predict("characters/genie/chibis/working/*.*")
     #$ renpy.start_predict("images/animation/rum_*.*")
-    #$ renpy.start_predict("images/animation/reading_*.*")
-    #$ renpy.start_predict("images/animation/jerking_off_*.*")
+    #$ renpy.start_predict("characters/genie/chibis/reading/*.*")
+    #$ renpy.start_predict("characters/genie/chibis/masturbating/desk_*.*")
 
     call room("main_room")
 
@@ -362,6 +362,8 @@ label play_sound(sound=""):
         $ renpy.play('sounds/knocking.mp3')
     if sound in ["door"]:
         $ renpy.play('sounds/door.mp3')
+    if sound in ["lock","unlock"]:
+        $ renpy.play('sounds/09_lock.wav')
     if sound in ["desk","climb_desk"]:
         $ renpy.play('sounds/08_hop_on_desk.mp3')
     if sound in ["owl"]:

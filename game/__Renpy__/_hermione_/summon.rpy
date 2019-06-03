@@ -145,7 +145,7 @@ label update_her_tier:
     elif her_tier == 3 and her_whoring >= 12 and hg_T3_strip_trigger == True:
         # Trigger: After she strips for you.
         $ her_tier = 4
-    elif her_tier == 4 and her_whoring >= 15 and hg_T4_trigger == True:
+    elif her_tier == 4 and her_whoring >= 15 and hg_T4_handjob_trigger == True:
         # Trigger: None
         $ her_tier = 5
     elif her_tier == 5 and her_whoring >= 21 and hg_T5_blowjob_trigger == True:

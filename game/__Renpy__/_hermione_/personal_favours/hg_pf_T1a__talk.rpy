@@ -61,6 +61,10 @@ label hg_pf_talk:
         if her_whoring < 3: # Points til 3
             $ her_whoring += 1
 
+    if her_tier == 2:
+        if her_whoring < 6: # Points til 6
+            $ her_whoring += 1
+
     jump end_hermione_event
 
 

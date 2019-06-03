@@ -70,13 +70,13 @@ screen groping_02(): # Grope Ass fully clothed - Flip = False
 
 screen no_groping_01(): # Hermione stands with you behind desk - Flip = True (facing door)
     tag favor
-    add "images/animation/grope_05.png" at Position(xpos=-60, ypos=10)
+    add "characters/hermione/chibis/grope_ass/front_05.png" at Position(xpos=-60, ypos=10)
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
 screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
     tag favor
-    add "images/animation/grope_b_05.png" at Position(xpos=-60, ypos=10)
+    add "characters/hermione/chibis/grope_ass/back_b_05.png" at Position(xpos=-60, ypos=10)
     add "groping_02_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
@@ -155,6 +155,7 @@ screen hermione_chibi_stand_no_shirt():
 screen h_c_u():
     tag hermione_chibi
     add h_c_u_pic at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+    zorder her_chibi_zorder
 
 
 

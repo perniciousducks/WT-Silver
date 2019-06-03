@@ -275,8 +275,8 @@ screen hermione_stat_menu():
 
                 #Imagination 3:
                 if imagination >= 3:
-                    use text_stat("Hermione has danced for you:")
-                    use text_stat("- ", " times -", hg_pf_dance.counter)
+                    use text_stat("Hermione has \"danced\" for you:")
+                    use text_stat("- ", " times -", hg_pf_strip.counter)
                 else:
                     use text_stat("Hidden")
 
@@ -289,8 +289,6 @@ screen hermione_stat_menu():
                     use text_stat("Hidden")
 
                 if imagination >= 4:
-                    use text_stat("Hermione has masturbated for you:")
-                    use text_stat("- ", " times -", hg_pf_masturbate.counter)
                     use text_stat("Hermione has given you:")
                     use text_stat("- ", " Handjobs -", hg_pf_handjob.counter)
                     use text_stat("- ", " Blowjobs -", hg_pf_blowjob.counter)

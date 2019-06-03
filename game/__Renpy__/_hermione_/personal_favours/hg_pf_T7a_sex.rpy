@@ -344,7 +344,7 @@ label hg_sex_1:
             with d1
             call ctc
 
-            $ g_c_u_pic = "images/animation/23_cum_19.png"
+            $ g_c_u_pic = "characters/hermione/chibis/sex/creampie_19.png"
             #$ ccg2 = 40
             call her_main("You came inside of me...","silly","dead")
             g9 "I sure did."
@@ -549,7 +549,7 @@ label hg_sex_3:
             with d1
             call ctc
 
-            $ g_c_u_pic = "images/animation/23_cum_19.png"
+            $ g_c_u_pic = "characters/hermione/chibis/sex/creampie_19.png"
 
             #$ ccg2 = 40
             m "Well, this was pretty great..."

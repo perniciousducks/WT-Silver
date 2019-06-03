@@ -11,7 +11,7 @@ screen snape_jerking_off_cum():
 
 screen snape_stands_holds_dick():
     tag snape_chibi
-    add "images/animation/10_jerking_01.png" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    add "characters/snape/chibis/masturbating/01.png" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
     zorder 3
 
 

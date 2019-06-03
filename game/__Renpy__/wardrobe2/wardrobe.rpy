@@ -1,3 +1,30 @@
+init python:
+    def slap_mouse_away():
+        renpy.play('sounds/slap.mp3')
+        renpy.stop_predict_screen("slap_effect")
+        x, y = renpy.get_mouse_pos()
+        xx = x+random.randint(-100, 100)
+        yy = y+random.randint(-100, 100)
+        renpy.show_screen("slap_effect", start_x=x, start_y=y, target_x=xx, target_y=yy)
+        renpy.set_mouse_pos(xx, yy, duration=0.1)
+        
+    def wardrobe_fail_hint(value):
+        renpy.block_rollback()
+        if cheats_active or game_difficulty <= 2:
+            renpy.show_screen("blktone5")
+            renpy.with_statement(d3)
+            renpy.say(None, "{size=+6}> Try again at whoring level {color=#7a0000}"+str(value)+"{/color}.{/size}")
+            renpy.hide_screen("blktone5")
+            renpy.with_statement(d3)
+        return
+        
+screen slap_effect(start_x, start_y, target_x, target_y):
+    tag gfx
+    zorder 6
+
+    add "smoke" xanchor 0.1 yanchor 0.7 zoom 0.2 at moveto(start_x, start_y, target_x, target_y, duration=0.2)
+    timer 0.5 action Hide("slap_effect")
+
 label t_wardrobe(return_label, char_label):
     $ char_active = get_character_object(active_girl)
     $ char_nickname = char_active.char
@@ -55,32 +82,34 @@ label t_wardrobe(return_label, char_label):
     $ ui_hint = ""
     
     if _return == "tabswitch":
-        $ current_page = 0
-        $ current_category = ""
-        $ current_subcategory = ""
-        $ current_item = None
-        $ renpy.play('sounds/click3.mp3')
-        if "head" in wardrobe_categories_sorted:
-            $ wardrobe_categories_sorted = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
-            $ char_active.strip("top")
-            $ char_active.strip("bottom")
-            $ char_active.strip("robe")
-            $ char_active.strip("bra")
-            $ char_active.strip("panties")
-        else:
-            $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
-            $ char_active.wear("top")
-            $ char_active.wear("bottom")
-            $ char_active.wear("robe")
-            $ char_active.wear("bra")
-            $ char_active.wear("panties")
+        show screen t_wardrobe_menu(550, 50)
+        $ renpy.call(active_girl+"_wardrobe_check", _return)
+        if _return in (None, True):
+            $ current_page = 0
+            $ current_category = ""
+            $ current_subcategory = ""
+            $ current_item = None
+            $ renpy.play('sounds/click3.mp3')
+            if "head" in wardrobe_categories_sorted:
+                $ wardrobe_categories_sorted = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
+                $ char_active.strip("top")
+                $ char_active.strip("bottom")
+                $ char_active.strip("robe")
+                $ char_active.strip("bra")
+                $ char_active.strip("panties")
+            else:
+                $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
+                $ char_active.wear("top")
+                $ char_active.wear("bottom")
+                $ char_active.wear("robe")
+                $ char_active.wear("bra")
+                $ char_active.wear("panties")
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
         call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
     elif _return[0] == "equip":
-        $ renpy.play('sounds/equip.ogg')
-        $ current_item = _return[1]
-        $ char_active.equip(current_item)
+        show screen t_wardrobe_menu(550, 50)
+        $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
     elif _return == "addoutfit":
         $ cho_outfit_custom.clone()
         $ menu_items = char_active.outfits
@@ -195,7 +224,12 @@ label t_wardrobe(return_label, char_label):
                             current_item = item
                             break
     elif _return == "erozone":
-        call expression char_label pass (text="", face="horny")
+        show screen t_wardrobe_menu(550, 50)
+        $ renpy.call(active_girl+"_wardrobe_check", "touching")
+        #call expression char_label pass (text="", face="horny")
+    elif _return[0] == "toggle":
+        show screen t_wardrobe_menu(550, 50)
+        $ renpy.call(active_girl+"_wardrobe_check", "toggle", _return[1])
     elif _return == "music":
         if wardrobe_music_active:
             $ wardrobe_music_active = False
@@ -268,7 +302,7 @@ screen t_wardrobe_menu(xx, yy):
                 spacing 2
                 for item in character_toggles:
                     $ curr_item = item[0]
-                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 80 action Function(char_active.toggle_wear, curr_item) hovered SetVariable("ui_hint", "Show/hide "+str(curr_item)) unhovered SetVariable("ui_hint", "")
+                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 80 action Return(["toggle", curr_item])hovered SetVariable("ui_hint", "Show/hide "+str(curr_item)) unhovered SetVariable("ui_hint", "")
             vbox:
                 ypos 416
                 textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("ui_hint", "Toggle music") unhovered SetVariable("ui_hint", "")

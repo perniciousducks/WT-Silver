@@ -29,22 +29,22 @@ label cho_wardrobe_init:
             cho_cloth_toptanktop2 = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_tanktop_2", layers=2, color=[[252, 192, 213, 255], [253, 221, 232, 255]], unlocked=False)
             cho_cloth_topsweater1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_sweater_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
             cho_cloth_robequidditch1 = cloth_class(char="cho", category="tops", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
-            cho_cloth_topquid1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_quid_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False)
+            cho_cloth_topquid1 = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_quid_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False, whoring=8)
             
             # Bottoms
             cho_cloth_schoolskirt1 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_1", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
-            cho_cloth_schoolskirt2 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_2", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
-            cho_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
-            cho_cloth_schoolskirt4 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
+            cho_cloth_schoolskirt2 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_2", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=4)
+            cho_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
+            cho_cloth_schoolskirt4 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
             cho_cloth_pantslong1 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_long_1", layers=1, color=[[230, 230, 231, 255]])
-            cho_cloth_pantsshort1 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_1", layers=1, color=[[230, 230, 231, 255]])
+            cho_cloth_pantsshort1 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_1", layers=1, color=[[230, 230, 231, 255]], whoring=4)
             cho_cloth_pantsshort2 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_2", layers=2, color=[[114, 168, 210, 255], [232, 177, 13, 255]], unlocked=False)
             cho_cloth_pantsshort3 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_3", layers=3, color=[[47, 150, 136, 255], [175, 220, 191, 255], [247, 152, 38, 255]], unlocked=False)
             cho_cloth_skirtshort1 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="skirt_short_1", layers=1, color=[[89, 116, 194, 255]], unlocked=False)
             cho_cloth_skirtshort2 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="skirt_short_2", layers=1, color=[[93, 119, 173, 255]], unlocked=False)
             cho_cloth_pantslong2 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_long_2", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
-            cho_cloth_pantsshort4 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_4", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
-            cho_cloth_quidskirt1 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="quid_skirt_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False)
+            cho_cloth_pantsshort4 = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_4", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]], whoring=6)
+            cho_cloth_quidskirt1 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="quid_skirt_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False, whoring=8)
             
             # Bras
             cho_cloth_basicbra1 = cloth_class(char="cho", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=2, color=[[230, 230, 231, 255], [89, 116, 194, 255]])
@@ -55,9 +55,9 @@ label cho_wardrobe_init:
             
             # Panties
             cho_cloth_basicpanties1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="basic_panties_1", layers=2, color=[[230, 230, 231, 255], [89, 116, 194, 255]])
-            cho_cloth_bikinibottom1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="bikini_bottom_1", layers=1, color=[[213, 161, 13, 255]], unlocked=False)
-            cho_cloth_bikinibottom2 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="bikini_bottom_2", layers=1, color=[[213, 161, 13, 255]], unlocked=False)
-            cho_cloth_lacepanties1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="lace_panties_1", layers=3, color=[[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False)
+            cho_cloth_bikinibottom1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="bikini_bottom_1", layers=1, color=[[213, 161, 13, 255]], unlocked=False, whoring=14)
+            cho_cloth_bikinibottom2 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="bikini_bottom_2", layers=1, color=[[213, 161, 13, 255]], unlocked=False, whoring=18)
+            cho_cloth_lacepanties1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="lace_panties_1", layers=3, color=[[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False, whoring=12)
             cho_cloth_sportpanties1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="sport_panties_1", layers=1, color=[[156, 204, 249, 255]])
             cho_cloth_sportpanties2 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="sport_panties_2", layers=1, color=[[156, 204, 249, 255]])
             
@@ -66,7 +66,7 @@ label cho_wardrobe_init:
             
             # Hair
             cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
-            cho_hair_pigtails = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="pigtails", layers=3, color=[[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], unlocked=False)
+            cho_hair_pigtails = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="pigtails", layers=3, color=[[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], unlocked=False, whoring=8)
             
             # Pelvis
             cho_pubes_thick = cloth_class(char="cho", category="pelvis", subcat="pubes", type="pubes", id="thick", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
@@ -97,7 +97,7 @@ label cho_wardrobe_init:
             cho_cloth_lace_stockings_1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="lace_stockings_1", layers=2, color=[[100, 100, 255, 255], [220, 220, 221, 255]], unlocked=False)
             cho_cloth_fishnet_stockings_1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="fishnet", layers=2, color=[[100, 100, 101, 255], [50, 50, 51, 255]])
             cho_cloth_sailor_stockings_1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="sailor", layers=1, color=[[232, 232, 233, 255]], unlocked=False)
-            cho_cloth_quidstocking1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="quid1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False)
+            cho_cloth_quidstocking1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="quid1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False, whoring=8)
             
             # Garterbelts
             cho_cloth_lacegarter1 = cloth_class(char="cho", category="legwear", subcat="garterbelts", type="garterbelt", id="lace_garter_1", layers=4, color=[[220, 220, 221, 255], [100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False)
@@ -118,7 +118,7 @@ label cho_wardrobe_init:
             choq_cloth_glovesquidditch1 = cloth_class(char="cho", category="event", subcat="gloves", type="gloves", id="quidditch", layers=1, color=[[213, 161, 13, 255]], armfix=True)
             choq_goggles = cloth_class(char="cho", category="event", subcat="miscellaneous", type="hat", id="goggles", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]])
             choq_goggles_face = cloth_class(char="cho", category="event", subcat="miscellaneous", type="hat", id="goggles_face", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]], unlocked=False)
-            choq_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
+            choq_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=False)
             
             cho_outfit_quidditch = outfit_class(name="Quidditch", group=[choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_cloth_basicpanties1])
             

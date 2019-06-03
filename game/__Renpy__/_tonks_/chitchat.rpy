@@ -150,6 +150,4 @@ label tonks_chit_chat:
             call ton_main("Today I taught the students about the Tanglepest...","open","base","base","mid")
             call ton_main("A foul creature that is drawn to footwear...","open","base","base","R")
             call ton_main("It doesn't actually exist, I just wanted an excuse to have the students show me their feet.","horny","base","base","mid")
-
-
     return

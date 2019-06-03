@@ -473,13 +473,8 @@ init python:
                 
             character_list.update({self.char: self})
                 
-        def get_object(self, dict, *keys):
-            for key in keys:
-                try:
-                    dict = dict[key][0]
-                except KeyError:
-                    return None
-            return dict
+        def get_object(self, dict, key):
+            return dict.get(key)[0]
             
         def update_zorder(self, layer, value):
             try:
@@ -495,50 +490,23 @@ init python:
             if 'body' in args:
                 imagepath = "characters/"+self.char+"/body/"
                 
-                armleft = self.get_object(self.body, 'armleft')
-                armright = self.get_object(self.body, 'armright')
-                breasts = self.get_object(self.body, 'breasts')
-                base = self.get_object(self.body, 'base')
-                legs = self.get_object(self.body, 'legs')
-                animation = self.get_object(self.body, 'animation') #
-                
-                if armleft and symbol not in armleft:
-                    self.body['armleft'][0] = imagepath+"arms/"+armleft+".png"
-                if armright and symbol not in armright:
-                    self.body['armright'][0] = imagepath+"arms/"+armright+".png"
-                if breasts and symbol not in breasts:
-                    self.body['breasts'][0] = imagepath+"breasts/"+breasts+".png"
-                if base and symbol not in base:
-                    self.body['base'][0] = imagepath+"base/"+base+".png"
-                if legs and symbol not in legs:
-                    self.body['legs'][0] = imagepath+"legs/"+legs+".png"
-                if animation and symbol not in animation: #
-                    self.body['animation'][0] = imagepath+"animation/"+animation+".png" #
+                for key, value in self.body.iteritems():
+                    if value[0] != None and not symbol in value[0]:
+                        if key in ("armleft", "armright", "handleft", "handright"):
+                            self.body[key][0] = imagepath+"arms/"+value[0]+".png"
+                        else:
+                            self.body[key][0] = imagepath+key+"/"+value[0]+".png"
             if 'face' in args:
                 imagepath = "characters/"+self.char+"/face/"
                 
-                tears = self.get_object(self.face, 'tears')
-                cheeks = self.get_object(self.face, 'cheeks')
-                eyebrows = self.get_object(self.face, 'eyebrows')
-                eyes = self.get_object(self.face, 'eyes')
-                pupils = self.get_object(self.face, 'pupils')
-                whites = self.get_object(self.face, 'whites')
-                mouth = self.get_object(self.face, 'mouth')
-                
-                if tears and symbol not in tears:
-                    self.face['tears'][0] = imagepath+"extras/"+tears+".png"
-                if cheeks and symbol not in cheeks:
-                    self.face['cheeks'][0] = imagepath+"extras/"+cheeks+".png"
-                if eyebrows and symbol not in eyebrows:
-                    self.face['eyebrows'][0] = imagepath+"brow/"+eyebrows+".png"
-                if eyes and symbol not in eyes:
-                    self.face['eyes'][0] = imagepath+"eyes/"+eyes+".png"
-                if pupils and symbol not in pupils:
-                    self.face['pupils'][0] = imagepath+"pupil/"+pupils+".png"
-                if whites and symbol not in whites:
-                    self.face['whites'][0] = imagepath+"eyes/"+whites+".png"
-                if mouth and symbol not in mouth:
-                    self.face['mouth'][0] = imagepath+"mouth/"+mouth+".png"
+                for key, value in self.face.iteritems():
+                    if value[0] != None and not symbol in value[0]:
+                        if key in ("tears", "cheeks"):
+                            self.face[key][0] = imagepath+"extras/"+value[0]+".png"
+                        elif key == "whites":
+                            self.face[key][0] = imagepath+"eyes/"+value[0]+".png"
+                        else:
+                            self.face[key][0] = imagepath+key+"/"+value[0]+".png"
             if 'other' in args:
                 imagepath = "characters/emotes/"
                 
@@ -584,14 +552,14 @@ init python:
             self.cached = False
             return
             
-        def set_pose(self, pose):
+        def set_pose(self, pose, offset):
             if not pose == None:
                 self.pose = pose
                 for key, value in self.body.iteritems():
                     self.body[key][4] = True
                 for key, value in self.face.iteritems():
-                    self.face[key][2] = 233
-                    self.face[key][3] = -78
+                    self.face[key][2] = offset[0]
+                    self.face[key][3] = offset[1]
                 self.body['animation'][0] = pose
                 self.body['animation'][4] = False
             else:
@@ -605,14 +573,14 @@ init python:
             self.update_paths("body")
             self.cached = False
             
-        def animation(self, anim):
+        def animation(self, anim, offset=(0,0)):
             for key, value in self.clothing.iteritems():
                 if self.clothing[key][0]:
                     if self.clothing[key][0].set_pose(anim) == False:
                         self.clothing[key][4] = True
                     else:
                         self.clothing[key][4] = False
-            self.set_pose(pose=anim)
+            self.set_pose(anim, offset)
             self.cached = False
             
         def get_cloth(self, type):
@@ -661,25 +629,13 @@ init python:
         def strip(self, *args):
             if 'all' in args:
                 for key in self.clothing:
-                    if not key == "hair":
+                    if not key in ("hair", "pubes", "piercing0", "piercing1", "piercing2", "piercing3", "piercing4", "makeup0",  "makeup1", "makeup2", "makeup3", "makeup4", "tattoo0", "tattoo1", "tattoo2", "tattoo3", "tattoo4"):
                         self.clothing[key][4] = True
             else:
                 for arg in args:
-                    if 'makeup' == arg:
+                    if arg in ("makeup", "accessory", "piercing", "tattoo"):
                         for key in self.clothing.iterkeys():
-                            if 'makeup' in key:
-                                self.clothing[key][4] = True
-                    elif 'accessory' == arg:
-                        for key in self.clothing.iterkeys():
-                            if 'accessory' in key:
-                                self.clothing[key][4] = True
-                    elif 'piercing' == arg:
-                        for key in self.clothing.iterkeys():
-                            if 'piercing' in key:
-                                self.clothing[key][4] = True
-                    elif 'tattoo' == arg:
-                        for key in self.clothing.iterkeys():
-                            if 'tattoo' in key:
+                            if arg in key:
                                 self.clothing[key][4] = True
                     else:
                         try:
@@ -695,21 +651,9 @@ init python:
                     self.clothing[key][4] = False
             else:
                 for arg in args:
-                    if 'makeup' == arg:
+                    if arg in ("makeup", "accessory", "piercing", "tattoo"):
                         for key in self.clothing.iterkeys():
-                            if 'makeup' in key:
-                                self.clothing[key][4] = False
-                    elif 'accessory' == arg:
-                        for key in self.clothing.iterkeys():
-                            if 'accessory' in key:
-                                self.clothing[key][4] = False
-                    elif 'piercing' == arg:
-                        for key in self.clothing.iterkeys():
-                            if 'piercing' in key:
-                                self.clothing[key][4] = False
-                    elif 'tattoo' == arg:
-                        for key in self.clothing.iterkeys():
-                            if 'tattoo' in key:
+                            if arg in key:
                                 self.clothing[key][4] = False
                     else:
                         try:
@@ -720,21 +664,9 @@ init python:
             update_chibi_image(self.char)
             
         def toggle_wear(self, type):
-            if 'makeup' == type:
+            if type in ("makeup", "accessory", "piercing", "tattoo"):
                 for key in self.clothing.iterkeys():
-                    if 'makeup' in key:
-                        self.clothing[key][4] = not self.clothing[key][4]
-            elif 'accessory' == type:
-                for key in self.clothing.iterkeys():
-                    if 'accessory' in key:
-                        self.clothing[key][4] = not self.clothing[key][4]
-            elif 'piercing' == type:
-                for key in self.clothing.iterkeys():
-                    if 'piercing' in key:
-                        self.clothing[key][4] = not self.clothing[key][4]
-            elif 'tattoo' == type:
-                for key in self.clothing.iterkeys():
-                    if 'tattoo' in key:
+                    if type in key:
                         self.clothing[key][4] = not self.clothing[key][4]
             else:
                 try:
@@ -744,24 +676,9 @@ init python:
             self.cached = False
             
         def get_worn(self, type):
-            if 'makeup' == type:
+            if type in ("makeup", "accessory", "piercing", "tattoo"):
                 for key in self.clothing.iterkeys():
-                    if 'makeup' in key:
-                        if self.clothing[key][0] and not self.clothing[key][4]:
-                            return True
-            elif 'accessory' == type:
-                for key in self.clothing.iterkeys():
-                    if 'accessory' in key:
-                        if self.clothing[key][0] and not self.clothing[key][4]:
-                            return True
-            elif 'piercing' == type:
-                for key in self.clothing.iterkeys():
-                    if 'piercing' in key:
-                        if self.clothing[key][0] and not self.clothing[key][4]:
-                            return True
-            elif 'tattoo' == type:
-                for key in self.clothing.iterkeys():
-                    if 'tattoo' in key:
+                    if type in key:
                         if self.clothing[key][0] and not self.clothing[key][4]:
                             return True
             else:

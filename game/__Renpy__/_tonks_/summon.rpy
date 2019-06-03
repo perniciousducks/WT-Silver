@@ -1,16 +1,15 @@
 
 
 label summon_tonks:
-
     call play_sound("door")
-
-    #ADD Tonks chibi here.
-    call tonks_random_clothing
-
-    label tonks_requests:
+    #call ton_chibi("stand","mid","base") #ADD Tonks chibi here.
+    #with d3
 
     $ active_girl = "tonks"
     $ tonks_busy = True
+    call tonks_random_clothing
+
+    label tonks_requests:
     
     call ton_main(xpos="base",ypos="base")
     $ hide_transitions = False

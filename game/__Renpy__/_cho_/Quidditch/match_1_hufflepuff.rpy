@@ -679,7 +679,7 @@ label hufflepuff_match:
 
     # Transition to Cho on her broom.
     $ cho_animation = sprite_fly_idle
-    $ cho_class.animation("quid")
+    $ cho_class.animation("quid", (233, -78))
     call cho_chibi(action="fly", xpos=1200,ypos=-100)
     call cho_walk(xpos=500,ypos=50, speed=2.5)
     pause 1.5

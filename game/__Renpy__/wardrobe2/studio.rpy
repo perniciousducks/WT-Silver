@@ -57,7 +57,7 @@ init python:
         return
 
 label studio(studio_return, studio_char):
-    hide screen cho_chang
+    call hide_characters
     
     $ studio_eyebrows_list = ["base", "raised", "angry", "sad"]
     $ studio_eyes_list = ["base", "closed", "wink", "narrow", "angry", "wide", "shocked"]

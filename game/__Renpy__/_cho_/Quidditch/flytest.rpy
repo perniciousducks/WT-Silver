@@ -233,7 +233,7 @@ label flytest_cho:
     
     # Equip quidditch outfit and set quidditch animations
     $ cho_class.equip(cho_outfit_quidditch)
-    $ cho_class.animation("quid") # <- Prepares cho for animating
+    $ cho_class.animation("quid", (233, -78)) # <- Prepares cho for animating
     
     show screen flytest
     

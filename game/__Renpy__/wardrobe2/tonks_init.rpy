@@ -27,7 +27,7 @@ label tonks_wardrobe_init:
                         "handleft":    ["characters/tonks/body/arms/armfixL.png", 40, 0, 0, False],
                         "handright":   ["characters/tonks/body/arms/armfixR.png", 40, 0, 0, False],
                         "armleft":     ["l_arm_hips", 18, 0, 0, False],
-                        "armright":    ["r_arm_hips", 5, 0, 0, False],
+                        "armright":    ["r_arm_hips", 2, 0, 0, False],
                         "breasts":     [None, 6, 0, 0, False],
                         "base":        ["base_01", 3, 0, 0, False],
                         "legs":        [None, 2, 0, 0, False],

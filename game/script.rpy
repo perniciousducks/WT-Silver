@@ -324,6 +324,21 @@ image heal:
     pause.06
     "magic/heal18.png"
     pause.06
+    
+image love_heart:
+    "magic/love09.png"
+    pause.06
+    "magic/love10.png"
+    pause.06
+    "magic/love11.png"
+    pause.06
+    "magic/love12.png"
+    pause.06
+    "magic/love13.png"
+    pause.06
+    "magic/love14.png"
+    pause.06
+    "magic/love15.png"
 
 ############################################
 #######EMOTIONS #^_^# ########################

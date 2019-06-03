@@ -4,7 +4,7 @@ label cho_wardrobe_check(section, arg=None):
             temp_count = [0, 0, 0]
             temp_score = 0
             for item in arg.group:
-                if cho_whoring < item.whoring:
+                if cho_whoring < item.whoring and temp_count[0] < item.whoring:
                     temp_count[0] = item.whoring
                 if item.type in ("bra", "panties"):
                     temp_count[2] += 1
@@ -14,8 +14,8 @@ label cho_wardrobe_check(section, arg=None):
                                 temp_count[1] += 1
                             
         # Outfit outrage score check
-        if temp_count[0] > cho_whoring:
-            call cho_main("Its too "+random.choice("slutty", "revealing", "much", "breezy")+"...",face="annoyed")
+        if cho_whoring < temp_count[0]:
+            call cho_main("Its too "+random.choice(("slutty", "revealing", "much", "breezy"))+"...",face="annoyed")
             $ temp_score += 1
         if temp_count[2] < 2 and cho_whoring < 10:
             if temp_score > 0:
@@ -29,6 +29,7 @@ label cho_wardrobe_check(section, arg=None):
             
         if temp_score > 0:
             call cho_main("I am NOT wearing it!",face="annoyed")
+            #Hint
             $ wardrobe_fail_hint(max(temp_count[0], 5, 10))
             return
     else:
@@ -36,26 +37,45 @@ label cho_wardrobe_check(section, arg=None):
             if cho_whoring < 12:
                 call cho_main("You want to make me wear body piercing and tattoos?",face="angry")
                 call cho_main("I won't allow it!",face="annoyed")
+                #Hint
                 $ wardrobe_fail_hint(12)
                 return False
             return True
         elif section == "touching":
-            if cho_whoring < 12:
-                $ slap_mouse_away()
-                
-                $ random_number = renpy.random.randint(1, 5)
-                if random_number == 1:
-                    call cho_main("No touching!",face="annoyed")
-                elif random_number == 2:
-                    call cho_main("Bad [cho_genie_name]!",face="annoyed")
-                elif random_number == 3:
-                    call cho_main("Hands to yourself.",face="annoyed")
-                elif random_number == 4:
-                    call cho_main("Cut it out..",face="annoyed")
-                elif random_number == 5:
-                    call cho_main("Hands off me.",face="annoyed")
-                return
+            $ random_number = renpy.random.randint(1, 5)
+            if arg == "boobs":
+                if cho_whoring < 10:
+                    $ slap_mouse_away()
+                    
+                    if random_number == 1:
+                        call cho_main("No touching!",face="annoyed")
+                    elif random_number == 2:
+                        call cho_main("Bad [cho_genie_name]!",face="annoyed")
+                    elif random_number == 3:
+                        call cho_main("Hands to yourself.",face="annoyed")
+                    elif random_number == 4:
+                        call cho_main("Cut it out..",face="annoyed")
+                    elif random_number == 5:
+                        call cho_main("Hands off me.",face="annoyed")
+                    return
+            if arg == "pussy":
+                if cho_whoring < 16:
+                    $ slap_mouse_away()
+                    
+                    if random_number == 1:
+                        call cho_main("Stop that!",face="annoyed")
+                    elif random_number == 2:
+                        call cho_main("[cho_genie_name]!",face="annoyed")
+                    elif random_number == 3:
+                        call cho_main("Unhand me..",face="annoyed")
+                    elif random_number == 4:
+                        call cho_main("Stop it please..",face="annoyed")
+                    elif random_number == 5:
+                        call cho_main("Hands off me.",face="annoyed")
+                    return
+            $ love_mouse_away()
             call cho_main("", face="horny")
+            return
         elif section == "toggle":
             if arg in ("bra", "panties"):
                 if cho_whoring < 9:
@@ -77,19 +97,27 @@ label cho_wardrobe_check(section, arg=None):
                     if arg == "top":
                         call cho_main("Take my top off for a quickie? Are you insane?",face="annoyed")
                     elif arg == "bottom":
-                        call cho_main("Take my bottoms off so you can oggle my ass? No thank you.",face="annoyed")
+                        call cho_main("Take my bottoms off so you can ogle my ass? No thank you.",face="annoyed")
+                    #Hint
                     $ wardrobe_fail_hint(3)
                     return
             $ char_active.toggle_wear(arg)
             return
         elif section == "equip":
             if arg.type in ("bra", "panties"):
-                if arg.id in (char_active.get_cloth("bra").id, char_active.get_cloth("panties").id):
-                    if cho_whoring < 10:
-                        call cho_main("No, I'm not taking off my underwear!",face="angry")
-                        #Hint
-                        $ wardrobe_fail_hint(10)
-                        return
+                if cho_whoring < 10:
+                    if char_active.get_cloth("bra"):
+                        if arg.id == char_active.get_cloth("bra").id:
+                            call cho_main("No, I'm not taking off my bra!",face="angry")
+                            #Hint
+                            $ wardrobe_fail_hint(10)
+                            return
+                    if char_active.get_cloth("panties"):
+                        if arg.id == char_active.get_cloth("panties").id:
+                            call cho_main("No, I'm not taking off my panties!",face="angry")
+                            #Hint
+                            $ wardrobe_fail_hint(10)
+                            return
                 else:
                     if cho_whoring < 5:
                         call cho_main("I can't let you pick underwear for me, its inappropriate.",face="annoyed")
@@ -108,6 +136,7 @@ label cho_wardrobe_check(section, arg=None):
                             call cho_main("I am not taking off my top, forget it!",face="annoyed")
                         elif arg.id == char_active.get_cloth("bottom").id:
                             call cho_main("I won't be walking bottomless on the school grounds..",face="annoyed")
+                        #Hint
                         $ wardrobe_fail_hint(3)
                         return
                 label cho_wardrobe_too_much:

@@ -300,7 +300,7 @@ init python:
             dyes = []
             for dye in self.color:
                 dyes.append([dye[0],dye[1],dye[2],dye[3]])
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix)
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, whoring=self.whoring)
                 
         def set_pose(self, pose):
             if pose == None:
@@ -608,7 +608,7 @@ init python:
                     if key == "top":
                         score += 30
                         if not self.get_worn("bra"):
-                            score += 80
+                            score += 25
                             if self.get_worn("piercing1"):
                                 score += 10
                             if self.get_worn("tattoo1"):
@@ -620,9 +620,9 @@ init python:
                         if self.get_worn("buttplug"):
                             score += 10
                         if not self.get_worn("panties"):
-                            score += 80
+                            score += 25
                             if self.get_worn("buttplug"):
-                                score += 20
+                                score += 25
                             if self.get_worn("piercing0"):
                                 score += 10
                             if self.get_worn("tattoo0"):

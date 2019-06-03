@@ -1,12 +1,18 @@
 init python:
     def slap_mouse_away():
         renpy.play('sounds/slap.mp3')
-        renpy.stop_predict_screen("slap_effect")
+        renpy.stop_predict_screen("gfx_effect")
         x, y = renpy.get_mouse_pos()
         xx = x+random.randint(-100, 100)
         yy = y+random.randint(-100, 100)
-        renpy.show_screen("slap_effect", start_x=x, start_y=y, target_x=xx, target_y=yy)
+        renpy.show_screen("gfx_effect", start_x=x, start_y=y, target_x=xx, target_y=yy, img="smoke", xanchor=0.1, yanchor=0.7, zoom=0.2, duration=0.15)
         renpy.set_mouse_pos(xx, yy, duration=0.1)
+        
+    def love_mouse_away():
+        renpy.play('sounds/kiss.mp3')
+        renpy.stop_predict_screen("gfx_effect")
+        x, y = renpy.get_mouse_pos()
+        renpy.show_screen("gfx_effect", start_x=x, start_y=y, target_x=x, target_y=y, img="love_heart", xanchor=0.45, yanchor=0.65, zoom=0.2, timer=0.45)
         
     def wardrobe_fail_hint(value):
         renpy.block_rollback()
@@ -18,12 +24,12 @@ init python:
             renpy.with_statement(d3)
         return
         
-screen slap_effect(start_x, start_y, target_x, target_y):
+screen gfx_effect(start_x, start_y, target_x, target_y, img, xanchor=0.5, yanchor=0.5, zoom=0.5, duration=1.0, timer=0.5):
     tag gfx
     zorder 6
 
-    add "smoke" xanchor 0.1 yanchor 0.7 zoom 0.2 at moveto(start_x, start_y, target_x, target_y, duration=0.2)
-    timer 0.5 action Hide("slap_effect")
+    add img xanchor xanchor yanchor yanchor zoom zoom at moveto(start_x, start_y, target_x, target_y, duration)
+    timer timer action Hide("gfx_effect")
 
 label t_wardrobe(return_label, char_label):
     $ char_active = get_character_object(active_girl)
@@ -223,9 +229,9 @@ label t_wardrobe(return_label, char_label):
                         if item.id == char_active.get_equipped(current_category, current_subcategory):
                             current_item = item
                             break
-    elif _return == "erozone":
+    elif _return[0] == "erozone":
         show screen t_wardrobe_menu(550, 50)
-        $ renpy.call(active_girl+"_wardrobe_check", "touching")
+        $ renpy.call(active_girl+"_wardrobe_check", "touching", _return[1])
         #call expression char_label pass (text="", face="horny")
     elif _return[0] == "toggle":
         show screen t_wardrobe_menu(550, 50)
@@ -317,8 +323,8 @@ screen t_wardrobe_menu(xx, yy):
             xalign 0.5
             ypos 260
             spacing 72
-            button xsize 120 ysize 60 style "empty" action Return("erozone")
-            button xsize 120 ysize 50 style "empty" action Return("erozone")
+            button xsize 120 ysize 60 style "empty" action Return(["erozone", "boobs"])
+            button xsize 120 ysize 50 style "empty" action Return(["erozone", "pussy"])
                 
         add "interface/general/"+str(interface_color)+"/button_wide.png" xpos 200 ypos -4
         text char_nickname xalign 0.5 ypos 4 size 16

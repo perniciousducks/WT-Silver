@@ -406,7 +406,9 @@ screen t_wardrobe_menuitem(xx, yy):
                 button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
                     #$ current_item = menu_items[i]
-                    text "{color=#FFFFFF}Worn{/color}"xpos 26+90*col ypos 240+90*row
+                    text "{color=#FFFFFF}Worn{/color}" xpos 26+90*col ypos 240+90*row
+                if config.developer:
+                    text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" size 20 xpos 15+90*col ypos 180+90*row outlines [ (1, "#000", 0, 0) ]
                     
         # Add empty items
         for i in xrange(menu_items_length, items_shown):

@@ -629,7 +629,6 @@ init python:
                                 score += self.get_cloth("tattoo0").whoring
                     elif key == "panties" and self.get_worn("bottom"):
                         score += 15
-                    
             return score
             
         def equip(self, object):

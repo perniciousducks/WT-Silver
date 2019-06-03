@@ -32,7 +32,9 @@ label tonks_wardrobe_check(section, arg=None):
             $ wardrobe_fail_hint(max(temp_count[0], 5, 10))
             return
     else:
-        if section == "touching":
+        if section == "tabswitch":
+            return True
+        elif section == "touching":
             if int(ton_friendship/2) < 12:
                 $ slap_mouse_away()
                 
